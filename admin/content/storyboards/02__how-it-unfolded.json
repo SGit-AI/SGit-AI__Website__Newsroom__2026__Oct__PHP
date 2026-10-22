@@ -1,0 +1,303 @@
+{
+ "slug": "how-it-unfolded",
+ "title": "How it unfolded: 2024 to 22 October",
+ "subtitle": "Five moments, from an audit nobody acted on to sites going dark. 9 panels.",
+ "reader": "everyone",
+ "see": [
+  "timeline/index.html",
+  "discovery/index.html",
+  "leak/index.html"
+ ],
+ "status": "draft",
+ "by": "storyboard@php.newsroom, 22 October 2026",
+ "written": "2026-10-22",
+ "as_of_version": "0.5.2",
+ "vault_commit": "200d08971937",
+ "data_as_of": "2026-10-22T11:34Z",
+ "rule": "Every line a character says is the storyboard's own words, not a quote, and is marked not_a_quote; every evidence panel quotes this site's data word for word and names the file (quote_from), which the gate checks; every panel cites the evidence vault's source slugs it rests on (cites), which the gate checks against the manifest.",
+ "scenes": [
+  {
+   "kind": "cover",
+   "title": "How it unfolded",
+   "subtitle": "2024 to 22 October 2026, in five moments",
+   "cast": [
+    {
+     "who": "rowan",
+     "pose": "wave",
+     "mood": "excited"
+    },
+    {
+     "who": "desk",
+     "pose": "point",
+     "mood": "calm"
+    }
+   ],
+   "note": "Who this is for: anyone asking how a bug from 2024 became a headline in October 2026.",
+   "cites": [
+    "php-foundation-blog-security-release"
+   ]
+  },
+  {
+   "kind": "spectrum",
+   "setting": "none",
+   "caption": "Five moments",
+   "stops": [
+    {
+     "label": "2024",
+     "note": "an audit spots it",
+     "colour": "#e5e7eb"
+    },
+    {
+     "label": "Aug",
+     "note": "AI teams prove it",
+     "colour": "#fde68a"
+    },
+    {
+     "label": "20 Oct",
+     "note": "it leaks",
+     "colour": "#fecaca"
+    },
+    {
+     "label": "21 Oct",
+     "note": "the fix ships early",
+     "colour": "#bbf7d0"
+    },
+    {
+     "label": "22 Oct",
+     "note": "sites go dark",
+     "colour": "#c7d2fe"
+    }
+   ],
+   "cast": [
+    {
+     "who": "rowan",
+     "x": 0.5,
+     "pose": "think",
+     "mood": "thinking"
+    }
+   ],
+   "note": "The five moments on the front page, each linked to its page on this site.",
+   "cites": [
+    "php-foundation-blog-security-release",
+    "calif-php2shell",
+    "php-net-advisory",
+    "bbc-live-ckgel5xp2xv9t"
+   ]
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "2024: noticed, and left",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.18,
+     "pose": "point",
+     "mood": "calm"
+    }
+   ],
+   "evidence": {
+    "quote": "An audit spots the out-of-memory weakness. Nobody can show it is exploitable, so it is left.",
+    "source": "this site, How it unfolded (data/plain.json)"
+   },
+   "quote_from": "data/plain.json",
+   "note": "The PHP Foundation's account of the 2024 audit.",
+   "cites": [
+    "php-foundation-blog-security-release",
+    "quarkslab-blog-php-src-audit"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "office",
+   "caption": "August 2026: three teams, with AI",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.82,
+     "pose": "point",
+     "mood": "calm",
+     "says": "Three teams. Working attacks within three weeks.",
+     "max": 16,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "terminal",
+     "x": 0.36,
+     "y": 820,
+     "lines": [
+      "$ audit php-src",
+      "> oom in bailout path",
+      "> stale global state",
+      "> exploitable: yes",
+      "> report to PHP"
+     ]
+    }
+   ],
+   "note": "The GitHub advisories credit four reporters, among them Calif, Wiz and OpenAI; Calif reported first, on 11 August.",
+   "cites": [
+    "calif-php2shell",
+    "wiz-blog-php2shell",
+    "github-ghsa-w8hw-w9fx-j79w",
+    "php-foundation-blog-security-release"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "20 October: the leak",
+   "cast": [
+    {
+     "who": "rowan",
+     "x": 0.18,
+     "pose": "think",
+     "mood": "surprised"
+    }
+   ],
+   "evidence": {
+    "quote": "The secret leaks: the CVE numbers circulate two days early, with a wrong severity score.",
+    "source": "this site, How it unfolded (data/plain.json)"
+   },
+   "quote_from": "data/plain.json",
+   "note": "Who leaked it, and where, is still not known.",
+   "cites": [
+    "php-foundation-blog-security-release",
+    "daubois-blog-php2shell-rumors"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "none",
+   "caption": "21 October: a day early",
+   "cast": [
+    {
+     "who": "drew",
+     "x": 0.18,
+     "pose": "arms-up",
+     "mood": "excited",
+     "says": "Tags at 13:35. Advisory at 14:00.",
+     "max": 14
+    }
+   ],
+   "props": [
+    {
+     "kind": "calendar",
+     "x": 0.45,
+     "y": 760,
+     "label": "21 Oct, not 22"
+    },
+    {
+     "kind": "arrow",
+     "x": 0.55,
+     "y": 560,
+     "to": 0.72,
+     "label": "edge rules already live"
+    },
+    {
+     "kind": "server",
+     "x": 0.82,
+     "y": 860,
+     "label": "WAF"
+    }
+   ],
+   "note": "PHP releases the fix a day ahead of plan; Cloudflare had rules live about nine hours before disclosure by its own account.",
+   "cites": [
+    "php-net-advisory",
+    "github-php-src-tags",
+    "cloudflare-blog-php2shell-waf"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "scene",
+   "setting": "street",
+   "caption": "22 October: sites go dark",
+   "cast": [
+    {
+     "who": "jordan",
+     "x": 0.2,
+     "pose": "think",
+     "mood": "worried",
+     "says": "Offline means hacked?",
+     "max": 14
+    },
+    {
+     "who": "desk",
+     "x": 0.8,
+     "pose": "point",
+     "mood": "calm",
+     "says": "No. Offline is a decision.",
+     "max": 14,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "sign",
+     "x": 0.5,
+     "y": 860,
+     "label": "Closed as a precaution"
+    }
+   ],
+   "note": "The NSA and CISA said take systems offline if you cannot update; Dutch government services such as DigiD were taken offline.",
+   "cites": [
+    "nsa-x-2112903220209098897",
+    "cisa-alert-php-20261021",
+    "rijksoverheid-ncsc-php-news",
+    "tpo-nl-digid-offline"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "The first official words",
+   "cast": [
+    {
+     "who": "jordan",
+     "x": 0.16,
+     "pose": "think",
+     "mood": "thinking"
+    }
+   ],
+   "evidence": {
+    "quote": "If an immediate update is not feasible, it is recommend[ed] that organizations take the system offline until it can be fully mitigated.",
+    "source": "NSA Cybersecurity on X, 21 October, 13:45 UTC (data/agencies.json)"
+   },
+   "quote_from": "data/agencies.json",
+   "note": "Posted before the CVE records were published.",
+   "cites": [
+    "nsa-x-2112903220209098897"
+   ]
+  },
+  {
+   "kind": "punchline",
+   "setting": "none",
+   "punchline": "Found in 2024. Proved in August. Fixed in a day.",
+   "cast": [
+    {
+     "who": "rowan",
+     "x": 0.2,
+     "pose": "point",
+     "mood": "excited"
+    },
+    {
+     "who": "desk",
+     "x": 0.82,
+     "pose": "stand",
+     "mood": "calm",
+     "flip": true
+    }
+   ],
+   "note": "Every dated event is on /timeline/ with its sources.",
+   "cites": [
+    "php-foundation-blog-security-release",
+    "php-net-advisory"
+   ],
+   "not_a_quote": true
+  }
+ ]
+}

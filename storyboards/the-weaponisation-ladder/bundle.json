@@ -1,0 +1,452 @@
+{
+ "storyboard": {
+  "slug": "the-weaponisation-ladder",
+  "title": "The weaponisation ladder",
+  "subtitle": "The cyber desk's reading as a strip: which rungs php2shell has reached, and which would move it up. 8 panels.",
+  "reader": "security",
+  "see": [
+   "articles/patch-at-the-speed-of-metasploit/index.html",
+   "exploitation/index.html"
+  ],
+  "status": "draft",
+  "by": "storyboard@php.newsroom, 22 October 2026",
+  "written": "2026-10-22",
+  "as_of_version": "0.5.2",
+  "vault_commit": "200d08971937",
+  "data_as_of": "2026-10-22T11:34Z",
+  "rule": "Every line a character says is the storyboard's own words, not a quote, and is marked not_a_quote; every evidence panel quotes this site's data word for word and names the file (quote_from), which the gate checks; every panel cites the evidence vault's source slugs it rests on (cites), which the gate checks against the manifest.",
+  "scenes": [
+   {
+    "kind": "cover",
+    "title": "The weaponisation ladder",
+    "subtitle": "From private exploits to ransomware, seven rungs",
+    "cast": [
+     {
+      "who": "sam",
+      "pose": "stand",
+      "mood": "thinking"
+     },
+     {
+      "who": "mallory",
+      "pose": "shrug",
+      "mood": "neutral"
+     }
+    ],
+    "note": "Drawn from the cyber desk's piece, 'Patch at the speed of Metasploit', written against the source watch at 17:51 UTC on 22 October.",
+    "cites": [
+     "calif-php2shell",
+     "cisa-kev-json"
+    ]
+   },
+   {
+    "kind": "scene",
+    "setting": "office",
+    "caption": "Capability is not commodity",
+    "cast": [
+     {
+      "who": "sam",
+      "x": 0.2,
+      "pose": "think",
+      "mood": "thinking",
+      "says": "Is this the next Log4Shell?",
+      "max": 14
+     },
+     {
+      "who": "desk",
+      "x": 0.8,
+      "pose": "point",
+      "mood": "calm",
+      "says": "Not yet. It still needs knowledge of the target.",
+      "max": 16,
+      "flip": true
+     }
+    ],
+    "note": "Log4Shell and Shellshock worked with one request, everywhere; php2shell, today, needs the right configuration.",
+    "cites": [
+     "wikipedia-log4shell",
+     "wikipedia-shellshock",
+     "sansec-research-php2shell"
+    ],
+    "not_a_quote": true
+   },
+   {
+    "kind": "spectrum",
+    "setting": "none",
+    "caption": "Rungs 1 to 4: reached",
+    "stops": [
+     {
+      "label": "1",
+      "note": "private exploits (Aug)",
+      "colour": "#fca5a5"
+     },
+     {
+      "label": "2",
+      "note": "one pre-disclosure hit",
+      "colour": "#fca5a5"
+     },
+     {
+      "label": "3",
+      "note": "public PoCs, mostly broken",
+      "colour": "#fca5a5"
+     },
+     {
+      "label": "4",
+      "note": "mass scanning",
+      "colour": "#fca5a5"
+     }
+    ],
+    "cast": [
+     {
+      "who": "mallory",
+      "x": 0.5,
+      "pose": "point",
+      "mood": "determined"
+     }
+    ],
+    "note": "Calif, OpenAI and Wiz in August; a honeypot hit on 17 October; hundreds of GitHub repositories, which Sansec says fail on default installs; version-fingerprint scanning.",
+    "cites": [
+     "calif-php2shell",
+     "wiz-blog-php2shell",
+     "aws-security-blog-madpot",
+     "sansec-research-php2shell"
+    ]
+   },
+   {
+    "kind": "spectrum",
+    "setting": "none",
+    "caption": "Rungs 5 to 7: not reached",
+    "stops": [
+     {
+      "label": "5",
+      "note": "a one-command framework module",
+      "colour": "#e5e7eb"
+     },
+     {
+      "label": "6",
+      "note": "CISA's exploited list",
+      "colour": "#e5e7eb"
+     },
+     {
+      "label": "7",
+      "note": "miners, botnets, ransomware",
+      "colour": "#e5e7eb"
+     }
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 0.5,
+      "pose": "think",
+      "mood": "calm"
+     }
+    ],
+    "note": "A Metasploit pull request is open and not merged; neither flaw is in KEV; no evidence of monetisation.",
+    "cites": [
+     "cisa-kev-json"
+    ]
+   },
+   {
+    "kind": "scene",
+    "setting": "night",
+    "caption": "Rung 7 is the one to hold on to",
+    "cast": [
+     {
+      "who": "desk",
+      "x": 0.82,
+      "pose": "point",
+      "mood": "worried",
+      "says": "Both earlier PHP flaws in KEV ended up with ransomware.",
+      "max": 18,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "kind": "record",
+      "x": 0.34,
+      "y": 860,
+      "lines": [
+       "CVE-2019-11043",
+       "  ransomware: known",
+       "CVE-2024-4577",
+       "  ransomware: known"
+      ],
+      "stamp": "KEV"
+     }
+    ],
+    "note": "Configuration-dependent changes how many victims there are, not whether someone eventually monetises the bug.",
+    "cites": [
+     "cisa-kev-json",
+     "cve-cve-2019-11043",
+     "cve-cve-2024-4577"
+    ],
+    "not_a_quote": true
+   },
+   {
+    "kind": "evidence",
+    "setting": "none",
+    "caption": "How fast KEV moved before",
+    "cast": [
+     {
+      "who": "sam",
+      "x": 0.14,
+      "pose": "stand",
+      "mood": "thinking"
+     }
+    ],
+    "evidence": {
+     "title": "Days from disclosure to KEV",
+     "bars": [
+      {
+       "label": "Log4Shell",
+       "value": 1,
+       "shown": "day 1",
+       "colour": "#b91c1c"
+      },
+      {
+       "label": "MOVEit",
+       "value": 1,
+       "shown": "day 1",
+       "colour": "#b91c1c"
+      },
+      {
+       "label": "CVE-2024-4577",
+       "value": 3,
+       "shown": "3 days",
+       "colour": "#d97706"
+      },
+      {
+       "label": "php2shell",
+       "value": 0.15,
+       "shown": "not yet",
+       "colour": "#6b7280"
+      }
+     ]
+    },
+    "bars_from": {
+     "file": "admin/content/articles/2026-10-22__cyber__patch-at-the-speed-of-metasploit.md",
+     "row": "KEV listing"
+    },
+    "note": "From the cyber desk's ladder table: Log4Shell and MOVEit on day one, CVE-2024-4577 three days after.",
+    "cites": [
+     "cisa-kev-json",
+     "cve-cve-2021-44228",
+     "cve-cve-2023-34362",
+     "akamai-blog-cve-2024-4577-one-day"
+    ]
+   },
+   {
+    "kind": "scene",
+    "setting": "office",
+    "caption": "What would move it up a rung",
+    "cast": [
+     {
+      "who": "sam",
+      "x": 0.18,
+      "pose": "point",
+      "mood": "determined",
+      "says": "So we watch for the artefacts.",
+      "max": 14
+     }
+    ],
+    "props": [
+     {
+      "kind": "board",
+      "x": 0.6,
+      "y": 860,
+      "scale": 1.1,
+      "lines": [
+       "a merged Metasploit module",
+       "an exploiting nuclei template",
+       "a KEV listing",
+       "a second patch",
+       "a regression"
+      ]
+     }
+    ],
+    "note": "The cyber desk watches each of these hourly through the source watch (board item 079).",
+    "cites": [
+     "cisa-kev-json"
+    ],
+    "not_a_quote": true
+   },
+   {
+    "kind": "punchline",
+    "setting": "none",
+    "punchline": "Patch before it needs no skill.",
+    "cast": [
+     {
+      "who": "sam",
+      "x": 0.2,
+      "pose": "arms-up",
+      "mood": "determined"
+     },
+     {
+      "who": "mallory",
+      "x": 0.82,
+      "pose": "sit",
+      "mood": "sad",
+      "flip": true
+     }
+    ],
+    "note": "\"Patch at the speed of Metasploit\": the time that matters is disclosure to the moment exploitation stops needing skill.",
+    "cites": [
+     "cisa-kev-json"
+    ],
+    "not_a_quote": true
+   }
+  ]
+ },
+ "cast": {
+  "what": "The cast of PHP October 2026's storyboards, v0.1, proposed by storyboard@php.newsroom on 22 October 2026 for the editor to accept, change or replace. Drawn programmatically by the storyboard kit v0.1.0 (vendored from api.storyboards.sgit.ai, hashes in assets/vendor/storyboards/VENDOR.md) from 'look'; nothing here is an image. Fictional people, each named after one of this site's readers (data/personas.json), so a storyboard can be read as that reader's briefing; one agent, the Desk, who speaks only for the evidence; and Mallory, the name cryptography has long given an attacker. No real person is drawn. Every human uses they/them, because the readers they are named after have no stated pronouns.",
+  "characters": [
+   {
+    "id": "desk",
+    "name": "The Desk",
+    "kind": "agent",
+    "pronouns": "it/its",
+    "role": "the newsroom's voice: says only what the evidence vault and this site's data say, with the status word attached",
+    "stands_for": "the team of agents behind this site, speaking with one voice",
+    "personality": "calm, exact, never rounds a number up",
+    "wants": "every reader to leave knowing which facts are confirmed and which are only reported",
+    "fears": "a headline number repeated without what it measures",
+    "line": "Confirmed, reported, or not known yet. Pick one.",
+    "look": {
+     "colour": "#0f766e"
+    }
+   },
+   {
+    "id": "casey",
+    "name": "Casey",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the website owner: runs a shop on WordPress with a hosting company",
+    "stands_for": "the reader on /briefings/site-owner/: plain English, wants to know what to ask the host",
+    "personality": "practical, a little anxious, writes things down",
+    "wants": "to know whether to do anything today",
+    "fears": "waking up to a hacked site",
+    "line": "Just tell me what to ask my host.",
+    "look": {
+     "skin": "#e0ac69",
+     "hair": "curly",
+     "hairColour": "#3b2a20",
+     "shirt": "#2563eb",
+     "trousers": "#1f2937",
+     "accessory": "none",
+     "height": 0.98
+    }
+   },
+   {
+    "id": "sam",
+    "name": "Sam",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the security lead: decides what is patched first and when a system goes offline",
+    "stands_for": "the reader on /briefings/security/",
+    "personality": "dry, sceptical, reads the advisory before the headline",
+    "wants": "evidence it was not hit",
+    "fears": "a quiet compromise found in a month",
+    "line": "Attempts are not compromises. Show me a compromise.",
+    "look": {
+     "skin": "#8d5524",
+     "hair": "short",
+     "hairColour": "#111827",
+     "shirt": "#7c3aed",
+     "trousers": "#1e293b",
+     "accessory": "lanyard",
+     "accentColour": "#f59e0b",
+     "height": 1.02
+    }
+   },
+   {
+    "id": "drew",
+    "name": "Drew",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the PHP and platform engineer: rebuilds, redeploys and restarts",
+    "stands_for": "the reader on /briefings/engineer/",
+    "personality": "quick, terse, lives in a terminal",
+    "wants": "the version numbers and the commands",
+    "fears": "a fix that is installed but never restarted",
+    "line": "Installed is not running. Restart it.",
+    "look": {
+     "skin": "#f1c27d",
+     "hair": "beanie",
+     "hairColour": "#6b4f2a",
+     "hatColour": "#0f766e",
+     "shirt": "#334155",
+     "trousers": "#111827",
+     "accessory": "headphones",
+     "height": 1.0
+    }
+   },
+   {
+    "id": "rowan",
+    "name": "Rowan",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the journalist: has to write the number in the headline",
+    "stands_for": "the reader on /briefings/journalist/",
+    "personality": "curious, fast, asks who said it first",
+    "wants": "a number that holds up",
+    "fears": "printing a figure nobody measured",
+    "line": "Who measured that?",
+    "look": {
+     "skin": "#c68642",
+     "hair": "long",
+     "hairColour": "#1b1b1b",
+     "shirt": "#dc2626",
+     "trousers": "#374151",
+     "accessory": "glasses",
+     "height": 0.97
+    }
+   },
+   {
+    "id": "jordan",
+    "name": "Jordan",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the board member: owns the risk, not the servers",
+    "stands_for": "the reader on /briefings/board/",
+    "personality": "patient, asks one question at a time",
+    "wants": "to know who decides to pull a system offline",
+    "fears": "learning about it from the news",
+    "line": "Who owns that decision?",
+    "look": {
+     "skin": "#ffdbac",
+     "hair": "bald",
+     "hairColour": "#9ca3af",
+     "shirt": "#1f2937",
+     "trousers": "#111827",
+     "accessory": "glasses",
+     "height": 1.04
+    }
+   },
+   {
+    "id": "mallory",
+    "name": "Mallory",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the attacker: scans the internet for servers that have not installed the fix",
+    "stands_for": "every party sending php2shell requests; who they are is not known",
+    "personality": "patient, automated, cheap",
+    "wants": "one server that answers",
+    "fears": "a patched, restarted server behind an edge rule",
+    "line": "I only need one.",
+    "look": {
+     "skin": "#d8a47f",
+     "hair": "beanie",
+     "hairColour": "#111827",
+     "hatColour": "#111827",
+     "shirt": "#111827",
+     "trousers": "#111827",
+     "accessory": "none",
+     "height": 1.0
+    }
+   }
+  ]
+ },
+ "packs": [
+  "security"
+ ]
+}

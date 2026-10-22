@@ -119,9 +119,20 @@ An article a reader has seen is listed here until a collector captures it into t
 - [House · Cyber desk: Patch at the speed of Metasploit](../articles/patch-at-the-speed-of-metasploit/index.html):
 - [The editor, interviewed: Dinis Cruz on why this site exists](../interview/index.html): Dinis Cruz, the editor of PHP October 2026, on why he started tracking the PHP flaws, the 70% figure, what remote code execution does and does not mean, pulling the plug, and why every section of the site is versioned. In his own words.
 
+### Storyboards
+- [Every storyboard, drawn here](../storyboards/index.html):
+- [The briefing deck, 22 October 2026](../storyboards/briefing-2026-10-22/index.html):
+- [Where it stands, 22 October](../storyboards/where-it-stands/index.html):
+- [How it unfolded: 2024 to 22 October](../storyboards/how-it-unfolded/index.html):
+- [Exposed is not exploited](../storyboards/exposed-is-not-exploited/index.html):
+- [What the agencies say](../storyboards/what-the-agencies-say/index.html):
+- [Who gets a fix, and when](../storyboards/who-gets-a-fix/index.html):
+- [The weaponisation ladder](../storyboards/the-weaponisation-ladder/index.html):
+- [How this site knows](../storyboards/how-this-site-knows/index.html):
+
 ### About
 - [The method: capture, hash, claim, build, gate](../method/index.html): How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.
-- [The team: the people, the agents and how they work together](../team/index.html): Every member of the team that runs this site, 2 people and 15 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 15 audiences.
+- [The team: the people, the agents and how they work together](../team/index.html): Every member of the team that runs this site, 2 people and 16 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 15 audiences.
 - [The billing model: what runs and what is designed](../billing/index.html): How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
 - [Your reading account](../account/index.html): The balance, history and receipts of your reading on this site, kept in your browser.
 - [The brief: a written request and two voice memos](../brief/index.html): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.

@@ -1,0 +1,469 @@
+{
+ "storyboard": {
+  "slug": "what-the-agencies-say",
+  "title": "What the agencies say",
+  "subtitle": "Sixteen government cyber agencies agree on the fix and disagree on what to do if you cannot install it. 8 panels.",
+  "reader": "board",
+  "see": [
+   "agencies/index.html",
+   "briefings/board/index.html"
+  ],
+  "status": "draft",
+  "by": "storyboard@php.newsroom, 22 October 2026",
+  "written": "2026-10-22",
+  "as_of_version": "0.5.2",
+  "vault_commit": "200d08971937",
+  "data_as_of": "2026-10-22T11:34Z",
+  "rule": "Every line a character says is the storyboard's own words, not a quote, and is marked not_a_quote; every evidence panel quotes this site's data word for word and names the file (quote_from), which the gate checks; every panel cites the evidence vault's source slugs it rests on (cites), which the gate checks against the manifest.",
+  "scenes": [
+   {
+    "kind": "cover",
+    "title": "What the agencies say",
+    "subtitle": "Sixteen agencies, one fix, five answers to \"and if we cannot?\"",
+    "cast": [
+     {
+      "who": "jordan",
+      "pose": "stand",
+      "mood": "thinking"
+     },
+     {
+      "who": "desk",
+      "pose": "point",
+      "mood": "calm"
+     }
+    ],
+    "note": "Who this is for: Jordan, who owns the decision to pull a system offline.",
+    "cites": [
+     "cisa-alert-php-20261021",
+     "ncsc-news-php"
+    ]
+   },
+   {
+    "kind": "scene",
+    "setting": "office",
+    "caption": "Everyone agrees on one thing",
+    "cast": [
+     {
+      "who": "jordan",
+      "x": 0.2,
+      "pose": "think",
+      "mood": "thinking",
+      "says": "What do the governments say?",
+      "max": 14
+     },
+     {
+      "who": "desk",
+      "x": 0.8,
+      "pose": "point",
+      "mood": "calm",
+      "says": "Every one: install the fix.",
+      "max": 14,
+      "flip": true
+     }
+    ],
+    "note": "Every agency compared on /agencies/ says install the fixed version.",
+    "cites": [
+     "cisa-alert-php-20261021",
+     "ncsc-news-php",
+     "certeu-sa-2026-018",
+     "acsc-alert-php"
+    ],
+    "not_a_quote": true
+   },
+   {
+    "kind": "spectrum",
+    "setting": "none",
+    "caption": "And if you cannot install it today?",
+    "stops": [
+     {
+      "label": "Offline",
+      "note": "NSA, CISA",
+      "colour": "#fecaca"
+     },
+     {
+      "label": "Last resort",
+      "note": "NCSC UK, BACS",
+      "colour": "#fed7aa"
+     },
+     {
+      "label": "Isolate",
+      "note": "CERT-EU, CERT-FR, CCCS",
+      "colour": "#fde68a"
+     },
+     {
+      "label": "Restrict",
+      "note": "CERT.LV",
+      "colour": "#e0e7ff"
+     },
+     {
+      "label": "Silent",
+      "note": "six agencies say nothing",
+      "colour": "#e5e7eb"
+     }
+    ],
+    "cast": [
+     {
+      "who": "jordan",
+      "x": 0.5,
+      "pose": "shrug",
+      "mood": "confused"
+     }
+    ],
+    "note": "Two agencies could not be read (HTTP challenges), so they are on no stop.",
+    "cites": [
+     "nsa-x-2112903220209098897",
+     "cisa-alert-php-20261021",
+     "ncsc-news-php",
+     "ch-bacs-warnung-php",
+     "certeu-sa-2026-018",
+     "certfr-2026-ale-014",
+     "cccs-al26-026",
+     "certlv-php-preventive"
+    ]
+   },
+   {
+    "kind": "evidence",
+    "setting": "none",
+    "caption": "Agencies, by what they advise",
+    "cast": [
+     {
+      "who": "desk",
+      "x": 0.14,
+      "pose": "point",
+      "mood": "calm"
+     }
+    ],
+    "evidence": {
+     "title": "16 agencies, if you cannot update",
+     "bars": [
+      {
+       "label": "offline",
+       "value": 2,
+       "colour": "#b91c1c"
+      },
+      {
+       "label": "last resort",
+       "value": 2,
+       "colour": "#ea580c"
+      },
+      {
+       "label": "isolate",
+       "value": 3,
+       "colour": "#d97706"
+      },
+      {
+       "label": "restrict",
+       "value": 1,
+       "colour": "#4f46e5"
+      },
+      {
+       "label": "silent",
+       "value": 6,
+       "colour": "#6b7280"
+      },
+      {
+       "label": "not read",
+       "value": 2,
+       "colour": "#d1d5db"
+      }
+     ]
+    },
+    "bars_from": {
+     "file": "data/agencies.json",
+     "count": "offline",
+     "groups": {
+      "offline": [
+       "yes"
+      ],
+      "last resort": [
+       "after mitigations",
+       "consider"
+      ],
+      "isolate": [
+       "isolate",
+       "isolate first"
+      ],
+      "restrict": [
+       "restrict from abroad"
+      ],
+      "silent": [
+       "none"
+      ],
+      "not read": [
+       "unknown"
+      ]
+     }
+    },
+    "note": "Counted from the offline column of /agencies/.",
+    "cites": [
+     "cisa-alert-php-20261021",
+     "ncsc-news-php"
+    ]
+   },
+   {
+    "kind": "evidence",
+    "setting": "none",
+    "caption": "The US: take it offline",
+    "cast": [
+     {
+      "who": "jordan",
+      "x": 0.16,
+      "pose": "think",
+      "mood": "worried"
+     }
+    ],
+    "evidence": {
+     "quote": "Organizations that cannot update immediately, or that continue to use PHP 8.1 or earlier unsupported versions, should take PHP-based systems offline until they can be patched or updated.",
+     "source": "CISA, 21 October (data/agencies.json)"
+    },
+    "quote_from": "data/agencies.json",
+    "cites": [
+     "cisa-alert-php-20261021"
+    ]
+   },
+   {
+    "kind": "evidence",
+    "setting": "none",
+    "caption": "The UK: mitigate first",
+    "cast": [
+     {
+      "who": "jordan",
+      "x": 0.16,
+      "pose": "think",
+      "mood": "thinking"
+     }
+    ],
+    "evidence": {
+     "quote": "If you are unable to apply the temporary mitigations, or applying them would take too long, you should consider taking the system offline until it can be fully mitigated.",
+     "source": "NCSC UK (data/agencies.json)"
+    },
+    "quote_from": "data/agencies.json",
+    "cites": [
+     "ncsc-news-php"
+    ]
+   },
+   {
+    "kind": "scene",
+    "setting": "office",
+    "caption": "The question for the board",
+    "cast": [
+     {
+      "who": "jordan",
+      "x": 0.2,
+      "pose": "point",
+      "mood": "determined",
+      "says": "Who here can pull a system offline tonight?",
+      "max": 16
+     },
+     {
+      "who": "sam",
+      "x": 0.8,
+      "pose": "stand",
+      "mood": "calm",
+      "says": "Me, if you write it down now.",
+      "max": 14,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "kind": "record",
+      "x": 0.5,
+      "y": 860,
+      "lines": [
+       "Decision owner:",
+       "Sam, security lead",
+       "Trigger: no patch",
+       "  by end of day",
+       "Approved: Jordan"
+      ],
+      "stamp": "agreed"
+     }
+    ],
+    "note": "Offline is a business decision; the agencies disagree, so someone in the organisation has to own it.",
+    "cites": [
+     "cisa-alert-php-20261021",
+     "ncsc-news-php"
+    ],
+    "not_a_quote": true
+   },
+   {
+    "kind": "punchline",
+    "setting": "none",
+    "punchline": "Same fix everywhere. Decide offline before you need it.",
+    "cast": [
+     {
+      "who": "jordan",
+      "x": 0.2,
+      "pose": "arms-up",
+      "mood": "happy"
+     },
+     {
+      "who": "desk",
+      "x": 0.82,
+      "pose": "stand",
+      "mood": "calm",
+      "flip": true
+     }
+    ],
+    "note": "All sixteen, with their words and links, are on /agencies/.",
+    "cites": [
+     "cisa-alert-php-20261021"
+    ],
+    "not_a_quote": true
+   }
+  ]
+ },
+ "cast": {
+  "what": "The cast of PHP October 2026's storyboards, v0.1, proposed by storyboard@php.newsroom on 22 October 2026 for the editor to accept, change or replace. Drawn programmatically by the storyboard kit v0.1.0 (vendored from api.storyboards.sgit.ai, hashes in assets/vendor/storyboards/VENDOR.md) from 'look'; nothing here is an image. Fictional people, each named after one of this site's readers (data/personas.json), so a storyboard can be read as that reader's briefing; one agent, the Desk, who speaks only for the evidence; and Mallory, the name cryptography has long given an attacker. No real person is drawn. Every human uses they/them, because the readers they are named after have no stated pronouns.",
+  "characters": [
+   {
+    "id": "desk",
+    "name": "The Desk",
+    "kind": "agent",
+    "pronouns": "it/its",
+    "role": "the newsroom's voice: says only what the evidence vault and this site's data say, with the status word attached",
+    "stands_for": "the team of agents behind this site, speaking with one voice",
+    "personality": "calm, exact, never rounds a number up",
+    "wants": "every reader to leave knowing which facts are confirmed and which are only reported",
+    "fears": "a headline number repeated without what it measures",
+    "line": "Confirmed, reported, or not known yet. Pick one.",
+    "look": {
+     "colour": "#0f766e"
+    }
+   },
+   {
+    "id": "casey",
+    "name": "Casey",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the website owner: runs a shop on WordPress with a hosting company",
+    "stands_for": "the reader on /briefings/site-owner/: plain English, wants to know what to ask the host",
+    "personality": "practical, a little anxious, writes things down",
+    "wants": "to know whether to do anything today",
+    "fears": "waking up to a hacked site",
+    "line": "Just tell me what to ask my host.",
+    "look": {
+     "skin": "#e0ac69",
+     "hair": "curly",
+     "hairColour": "#3b2a20",
+     "shirt": "#2563eb",
+     "trousers": "#1f2937",
+     "accessory": "none",
+     "height": 0.98
+    }
+   },
+   {
+    "id": "sam",
+    "name": "Sam",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the security lead: decides what is patched first and when a system goes offline",
+    "stands_for": "the reader on /briefings/security/",
+    "personality": "dry, sceptical, reads the advisory before the headline",
+    "wants": "evidence it was not hit",
+    "fears": "a quiet compromise found in a month",
+    "line": "Attempts are not compromises. Show me a compromise.",
+    "look": {
+     "skin": "#8d5524",
+     "hair": "short",
+     "hairColour": "#111827",
+     "shirt": "#7c3aed",
+     "trousers": "#1e293b",
+     "accessory": "lanyard",
+     "accentColour": "#f59e0b",
+     "height": 1.02
+    }
+   },
+   {
+    "id": "drew",
+    "name": "Drew",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the PHP and platform engineer: rebuilds, redeploys and restarts",
+    "stands_for": "the reader on /briefings/engineer/",
+    "personality": "quick, terse, lives in a terminal",
+    "wants": "the version numbers and the commands",
+    "fears": "a fix that is installed but never restarted",
+    "line": "Installed is not running. Restart it.",
+    "look": {
+     "skin": "#f1c27d",
+     "hair": "beanie",
+     "hairColour": "#6b4f2a",
+     "hatColour": "#0f766e",
+     "shirt": "#334155",
+     "trousers": "#111827",
+     "accessory": "headphones",
+     "height": 1.0
+    }
+   },
+   {
+    "id": "rowan",
+    "name": "Rowan",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the journalist: has to write the number in the headline",
+    "stands_for": "the reader on /briefings/journalist/",
+    "personality": "curious, fast, asks who said it first",
+    "wants": "a number that holds up",
+    "fears": "printing a figure nobody measured",
+    "line": "Who measured that?",
+    "look": {
+     "skin": "#c68642",
+     "hair": "long",
+     "hairColour": "#1b1b1b",
+     "shirt": "#dc2626",
+     "trousers": "#374151",
+     "accessory": "glasses",
+     "height": 0.97
+    }
+   },
+   {
+    "id": "jordan",
+    "name": "Jordan",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the board member: owns the risk, not the servers",
+    "stands_for": "the reader on /briefings/board/",
+    "personality": "patient, asks one question at a time",
+    "wants": "to know who decides to pull a system offline",
+    "fears": "learning about it from the news",
+    "line": "Who owns that decision?",
+    "look": {
+     "skin": "#ffdbac",
+     "hair": "bald",
+     "hairColour": "#9ca3af",
+     "shirt": "#1f2937",
+     "trousers": "#111827",
+     "accessory": "glasses",
+     "height": 1.04
+    }
+   },
+   {
+    "id": "mallory",
+    "name": "Mallory",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the attacker: scans the internet for servers that have not installed the fix",
+    "stands_for": "every party sending php2shell requests; who they are is not known",
+    "personality": "patient, automated, cheap",
+    "wants": "one server that answers",
+    "fears": "a patched, restarted server behind an edge rule",
+    "line": "I only need one.",
+    "look": {
+     "skin": "#d8a47f",
+     "hair": "beanie",
+     "hairColour": "#111827",
+     "hatColour": "#111827",
+     "shirt": "#111827",
+     "trousers": "#111827",
+     "accessory": "none",
+     "height": 1.0
+    }
+   }
+  ]
+ },
+ "packs": [
+  "security"
+ ]
+}

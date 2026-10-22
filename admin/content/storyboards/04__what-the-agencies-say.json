@@ -1,0 +1,315 @@
+{
+ "slug": "what-the-agencies-say",
+ "title": "What the agencies say",
+ "subtitle": "Sixteen government cyber agencies agree on the fix and disagree on what to do if you cannot install it. 8 panels.",
+ "reader": "board",
+ "see": [
+  "agencies/index.html",
+  "briefings/board/index.html"
+ ],
+ "status": "draft",
+ "by": "storyboard@php.newsroom, 22 October 2026",
+ "written": "2026-10-22",
+ "as_of_version": "0.5.2",
+ "vault_commit": "200d08971937",
+ "data_as_of": "2026-10-22T11:34Z",
+ "rule": "Every line a character says is the storyboard's own words, not a quote, and is marked not_a_quote; every evidence panel quotes this site's data word for word and names the file (quote_from), which the gate checks; every panel cites the evidence vault's source slugs it rests on (cites), which the gate checks against the manifest.",
+ "scenes": [
+  {
+   "kind": "cover",
+   "title": "What the agencies say",
+   "subtitle": "Sixteen agencies, one fix, five answers to \"and if we cannot?\"",
+   "cast": [
+    {
+     "who": "jordan",
+     "pose": "stand",
+     "mood": "thinking"
+    },
+    {
+     "who": "desk",
+     "pose": "point",
+     "mood": "calm"
+    }
+   ],
+   "note": "Who this is for: Jordan, who owns the decision to pull a system offline.",
+   "cites": [
+    "cisa-alert-php-20261021",
+    "ncsc-news-php"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "office",
+   "caption": "Everyone agrees on one thing",
+   "cast": [
+    {
+     "who": "jordan",
+     "x": 0.2,
+     "pose": "think",
+     "mood": "thinking",
+     "says": "What do the governments say?",
+     "max": 14
+    },
+    {
+     "who": "desk",
+     "x": 0.8,
+     "pose": "point",
+     "mood": "calm",
+     "says": "Every one: install the fix.",
+     "max": 14,
+     "flip": true
+    }
+   ],
+   "note": "Every agency compared on /agencies/ says install the fixed version.",
+   "cites": [
+    "cisa-alert-php-20261021",
+    "ncsc-news-php",
+    "certeu-sa-2026-018",
+    "acsc-alert-php"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "spectrum",
+   "setting": "none",
+   "caption": "And if you cannot install it today?",
+   "stops": [
+    {
+     "label": "Offline",
+     "note": "NSA, CISA",
+     "colour": "#fecaca"
+    },
+    {
+     "label": "Last resort",
+     "note": "NCSC UK, BACS",
+     "colour": "#fed7aa"
+    },
+    {
+     "label": "Isolate",
+     "note": "CERT-EU, CERT-FR, CCCS",
+     "colour": "#fde68a"
+    },
+    {
+     "label": "Restrict",
+     "note": "CERT.LV",
+     "colour": "#e0e7ff"
+    },
+    {
+     "label": "Silent",
+     "note": "six agencies say nothing",
+     "colour": "#e5e7eb"
+    }
+   ],
+   "cast": [
+    {
+     "who": "jordan",
+     "x": 0.5,
+     "pose": "shrug",
+     "mood": "confused"
+    }
+   ],
+   "note": "Two agencies could not be read (HTTP challenges), so they are on no stop.",
+   "cites": [
+    "nsa-x-2112903220209098897",
+    "cisa-alert-php-20261021",
+    "ncsc-news-php",
+    "ch-bacs-warnung-php",
+    "certeu-sa-2026-018",
+    "certfr-2026-ale-014",
+    "cccs-al26-026",
+    "certlv-php-preventive"
+   ]
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "Agencies, by what they advise",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.14,
+     "pose": "point",
+     "mood": "calm"
+    }
+   ],
+   "evidence": {
+    "title": "16 agencies, if you cannot update",
+    "bars": [
+     {
+      "label": "offline",
+      "value": 2,
+      "colour": "#b91c1c"
+     },
+     {
+      "label": "last resort",
+      "value": 2,
+      "colour": "#ea580c"
+     },
+     {
+      "label": "isolate",
+      "value": 3,
+      "colour": "#d97706"
+     },
+     {
+      "label": "restrict",
+      "value": 1,
+      "colour": "#4f46e5"
+     },
+     {
+      "label": "silent",
+      "value": 6,
+      "colour": "#6b7280"
+     },
+     {
+      "label": "not read",
+      "value": 2,
+      "colour": "#d1d5db"
+     }
+    ]
+   },
+   "bars_from": {
+    "file": "data/agencies.json",
+    "count": "offline",
+    "groups": {
+     "offline": [
+      "yes"
+     ],
+     "last resort": [
+      "after mitigations",
+      "consider"
+     ],
+     "isolate": [
+      "isolate",
+      "isolate first"
+     ],
+     "restrict": [
+      "restrict from abroad"
+     ],
+     "silent": [
+      "none"
+     ],
+     "not read": [
+      "unknown"
+     ]
+    }
+   },
+   "note": "Counted from the offline column of /agencies/.",
+   "cites": [
+    "cisa-alert-php-20261021",
+    "ncsc-news-php"
+   ]
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "The US: take it offline",
+   "cast": [
+    {
+     "who": "jordan",
+     "x": 0.16,
+     "pose": "think",
+     "mood": "worried"
+    }
+   ],
+   "evidence": {
+    "quote": "Organizations that cannot update immediately, or that continue to use PHP 8.1 or earlier unsupported versions, should take PHP-based systems offline until they can be patched or updated.",
+    "source": "CISA, 21 October (data/agencies.json)"
+   },
+   "quote_from": "data/agencies.json",
+   "cites": [
+    "cisa-alert-php-20261021"
+   ]
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "The UK: mitigate first",
+   "cast": [
+    {
+     "who": "jordan",
+     "x": 0.16,
+     "pose": "think",
+     "mood": "thinking"
+    }
+   ],
+   "evidence": {
+    "quote": "If you are unable to apply the temporary mitigations, or applying them would take too long, you should consider taking the system offline until it can be fully mitigated.",
+    "source": "NCSC UK (data/agencies.json)"
+   },
+   "quote_from": "data/agencies.json",
+   "cites": [
+    "ncsc-news-php"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "office",
+   "caption": "The question for the board",
+   "cast": [
+    {
+     "who": "jordan",
+     "x": 0.2,
+     "pose": "point",
+     "mood": "determined",
+     "says": "Who here can pull a system offline tonight?",
+     "max": 16
+    },
+    {
+     "who": "sam",
+     "x": 0.8,
+     "pose": "stand",
+     "mood": "calm",
+     "says": "Me, if you write it down now.",
+     "max": 14,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "record",
+     "x": 0.5,
+     "y": 860,
+     "lines": [
+      "Decision owner:",
+      "Sam, security lead",
+      "Trigger: no patch",
+      "  by end of day",
+      "Approved: Jordan"
+     ],
+     "stamp": "agreed"
+    }
+   ],
+   "note": "Offline is a business decision; the agencies disagree, so someone in the organisation has to own it.",
+   "cites": [
+    "cisa-alert-php-20261021",
+    "ncsc-news-php"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "punchline",
+   "setting": "none",
+   "punchline": "Same fix everywhere. Decide offline before you need it.",
+   "cast": [
+    {
+     "who": "jordan",
+     "x": 0.2,
+     "pose": "arms-up",
+     "mood": "happy"
+    },
+    {
+     "who": "desk",
+     "x": 0.82,
+     "pose": "stand",
+     "mood": "calm",
+     "flip": true
+    }
+   ],
+   "note": "All sixteen, with their words and links, are on /agencies/.",
+   "cites": [
+    "cisa-alert-php-20261021"
+   ],
+   "not_a_quote": true
+  }
+ ]
+}

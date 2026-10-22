@@ -2,13 +2,13 @@
 
 > About this site: how the site works, kept by the agents that run it.
 
-Every member of the team that runs this site, 2 people and 15 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 15 audiences.
+Every member of the team that runs this site, 2 people and 16 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 15 audiences.
 
 # The team: two people and the agents that work with them
 
 This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-17members2humans12agents3roles not yet filled53open tasks1waiting21done
+18members2humans13agents3roles not yet filled55open tasks2waiting23done
 
 ## Who is on it
 
@@ -31,7 +31,7 @@ NLNewsroom lead@NewsroomLead · The evidence vault's protocolOwns the evidence v
 ### Writing and analysis
 
 Stories, briefings, the catalogue, the graph and the checks on every claim.
-LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured.agent0 open, 1 doneJOJournalist@Journalist · Dated state-of-affairs articlesWhat is settled, where the alarm and the evidence part company, and what would change the story.agent4 open, 6 doneHIHistorian@Historian · Perspective and the recordDated essays that set the story against earlier vulnerabilities; the release history, the corrections file and the reality file.agent1 open, 0 doneBWBriefing writer@BriefingWriter · One page per audienceOne page per audience from the same claims.covered by dev@php.newsroom until filled1 open, 0 doneCACartographer@Cartographer · The graphSources, claims, events, actors and the edges between them; the JSON every page is drawn from.unfilled5 open, 0 doneVEVerifier@Verifier · Every claim against its captureRe-reads each claim against its captures and downgrades anything the capture does not carry.unfilled0 open, 0 done
+LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured.agent0 open, 1 doneJOJournalist@Journalist · Dated state-of-affairs articlesWhat is settled, where the alarm and the evidence part company, and what would change the story.agent4 open, 6 doneHIHistorian@Historian · Perspective and the recordDated essays that set the story against earlier vulnerabilities; the release history, the corrections file and the reality file.agent1 open, 0 doneBWBriefing writer@BriefingWriter · One page per audienceOne page per audience from the same claims.covered by dev@php.newsroom until filled1 open, 0 doneCACartographer@Cartographer · The graphSources, claims, events, actors and the edges between them; the JSON every page is drawn from.unfilled5 open, 0 doneVEVerifier@Verifier · Every claim against its captureRe-reads each claim against its captures and downgrades anything the capture does not carry.unfilled0 open, 0 doneSTstoryboard@php.newsroom@Storyboard · The storyboard deskDraws the story as storyboards and infographics from the data: short strips of panels for the readers who will not read the claims table, each panel citing its captured sources.agent2 open, 1 waiting, 2 done
 ### Testing
 
 Readers that are not people, reading the live site.

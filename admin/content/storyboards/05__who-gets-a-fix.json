@@ -1,0 +1,378 @@
+{
+ "slug": "who-gets-a-fix",
+ "title": "Who gets a fix, and when",
+ "subtitle": "From php.net to a running server: the ladder a fix climbs down, and the versions it never reaches. 9 panels.",
+ "reader": "engineer",
+ "see": [
+  "patching/index.html",
+  "patching/inventory/index.html",
+  "briefings/engineer/index.html"
+ ],
+ "status": "draft",
+ "by": "storyboard@php.newsroom, 22 October 2026",
+ "written": "2026-10-22",
+ "as_of_version": "0.5.2",
+ "vault_commit": "200d08971937",
+ "data_as_of": "2026-10-22T11:34Z",
+ "rule": "Every line a character says is the storyboard's own words, not a quote, and is marked not_a_quote; every evidence panel quotes this site's data word for word and names the file (quote_from), which the gate checks; every panel cites the evidence vault's source slugs it rests on (cites), which the gate checks against the manifest.",
+ "scenes": [
+  {
+   "kind": "cover",
+   "title": "Who gets a fix, and when",
+   "subtitle": "From a tag on php-src to a restarted worker",
+   "cast": [
+    {
+     "who": "drew",
+     "pose": "wave",
+     "mood": "determined"
+    },
+    {
+     "who": "desk",
+     "pose": "point",
+     "mood": "calm"
+    }
+   ],
+   "note": "Who this is for: Drew, who rebuilds, redeploys and restarts.",
+   "cites": [
+    "php-net-advisory"
+   ]
+  },
+  {
+   "kind": "graph",
+   "caption": "How a fix reaches a server",
+   "graph": {
+    "nodes": [
+     {
+      "id": "src",
+      "label": "php-src tags",
+      "x": 0.16,
+      "y": 0.45
+     },
+     {
+      "id": "rel",
+      "label": "php.net releases",
+      "x": 0.34,
+      "y": 0.45
+     },
+     {
+      "id": "os",
+      "label": "OS packages",
+      "x": 0.55,
+      "y": 0.25
+     },
+     {
+      "id": "img",
+      "label": "Docker images",
+      "x": 0.55,
+      "y": 0.68
+     },
+     {
+      "id": "host",
+      "label": "hosting companies",
+      "x": 0.75,
+      "y": 0.45
+     },
+     {
+      "id": "run",
+      "label": "running worker",
+      "x": 0.9,
+      "y": 0.75
+     }
+    ],
+    "edges": [
+     {
+      "from": "src",
+      "to": "rel",
+      "label": "13:35"
+     },
+     {
+      "from": "rel",
+      "to": "os",
+      "label": "15:30"
+     },
+     {
+      "from": "rel",
+      "to": "img",
+      "label": "16:03"
+     },
+     {
+      "from": "os",
+      "to": "host"
+     },
+     {
+      "from": "img",
+      "to": "host"
+     },
+     {
+      "from": "host",
+      "to": "run",
+      "label": "restart"
+     }
+    ],
+    "path": [
+     "src",
+     "rel",
+     "os",
+     "host",
+     "run"
+    ]
+   },
+   "cast": [
+    {
+     "who": "drew",
+     "x": 0.06,
+     "pose": "point",
+     "mood": "thinking"
+    }
+   ],
+   "note": "Tags at 13:35 UTC and the advisory at 14:00 on 21 October; the first OS package in the NCSC-NL inventory (Red Hat) at 15:30; Ubuntu, Debian and the Docker image by 16:03.",
+   "cites": [
+    "github-php-src-tags",
+    "php-net-advisory",
+    "ncsc-nl-php2shell-software-list"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "none",
+   "caption": "The supported branches",
+   "cast": [
+    {
+     "who": "drew",
+     "x": 0.82,
+     "pose": "point",
+     "mood": "happy",
+     "says": "Four branches, four releases, signed tags.",
+     "max": 16,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "board",
+     "x": 0.36,
+     "y": 860,
+     "scale": 1.1,
+     "lines": [
+      "8.5  ->  8.5.12",
+      "8.4  ->  8.4.27",
+      "8.3  ->  8.3.36",
+      "8.2  ->  8.2.35",
+      "",
+      "with Windows binaries"
+     ]
+    }
+   ],
+   "note": "The full engine change, in the CVE records.",
+   "cites": [
+    "php-net-advisory",
+    "github-php-src-tags",
+    "cve-cve-2026-109618"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "scene",
+   "setting": "none",
+   "caption": "The branches past their end of life",
+   "cast": [
+    {
+     "who": "drew",
+     "x": 0.16,
+     "pose": "shrug",
+     "mood": "worried",
+     "says": "And our 7.4 box?",
+     "max": 12
+    }
+   ],
+   "props": [
+    {
+     "kind": "board",
+     "x": 0.6,
+     "y": 860,
+     "scale": 1.1,
+     "lines": [
+      "8.1, 8.0: a source backport,",
+      "  no release, no binaries",
+      "7.4: a 17-file mitigation",
+      "  commit on a branch",
+      "7.3 to 5.x: nothing"
+     ]
+    }
+   ],
+   "note": "End-of-life branches got at most a minimal source backport; none is in the CVE records.",
+   "cites": [
+    "github-php-src-branch-7.4-backport",
+    "github-php-src-fix-commit-3584a98bd",
+    "ncsc-nl-advisories"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "Downstream products, at 15:28 UTC on 22 October",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.14,
+     "pose": "point",
+     "mood": "calm"
+    }
+   ],
+   "evidence": {
+    "title": "724 products in the NCSC-NL list",
+    "bars": [
+     {
+      "label": "investigating",
+      "value": 440,
+      "colour": "#d97706"
+     },
+     {
+      "label": "vulnerable",
+      "value": 216,
+      "colour": "#b91c1c"
+     },
+     {
+      "label": "fixed",
+      "value": 61,
+      "colour": "#15803d"
+     },
+     {
+      "label": "not affected",
+      "value": 6,
+      "colour": "#6b7280"
+     }
+    ]
+   },
+   "bars_from": {
+    "file": "data/inventory-history.json",
+    "snapshot": "94b4b16db9e5"
+   },
+   "note": "Read commit by commit from the public NCSC-NL list; one row has no status.",
+   "cites": [
+    "ncsc-nl-php2shell-software-list"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "office",
+   "caption": "Installed is not running",
+   "cast": [
+    {
+     "who": "drew",
+     "x": 0.2,
+     "pose": "point",
+     "mood": "determined",
+     "says": "Package updated. Workers still old.",
+     "max": 14
+    }
+   ],
+   "props": [
+    {
+     "kind": "terminal",
+     "x": 0.62,
+     "y": 820,
+     "lines": [
+      "$ php -v",
+      "PHP 8.3.36 (cli)",
+      "$ curl -sI site | grep X-Powered",
+      "X-Powered-By: PHP/8.3.35",
+      "$ systemctl restart php-fpm"
+     ]
+    }
+   ],
+   "note": "The fix is live only when every PHP process has been restarted on the new binary.",
+   "cites": [
+    "php-net-advisory"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "If you cannot today",
+   "cast": [
+    {
+     "who": "drew",
+     "x": 0.16,
+     "pose": "think",
+     "mood": "thinking"
+    }
+   ],
+   "evidence": {
+    "quote": "If that cannot happen today, apply the temporary settings, put a firewall in front, and as a last resort take the system offline.",
+    "source": "this site, What should be done? (data/plain.json)"
+   },
+   "quote_from": "data/plain.json",
+   "cites": [
+    "php-net-advisory",
+    "cisa-alert-php-20261021",
+    "ncsc-news-php"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "none",
+   "caption": "Check the box you deployed to",
+   "cast": [
+    {
+     "who": "casey",
+     "x": 0.18,
+     "pose": "think",
+     "mood": "thinking",
+     "says": "How do I know my host did it?",
+     "max": 14
+    },
+    {
+     "who": "drew",
+     "x": 0.82,
+     "pose": "point",
+     "mood": "happy",
+     "says": "Ask for the version running, not the one installed.",
+     "max": 16,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "envelope",
+     "x": 0.5,
+     "y": 760,
+     "label": "to: my host"
+    }
+   ],
+   "note": "The question for a host: which PHP version is serving my site right now, and when was it restarted.",
+   "cites": [
+    "php-net-advisory"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "punchline",
+   "setting": "none",
+   "punchline": "A fix counts when the worker restarts on it.",
+   "cast": [
+    {
+     "who": "drew",
+     "x": 0.2,
+     "pose": "arms-up",
+     "mood": "excited"
+    },
+    {
+     "who": "desk",
+     "x": 0.82,
+     "pose": "stand",
+     "mood": "calm",
+     "flip": true
+    }
+   ],
+   "note": "Every rung, every downstream row and its status, on /patching/.",
+   "cites": [
+    "php-net-advisory",
+    "ncsc-nl-php2shell-software-list"
+   ],
+   "not_a_quote": true
+  }
+ ]
+}

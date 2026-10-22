@@ -1,0 +1,374 @@
+{
+ "slug": "where-it-stands",
+ "title": "Where it stands, 22 October",
+ "subtitle": "The situation at the latest capture, 11:34 UTC on 22 October 2026, for someone who runs a website. 10 panels.",
+ "reader": "site-owner",
+ "see": [
+  "index.html",
+  "briefings/site-owner/index.html",
+  "playbook/index.html"
+ ],
+ "status": "draft",
+ "by": "storyboard@php.newsroom, 22 October 2026",
+ "written": "2026-10-22",
+ "as_of_version": "0.5.2",
+ "vault_commit": "200d08971937",
+ "data_as_of": "2026-10-22T11:34Z",
+ "rule": "Every line a character says is the storyboard's own words, not a quote, and is marked not_a_quote; every evidence panel quotes this site's data word for word and names the file (quote_from), which the gate checks; every panel cites the evidence vault's source slugs it rests on (cites), which the gate checks against the manifest.",
+ "scenes": [
+  {
+   "kind": "cover",
+   "title": "Where it stands",
+   "subtitle": "Two PHP flaws, one fix, 22 October 2026, 11:34 UTC",
+   "cast": [
+    {
+     "who": "casey",
+     "pose": "wave",
+     "mood": "worried"
+    },
+    {
+     "who": "desk",
+     "pose": "wave",
+     "mood": "calm"
+    }
+   ],
+   "note": "Who this is for: Casey, who runs a website on PHP and heard about it on the news.",
+   "cites": [
+    "php-net-advisory"
+   ],
+   "source": "data/plain.json"
+  },
+  {
+   "kind": "scene",
+   "setting": "office",
+   "caption": "The question",
+   "cast": [
+    {
+     "who": "casey",
+     "x": 0.22,
+     "pose": "think",
+     "mood": "worried",
+     "says": "The radio says websites are going offline. Is mine?",
+     "max": 18
+    },
+    {
+     "who": "desk",
+     "x": 0.78,
+     "pose": "point",
+     "mood": "calm",
+     "says": "Let me show you what is confirmed first.",
+     "max": 18,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "laptop",
+     "x": 0.5,
+     "y": 760,
+     "scale": 1.2
+    }
+   ],
+   "note": "The headlines on the morning of 22 October: sites dark, governments warning.",
+   "cites": [
+    "bbc-live-ckgel5xp2xv9t"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "What happened",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.2,
+     "pose": "point",
+     "mood": "calm"
+    }
+   ],
+   "evidence": {
+    "quote": "Either lets anyone on the internet, with no password, run commands on the web server.",
+    "source": "this site, What happened? (data/plain.json)"
+   },
+   "quote_from": "data/plain.json",
+   "note": "Two flaws, CVE-2026-109618 and CVE-2026-109619, both 9.2 out of 10, both in PHP itself.",
+   "cites": [
+    "php-net-advisory",
+    "cve-cve-2026-109618",
+    "cve-cve-2026-109619"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "none",
+   "caption": "Where the hole is",
+   "cast": [
+    {
+     "who": "casey",
+     "x": 0.15,
+     "pose": "point",
+     "mood": "surprised",
+     "says": "So not my phone?",
+     "max": 14
+    }
+   ],
+   "props": [
+    {
+     "kind": "phone",
+     "x": 0.32,
+     "y": 700,
+     "scale": 1.8
+    },
+    {
+     "kind": "mark",
+     "x": 0.32,
+     "y": 560,
+     "ok": true
+    },
+    {
+     "kind": "server",
+     "x": 0.66,
+     "y": 860,
+     "label": "your web server"
+    },
+    {
+     "kind": "padlock",
+     "x": 0.86,
+     "y": 760,
+     "open": true,
+     "label": "until patched"
+    }
+   ],
+   "note": "Not your phone or laptop: the flaw is on web servers. Visitors are affected only indirectly.",
+   "cites": [
+    "php-net-advisory",
+    "ncsc-news-php"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "scene",
+   "setting": "none",
+   "caption": "The fix, since 21 October",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.82,
+     "pose": "point",
+     "mood": "happy",
+     "says": "Four fixed versions. Updated AND restarted.",
+     "max": 16,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "board",
+     "x": 0.36,
+     "y": 860,
+     "scale": 1.1,
+     "lines": [
+      "PHP 8.5.12",
+      "PHP 8.4.27",
+      "PHP 8.3.36",
+      "PHP 8.2.35",
+      "",
+      "8.1 or older:",
+      "no ready-made fix"
+     ]
+    }
+   ],
+   "note": "The fix is in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35, released on 21 October 2026. Websites on PHP 8.1 or older have no ready-made fix.",
+   "cites": [
+    "php-net-advisory",
+    "github-php-src-branch-7.4-backport"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "scene",
+   "setting": "night",
+   "caption": "Attackers are trying",
+   "cast": [
+    {
+     "who": "mallory",
+     "x": 0.18,
+     "pose": "point",
+     "mood": "determined",
+     "says": "Knock knock. Millions of times.",
+     "max": 16
+    }
+   ],
+   "props": [
+    {
+     "kind": "arrow",
+     "x": 0.3,
+     "y": 560,
+     "to": 0.58,
+     "label": "php2shell requests",
+     "colour": "#fca5a5",
+     "dashed": true
+    },
+    {
+     "kind": "server",
+     "x": 0.7,
+     "y": 860,
+     "label": "patched and restarted"
+    },
+    {
+     "kind": "mark",
+     "x": 0.88,
+     "y": 700,
+     "ok": true
+    }
+   ],
+   "note": "Attempts reported by one CDN in the millions by 01:25 UTC on 22 October; Amazon reports a honeypot hit on 17 October. Attempts are requests, not break-ins.",
+   "cites": [
+    "x-eastdakota-php2shell-stats",
+    "thehackernews-php2shell-4days"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "Has anyone been hacked?",
+   "cast": [
+    {
+     "who": "casey",
+     "x": 0.18,
+     "pose": "think",
+     "mood": "thinking"
+    }
+   ],
+   "evidence": {
+    "quote": "Attackers are trying to use the flaws, in large numbers. No organisation has said it was broken into.",
+    "source": "this site, Right now (data/plain.json)"
+   },
+   "quote_from": "data/plain.json",
+   "note": "CISA's list of flaws known to be used in attacks did not include either one at the latest capture.",
+   "cites": [
+    "x-eastdakota-php2shell-stats",
+    "cisa-kev-json"
+   ]
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "How sure is this site?",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.16,
+     "pose": "point",
+     "mood": "calm"
+    }
+   ],
+   "evidence": {
+    "title": "70 statements checked, by status",
+    "bars": [
+     {
+      "label": "confirmed",
+      "value": 22,
+      "colour": "#15803d"
+     },
+     {
+      "label": "reported",
+      "value": 33,
+      "colour": "#2563eb"
+     },
+     {
+      "label": "disputed",
+      "value": 8,
+      "colour": "#d97706"
+     },
+     {
+      "label": "contradicted",
+      "value": 3,
+      "colour": "#b91c1c"
+     },
+     {
+      "label": "unverified",
+      "value": 4,
+      "colour": "#6b7280"
+     }
+    ]
+   },
+   "bars_from": {
+    "file": "data/claims.json",
+    "count": "status"
+   },
+   "note": "Counted from every claim on /claims/; confirmed means two or more original sources agree.",
+   "cites": [
+    "php-net-advisory"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "office",
+   "caption": "What nobody knows yet",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.84,
+     "pose": "shrug",
+     "mood": "thinking",
+     "says": "Stated, not papered over.",
+     "max": 14,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "board",
+     "x": 0.38,
+     "y": 860,
+     "scale": 1.1,
+     "lines": [
+      "Was any site broken into?",
+      "Is the fix complete?",
+      "Who leaked it on 20 Oct?",
+      "Which sites went offline,",
+      "  and why?",
+      "Where does 70% come from?"
+     ]
+    }
+   ],
+   "note": "The five open questions on the front page, each updated when the evidence is.",
+   "cites": [
+    "php-foundation-blog-security-release",
+    "bbc-live-ckgel5xp2xv9t",
+    "wiz-blog-php2shell"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "punchline",
+   "setting": "none",
+   "punchline": "Update PHP. Restart it. Ask your host to confirm both.",
+   "cast": [
+    {
+     "who": "casey",
+     "x": 0.2,
+     "pose": "arms-up",
+     "mood": "determined"
+    },
+    {
+     "who": "desk",
+     "x": 0.82,
+     "pose": "wave",
+     "mood": "happy",
+     "flip": true
+    }
+   ],
+   "note": "What should be done, from the PHP project and the agencies: the fixed version, restarted; if not today, the temporary settings, a firewall in front, and offline as a last resort.",
+   "cites": [
+    "php-net-advisory",
+    "cisa-alert-php-20261021",
+    "ncsc-news-php"
+   ],
+   "not_a_quote": true
+  }
+ ]
+}

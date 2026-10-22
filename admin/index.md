@@ -192,6 +192,18 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Runs on a schedule bound to the editor's session, every four hours. Not built: grading of numbers, timeline, agencies and impact rows beyond the claims they share; a check of the gate's em-dash exemptions.
 
+### Storyboards and the briefing deck (storyboard@php.newsroom)
+
+- `admin/content/storyboards/`: seven storyboards (61 panels) and their cast of seven (fictional readers named after `data/personas.json`, the Desk, Mallory; all humans they/them; no real person drawn), authored JSON. Built by `build_storyboards()` into `/storyboards/` (the shelf, the cast lineup) and `/storyboards//` (deck, grid, script, a panel-by-panel text with each panel's sources, `storyboard.json`, `bundle.json`), plus `storyboards/cast.json` and `storyboards/catalogue.json` for storyboards.sgit.ai.
+
+- Drawn in the reader's browser by the storyboard kit v0.1.0 from api.storyboards.sgit.ai, vendored unedited in `assets/vendor/storyboards/` (VENDOR.md); `node admin/build/storyboards_check.js` runs the kit's own validator.
+
+- The gate (check 4f) refuses an unknown character, kind, pose, mood, setting or prop, a panel that cites nothing or an unknown slug, a spoken line not marked `not_a_quote`, an evidence quote not word for word in its `quote_from` file, a bar chart that differs from its file (claims by status, agencies by stance, an inventory snapshot), and any kit file whose hash differs from the release manifest. A storyboard drawn against older evidence than the latest capture is kept as drawn: its page says so, and a mismatch warns instead of failing.
+
+- The briefing deck: `admin/content/decks/2026-10-22__briefing.json`, 12 slides dated 22 October 2026 with evidence as of 11:34 UTC; built by `build_decks()` into `/storyboards/briefing-2026-10-22/` (read, present full screen with the keys, print one slide per page; speaker notes and sources per slide; `assets/briefing-deck.js`). The PowerPoint beside it is made from the same file by `admin/build/deck_pptx.js` (pptxgenjs, not in the repository; native shapes and charts, notes with sources) with a sidecar holding the source's sha256; the gate (check 4g) refuses a stale PowerPoint and checks the deck's slugs, quotes and bars as for storyboards.
+
+- Not built: infographics drawn by an image model (needs an OpenRouter key; board 082); the series on storyboards.sgit.ai (board 083); a redraw when the evidence moves (board 084).
+
 ### Not built
 
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.

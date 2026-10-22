@@ -1,0 +1,298 @@
+{
+ "slug": "the-weaponisation-ladder",
+ "title": "The weaponisation ladder",
+ "subtitle": "The cyber desk's reading as a strip: which rungs php2shell has reached, and which would move it up. 8 panels.",
+ "reader": "security",
+ "see": [
+  "articles/patch-at-the-speed-of-metasploit/index.html",
+  "exploitation/index.html"
+ ],
+ "status": "draft",
+ "by": "storyboard@php.newsroom, 22 October 2026",
+ "written": "2026-10-22",
+ "as_of_version": "0.5.2",
+ "vault_commit": "200d08971937",
+ "data_as_of": "2026-10-22T11:34Z",
+ "rule": "Every line a character says is the storyboard's own words, not a quote, and is marked not_a_quote; every evidence panel quotes this site's data word for word and names the file (quote_from), which the gate checks; every panel cites the evidence vault's source slugs it rests on (cites), which the gate checks against the manifest.",
+ "scenes": [
+  {
+   "kind": "cover",
+   "title": "The weaponisation ladder",
+   "subtitle": "From private exploits to ransomware, seven rungs",
+   "cast": [
+    {
+     "who": "sam",
+     "pose": "stand",
+     "mood": "thinking"
+    },
+    {
+     "who": "mallory",
+     "pose": "shrug",
+     "mood": "neutral"
+    }
+   ],
+   "note": "Drawn from the cyber desk's piece, 'Patch at the speed of Metasploit', written against the source watch at 17:51 UTC on 22 October.",
+   "cites": [
+    "calif-php2shell",
+    "cisa-kev-json"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "office",
+   "caption": "Capability is not commodity",
+   "cast": [
+    {
+     "who": "sam",
+     "x": 0.2,
+     "pose": "think",
+     "mood": "thinking",
+     "says": "Is this the next Log4Shell?",
+     "max": 14
+    },
+    {
+     "who": "desk",
+     "x": 0.8,
+     "pose": "point",
+     "mood": "calm",
+     "says": "Not yet. It still needs knowledge of the target.",
+     "max": 16,
+     "flip": true
+    }
+   ],
+   "note": "Log4Shell and Shellshock worked with one request, everywhere; php2shell, today, needs the right configuration.",
+   "cites": [
+    "wikipedia-log4shell",
+    "wikipedia-shellshock",
+    "sansec-research-php2shell"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "spectrum",
+   "setting": "none",
+   "caption": "Rungs 1 to 4: reached",
+   "stops": [
+    {
+     "label": "1",
+     "note": "private exploits (Aug)",
+     "colour": "#fca5a5"
+    },
+    {
+     "label": "2",
+     "note": "one pre-disclosure hit",
+     "colour": "#fca5a5"
+    },
+    {
+     "label": "3",
+     "note": "public PoCs, mostly broken",
+     "colour": "#fca5a5"
+    },
+    {
+     "label": "4",
+     "note": "mass scanning",
+     "colour": "#fca5a5"
+    }
+   ],
+   "cast": [
+    {
+     "who": "mallory",
+     "x": 0.5,
+     "pose": "point",
+     "mood": "determined"
+    }
+   ],
+   "note": "Calif, OpenAI and Wiz in August; a honeypot hit on 17 October; hundreds of GitHub repositories, which Sansec says fail on default installs; version-fingerprint scanning.",
+   "cites": [
+    "calif-php2shell",
+    "wiz-blog-php2shell",
+    "aws-security-blog-madpot",
+    "sansec-research-php2shell"
+   ]
+  },
+  {
+   "kind": "spectrum",
+   "setting": "none",
+   "caption": "Rungs 5 to 7: not reached",
+   "stops": [
+    {
+     "label": "5",
+     "note": "a one-command framework module",
+     "colour": "#e5e7eb"
+    },
+    {
+     "label": "6",
+     "note": "CISA's exploited list",
+     "colour": "#e5e7eb"
+    },
+    {
+     "label": "7",
+     "note": "miners, botnets, ransomware",
+     "colour": "#e5e7eb"
+    }
+   ],
+   "cast": [
+    {
+     "who": "sam",
+     "x": 0.5,
+     "pose": "think",
+     "mood": "calm"
+    }
+   ],
+   "note": "A Metasploit pull request is open and not merged; neither flaw is in KEV; no evidence of monetisation.",
+   "cites": [
+    "cisa-kev-json"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "night",
+   "caption": "Rung 7 is the one to hold on to",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.82,
+     "pose": "point",
+     "mood": "worried",
+     "says": "Both earlier PHP flaws in KEV ended up with ransomware.",
+     "max": 18,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "record",
+     "x": 0.34,
+     "y": 860,
+     "lines": [
+      "CVE-2019-11043",
+      "  ransomware: known",
+      "CVE-2024-4577",
+      "  ransomware: known"
+     ],
+     "stamp": "KEV"
+    }
+   ],
+   "note": "Configuration-dependent changes how many victims there are, not whether someone eventually monetises the bug.",
+   "cites": [
+    "cisa-kev-json",
+    "cve-cve-2019-11043",
+    "cve-cve-2024-4577"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "evidence",
+   "setting": "none",
+   "caption": "How fast KEV moved before",
+   "cast": [
+    {
+     "who": "sam",
+     "x": 0.14,
+     "pose": "stand",
+     "mood": "thinking"
+    }
+   ],
+   "evidence": {
+    "title": "Days from disclosure to KEV",
+    "bars": [
+     {
+      "label": "Log4Shell",
+      "value": 1,
+      "shown": "day 1",
+      "colour": "#b91c1c"
+     },
+     {
+      "label": "MOVEit",
+      "value": 1,
+      "shown": "day 1",
+      "colour": "#b91c1c"
+     },
+     {
+      "label": "CVE-2024-4577",
+      "value": 3,
+      "shown": "3 days",
+      "colour": "#d97706"
+     },
+     {
+      "label": "php2shell",
+      "value": 0.15,
+      "shown": "not yet",
+      "colour": "#6b7280"
+     }
+    ]
+   },
+   "bars_from": {
+    "file": "admin/content/articles/2026-10-22__cyber__patch-at-the-speed-of-metasploit.md",
+    "row": "KEV listing"
+   },
+   "note": "From the cyber desk's ladder table: Log4Shell and MOVEit on day one, CVE-2024-4577 three days after.",
+   "cites": [
+    "cisa-kev-json",
+    "cve-cve-2021-44228",
+    "cve-cve-2023-34362",
+    "akamai-blog-cve-2024-4577-one-day"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "office",
+   "caption": "What would move it up a rung",
+   "cast": [
+    {
+     "who": "sam",
+     "x": 0.18,
+     "pose": "point",
+     "mood": "determined",
+     "says": "So we watch for the artefacts.",
+     "max": 14
+    }
+   ],
+   "props": [
+    {
+     "kind": "board",
+     "x": 0.6,
+     "y": 860,
+     "scale": 1.1,
+     "lines": [
+      "a merged Metasploit module",
+      "an exploiting nuclei template",
+      "a KEV listing",
+      "a second patch",
+      "a regression"
+     ]
+    }
+   ],
+   "note": "The cyber desk watches each of these hourly through the source watch (board item 079).",
+   "cites": [
+    "cisa-kev-json"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "punchline",
+   "setting": "none",
+   "punchline": "Patch before it needs no skill.",
+   "cast": [
+    {
+     "who": "sam",
+     "x": 0.2,
+     "pose": "arms-up",
+     "mood": "determined"
+    },
+    {
+     "who": "mallory",
+     "x": 0.82,
+     "pose": "sit",
+     "mood": "sad",
+     "flip": true
+    }
+   ],
+   "note": "\"Patch at the speed of Metasploit\": the time that matters is disclosure to the moment exploitation stops needing skill.",
+   "cites": [
+    "cisa-kev-json"
+   ],
+   "not_a_quote": true
+  }
+ ]
+}

@@ -3862,6 +3862,94 @@
 "first": "0.4.2",
 "changed": "0.4.2",
 "date": "2026-10-22"
+},
+"storyboard-where-it-stands": {
+"kind": "story",
+"zone": "stories",
+"title": "Where it stands, 22 October",
+"path": "storyboards/where-it-stands/index.html",
+"hash": "027c0905e8fb",
+"v": 5,
+"first": "0.5.2",
+"changed": "0.5.2",
+"date": "2026-10-22"
+},
+"storyboard-how-it-unfolded": {
+"kind": "story",
+"zone": "stories",
+"title": "How it unfolded: 2024 to 22 October",
+"path": "storyboards/how-it-unfolded/index.html",
+"hash": "2e5480ec15d6",
+"v": 1,
+"first": "0.5.2",
+"changed": "0.5.2",
+"date": "2026-10-22"
+},
+"storyboard-exposed-is-not-exploited": {
+"kind": "story",
+"zone": "stories",
+"title": "Exposed is not exploited",
+"path": "storyboards/exposed-is-not-exploited/index.html",
+"hash": "f8cdd086a195",
+"v": 1,
+"first": "0.5.2",
+"changed": "0.5.2",
+"date": "2026-10-22"
+},
+"storyboard-what-the-agencies-say": {
+"kind": "story",
+"zone": "stories",
+"title": "What the agencies say",
+"path": "storyboards/what-the-agencies-say/index.html",
+"hash": "91b153a952d3",
+"v": 1,
+"first": "0.5.2",
+"changed": "0.5.2",
+"date": "2026-10-22"
+},
+"storyboard-who-gets-a-fix": {
+"kind": "story",
+"zone": "stories",
+"title": "Who gets a fix, and when",
+"path": "storyboards/who-gets-a-fix/index.html",
+"hash": "5e0171f3bf73",
+"v": 1,
+"first": "0.5.2",
+"changed": "0.5.2",
+"date": "2026-10-22"
+},
+"storyboard-the-weaponisation-ladder": {
+"kind": "story",
+"zone": "stories",
+"title": "The weaponisation ladder",
+"path": "storyboards/the-weaponisation-ladder/index.html",
+"hash": "c19f185d281b",
+"v": 1,
+"first": "0.5.2",
+"changed": "0.5.2",
+"date": "2026-10-22"
+},
+"storyboard-how-this-site-knows": {
+"kind": "story",
+"zone": "stories",
+"title": "How this site knows",
+"path": "storyboards/how-this-site-knows/index.html",
+"hash": "cbaeadab830c",
+"v": 1,
+"first": "0.5.2",
+"changed": "0.5.2",
+"date": "2026-10-22"
+},
+"deck-briefing-2026-10-22": {
+"kind": "story",
+"zone": "stories",
+"title": "PHP October 2026: the briefing",
+"path": "storyboards/briefing-2026-10-22/index.html",
+"hash": "b62fdfaaee9a",
+"v": 3,
+"first": "0.5.2",
+"changed": "0.5.2",
+"date": "2026-10-22"
 }
 }
 }

@@ -1,0 +1,528 @@
+{
+ "storyboard": {
+  "slug": "where-it-stands",
+  "title": "Where it stands, 22 October",
+  "subtitle": "The situation at the latest capture, 11:34 UTC on 22 October 2026, for someone who runs a website. 10 panels.",
+  "reader": "site-owner",
+  "see": [
+   "index.html",
+   "briefings/site-owner/index.html",
+   "playbook/index.html"
+  ],
+  "status": "draft",
+  "by": "storyboard@php.newsroom, 22 October 2026",
+  "written": "2026-10-22",
+  "as_of_version": "0.5.2",
+  "vault_commit": "200d08971937",
+  "data_as_of": "2026-10-22T11:34Z",
+  "rule": "Every line a character says is the storyboard's own words, not a quote, and is marked not_a_quote; every evidence panel quotes this site's data word for word and names the file (quote_from), which the gate checks; every panel cites the evidence vault's source slugs it rests on (cites), which the gate checks against the manifest.",
+  "scenes": [
+   {
+    "kind": "cover",
+    "title": "Where it stands",
+    "subtitle": "Two PHP flaws, one fix, 22 October 2026, 11:34 UTC",
+    "cast": [
+     {
+      "who": "casey",
+      "pose": "wave",
+      "mood": "worried"
+     },
+     {
+      "who": "desk",
+      "pose": "wave",
+      "mood": "calm"
+     }
+    ],
+    "note": "Who this is for: Casey, who runs a website on PHP and heard about it on the news.",
+    "cites": [
+     "php-net-advisory"
+    ],
+    "source": "data/plain.json"
+   },
+   {
+    "kind": "scene",
+    "setting": "office",
+    "caption": "The question",
+    "cast": [
+     {
+      "who": "casey",
+      "x": 0.22,
+      "pose": "think",
+      "mood": "worried",
+      "says": "The radio says websites are going offline. Is mine?",
+      "max": 18
+     },
+     {
+      "who": "desk",
+      "x": 0.78,
+      "pose": "point",
+      "mood": "calm",
+      "says": "Let me show you what is confirmed first.",
+      "max": 18,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "kind": "laptop",
+      "x": 0.5,
+      "y": 760,
+      "scale": 1.2
+     }
+    ],
+    "note": "The headlines on the morning of 22 October: sites dark, governments warning.",
+    "cites": [
+     "bbc-live-ckgel5xp2xv9t"
+    ],
+    "not_a_quote": true
+   },
+   {
+    "kind": "evidence",
+    "setting": "none",
+    "caption": "What happened",
+    "cast": [
+     {
+      "who": "desk",
+      "x": 0.2,
+      "pose": "point",
+      "mood": "calm"
+     }
+    ],
+    "evidence": {
+     "quote": "Either lets anyone on the internet, with no password, run commands on the web server.",
+     "source": "this site, What happened? (data/plain.json)"
+    },
+    "quote_from": "data/plain.json",
+    "note": "Two flaws, CVE-2026-109618 and CVE-2026-109619, both 9.2 out of 10, both in PHP itself.",
+    "cites": [
+     "php-net-advisory",
+     "cve-cve-2026-109618",
+     "cve-cve-2026-109619"
+    ]
+   },
+   {
+    "kind": "scene",
+    "setting": "none",
+    "caption": "Where the hole is",
+    "cast": [
+     {
+      "who": "casey",
+      "x": 0.15,
+      "pose": "point",
+      "mood": "surprised",
+      "says": "So not my phone?",
+      "max": 14
+     }
+    ],
+    "props": [
+     {
+      "kind": "phone",
+      "x": 0.32,
+      "y": 700,
+      "scale": 1.8
+     },
+     {
+      "kind": "mark",
+      "x": 0.32,
+      "y": 560,
+      "ok": true
+     },
+     {
+      "kind": "server",
+      "x": 0.66,
+      "y": 860,
+      "label": "your web server"
+     },
+     {
+      "kind": "padlock",
+      "x": 0.86,
+      "y": 760,
+      "open": true,
+      "label": "until patched"
+     }
+    ],
+    "note": "Not your phone or laptop: the flaw is on web servers. Visitors are affected only indirectly.",
+    "cites": [
+     "php-net-advisory",
+     "ncsc-news-php"
+    ],
+    "not_a_quote": true
+   },
+   {
+    "kind": "scene",
+    "setting": "none",
+    "caption": "The fix, since 21 October",
+    "cast": [
+     {
+      "who": "desk",
+      "x": 0.82,
+      "pose": "point",
+      "mood": "happy",
+      "says": "Four fixed versions. Updated AND restarted.",
+      "max": 16,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "kind": "board",
+      "x": 0.36,
+      "y": 860,
+      "scale": 1.1,
+      "lines": [
+       "PHP 8.5.12",
+       "PHP 8.4.27",
+       "PHP 8.3.36",
+       "PHP 8.2.35",
+       "",
+       "8.1 or older:",
+       "no ready-made fix"
+      ]
+     }
+    ],
+    "note": "The fix is in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35, released on 21 October 2026. Websites on PHP 8.1 or older have no ready-made fix.",
+    "cites": [
+     "php-net-advisory",
+     "github-php-src-branch-7.4-backport"
+    ],
+    "not_a_quote": true
+   },
+   {
+    "kind": "scene",
+    "setting": "night",
+    "caption": "Attackers are trying",
+    "cast": [
+     {
+      "who": "mallory",
+      "x": 0.18,
+      "pose": "point",
+      "mood": "determined",
+      "says": "Knock knock. Millions of times.",
+      "max": 16
+     }
+    ],
+    "props": [
+     {
+      "kind": "arrow",
+      "x": 0.3,
+      "y": 560,
+      "to": 0.58,
+      "label": "php2shell requests",
+      "colour": "#fca5a5",
+      "dashed": true
+     },
+     {
+      "kind": "server",
+      "x": 0.7,
+      "y": 860,
+      "label": "patched and restarted"
+     },
+     {
+      "kind": "mark",
+      "x": 0.88,
+      "y": 700,
+      "ok": true
+     }
+    ],
+    "note": "Attempts reported by one CDN in the millions by 01:25 UTC on 22 October; Amazon reports a honeypot hit on 17 October. Attempts are requests, not break-ins.",
+    "cites": [
+     "x-eastdakota-php2shell-stats",
+     "thehackernews-php2shell-4days"
+    ],
+    "not_a_quote": true
+   },
+   {
+    "kind": "evidence",
+    "setting": "none",
+    "caption": "Has anyone been hacked?",
+    "cast": [
+     {
+      "who": "casey",
+      "x": 0.18,
+      "pose": "think",
+      "mood": "thinking"
+     }
+    ],
+    "evidence": {
+     "quote": "Attackers are trying to use the flaws, in large numbers. No organisation has said it was broken into.",
+     "source": "this site, Right now (data/plain.json)"
+    },
+    "quote_from": "data/plain.json",
+    "note": "CISA's list of flaws known to be used in attacks did not include either one at the latest capture.",
+    "cites": [
+     "x-eastdakota-php2shell-stats",
+     "cisa-kev-json"
+    ]
+   },
+   {
+    "kind": "evidence",
+    "setting": "none",
+    "caption": "How sure is this site?",
+    "cast": [
+     {
+      "who": "desk",
+      "x": 0.16,
+      "pose": "point",
+      "mood": "calm"
+     }
+    ],
+    "evidence": {
+     "title": "70 statements checked, by status",
+     "bars": [
+      {
+       "label": "confirmed",
+       "value": 22,
+       "colour": "#15803d"
+      },
+      {
+       "label": "reported",
+       "value": 33,
+       "colour": "#2563eb"
+      },
+      {
+       "label": "disputed",
+       "value": 8,
+       "colour": "#d97706"
+      },
+      {
+       "label": "contradicted",
+       "value": 3,
+       "colour": "#b91c1c"
+      },
+      {
+       "label": "unverified",
+       "value": 4,
+       "colour": "#6b7280"
+      }
+     ]
+    },
+    "bars_from": {
+     "file": "data/claims.json",
+     "count": "status"
+    },
+    "note": "Counted from every claim on /claims/; confirmed means two or more original sources agree.",
+    "cites": [
+     "php-net-advisory"
+    ]
+   },
+   {
+    "kind": "scene",
+    "setting": "office",
+    "caption": "What nobody knows yet",
+    "cast": [
+     {
+      "who": "desk",
+      "x": 0.84,
+      "pose": "shrug",
+      "mood": "thinking",
+      "says": "Stated, not papered over.",
+      "max": 14,
+      "flip": true
+     }
+    ],
+    "props": [
+     {
+      "kind": "board",
+      "x": 0.38,
+      "y": 860,
+      "scale": 1.1,
+      "lines": [
+       "Was any site broken into?",
+       "Is the fix complete?",
+       "Who leaked it on 20 Oct?",
+       "Which sites went offline,",
+       "  and why?",
+       "Where does 70% come from?"
+      ]
+     }
+    ],
+    "note": "The five open questions on the front page, each updated when the evidence is.",
+    "cites": [
+     "php-foundation-blog-security-release",
+     "bbc-live-ckgel5xp2xv9t",
+     "wiz-blog-php2shell"
+    ],
+    "not_a_quote": true
+   },
+   {
+    "kind": "punchline",
+    "setting": "none",
+    "punchline": "Update PHP. Restart it. Ask your host to confirm both.",
+    "cast": [
+     {
+      "who": "casey",
+      "x": 0.2,
+      "pose": "arms-up",
+      "mood": "determined"
+     },
+     {
+      "who": "desk",
+      "x": 0.82,
+      "pose": "wave",
+      "mood": "happy",
+      "flip": true
+     }
+    ],
+    "note": "What should be done, from the PHP project and the agencies: the fixed version, restarted; if not today, the temporary settings, a firewall in front, and offline as a last resort.",
+    "cites": [
+     "php-net-advisory",
+     "cisa-alert-php-20261021",
+     "ncsc-news-php"
+    ],
+    "not_a_quote": true
+   }
+  ]
+ },
+ "cast": {
+  "what": "The cast of PHP October 2026's storyboards, v0.1, proposed by storyboard@php.newsroom on 22 October 2026 for the editor to accept, change or replace. Drawn programmatically by the storyboard kit v0.1.0 (vendored from api.storyboards.sgit.ai, hashes in assets/vendor/storyboards/VENDOR.md) from 'look'; nothing here is an image. Fictional people, each named after one of this site's readers (data/personas.json), so a storyboard can be read as that reader's briefing; one agent, the Desk, who speaks only for the evidence; and Mallory, the name cryptography has long given an attacker. No real person is drawn. Every human uses they/them, because the readers they are named after have no stated pronouns.",
+  "characters": [
+   {
+    "id": "desk",
+    "name": "The Desk",
+    "kind": "agent",
+    "pronouns": "it/its",
+    "role": "the newsroom's voice: says only what the evidence vault and this site's data say, with the status word attached",
+    "stands_for": "the team of agents behind this site, speaking with one voice",
+    "personality": "calm, exact, never rounds a number up",
+    "wants": "every reader to leave knowing which facts are confirmed and which are only reported",
+    "fears": "a headline number repeated without what it measures",
+    "line": "Confirmed, reported, or not known yet. Pick one.",
+    "look": {
+     "colour": "#0f766e"
+    }
+   },
+   {
+    "id": "casey",
+    "name": "Casey",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the website owner: runs a shop on WordPress with a hosting company",
+    "stands_for": "the reader on /briefings/site-owner/: plain English, wants to know what to ask the host",
+    "personality": "practical, a little anxious, writes things down",
+    "wants": "to know whether to do anything today",
+    "fears": "waking up to a hacked site",
+    "line": "Just tell me what to ask my host.",
+    "look": {
+     "skin": "#e0ac69",
+     "hair": "curly",
+     "hairColour": "#3b2a20",
+     "shirt": "#2563eb",
+     "trousers": "#1f2937",
+     "accessory": "none",
+     "height": 0.98
+    }
+   },
+   {
+    "id": "sam",
+    "name": "Sam",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the security lead: decides what is patched first and when a system goes offline",
+    "stands_for": "the reader on /briefings/security/",
+    "personality": "dry, sceptical, reads the advisory before the headline",
+    "wants": "evidence it was not hit",
+    "fears": "a quiet compromise found in a month",
+    "line": "Attempts are not compromises. Show me a compromise.",
+    "look": {
+     "skin": "#8d5524",
+     "hair": "short",
+     "hairColour": "#111827",
+     "shirt": "#7c3aed",
+     "trousers": "#1e293b",
+     "accessory": "lanyard",
+     "accentColour": "#f59e0b",
+     "height": 1.02
+    }
+   },
+   {
+    "id": "drew",
+    "name": "Drew",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the PHP and platform engineer: rebuilds, redeploys and restarts",
+    "stands_for": "the reader on /briefings/engineer/",
+    "personality": "quick, terse, lives in a terminal",
+    "wants": "the version numbers and the commands",
+    "fears": "a fix that is installed but never restarted",
+    "line": "Installed is not running. Restart it.",
+    "look": {
+     "skin": "#f1c27d",
+     "hair": "beanie",
+     "hairColour": "#6b4f2a",
+     "hatColour": "#0f766e",
+     "shirt": "#334155",
+     "trousers": "#111827",
+     "accessory": "headphones",
+     "height": 1.0
+    }
+   },
+   {
+    "id": "rowan",
+    "name": "Rowan",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the journalist: has to write the number in the headline",
+    "stands_for": "the reader on /briefings/journalist/",
+    "personality": "curious, fast, asks who said it first",
+    "wants": "a number that holds up",
+    "fears": "printing a figure nobody measured",
+    "line": "Who measured that?",
+    "look": {
+     "skin": "#c68642",
+     "hair": "long",
+     "hairColour": "#1b1b1b",
+     "shirt": "#dc2626",
+     "trousers": "#374151",
+     "accessory": "glasses",
+     "height": 0.97
+    }
+   },
+   {
+    "id": "jordan",
+    "name": "Jordan",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the board member: owns the risk, not the servers",
+    "stands_for": "the reader on /briefings/board/",
+    "personality": "patient, asks one question at a time",
+    "wants": "to know who decides to pull a system offline",
+    "fears": "learning about it from the news",
+    "line": "Who owns that decision?",
+    "look": {
+     "skin": "#ffdbac",
+     "hair": "bald",
+     "hairColour": "#9ca3af",
+     "shirt": "#1f2937",
+     "trousers": "#111827",
+     "accessory": "glasses",
+     "height": 1.04
+    }
+   },
+   {
+    "id": "mallory",
+    "name": "Mallory",
+    "kind": "human",
+    "pronouns": "they/them",
+    "role": "the attacker: scans the internet for servers that have not installed the fix",
+    "stands_for": "every party sending php2shell requests; who they are is not known",
+    "personality": "patient, automated, cheap",
+    "wants": "one server that answers",
+    "fears": "a patched, restarted server behind an edge rule",
+    "line": "I only need one.",
+    "look": {
+     "skin": "#d8a47f",
+     "hair": "beanie",
+     "hairColour": "#111827",
+     "hatColour": "#111827",
+     "shirt": "#111827",
+     "trousers": "#111827",
+     "accessory": "none",
+     "height": 1.0
+    }
+   }
+  ]
+ },
+ "packs": [
+  "security"
+ ]
+}

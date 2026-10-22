@@ -55,10 +55,44 @@ def load_articles():
 
 ARTICLES = load_articles()
 
+# storyboards: authored JSON, built by build_storyboards() below
+SB_DIR = os.path.join(ROOT, 'admin', 'content', 'storyboards')
+SB_KIT = 'assets/vendor/storyboards/v0/v0.1/v0.1.0'
+SB_PACKS = ['security']
+
+def load_storyboards():
+    if not os.path.isdir(SB_DIR):
+        return None, []
+    cast = json.load(open(os.path.join(SB_DIR, 'cast.json'), encoding='utf-8'))
+    out = []
+    for fn in sorted(os.listdir(SB_DIR)):
+        if re.match(r'^\d\d__.*\.json$', fn):
+            sb = json.load(open(os.path.join(SB_DIR, fn), encoding='utf-8'), object_pairs_hook=OrderedDict)
+            sb['_file'] = fn
+            out.append(sb)
+    return cast, out
+
+SB_CAST, STORYBOARDS = load_storyboards()
+
+DECK_DIR = os.path.join(ROOT, 'admin', 'content', 'decks')
+
+def load_decks():
+    out = []
+    for fn in sorted(os.listdir(DECK_DIR)) if os.path.isdir(DECK_DIR) else []:
+        if fn.endswith('.json'):
+            d = json.load(open(os.path.join(DECK_DIR, fn), encoding='utf-8'), object_pairs_hook=OrderedDict)
+            d['_file'] = fn
+            out.append(d)
+    return sorted(out, key=lambda d: d['date'], reverse=True)
+
+DECKS = load_decks()
+
+
+
 # The two halves of the site, and what each page is. Research: material collected from outside and what this
 # site derives from it. Stories: written here, signed and dated. Every page carries one of these at its top.
 ZONES = OrderedDict([('Start here', 'For you'), ('Questions', 'For you'), ('Briefings', 'For you'), ('Yours', 'For you'), ('The incident', 'Research'),
-                     ('The analysis', 'Research'), ('The evidence', 'Research'), ('Stories', 'Stories'), ('About', 'Site')])
+                     ('The analysis', 'Research'), ('The evidence', 'Research'), ('Stories', 'Stories'), ('Storyboards', 'Stories'), ('About', 'Site')])
 ORIGINS = {
     'house': {'short': 'House', 'label': 'Story', 'text': 'written here by this site, signed and dated'},
     'guest': {'short': 'Guest', 'label': 'Story, guest', 'text': 'written by a guest writer, published here under their name'},
@@ -189,6 +223,7 @@ NAV = [
                       ('pipeline/index.html', 'The fact pipeline'), ('versions/index.html', 'How the story changed'),
                       ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults']]),
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
+    ('Storyboards', [('storyboards/index.html', 'Every storyboard, drawn here')] + [(f'storyboards/{d["slug"]}/index.html', f'The briefing deck, {int(d["date"][8:])} {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][int(d["date"][5:7]) - 1]} {d["date"][:4]}') for d in DECKS] + [(f'storyboards/{sb["slug"]}/index.html', sb['title']) for sb in STORYBOARDS]),
     ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'),
@@ -1434,7 +1469,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
+    build_review(); build_admin_section(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck(); build_storyboards(); build_decks()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -3460,6 +3495,230 @@ function f(){var k=0;rs.forEach(function(r){var s=+r.dataset.lv>=+m.value&&(o.ch
 {section("how", "How the desk works", '<p>The desk is <code>factcheck@php.newsroom</code>. Its role, the full model and the runbook a scheduled run follows are in <a href="' + REPO_URL + '/blob/dev/admin/factcheck/README.md">admin/factcheck/README.md</a>; its tickets are an <a href="https://issues-fs.sgit.ai/">Issues-FS</a> graph in <code>admin/factcheck/.issues/</code>, typed nodes and typed edges in plain JSON files; its grades are <a href="../data/factcheck.json">data/factcheck.json</a>. Mode one checks every claim against the evidence vault. Mode two goes outside for the weak and the contested, and records what it finds as a request to capture, never as a citation.</p>')}
 '''
     page('factcheck/index.html', 'Fact-check: how sure can you be of each claim', f'Every claim on the PHP flaws site graded independently by the fact-check desk on a spectrum of evidence from A0 to A6, with a filter for only what can be relied on, the contradiction ledger, and the open tickets.', body, kind='analysis', topics='php2shell fact-check assurance')
+
+
+# ----------------------------------------------------------------------------- storyboards (storyboard@php.newsroom)
+# Storyboards are authored JSON in admin/content/storyboards/ (one file each, and cast.json), drawn in the reader's
+# browser by the storyboard kit v0.1.0 from api.storyboards.sgit.ai, vendored unedited in assets/vendor/storyboards/
+# (hashes in its manifest, checked by the gate). Each storyboard gets a page with the deck, grid and script, a panel by
+# panel text with every panel's sources (the markdown twin is the script), and bundle.json and storyboard.json beside
+# it so any page can embed it with the kit's <sg-storyboard>.
+
+def sb_public(sb):
+    return OrderedDict((k, v) for k, v in sb.items() if not k.startswith('_'))
+
+def sb_json(x):
+    # safe inside <script type="application/json">: no '</' can close the element
+    return json.dumps(x, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+
+def sb_kit_tags(up):
+    return (f'<link rel="stylesheet" href="{up}{SB_KIT}/fonts.css"><link rel="stylesheet" href="{up}{SB_KIT}/storyboard.css">'
+            f'<script>window.StoryboardPrefsKey="php-oct-2026-storyboards";</script>'
+            f'<script src="{up}{SB_KIT}/vendor/rough-4.6.6.js"></script><script src="{up}{SB_KIT}/props/security.js"></script>'
+            f'<script src="{up}{SB_KIT}/storyboard.js"></script><script src="{up}{SB_KIT}/export.js"></script>')
+
+SB_TOOLBAR = ('<div class="sb-tools" role="toolbar" aria-label="How to view the panels"><span class="sb-views" role="group" aria-label="View">'
+              '<button type="button" data-view="deck" title="One panel at a time (d)">Deck</button><button type="button" data-view="grid" title="Every panel on one page (g)">Grid</button>'
+              '<button type="button" data-view="script" title="The storyboard as text (t)">Script</button></span>'
+              '<label class="sb-for-grid">Per row <select class="sb-cols"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label>'
+              '<label title="Panels play as they arrive (a)"><input type="checkbox" class="sb-anim"> Animation</label>'
+              '<label class="sb-for-grid" title="Each panel\'s script under it (x)"><input type="checkbox" class="sb-showtext"> Text</label>'
+              '<button type="button" class="sb-playall sb-for-grid" title="Play the panels one after another (p)">Play in order</button>'
+              '<input type="search" class="sb-filter sb-for-list" placeholder="Filter: a word, a name, a mood" aria-label="Filter the panels"></div>'
+              '<div class="sb-deck" hidden><div class="sb-track"></div>'
+              '<div class="sb-bar"><button type="button" class="sb-prev" aria-label="Previous panel">&larr;</button><span class="sb-count"></span><button type="button" class="sb-next" aria-label="Next panel">&rarr;</button>'
+              '<button type="button" class="sb-replay" title="Play this panel (p)">&#9654; Play</button><button type="button" class="sb-notes-toggle" title="Notes (n)">Notes</button><button type="button" class="sb-full" title="Full screen (f)">Full screen</button></div>'
+              '<div class="sb-notes"></div></div><div class="sb-grid" hidden></div><div class="sb-script" hidden></div>')
+
+SB_KIND = {'cover': 'Cover', 'scene': 'Scene', 'evidence': 'Evidence', 'punchline': 'Punchline', 'spectrum': 'Spectrum', 'map': 'Map', 'graph': 'Graph'}
+
+def sb_panel_html(i, sc, depth):
+    """One panel as text, for readers who do not see the drawing, and for the markdown twin."""
+    who = {c['id']: c for c in SB_CAST['characters']}
+    label = sc.get('caption') or sc.get('punchline') or sc.get('title') or ''
+    parts = []
+    if sc.get('kind') == 'cover' and sc.get('subtitle'):
+        parts.append(E(sc['subtitle']) + '.')
+    if sc.get('kind') == 'punchline':
+        parts.append(f'<b>{E(sc["punchline"])}</b>')
+    for c in sc.get('cast', []):
+        if c.get('says'):
+            parts.append(f'{E(who[c["who"]]["name"])} ({E(c.get("mood", "neutral"))}): &ldquo;{E(c["says"])}&rdquo;')
+    ev = sc.get('evidence') or {}
+    if ev.get('quote'):
+        parts.append(f'<q>{E(ev["quote"])}</q> ({E(ev.get("source", ""))})')
+    if ev.get('bars'):
+        parts.append(E(ev.get('title', '')) + ': ' + ', '.join(f'{E(b["label"])} {E(str(b.get("shown", b["value"])))}' for b in ev['bars']) + '.')
+    if sc.get('stops'):
+        parts.append(' &rarr; '.join(f'<b>{E(x["label"])}</b> {E(x.get("note", ""))}' for x in sc['stops']) + '.')
+    g = sc.get('graph') or {}
+    if g.get('nodes'):
+        names = {n['id']: n['label'] for n in g['nodes']}
+        parts.append('; '.join(f'{E(names[e["from"]])} &rarr; {E(names[e["to"]])}' + (f' ({E(e["label"])})' if e.get('label') else '') for e in g.get('edges', [])) + '.')
+    for pr in sc.get('props', []):
+        if pr.get('lines'):
+            parts.append(f'{E(pr["kind"].capitalize())}: ' + ' / '.join(E(x.strip()) for x in pr['lines'] if x.strip()) + '.')
+        elif pr.get('label'):
+            parts.append(f'{E(pr["kind"].capitalize())}: {E(pr["label"])}.')
+    note = f'<span class="sb-note">{E(sc["note"])}</span>' if sc.get('note') else ''
+    flag = ' <span class="small">(the lines are the storyboard\'s own words, not quotes)</span>' if sc.get('not_a_quote') else ''
+    refs = f'<span class="refs">{src_links(sc.get("cites", []), depth)}</span>' if sc.get('cites') else ''
+    return f'<li id="panel-{i + 1}"><b>Panel {i + 1}, {E(SB_KIND.get(sc.get("kind", "scene"), "Scene").lower())}: {E(label)}</b> {" ".join(parts)}{flag} {note} {refs}</li>'
+
+def sb_stamp(sb):
+    return f'drawn against site v{E(sb["as_of_version"])} &middot; vault commit <code>{E(sb["vault_commit"])}</code> &middot; data as of {E(sb["data_as_of"])}'
+
+def sb_cites(sb):
+    return list(OrderedDict.fromkeys(s for sc in sb['scenes'] for s in sc.get('cites', [])))
+
+def build_storyboards():
+    if not STORYBOARDS:
+        return
+    for k, sb in enumerate(STORYBOARDS):
+        slug, up = sb['slug'], '../../'
+        bundle = OrderedDict([('storyboard', sb_public(sb)), ('cast', SB_CAST), ('packs', SB_PACKS)])
+        write(f'storyboards/{slug}/storyboard.json', json.dumps(sb_public(sb), ensure_ascii=False, indent=1) + '\n')
+        write(f'storyboards/{slug}/bundle.json', json.dumps(bundle, ensure_ascii=False, indent=1) + '\n')
+        reader = PERSONAS.get(sb.get('reader'))
+        rd = f' &middot; <b>for</b> <a href="{up}briefings/{E(sb["reader"])}/index.html">{E(reader["person"])}, {E(reader["label"].lower())}</a>' if reader else ''
+        see = ' &middot; '.join(f'<a href="{up}{E(x)}">{E(nav_title(x))}</a>' for x in sb.get('see', []))
+        prev = STORYBOARDS[k - 1] if k else None
+        nxt = STORYBOARDS[k + 1] if k + 1 < len(STORYBOARDS) else None
+        pn = ' &middot; '.join(x for x in [f'&larr; <a href="../{E(prev["slug"])}/index.html">{E(prev["title"])}</a>' if prev else '',
+                                           f'<a href="../{E(nxt["slug"])}/index.html">{E(nxt["title"])}</a> &rarr;' if nxt else ''] if x)
+        moved = '' if sb['data_as_of'] >= STORY['data_as_of'] else f'<p class="caveat"><b>The evidence has moved since this was drawn.</b> Drawn against data as of {E(sb["data_as_of"])}; the site now has data as of {E(STORY["data_as_of"])}. The <a href="{up}index.html">front page</a> is current; this storyboard is kept as drawn.</p>'
+        snippet = E(f'<script src="https://api.storyboards.sgit.ai/v0/v0.1/v0.1.0/embed.js" defer></script>\n<sg-storyboard src="{BASE_URL}/storyboards/{slug}/bundle.json"></sg-storyboard>')
+        panels = ''.join(sb_panel_html(i, sc, 2) for i, sc in enumerate(sb['scenes']))
+        body = f"""
+{item('storyboard-' + slug, 'story', 'stories', sb['title'], f'storyboards/{slug}/index.html', json.dumps(sb_public(sb), ensure_ascii=False, sort_keys=True), sb['written'])}
+<p class="kicker">Storyboard &middot; {E(sb["status"])} &middot; {len(sb["scenes"])} panels &middot; {E(sb["written"])}</p>
+<h1>{E(sb["title"])}</h1>
+<p class="lead">{E(sb["subtitle"])}</p>
+<p class="kv"><b>By</b> <code>storyboard@php.newsroom</code>{rd} &middot; <b>{sb_stamp(sb)}</b></p>
+{moved}
+<div class="sb-viewer">{SB_TOOLBAR}<script type="application/json" class="sb-data">{sb_json({"storyboard": sb_public(sb), "cast": SB_CAST})}</script></div>
+<p class="small sb-rule"><b>The rule.</b> {E(sb["rule"])}</p>
+{section("panels", "Panel by panel", f'<ol class="sb-panels">{panels}</ol>', 'The same storyboard as text: what each panel shows, who says what, the evidence it quotes and the captured sources it rests on.')}
+{section("more", "Read on", f'<p>The pages this storyboard is drawn from: {see}.</p><p>{pn}</p><p><a href="../index.html">Every storyboard &rarr;</a></p>')}
+{section("take", "Take it with you", f'<p>The storyboard is data: <a href="storyboard.json">storyboard.json</a>, and with its cast and prop pack in one file, <a href="bundle.json">bundle.json</a>. Put it on any page with the kit from <a href="https://api.storyboards.sgit.ai/">api.storyboards.sgit.ai</a>, two lines:</p><pre><code>{snippet}</code></pre><p>The deck\'s toolbar exports any panel as SVG, animated SVG, PNG or JPEG, drawn in your browser. Content CC BY 4.0: credit {E(SITE_NAME)}, {E(SITE)}.</p>')}
+<p class="small">Source file: <code>admin/content/storyboards/{E(sb["_file"])}</code>, in the authored layer; see <a href="{up}layers/index.html">evidence, derived, authored</a>.</p>
+{sb_kit_tags(up)}
+"""
+        page(f'storyboards/{slug}/index.html', f'Storyboard: {sb["title"]}', sb['subtitle'], body, kind='story', date=sb['written'], topics='php2shell storyboard', origin='house', byline='Drawn by the storyboard desk, agent storyboard@php.newsroom')
+    # the shelf
+    boards = OrderedDict((sb['slug'], sb_public(sb)) for sb in STORYBOARDS)
+    stance = {'desk': ['point', 'calm'], 'casey': ['think', 'worried'], 'sam': ['stand', 'determined'], 'drew': ['arms-up', 'excited'],
+              'rowan': ['point', 'thinking'], 'jordan': ['think', 'thinking'], 'mallory': ['shrug', 'neutral']}
+    cards = ''.join(f'<article class="sb-card"><a href="{E(sb["slug"])}/index.html"><svg data-board="{E(sb["slug"])}" data-scene="0" viewBox="0 0 1600 1000" role="img" aria-label="{E(sb["title"])}, the cover panel"></svg></a>'
+                    f'<h3><a href="{E(sb["slug"])}/index.html">{E(sb["title"])}</a></h3><p>{E(sb["subtitle"])}</p>'
+                    f'<p class="small">{E(sb["status"])} &middot; {len(sb["scenes"])} panels &middot; {len(sb_cites(sb))} sources cited &middot; for {E(PERSONAS[sb["reader"]]["label"].lower()) if sb.get("reader") in PERSONAS else "everyone"} &middot; {sb_stamp(sb)}</p></article>' for sb in STORYBOARDS)
+    who = table(['Who', 'Kind', 'Stands for', 'Their line'], [[f'<b>{E(c["name"])}</b>', f'{E(c["kind"])}, {E(c["pronouns"])}', E(c['role']), f'<i>{E(c["line"])}</i>'] for c in SB_CAST['characters']])
+    catalogue = OrderedDict([('what', f'Every storyboard on {SITE}, with its formats and the embed snippet. Generated by admin/build/build.py.'), ('site', BASE_URL), ('version', VERSION),
+                             ('kit', OrderedDict([('release', 'v0.1.0'), ('base', 'https://api.storyboards.sgit.ai/v0/v0.1/v0.1.0/'), ('vendored', f'{BASE_URL}/{SB_KIT}/')])),
+                             ('series', [OrderedDict([('slug', 'php-october-2026'), ('title', SITE_NAME), ('cast', f'{BASE_URL}/storyboards/cast.json'), ('packs', SB_PACKS),
+                                                      ('storyboards', [OrderedDict([('slug', sb['slug']), ('title', sb['title']), ('subtitle', sb['subtitle']), ('status', sb['status']), ('panels', len(sb['scenes'])),
+                                                                                    ('written', sb['written']), ('data_as_of', sb['data_as_of']), ('vault_commit', sb['vault_commit']),
+                                                                                    ('page', f'{BASE_URL}/storyboards/{sb["slug"]}/index.html'), ('json', f'{BASE_URL}/storyboards/{sb["slug"]}/storyboard.json'),
+                                                                                    ('bundle', f'{BASE_URL}/storyboards/{sb["slug"]}/bundle.json'), ('markdown', f'{BASE_URL}/storyboards/{sb["slug"]}/index.md'),
+                                                                                    ('cites', sb_cites(sb))]) for sb in STORYBOARDS])])])])
+    write('storyboards/cast.json', json.dumps(SB_CAST, ensure_ascii=False, indent=1) + '\n')
+    write('storyboards/catalogue.json', json.dumps(catalogue, ensure_ascii=False, indent=1) + '\n')
+    n_panels = sum(len(sb['scenes']) for sb in STORYBOARDS)
+    body = f"""
+<h1>Storyboards: the story, drawn from the data</h1>
+<p class="lead">{len(STORYBOARDS)} storyboards, {n_panels} panels, {len(SB_CAST["characters"])} characters. A storyboard is a short strip of panels: who is there, what they ask, the evidence, the bottom line. Each one here is a JSON file drawn by code in your browser, so a panel is corrected by changing a line, and every panel cites the captured sources it rests on.</p>
+<p>They are for the reader who will not read the claims table: the website owner, the board member, the journalist on a deadline. Each is named after one of <a href="../start/index.html">this site's readers</a> and ends on the one thing that reader should do or say. They are stories, drawn here, so every page says so at its top; the facts in them are the research's, with its status words.</p>
+<div class="sbx sb-shelf"><script type="application/json" class="sb-data">{sb_json({"cast": SB_CAST, "boards": boards, "stance": stance})}</script>
+{section("shelf", "Every storyboard", f'<div class="sb-cards">{cards}</div>')}
+{section("cast", "The cast", f'<svg class="sbx-lineup" viewBox="0 640 2401 560" role="img" aria-label="The cast, side by side"></svg>{who}<p class="small">{E(SB_CAST["what"])} The cast as data: <a href="cast.json">cast.json</a>.</p>')}
+</div>
+{section("rules", "How a storyboard is made here", '<ul><li><b>The lines are the storyboard\'s.</b> What a character says is written here and the panel says so (<code>not_a_quote</code>); no real person is drawn or quoted in a bubble.</li><li><b>Evidence is quoted word for word.</b> An evidence panel quotes this site\'s own data and names the file (<code>quote_from</code>); the gate refuses a quote that is not in it, and a bar chart whose numbers do not match its file.</li><li><b>Every panel cites.</b> Each panel lists the evidence vault\'s source slugs it rests on; the gate refuses an unknown slug, as it does everywhere else on the site.</li><li><b>Dated, and kept as drawn.</b> Each storyboard names the site version, vault commit and capture time it was drawn against. When the evidence moves, the page says so; a new storyboard supersedes, it does not overwrite.</li><li><b>Checked twice.</b> <code>node admin/build/storyboards_check.js</code> runs the kit\'s own validator; the gate checks the same vocabulary, the cast, the quotes, the bars and the hashes of the vendored kit.</li></ul>')}
+{section("deck", "The briefing deck", ''.join(f'<p><a href="{E(d["slug"])}/index.html"><b>{E(d["title"])}, {E(nice_date(d["date"]))}</b></a>: {len(d["slides"])} slides to present the situation, dated, with evidence as of {E(d["data_as_of"])}. Present it full screen, print it, or download it as PowerPoint.</p>' for d in DECKS))}
+{section("models", "Infographics drawn by a model: not yet", '<p>Everything above is drawn by code from the data, so every number in a picture is a number in a file. The next step is infographics drawn by an image model (Gemini, through OpenRouter, as <a href="../now/index.html">the phone app</a> already does with a reader\'s own key), briefed from the same slides. None is published yet: it needs a key, and a model can draw a number that is not in the data, so each image will be checked against its file before it goes on this site (board item 082).</p>')}
+{section("kit", "The kit", f'<p>Drawn by the storyboard kit v0.1.0 from <a href="https://api.storyboards.sgit.ai/">api.storyboards.sgit.ai</a>, the same code that draws <a href="https://storyboards.sgit.ai/">storyboards.sgit.ai</a> and the storyboards of pki.sgit.ai and gen-z-developers.sgit.ai. This site serves it from its own copy (<code>{SB_KIT}/</code>, every file checked against the release\'s manifest by the gate), because no page here loads code from another host. Every storyboard is listed with its formats in <a href="catalogue.json">catalogue.json</a>, ready for storyboards.sgit.ai to take in as a series.</p>')}
+{sb_kit_tags('../')}
+"""
+    page('storyboards/index.html', 'Storyboards: the story, drawn from the data', f'{len(STORYBOARDS)} storyboards of the PHP flaws of October 2026, each a strip of panels drawn in the browser from JSON: the situation, how it unfolded, exposed against exploited, the agencies, who gets a fix, the weaponisation ladder and how this site knows. Every panel cites its captured sources.', body, kind='story', date=max(sb['written'] for sb in STORYBOARDS), topics='php2shell storyboard', origin='house', byline='Drawn by the storyboard desk, agent storyboard@php.newsroom')
+
+
+# ----------------------------------------------------------------------------- the dated briefing decks (storyboard@php.newsroom)
+# A deck is authored JSON in admin/content/decks/<date>__briefing.json, dated and kept as made. The build draws it as
+# HTML slides (read as a page, presented full screen with the arrow keys, printed one slide per page); the PowerPoint
+# beside it is made from the same file by admin/build/deck_pptx.js, which records the source's sha256 next to it.
+
+def deck_bars(b):
+    rows = b['rows']; top = max(r['value'] for r in rows) or 1
+    h = 46 * len(rows) + 10
+    out = [f'<svg class="dk-bars" viewBox="0 0 640 {h}" role="img" aria-label="{E(b["title"])}: ' + E(', '.join(f'{r["label"]} {r["value"]}' for r in rows)) + '">']
+    for i, r in enumerate(rows):
+        y, w = 8 + i * 46, max(4, round(400 * r['value'] / top))
+        out.append(f'<text x="150" y="{y + 25}" text-anchor="end" class="dk-bl">{E(r["label"])}</text><rect x="162" y="{y + 4}" width="{w}" height="30" rx="4" fill="#{E(r["colour"])}"></rect><text x="{170 + w}" y="{y + 26}" class="dk-bv">{r["value"]}</text>')
+    return ''.join(out) + '</svg>'
+
+def deck_point(x, depth):
+    st = f'{pill(x["status"])} ' if x.get('status') else ''
+    head = f'<b>{E(x["head"])}</b> ' if x.get('head') else ''
+    return f'<li>{st}{head}{E(x["text"])}</li>'
+
+def deck_slide(n, total, sl, deck, depth):
+    k = sl['kind']; inner = []
+    if k in ('title', 'closing'):
+        inner.append(f'<p class="dk-kick">{E(SITE_NAME)} &middot; briefing</p><h2>{E(sl["title"])}</h2><p class="dk-lead">{E(sl.get("lead", ""))}</p>')
+        if sl.get('points'):
+            inner.append('<ul class="dk-pts">' + ''.join(deck_point(x, depth) for x in sl['points']) + '</ul>')
+        inner.append(f'<p class="dk-date">{E(sl.get("dateline", ""))}</p>')
+    else:
+        inner.append(f'<h2>{E(sl["title"])}</h2>')
+        if sl.get('lead'):
+            inner.append(f'<p class="dk-lead">{E(sl["lead"])}</p>')
+        if k == 'bottomline':
+            inner.append('<ol class="dk-bl3">' + ''.join(f'<li><b>{E(x["head"])}</b><span>{E(x["text"])}</span>{pill(x["status"])}</li>' for x in sl['points']) + '</ol>')
+        if sl.get('stats'):
+            inner.append('<div class="dk-stats">' + ''.join(f'<div><b>{E(x["value"])}</b><span>{E(x["label"])}</span><small>{E(x.get("sub", ""))}</small>{pill(x["status"]) if x.get("status") else ""}</div>' for x in sl['stats']) + '</div>')
+        if k == 'timeline':
+            inner.append('<ol class="dk-tl">' + ''.join(f'<li><b>{E(x["when"])}</b><span>{E(x["what"])}</span></li>' for x in sl['moments']) + '</ol>')
+        if k == 'ladder':
+            inner.append('<ol class="dk-lad">' + ''.join(f'<li><b>{E(x["value"])}</b><span>{E(x["label"])}</span>{pill(x["status"])}</li>' for x in sl['steps']) + '</ol>')
+        if k == 'columns':
+            inner.append('<div class="dk-cols">' + ''.join(f'<div><h3>{E(c["head"])} {pill(c["status"]) if c.get("status") else ""}</h3><ul>' + ''.join(f'<li>{E(x)}</li>' for x in c['points']) + '</ul></div>' for c in sl['cols']) + '</div>')
+        if k == 'bars':
+            inner.append(f'<div class="dk-split"><figure>{deck_bars(sl["bars"])}<figcaption>{E(sl["bars"]["title"])}, from <code>{E(sl["bars"]["from"]["file"])}</code></figcaption></figure>'
+                         + ('<ul class="dk-pts">' + ''.join(deck_point(x, depth) for x in sl.get('points', [])) + '</ul>') + '</div>')
+        elif sl.get('points') and k != 'bottomline':
+            inner.append('<ul class="dk-pts">' + ''.join(deck_point(x, depth) for x in sl['points']) + '</ul>')
+        if sl.get('later'):
+            inner.append(f'<p class="dk-later">{E(sl["later"])}</p>')
+    foot = f'<p class="dk-foot"><span>{E(SITE_NAME)} &middot; briefing of {E(nice_date(deck["date"]))} &middot; evidence as of {E(deck["data_as_of"])}</span><span>{n}/{total}</span></p>'
+    notes = f'<details class="dk-notes"><summary>Speaker notes and sources, slide {n}</summary><p>{E(sl.get("note", ""))}</p><p class="refs">{src_links(sl.get("cites", []), depth)}</p></details>'
+    return f'<section class="dk-slide dk-k-{E(k)}" id="slide-{n}" aria-label="Slide {n} of {total}: {E(sl["title"])}"><div class="dk-in">{"".join(inner)}{foot}</div></section>{notes}'
+
+def build_decks():
+    for deck in DECKS:
+        slug, depth = deck['slug'], 2
+        base = f'storyboards/{slug}/'
+        total = len(deck['slides'])
+        slides = ''.join(deck_slide(i + 1, total, sl, deck, depth) for i, sl in enumerate(deck['slides']))
+        pptx = f'{slug}.pptx'
+        side = os.path.join(ROOT, base, pptx + '.json')
+        made = json.load(open(side, encoding='utf-8')) if os.path.exists(side) else None
+        dl = (f'<a class="btn-open" href="{E(pptx)}" download>Download PowerPoint (.pptx)</a>' if made and os.path.exists(os.path.join(ROOT, base, pptx)) else '')
+        cites = list(OrderedDict.fromkeys(c for sl in deck['slides'] for c in sl.get('cites', [])))
+        moved = '' if deck['data_as_of'] >= STORY['data_as_of'] else f'<p class="caveat"><b>The evidence has moved since this deck was made.</b> It is dated {E(deck["date"])}, with evidence as of {E(deck["data_as_of"])}; the site now has data as of {E(STORY["data_as_of"])}. Present the <a href="../../index.html">front page</a> for the current state, or this deck as a record of what was known then.</p>'
+        body = f"""
+{item('deck-' + slug, 'story', 'stories', deck['title'], base + 'index.html', json.dumps({k: v for k, v in deck.items() if not k.startswith('_')}, ensure_ascii=False, sort_keys=True), deck['date'])}
+<p class="kicker">Briefing deck &middot; {total} slides &middot; dated {E(nice_date(deck["date"]))}</p>
+<h1>{E(deck["title"])}, {E(nice_date(deck["date"]))}</h1>
+<p class="lead">{E(deck["subtitle"])}. For {E(deck["for"])}.</p>
+<p class="kv"><b>By</b> <code>storyboard@php.newsroom</code> &middot; <b>made against</b> site v{E(deck["as_of_version"])} &middot; vault commit <code>{E(deck["vault_commit"])}</code> &middot; evidence as of {E(deck["data_as_of"])}</p>
+{moved}
+<div class="dk-tools"><button type="button" class="btn-open dk-present">&#9654; Present</button>{dl}<button type="button" class="btn-open dk-print">Print or save as PDF</button><span class="small">Present: full screen, arrow keys or space to move, Esc to leave. Speaker notes and each slide's sources are under each slide.</span></div>
+<div class="dk-deck">{slides}</div>
+<p class="small sb-rule"><b>The rule.</b> {E(deck["rule"])}</p>
+{section("sources", "Every source in this deck", f'<p>{len(cites)} captured sources, in the order the slides first cite them.</p><p class="refs">{src_links(cites, depth)}</p>')}
+<p class="small">Source file: <code>admin/content/decks/{E(deck["_file"])}</code>, in the authored layer. {('The PowerPoint was made from it by <code>admin/build/deck_pptx.js</code> (source sha256 <code>' + E(made["source_sha256"][:16]) + '</code>).') if made else ''} The <a href="../index.html">storyboards</a> tell the same story as strips.</p>
+<script src="../../assets/briefing-deck.js" defer></script>
+"""
+        page(base + 'index.html', f'{deck["title"]}, {nice_date(deck["date"])}', f'A {total}-slide briefing on the PHP flaws of October 2026, dated {nice_date(deck["date"])} with evidence as of {deck["data_as_of"]}: the bottom line, what it is, how it unfolded, where it stands, how sure we are, what governments say, who gets a fix, what nobody knows and what to do. Present it, print it, or download it as PowerPoint.', body, kind='briefing', date=deck['date'], topics='php2shell briefing deck', origin='house', byline='Made by the storyboard desk, agent storyboard@php.newsroom')
 
 
 if __name__ == '__main__':

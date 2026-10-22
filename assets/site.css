@@ -527,3 +527,66 @@ html[data-read-view="fade"] .it-read:hover,html[data-read-view="fade"] .it-read:
 .sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .sub-ok{color:var(--ok-ink);font-weight:600}.sub-err{color:var(--bad-ink);font-weight:600}
 .subform button.cta{cursor:pointer;font:inherit}
+/* storyboards (storyboard@php.newsroom): the shelf and the panel-by-panel text; the deck itself is the kit's storyboard.css */
+.sb-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.sb-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.6rem .7rem;display:flex;flex-direction:column;gap:.3rem}
+.sb-card svg{display:block;width:100%;height:auto;aspect-ratio:16/10;background:#fbf7ee;border-radius:6px}
+.sb-card h3{margin:.3rem 0 0;font-size:1.02rem}.sb-card p{margin:0}
+.sbx-lineup{display:block;width:100%;height:auto;max-height:260px;background:#fbf7ee;border-radius:8px;margin:.4rem 0 .8rem}
+.sb-panels li{margin:.5rem 0}.sb-panels .sb-note{display:block;color:var(--dim);font-size:.9rem}
+.sb-rule{margin-top:.6rem}
+/* the briefing deck: fixed colours on purpose, so a slide looks the same projected, printed or exported, in every theme */
+.dk-tools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.8rem 0}
+.dk-tools button{cursor:pointer;font:inherit;background:transparent}
+.dk-bl3 .st,.dk-stats .st,.dk-lad .st{align-self:flex-start;justify-self:end}
+.dk-deck{display:flex;flex-direction:column;gap:.4rem}
+.dk-slide{container-type:inline-size;aspect-ratio:16/9;background:#ffffff;color:#16202c;border:1px solid #d5dbe3;border-radius:10px;box-shadow:0 2px 10px rgba(15,23,42,.08);overflow:hidden;margin-top:.8rem}
+.dk-in{position:relative;height:100%;box-sizing:border-box;padding:4.5cqw 5cqw 6cqw;display:flex;flex-direction:column;gap:1.6cqw;font-size:1.75cqw;line-height:1.35}
+.dk-slide h2{font-size:4.2cqw;line-height:1.1;margin:0;color:#0b3b3a;border:0;padding:0}
+.dk-slide h3{font-size:2.1cqw;margin:0 0 .6cqw;color:#0b3b3a}
+.dk-slide ul,.dk-slide ol{margin:0;padding-left:2.4cqw}
+.dk-slide li{margin:.5cqw 0}
+.dk-slide .st{font-size:1.1cqw;vertical-align:.15em}
+.dk-slide code{font-size:.9em}
+.dk-lead{font-size:2.2cqw;margin:0;color:#334155}
+.dk-k-title,.dk-k-closing{background:#0b3b3a;color:#f1f5f4;border-color:#0b3b3a}
+.dk-k-title h2,.dk-k-closing h2{color:#ffffff;font-size:6.4cqw}
+.dk-k-title .dk-lead,.dk-k-closing .dk-lead{color:#cde7e3;font-size:2.6cqw;max-width:80%}
+.dk-k-title .dk-in,.dk-k-closing .dk-in{justify-content:center}
+.dk-k-closing .dk-pts{color:#f1f5f4;font-size:2.1cqw}
+.dk-kick{margin:0;font-size:1.5cqw;letter-spacing:.12em;text-transform:uppercase;color:#7dd3c8}
+.dk-date{margin:1.5cqw 0 0;font-size:1.6cqw;color:#a7d4cd}
+.dk-foot{position:absolute;left:5cqw;right:5cqw;bottom:2cqw;margin:0;display:flex;justify-content:space-between;font-size:1.15cqw;color:#64748b}
+.dk-k-title .dk-foot,.dk-k-closing .dk-foot{color:#7fb8b0}
+.dk-bl3{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;counter-reset:b}
+.dk-bl3 li{counter-increment:b;background:#eef6f5;border-radius:1.2cqw;padding:2.2cqw;display:flex;flex-direction:column;gap:1cqw;margin:0}
+.dk-bl3 li::before{content:counter(b);font-size:4.4cqw;font-weight:800;color:#0f766e;line-height:1}
+.dk-bl3 b{font-size:2.5cqw;color:#0b3b3a}.dk-bl3 span{font-size:1.9cqw}
+.dk-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6cqw}
+.dk-stats div{background:#f1f5f9;border-radius:1cqw;padding:1.6cqw;display:flex;flex-direction:column;gap:.4cqw}
+.dk-stats b{font-size:5cqw;line-height:1;color:#0f766e}.dk-stats span{font-weight:700}.dk-stats small{font-size:1.3cqw;color:#475569}
+.dk-tl{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:1.4cqw;position:relative}
+.dk-tl li{border-top:.5cqw solid #0f766e;padding-top:1.2cqw;margin:0}
+.dk-tl b{display:block;font-size:2.6cqw;color:#0b3b3a}.dk-tl span{font-size:1.65cqw}
+.dk-lad{list-style:none;padding:0;display:flex;flex-direction:column;gap:.7cqw}
+.dk-lad li{display:grid;grid-template-columns:13cqw 1fr auto;align-items:center;gap:1.6cqw;background:#f1f5f9;border-radius:.8cqw;padding:.6cqw 1.4cqw;margin:0}
+.dk-lad li:nth-child(1){margin-right:0}.dk-lad li:nth-child(2){margin-right:4cqw}.dk-lad li:nth-child(3){margin-right:8cqw}.dk-lad li:nth-child(4){margin-right:12cqw}.dk-lad li:nth-child(5){margin-right:16cqw;background:#dcfce7}.dk-lad li:nth-child(6){margin-right:20cqw}
+.dk-lad b{font-size:2.8cqw;color:#0f766e}
+.dk-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw}
+.dk-cols>div{background:#f1f5f9;border-radius:1cqw;padding:1.8cqw}
+.dk-split{display:grid;grid-template-columns:1.1fr 1fr;gap:3cqw;align-items:start}
+.dk-split figure{margin:0}.dk-split figcaption{font-size:1.2cqw;color:#64748b}
+.dk-bars{width:100%;height:auto}.dk-bl{font-size:20px;fill:#334155}.dk-bv{font-size:20px;font-weight:700;fill:#16202c}
+.dk-later{font-size:1.3cqw;color:#9a3412;margin:0}
+.dk-notes{font-size:.88rem;margin:.2rem .2rem 0}.dk-notes p{margin:.3rem 0}
+.dk-deck.dk-on{position:fixed;inset:0;z-index:9999;background:#000;display:flex;align-items:center;justify-content:center;gap:0}
+.dk-deck.dk-on .dk-slide{display:none;margin:0;width:min(100vw,177.78vh);border-radius:0;border:0}
+.dk-deck.dk-on .dk-slide.dk-cur{display:block}
+.dk-deck.dk-on .dk-notes{display:none}
+html.dk-lock,html.dk-lock body{overflow:hidden}
+@media print{
+  body:has(.dk-deck) nav.site,body:has(.dk-deck) footer.site,body:has(.dk-deck) main>*:not(.dk-deck){display:none!important}
+  .dk-deck .dk-notes{display:none}
+  .dk-slide{break-after:page;box-shadow:none;border:0;border-radius:0;margin:0;width:100%;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:landscape;margin:0}
+}

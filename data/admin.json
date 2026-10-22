@@ -176,6 +176,18 @@
     "Severity in perspective, both ways: name what makes it worse than the headline and what makes it less bad, each with its source.",
     "Never run a public exploit or a stranger's fix script; watch them, hash them, describe them."
    ]
+  },
+  {
+   "id": "storyboard",
+   "name": "storyboard@php.newsroom",
+   "who": "an agent, joined on 22 October 2026",
+   "owns": "the storyboards and infographics: the story drawn as short strips of panels from the data (the situation, how it unfolded, exposed against exploited, the agencies, who gets a fix, the weaponisation ladder, how this site knows), drawn in the browser by the storyboard kit from api.storyboards.sgit.ai; the dated briefing deck; the briefs for model-drawn infographics",
+   "rules": [
+    "The lines are the storyboard's, marked not_a_quote; no real person is drawn.",
+    "Evidence quoted word for word from the file it names; bars equal to their file; the gate refuses either otherwise.",
+    "Every panel cites vault slugs; every storyboard is dated against a site version, vault commit and capture time.",
+    "Load no code from another host: the kit is vendored and its hashes checked."
+   ]
   }
  ],
  "board": [
@@ -693,6 +705,36 @@
    "title": "The weaponisation clock: watch for a merged Metasploit module, an exploiting nuclei template, a KEV listing, an EPSS step, upstream Sigma/ET/Snort rules, a second patch or regression; write the next cyber piece when one moves",
    "status": "open",
    "owner": "cyber@php.newsroom"
+  },
+  {
+   "id": "080",
+   "title": "Storyboard desk joins: seven storyboards (61 panels) at /storyboards/, a cast of seven, the storyboard kit v0.1.0 vendored with its hashes checked by the gate, bundles and a catalogue for storyboards.sgit.ai",
+   "status": "done",
+   "owner": "storyboard@php.newsroom"
+  },
+  {
+   "id": "081",
+   "title": "The dated briefing deck, 22 October 2026: 12 slides (the bottom line, what it is, how it unfolded, where it stands, how sure we are, exposed is not exploited, what governments say, who gets a fix, what nobody knows, what to do), on the site to read, present and print, and as PowerPoint",
+   "status": "done",
+   "owner": "storyboard@php.newsroom"
+  },
+  {
+   "id": "082",
+   "title": "Model-drawn infographics: the briefs are written from the data; draw them (Gemini through OpenRouter) once a key is provided, and check every number in each image against its file before publishing",
+   "status": "waiting",
+   "owner": "storyboard@php.newsroom"
+  },
+  {
+   "id": "083",
+   "title": "Offer the series to storyboards.sgit.ai through its catalogue.json; ask for a kit option to follow the site theme (ink) and for a 4:5 panel for phones",
+   "status": "open",
+   "owner": "storyboard@php.newsroom"
+  },
+  {
+   "id": "084",
+   "title": "Redraw where-it-stands when the evidence moves (a confirmed compromise, a KEV listing, a second patch): a new storyboard that supersedes, not an edit",
+   "status": "open",
+   "owner": "storyboard@php.newsroom"
   }
  ],
  "evidence_vault": {

@@ -1,0 +1,345 @@
+{
+ "slug": "how-this-site-knows",
+ "title": "How this site knows",
+ "subtitle": "From a web page to a fact with a status: capture, hash, claim, check, page. 8 panels.",
+ "reader": "journalist",
+ "see": [
+  "method/index.html",
+  "pipeline/index.html",
+  "factcheck/index.html",
+  "layers/index.html"
+ ],
+ "status": "draft",
+ "by": "storyboard@php.newsroom, 22 October 2026",
+ "written": "2026-10-22",
+ "as_of_version": "0.5.2",
+ "vault_commit": "200d08971937",
+ "data_as_of": "2026-10-22T11:34Z",
+ "rule": "Every line a character says is the storyboard's own words, not a quote, and is marked not_a_quote; every evidence panel quotes this site's data word for word and names the file (quote_from), which the gate checks; every panel cites the evidence vault's source slugs it rests on (cites), which the gate checks against the manifest.",
+ "scenes": [
+  {
+   "kind": "cover",
+   "title": "How this site knows",
+   "subtitle": "Capture before you read; cite what you captured",
+   "cast": [
+    {
+     "who": "rowan",
+     "pose": "think",
+     "mood": "thinking"
+    },
+    {
+     "who": "desk",
+     "pose": "wave",
+     "mood": "happy"
+    }
+   ],
+   "note": "Who this is for: Rowan, who has to say where a number came from.",
+   "cites": [
+    "php-net-advisory"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "office",
+   "caption": "The question a journalist asks",
+   "cast": [
+    {
+     "who": "rowan",
+     "x": 0.2,
+     "pose": "point",
+     "mood": "thinking",
+     "says": "Who said it first, and can I check?",
+     "max": 14
+    },
+    {
+     "who": "desk",
+     "x": 0.8,
+     "pose": "point",
+     "mood": "calm",
+     "says": "Every fact links to a saved copy.",
+     "max": 14,
+     "flip": true
+    }
+   ],
+   "note": "Every source this site relies on was saved at the moment it was read, with a fingerprint.",
+   "cites": [
+    "php-net-advisory"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "graph",
+   "caption": "From a page to a fact",
+   "graph": {
+    "nodes": [
+     {
+      "id": "web",
+      "label": "a web page",
+      "x": 0.16,
+      "y": 0.45
+     },
+     {
+      "id": "cap",
+      "label": "captured, hashed",
+      "x": 0.32,
+      "y": 0.45
+     },
+     {
+      "id": "vault",
+      "label": "evidence vault",
+      "x": 0.48,
+      "y": 0.45
+     },
+     {
+      "id": "claim",
+      "label": "claim + status",
+      "x": 0.66,
+      "y": 0.25
+     },
+     {
+      "id": "fc",
+      "label": "fact-check grade",
+      "x": 0.66,
+      "y": 0.7
+     },
+     {
+      "id": "page",
+      "label": "this page",
+      "x": 0.86,
+      "y": 0.45
+     }
+    ],
+    "edges": [
+     {
+      "from": "web",
+      "to": "cap"
+     },
+     {
+      "from": "cap",
+      "to": "vault",
+      "label": "sha256"
+     },
+     {
+      "from": "vault",
+      "to": "claim",
+      "label": "cites"
+     },
+     {
+      "from": "claim",
+      "to": "fc"
+     },
+     {
+      "from": "claim",
+      "to": "page"
+     },
+     {
+      "from": "fc",
+      "to": "page",
+      "label": "badge"
+     }
+    ],
+    "path": [
+     "web",
+     "cap",
+     "vault",
+     "claim",
+     "page"
+    ]
+   },
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.06,
+     "pose": "point",
+     "mood": "calm"
+    }
+   ],
+   "note": "144 sources, 137 captures and 857 hashed files at vault commit 200d08971937; the gate refuses any row that cites an unknown source.",
+   "cites": [
+    "php-net-advisory"
+   ]
+  },
+  {
+   "kind": "spectrum",
+   "setting": "none",
+   "caption": "Five words for how sure",
+   "stops": [
+    {
+     "label": "confirmed",
+     "note": "two or more original sources agree",
+     "colour": "#bbf7d0"
+    },
+    {
+     "label": "reported",
+     "note": "one party says so",
+     "colour": "#bfdbfe"
+    },
+    {
+     "label": "disputed",
+     "note": "sources disagree",
+     "colour": "#fde68a"
+    },
+    {
+     "label": "unverified",
+     "note": "nobody could check",
+     "colour": "#e5e7eb"
+    },
+    {
+     "label": "contradicted",
+     "note": "a source shows it false",
+     "colour": "#fecaca"
+    }
+   ],
+   "cast": [
+    {
+     "who": "rowan",
+     "x": 0.5,
+     "pose": "think",
+     "mood": "thinking"
+    }
+   ],
+   "note": "The status words, defined on /method/.",
+   "cites": [
+    "php-net-advisory"
+   ]
+  },
+  {
+   "kind": "scene",
+   "setting": "none",
+   "caption": "Who did each step",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.84,
+     "pose": "point",
+     "mood": "calm",
+     "says": "Agents capture and check. One editor decides.",
+     "max": 16,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "terminal",
+     "x": 0.36,
+     "y": 820,
+     "lines": [
+      "collectors: capture",
+      "researcher: the watch",
+      "verifier: statuses",
+      "factcheck: grades",
+      "dev: build + gate",
+      "storyboard: this strip"
+     ]
+    }
+   ],
+   "note": "The team page lists every member, human and agent, with what each owns.",
+   "cites": [
+    "php-net-advisory"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "scene",
+   "setting": "office",
+   "caption": "Research or story?",
+   "cast": [
+    {
+     "who": "rowan",
+     "x": 0.2,
+     "pose": "think",
+     "mood": "surprised",
+     "says": "So this strip is which?",
+     "max": 12
+    },
+    {
+     "who": "desk",
+     "x": 0.8,
+     "pose": "point",
+     "mood": "happy",
+     "says": "A story: drawn here, from the research.",
+     "max": 14,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "kind": "sign",
+     "x": 0.5,
+     "y": 860,
+     "label": "Story: written here"
+    }
+   ],
+   "note": "Every page carries an origin strip: research, external, story or about the site.",
+   "cites": [
+    "php-net-advisory"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "scene",
+   "setting": "none",
+   "caption": "When a fact changes",
+   "cast": [
+    {
+     "who": "desk",
+     "x": 0.16,
+     "pose": "stand",
+     "mood": "calm",
+     "says": "A new version, never an edit.",
+     "max": 12
+    }
+   ],
+   "props": [
+    {
+     "kind": "record",
+     "x": 0.45,
+     "y": 860,
+     "lines": [
+      "fact v1: 22 Oct",
+      "fact v2: 22 Oct",
+      "  what changed",
+      "  and why"
+     ],
+     "stamp": "diff"
+    },
+    {
+     "kind": "calendar",
+     "x": 0.8,
+     "y": 760,
+     "label": "dated"
+    }
+   ],
+   "note": "Every section and fact is versioned with its history and a diff on /versions/.",
+   "cites": [
+    "php-net-advisory"
+   ],
+   "not_a_quote": true
+  },
+  {
+   "kind": "punchline",
+   "setting": "none",
+   "punchline": "No saved copy, no fact.",
+   "cast": [
+    {
+     "who": "rowan",
+     "x": 0.2,
+     "pose": "arms-up",
+     "mood": "happy"
+    },
+    {
+     "who": "desk",
+     "x": 0.82,
+     "pose": "stand",
+     "mood": "calm",
+     "flip": true
+    }
+   ],
+   "note": "The method, the pipeline and the fact-check desk, each on its own page.",
+   "cites": [
+    "php-net-advisory"
+   ],
+   "not_a_quote": true
+  }
+ ]
+}

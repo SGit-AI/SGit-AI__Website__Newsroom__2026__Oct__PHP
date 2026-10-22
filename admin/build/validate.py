@@ -123,6 +123,119 @@ sg = load('signals') or {}
 for x in sg.get('ladder', []) + sg.get('families', []) + sg.get('barriers', []):
     for s in x.get('sources', []):
         if s not in slugs: fails.append(f'data/signals.json: {x.get("id")} cites unknown slug {s}')
+# 4f. storyboards: the kit's vocabulary, the cast, every cited slug, every quote word for word in the file it names,
+# every bar chart equal to the counts in its file, and the vendored kit byte for byte against its release manifest
+SBD = os.path.join(ROOT, 'admin', 'content', 'storyboards')
+if os.path.isdir(SBD):
+    V = {'kinds': {'cover', 'scene', 'evidence', 'punchline', 'spectrum', 'map', 'graph'}, 'poses': {'stand', 'point', 'wave', 'arms-up', 'shrug', 'think', 'sit'},
+         'moods': {'neutral', 'happy', 'excited', 'calm', 'worried', 'sad', 'surprised', 'thinking', 'confused', 'determined'},
+         'settings': {'none', 'office', 'interview', 'street', 'night', 'classroom'},
+         'props': {'laptop', 'desk', 'book', 'board', 'phone', 'sign', 'key', 'vault', 'qr', 'envelope', 'record', 'server', 'arrow', 'mark', 'calendar', 'terminal', 'phoneqr', 'padlock'}}
+    def strings(x):
+        if isinstance(x, str): yield x
+        elif isinstance(x, dict):
+            for v in x.values(): yield from strings(v)
+        elif isinstance(x, list):
+            for v in x: yield from strings(v)
+    cast_ids = {c['id'] for c in json.load(open(os.path.join(SBD, 'cast.json'), encoding='utf-8'))['characters']}
+    latest = (json.load(open(os.path.join(ROOT, 'data', 'vault.json'), encoding='utf-8')).get('latest_capture') or '')
+    for fn in sorted(f for f in os.listdir(SBD) if re.match(r'^\d\d__.*\.json$', f)):
+        sb = json.load(open(os.path.join(SBD, fn), encoding='utf-8'))
+        at = lambda i: f'storyboards/{fn} panel {i + 1}'
+        # drawn against older evidence: kept as drawn, and its page says so; a quote or chart that no longer matches the
+        # current data is then a warning for the storyboard desk, never a failure that blocks another agent's release
+        stale = sb.get('data_as_of', '') < latest
+        moved = warns if stale else fails
+        for k in ('slug', 'title', 'subtitle', 'status', 'by', 'written', 'as_of_version', 'vault_commit', 'data_as_of', 'rule', 'scenes'):
+            if not sb.get(k): fails.append(f'storyboards/{fn}: no {k}')
+        if sb.get('reader') and not os.path.exists(os.path.join(ROOT, 'briefings', sb['reader'], 'index.html')): fails.append(f'storyboards/{fn}: reader {sb["reader"]} has no briefing')
+        for x in sb.get('see', []):
+            if not os.path.exists(os.path.join(ROOT, x)): fails.append(f'storyboards/{fn}: see points at missing page {x}')
+        for i, sc in enumerate(sb.get('scenes', [])):
+            kind = sc.get('kind', 'scene')
+            if kind not in V['kinds']: fails.append(f'{at(i)}: unknown kind {kind}')
+            if sc.get('setting', 'none') not in V['settings']: fails.append(f'{at(i)}: unknown setting {sc.get("setting")}')
+            for pr in sc.get('props', []):
+                if pr.get('kind') not in V['props']: fails.append(f'{at(i)}: unknown prop {pr.get("kind")}')
+            for c in sc.get('cast', []):
+                if c.get('who') not in cast_ids: fails.append(f'{at(i)}: {c.get("who")} is not in the cast')
+                if c.get('pose', 'stand') not in V['poses']: fails.append(f'{at(i)}: unknown pose {c.get("pose")}')
+                if c.get('mood', 'neutral') not in V['moods']: fails.append(f'{at(i)}: unknown mood {c.get("mood")}')
+                if c.get('says') and kind != 'evidence' and not sc.get('not_a_quote'): fails.append(f'{at(i)}: a line is spoken but the panel is not marked not_a_quote')
+            if not sc.get('cites'): fails.append(f'{at(i)}: cites no source')
+            for sl in sc.get('cites', []):
+                if sl not in slugs: fails.append(f'{at(i)}: cites unknown slug {sl}')
+            ev = sc.get('evidence') or {}
+            if ev.get('quote'):
+                qf = sc.get('quote_from')
+                if not qf or not os.path.exists(os.path.join(ROOT, qf)): fails.append(f'{at(i)}: a quote with no quote_from file')
+                else:
+                    src = open(os.path.join(ROOT, qf), encoding='utf-8').read()
+                    hay = list(strings(json.loads(src))) if qf.endswith('.json') else [src]
+                    if not any(ev['quote'] in h for h in hay): moved.append(f'{at(i)}: the quote is not in {qf} word for word')
+            if ev.get('bars'):
+                bf = sc.get('bars_from') or {}
+                got = {b['label']: b['value'] for b in ev['bars']}
+                want = None
+                if bf.get('file') == 'data/claims.json':
+                    want = dict(__import__('collections').Counter(c['status'] for c in json.load(open(os.path.join(ROOT, bf['file']), encoding='utf-8'))))
+                elif bf.get('file') == 'data/agencies.json':
+                    rows = json.load(open(os.path.join(ROOT, bf['file']), encoding='utf-8'))
+                    want = {lab: sum(1 for r in rows if r.get('offline') in vals) for lab, vals in bf.get('groups', {}).items()}
+                    if sum(want.values()) != len(rows): fails.append(f'{at(i)}: the bar groups do not cover every agency')
+                elif bf.get('file') == 'data/inventory-history.json':
+                    snap = [x for x in json.load(open(os.path.join(ROOT, bf['file']), encoding='utf-8'))['snapshots'] if x['commit'] == bf.get('snapshot')]
+                    m = {'investigating': 'Investigation', 'vulnerable': 'Vulnerable', 'fixed': 'Fix', 'not affected': 'Not vuln'}
+                    want = {lab: snap[0]['by_status'].get(k, 0) for lab, k in m.items()} if snap else None
+                    if not snap: fails.append(f'{at(i)}: no inventory snapshot {bf.get("snapshot")}')
+                elif bf.get('file', '').endswith('.md') and os.path.exists(os.path.join(ROOT, bf['file'])):
+                    if bf.get('row') and bf['row'] not in open(os.path.join(ROOT, bf['file']), encoding='utf-8').read(): fails.append(f'{at(i)}: {bf["file"]} has no row {bf["row"]}')
+                    want = got
+                else:
+                    fails.append(f'{at(i)}: bars with no bars_from the gate can check')
+                if want is not None and want != got: moved.append(f'{at(i)}: bars {got} but {bf.get("file")} gives {want}')
+    kit = os.path.join(ROOT, 'assets', 'vendor', 'storyboards', 'v0', 'v0.1', 'v0.1.0')
+    man = json.load(open(os.path.join(kit, 'manifest.json'), encoding='utf-8'))
+    for f in man['files']:
+        fp = os.path.join(kit, f['path'])
+        if not os.path.exists(fp) or hashlib.sha256(open(fp, 'rb').read()).hexdigest() != f['sha256']: fails.append(f'{rel(fp)}: not the bytes of storyboard kit {man["release"]}')
+# 4g. the briefing decks: every cited slug, every quote_from quote word for word, the bars against their file (a deck
+# made against older evidence is kept as made: then a mismatch warns), and the PowerPoint made from the current source
+DKD = os.path.join(ROOT, 'admin', 'content', 'decks')
+for fn in sorted(os.listdir(DKD)) if os.path.isdir(DKD) else []:
+    if not fn.endswith('.json'): continue
+    raw = open(os.path.join(DKD, fn), 'rb').read(); dk = json.loads(raw)
+    latest = (json.load(open(os.path.join(ROOT, 'data', 'vault.json'), encoding='utf-8')).get('latest_capture') or '')
+    moved = warns if dk.get('data_as_of', '') < latest else fails
+    for k in ('slug', 'title', 'date', 'data_as_of', 'vault_commit', 'as_of_version', 'rule', 'slides'):
+        if not dk.get(k): fails.append(f'decks/{fn}: no {k}')
+    def hay_of(f):
+        t = open(os.path.join(ROOT, f), encoding='utf-8').read()
+        return list(strings(json.loads(t))) if f.endswith('.json') else [t]
+    for n, sl in enumerate(dk.get('slides', []), 1):
+        at = f'decks/{fn} slide {n}'
+        if not sl.get('cites'): fails.append(f'{at}: cites no source')
+        for sl_ in sl.get('cites', []) + [c for x in sl.get('points', []) for c in x.get('cites', [])]:
+            if sl_ not in slugs: fails.append(f'{at}: cites unknown slug {sl_}')
+        for x in sl.get('points', []):
+            if x.get('quote_from') and not any(x['text'] in h for h in hay_of(x['quote_from'])): moved.append(f'{at}: "{x["text"][:40]}..." is not in {x["quote_from"]} word for word')
+        if sl.get('kind') == 'timeline' and sl.get('quote_from'):
+            for m in sl.get('moments', []):
+                if not any(m['what'] in h for h in hay_of(sl['quote_from'])): moved.append(f'{at}: moment {m["when"]} is not in {sl["quote_from"]} word for word')
+        b = sl.get('bars')
+        if b:
+            bf, got = b.get('from', {}), {r['label']: r['value'] for r in b['rows']}
+            if bf.get('file') == 'data/claims.json':
+                want = dict(__import__('collections').Counter(c['status'] for c in json.load(open(os.path.join(ROOT, bf['file']), encoding='utf-8'))))
+            elif bf.get('file') == 'data/agencies.json':
+                rows = json.load(open(os.path.join(ROOT, bf['file']), encoding='utf-8'))
+                want = {lab: sum(1 for r in rows if r.get('offline') in vals) for lab, vals in bf.get('groups', {}).items()}
+            else:
+                want = None; fails.append(f'{at}: bars from {bf.get("file")} the gate cannot check')
+            if want is not None and want != got: moved.append(f'{at}: bars {got} but {bf.get("file")} gives {want}')
+    side = os.path.join(ROOT, 'storyboards', dk.get('slug', ''), dk.get('slug', '') + '.pptx.json')
+    if os.path.exists(side) and json.load(open(side, encoding='utf-8')).get('source_sha256') != hashlib.sha256(raw).hexdigest():
+        fails.append(f'decks/{fn}: the PowerPoint was made from an older version of the deck; run node admin/build/deck_pptx.js')
 # 4c. layers: every data file is classified exactly once
 layers = load('layers') or {}
 classified = [f['path'] for f in layers.get('files', [])]

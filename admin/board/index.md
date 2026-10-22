@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 79 items, 56 open, 22 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 84 items, 58 open, 24 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -89,6 +89,11 @@ The work, as rows in `data/admin.json`: 79 items, 56 open, 22 done. An item is a
 | 077 | Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so the publishers it surfaces are mapped but not followed; Bing carries article addresses but only for the query 'php2shell' | open | researcher@php.newsroom |  |
 | 078 | Cyber desk, first piece: 'Patch at the speed of Metasploit', php2shell on the weaponisation ladder, the ATT&CK path (seen, expected, precedent) and the second and third stories | done | cyber@php.newsroom |  |
 | 079 | The weaponisation clock: watch for a merged Metasploit module, an exploiting nuclei template, a KEV listing, an EPSS step, upstream Sigma/ET/Snort rules, a second patch or regression; write the next cyber piece when one moves | open | cyber@php.newsroom |  |
+| 080 | Storyboard desk joins: seven storyboards (61 panels) at /storyboards/, a cast of seven, the storyboard kit v0.1.0 vendored with its hashes checked by the gate, bundles and a catalogue for storyboards.sgit.ai | done | storyboard@php.newsroom |  |
+| 081 | The dated briefing deck, 22 October 2026: 12 slides (the bottom line, what it is, how it unfolded, where it stands, how sure we are, exposed is not exploited, what governments say, who gets a fix, what nobody knows, what to do), on the site to read, present and print, and as PowerPoint | done | storyboard@php.newsroom |  |
+| 082 | Model-drawn infographics: the briefs are written from the data; draw them (Gemini through OpenRouter) once a key is provided, and check every number in each image against its file before publishing | waiting | storyboard@php.newsroom |  |
+| 083 | Offer the series to storyboards.sgit.ai through its catalogue.json; ask for a kit option to follow the site theme (ink) and for a 4:5 panel for phones | open | storyboard@php.newsroom |  |
+| 084 | Redraw where-it-stands when the evidence moves (a confirmed compromise, a KEV listing, a second patch): a new storyboard that supersedes, not an edit | open | storyboard@php.newsroom |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
