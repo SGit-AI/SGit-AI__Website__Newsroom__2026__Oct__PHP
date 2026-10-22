@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'arcs', 'personas')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 SYN = load('synthetic') if os.path.exists(os.path.join(DATA, 'synthetic.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
@@ -193,7 +193,7 @@ NAV = [
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
     ('The analysis', [('claims/index.html', 'Every claim'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
-                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'),
+                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'), ('fractal/index.html', 'From a line of code to a stakeholder'), ('fractal/ui/index.html', 'Walk the whole graph'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
                       ('layers/index.html', 'Evidence, derived, authored'),
@@ -1452,7 +1452,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
+    build_review(); build_fractal(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -3540,6 +3540,216 @@ def build_agents_guide():
 <p class="small">The source is <code>AGENTS.md</code> at the root of the repository; every agent reads it there or here.</p>
 """
     page('admin/agents/index.html', 'How to work on this site: guidance for every agent', 'Push to your own branch early and often and let dev@php.newsroom carry it into dev; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements.', body, kind='site')
+
+
+# ----------------------------------------------------------------------------- the fractal graph (v0.5.2, the librarian)
+
+FR_LAYERS = [
+    ('stakeholder', 'Stakeholders', 'the fifteen readers in data/personas.json'),
+    ('risk', 'Risks', 'authored in data/arcs.json, each resting on claims'),
+    ('arc', 'Story arcs', 'authored in data/arcs.json, each carrying risks and resting on claims and events'),
+    ('claim', 'Claims and events', 'data/claims.json and data/timeline.json, each with a status or a date'),
+    ('source', 'Sources', 'the captured, hashed sources the claims and events cite'),
+    ('flaw', 'The flaws', 'the two CVEs, from data/review.json'),
+    ('fix', 'The fix', 'the commit and what it does, from data/review.json'),
+    ('code', 'Areas and files', 'php-src areas and files the fix changed, from review/code/files.json'),
+    ('function', 'Functions', 'the C functions the fix changed, from the diff'),
+    ('line', 'Lines', 'every changed hunk, with its line range in php-src'),
+]
+FR_RANK = {l: i for i, (l, _, _) in enumerate(FR_LAYERS)}
+
+def fractal_graph():
+    """Assemble one graph from stakeholders to changed lines. Deterministic: inputs are sorted or kept in file order."""
+    A, R = D['arcs'], D['review']
+    FJ = json.load(open(os.path.join(ROOT, 'review', 'code', 'files.json'), encoding='utf-8'))
+    nodes, edges, seen = OrderedDict(), [], set()
+    def node(i, layer, name, text='', **kw):
+        if i not in nodes: nodes[i] = {'id': i, 'layer': layer, 'name': name, 'text': text, **kw}
+    def edge(a, b, rel):
+        if a in nodes and b in nodes and (a, b, rel) not in seen:
+            seen.add((a, b, rel)); edges.append({'from': a, 'to': b, 'rel': rel})
+    claims = {c['id']: c for c in D['claims']}
+    for p in D['personas']['personas']:
+        node('who:' + p['id'], 'stakeholder', p['label'], p['who'], href=(p.get('path') or ['start/index.html'])[0])
+    for r in A['risks']:
+        node('risk:' + r['id'], 'risk', r['name'], r['text'])
+    for a in A['arcs']:
+        node('arc:' + a['id'], 'arc', a['name'], a['text'], href=a['page'])
+    for c in D['claims']:
+        node('claim:' + c['id'], 'claim', c['claim'], f'{c["status"]}, says {c["by"]}', status=c['status'], href=f'claims/index.html#{c["id"]}')
+    for i, t in enumerate(D['timeline']):
+        node(f'event:{i}', 'claim', f'{fmt_at(t["at"])}: {t["event"][:80]}', t['event'], href='timeline/index.html')
+    for c in D['claims']:
+        for s in c['sources']:
+            if s in SOURCES: node('source:' + s, 'source', short_name(SOURCES[s]), SOURCES[s].get('title') or s, href=f'sources/{s}/index.html')
+    for t in D['timeline']:
+        for s in t['sources']:
+            if s in SOURCES: node('source:' + s, 'source', short_name(SOURCES[s]), SOURCES[s].get('title') or s, href=f'sources/{s}/index.html')
+    for n in R['nodes']:
+        if n['layer'] in ('vulnerability', 'remediation'):
+            node(n['id'], 'flaw' if n['layer'] == 'vulnerability' else 'fix', n['name'], n['text'], href='review/ui/index.html#' + n['id'])
+        elif n['id'].startswith('area:'):
+            node(n['id'], 'code', n['name'], n['text'])
+    areas = sorted((i for i in nodes if i.startswith('area:')), key=lambda i: -len(i))
+    def area_of(path):
+        return next((a for a in areas if path.startswith(a[5:].rstrip('/') + '/') or path == a[5:].rstrip('/')), None)
+    for f in FJ['engine_files']:
+        fid = 'file:' + f['path']
+        fn_names = [x[0] for x in f['functions']]
+        node(fid, 'code', f['path'], f'+{f["add"]} / -{f["del"]} in the fix. Functions changed: {", ".join(fn_names) or "none named"}.', url=f['url'])
+        for fn in fn_names:
+            node(f'fn:{f["path"]}:{fn}', 'function', fn + '()', f'in {f["path"]}', file=f['path'], url=f['url'])
+        for h in f['hunks']:
+            end = h['new_start'] + max(h['new_len'], 1) - 1
+            lid = f'line:{f["path"]}:{h["new_start"]}'
+            node(lid, 'line', f'{f["path"].split("/")[-1]}:{h["new_start"]}' + (f'-{end}' if end > h['new_start'] else ''), (h.get('context') or '').strip()[:160], file=f['path'], url=f'{f["url"]}#L{h["new_start"]}-L{end}')
+    # edges, top down
+    for pid, rs in A['faces'].items():
+        for r in rs: edge('who:' + pid, 'risk:' + r, 'faces')
+    for a in A['arcs']:
+        for r in a['risks']: edge('risk:' + r, 'arc:' + a['id'], 'told in')
+    for r in A['risks']:
+        for c in r['claims']: edge('risk:' + r['id'], 'claim:' + c, 'rests on')
+    for a in A['arcs']:
+        for c in D['claims']:
+            if c['topic'] in a['topics']: edge('arc:' + a['id'], 'claim:' + c['id'], 'rests on')
+        for c in a.get('claims', []): edge('arc:' + a['id'], 'claim:' + c, 'rests on')
+        for i, t in enumerate(D['timeline']):
+            if t.get('phase') in a['phases']: edge('arc:' + a['id'], f'event:{i}', 'dated by')
+    for c in D['claims']:
+        for s in c['sources']: edge('claim:' + c['id'], 'source:' + s, 'cites')
+    for i, t in enumerate(D['timeline']):
+        for s in t['sources']: edge(f'event:{i}', 'source:' + s, 'cites')
+    for c, fl in A['claim_to_flaw'].items():
+        for f in fl: edge('claim:' + c, f, 'about')
+    for c, fx in A['claim_to_fix'].items():
+        for f in fx: edge('claim:' + c, f, 'about')
+    for e in R['edges']:
+        a, b = e['from'], e['to']
+        if a.startswith('area:') and a not in nodes and a + '/' in nodes: a += '/'
+        if e['rel'] in ('fixes', 'addresses'): edge(b, a, 'closed by')
+        elif e['rel'] == 'contains': edge(a, b, 'contains')
+        else: edge(a, b, e['rel'])
+    for f in FJ['engine_files']:
+        fid = 'file:' + f['path']
+        ar = area_of(f['path'])
+        if ar: edge(ar, fid, 'contains')
+        names = {x[0] for x in f['functions']}
+        for fn in sorted(names): edge(fid, f'fn:{f["path"]}:{fn}', 'changes')
+        for h in f['hunks']:
+            lid = f'line:{f["path"]}:{h["new_start"]}'
+            m = re.findall(r'([A-Za-z_]\w*)\s*\(', h.get('context') or '')
+            if m and m[0] in names: edge(f'fn:{f["path"]}:{m[0]}', lid, 'changed at')
+            else: edge(fid, lid, 'changed at')
+    return list(nodes.values()), edges
+
+def fractal_reach(nodes, edges):
+    """Downward and upward reach along edges that go down the layer ladder (or stay in it)."""
+    lay = {n['id']: n['layer'] for n in nodes}
+    down, up = {}, {}
+    for e in edges:
+        a, b = e['from'], e['to']
+        if FR_RANK[lay[a]] > FR_RANK[lay[b]]: a, b = b, a
+        down.setdefault(a, []).append(b); up.setdefault(b, []).append(a)
+    for k in down: down[k].sort()
+    for k in up: up[k].sort()
+    return down, up
+
+FR_STEPS = {'stakeholder': {'risk'}, 'risk': {'arc'}, 'arc': {'claim'}, 'claim': {'flaw', 'fix'}, 'flaw': {'fix'},
+            'fix': {'fix', 'code'}, 'code': {'code', 'function', 'line'}, 'function': {'line'}}
+
+def fractal_thread(start, goal_layer, down, lay, prefer=None, steps=FR_STEPS):
+    """The shortest path down the ladder from start to any node in goal_layer, ties broken by id.
+    With steps, each move must go to the next rung (so a thread passes a risk, an arc, a claim, a flaw where there is one);
+    without, any downward edge will do."""
+    prev, q, i = {start: None}, [start], 0
+    while i < len(q):
+        x = q[i]; i += 1
+        if lay[x] == goal_layer and (prefer is None or x.startswith(prefer)):
+            path = []
+            while x: path.append(x); x = prev[x]
+            return path[::-1]
+        for y in down.get(x, []):
+            if y not in prev and (steps is None or lay[y] in steps.get(lay[x], ())): prev[y] = x; q.append(y)
+    return fractal_thread(start, goal_layer, down, lay, prefer, None) if steps is not None else None
+
+def build_fractal():
+    nodes, edges = fractal_graph()
+    by = {n['id']: n for n in nodes}
+    lay = {n['id']: n['layer'] for n in nodes}
+    down, up = fractal_reach(nodes, edges)
+    def reach(start, nbr):
+        seen, q = {start}, [start]
+        while q:
+            x = q.pop()
+            for y in nbr.get(x, []):
+                if y not in seen: seen.add(y); q.append(y)
+        return seen
+    lines = [n['id'] for n in nodes if n['layer'] == 'line']
+    up_ok = sum(1 for l in lines if any(lay[x] == 'stakeholder' for x in reach(l, up)))
+    named_fix = sum(1 for l in lines if any(lay[x] == 'fix' and x != 'fix-commit' for x in reach(l, up)))
+    who = [n['id'] for n in nodes if n['layer'] == 'stakeholder']
+    who_ok = sum(1 for w in who if any(lay[x] == 'line' for x in reach(w, down)))
+    counts = OrderedDict((l, sum(1 for n in nodes if n['layer'] == l)) for l, _, _ in FR_LAYERS)
+    cov = {'lines': len(lines), 'lines_to_stakeholder': up_ok, 'lines_to_named_fix': named_fix, 'stakeholders': len(who), 'stakeholders_to_line': who_ok}
+    G = {'about': 'The fractal graph: one graph from the people affected, through the risks, the story and the evidence, to the flaws, the fix and the changed lines of php-src. A node is just a node; meaning lives in the edges. Every node opens into its own neighbourhood in the navigator.',
+         'site': SITE, 'version': VERSION, 'commit': D['review']['commit'],
+         'layers': [{'id': l, 'name': nm, 'note': nt} for l, nm, nt in FR_LAYERS], 'nodes': nodes, 'edges': edges,
+         'counts': {'nodes': len(nodes), 'edges': len(edges), 'by_layer': counts}, 'coverage': cov}
+    write('data/fractal.json', json.dumps(G, indent=1, ensure_ascii=False) + '\n')
+    # threads: from a stakeholder all the way down to a changed line, the shortest path, shown as a ladder
+    picks = [('who:site-owner', 'line:main/rfc1867.c'), ('who:board', 'line:Zend/zend_alloc.c'), ('who:journalist', 'line:'), ('who:developer', 'line:ext/session/session.c'), ('who:everyone', 'line:')]
+    def step(i, depth):
+        n = by[i]
+        name = E(n['name'])
+        if n.get('url'): name = f'<a href="{E(n["url"])}" rel="noopener nofollow">{name}</a>'
+        elif n.get('href'): name = f'<a href="{"../" * depth}{E(n["href"])}">{name}</a>'
+        st = ' ' + pill(n['status']) if n.get('status') else ''
+        return f'<li><span class="ly">{E(dict((l, nm) for l, nm, _ in FR_LAYERS)[n["layer"]])}</span> {name}{st}</li>'
+    threads = ''
+    out_rel = {}
+    for e in edges: out_rel.setdefault(e['from'], set()).add(e['to'])
+    def coherent(start, pref):
+        """A thread that is one argument: the claim is one the risk rests on and the arc carries."""
+        best = None
+        for r in sorted(x for x in out_rel.get(start, ()) if lay[x] == 'risk'):
+            for a in sorted(x for x in out_rel.get(r, ()) if lay[x] == 'arc'):
+                for c in sorted(x for x in out_rel.get(r, ()) & out_rel.get(a, set()) if lay[x] == 'claim'):
+                    tail = fractal_thread(c, 'line', down, lay, pref)
+                    if tail and lay[tail[1]] in ('flaw', 'fix'):
+                        t = [start, r, a] + tail
+                        if best is None or (len(t), t) < (len(best), best): best = t
+        return (best, True) if best else (fractal_thread(start, 'line', down, lay, pref), False)
+    for start, pref in picks:
+        t, whole = coherent(start, pref) if start in by else (None, False)
+        if t:
+            threads += f'<article class="role"><h3>{E(by[start]["name"])}, down to a line</h3><ol class="steps">{"".join(step(x, 1) for x in t)}</ol><p class="small">{"" if whole else "No single claim joins this reader's risks to the code, so this is the shortest path down instead. "}<a href="ui/index.html#{E(start)}">Walk it from the top</a> &middot; <a href="ui/index.html#{E(t[-1])}">walk it up from the line</a></p></article>'
+    ladder = table(['Layer', 'Nodes', 'Where it comes from'], [[f'<b>{E(nm)}</b>', E(str(counts[l])), E(nt)] for l, nm, nt in FR_LAYERS])
+    rels = Counter(e['rel'] for e in edges)
+    reltab = table(['Edge', 'Count'], [[E(k), E(str(v))] for k, v in sorted(rels.items(), key=lambda x: (-x[1], x[0]))])
+    body = f'''
+<h1>From a line of code to a stakeholder</h1>
+<p class="lead">One graph for the whole story. At the bottom, the {cov["lines"]} changed hunks of the php2shell fix, each a line range in php-src; above them the functions and files they sit in, the parts of the fix, the two flaws; then the claims and events that talk about them and the sources those cite; then the story arcs those claims carry, the risks the arcs describe, and at the top the fifteen kinds of reader who face those risks. {counts["stakeholder"] + counts["risk"] + counts["arc"] + counts["claim"] + counts["source"] + counts["flaw"] + counts["fix"] + counts["code"] + counts["function"] + counts["line"]} nodes, {len(edges)} edges. Every node opens into its own neighbourhood: <a href="ui/index.html">walk it</a>, from the top or from a line.</p>
+{section("ladder", "The layers", ladder + '<p>The top three layers and the joins from a claim to a flaw or a part of the fix are written by the librarian in <a href="../data/arcs.json">data/arcs.json</a>; everything else is derived by the build from files the site already publishes. The assembled graph is <a href="../data/fractal.json">data/fractal.json</a>.</p>')}
+{section("coverage", "What is joined, and what is not", f'''<ul>
+<li><b>{cov["lines_to_stakeholder"]} of {cov["lines"]}</b> changed hunks reach a stakeholder by walking up the graph.</li>
+<li><b>{cov["lines_to_named_fix"]} of {cov["lines"]}</b> reach a <i>named</i> part of the fix (a soft limit, an unwind, globals reset and so on). The rest reach the fix only as "the commit touched this area": the review joined nine files to what the fix does, and the other files of the engine wait for that join.</li>
+<li><b>{cov["stakeholders_to_line"]} of {cov["stakeholders"]}</b> stakeholders reach a changed line by walking down.</li>
+<li>Not here yet: the 352 files outside the engine and bundled extensions the fix also touched (mostly tests), and the lines of the PHP 7.4 backport.</li>
+<li>Not here by design: the vulnerable code before the fix. The graph maps the lines the fix wrote, never a trigger path (the site's security requirements, <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP/blob/dev/AGENTS.md">AGENTS.md</a>).</li>
+</ul>''')}
+{section("threads", "Five threads, top to bottom", '<p>Each is the shortest path down the ladder from one reader to a changed line, computed by the build. Click any rung.</p><div class="roles">' + threads + '</div>')}
+{section("edges", "The edges", reltab + '<p>Edges are read top down: a stakeholder <i>faces</i> a risk, a risk is <i>told in</i> an arc and <i>rests on</i> claims, a claim <i>cites</i> sources and is <i>about</i> a flaw or a part of the fix, a flaw is <i>closed by</i> the fix, which is <i>realised in</i> files, which <i>change</i> functions, which are <i>changed at</i> lines. The navigator walks them both ways.</p>')}
+<p>The fix-only version of this graph is <a href="../review/index.html">the fix mapped to the code</a>; the citation graph alone is <a href="../graph/index.html">as a graph</a>. This answers the second memo's ask for the semantic fractal graph; what it still lacks is on <a href="../corrections/index.html">corrections</a>.</p>
+'''
+    page('fractal/index.html', 'From a line of code to a stakeholder: the fractal graph', f'One graph for php2shell: {cov["lines"]} changed lines of php-src, up through functions, files, the fix and the flaws, the claims and sources, the story arcs and the risks, to the fifteen kinds of reader who face them.', body, kind='analysis', topics='php2shell graph fractal code stakeholders')
+    body = '''
+<h1>Walk the whole graph</h1>
+<p class="lead">The fractal graph in the navigator: the node in focus and its neighbours, every node a link, from a stakeholder at the top to a changed line at the bottom. Start at a reader and walk down, or at a line and walk up. The data is <a href="../../data/fractal.json">data/fractal.json</a>; the ladder and the threads are on <a href="../index.html">from a line of code to a stakeholder</a>.</p>
+<div id="rv" class="review-ui" data-graph="data/fractal.json" data-start="who:site-owner"><noscript>The navigator needs JavaScript. The threads are on <a href="../index.html">from a line of code to a stakeholder</a>.</noscript></div>
+<script src="../../assets/review-nav.js" defer></script>
+'''
+    page('fractal/ui/index.html', 'Walk the whole graph: stakeholders to lines of code', 'A navigator over the php2shell fractal graph: stakeholders, risks, story arcs, claims, sources, the flaws, the fix, files, functions and changed lines, each node a link.', body, kind='evidence', topics='php2shell graph fractal navigator')
 
 
 if __name__ == '__main__':

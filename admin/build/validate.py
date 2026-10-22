@@ -163,6 +163,33 @@ for p in pages:
 if 'Sitemap:' not in (open(os.path.join(ROOT, 'robots.txt')).read() if os.path.exists(os.path.join(ROOT, 'robots.txt')) else ''): fails.append('robots.txt missing or has no Sitemap line')
 for f in ('feed.xml', 'assets/og-card.png', 'data/sections.json'):
     if not os.path.exists(os.path.join(ROOT, f)): fails.append(f'missing {f}')
+arcs = load('arcs') or {}
+claim_ids = {c['id'] for c in (load('claims') or [])}
+review_ids = {n['id'] for n in (load('review') or {}).get('nodes', [])}
+risk_ids = {r['id'] for r in arcs.get('risks', [])}
+persona_ids = {p['id'] for p in (load('personas') or {}).get('personas', [])}
+for r in arcs.get('risks', []):
+    for c in r.get('claims', []):
+        if c not in claim_ids: fails.append(f'data/arcs.json: risk {r["id"]} rests on unknown claim {c}')
+for a in arcs.get('arcs', []):
+    for r in a.get('risks', []):
+        if r not in risk_ids: fails.append(f'data/arcs.json: arc {a["id"]} carries unknown risk {r}')
+    for c in a.get('claims', []):
+        if c not in claim_ids: fails.append(f'data/arcs.json: arc {a["id"]} rests on unknown claim {c}')
+    if not os.path.exists(os.path.join(ROOT, a.get('page', ''))): fails.append(f'data/arcs.json: arc {a["id"]} points at missing page {a.get("page")}')
+for pid, rs in arcs.get('faces', {}).items():
+    if pid not in persona_ids: fails.append(f'data/arcs.json: unknown stakeholder {pid}')
+    for r in rs:
+        if r not in risk_ids: fails.append(f'data/arcs.json: {pid} faces unknown risk {r}')
+for key in ('claim_to_flaw', 'claim_to_fix'):
+    for c, ts in arcs.get(key, {}).items():
+        if c not in claim_ids: fails.append(f'data/arcs.json: {key} names unknown claim {c}')
+        for t in ts:
+            if t not in review_ids: fails.append(f'data/arcs.json: {key} {c} names unknown review node {t}')
+fr = load('fractal') or {}
+fr_ids = {n['id'] for n in fr.get('nodes', [])}
+for e in fr.get('edges', []):
+    if e['from'] not in fr_ids or e['to'] not in fr_ids: fails.append(f'data/fractal.json: edge {e["from"]} -> {e["to"]} has a missing end')
 # 5. determinism: rebuild into a temp copy and compare hashes
 def tree_hash():
     h = hashlib.sha256()

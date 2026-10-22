@@ -203,6 +203,20 @@
    "used_on": "graph/index.html"
   },
   {
+   "path": "data/arcs.json",
+   "layer": "derived",
+   "by": "the librarian (librarian@php.newsroom)",
+   "from": "the claims, timeline phases, personas and review nodes: risks and story arcs, and the joins from stakeholders to risks and from claims to the flaws and the parts of the fix; every row names ids that exist",
+   "used_on": "fractal/index.html"
+  },
+  {
+   "path": "data/fractal.json",
+   "layer": "derived",
+   "by": "admin/build/build.py",
+   "from": "data/arcs.json, claims, timeline, personas, review and review/code/files.json, assembled into one graph from stakeholders to changed lines",
+   "used_on": "fractal/ui/index.html"
+  },
+  {
    "path": "admin/content/articles/",
    "layer": "authored",
    "by": "the journalist, historian and other agent roles, one file per article",

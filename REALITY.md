@@ -96,5 +96,10 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - `/admin/keys/` from `data/keys.json`: the root (the editor's key, pinned from `CLAUDE.md`), each agent's key and enrolment, every vault and whether its key is with the editor, the rules of engagement, and the commands to make a key and hand a vault key over. The gate checks the file holds fingerprints and vault ids only.
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
+## The fractal graph (librarian)
+- `data/arcs.json` (authored by the librarian, ids checked by the gate): nine risks, seven story arcs, which stakeholder faces which risk, and which claim is about which flaw or part of the fix.
+- `data/fractal.json`, assembled by `build.py` from arcs, claims, timeline, personas, review and `review/code/files.json`: ten layers from stakeholders to changed lines, every line linked to its range in php-src. `/fractal/` shows the ladder, the coverage and five computed threads; `/fractal/ui/` walks it.
+- Coverage, computed every build: every changed hunk reaches a stakeholder, 215 of 359 through a named part of the fix; not yet joined: the files outside the engine and the 7.4 backport; by design never the vulnerable code before the fix.
+
 ## Not built
-- A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.
+- A second fact-check desk on a different model; a review folder; a second model reading the vault; a Stripe link; tests beyond the gate.

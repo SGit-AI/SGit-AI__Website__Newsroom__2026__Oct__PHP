@@ -2,6 +2,12 @@
 
 Newest first. A correction names the date, what was wrong, what was found, and what was done instead. The mistake stays visible where it was made.
 
+## 2026-10-22: the fractal graph, and the review navigator that never opened
+
+The v0.1.0 correction below said the graph was not fractal. There is now one graph from the fifteen stakeholders down to the 359 changed hunks of the fix (`/fractal/`): every node opens into its own neighbourhood in the navigator, and every hunk links to its lines in php-src. It is fractal in that sense and not yet in the deeper one: a node does not yet open into a graph of a different kind (a source into its own claims graph, a function into its call graph).
+
+Building it found two faults in the v0.2.5 review layer. The navigator at `/review/ui/` laid out the nearest sixteen neighbours of the node in focus and then drew all of them, so on the fix commit, which has 44, it stopped with a script error and showed nothing; it has done so since it shipped. And the review's nine `contains` edges named `area:Zend` and `area:main` while the nodes are `area:Zend/` and `area:main/`, so they joined nothing. The navigator now draws the sixteen and lists every neighbour; the fractal graph matches area ids either way and joins all 37 engine files to their areas. `data/review.json` itself is left as it was published.
+
 ## 2026-10-22, v0.4.2: the NCSC-NL inventory had 675 rows at the captured commit, not 674
 
 Every page that counts the NCSC-NL inventory at commit cca173c64ec5 says 674 products, 3 of them not vulnerable. Reading the list's public history commit by commit, this site's new reader found 675: the vault's export had dropped one row, iBabs bestuursportaal, marked not vulnerable ('PHP is not being used in iBabs. This is confirmed by an email of the supplier.'). The other 674 rows and every status agree. The counts on the existing pages come from `data/software.json`, which is evidence and is only ever regenerated from the vault, so they are left as they are until the vault's export is fixed and re-run (board); the inventory pages built from the history carry the right count and say why.
