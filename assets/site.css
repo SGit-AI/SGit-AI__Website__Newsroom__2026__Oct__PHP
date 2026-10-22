@@ -326,3 +326,17 @@ section[id]{scroll-margin-top:4.5rem}
 .door .depth,.pchip .depth{font-size:.68rem}
 .dgroups .door .dh small{flex-wrap:nowrap;gap:.3rem}
 .tile b{overflow-wrap:normal}
+/* v0.3.1: the front page is the current situation, in plain words, with the evidence attached */
+.aka{font-size:.82rem;color:var(--dim);margin:.6rem 0 0}
+.nowlist{list-style:none;padding:0;margin:.4rem 0;display:grid;gap:.5rem}
+.nowlist li{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--bad-ink);border-radius:8px;padding:.6rem .8rem;margin:0;font-size:1.02rem}
+.facts{list-style:none;padding:0;margin:.6rem 0;display:grid;gap:.5rem}
+.facts li{display:flex;gap:.8rem;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.65rem .85rem;margin:0}
+.facts .fs{flex:0 0 6.6rem;padding-top:.2rem}
+.facts p{margin:0}
+.facts .ff{font-size:.8rem;margin-top:.3rem}
+@media (max-width:560px){.facts li{flex-direction:column;gap:.3rem}.facts .fs{flex:none}}
+.unknown li{margin:.45rem 0}
+.latest{list-style:none;padding:0;margin:.4rem 0}
+.latest li{display:grid;grid-template-columns:9.5rem 1fr;gap:.6rem;margin:.45rem 0;padding-bottom:.45rem;border-bottom:1px solid var(--line)}
+@media (max-width:560px){.latest li{grid-template-columns:1fr;gap:.1rem}}

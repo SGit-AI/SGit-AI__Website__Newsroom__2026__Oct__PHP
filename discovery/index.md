@@ -16,7 +16,7 @@ Three research parties say they found php2shell, and all three say AI helped. Th
 - 2026-08-14 RCE PoC shared; confirmed 08-15
 - 2026-08-21 second bug reported
 
-[Calif](../sources/calif-php2shell/index.html) [Ryan Austin , Calif on X](../sources/x-lcfr-hax-hash-tweet/index.html)
+[Calif](../sources/calif-php2shell/index.html) [Ryan Austin, Calif on X](../sources/x-lcfr-hax-hash-tweet/index.html)
 
 ### OpenAI
 - 2026-08-11 same root cause reported, same day as Calif (per the Foundation)
@@ -56,7 +56,7 @@ What is established is the shape: a bug class seen in 2024 and left because nobo
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
 | The flaws were found by researchers using frontier AI under OpenAI's Patch the Planet initiativeAll three research parties say AI was used. Calif: 'No special harness, or access to models that weren't generally available to everyone were used'. Calif does not name a model; Wiz names Gemini 4 Argon, GPT-5.6 Sol and Wiz Atlas; OpenAI's blog reportedly names GPT-5.6 Sol but is blocked. | BBC; OpenAI; Calif; Wiz | reported | 3/4 | [BBC News](../sources/bbc-live-ckgel5xp2xv9t/index.html) [OpenAI on X](../sources/x-openai-php2shell/index.html) [Calif](../sources/calif-php2shell/index.html) [Wiz](../sources/wiz-blog-php2shell/index.html) |
-| Calif found the flaws first: discovery 1 August, hash commitment 5 August, report to PHP 11 AugustThe hash tweet is dated 5 August 2026 on X; its pre-image has not been published, so what it commits to cannot be checked. | Calif; PHP Foundation (report date) | confirmed | 3/3 | [Calif](../sources/calif-php2shell/index.html) [Ryan Austin , Calif on X](../sources/x-lcfr-hax-hash-tweet/index.html) [PHP Foundation](../sources/php-foundation-blog-security-release/index.html) |
+| Calif found the flaws first: discovery 1 August, hash commitment 5 August, report to PHP 11 AugustThe hash tweet is dated 5 August 2026 on X; its pre-image has not been published, so what it commits to cannot be checked. | Calif; PHP Foundation (report date) | confirmed | 3/3 | [Calif](../sources/calif-php2shell/index.html) [Ryan Austin, Calif on X](../sources/x-lcfr-hax-hash-tweet/index.html) [PHP Foundation](../sources/php-foundation-blog-security-release/index.html) |
 | OpenAI independently reported the same root cause on 11 August, with further vectors on 18 SeptemberThe GitHub advisories credit amyb-oai among four reporters. OpenAI's own post credits Calif's discovery 'using GPT-5.6 Sol' and Wiz; an X Community Note disputes OpenAI's role. | PHP Foundation | reported | 2/2 | [PHP Foundation](../sources/php-foundation-blog-security-release/index.html) [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) |
 | Wiz Research independently discovered the first flaw on 19 August and reported on 24 AugustWiz's X post says 'Wiz Research uncovers' with no credit to Calif or OpenAI; the blog thanks both. | Wiz; PHP Foundation (24 August) | reported | 2/2 | [Wiz](../sources/wiz-blog-php2shell/index.html) [PHP Foundation](../sources/php-foundation-blog-security-release/index.html) |
 | The GitHub advisories credit four reporters: lcfr-hax (Calif), sagitzadik-wiz (Wiz), amyb-oai (OpenAI) and tomash-areiontomash-areion is not named in the PHP Foundation's thanks and appears nowhere else on this beat. | GitHub security advisories | confirmed | 2/3 | [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [Daubois](../sources/daubois-blog-php2shell-rumors/index.html) |
@@ -68,4 +68,4 @@ What is established is the shape: a bug class seen in 2024 and left because nobo
 
 
 ---
-site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/discovery/index.html
+site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/discovery/index.html

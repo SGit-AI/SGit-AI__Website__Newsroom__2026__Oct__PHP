@@ -11,6 +11,7 @@ from collections import Counter, OrderedDict
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 DATA = os.path.join(ROOT, 'data')
 SITE = 'php.oct.2026.newsroom.sgit.ai'
+SITE_NAME = 'PHP October 2026'
 BASE_URL = 'https://' + SITE
 REPO_URL = 'https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP'
 NEWSROOM = 'https://newsroom.sgit.ai/php-flaws/index.html'
@@ -72,7 +73,8 @@ def short_name(row):
     kind = row.get('kind')
     if kind == 'social' and 'x.com' in (row.get('url') or ''):
         pub += ' on X'
-    return pub[:34]
+    pub = re.sub(r'\s+,', ',', pub)
+    return pub if len(pub) <= 34 else pub[:34].rsplit(' ', 1)[0].rstrip(',') + '…'
 
 def fmt_at(at):
     """A date or ISO instant as the timeline shows it."""
@@ -134,8 +136,8 @@ def to_markdown(fragment):
 # ----------------------------------------------------------------------------- layout
 
 NAV = [
-    ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from scratch'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
-    ('The story', [('index.html', 'Front page'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
+    ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
+    ('The story', [('index.html', 'Front page'), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP')]),
@@ -173,7 +175,7 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
     page_meter = '' if kind == 'free' else f'<sg-meter view="page" kind="{E(kind)}" date="{E(date or STORY["data_as_of"][:10])}" topics="{E(topics)}" title="{E(title)}"></sg-meter>'
     ld = {
         '@context': 'https://schema.org', '@type': ld_type, 'headline': title, 'description': description,
-        'url': f'{BASE_URL}/{path}', 'isPartOf': {'@type': 'WebSite', 'name': SITE, 'url': BASE_URL},
+        'url': f'{BASE_URL}/{path}', 'isPartOf': {'@type': 'WebSite', 'name': SITE_NAME, 'url': BASE_URL},
         'license': 'https://creativecommons.org/licenses/by/4.0/', 'dateModified': STORY['data_as_of'][:10],
         'version': VERSION,
     }
@@ -182,11 +184,11 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{E(title)} &middot; {SITE}</title>
+<title>{E(title)} &middot; {SITE_NAME}</title>
 <meta name="description" content="{E(description)}">
 <link rel="canonical" href="{BASE_URL}/{path}">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="{SITE}">
+<meta property="og:site_name" content="{SITE_NAME}">
 <meta property="og:url" content="{BASE_URL}/{path}">
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(description)}">
@@ -203,10 +205,10 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
 </head>
 <body>
 <nav class="site"><div class="row">
-  <a class="brand" href="{up}index.html">php2shell<span>.newsroom</span></a>
+  <a class="brand" href="{up}index.html">PHP October<span> 2026</span></a>
   <a class="ver" href="{up}admin/versions.html#v{E(VERSION)}" title="Site release history: what v{E(VERSION)} changed">v{E(VERSION)}</a>
-  <span class="status">{E(STORY["status"])} &middot; data as of {E(STORY["data_as_of"])}</span>
-  <span class="crumbs"><a href="https://newsroom.sgit.ai/">newsroom</a> / <a href="https://2026.newsroom.sgit.ai/">2026</a> / <a href="https://oct.2026.newsroom.sgit.ai/">October</a> / <b>php2shell</b></span>
+  <span class="status">{E(STORY["status"])} &middot; last checked {E(human_time(STORY["data_as_of"]))}</span>
+  <span class="crumbs"><a href="https://newsroom.sgit.ai/">newsroom</a> / <a href="https://2026.newsroom.sgit.ai/">2026</a> / <a href="https://oct.2026.newsroom.sgit.ai/">October</a> / <b>PHP</b></span>
   <sg-meter view="balance"></sg-meter>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-items" aria-label="Menu">Menu</button>
   <div class="nav-items" id="nav-items">{''.join(nav_items)}<a class="nl ext" href="{up}llms.txt">llms.txt</a></div>
@@ -217,7 +219,7 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
 </main>
 <footer class="site">
   <div class="row">
-    <p><b>{SITE}</b> follows one story, the two PHP flaws of October 2026, as evidence: every claim with a status and its sources, every source captured, dated and hashed into a private vault. Built and run by one editor and a team of software agents; <a href="{up}team/index.html">the roles</a> and <a href="{up}method/index.html">the method</a> are public, and the site is rebuilt from the vault, never written by hand. One of the SGit Newsroom's story sites: up from here are <a href="https://oct.2026.newsroom.sgit.ai/">October 2026</a>, <a href="https://2026.newsroom.sgit.ai/">the year</a> and <a href="https://newsroom.sgit.ai/">the newsroom</a>, whose own section on the story is <a href="{NEWSROOM}">here</a>. Part of the <a href="https://sgit.ai/network/index.html">sgit.ai network</a>.</p>
+    <p><b>{SITE_NAME}</b> ({SITE}) tracks PHP news for one month. This month that is one story, the two critical PHP security flaws, followed as evidence: every claim with a status and its sources, every source captured, dated and hashed into a private vault. Built and run by one editor and a team of software agents; <a href="{up}team/index.html">the roles</a> and <a href="{up}method/index.html">the method</a> are public, and the site is rebuilt from the vault, never written by hand. One of the SGit Newsroom's story sites: up from here are <a href="https://oct.2026.newsroom.sgit.ai/">October 2026</a>, <a href="https://2026.newsroom.sgit.ai/">the year</a> and <a href="https://newsroom.sgit.ai/">the newsroom</a>, whose own section on the story is <a href="{NEWSROOM}">here</a>. Part of the <a href="https://sgit.ai/network/index.html">sgit.ai network</a>.</p>
     <p class="disc">&#9888; Participant disclosure: published by the sgit project, which builds the vault and metering stack this site runs on. Content CC BY 4.0 for this site's own text, tables and data; quoted words are their authors', linked; no third-party page is reproduced. Code Apache-2.0.</p>
     <p class="small">site v{E(VERSION)} &middot; evidence vault commit {E(D["vault"]["head"]["commit"] or "unknown")} &middot; <a href="{up}admin/index.html">engineering</a> &middot; <a href="{up}{md_path(path)}">this page as markdown</a> &middot; <a href="{REPO_URL}">GitHub</a></p>
   </div>
@@ -396,61 +398,91 @@ def words_met(p, depth, limit=14):
 
 # ----------------------------------------------------------------------------- pages
 
+def human_time(at):
+    """2026-10-22T11:34Z as 22 October 2026, 11:34 UTC."""
+    m = re.match(r'^(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2})', at or '')
+    if not m:
+        return at
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    return f'{int(m.group(3))} {months[int(m.group(2)) - 1]} {m.group(1)}, {m.group(4)} UTC'
+
+PLAIN_STATUS = {'confirmed': 'Confirmed', 'reported': 'Reported', 'disputed': 'Disputed', 'contradicted': 'Contradicted', 'unverified': 'Unverified'}
+
 def build_index():
     s, pl, im = STORY, D['plain'], D['impact']
-    known = ''.join(f'<li>{k["html"]} <span class="refs">{src_links(k["sources"], 0)}</span></li>' for k in s['known'])
-    openq = ''.join(f'<li>{o["html"]}</li>' for o in s['open'])
-    stats = ''.join([
-        stat(C['sources'], 'sources in the evidence vault', 'sources/index.html'),
-        stat(C['captures'], 'dated captures, each file hashed', 'sources/index.html'),
-        stat(C['claims'], f'claims with a status: {C["by_status"]["confirmed"]} confirmed, {C["by_status"]["disputed"] + C["by_status"]["contradicted"]} disputed or contradicted, {C["by_status"]["unverified"]} unverified', 'claims/index.html'),
-        stat(C['events'], 'dated events on the timeline', 'timeline/index.html'),
-        stat(C['agencies'], 'national agencies compared', 'agencies/index.html'),
-        stat(len(im['offline']), 'operators reported offline, 0 confirmed compromises', 'impact/index.html'),
-        stat(C['software'], 'products in the NCSC-NL inventory', 'affected/software.html'),
-    ])
-    latest = sorted([t for t in D['timeline'] if t['at'] >= '2026-10-20'], key=lambda t: t['at'])[-8:]
-    latest_rows = [[f'<span class="when">{E(fmt_at(t["at"]))}</span>', E(t['event']), src_links(t['sources'], 0)] for t in latest]
-    nums = D['numbers']
-    numrow = ''.join(f'<a class="num" href="numbers/index.html#{E(n["id"])}"><b>{E(n["value"])}</b><span>{E(n["of"])}</span>{pill(n["status"])}</a>' for n in nums[:6])
-    fixed = ', '.join(D['affected']['fixed'])
+    when = human_time(s['data_as_of'])
+    fixed = ', '.join(D['affected']['fixed'][:-1]) + ' or ' + D['affected']['fixed'][-1]
     tiles = [
-        ('ok', 'A fix', 'Available', f'PHP {fixed}, since 21 October', 'flaws/index.html'),
-        ('bad', 'Severity', '9.2 of 10', 'critical, both flaws (CVSS v4.0)', 'flaws/index.html'),
-        ('warn', 'Attackers trying', 'Yes', 'millions of attempts at one CDN; a honeypot hit on 17 October', 'exploitation/index.html'),
-        ('info', 'Confirmed break-ins', 'None yet', 'no named organisation, as of the latest capture', 'impact/index.html'),
-        ('warn', 'Taken offline', f'{len(im["offline"])} operators', 'reported, as a precaution', 'impact/index.html'),
-        ('info', 'Official exploited list', 'Not listed', "CISA's KEV catalog, checked 22 October", 'exploitation/index.html#kev'),
-        ('bad', 'Government advice', 'Update now', f'or isolate, or take offline; {C["agencies"]} agencies compared', 'agencies/index.html'),
+        ('ok', 'Is there a fix?', 'Yes', f'install PHP {fixed}', 'playbook/index.html'),
+        ('bad', 'How serious?', 'Critical', '9.2 out of 10, both flaws', 'flaws/index.html'),
+        ('warn', 'Are attackers trying?', 'Yes', 'millions of attempts, seen by one internet security company', 'exploitation/index.html'),
+        ('info', 'Anyone confirmed hacked?', 'Not yet', 'no organisation, as of the latest check', 'impact/index.html'),
+        ('warn', 'Websites taken offline', f'{len(im["offline"])} organisations', 'reported, as a precaution', 'impact/index.html'),
+        ('info', "On the US 'used in attacks' list?", 'Not yet', "the US government's official list of flaws known to be used by attackers", 'exploitation/index.html#kev'),
+        ('bad', 'What do governments say?', 'Update now', f'or take the website offline if you cannot; {C["agencies"]} agencies compared', 'agencies/index.html'),
     ]
     board = ''.join(f'<a class="tile tile-{t}" href="{h}"><span class="tl">{E(l)}</span><b>{E(v)}</b><span class="tn">{E(n)}</span></a>' for t, l, v, n, h in tiles)
-    cards = ''.join(f'<article class="qa"><h3>{E(c["q"])}</h3><p>{E(c["a"])}</p><p class="qa-f"><a href="{E(c["href"])}">{E(nav_title(c["href"]))} &rarr;</a> <span class="refs">{src_links(c["sources"], 0)}</span></p></article>' for c in pl['cards'])
+    now = ''.join(f'<li>{E(x["text"])} <span class="refs">{src_links(x["sources"], 0)}</span></li>' for x in pl['now'])
+    facts = ''.join(f'<li><span class="fs">{pill(f["status"])}</span><div><p>{E(f["text"])}</p><p class="ff"><span class="refs">{src_links(f["sources"], 0)}</span> <a href="{E(f["href"])}">More &rarr;</a></p></div></li>' for f in pl['facts'])
+    unknown = ''.join(f'<li><a href="{E(u["href"])}">{E(u["text"])}</a></li>' for u in pl['unknown'])
+    latest = ''.join(f'<li><span class="when">{E(x["when"])}</span><span>{E(x["text"])} <span class="refs">{src_links(x["sources"], 0)}</span></span></li>' for x in pl['latest'])
     moments = ''.join(f'<li class="m m-{E(m["tone"])}"><a href="{E(m["href"])}"><span class="mw">{E(m["when"])}</span><span class="mt">{E(m["what"])}</span></a><span class="refs">{src_links(m["sources"], 0)}</span></li>' for m in pl['moments'])
-    how = '''<div class="how">
-<div><h3>Capture, don't paraphrase</h3><p>Every source is captured into a private, encrypted vault: the page as served, as rendered, its text, a screenshot and its headers, each file hashed at capture time. Captures are only ever added, so a page that changes leaves a series. The captures are third-party pages and are not republished; <a href="sources/index.html">their hashes are</a>.</p></div>
-<div><h3>Claims carry a status</h3><p>Five words, each defined: confirmed, reported, disputed, contradicted, unverified. A claim is a row pointing at the sources that give it that status, and the page never upgrades a claim its sources do not support.</p></div>
-<div><h3>Rebuilt, never edited</h3><p>The site is a deterministic function of the vault and a version number: the same data produces byte-identical pages, there is no clock in the build, and a gate refuses to release a broken link, an orphan page, an unsourced claim or a credential. <a href="method/index.html">The method</a>, <a href="team/index.html">the team</a> and <a href="billing/index.html">the billing model</a> are published.</p></div>
-</div>'''
-    who_lead = f'The same evidence, selected and ordered for {len(PERSONAS)} kinds of reader. Each briefing opens with a thirty-second answer in plain words, then what to decide or do, then a short reading path through the rest of the site. Not sure which you are? Start with the curious reader, or see <a href="start/index.html">how the readers are mapped</a>.'
+    legend = ''.join(f'<li>{pill(k)} {E(v)}</li>' for k, v in [('confirmed', 'two or more original sources agree'), ('reported', 'one party says so; nobody has contradicted it'), ('disputed', 'sources disagree'), ('unverified', 'nobody has been able to check it')])
+    evidence = ''.join([
+        stat(C['sources'], 'web pages saved as evidence, each with the time it was saved', 'sources/index.html'),
+        stat(C['claims'], f'statements checked: {C["by_status"]["confirmed"]} confirmed, {C["by_status"]["disputed"] + C["by_status"]["contradicted"]} disputed, {C["by_status"]["unverified"]} unverified', 'claims/index.html'),
+        stat(C['events'], 'dated events, from 2024 to today', 'timeline/index.html'),
+        stat(C['agencies'], "government agencies' advice compared", 'agencies/index.html'),
+    ])
+    who_lead = f'The same evidence, put in order for {len(PERSONAS)} kinds of reader. Each starts with a thirty-second answer in plain words. <a href="start/index.html">How the readers are mapped</a>.'
     body = f'''
 <header class="hero hero2">
-  <p class="kicker"><span class="live">{E(s["status"])}</span> &middot; critical &middot; fix available since 21 October 2026 &middot; updated with the vault, {E(s["data_as_of"])}</p>
+  <p class="kicker">PHP news &middot; October 2026 &middot; <span class="live">{E(s["status"])}</span> &middot; last checked {E(when)}</p>
   <h1>{E(pl["headline"])}</h1>
-  <p class="deck">{pl["deck"]}</p>
-  <div class="ctas"><a class="cta cta-pri" href="#who">Who are you? Get your briefing</a><a class="cta" href="explained/index.html">Explain it from scratch</a><a class="cta" href="playbook/index.html">I run PHP: what do I do?</a></div>
+  <p class="deck">{E(pl["deck"])}</p>
+  <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a></div>
+  <p class="aka">{E(pl["aka"])}</p>
 </header>
-{section("state", "Where things stand", f'<div class="tiles">{board}</div>', "Seven answers, each a link to the page with the evidence.")}
-{section("who", "Who are you? Start with the briefing written for you", persona_doors(), who_lead)}
-{section("thirty", "The five questions everyone asks", f'<div class="qas">{cards}</div>')}
-{section("moments", "The story in five moments", f'<ol class="moments">{moments}</ol><p><a href="timeline/index.html">All {C["events"]} events on the timeline &rarr;</a></p>')}
-{section("summary", "The whole story in one paragraph", f'<p>{s["lead_html"]}</p><div class="stats">{stats}</div><p class="caveat">{s["caveat_html"]}</p>', "For readers who already know the vocabulary. Every specialist term is linked to the glossary the first time it appears.")}
-{section("numbers", "Six numbers, and what each one measures", f'<div class="nums">{numrow}</div><p>The figures in circulation range from 2.6 million hosts to 70% of the Internet. They are not contradictory so much as incommensurable: each measures a different thing. <a href="numbers/index.html">The numbers page</a> says what each one counts, who said it, and whether anyone has checked it.</p>')}
+<section id="now"><h2>Right now</h2><p class="small">As of {E(when)}, the time of the latest page this site saved.</p><ul class="nowlist">{now}</ul></section>
+{section("state", "At a glance", f'<div class="tiles">{board}</div>')}
+{section("facts", "The core facts, and the evidence for each", f'<ul class="legend">{legend}</ul><ol class="facts">{facts}</ol>', "Each fact links to the original pages it rests on: the PHP project, government agencies, the researchers. Click a source to see when it was saved and its fingerprint.")}
+{section("unknown", "What nobody knows yet", f'<ul class="unknown">{unknown}</ul>', "Stated, not papered over. This site will update each one when the evidence does.")}
+{section("latest", "Latest", f'<ol class="latest">{latest}</ol><p><a href="timeline/index.html">Everything, in order, on the timeline &rarr;</a></p>')}
+{section("who", "The briefing for you", persona_doors(), who_lead)}
+{section("moments", "How it unfolded", f'<ol class="moments">{moments}</ol>')}
+{section("evidence", "How this site knows", f'<div class="stats">{evidence}</div><p>Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read <a href="https://www.php.net/archive/2026.php#2026-10-21-5" rel="noopener">the PHP project\'s announcement</a> and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; <a href="method/index.html">how it works</a>.</p><p>Already know the vocabulary? <a href="summary/index.html">The specialist summary</a> has the technical version of this page, with every number and the full last 48 hours.</p>')}
+'''
+    page('index.html', s['title'], s['description'], body, kind='story', topics='php october 2026 overview', ld_type='NewsArticle')
+
+def build_summary():
+    s = STORY
+    known = ''.join(f'<li>{k["html"]} <span class="refs">{src_links(k["sources"], 1)}</span></li>' for k in s['known'])
+    openq = ''.join(f'<li>{o["html"]}</li>' for o in s['open'])
+    stats = ''.join([
+        stat(C['sources'], 'sources in the evidence vault', 'sources/index.html', 1),
+        stat(C['captures'], 'dated captures, each file hashed', 'sources/index.html', 1),
+        stat(C['claims'], f'claims with a status: {C["by_status"]["confirmed"]} confirmed, {C["by_status"]["disputed"] + C["by_status"]["contradicted"]} disputed or contradicted, {C["by_status"]["unverified"]} unverified', 'claims/index.html', 1),
+        stat(C['events'], 'dated events on the timeline', 'timeline/index.html', 1),
+        stat(C['agencies'], 'national agencies compared', 'agencies/index.html', 1),
+        stat(len(D['impact']['offline']), 'operators reported offline, 0 confirmed compromises', 'impact/index.html', 1),
+        stat(C['software'], 'products in the NCSC-NL inventory', 'affected/software.html', 1),
+    ])
+    latest = sorted([t for t in D['timeline'] if t['at'] >= '2026-10-20'], key=lambda t: t['at'])[-8:]
+    latest_rows = [[f'<span class="when">{E(fmt_at(t["at"]))}</span>', E(t['event']), src_links(t['sources'], 1)] for t in latest]
+    numrow = ''.join(f'<a class="num" href="../numbers/index.html#{E(n["id"])}"><b>{E(n["value"])}</b><span>{E(n["of"])}</span>{pill(n["status"])}</a>' for n in D['numbers'][:6])
+    body = f'''
+<p class="kicker">The story &middot; for specialists</p>
+<h1>The specialist summary: php2shell, CVE-2026-109618 and CVE-2026-109619</h1>
+<p class="lead">{s["lead_html"]}</p>
+<div class="stats">{stats}</div>
+<p class="caveat">{s["caveat_html"]}</p>
+{section("numbers", "Six numbers, and what each one measures", f'<div class="nums">{numrow}</div><p>The figures in circulation range from 2.6 million hosts to 70% of the Internet. They are not contradictory so much as incommensurable: each measures a different thing. <a href="../numbers/index.html">The numbers page</a> says what each one counts, who said it, and whether anyone has checked it.</p>')}
 {section("known", "What is established", f'<ul class="known">{known}</ul>')}
 {section("open", "What is not", f'<ul class="open">{openq}</ul>', "Open questions, stated rather than papered over. Each one names what would close it.")}
-{section("latest", "The last 48 hours", table(["When (UTC)", "What", "Source"], latest_rows, "tl") + '<p><a href="timeline/index.html">The whole timeline &rarr;</a> runs from the 2024 audit to the latest capture, with every time stated as its source states it and every conversion marked.</p>')}
-{section("how", "How this site works", how)}
+{section("latest", "The last 48 hours", table(["When (UTC)", "What", "Source"], latest_rows, "tl") + '<p><a href="../timeline/index.html">The whole timeline &rarr;</a> runs from the 2024 audit to the latest capture, with every time stated as its source states it and every conversion marked.</p>')}
+{section("how", "How this site works", '<p>Every source is captured into a private, encrypted vault, each file hashed at capture time; every claim carries one of five status words and the sources that earn it; the site is a deterministic build of the vault, and a gate refuses a broken link, an unsourced claim or a credential. <a href="../method/index.html">The method</a>, <a href="../team/index.html">the team</a> and <a href="../billing/index.html">the billing model</a> are published.</p>')}
 '''
-    page('index.html', s['title'], s['description'], body, kind='story', topics='php2shell overview', ld_type='NewsArticle')
+    page('summary/index.html', 'The specialist summary: CVE-2026-109618 and CVE-2026-109619', 'The technical summary of the two PHP flaws of October 2026: what is established with its sources, the six scale figures, the open questions and the last 48 hours.', body, kind='story', topics='php2shell summary')
 
 def build_flaws():
     a = D['affected']
@@ -1002,7 +1034,7 @@ def build_admin():
     page('admin/index.html', 'Admin and engineering', 'How this site is built, the checks in its gate, where things are, the reality file and the honest column.', body, kind='free')
 
 def build_llms():
-    lines = [f'# {SITE}', '', f'> {STORY["description"]}', '', f'Site v{VERSION}. Data as of {STORY["data_as_of"]} (the latest capture in the evidence vault, commit {D["vault"]["head"]["commit"]}). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.', '']
+    lines = [f'# {SITE_NAME} ({SITE})', '', f'> {STORY["description"]}', '', f'Site v{VERSION}. Data as of {STORY["data_as_of"]} (the latest capture in the evidence vault, commit {D["vault"]["head"]["commit"]}). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.', '']
     for label, items in NAV:
         lines.append(f'## {label}')
         for p, t in items:
@@ -1083,7 +1115,7 @@ def build_sitejs():
       html.removeAttribute('data-depth');
       if (get('p2s.nudge') === 'off' || here === 'index.html' || here === 'start/index.html') { bar.hidden = true; bar.innerHTML = ''; return; }
       bar.className = 'pbar pbar-new';
-      bar.innerHTML = '<div class="row"><span class="who">New to this story? <a href="' + root + 'start/index.html">Tell us who you are</a> for a briefing and a reading path, or start with <a href="' + root + 'explained/index.html">php2shell explained from scratch</a>.</span>' +
+      bar.innerHTML = '<div class="row"><span class="who">New to this story? <a href="' + root + 'start/index.html">Tell us who you are</a> for a briefing and a reading path, or start with <a href="' + root + 'explained/index.html">the plain-English explainer</a>.</span>' +
         '<button type="button" class="x" data-nudge-off aria-label="Hide this">&times;</button></div>';
       bar.hidden = false;
     }
@@ -1130,7 +1162,7 @@ def build_all():
     build_code(); build_context(); build_impact(); build_defence()
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
-    build_explained(); build_glossary(); build_briefings(); build_start(); build_index()
+    build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
 
 def main():
@@ -1434,7 +1466,7 @@ def build_explained():
     srcs = lambda *x: f'<span class="refs">{src_links(list(x), 1)}</span>'
     body = f'''
 <p class="kicker">Start here &middot; {depth_badge(1)}</p>
-<h1>php2shell, explained from scratch</h1>
+<h1>The PHP security flaws, explained from the start</h1>
 <p class="lead">No technical background assumed. Seven short answers, in the order people usually ask them, each linking to the page with the evidence. Words in the dotted underline are explained when you hover or tap them.</p>
 <nav class="toc"><a href="#php">What is PHP?</a><a href="#what">What went wrong?</a><a href="#nickname">Why php2shell?</a><a href="#cve">What are the numbers?</a><a href="#offline">Why did sites go offline?</a><a href="#hacked">Was anyone hacked?</a><a href="#now">What happens now?</a><a href="#trust">How to read this site</a></nav>
 <section id="php"><h2>1. What is PHP, and is it on my computer?</h2>
@@ -1484,7 +1516,7 @@ def build_explained():
 <p>Every one of those statements links to the pages it comes from, and every one of those pages was saved, dated and fingerprinted when it was read, so that it can be checked later even if the original changes. <a href="../method/index.html">How that works</a>.</p>
 </section>
 '''
-    page('explained/index.html', 'php2shell, explained from scratch', 'No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.', body, kind='free', topics='php2shell explainer plain english')
+    page('explained/index.html', 'The PHP security flaws, explained from the start', 'No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.', body, kind='free', topics='php2shell explainer plain english')
 
 def build_glossary():
     terms = sorted(TERMS, key=lambda t: t['term'].lower())

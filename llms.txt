@@ -1,16 +1,17 @@
-# php.oct.2026.newsroom.sgit.ai
+# PHP October 2026 (php.oct.2026.newsroom.sgit.ai)
 
-> A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
+> PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.3.0. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.3.1. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Start here
 - [Who are you? Pick a reader](https://php.oct.2026.newsroom.sgit.ai/start/index.md): 15 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
-- [Explained from scratch](https://php.oct.2026.newsroom.sgit.ai/explained/index.md): No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.
+- [Explained from the start](https://php.oct.2026.newsroom.sgit.ai/explained/index.md): No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.
 - [Glossary: every term, in plain English](https://php.oct.2026.newsroom.sgit.ai/glossary/index.md): 40 terms from the php2shell story (PHP, CVE, CVSS, remote code execution, WAF, KEV and more), each explained in plain English, in the sense it has in this story.
 
 ## The story
-- [Front page](https://php.oct.2026.newsroom.sgit.ai/index.md): A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
+- [Front page](https://php.oct.2026.newsroom.sgit.ai/index.md): PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
+- [The specialist summary](https://php.oct.2026.newsroom.sgit.ai/summary/index.md): The technical summary of the two PHP flaws of October 2026: what is established with its sources, the six scale figures, the open questions and the last 48 hours.
 - [The two flaws](https://php.oct.2026.newsroom.sgit.ai/flaws/index.md): What the CVE records, the GitHub advisories and the PHP security team say about php2shell: the bug classes, what was demonstrated, which deployments, which versions, the fix and the temporary mitigations, with the blast-radius questions.
 - [The code](https://php.oct.2026.newsroom.sgit.ai/code/index.md): Read from a clone of php/php-src: the fix commit (389 files, authored 18 October, public 21 October 14:06 UTC), the engine mechanism it replaces, the hunks that matter, and the end-of-life backport.
 - [Timeline](https://php.oct.2026.newsroom.sgit.ai/timeline/index.md): 68 dated events in the php2shell story, from the 2024 audit through discovery, coordinated disclosure, the leak, the release and the response, every one tied to a captured source.

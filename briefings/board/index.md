@@ -24,7 +24,7 @@ Three decisions sit with you: whether the organisation is exposed, what it costs
 
 ## Your reading path
 - [Your briefing](../../briefings/board/index.html) 3 min
-- [Explained from scratch](../../explained/index.html) 6 min
+- [Explained from the start](../../explained/index.html) 6 min
 - [Impact: offline vs compromised](../../impact/index.html) 2 min
 - [The agencies](../../agencies/index.html) 1 min
 - [If you run PHP](../../playbook/index.html) 3 min
@@ -72,7 +72,7 @@ Show the 35 claims behind this briefing, each with its status and sources- confi
 | An exploit attempt hit an Amazon honeypot on 17 October from an anonymisation network; proof-of-concept attempts began about 02:00 UTC on 21 October from multiple actors; after release 'PHP2Shell is now being broadly exploited in the wild'Primary party. Amazon adds: 'it's unclear if any of these attempts would have succeeded in real-world systems'. Attempts against honeypots, not compromises of victims. | Amazon (CJ Moses, AWS Security Blog) | reported | 1/2 | [Amazon](../../sources/aws-security-blog-madpot/index.html) [THN](../../sources/thehackernews-php2shell-4days/index.html) |
 | Cloudflare observed attack traffic targeting its customers after the leak, with attackers mutating payloadsPrimary party, no volumes. | Cloudflare | reported | 1/1 | [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) |
 | Automated exploitation attempts were seen in Latvia; none succeededPrimary source. | CERT.LV | reported | 1/1 | [CERT.LV](../../sources/certlv-php-preventive/index.html) |
-| Exploit attempts across Cloudflare's network: thousands in the ten hours before announcement, tens of thousands within 45 minutes after, hundreds of thousands within two hours, millions by 22 October 01:25 UTCPrimary party. Attempts, not compromises; no blocked count; 1.4 million views at capture. | Matthew Prince, Cloudflare CEO, on X | reported | 1/1 | [Matthew Prince , Cloudflare CEO on](../../sources/x-eastdakota-php2shell-stats/index.html) |
+| Exploit attempts across Cloudflare's network: thousands in the ten hours before announcement, tens of thousands within 45 minutes after, hundreds of thousands within two hours, millions by 22 October 01:25 UTCPrimary party. Attempts, not compromises; no blocked count; 1.4 million views at capture. | Matthew Prince, Cloudflare CEO, on X | reported | 1/1 | [Matthew Prince, Cloudflare CEO on…](../../sources/x-eastdakota-php2shell-stats/index.html) |
 | No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosure monitoringA negative finding from a party that had the details under embargo. | Imperva Threat Research | reported | 1/1 | [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html) |
 | No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no public exploit code known to Huntress | Huntress | reported | 1/1 | [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) |
 | Criminals are using AI to 'vibe code' an attack method | unnamed researchers, via the BBC | unverified | 0/1 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
@@ -107,4 +107,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.html
+site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.html

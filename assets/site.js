@@ -52,7 +52,7 @@
       html.removeAttribute('data-depth');
       if (get('p2s.nudge') === 'off' || here === 'index.html' || here === 'start/index.html') { bar.hidden = true; bar.innerHTML = ''; return; }
       bar.className = 'pbar pbar-new';
-      bar.innerHTML = '<div class="row"><span class="who">New to this story? <a href="' + root + 'start/index.html">Tell us who you are</a> for a briefing and a reading path, or start with <a href="' + root + 'explained/index.html">php2shell explained from scratch</a>.</span>' +
+      bar.innerHTML = '<div class="row"><span class="who">New to this story? <a href="' + root + 'start/index.html">Tell us who you are</a> for a briefing and a reading path, or start with <a href="' + root + 'explained/index.html">the plain-English explainer</a>.</span>' +
         '<button type="button" class="x" data-nudge-off aria-label="Hide this">&times;</button></div>';
       bar.hidden = false;
     }

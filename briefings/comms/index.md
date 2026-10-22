@@ -24,7 +24,7 @@ What is true, what is not, and what you will be asked. The story most readers sa
 
 ## Your reading path
 - [Your briefing](../../briefings/comms/index.html) 3 min
-- [Explained from scratch](../../explained/index.html) 6 min
+- [Explained from the start](../../explained/index.html) 6 min
 - [The numbers](../../numbers/index.html) 2 min
 - [Impact: offline vs compromised](../../impact/index.html) 2 min
 - [The agencies](../../agencies/index.html) 1 min
@@ -73,7 +73,7 @@ Show the 32 claims behind this briefing, each with its status and sources- confi
 | Edinburgh council's site went offline late on 21 October; the council called it 'essential maintenance' and did not confirm a link | The Scotsman quoting the council | reported | 0/1 | [The Scotsman](../../sources/scotsman-edinburgh-council-offline/index.html) |
 | Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident' | the council's social post, via Oxford Chronicle | reported | 0/1 | [Oxford Chronicle](../../sources/oxfordchronicle-councils-offline/index.html) |
 | Edinburgh and Oxford councils, the Met Police and the Office for Budget Responsibility were unavailable; Bristol, Lambeth and Barnet council sites showed errors | LBC; Insurance Business | reported | 0/2 | [LBC](../../sources/lbc-uk-websites-offline/index.html) [Insurance Business](../../sources/insurancebusiness-uk-councils-met/index.html) |
-| Calif found the flaws first: discovery 1 August, hash commitment 5 August, report to PHP 11 AugustThe hash tweet is dated 5 August 2026 on X; its pre-image has not been published, so what it commits to cannot be checked. | Calif; PHP Foundation (report date) | confirmed | 3/3 | [Calif](../../sources/calif-php2shell/index.html) [Ryan Austin , Calif on X](../../sources/x-lcfr-hax-hash-tweet/index.html) [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) |
+| Calif found the flaws first: discovery 1 August, hash commitment 5 August, report to PHP 11 AugustThe hash tweet is dated 5 August 2026 on X; its pre-image has not been published, so what it commits to cannot be checked. | Calif; PHP Foundation (report date) | confirmed | 3/3 | [Calif](../../sources/calif-php2shell/index.html) [Ryan Austin, Calif on X](../../sources/x-lcfr-hax-hash-tweet/index.html) [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) |
 | The GitHub advisories credit four reporters: lcfr-hax (Calif), sagitzadik-wiz (Wiz), amyb-oai (OpenAI) and tomash-areiontomash-areion is not named in the PHP Foundation's thanks and appears nowhere else on this beat. | GitHub security advisories | confirmed | 2/3 | [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [Daubois](../../sources/daubois-blog-php2shell-rumors/index.html) |
 | The out-of-memory issue was found in a 2024 audit by Quarkslab (funded through OSTIF and the Sovereign Tech Agency) but exploitation was not proven, so it was not fixedTwo parties agree. The Foundation calls the delay 'a structural failure'. Cloudflare lists Quarkslab among the 2026 disclosers; nobody else does. | PHP Foundation; Calif | confirmed | 2/2 | [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [Calif](../../sources/calif-php2shell/index.html) |
 | The flaws were found by researchers using frontier AI under OpenAI's Patch the Planet initiativeAll three research parties say AI was used. Calif: 'No special harness, or access to models that weren't generally available to everyone were used'. Calif does not name a model; Wiz names Gemini 4 Argon, GPT-5.6 Sol and Wiz Atlas; OpenAI's blog reportedly names GPT-5.6 Sol but is blocked. | BBC; OpenAI; Calif; Wiz | reported | 3/4 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [OpenAI on X](../../sources/x-openai-php2shell/index.html) [Calif](../../sources/calif-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html) |
@@ -103,4 +103,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/comms/index.html
+site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/comms/index.html

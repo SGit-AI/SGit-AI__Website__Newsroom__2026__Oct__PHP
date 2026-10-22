@@ -25,7 +25,7 @@ This is a platform event, not an application bug, so it lands on every team that
 
 ## Your reading path
 - [Your briefing](../../briefings/pm/index.html) 4 min
-- [Explained from scratch](../../explained/index.html) 6 min
+- [Explained from the start](../../explained/index.html) 6 min
 - [If you run PHP](../../playbook/index.html) 3 min
 - [Impact: offline vs compromised](../../impact/index.html) 2 min
 - [Timeline](../../timeline/index.html) 1 min
@@ -75,7 +75,7 @@ Show the 20 claims behind this briefing, each with its status and sources- confi
 | Edinburgh council's site went offline late on 21 October; the council called it 'essential maintenance' and did not confirm a link | The Scotsman quoting the council | reported | 0/1 | [The Scotsman](../../sources/scotsman-edinburgh-council-offline/index.html) |
 | Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident' | the council's social post, via Oxford Chronicle | reported | 0/1 | [Oxford Chronicle](../../sources/oxfordchronicle-councils-offline/index.html) |
 | Edinburgh and Oxford councils, the Met Police and the Office for Budget Responsibility were unavailable; Bristol, Lambeth and Barnet council sites showed errors | LBC; Insurance Business | reported | 0/2 | [LBC](../../sources/lbc-uk-websites-offline/index.html) [Insurance Business](../../sources/insurancebusiness-uk-councils-met/index.html) |
-| The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 UTC on 21 October, with merges into 8.3, 8.4 and 8.5 between 14:12 and 14:30 UTCCounted from the repository, not from a page. Five authors; 389 files; 10,689 insertions. | php/php-src commit 3584a98bd, read from a clone | confirmed | 2/2 | [php/php-src , read from a clone](../../sources/github-php-src-fix-commit-3584a98bd/index.html) [php-src](../../sources/github-php-src-tag-php-8.5.12/index.html) |
+| The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 UTC on 21 October, with merges into 8.3, 8.4 and 8.5 between 14:12 and 14:30 UTCCounted from the repository, not from a page. Five authors; 389 files; 10,689 insertions. | php/php-src commit 3584a98bd, read from a clone | confirmed | 2/2 | [php/php-src, read from a clone](../../sources/github-php-src-fix-commit-3584a98bd/index.html) [php-src](../../sources/github-php-src-tag-php-8.5.12/index.html) |
 | The fixes were released at 14:00 UTC on 21 OctoberCERT-EU says 13:30 UTC; the tags and advisories are stamped 13:34 to 13:35 UTC; the GitHub release 14:06 UTC; the php.net feed entries carry 00:05 to 00:35 UTC, which are authoring times, not publication times. | php.net pre-announcement; Daubois; CERT-FR (16:00 Paris) | disputed | 7/8 | [oss-security](../../sources/openwall-oss-security-2026-10-20-34/index.html) [Daubois](../../sources/daubois-blog-php2shell-rumors/index.html) [CERT-FR](../../sources/certfr-2026-ale-014/index.html) [CERT-EU](../../sources/certeu-sa-2026-018/index.html) [php-src](../../sources/github-php-src-tags/index.html) [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [php-src](../../sources/github-php-src-tag-php-8.5.12/index.html) [php.net](../../sources/php-net-advisory/index.html) |
 | The pre-announcement was published at 19:30 UTC on 20 OctoberThe php.net feed says 20:32 UTC; oss-security relayed it at 20:22:51 UTC, so it was public by then. | PHP Foundation | disputed | 3/3 | [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [oss-security](../../sources/openwall-oss-security-2026-10-20-34/index.html) [php.net](../../sources/php-net-advisory/index.html) |
 | The flaws were disclosed on 22 October 2026Primary sources put the release at 21 October: GHSAs 13:34Z, tags 13:35Z, CVE records 13:48Z and 13:54Z, GitHub release 14:06Z. | BBC framing (UK morning coverage) | contradicted | 2/3 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [php.net](../../sources/php-net-advisory/index.html) [php-src](../../sources/github-php-src-tag-php-8.5.12/index.html) |
@@ -93,4 +93,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/pm/index.html
+site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/pm/index.html

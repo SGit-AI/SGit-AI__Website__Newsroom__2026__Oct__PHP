@@ -1,10 +1,10 @@
-# php2shell, explained from scratch
+# The PHP security flaws, explained from the start
 
 No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.
 
 Start here · ******Plain English
 
-# php2shell, explained from scratch
+# The PHP security flaws, explained from the start
 
 No technical background assumed. Seven short answers, in the order people usually ask them, each linking to the page with the evidence. Words in the dotted underline are explained when you hover or tap them.
 
@@ -63,7 +63,7 @@ Taking a site offline is a decision an organisation makes, not evidence it was a
 
 ## 6. Was anyone actually hacked?
 
-Not that anyone has confirmed, as of the latest evidence this site holds. Attackers have certainly been trying: Cloudflare says it saw millions of attempts across its network, and Amazon says a decoy server was hit four days before the fix was public. But an attempt is not a success, no named organisation has said it was broken into, and the US list of flaws known to be exploited did not include either of these when last checked. That can change quickly, and this site will say so when the evidence does. [Matthew Prince , Cloudflare CEO on](../sources/x-eastdakota-php2shell-stats/index.html) [THN](../sources/thehackernews-php2shell-4days/index.html) [CISA](../sources/cisa-kev-json/index.html)
+Not that anyone has confirmed, as of the latest evidence this site holds. Attackers have certainly been trying: Cloudflare says it saw millions of attempts across its network, and Amazon says a decoy server was hit four days before the fix was public. But an attempt is not a success, no named organisation has said it was broken into, and the US list of flaws known to be exploited did not include either of these when last checked. That can change quickly, and this site will say so when the evidence does. [Matthew Prince, Cloudflare CEO on…](../sources/x-eastdakota-php2shell-stats/index.html) [THN](../sources/thehackernews-php2shell-4days/index.html) [CISA](../sources/cisa-kev-json/index.html)
 
 The details: [who went offline and who was compromised](../impact/index.html), and [every sign of exploitation, in order](../exploitation/index.html).
 
@@ -92,4 +92,4 @@ Every one of those statements links to the pages it comes from, and every one of
 
 
 ---
-site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/explained/index.html
+site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/explained/index.html

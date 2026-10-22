@@ -4,7 +4,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.3.0. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.3.1. The data is [data/versions.json](../data/versions.json).
+
+### v0.3.1 · 2026-10-22
+
+the site is renamed PHP October 2026, PHP news for the month rather than one nickname, and its front page is now jargon-free and about the current situation: right now, at a glance, the core facts each with its status and evidence, what nobody knows yet and the latest; the technical front page moved to the specialist summary
+
+From the editor: the site should be named for PHP in October, not for the incident, so that it can carry whatever PHP news the month brings; and the first page must be readable by anyone. Vault commit `200d08971937`.
+
+Files: `data/plain.json`, `data/story.json`, `admin/build/build.py`, `assets/site.css`, `BRIEF-CORRECTIONS.md`
 
 ### v0.3.0 · 2026-10-22
 
@@ -48,4 +56,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

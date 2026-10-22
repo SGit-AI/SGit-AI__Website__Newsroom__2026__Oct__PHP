@@ -53,7 +53,7 @@ Two serious holes were found in PHP, software that runs on the servers behind a 
 
 #### Reading path
 - [Your briefing](../briefings/everyone/index.html) 3 min
-- [Explained from scratch](../explained/index.html) 6 min
+- [Explained from the start](../explained/index.html) 6 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [The numbers](../numbers/index.html) 2 min
 
@@ -91,7 +91,7 @@ If your website runs on WordPress, Drupal, Joomla or anything else written in PH
 
 #### Reading path
 - [Your briefing](../briefings/site-owner/index.html) 4 min
-- [Explained from scratch](../explained/index.html) 6 min
+- [Explained from the start](../explained/index.html) 6 min
 - [If you run PHP](../playbook/index.html) 3 min
 - [Affected systems](../affected/index.html) 1 min
 
@@ -129,7 +129,7 @@ A critical flaw in software that runs many websites, fixed on 21 October. Every 
 
 #### Reading path
 - [Your briefing](../briefings/board/index.html) 3 min
-- [Explained from scratch](../explained/index.html) 6 min
+- [Explained from the start](../explained/index.html) 6 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [The agencies](../agencies/index.html) 1 min
 - [If you run PHP](../playbook/index.html) 3 min
@@ -168,7 +168,7 @@ Expect unplanned work this week: updating PHP on every system that uses it, rest
 
 #### Reading path
 - [Your briefing](../briefings/pm/index.html) 4 min
-- [Explained from scratch](../explained/index.html) 6 min
+- [Explained from the start](../explained/index.html) 6 min
 - [If you run PHP](../playbook/index.html) 3 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [Timeline](../timeline/index.html) 1 min
@@ -205,7 +205,7 @@ The documented cost so far is precaution, not breach: hours to a day of downtime
 
 #### Reading path
 - [Your briefing](../briefings/cfo/index.html) 3 min
-- [Explained from scratch](../explained/index.html) 6 min
+- [Explained from the start](../explained/index.html) 6 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [The numbers](../numbers/index.html) 2 min
 - [In context: 2008 to 2026](../context/index.html) 3 min
@@ -356,7 +356,7 @@ Safe to say: two critical flaws in PHP were fixed on 21 October; we updated or i
 
 #### Reading path
 - [Your briefing](../briefings/comms/index.html) 3 min
-- [Explained from scratch](../explained/index.html) 6 min
+- [Explained from the start](../explained/index.html) 6 min
 - [The numbers](../numbers/index.html) 2 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [The agencies](../agencies/index.html) 1 min
@@ -599,4 +599,4 @@ The first version of this site opened with a sentence that was accurate and unre
 
 
 ---
-site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
+site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
