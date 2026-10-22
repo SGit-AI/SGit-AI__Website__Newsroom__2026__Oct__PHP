@@ -12,7 +12,7 @@ This site is being built in public, every day, by Dinis Cruz and a team of AI ag
 
 ## Start here: your first fifteen minutes
 - [Read the front page](../index.html): Two minutes: what happened, in plain words, and the four boxes at the top (fix, severity, attackers, sourced).
-- [Pick the reader closest to you](../start/index.html): Fifteen readers, from a curious reader to a CISO, a DPO or a developer. Your reader gives you a short briefing and a reading path: follow it for five minutes.
+- [Pick the reader closest to you](../start/index.html): A reader for each job, from a curious reader to a CISO, a DPO or a developer. Your reader gives you a short briefing and a reading path: follow it for five minutes.
 - [Try the site on your phone](../now/index.html): Now, the phone app: what you need to know for one, five, ten or thirty minutes.
 - [See how it is made](../team/index.html): Two people and a team of AI agents, each with a page, their tasks and what they shipped; what they ran and when is on the runs page.
 - [Do the latest ask](../collaborators/index.html#ask): Below on this page: what is new, what to do, one or two questions. A few minutes.
@@ -106,4 +106,4 @@ Nobody yet: be the first.
 
 
 ---
-site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/collaborators/index.html
+site v0.7.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/collaborators/index.html

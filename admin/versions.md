@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.6.0. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.7.0. The data is [data/versions.json](../data/versions.json).
+
+### v0.7.0 · 2026-10-22
+
+power users, start here (/collaborators/): a generic onboarding for the people the editor nudges in his WhatsApp group and by email, the latest ask with its messages, and join and feedback forms encrypted to a private vault; runs (/team/runs/): every schedule the agents run, the quiet hours, and every recorded run with the article it should leave
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.6.0 · 2026-10-22
 
@@ -330,4 +338,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.7.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

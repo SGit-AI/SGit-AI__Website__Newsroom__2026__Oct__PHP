@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.7.0 · 22 October 2026new since your last visit
+
+power users, start here (/collaborators/): a generic onboarding for the people the editor nudges in his WhatsApp group and by email, the latest ask with its messages, and join and feedback forms encrypted to a private vault; runs (/team/runs/): every schedule the agents run, the quiet hours, and every recorded run with the article it should leave
+
+No reader-facing section changed in this release.
+
 ## v0.6.0 · 22 October 2026new since your last visit
 
 GRC: a new section, /grc/, with fractal risk registers for php2shell (34 risks assigned to 53 stakeholders, each joined to its weakness, CVE, fix, code, stories and roles, mapped to 95 controls in 20 frameworks including GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001 and NIST), and the data protection officer added to the readers with a briefing on exposure, the GDPR 72-hour clock and what to document
@@ -412,4 +418,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.7.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

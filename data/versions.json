@@ -1,6 +1,15 @@
 {
- "current": "0.6.0",
+ "current": "0.7.0",
  "versions": [
+  {
+   "version": "0.7.0",
+   "date": "2026-10-22",
+   "title": "power users, start here (/collaborators/): a generic onboarding for the people the editor nudges in his WhatsApp group and by email, the latest ask with its messages, and join and feedback forms encrypted to a private vault; runs (/team/runs/): every schedule the agents run, the quiet hours, and every recorded run with the article it should leave",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.6.0",
    "date": "2026-10-22",
