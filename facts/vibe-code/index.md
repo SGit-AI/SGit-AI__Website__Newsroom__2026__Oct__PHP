@@ -12,7 +12,18 @@ Fact · exploitation · unverified
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A1** Weak signal●○○○○○ opinion · Opinion · verdict: **holds in part**
+
+The BBC carries it only as 'Researchers say', unnamed and second hand (A1). The nearest named source in the vault, watchTowr's Jake Knott via The Record, says it sees in-the-wild exploitation with proof-of-concept tools 'vibecoded with the help of AI'; that does not show who coded them.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | carries | *Researchers say the criminals themselves are using AI to 'vibe code' a method of attack.* | c88b8c5f4c6bc07d |
+| therecord-php-warnings (in the vault, not yet on this site) | partial | *observing in-the-wild exploitation of the vulnerabilities with a variety of proof-of-concept tools vibecoded with the help of AI.* | 39efe473da414c01 |
+
+Open tickets: [Finding-108](../../factcheck/index.html#Finding-108).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:08 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-22 06:16 UTCBBC News publishes [PHP: Global scramble to fix critical cyber-security flaws as many websites taken offline - follow live](../../sources/bbc-live-ckgel5xp2xv9t/index.html)

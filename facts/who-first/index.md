@@ -14,7 +14,20 @@ The hash tweet is dated 5 August 2026 on X; its pre-image has not been published
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A3** Echoed●●●○○○ opinion measures differently status overstated · Opinion · verdict: **holds in part** · the status word overstates the evidence
+
+The dates under it are well carried: the hash tweet date is on X and the snowflake ID 2085031675382071483 decodes to 2026-08-05T15:54:24Z (A6); the 11 August report is in both Calif's and the Foundation's pages (A5); the 1 August discovery date is Calif's own word only (A2). 'Found the flaws first' is a reading (max A3): the Foundation says the OOM root cause was found in 2024, OpenAI reported the same root cause the same day, and nothing shows Calif found the second CVE first.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [calif-php2shell](../../sources/calif-php2shell/index.html) | carries | *Calif researcher Ryan Austin (@lcfr_hax) tweeted hash of one finding.* | 23afef81971778f9 |
+| [x-lcfr-hax-hash-tweet](../../sources/x-lcfr-hax-hash-tweet/index.html) | carries | *d935be023a55b04681eccd1d2b8385b4b295e141a5df108e5e979d8d5d7124ac 15:54 · 5 Aug 2026* | 2c10f3991caf3a74 |
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | partial | *On August 11th researcher Ryan A at Calif reported an unconditional remote code execution with the same root cause as the OOM problem* | a1be057adc1c5bfa |
+| [cve-cve-2026-109618](../../sources/cve-cve-2026-109618/index.html) | partial | *Ryan at Calif.io reporter Wiz reporter OpenAI finder* | f8705d8e0aa2a248 |
+
+Open tickets: [Finding-113](../../factcheck/index.html#Finding-113), [Finding-2](../../factcheck/index.html#Finding-2).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-08-05 15:54 UTCRyan Austin, Calif on X publishes [LCFR on X: hash commitment d935be02…](../../sources/x-lcfr-hax-hash-tweet/index.html)

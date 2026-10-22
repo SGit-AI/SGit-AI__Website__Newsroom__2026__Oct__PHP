@@ -14,7 +14,25 @@ Australia's ACSC gives no offline advice. CERT-EU says isolate. The Netherlands,
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A1** Weak signal●○○○○○ · Advice · verdict: **holds in part** · the status word understates the evidence
+
+The captured BBC page does not say this: it says the NCSC 'as well as its counterparts in the EU and Australia' urged users 'to apply the fixes', and attributes the offline quote to the NCSC alone. On the substance, NCSC (after mitigations) and NSA advise offline, CERT-EU and CERT-FR advise isolation, and Italy's ACN advises taking sites offline; only Australia is not shown (ACSC's page as captured has no offline advice). 'Contradicted' overstates an absence for one of four parties and mislabels the BBC's statement.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | partial | *its counterparts in the EU and Australia, earlier urged those who use PHP to apply the fixes.* | c88b8c5f4c6bc07d |
+| [acsc-alert-php](../../sources/acsc-alert-php/index.html) | absent | *Apply available security updates and other appropriate mitigations* | 9370af142ded6de9 |
+| [certeu-sa-2026-018](../../sources/certeu-sa-2026-018/index.html) | carries | *Where that is not feasible, organisations should consider isolating internet-facing applications from public networks until a fix is applied and verified.* | c65c95cf165d9ed7 |
+| [ncsc-nl-php2shell](../../sources/ncsc-nl-php2shell/index.html) | absent | *If immediate patching is not possible, follow PHP's temporary mitigations, including disabling session.upload_progress, restarting workers,* | f3eec24a226910fb |
+| [acn-it-php2shell](../../sources/acn-it-php2shell/index.html) | carries | *si raccomanda di valutare di porre offline i siti e i servizi web che utilizzano versioni vulnerabili di PHP* | 19fac2edc25161cd |
+| [jpcert-at260033](../../sources/jpcert-at260033/index.html) | absent | *十分なテストを実施の上、速やかに修正済みバージョンを適用してください。* | 1fea87241b307f92 |
+| [ncsc-news-php](../../sources/ncsc-news-php/index.html) | carries | *or applying them would take too long, you should consider taking the system offline until it can be fully mitigated.* | a18ceeb011a3fe6f |
+| [nsa-press-php-4630238](../../sources/nsa-press-php-4630238/index.html) | carries | *If an immediate update is not feasible, it is recommended that organizations take the system offline until it can be fully mitigated.* | 8a8553ea1ffcd794 |
+| [certfr-2026-ale-014](../../sources/certfr-2026-ale-014/index.html) | carries | *Le CERT-FR recommande d'isoler les équipements affectés puis de procéder à la migration vers une version maintenue* | f9e9557ab49ddb95 |
+
+Open tickets: [Finding-43](../../factcheck/index.html#Finding-43), [Finding-44](../../factcheck/index.html#Finding-44), [Finding-45](../../factcheck/index.html#Finding-45), [Finding-87](../../factcheck/index.html#Finding-87).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:48 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21ACSC publishes [Critical vulnerabilities in PHP](../../sources/acsc-alert-php/index.html)

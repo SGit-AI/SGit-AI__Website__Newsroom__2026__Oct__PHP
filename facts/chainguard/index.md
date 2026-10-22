@@ -14,7 +14,20 @@ Dan Lorenc (via The Register): 'I made the call to get these out early when expl
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ opinion disputed · Opinion · verdict: **holds in part**
+
+The act and time (built images with the fix at 07:41 UTC on 21 October) are the Foundation's and Lorenc 'doesn't dispute the timeline' (The Register). 'Unilaterally broke the embargo' is the Foundation's reading; Lorenc says exploits were in the wild and he notified the coordinated disclosure channel first, which contests 'unilaterally'. Feross and The Hacker News restate the Foundation (one origin).
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | carries | *On October 21st at 07:41 UTC, more than six hours before the coordinated release, Chainguard unilaterally broke the embargo and published built images* | a1be057adc1c5bfa |
+| [theregister-php-blames-chainguard](../../sources/theregister-php-blames-chainguard/index.html) | partial | *late Tuesday night Lorenc told us he decided to ship the fixes, and notified the PHP coordinated disclosure channel about his plans.* | b355691c9b584c53 |
+| [x-feross-chainguard](../../sources/x-feross-chainguard/index.html) | partial | *Dan Lorenc says several vendors in the disclosure had reported exploits in the wild, and that he notified the group right after making the call.* | de7648491d664137 |
+| [therecord-php-foundation-statement](../../sources/therecord-php-foundation-statement/index.html) | partial | *Dan Lorenc told Recorded Future News that he began to see exploitation attempts last night and made the judgement call to release the information.* | 28c72344e03a5a79 |
+
+Open tickets: [Finding-10](../../factcheck/index.html#Finding-10), [Finding-62](../../factcheck/index.html#Finding-62).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:32 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)

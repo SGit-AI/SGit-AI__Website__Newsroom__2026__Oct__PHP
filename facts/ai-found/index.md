@@ -14,7 +14,21 @@ All three research parties say AI was used. Calif: 'No special harness, or acces
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A3** Echoed●●●○○○ opinion measures differently · Opinion · verdict: **holds in part**
+
+That AI was used is said by each research party in its own capture (Calif, Wiz, OpenAI), but 'found by researchers using frontier AI under Patch the Planet' is a reading: Calif is the only finder shown to be under Patch the Planet, Calif never says 'frontier' and stresses generally available models, and Wiz never mentions Patch the Planet. Readings cap at A3.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [calif-php2shell](../../sources/calif-php2shell/index.html) | partial | *OpenAI invited us to join its Patch the Planet initiative, and PHP stood out as a high-impact target.* | 23afef81971778f9 |
+| [wiz-blog-php2shell](../../sources/wiz-blog-php2shell/index.html) | partial | *we explain how frontier AI helped us find and fix vulnerabilities that had remained hidden in the PHP codebase* | e3568b6f88c93f6b |
+| [x-openai-php2shell](../../sources/x-openai-php2shell/index.html) | carries | *Patch the Planet: global response coordination as agents uncover critical vulnerabilities* | 785b7cae55e3748b |
+| [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | partial | *The vulnerabilities were found by researchers at the security firms Calif and Wiz.* | c88b8c5f4c6bc07d |
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | partial | *While fixing one of the issues Quarkslab reported, a PHP core developer contracted by the PHP Foundation found the first signs of the OOM problem* | a1be057adc1c5bfa |
+
+Open tickets: [Finding-1](../../factcheck/index.html#Finding-1), [Finding-59](../../factcheck/index.html#Finding-59).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Calif publishes [php2shell by Calif Research — A tale of two PHP remote vulnerabilities](../../sources/calif-php2shell/index.html)

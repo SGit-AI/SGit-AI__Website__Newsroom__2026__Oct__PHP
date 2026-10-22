@@ -14,7 +14,19 @@ Both companies have since said so themselves.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A5** Confirmed●●●●●○ · Attribution · verdict: **holds**
+
+Woodward's remark is carried by the BBC, and both companies independently say it in their own captured posts: Amazon (scanning attempts, honeypot hits) and Cloudflare (attack traffic targeting customers). Two independent primary parties, each checked.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | carries | *Woodward says companies like Amazon and Cloudflare that monitor what is going on online saw the weakness "was being probed for".* | c88b8c5f4c6bc07d |
+| [cloudflare-blog-php2shell-waf](../../sources/cloudflare-blog-php2shell-waf/index.html) | carries | *we observed attack traffic targeting our customers.* | 302408765abf45e3 |
+| [aws-security-blog-madpot](../../sources/aws-security-blog-madpot/index.html) | carries | *Our internal threat intelligence system automatically detected and restricted malicious scanning attempts targeting this vulnerability.* | 94315ded6e1175f2 |
+
+Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Finding-15](../../factcheck/index.html#Finding-15), [Finding-93](../../factcheck/index.html#Finding-93).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:17 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Cloudflare publishes [Cloudflare deploys protections against php2shell vulnerability](../../sources/cloudflare-blog-php2shell-waf/index.html)

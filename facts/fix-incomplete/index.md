@@ -14,7 +14,19 @@ Per a Matrix channel, Canonical asked PHP and 'was told that it's unrelated and 
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A1** Weak signal●○○○○○ opinion disputed · Opinion · verdict: **not shown**
+
+The only carrier is a relay on oss-security of unnamed Fediverse posts ('While not yet fully confirmed'), not captured themselves; PHP is reported second-hand to have called it unrelated. Second-hand and unconfirmed is A1, and nothing shows the fix is incomplete; 'unverified' fits.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [openwall-oss-security-109619-thread](../../sources/openwall-oss-security-109619-thread/index.html) | partial | *While not yet fully confirmed, the Fediverse is reporting that the fix to at least PHP 8.5.12 may be incomplete:* | 6a76141ae5a06584 |
+| [openwall-oss-security-109619-thread](../../sources/openwall-oss-security-109619-thread/index.html) | partial | *ok thinking more about this, there's no way this is the same vuln, this is > another one.* | 059317aa4a1f458e |
+| [openwall-oss-security-109619-thread](../../sources/openwall-oss-security-109619-thread/index.html) | partial | *was told that it's "unrelated and not a real issue".* | 39555f34a419becc |
+
+Open tickets: [Evidence-5](../../factcheck/index.html#Evidence-5), [Finding-72](../../factcheck/index.html#Finding-72), [Gap-2](../../factcheck/index.html#Gap-2).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:14 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21 15:24 UTCoss-security publishes [Re: CVE-2026-109619 thread (21/16, 21/17, 21/23, 22/2)](../../sources/openwall-oss-security-109619-thread/index.html)

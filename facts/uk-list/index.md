@@ -12,7 +12,21 @@ Fact · impact · reported
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A3** Echoed●●●○○○ · Event · verdict: **holds in part**
+
+LBC and Insurance Business carry Edinburgh and Oxford councils and the Met Police unavailable and errors on Bristol, Lambeth and Barnet, in near-identical wording that points to one origin (A3). Neither cited source mentions the Office for Budget Responsibility; only the uncited EADT (PA) says the OBR "had to take down its website".
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [lbc-uk-websites-offline](../../sources/lbc-uk-websites-offline/index.html) | carries | *Edinburgh and Oxford Council as well as the online home for The Traitors were taken down as was The Met Police website.* | 125176f10b5494a6 |
+| [lbc-uk-websites-offline](../../sources/lbc-uk-websites-offline/index.html) | carries | *Error messages were displayed on the Bristol, Lambeth and Barnet council websites.* | 125176f10b5494a6 |
+| [insurancebusiness-uk-councils-met](../../sources/insurancebusiness-uk-councils-met/index.html) | carries | *In the UK, the sites reported unavailable included those of Edinburgh and Oxford councils and the Met Police.* | 89357150e0bc8363 |
+| [insurancebusiness-uk-councils-met](../../sources/insurancebusiness-uk-councils-met/index.html) | carries | *Error messages also appeared on the Bristol, Lambeth and Barnet council websites.* | 89357150e0bc8363 |
+| [eadt-minister-budget-no-breach](../../sources/eadt-minister-budget-no-breach/index.html) | carries | *because the Office for Budget Responsibility (OBR) had to take down its website.* | 4c8556b5aaedee9f |
+
+Open tickets: [Contradiction-5](../../factcheck/index.html#Contradiction-5), [Evidence-2](../../factcheck/index.html#Evidence-2), [Finding-106](../../factcheck/index.html#Finding-106), [Finding-31](../../factcheck/index.html#Finding-31).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:29 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21LBC publishes [Websites taken offline as ‘critical’ security flaw hits Met Police, Traitors and government sites | LBC](../../sources/lbc-uk-websites-offline/index.html)

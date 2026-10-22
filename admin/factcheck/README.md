@@ -80,7 +80,7 @@ Then the scripted cross-checks: `python3 admin/factcheck/fc.py check` (slugs cit
 
 ## Mode 2: go outside (where the evidence is thin)
 
-For statements at A0 to A2, every open contradiction, and every stale count: search the web for better evidence: the party's own page, the primary record, an independent second party, a newer count. What is found is recorded as a `new-evidence` ticket: URL, retrieval time (UTC), the sha256 of the bytes fetched, a verbatim excerpt of at most 25 words, and what it would change. It is **not** cited on the site, and it does not move a level, until a collector captures it into a vault; that is the house rule for every outside source. The ticket is the request to capture it.
+For statements at A0 to A2, every open contradiction, and every stale count: search the web for better evidence: the party's own page, the primary record, an independent second party, a newer count. What is found is recorded as a `evidence` ticket: URL, retrieval time (UTC), the sha256 of the bytes fetched, a verbatim excerpt of at most 25 words, and what it would change. It is **not** cited on the site, and it does not move a level, until a collector captures it into a vault; that is the house rule for every outside source. The ticket is the request to capture it.
 
 ## Tickets, in Issues-FS
 
@@ -90,11 +90,13 @@ The desk's tracker is a full Issues-FS graph in `admin/factcheck/.issues/` (issu
 |---|---|---|
 | `finding` | open, acknowledged, fixed, wont-fix, superseded | Something on the site needs changing: an overstated status, a quote not in the capture, two pages that disagree |
 | `contradiction` | open, explained, resolved | Two sources disagree about the same measure (mirrors a record in `contradictions.json`) |
-| `evidence-gap` | open, captured, closed-no-evidence | A statement has no capture that carries it, and the desk could not find one |
-| `new-evidence` | proposed, captured, rejected | Mode 2 found something outside the vault worth capturing |
+| `gap` | open, captured, closed-no-evidence | A statement has no capture that carries it, and the desk could not find one |
+| `evidence` | proposed, captured, rejected | Mode 2 found something outside the vault worth capturing |
 | `run` | done | One per run, linking everything it opened |
 
-Link types: `opened-by` / `opened` (ticket to run), `contradicts` (symmetric), `supports` / `supported-by` (new-evidence to finding, gap or contradiction), `supersedes` / `superseded-by`, `blocks` / `blocked-by`, `relates-to`. Every ticket carries `claims` (claim ids), `sources` (vault slugs) and `pages` (site paths) in its properties, so the build can put the ticket next to the thing it is about.
+Link types: `opened-by` / `opened` (ticket to run), `contradicts` (symmetric), `supports` / `supported-by` (evidence to finding, gap or contradiction), `supersedes` / `superseded-by`, `blocks` / `blocked-by`, `relates-to`. Every ticket carries `claims` (claim ids), `sources` (vault slugs) and `pages` (site paths) in its properties, so the build can put the ticket next to the thing it is about.
+
+Type names are single words on purpose: issues-fs-cli 0.3.0 builds a label as the type name capitalised plus an index, and its own lookup cannot resolve a label whose type contains a hyphen (a type `evidence-gap` gives `Evidence-Gap-1`, which `issues-fs link` then reports as not found).
 
 Other agents read the tracker; they do not write in it. To close a finding, fix the data in your own file and say so; the next run checks the fix and closes the ticket, or reopens it with why.
 

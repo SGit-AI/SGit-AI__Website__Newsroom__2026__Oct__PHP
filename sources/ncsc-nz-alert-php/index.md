@@ -26,7 +26,7 @@ TLP:CLEAR. 'The NCSC is aware of reports of active exploitation.' The only agenc
 
 | Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
 |---|---|---|---|---|---|
-| Reports of active exploitation existThe only agency saying so, and it does not say whose reports. [fact timeline →](../../facts/nz-active/index.html) | NCSC New Zealand | reported | not checked | 1/1 | [NCSC New Zealand](../../sources/ncsc-nz-alert-php/index.html) |
+| Reports of active exploitation existThe only agency saying so, and it does not say whose reports. [fact timeline →](../../facts/nz-active/index.html) | NCSC New Zealand | reported | **A2** Reported●●○○○○ disputed | 1/1 | [NCSC New Zealand](../../sources/ncsc-nz-alert-php/index.html) |
 
 ## Events that cite it
 

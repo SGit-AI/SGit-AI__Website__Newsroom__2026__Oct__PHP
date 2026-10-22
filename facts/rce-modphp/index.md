@@ -12,7 +12,19 @@ Fact · technical · confirmed
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · State · verdict: **holds**
+
+GHSA-w8hw (the advisory record for CVE-2026-109618) says complete RCE was validated over HTTP against mod_php with default PHP input and memory limits, entirely before application code; oss-security and php.net repeat it. All parts carried by the primary record.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [github-ghsa-w8hw-w9fx-j79w](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) | carries | *Complete remote code execution was validated over HTTP against mod_php with default PHP input and memory limits and normal prefork configurations with multiple workers.* | 84ab95d3b1d538ba |
+| [openwall-oss-security-2026-10-21-6](../../sources/openwall-oss-security-2026-10-21-6/index.html) | carries | *Unauthenticated RCE has been demonstrated over HTTP against Apache mod_php, before application code executes.* | 2f2d3ff13f3a32b7 |
+| [php-net-advisory](../../sources/php-net-advisory/index.html) | partial | *We consider the risk highest for mod_php, with a demonstrated exploit where an unauthenticated request can trigger the attack before any application code runs.* | df0b1bba3deae282 |
+
+Open tickets: [Contradiction-8](../../factcheck/index.html#Contradiction-8), [Finding-97](../../factcheck/index.html#Finding-97).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:14 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21php.net publishes [Security advisory: Critical remote code execution vulnerabilities, update now](../../sources/php-net-advisory/index.html)

@@ -14,7 +14,19 @@ Wiz's X post says 'Wiz Research uncovers' with no credit to Calif or OpenAI; the
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ · Attribution · verdict: **holds in part**
+
+Wiz's timeline carries 'discovers the first PHP vulnerability' on 19 August and the report on 24 August, and the Foundation independently confirms a Wiz report on 24 August. 'Independently' is not in any captured primary: Wiz itself says it worked with Calif and OpenAI 'on discovery', and the Foundation frames Wiz's report as 'further attack vectors'. 'The first flaw' means Wiz's first finding, not the first flaw overall.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [wiz-blog-php2shell](../../sources/wiz-blog-php2shell/index.html) | partial | *August 19, 2026: Wiz Research discovers the first PHP vulnerability using Wiz Atlas, Gemini 4 Argon, and GPT-5.6 Sol.* | e3568b6f88c93f6b |
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | partial | *followed by further attack vectors from OpenAI on September 18th and from Wiz on August 24th.* | a1be057adc1c5bfa |
+| [x-wiz-io-php2shell](../../sources/x-wiz-io-php2shell/index.html) | partial | *BREAKING: @wiz_io Research uncovers #PHP2SHELL, a decade-old PHP Core vulnerability reaching CVSS 9.2 severity impacting 70% of the Internet.* | 6c17977662815b0c |
+
+Open tickets: [Finding-115](../../factcheck/index.html#Finding-115), [Finding-4](../../factcheck/index.html#Finding-4).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Wiz publishes [PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet](../../sources/wiz-blog-php2shell/index.html)

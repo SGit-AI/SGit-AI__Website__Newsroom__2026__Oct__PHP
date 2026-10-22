@@ -14,7 +14,17 @@ Primary source, one country, says 'potentially'.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ · Count · verdict: **holds**
+
+CERT.LV's own page (update of 21 Oct, 23:00 local) says about 6,000 potentially affected resources in Latvia, only a few hundred in the state sector. One primary party, no method stated, so A2 for a count; 'reported' fits.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [certlv-php-preventive](../../sources/certlv-php-preventive/index.html) | carries | *Kopumā Latvijā identificēti aptuveni 6000 potenciāli ietekmētu resursu, no kuriem tikai daži simti ir valsts sektorā.* | e37a6582c4e6c685 |
+
+Open tickets: [Finding-104](../../factcheck/index.html#Finding-104).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:13 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21 18:25 UTCCERT.LV publishes [Saistībā ar globāli atklātām PHP ievainojamībām Latvijā ievieš preventīvus pasākumus](../../sources/certlv-php-preventive/index.html)

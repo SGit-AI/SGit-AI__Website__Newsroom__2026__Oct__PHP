@@ -14,7 +14,17 @@ No basis given.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ · Count · verdict: **holds**
+
+The BBC capture carries Alan Woodward's words 'something like 30 million websites' (from Radio 4's Today). One named party, relayed by one outlet, with no population, method or counter, so A2; 'reported' fits.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | carries | *Referencing the "serious" scale of it, he says it could affect "something like 30 million websites".* | c88b8c5f4c6bc07d |
+
+Open tickets: [Finding-101](../../factcheck/index.html#Finding-101).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:05 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-22 06:16 UTCBBC News publishes [PHP: Global scramble to fix critical cyber-security flaws as many websites taken offline - follow live](../../sources/bbc-live-ckgel5xp2xv9t/index.html)

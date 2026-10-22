@@ -14,7 +14,22 @@ That sentence is not on the NCSC page as captured at 08:09Z on 22 October. The p
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ disputed · Quote · verdict: **holds in part**
+
+The NCSC page as captured (last-modified 07:30:02 GMT on 22 Oct) gives the offline advice as step 4 of 6 in other words ('If you are unable to apply the temporary mitigations ...'), so the quote is not verbatim in the party's own capture. The exact sentence is in the BBC, in LBC's article of 21 Oct 15:41 (before the page was modified), and in a CyberExpress copy of the BBC. That is an echo, A3, and points to an earlier NCSC wording.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | carries | *"Where immediate remediation is not feasible, organisations should consider taking the system offline until it can be fully mitigated," the NCSC said in a note* | c88b8c5f4c6bc07d |
+| [ncsc-news-php](../../sources/ncsc-news-php/index.html) | partial | *or applying them would take too long, you should consider taking the system offline until it can be fully mitigated.* | a18ceeb011a3fe6f |
+| [ncsc-news-php](../../sources/ncsc-news-php/index.html) | partial | *"last-modified": "Thu, 22 Oct 2026 07:30:02 GMT"* | 642ad2462903a32f |
+| [cccs-al26-026](../../sources/cccs-al26-026/index.html) | partial | *Where immediate remediation is not feasible, organisations should consider isolating internet-facing applications from public networks until a fix can be applied.* | 9e7f44cc73e21ad5 |
+| [lbc-uk-websites-offline](../../sources/lbc-uk-websites-offline/index.html) | carries | *The NCSC warned: “Where immediate remediation is not feasible, organisations should consider taking the system offline until it can be fully mitigated.”* | 125176f10b5494a6 |
+| [cyberexpress-php2shell-gov-sites](../../sources/cyberexpress-php2shell-gov-sites/index.html) | carries | *“Where immediate remediation is not feasible, organizations should consider taking the system offline until it can be fully mitigated,” the NCSC said.* | f45bc7599367343e |
+
+Open tickets: [Finding-42](../../factcheck/index.html#Finding-42), [Finding-89](../../factcheck/index.html#Finding-89).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:29 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21NCSC UK publishes [Critical security issue affecting PHP](../../sources/ncsc-news-php/index.html)

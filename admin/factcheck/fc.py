@@ -216,7 +216,9 @@ def cmd_check(argv):
         for k in a.get('contradictions', []):
             if k not in K: fails.append(f'{cid}: names unknown contradiction {k}')
         for ch in a.get('checked', []):
-            if ch['source'] not in src: fails.append(f'{cid}: checked unknown source {ch["source"]}')
+            if ch['source'] not in src and not ch.get('outside_citation'): fails.append(f'{cid}: checked unknown source {ch["source"]}')
+            elif ch['source'] not in src and o.get('vault') and not os.path.isdir(os.path.join(o['vault'], 'sources', ch['source'])): fails.append(f'{cid}: {ch["source"]} is in neither the manifest nor the vault')
+            elif ch['source'] not in src: notes.append(f'{cid}: rests partly on {ch["source"]}, in the vault but not exported to this site')
             elif ch['source'] not in c['sources'] and not ch.get('outside_citation'):
                 notes.append(f'{cid}: checked {ch["source"]}, which the claim does not cite')
             if ch.get('result') not in RESULTS: fails.append(f'{cid}: result {ch.get("result")!r} for {ch["source"]}')
@@ -232,11 +234,16 @@ def cmd_check(argv):
             if cid not in claims: fails.append(f'contradiction {k["id"]}: unknown claim {cid}')
     # quotes in claims and notes: list them so mode 1 checks each one
     for c in claims.values():
-        for q in re.findall(r"'([^']{12,})'|“([^”]{12,})”|\"([^\"]{12,})\"", (c.get('note') or '') + ' ' + c['claim']):
+        for q in re.findall(r"(?:^|[\s(])'([^']{12,}?)'(?=[\s.,;:)]|$)|“([^”]{12,})”|\"([^\"]{12,})\"", (c.get('note') or '') + ' ' + c['claim']):
             q = next(x for x in q if x)
             a = next((x for x in A if x['id'] == c['id']), None)
-            if a and not any(q[:40].lower() in (ch.get('excerpt') or '').lower() for ch in a.get('checked', [])) and q not in a.get('quotes_checked', []):
-                notes.append(f'{c["id"]}: quote not yet matched to an excerpt: "{q[:70]}"')
+            if not a or any(norm(q)[:40] in norm(ch.get('excerpt') or '') for ch in a.get('checked', [])):
+                continue
+            rec = next((x for x in a.get('quotes_checked', []) if norm(q)[:30] in norm(x.get('quote', '')) or norm(x.get('quote', ''))[:30] in norm(q)), None)
+            if rec and rec.get('found') is False:
+                notes.append(f'{c["id"]}: quote checked and NOT in the capture it is attributed to: "{q[:70]}"')
+            elif not rec:
+                notes.append(f'{c["id"]}: quote not yet checked: "{q[:70]}"')
     # with a vault: every cited text capture exists and matches the manifest hash
     if o.get('vault'):
         bad = 0
@@ -257,7 +264,7 @@ def cmd_check(argv):
                 p = os.path.join(o['vault'], ch['file'])
                 if not os.path.exists(p):
                     fails.append(f'{a["id"]}: names {ch["file"]}, not in the vault clone'); miss += 1; continue
-                if norm(ex) not in norm(capture_any(p)):
+                if norm(ex) not in norm(capture_any(p)) and norm(ex) not in norm(open(p, encoding='utf-8', errors='replace').read()):
                     fails.append(f'{a["id"]}: excerpt not found in {ch["file"]}: "{ex[:60]}"'); miss += 1
         notes.append(f'vault: every recorded excerpt checked against its file, {miss} not found')
     for n in notes: print('note:', n)

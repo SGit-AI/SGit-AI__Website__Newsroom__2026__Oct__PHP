@@ -14,7 +14,19 @@ Primary, and the one outage with a measured cost.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ status overstated · Count · verdict: **holds** · the status word overstates the evidence
+
+The operator's own blog carries both parts verbatim: webservers off for all wikis, a 13-hour downtime, and about 94% of wiki pageviews served correctly. The 13-hour outage is the operator's own record of its own action, but the 94% is a self-reported figure with no stated method, which the model caps at A2, so "confirmed" overstates it.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [weirdgloop-blog-php2shell](../../sources/weirdgloop-blog-php2shell/index.html) | carries | *we turned off the webservers for all of the wikis hosted by Weird Gloop, until a patch was released 2 hours ago.* | 6bd492a6220e8eea |
+| [weirdgloop-blog-php2shell](../../sources/weirdgloop-blog-php2shell/index.html) | carries | *This 13-hour downtime was the longest outage we’ve ever had.* | 6bd492a6220e8eea |
+| [weirdgloop-blog-php2shell](../../sources/weirdgloop-blog-php2shell/index.html) | carries | *we were able to keep about 94% of wiki pageviews serving correctly, even with no database or PHP running.* | 6bd492a6220e8eea |
+
+Open tickets: [Finding-112](../../factcheck/index.html#Finding-112).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:18 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Weird Gloop publishes [Recent wiki downtime (PHP2Shell mitigation) | Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html)

@@ -14,7 +14,23 @@ Primary party. Amazon adds: 'it's unclear if any of these attempts would have su
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ disputed · Attribution · verdict: **holds**
+
+Amazon's own post (now cited first) carries all three parts and the quoted sentence character for character; The Hacker News is an echo of the same Amazon post, not independent, so the level stays A2. Amazon's 'broadly exploited in the wild' is disputed by CISA's dated negative and by Austin and Huntress, partly because they measure different things (attempts versus successful compromise) at different times.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [aws-security-blog-madpot](../../sources/aws-security-blog-madpot/index.html) | carries | *Amazon Threat Intelligence identified a PHP2Shell exploitation attempt dating to Oct. 17, 2026, in MadPot telemetry, four days before public disclosure* | 94315ded6e1175f2 |
+| [aws-security-blog-madpot](../../sources/aws-security-blog-madpot/index.html) | carries | *The exploit attempt originated from an IP address associated with a commercial anonymization network.* | 94315ded6e1175f2 |
+| [aws-security-blog-madpot](../../sources/aws-security-blog-madpot/index.html) | carries | *multiple proof of concept exploits for the vulnerability, with the earliest around 2026-10-21 0200 UTC.* | 94315ded6e1175f2 |
+| [aws-security-blog-madpot](../../sources/aws-security-blog-madpot/index.html) | carries | *The actual payloads and choices in anonymization infrastructure varied, suggesting these were multiple actors.* | 94315ded6e1175f2 |
+| [aws-security-blog-madpot](../../sources/aws-security-blog-madpot/index.html) | carries | *PHP2Shell is now being broadly exploited in the wild.* | 94315ded6e1175f2 |
+| [thehackernews-php2shell-4days](../../sources/thehackernews-php2shell-4days/index.html) | carries | *as the flaws come under broad exploitation in the wild following the release of the patches.* | c1cb63141287484c |
+| [securityweek-exploitation-days-before](../../sources/securityweek-exploitation-days-before/index.html) | partial | *The exploits being sprayed indiscriminately either don’t work at all, test for timing-based differences, or crash the target,* | ac663f2d9dbd0197 |
+
+Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Finding-122](../../factcheck/index.html#Finding-122), [Finding-14](../../factcheck/index.html#Finding-14), [Finding-60](../../factcheck/index.html#Finding-60).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:17 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Amazon publishes [Amazon Threat Intelligence identifies PHP2Shell exploitation prior to public disclosure in MadPot | AWS Securi](../../sources/aws-security-blog-madpot/index.html)

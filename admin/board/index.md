@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 64 items, 44 open, 19 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 68 items, 47 open, 20 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -74,6 +74,10 @@ The work, as rows in `data/admin.json`: 64 items, 44 open, 19 done. An item is a
 | 061 | The contradiction ledger: a first-class record per disagreement (the statements, who, when, captures, what each measures, the reading, status), seeded with the seven from the 22 October coverage review, and a page that shows itFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | factcheck |  |
 | 062 | Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one sourceFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | cartographer |  |
 | 063 | Carry every stat as its series: each number on the site drawn as a line whose points link to their captures, starting with sites offline, products fixed, attempts and unpatched hostsFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | journalist |  |
+| 064 | The fact-check desk: a spectrum of evidence (kind, level A0 to A6, verdict, tension), an Issues-FS tracker, the contradiction ledger, the first full run over all 70 claims, and /factcheck/ with a view of only what can be relied onFrom the brief: a fact-checker joins the team (22 October). | done | factcheck | 0.4.8 |
+| 065 | Run the desk on a schedule, every four hours: the claims that changed, the open tickets, the weak and the contested, KEV and the moving sources; a full sweep once a dayFrom the brief: a fact-checker joins the team (22 October). | open | factcheck |  |
+| 066 | Act on the desk's high and medium findings on claims, agencies, exploitation and impact data: first Italy's offline advice, the allies' 'contradicted' mark, the five quotes not in their captures, and the eleven overstated status words (tickets on /factcheck/)From the brief: a fact-checker joins the team (22 October). | open | claude-story-site |  |
+| 067 | Capture what the desk found outside the vault: the BBC live page as it stands (32 UK services, 90%), The Next Web, the PHPocalypse Tracker's sites.csv, KEV each run; then re-grade the claims they bear onFrom the brief: a fact-checker joins the team (22 October). | open | collector-researchers |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 

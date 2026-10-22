@@ -14,7 +14,20 @@ Fastly: 'most deployments may be safe from RCE. Do not assume this holds true fo
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A3** Echoed●●●○○○ opinion status overstated · Opinion · verdict: **holds** · the status word overstates the evidence
+
+The CVSS half is a record (AC:H in the CVE record, A6). The 'much easier' half is Imperva's characterisation, supported by Fastly (single-request trigger; RCE needs binary layout knowledge) and the advisory's reliability caveats; as a reading it caps at A3, so 'confirmed' overstates the claim as a whole.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [imperva-blog-php2shell](../../sources/imperva-blog-php2shell/index.html) | carries | *It’s worth noting that the attack complexity in both vulnerabilities is high* | 3da873bdb21219a6 |
+| [imperva-blog-php2shell](../../sources/imperva-blog-php2shell/index.html) | carries | *Triggering the bug is much easier than turning it into code execution.* | 3da873bdb21219a6 |
+| [fastly-blog-php2shell](../../sources/fastly-blog-php2shell/index.html) | partial | *most deployments may be “safe” from RCE. Do not assume this holds true for you.* | bacf27615fe1180a |
+| [cve-cve-2026-109618](../../sources/cve-cve-2026-109618/index.html) | carries | *CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N* | f8705d8e0aa2a248 |
+
+Open tickets: [Finding-53](../../factcheck/index.html#Finding-53), [Finding-56](../../factcheck/index.html#Finding-56).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:19 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Imperva Threat Research publishes [PHP2Shell: When PHP Runs Out of Memory at the Wrong Moment | Imperva](../../sources/imperva-blog-php2shell/index.html)

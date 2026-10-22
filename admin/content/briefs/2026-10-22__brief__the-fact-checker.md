@@ -18,4 +18,4 @@ Status: accepted, by being sent. Author: Dinis Cruz, editor. A message to a new 
 
 ## Board items opened by this brief
 
-064 to 067, listed on the board.
+080 to 083, listed on the board.

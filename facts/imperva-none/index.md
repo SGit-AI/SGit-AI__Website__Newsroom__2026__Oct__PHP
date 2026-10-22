@@ -14,7 +14,19 @@ A negative finding from a party that had the details under embargo.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ measures differently · State · verdict: **holds**
+
+Imperva's own post carries it verbatim, including that it had the details before disclosure; one named party, a negative about its own customer traffic in an undated window.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [imperva-blog-php2shell](../../sources/imperva-blog-php2shell/index.html) | carries | *During this pre-disclosure monitoring period, Imperva observed no traffic matching the monitored PHP2Shell exploit patterns.* | 3da873bdb21219a6 |
+| [imperva-blog-php2shell](../../sources/imperva-blog-php2shell/index.html) | carries | *The researchers shared vulnerability details confidentially with Imperva ahead of public disclosure, enabling Imperva to verify its protection and begin monitoring customer traffic* | 3da873bdb21219a6 |
+| [x-eastdakota-php2shell-stats](../../sources/x-eastdakota-php2shell-stats/index.html) | absent | *In the 10 hours before it was publicly announced, across the @Cloudflare network we saw thousands of attempts to exploit it.* | 4069805bcb164ff1 |
+
+Open tickets: [Finding-75](../../factcheck/index.html#Finding-75).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:18 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Imperva Threat Research publishes [PHP2Shell: When PHP Runs Out of Memory at the Wrong Moment | Imperva](../../sources/imperva-blog-php2shell/index.html)

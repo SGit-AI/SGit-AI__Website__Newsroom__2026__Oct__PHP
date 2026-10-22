@@ -12,7 +12,18 @@ Fact · impact · reported
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ · Quote · verdict: **holds**
+
+The quoted words are verbatim in the @OxfordCity post embedded in the East Anglian Daily Times (PA) capture, but not in the cited Oxford Chronicle, which only paraphrases ("a precautionary response to a worldwide technology problem rather than a cyber incident"). One capture carries the exact words, so A2.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [oxfordchronicle-councils-offline](../../sources/oxfordchronicle-councils-offline/index.html) | partial | *In a social-media update, the council explained that the closure was a precautionary response to a worldwide technology problem rather than a cyber incident.* | 35c847290193f872 |
+| [eadt-minister-budget-no-breach](../../sources/eadt-minister-budget-no-breach/index.html) | carries | *This is a precaution because of a worldwide issue with the underlying technology and is not a cyber incident.* | 4c8556b5aaedee9f |
+
+Open tickets: [Finding-30](../../factcheck/index.html#Finding-30).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:29 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Oxford Chronicle publishes [Oxfordshire council websites offline amid critical global security issue | Oxford Chronicle](../../sources/oxfordchronicle-councils-offline/index.html)

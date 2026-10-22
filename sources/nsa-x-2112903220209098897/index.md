@@ -32,7 +32,7 @@ First NSA post (pinned). Time from tweet snowflake ID = 2026-10-21T13:45:58Z; th
 
 | Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
 |---|---|---|---|---|---|
-| If an immediate update is not feasible, take the system offline until it can be fully mitigatedX post 13:45:58Z 21 October (10.1 million views at capture) and the press release. [fact timeline →](../../facts/offline-nsa/index.html) | NSA Cybersecurity | confirmed | not checked | 2/2 | [NSA Cyber on X](../../sources/nsa-x-2112903220209098897/index.html) [NSA](../../sources/nsa-press-php-4630238/index.html) |
+| If an immediate update is not feasible, take the system offline until it can be fully mitigatedX post 13:45:58Z 21 October (10.1 million views at capture) and the press release. [fact timeline →](../../facts/offline-nsa/index.html) | NSA Cybersecurity | confirmed | **A6** Established●●●●●● | 2/2 | [NSA Cyber on X](../../sources/nsa-x-2112903220209098897/index.html) [NSA](../../sources/nsa-press-php-4630238/index.html) |
 
 ## Events that cite it
 

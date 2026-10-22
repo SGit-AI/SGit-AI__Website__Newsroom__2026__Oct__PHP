@@ -14,7 +14,21 @@ Two parties agree. The Foundation calls the delay 'a structural failure'. Cloudf
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ disputed status overstated · Attribution · verdict: **holds in part** · the status word overstates the evidence
+
+Calif says Quarkslab's audit 'rediscovered the same OOM issue' and 'exploitation was not proven, hence the bug was not fixed', but Calif says it confirmed this 'from PHP', so it is not independent of the Foundation. The Foundation says something different: a PHP core developer found the OOM signs while fixing a Quarkslab finding, and the fix stalled over trade-offs and resources, not only unproven exploitation. Quarkslab's own summary describes no OOM finding.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | partial | *While fixing one of the issues Quarkslab reported, a PHP core developer contracted by the PHP Foundation found the first signs of the OOM problem* | a1be057adc1c5bfa |
+| [calif-php2shell](../../sources/calif-php2shell/index.html) | carries | *OSTIF and Quarkslab performed an audit of PHP and rediscovered the same OOM issue. However, exploitation was not proven, hence the bug was not fixed.* | 23afef81971778f9 |
+| [quarkslab-blog-php-src-audit](../../sources/quarkslab-blog-php-src-audit/index.html) | absent | *This audit report contains two security issues currently redacted while PHP maintainers are actively working on the fixes.* | cd5ccdaf99da0be1 |
+| [imperva-blog-php2shell](../../sources/imperva-blog-php2shell/index.html) | partial | *Reported by: Calif, Wiz, OpenAI, and Quarkslab.* | 3da873bdb21219a6 |
+| [cloudflare-blog-php2shell-waf](../../sources/cloudflare-blog-php2shell-waf/index.html) | partial | *Today, Calif.io, Wiz, OpenAI and Quarkslab disclosed two* | 302408765abf45e3 |
+
+Open tickets: [Finding-5](../../factcheck/index.html#Finding-5), [Finding-6](../../factcheck/index.html#Finding-6), [Finding-94](../../factcheck/index.html#Finding-94).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:30 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)

@@ -24,7 +24,7 @@ Captured by claude-story-site. Status: captured. Edinburgh council site offline 
 
 | Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
 |---|---|---|---|---|---|
-| Edinburgh council's site went offline late on 21 October; the council called it 'essential maintenance' and did not confirm a link [fact timeline →](../../facts/edinburgh/index.html) | The Scotsman quoting the council | reported | not checked | 0/1 | [The Scotsman](../../sources/scotsman-edinburgh-council-offline/index.html) |
+| Edinburgh council's site went offline late on 21 October; the council called it 'essential maintenance' and did not confirm a link [fact timeline →](../../facts/edinburgh/index.html) | The Scotsman quoting the council | reported | **A3** Echoed●●●○○○ | 0/1 | [The Scotsman](../../sources/scotsman-edinburgh-council-offline/index.html) |
 
 ## Events that cite it
 

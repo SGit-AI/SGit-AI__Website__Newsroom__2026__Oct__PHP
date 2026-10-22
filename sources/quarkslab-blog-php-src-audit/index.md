@@ -24,7 +24,7 @@ Captured by claude-story-site. Status: captured. Quarkslab's own account of the 
 
 | Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
 |---|---|---|---|---|---|
-| Quarkslab's published audit summary lists 27 findings, two redacted because their fixes were complex and in progress; it does not describe an out-of-memory findingThe Foundation says the OOM signs were found while fixing one of the audit's findings, not in the audit report itself. [fact timeline →](../../facts/quarkslab-redacted/index.html) | Quarkslab's blog; a Substack analysis | reported | not checked | 1/2 | [Quarkslab](../../sources/quarkslab-blog-php-src-audit/index.html) [David Lopez-Kurtz](../../sources/substack-lopezkurtz-patch-is-the-exploit/index.html) |
+| Quarkslab's published audit summary lists 27 findings, two redacted because their fixes were complex and in progress; it does not describe an out-of-memory findingThe Foundation says the OOM signs were found while fixing one of the audit's findings, not in the audit report itself. [fact timeline →](../../facts/quarkslab-redacted/index.html) | Quarkslab's blog; a Substack analysis | reported | **A6** Established●●●●●● | 1/2 | [Quarkslab](../../sources/quarkslab-blog-php-src-audit/index.html) [David Lopez-Kurtz](../../sources/substack-lopezkurtz-patch-is-the-exploit/index.html) |
 
 ## Events that cite it
 

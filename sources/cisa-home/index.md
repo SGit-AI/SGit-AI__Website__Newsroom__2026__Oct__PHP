@@ -22,7 +22,7 @@ Captured at 08:13Z to show placement. The top news item is "Critical Vulnerabili
 
 | Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
 |---|---|---|---|---|---|
-| The risks require immediate patching across United States Government departments and agenciesNo CISA emergency directive was visible on the CISA home page at capture. [fact timeline →](../../facts/gov-patch-required/index.html) | NSA | reported | not checked | 1/2 | [NSA](../../sources/nsa-press-php-4630238/index.html) [CISA](../../sources/cisa-home/index.html) |
+| The risks require immediate patching across United States Government departments and agenciesNo CISA emergency directive was visible on the CISA home page at capture. [fact timeline →](../../facts/gov-patch-required/index.html) | NSA | reported | **A6** Established●●●●●● | 1/2 | [NSA](../../sources/nsa-press-php-4630238/index.html) [CISA](../../sources/cisa-home/index.html) |
 
 ## Events that cite it
 

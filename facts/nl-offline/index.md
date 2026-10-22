@@ -14,7 +14,25 @@ Primary statement.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A3** Echoed●●●○○○ status overstated · Event · verdict: **holds in part** · the status word overstates the evidence
+
+The cited primary (Rijksoverheid, 21 Oct 13:59) carries only NCSC.NL taken offline "uit voorzorg" and a general "no active misuse seen yet"; it does not name DigiD, MijnOverheid or Overheid.nl, and the second cited source is a blocked Cloudflare page. DigiD and MijnOverheid are carried by TPO and Insurance Business, Overheid.nl only by Reuters copy (one origin), so A3 for the claim as worded, and "of those services" is the site's own narrowing.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [rijksoverheid-ncsc-php-news](../../sources/rijksoverheid-ncsc-php-news/index.html) | partial | *Vanwege de kwetsbaarheden in PHP is uit voorzorg de website NCSC.NL tijdelijk offline gehaald.* | 7e10bcf7cb44e5f7 |
+| [rijksoverheid-ncsc-php-news](../../sources/rijksoverheid-ncsc-php-news/index.html) | partial | *het Nationaal Cyber Security Centrum (NCSC) heeft nog geen actief misbruik gesignaleerd.* | 7e10bcf7cb44e5f7 |
+| [dutchitleaders-websites-offline](../../sources/dutchitleaders-websites-offline/index.html) | blocked | *We're verifying you are human. This may take a few seconds.* | 28f6003be69e3a97 |
+| [tpo-nl-digid-offline](../../sources/tpo-nl-digid-offline/index.html) | carries | *DigiD, MijnOverheid, de website van de Tweede Kamer en zelfs die van het Nationaal Cyber Security Centrum (NCSC) gingen uit voorzorg offline.* | 2ddfd8817abf25b6 |
+| [insurancebusiness-uk-councils-met](../../sources/insurancebusiness-uk-councils-met/index.html) | partial | *The Dutch National Cyber Security Centre took its own site offline as a precaution, as did the following:* | 89357150e0bc8363 |
+| [reuters-factbox-websites-offline](../../sources/reuters-factbox-websites-offline/index.html) | carries | *They included the Port of Rotterdam, government site Overheid.nl, the national football association KNVB* | d562e28995b00a19 |
+| rte-reuters-websites-go-dark (in the vault, not yet on this site) | carries | *including the Port of Rotterdam, government portal Overheid.nl, the national soccer association KNVB* | 99bb92662561bd29 |
+| ncsc-nl-site (in the vault, not yet on this site) | absent | *Ernstige kwetsbaarheden in PHP: update nu* | 4cff0c7ba341429e |
+| overheid-nl-site (in the vault, not yet on this site) | absent | *nothing that carries it* | 93278f942198c318 |
+
+Open tickets: [Finding-27](../../factcheck/index.html#Finding-27), [Finding-28](../../factcheck/index.html#Finding-28), [Finding-84](../../factcheck/index.html#Finding-84).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:32 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Rijksoverheid / NCSC-NL publishes [NCSC: Ernstige kwetsbaarheden in PHP | Rijksoverheid.nl](../../sources/rijksoverheid-ncsc-php-news/index.html)

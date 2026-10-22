@@ -14,7 +14,24 @@ Primary sources put the release at 21 October: GHSAs 13:34Z, tags 13:35Z, CVE re
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+refuted measures differently · Event · verdict: **refuted**
+
+The primary records date the disclosure to 21 October UTC: GHSA published 13:34:25Z, tags 13:35:38 UTC, CVE records 13:48:34Z and 13:54:43Z, GitHub release 14:06:46Z, php.net '21 Oct 2026'. '22 October' is only right in Australian or Japanese local time (ACSC: 0100 AEDT on 22 October). The BBC capture never states a disclosure date, so the attribution to the BBC is not carried.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | absent | *Details of the discovery leaked online this week, forcing the PHP platform's developers to rush out its announcement* | c88b8c5f4c6bc07d |
+| [php-net-advisory](../../sources/php-net-advisory/index.html) | carries | *It is scheduled for Wednesday, 21 October 2026 at 14:00 UTC.* | df0b1bba3deae282 |
+| [github-php-src-tag-php-8.5.12](../../sources/github-php-src-tag-php-8.5.12/index.html) | carries | *datetime="2026-10-21T14:06:46Z"* | 330630ed887249f6 |
+| [github-ghsa-w8hw-w9fx-j79w](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) | carries | *datetime="2026-10-21T13:34:25Z"* | 79647ef8c491692c |
+| [github-php-src-tags](../../sources/github-php-src-tags/index.html) | carries | *datetime="2026-10-21 13:35:38 UTC"* | ca0a96e8466a3479 |
+| [cve-cve-2026-109618](../../sources/cve-cve-2026-109618/index.html) | carries | *"datePublished":"2026-10-21T13:48:34.845Z"* | f856138e139c216e |
+| [acsc-alert-php](../../sources/acsc-alert-php/index.html) | partial | *with full details publicly announced on Thursday 22 October 2026 at 0100 AEDT.* | 9370af142ded6de9 |
+| [x-wiz-io-php2shell](../../sources/x-wiz-io-php2shell/index.html) | partial | *Apply the Oct 22 security release immediately* | 6c17977662815b0c |
+
+Open tickets: [Finding-38](../../factcheck/index.html#Finding-38), [Finding-66](../../factcheck/index.html#Finding-66).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21php.net publishes [Security advisory: Critical remote code execution vulnerabilities, update now](../../sources/php-net-advisory/index.html)

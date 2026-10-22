@@ -14,7 +14,22 @@ No Wikimedia-published statement captured.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A4** Corroborated●●●●○○ · Quote · verdict: **holds**
+
+The quoted words are verbatim in The Cyber Express and, outside this claim's citations, in Newsweek (emailed statement to Newsweek) and the Reuters factbox, which each received the Foundation's statement; CNN independently carries "precautionary measure". Several independent outlets but no Wikimedia-published page, so A4; "reported" fits.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [cyberexpress-php2shell-gov-sites](../../sources/cyberexpress-php2shell-gov-sites/index.html) | carries | *“We have taken down a number of other systems as a precautionary measure until they can be safely patched,” the Wikimedia Foundation said* | f45bc7599367343e |
+| [cnn-php2shell-websites-shut](../../sources/cnn-php2shell-websites-shut/index.html) | partial | *and that a number of its systems had been taken down as a “precautionary measure.”* | ee49fc4265ae1c7c |
+| [newsweek-php2shell-websites](../../sources/newsweek-php2shell-websites/index.html) | carries | *We have taken down a number of other systems as a precautionary measure until they can be safely patched.* | 323ccf78f4d6f2d0 |
+| [reuters-factbox-websites-offline](../../sources/reuters-factbox-websites-offline/index.html) | carries | *"We have taken down a number of other systems as a precautionary measure until they can be safely patched," the foundation added.* | d562e28995b00a19 |
+| insiderpaper-archive-wikipedia (in the vault, not yet on this site) | partial | *It said several systems had been taken offline as a precaution while security patches were being applied.* | dba4741ae1b287de |
+| wikimediastatus-page (in the vault, not yet on this site) | absent | *All Systems Operational* | 13e068d2c2b3665d |
+
+Open tickets: [Finding-114](../../factcheck/index.html#Finding-114), [Finding-29](../../factcheck/index.html#Finding-29).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:30 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21CNN publishes [Websites shut down globally after AI finds a critical flaw affecting 70% of the internet | CNN Business](../../sources/cnn-php2shell-websites-shut/index.html)
