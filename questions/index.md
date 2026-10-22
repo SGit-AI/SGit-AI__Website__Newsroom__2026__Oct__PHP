@@ -112,6 +112,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [How the team talks: three vaults and one run](../team/channels/index.html#issues):
 - [How the team talks: three vaults and one run](../team/channels/index.html#mail):
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
+- [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 
 ### GRC
 - [GRC: risks, owners, standards](../grc/index.html):
@@ -156,4 +157,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.5.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

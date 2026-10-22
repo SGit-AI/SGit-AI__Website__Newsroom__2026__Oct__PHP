@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.5.10 · 22 October 2026new since your last visit
+
+the telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages), the telemetry vault imports it and drains its own lane from the browser (40 events drained that way, 275 from 176 sessions now), and the dashboard vault i4diy82d is superseded
+
+No reader-facing section changed in this release.
+
 ## v0.5.9 · 22 October 2026new since your last visit
 
 no named organisation has said it was compromised through php2shell: claim no-confirmed-compromise reworded with its time (20:50 UTC, 22 October) and moved from confirmed to reported, the plain-English lines that said nobody had confirmed a break-in corrected, and a page of its own (/compromise/) mapping the evidence behind the statement: what was searched, 33 statements by kind with their sources or source-watch snapshots, the layers from attempts to a named compromise, a timeline, and what would change it
@@ -400,4 +406,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.5.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

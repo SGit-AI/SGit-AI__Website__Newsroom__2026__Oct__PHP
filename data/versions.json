@@ -1,6 +1,15 @@
 {
- "current": "0.5.9",
+ "current": "0.5.10",
  "versions": [
+  {
+   "version": "0.5.10",
+   "date": "2026-10-22",
+   "title": "the telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages), the telemetry vault imports it and drains its own lane from the browser (40 events drained that way, 275 from 176 sessions now), and the dashboard vault i4diy82d is superseded",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.5.9",
    "date": "2026-10-22",

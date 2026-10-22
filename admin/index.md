@@ -214,9 +214,9 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `data/grc-graph.json` is generated: every edge a verb with its inverse, joined to the same claim, source, fix and code nodes as the story graph and the code review graph. The build stops on any unknown reference or an ownerless risk.
 
-- Every risk reaches code and a team member; 30 of 34 reach a vulnerability (the four that do not are the newsroom's own agent risks, which reach this repository's code instead) and a role inside an organisation; 26 of 34 reach a story (the reporting-obligation risks and the newsroom's own have none yet, board 092).
+- Every risk reaches code and a team member; 30 of 34 reach a vulnerability (the four that do not are the newsroom's own agent risks, which reach this repository's code instead) and a role inside an organisation; 26 of 34 reach a story (the reporting-obligation risks and the newsroom's own have none yet, board 093).
 
-- Not built: acceptance (no holder has accepted anything; board 091), per-stakeholder ratings (one rating per risk), the network's material captured into a vault (board 094), a graph of ISO 27001, NIST CSF, DORA or SOC 2 anywhere in the network.
+- Not built: acceptance (no holder has accepted anything; board 092), per-stakeholder ratings (one rating per risk), the network's material captured into a vault (board 095), a graph of ISO 27001, NIST CSF, DORA or SOC 2 anywhere in the network.
 
 ### Not built
 
@@ -238,4 +238,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.5.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

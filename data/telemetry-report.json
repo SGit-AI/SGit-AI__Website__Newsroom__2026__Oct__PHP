@@ -1,23 +1,23 @@
 {
  "as_of": "2026-10-22",
- "drained_now": 115,
- "events": 235,
+ "drained_now": 40,
+ "events": 275,
  "test_or_undecryptable": 1,
- "sessions": 161,
+ "sessions": 176,
  "by_day": [
   [
    "2026-10-22",
-   235
+   275
   ]
  ],
  "by_path": [
   [
    "/",
-   70
+   77
   ],
   [
    "/index.html",
-   14
+   17
   ],
   [
    "/claims/index.html",
@@ -64,6 +64,10 @@
    5
   ],
   [
+   "/compromise/index.html",
+   5
+  ],
+  [
    "/factcheck/index.html",
    4
   ],
@@ -74,6 +78,10 @@
   [
    "/admin/agents/rounds/index.html",
    4
+  ],
+  [
+   "/questions/index.html",
+   3
   ],
   [
    "/billing/index.html",
@@ -96,7 +104,15 @@
    3
   ],
   [
-   "/questions/index.html",
+   "/admin/vault/index.html",
+   2
+  ],
+  [
+   "/briefings/developer/index.html",
+   2
+  ],
+  [
+   "/timeline/index.html",
    2
   ],
   [
@@ -105,6 +121,10 @@
   ],
   [
    "/articles/index.html",
+   2
+  ],
+  [
+   "/briefings/ciso/index.html",
    2
   ],
   [
@@ -140,50 +160,30 @@
    2
   ],
   [
-   "/admin/telemetry/index.html",
-   1
+   "/impact/index.html",
+   2
   ],
   [
-   "/admin/vault/index.html",
-   1
+   "/compromise/",
+   2
   ],
   [
-   "/admin/board/index.html",
-   1
-  ],
-  [
-   "/briefings/developer/index.html",
-   1
-  ],
-  [
-   "/review/index.html",
-   1
-  ],
-  [
-   "/numbers/index.html",
-   1
-  ],
-  [
-   "/timeline/index.html",
-   1
-  ],
-  [
-   "/articles/php2shell-in-perspective/index.html",
-   1
+   "/facts/kev-precedent/index.html",
+   2
   ]
  ],
  "by_country": [
   [
    "US",
-   160
+   168
   ],
   [
    "GB",
-   46
+   56
   ],
   [
    "(none)",
-   10
+   31
   ],
   [
    "PT",
@@ -208,28 +208,32 @@
   [
    "ES",
    1
+  ],
+  [
+   "FR",
+   1
   ]
  ],
  "by_region": [
   [
    "California",
-   125
+   131
   ],
   [
    "England",
-   46
-  ],
-  [
-   "Virginia",
-   17
+   56
   ],
   [
    "(none)",
-   11
+   32
+  ],
+  [
+   "Virginia",
+   18
   ],
   [
    "Florida",
-   9
+   10
   ],
   [
    "Lisbon",
@@ -286,27 +290,31 @@
   [
    "New Jersey",
    1
+  ],
+  [
+   "Nouvelle-Aquitaine",
+   1
   ]
  ],
  "by_city": [
   [
    "San Francisco",
-   118
+   123
+  ],
+  [
+   "(none)",
+   31
   ],
   [
    "London",
    24
   ],
   [
-   "(none)",
-   10
+   "Bridgwater",
+   15
   ],
   [
    "Ashburn",
-   8
-  ],
-  [
-   "Bridgwater",
    8
   ],
   [
@@ -315,6 +323,10 @@
   ],
   [
    "Boydton",
+   6
+  ],
+  [
+   "Pembroke Pines",
    5
   ],
   [
@@ -330,12 +342,8 @@
    4
   ],
   [
-   "Pembroke Pines",
-   4
-  ],
-  [
    "Manchester",
-   3
+   4
   ],
   [
    "Northampton",
@@ -366,6 +374,10 @@
    2
   ],
   [
+   "Kingston upon Hull",
+   2
+  ],
+  [
    "Palm Springs",
    1
   ],
@@ -384,34 +396,30 @@
   [
    "Hayes",
    1
-  ],
-  [
-   "Dublin",
-   1
   ]
  ],
  "by_referrer": [
   [
    "(none)",
-   203
+   237
   ],
   [
    "php.oct.2026.newsroom.sgit.ai",
-   29
+   34
   ],
   [
    "newsroom.sgit.ai",
-   3
+   4
   ]
  ],
  "by_screen": [
   [
    "desktop",
-   152
+   167
   ],
   [
    "phone",
-   82
+   107
   ],
   [
    "tablet",
@@ -421,11 +429,15 @@
  "by_version": [
   [
    "v0.5.5",
-   50
+   51
   ],
   [
    "v0.2.8",
    32
+  ],
+  [
+   "v0.5.9",
+   25
   ],
   [
    "v0.2.11",
@@ -437,7 +449,7 @@
   ],
   [
    "v0.2.14",
-   16
+   17
   ],
   [
    "v0.2.9",
@@ -468,7 +480,15 @@
    7
   ],
   [
+   "v0.5.8",
+   6
+  ],
+  [
    "v0.2.4",
+   5
+  ],
+  [
+   "v0.5.7",
    5
   ],
   [
@@ -506,18 +526,6 @@
   [
    "v0.5.3",
    2
-  ],
-  [
-   "v0.2.3",
-   1
-  ],
-  [
-   "v0.4.4",
-   1
-  ],
-  [
-   "v0.5.4",
-   1
   ]
  ],
  "note": "Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault."

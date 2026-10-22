@@ -35,7 +35,7 @@ Storiesarticles/index.html
 | 017 | Front page: replace 'The last 48 hours' with 'Since the last release', drawn from the timeline rows added since the previous version, and drop this site's own events from it | open |  |
 | 054 | Ask the edge providers for the number nobody has: how many exposed hosts sat behind a rule that blocked the request | open |  |
 | 063 | Carry every stat as its series: each number on the site drawn as a line whose points link to their captures, starting with sites offline, products fixed, attempts and unpatched hostsFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
-| 092 | A story on the reporting clocks php2shell can start (GDPR 72 hours, NIS2 24 hours, the Cyber Resilience Act's 24-hour report since 11 September 2026, DORA): R06 and the risks beneath it have no story yet (/grc/)From the brief: a GRC desk joins the team (22 October). | open |  |
+| 093 | A story on the reporting clocks php2shell can start (GDPR 72 hours, NIS2 24 hours, the Cyber Resilience Act's 24-hour report since 11 September 2026, DORA): R06 and the risks beneath it have no story yet (/grc/)From the brief: a GRC desk joins the team (22 October). | open |  |
 
 ## What they have done
 - The first house stories, and the review of the front page and navigation.
@@ -61,4 +61,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html
+site v0.5.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html
