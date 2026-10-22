@@ -107,7 +107,7 @@ for root, dirs, files in os.walk(ROOT):
         m = PAT.search(b.decode('utf-8', 'replace'))
         if m: fails.append(f'{rel(fp)}: credential shape {m.group(0)[:12]}...')
 # 8. no external script/style/img (checked above); also check the vendored meter is present
-for f in ('assets/telemetry.js', 'data/telemetry.json', 'data/admin.json', 'assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js', 'assets/components/base/v1/v1.0/v1.0.0/sg-component.js', 'assets/site.css', 'assets/site.js', 'CNAME', '.nojekyll', 'VERSION', '.github/workflows/pages.yml'):
+for f in ('assets/themes/themes.css', 'assets/themes/themes.js', 'assets/themes/site-tokens.css', 'assets/telemetry.js', 'data/telemetry.json', 'data/admin.json', 'assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js', 'assets/components/base/v1/v1.0/v1.0.0/sg-component.js', 'assets/site.css', 'assets/site.js', 'CNAME', '.nojekyll', 'VERSION', '.github/workflows/pages.yml'):
     if not os.path.exists(os.path.join(ROOT, f)): fails.append(f'missing {f}')
 # version consistency
 ver = open(os.path.join(ROOT, 'VERSION')).read().strip()

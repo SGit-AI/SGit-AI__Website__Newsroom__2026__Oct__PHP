@@ -1,6 +1,15 @@
 {
- "current": "0.2.3",
+ "current": "0.2.4",
  "versions": [
+  {
+   "version": "0.2.4",
+   "date": "2026-10-22",
+   "title": "five themes (Newsprint, Night, Paper, Blueprint, Ember) with a picker in the bar, vendored from newsroom.sgit.ai; all colour moved to theme tokens; the reading-meter ratings card dropped for the quiet balance",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.3",
    "date": "2026-10-22",

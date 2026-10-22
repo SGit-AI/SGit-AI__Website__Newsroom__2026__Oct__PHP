@@ -1,17 +1,4 @@
-/* php.oct-2026.story.sgit.ai. Every colour is a token; light and dark from the same names. */
-:root{
-  --bg:#f7f6f2; --panel:#ffffff; --fg:#1b1b1a; --dim:#5e5d58; --head:#111; --line:#e2e0d8; --line2:#cfccc2;
-  --accent:#1f5e9b; --accent-dk:#17477a; --warm:#b4461c; --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  --serif:Georgia,"Times New Roman",serif; --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --ok-bg:#e3f1e6; --ok-ink:#1e5c2c; --info-bg:#e8eef7; --info-ink:#27446d; --warn-bg:#fbefd6; --warn-ink:#7a4d06;
-  --bad-bg:#f9e2de; --bad-ink:#8a2416; --mute-bg:#ececea; --mute-ink:#444;
-}
-@media (prefers-color-scheme: dark){:root{
-  --bg:#141413; --panel:#1d1d1b; --fg:#e8e6df; --dim:#a3a199; --head:#f3f1ea; --line:#2d2d2a; --line2:#43433e;
-  --accent:#7fb3e6; --accent-dk:#a9cdf0; --warm:#f09a72;
-  --ok-bg:#1d3324; --ok-ink:#9fdcae; --info-bg:#1f2b40; --info-ink:#b7cdf0; --warn-bg:#3d2e12; --warn-ink:#f2c979;
-  --bad-bg:#43201b; --bad-ink:#f5a79a; --mute-bg:#2a2a28; --mute-ink:#cfcdc5;
-}}
+/* php.oct.2026.newsroom.sgit.ai. Colour is in assets/themes/themes.css (five themes) + site-tokens.css; nothing below names a colour. */
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55}
@@ -106,7 +93,7 @@ table.sw{font-size:.78rem}
 .col h3{margin-top:0}.col ul{padding-left:1rem;font-size:.88rem}
 .steps{list-style:none;padding:0;counter-reset:s}
 .steps li{display:flex;gap:.8rem;margin:.9rem 0}
-.steps .n{flex:0 0 2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.steps .n{flex:0 0 2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font-weight:700}
 .steps h3{margin:.2rem 0 .3rem}
 .asks li{margin:.5rem 0}
 .designed li{margin:.7rem 0}
@@ -122,6 +109,7 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
 .graph .e{fill:none;stroke:var(--line2);stroke-width:.7;opacity:.7}
 .graph .e-confirmed{stroke:var(--ok-ink)}.graph .e-disputed,.graph .e-contradicted{stroke:var(--warn-ink)}.graph .e-unverified{stroke:var(--bad-ink)}
 .graph .d{fill:var(--panel);stroke:var(--dim);stroke-width:1}
+.graph .d-pri{fill:var(--accent);stroke:var(--accent)}
 .graph .d-confirmed{fill:var(--ok-ink);stroke:var(--ok-ink)}.graph .d-disputed,.graph .d-contradicted{fill:var(--warn-ink);stroke:var(--warn-ink)}.graph .d-unverified{fill:var(--bad-ink);stroke:var(--bad-ink)}
 .graph .d-pri{fill:var(--accent);stroke:var(--accent)}
 .graph figcaption{font-size:.8rem;color:var(--dim)}

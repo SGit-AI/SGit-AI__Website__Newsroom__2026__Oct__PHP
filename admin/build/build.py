@@ -195,6 +195,8 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
 <link rel="icon" href="data:,">
 <link rel="alternate" type="text/markdown" href="{up}{md_path(path)}">
 <link rel="stylesheet" href="{up}assets/site.css">
+<link rel="stylesheet" href="{up}assets/themes/themes.css">
+<link rel="stylesheet" href="{up}assets/themes/site-tokens.css">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 <script type="application/json" id="sg-meter-config">{meter_json}</script>
 <script type="module" src="{up}assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"></script>
@@ -203,11 +205,12 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
 </head>
 <body>
 <nav class="site"><div class="row">
+  <script src="{up}assets/themes/themes.js"></script>
   <a class="brand" href="{up}index.html">php2shell<span>.newsroom</span></a>
   <a class="ver" href="{up}admin/versions.html#v{E(VERSION)}" title="Site release history: what v{E(VERSION)} changed">v{E(VERSION)}</a>
   <span class="status">{E(STORY["status"])} &middot; data as of {E(STORY["data_as_of"])}</span>
   <span class="crumbs"><a href="https://newsroom.sgit.ai/">newsroom</a> / <a href="https://2026.newsroom.sgit.ai/">2026</a> / <a href="https://oct.2026.newsroom.sgit.ai/">October</a> / <b>php2shell</b></span>
-  <sg-meter view="balance"></sg-meter>
+  <div class="tools"><div class="theme-pick"></div><sg-meter view="balance"></sg-meter></div>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-items" aria-label="Menu">Menu</button>
   <div class="nav-items" id="nav-items">{''.join(nav_items)}<a class="nl ext" href="{up}llms.txt">llms.txt</a></div>
 </div></nav>
