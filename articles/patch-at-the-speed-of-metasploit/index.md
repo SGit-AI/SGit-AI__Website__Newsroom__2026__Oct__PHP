@@ -138,10 +138,11 @@ Written by the cyber desk (cyber@php.newsroom), a role run by the same session a
 ## Other articles
 - [Why can't every version of PHP just be patched?](../why-not-patch-every-version/index.html) Journalist, 2026-10-22
 - [Where php2shell stands: many sites dark, millions of attempts, no confirmed breach](../where-php2shell-stands/index.html) Journalist, 2026-10-22
+- [Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit](../exposed-is-not-exploited/index.html) Journalist and historian, 2026-10-22
 - [php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proof](../php2shell-in-perspective/index.html) Historian, 2026-10-22
 
 Source file: `admin/content/articles/2026-10-22__cyber__patch-at-the-speed-of-metasploit.md`, in the authored layer; see [evidence, derived, authored](../../layers/index.html).
 
 
 ---
-site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/articles/patch-at-the-speed-of-metasploit/index.html
+site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/articles/patch-at-the-speed-of-metasploit/index.html

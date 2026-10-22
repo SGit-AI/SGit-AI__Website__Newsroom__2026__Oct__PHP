@@ -480,6 +480,270 @@ The reader's browser fetches every feed itself; nothing is proxied. A feed is un
 
 `data/items.json`; `feeds/*.xml` and `/feeds/`; `assets/reader-state.js` on every page with the strip, the item controls and the views; `/you/`; `/reader/` with `assets/feed-viewer.js`; the subscriptions vault, `data/subscriptions.json`, `assets/subscribe.js` and `/subscribe/`; the vault listed on `/vaults/`; its key and the telemetry vault's key sealed to the editor's key on pki.sgit.ai.
 
+2026-10-22 · `2026-10-22__brief__the-second-stories-and-the-signals.md`
+
+## Brief: the second stories, the signals, and the inventory over time
+
+Status: accepted, by being sent. Author: Dinis Cruz, editor. A voice message to the journalist and historian on 22 October 2026, transcribed and reproduced verbatim, hesitations included. What was built against it is listed at the end.
+
+### The message
+
+Yeah, can you continue? Especially that analysis of those products, fixed, not fixed. Now, but the other thing I would like you to focus on, and actually this is a mix of historian and journalist, is I really want us to start, again, creating those graphs for the second and third stories. And this is where you really sort of want to read a lot of some of the stuff I wrote recently in the articles on the newsroom.esquito.ai, where, for example, I think I wrote an article recently about that finding passwords is not the end of the world if you can't reach the story. If you can read a secret, you know, you still have to reach it, right? And I think that's very important. And the other angle here is the angle of the what's it called? The angle of the fixes. In fact, so the angle of, if you look at the SaaS apocalypse article that I also wrote, there's a lot of conversation there about the second stories, about what I look for and what for me will be signals, especially exploitation signals, patching signals, internal vulnerability signals, network protection signals. Because the most interesting question already is not how many websites have been exploited, which I guess they will start to grow, but how many websites were exposed that they were not exploited, right? And this is also a very important question, because I think what is important to say is, for example, the websites that are not exploited are websites that are, what's it called, basically don't have assets, right? So in a very brutal kind of frame of mind, they kind of don't matter, right? In the big sense of things, right? So they kind of are disposable for companies, because, and to be honest, they should, right? Because at the end of the day, like, you probably have more important assets to protect, right? So that's the one very important point here, because we need to understand that, because the interesting metric I would like to know is how many of the websites that do matter actually vulnerable, and also then, if they do matter, why they were vulnerable in the first place, why they're not protected by other technologies like WAFs and stuff like that, why they don't have defense in depth on this, right? And the interesting point here is you can almost tell that every company that will be popped with this is fundamentally admitting that they didn't have these things in place. So that's a very important understanding that we need to have, right? Because depends again when they you know, when it happens. But if you have a company that is already patched, so there's a patch for it, and they get exploited by the patch, and my understanding is the patch is out, right? So that means that they have bigger problems, right? They have a problem, CI pipeline problem, they have, you know, all these sort of other gaps in their environments, which we should be mapping out, and we should be looking at that as evidence.
+
+### What was read
+
+- [The key is not the risk](https://newsroom.sgit.ai/articles/the-key-is-not-the-risk.html) (21 October): "can the attacker reach the system it opens?", the reach question this brief means.
+
+- [The attack surface you do not have](https://newsroom.sgit.ai/articles/the-attack-surface-you-do-not-have.html) (21 October), written on the day of these flaws.
+
+- [Footprint and blast radius](https://newsroom.sgit.ai/articles/footprint-and-blast-radius.html) (2 October): reach, mandate, gap, barriers, and blast radius with its way back.
+
+- [The SaaS apocalypse will be decided by inertia, not by AI](https://newsroom.sgit.ai/articles/saas-apocalypse-decided-by-inertia-not-by-ai.html) (21 September). As published, it argues about inertia and Wardley maps and does not discuss exploitation, patching or network signals; the four signal families here are taken from this brief, not from that article. If the signals discussion is in another piece, the editor can point to it.
+
+### What was built against it
+
+- **The inventory, hour by hour** (/patching/inventory/): the NCSC-NL list read from its public git history, 38 versions from 11:20 UTC on 21 October to 15:28 UTC on 22 October, with a chart of fixed, vulnerable and under investigation, every change of status, what kind of rows they are, and when each supplier was first recorded fixed. The reader checks itself against the vault's capture, and found one row the vault's export had missed (corrections).
+
+- **The second stories** (/signals/): the ladder from websites using PHP to exploited sites holding something worth reaching, the four signal families with what each shows now, and the time each barrier became available with what a compromise after it would say.
+
+- **The story** "Exposed is not exploited", by the journalist and the historian, which states this brief's argument in the editor's words and weighs it against the evidence.
+
+2026-10-22 · `2026-10-22__brief__the-phone-app.md`
+
+## Brief: the phone app, what do I need to know for the time I have, in two modes, with my vault
+
+Status: accepted, by being sent. Author: Dinis Cruz, editor. A voice memo to the design agent on the evening of 22 October 2026, transcribed by otter.ai and reproduced verbatim, hesitations included ("vote" and "volt" are the transcriber's spellings of vault). What was built against it is listed after the memo.
+
+### The memo
+
+> Okay, so this is to add to the website the website on the PHP vulnerability. We need to add a kind of a mobile website that I can run nicely on my mobile, which leverage my vote, so we need to add vault support, like we already have vote other websites. The votes that we already have support, and what we need to do is to think about that website from the point of view of updates from the point of view of what do I need to know, right? So it's basically use me to start with, and use the to use the the ability to what's called. to know what I've read before and where I am now, and you should add the the ability to a couple of things. Know what what do I need to know now? What do I need to look at? Like if I only if I only look at almost like the the one minute view, the five minute view, the 10 minute view, the half an hour view. It's almost like how much time do I can spend on this? What do I need to know? So it could be that there's nothing new to know. It could be that oh good, no new news, or hey, this has happened. This happened. We need to be aware of this. So we need to add it. And in here, we need to have two modes, which are very important. One mode is the mode of the one is the mode of the pure semantic graphs, which is the deterministic mode, and then you can have the agentic mode, right? And and the agentic mode should be leveraging the what's it called the volt the volt support to capture and to save safely an open router key that we should be using here. So we should be using. I should, you know, or we should allow the user to use open router, right? Or so I can add to it. So we need a workflow where I can add to it, and basically we need to add a chat session. So actually, we need to add two things. We need to add a chat session capability, and we need to add dynamically content created using an LLM, and for now let's use Sonnet for for the text, and let's use one of the Gemini models that we use to create infographics on this. And yeah.
+
+### What was built against it
+
+**Now** (`/now/`): one page built for a phone, which can be added to the home screen.
+
+- **The question it answers:** what do I need to know now, for the time I have?
+
+- **Time budgets:** one minute (headlines), five (the gist), ten (with connections), thirty (the lot). Each item costs its reading time; the list stops when the time is spent and says how many more are waiting.
+
+- **What it measures against:** what you have read before. This is the same record as the rest of the site (`assets/reader-state.js`), so an item marked read here is read on every page.
+
+- **A new release:** what changed comes back as *changed*.
+
+- **Nothing new:** it says "Good: nothing new" and gives the situation in two lines.
+
+- **First visit:** it shows the situation and the core facts, and one button starts the count from there.
+
+- **Reading as:** choose your reader (board member, CTO and so on) and items written for that reader rank higher.
+
+- **Deterministic mode:** the items, their order and their connections come from the data alone. Every item shows what it connects to: a fact to its sources and to the briefings that carry it, a question to the pages that answer it. The same data gives the same answer.
+
+- **Agentic mode, with your OpenRouter key, kept in your vault:**
+
+- **Write it:** a briefing for your time budget, by Claude Sonnet (`anthropic/claude-sonnet-5.5`).
+
+- **Draw it:** an infographic, by Gemini (`google/gemini-3.1-flash-image`, the released version of the preview model the infographic generator uses).
+
+- **Ask:** a chat, streamed, grounded in the site's 70 facts, what nobody knows yet, and what is new to you.
+
+- **What the model is given:** only what the deterministic mode shows. Every factual sentence must cite an item id, and the page turns each into a link back to the item; an id the model invents shows with a question mark.
+
+- **What each output shows:** which model wrote it, from how many items, the tokens and the cost, and "not checked by a person".
+
+- **Models are settings:** any OpenRouter id works.
+
+- **Your vault:**
+
+- **Opening:** any sgit vault key opens it, a newsroom.sgit.ai reader vault included; or create a new vault with a vault-server access token, and the key is shown once to save.
+
+- **Library:** opened in the browser with the same vault library the newsroom runs (`assets/vendor/sg-vault/v0.2.3`, vendored unedited with its hashes, loaded only when a vault is opened) through the newsroom's wrapper.
+
+- **What it keeps:** everything goes under `/php-october/`, encrypted on the phone before it leaves:
+
+- what each device has read, one file per device so devices never conflict
+
+- your settings
+
+- the OpenRouter key, in `secrets/`
+
+- every chat
+
+- every briefing and infographic, with the model, the items given and the cost
+
+- **Where the keys live:** the OpenRouter key is never written to the browser's storage; it lives in the vault and in the tab's memory, and is sent only to OpenRouter. The vault key is kept for the tab's life, and on the phone only if you tick "remember".
+
+- **Tested:** at iPhone size against the real vault server, with OpenRouter mocked because this session holds no OpenRouter key. A vault was opened, the key saved and read back, and a briefing, an infographic and a chat were written into the vault and read back from a fresh session.
+
+### Not built yet
+
+- Opening the vault with a passkey (Face ID or a fingerprint), as the newsroom's vault pane does: needs the newsroom's door design to cover this domain.
+
+- A real OpenRouter run, which needs the editor's key: the first live briefing will show whether Sonnet keeps to the citation rule.
+
+- Push notifications when something changes: today the app tells you when you open it; the feeds and email subscription tell you without opening anything.
+
+- The semantic graph drawn as a graph on the phone: today each item lists its connections.
+
+2026-10-22 · `2026-10-22__brief__scheduled-capture-json-and-analysis.md`
+
+## Brief: scheduled capture of the sources that move, raw to JSON to analysis, and contradictions as the product
+
+Status: accepted, by being sent. Author: Dinis Cruz, editor. A message to the design agent on the evening of 22 October 2026, reproduced verbatim, after the review of how 24 outlets present the story. Priority: critical. What it asks for, as work, is set out below the message, followed by the board items it opens.
+
+### The message
+
+> Can you capture the instruction that it is super critical that we start to do a scheduled call to those sites that have dynamic data, where we capture the raw data, then convert it to json (with time stamps) which should then trigger an data science analysis of it
+
+>
+
+> Note that those contradictions (in the different reporting storing) are very important, since they really shown the power of our methodology and workflows
+
+>
+
+> Our key principle for our graphs is "meaning through connectivity" where "facts" and "stats" all have a spectrum of evidence
+
+### Why now
+
+The evidence vault's last capture is 11:34 UTC on 22 October. By the evening the story had moved on in ways the site could not show:
+
+- a minister's count of UK government services down
+
+- Japanese banks and airlines offline
+
+- Amazon's "broadly exploited in the wild"
+
+- a community tracker with 50 sites dark and back up, against our 10
+
+Every one of those lives on a page that changes during the day. A single capture of a page that changes is a fact about one minute. The story is in the series.
+
+### What it means, as a pipeline
+
+Five stages. Each one writes to a vault, each one is triggered by the one before, and none of them edits what an earlier stage wrote.
+
+1. **Schedule.** A watch list of the sources whose content changes (below), each with a cadence: every 15 minutes while a story is breaking, hourly after that, daily once it settles. The source watch vault (`oq9gflln`) already runs scheduled checks; this extends it rather than starting a second scheduler.
+
+2. **Capture the raw data.** On every run, fetch the page as served and as rendered, its text, a screenshot and its headers, and hash every file, exactly as the evidence vault does. Where a source publishes data (JSON, CSV, a git repository, an RSS feed), fetch the data itself, not the page around it. Write a new stamped capture folder only when the content hash changes; otherwise append one line to that source's check log saying it was checked and unchanged. Blocks are recorded as captures too.
+
+3. **Convert to JSON, with timestamps.** One parser per source turns each raw capture into rows. Every row carries:
+
+- three times: `observed_at` (our capture), `published_at` (what the source says) and `source_updated_at` (the source's own "last updated", where it has one)
+
+- the capture's hash, so every number points back to the bytes it was read from
+
+- the parser's version, so a parser fix can re-run over old captures and say what changed
+
+ Rows are appended to a time series per source, never overwritten.
+
+4. **Analyse.** A new JSON series triggers the analysis.
+
+- **Within one source:** what changed since the last run, with rates (sites going dark per hour, products moving from vulnerable to fixed, attempts per hour where a party publishes a count).
+
+- **Across sources measuring the same thing:** line them up on one time axis and on one unit. Where they disagree, record a **contradiction** (next section) instead of picking a winner.
+
+- **Output:** charts and a written summary per run into the vault, and a short "what changed since the last run" that the site's what's-new page and the briefings can carry.
+
+5. **Publish as graph and pages.** The site is rebuilt from the analysis outputs. Every chart, number and sentence it publishes links to the series, the series to the captures, and the captures to their hashes.
+
+### Contradictions are the product
+
+The editor's point: the places where the reporting disagrees are where this methodology shows its worth, so they are recorded, not resolved away. A contradiction is a first-class record with:
+
+- the two (or more) statements
+
+- who made each, and when
+
+- the captures they come from
+
+- what each actually measures
+
+- the site's reading of why they differ
+
+- its status: open, explained, or resolved, and by what evidence
+
+The coverage review of 22 October already found these, as seeds for the ledger:
+
+| Measure | One source says | Another says | Why they may differ |
+|---|---|---|---|
+| How much of the web | 70% of the Internet (Wiz headline, CNN headline) | 70% of websites use PHP (Wiz body, php2shell.com) | A share of websites restated as a share of the Internet; neither says how it was measured |
+| Is it exploited? | "now being broadly exploited in the wild" (Amazon, via its blog and Tenable) | officials in Germany, the Netherlands and Japan "have not seen one succeed" (The Next Web); CISA "has not observed exploitation ... as of the time of publication" | Attempts against sensors and honeypots versus a confirmed compromise of a named organisation; different times |
+| Which versions | every version since PHP 5.4 (Cloudflare, Wiz) | 8.2 to 8.5 (the CVE records); backports for 7.4 to 8.1 (php.net) | Affected versus supported versus patched; the CVE record lists only supported branches |
+| How many still unpatched | "90% of systems at risk are yet to" fix (BBC, attributed to researchers) | 1.57 million of about 2.6 million hosts unpatched on 21 October (Censys via The Hacker News) | Different populations, different dates, unnamed method |
+| UK government services down | 32 unavailable and 4 partly (a minister, via the BBC) | "dozens of UK government services" (The Register) | Probably the same count; needs the Hansard record |
+| Sites taken offline | 10 operators (this site's impact ledger) | 50 sites, 2 still dark (PHPocalypse Tracker) | Breadth of collection; this site requires a captured source per row |
+| Severity | CVSS 10.0 (the leak, 20 October) | CVSS 9.2 (the CVE records) | The leaked score was wrong; recorded on the leak page |
+
+### Meaning through connectivity, and a spectrum of evidence
+
+The principle for every graph on this site: **meaning through connectivity**. A node means what its edges say about it.
+
+- A fact or a stat is not true or false in isolation. It sits on a **spectrum of evidence**, and its place on the spectrum is read from its connections: how many captures support it, how primary they are, whether they agree, whether anything contradicts it, and how recently it was checked.
+
+- Concretely, the five status words become points on that spectrum rather than labels. From weakest to strongest:
+
+- unverified
+
+- reported once
+
+- reported by several, all citing one origin
+
+- corroborated by independent parties
+
+- confirmed by two primary sources
+
+- counted by this site from a captured file
+
+ A contradiction is an edge that pulls the reading down until it is explained.
+
+- **Edges are typed:**
+
+- *cites*
+
+- *restates* (the same claim passed on)
+
+- *measures differently* (the same word, a different quantity)
+
+- *contradicts*
+
+- *supersedes* (a later capture of the same source)
+
+- *derives from* (a number computed from another)
+
+ "Restates" matters as much as "contradicts": ten outlets repeating one Wiz headline is one source, not ten, and the graph must show that.
+
+- **Stats carry their series**, not just their latest value, so a graph of a number is a line with every point linked to its capture.
+
+### Watch list to start with
+
+Sources that changed during 22 October and publish something parseable, in priority order:
+
+1. **NCSC-NL php2shell repository**: the software list and README, from its git history; already read hour by hour on /patching/inventory/.
+
+2. **PHPocalypse Tracker**: the sites dark and back up, with times and verification notes.
+
+3. **CISA KEV catalog** (JSON): the first entry for either CVE is the official "exploited" signal.
+
+4. **The CVE and NVD records** (JSON) for both CVEs: score, affected ranges, references added.
+
+5. **php.net**: the advisory and the ChangeLog, for a follow-up release or a statement on the incomplete-fix report.
+
+6. **Amazon's and Cloudflare's posts, and Matthew Prince's posts on X**: the attempt counts.
+
+7. **The BBC live page and the follow-up story**; The Register's and The Next Web's follow-ups: impact counts by country.
+
+8. **Tenable's FAQ change log and SOCRadar's update lines**: as a cheap index of what changed elsewhere.
+
+9. **The national agencies' pages** in the agencies table: for edits to the offline advice.
+
+10. **oss-security**: the thread on the incomplete-fix report.
+
+### What this brief does not change
+
+Capture rules stay as they are: capture, don't paraphrase; captures are only ever added; third-party pages are held privately and never republished; blocked fetches are recorded; no keys in any file. A number from a scheduled run reaches the site only through the same claim, status and source discipline as everything else.
+
+### Board items opened by this brief
+
+057 to 063, listed on the board.
+
 2026-10-22 · `2026-10-22__brief__research-stories-and-the-patching-story.md`
 
 ## Brief: research and stories, status.json, and the patching story
@@ -528,4 +792,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

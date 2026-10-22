@@ -5,7 +5,7 @@ Deterministic: the same data/ and VERSION produce byte-identical output. There i
 this file. Every page gets a markdown twin at the same path, and llms.txt lists every page.
 Run: python3 admin/build/build.py        (from the repository root or anywhere)
 """
-import html, json, os, re, sys
+import html, json, math, os, re, sys
 from collections import Counter, OrderedDict
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
@@ -25,8 +25,9 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
+SYN = load('synthetic') if os.path.exists(os.path.join(DATA, 'synthetic.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
 if D['vault'].get('latest_capture'):
@@ -63,7 +64,7 @@ ORIGINS = {
     'guest': {'short': 'Guest', 'label': 'Story, guest', 'text': 'written by a guest writer, published here under their name'},
     'interview': {'short': 'Interview', 'label': 'Story, interview', 'text': 'an interview conducted for this site, the answers in the interviewee\'s own words'},
 }
-AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('cyber', 'Cyber desk')])
+AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('journalist-historian', 'Journalist and historian'), ('cyber', 'Cyber desk')])
 
 # ----------------------------------------------------------------------------- small helpers
 
@@ -175,11 +176,11 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)')]),
+    ('Yours', [('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
-                   ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix')]),
+                   ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
     ('The analysis', [('claims/index.html', 'Every claim'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
                       ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
@@ -191,7 +192,7 @@ NAV = [
     ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'),
-               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'), ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site')]),
+               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'), ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
 ]
 
 PAGES = []  # (path, title, description) in order, for llms.txt
@@ -556,7 +557,7 @@ def build_index():
   <p class="kicker">PHP news &middot; October 2026 &middot; <span class="live">{E(s["status"])}</span> &middot; last checked {E(when)}</p>
   <h1>{E(pl["headline"])}</h1>
   <p class="deck">{E(pl["deck"])}</p>
-  <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a></div>
+  <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a><a class="cta" href="now/index.html">On your phone: Now &rarr;</a></div>
   <p class="aka">{E(pl["aka"])}</p>
 </header>
 <section id="now"><h2>Right now</h2><p class="small">As of {E(when)}, the time of the latest page this site saved.</p><ul class="nowlist">{now}</ul>{b_now}</section>
@@ -1155,7 +1156,7 @@ def build_admin():
   ['The meter', '<code>assets/components/sg-meter/v1/v1.3/v1.3.1/</code> and <code>assets/components/base/v1/v1.0/v1.0.0/</code>, vendored, immutable paths'],
   ['Credentials', 'none in the repository; the vault key and the push token live in the agents\' sessions and in a gitignored tier, scanned by the tripwire'],
 ]))}
-{section("section", "The admin section", '<ul><li><a href="board/index.html">The board</a>: the work, as rows.</li><li><a href="roles/index.html">Roles</a>: who does what, and how an agent joins.</li><li><a href="briefs/index.html">Briefs</a>: the build briefs, in full.</li><li><a href="vault/index.html">The vault, opened</a>: the read key and the browser link.</li><li><a href="telemetry/index.html">Who reads this site</a>: the telemetry lane and its counts.</li></ul>')}
+{section("section", "The admin section", '<ul><li><a href="board/index.html">The board</a>: the work, as rows.</li><li><a href="roles/index.html">Roles</a>: who does what, and how an agent joins.</li><li><a href="briefs/index.html">Briefs</a>: the build briefs, in full.</li><li><a href="vault/index.html">The vault, opened</a>: the read key and the browser link.</li><li><a href="telemetry/index.html">Who reads this site</a>: the telemetry lane and its counts.</li><li><a href="synthetic/index.html">Synthetic readers</a>: six test readers who read the live site every hour and say what works and what does not.</li></ul>')}
 {section("gate", "The gate", checks_t)}
 {section("reality", "The reality file", render_md_file("REALITY.md"))}
 {section("honest", "The honest column", '''<ul>
@@ -1337,13 +1338,13 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_status_json()
+    build_review(); build_admin_section(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
     build_all()
     build_all()
-    build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); save_items()
+    build_now(); build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); save_items()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
@@ -1685,6 +1686,46 @@ def build_admin_section():
 <p>Mechanics: <code>assets/telemetry.js</code> sends; <code>admin/build/telemetry_drain.py</code>, run by whoever holds the telemetry vault key, lists the lane with the enum key, fetches, decrypts with the private key, marks processed and writes <code>reports/</code>; <code>data/telemetry-report.json</code> is the latest report, copied into this repository at each drain.</p>
 """
     page('admin/telemetry/index.html', 'Who reads this site: anonymous telemetry over an append lane', 'What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.', body, kind='site')
+    if SYN: build_synthetic()
+
+
+def build_synthetic():
+    # data/synthetic.json is written by admin/synthetic/run.py summarise from each reader's vault; this page only shows it
+    def txt(x): return E(str(x or '').replace('\u2014', ', '))
+    def pg(x):
+        x = (x or '').split('#')[0].strip('` ')
+        return f'<a href="../../{E(x)}">{E(x)}</a>' if x and os.path.isfile(os.path.join(ROOT, x)) else f'<code>{txt(x)}</code>'
+    P = SYN['personas']
+    def score(l, k): return str(l.get('scores', {}).get(k, '')) if l.get('reviewed') else ''
+    rows = [[f'<a href="#{E(p["id"])}">{E(p["name"])}</a>', f'{p["device"]["width"]}&times;{p["device"]["height"]}, {E(p["color_scheme"] or "")}', E(p['latest'].get('run', 'not yet')), 'v' + E(p['latest'].get('site_version', '')), E(p['latest'].get('answered_question', '')),
+             *[score(p['latest'], k) for k in ('answered', 'clarity', 'trust', 'design', 'navigation')], f'<code>{E(p["vault_id"] or "")}</code>', str(p['runs'])] for p in P]
+    cards = []
+    for p in P:
+        l = p['latest']
+        fails = ''.join(f'<li><b>{txt(x["severity"])}</b> {txt(x["point"])} ({pg(x["page"])}): {txt(x["evidence"])}</li>' for x in l.get('top_fails', []))
+        changes = ''.join(f'<li>{txt(c["change"])} ({pg(c["page"])}, {txt(c["effort"])}): {txt(c["why"])}</li>' for c in l.get('top_changes', []))
+        ck = l.get('checks', {})
+        cards.append(f"""<section id="{E(p["id"])}"><h2>{E(p["name"])}</h2>
+<p>{txt(p["who"])} <b>Question:</b> {txt(p["question"])}</p>
+{f'<blockquote>{txt(l["verdict"])}</blockquote>' if l.get("verdict") else '<p class="small">Captured, not yet reviewed.</p>'}
+<p class="kv"><b>Run</b> {E(l.get("run", ""))} on v{E(l.get("site_version", ""))} &middot; <b>pages</b> {l.get("totals", {}).get("pages", 0)} &middot; <b>requests</b> {l.get("totals", {}).get("requests", 0)} &middot; <b>instrument flags</b> {ck.get("high", 0)} high, {ck.get("medium", 0)} medium, {ck.get("low", 0)} low &middot; <b>vault</b> <code>{E(p["vault_id"] or "")}</code></p>
+{f'<h3>What did not work</h3><ul>{fails}</ul>' if fails else ''}{f'<h3>What this reader would change first</h3><ol>{changes}</ol>' if changes else ''}</section>""")
+    body = f"""
+<h1>Synthetic readers</h1>
+<p class="lead">Six test readers, run by the agent synthetic@php.newsroom: a board member, a CTO, a project manager, a security lead, a developer and a designer. Each reads the live site in a real browser on its own device, follows its own reading path and the links that interest it, and then says, in its own voice, whether it got its answer, what worked, what did not and what it would change. Every request, page, screenshot and review goes into that reader's own private vault.</p>
+<p class="caveat">A synthetic reader is a test instrument, not a reader. Its review is a prompt for the editor and the agents, never evidence about the story, and never counted as readership. It sends no telemetry: the site's telemetry lane and geolocation lookups are answered locally during a run.</p>
+{section("now", "The latest run", table(['Reader', 'Device', 'Run (UTC)', 'Site', 'Answered', 'Ans.', 'Clarity', 'Trust', 'Design', 'Nav.', 'Vault', 'Runs'], rows), 'Scores are 0 to 5 from that reader\'s point of view.')}
+{''.join(cards)}
+{section("how", "How a run works", '''<ol>
+<li><b>Check.</b> <code>admin/synthetic/run.py capture --if-changed</code> reads <code>status.json</code> and the front page. If the version, the data and the front page are what the last run saw, the reader writes a heartbeat line and stops.</li>
+<li><b>Read.</b> Chromium opens the front page with the reader's viewport, device scale, touch and colour scheme, then the reader's path from <code>admin/synthetic/personas.json</code>, then the links whose words match the reader's interests, up to its page budget. The designer also reads every page on a phone, a tablet and in dark mode; the developer also fetches <code>llms.txt</code>, <code>status.json</code> and a markdown twin as a tool would.</li>
+<li><b>Measure.</b> For each page: the served and the rendered HTML, the text, the first screen and the full page as images, headings, words, screens of scrolling, reading ease, glossary terms per thousand words, contrast against WCAG AA, tap targets under 24px, text under 12px, horizontal overflow, images without alt text, timings. Every request with its status, size, timing and sha256; every console message.</li>
+<li><b>Review.</b> The reader is given its journey, the measurements, the first screen of every page and the full text, with <code>admin/synthetic/review-guide.md</code>, and answers as structured JSON: a verdict, whether the question was answered, five scores, what works, what fails with evidence, what to change, the lines it reacted to, and what changed since its last run. The review is written by the Claude API when the run has a key, or by an agent session.</li>
+<li><b>Keep.</b> All of it is committed and pushed to the reader's vault; <code>run.py summarise</code> writes this page's data, <code>data/synthetic.json</code>, with no keys in it.</li>
+</ol>''')}
+{section("vaults", "The vaults", '<p>One private vault per reader, ids in the table above. Each holds <code>README.md</code> (the reader), <code>latest.json</code>, <code>history.jsonl</code>, <code>heartbeats.jsonl</code> and <code>runs/&lt;run&gt;/</code> with <code>run.json</code>, <code>requests.jsonl</code>, <code>console.jsonl</code>, <code>pages/</code>, <code>review-request.md</code>, <code>feedback.json</code> and <code>feedback.md</code>. The vault keys are held by the editor and the agent that runs the readers; none is in this repository.</p>')}
+"""
+    page('admin/synthetic/index.html', 'Synthetic readers: six test readers who read the live site every hour', 'A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader\'s own vault.', body, kind='site')
 
 
 # ----------------------------------------------------------------------------- the review layer (v0.2.5)
@@ -1797,7 +1838,7 @@ def build_articles():
 <p class="kicker">Story &middot; {E(ORIGINS[a["origin"]]["short"])} &middot; {E(role)} &middot; {E(a["written"])}</p>
 <h1>{E(a["title"])}</h1>
 <p class="lead">{E(a["dek"])}</p>
-<p class="kv"><b>By</b> the {E(role.lower())} role, agent <code>{E(a["author"])}</code> &middot; <b>written against</b> {article_stamp(a)}</p>
+<p class="kv"><b>By</b> the {E(role.lower())} {"roles, agents" if "," in a["author"] else "role, agent"} <code>{E(a["author"])}</code> &middot; <b>written against</b> {article_stamp(a)}</p>
 {moved}
 {render_article(a["text"], 2)}
 </article>
@@ -1805,7 +1846,7 @@ def build_articles():
 {more}
 <p class="small">Source file: <code>admin/content/articles/{E(a["file"])}</code>, in the authored layer; see <a href="../../layers/index.html">evidence, derived, authored</a>.</p>
 """
-        page(f'articles/{a["slug"]}/index.html', a['title'], a['dek'], body, kind='article', date=a['written'], topics=f'php2shell {a["role"]}', ld_type='NewsArticle', origin=a['origin'], byline=f'By the {role.lower()} role, agent {a["author"]}')
+        page(f'articles/{a["slug"]}/index.html', a['title'], a['dek'], body, kind='article', date=a['written'], topics=f'php2shell {a["role"]}', ld_type='NewsArticle', origin=a['origin'], byline=f'By the {role.lower()} {"roles, agents" if "," in a["author"] else "role, agent"} {a["author"]}')
     def card(a):
         return f'<article class="rel">{it_story(a)}<h3><a href="{E(a["slug"])}/index.html">{E(a["title"])}</a></h3><p>{E(a["dek"])}</p><p class="small">{E(ORIGINS[a["origin"]]["short"])} &middot; {E(AUTHOR_ROLES.get(a["role"], a["role"]))} &middot; {E(a["written"])} &middot; <code>{E(a["author"])}</code> &middot; {article_stamp(a)} &middot; {len(a["cites"])} sources cited</p></article>'
     house = ''.join(card(a) for a in ARTICLES if a['origin'] == 'house')
@@ -1995,22 +2036,24 @@ def build_vaults():
     keys = {'evidence': ev['read_key'], 'source-watch': W['read_key']}
     facts = {'evidence': f'{vt["sources"]} sources, {vt["captures"]} captures, {vt["hashed_files"]} hashed files; head <code>{E(vt["head"]["commit"] or "")}</code>',
              'source-watch': f'{W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries and {len(W["lang"])} languages; {W["snapshots"]} snapshots, {len(W["runs"])} runs; head <code>{E(W["head"]["commit"])}</code>',
-             'telemetry': f'lane <code>{E(tl["vault_id"])}</code> on <code>{E(tl["endpoint"])}</code>; events encrypted to <code>{E(tl["recipient"]["fingerprint"])}</code>'}
+             'telemetry': f'lane <code>{E(tl["vault_id"])}</code> on <code>{E(tl["endpoint"])}</code>; events encrypted to <code>{E(tl["recipient"]["fingerprint"])}</code>',
+             'subscriptions': f'lane <code>{E(D["subscriptions"]["vault_id"])}</code> on <code>{E(D["subscriptions"]["endpoint"])}</code>; requests encrypted to <code>{E(D["subscriptions"]["recipient"]["fingerprint"])}</code>'}
+    lanes = {'telemetry': tl['append_token'], 'subscriptions': D['subscriptions']['append_token']}
     cards = ''
     for x in VS:
         k = keys.get(x['slug'])
-        how = (f'<p class="kv"><b>Read key</b> <code>{E(k)}</code></p><p><a href="{E(vault_open_url(k))}" rel="noopener" target="_blank">Open read-only in a new tab &#8599;</a> &middot; <code>sgit clone {E(k)}</code></p>' if k else
-               f'<p class="kv"><b>Not published:</b> the vault key, the lane\'s enum key and the key pair\'s passphrase. <b>Published:</b> the write-only append token <code>{E(tl["append_token"])}</code>, which adds rows and reads nothing.</p>')
+        how = (f'<p class="kv"><b>Not published:</b> the vault key. {E(x.get("note", ""))}</p>' if not k and x['slug'] not in lanes else f'<p class="kv"><b>Read key</b> <code>{E(k)}</code></p><p><a href="{E(vault_open_url(k))}" rel="noopener" target="_blank">Open read-only in a new tab &#8599;</a> &middot; <code>sgit clone {E(k)}</code></p>' if k else
+               f'<p class="kv"><b>Not published:</b> the vault key, the lane\'s enum key and the key pair\'s passphrase. <b>Published:</b> the write-only append token <code>{E(lanes.get(x["slug"], ""))}</code>, which adds rows and reads nothing.</p>')
         cards += f"""<section class="vcard" id="{E(x["slug"])}">
 <h2><a href="../{E(x["page"])}">{E(x["name"])}</a> <span class="st {'st-confirmed' if k else ''}">{E(x["access"])}</span></h2>
-<p class="kv"><b>Vault</b> <code>{E(x["id"])}</code> &middot; {facts[x["slug"]]}{' &middot; opens in its own app' if x["app"] else ''}</p>
+<p class="kv"><b>Vault</b> <code>{E(x["id"])}</code> &middot; {facts.get(x["slug"], E(x.get("facts", "")))}{' &middot; opens in its own app' if x["app"] else ''}</p>
 <p>{E(x["holds"])}</p>
 <p class="small"><b>Written by</b> {E(x["writers"])}. Data on this site: <a href="../{E(x["data"])}">{E(x["data"])}</a>.</p>
 {how}
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} of them hold what it is built from: two are public and open read-only in your browser with the keys below, one is private and receives the site's anonymous telemetry through a write-only lane. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests{"; and one more is private and never published, because it holds other people's pages" if any(x["access"] == "private" for x in VS) else ""}. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
@@ -2698,6 +2741,156 @@ def build_status_json():
     page('admin/status-json/index.html', 'status.json: the feed for other sites', 'The machine-readable summary of this site at /status.json: status, version, data time, counts, headline facts and the latest story, for the newsroom and other agents.', body, kind='site')
 
 
+# ----------------------------------------------------------------------------- the inventory over time, and the signals (v0.4.2)
+
+# Status colours from the dataviz reference status palette (validated: adjacent CVD separation >= 10.6 in light and
+# dark); the same in every theme by design, and never used for anything but a status. Text stays in text tokens.
+INV_ST = OrderedDict([('Fix', ('Fixed', '#0ca30c')), ('Not vuln', ('Not affected', '#8a8f98')),
+                      ('Vulnerable', ('Vulnerable', '#d03b3b')), ('Investigation', ('Under investigation', '#fab219'))])
+
+def _mins(at):
+    from datetime import datetime, timezone
+    if re.match(r'^\d{4}-\d{2}-\d{2}$', at):
+        at += 'T00:00Z'
+    return int(datetime.strptime(at, '%Y-%m-%dT%H:%MZ').replace(tzinfo=timezone.utc).timestamp() // 60)
+
+def _hm(at):
+    return human_time(at) if 'T' in at else nice_date(at)
+
+def inventory_chart(snaps, marks):
+    S = [s for s in snaps if s['rows']]
+    W, H, L, R, T, B = 760, 300, 44, 168, 14, 42
+    x0, x1 = _mins(S[0]['at']), _mins(S[-1]['at']) + 30
+    ymax = int(math.ceil(max(s['rows'] for s in S) / 200.0) * 200)
+    X = lambda m: L + (m - x0) * (W - L - R) / (x1 - x0)
+    Y = lambda v: T + (H - T - B) * (1 - v / ymax)
+    out = [f'<svg class="chart" viewBox="0 0 {W} {H}" role="img" aria-labelledby="inv-t inv-d"><title id="inv-t">The NCSC-NL inventory by status, commit by commit</title>'
+           f'<desc id="inv-d">{len(S)} commits from {_hm(S[0]["at"])} to {_hm(S[-1]["at"])}; the same numbers are in the table below.</desc>']
+    for v in range(0, ymax + 1, 200):
+        out.append(f'<line class="grid" x1="{L}" x2="{W - R}" y1="{Y(v):.1f}" y2="{Y(v):.1f}"/><text class="ax" x="{L - 6}" y="{Y(v) + 4:.1f}" text-anchor="end">{v}</text>')
+    lows, labels = [0] * len(S), []
+    for st, (label, col) in INV_ST.items():
+        highs = [lo + s['by_status'].get(st, 0) for lo, s in zip(lows, S)]
+        top, bot = [], []
+        for i, s in enumerate(S):
+            xa, xb = X(_mins(s['at'])), X(_mins(S[i + 1]['at']) if i + 1 < len(S) else x1)
+            top += [(xa, Y(highs[i])), (xb, Y(highs[i]))]
+            bot += [(xa, Y(lows[i])), (xb, Y(lows[i]))]
+        pts = top + bot[::-1]
+        out.append(f'<path class="band" fill="{col}" d="M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in pts) + 'Z"/>')
+        n, mid = S[-1]['by_status'].get(st, 0), (Y(lows[-1]) + Y(highs[-1])) / 2
+        if n:
+            labels.append([mid, col, f'{label} {n}'])
+        lows = highs
+    # direct labels at the right edge: thin bands put them on top of each other, so space them at least 14px apart
+    labels.sort(key=lambda l: -l[0])
+    for i in range(1, len(labels)):
+        labels[i][0] = min(labels[i][0], labels[i - 1][0] - 14)
+    for y, col, text in labels:
+        out.append(f'<g class="dl"><rect x="{W - R + 8}" y="{y - 5:.1f}" width="10" height="10" rx="2" fill="{col}"/><text x="{W - R + 23}" y="{y + 4:.1f}">{E(text)}</text></g>')
+    for m_at, m_label in marks:
+        mx = X(_mins(m_at))
+        if L <= mx <= W - R:
+            out.append(f'<line class="mark" x1="{mx:.1f}" x2="{mx:.1f}" y1="{T}" y2="{H - B}"/><text class="ax" x="{mx + 4:.1f}" y="{T + 10}">{E(m_label)}</text>')
+    for t in ('2026-10-21T12:00Z', '2026-10-21T18:00Z', '2026-10-22T00:00Z', '2026-10-22T06:00Z', '2026-10-22T12:00Z'):
+        tx = X(_mins(t))
+        if L <= tx <= W - R:
+            out.append(f'<text class="ax" x="{tx:.1f}" y="{H - B + 16}" text-anchor="middle">{t[8:10]} Oct {t[11:16]}</text>')
+    out.append(f'<text class="ax" x="{L}" y="{H - 6}">UTC; rows in the inventory</text>')
+    for i, s in enumerate(S):
+        xa, xb = X(_mins(s['at'])), X(_mins(S[i + 1]['at']) if i + 1 < len(S) else x1)
+        tip = f'{_hm(s["at"])}, commit {s["commit"]}: {s["rows"]} rows; ' + ', '.join(f'{s["by_status"].get(k, 0)} {v[0].lower()}' for k, v in INV_ST.items())
+        out.append(f'<rect class="hit" x="{xa:.1f}" y="{T}" width="{max(xb - xa, 1):.1f}" height="{H - T - B}"><title>{E(tip)}</title></rect>')
+    out.append('</svg>')
+    legend = '<ul class="legend">' + ''.join(f'<li><span class="sw" style="background:{c}"></span>{E(l)}</li>' for l, c in INV_ST.values()) + '</ul>'
+    return legend + ''.join(out)
+
+def build_inventory():
+    H_ = D['inventory-history']; S = [s for s in H_['snapshots'] if s['rows']]
+    first, last = S[0], S[-1]
+    rel = '2026-10-21T14:00Z'
+    chart = inventory_chart(H_['snapshots'], [(rel, 'release 14:00'), ('2026-10-22T08:40Z', 'vault capture')])
+    tab = table(['When (UTC)', 'Commit', 'Rows'] + [v[0] for v in INV_ST.values()],
+                [[E(_hm(s['at'])), f'<code>{E(s["commit"])}</code>', str(s['rows'])] + [str(s['by_status'].get(k, 0)) for k in INV_ST] for s in S])
+    moves = Counter((c['from'], c['to']) for c in H_['changes'])
+    name = lambda k: 'added to the list' if k == 'added' else (INV_ST[k][0].lower() if k in INV_ST else k)
+    mv = table(['From', 'To', 'Rows'], [[E(name(a)), E(name(b)), str(n)] for (a, b), n in sorted(moves.items(), key=lambda kv: -kv[1])])
+    cls = OrderedDict((c['id'], c) for c in H_['classes'])
+    cc = Counter((r[3], r[2]) for r in H_['head_rows'])
+    ct = table(['What kind of row', 'Rows'] + [v[0] for v in INV_ST.values()],
+               [[E(c['name']), str(sum(cc[(cid, k)] for k in list(INV_ST) + ['none']))] + [str(cc[(cid, k)] or '') for k in INV_ST] for cid, c in cls.items() if any(cc[(cid, k)] for k in list(INV_ST) + ['none'])], 'ctx')
+    sec = [r for r in H_['head_rows'] if r[3] == 'security-vendor']
+    secv = ', '.join(f'<b>{E(r[1])}</b> ({E(r[0])})' for r in sec if r[2] == 'Vulnerable')
+    secc = Counter(r[0] for r in sec if r[2] == 'Investigation')
+    firstfix = OrderedDict()
+    for c in H_['changes']:
+        if c['to'] == 'Fix' and c['supplier'] not in firstfix:
+            firstfix[c['supplier']] = c
+    ff = table(['Recorded fixed (UTC)', 'Hours after release', 'Supplier', 'First product'], [[E(_hm(c['at'])), f'{(_mins(c["at"]) - _mins(rel)) / 60:.1f}', E(s_), E(c['product'])] for s_, c in list(firstfix.items())[:24]])
+    lf = last['by_status']
+    body = f'''
+<h1>The inventory, hour by hour: fixed, vulnerable, still under investigation</h1>
+<p class="lead">The Dutch NCSC keeps a public list of software that ships or depends on PHP, with a status for each product. This site captured it once, at 08:40 UTC on 22 October. Its git history shows the rest: {len(S)} versions from {E(_hm(first["at"]))} to {E(_hm(last["at"]))}, each read from the commit that made it. At the last one, {lf.get("Fix", 0)} of {last["rows"]} rows were fixed, {lf.get("Vulnerable", 0)} vulnerable and {lf.get("Investigation", 0)} still under investigation, about {(_mins(last["at"]) - _mins(rel)) / 60:.0f} hours after the release.</p>
+<figure>{chart}<figcaption>Rows by status at every commit of the inventory that changed it. Hover a column for the commit and its counts; the table below has the same numbers. Read from a clone of <a href="{E(H_["source"])}">{E(H_["source"])}</a> at <code>{E(H_["head"])}</code>.</figcaption></figure>
+<details><summary>The same numbers as a table</summary>{tab}</details>
+{section("reading", "How to read it", f"""<ul>
+<li><b>Vulnerable mostly means inherited.</b> {cc[("inherited", "Vulnerable")]} of the {lf.get("Vulnerable", 0)} vulnerable rows are applications the inventory marks <q>affected when deployed on an affected web-serving PHP runtime</q>. Their fix is patching PHP underneath them, not a release from their maker, so they stay vulnerable in the list whatever the server does. That is why only {moves[("Vulnerable", "Fix")]} row moved from vulnerable to fixed.</li>
+<li><b>Fixes came from the people who ship PHP.</b> Operating systems, container images, platforms and hosting panels: the {lf.get("Fix", 0)} fixed rows are almost all runtimes, recorded from 15:30 UTC on 21 October.</li>
+<li><b>The investigation pile grew while it shrank.</b> {moves[("Investigation", "Vulnerable")]} rows were resolved to vulnerable and {moves[("Investigation", "Fix")]} to fixed, and {moves[("added", "Investigation")]} new rows arrived under investigation.</li>
+<li><b>The boxes in front run PHP too.</b> Vulnerable: {secv}. Under investigation: {", ".join(f"{E(k)} ({n})" for k, n in secc.most_common())}.</li>
+</ul>""")}
+{section("moves", "Every change of status", mv + "<p class=small>Between consecutive commits, per row. A row added already fixed counts as added.</p>")}
+{section("kinds", "What kind of rows they are", ct + f"<p class=small>Read from each row's own <q>CVE assessment</q> line by {len(cls)} rules, applied in order; the rules are in <code>admin/build/inventory_history.py</code> and in <a href=\"../../data/inventory-history.json\">the data</a>. The words matched are the inventory's; the grouping is this site's.</p>")}
+{section("first", "When each supplier was first recorded fixed", ff + "<p class=small>The time the inventory recorded the fix, not the time the supplier shipped it.</p>")}
+{section("method", "Where this comes from", f"""<p>{E(H_["read_from"])}. Commits are content-addressed: anyone with a clone can check every number here against the commit named. The self-check: {E(H_["self_check"])}. That one row is a correction to this site's earlier counts, on <a href="../../corrections/index.html">corrections</a>. The vault holds the inventory at one commit; the history is not yet captured into it (board).</p>""")}
+<p>The patching ladder, version by version, is on <a href="../index.html">Patching</a>; the signals this belongs to are on <a href="../../signals/index.html">The second stories</a>.</p>
+'''
+    page('patching/inventory/index.html', 'The inventory, hour by hour: fixed, vulnerable, still under investigation', f'The NCSC-NL php2shell inventory across {len(S)} commits: how {last["rows"]} products moved between fixed, vulnerable and under investigation after the release, what kind of products they are, and when each supplier was first recorded fixed.', body, kind='analysis', topics='php2shell patching inventory over time')
+
+def _tl(at, x0, x1, w=240):
+    """A one-row timeline cell: available from `at` to the right edge; a whole day when only the date is known."""
+    if not at:
+        return f'<svg class="tlc" viewBox="0 0 {w} 16" width="{w}" height="16" aria-hidden="true"><line class="grid" x1="0" x2="{w}" y1="8" y2="8"/></svg>'
+    X = lambda m: max(0, min(w, (m - x0) * w / (x1 - x0)))
+    if 'T' in at:
+        a = X(_mins(at))
+        return f'<svg class="tlc" viewBox="0 0 {w} 16" width="{w}" height="16" aria-hidden="true"><line class="grid" x1="0" x2="{w}" y1="8" y2="8"/><line class="avail" x1="{a:.1f}" x2="{w}" y1="8" y2="8"/><circle class="avail-d" cx="{a:.1f}" cy="8" r="4"/></svg>'
+    a, b = X(_mins(at)), X(_mins(at) + 1440)
+    return f'<svg class="tlc" viewBox="0 0 {w} 16" width="{w}" height="16" aria-hidden="true"><line class="grid" x1="0" x2="{w}" y1="8" y2="8"/><rect class="day" x="{a:.1f}" y="3" width="{b - a:.1f}" height="10" rx="2"/><line class="avail" x1="{b:.1f}" x2="{w}" y1="8" y2="8"/></svg>'
+
+def _bar(l, top, w=140):
+    """A cell mark for the ladder: a linear bar against the largest count of hosts (the units are the same), a line for
+    zero, a dashed box for a layer nobody has measured, nothing for a share or for attempts (other units)."""
+    if l['kind'] == 'count' and l.get('n'):
+        return f'<svg class="tlc bar" viewBox="0 0 {w} 14" width="{w}" height="14" aria-hidden="true"><rect class="lb" x="0" y="2" width="{w * l["n"] / top:.1f}" height="10" rx="2"/></svg>'
+    if l['kind'] == 'zero':
+        return f'<svg class="tlc bar" viewBox="0 0 {w} 14" width="{w}" height="14" aria-hidden="true"><line class="zero" x1="1.5" x2="1.5" y1="0" y2="14"/></svg>'
+    if l['kind'] == 'unknown':
+        return f'<svg class="tlc bar" viewBox="0 0 {w} 14" width="{w}" height="14" aria-hidden="true"><rect class="unk" x="0.5" y="2.5" width="{w - 1}" height="9" rx="2"/></svg>'
+    return ''
+
+def build_signals():
+    G = D['signals']; fam = {f['id']: f for f in G['families']}
+    top = max(l.get('n') or 0 for l in G['ladder'] if l['kind'] == 'count')
+    ladder = table(['Layer', 'How many', '', 'Signal', 'Status', 'Sources'],
+                   [[f'<b>{E(l["layer"])}</b><div class="note">{E(l["of"])}</div>', f'<b>{E(l["value"])}</b>', _bar(l, top), f'<a href="#f-{E(l["family"])}">{E(fam[l["family"]]["name"].replace(" signals", "")) if l["family"] in fam else "exposure"}</a>', pill(l['status']), src_links(l['sources'], 1)] for l in G['ladder']], 'ladder')
+    fams = ''.join(f'''<article class="role" id="f-{E(f["id"])}"><h3>{E(f["name"])}</h3><p><i>{E(f["question"])}</i></p><p><b>Now.</b> {E(f["now"])} <span class="refs">{src_links(f["sources"], 1)}</span></p><p><b>What would change it.</b> {E(f["watch"])}</p><p class="small"><a href="../{E(f["page"])}">Where this site tracks it &rarr;</a></p></article>''' for f in G['families'])
+    x0, x1 = _mins('2026-10-21T00:00Z'), _mins('2026-10-22T16:00Z')
+    bars = table(['Barrier', 'Available', '21 Oct 00:00 &rarr; 22 Oct 16:00 UTC', 'A compromise after it says the organisation had', 'Sources'],
+                 [[f'<b>{E(b["what"])}</b>', E(_hm(b['at'])) if b['at'] else '<i>not a release</i>', _tl(b['at'], x0, x1) + f'<div class="note">{E(b["at_note"])}</div>', E(b['gap']), src_links(b['sources'], 1)] for b in G['barriers']], 'ladder')
+    reading = ''.join(f'<li>{E(r)}</li>' for r in G['reading'])
+    story = next((a for a in ARTICLES if a['slug'] == 'exposed-is-not-exploited'), None)
+    body = f'''
+<h1>The second stories: exposed, attempted, exploited, and what was within reach</h1>
+<p class="lead">{E(G["note"])}</p>
+{section("ladder", "From exposed to what matters", f'<p>Each layer is a smaller population than the one above, until the evidence runs out. The two bars are counts of the same thing, hosts, on one linear scale: 1.57 million of 2.6 million were unpatched on the first day; a dashed box is a layer nobody has measured; a single line is zero. The units change down the ladder, from a share of websites to hosts to attempts, and the ladder says so rather than drawing them as one funnel.</p>{ladder}')}
+{section("families", "The four kinds of signal", f'<div class="roles">{fams}</div>', "The editor's four families: what each would show, what it shows now, and what would change it.")}
+{section("barriers", "Every barrier has a time", f'<p>The barriers between this bug and a breach, with the moment each became available. A dot is a stated time; a band is a day with no time given. Read across: a compromise after the dot says something about the organisation, not only about PHP.</p>{bars}')}
+{section("reading", "The reading", f'<ul>{reading}</ul><p class="small">This page is the site\'s analysis, marked as research because every row rests on captured sources; the argument it supports is made in {f"<a href=../articles/{E(story["slug"])}/index.html>{E(story['title'])}</a>" if story else "a story"}.</p>')}
+'''
+    page('signals/index.html', 'The second stories: exposed, attempted, exploited, and what was within reach', 'php2shell as signals: the ladder from websites that use PHP to the sites that were exploited and held something worth reaching, the four kinds of signal and what each shows now, and the time each barrier became available.', body, kind='analysis', topics='php2shell signals exposure reach second stories')
+
+
 # ----------------------------------------------------------------------------- items and feeds (v0.4.2)
 # Everything a reader can read here is an item with a stable id and a hash of what it says. The ledger's sections,
 # pages, briefings and facts keep their own versions (data/sections.json); stories, questions, sources and timeline
@@ -2885,6 +3078,189 @@ def build_reader():
 """
     page('reader/index.html', 'The feed viewer: this site, the records, and your own feeds', 'Read this site\'s feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.', body, kind='account')
 
+
+# ----------------------------------------------------------------------------- subscriptions (v0.4.3)
+
+def build_subscribe():
+    sc = D['subscriptions']
+    cfg = json.dumps({k: sc[k] for k in ('contact', 'endpoint', 'vault_id', 'append_token', 'recipient', 'zones', 'cadences')}, ensure_ascii=False, separators=(',', ':'))
+    zones = ''.join(f'<label class="sub-c"><input type="checkbox" name="zones" value="{E(z)}"{" checked" if z == "all" else ""}> {E(t)}</label>' for z, t in sc['zones'])
+    cads = ''.join(f'<label class="sub-c"><input type="radio" name="cadence" value="{E(c)}"{" checked" if i == 1 else ""}> {E(t)}</label>' for i, (c, t) in enumerate(sc['cadences']))
+    mail = f'mailto:{sc["contact"]}?subject=' + 'Subscribe%20to%20PHP%20October%202026' + '&body=' + 'Please%20subscribe%20me.%20Follow%3A%20everything%20%2F%20research%20%2F%20for%20you%20%2F%20stories.%20How%20often%3A%20as%20it%20changes%20%2F%20daily%20%2F%20weekly.'
+    body = f"""
+<h1>Subscribe: what changed, sent to you</h1>
+<p class="lead">The cheapest way to follow this story is to be told only what changed. Pick what to follow and how often, and the agent at <a href="mailto:{E(sc["contact"])}">{E(sc["contact"])}</a> sends it: a message per release that changes what you follow, or a digest. No account; one address. Or skip email entirely: the <a href="../feeds/index.html">feeds</a> carry the same changes.</p>
+<form id="sub-form" class="subform" autocomplete="on">
+<p><label>Your email address<br><input type="email" name="email" required maxlength="254" placeholder="you@example.org"></label></p>
+<fieldset><legend>What to follow</legend>{zones}</fieldset>
+<fieldset><legend>How often</legend>{cads}</fieldset>
+<p><label>Anything we should know (optional)<br><textarea name="note" rows="2" maxlength="500"></textarea></label></p>
+<p class="sub-hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
+<p><button class="cta cta-pri" type="submit" name="kind" value="subscribe">Subscribe</button> <button class="cta" type="submit" name="kind" value="unsubscribe" formnovalidate>Unsubscribe this address</button></p>
+<p id="sub-out" role="status" aria-live="polite"></p>
+</form>
+<script type="application/json" id="sub-config">{cfg}</script>
+<p>Rather write? <a href="{E(mail)}">Email {E(sc["contact"])}</a> and say what you want to follow.</p>
+<h2>What happens to your address</h2>
+<ul>
+<li>It is encrypted in your browser, to the subscriptions vault's key (<code>{E(sc["recipient"]["fingerprint"])}</code>), and posted to a write-only lane on that private vault (<code>{E(sc["vault_id"])}</code>). The lane answers the same whatever arrives, so this page can say it was sent, never that it was received.</li>
+<li>Anyone can type any address, so the agent writes to it first and sends nothing more until the address answers. Unsubscribe here, or by answering any message.</li>
+<li>It is kept in that vault and nowhere else: not on this site, not in its repository, not in its telemetry. The vault's key is held by the editor and the agent that sends.</li>
+<li>Messages come from {E(sc["contact"])}, the agent the editor runs and reads, until the newsroom has a domain of its own for them.</li>
+</ul>
+<script src="../assets/subscribe.js" defer></script>
+"""
+    page('subscribe/index.html', 'Subscribe: what changed, sent to you', 'Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.', body, kind='account')
+
+
+
+
+# ----------------------------------------------------------------------------- the phone app: Now (v0.5.0)
+# The editor's brief: admin/content/briefs/2026-10-22__brief__the-phone-app.md. One page, now/index.html, built for a
+# phone: what do I need to know, given how long I have (one, five, ten or thirty minutes), against what I read before.
+# Two modes. Deterministic: the items, their order and their connections come from the data and nothing else.
+# Agentic: the same items handed to a model (OpenRouter, with the reader's own key kept in the reader's own vault), for
+# a briefing in prose, an infographic and a chat. The page is a shell; now/now.json is everything it reads; assets/now.js
+# is the app. The reader's state lives in this browser (assets/reader-state.js, shared with the rest of the site) and,
+# when the reader opens a vault, in that vault under /php-october/.
+
+NOW_MODELS = {'text': 'anthropic/claude-sonnet-5.5', 'image': 'google/gemini-3.1-flash-image'}
+NOW_KIND_WEIGHT = {'front': 100, 'fact': 80, 'event': 60, 'question': 55, 'briefing': 50, 'story': 45, 'page': 30, 'source': 10}
+
+def now_summary(iid, it):
+    """The words the app shows for an item: what it says now, in a sentence or two, and its connections."""
+    k, links, status = it['kind'], [], ''
+    if k == 'fact':
+        c = next((c for c in D['claims'] if 'fact-' + c['id'] == iid), None)
+        if c:
+            status = c['status']
+            links = [['source', s, short_name(SOURCES[s]), f'sources/{s}/index.html'] for s in c['sources'] if s in SOURCES]
+            links += [['briefing', p, PERSONAS[p]['label'], f'briefings/{p}/index.html'] for p, t in BRIEF_TOPICS.items() if c['topic'] in t and p in PERSONAS]
+            claim = c['claim'].rstrip()
+            return f'{claim}{"" if claim.endswith((".", "?", "!")) else "."} Who says it: {c["by"]}.', status, links
+    if k == 'event':
+        t = next((t for t in D['timeline'] if event_id(t) == iid), None)
+        if t:
+            links = [['source', s, short_name(SOURCES[s]), f'sources/{s}/index.html'] for s in t['sources'] if s in SOURCES]
+            return f'{fmt_at(t["at"])}: {t["event"]}', t.get('confidence', ''), links
+    if k == 'question':
+        q = next((q for q in D['questions']['questions'] if 'q-' + q['id'] == iid), None)
+        if q:
+            return q.get('short') or q['q'], '', [['page', p, nav_title(p), p] for p in (q.get('see') or [])[:4]]
+    if k == 'briefing':
+        p = PERSONAS.get(iid.replace('briefing-', ''))
+        if p:
+            return p['answer'], '', [['page', x, nav_title(x), x] for x in p['path'][1:]]
+    if k == 'front':
+        sec = LEDGER['sections'].get(iid)
+        if sec:
+            t = re.sub(r'\s*\[[^\]]*\]', '', sec['versions'][-1]['text'])
+            t = re.sub(r'(?m)^(confirmed|reported|disputed|contradicted|unverified): ', '', t)
+            t = ' '.join(x.strip().rstrip('.') + '.' for x in t.split('\n') if x.strip())
+            return (t[:420].rsplit('. ', 1)[0] + '.') if len(t) > 420 else t, '', []
+    if k == 'source':
+        s = SOURCES.get(iid.replace('src-', ''))
+        if s:
+            return (s.get('notes') or s.get('title') or '')[:300], s.get('status', ''), []
+    if k == 'story':
+        a = next((a for a in ARTICLES if 'story-' + a.get('slug', '') == iid), None)
+        if a:
+            return (a.get('dek') or a.get('standfirst') or a.get('text') or a['title'])[:400], '', []
+    return D['plain']['pages'].get(it['path'], '') or it['title'], '', []
+
+def build_now():
+    items = []
+    for iid, it in all_items().items():
+        text, status, links = now_summary(iid, it)
+        words = len((it['title'] + ' ' + text).split())
+        title = it['title']
+        if it['kind'] == 'fact':
+            c = next((c for c in D['claims'] if 'fact-' + c['id'] == iid), None)
+            title = c['claim'] if c else title
+        items.append({'id': iid, 'kind': it['kind'], 'zone': it['zone'], 'title': title, 'path': it['path'], 'hash': it['hash'],
+                      'v': it['v'], 'first': it['first'], 'changed': it['changed'], 'date': it['date'], 'text': text, 'status': status,
+                      'links': links[:8], 'w': NOW_KIND_WEIGHT.get(it['kind'], 20), 'sec': max(10, round(words / 230 * 60)),
+                      'history': it.get('history', '')})
+    pl = D['plain']
+    doc = {
+        'about': 'Everything the phone app (now/) reads, built from the same data as every page: the items a reader can read, '
+                 'with what each says now, its hash, its connections and its reading time; the situation; the readers; the facts '
+                 'for grounding a model. Deterministic: the same data produces the same file.',
+        'site': VERSION, 'data_as_of': STORY['data_as_of'], 'when': human_time(STORY['data_as_of']),
+        'releases': [{'version': r['version'], 'date': r['date'], 'title': r['title']} for r in reversed(RELEASES)][:20],
+        'headline': pl['headline'], 'deck': re.sub(r'<[^>]+>', '', pl['deck']),
+        'now': [{'text': x['text'], 'sources': [[s, short_name(SOURCES[s])] for s in x['sources'] if s in SOURCES]} for x in pl['now']],
+        'unknown': [u['text'] for u in pl['unknown']],
+        'facts': [{'text': f['text'], 'status': f['status'], 'href': f['href']} for f in pl['facts']],
+        'personas': [{'id': p['id'], 'person': p['person'], 'label': p['label'], 'group': p['group'], 'depth': p['depth'], 'answer': p['answer'],
+                      'path': p['path']} for p in PERSONAS.values()],
+        'claims': [{'id': c['id'], 'status': c['status'], 'claim': c['claim'], 'by': c['by'], 'topic': c['topic']} for c in D['claims']],
+        'models': NOW_MODELS,
+        'vault': {'endpoint': 'https://dev.send.sgraph.ai', 'folder': '/php-october'},
+        'items': items,
+    }
+    write('now/now.json', json.dumps(doc, ensure_ascii=False, separators=(',', ':')) + '\n')
+    write('now/manifest.webmanifest', json.dumps({
+        'name': 'PHP October 2026: Now', 'short_name': 'PHP Now', 'start_url': './index.html', 'scope': './', 'display': 'standalone',
+        'background_color': '#f7f6f2', 'theme_color': '#8a2416', 'description': 'What you need to know about the PHP flaws, for the time you have.',
+        'icons': [{'src': '../assets/now/icon-192.png', 'sizes': '192x192', 'type': 'image/png'}, {'src': '../assets/now/icon-512.png', 'sizes': '512x512', 'type': 'image/png'}]},
+        indent=1) + '\n')
+    title = 'Now: PHP October on your phone'
+    desc = 'What you need to know about the PHP flaws for the time you have, one, five, ten or thirty minutes, against what you read before; deterministic from the data, or written by a model with your own key kept in your own vault, with a chat.'
+    PAGES.append(('now/index.html', title, desc, 'account'))
+    html_out = f'''<!doctype html>
+<html lang="en" data-root="../" data-path="now/index.html" data-ver="{VERSION}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#8a2416">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PHP Now">
+<title>{E(title)} &middot; {SITE_NAME}</title>
+<meta name="description" content="{E(desc)}">
+<link rel="canonical" href="{BASE_URL}/now/index.html">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/now/icon-192.png">
+<link rel="icon" href="data:,">
+<link rel="alternate" type="text/markdown" href="index.md">
+<link rel="stylesheet" href="../assets/now/now.css">
+<script src="../assets/reader-state.js" defer></script>
+<script src="../assets/telemetry.js" defer></script>
+<script type="module" src="../assets/now/now.js"></script>
+</head>
+<body>
+<div id="app" class="app">
+<header class="top"><a class="brand" href="../index.html">PHP October<span> 2026</span></a><span class="b-now">Now</span><button class="vchip" id="vchip" type="button">This phone only</button></header>
+<main id="view"><section class="card"><h1>What you need to know, for the time you have</h1><p>{E(pl["headline"])}. {E(re.sub(r"<[^>]+>", "", pl["deck"]))}</p><p>This app needs JavaScript. Without it, start from <a href="../index.html">the front page</a> or <a href="../whatsnew/index.html">what's new</a>.</p></section></main>
+<nav class="tabs" id="tabs"><a href="#now" data-tab="now">Now</a><a href="#chat" data-tab="chat">Ask</a><a href="#vault" data-tab="vault">Vault &amp; keys</a></nav>
+</div>
+</body>
+</html>
+'''
+    write('now/index.html', html_out)
+    md = f'''# {title}
+
+{desc}
+
+> For you: an app in your browser, kept by the agents that run this site.
+
+The phone app at {BASE_URL}/now/index.html answers one question: what do I need to know now, given how long I have? Choose one, five, ten or thirty minutes; it shows what is new or changed since you last read it, most important first, until the time is used. If nothing is new, it says so.
+
+## Two modes
+
+- **Deterministic**: the items, their order and their connections (each fact to its sources and to the briefings that carry it) come from the site's data and nothing else. The same data gives the same answer.
+- **Agentic**: the same items handed to a model through OpenRouter with your own key: a briefing in prose for your time budget (Claude Sonnet), an infographic (Gemini), and a chat grounded in the site's facts. Every generated piece says which model wrote it from which items, and links each claim back to its fact.
+
+## Your vault
+
+Open a vault (an sgit vault key; a newsroom.sgit.ai reader vault works) or create one, and the app keeps in it, encrypted in your browser before it leaves: what you have read, your settings, your OpenRouter key, your chats and what the models made for you, under `/php-october/`. Without a vault, what you have read is kept in this browser only and the agentic mode is off.
+
+The data the app reads is [now.json]({BASE_URL}/now/now.json). The brief is on [the briefs page]({BASE_URL}/admin/briefs/index.html).
+
+---
+site v{VERSION} · data as of {STORY["data_as_of"]} · {BASE_URL}/now/index.html
+'''
+    write('now/index.md', md)
 
 if __name__ == '__main__':
     main()

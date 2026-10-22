@@ -338,12 +338,14 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/vault/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/status/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/vaults/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/feeds/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/you/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/reader/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/subscribe/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/questions/fix-or-wait/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/questions/been-hacked/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
@@ -357,6 +359,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/questions/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/articles/where-php2shell-stands/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/articles/exposed-is-not-exploited/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/articles/php2shell-in-perspective/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/articles/patch-at-the-speed-of-metasploit/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/articles/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
@@ -364,5 +367,8 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/readings/perplexity-2026-10-22/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/readings/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/patching/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/patching/inventory/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/signals/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/now/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 </urlset>

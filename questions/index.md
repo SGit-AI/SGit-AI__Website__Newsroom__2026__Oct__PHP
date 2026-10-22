@@ -56,9 +56,11 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Briefing for a media and communications team: What can we say that is true, what should we not say, and what will we be asked?](../briefings/comms/index.html): The php2shell story for a media and communications team: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
 ### Yours
+- [Now: the phone app](../now/index.html):
 - [Your desk: what is new to you, and what changed](../you/index.html): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
 - [The feed viewer: this site, the records, and your own feeds](../reader/index.html): Read this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.
 - [Feeds: what is new and what changed](../feeds/index.html): RSS feeds for everything new and changed on this site and for each of its parts: an entry for every new item and every change, and where to read them.
+- [Subscribe: what changed, sent to you](../subscribe/index.html): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.
 
 ### The incident
 - [PHP in October 2026: two critical security flaws, tracked as evidence](../index.html): PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
@@ -77,6 +79,8 @@ An article a reader has seen is listed here until a collector captures it into t
 - [In context: php2shell against Kaminsky, Heartbleed, Shellshock, Log4Shell and the last PHP RCE](../context/index.html): Ten landmark vulnerabilities with their CVE records and KEV rows, the KEV catalog counted, and what the comparison says about severity, exposure, urgency and the discovery pipeline.
 - [If you run PHP: the steps, in order, with their sources](../playbook/index.html): Inventory, patch, mitigate, shield, isolate or take offline, look for compromise, verify: every agency's php2shell advice merged into one ordered list with the sentence each step comes from.
 - [Patching: who gets a fix](../patching/index.html):
+- [The inventory, hour by hour](../patching/inventory/index.html):
+- [The second stories: signals](../signals/index.html):
 
 ### The analysis
 - [Every claim, with its status and sources](../claims/index.html): 70 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
@@ -99,11 +103,14 @@ An article a reader has seen is listed here until a collector captures it into t
 - [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
 - [The source watch: every outside source on php2shell, watched and snapshotted](../vaults/source-watch/index.html): The public source-watch vault: 328 pages from 175 publishers in 38 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
+- [Subscribe: what changed, sent to you](../subscribe/index.html): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.
+- [The vaults behind this site](../vaults/index.html#coverage):
 
 ### Stories
 - [All stories, written here](../articles/index.html):
 - [House · Journalist: Why can't every version of PHP just be patched](../articles/why-not-patch-every-version/index.html):
 - [House · Journalist: Where php2shell stands](../articles/where-php2shell-stands/index.html):
+- [House · Journalist and historian: Exposed is not exploited](../articles/exposed-is-not-exploited/index.html):
 - [House · Historian: php2shell in perspective](../articles/php2shell-in-perspective/index.html):
 - [House · Cyber desk: Patch at the speed of Metasploit](../articles/patch-at-the-speed-of-metasploit/index.html):
 - [The editor, interviewed: Dinis Cruz on why this site exists](../interview/index.html): Dinis Cruz, the editor of PHP October 2026, on why he started tracking the PHP flaws, the 70% figure, what remote code execution does and does not mean, pulling the plug, and why every section of the site is versioned. In his own words.
@@ -123,6 +130,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Roles and responsibilities](../admin/roles/index.html): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
 - [Briefs](../admin/briefs/index.html): The build briefs for this site, published in full before the work, newest first.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
+- [Synthetic readers: six test readers who read the live site every hour](../admin/synthetic/index.html): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader's own vault.
 
 Every page also has a markdown twin, listed in [llms.txt](../llms.txt); the questions themselves are [data/questions.json](../data/questions.json).
 
@@ -132,4 +140,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

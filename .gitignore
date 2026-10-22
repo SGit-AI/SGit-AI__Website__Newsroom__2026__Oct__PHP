@@ -226,3 +226,6 @@ __marimo__/
 # the build scripts are source, not output
 !admin/build/
 !admin/build/**
+
+# never commit bytecode, even under the un-ignored admin/build/
+admin/build/__pycache__/

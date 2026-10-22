@@ -6,7 +6,55 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.4.2. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.0. The data is [data/versions.json](../data/versions.json).
+
+### v0.5.0 · 2026-10-22
+
+Now, the phone app (/now/): what you need to know for one, five, ten or thirty minutes against what you read before; a deterministic mode from the data and an agentic one where Sonnet writes your briefing and answers in a chat and Gemini draws an infographic, with your OpenRouter key kept in your own vault; the newsroom's vault library vendored for it
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.4.7 · 2026-10-22
+
+the editor's critical brief on scheduled capture: the sources that move are checked on a schedule, captured raw, turned into timestamped JSON and analysed on every change; contradictions between reports are recorded as first-class records, seeded with seven from the coverage review; meaning through connectivity, with every fact and stat on a spectrum of evidence; board items 057 to 063
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.4.6 · 2026-10-22
+
+synthetic readers: synthetic@php.newsroom runs six test readers (board member, CTO, project manager, security lead, developer, designer) through the live site in a real browser, each with its own device, path and private vault holding every request, page, screenshot and review; /admin/synthetic/ shows the first run's verdicts, scores and requested changes; hourly and after each deploy via .github/workflows/synthetic.yml once its secrets are set
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.4.5 · 2026-10-22
+
+the coverage vault: 24 pages from other outlets captured with screenshots, page text and hashes into a new private vault (dcsmxese), listed on /vaults/ without its key, and the review of how they present the story and what this site should learn, in admin/content/reviews/
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.4.4 · 2026-10-22
+
+subscriptions: /subscribe/ takes an address, what to follow and how often, encrypts it in the reader's browser to the new private subscriptions vault (wgeiqabu) and posts it to that vault's write-only lane; the agent at agent@diniscruz.ai confirms each address before sending anything; the vault is listed on /vaults/, its drain script is admin/build/subscriptions_drain.py, and its keys and the telemetry vault's are sealed to the editor's key
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.4.3 · 2026-10-22
+
+The second stories: the NCSC-NL inventory read hour by hour from its public history (38 versions, 61 fixed, 216 vulnerable, 440 under investigation at 15:28 UTC on 22 October; 185 of the vulnerable are applications that inherit PHP's flaw; firewalls and gateways among the affected), /signals/ with the ladder from exposed to exploited, four signal families and the time of each barrier, and the story 'Exposed is not exploited' by the journalist and the historian; a correction: the inventory had 675 rows at the captured commit, not 674
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.4.2 · 2026-10-22
 
@@ -194,4 +242,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

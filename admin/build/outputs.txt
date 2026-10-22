@@ -71,6 +71,8 @@ admin/roles/index.html
 admin/roles/index.md
 admin/status-json/index.html
 admin/status-json/index.md
+admin/synthetic/index.html
+admin/synthetic/index.md
 admin/telemetry/index.html
 admin/telemetry/index.md
 admin/vault/index.html
@@ -83,6 +85,8 @@ affected/software.html
 affected/software.md
 agencies/index.html
 agencies/index.md
+articles/exposed-is-not-exploited/index.html
+articles/exposed-is-not-exploited/index.md
 articles/index.html
 articles/index.md
 articles/patch-at-the-speed-of-metasploit/index.html
@@ -315,10 +319,16 @@ leak/index.md
 llms.txt
 method/index.html
 method/index.md
+now/index.html
+now/index.md
+now/manifest.webmanifest
+now/now.json
 numbers/index.html
 numbers/index.md
 patching/index.html
 patching/index.md
+patching/inventory/index.html
+patching/inventory/index.md
 pipeline/index.html
 pipeline/index.md
 playbook/index.html
@@ -356,6 +366,8 @@ review/index.md
 review/ui/index.html
 review/ui/index.md
 robots.txt
+signals/index.html
+signals/index.md
 sitemap.xml
 sources/acn-it-php2shell/index.html
 sources/acn-it-php2shell/index.md
@@ -652,6 +664,8 @@ start/index.md
 status.json
 status/index.html
 status/index.md
+subscribe/index.html
+subscribe/index.md
 summary/index.html
 summary/index.md
 team/index.html

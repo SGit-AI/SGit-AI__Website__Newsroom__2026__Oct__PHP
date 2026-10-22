@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.4.2",
+"site": "0.5.0",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -3681,10 +3681,10 @@
 "zone": "stories",
 "title": "Stories: written here",
 "path": "index.html#stories",
-"hash": "4bca5abed747",
-"v": 1,
+"hash": "ccff38fbe420",
+"v": 2,
 "first": "0.4.1",
-"changed": "0.4.1",
+"changed": "0.4.3",
 "date": "2026-10-22"
 },
 "home-how": {
@@ -3828,6 +3828,17 @@
 "v": 1,
 "first": "0.4.1",
 "changed": "0.4.1",
+"date": "2026-10-22"
+},
+"story-exposed-is-not-exploited": {
+"kind": "story",
+"zone": "stories",
+"title": "Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit",
+"path": "articles/exposed-is-not-exploited/index.html",
+"hash": "6ad05059ec37",
+"v": 1,
+"first": "0.4.3",
+"changed": "0.4.3",
 "date": "2026-10-22"
 },
 "story-php2shell-in-perspective": {

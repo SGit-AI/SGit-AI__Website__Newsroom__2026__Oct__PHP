@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**7** evidence · **18** derived · **6** authored · **13** site
+**8** evidence · **19** derived · **6** authored · **15** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -28,6 +28,7 @@ Captured or exported from the evidence vault by a script, with no judgement adde
 | `data/vault-timeline.json` | admin/build/export_vault.py | timeline/.json in the vault, merged unedited | [timeline/index.html](../timeline/index.html) |
 | `data/software.json` | admin/build/export_vault.py | the NCSC-NL php2shell inventory, parsed row by row at commit cca173c64ec5 | [affected/software.html](../affected/software.html) |
 | `review/code/files.json` | a parser over git show -U0 of the fix commit | php/php-src commit 3584a98bd: files, hunks and the functions they fall in | [review/index.html](../review/index.html) |
+| `data/inventory-history.json` | admin/build/inventory_history.py | a git clone of NCSC-NL/php2shell: every commit that changed the inventory, counted per status, with every change of status; content-addressed and checked against the vault's own capture at cca173c64ec5. Read from the public repository, not yet captured into the vault | [patching/inventory/index.html](../patching/inventory/index.html) |
 | `data/source-watch.json` | admin/build/export_watch.py | the source-watch vault's index, taxonomy, runs and tips: counts and vocabularies, no capture | [vaults/source-watch/index.html](../vaults/source-watch/index.html) |
 
 ## Derived
@@ -36,6 +37,7 @@ Transformations of the evidence written by agents: claims with a status, dated e
 
 | File | Made by | From | Shown on |
 |---|---|---|---|
+| `data/signals.json` | claude-journalist and claude-historian | the claims, the exploitation and defence data, the inventory and the timeline, arranged as the ladder from exposed to exploited, four signal families and the time of each barrier | [signals/index.html](../signals/index.html) |
 | `data/claims.json` | claude-story-site | the vault's notes and per-agent claims, re-traced to primary sources | [claims/index.html](../claims/index.html) |
 | `data/timeline.json` | claude-story-site | the vault's notes and per-agent timelines, with every time conversion marked | [timeline/index.html](../timeline/index.html) |
 | `data/numbers.json` | claude-story-site | the scale figures in the captures, with what each measures | [numbers/index.html](../numbers/index.html) |
@@ -84,12 +86,14 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/seo.json` | the design agent | search-engine settings: the Search Console verification token and the social card | [index.html](../index.html) |
 | `data/items.json` | admin/build/build.py | every item a reader can read, with its id, zone, link and the hash of what it says; written by every build | [you/index.html](../you/index.html) |
 | `data/feed-sources.json` | dev@php.newsroom | the feeds the viewer offers, which allow a browser to read them, checked on 22 October 2026 | [reader/index.html](../reader/index.html) |
+| `data/subscriptions.json` | dev@php.newsroom | the subscriptions lane's public configuration: vault id, write-only token, the key requests are encrypted to, the contact address | [subscribe/index.html](../subscribe/index.html) |
 | `data/telemetry.json` | dev@php.newsroom | the telemetry lane's public configuration | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/telemetry-report.json` | admin/build/telemetry_drain.py | the drained telemetry lane, as counts | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/layers.json` | claude-journalist | this classification | [layers/index.html](../layers/index.html) |
+| `data/synthetic.json` | admin/synthetic/run.py summarise (synthetic@php.newsroom) | each synthetic reader's vault: its latest run and review, with no keys | [admin/synthetic/index.html](../admin/synthetic/index.html) |
 
 The classification is [data/layers.json](../data/layers.json); the gate fails a release if a file in `data/` is missing from it.
 
 
 ---
-site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

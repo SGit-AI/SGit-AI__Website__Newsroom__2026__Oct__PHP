@@ -15,7 +15,7 @@ Found144sources the agents found and logged in the vaultSaved134captured as serv
 ## The facts by status, release by release
 
 How many facts the site carried in each release and how far each could be trusted. A fact that moves from reported to confirmed is a second primary source found; one that moves the other way is a correction.
-v0.1.049v0.2.070v0.2.170v0.2.270v0.2.370v0.2.470v0.2.570v0.2.670v0.2.770v0.2.870v0.2.970v0.2.1070v0.2.1170v0.2.1270v0.2.1370v0.2.1470v0.2.1570v0.3.070v0.3.170v0.3.270v0.4.070v0.4.170v0.4.270- confirmed two or more primary sources agree, or the fact was counted from a captured file
+v0.1.049v0.2.070v0.2.170v0.2.270v0.2.370v0.2.470v0.2.570v0.2.670v0.2.770v0.2.870v0.2.970v0.2.1070v0.2.1170v0.2.1270v0.2.1370v0.2.1470v0.2.1570v0.3.070v0.3.170v0.3.270v0.4.070v0.4.170v0.4.270v0.4.370v0.4.470v0.4.570v0.4.670v0.4.770v0.5.070- confirmed two or more primary sources agree, or the fact was counted from a captured file
 - reported one party says so, and it has not been contradicted
 - disputed the sources disagree, and both readings are shown
 - contradicted a primary source says otherwise
@@ -36,4 +36,4 @@ Each fact has a page of its own: when each of its sources was published, when it
 
 
 ---
-site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/pipeline/index.html
+site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/pipeline/index.html

@@ -1,6 +1,60 @@
 {
- "current": "0.4.2",
+ "current": "0.5.0",
  "versions": [
+  {
+   "version": "0.5.0",
+   "date": "2026-10-22",
+   "title": "Now, the phone app (/now/): what you need to know for one, five, ten or thirty minutes against what you read before; a deterministic mode from the data and an agentic one where Sonnet writes your briefing and answers in a chat and Gemini draws an infographic, with your OpenRouter key kept in your own vault; the newsroom's vault library vendored for it",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
+  {
+   "version": "0.4.7",
+   "date": "2026-10-22",
+   "title": "the editor's critical brief on scheduled capture: the sources that move are checked on a schedule, captured raw, turned into timestamped JSON and analysed on every change; contradictions between reports are recorded as first-class records, seeded with seven from the coverage review; meaning through connectivity, with every fact and stat on a spectrum of evidence; board items 057 to 063",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
+  {
+   "version": "0.4.6",
+   "date": "2026-10-22",
+   "title": "synthetic readers: synthetic@php.newsroom runs six test readers (board member, CTO, project manager, security lead, developer, designer) through the live site in a real browser, each with its own device, path and private vault holding every request, page, screenshot and review; /admin/synthetic/ shows the first run's verdicts, scores and requested changes; hourly and after each deploy via .github/workflows/synthetic.yml once its secrets are set",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
+  {
+   "version": "0.4.5",
+   "date": "2026-10-22",
+   "title": "the coverage vault: 24 pages from other outlets captured with screenshots, page text and hashes into a new private vault (dcsmxese), listed on /vaults/ without its key, and the review of how they present the story and what this site should learn, in admin/content/reviews/",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
+  {
+   "version": "0.4.4",
+   "date": "2026-10-22",
+   "title": "subscriptions: /subscribe/ takes an address, what to follow and how often, encrypts it in the reader's browser to the new private subscriptions vault (wgeiqabu) and posts it to that vault's write-only lane; the agent at agent@diniscruz.ai confirms each address before sending anything; the vault is listed on /vaults/, its drain script is admin/build/subscriptions_drain.py, and its keys and the telemetry vault's are sealed to the editor's key",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
+  {
+   "version": "0.4.3",
+   "date": "2026-10-22",
+   "title": "The second stories: the NCSC-NL inventory read hour by hour from its public history (38 versions, 61 fixed, 216 vulnerable, 440 under investigation at 15:28 UTC on 22 October; 185 of the vulnerable are applications that inherit PHP's flaw; firewalls and gateways among the affected), /signals/ with the ladder from exposed to exploited, four signal families and the time of each barrier, and the story 'Exposed is not exploited' by the journalist and the historian; a correction: the inventory had 675 rows at the captured commit, not 674",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.4.2",
    "date": "2026-10-22",

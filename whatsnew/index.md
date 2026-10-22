@@ -12,6 +12,42 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.5.0 · 22 October 2026new since your last visit
+
+Now, the phone app (/now/): what you need to know for one, five, ten or thirty minutes against what you read before; a deterministic mode from the data and an agentic one where Sonnet writes your briefing and answers in a chat and Gemini draws an infographic, with your OpenRouter key kept in your own vault; the newsroom's vault library vendored for it
+
+No reader-facing section changed in this release.
+
+## v0.4.7 · 22 October 2026new since your last visit
+
+the editor's critical brief on scheduled capture: the sources that move are checked on a schedule, captured raw, turned into timestamped JSON and analysed on every change; contradictions between reports are recorded as first-class records, seeded with seven from the coverage review; meaning through connectivity, with every fact and stat on a spectrum of evidence; board items 057 to 063
+
+No reader-facing section changed in this release.
+
+## v0.4.6 · 22 October 2026new since your last visit
+
+synthetic readers: synthetic@php.newsroom runs six test readers (board member, CTO, project manager, security lead, developer, designer) through the live site in a real browser, each with its own device, path and private vault holding every request, page, screenshot and review; /admin/synthetic/ shows the first run's verdicts, scores and requested changes; hourly and after each deploy via .github/workflows/synthetic.yml once its secrets are set
+
+No reader-facing section changed in this release.
+
+## v0.4.5 · 22 October 2026new since your last visit
+
+the coverage vault: 24 pages from other outlets captured with screenshots, page text and hashes into a new private vault (dcsmxese), listed on /vaults/ without its key, and the review of how they present the story and what this site should learn, in admin/content/reviews/
+
+No reader-facing section changed in this release.
+
+## v0.4.4 · 22 October 2026new since your last visit
+
+subscriptions: /subscribe/ takes an address, what to follow and how often, encrypts it in the reader's browser to the new private subscriptions vault (wgeiqabu) and posts it to that vault's write-only lane; the agent at agent@diniscruz.ai confirms each address before sending anything; the vault is listed on /vaults/, its drain script is admin/build/subscriptions_drain.py, and its keys and the telemetry vault's are sealed to the editor's key
+
+No reader-facing section changed in this release.
+
+## v0.4.3 · 22 October 2026new since your last visit
+
+The second stories: the NCSC-NL inventory read hour by hour from its public history (38 versions, 61 fixed, 216 vulnerable, 440 under investigation at 15:28 UTC on 22 October; 185 of the vulnerable are applications that inherit PHP's flaw; firewalls and gateways among the affected), /signals/ with the ladder from exposed to exploited, four signal families and the time of each barrier, and the story 'Exposed is not exploited' by the journalist and the historian; a correction: the inventory had 675 rows at the captured commit, not 674
+
+No reader-facing section changed in this release.
+
 ## v0.4.2 · 22 October 2026new since your last visit
 
 the delta since your last visit: every item on the site (facts, sections, briefings, stories, questions, sources, dated events) is marked new, changed or read in your browser; mark a page or everything read and the read items fade or hide, so the next visit shows only what changed; decisions and notes per item; your desk at /you/; five RSS feeds (everything, for you, research, stories, about the site) at /feeds/; a feed viewer at /reader/ for this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Hacker News and Mastodon, and feeds you add
@@ -294,4 +330,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

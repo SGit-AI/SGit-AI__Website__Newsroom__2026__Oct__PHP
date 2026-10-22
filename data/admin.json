@@ -140,6 +140,17 @@
     "Say how early you are writing; mark a reading as a reading.",
     "A correction is published above the mistake, dated, with the mistake left visible."
    ]
+  },
+  {
+   "id": "synthetic",
+   "name": "synthetic@php.newsroom",
+   "who": "an agent",
+   "owns": "the six synthetic readers (admin/synthetic/), their vaults, their hourly runs and their reviews; data/synthetic.json and the synthetic readers page",
+   "rules": [
+    "A synthetic reader is a test instrument: its review is a prompt for the editor, never evidence about the story and never readership.",
+    "Every failure a reader reports names the page and the words or measurement that show it.",
+    "A synthetic reader sends no telemetry; the lane is answered locally during a run."
+   ]
   }
  ],
  "board": [
@@ -171,7 +182,7 @@
    "title": "Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key",
    "status": "waiting",
    "owner": "dev",
-   "note": "dev@php.newsroom's key is made (sha256:8025e2a4470e73f0) and published on the roles page; the handover payload is ready. Waiting on the editor's fingerprint and key link, or his record in the register."
+   "note": "Sealed on 22 October 2026 to the editor's key on pki.sgit.ai (record sha256:db7f79fdd87e030a, the register's anchor), together with the subscriptions vault's keys; the m1 link was given to the editor in the session. Waiting for him to open it."
   },
   {
    "id": "004",
@@ -411,8 +422,10 @@
   {
    "id": "041",
    "title": "Follow the patching curve: re-read the NCSC-NL inventory per commit and draw how the 418 'under investigation' rows turn into fixed or vulnerable",
-   "status": "open",
-   "owner": "journalist"
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.4.2",
+   "note": "The inventory over time: /patching/inventory/, 38 versions read from the public git history; the curve keeps growing with each re-run of admin/build/inventory_history.py."
   },
   {
    "id": "042",
@@ -456,9 +469,10 @@
   },
   {
    "id": "048",
-   "title": "Subscriptions: a private vault with an append lane, /subscribe/, messages from and to agent@diniscruz.ai",
-   "status": "open",
-   "owner": "dev@php.newsroom"
+   "title": "Subscriptions: a private vault (wgeiqabu) with an append lane, /subscribe/ (requests encrypted in the browser, confirmed before anything is sent), messages from and to agent@diniscruz.ai; its keys sealed to the editor",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.3"
   },
   {
    "id": "049",
@@ -474,24 +488,139 @@
   },
   {
    "id": "051",
+   "title": "The second stories: /signals/ (the ladder from exposed to exploited, four signal families, barrier times) and the story 'Exposed is not exploited' by the journalist and the historian",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.4.2"
+  },
+  {
+   "id": "052",
+   "title": "Fix the vault's export of the NCSC-NL inventory: it dropped one row (iBabs bestuursportaal) at cca173c64ec5, so pages say 674 and 3 where the list has 675 and 4",
+   "status": "open",
+   "owner": "collector-gov"
+  },
+  {
+   "id": "053",
+   "title": "Capture the NCSC-NL inventory's later commits into the vault, so the history on /patching/inventory/ rests on captures as well as on the public repository",
+   "status": "open",
+   "owner": "collector-gov"
+  },
+  {
+   "id": "054",
+   "title": "Ask the edge providers for the number nobody has: how many exposed hosts sat behind a rule that blocked the request",
+   "status": "open",
+   "owner": "journalist"
+  },
+  {
+   "id": "055",
+   "title": "Record the first confirmed compromise with two dates, when it happened and when it was announced, against the barrier times on /signals/",
+   "status": "open",
+   "owner": "historian"
+  },
+  {
+   "id": "056",
+   "title": "Find the editor's article on exploitation, patching, internal vulnerability and network protection signals; the SaaS apocalypse piece as published does not carry it",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "057",
+   "title": "Schedule the watch list: every source in the scheduled-capture brief checked on a cadence (15 minutes while breaking, hourly, then daily), extending the source watch rather than starting a second scheduler",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "058",
+   "title": "Capture raw on every change: page, rendered, text, screenshot, headers and the data itself (JSON, CSV, git, RSS), hashed, a new stamped folder only when the hash changes, a check-log line when it does not",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "059",
+   "title": "One parser per watched source turning each capture into timestamped JSON rows (observed_at, published_at, source_updated_at, capture hash, parser version), appended to a series per source",
+   "status": "open",
+   "owner": "collector-gov",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "060",
+   "title": "The analysis run triggered by every new series: changes and rates within a source, and the same measure lined up across sources on one time axis and unit, with charts and a what-changed summary written to the vault",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "061",
+   "title": "The contradiction ledger: a first-class record per disagreement (the statements, who, when, captures, what each measures, the reading, status), seeded with the seven from the 22 October coverage review, and a page that shows it",
+   "status": "open",
+   "owner": "verifier",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "062",
+   "title": "Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one source",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "063",
+   "title": "Carry every stat as its series: each number on the site drawn as a line whose points link to their captures, starting with sites offline, products fixed, attempts and unpatched hosts",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "064",
+   "title": "The phone app (/now/): what to know for one, five, ten or thirty minutes against what you read; deterministic and agentic modes; the reader's vault with the OpenRouter key; chat with Sonnet; infographics with Gemini",
+   "status": "done",
+   "owner": "dev",
+   "note": "From the brief on the phone app (22 October).",
+   "version": "0.5.0"
+  },
+  {
+   "id": "065",
+   "title": "First live run of the agentic mode with the editor's OpenRouter key: check that every sentence Sonnet writes cites an item, and that the infographic adds no number of its own",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief on the phone app (22 October)."
+  },
+  {
+   "id": "066",
+   "title": "Open the phone app's vault with a passkey, through the newsroom's door design, so a phone needs no pasted key",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on the phone app (22 October)."
+  },
+  {
+   "id": "067",
+   "title": "Draw the semantic graph on the phone: what changed, and what it connects to, as nodes and edges",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the brief on the phone app (22 October)."
+  },
+  {
+   "id": "068",
    "title": "Run the source watch hourly: today it runs by hand in a session; a scheduled run needs the vault key held by the runner, never in a repository",
    "status": "open",
    "owner": "researcher@php.newsroom"
   },
   {
-   "id": "052",
+   "id": "069",
    "title": "Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so the publishers it surfaces are mapped but not followed; Bing carries article addresses but only for the query 'php2shell'",
    "status": "open",
    "owner": "researcher@php.newsroom"
   },
   {
-   "id": "053",
+   "id": "070",
    "title": "Cyber desk, first piece: 'Patch at the speed of Metasploit', php2shell on the weaponisation ladder, the ATT&CK path (seen, expected, precedent) and the second and third stories",
    "status": "done",
    "owner": "cyber@php.newsroom"
   },
   {
-   "id": "054",
+   "id": "071",
    "title": "The weaponisation clock: watch for a merged Metasploit module, an exploiting nuclei template, a KEV listing, an EPSS step, upstream Sigma/ET/Snort rules, a second patch or regression; write the next cyber piece when one moves",
    "status": "open",
    "owner": "cyber@php.newsroom"

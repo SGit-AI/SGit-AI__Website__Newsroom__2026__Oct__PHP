@@ -6,14 +6,14 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 55 items, 37 open, 17 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 72 items, 50 open, 21 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
 | 001 | Pages deploy workflow and breadcrumbs up to the month, the year and the newsroomThe first run failed because admin/build/ was ignored by the repository's Python .gitignore template. | done | dev | 0.2.2 |
 | 002 | Admin section: the board, the roles, the briefs, the vault with its public read key, telemetry | done | dev | 0.2.3 |
 | 003 | Anonymous telemetry over an append lane, from the front end, into a separate vaultBrief: admin/content/briefs/2026-10-22__telemetry-over-an-append-lane.md. End-to-end tested from the CLI before shipping. | done | dev | 0.2.3 |
-| 013 | Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai keydev@php.newsroom's key is made (sha256:8025e2a4470e73f0) and published on the roles page; the handover payload is ready. Waiting on the editor's fingerprint and key link, or his record in the register. | waiting | dev |  |
+| 013 | Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai keySealed on 22 October 2026 to the editor's key on pki.sgit.ai (record sha256:db7f79fdd87e030a, the register's anchor), together with the subscriptions vault's keys; the m1 link was given to the editor in the session. Waiting for him to open it. | waiting | dev |  |
 | 004 | Run the verifier over every claim: check each quote against its capture textThe BBC's NCSC sentence is the first case. | open | verifier |  |
 | 005 | Retry the blocked sources from another egress: openai.com, watchtowr.com, techzine.eu, socket.dev, ccn-cert.cni.es, dyn.cncs.gov.ptresearcher@php.newsroom, source watch run 20261022T142033Z: openai.com (the coordinated-disclosure post), watchtowr.com, socket.dev and armis.com now serve their pages; techzine.eu still serves a challenge, as does ccn-cert.cni.es; dyn.cncs.gov.pt answers 513. Captures are in the source-watch vault, not yet in the evidence vault. | open | collector-researchers |  |
 | 006 | Find the primary posts behind second-hand figures: Censys, VirusTotal, Unit 42, Cloudflare's CTO at 07:43 UTC, Gina Banyard's Mastodon post, the fedi.katze.sh posts | open | collector-researchers |  |
@@ -51,23 +51,40 @@ The work, as rows in `data/admin.json`: 55 items, 37 open, 17 done. An item is a
 | 038 | The source watch is slow to open in the browser: with no app, the official UI decrypts the folder tree (2,678 objects) before it shows anything; from this sandbox that took 17 minutes. A small vault app that reads index/ and state/ first, or a lighter front vault, would open it in seconds | open | researcher@php.newsroom |  |
 | 039 | Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3 | open | dev |  |
 | 040 | Guest writers and interviewers: an intake (how a piece reaches the editor, the byline, the 'Guest' mark, the licence) and the first guest piece | open | editor |  |
-| 041 | Follow the patching curve: re-read the NCSC-NL inventory per commit and draw how the 418 'under investigation' rows turn into fixed or vulnerable | open | journalist |  |
+| 041 | Follow the patching curve: re-read the NCSC-NL inventory per commit and draw how the 418 'under investigation' rows turn into fixed or vulnerableThe inventory over time: /patching/inventory/, 38 versions read from the public git history; the curve keeps growing with each re-run of admin/build/inventory_history.py. | done | journalist | 0.4.2 |
 | 042 | Top-level navigation, Research and Stories: the editor's call on names and order after living with the first cut | open | editor |  |
 | 043 | Capture W3Techs' PHP version shares alongside its language share (see board 033): the number the patching story says is missing | open | collector-researchers |  |
 | 044 | Patching and status.json: /patching/ with every downstream row checked against the inventory; the story 'Why can't every version of PHP just be patched?'; Research and Stories zones in the menu and an origin strip on every page | done | journalist | 0.4.1 |
 | 045 | Feeds: one RSS feed per zone (for you, research, stories, about the site) and one for everything; an entry for every new item and every change; /feeds/ | done | dev@php.newsroom | 0.4.2 |
 | 046 | The delta since your last visit: every item marked new, changed or read in your browser; mark a page or everything read; fade or hide what you have read; decisions and notes per item in the newsroom's record format; your desk at /you/ with export and import | done | dev@php.newsroom | 0.4.2 |
 | 047 | The feed viewer at /reader/: this site's feeds, the records and discussion a browser may read directly, and feeds the reader adds, fetched and shown safely | done | dev@php.newsroom | 0.4.2 |
-| 048 | Subscriptions: a private vault with an append lane, /subscribe/, messages from and to agent@diniscruz.ai | open | dev@php.newsroom |  |
+| 048 | Subscriptions: a private vault (wgeiqabu) with an append lane, /subscribe/ (requests encrypted in the browser, confirmed before anything is sent), messages from and to agent@diniscruz.ai; its keys sealed to the editor | done | dev@php.newsroom | 0.4.3 |
 | 049 | Carry the desk into the reader's own vault: bring the newsroom's vault pane here (it already reads sgit.notes.v1) | open | dev@php.newsroom |  |
 | 050 | Serve the source watch's latest snapshot of the feeds browsers cannot read (php.net, NCSC, CISA advisories, the press) to the viewer | open | researcher@php.newsroom |  |
-| 051 | Run the source watch hourly: today it runs by hand in a session; a scheduled run needs the vault key held by the runner, never in a repository | open | researcher@php.newsroom |  |
-| 052 | Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so the publishers it surfaces are mapped but not followed; Bing carries article addresses but only for the query 'php2shell' | open | researcher@php.newsroom |  |
-| 053 | Cyber desk, first piece: 'Patch at the speed of Metasploit', php2shell on the weaponisation ladder, the ATT&CK path (seen, expected, precedent) and the second and third stories | done | cyber@php.newsroom |  |
-| 054 | The weaponisation clock: watch for a merged Metasploit module, an exploiting nuclei template, a KEV listing, an EPSS step, upstream Sigma/ET/Snort rules, a second patch or regression; write the next cyber piece when one moves | open | cyber@php.newsroom |  |
+| 051 | The second stories: /signals/ (the ladder from exposed to exploited, four signal families, barrier times) and the story 'Exposed is not exploited' by the journalist and the historian | done | journalist | 0.4.2 |
+| 052 | Fix the vault's export of the NCSC-NL inventory: it dropped one row (iBabs bestuursportaal) at cca173c64ec5, so pages say 674 and 3 where the list has 675 and 4 | open | collector-gov |  |
+| 053 | Capture the NCSC-NL inventory's later commits into the vault, so the history on /patching/inventory/ rests on captures as well as on the public repository | open | collector-gov |  |
+| 054 | Ask the edge providers for the number nobody has: how many exposed hosts sat behind a rule that blocked the request | open | journalist |  |
+| 055 | Record the first confirmed compromise with two dates, when it happened and when it was announced, against the barrier times on /signals/ | open | historian |  |
+| 056 | Find the editor's article on exploitation, patching, internal vulnerability and network protection signals; the SaaS apocalypse piece as published does not carry it | open | editor |  |
+| 057 | Schedule the watch list: every source in the scheduled-capture brief checked on a cadence (15 minutes while breaking, hourly, then daily), extending the source watch rather than starting a second schedulerFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | dev |  |
+| 058 | Capture raw on every change: page, rendered, text, screenshot, headers and the data itself (JSON, CSV, git, RSS), hashed, a new stamped folder only when the hash changes, a check-log line when it does notFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | collector-researchers |  |
+| 059 | One parser per watched source turning each capture into timestamped JSON rows (observed_at, published_at, source_updated_at, capture hash, parser version), appended to a series per sourceFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | collector-gov |  |
+| 060 | The analysis run triggered by every new series: changes and rates within a source, and the same measure lined up across sources on one time axis and unit, with charts and a what-changed summary written to the vaultFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | cartographer |  |
+| 061 | The contradiction ledger: a first-class record per disagreement (the statements, who, when, captures, what each measures, the reading, status), seeded with the seven from the 22 October coverage review, and a page that shows itFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | verifier |  |
+| 062 | Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one sourceFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | cartographer |  |
+| 063 | Carry every stat as its series: each number on the site drawn as a line whose points link to their captures, starting with sites offline, products fixed, attempts and unpatched hostsFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | journalist |  |
+| 064 | The phone app (/now/): what to know for one, five, ten or thirty minutes against what you read; deterministic and agentic modes; the reader's vault with the OpenRouter key; chat with Sonnet; infographics with GeminiFrom the brief on the phone app (22 October). | done | dev | 0.5.0 |
+| 065 | First live run of the agentic mode with the editor's OpenRouter key: check that every sentence Sonnet writes cites an item, and that the infographic adds no number of its ownFrom the brief on the phone app (22 October). | open | editor |  |
+| 066 | Open the phone app's vault with a passkey, through the newsroom's door design, so a phone needs no pasted keyFrom the brief on the phone app (22 October). | open | dev |  |
+| 067 | Draw the semantic graph on the phone: what changed, and what it connects to, as nodes and edgesFrom the brief on the phone app (22 October). | open | cartographer |  |
+| 068 | Run the source watch hourly: today it runs by hand in a session; a scheduled run needs the vault key held by the runner, never in a repository | open | researcher@php.newsroom |  |
+| 069 | Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so the publishers it surfaces are mapped but not followed; Bing carries article addresses but only for the query 'php2shell' | open | researcher@php.newsroom |  |
+| 070 | Cyber desk, first piece: 'Patch at the speed of Metasploit', php2shell on the weaponisation ladder, the ATT&CK path (seen, expected, precedent) and the second and third stories | done | cyber@php.newsroom |  |
+| 071 | The weaponisation clock: watch for a merged Metasploit module, an exploiting nuclei template, a KEV listing, an EPSS step, upstream Sigma/ET/Snort rules, a second patch or regression; write the next cyber piece when one moves | open | cyber@php.newsroom |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

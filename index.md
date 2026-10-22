@@ -10,7 +10,7 @@ PHP news · October 2026 · Developing · last checked 22 October 2026, 11:34 UT
 
 PHP is the software that WordPress and millions of other websites run on. A fix came out on 21 October 2026. Government cyber agencies have told organisations to install it now, or to take websites offline if they cannot. Phones and personal computers are not affected.
 
-  What is happening nowThe briefing for youExplain it from the start
+  What is happening nowThe briefing for youExplain it from the startOn your phone: Now →
 
 You may also see this called php2shell, or by its two official reference numbers, CVE-2026-109618 and CVE-2026-109619.
 
@@ -104,7 +104,7 @@ ASecurity researcherAsh · Deeply technicalWhat are the bug classes, what was de
 ## Stories: written here
 
 Everything above is research: collected from outside sources, each fact linked to a saved copy. These are written here, signed and dated, and kept as written.
-Why can't every version of PHP just be patched?House story · Journalist · 2026-10-22Where php2shell stands: many sites dark, millions of attempts, no confirmed breachHouse story · Journalist · 2026-10-22php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proofHouse story · Historian · 2026-10-22The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
+Why can't every version of PHP just be patched?House story · Journalist · 2026-10-22Where php2shell stands: many sites dark, millions of attempts, no confirmed breachHouse story · Journalist · 2026-10-22Exposed is not exploited: the sites php2shell did not hit, and what a hit will admitHouse story · Journalist and historian · 2026-10-22The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
 [All stories →](articles/index.html)
 
 ## How this site knows
@@ -115,4 +115,4 @@ Already know the vocabulary? [The specialist summary](summary/index.html) has th
 
 
 ---
-site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
