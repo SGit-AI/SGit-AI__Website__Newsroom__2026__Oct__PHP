@@ -29,7 +29,7 @@ The partiesactors/index.htmlExploitation signalsexploitation/index.html
 
 | # | Task | Status | Shipped in |
 |---|---|---|---|
-| 005 | Retry the blocked sources from another egress: openai.com, watchtowr.com, techzine.eu, socket.dev, ccn-cert.cni.es, dyn.cncs.gov.pt | open |  |
+| 005 | Retry the blocked sources from another egress: openai.com, watchtowr.com, techzine.eu, socket.dev, ccn-cert.cni.es, dyn.cncs.gov.ptresearcher@php.newsroom, source watch run 20261022T142033Z: openai.com (the coordinated-disclosure post), watchtowr.com, socket.dev and armis.com now serve their pages; techzine.eu still serves a challenge, as does ccn-cert.cni.es; dyn.cncs.gov.pt answers 513. Captures are in the source-watch vault, not yet in the evidence vault. | open |  |
 | 006 | Find the primary posts behind second-hand figures: Censys, VirusTotal, Unit 42, Cloudflare's CTO at 07:43 UTC, Gina Banyard's Mastodon post, the fedi.katze.sh posts | open |  |
 | 014 | Capture The Times, 'Race to fix PHP security issue in software behind most websites' (22 October), seen by a reader, paywalled; listed on /questions/ as seen, not captured | open |  |
 | 033 | Capture the sources Perplexity named that the vault lacks, W3Techs first (it would close the front page's question on what 70% measures); listed on /readings/ | open |  |

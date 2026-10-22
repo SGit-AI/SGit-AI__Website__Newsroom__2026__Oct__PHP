@@ -115,6 +115,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [House · Journalist: Where php2shell stands](../articles/where-php2shell-stands/index.html):
 - [House · Journalist and historian: Exposed is not exploited](../articles/exposed-is-not-exploited/index.html):
 - [House · Historian: php2shell in perspective](../articles/php2shell-in-perspective/index.html):
+- [House · Cyber desk: Patch at the speed of Metasploit](../articles/patch-at-the-speed-of-metasploit/index.html):
 - [The editor, interviewed: Dinis Cruz on why this site exists](../interview/index.html): Dinis Cruz, the editor of PHP October 2026, on why he started tracking the PHP flaws, the 70% figure, what remote code execution does and does not mean, pulling the plug, and why every section of the site is versioned. In his own words.
 
 ### About

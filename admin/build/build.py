@@ -64,7 +64,7 @@ ORIGINS = {
     'guest': {'short': 'Guest', 'label': 'Story, guest', 'text': 'written by a guest writer, published here under their name'},
     'interview': {'short': 'Interview', 'label': 'Story, interview', 'text': 'an interview conducted for this site, the answers in the interviewee\'s own words'},
 }
-AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('journalist-historian', 'Journalist and historian')])
+AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('journalist-historian', 'Journalist and historian'), ('cyber', 'Cyber desk')])
 
 # ----------------------------------------------------------------------------- small helpers
 
@@ -1866,8 +1866,9 @@ def build_review():
 # ----------------------------------------------------------------------------- articles and layers (v0.2.6)
 
 def article_inline(s, depth):
-    """Inline markdown for articles: [[slug, slug]] citations, [text](/site/path) links, bold, italic."""
+    """Inline markdown for articles: [[slug, slug]] citations, [text](/site/path) links, `code`, bold, italic."""
     s = E(s, quote=False)
+    s = re.sub(r'`([^`]+)`', r'<code>\1</code>', s)
     s = re.sub(r'\[\[([^\]]+)\]\]', lambda m: '<span class="refs">' + src_links([x.strip() for x in m.group(1).split(',')], depth) + '</span>', s)
     s = re.sub(r'\[([^\]]+)\]\(/([^)]*)\)', lambda m: f'<a href="{"../" * depth}{m.group(2)}">{m.group(1)}</a>', s)
     s = re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)', r'<a href="\2" rel="noopener">\1</a>', s)
@@ -1876,8 +1877,19 @@ def article_inline(s, depth):
     return s
 
 def render_article(text, depth):
-    out, lst = [], None
+    out, lst, rows = [], None, []
+    def flush():
+        if rows:
+            out.append(table([article_inline(c, depth) for c in rows[0]], [[article_inline(c, depth) for c in r] for r in rows[1:]])); rows.clear()
     for line in text.splitlines():
+        if line.strip().startswith('|'):
+            if lst:
+                out.append(f'</{lst}>'); lst = None
+            cells = [c.strip() for c in line.strip().strip('|').split('|')]
+            if not all(re.match(r'^:?-+:?$', c) for c in cells):
+                rows.append(cells)
+            continue
+        flush()
         m = re.match(r'^(#{2,4})\s+(.*)$', line)
         item = re.match(r'^(?:-|\d+\.)\s+(.*)$', line)
         kind = ('ol' if re.match(r'^\d+\.', line) else 'ul') if item else None
@@ -1891,6 +1903,7 @@ def render_article(text, depth):
             out.append(f'<li>{article_inline(item.group(1), depth)}</li>')
         elif line.strip():
             out.append(f'<p>{article_inline(line, depth)}</p>')
+    flush()
     if lst:
         out.append(f'</{lst}>')
     return '\n'.join(out)

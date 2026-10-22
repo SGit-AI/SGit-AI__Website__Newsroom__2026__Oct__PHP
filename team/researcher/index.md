@@ -27,6 +27,8 @@ The source watchvaults/source-watch/index.htmlThe feed viewerreader/index.html
 |---|---|---|---|
 | 038 | The source watch is slow to open in the browser: with no app, the official UI decrypts the folder tree (2,678 objects) before it shows anything; from this sandbox that took 17 minutes. A small vault app that reads index/ and state/ first, or a lighter front vault, would open it in seconds | open |  |
 | 050 | Serve the source watch's latest snapshot of the feeds browsers cannot read (php.net, NCSC, CISA advisories, the press) to the viewer | open |  |
+| 076 | Run the source watch hourly: today it runs by hand in a session; a scheduled run needs the vault key held by the runner, never in a repository | open |  |
+| 077 | Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so the publishers it surfaces are mapped but not followed; Bing carries article addresses but only for the query 'php2shell' | open |  |
 
 ## What they have done
 - Published the source watch with its read key, its taxonomy and graphs at four altitudes (v0.2.13).

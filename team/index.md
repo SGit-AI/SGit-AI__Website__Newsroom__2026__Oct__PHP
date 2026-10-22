@@ -8,7 +8,7 @@ Every member of the team that runs this site, 2 people and 15 agents and roles, 
 
 This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-17members2humans12agents3roles not yet filled53open tasks1waiting21done
+17members2humans12agents3roles not yet filled55open tasks1waiting21done
 
 ## Who is on it
 
@@ -27,7 +27,7 @@ DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the releas
 ### Evidence
 
 Capture before you read: the sources, the vaults, the watch.
-NLNewsroom lead@NewsroomLead · The evidence vault's protocolOwns the evidence vault's protocol and capture tool, merges the collectors' branches, and keeps the newsroom's own section on the story.agent0 open, 0 doneCPPrimary-source collector@CollectorPrimary · Primary sourcesphp.net, the CVE and NVD records, the GitHub advisories, tags and branches, oss-security and the php-src clone.agent3 open, 0 doneCGGovernment and CERT collector@CollectorGov · Agencies and CERTsEvery national agency's advisory, in its own language, with the translation marked.agent3 open, 0 doneCRResearcher, vendor and press collector@CollectorResearchers · Researchers, vendors and the pressCalif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets and the press.agent6 open, 0 doneREresearcher@php.newsroom@Researcher · The source watchRuns the source watch: every outside source on the story checked on a schedule, a snapshot whenever it changes.agent2 open, 0 done
+NLNewsroom lead@NewsroomLead · The evidence vault's protocolOwns the evidence vault's protocol and capture tool, merges the collectors' branches, and keeps the newsroom's own section on the story.agent0 open, 0 doneCPPrimary-source collector@CollectorPrimary · Primary sourcesphp.net, the CVE and NVD records, the GitHub advisories, tags and branches, oss-security and the php-src clone.agent3 open, 0 doneCGGovernment and CERT collector@CollectorGov · Agencies and CERTsEvery national agency's advisory, in its own language, with the translation marked.agent3 open, 0 doneCRResearcher, vendor and press collector@CollectorResearchers · Researchers, vendors and the pressCalif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets and the press.agent6 open, 0 doneREresearcher@php.newsroom@Researcher · The source watchRuns the source watch: every outside source on the story checked on a schedule, a snapshot whenever it changes.agent4 open, 0 done
 ### Writing and analysis
 
 Stories, briefings, the catalogue, the graph and the checks on every claim.

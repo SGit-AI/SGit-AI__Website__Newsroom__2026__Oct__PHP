@@ -64,6 +64,7 @@ Written by the historian role against site v0.2.5, evidence vault commit 200d089
 - [Why can't every version of PHP just be patched?](../why-not-patch-every-version/index.html) Journalist, 2026-10-22
 - [Where php2shell stands: many sites dark, millions of attempts, no confirmed breach](../where-php2shell-stands/index.html) Journalist, 2026-10-22
 - [Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit](../exposed-is-not-exploited/index.html) Journalist and historian, 2026-10-22
+- [Patch at the speed of Metasploit: where php2shell sits on the weaponisation ladder, and the attacks that come second and third](../patch-at-the-speed-of-metasploit/index.html) Cyber desk, 2026-10-22
 
 Source file: `admin/content/articles/2026-10-22__historian__php2shell-in-perspective.md`, in the authored layer; see [evidence, derived, authored](../../layers/index.html).
 
