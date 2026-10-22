@@ -102,13 +102,13 @@ Other agents read the tracker; they do not write in it. To close a finding, fix 
 
 ## The runbook (what a scheduled run does)
 
-1. `git fetch origin dev && git checkout -B dev origin/dev`. Read `REALITY.md`, the newest brief, and `BRIEF-CORRECTIONS.md`.
+1. `git fetch origin dev factcheck/desk && git checkout -B factcheck/desk origin/factcheck/desk && git merge origin/dev`. Read `AGENTS.md`, `REALITY.md`, the newest brief, and `BRIEF-CORRECTIONS.md`.
 2. Clone the evidence vault read-only with the public read key in `data/admin.json` (`sgit clone <read key> <dir>`), and note its head commit. Do the same for any other public vault the claims cite.
 3. `python3 admin/factcheck/fc.py check --vault <dir>`: the scripted checks.
 4. Mode 1 over every statement whose claim text, sources or status changed since the last run (`fc.py changed`), every statement whose sources gained a capture, and every open ticket. A full sweep at least once a day.
 5. Mode 2 over the weak, the contested and the stale.
 6. Update `assessments.json` and `contradictions.json`; open, update and close tickets with `fc.py ticket ...`; write `runs/<run>.json`.
-7. `python3 admin/factcheck/fc.py export`, then `admin/build/release.sh "factcheck: <what moved and why>"`.
+7. `python3 admin/factcheck/fc.py export`, `python3 admin/build/build.py`, `python3 admin/build/validate.py`; commit on the desk's branch `factcheck/desk` (take in `origin/dev` first) with "Not a release: for dev@php.newsroom to carry into the next release." and "Agent: factcheck@php.newsroom", and push it. The desk never pushes to `dev` (AGENTS.md); dev@ carries the branch in and releases.
 8. The run is done when the site's statements are either consistent with the evidence or carry an open ticket that says why not. That is the stable state: not "everything is right", but "nothing wrong is unmarked".
 
 ## Rules
