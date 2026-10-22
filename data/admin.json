@@ -770,13 +770,69 @@
    "id": "091",
    "title": "Join the other engine files to a named part of the fix: 144 of 359 changed hunks reach the fix only as 'the commit touched this area'",
    "status": "open",
-   "owner": "librarian"
+   "owner": "cartographer",
+   "note": "Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/)."
   },
   {
    "id": "092",
    "title": "Add the PHP 7.4 backport's hunks to the fractal graph as their own layer (the lines the backport wrote; never the vulnerable code before it)",
    "status": "open",
+   "owner": "cartographer",
+   "note": "Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/)."
+  },
+  {
+   "id": "093",
+   "title": "Every member a folder (admin/content/agents/<id>/: ROLE.md, policy.json, status.json, debriefs/), 25 drafted; the scope map and overlap check (admin/build/agents.py, gate 4h); /admin/agents/roles/, /admin/agents/rounds/, a page per member; data/agents.json; the end-of-round rule in CLAUDE.md and the Stop hook",
+   "status": "done",
    "owner": "librarian"
+  },
+  {
+   "id": "094",
+   "title": "Agree each member's policy.json (25 drafts): read the scope, the mandate and the pushback table; set status agreed and agreed_by, or correct",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "095",
+   "title": "Ask every member to read and confirm its folder in admin/content/agents/, and to close its next round with a debrief and status.json",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "096",
+   "title": "One registry of roles: derive data/team.json's owns and rules, data/admin.json's roles and data/roles.json's agents from admin/content/agents/*/policy.json, or retire them",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "097",
+   "title": "Security review of the librarian's branch: gate check 4h in validate.py, the CLAUDE.md section, .claude/settings.json's Stop hook and admin/build/agents.py stop-hook",
+   "status": "open",
+   "owner": "security@php.newsroom"
+  },
+  {
+   "id": "098",
+   "title": "Accept or rework the librarian's edit inside build_llms() (one section listing the member pages), and carry the branch into dev",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "099",
+   "title": "Move the briefings' selections out of build.py into data/briefings.json, so the briefing writer owns them apart from the build",
+   "status": "open",
+   "owner": "briefing-writer"
+  },
+  {
+   "id": "100",
+   "title": "Confirm where the ontologist works: nothing of it is in this repository; its folder proposes data/ontology.json and /ontology/",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "101",
+   "title": "Fill the cartographer: the fractal graph, the review graph and the citation graph wait for an owner",
+   "status": "open",
+   "owner": "editor"
   }
  ],
  "evidence_vault": {

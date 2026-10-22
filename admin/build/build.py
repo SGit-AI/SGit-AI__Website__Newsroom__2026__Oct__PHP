@@ -203,7 +203,7 @@ NAV = [
     ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'), ('admin/agents/index.html', 'Guidance for agents'),
-               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
+               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers'), ('admin/agents/roles/index.html', 'Every member: who owns what'), ('admin/agents/rounds/index.html', 'Every round: what each member did')]),
 ]
 
 PAGES = []  # (path, title, description) in order, for llms.txt
@@ -1305,6 +1305,12 @@ def build_llms():
     for m in TEAM['members']:
         lines.append(f'- [{m["name"]}]({BASE_URL}/team/{m["id"]}/index.md): {m["role"]}; {m["summary"]}')
     lines.append('')
+    # added by librarian@php.newsroom: every member's role, policy and rounds (admin/content/agents/)
+    lines.append('## Every member: role, agent behaviour policy and rounds')
+    for pp, t, d, _ in PAGES:
+        if re.match(r'^admin/agents/[^/]+/index\.html$', pp) and pp not in ('admin/agents/index.html',):
+            lines.append(f'- [{t}]({BASE_URL}/{md_path(pp)}): {d}')
+    lines.append('')
     lines.append('## Parties, one page each')
     for a in D['actors']:
         lines.append(f'- [{a["name"]}]({BASE_URL}/actors/{a["id"]}/index.md): {a["role"]}')
@@ -1452,7 +1458,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_fractal(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
+    build_review(); build_fractal(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck(); build_members()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -3750,6 +3756,135 @@ def build_fractal():
 <script src="../../assets/review-nav.js" defer></script>
 '''
     page('fractal/ui/index.html', 'Walk the whole graph: stakeholders to lines of code', 'A navigator over the php2shell fractal graph: stakeholders, risks, story arcs, claims, sources, the flaws, the fix, files, functions and changed lines, each node a link.', body, kind='evidence', topics='php2shell graph fractal navigator')
+
+
+# ----------------------------------------------------------------------------- every member: a folder, a policy and a round (librarian@php.newsroom)
+# Brief: admin/content/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round.md. Reads admin/content/agents/*/
+# (ROLE.md, policy.json, status.json, debriefs/) through admin/build/agents.py, which also checks the scopes.
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import agents as AGT
+
+def load_debriefs(agent):
+    d = os.path.join(AGT.AGENTS, agent, 'debriefs')
+    out = []
+    for fn in sorted(os.listdir(d)) if os.path.isdir(d) else []:
+        if not fn.endswith('.md'):
+            continue
+        text = open(os.path.join(d, fn), encoding='utf-8').read()
+        m = re.match(r'^---\n(.*?)\n---\n(.*)$', text, flags=re.S)
+        if not m:
+            sys.exit(f'debrief {agent}/{fn}: no front matter')
+        meta = dict(re.match(r'^(\w+):\s*(.*)$', l).groups() for l in m.group(1).splitlines() if l.strip())
+        meta['file'], meta['text'], meta['agent'] = fn, m.group(2), agent
+        out.append(meta)
+    return sorted(out, key=lambda x: (x.get('date', ''), x['file']), reverse=True)
+
+def debrief_html(db, depth):
+    """Debrief markdown with its screenshots: an image line must name img/<file> inside the member's own debriefs folder."""
+    out, buf = [], []
+    def flush():
+        if buf: out.append(render_md_text('\n'.join(buf))); buf.clear()
+    for line in db['text'].splitlines():
+        m = re.match(r'^!\[([^\]]*)\]\((img/[A-Za-z0-9_.-]+\.(?:png|jpg|jpeg|webp))\)\s*$', line.strip())
+        if m:
+            rel = f'admin/content/agents/{db["agent"]}/debriefs/{m.group(2)}'
+            flush()
+            if os.path.isfile(os.path.join(ROOT, rel)):
+                out.append(f'<figure class="shot"><img src="{U("../" * depth + rel)}" alt="{E(m.group(1))}" loading="lazy"><figcaption>{E(m.group(1))}</figcaption></figure>')
+            else:
+                out.append(f'<p class="small">Missing screenshot: <code>{E(m.group(2))}</code></p>')
+            continue
+        buf.append(line)
+    flush()
+    return '\n'.join(out)
+
+def build_members():
+    P = AGT.load_policies()
+    if not P:
+        return
+    ov, un, da = AGT.overlaps(P), AGT.unowned(P), AGT.dangling_appends(P)
+    groups = OrderedDict([('humans', 'The humans'), ('coordination', 'Coordination'), ('site', 'The site'), ('evidence', 'Evidence'), ('writing', 'Writing and analysis'), ('testing', 'Testing')])
+    rows, agg = [], []
+    for a, p in P.items():
+        st = AGT.load_status(a) or {}
+        dl = AGT.delta(a, P)
+        dbs = load_debriefs(a)
+        agg.append({'agent': a, 'address': p['address'], 'name': p['name'], 'kind': p['kind'], 'group': p['group'], 'title': p['title'],
+                    'policy_status': p['status'], 'member_status': p['member_status'],
+                    'writes': p['scope']['writes'], 'pages': p['scope']['pages'], 'vaults': p['scope']['vaults'],
+                    'delta': dl, 'status': st or None, 'debriefs': [{'file': x['file'], 'date': x.get('date'), 'title': x.get('title')} for x in dbs]})
+    write('data/agents.json', json.dumps({'about': 'Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.',
+                                          'version': VERSION, 'members': agg, 'overlaps': ov, 'unowned': un, 'dangling_appends': da}, indent=1, ensure_ascii=False) + '\n')
+    # one page per member
+    for x in agg:
+        a, p = x['agent'], P[x['agent']]
+        role = render_md_file(f'admin/content/agents/{a}/ROLE.md')
+        dl = x['delta']
+        dtab = ''
+        if dl:
+            G = {r['capability']: r for r in AGT.grant_rows()}
+            dtab = table(['Capability', 'In the mandate', 'Barrier today'], [[f'<code>{E(c)}</code>', 'wanted' if c not in dl['excess'] else ('<b>excess, unbounded</b>' if c in dl['unbounded'] else 'excess, behind a boundary'), E(G[c]['barrier_text'])] for c in G]) + \
+                   f'<p>Grant {dl["grant"]} (measured once for every newsroom session, <code>admin/security/abp/GRANT.md</code>) &middot; wanted {dl["wanted"]} &middot; shortfall {len(dl["shortfall"])} &middot; excess {len(dl["excess"])} &middot; <b>unbounded excess {len(dl["unbounded"])}</b>. Computed by <code>admin/build/agents.py</code>; never written by hand. The boundaries that would bound the rest are the editor\'s to set (<code>admin/security/abp/DELTA.md</code>).</p>'
+        st = x['status'] or {}
+        stt = ''
+        if st:
+            pol = st.get('policy', {})
+            stt = table(['Field', 'Value'], [['Round', E(json.dumps(st.get('round'))) if st.get('round') else E(st.get('state', ''))],
+                                              ['Done', '<br>'.join(E(d.get('what', '')) for d in st.get('done', [])) or 'nothing recorded'],
+                                              ['Next', '<br>'.join(E(n.get('what', '')) for n in st.get('next', [])) or 'nothing proposed'],
+                                              ['Asks', '<br>'.join(E(n.get('what', '')) + (f' (from {E(n.get("from", ""))})' if n.get('from') else '') for n in st.get('asks', [])) or 'none'],
+                                              ['Tokens', E('unknown' if st.get('tokens', {}).get('value') is None else str(st['tokens']['value'])) + ' &middot; ' + E(st.get('tokens', {}).get('how', ''))],
+                                              ['Policy', E(', '.join(f'{k} {v}' for k, v in pol.items() if k != 'version'))]])
+        dbh = ''.join(f'<article class="role" id="{E(db["file"][:-3])}"><h3>{E(db.get("title", db["file"]))}</h3><p class="small">{E(db.get("date", ""))} &middot; round {E(db.get("round", ""))} &middot; branch <code>{E(db.get("branch", ""))}</code> &middot; commits <code>{E(db.get("commits", ""))}</code> &middot; tokens {E(db.get("tokens", ""))} &middot; outside scope {E(db.get("outside_scope", ""))} &middot; overrides {E(db.get("overrides", ""))}</p>{debrief_html(db, 3)}</article>' for db in load_debriefs(a))
+        body = f"""
+<p class="kicker">Member &middot; {E(groups.get(p["group"], p["group"]))} &middot; policy {E(p["status"])} &middot; <code>{E(p["address"])}</code></p>
+<h1>{E(p["name"])}: {E(p["title"])}</h1>
+<p class="lead">The role definition, the agent behaviour policy and every round, from <code>admin/content/agents/{E(a)}/</code>. Who this member is on the team, and the tasks it holds, are on <a href="../../../team/index.html">the team</a>; every member's scope side by side is <a href="../roles/index.html">who owns what</a>.</p>
+{section("role", "The role", role)}
+{section("delta", "The delta, computed", dtab) if dtab else ""}
+{section("status", "Where it is now", stt or '<p class="small">No status file.</p>')}
+{section("debriefs", "Its rounds", dbh or '<p class="small">No debrief yet.</p>')}
+<p class="small">Files: <a href="{U(REPO_URL + "/tree/dev/admin/content/agents/" + a)}">admin/content/agents/{E(a)}/</a> &middot; the same data for every member in <a href="../../../data/agents.json">data/agents.json</a>.</p>
+"""
+        page(f'admin/agents/{a}/index.html', f'{p["name"]}: role, policy and rounds', f'{p["title"]}: the role definition, what it writes and owns, its agent behaviour policy and computed delta, and every round it has recorded.', body, kind='site')
+    # who owns what
+    trs = []
+    for g, gname in groups.items():
+        for x in [y for y in agg if y['group'] == g]:
+            dl = x['delta']
+            trs.append([f'<a href="../{E(x["agent"])}/index.html"><b>{E(x["name"])}</b></a><div class="note">{E(x["title"])}</div>', E(gname), E(x['member_status']),
+                        '<br>'.join(f'<code>{E(w)}</code>' for w in x['writes']) or '<span class="small">none</span>',
+                        '<br>'.join(f'<code>{E(w)}</code>' for w in x['pages']) or '<span class="small">none</span>',
+                        (f'{dl["wanted"]} wanted &middot; {len(dl["unbounded"])} unbounded' if dl else '<span class="small">no grant here</span>'), E(P[x['agent']]['status'])])
+    ovt = table(['Kind', 'Members', 'Patterns', 'Example'], [[E(o['kind']), E(o['a'] + ' and ' + o['b']), f'<code>{E(o["pattern_a"])}</code> / <code>{E(o["pattern_b"])}</code>', E(', '.join(o['files'][:2]))] for o in ov]) if ov else '<p><b>None.</b> No file and no page is claimed by two members.</p>'
+    body = f"""
+<h1>Every member: who owns what</h1>
+<p class="lead">{len(P)} members, {sum(1 for x in agg if x["kind"] == "agent")} of them agents. Each owns a set of files nobody else writes, a set of pages, and the vaults it may hold, in <code>admin/content/agents/&lt;id&gt;/policy.json</code>; shared files have one owner and everyone else only appends. {sum(1 for p in P.values() if p["status"] == "agreed")} of {len(P)} policies are agreed by the editor; the rest are drafts. A request outside a member's scope is refused with the owner named, and counted.</p>
+{section("overlaps", "Overlaps", ovt + f'<p>Checked by <code>admin/build/agents.py overlaps</code> against every source file in the repository and every page the build writes. Source files nobody owns: <b>{len(un)}</b>{(": " + ", ".join("<code>" + E(u) + "</code>" for u in un[:20])) if un else ""}. Appends to a file nobody owns: <b>{len(da)}</b>.</p>')}
+{section("members", "The members", table(['Member', 'Group', 'Status', 'Writes (exclusive)', 'Pages', 'Mandate', 'Policy'], trs, 'claims'))}
+{section("how", "How it works", render_md_file("admin/content/agents/README.md"))}
+"""
+    page('admin/agents/roles/index.html', 'Every member: who owns what', f'{len(P)} members of the newsroom, each with the files it writes, the pages it owns, its vaults and its agent behaviour policy; overlaps and unowned files checked on every build.', body, kind='site')
+    # every round
+    dbs = sorted([db for a in P for db in load_debriefs(a)], key=lambda d: (d.get('date', ''), d['agent'], d['file']), reverse=True)
+    srows = []
+    for x in agg:
+        if P[x['agent']]['kind'] != 'agent' or x['agent'] == 'mail':
+            continue
+        st = x['status'] or {}
+        pol = st.get('policy', {})
+        last = x['debriefs'][0] if x['debriefs'] else None
+        srows.append([f'<a href="../{E(x["agent"])}/index.html">{E(x["name"])}</a>', E(st.get('as_of', '')), f'<a href="../{E(x["agent"])}/index.html#{E(last["file"][:-3])}">{E(last.get("title") or last["file"])}</a>' if last else '<span class="small">none yet</span>',
+                      E(str(len(st.get('next', [])))), E(str(len(st.get('asks', [])))), E('unknown' if st.get('tokens', {}).get('value') is None else str(st['tokens']['value'])), E('not run' if pol.get('writes_outside_scope') is None else str(pol['writes_outside_scope'])), E(str(pol.get('overrides', 0))), E(str(pol.get('injection_seen', 0)))])
+    dl = ''.join(f'<li>{E(d.get("date", ""))} &middot; <a href="../{E(d["agent"])}/index.html#{E(d["file"][:-3])}"><b>{E(P[d["agent"]]["name"])}</b>: {E(d.get("title", d["file"]))}</a></li>' for d in dbs)
+    body = f"""
+<h1>Every round: what each member did</h1>
+<p class="lead">At the end of every round of work each agent writes a debrief with screenshots and updates its <code>status.json</code>: what it did, its tasks, what it proposes next, the tokens it used, its policy misses and what it needs. This page is all of them at once, for the conductor and the editor; <a href="../../../data/agents.json">data/agents.json</a> is the same as one file. The rules are in <code>admin/content/agents/README.md</code>.</p>
+{section("status", "Every agent, now", table(['Agent', 'As of', 'Last debrief', 'Next', 'Asks', 'Tokens', 'Outside scope', 'Overrides', 'Injection seen'], srows))}
+{section("debriefs", "Every debrief, newest first", f'<ul>{dl}</ul>' if dl else '<p class="small">No debriefs yet.</p>')}
+"""
+    page('admin/agents/rounds/index.html', 'Every round: what each member did', 'Every agent\'s latest status and every debrief, newest first: what was done, with screenshots, what is next, tokens, policy misses and asks.', body, kind='site')
 
 
 if __name__ == '__main__':

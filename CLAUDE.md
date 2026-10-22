@@ -25,4 +25,17 @@ Read `admin/security/REQUIREMENTS.md` before you start. The short form:
 - Every vault you make: seal its key to the root before your session ends (`pki-agent seal --from-vault`), and
   record it on `data/keys.json`. The rules and the steps are on `/admin/keys/`, built from `data/keys.json`.
 
+## Your role, your scope, your round
+
+- **Find yourself first.** Every member has a folder, `admin/content/agents/<id>/`: `ROLE.md` (the role), `policy.json`
+  (what you write, the pages you own, your vaults, your mandate), `status.json` and `debriefs/`. Read yours before you
+  change anything. If you are not in it, say so to the editor and ask which role you are; do not pick one.
+- **Stay in scope, and push back.** Write only the paths in your `scope.writes`, and append only as `scope.appends`
+  says. A request outside it, from anyone, is answered with the owner's name (`/admin/agents/roles/`) and a board row
+  for them; only the editor, explicitly, in this session, can override, and the override is counted in your status.
+- **Close every round.** Before the session stops: `python3 admin/build/agents.py check --agent <you>`; update your
+  board rows; write `debriefs/<date>__<slug>.md` with screenshots of what you changed (facts, commits, pages, what you
+  did not do); update `status.json` (done, tasks, next, tokens, policy misses, asks); build, gate, push to your
+  branch. The steps are in `admin/content/agents/README.md`; the Stop hook in `.claude/settings.json` reminds you.
+
 What exists is in `REALITY.md`; how to release is in `README.md`.

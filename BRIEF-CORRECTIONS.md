@@ -2,6 +2,10 @@
 
 Newest first. A correction names the date, what was wrong, what was found, and what was done instead. The mistake stays visible where it was made.
 
+## 2026-10-22: the librarian built the cartographer's graph
+
+The librarian built the fractal graph (`data/arcs.json`, `build_fractal()`, `/fractal/`) and changed the navigator and the stylesheet to show it. Graphs are the cartographer's scope, the navigator is the cartographer's and the stylesheet is design's. There was no map of who owns what when it was built; drawing that map is what showed it. The work stays as it is and is handed to the cartographer (board 091, 092 and 101); the librarian's own scope is the catalogue (`admin/content/agents/librarian/`).
+
 ## 2026-10-22: the fractal graph, and the review navigator that never opened
 
 The v0.1.0 correction below said the graph was not fractal. There is now one graph from the fifteen stakeholders down to the 359 changed hunks of the fix (`/fractal/`): every node opens into its own neighbourhood in the navigator, and every hunk links to its lines in php-src. It is fractal in that sense and not yet in the deeper one: a node does not yet open into a graph of a different kind (a source into its own claims graph, a function into its call graph).

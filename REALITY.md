@@ -96,7 +96,14 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - `/admin/keys/` from `data/keys.json`: the root (the editor's key, pinned from `CLAUDE.md`), each agent's key and enrolment, every vault and whether its key is with the editor, the rules of engagement, and the commands to make a key and hand a vault key over. The gate checks the file holds fingerprints and vault ids only.
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
-## The fractal graph (librarian)
+## Every member: a folder, a policy and a round (librarian)
+- `admin/content/agents/<id>/` for 25 members (2 humans, 23 agents; 3 of them on branches not yet in dev, 1 named by the editor with nothing in this repository): `ROLE.md`, `policy.json`, and for agents in this deployment `status.json` and `debriefs/`. All 25 policies are **drafts**: drafted by the librarian, not yet confirmed by their members or agreed by the editor.
+- `admin/build/agents.py`: overlaps (none), unowned source files and pages (none), shared files with no owner (none), the per-round scope check, the delta computed from the measured grant, and the Stop hook. The gate runs the first three as check 4h.
+- `/admin/agents/roles/`, `/admin/agents/rounds/`, a page per member at `/admin/agents/<id>/`, and `data/agents.json`.
+- The end-of-round rule in `CLAUDE.md`, and `.claude/settings.json` with a Stop hook that reminds a session once if its branch has commits and no debrief.
+- Not built: tokens per round (a session cannot read its own use); a boundary above the agents (only GitHub rulesets would be one, the editor's to set); the three older role registries are not yet derived from the folders.
+
+## The fractal graph (librarian) (handed to the cartographer)
 - `data/arcs.json` (authored by the librarian, ids checked by the gate): nine risks, seven story arcs, which stakeholder faces which risk, and which claim is about which flaw or part of the fix.
 - `data/fractal.json`, assembled by `build.py` from arcs, claims, timeline, personas, review and `review/code/files.json`: ten layers from stakeholders to changed lines, every line linked to its range in php-src. `/fractal/` shows the ladder, the coverage and five computed threads; `/fractal/ui/` walks it.
 - Coverage, computed every build: every changed hunk reaches a stakeholder, 215 of 359 through a named part of the fix; not yet joined: the files outside the engine and the 7.4 backport; by design never the vulnerable code before the fix.

@@ -259,6 +259,13 @@
    "used_on": "team/index.html"
   },
   {
+   "path": "data/agents.json",
+   "layer": "site",
+   "by": "admin/build/build.py (librarian@php.newsroom)",
+   "from": "admin/content/agents/*/: every member's policy.json, status.json and debriefs, with the computed delta and the scope checks",
+   "used_on": "admin/agents/rounds/index.html"
+  },
+  {
    "path": "data/versions.json",
    "layer": "site",
    "by": "admin/build/release.sh",
