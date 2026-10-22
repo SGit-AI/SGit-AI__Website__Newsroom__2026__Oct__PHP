@@ -178,7 +178,7 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: keys distributed to members (board 070); a schedule for the run (071); a digest page on the site (075). No member other than the conductor has opened its mailbox yet.
 
-### The fact-check desk (factcheck@php.newsroom, v0.5.3)
+### The fact-check desk (factcheck@php.newsroom)
 
 - `admin/factcheck/README.md`: the role, the model and the runbook. Two axes per statement: kind (record, event, state, count, quote, attribution, opinion, advice) and level of evidence A0 to A6; a verdict (holds, holds in part, not shown, refuted); tension (measures differently, disputed, contradicted, superseded), where an open contradiction caps the displayed level at A1 and a dispute at A2.
 

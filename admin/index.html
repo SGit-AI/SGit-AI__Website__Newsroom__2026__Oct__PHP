@@ -150,7 +150,7 @@
 <li><code>admin/build/issues_sync.py seed|import --vault &lt;clone&gt;</code>: the board into the issues vault, and back into <code>data/admin.json</code>; the round trip is byte-identical. <code>admin/build/conductor_drain.py --vault &lt;clone&gt;</code>: drains the conductor&#x27;s lane into <code>inbox/&lt;member&gt;/</code>.</li>
 <li>Not built: keys distributed to members (board 070); a schedule for the run (071); a digest page on the site (075). No member other than the conductor has opened its mailbox yet.</li>
 </ul>
-<h3>The fact-check desk (factcheck@php.newsroom, v0.5.3)</h3>
+<h3>The fact-check desk (factcheck@php.newsroom)</h3>
 <ul>
 <li><code>admin/factcheck/README.md</code>: the role, the model and the runbook. Two axes per statement: kind (record, event, state, count, quote, attribution, opinion, advice) and level of evidence A0 to A6; a verdict (holds, holds in part, not shown, refuted); tension (measures differently, disputed, contradicted, superseded), where an open contradiction caps the displayed level at A1 and a dispute at A2.</li>
 <li><code>admin/factcheck/assessments.json</code>: one grade per claim, each naming the captures read by file and sha256. <code>contradictions.json</code>: the contradiction ledger (board 061). <code>runs/</code>: one report per run. <code>fc.py</code>: check, changed, extract, ticket, export.</li>

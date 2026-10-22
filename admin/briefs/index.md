@@ -612,7 +612,7 @@ Status: accepted, by being sent. Author: Dinis Cruz, editor. A message to a new 
 
 ### Board items opened by this brief
 
-080 to 083, listed on the board.
+082 to 085, listed on the board.
 
 2026-10-22 · `2026-10-22__brief__scheduled-capture-json-and-analysis.md`
 

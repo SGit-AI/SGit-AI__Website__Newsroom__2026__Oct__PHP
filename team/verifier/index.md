@@ -32,7 +32,7 @@ Fact-check: how sure we arefactcheck/index.htmlEvery claimclaims/index.html
 |---|---|---|---|
 | 004 | Run the verifier over every claim: check each quote against its capture textThe BBC's NCSC sentence is the first case. | open |  |
 | 061 | The contradiction ledger: a first-class record per disagreement (the statements, who, when, captures, what each measures, the reading, status), seeded with the seven from the 22 October coverage review, and a page that shows itFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
-| 081 | Run the desk on a schedule, every four hours: the claims that changed, the open tickets, the weak and the contested, KEV and the moving sources; a full sweep once a dayFrom the brief: a fact-checker joins the team (22 October). | open |  |
+| 083 | Run the desk on a schedule, every four hours: the claims that changed, the open tickets, the weak and the contested, KEV and the moving sources; a full sweep once a dayFrom the brief: a fact-checker joins the team (22 October). | open |  |
 
 ## What they have done
 - Run 1, 22 October: all 70 claims graded against vault 31ccc515c29f; 3 high and 56 medium findings, 10 contradictions recorded, 6 pieces of outside evidence; Italy's offline advice found misread
@@ -41,7 +41,7 @@ Fact-check: how sure we arefactcheck/index.htmlEvery claimclaims/index.html
 
 | # | Task | Status | Shipped in |
 |---|---|---|---|
-| 080 | The fact-check desk: a spectrum of evidence (kind, level A0 to A6, verdict, tension), an Issues-FS tracker, the contradiction ledger, the first full run over all 70 claims, and /factcheck/ with a view of only what can be relied onFrom the brief: a fact-checker joins the team (22 October). | done | 0.5.3 |
+| 082 | The fact-check desk: a spectrum of evidence (kind, level A0 to A6, verdict, tension), an Issues-FS tracker, the contradiction ledger, the first full run over all 70 claims, and /factcheck/ with a view of only what can be relied onFrom the brief: a fact-checker joins the team (22 October). | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/verifier/` in the mail vault (`fmb2tpl2`).
