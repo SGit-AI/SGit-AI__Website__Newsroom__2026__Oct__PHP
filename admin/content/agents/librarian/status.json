@@ -2,40 +2,98 @@
  "schema": "newsroom/agent-status/v1",
  "agent": "librarian",
  "as_of": "2026-10-22",
- "round": {"n": 1, "date": "2026-10-22", "branch": "claude/sweet-wright-1e5iju", "commits": ["b4ff79bb", "this round's commit (named in the debrief's commit message)"]},
- "state": "round 1 closed: every member drafted, scope map and round system built; waiting on the editor (policies), security (review) and dev (carry into dev)",
+ "round": {
+  "n": 2,
+  "date": "2026-10-22",
+  "branch": "claude/sweet-wright-1e5iju",
+  "commits": [
+   "this round's commit"
+  ]
+ },
+ "state": "round 2 closed: the vault-key handover added to CLAUDE.md at the editor's request",
  "done": [
-  {"what": "Drafted a folder for all 25 members (ROLE.md, policy.json; status.json and debriefs/ for the 21 agents in this deployment)", "evidence": "admin/content/agents/"},
-  {"what": "Built the scope map and checks: overlaps 0, unowned source files 0 of 306, unowned pages 0 of 422, shared files with no owner 0", "evidence": "python3 admin/build/agents.py report; gate check 4h"},
-  {"what": "Published /admin/agents/roles/, /admin/agents/rounds/, a page per member with its computed delta, and data/agents.json", "evidence": "admin/build/build.py, block 'every member'"},
-  {"what": "Added the end-of-round rule to CLAUDE.md and a Stop hook in .claude/settings.json", "evidence": "admin/build/agents.py stop-hook"},
-  {"what": "Wrote the brief, a correction (the librarian built the cartographer's graph), REALITY.md's section and board rows 093 to 101; handed 091 and 092 to the cartographer", "evidence": "admin/content/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round.md"}
+  {
+   "what": "Drafted a folder for all 25 members (ROLE.md, policy.json; status.json and debriefs/ for the 21 agents in this deployment)",
+   "evidence": "admin/content/agents/"
+  },
+  {
+   "what": "Built the scope map and checks: overlaps 0, unowned source files 0 of 306, unowned pages 0 of 422, shared files with no owner 0",
+   "evidence": "python3 admin/build/agents.py report; gate check 4h"
+  },
+  {
+   "what": "Published /admin/agents/roles/, /admin/agents/rounds/, a page per member with its computed delta, and data/agents.json",
+   "evidence": "admin/build/build.py, block 'every member'"
+  },
+  {
+   "what": "Added the end-of-round rule to CLAUDE.md and a Stop hook in .claude/settings.json",
+   "evidence": "admin/build/agents.py stop-hook"
+  },
+  {
+   "what": "Wrote the brief, a correction (the librarian built the cartographer's graph), REALITY.md's section and board rows 093 to 101; handed 091 and 092 to the cartographer",
+   "evidence": "admin/content/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round.md"
+  },
+  {
+   "what": "Added 'Handing a vault key to the editor' to CLAUDE.md: the pki.sgit.ai handover procedure in five steps, the root pinned from CLAUDE.md, recipients only from the editor in the session",
+   "evidence": "CLAUDE.md"
+  }
  ],
  "tasks": {
-  "board": ["093 done", "091 handed to cartographer", "092 handed to cartographer"],
+  "board": [
+   "093 done",
+   "091 handed to cartographer",
+   "092 handed to cartographer",
+   "102 opened for security"
+  ],
   "note": "rows 094 to 101 are owned by the editor, the conductor, security, dev, the briefing writer and the cartographer"
  },
  "next": [
-  {"what": "When the editor agrees or corrects a policy, update the scope map and re-run the overlap check", "why": "the drafts are only drafts until agreed (board 094)"},
-  {"what": "Index the first debrief of each member as it arrives, and flag contradictions between them on /admin/agents/rounds/", "why": "part of the catalogue: the conductor reads one page"},
-  {"what": "Catch the three branch members (desk, liaison, storyboard) when dev carries them in: check their files against their drafted policies", "why": "their real paths may differ from what their branches showed on 22 October"},
-  {"what": "Back to the reader questions: The Times capture (board 014) and new questions from readers", "why": "the librarian's first beat"}
+  {
+   "what": "When the editor agrees or corrects a policy, update the scope map and re-run the overlap check",
+   "why": "the drafts are only drafts until agreed (board 094)"
+  },
+  {
+   "what": "Index the first debrief of each member as it arrives, and flag contradictions between them on /admin/agents/rounds/",
+   "why": "part of the catalogue: the conductor reads one page"
+  },
+  {
+   "what": "Catch the three branch members (desk, liaison, storyboard) when dev carries them in: check their files against their drafted policies",
+   "why": "their real paths may differ from what their branches showed on 22 October"
+  },
+  {
+   "what": "Back to the reader questions: The Times capture (board 014) and new questions from readers",
+   "why": "the librarian's first beat"
+  }
  ],
  "asks": [
-  {"what": "Agree or correct the 25 drafted policies", "from": "the editor"},
-  {"what": "Review gate check 4h, the CLAUDE.md section and the Stop hook before they reach dev", "from": "security@php.newsroom"},
-  {"what": "Say where the ontologist works: no file, branch or role row in this repository names it", "from": "the editor"},
-  {"what": "Fill the cartographer, or say who holds the graphs until it is filled", "from": "the editor"}
+  {
+   "what": "Agree or correct the 25 drafted policies",
+   "from": "the editor"
+  },
+  {
+   "what": "Review gate check 4h, the CLAUDE.md section and the Stop hook before they reach dev",
+   "from": "security@php.newsroom"
+  },
+  {
+   "what": "Say where the ontologist works: no file, branch or role row in this repository names it",
+   "from": "the editor"
+  },
+  {
+   "what": "Fill the cartographer, or say who holds the graphs until it is filled",
+   "from": "the editor"
+  }
  ],
- "tokens": {"value": null, "how": "not readable from inside a Claude Code session; the session's usage is on the platform, not in the container"},
+ "tokens": {
+  "value": null,
+  "how": "not readable from inside a Claude Code session; the session's usage is on the platform, not in the container"
+ },
  "policy": {
   "version": "2026-10-22, draft",
-  "out_of_scope_requests": 1,
+  "out_of_scope_requests": 2,
   "pushbacks": 0,
-  "overrides": 1,
-  "writes_outside_scope": 75,
+  "overrides": 2,
+  "writes_outside_scope": 1,
   "injection_seen": 0,
-  "detail": "One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098)."
+  "detail": "One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098). Round 2: one more request outside scope, the editor's, explicit: CLAUDE.md (security's) gained the handover section; counted as an override; 1 file outside scope."
  },
- "debrief": "debriefs/2026-10-22__agents-and-rounds.md"
+ "debrief": "debriefs/2026-10-22__vault-key-handover.md"
 }

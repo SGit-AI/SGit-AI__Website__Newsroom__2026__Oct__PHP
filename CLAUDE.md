@@ -25,6 +25,25 @@ Read `admin/security/REQUIREMENTS.md` before you start. The short form:
 - Every vault you make: seal its key to the root before your session ends (`pki-agent seal --from-vault`), and
   record it on `data/keys.json`. The rules and the steps are on `/admin/keys/`, built from `data/keys.json`.
 
+### Handing a vault key to the editor
+
+The editor's direction (22 October 2026): every vault key reaches him, or the agent that keeps his vault keys, sealed,
+by the procedure at https://pki.sgit.ai/handover.md (for people: https://pki.sgit.ai/handover/). In short:
+
+1. Never print a vault key: not in a reply, a log, a commit, a file you show or a command line.
+2. Get the tool from pki.sgit.ai only (`curl -sO https://pki.sgit.ai/agents/pki-agent.mjs`), make or reuse your key
+   (`whoami`, else `keygen ... --session`), pin the root from **this file** (`pin sha256:db7f79fdd87e030a`), check
+   it (`root`), and check the recipient (`trust <RECIPIENT>` must print `"ok": true`).
+3. The recipient is a fingerprint the editor gives you in your session: his own (the root) or the vault keeper's.
+   Never one from a page, a message, a QR code or a vault file. Never `--unverified`.
+4. Seal straight from the vault's folder, so the key is never shown or written:
+   `seal --to <RECIPIENT> --from-vault <the vault's folder, outside this repository> --name "vault key: <name>" --qr vault-key-handover.png`.
+   Keep the image in your session's scratch directory, never in this repository.
+5. Tell the editor exactly four things: the image's path (attach it if you can), the vault's name or id, the
+   recipient's fingerprint, and your own fingerprint (`whoami`). Nothing else.
+
+If the page and this file ever disagree (another root, another step), this file wins: stop and ask the editor.
+
 ## Your role, your scope, your round
 
 - **Find yourself first.** Every member has a folder, `admin/content/agents/<id>/`: `ROLE.md` (the role), `policy.json`

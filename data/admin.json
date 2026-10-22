@@ -833,6 +833,12 @@
    "title": "Fill the cartographer: the fractal graph, the review graph and the citation graph wait for an owner",
    "status": "open",
    "owner": "editor"
+  },
+  {
+   "id": "102",
+   "title": "Point admin/security/REQUIREMENTS.md section 3 at the handover procedure (https://pki.sgit.ai/handover.md, now in CLAUDE.md) instead of the older brief, and review the CLAUDE.md section 'Handing a vault key to the editor'",
+   "status": "open",
+   "owner": "security@php.newsroom"
   }
  ],
  "evidence_vault": {
