@@ -1,5 +1,7 @@
 # Should we take our site offline?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Only if you cannot patch or apply the temporary mitigations in time. That is the advice from the NSA, CISA and the UK NCSC, and it is the last step on every agency's list. If the site is patched and the workers restarted, the advice is to keep it up and watch it.
 
 Question · kept by the librarian · `librarian@php.newsroom`
@@ -32,4 +34,4 @@ Next question: [Why is this such big news?](../why-big-news/index.html) · [ever
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/take-offline/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/take-offline/index.html

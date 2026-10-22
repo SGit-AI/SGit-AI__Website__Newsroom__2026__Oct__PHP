@@ -1,5 +1,7 @@
 # Dan Lorenc, Chainguard: what they say
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Dan Lorenc, Chainguard: shipped patched images early; says exploits were in the wild and denies leaking; the claims this site attributes to them and their sources.
 
 Party
@@ -23,4 +25,4 @@ shipped patched images early; says exploits were in the wild and denies leaking
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/chainguard-lorenc/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/chainguard-lorenc/index.html

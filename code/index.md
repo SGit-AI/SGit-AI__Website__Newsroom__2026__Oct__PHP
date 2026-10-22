@@ -1,5 +1,7 @@
 # The code: where php2shell lives and what the fix does
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Read from a clone of php/php-src: the fix commit (389 files, authored 18 October, public 21 October 14:06 UTC), the engine mechanism it replaces, the hunks that matter, and the end-of-life backport.
 
 # The code: where the bug is, and what the fix does
@@ -76,4 +78,4 @@ How the bug is reached from a request is on [the two flaws](../flaws/index.html)
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/code/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/code/index.html

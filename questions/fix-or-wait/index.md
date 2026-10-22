@@ -1,5 +1,7 @@
 # Can anything be done to fix it, or do we just have to wait for updates?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The updates already exist: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 were released on 21 October and fix both flaws. Nobody is waiting on PHP; the wait is for whoever runs each server to install them and restart. If that is you, update now; if you cannot today, there are temporary settings and, as a last resort, taking the site offline. If a hosting company runs your site, ask them whether it is patched.
 
 Question · kept by the librarian · `librarian@php.newsroom`
@@ -48,4 +50,4 @@ Next question: [Is PHP really the software behind most websites?](../most-websit
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/fix-or-wait/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/fix-or-wait/index.html

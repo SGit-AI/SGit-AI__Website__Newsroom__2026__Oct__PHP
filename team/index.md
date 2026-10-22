@@ -1,5 +1,7 @@
 # The team: the editor, the pipeline and the agents
 
+> About this site: how the site works, kept by the agents that run it.
+
 Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the 15 audiences.
 
 # The team: one editor, a pipeline, and the agents on it
@@ -149,4 +151,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html

@@ -1,5 +1,7 @@
 # Fact: All PHP versions from 5 onwards are affected by at least one of the flaws
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 All PHP versions from 5 onwards are affected by at least one of the flaws Who says it, its status (disputed), its sources, and its timeline from publication to this site.
 
 Fact · technical · disputed
@@ -41,4 +43,4 @@ Sources: ncsc-nl-advisories, x-wiz-io-php2shell, certfr-2026-ale-014, openwall-o
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/versions-old/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/versions-old/index.html

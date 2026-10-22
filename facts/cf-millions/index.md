@@ -1,5 +1,7 @@
 # Fact: Exploit attempts across Cloudflare's network: thousands in the ten hours before 
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Exploit attempts across Cloudflare's network: thousands in the ten hours before announcement, tens of thousands within 45 minutes after, hundreds of thousands within two hours, millions by 22 October 01:25 UTC Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · exploitation · reported
@@ -37,4 +39,4 @@ Sources: x-eastdakota-php2shell-stats
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/cf-millions/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/cf-millions/index.html

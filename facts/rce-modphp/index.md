@@ -1,5 +1,7 @@
 # Fact: Unauthenticated RCE over HTTP against Apache mod_php with default settings, befo
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Unauthenticated RCE over HTTP against Apache mod_php with default settings, before any application code runs Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · technical · confirmed
@@ -39,4 +41,4 @@ Sources: github-ghsa-w8hw-w9fx-j79w, openwall-oss-security-2026-10-21-6, php-net
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/rce-modphp/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/rce-modphp/index.html

@@ -1,5 +1,7 @@
 # Is PHP really the software behind most websites?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Roughly, if you count websites, not servers or the internet. Cloudflare and OpenAI say PHP is used by almost 70% of websites; Wiz's '70% of the Internet' is the same figure restated and is not supported by anything the site has captured. Counts of internet-facing PHP hosts are in the low millions (2.6 million, of which Censys counted 1.57 million unpatched on 21 October).
 
 Question · kept by the librarian · `librarian@php.newsroom`
@@ -33,4 +35,4 @@ Next question: [Has anyone actually been hacked?](../been-hacked/index.html) · 
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.html

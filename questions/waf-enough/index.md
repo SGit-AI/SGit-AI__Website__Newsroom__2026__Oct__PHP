@@ -1,5 +1,7 @@
 # We are behind Cloudflare (or another firewall). Are we safe?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Safer, not safe. Cloudflare's rules were live about nine hours before disclosure, on every plan including Free, and Akamai, Fastly, Imperva and Fortinet followed. Every one of them calls it a stopgap and says patch anyway: attackers mutate payloads, and the rules only see traffic that goes through the firewall.
 
 Question · kept by the librarian · `librarian@php.newsroom`
@@ -28,4 +30,4 @@ Next question: [Do our developers need to change our code?](../change-code/index
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/waf-enough/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/waf-enough/index.html

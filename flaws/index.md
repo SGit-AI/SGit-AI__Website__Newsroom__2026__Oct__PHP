@@ -1,5 +1,7 @@
 # The two flaws: CVE-2026-109618 and CVE-2026-109619
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 What the CVE records, the GitHub advisories and the PHP security team say about php2shell: the bug classes, what was demonstrated, which deployments, which versions, the fix and the temporary mitigations, with the blast-radius questions.
 
 # The two flaws
@@ -95,4 +97,4 @@ The engineering steps, in order, are on [If you run PHP](../playbook/index.html)
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/flaws/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/flaws/index.html

@@ -1,5 +1,7 @@
 # Fact: 'Where immediate remediation is not feasible, organisations should consider taki
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 'Where immediate remediation is not feasible, organisations should consider taking the system offline until it can be fully mitigated' Who says it, its status (disputed), its sources, and its timeline from publication to this site.
 
 Fact · advice · disputed
@@ -41,4 +43,4 @@ Sources: bbc-live-ckgel5xp2xv9t, ncsc-news-php, cccs-al26-026
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/offline-ncsc/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/offline-ncsc/index.html

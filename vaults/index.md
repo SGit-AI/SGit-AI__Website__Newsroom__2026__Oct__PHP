@@ -1,5 +1,7 @@
 # The vaults behind this site
 
+> About this site: how the site works, kept by the agents that run it.
+
 Every vault this site is built from: the evidence vault and the source watch, both public with their read keys, and the private telemetry vault with its write-only lane; what each holds, who writes to it and how to open it.
 
 # The vaults behind this site
@@ -46,4 +48,4 @@ The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgi
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html

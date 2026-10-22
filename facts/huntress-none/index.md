@@ -1,5 +1,7 @@
 # Fact: No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 Octob
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no public exploit code known to Huntress Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · exploitation · reported
@@ -35,4 +37,4 @@ Sources: huntress-php2shell-rapid-response
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/huntress-none/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/huntress-none/index.html

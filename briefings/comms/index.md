@@ -1,5 +1,7 @@
 # Briefing for a media and communications team: What can we say that is true, what should we not say, and what will we be asked?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The php2shell story for a media and communications team: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
 Briefing for Riley, communications team · ******Plain English · from the same 70 claims, selected and ordered for one reader
@@ -103,4 +105,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/comms/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/comms/index.html

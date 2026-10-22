@@ -1,5 +1,7 @@
 # Fact: Edge protections went live hours before disclosure: Cloudflare at 03:02 UTC; Imp
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Edge protections went live hours before disclosure: Cloudflare at 03:02 UTC; Imperva, Akamai and Fastly on 21 October; Fortinet signatures by 22 October Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · advice · confirmed
@@ -45,4 +47,4 @@ Sources: cloudflare-blog-php2shell-waf, imperva-blog-php2shell, akamai-blog-php-
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/waf-nine-hours/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/waf-nine-hours/index.html

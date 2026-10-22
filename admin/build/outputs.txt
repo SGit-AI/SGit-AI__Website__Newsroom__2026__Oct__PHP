@@ -69,6 +69,8 @@ admin/index.html
 admin/index.md
 admin/roles/index.html
 admin/roles/index.md
+admin/status-json/index.html
+admin/status-json/index.md
 admin/telemetry/index.html
 admin/telemetry/index.md
 admin/vault/index.html
@@ -87,6 +89,8 @@ articles/php2shell-in-perspective/index.html
 articles/php2shell-in-perspective/index.md
 articles/where-php2shell-stands/index.html
 articles/where-php2shell-stands/index.md
+articles/why-not-patch-every-version/index.html
+articles/why-not-patch-every-version/index.md
 assets/personas.js
 assets/site.js
 billing/index.html
@@ -302,6 +306,8 @@ method/index.html
 method/index.md
 numbers/index.html
 numbers/index.md
+patching/index.html
+patching/index.md
 pipeline/index.html
 pipeline/index.md
 playbook/index.html
@@ -630,6 +636,7 @@ sources/yle-finland-government-sites-shut/index.html
 sources/yle-finland-government-sites-shut/index.md
 start/index.html
 start/index.md
+status.json
 status/index.html
 status/index.md
 summary/index.html

@@ -278,9 +278,10 @@
   },
   {
    "id": "024",
-   "title": "Re-export from the vault head (184 sources against 144 here) and publish /status.json in the newsroom's shape (newsroom review, change 4)",
-   "status": "open",
-   "owner": "dev"
+   "title": "Publish /status.json in a stable shape (schema sgit.newsroom.story-status/1), with its own admin page; the re-export from the vault head is board item 039",
+   "status": "done",
+   "owner": "dev",
+   "version": "0.4.1"
   },
   {
    "id": "025",
@@ -369,6 +370,43 @@
    "title": "The source watch is slow to open in the browser: with no app, the official UI decrypts the folder tree (2,678 objects) before it shows anything; from this sandbox that took 17 minutes. A small vault app that reads index/ and state/ first, or a lighter front vault, would open it in seconds",
    "status": "open",
    "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "039",
+   "title": "Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "040",
+   "title": "Guest writers and interviewers: an intake (how a piece reaches the editor, the byline, the 'Guest' mark, the licence) and the first guest piece",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "041",
+   "title": "Follow the patching curve: re-read the NCSC-NL inventory per commit and draw how the 418 'under investigation' rows turn into fixed or vulnerable",
+   "status": "open",
+   "owner": "journalist"
+  },
+  {
+   "id": "042",
+   "title": "Top-level navigation, Research and Stories: the editor's call on names and order after living with the first cut",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "043",
+   "title": "Capture W3Techs' PHP version shares alongside its language share (see board 033): the number the patching story says is missing",
+   "status": "open",
+   "owner": "collector-researchers"
+  },
+  {
+   "id": "044",
+   "title": "Patching and status.json: /patching/ with every downstream row checked against the inventory; the story 'Why can't every version of PHP just be patched?'; Research and Stories zones in the menu and an origin strip on every page",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.4.1"
   }
  ],
  "evidence_vault": {

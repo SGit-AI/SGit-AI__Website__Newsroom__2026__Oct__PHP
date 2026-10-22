@@ -1,5 +1,7 @@
 # Weird Gloop (cookmeplox): what they say
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Weird Gloop (cookmeplox): the one operator with a measured outage; the claims this site attributes to them and their sources.
 
 Party
@@ -21,4 +23,4 @@ the one operator with a measured outage
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/weirdgloop/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/weirdgloop/index.html

@@ -1,5 +1,7 @@
 # The numbers: 70%, 30 million, 2.6 million, 6,000, 674
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Every scale figure in circulation about php2shell, with what it measures, who said it, whether anyone checked it, and why they differ by four orders of magnitude.
 
 # The numbers, and what each one measures
@@ -44,4 +46,4 @@ The number a reader actually wants, how many systems were exploitable at a given
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/numbers/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/numbers/index.html

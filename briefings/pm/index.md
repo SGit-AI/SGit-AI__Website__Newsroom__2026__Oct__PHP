@@ -1,5 +1,7 @@
 # Briefing for a project or programme manager: What unplanned work does this create, who do I chase, and what do I tell stakeholders?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The php2shell story for a project or programme manager: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
 Briefing for Taylor, project or programme manager · ******Plain English · from the same 70 claims, selected and ordered for one reader
@@ -93,4 +95,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/pm/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/pm/index.html

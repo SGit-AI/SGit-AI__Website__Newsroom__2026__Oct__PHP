@@ -1,5 +1,7 @@
 # Fact: The leak started with an anonymous Hacker News post citing a reliable source, wh
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The leak started with an anonymous Hacker News post citing a reliable source, which came down after screenshots spread; a screenshot of the 'PHP2Shell tool' credited to Calif.io and a short exploitation video also went up and came down Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · leak · reported
@@ -37,4 +39,4 @@ Sources: daubois-blog-php2shell-rumors
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/leak-hn/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/leak-hn/index.html

@@ -1,5 +1,7 @@
 # Do I need to change my passwords?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Not because of this, as things stand. The flaw is on web servers, not on your devices, and no site has announced a breach through it. If a site you use announces one, follow its instructions. Using a different password on every site is the protection that holds whatever the next flaw is.
 
 Question · kept by the librarian · `librarian@php.newsroom`
@@ -31,4 +33,4 @@ Next question: [How do I know whether my site is affected?](../am-i-affected/ind
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/passwords/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/passwords/index.html

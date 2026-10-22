@@ -1,5 +1,7 @@
 # Briefing for a head of AppSec: Which of our applications are in scope, which settings matter, and what do we add to the pipeline?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The php2shell story for a head of AppSec: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
 Briefing for Jamie, head of appsec · ******Deeply technical · from the same 70 claims, selected and ordered for one reader
@@ -101,4 +103,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/appsec/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/appsec/index.html

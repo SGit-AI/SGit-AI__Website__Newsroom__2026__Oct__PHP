@@ -1,5 +1,7 @@
 # Do our developers need to change our code?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 No. Both bugs are in the C engine that runs PHP, not in PHP code, and the demonstrated attack runs before any application code. The fix is updating the PHP runtime and restarting it. What developers can do is check the version on the machines they deploy to and rebuild container images.
 
 Question · kept by the librarian · `librarian@php.newsroom`
@@ -29,4 +31,4 @@ Next question: [Can anything be done to fix it, or do we just have to wait for u
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/change-code/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/change-code/index.html

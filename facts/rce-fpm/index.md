@@ -1,5 +1,7 @@
 # Fact: Remote code execution is confirmed on PHP-FPM
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Remote code execution is confirmed on PHP-FPM Who says it, its status (disputed), its sources, and its timeline from publication to this site.
 
 Fact · technical · disputed
@@ -43,4 +45,4 @@ Sources: php-foundation-blog-security-release, github-ghsa-6wmf-4rv5-p3rp, githu
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/rce-fpm/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/rce-fpm/index.html

@@ -1,5 +1,7 @@
 # Fact: Criminals are using AI to 'vibe code' an attack method
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Criminals are using AI to 'vibe code' an attack method Who says it, its status (unverified), its sources, and its timeline from publication to this site.
 
 Fact · exploitation · unverified
@@ -35,4 +37,4 @@ Sources: bbc-live-ckgel5xp2xv9t
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/vibe-code/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/vibe-code/index.html

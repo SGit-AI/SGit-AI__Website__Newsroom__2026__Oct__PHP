@@ -1,5 +1,7 @@
 # Questions readers ask about php2shell
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Can anything be done or do we wait for updates? Has anyone been hacked? Is it really most websites? Short answers to paste back, the sources behind them, and the pages that carry each one.
 
 # Questions readers ask
@@ -36,52 +38,6 @@ An article a reader has seen is listed here until a collector captures it into t
 - [The PHP security flaws, explained from the start](../explained/index.html): No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.
 - [Glossary: every php2shell term in plain English](../glossary/index.html): 40 terms from the php2shell story (PHP, CVE, CVSS, remote code execution, WAF, KEV and more), each explained in plain English, in the sense it has in this story.
 
-### The story
-- [PHP in October 2026: two critical security flaws, tracked as evidence](../index.html): PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
-- [What's new: every change, release by release](../whatsnew/index.html): What changed on this site in each release: new facts, facts whose status changed, the briefings that moved for each reader and the sections that were rewritten.
-- [The specialist summary: CVE-2026-109618 and CVE-2026-109619](../summary/index.html): The technical summary of the two PHP flaws of October 2026: what is established with its sources, the six scale figures, the open questions and the last 48 hours.
-- [The two flaws: CVE-2026-109618 and CVE-2026-109619](../flaws/index.html): What the CVE records, the GitHub advisories and the PHP security team say about php2shell: the bug classes, what was demonstrated, which deployments, which versions, the fix and the temporary mitigations, with the blast-radius questions.
-- [The code: where php2shell lives and what the fix does](../code/index.html): Read from a clone of php/php-src: the fix commit (389 files, authored 18 October, public 21 October 14:06 UTC), the engine mechanism it replaces, the hunks that matter, and the end-of-life backport.
-- [The timeline, 2024 to the latest capture](../timeline/index.html): 68 dated events in the php2shell story, from the 2024 audit through discovery, coordinated disclosure, the leak, the release and the response, every one tied to a captured source.
-- [Who found php2shell, and what the AI did](../discovery/index.html): Calif, OpenAI and Wiz each claim the discovery of php2shell; their own timelines side by side, the 2024 audit that saw it first, the credits on the advisories, and what the sources do and do not say about the models.
-- [How the coordinated disclosure broke](../leak/index.html): Hour by hour from the first circulation of the CVE IDs on 20 October to the release on 21 October: the pre-announcement, the deleted video, the early WAF rules, the embargo break, the first attempts, and the three accounts that disagree on what leaked.
-- [Exploitation signals, in order](../exploitation/index.html): Every signal of php2shell exploitation in the captured sources, from an Amazon honeypot hit on 17 October to the KEV catalog, with what exploitation would look like on a host.
-- [The fix, mapped to the code](../review/index.html): The php2shell fix as layered graphs: the two flaws, the design of the patch, and the php-src files and functions it changed, derived from the diff.
-- [Walk the graph: the fix and the code](../review/ui/index.html): A navigator over the php2shell review graph: the fix, the flaws it closes, and the files and functions it changed, each a link.
-- [Impact: taken offline versus compromised](../impact/index.html): Two ledgers for php2shell: every system reported taken offline with who said so, and every claim of compromise with its basis. As of the latest capture, no named organisation has confirmed a compromise.
-- [Detection and defence: what blocks php2shell and what shows it](../defence/index.html): What Cloudflare, Akamai, Fastly, Imperva, AWS and Fortinet deployed and what each says it cannot do; the community Suricata, Sigma, Falco and ModSecurity rules; the host signals; and how hard the exploit is according to the vendors who tried.
-- [In context: php2shell against Kaminsky, Heartbleed, Shellshock, Log4Shell and the last PHP RCE](../context/index.html): Ten landmark vulnerabilities with their CVE records and KEV rows, the KEV catalog counted, and what the comparison says about severity, exposure, urgency and the discovery pipeline.
-- [If you run PHP: the steps, in order, with their sources](../playbook/index.html): Inventory, patch, mitigate, shield, isolate or take offline, look for compromise, verify: every agency's php2shell advice merged into one ordered list with the sentence each step comes from.
-
-### Articles
-- [All articles, dated](../articles/index.html):
-- [Journalist: Where php2shell stands](../articles/where-php2shell-stands/index.html):
-- [Historian: php2shell in perspective](../articles/php2shell-in-perspective/index.html):
-
-### The analysis
-- [Every claim, with its status and sources](../claims/index.html): 70 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
-- [The numbers: 70%, 30 million, 2.6 million, 6,000, 674](../numbers/index.html): Every scale figure in circulation about php2shell, with what it measures, who said it, whether anyone checked it, and why they differ by four orders of magnitude.
-- [What sixteen agencies actually advise](../agencies/index.html): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
-- [Affected systems: versions, deployments, applications, inventory](../affected/index.html): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
-- [Who says what: every party and its claims](../actors/index.html): 27 parties in the php2shell story, each with the claims this site attributes to it and the sources behind them.
-- [The story as a graph: claims, events and the sources they cite](../graph/index.html): 209 nodes and 281 citation edges from the php2shell claims and timeline to the captured sources, drawn from the same rows as the text, with the JSON to download.
-- [Second readings: other models](../readings/index.html):
-- [Perplexity's notes, in full](../readings/perplexity-2026-10-22/index.html):
-
-### The evidence
-- [Every source: 144 pages, 137 captures, 857 hashes](../sources/index.html): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
-- [The NCSC-NL inventory: 674 products](../affected/software.html): Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, with its status per CVE.
-- [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
-- [Evidence, derived, authored](../layers/index.html):
-- [The fact pipeline: from a web page to a reader](../pipeline/index.html): How a source becomes a fact and a fact reaches a reader on this site: found, saved, read, cited, given a status, built into versioned sections and selected per reader, with counts at every stage and the facts by status in every release.
-- [How the story changed, release by release](../versions/index.html): Every section of the site, every reader's briefing and every fact, versioned across every release: what changed, when, and in which release.
-
-### Vaults
-- [The vaults behind this site](../vaults/index.html): Every vault this site is built from: the evidence vault and the source watch, both public with their read keys, and the private telemetry vault with its write-only lane; what each holds, who writes to it and how to open it.
-- [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
-- [The source watch: every outside source on php2shell, watched and snapshotted](../vaults/source-watch/index.html): The public source-watch vault: 328 pages from 175 publishers in 38 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
-- [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
-
 ### Briefings
 - [Briefing for a curious reader: What happened, does it affect me, and should I worry?](../briefings/everyone/index.html): The php2shell story for a curious reader: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 - [Briefing for a website owner: My website runs on WordPress or similar: am I affected, and what do I ask my host?](../briefings/site-owner/index.html): The php2shell story for a website owner: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
@@ -99,8 +55,54 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Briefing for a developer: Is my code the problem, what do I change, and how do I check the box I deployed to?](../briefings/developer/index.html): The php2shell story for a developer: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 - [Briefing for a media and communications team: What can we say that is true, what should we not say, and what will we be asked?](../briefings/comms/index.html): The php2shell story for a media and communications team: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-### About
+### The incident
+- [PHP in October 2026: two critical security flaws, tracked as evidence](../index.html): PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
+- [What's new: every change, release by release](../whatsnew/index.html): What changed on this site in each release: new facts, facts whose status changed, the briefings that moved for each reader and the sections that were rewritten.
+- [The specialist summary: CVE-2026-109618 and CVE-2026-109619](../summary/index.html): The technical summary of the two PHP flaws of October 2026: what is established with its sources, the six scale figures, the open questions and the last 48 hours.
+- [The two flaws: CVE-2026-109618 and CVE-2026-109619](../flaws/index.html): What the CVE records, the GitHub advisories and the PHP security team say about php2shell: the bug classes, what was demonstrated, which deployments, which versions, the fix and the temporary mitigations, with the blast-radius questions.
+- [The code: where php2shell lives and what the fix does](../code/index.html): Read from a clone of php/php-src: the fix commit (389 files, authored 18 October, public 21 October 14:06 UTC), the engine mechanism it replaces, the hunks that matter, and the end-of-life backport.
+- [The timeline, 2024 to the latest capture](../timeline/index.html): 68 dated events in the php2shell story, from the 2024 audit through discovery, coordinated disclosure, the leak, the release and the response, every one tied to a captured source.
+- [Who found php2shell, and what the AI did](../discovery/index.html): Calif, OpenAI and Wiz each claim the discovery of php2shell; their own timelines side by side, the 2024 audit that saw it first, the credits on the advisories, and what the sources do and do not say about the models.
+- [How the coordinated disclosure broke](../leak/index.html): Hour by hour from the first circulation of the CVE IDs on 20 October to the release on 21 October: the pre-announcement, the deleted video, the early WAF rules, the embargo break, the first attempts, and the three accounts that disagree on what leaked.
+- [Exploitation signals, in order](../exploitation/index.html): Every signal of php2shell exploitation in the captured sources, from an Amazon honeypot hit on 17 October to the KEV catalog, with what exploitation would look like on a host.
+- [The fix, mapped to the code](../review/index.html): The php2shell fix as layered graphs: the two flaws, the design of the patch, and the php-src files and functions it changed, derived from the diff.
+- [Walk the graph: the fix and the code](../review/ui/index.html): A navigator over the php2shell review graph: the fix, the flaws it closes, and the files and functions it changed, each a link.
+- [Impact: taken offline versus compromised](../impact/index.html): Two ledgers for php2shell: every system reported taken offline with who said so, and every claim of compromise with its basis. As of the latest capture, no named organisation has confirmed a compromise.
+- [Detection and defence: what blocks php2shell and what shows it](../defence/index.html): What Cloudflare, Akamai, Fastly, Imperva, AWS and Fortinet deployed and what each says it cannot do; the community Suricata, Sigma, Falco and ModSecurity rules; the host signals; and how hard the exploit is according to the vendors who tried.
+- [In context: php2shell against Kaminsky, Heartbleed, Shellshock, Log4Shell and the last PHP RCE](../context/index.html): Ten landmark vulnerabilities with their CVE records and KEV rows, the KEV catalog counted, and what the comparison says about severity, exposure, urgency and the discovery pipeline.
+- [If you run PHP: the steps, in order, with their sources](../playbook/index.html): Inventory, patch, mitigate, shield, isolate or take offline, look for compromise, verify: every agency's php2shell advice merged into one ordered list with the sentence each step comes from.
+- [Patching: who gets a fix](../patching/index.html):
+
+### The analysis
+- [Every claim, with its status and sources](../claims/index.html): 70 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
+- [The numbers: 70%, 30 million, 2.6 million, 6,000, 674](../numbers/index.html): Every scale figure in circulation about php2shell, with what it measures, who said it, whether anyone checked it, and why they differ by four orders of magnitude.
+- [What sixteen agencies actually advise](../agencies/index.html): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
+- [Affected systems: versions, deployments, applications, inventory](../affected/index.html): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
+- [Who says what: every party and its claims](../actors/index.html): 27 parties in the php2shell story, each with the claims this site attributes to it and the sources behind them.
+- [The story as a graph: claims, events and the sources they cite](../graph/index.html): 209 nodes and 281 citation edges from the php2shell claims and timeline to the captured sources, drawn from the same rows as the text, with the JSON to download.
+- [From outside: other models and sites](../readings/index.html):
+- [Perplexity's notes, in full](../readings/perplexity-2026-10-22/index.html):
+
+### The evidence
+- [Every source: 144 pages, 137 captures, 857 hashes](../sources/index.html): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
+- [The NCSC-NL inventory: 674 products](../affected/software.html): Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, with its status per CVE.
+- [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
+- [Evidence, derived, authored](../layers/index.html):
+- [The fact pipeline: from a web page to a reader](../pipeline/index.html): How a source becomes a fact and a fact reaches a reader on this site: found, saved, read, cited, given a status, built into versioned sections and selected per reader, with counts at every stage and the facts by status in every release.
+- [How the story changed, release by release](../versions/index.html): Every section of the site, every reader's briefing and every fact, versioned across every release: what changed, when, and in which release.
+- [The vaults behind this site](../vaults/index.html): Every vault this site is built from: the evidence vault and the source watch, both public with their read keys, and the private telemetry vault with its write-only lane; what each holds, who writes to it and how to open it.
+- [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
+- [The source watch: every outside source on php2shell, watched and snapshotted](../vaults/source-watch/index.html): The public source-watch vault: 328 pages from 175 publishers in 38 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
+- [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
+
+### Stories
+- [All stories, written here](../articles/index.html):
+- [House · Journalist: Why can't every version of PHP just be patched](../articles/why-not-patch-every-version/index.html):
+- [House · Journalist: Where php2shell stands](../articles/where-php2shell-stands/index.html):
+- [House · Historian: php2shell in perspective](../articles/php2shell-in-perspective/index.html):
 - [The editor, interviewed: Dinis Cruz on why this site exists](../interview/index.html): Dinis Cruz, the editor of PHP October 2026, on why he started tracking the PHP flaws, the 70% figure, what remote code execution does and does not mean, pulling the plug, and why every section of the site is versioned. In his own words.
+
+### About
 - [The method: capture, hash, claim, build, gate](../method/index.html): How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.
 - [The team: the editor, the pipeline and the agents](../team/index.html): Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the 15 audiences.
 - [The billing model: what runs and what is designed](../billing/index.html): How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
@@ -110,6 +112,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Release history](../admin/versions.html): Every release of this site, with what changed, why, and the vault commit it was built from.
 - [The pipeline: what is live, what is deploying](../status/index.html): Each newsroom site's deploy runs, read in your browser from GitHub's public API with no credential, beside the version the site serves now: what is live, what is deploying, what was superseded, what failed.
 - [Admin and engineering](../admin/index.html): How this site is built, the checks in its gate, where things are, the reality file and the honest column.
+- [status.json: the feed for other sites](../admin/status-json/index.html):
 - [The board](../admin/board/index.html): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles and responsibilities](../admin/roles/index.html): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
 - [Briefs](../admin/briefs/index.html): The build briefs for this site, published in full before the work, newest first.
@@ -123,4 +126,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

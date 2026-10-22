@@ -1,5 +1,7 @@
 # Fact: Calif mistakenly published a video around 20:00 UTC on 20 October showing its pr
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Calif mistakenly published a video around 20:00 UTC on 20 October showing its proof of concept against a number of targets; copies circulated and 'contributed to accelerated development of various PoCs' Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · leak · reported
@@ -43,4 +45,4 @@ Sources: php-foundation-blog-security-release, phpfoundation-blog-security-relea
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/leak-video/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/leak-video/index.html

@@ -1,10 +1,20 @@
 # Release history
 
+> About this site: how the site works, kept by the agents that run it.
+
 Every release of this site, with what changed, why, and the vault commit it was built from.
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.4.0. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.4.1. The data is [data/versions.json](../data/versions.json).
+
+### v0.4.1 · 2026-10-22
+
+Research and Stories: the menu in three zones (for you, research, stories) with an origin strip on every page saying whether it is research, external material, a story (house, guest, interview) or about the site; Stories as its own section; /patching/, which versions of PHP get a fix and from whom, every downstream row checked against the NCSC-NL inventory; the story 'Why can't every version of PHP just be patched?'; /status.json for other sites, with its admin page; the editor's brief published; four stray screenshots committed in v0.2.10 removed
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.4.0 · 2026-10-22
 
@@ -176,4 +186,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

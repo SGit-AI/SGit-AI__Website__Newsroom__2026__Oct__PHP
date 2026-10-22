@@ -2,6 +2,7 @@
 slug: where-php2shell-stands
 title: Where php2shell stands: many sites dark, millions of attempts, no confirmed breach
 dek: A state-of-affairs report on the two PHP flaws, written against the evidence vault as it stood at site v0.2.5: what is settled, where the alarm and the evidence part company, and the five things that would change the story.
+origin: house
 role: journalist
 author: claude-journalist
 written: 2026-10-22

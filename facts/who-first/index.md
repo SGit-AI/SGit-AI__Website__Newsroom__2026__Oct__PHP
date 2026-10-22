@@ -1,5 +1,7 @@
 # Fact: Calif found the flaws first: discovery 1 August, hash commitment 5 August, repor
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Calif found the flaws first: discovery 1 August, hash commitment 5 August, report to PHP 11 August Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · discovery · confirmed
@@ -41,4 +43,4 @@ Sources: calif-php2shell, x-lcfr-hax-hash-tweet, php-foundation-blog-security-re
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/who-first/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/who-first/index.html

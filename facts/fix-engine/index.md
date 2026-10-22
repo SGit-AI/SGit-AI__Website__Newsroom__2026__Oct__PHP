@@ -1,5 +1,7 @@
 # Fact: Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based ba
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on out-of-memory, and request globals that survive a failed request Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · technical · confirmed
@@ -40,4 +42,4 @@ Sources: github-php-src-fix-commit-3584a98bd, github-ghsa-w8hw-w9fx-j79w, github
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-engine/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-engine/index.html

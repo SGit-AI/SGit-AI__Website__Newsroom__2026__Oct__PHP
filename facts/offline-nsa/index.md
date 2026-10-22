@@ -1,5 +1,7 @@
 # Fact: If an immediate update is not feasible, take the system offline until it can be 
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 If an immediate update is not feasible, take the system offline until it can be fully mitigated Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · advice · confirmed
@@ -39,4 +41,4 @@ Sources: nsa-x-2112903220209098897, nsa-press-php-4630238
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/offline-nsa/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/offline-nsa/index.html

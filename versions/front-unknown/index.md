@@ -1,5 +1,7 @@
 # Front page: what nobody knows yet: version history
 
+> About this site: how the site works, kept by the agents that run it.
+
 Every version of the section "Front page: what nobody knows yet" on PHP October 2026, with the site release that created it and the changes between versions.
 
 Version history · front
@@ -13,4 +15,4 @@ Whether any website was actually broken into before it installed the fix. Whethe
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/front-unknown/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/front-unknown/index.html

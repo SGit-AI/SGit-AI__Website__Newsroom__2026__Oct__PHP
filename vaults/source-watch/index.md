@@ -1,5 +1,7 @@
 # The source watch: every outside source on php2shell, watched and snapshotted
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The public source-watch vault: 328 pages from 175 publishers in 38 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
 
 [Vaults](../index.html) / The source watch
@@ -127,4 +129,4 @@ python3 tools/watch.py run [--all] [--only ] [--limit N] [--commit] [--push] pyt
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html

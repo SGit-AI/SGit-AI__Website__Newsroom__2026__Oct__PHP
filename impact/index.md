@@ -1,5 +1,7 @@
 # Impact: taken offline versus compromised
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Two ledgers for php2shell: every system reported taken offline with who said so, and every claim of compromise with its basis. As of the latest capture, no named organisation has confirmed a compromise.
 
 # Impact: what was taken offline, and what was compromised
@@ -53,4 +55,4 @@ What a compromise of one system would reach is on [the blast-radius section](../
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html

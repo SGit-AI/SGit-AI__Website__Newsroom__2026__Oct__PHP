@@ -1,5 +1,7 @@
 # The NCSC-NL inventory: 674 products
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, with its status per CVE.
 
 # The NCSC-NL software inventory
@@ -531,4 +533,4 @@ All 674 rows of NCSC-NL's php2shell inventory at commit `cca173c64ec5`, as parse
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/affected/software.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/affected/software.html

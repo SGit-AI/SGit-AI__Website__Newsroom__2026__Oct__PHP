@@ -1,5 +1,7 @@
 # Walk the graph: the fix and the code
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 A navigator over the php2shell review graph: the fix, the flaws it closes, and the files and functions it changed, each a link.
 
 # Walk the graph
@@ -10,4 +12,4 @@ The navigator needs JavaScript. The same graph is on the fix mapped to the code.
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/review/ui/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/review/ui/index.html

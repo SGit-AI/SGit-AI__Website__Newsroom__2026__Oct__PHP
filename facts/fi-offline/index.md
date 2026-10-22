@@ -1,5 +1,7 @@
 # Fact: Finland's state IT provider Valtori restricted public traffic to government web 
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Finland's state IT provider Valtori restricted public traffic to government web services from 12:45 local time on 21 October as a precaution Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · impact · reported
@@ -37,4 +39,4 @@ Sources: yle-finland-government-sites-shut, helsinkitimes-finland-shutdown
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fi-offline/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fi-offline/index.html

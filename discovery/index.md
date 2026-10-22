@@ -1,5 +1,7 @@
 # Who found php2shell, and what the AI did
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Calif, OpenAI and Wiz each claim the discovery of php2shell; their own timelines side by side, the 2024 audit that saw it first, the credits on the advisories, and what the sources do and do not say about the models.
 
 # Who found it, and how
@@ -68,4 +70,4 @@ What is established is the shape: a bug class seen in 2024 and left because nobo
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/discovery/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/discovery/index.html

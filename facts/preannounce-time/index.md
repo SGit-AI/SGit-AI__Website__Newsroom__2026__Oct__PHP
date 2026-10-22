@@ -1,5 +1,7 @@
 # Fact: The pre-announcement was published at 19:30 UTC on 20 October
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The pre-announcement was published at 19:30 UTC on 20 October Who says it, its status (disputed), its sources, and its timeline from publication to this site.
 
 Fact · timing · disputed
@@ -41,4 +43,4 @@ Sources: php-foundation-blog-security-release, openwall-oss-security-2026-10-20-
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/preannounce-time/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/preannounce-time/index.html

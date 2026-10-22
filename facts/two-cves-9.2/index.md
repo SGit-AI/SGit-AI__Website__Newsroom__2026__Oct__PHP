@@ -1,5 +1,7 @@
 # Fact: Two critical vulnerabilities, CVE-2026-109618 and CVE-2026-109619, each CVSS v4.
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Two critical vulnerabilities, CVE-2026-109618 and CVE-2026-109619, each CVSS v4.0 9.2, fixed in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · technical · confirmed
@@ -43,4 +45,4 @@ Sources: cve-cve-2026-109618, cve-cve-2026-109619, github-ghsa-w8hw-w9fx-j79w, g
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/two-cves-9.2/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/two-cves-9.2/index.html

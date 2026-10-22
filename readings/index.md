@@ -1,5 +1,7 @@
 # Second readings: other models, checked against the vault
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Another model's notes on php2shell, published in full and credited, set beside the evidence vault point by point: where they agree, where the vault resolves or goes further, and the new leads for capture.
 
 # Second readings: other models, checked against the vault
@@ -16,12 +18,12 @@ The editor's first memo asked for more than one model to read this story. The va
 
 A research chat run by the editor in Perplexity on 22 October 2026, compiled by Perplexity into notes and given to this site by the editor. Perplexity read the web through search excerpts; it did not read the evidence vault. [The notes in full →](perplexity-2026-10-22/index.html)
 
-**5** agrees · **2** the vault resolves it · **3** the vault goes further · **2** a new lead · **1** open in both
+**5** agrees · **2** the vault resolves it · **4** the vault goes further · **1** a new lead · **1** open in both
 
 | Point | What Perplexity found | Against the vault | What the vault holds | Sources |
 |---|---|---|---|---|
 | **The name and the pair**section 3 | PHP2Shell names two PHP core vulnerabilities, CVE-2026-109618 and CVE-2026-109619: a pair, not one CVE. | agrees | Confirmed from the CVE records, the GitHub advisories and php.net.[two-cves-9.2](../claims/index.html#two-cves-9.2) | [CVE record](../sources/cve-cve-2026-109618/index.html) [CVE record](../sources/cve-cve-2026-109619/index.html) [php.net](../sources/php-net-advisory/index.html) |
-| **What 70% is a share of**section 2 | W3Techs says PHP is used by 69.3% of all the websites 'whose server-side programming language we know'. Usage is not exposure: a site using PHP, running a flawed version, and being reachable through the flaw are three different populations. | a new lead | The vault has no W3Techs capture. It holds the three pages that carry the 70% figure, and none of them names its measurement, which is an open question on the front page. If the W3Techs page is captured and says this, it closes that question: 70% is a share of the websites whose language a survey could identify.[scale-70pc-websites](../claims/index.html#scale-70pc-websites), [scale-70pc-internet](../claims/index.html#scale-70pc-internet) | [Wiz](../sources/wiz-blog-php2shell/index.html) [Cloudflare](../sources/cloudflare-blog-php2shell-waf/index.html) [OpenAI on X](../sources/x-openai-php2shell/index.html) |
+| **What 70% is a share of**section 2 | W3Techs says PHP is used by 69.3% of all the websites 'whose server-side programming language we know'. Usage is not exposure: a site using PHP, running a flawed version, and being reachable through the flaw are three different populations. | the vault goes further | The vault already carries the qualifier, second-hand: a security founder's post on X, captured on 22 October, says 'PHP runs 69% of websites whose server-side language is known'. The three pages that carry the bare 70% figure do not name the measurement. W3Techs itself is not captured; capturing it would make this first-hand and close the front page's open question.[scale-70pc-websites](../claims/index.html#scale-70pc-websites), [scale-70pc-internet](../claims/index.html#scale-70pc-internet) | [Feross Aboukhadijeh on X on X](../sources/x-feross-chainguard/index.html) [Wiz](../sources/wiz-blog-php2shell/index.html) [Cloudflare](../sources/cloudflare-blog-php2shell-waf/index.html) [OpenAI on X](../sources/x-openai-php2shell/index.html) |
 | **Who said 70% of the Internet**section 2 | Wiz's own headline says 'affecting 70% of the Internet', so the broad wording is not only a journalist's paraphrase. | agrees | The same: the vault attributes '70% of the Internet' to Wiz's headline and X post, and marks it unverified.[scale-70pc-internet](../claims/index.html#scale-70pc-internet) | [Wiz](../sources/wiz-blog-php2shell/index.html) [Wiz on X](../sources/x-wiz-io-php2shell/index.html) |
 | **The BBC and the 70% figure**section 1 | A BBC article attributes 'roughly 70%' to Wiz and says the BBC could not independently verify it. | agrees | The vault's capture of the BBC live page carries the same attribution. The BBC article Perplexity read is a different page and is not in the vault; it is listed below for capture.[scale-70pc-internet](../claims/index.html#scale-70pc-internet) | [BBC News](../sources/bbc-live-ckgel5xp2xv9t/index.html) |
 | **How each flaw works**section 4 | The per-CVE mechanisms (out-of-memory handling leaving request memory uninitialised; request state outliving its memory into the next request) are marked unverified, pending a primary advisory or a patch review. | the vault resolves it | Both mechanisms are stated in the CVE records and the GitHub advisories, and the fix commit was read from a clone of php-src. Perplexity's earlier descriptions were right; its caution was right too, given what it could read.[fix-engine](../claims/index.html#fix-engine), [fix-bailout](../claims/index.html#fix-bailout) | [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [php/php-src, read from a clone](../sources/github-php-src-fix-commit-3584a98bd/index.html) |
@@ -51,4 +53,4 @@ The comparison rows are [data/readings.json](../data/readings.json), in the deri
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/readings/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/readings/index.html

@@ -1,5 +1,7 @@
 # The editor, interviewed: Dinis Cruz on why this site exists
 
+> Story, interview: an interview conducted for this site, the answers in the interviewee's own words. The editor, Dinis Cruz, in his own words; the questions by the agent that builds the site.
+
 Dinis Cruz, the editor of PHP October 2026, on why he started tracking the PHP flaws, the 70% figure, what remote code execution does and does not mean, pulling the plug, and why every section of the site is versioned. In his own words.
 
 About · interview
@@ -62,4 +64,4 @@ The questions for the next round, in the editor's own time:
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/interview/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/interview/index.html

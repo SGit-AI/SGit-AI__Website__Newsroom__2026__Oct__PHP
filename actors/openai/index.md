@@ -1,5 +1,7 @@
 # OpenAI (Patch the Planet, Codex Security, Amy Burnett): what they say
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 OpenAI (Patch the Planet, Codex Security, Amy Burnett): reported the same root cause on 11 August; ran the coordination coalition; the claims this site attributes to them and their sources.
 
 Party
@@ -25,4 +27,4 @@ reported the same root cause on 11 August; ran the coordination coalition
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/openai/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/openai/index.html

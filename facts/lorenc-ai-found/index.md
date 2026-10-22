@@ -1,5 +1,7 @@
 # Fact: Chainguard's team found the same bugs independently with an AI harness and a fro
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Chainguard's team found the same bugs independently with an AI harness and a frontier model after a researcher warned them on the Friday before Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · discovery · reported
@@ -37,4 +39,4 @@ Sources: theregister-php-blames-chainguard
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/lorenc-ai-found/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/lorenc-ai-found/index.html

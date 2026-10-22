@@ -1,5 +1,7 @@
 # PHP in October 2026: two critical security flaws, tracked as evidence
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
 PHP news · October 2026 · Developing · last checked 22 October 2026, 11:34 UTC
@@ -99,6 +101,12 @@ ASecurity researcherAsh · Deeply technicalWhat are the bug classes, what was de
 - [21 OctPHP releases the fix a day ahead of plan. Firewall vendors already have rules live.](flaws/index.html)[php.net](sources/php-net-advisory/index.html) [Cloudflare](sources/cloudflare-blog-php2shell-waf/index.html)
 - [22 OctAgencies warn: update, or take systems offline. Sites go dark as a precaution.](agencies/index.html)[NSA Cyber on X](sources/nsa-x-2112903220209098897/index.html) [CISA](sources/cisa-alert-php-20261021/index.html) [BBC News](sources/bbc-live-ckgel5xp2xv9t/index.html)
 
+## Stories: written here
+
+Everything above is research: collected from outside sources, each fact linked to a saved copy. These are written here, signed and dated, and kept as written.
+Why can't every version of PHP just be patched?House story · Journalist · 2026-10-22Where php2shell stands: many sites dark, millions of attempts, no confirmed breachHouse story · Journalist · 2026-10-22php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proofHouse story · Historian · 2026-10-22The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
+[All stories →](articles/index.html)
+
 ## How this site knows
 144web pages saved as evidence, each with the time it was saved70statements checked: 22 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
 Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read [the PHP project's announcement](https://www.php.net/archive/2026.php#2026-10-21-5) and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; [how it works](method/index.html).
@@ -107,4 +115,4 @@ Already know the vocabulary? [The specialist summary](summary/index.html) has th
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html

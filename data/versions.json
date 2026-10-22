@@ -1,6 +1,15 @@
 {
- "current": "0.4.0",
+ "current": "0.4.1",
  "versions": [
+  {
+   "version": "0.4.1",
+   "date": "2026-10-22",
+   "title": "Research and Stories: the menu in three zones (for you, research, stories) with an origin strip on every page saying whether it is research, external material, a story (house, guest, interview) or about the site; Stories as its own section; /patching/, which versions of PHP get a fix and from whom, every downstream row checked against the NCSC-NL inventory; the story 'Why can't every version of PHP just be patched?'; /status.json for other sites, with its admin page; the editor's brief published; four stray screenshots committed in v0.2.10 removed",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.4.0",
    "date": "2026-10-22",

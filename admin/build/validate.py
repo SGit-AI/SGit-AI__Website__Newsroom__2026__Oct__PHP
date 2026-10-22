@@ -88,6 +88,7 @@ for fn in sorted(os.listdir(adir)) if os.path.isdir(adir) else []:
     if not fn.endswith('.md'): continue
     t = open(os.path.join(adir, fn), encoding='utf-8').read()
     fm = re.match(r'^---\n(.*?)\n---\n', t, flags=re.S)
+    if fm and not re.search(r'^origin:\s*(house|guest|interview)\s*$', fm.group(1), flags=re.M): fails.append(f'articles/{fn}: origin must be house, guest or interview')
     for k in ('slug', 'title', 'dek', 'role', 'author', 'written', 'as_of_version', 'vault_commit', 'data_as_of'):
         if not fm or not re.search(r'^' + k + r':\s*\S', fm.group(1), flags=re.M): fails.append(f'articles/{fn}: front matter has no {k}')
     for g in re.findall(r'\[\[([^\]]+)\]\]', t):
@@ -103,6 +104,20 @@ for r in rd.get('readings', []):
             if s not in slugs: fails.append(f'data/readings.json: {r.get("id")} / {x.get("point")} cites unknown slug {s}')
         for c in x.get('claims', []):
             if c not in cids: fails.append(f'data/readings.json: {r.get("id")} / {x.get("point")} names unknown claim {c}')
+# 4d. patching: every downstream row is a real inventory row with the status shown; status.json is built and parses
+pt = load('patching') or {}
+inv = {(r['supplier'], r['product']): r.get('status_109618') for r in (load('software') or {}).get('rows', [])}
+prow = [d for l in pt.get('ladder', []) for d in l.get('downstream', [])] + [r for m in pt.get('models', []) for r in m.get('rows', [])]
+for sup, prod, st in prow:
+    if (sup, prod) not in inv: fails.append(f'data/patching.json: no inventory row {sup!r} / {prod!r}')
+    elif inv[(sup, prod)] != st: fails.append(f'data/patching.json: {prod!r} is {st!r} here but {inv[(sup, prod)]!r} in the inventory')
+for x in pt.get('ladder', []) + pt.get('side_effects', []) + pt.get('why_not_every_version', []):
+    for s in x.get('sources', []):
+        if s not in slugs: fails.append(f'data/patching.json cites unknown slug {s}')
+try:
+    json.load(open(os.path.join(ROOT, 'status.json'), encoding='utf-8'))
+except Exception as e:
+    fails.append(f'status.json: {e}')
 # 4c. layers: every data file is classified exactly once
 layers = load('layers') or {}
 classified = [f['path'] for f in layers.get('files', [])]

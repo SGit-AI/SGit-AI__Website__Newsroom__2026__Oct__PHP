@@ -1,5 +1,7 @@
 # The specialist summary: CVE-2026-109618 and CVE-2026-109619
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The technical summary of the two PHP flaws of October 2026: what is established with its sources, the six scale figures, the open questions and the last 48 hours.
 
 The story · for specialists
@@ -59,4 +61,4 @@ Every source is captured into a private, encrypted vault, each file hashed at ca
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/summary/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/summary/index.html

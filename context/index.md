@@ -1,5 +1,7 @@
 # In context: php2shell against Kaminsky, Heartbleed, Shellshock, Log4Shell and the last PHP RCE
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Ten landmark vulnerabilities with their CVE records and KEV rows, the KEV catalog counted, and what the comparison says about severity, exposure, urgency and the discovery pipeline.
 
 # In context: php2shell against the flaws that came before
@@ -62,4 +64,4 @@ The signals that would move php2shell into the catalog are on [the exploitation 
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/context/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/context/index.html

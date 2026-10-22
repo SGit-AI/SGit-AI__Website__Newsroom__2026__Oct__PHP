@@ -1,5 +1,7 @@
 # Roles and responsibilities
 
+> About this site: how the site works, kept by the agents that run it.
+
 The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
 
 # Roles and responsibilities
@@ -84,4 +86,4 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html

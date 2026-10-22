@@ -419,3 +419,17 @@ details > summary{padding:.3rem 0}
 .iq blockquote{margin:0;border-left:4px solid var(--g-decide);background:var(--panel);border-radius:0 10px 10px 0;padding:.6rem 1rem}
 .iq blockquote p{font-size:1.02rem;margin:0}
 .iq blockquote footer{font-size:.76rem;color:var(--dim);margin-top:.4rem}
+/* research and stories: the zones in the bar, and the origin strip at the top of every page (v0.4.1) */
+.zone{align-self:center;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding:0 .15rem 0 .55rem;border-left:1px solid var(--line2);margin-left:.3rem}
+.zone:first-child{border-left:0;margin-left:0;padding-left:0}
+.origin{margin:0 0 1rem;padding:.35rem .7rem;border-radius:6px;font-size:.8rem;border:1px solid var(--line);background:var(--panel);display:flex;gap:.55rem;flex-wrap:wrap;align-items:baseline}
+.origin b{font-size:.68rem;letter-spacing:.09em;text-transform:uppercase}
+.origin span{color:var(--dim);flex:1 1 16rem}
+.origin a{font-size:.74rem}
+.o-research{border-left:4px solid var(--accent)}
+.o-external{border-left:4px solid var(--warm);border-style:dashed solid dashed solid}
+.o-story{border-left:4px solid var(--head);background:var(--bg)}
+.o-site{border-left:4px solid var(--line2)}
+ul.inv{list-style:none;padding:0;margin:0}ul.inv li{margin:.15rem 0;font-size:.82rem}
+.okw{color:var(--ok-ink,#1a7f37)}.badw{color:var(--bad-ink,#b42318)}
+@media (max-width:900px){.zone{border-left:0;margin:.6rem 0 .1rem;padding:0}}

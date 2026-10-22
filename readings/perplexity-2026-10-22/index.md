@@ -1,5 +1,7 @@
 # Perplexity's notes on php2shell, in full
 
+> Research, external: material from outside, published as received and credited; not written here.
+
 PHP2Shell: intelligence notes from this chat: the notes Perplexity compiled on 2026-10-22, published in full and credited, with the comparison against the evidence vault one page up.
 
 Second reading · by Perplexity · compiled 2026-10-22
@@ -186,4 +188,4 @@ The evidence collected supports a widely reported, potentially serious PHP core 
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/readings/perplexity-2026-10-22/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/readings/perplexity-2026-10-22/index.html

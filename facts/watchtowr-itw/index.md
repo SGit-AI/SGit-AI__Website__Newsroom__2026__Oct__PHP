@@ -1,5 +1,7 @@
 # Fact: watchTowr sees active exploitation attempts and lists the flaws as exploited in 
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild Who says it, its status (unverified), its sources, and its timeline from publication to this site.
 
 Fact · exploitation · unverified
@@ -37,4 +39,4 @@ Sources: watchtowr-php2shell, watchtowr-php2shell-faq
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/watchtowr-itw/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/watchtowr-itw/index.html

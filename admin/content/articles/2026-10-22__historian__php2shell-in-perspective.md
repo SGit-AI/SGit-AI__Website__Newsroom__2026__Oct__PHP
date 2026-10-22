@@ -2,6 +2,7 @@
 slug: php2shell-in-perspective
 title: php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proof
 dek: A historian's reading of the first day, set against ten earlier vulnerabilities and the KEV catalog: which parts of this story have happened before, which have not, and what the record will need to settle it.
+origin: house
 role: historian
 author: claude-historian
 written: 2026-10-22

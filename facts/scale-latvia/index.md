@@ -1,5 +1,7 @@
 # Fact: About 6,000 potentially affected resources in Latvia, a few hundred in the publi
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 About 6,000 potentially affected resources in Latvia, a few hundred in the public sector Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · scale · reported
@@ -37,4 +39,4 @@ Sources: certlv-php-preventive
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-latvia/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-latvia/index.html

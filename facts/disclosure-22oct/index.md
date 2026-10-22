@@ -1,5 +1,7 @@
 # Fact: The flaws were disclosed on 22 October 2026
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The flaws were disclosed on 22 October 2026 Who says it, its status (contradicted), its sources, and its timeline from publication to this site.
 
 Fact · timing · contradicted
@@ -41,4 +43,4 @@ Sources: bbc-live-ckgel5xp2xv9t, php-net-advisory, github-php-src-tag-php-8.5.12
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/disclosure-22oct/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/disclosure-22oct/index.html

@@ -1,5 +1,7 @@
 # The brief: a written request and two voice memos
 
+> About this site: how the site works, kept by the agents that run it.
+
 The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.
 
 # The brief, in full
@@ -48,4 +50,4 @@ Accepted by the editor on 22 October 2026 by sending it; the first release of th
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/brief/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/brief/index.html

@@ -1,5 +1,7 @@
 # Source: PHP: Global scramble to fix critical cyber-security flaws as many websites taken offline - follow live
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 BBC News: what it says, the claims and events that cite it, and the hashes of every captured file.
 
 Source · news-live · secondary · captured
@@ -110,4 +112,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/bbc-live-ckgel5xp2xv9t/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/bbc-live-ckgel5xp2xv9t/index.html

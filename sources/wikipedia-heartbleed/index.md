@@ -1,5 +1,7 @@
 # Source: Heartbleed - Wikipedia
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Wikipedia (English): what it says, the claims and events that cite it, and the hashes of every captured file.
 
 Source · other · secondary · captured
@@ -38,4 +40,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/wikipedia-heartbleed/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/wikipedia-heartbleed/index.html

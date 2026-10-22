@@ -1,5 +1,7 @@
 # We are on PHP 7.4, 8.0 or 8.1. Is there a patch?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Not a release. PHP 8.1 and older are out of support; the project published source backport branches for 7.4, 8.0 and 8.1, which someone has to build. CISA says systems on 8.1 or older should be taken offline. Plan the migration to 8.2 or later now; in the meantime a distribution or vendor that backports, the temporary mitigations and isolation are the options.
 
 Question · kept by the librarian · `librarian@php.newsroom`
@@ -31,4 +33,4 @@ Next question: [We are behind Cloudflare (or another firewall). Are we safe?](..
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/old-php/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/old-php/index.html

@@ -1,5 +1,7 @@
 # Has anyone actually been hacked?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Not that anyone has confirmed. Attack attempts are real and in the millions at Cloudflare alone, and Amazon saw one on a honeypot four days before disclosure. But as of the latest capture no named organisation has confirmed a compromise through php2shell, CISA has not added it to its exploited-vulnerabilities list, and the sites that went offline say they did it as a precaution.
 
 Question · kept by the librarian · `librarian@php.newsroom`
@@ -33,4 +35,4 @@ Next question: [Do I need to change my passwords?](../passwords/index.html) · [
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/been-hacked/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/been-hacked/index.html

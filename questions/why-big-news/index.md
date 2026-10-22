@@ -1,5 +1,7 @@
 # Why is this such big news?
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Four things at once: the flaws are in PHP itself, which runs a large share of the web; they were found with AI help; the coordinated disclosure leaked a day early, so the fix shipped under pressure; and the NSA, CISA and NCSC told organisations that could not patch to take systems offline, which is why government, council and police sites went dark.
 
 Question · kept by the librarian · `librarian@php.newsroom`
@@ -35,4 +37,4 @@ Next question: [We are on PHP 7.4, 8.0 or 8.1. Is there a patch?](../old-php/ind
 
 
 ---
-site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/why-big-news/index.html
+site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/why-big-news/index.html

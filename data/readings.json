@@ -55,13 +55,14 @@
      "point": "What 70% is a share of",
      "found": "W3Techs says PHP is used by 69.3% of all the websites 'whose server-side programming language we know'. Usage is not exposure: a site using PHP, running a flawed version, and being reachable through the flaw are three different populations.",
      "section": "2",
-     "verdict": "lead",
-     "vault": "The vault has no W3Techs capture. It holds the three pages that carry the 70% figure, and none of them names its measurement, which is an open question on the front page. If the W3Techs page is captured and says this, it closes that question: 70% is a share of the websites whose language a survey could identify.",
+     "verdict": "further",
+     "vault": "The vault already carries the qualifier, second-hand: a security founder's post on X, captured on 22 October, says 'PHP runs 69% of websites whose server-side language is known'. The three pages that carry the bare 70% figure do not name the measurement. W3Techs itself is not captured; capturing it would make this first-hand and close the front page's open question.",
      "claims": [
       "scale-70pc-websites",
       "scale-70pc-internet"
      ],
      "sources": [
+      "x-feross-chainguard",
       "wiz-blog-php2shell",
       "cloudflare-blog-php2shell-waf",
       "x-openai-php2shell"
