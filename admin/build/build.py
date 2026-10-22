@@ -5,7 +5,7 @@ Deterministic: the same data/ and VERSION produce byte-identical output. There i
 this file. Every page gets a markdown twin at the same path, and llms.txt lists every page.
 Run: python3 admin/build/build.py        (from the repository root or anywhere)
 """
-import html, json, os, re, sys
+import html, json, math, os, re, sys
 from collections import Counter, OrderedDict
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'inventory-history', 'signals', 'pipeline', 'vaults', 'source-watch')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
@@ -63,7 +63,7 @@ ORIGINS = {
     'guest': {'short': 'Guest', 'label': 'Story, guest', 'text': 'written by a guest writer, published here under their name'},
     'interview': {'short': 'Interview', 'label': 'Story, interview', 'text': 'an interview conducted for this site, the answers in the interviewee\'s own words'},
 }
-AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian')])
+AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('journalist-historian', 'Journalist and historian')])
 
 # ----------------------------------------------------------------------------- small helpers
 
@@ -178,7 +178,7 @@ NAV = [
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
-                   ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix')]),
+                   ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
     ('The analysis', [('claims/index.html', 'Every claim'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
                       ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
@@ -1334,7 +1334,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_status(); build_vaults(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_status_json()
+    build_review(); build_admin_section(); build_status(); build_vaults(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -1781,7 +1781,7 @@ def build_articles():
 <p class="kicker">Story &middot; {E(ORIGINS[a["origin"]]["short"])} &middot; {E(role)} &middot; {E(a["written"])}</p>
 <h1>{E(a["title"])}</h1>
 <p class="lead">{E(a["dek"])}</p>
-<p class="kv"><b>By</b> the {E(role.lower())} role, agent <code>{E(a["author"])}</code> &middot; <b>written against</b> {article_stamp(a)}</p>
+<p class="kv"><b>By</b> the {E(role.lower())} {"roles, agents" if "," in a["author"] else "role, agent"} <code>{E(a["author"])}</code> &middot; <b>written against</b> {article_stamp(a)}</p>
 {moved}
 {render_article(a["text"], 2)}
 </article>
@@ -1789,7 +1789,7 @@ def build_articles():
 {more}
 <p class="small">Source file: <code>admin/content/articles/{E(a["file"])}</code>, in the authored layer; see <a href="../../layers/index.html">evidence, derived, authored</a>.</p>
 """
-        page(f'articles/{a["slug"]}/index.html', a['title'], a['dek'], body, kind='article', date=a['written'], topics=f'php2shell {a["role"]}', ld_type='NewsArticle', origin=a['origin'], byline=f'By the {role.lower()} role, agent {a["author"]}')
+        page(f'articles/{a["slug"]}/index.html', a['title'], a['dek'], body, kind='article', date=a['written'], topics=f'php2shell {a["role"]}', ld_type='NewsArticle', origin=a['origin'], byline=f'By the {role.lower()} {"roles, agents" if "," in a["author"] else "role, agent"} {a["author"]}')
     def card(a):
         return f'<article class="rel"><h3><a href="{E(a["slug"])}/index.html">{E(a["title"])}</a></h3><p>{E(a["dek"])}</p><p class="small">{E(ORIGINS[a["origin"]]["short"])} &middot; {E(AUTHOR_ROLES.get(a["role"], a["role"]))} &middot; {E(a["written"])} &middot; <code>{E(a["author"])}</code> &middot; {article_stamp(a)} &middot; {len(a["cites"])} sources cited</p></article>'
     house = ''.join(card(a) for a in ARTICLES if a['origin'] == 'house')
@@ -2678,6 +2678,156 @@ def build_status_json():
 <pre>{E(text)}</pre>
 '''
     page('admin/status-json/index.html', 'status.json: the feed for other sites', 'The machine-readable summary of this site at /status.json: status, version, data time, counts, headline facts and the latest story, for the newsroom and other agents.', body, kind='site')
+
+
+# ----------------------------------------------------------------------------- the inventory over time, and the signals (v0.4.2)
+
+# Status colours from the dataviz reference status palette (validated: adjacent CVD separation >= 10.6 in light and
+# dark); the same in every theme by design, and never used for anything but a status. Text stays in text tokens.
+INV_ST = OrderedDict([('Fix', ('Fixed', '#0ca30c')), ('Not vuln', ('Not affected', '#8a8f98')),
+                      ('Vulnerable', ('Vulnerable', '#d03b3b')), ('Investigation', ('Under investigation', '#fab219'))])
+
+def _mins(at):
+    from datetime import datetime, timezone
+    if re.match(r'^\d{4}-\d{2}-\d{2}$', at):
+        at += 'T00:00Z'
+    return int(datetime.strptime(at, '%Y-%m-%dT%H:%MZ').replace(tzinfo=timezone.utc).timestamp() // 60)
+
+def _hm(at):
+    return human_time(at) if 'T' in at else nice_date(at)
+
+def inventory_chart(snaps, marks):
+    S = [s for s in snaps if s['rows']]
+    W, H, L, R, T, B = 760, 300, 44, 168, 14, 42
+    x0, x1 = _mins(S[0]['at']), _mins(S[-1]['at']) + 30
+    ymax = int(math.ceil(max(s['rows'] for s in S) / 200.0) * 200)
+    X = lambda m: L + (m - x0) * (W - L - R) / (x1 - x0)
+    Y = lambda v: T + (H - T - B) * (1 - v / ymax)
+    out = [f'<svg class="chart" viewBox="0 0 {W} {H}" role="img" aria-labelledby="inv-t inv-d"><title id="inv-t">The NCSC-NL inventory by status, commit by commit</title>'
+           f'<desc id="inv-d">{len(S)} commits from {_hm(S[0]["at"])} to {_hm(S[-1]["at"])}; the same numbers are in the table below.</desc>']
+    for v in range(0, ymax + 1, 200):
+        out.append(f'<line class="grid" x1="{L}" x2="{W - R}" y1="{Y(v):.1f}" y2="{Y(v):.1f}"/><text class="ax" x="{L - 6}" y="{Y(v) + 4:.1f}" text-anchor="end">{v}</text>')
+    lows, labels = [0] * len(S), []
+    for st, (label, col) in INV_ST.items():
+        highs = [lo + s['by_status'].get(st, 0) for lo, s in zip(lows, S)]
+        top, bot = [], []
+        for i, s in enumerate(S):
+            xa, xb = X(_mins(s['at'])), X(_mins(S[i + 1]['at']) if i + 1 < len(S) else x1)
+            top += [(xa, Y(highs[i])), (xb, Y(highs[i]))]
+            bot += [(xa, Y(lows[i])), (xb, Y(lows[i]))]
+        pts = top + bot[::-1]
+        out.append(f'<path class="band" fill="{col}" d="M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in pts) + 'Z"/>')
+        n, mid = S[-1]['by_status'].get(st, 0), (Y(lows[-1]) + Y(highs[-1])) / 2
+        if n:
+            labels.append([mid, col, f'{label} {n}'])
+        lows = highs
+    # direct labels at the right edge: thin bands put them on top of each other, so space them at least 14px apart
+    labels.sort(key=lambda l: -l[0])
+    for i in range(1, len(labels)):
+        labels[i][0] = min(labels[i][0], labels[i - 1][0] - 14)
+    for y, col, text in labels:
+        out.append(f'<g class="dl"><rect x="{W - R + 8}" y="{y - 5:.1f}" width="10" height="10" rx="2" fill="{col}"/><text x="{W - R + 23}" y="{y + 4:.1f}">{E(text)}</text></g>')
+    for m_at, m_label in marks:
+        mx = X(_mins(m_at))
+        if L <= mx <= W - R:
+            out.append(f'<line class="mark" x1="{mx:.1f}" x2="{mx:.1f}" y1="{T}" y2="{H - B}"/><text class="ax" x="{mx + 4:.1f}" y="{T + 10}">{E(m_label)}</text>')
+    for t in ('2026-10-21T12:00Z', '2026-10-21T18:00Z', '2026-10-22T00:00Z', '2026-10-22T06:00Z', '2026-10-22T12:00Z'):
+        tx = X(_mins(t))
+        if L <= tx <= W - R:
+            out.append(f'<text class="ax" x="{tx:.1f}" y="{H - B + 16}" text-anchor="middle">{t[8:10]} Oct {t[11:16]}</text>')
+    out.append(f'<text class="ax" x="{L}" y="{H - 6}">UTC; rows in the inventory</text>')
+    for i, s in enumerate(S):
+        xa, xb = X(_mins(s['at'])), X(_mins(S[i + 1]['at']) if i + 1 < len(S) else x1)
+        tip = f'{_hm(s["at"])}, commit {s["commit"]}: {s["rows"]} rows; ' + ', '.join(f'{s["by_status"].get(k, 0)} {v[0].lower()}' for k, v in INV_ST.items())
+        out.append(f'<rect class="hit" x="{xa:.1f}" y="{T}" width="{max(xb - xa, 1):.1f}" height="{H - T - B}"><title>{E(tip)}</title></rect>')
+    out.append('</svg>')
+    legend = '<ul class="legend">' + ''.join(f'<li><span class="sw" style="background:{c}"></span>{E(l)}</li>' for l, c in INV_ST.values()) + '</ul>'
+    return legend + ''.join(out)
+
+def build_inventory():
+    H_ = D['inventory-history']; S = [s for s in H_['snapshots'] if s['rows']]
+    first, last = S[0], S[-1]
+    rel = '2026-10-21T14:00Z'
+    chart = inventory_chart(H_['snapshots'], [(rel, 'release 14:00'), ('2026-10-22T08:40Z', 'vault capture')])
+    tab = table(['When (UTC)', 'Commit', 'Rows'] + [v[0] for v in INV_ST.values()],
+                [[E(_hm(s['at'])), f'<code>{E(s["commit"])}</code>', str(s['rows'])] + [str(s['by_status'].get(k, 0)) for k in INV_ST] for s in S])
+    moves = Counter((c['from'], c['to']) for c in H_['changes'])
+    name = lambda k: 'added to the list' if k == 'added' else (INV_ST[k][0].lower() if k in INV_ST else k)
+    mv = table(['From', 'To', 'Rows'], [[E(name(a)), E(name(b)), str(n)] for (a, b), n in sorted(moves.items(), key=lambda kv: -kv[1])])
+    cls = OrderedDict((c['id'], c) for c in H_['classes'])
+    cc = Counter((r[3], r[2]) for r in H_['head_rows'])
+    ct = table(['What kind of row', 'Rows'] + [v[0] for v in INV_ST.values()],
+               [[E(c['name']), str(sum(cc[(cid, k)] for k in list(INV_ST) + ['none']))] + [str(cc[(cid, k)] or '') for k in INV_ST] for cid, c in cls.items() if any(cc[(cid, k)] for k in list(INV_ST) + ['none'])], 'ctx')
+    sec = [r for r in H_['head_rows'] if r[3] == 'security-vendor']
+    secv = ', '.join(f'<b>{E(r[1])}</b> ({E(r[0])})' for r in sec if r[2] == 'Vulnerable')
+    secc = Counter(r[0] for r in sec if r[2] == 'Investigation')
+    firstfix = OrderedDict()
+    for c in H_['changes']:
+        if c['to'] == 'Fix' and c['supplier'] not in firstfix:
+            firstfix[c['supplier']] = c
+    ff = table(['Recorded fixed (UTC)', 'Hours after release', 'Supplier', 'First product'], [[E(_hm(c['at'])), f'{(_mins(c["at"]) - _mins(rel)) / 60:.1f}', E(s_), E(c['product'])] for s_, c in list(firstfix.items())[:24]])
+    lf = last['by_status']
+    body = f'''
+<h1>The inventory, hour by hour: fixed, vulnerable, still under investigation</h1>
+<p class="lead">The Dutch NCSC keeps a public list of software that ships or depends on PHP, with a status for each product. This site captured it once, at 08:40 UTC on 22 October. Its git history shows the rest: {len(S)} versions from {E(_hm(first["at"]))} to {E(_hm(last["at"]))}, each read from the commit that made it. At the last one, {lf.get("Fix", 0)} of {last["rows"]} rows were fixed, {lf.get("Vulnerable", 0)} vulnerable and {lf.get("Investigation", 0)} still under investigation, about {(_mins(last["at"]) - _mins(rel)) / 60:.0f} hours after the release.</p>
+<figure>{chart}<figcaption>Rows by status at every commit of the inventory that changed it. Hover a column for the commit and its counts; the table below has the same numbers. Read from a clone of <a href="{E(H_["source"])}">{E(H_["source"])}</a> at <code>{E(H_["head"])}</code>.</figcaption></figure>
+<details><summary>The same numbers as a table</summary>{tab}</details>
+{section("reading", "How to read it", f"""<ul>
+<li><b>Vulnerable mostly means inherited.</b> {cc[("inherited", "Vulnerable")]} of the {lf.get("Vulnerable", 0)} vulnerable rows are applications the inventory marks <q>affected when deployed on an affected web-serving PHP runtime</q>. Their fix is patching PHP underneath them, not a release from their maker, so they stay vulnerable in the list whatever the server does. That is why only {moves[("Vulnerable", "Fix")]} row moved from vulnerable to fixed.</li>
+<li><b>Fixes came from the people who ship PHP.</b> Operating systems, container images, platforms and hosting panels: the {lf.get("Fix", 0)} fixed rows are almost all runtimes, recorded from 15:30 UTC on 21 October.</li>
+<li><b>The investigation pile grew while it shrank.</b> {moves[("Investigation", "Vulnerable")]} rows were resolved to vulnerable and {moves[("Investigation", "Fix")]} to fixed, and {moves[("added", "Investigation")]} new rows arrived under investigation.</li>
+<li><b>The boxes in front run PHP too.</b> Vulnerable: {secv}. Under investigation: {", ".join(f"{E(k)} ({n})" for k, n in secc.most_common())}.</li>
+</ul>""")}
+{section("moves", "Every change of status", mv + "<p class=small>Between consecutive commits, per row. A row added already fixed counts as added.</p>")}
+{section("kinds", "What kind of rows they are", ct + f"<p class=small>Read from each row's own <q>CVE assessment</q> line by {len(cls)} rules, applied in order; the rules are in <code>admin/build/inventory_history.py</code> and in <a href=\"../../data/inventory-history.json\">the data</a>. The words matched are the inventory's; the grouping is this site's.</p>")}
+{section("first", "When each supplier was first recorded fixed", ff + "<p class=small>The time the inventory recorded the fix, not the time the supplier shipped it.</p>")}
+{section("method", "Where this comes from", f"""<p>{E(H_["read_from"])}. Commits are content-addressed: anyone with a clone can check every number here against the commit named. The self-check: {E(H_["self_check"])}. That one row is a correction to this site's earlier counts, on <a href="../../corrections/index.html">corrections</a>. The vault holds the inventory at one commit; the history is not yet captured into it (board).</p>""")}
+<p>The patching ladder, version by version, is on <a href="../index.html">Patching</a>; the signals this belongs to are on <a href="../../signals/index.html">The second stories</a>.</p>
+'''
+    page('patching/inventory/index.html', 'The inventory, hour by hour: fixed, vulnerable, still under investigation', f'The NCSC-NL php2shell inventory across {len(S)} commits: how {last["rows"]} products moved between fixed, vulnerable and under investigation after the release, what kind of products they are, and when each supplier was first recorded fixed.', body, kind='analysis', topics='php2shell patching inventory over time')
+
+def _tl(at, x0, x1, w=240):
+    """A one-row timeline cell: available from `at` to the right edge; a whole day when only the date is known."""
+    if not at:
+        return f'<svg class="tlc" viewBox="0 0 {w} 16" width="{w}" height="16" aria-hidden="true"><line class="grid" x1="0" x2="{w}" y1="8" y2="8"/></svg>'
+    X = lambda m: max(0, min(w, (m - x0) * w / (x1 - x0)))
+    if 'T' in at:
+        a = X(_mins(at))
+        return f'<svg class="tlc" viewBox="0 0 {w} 16" width="{w}" height="16" aria-hidden="true"><line class="grid" x1="0" x2="{w}" y1="8" y2="8"/><line class="avail" x1="{a:.1f}" x2="{w}" y1="8" y2="8"/><circle class="avail-d" cx="{a:.1f}" cy="8" r="4"/></svg>'
+    a, b = X(_mins(at)), X(_mins(at) + 1440)
+    return f'<svg class="tlc" viewBox="0 0 {w} 16" width="{w}" height="16" aria-hidden="true"><line class="grid" x1="0" x2="{w}" y1="8" y2="8"/><rect class="day" x="{a:.1f}" y="3" width="{b - a:.1f}" height="10" rx="2"/><line class="avail" x1="{b:.1f}" x2="{w}" y1="8" y2="8"/></svg>'
+
+def _bar(l, top, w=140):
+    """A cell mark for the ladder: a linear bar against the largest count of hosts (the units are the same), a line for
+    zero, a dashed box for a layer nobody has measured, nothing for a share or for attempts (other units)."""
+    if l['kind'] == 'count' and l.get('n'):
+        return f'<svg class="tlc bar" viewBox="0 0 {w} 14" width="{w}" height="14" aria-hidden="true"><rect class="lb" x="0" y="2" width="{w * l["n"] / top:.1f}" height="10" rx="2"/></svg>'
+    if l['kind'] == 'zero':
+        return f'<svg class="tlc bar" viewBox="0 0 {w} 14" width="{w}" height="14" aria-hidden="true"><line class="zero" x1="1.5" x2="1.5" y1="0" y2="14"/></svg>'
+    if l['kind'] == 'unknown':
+        return f'<svg class="tlc bar" viewBox="0 0 {w} 14" width="{w}" height="14" aria-hidden="true"><rect class="unk" x="0.5" y="2.5" width="{w - 1}" height="9" rx="2"/></svg>'
+    return ''
+
+def build_signals():
+    G = D['signals']; fam = {f['id']: f for f in G['families']}
+    top = max(l.get('n') or 0 for l in G['ladder'] if l['kind'] == 'count')
+    ladder = table(['Layer', 'How many', '', 'Signal', 'Status', 'Sources'],
+                   [[f'<b>{E(l["layer"])}</b><div class="note">{E(l["of"])}</div>', f'<b>{E(l["value"])}</b>', _bar(l, top), f'<a href="#f-{E(l["family"])}">{E(fam[l["family"]]["name"].replace(" signals", "")) if l["family"] in fam else "exposure"}</a>', pill(l['status']), src_links(l['sources'], 1)] for l in G['ladder']], 'ladder')
+    fams = ''.join(f'''<article class="role" id="f-{E(f["id"])}"><h3>{E(f["name"])}</h3><p><i>{E(f["question"])}</i></p><p><b>Now.</b> {E(f["now"])} <span class="refs">{src_links(f["sources"], 1)}</span></p><p><b>What would change it.</b> {E(f["watch"])}</p><p class="small"><a href="../{E(f["page"])}">Where this site tracks it &rarr;</a></p></article>''' for f in G['families'])
+    x0, x1 = _mins('2026-10-21T00:00Z'), _mins('2026-10-22T16:00Z')
+    bars = table(['Barrier', 'Available', '21 Oct 00:00 &rarr; 22 Oct 16:00 UTC', 'A compromise after it says the organisation had', 'Sources'],
+                 [[f'<b>{E(b["what"])}</b>', E(_hm(b['at'])) if b['at'] else '<i>not a release</i>', _tl(b['at'], x0, x1) + f'<div class="note">{E(b["at_note"])}</div>', E(b['gap']), src_links(b['sources'], 1)] for b in G['barriers']], 'ladder')
+    reading = ''.join(f'<li>{E(r)}</li>' for r in G['reading'])
+    story = next((a for a in ARTICLES if a['slug'] == 'exposed-is-not-exploited'), None)
+    body = f'''
+<h1>The second stories: exposed, attempted, exploited, and what was within reach</h1>
+<p class="lead">{E(G["note"])}</p>
+{section("ladder", "From exposed to what matters", f'<p>Each layer is a smaller population than the one above, until the evidence runs out. The two bars are counts of the same thing, hosts, on one linear scale: 1.57 million of 2.6 million were unpatched on the first day; a dashed box is a layer nobody has measured; a single line is zero. The units change down the ladder, from a share of websites to hosts to attempts, and the ladder says so rather than drawing them as one funnel.</p>{ladder}')}
+{section("families", "The four kinds of signal", f'<div class="roles">{fams}</div>', "The editor's four families: what each would show, what it shows now, and what would change it.")}
+{section("barriers", "Every barrier has a time", f'<p>The barriers between this bug and a breach, with the moment each became available. A dot is a stated time; a band is a day with no time given. Read across: a compromise after the dot says something about the organisation, not only about PHP.</p>{bars}')}
+{section("reading", "The reading", f'<ul>{reading}</ul><p class="small">This page is the site\'s analysis, marked as research because every row rests on captured sources; the argument it supports is made in {f"<a href=../articles/{E(story["slug"])}/index.html>{E(story['title'])}</a>" if story else "a story"}.</p>')}
+'''
+    page('signals/index.html', 'The second stories: exposed, attempted, exploited, and what was within reach', 'php2shell as signals: the ladder from websites that use PHP to the sites that were exploited and held something worth reaching, the four kinds of signal and what each shows now, and the time each barrier became available.', body, kind='analysis', topics='php2shell signals exposure reach second stories')
 
 
 if __name__ == '__main__':

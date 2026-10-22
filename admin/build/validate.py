@@ -118,6 +118,11 @@ try:
     json.load(open(os.path.join(ROOT, 'status.json'), encoding='utf-8'))
 except Exception as e:
     fails.append(f'status.json: {e}')
+# 4e. signals: every layer, family and barrier cites only manifest slugs
+sg = load('signals') or {}
+for x in sg.get('ladder', []) + sg.get('families', []) + sg.get('barriers', []):
+    for s in x.get('sources', []):
+        if s not in slugs: fails.append(f'data/signals.json: {x.get("id")} cites unknown slug {s}')
 # 4c. layers: every data file is classified exactly once
 layers = load('layers') or {}
 classified = [f['path'] for f in layers.get('files', [])]

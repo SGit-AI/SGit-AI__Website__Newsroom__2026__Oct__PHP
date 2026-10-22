@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 45 items, 31 open, 13 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 51 items, 35 open, 15 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -51,13 +51,19 @@ The work, as rows in `data/admin.json`: 45 items, 31 open, 13 done. An item is a
 | 038 | The source watch is slow to open in the browser: with no app, the official UI decrypts the folder tree (2,678 objects) before it shows anything; from this sandbox that took 17 minutes. A small vault app that reads index/ and state/ first, or a lighter front vault, would open it in seconds | open | researcher@php.newsroom |  |
 | 039 | Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3 | open | dev |  |
 | 040 | Guest writers and interviewers: an intake (how a piece reaches the editor, the byline, the 'Guest' mark, the licence) and the first guest piece | open | editor |  |
-| 041 | Follow the patching curve: re-read the NCSC-NL inventory per commit and draw how the 418 'under investigation' rows turn into fixed or vulnerable | open | journalist |  |
+| 041 | Follow the patching curve: re-read the NCSC-NL inventory per commit and draw how the 418 'under investigation' rows turn into fixed or vulnerableThe inventory over time: /patching/inventory/, 38 versions read from the public git history; the curve keeps growing with each re-run of admin/build/inventory_history.py. | done | journalist | 0.4.2 |
 | 042 | Top-level navigation, Research and Stories: the editor's call on names and order after living with the first cut | open | editor |  |
 | 043 | Capture W3Techs' PHP version shares alongside its language share (see board 033): the number the patching story says is missing | open | collector-researchers |  |
 | 044 | Patching and status.json: /patching/ with every downstream row checked against the inventory; the story 'Why can't every version of PHP just be patched?'; Research and Stories zones in the menu and an origin strip on every page | done | journalist | 0.4.1 |
+| 045 | The second stories: /signals/ (the ladder from exposed to exploited, four signal families, barrier times) and the story 'Exposed is not exploited' by the journalist and the historian | done | journalist | 0.4.2 |
+| 046 | Fix the vault's export of the NCSC-NL inventory: it dropped one row (iBabs bestuursportaal) at cca173c64ec5, so pages say 674 and 3 where the list has 675 and 4 | open | collector-gov |  |
+| 047 | Capture the NCSC-NL inventory's later commits into the vault, so the history on /patching/inventory/ rests on captures as well as on the public repository | open | collector-gov |  |
+| 048 | Ask the edge providers for the number nobody has: how many exposed hosts sat behind a rule that blocked the request | open | journalist |  |
+| 049 | Record the first confirmed compromise with two dates, when it happened and when it was announced, against the barrier times on /signals/ | open | historian |  |
+| 050 | Find the editor's article on exploitation, patching, internal vulnerability and network protection signals; the SaaS apocalypse piece as published does not carry it | open | editor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

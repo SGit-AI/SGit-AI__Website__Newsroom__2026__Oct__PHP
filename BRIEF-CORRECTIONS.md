@@ -2,6 +2,10 @@
 
 Newest first. A correction names the date, what was wrong, what was found, and what was done instead. The mistake stays visible where it was made.
 
+## 2026-10-22, v0.4.2: the NCSC-NL inventory had 675 rows at the captured commit, not 674
+
+Every page that counts the NCSC-NL inventory at commit cca173c64ec5 says 674 products, 3 of them not vulnerable. Reading the list's public history commit by commit, this site's new reader found 675: the vault's export had dropped one row, iBabs bestuursportaal, marked not vulnerable ('PHP is not being used in iBabs. This is confirmed by an email of the supplier.'). The other 674 rows and every status agree. The counts on the existing pages come from `data/software.json`, which is evidence and is only ever regenerated from the vault, so they are left as they are until the vault's export is fixed and re-run (board); the inventory pages built from the history carry the right count and say why.
+
 ## 2026-10-22, v0.3.1: the site's name, and who the front page is for
 
 The site was named php2shell, after the incident. The editor's correction: it is PHP news for October 2026, which this month happens to be dominated by one security incident, and the next month can be tracked the same way. The brand, page titles and the footer now say PHP October 2026; php2shell stays as what the press calls the flaws. The front page had opened with CVE numbers, a nickname and the words unauthenticated remote code execution; it now opens with the current situation in plain words, and the technical version is on the specialist summary page.

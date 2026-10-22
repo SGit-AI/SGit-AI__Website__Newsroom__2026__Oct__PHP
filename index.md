@@ -104,7 +104,7 @@ ASecurity researcherAsh · Deeply technicalWhat are the bug classes, what was de
 ## Stories: written here
 
 Everything above is research: collected from outside sources, each fact linked to a saved copy. These are written here, signed and dated, and kept as written.
-Why can't every version of PHP just be patched?House story · Journalist · 2026-10-22Where php2shell stands: many sites dark, millions of attempts, no confirmed breachHouse story · Journalist · 2026-10-22php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proofHouse story · Historian · 2026-10-22The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
+Why can't every version of PHP just be patched?House story · Journalist · 2026-10-22Where php2shell stands: many sites dark, millions of attempts, no confirmed breachHouse story · Journalist · 2026-10-22Exposed is not exploited: the sites php2shell did not hit, and what a hit will admitHouse story · Journalist and historian · 2026-10-22The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
 [All stories →](articles/index.html)
 
 ## How this site knows
@@ -115,4 +115,4 @@ Already know the vocabulary? [The specialist summary](summary/index.html) has th
 
 
 ---
-site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html

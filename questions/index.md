@@ -72,6 +72,8 @@ An article a reader has seen is listed here until a collector captures it into t
 - [In context: php2shell against Kaminsky, Heartbleed, Shellshock, Log4Shell and the last PHP RCE](../context/index.html): Ten landmark vulnerabilities with their CVE records and KEV rows, the KEV catalog counted, and what the comparison says about severity, exposure, urgency and the discovery pipeline.
 - [If you run PHP: the steps, in order, with their sources](../playbook/index.html): Inventory, patch, mitigate, shield, isolate or take offline, look for compromise, verify: every agency's php2shell advice merged into one ordered list with the sentence each step comes from.
 - [Patching: who gets a fix](../patching/index.html):
+- [The inventory, hour by hour](../patching/inventory/index.html):
+- [The second stories: signals](../signals/index.html):
 
 ### The analysis
 - [Every claim, with its status and sources](../claims/index.html): 70 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
@@ -99,6 +101,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [All stories, written here](../articles/index.html):
 - [House · Journalist: Why can't every version of PHP just be patched](../articles/why-not-patch-every-version/index.html):
 - [House · Journalist: Where php2shell stands](../articles/where-php2shell-stands/index.html):
+- [House · Journalist and historian: Exposed is not exploited](../articles/exposed-is-not-exploited/index.html):
 - [House · Historian: php2shell in perspective](../articles/php2shell-in-perspective/index.html):
 - [The editor, interviewed: Dinis Cruz on why this site exists](../interview/index.html): Dinis Cruz, the editor of PHP October 2026, on why he started tracking the PHP flaws, the 70% figure, what remote code execution does and does not mean, pulling the plug, and why every section of the site is versioned. In his own words.
 
@@ -126,4 +129,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

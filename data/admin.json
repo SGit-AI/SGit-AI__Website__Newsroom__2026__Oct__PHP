@@ -386,8 +386,10 @@
   {
    "id": "041",
    "title": "Follow the patching curve: re-read the NCSC-NL inventory per commit and draw how the 418 'under investigation' rows turn into fixed or vulnerable",
-   "status": "open",
-   "owner": "journalist"
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.4.2",
+   "note": "The inventory over time: /patching/inventory/, 38 versions read from the public git history; the curve keeps growing with each re-run of admin/build/inventory_history.py."
   },
   {
    "id": "042",
@@ -407,6 +409,43 @@
    "status": "done",
    "owner": "journalist",
    "version": "0.4.1"
+  },
+  {
+   "id": "045",
+   "title": "The second stories: /signals/ (the ladder from exposed to exploited, four signal families, barrier times) and the story 'Exposed is not exploited' by the journalist and the historian",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.4.2"
+  },
+  {
+   "id": "046",
+   "title": "Fix the vault's export of the NCSC-NL inventory: it dropped one row (iBabs bestuursportaal) at cca173c64ec5, so pages say 674 and 3 where the list has 675 and 4",
+   "status": "open",
+   "owner": "collector-gov"
+  },
+  {
+   "id": "047",
+   "title": "Capture the NCSC-NL inventory's later commits into the vault, so the history on /patching/inventory/ rests on captures as well as on the public repository",
+   "status": "open",
+   "owner": "collector-gov"
+  },
+  {
+   "id": "048",
+   "title": "Ask the edge providers for the number nobody has: how many exposed hosts sat behind a rule that blocked the request",
+   "status": "open",
+   "owner": "journalist"
+  },
+  {
+   "id": "049",
+   "title": "Record the first confirmed compromise with two dates, when it happened and when it was announced, against the barrier times on /signals/",
+   "status": "open",
+   "owner": "historian"
+  },
+  {
+   "id": "050",
+   "title": "Find the editor's article on exploitation, patching, internal vulnerability and network protection signals; the SaaS apocalypse piece as published does not carry it",
+   "status": "open",
+   "owner": "editor"
   }
  ],
  "evidence_vault": {

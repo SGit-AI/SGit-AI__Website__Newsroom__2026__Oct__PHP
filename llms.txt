@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.4.1. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.4.2. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Start here
 - [Who are you? Pick a reader](https://php.oct.2026.newsroom.sgit.ai/start/index.md): 15 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
@@ -56,6 +56,8 @@ Site v0.4.1. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [In context: 2008 to 2026](https://php.oct.2026.newsroom.sgit.ai/context/index.md): Ten landmark vulnerabilities with their CVE records and KEV rows, the KEV catalog counted, and what the comparison says about severity, exposure, urgency and the discovery pipeline.
 - [If you run PHP](https://php.oct.2026.newsroom.sgit.ai/playbook/index.md): Inventory, patch, mitigate, shield, isolate or take offline, look for compromise, verify: every agency's php2shell advice merged into one ordered list with the sentence each step comes from.
 - [Patching: who gets a fix](https://php.oct.2026.newsroom.sgit.ai/patching/index.md): Which PHP versions the PHP project fixed, which it left to others, which nobody upstream fixed, and how the fix reaches a server: patched for you, rebuild yourself, a system update, extended support, a hosting panel, or still waiting.
+- [The inventory, hour by hour](https://php.oct.2026.newsroom.sgit.ai/patching/inventory/index.md): The NCSC-NL php2shell inventory across 38 commits: how 724 products moved between fixed, vulnerable and under investigation after the release, what kind of products they are, and when each supplier was first recorded fixed.
+- [The second stories: signals](https://php.oct.2026.newsroom.sgit.ai/signals/index.md): php2shell as signals: the ladder from websites that use PHP to the sites that were exploited and held something worth reaching, the four kinds of signal and what each shows now, and the time each barrier became available.
 
 ## The analysis
 - [Every claim](https://php.oct.2026.newsroom.sgit.ai/claims/index.md): 70 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
@@ -80,9 +82,10 @@ Site v0.4.1. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [The telemetry vault](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 
 ## Stories
-- [All stories, written here](https://php.oct.2026.newsroom.sgit.ai/articles/index.md): 3 stories about the PHP flaws written for this site, plus the editor's interview: house stories by the journalist and historian, interviews, and guest pieces, each pinned to the evidence it was written against.
+- [All stories, written here](https://php.oct.2026.newsroom.sgit.ai/articles/index.md): 4 stories about the PHP flaws written for this site, plus the editor's interview: house stories by the journalist and historian, interviews, and guest pieces, each pinned to the evidence it was written against.
 - [House · Journalist: Why can't every version of PHP just be patched](https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.md): The second story inside php2shell. The fix exists for four versions of PHP; everyone else depends on who they buy PHP from. What the project shipped, what it did not, who filled the gap and for whom, and the editor's argument that patching should be a relationship, not a chore.
 - [House · Journalist: Where php2shell stands](https://php.oct.2026.newsroom.sgit.ai/articles/where-php2shell-stands/index.md): A state-of-affairs report on the two PHP flaws, written against the evidence vault as it stood at site v0.2.5: what is settled, where the alarm and the evidence part company, and the five things that would change the story.
+- [House · Journalist and historian: Exposed is not exploited](https://php.oct.2026.newsroom.sgit.ai/articles/exposed-is-not-exploited/index.md): A second story, by the journalist and the historian together. The count everyone wants is how many sites were hacked. The count that matters is how many of the exposed sites mattered, what an attacker could have reached on them, and what each barrier that was available and not used will say about the organisations that are hit.
 - [House · Historian: php2shell in perspective](https://php.oct.2026.newsroom.sgit.ai/articles/php2shell-in-perspective/index.md): A historian's reading of the first day, set against ten earlier vulnerabilities and the KEV catalog: which parts of this story have happened before, which have not, and what the record will need to settle it.
 - [Interview: the editor](https://php.oct.2026.newsroom.sgit.ai/interview/index.md): Dinis Cruz, the editor of PHP October 2026, on why he started tracking the PHP flaws, the 70% figure, what remote code execution does and does not mean, pulling the plug, and why every section of the site is versioned. In his own words.
 
