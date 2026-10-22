@@ -759,6 +759,30 @@
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the brief: a fact-checker joins the team (22 October)."
+  },
+  {
+   "id": "090",
+   "title": "Collaborators: /collaborators/ with this week's ask, the WhatsApp and email messages per ask, a join form and a feedback form encrypted to the new collaborators vault (58526ytp); its drain; brief admin/content/briefs/2026-10-22__brief__collaborators.md",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "091",
+   "title": "Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp group",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "092",
+   "title": "Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, key-pair passphrases) to the root: the session's permission check stopped it; the four vault keys are sealed",
+   "status": "waiting",
+   "owner": "conductor"
+  },
+  {
+   "id": "093",
+   "title": "Write ask 002 after the next release worth looking at, and drain the collaborators lane into the board at every close",
+   "status": "open",
+   "owner": "conductor"
   }
  ],
  "evidence_vault": {

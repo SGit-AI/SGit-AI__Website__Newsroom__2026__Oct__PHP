@@ -187,7 +187,7 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
+    ('Yours', [('collaborators/index.html', 'Collaborators: help us build it'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -1024,10 +1024,10 @@ def build_team():
     humans = ' and '.join(f'<a href="{E(m["id"])}/index.html">{E(m["name"])}</a> ({E(m["role"].lower())})' for m in M if m['kind'] == 'human')
     body = f'''
 <h1>The team: two people and the agents that work with them</h1>
-<p class="lead">This site is built and run by {humans}, and a team of software agents. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is <a href="../data/team.json">data/team.json</a>, kept by <a href="conductor/index.html">the conductor</a>.</p>
+<p class="lead">This site is built and run by {humans}, and a team of software agents, with help from <a href="../collaborators/index.html">collaborators</a> who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is <a href="../data/team.json">data/team.json</a>, kept by <a href="conductor/index.html">the conductor</a>.</p>
 <div class="stats">{stats}</div>
 {section("members", "Who is on it", groups)}
-{section("run", "How the team runs", f'<p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
+{section("run", "How the team runs", f'<p class="caveat">{E(T.get("now", ""))}</p><p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
 {section("pipeline", "The pipeline", pipe, "How a URL becomes a published claim, and who does each step.")}
 {section("audiences", "The audiences", f'<ul>{auds}</ul>', "Each briefing is a role too: a reader whose question the site answers in one page.")}
 {section("rules", "The rules every member shares", '''<ul>
@@ -1450,7 +1450,7 @@ def build_all():
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
-    build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
+    build_method(); build_team(); build_collaborators(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
     build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
 
@@ -2202,7 +2202,7 @@ def build_vaults():
              'source-watch': f'{W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries and {len(W["lang"])} languages; {W["snapshots"]} snapshots, {len(W["runs"])} runs; head <code>{E(W["head"]["commit"])}</code>',
              'telemetry': f'lane <code>{E(tl["vault_id"])}</code> on <code>{E(tl["endpoint"])}</code>; events encrypted to <code>{E(tl["recipient"]["fingerprint"])}</code>',
              'subscriptions': f'lane <code>{E(D["subscriptions"]["vault_id"])}</code> on <code>{E(D["subscriptions"]["endpoint"])}</code>; requests encrypted to <code>{E(D["subscriptions"]["recipient"]["fingerprint"])}</code>'}
-    lanes = {'telemetry': tl['append_token'], 'subscriptions': D['subscriptions']['append_token']}
+    lanes = {'telemetry': tl['append_token'], 'subscriptions': D['subscriptions']['append_token'], 'collaborators': load('collaborators')['lane']['append_token']}
     cards = ''
     for x in VS:
         k = keys.get(x['slug'])
@@ -3540,6 +3540,96 @@ def build_agents_guide():
 <p class="small">The source is <code>AGENTS.md</code> at the root of the repository; every agent reads it there or here.</p>
 """
     page('admin/agents/index.html', 'How to work on this site: guidance for every agent', 'Push to your own branch early and often and let dev@php.newsroom carry it into dev; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements.', body, kind='site')
+
+# ----------------------------------------------------------------------------- the collaborators (conductor@php.newsroom)
+# The editor's brief, 22 October 2026: a page he can send people he knows, who become the site's power users: they read
+# what is new when asked, as one of the site's readers, and send feedback; the asks also go to an email list and a
+# WhatsApp group the editor runs. data/collaborators.json holds the asks; assets/collaborators.js sends the join and
+# feedback forms, encrypted in the browser, to the private collaborators vault's write-only lane.
+
+def ask_message(a, persons, channel):
+    """The message the editor pastes into the WhatsApp group or the email list for one ask: plain text, full URLs."""
+    url = f'{BASE_URL}/collaborators/index.html#ask-{a["id"]}'
+    news = '\n'.join(f'- {t}: {BASE_URL}/{p}' for p, t, _ in a['new'])
+    qs = '\n'.join(f'{i + 1}. {q}' for i, q in enumerate(a['questions']))
+    readers = ', '.join(persons[r]['label'] for r in a['readers'] if r in persons)
+    if channel == 'whatsapp':
+        return (f'{a["day"]}: {a["title"]}\n\nNew on PHP October 2026:\n{news}\n\nRead it as one of the site\'s readers ({readers}, or any other on Start here) '
+                f'and tell us:\n{qs}\n\nReply here, or use the form (it goes straight to the team): {url}')
+    return (f'Subject: PHP October 2026, ask {a["id"]}: {a["title"]}\n\nHello,\n\nHere is what we would like you to look at this time ({a["day"]}).\n\n'
+            f'What is new:\n{news}\n\nWhat to do:\n' + '\n'.join(f'{i + 1}. {s}' for i, s in enumerate(a['steps'])) +
+            f'\n\nThe questions:\n{qs}\n\nReply to this email, say it in the WhatsApp group, or use the form at {url}\n\nThank you,\nDinis')
+
+def build_collaborators():
+    C = load('collaborators'); persons = {p['id']: p for p in D['personas']['personas']}
+    readers = [[p['id'], p['label']] for p in D['personas']['personas']]
+    cfg = J({'contact': C['contact'], 'endpoint': C['lane']['endpoint'], 'vault_id': C['lane']['vault_id'], 'append_token': C['lane']['append_token'],
+             'recipient': C['lane']['recipient'], 'readers': readers, 'asks': [a['id'] for a in C['asks']]}, ensure_ascii=False, separators=(',', ':'))
+    ropts = '<option value="">(none in particular)</option>' + ''.join(f'<option value="{E(i)}">{E(l)}</option>' for i, l in readers)
+    aopts = ''.join(f'<option value="{E(a["id"])}">{E(a["id"])}: {E(a["title"])}</option>' for a in C['asks']) + '<option value="">Something else</option>'
+    def ask_html(a, latest):
+        news = ''.join(f'<a class="door" href="../{U(p)}"><b>{E(t)}</b><span>{E(w)}</span></a>' for p, t, w in a['new'])
+        rd = ', '.join(f'<a href="../briefings/{E(r)}/index.html">{E(persons[r]["label"])}</a>' for r in a['readers'] if r in persons)
+        msgs = (f'<details><summary>The message for the WhatsApp group</summary><pre class="msg">{E(ask_message(a, persons, "whatsapp"))}</pre></details>'
+                f'<details><summary>The message for the email list</summary><pre class="msg">{E(ask_message(a, persons, "email"))}</pre></details>')
+        return f'''<section class="vcard" id="ask-{E(a["id"])}"><h3>{"This ask: " if latest else ""}{E(a["day"])}, ask {E(a["id"])}: {E(a["title"])}</h3>
+<p class="small">New since v{E(a["since"])}. Read it as: {rd}, or <a href="../start/index.html">any other reader</a>.</p>
+<div class="doors">{news}</div>
+<h4>What to do</h4><ol>{"".join(f"<li>{E(x)}</li>" for x in a["steps"])}</ol>
+<h4>The questions</h4><ol>{"".join(f"<li>{E(x)}</li>" for x in a["questions"])}</ol>
+{msgs}</section>'''
+    asks = sorted(C['asks'], key=lambda a: a['date'], reverse=True)
+    latest = ask_html(asks[0], True) if asks else '<p>No ask yet.</p>'
+    earlier = ''.join(ask_html(a, False) for a in asks[1:]) or '<p class="small">None yet: this is the first.</p>'
+    li = lambda xs: '<ul>' + ''.join(f'<li>{E(x)}</li>' for x in xs) + '</ul>'
+    chans = ''.join(f'<li><b>{E(n)}.</b> {E(t)}</li>' for n, t in C['channels'])
+    thanks = ', '.join(E(x) for x in C['thanks']) or 'Nobody yet: be the first.'
+    ed = C['editor']
+    body = f'''
+<h1>Collaborators: help us build this site by using it</h1>
+<p class="lead">This site is being built in public, every day, by {E(ed["name"])} and a team of AI agents. We are looking for people who will use it as it grows: read what is new when we ask, as the kind of reader you are, and tell us what works and what does not. {E(C["time"])} If you have not seen agentic workflows doing real work, this is a close look at one.</p>
+<p><a class="cta cta-pri" href="#join">Join the collaborators</a> <a class="cta" href="#ask-{E(asks[0]["id"]) if asks else ""}">See this week\'s ask</a> <a class="cta" href="#feedback">Send feedback</a></p>
+{section("ask", "This week\'s ask", latest)}
+{section("what", "What we ask of you", li(C["what_we_ask"]))}
+{section("get", "What you get", li(C["what_you_get"]))}
+{section("how", "How it works", f'<ul>{chans}</ul><p>The readers you can read as are on <a href="../start/index.html">Start here</a>: each has a plain answer, what it needs and a reading path. The team you are helping is on <a href="../team/index.html">the team page</a>.</p>')}
+<section id="join"><h2>Join</h2>
+<p>Know {E(ed["name"].split()[0])}? <a href="{U(ed["linkedin"])}" rel="noopener">Message him on LinkedIn</a>, or fill this in. He reads every request and adds you to the email list, and to the WhatsApp group if you ask.</p>
+<form id="join-form" class="subform" autocomplete="on">
+<p><label>Your name<br><input type="text" name="name" required maxlength="120"></label></p>
+<p><label>Your email address<br><input type="email" name="email" required maxlength="254" placeholder="you@example.org"></label></p>
+<p><label>How you know {E(ed["name"].split()[0])}, or how you found this (optional)<br><input type="text" name="knows" maxlength="300"></label></p>
+<p><label>The reader closest to you (optional)<br><select name="reader">{ropts}</select></label></p>
+<p><label class="sub-c"><input type="checkbox" name="whatsapp" value="yes"> Add me to the WhatsApp group too ({E(ed["name"].split()[0])} will ask for your number; it is not collected here)</label></p>
+<p><label>Anything else (optional)<br><textarea name="note" rows="2" maxlength="1000"></textarea></label></p>
+<p class="sub-hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
+<p><button class="cta cta-pri" type="submit">Ask to join</button></p>
+<p id="join-out" role="status" aria-live="polite"></p>
+</form></section>
+<section id="feedback"><h2>Send feedback</h2>
+<p>On an ask, or on anything else on the site. Short is fine. Your name and address are optional here.</p>
+<form id="fb-form" class="subform" autocomplete="on">
+<p><label>Which ask<br><select name="ask">{aopts}</select></label></p>
+<p><label>Which reader you read as (optional)<br><select name="reader">{ropts}</select></label></p>
+<p><label>Which page (optional)<br><input type="text" name="page" maxlength="300" placeholder="paste the address, or describe it"></label></p>
+<p><label>What worked<br><textarea name="worked" rows="3" maxlength="3000"></textarea></label></p>
+<p><label>What did not, or what you expected and could not find<br><textarea name="missing" rows="3" maxlength="3000"></textarea></label></p>
+<p><label>What you would do next, or anything that contradicts something else on the site<br><textarea name="next" rows="3" maxlength="3000"></textarea></label></p>
+<p><label>Your name (optional)<br><input type="text" name="name" maxlength="120"></label></p>
+<p><label>Your email, if you want a reply (optional)<br><input type="email" name="email" maxlength="254"></label></p>
+<p class="sub-hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
+<p><button class="cta cta-pri" type="submit">Send feedback</button></p>
+<p id="fb-out" role="status" aria-live="polite"></p>
+</form></section>
+<script type="application/json" id="collab-config">{cfg}</script>
+<p class="small">The forms need JavaScript, because they encrypt in your browser. Without it, write to <a href="mailto:{E(C["contact"])}">{E(C["contact"])}</a> or message {E(ed["name"].split()[0])} on LinkedIn.</p>
+{section("earlier", "Earlier asks", earlier)}
+{section("privacy", "What happens to what you send", f'<ul><li>It is encrypted in your browser to the collaborators vault\'s key (<code>{E(C["lane"]["recipient"]["fingerprint"])}</code>) and posted to a write-only lane on that private vault (<code>{E(C["lane"]["vault_id"])}</code>). The lane answers the same whatever arrives, so this page can say it was sent, never that it arrived.</li><li>It stays in that vault: not on this site, not in its repository, not in its telemetry. The editor and the conductor read it. Feedback becomes work on <a href="../admin/board/index.html">the board</a> in the team\'s words, never with your name unless you agree.</li><li>No phone number is collected here. WhatsApp is the editor\'s own group; he asks for your number himself.</li><li>Anyone can type anything into a form, so a request is read by a person before anyone is added or written to.</li></ul>')}
+{section("thanks", "Thank you", f'<p>{thanks}</p>')}
+<script src="../assets/collaborators.js" defer></script>
+'''
+    page('collaborators/index.html', 'Collaborators: help us build this site by using it', 'Join the people who use PHP October 2026 as it is built: this week\'s ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.', body, kind='account')
+
 
 
 if __name__ == '__main__':

@@ -555,3 +555,7 @@ html.ask-on .ask-pane{display:flex}
 .ask-key{display:flex;flex-direction:column;gap:.35rem;border:1px solid var(--line);border-radius:10px;padding:.6rem}
 .ask-key label{display:flex;flex-direction:column;gap:.2rem;font-size:.84rem}
 .ask-tools li{margin:.35rem 0;font-size:.86rem}
+
+/* the collaborators' forms and messages (/collaborators/), conductor@php.newsroom */
+.subform input[type=text],.subform select{width:100%;font:inherit;padding:.35rem .5rem;border:1px solid var(--line2);border-radius:6px;background:var(--bg);color:var(--fg)}
+pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.6rem .8rem;font-size:.85rem}

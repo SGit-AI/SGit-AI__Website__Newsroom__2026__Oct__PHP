@@ -40,6 +40,7 @@ Site v0.5.5. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [Media and communications team](https://php.oct.2026.newsroom.sgit.ai/briefings/comms/index.md): The php2shell story for a media and communications team: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
 ## Yours
+- [Collaborators: help us build it](https://php.oct.2026.newsroom.sgit.ai/collaborators/index.md): Join the people who use PHP October 2026 as it is built: this week's ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
 - [Now: the phone app](https://php.oct.2026.newsroom.sgit.ai/now/index.md): What you need to know about the PHP flaws for the time you have, one, five, ten or thirty minutes, against what you read before; deterministic from the data, or written by a model with your own key kept in your own vault, with a chat.
 - [Your desk: new, changed, notes](https://php.oct.2026.newsroom.sgit.ai/you/index.md): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
 - [The feed viewer](https://php.oct.2026.newsroom.sgit.ai/reader/index.md): Read this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.
@@ -93,6 +94,7 @@ Site v0.5.5. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [The conductor vault](https://php.oct.2026.newsroom.sgit.ai/team/channels/index.html#conductor): 
 - [The issues vault](https://php.oct.2026.newsroom.sgit.ai/team/channels/index.html#issues): 
 - [The mail vault](https://php.oct.2026.newsroom.sgit.ai/team/channels/index.html#mail): 
+- [The collaborators vault](https://php.oct.2026.newsroom.sgit.ai/collaborators/index.md): Join the people who use PHP October 2026 as it is built: this week's ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
 
 ## Stories
 - [All stories, written here](https://php.oct.2026.newsroom.sgit.ai/articles/index.md): 5 stories about the PHP flaws written for this site, plus the editor's interview: house stories by the journalist and historian, interviews, and guest pieces, each pinned to the evidence it was written against.

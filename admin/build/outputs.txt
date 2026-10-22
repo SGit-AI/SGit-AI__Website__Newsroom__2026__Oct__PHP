@@ -139,6 +139,8 @@ claims/index.html
 claims/index.md
 code/index.html
 code/index.md
+collaborators/index.html
+collaborators/index.md
 context/index.html
 context/index.md
 corrections/index.html

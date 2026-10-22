@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 89 items, 63 open, 25 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 93 items, 65 open, 26 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -99,6 +99,10 @@ The work, as rows in `data/admin.json`: 89 items, 63 open, 25 done. An item is a
 | 087 | Run the desk on a schedule, every four hours: the claims that changed, the open tickets, the weak and the contested, KEV and the moving sources; a full sweep once a dayFrom the brief: a fact-checker joins the team (22 October). | open | factcheck |  |
 | 088 | Act on the desk's high and medium findings on claims, agencies, exploitation and impact data: first Italy's offline advice, the allies' 'contradicted' mark, the five quotes not in their captures, and the eleven overstated status words (tickets on /factcheck/)From the brief: a fact-checker joins the team (22 October). | open | claude-story-site |  |
 | 089 | Capture what the desk found outside the vault: the BBC live page as it stands (32 UK services, 90%), The Next Web, the PHPocalypse Tracker's sites.csv, KEV each run; then re-grade the claims they bear onFrom the brief: a fact-checker joins the team (22 October). | open | collector-researchers |  |
+| 090 | Collaborators: /collaborators/ with this week's ask, the WhatsApp and email messages per ask, a join form and a feedback form encrypted to the new collaborators vault (58526ytp); its drain; brief admin/content/briefs/2026-10-22__brief__collaborators.md | done | conductor |  |
+| 091 | Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp group | open | editor |  |
+| 092 | Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, key-pair passphrases) to the root: the session's permission check stopped it; the four vault keys are sealed | waiting | conductor |  |
+| 093 | Write ask 002 after the next release worth looking at, and drain the collaborators lane into the board at every close | open | conductor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 

@@ -93,6 +93,18 @@
    "note": "Its key goes to members privately.",
    "page": "team/channels/index.html#mail",
    "data": "data/team.json"
+  },
+  {
+   "slug": "collaborators",
+   "id": "58526ytp",
+   "name": "The collaborators vault",
+   "access": "private, with a public append lane",
+   "app": false,
+   "holds": "What the collaborators send from /collaborators/: requests to join (a name, an email address, the reader closest to them) and feedback on each ask, each encrypted in the sender's browser to a key held by the conductor and the editor.",
+   "writers": "collaborators and anyone else, through the write-only lane on /collaborators/; conductor@php.newsroom drains it; the editor reads it",
+   "note": "Its key, the lane's enum key and the key pair's passphrase are never published.",
+   "page": "collaborators/index.html",
+   "data": "data/collaborators.json"
   }
  ]
 }

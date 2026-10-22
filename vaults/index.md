@@ -6,7 +6,7 @@ Every vault this site is built from: the evidence vault and the source watch, bo
 
 # The vaults behind this site
 
-This site is rebuilt from vaults, never written by hand. 8 vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
+This site is rebuilt from vaults, never written by hand. 9 vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
 
 Every vault behind this site: what each holds, who writes to it, and how to open it. Three kinds of credential appear here. A vault key reads and writes; it is never published. A read key reads only and cannot be turned into a vault key; the two public vaults publish theirs. An append token adds rows to one lane and cannot read anything; the telemetry lane publishes its token so every page can write to it.
 
@@ -93,6 +93,16 @@ The team's messages (Email-FS-lite): a mailroom, an inbox, a done folder and an 
 **Written by** each member of the team, in its own folders and other members' mailrooms. Data on this site: [data/team.json](../data/team.json).
 
 **Not published:** the vault key. Its key goes to members privately.
+
+## [The collaborators vault](../collaborators/index.html) private, with a public append lane
+
+**Vault** `58526ytp` ·
+
+What the collaborators send from /collaborators/: requests to join (a name, an email address, the reader closest to them) and feedback on each ask, each encrypted in the sender's browser to a key held by the conductor and the editor.
+
+**Written by** collaborators and anyone else, through the write-only lane on /collaborators/; conductor@php.newsroom drains it; the editor reads it. Data on this site: [data/collaborators.json](../data/collaborators.json).
+
+**Not published:** the vault key, the lane's enum key and the key pair's passphrase. **Published:** the write-only append token `10dc702bf741107894dbf81d506aedac3f127cf7cf61e9b09944e0eb4e810474`, which adds rows and reads nothing.
 
 The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgit.ai network, published the same way, are at [sgit.ai's vaults](https://sgit.ai/demos/vaults/index.html).
 

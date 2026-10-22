@@ -6,20 +6,20 @@ Every member of the team that runs this site, 2 people and 15 agents and roles, 
 
 # The team: two people and the agents that work with them
 
-This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
+This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents, with help from [collaborators](../collaborators/index.html) who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-17members2humans13agents2roles not yet filled60open tasks1waiting24done
+17members2humans13agents2roles not yet filled62open tasks2waiting25done
 
 ## Who is on it
 
 ### The humans
 
 The two people on the team. They set direction and make the calls; every agent works for them.
-DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sources, reads what they wrote and says go.human8 open, 0 doneVIVicky@Vicky · Project managerRuns the project side: what is planned, who has it, what is late and what the editor needs to decide.human2 open, 0 done
+DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sources, reads what they wrote and says go.human9 open, 0 doneVIVicky@Vicky · Project managerRuns the project side: what is planned, who has it, what is late and what the editor needs to decide.human2 open, 0 done
 ### Coordination and comms
 
 Keeps every member, human and agent, synchronised: what is assigned, what is blocked, what changed.
-COConductor@Conductor · Conductor and commsMaps the work, hands it out, and keeps every member, human and agent, synchronised. For now also the comms agent: the broadcasts and the digests.agent3 open, 1 done
+COConductor@Conductor · Conductor and commsMaps the work, hands it out, and keeps every member, human and agent, synchronised. For now also the comms agent: the broadcasts and the digests.agent4 open, 1 waiting, 2 done
 ### Building the site
 
 The build, the gate, the release, the design, and the pages.
@@ -38,6 +38,8 @@ Readers that are not people, reading the live site.
 SYsynthetic@php.newsroom@Synthetic · Synthetic readersSix test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.agent0 open, 0 done
 
 ## How the team runs
+
+For now the team synchronises through this repository and the site, which are public: each agent maps what it has to do and what it has done on its own branch, the board and its own article, as AGENTS.md and the librarian's guidance say, and the conductor reads them. The three coordination vaults are set up and wait for later.
 
 When the team runs on a schedule, every run has three phases in this order, so nobody starts work the conductor has not mapped and no run ends without the team knowing what changed.
 - **Open** (conductor). Pull the conductor, issues and mail vaults; drain the conductor's lane; read every member's open and blocked issues; write the run plan (who does what this run, what is blocked on whom); send each member its assignments as mail; broadcast the plan.

@@ -38,6 +38,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 065 | First live run of the agentic mode with the editor's OpenRouter key: check that every sentence Sonnet writes cites an item, and that the infographic adds no number of its ownFrom the brief on the phone app (22 October). | open |  |
 | 070 | Decide how each member receives the coordination vaults' keys: the conductor vault's read key, the issues and mail vaults' keys, each member's append token (sealed per member on pki.sgit.ai, or handed in each session's launch prompt)Until this is decided, the conductor holds every key and members are reached through the editor. | open |  |
 | 071 | Set the cadence of the scheduled run (open by the conductor, work by the agents, close by the conductor) and which agents take part in the first one | open |  |
+| 091 | Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp group | open |  |
 
 ## What they have done
 - Started the site from two voice memos and a message on 22 October 2026, and set every brief since.
