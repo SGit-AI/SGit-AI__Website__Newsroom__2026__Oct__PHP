@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 57 items, 37 open, 19 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 64 items, 44 open, 19 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -67,9 +67,16 @@ The work, as rows in `data/admin.json`: 57 items, 37 open, 19 done. An item is a
 | 054 | Ask the edge providers for the number nobody has: how many exposed hosts sat behind a rule that blocked the request | open | journalist |  |
 | 055 | Record the first confirmed compromise with two dates, when it happened and when it was announced, against the barrier times on /signals/ | open | historian |  |
 | 056 | Find the editor's article on exploitation, patching, internal vulnerability and network protection signals; the SaaS apocalypse piece as published does not carry it | open | editor |  |
+| 057 | Schedule the watch list: every source in the scheduled-capture brief checked on a cadence (15 minutes while breaking, hourly, then daily), extending the source watch rather than starting a second schedulerFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | dev |  |
+| 058 | Capture raw on every change: page, rendered, text, screenshot, headers and the data itself (JSON, CSV, git, RSS), hashed, a new stamped folder only when the hash changes, a check-log line when it does notFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | collector-researchers |  |
+| 059 | One parser per watched source turning each capture into timestamped JSON rows (observed_at, published_at, source_updated_at, capture hash, parser version), appended to a series per sourceFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | collector-gov |  |
+| 060 | The analysis run triggered by every new series: changes and rates within a source, and the same measure lined up across sources on one time axis and unit, with charts and a what-changed summary written to the vaultFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | cartographer |  |
+| 061 | The contradiction ledger: a first-class record per disagreement (the statements, who, when, captures, what each measures, the reading, status), seeded with the seven from the 22 October coverage review, and a page that shows itFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | verifier |  |
+| 062 | Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one sourceFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | cartographer |  |
+| 063 | Carry every stat as its series: each number on the site drawn as a line whose points link to their captures, starting with sites offline, products fixed, attempts and unpatched hostsFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | journalist |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.4.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.4.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

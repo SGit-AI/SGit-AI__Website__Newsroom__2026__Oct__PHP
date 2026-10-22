@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-root="../../" data-path="admin/briefs/index.html" data-ver="0.4.6">
+<html lang="en" data-root="../../" data-path="admin/briefs/index.html" data-ver="0.4.7">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="../../assets/site.css">
 <link rel="stylesheet" href="../../assets/themes/themes.css">
 <link rel="stylesheet" href="../../assets/themes/site-tokens.css">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Briefs", "description": "The build briefs for this site, published in full before the work, newest first.", "url": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html", "isPartOf": {"@type": "WebSite", "name": "PHP October 2026", "url": "https://php.oct.2026.newsroom.sgit.ai"}, "license": "https://creativecommons.org/licenses/by/4.0/", "dateModified": "2026-10-22", "version": "0.4.6", "inLanguage": "en", "image": "https://php.oct.2026.newsroom.sgit.ai/assets/og-card.png", "datePublished": "2026-10-22", "mainEntityOfPage": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html", "author": {"@type": "Person", "name": "Dinis Cruz"}, "publisher": {"@type": "Organization", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai/"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PHP October 2026", "item": "https://php.oct.2026.newsroom.sgit.ai/index.html"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://php.oct.2026.newsroom.sgit.ai/method/index.html"}, {"@type": "ListItem", "position": 3, "name": "Briefs", "item": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Briefs", "description": "The build briefs for this site, published in full before the work, newest first.", "url": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html", "isPartOf": {"@type": "WebSite", "name": "PHP October 2026", "url": "https://php.oct.2026.newsroom.sgit.ai"}, "license": "https://creativecommons.org/licenses/by/4.0/", "dateModified": "2026-10-22", "version": "0.4.7", "inLanguage": "en", "image": "https://php.oct.2026.newsroom.sgit.ai/assets/og-card.png", "datePublished": "2026-10-22", "mainEntityOfPage": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html", "author": {"@type": "Person", "name": "Dinis Cruz"}, "publisher": {"@type": "Organization", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai/"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PHP October 2026", "item": "https://php.oct.2026.newsroom.sgit.ai/index.html"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://php.oct.2026.newsroom.sgit.ai/method/index.html"}, {"@type": "ListItem", "position": 3, "name": "Briefs", "item": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html"}]}]</script>
 <script type="application/json" id="sg-meter-config">{"links":{"account":"account/index.html","topup":"account/top-up.html"},"links2":{"newsroom":"account/index.html","personas":"account/index.html"},"minDepth":0.1,"newDays":7,"prices":{"account":0,"analysis":3,"analysis_archive":2,"analysis_current":3,"analysis_fresh":6,"analysis_new":5,"article":6,"article_archive":3,"article_current":6,"article_fresh":12,"article_new":9,"briefing":5,"briefing_archive":3,"briefing_current":5,"briefing_fresh":10,"briefing_new":8,"evidence":1,"site":1,"story":2,"story_archive":1,"story_current":2,"story_fresh":4,"story_new":3},"root":"../../","start":500,"storageKey":"php-story.meter.v1","symbol":"\u00a3","topup":{"amount":500,"link":""}}</script>
 <script type="module" src="../../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"></script>
 <script src="../../assets/personas.js" defer></script>
@@ -39,7 +39,7 @@
 <nav class="site"><div class="row">
   <script src="../../assets/themes/themes.js"></script>
   <a class="brand" href="../../index.html">PHP October<span> 2026</span></a>
-  <a class="ver" href="../../admin/versions.html#v0.4.6" title="Site release history: what v0.4.6 changed">v0.4.6</a>
+  <a class="ver" href="../../admin/versions.html#v0.4.7" title="Site release history: what v0.4.7 changed">v0.4.7</a>
   <span class="status">Developing &middot; last checked 22 October 2026, 11:34 UTC</span>
   <span class="crumbs"><a href="https://newsroom.sgit.ai/">newsroom</a> / <a href="https://2026.newsroom.sgit.ai/">2026</a> / <a href="https://oct.2026.newsroom.sgit.ai/">October</a> / <b>PHP</b></span>
   <div class="tools"><div class="theme-pick"></div><sg-meter view="balance"></sg-meter></div>
@@ -341,7 +341,95 @@
 <li><b>The inventory, hour by hour</b> (/patching/inventory/): the NCSC-NL list read from its public git history, 38 versions from 11:20 UTC on 21 October to 15:28 UTC on 22 October, with a chart of fixed, vulnerable and under investigation, every change of status, what kind of rows they are, and when each supplier was first recorded fixed. The reader checks itself against the vault&#x27;s capture, and found one row the vault&#x27;s export had missed (corrections).</li>
 <li><b>The second stories</b> (/signals/): the ladder from websites using PHP to exploited sites holding something worth reaching, the four signal families with what each shows now, and the time each barrier became available with what a compromise after it would say.</li>
 <li><b>The story</b> &quot;Exposed is not exploited&quot;, by the journalist and the historian, which states this brief&#x27;s argument in the editor&#x27;s words and weighs it against the evidence.</li>
-</ul></article><article class="rel" id="2026-10-22__brief__research-stories-and-the-patching-story"><p class="kicker">2026-10-22 &middot; <code>2026-10-22__brief__research-stories-and-the-patching-story.md</code></p><h2>Brief: research and stories, status.json, and the patching story</h2>
+</ul></article><article class="rel" id="2026-10-22__brief__scheduled-capture-json-and-analysis"><p class="kicker">2026-10-22 &middot; <code>2026-10-22__brief__scheduled-capture-json-and-analysis.md</code></p><h2>Brief: scheduled capture of the sources that move, raw to JSON to analysis, and contradictions as the product</h2>
+<p>Status: accepted, by being sent. Author: Dinis Cruz, editor. A message to the design agent on the evening of 22 October 2026, reproduced verbatim, after the review of how 24 outlets present the story. Priority: critical. What it asks for, as work, is set out below the message, followed by the board items it opens.</p>
+<h3>The message</h3>
+<p>&gt; Can you capture the instruction that it is super critical that we start to do a scheduled call to those sites that have dynamic data, where we capture the raw data, then convert it to json (with time stamps) which should then trigger an data science analysis of it</p>
+<p>&gt;</p>
+<p>&gt; Note that those contradictions (in the different reporting storing) are very important, since they really shown the power of our methodology and workflows</p>
+<p>&gt;</p>
+<p>&gt; Our key principle for our graphs is &quot;meaning through connectivity&quot; where &quot;facts&quot; and &quot;stats&quot; all have a spectrum of evidence</p>
+<h3>Why now</h3>
+<p>The evidence vault&#x27;s last capture is 11:34 UTC on 22 October. By the evening the story had moved on in ways the site could not show:</p>
+<ul>
+<li>a minister&#x27;s count of UK government services down</li>
+<li>Japanese banks and airlines offline</li>
+<li>Amazon&#x27;s &quot;broadly exploited in the wild&quot;</li>
+<li>a community tracker with 50 sites dark and back up, against our 10</li>
+</ul>
+<p>Every one of those lives on a page that changes during the day. A single capture of a page that changes is a fact about one minute. The story is in the series.</p>
+<h3>What it means, as a pipeline</h3>
+<p>Five stages. Each one writes to a vault, each one is triggered by the one before, and none of them edits what an earlier stage wrote.</p>
+<p>1. <b>Schedule.</b> A watch list of the sources whose content changes (below), each with a cadence: every 15 minutes while a story is breaking, hourly after that, daily once it settles. The source watch vault (<code>oq9gflln</code>) already runs scheduled checks; this extends it rather than starting a second scheduler.</p>
+<p>2. <b>Capture the raw data.</b> On every run, fetch the page as served and as rendered, its text, a screenshot and its headers, and hash every file, exactly as the evidence vault does. Where a source publishes data (JSON, CSV, a git repository, an RSS feed), fetch the data itself, not the page around it. Write a new stamped capture folder only when the content hash changes; otherwise append one line to that source&#x27;s check log saying it was checked and unchanged. Blocks are recorded as captures too.</p>
+<p>3. <b>Convert to JSON, with timestamps.</b> One parser per source turns each raw capture into rows. Every row carries:</p>
+<ul>
+<li>three times: <code>observed_at</code> (our capture), <code>published_at</code> (what the source says) and <code>source_updated_at</code> (the source&#x27;s own &quot;last updated&quot;, where it has one)</li>
+<li>the capture&#x27;s hash, so every number points back to the bytes it was read from</li>
+<li>the parser&#x27;s version, so a parser fix can re-run over old captures and say what changed</li>
+</ul>
+<p>   Rows are appended to a time series per source, never overwritten.</p>
+<p>4. <b>Analyse.</b> A new JSON series triggers the analysis.</p>
+<ul>
+<li><b>Within one source:</b> what changed since the last run, with rates (sites going dark per hour, products moving from vulnerable to fixed, attempts per hour where a party publishes a count).</li>
+<li><b>Across sources measuring the same thing:</b> line them up on one time axis and on one unit. Where they disagree, record a <b>contradiction</b> (next section) instead of picking a winner.</li>
+<li><b>Output:</b> charts and a written summary per run into the vault, and a short &quot;what changed since the last run&quot; that the site&#x27;s what&#x27;s-new page and the briefings can carry.</li>
+</ul>
+<p>5. <b>Publish as graph and pages.</b> The site is rebuilt from the analysis outputs. Every chart, number and sentence it publishes links to the series, the series to the captures, and the captures to their hashes.</p>
+<h3>Contradictions are the product</h3>
+<p>The editor&#x27;s point: the places where the reporting disagrees are where this methodology shows its worth, so they are recorded, not resolved away. A contradiction is a first-class record with:</p>
+<ul>
+<li>the two (or more) statements</li>
+<li>who made each, and when</li>
+<li>the captures they come from</li>
+<li>what each actually measures</li>
+<li>the site&#x27;s reading of why they differ</li>
+<li>its status: open, explained, or resolved, and by what evidence</li>
+</ul>
+<p>The coverage review of 22 October already found these, as seeds for the ledger:</p>
+<div class="tw"><table class="t"><thead><tr><th>Measure</th><th>One source says</th><th>Another says</th><th>Why they may differ</th></tr></thead><tbody><tr><td>How much of the web</td><td>70% of the Internet (Wiz headline, CNN headline)</td><td>70% of websites use PHP (Wiz body, <a class="term" href="../../glossary/index.html#php2shell" data-term="php2shell" data-tip="The nickname for these two flaws: from PHP to a shell, meaning an attacker can get a command line on the web server.">php2shell</a>.com)</td><td>A share of websites restated as a share of the Internet; neither says how it was measured</td></tr><tr><td>Is it exploited?</td><td>&quot;now being broadly exploited in the wild&quot; (Amazon, via its blog and Tenable)</td><td>officials in Germany, the Netherlands and Japan &quot;have not seen one succeed&quot; (The Next Web); CISA &quot;has not observed exploitation ... as of the time of publication&quot;</td><td>Attempts against sensors and honeypots versus a confirmed compromise of a named organisation; different times</td></tr><tr><td>Which versions</td><td>every version since PHP 5.4 (Cloudflare, Wiz)</td><td>8.2 to 8.5 (the <a class="term" href="../../glossary/index.html#cve" data-term="CVE" data-tip="Common Vulnerabilities and Exposures: the public catalogue that gives each known security flaw a unique ID, such as CVE-2026-109618.">CVE</a> records); <a class="term" href="../../glossary/index.html#backport" data-term="Backport" data-tip="A fix copied to an older version. PHP published source-only backports for 7.4, 8.0 and 8.1, with no official release.">backports</a> for 7.4 to 8.1 (php.net)</td><td>Affected versus supported versus patched; the CVE record lists only supported branches</td></tr><tr><td>How many still unpatched</td><td>&quot;90% of systems at risk are yet to&quot; fix (BBC, attributed to researchers)</td><td>1.57 million of about 2.6 million hosts unpatched on 21 October (Censys via The Hacker News)</td><td>Different populations, different dates, unnamed method</td></tr><tr><td>UK government services down</td><td>32 unavailable and 4 partly (a minister, via the BBC)</td><td>&quot;dozens of UK government services&quot; (The Register)</td><td>Probably the same count; needs the Hansard record</td></tr><tr><td>Sites taken offline</td><td>10 operators (this site&#x27;s impact ledger)</td><td>50 sites, 2 still dark (PHPocalypse Tracker)</td><td>Breadth of collection; this site requires a captured source per row</td></tr><tr><td>Severity</td><td>CVSS 10.0 (the leak, 20 October)</td><td>CVSS 9.2 (the CVE records)</td><td>The leaked score was wrong; recorded on the leak page</td></tr></tbody></table></div>
+<h3>Meaning through connectivity, and a spectrum of evidence</h3>
+<p>The principle for every graph on this site: <b>meaning through connectivity</b>. A node means what its edges say about it.</p>
+<ul>
+<li>A fact or a stat is not true or false in isolation. It sits on a <b>spectrum of evidence</b>, and its place on the spectrum is read from its connections: how many captures support it, how primary they are, whether they agree, whether anything contradicts it, and how recently it was checked.</li>
+<li>Concretely, the five status words become points on that spectrum rather than labels. From weakest to strongest:</li>
+<li>unverified</li>
+<li>reported once</li>
+<li>reported by several, all citing one origin</li>
+<li>corroborated by independent parties</li>
+<li>confirmed by two <a class="term" href="../../glossary/index.html#primary" data-term="Primary source" data-tip="The party&#x27;s own words: the CVE record, the vendor&#x27;s advisory, the agency&#x27;s page. Not a news report about them.">primary sources</a></li>
+<li>counted by this site from a captured file</li>
+</ul>
+<p>  A contradiction is an edge that pulls the reading down until it is explained.</p>
+<ul>
+<li><b>Edges are typed:</b></li>
+<li><i>cites</i></li>
+<li><i>restates</i> (the same claim passed on)</li>
+<li><i>measures differently</i> (the same word, a different quantity)</li>
+<li><i>contradicts</i></li>
+<li><i>supersedes</i> (a later capture of the same source)</li>
+<li><i>derives from</i> (a number computed from another)</li>
+</ul>
+<p>  &quot;Restates&quot; matters as much as &quot;contradicts&quot;: ten outlets repeating one Wiz headline is one source, not ten, and the graph must show that.</p>
+<ul>
+<li><b>Stats carry their series</b>, not just their latest value, so a graph of a number is a line with every point linked to its capture.</li>
+</ul>
+<h3>Watch list to start with</h3>
+<p>Sources that changed during 22 October and publish something parseable, in priority order:</p>
+<p>1. <b>NCSC-NL php2shell repository</b>: the software list and README, from its git history; already read hour by hour on /patching/inventory/.</p>
+<p>2. <b>PHPocalypse Tracker</b>: the sites dark and back up, with times and verification notes.</p>
+<p>3. <b>CISA <a class="term" href="../../glossary/index.html#kev" data-term="KEV" data-tip="CISA&#x27;s public list of flaws with reliable evidence of exploitation in the wild. Neither php2shell CVE was on it at the latest capture.">KEV</a> catalog</b> (JSON): the first entry for either CVE is the official &quot;exploited&quot; signal.</p>
+<p>4. <b>The CVE and NVD records</b> (JSON) for both CVEs: score, affected ranges, references added.</p>
+<p>5. <b>php.net</b>: the advisory and the ChangeLog, for a follow-up release or a statement on the incomplete-fix report.</p>
+<p>6. <b>Amazon&#x27;s and Cloudflare&#x27;s posts, and Matthew Prince&#x27;s posts on X</b>: the attempt counts.</p>
+<p>7. <b>The BBC live page and the follow-up story</b>; The Register&#x27;s and The Next Web&#x27;s follow-ups: impact counts by country.</p>
+<p>8. <b>Tenable&#x27;s FAQ change log and SOCRadar&#x27;s update lines</b>: as a cheap index of what changed elsewhere.</p>
+<p>9. <b>The national agencies&#x27; pages</b> in the agencies table: for edits to the offline advice.</p>
+<p>10. <b>oss-security</b>: the thread on the incomplete-fix report.</p>
+<h3>What this brief does not change</h3>
+<p>Capture rules stay as they are: capture, don&#x27;t paraphrase; captures are only ever added; third-party pages are held privately and never republished; blocked fetches are recorded; no keys in any file. A number from a scheduled run reaches the site only through the same claim, status and source discipline as everything else.</p>
+<h3>Board items opened by this brief</h3>
+<p>057 to 063, listed on the board.</p></article><article class="rel" id="2026-10-22__brief__research-stories-and-the-patching-story"><p class="kicker">2026-10-22 &middot; <code>2026-10-22__brief__research-stories-and-the-patching-story.md</code></p><h2>Brief: research and stories, status.json, and the patching story</h2>
 <p>Status: accepted, by being sent. Author: Dinis Cruz, editor. A voice message to the journalist agent on 22 October 2026, transcribed and reproduced verbatim, hesitations included. What was built against it is listed at the end.</p>
 <h3>The message</h3>
 <p>Yeah, but I actually, given the speed of development, I think we need to have both here, both facts and opinion. So maybe what we can do is, why don&#x27;t we have a top level element where you distinguish that quite easily. Although it&#x27;s probably weird, you can&#x27;t just call it facts and opinions, because there&#x27;s a lot of articles that we&#x27;re going to get that are also our opinion, right? So you need to think about how you name it. Maybe we call it research or something, and then stories. Maybe call it stories that we create. Because also I want to publish interviews, I want to publish more new content, right? So, so basically, we need to just think about the top level navigation of the site. But for now, start publishing the content, just make sure that we identify very clearly where there is a material collected from outside external sources versus an article that we wrote here, or even I want to get guest writers and guest interviewers to publish more materials here, right? Or even we might even publish information from other websites. But again, that&#x27;s a fact, so that goes on research. But yeah, so we need two things. And yeah, add that stasis JSON board. That needs to go in our admin section, right? We need to move on. We need to start capturing on the website.</p>
@@ -371,7 +459,7 @@
     <p><b>PHP October 2026</b> (php.oct.2026.newsroom.sgit.ai) tracks PHP news for one month. This month that is one story, the two critical PHP security flaws, followed as evidence: every claim with a status and its sources, every source captured, dated and hashed into a private vault. Built and run by one editor and a team of software agents; <a href="../../team/index.html">the roles</a> and <a href="../../method/index.html">the method</a> are public, and the site is rebuilt from the vault, never written by hand. One of the SGit Newsroom's story sites: up from here are <a href="https://oct.2026.newsroom.sgit.ai/">October 2026</a>, <a href="https://2026.newsroom.sgit.ai/">the year</a> and <a href="https://newsroom.sgit.ai/">the newsroom</a>, whose own section on the story is <a href="https://newsroom.sgit.ai/php-flaws/index.html">here</a>. Part of the <a href="https://sgit.ai/network/index.html">sgit.ai network</a>.</p>
     <p class="disc">&#9888; Participant disclosure: published by the sgit project, which builds the vault and metering stack this site runs on. Content CC BY 4.0 for this site's own text, tables and data; quoted words are their authors', linked; no third-party page is reproduced. Code Apache-2.0.</p>
     <p class="small">&#9673; This page sends one anonymous usage event (page, referrer host, country and region, no IP, no cookie) to a write-only vault lane; <a href="../../admin/telemetry/index.html">what is sent and what is counted</a>. Honoured: Do Not Track and Global Privacy Control.</p>
-    <p class="small">site v0.4.6 &middot; evidence vault commit 200d08971937 &middot; <a href="../../admin/index.html">engineering</a> &middot; <a href="../../admin/briefs/index.md">this page as markdown</a> &middot; <a href="../../llms.txt">llms.txt</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP">GitHub</a></p>
+    <p class="small">site v0.4.7 &middot; evidence vault commit 200d08971937 &middot; <a href="../../admin/index.html">engineering</a> &middot; <a href="../../admin/briefs/index.md">this page as markdown</a> &middot; <a href="../../llms.txt">llms.txt</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP">GitHub</a></p>
   </div>
 </footer>
 </body>

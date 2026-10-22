@@ -1,6 +1,15 @@
 {
- "current": "0.4.6",
+ "current": "0.4.7",
  "versions": [
+  {
+   "version": "0.4.7",
+   "date": "2026-10-22",
+   "title": "the editor's critical brief on scheduled capture: the sources that move are checked on a schedule, captured raw, turned into timestamped JSON and analysed on every change; contradictions between reports are recorded as first-class records, seeded with seven from the coverage review; meaning through connectivity, with every fact and stat on a spectrum of evidence; board items 057 to 063",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.4.6",
    "date": "2026-10-22",

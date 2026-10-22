@@ -497,6 +497,55 @@
    "title": "Find the editor's article on exploitation, patching, internal vulnerability and network protection signals; the SaaS apocalypse piece as published does not carry it",
    "status": "open",
    "owner": "editor"
+  },
+  {
+   "id": "057",
+   "title": "Schedule the watch list: every source in the scheduled-capture brief checked on a cadence (15 minutes while breaking, hourly, then daily), extending the source watch rather than starting a second scheduler",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "058",
+   "title": "Capture raw on every change: page, rendered, text, screenshot, headers and the data itself (JSON, CSV, git, RSS), hashed, a new stamped folder only when the hash changes, a check-log line when it does not",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "059",
+   "title": "One parser per watched source turning each capture into timestamped JSON rows (observed_at, published_at, source_updated_at, capture hash, parser version), appended to a series per source",
+   "status": "open",
+   "owner": "collector-gov",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "060",
+   "title": "The analysis run triggered by every new series: changes and rates within a source, and the same measure lined up across sources on one time axis and unit, with charts and a what-changed summary written to the vault",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "061",
+   "title": "The contradiction ledger: a first-class record per disagreement (the statements, who, when, captures, what each measures, the reading, status), seeded with the seven from the 22 October coverage review, and a page that shows it",
+   "status": "open",
+   "owner": "verifier",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "062",
+   "title": "Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one source",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "063",
+   "title": "Carry every stat as its series: each number on the site drawn as a line whose points link to their captures, starting with sites offline, products fixed, attempts and unpatched hosts",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
   }
  ],
  "evidence_vault": {
