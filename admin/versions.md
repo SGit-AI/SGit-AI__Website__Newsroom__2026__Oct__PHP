@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.9. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.10. The data is [data/versions.json](../data/versions.json).
+
+### v0.5.10 · 2026-10-22
+
+the telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages), the telemetry vault imports it and drains its own lane from the browser (40 events drained that way, 275 from 176 sessions now), and the dashboard vault i4diy82d is superseded
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.5.9 · 2026-10-22
 
@@ -314,4 +322,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.5.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

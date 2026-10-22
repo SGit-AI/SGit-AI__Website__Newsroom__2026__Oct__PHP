@@ -73,6 +73,7 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 080 | Guidance for every agent (AGENTS.md, /admin/agents/): push to your own branch early and often, dev@ carries it into dev; quality from coding.sgit.ai, NFRs from nfrs.sgit.ai, the security requirements | done | 0.5.3 |
 | 082 | Ask: talk to the site from any page; the model uses the site's tools (window.__tools, also for any agent in the browser), proposes changes to your record only with your Allow; your OpenRouter key and your desk kept in your vault, shared with the phone app | done | 0.5.4 |
 | 090 | The telemetry dashboard: a new private vault (i4diy82d) with a vault app over the telemetry vault, linked inside it read-only (vault-in-vault); its key sealed to the editor | done | 0.5.7 |
+| 091 | The telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages); the telemetry vault imports it and drains its own lane from the browser (Queue & drain: the count waiting, the passphrase-sealed key, push before mark-processed); the dashboard vault i4diy82d superseded | done | 0.5.10 |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dev/` in the mail vault (`fmb2tpl2`).
@@ -83,4 +84,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.5.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html

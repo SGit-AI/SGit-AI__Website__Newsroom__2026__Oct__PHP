@@ -18,4 +18,4 @@ Open a vault (an sgit vault key; a newsroom.sgit.ai reader vault works) or creat
 The data the app reads is [now.json](https://php.oct.2026.newsroom.sgit.ai/now/now.json). The brief is on [the briefs page](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html).
 
 ---
-site v0.5.9 · data as of 2026-10-22T11:34Z · https://php.oct.2026.newsroom.sgit.ai/now/index.html
+site v0.5.10 · data as of 2026-10-22T11:34Z · https://php.oct.2026.newsroom.sgit.ai/now/index.html
