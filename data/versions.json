@@ -1,6 +1,15 @@
 {
- "current": "0.5.4",
+ "current": "0.5.5",
  "versions": [
+  {
+   "version": "0.5.5",
+   "date": "2026-10-22",
+   "title": "two more branches carried in: security@php.newsroom's first pass (the security requirements, security_check.py in the gate and in release.sh, hardened build, workflows and drains, the rules of engagement for keys, the root pinned in CLAUDE.md; /admin/keys/ waits for data/keys.json) and the fact-check desk's run 1 (all 70 claims graded against the vault, 10 contradictions, /factcheck/)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.5.4",
    "date": "2026-10-22",

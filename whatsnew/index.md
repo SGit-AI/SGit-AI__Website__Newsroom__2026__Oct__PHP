@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.5.5 · 22 October 2026new since your last visit
+
+two more branches carried in: security@php.newsroom's first pass (the security requirements, security_check.py in the gate and in release.sh, hardened build, workflows and drains, the rules of engagement for keys, the root pinned in CLAUDE.md; /admin/keys/ waits for data/keys.json) and the fact-check desk's run 1 (all 70 claims graded against the vault, 10 contradictions, /factcheck/)
+
+No reader-facing section changed in this release.
+
 ## v0.5.4 · 22 October 2026new since your last visit
 
 Ask, on every page: a pane on the right where you talk to the site with your own OpenRouter key; the model calls the site's read-only tools itself (search, items, pages, what is new to you, your notes, the situation), every call shown, every fact cited to an item; it can only propose marking items read or adding a note, and does nothing without your Allow; the tools are also published as window.__tools for any agent in your browser; your key, your reading record, notes, feeds and chats are kept in your vault, the same one the phone app opens
@@ -359,4 +365,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.5.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
