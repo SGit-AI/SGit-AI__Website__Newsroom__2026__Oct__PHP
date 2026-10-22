@@ -6,7 +6,7 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 # Roles and responsibilities
 
-11 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
+12 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
 
 ### Editor Dinis Cruz
 
@@ -39,6 +39,14 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 **Owns.** Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press
 - Social posts first, because they get deleted; decode a post's time from its id.
+
+### researcher@php.newsroom an agent, joined on 22 October 2026
+
+**Owns.** the source watch (vault oq9gflln): which outside pages are watched, how often, what access we have to each; the taxonomy (country, sector, publisher, page); discovery across 52 language editions; the tips the editor relays from other channels; the Researcher, vendor and press collector's beat until that role is filled
+- Watch, don't remember: a page is evidence of what it said at the time of a dated snapshot, and a change is a diff between two snapshots, never a recollection.
+- A page we cannot read stays on the list with the reason (paywalled, bot-challenge, login-wall, down, gone): the gap is counted and published.
+- A tip is unverified until the page it points at is captured; private people in a tip are not named and their numbers never written down.
+- Raw is what was served; analysis can be rebuilt from raw, the taxonomy and the tools.
 
 ### librarian@php.newsroom an agent, joined in v0.2.6
 
