@@ -4,12 +4,11 @@
 # Secrets: SG_SEND_ACCESS_TOKEN (vault writes), SYNTHETIC_VAULT_KEYS ({"board": {"vault_key": "..."}, ...}),
 # ANTHROPIC_API_KEY (optional: without it runs are captured and left for an agent session to review).
 name: Synthetic readers
+# Paused on the editor's instruction (22 October 2026) until he has reviewed the scheduled actions: no schedule and no
+# run after deploys; a run happens only when started by hand. To resume, restore the schedule and workflow_run triggers:
+#   schedule: [{cron: '23 * * * *'}]
+#   workflow_run: {workflows: [Deploy to GitHub Pages], types: [completed]}
 on:
-  schedule:
-    - cron: '23 * * * *'
-  workflow_run:
-    workflows: [Deploy to GitHub Pages]
-    types: [completed]
   workflow_dispatch:
     inputs:
       force:
