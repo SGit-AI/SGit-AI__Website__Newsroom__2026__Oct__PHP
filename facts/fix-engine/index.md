@@ -1,0 +1,43 @@
+# Fact: Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based ba
+
+Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on out-of-memory, and request globals that survive a failed request Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
+
+Fact · technical · confirmed
+
+# Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on out-of-memory, and request globals that survive a failed request
+
+**Who says it:** php/php-src fix commit; the GitHub advisories · **Sources:** [php/php-src, read from a clone](../../sources/github-php-src-fix-commit-3584a98bd/index.html) [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html)
+
+The fix replaces bailout with a delayed error and an UnwindExit at a safe point, adds a hard limit that _exits, and resets the globals. See the code page.
+
+## This fact over time
+- 2026-10-18 15:26 UTCphp/php-src, read from a clone publishes [Commit 3584a98bd: Avoid state corruption via bailout (the php2shell fix) and the PHP-7.4 backport 712e60f9e](../../sources/github-php-src-fix-commit-3584a98bd/index.html)
+- 2026-10-21 13:34 UTCPHP publishes [RCE via OOM corruption (CVE-2026-109618)](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html)
+- 2026-10-21 13:34 UTCPHP publishes [RCE via stale global state (CVE-2026-109619)](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html)
+- 2026-10-22 08:09 UTCSaved into the evidence vault: PHP
+- 2026-10-22 08:09 UTCSaved into the evidence vault: PHP
+- 2026-10-22Enters this site as confirmed in v0.2.0 (reconstructed from git)
+
+Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
+
+## What it rests on
+
+## Where this fact appears
+
+In the briefings for:
+CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOJJamieHead of AppSecLLeeDeveloper
+And on [every claim](../../claims/index.html#fix-engine).
+
+## Every version of this fact
+v1 · site v0.2.0 · 22 October 2026 · confirmed
+```
+Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on out-of-memory, and request globals that survive a failed request
+Who says it: php/php-src fix commit; the GitHub advisories
+Status: confirmed
+Topic: technical
+Sources: github-php-src-fix-commit-3584a98bd, github-ghsa-w8hw-w9fx-j79w, github-ghsa-6wmf-4rv5-p3rp
+```
+
+
+---
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-engine/index.html

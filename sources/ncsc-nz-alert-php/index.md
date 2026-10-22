@@ -24,7 +24,7 @@ TLP:CLEAR. 'The NCSC is aware of reports of active exploitation.' The only agenc
 
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
-| Reports of active exploitation existThe only agency saying so, and it does not say whose reports. | NCSC New Zealand | reported | 1/1 | [NCSC New Zealand](../../sources/ncsc-nz-alert-php/index.html) |
+| Reports of active exploitation existThe only agency saying so, and it does not say whose reports. [fact timeline →](../../facts/nz-active/index.html) | NCSC New Zealand | reported | 1/1 | [NCSC New Zealand](../../sources/ncsc-nz-alert-php/index.html) |
 
 ## Events that cite it
 
@@ -50,4 +50,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/ncsc-nz-alert-php/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/ncsc-nz-alert-php/index.html

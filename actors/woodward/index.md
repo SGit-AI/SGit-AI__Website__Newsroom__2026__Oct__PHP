@@ -12,8 +12,8 @@ commentator quoted by the BBC: 30 million websites; probing seen by Amazon and C
 
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
-| Something like 30 million websites could be affectedNo basis given. | Alan Woodward, via the BBC | reported | 0/1 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
-| Amazon and Cloudflare saw sites being probed for the flawBoth companies have since said so themselves. | Alan Woodward, via the BBC; confirmed by both companies' own posts | confirmed | 2/3 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) |
+| Something like 30 million websites could be affectedNo basis given. [fact timeline →](../../facts/scale-30m/index.html) | Alan Woodward, via the BBC | reported | 0/1 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
+| Amazon and Cloudflare saw sites being probed for the flawBoth companies have since said so themselves. [fact timeline →](../../facts/probing/index.html) | Alan Woodward, via the BBC; confirmed by both companies' own posts | confirmed | 2/3 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) |
 
 ## Its sources in the vault
 - [PHP: Global scramble to fix critical cyber-security flaws as many websites taken offline - follow live](../../sources/bbc-live-ckgel5xp2xv9t/index.html) BBC News
@@ -22,4 +22,4 @@ commentator quoted by the BBC: 30 million websites; probing seen by Amazon and C
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/woodward/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/woodward/index.html

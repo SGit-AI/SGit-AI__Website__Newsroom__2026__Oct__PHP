@@ -4,6 +4,8 @@ How this site keeps evidence: the private vault and its protocol, the five statu
 
 # The method: capture, hash, claim, build, gate
 
+In plain English How this site works: save every source, fingerprint it, attach every statement to its evidence, and rebuild the site from that.
+
 This site is the newsroom's [PHP flaws section](https://newsroom.sgit.ai/php-flaws/index.html) taken to its conclusion: a site whose every sentence can be traced to bytes, rebuilt by a script from the vault, with no step a reader has to take on trust. It is also a test of the stack sgit.ai is building, and says so in its footer.
 
 ## The evidence vault
@@ -42,4 +44,4 @@ Nothing here is specific to PHP. The vault protocol, the capture tool, the five 
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/method/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/method/index.html

@@ -6,7 +6,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**7** evidence · **16** derived · **3** authored · **9** site
+**7** evidence · **17** derived · **6** authored · **11** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -50,6 +50,7 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/questions.json` | librarian@php.newsroom | the questions readers ask, each short answer re-traced to claims and captured sources | [questions/index.html](../questions/index.html) |
 | `data/readings.json` | claude-journalist | other models' notes, compared point by point with the claims and captured sources | [readings/index.html](../readings/index.html) |
 | `data/graph.json` | admin/build/build.py | the claims and timeline rows and the sources they cite, generated at build | [graph/index.html](../graph/index.html) |
+| `data/plain.json` | the design agent | the front page's plain-English questions and moments; every fact cites vault slugs | [index.html](../index.html) |
 
 ## Authored
 
@@ -60,6 +61,9 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
 | `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
 | `admin/content/briefs/` | the editor, and agents writing build briefs and reviews | voice memos and messages; the site itself | [brief/index.html](../brief/index.html) |
+| `data/glossary.json` | the design agent | 40 terms in plain English, each linked on first use on every page | [glossary/index.html](../glossary/index.html) |
+| `data/interview.json` | the editor, interviewed by the design agent | the editor's answers in his own words | [interview/index.html](../interview/index.html) |
+| `data/personas.json` | the design agent | fifteen readers by job and technical depth, each with a thirty-second answer and a reading path | [start/index.html](../start/index.html) |
 
 ## Site
 
@@ -73,6 +77,8 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/billing.json` | claude-story-site | the meter configuration and the designed model | [billing/index.html](../billing/index.html) |
 | `data/pipeline.json` | dev@php.newsroom | the public repositories and Pages workflows of the newsroom sites | [status/index.html](../status/index.html) |
 | `data/vaults.json` | dev@php.newsroom | the vaults behind this site and how each is opened | [vaults/index.html](../vaults/index.html) |
+| `data/sections.json` | admin/build/build.py | the section ledger: every section hashed on every build, versioned when its reader-facing text changes | [versions/index.html](../versions/index.html) |
+| `data/seo.json` | the design agent | search-engine settings: the Search Console verification token and the social card | [index.html](../index.html) |
 | `data/telemetry.json` | dev@php.newsroom | the telemetry lane's public configuration | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/telemetry-report.json` | admin/build/telemetry_drain.py | the drained telemetry lane, as counts | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/layers.json` | claude-journalist | this classification | [layers/index.html](../layers/index.html) |
@@ -81,4 +87,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

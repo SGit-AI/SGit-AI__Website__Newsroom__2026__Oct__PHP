@@ -4,6 +4,8 @@ What the CVE records, the GitHub advisories and the PHP security team say about 
 
 # The two flaws
 
+In plain English Two bugs deep inside PHP, in how it cleans up after an error. Both can be triggered by anyone who can reach a PHP website. Both are fixed in the same four releases.
+
 Two bugs in the PHP engine, the same severity, the same fix, the same four releases. Both are memory-safety failures in how PHP recovers from an error, and both can be reached by an unauthenticated HTTP request. This page keeps to what the primary records say and marks where they differ.
 
 **Fixed in** PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35 · **Vector** `CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N` · **Nickname** php2shell (NSA: PHP2Shell) · **CNA** PHP Group
@@ -93,4 +95,4 @@ The engineering steps, in order, are on [If you run PHP](../playbook/index.html)
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/flaws/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/flaws/index.html

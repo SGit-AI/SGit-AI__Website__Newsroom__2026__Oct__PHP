@@ -25,7 +25,7 @@ To paste back where it was asked: the paragraph above and `https://php.oct.2026.
 **What the agencies said.** The NSA's post was viewed 10.1 million times at capture; councils, the Met Police, the OBR and government sites in the Netherlands, Finland, France and Latvia went offline as a precaution. [NSA Cyber on X](../../sources/nsa-x-2112903220209098897/index.html) [LBC](../../sources/lbc-uk-websites-offline/index.html) [Rijksoverheid / NCSC-NL](../../sources/rijksoverheid-ncsc-php-news/index.html) [CERT.LV](../../sources/certlv-php-preventive/index.html)
 
 ## The pages that carry it
-- [php2shell: the two PHP flaws of October 2026, tracked as evidence](../../index.html)
+- [PHP in October 2026: two critical security flaws, tracked as evidence](../../index.html)
 - [Who found php2shell, and what the AI did](../../discovery/index.html)
 - [How the coordinated disclosure broke](../../leak/index.html)
 - [The timeline, 2024 to the latest capture](../../timeline/index.html)
@@ -35,4 +35,4 @@ Next question: [We are on PHP 7.4, 8.0 or 8.1. Is there a patch?](../old-php/ind
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/why-big-news/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/why-big-news/index.html

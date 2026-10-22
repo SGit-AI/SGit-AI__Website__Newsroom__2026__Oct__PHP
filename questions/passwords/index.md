@@ -16,7 +16,7 @@ To paste back where it was asked: the paragraph above and `https://php.oct.2026.
 
 ## The answer, with its sources
 
-**The flaw is on the server.** Both bugs are in the PHP engine that runs on web servers; nothing on a reader's computer or phone is affected or needs updating for this. [php/php-src , read from a clone](../../sources/github-php-src-fix-commit-3584a98bd/index.html) [php.net](../../sources/php-net-advisory/index.html)
+**The flaw is on the server.** Both bugs are in the PHP engine that runs on web servers; nothing on a reader's computer or phone is affected or needs updating for this. [php/php-src, read from a clone](../../sources/github-php-src-fix-commit-3584a98bd/index.html) [php.net](../../sources/php-net-advisory/index.html)
 
 **What an attacker could reach** on a compromised server is whatever that server holds, which can include a site's user database. That is why the agencies treat it as urgent. But no organisation has confirmed a compromise through php2shell. [CISA](../../sources/cisa-alert-php-20261021/index.html) [CISA](../../sources/cisa-kev-json/index.html) [Huntress](../../sources/huntress-php2shell-rapid-response/index.html)
 
@@ -31,4 +31,4 @@ Next question: [How do I know whether my site is affected?](../am-i-affected/ind
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/passwords/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/passwords/index.html

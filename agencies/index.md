@@ -4,6 +4,8 @@ The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zeal
 
 # The agencies, side by side
 
+In plain English What sixteen government cyber agencies told organisations to do. All say update; they disagree on whether to take systems offline.
+
 16 national and supranational bodies, each read from its own page. The question that divides them is not whether to patch (all say patch) but what to do with a system that cannot be patched now. Of 16: 6 say *none*, 2 say *yes*, 2 say *isolate*, 2 say *unknown*, 1 say *after mitigations*, 1 say *isolate first*, 1 say *consider*, 1 say *restrict from abroad*. Two could not be read because their sites block automated browsers; the block is recorded.
 
 The BBC's morning framing, *the UK's NCSC, the NSA and their counterparts in the EU and Australia advise taking systems offline*, holds for the NSA and CISA, is a simplification of the NCSC's fourth of six steps, and is not supported by the Australian page at all. The sentence the BBC quotes from the NCSC is not on the NCSC page as captured; its opening matches the Canadian text.
@@ -31,4 +33,4 @@ Each agency's full text is in its capture; the sentences here are the ones the c
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/agencies/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/agencies/index.html

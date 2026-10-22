@@ -30,9 +30,9 @@ Latvia restricted access from abroad to several state digital resources (geo-blo
 
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
-| About 6,000 potentially affected resources in Latvia, a few hundred in the public sectorPrimary source, one country, says 'potentially'. | CERT.LV | reported | 1/1 | [CERT.LV](../../sources/certlv-php-preventive/index.html) |
-| Automated exploitation attempts were seen in Latvia; none succeededPrimary source. | CERT.LV | reported | 1/1 | [CERT.LV](../../sources/certlv-php-preventive/index.html) |
-| Latvia restricted access from abroad to several state digital resources, possibly until 26 October; lsm.lv and 112.lv were restored by 20:00 UTCThe one documented case of government services being pulled from the public internet, from the agency itself. | CERT.LV | confirmed | 1/1 | [CERT.LV](../../sources/certlv-php-preventive/index.html) |
+| About 6,000 potentially affected resources in Latvia, a few hundred in the public sectorPrimary source, one country, says 'potentially'. [fact timeline →](../../facts/scale-latvia/index.html) | CERT.LV | reported | 1/1 | [CERT.LV](../../sources/certlv-php-preventive/index.html) |
+| Automated exploitation attempts were seen in Latvia; none succeededPrimary source. [fact timeline →](../../facts/latvia-attempts/index.html) | CERT.LV | reported | 1/1 | [CERT.LV](../../sources/certlv-php-preventive/index.html) |
+| Latvia restricted access from abroad to several state digital resources, possibly until 26 October; lsm.lv and 112.lv were restored by 20:00 UTCThe one documented case of government services being pulled from the public internet, from the agency itself. [fact timeline →](../../facts/latvia-offline/index.html) | CERT.LV | confirmed | 1/1 | [CERT.LV](../../sources/certlv-php-preventive/index.html) |
 
 ## Events that cite it
 
@@ -65,4 +65,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/certlv-php-preventive/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/certlv-php-preventive/index.html

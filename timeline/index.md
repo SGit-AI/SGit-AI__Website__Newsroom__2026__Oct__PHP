@@ -4,6 +4,8 @@
 
 # The timeline
 
+In plain English Everything that happened, in order, from a 2024 audit to this morning, each line tied to the page that says so.
+
 68 events from the 2024 audit to the latest capture, each dated as its source states it. Times are UTC; where this site converted from a local time, or inferred a date from a phrase such as *two days ago*, the row says so. A row that lists several sources is one that at least two accounts carry; a row with one source is that party's account.
 
 - stated the source states this date or time
@@ -23,7 +25,7 @@
 |---|---|---|---|
 | 2026-07-30 | Calif begins an audit of PHP under Patch the Planet; Volker Dusch accepts the invitation. | stated | [PHP Foundation](../sources/php-foundation-blog-security-release/index.html) [Calif](../sources/calif-php2shell/index.html) |
 | 2026-08-01 | Calif discovers 'multiple different paths independently leading to RCE that resurfaced the 2024 issues and new trigger points'. | stated | [Calif](../sources/calif-php2shell/index.html) |
-| 2026-08-05 15:54 UTC | Ryan Austin (@lcfr_hax) posts a SHA-256 hash on X as a commitment to one finding.Time as displayed in a UTC browser. The pre-image has not been published. | stated | [Ryan Austin , Calif on X](../sources/x-lcfr-hax-hash-tweet/index.html) [Calif](../sources/calif-php2shell/index.html) |
+| 2026-08-05 15:54 UTC | Ryan Austin (@lcfr_hax) posts a SHA-256 hash on X as a commitment to one finding.Time as displayed in a UTC browser. The pre-image has not been published. | stated | [Ryan Austin, Calif on X](../sources/x-lcfr-hax-hash-tweet/index.html) [Calif](../sources/calif-php2shell/index.html) |
 | 2026-08-19 | Wiz Research discovers the first vulnerability using Wiz Atlas, Gemini 4 Argon and GPT-5.6 Sol; confirms RCE against Drupal on 20 August and WordPress on 21 August. | stated | [Wiz](../sources/wiz-blog-php2shell/index.html) |
 
 ## Coordinated disclosure, August to 19 October
@@ -41,7 +43,7 @@
 | 2026-10 | Cloudflare starts developing WAF protections 'since early October 2026'. | stated | [Cloudflare](../sources/cloudflare-blog-php2shell-waf/index.html) |
 | 2026-10-12 21:03:58 UTC | CVE-2026-109618 and CVE-2026-109619 are reserved. | stated | [CVE record](../sources/cve-cve-2026-109618/index.html) [CVE record](../sources/cve-cve-2026-109619/index.html) |
 | 2026-10-18 | The final fix commit is authored; the 7.4 backport branch's commit is dated 18:10:24Z. | stated | [Daubois](../sources/daubois-blog-php2shell-rumors/index.html) [php-src](../sources/github-php-src-branch-7.4-backport/index.html) |
-| 2026-10-18 15:26:39 UTC | Arnaud Le Blanc authors the fix, 'Avoid state corruption via bailout', with Ilija Tovilo, Jakub Zelenka, Nora Dossche and Nicolas Grekas; the 7.4 minimal backport is authored at 18:09 UTC.Author timestamps from the commits. | stated | [php/php-src , read from a clone](../sources/github-php-src-fix-commit-3584a98bd/index.html) |
+| 2026-10-18 15:26:39 UTC | Arnaud Le Blanc authors the fix, 'Avoid state corruption via bailout', with Ilija Tovilo, Jakub Zelenka, Nora Dossche and Nicolas Grekas; the 7.4 minimal backport is authored at 18:09 UTC.Author timestamps from the commits. | stated | [php/php-src, read from a clone](../sources/github-php-src-fix-commit-3584a98bd/index.html) |
 | 2026-10-19 14:00 UTC | Release commits for 8.5.12, 8.4.27, 8.3.36 and 8.2.35 are made under embargo (14:00 to 17:04 UTC). | stated | [php-src](../sources/github-php-src-tags/index.html) [php-src](../sources/github-php-src-tag-php-8.5.12/index.html) |
 
 ## The leak, 17 to 21 October
@@ -71,7 +73,7 @@
 | 2026-10-21 13:48:34 UTC | The CVE record for CVE-2026-109618 is published; CVE-2026-109619 follows at 13:54:43Z. | stated | [CVE record](../sources/cve-cve-2026-109618/index.html) [CVE record](../sources/cve-cve-2026-109619/index.html) |
 | 2026-10-21 14:00 UTC | The planned release time. php.net's advisory 'Critical remote code execution vulnerabilities, update now' and the four release posts go up. | stated | [php.net](../sources/php-net-advisory/index.html) [oss-security](../sources/openwall-oss-security-2026-10-20-34/index.html) [Daubois](../sources/daubois-blog-php2shell-rumors/index.html) |
 | 2026-10-21 14:04 UTC | OpenAI posts: models 'helped researchers ... discover critical security flaws in PHP ... used to run an estimated 70% of websites'. An X Community Note later disputes OpenAI's role. | stated | [OpenAI on X](../sources/x-openai-php2shell/index.html) |
-| 2026-10-21 14:06:22 UTC | The fix commit enters the public php-src branches (commit timestamp); merged into 8.3 at 14:12, 8.4 at 14:27 and 8.5 at 14:30 UTC. | stated | [php/php-src , read from a clone](../sources/github-php-src-fix-commit-3584a98bd/index.html) |
+| 2026-10-21 14:06:22 UTC | The fix commit enters the public php-src branches (commit timestamp); merged into 8.3 at 14:12, 8.4 at 14:27 and 8.5 at 14:30 UTC. | stated | [php/php-src, read from a clone](../sources/github-php-src-fix-commit-3584a98bd/index.html) |
 | 2026-10-21 14:06:46 UTC | GitHub release php-8.5.12 is published by adoy. | stated | [php-src](../sources/github-php-src-tag-php-8.5.12/index.html) |
 | 2026-10-21 14:17:09 UTC | NVD publishes both CVEs with the CNA's CVSS v4.0 9.2 and no NIST score. | stated | [NVD](../sources/nvd-cve-2026-109618/index.html) [NVD](../sources/nvd-cve-2026-109619/index.html) |
 | 2026-10-21 14:41:54 UTC | Jakub Zelenka announces CVE-2026-109618 on oss-security; CVE-2026-109619 at 14:44:06Z. | stated | [oss-security](../sources/openwall-oss-security-2026-10-21-6/index.html) [oss-security](../sources/openwall-oss-security-2026-10-21-7/index.html) |
@@ -104,7 +106,7 @@
 | 2026-10-21 20:30 UTC | Huntress: no exploitation observed on partner systems (16:30 ET).Converted from Eastern time. | stated | [Huntress](../sources/huntress-php2shell-rapid-response/index.html) |
 | 2026-10-22 | The Hacker News publishes Amazon's account of the 17 October honeypot attempt and VulnCheck's count of 2,608,039 hosts. | stated | [THN](../sources/thehackernews-php2shell-4days/index.html) |
 | 2026-10-22 | The Register carries Dan Lorenc's reply to the PHP Foundation; Fortinet publishes FortiWeb signatures; The Record carries the Foundation's account of the 2024 signs. | stated | [The Register](../sources/theregister-php-blames-chainguard/index.html) [Fortinet Community](../sources/fortinet-fortiweb-php2shell/index.html) [The Record](../sources/therecord-php-foundation-statement/index.html) |
-| 2026-10-22 01:25 UTC | Matthew Prince posts Cloudflare's attempt counts: thousands before, millions after. | stated | [Matthew Prince , Cloudflare CEO on](../sources/x-eastdakota-php2shell-stats/index.html) |
+| 2026-10-22 01:25 UTC | Matthew Prince posts Cloudflare's attempt counts: thousands before, millions after. | stated | [Matthew Prince, Cloudflare CEO on…](../sources/x-eastdakota-php2shell-stats/index.html) |
 | 2026-10-22 06:16:24 UTC | BBC News opens its live page: 'Global scramble to fix critical cyber-security flaws as many websites taken offline'. | stated | [BBC News](../sources/bbc-live-ckgel5xp2xv9t/index.html) |
 | 2026-10-22 06:45:47 UTC | Greenbone on oss-security: the backports imply versions down to 7.4 are affected, whatever the subject line says. | stated | [oss-security](../sources/openwall-oss-security-109619-thread/index.html) |
 | 2026-10-22 06:55:50 UTC | The BBC reports the NSA's X post. | stated | [BBC News](../sources/bbc-live-ckgel5xp2xv9t/index.html) |
@@ -122,4 +124,4 @@ The sequence as a graph of who said what first is on [Who found it](../discovery
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/timeline/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/timeline/index.html

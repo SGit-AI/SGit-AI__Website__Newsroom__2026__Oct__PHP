@@ -16,7 +16,7 @@ To paste back where it was asked: the paragraph above and `https://php.oct.2026.
 
 ## The answer, with its sources
 
-**Attempts: yes.** Cloudflare's chief executive reported millions of exploit attempts across its network by the early hours of 22 October; Amazon saw an attempt on a honeypot on 17 October; Latvia saw automated attempts, none successful. [Matthew Prince , Cloudflare CEO on](../../sources/x-eastdakota-php2shell-stats/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) [CERT.LV](../../sources/certlv-php-preventive/index.html)
+**Attempts: yes.** Cloudflare's chief executive reported millions of exploit attempts across its network by the early hours of 22 October; Amazon saw an attempt on a honeypot on 17 October; Latvia saw automated attempts, none successful. [Matthew Prince, Cloudflare CEO on…](../../sources/x-eastdakota-php2shell-stats/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) [CERT.LV](../../sources/certlv-php-preventive/index.html)
 
 **Successful break-ins: none confirmed.** No named organisation has confirmed a compromise through php2shell. CISA has not observed exploitation and neither CVE is in its Known Exploited Vulnerabilities catalog; Huntress saw none on its partners' systems. [CISA](../../sources/cisa-alert-php-20261021/index.html) [CISA](../../sources/cisa-kev-json/index.html) [Huntress](../../sources/huntress-php2shell-rapid-response/index.html)
 
@@ -33,4 +33,4 @@ Next question: [Do I need to change my passwords?](../passwords/index.html) · [
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/been-hacked/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/been-hacked/index.html

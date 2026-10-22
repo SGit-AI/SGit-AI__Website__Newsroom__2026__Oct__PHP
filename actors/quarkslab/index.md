@@ -12,7 +12,7 @@ Party
 
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
-| Quarkslab's published audit summary lists 27 findings, two redacted because their fixes were complex and in progress; it does not describe an out-of-memory findingThe Foundation says the OOM signs were found while fixing one of the audit's findings, not in the audit report itself. | Quarkslab's blog; a Substack analysis | reported | 1/2 | [Quarkslab](../../sources/quarkslab-blog-php-src-audit/index.html) [David Lopez-Kurtz](../../sources/substack-lopezkurtz-patch-is-the-exploit/index.html) |
+| Quarkslab's published audit summary lists 27 findings, two redacted because their fixes were complex and in progress; it does not describe an out-of-memory findingThe Foundation says the OOM signs were found while fixing one of the audit's findings, not in the audit report itself. [fact timeline →](../../facts/quarkslab-redacted/index.html) | Quarkslab's blog; a Substack analysis | reported | 1/2 | [Quarkslab](../../sources/quarkslab-blog-php-src-audit/index.html) [David Lopez-Kurtz](../../sources/substack-lopezkurtz-patch-is-the-exploit/index.html) |
 
 ## Its sources in the vault
 - [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html) The PHP Foundation
@@ -22,4 +22,4 @@ Party
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/quarkslab/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/quarkslab/index.html

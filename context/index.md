@@ -4,6 +4,8 @@ Ten landmark vulnerabilities with their CVE records and KEV rows, the KEV catalo
 
 # In context: php2shell against the flaws that came before
 
+In plain English How php2shell compares with famous past flaws such as Heartbleed and Log4Shell, using the official record of which ones were exploited.
+
 The editor has worked in security long enough to remember Kaminsky's DNS flaw and Heartbleed, and asked whether this one is as big as the morning's coverage made it. The honest way to answer is a table: ten landmark flaws, each with its CVE record fetched into the vault and its row in CISA's Known Exploited Vulnerabilities catalog, captured on 22 October. The catalog is the one public, dated, machine-readable record of 'this was exploited', and php2shell is not in it yet.
 
 Comparators chosen by the editor's memory and the KEV catalog, not by any ranking. Dates are from the CVE records fetched by this site into the vault and from the CISA KEV catalog captured on 22 October; the 'exploited by ransomware' column is CISA's field.
@@ -60,4 +62,4 @@ The signals that would move php2shell into the catalog are on [the exploitation 
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/context/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/context/index.html

@@ -4,6 +4,8 @@ Two ledgers for php2shell: every system reported taken offline with who said so,
 
 # Impact: what was taken offline, and what was compromised
 
+In plain English Two lists: who took websites offline (many, as a precaution), and who was actually broken into (nobody confirmed).
+
 Two ledgers, because they measure different things. Taking a system offline is a decision an operator makes and can confirm, and the first table is full. Being compromised is a fact only evidence establishes, and the second table has, as of the latest capture, no confirmed entry. That gap is the most important finding on this site: the reported cost of php2shell so far is the cost of precaution.
 
 Two ledgers. The first is systems taken offline, which is a decision an operator makes and can confirm; the second is systems compromised, which only evidence can establish. The columns say whether the entry comes from the organisation itself or from the press, because the difference is the whole point.
@@ -21,14 +23,14 @@ Two ledgers. The first is systems taken offline, which is a decision an operator
 | **Oxford City Council and Oxfordshire County Council** UK | Sites removed from service; the city council's post: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident' | 2026-10-21 | Oxford Chronicle quoting the councils' social posts | reported | [Oxford Chronicle](../sources/oxfordchronicle-councils-offline/index.html) |
 | **Metropolitan Police, Office for Budget Responsibility; errors on Bristol, Lambeth and Barnet council sites** UK | Reported unavailable; a minister said there was no breach of Budget security | 2026-10-21 | LBC, Insurance Business, East Anglian Daily Times | reported | [LBC](../sources/lbc-uk-websites-offline/index.html) [Insurance Business](../sources/insurancebusiness-uk-councils-met/index.html) [East Anglian Daily Times](../sources/eadt-minister-budget-no-breach/index.html) |
 | **French government services; the University of Geneva; the BBC; online shops** FR, CH, UK | Listed by the BBC as affected or taken offline | 2026-10-22 | BBC News | reported | [BBC News](../sources/bbc-live-ckgel5xp2xv9t/index.html) |
-| **Government sites in the Netherlands, France, Germany and Belgium** EU | Listed by Reuters' factbox as having taken sites offline | 2026-10-21 | Reuters, via Global Banking and Finance | reported | [Reuters factbox, via Global Bankin](../sources/reuters-factbox-websites-offline/index.html) |
+| **Government sites in the Netherlands, France, Germany and Belgium** EU | Listed by Reuters' factbox as having taken sites offline | 2026-10-21 | Reuters, via Global Banking and Finance | reported | [Reuters factbox, via Global…](../sources/reuters-factbox-websites-offline/index.html) |
 
 ## Compromised
 
 | Claim | Basis | Status | Sources |
 |---|---|---|---|
 | Amazon: 'PHP2Shell is now being broadly exploited in the wild' | MadPot honeypot telemetry: an attempt on 17 October, proof-of-concept attempts from 02:00 UTC on 21 October, use against sensors 'almost immediately' after release. 'It's unclear if any of these attempts would have succeeded in real-world systems.' | reported (primary party); attempts against sensors, not victims | [Amazon](../sources/aws-security-blog-madpot/index.html) |
-| Cloudflare: thousands of attempts in the ten hours before announcement, tens of thousands within 45 minutes after, hundreds of thousands within two hours, 'millions now' | Matthew Prince on X, 22 October 01:25 UTC; attempts seen at the edge, not compromises; no blocked count published | reported (primary party) | [Matthew Prince , Cloudflare CEO on](../sources/x-eastdakota-php2shell-stats/index.html) [Cloudflare](../sources/cloudflare-blog-php2shell-waf/index.html) |
+| Cloudflare: thousands of attempts in the ten hours before announcement, tens of thousands within 45 minutes after, hundreds of thousands within two hours, 'millions now' | Matthew Prince on X, 22 October 01:25 UTC; attempts seen at the edge, not compromises; no blocked count published | reported (primary party) | [Matthew Prince, Cloudflare CEO on…](../sources/x-eastdakota-php2shell-stats/index.html) [Cloudflare](../sources/cloudflare-blog-php2shell-waf/index.html) |
 | Imperva: no traffic matching the exploit patterns during pre-disclosure monitoring | Imperva had the details under embargo and monitored customer traffic before the announcement | reported (primary party); a negative finding | [Imperva Threat Research](../sources/imperva-blog-php2shell/index.html) |
 | Huntress: no exploitation observed on partner systems as of 20:30 UTC on 21 October; no public exploit code known | Huntress's own rapid-response post | reported (primary party); a negative finding | [Huntress](../sources/huntress-php2shell-rapid-response/index.html) |
 | watchTowr: active exploitation attempts seen; the flaws 'exploited in the wild' | watchTowr's pages, which block automated capture (HTTP 403); known through search summaries only | unverified the source could not be read | [watchTowr](../sources/watchtowr-php2shell/index.html) [watchTowr](../sources/watchtowr-php2shell-faq/index.html) |
@@ -51,4 +53,4 @@ What a compromise of one system would reach is on [the blast-radius section](../
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html

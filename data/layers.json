@@ -39,6 +39,12 @@
   {"path": "data/pipeline.json", "layer": "site", "by": "dev@php.newsroom", "from": "the public repositories and Pages workflows of the newsroom sites", "used_on": "status/index.html"},
   {"path": "data/source-watch.json", "layer": "evidence", "by": "admin/build/export_watch.py", "from": "the source-watch vault's index, taxonomy, runs and tips: counts and vocabularies, no capture", "used_on": "vaults/source-watch/index.html"},
   {"path": "data/vaults.json", "layer": "site", "by": "dev@php.newsroom", "from": "the vaults behind this site and how each is opened", "used_on": "vaults/index.html"},
+  {"path": "data/glossary.json", "layer": "authored", "by": "the design agent", "from": "40 terms in plain English, each linked on first use on every page", "used_on": "glossary/index.html"},
+  {"path": "data/interview.json", "layer": "authored", "by": "the editor, interviewed by the design agent", "from": "the editor's answers in his own words", "used_on": "interview/index.html"},
+  {"path": "data/personas.json", "layer": "authored", "by": "the design agent", "from": "fifteen readers by job and technical depth, each with a thirty-second answer and a reading path", "used_on": "start/index.html"},
+  {"path": "data/plain.json", "layer": "derived", "by": "the design agent", "from": "the front page's plain-English questions and moments; every fact cites vault slugs", "used_on": "index.html"},
+  {"path": "data/sections.json", "layer": "site", "by": "admin/build/build.py", "from": "the section ledger: every section hashed on every build, versioned when its reader-facing text changes", "used_on": "versions/index.html"},
+  {"path": "data/seo.json", "layer": "site", "by": "the design agent", "from": "search-engine settings: the Search Console verification token and the social card", "used_on": "index.html"},
   {"path": "data/telemetry.json", "layer": "site", "by": "dev@php.newsroom", "from": "the telemetry lane's public configuration", "used_on": "admin/telemetry/index.html"},
   {"path": "data/telemetry-report.json", "layer": "site", "by": "admin/build/telemetry_drain.py", "from": "the drained telemetry lane, as counts", "used_on": "admin/telemetry/index.html"},
   {"path": "data/layers.json", "layer": "site", "by": "claude-journalist", "from": "this classification", "used_on": "layers/index.html"}

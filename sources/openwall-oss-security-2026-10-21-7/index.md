@@ -26,7 +26,7 @@ Date header Wed, 21 Oct 2026 16:44:06 +0200. Replies at 21/16, 21/17, 21/23, 22/
 
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
-| Updating is the only complete mitigation; the configuration measures reduce exposure to specific paths and do not make an installation safe | php.net; PHP security team | confirmed | 3/3 | [php.net](../../sources/php-net-advisory/index.html) [oss-security](../../sources/openwall-oss-security-2026-10-21-7/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) |
+| Updating is the only complete mitigation; the configuration measures reduce exposure to specific paths and do not make an installation safe [fact timeline →](../../facts/only-update/index.html) | php.net; PHP security team | confirmed | 3/3 | [php.net](../../sources/php-net-advisory/index.html) [oss-security](../../sources/openwall-oss-security-2026-10-21-7/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) |
 
 ## Events that cite it
 
@@ -46,4 +46,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/openwall-oss-security-2026-10-21-7/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/openwall-oss-security-2026-10-21-7/index.html

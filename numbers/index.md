@@ -4,6 +4,8 @@ Every scale figure in circulation about php2shell, with what it measures, who sa
 
 # The numbers, and what each one measures
 
+In plain English The big numbers in the headlines measure different things. 70% is a share of websites, not of the Internet; 2.6 million is a count of servers.
+
 The editor's starting point for this site was a figure that did not add up: *70% of the internet*. It turns out to be a headline's restatement of a share-of-websites statistic that nobody on this beat sources, sitting next to a host count a thousand times smaller and a national count a thousand times smaller again. None of them is wrong on its own terms. The table says what each one counts.
 
 | Figure | What it measures | Who said it | Status | Note | Sources |
@@ -20,10 +22,10 @@ The editor's starting point for this site was a figure that did not add up: *70%
 | about 9 hours before disclosure, Cloudflare's WAF rules went live for all customers | 21 October 2026 03:02 UTC against the 14:00 UTC release. | Cloudflare | confirmed | Primary party. No attack volumes are in the post. | [Cloudflare](../sources/cloudflare-blog-php2shell-waf/index.html) |
 | more than 6 hours before the coordinated release, Chainguard published built images with the fix | 21 October 2026 07:41 UTC. | The PHP Foundation | reported | Chainguard reportedly does not dispute the time but denies leaking; that article is blocked from this environment. | [PHP Foundation](../sources/php-foundation-blog-security-release/index.html) |
 | 1.57 million internet-facing hosts with an identifiable PHP version that were unpatched on 21 October, of 2.58 million seen | Hosts whose HTTP response announces a PHP version below the fixed one. Hosts that hide the version (a million of them) are not counted either way. | Censys, via SecurityWeek | reported | Censys's own post was not found; nearly 3 million hosts by 22 October per the same report. | [SecurityWeek](../sources/securityweek-exploitation-days-before/index.html) |
-| millions exploit attempts seen across Cloudflare's network by 22 October 01:25 UTC | Requests matching Cloudflare's rules, across all customers. Not compromises, not unique attackers, not unique targets. | Matthew Prince, Cloudflare | reported | Thousands in the ten hours before the announcement. | [Matthew Prince , Cloudflare CEO on](../sources/x-eastdakota-php2shell-stats/index.html) |
+| millions exploit attempts seen across Cloudflare's network by 22 October 01:25 UTC | Requests matching Cloudflare's rules, across all customers. Not compromises, not unique attackers, not unique targets. | Matthew Prince, Cloudflare | reported | Thousands in the ten hours before the announcement. | [Matthew Prince, Cloudflare CEO on…](../sources/x-eastdakota-php2shell-stats/index.html) |
 | 22.6 million internet-facing systems that 'could be vulnerable' | Not stated. | Palo Alto Networks Unit 42, via Insurance Business | reported | Nine times Censys's host count; the method is not given. | [Insurance Business](../sources/insurancebusiness-uk-councils-met/index.html) |
 | 94% Weird Gloop's wiki page views still served during its 13-hour shutdown | Page views served from cache with no PHP or database running, as measured by the operator. | Weird Gloop | confirmed | The one number on this page that measures the cost of taking a system offline. | [Weird Gloop](../sources/weirdgloop-blog-php2shell/index.html) |
-| 389 files changed by the fix commit, 10,689 lines added | git show --shortstat on commit 3584a98bd; 113 of the files are not tests. | php/php-src, counted by this site from a clone | confirmed | The 7.4 backport changes 17 files. | [php/php-src , read from a clone](../sources/github-php-src-fix-commit-3584a98bd/index.html) |
+| 389 files changed by the fix commit, 10,689 lines added | git show --shortstat on commit 3584a98bd; 113 of the files are not tests. | php/php-src, counted by this site from a clone | confirmed | The 7.4 backport changes 17 files. | [php/php-src, read from a clone](../sources/github-php-src-fix-commit-3584a98bd/index.html) |
 | 270 CVEs added to CISA's Known Exploited Vulnerabilities catalog in 2026 so far; 0 of them php2shell | Entries with dateAdded in 2026 in catalog version 2026.10.21. | CISA KEV, counted by this site | confirmed | Three PHP core CVEs are in the catalog from earlier years. | [CISA](../sources/cisa-kev-json/index.html) |
 
 ## Why they differ by four orders of magnitude
@@ -42,4 +44,4 @@ The number a reader actually wants, how many systems were exploitable at a given
 
 
 ---
-site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/numbers/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/numbers/index.html

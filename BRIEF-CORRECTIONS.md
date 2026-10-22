@@ -2,6 +2,9 @@
 
 Newest first. A correction names the date, what was wrong, what was found, and what was done instead. The mistake stays visible where it was made.
 
+## 2026-10-22, v0.3.1: the site's name, and who the front page is for
+
+The site was named php2shell, after the incident. The editor's correction: it is PHP news for October 2026, which this month happens to be dominated by one security incident, and the next month can be tracked the same way. The brand, page titles and the footer now say PHP October 2026; php2shell stays as what the press calls the flaws. The front page had opened with CVE numbers, a nickname and the words unauthenticated remote code execution; it now opens with the current situation in plain words, and the technical version is on the specialist summary page.
 ## 2026-10-22, v0.2.10: "both ChatGPT and Claude", in part
 
 The v0.1.0 entry below says no second model had read the vault. That is still true of the vault. What changed: the editor ran a research chat in Perplexity and gave this site its notes, which are now published in full and credited at /readings/, compared with the vault point by point. Perplexity read the web through search excerpts, not the vault, so this is a second reading of the story, not of the evidence. Board item 009 stays open for a second model reading the vault itself.

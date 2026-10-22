@@ -41,7 +41,7 @@ for p in pages:
     md = re.sub(r'\.html$', '.md', p)
     if not os.path.exists(md): fails.append(f'{rel(p)}: no markdown twin')
     # 6. em-dash in the site's prose (sources page exempt: third-party titles)
-    if os.sep + 'sources' + os.sep not in p and os.sep + 'actors' + os.sep not in p and not p.endswith(os.path.join('affected', 'software.html')) and not p.endswith(os.path.join('brief', 'index.html')) and not re.search(r'readings/[^/]+/index\.html$', p.replace(os.sep, '/')):
+    if os.sep + 'sources' + os.sep not in p and os.sep + 'actors' + os.sep not in p and os.sep + 'facts' + os.sep not in p and os.sep + 'versions' + os.sep not in p and os.sep + 'interview' + os.sep not in p and not p.endswith(os.path.join('affected', 'software.html')) and not p.endswith(os.path.join('brief', 'index.html')) and not re.search(r'readings/[^/]+/index\.html$', p.replace(os.sep, '/')):
         body = re.sub(r'<q>.*?</q>', '', s, flags=re.S)
         body = re.sub(r'title="[^"]*"', '', body)
         if '—' in body:
@@ -119,10 +119,34 @@ for q in qs.get('questions', []):
     for pth in q.get('see', []):
         if not os.path.exists(os.path.join(ROOT, pth.split('#')[0])): fails.append(f'data/questions.json: {q.get("id")} points at missing page {pth}')
     if not q.get('see'): fails.append(f'data/questions.json: {q.get("id")} points at no page')
+# 4b. the readers: plain-English facts cite known slugs; every persona path and glossary link points at a page that exists
+plain = load('plain') or {}
+for c in plain.get('cards', []) + plain.get('moments', []):
+    for s in c.get('sources', []):
+        if s not in slugs: fails.append(f'data/plain.json: {c.get("q") or c.get("when")} cites unknown slug {s}')
+    if not os.path.exists(os.path.join(ROOT, c['href'].split('#')[0])): fails.append(f'data/plain.json: link to missing page {c["href"]}')
+personas = load('personas') or {}
+aud = {a['id'] for a in (load('roles') or {}).get('audiences', [])}
+for pr in personas.get('personas', []):
+    if pr['id'] not in aud: fails.append(f'data/personas.json: {pr["id"]} has no briefing audience in roles.json')
+    for x in pr.get('path', []):
+        if not os.path.exists(os.path.join(ROOT, x)): fails.append(f'data/personas.json: {pr["id"]} path points at missing page {x}')
+for t in (load('glossary') or {}).get('terms', []):
+    if not os.path.exists(os.path.join(ROOT, t['more'].split('#')[0])): fails.append(f'data/glossary.json: {t["id"]} links to missing page {t["more"]}')
+# 4c. search engines: the sitemap lists every public page, robots.txt points at it, the feed and the social card exist
+sm = open(os.path.join(ROOT, 'sitemap.xml'), encoding='utf-8').read() if os.path.exists(os.path.join(ROOT, 'sitemap.xml')) else ''
+if not sm: fails.append('sitemap.xml missing')
+for p in pages:
+    r = rel(p).replace(os.sep, '/')
+    if r.startswith('account/top'): continue
+    if f'/{r}</loc>' not in sm: fails.append(f'{r}: not in sitemap.xml')
+if 'Sitemap:' not in (open(os.path.join(ROOT, 'robots.txt')).read() if os.path.exists(os.path.join(ROOT, 'robots.txt')) else ''): fails.append('robots.txt missing or has no Sitemap line')
+for f in ('feed.xml', 'assets/og-card.png', 'data/sections.json'):
+    if not os.path.exists(os.path.join(ROOT, f)): fails.append(f'missing {f}')
 # 5. determinism: rebuild into a temp copy and compare hashes
 def tree_hash():
     h = hashlib.sha256()
-    for p in pages + sorted(re.sub(r'\.html$', '.md', p) for p in pages) + [os.path.join(ROOT, 'llms.txt'), os.path.join(ROOT, 'data', 'graph.json')]:
+    for p in pages + sorted(re.sub(r'\.html$', '.md', p) for p in pages) + [os.path.join(ROOT, 'llms.txt'), os.path.join(ROOT, 'data', 'graph.json'), os.path.join(ROOT, 'data', 'sections.json'), os.path.join(ROOT, 'sitemap.xml'), os.path.join(ROOT, 'feed.xml')]:
         if os.path.exists(p):
             h.update(rel(p).encode()); h.update(open(p, 'rb').read())
     return h.hexdigest()
@@ -144,7 +168,7 @@ for root, dirs, files in os.walk(ROOT):
         m = PAT.search(b.decode('utf-8', 'replace'))
         if m: fails.append(f'{rel(fp)}: credential shape {m.group(0)[:12]}...')
 # 8. no external script/style/img (checked above); also check the vendored meter is present
-for f in ('assets/review-nav.js', 'data/review.json', 'review/code/files.json', 'assets/themes/themes.css', 'assets/themes/themes.js', 'assets/themes/site-tokens.css', 'assets/telemetry.js', 'data/telemetry.json', 'data/admin.json', 'assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js', 'assets/components/base/v1/v1.0/v1.0.0/sg-component.js', 'assets/site.css', 'assets/site.js', 'CNAME', '.nojekyll', 'VERSION', '.github/workflows/pages.yml'):
+for f in ('assets/review-nav.js', 'data/review.json', 'review/code/files.json', 'assets/themes/themes.css', 'assets/themes/themes.js', 'assets/themes/site-tokens.css', 'assets/telemetry.js', 'data/telemetry.json', 'data/admin.json', 'assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js', 'assets/components/base/v1/v1.0/v1.0.0/sg-component.js', 'assets/site.css', 'assets/site.js', 'CNAME', '.nojekyll', 'VERSION', '.github/workflows/pages.yml', 'assets/personas.js'):
     if not os.path.exists(os.path.join(ROOT, f)): fails.append(f'missing {f}')
 # version consistency
 ver = open(os.path.join(ROOT, 'VERSION')).read().strip()
