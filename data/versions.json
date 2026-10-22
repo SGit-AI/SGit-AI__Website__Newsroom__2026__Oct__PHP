@@ -1,6 +1,15 @@
 {
- "current": "0.2.1",
+ "current": "0.2.2",
  "versions": [
+  {
+   "version": "0.2.2",
+   "date": "2026-10-22",
+   "title": "the build, gate and release scripts are now committed: the repository's Python .gitignore template had ignored admin/build/, which is why the first Pages run could not find the gate",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.1",
    "date": "2026-10-22",
