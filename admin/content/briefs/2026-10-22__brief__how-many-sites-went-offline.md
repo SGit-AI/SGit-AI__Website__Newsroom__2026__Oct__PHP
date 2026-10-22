@@ -1,6 +1,6 @@
 # Brief: how many sites went offline, and where
 
-Status: proposed by desk@php.newsroom (the narrator) on 22 October 2026, for the editor's go. Asked by the editor: "a very tight grip and understanding on how many websites have now been taken offline", and a pattern he suspects: "a lot of impact on non-English countries because they tend to run on [old] infrastructure ... a lot of PHP".
+Status: proposed by desk@php.newsroom (the news desk chief) on 22 October 2026, for the editor's go. Asked by the editor: "a very tight grip and understanding on how many websites have now been taken offline", and a pattern the editor suspects: "a lot of impact on non-English countries because they tend to run on [old] infrastructure ... a lot of PHP".
 
 ## Where we are
 
