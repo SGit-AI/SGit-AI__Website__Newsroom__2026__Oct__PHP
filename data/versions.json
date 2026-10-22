@@ -1,6 +1,15 @@
 {
- "current": "0.5.6",
+ "current": "0.5.7",
  "versions": [
+  {
+   "version": "0.5.7",
+   "date": "2026-10-22",
+   "title": "the telemetry dashboard: a new private vault (i4diy82d) holding a vault app over the telemetry vault, which is linked inside it read-only (vault-in-vault), so the app always draws the latest drain; listed on /vaults/",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.5.6",
    "date": "2026-10-22",

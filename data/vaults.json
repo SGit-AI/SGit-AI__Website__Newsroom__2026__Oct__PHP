@@ -93,6 +93,19 @@
    "note": "Its key goes to members privately.",
    "page": "team/channels/index.html#mail",
    "data": "data/team.json"
+  },
+  {
+   "slug": "telemetry-dashboard",
+   "id": "i4diy82d",
+   "name": "The telemetry dashboard",
+   "access": "private",
+   "app": true,
+   "holds": "A vault app that draws the telemetry: page views by hour, pages, countries, regions and cities, devices, referrers, languages, versions, pages per session and the latest events, each a filter. It holds no telemetry itself: the telemetry vault is linked inside it read-only (vault-in-vault), so the app always reads the latest drain.",
+   "facts": "links the telemetry vault (84wr8mib) at telemetry/, read-only",
+   "note": "It is held by the editor, sealed to his key on pki.sgit.ai. Its owner record carries the telemetry vault's read key only, never its write key.",
+   "writers": "dev@php.newsroom",
+   "page": "admin/telemetry/index.html",
+   "data": "data/telemetry.json"
   }
  ]
 }

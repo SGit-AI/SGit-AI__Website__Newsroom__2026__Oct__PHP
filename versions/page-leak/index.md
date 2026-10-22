@@ -15,4 +15,4 @@ v5 · site v0.4.7 · 22 October 2026 · 13 lines added or changed, 13 removed or
 
 
 ---
-site v0.5.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/page-leak/index.html
+site v0.5.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/page-leak/index.html
