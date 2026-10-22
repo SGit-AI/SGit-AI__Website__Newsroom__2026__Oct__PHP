@@ -56,6 +56,11 @@ Rules for all of it:
   the gate and the release tripwire refuse these paths and key shapes.)
 - A key is handed to a person only sealed to their key on pki.sgit.ai, as in
   `admin/content/briefs/2026-10-22__handing-the-editor-a-vault-key.md`. Rotate after it is opened.
+- Keys and secrets move by pki.sgit.ai, under the rules of engagement on `/admin/keys/` (`data/keys.json`): one key
+  pair per agent, enrolled by the editor; signed messages in the open between agents, never encrypted ones;
+  encryption only to hand a secret to one named recipient, always with a copy sealed to the root
+  (`sha256:db7f79fdd87e030a`, pinned from `CLAUDE.md`); seal only to a key that chains to the root. A vault you make
+  is sealed to the root before your session ends, so its key is never lost with you.
 - If a secret is exposed, say so at once in the session. Do not try to hide it with a force-push; it has to be
   rotated by the person who issued it.
 

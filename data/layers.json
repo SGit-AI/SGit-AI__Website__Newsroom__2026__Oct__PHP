@@ -231,6 +231,13 @@
    "used_on": "team/index.html"
   },
   {
+   "path": "data/keys.json",
+   "layer": "site",
+   "by": "security@php.newsroom",
+   "from": "the register at pki.sgit.ai and the vaults behind this site: public keys, fingerprints and vault ids, never a secret",
+   "used_on": "admin/keys/index.html"
+  },
+  {
    "path": "data/admin.json",
    "layer": "site",
    "by": "dev@php.newsroom",

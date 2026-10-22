@@ -203,7 +203,7 @@ NAV = [
     ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'),
-               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'), ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
+               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'), ('admin/keys/index.html', 'Keys and secrets'), ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
 ]
 
 PAGES = []  # (path, title, description) in order, for llms.txt
@@ -1355,7 +1355,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json()
+    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -1614,6 +1614,54 @@ def build_actors():
 
 
 # ----------------------------------------------------------------------------- the admin section (v0.2.3)
+
+def build_keys():
+    """admin/keys/: the root, every agent's key, every vault and where its key is kept, the rules of engagement and how to
+    hand a key over. From data/keys.json; public keys, fingerprints and vault ids only."""
+    K = load('keys')
+    r = K['root']
+    fp = lambda x: f'<code>{E(x)}</code>' if x else '<span class="dim">none</span>'
+    rules = ''.join(f'<li><b>{E(a)}</b> {E(b)}</li>' for a, b in K['rules'])
+    agents = table(['Agent', 'Key', 'Record (signing fingerprint)', 'Status', 'Operated until'],
+                   [[E(a['name']), E(a['kind']), fp(a['record']), E(a['status']), E(a['until'] or '')] for a in K['agents']], 't keys')
+    with_root = sum(1 for v in K['vaults'] if v['key_with_root'].startswith('opened'))
+    vaults = table(['Vault', 'Id', 'Access', 'Made by', 'Key with the root', 'Next'],
+                   [[E(v['name']), f'<code>{E(v["id"])}</code>', E(v['access']), E(v['made_by']), E(v['key_with_root']), E(v['action'])] for v in K['vaults']], 't keys')
+    shared = ''.join(f'<li><b>{E(a)}</b>: {E(b)}</li>' for a, b in K['shared'])
+    made = sum(1 for a in K['agents'] if a['record'] and a['kind'] != 'person' and a['status'].startswith('in the register'))
+    body = f"""
+<h1>Keys: who holds what, and how a secret moves</h1>
+<p class="lead">Every agent on this newsroom gets its own key pair on <a href="{U(K['register'])}" rel="noopener">pki.sgit.ai</a>, to sign what it writes and to receive a secret meant for it alone. The editor's key is the root. As of {E(K['as_of'])}, {made} of {len(K['agents']) - 1} agents have a live key in the register and {with_root} of {len(K['vaults'])} vault keys are confirmed in the editor's hands. This page holds public keys, fingerprints and vault ids only. No secret is ever on it.</p>
+<h2>The root</h2>
+<p><b>{E(r['name'])}</b>: record {fp(r['record'])} (signing), encryption key {fp(r['encryption'])}, made {E(r['made'])}; {E(r['where'])}.</p>
+<p>Agents pin it from {E(r['pinned_in'])}. A fingerprint on a website can be changed by whoever changes the website, so the pin comes from an agent's instructions and the register confirms it.</p>
+<h2>Rules of engagement</h2>
+<ol>{rules}</ol>
+<h2>The agents</h2>
+{agents}
+<h2>The vaults</h2>
+<p>Every vault's key reaches the editor, sealed to the root, so none is lost when the session that made it ends. "Unknown" means nobody has recorded a handover: the agent that made the vault does it next.</p>
+{vaults}
+<h2>Shared vaults</h2>
+<ul>{shared}</ul>
+<p>Several agents write to a shared vault with its vault key, which the editor seals to each of them; sgit keeps every change, who made it, and the history. Readers who only read get a read key.</p>
+<h2>An agent with no key yet</h2>
+<p>In its session, with the root from its instructions (the full steps are at <a href="{U(K['handover'])}" rel="noopener">pki.sgit.ai/handover.md</a>, section C):</p>
+<pre><code>curl -sO {E(K['tool'])}
+node pki-agent.mjs keygen --name "&lt;role&gt;@php.newsroom" --runtime "claude-code, cloud session" --session
+node pki-agent.mjs operator {E(r['record'])} --policy admin/security/REQUIREMENTS.md
+node pki-agent.mjs submission --out my-record.json
+node pki-agent.mjs whoami</code></pre>
+<p>It says its fingerprint in the session and gives the editor <code>my-record.json</code> (public). The editor compares the fingerprint, signs it on pki.sgit.ai, and the agent's row above gets its record.</p>
+<h2>Handing over a vault key</h2>
+<pre><code>node pki-agent.mjs pin {E(r['record'])}
+node pki-agent.mjs root
+node pki-agent.mjs seal --from-vault &lt;the vault's folder&gt; --name "vault key: &lt;name&gt; (&lt;id&gt;)" --qr vault-key.png</code></pre>
+<p>Sealed to the root by default; add <code>--to &lt;fingerprint&gt;</code> for an agent the editor names, and the root still gets its copy. The agent then tells the editor, in the session, four things: the vault's name and id, the recipient, its own fingerprint, and the sealed link or QR image. The sealed link is safe to show: only the recipient's key opens it. The editor opens it on <a href="https://pki.sgit.ai/m/index.html" rel="noopener">pki.sgit.ai/m/</a>, files the key in his vault of vaults, and the vault's row above changes to "opened".</p>
+<p class="small">{'The editor publishes an inbox on his record: agents can also deliver with <code>pki-agent send</code> into it.' if r.get('inbox') else 'The editor has no inbox (append lane) on his record yet. When he publishes one, agents deliver sealed keys straight into it with <code>pki-agent send</code>, and none waits on a session being read.'}</p>
+<p>The rules every agent works to are in <code>admin/security/REQUIREMENTS.md</code>; who does what is on <a href="../roles/index.html">roles</a>.</p>
+"""
+    page('admin/keys/index.html', 'Keys: who holds what, and how a secret moves', 'The newsroom\'s keys: the editor\'s root key, every agent\'s key pair on pki.sgit.ai, every vault and whether its key is safe with the editor, the rules of engagement, and how an agent hands a vault key over. No secrets.', body, kind='site')
 
 def build_admin_section():
     A = D['admin']

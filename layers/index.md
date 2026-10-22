@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **19** derived · **6** authored · **15** site
+**8** evidence · **19** derived · **6** authored · **16** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -77,6 +77,7 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | File | Made by | From | Shown on |
 |---|---|---|---|
 | `data/roles.json` | claude-story-site | the team, the pipeline and the audiences | [team/index.html](../team/index.html) |
+| `data/keys.json` | security@php.newsroom | the register at pki.sgit.ai and the vaults behind this site: public keys, fingerprints and vault ids, never a secret | [admin/keys/index.html](../admin/keys/index.html) |
 | `data/admin.json` | dev@php.newsroom | roles, the board, the vaults | [admin/roles/index.html](../admin/roles/index.html) |
 | `data/versions.json` | admin/build/release.sh | every release | [admin/versions.html](../admin/versions.html) |
 | `data/billing.json` | claude-story-site | the meter configuration and the designed model | [billing/index.html](../billing/index.html) |

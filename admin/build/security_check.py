@@ -148,6 +148,34 @@ def tree_fails(root=ROOT):
                 fails.append(f'data/sources.json: source slug {str(s.get("slug"))[:40]!r} is not [a-z0-9._-]')
     except (OSError, ValueError, KeyError):
         pass
+    # The key register (data/keys.json) holds fingerprints and vault ids, never key material.
+    kp = os.path.join(root, 'data', 'keys.json')
+    if os.path.exists(kp):
+        try:
+            K = json.load(open(kp, encoding='utf-8'))
+            FP = re.compile(r'sha256:[0-9a-f]{16}')
+            for f in ('record', 'encryption'):
+                if not FP.fullmatch(str(K['root'].get(f))):
+                    fails.append(f'data/keys.json: root {f} is not a sha256:<16 hex> fingerprint')
+            for a in K['agents']:
+                if a.get('record') is not None and not FP.fullmatch(str(a['record'])):
+                    fails.append(f'data/keys.json: agent {a.get("id")!r} record is not a fingerprint')
+            for v in K['vaults']:
+                if not re.fullmatch(r'[a-z0-9]{8}', str(v.get('id'))):
+                    fails.append(f'data/keys.json: vault id {str(v.get("id"))[:20]!r} is not an 8-character vault id')
+            def walk_keys(o, path=''):
+                if isinstance(o, dict):
+                    for k, v in o.items():
+                        if re.search(r'(vault_key|passphrase|private|secret|token|enum_key|access_key)', k, re.I):
+                            fails.append(f'data/keys.json: field {path}{k} must not exist: this file never holds key material')
+                        walk_keys(v, f'{path}{k}.')
+                elif isinstance(o, list):
+                    for x in o: walk_keys(x, path)
+                elif isinstance(o, str) and (re.search(r'\bm1\.[A-Za-z0-9_-]{40,}|-----BEGIN', o) or re.search(r'[0-9a-f]{40,}', o)):
+                    fails.append(f'data/keys.json: {path.rstrip(".")} holds what looks like key material or a sealed message')
+            walk_keys(K)
+        except (ValueError, KeyError, TypeError) as e:
+            fails.append(f'data/keys.json: does not parse as the key register ({e})')
     # Workflows: every action pinned to a commit, never a tag a third party can move.
     wf = os.path.join(root, '.github', 'workflows')
     for f in sorted(os.listdir(wf)) if os.path.isdir(wf) else []:
