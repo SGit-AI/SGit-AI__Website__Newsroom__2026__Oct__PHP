@@ -376,6 +376,34 @@
    "by": "admin/factcheck/fc.py export (factcheck@php.newsroom)",
    "from": "the desk's assessments, contradiction ledger, Issues-FS tickets and run reports in admin/factcheck/, each grade resting on captures named by sha256",
    "used_on": "factcheck/index.html"
+  },
+  {
+   "path": "data/grc.json",
+   "layer": "derived",
+   "by": "grc@php.newsroom",
+   "from": "the claims, sources, code review graph, stories and team on this site, with ratings and assignments by the GRC desk",
+   "used_on": "grc/index.html"
+  },
+  {
+   "path": "data/grc-frameworks.json",
+   "layer": "derived",
+   "by": "grc@php.newsroom",
+   "from": "the official texts of the laws, standards and frameworks, each linked; control titles paraphrased",
+   "used_on": "grc/frameworks/index.html"
+  },
+  {
+   "path": "data/grc-network.json",
+   "layer": "derived",
+   "by": "grc@php.newsroom",
+   "from": "the risk models, articles and vaults of the sgit network, described in their publishers' terms and linked",
+   "used_on": "grc/network/index.html"
+  },
+  {
+   "path": "data/grc-graph.json",
+   "layer": "derived",
+   "by": "admin/build/build.py",
+   "from": "data/grc.json, data/grc-frameworks.json, data/review.json, data/claims.json and the articles, on every build",
+   "used_on": "grc/graph/index.html"
   }
  ]
 }

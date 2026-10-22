@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **20** derived · **6** authored · **16** site
+**8** evidence · **24** derived · **6** authored · **16** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -57,6 +57,10 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/graph.json` | admin/build/build.py | the claims and timeline rows and the sources they cite, generated at build | [graph/index.html](../graph/index.html) |
 | `data/plain.json` | the design agent | the front page's plain-English questions and moments; every fact cites vault slugs | [index.html](../index.html) |
 | `data/factcheck.json` | admin/factcheck/fc.py export (factcheck@php.newsroom) | the desk's assessments, contradiction ledger, Issues-FS tickets and run reports in admin/factcheck/, each grade resting on captures named by sha256 | [factcheck/index.html](../factcheck/index.html) |
+| `data/grc.json` | grc@php.newsroom | the claims, sources, code review graph, stories and team on this site, with ratings and assignments by the GRC desk | [grc/index.html](../grc/index.html) |
+| `data/grc-frameworks.json` | grc@php.newsroom | the official texts of the laws, standards and frameworks, each linked; control titles paraphrased | [grc/frameworks/index.html](../grc/frameworks/index.html) |
+| `data/grc-network.json` | grc@php.newsroom | the risk models, articles and vaults of the sgit network, described in their publishers' terms and linked | [grc/network/index.html](../grc/network/index.html) |
+| `data/grc-graph.json` | admin/build/build.py | data/grc.json, data/grc-frameworks.json, data/review.json, data/claims.json and the articles, on every build | [grc/graph/index.html](../grc/graph/index.html) |
 
 ## Authored
 

@@ -555,3 +555,27 @@ html.ask-on .ask-pane{display:flex}
 .ask-key{display:flex;flex-direction:column;gap:.35rem;border:1px solid var(--line);border-radius:10px;padding:.6rem}
 .ask-key label{display:flex;flex-direction:column;gap:.2rem;font-size:.84rem}
 .ask-tools li{margin:.35rem 0;font-size:.86rem}
+/* GRC: fractal risk registers (grc@php.newsroom). The band is always written out, so a rating never rests on colour alone. */
+.gr{display:inline-block;border-radius:6px;padding:0 .4rem;font-size:.78rem;white-space:nowrap}
+.gr b{margin-right:.2rem}
+/* --warn-* and --info-* resolve to themselves in site-tokens.css (a cycle, so they are invalid); the GRC bands use theme tokens directly. */
+.gr-critical,.hm-critical{background:var(--danger-bg);color:var(--danger-ink)}
+.gr-high,.hm-high{background:var(--warn-line);color:var(--text)}
+.gr-medium,.hm-medium{background:color-mix(in srgb,var(--warn-line) 40%,var(--panel));color:var(--text)}
+.gr-low,.hm-low{background:var(--tint-solid);color:var(--accent-dk)}
+.heat td.hm{min-width:5.5rem;vertical-align:top;font-size:.8rem}
+.heat td.hm a{font-weight:700;color:inherit;margin-right:.2rem}
+.heat .hs{display:block;font-size:.7rem;opacity:.7}
+.gt{display:inline-block;border-radius:6px;padding:0 .4rem;font-size:.78rem}
+.gt-in-place{background:var(--tint-solid);color:var(--accent-dk)}.gt-partial{background:var(--warn-line);color:var(--text)}.gt-missing{background:var(--danger-bg);color:var(--danger-ink)}
+.mxt td.mx{text-align:center;font-variant-numeric:tabular-nums}
+.mxt th[scope=col]{font-size:.72rem;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap}
+.grc-tree td:first-child{min-width:18rem}
+.graph .g-st,.graph .g-ro{fill:var(--accent);stroke:var(--accent)}.graph .g-risk{fill:var(--bad-ink);stroke:var(--bad-ink)}
+.graph .g-wk{fill:var(--text);stroke:var(--text)}.graph .g-vu{fill:var(--bad-ink);stroke:var(--bad-ink)}
+.graph .g-fx,.graph .g-cd{fill:var(--ok-ink);stroke:var(--ok-ink)}.graph .g-sy,.graph .g-tm{fill:var(--warm);stroke:var(--warm)}
+.graph .gap{fill:var(--dim);font-style:italic}.graph .rl{font-size:8.5px}
+.graph .e-w{stroke:var(--accent);stroke-width:1;opacity:.45}.graph .e-v{stroke:var(--bad-ink);stroke-width:1}.graph .rl{font-family:var(--sans)}
+.gpath svg{min-width:900px}.gpath{overflow-x:auto}
+.gpath .n{font-size:11px}.gpath .t{font-size:11.5px}
+.gpath .e{stroke:var(--dim);stroke-width:1;opacity:.5}

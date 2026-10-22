@@ -69,7 +69,7 @@ ARTICLES = load_articles()
 # The two halves of the site, and what each page is. Research: material collected from outside and what this
 # site derives from it. Stories: written here, signed and dated. Every page carries one of these at its top.
 ZONES = OrderedDict([('Start here', 'For you'), ('Questions', 'For you'), ('Briefings', 'For you'), ('Yours', 'For you'), ('The incident', 'Research'),
-                     ('The analysis', 'Research'), ('The evidence', 'Research'), ('Stories', 'Stories'), ('About', 'Site')])
+                     ('The analysis', 'Research'), ('The evidence', 'Research'), ('GRC', 'Research'), ('Stories', 'Stories'), ('About', 'Site')])
 ORIGINS = {
     'house': {'short': 'House', 'label': 'Story', 'text': 'written here by this site, signed and dated'},
     'guest': {'short': 'Guest', 'label': 'Story, guest', 'text': 'written by a guest writer, published here under their name'},
@@ -199,6 +199,8 @@ NAV = [
                       ('layers/index.html', 'Evidence, derived, authored'),
                       ('pipeline/index.html', 'The fact pipeline'), ('versions/index.html', 'How the story changed'),
                       ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults']]),
+    ('GRC', [('grc/index.html', 'GRC: risks, owners, standards'), ('grc/risks/index.html', 'The risk register'), ('grc/stakeholders/index.html', 'Stakeholders and their registers'),
+             ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/network/index.html', 'From the sgit network')]),
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
     ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
@@ -1309,6 +1311,13 @@ def build_llms():
     for a in D['actors']:
         lines.append(f'- [{a["name"]}]({BASE_URL}/actors/{a["id"]}/index.md): {a["role"]}')
     lines.append('')
+    lines.append('## GRC: one page per risk, stakeholder register and framework')
+    nav_paths = {p for _, items in NAV for p, _ in items}
+    for p, t, d, _ in PAGES:
+        if p.startswith('grc/') and p not in nav_paths:
+            lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
+    lines += [f'- [grc.json]({BASE_URL}/data/grc.json): stakeholders, weaknesses and risks', f'- [grc-frameworks.json]({BASE_URL}/data/grc-frameworks.json): the frameworks and controls mapped',
+              f'- [grc-graph.json]({BASE_URL}/data/grc-graph.json): the risk graph, every edge a verb with its inverse', '']
     lines += ['## Data', f'- [sources.json]({BASE_URL}/data/sources.json): the vault manifest with every capture and hash',
               f'- [claims.json]({BASE_URL}/data/claims.json): every claim with status, who says it and sources',
               f'- [timeline.json]({BASE_URL}/data/timeline.json): every dated event', f'- [numbers.json]({BASE_URL}/data/numbers.json): the scale figures and what each measures',
@@ -1452,7 +1461,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
+    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck(); build_grc()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -3540,6 +3549,518 @@ def build_agents_guide():
 <p class="small">The source is <code>AGENTS.md</code> at the root of the repository; every agent reads it there or here.</p>
 """
     page('admin/agents/index.html', 'How to work on this site: guidance for every agent', 'Push to your own branch early and often and let dev@php.newsroom carry it into dev; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements.', body, kind='site')
+
+
+# ----------------------------------------------------------------------------- GRC: fractal risk registers (grc@php.newsroom)
+# The brief is admin/content/briefs/2026-10-22__brief__grc-fractal-risk-registers.md. The data is data/grc.json (stakeholders,
+# weaknesses, risks) and data/grc-frameworks.json (the standards); the build writes data/grc-graph.json. Every reference is
+# checked here and the build stops on an unknown one: a risk can only point at a claim, source, story, page, team member,
+# code node or control that exists. Edges follow the sgit graph grammar: every edge is a verb with a named inverse.
+
+GRC = load('grc') if os.path.exists(os.path.join(DATA, 'grc.json')) else None
+GRCF = load('grc-frameworks') if os.path.exists(os.path.join(DATA, 'grc-frameworks.json')) else None
+GRC_NETWORK = load('grc-network') if os.path.exists(os.path.join(DATA, 'grc-network.json')) else None
+
+# The part a stakeholder plays in a risk, as the verb from the risk to the stakeholder and its inverse.
+GRC_AS_VERB = {'owner': ('owned_by', 'owns'), 'bearer': ('borne_by', 'bears'), 'treater': ('treated_by', 'treats'),
+               'source': ('raised_by', 'raises'), 'informer': ('informed_by', 'informs'), 'regulator': ('regulated_by', 'regulates')}
+GRC_VERBS = OrderedDict([
+    ('part_of', 'has_part'), ('arises_from', 'gives_rise_to'), ('backed_by', 'evidences'), ('fixed_by', 'fixes'),
+    ('realised_in', 'realises'), ('located_in', 'location_of'), ('protected_by', 'protects'), ('governed_by', 'governs'),
+    ('concerns', 'concerned_in'), ('told_in', 'tells'), ('tracked_by', 'tracks'), ('briefed_by', 'briefs'), ('cites', 'cited_by'), ('shown_on', 'shows'),
+] + [v for v in GRC_AS_VERB.values()])
+GRC_CAT = OrderedDict([('security', 'Security'), ('supply-chain', 'Supply chain'), ('process', 'Disclosure process'), ('operational', 'Operational'),
+                       ('compliance', 'Compliance'), ('governance', 'Governance'), ('reputational', 'Reputational'), ('strategic', 'Strategic'), ('ai', 'AI and agents')])
+
+def grc_score(r):
+    return r['likelihood'] * r['impact']
+
+def grc_band(s):
+    return 'critical' if s >= 20 else 'high' if s >= 12 else 'medium' if s >= 6 else 'low'
+
+def grc_pill(r):
+    s = grc_score(r)
+    return f'<span class="gr gr-{grc_band(s)}" title="likelihood {r["likelihood"]} x impact {r["impact"]}"><b>{s}</b> {grc_band(s)}</span>'
+
+def grc_index():
+    """Every lookup the pages need, built once, with every reference checked."""
+    S = OrderedDict((s['id'], s) for s in GRC['stakeholders'])
+    R = OrderedDict((r['id'], r) for r in GRC['risks'])
+    W = OrderedDict((w['id'], w) for w in GRC['weaknesses'])
+    FW = OrderedDict((f['id'], f) for f in GRCF['frameworks'])
+    CTL = OrderedDict((f'{f["id"]}:{c["id"]}', (f, c)) for f in GRCF['frameworks'] for c in f['controls'])
+    claims = {c['id']: c for c in D['claims']}
+    rev = {n['id']: n for n in D['review']['nodes']}
+    arts = {a['slug']: a for a in ARTICLES}
+    members = {m['id']: m for m in TEAM['members']}
+    auds = {a['id'] for a in D['roles']['audiences']}
+    actors = {a['id'] for a in D['actors']}
+    bad = []
+    def page_ok(p):
+        return os.path.exists(os.path.join(ROOT, p.split('#')[0])) or any(p.split('#')[0] == x[0] for x in PAGES)
+    for s in S.values():
+        if s['parent'] is not None and s['parent'] not in S: bad.append(f'stakeholder {s["id"]}: unknown parent {s["parent"]}')
+        if s.get('audience') and s['audience'] not in auds: bad.append(f'stakeholder {s["id"]}: unknown audience {s["audience"]}')
+        if s.get('member') and s['member'] not in members: bad.append(f'stakeholder {s["id"]}: unknown member {s["member"]}')
+        bad += [f'stakeholder {s["id"]}: unknown actor {a}' for a in s.get('actors', []) if a not in actors]
+    for w in W.values():
+        bad += [f'weakness {w["id"]}: unknown code-graph node {v}' for v in w.get('vulns', []) + w.get('remediation', []) if v not in rev]
+        bad += [f'weakness {w["id"]}: no file {p} in this repository' for p in w.get('code', []) if not os.path.exists(os.path.join(ROOT, p))]
+    for r in R.values():
+        if r['parent'] is not None and r['parent'] not in R: bad.append(f'risk {r["id"]}: unknown parent {r["parent"]}')
+        for a in r['assign']:
+            if a['to'] not in S: bad.append(f'risk {r["id"]}: assigned to unknown stakeholder {a["to"]}')
+            if a['as'] not in GRC_AS_VERB: bad.append(f'risk {r["id"]}: unknown part {a["as"]}')
+        bad += [f'risk {r["id"]}: unknown weakness {x}' for x in r['weaknesses'] if x not in W]
+        bad += [f'risk {r["id"]}: concerns unknown vulnerability {x}' for x in r.get('concerns', []) if x not in rev or rev[x]['layer'] != 'vulnerability']
+        bad += [f'risk {r["id"]}: unknown claim {x}' for x in r['claims'] if x not in claims]
+        bad += [f'risk {r["id"]}: cites unknown slug {x}' for x in r.get('sources', []) if x not in SOURCES]
+        bad += [f'risk {r["id"]}: unknown control {x}' for x in r['frameworks'] if x not in CTL]
+        bad += [f'risk {r["id"]}: unknown story {x}' for x in r['stories'] if x not in arts]
+        bad += [f'risk {r["id"]}: unknown team member {x}' for x in r['team'] if x not in members]
+        bad += [f'risk {r["id"]}: no page {x}' for x in r['pages'] + [c['page'] for c in r['controls']] if not page_ok(x)]
+        if r['category'] not in GRC_CAT: bad.append(f'risk {r["id"]}: unknown category {r["category"]}')
+        if not (1 <= r['likelihood'] <= 5 and 1 <= r['impact'] <= 5): bad.append(f'risk {r["id"]}: rating out of 1 to 5')
+        if not r['assign']: bad.append(f'risk {r["id"]}: assigned to nobody')
+        if not any(a['as'] == 'owner' for a in r['assign']): bad.append(f'risk {r["id"]}: has no owner')
+    if bad:
+        sys.exit('grc: ' + '; '.join(bad))
+    kids_s, kids_r = {}, {}
+    for s in S.values(): kids_s.setdefault(s['parent'], []).append(s['id'])
+    for r in R.values(): kids_r.setdefault(r['parent'], []).append(r['id'])
+    return dict(S=S, R=R, W=W, FW=FW, CTL=CTL, claims=claims, rev=rev, arts=arts, members=members, kids_s=kids_s, kids_r=kids_r)
+
+def grc_below(kids, root):
+    out, stack = [], [root]
+    while stack:
+        x = stack.pop(0); out.append(x); stack[0:0] = kids.get(x, [])
+    return out
+
+def grc_ancestors(items, x):
+    out = []
+    while items[x]['parent'] is not None:
+        x = items[x]['parent']; out.append(x)
+    return out
+
+def grc_path(G, rid):
+    """The chain from a risk down to the code and across to stories and roles, own and through its parents."""
+    R, W, rev = G['R'], G['W'], G['rev']
+    line = [rid] + grc_ancestors(R, rid)
+    ws = list(OrderedDict.fromkeys(w for x in line[:1] for w in R[x]['weaknesses']))
+    vulns = list(OrderedDict.fromkeys([v for x in line for w in R[x]['weaknesses'] for v in W[w].get('vulns', [])] + [v for x in line for v in R[x].get('concerns', [])]))
+    rem = list(OrderedDict.fromkeys([n for w in ws for n in W[w].get('remediation', [])] +
+                                    [e['from'] for e in D['review']['edges'] if e['rel'] == 'addresses' and e['to'] in vulns]))
+    code = list(OrderedDict.fromkeys(e['to'] for e in D['review']['edges'] if e['rel'] == 'realised in' and e['from'] in rem))
+    repo = list(OrderedDict.fromkeys(p for w in ws for p in W[w].get('code', [])))
+    stories = list(OrderedDict.fromkeys(s for x in line for s in R[x]['stories']))
+    roles = list(OrderedDict.fromkeys(a['to'] for x in [rid] + line[1:] + grc_below(G['kids_r'], rid)[1:] for a in R[x]['assign'] if G['S'][a['to']]['kind'] == 'role'))
+    team = list(OrderedDict.fromkeys(m for x in line for m in R[x]['team']))
+    return dict(weaknesses=ws, vulns=vulns, remediation=rem, code=code, repo=repo, stories=stories, roles=roles, team=team,
+                own_stories=R[rid]['stories'], through=line[1:])
+
+def grc_graph(G):
+    """data/grc-graph.json: one node per thing, one edge per verb, the inverse named on the edge."""
+    nodes, edges, seen = [], [], set()
+    def node(i, kind, label, href):
+        if i not in seen:
+            seen.add(i); nodes.append({'id': i, 'kind': kind, 'label': label, 'href': href})
+    def edge(a, verb, b):
+        edges.append({'from': a, 'rel': verb, 'inverse': GRC_VERBS[verb], 'to': b})
+    for s in G['S'].values():
+        node('stakeholder:' + s['id'], 'role' if s['kind'] == 'role' else 'stakeholder', s['name'], f'grc/stakeholders/{s["id"]}/index.html')
+        if s['parent']: edge('stakeholder:' + s['id'], 'part_of', 'stakeholder:' + s['parent'])
+        if s.get('audience'):
+            a = next(x for x in D['roles']['audiences'] if x['id'] == s['audience'])
+            node('briefing:' + a['id'], 'briefing', a['name'], f'briefings/{a["id"]}/index.html'); edge('stakeholder:' + s['id'], 'briefed_by', 'briefing:' + a['id'])
+        if s.get('member'):
+            m = G['members'][s['member']]; node('member:' + m['id'], 'member', m['name'], f'team/{m["id"]}/index.html'); edge('stakeholder:' + s['id'], 'tracked_by', 'member:' + m['id'])
+    for w in G['W'].values():
+        node('weakness:' + w['id'], 'weakness', w['name'], f'grc/graph/index.html#{w["id"]}')
+        for v in w.get('vulns', []):
+            node('vulnerability:' + v, 'vulnerability', G['rev'][v]['name'], 'review/index.html#flaws'); edge('weakness:' + w['id'], 'arises_from', 'vulnerability:' + v)
+        for p in w.get('code', []):
+            node('repo:' + p, 'code', p, f'{REPO_URL}/blob/dev/{p}'); edge('weakness:' + w['id'], 'located_in', 'repo:' + p)
+    for e in D['review']['edges']:
+        if e['rel'] not in ('addresses', 'realised in'):
+            continue
+        a, b = G['rev'][e['from']], G['rev'][e['to']]
+        if e['rel'] == 'addresses':
+            node('remediation:' + a['id'], 'remediation', a['name'], f'review/index.html#{a["id"]}'); node('vulnerability:' + b['id'], 'vulnerability', b['name'], 'review/index.html#flaws')
+            edge('vulnerability:' + b['id'], 'fixed_by', 'remediation:' + a['id'])
+        elif e['rel'] == 'realised in':
+            node('remediation:' + a['id'], 'remediation', a['name'], f'review/index.html#{a["id"]}'); node('code:' + b['id'], 'code', b['name'].replace('file ', ''), 'review/index.html#areas')
+            edge('remediation:' + a['id'], 'realised_in', 'code:' + b['id'])
+    for r in G['R'].values():
+        rn = 'risk:' + r['id']
+        node(rn, 'risk', r['title'], f'grc/risks/{r["id"]}/index.html')
+        if r['parent']: edge(rn, 'part_of', 'risk:' + r['parent'])
+        for a in r['assign']: edge(rn, GRC_AS_VERB[a['as']][0], 'stakeholder:' + a['to'])
+        for w in r['weaknesses']: edge(rn, 'arises_from', 'weakness:' + w)
+        for v in r.get('concerns', []): edge(rn, 'concerns', 'vulnerability:' + v)
+        for c in r['claims']:
+            cl = G['claims'][c]; node('claim:' + c, 'claim', cl['claim'][:90], f'facts/{c}/index.html'); edge(rn, 'backed_by', 'claim:' + c)
+            for s in cl['sources']:
+                if s in SOURCES: node('source:' + s, 'source', SOURCES[s].get('publisher') or s, f'sources/{s}/index.html'); edge('claim:' + c, 'cites', 'source:' + s)
+        for i, c in enumerate(r['controls']):
+            node(f'treatment:{r["id"]}.{i + 1}', 'treatment', c['text'], c['page']); edge(rn, 'protected_by', f'treatment:{r["id"]}.{i + 1}')
+        for x in r['frameworks']:
+            f, c = G['CTL'][x]; node('control:' + x, 'control', f'{f["name"]} {c["id"]}: {c["title"]}', f'grc/frameworks/{f["id"]}/index.html#{grc_cid(c["id"])}'); edge(rn, 'governed_by', 'control:' + x)
+        for s in r['stories']:
+            a = G['arts'][s]; node('story:' + s, 'story', a['title'], f'articles/{s}/index.html'); edge(rn, 'told_in', 'story:' + s)
+        for m in r['team']:
+            mm = G['members'][m]; node('member:' + m, 'member', mm['name'], f'team/{m}/index.html'); edge(rn, 'tracked_by', 'member:' + m)
+        for p in r['pages']:
+            node('page:' + p, 'page', nav_title(p) if p in TITLES else p, p); edge(rn, 'shown_on', 'page:' + p)
+    return nodes, edges
+
+TITLES = {}
+
+def grc_cid(cid):
+    return 'c-' + re.sub(r'[^a-z0-9]+', '-', cid.lower()).strip('-')
+
+def grc_s_link(G, sid, depth):
+    return f'<a href="{"../" * depth}grc/stakeholders/{E(sid)}/index.html">{E(G["S"][sid]["name"])}</a>'
+
+def grc_r_link(G, rid, depth, pill=True):
+    r = G['R'][rid]
+    return f'<a href="{"../" * depth}grc/risks/{E(rid)}/index.html">{E(rid.upper())} {E(r["title"])}</a>' + (f' {grc_pill(r)}' if pill else '')
+
+def grc_c_link(G, x, depth):
+    f, c = G['CTL'][x]
+    return f'<a href="{"../" * depth}grc/frameworks/{E(f["id"])}/index.html#{grc_cid(c["id"])}" title="{E(c["title"])}">{E(f["name"])} {E(c["id"])}</a>'
+
+def grc_heat(G, rids, depth):
+    """Likelihood up, impact across: a 5 by 5 grid with each risk's id in its cell. Readable without colour: the score is in each cell."""
+    R = G['R']
+    rows = ''
+    for l in range(5, 0, -1):
+        cells = ''
+        for i in range(1, 6):
+            here = [x for x in rids if R[x]['likelihood'] == l and R[x]['impact'] == i]
+            ids = ' '.join(f'<a href="{"../" * depth}grc/risks/{E(x)}/index.html" title="{E(R[x]["title"])}">{E(x.upper())}</a>' for x in here)
+            cells += f'<td class="hm hm-{grc_band(l * i)}"><span class="hs">{l * i}</span> {ids}</td>'
+        rows += f'<tr><th scope="row">{l} {E(GRC["scales"]["likelihood"][l - 1]["name"])}</th>{cells}</tr>'
+    head = ''.join(f'<th scope="col">{i} {E(GRC["scales"]["impact"][i - 1]["name"])}</th>' for i in range(1, 6))
+    return f'<div class="tw"><table class="t heat"><thead><tr><th>Likelihood / impact</th>{head}</tr></thead><tbody>{rows}</tbody></table></div>'
+
+def grc_register(G, rids, depth, sid=None):
+    """A register: one row per risk, the part the stakeholder plays, and whether it is assigned here or arrives through a part of it."""
+    R, S = G['R'], G['S']
+    rows = []
+    below = set(grc_below(G['kids_s'], sid)) if sid else set()
+    for x in sorted(rids, key=lambda x: (-grc_score(R[x]), x)):
+        r = R[x]
+        if sid:
+            mine = [a for a in r['assign'] if a['to'] == sid]
+            thru = [a for a in r['assign'] if a['to'] in below and a['to'] != sid]
+            part = ', '.join(f'<b>{E(a["as"])}</b>' for a in mine) or '<i>through</i> ' + ', '.join(f'{grc_s_link(G, a["to"], depth)} ({E(a["as"])})' for a in thru)
+        else:
+            part = ', '.join(f'{grc_s_link(G, a["to"], depth)} <span class="small">{E(a["as"])}</span>' for a in r['assign'])
+        rows.append([grc_r_link(G, x, depth, pill=False), grc_pill(r), E(GRC_CAT[r['category']]), part,
+                     ', '.join(grc_c_link(G, c, depth) for c in r['frameworks'][:4]) + (f' <span class="small">+{len(r["frameworks"]) - 4}</span>' if len(r['frameworks']) > 4 else '')])
+    return table(['Risk', 'Rating', 'Kind', 'Part played' if sid else 'Assigned to', 'Controls'], rows)
+
+def grc_path_svg(G, rid, P):
+    """One risk's chain in columns, every line a real edge: stories and roles tell and act on the risk, stakeholders carry it,
+    it arises from weaknesses, which arise from vulnerabilities, fixed by parts of the fix, realised in code."""
+    S, R, W, rev = G['S'], G['R'], G['W'], G['rev']
+    cols = [
+        ('Told in', [('s:' + s, G['arts'][s]['title'].split(':')[0], f'../../../articles/{s}/index.html', 'sy') for s in P['stories']]),
+        ('Acted on by', [('o:' + s, S[s]['name'], f'../../stakeholders/{s}/index.html', 'ro') for s in P['roles']] + [('m:' + m, G['members'][m]['name'], f'../../../team/{m}/index.html', 'tm') for m in P['team']]),
+        ('Carried by', [('a:' + a['to'], f'{S[a["to"]]["name"]} ({a["as"]})', f'../../stakeholders/{a["to"]}/index.html', 'st') for a in R[rid]['assign']]),
+        ('Risk', [('r', rid.upper() + ' ' + R[rid]['title'], 'index.html', 'risk')]),
+        ('Arises from', [('w:' + w, W[w]['name'], f'../../graph/index.html#{w}', 'wk') for w in P['weaknesses']]),
+        ('Vulnerability', [('v:' + v, rev[v]['name'].split(':')[0], '../../../review/index.html#flaws', 'vu') for v in P['vulns']]),
+        ('Fixed by', [('f:' + n, rev[n]['name'], f'../../../review/index.html#{n}', 'fx') for n in P['remediation']]),
+        ('Code', [('c:' + c, rev[c]['name'].replace('file ', ''), '../../../review/index.html#areas', 'cd') for c in P['code']] + [('p:' + p, p, f'{REPO_URL}/blob/dev/{p}', 'cd') for p in P['repo']]),
+    ]
+    links = [(k, 'r') for k, *_ in cols[0][1] + cols[1][1] + cols[2][1]]
+    wv = set()
+    for w in P['weaknesses']:
+        for v in W[w].get('vulns', []):
+            if v in P['vulns']: links.append(('w:' + w, 'v:' + v)); wv.add(v)
+        for p in W[w].get('code', []): links.append(('w:' + w, 'p:' + p))
+        for n in W[w].get('remediation', []): links.append(('w:' + w, 'f:' + n))
+    links += [('r', 'w:' + w) for w in P['weaknesses']] + [('r', 'v:' + v) for v in P['vulns'] if v not in wv]
+    links += [('v:' + e['to'], 'f:' + e['from']) for e in D['review']['edges'] if e['rel'] == 'addresses' and e['to'] in P['vulns'] and e['from'] in P['remediation']]
+    links += [('f:' + e['from'], 'c:' + e['to']) for e in D['review']['edges'] if e['rel'] == 'realised in' and e['from'] in P['remediation'] and e['to'] in P['code']]
+    rh, cw = 20, 150
+    H = 44 + rh * max(max(len(c[1]) for c in cols), 2)
+    pos, out = {}, []
+    for ci, (title, items) in enumerate(cols):
+        x = ci * cw + 6
+        out.append(f'<text class="t" x="{x}" y="14">{E(title)}</text>')
+        if not items:
+            out.append(f'<text class="n gap" x="{x}" y="36">none yet</text>')
+        top = 34 + (H - 44 - rh * len(items)) / 2 if ci == 3 else 34
+        for i, (k, label, href, cls) in enumerate(items):
+            y = top + i * rh
+            pos[k] = (x, y)
+            out.append(f'<a href="{E(href)}"><title>{E(label)}</title><circle class="d g-{cls}" cx="{x + 3}" cy="{y:.1f}" r="4"/><text class="n" x="{x + 11}" y="{y + 4:.1f}">{E(label[:20])}{"…" if len(label) > 20 else ""}</text></a>')
+    lines = []
+    for a, b in links:
+        if a in pos and b in pos:
+            (x1, y1), (x2, y2) = sorted([pos[a], pos[b]])
+            x1 += 7; x2 -= 1
+            lines.append(f'<path class="e" d="M{x1},{y1:.1f} C{x1 + 55},{y1:.1f} {x2 - 55},{y2:.1f} {x2},{y2:.1f}"/>')
+    return (f'<figure class="graph gpath"><svg viewBox="0 0 {cw * len(cols)} {H:.0f}" width="100%" role="img" aria-label="The path from this risk to the stories and roles on one side and its weaknesses, vulnerabilities, fixes and code on the other">{"".join(lines)}{"".join(out)}</svg>'
+            '<figcaption>The risk sits in the middle. To its left, the stories that tell it, the roles and team members that act on it, and every stakeholder that carries part of it. To its right, what it arises from, the vulnerability behind that, the part of the fix that addresses it and the code the fix changed. Every line is an edge in the graph; every node is a link; hover for the full name. Vulnerabilities, stories and team members include those of the risk this one is part of; roles include those of the risks above and beneath it.</figcaption></figure>')
+
+def grc_coverage(G, P_all):
+    keys = [('vulns', 'a vulnerability'), ('code', 'code'), ('stories', 'a story'), ('roles', 'a role inside an organisation'), ('team', 'a member of this team')]
+    out = []
+    for k, label in keys:
+        have = [x for x in G['R'] if P_all[x][k] or (k == 'code' and P_all[x]['repo'])]
+        out.append((k, label, have, [x for x in G['R'] if x not in have]))
+    return out
+
+def build_grc():
+    if not (GRC and GRCF):
+        return
+    for p, t, *_ in PAGES:
+        TITLES[p] = t
+    G = grc_index()
+    S, R, W, FW, CTL = G['S'], G['R'], G['W'], G['FW'], G['CTL']
+    P_all = {x: grc_path(G, x) for x in R}
+    nodes, edges = grc_graph(G)
+    write('data/grc-graph.json', json.dumps({'site': SITE, 'version': VERSION, 'kept_by': GRC['kept_by'], 'as_of': GRC['as_of'],
+                                            'verbs': [{'verb': v, 'inverse': i} for v, i in GRC_VERBS.items()],
+                                            'note': 'Every edge is a verb with its inverse named. A risk arises from a weakness, which arises from a vulnerability, which is fixed by a remediation, realised in code; the risk is backed by claims that cite sources, owned, borne and treated by stakeholders, governed by controls, told in stories and tracked by team members.',
+                                            'nodes': nodes, 'edges': edges}, indent=1, ensure_ascii=False) + '\n')
+    top = [x for x in R if R[x]['parent'] is None]
+    cov = grc_coverage(G, P_all)
+    fam = {f['id']: f for f in GRCF['families']}
+    used_ctl = Counter(c for r in R.values() for c in r['frameworks'])
+    kinds = Counter(n['kind'] for n in nodes)
+    acc = '<p>No risk on this register is <b>accepted</b>. An acceptance is an act by the holder of a risk, for a stated interval, and nobody can accept on anyone else\'s behalf; this desk records risks and their holders, it does not accept for them. Until a holder accepts, funds or fixes, each risk stands as it is rated here.</p>'
+    nav = '<p class="crumb"><a href="{u}grc/index.html">GRC</a> &middot; <a href="{u}grc/risks/index.html">Risks</a> &middot; <a href="{u}grc/stakeholders/index.html">Stakeholders</a> &middot; <a href="{u}grc/frameworks/index.html">Frameworks</a> &middot; <a href="{u}grc/graph/index.html">The graph</a> &middot; <a href="{u}grc/network/index.html">From the network</a></p>'
+    # --- the front page of the section
+    stats = ''.join(stat(n, l) for n, l in [(len(R), 'risks'), (len(top), 'at the top'), (len(S), 'stakeholders'), (sum(1 for s in S.values() if s['kind'] == 'role'), 'roles'),
+                                           (len(W), 'weaknesses'), (len(FW), 'frameworks'), (len(used_ctl), 'controls mapped'), (len(edges), 'edges')])
+    covt = table(['Every risk reaches', 'Risks that do', 'Risks that do not yet'],
+                 [[E(label), f'{len(have)} of {len(R)}', ', '.join(grc_r_link(G, x, 1, pill=False) for x in miss) or 'none'] for k, label, have, miss in cov])
+    scales = table(['', 'Likelihood', 'Impact'], [[str(i + 1), f'<b>{E(l["name"])}</b>: {E(l["means"])}', f'<b>{E(m["name"])}</b>: {E(m["means"])}'] for i, (l, m) in enumerate(zip(GRC['scales']['likelihood'], GRC['scales']['impact']))])
+    parts = table(['Part', 'Means', 'Edge'], [[f'<b>{E(a["name"])}</b>', E(a['means']), f'<code>{GRC_AS_VERB[a["id"]][0]}</code> / <code>{GRC_AS_VERB[a["id"]][1]}</code>'] for a in GRC['scales']['as']])
+    body = f'''
+{nav.format(u="../")}
+<h1>GRC: the risks of php2shell, who carries them, and the standards that govern them</h1>
+<p class="lead">A register of every risk in this story, broken down until each piece has someone who can act on it, and assigned to every stakeholder who carries part of it. The registers are fractal: the PHP project, a hosting provider, a council, a board and a developer each have one, and each is the same register read at a different scale. Every risk is backed by claims already on this site, and joined, edge by edge, to the weakness behind it, the vulnerability, the part of the fix that addresses it, the code that changed, the stories that tell it, the roles that act on it, and the controls in GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001, NIST and the rest.</p>
+<div class="stats">{stats}</div>
+{section("heat", "Where the risks sit", grc_heat(G, list(R), 1), "Likelihood up, impact across; the number in each cell is the score, likelihood times impact. Click an id for the risk.")}
+{section("top", "The ten risks at the top", grc_register(G, top, 1), "Each breaks down into the narrower risks it is made of; the full register is on the risks page.")}
+{section("path", "From a risk to the code, the story and the role", '<p>The editor\'s test for this section: a path in the graph from every risk to the vulnerabilities, the code, the stories and the roles. The build walks it for every risk and the table below is the count; the gaps are listed by name, not hidden. A risk with no vulnerability is not a gap in itself: some risks here arise from how disclosure, regulation or this newsroom works, and their weaknesses point at the code in this repository that guards them instead.</p>' + covt)}
+{section("model", "How the registers work", '<ul><li><b>A stakeholder is a node in a tree.</b> A sector holds organisations, an organisation holds roles. The same register is read at every level: a stakeholder\'s register is what is assigned to it plus everything that arrives through the parts below it.</li><li><b>A risk is a node in a tree.</b> A broad risk holds the narrower risks it is made of, until each can be owned.</li><li><b>One risk, many stakeholders.</b> Each assignment says the part played: owner, bearer, treater, source, informer or regulator. Two stakeholders that share a risk are connected; the stakeholders page shows by how much.</li><li><b>Every edge is a verb with a named inverse</b>, following the <a href="https://graphs.sgit.ai/v1/grammar/edge-set.html">sgit graph grammar</a>: a risk <i>arises from</i> a weakness, which <i>gives rise to</i> it; a risk is <i>owned by</i> a stakeholder, who <i>owns</i> it.</li><li><b>A rating is a judgement.</b> Likelihood and impact on a scale of 1 to 5, each with its basis in a sentence, as at the vault\'s last capture.</li></ul>' + acc + scales + parts)}
+{section("files", "The data", f'<p>Authored: <a href="../data/grc.json">data/grc.json</a> ({len(S)} stakeholders, {len(W)} weaknesses, {len(R)} risks) and <a href="../data/grc-frameworks.json">data/grc-frameworks.json</a> ({len(FW)} frameworks, {len(CTL)} controls). Generated on every build: <a href="../data/grc-graph.json">data/grc-graph.json</a>, {len(nodes)} nodes and {len(edges)} edges. The build refuses a risk that points at a claim, source, story, page, member, code node or control that does not exist, and a risk with no owner. Kept by <a href="../team/grc/index.html">the GRC desk</a>.</p>')}
+'''
+    page('grc/index.html', 'GRC: the risks of php2shell, who carries them, and the standards that govern them', f'{len(R)} risks in a fractal register assigned to {len(S)} stakeholders, each joined to the weakness, vulnerability, fix, code, stories and roles behind it, and mapped to {len(used_ctl)} controls in {len(FW)} frameworks including GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001 and NIST CSF.', body, kind='analysis', topics='php2shell grc risk register')
+    # --- the full register
+    def tree(x, depth=0):
+        r = R[x]
+        own = ', '.join(f'{grc_s_link(G, a["to"], 1 + 1)}' for a in r['assign'] if a['as'] == 'owner')
+        row = f'<tr class="lvl-{depth}"><td style="padding-left:{0.5 + depth * 1.4}rem">{grc_r_link(G, x, 2, pill=False)}</td><td>{grc_pill(r)}</td><td>{E(GRC_CAT[r["category"]])}</td><td>{own}</td><td>{len(r["assign"])}</td><td>{len(r["frameworks"])}</td></tr>'
+        return row + ''.join(tree(k, depth + 1) for k in G['kids_r'].get(x, []))
+    th = ''.join(f'<th>{h}</th>' for h in ['Risk', 'Rating', 'Kind', 'Owned by', 'Stakeholders', 'Controls'])
+    reg = f'<div class="tw"><table class="t grc-tree"><thead><tr>{th}</tr></thead><tbody>{"".join(tree(x) for x in top)}</tbody></table></div>'
+    bycat = table(['Kind', 'Risks', 'Highest'], [[E(n), str(sum(1 for r in R.values() if r['category'] == c)), grc_r_link(G, max((x for x in R if R[x]['category'] == c), key=lambda x: grc_score(R[x])), 2)] for c, n in GRC_CAT.items() if any(r['category'] == c for r in R.values())])
+    body = f'''
+{nav.format(u="../../")}
+<h1>The risk register: every risk, as a tree</h1>
+<p class="lead">{len(R)} risks, {len(top)} at the top and {len(R) - len(top)} beneath them. A risk beneath another is a part of it narrow enough to own. Sorted as the tree; each row links to the risk's page with its full path.</p>
+{reg}
+{section("kinds", "By kind", bycat)}
+{section("accept", "Acceptance", acc)}
+'''
+    page('grc/risks/index.html', 'The risk register: every php2shell risk, as a tree', f'All {len(R)} risks in the fractal register, with their rating, kind, owner and the number of stakeholders and controls each touches.', body, kind='analysis', topics='php2shell grc risk register')
+    # --- one page per risk
+    for x, r in R.items():
+        P = P_all[x]
+        anc = list(reversed(grc_ancestors(R, x)))
+        crumb = ' / '.join([f'<a href="../index.html">Risks</a>'] + [grc_r_link(G, a, 3, pill=False) for a in anc] + [E(x.upper())])
+        assign = table(['Stakeholder', 'Part', 'Why', 'Its register'], [[grc_s_link(G, a['to'], 3), f'<b>{E(a["as"])}</b>', E(a['why']), (lambda n: f'{n} risk' + ('' if n == 1 else 's'))(len(grc_s_rids(G, a['to'])))] for a in r['assign']])
+        kids = G['kids_r'].get(x, [])
+        sub = section('parts', 'The risks this one is made of', grc_register(G, kids, 3)) if kids else ''
+        cl = table(['Claim', 'Status', 'Fact-check', 'Sources'], [[f'<a href="../../../facts/{E(c)}/index.html">{E(G["claims"][c]["claim"])}</a>', pill(G['claims'][c]['status']), assure(c, short=True), src_links(G['claims'][c]['sources'], 3)] for c in r['claims']]) if r['claims'] else '<p>No claim on this site carries this risk: it rests on how this newsroom works, set out on the pages linked below.</p>'
+        ctl = table(['Treatment', 'Status', 'Where'], [[E(c['text']), f'<span class="gt gt-{E(c["status"])}">{E(c["status"].replace("-", " "))}</span>', f'<a href="../../../{E(c["page"])}">{E(TITLES.get(c["page"].split("#")[0], c["page"]))}</a>'] for c in r['controls']])
+        fw = table(['Framework', 'Control', 'What it asks', 'Family'], [[f'<a href="../../frameworks/{E(CTL[c][0]["id"])}/index.html">{E(CTL[c][0]["name"])}</a>', f'<a href="../../frameworks/{E(CTL[c][0]["id"])}/index.html#{grc_cid(CTL[c][1]["id"])}">{E(CTL[c][1]["id"])}</a>', E(CTL[c][1]['title']), E(fam[CTL[c][0]['family']]['name'])] for c in r['frameworks']])
+        ws = ''.join(f'<li><b>{E(W[w]["name"])}.</b> {E(W[w]["about"])}</li>' for w in P['weaknesses'])
+        stor = ''.join(f'<li><a href="../../../articles/{E(s)}/index.html">{E(G["arts"][s]["title"])}</a>{"" if s in P["own_stories"] else " <span class=small>(through " + E(R[r["parent"]]["title"] if r["parent"] else "") + ")</span>"}</li>' for s in P['stories']) or '<li>No story on this site tells this risk yet.</li>'
+        pages_ = ' &middot; '.join(f'<a href="../../../{E(p)}">{E(TITLES.get(p.split("#")[0], p))}</a>' for p in r['pages'])
+        shares = Counter(b['to'] for a in r['assign'] for y in R if y != x for b in R[y]['assign'] if b['to'] == a['to'])
+        body = f'''
+<p class="crumb">{crumb}</p>
+<h1>{E(x.upper())}: {E(r["title"])}</h1>
+<p class="lead">{E(r["statement"])}</p>
+<p class="kv"><b>Rating</b> {grc_pill(r)} &middot; <b>Likelihood</b> {r["likelihood"]} {E(GRC["scales"]["likelihood"][r["likelihood"] - 1]["name"])} &middot; <b>Impact</b> {r["impact"]} {E(GRC["scales"]["impact"][r["impact"] - 1]["name"])} &middot; <b>Kind</b> {E(GRC_CAT[r["category"]])} &middot; <b>Acceptance</b> not recorded</p>
+<p class="note"><b>Basis.</b> {E(r["basis"])}</p>
+{section("path", "The path", grc_path_svg(G, x, P))}
+{section("assigned", "Who carries it", assign, "One risk, assigned to every stakeholder that carries part of it, with the part each plays.")}
+{sub}
+{section("weak", "What it arises from", "<ul>" + ws + "</ul>")}
+{section("evidence", "The evidence", cl)}
+{section("treat", "Treatments", ctl)}
+{section("controls", "The standards that govern it", fw)}
+{section("stories", "The stories that tell it", "<ul>" + stor + "</ul>" + ("<p>On this site: " + pages_ + "</p>" if pages_ else ""))}
+'''
+        page(f'grc/risks/{x}/index.html', f'{x.upper()}: {r["title"]}', r['statement'][:300], body, kind='analysis', topics='php2shell grc risk')
+    # --- stakeholders
+    def stree(sid, depth=0):
+        s = S[sid]
+        n_own = sum(1 for r in R.values() for a in r['assign'] if a['to'] == sid)
+        n_all = len(grc_s_rids(G, sid))
+        row = f'<tr><td style="padding-left:{0.5 + depth * 1.4}rem">{grc_s_link(G, sid, 2)}</td><td>{E(s["kind"])}</td><td>{n_own}</td><td>{n_all}</td></tr>'
+        return row + ''.join(stree(k, depth + 1) for k in G['kids_s'].get(sid, []))
+    th = ''.join(f'<th>{h}</th>' for h in ['Stakeholder', 'Kind', 'Assigned here', 'In its register'])
+    st_tree = f'<div class="tw"><table class="t grc-tree"><thead><tr>{th}</tr></thead><tbody>{stree("world")}</tbody></table></div>'
+    lvl1 = G['kids_s']['world']
+    pairs = {}
+    for r in R.values():
+        groups = sorted({next((g for g in lvl1 if a['to'] in grc_below(G['kids_s'], g)), 'world') for a in r['assign']} - {'world'})
+        for i, a in enumerate(groups):
+            for b in groups[i + 1:]:
+                pairs[(a, b)] = pairs.get((a, b), 0) + 1; pairs[(b, a)] = pairs[(a, b)]
+    mh = ''.join(f'<th scope="col" title="{E(S[g]["name"])}">{E(S[g]["name"].split()[0] if S[g]["name"].split()[0] not in ("The", "Everyone") else S[g]["name"].split()[1])}</th>' for g in lvl1)
+    mrows = ''.join(f'<tr><th scope="row">{grc_s_link(G, a, 2)}</th>' + ''.join(f'<td class="mx">{"&middot;" if a == b else (pairs.get((a, b)) or "")}</td>' for b in lvl1) + '</tr>' for a in lvl1)
+    matrix = f'<div class="tw"><table class="t mxt"><thead><tr><th></th>{mh}</tr></thead><tbody>{mrows}</tbody></table></div>'
+    body = f'''
+{nav.format(u="../../")}
+<h1>Stakeholders: a register for each, at every scale</h1>
+<p class="lead">{len(S)} stakeholders in one tree, from everyone with PHP in the path down to the roles inside a single organisation. Each has a register: the risks assigned to it, and the risks that arrive through the parts beneath it. The register belongs to the stakeholder, so it reads the same whether the stakeholder is a sector, a council or a CISO.</p>
+{st_tree}
+{section("connected", "How the stakeholders are connected", matrix, "The number in a cell is how many risks the two groups share: a risk assigned to someone in one and someone in the other. A risk that joins many groups is one no single party can treat alone.")}
+'''
+    page('grc/stakeholders/index.html', 'Stakeholders: a php2shell risk register for each, at every scale', f'{len(S)} stakeholders in one tree, each with its own risk register, and the risks that connect them.', body, kind='analysis', topics='php2shell grc stakeholders')
+    for sid, s in S.items():
+        rids = grc_s_rids(G, sid)
+        anc = list(reversed(grc_ancestors(S, sid)))
+        crumb = ' / '.join([f'<a href="../index.html">Stakeholders</a>'] + [grc_s_link(G, a, 3) for a in anc] + [E(s['name'])])
+        kids = G['kids_s'].get(sid, [])
+        kid_l = ''.join(f'<li>{grc_s_link(G, k, 3)}: {len(grc_s_rids(G, k))} risks</li>' for k in kids)
+        own_ids = [r['id'] for r in R.values() if any(a['to'] == sid for a in r['assign'])]
+        sharers = Counter(a['to'] for x in own_ids for a in R[x]['assign'] if a['to'] != sid)
+        sh = ', '.join(f'{grc_s_link(G, o, 3)} ({n})' for o, n in sharers.most_common(12))
+        extra = []
+        if s.get('audience'):
+            a = next(y for y in D['roles']['audiences'] if y['id'] == s['audience'])
+            extra.append(f'<a href="../../../briefings/{E(a["id"])}/index.html">the briefing for a {E(a["name"].lower())}</a>')
+        if s.get('member'):
+            extra.append(f'<a href="../../../team/{E(s["member"])}/index.html">their team page</a>')
+        if s.get('actors'):
+            extra.append('in the story as ' + ', '.join(f'<a href="../../../actors/index.html#{E(a)}">{E(next(y["name"] for y in D["actors"] if y["id"] == a).split("(")[0].strip())}</a>' for a in s['actors']))
+        ctls = Counter(c for x in rids for c in R[x]['frameworks'])
+        fwc = Counter(CTL[c][0]['id'] for c in ctls)
+        fw_line = ', '.join(f'<a href="../../frameworks/{E(f)}/index.html">{E(FW[f]["name"])}</a> ({n})' for f, n in fwc.most_common())
+        body = f'''
+<p class="crumb">{crumb}</p>
+<h1>{E(s["name"])}: its risk register</h1>
+<p class="lead">{E(s["about"])}</p>
+<p class="kv"><b>Kind</b> {E(s["kind"])} &middot; <b>Assigned here</b> {len(own_ids)} &middot; <b>In its register</b> {len(rids)}{(" &middot; " + " &middot; ".join(extra)) if extra else ""}</p>
+{section("register", "The register", grc_register(G, rids, 3, sid) if rids else "<p>No risk is assigned here or below.</p>", "Assigned here, or arriving through a part of this stakeholder. The part played is the one recorded for whoever holds the assignment.")}
+{section("heat", "Where its risks sit", grc_heat(G, rids, 3)) if rids else ""}
+{section("parts", "Its parts", "<ul>" + kid_l + "</ul>") if kids else ""}
+{section("shares", "Who it shares risks with", "<p>" + sh + "</p>") if sh else ""}
+{section("standards", "The standards its register touches", "<p>" + fw_line + "</p>") if fw_line else ""}
+'''
+        page(f'grc/stakeholders/{sid}/index.html', f'{s["name"]}: its php2shell risk register', f'The fractal risk register for {s["name"]}: {len(rids)} risks assigned to it or arriving through its parts, the part it plays in each and who it shares them with.', body, kind='analysis', topics='php2shell grc stakeholder')
+    # --- frameworks
+    fams = ''
+    for f0 in GRCF['families']:
+        rows = [[f'<a href="{E(f["id"])}/index.html"><b>{E(f["name"])}</b></a><div class="note">{E(f["full"])}</div>', E(f['version']), str(sum(1 for c in f['controls'] if f'{f["id"]}:{c["id"]}' in used_ctl)) + f' of {len(f["controls"])}', str(len({x for x in R if any(c.startswith(f["id"] + ":") for c in R[x]["frameworks"])})), E(f['why'])] for f in GRCF['frameworks'] if f['family'] == f0['id']]
+        fams += section('f-' + f0['id'], E(f0['name']), table(['Framework', 'Version', 'Controls used', 'Risks', 'Why it is here'], rows), E(f0['about']))
+    fh = ''.join(f'<th scope="col"><a href="{E(f["id"])}/index.html">{E(f["name"].split()[0])}</a></th>' for f in GRCF['frameworks'])
+    frows = ''.join(f'<tr><th scope="row">{grc_r_link(G, x, 2, pill=False)}</th>' + ''.join(f'<td class="mx">{sum(1 for c in R[x]["frameworks"] if c.startswith(f["id"] + ":")) or ""}</td>' for f in GRCF['frameworks']) + '</tr>' for x in R)
+    fmx = f'<div class="tw"><table class="t mxt"><thead><tr><th>Risk</th>{fh}</tr></thead><tbody>{frows}</tbody></table></div>'
+    body = f'''
+{nav.format(u="../../")}
+<h1>Frameworks: the law, the standards and the controls each risk maps to</h1>
+<p class="lead">{len(FW)} frameworks, {len(CTL)} clauses and controls, {len(used_ctl)} of them mapped to at least one risk. A mapping says which control a holder of the risk will be asked about, by an auditor, a regulator or a board; it does not say the control is in place. Control titles are this desk's short paraphrase; each framework links to its official text.</p>
+{fams}
+{section("matrix", "Risks against frameworks", fmx, "How many of each framework's controls each risk maps to.")}
+'''
+    page('grc/frameworks/index.html', 'Frameworks: php2shell risks mapped to GDPR, NIS2, CRA, DORA, the EU AI Act, ISO 27001 and NIST', f'{len(FW)} frameworks and {len(CTL)} controls, and which php2shell risks map to each.', body, kind='analysis', topics='php2shell grc frameworks')
+    for f in GRCF['frameworks']:
+        rows = []
+        for c in f['controls']:
+            k = f'{f["id"]}:{c["id"]}'
+            rs = [x for x in R if k in R[x]['frameworks']]
+            holders = Counter(a['to'] for x in rs for a in R[x]['assign'] if a['as'] in ('owner', 'regulator'))
+            rows.append([f'<span id="{grc_cid(c["id"])}"><b>{E(c["id"])}</b></span>', E(c['title']), '<br>'.join(grc_r_link(G, x, 3) for x in rs) or '<i>no risk mapped</i>',
+                         ', '.join(grc_s_link(G, h, 3) for h, _ in holders.most_common(5))])
+        body = f'''
+<p class="crumb"><a href="../index.html">Frameworks</a> / {E(f["name"])}</p>
+<h1>{E(f["name"])}: the php2shell risks it governs</h1>
+<p class="lead">{E(f["why"])}</p>
+<p class="kv"><b>Full name</b> {E(f["full"])} &middot; <b>Publisher</b> {E(f["publisher"])} &middot; <b>Version</b> {E(f["version"])} &middot; <a href="{U(f["url"])}">the official text</a></p>
+{section("controls", "Clauses and controls", table(["Control", "What it asks (paraphrased)", "Risks mapped", "Owned or regulated by"], rows))}
+'''
+        page(f'grc/frameworks/{f["id"]}/index.html', f'{f["name"]}: the php2shell risks it governs', f'Each {f["name"]} clause or control the GRC desk cites, the php2shell risks mapped to it and who owns them.', body, kind='analysis', topics='php2shell grc ' + f['id'])
+    # --- the graph
+    kinds_t = table(['Kind of node', 'How many'], [[E(k), str(n)] for k, n in kinds.most_common()])
+    verbs_t = table(['Verb', 'Inverse', 'Edges'], [[f'<code>{E(v)}</code>', f'<code>{E(i)}</code>', str(sum(1 for e in edges if e['rel'] == v))] for v, i in GRC_VERBS.items() if any(e['rel'] == v for e in edges)])
+    wl = ''.join(f'<article class="role" id="{E(w["id"])}"><h3>{E(w["name"])}</h3><p>{E(w["about"])}</p><p class="small">Gives rise to: {", ".join(grc_r_link(G, x, 2, pill=False) for x in R if w["id"] in R[x]["weaknesses"])}'
+                 + (f'<br>Arises from: {", ".join(E(G["rev"][v]["name"]) for v in w.get("vulns", []))}' if w.get('vulns') else '')
+                 + (f'<br>In this repository: {", ".join(f"<a href={chr(34)}{REPO_URL}/blob/dev/{E(p)}{chr(34)}><code>{E(p)}</code></a>" for p in w.get("code", []))}' if w.get('code') else '') + '</p></article>' for w in W.values())
+    # the overview drawing: top risks in the middle, groups on the left, weaknesses then vulnerabilities on the right
+    lft, mid, rgt, rr = lvl1, top, list(W), [v for v in G['rev'] if G['rev'][v]['layer'] == 'vulnerability']
+    H = 40 + 20 * max(len(lft), len(mid), len(rgt))
+    def ys(n): return [30 + i * (H - 50) / max(1, n - 1) for i in range(n)]
+    yl, ym, yw, yv = dict(zip(lft, ys(len(lft)))), dict(zip(mid, ys(len(mid)))), dict(zip(rgt, ys(len(rgt)))), dict(zip(rr, [H / 3, 2 * H / 3]))
+    X = [190, 420, 640, 930]
+    ln = []
+    for x in mid:
+        for g in sorted({next((g for g in lft if a['to'] in grc_below(G['kids_s'], g)), None) for r2 in grc_below(G['kids_r'], x) for a in R[r2]['assign']} - {None}):
+            ln.append(f'<path class="e" d="M{X[0]},{yl[g]:.1f} C{X[0] + 110},{yl[g]:.1f} {X[1] - 110},{ym[x]:.1f} {X[1]},{ym[x]:.1f}"/>')
+        for w in sorted({w for r2 in grc_below(G['kids_r'], x) for w in R[r2]['weaknesses']}):
+            ln.append(f'<path class="e e-w" d="M{X[1]},{ym[x]:.1f} C{X[1] + 100},{ym[x]:.1f} {X[2] - 100},{yw[w]:.1f} {X[2]},{yw[w]:.1f}"/>')
+    for w in rgt:
+        for v in W[w].get('vulns', []):
+            ln.append(f'<path class="e e-v" d="M{X[2]},{yw[w]:.1f} C{X[2] + 110},{yw[w]:.1f} {X[3] - 110},{yv[v]:.1f} {X[3]},{yv[v]:.1f}"/>')
+    tx = [f'<text class="t" x="{X[0] - 6}" y="12" text-anchor="end">stakeholders</text><text class="t" x="{X[1]}" y="12" text-anchor="middle">risks at the top</text><text class="t" x="{X[2] + 6}" y="12">weaknesses</text><text class="t" x="{X[3] - 6}" y="12" text-anchor="end">vulnerabilities</text>']
+    tx += [f'<a href="../stakeholders/{E(g)}/index.html"><text class="n" x="{X[0] - 8}" y="{yl[g] + 3:.1f}" text-anchor="end">{E(S[g]["name"][:34])}</text><circle class="d g-st" cx="{X[0]}" cy="{yl[g]:.1f}" r="3.5"/></a>' for g in lft]
+    tx += [f'<a href="../risks/{E(x)}/index.html"><circle class="d g-risk" cx="{X[1]}" cy="{ym[x]:.1f}" r="5"/><text class="n rl" x="{X[1]}" y="{ym[x] - 7:.1f}" text-anchor="middle">{E(x.upper())} {E(R[x]["title"][:40])}{"…" if len(R[x]["title"]) > 40 else ""}</text></a>' for x in mid]
+    tx += [f'<a href="#{E(w)}"><circle class="d g-wk" cx="{X[2]}" cy="{yw[w]:.1f}" r="3.5"/><text class="n" x="{X[2] + 8}" y="{yw[w] + 3:.1f}">{E(W[w]["name"][:36])}{"…" if len(W[w]["name"]) > 36 else ""}</text></a>' for w in rgt]
+    tx += [f'<a href="../../review/index.html#flaws"><circle class="d g-vu" cx="{X[3]}" cy="{yv[v]:.1f}" r="5"/><text class="n" x="{X[3]}" y="{yv[v] + 18:.1f}" text-anchor="middle">{E(G["rev"][v]["name"].split(":")[0])}</text></a>' for v in rr]
+    svg = f'<figure class="graph"><svg viewBox="0 0 1000 {H:.0f}" width="100%" role="img" aria-label="Stakeholder groups joined to the ten top risks, the risks to the weaknesses they arise from, and the weaknesses to the two vulnerabilities">{"".join(ln)}{"".join(tx)}</svg><figcaption>A line from a stakeholder group to a risk means someone in the group carries part of it or of a risk beneath it; a line from a risk to a weakness means the risk, or one beneath it, arises from it; the weaknesses on the two CVEs reach the fix and the code on <a href="../../review/index.html">the code review graph</a>. Each risk\'s own page draws its whole path.</figcaption></figure>'
+    body = f'''
+{nav.format(u="../../")}
+<h1>The risk graph: stakeholders, risks, weaknesses, vulnerabilities, code</h1>
+<p class="lead">{len(nodes)} nodes and {len(edges)} edges, built from the register on every release and joined to the graphs already on this site: the claims and their sources (<a href="../../graph/index.html">the story graph</a>) and the fix and the code it changed (<a href="../../review/index.html">the code review graph</a>). One graph, no copies: a claim, a source or a file is the same node here as there. The JSON is <a href="../../data/grc-graph.json">data/grc-graph.json</a>.</p>
+{svg}
+{section("weaknesses", "The weaknesses", wl, "What the risks arise from. Two are the CVEs themselves; the rest are conditions of the ecosystem, the disclosure process and this newsroom, each joined to the risks it gives rise to and, where there is one, to the code.")}
+{section("kinds", "What is in it", kinds_t)}
+{section("verbs", "The verbs", verbs_t, "Every edge is a verb read from the first node to the second; its inverse is read back. No edge says only that two things are related.")}
+'''
+    page('grc/graph/index.html', 'The risk graph: php2shell stakeholders, risks, weaknesses, vulnerabilities and code', f'{len(nodes)} nodes and {len(edges)} typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.', body, kind='analysis', topics='php2shell grc graph')
+    build_grc_network(G, nav)
+
+def grc_s_rids(G, sid):
+    below = set(grc_below(G['kids_s'], sid))
+    return [r['id'] for r in G['R'].values() if any(a['to'] in below for a in r['assign'])]
+
+def build_grc_network(G, nav):
+    """What the rest of the sgit network already holds on risk and on these standards, and which of it bears on which risk."""
+    if not GRC_NETWORK:
+        return
+    N = GRC_NETWORK
+    for it in N['items']:
+        bad = [x for x in it.get('risks', []) if x not in G['R']] + [x for x in it.get('frameworks', []) if x not in G['FW']]
+        if bad:
+            sys.exit(f'grc-network: {it["id"]} names unknown risks or frameworks {bad}')
+    groups = ''
+    for g in N['groups']:
+        rows = [[f'<a href="{U(it["url"])}"><b>{E(it["title"])}</b></a>' + (f'<div class="note">vault <code>{E(it["vault"])}</code></div>' if it.get('vault') else ''), E(it.get('date', '')), E(it['what']),
+                 ', '.join(grc_r_link(G, x, 2, pill=False) for x in it.get('risks', [])) or '<i>the model</i>', ', '.join(f'<a href="../frameworks/{E(f)}/index.html">{E(G["FW"][f]["name"])}</a>' for f in it.get('frameworks', []))]
+                for it in N['items'] if it['group'] == g['id']]
+        groups += section('n-' + g['id'], E(g['name']), table(['Material', 'Date', 'What it holds, as its publisher describes it', 'Bears on', 'Frameworks'], rows), E(g['about']))
+    gaps = ''.join(f'<li>{E(x)}</li>' for x in N.get('gaps', []))
+    body = f'''
+{nav.format(u="../../")}
+<h1>From the network: what the sgit sites already hold on risk</h1>
+<p class="lead">{E(N["about"])}</p>
+{groups}
+{section("gaps", "What the network does not have yet", "<ul>" + gaps + "</ul>") if gaps else ""}
+<p class="small">Third-party and sibling material, described in its publisher's own terms and linked, not reproduced. Vaults are named by id; each opens from its publisher's page with the read key published there. Surveyed {E(N["surveyed"])}.</p>
+'''
+    page('grc/network/index.html', 'From the network: sgit risk models, vaults and standards graphs mapped to php2shell', 'The risk models, fractal registers, semantic graphs and standards vaults across the sgit network, and which php2shell risks and frameworks each bears on.', body, kind='analysis', topics='php2shell grc network', origin='external')
 
 
 if __name__ == '__main__':

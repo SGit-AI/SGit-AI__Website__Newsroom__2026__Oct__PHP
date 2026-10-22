@@ -33,7 +33,9 @@
   "historian": "historian",
   "synthetic": "synthetic",
   "conductor": "conductor",
-  "vicky": "vicky"
+  "vicky": "vicky",
+  "grc": "grc",
+  "grc@php.newsroom": "grc"
  },
  "groups": [
   {"id": "humans", "name": "The humans", "about": "The two people on the team. They set direction and make the calls; every agent works for them."},
@@ -310,6 +312,42 @@
    "rules": ["A quote that is not in the captured text is not a quote. Mark it and say which capture was checked.", "Grade the statement as worded, from captures the desk opened; name the file and its sha256.", "Ten outlets restating one headline are one source.", "Outside evidence is a request to capture, never a citation.", "Highlight, do not fix."],
    "home": [["factcheck/index.html", "Fact-check: how sure we are"], ["claims/index.html", "Every claim"]],
    "achieved": ["Run 1, 22 October: all 70 claims graded against vault 31ccc515c29f; 3 high and 56 medium findings, 10 contradictions recorded, 6 pieces of outside evidence; Italy's offline advice found misread"]
+  },
+  {
+   "id": "grc",
+   "name": "GRC desk",
+   "kind": "agent",
+   "group": "writing",
+   "alias": "@GRC",
+   "mail": "grc",
+   "role": "Risks, who carries them, and the standards that govern them",
+   "status": "active",
+   "joined": "2026-10-22",
+   "summary": "grc@php.newsroom. Keeps the fractal risk registers for php2shell: every risk broken down until it can be owned, assigned to every stakeholder that carries part of it with the part each plays, joined edge by edge to the weakness, vulnerability, fix, code, stories and roles behind it, and mapped to the controls of GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001, NIST and the rest. Records risks and their holders; accepts nothing on anyone's behalf.",
+   "owns": [
+    "data/grc.json, data/grc-frameworks.json and data/grc-network.json",
+    "the GRC section, /grc/, and data/grc-graph.json"
+   ],
+   "rules": [
+    "A risk with no owner is not on the register: find who can act on it.",
+    "Every risk is backed by a claim or a page already on this site; a rating is a judgement and says its basis.",
+    "Nobody accepts a risk on anyone else's behalf, this desk included.",
+    "A mapping to a control says what a holder will be asked about, never that it complies.",
+    "Every edge is a verb with a named inverse; nothing is merely related."
+   ],
+   "home": [
+    [
+     "grc/index.html",
+     "GRC: risks, owners, standards"
+    ],
+    [
+     "grc/graph/index.html",
+     "The risk graph"
+    ]
+   ],
+   "achieved": [
+    "22 October: the first registers: 34 risks under 10 at the top, 53 stakeholders, 14 weaknesses, 20 frameworks and 120 controls; every risk with a path to code and to a team member, 30 of 34 to a vulnerability and to a role inside an organisation, 26 of 34 to a story, and the gaps named on /grc/"
+   ]
   }
  ]
 }
