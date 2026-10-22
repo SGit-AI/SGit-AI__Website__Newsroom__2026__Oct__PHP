@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 105 items, 74 open, 29 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 105 items, 73 open, 30 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -107,7 +107,7 @@ The work, as rows in `data/admin.json`: 105 items, 74 open, 29 done. An item is 
 | 095 | Capture into the vault what the GRC section cites from the sgit network (risks.sgit.ai, the riskmandate.ai model, the newsroom's risk articles) so the network page can cite captures, not live pagesFrom the brief: a GRC desk joins the team (22 October). | open | collector-researchers |  |
 | 096 | GRC run 2: re-rate every risk against the next vault capture (a KEV listing or a confirmed compromise moves R03 and R06), add the stakeholders the next captures name, and map the remaining controls each holder will be asked aboutFrom the brief: a GRC desk joins the team (22 October). | open | grc |  |
 | 097 | Collaborators: /collaborators/ with this week's ask, the WhatsApp and email messages per ask, a join form and a feedback form encrypted to the new collaborators vault (58526ytp); its drain; brief admin/content/briefs/2026-10-22__brief__collaborators.md | done | conductor |  |
-| 098 | Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp group | open | editor |  |
+| 098 | Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp groupThe editor confirmed the LinkedIn link on 22 October 2026. | done | editor |  |
 | 099 | Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, key-pair passphrases) to the root: the session's permission check stopped it; the four vault keys are sealed | waiting | conductor |  |
 | 100 | Write ask 002 after the next release worth looking at, and drain the collaborators lane into the board at every close | open | conductor |  |
 | 101 | Quiet hours: decide the window (proposed 22:00 to 07:00 London) and whether the source watch may run through the night while the story is breaking; then the three schedules on /team/runs/ are changed to match | open | editor |  |

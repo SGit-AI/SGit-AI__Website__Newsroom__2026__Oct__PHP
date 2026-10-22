@@ -818,8 +818,9 @@
   {
    "id": "098",
    "title": "Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp group",
-   "status": "open",
-   "owner": "editor"
+   "status": "done",
+   "owner": "editor",
+   "note": "The editor confirmed the LinkedIn link on 22 October 2026."
   },
   {
    "id": "099",
