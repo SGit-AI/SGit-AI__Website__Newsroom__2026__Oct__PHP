@@ -1,6 +1,15 @@
 {
- "current": "0.7.0",
+ "current": "0.8.0",
  "versions": [
+  {
+   "version": "0.8.0",
+   "date": "2026-10-22",
+   "title": "feedback from any page, signed: a Feedback button beside Ask on every page (what is wrong, unclear, missing or good, with a screenshot), signed with a key made on the reader's device; /join/ makes the key from an invitation in one tap and /join/invite/ makes invitations in the browser, as a QR code and a share button, signed by the editor's key; keys are enrolled automatically when both signatures check; and the brief for the organisation as a digital twin",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.7.0",
    "date": "2026-10-22",

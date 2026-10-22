@@ -22,4 +22,4 @@ For the organisations that run AI to find flaws or to write and check news, as t
 
 
 ---
-site v0.7.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/iso42001/index.html
+site v0.8.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/iso42001/index.html

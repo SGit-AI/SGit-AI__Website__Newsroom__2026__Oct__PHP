@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.8.0 · 22 October 2026new since your last visit
+
+feedback from any page, signed: a Feedback button beside Ask on every page (what is wrong, unclear, missing or good, with a screenshot), signed with a key made on the reader's device; /join/ makes the key from an invitation in one tap and /join/invite/ makes invitations in the browser, as a QR code and a share button, signed by the editor's key; keys are enrolled automatically when both signatures check; and the brief for the organisation as a digital twin
+
+No reader-facing section changed in this release.
+
 ## v0.7.0 · 22 October 2026new since your last visit
 
 power users, start here (/collaborators/): a generic onboarding for the people the editor nudges in his WhatsApp group and by email, the latest ask with its messages, and join and feedback forms encrypted to a private vault; runs (/team/runs/): every schedule the agents run, the quiet hours, and every recorded run with the article it should leave
@@ -418,4 +424,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.7.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.8.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

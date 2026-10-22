@@ -61,4 +61,4 @@ On this site: [Briefing for a data protection officer: Was personal data exposed
 
 
 ---
-site v0.7.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-1/index.html
+site v0.8.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-1/index.html
