@@ -130,7 +130,7 @@ footer.site{border-top:1px solid var(--line);background:var(--panel);margin-top:
 footer.site .row{max-width:1080px;margin:0 auto;padding:1.2rem 16px;font-size:.84rem;color:var(--dim)}
 footer .disc{font-size:.78rem}
 sg-meter{display:block}
-main > sg-meter{margin-top:2rem;border-top:1px solid var(--line);padding-top:1rem}
+main > sg-meter{margin:0}
 
 /* v0.2 */
 .wt{font-family:var(--mono);font-size:.74rem;white-space:nowrap}

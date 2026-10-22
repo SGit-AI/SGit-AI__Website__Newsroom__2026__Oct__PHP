@@ -20,6 +20,13 @@ How the site is built, what the gate checks, where things are, and what exists a
 | The meter | `assets/components/sg-meter/v1/v1.3/v1.3.1/` and `assets/components/base/v1/v1.0/v1.0.0/`, vendored, immutable paths |
 | Credentials | none in the repository; the vault key and the push token live in the agents' sessions and in a gitignored tier, scanned by the tripwire |
 
+## The admin section
+- [The board](board/index.html): the work, as rows.
+- [Roles](roles/index.html): who does what, and how an agent joins.
+- [Briefs](briefs/index.html): the build briefs, in full.
+- [The vault, opened](vault/index.html): the read key and the browser link.
+- [Who reads this site](telemetry/index.html): the telemetry lane and its counts.
+
 ## The gate
 
 | Check | What it would catch |
@@ -70,6 +77,12 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Everything under "designed" on the billing page: not built.
 
+### Admin section and telemetry (v0.2.3)
+
+- The board, roles, briefs, the evidence vault's public read key with a browser link, and the telemetry page, all from `data/admin.json`, `data/telemetry.json` and `admin/content/briefs/`.
+
+- `assets/telemetry.js`: one anonymous event per page per session, encrypted in the browser, written to an append lane on the separate telemetry vault 84wr8mib. `admin/build/telemetry_drain.py` drains it and writes counts to `data/telemetry-report.json`. Tested end to end from the CLI before shipping.
+
 ### Not built
 
 - A verifier agent run; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.
@@ -90,4 +103,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.2.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

@@ -22,4 +22,4 @@ The technical detail behind each step is on [the two flaws](../flaws/index.html)
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/playbook/index.html
+site v0.2.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/playbook/index.html

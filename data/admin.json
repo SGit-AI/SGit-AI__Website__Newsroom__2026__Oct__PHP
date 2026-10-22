@@ -1,0 +1,34 @@
+{
+ "roles": [
+  {"id": "editor", "name": "Editor", "who": "Dinis Cruz", "owns": "every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys", "rules": ["A brief is the editor's words, in either hand; agents write next to it, never over it.", "Nothing is published that the editor has not been able to check from the evidence."]},
+  {"id": "dev", "name": "dev@php.newsroom", "who": "the agent in this session", "owns": "the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file", "rules": ["Every push is a version; the release is not done until the live site serves it.", "Content exists once: the build reads data/, never a page.", "Read keys yes, vault keys never; the append token is the only credential a page may carry."]},
+  {"id": "collector-primary", "name": "Primary-source collector", "who": "an agent", "owns": "php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone", "rules": ["Capture before you read.", "One source.json and one notes.md per source; never edit another agent's files."]},
+  {"id": "collector-gov", "name": "Government and CERT collector", "who": "an agent", "owns": "every national agency's advisory, in its own language, with the translation marked", "rules": ["What an agency does not say is a finding.", "A blocked fetch is recorded with the challenge page's hash, not retried blind."]},
+  {"id": "collector-researchers", "name": "Researcher, vendor and press collector", "who": "an agent", "owns": "Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press", "rules": ["Social posts first, because they get deleted; decode a post's time from its id."]},
+  {"id": "verifier", "name": "Verifier", "who": "unfilled", "owns": "re-reading every claim against its capture text and downgrading what the capture does not carry", "rules": ["A quote that is not in the captured text is not a quote."]},
+  {"id": "briefing-writer", "name": "Briefing writer", "who": "dev@php.newsroom until filled", "owns": "one page per audience from the same claims", "rules": ["A briefing adds no claim."]},
+  {"id": "cartographer", "name": "Cartographer", "who": "unfilled", "owns": "the graph: nodes, typed edges, the per-source and per-party pages, the next layer down", "rules": ["A node is just a node; an edge without a source is deleted."]},
+  {"id": "historian", "name": "Historian", "who": "dev@php.newsroom until filled", "owns": "the release history, the corrections file, the reality file", "rules": ["A correction is published above the mistake, dated, with the mistake left visible."]}
+ ],
+ "board": [
+  {"id": "001", "title": "Pages deploy workflow and breadcrumbs up to the month, the year and the newsroom", "status": "done", "owner": "dev", "version": "0.2.2", "note": "The first run failed because admin/build/ was ignored by the repository's Python .gitignore template."},
+  {"id": "002", "title": "Admin section: the board, the roles, the briefs, the vault with its public read key, telemetry", "status": "done", "owner": "dev", "version": "0.2.3"},
+  {"id": "003", "title": "Anonymous telemetry over an append lane, from the front end, into a separate vault", "status": "done", "owner": "dev", "version": "0.2.3", "note": "Brief: admin/content/briefs/2026-10-22__telemetry-over-an-append-lane.md. End-to-end tested from the CLI before shipping."},
+  {"id": "004", "title": "Run the verifier over every claim: check each quote against its capture text", "status": "open", "owner": "verifier", "note": "The BBC's NCSC sentence is the first case."},
+  {"id": "005", "title": "Retry the blocked sources from another egress: openai.com, watchtowr.com, techzine.eu, socket.dev, ccn-cert.cni.es, dyn.cncs.gov.pt", "status": "open", "owner": "collector-researchers"},
+  {"id": "006", "title": "Find the primary posts behind second-hand figures: Censys, VirusTotal, Unit 42, Cloudflare's CTO at 07:43 UTC, Gina Banyard's Mastodon post, the fedi.katze.sh posts", "status": "open", "owner": "collector-researchers"},
+  {"id": "007", "title": "The 2024 trail in php-src: the audit finding whose fix surfaced the OOM problem, with a deeper clone", "status": "open", "owner": "collector-primary"},
+  {"id": "008", "title": "The next graph layer: facts inside a source (sentence-level nodes) so every noun on a page links somewhere", "status": "open", "owner": "cartographer"},
+  {"id": "009", "title": "A second model reads the vault and writes its own claims file; disagreements become disputed rows", "status": "open", "owner": "editor"},
+  {"id": "010", "title": "Re-check KEV and oss-security daily; record the day php2shell enters KEV if it does", "status": "open", "owner": "collector-primary"},
+  {"id": "011", "title": "Resolve the rights question on publishing the evidence vault's read key: third-party pages are held verbatim", "status": "open", "owner": "editor", "note": "The read key is published on the vault page at the editor's request; the editor will check the vault for anything confidential."},
+  {"id": "012", "title": "Reconcile the fix commit hash rjmendez names (82f8f31b16a) with 3584a98bd", "status": "open", "owner": "collector-primary"}
+ ],
+ "evidence_vault": {
+  "id": "3ytzxm3g",
+  "read_key": "sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g",
+  "open_url": "https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8%3A3ytzxm3g",
+  "note": "Read-only. A read key cannot be turned into write access. Published at the editor's request on 22 October 2026; the editor is checking the vault for anything that should not be public (board item 011). The vault's own README calls its captures private evidence not for republication; opening it with this key is reading, not republishing, and the rights question stays open on the board."
+ },
+ "telemetry_vault": {"id": "84wr8mib", "note": "Private. Its vault key, enum key and key-pair passphrase are held by the editor and the drainer, never in this repository."}
+}

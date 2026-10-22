@@ -1,0 +1,68 @@
+{
+ "as_of": "2026-10-22",
+ "drained_now": 4,
+ "events": 4,
+ "test_or_undecryptable": 1,
+ "sessions": 1,
+ "by_day": [
+  [
+   "2026-10-22",
+   4
+  ]
+ ],
+ "by_path": [
+  [
+   "/index.html",
+   1
+  ],
+  [
+   "/admin/telemetry/index.html",
+   1
+  ],
+  [
+   "/admin/vault/index.html",
+   1
+  ],
+  [
+   "/admin/board/index.html",
+   1
+  ]
+ ],
+ "by_country": [
+  [
+   "US",
+   4
+  ]
+ ],
+ "by_region": [
+  [
+   "California",
+   4
+  ]
+ ],
+ "by_city": [
+  [
+   "San Francisco",
+   4
+  ]
+ ],
+ "by_referrer": [
+  [
+   "(none)",
+   4
+  ]
+ ],
+ "by_screen": [
+  [
+   "desktop",
+   4
+  ]
+ ],
+ "by_version": [
+  [
+   "v0.2.2",
+   4
+  ]
+ ],
+ "note": "Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault."
+}

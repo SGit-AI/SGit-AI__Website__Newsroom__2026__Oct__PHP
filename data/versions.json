@@ -1,6 +1,15 @@
 {
- "current": "0.2.2",
+ "current": "0.2.3",
  "versions": [
+  {
+   "version": "0.2.3",
+   "date": "2026-10-22",
+   "title": "the admin section (board, roles, briefs, the evidence vault opened with its public read key, who reads this site), anonymous telemetry over an append lane into a separate vault with its drain script and first report, and the page meter in quiet mode",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.2",
    "date": "2026-10-22",
