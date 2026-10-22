@@ -1027,7 +1027,7 @@ def build_team():
 <p class="lead">This site is built and run by {humans}, and a team of software agents, with help from <a href="../collaborators/index.html">collaborators</a> who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is <a href="../data/team.json">data/team.json</a>, kept by <a href="conductor/index.html">the conductor</a>.</p>
 <div class="stats">{stats}</div>
 {section("members", "Who is on it", groups)}
-{section("run", "How the team runs", f'<p class="caveat">{E(T.get("now", ""))}</p><p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
+{section("run", "How the team runs", f'<p class="caveat">{E(T.get("now", ""))}</p><p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>What the agents run on their own, when, and every run they made: <a href="runs/index.html">runs</a>.</p><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
 {section("pipeline", "The pipeline", pipe, "How a URL becomes a published claim, and who does each step.")}
 {section("audiences", "The audiences", f'<ul>{auds}</ul>', "Each briefing is a role too: a reader whose question the site answers in one page.")}
 {section("rules", "The rules every member shares", '''<ul>
@@ -1302,6 +1302,7 @@ def build_llms():
     lines.append('')
     lines.append('## The team, one page per member')
     lines.append(f'- [How the team talks: three vaults and one run]({BASE_URL}/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules')
+    lines.append(f'- [Runs]({BASE_URL}/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run')
     for m in TEAM['members']:
         lines.append(f'- [{m["name"]}]({BASE_URL}/team/{m["id"]}/index.md): {m["role"]}; {m["summary"]}')
     lines.append('')
@@ -1450,7 +1451,7 @@ def build_all():
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
-    build_method(); build_team(); build_collaborators(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
+    build_method(); build_team(); build_collaborators(); build_runs(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
     build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
 
@@ -3630,6 +3631,94 @@ def build_collaborators():
 '''
     page('collaborators/index.html', 'Collaborators: help us build this site by using it', 'Join the people who use PHP October 2026 as it is built: this week\'s ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.', body, kind='account')
 
+
+# ----------------------------------------------------------------------------- what runs on its own, and every run (conductor@php.newsroom)
+# The editor, 22 October 2026: keep track of which agents run on a schedule, so that nothing runs overnight; and one
+# page that captures every agent's execution, each run with changes leaving an article. data/schedules.json is the
+# register; the runs are read from the data each agent already publishes (releases, source watch, fact-check desk,
+# synthetic readers), so the page adds no run of its own and cannot drift from them.
+import datetime as _dt
+from zoneinfo import ZoneInfo as _ZI
+
+def cron_field(f, lo, hi):
+    """The values one field of a five-field cron expression names: *, */n, a-b, a-b/n, and lists of those."""
+    out = set()
+    for part in f.split(','):
+        rng, _, step = part.partition('/')
+        a, b = (lo, hi) if rng == '*' else (tuple(int(x) for x in rng.split('-')) if '-' in rng else (int(rng), int(rng) if not step else hi))
+        out.update(range(a, b + 1, int(step or 1)))
+    return sorted(out)
+
+def schedule_times(s, day):
+    """The UTC times a schedule fires on one day: from its cron, or every N minutes for a self-scheduling chain."""
+    start = _dt.datetime.combine(day, _dt.time(0, 0), tzinfo=_dt.timezone.utc)
+    if s['kind'] == 'chain':
+        return [start + _dt.timedelta(minutes=m) for m in range(0, 24 * 60, s['every_minutes'])]
+    mi, ho = s['cron'].split()[:2]
+    return [start.replace(hour=h, minute=m) for h in cron_field(ho, 0, 23) for m in cron_field(mi, 0, 59)]
+
+def in_quiet(t, q):
+    """True when a UTC time falls in the quiet hours, read in the quiet hours' own time zone."""
+    loc = t.astimezone(_ZI(q['tz'])).strftime('%H:%M')
+    return loc >= q['from'] or loc < q['to']
+
+def all_runs(S):
+    """Every execution the site's data records, newest first: (when, member, what, run id, changed, summary, link)."""
+    runs = []
+    for v in D['versions']['versions']:
+        runs.append((v['date'], 'dev', 'Release', 'v' + v['version'], True, v['title'], 'admin/versions.html'))
+    for r in D['source-watch']['runs']:
+        runs.append((r['started'], 'researcher', 'Source watch pass', r['run'], r.get('changed', 0) > 0,
+                     f'{r.get("pages_due", 0)} pages due, {r.get("changed", 0)} changed', 'vaults/source-watch/index.html'))
+    fdir = os.path.join(ROOT, 'admin', 'factcheck', 'runs')
+    for fn in sorted(os.listdir(fdir)) if os.path.isdir(fdir) else []:
+        if fn.endswith('.json'):
+            r = json.load(open(os.path.join(fdir, fn), encoding='utf-8'))
+            runs.append((r.get('started', ''), 'verifier', 'Fact-check run', r['id'], bool(r.get('opened')), r.get('opened') or r.get('checked', ''), 'factcheck/index.html'))
+    for p in (SYN or {}).get('personas', []):
+        l = p.get('latest') or {}
+        if l.get('run'):
+            ch = l.get('checks', {})
+            runs.append((l.get('finished', l['run']), 'synthetic', f'Synthetic reader: {p["name"]}', f'{p["id"]}/{l["run"]}', bool(l.get('top_fails')),
+                         f'site v{l.get("site_version", "")}: {ch.get("high", 0)} high, {ch.get("medium", 0)} medium checks; answered the question {l.get("answered_question", "")}', 'admin/synthetic/index.html'))
+    return sorted(runs, key=lambda r: (r[0], r[3]), reverse=True)
+
+def build_runs():
+    S = load('schedules'); q = S['quiet_hours']; day = _dt.date.fromisoformat(q['as_of'])
+    members = {m['id']: m for m in TEAM['members']}
+    who = lambda mid: f'<a href="../{E(mid)}/index.html">{E(members[mid]["name"])}</a>' if mid in members else E(mid)
+    rows, night_total = [], 0
+    for s in S['schedules']:
+        ts = schedule_times(s, day); night = sorted((t for t in ts if in_quiet(t, q)), key=lambda t: (t.astimezone(_ZI(q['tz'])).hour < 12, t.astimezone(_ZI(q['tz'])).strftime('%H:%M')))  # evening first
+        night_total += len(night)
+        first = ', '.join(t.astimezone(_ZI(q['tz'])).strftime('%H:%M') for t in night[:6]) + (' and more' if len(night) > 6 else '')
+        rows.append([f'<b>{E(s["name"])}</b><div class="note">{E(s["does"])}</div>', who(s['member']), E(s['where']),
+                     E(s['cadence']) + (f'<div class="note"><code>{E(s["cron"])}</code></div>' if s.get('cron') else ''),
+                     f'{len(ts)} a day', (f'<span class="st st-contradicted">{len(night)} at night</span><div class="note">{first} London</div>' if night else '<span class="st st-confirmed">none</span>'),
+                     E(s['status']), E(s['proposed'])])
+    reg = table(['Schedule', 'Who', 'Where', 'How often', 'Runs', 'In quiet hours', 'Status', 'Proposed'], rows, 'board')
+    by_run = {a.get('run'): a for a in ARTICLES if a.get('run')}
+    runs = all_runs(S)
+    missing = [r for r in runs if r[4] and r[2] != 'Release' and r[3] not in by_run]
+    def art(r):
+        a = by_run.get(r[3])
+        if a: return f'<a href="../../articles/{E(a["slug"])}/index.html">{E(a["title"].split(":")[0])}</a>'
+        if r[2] == 'Release': return '<span class="small">its release note</span>'
+        return '<span class="st st-disputed">missing</span>' if r[4] else '<span class="small">no changes, none needed</span>'
+    erows = [[E(r[0]), who(r[1]), E(r[2]), f'<code>{E(r[3])}</code>', E(r[5]), 'yes' if r[4] else 'no', art(r), f'<a href="../../{U(r[6])}">output</a>'] for r in runs]
+    counts = Counter(r[1] for r in runs)
+    stats = ''.join(stat(n, l) for n, l in [(len(S['schedules']), 'schedules'), (night_total, 'runs a night, today'), (len(runs), 'runs recorded'), (len(missing), 'runs with changes and no article')])
+    body = f'''
+<p class="crumb"><a href="../index.html">The team</a> / Runs</p>
+<h1>Runs: what the agents do on their own, and every time they did it</h1>
+<p class="lead">{E(S["about"])}</p>
+<div class="stats">{stats}</div>
+{section("quiet", "Quiet hours", f'<p><b>{E(q["from"])} to {E(q["to"])} {E(q["tz"])}.</b> {E(q["rule"])}</p><p class="caveat">Status: {E(q["status"])}. Counted for {E(q["as_of"])}; the clocks go back on 25 October, which moves a UTC schedule an hour later in London.</p>')}
+{section("schedules", "What runs on its own", reg, f"As observed on {S['observed']}. A schedule changes only with the editor's go; a workflow change goes to a branch for security review first.")}
+{section("articles", "Every run with changes leaves an article", f'<p>{E(S["article_rule"])}</p>')}
+{section("runs", "Every run", table(['When', 'Who', 'What', 'Run', 'Summary', 'Changes', 'Article', 'Output'], erows, 'board'), "Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. " + ", ".join(f"{E(members[m]['name']) if m in members else E(m)}: {n}" for m, n in counts.most_common()) + ".")}
+'''
+    page('team/runs/index.html', 'Runs: what the agents do on their own, and every time they did it', 'The register of every schedule the team runs (who, where, how often, how many runs fall in the quiet hours) and every recorded run, newest first, with the article each run with changes should leave.', body, kind='site', topics='team agents')
 
 
 if __name__ == '__main__':

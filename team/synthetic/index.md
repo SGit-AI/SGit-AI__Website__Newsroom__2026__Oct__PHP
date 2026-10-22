@@ -29,7 +29,9 @@ Synthetic readersadmin/synthetic/index.html
 
 ## Open tasks
 
-None.
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 097 | Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run:  | open |  |
 
 ## What they have done
 - The first run of six readers through the live site, with verdicts, scores and requested changes (v0.4.6).

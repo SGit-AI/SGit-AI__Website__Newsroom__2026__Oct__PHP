@@ -245,6 +245,13 @@
    "used_on": "team/index.html"
   },
   {
+   "path": "data/schedules.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "the account's scheduled tasks and this repository's workflows, as observed; the quiet-hours rule and the article rule",
+   "used_on": "team/runs/index.html"
+  },
+  {
    "path": "data/collaborators.json",
    "layer": "site",
    "by": "conductor@php.newsroom",

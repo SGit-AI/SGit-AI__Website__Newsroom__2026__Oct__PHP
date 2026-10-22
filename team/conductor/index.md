@@ -54,6 +54,7 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 |---|---|---|---|
 | 069 | Map every member of the team, human and agent, with a page each; the three coordination vaults (conductor, issues, mail); the board moved into the issues vault; the conductor's append lane, one token per member, and its drain (admin/build/conductor_drain.py), tested end to end | done | 0.5.1 |
 | 090 | Collaborators: /collaborators/ with this week's ask, the WhatsApp and email messages per ask, a join form and a feedback form encrypted to the new collaborators vault (58526ytp); its drain; brief admin/content/briefs/2026-10-22__brief__collaborators.md | done |  |
+| 098 | Runs: /team/runs/, the register of every schedule (who, where, how often, how many runs fall in the quiet hours) and every recorded run with the article it should leave (data/schedules.json) | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/conductor/` in the mail vault (`fmb2tpl2`).

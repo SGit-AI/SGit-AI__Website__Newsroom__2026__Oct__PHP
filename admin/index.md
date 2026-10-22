@@ -214,6 +214,12 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: sending. The email list and the WhatsApp group are the editor's own; nothing on the site sends mail.
 
+### Runs (branch conductor/collaborators, conductor@php.newsroom)
+
+- `/team/runs/` from `data/schedules.json`: the three schedules the team runs (the source watch every 30 minutes, the fact-check desk every four hours, the synthetic readers hourly), each with how many runs fall in the quiet hours, computed from its schedule; and every recorded run, newest first, read from the release history, the source watch, the fact-check runs and the synthetic readers, with the article each run with changes should leave (matched by `run:` in an article's front matter).
+
+- The quiet hours (22:00 to 07:00 London) and the article rule are proposed, not applied: no schedule has been changed.
+
 ### Not built
 
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.

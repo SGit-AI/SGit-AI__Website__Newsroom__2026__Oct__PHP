@@ -704,6 +704,8 @@ team/newsroom-lead/index.html
 team/newsroom-lead/index.md
 team/researcher/index.html
 team/researcher/index.md
+team/runs/index.html
+team/runs/index.md
 team/story-site/index.html
 team/story-site/index.md
 team/synthetic/index.html

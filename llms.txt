@@ -385,6 +385,7 @@ Site v0.5.5. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 
 ## The team, one page per member
 - [How the team talks: three vaults and one run](https://php.oct.2026.newsroom.sgit.ai/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules
+- [Runs](https://php.oct.2026.newsroom.sgit.ai/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run
 - [Dinis Cruz](https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.md): Editor; Sets direction by voice memo, points agents at sources, reads what they wrote and says go.
 - [Vicky](https://php.oct.2026.newsroom.sgit.ai/team/vicky/index.md): Project manager; Runs the project side: what is planned, who has it, what is late and what the editor needs to decide.
 - [Conductor](https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.md): Conductor and comms; Maps the work, hands it out, and keeps every member, human and agent, synchronised. For now also the comms agent: the broadcasts and the digests.
