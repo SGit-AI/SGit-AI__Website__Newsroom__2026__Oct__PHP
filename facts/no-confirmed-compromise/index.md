@@ -32,7 +32,7 @@ A search of every vault capture (manifest and unexported) finds no named organis
 | [reuters-factbox-websites-offline](../../sources/reuters-factbox-websites-offline/index.html) | carries | *The temporary deactivation was purely preventive and no security incidents were known to have occurred, the spokesperson said.* | d562e28995b00a19 |
 | abc-au-politics-live (in the vault, not yet on this site) | carries | *Industry and Innovation Minister Tim Ayres says there has been no breach of Australian government websites* | a86331d9b7a21f78 |
 
-Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-3](../../factcheck/index.html#Evidence-3), [Finding-26](../../factcheck/index.html#Finding-26), [Finding-85](../../factcheck/index.html#Finding-85).
+Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-3](../../factcheck/index.html#Evidence-3), [Finding-26](../../factcheck/index.html#Finding-26), [Finding-85](../../factcheck/index.html#Finding-85).
 
 Graded in Run-1, resting on captures up to 2026-10-22 11:28 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -70,4 +70,4 @@ Sources: cisa-kev-json, huntress-php2shell-rapid-response, imperva-blog-php2shel
 
 
 ---
-site v0.5.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html
+site v0.5.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html

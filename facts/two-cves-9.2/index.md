@@ -25,7 +25,7 @@ Both CVE records (CNA PHP Group) carry CVSS 4.0 9.2 CRITICAL and the four fixed-
 | [php-net-advisory](../../sources/php-net-advisory/index.html) | carries | *PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fix two critical vulnerabilities that can allow unauthenticated remote code execution.* | df0b1bba3deae282 |
 | [openwall-oss-security-2026-10-21-6](../../sources/openwall-oss-security-2026-10-21-6/index.html) | carries | *Severity: Critical (CVSS v4.0: 9.2)* | 2f2d3ff13f3a32b7 |
 
-Open tickets: [Contradiction-3](../../factcheck/index.html#Contradiction-3), [Contradiction-7](../../factcheck/index.html#Contradiction-7), [Evidence-6](../../factcheck/index.html#Evidence-6).
+Open tickets: [Contradiction-3](../../factcheck/index.html#Contradiction-3), [Contradiction-7](../../factcheck/index.html#Contradiction-7), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-6](../../factcheck/index.html#Evidence-6).
 
 Graded in Run-1, resting on captures up to 2026-10-22 08:14 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -64,4 +64,4 @@ Sources: cve-cve-2026-109618, cve-cve-2026-109619, github-ghsa-w8hw-w9fx-j79w, g
 
 
 ---
-site v0.5.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/two-cves-9.2/index.html
+site v0.5.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/two-cves-9.2/index.html

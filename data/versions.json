@@ -1,6 +1,15 @@
 {
- "current": "0.5.7",
+ "current": "0.5.8",
  "versions": [
+  {
+   "version": "0.5.8",
+   "date": "2026-10-22",
+   "title": "factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.5.7",
    "date": "2026-10-22",
