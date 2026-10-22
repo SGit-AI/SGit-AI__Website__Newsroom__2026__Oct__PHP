@@ -140,3 +140,5 @@ main > sg-meter{margin-top:2rem;border-top:1px solid var(--line);padding-top:1re
 .notes h4{margin:.8rem 0 .2rem;font-size:.9rem}
 .notes ul{font-size:.9rem}
 table.ctx td:nth-child(6),table.ctx td:nth-child(7){min-width:14rem}
+
+.crumbs{font-size:.74rem;color:var(--dim)}.crumbs a{color:var(--dim)}

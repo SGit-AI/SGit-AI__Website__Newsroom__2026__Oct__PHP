@@ -1,6 +1,15 @@
 {
- "current": "0.2.0",
+ "current": "0.2.1",
  "versions": [
+  {
+   "version": "0.2.1",
+   "date": "2026-10-22",
+   "title": "a Pages deploy workflow that runs the gate on every push to dev, and breadcrumbs up to October 2026, the year and the newsroom",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.0",
    "date": "2026-10-22",
