@@ -1,6 +1,15 @@
 {
- "current": "0.2.8",
+ "current": "0.2.9",
  "versions": [
+  {
+   "version": "0.2.9",
+   "date": "2026-10-22",
+   "title": "the release check now accepts this version or later, because several agents release to dev and one can land on top of another inside the polling window (v0.2.8 landed on v0.2.7 and the old exact check called a live release unverified)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.8",
    "date": "2026-10-22",

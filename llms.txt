@@ -2,7 +2,7 @@
 
 > A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
 
-Site v0.2.8. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.2.9. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Questions
 - [Questions readers ask](https://php.oct.2026.newsroom.sgit.ai/questions/index.md): Can anything be done or do we wait for updates? Has anyone been hacked? Is it really most websites? Short answers to paste back, the sources behind them, and the pages that carry each one.
