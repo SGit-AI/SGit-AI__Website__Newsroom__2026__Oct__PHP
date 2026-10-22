@@ -112,5 +112,12 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - `/team/runs/` from `data/schedules.json`: the three schedules the team runs (the source watch every 30 minutes, the fact-check desk every four hours, the synthetic readers hourly), each with how many runs fall in the quiet hours, computed from its schedule; and every recorded run, newest first, read from the release history, the source watch, the fact-check runs and the synthetic readers, with the article each run with changes should leave (matched by `run:` in an article's front matter).
 - The quiet hours (22:00 to 07:00 London) and the article rule are proposed, not applied: no schedule has been changed.
 
+## Feedback from any page, signed (branch conductor/collaborators, conductor@php.newsroom)
+- A **Feedback** button beside Ask on every page opens the pane on its Feedback tab (`assets/feedback/pane.js`): the page and version, a kind, the words, the selected text, and a screenshot (a file, or this screen captured with the browser's permission prompt, scaled down to JPEG). Signed with the device's key, encrypted to the collaborators key, posted to the collaborators lane. Without a key, the tab says how to get an invitation.
+- `/join/` (`assets/feedback/join.js`, `assets/feedback/identity.js`): an invitation link or QR code (`#j1.<code>.<handle>`, removed from the address bar at once) makes the device's key pair in sgit's format (RSA-OAEP 4096 and ECDSA P-256), private halves non-extractable in IndexedDB, and sends a signed enrolment.
+- `admin/build/invite.py new|enrol|list`: invitations recorded as SHA-256 hashes in `data/contributors.json` (three devices, fourteen days), the link and its QR code written outside the repository; enrolment checks the signature and the invitation. `admin/build/contributors.py` checks signatures with `sgit pki verify` over pki.sgit.ai's canonical bytes; `collaborators_drain.py` marks every signed row enrolled, unknown key or unsigned, and saves screenshots beside it.
+- Tested end to end in Chromium (invitation, key, enrolment, signed feedback with a screenshot, drain, enrolment, verification) with a negative control (a changed word fails).
+- Not built: the editor's review queue (phase 2); a key on more than one device; links to pki.sgit.ai records. No invitation has been sent.
+
 ## Not built
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.

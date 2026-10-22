@@ -42,6 +42,7 @@ Site v0.7.0. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 
 ## Yours
 - [Power users: start here](https://php.oct.2026.newsroom.sgit.ai/collaborators/index.md): Where a power user of PHP October 2026 starts: the first fifteen minutes, the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
+- [Join: a key for feedback](https://php.oct.2026.newsroom.sgit.ai/join/index.md): Open the invitation the editor sent you and this page makes a key on your device, so the feedback you send from any page is signed as yours; the enrolled keys, as handles and fingerprints.
 - [Now: the phone app](https://php.oct.2026.newsroom.sgit.ai/now/index.md): What you need to know about the PHP flaws for the time you have, one, five, ten or thirty minutes, against what you read before; deterministic from the data, or written by a model with your own key kept in your own vault, with a chat.
 - [Your desk: new, changed, notes](https://php.oct.2026.newsroom.sgit.ai/you/index.md): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
 - [The feed viewer](https://php.oct.2026.newsroom.sgit.ai/reader/index.md): Read this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.

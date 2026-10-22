@@ -246,6 +246,12 @@ export function open() {
   html.classList.add('ask-on'); draw()
 }
 function close() { html.classList.remove('ask-on') }
+// Feedback (conductor@php.newsroom): a signed note on this page, with a screenshot; the tab is its own module,
+// assets/feedback/pane.js, loaded when the tab is first drawn. The brief: 2026-10-22__brief__feedback-keys-and-review.md.
+export function openFeedback() { tab = 'feedback'; open() }
+function drawFeedback(body) {
+  import(ROOT + 'assets/feedback/pane.js').then(m => m.draw(body, { h, root: ROOT })).catch(e => body.append(h('p', { class: 'sub-err' }, 'The feedback form could not load: ' + e.message)))
+}
 const LOG = h('div', { class: 'ask-log', 'aria-live': 'polite' })
 function draw(keepLog) {
   if (!pane) return
@@ -253,10 +259,10 @@ function draw(keepLog) {
   const head = h('div', { class: 'ask-head' }, h('b', null, 'Ask this site'),
     h('span', { class: 'ask-v' + (V.status === 'open' ? ' on' : '') }, V.status === 'open' ? `vault ${V.key.split(':').pop()}` : V.status === 'busy' ? 'vault…' : 'no vault'),
     h('button', { type: 'button', class: 'it-b', 'aria-label': 'Close', onclick: close }, '×'))
-  const tabs = h('div', { class: 'ask-tabs', role: 'tablist' }, ...['ask', 'vault', 'tools'].map(t => h('button', { type: 'button', role: 'tab', 'aria-selected': tab === t ? 'true' : 'false', class: tab === t ? 'on' : '', onclick: () => { tab = t; draw(true) } }, t === 'ask' ? 'Ask' : t === 'vault' ? 'Your vault' : 'Tools')))
+  const tabs = h('div', { class: 'ask-tabs', role: 'tablist' }, ...['ask', 'feedback', 'vault', 'tools'].map(t => h('button', { type: 'button', role: 'tab', 'aria-selected': tab === t ? 'true' : 'false', class: tab === t ? 'on' : '', onclick: () => { tab = t; draw(true) } }, t === 'ask' ? 'Ask' : t === 'feedback' ? 'Feedback' : t === 'vault' ? 'Your vault' : 'Tools')))
   pane.append(head, tabs)
   const body = h('div', { class: 'ask-body' }); pane.append(body)
-  if (tab === 'ask') drawAsk(body); else if (tab === 'vault') drawVault(body); else drawTools(body)
+  if (tab === 'ask') drawAsk(body); else if (tab === 'vault') drawVault(body); else if (tab === 'feedback') drawFeedback(body); else drawTools(body)
 }
 function drawAsk(body) {
   if (!V.orKey) {

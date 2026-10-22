@@ -259,6 +259,13 @@
    "used_on": "collaborators/index.html"
   },
   {
+   "path": "data/contributors.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "admin/build/invite.py: the open invitations (hashes only) and the enrolled keys (handle, role, fingerprints)",
+   "used_on": "join/index.html"
+  },
+  {
    "path": "data/versions.json",
    "layer": "site",
    "by": "admin/build/release.sh",

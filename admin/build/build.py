@@ -187,7 +187,7 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('collaborators/index.html', 'Power users: start here'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
+    ('Yours', [('collaborators/index.html', 'Power users: start here'), ('join/index.html', 'Join: a key for feedback'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -1527,7 +1527,7 @@ def build_all():
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
-    build_method(); build_team(); build_collaborators(); build_runs(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
+    build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
     build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck(); build_grc()
 
@@ -3672,7 +3672,8 @@ def build_collaborators():
 {section("get", "What you get", li(C["what_you_get"]))}
 {section("how", "How it works", f'<ul>{chans}</ul><p>The readers you can read as are on <a href="../start/index.html">Start here</a>: each has a plain answer, what it needs and a reading path. The team you are helping is on <a href="../team/index.html">the team page</a>.</p>')}
 <section id="join"><h2>Join</h2>
-<p>Know {E(ed["name"].split()[0])}? <a href="{U(ed["linkedin"])}" rel="noopener">Message him on LinkedIn</a>, or fill this in. He reads every request and adds you to the email list, and to the WhatsApp group if you ask.</p>
+<p><b>Have an invitation?</b> Open it: it lands on <a href="../join/index.html">Join</a>, which makes your key in one tap, and then the <b>Feedback</b> button at the top of every page sends signed feedback, with screenshots.</p>
+<p>No invitation yet? Know {E(ed["name"].split()[0])}? <a href="{U(ed["linkedin"])}" rel="noopener">Message him on LinkedIn</a>, or fill this in. He reads every request and adds you to the email list, and to the WhatsApp group if you ask.</p>
 <form id="join-form" class="subform" autocomplete="on">
 <p><label>Your name<br><input type="text" name="name" required maxlength="120"></label></p>
 <p><label>Your email address<br><input type="email" name="email" required maxlength="254" placeholder="you@example.org"></label></p>
@@ -4308,6 +4309,37 @@ def build_grc_network(G, nav):
 <p class="small">Third-party and sibling material, described in its publisher's own terms and linked, not reproduced. Vaults are named by id; each opens from its publisher's page with the read key published there. Surveyed {E(N["surveyed"])}.</p>
 '''
     page('grc/network/index.html', 'From the network: sgit risk models, vaults and standards graphs mapped to php2shell', 'The risk models, fractal registers, semantic graphs and standards vaults across the sgit network, and which php2shell risks and frameworks each bears on.', body, kind='analysis', topics='php2shell grc network', origin='external')
+
+# ----------------------------------------------------------------------------- joining: a key, and feedback from any page (conductor@php.newsroom)
+# The editor's memo of 22 October 2026: feedback from any page, signed, after an onboarding as simple as a QR code. The
+# brief: admin/content/briefs/2026-10-22__brief__feedback-keys-and-review.md. The page is a shell; assets/feedback/join.js
+# makes the key and sends the enrolment; data/contributors.json lists the invitations (hashes) and the enrolled keys.
+
+def build_join():
+    C = load('contributors')
+    roles = dict(C['roles'])
+    keys = table(['Handle', 'Role', 'Signing key', 'Device', 'Enrolled'], [[E(k['handle']), E(k['role']), f'<code>{E(k["signing_fingerprint"])}</code>', E(k['device']), E(k['enrolled'])] for k in C['keys']]) if C['keys'] else '<p class="small">None yet.</p>'
+    body = f'''
+<p class="crumb"><a href="../collaborators/index.html">Power users</a> / Join</p>
+<h1>Join: a key for this device, in one tap</h1>
+<p class="lead">To give feedback on this site you sign it with a key of your own, so the team knows who it came from. Getting one is one tap: open the invitation the editor sent you (a link or a QR code), and this page makes a key on this device and sends it to him.</p>
+<noscript><p class="sub-err">This page needs JavaScript: the key is made in your browser.</p></noscript>
+<div id="join-app" class="subform"><p class="small">Loading…</p></div>
+{section("how", "How it works", '''<ol>
+<li><b>An invitation.</b> Ask Dinis, by email or on WhatsApp, or with <a href="../collaborators/index.html#join">the join form</a>. He sends you a link or a QR code meant for you alone.</li>
+<li><b>One tap.</b> The link opens this page, which makes a key pair in your browser: one half signs, the other half is public. The signing half stays in this browser and cannot be copied out of it, by this site or anyone else.</li>
+<li><b>Enrolled.</b> Your public key goes to the editor, encrypted, with the invitation. He checks it and adds it to the list below; from then on what you sign shows as yours.</li>
+<li><b>Feedback from any page.</b> Press <b>Feedback</b>, next to Ask at the top of every page: say what is wrong, unclear, missing or good, with a screenshot if you like, and send. It is signed with your key and encrypted to the team.</li>
+</ol>''')}
+{section("keys", "Enrolled keys", keys, "Handles and fingerprints only, never a name. " + "; ".join(f"{E(r)}: {E(t)}" for r, t in C["roles"]) + ".")}
+{section("limits", "What it does not do", '''<ul>
+<li>A key belongs to one browser on one device. Another device needs its own invitation; clearing this site's data deletes the key.</li>
+<li>An invitation is a credential until it is used: whoever opens it first can join with it. Each one enrols at most three devices and expires in two weeks.</li>
+<li>A signature proves which key wrote a message, not who holds the key: that is what the editor's enrolment adds.</li>
+</ul><p class="small">Keys are in pki.sgit.ai's and sgit's format, so <code>sgit pki verify</code> checks every signature. The brief is on <a href="../admin/briefs/index.html#2026-10-22__brief__feedback-keys-and-review">briefs</a>.</p>''')}
+<script type="module" src="../assets/feedback/join.js"></script>
+'''
+    page('join/index.html', 'Join: a key for this device, in one tap', 'Open the invitation the editor sent you and this page makes a key on your device, so the feedback you send from any page is signed as yours; the enrolled keys, as handles and fingerprints.', body, kind='account')
 
 
 if __name__ == '__main__':

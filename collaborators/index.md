@@ -46,7 +46,9 @@ Friday 23 October 2026: Your first look: the site, a reader of your own, and fou
 
 ## Join
 
-Know Dinis? [Message him on LinkedIn](https://www.linkedin.com/in/diniscruz/), or fill this in. He reads every request and adds you to the email list, and to the WhatsApp group if you ask.
+**Have an invitation?** Open it: it lands on [Join](../join/index.html), which makes your key in one tap, and then the **Feedback** button at the top of every page sends signed feedback, with screenshots.
+
+No invitation yet? Know Dinis? [Message him on LinkedIn](https://www.linkedin.com/in/diniscruz/), or fill this in. He reads every request and adds you to the email list, and to the WhatsApp group if you ask.
 
 Your name
 

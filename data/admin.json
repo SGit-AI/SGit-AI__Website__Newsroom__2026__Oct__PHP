@@ -863,6 +863,36 @@
    "title": "Runs: /team/runs/, the register of every schedule (who, where, how often, how many runs fall in the quiet hours) and every recorded run with the article it should leave (data/schedules.json)",
    "status": "done",
    "owner": "conductor"
+  },
+  {
+   "id": "106",
+   "title": "Feedback from any page, signed: a Feedback button beside Ask opens the pane's Feedback tab (kind, words, a screenshot from a file or captured), signed with the device's key and encrypted to the collaborators lane; /join/ makes the key from an invitation's QR code in one tap; admin/build/invite.py makes invitations and enrols keys; the drain verifies every signature with sgit pki verify",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "107",
+   "title": "The editor's review queue, /review/: every page or section new or changed since he last looked, one at a time on an iPad (Next, Good, Needs work, a comment), each decision signed feedback of kind review (brief: 2026-10-22__brief__feedback-keys-and-review.md, phase 2)",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "108",
+   "title": "Invitations for the editor's own devices (role editor) and for Vicky (role team); then the power users, one invitation each, sent by the editor",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "109",
+   "title": "A feedback desk: who reads the drained feedback every day, turns it into board items and answers the sender; the conductor until an agent takes it",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "110",
+   "title": "Security review of the feedback keys (assets/feedback/identity.js, join.js, pane.js; admin/build/contributors.py, invite.py): non-extractable keys in IndexedDB, the invitation code in the link's fragment, signatures checked with sgit",
+   "status": "open",
+   "owner": "security"
   }
  ],
  "evidence_vault": {
