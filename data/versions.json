@@ -1,6 +1,15 @@
 {
- "current": "0.2.6",
+ "current": "0.2.7",
  "versions": [
+  {
+   "version": "0.2.7",
+   "date": "2026-10-22",
+   "title": "dev@php.newsroom's public key from pki.sgit.ai on the roles page (record sha256:8025e2a4470e73f0, key link and QR), the brief for handing the editor the telemetry vault key sealed to his key, and board item 013",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.6",
    "date": "2026-10-22",

@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="../../assets/site.css">
 <link rel="stylesheet" href="../../assets/themes/themes.css">
 <link rel="stylesheet" href="../../assets/themes/site-tokens.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Briefs", "description": "The build briefs for this site, published in full before the work, newest first.", "url": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html", "isPartOf": {"@type": "WebSite", "name": "php.oct.2026.newsroom.sgit.ai", "url": "https://php.oct.2026.newsroom.sgit.ai"}, "license": "https://creativecommons.org/licenses/by/4.0/", "dateModified": "2026-10-22", "version": "0.2.6"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Briefs", "description": "The build briefs for this site, published in full before the work, newest first.", "url": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html", "isPartOf": {"@type": "WebSite", "name": "php.oct.2026.newsroom.sgit.ai", "url": "https://php.oct.2026.newsroom.sgit.ai"}, "license": "https://creativecommons.org/licenses/by/4.0/", "dateModified": "2026-10-22", "version": "0.2.7"}</script>
 <script type="application/json" id="sg-meter-config">{"links":{"account":"account/index.html","topup":"account/top-up.html"},"links2":{"newsroom":"account/index.html","personas":"account/index.html"},"minDepth":0.1,"newDays":7,"prices":{"analysis":3,"article":2,"article_new":2,"briefing":5,"evidence":1,"free":0,"page":1,"story":2},"root":"../../","start":500,"storageKey":"php-story.meter.v1","symbol":"\u00a3","topup":{"amount":500,"link":""}}</script>
 <script type="module" src="../../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"></script>
 <script src="../../assets/site.js" defer></script>
@@ -28,7 +28,7 @@
 <nav class="site"><div class="row">
   <script src="../../assets/themes/themes.js"></script>
   <a class="brand" href="../../index.html">php2shell<span>.newsroom</span></a>
-  <a class="ver" href="../../admin/versions.html#v0.2.6" title="Site release history: what v0.2.6 changed">v0.2.6</a>
+  <a class="ver" href="../../admin/versions.html#v0.2.7" title="Site release history: what v0.2.7 changed">v0.2.7</a>
   <span class="status">Developing &middot; data as of 2026-10-22T11:34Z</span>
   <span class="crumbs"><a href="https://newsroom.sgit.ai/">newsroom</a> / <a href="https://2026.newsroom.sgit.ai/">2026</a> / <a href="https://oct.2026.newsroom.sgit.ai/">October</a> / <b>php2shell</b></span>
   <div class="tools"><div class="theme-pick"></div><sg-meter view="balance"></sg-meter></div>
@@ -82,6 +82,27 @@
 <li>Which geolocation service to trust with visitors&#x27; IPs. The first release uses ipapi.co with ipwho.is as fallback; both are third parties and both see the IP. A Cloudflare-fronted site could use <code>/cdn-cgi/trace</code> instead and leak nothing to a third party.</li>
 <li>Whether the reports should be public (counts only) or stay in the vault. The first release publishes counts.</li>
 <li>Whether the editor wants the city at all. Region and country answer the question asked; the city is noise from ISPs.</li>
+</ul></article><article class="rel" id="2026-10-22__handing-the-editor-a-vault-key"><p class="kicker">2026-10-22 &middot; <code>2026-10-22__handing-the-editor-a-vault-key.md</code></p><h2>Handing the editor a vault key: sealed to his key on pki.sgit.ai</h2>
+<p>Status: in progress. Brief by Dinis Cruz (editor), 22 October 2026: &quot;work on that workflow for you to give me that key. I have created my PKI key at pki.sgit.ai; send me first your public key, so that I can validate it, and then use it to encrypt the vault key.&quot; Written up by dev@php.newsroom.</p>
+<h3>The problem</h3>
+<p>The telemetry vault (84wr8mib) was made by this agent. Its vault key, the lane&#x27;s enum key and the passphrase on its decryption key exist only in this session. Printing them into the chat is a leak, and the session will end.</p>
+<h3>What exists to build on</h3>
+<p>pki.sgit.ai designed this exact handover in &quot;Agents, vault keys and the root&quot; (v0.2.8): the root is the editor&#x27;s own key; an agent makes a session key with <code>pki-agent keygen</code>, shows its fingerprint, pins the root out of band, and seals the vault key to it as a one-time <code>m1</code> link that only the root&#x27;s key opens, signed by the agent, with an expiry inside the signature.</p>
+<h3>The gap found</h3>
+<p>The register has no real keys yet (<code>anchors.json</code> is empty; <code>real_keys: 0</code>). The editor&#x27;s key lives in his browser account until he submits it. The tool&#x27;s <code>seal</code> only seals to keys in the register. So, until his record is published, this agent seals to his <b>key link</b> (<code>https://pki.sgit.ai/send/#k1…</code>, which his account&#x27;s Share gives), the same way the site&#x27;s /send/ page does, with one guard: the fingerprint the link recomputes to must equal the fingerprint he types into the session. The session is the out-of-band channel; the link alone proves nothing.</p>
+<h3>The steps</h3>
+<p>1. Done: <code>pki-agent keygen --name dev@php.newsroom --session</code>: record sha256:8025e2a4470e73f0, encryption sha256:c2d463f96c597c01. The key link and QR are on the roles page.</p>
+<p>2. The editor checks that fingerprint against the one given in the session, and may enrol the agent (an operates link with an end date) so its seals open as &quot;sender chains to the root&quot;.</p>
+<p>3. The editor gives the session his record fingerprint and his key link.</p>
+<p>4. The agent runs <code>sealkey &lt;his key link&gt; --expect &lt;his fingerprint&gt; --file handover.json --expires 7 --qr</code>, a local copy of pki-agent with that one command added. It refuses on a mismatch.</p>
+<p>5. He opens the m1 link at pki.sgit.ai/m/ with his passkey, files the keys, and rotates them, since they were held in an agent session.</p>
+<h3>Tested before use</h3>
+<p>A negative control (a wrong fingerprint is refused), and a round trip: a test secret sealed to this agent&#x27;s own key link and opened by <code>pki-agent open</code> with a verified signature and a 7-day expiry.</p>
+<h3>What it does not claim</h3>
+<ul>
+<li>The sealed link has no forward secrecy; rotate the keys after opening.</li>
+<li>The m1 link travels in the chat; its fragment never reaches a server, but whoever reads the chat holds the ciphertext. Only his private key opens it.</li>
+<li>The added <code>sealkey</code> command is this agent&#x27;s, unreviewed. The better end state is his record in the register, after which the stock <code>pin</code> and <code>seal</code> apply.</li>
 </ul></article><article class="rel" id="2026-10-22__brief"><p class="kicker">2026-10-22 &middot; <code>2026-10-22__brief.md</code></p><h2>The brief, as written by the editor on 22 October 2026</h2>
 <p>Status: accepted, by being sent. Author: Dinis Cruz. Drafted by nobody: these are the editor&#x27;s own words, a message to the agent followed by two voice memos (below).</p>
 <p>Hi based on the guidance on sgit.ai for these type of *.sgit.ai websites and what we have been doing at newsroom.sgit.ai can you create a dedicated website for us to track in super fact, deterministic and with provenance way what is going on with the PHP vulnerability</p>
@@ -100,7 +121,7 @@
     <p><b>php.oct.2026.newsroom.sgit.ai</b> follows one story, the two PHP flaws of October 2026, as evidence: every claim with a status and its sources, every source captured, dated and hashed into a private vault. Built and run by one editor and a team of software agents; <a href="../../team/index.html">the roles</a> and <a href="../../method/index.html">the method</a> are public, and the site is rebuilt from the vault, never written by hand. One of the SGit Newsroom's story sites: up from here are <a href="https://oct.2026.newsroom.sgit.ai/">October 2026</a>, <a href="https://2026.newsroom.sgit.ai/">the year</a> and <a href="https://newsroom.sgit.ai/">the newsroom</a>, whose own section on the story is <a href="https://newsroom.sgit.ai/php-flaws/index.html">here</a>. Part of the <a href="https://sgit.ai/network/index.html">sgit.ai network</a>.</p>
     <p class="disc">&#9888; Participant disclosure: published by the sgit project, which builds the vault and metering stack this site runs on. Content CC BY 4.0 for this site's own text, tables and data; quoted words are their authors', linked; no third-party page is reproduced. Code Apache-2.0.</p>
     <p class="small">&#9673; This page sends one anonymous usage event (page, referrer host, country and region, no IP, no cookie) to a write-only vault lane; <a href="../../admin/telemetry/index.html">what is sent and what is counted</a>. Honoured: Do Not Track and Global Privacy Control.</p>
-    <p class="small">site v0.2.6 &middot; evidence vault commit 200d08971937 &middot; <a href="../../admin/index.html">engineering</a> &middot; <a href="../../admin/briefs/index.md">this page as markdown</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP">GitHub</a></p>
+    <p class="small">site v0.2.7 &middot; evidence vault commit 200d08971937 &middot; <a href="../../admin/index.html">engineering</a> &middot; <a href="../../admin/briefs/index.md">this page as markdown</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP">GitHub</a></p>
   </div>
 </footer>
 </body>
