@@ -1,6 +1,15 @@
 {
- "current": "0.4.5",
+ "current": "0.4.6",
  "versions": [
+  {
+   "version": "0.4.6",
+   "date": "2026-10-22",
+   "title": "synthetic readers: synthetic@php.newsroom runs six test readers (board member, CTO, project manager, security lead, developer, designer) through the live site in a real browser, each with its own device, path and private vault holding every request, page, screenshot and review; /admin/synthetic/ shows the first run's verdicts, scores and requested changes; hourly and after each deploy via .github/workflows/synthetic.yml once its secrets are set",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.4.5",
    "date": "2026-10-22",

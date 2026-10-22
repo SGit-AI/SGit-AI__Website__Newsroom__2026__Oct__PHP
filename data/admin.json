@@ -116,6 +116,17 @@
     "Say how early you are writing; mark a reading as a reading.",
     "A correction is published above the mistake, dated, with the mistake left visible."
    ]
+  },
+  {
+   "id": "synthetic",
+   "name": "synthetic@php.newsroom",
+   "who": "an agent",
+   "owns": "the six synthetic readers (admin/synthetic/), their vaults, their hourly runs and their reviews; data/synthetic.json and the synthetic readers page",
+   "rules": [
+    "A synthetic reader is a test instrument: its review is a prompt for the editor, never evidence about the story and never readership.",
+    "Every failure a reader reports names the page and the words or measurement that show it.",
+    "A synthetic reader sends no telemetry; the lane is answered locally during a run."
+   ]
   }
  ],
  "board": [

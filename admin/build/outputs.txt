@@ -71,6 +71,8 @@ admin/roles/index.html
 admin/roles/index.md
 admin/status-json/index.html
 admin/status-json/index.md
+admin/synthetic/index.html
+admin/synthetic/index.md
 admin/telemetry/index.html
 admin/telemetry/index.md
 admin/vault/index.html

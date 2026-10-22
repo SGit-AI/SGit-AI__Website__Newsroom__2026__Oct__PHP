@@ -6,7 +6,7 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 # Roles and responsibilities
 
-11 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
+12 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
 
 ### Editor Dinis Cruz
 
@@ -74,6 +74,13 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 - Say how early you are writing; mark a reading as a reading.
 - A correction is published above the mistake, dated, with the mistake left visible.
 
+### synthetic@php.newsroom an agent
+
+**Owns.** the six synthetic readers (admin/synthetic/), their vaults, their hourly runs and their reviews; data/synthetic.json and the synthetic readers page
+- A synthetic reader is a test instrument: its review is a prompt for the editor, never evidence about the story and never readership.
+- Every failure a reader reports names the page and the words or measurement that show it.
+- A synthetic reader sends no telemetry; the lane is answered locally during a run.
+
 ## How to join
 
 - Clone the evidence vault with its read key to look, or ask the editor for the vault key to write. Read its `README.md`: the protocol is there.
@@ -86,4 +93,4 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 
 ---
-site v0.4.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html
+site v0.4.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html

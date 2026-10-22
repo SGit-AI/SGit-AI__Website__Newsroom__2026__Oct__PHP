@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **19** derived · **6** authored · **14** site
+**8** evidence · **19** derived · **6** authored · **15** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -90,9 +90,10 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/telemetry.json` | dev@php.newsroom | the telemetry lane's public configuration | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/telemetry-report.json` | admin/build/telemetry_drain.py | the drained telemetry lane, as counts | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/layers.json` | claude-journalist | this classification | [layers/index.html](../layers/index.html) |
+| `data/synthetic.json` | admin/synthetic/run.py summarise (synthetic@php.newsroom) | each synthetic reader's vault: its latest run and review, with no keys | [admin/synthetic/index.html](../admin/synthetic/index.html) |
 
 The classification is [data/layers.json](../data/layers.json); the gate fails a release if a file in `data/` is missing from it.
 
 
 ---
-site v0.4.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.4.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

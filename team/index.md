@@ -114,6 +114,14 @@ The site is built and run by one person and a set of software agents, and this p
 
 **The mistake behind the rule.** None yet. The first essay, at v0.2.5, names the evidence that would overturn its own readings.
 
+### Synthetic readers (synthetic@php.newsroom) `synthetic`
+
+**Beat.** six test readers (board member, CTO, project manager, security lead, developer, designer) who read the live site every hour or when it changes, each in a real browser on its own device, and review it in their own voice; every request, page, screenshot and review goes to that reader's own vault
+
+**The rule it enforces.** Judge what was on the page, not what you know. A failure without the words or measurement that show it is an impression, and is left out.
+
+**The mistake behind the rule.** The first capture counted its own blocked telemetry requests as console errors on every page; the lane is now answered locally, so a run sends nothing and reports no false errors.
+
 ## The audiences
 
 Each briefing is a role too: a reader whose question the site answers in one page.
@@ -151,4 +159,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.4.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.4.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html

@@ -1,58 +1,367 @@
 {
  "note": "Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.",
  "layers": [
-  {"id": "evidence", "name": "Evidence", "what": "Captured or exported from the evidence vault by a script, with no judgement added. Changes only when the vault changes.", "rule": "Never edited by hand: re-export it from the vault."},
-  {"id": "derived", "name": "Derived", "what": "Transformations of the evidence written by agents: claims with a status, dated events, counts, comparisons, graphs. Every row cites source slugs, and the pages built from them are rebuilt on every release.", "rule": "A row that cites nothing is deleted; a row whose sources change is re-checked."},
-  {"id": "authored", "name": "Authored", "what": "Signed writing: the editor's brief and memos, and articles by the journalist, historian and other agent roles. Each article names the site version, vault commit and capture time it was written against, and is not revised afterwards.", "rule": "Dated and signed; a later piece supersedes, it does not overwrite."},
-  {"id": "site", "name": "Site", "what": "How the site runs: roles, release history, billing, admin and telemetry. Not evidence about the story.", "rule": "Kept current by whoever ships."}
+  {
+   "id": "evidence",
+   "name": "Evidence",
+   "what": "Captured or exported from the evidence vault by a script, with no judgement added. Changes only when the vault changes.",
+   "rule": "Never edited by hand: re-export it from the vault."
+  },
+  {
+   "id": "derived",
+   "name": "Derived",
+   "what": "Transformations of the evidence written by agents: claims with a status, dated events, counts, comparisons, graphs. Every row cites source slugs, and the pages built from them are rebuilt on every release.",
+   "rule": "A row that cites nothing is deleted; a row whose sources change is re-checked."
+  },
+  {
+   "id": "authored",
+   "name": "Authored",
+   "what": "Signed writing: the editor's brief and memos, and articles by the journalist, historian and other agent roles. Each article names the site version, vault commit and capture time it was written against, and is not revised afterwards.",
+   "rule": "Dated and signed; a later piece supersedes, it does not overwrite."
+  },
+  {
+   "id": "site",
+   "name": "Site",
+   "what": "How the site runs: roles, release history, billing, admin and telemetry. Not evidence about the story.",
+   "rule": "Kept current by whoever ships."
+  }
  ],
  "files": [
-  {"path": "data/sources.json", "layer": "evidence", "by": "admin/build/export_vault.py", "from": "every source.json in the vault, with the sha256 of every captured file", "used_on": "sources/index.html"},
-  {"path": "data/vault.json", "layer": "evidence", "by": "admin/build/export_vault.py", "from": "the vault head, its counts and the agents that wrote to it", "used_on": "admin/vault/index.html"},
-  {"path": "data/vault-claims.json", "layer": "evidence", "by": "admin/build/export_vault.py", "from": "claims/<agent>.json in the vault, one file per agent, merged unedited", "used_on": "claims/index.html"},
-  {"path": "data/vault-timeline.json", "layer": "evidence", "by": "admin/build/export_vault.py", "from": "timeline/<agent>.json in the vault, merged unedited", "used_on": "timeline/index.html"},
-  {"path": "data/software.json", "layer": "evidence", "by": "admin/build/export_vault.py", "from": "the NCSC-NL php2shell inventory, parsed row by row at commit cca173c64ec5", "used_on": "affected/software.html"},
-  {"path": "review/code/files.json", "layer": "evidence", "by": "a parser over git show -U0 of the fix commit", "from": "php/php-src commit 3584a98bd: files, hunks and the functions they fall in", "used_on": "review/index.html"},
-  {"path": "data/inventory-history.json", "layer": "evidence", "by": "admin/build/inventory_history.py", "from": "a git clone of NCSC-NL/php2shell: every commit that changed the inventory, counted per status, with every change of status; content-addressed and checked against the vault's own capture at cca173c64ec5. Read from the public repository, not yet captured into the vault", "used_on": "patching/inventory/index.html"},
-  {"path": "data/signals.json", "layer": "derived", "by": "claude-journalist and claude-historian", "from": "the claims, the exploitation and defence data, the inventory and the timeline, arranged as the ladder from exposed to exploited, four signal families and the time of each barrier", "used_on": "signals/index.html"},
-  {"path": "data/claims.json", "layer": "derived", "by": "claude-story-site", "from": "the vault's notes and per-agent claims, re-traced to primary sources", "used_on": "claims/index.html"},
-  {"path": "data/timeline.json", "layer": "derived", "by": "claude-story-site", "from": "the vault's notes and per-agent timelines, with every time conversion marked", "used_on": "timeline/index.html"},
-  {"path": "data/numbers.json", "layer": "derived", "by": "claude-story-site", "from": "the scale figures in the captures, with what each measures", "used_on": "numbers/index.html"},
-  {"path": "data/agencies.json", "layer": "derived", "by": "claude-story-site", "from": "each agency's captured advisory, read for its offline and exploitation stance", "used_on": "agencies/index.html"},
-  {"path": "data/affected.json", "layer": "derived", "by": "claude-story-site", "from": "the CVE records, advisories and agency pages: versions, SAPIs, mitigations", "used_on": "affected/index.html"},
-  {"path": "data/exploitation.json", "layer": "derived", "by": "claude-story-site", "from": "every exploitation signal in the captures, in order", "used_on": "exploitation/index.html"},
-  {"path": "data/impact.json", "layer": "derived", "by": "claude-story-site", "from": "the offline and compromise reports in the captures, as two ledgers", "used_on": "impact/index.html"},
-  {"path": "data/defence.json", "layer": "derived", "by": "claude-story-site", "from": "the WAF vendors' posts and the community rule sets", "used_on": "defence/index.html"},
-  {"path": "data/history.json", "layer": "derived", "by": "claude-story-site", "from": "ten earlier CVE records and the KEV catalog captured on 22 October", "used_on": "context/index.html"},
-  {"path": "data/code.json", "layer": "derived", "by": "claude-story-site", "from": "a clone of php/php-src: the fix commit, the mechanism, the backport", "used_on": "code/index.html"},
-  {"path": "data/review.json", "layer": "derived", "by": "a parser for the code layer; claude-story-site for the remediation layer", "from": "the fix commit's diff, its message and the two GitHub advisories", "used_on": "review/index.html"},
-  {"path": "data/actors.json", "layer": "derived", "by": "claude-story-site", "from": "the parties named in the claims", "used_on": "actors/index.html"},
-  {"path": "data/story.json", "layer": "derived", "by": "claude-story-site", "from": "the claims, as the front page's lead, what is established and what is not", "used_on": "index.html"},
-  {"path": "data/questions.json", "layer": "derived", "by": "librarian@php.newsroom", "from": "the questions readers ask, each short answer re-traced to claims and captured sources", "used_on": "questions/index.html"},
-  {"path": "data/readings.json", "layer": "derived", "by": "claude-journalist", "from": "other models' notes, compared point by point with the claims and captured sources", "used_on": "readings/index.html"},
-  {"path": "data/patching.json", "layer": "derived", "by": "claude-journalist", "from": "the PHP project's releases and backport branches, and the NCSC-NL inventory's own rows, named exactly and checked by the gate", "used_on": "patching/index.html"},
-  {"path": "data/graph.json", "layer": "derived", "by": "admin/build/build.py", "from": "the claims and timeline rows and the sources they cite, generated at build", "used_on": "graph/index.html"},
-  {"path": "admin/content/articles/", "layer": "authored", "by": "the journalist, historian and other agent roles, one file per article", "from": "the evidence and derived layers at a stated site version and vault commit", "used_on": "articles/index.html"},
-  {"path": "admin/content/external/", "layer": "authored", "by": "other models, credited by name (Perplexity, 22 October 2026)", "from": "their own research, given to this site by the editor; published in full, never cited until captured", "used_on": "readings/index.html"},
-  {"path": "admin/content/briefs/", "layer": "authored", "by": "the editor, and agents writing build briefs and reviews", "from": "voice memos and messages; the site itself", "used_on": "brief/index.html"},
-  {"path": "data/roles.json", "layer": "site", "by": "claude-story-site", "from": "the team, the pipeline and the audiences", "used_on": "team/index.html"},
-  {"path": "data/admin.json", "layer": "site", "by": "dev@php.newsroom", "from": "roles, the board, the vaults", "used_on": "admin/roles/index.html"},
-  {"path": "data/versions.json", "layer": "site", "by": "admin/build/release.sh", "from": "every release", "used_on": "admin/versions.html"},
-  {"path": "data/billing.json", "layer": "site", "by": "claude-story-site", "from": "the meter configuration and the designed model", "used_on": "billing/index.html"},
-  {"path": "data/pipeline.json", "layer": "site", "by": "dev@php.newsroom", "from": "the public repositories and Pages workflows of the newsroom sites", "used_on": "status/index.html"},
-  {"path": "data/source-watch.json", "layer": "evidence", "by": "admin/build/export_watch.py", "from": "the source-watch vault's index, taxonomy, runs and tips: counts and vocabularies, no capture", "used_on": "vaults/source-watch/index.html"},
-  {"path": "data/vaults.json", "layer": "site", "by": "dev@php.newsroom", "from": "the vaults behind this site and how each is opened", "used_on": "vaults/index.html"},
-  {"path": "data/glossary.json", "layer": "authored", "by": "the design agent", "from": "40 terms in plain English, each linked on first use on every page", "used_on": "glossary/index.html"},
-  {"path": "data/interview.json", "layer": "authored", "by": "the editor, interviewed by the design agent", "from": "the editor's answers in his own words", "used_on": "interview/index.html"},
-  {"path": "data/personas.json", "layer": "authored", "by": "the design agent", "from": "fifteen readers by job and technical depth, each with a thirty-second answer and a reading path", "used_on": "start/index.html"},
-  {"path": "data/plain.json", "layer": "derived", "by": "the design agent", "from": "the front page's plain-English questions and moments; every fact cites vault slugs", "used_on": "index.html"},
-  {"path": "data/sections.json", "layer": "site", "by": "admin/build/build.py", "from": "the section ledger: every section hashed on every build, versioned when its reader-facing text changes", "used_on": "versions/index.html"},
-  {"path": "data/seo.json", "layer": "site", "by": "the design agent", "from": "search-engine settings: the Search Console verification token and the social card", "used_on": "index.html"},
-  {"path": "data/items.json", "layer": "site", "by": "admin/build/build.py", "from": "every item a reader can read, with its id, zone, link and the hash of what it says; written by every build", "used_on": "you/index.html"},
-  {"path": "data/feed-sources.json", "layer": "site", "by": "dev@php.newsroom", "from": "the feeds the viewer offers, which allow a browser to read them, checked on 22 October 2026", "used_on": "reader/index.html"},
-  {"path": "data/subscriptions.json", "layer": "site", "by": "dev@php.newsroom", "from": "the subscriptions lane's public configuration: vault id, write-only token, the key requests are encrypted to, the contact address", "used_on": "subscribe/index.html"},
-  {"path": "data/telemetry.json", "layer": "site", "by": "dev@php.newsroom", "from": "the telemetry lane's public configuration", "used_on": "admin/telemetry/index.html"},
-  {"path": "data/telemetry-report.json", "layer": "site", "by": "admin/build/telemetry_drain.py", "from": "the drained telemetry lane, as counts", "used_on": "admin/telemetry/index.html"},
-  {"path": "data/layers.json", "layer": "site", "by": "claude-journalist", "from": "this classification", "used_on": "layers/index.html"}
+  {
+   "path": "data/sources.json",
+   "layer": "evidence",
+   "by": "admin/build/export_vault.py",
+   "from": "every source.json in the vault, with the sha256 of every captured file",
+   "used_on": "sources/index.html"
+  },
+  {
+   "path": "data/vault.json",
+   "layer": "evidence",
+   "by": "admin/build/export_vault.py",
+   "from": "the vault head, its counts and the agents that wrote to it",
+   "used_on": "admin/vault/index.html"
+  },
+  {
+   "path": "data/vault-claims.json",
+   "layer": "evidence",
+   "by": "admin/build/export_vault.py",
+   "from": "claims/<agent>.json in the vault, one file per agent, merged unedited",
+   "used_on": "claims/index.html"
+  },
+  {
+   "path": "data/vault-timeline.json",
+   "layer": "evidence",
+   "by": "admin/build/export_vault.py",
+   "from": "timeline/<agent>.json in the vault, merged unedited",
+   "used_on": "timeline/index.html"
+  },
+  {
+   "path": "data/software.json",
+   "layer": "evidence",
+   "by": "admin/build/export_vault.py",
+   "from": "the NCSC-NL php2shell inventory, parsed row by row at commit cca173c64ec5",
+   "used_on": "affected/software.html"
+  },
+  {
+   "path": "review/code/files.json",
+   "layer": "evidence",
+   "by": "a parser over git show -U0 of the fix commit",
+   "from": "php/php-src commit 3584a98bd: files, hunks and the functions they fall in",
+   "used_on": "review/index.html"
+  },
+  {
+   "path": "data/inventory-history.json",
+   "layer": "evidence",
+   "by": "admin/build/inventory_history.py",
+   "from": "a git clone of NCSC-NL/php2shell: every commit that changed the inventory, counted per status, with every change of status; content-addressed and checked against the vault's own capture at cca173c64ec5. Read from the public repository, not yet captured into the vault",
+   "used_on": "patching/inventory/index.html"
+  },
+  {
+   "path": "data/signals.json",
+   "layer": "derived",
+   "by": "claude-journalist and claude-historian",
+   "from": "the claims, the exploitation and defence data, the inventory and the timeline, arranged as the ladder from exposed to exploited, four signal families and the time of each barrier",
+   "used_on": "signals/index.html"
+  },
+  {
+   "path": "data/claims.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "the vault's notes and per-agent claims, re-traced to primary sources",
+   "used_on": "claims/index.html"
+  },
+  {
+   "path": "data/timeline.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "the vault's notes and per-agent timelines, with every time conversion marked",
+   "used_on": "timeline/index.html"
+  },
+  {
+   "path": "data/numbers.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "the scale figures in the captures, with what each measures",
+   "used_on": "numbers/index.html"
+  },
+  {
+   "path": "data/agencies.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "each agency's captured advisory, read for its offline and exploitation stance",
+   "used_on": "agencies/index.html"
+  },
+  {
+   "path": "data/affected.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "the CVE records, advisories and agency pages: versions, SAPIs, mitigations",
+   "used_on": "affected/index.html"
+  },
+  {
+   "path": "data/exploitation.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "every exploitation signal in the captures, in order",
+   "used_on": "exploitation/index.html"
+  },
+  {
+   "path": "data/impact.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "the offline and compromise reports in the captures, as two ledgers",
+   "used_on": "impact/index.html"
+  },
+  {
+   "path": "data/defence.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "the WAF vendors' posts and the community rule sets",
+   "used_on": "defence/index.html"
+  },
+  {
+   "path": "data/history.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "ten earlier CVE records and the KEV catalog captured on 22 October",
+   "used_on": "context/index.html"
+  },
+  {
+   "path": "data/code.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "a clone of php/php-src: the fix commit, the mechanism, the backport",
+   "used_on": "code/index.html"
+  },
+  {
+   "path": "data/review.json",
+   "layer": "derived",
+   "by": "a parser for the code layer; claude-story-site for the remediation layer",
+   "from": "the fix commit's diff, its message and the two GitHub advisories",
+   "used_on": "review/index.html"
+  },
+  {
+   "path": "data/actors.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "the parties named in the claims",
+   "used_on": "actors/index.html"
+  },
+  {
+   "path": "data/story.json",
+   "layer": "derived",
+   "by": "claude-story-site",
+   "from": "the claims, as the front page's lead, what is established and what is not",
+   "used_on": "index.html"
+  },
+  {
+   "path": "data/questions.json",
+   "layer": "derived",
+   "by": "librarian@php.newsroom",
+   "from": "the questions readers ask, each short answer re-traced to claims and captured sources",
+   "used_on": "questions/index.html"
+  },
+  {
+   "path": "data/readings.json",
+   "layer": "derived",
+   "by": "claude-journalist",
+   "from": "other models' notes, compared point by point with the claims and captured sources",
+   "used_on": "readings/index.html"
+  },
+  {
+   "path": "data/patching.json",
+   "layer": "derived",
+   "by": "claude-journalist",
+   "from": "the PHP project's releases and backport branches, and the NCSC-NL inventory's own rows, named exactly and checked by the gate",
+   "used_on": "patching/index.html"
+  },
+  {
+   "path": "data/graph.json",
+   "layer": "derived",
+   "by": "admin/build/build.py",
+   "from": "the claims and timeline rows and the sources they cite, generated at build",
+   "used_on": "graph/index.html"
+  },
+  {
+   "path": "admin/content/articles/",
+   "layer": "authored",
+   "by": "the journalist, historian and other agent roles, one file per article",
+   "from": "the evidence and derived layers at a stated site version and vault commit",
+   "used_on": "articles/index.html"
+  },
+  {
+   "path": "admin/content/external/",
+   "layer": "authored",
+   "by": "other models, credited by name (Perplexity, 22 October 2026)",
+   "from": "their own research, given to this site by the editor; published in full, never cited until captured",
+   "used_on": "readings/index.html"
+  },
+  {
+   "path": "admin/content/briefs/",
+   "layer": "authored",
+   "by": "the editor, and agents writing build briefs and reviews",
+   "from": "voice memos and messages; the site itself",
+   "used_on": "brief/index.html"
+  },
+  {
+   "path": "data/roles.json",
+   "layer": "site",
+   "by": "claude-story-site",
+   "from": "the team, the pipeline and the audiences",
+   "used_on": "team/index.html"
+  },
+  {
+   "path": "data/admin.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "roles, the board, the vaults",
+   "used_on": "admin/roles/index.html"
+  },
+  {
+   "path": "data/versions.json",
+   "layer": "site",
+   "by": "admin/build/release.sh",
+   "from": "every release",
+   "used_on": "admin/versions.html"
+  },
+  {
+   "path": "data/billing.json",
+   "layer": "site",
+   "by": "claude-story-site",
+   "from": "the meter configuration and the designed model",
+   "used_on": "billing/index.html"
+  },
+  {
+   "path": "data/pipeline.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the public repositories and Pages workflows of the newsroom sites",
+   "used_on": "status/index.html"
+  },
+  {
+   "path": "data/source-watch.json",
+   "layer": "evidence",
+   "by": "admin/build/export_watch.py",
+   "from": "the source-watch vault's index, taxonomy, runs and tips: counts and vocabularies, no capture",
+   "used_on": "vaults/source-watch/index.html"
+  },
+  {
+   "path": "data/vaults.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the vaults behind this site and how each is opened",
+   "used_on": "vaults/index.html"
+  },
+  {
+   "path": "data/glossary.json",
+   "layer": "authored",
+   "by": "the design agent",
+   "from": "40 terms in plain English, each linked on first use on every page",
+   "used_on": "glossary/index.html"
+  },
+  {
+   "path": "data/interview.json",
+   "layer": "authored",
+   "by": "the editor, interviewed by the design agent",
+   "from": "the editor's answers in his own words",
+   "used_on": "interview/index.html"
+  },
+  {
+   "path": "data/personas.json",
+   "layer": "authored",
+   "by": "the design agent",
+   "from": "fifteen readers by job and technical depth, each with a thirty-second answer and a reading path",
+   "used_on": "start/index.html"
+  },
+  {
+   "path": "data/plain.json",
+   "layer": "derived",
+   "by": "the design agent",
+   "from": "the front page's plain-English questions and moments; every fact cites vault slugs",
+   "used_on": "index.html"
+  },
+  {
+   "path": "data/sections.json",
+   "layer": "site",
+   "by": "admin/build/build.py",
+   "from": "the section ledger: every section hashed on every build, versioned when its reader-facing text changes",
+   "used_on": "versions/index.html"
+  },
+  {
+   "path": "data/seo.json",
+   "layer": "site",
+   "by": "the design agent",
+   "from": "search-engine settings: the Search Console verification token and the social card",
+   "used_on": "index.html"
+  },
+  {
+   "path": "data/items.json",
+   "layer": "site",
+   "by": "admin/build/build.py",
+   "from": "every item a reader can read, with its id, zone, link and the hash of what it says; written by every build",
+   "used_on": "you/index.html"
+  },
+  {
+   "path": "data/feed-sources.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the feeds the viewer offers, which allow a browser to read them, checked on 22 October 2026",
+   "used_on": "reader/index.html"
+  },
+  {
+   "path": "data/subscriptions.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the subscriptions lane's public configuration: vault id, write-only token, the key requests are encrypted to, the contact address",
+   "used_on": "subscribe/index.html"
+  },
+  {
+   "path": "data/telemetry.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the telemetry lane's public configuration",
+   "used_on": "admin/telemetry/index.html"
+  },
+  {
+   "path": "data/telemetry-report.json",
+   "layer": "site",
+   "by": "admin/build/telemetry_drain.py",
+   "from": "the drained telemetry lane, as counts",
+   "used_on": "admin/telemetry/index.html"
+  },
+  {
+   "path": "data/layers.json",
+   "layer": "site",
+   "by": "claude-journalist",
+   "from": "this classification",
+   "used_on": "layers/index.html"
+  },
+  {
+   "path": "data/synthetic.json",
+   "layer": "site",
+   "by": "admin/synthetic/run.py summarise (synthetic@php.newsroom)",
+   "from": "each synthetic reader's vault: its latest run and review, with no keys",
+   "used_on": "admin/synthetic/index.html"
+  }
  ]
 }
