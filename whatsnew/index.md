@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.5.1 · 22 October 2026new since your last visit
+
+the team: every member, human and agent, with a page (role, what they own, tasks, what they shipped), Vicky joins as project manager and the conductor as conductor and comms; the team coordinates through three private vaults, the conductor vault with an append lane, the issues vault (Issues-FS-lite, the board moved into it) and the mail vault (Email-FS-lite); /team/channels/ and the run
+
+No reader-facing section changed in this release.
+
 ## v0.5.0 · 22 October 2026new since your last visit
 
 Now, the phone app (/now/): what you need to know for one, five, ten or thirty minutes against what you read before; a deterministic mode from the data and an agentic one where Sonnet writes your briefing and answers in a chat and Gemini draws an infographic, with your OpenRouter key kept in your own vault; the newsroom's vault library vendored for it
@@ -330,4 +336,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.5.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

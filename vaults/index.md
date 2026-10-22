@@ -6,7 +6,7 @@ Every vault this site is built from: the evidence vault and the source watch, bo
 
 # The vaults behind this site
 
-This site is rebuilt from vaults, never written by hand. 5 vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; and one more is private and never published, because it holds other people's pages. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
+This site is rebuilt from vaults, never written by hand. 8 vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
 
 Every vault behind this site: what each holds, who writes to it, and how to open it. Three kinds of credential appear here. A vault key reads and writes; it is never published. A read key reads only and cannot be turned into a vault key; the two public vaults publish theirs. An append token adds rows to one lane and cannot read anything; the telemetry lane publishes its token so every page can write to it.
 
@@ -64,8 +64,38 @@ How other outlets presented the story: 24 pages (the BBC live page, CNN, The Reg
 
 **Not published:** the vault key. The review written from it is published in the repository; its findings become facts on this site only once they cite a capture.
 
+## [The conductor vault](../team/channels/index.html#conductor) private, with an append lane
+
+**Vault** `5iwos28w` ·
+
+Where the team is: the roster, the plan that opens every run and the digest that closes it, the broadcasts, and what members send the conductor through its lane, one token per member, each message encrypted to the conductor's key.
+
+**Written by** conductor@php.newsroom only; every member of the team reads it. Data on this site: [data/team.json](../data/team.json).
+
+**Not published:** the vault key. Its read key goes to members privately; the lane's tokens are not published.
+
+## [The issues vault](../team/channels/index.html#issues) private
+
+**Vault** `zjruy9vk` ·
+
+The team's tasks as files (Issues-FS-lite): one queue per member with open, blocked and done, one markdown card per task. The board on this site is a snapshot of it.
+
+**Written by** each member of the team, only inside its own queue. Data on this site: [data/admin.json](../data/admin.json).
+
+**Not published:** the vault key. Its key goes to members privately.
+
+## [The mail vault](../team/channels/index.html#mail) private
+
+**Vault** `fmb2tpl2` ·
+
+The team's messages (Email-FS-lite): a mailroom, an inbox, a done folder and an outbox per member, and each member's session notes.
+
+**Written by** each member of the team, in its own folders and other members' mailrooms. Data on this site: [data/team.json](../data/team.json).
+
+**Not published:** the vault key. Its key goes to members privately.
+
 The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgit.ai network, published the same way, are at [sgit.ai's vaults](https://sgit.ai/demos/vaults/index.html).
 
 
 ---
-site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.5.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html

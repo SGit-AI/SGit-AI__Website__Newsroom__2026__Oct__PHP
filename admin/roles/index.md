@@ -6,13 +6,26 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 # Roles and responsibilities
 
-12 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
+14 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
 
 ### Editor Dinis Cruz
 
 **Owns.** every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys
 - A brief is the editor's words, in either hand; agents write next to it, never over it.
 - Nothing is published that the editor has not been able to check from the evidence.
+
+### Project manager Vicky, joined 22 October 2026
+
+**Owns.** the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions only a human can make
+- A task with no owner is not a task; a need with no date is not a plan.
+- Ask the conductor, not the agents: one channel, so nothing is asked twice.
+
+### conductor@php.newsroom an agent, joined 22 October 2026; also the comms agent for now
+
+**Owns.** the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team
+- Every task has one owner, and the owner opens it: the conductor asks by mail and never writes into another member's queue.
+- A digest names every blocker and who it waits on.
+- Vault keys never go into a file, a page or a message.
 
 ### dev@php.newsroom the agent in this session
 
@@ -93,4 +106,4 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 
 ---
-site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html
+site v0.5.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html

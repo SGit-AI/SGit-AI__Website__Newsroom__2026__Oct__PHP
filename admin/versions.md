@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.0. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.1. The data is [data/versions.json](../data/versions.json).
+
+### v0.5.1 · 2026-10-22
+
+the team: every member, human and agent, with a page (role, what they own, tasks, what they shipped), Vicky joins as project manager and the conductor as conductor and comms; the team coordinates through three private vaults, the conductor vault with an append lane, the issues vault (Issues-FS-lite, the board moved into it) and the mail vault (Email-FS-lite); /team/channels/ and the run
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.5.0 · 2026-10-22
 
@@ -242,4 +250,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.5.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

@@ -105,6 +105,9 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Subscribe: what changed, sent to you](../subscribe/index.html): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.
 - [The vaults behind this site](../vaults/index.html#coverage):
+- [How the team talks: three vaults and one run](../team/channels/index.html#conductor):
+- [How the team talks: three vaults and one run](../team/channels/index.html#issues):
+- [How the team talks: three vaults and one run](../team/channels/index.html#mail):
 
 ### Stories
 - [All stories, written here](../articles/index.html):
@@ -116,7 +119,7 @@ An article a reader has seen is listed here until a collector captures it into t
 
 ### About
 - [The method: capture, hash, claim, build, gate](../method/index.html): How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.
-- [The team: the editor, the pipeline and the agents](../team/index.html): Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the 15 audiences.
+- [The team: the people, the agents and how they work together](../team/index.html): Every member of the team that runs this site, 2 people and 15 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 15 audiences.
 - [The billing model: what runs and what is designed](../billing/index.html): How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
 - [Your reading account](../account/index.html): The balance, history and receipts of your reading on this site, kept in your browser.
 - [The brief: a written request and two voice memos](../brief/index.html): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.
@@ -139,4 +142,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.5.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

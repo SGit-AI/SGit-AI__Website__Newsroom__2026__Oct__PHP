@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 68 items, 47 open, 20 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 75 items, 53 open, 21 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -78,9 +78,16 @@ The work, as rows in `data/admin.json`: 68 items, 47 open, 20 done. An item is a
 | 065 | First live run of the agentic mode with the editor's OpenRouter key: check that every sentence Sonnet writes cites an item, and that the infographic adds no number of its ownFrom the brief on the phone app (22 October). | open | editor |  |
 | 066 | Open the phone app's vault with a passkey, through the newsroom's door design, so a phone needs no pasted keyFrom the brief on the phone app (22 October). | open | dev |  |
 | 067 | Draw the semantic graph on the phone: what changed, and what it connects to, as nodes and edgesFrom the brief on the phone app (22 October). | open | cartographer |  |
+| 069 | Map every member of the team, human and agent, with a page each; the three coordination vaults (conductor, issues, mail); the board moved into the issues vault; the conductor's append lane, one token per member, and its drain (admin/build/conductor_drain.py), tested end to end | done | conductor | 0.5.1 |
+| 070 | Decide how each member receives the coordination vaults' keys: the conductor vault's read key, the issues and mail vaults' keys, each member's append token (sealed per member on pki.sgit.ai, or handed in each session's launch prompt)Until this is decided, the conductor holds every key and members are reached through the editor. | open | editor |  |
+| 071 | Set the cadence of the scheduled run (open by the conductor, work by the agents, close by the conductor) and which agents take part in the first one | open | editor |  |
+| 072 | Review the team map: each member's page, role, owners and status; correct anything wrong by mail to the conductor | open | vicky |  |
+| 073 | Prioritise the open board: the first run's top five, and which needs the editor must answer first | open | vicky |  |
+| 074 | First run: the plan, the assignments as mail to each member, the digest at the close, and the site's snapshot of the team after it | open | conductor |  |
+| 075 | A digest on the site at every close: the conductor vault's status (what moved, what is blocked and on whom, what the humans must decide) as a page under /team/ | open | conductor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.5.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

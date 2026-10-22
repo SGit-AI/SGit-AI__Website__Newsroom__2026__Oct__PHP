@@ -1,6 +1,15 @@
 {
- "current": "0.5.0",
+ "current": "0.5.1",
  "versions": [
+  {
+   "version": "0.5.1",
+   "date": "2026-10-22",
+   "title": "the team: every member, human and agent, with a page (role, what they own, tasks, what they shipped), Vicky joins as project manager and the conductor as conductor and comms; the team coordinates through three private vaults, the conductor vault with an append lane, the issues vault (Issues-FS-lite, the board moved into it) and the mail vault (Email-FS-lite); /team/channels/ and the run",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.5.0",
    "date": "2026-10-22",

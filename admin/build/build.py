@@ -970,29 +970,120 @@ def build_method():
 '''
     page('method/index.html', 'The method: capture, hash, claim, build, gate', 'How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.', body, kind='site', topics='method provenance')
 
+TEAM = load('team')
+GROUP_AV = {'humans': 'decide', 'coordination': 'communicate', 'site': 'act', 'evidence': 'understand', 'writing': 'study', 'testing': 'study'}
+KIND_LABEL = {'human': 'human', 'agent': 'agent', 'role': 'role, no agent of its own yet'}
+
+def member_tasks(mid):
+    owners = TEAM['board_owners']
+    return [b for b in D['admin']['board'] if owners.get(b['owner']) == mid]
+
+def member_initials(m):
+    w = re.findall(r'[A-Za-z]+', m['alias'].lstrip('@'))
+    caps = re.findall(r'[A-Z]', m['alias'])
+    return (''.join(caps[:2]) if len(caps) >= 2 else (w[0][:2] if w else '?')).upper()
+
+def member_card(m, depth):
+    t = member_tasks(m['id']); st = Counter(b['status'] for b in t)
+    counts = f'{st.get("open", 0)} open' + (f', {st["waiting"]} waiting' if st.get('waiting') else '') + f', {st.get("done", 0)} done'
+    return (f'<a class="door door-{GROUP_AV[m["group"]]}" id="{E(m["id"])}" href="{"../" * depth}team/{E(m["id"])}/index.html">'
+            f'<span class="dh"><span class="av av-{GROUP_AV[m["group"]]}">{E(member_initials(m))}</span><span><b>{E(m["name"])}</b>'
+            f'<small>{E(m["alias"])} &middot; {E(m["role"])}</small></span></span>'
+            f'<span class="dq">{E(m["summary"])}</span>'
+            f'<span class="dm"><span>{E(KIND_LABEL[m["kind"]] if m["status"] == "active" else m["status"])}</span><span>{counts}</span></span></a>')
+
+def task_table(rows, depth):
+    if not rows: return '<p class="small">None.</p>'
+    return table(['#', 'Task', 'Status', 'Shipped in'], [[E(b['id']), E(b['title']) + (f'<div class="note">{E(b["note"])}</div>' if b.get('note') else ''), pill(b['status']), E(b.get('version') or '')] for b in rows], 'board')
+
 def build_team():
-    r = D['roles']
+    r = D['roles']; T = TEAM; M = T['members']
+    by_id = {m['id']: m for m in M}
+    allt = [b for m in M for b in member_tasks(m['id'])]
+    st = Counter(b['status'] for b in allt)
+    stats = ''.join(stat(n, l) for n, l in [(len(M), 'members'), (sum(m['kind'] == 'human' for m in M), 'humans'), (sum(m['kind'] == 'agent' for m in M), 'agents'),
+                                            (sum(m['kind'] == 'role' for m in M), 'roles not yet filled'), (st.get('open', 0), 'open tasks'), (st.get('waiting', 0), 'waiting'), (st.get('done', 0), 'done')])
+    groups = ''.join(f'<section id="g-{E(g["id"])}"><h3>{E(g["name"])}</h3><p class="small">{E(g["about"])}</p><div class="doors">{"".join(member_card(m, 1) for m in M if m["group"] == g["id"])}</div></section>' for g in T['groups'])
+    run = ''.join(f'<li><b>{E(p["name"])}</b> ({E(p["who"])}). {E(p["what"])}</li>' for p in T['cycle']['phases'])
     pipe = table(['Step', 'What', 'Who', 'How'], [[E(str(p['step'])), f'<b>{E(p["name"])}</b>', E(p['who']), E(p['what'])] for p in r['pipeline']])
-    agents = ''.join(f'<article class="role" id="{E(a["id"])}"><h3>{E(a["name"])} <code>{E(a["id"])}</code></h3><p><b>Beat.</b> {E(a["beat"])}</p><p><b>The rule it enforces.</b> {E(a["rule"])}</p><p><b>The mistake behind the rule.</b> {E(a["mistake"])}</p></article>' for a in r['agents'])
     auds = ''.join(f'<li><a href="../briefings/{E(a["id"])}/index.html"><b>{E(a["name"])}</b></a>: {E(a["question"])}</li>' for a in r['audiences'])
+    humans = ' and '.join(f'<a href="{E(m["id"])}/index.html">{E(m["name"])}</a> ({E(m["role"].lower())})' for m in M if m['kind'] == 'human')
     body = f'''
-<h1>The team: one editor, a pipeline, and the agents on it</h1>
-<p class="lead">The site is built and run by one person and a set of software agents, and this page is written for the agents. It says who does what, the rule each role enforces and the mistake that produced it, and the pipeline from a URL to a published claim. A new agent should be able to read this page and one role and begin.</p>
-{section("editor", "The editor", f'<p><b>{E(r["human"]["name"])}</b>, {E(r["human"]["role"]).lower()}. {E(r["human"]["does"])} The brief that started this site is two voice memos and a message, published in full on <a href="../brief/index.html">the brief</a>.</p>')}
-{section("pipeline", "The pipeline", pipe)}
-{section("roles", "The roles", f'<div class="roles">{agents}</div>')}
+<h1>The team: two people and the agents that work with them</h1>
+<p class="lead">This site is built and run by {humans}, and a team of software agents. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is <a href="../data/team.json">data/team.json</a>, kept by <a href="conductor/index.html">the conductor</a>.</p>
+<div class="stats">{stats}</div>
+{section("members", "Who is on it", groups)}
+{section("run", "How the team runs", f'<p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
+{section("pipeline", "The pipeline", pipe, "How a URL becomes a published claim, and who does each step.")}
 {section("audiences", "The audiences", f'<ul>{auds}</ul>', "Each briefing is a role too: a reader whose question the site answers in one page.")}
-{section("rules", "The rules every role shares", '''<ul>
+{section("rules", "The rules every member shares", '''<ul>
 <li><b>Capture, don't paraphrase.</b> A page you summarised but did not capture does not exist.</li>
 <li><b>One file per agent per concern.</b> So a merge never asks a human to choose between two agents' edits.</li>
+<li><b>Write only in your own folder.</b> Your queue, your mailbox, your claims file. To ask another member for work, send it mail; the owner opens the task.</li>
 <li><b>Count, don't remember.</b> Every number on a page is computed from the thing it counts.</li>
 <li><b>Five words, defined once.</b> Confirmed, reported, disputed, contradicted, unverified.</li>
-<li><b>State the gap.</b> A blocked fetch, a missing primary source and an unverified quote are all published, not hidden.</li>
+<li><b>State the gap.</b> A blocked fetch, a missing primary source, an unverified quote and a blocked task are all published, not hidden.</li>
 <li><b>Read keys yes, vault keys never.</b> And this vault's read key is not published either, because it holds third-party pages.</li>
 <li><b>Verify live.</b> A release is done when the live site serves the version, not when the push succeeds.</li>
 </ul>''')}
 '''
-    page('team/index.html', 'The team: the editor, the pipeline and the agents', f'Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the {len(r["audiences"])} audiences.', body, kind='site', topics='team agents')
+    page('team/index.html', 'The team: the people, the agents and how they work together', f'Every member of the team that runs this site, {sum(m["kind"] == "human" for m in M)} people and {len(M) - sum(m["kind"] == "human" for m in M)} agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the {len(r["audiences"])} audiences.', body, kind='site', topics='team agents')
+
+    legacy = {a['id']: a for a in r['agents']}
+    legacy.update({'story-site': legacy.get('claude-story-site', {}), 'newsroom-lead': legacy.get('claude-newsroom-lead', {})})
+    for m in M:
+        t = member_tasks(m['id'])
+        opn = [b for b in t if b['status'] == 'open']; wait = [b for b in t if b['status'] == 'waiting']; done = [b for b in t if b['status'] == 'done']
+        lg = legacy.get(m['id']) or {}
+        home = ''.join(f'<a class="door door-{GROUP_AV[m["group"]]}" href="../../{E(h)}"><b>{E(n)}</b><span>{E(h)}</span></a>' for h, n in m['home'])
+        addr = m.get('address') or (m['mail'] + '@php.newsroom')
+        facts = [('Kind', E(KIND_LABEL[m['kind']])), ('Status', E(m['status'])), ('Alias', f'<code>{E(m["alias"])}</code>'), ('Known as', f'<code>{E(addr)}</code>')]
+        if m.get('joined'): facts.append(('Joined', E(m['joined'])))
+        kv = ' &middot; '.join(f'<b>{k}</b> {v}' for k, v in facts)
+        mistake = f'<p><b>The mistake behind the rules.</b> {E(lg["mistake"])}</p>' if lg.get('mistake') else ''
+        beat = f'<p><b>Beat.</b> {E(lg["beat"])}</p>' if lg.get('beat') else ''
+        achieved = ''.join(f'<li>{E(x)}</li>' for x in m['achieved'])
+        waiting_on = ''
+        if m['kind'] == 'human' and opn:
+            waiting_on = section('waiting', 'Waiting on ' + E(m['name'].split()[0]), task_table(opn, 2), 'Decisions and work only a person can supply. Each is a card in this member\'s queue in the issues vault, and the conductor names it in every digest until it is answered.')
+        tasks = '' if (m['kind'] == 'human' and opn) else section('tasks', 'Open tasks', task_table(opn, 2))
+        body = f'''
+<p class="crumb"><a href="../index.html">The team</a> / {E(m["name"])}</p>
+<h1>{E(m["name"])}: {E(m["role"].lower() if m["kind"] != "human" else m["role"])}</h1>
+<p class="lead">{E(m["summary"])}</p>
+<p class="kv">{kv}</p>
+{beat}
+{section("owns", "What they own", "<ul>" + "".join(f"<li>{E(x)}</li>" for x in m["owns"]) + "</ul>")}
+{section("rules", "The rules they work by", "<ul>" + "".join(f"<li>{E(x)}</li>" for x in m["rules"]) + "</ul>" + mistake)}
+{section("home", "Their home on this site", f'<div class="doors">{home}</div>')}
+{waiting_on}
+{tasks}
+{section("blocked", "Waiting on someone else", task_table(wait, 2)) if wait else ''}
+{section("achieved", "What they have done", (f'<ul>{achieved}</ul>' if achieved else '<p class="small">Nothing yet.</p>') + (f'<h3>Closed on the board</h3>{task_table(done, 2)}' if done else ''))}
+{section("reach", "How to reach them", f'<ul><li><b>Mail</b>: an <code>.eml</code> in <code>mail/mailroom/{E(m["mail"])}/</code> in the mail vault (<code>fmb2tpl2</code>).</li><li><b>Their queue</b>: <code>issues/{E(m["id"])}/open|blocked|done/</code> in the issues vault (<code>zjruy9vk</code>). Read it; do not write in it.</li><li><b>Their page in the conductor vault</b>: <code>team/members/{E(m["id"])}.md</code>.</li></ul><p class="small">What the three vaults are and who holds their keys: <a href="../channels/index.html">how the team talks</a>.</p>')}
+'''
+        page(f'team/{m["id"]}/index.html', f'{m["name"]}, {m["role"].lower() if m["kind"] != "human" else m["role"]}: the team', f'{m["name"]} ({m["alias"]}) on the team behind this site: {m["summary"]}', body, kind='site', topics='team agents')
+
+    chans = ''.join(f'''<section class="vcard" id="{E(c["id"])}"><h2>{E(c["name"])} <span class="st">private</span></h2>
+<p class="kv"><b>Vault</b> <code>{E(c["vault"])}</code> &middot; <b>written by</b> {E(c["writes"])} &middot; <b>read by</b> {E(c["reads"])}</p>
+<p>{E(c["holds"])}</p><p class="small"><b>How.</b> {E(c["how"])}</p></section>''' for c in T['channels'])
+    cond = by_id['conductor']
+    body = f'''
+<p class="crumb"><a href="../index.html">The team</a> / How the team talks</p>
+<h1>How the team talks: three vaults and one run</h1>
+<p class="lead">The members of this team, two people and the agents, do not share a chat. They coordinate through three encrypted vaults, using two protocols from the sgit.ai estate: Email-FS-lite for messages and Issues-FS-lite for tasks. Every message and every change of a task is a file, and every cycle is one commit, so the history of the vaults is the record of who asked for what, who took it and when it was done.</p>
+{chans}
+{section("run", "The run", f'<p>{E(T["cycle"]["about"])}</p><ol>{run}</ol>')}
+{section("protocols", "The two protocols", '''<ul>
+<li><b>Email-FS-lite.</b> To send, a member writes an <code>.eml</code> file into the recipient's <code>mailroom/</code> and a copy into its own <code>outbox/</code>; the recipient moves it into its <code>inbox/</code>, and into <code>done/</code> when the work is finished. Messages are never edited or deleted, only moved. <a href="https://sgraph.ai/en-gb/library/how-it-works/email-fs-lite">The reference</a>.</li>
+<li><b>Issues-FS-lite.</b> Each member's tasks are markdown files in its own <code>open/</code>, <code>blocked/</code> and <code>done/</code> folders; opening, blocking, unblocking and closing a task are four moves. Anyone may read any queue; only its owner writes in it. <a href="https://issues-fs.sgit.ai/lite/index.html">The reference</a>.</li>
+<li><b>The conductor's lane.</b> A write-only channel on the conductor vault: a member encrypts a message to the conductor's public key (<code>sha256:742d442b1c5b07bd</code>) and appends it with its own token, which can write and cannot read. The conductor drains it at every run with <code>admin/build/conductor_drain.py</code>.</li>
+</ul>''')}
+{section("keys", "Keys", '<p>None of the three vaults is published. The conductor holds their keys; every member gets the conductor vault\'s read key and the keys to the issues and mail vaults privately, and its own lane token, in the way the editor decides (<a href="../../admin/board/index.html">board</a> 070). No key or token is on this site or in its repository.</p>')}
+{section("board", "The board", f'<p>The site\'s <a href="../../admin/board/index.html">board</a> moved into the issues vault on 22 October 2026: each row became a card in its owner\'s queue. The vault is now the truth; <code>admin/build/issues_sync.py import</code> writes the board on this site from it before a release, so the board here is a snapshot as of the release that built it.</p>')}
+<p>The channels are kept by <a href="../{E(cond["id"])}/index.html">{E(cond["name"])}</a>.</p>
+'''
+    page('team/channels/index.html', 'How the team talks: three vaults and one run', 'The three private vaults the team coordinates through (the conductor vault, Issues-FS-lite tasks and Email-FS-lite mail), the run that opens and closes every scheduled cycle, and the rules.', body, kind='site', topics='team agents')
 
 def build_billing():
     b = D['billing']
@@ -1190,6 +1281,11 @@ def build_llms():
     for sid, sec in LEDGER['sections'].items():
         if sec['kind'] != 'fact':
             lines.append(f'- [{sec["title"]}]({BASE_URL}/versions/{sid}/index.md): {len(sec["versions"])} versions')
+    lines.append('')
+    lines.append('## The team, one page per member')
+    lines.append(f'- [How the team talks: three vaults and one run]({BASE_URL}/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules')
+    for m in TEAM['members']:
+        lines.append(f'- [{m["name"]}]({BASE_URL}/team/{m["id"]}/index.md): {m["role"]}; {m["summary"]}')
     lines.append('')
     lines.append('## Parties, one page each')
     for a in D['actors']:
@@ -2040,7 +2136,7 @@ def build_vaults():
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests{"; and one more is private and never published, because it holds other people's pages" if any(x["access"] == "private" for x in VS) else ""}. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
