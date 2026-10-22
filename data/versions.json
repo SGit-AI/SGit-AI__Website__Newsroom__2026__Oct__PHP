@@ -1,6 +1,15 @@
 {
- "current": "0.5.2",
+ "current": "0.5.3",
  "versions": [
+  {
+   "version": "0.5.3",
+   "date": "2026-10-22",
+   "title": "guidance for every agent, AGENTS.md and /admin/agents/: push to your own branch after every step that builds and take in dev often, dev@php.newsroom carries branches into dev and releases; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements (no secret in any repository, secrets sealed to pki.sgit.ai keys, readers' data in their browser or their own vault, untrusted input shown as text, a model given data not instructions)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.5.2",
    "date": "2026-10-22",

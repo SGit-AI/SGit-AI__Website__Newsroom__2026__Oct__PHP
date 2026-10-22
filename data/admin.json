@@ -693,6 +693,19 @@
    "title": "The weaponisation clock: watch for a merged Metasploit module, an exploiting nuclei template, a KEV listing, an EPSS step, upstream Sigma/ET/Snort rules, a second patch or regression; write the next cyber piece when one moves",
    "status": "open",
    "owner": "cyber@php.newsroom"
+  },
+  {
+   "id": "080",
+   "title": "Guidance for every agent (AGENTS.md, /admin/agents/): push to your own branch early and often, dev@ carries it into dev; quality from coding.sgit.ai, NFRs from nfrs.sgit.ai, the security requirements",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.5.3"
+  },
+  {
+   "id": "081",
+   "title": "Send AGENTS.md to every member through the conductor vault's broadcast, and ask each to confirm they read it",
+   "status": "open",
+   "owner": "conductor"
   }
  ],
  "evidence_vault": {

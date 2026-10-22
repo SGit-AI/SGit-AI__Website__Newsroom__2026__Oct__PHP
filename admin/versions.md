@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.2. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.3. The data is [data/versions.json](../data/versions.json).
+
+### v0.5.3 · 2026-10-22
+
+guidance for every agent, AGENTS.md and /admin/agents/: push to your own branch after every step that builds and take in dev often, dev@php.newsroom carries branches into dev and releases; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements (no secret in any repository, secrets sealed to pki.sgit.ai keys, readers' data in their browser or their own vault, untrusted input shown as text, a model given data not instructions)
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.5.2 · 2026-10-22
 
@@ -258,4 +266,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.5.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

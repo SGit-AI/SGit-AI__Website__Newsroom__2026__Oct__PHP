@@ -60,6 +60,8 @@ actors/woodward/index.html
 actors/woodward/index.md
 actors/zelenka/index.html
 actors/zelenka/index.md
+admin/agents/index.html
+admin/agents/index.md
 admin/board/index.html
 admin/board/index.md
 admin/briefs/index.html
