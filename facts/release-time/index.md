@@ -74,4 +74,4 @@ Sources: openwall-oss-security-2026-10-20-34, daubois-blog-php2shell-rumors, cer
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/release-time/index.html
+site v0.5.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/release-time/index.html

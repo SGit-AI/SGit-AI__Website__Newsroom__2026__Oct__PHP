@@ -97,4 +97,4 @@ The story behind this page is [Why can't every version of PHP just be patched?](
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/patching/index.html
+site v0.5.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/patching/index.html

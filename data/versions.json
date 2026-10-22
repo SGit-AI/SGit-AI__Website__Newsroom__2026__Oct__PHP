@@ -1,6 +1,15 @@
 {
- "current": "0.5.5",
+ "current": "0.5.6",
  "versions": [
+  {
+   "version": "0.5.6",
+   "date": "2026-10-22",
+   "title": "who reads this site: the telemetry lane drained again, 235 anonymous events from 161 sessions on 22 October; the subscriptions lane drained, nothing waiting",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.5.5",
    "date": "2026-10-22",

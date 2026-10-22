@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.5.6 · 22 October 2026new since your last visit
+
+who reads this site: the telemetry lane drained again, 235 anonymous events from 161 sessions on 22 October; the subscriptions lane drained, nothing waiting
+
+No reader-facing section changed in this release.
+
 ## v0.5.5 · 22 October 2026new since your last visit
 
 two more branches carried in: security@php.newsroom's first pass (the security requirements, security_check.py in the gate and in release.sh, hardened build, workflows and drains, the rules of engagement for keys, the root pinned in CLAUDE.md; /admin/keys/ waits for data/keys.json) and the fact-check desk's run 1 (all 70 claims graded against the vault, 10 contradictions, /factcheck/)
@@ -365,4 +371,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.5.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
