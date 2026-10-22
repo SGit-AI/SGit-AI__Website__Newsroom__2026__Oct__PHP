@@ -219,9 +219,19 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# credentials tier and vault clones: never committed
+# credentials tier and vault clones: never committed (the site publishes the whole tree)
 .sg_vault/
 *.sg_vault*
+.sg-send/
+lane.json
+pki-passphrase
+keys*.json
+subscribers.json
+requests/*.jsonl
+drain/*.jsonl
+*.pem
+*.key
+.env
 
 # the build scripts are source, not output
 !admin/build/

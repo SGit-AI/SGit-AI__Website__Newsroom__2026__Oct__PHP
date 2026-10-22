@@ -35,6 +35,17 @@ if D['vault'].get('latest_capture'):
 
 E = html.escape
 
+def J(o, **kw):
+    """JSON for inside a <script> element: '<', '>' and '&' as \\u escapes, so no string in the data can close the element."""
+    return json.dumps(o, **kw).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+
+def U(u, fallback='#'):
+    """An href from data, escaped. Only http(s), mailto and scheme-less (relative or fragment) URLs pass; javascript:, data: and the rest become the fallback."""
+    u = str(u or '').strip()
+    if re.match(r'(https?://|mailto:)', u, re.I) or (u and ':' not in re.split(r'[/?#]', u, maxsplit=1)[0]):
+        return E(u)
+    return E(fallback)
+
 ARTICLES_DIR = os.path.join(ROOT, 'admin', 'content', 'articles')
 
 def load_articles():
@@ -192,7 +203,7 @@ NAV = [
     ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'), ('admin/agents/index.html', 'Guidance for agents'),
-               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'), ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
+               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
 ]
 
 PAGES = []  # (path, title, description) in order, for llms.txt
@@ -228,7 +239,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
         'links2': {'newsroom': 'account/index.html', 'personas': 'account/index.html'},
         'root': up,
     }
-    meter_json = json.dumps(meter_cfg, sort_keys=True, separators=(',', ':'))
+    meter_json = J(meter_cfg, sort_keys=True, separators=(',', ':'))
     page_meter = '' if PRICE_TYPES[kind]['base'] == 0 else f'<sg-meter view="page" quiet kind="{E(kind)}" date="{E(date or STORY["data_as_of"][:10])}" topics="{E(topics)}" title="{E(title)}"></sg-meter>' + (FRESHNESS_JS if PRICE_TYPES[kind]['decays'] else '')
     ld = {
         '@context': 'https://schema.org', '@type': ld_type, 'headline': title, 'description': description,
@@ -278,7 +289,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
 <link rel="stylesheet" href="{up}assets/site.css">
 <link rel="stylesheet" href="{up}assets/themes/themes.css">
 <link rel="stylesheet" href="{up}assets/themes/site-tokens.css">
-<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+<script type="application/ld+json">{J(ld, ensure_ascii=False)}</script>
 <script type="application/json" id="sg-meter-config">{meter_json}</script>
 <script type="module" src="{up}assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"></script>
 <script src="{up}assets/personas.js" defer></script>
@@ -335,8 +346,10 @@ def md_path(path):
 OUTPUTS = set()  # every file this build writes; admin/build/outputs.txt, read by release.sh to resolve merges
 
 def write(path, content):
+    full = os.path.realpath(os.path.join(ROOT, path))
+    if not full.startswith(os.path.realpath(ROOT) + os.sep) or any(p.startswith('.') for p in os.path.relpath(full, os.path.realpath(ROOT)).split(os.sep)):
+        raise SystemExit(f'build: refusing to write outside the site tree: {path!r}')
     OUTPUTS.add(path)
-    full = os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(full) or ROOT, exist_ok=True)
     with open(full, 'w', encoding='utf-8', newline='\n') as f:
         f.write(content)
@@ -533,8 +546,8 @@ def build_index():
     ]
     board = ''.join(f'<a class="tile tile-{t}" href="{h}"><span class="tl">{E(l)}</span><b>{E(v)}</b><span class="tn">{E(n)}</span></a>' for t, l, v, n, h in tiles)
     now = ''.join(f'<li>{E(x["text"])} <span class="refs">{src_links(x["sources"], 0)}</span></li>' for x in pl['now'])
-    facts = ''.join(f'<li><span class="fs">{pill(f["status"])}</span><div><p>{E(f["text"])}</p><p class="ff"><span class="refs">{src_links(f["sources"], 0)}</span> <a href="{E(f["href"])}">More &rarr;</a></p></div></li>' for f in pl['facts'])
-    unknown = ''.join(f'<li><a href="{E(u["href"])}">{E(u["text"])}</a></li>' for u in pl['unknown'])
+    facts = ''.join(f'<li><span class="fs">{pill(f["status"])}</span><div><p>{E(f["text"])}</p><p class="ff"><span class="refs">{src_links(f["sources"], 0)}</span> <a href="{U(f["href"])}">More &rarr;</a></p></div></li>' for f in pl['facts'])
+    unknown = ''.join(f'<li><a href="{U(u["href"])}">{E(u["text"])}</a></li>' for u in pl['unknown'])
     latest = ''.join(f'<li><span class="when">{E(x["when"])}</span><span>{E(x["text"])} <span class="refs">{src_links(x["sources"], 0)}</span></span></li>' for x in pl['latest'])
     moments = ''.join(f'<li class="m m-{E(m["tone"])}"><a href="{E(m["href"])}"><span class="mw">{E(m["when"])}</span><span class="mt">{E(m["what"])}</span></a><span class="refs">{src_links(m["sources"], 0)}</span></li>' for m in pl['moments'])
     legend = ''.join(f'<li>{pill(k)} {E(v)}</li>' for k, v in [('confirmed', 'two or more original sources agree'), ('reported', 'one party says so; nobody has contradicted it'), ('disputed', 'sources disagree'), ('unverified', 'nobody has been able to check it')])
@@ -895,7 +908,7 @@ def build_sources():
         if s.get('raw_sha256'):
             raw = '<details><summary>raw, ' + str(len(s['raw_sha256'])) + ' files with SHA256SUMS</summary><ul class="files">' + ''.join(f'<li><code>{E(fn)}</code> <span class="h">{E(h)}</span></li>' for fn, h in s['raw_sha256'].items()) + '</ul></details>'
         rows += f'''<article class="source" id="{E(s["slug"])}">{it_source(s)}
-<h3><a href="{E(s["slug"])}/index.html">{E(s.get("title") or s["slug"])}</a> <a class="small" href="{E(s["url"])}" rel="noopener nofollow">original &#8599;</a></h3>
+<h3><a href="{E(s["slug"])}/index.html">{E(s.get("title") or s["slug"])}</a> <a class="small" href="{U(s["url"])}" rel="noopener nofollow">original &#8599;</a></h3>
 <p class="meta"><b>{E(s.get("publisher") or "")}</b> &middot; {E(s.get("kind") or "")} &middot; {"primary" if s.get("primary") else "secondary"} &middot; {pill(s.get("status") or "")} &middot; published {E(str(s.get("published") or "not stated"))} &middot; added by <code>{E(s.get("added_by") or "")}</code> &middot; <code>{E(s["slug"])}</code></p>
 <p class="small">{E(s.get("notes") or "")}</p>
 {caps}{raw}
@@ -1142,7 +1155,11 @@ def build_account():
 
 def render_md_file(path):
     """A small markdown renderer for the brief and corrections files: headings, paragraphs, lists, code."""
-    with open(os.path.join(ROOT, path), encoding='utf-8') as f:
+    full = os.path.realpath(os.path.join(ROOT, path))
+    allowed = [os.path.realpath(os.path.join(ROOT, n)) for n in ('BRIEF-CORRECTIONS.md', 'REALITY.md', 'README.md', 'AGENTS.md')]
+    if not (full.startswith(os.path.realpath(os.path.join(ROOT, 'admin', 'content')) + os.sep) or full in allowed):
+        raise SystemExit(f'build: render_md_file reads only admin/content/ and the top-level notes, not {path!r}')
+    with open(full, encoding='utf-8') as f:
         text = f.read()
     out, in_list, in_code, rows = [], False, False, []
     def flush():
@@ -1185,7 +1202,7 @@ def inline_md(s):
     s = re.sub(r'`([^`]+)`', r'<code>\1</code>', s)
     s = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', s)
     s = re.sub(r'(?<![\w*])\*([^*\s][^*]*)\*(?![\w*])', r'<i>\1</i>', s)
-    s = re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)', r'<a href="\2" rel="noopener">\1</a>', s)
+    s = re.sub(r'\[([^\]]+)\]\((https?://[^)\s"<>]+)\)', r'<a href="\2" rel="noopener">\1</a>', s)
     return s
 
 def build_brief():
@@ -1346,9 +1363,9 @@ def build_sitejs():
       p.path.forEach(function (x, i) {
         var done = seen.indexOf(x[0]) >= 0, cur = x[0] === here;
         if (!next && !done && !cur) next = x;
-        steps += '<li class="' + (cur ? 'here' : done ? 'seen' : '') + '"><a href="' + root + x[0] + '" title="' + esc(x[1]) + ', ' + x[2] + ' min">' + (i + 1) + '</a></li>';
+        steps += '<li class="' + (cur ? 'here' : done ? 'seen' : '') + '"><a href="' + root + esc(x[0]) + '" title="' + esc(x[1]) + ', ' + esc(String(x[2])) + ' min">' + (i + 1) + '</a></li>';
       });
-      var nx = next ? '<span class="nx">Next: <a href="' + root + next[0] + '">' + esc(next[1]) + '</a> <small>' + next[2] + ' min</small></span>'
+      var nx = next ? '<span class="nx">Next: <a href="' + root + esc(next[0]) + '">' + esc(next[1]) + '</a> <small>' + esc(String(next[2])) + ' min</small></span>'
                     : '<span class="nx">Path read. <a href="' + root + 'start/index.html">Try another reader</a></span>';
       bar.className = 'pbar';
       bar.innerHTML = '<div class="row"><span class="av av-' + esc(p.group) + '" aria-hidden="true">' + esc(p.person.charAt(0)) + '</span>' +
@@ -1435,7 +1452,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
+    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -1629,7 +1646,7 @@ def build_source_pages():
         body = f'''
 <p class="kicker">Source &middot; {E(s.get("kind") or "")} &middot; {"primary" if s.get("primary") else "secondary"} &middot; {pill(s.get("status") or "")}</p>
 <h1>{E(s.get("title") or slug)}</h1>
-<p class="meta"><b>{E(s.get("publisher") or "")}</b> &middot; <a href="{E(s["url"])}" rel="noopener nofollow">{E(s["url"])}</a> &middot; published {E(str(s.get("published") or "not stated"))} &middot; added by <code>{E(s.get("added_by") or "")}</code> &middot; slug <code>{E(slug)}</code></p>
+<p class="meta"><b>{E(s.get("publisher") or "")}</b> &middot; <a href="{U(s["url"])}" rel="noopener nofollow">{E(s["url"])}</a> &middot; published {E(str(s.get("published") or "not stated"))} &middot; added by <code>{E(s.get("added_by") or "")}</code> &middot; slug <code>{E(slug)}</code></p>
 <p>{E(s.get("notes") or "")}</p>
 {g}
 {section("says", "What it says, as the collector read it", notes)}
@@ -1695,6 +1712,56 @@ def build_actors():
 
 # ----------------------------------------------------------------------------- the admin section (v0.2.3)
 
+def build_keys():
+    if not os.path.exists(os.path.join(DATA, 'keys.json')):
+        return  # data/keys.json is not in the repository yet (.gitignore's keys*.json rule held it back): board, security@
+    """admin/keys/: the root, every agent's key, every vault and where its key is kept, the rules of engagement and how to
+    hand a key over. From data/keys.json; public keys, fingerprints and vault ids only."""
+    K = load('keys')
+    r = K['root']
+    fp = lambda x: f'<code>{E(x)}</code>' if x else '<span class="dim">none</span>'
+    rules = ''.join(f'<li><b>{E(a)}</b> {E(b)}</li>' for a, b in K['rules'])
+    agents = table(['Agent', 'Key', 'Record (signing fingerprint)', 'Status', 'Operated until'],
+                   [[E(a['name']), E(a['kind']), fp(a['record']), E(a['status']), E(a['until'] or '')] for a in K['agents']], 't keys')
+    with_root = sum(1 for v in K['vaults'] if v['key_with_root'].startswith('opened'))
+    vaults = table(['Vault', 'Id', 'Access', 'Made by', 'Key with the root', 'Next'],
+                   [[E(v['name']), f'<code>{E(v["id"])}</code>', E(v['access']), E(v['made_by']), E(v['key_with_root']), E(v['action'])] for v in K['vaults']], 't keys')
+    shared = ''.join(f'<li><b>{E(a)}</b>: {E(b)}</li>' for a, b in K['shared'])
+    made = sum(1 for a in K['agents'] if a['record'] and a['kind'] != 'person' and a['status'].startswith('in the register'))
+    body = f"""
+<h1>Keys: who holds what, and how a secret moves</h1>
+<p class="lead">Every agent on this newsroom gets its own key pair on <a href="{U(K['register'])}" rel="noopener">pki.sgit.ai</a>, to sign what it writes and to receive a secret meant for it alone. The editor's key is the root. As of {E(K['as_of'])}, {made} of {len(K['agents']) - 1} agents have a live key in the register and {with_root} of {len(K['vaults'])} vault keys are confirmed in the editor's hands. This page holds public keys, fingerprints and vault ids only. No secret is ever on it.</p>
+<h2>The root</h2>
+<p><b>{E(r['name'])}</b>: record {fp(r['record'])} (signing), encryption key {fp(r['encryption'])}, made {E(r['made'])}; {E(r['where'])}.</p>
+<p>Agents pin it from {E(r['pinned_in'])}. A fingerprint on a website can be changed by whoever changes the website, so the pin comes from an agent's instructions and the register confirms it.</p>
+<h2>Rules of engagement</h2>
+<ol>{rules}</ol>
+<h2>The agents</h2>
+{agents}
+<h2>The vaults</h2>
+<p>Every vault's key reaches the editor, sealed to the root, so none is lost when the session that made it ends. "Unknown" means nobody has recorded a handover: the agent that made the vault does it next.</p>
+{vaults}
+<h2>Shared vaults</h2>
+<ul>{shared}</ul>
+<p>Several agents write to a shared vault with its vault key, which the editor seals to each of them; sgit keeps every change, who made it, and the history. Readers who only read get a read key.</p>
+<h2>An agent with no key yet</h2>
+<p>In its session, with the root from its instructions (the full steps are at <a href="{U(K['handover'])}" rel="noopener">pki.sgit.ai/handover.md</a>, section C):</p>
+<pre><code>curl -sO {E(K['tool'])}
+node pki-agent.mjs keygen --name "&lt;role&gt;@php.newsroom" --runtime "claude-code, cloud session" --session
+node pki-agent.mjs operator {E(r['record'])} --policy admin/security/REQUIREMENTS.md
+node pki-agent.mjs submission --out my-record.json
+node pki-agent.mjs whoami</code></pre>
+<p>It says its fingerprint in the session and gives the editor <code>my-record.json</code> (public). The editor compares the fingerprint, signs it on pki.sgit.ai, and the agent's row above gets its record.</p>
+<h2>Handing over a vault key</h2>
+<pre><code>node pki-agent.mjs pin {E(r['record'])}
+node pki-agent.mjs root
+node pki-agent.mjs seal --from-vault &lt;the vault's folder&gt; --name "vault key: &lt;name&gt; (&lt;id&gt;)" --qr vault-key.png</code></pre>
+<p>Sealed to the root by default; add <code>--to &lt;fingerprint&gt;</code> for an agent the editor names, and the root still gets its copy. The agent then tells the editor, in the session, four things: the vault's name and id, the recipient, its own fingerprint, and the sealed link or QR image. The sealed link is safe to show: only the recipient's key opens it. The editor opens it on <a href="https://pki.sgit.ai/m/index.html" rel="noopener">pki.sgit.ai/m/</a>, files the key in his vault of vaults, and the vault's row above changes to "opened".</p>
+<p class="small">{'The editor publishes an inbox on his record: agents can also deliver with <code>pki-agent send</code> into it.' if r.get('inbox') else 'The editor has no inbox (append lane) on his record yet. When he publishes one, agents deliver sealed keys straight into it with <code>pki-agent send</code>, and none waits on a session being read.'}</p>
+<p>The rules every agent works to are in <code>admin/security/REQUIREMENTS.md</code>; who does what is on <a href="../roles/index.html">roles</a>.</p>
+"""
+    page('admin/keys/index.html', 'Keys: who holds what, and how a secret moves', 'The newsroom\'s keys: the editor\'s root key, every agent\'s key pair on pki.sgit.ai, every vault and whether its key is safe with the editor, the rules of engagement, and how an agent hands a vault key over. No secrets.', body, kind='site')
+
 def build_admin_section():
     A = D['admin']
     st = Counter(b['status'] for b in A['board'])
@@ -1710,7 +1777,7 @@ def build_admin_section():
         k = r.get('pki')
         if not k: return ''
         return (f'<p><b>Public key on pki.sgit.ai.</b> record <code>{E(k["record"])}</code>, encryption <code>{E(k["encryption"])}</code>, made {E(k["made"])}. '
-                f'<a href="{E(k["key_link"])}" rel="noopener">Open the key link</a> (pki.sgit.ai recomputes the fingerprint in your browser). {E(k["note"])}</p>'
+                f'<a href="{U(k["key_link"])}" rel="noopener">Open the key link</a> (pki.sgit.ai recomputes the fingerprint in your browser). {E(k["note"])}</p>'
                 f'<p><img src="../../{E(k["qr"])}" alt="QR code of dev@php.newsroom\'s public key" width="180" height="180" style="background:#fff;padding:4px;border-radius:6px"></p>')
     cards = ''.join(f'<article class="role" id="{E(r["id"])}"><h3>{E(r["name"])} <span class="small">{E(r["who"])}</span></h3><p><b>Owns.</b> {E(r["owns"])}</p><ul>{"".join(f"<li>{E(x)}</li>" for x in r["rules"])}</ul>{pki_html(r)}</article>' for r in A['roles'])
     body = f"""
@@ -1743,7 +1810,7 @@ def build_admin_section():
 <p class="crumb"><a href="../../vaults/index.html">Vaults</a> / The evidence vault</p>
 <p class="lead">The vault behind every claim on this site, {vt["sources"]} sources and {vt["captures"]} captures at commit <code>{E(vt["head"]["commit"] or "")}</code>, opens read-only in the browser with the key below, the way every published vault on sgit.ai and the newsroom does. The key is a read key: derived one way from the vault key, it decrypts and cannot write, and there is no privilege inside it to escalate. It is published on purpose, so treat it as you would the content.</p>
 <p class="kv"><b>Read key</b> <code>{E(v["read_key"])}</code></p>
-<p><a class="door" href="{E(v["open_url"])}" rel="noopener"><b>Open the vault in the browser &rarr;</b><span>dev.vault.sgraph.ai decrypts it in your tab; the server that stores it cannot read it</span></a></p>
+<p><a class="door" href="{U(v["open_url"])}" rel="noopener"><b>Open the vault in the browser &rarr;</b><span>dev.vault.sgraph.ai decrypts it in your tab; the server that stores it cannot read it</span></a></p>
 <pre>$ sgit clone {E(v["read_key"])}</pre>
 <p class="caveat">{E(v["note"])}</p>
 {vault_live(v["read_key"], True, 2, 'The vault opens in its own app first: sources, captures, claims, the timeline, memos and notes, read from the vault as it is now. The vault browser is under it.')}
@@ -1840,7 +1907,7 @@ def build_review():
     for n in rem:
         files = [by[e['to']] for e in out_edges.get(n['id'], []) if e['rel'] == 'realised in']
         addresses = [by[e['to']]['name'].split(':')[0] for e in out_edges.get(n['id'], []) if e['rel'] == 'addresses']
-        fl = ''.join(f'<li><a href="{E(f.get("url") or "#")}" rel="noopener nofollow"><code>{E(f["name"][5:])}</code></a> <span class="small">+{f.get("add", 0)} / -{f.get("dele", 0)}</span></li>' for f in files)
+        fl = ''.join(f'<li><a href="{U(f.get("url"))}" rel="noopener nofollow"><code>{E(f["name"][5:])}</code></a> <span class="small">+{f.get("add", 0)} / -{f.get("dele", 0)}</span></li>' for f in files)
         cards += f'<article class="cve" id="{E(n["id"])}"><h3><a href="ui/index.html#{E(n["id"])}">{E(n["name"])}</a></h3><p>{E(n["text"])}</p>' + (f'<p class="small"><b>Functions.</b> <code>{E(n["func"])}</code>{" &middot; <b>new setting</b> <code>" + E(n["ini"]) + "</code>" if n.get("ini") else ""}</p>' if n.get('func') else '') + (f'<p class="small">Addresses: {", ".join(E(a) for a in addresses)}</p>' if addresses else '') + (f'<ul class="files">{fl}</ul>' if fl else '') + '</article>'
     areas_t = table(['Area', 'Files', 'Added', 'Removed'], [[E(a), E(str(n)), E(str(ad)), E(str(de))] for a, n, ad, de in R['areas'][:20]], 'ctx')
     # the SVG: vulnerability on the right, the fix in the middle, remediation around it, code areas on the left
@@ -1871,8 +1938,8 @@ def article_inline(s, depth):
     s = E(s, quote=False)
     s = re.sub(r'`([^`]+)`', r'<code>\1</code>', s)
     s = re.sub(r'\[\[([^\]]+)\]\]', lambda m: '<span class="refs">' + src_links([x.strip() for x in m.group(1).split(',')], depth) + '</span>', s)
-    s = re.sub(r'\[([^\]]+)\]\(/([^)]*)\)', lambda m: f'<a href="{"../" * depth}{m.group(2)}">{m.group(1)}</a>', s)
-    s = re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)', r'<a href="\2" rel="noopener">\1</a>', s)
+    s = re.sub(r'\[([^\]]+)\]\(/([^)]*)\)', lambda m: f'<a href="{"../" * depth}{E(m.group(2))}">{m.group(1)}</a>' if re.fullmatch(r'[A-Za-z0-9/._#-]*', m.group(2)) else m.group(0), s)
+    s = re.sub(r'\[([^\]]+)\]\((https?://[^)\s"<>]+)\)', r'<a href="\2" rel="noopener">\1</a>', s)
     s = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', s)
     s = re.sub(r'\*([^*]+)\*', r'<i>\1</i>', s)
     return s
@@ -2017,7 +2084,7 @@ def build_questions():
 '''
         page(f'questions/{q["id"]}/index.html', q['q'], q['short'], body, kind='story', topics='php2shell questions')
     rows = [[f'{it_question(q)}<a href="{E(q["id"])}/index.html"><b>{E(q["q"])}</b></a>', E(q['short']), ' '.join(q_link(p, 1) for p in q['see'][:3])] for q in qs]
-    seen = table(['Seen', 'What', 'State', 'Answered by'], [[E(x['seen']), f'<b>{E(x["publisher"])}</b>: <a href="{E(x["url"])}" rel="noopener nofollow">{E(x["title"])}</a><div class="note">{E(x["standfirst"])}</div>', E(x['state']), '<br>'.join(f'<a href="{E(a)}/index.html">{E(next(q["q"] for q in qs if q["id"] == a))}</a>' for a in x['answered_by'])] for x in Q['seen']])
+    seen = table(['Seen', 'What', 'State', 'Answered by'], [[E(x['seen']), f'<b>{E(x["publisher"])}</b>: <a href="{U(x["url"])}" rel="noopener nofollow">{E(x["title"])}</a><div class="note">{E(x["standfirst"])}</div>', E(x['state']), '<br>'.join(f'<a href="{E(a)}/index.html">{E(next(q["q"] for q in qs if q["id"] == a))}</a>' for a in x['answered_by'])] for x in Q['seen']])
     catalogue = ''
     for label, items in NAV:
         if label == 'Questions':
@@ -2047,7 +2114,7 @@ def build_readings():
         rows = [[f'<b>{E(x["point"])}</b><div class="note">section {E(x["section"])}</div>', E(x['found']), pill(verdicts[x['verdict']]['name']),
                  E(x['vault']) + ('<div class="note">' + ', '.join(f'<a href="../claims/index.html#{E(c)}">{E(c)}</a>' for c in x['claims'] if c in claim_ids) + '</div>' if x['claims'] else ''),
                  src_links(x['sources'], 1)] for x in r['rows']]
-        leads = ''.join(f'<li><a href="{E(l["url"])}" rel="noopener nofollow">{E(l["what"])}</a> <span class="small">{E(l["priority"])}</span></li>' for l in r['leads'])
+        leads = ''.join(f'<li><a href="{U(l["url"])}" rel="noopener nofollow">{E(l["what"])}</a> <span class="small">{E(l["priority"])}</span></li>' for l in r['leads'])
         out += section(r['id'], f'{E(r["model"])}: {E(r["title"])}', f'''<p>{E(r["how"])} <a href="{E(r["id"])}/index.html">The notes in full &rarr;</a></p>
 <p class="kv">{" &middot; ".join(f"<b>{tally[v['id']]}</b> {E(v['name'])}" for v in R["verdicts"] if tally[v["id"]])}</p>
 {table(["Point", f"What {E(r['model'])} found", "Against the vault", "What the vault holds", "Sources"], rows, "claims")}
@@ -2076,7 +2143,7 @@ def build_readings():
 
 def build_status():
     P = D['pipeline']
-    cfg = json.dumps({'api': P['api'], 'sites': P['sites']}, sort_keys=True, separators=(',', ':'))
+    cfg = J({'api': P['api'], 'sites': P['sites']}, sort_keys=True, separators=(',', ':'))
     cards = ''.join(f"""
 <section id="{E(x["id"])}" class="pl-site">
 <h2><a href="{E(x["site"])}">{E(x["name"])}</a></h2>
@@ -2339,7 +2406,7 @@ def build_glossary():
     for L, ts in letters.items():
         items = ''
         for t in ts:
-            ext = f' &middot; <a href="{E(t["ext"])}" rel="noopener">the authority &#8599;</a>' if t.get('ext') else ''
+            ext = f' &middot; <a href="{U(t["ext"])}" rel="noopener">the authority &#8599;</a>' if t.get('ext') else ''
             items += f'<article class="gterm" id="{E(t["id"])}"><h3>{E(t["term"])}</h3><p class="gshort">{E(t["short"])}</p><p>{E(t["long"])}</p><p class="small"><a href="../{E(t["more"])}">Where it matters in this story &rarr;</a>{ext}</p></article>'
         out += f'<section id="l-{E(L)}" class="gletter"><h2>{E(L)}</h2>{items}</section>'
     body = f'''
@@ -3159,7 +3226,7 @@ def build_you():
 
 def build_reader():
     F = D['feed-sources']
-    cfg = json.dumps({'feeds': F['feeds']}, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+    cfg = J({'feeds': F['feeds']}, ensure_ascii=False, separators=(',', ':'))
     body = f"""
 <h1>The feed viewer: this site, the records, and your own feeds</h1>
 <p class="lead">Every feed here is read by your browser, directly from its publisher, and what you have read in each is kept with the rest of <a href="../you/index.html">your desk</a>: the next time you come, a feed shows you only what is new or changed. This site's own <a href="../feeds/index.html">feeds</a> are first; then the outside sources a browser is allowed to read (the CVE records, NVD, OSV, CISA's catalog of exploited flaws, GitHub, Wikipedia, Hacker News, Mastodon); then the ones that do not allow it, and why. Add any feed you like below the list.</p>
@@ -3181,7 +3248,7 @@ def build_reader():
 
 def build_subscribe():
     sc = D['subscriptions']
-    cfg = json.dumps({k: sc[k] for k in ('contact', 'endpoint', 'vault_id', 'append_token', 'recipient', 'zones', 'cadences')}, ensure_ascii=False, separators=(',', ':'))
+    cfg = J({k: sc[k] for k in ('contact', 'endpoint', 'vault_id', 'append_token', 'recipient', 'zones', 'cadences')}, ensure_ascii=False, separators=(',', ':'))
     zones = ''.join(f'<label class="sub-c"><input type="checkbox" name="zones" value="{E(z)}"{" checked" if z == "all" else ""}> {E(t)}</label>' for z, t in sc['zones'])
     cads = ''.join(f'<label class="sub-c"><input type="radio" name="cadence" value="{E(c)}"{" checked" if i == 1 else ""}> {E(t)}</label>' for i, (c, t) in enumerate(sc['cadences']))
     mail = f'mailto:{sc["contact"]}?subject=' + 'Subscribe%20to%20PHP%20October%202026' + '&body=' + 'Please%20subscribe%20me.%20Follow%3A%20everything%20%2F%20research%20%2F%20for%20you%20%2F%20stories.%20How%20often%3A%20as%20it%20changes%20%2F%20daily%20%2F%20weekly.'

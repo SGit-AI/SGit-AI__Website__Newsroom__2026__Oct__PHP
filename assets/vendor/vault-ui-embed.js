@@ -54,7 +54,7 @@
           s.note.textContent = 'Handshake complete, key handed over postMessage, opening…';
         } else if (d.sg === 'vault-ready') {
           s.note.innerHTML = 'Opened <b>read-only</b> over the embed protocol, the key never appeared in a URL and was never written to the frame’s storage' +
-            (d.fileCount ? '; ' + d.fileCount + ' files decrypted in the frame' : '') + '.';
+            (Number(d.fileCount) > 0 ? '; ' + Number(d.fileCount) + ' files decrypted in the frame' : '') + '.';
           if (s.onReady) { s.onReady(); s.onReady = null; }
         } else if (d.sg === 'vault-error') {
           s.note.textContent = 'Vault open failed: ' + (d.message || 'unknown error');

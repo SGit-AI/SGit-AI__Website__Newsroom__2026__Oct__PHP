@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 84 items, 59 open, 24 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 85 items, 60 open, 24 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -94,6 +94,7 @@ The work, as rows in `data/admin.json`: 84 items, 59 open, 24 done. An item is a
 | 082 | Ask: talk to the site from any page; the model uses the site's tools (window.__tools, also for any agent in the browser), proposes changes to your record only with your Allow; your OpenRouter key and your desk kept in your vault, shared with the phone app | done | dev@php.newsroom | 0.5.4 |
 | 083 | One copy of the vault code: move the phone app (/now/) onto the same open, pull and push as the Ask pane, or both onto a shared module | open | design |  |
 | 084 | Open the reader vault with a passkey, as newsroom.sgit.ai and pki.sgit.ai do (the door design), instead of a pasted key | open | dev@php.newsroom |  |
+| 085 | Commit data/keys.json: .gitignore's keys*.json rule held it back, so /admin/keys/ is not built yet. Check it holds fingerprints and vault ids only, add it with an explicit !data/keys.json exception, and restore its row in data/layers.json (used on admin/keys/index.html); the page and its menu entry then build on their own | open | security@php.newsroom |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 

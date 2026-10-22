@@ -725,6 +725,12 @@
    "title": "Open the reader vault with a passkey, as newsroom.sgit.ai and pki.sgit.ai do (the door design), instead of a pasted key",
    "status": "open",
    "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "085",
+   "title": "Commit data/keys.json: .gitignore's keys*.json rule held it back, so /admin/keys/ is not built yet. Check it holds fingerprints and vault ids only, add it with an explicit !data/keys.json exception, and restore its row in data/layers.json (used on admin/keys/index.html); the page and its menu entry then build on their own",
+   "status": "open",
+   "owner": "security@php.newsroom"
   }
  ],
  "evidence_vault": {

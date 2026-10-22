@@ -64,6 +64,7 @@ git add -A
 if git diff --cached | grep -E -n 'sgit_private_(vault|read)_[0-9a-f]{12,}|BEGIN [A-Z ]*PRIVATE KEY|AKIA[0-9A-Z]{16}|sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{30,}' ; then
   echo "tripwire: credential shape in the staged diff; release aborted"; exit 1
 fi
+python3 admin/build/security_check.py --staged || { echo "tripwire: security check failed on the staged diff; release aborted"; exit 1; }
 if [ -d .sg_vault/local ]; then
   for k in $(grep -rhoE '[a-z0-9]{8,}:[a-z0-9]{8}' .sg_vault/local 2>/dev/null | cut -d: -f1 | sort -u); do
     if git diff --cached | grep -q "$k"; then echo "tripwire: a locally held key's secret part is in the diff"; exit 1; fi

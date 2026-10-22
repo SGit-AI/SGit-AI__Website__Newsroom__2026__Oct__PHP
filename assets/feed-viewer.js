@@ -19,7 +19,7 @@
   var FKEY = 'p2s.feeds.v1', MAX = 2e6, MAX_JSON = 5e6, TIMEOUT = 15000;
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function fnv(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); }
-  function mine() { try { var f = JSON.parse(localStorage.getItem(FKEY) || 'null'); return f && Array.isArray(f.feeds) ? f : { v: 1, feeds: [] }; } catch (e) { return { v: 1, feeds: [] }; } }
+  function mine() { try { var f = JSON.parse(localStorage.getItem(FKEY) || 'null'); if (!f || !Array.isArray(f.feeds)) return { v: 1, feeds: [] }; f.feeds = f.feeds.filter(function (x) { return x && typeof x.url === 'string' && !allowedFeedUrl(x.url); }); return f; } catch (e) { return { v: 1, feeds: [] }; } }
   function saveMine(f) { try { localStorage.setItem(FKEY, JSON.stringify(f)); } catch (e) {} }
 
   // ------------------------------------------------------------------ safety
@@ -192,7 +192,7 @@
     pane.appendChild(head);
     if (f.cors === false) {
       var p = el('p', 'caveat', 'This publisher does not let other sites’ pages read its feed (it sends no CORS header), so your browser cannot load it here, and this site does not route it through anyone else. Open it in a feed reader, or on the publisher’s site. ');
-      var a = el('a', null, 'Open the feed'); a.href = f.url; a.rel = 'noopener noreferrer nofollow'; a.target = '_blank'; p.appendChild(a);
+      var a = el('a', null, 'Open the feed'); a.href = safeUrl(f.url) || '#'; a.rel = 'noopener noreferrer nofollow'; a.target = '_blank'; p.appendChild(a);
       pane.appendChild(p); return;
     }
     var status = el('p', 'small', 'Loading…'); pane.appendChild(status);
