@@ -5,11 +5,9 @@
 # ANTHROPIC_API_KEY (optional: without it runs are captured and left for an agent session to review).
 name: Synthetic readers
 on:
-  schedule:
-    - cron: '23 * * * *'
-  workflow_run:
-    workflows: [Deploy to GitHub Pages]
-    types: [completed]
+  # Paused on the editor's instruction, 22 October 2026, until he has reviewed every schedule: no hourly run and no run
+  # after each deploy; it runs only when started by hand. To resume: restore the schedule (proposed, daytime only:
+  # cron '23 6-20 * * *') and the workflow_run trigger on Deploy to GitHub Pages.
   workflow_dispatch:
     inputs:
       force:
