@@ -6,7 +6,7 @@ Every vault this site is built from: the evidence vault and the source watch, bo
 
 # The vaults behind this site
 
-This site is rebuilt from vaults, never written by hand. 4 vaults sit behind it: two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
+This site is rebuilt from vaults, never written by hand. 5 vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; and one more is private and never published, because it holds other people's pages. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
 
 Every vault behind this site: what each holds, who writes to it, and how to open it. Three kinds of credential appear here. A vault key reads and writes; it is never published. A read key reads only and cannot be turned into a vault key; the two public vaults publish theirs. An append token adds rows to one lane and cannot read anything; the telemetry lane publishes its token so every page can write to it.
 
@@ -54,8 +54,18 @@ Subscription requests (an email address, what to follow, how often), each encryp
 
 **Not published:** the vault key, the lane's enum key and the key pair's passphrase. **Published:** the write-only append token `baae31ae3d2ce74cbbb3f34a3808bf84c65fa18b7e3247f3229439ef16740e25`, which adds rows and reads nothing.
 
+## [The coverage vault](../vaults/index.html#coverage) private
+
+**Vault** `dcsmxese` · 24 sources, 24 captures, 159 files; 72 screenshots
+
+How other outlets presented the story: 24 pages (the BBC live page, CNN, The Register, The Hacker News, php.net, CISA, NCSC-NL, Wiz, Calif, php2shell.com, the PHPocalypse Tracker and more) captured on 22 October 2026 between 17:20 and 17:45 UTC, each with desktop, full-page and phone screenshots, the page text and a provenance file with the SHA-256 of every file; and the review of what this site should learn from them. Third-party pages, kept for the record and never republished.
+
+**Written by** claude-story-site, the agent that designs this site. Data on this site: [admin/content/reviews/2026-10-22__coverage-review.md](../admin/content/reviews/2026-10-22__coverage-review.md).
+
+**Not published:** the vault key. The review written from it is published in the repository; its findings become facts on this site only once they cite a capture.
+
 The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgit.ai network, published the same way, are at [sgit.ai's vaults](https://sgit.ai/demos/vaults/index.html).
 
 
 ---
-site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.4.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html

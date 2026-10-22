@@ -40,4 +40,4 @@ Sources: github-ghsa-w8hw-w9fx-j79w, php-net-changelog-8, github-php-src-branch-
 
 
 ---
-site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-bailout/index.html
+site v0.4.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-bailout/index.html

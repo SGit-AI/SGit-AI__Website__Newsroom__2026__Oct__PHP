@@ -53,4 +53,4 @@ The comparison rows are [data/readings.json](../data/readings.json), in the deri
 
 
 ---
-site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/readings/index.html
+site v0.4.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/readings/index.html

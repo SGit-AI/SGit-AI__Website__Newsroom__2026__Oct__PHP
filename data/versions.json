@@ -1,6 +1,15 @@
 {
- "current": "0.4.4",
+ "current": "0.4.5",
  "versions": [
+  {
+   "version": "0.4.5",
+   "date": "2026-10-22",
+   "title": "the coverage vault: 24 pages from other outlets captured with screenshots, page text and hashes into a new private vault (dcsmxese), listed on /vaults/ without its key, and the review of how they present the story and what this site should learn, in admin/content/reviews/",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.4.4",
    "date": "2026-10-22",

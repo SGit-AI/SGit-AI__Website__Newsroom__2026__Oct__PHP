@@ -44,6 +44,19 @@
    "writers": "readers, through the write-only lane on /subscribe/; dev@php.newsroom drains it; the agent at agent@diniscruz.ai confirms and sends",
    "page": "subscribe/index.html",
    "data": "data/subscriptions.json"
+  },
+  {
+   "slug": "coverage",
+   "id": "dcsmxese",
+   "name": "The coverage vault",
+   "access": "private",
+   "app": false,
+   "holds": "How other outlets presented the story: 24 pages (the BBC live page, CNN, The Register, The Hacker News, php.net, CISA, NCSC-NL, Wiz, Calif, php2shell.com, the PHPocalypse Tracker and more) captured on 22 October 2026 between 17:20 and 17:45 UTC, each with desktop, full-page and phone screenshots, the page text and a provenance file with the SHA-256 of every file; and the review of what this site should learn from them. Third-party pages, kept for the record and never republished.",
+   "writers": "claude-story-site, the agent that designs this site",
+   "facts": "24 sources, 24 captures, 159 files; 72 screenshots",
+   "note": "The review written from it is published in the repository; its findings become facts on this site only once they cite a capture.",
+   "page": "vaults/index.html#coverage",
+   "data": "admin/content/reviews/2026-10-22__coverage-review.md"
   }
  ]
 }

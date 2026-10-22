@@ -1988,18 +1988,18 @@ def build_vaults():
     cards = ''
     for x in VS:
         k = keys.get(x['slug'])
-        how = (f'<p class="kv"><b>Read key</b> <code>{E(k)}</code></p><p><a href="{E(vault_open_url(k))}" rel="noopener" target="_blank">Open read-only in a new tab &#8599;</a> &middot; <code>sgit clone {E(k)}</code></p>' if k else
+        how = (f'<p class="kv"><b>Not published:</b> the vault key. {E(x.get("note", ""))}</p>' if not k and x['slug'] not in lanes else f'<p class="kv"><b>Read key</b> <code>{E(k)}</code></p><p><a href="{E(vault_open_url(k))}" rel="noopener" target="_blank">Open read-only in a new tab &#8599;</a> &middot; <code>sgit clone {E(k)}</code></p>' if k else
                f'<p class="kv"><b>Not published:</b> the vault key, the lane\'s enum key and the key pair\'s passphrase. <b>Published:</b> the write-only append token <code>{E(lanes.get(x["slug"], ""))}</code>, which adds rows and reads nothing.</p>')
         cards += f"""<section class="vcard" id="{E(x["slug"])}">
 <h2><a href="../{E(x["page"])}">{E(x["name"])}</a> <span class="st {'st-confirmed' if k else ''}">{E(x["access"])}</span></h2>
-<p class="kv"><b>Vault</b> <code>{E(x["id"])}</code> &middot; {facts[x["slug"]]}{' &middot; opens in its own app' if x["app"] else ''}</p>
+<p class="kv"><b>Vault</b> <code>{E(x["id"])}</code> &middot; {facts.get(x["slug"], E(x.get("facts", "")))}{' &middot; opens in its own app' if x["app"] else ''}</p>
 <p>{E(x["holds"])}</p>
 <p class="small"><b>Written by</b> {E(x["writers"])}. Data on this site: <a href="../{E(x["data"])}">{E(x["data"])}</a>.</p>
 {how}
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it: two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests{"; and one more is private and never published, because it holds other people's pages" if any(x["access"] == "private" for x in VS) else ""}. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
