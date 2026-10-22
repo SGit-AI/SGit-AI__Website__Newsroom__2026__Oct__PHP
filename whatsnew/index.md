@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.5.2 · 22 October 2026new since your last visit
+
+two branches carried into dev: researcher@ and cyber@php.newsroom join with the cyber desk's first piece, 'Patch at the speed of Metasploit' (board items renumbered 076 to 079 after the conductor's); and the fact-check desk as pushed, its model, contradiction ledger and /factcheck/, run 1 in progress
+
+No reader-facing section changed in this release.
+
 ## v0.5.1 · 22 October 2026new since your last visit
 
 the team: every member, human and agent, with a page (role, what they own, tasks, what they shipped), Vicky joins as project manager and the conductor as conductor and comms; the team coordinates through three private vaults, the conductor vault with an append lane, the issues vault (Issues-FS-lite, the board moved into it) and the mail vault (Email-FS-lite); /team/channels/ and the run
@@ -341,4 +347,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.5.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -45,4 +45,4 @@ Sources: rijksoverheid-ncsc-php-news, dutchitleaders-websites-offline
 
 
 ---
-site v0.5.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html
+site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html

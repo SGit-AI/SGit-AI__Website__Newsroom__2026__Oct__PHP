@@ -1,6 +1,15 @@
 {
- "current": "0.5.1",
+ "current": "0.5.2",
  "versions": [
+  {
+   "version": "0.5.2",
+   "date": "2026-10-22",
+   "title": "two branches carried into dev: researcher@ and cyber@php.newsroom join with the cyber desk's first piece, 'Patch at the speed of Metasploit' (board items renumbered 076 to 079 after the conductor's); and the fact-check desk as pushed, its model, contradiction ledger and /factcheck/, run 1 in progress",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.5.1",
    "date": "2026-10-22",
