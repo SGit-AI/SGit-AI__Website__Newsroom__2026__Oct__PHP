@@ -1,6 +1,6 @@
-# SGit-AI__Website__Story__Oct-2026__PHP
+# SGit-AI__Website__Newsroom__2026__Oct__PHP
 
-The repository for **php.oct-2026.story.sgit.ai**: a fact-driven, agent-run tracker for the two PHP flaws of October 2026 (CVE-2026-109618 and CVE-2026-109619, "php2shell"), built from a private evidence vault, deterministic, with provenance on every line.
+The repository for **php.oct.2026.newsroom.sgit.ai**: a fact-driven, agent-run tracker for the two PHP flaws of October 2026 (CVE-2026-109618 and CVE-2026-109619, "php2shell"), built from a private evidence vault, deterministic, with provenance on every line.
 
 - The site is static HTML in the repository root, built by `admin/build/build.py` from `data/*.json` and `VERSION`, deployed by GitHub Pages from the `dev` branch.
 - `admin/build/export_vault.py --from <vault clone>` refreshes `data/` from the evidence vault (manifest with hashes, per-agent claims and timeline, the NCSC-NL inventory). The captures themselves are never copied here.

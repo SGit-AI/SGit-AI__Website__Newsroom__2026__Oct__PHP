@@ -1,0 +1,41 @@
+# Source: Finding, Prioritizing, and Patching PHP2Shell Exposure | Arctic Wolf
+
+Arctic Wolf Labs: what it says, the claims and events that cite it, and the hashes of every captured file.
+
+Source · vendor · secondary · captured
+
+# Finding, Prioritizing, and Patching PHP2Shell Exposure | Arctic Wolf
+
+**Arctic Wolf Labs** · [https://arcticwolf.com/resources/blog/arctic-wolf-labs-finding-prioritizing-and-patching-php2shell-exposure/](https://arcticwolf.com/resources/blog/arctic-wolf-labs-finding-prioritizing-and-patching-php2shell-exposure/) · published 2026-10-21 · added by `claude-story-site` · slug `arcticwolf-php2shell-exposure`
+
+Vendor guidance on finding and patching exposure.
+
+## What it says, as the collector read it
+
+#### Finding, Prioritizing, and Patching PHP2Shell Exposure | Arctic Wolf
+
+Captured by claude-story-site. Status: captured. Vendor guidance on finding and patching exposure.
+
+- Captured for the record.
+
+## Claims that cite it
+
+No claim cites this source yet.
+
+## Events that cite it
+
+No timeline event cites this source yet.
+
+## The bytes
+capture 20261022T112342Z · HTTP 200 · https://arcticwolf.com/resources/blog/arctic-wolf-labs-finding-prioritizing-and-patching-php2shell-exposure/- `headers.json` cb2dc7b843210683b8616d4f651fe7942a43433cea11e494ec0adb084f793b82 1,052 bytes
+- `page.html` 62b3d068fbefbb9b312c2418b4a38ef788132d55782e1e41244e77c0bad59726 351,404 bytes
+- `provenance.json` 015cfc5316cc7077049a8aee5da1a198699d54f7244e62ab8f7bf89b9e5ac590 1,123 bytes
+- `rendered.html` 1f059cea13ae6b9fa434e23a67c3e8ec05c47fa9af94ac9c5a476013862adb78 1,342,610 bytes
+- `screenshot.png` 0f1c79ead2d73038424318bb8efbe497717653cc82a2b3763f24ce7a95386336 1,555,808 bytes
+- `text.txt` ef2210c0fd1c35032d70283c91ab44c01c091342c21c9ac55571b12b45f8f75b 10,879 bytes
+
+The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
+
+
+---
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/arcticwolf-php2shell-exposure/index.html

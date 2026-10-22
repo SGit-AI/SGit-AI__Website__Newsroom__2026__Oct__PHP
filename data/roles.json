@@ -143,6 +143,36 @@
    "id": "analyst",
    "name": "Analyst or advisor",
    "question": "How did coordinated disclosure fail, and what does AI-assisted discovery change?"
+  },
+  {
+   "id": "ciso",
+   "name": "CISO",
+   "question": "What is our exposure, what is our evidence we were not hit, and what do I tell the board?"
+  },
+  {
+   "id": "cto",
+   "name": "CTO",
+   "question": "What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?"
+  },
+  {
+   "id": "cfo",
+   "name": "CFO",
+   "question": "What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?"
+  },
+  {
+   "id": "appsec",
+   "name": "Head of AppSec",
+   "question": "Which of our applications are in scope, which settings matter, and what do we add to the pipeline?"
+  },
+  {
+   "id": "developer",
+   "name": "Developer",
+   "question": "Is my code the problem, what do I change, and how do I check the box I deployed to?"
+  },
+  {
+   "id": "comms",
+   "name": "Media and communications team",
+   "question": "What can we say that is true, what should we not say, and what will we be asked?"
   }
  ]
 }

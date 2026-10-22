@@ -1,0 +1,28 @@
+# OpenAI (Patch the Planet, Codex Security, Amy Burnett): what they say
+
+OpenAI (Patch the Planet, Codex Security, Amy Burnett): reported the same root cause on 11 August; ran the coordination coalition; the claims this site attributes to them and their sources.
+
+Party
+
+# OpenAI (Patch the Planet, Codex Security, Amy Burnett)
+
+reported the same root cause on 11 August; ran the coordination coalition
+
+## Claims this site attributes to this party
+
+| Claim | Who says it | Status | Primary | Sources |
+|---|---|---|---|---|
+| PHP is used by almost 70% of websitesNone of the three cites the survey it comes from. A share of websites using PHP is an upper bound on exposure, not a count of vulnerable systems. | Cloudflare; OpenAI ('an estimated 70%'); Wiz body text | reported | 3/3 | [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [OpenAI on X](../../sources/x-openai-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html) |
+| The flaws were found by researchers using frontier AI under OpenAI's Patch the Planet initiativeAll three research parties say AI was used. Calif: 'No special harness, or access to models that weren't generally available to everyone were used'. Calif does not name a model; Wiz names Gemini 4 Argon, GPT-5.6 Sol and Wiz Atlas; OpenAI's blog reportedly names GPT-5.6 Sol but is blocked. | BBC; OpenAI; Calif; Wiz | reported | 3/4 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [OpenAI on X](../../sources/x-openai-php2shell/index.html) [Calif](../../sources/calif-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html) |
+| Frontier AI found the flaw ahead of attackers, giving defenders time to prepareAmazon reports an exploit attempt against a honeypot on 17 October, four days before disclosure, from an actor whose source of exploit information is unknown. | OpenAI | disputed | 1/2 | [OpenAI on X](../../sources/x-openai-php2shell/index.html) [THN](../../sources/thehackernews-php2shell-4days/index.html) |
+
+## Its sources in the vault
+- [OpenAI on X: OpenAI models helped researchers ... discover critical security flaws in PHP](../../sources/x-openai-php2shell/index.html) OpenAI (@OpenAI)
+- [Patch the Planet — OpenAI](../../sources/patchtheplanet-org/index.html) OpenAI (Patch the Planet / Daybreak)
+- [OpenAI models help researchers uncover critical PHP security flaws](../../sources/openai-community-php-flaws/index.html) OpenAI Developer Community (user 'sps', Leader)
+
+[Every party →](../index.html)
+
+
+---
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/openai/index.html

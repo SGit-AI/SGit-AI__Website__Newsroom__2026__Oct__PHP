@@ -1,10 +1,10 @@
 # The story as a graph: claims, events and the sources they cite
 
-151 nodes and 215 citation edges from the php2shell claims and timeline to the captured sources, drawn from the same rows as the text, with the JSON to download.
+209 nodes and 281 citation edges from the php2shell claims and timeline to the captured sources, drawn from the same rows as the text, with the JSON to download.
 
 # The story as a graph
 
-151 nodes and 215 edges: 49 claims, 59 events and the 43 sources they cite. There is no second graph behind this one: the page, the briefings and the timeline are all drawn from the same rows, so the picture cannot disagree with the text. The JSON is [data/graph.json](../data/graph.json); this page shows the claims-to-sources slice.
+209 nodes and 281 edges: 70 claims, 68 events and the 71 sources they cite. There is no second graph behind this one: the page, the briefings and the timeline are all drawn from the same rows, so the picture cannot disagree with the text. The JSON is [data/graph.json](../data/graph.json); this page shows the claims-to-sources slice.
 
 Every line is one citation. Colour is the claim's status: green confirmed, grey reported, amber disputed or contradicted, red unverified. A source with a filled dot is primary.
 
@@ -20,4 +20,4 @@ Every line is one citation. Colour is the claim's status: green confirmed, grey 
 
 
 ---
-site v0.1.0 · data as of 2026-10-22T08:48Z · vault commit 379e3d7f172a · https://php.oct-2026.story.sgit.ai/graph/index.html
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html

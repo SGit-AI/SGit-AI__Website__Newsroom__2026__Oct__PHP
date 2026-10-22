@@ -138,5 +138,100 @@
   "sources": [
    "thehackernews-php2shell-4days"
   ]
+ },
+ {
+  "id": "chainguard-lorenc",
+  "name": "Dan Lorenc, Chainguard",
+  "role": "shipped patched images early; says exploits were in the wild and denies leaking",
+  "sources": [
+   "theregister-php-blames-chainguard",
+   "x-feross-chainguard"
+  ]
+ },
+ {
+  "id": "prince",
+  "name": "Matthew Prince, Cloudflare CEO",
+  "role": "the attempt counts",
+  "sources": [
+   "x-eastdakota-php2shell-stats"
+  ]
+ },
+ {
+  "id": "imperva",
+  "name": "Imperva Threat Research",
+  "role": "had the details under embargo; saw nothing before disclosure",
+  "sources": [
+   "imperva-blog-php2shell"
+  ]
+ },
+ {
+  "id": "fastly",
+  "name": "Fastly",
+  "role": "the most candid vendor on exploitability and on what a WAF cannot do",
+  "sources": [
+   "fastly-blog-php2shell"
+  ]
+ },
+ {
+  "id": "akamai",
+  "name": "Akamai",
+  "role": "rule 3000991; the 2024 precedent",
+  "sources": [
+   "akamai-blog-php-core-rce",
+   "akamai-blog-cve-2024-4577-one-day"
+  ]
+ },
+ {
+  "id": "huntress",
+  "name": "Huntress",
+  "role": "no exploitation seen on partner systems",
+  "sources": [
+   "huntress-php2shell-rapid-response"
+  ]
+ },
+ {
+  "id": "weirdgloop",
+  "name": "Weird Gloop (cookmeplox)",
+  "role": "the one operator with a measured outage",
+  "sources": [
+   "weirdgloop-blog-php2shell"
+  ]
+ },
+ {
+  "id": "rijksoverheid",
+  "name": "The Dutch government and NCSC-NL",
+  "role": "took its own site offline",
+  "sources": [
+   "rijksoverheid-ncsc-php-news",
+   "ncsc-nl-php2shell"
+  ]
+ },
+ {
+  "id": "valtori",
+  "name": "Valtori and NCSC-FI",
+  "role": "Finland's precautionary shutdown",
+  "sources": [
+   "yle-finland-government-sites-shut",
+   "helsinkitimes-finland-shutdown"
+  ]
+ },
+ {
+  "id": "detectors",
+  "name": "Community detection authors (darkfibr, rjmendez, Lexsah, Blevene)",
+  "role": "the rules, and the correction of the leaked PoC's mechanism",
+  "sources": [
+   "github-darkfibr-php2shell-detect",
+   "github-rjmendez-phpup-2026",
+   "github-lexsah-php2shell-detection",
+   "gist-blevene-detection-guide"
+  ]
+ },
+ {
+  "id": "leblanc",
+  "name": "Arnaud Le Blanc and the PHP fix authors",
+  "role": "wrote the fix",
+  "sources": [
+   "github-php-src-fix-commit-3584a98bd"
+  ]
  }
 ]

@@ -18,7 +18,7 @@ GHSA-w8hw-w9fx-j79w · CVSS v4.0 **9.2** · CWE-416, 755, 824, 1325, 1419 · res
 
 **The fix.** Removes longjmp() for OOM. A delayed, graceful soft OOM at the next VM safe point, plus a hard OOM via _exit() at a higher threshold.
 
-[CVE record](../sources/index.html#cve-cve-2026-109618) [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) [NVD](../sources/index.html#nvd-cve-2026-109618) [oss-security](../sources/index.html#openwall-oss-security-2026-10-21-6)
+[CVE record](../sources/cve-cve-2026-109618/index.html) [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [NVD](../sources/nvd-cve-2026-109618/index.html) [oss-security](../sources/openwall-oss-security-2026-10-21-6/index.html)
 
 ### CVE-2026-109619: RCE via stale global state
 
@@ -30,7 +30,7 @@ GHSA-6wmf-4rv5-p3rp · CVSS v4.0 **9.2** · CWE-416, 755, 824, 1325, 1419 · res
 
 **The fix.** Part of the same change, "Avoid state corruption via bailout": global state is reset so it cannot refer to freed request memory.
 
-[CVE record](../sources/index.html#cve-cve-2026-109619) [PHP](../sources/index.html#github-ghsa-6wmf-4rv5-p3rp) [NVD](../sources/index.html#nvd-cve-2026-109619) [oss-security](../sources/index.html#openwall-oss-security-2026-10-21-7)
+[CVE record](../sources/cve-cve-2026-109619/index.html) [PHP](../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [NVD](../sources/nvd-cve-2026-109619/index.html) [oss-security](../sources/openwall-oss-security-2026-10-21-7/index.html)
 
 ## Which deployments
 
@@ -38,12 +38,12 @@ The flaw is in the engine, so what matters is how PHP is wired to the web server
 
 | SAPI | Risk | What the primary sources say | Sources |
 |---|---|---|---|
-| Apache mod_php | highest | Unauthenticated RCE demonstrated over HTTP with default input and memory limits, before any application code runs. | [php.net](../sources/index.html#php-net-advisory) [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) [oss-security](../sources/index.html#openwall-oss-security-2026-10-21-6) |
-| PHP-FPM | susceptible | For CVE-2026-109618 the GitHub advisory says no complete FPM exploit has been demonstrated; the PHP Foundation blog says RCE was confirmed on FPM through application-level paths. For CVE-2026-109619 the session path was validated against FPM. | [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) [PHP Foundation](../sources/index.html#php-foundation-blog-security-release) [PHP](../sources/index.html#github-ghsa-6wmf-4rv5-p3rp) [oss-security](../sources/index.html#openwall-oss-security-2026-10-21-7) |
-| php-cgi | at risk | Listed by php.net among installations serving web requests. | [php.net](../sources/index.html#php-net-advisory) |
-| FrankenPHP | likely susceptible | 'likely susceptible' per the GitHub advisory. | [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) |
-| LiteSpeed (LSAPI) | likely, unvalidated | 'application-specific exploits being likely but unvalidated'. | [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) |
-| CLI, cron, queue workers | not web-serving | The advisory scopes the risk to installations serving web requests. A CLI process that parses untrusted input is not covered either way by the primary sources. | [php.net](../sources/index.html#php-net-advisory) |
+| Apache mod_php | highest | Unauthenticated RCE demonstrated over HTTP with default input and memory limits, before any application code runs. | [php.net](../sources/php-net-advisory/index.html) [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [oss-security](../sources/openwall-oss-security-2026-10-21-6/index.html) |
+| PHP-FPM | susceptible | For CVE-2026-109618 the GitHub advisory says no complete FPM exploit has been demonstrated; the PHP Foundation blog says RCE was confirmed on FPM through application-level paths. For CVE-2026-109619 the session path was validated against FPM. | [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP Foundation](../sources/php-foundation-blog-security-release/index.html) [PHP](../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [oss-security](../sources/openwall-oss-security-2026-10-21-7/index.html) |
+| php-cgi | at risk | Listed by php.net among installations serving web requests. | [php.net](../sources/php-net-advisory/index.html) |
+| FrankenPHP | likely susceptible | 'likely susceptible' per the GitHub advisory. | [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) |
+| LiteSpeed (LSAPI) | likely, unvalidated | 'application-specific exploits being likely but unvalidated'. | [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) |
+| CLI, cron, queue workers | not web-serving | The advisory scopes the risk to installations serving web requests. A CLI process that parses untrusted input is not covered either way by the primary sources. | [php.net](../sources/php-net-advisory/index.html) |
 
 ## What a compromise would mean: the blast radius
 
@@ -63,7 +63,7 @@ Remote code execution *as the web worker* is the floor, not the ceiling, and not
 
 - **How fast can you pull the plug?** Taking a system offline is the last step in every agency's list, but the ability to do it in minutes, cleanly, is a property worth having before the next one of these.
 
-[CISA](../sources/index.html#cisa-alert-php-20261021) [JPCERT/CC](../sources/index.html#jpcert-at260033) [PHP](../sources/index.html#github-ghsa-6wmf-4rv5-p3rp) [NCSC-NL](../sources/index.html#ncsc-nl-php2shell-software-list)
+[CISA](../sources/cisa-alert-php-20261021/index.html) [JPCERT/CC](../sources/jpcert-at260033/index.html) [PHP](../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [NCSC-NL](../sources/ncsc-nl-php2shell-software-list/index.html)
 
 ## Affected and fixed versions
 
@@ -73,7 +73,7 @@ Remote code execution *as the web worker* is the floor, not the ceiling, and not
 
 The CVE records carry defaultStatus 'unaffected' and list only 8.2 to 8.5, so an automated scanner reading the CVE will call 7.4 to 8.1 unaffected. The php.net advisory, the backport branches and a Greenbone reply on oss-security say otherwise.
 
-[CVE record](../sources/index.html#cve-cve-2026-109618) [php.net](../sources/index.html#php-net-advisory) [php-src](../sources/index.html#github-php-src-branch-7.4-backport) [NCSC-NL](../sources/index.html#ncsc-nl-advisories) [Wiz on X](../sources/index.html#x-wiz-io-php2shell) [CERT-FR](../sources/index.html#certfr-2026-ale-014) [oss-security](../sources/index.html#openwall-oss-security-109619-thread)
+[CVE record](../sources/cve-cve-2026-109618/index.html) [php.net](../sources/php-net-advisory/index.html) [php-src](../sources/github-php-src-branch-7.4-backport/index.html) [NCSC-NL](../sources/ncsc-nl-advisories/index.html) [Wiz on X](../sources/x-wiz-io-php2shell/index.html) [CERT-FR](../sources/certfr-2026-ale-014/index.html) [oss-security](../sources/openwall-oss-security-109619-thread/index.html)
 
 ## The temporary mitigations, and what each one does not do
 
@@ -87,10 +87,10 @@ The CVE records carry defaultStatus 'unaffected' and list only 8.2 to 8.5, so an
 | CVE-2026-109619 | Remove invalid or deprecated per-request settings that emit diagnostics before initialisation; fix attacker-reachable fatal errors and execution timeouts. | Hiding diagnostics with error_reporting, display_errors or @ does not help. |
 | both | pm.max_requests=1 on FPM (GitHub advisory). | 'Updating is the only reliable mitigation.' |
 
-php.net: *while only an update is a complete solution, the following measures reduce exposure to specific attack paths but do not make an installation safe.* [php.net](../sources/index.html#php-net-advisory) [PHP](../sources/index.html#github-ghsa-6wmf-4rv5-p3rp) [CERT-EU](../sources/index.html#certeu-sa-2026-018) [NCSC-NL](../sources/index.html#ncsc-nl-php2shell)
+php.net: *while only an update is a complete solution, the following measures reduce exposure to specific attack paths but do not make an installation safe.* [php.net](../sources/php-net-advisory/index.html) [PHP](../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [CERT-EU](../sources/certeu-sa-2026-018/index.html) [NCSC-NL](../sources/ncsc-nl-php2shell/index.html)
 
 The engineering steps, in order, are on [If you run PHP](../playbook/index.html). The disagreement between the two primary accounts of FPM is [claim rce-fpm](../claims/index.html#rce-fpm).
 
 
 ---
-site v0.1.0 · data as of 2026-10-22T08:48Z · vault commit 379e3d7f172a · https://php.oct-2026.story.sgit.ai/flaws/index.html
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/flaws/index.html

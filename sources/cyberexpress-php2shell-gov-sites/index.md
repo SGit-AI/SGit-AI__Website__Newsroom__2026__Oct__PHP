@@ -1,0 +1,43 @@
+# Source: PHP2Shell CVE-2026-109618 PHP Flaw Hits Gov Sites
+
+The Cyber Express: what it says, the claims and events that cite it, and the hashes of every captured file.
+
+Source · news · secondary · captured
+
+# PHP2Shell CVE-2026-109618 PHP Flaw Hits Gov Sites
+
+**The Cyber Express** · [https://thecyberexpress.com/php2shell-cve-2026-109618-php-flaw/](https://thecyberexpress.com/php2shell-cve-2026-109618-php-flaw/) · published 2026-10-21 · added by `claude-story-site` · slug `cyberexpress-php2shell-gov-sites`
+
+Secondary: Wikimedia quote; government sites hit.
+
+## What it says, as the collector read it
+
+#### PHP2Shell CVE-2026-109618 PHP Flaw Hits Gov Sites
+
+Captured by claude-story-site. Status: captured. Secondary: Wikimedia quote; government sites hit.
+
+- Captured for the Wikimedia quote.
+
+## Claims that cite it
+
+| Claim | Who says it | Status | Primary | Sources |
+|---|---|---|---|---|
+| The Wikimedia Foundation took down a number of systems 'as a precautionary measure until they can be safely patched'No Wikimedia-published statement captured. | the Foundation, as quoted by CNN and The Cyber Express | reported | 0/2 | [CNN](../../sources/cnn-php2shell-websites-shut/index.html) [The Cyber Express](../../sources/cyberexpress-php2shell-gov-sites/index.html) |
+
+## Events that cite it
+
+No timeline event cites this source yet.
+
+## The bytes
+capture 20261022T112646Z · HTTP 200 · https://thecyberexpress.com/php2shell-cve-2026-109618-php-flaw/- `headers.json` 12ba694e03c07c68e519eee401b1f3c26bbbf5e314d5681dd8dee8202a9ddc2b 1,486 bytes
+- `page.html` 58d2d840bcff4c80b422282f8358fded7d8d4a8a0ae0005b66dd7ce51049222d 567,233 bytes
+- `provenance.json` b259cfb46f07df0edf091ae5b56f255c93846d9656a80d9adbe65e6aa496349f 1,017 bytes
+- `rendered.html` ed8d3c7588accfa0810ec2d054a01b00bf1c8783e9100bc6f46557783e623fa5 598,469 bytes
+- `screenshot.png` d80c357eed47fd016ffe1e5a7866573916c9044f011f6e0e3c7b2487c93d296a 18,579,851 bytes
+- `text.txt` f45bc7599367343e65c9a0d202d909990a7a802e526f44362042e0de16cf20a6 14,589 bytes
+
+The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
+
+
+---
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/cyberexpress-php2shell-gov-sites/index.html

@@ -8,7 +8,7 @@ This site is the newsroom's [PHP flaws section](https://newsroom.sgit.ai/php-fla
 
 ## The evidence vault
 
-A private, encrypted sgit vault, opened at 2026-10-22T08:03Z, written to by 4 agents and the editor. It holds 61 sources and 62 captures at commit `379e3d7f172a`. Its protocol, in its own README: capture, don't paraphrase; captures are additive, never edited or deleted; one `source.json` and one `notes.md` per source, so agents never conflict on a shared manifest; claims and timeline rows in one file per agent; primary sources first, then news, then social posts, which get captured early because they get deleted; a blocked fetch is recorded with the block, so another agent can retry; and no keys or tokens in any file. The vault is private because it holds verbatim third-party pages for the record; this site publishes their hashes, their URLs and short quotations, and never the pages.
+A private, encrypted sgit vault, opened at 2026-10-22T08:03Z, written to by 5 agents and the editor. It holds 144 sources and 137 captures at commit `200d08971937`. Its protocol, in its own README: capture, don't paraphrase; captures are additive, never edited or deleted; one `source.json` and one `notes.md` per source, so agents never conflict on a shared manifest; claims and timeline rows in one file per agent; primary sources first, then news, then social posts, which get captured early because they get deleted; a blocked fetch is recorded with the block, so another agent can retry; and no keys or tokens in any file. The vault is private because it holds verbatim third-party pages for the record; this site publishes their hashes, their URLs and short quotations, and never the pages.
 
 ## Five words for how far a claim can be trusted
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -16,6 +16,7 @@ A private, encrypted sgit vault, opened at 2026-10-22T08:03Z, written to by 4 ag
 - disputed the sources disagree, and both readings are shown
 - contradicted a primary source says otherwise
 - unverified even the reporting outlet could not check it
+- p/n primary sources among the n cited; a blocked capture is counted and marked
 
 A claim never gets a better word than its sources give it. A verbatim quote is marked as such and attributed to the page it is on; a quote attributed by one outlet to another party stays *reported* until the other party's page is captured and found to carry it. The one case so far where that check failed, the BBC's NCSC sentence, is on [the agencies page](../agencies/index.html).
 
@@ -41,4 +42,4 @@ Nothing here is specific to PHP. The vault protocol, the capture tool, the five 
 
 
 ---
-site v0.1.0 · data as of 2026-10-22T08:48Z · vault commit 379e3d7f172a · https://php.oct-2026.story.sgit.ai/method/index.html
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/method/index.html

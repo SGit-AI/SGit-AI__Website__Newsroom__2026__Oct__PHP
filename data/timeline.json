@@ -641,5 +641,109 @@
   "confidence": "stated",
   "phase": "aftermath",
   "agent": "claude-story-site"
+ },
+ {
+  "at": "2026-10-18T15:26:39Z",
+  "event": "Arnaud Le Blanc authors the fix, 'Avoid state corruption via bailout', with Ilija Tovilo, Jakub Zelenka, Nora Dossche and Nicolas Grekas; the 7.4 minimal backport is authored at 18:09 UTC.",
+  "sources": [
+   "github-php-src-fix-commit-3584a98bd"
+  ],
+  "confidence": "stated",
+  "phase": "coordination",
+  "agent": "claude-story-site",
+  "note": "Author timestamps from the commits."
+ },
+ {
+  "at": "2026-10-20",
+  "event": "Qualys publishes on the pre-announcement.",
+  "sources": [
+   "qualys-blog-php-preannounce"
+  ],
+  "confidence": "stated",
+  "phase": "leak",
+  "agent": "claude-story-site"
+ },
+ {
+  "at": "2026-10-21T07:43Z",
+  "event": "Cloudflare's CTO reports early attacks emerging, before the release.",
+  "sources": [
+   "insurancebusiness-uk-councils-met",
+   "securityweek-exploitation-days-before"
+  ],
+  "confidence": "stated",
+  "phase": "leak",
+  "agent": "claude-story-site",
+  "note": "Second-hand; the post itself is not captured."
+ },
+ {
+  "at": "2026-10-21T09:45Z",
+  "event": "Finland's Valtori begins restricting public traffic to government web services (12:45 local).",
+  "sources": [
+   "helsinkitimes-finland-shutdown",
+   "yle-finland-government-sites-shut"
+  ],
+  "confidence": "inferred",
+  "phase": "response",
+  "agent": "claude-story-site",
+  "note": "Converted from Finnish time."
+ },
+ {
+  "at": "2026-10-21T14:06:22Z",
+  "event": "The fix commit enters the public php-src branches (commit timestamp); merged into 8.3 at 14:12, 8.4 at 14:27 and 8.5 at 14:30 UTC.",
+  "sources": [
+   "github-php-src-fix-commit-3584a98bd"
+  ],
+  "confidence": "stated",
+  "phase": "release",
+  "agent": "claude-story-site"
+ },
+ {
+  "at": "2026-10-21",
+  "event": "The Dutch NCSC takes its own website offline as a precaution; DigiD, MijnOverheid and Overheid.nl follow. Weird Gloop turns off its wiki web servers for 13 hours. Amazon, Imperva, Fastly, Akamai and Huntress publish.",
+  "sources": [
+   "rijksoverheid-ncsc-php-news",
+   "weirdgloop-blog-php2shell",
+   "aws-security-blog-madpot",
+   "imperva-blog-php2shell",
+   "fastly-blog-php2shell",
+   "akamai-blog-php-core-rce",
+   "huntress-php2shell-rapid-response"
+  ],
+  "confidence": "stated",
+  "phase": "response",
+  "agent": "claude-story-site"
+ },
+ {
+  "at": "2026-10-21T20:30Z",
+  "event": "Huntress: no exploitation observed on partner systems (16:30 ET).",
+  "sources": [
+   "huntress-php2shell-rapid-response"
+  ],
+  "confidence": "stated",
+  "phase": "aftermath",
+  "agent": "claude-story-site",
+  "note": "Converted from Eastern time."
+ },
+ {
+  "at": "2026-10-22T01:25Z",
+  "event": "Matthew Prince posts Cloudflare's attempt counts: thousands before, millions after.",
+  "sources": [
+   "x-eastdakota-php2shell-stats"
+  ],
+  "confidence": "stated",
+  "phase": "aftermath",
+  "agent": "claude-story-site"
+ },
+ {
+  "at": "2026-10-22",
+  "event": "The Register carries Dan Lorenc's reply to the PHP Foundation; Fortinet publishes FortiWeb signatures; The Record carries the Foundation's account of the 2024 signs.",
+  "sources": [
+   "theregister-php-blames-chainguard",
+   "fortinet-fortiweb-php2shell",
+   "therecord-php-foundation-statement"
+  ],
+  "confidence": "stated",
+  "phase": "aftermath",
+  "agent": "claude-story-site"
  }
 ]

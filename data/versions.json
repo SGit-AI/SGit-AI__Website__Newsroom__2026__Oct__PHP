@@ -1,6 +1,15 @@
 {
- "current": "0.1.0",
+ "current": "0.2.0",
  "versions": [
+  {
+   "version": "0.2.0",
+   "date": "2026-10-22",
+   "title": "the code read from php-src, php2shell in context against ten earlier flaws, an impact ledger of offline versus compromised, detection and defence from six WAF vendors and three rule sets, six more briefings, a page per source and per party with its own graph, 86 new sources",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.1.0",
    "date": "2026-10-22",

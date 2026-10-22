@@ -4,7 +4,7 @@ Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, wi
 
 # The NCSC-NL software inventory
 
-All 674 rows of NCSC-NL's php2shell inventory at commit `cca173c64ec5`, as parsed into the vault. Status is NCSC-NL's per CVE; the note is the first line of theirs. Licence EUPL-1.2. This page is generated from the parsed file and changes only when the vault does. [NCSC-NL](../sources/index.html#ncsc-nl-php2shell-software-list) [NCSC-NL](../sources/index.html#ncsc-nl-php2shell)
+All 674 rows of NCSC-NL's php2shell inventory at commit `cca173c64ec5`, as parsed into the vault. Status is NCSC-NL's per CVE; the note is the first line of theirs. Licence EUPL-1.2. This page is generated from the parsed file and changes only when the vault does. [NCSC-NL](../sources/ncsc-nl-php2shell-software-list/index.html) [NCSC-NL](../sources/ncsc-nl-php2shell/index.html)
 
 | Supplier | Product | Version | 109618 | 109619 | NCSC-NL note | Links |
 |---|---|---|---|---|---|---|
@@ -529,4 +529,4 @@ All 674 rows of NCSC-NL's php2shell inventory at commit `cca173c64ec5`, as parse
 
 
 ---
-site v0.1.0 · data as of 2026-10-22T08:48Z · vault commit 379e3d7f172a · https://php.oct-2026.story.sgit.ai/affected/software.html
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/affected/software.html

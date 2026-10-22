@@ -105,6 +105,12 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 - [Journalist](../briefings/journalist/index.html): Which numbers hold up, who said what first, and what is still unverified?
 - [Security researcher](../briefings/researcher/index.html): What are the bug classes, what was demonstrated, and what is still open?
 - [Analyst or advisor](../briefings/analyst/index.html): How did coordinated disclosure fail, and what does AI-assisted discovery change?
+- [CISO](../briefings/ciso/index.html): What is our exposure, what is our evidence we were not hit, and what do I tell the board?
+- [CTO](../briefings/cto/index.html): What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?
+- [CFO](../briefings/cfo/index.html): What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?
+- [Head of AppSec](../briefings/appsec/index.html): Which of our applications are in scope, which settings matter, and what do we add to the pipeline?
+- [Developer](../briefings/developer/index.html): Is my code the problem, what do I change, and how do I check the box I deployed to?
+- [Media and communications team](../briefings/comms/index.html): What can we say that is true, what should we not say, and what will we be asked?
 
 ## The rules every role shares
 
@@ -124,4 +130,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.1.0 · data as of 2026-10-22T08:48Z · vault commit 379e3d7f172a · https://php.oct-2026.story.sgit.ai/team/index.html
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html

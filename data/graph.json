@@ -1,7 +1,7 @@
 {
- "site": "php.oct-2026.story.sgit.ai",
- "version": "0.1.0",
- "vault_commit": "379e3d7f172a",
+ "site": "php.oct.2026.newsroom.sgit.ai",
+ "version": "0.2.0",
+ "vault_commit": "200d08971937",
  "nodes": [
   {
    "id": "claim:two-cves-9.2",
@@ -97,7 +97,7 @@
   {
    "id": "claim:scale-2.6m-hosts",
    "kind": "claim",
-   "label": "PHP is exposed on 2,608,039 internet-facing hosts",
+   "label": "PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 mi",
    "status": "reported",
    "topic": "scale"
   },
@@ -265,7 +265,7 @@
   {
    "id": "claim:amazon-honeypot",
    "kind": "claim",
-   "label": "An exploit attempt hit an Amazon honeypot on 17 October from an anonymisation network, and",
+   "label": "An exploit attempt hit an Amazon honeypot on 17 October from an anonymisation network; pro",
    "status": "reported",
    "topic": "exploitation"
   },
@@ -280,7 +280,7 @@
    "id": "claim:probing",
    "kind": "claim",
    "label": "Amazon and Cloudflare saw sites being probed for the flaw",
-   "status": "reported",
+   "status": "confirmed",
    "topic": "exploitation"
   },
   {
@@ -347,6 +347,153 @@
    "topic": "advice"
   },
   {
+   "id": "claim:cf-millions",
+   "kind": "claim",
+   "label": "Exploit attempts across Cloudflare's network: thousands in the ten hours before announceme",
+   "status": "reported",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:imperva-none",
+   "kind": "claim",
+   "label": "No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosur",
+   "status": "reported",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:huntress-none",
+   "kind": "claim",
+   "label": "No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no pub",
+   "status": "reported",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:watchtowr-itw",
+   "kind": "claim",
+   "label": "watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild",
+   "status": "unverified",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:no-confirmed-compromise",
+   "kind": "claim",
+   "label": "No named organisation has confirmed a compromise through php2shell",
+   "status": "confirmed",
+   "topic": "impact"
+  },
+  {
+   "id": "claim:pocs-wrong",
+   "kind": "claim",
+   "label": "None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechani",
+   "status": "reported",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:ac-high",
+   "kind": "claim",
+   "label": "Triggering the bug is much easier than turning it into code execution; the CVSS vector say",
+   "status": "confirmed",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:fix-authored",
+   "kind": "claim",
+   "label": "The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 U",
+   "status": "confirmed",
+   "topic": "timing"
+  },
+  {
+   "id": "claim:fix-engine",
+   "kind": "claim",
+   "label": "Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on o",
+   "status": "confirmed",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:more-paths",
+   "kind": "claim",
+   "label": "Patching the demonstrated paths does not make the bailout mechanism safe; more paths shoul",
+   "status": "reported",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:waf-nine-hours",
+   "kind": "claim",
+   "label": "Edge protections went live hours before disclosure: Cloudflare at 03:02 UTC; Imperva, Akam",
+   "status": "confirmed",
+   "topic": "advice"
+  },
+  {
+   "id": "claim:nl-offline",
+   "kind": "claim",
+   "label": "The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and O",
+   "status": "confirmed",
+   "topic": "impact"
+  },
+  {
+   "id": "claim:fi-offline",
+   "kind": "claim",
+   "label": "Finland's state IT provider Valtori restricted public traffic to government web services f",
+   "status": "reported",
+   "topic": "impact"
+  },
+  {
+   "id": "claim:wikimedia-precaution",
+   "kind": "claim",
+   "label": "The Wikimedia Foundation took down a number of systems 'as a precautionary measure until t",
+   "status": "reported",
+   "topic": "impact"
+  },
+  {
+   "id": "claim:weirdgloop-13h",
+   "kind": "claim",
+   "label": "Weird Gloop turned off its wiki web servers for 13 hours and still served about 94% of pag",
+   "status": "confirmed",
+   "topic": "impact"
+  },
+  {
+   "id": "claim:edinburgh",
+   "kind": "claim",
+   "label": "Edinburgh council's site went offline late on 21 October; the council called it 'essential",
+   "status": "reported",
+   "topic": "impact"
+  },
+  {
+   "id": "claim:oxford",
+   "kind": "claim",
+   "label": "Oxford City Council: 'a precaution because of a worldwide issue with the underlying techno",
+   "status": "reported",
+   "topic": "impact"
+  },
+  {
+   "id": "claim:uk-list",
+   "kind": "claim",
+   "label": "Edinburgh and Oxford councils, the Met Police and the Office for Budget Responsibility wer",
+   "status": "reported",
+   "topic": "impact"
+  },
+  {
+   "id": "claim:quarkslab-redacted",
+   "kind": "claim",
+   "label": "Quarkslab's published audit summary lists 27 findings, two redacted because their fixes we",
+   "status": "reported",
+   "topic": "discovery"
+  },
+  {
+   "id": "claim:lorenc-ai-found",
+   "kind": "claim",
+   "label": "Chainguard's team found the same bugs independently with an AI harness and a frontier mode",
+   "status": "reported",
+   "topic": "discovery"
+  },
+  {
+   "id": "claim:kev-precedent",
+   "kind": "claim",
+   "label": "The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure a",
+   "status": "confirmed",
+   "topic": "exploitation"
+  },
+  {
    "id": "source:bbc-live-ckgel5xp2xv9t",
    "kind": "source",
    "label": "BBC News",
@@ -395,20 +542,20 @@
    "primary": true
   },
   {
-   "id": "source:daubois-blog-php2shell-rumors",
-   "kind": "source",
-   "label": "Alexandre Daubois (PHP security team / PHP Foundation)",
-   "publisher": "Alexandre Daubois (PHP security team / PHP Foundation)",
-   "url": "https://daubois.dev/blog/cve-2026-109618-php2shell-rumors/",
-   "primary": false
-  },
-  {
    "id": "source:cloudflare-blog-php2shell-waf",
    "kind": "source",
    "label": "Cloudflare",
    "publisher": "Cloudflare",
    "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
    "primary": true
+  },
+  {
+   "id": "source:daubois-blog-php2shell-rumors",
+   "kind": "source",
+   "label": "Alexandre Daubois (PHP security team / PHP Foundation)",
+   "publisher": "Alexandre Daubois (PHP security team / PHP Foundation)",
+   "url": "https://daubois.dev/blog/cve-2026-109618-php2shell-rumors/",
+   "primary": false
   },
   {
    "id": "source:github-ghsa-6wmf-4rv5-p3rp",
@@ -419,12 +566,20 @@
    "primary": true
   },
   {
-   "id": "source:thehackernews-php2shell-4days",
+   "id": "source:imperva-blog-php2shell",
    "kind": "source",
-   "label": "The Hacker News (Ravie Lakshmanan)",
-   "publisher": "The Hacker News (Ravie Lakshmanan)",
-   "url": "https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html",
-   "primary": false
+   "label": "Imperva Threat Research (Nadav Avital, Bar Menachem)",
+   "publisher": "Imperva Threat Research (Nadav Avital, Bar Menachem)",
+   "url": "https://www.imperva.com/blog/php2shell-vulnerability-updates/",
+   "primary": true
+  },
+  {
+   "id": "source:aws-security-blog-madpot",
+   "kind": "source",
+   "label": "Amazon (CJ Moses, AWS Security Blog)",
+   "publisher": "Amazon (CJ Moses, AWS Security Blog)",
+   "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/",
+   "primary": true
   },
   {
    "id": "source:certeu-sa-2026-018",
@@ -451,12 +606,68 @@
    "primary": true
   },
   {
+   "id": "source:cisa-kev-json",
+   "kind": "source",
+   "label": "CISA",
+   "publisher": "CISA",
+   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "primary": true
+  },
+  {
+   "id": "source:cve-cve-2026-109618",
+   "kind": "source",
+   "label": "CVE Program (CNA: PHP Group)",
+   "publisher": "CVE Program (CNA: PHP Group)",
+   "url": "https://www.cve.org/CVERecord?id=CVE-2026-109618",
+   "primary": true
+  },
+  {
+   "id": "source:fastly-blog-php2shell",
+   "kind": "source",
+   "label": "Fastly",
+   "publisher": "Fastly",
+   "url": "https://www.fastly.com/blog/fastlys-proactive-protection-critical-php-rce-cve-2026-109618",
+   "primary": true
+  },
+  {
+   "id": "source:github-php-src-tag-php-8.5.12",
+   "kind": "source",
+   "label": "php/php-src on GitHub (release by adoy)",
+   "publisher": "php/php-src on GitHub (release by adoy)",
+   "url": "https://github.com/php/php-src/releases/tag/php-8.5.12",
+   "primary": true
+  },
+  {
+   "id": "source:huntress-php2shell-rapid-response",
+   "kind": "source",
+   "label": "Huntress",
+   "publisher": "Huntress",
+   "url": "https://www.huntress.com/blog/php2shell-leaked-critical-php-vulnerabilities",
+   "primary": true
+  },
+  {
+   "id": "source:openwall-oss-security-109619-thread",
+   "kind": "source",
+   "label": "oss-security list (replies: Aaron Rainbolt, Yves-Alexis Perez/Debian, Christian Fischer/Greenbone)",
+   "publisher": "oss-security list (replies: Aaron Rainbolt, Yves-Alexis Perez/Debian, Christian Fischer/Greenbone)",
+   "url": "https://www.openwall.com/lists/oss-security/2026/10/21/16",
+   "primary": false
+  },
+  {
    "id": "source:openwall-oss-security-2026-10-20-34",
    "kind": "source",
    "label": "oss-security list (Alan Coopersmith, Oracle)",
    "publisher": "oss-security list (Alan Coopersmith, Oracle)",
    "url": "https://www.openwall.com/lists/oss-security/2026/10/20/34",
    "primary": true
+  },
+  {
+   "id": "source:thehackernews-php2shell-4days",
+   "kind": "source",
+   "label": "The Hacker News (Ravie Lakshmanan)",
+   "publisher": "The Hacker News (Ravie Lakshmanan)",
+   "url": "https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html",
+   "primary": false
   },
   {
    "id": "source:x-openai-php2shell",
@@ -483,19 +694,11 @@
    "primary": true
   },
   {
-   "id": "source:cve-cve-2026-109618",
+   "id": "source:github-php-src-fix-commit-3584a98bd",
    "kind": "source",
-   "label": "CVE Program (CNA: PHP Group)",
-   "publisher": "CVE Program (CNA: PHP Group)",
-   "url": "https://www.cve.org/CVERecord?id=CVE-2026-109618",
-   "primary": true
-  },
-  {
-   "id": "source:github-php-src-tag-php-8.5.12",
-   "kind": "source",
-   "label": "php/php-src on GitHub (release by adoy)",
-   "publisher": "php/php-src on GitHub (release by adoy)",
-   "url": "https://github.com/php/php-src/releases/tag/php-8.5.12",
+   "label": "php/php-src (git), read from a clone",
+   "publisher": "php/php-src (git), read from a clone",
+   "url": "https://github.com/php/php-src/commit/3584a98bda0f2c0d367255b046798b0d3a221a19",
    "primary": true
   },
   {
@@ -505,14 +708,6 @@
    "publisher": "US National Security Agency (NSA)",
    "url": "https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4630238/nsa-advisory-critical-patches-recommended-for-php-vulnerabilities/",
    "primary": true
-  },
-  {
-   "id": "source:openwall-oss-security-109619-thread",
-   "kind": "source",
-   "label": "oss-security list (replies: Aaron Rainbolt, Yves-Alexis Perez/Debian, Christian Fischer/Greenbone)",
-   "publisher": "oss-security list (replies: Aaron Rainbolt, Yves-Alexis Perez/Debian, Christian Fischer/Greenbone)",
-   "url": "https://www.openwall.com/lists/oss-security/2026/10/21/16",
-   "primary": false
   },
   {
    "id": "source:openwall-oss-security-2026-10-21-6",
@@ -539,6 +734,22 @@
    "primary": true
   },
   {
+   "id": "source:theregister-php-blames-chainguard",
+   "kind": "source",
+   "label": "The Register",
+   "publisher": "The Register",
+   "url": "https://www.theregister.com/security/2026/10/22/php-blames-supply-chain-security-biz-chainguard-for-putting-huge-chunks-of-the-web-at-risk/5304611",
+   "primary": false
+  },
+  {
+   "id": "source:weirdgloop-blog-php2shell",
+   "kind": "source",
+   "label": "Weird Gloop (cookmeplox)",
+   "publisher": "Weird Gloop (cookmeplox)",
+   "url": "https://weirdgloop.org/blog/php2shell",
+   "primary": true
+  },
+  {
    "id": "source:acn-it-php2shell",
    "kind": "source",
    "label": "ACN / CSIRT Italia",
@@ -552,6 +763,22 @@
    "label": "ASD's ACSC (Australia)",
    "publisher": "ASD's ACSC (Australia)",
    "url": "https://www.cyber.gov.au/alert/critical-vulnerabilities-in-php",
+   "primary": true
+  },
+  {
+   "id": "source:akamai-blog-cve-2024-4577-one-day",
+   "kind": "source",
+   "label": "Akamai Security Research",
+   "publisher": "Akamai Security Research",
+   "url": "https://www.akamai.com/blog/security-research/2024-php-exploit-cve-one-day-after-disclosure",
+   "primary": true
+  },
+  {
+   "id": "source:akamai-blog-php-core-rce",
+   "kind": "source",
+   "label": "Akamai Security Research",
+   "publisher": "Akamai Security Research",
+   "url": "https://www.akamai.com/blog/security-research/critical-remote-code-execution-vulnerabilities-php-core",
    "primary": true
   },
   {
@@ -579,11 +806,19 @@
    "primary": false
   },
   {
-   "id": "source:cisa-kev-json",
+   "id": "source:cnn-php2shell-websites-shut",
    "kind": "source",
-   "label": "CISA",
-   "publisher": "CISA",
-   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "label": "CNN",
+   "publisher": "CNN",
+   "url": "https://www.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai-intl",
+   "primary": false
+  },
+  {
+   "id": "source:cve-cve-2024-4577",
+   "kind": "source",
+   "label": "CVE Program (cveawg API)",
+   "publisher": "CVE Program (cveawg API)",
+   "url": "https://cveawg.mitre.org/api/cve/CVE-2024-4577",
    "primary": true
   },
   {
@@ -592,6 +827,30 @@
    "label": "CVE Program (CNA: PHP Group)",
    "publisher": "CVE Program (CNA: PHP Group)",
    "url": "https://www.cve.org/CVERecord?id=CVE-2026-109619",
+   "primary": true
+  },
+  {
+   "id": "source:cyberexpress-php2shell-gov-sites",
+   "kind": "source",
+   "label": "The Cyber Express",
+   "publisher": "The Cyber Express",
+   "url": "https://thecyberexpress.com/php2shell-cve-2026-109618-php-flaw/",
+   "primary": false
+  },
+  {
+   "id": "source:dutchitleaders-websites-offline",
+   "kind": "source",
+   "label": "Dutch IT Leaders",
+   "publisher": "Dutch IT Leaders",
+   "url": "https://www.dutchitleaders.nl/news/763189/diverse-websites-offline-door-kritieke-kwetsbaarheden-in-php",
+   "primary": false
+  },
+  {
+   "id": "source:fortinet-fortiweb-php2shell",
+   "kind": "source",
+   "label": "Fortinet Community (FortiWeb knowledge base)",
+   "publisher": "Fortinet Community (FortiWeb knowledge base)",
+   "url": "https://community.fortinet.com/fortiweb-40/how-to-block-php2shell-cve-2026-109618-cve-2026-109619-on-fortiweb-230750",
    "primary": true
   },
   {
@@ -611,12 +870,44 @@
    "primary": true
   },
   {
+   "id": "source:github-rjmendez-phpup-2026",
+   "kind": "source",
+   "label": "rjmendez, GitHub",
+   "publisher": "rjmendez, GitHub",
+   "url": "https://github.com/rjmendez/phpup-2026",
+   "primary": false
+  },
+  {
+   "id": "source:helsinkitimes-finland-shutdown",
+   "kind": "source",
+   "label": "Helsinki Times",
+   "publisher": "Helsinki Times",
+   "url": "https://www.helsinkitimes.fi/finland/finland-news/domestic/29412-government-websites-shut-down-in-finland-over-critical-security-flaws.html",
+   "primary": false
+  },
+  {
+   "id": "source:insurancebusiness-uk-councils-met",
+   "kind": "source",
+   "label": "Insurance Business (Matthew Sellers)",
+   "publisher": "Insurance Business (Matthew Sellers)",
+   "url": "https://www.insurancebusinessmag.com/uk/news/cyber/uk-councils-and-met-police-among-sites-pulled-offline-after-ncsc-alert-594424.aspx",
+   "primary": false
+  },
+  {
    "id": "source:jpcert-at260033",
    "kind": "source",
    "label": "JPCERT/CC (Japan)",
    "publisher": "JPCERT/CC (Japan)",
    "url": "https://www.jpcert.or.jp/at/2026/at260033.html",
    "primary": true
+  },
+  {
+   "id": "source:lbc-uk-websites-offline",
+   "kind": "source",
+   "label": "LBC",
+   "publisher": "LBC",
+   "url": "https://www.lbc.co.uk/article/uk-internet-outage-php-websites-tech-5HjdkDd_2/",
+   "primary": false
   },
   {
    "id": "source:ncsc-news-php",
@@ -675,11 +966,83 @@
    "primary": true
   },
   {
-   "id": "source:techzine-php-chainguard",
+   "id": "source:oxfordchronicle-councils-offline",
    "kind": "source",
-   "label": "Techzine Global",
-   "publisher": "Techzine Global",
-   "url": "https://www.techzine.eu/news/security/145182/php-accuses-chainguard-in-php2shell/",
+   "label": "Oxford Chronicle",
+   "publisher": "Oxford Chronicle",
+   "url": "https://www.oxfordchronicle.co.uk/2026/10/21/oxfordshire-council-websites-offline-amid-critical-global-security-issue/",
+   "primary": false
+  },
+  {
+   "id": "source:quarkslab-blog-php-src-audit",
+   "kind": "source",
+   "label": "Quarkslab",
+   "publisher": "Quarkslab",
+   "url": "https://blog.quarkslab.com/security-audit-of-php-src.html",
+   "primary": true
+  },
+  {
+   "id": "source:rijksoverheid-ncsc-php-news",
+   "kind": "source",
+   "label": "Rijksoverheid (Dutch government) / NCSC-NL",
+   "publisher": "Rijksoverheid (Dutch government) / NCSC-NL",
+   "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/10/21/ncsc-ernstige-kwetsbaarheden-in-php",
+   "primary": true
+  },
+  {
+   "id": "source:scotsman-edinburgh-council-offline",
+   "kind": "source",
+   "label": "The Scotsman (Jack Davies)",
+   "publisher": "The Scotsman (Jack Davies)",
+   "url": "https://www.scotsman.com/news/edinburgh-council-website-offline-amid-global-cyber-security-alert-9302652",
+   "primary": false
+  },
+  {
+   "id": "source:securityweek-exploitation-days-before",
+   "kind": "source",
+   "label": "SecurityWeek",
+   "publisher": "SecurityWeek",
+   "url": "https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/",
+   "primary": false
+  },
+  {
+   "id": "source:substack-lopezkurtz-patch-is-the-exploit",
+   "kind": "source",
+   "label": "David Lopez-Kurtz (Substack)",
+   "publisher": "David Lopez-Kurtz (Substack)",
+   "url": "https://davidlopezkurtz.substack.com/p/the-patch-is-the-exploit",
+   "primary": false
+  },
+  {
+   "id": "source:watchtowr-php2shell",
+   "kind": "source",
+   "label": "watchTowr",
+   "publisher": "watchTowr",
+   "url": "https://watchtowr.com/intelligence/php-remote-code-execution-php2shell/",
+   "primary": true
+  },
+  {
+   "id": "source:watchtowr-php2shell-faq",
+   "kind": "source",
+   "label": "watchTowr",
+   "publisher": "watchTowr",
+   "url": "https://watchtowr.com/intelligence/php-cve-2026-109618-faq/",
+   "primary": true
+  },
+  {
+   "id": "source:x-eastdakota-php2shell-stats",
+   "kind": "source",
+   "label": "Matthew Prince (@eastdakota), Cloudflare CEO",
+   "publisher": "Matthew Prince (@eastdakota), Cloudflare CEO",
+   "url": "https://x.com/eastdakota/status/2113079352682570051",
+   "primary": true
+  },
+  {
+   "id": "source:x-feross-chainguard",
+   "kind": "source",
+   "label": "Feross Aboukhadijeh (@feross) on X",
+   "publisher": "Feross Aboukhadijeh (@feross) on X",
+   "url": "https://x.com/feross/status/2113043398664015878",
    "primary": false
   },
   {
@@ -689,6 +1052,14 @@
    "publisher": "Ryan Austin (@lcfr_hax), Calif",
    "url": "https://x.com/lcfr_hax/status/2085031675382071483",
    "primary": true
+  },
+  {
+   "id": "source:yle-finland-government-sites-shut",
+   "kind": "source",
+   "label": "Yle (Finnish public broadcaster)",
+   "publisher": "Yle (Finnish public broadcaster)",
+   "url": "https://yle.fi/a/74-20252600",
+   "primary": false
   },
   {
    "id": "event:0",
@@ -1043,6 +1414,60 @@
    "kind": "event",
    "label": "The Hacker News publishes Amazon's account of the 17 October honeypot attempt and VulnChec",
    "at": "2026-10-22"
+  },
+  {
+   "id": "event:59",
+   "kind": "event",
+   "label": "Arnaud Le Blanc authors the fix, 'Avoid state corruption via bailout', with Ilija Tovilo, ",
+   "at": "2026-10-18T15:26:39Z"
+  },
+  {
+   "id": "event:60",
+   "kind": "event",
+   "label": "Qualys publishes on the pre-announcement.",
+   "at": "2026-10-20"
+  },
+  {
+   "id": "event:61",
+   "kind": "event",
+   "label": "Cloudflare's CTO reports early attacks emerging, before the release.",
+   "at": "2026-10-21T07:43Z"
+  },
+  {
+   "id": "event:62",
+   "kind": "event",
+   "label": "Finland's Valtori begins restricting public traffic to government web services (12:45 loca",
+   "at": "2026-10-21T09:45Z"
+  },
+  {
+   "id": "event:63",
+   "kind": "event",
+   "label": "The fix commit enters the public php-src branches (commit timestamp); merged into 8.3 at 1",
+   "at": "2026-10-21T14:06:22Z"
+  },
+  {
+   "id": "event:64",
+   "kind": "event",
+   "label": "The Dutch NCSC takes its own website offline as a precaution; DigiD, MijnOverheid and Over",
+   "at": "2026-10-21"
+  },
+  {
+   "id": "event:65",
+   "kind": "event",
+   "label": "Huntress: no exploitation observed on partner systems (16:30 ET).",
+   "at": "2026-10-21T20:30Z"
+  },
+  {
+   "id": "event:66",
+   "kind": "event",
+   "label": "Matthew Prince posts Cloudflare's attempt counts: thousands before, millions after.",
+   "at": "2026-10-22T01:25Z"
+  },
+  {
+   "id": "event:67",
+   "kind": "event",
+   "label": "The Register carries Dan Lorenc's reply to the PHP Foundation; Fortinet publishes FortiWeb",
+   "at": "2026-10-22"
   }
  ],
  "edges": [
@@ -1237,6 +1662,11 @@
    "rel": "cites"
   },
   {
+   "from": "claim:scale-2.6m-hosts",
+   "to": "source:securityweek-exploitation-days-before",
+   "rel": "cites"
+  },
+  {
    "from": "claim:scale-latvia",
    "to": "source:certlv-php-preventive",
    "rel": "cites"
@@ -1403,7 +1833,12 @@
   },
   {
    "from": "claim:chainguard",
-   "to": "source:techzine-php-chainguard",
+   "to": "source:theregister-php-blames-chainguard",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:chainguard",
+   "to": "source:x-feross-chainguard",
    "rel": "cites"
   },
   {
@@ -1523,6 +1958,11 @@
   },
   {
    "from": "claim:amazon-honeypot",
+   "to": "source:aws-security-blog-madpot",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:amazon-honeypot",
    "to": "source:thehackernews-php2shell-4days",
    "rel": "cites"
   },
@@ -1543,7 +1983,7 @@
   },
   {
    "from": "claim:probing",
-   "to": "source:thehackernews-php2shell-4days",
+   "to": "source:aws-security-blog-madpot",
    "rel": "cites"
   },
   {
@@ -1634,6 +2074,226 @@
   {
    "from": "claim:gov-patch-required",
    "to": "source:cisa-home",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:cf-millions",
+   "to": "source:x-eastdakota-php2shell-stats",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:imperva-none",
+   "to": "source:imperva-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:huntress-none",
+   "to": "source:huntress-php2shell-rapid-response",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:watchtowr-itw",
+   "to": "source:watchtowr-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:watchtowr-itw",
+   "to": "source:watchtowr-php2shell-faq",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:cisa-kev-json",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:huntress-php2shell-rapid-response",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:imperva-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:aws-security-blog-madpot",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:weirdgloop-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:pocs-wrong",
+   "to": "source:github-rjmendez-phpup-2026",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:pocs-wrong",
+   "to": "source:huntress-php2shell-rapid-response",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:ac-high",
+   "to": "source:imperva-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:ac-high",
+   "to": "source:fastly-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:ac-high",
+   "to": "source:cve-cve-2026-109618",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fix-authored",
+   "to": "source:github-php-src-fix-commit-3584a98bd",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fix-authored",
+   "to": "source:github-php-src-tag-php-8.5.12",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fix-engine",
+   "to": "source:github-php-src-fix-commit-3584a98bd",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fix-engine",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fix-engine",
+   "to": "source:github-ghsa-6wmf-4rv5-p3rp",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:more-paths",
+   "to": "source:fastly-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:more-paths",
+   "to": "source:openwall-oss-security-109619-thread",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:waf-nine-hours",
+   "to": "source:cloudflare-blog-php2shell-waf",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:waf-nine-hours",
+   "to": "source:imperva-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:waf-nine-hours",
+   "to": "source:akamai-blog-php-core-rce",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:waf-nine-hours",
+   "to": "source:fastly-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:waf-nine-hours",
+   "to": "source:fortinet-fortiweb-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:nl-offline",
+   "to": "source:rijksoverheid-ncsc-php-news",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:nl-offline",
+   "to": "source:dutchitleaders-websites-offline",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fi-offline",
+   "to": "source:yle-finland-government-sites-shut",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fi-offline",
+   "to": "source:helsinkitimes-finland-shutdown",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:wikimedia-precaution",
+   "to": "source:cnn-php2shell-websites-shut",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:wikimedia-precaution",
+   "to": "source:cyberexpress-php2shell-gov-sites",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:weirdgloop-13h",
+   "to": "source:weirdgloop-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:edinburgh",
+   "to": "source:scotsman-edinburgh-council-offline",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:oxford",
+   "to": "source:oxfordchronicle-councils-offline",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:uk-list",
+   "to": "source:lbc-uk-websites-offline",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:uk-list",
+   "to": "source:insurancebusiness-uk-councils-met",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:quarkslab-redacted",
+   "to": "source:quarkslab-blog-php-src-audit",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:quarkslab-redacted",
+   "to": "source:substack-lopezkurtz-patch-is-the-exploit",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:lorenc-ai-found",
+   "to": "source:theregister-php-blames-chainguard",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:kev-precedent",
+   "to": "source:cisa-kev-json",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:kev-precedent",
+   "to": "source:cve-cve-2024-4577",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:kev-precedent",
+   "to": "source:akamai-blog-cve-2024-4577-one-day",
    "rel": "cites"
   },
   {
@@ -2119,6 +2779,101 @@
   {
    "from": "event:58",
    "to": "source:thehackernews-php2shell-4days",
+   "rel": "cites"
+  },
+  {
+   "from": "event:59",
+   "to": "source:github-php-src-fix-commit-3584a98bd",
+   "rel": "cites"
+  },
+  {
+   "from": "event:60",
+   "to": "source:qualys-blog-php-preannounce",
+   "rel": "cites"
+  },
+  {
+   "from": "event:61",
+   "to": "source:insurancebusiness-uk-councils-met",
+   "rel": "cites"
+  },
+  {
+   "from": "event:61",
+   "to": "source:securityweek-exploitation-days-before",
+   "rel": "cites"
+  },
+  {
+   "from": "event:62",
+   "to": "source:helsinkitimes-finland-shutdown",
+   "rel": "cites"
+  },
+  {
+   "from": "event:62",
+   "to": "source:yle-finland-government-sites-shut",
+   "rel": "cites"
+  },
+  {
+   "from": "event:63",
+   "to": "source:github-php-src-fix-commit-3584a98bd",
+   "rel": "cites"
+  },
+  {
+   "from": "event:64",
+   "to": "source:rijksoverheid-ncsc-php-news",
+   "rel": "cites"
+  },
+  {
+   "from": "event:64",
+   "to": "source:weirdgloop-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:64",
+   "to": "source:aws-security-blog-madpot",
+   "rel": "cites"
+  },
+  {
+   "from": "event:64",
+   "to": "source:imperva-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:64",
+   "to": "source:fastly-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:64",
+   "to": "source:akamai-blog-php-core-rce",
+   "rel": "cites"
+  },
+  {
+   "from": "event:64",
+   "to": "source:huntress-php2shell-rapid-response",
+   "rel": "cites"
+  },
+  {
+   "from": "event:65",
+   "to": "source:huntress-php2shell-rapid-response",
+   "rel": "cites"
+  },
+  {
+   "from": "event:66",
+   "to": "source:x-eastdakota-php2shell-stats",
+   "rel": "cites"
+  },
+  {
+   "from": "event:67",
+   "to": "source:theregister-php-blames-chainguard",
+   "rel": "cites"
+  },
+  {
+   "from": "event:67",
+   "to": "source:fortinet-fortiweb-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:67",
+   "to": "source:therecord-php-foundation-statement",
    "rel": "cites"
   }
  ],

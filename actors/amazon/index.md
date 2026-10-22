@@ -1,0 +1,24 @@
+# Amazon (CJ Moses): what they say
+
+Amazon (CJ Moses): honeypot evidence of a pre-disclosure attempt; the claims this site attributes to them and their sources.
+
+Party
+
+# Amazon (CJ Moses)
+
+honeypot evidence of a pre-disclosure attempt
+
+## Claims this site attributes to this party
+
+| Claim | Who says it | Status | Primary | Sources |
+|---|---|---|---|---|
+| An exploit attempt hit an Amazon honeypot on 17 October from an anonymisation network; proof-of-concept attempts began about 02:00 UTC on 21 October from multiple actors; after release 'PHP2Shell is now being broadly exploited in the wild'Primary party. Amazon adds: 'it's unclear if any of these attempts would have succeeded in real-world systems'. Attempts against honeypots, not compromises of victims. | Amazon (CJ Moses, AWS Security Blog) | reported | 1/2 | [Amazon](../../sources/aws-security-blog-madpot/index.html) [THN](../../sources/thehackernews-php2shell-4days/index.html) |
+
+## Its sources in the vault
+- [Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed](../../sources/thehackernews-php2shell-4days/index.html) The Hacker News (Ravie Lakshmanan)
+
+[Every party →](../index.html)
+
+
+---
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/amazon/index.html

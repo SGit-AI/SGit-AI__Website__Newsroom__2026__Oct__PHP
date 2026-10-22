@@ -1,20 +1,22 @@
 {
  "head": {
-  "commit": "379e3d7f172a",
-  "subject": "claude-story-site: site claims (49) and timeline (59), the editor's memo transcripts, working notes  +5  [blobs:+5 trees:+2]",
-  "commits": 11
+  "commit": "200d08971937",
+  "subject": "claude-story-site: 86 sources (AWS, Cloudflare CEO, Imperva, Fastly, Akamai, Huntress, Weird Gloop, Rijksoverheid, Finland, UK councils, detection rule sets, The Register on Chainguard, ten historical CVE records, Wikipedia comparators), the php-src fix commit patches with hashes, rebuilt index  +655 ~8  [blobs:+663 trees:+241]",
+  "commits": 12
  },
- "sources": 61,
- "captures": 62,
- "hashed_files": 390,
- "primary": 46,
- "blocked": 6,
+ "sources": 144,
+ "captures": 137,
+ "hashed_files": 857,
+ "primary": 73,
+ "blocked": 10,
  "agents": [
   "claude-newsroom-lead",
+  "claude-story-site",
   "collector-gov",
   "collector-primary",
   "collector-researchers"
  ],
  "opened": "2026-10-22T08:03Z",
+ "latest_capture": "2026-10-22T11:34Z",
  "note": "The captures are third-party pages kept privately for the record and are not published. Only their hashes are."
 }

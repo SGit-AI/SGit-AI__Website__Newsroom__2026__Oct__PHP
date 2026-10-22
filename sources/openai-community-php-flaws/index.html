@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Source: OpenAI models help researchers uncover critical PHP security flaws &middot; php.oct.2026.newsroom.sgit.ai</title>
+<meta name="description" content="OpenAI Developer Community (user &#x27;sps&#x27;, Leader): what it says, the claims and events that cite it, and the hashes of every captured file.">
+<link rel="canonical" href="https://php.oct.2026.newsroom.sgit.ai/sources/openai-community-php-flaws/index.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="php.oct.2026.newsroom.sgit.ai">
+<meta property="og:url" content="https://php.oct.2026.newsroom.sgit.ai/sources/openai-community-php-flaws/index.html">
+<meta property="og:title" content="Source: OpenAI models help researchers uncover critical PHP security flaws">
+<meta property="og:description" content="OpenAI Developer Community (user &#x27;sps&#x27;, Leader): what it says, the claims and events that cite it, and the hashes of every captured file.">
+<meta name="twitter:card" content="summary">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<link rel="icon" href="data:,">
+<link rel="alternate" type="text/markdown" href="../../sources/openai-community-php-flaws/index.md">
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Source: OpenAI models help researchers uncover critical PHP security flaws", "description": "OpenAI Developer Community (user 'sps', Leader): what it says, the claims and events that cite it, and the hashes of every captured file.", "url": "https://php.oct.2026.newsroom.sgit.ai/sources/openai-community-php-flaws/index.html", "isPartOf": {"@type": "WebSite", "name": "php.oct.2026.newsroom.sgit.ai", "url": "https://php.oct.2026.newsroom.sgit.ai"}, "license": "https://creativecommons.org/licenses/by/4.0/", "dateModified": "2026-10-22", "version": "0.2.0"}</script>
+<script type="application/json" id="sg-meter-config">{"links":{"account":"account/index.html","topup":"account/top-up.html"},"links2":{"newsroom":"account/index.html","personas":"account/index.html"},"minDepth":0.1,"newDays":7,"prices":{"analysis":3,"article":2,"article_new":2,"briefing":5,"evidence":1,"free":0,"page":1,"story":2},"root":"../../","start":500,"storageKey":"php-story.meter.v1","symbol":"\u00a3","topup":{"amount":500,"link":""}}</script>
+<script type="module" src="../../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"></script>
+<script src="../../assets/site.js" defer></script>
+</head>
+<body>
+<nav class="site"><div class="row">
+  <a class="brand" href="../../index.html">php2shell<span>.newsroom</span></a>
+  <a class="ver" href="../../admin/versions.html#v0.2.0" title="Site release history: what v0.2.0 changed">v0.2.0</a>
+  <span class="status">Developing &middot; data as of 2026-10-22T11:34Z</span>
+  <sg-meter view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-items" aria-label="Menu">Menu</button>
+  <div class="nav-items" id="nav-items"><div class="ni"><a class="nl" href="../../index.html">The story<span class="caret">&#9662;</span></a><div class="sub"><a class="sl" href="../../index.html">Front page</a><a class="sl" href="../../flaws/index.html">The two flaws</a><a class="sl" href="../../code/index.html">The code</a><a class="sl" href="../../timeline/index.html">Timeline</a><a class="sl" href="../../discovery/index.html">Who found it</a><a class="sl" href="../../leak/index.html">How disclosure broke</a><a class="sl" href="../../exploitation/index.html">Exploitation signals</a><a class="sl" href="../../impact/index.html">Impact: offline vs compromised</a><a class="sl" href="../../defence/index.html">Detection and defence</a><a class="sl" href="../../context/index.html">In context: 2008 to 2026</a><a class="sl" href="../../playbook/index.html">If you run PHP</a></div></div><div class="ni"><a class="nl" href="../../claims/index.html">The evidence<span class="caret">&#9662;</span></a><div class="sub"><a class="sl" href="../../claims/index.html">Every claim</a><a class="sl" href="../../numbers/index.html">The numbers</a><a class="sl" href="../../agencies/index.html">The agencies</a><a class="sl" href="../../affected/index.html">Affected systems</a><a class="sl" href="../../affected/software.html">Software inventory</a><a class="sl" href="../../sources/index.html">Every source</a><a class="sl" href="../../actors/index.html">Who says what</a><a class="sl" href="../../graph/index.html">As a graph</a></div></div><div class="ni"><a class="nl" href="../../briefings/board/index.html">Briefings<span class="caret">&#9662;</span></a><div class="sub"><a class="sl" href="../../briefings/board/index.html">Board member or executive</a><a class="sl" href="../../briefings/security/index.html">Security lead</a><a class="sl" href="../../briefings/engineer/index.html">PHP or platform engineer</a><a class="sl" href="../../briefings/journalist/index.html">Journalist</a><a class="sl" href="../../briefings/researcher/index.html">Security researcher</a><a class="sl" href="../../briefings/analyst/index.html">Analyst or advisor</a><a class="sl" href="../../briefings/ciso/index.html">CISO</a><a class="sl" href="../../briefings/cto/index.html">CTO</a><a class="sl" href="../../briefings/cfo/index.html">CFO</a><a class="sl" href="../../briefings/appsec/index.html">Head of AppSec</a><a class="sl" href="../../briefings/developer/index.html">Developer</a><a class="sl" href="../../briefings/comms/index.html">Media and communications team</a></div></div><div class="ni"><a class="nl" href="../../method/index.html">About<span class="caret">&#9662;</span></a><div class="sub"><a class="sl" href="../../method/index.html">The method</a><a class="sl" href="../../team/index.html">The team</a><a class="sl" href="../../billing/index.html">The billing model</a><a class="sl" href="../../account/index.html">Your reading account</a><a class="sl" href="../../brief/index.html">The brief</a><a class="sl" href="../../corrections/index.html">Corrections</a><a class="sl" href="../../admin/versions.html">Release history</a><a class="sl" href="../../admin/index.html">Admin &amp; engineering</a></div></div><a class="nl ext" href="../../llms.txt">llms.txt</a></div>
+</div></nav>
+<main>
+
+<p class="kicker">Source &middot; forum &middot; secondary &middot; <span class="st st-other">captured</span></p>
+<h1>OpenAI models help researchers uncover critical PHP security flaws</h1>
+<p class="meta"><b>OpenAI Developer Community (user &#x27;sps&#x27;, Leader)</b> &middot; <a href="https://community.openai.com/t/openai-models-help-researchers-uncover-critical-php-security-flaws/1408490" rel="noopener nofollow">https://community.openai.com/t/openai-models-help-researchers-uncover-critical-php-security-flaws/1408490</a> &middot; published 2026-10-21 &middot; added by <code>collector-researchers</code> &middot; slug <code>openai-community-php-flaws</code></p>
+<p>Forum repost of OpenAI&#x27;s announcement text, Oct 21; links https://github.com/openai/php2shell-checker (Codex skill).</p>
+
+<section id="says"><h2>What it says, as the collector read it</h2><div class="notes"><h4>OpenAI Developer Community repost (Oct 21)</h4>
+<ul>
+<li>User &quot;sps&quot; (Leader badge) reposts OpenAI&#x27;s announcement text, tagged gpt-5.6-sol. Adds: &quot;If you are wondering whether your website is affected, we have packaged a Codex skill to help check... https://github.com/openai/php2shell-checker&quot;. Secondary to the X post; useful as an accessible copy while openai.com is blocked.</li>
+</ul></div></section>
+<section id="claims"><h2>Claims that cite it</h2><p class="small">No claim cites this source yet.</p></section>
+<section id="events"><h2>Events that cite it</h2><p class="small">No timeline event cites this source yet.</p></section>
+<section id="bytes"><h2>The bytes</h2><details><summary>capture <code>20261022T081721Z</code> &middot; HTTP 200 &middot; https://community.openai.com/t/openai-models-help-researchers-uncover-critical-php-security-flaws/1408490</summary><ul class="files"><li><code>headers.json</code> <span class="h">86f75f0dcbf3bc611bd0c24cc8c87f49138270eaac36ff55f379acd57638d537</span> <span class="small">1,273 bytes</span></li><li><code>page.html</code> <span class="h">9b1e1cbea269bc3fe068f7344d39a81937b9ec473044047d9d0700cb653af679</span> <span class="small">296,980 bytes</span></li><li><code>provenance.json</code> <span class="h">1394b5dabf1a6c5064c6bd0a2a0750815ffb787cf14f7155f7a1c680a5566c8d</span> <span class="small">1,153 bytes</span></li><li><code>rendered.html</code> <span class="h">f20e90bdf364618ef6f4900343a7e3abbdb5e6006e628ae4e80a8b92bd8bdf47</span> <span class="small">624,051 bytes</span></li><li><code>screenshot.png</code> <span class="h">e3138cd2f1d4e9539051514491c494acd19c7c4afffabe913081dd1ef8d3a691</span> <span class="small">370,209 bytes</span></li><li><code>text.txt</code> <span class="h">43afe7a0a3b96a86e52cbeea1c6ae41560bab1566da848fc4f9067152f739cd5</span> <span class="small">3,504 bytes</span></li></ul></details><p class="small">The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. <a href="../index.html">Every source &rarr;</a></p></section>
+
+<sg-meter view="page" kind="evidence" date="2026-10-22" topics="php2shell source" title="Source: OpenAI models help researchers uncover critical PHP security flaws"></sg-meter>
+</main>
+<footer class="site">
+  <div class="row">
+    <p><b>php.oct.2026.newsroom.sgit.ai</b> follows one story, the two PHP flaws of October 2026, as evidence: every claim with a status and its sources, every source captured, dated and hashed into a private vault. Built and run by one editor and a team of software agents; <a href="../../team/index.html">the roles</a> and <a href="../../method/index.html">the method</a> are public, and the site is rebuilt from the vault, never written by hand. Part of the <a href="https://sgit.ai/network/index.html">sgit.ai network</a>; the newsroom's own section on the story is at <a href="https://newsroom.sgit.ai/php-flaws/index.html">newsroom.sgit.ai</a>.</p>
+    <p class="disc">&#9888; Participant disclosure: published by the sgit project, which builds the vault and metering stack this site runs on. Content CC BY 4.0 for this site's own text, tables and data; quoted words are their authors', linked; no third-party page is reproduced. Code Apache-2.0.</p>
+    <p class="small">site v0.2.0 &middot; evidence vault commit 200d08971937 &middot; <a href="../../admin/index.html">engineering</a> &middot; <a href="../../sources/openai-community-php-flaws/index.md">this page as markdown</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP">GitHub</a></p>
+  </div>
+</footer>
+</body>
+</html>

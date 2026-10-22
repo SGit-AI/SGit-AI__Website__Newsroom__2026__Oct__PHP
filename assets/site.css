@@ -131,3 +131,12 @@ footer.site .row{max-width:1080px;margin:0 auto;padding:1.2rem 16px;font-size:.8
 footer .disc{font-size:.78rem}
 sg-meter{display:block}
 main > sg-meter{margin-top:2rem;border-top:1px solid var(--line);padding-top:1rem}
+
+/* v0.2 */
+.wt{font-family:var(--mono);font-size:.74rem;white-space:nowrap}
+.graph .d-src{fill:var(--panel);stroke:var(--accent)}.graph .d-actor{fill:var(--warm);stroke:var(--warm)}.graph .d-event{fill:var(--dim);stroke:var(--dim)}.graph .e-event,.graph .e-src{stroke:var(--line2)}
+.graph .t{font-weight:700}
+.mech li,.reading li{margin:.6rem 0}
+.notes h4{margin:.8rem 0 .2rem;font-size:.9rem}
+.notes ul{font-size:.9rem}
+table.ctx td:nth-child(6),table.ctx td:nth-child(7){min-width:14rem}

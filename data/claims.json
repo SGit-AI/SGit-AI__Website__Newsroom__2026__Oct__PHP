@@ -177,14 +177,16 @@
  },
  {
   "id": "scale-2.6m-hosts",
-  "claim": "PHP is exposed on 2,608,039 internet-facing hosts",
-  "by": "VulnCheck, via The Hacker News",
+  "claim": "PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpatched on 21 October",
+  "by": "VulnCheck and Censys, via The Hacker News and SecurityWeek",
   "sources": [
-   "thehackernews-php2shell-4days"
+   "thehackernews-php2shell-4days",
+   "securityweek-exploitation-days-before"
   ],
   "status": "reported",
   "topic": "scale",
-  "agent": "claude-story-site"
+  "agent": "claude-story-site",
+  "note": "Censys: 2.58 million hosts seen, 1.58 million reporting a version, 1.57 million not patched; nearly 3 million by 22 October. VirusTotal: 5.1 million IPs running PHP, 1.1 million announcing a version. Unit 42: 22.6 million systems that 'could be vulnerable' (via Insurance Business). Censys's own post was not found."
  },
  {
   "id": "scale-latvia",
@@ -384,15 +386,16 @@
  {
   "id": "chainguard",
   "claim": "Chainguard unilaterally broke the embargo on 21 October at 07:41 UTC by publishing built images containing the fix",
-  "by": "PHP Foundation",
+  "by": "PHP Foundation; Chainguard's CEO accepts the time and denies leaking",
   "sources": [
    "php-foundation-blog-security-release",
-   "techzine-php-chainguard"
+   "theregister-php-blames-chainguard",
+   "x-feross-chainguard"
   ],
   "status": "disputed",
   "topic": "leak",
   "agent": "claude-story-site",
-  "note": "Chainguard reportedly does not dispute the time but denies leaking (Techzine, blocked by a bot challenge; snippet only)."
+  "note": "Dan Lorenc (via The Register): 'I made the call to get these out early when exploits hit in the wild'; several unnamed vendors had reported exploits; Chainguard's honeypots trapped IPs; a researcher warned the company on the Friday and its team then found the bugs independently with an AI harness. No evidence published. The PHP security team found no functional exploit by release time."
  },
  {
   "id": "release-moved",
@@ -495,15 +498,16 @@
  },
  {
   "id": "amazon-honeypot",
-  "claim": "An exploit attempt hit an Amazon honeypot on 17 October from an anonymisation network, and proof-of-concept attempts started about 02:00 UTC on 21 October",
-  "by": "CJ Moses, Amazon, via The Hacker News",
+  "claim": "An exploit attempt hit an Amazon honeypot on 17 October from an anonymisation network; proof-of-concept attempts began about 02:00 UTC on 21 October from multiple actors; after release 'PHP2Shell is now being broadly exploited in the wild'",
+  "by": "Amazon (CJ Moses, AWS Security Blog)",
   "sources": [
+   "aws-security-blog-madpot",
    "thehackernews-php2shell-4days"
   ],
   "status": "reported",
   "topic": "exploitation",
   "agent": "claude-story-site",
-  "note": "Amazon's own post has not been found."
+  "note": "Primary party. Amazon adds: 'it's unclear if any of these attempts would have succeeded in real-world systems'. Attempts against honeypots, not compromises of victims."
  },
  {
   "id": "cloudflare-traffic",
@@ -520,16 +524,16 @@
  {
   "id": "probing",
   "claim": "Amazon and Cloudflare saw sites being probed for the flaw",
-  "by": "Alan Woodward, via the BBC",
+  "by": "Alan Woodward, via the BBC; confirmed by both companies' own posts",
   "sources": [
    "bbc-live-ckgel5xp2xv9t",
    "cloudflare-blog-php2shell-waf",
-   "thehackernews-php2shell-4days"
+   "aws-security-blog-madpot"
   ],
-  "status": "reported",
+  "status": "confirmed",
   "topic": "exploitation",
   "agent": "claude-story-site",
-  "note": "Second-hand, but consistent with what both companies have said themselves."
+  "note": "Both companies have since said so themselves."
  },
  {
   "id": "latvia-attempts",
@@ -645,5 +649,275 @@
   "topic": "advice",
   "agent": "claude-story-site",
   "note": "No CISA emergency directive was visible on the CISA home page at capture."
+ },
+ {
+  "id": "cf-millions",
+  "claim": "Exploit attempts across Cloudflare's network: thousands in the ten hours before announcement, tens of thousands within 45 minutes after, hundreds of thousands within two hours, millions by 22 October 01:25 UTC",
+  "by": "Matthew Prince, Cloudflare CEO, on X",
+  "sources": [
+   "x-eastdakota-php2shell-stats"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "agent": "claude-story-site",
+  "note": "Primary party. Attempts, not compromises; no blocked count; 1.4 million views at capture."
+ },
+ {
+  "id": "imperva-none",
+  "claim": "No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosure monitoring",
+  "by": "Imperva Threat Research",
+  "sources": [
+   "imperva-blog-php2shell"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "agent": "claude-story-site",
+  "note": "A negative finding from a party that had the details under embargo."
+ },
+ {
+  "id": "huntress-none",
+  "claim": "No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no public exploit code known to Huntress",
+  "by": "Huntress",
+  "sources": [
+   "huntress-php2shell-rapid-response"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "agent": "claude-story-site"
+ },
+ {
+  "id": "watchtowr-itw",
+  "claim": "watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild",
+  "by": "watchTowr",
+  "sources": [
+   "watchtowr-php2shell",
+   "watchtowr-php2shell-faq"
+  ],
+  "status": "unverified",
+  "topic": "exploitation",
+  "agent": "claude-story-site",
+  "note": "watchtowr.com returns HTTP 403 to this site's capture tool; known only from search summaries."
+ },
+ {
+  "id": "no-confirmed-compromise",
+  "claim": "No named organisation has confirmed a compromise through php2shell",
+  "by": "this site, from every captured source",
+  "sources": [
+   "cisa-kev-json",
+   "huntress-php2shell-rapid-response",
+   "imperva-blog-php2shell",
+   "aws-security-blog-madpot",
+   "weirdgloop-blog-php2shell"
+  ],
+  "status": "confirmed",
+  "topic": "impact",
+  "agent": "claude-story-site",
+  "note": "A negative finding as of the latest capture. Amazon says 'broadly exploited' against sensors; Weird Gloop expects old forums to have been hit; CISA has not listed either CVE."
+ },
+ {
+  "id": "pocs-wrong",
+  "claim": "None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechanism; a lab reproduction of the leaked PoC's precondition produced a clean 200",
+  "by": "rjmendez (detection author) citing VulnCheck; Huntress",
+  "sources": [
+   "github-rjmendez-phpup-2026",
+   "huntress-php2shell-rapid-response"
+  ],
+  "status": "reported",
+  "topic": "technical",
+  "agent": "claude-story-site",
+  "note": "The Hacker News says the same of the public code. Fastly: working RCE needs knowledge of the running binary's layout on x86_64."
+ },
+ {
+  "id": "ac-high",
+  "claim": "Triggering the bug is much easier than turning it into code execution; the CVSS vector says attack complexity high",
+  "by": "Imperva; Fastly; the CVE record",
+  "sources": [
+   "imperva-blog-php2shell",
+   "fastly-blog-php2shell",
+   "cve-cve-2026-109618"
+  ],
+  "status": "confirmed",
+  "topic": "technical",
+  "agent": "claude-story-site",
+  "note": "Fastly: 'most deployments may be safe from RCE. Do not assume this holds true for you.' Imperva: five demonstrated techniques, three via session upload progress; about 67 KB of memory disclosed per attack."
+ },
+ {
+  "id": "fix-authored",
+  "claim": "The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 UTC on 21 October, with merges into 8.3, 8.4 and 8.5 between 14:12 and 14:30 UTC",
+  "by": "php/php-src commit 3584a98bd, read from a clone",
+  "sources": [
+   "github-php-src-fix-commit-3584a98bd",
+   "github-php-src-tag-php-8.5.12"
+  ],
+  "status": "confirmed",
+  "topic": "timing",
+  "agent": "claude-story-site",
+  "note": "Counted from the repository, not from a page. Five authors; 389 files; 10,689 insertions."
+ },
+ {
+  "id": "fix-engine",
+  "claim": "Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on out-of-memory, and request globals that survive a failed request",
+  "by": "php/php-src fix commit; the GitHub advisories",
+  "sources": [
+   "github-php-src-fix-commit-3584a98bd",
+   "github-ghsa-w8hw-w9fx-j79w",
+   "github-ghsa-6wmf-4rv5-p3rp"
+  ],
+  "status": "confirmed",
+  "topic": "technical",
+  "agent": "claude-story-site",
+  "note": "The fix replaces bailout with a delayed error and an UnwindExit at a safe point, adds a hard limit that _exits, and resets the globals. See the code page."
+ },
+ {
+  "id": "more-paths",
+  "claim": "Patching the demonstrated paths does not make the bailout mechanism safe; more paths should be expected",
+  "by": "Fastly",
+  "sources": [
+   "fastly-blog-php2shell",
+   "openwall-oss-security-109619-thread"
+  ],
+  "status": "reported",
+  "topic": "technical",
+  "agent": "claude-story-site",
+  "note": "A position, from a vendor; consistent with the Fediverse report of a third bug."
+ },
+ {
+  "id": "waf-nine-hours",
+  "claim": "Edge protections went live hours before disclosure: Cloudflare at 03:02 UTC; Imperva, Akamai and Fastly on 21 October; Fortinet signatures by 22 October",
+  "by": "the vendors",
+  "sources": [
+   "cloudflare-blog-php2shell-waf",
+   "imperva-blog-php2shell",
+   "akamai-blog-php-core-rce",
+   "fastly-blog-php2shell",
+   "fortinet-fortiweb-php2shell"
+  ],
+  "status": "confirmed",
+  "topic": "advice",
+  "agent": "claude-story-site",
+  "note": "Every vendor says the same two things: it is a stopgap, and patch anyway."
+ },
+ {
+  "id": "nl-offline",
+  "claim": "The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services",
+  "by": "the Dutch government",
+  "sources": [
+   "rijksoverheid-ncsc-php-news",
+   "dutchitleaders-websites-offline"
+  ],
+  "status": "confirmed",
+  "topic": "impact",
+  "agent": "claude-story-site",
+  "note": "Primary statement."
+ },
+ {
+  "id": "fi-offline",
+  "claim": "Finland's state IT provider Valtori restricted public traffic to government web services from 12:45 local time on 21 October as a precaution",
+  "by": "Yle; Helsinki Times, quoting Valtori",
+  "sources": [
+   "yle-finland-government-sites-shut",
+   "helsinkitimes-finland-shutdown"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "agent": "claude-story-site"
+ },
+ {
+  "id": "wikimedia-precaution",
+  "claim": "The Wikimedia Foundation took down a number of systems 'as a precautionary measure until they can be safely patched'",
+  "by": "the Foundation, as quoted by CNN and The Cyber Express",
+  "sources": [
+   "cnn-php2shell-websites-shut",
+   "cyberexpress-php2shell-gov-sites"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "agent": "claude-story-site",
+  "note": "No Wikimedia-published statement captured."
+ },
+ {
+  "id": "weirdgloop-13h",
+  "claim": "Weird Gloop turned off its wiki web servers for 13 hours and still served about 94% of page views from cache",
+  "by": "Weird Gloop",
+  "sources": [
+   "weirdgloop-blog-php2shell"
+  ],
+  "status": "confirmed",
+  "topic": "impact",
+  "agent": "claude-story-site",
+  "note": "Primary, and the one outage with a measured cost."
+ },
+ {
+  "id": "edinburgh",
+  "claim": "Edinburgh council's site went offline late on 21 October; the council called it 'essential maintenance' and did not confirm a link",
+  "by": "The Scotsman quoting the council",
+  "sources": [
+   "scotsman-edinburgh-council-offline"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "agent": "claude-story-site"
+ },
+ {
+  "id": "oxford",
+  "claim": "Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident'",
+  "by": "the council's social post, via Oxford Chronicle",
+  "sources": [
+   "oxfordchronicle-councils-offline"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "agent": "claude-story-site"
+ },
+ {
+  "id": "uk-list",
+  "claim": "Edinburgh and Oxford councils, the Met Police and the Office for Budget Responsibility were unavailable; Bristol, Lambeth and Barnet council sites showed errors",
+  "by": "LBC; Insurance Business",
+  "sources": [
+   "lbc-uk-websites-offline",
+   "insurancebusiness-uk-councils-met"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "agent": "claude-story-site"
+ },
+ {
+  "id": "quarkslab-redacted",
+  "claim": "Quarkslab's published audit summary lists 27 findings, two redacted because their fixes were complex and in progress; it does not describe an out-of-memory finding",
+  "by": "Quarkslab's blog; a Substack analysis",
+  "sources": [
+   "quarkslab-blog-php-src-audit",
+   "substack-lopezkurtz-patch-is-the-exploit"
+  ],
+  "status": "reported",
+  "topic": "discovery",
+  "agent": "claude-story-site",
+  "note": "The Foundation says the OOM signs were found while fixing one of the audit's findings, not in the audit report itself."
+ },
+ {
+  "id": "lorenc-ai-found",
+  "claim": "Chainguard's team found the same bugs independently with an AI harness and a frontier model after a researcher warned them on the Friday before",
+  "by": "Dan Lorenc, via The Register",
+  "sources": [
+   "theregister-php-blames-chainguard"
+  ],
+  "status": "reported",
+  "topic": "discovery",
+  "agent": "claude-story-site",
+  "note": "Unverified by anyone else."
+ },
+ {
+  "id": "kev-precedent",
+  "claim": "The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one day",
+  "by": "CISA KEV catalog; Akamai (2024)",
+  "sources": [
+   "cisa-kev-json",
+   "cve-cve-2024-4577",
+   "akamai-blog-cve-2024-4577-one-day"
+  ],
+  "status": "confirmed",
+  "topic": "exploitation",
+  "agent": "claude-story-site",
+  "note": "Counted from the captured catalog."
  }
 ]

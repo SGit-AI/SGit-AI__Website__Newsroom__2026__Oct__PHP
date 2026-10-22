@@ -2,9 +2,13 @@
 
 Newest first. A correction names the date, what was wrong, what was found, and what was done instead. The mistake stays visible where it was made.
 
+## 2026-10-22, v0.2.0: the repository and domain were renamed
+
+After v0.1.0 the editor renamed the repository to `SGit-AI__Website__Newsroom__2026__Oct__PHP` and the domain to `php.oct.2026.newsroom.sgit.ai`, closer to the memo's `story.newsroom` shape. The `CNAME`, the site constants and this file were changed in v0.2.0; GitHub redirects the old repository name.
+
 ## 2026-10-22, v0.1.0: the brief's domain name
 
-The memo proposes a name of the shape `php.story.newsroom.sgit.ai`; the repository's README already names `php.oct-2026.story.sgit.ai`. The site is built for the README's name, with a `CNAME` file, because that is the one with a repository behind it. If the editor prefers the memo's shape, the `CNAME` file is the one line to change.
+The memo proposes a name of the shape `php.story.newsroom.sgit.ai`; the repository's README already names `php.oct.2026.newsroom.sgit.ai`. The site is built for the README's name, with a `CNAME` file, because that is the one with a repository behind it. If the editor prefers the memo's shape, the `CNAME` file is the one line to change.
 
 ## 2026-10-22, v0.1.0: "both ChatGPT and Claude"
 

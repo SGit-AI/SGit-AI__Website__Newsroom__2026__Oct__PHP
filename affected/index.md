@@ -12,22 +12,22 @@ Three layers: the PHP versions, the ways PHP is attached to a web server, and th
 |---|---|---|---|
 | 8.5 | = 5.4' (Wiz); 'toutes versions 5.x, 6.x, 7.x' (CERT-FR) | no release, no backport | **no** |
 
-The CVE records carry defaultStatus 'unaffected' and list only 8.2 to 8.5, so an automated scanner reading the CVE will call 7.4 to 8.1 unaffected. The php.net advisory, the backport branches and a Greenbone reply on oss-security say otherwise. [CVE record](../sources/index.html#cve-cve-2026-109618) [php.net](../sources/index.html#php-net-advisory) [php-src](../sources/index.html#github-php-src-branch-7.4-backport) [NCSC-NL](../sources/index.html#ncsc-nl-advisories) [Wiz on X](../sources/index.html#x-wiz-io-php2shell) [CERT-FR](../sources/index.html#certfr-2026-ale-014) [oss-security](../sources/index.html#openwall-oss-security-109619-thread)
+The CVE records carry defaultStatus 'unaffected' and list only 8.2 to 8.5, so an automated scanner reading the CVE will call 7.4 to 8.1 unaffected. The php.net advisory, the backport branches and a Greenbone reply on oss-security say otherwise. [CVE record](../sources/cve-cve-2026-109618/index.html) [php.net](../sources/php-net-advisory/index.html) [php-src](../sources/github-php-src-branch-7.4-backport/index.html) [NCSC-NL](../sources/ncsc-nl-advisories/index.html) [Wiz on X](../sources/x-wiz-io-php2shell/index.html) [CERT-FR](../sources/certfr-2026-ale-014/index.html) [oss-security](../sources/openwall-oss-security-109619-thread/index.html)
 
 ## Deployments
 
 | SAPI | Risk | What the primary sources say | Sources |
 |---|---|---|---|
-| Apache mod_php | highest | Unauthenticated RCE demonstrated over HTTP with default input and memory limits, before any application code runs. | [php.net](../sources/index.html#php-net-advisory) [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) [oss-security](../sources/index.html#openwall-oss-security-2026-10-21-6) |
-| PHP-FPM | susceptible | For CVE-2026-109618 the GitHub advisory says no complete FPM exploit has been demonstrated; the PHP Foundation blog says RCE was confirmed on FPM through application-level paths. For CVE-2026-109619 the session path was validated against FPM. | [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) [PHP Foundation](../sources/index.html#php-foundation-blog-security-release) [PHP](../sources/index.html#github-ghsa-6wmf-4rv5-p3rp) [oss-security](../sources/index.html#openwall-oss-security-2026-10-21-7) |
-| php-cgi | at risk | Listed by php.net among installations serving web requests. | [php.net](../sources/index.html#php-net-advisory) |
-| FrankenPHP | likely susceptible | 'likely susceptible' per the GitHub advisory. | [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) |
-| LiteSpeed (LSAPI) | likely, unvalidated | 'application-specific exploits being likely but unvalidated'. | [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) |
-| CLI, cron, queue workers | not web-serving | The advisory scopes the risk to installations serving web requests. A CLI process that parses untrusted input is not covered either way by the primary sources. | [php.net](../sources/index.html#php-net-advisory) |
+| Apache mod_php | highest | Unauthenticated RCE demonstrated over HTTP with default input and memory limits, before any application code runs. | [php.net](../sources/php-net-advisory/index.html) [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [oss-security](../sources/openwall-oss-security-2026-10-21-6/index.html) |
+| PHP-FPM | susceptible | For CVE-2026-109618 the GitHub advisory says no complete FPM exploit has been demonstrated; the PHP Foundation blog says RCE was confirmed on FPM through application-level paths. For CVE-2026-109619 the session path was validated against FPM. | [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP Foundation](../sources/php-foundation-blog-security-release/index.html) [PHP](../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [oss-security](../sources/openwall-oss-security-2026-10-21-7/index.html) |
+| php-cgi | at risk | Listed by php.net among installations serving web requests. | [php.net](../sources/php-net-advisory/index.html) |
+| FrankenPHP | likely susceptible | 'likely susceptible' per the GitHub advisory. | [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) |
+| LiteSpeed (LSAPI) | likely, unvalidated | 'application-specific exploits being likely but unvalidated'. | [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) |
+| CLI, cron, queue workers | not web-serving | The advisory scopes the risk to installations serving web requests. A CLI process that parses untrusted input is not covered either way by the primary sources. | [php.net](../sources/php-net-advisory/index.html) |
 
 ## Applications
 
-Calif reports confirmed pre-authentication RCE against WordPress 7.1.2, Drupal 11.4.3, Joomla 6.1.4, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS; Wiz confirmed Drupal (20 August) and WordPress (21 August). The flaw is below the application, so any PHP web application on an affected runtime is in scope. [Calif](../sources/index.html#calif-php2shell) [Wiz](../sources/index.html#wiz-blog-php2shell)
+Calif reports confirmed pre-authentication RCE against WordPress 7.1.2, Drupal 11.4.3, Joomla 6.1.4, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS; Wiz confirmed Drupal (20 August) and WordPress (21 August). The flaw is below the application, so any PHP web application on an affected runtime is in scope. [Calif](../sources/calif-php2shell/index.html) [Wiz](../sources/wiz-blog-php2shell/index.html)
 
 ## The NCSC-NL inventory, counted
 
@@ -59,8 +59,8 @@ NCSC-NL generates the list from an SPDX 3 inventory with VEX statements and says
 | Google | 4 |
 | Laravel | 4 |
 
-[The full inventory, all 674 rows →](software.html) The parsed file is in the vault as `software-list-cca173c64ec5.json`; the repository bundle and tree at the same commit are there too. [NCSC-NL](../sources/index.html#ncsc-nl-php2shell-software-list) [NCSC-NL](../sources/index.html#ncsc-nl-php2shell)
+[The full inventory, all 674 rows →](software.html) The parsed file is in the vault as `software-list-cca173c64ec5.json`; the repository bundle and tree at the same commit are there too. [NCSC-NL](../sources/ncsc-nl-php2shell-software-list/index.html) [NCSC-NL](../sources/ncsc-nl-php2shell/index.html)
 
 
 ---
-site v0.1.0 · data as of 2026-10-22T08:48Z · vault commit 379e3d7f172a · https://php.oct-2026.story.sgit.ai/affected/index.html
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/affected/index.html

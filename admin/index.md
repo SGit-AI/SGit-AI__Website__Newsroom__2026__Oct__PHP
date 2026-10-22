@@ -4,7 +4,7 @@ How this site is built, the checks in its gate, where things are, the reality fi
 
 # Admin and engineering
 
-How the site is built, what the gate checks, where things are, and what exists against what the brief asked for. The site is static HTML built by one Python script with no dependencies beyond the standard library, deployed by GitHub Pages from the `dev` branch of [the repository](https://github.com/SGit-AI/SGit-AI__Website__Story__Oct-2026__PHP).
+How the site is built, what the gate checks, where things are, and what exists against what the brief asked for. The site is static HTML built by one Python script with no dependencies beyond the standard library, deployed by GitHub Pages from the `dev` branch of [the repository](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP).
 
 ## Where things are
 
@@ -42,7 +42,7 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 ### Evidence
 
-- A private sgit vault with the protocol in its README; 61 sources, 62 captures, 390 hashed files at commit 379e3d7f172a; four agents have written to it. Not published; its manifest with hashes is `data/sources.json`.
+- A private sgit vault with the protocol in its README; 144 sources, 137 captures, 857 hashed files at commit 200d08971937; four agents have written to it. Not published; its manifest with hashes is `data/sources.json`.
 
 - `admin/build/export_vault.py` exports the manifest, the vault head, the per-agent claims and timeline files and the NCSC-NL inventory counts from a clone of the vault.
 
@@ -90,4 +90,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.1.0 · data as of 2026-10-22T08:48Z · vault commit 379e3d7f172a · https://php.oct-2026.story.sgit.ai/admin/index.html
+site v0.2.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

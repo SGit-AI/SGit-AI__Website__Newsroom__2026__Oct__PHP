@@ -3,7 +3,7 @@
 By domain, kept current by whoever ships. A thing not listed here does not exist, whatever the brief says.
 
 ## Evidence
-- A private sgit vault with the protocol in its README; 61 sources, 62 captures, 390 hashed files at commit 379e3d7f172a; four agents have written to it. Not published; its manifest with hashes is `data/sources.json`.
+- A private sgit vault with the protocol in its README; 144 sources, 137 captures, 857 hashed files at commit 200d08971937; four agents have written to it. Not published; its manifest with hashes is `data/sources.json`.
 - `admin/build/export_vault.py` exports the manifest, the vault head, the per-agent claims and timeline files and the NCSC-NL inventory counts from a clone of the vault.
 
 ## Data, authored for this site by the agent claude-story-site
