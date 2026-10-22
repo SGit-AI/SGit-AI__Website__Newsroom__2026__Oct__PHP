@@ -22,6 +22,15 @@
    "A power user: reads what is new when asked, and says what works"
   ]
  ],
- "invitations": [],
+ "invitations": [
+  {
+   "hash": "613f8fa86e55d252b250a4dbcccd09441856b98dba9598dd4a383263ab2d3e96",
+   "handle": "editor",
+   "role": "editor",
+   "made": "2026-10-22",
+   "expires": "2026-11-05",
+   "used": 0
+  }
+ ],
  "keys": []
 }
