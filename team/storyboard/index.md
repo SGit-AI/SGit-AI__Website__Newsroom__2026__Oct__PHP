@@ -46,7 +46,7 @@ Storyboardsstoryboards/index.html
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 080 | Storyboard desk joins: seven storyboards (61 panels) at /storyboards/, a cast of seven, the storyboard kit v0.1.0 vendored with its hashes checked by the gate, bundles and a catalogue for storyboards.sgit.ai | done |  |
-| 081 | The dated briefing deck, 22 October 2026: 12 slides (the bottom line, what it is, how it unfolded, where it stands, how sure we are, exposed is not exploited, what governments say, who gets a fix, what nobody knows, what to do), on the site to read, present and print, and as PowerPoint | done |  |
+| 081 | The dated briefing deck, 22 October 2026: 16 portrait slides, one visual each (the race hour by hour, the exposure funnel, the claims waffle, 16 agencies, the fix ladder and inventory curve, the weaponisation ladder, two storyboard strips), on the site to read, present and print, and as a PDF for posting | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/storyboard/` in the mail vault (`fmb2tpl2`).

@@ -3943,10 +3943,10 @@
 "deck-briefing-2026-10-22": {
 "kind": "story",
 "zone": "stories",
-"title": "PHP October 2026: the briefing",
+"title": "php2shell: the briefing",
 "path": "storyboards/briefing-2026-10-22/index.html",
-"hash": "b62fdfaaee9a",
-"v": 3,
+"hash": "181b8da87a07",
+"v": 6,
 "first": "0.5.2",
 "changed": "0.5.2",
 "date": "2026-10-22"

@@ -1,205 +1,241 @@
-# PHP October 2026: the briefing, 22 October 2026
+# php2shell: the briefing, 22 October 2026
 
 > Story: written here by this site, signed and dated. Made by the storyboard desk, agent storyboard@php.newsroom.
 
-A 12-slide briefing on the PHP flaws of October 2026, dated 22 October 2026 with evidence as of 2026-10-22T11:34Z: the bottom line, what it is, how it unfolded, where it stands, how sure we are, what governments say, who gets a fix, what nobody knows and what to do. Present it, print it, or download it as PowerPoint.
+A 16-slide visual briefing on the PHP flaws of October 2026, dated 22 October 2026 with evidence as of 2026-10-22T11:34Z: the bottom line, the race hour by hour, exposed against exploited, how sure we are, what 16 agencies say, who gets a fix, the weaponisation ladder, what nobody knows and what to do. Present it, print it, or download the PDF.
 
-Briefing deck · 12 slides · dated 22 October 2026
+Briefing deck · 16 slides · portrait 4:5 · dated 22 October 2026
 
-# PHP October 2026: the briefing, 22 October 2026
+# php2shell: the briefing, 22 October 2026
 
-Two critical PHP flaws (php2shell): what it is, where it stands, what we know, and the bottom line. For anyone who has to present the situation: to a board, a team, a client or a class.
+Two critical PHP flaws, one fix, and what we actually know. For anyone who has to explain the situation: a board, a team, a client, a feed.
 
 **By** `storyboard@php.newsroom` · **made against** site v0.5.2 · vault commit `200d08971937` · evidence as of 2026-10-22T11:34Z
 
-▶ PresentDownload PowerPoint (.pptx)Print or save as PDFPresent: full screen, arrow keys or space to move, Esc to leave. Speaker notes and each slide's sources are under each slide.
+Download the PDF (16 pages, 1 MB)▶ PresentPrint or save as PDFPresent: full screen, arrow keys or space, Esc to leave. Each slide's sources are under it.
+-  Briefing · Thursday 22 October 2026 ## php2shell Two critical flaws in PHP, the engine under most of the web. One fix. What we actually know, and what to do.evidence as of 11:34 UTC144 sources capturedevery fact linkedseverity, both flaws**PHP October 2026** · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: php.net, CVE record1/16Sources for slide 1Say the date and time first: everything here is as of 11:34 UTC on 22 October.[php.net](../../sources/php-net-advisory/index.html) [CVE record](../../sources/cve-cve-2026-109618/index.html) [CVE record](../../sources/cve-cve-2026-109619/index.html)If you read one slide ## The bottom line **01** ### Patch, then restart PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35. A fix that is installed but not restarted is not running.confirmed
+- **02** ### Trying is not breaking in Millions of attack attempts. No organisation has confirmed a break-in.reported
+- **03** ### Decide "offline" now The agencies disagree on what to do if you cannot patch. Name who decides, before you need it.confirmed
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: php.net, Matthew Prince, Cloudflare CEO on…, CISA, NCSC UK2/16Sources for slide 2
+[php.net](../../sources/php-net-advisory/index.html) [Matthew Prince, Cloudflare CEO on…](../../sources/x-eastdakota-php2shell-stats/index.html) [CISA](../../sources/cisa-kev-json/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html)
 
-PHP October 2026 · briefing
+On one page
 
-## PHP October 2026
+## The situation at a glance
+9.2severity out of 10, both flaws4fixed versions, out 21 Octmillionsattack attempts at one CDN0confirmed break-ins16agencies compared10organisations offline, reportedPHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: php.net, Matthew Prince, Cloudflare CEO on…, CISA3/16Sources for slide 3
+[php.net](../../sources/php-net-advisory/index.html) [Matthew Prince, Cloudflare CEO on…](../../sources/x-eastdakota-php2shell-stats/index.html) [CISA](../../sources/cisa-kev-json/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html)
 
-Two critical security flaws in PHP, the software behind many of the world's websites. The briefing, dated.
+A strip
 
-Thursday 22 October 2026 · evidence as of 11:34 UTC · vault commit 200d08971937 · site v0.5.2
+## Casey runs a website
 
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z1/12
-Speaker notes and sources, slide 1
-Say the date and time first. Everything on these slides is as of 11:34 UTC on 22 October, the latest page the evidence vault saved; the site and the slides will move when the evidence does.
+*The question***Casey:** The radio says websites are going offline. Is mine?**The Desk:** Let me show you what is confirmed first.
 
-[php.net](../../sources/php-net-advisory/index.html)
+*Where the hole is***Casey:** So not my phone?
 
-## The bottom line
-- **Fix it**Update PHP to 8.5.12, 8.4.27, 8.3.36 or 8.2.35, and restart it. Installed is not running.confirmed
-- **No panic, no complacency**Attackers are trying in large numbers; no organisation has confirmed a break-in.reported
-- **Decide offline now**If a system cannot be patched today, name who can take it offline, and when. The agencies disagree, so the decision is yours.confirmed
+*Attackers are trying***Mallory:** Knock knock. Millions of times.
 
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z2/12
-Speaker notes and sources, slide 2
-The answer first. If the room remembers one slide, it is this one: update and restart; trying is not breaking in; own the offline decision before you need it.
+**Update PHP. Restart it. Ask your host to confirm both.
 
-[php.net](../../sources/php-net-advisory/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html) [CISA](../../sources/cisa-kev-json/index.html)
+From the storyboard [Where it stands, 22 October](../where-it-stands/index.html). The lines are the storyboard's own words, not quotes.
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: php.net, Matthew Prince, Cloudflare CEO on…, CISA4/16Sources for slide 4
+[php.net](../../sources/php-net-advisory/index.html) [Matthew Prince, Cloudflare CEO on…](../../sources/x-eastdakota-php2shell-stats/index.html) [CISA](../../sources/cisa-kev-json/index.html)
 
-## What it is
-2flaws in PHP itselfCVE-2026-109618 and CVE-2026-1096199.2out of 10, bothcritical, CVSS v4.00passwords neededfrom anywhere on the internet4fixed versionsreleased 21 October- confirmed Someone anywhere on the internet, with no password, can use them against a website that has not installed the fix, and make its server run their own commands.
-- disputed Proven on Apache mod_php with default settings; on PHP-FPM it is disputed.
-- confirmed Not your phone or laptop: the flaw is on web servers.
+What it is
 
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z3/12
-Speaker notes and sources, slide 3
-Press calls the pair php2shell. Two separate bugs, one advisory. The traditional Apache setup is the proven case; other setups are likely but less certain.
+## Two holes in the engine itself
 
-[CVE record](../../sources/cve-cve-2026-109618/index.html) [CVE record](../../sources/cve-cve-2026-109619/index.html) [php.net](../../sources/php-net-advisory/index.html)
+Not in WordPress or a plugin: in PHP, underneath every site that runs on it.
 
-## How it unfolded
-- **2024**An audit spots the out-of-memory weakness. Nobody can show it is exploitable, so it is left.
-- **Aug 2026**Three teams using AI turn it into working attacks within three weeks and report them to PHP.
-- **20 Oct**The secret leaks: the CVE numbers circulate two days early, with a wrong severity score.
-- **21 Oct**PHP releases the fix a day ahead of plan. Firewall vendors already have rules live.
-- **22 Oct**Agencies warn: update, or take systems offline. Sites go dark as a precaution.
+CVSS v4.0, critical, both flaws
+- Anyone on the internet
+- one web request, no password
+- the PHP engine, before any app code
+- the server runs their commands
+- confirmed Proven on Apache mod_php with default settings.
+- disputed On PHP-FPM, sources disagree.
+- confirmed Phones and laptops are not the target: web servers are.
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: CVE record, PHP5/16Sources for slide 5
+[CVE record](../../sources/cve-cve-2026-109618/index.html) [CVE record](../../sources/cve-cve-2026-109619/index.html) [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html)
 
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z4/12
-Speaker notes and sources, slide 4
-Two things to stress: AI-assisted research turned an old audit finding into working attacks; and the leak moved the release a day early, so defenders and attackers started the clock together.
+Two years in five moments
 
-[PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [Calif](../../sources/calif-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html) [php.net](../../sources/php-net-advisory/index.html) [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [NSA Cyber on X](../../sources/nsa-x-2112903220209098897/index.html) [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html)
+## Noticed in 2024. Fixed in a day.
+- **2024**An audit spots the weakness. Nobody can show it is exploitable, so it is left.*22 months later*
+- **Aug 2026**Three teams using AI turn it into working attacks within three weeks.*10 weeks later*
+- **20 Oct**It leaks: the CVE numbers circulate two days early, with a wrong score.*1 day later*
+- **21 Oct**PHP ships the fix a day early. Firewall rules are already live.*1 day later*
+- **22 Oct**Agencies: update, or take it offline. Sites go dark as a precaution.
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: PHP Foundation, Calif, php.net, BBC News6/16Sources for slide 6
+[PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [Calif](../../sources/calif-php2shell/index.html) [php.net](../../sources/php-net-advisory/index.html) [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html)
 
-## Where it stands now
-millionsattack attemptsat one CDN, by 22 Octreported0confirmed break-insnamed organisationsconfirmed10organisations offlinereported, as a precautionreportedNoon CISA's exploited listneither flaw, at the latest checkconfirmed- confirmed Some organisations took websites offline as a precaution, among them Dutch government services such as the DigiD login.
-- confirmed Offline is a decision, not evidence of a hack.
+20 to 22 October, hour by hour
 
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z5/12
-Speaker notes and sources, slide 5
-Attempts are requests, not sites, and not compromises. The ten organisations offline come mostly from one news live page and are not all confirmed by the organisations named.
+## The race
 
-[Matthew Prince, Cloudflare CEO on…](../../sources/x-eastdakota-php2shell-stats/index.html) [CISA](../../sources/cisa-kev-json/index.html) [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) [Rijksoverheid / NCSC-NL](../../sources/rijksoverheid-ncsc-php-news/index.html) [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html)
+Attackers on the left. Defenders on the right. Times in UTC.
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: PHP Foundation, THN, Cloudflare, php-src, NSA Cyber on X7/16Sources for slide 7
+[PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [THN](../../sources/thehackernews-php2shell-4days/index.html) [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [php-src](../../sources/github-php-src-tags/index.html) [NSA Cyber on X](../../sources/nsa-x-2112903220209098897/index.html) [php.net](../../sources/php-net-advisory/index.html) [Matthew Prince, Cloudflare CEO on…](../../sources/x-eastdakota-php2shell-stats/index.html) [NCSC-NL](../../sources/ncsc-nl-php2shell-software-list/index.html)
 
-## How sure we are
+Exposed is not exploited
 
-70 statements checked. Confirmed means two or more original sources agree.
-
-Statements by status, from `data/claims.json`
-- confirmed The headline '70% of the Internet' is not what it sounds like. It is roughly the share of websites built with PHP, which is what the same company's own article says; nobody has measured how many are actually at risk.
-- Each statement, its status and its saved sources: php.oct.2026.newsroom.sgit.ai/claims/
-
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z6/12
-Speaker notes and sources, slide 6
-This is the slide for a journalist or a sceptic. Most of what circulates is reported by one party; say which.
-
-[php.net](../../sources/php-net-advisory/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html)
-
-## Exposed is not exploited
+## From "70% of the internet" to zero
 - **~70%**of websites use PHPreported
-- **2.6M**internet hosts expose PHP (one scanner)reported
-- **1.57M**still unpatched on 21 Oct (Censys)reported
-- **millions**attempts at one CDNreported
+- **2.6M**hosts expose PHP to the internetreported
+- **1.57M**still unpatched on 21 Octreported
+- **millions**attack attempts, at one CDNreported
 - **0**confirmed break-insconfirmed
 - **?**hit, and holding something worth reachingunverified
 
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z7/12
-Speaker notes and sources, slide 7
-Each rung is a different count by a different party. The number that matters, the last one, nobody has measured: what a compromised server could reach.
-
+Each line is a different count by a different party. The one that matters, nobody has measured.
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: Cloudflare, THN, SecurityWeek, Matthew Prince, Cloudflare CEO on…, CISA8/16Sources for slide 8
 [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [THN](../../sources/thehackernews-php2shell-4days/index.html) [SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html) [Matthew Prince, Cloudflare CEO on…](../../sources/x-eastdakota-php2shell-stats/index.html) [CISA](../../sources/cisa-kev-json/index.html) [Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html)
 
-## What governments say
+How sure are we?
 
-Every agency: install the fix. If you cannot, they disagree.
+## 70 statements, checked
 
-16 agencies, if you cannot update, from `data/agencies.json`
-- confirmed US (NSA, CISA): take it offline. UK (NCSC): consider it, after the temporary mitigations. EU, France, Canada: isolate from public networks.
+Each square is one statement this site tracks, coloured by how well it is supported.
+- 22*confirmed* two or more original sources agree
+- 33*reported* one party says so
+- 8*disputed* sources disagree
+- 3*contradicted* a source shows it false
+- 4*unverified* nobody could check
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: php.net, Wiz9/16Sources for slide 9
+[php.net](../../sources/php-net-advisory/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html)
 
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z8/12
-Speaker notes and sources, slide 8
-Two agencies could not be read (bot challenges) and are counted as not read, not as silent.
+16 government cyber agencies
 
-[CISA](../../sources/cisa-alert-php-20261021/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html) [CERT-EU](../../sources/certeu-sa-2026-018/index.html)
+## Same fix. Five answers to "and if we can't?"
 
-## Who gets a fix
+**16 of 16** say: install the fix now.
 
-### Supported: fixed confirmed
-- 8.5.12, 8.4.27, 8.3.36, 8.2.35
-- released 21 October, 14:00 UTC
-- OS packages from 15:30 UTC (Red Hat first)
+**2**Take it offline
+USNSA CybersecurityUSCISA
+**2**Offline as a last resort
+UKNCSCCHBACS (NCSC)
+**3**Isolate it from the internet
+EUCERT-EUFRCERT-FR (ANSSI)CACCCS
+**1**Restrict access
+LVCERT.LV
+**6**Say nothing about it
+EUENISA CSIRTs NetworkAUASD's ACSCNZNCSCNLNCSC-NLITACN / CSIRT ItaliaJPJPCERT/CC
+**2**Could not be read
+ESCCN-CERTPTCNCSPHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: NSA Cyber on X, CISA, NCSC UK, CERT-EU, CERT-FR10/16Sources for slide 10
+[NSA Cyber on X](../../sources/nsa-x-2112903220209098897/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html) [CERT-EU](../../sources/certeu-sa-2026-018/index.html) [CERT-FR](../../sources/certfr-2026-ale-014/index.html) [CCCS](../../sources/cccs-al26-026/index.html) [CERT.LV](../../sources/certlv-php-preventive/index.html) [ACSC](../../sources/acsc-alert-php/index.html)
 
-### End of life: partial confirmed
-- 8.1, 8.0: a source backport, no release
-- 7.4: a mitigation commit on a branch
-- 7.3 and older: nothing
+Who gets a fix
 
-### Products built on PHP reported
-- 724 in the Dutch NCSC list at 15:28 UTC
-- 61 fixed, 216 vulnerable
-- 440 still being investigated
+## The fix climbs down a ladder
+- **8.5**8.5.12
+- **8.4**8.4.27
+- **8.3**8.3.36
+- **8.2**8.2.35
+- **8.1, 8.0**source backport, no release
+- **7.4**mitigation commit only
+- **7.3 to 5.x**nothing
 
-The product counts are from the NCSC-NL list at 15:28 UTC, after the 11:34 capture.
+**724 products built on PHP in the Dutch NCSC list**440 investigating216 vulnerable6 not affected61 fixed
 
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z9/12
-Speaker notes and sources, slide 9
-The long tail is the story of the next weeks: products that bundle PHP, and servers on versions PHP no longer supports.
-
+The product curve runs to 15:28 UTC on 22 October, after the 11:34 capture.
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: php.net, php-src, NCSC-NL11/16Sources for slide 11
 [php.net](../../sources/php-net-advisory/index.html) [php-src](../../sources/github-php-src-tags/index.html) [php-src](../../sources/github-php-src-branch-7.4-backport/index.html) [NCSC-NL](../../sources/ncsc-nl-php2shell-software-list/index.html)
 
+How close to Log4Shell?
+
+## Four rungs up a seven-rung ladder
+- **7**Ransomware, botnets*not yet, no evidence*
+- **6**On CISA's exploited list*not yet*
+- **5**One-command module*not yet, PR open, not merged*
+- **4**Mass scanning*reached, fingerprinting*
+- **3**Public exploit code*reached, mostly broken*
+- **2**Used before the patch*reached, one honeypot hit*
+- **1**Private exploits*reached, Aug 2026*
+
+Both earlier PHP flaws on that list ended up with ransomware.
+
+From the cyber desk's reading at 17:51 UTC on 22 October, after the 11:34 capture.
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: Calif, Amazon, Sansec, CISA, CVE record12/16Sources for slide 12
+[Calif](../../sources/calif-php2shell/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) [Sansec](../../sources/sansec-research-php2shell/index.html) [CISA](../../sources/cisa-kev-json/index.html) [CVE record](../../sources/cve-cve-2019-11043/index.html) [CVE record](../../sources/cve-cve-2024-4577/index.html)
+
+A strip
+
+## Jordan sits on the board
+
+*Everyone agrees on one thing***Jordan:** What do the governments say?**The Desk:** Every one: install the fix.
+
+*And if you cannot install it today?*
+
+*The question for the board***Jordan:** Who here can pull a system offline tonight?**Sam:** Me, if you write it down now.
+
+**Same fix everywhere. Decide offline before you need it.
+
+From the storyboard [What the agencies say](../what-the-agencies-say/index.html). The lines are the storyboard's own words, not quotes.
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: CISA, NCSC UK13/16Sources for slide 13
+[CISA](../../sources/cisa-alert-php-20261021/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html)
+
+Stated, not papered over
+
 ## What nobody knows yet
-- Whether any website was actually broken into before it installed the fix.
-- unverified Whether the fix is complete. A report on 21 October suggested it may not be; the PHP project has not answered it publicly yet.
-- Who leaked the news on 20 October, and where.
-- Exactly which websites went offline, and why. Most of the list comes from one news live page and has not been confirmed by the organisations named.
-- Where the 70% figure comes from. None of the pages that use it says how it was measured.
+- **?**Whether any website was actually broken into before it installed the fix.
+- **?**Whether the fix is complete. A report on 21 October suggested it may not be; the PHP project has not answered it publicly yet.
+- **?**Who leaked the news on 20 October, and where.
+- **?**Exactly which websites went offline, and why. Most of the list comes from one news live page and has not been confirmed by the organisations named.
+- **?**Where the 70% figure comes from. None of the pages that use it says how it was measured.
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: CISA, oss-security, BBC News, Wiz14/16Sources for slide 14
+[CISA](../../sources/cisa-kev-json/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html)
 
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z10/12
-Speaker notes and sources, slide 10
-Stated, not papered over. These are the questions to watch; the site updates each one when the evidence does.
+What to do
 
-[CISA](../../sources/cisa-kev-json/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html)
-
-## What to do, by who you are
+## By who you are
 
 ### You run a website
-- Ask your host which PHP version is serving your site now, and when it was restarted
-- Ask whether anything still runs PHP 8.1 or older
+- Ask your host which PHP version is serving your site right now
+- and when it was last restarted
 
 ### You run the servers
 - Patch and restart every PHP process
-- No patch today: the temporary settings, an edge rule, then offline
-- Look for workers spawning shells
+- Cannot today: temporary settings, an edge rule, then offline
+- Watch for PHP workers starting shells
 
 ### You own the risk
 - Name who can take a system offline
 - Ask for evidence you were not hit
-- Plan for 8.1 and older
-
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z11/12
-Speaker notes and sources, slide 11
-Each column is a briefing on the site: /briefings/site-owner/, /briefings/engineer/ and /briefings/board/.
-
+- Find anything still on PHP 8.1 or older
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: php.net, CISA, NCSC UK15/16Sources for slide 15
 [php.net](../../sources/php-net-advisory/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html)
 
-PHP October 2026 · briefing
+Check every line
 
-## Check every line
+## Every fact links to a saved copy of its source
+144web pages saved as evidence857files hashed70statements with a status16agencies compared- **1**a web page
+- **2**captured, hashed
+- **3**the evidence vault
+- **4**a claim with a status
+- **5**graded by the fact-check desk
+- **6**this page, every fact linked
 
-Every fact here links to a saved, hashed copy of its source.
-- php.oct.2026.newsroom.sgit.ai: the situation, every claim, every source
-- The storyboards, for people who will not read the table: /storyboards/
-- This deck as a page, as markdown and as PowerPoint: /storyboards/briefing-2026-10-22/
+Built by a team of software agents for one editor. Research and stories, every source captured, dated and hashed.
 
-Dated 22 October 2026, evidence as of 11:34 UTC. When the evidence moves, a new dated deck replaces this one; this one is kept as made.
-
-PHP October 2026 · briefing of 22 October 2026 · evidence as of 2026-10-22T11:34Z12/12
-Speaker notes and sources, slide 12
-Not advice for your own systems: for that, the PHP project's announcement and your national cyber agency.
+php.oct.2026.newsroom.sgit.ai
+PHP October 2026 · briefing of 22 October 2026 · evidence as of 11:34 UTCSources: php.net16/16Sources for slide 16
+Not advice for your own systems: for that, the PHP project and your national cyber agency.
 
 [php.net](../../sources/php-net-advisory/index.html)
 
-**The rule.** Dated and kept as made: every number on a slide names the file it comes from and the gate checks it while the deck is current; every slide cites the evidence vault's source slugs; status words are the site's (confirmed, reported, disputed, contradicted, unverified). Where a slide uses evidence newer than 11:34 UTC it says so on the slide.
+**The rule.** Dated and kept as made. Every number and every timed event on a slide is held in this file and checked by the gate against the site's data while the deck is current; every slide cites the evidence vault's source slugs; status words are the site's. Where a slide uses evidence newer than 11:34 UTC it says so. Images drawn by a model are marked, their briefs are published, and every word and number in them was checked against this file before use.
+
+## The images drawn by a model
+
+None yet: every visual in this deck is drawn by code from the data.
 
 ## Every source in this deck
 
-23 captured sources, in the order the slides first cite them.
+31 captured sources, in the order the slides first cite them.
 
-[php.net](../../sources/php-net-advisory/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html) [CISA](../../sources/cisa-kev-json/index.html) [CVE record](../../sources/cve-cve-2026-109618/index.html) [CVE record](../../sources/cve-cve-2026-109619/index.html) [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [Calif](../../sources/calif-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html) [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [NSA Cyber on X](../../sources/nsa-x-2112903220209098897/index.html) [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Matthew Prince, Cloudflare CEO on…](../../sources/x-eastdakota-php2shell-stats/index.html) [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) [Rijksoverheid / NCSC-NL](../../sources/rijksoverheid-ncsc-php-news/index.html) [THN](../../sources/thehackernews-php2shell-4days/index.html) [SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html) [Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html) [CERT-EU](../../sources/certeu-sa-2026-018/index.html) [php-src](../../sources/github-php-src-tags/index.html) [php-src](../../sources/github-php-src-branch-7.4-backport/index.html) [NCSC-NL](../../sources/ncsc-nl-php2shell-software-list/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html)
+[php.net](../../sources/php-net-advisory/index.html) [CVE record](../../sources/cve-cve-2026-109618/index.html) [CVE record](../../sources/cve-cve-2026-109619/index.html) [Matthew Prince, Cloudflare CEO on…](../../sources/x-eastdakota-php2shell-stats/index.html) [CISA](../../sources/cisa-kev-json/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html) [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [Calif](../../sources/calif-php2shell/index.html) [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [THN](../../sources/thehackernews-php2shell-4days/index.html) [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [php-src](../../sources/github-php-src-tags/index.html) [NSA Cyber on X](../../sources/nsa-x-2112903220209098897/index.html) [NCSC-NL](../../sources/ncsc-nl-php2shell-software-list/index.html) [SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html) [Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html) [CERT-EU](../../sources/certeu-sa-2026-018/index.html) [CERT-FR](../../sources/certfr-2026-ale-014/index.html) [CCCS](../../sources/cccs-al26-026/index.html) [CERT.LV](../../sources/certlv-php-preventive/index.html) [ACSC](../../sources/acsc-alert-php/index.html) [php-src](../../sources/github-php-src-branch-7.4-backport/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) [Sansec](../../sources/sansec-research-php2shell/index.html) [CVE record](../../sources/cve-cve-2019-11043/index.html) [CVE record](../../sources/cve-cve-2024-4577/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html)
 
-Source file: `admin/content/decks/2026-10-22__briefing.json`, in the authored layer. The PowerPoint was made from it by `admin/build/deck_pptx.js` (source sha256 `92ec4ab719f4b121`). The [storyboards](../index.html) tell the same story as strips.
+Source file: `admin/content/decks/2026-10-22__briefing.json`, in the authored layer. The PDF was printed from this page by `admin/build/deck_pdf.js` (deck source sha256 `feb326ebe46477cb`). The [storyboards](../index.html) tell the same story as strips.
 
 
 ---

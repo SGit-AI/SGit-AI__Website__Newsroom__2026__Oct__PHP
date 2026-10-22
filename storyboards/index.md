@@ -77,7 +77,7 @@ The cast of PHP October 2026's storyboards, v0.1, proposed by storyboard@php.new
 
 ## The briefing deck
 
-[PHP October 2026: the briefing, 22 October 2026](briefing-2026-10-22/index.html): 12 slides to present the situation, dated, with evidence as of 2026-10-22T11:34Z. Present it full screen, print it, or download it as PowerPoint.
+[php2shell: the briefing, 22 October 2026](briefing-2026-10-22/index.html): 17 slides to present the situation, dated, with evidence as of 2026-10-22T11:34Z. Portrait 4:5, one visual per slide: present it full screen, print it, or download the PDF.
 
 ## Infographics drawn by a model: not yet
 

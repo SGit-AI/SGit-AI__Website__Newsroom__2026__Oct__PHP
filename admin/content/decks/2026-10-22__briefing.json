@@ -1,42 +1,63 @@
 {
  "slug": "briefing-2026-10-22",
- "title": "PHP October 2026: the briefing",
- "subtitle": "Two critical PHP flaws (php2shell): what it is, where it stands, what we know, and the bottom line",
+ "title": "php2shell: the briefing",
+ "subtitle": "Two critical PHP flaws, one fix, and what we actually know",
  "date": "2026-10-22",
  "data_as_of": "2026-10-22T11:34Z",
  "vault_commit": "200d08971937",
  "as_of_version": "0.5.2",
+ "format": {
+  "width": 1080,
+  "height": 1350,
+  "ratio": "4:5",
+  "why": "portrait 4:5, the shape a document post is read in on a phone"
+ },
  "by": "storyboard@php.newsroom, for the editor, 22 October 2026",
- "for": "anyone who has to present the situation: to a board, a team, a client or a class",
- "rule": "Dated and kept as made: every number on a slide names the file it comes from and the gate checks it while the deck is current; every slide cites the evidence vault's source slugs; status words are the site's (confirmed, reported, disputed, contradicted, unverified). Where a slide uses evidence newer than 11:34 UTC it says so on the slide.",
+ "for": "anyone who has to explain the situation: a board, a team, a client, a feed",
+ "rule": "Dated and kept as made. Every number and every timed event on a slide is held in this file and checked by the gate against the site's data while the deck is current; every slide cites the evidence vault's source slugs; status words are the site's. Where a slide uses evidence newer than 11:34 UTC it says so. Images drawn by a model are marked, their briefs are published, and every word and number in them was checked against this file before use.",
+ "site": "php.oct.2026.newsroom.sgit.ai",
  "slides": [
   {
-   "id": "title",
-   "kind": "title",
-   "title": "PHP October 2026",
-   "lead": "Two critical security flaws in PHP, the software behind many of the world's websites. The briefing, dated.",
-   "dateline": "Thursday 22 October 2026 · evidence as of 11:34 UTC · vault commit 200d08971937 · site v0.5.2",
-   "cites": [
-    "php-net-advisory"
+   "id": "cover",
+   "kind": "cover",
+   "kicker": "Briefing · Thursday 22 October 2026",
+   "title": "php2shell",
+   "lead": "Two critical flaws in PHP, the engine under most of the web. One fix. What we actually know, and what to do.",
+   "chips": [
+    "evidence as of 11:34 UTC",
+    "144 sources captured",
+    "every fact linked"
    ],
-   "note": "Say the date and time first. Everything on these slides is as of 11:34 UTC on 22 October, the latest page the evidence vault saved; the site and the slides will move when the evidence does."
+   "image": {
+    "slot": "cover",
+    "alt": "An illustration of a web server cracked open and being sealed"
+   },
+   "cites": [
+    "php-net-advisory",
+    "cve-cve-2026-109618",
+    "cve-cve-2026-109619"
+   ],
+   "note": "Say the date and time first: everything here is as of 11:34 UTC on 22 October."
   },
   {
    "id": "bottom-line",
    "kind": "bottomline",
+   "kicker": "If you read one slide",
    "title": "The bottom line",
    "points": [
     {
-     "head": "Fix it",
-     "text": "Update PHP to 8.5.12, 8.4.27, 8.3.36 or 8.2.35, and restart it. Installed is not running.",
+     "n": "01",
+     "head": "Patch, then restart",
+     "text": "PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35. A fix that is installed but not restarted is not running.",
      "status": "confirmed",
      "cites": [
       "php-net-advisory"
      ]
     },
     {
-     "head": "No panic, no complacency",
-     "text": "Attackers are trying in large numbers; no organisation has confirmed a break-in.",
+     "n": "02",
+     "head": "Trying is not breaking in",
+     "text": "Millions of attack attempts. No organisation has confirmed a break-in.",
      "status": "reported",
      "cites": [
       "x-eastdakota-php2shell-stats",
@@ -44,8 +65,9 @@
      ]
     },
     {
-     "head": "Decide offline now",
-     "text": "If a system cannot be patched today, name who can take it offline, and when. The agencies disagree, so the decision is yours.",
+     "n": "03",
+     "head": "Decide \"offline\" now",
+     "text": "The agencies disagree on what to do if you cannot patch. Name who decides, before you need it.",
      "status": "confirmed",
      "cites": [
       "cisa-alert-php-20261021",
@@ -55,60 +77,112 @@
    ],
    "cites": [
     "php-net-advisory",
+    "x-eastdakota-php2shell-stats",
+    "cisa-kev-json",
     "cisa-alert-php-20261021",
-    "ncsc-news-php",
-    "cisa-kev-json"
-   ],
-   "note": "The answer first. If the room remembers one slide, it is this one: update and restart; trying is not breaking in; own the offline decision before you need it."
+    "ncsc-news-php"
+   ]
   },
   {
-   "id": "what-it-is",
-   "kind": "stats",
-   "title": "What it is",
-   "stats": [
-    {
-     "value": "2",
-     "label": "flaws in PHP itself",
-     "sub": "CVE-2026-109618 and CVE-2026-109619"
-    },
-    {
-     "value": "9.2",
-     "label": "out of 10, both",
-     "sub": "critical, CVSS v4.0"
-    },
-    {
-     "value": "0",
-     "label": "passwords needed",
-     "sub": "from anywhere on the internet"
-    },
-    {
-     "value": "4",
-     "label": "fixed versions",
-     "sub": "released 21 October"
-    }
+   "id": "glance",
+   "kind": "image",
+   "kicker": "On one page",
+   "title": "The situation at a glance",
+   "image": {
+    "slot": "glance",
+    "alt": "An infographic of the situation on 22 October 2026"
+   },
+   "fallback": {
+    "stats": [
+     {
+      "v": "9.2",
+      "l": "severity out of 10, both flaws"
+     },
+     {
+      "v": "4",
+      "l": "fixed versions, out 21 Oct"
+     },
+     {
+      "v": "millions",
+      "l": "attack attempts at one CDN"
+     },
+     {
+      "v": "0",
+      "l": "confirmed break-ins"
+     },
+     {
+      "v": "16",
+      "l": "agencies compared"
+     },
+     {
+      "v": "10",
+      "l": "organisations offline, reported"
+     }
+    ]
+   },
+   "cites": [
+    "php-net-advisory",
+    "x-eastdakota-php2shell-stats",
+    "cisa-kev-json",
+    "cisa-alert-php-20261021"
+   ]
+  },
+  {
+   "id": "strip-where",
+   "kind": "strip",
+   "kicker": "A strip",
+   "title": "Casey runs a website",
+   "strip": {
+    "storyboard": "where-it-stands",
+    "panels": [
+     2,
+     4,
+     6,
+     10
+    ]
+   },
+   "cites": [
+    "php-net-advisory",
+    "x-eastdakota-php2shell-stats",
+    "cisa-kev-json"
+   ]
+  },
+  {
+   "id": "what",
+   "kind": "anatomy",
+   "kicker": "What it is",
+   "title": "Two holes in the engine itself",
+   "lead": "Not in WordPress or a plugin: in PHP, underneath every site that runs on it.",
+   "severity": {
+    "value": 9.2,
+    "of": 10,
+    "label": "CVSS v4.0, critical, both flaws"
+   },
+   "path": [
+    "Anyone on the internet",
+    "one web request, no password",
+    "the PHP engine, before any app code",
+    "the server runs their commands"
    ],
-   "points": [
+   "facts": [
     {
-     "text": "Someone anywhere on the internet, with no password, can use them against a website that has not installed the fix, and make its server run their own commands.",
+     "text": "Proven on Apache mod_php with default settings.",
      "status": "confirmed",
-     "quote_from": "data/plain.json",
      "cites": [
-      "github-ghsa-w8hw-w9fx-j79w",
-      "github-ghsa-6wmf-4rv5-p3rp"
+      "github-ghsa-w8hw-w9fx-j79w"
      ]
     },
     {
-     "text": "Proven on Apache mod_php with default settings; on PHP-FPM it is disputed.",
+     "text": "On PHP-FPM, sources disagree.",
      "status": "disputed",
      "cites": [
-      "github-ghsa-w8hw-w9fx-j79w",
+      "github-ghsa-6wmf-4rv5-p3rp",
       "sansec-research-php2shell"
      ]
     },
     {
-     "text": "Not your phone or laptop: the flaw is on web servers.",
+     "text": "Phones and laptops are not the target: web servers are.",
      "status": "confirmed",
-     "quote_from": "data/plain.json",
      "cites": [
       "php-net-advisory",
       "ncsc-news-php"
@@ -118,206 +192,208 @@
    "cites": [
     "cve-cve-2026-109618",
     "cve-cve-2026-109619",
-    "php-net-advisory"
-   ],
-   "note": "Press calls the pair php2shell. Two separate bugs, one advisory. The traditional Apache setup is the proven case; other setups are likely but less certain."
+    "github-ghsa-w8hw-w9fx-j79w",
+    "github-ghsa-6wmf-4rv5-p3rp"
+   ]
   },
   {
-   "id": "how",
-   "kind": "timeline",
-   "title": "How it unfolded",
+   "id": "how-picture",
+   "kind": "image",
+   "optional": true,
+   "kicker": "In one picture",
+   "title": "How the attack works",
+   "image": {
+    "slot": "how",
+    "alt": "An explainer: an attacker sends one web request, PHP mishandles it before any app code runs, and the server runs the attacker's commands; a patched, restarted server makes the request fail"
+   },
+   "cites": [
+    "github-ghsa-w8hw-w9fx-j79w",
+    "github-ghsa-6wmf-4rv5-p3rp",
+    "php-net-advisory"
+   ]
+  },
+  {
+   "id": "arc",
+   "kind": "arc",
+   "kicker": "Two years in five moments",
+   "title": "Noticed in 2024. Fixed in a day.",
    "moments": [
     {
      "when": "2024",
-     "what": "An audit spots the out-of-memory weakness. Nobody can show it is exploitable, so it is left."
+     "what": "An audit spots the weakness. Nobody can show it is exploitable, so it is left.",
+     "gap": "22 months",
+     "cites": [
+      "php-foundation-blog-security-release",
+      "quarkslab-blog-php-src-audit"
+     ]
     },
     {
      "when": "Aug 2026",
-     "what": "Three teams using AI turn it into working attacks within three weeks and report them to PHP."
+     "what": "Three teams using AI turn it into working attacks within three weeks.",
+     "gap": "10 weeks",
+     "cites": [
+      "calif-php2shell",
+      "wiz-blog-php2shell",
+      "github-ghsa-w8hw-w9fx-j79w"
+     ]
     },
     {
      "when": "20 Oct",
-     "what": "The secret leaks: the CVE numbers circulate two days early, with a wrong severity score."
+     "what": "It leaks: the CVE numbers circulate two days early, with a wrong score.",
+     "gap": "1 day",
+     "cites": [
+      "php-foundation-blog-security-release",
+      "daubois-blog-php2shell-rumors"
+     ]
     },
     {
      "when": "21 Oct",
-     "what": "PHP releases the fix a day ahead of plan. Firewall vendors already have rules live."
-    },
-    {
-     "when": "22 Oct",
-     "what": "Agencies warn: update, or take systems offline. Sites go dark as a precaution."
-    }
-   ],
-   "quote_from": "data/plain.json",
-   "cites": [
-    "php-foundation-blog-security-release",
-    "calif-php2shell",
-    "wiz-blog-php2shell",
-    "php-net-advisory",
-    "cloudflare-blog-php2shell-waf",
-    "nsa-x-2112903220209098897",
-    "bbc-live-ckgel5xp2xv9t"
-   ],
-   "note": "Two things to stress: AI-assisted research turned an old audit finding into working attacks; and the leak moved the release a day early, so defenders and attackers started the clock together."
-  },
-  {
-   "id": "now",
-   "kind": "stats",
-   "title": "Where it stands now",
-   "stats": [
-    {
-     "value": "millions",
-     "label": "attack attempts",
-     "sub": "at one CDN, by 22 Oct",
-     "status": "reported"
-    },
-    {
-     "value": "0",
-     "label": "confirmed break-ins",
-     "sub": "named organisations",
-     "status": "confirmed"
-    },
-    {
-     "value": "10",
-     "label": "organisations offline",
-     "sub": "reported, as a precaution",
-     "status": "reported"
-    },
-    {
-     "value": "No",
-     "label": "on CISA's exploited list",
-     "sub": "neither flaw, at the latest check",
-     "status": "confirmed"
-    }
-   ],
-   "points": [
-    {
-     "text": "Some organisations took websites offline as a precaution, among them Dutch government services such as the DigiD login.",
-     "status": "confirmed",
-     "quote_from": "data/plain.json",
+     "what": "PHP ships the fix a day early. Firewall rules are already live.",
+     "gap": "1 day",
      "cites": [
-      "rijksoverheid-ncsc-php-news",
-      "bbc-live-ckgel5xp2xv9t"
-     ]
-    },
-    {
-     "text": "Offline is a decision, not evidence of a hack.",
-     "status": "confirmed",
-     "quote_from": "data/plain.json",
-     "cites": [
-      "nsa-x-2112903220209098897",
-      "cisa-alert-php-20261021"
-     ]
-    }
-   ],
-   "cites": [
-    "x-eastdakota-php2shell-stats",
-    "cisa-kev-json",
-    "huntress-php2shell-rapid-response",
-    "rijksoverheid-ncsc-php-news",
-    "bbc-live-ckgel5xp2xv9t"
-   ],
-   "note": "Attempts are requests, not sites, and not compromises. The ten organisations offline come mostly from one news live page and are not all confirmed by the organisations named."
-  },
-  {
-   "id": "how-sure",
-   "kind": "bars",
-   "title": "How sure we are",
-   "lead": "70 statements checked. Confirmed means two or more original sources agree.",
-   "bars": {
-    "title": "Statements by status",
-    "rows": [
-     {
-      "label": "confirmed",
-      "value": 22,
-      "colour": "15803d"
-     },
-     {
-      "label": "reported",
-      "value": 33,
-      "colour": "2563eb"
-     },
-     {
-      "label": "disputed",
-      "value": 8,
-      "colour": "d97706"
-     },
-     {
-      "label": "contradicted",
-      "value": 3,
-      "colour": "b91c1c"
-     },
-     {
-      "label": "unverified",
-      "value": 4,
-      "colour": "6b7280"
-     }
-    ],
-    "from": {
-     "file": "data/claims.json",
-     "count": "status"
-    }
-   },
-   "points": [
-    {
-     "text": "The headline '70% of the Internet' is not what it sounds like. It is roughly the share of websites built with PHP, which is what the same company's own article says; nobody has measured how many are actually at risk.",
-     "status": "confirmed",
-     "quote_from": "data/plain.json",
-     "cites": [
-      "wiz-blog-php2shell",
+      "php-net-advisory",
       "cloudflare-blog-php2shell-waf"
      ]
     },
     {
-     "text": "Each statement, its status and its saved sources: php.oct.2026.newsroom.sgit.ai/claims/",
+     "when": "22 Oct",
+     "what": "Agencies: update, or take it offline. Sites go dark as a precaution.",
      "cites": [
-      "php-net-advisory"
+      "nsa-x-2112903220209098897",
+      "cisa-alert-php-20261021",
+      "bbc-live-ckgel5xp2xv9t"
      ]
     }
    ],
    "cites": [
+    "php-foundation-blog-security-release",
+    "calif-php2shell",
     "php-net-advisory",
-    "wiz-blog-php2shell"
-   ],
-   "note": "This is the slide for a journalist or a sceptic. Most of what circulates is reported by one party; say which."
+    "bbc-live-ckgel5xp2xv9t"
+   ]
   },
   {
-   "id": "exposed",
-   "kind": "ladder",
-   "title": "Exposed is not exploited",
+   "id": "race",
+   "kind": "race",
+   "kicker": "20 to 22 October, hour by hour",
+   "title": "The race",
+   "lead": "Attackers on the left. Defenders on the right. Times in UTC.",
+   "start": "2026-10-20T15:00Z",
+   "end": "2026-10-22T09:00Z",
+   "attack": [
+    {
+     "at": "2026-10-20T15:00Z",
+     "label": "CVE numbers leak, wrong score"
+    },
+    {
+     "at": "2026-10-20T20:00Z",
+     "label": "an exploit video leaks"
+    },
+    {
+     "at": "2026-10-21T02:00Z",
+     "label": "first exploit attempts (Amazon)"
+    },
+    {
+     "at": "2026-10-21T07:43Z",
+     "label": "early attacks seen (Cloudflare)"
+    },
+    {
+     "at": "2026-10-21T08:36Z",
+     "label": "first sensor hit (ELLIO)"
+    },
+    {
+     "at": "2026-10-22T01:25Z",
+     "label": "millions of attempts (Cloudflare)"
+    }
+   ],
+   "defend": [
+    {
+     "at": "2026-10-20T19:30Z",
+     "label": "php.net pre-announces 21 Oct"
+    },
+    {
+     "at": "2026-10-21T03:02Z",
+     "label": "Cloudflare firewall rules live"
+    },
+    {
+     "at": "2026-10-21T07:41Z",
+     "label": "Chainguard images with the fix"
+    },
+    {
+     "at": "2026-10-21T13:35:38Z",
+     "label": "signed release tags"
+    },
+    {
+     "at": "2026-10-21T13:45:58Z",
+     "label": "NSA: be ready to go offline"
+    },
+    {
+     "at": "2026-10-21T14:00Z",
+     "label": "the fix: php.net advisory"
+    },
+    {
+     "at": "2026-10-21T15:25Z",
+     "label": "Latvia restricts access from abroad"
+    },
+    {
+     "at": "2026-10-22T06:16:24Z",
+     "label": "BBC live page: sites offline"
+    },
+    {
+     "at": "2026-10-22T08:40:58Z",
+     "label": "Dutch list: 674 products tracked"
+    }
+   ],
+   "from_": "data/timeline.json",
+   "cites": [
+    "php-foundation-blog-security-release",
+    "thehackernews-php2shell-4days",
+    "cloudflare-blog-php2shell-waf",
+    "github-php-src-tags",
+    "nsa-x-2112903220209098897",
+    "php-net-advisory",
+    "x-eastdakota-php2shell-stats",
+    "ncsc-nl-php2shell-software-list"
+   ]
+  },
+  {
+   "id": "funnel",
+   "kind": "funnel",
+   "kicker": "Exposed is not exploited",
+   "title": "From \"70% of the internet\" to zero",
    "steps": [
     {
-     "value": "~70%",
-     "label": "of websites use PHP",
+     "v": "~70%",
+     "l": "of websites use PHP",
      "status": "reported"
     },
     {
-     "value": "2.6M",
-     "label": "internet hosts expose PHP (one scanner)",
+     "v": "2.6M",
+     "l": "hosts expose PHP to the internet",
      "status": "reported"
     },
     {
-     "value": "1.57M",
-     "label": "still unpatched on 21 Oct (Censys)",
+     "v": "1.57M",
+     "l": "still unpatched on 21 Oct",
      "status": "reported"
     },
     {
-     "value": "millions",
-     "label": "attempts at one CDN",
+     "v": "millions",
+     "l": "attack attempts, at one CDN",
      "status": "reported"
     },
     {
-     "value": "0",
-     "label": "confirmed break-ins",
+     "v": "0",
+     "l": "confirmed break-ins",
      "status": "confirmed"
     },
     {
-     "value": "?",
-     "label": "hit, and holding something worth reaching",
+     "v": "?",
+     "l": "hit, and holding something worth reaching",
      "status": "unverified"
     }
    ],
-   "from": "data/signals.json",
+   "punch": "Each line is a different count by a different party. The one that matters, nobody has measured.",
    "cites": [
     "cloudflare-blog-php2shell-waf",
     "thehackernews-php2shell-4days",
@@ -325,145 +401,219 @@
     "x-eastdakota-php2shell-stats",
     "cisa-kev-json",
     "weirdgloop-blog-php2shell"
-   ],
-   "note": "Each rung is a different count by a different party. The number that matters, the last one, nobody has measured: what a compromised server could reach."
+   ]
+  },
+  {
+   "id": "sure",
+   "kind": "waffle",
+   "kicker": "How sure are we?",
+   "title": "70 statements, checked",
+   "lead": "Each square is one statement this site tracks, coloured by how well it is supported.",
+   "counts": {
+    "confirmed": 22,
+    "reported": 33,
+    "disputed": 8,
+    "contradicted": 3,
+    "unverified": 4
+   },
+   "from_": "data/claims.json",
+   "legend": {
+    "confirmed": "two or more original sources agree",
+    "reported": "one party says so",
+    "disputed": "sources disagree",
+    "contradicted": "a source shows it false",
+    "unverified": "nobody could check"
+   },
+   "cites": [
+    "php-net-advisory",
+    "wiz-blog-php2shell"
+   ]
   },
   {
    "id": "agencies",
-   "kind": "bars",
-   "title": "What governments say",
-   "lead": "Every agency: install the fix. If you cannot, they disagree.",
-   "bars": {
-    "title": "16 agencies, if you cannot update",
-    "rows": [
-     {
-      "label": "offline",
-      "value": 2,
-      "colour": "b91c1c"
-     },
-     {
-      "label": "last resort",
-      "value": 2,
-      "colour": "ea580c"
-     },
-     {
-      "label": "isolate",
-      "value": 3,
-      "colour": "d97706"
-     },
-     {
-      "label": "restrict",
-      "value": 1,
-      "colour": "4f46e5"
-     },
-     {
-      "label": "silent",
-      "value": 6,
-      "colour": "6b7280"
-     },
-     {
-      "label": "not read",
-      "value": 2,
-      "colour": "9ca3af"
-     }
-    ],
-    "from": {
-     "file": "data/agencies.json",
-     "count": "offline",
-     "groups": {
-      "offline": [
-       "yes"
-      ],
-      "last resort": [
-       "after mitigations",
-       "consider"
-      ],
-      "isolate": [
-       "isolate",
-       "isolate first"
-      ],
-      "restrict": [
-       "restrict from abroad"
-      ],
-      "silent": [
-       "none"
-      ],
-      "not read": [
-       "unknown"
-      ]
-     }
-    }
+   "kind": "agencies",
+   "kicker": "16 government cyber agencies",
+   "title": "Same fix. Five answers to \"and if we can't?\"",
+   "stances": {
+    "offline": "Take it offline",
+    "last resort": "Offline as a last resort",
+    "isolate": "Isolate it from the internet",
+    "restrict": "Restrict access",
+    "silent": "Say nothing about it",
+    "not read": "Could not be read"
    },
-   "points": [
-    {
-     "text": "US (NSA, CISA): take it offline. UK (NCSC): consider it, after the temporary mitigations. EU, France, Canada: isolate from public networks.",
-     "status": "confirmed",
-     "cites": [
-      "nsa-x-2112903220209098897",
-      "cisa-alert-php-20261021",
-      "ncsc-news-php",
-      "certeu-sa-2026-018",
-      "certfr-2026-ale-014",
-      "cccs-al26-026"
-     ]
-    }
-   ],
+   "groups": {
+    "offline": [
+     "yes"
+    ],
+    "last resort": [
+     "after mitigations",
+     "consider"
+    ],
+    "isolate": [
+     "isolate",
+     "isolate first"
+    ],
+    "restrict": [
+     "restrict from abroad"
+    ],
+    "silent": [
+     "none"
+    ],
+    "not read": [
+     "unknown"
+    ]
+   },
+   "from_": "data/agencies.json",
    "cites": [
+    "nsa-x-2112903220209098897",
     "cisa-alert-php-20261021",
     "ncsc-news-php",
-    "certeu-sa-2026-018"
-   ],
-   "note": "Two agencies could not be read (bot challenges) and are counted as not read, not as silent."
+    "certeu-sa-2026-018",
+    "certfr-2026-ale-014",
+    "cccs-al26-026",
+    "certlv-php-preventive",
+    "acsc-alert-php"
+   ]
   },
   {
    "id": "fix",
-   "kind": "columns",
-   "title": "Who gets a fix",
-   "cols": [
+   "kind": "fix",
+   "kicker": "Who gets a fix",
+   "title": "The fix climbs down a ladder",
+   "ladder": [
     {
-     "head": "Supported: fixed",
-     "status": "confirmed",
-     "points": [
-      "8.5.12, 8.4.27, 8.3.36, 8.2.35",
-      "released 21 October, 14:00 UTC",
-      "OS packages from 15:30 UTC (Red Hat first)"
-     ]
+     "branch": "8.5",
+     "fix": "8.5.12",
+     "state": "fixed"
     },
     {
-     "head": "End of life: partial",
-     "status": "confirmed",
-     "points": [
-      "8.1, 8.0: a source backport, no release",
-      "7.4: a mitigation commit on a branch",
-      "7.3 and older: nothing"
-     ]
+     "branch": "8.4",
+     "fix": "8.4.27",
+     "state": "fixed"
     },
     {
-     "head": "Products built on PHP",
-     "status": "reported",
-     "points": [
-      "724 in the Dutch NCSC list at 15:28 UTC",
-      "61 fixed, 216 vulnerable",
-      "440 still being investigated"
-     ]
+     "branch": "8.3",
+     "fix": "8.3.36",
+     "state": "fixed"
+    },
+    {
+     "branch": "8.2",
+     "fix": "8.2.35",
+     "state": "fixed"
+    },
+    {
+     "branch": "8.1, 8.0",
+     "fix": "source backport, no release",
+     "state": "partial"
+    },
+    {
+     "branch": "7.4",
+     "fix": "mitigation commit only",
+     "state": "partial"
+    },
+    {
+     "branch": "7.3 to 5.x",
+     "fix": "nothing",
+     "state": "none"
     }
    ],
-   "from": {
-    "file": "data/inventory-history.json",
-    "snapshot": "94b4b16db9e5"
+   "curve": {
+    "until": "2026-10-22T15:28Z",
+    "from_": "data/inventory-history.json",
+    "label": "Products built on PHP in the Dutch NCSC list"
    },
+   "later": "The product curve runs to 15:28 UTC on 22 October, after the 11:34 capture.",
    "cites": [
     "php-net-advisory",
     "github-php-src-tags",
     "github-php-src-branch-7.4-backport",
     "ncsc-nl-php2shell-software-list"
+   ]
+  },
+  {
+   "id": "ladder",
+   "kind": "weapon",
+   "kicker": "How close to Log4Shell?",
+   "title": "Four rungs up a seven-rung ladder",
+   "rungs": [
+    {
+     "n": 1,
+     "l": "Private exploits",
+     "s": "reached",
+     "note": "Aug 2026"
+    },
+    {
+     "n": 2,
+     "l": "Used before the patch",
+     "s": "reached",
+     "note": "one honeypot hit"
+    },
+    {
+     "n": 3,
+     "l": "Public exploit code",
+     "s": "reached",
+     "note": "mostly broken"
+    },
+    {
+     "n": 4,
+     "l": "Mass scanning",
+     "s": "reached",
+     "note": "fingerprinting"
+    },
+    {
+     "n": 5,
+     "l": "One-command module",
+     "s": "not yet",
+     "note": "PR open, not merged"
+    },
+    {
+     "n": 6,
+     "l": "On CISA's exploited list",
+     "s": "not yet",
+     "note": ""
+    },
+    {
+     "n": 7,
+     "l": "Ransomware, botnets",
+     "s": "not yet",
+     "note": "no evidence"
+    }
    ],
-   "later": "The product counts are from the NCSC-NL list at 15:28 UTC, after the 11:34 capture.",
-   "note": "The long tail is the story of the next weeks: products that bundle PHP, and servers on versions PHP no longer supports."
+   "punch": "Both earlier PHP flaws on that list ended up with ransomware.",
+   "later": "From the cyber desk's reading at 17:51 UTC on 22 October, after the 11:34 capture.",
+   "cites": [
+    "calif-php2shell",
+    "aws-security-blog-madpot",
+    "sansec-research-php2shell",
+    "cisa-kev-json",
+    "cve-cve-2019-11043",
+    "cve-cve-2024-4577"
+   ]
+  },
+  {
+   "id": "strip-agencies",
+   "kind": "strip",
+   "kicker": "A strip",
+   "title": "Jordan sits on the board",
+   "strip": {
+    "storyboard": "what-the-agencies-say",
+    "panels": [
+     2,
+     3,
+     7,
+     8
+    ]
+   },
+   "cites": [
+    "cisa-alert-php-20261021",
+    "ncsc-news-php"
+   ]
   },
   {
    "id": "unknown",
-   "kind": "list",
+   "kind": "unknowns",
+   "kicker": "Stated, not papered over",
    "title": "What nobody knows yet",
    "points": [
     {
@@ -475,7 +625,6 @@
     },
     {
      "text": "Whether the fix is complete. A report on 21 October suggested it may not be; the PHP project has not answered it publicly yet.",
-     "status": "unverified",
      "quote_from": "data/plain.json",
      "cites": [
       "openwall-oss-security-109619-thread"
@@ -506,36 +655,40 @@
    "cites": [
     "cisa-kev-json",
     "openwall-oss-security-109619-thread",
-    "bbc-live-ckgel5xp2xv9t"
-   ],
-   "note": "Stated, not papered over. These are the questions to watch; the site updates each one when the evidence does."
+    "bbc-live-ckgel5xp2xv9t",
+    "wiz-blog-php2shell"
+   ]
   },
   {
-   "id": "do",
-   "kind": "columns",
-   "title": "What to do, by who you are",
-   "cols": [
+   "id": "todo",
+   "kind": "todo",
+   "kicker": "What to do",
+   "title": "By who you are",
+   "people": [
     {
+     "who": "casey",
      "head": "You run a website",
      "points": [
-      "Ask your host which PHP version is serving your site now, and when it was restarted",
-      "Ask whether anything still runs PHP 8.1 or older"
+      "Ask your host which PHP version is serving your site right now",
+      "and when it was last restarted"
      ]
     },
     {
+     "who": "drew",
      "head": "You run the servers",
      "points": [
       "Patch and restart every PHP process",
-      "No patch today: the temporary settings, an edge rule, then offline",
-      "Look for workers spawning shells"
+      "Cannot today: temporary settings, an edge rule, then offline",
+      "Watch for PHP workers starting shells"
      ]
     },
     {
+     "who": "jordan",
      "head": "You own the risk",
      "points": [
       "Name who can take a system offline",
       "Ask for evidence you were not hit",
-      "Plan for 8.1 and older"
+      "Find anything still on PHP 8.1 or older"
      ]
     }
    ],
@@ -543,30 +696,40 @@
     "php-net-advisory",
     "cisa-alert-php-20261021",
     "ncsc-news-php"
-   ],
-   "note": "Each column is a briefing on the site: /briefings/site-owner/, /briefings/engineer/ and /briefings/board/."
+   ]
   },
   {
-   "id": "check",
-   "kind": "closing",
-   "title": "Check every line",
-   "lead": "Every fact here links to a saved, hashed copy of its source.",
-   "points": [
+   "id": "close",
+   "kind": "close",
+   "kicker": "Check every line",
+   "title": "Every fact links to a saved copy of its source",
+   "stats": [
     {
-     "text": "php.oct.2026.newsroom.sgit.ai: the situation, every claim, every source"
+     "v": "144",
+     "l": "web pages saved as evidence"
     },
     {
-     "text": "The storyboards, for people who will not read the table: /storyboards/"
+     "v": "857",
+     "l": "files hashed"
     },
     {
-     "text": "This deck as a page, as markdown and as PowerPoint: /storyboards/briefing-2026-10-22/"
+     "v": "70",
+     "l": "statements with a status"
+    },
+    {
+     "v": "16",
+     "l": "agencies compared"
     }
    ],
-   "dateline": "Dated 22 October 2026, evidence as of 11:34 UTC. When the evidence moves, a new dated deck replaces this one; this one is kept as made.",
+   "image": {
+    "slot": "method",
+    "alt": "How a web page becomes a checked fact on this site"
+   },
+   "lead": "Built by a team of software agents for one editor. Research and stories, every source captured, dated and hashed.",
    "cites": [
     "php-net-advisory"
    ],
-   "note": "Not advice for your own systems: for that, the PHP project's announcement and your national cyber agency."
+   "note": "Not advice for your own systems: for that, the PHP project and your national cyber agency."
   }
  ]
 }

@@ -1,0 +1,8 @@
+{
+ "what": "The PDF beside it was printed from the deck page by admin/build/deck_pdf.js; the gate refuses it if the deck source has changed since.",
+ "source": "admin/content/decks/2026-10-22__briefing.json",
+ "source_sha256": "feb326ebe46477cb1d4faf281c7f5b759ad4cfd44946eb2f5431047c2f5131b0",
+ "pages": 16,
+ "bytes": 1290395,
+ "size": "1080x1350"
+}

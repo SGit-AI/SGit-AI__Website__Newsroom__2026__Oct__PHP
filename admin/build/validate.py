@@ -199,11 +199,12 @@ if os.path.isdir(SBD):
     for f in man['files']:
         fp = os.path.join(kit, f['path'])
         if not os.path.exists(fp) or hashlib.sha256(open(fp, 'rb').read()).hexdigest() != f['sha256']: fails.append(f'{rel(fp)}: not the bytes of storyboard kit {man["release"]}')
-# 4g. the briefing decks: every cited slug, every quote_from quote word for word, the bars against their file (a deck
-# made against older evidence is kept as made: then a mismatch warns), and the PowerPoint made from the current source
+# 4g. the briefing decks: every cited slug; every quote_from quote word for word; the waffle equal to the claims by status;
+# the agency groups covering every agency; every timed event in the race present in the timeline; the PDF printed from
+# the current source. A deck made against older evidence is kept as made: then a mismatch with today's data warns.
 DKD = os.path.join(ROOT, 'admin', 'content', 'decks')
 for fn in sorted(os.listdir(DKD)) if os.path.isdir(DKD) else []:
-    if not fn.endswith('.json'): continue
+    if not fn.endswith('.json') or not os.path.isfile(os.path.join(DKD, fn)): continue
     raw = open(os.path.join(DKD, fn), 'rb').read(); dk = json.loads(raw)
     latest = (json.load(open(os.path.join(ROOT, 'data', 'vault.json'), encoding='utf-8')).get('latest_capture') or '')
     moved = warns if dk.get('data_as_of', '') < latest else fails
@@ -212,30 +213,32 @@ for fn in sorted(os.listdir(DKD)) if os.path.isdir(DKD) else []:
     def hay_of(f):
         t = open(os.path.join(ROOT, f), encoding='utf-8').read()
         return list(strings(json.loads(t))) if f.endswith('.json') else [t]
+    tl = {t['at'] for t in json.load(open(os.path.join(ROOT, 'data', 'timeline.json'), encoding='utf-8'))}
     for n, sl in enumerate(dk.get('slides', []), 1):
-        at = f'decks/{fn} slide {n}'
+        at = f'decks/{fn} slide {n} ({sl.get("id")})'
+        allc = sl.get('cites', []) + [c for key in ('points', 'facts', 'moments') for x in sl.get(key, []) for c in x.get('cites', [])]
         if not sl.get('cites'): fails.append(f'{at}: cites no source')
-        for sl_ in sl.get('cites', []) + [c for x in sl.get('points', []) for c in x.get('cites', [])]:
-            if sl_ not in slugs: fails.append(f'{at}: cites unknown slug {sl_}')
+        for c in allc:
+            if c not in slugs: fails.append(f'{at}: cites unknown slug {c}')
         for x in sl.get('points', []):
             if x.get('quote_from') and not any(x['text'] in h for h in hay_of(x['quote_from'])): moved.append(f'{at}: "{x["text"][:40]}..." is not in {x["quote_from"]} word for word')
-        if sl.get('kind') == 'timeline' and sl.get('quote_from'):
-            for m in sl.get('moments', []):
-                if not any(m['what'] in h for h in hay_of(sl['quote_from'])): moved.append(f'{at}: moment {m["when"]} is not in {sl["quote_from"]} word for word')
-        b = sl.get('bars')
-        if b:
-            bf, got = b.get('from', {}), {r['label']: r['value'] for r in b['rows']}
-            if bf.get('file') == 'data/claims.json':
-                want = dict(__import__('collections').Counter(c['status'] for c in json.load(open(os.path.join(ROOT, bf['file']), encoding='utf-8'))))
-            elif bf.get('file') == 'data/agencies.json':
-                rows = json.load(open(os.path.join(ROOT, bf['file']), encoding='utf-8'))
-                want = {lab: sum(1 for r in rows if r.get('offline') in vals) for lab, vals in bf.get('groups', {}).items()}
-            else:
-                want = None; fails.append(f'{at}: bars from {bf.get("file")} the gate cannot check')
-            if want is not None and want != got: moved.append(f'{at}: bars {got} but {bf.get("file")} gives {want}')
-    side = os.path.join(ROOT, 'storyboards', dk.get('slug', ''), dk.get('slug', '') + '.pptx.json')
+        if sl.get('kind') == 'waffle':
+            want = dict(__import__('collections').Counter(c['status'] for c in json.load(open(os.path.join(ROOT, sl['from_']), encoding='utf-8'))))
+            if want != dict(sl['counts']): moved.append(f'{at}: counts {dict(sl["counts"])} but {sl["from_"]} gives {want}')
+        if sl.get('kind') == 'agencies':
+            rows = json.load(open(os.path.join(ROOT, sl['from_']), encoding='utf-8'))
+            grouped = [r for r in rows if any(r.get('offline') in v for v in sl['groups'].values())]
+            if len(grouped) != len(rows): moved.append(f'{at}: {len(rows) - len(grouped)} agencies fall in no group')
+        if sl.get('kind') == 'race':
+            for ev in sl.get('attack', []) + sl.get('defend', []):
+                if ev['at'] not in tl: moved.append(f'{at}: {ev["at"]} ({ev["label"]}) is not a time in data/timeline.json')
+    side = os.path.join(ROOT, 'storyboards', dk.get('slug', ''), dk.get('slug', '') + '.pdf.json')
     if os.path.exists(side) and json.load(open(side, encoding='utf-8')).get('source_sha256') != hashlib.sha256(raw).hexdigest():
-        fails.append(f'decks/{fn}: the PowerPoint was made from an older version of the deck; run node admin/build/deck_pptx.js')
+        fails.append(f'decks/{fn}: the PDF was printed from an older version of the deck; run node admin/build/deck_pdf.js')
+    imf = os.path.join(DKD, 'images', dk.get('slug', '') + '.json')
+    for slot, rec in (json.load(open(imf, encoding='utf-8')).items() if os.path.exists(imf) else []):
+        if rec.get('check', 'not checked') != 'not checked' and not os.path.exists(os.path.join(ROOT, 'storyboards', dk['slug'], 'img', slot + '.webp')):
+            fails.append(f'decks/{fn}: image {slot} is recorded as checked but its file is missing')
 # 4c. layers: every data file is classified exactly once
 layers = load('layers') or {}
 classified = [f['path'] for f in layers.get('files', [])]

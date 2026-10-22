@@ -1,7 +1,0 @@
-{
- "what": "The PowerPoint beside it was made by admin/build/deck_pptx.js from the deck source named here; the gate refuses it if the source has changed since.",
- "source": "admin/content/decks/2026-10-22__briefing.json",
- "source_sha256": "92ec4ab719f4b121c1293fc8b8f92c8d2bec23ec342567d2c13f4d3cf99a15a9",
- "slides": 12,
- "made_with": "pptxgenjs "
-}

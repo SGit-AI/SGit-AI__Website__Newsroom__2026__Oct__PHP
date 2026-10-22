@@ -1,10 +1,33 @@
-/* The briefing deck (storyboard@php.newsroom): Present shows one slide at a time, full screen, moved with the arrow
-   keys, space, PageUp/PageDown, a click or a swipe; Esc leaves. Print lays one slide per page. Nothing is stored. */
+/* The briefing deck (storyboard@php.newsroom). Draws the silent storyboard panels and the faces with the vendored
+   storyboard kit, then sets window.__deckReady (admin/build/deck_pdf.js waits for it before printing). Present shows one
+   slide at a time, full screen, moved with the arrow keys, space, PageUp/PageDown, a click or a swipe; Esc leaves.
+   Nothing is stored. */
 (function () {
   'use strict';
   var deck = document.querySelector('.dk-deck');
   if (!deck) return;
-  var slides = [].slice.call(deck.querySelectorAll('.dk-slide')), i = 0, on = false, x0 = null;
+  var data = JSON.parse((document.querySelector('script.bd-data') || {}).textContent || '{}');
+  function draw() {
+    var K = window.StoryboardKit, cast = data.cast;
+    if (!K || !cast) return;
+    var who = function (id) { return cast.characters.filter(function (c) { return c.id === id; })[0]; };
+    [].forEach.call(document.querySelectorAll('svg[data-strip]'), function (svg) {
+      var b = data.boards[svg.getAttribute('data-strip')], i = +svg.getAttribute('data-panel');
+      var sc = JSON.parse(JSON.stringify(b.scenes[i]));
+      // silent: the lines and the caption are printed under the panel, readable at strip size
+      (sc.cast || []).forEach(function (c) { delete c.says; delete c.thinks; });
+      delete sc.caption;
+      if (sc.kind === 'punchline') { sc.kind = 'scene'; delete sc.punchline; }
+      K.drawScene(svg, sc, cast, { seed: 11 + i });
+    });
+    [].forEach.call(document.querySelectorAll('svg.bd-face[data-who]'), function (svg, i) {
+      K.figure(svg, who(svg.getAttribute('data-who')), 'stand', 'happy', 'face', 3 + i);
+    });
+  }
+  var fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+  fonts.then(function () { try { draw(); } finally { window.__deckReady = true; } });
+
+  var slides = [].slice.call(deck.querySelectorAll('.bd-slide')), i = 0, on = false, x0 = null;
   function show(n) {
     i = Math.max(0, Math.min(slides.length - 1, n));
     slides.forEach(function (s, k) { s.classList.toggle('dk-cur', k === i); });
@@ -21,8 +44,8 @@
     if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function () {});
     slides[i].scrollIntoView({ block: 'start' });
   }
-  document.querySelector('.dk-present').addEventListener('click', start);
-  var pr = document.querySelector('.dk-print');
+  var pb = document.querySelector('.dk-present'), pr = document.querySelector('.dk-print');
+  if (pb) pb.addEventListener('click', start);
   if (pr) pr.addEventListener('click', function () { window.print(); });
   document.addEventListener('fullscreenchange', function () { if (on && !document.fullscreenElement) stop(); });
   document.addEventListener('keydown', function (e) {

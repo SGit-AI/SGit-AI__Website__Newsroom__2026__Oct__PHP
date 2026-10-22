@@ -1,0 +1,26 @@
+{
+ "cover": {
+  "model": "google/gemini-nano-banana-2.1",
+  "aspect_ratio": "4:3",
+  "job": "concept art, no words",
+  "prompt": "A dramatic editorial illustration, no words at all. A vast night-time city of glowing server racks stretching to the horizon, seen from slightly above. In the centre, one tall server cabinet has a jagged glowing crack running down its front, and coral-red light leaks out of the crack. Small luminous emerald-green repair drones are sealing the crack with bands of green light, working from the top down. Thousands of faint coral-red dots stream in from the dark edges of the image toward the city like rain, most of them bouncing off a thin translucent dome of green light over the city. Deep midnight navy and indigo palette, coral-red and emerald-green light, cinematic, calm rather than frightening, a sense of a race being won. No text, no letters, no numbers, no logos anywhere in the image."
+ },
+ "glance": {
+  "model": "openai/gpt-5.4-image-2",
+  "aspect_ratio": "1:1",
+  "job": "document to infographic, every number exact",
+  "prompt": "Here is a document. Create one infographic that tells its whole story clearly, with every number exactly as written and no numbers other than those given.\n\nDOCUMENT\nTitle: php2shell, where it stands on 22 October 2026\nTwo critical security flaws were found in PHP itself, the engine that runs WordPress and millions of other websites. Both are rated 9.2 out of 10. Anyone on the internet, with no password, can make an unpatched web server run their own commands.\nThe fix came out on 21 October 2026 in four versions: 8.5.12, 8.4.27, 8.3.36 and 8.2.35. Versions 8.1 and older have no ready-made fix.\nAttackers are trying: one internet security company counted millions of attempts. But zero organisations have confirmed a break-in, and the US government's list of flaws known to be used in attacks does not include these two.\n16 government cyber agencies all say: install the fix now. If you cannot, they disagree: take it offline, isolate it, or restrict it.\nPhones and laptops are not the target; web servers are.\nBottom line: update PHP, restart it, and decide now who can take a system offline.\n\nLAYOUT: a square infographic. The title at the top. Then four big stat tiles in a row: 9.2 (severity out of 10), 4 (fixed versions), millions (attack attempts), 0 (confirmed break-ins). Below them, a simple left-to-right picture: an attacker figure sending a request through the internet to a web server, with a green shield labelled 'the fix' blocking it. At the bottom, a banner with the bottom line. Style: a bold, modern editorial infographic. Deep midnight navy background, white and pale lavender type, one hot coral-red accent for danger and one emerald green accent for the fix. Flat vector shapes, generous spacing, large clean sans-serif lettering, crisp edges, no gradients behind text, no photographs, no logos, no brand marks, no watermark. Spell every word correctly. No other text."
+ },
+ "how": {
+  "model": "openai/gpt-5.4-image-2",
+  "aspect_ratio": "4:5",
+  "job": "labelled explainer diagram, exact labels",
+  "prompt": "A clear explainer diagram, portrait 4:5, showing how the php2shell attack works, in five numbered steps from top to bottom, each a large rounded panel with a simple icon and exactly the words given.\nStep 1: 'An attacker anywhere on the internet' (icon: a hooded figure at a laptop).\nStep 2: 'Sends one web request. No password.' (icon: an envelope flying along a line).\nStep 3: 'PHP, the engine under the website, mishandles it' (icon: a gear with a crack).\nStep 4: 'before WordPress or any app code even runs' (icon: a small website window, greyed out, bypassed by an arrow).\nStep 5: 'The server runs the attacker's commands' (icon: a server with a terminal prompt glowing coral red).\nTo the right of steps 3 to 5, a tall emerald-green vertical shield labelled 'Patched and restarted: the request fails'.\nTitle at the very top: 'How the attack works'. Style: a bold, modern editorial infographic. Deep midnight navy background, white and pale lavender type, one hot coral-red accent for danger and one emerald green accent for the fix. Flat vector shapes, generous spacing, large clean sans-serif lettering, crisp edges, no gradients behind text, no photographs, no logos, no brand marks, no watermark. Use exactly the words given, spelled exactly. No numbers other than the step numbers 1 to 5. No other text."
+ },
+ "method": {
+  "model": "google/gemini-3-pro-image",
+  "aspect_ratio": "16:9",
+  "job": "labelled diagram, exact labels",
+  "prompt": "A wide, clean flow diagram on a deep midnight navy background, six rounded boxes in a single left-to-right row joined by arrows, each with a simple white line icon above its label. The six labels, exactly: 'a web page', 'saved and fingerprinted', 'the evidence vault', 'a claim with a status', 'checked again', 'this site'. Icons: a browser window; a camera with a fingerprint; a safe; a document with a coloured tag; a magnifying glass with a tick; a phone showing a page. Boxes in lavender outline, the last box filled emerald green. Large clean sans-serif lettering, flat vector style, generous spacing, no logos. Use exactly the six labels given, spelled exactly. No numbers. No title. No other text."
+ }
+}

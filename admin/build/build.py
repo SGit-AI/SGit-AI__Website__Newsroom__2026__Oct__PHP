@@ -3633,7 +3633,7 @@ def build_storyboards():
 {section("cast", "The cast", f'<svg class="sbx-lineup" viewBox="0 640 2401 560" role="img" aria-label="The cast, side by side"></svg>{who}<p class="small">{E(SB_CAST["what"])} The cast as data: <a href="cast.json">cast.json</a>.</p>')}
 </div>
 {section("rules", "How a storyboard is made here", '<ul><li><b>The lines are the storyboard\'s.</b> What a character says is written here and the panel says so (<code>not_a_quote</code>); no real person is drawn or quoted in a bubble.</li><li><b>Evidence is quoted word for word.</b> An evidence panel quotes this site\'s own data and names the file (<code>quote_from</code>); the gate refuses a quote that is not in it, and a bar chart whose numbers do not match its file.</li><li><b>Every panel cites.</b> Each panel lists the evidence vault\'s source slugs it rests on; the gate refuses an unknown slug, as it does everywhere else on the site.</li><li><b>Dated, and kept as drawn.</b> Each storyboard names the site version, vault commit and capture time it was drawn against. When the evidence moves, the page says so; a new storyboard supersedes, it does not overwrite.</li><li><b>Checked twice.</b> <code>node admin/build/storyboards_check.js</code> runs the kit\'s own validator; the gate checks the same vocabulary, the cast, the quotes, the bars and the hashes of the vendored kit.</li></ul>')}
-{section("deck", "The briefing deck", ''.join(f'<p><a href="{E(d["slug"])}/index.html"><b>{E(d["title"])}, {E(nice_date(d["date"]))}</b></a>: {len(d["slides"])} slides to present the situation, dated, with evidence as of {E(d["data_as_of"])}. Present it full screen, print it, or download it as PowerPoint.</p>' for d in DECKS))}
+{section("deck", "The briefing deck", ''.join(f'<p><a href="{E(d["slug"])}/index.html"><b>{E(d["title"])}, {E(nice_date(d["date"]))}</b></a>: {len(d["slides"])} slides to present the situation, dated, with evidence as of {E(d["data_as_of"])}. Portrait 4:5, one visual per slide: present it full screen, print it, or download the PDF.</p>' for d in DECKS))}
 {section("models", "Infographics drawn by a model: not yet", '<p>Everything above is drawn by code from the data, so every number in a picture is a number in a file. The next step is infographics drawn by an image model (Gemini, through OpenRouter, as <a href="../now/index.html">the phone app</a> already does with a reader\'s own key), briefed from the same slides. None is published yet: it needs a key, and a model can draw a number that is not in the data, so each image will be checked against its file before it goes on this site (board item 082).</p>')}
 {section("kit", "The kit", f'<p>Drawn by the storyboard kit v0.1.0 from <a href="https://api.storyboards.sgit.ai/">api.storyboards.sgit.ai</a>, the same code that draws <a href="https://storyboards.sgit.ai/">storyboards.sgit.ai</a> and the storyboards of pki.sgit.ai and gen-z-developers.sgit.ai. This site serves it from its own copy (<code>{SB_KIT}/</code>, every file checked against the release\'s manifest by the gate), because no page here loads code from another host. Every storyboard is listed with its formats in <a href="catalogue.json">catalogue.json</a>, ready for storyboards.sgit.ai to take in as a series.</p>')}
 {sb_kit_tags('../')}
@@ -3642,83 +3642,238 @@ def build_storyboards():
 
 
 # ----------------------------------------------------------------------------- the dated briefing decks (storyboard@php.newsroom)
-# A deck is authored JSON in admin/content/decks/<date>__briefing.json, dated and kept as made. The build draws it as
-# HTML slides (read as a page, presented full screen with the arrow keys, printed one slide per page); the PowerPoint
-# beside it is made from the same file by admin/build/deck_pptx.js, which records the source's sha256 next to it.
+# A deck is authored JSON in admin/content/decks/<date>__briefing.json, dated and kept as made: portrait 4:5 slides, one
+# visual each, drawn here as inline SVG from the deck and the site's data (no clock), with storyboard strips and faces
+# drawn in the browser by the vendored kit. Images drawn by a model sit in storyboards/<slug>/img/<slot>.webp with their
+# briefs and checks in admin/content/decks/images/<slug>.json; a slide without its image draws its own fallback.
+# The PDF beside the page is printed from it by admin/build/deck_pdf.js (headless Chromium), with a sidecar holding
+# the deck source's sha256, so a stale PDF is refused by the gate.
 
-def deck_bars(b):
-    rows = b['rows']; top = max(r['value'] for r in rows) or 1
-    h = 46 * len(rows) + 10
-    out = [f'<svg class="dk-bars" viewBox="0 0 640 {h}" role="img" aria-label="{E(b["title"])}: ' + E(', '.join(f'{r["label"]} {r["value"]}' for r in rows)) + '">']
-    for i, r in enumerate(rows):
-        y, w = 8 + i * 46, max(4, round(400 * r['value'] / top))
-        out.append(f'<text x="150" y="{y + 25}" text-anchor="end" class="dk-bl">{E(r["label"])}</text><rect x="162" y="{y + 4}" width="{w}" height="30" rx="4" fill="#{E(r["colour"])}"></rect><text x="{170 + w}" y="{y + 26}" class="dk-bv">{r["value"]}</text>')
-    return ''.join(out) + '</svg>'
+BD_C = {'confirmed': '#1fbf75', 'reported': '#3a8dff', 'disputed': '#ffb020', 'contradicted': '#ff4d3d', 'unverified': '#8b93a7'}
+BD_STANCE = {'offline': '#ff4d3d', 'last resort': '#ff8a3d', 'isolate': '#ffb020', 'restrict': '#7a86ff', 'silent': '#5b6478', 'not read': '#2f3647'}
 
-def deck_point(x, depth):
-    st = f'{pill(x["status"])} ' if x.get('status') else ''
-    head = f'<b>{E(x["head"])}</b> ' if x.get('head') else ''
-    return f'<li>{st}{head}{E(x["text"])}</li>'
+def bd_pill(st):
+    return f'<span class="bd-pill bd-p-{E(st)}">{E(st)}</span>' if st else ''
 
-def deck_slide(n, total, sl, deck, depth):
-    k = sl['kind']; inner = []
-    if k in ('title', 'closing'):
-        inner.append(f'<p class="dk-kick">{E(SITE_NAME)} &middot; briefing</p><h2>{E(sl["title"])}</h2><p class="dk-lead">{E(sl.get("lead", ""))}</p>')
-        if sl.get('points'):
-            inner.append('<ul class="dk-pts">' + ''.join(deck_point(x, depth) for x in sl['points']) + '</ul>')
-        inner.append(f'<p class="dk-date">{E(sl.get("dateline", ""))}</p>')
-    else:
-        inner.append(f'<h2>{E(sl["title"])}</h2>')
-        if sl.get('lead'):
-            inner.append(f'<p class="dk-lead">{E(sl["lead"])}</p>')
-        if k == 'bottomline':
-            inner.append('<ol class="dk-bl3">' + ''.join(f'<li><b>{E(x["head"])}</b><span>{E(x["text"])}</span>{pill(x["status"])}</li>' for x in sl['points']) + '</ol>')
-        if sl.get('stats'):
-            inner.append('<div class="dk-stats">' + ''.join(f'<div><b>{E(x["value"])}</b><span>{E(x["label"])}</span><small>{E(x.get("sub", ""))}</small>{pill(x["status"]) if x.get("status") else ""}</div>' for x in sl['stats']) + '</div>')
-        if k == 'timeline':
-            inner.append('<ol class="dk-tl">' + ''.join(f'<li><b>{E(x["when"])}</b><span>{E(x["what"])}</span></li>' for x in sl['moments']) + '</ol>')
-        if k == 'ladder':
-            inner.append('<ol class="dk-lad">' + ''.join(f'<li><b>{E(x["value"])}</b><span>{E(x["label"])}</span>{pill(x["status"])}</li>' for x in sl['steps']) + '</ol>')
-        if k == 'columns':
-            inner.append('<div class="dk-cols">' + ''.join(f'<div><h3>{E(c["head"])} {pill(c["status"]) if c.get("status") else ""}</h3><ul>' + ''.join(f'<li>{E(x)}</li>' for x in c['points']) + '</ul></div>' for c in sl['cols']) + '</div>')
-        if k == 'bars':
-            inner.append(f'<div class="dk-split"><figure>{deck_bars(sl["bars"])}<figcaption>{E(sl["bars"]["title"])}, from <code>{E(sl["bars"]["from"]["file"])}</code></figcaption></figure>'
-                         + ('<ul class="dk-pts">' + ''.join(deck_point(x, depth) for x in sl.get('points', [])) + '</ul>') + '</div>')
-        elif sl.get('points') and k != 'bottomline':
-            inner.append('<ul class="dk-pts">' + ''.join(deck_point(x, depth) for x in sl['points']) + '</ul>')
-        if sl.get('later'):
-            inner.append(f'<p class="dk-later">{E(sl["later"])}</p>')
-    foot = f'<p class="dk-foot"><span>{E(SITE_NAME)} &middot; briefing of {E(nice_date(deck["date"]))} &middot; evidence as of {E(deck["data_as_of"])}</span><span>{n}/{total}</span></p>'
-    notes = f'<details class="dk-notes"><summary>Speaker notes and sources, slide {n}</summary><p>{E(sl.get("note", ""))}</p><p class="refs">{src_links(sl.get("cites", []), depth)}</p></details>'
-    return f'<section class="dk-slide dk-k-{E(k)}" id="slide-{n}" aria-label="Slide {n} of {total}: {E(sl["title"])}"><div class="dk-in">{"".join(inner)}{foot}</div></section>{notes}'
+def bd_t(at):
+    """minutes since 2026-10-20T00:00Z, from a timeline stamp"""
+    m = re.match(r'2026-10-(\d\d)T(\d\d):(\d\d)', at)
+    return (int(m.group(1)) - 20) * 1440 + int(m.group(2)) * 60 + int(m.group(3))
+
+def bd_hm(at):
+    m = re.match(r'2026-10-(\d\d)T(\d\d):(\d\d)', at)
+    return f'{int(m.group(1))} Oct {m.group(2)}:{m.group(3)}'
+
+def bd_spread(ys, gap, lo, hi):
+    """label positions for desired ys, at least gap apart, inside lo..hi"""
+    out = []
+    for y in ys:
+        out.append(max(y, out[-1] + gap) if out else max(y, lo))
+    over = out[-1] - hi if out else 0
+    if over > 0:
+        out = [y - over for y in out]
+        for i in range(len(out) - 2, -1, -1):
+            out[i] = min(out[i], out[i + 1] - gap)
+    return out
+
+def bd_ring(value, of, label):
+    frac = value / of
+    r, cx, cy = 150, 180, 180
+    a = 2 * math.pi * frac - math.pi / 2
+    x, y = cx + r * math.cos(a), cy + r * math.sin(a)
+    big = 1 if frac > 0.5 else 0
+    return (f'<svg class="bd-ring" viewBox="0 0 360 360" role="img" aria-label="Severity {value} out of {of}">'
+            f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="#e7e9f2" stroke-width="34"/>'
+            f'<path d="M{cx},{cy - r} A{r},{r} 0 {big} 1 {x:.1f},{y:.1f}" fill="none" stroke="#ff4d3d" stroke-width="34" stroke-linecap="round"/>'
+            f'<text x="{cx}" y="{cy + 22}" text-anchor="middle" class="bd-ring-v">{value}</text><text x="{cx}" y="{cy + 70}" text-anchor="middle" class="bd-ring-o">out of {of}</text></svg>'
+            f'<p class="bd-ring-l">{E(label)}</p>')
+
+def bd_race(sl):
+    t0, t1 = bd_t(sl['start']), bd_t(sl['end'])
+    top, bot, mid = 40, 1000, 540
+    Y = lambda at: top + (bd_t(at) - t0) * (bot - top) / (t1 - t0)
+    out = [f'<svg class="bd-race" viewBox="0 0 1080 1040" role="img" aria-label="{E(sl["title"])}: attackers and defenders, {E(bd_hm(sl["start"]))} to {E(bd_hm(sl["end"]))} UTC">']
+    # day bands and 6-hour ticks
+    for d in (20, 21, 22):
+        a, b = max(t0, (d - 20) * 1440), min(t1, (d - 19) * 1440)
+        if a < b:
+            ya, yb = top + (a - t0) * (bot - top) / (t1 - t0), top + (b - t0) * (bot - top) / (t1 - t0)
+            out.append(f'<rect x="0" y="{ya:.1f}" width="1080" height="{yb - ya:.1f}" class="bd-day{d % 2}"/><text transform="translate(14 {ya + 12:.1f}) rotate(90)" class="bd-dayl">{d} OCTOBER</text>')
+    for m in range(((t0 // 360) + 1) * 360, t1, 360):
+        y = top + (m - t0) * (bot - top) / (t1 - t0)
+        out.append(f'<line x1="{mid - 16}" x2="{mid + 16}" y1="{y:.1f}" y2="{y:.1f}" class="bd-tick"/><text x="{mid}" y="{y - 6:.1f}" text-anchor="middle" class="bd-tickl">{(m % 1440) // 60:02d}:00</text>')
+    fy = Y('2026-10-21T14:00Z')
+    out.append(f'<line x1="40" x2="1040" y1="{fy:.1f}" y2="{fy:.1f}" class="bd-fixline"/><text x="1040" y="{fy - 8:.1f}" text-anchor="end" class="bd-fixl">14:00 THE FIX</text>')
+    out.append(f'<line x1="{mid}" x2="{mid}" y1="{top}" y2="{bot}" class="bd-axis"/>')
+    for side, rows, col in (('l', sl['attack'], '#ff4d3d'), ('r', sl['defend'], '#1fbf75')):
+        ys = [Y(r['at']) for r in rows]
+        ls = bd_spread(ys, 70, top + 50, bot - 6)
+        for r, y, ly in zip(rows, ys, ls):
+            dx = mid - 30 if side == 'l' else mid + 30
+            lx = 490 if side == 'l' else 590
+            anchor = 'end' if side == 'l' else 'start'
+            out.append(f'<circle cx="{dx}" cy="{y:.1f}" r="11" fill="{col}"/><path d="M{dx},{y:.1f} L{lx + (12 if side == "l" else -12)},{ly - 8:.1f}" class="bd-lead"/>'
+                       f'<text x="{lx}" y="{ly - 14:.1f}" text-anchor="{anchor}" class="bd-rt">{E(bd_hm(r["at"])[-5:])}</text>'
+                       f'<text x="{lx}" y="{ly + 12:.1f}" text-anchor="{anchor}" class="bd-rl">{E(r["label"])}</text>')
+    out.append('<text x="0" y="30" class="bd-side" fill="#ff4d3d">ATTACKERS</text><text x="1080" y="30" text-anchor="end" class="bd-side" fill="#1fbf75">DEFENDERS</text></svg>')
+    return ''.join(out)
+
+def bd_waffle(sl):
+    cells = [k for k, v in sl['counts'].items() for _ in range(v)]
+    s, g, cols = 84, 12, 10
+    out = [f'<svg class="bd-waffle" viewBox="0 0 {cols * (s + g)} {7 * (s + g)}" role="img" aria-label="' + E(', '.join(f'{v} {k}' for k, v in sl['counts'].items())) + '">']
+    for i, k in enumerate(cells):
+        x, y = (i % cols) * (s + g), (i // cols) * (s + g)
+        out.append(f'<rect x="{x}" y="{y}" width="{s}" height="{s}" rx="14" fill="{BD_C[k]}"/>')
+    out.append('</svg>')
+    leg = ''.join(f'<li><b style="background:{BD_C[k]}">{v}</b><span><i>{E(k)}</i> {E(sl["legend"][k])}</span></li>' for k, v in sl['counts'].items())
+    return ''.join(out) + f'<ul class="bd-legend">{leg}</ul>'
+
+def bd_agencies(sl):
+    rows = D['agencies']; out = []
+    for key, label in sl['stances'].items():
+        names = [r for r in rows if r.get('offline') in sl['groups'][key]]
+        chips = ''.join(f'<span class="bd-ag"><b>{E(r["country"].replace("EU institutions", "EU"))}</b>{E(r["agency"])}</span>' for r in names)
+        out.append(f'<div class="bd-st" style="--c:{BD_STANCE[key]}"><p><b>{len(names)}</b>{E(label)}</p><div>{chips}</div></div>')
+    return f'<p class="bd-agree"><b>16 of 16</b> say: install the fix now.</p><div class="bd-stances">{"".join(out)}</div>'
+
+def bd_curve(cv):
+    snaps = [x for x in D['inventory-history']['snapshots'] if x['at'] <= cv['until'] and x['rows']]
+    t0, t1 = bd_t(snaps[0]['at']), bd_t(snaps[-1]['at'])
+    top = max(x['rows'] for x in snaps)
+    W_, H_ = 1000, 230
+    X = lambda at: (bd_t(at) - t0) * W_ / (t1 - t0)
+    Yv = lambda v: H_ - v * H_ / top
+    order = [('Fix', '#1fbf75', 'fixed'), ('Not vuln', '#8b93a7', 'not affected'), ('Vulnerable', '#ff4d3d', 'vulnerable'), ('Investigation', '#ffb020', 'investigating')]
+    out = [f'<svg class="bd-curve" viewBox="0 -10 {W_} {H_ + 50}" role="img" aria-label="{E(cv["label"])}, from {E(bd_hm(snaps[0]["at"]))} to {E(bd_hm(snaps[-1]["at"]))} UTC">']
+    base = [0] * len(snaps)
+    for key, col, lab in order:
+        upper = [b + s['by_status'].get(key, 0) for b, s in zip(base, snaps)]
+        pts = ' '.join(f'{X(s["at"]):.1f},{Yv(u):.1f}' for s, u in zip(snaps, upper)) + ' ' + ' '.join(f'{X(s["at"]):.1f},{Yv(b):.1f}' for s, b in reversed(list(zip(snaps, base))))
+        out.append(f'<polygon points="{pts}" fill="{col}"/>')
+        base = upper
+    last = snaps[-1]['by_status']
+    out.append(f'<text x="0" y="{H_ + 34}" class="bd-cx">{E(bd_hm(snaps[0]["at"]))}</text><text x="{W_}" y="{H_ + 34}" text-anchor="end" class="bd-cx">{E(bd_hm(snaps[-1]["at"]))} UTC</text></svg>')
+    leg = ''.join(f'<span><i style="background:{col}"></i>{last.get(key, 0)} {lab}</span>' for key, col, lab in reversed(order))
+    return f'<p class="bd-cleg"><b>{snaps[-1]["rows"]} {E(cv["label"][0].lower() + cv["label"][1:])}</b>{leg}</p>' + ''.join(out)
+
+def bd_fallback_pipeline():
+    steps = ['a web page', 'captured, hashed', 'the evidence vault', 'a claim with a status', 'graded by the fact-check desk', 'this page, every fact linked']
+    return '<ol class="bd-pipe">' + ''.join(f'<li><b>{i + 1}</b>{E(s)}</li>' for i, s in enumerate(steps)) + '</ol>'
+
+def bd_img(deck, sl, imgs):
+    im = sl.get('image')
+    if not im:
+        return ''
+    rec = imgs.get(im['slot'])
+    path = f'img/{im["slot"]}.webp'
+    if rec and rec.get('check', 'not checked') != 'not checked' and os.path.exists(os.path.join(ROOT, 'storyboards', deck['slug'], path)):
+        return f'<figure class="bd-gen bd-gen-{E(im["slot"])}"><img src="{E(path)}" alt="{E(im["alt"])}" width="{rec["width"]}" height="{rec["height"]}"><figcaption>Drawn by {E(rec["model_name"])} from <a href="#brief-{E(im["slot"])}">a published brief</a>; every word and number checked.</figcaption></figure>'
+    return ''
+
+def bd_slide(n, total, sl, deck, imgs, strips):
+    k = sl['kind']
+    head = f'<header><p class="bd-kick">{E(sl.get("kicker", ""))}</p><h2>{E(sl["title"])}</h2>' + (f'<p class="bd-lead">{E(sl["lead"])}</p>' if sl.get('lead') and k not in ('cover', 'close') else '') + '</header>'
+    body = ''
+    gen = bd_img(deck, sl, imgs)
+    if k == 'cover':
+        chips = ''.join(f'<span>{E(c)}</span>' for c in sl['chips'])
+        art = gen or '<div class="bd-cover-art">' + bd_ring(9.2, 10, 'severity, both flaws') + '</div>'
+        head = f'<header><p class="bd-kick">{E(sl["kicker"])}</p><h2 class="bd-mega">{E(sl["title"])}</h2><p class="bd-lead">{E(sl["lead"])}</p><p class="bd-chips">{chips}</p></header>'
+        body = art
+    elif k == 'bottomline':
+        body = '<ol class="bd-bl">' + ''.join(f'<li><b>{E(p["n"])}</b><div><h3>{E(p["head"])}</h3><p>{E(p["text"])}</p>{bd_pill(p["status"])}</div></li>' for p in sl['points']) + '</ol>'
+    elif k == 'image':
+        body = gen or ('<div class="bd-stats6">' + ''.join(f'<div><b>{E(x["v"])}</b><span>{E(x["l"])}</span></div>' for x in sl['fallback']['stats']) + '</div>')
+    elif k == 'strip':
+        sb, cells = strips[sl['strip']['storyboard']], []
+        cast = {c['id']: c['name'] for c in SB_CAST['characters']}
+        for p in sl['strip']['panels']:
+            sc = sb['scenes'][p - 1]
+            lines = ''.join(f'<p><b>{E(cast[c["who"]])}:</b> {E(c["says"])}</p>' for c in sc.get('cast', []) if c.get('says'))
+            if not lines and sc.get('punchline'):
+                lines = f'<p class="bd-punch">{E(sc["punchline"])}</p>'
+            cap = sc.get('caption') or ''
+            cells.append(f'<figure><svg data-strip="{E(sb["slug"])}" data-panel="{p - 1}" viewBox="0 0 1600 1000" role="img" aria-label="{E(cap or sc.get("punchline", ""))}"></svg><figcaption><i>{E(cap)}</i>{lines}</figcaption></figure>')
+        body = f'<div class="bd-strip">{"".join(cells)}</div><p class="bd-src">From the storyboard <a href="../{E(sb["slug"])}/index.html">{E(sb["title"])}</a>. The lines are the storyboard\'s own words, not quotes.</p>'
+    elif k == 'anatomy':
+        steps = ''.join(f'<li><span>{E(s)}</span></li>' for s in sl['path'])
+        facts = ''.join(f'<li>{bd_pill(f["status"])} {E(f["text"])}</li>' for f in sl['facts'])
+        body = f'<div class="bd-anat"><div class="bd-anat-ring">{bd_ring(sl["severity"]["value"], sl["severity"]["of"], sl["severity"]["label"])}</div><ol class="bd-path">{steps}</ol></div><ul class="bd-facts">{facts}</ul>'
+    elif k == 'arc':
+        body = '<ol class="bd-arc">' + ''.join(f'<li><b>{E(m["when"])}</b><p>{E(m["what"])}</p>' + (f'<em>{E(m["gap"])} later</em>' if m.get('gap') else '') + '</li>' for m in sl['moments']) + '</ol>'
+    elif k == 'race':
+        body = bd_race(sl)
+    elif k == 'funnel':
+        rows = []
+        for i, s in enumerate(sl['steps']):
+            w = 100 - i * 5
+            rows.append(f'<li class="bd-f-{E(s["status"])}" style="width:{w}%"><b>{E(s["v"])}</b><span>{E(s["l"])}</span>{bd_pill(s["status"])}</li>')
+        body = f'<ol class="bd-funnel">{"".join(rows)}</ol><p class="bd-punch">{E(sl["punch"])}</p>'
+    elif k == 'waffle':
+        body = bd_waffle(sl)
+    elif k == 'agencies':
+        body = bd_agencies(sl)
+    elif k == 'fix':
+        lad = ''.join(f'<li class="bd-fx-{E(r["state"])}" style="margin-left:{i * 4}%"><b>{E(r["branch"])}</b><span>{E(r["fix"])}</span></li>' for i, r in enumerate(sl['ladder']))
+        body = f'<ol class="bd-fixlad">{lad}</ol><div class="bd-curvebox">{bd_curve(sl["curve"])}</div>'
+    elif k == 'weapon':
+        rungs = ''.join(f'<li class="bd-w-{"on" if r["s"] == "reached" else "off"}"><b>{r["n"]}</b><span>{E(r["l"])}</span><em>{E(r["s"])}{(", " + E(r["note"])) if r["note"] else ""}</em></li>' for r in reversed(sl['rungs']))
+        body = f'<ol class="bd-weapon">{rungs}</ol><p class="bd-punch">{E(sl["punch"])}</p>'
+    elif k == 'unknowns':
+        body = '<ol class="bd-q">' + ''.join(f'<li><b>?</b><p>{E(p["text"])}</p></li>' for p in sl['points']) + '</ol>'
+    elif k == 'todo':
+        body = '<div class="bd-todo">' + ''.join(f'<div><svg class="bd-face" data-who="{E(p["who"])}" viewBox="0 0 300 300" role="img" aria-label="{E(p["head"])}"></svg><div><h3>{E(p["head"])}</h3><ul>' + ''.join(f'<li>{E(x)}</li>' for x in p['points']) + '</ul></div></div>' for p in sl['people']) + '</div>'
+    elif k == 'close':
+        stats = ''.join(f'<div><b>{E(x["v"])}</b><span>{E(x["l"])}</span></div>' for x in sl['stats'])
+        head = f'<header><p class="bd-kick">{E(sl["kicker"])}</p><h2>{E(sl["title"])}</h2></header>'
+        body = f'<div class="bd-stats4">{stats}</div>{gen or bd_fallback_pipeline()}<p class="bd-lead">{E(sl["lead"])}</p><p class="bd-url">{E(deck["site"])}</p>'
+    later = f'<p class="bd-later">{E(sl["later"])}</p>' if sl.get('later') else ''
+    srcs = list(OrderedDict.fromkeys(short_name(SOURCES[c]) for c in sl.get('cites', []) if c in SOURCES))[:5]
+    foot = (f'<footer class="bd-foot"><span><b>PHP October 2026</b> · briefing of {E(nice_date(deck["date"]))} · evidence as of 11:34 UTC</span>'
+            f'<span class="bd-fsrc">Sources: {E(", ".join(srcs))}</span><span>{n}/{total}</span></footer>')
+    notes = f'<details class="bd-notes"><summary>Sources for slide {n}</summary>' + (f'<p>{E(sl["note"])}</p>' if sl.get('note') else '') + f'<p class="refs">{src_links(sl.get("cites", []), 2)}</p></details>'
+    return f'<section class="bd-slide bd-k-{E(k)}" id="slide-{n}" aria-label="Slide {n} of {total}: {E(sl["title"])}"><div class="bd-in">{head}<div class="bd-body">{body}</div>{later}{foot}</div></section>{notes}'
 
 def build_decks():
     for deck in DECKS:
-        slug, depth = deck['slug'], 2
-        base = f'storyboards/{slug}/'
-        total = len(deck['slides'])
-        slides = ''.join(deck_slide(i + 1, total, sl, deck, depth) for i, sl in enumerate(deck['slides']))
-        pptx = f'{slug}.pptx'
-        side = os.path.join(ROOT, base, pptx + '.json')
+        slug = deck['slug']; base = f'storyboards/{slug}/'
+        imgf = os.path.join(DECK_DIR, 'images', slug + '.json')
+        imgs = json.load(open(imgf, encoding='utf-8')) if os.path.exists(imgf) else {}
+        strips = {sb['slug']: sb for sb in STORYBOARDS}
+        shown = [sl for sl in deck['slides'] if not (sl.get('optional') and sl.get('image') and not bd_img(deck, sl, imgs))]
+        total = len(shown)
+        slides = ''.join(bd_slide(i + 1, total, sl, deck, imgs, strips) for i, sl in enumerate(shown))
+        used = [sl['strip']['storyboard'] for sl in deck['slides'] if sl['kind'] == 'strip']
+        data = sb_json({'cast': SB_CAST, 'boards': {s: sb_public(strips[s]) for s in OrderedDict.fromkeys(used)}})
+        pdf = f'{slug}.pdf'
+        side = os.path.join(ROOT, base, pdf + '.json')
         made = json.load(open(side, encoding='utf-8')) if os.path.exists(side) else None
-        dl = (f'<a class="btn-open" href="{E(pptx)}" download>Download PowerPoint (.pptx)</a>' if made and os.path.exists(os.path.join(ROOT, base, pptx)) else '')
-        cites = list(OrderedDict.fromkeys(c for sl in deck['slides'] for c in sl.get('cites', [])))
-        moved = '' if deck['data_as_of'] >= STORY['data_as_of'] else f'<p class="caveat"><b>The evidence has moved since this deck was made.</b> It is dated {E(deck["date"])}, with evidence as of {E(deck["data_as_of"])}; the site now has data as of {E(STORY["data_as_of"])}. Present the <a href="../../index.html">front page</a> for the current state, or this deck as a record of what was known then.</p>'
+        dl = f'<a class="btn-open" href="{E(pdf)}" download>Download the PDF ({made["pages"]} pages, {made["bytes"] // 1024 // 1024 or 1} MB)</a>' if made and os.path.exists(os.path.join(ROOT, base, pdf)) else ''
+        cites = list(OrderedDict.fromkeys(c for sl in shown for c in sl.get('cites', [])))
+        briefs = ''.join(f'<li id="brief-{E(s)}"><b>{E(s)}</b>: {E(r["model_name"])} (<code>{E(r["model"])}</code>), {E(str(r["seconds"]))} s, ${E(r["cost_usd"])}; checked: {E(r["check"])}<details><summary>The brief</summary><pre>{E(r["prompt"])}</pre></details></li>' for s, r in imgs.items() if r.get('check', 'not checked') != 'not checked')
+        lede = 'Three slides carry an image drawn by an image model through OpenRouter, chosen by job as the newsroom&#39;s <a href="https://newsroom.sgit.ai/articles/the-infographic-bake-off.html">infographic bake-off</a> advises, briefed with its prompt rules, and checked word by word and number by number against this deck before use. Every other visual is drawn by code from the data.'
+        images_html = section('images', 'The images drawn by a model', f'<p>{lede}</p><ul class="bd-briefs">{briefs}</ul>' if imgs else '<p>None yet: every visual in this deck is drawn by code from the data.</p>')
+        moved = '' if deck['data_as_of'] >= STORY['data_as_of'] else f'<p class="caveat"><b>The evidence has moved since this deck was made.</b> It is dated {E(deck["date"])}, with evidence as of {E(deck["data_as_of"])}; the site now has data as of {E(STORY["data_as_of"])}. This deck is kept as a record of what was known then.</p>'
         body = f"""
 {item('deck-' + slug, 'story', 'stories', deck['title'], base + 'index.html', json.dumps({k: v for k, v in deck.items() if not k.startswith('_')}, ensure_ascii=False, sort_keys=True), deck['date'])}
-<p class="kicker">Briefing deck &middot; {total} slides &middot; dated {E(nice_date(deck["date"]))}</p>
+<p class="kicker">Briefing deck &middot; {total} slides &middot; portrait {E(deck["format"]["ratio"])} &middot; dated {E(nice_date(deck["date"]))}</p>
 <h1>{E(deck["title"])}, {E(nice_date(deck["date"]))}</h1>
 <p class="lead">{E(deck["subtitle"])}. For {E(deck["for"])}.</p>
 <p class="kv"><b>By</b> <code>storyboard@php.newsroom</code> &middot; <b>made against</b> site v{E(deck["as_of_version"])} &middot; vault commit <code>{E(deck["vault_commit"])}</code> &middot; evidence as of {E(deck["data_as_of"])}</p>
 {moved}
-<div class="dk-tools"><button type="button" class="btn-open dk-present">&#9654; Present</button>{dl}<button type="button" class="btn-open dk-print">Print or save as PDF</button><span class="small">Present: full screen, arrow keys or space to move, Esc to leave. Speaker notes and each slide's sources are under each slide.</span></div>
-<div class="dk-deck">{slides}</div>
+<div class="dk-tools">{dl}<button type="button" class="btn-open dk-present">&#9654; Present</button><button type="button" class="btn-open dk-print">Print or save as PDF</button><span class="small">Present: full screen, arrow keys or space, Esc to leave. Each slide's sources are under it.</span></div>
+<link rel="stylesheet" href="../../assets/briefing-deck.css">
+<div class="dk-deck bd-deck">{slides}</div>
+<script type="application/json" class="bd-data">{data}</script>
 <p class="small sb-rule"><b>The rule.</b> {E(deck["rule"])}</p>
-{section("sources", "Every source in this deck", f'<p>{len(cites)} captured sources, in the order the slides first cite them.</p><p class="refs">{src_links(cites, depth)}</p>')}
-<p class="small">Source file: <code>admin/content/decks/{E(deck["_file"])}</code>, in the authored layer. {('The PowerPoint was made from it by <code>admin/build/deck_pptx.js</code> (source sha256 <code>' + E(made["source_sha256"][:16]) + '</code>).') if made else ''} The <a href="../index.html">storyboards</a> tell the same story as strips.</p>
+{images_html}
+{section("sources", "Every source in this deck", f'<p>{len(cites)} captured sources, in the order the slides first cite them.</p><p class="refs">{src_links(cites, 2)}</p>')}
+<p class="small">Source file: <code>admin/content/decks/{E(deck["_file"])}</code>, in the authored layer. {('The PDF was printed from this page by <code>admin/build/deck_pdf.js</code> (deck source sha256 <code>' + E(made["source_sha256"][:16]) + '</code>).') if made else ''} The <a href="../index.html">storyboards</a> tell the same story as strips.</p>
+{sb_kit_tags('../../')}
 <script src="../../assets/briefing-deck.js" defer></script>
 """
-        page(base + 'index.html', f'{deck["title"]}, {nice_date(deck["date"])}', f'A {total}-slide briefing on the PHP flaws of October 2026, dated {nice_date(deck["date"])} with evidence as of {deck["data_as_of"]}: the bottom line, what it is, how it unfolded, where it stands, how sure we are, what governments say, who gets a fix, what nobody knows and what to do. Present it, print it, or download it as PowerPoint.', body, kind='briefing', date=deck['date'], topics='php2shell briefing deck', origin='house', byline='Made by the storyboard desk, agent storyboard@php.newsroom')
+        page(base + 'index.html', f'{deck["title"]}, {nice_date(deck["date"])}', f'A {total}-slide visual briefing on the PHP flaws of October 2026, dated {nice_date(deck["date"])} with evidence as of {deck["data_as_of"]}: the bottom line, the race hour by hour, exposed against exploited, how sure we are, what 16 agencies say, who gets a fix, the weaponisation ladder, what nobody knows and what to do. Present it, print it, or download the PDF.', body, kind='briefing', date=deck['date'], topics='php2shell briefing deck', origin='house', byline='Made by the storyboard desk, agent storyboard@php.newsroom')
 
 
 if __name__ == '__main__':
