@@ -14,7 +14,16 @@ X post 13:45:58Z 21 October (10.1 million views at capture) and the press releas
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · Advice · verdict: **holds**
+
+Both of NSA's own pages carry the advice in nearly the claim's words: the press release ('it is recommended that organizations take the system offline until it can be fully mitigated') and the X post (with the typo 'recommend'). The X post's snowflake decodes to 2026-10-21T13:45:58Z and the capture shows 10.1M views, as the note says.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [nsa-x-2112903220209098897](../../sources/nsa-x-2112903220209098897/index.html) | carries | *If an immediate update is not feasible, it is recommend that organizations take the system offline until it can be fully mitigated.* | 92ebce791a7b3542 |
+| [nsa-press-php-4630238](../../sources/nsa-press-php-4630238/index.html) | carries | *If an immediate update is not feasible, it is recommended that organizations take the system offline until it can be fully mitigated.* | 8a8553ea1ffcd794 |
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:09 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21NSA publishes [NSA Advisory: Critical Patches Recommended for PHP Vulnerabilities](../../sources/nsa-press-php-4630238/index.html)

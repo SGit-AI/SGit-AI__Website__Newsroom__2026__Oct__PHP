@@ -14,7 +14,18 @@ Amazon reports an exploit attempt against a honeypot on 17 October, four days be
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ opinion disputed · Opinion · verdict: **holds in part**
+
+OpenAI's post carries the sentence, but with the qualifier 'to our knowledge' that the claim drops. As a reading it rests on one interested party; the only counter-evidence (Amazon's 17 October honeypot hit) reaches the vault second-hand via The Hacker News, and it shows attackers had exploit information before disclosure, not before AI found the bug.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [x-openai-php2shell](../../sources/x-openai-php2shell/index.html) | carries | *to our knowledge, frontier AI was able to find this vulnerability ahead of attackers, giving defenders time to prepare.* | 785b7cae55e3748b |
+| [thehackernews-php2shell-4days](../../sources/thehackernews-php2shell-4days/index.html) | partial | *it remains unclear how the actor acquired exploit information prior to disclosure.* | c1cb63141287484c |
+
+Open tickets: [Finding-58](../../factcheck/index.html#Finding-58), [Finding-7](../../factcheck/index.html#Finding-7).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21 14:04 UTCOpenAI on X publishes [OpenAI on X: OpenAI models helped researchers ... discover critical security flaws in PHP](../../sources/x-openai-php2shell/index.html)

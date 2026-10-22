@@ -1,0 +1,26 @@
+{
+  "total_nodes": 144,
+  "last_updated": 1792694673418,
+  "type_counts": [
+    {
+      "count": 124,
+      "node_type": "finding"
+    },
+    {
+      "count": 10,
+      "node_type": "contradiction"
+    },
+    {
+      "count": 3,
+      "node_type": "gap"
+    },
+    {
+      "count": 6,
+      "node_type": "evidence"
+    },
+    {
+      "count": 1,
+      "node_type": "run"
+    }
+  ]
+}

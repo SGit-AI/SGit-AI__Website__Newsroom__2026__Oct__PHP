@@ -12,7 +12,15 @@ Fact · leak · reported
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ · Event · verdict: **holds**
+
+The Foundation's own sentence carries every element, including its hedge 'may have leaked'. It is one party's self-report; The Register and SecurityWeek repeat it without new evidence.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | carries | *Mitigation advice we started providing to a few critical infrastructure providers around Oct 20th 23:00 UTC, may have leaked as well.* | a1be057adc1c5bfa |
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:09 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)

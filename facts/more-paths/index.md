@@ -14,7 +14,20 @@ A position, from a vendor; consistent with the Fediverse report of a third bug.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ opinion · Opinion · verdict: **holds**
+
+Fastly's post says nearly these words; it is one vendor's position (a reading), so A2. The second cited source (the oss-security thread) does not carry it. 'Reported' fits.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [fastly-blog-php2shell](../../sources/fastly-blog-php2shell/index.html) | carries | *Patching the specific paths that researchers demonstrated does not make the mechanism safe.* | bacf27615fe1180a |
+| [fastly-blog-php2shell](../../sources/fastly-blog-php2shell/index.html) | carries | *Expect in-the-wild attacks and novel variants to emerge this week and next at minimum.* | bacf27615fe1180a |
+| [openwall-oss-security-109619-thread](../../sources/openwall-oss-security-109619-thread/index.html) | absent | *While not yet fully confirmed, the Fediverse is reporting that the fix to at least PHP 8.5.12 may be incomplete:* | 6a76141ae5a06584 |
+| [github-php-src-fix-commit-3584a98bd](../../sources/github-php-src-fix-commit-3584a98bd/index.html) | partial | *- Replace bailout on OOM with UnwindExit* | 26bed812bcc7c89e |
+
+Open tickets: [Finding-54](../../factcheck/index.html#Finding-54), [Finding-55](../../factcheck/index.html#Finding-55).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:19 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Fastly publishes [Fastly’s Proactive Protection for PHP2Shell, Critical PHP RCE CVE-2026-109618 and CVE-2026-109619 | Fastly](../../sources/fastly-blog-php2shell/index.html)

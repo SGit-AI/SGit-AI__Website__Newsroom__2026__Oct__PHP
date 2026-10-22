@@ -14,7 +14,21 @@ Counted, not quoted. NCSC-NL calls unbacked entries 'investigation leads'.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A1** Weak signal●○○○○○ contradicted status overstated · Count · verdict: **holds in part** · the status word overstates the evidence
+
+The inventory files at commit cca173c64ec5 are in the vault (tree and git bundle), and counting them gives 675 rows: 206 Vulnerable, 46 Fix, 418 Investigation, 4 Not vuln and 1 row with no status. The 206/46/418 figures hold; the total 674 and '3 not vulnerable' are contradicted by the file itself, because the vault's parsed JSON dropped the iBabs row. 'Confirmed' overstates a count the file contradicts.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [ncsc-nl-php2shell-software-list](../../sources/ncsc-nl-php2shell-software-list/index.html) | absent | *List of software with PHP dependency potentially affected by php2shell CVEs* | 83f3aa60070e20b8 |
+| [ncsc-nl-php2shell](../../sources/ncsc-nl-php2shell/index.html) | partial | *"count": 674,* | f0a17e96a336a878 |
+| [ncsc-nl-php2shell](../../sources/ncsc-nl-php2shell/index.html) | carries | *\|iBabs\|iBabs bestuursportaal\|\|Not vuln\|Not vuln\|PHP is not being used in iBabs.* | f25e5ef68d476c05 |
+| [ncsc-nl-php2shell](../../sources/ncsc-nl-php2shell/index.html) | carries | *Product entries should still be treated as investigation leads until they are backed by an upstream or vendor source* | f651662623352976 |
+| [ncsc-nl-php2shell](../../sources/ncsc-nl-php2shell/index.html) | carries | *nothing that carries it* | 4a72bcc9bbc58e88 |
+
+Open tickets: [Finding-105](../../factcheck/index.html#Finding-105), [Finding-120](../../factcheck/index.html#Finding-120), [Finding-35](../../factcheck/index.html#Finding-35), [Finding-36](../../factcheck/index.html#Finding-36), [Finding-37](../../factcheck/index.html#Finding-37).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:48 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-22 08:48 UTCSaved into the evidence vault: NCSC-NL

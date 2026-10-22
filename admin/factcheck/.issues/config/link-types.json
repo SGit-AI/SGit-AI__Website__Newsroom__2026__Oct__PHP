@@ -8,8 +8,8 @@
       "source_types": [
         "finding",
         "contradiction",
-        "evidence-gap",
-        "new-evidence"
+        "gap",
+        "evidence"
       ],
       "target_types": [
         "run"
@@ -23,12 +23,12 @@
       "source_types": [
         "finding",
         "contradiction",
-        "new-evidence"
+        "evidence"
       ],
       "target_types": [
         "finding",
         "contradiction",
-        "new-evidence"
+        "evidence"
       ]
     },
     {
@@ -37,12 +37,12 @@
       "inverse_verb": "supported-by",
       "description": "Evidence that bears on a finding, gap or contradiction",
       "source_types": [
-        "new-evidence"
+        "evidence"
       ],
       "target_types": [
         "finding",
         "contradiction",
-        "evidence-gap"
+        "gap"
       ]
     },
     {
@@ -53,14 +53,14 @@
       "source_types": [
         "finding",
         "contradiction",
-        "evidence-gap",
-        "new-evidence"
+        "gap",
+        "evidence"
       ],
       "target_types": [
         "finding",
         "contradiction",
-        "evidence-gap",
-        "new-evidence"
+        "gap",
+        "evidence"
       ]
     },
     {
@@ -71,14 +71,14 @@
       "source_types": [
         "finding",
         "contradiction",
-        "evidence-gap",
-        "new-evidence"
+        "gap",
+        "evidence"
       ],
       "target_types": [
         "finding",
         "contradiction",
-        "evidence-gap",
-        "new-evidence"
+        "gap",
+        "evidence"
       ]
     },
     {
@@ -89,14 +89,14 @@
       "source_types": [
         "finding",
         "contradiction",
-        "evidence-gap",
-        "new-evidence"
+        "gap",
+        "evidence"
       ],
       "target_types": [
         "finding",
         "contradiction",
-        "evidence-gap",
-        "new-evidence"
+        "gap",
+        "evidence"
       ]
     }
   ]

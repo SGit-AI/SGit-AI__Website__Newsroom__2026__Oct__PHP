@@ -14,7 +14,21 @@ The one documented case of government services being pulled from the public inte
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · Event · verdict: **holds**
+
+The CERT.LV notice, the national authority's own record, carries every part: a decision to restrict access from abroad to several state digital resources, possibly until Monday 26 October, and at the 23:00 local (EEST, 20:00Z) update lsm.lv and 112.lv restored. The UTC conversion is correct (Latvia on EEST until 25 Oct).
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [certlv-php-preventive](../../sources/certlv-php-preventive/index.html) | carries | *pieņemts lēmums uz laiku ierobežot piekļuvi vairākiem valsts digitālajiem resursiem no ārvalstīm* | e37a6582c4e6c685 |
+| [certlv-php-preventive](../../sources/certlv-php-preventive/index.html) | carries | *Piekļuves ierobežojumi varētu būt spēkā līdz pirmdienai, 26. oktobrim* | e37a6582c4e6c685 |
+| [certlv-php-preventive](../../sources/certlv-php-preventive/index.html) | carries | *[Informācija papildināta: 21.10.2026, plkst. 23:00]* | e37a6582c4e6c685 |
+| [certlv-php-preventive](../../sources/certlv-php-preventive/index.html) | carries | *Šobrīd pieejamība atjaunota arī lsm.lv un 112.lv vietnēm.* | e37a6582c4e6c685 |
+| lv-latvija-gov (in the vault, not yet on this site) | blocked | *nothing that carries it* |  |
+
+Open tickets: [Finding-24](../../factcheck/index.html#Finding-24), [Finding-25](../../factcheck/index.html#Finding-25), [Finding-77](../../factcheck/index.html#Finding-77).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:13 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21 18:25 UTCCERT.LV publishes [Saistībā ar globāli atklātām PHP ievainojamībām Latvijā ievieš preventīvus pasākumus](../../sources/certlv-php-preventive/index.html)

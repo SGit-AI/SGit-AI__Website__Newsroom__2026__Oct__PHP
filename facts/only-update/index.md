@@ -12,7 +12,18 @@ Fact · technical · confirmed
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · Advice · verdict: **holds**
+
+php.net's advisory carries the claim almost word for word, and both GHSAs and the oss-security post say updating is the only complete/reliable mitigation. The party's own records carry the advice.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [php-net-advisory](../../sources/php-net-advisory/index.html) | carries | *while only an update is a complete solution, the following measures reduce exposure to specific attack paths but do not make an installation safe.* | df0b1bba3deae282 |
+| [openwall-oss-security-2026-10-21-7](../../sources/openwall-oss-security-2026-10-21-7/index.html) | carries | *Updating is the only reliable mitigation; there is no complete generic configuration workaround.* | ceef70b4943f7818 |
+| [github-ghsa-6wmf-4rv5-p3rp](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) | carries | *Updating to a release containing the complete state reset patch is the only reliable mitigation.* | 99d85c973c41c024 |
+| [github-ghsa-w8hw-w9fx-j79w](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) | carries | *Updating to a PHP release containing the patch to this vulnerability is the only complete mitigation.* | 84ab95d3b1d538ba |
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:14 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21php.net publishes [Security advisory: Critical remote code execution vulnerabilities, update now](../../sources/php-net-advisory/index.html)

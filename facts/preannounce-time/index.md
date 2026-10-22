@@ -14,7 +14,19 @@ The php.net feed says 20:32 UTC; oss-security relayed it at 20:22:51 UTC, so it 
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ disputed · Event · verdict: **holds**
+
+Only the PHP Foundation states 19:30 UTC, and the same post later says 'pre-announcement around 20:00 UTC'. The oss-security relay of the php.net text (Date 13:22:51 -0700 = 20:22:51Z) bounds it from above, and the feed's 20:32:00Z is later than that relay, so the feed time cannot be the publication time. One party's self-report, A2; 'disputed' fits.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | carries | *In response, the PHP project brought its pre-announcement forward and published it at 19:30 UTC.* | a1be057adc1c5bfa |
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | partial | *As a result of the leak and pre-announcement around 20:00 UTC, Calif, one of the security firms* | a1be057adc1c5bfa |
+| [openwall-oss-security-2026-10-20-34](../../sources/openwall-oss-security-2026-10-20-34/index.html) | partial | *Date: Tue, 20 Oct 2026 13:22:51 -0700* | 57b273733e7d5fe6 |
+| [php-net-advisory](../../sources/php-net-advisory/index.html) | partial | *
+2026-10-20T20:32:00+00:00* | 79c12996a433f66b | | [php-net-advisory](../../sources/php-net-advisory/index.html) | absent | *nothing that carries it* | df0b1bba3deae282 | Open tickets: [Finding-40](../../factcheck/index.html#Finding-40), [Finding-92](../../factcheck/index.html#Finding-92).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:14 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-20 20:22 UTCoss-security publishes [Upcoming Critical PHP Security Release](../../sources/openwall-oss-security-2026-10-20-34/index.html)

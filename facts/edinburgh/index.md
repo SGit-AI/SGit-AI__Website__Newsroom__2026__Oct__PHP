@@ -12,7 +12,21 @@ Fact · impact · reported
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A3** Echoed●●●○○○ · Event · verdict: **holds**
+
+The Scotsman carries the outage, the council's "essential maintenance" and that it had not confirmed a link; the Edinburgh Evening News piece is the same reporter and text (one origin, A3), while LBC, Insurance Business, The Cyber Express and the BBC raw copy independently report the outage. "Late on 21 October" loosely renders "late on Wednesday afternoon".
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [scotsman-edinburgh-council-offline](../../sources/scotsman-edinburgh-council-offline/index.html) | carries | *A council spokesperson said the website was down for “essential maintenance”, however they are yet to confirm whether it is linked* | fcdbc39d82bfd477 |
+| [scotsman-edinburgh-council-offline](../../sources/scotsman-edinburgh-council-offline/index.html) | carries | *The website went down late on Wednesday afternoon* | fcdbc39d82bfd477 |
+| edinburghnews-council-offline (in the vault, not yet on this site) | carries | *A council spokesperson said the website was down for “essential maintenance” however they did not confirm whether it was connected to the recently discovered vulnerabilities.* | ec7b1d470016d4f6 |
+| [lbc-uk-websites-offline](../../sources/lbc-uk-websites-offline/index.html) | partial | *Edinburgh and Oxford Council as well as the online home for The Traitors were taken down as was The Met Police website.* | 125176f10b5494a6 |
+| uk-edinburgh-council (in the vault, not yet on this site) | absent | *nothing that carries it* | eef60737c49dfded |
+
+Open tickets: [Finding-67](../../factcheck/index.html#Finding-67).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:21 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21 18:09 UTCThe Scotsman publishes [Edinburgh council website offline amid global cyber security alert](../../sources/scotsman-edinburgh-council-offline/index.html)

@@ -14,7 +14,21 @@ tomash-areion is not named in the PHP Foundation's thanks and appears nowhere el
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · Record · verdict: **holds**
+
+Both captured GitHub advisories list exactly these four handles as 'Reporter' (A6, the record itself). The affiliations in brackets are inferred from handle suffixes and other pages (Calif's '@lcfr_hax', Wiz author Sagi Tzadik, the Foundation's thanks to Amy Burnett of OpenAI Codex Security), not stated by the advisories.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [github-ghsa-w8hw-w9fx-j79w](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) | carries | *Credits lcfr-hax Reporter sagitzadik-wiz Reporter tomash-areion Reporter amyb-oai Reporter* | 84ab95d3b1d538ba |
+| [github-ghsa-6wmf-4rv5-p3rp](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) | carries | *Credits sagitzadik-wiz Reporter tomash-areion Reporter lcfr-hax Reporter amyb-oai Reporter* | 99d85c973c41c024 |
+| [daubois-blog-php2shell-rumors](../../sources/daubois-blog-php2shell-rumors/index.html) | carries | *Advisory opened: 2026-08-27, credited to lcfr-hax, sagitzadik-wiz, amyb-oai and tomash-areion* | 5ef17f9886aa93f7 |
+| [cve-cve-2026-109618](../../sources/cve-cve-2026-109618/index.html) | partial | *Ryan at Calif.io reporter Wiz reporter OpenAI finder* | f8705d8e0aa2a248 |
+| [cve-cve-2026-109619](../../sources/cve-cve-2026-109619/index.html) | partial | *Wiz reporter Ryan at Calif.io reporter OpenAI reporter* | 3162135e82a9edd4 |
+
+Open tickets: [Finding-73](../../factcheck/index.html#Finding-73).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:12 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Daubois publishes [What the PHP2Shell rumors got wrong, from inside the PHP security team](../../sources/daubois-blog-php2shell-rumors/index.html)

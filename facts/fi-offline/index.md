@@ -12,7 +12,21 @@ Fact · impact · reported
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ · Event · verdict: **holds**
+
+Helsinki Times carries Valtori restricting incoming public traffic from 12:45 local as a preventive measure; Yle (STT copy) and the Reuters factbox corroborate the precautionary Valtori shutdown but not the 12:45 time. The time rests on one secondary outlet, so A2; status "reported" fits.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [helsinkitimes-finland-shutdown](../../sources/helsinkitimes-finland-shutdown/index.html) | carries | *Valtori, began restricting incoming public internet traffic at 12.45 pm local time to protect government systems against potential cyberattacks.* | 524315badf6e5633 |
+| [helsinkitimes-finland-shutdown](../../sources/helsinkitimes-finland-shutdown/index.html) | carries | *Valtori stressed that the shutdowns were preventive measures rather than a response to a confirmed cyberattack or data breach.* | 524315badf6e5633 |
+| [yle-finland-government-sites-shut](../../sources/yle-finland-government-sites-shut/index.html) | partial | *Finland's public internet web services were being taken offline on Wednesday as a precautionary move against a critical security vulnerability* | 720785d651f827be |
+| [yle-finland-government-sites-shut](../../sources/yle-finland-government-sites-shut/index.html) | partial | *According to Valtori, services began being shut down in the early afternoon.* | 720785d651f827be |
+| [reuters-factbox-websites-offline](../../sources/reuters-factbox-websites-offline/index.html) | partial | *State IT centre Valtori shut down the government's public web services on Wednesday as "a precautionary measure."* | d562e28995b00a19 |
+
+Open tickets: [Finding-68](../../factcheck/index.html#Finding-68).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:32 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Yle publishes [Finland temporarily shuts down government websites as a precaution for critical vulnerabilities | Yle News | Y](../../sources/yle-finland-government-sites-shut/index.html)

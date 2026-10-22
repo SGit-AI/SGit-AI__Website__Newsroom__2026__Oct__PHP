@@ -14,7 +14,20 @@ The Hacker News says the same of the public code. Fastly: working RCE needs know
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A1** Weak signal●○○○○○ status overstated · Attribution · verdict: **holds** · the status word overstates the evidence
+
+rjmendez's README carries both halves, but the VulnCheck half is second-hand (VulnCheck's review is not captured), so A1; the lab half is rjmendez's own (A2). Huntress, the second cited source, does not carry either half. 'Reported' implies one named party checked first-hand, which only the lab half has.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [github-rjmendez-phpup-2026](../../sources/github-rjmendez-phpup-2026/index.html) | carries | *a clean 200 OK, and VulnCheck independently reports that none of the public PoCs they reviewed have the correct mechanism.* | 84742b6e86fb259d |
+| [huntress-php2shell-rapid-response](../../sources/huntress-php2shell-rapid-response/index.html) | absent | *We have not built or reproduced a proof of concept for these vulnerabilities, and we're not aware of public exploit code as of this writing.* | a83d744768109a61 |
+| [fastly-blog-php2shell](../../sources/fastly-blog-php2shell/index.html) | partial | *the existing PoCs require knowledge of the specific, running PHP binary and address space layout on the server* | bacf27615fe1180a |
+| [thehackernews-what-protects-you](../../sources/thehackernews-what-protects-you/index.html) | partial | *the public exploit code going around has not been shown to work* | 2301d254784fd661 |
+
+Open tickets: [Finding-52](../../factcheck/index.html#Finding-52), [Finding-91](../../factcheck/index.html#Finding-91), [Gap-3](../../factcheck/index.html#Gap-3).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:28 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21rjmendez, GitHub publishes [GitHub - rjmendez/phpup-2026: IOCs and detection rules for CVE-2026-109618 / CVE-2026-109619 (PHP session.uplo](../../sources/github-rjmendez-phpup-2026/index.html)

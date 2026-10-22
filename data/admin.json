@@ -731,6 +731,34 @@
    "title": "Commit data/keys.json: .gitignore's keys*.json rule held it back, so /admin/keys/ is not built yet. Check it holds fingerprints and vault ids only, add it with an explicit !data/keys.json exception, and restore its row in data/layers.json (used on admin/keys/index.html); the page and its menu entry then build on their own",
    "status": "open",
    "owner": "security@php.newsroom"
+  },
+  {
+   "id": "086",
+   "title": "The fact-check desk: a spectrum of evidence (kind, level A0 to A6, verdict, tension), an Issues-FS tracker, the contradiction ledger, the first full run over all 70 claims, and /factcheck/ with a view of only what can be relied on",
+   "status": "done",
+   "owner": "factcheck",
+   "note": "From the brief: a fact-checker joins the team (22 October)."
+  },
+  {
+   "id": "087",
+   "title": "Run the desk on a schedule, every four hours: the claims that changed, the open tickets, the weak and the contested, KEV and the moving sources; a full sweep once a day",
+   "status": "open",
+   "owner": "factcheck",
+   "note": "From the brief: a fact-checker joins the team (22 October)."
+  },
+  {
+   "id": "088",
+   "title": "Act on the desk's high and medium findings on claims, agencies, exploitation and impact data: first Italy's offline advice, the allies' 'contradicted' mark, the five quotes not in their captures, and the eleven overstated status words (tickets on /factcheck/)",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the brief: a fact-checker joins the team (22 October)."
+  },
+  {
+   "id": "089",
+   "title": "Capture what the desk found outside the vault: the BBC live page as it stands (32 UK services, 90%), The Next Web, the PHPocalypse Tracker's sites.csv, KEV each run; then re-grade the claims they bear on",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: a fact-checker joins the team (22 October)."
   }
  ],
  "evidence_vault": {

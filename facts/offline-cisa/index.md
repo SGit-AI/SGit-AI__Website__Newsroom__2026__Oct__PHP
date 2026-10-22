@@ -12,7 +12,17 @@ Fact · advice · confirmed
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · Advice · verdict: **holds**
+
+CISA's alert says organisations that cannot update immediately, or that use PHP 8.1 or earlier unsupported versions, should take PHP-based systems offline until patched or updated. The party's own record carries it.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [cisa-alert-php-20261021](../../sources/cisa-alert-php-20261021/index.html) | carries | *Organizations that cannot update immediately, or that continue to use PHP 8.1 or earlier unsupported versions, should take PHP-based systems offline* | 7bf853872a073bde |
+
+Open tickets: [Finding-88](../../factcheck/index.html#Finding-88).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:13 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21CISA publishes [Critical Vulnerabilities in PHP Require Immediate Patching](../../sources/cisa-alert-php-20261021/index.html)

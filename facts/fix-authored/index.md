@@ -14,7 +14,21 @@ Counted from the repository, not from a page. Five authors; 389 files; 10,689 in
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · Record · verdict: **holds in part**
+
+The git output in the vault carries every time in the claim: author date 2026-10-18T17:26:39+02:00 (15:26:39Z), committer date 2026-10-21T16:06:22+02:00 (14:06:22Z), and Ilija Tovilo's merges 8.2 into 8.3 at 14:12:35Z, 8.3 into 8.4 at 14:27:03Z, 8.4 into 8.5 at 14:30:04Z, plus 389 files, +10689, five authors. 'Entered the public branches at 14:06' reads a committer timestamp as a push time, which git does not record.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [github-php-src-fix-commit-3584a98bd](../../sources/github-php-src-fix-commit-3584a98bd/index.html) | carries | *author: Arnaud Le Blanc  2026-10-18T17:26:39+02:00* | 0d696e59634f83a4 |
+| [github-php-src-fix-commit-3584a98bd](../../sources/github-php-src-fix-commit-3584a98bd/index.html) | carries | *389 files changed, 10689 insertions(+), 976 deletions(-)* | 0d696e59634f83a4 |
+| [github-php-src-fix-commit-3584a98bd](../../sources/github-php-src-fix-commit-3584a98bd/index.html) | carries | *c1a5f468d09fc4afc5d738872d5b1d4e87ff1e39 2026-10-21T16:12:35+02:00 2026-10-21T16:12:35+02:00 Ilija Tovilo Merge branch 'PHP-8.2' into PHP-8.3* | 81c3025511c2f474 |
+| [github-php-src-tag-php-8.5.12](../../sources/github-php-src-tag-php-8.5.12/index.html) | absent | *The PHP development team announces the immediate availability of PHP 8.5.12.* | 3fa0b4ca147ee066 |
+| [daubois-blog-php2shell-rumors](../../sources/daubois-blog-php2shell-rumors/index.html) | partial | *Fix PR opened: 2026-09-25, final commit 01a40e89fbfc authored 2026-10-18* | 5ef17f9886aa93f7 |
+
+Open tickets: [Finding-41](../../factcheck/index.html#Finding-41), [Finding-69](../../factcheck/index.html#Finding-69).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:22 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-18 15:26 UTCphp/php-src, read from a clone publishes [Commit 3584a98bd: Avoid state corruption via bailout (the php2shell fix) and the PHP-7.4 backport 712e60f9e](../../sources/github-php-src-fix-commit-3584a98bd/index.html)

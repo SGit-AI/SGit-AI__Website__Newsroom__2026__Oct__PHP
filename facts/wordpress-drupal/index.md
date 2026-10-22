@@ -14,7 +14,19 @@ Two researcher parties, no third-party reproduction in the vault. The demo video
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ · State · verdict: **holds**
+
+Calif's own post lists all eleven applications as confirmed pre-auth RCE; Wiz independently confirms WordPress, Drupal and Joomla. The full list rests on one named party (A2); WordPress/Drupal/Joomla alone would be A4. No third-party reproduction in the vault (Huntress says it did not reproduce), so 'reported' fits.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [calif-php2shell](../../sources/calif-php2shell/index.html) | carries | *We confirmed pre-auth RCE on the following PHP apps as well as arbitrary PHP scripts in some instances.* | 23afef81971778f9 |
+| [wiz-blog-php2shell](../../sources/wiz-blog-php2shell/index.html) | partial | *demonstrated that it could execute code remotely without authentication on deployments of WordPress (wordpress:latest), Drupal (drupal:latest), and Joomla (joomla:latest)* | e3568b6f88c93f6b |
+| [huntress-php2shell-rapid-response](../../sources/huntress-php2shell-rapid-response/index.html) | absent | *We have not built or reproduced a proof of concept for these vulnerabilities* | a83d744768109a61 |
+
+Open tickets: [Finding-116](../../factcheck/index.html#Finding-116).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:10 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Calif publishes [php2shell by Calif Research — A tale of two PHP remote vulnerabilities](../../sources/calif-php2shell/index.html)

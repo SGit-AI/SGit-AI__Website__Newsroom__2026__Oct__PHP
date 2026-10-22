@@ -14,7 +14,21 @@ The PHP Foundation: 'a wrong CVSS score of 10.0 (the actual score is 9.2)'. Daub
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+refuted contradicted · Record · verdict: **refuted**
+
+The CVE records (the authoritative record for the score) give 9.2 under CVSS 4.0 for both flaws, and the PHP Foundation names 10.0 as a wrong score from the leak. The statement is refuted; the site's status 'contradicted' matches.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | carries | *They came with a wrong release time and a wrong CVSS score of 10.0 (the actual score is 9.2).* | a1be057adc1c5bfa |
+| [daubois-blog-php2shell-rumors](../../sources/daubois-blog-php2shell-rumors/index.html) | carries | *Florian Roth’s post, as Phoenix Security relayed it, said CVSS 10.0, and Cyber Daily reported watchTowr saying the same, while PHP’s own notice says 9.2.* | 5ef17f9886aa93f7 |
+| [cve-cve-2026-109618](../../sources/cve-cve-2026-109618/index.html) | carries | *9.2 CRITICAL 4.0* | f8705d8e0aa2a248 |
+| [cve-cve-2026-109619](../../sources/cve-cve-2026-109619/index.html) | carries | *9.2 CRITICAL 4.0* | 3162135e82a9edd4 |
+| [thehackernews-php2shell-unpatched-alert](../../sources/thehackernews-php2shell-unpatched-alert/index.html) | carries | *The CVSS 10.0 figure is the leak's. PHP's rating is 9.2 on version 4.0 of the scale.* | 33ba8292e26406d7 |
+
+Open tickets: [Contradiction-7](../../factcheck/index.html#Contradiction-7), [Finding-65](../../factcheck/index.html#Finding-65).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:12 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)

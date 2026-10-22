@@ -14,7 +14,20 @@ Counted from the captured catalog.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ status overstated · Record · verdict: **holds in part** · the status word overstates the evidence
+
+The KEV JSON (dateAdded 2024-06-12) and the CVE record (datePublished 2024-06-09T19:42Z) give three days (A6), and the php2shell KEV absence is A6 at 08:16Z on 22 Oct. 'Exploited in the wild one day after' rests on Akamai alone (A2), and it describes honeypot exploit attempts; 'the last PHP core RCE' is not shown (CVE-2024-4577 is a PHP-CGI argument injection on Windows).
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [cisa-kev-json](../../sources/cisa-kev-json/index.html) | carries | *nothing that carries it* | ef8fffede5c47200 |
+| [cve-cve-2024-4577](../../sources/cve-cve-2024-4577/index.html) | carries | *nothing that carries it* | e8cc1b1dcd1a3333 |
+| [akamai-blog-cve-2024-4577-one-day](../../sources/akamai-blog-cve-2024-4577-one-day/index.html) | carries | *As early as one day after disclosure, the SIRT observed numerous exploit attempts to abuse this vulnerability* | f7a58be0ecaaa8db |
+| [akamai-blog-cve-2024-4577-one-day](../../sources/akamai-blog-cve-2024-4577-one-day/index.html) | partial | *we observed exploit attempts targeting this PHP flaw on our honeypot network within 24 hours of its disclosure.* | f7a58be0ecaaa8db |
+
+Open tickets: [Evidence-1](../../factcheck/index.html#Evidence-1), [Finding-20](../../factcheck/index.html#Finding-20), [Finding-21](../../factcheck/index.html#Finding-21), [Finding-76](../../factcheck/index.html#Finding-76).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:25 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2024Akamai Security Research publishes [CVE-2024-4577 Exploits in the Wild One Day After Disclosure](../../sources/akamai-blog-cve-2024-4577-one-day/index.html)

@@ -12,7 +12,20 @@ Fact · leak · reported
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A4** Corroborated●●●●○○ · Event · verdict: **holds**
+
+Daubois says watchTowr confirmed the bugs and posted both CVE numbers; CybelAngel (via The Repository) independently says watchTowr named both CVEs, and Huntress quotes the same watchTowr line. CERT-EU lists the watchTowr X post as a public report; its ID 2112611507749982605 decodes to 2026-10-20T18:26:48Z, before the 19:30 UTC pre-announcement and the release. The post itself is not captured and watchtowr.com returns 403.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [daubois-blog-php2shell-rumors](../../sources/daubois-blog-php2shell-rumors/index.html) | carries | *“we were all supposed to wait until Thursday at 11am ET”, confirmed in public that the bugs were real and posted both CVE numbers.* | 5ef17f9886aa93f7 |
+| [certeu-sa-2026-018](../../sources/certeu-sa-2026-018/index.html) | partial | *[3] https://x.com/watchtowrcyber/status/2112611507749982605* | c65c95cf165d9ed7 |
+| [cybelangel-php2shell](../../sources/cybelangel-php2shell/index.html) | carries | *watchTowr confirms the leaked vulnerabilities are real and names CVE-2026-109618 and CVE-2026-109619* | 4ffc5347bfe22fb4 |
+| [huntress-php2shell-rapid-response](../../sources/huntress-php2shell-rapid-response/index.html) | partial | *Within a few hours, our good friends over at watchTowr confirmed the leak, writing that the vulnerabilities were real* | a83d744768109a61 |
+
+Open tickets: [Finding-81](../../factcheck/index.html#Finding-81).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:28 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Daubois publishes [What the PHP2Shell rumors got wrong, from inside the PHP security team](../../sources/daubois-blog-php2shell-rumors/index.html)

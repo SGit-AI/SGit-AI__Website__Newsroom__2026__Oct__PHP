@@ -14,7 +14,17 @@ Primary source.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ · Event · verdict: **holds in part**
+
+CERT.LV's own page carries the automated attempts; it says there are 'no reports of successful attacks so far' (as of 21 Oct 23:00 local, 20:00Z), which is a dated absence of reports, not 'none succeeded'.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [certlv-php-preventive](../../sources/certlv-php-preventive/index.html) | partial | *Latvijā jau ir konstatēti automatizēti mēģinājumi izmantot PHP ievainojamības, taču līdz šim nav ziņu par sekmīgiem uzbrukumiem.* | e37a6582c4e6c685 |
+
+Open tickets: [Finding-16](../../factcheck/index.html#Finding-16).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:13 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21 18:25 UTCCERT.LV publishes [Saistībā ar globāli atklātām PHP ievainojamībām Latvijā ievieš preventīvus pasākumus](../../sources/certlv-php-preventive/index.html)

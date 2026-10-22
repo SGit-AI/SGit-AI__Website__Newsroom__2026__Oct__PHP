@@ -14,7 +14,19 @@ The Foundation says the OOM signs were found while fixing one of the audit's fin
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · Count · verdict: **holds** · the status word understates the evidence
+
+Counted from the captured Quarkslab page: 2 high, 6 medium, 9 low and 10 informative issues (27 rows), with HIGH-1 and MED-2 redacted and the stated reason 'Fixes are complex and in progress.' No row describes an out-of-memory finding. The Substack piece says the same. The Foundation note is carried.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [quarkslab-blog-php-src-audit](../../sources/quarkslab-blog-php-src-audit/index.html) | carries | *two security issues currently redacted while PHP maintainers are actively working on the fixes. Details will be provided after fixes are applied* | cd5ccdaf99da0be1 |
+| [substack-lopezkurtz-patch-is-the-exploit](../../sources/substack-lopezkurtz-patch-is-the-exploit/index.html) | carries | *lists 27 findings, two of them redacted because their fixes were “complex and in progress”; it does not describe an out-of-memory finding.* | cb3714dc12f96c96 |
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | carries | *While fixing one of the issues Quarkslab reported, a PHP core developer contracted by the PHP Foundation found the first signs of the OOM problem* | a1be057adc1c5bfa |
+
+Open tickets: [Finding-95](../../factcheck/index.html#Finding-95).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:31 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2025-04-10Quarkslab publishes [Security audit of PHP-SRC - Quarkslab's blog](../../sources/quarkslab-blog-php-src-audit/index.html)

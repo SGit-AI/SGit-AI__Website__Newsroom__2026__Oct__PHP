@@ -14,7 +14,20 @@ Swiss BACS: 'Even a web application firewall alone is not sufficient.' Cloudflar
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · Advice · verdict: **holds** · the status word understates the evidence
+
+CISA's alert carries the sentence nearly verbatim, so the advice is established as CISA's. BACS ('alone is not sufficient') and Cloudflare (attackers mutating payloads) qualify it but do not contradict 'some protection'; CERT-FR also recommends WAF-level blocking. 'Disputed' overstates the disagreement.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [cisa-alert-php-20261021](../../sources/cisa-alert-php-20261021/index.html) | carries | *A web application firewall may provide some protection until systems are updated or patched.* | 7bf853872a073bde |
+| [ch-bacs-warnung-php](../../sources/ch-bacs-warnung-php/index.html) | partial | *They do not provide complete protection and are no substitute for security updates. Even a web application firewall alone is not sufficient.* | 99886a19aead8abe |
+| [cloudflare-blog-php2shell-waf](../../sources/cloudflare-blog-php2shell-waf/index.html) | partial | *We observed how attackers were mutating the attack payload to try to bypass our protections* | 302408765abf45e3 |
+| [certfr-2026-ale-014](../../sources/certfr-2026-ale-014/index.html) | partial | *Ces mesures peuvent être réalisées au niveau d'un pare-feu applicatif (Web Application Firewall).* | f9e9557ab49ddb95 |
+
+Open tickets: [Finding-109](../../factcheck/index.html#Finding-109), [Finding-51](../../factcheck/index.html#Finding-51).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:17 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21CISA publishes [Critical Vulnerabilities in PHP Require Immediate Patching](../../sources/cisa-alert-php-20261021/index.html)

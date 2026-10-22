@@ -14,7 +14,20 @@ Censys: 2.58 million hosts seen, 1.58 million reporting a version, 1.57 million 
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ measures differently · Count · verdict: **holds in part**
+
+Both figures are carried, but only second hand: VulnCheck's 2,608,039 hosts via The Hacker News and SecurityWeek (one origin), and Censys's 2.58 million seen, 1.57 million unpatched via SecurityWeek alone; no scanner's own page or method is captured, so A2. 'Of which' wrongly makes Censys's 1.57 million a subset of VulnCheck's 2.6 million; it is a subset of Censys's own 2.58 million.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [thehackernews-php2shell-4days](../../sources/thehackernews-php2shell-4days/index.html) | carries | *VulnCheck's analysis has identified PHP on 2,608,039 internet-facing hosts, out of which over 700,000 hosts run PHP 3.x through 7.3.* | c1cb63141287484c |
+| [securityweek-exploitation-days-before](../../sources/securityweek-exploitation-days-before/index.html) | carries | *roughly 1.58 million were reporting identifiable PHP versions, and approximately 1.57 million were not patched, Censys says.* | ac663f2d9dbd0197 |
+| [securityweek-exploitation-days-before](../../sources/securityweek-exploitation-days-before/index.html) | carries | *VulnCheck was seeing more than 2.6 million internet-facing hosts running PHP, nearly all of which were vulnerable.* | ac663f2d9dbd0197 |
+| [insurancebusiness-uk-councils-met](../../sources/insurancebusiness-uk-councils-met/index.html) | carries | *Palo Alto Networks’ Unit 42 has counted more than 22.6 million internet-facing systems that could be vulnerable.* | 89357150e0bc8363 |
+
+Open tickets: [Contradiction-4](../../factcheck/index.html#Contradiction-4), [Finding-100](../../factcheck/index.html#Finding-100), [Finding-34](../../factcheck/index.html#Finding-34).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-22THN publishes [Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed](../../sources/thehackernews-php2shell-4days/index.html)

@@ -34,8 +34,8 @@
     },
     {
       "type_id": "484e1ba7",
-      "name": "evidence-gap",
-      "display_name": "EvidenceGap",
+      "name": "gap",
+      "display_name": "Gap",
       "description": "A statement no capture carries, and no better source found yet",
       "icon": "",
       "color": "#edae49",
@@ -49,8 +49,8 @@
     },
     {
       "type_id": "83ddc59d",
-      "name": "new-evidence",
-      "display_name": "NewEvidence",
+      "name": "evidence",
+      "display_name": "Evidence",
       "description": "Found outside the vault; a request to capture it, not citable until captured",
       "icon": "",
       "color": "#00798c",

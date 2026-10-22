@@ -12,7 +12,19 @@ Fact · technical · confirmed
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · Record · verdict: **holds**
+
+GHSA-w8hw's Mitigation section states the mechanism in nearly these words, the php.net ChangeLog carries the exact line for all four releases, and the 7.4 branch commit carries the same title. Primary records carry all of it.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [github-ghsa-w8hw-w9fx-j79w](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) | carries | *It is replaced with a delayed, graceful soft OOM triggered at the next VM safe point, and an immediate hard OOM using _exit()* | 84ab95d3b1d538ba |
+| [php-net-changelog-8](../../sources/php-net-changelog-8/index.html) | carries | *Fixed GHSA-w8hw-w9fx-j79w, GHSA-6wmf-4rv5-p3rp (Avoid state corruption via bailout).* | e39f8d2cb60ee8a5 |
+| [github-php-src-branch-7.4-backport](../../sources/github-php-src-branch-7.4-backport/index.html) | carries | *Avoid state corruption via bailout* | bd71e98ee89b7c6c |
+
+Open tickets: [Finding-70](../../factcheck/index.html#Finding-70).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:15 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-18 18:10 UTCphp-src publishes [Branch PHP-7.4-CVE-2026-109618-109619](../../sources/github-php-src-branch-7.4-backport/index.html)

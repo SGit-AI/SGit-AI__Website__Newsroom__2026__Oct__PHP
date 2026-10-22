@@ -14,7 +14,24 @@ None of the three cites the survey it comes from. A share of websites using PHP 
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ measures differently · Count · verdict: **holds in part**
+
+Cloudflare, OpenAI and Wiz each state roughly 70%, but they restate one survey (Cloudflare links W3Techs; Tenable and Imperva name W3Techs), so this is an echo of one origin, and the survey's method is not captured, which caps a count at A2. The figure W3Techs publishes is a share of websites whose server-side language is known, a qualifier the claim drops.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [cloudflare-blog-php2shell-waf](../../sources/cloudflare-blog-php2shell-waf/index.html) | carries | *PHP is used by almost 70% of websites.* | 302408765abf45e3 |
+| [cloudflare-blog-php2shell-waf](../../sources/cloudflare-blog-php2shell-waf/index.html) | carries | *PHP is used by almost 70% of websites.* | a0d3c37cde7c1721 |
+| [x-openai-php2shell](../../sources/x-openai-php2shell/index.html) | carries | *an open-source programming language used to run an estimated 70% of websites.* | 785b7cae55e3748b |
+| [wiz-blog-php2shell](../../sources/wiz-blog-php2shell/index.html) | carries | *a popular general-purpose scripting language that powers 70% of all websites in the world.* | e3568b6f88c93f6b |
+| [imperva-blog-php2shell](../../sources/imperva-blog-php2shell/index.html) | partial | *With PHP used by over 69% of websites whose server-side programming language is known* | 3da873bdb21219a6 |
+| [tenable-php2shell-faq](../../sources/tenable-php2shell-faq/index.html) | partial | *According to W3Techs, PHP is used by 69.3% of websites whose server-side language is known.* | 10d98694b9c0243e |
+| rte-reuters-websites-go-dark (in the vault, not yet on this site) | partial | *PHP runs roughly 75% of websites whose programming language can be identified, according to web technology tracker W3Techs* | 99bb92662561bd29 |
+| abc-au-gov-sites-exposed (in the vault, not yet on this site) | partial | *PHP runs about 75 per cent of websites whose programming language can be identified, according to web technology tracker W3Techs.* | 84937c7c5b87e7c9 |
+
+Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Finding-103](../../factcheck/index.html#Finding-103), [Finding-32](../../factcheck/index.html#Finding-32), [Finding-33](../../factcheck/index.html#Finding-33).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Cloudflare publishes [Cloudflare deploys protections against php2shell vulnerability](../../sources/cloudflare-blog-php2shell-waf/index.html)

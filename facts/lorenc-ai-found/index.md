@@ -14,7 +14,17 @@ Unverified by anyone else.
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A2** Reported●●○○○○ · Attribution · verdict: **holds**
+
+The Register reports, in its own words, that Lorenc said Chainguard learned 'something was coming in PHP' on Friday from one of the researchers and that night independently found the same bugs with its AI harness and a frontier model. One named party, second-hand through one outlet; nobody else checks it.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [theregister-php-blames-chainguard](../../sources/theregister-php-blames-chainguard/index.html) | carries | *Later that night, using his company’s AI harness and a frontier model, the CEO and the Chainguard team independently found the same memory corruption vulnerabilities.* | b355691c9b584c53 |
+
+Open tickets: [Finding-82](../../factcheck/index.html#Finding-82).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:32 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-22The Register publishes [PHP blames supply chain security biz Chainguard for putting huge chunks of the web at risk](../../sources/theregister-php-blames-chainguard/index.html)

@@ -14,7 +14,20 @@ Catalog version 2026.10.21 fetched 2026-10-22T08:15Z, 1,754 entries. A point-in-
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · State · verdict: **holds**
+
+The CISA alert itself carries the dated negative and the captured KEV JSON (catalogVersion 2026.10.21, 1754 entries, counted by this desk) contains neither CVE; the CVE record's CISA ADP SSVC also says Exploitation none at 14:34Z on 21 Oct. All three are CISA, one party, but each is the authoritative record for what it says.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [cisa-alert-php-20261021](../../sources/cisa-alert-php-20261021/index.html) | carries | *While CISA has not observed exploitation of these vulnerabilities as of the time of publication, they pose a risk to organizations if left unpatched.* | 7bf853872a073bde |
+| [cisa-kev-json](../../sources/cisa-kev-json/index.html) | carries | *nothing that carries it* | ef8fffede5c47200 |
+| [cve-cve-2026-109618](../../sources/cve-cve-2026-109618/index.html) | carries | *nothing that carries it* | f856138e139c216e |
+| [cve-cve-2026-109618](../../sources/cve-cve-2026-109618/index.html) | absent | *nothing that carries it* | f8705d8e0aa2a248 |
+
+Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-6](../../factcheck/index.html#Evidence-6), [Finding-13](../../factcheck/index.html#Finding-13), [Finding-63](../../factcheck/index.html#Finding-63).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21CISA publishes [Critical Vulnerabilities in PHP Require Immediate Patching](../../sources/cisa-alert-php-20261021/index.html)

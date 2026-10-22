@@ -49,7 +49,8 @@
     }
    ],
    "reading": "One origin, Wiz, restated: a share of websites using PHP became a share of 'the Internet' affected, inside Wiz's own post. Every outlet in the vault that carries the figure traces to Wiz, so it is one source, not several (restates, not corroborates). None of them says how the 70% was measured; it matches the usual web-technology survey figure for sites whose server-side language is known, which is a share of websites, not of hosts, traffic or 'the Internet', and not a count of vulnerable installations. The BBC's 'roughly 70%' puts a word in Wiz's mouth that its post does not use.",
-   "settle": "The survey Wiz relied on, captured, with its population and method."
+   "settle": "The survey Wiz relied on, captured, with its population and method.",
+   "ticket": "Contradiction-1"
   },
   {
    "id": "K-002",
@@ -115,7 +116,8 @@
     }
    ],
    "reading": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises.",
-   "settle": "A KEV entry for either CVE, or a named organisation confirming a compromise."
+   "settle": "A KEV entry for either CVE, or a named organisation confirming a compromise.",
+   "ticket": "Contradiction-2"
   },
   {
    "id": "K-003",
@@ -166,7 +168,8 @@
     }
    ],
    "reading": "Affected, supported and patched are three different lists. The CVE record lists only the supported branches the PHP project fixed; the backports reach down to 7.4; Cloudflare and NVD describe what is vulnerable, which goes back further. They are compatible, but read as a contradiction unless the site says so where it shows the version table.",
-   "settle": "The PHP project stating the earliest affected version."
+   "settle": "The PHP project stating the earliest affected version.",
+   "ticket": "Contradiction-3"
   },
   {
    "id": "K-004",
@@ -205,7 +208,8 @@
     }
    ],
    "reading": "The site's claim reads as 1.57 million unpatched out of about 2.6 million hosts (about 60%). The source says 1.57 million out of the 1.58 million whose version could be read (about 99%, on the day the fix shipped); the 2.58 million is all hosts seen, most of which do not announce a version. The two framings give very different pictures. The BBC's 90% has no named counter or method and is not captured. Open, because the site states one framing as fact.",
-   "settle": "Censys's own post (the vault notes say it was not found), or a later Censys count with the same population."
+   "settle": "Censys's own post (the vault notes say it was not found), or a later Censys count with the same population.",
+   "ticket": "Contradiction-4"
   },
   {
    "id": "K-005",
@@ -235,7 +239,8 @@
     }
    ],
    "reading": "Probably the same count, described loosely by The Register. The BBC's line is verified in a fetch by this desk; it says 'a minister' without naming one or the House, so the coverage review's 'in the House of Lords' is not yet carried by any source this desk has read. Neither is captured into the vault: this record is a request to capture.",
-   "settle": "The Hansard record of the minister's answer, captured."
+   "settle": "The Hansard record of the minister's answer, captured.",
+   "ticket": "Contradiction-5"
   },
   {
    "id": "K-006",
@@ -268,7 +273,8 @@
     }
    ],
    "reading": "Breadth of collection, and an export lag. The site requires a captured source per row; the tracker accepts aggregator reports and says so per row. Part of the gap is not collection at all: the vault already holds captures of more offline operators than the site shows, because the site's export stopped at 144 sources.",
-   "settle": "Re-run the vault export; capture the tracker's sites.csv into the source watch on a schedule."
+   "settle": "Re-run the vault export; capture the tracker's sites.csv into the source watch on a schedule.",
+   "ticket": "Contradiction-6"
   },
   {
    "id": "K-007",
@@ -310,7 +316,8 @@
     }
    ],
    "reading": "10.0 was wrong. 9.2 and 9.8 are both right, on two different scales scored by two different parties, and they disagree on one input: the vendor says attack complexity is high, NIST says low. The site explains 10.0 against 9.2 but never mentions 9.8, which is what a reader checking NVD, or a scanner reporting CVSS 3.1, will see.",
-   "settle": "Already settled as a reading; the site should carry the 9.8 and say what differs."
+   "settle": "Already settled as a reading; the site should carry the 9.8 and say what differs.",
+   "ticket": "Contradiction-7"
   },
   {
    "id": "K-008",
@@ -350,7 +357,109 @@
     }
    ],
    "reading": "The advisories, written by the PHP security team per CVE, put the demonstrated FPM exploit under CVE-2026-109619, and say none was demonstrated for CVE-2026-109618. The Foundation's blog places FPM confirmation under CVE-2026-109618. The blog appears to have swapped the attribution. That RCE was shown on FPM is not in doubt; which flaw does it is.",
-   "settle": "A correction to the Foundation's post, or a PHP security team statement."
+   "settle": "A correction to the Foundation's post, or a PHP security team statement.",
+   "ticket": "Contradiction-8"
+  },
+  {
+   "id": "K-009",
+   "measure": "Did any technical detail leak on 20 October?",
+   "status": "open",
+   "claims": [
+    "leak-cve-ids",
+    "leak-hn",
+    "leak-video"
+   ],
+   "statements": [
+    {
+     "who": "The PHP Foundation",
+     "when": "2026-10-21",
+     "says": "They came with a wrong release time and a wrong CVSS score of 10.0 (the actual score is 9.2). No technical details leaked.",
+     "measures": "what circulated with the CVE IDs",
+     "sources": [
+      "phpfoundation-blog-security-release-leak"
+     ]
+    },
+    {
+     "who": "Daubois (a member of the PHP security team, own blog)",
+     "when": "2026-10",
+     "says": "A screenshot of the PHP2Shell tool, credited to Calif.IO, leaked alongside the advisory, and a short exploitation video went up and came down",
+     "measures": "a tool screenshot and a video",
+     "sources": [
+      "daubois-blog-php2shell-rumors"
+     ]
+    },
+    {
+     "who": "The Hacker News",
+     "when": "2026-10-21",
+     "says": "details about the CVE identifiers and a proof-of-concept (PoC) exploit leaked ahead of time",
+     "measures": "claims a PoC leaked",
+     "sources": [
+      "thehackernews-php2shell-4days"
+     ]
+    },
+    {
+     "who": "Equixly, citing Sansec",
+     "when": "2026-10",
+     "says": "Sansec cites a leaked screenshot of an exploit tool named PHP2Shell, whose banner claims the tool works against PHP 5.4.0 and later.",
+     "measures": "a screenshot of a tool banner",
+     "sources": [
+      "equixly-php2shell-what-we-know"
+     ]
+    }
+   ],
+   "reading": "Probably different meanings of 'technical detail'. A screenshot of a tool banner and a demonstration video show that an exploit exists, not how it works; the Foundation may mean that no root cause or code leaked. The Hacker News's 'proof-of-concept exploit leaked' is stronger than anything else in the vault carries, and no capture shows a leaked PoC. Open until the Foundation or Daubois says what the Foundation meant.",
+   "settle": "A capture of the leaked screenshot or video, or the Foundation saying what 'technical details' covers.",
+   "ticket": "Contradiction-9"
+  },
+  {
+   "id": "K-010",
+   "measure": "When was the release planned, and when did it ship?",
+   "status": "open",
+   "claims": [
+    "release-moved",
+    "release-time"
+   ],
+   "statements": [
+    {
+     "who": "The PHP Foundation",
+     "when": "2026-10-21",
+     "says": "It also moved the release from October 22nd, 14:00 UTC, to October 21st, 14:00 UTC.",
+     "measures": "the planned times",
+     "sources": [
+      "php-foundation-blog-security-release"
+     ]
+    },
+    {
+     "who": "The Hacker News",
+     "when": "2026-10-21",
+     "says": "Originally scheduled for coordinated disclosure on October 22, 2026, at 2:00 p.m. UTC",
+     "measures": "the original plan, probably from the Foundation",
+     "sources": [
+      "thehackernews-php2shell-4days"
+     ]
+    },
+    {
+     "who": "CybelAngel",
+     "when": "2026-10",
+     "says": "The disclosure was originally under embargo until Thursday 22 October at 11:00 ET; after the leak, PHP scheduled its release for 21 October",
+     "measures": "the original embargo, 15:00 UTC, attributed by others to watchTowr",
+     "sources": [
+      "cybelangel-php2shell"
+     ]
+    },
+    {
+     "who": "The php.net ChangeLog",
+     "when": "captured 2026-10-22",
+     "says": "22 Oct 2026",
+     "measures": "the date the ChangeLog gives all four releases, which shipped on 21 October",
+     "sources": [
+      "php-net-changelog-8"
+     ]
+    }
+   ],
+   "reading": "The original embargo time has two values, 14:00 UTC (the Foundation, echoed by The Hacker News) and 11:00 ET, which is 15:00 UTC (watchTowr, echoed by CybelAngel and others). The release itself is stamped 13:34 UTC on the GitHub advisories, ahead of the announced 14:00. The ChangeLog still carries the original date. The site should say 'about 14:00 UTC, advisories at 13:34' and give both original times.",
+   "settle": "A PHP project statement of the embargo time, or the pre-announcement's original text.",
+   "ticket": "Contradiction-10"
   }
  ]
 }

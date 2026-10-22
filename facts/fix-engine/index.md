@@ -14,7 +14,19 @@ The fix replaces bailout with a delayed error and an UnwindExit at a safe point,
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A6** Established●●●●●● · Record · verdict: **holds**
+
+The fix commit itself (read from a clone, raw patch hashed in the vault) says 'Replace bailout on OOM with UnwindExit' and 'Properly reset various globals that may be accessed during startup', and removes zend_bailout() from the allocator; the two advisories describe the same two mechanisms. The authoritative record carries it.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [github-php-src-fix-commit-3584a98bd](../../sources/github-php-src-fix-commit-3584a98bd/index.html) | carries | *- Replace bailout on OOM with UnwindExit - Properly reset various globals that may be accessed during startup* | 26bed812bcc7c89e |
+| [github-ghsa-w8hw-w9fx-j79w](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) | carries | *PHP uses longjmp() for out-of-memory (OOM) errors to exit the current context and abort handling of the request.* | 84ab95d3b1d538ba |
+| [github-ghsa-6wmf-4rv5-p3rp](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) | carries | *global state, such as error, session, object and extension state that is retained by a worker but points to memory owned by one request.* | 99d85c973c41c024 |
+
+Open tickets: [Finding-71](../../factcheck/index.html#Finding-71).
+
+Graded in Run-1, resting on captures up to 2026-10-22 08:15 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-18 15:26 UTCphp/php-src, read from a clone publishes [Commit 3584a98bd: Avoid state corruption via bailout (the php2shell fix) and the PHP-7.4 backport 712e60f9e](../../sources/github-php-src-fix-commit-3584a98bd/index.html)

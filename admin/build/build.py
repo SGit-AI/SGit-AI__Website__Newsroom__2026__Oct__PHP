@@ -3483,7 +3483,8 @@ def build_factcheck():
     claims = {c['id']: c for c in D['claims']}
     by_lv = Counter(a['display'] for a in A if a['verdict'] != 'refuted')
     refuted = sum(1 for a in A if a['verdict'] == 'refuted')
-    comfy = [a for a in A if a['display'] >= 5 and a['verdict'] == 'holds' and a.get('tension', 'none') == 'none' and a['kind'] != 'reading']
+    flagged = {c for t in T if t['type'] in ('finding', 'gap') and t['severity'] in ('medium', 'high') and t['status'] in ('open', 'acknowledged') for c in t['claims']}
+    comfy = [a for a in A if a['display'] >= 5 and a['verdict'] == 'holds' and a.get('tension', 'none') == 'none' and a['kind'] != 'reading' and a['id'] not in flagged]
     over = [a for a in A if a.get('status_fit') == 'overstated']
     open_t = [t for t in T if t['status'] in ('open', 'proposed', 'acknowledged')]
     last = R[-1] if R else {}
@@ -3493,7 +3494,7 @@ def build_factcheck():
     for a in sorted(A, key=lambda a: (-a['display'] if a['verdict'] != 'refuted' else 1, a['id'])):
         c = claims[a['id']]
         tk = ' '.join(f'<a href="#{E(l)}">{E(l)}</a>' for l in a.get('tickets', []))
-        rows.append(f'<tr data-lv="{-1 if a["verdict"] == "refuted" else a["display"]}" data-kind="{E(a["kind"])}" data-t="{E(a.get("tension", "none"))}" data-v="{E(a["verdict"])}">'
+        rows.append(f'<tr data-lv="{-1 if a["verdict"] == "refuted" else a["display"]}" data-kind="{E(a["kind"])}" data-t="{E(a.get("tension", "none"))}" data-v="{E(a["verdict"])}" data-f="{1 if a["id"] in flagged else 0}">'
                     f'<td><a href="../facts/{E(a["id"])}/index.html">{E(c["claim"])}</a><div class="note">{E(a["reason"])}</div></td>'
                     f'<td>{assure(a["id"])}</td><td>{E(FC_KIND_WORD.get(a["kind"], a["kind"]))}</td><td>{E(a["verdict"].replace("-", " "))}</td><td>{pill(c["status"])}</td><td>{tk}</td></tr>')
     th = ''.join(f'<th>{h}</th>' for h in ['Claim, and why it is graded so', 'Fact-check', 'Kind', 'Verdict', 'Site status', 'Tickets'])
@@ -3501,7 +3502,7 @@ def build_factcheck():
     filt = '''<form class="fc-filter" aria-label="Filter claims by assurance"><label>Show claims graded at least <select id="fc-min"><option value="-1">everything, refuted too</option><option value="0">A0</option><option value="2">A2 Reported</option><option value="4">A4 Corroborated</option><option value="5">A5 Confirmed</option><option value="6">A6 Established</option></select></label>
 <label><input type="checkbox" id="fc-op" checked> include opinions</label> <label><input type="checkbox" id="fc-tn" checked> include contested</label> <button type="button" id="fc-comfy">Only what I can be very sure of</button> <span id="fc-n" class="small"></span></form>
 <script>(function(){var m=document.getElementById("fc-min"),o=document.getElementById("fc-op"),t=document.getElementById("fc-tn"),n=document.getElementById("fc-n"),rs=document.querySelectorAll(".fc-grid tbody tr");
-function f(){var k=0;rs.forEach(function(r){var s=+r.dataset.lv>=+m.value&&(o.checked||r.dataset.kind!=="reading")&&(t.checked||r.dataset.t==="none");if(+m.value>=5&&r.dataset.v!=="holds")s=false;r.hidden=!s;if(s)k++});n.textContent=k+" of "+rs.length+" claims shown";}
+function f(){var k=0;rs.forEach(function(r){var s=+r.dataset.lv>=+m.value&&(o.checked||r.dataset.kind!=="reading")&&(t.checked||r.dataset.t==="none");if(+m.value>=5&&(r.dataset.v!=="holds"||r.dataset.f==="1"))s=false;r.hidden=!s;if(s)k++});n.textContent=k+" of "+rs.length+" claims shown";}
 [m,o,t].forEach(function(x){x.addEventListener("change",f)});document.getElementById("fc-comfy").addEventListener("click",function(){m.value="5";o.checked=false;t.checked=false;f()});f();})();</script>'''
     ks = []
     for k in K:
@@ -3509,19 +3510,19 @@ function f(){var k=0;rs.forEach(function(r){var s=+r.dataset.lv>=+m.value&&(o.ch
         ks.append(f'<article class="role" id="{E(k["id"])}"><h3>{E(k["measure"])} <span class="st st-{"contradicted" if k["status"] == "open" else "confirmed"}">{E(k["status"])}</span></h3><ul>{st}</ul><p><b>The desk\'s reading.</b> {E(k["reading"])}</p>{("<p><b>What would settle it.</b> " + E(k["settle"]) + "</p>") if k.get("settle") else ""}<p class="small">{E(k["id"])}{(" &middot; ticket " + E(k["ticket"])) if k.get("ticket") else ""}{(" &middot; claims: " + ", ".join(f"<a href=../facts/{E(c)}/index.html>{E(c)}</a>" for c in k.get("claims", []))) if k.get("claims") else ""}</p></article>')
     def trow(t):
         extra = ''
-        if t['type'] == 'new-evidence' and t.get('url'):
+        if t['type'] == 'evidence' and t.get('url'):
             extra = f'<div class="note">Found at <a href="{E(t["url"])}" rel="noopener">{E(re.sub(r"^https?://", "", t["url"])[:70])}</a>, {E(t["retrieved_at"])}, sha256 <code>{E(t["sha256"][:16])}</code>. Not cited until captured.{(" <q>" + E(t["excerpt"]) + "</q>") if t.get("excerpt") else ""}</div>'
         about = ', '.join(f'<a href="../facts/{E(c)}/index.html">{E(c)}</a>' for c in t['claims'] if c in claims)
         return [f'<span id="{E(t["label"])}">{E(t["label"])}</span>', f'<b>{E(t["title"])}</b><div class="note">{E(t["description"])}</div>{extra}', E(t['severity']), f'<span class="st st-{"unverified" if t["status"] in ("open", "proposed") else "confirmed"}">{E(t["status"])}</span>', about]
-    groups = OrderedDict([('finding', 'Findings: things on this site to change'), ('contradiction', 'Contradictions between sources'), ('evidence-gap', 'Evidence gaps'), ('new-evidence', 'New evidence found outside the vault')])
+    groups = OrderedDict([('finding', 'Findings: things on this site to change'), ('contradiction', 'Contradictions between sources'), ('gap', 'Evidence gaps'), ('evidence', 'New evidence found outside the vault')])
     tix = ''.join(section('t-' + g, f'{title} ({sum(1 for t in T if t["type"] == g)})', table(['Ticket', 'What', 'Severity', 'Status', 'About'], [trow(t) for t in T if t['type'] == g])) for g, title in groups.items() if any(t['type'] == g for t in T))
     runs = table(['Run', 'Against', 'Checked', 'Opened', 'Summary'], [[E(r['id']), f'site v{E(r["site_version"])}, vault <code>{E(r["vault_commit"])}</code>', E(r['checked']), E(str(r.get('opened', ''))), E(r['summary'])] for r in reversed(R)])
     body = f'''
 <h1>Fact-check: how sure can you be of each claim</h1>
 <p class="lead">Every claim on this site has a status word chosen by the agent that wrote it. The fact-check desk grades each one again, independently, by opening the captures it cites and reading them: what kind of statement it is (a record, a count, a quote, an opinion), how strong the evidence is on a scale from A0 to A6, whether anything contradicts it, and whether the status word claims more than the evidence carries. Where the answer is "not as far as the site says", it opens a ticket. It highlights; it does not fix.</p>
-<p><b>{len(A)} of {len(claims)} claims graded</b>{(", last run " + E(last.get("id", "")) + " against vault commit <code>" + E(last.get("vault_commit", "")) + "</code>") if last else ""}. <b>{len(comfy)}</b> can be relied on without reservation (A5 or A6, holding as worded, uncontested, not an opinion). <b>{len(over)}</b> carry a status word stronger than their evidence. <b>{len(open_t)}</b> tickets are open.</p>
+<p><b>{len(A)} of {len(claims)} claims graded</b>{(", last run " + E(last.get("id", "")) + " against vault commit <code>" + E(last.get("vault_commit", "")) + "</code>") if last else ""}. <b>{len(comfy)}</b> can be relied on without reservation (A5 or A6, holding as worded, uncontested, not an opinion, and no open finding against their wording). <b>{len(over)}</b> carry a status word stronger than their evidence. <b>{len(open_t)}</b> tickets are open.</p>
 {section("ladder", "The spectrum of evidence", ladder + '<p>A level is earned from captures the desk opened and read, never from how often a thing is repeated: ten outlets restating one headline are one source. An open contradiction caps a claim at A1 and a dispute at A2 until it is explained. An opinion is shown as an opinion and never rises above A3 as a fact; the facts under it are graded in its note. Absence of evidence is <i>not shown</i>, which is not the same as false.</p>')}
-{section("claims", "Every claim, graded", filt + grid, 'Pick how sure you need to be. "Only what I can be very sure of" shows claims at A5 or A6 that hold as worded, are not contested, and are not opinions.')}
+{section("claims", "Every claim, graded", filt.split("<script>")[0] + grid + "<script>" + filt.split("<script>")[1], 'Pick how sure you need to be. "Only what I can be very sure of" shows claims at A5 or A6 that hold as worded, are not contested, are not opinions, and have no open finding of medium or high severity against them.')}
 {section("contradictions", "The contradiction ledger", "".join(ks) or "<p>None recorded yet.</p>", "Where the reporting disagrees. Each record keeps every statement, who made it and when, what each actually measures, and the desk's reading of why they differ. A contradiction is not resolved by picking a winner; it is explained, or it stays open.")}
 {tix}
 {section("runs", "Runs", runs, "Each run is checked against a stated site version and vault commit, so its grades can be repeated by anyone with the vault's read key.")}

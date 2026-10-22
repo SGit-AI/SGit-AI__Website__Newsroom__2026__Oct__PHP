@@ -14,7 +14,21 @@ Calif's own page does not mention a leak or a deleted video; it embeds two demo 
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A3** Echoed●●●○○○ · Event · verdict: **holds in part**
+
+The Foundation states it and the quoted phrase is verbatim; BBC, The Register, The Record and Feross echo the Foundation (one origin, A3). Daubois separately mentions a short exploitation video that went up and came down, without naming Calif. The time is uncertain: the Foundation's 'As a result of the leak and pre-announcement around 20:00 UTC' can attach '20:00 UTC' to the pre-announcement, which it puts at 19:30.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | carries | *As a result of the leak and pre-announcement around 20:00 UTC, Calif, one of the security firms that had reported the issues, mistakenly published* | a1be057adc1c5bfa |
+| [phpfoundation-blog-security-release-leak](../../sources/phpfoundation-blog-security-release-leak/index.html) | carries | *The video contributed to accelerated development of various PoCs (exploitation proof of concepts), which then increased circulation on October 21st.* | b9f29cfdc1c0cd65 |
+| [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | partial | *According to PHP, researchers at Calif then "mistakenly published a video" showing some basic details of how the flaws could be used* | c88b8c5f4c6bc07d |
+| [calif-php2shell](../../sources/calif-php2shell/index.html) | absent | *nothing that carries it* | 23afef81971778f9 |
+| [daubois-blog-php2shell-rumors](../../sources/daubois-blog-php2shell-rumors/index.html) | partial | *a short exploitation video went up and came down the same way.* | 5ef17f9886aa93f7 |
+
+Open tickets: [Contradiction-9](../../factcheck/index.html#Contradiction-9), [Finding-80](../../factcheck/index.html#Finding-80), [Finding-9](../../factcheck/index.html#Finding-9).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:32 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)

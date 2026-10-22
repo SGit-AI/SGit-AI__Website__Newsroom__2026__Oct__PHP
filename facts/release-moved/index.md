@@ -14,7 +14,23 @@ The php.net ChangeLog still dates all four releases 22 October. Wiz's X thread s
 
 ## Fact-check
 
-Not yet checked by the [fact-check desk](../../factcheck/index.html).
+**A4** Corroborated●●●●○○ measures differently status overstated · Event · verdict: **holds** · the status word overstates the evidence
+
+The new time (21 October 14:00 UTC) is in the php.net pre-announcement relayed to oss-security (record). That the original date was 22 October is carried by the Foundation and indirectly by Wiz's thread and the php.net ChangeLog; that the move was because of the leak, by the Foundation and Daubois. The original hour '14:00 UTC' rests on the Foundation alone (echoed by The Hacker News), while watchTowr (via Daubois, Huntress, CybelAngel) put the embargo at Thursday 11am ET, which is 15:00 UTC.
+
+| Capture checked | Result | What it says | sha256 of the text read |
+|---|---|---|---|
+| [php-foundation-blog-security-release](../../sources/php-foundation-blog-security-release/index.html) | carries | *It also moved the release from October 22nd, 14:00 UTC, to October 21st, 14:00 UTC.* | a1be057adc1c5bfa |
+| [openwall-oss-security-2026-10-20-34](../../sources/openwall-oss-security-2026-10-20-34/index.html) | partial | *> It is scheduled for Wednesday, 21 October 2026 at 14:00 UTC.* | 57b273733e7d5fe6 |
+| [x-wiz-io-php2shell](../../sources/x-wiz-io-php2shell/index.html) | partial | *Patch: Apply the Oct 22 security release immediately (the only complete remediation).* | 6c17977662815b0c |
+| [php-net-changelog-8](../../sources/php-net-changelog-8/index.html) | partial | *22 Oct 2026* | e39f8d2cb60ee8a5 |
+| [huntress-php2shell-rapid-response](../../sources/huntress-php2shell-rapid-response/index.html) | partial | *The team scheduled that release for Wednesday, October 21 at 14:00 UTC, a day earlier than the original embargo* | a83d744768109a61 |
+| [cybelangel-php2shell](../../sources/cybelangel-php2shell/index.html) | partial | *The disclosure was originally under embargo until Thursday 22 October at 11:00 ET; after the leak, PHP scheduled its release for 21 October* | 4ffc5347bfe22fb4 |
+| [thehackernews-php2shell-4days](../../sources/thehackernews-php2shell-4days/index.html) | partial | *Originally scheduled for coordinated disclosure on October 22, 2026, at 2:00 p.m. UTC* | c1cb63141287484c |
+
+Open tickets: [Contradiction-10](../../factcheck/index.html#Contradiction-10), [Finding-98](../../factcheck/index.html#Finding-98).
+
+Graded in Run-1, resting on captures up to 2026-10-22 11:28 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-20 20:22 UTCoss-security publishes [Upcoming Critical PHP Security Release](../../sources/openwall-oss-security-2026-10-20-34/index.html)
