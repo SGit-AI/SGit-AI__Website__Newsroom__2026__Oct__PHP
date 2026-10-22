@@ -663,7 +663,7 @@ function render(){
   after();
 }
 function footer(){
-  return '<div class="foot2">' + icon('lock') + '<span>An app on top of an encrypted SG/Vault, rendered straight from it: the link-holder holds the key; the server never sees the contents.</span><span style="margin-left:auto" class="mono">' + esc(APP_VERSION) + (D.head ? ' · vault ' + esc(D.head) : '') + '</span></div>';
+  return '<div class="foot2">' + icon('lock') + '<span>An app on top of an encrypted SG/Vault, rendered straight from it. The app, the claims, the timeline and the notes are ours (CC BY 4.0). Captured pages, screenshots and quoted words belong to their publishers and authors, are credited on each source, and are held as evidence, not for republication.</span><span style="margin-left:auto" class="mono">' + esc(APP_VERSION) + (D.head ? ' · vault ' + esc(D.head) : '') + '</span></div>';
 }
 /* images are always assigned from JS (the bridge routes img.src) */
 function after(){
