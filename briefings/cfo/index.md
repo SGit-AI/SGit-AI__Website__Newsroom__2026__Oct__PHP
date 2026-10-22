@@ -1,10 +1,17 @@
 # Briefing for a cfo: What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?
 
-The php2shell story for a cfo: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a cfo: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · CFO · from the same 70 claims, selected and ordered for one reader
+Briefing for Quinn, cfo · ******Plain English · from the same 70 claims, selected and ordered for one reader
 
 # What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?
+
+Q
+The answer in thirty seconds
+
+The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. No named organisation has confirmed a compromise. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
+
+[Read the site as Quinn →](../../explained/index.html)
 
 The financial question has two sides and the evidence is lopsided: downtime is documented and measurable; breach is claimed and unconfirmed. Insurers are already treating this as an aggregation event.
 
@@ -15,8 +22,32 @@ The financial question has two sides and the evidence is lopsided: downtime is d
 - Figures you will hear and should not use in a forecast: 70% of the Internet (a share of websites restated), 30 million websites (no basis), 22.6 million systems (method not given). Use your own inventory count.
 - No named organisation has confirmed a compromise as of the latest capture. That is a statement about evidence, not about safety.
 
+## Your reading path
+- [Your briefing](../../briefings/cfo/index.html) 3 min
+- [Explained from scratch](../../explained/index.html) 6 min
+- [Impact: offline vs compromised](../../impact/index.html) 2 min
+- [The numbers](../../numbers/index.html) 2 min
+- [In context: 2008 to 2026](../../context/index.html) 3 min
+
+About 16 minutes in all. Choose *read as Quinn* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- cost of acting against cost of not acting
+- whether a precautionary shutdown is covered
+- which figures are safe in a forecast
+
+### What you can skip
+- versions and settings
+- the code
+
+## Words you will meet
+
+[Patch](../../glossary/index.html#patch)[Unauthenticated](../../glossary/index.html#unauthenticated)[Primary source](../../glossary/index.html#primary)[php2shell](../../glossary/index.html#php2shell)[CVE](../../glossary/index.html#cve)[Exploit, exploitation](../../glossary/index.html#exploit)[CISA](../../glossary/index.html#cisa)[NCSC](../../glossary/index.html#ncsc)[Web server](../../glossary/index.html#web-server)[PHP](../../glossary/index.html#php)[KEV](../../glossary/index.html#kev)[Remote code execution (RCE)](../../glossary/index.html#rce)[Proof of concept (PoC)](../../glossary/index.html#poc)[Honeypot](../../glossary/index.html#honeypot)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
+
 ## The facts this rests on
-- confirmed two or more primary sources agree, or the fact was counted from a captured file
+Show the 29 claims behind this briefing, each with its status and sources- confirmed two or more primary sources agree, or the fact was counted from a captured file
 - reported one party says so, and it has not been contradicted
 - disputed the sources disagree, and both readings are shown
 - contradicted a primary source says otherwise
@@ -55,6 +86,8 @@ The financial question has two sides and the evidence is lopsided: downtime is d
 | Criminals are using AI to 'vibe code' an attack method | unnamed researchers, via the BBC | unverified | 0/1 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
 | watchTowr sees active exploitation attempts and lists the flaws as exploited in the wildwatchtowr.com returns HTTP 403 to this site's capture tool; known only from search summaries. | watchTowr | unverified | 2/2 | [watchTowr](../../sources/watchtowr-php2shell/index.html) [watchTowr](../../sources/watchtowr-php2shell-faq/index.html) |
 
+Every sentence above rests on these rows. They are folded away because they are written in the sources' own vocabulary; the glossary explains each term.
+
 ## What is still open
 - Who first leaked the CVE IDs on 20 October, and where. The PHP Foundation does not say; a PHP security team member points to an anonymous Hacker News post. No copy of that post is in the vault.
 - Whether the deleted Calif video is the one now embedded on Calif's own write-up. Calif's page does not mention the leak.
@@ -62,8 +95,8 @@ The financial question has two sides and the evidence is lopsided: downtime is d
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/cfo/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/cfo/index.html

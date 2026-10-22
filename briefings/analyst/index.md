@@ -1,10 +1,17 @@
 # Briefing for a analyst or advisor: How did coordinated disclosure fail, and what does AI-assisted discovery change?
 
-The php2shell story for a analyst or advisor: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a analyst or advisor: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · Analyst or advisor · from the same 70 claims, selected and ordered for one reader
+Briefing for Blake, analyst or policy advisor · ******Some technical · from the same 70 claims, selected and ordered for one reader
 
 # How did coordinated disclosure fail, and what does AI-assisted discovery change?
+
+B
+The answer in thirty seconds
+
+A bug class seen and shelved in 2024 was turned into working exploits by three AI-assisted teams within three weeks in August 2026. The disclosure leaked 22.5 hours early. Agencies split on the hardest question, offline or not, along lines that look institutional rather than technical.
+
+[Read the site as Blake →](../../discovery/index.html)
 
 What this incident says about coordinated disclosure once models can find bugs, and once a leak can become a proof of concept faster than a patch can ship. The claims below are the evidence; the reading is the site's.
 
@@ -14,6 +21,32 @@ What this incident says about coordinated disclosure once models can find bugs, 
 - The defensive side moved early too: WAF rules 9 hours ahead, images 6 hours ahead (against the embargo), agencies within the hour. The system is faster in both directions.
 - The public numbers were not produced for decision-making and should not be used for it; the one agency that counted got about 6,000 in a country of 1.9 million people.
 - Agencies diverged on the hardest question, offline or not, along lines that look institutional rather than technical.
+
+## Your reading path
+- [Your briefing](../../briefings/analyst/index.html) 3 min
+- [Who found it](../../discovery/index.html) 2 min
+- [How disclosure broke](../../leak/index.html) 1 min
+- [In context: 2008 to 2026](../../context/index.html) 3 min
+- [The agencies](../../agencies/index.html) 1 min
+- [The numbers](../../numbers/index.html) 2 min
+
+About 12 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- how coordinated disclosure failed
+- what AI-assisted discovery changes
+- why agencies diverged
+- the precedent
+
+### What you can skip
+- server settings
+- the code
+
+## Words you will meet
+
+[Exploit, exploitation](../../glossary/index.html#exploit)[Patch](../../glossary/index.html#patch)[Proof of concept (PoC)](../../glossary/index.html#poc)[Coordinated disclosure](../../glossary/index.html#disclosure)[Honeypot](../../glossary/index.html#honeypot)[WAF](../../glossary/index.html#waf)[Primary source](../../glossary/index.html#primary)[PHP](../../glossary/index.html#php)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Out of memory (OOM)](../../glossary/index.html#oom)[Vulnerability](../../glossary/index.html#vulnerability)[CVE](../../glossary/index.html#cve)[CVSS](../../glossary/index.html#cvss)[php2shell](../../glossary/index.html#php2shell)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
 ## The facts this rests on
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -73,8 +106,8 @@ What this incident says about coordinated disclosure once models can find bugs, 
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/analyst/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/analyst/index.html

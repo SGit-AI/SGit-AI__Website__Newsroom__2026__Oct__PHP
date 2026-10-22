@@ -4,6 +4,8 @@
 
 # The timeline
 
+In plain English Everything that happened, in order, from a 2024 audit to this morning, each line tied to the page that says so.
+
 68 events from the 2024 audit to the latest capture, each dated as its source states it. Times are UTC; where this site converted from a local time, or inferred a date from a phrase such as *two days ago*, the row says so. A row that lists several sources is one that at least two accounts carry; a row with one source is that party's account.
 
 - stated the source states this date or time
@@ -122,4 +124,4 @@ The sequence as a graph of who said what first is on [Who found it](../discovery
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/timeline/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/timeline/index.html

@@ -1,0 +1,108 @@
+# Briefing for a website owner: My website runs on WordPress or similar: am I affected, and what do I ask my host?
+
+The php2shell story for a website owner: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+
+Briefing for Casey, website owner · ******Plain English · from the same 70 claims, selected and ordered for one reader
+
+# My website runs on WordPress or similar: am I affected, and what do I ask my host?
+
+C
+The answer in thirty seconds
+
+If your website runs on WordPress, Drupal, Joomla or anything else written in PHP, it is in scope: the flaw is in PHP itself, underneath your site. Updating plugins does not fix it. If someone hosts the site for you, ask them in writing whether PHP has been updated to a fixed version and restarted. If you run the server yourself, update PHP today.
+
+[Read the site as Casey →](../../explained/index.html)
+
+You do not need to understand the bug to deal with it. What you need is to know whose job the update is, and the exact question to ask. This page gives you both.
+
+## What to decide or do
+- **Find out whether your site runs on PHP.** WordPress, WooCommerce, Drupal, Joomla, Magento, PrestaShop, Moodle and most hosting control panels do. If you are not sure, ask whoever built the site.
+- **Updating WordPress, plugins or themes does not fix this.** The flaw is in PHP itself, one layer down. It has to be fixed on the server.
+- **If someone hosts the site for you**, send them this, in writing: *Has PHP on the server running my site been updated to 8.5.12, 8.4.27, 8.3.36 or 8.2.35, or to your distribution's fixed package, and have the PHP processes been restarted since? If my site is on PHP 8.1 or older, what is your plan?* Keep the reply.
+- **If you run the server yourself**, update PHP today and restart it. The [step-by-step list](../../playbook/index.html) has the temporary settings for a server you cannot update straight away.
+- **If your site is on PHP 8.1 or older**, there is no ready-made fix. Ask your developer or host about moving to a supported version now; it is overdue anyway.
+- **Keep calm about being hacked.** No organisation has confirmed a break-in as of the latest capture. If your host updated promptly, you are in the same position as almost everyone else.
+
+## Your reading path
+- [Your briefing](../../briefings/site-owner/index.html) 4 min
+- [Explained from scratch](../../explained/index.html) 6 min
+- [If you run PHP](../../playbook/index.html) 3 min
+- [Affected systems](../../affected/index.html) 1 min
+
+About 14 minutes in all. Choose *read as Casey* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- am I affected
+- is it my job or my host's
+- exactly what to ask the host
+- whether updating WordPress plugins helps
+
+### What you can skip
+- the code
+- the disclosure politics
+- the agency comparison
+
+## Words you will meet
+
+[PHP](../../glossary/index.html#php)[Primary source](../../glossary/index.html#primary)[CVSS](../../glossary/index.html#cvss)[Vulnerability](../../glossary/index.html#vulnerability)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Remote code execution (RCE)](../../glossary/index.html#rce)[mod_php](../../glossary/index.html#mod-php)[Out of memory (OOM)](../../glossary/index.html#oom)[longjmp](../../glossary/index.html#longjmp)[CVE](../../glossary/index.html#cve)[Exploit, exploitation](../../glossary/index.html#exploit)[Proof of concept (PoC)](../../glossary/index.html#poc)[PHP-FPM](../../glossary/index.html#fpm)[SAPI](../../glossary/index.html#sapi)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
+
+## The facts this rests on
+Show the 33 claims behind this briefing, each with its status and sources- confirmed two or more primary sources agree, or the fact was counted from a captured file
+- reported one party says so, and it has not been contradicted
+- disputed the sources disagree, and both readings are shown
+- contradicted a primary source says otherwise
+- unverified even the reporting outlet could not check it
+- p/n primary sources among the n cited; a blocked capture is counted and marked
+
+| Claim | Who says it | Status | Primary | Sources |
+|---|---|---|---|---|
+| Two critical vulnerabilities, CVE-2026-109618 and CVE-2026-109619, each CVSS v4.0 9.2, fixed in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 | PHP Group (CNA), GitHub advisories, php.net | confirmed | 5/5 | [CVE record](../../sources/cve-cve-2026-109618/index.html) [CVE record](../../sources/cve-cve-2026-109619/index.html) [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [php.net](../../sources/php-net-advisory/index.html) |
+| Unauthenticated RCE over HTTP against Apache mod_php with default settings, before any application code runs | PHP security team (GHSA, oss-security), php.net | confirmed | 3/3 | [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [oss-security](../../sources/openwall-oss-security-2026-10-21-6/index.html) [php.net](../../sources/php-net-advisory/index.html) |
+| The fix removes longjmp() for out-of-memory errors in favour of a delayed soft OOM at the next VM safe point and a hard OOM via _exit(); the changelog line is 'Avoid state corruption via bailout' | PHP security team | confirmed | 3/3 | [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [php.net](../../sources/php-net-changelog-8/index.html) [php-src](../../sources/github-php-src-branch-7.4-backport/index.html) |
+| Updating is the only complete mitigation; the configuration measures reduce exposure to specific paths and do not make an installation safe | php.net; PHP security team | confirmed | 3/3 | [php.net](../../sources/php-net-advisory/index.html) [oss-security](../../sources/openwall-oss-security-2026-10-21-7/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) |
+| Triggering the bug is much easier than turning it into code execution; the CVSS vector says attack complexity highFastly: 'most deployments may be safe from RCE. Do not assume this holds true for you.' Imperva: five demonstrated techniques, three via session upload progress; about 67 KB of memory disclosed per attack. | Imperva; Fastly; the CVE record | confirmed | 3/3 | [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html) [Fastly](../../sources/fastly-blog-php2shell/index.html) [CVE record](../../sources/cve-cve-2026-109618/index.html) |
+| Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on out-of-memory, and request globals that survive a failed requestThe fix replaces bailout with a delayed error and an UnwindExit at a safe point, adds a hard limit that _exits, and resets the globals. See the code page. | php/php-src fix commit; the GitHub advisories | confirmed | 3/3 | [php/php-src , read from a clone](../../sources/github-php-src-fix-commit-3584a98bd/index.html) [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) |
+| Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCSTwo researcher parties, no third-party reproduction in the vault. The demo videos were not downloaded. | Calif; Wiz for WordPress and Drupal | reported | 2/2 | [Calif](../../sources/calif-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html) |
+| None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechanism; a lab reproduction of the leaked PoC's precondition produced a clean 200The Hacker News says the same of the public code. Fastly: working RCE needs knowledge of the running binary's layout on x86_64. | rjmendez (detection author) citing VulnCheck; Huntress | reported | 1/2 | [rjmendez, GitHub](../../sources/github-rjmendez-phpup-2026/index.html) [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) |
+| Patching the demonstrated paths does not make the bailout mechanism safe; more paths should be expectedA position, from a vendor; consistent with the Fediverse report of a third bug. | Fastly | reported | 1/2 | [Fastly](../../sources/fastly-blog-php2shell/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) |
+| Remote code execution is confirmed on PHP-FPMGHSA-w8hw (CVE-2026-109618): 'no complete FPM exploit has been demonstrated for this SAPI'. The Foundation blog: RCE 'was also confirmed on PHP-FPM through application-level code paths'. GHSA-6wmf (CVE-2026-109619): session lifecycle RCE 'validated against mod_php and FPM'. The accounts may refer to different CVEs. | PHP Foundation blog; GHSA-6wmf for the session path | disputed | 4/4 | [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [oss-security](../../sources/openwall-oss-security-2026-10-21-6/index.html) |
+| All PHP versions from 5 onwards are affected by at least one of the flawsThe CVE records list only 8.2 to 8.5 with defaultStatus 'unaffected'. php.net published source backports for 7.4, 8.0 and 8.1, which implies they are affected. A scanner that trusts the CVE record will miss 7.4 to 8.1. | NCSC-NL; Wiz ('>= 5.4'); CERT-FR (5.x, 6.x, 7.x, 8.0, 8.1) | disputed | 3/4 | [NCSC-NL](../../sources/ncsc-nl-advisories/index.html) [Wiz on X](../../sources/x-wiz-io-php2shell/index.html) [CERT-FR](../../sources/certfr-2026-ale-014/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) |
+| A web application firewall may provide some protection until systems are patchedSwiss BACS: 'Even a web application firewall alone is not sufficient.' Cloudflare says its rules blocked the traffic it saw and that attackers mutated payloads to get past them. | CISA | disputed | 3/3 | [CISA](../../sources/cisa-alert-php-20261021/index.html) [BACS](../../sources/ch-bacs-warnung-php/index.html) [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) |
+| The flaws are CVSS 10.0The PHP Foundation: 'a wrong CVSS score of 10.0 (the actual score is 9.2)'. Daubois traces it to a social post relayed by Phoenix Security and to watchTowr via Cyber Daily. | social posts on 20 October, relayed by a vendor and a news site | contradicted | 1/2 | [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [Daubois](../../sources/daubois-blog-php2shell-rumors/index.html) |
+| The 8.5.12 fix may be incomplete, or there is a third, different bugPer a Matrix channel, Canonical asked PHP and 'was told that it's unrelated and not a real issue'. Second-hand. Nothing from PHP on the list at capture. | Fediverse posts relayed to oss-security by Aaron Rainbolt and Yves-Alexis Perez | unverified | 0/1 | [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) |
+| If an immediate update is not feasible, take the system offline until it can be fully mitigatedX post 13:45:58Z 21 October (10.1 million views at capture) and the press release. | NSA Cybersecurity | confirmed | 2/2 | [NSA Cyber on X](../../sources/nsa-x-2112903220209098897/index.html) [NSA](../../sources/nsa-press-php-4630238/index.html) |
+| Organisations that cannot update immediately, or that run PHP 8.1 or older, should take PHP-based systems offline | CISA | confirmed | 1/1 | [CISA](../../sources/cisa-alert-php-20261021/index.html) |
+| Edge protections went live hours before disclosure: Cloudflare at 03:02 UTC; Imperva, Akamai and Fastly on 21 October; Fortinet signatures by 22 OctoberEvery vendor says the same two things: it is a stopgap, and patch anyway. | the vendors | confirmed | 5/5 | [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html) [Akamai Security Research](../../sources/akamai-blog-php-core-rce/index.html) [Fastly](../../sources/fastly-blog-php2shell/index.html) [Fortinet Community](../../sources/fortinet-fortiweb-php2shell/index.html) |
+| The risks require immediate patching across United States Government departments and agenciesNo CISA emergency directive was visible on the CISA home page at capture. | NSA | reported | 1/2 | [NSA](../../sources/nsa-press-php-4630238/index.html) [CISA](../../sources/cisa-home/index.html) |
+| 'Where immediate remediation is not feasible, organisations should consider taking the system offline until it can be fully mitigated'That sentence is not on the NCSC page as captured at 08:09Z on 22 October. The page's offline advice is step 4 of 6 and is worded differently. The page was modified at 07:30Z that morning. The sentence's opening matches the Canadian CCCS text. | UK NCSC, as quoted by the BBC | disputed | 2/3 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html) [CCCS](../../sources/cccs-al26-026/index.html) |
+| The UK's NCSC, the NSA and their counterparts in the EU and Australia advise taking systems offline where patching is not feasibleAustralia's ACSC gives no offline advice. CERT-EU says isolate. The Netherlands, Italy, Japan and New Zealand give no offline advice. | BBC | contradicted | 4/6 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [ACSC](../../sources/acsc-alert-php/index.html) [CERT-EU](../../sources/certeu-sa-2026-018/index.html) [NCSC-NL](../../sources/ncsc-nl-php2shell/index.html) [ACN / CSIRT Italia](../../sources/acn-it-php2shell/index.html) [JPCERT/CC](../../sources/jpcert-at260033/index.html) |
+| CISA has not observed exploitation; neither CVE is in the Known Exploited Vulnerabilities catalogCatalog version 2026.10.21 fetched 2026-10-22T08:15Z, 1,754 entries. A point-in-time negative finding. | CISA | confirmed | 3/3 | [CISA](../../sources/cisa-alert-php-20261021/index.html) [CISA](../../sources/cisa-kev-json/index.html) [CVE record](../../sources/cve-cve-2026-109618/index.html) |
+| Amazon and Cloudflare saw sites being probed for the flawBoth companies have since said so themselves. | Alan Woodward, via the BBC; confirmed by both companies' own posts | confirmed | 2/3 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) |
+| The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one dayCounted from the captured catalog. | CISA KEV catalog; Akamai (2024) | confirmed | 3/3 | [CISA](../../sources/cisa-kev-json/index.html) [CVE record](../../sources/cve-cve-2024-4577/index.html) [Akamai Security Research](../../sources/akamai-blog-cve-2024-4577-one-day/index.html) |
+| There is no evidence yet that hackers have exploited the flaw | Ryan Austin, Calif, on Radio 4, 08:00 BST 22 October | reported | 0/1 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
+| Reports of active exploitation existThe only agency saying so, and it does not say whose reports. | NCSC New Zealand | reported | 1/1 | [NCSC New Zealand](../../sources/ncsc-nz-alert-php/index.html) |
+| An exploit attempt hit an Amazon honeypot on 17 October from an anonymisation network; proof-of-concept attempts began about 02:00 UTC on 21 October from multiple actors; after release 'PHP2Shell is now being broadly exploited in the wild'Primary party. Amazon adds: 'it's unclear if any of these attempts would have succeeded in real-world systems'. Attempts against honeypots, not compromises of victims. | Amazon (CJ Moses, AWS Security Blog) | reported | 1/2 | [Amazon](../../sources/aws-security-blog-madpot/index.html) [THN](../../sources/thehackernews-php2shell-4days/index.html) |
+| Cloudflare observed attack traffic targeting its customers after the leak, with attackers mutating payloadsPrimary party, no volumes. | Cloudflare | reported | 1/1 | [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) |
+| Automated exploitation attempts were seen in Latvia; none succeededPrimary source. | CERT.LV | reported | 1/1 | [CERT.LV](../../sources/certlv-php-preventive/index.html) |
+| Exploit attempts across Cloudflare's network: thousands in the ten hours before announcement, tens of thousands within 45 minutes after, hundreds of thousands within two hours, millions by 22 October 01:25 UTCPrimary party. Attempts, not compromises; no blocked count; 1.4 million views at capture. | Matthew Prince, Cloudflare CEO, on X | reported | 1/1 | [Matthew Prince , Cloudflare CEO on](../../sources/x-eastdakota-php2shell-stats/index.html) |
+| No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosure monitoringA negative finding from a party that had the details under embargo. | Imperva Threat Research | reported | 1/1 | [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html) |
+| No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no public exploit code known to Huntress | Huntress | reported | 1/1 | [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) |
+| Criminals are using AI to 'vibe code' an attack method | unnamed researchers, via the BBC | unverified | 0/1 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
+| watchTowr sees active exploitation attempts and lists the flaws as exploited in the wildwatchtowr.com returns HTTP 403 to this site's capture tool; known only from search summaries. | watchTowr | unverified | 2/2 | [watchTowr](../../sources/watchtowr-php2shell/index.html) [watchTowr](../../sources/watchtowr-php2shell-faq/index.html) |
+
+Every sentence above rests on these rows. They are folded away because they are written in the sources' own vocabulary; the glossary explains each term.
+
+## What is still open
+- Who first leaked the CVE IDs on 20 October, and where. The PHP Foundation does not say; a PHP security team member points to an anonymous Hacker News post. No copy of that post is in the vault.
+- Whether the deleted Calif video is the one now embedded on Calif's own write-up. Calif's page does not mention the leak.
+- Whether any site was actually compromised before it was patched or taken offline. Every claim of exploitation so far is of attempts, probes or honeypot hits.
+- Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
+- Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
+
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
+
+
+---
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/site-owner/index.html

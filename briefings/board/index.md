@@ -1,10 +1,17 @@
 # Briefing for a board member or executive: Are we exposed, what is it costing us, and who owns the decision to pull a system?
 
-The php2shell story for a board member or executive: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a board member or executive: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · Board member or executive · from the same 70 claims, selected and ordered for one reader
+Briefing for Jordan, board member or executive · ******Plain English · from the same 70 claims, selected and ordered for one reader
 
 # Are we exposed, what is it costing us, and who owns the decision to pull a system?
+
+J
+The answer in thirty seconds
+
+A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. No named organisation has confirmed a break-in. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
+
+[Read the site as Jordan →](../../explained/index.html)
 
 Three decisions sit with you: whether the organisation is exposed, what it costs to find out, and who may pull a system. The facts below are the ones those decisions turn on. Everything marked *reported* is one party's word; nothing below is a confirmed compromise anywhere.
 
@@ -15,8 +22,34 @@ Three decisions sit with you: whether the organisation is exposed, what it costs
 - What would a compromise of our most exposed PHP system reach: which data, which credentials, which other systems?
 - What is our evidence that we were not exploited between the leak on 20 October and our patch?
 
+## Your reading path
+- [Your briefing](../../briefings/board/index.html) 3 min
+- [Explained from scratch](../../explained/index.html) 6 min
+- [Impact: offline vs compromised](../../impact/index.html) 2 min
+- [The agencies](../../agencies/index.html) 1 min
+- [If you run PHP](../../playbook/index.html) 3 min
+
+About 15 minutes in all. Choose *read as Jordan* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- are we exposed
+- who owns the decision to take a system offline
+- what to ask the CISO
+- which headline figures not to use
+
+### What you can skip
+- SAPIs and settings
+- the C code
+- the leak forensics
+
+## Words you will meet
+
+[PHP](../../glossary/index.html#php)[Patch](../../glossary/index.html#patch)[Exploit, exploitation](../../glossary/index.html#exploit)[SAPI](../../glossary/index.html#sapi)[Primary source](../../glossary/index.html#primary)[CVE](../../glossary/index.html#cve)[KEV](../../glossary/index.html#kev)[CISA](../../glossary/index.html#cisa)[php2shell](../../glossary/index.html#php2shell)[Remote code execution (RCE)](../../glossary/index.html#rce)[NCSC](../../glossary/index.html#ncsc)[Proof of concept (PoC)](../../glossary/index.html#poc)[Honeypot](../../glossary/index.html#honeypot)[Coordinated disclosure](../../glossary/index.html#disclosure)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
+
 ## The facts this rests on
-- confirmed two or more primary sources agree, or the fact was counted from a captured file
+Show the 35 claims behind this briefing, each with its status and sources- confirmed two or more primary sources agree, or the fact was counted from a captured file
 - reported one party says so, and it has not been contradicted
 - disputed the sources disagree, and both readings are shown
 - contradicted a primary source says otherwise
@@ -61,6 +94,8 @@ Three decisions sit with you: whether the organisation is exposed, what it costs
 | Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident' | the council's social post, via Oxford Chronicle | reported | 0/1 | [Oxford Chronicle](../../sources/oxfordchronicle-councils-offline/index.html) |
 | Edinburgh and Oxford councils, the Met Police and the Office for Budget Responsibility were unavailable; Bristol, Lambeth and Barnet council sites showed errors | LBC; Insurance Business | reported | 0/2 | [LBC](../../sources/lbc-uk-websites-offline/index.html) [Insurance Business](../../sources/insurancebusiness-uk-councils-met/index.html) |
 
+Every sentence above rests on these rows. They are folded away because they are written in the sources' own vocabulary; the glossary explains each term.
+
 ## What is still open
 - Who first leaked the CVE IDs on 20 October, and where. The PHP Foundation does not say; a PHP security team member points to an anonymous Hacker News post. No copy of that post is in the vault.
 - Whether the deleted Calif video is the one now embedded on Calif's own write-up. Calif's page does not mention the leak.
@@ -68,8 +103,8 @@ Three decisions sit with you: whether the organisation is exposed, what it costs
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.html

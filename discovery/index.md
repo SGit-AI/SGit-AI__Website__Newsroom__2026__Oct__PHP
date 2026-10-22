@@ -4,6 +4,8 @@ Calif, OpenAI and Wiz each claim the discovery of php2shell; their own timelines
 
 # Who found it, and how
 
+In plain English Who found the flaws (three research teams, all using AI help) and what the AI actually did, as far as anyone has said.
+
 Three research parties say they found php2shell, and all three say AI helped. Their own timelines, placed side by side, do not conflict on dates: Calif first (1 to 11 August), OpenAI the same day as Calif's report, Wiz independently eight days later. They conflict on framing: Wiz's *Wiz Research uncovers*, OpenAI's *frontier AI was able to find this vulnerability ahead of attackers*, and a Community Note on OpenAI's post pointing at Calif's August hash.
 
 ### Calif
@@ -66,4 +68,4 @@ What is established is the shape: a bug class seen in 2024 and left because nobo
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/discovery/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/discovery/index.html

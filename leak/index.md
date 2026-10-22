@@ -4,6 +4,8 @@ Hour by hour from the first circulation of the CVE IDs on 20 October to the rele
 
 # How the disclosure broke
 
+In plain English The plan was to publish the fix and the details together on 22 October. The secret leaked on the 20th; this page is the hour-by-hour account.
+
 The plan was 22 October at 14:00 UTC. From about 15:00 UTC on 20 October the CVE IDs were loose with a wrong score; by 19:30 the project had pre-announced a release a day early; by 20:00 one of the reporters had published a demonstration video; by 23:00 mitigation advice was going to critical-infrastructure providers; by 02:00 on the 21st Amazon was seeing proof-of-concept attempts; by 03:02 Cloudflare's rules were live; by 07:41 Chainguard had shipped patched images; by 08:36 a sensor network had its first hit. The release went out at 13:34 UTC. Every one of those times is from a party's own account, and the parties disagree on what was leaked and by whom.
 
 | When (UTC) | What | Time is | Sources |
@@ -62,4 +64,4 @@ Calif's own write-up has a timeline that ends *October 21 Patched versions relea
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/leak/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/leak/index.html

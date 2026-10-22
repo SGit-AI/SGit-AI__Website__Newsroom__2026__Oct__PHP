@@ -4,6 +4,8 @@ The manifest of the php2shell evidence vault: every captured source with its pub
 
 # Every source, every capture, every hash
 
+In plain English Every web page this site relied on, with the time it was saved and a fingerprint proving it has not been altered since.
+
 144 sources, 73 of them primary, 137 dated captures and 857 hashed files, from the evidence vault at commit `200d08971937`. 10 sources could not be read because the site blocked an automated browser; the block, with the challenge page's hash, is the record. The captures are third-party pages held privately and are not republished; this page links to the originals and lists the SHA-256 of every captured file, so that anyone the vault is later opened to can check that the bytes are the ones the agents saw, at the minute they saw them.
 
 | Kind | Sources |
@@ -1887,4 +1889,4 @@ capture 20261022T113225Z · HTTP 200 · https://yle.fi/a/74-20252600- `headers.j
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/index.html

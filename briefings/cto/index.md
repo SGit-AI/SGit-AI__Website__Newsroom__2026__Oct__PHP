@@ -1,10 +1,17 @@
 # Briefing for a cto: What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?
 
-The php2shell story for a cto: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a cto: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · CTO · from the same 70 claims, selected and ordered for one reader
+Briefing for Avery, cto · ******Some technical · from the same 70 claims, selected and ordered for one reader
 
 # What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?
+
+A
+The answer in thirty seconds
+
+Patch internet-facing mod_php first, then FPM, then the rest; restart every worker and rebuild every image. The fix changes how PHP behaves when memory runs out, so test under load. 7.4 to 8.1 have no release. Afterwards, invest in an inventory that answers 'where is PHP' in minutes.
+
+[Read the site as Avery →](../../flaws/index.html)
 
 What the patch changes, what it breaks, and what to change afterwards. The fix is a redesign of how PHP handles running out of memory, so behaviour under memory pressure changes, and it touched 389 files.
 
@@ -14,6 +21,30 @@ What the patch changes, what it breaks, and what to change afterwards. The fix i
 - 7.4, 8.0 and 8.1 have a source backport and no release: that is a migration you are now doing, not a patch.
 - The engineering lesson is time-to-pull-the-plug: how long it takes to take one system off the internet cleanly, with a holding page and a way back, is a property of your platform and it was measured this week whether you wanted it or not.
 - What to change: an inventory that answers "where is PHP" in minutes; worker-process monitoring (a PHP worker spawning a shell is the signal); a rehearsed isolate runbook with a named owner.
+
+## Your reading path
+- [Your briefing](../../briefings/cto/index.html) 3 min
+- [The two flaws](../../flaws/index.html) 4 min
+- [The code](../../code/index.html) 7 min
+- [If you run PHP](../../playbook/index.html) 3 min
+- [Detection and defence](../../defence/index.html) 3 min
+
+About 20 minutes in all. Choose *read as Avery* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- patch order
+- what the fix changes in behaviour
+- the end-of-life versions
+- time-to-pull-the-plug as a platform property
+
+### What you can skip
+- the disclosure politics
+
+## Words you will meet
+
+[PHP](../../glossary/index.html#php)[mod_php](../../glossary/index.html#mod-php)[PHP-FPM](../../glossary/index.html#fpm)[Patch](../../glossary/index.html#patch)[Backport](../../glossary/index.html#backport)[Shell](../../glossary/index.html#shell)[End of life](../../glossary/index.html#eol)[Primary source](../../glossary/index.html#primary)[CVSS](../../glossary/index.html#cvss)[Vulnerability](../../glossary/index.html#vulnerability)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Remote code execution (RCE)](../../glossary/index.html#rce)[Out of memory (OOM)](../../glossary/index.html#oom)[longjmp](../../glossary/index.html#longjmp)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
 ## The facts this rests on
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -57,8 +88,8 @@ What the patch changes, what it breaks, and what to change afterwards. The fix i
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/cto/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/cto/index.html

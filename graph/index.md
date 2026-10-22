@@ -4,6 +4,8 @@
 
 # The story as a graph
 
+In plain English A picture of which statements rest on which sources. Thick bundles mean well supported.
+
 209 nodes and 281 edges: 70 claims, 68 events and the 71 sources they cite. There is no second graph behind this one: the page, the briefings and the timeline are all drawn from the same rows, so the picture cannot disagree with the text. The JSON is [data/graph.json](../data/graph.json); this page shows the claims-to-sources slice.
 
 Every line is one citation. Colour is the claim's status: green confirmed, grey reported, amber disputed or contradicted, red unverified. A source with a filled dot is primary.
@@ -20,4 +22,4 @@ Every line is one citation. Colour is the claim's status: green confirmed, grey 
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html

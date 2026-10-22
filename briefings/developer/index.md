@@ -1,10 +1,17 @@
 # Briefing for a developer: Is my code the problem, what do I change, and how do I check the box I deployed to?
 
-The php2shell story for a developer: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a developer: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · Developer · from the same 70 claims, selected and ordered for one reader
+Briefing for Lee, developer · ******Some technical · from the same 70 claims, selected and ordered for one reader
 
 # Is my code the problem, what do I change, and how do I check the box I deployed to?
+
+L
+The answer in thirty seconds
+
+Your code is not the problem and cannot be the fix: the flaw is in the engine beneath it. ini_set, .user.ini and auto_prepend_file all run too late. Check the running version where the code runs, after the restart, and tell the platform owner today if your target is 8.1 or older.
+
+[Read the site as Lee →](../../flaws/index.html)
 
 Your code is not the problem and cannot be the fix. The flaw is in the C engine that runs it. What you can do is check the box you deploy to and avoid making the engine's job harder.
 
@@ -14,6 +21,29 @@ Your code is not the problem and cannot be the fix. The flaw is in the C engine 
 - Nothing in userland blocks the demonstrated paths: ini_set() runs too late, .user.ini runs too late, auto_prepend_file runs too late. The settings have to be in php.ini, the pool or the server config.
 - Fix attacker-reachable fatal errors and timeouts in your own code anyway: the advisory lists them as one of the paths for the stale-state bug.
 - After the patch, out-of-memory behaves differently: a delayed fatal at the next safe point instead of an abort, and a hard limit that ends the process. Code that caught the old behaviour in tests will see a change.
+
+## Your reading path
+- [Your briefing](../../briefings/developer/index.html) 3 min
+- [The two flaws](../../flaws/index.html) 4 min
+- [The code](../../code/index.html) 7 min
+- [If you run PHP](../../playbook/index.html) 3 min
+
+About 17 minutes in all. Choose *read as Lee* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- is my code the problem
+- what I can and cannot do in userland
+- how to check the box I deploy to
+
+### What you can skip
+- the agency comparison
+- the money
+
+## Words you will meet
+
+[Patch](../../glossary/index.html#patch)[Out of memory (OOM)](../../glossary/index.html#oom)[Primary source](../../glossary/index.html#primary)[PHP](../../glossary/index.html#php)[CVSS](../../glossary/index.html#cvss)[Vulnerability](../../glossary/index.html#vulnerability)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Remote code execution (RCE)](../../glossary/index.html#rce)[mod_php](../../glossary/index.html#mod-php)[longjmp](../../glossary/index.html#longjmp)[CVE](../../glossary/index.html#cve)[Exploit, exploitation](../../glossary/index.html#exploit)[Proof of concept (PoC)](../../glossary/index.html#poc)[PHP-FPM](../../glossary/index.html#fpm)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
 ## The facts this rests on
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -47,8 +77,8 @@ Your code is not the problem and cannot be the fix. The flaw is in the C engine 
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/developer/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/developer/index.html

@@ -4,6 +4,8 @@ What Cloudflare, Akamai, Fastly, Imperva, AWS and Fortinet deployed and what eac
 
 # Detection and defence: can it be blocked, can it be seen
 
+In plain English Can these attacks be blocked or spotted? Yes at the edge and on the server, mostly; no from ordinary web logs alone.
+
 The editor's premise is that a zero-day is not an invisibility cloak: an exploit that runs code on a web server leaves a request in the log, a crash in the kernel, a child process in the tree. The captured sources agree, and they also say where the logs go blind. This page is what six edge vendors, three community rule sets and one detection guide say about blocking the request, and what the host shows once the request got through.
 
 ## At the edge: what the WAF vendors deployed
@@ -51,4 +53,4 @@ Yes, at two layers, and no at a third. **At the edge**, the known request shapes
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/defence/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/defence/index.html

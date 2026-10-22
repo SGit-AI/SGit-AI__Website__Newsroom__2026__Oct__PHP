@@ -1,10 +1,17 @@
 # Briefing for a ciso: What is our exposure, what is our evidence we were not hit, and what do I tell the board?
 
-The php2shell story for a ciso: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a ciso: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · CISO · from the same 70 claims, selected and ordered for one reader
+Briefing for Robin, ciso · ******Some technical · from the same 70 claims, selected and ordered for one reader
 
 # What is our exposure, what is our evidence we were not hit, and what do I tell the board?
+
+R
+The answer in thirty seconds
+
+The flaw is in the PHP runtime, so exposure is every internet-facing system running PHP, including vendor appliances. Review logs from 17 October (the earliest reported attempt), not from the fix. Attempts are reported at scale; no named victim is confirmed. Patch first, isolate where you cannot.
+
+[Read the site as Robin →](../../impact/index.html)
 
 Exposure, evidence of non-compromise, and the board message. Three facts carry this briefing: the bug is in the runtime so your application code is not the question; attempts are in the millions at one CDN but no named victim is confirmed anywhere; and every agency says patch first, with offline as the fallback not the reflex.
 
@@ -14,6 +21,31 @@ Exposure, evidence of non-compromise, and the board message. Three facts carry t
 - The board line: a critical runtime flaw, patched on day one where we could, isolated where we could not, no evidence of compromise as of today, review continuing. Do not quote 70%.
 - Edge rules were live hours before disclosure; if you are behind a major CDN you had a stopgap you did not have to ask for. It is not a control you can rely on.
 - Expect a follow-up release: a report that the first fix is incomplete reached the security list within two hours.
+
+## Your reading path
+- [Your briefing](../../briefings/ciso/index.html) 3 min
+- [Impact: offline vs compromised](../../impact/index.html) 2 min
+- [Exploitation signals](../../exploitation/index.html) 2 min
+- [Detection and defence](../../defence/index.html) 3 min
+- [The agencies](../../agencies/index.html) 1 min
+- [If you run PHP](../../playbook/index.html) 3 min
+
+About 14 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- exposure as a list
+- evidence we were not hit, from which date
+- the board line
+- where agencies disagree
+
+### What you can skip
+- the C code
+
+## Words you will meet
+
+[PHP](../../glossary/index.html#php)[Patch](../../glossary/index.html#patch)[CDN](../../glossary/index.html#cdn)[SAPI](../../glossary/index.html#sapi)[Shell](../../glossary/index.html#shell)[WAF](../../glossary/index.html#waf)[Primary source](../../glossary/index.html#primary)[CVE](../../glossary/index.html#cve)[Exploit, exploitation](../../glossary/index.html#exploit)[KEV](../../glossary/index.html#kev)[CISA](../../glossary/index.html#cisa)[php2shell](../../glossary/index.html#php2shell)[Remote code execution (RCE)](../../glossary/index.html#rce)[NCSC](../../glossary/index.html#ncsc)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
 ## The facts this rests on
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -82,8 +114,8 @@ Exposure, evidence of non-compromise, and the board message. Three facts carry t
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or advisor](../analyst/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/ciso/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/ciso/index.html

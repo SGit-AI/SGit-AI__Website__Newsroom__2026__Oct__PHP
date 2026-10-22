@@ -1,10 +1,17 @@
 # Briefing for a security researcher: What are the bug classes, what was demonstrated, and what is still open?
 
-The php2shell story for a security researcher: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a security researcher: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · Security researcher · from the same 70 claims, selected and ordered for one reader
+Briefing for Ash, security researcher · ******Deeply technical · from the same 70 claims, selected and ordered for one reader
 
 # What are the bug classes, what was demonstrated, and what is still open?
+
+A
+The answer in thirty seconds
+
+Two classes: an out-of-memory longjmp leaving request memory uninitialised, and worker global state pointing at freed request memory across requests. mod_php was exploited before application code; FPM for the first flaw is disputed. The fix removes longjmp for OOM. A report of an incomplete fix is open.
+
+[Read the site as Ash →](../../code/index.html)
 
 Bug classes, what was demonstrated against what, credits, and the open technical questions.
 
@@ -14,6 +21,30 @@ Bug classes, what was demonstrated against what, credits, and the open technical
 - Credits on both GHSAs: lcfr-hax, sagitzadik-wiz, amyb-oai, tomash-areion. The last is unexplained.
 - Open: the Fediverse report of a third bug or incomplete fix; Calif's hash pre-image; whether the embedded demo is the deleted video.
 - The fix changes the engine: soft OOM at a VM safe point, hard OOM via _exit(). Expect behavioural differences under memory pressure.
+
+## Your reading path
+- [Your briefing](../../briefings/researcher/index.html) 3 min
+- [The code](../../code/index.html) 7 min
+- [The two flaws](../../flaws/index.html) 4 min
+- [Who found it](../../discovery/index.html) 2 min
+- [In context: 2008 to 2026](../../context/index.html) 3 min
+
+About 19 minutes in all. Choose *read as Ash* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- the two bug classes
+- what was demonstrated against which SAPI
+- the fix in the code
+- the open questions
+
+### What you can skip
+- the board line
+
+## Words you will meet
+
+[Exploit, exploitation](../../glossary/index.html#exploit)[mod_php](../../glossary/index.html#mod-php)[PHP-FPM](../../glossary/index.html#fpm)[Out of memory (OOM)](../../glossary/index.html#oom)[longjmp](../../glossary/index.html#longjmp)[CWE](../../glossary/index.html#cwe)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[SAPI](../../glossary/index.html#sapi)[Primary source](../../glossary/index.html#primary)[PHP](../../glossary/index.html#php)[CVSS](../../glossary/index.html#cvss)[Vulnerability](../../glossary/index.html#vulnerability)[Remote code execution (RCE)](../../glossary/index.html#rce)[CVE](../../glossary/index.html#cve)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
 ## The facts this rests on
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -64,8 +95,8 @@ Bug classes, what was demonstrated against what, credits, and the open technical
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Analyst or advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/researcher/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/researcher/index.html

@@ -2,14 +2,91 @@
 
 A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
 
-Developing · CVE-2026-109618 and CVE-2026-109619 · updated with the vault, 2026-10-22T11:34Z
+Developing · critical · fix available since 21 October 2026 · updated with the vault, 2026-10-22T11:34Z
 
-# php2shell: the two PHP flaws of October 2026, tracked as evidence
+# Two critical security holes in PHP, the software behind a large share of the web
+
+Nicknamed **php2shell**: send a request to a website running PHP, come away with a command line (a *shell*) on its server. Fixed on 21 October 2026. Governments told organisations that cannot update to take websites offline.
+
+  Who are you? Get your briefingExplain it from scratchI run PHP: what do I do?
+
+## Where things stand
+
+Seven answers, each a link to the page with the evidence.
+A fixAvailablePHP 8.5.12, 8.4.27, 8.3.36, 8.2.35, since 21 OctoberSeverity9.2 of 10critical, both flaws (CVSS v4.0)Attackers tryingYesmillions of attempts at one CDN; a honeypot hit on 17 OctoberConfirmed break-insNone yetno named organisation, as of the latest captureTaken offline10 operatorsreported, as a precautionOfficial exploited listNot listedCISA's KEV catalog, checked 22 OctoberGovernment adviceUpdate nowor isolate, or take offline; 16 agencies compared
+
+## Who are you? Start with the briefing written for you
+
+The same evidence, selected and ordered for 15 kinds of reader. Each briefing opens with a thirty-second answer in plain words, then what to decide or do, then a short reading path through the rest of the site. Not sure which you are? Start with the curious reader, or see [how the readers are mapped](start/index.html).
+
+### I want to understand it
+
+You heard about this on the news or from a colleague and want to know what it is and whether it touches you.
+ACurious readerAlex · Plain EnglishWhat happened, does it affect me, and should I worry?4 reads · about 13 min Start →CWebsite ownerCasey · Plain EnglishMy website runs on WordPress or similar: am I affected, and what do I ask my host?4 reads · about 14 min Start →
+### I make the decisions
+
+You own a budget, a plan or a risk, and need what to decide, in what order, and what to ask your team.
+JBoard member or executiveJordan · Plain EnglishAre we exposed, what is it costing us, and who owns the decision to pull a system?5 reads · about 15 min Start →TProject or programme managerTaylor · Plain EnglishWhat unplanned work does this create, who do I chase, and what do I tell stakeholders?5 reads · about 16 min Start →QCFOQuinn · Plain EnglishWhat is the financial exposure, what does downtime cost against breach cost, and will insurance respond?5 reads · about 16 min Start →RCISORobin · Some technicalWhat is our exposure, what is our evidence we were not hit, and what do I tell the board?6 reads · about 14 min Start →ACTOAvery · Some technicalWhat does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?5 reads · about 20 min Start →
+### I tell others
+
+You write or speak about this, and need what is true, what is not, and who said it first.
+RJournalistRowan · Some technicalWhich numbers hold up, who said what first, and what is still unverified?6 reads · about 10 min Start →RCommunications teamRiley · Plain EnglishWhat can we say that is true, what should we not say, and what will we be asked?5 reads · about 14 min Start →
+### I run or build systems
+
+You patch, configure, monitor or write code, and need versions, settings and signals.
+SSecurity leadSam · Some technicalWhat do I patch first, what do I watch for, and when do I take something offline?5 reads · about 12 min Start →JHead of AppSecJamie · Deeply technicalWhich of our applications are in scope, which settings matter, and what do we add to the pipeline?5 reads · about 14 min Start →DPHP or platform engineerDrew · Deeply technicalWhich versions, which SAPIs, which settings, which commands?5 reads · about 18 min Start →LDeveloperLee · Some technicalIs my code the problem, what do I change, and how do I check the box I deployed to?4 reads · about 17 min Start →
+### I study it
+
+You research vulnerabilities or advise on policy, and need the evidence, the open questions and the precedent.
+ASecurity researcherAsh · Deeply technicalWhat are the bug classes, what was demonstrated, and what is still open?5 reads · about 19 min Start →BAnalyst or policy advisorBlake · Some technicalHow did coordinated disclosure fail, and what does AI-assisted discovery change?6 reads · about 12 min Start →
+
+## The five questions everyone asks
+
+### What happened?
+
+Two flaws were found in PHP itself, the engine that runs WordPress, Drupal, Wikipedia's software and millions of other sites. Either lets anyone on the internet, with no password, run commands on the web server. The fix came out on 21 October 2026.
+
+[Explained from scratch →](explained/index.html) [php.net](sources/php-net-advisory/index.html) [CVE record](sources/cve-cve-2026-109618/index.html) [CVE record](sources/cve-cve-2026-109619/index.html)
+
+### Does it affect me?
+
+Not your phone or laptop: the flaw is on web servers. It affects organisations that run websites on PHP, and their visitors only indirectly. If you run a website, the question is whether PHP on its server has been updated and restarted.
+
+[Affected systems →](affected/index.html) [php.net](sources/php-net-advisory/index.html) [NCSC UK](sources/ncsc-news-php/index.html)
+
+### Has anyone been hacked?
+
+Attackers have been trying: Cloudflare reports millions of attempts and Amazon a honeypot hit four days before disclosure. But no named organisation has confirmed a break-in, and CISA has not listed either flaw as exploited, as of the latest capture.
+
+[Impact: offline vs compromised →](impact/index.html) [Matthew Prince , Cloudflare CEO on](sources/x-eastdakota-php2shell-stats/index.html) [THN](sources/thehackernews-php2shell-4days/index.html) [CISA](sources/cisa-kev-json/index.html)
+
+### Why did websites go offline?
+
+As a precaution. The US NSA and CISA said take systems offline if you cannot update them, and several governments and companies did, including Dutch government services such as DigiD. Offline is a decision, not evidence of a hack.
+
+[The agencies →](agencies/index.html) [NSA Cyber on X](sources/nsa-x-2112903220209098897/index.html) [CISA](sources/cisa-alert-php-20261021/index.html) [Rijksoverheid / NCSC-NL](sources/rijksoverheid-ncsc-php-news/index.html)
+
+### What should be done?
+
+Update PHP to 8.5.12, 8.4.27, 8.3.36 or 8.2.35 (or the fixed package from your Linux distribution) and restart it. If that cannot happen today, apply the temporary settings, put a firewall in front, and as a last resort take the system offline.
+
+[If you run PHP →](playbook/index.html) [php.net](sources/php-net-advisory/index.html) [CISA](sources/cisa-alert-php-20261021/index.html) [NCSC UK](sources/ncsc-news-php/index.html)
+
+## The story in five moments
+- [2024An audit spots the out-of-memory weakness. Nobody can show it is exploitable, so it is left.](context/index.html)[PHP Foundation](sources/php-foundation-blog-security-release/index.html)
+- [Aug 2026Three teams using AI turn it into working attacks within three weeks and report them to PHP.](discovery/index.html)[Calif](sources/calif-php2shell/index.html) [Wiz](sources/wiz-blog-php2shell/index.html) [PHP Foundation](sources/php-foundation-blog-security-release/index.html)
+- [20 OctThe secret leaks: the CVE numbers circulate two days early, with a wrong severity score.](leak/index.html)[PHP Foundation](sources/php-foundation-blog-security-release/index.html)
+- [21 OctPHP releases the fix a day ahead of plan. Firewall vendors already have rules live.](flaws/index.html)[php.net](sources/php-net-advisory/index.html) [Cloudflare](sources/cloudflare-blog-php2shell-waf/index.html)
+- [22 OctAgencies warn: update, or take systems offline. Sites go dark as a precaution.](agencies/index.html)[NSA Cyber on X](sources/nsa-x-2112903220209098897/index.html) [CISA](sources/cisa-alert-php-20261021/index.html) [BBC News](sources/bbc-live-ckgel5xp2xv9t/index.html)
+
+[All 68 events on the timeline →](timeline/index.html)
+
+## The whole story in one paragraph
+
+For readers who already know the vocabulary. Every specialist term is linked to the glossary the first time it appears.
 
 On 21 October 2026 at 14:00 UTC the PHP project released fixes for two critical flaws, **CVE-2026-109618** and **CVE-2026-109619**, nicknamed *php2shell*. Either can give an unauthenticated attacker remote code execution on a web server running PHP, the language behind WordPress, Drupal, Wikipedia and a large share of the web. The flaws were found with AI help, the coordinated disclosure broke down two days early, and by the morning of 22 October the NSA, CISA and the UK's NCSC were telling organisations that could not patch to take systems offline. This site follows the story as evidence: every claim points to a captured, dated and hashed source, every number says what it measures, and every contradiction between sources is left visible.
-
-  144sources in the evidence vault137dated captures, each file hashed70claims with a status: 22 confirmed, 11 disputed or contradicted, 4 unverified68dated events on the timeline16national agencies compared10operators reported offline, 0 confirmed compromises674products in the NCSC-NL inventory
-
+144sources in the evidence vault137dated captures, each file hashed70claims with a status: 22 confirmed, 11 disputed or contradicted, 4 unverified68dated events on the timeline16national agencies compared10operators reported offline, 0 confirmed compromises674products in the NCSC-NL inventory
 **Developing, and agent-produced.** Software agents assemble this site from sources captured into a private evidence vault; the editor is Dinis Cruz. Nothing here is advice on what to patch in your environment. For that, read the [php.net advisory](https://www.php.net/archive/2026.php#2026-10-21-5) and your national cyber-security agency. Where this site says a thing is *confirmed*, it means two or more primary sources agree, or the fact was counted from a captured file; *reported* means one party says so; *disputed* means the sources disagree; *unverified* means even the reporting outlet could not check it.
 
 ## Six numbers, and what each one measures
@@ -53,11 +130,6 @@ Open questions, stated rather than papered over. Each one names what would close
 
 [The whole timeline →](timeline/index.html) runs from the 2024 audit to the latest capture, with every time stated as its source states it and every conversion marked.
 
-## Read it for your job
-
-Six briefings from the same claims. None adds a claim; each selects, orders and keeps every source.
-Board member or executiveAre we exposed, what is it costing us, and who owns the decision to pull a system?Security leadWhat do I patch first, what do I watch for, and when do I take something offline?PHP or platform engineerWhich versions, which SAPIs, which settings, which commands?JournalistWhich numbers hold up, who said what first, and what is still unverified?Security researcherWhat are the bug classes, what was demonstrated, and what is still open?Analyst or advisorHow did coordinated disclosure fail, and what does AI-assisted discovery change?CISOWhat is our exposure, what is our evidence we were not hit, and what do I tell the board?CTOWhat does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?CFOWhat is the financial exposure, what does downtime cost against breach cost, and will insurance respond?Head of AppSecWhich of our applications are in scope, which settings matter, and what do we add to the pipeline?DeveloperIs my code the problem, what do I change, and how do I check the box I deployed to?Media and communications teamWhat can we say that is true, what should we not say, and what will we be asked?
-
 ## How this site works
 
 ### Capture, don't paraphrase
@@ -74,4 +146,4 @@ The site is a deterministic function of the vault and a version number: the same
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html

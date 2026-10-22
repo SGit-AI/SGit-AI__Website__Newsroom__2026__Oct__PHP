@@ -4,6 +4,8 @@ Read from a clone of php/php-src: the fix commit (389 files, authored 18 October
 
 # The code: where the bug is, and what the fix does
 
+In plain English Where exactly the bug sits in PHP's own source code, and what the fix changed. Technical; the short version is that PHP used to abandon work mid-way when memory ran out, and now it stops safely.
+
 The editor's question was where the flaw actually lives: in PHP, in C, in the engine? The answer, read from the repository rather than from any article, is the Zend engine's memory manager and request lifecycle, in C, below every PHP application. This page is built from a clone of php/php-src: the fix commit, its parent, the branch it landed on, the end-of-life backport, and the diff between the last vulnerable and first fixed release. The patches and the commit metadata are in the vault with their hashes. [php/php-src , read from a clone](../sources/github-php-src-fix-commit-3584a98bd/index.html) [PHP](../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [php.net](../sources/php-net-advisory/index.html) [php-src](../sources/github-php-src-branch-7.4-backport/index.html) [php.net](../sources/php-net-changelog-8/index.html) [Daubois](../sources/daubois-blog-php2shell-rumors/index.html) [Fastly](../sources/fastly-blog-php2shell/index.html) [Imperva Threat Research](../sources/imperva-blog-php2shell/index.html) [OpenAI / Wiz / Calif joint microsi](../sources/php2shell-com/index.html) [OpenAI on X](../sources/x-openai-php2shell/index.html)
 
 ## The fix commit
@@ -74,4 +76,4 @@ How the bug is reached from a request is on [the two flaws](../flaws/index.html)
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/code/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/code/index.html

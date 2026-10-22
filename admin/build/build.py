@@ -22,7 +22,8 @@ def load(name):
 VERSION = open(os.path.join(ROOT, 'VERSION'), encoding='utf-8').read().strip()
 D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 'affected', 'exploitation',
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
-                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence')}
+                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
+                          'personas', 'glossary', 'plain')}
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
 if D['vault'].get('latest_capture'):
@@ -133,6 +134,7 @@ def to_markdown(fragment):
 # ----------------------------------------------------------------------------- layout
 
 NAV = [
+    ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from scratch'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('The story', [('index.html', 'Front page'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -176,7 +178,7 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
         'version': VERSION,
     }
     return f'''<!doctype html>
-<html lang="en" data-root="{up}">
+<html lang="en" data-root="{up}" data-path="{path}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -196,6 +198,7 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 <script type="application/json" id="sg-meter-config">{meter_json}</script>
 <script type="module" src="{up}assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"></script>
+<script src="{up}assets/personas.js" defer></script>
 <script src="{up}assets/site.js" defer></script>
 </head>
 <body>
@@ -233,7 +236,11 @@ def write(path, content):
         f.write(content)
 
 def page(path, title, description, body, **kw):
-    html_out = layout(path, title, description, body, **kw)
+    plain = D['plain']['pages'].get(path)
+    if plain:
+        body = body.replace('</h1>', f'</h1>\n<aside class="plainbox"><b>In plain English</b> {E(plain)}</aside>', 1)
+    WORDS[path] = len(re.sub(r'<[^>]+>', ' ', re.sub(r'<(svg|script|table).*?</\1>', ' ', body, flags=re.S)).split())
+    html_out = layout(path, title, description, gloss(body, path), **kw)
     write(path, html_out)
     md = f'<!-- {SITE} v{VERSION} · {path} · {title} -->\n'
     write(md_path(path), f'# {title}\n\n{description}\n\n' + to_markdown(body) + f'\n\n---\nsite v{VERSION} · data as of {STORY["data_as_of"]} · vault commit {D["vault"]["head"]["commit"]} · {BASE_URL}/{path}\n')
@@ -277,10 +284,120 @@ def counts():
 
 C = counts()
 
+# ----------------------------------------------------------------------------- readers: personas, glossary, reading time
+
+WORDS = {}    # path -> words in the page body; filled by page(), read on the second pass
+GLOSSED = {}  # path -> glossary ids linked on that page, in order of first use
+TERMS = [t for t in D['glossary']['terms']]
+TERM = {t['id']: t for t in TERMS}
+GLOSS_RX = [(t, [re.compile(m) for m in t['match']]) for t in TERMS if t['match']]
+PERSONAS = OrderedDict((p['id'], p) for p in D['personas']['personas'])
+GROUPS = OrderedDict((g['id'], g) for g in D['personas']['groups'])
+DEPTHS = D['personas']['depths']
+AUD = {a['id']: a for a in D['roles']['audiences']}
+FLAGSHIP = {'CVE-2026-109618': 'the out-of-memory flaw', 'CVE-2026-109619': 'the stale global state flaw'}
+GLOSS_SKIP = {'a', 'code', 'pre', 'h1', 'h2', 'h3', 'h4', 'svg', 'script', 'style', 'th', 'button', 'summary', 'title', 'label'}
+CVE_RX = re.compile(r'\bCVE-\d{4}-\d{4,7}\b')
+
+def minutes(path):
+    return max(1, round(WORDS.get(path, 0) / 230))
+
+def nav_title(path):
+    if path.startswith('briefings/'):
+        return 'Your briefing'
+    for _, items in NAV:
+        for p, t in items:
+            if p == path:
+                return t
+    return path
+
+def gloss(body, path):
+    """Link the first use of every glossary term on the page, and every CVE ID, in text outside links, code and headings."""
+    if path.startswith('glossary/'):
+        return body
+    up = '../' * path.count('/')
+    used, out, skip = [], [], 0
+    for tok in re.split(r'(<[^>]+>)', body):
+        if tok.startswith('<'):
+            m = re.match(r'<(/?)([a-zA-Z][a-zA-Z0-9]*)', tok)
+            if m and m.group(2).lower() in GLOSS_SKIP and not tok.endswith('/>'):
+                skip = max(0, skip + (-1 if m.group(1) else 1))
+            out.append(tok)
+            continue
+        if skip or not tok.strip():
+            out.append(tok)
+            continue
+        spans = []
+        for m in CVE_RX.finditer(tok):
+            cve = m.group(0)
+            if cve in FLAGSHIP:
+                href = ('' if path == 'flaws/index.html' else f'{up}flaws/index.html') + f'#{cve}'
+                tip = f'{cve}: {FLAGSHIP[cve]}, one of the two php2shell flaws. CVSS 9.2, critical. Fixed 21 October 2026.'
+            elif 'cve-' + cve.lower() in SOURCES:
+                href, tip = f'{up}sources/cve-{cve.lower()}/index.html', f'{cve}: an earlier flaw; its official record, as captured into the vault.'
+            else:
+                href, tip = f'https://www.cve.org/CVERecord?id={cve}', f'{cve}: its official record at cve.org.'
+            ext = ' rel="noopener"' if href.startswith('http') else ''
+            spans.append((m.start(), m.end(), f'<a class="cve-link" href="{href}"{ext} data-term="{cve}" data-tip="{E(tip)}">{cve}</a>'))
+        for t, rxs in GLOSS_RX:
+            if t['id'] in used:
+                continue
+            for rx in rxs:
+                hit = next((m for m in rx.finditer(tok) if not any(a < m.end() and m.start() < b for a, b, _ in spans)), None)
+                if hit:
+                    spans.append((hit.start(), hit.end(), f'<a class="term" href="{up}glossary/index.html#{t["id"]}" data-term="{E(t["term"])}" data-tip="{E(t["short"])}">{hit.group(0)}</a>'))
+                    used.append(t['id'])
+                    break
+        spans.sort()
+        last, buf = 0, []
+        for a, b, rep in spans:
+            buf.append(tok[last:a]); buf.append(rep); last = b
+        buf.append(tok[last:])
+        out.append(''.join(buf))
+    GLOSSED[path] = used
+    return ''.join(out)
+
+def avatar(p):
+    return f'<span class="av av-{E(p["group"])}" aria-hidden="true">{E(p["person"][0])}</span>'
+
+def depth_badge(d):
+    d = str(d)
+    return f'<span class="depth depth-{d}" title="{E(DEPTHS[d]["text"])}"><i></i><i></i><i></i>{E(DEPTHS[d]["label"])}</span>'
+
+def path_minutes(p):
+    return sum(minutes(x) for x in p['path'])
+
+def door(p, depth=0):
+    a = AUD[p['id']]
+    return (f'<a class="door door-{E(p["group"])}" href="{"../" * depth}briefings/{E(p["id"])}/index.html" data-persona="{E(p["id"])}">'
+            f'<span class="dh">{avatar(p)}<span><b>{E(p["label"])}</b><small>{E(p["person"])} &middot; {depth_badge(p["depth"])}</small></span></span>'
+            f'<span class="dq">{E(a["question"])}</span>'
+            f'<span class="dm">{len(p["path"])} reads &middot; about {path_minutes(p)} min <span class="go">Start &rarr;</span></span></a>')
+
+def persona_doors(depth=0):
+    out = ''
+    for gid, g in GROUPS.items():
+        ps = [p for p in PERSONAS.values() if p['group'] == gid]
+        out += f'<div class="dgroup dgroup-{E(gid)}"><h3>{E(g["label"])}</h3><p class="small">{E(g["text"])}</p><div class="doors">{"".join(door(p, depth) for p in ps)}</div></div>'
+    return f'<div class="dgroups">{out}</div>'
+
+def reading_path(p, depth):
+    items = ''.join(f'<li><a href="{"../" * depth}{E(x)}">{E(nav_title(x))}</a> <span class="small">{minutes(x)} min</span></li>' for x in p['path'])
+    return f'<ol class="rpath">{items}</ol><p class="small">About {path_minutes(p)} minutes in all. Choose <i>read as {E(p["person"])}</i> and the bar under the menu keeps your place on every page.</p>'
+
+def words_met(p, depth, limit=14):
+    seen = []
+    for x in p['path']:
+        for t in GLOSSED.get(x, []):
+            if t not in seen:
+                seen.append(t)
+    chips = ''.join(f'<a class="chip" href="{"../" * depth}glossary/index.html#{E(t)}" title="{E(TERM[t]["short"])}">{E(TERM[t]["term"])}</a>' for t in seen[:limit])
+    return f'<p class="chips">{chips}</p>' if chips else ''
+
 # ----------------------------------------------------------------------------- pages
 
 def build_index():
-    s = STORY
+    s, pl, im = STORY, D['plain'], D['impact']
     known = ''.join(f'<li>{k["html"]} <span class="refs">{src_links(k["sources"], 0)}</span></li>' for k in s['known'])
     openq = ''.join(f'<li>{o["html"]}</li>' for o in s['open'])
     stats = ''.join([
@@ -289,32 +406,49 @@ def build_index():
         stat(C['claims'], f'claims with a status: {C["by_status"]["confirmed"]} confirmed, {C["by_status"]["disputed"] + C["by_status"]["contradicted"]} disputed or contradicted, {C["by_status"]["unverified"]} unverified', 'claims/index.html'),
         stat(C['events'], 'dated events on the timeline', 'timeline/index.html'),
         stat(C['agencies'], 'national agencies compared', 'agencies/index.html'),
-        stat(len(D['impact']['offline']), 'operators reported offline, 0 confirmed compromises', 'impact/index.html'),
+        stat(len(im['offline']), 'operators reported offline, 0 confirmed compromises', 'impact/index.html'),
         stat(C['software'], 'products in the NCSC-NL inventory', 'affected/software.html'),
     ])
     latest = sorted([t for t in D['timeline'] if t['at'] >= '2026-10-20'], key=lambda t: t['at'])[-8:]
     latest_rows = [[f'<span class="when">{E(fmt_at(t["at"]))}</span>', E(t['event']), src_links(t['sources'], 0)] for t in latest]
-    doors = ''.join(f'<a class="door" href="briefings/{a["id"]}/index.html"><b>{E(a["name"])}</b><span>{E(a["question"])}</span></a>' for a in D['roles']['audiences'])
     nums = D['numbers']
     numrow = ''.join(f'<a class="num" href="numbers/index.html#{E(n["id"])}"><b>{E(n["value"])}</b><span>{E(n["of"])}</span>{pill(n["status"])}</a>' for n in nums[:6])
+    fixed = ', '.join(D['affected']['fixed'])
+    tiles = [
+        ('ok', 'A fix', 'Available', f'PHP {fixed}, since 21 October', 'flaws/index.html'),
+        ('bad', 'Severity', '9.2 of 10', 'critical, both flaws (CVSS v4.0)', 'flaws/index.html'),
+        ('warn', 'Attackers trying', 'Yes', 'millions of attempts at one CDN; a honeypot hit on 17 October', 'exploitation/index.html'),
+        ('info', 'Confirmed break-ins', 'None yet', 'no named organisation, as of the latest capture', 'impact/index.html'),
+        ('warn', 'Taken offline', f'{len(im["offline"])} operators', 'reported, as a precaution', 'impact/index.html'),
+        ('info', 'Official exploited list', 'Not listed', "CISA's KEV catalog, checked 22 October", 'exploitation/index.html#kev'),
+        ('bad', 'Government advice', 'Update now', f'or isolate, or take offline; {C["agencies"]} agencies compared', 'agencies/index.html'),
+    ]
+    board = ''.join(f'<a class="tile tile-{t}" href="{h}"><span class="tl">{E(l)}</span><b>{E(v)}</b><span class="tn">{E(n)}</span></a>' for t, l, v, n, h in tiles)
+    cards = ''.join(f'<article class="qa"><h3>{E(c["q"])}</h3><p>{E(c["a"])}</p><p class="qa-f"><a href="{E(c["href"])}">{E(nav_title(c["href"]))} &rarr;</a> <span class="refs">{src_links(c["sources"], 0)}</span></p></article>' for c in pl['cards'])
+    moments = ''.join(f'<li class="m m-{E(m["tone"])}"><a href="{E(m["href"])}"><span class="mw">{E(m["when"])}</span><span class="mt">{E(m["what"])}</span></a><span class="refs">{src_links(m["sources"], 0)}</span></li>' for m in pl['moments'])
+    how = '''<div class="how">
+<div><h3>Capture, don't paraphrase</h3><p>Every source is captured into a private, encrypted vault: the page as served, as rendered, its text, a screenshot and its headers, each file hashed at capture time. Captures are only ever added, so a page that changes leaves a series. The captures are third-party pages and are not republished; <a href="sources/index.html">their hashes are</a>.</p></div>
+<div><h3>Claims carry a status</h3><p>Five words, each defined: confirmed, reported, disputed, contradicted, unverified. A claim is a row pointing at the sources that give it that status, and the page never upgrades a claim its sources do not support.</p></div>
+<div><h3>Rebuilt, never edited</h3><p>The site is a deterministic function of the vault and a version number: the same data produces byte-identical pages, there is no clock in the build, and a gate refuses to release a broken link, an orphan page, an unsourced claim or a credential. <a href="method/index.html">The method</a>, <a href="team/index.html">the team</a> and <a href="billing/index.html">the billing model</a> are published.</p></div>
+</div>'''
+    who_lead = f'The same evidence, selected and ordered for {len(PERSONAS)} kinds of reader. Each briefing opens with a thirty-second answer in plain words, then what to decide or do, then a short reading path through the rest of the site. Not sure which you are? Start with the curious reader, or see <a href="start/index.html">how the readers are mapped</a>.'
     body = f'''
-<header class="hero">
-  <p class="kicker">{E(s["status"])} &middot; {E(" and ".join(s["cves"]))} &middot; updated with the vault, {E(s["data_as_of"])}</p>
-  <h1>{E(s["title"])}</h1>
-  <p class="lead">{s["lead_html"]}</p>
-  <div class="stats">{stats}</div>
-  <p class="caveat">{s["caveat_html"]}</p>
+<header class="hero hero2">
+  <p class="kicker"><span class="live">{E(s["status"])}</span> &middot; critical &middot; fix available since 21 October 2026 &middot; updated with the vault, {E(s["data_as_of"])}</p>
+  <h1>{E(pl["headline"])}</h1>
+  <p class="deck">{pl["deck"]}</p>
+  <div class="ctas"><a class="cta cta-pri" href="#who">Who are you? Get your briefing</a><a class="cta" href="explained/index.html">Explain it from scratch</a><a class="cta" href="playbook/index.html">I run PHP: what do I do?</a></div>
 </header>
+{section("state", "Where things stand", f'<div class="tiles">{board}</div>', "Seven answers, each a link to the page with the evidence.")}
+{section("who", "Who are you? Start with the briefing written for you", persona_doors(), who_lead)}
+{section("thirty", "The five questions everyone asks", f'<div class="qas">{cards}</div>')}
+{section("moments", "The story in five moments", f'<ol class="moments">{moments}</ol><p><a href="timeline/index.html">All {C["events"]} events on the timeline &rarr;</a></p>')}
+{section("summary", "The whole story in one paragraph", f'<p>{s["lead_html"]}</p><div class="stats">{stats}</div><p class="caveat">{s["caveat_html"]}</p>', "For readers who already know the vocabulary. Every specialist term is linked to the glossary the first time it appears.")}
 {section("numbers", "Six numbers, and what each one measures", f'<div class="nums">{numrow}</div><p>The figures in circulation range from 2.6 million hosts to 70% of the Internet. They are not contradictory so much as incommensurable: each measures a different thing. <a href="numbers/index.html">The numbers page</a> says what each one counts, who said it, and whether anyone has checked it.</p>')}
 {section("known", "What is established", f'<ul class="known">{known}</ul>')}
 {section("open", "What is not", f'<ul class="open">{openq}</ul>', "Open questions, stated rather than papered over. Each one names what would close it.")}
 {section("latest", "The last 48 hours", table(["When (UTC)", "What", "Source"], latest_rows, "tl") + '<p><a href="timeline/index.html">The whole timeline &rarr;</a> runs from the 2024 audit to the latest capture, with every time stated as its source states it and every conversion marked.</p>')}
-{section("doors", "Read it for your job", f'<div class="doors">{doors}</div>', "Six briefings from the same claims. None adds a claim; each selects, orders and keeps every source.")}
-{section("how", "How this site works", '''<div class="how">
-<div><h3>Capture, don't paraphrase</h3><p>Every source is captured into a private, encrypted vault: the page as served, as rendered, its text, a screenshot and its headers, each file hashed at capture time. Captures are only ever added, so a page that changes leaves a series. The captures are third-party pages and are not republished; <a href="sources/index.html">their hashes are</a>.</p></div>
-<div><h3>Claims carry a status</h3><p>Five words, each defined: confirmed, reported, disputed, contradicted, unverified. A claim is a row pointing at the sources that give it that status, and the page never upgrades a claim its sources do not support.</p></div>
-<div><h3>Rebuilt, never edited</h3><p>The site is a deterministic function of the vault and a version number: the same data produces byte-identical pages, there is no clock in the build, and a gate refuses to release a broken link, an orphan page, an unsourced claim or a credential. <a href="method/index.html">The method</a>, <a href="team/index.html">the team</a> and <a href="billing/index.html">the billing model</a> are published.</p></div>
-</div>''')}
+{section("how", "How this site works", how)}
 '''
     page('index.html', s['title'], s['description'], body, kind='story', topics='php2shell overview', ld_type='NewsArticle')
 
@@ -550,6 +684,9 @@ def build_playbook():
 def build_briefings():
     aud = D['roles']['audiences']
     sel = {
+        'everyone': dict(topics=['impact', 'exploitation', 'scale'], intro='You do not need to know anything about computers to follow this. Below are the five things worth knowing, then the evidence behind them, folded away until you want it.', ask=['<b>PHP is not on your phone or laptop.</b> It runs on the servers that build websites. This is a problem for the organisations that run those websites, and it is theirs to fix.', '<b>Nothing to install, nothing to change</b> on your own devices because of this. Be wary of any message that says otherwise and asks you to click or download something: scammers use headlines like this one.', '<b>If a website you use was down on 21 or 22 October, it was most likely a precaution.</b> Dutch government services such as DigiD were taken offline on purpose, as a precaution; that is a decision, not a sign of a break-in.', '<b>Nobody has confirmed being hacked through this yet.</b> Attackers have been trying, in large numbers, and that may change; this site will say so when the evidence does.', '<b>The big numbers in the headlines are not what they sound like.</b> 70% is roughly the share of websites built with PHP, not a share of the Internet that is broken. <a href="../../numbers/index.html">The numbers page</a> explains each one.']),
+        'site-owner': dict(topics=['technical', 'advice', 'exploitation'], intro='You do not need to understand the bug to deal with it. What you need is to know whose job the update is, and the exact question to ask. This page gives you both.', ask=['<b>Find out whether your site runs on PHP.</b> WordPress, WooCommerce, Drupal, Joomla, Magento, PrestaShop, Moodle and most hosting control panels do. If you are not sure, ask whoever built the site.', '<b>Updating WordPress, plugins or themes does not fix this.</b> The flaw is in PHP itself, one layer down. It has to be fixed on the server.', '<b>If someone hosts the site for you</b>, send them this, in writing: <i>Has PHP on the server running my site been updated to 8.5.12, 8.4.27, 8.3.36 or 8.2.35, or to your distribution\'s fixed package, and have the PHP processes been restarted since? If my site is on PHP 8.1 or older, what is your plan?</i> Keep the reply.', '<b>If you run the server yourself</b>, update PHP today and restart it. The <a href="../../playbook/index.html">step-by-step list</a> has the temporary settings for a server you cannot update straight away.', '<b>If your site is on PHP 8.1 or older</b>, there is no ready-made fix. Ask your developer or host about moving to a supported version now; it is overdue anyway.', '<b>Keep calm about being hacked.</b> No organisation has confirmed a break-in as of the latest capture. If your host updated promptly, you are in the same position as almost everyone else.']),
+        'pm': dict(topics=['advice', 'impact', 'timing'], intro='This is a platform event, not an application bug, so it lands on every team that ships anything running on PHP at once. Plan for it the way you would plan for a datacentre move: an inventory, an owner per system, a date, a test.', ask=['<b>Get the list.</b> Which systems run PHP, who owns each, and which are on the internet. Vendor products and hosting panels count. Without the list nothing else can be scheduled.', '<b>Get a date per system.</b> Updating PHP means installing the fixed version, restarting, rebuilding containers and re-testing. Internet-facing systems first.', '<b>Budget for regression testing.</b> The fix changes how PHP behaves when it runs short of memory: a system that used to limp along may now stop cleanly. Load tests are worth running before the release, not after.', '<b>Plan for precautionary downtime.</b> Agencies advise isolating or taking offline what cannot be updated in time. Agree with stakeholders now who can make that call, how long it may last, and what users see meanwhile.', '<b>Treat PHP 8.1 and older as a project.</b> There is no ready-made release for them. Moving to a supported version is a migration with its own scope and schedule.', '<b>Expect a second round.</b> A report that the first fix may be incomplete is open. Keep a slot free in the next fortnight.']),
         'board': dict(topics=['scale', 'exploitation', 'advice', 'impact'], intro='Three decisions sit with you: whether the organisation is exposed, what it costs to find out, and who may pull a system. The facts below are the ones those decisions turn on. Everything marked <i>reported</i> is one party\'s word; nothing below is a confirmed compromise anywhere.', ask=['Do we have an inventory of every system serving PHP, including vendor products? If not, that is the first spend.', 'Has every internet-facing system been patched and restarted, and has the running version been checked after the restart?', 'Who is authorised to take a system offline, how long does it take, and has it been rehearsed?', 'What would a compromise of our most exposed PHP system reach: which data, which credentials, which other systems?', 'What is our evidence that we were not exploited between the leak on 20 October and our patch?']),
         'security': dict(topics=['technical', 'exploitation', 'advice', 'scale'], intro='Patch order, mitigations, signals and the offline decision. The claims are grouped so that the ones your runbook depends on come first.', ask=['Internet-facing mod_php first, then FPM, then everything else; 7.4 to 8.1 need a migration plan, not a package.', 'Apply the temporary mitigations where patching slips, and record that each one blocks a known path only.', 'Alert on PHP workers spawning shells or fetching tools; log multipart and oversized requests at the edge.', 'Decide the isolate-or-offline threshold now and name who calls it.', 'Re-check KEV and oss-security daily: the exploitation picture and the incomplete-fix question will both move.']),
         'engineer': dict(topics=['technical'], intro='Versions, SAPIs, settings and what each does. The claims are the primary records\' own words where they exist.', ask=['Target 8.5.12, 8.4.27, 8.3.36 or 8.2.35; restart every worker; rebuild images.', 'memory_limit=-1 via php_admin_value; post_max_size 8M or 32M; cgroup limits not RLIMIT; session.upload_progress.enabled=0 in php.ini or the pool, never ini_set; fatal_error_backtraces=0 on 8.5; pm.max_requests=1.', 'The CVE record calls 7.4 to 8.1 unaffected by omission; the backport branches say otherwise. Do not trust a scanner on this.', 'The 8.5.12 fix may have a follow-up; watch php.net and oss-security.', 'Verify the running version with phpinfo or php -v inside the container, after the restart.']),
@@ -565,21 +702,31 @@ def build_briefings():
     }
     for a in aud:
         s = sel[a['id']]
+        p = PERSONAS[a['id']]
         cl = [c for c in D['claims'] if c['topic'] in s['topics']]
         order = {t: i for i, t in enumerate(s['topics'])}
         cl.sort(key=lambda c: (order[c['topic']], list(STATUS_WORDS).index(c['status']) if c['status'] in STATUS_WORDS else 9))
         asks = ''.join(f'<li>{x}</li>' for x in s['ask'])
         openq = ''.join(f'<li>{o["html"]}</li>' for o in STORY['open'][:5])
+        needs = ''.join(f'<li>{E(x)}</li>' for x in p['needs'])
+        skips = ''.join(f'<li>{E(x)}</li>' for x in p['skip'])
+        facts = status_legend() + claim_rows(cl, 2)
+        if p['depth'] == 1:
+            facts = f'<details class="evidence"><summary>Show the {len(cl)} claims behind this briefing, each with its status and sources</summary>{facts}</details><p class="small">Every sentence above rests on these rows. They are folded away because they are written in the sources\' own vocabulary; the glossary explains each term.</p>'
+        others = ' &middot; '.join(f'<a href="../{b["id"]}/index.html">{E(PERSONAS[b["id"]]["label"])}</a>' for b in aud if b['id'] != a['id'])
         body = f'''
-<p class="kicker">Briefing &middot; {E(a["name"])} &middot; from the same {C["claims"]} claims, selected and ordered for one reader</p>
+<p class="kicker">Briefing for {E(p["person"])}, {E(p["label"].lower())} &middot; {depth_badge(p["depth"])} &middot; from the same {C["claims"]} claims, selected and ordered for one reader</p>
 <h1>{E(a["question"])}</h1>
+<div class="answer">{avatar(p)}<div><p class="kicker">The answer in thirty seconds</p><p>{E(p["answer"])}</p><p><a class="cta cta-pri" href="../../{E(p["path"][1])}" data-persona="{E(p["id"])}">Read the site as {E(p["person"])} &rarr;</a></p></div></div>
 <p class="lead">{s["intro"]}</p>
 {section("decide", "What to decide or do", f'<ul class="asks">{asks}</ul>')}
-{section("facts", "The facts this rests on", status_legend() + claim_rows(cl, 2))}
+{section("path", "Your reading path", reading_path(p, 2) + '<div class="cols2"><div><h3>What this briefing covers</h3><ul>' + needs + '</ul></div><div><h3>What you can skip</h3><ul>' + skips + '</ul></div></div>')}
+{section("words", "Words you will meet", words_met(p, 2) + '<p class="small">Each is underlined where it first appears; hover or tap for a one-line definition, or open <a href="../../glossary/index.html">the glossary</a>.</p>')}
+{section("facts", "The facts this rests on", facts)}
 {section("open", "What is still open", f'<ul class="open">{openq}</ul>')}
-<p>The full set of claims is on <a href="../../claims/index.html">every claim</a>; the ordered steps for a vulnerable system are on <a href="../../playbook/index.html">if you run PHP</a>. Other briefings: {" &middot; ".join(f'<a href="../{b["id"]}/index.html">{E(b["name"])}</a>' for b in aud if b["id"] != a["id"])}.</p>
+<p>The full set of claims is on <a href="../../claims/index.html">every claim</a>; the ordered steps for a vulnerable system are on <a href="../../playbook/index.html">if you run PHP</a>. Other readers: {others}.</p>
 '''
-        page(f'briefings/{a["id"]}/index.html', f'Briefing for a {a["name"].lower()}: {a["question"]}', f'The php2shell story for a {a["name"].lower()}: what to decide, the claims it rests on with their status and sources, and what is still open.', body, kind='briefing', topics=f'php2shell briefing {a["id"]}')
+        page(f'briefings/{a["id"]}/index.html', f'Briefing for a {a["name"].lower()}: {a["question"]}', f'The php2shell story for a {a["name"].lower()}: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.', body, kind='briefing', topics=f'php2shell briefing {a["id"]}')
 
 def build_sources():
     kinds = Counter(s.get('kind') for s in D['sources'])
@@ -692,7 +839,7 @@ def build_team():
 <li><b>Verify live.</b> A release is done when the live site serves the version, not when the push succeeds.</li>
 </ul>''')}
 '''
-    page('team/index.html', 'The team: the editor, the pipeline and the agents', 'Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the six audiences.', body, kind='free', topics='team agents')
+    page('team/index.html', 'The team: the editor, the pipeline and the agents', f'Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the {len(r["audiences"])} audiences.', body, kind='free', topics='team agents')
 
 def build_billing():
     b = D['billing']
@@ -882,29 +1029,115 @@ def build_llms():
     write('llms.txt', '\n'.join(lines))
 
 def build_sitejs():
-    write('assets/site.js', '''// php.oct-2026.story.sgit.ai: the menu toggle on narrow screens. Nothing else runs here.
+    write('assets/site.js', r'''// php.oct.2026.newsroom.sgit.ai: the menu on narrow screens, the reader bar, and the glossary hover cards.
+// The reader you pick and the pages you have opened are kept in this browser's localStorage and nowhere else.
 (function () {
   var b = document.querySelector('.nav-toggle'), n = document.getElementById('nav-items');
-  if (!b || !n) return;
-  b.addEventListener('click', function () {
-    var open = n.classList.toggle('open');
-    b.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.querySelectorAll('.ni > .nl').forEach(function (a) {
-    a.addEventListener('click', function (ev) {
-      if (window.matchMedia('(max-width: 900px)').matches) { ev.preventDefault(); a.parentNode.classList.toggle('open'); }
+  if (b && n) {
+    b.addEventListener('click', function () {
+      var open = n.classList.toggle('open');
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
+    document.querySelectorAll('.ni > .nl').forEach(function (a) {
+      a.addEventListener('click', function (ev) {
+        if (window.matchMedia('(max-width: 900px)').matches) { ev.preventDefault(); a.parentNode.classList.toggle('open'); }
+      });
+    });
+  }
+
+  var html = document.documentElement, root = html.getAttribute('data-root') || '', here = html.getAttribute('data-path') || '';
+  function get(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { if (v === null) window.localStorage.removeItem(k); else window.localStorage.setItem(k, v); } catch (e) {} }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var seen = [];
+  try { seen = JSON.parse(get('p2s.seen') || '[]') || []; } catch (e) { seen = []; }
+  if (here && seen.indexOf(here) < 0) { seen.push(here); set('p2s.seen', JSON.stringify(seen.slice(-500))); }
+
+  // The reader bar, under the menu on every page.
+  var bar = null;
+  function renderBar() {
+    var P = window.P2S && window.P2S.personas, id = get('p2s.persona'), p = P && id && P[id];
+    var nav = document.querySelector('nav.site');
+    if (!nav) return;
+    if (!bar) { bar = document.createElement('div'); bar.className = 'pbar'; nav.parentNode.insertBefore(bar, nav.nextSibling); }
+    document.querySelectorAll('.door.mine').forEach(function (d) { d.classList.remove('mine'); });
+    if (p) {
+      html.setAttribute('data-depth', String(p.depth));
+      var mine = document.querySelector('.door[data-persona="' + id + '"]');
+      if (mine) mine.classList.add('mine');
+      var steps = '', next = null;
+      p.path.forEach(function (x, i) {
+        var done = seen.indexOf(x[0]) >= 0, cur = x[0] === here;
+        if (!next && !done && !cur) next = x;
+        steps += '<li class="' + (cur ? 'here' : done ? 'seen' : '') + '"><a href="' + root + x[0] + '" title="' + esc(x[1]) + ', ' + x[2] + ' min">' + (i + 1) + '</a></li>';
+      });
+      var nx = next ? '<span class="nx">Next: <a href="' + root + next[0] + '">' + esc(next[1]) + '</a> <small>' + next[2] + ' min</small></span>'
+                    : '<span class="nx">Path read. <a href="' + root + 'start/index.html">Try another reader</a></span>';
+      bar.className = 'pbar';
+      bar.innerHTML = '<div class="row"><span class="av av-' + esc(p.group) + '" aria-hidden="true">' + esc(p.person.charAt(0)) + '</span>' +
+        '<span class="who">Reading as <a href="' + root + 'briefings/' + esc(id) + '/index.html"><b>' + esc(p.person) + '</b>, ' + esc(p.label.toLowerCase()) + '</a></span>' +
+        '<ol class="steps-mini" aria-label="Your reading path">' + steps + '</ol>' + nx +
+        '<a class="chg" href="' + root + 'start/index.html">Change</a><button type="button" class="x" data-persona-clear aria-label="Stop reading as ' + esc(p.person) + '">&times;</button></div>';
+      bar.hidden = false;
+    } else {
+      html.removeAttribute('data-depth');
+      if (get('p2s.nudge') === 'off' || here === 'index.html' || here === 'start/index.html') { bar.hidden = true; bar.innerHTML = ''; return; }
+      bar.className = 'pbar pbar-new';
+      bar.innerHTML = '<div class="row"><span class="who">New to this story? <a href="' + root + 'start/index.html">Tell us who you are</a> for a briefing and a reading path, or start with <a href="' + root + 'explained/index.html">php2shell explained from scratch</a>.</span>' +
+        '<button type="button" class="x" data-nudge-off aria-label="Hide this">&times;</button></div>';
+      bar.hidden = false;
+    }
+  }
+  document.addEventListener('click', function (ev) {
+    var t = ev.target.closest ? ev.target : null;
+    if (!t) return;
+    var pick = t.closest('[data-persona]');
+    if (pick) { set('p2s.persona', pick.getAttribute('data-persona')); }
+    if (t.closest('[data-persona-clear]')) { ev.preventDefault(); set('p2s.persona', null); renderBar(); }
+    if (t.closest('[data-nudge-off]')) { ev.preventDefault(); set('p2s.nudge', 'off'); renderBar(); }
   });
+  renderBar();
+
+  // Glossary hover cards: the first use of a term on a page carries its one-line definition.
+  var tip = null, tipFor = null;
+  function showTip(a) {
+    var text = a.getAttribute('data-tip');
+    if (!text) return;
+    if (!tip) { tip = document.createElement('div'); tip.className = 'tip'; tip.id = 'p2s-tip'; tip.setAttribute('role', 'tooltip'); document.body.appendChild(tip); }
+    tip.innerHTML = '<b>' + esc(a.getAttribute('data-term') || '') + '</b> ' + esc(text) + '<small>Open the glossary &rarr;</small>';
+    tip.style.display = 'block';
+    var w = Math.min(330, window.innerWidth - 24), r = a.getBoundingClientRect();
+    tip.style.width = w + 'px';
+    tip.style.left = Math.max(12, Math.min(r.left, window.innerWidth - w - 12)) + 'px';
+    var top = r.bottom + 8;
+    if (top + tip.offsetHeight > window.innerHeight - 8) top = Math.max(8, r.top - 8 - tip.offsetHeight);
+    tip.style.top = top + 'px';
+    a.setAttribute('aria-describedby', 'p2s-tip');
+    tipFor = a;
+  }
+  function hideTip() { if (tip) tip.style.display = 'none'; if (tipFor) tipFor.removeAttribute('aria-describedby'); tipFor = null; }
+  document.addEventListener('mouseover', function (ev) { var a = ev.target.closest && ev.target.closest('a[data-tip]'); if (a) showTip(a); });
+  document.addEventListener('mouseout', function (ev) { var a = ev.target.closest && ev.target.closest('a[data-tip]'); if (a) hideTip(); });
+  document.addEventListener('focusin', function (ev) { var a = ev.target.closest && ev.target.closest('a[data-tip]'); if (a) showTip(a); else hideTip(); });
+  document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') hideTip(); });
+  window.addEventListener('scroll', hideTip, { passive: true });
 })();
 ''')
 
-def main():
-    build_index(); build_flaws(); build_timeline(); build_discovery(); build_leak(); build_exploitation(); build_playbook()
+def build_all():
+    PAGES.clear()
+    build_flaws(); build_timeline(); build_discovery(); build_leak(); build_exploitation(); build_playbook()
     build_code(); build_context(); build_impact(); build_defence()
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
-    build_briefings(); build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
-    build_llms(); build_sitejs()
+    build_explained(); build_glossary(); build_briefings(); build_start(); build_index()
+    build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
+
+def main():
+    # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
+    build_all()
+    build_all()
+    build_llms(); build_sitejs(); build_personas_js()
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
 
@@ -1152,6 +1385,136 @@ def build_actors():
 <p><a href="../index.html">Every party &rarr;</a></p>
 '''
         page(f'actors/{a["id"]}/index.html', f'{a["name"]}: what they say', f'{a["name"]}: {a["role"]}; the claims this site attributes to them and their sources.', body, kind='evidence', topics='php2shell actor')
+
+
+# ----------------------------------------------------------------------------- pages added in v0.3: the readers
+
+def build_start():
+    cols = ''.join(f'<div class="mh">{depth_badge(d)}<small>{E(DEPTHS[d]["text"])}</small></div>' for d in ('1', '2', '3'))
+    rows = ''
+    for gid, g in GROUPS.items():
+        cells = ''
+        for d in (1, 2, 3):
+            ps = [p for p in PERSONAS.values() if p['group'] == gid and p['depth'] == d]
+            chips = ''.join(f'<a class="pchip" href="#p-{E(p["id"])}">{avatar(p)}<span><b>{E(p["person"])}</b><small>{E(p["label"])}</small></span><span class="pd">{depth_badge(d)}</span></a>' for p in ps)
+            cells += f'<div class="mc">{chips}</div>'
+        rows += f'<div class="mr"><div class="ml"><b>{E(g["label"])}</b><small>{E(g["text"])}</small></div>{cells}</div>'
+    grid = f'<div class="pmap"><div class="mr mhead"><div class="ml"></div>{cols}</div>{rows}</div>'
+    cards = ''
+    for p in PERSONAS.values():
+        a = AUD[p['id']]
+        cards += f'''<article class="pcard" id="p-{E(p["id"])}">
+<header>{avatar(p)}<div><h3>{E(p["person"])}, {E(p["label"].lower())}</h3><p class="small">{E(GROUPS[p["group"]]["label"])} &middot; {depth_badge(p["depth"])}</p></div></header>
+<p><b>Who.</b> {E(p["who"])}</p>
+<p><b>Their question.</b> <i>{E(a["question"])}</i></p>
+<div class="cols2"><div><h4>Needs</h4><ul>{"".join(f"<li>{E(x)}</li>" for x in p["needs"])}</ul></div><div><h4>Can skip</h4><ul>{"".join(f"<li>{E(x)}</li>" for x in p["skip"])}</ul></div></div>
+<div class="answer answer-s"><div><p class="kicker">The answer in thirty seconds</p><p>{E(p["answer"])}</p></div></div>
+<h4>Reading path</h4>{reading_path(p, 1)}
+<h4>Words they will meet</h4>{words_met(p, 1, 10)}
+<p><a class="cta cta-pri" href="../briefings/{E(p["id"])}/index.html" data-persona="{E(p["id"])}">Read as {E(p["person"])} &rarr;</a></p>
+</article>'''
+    body = f'''
+<p class="kicker">Start here</p>
+<h1>Who is reading? The site's readers, mapped</h1>
+<p class="lead">A story like this one is read by people who have never heard of PHP and by people who maintain it. A page written for one of them fails the other. So before anything else, this site names its readers: {len(PERSONAS)} of them, by what they need to do and how much technical language they can take. Every reader gets a briefing that opens with a thirty-second answer, and a reading path through the rest of the site.</p>
+{section("map", "The map", grid, "Across: how much technical language the reader wants. Down: what they need to do with the story. Pick the one closest to you.")}
+{section("how", "How the site changes once you pick", """<ul class="howlist">
+<li><b>A briefing written for you.</b> The thirty-second answer first, then what to decide or do, then the evidence. For plain-English readers the evidence is folded away until asked for.</li>
+<li><b>A reading path that follows you.</b> Choose <i>read as</i> and a bar under the menu shows where you are on your path, what you have read and what to read next, on every page. It is kept in this browser only; nothing is sent anywhere.</li>
+<li><b>Every term explained where it appears.</b> The first use of each specialist word on a page is underlined; hover or tap it for a one-line definition, or follow it to <a href="../glossary/index.html">the glossary</a>. Every CVE number links to what it is.</li>
+<li><b>A plain-English line at the top of every technical page</b>, so a reader who lands on the code or the inventory knows in one sentence what it is and whether they need it.</li>
+<li><b>The same evidence for everyone.</b> No briefing adds a claim. Each selects and orders the same rows, with the same status words and sources, so two readers can disagree about what to do and not about what happened.</li>
+</ul>""")}
+{section("readers", "The readers, one by one", f'<div class="pcards">{cards}</div>')}
+{section("why", "Why name readers at all", "<p>The first version of this site opened with a sentence that was accurate and unreadable to most of the people who arrived on it: two CVE numbers, a nickname, and the words unauthenticated remote code execution. Accuracy is necessary and not sufficient. A board member who cannot tell what a CVE is will repeat the headline instead; a website owner who does not know the fix is in PHP rather than in WordPress will update the wrong thing. The readers on this page are the editor's working list, and the list will change as readers write in.</p>")}
+'''
+    page('start/index.html', 'Who is reading? The readers of this site, mapped', f'{len(PERSONAS)} kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.', body, kind='free', topics='php2shell readers personas')
+
+def build_explained():
+    srcs = lambda *x: f'<span class="refs">{src_links(list(x), 1)}</span>'
+    body = f'''
+<p class="kicker">Start here &middot; {depth_badge(1)}</p>
+<h1>php2shell, explained from scratch</h1>
+<p class="lead">No technical background assumed. Seven short answers, in the order people usually ask them, each linking to the page with the evidence. Words in the dotted underline are explained when you hover or tap them.</p>
+<nav class="toc"><a href="#php">What is PHP?</a><a href="#what">What went wrong?</a><a href="#nickname">Why php2shell?</a><a href="#cve">What are the numbers?</a><a href="#offline">Why did sites go offline?</a><a href="#hacked">Was anyone hacked?</a><a href="#now">What happens now?</a><a href="#trust">How to read this site</a></nav>
+<section id="php"><h2>1. What is PHP, and is it on my computer?</h2>
+<p>PHP is a programming language for websites. When you open a page on a site built with it, a program on the website's server, written in PHP, puts the page together (your name, the latest posts, the basket) and sends the result to your browser. WordPress, which runs a very large number of blogs, shops and company sites, is written in PHP; so are Drupal, Joomla, Moodle, Magento and the software behind Wikipedia.</p>
+<p><b>PHP runs on servers, not on your phone or laptop.</b> This story is about the organisations that run websites. Visitors are affected only indirectly: if a site they use is broken into, or is taken offline as a precaution.</p>
+<div class="flow" role="img" aria-label="A normal visit: your browser asks a web server running PHP for a page; PHP reads the database and files and builds the page.">
+<div class="lane"><span class="lane-l">A normal visit</span><div class="fsteps"><div class="fstep">Your browser<small>asks for a page</small></div><span class="farr" aria-hidden="true">&rarr;</span><div class="fstep">The website's server, running PHP<small>builds the page</small></div><span class="farr" aria-hidden="true">&rarr;</span><div class="fstep">Database and files<small>the site's content and settings</small></div></div></div>
+</div>
+</section>
+<section id="what"><h2>2. What went wrong?</h2>
+<p>Two bugs were found deep inside PHP itself, not in any one website. Both are in how PHP cleans up after something goes wrong while it is handling a request.</p>
+<p>An analogy. Think of PHP as the kitchen behind every page a website serves. When an order is impossible (it needs more than the kitchen is allowed to use), the cook abandons it. The flaws are in how the kitchen abandons and tidies up: in some cases it leaves the counter half cleared, and the next step, or the next order, uses what was left as if it were fresh. A customer who knows this can send an order designed to leave exactly the right things on the counter, so that the kitchen ends up following the customer's instructions instead of the menu.</p>
+<div class="flow" role="img" aria-label="The attack: an attacker anywhere, with no password, sends a crafted request; PHP's error handling goes wrong; the attacker's commands run on the server.">
+<div class="lane lane-bad"><span class="lane-l">The attack</span><div class="fsteps"><div class="fstep bad">Anyone on the internet<small>no account, no password</small></div><span class="farr" aria-hidden="true">&rarr;</span><div class="fstep bad">A crafted request<small>pushes PHP into its error path</small></div><span class="farr" aria-hidden="true">&rarr;</span><div class="fstep bad">The clean-up goes wrong<small>leftover memory is trusted</small></div><span class="farr" aria-hidden="true">&rarr;</span><div class="fstep bad">The attacker's commands run<small>on the server, as the website</small></div></div></div>
+<div class="reach"><div><b>What that can reach</b><ul><li>the website's own code and settings</li><li>passwords stored in those settings, such as the database's</li><li>files the website can read or write</li><li>other systems that trust this server</li></ul></div><div><b>What it does not automatically reach</b><ul><li>systems the server is not allowed to talk to</li><li>passwords that were never on that server</li><li>your own phone or computer</li></ul></div></div>
+</div>
+<p>In the jargon, this is <i>unauthenticated remote code execution</i>: no login needed, from anywhere, and the attacker's code runs. It is the most serious kind of flaw there is, which is why the response was so loud. The researchers proved it end to end against the most traditional way of running PHP, inside the Apache web server, before any of the website's own code had run. That last point matters: <b>it does not matter how well a website is written</b>; if PHP underneath it is unpatched, it is in scope. {srcs("php-net-advisory", "github-ghsa-w8hw-w9fx-j79w", "github-ghsa-6wmf-4rv5-p3rp")}</p>
+<p>The technical version is on <a href="../flaws/index.html">the two flaws</a>, and the code itself on <a href="../code/index.html">the code</a>.</p>
+</section>
+<section id="nickname"><h2>3. Why is it called php2shell?</h2>
+<p>Serious flaws get nicknames so people can talk about them: Heartbleed, Shellshock, Log4Shell. <b>php2shell</b> reads as <i>PHP to shell</i>. A shell is the command line an administrator types into; getting a shell on a server means being able to run commands on it. So the name is the whole attack in one word: start with a PHP website, end with a command line on its server. The US NSA wrote it PHP2Shell. {srcs("nsa-x-2112903220209098897", "calif-php2shell")}</p>
+</section>
+<section id="cve"><h2>4. What are CVE-2026-109618 and CVE-2026-109619?</h2>
+<p>They are the official names. A CVE number is a serial number for a security flaw, so that vendors, governments and journalists know they mean the same bug: CVE, the year the number was reserved, and a sequence number. Each has a public record saying what is affected and how bad it is.</p>
+<div class="cols2"><div class="col"><h3>CVE-2026-109618</h3><p>PHP running out of memory mid-request can leave memory half set up, and the clean-up that follows can be steered by an attacker. Severity 9.2 out of 10.</p></div><div class="col"><h3>CVE-2026-109619</h3><p>Leftover settings from one visitor's request can point at memory that has been released, and the next request on the same worker uses it. Severity 9.2 out of 10.</p></div></div>
+<p>Both are fixed in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35, released on 21 October 2026. Older versions (8.1 and before) are past their support date and got no ready-made fix. {srcs("cve-cve-2026-109618", "cve-cve-2026-109619", "php-net-advisory")}</p>
+</section>
+<section id="offline"><h2>5. Why did governments tell people to take websites offline?</h2>
+<p>Because an unpatched website with this flaw can be taken over by anyone, and updating every server takes time. The US NSA and CISA said: if you cannot update, take the system offline until you can. The UK's NCSC put that fourth on its list, after updating and temporary fixes; several European agencies said isolate it; others did not mention it at all. Dutch government services, including the DigiD login many Dutch citizens use, were taken offline as a precaution. {srcs("nsa-x-2112903220209098897", "cisa-alert-php-20261021", "ncsc-news-php", "rijksoverheid-ncsc-php-news")}</p>
+<p>Taking a site offline is a decision an organisation makes, not evidence it was attacked. The <a href="../agencies/index.html">agencies page</a> sets the sixteen sets of advice side by side.</p>
+</section>
+<section id="hacked"><h2>6. Was anyone actually hacked?</h2>
+<p>Not that anyone has confirmed, as of the latest evidence this site holds. Attackers have certainly been trying: Cloudflare says it saw millions of attempts across its network, and Amazon says a decoy server was hit four days before the fix was public. But an attempt is not a success, no named organisation has said it was broken into, and the US list of flaws known to be exploited did not include either of these when last checked. That can change quickly, and this site will say so when the evidence does. {srcs("x-eastdakota-php2shell-stats", "thehackernews-php2shell-4days", "cisa-kev-json")}</p>
+<p>The details: <a href="../impact/index.html">who went offline and who was compromised</a>, and <a href="../exploitation/index.html">every sign of exploitation, in order</a>.</p>
+</section>
+<section id="now"><h2>7. What happens now?</h2>
+<ul class="howlist">
+<li><b>If you only use websites:</b> nothing to do. Ignore messages that tell you to install anything because of this; that is a scam pattern.</li>
+<li><b>If you own a website:</b> ask whoever hosts it whether PHP has been updated and restarted. <a href="../briefings/site-owner/index.html">The website owner's briefing</a> has the exact question to send.</li>
+<li><b>If you run systems:</b> update, restart, verify, and look for signs of compromise. <a href="../playbook/index.html">The step-by-step list</a> has every agency's advice in order.</li>
+<li><b>If you decide or communicate:</b> <a href="../start/index.html">pick your briefing</a>.</li>
+</ul>
+</section>
+<section id="trust"><h2>How to read this site</h2>
+<p>Every statement on this site carries one of five words, so you can tell a fact from a rumour at a glance:</p>
+{status_legend()}
+<p>Every one of those statements links to the pages it comes from, and every one of those pages was saved, dated and fingerprinted when it was read, so that it can be checked later even if the original changes. <a href="../method/index.html">How that works</a>.</p>
+</section>
+'''
+    page('explained/index.html', 'php2shell, explained from scratch', 'No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.', body, kind='free', topics='php2shell explainer plain english')
+
+def build_glossary():
+    terms = sorted(TERMS, key=lambda t: t['term'].lower())
+    letters = OrderedDict()
+    for t in terms:
+        letters.setdefault(t['term'][0].upper(), []).append(t)
+    jump = ''.join(f'<a href="#l-{E(L)}">{E(L)}</a>' for L in letters)
+    out = ''
+    for L, ts in letters.items():
+        items = ''
+        for t in ts:
+            ext = f' &middot; <a href="{E(t["ext"])}" rel="noopener">the authority &#8599;</a>' if t.get('ext') else ''
+            items += f'<article class="gterm" id="{E(t["id"])}"><h3>{E(t["term"])}</h3><p class="gshort">{E(t["short"])}</p><p>{E(t["long"])}</p><p class="small"><a href="../{E(t["more"])}">Where it matters in this story &rarr;</a>{ext}</p></article>'
+        out += f'<section id="l-{E(L)}" class="gletter"><h2>{E(L)}</h2>{items}</section>'
+    body = f'''
+<p class="kicker">Start here &middot; {depth_badge(1)}</p>
+<h1>Glossary: every term, in plain English</h1>
+<p class="lead">{len(TERMS)} words this story cannot avoid, each explained for someone who has never worked in security, and each in the sense it has in this story. On every other page, the first use of each of these words is underlined and links here.</p>
+<nav class="toc jump">{jump}</nav>
+{out}
+'''
+    page('glossary/index.html', 'Glossary: every php2shell term in plain English', f'{len(TERMS)} terms from the php2shell story (PHP, CVE, CVSS, remote code execution, WAF, KEV and more), each explained in plain English, in the sense it has in this story.', body, kind='free', topics='php2shell glossary')
+
+def build_personas_js():
+    data = {'depths': {k: v['label'] for k, v in DEPTHS.items()}, 'personas': OrderedDict()}
+    for p in PERSONAS.values():
+        data['personas'][p['id']] = {'person': p['person'], 'label': p['label'], 'group': p['group'], 'depth': p['depth'],
+                                     'path': [[x, nav_title(x), minutes(x)] for x in p['path']]}
+    write('assets/personas.js', '// Generated by admin/build/build.py from data/personas.json: the readers, their paths and reading times.\nwindow.P2S = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n')
+
 
 if __name__ == '__main__':
     main()

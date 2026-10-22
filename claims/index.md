@@ -4,6 +4,8 @@
 
 # Every claim, and who makes it
 
+In plain English Every statement made about the story, who made it, and how far it can be trusted, with links to the evidence.
+
 70 claims: 22 confirmed, 33 reported, 8 disputed, 3 contradicted, 4 unverified. A claim is a sentence somebody said, with the party that said it, the captured sources it comes from, and one of five words for how far it can be trusted. The words are defined here, once, and the build refuses a claim whose sources are not in the manifest.
 
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -127,4 +129,4 @@ The newsroom's own twelve claims, seeded from the BBC live page on the morning o
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/claims/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/claims/index.html

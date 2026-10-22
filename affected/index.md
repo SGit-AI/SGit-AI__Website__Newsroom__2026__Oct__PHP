@@ -4,6 +4,8 @@ Which PHP versions and SAPIs php2shell affects, which applications had RCE demon
 
 # Affected systems
 
+In plain English Which PHP versions, which server setups and which software products are affected.
+
 Three layers: the PHP versions, the ways PHP is attached to a web server, and the software that runs on top. The first two come from the PHP project. The third comes from NCSC-NL's public inventory, which this site counts rather than quotes: 674 products at commit `cca173c64ec5`, of which 206 are marked vulnerable to CVE-2026-109618, 46 fixed, 418 under investigation and 3 not vulnerable.
 
 ## Versions
@@ -63,4 +65,4 @@ NCSC-NL generates the list from an SPDX 3 inventory with VEX statements and says
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/affected/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/affected/index.html

@@ -1,10 +1,17 @@
 # Briefing for a head of appsec: Which of our applications are in scope, which settings matter, and what do we add to the pipeline?
 
-The php2shell story for a head of appsec: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a head of appsec: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · Head of AppSec · from the same 70 claims, selected and ordered for one reader
+Briefing for Jamie, head of appsec · ******Deeply technical · from the same 70 claims, selected and ordered for one reader
 
 # Which of our applications are in scope, which settings matter, and what do we add to the pipeline?
+
+J
+The answer in thirty seconds
+
+Every application on an affected runtime is in scope, including ones with no uploads or sessions: the demonstrated paths run before application code. Add the running PHP version to the SBOM and fail the pipeline on an unfixed one. Detection belongs at the edge and on the host, not in the app.
+
+[Read the site as Jamie →](../../flaws/index.html)
 
 Scope, settings and the pipeline change. The bug is below your applications: any PHP endpoint that reaches the runtime is a candidate, and the demonstrated paths run before application code.
 
@@ -14,6 +21,30 @@ Scope, settings and the pipeline change. The bug is below your applications: any
 - The runtime version in production is now an application-security finding: add it to the SBOM, fail the pipeline on an unfixed PHP, and check the running version after deploy, not the package version before.
 - Detection belongs at the edge and on the host, not in the app: the request shape (upload-progress field plus many array parts, oversized multipart bodies) and the process tree (a worker spawning a shell).
 - The public proof-of-concept code does not work as published, per VulnCheck and a lab reproduction; a scanner that fires on it is testing the wrong thing.
+
+## Your reading path
+- [Your briefing](../../briefings/appsec/index.html) 3 min
+- [The two flaws](../../flaws/index.html) 4 min
+- [Affected systems](../../affected/index.html) 1 min
+- [Detection and defence](../../defence/index.html) 3 min
+- [If you run PHP](../../playbook/index.html) 3 min
+
+About 14 minutes in all. Choose *read as Jamie* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- which applications are in scope
+- settings in order of least breakage
+- what to add to the pipeline
+- where detection belongs
+
+### What you can skip
+- the disclosure politics
+
+## Words you will meet
+
+[PHP](../../glossary/index.html#php)[SBOM](../../glossary/index.html#sbom)[Patch](../../glossary/index.html#patch)[PHP-FPM](../../glossary/index.html#fpm)[Shell](../../glossary/index.html#shell)[Multipart](../../glossary/index.html#multipart)[Proof of concept (PoC)](../../glossary/index.html#poc)[Primary source](../../glossary/index.html#primary)[CVSS](../../glossary/index.html#cvss)[Vulnerability](../../glossary/index.html#vulnerability)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Remote code execution (RCE)](../../glossary/index.html#rce)[mod_php](../../glossary/index.html#mod-php)[Out of memory (OOM)](../../glossary/index.html#oom)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
 ## The facts this rests on
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -66,8 +97,8 @@ Scope, settings and the pipeline change. The bug is below your applications: any
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Developer](../developer/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/appsec/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/appsec/index.html

@@ -115,6 +115,21 @@
  ],
  "audiences": [
   {
+   "id": "everyone",
+   "name": "Curious reader",
+   "question": "What happened, does it affect me, and should I worry?"
+  },
+  {
+   "id": "site-owner",
+   "name": "Website owner",
+   "question": "My website runs on WordPress or similar: am I affected, and what do I ask my host?"
+  },
+  {
+   "id": "pm",
+   "name": "Project or programme manager",
+   "question": "What unplanned work does this create, who do I chase, and what do I tell stakeholders?"
+  },
+  {
    "id": "board",
    "name": "Board member or executive",
    "question": "Are we exposed, what is it costing us, and who owns the decision to pull a system?"

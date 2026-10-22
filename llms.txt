@@ -2,7 +2,12 @@
 
 > A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
 
-Site v0.2.2. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.3.0. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+
+## Start here
+- [Who are you? Pick a reader](https://php.oct.2026.newsroom.sgit.ai/start/index.md): 15 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
+- [Explained from scratch](https://php.oct.2026.newsroom.sgit.ai/explained/index.md): No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.
+- [Glossary: every term, in plain English](https://php.oct.2026.newsroom.sgit.ai/glossary/index.md): 40 terms from the php2shell story (PHP, CVE, CVSS, remote code execution, WAF, KEV and more), each explained in plain English, in the sense it has in this story.
 
 ## The story
 - [Front page](https://php.oct.2026.newsroom.sgit.ai/index.md): A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
@@ -28,22 +33,25 @@ Site v0.2.2. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [As a graph](https://php.oct.2026.newsroom.sgit.ai/graph/index.md): 209 nodes and 281 citation edges from the php2shell claims and timeline to the captured sources, drawn from the same rows as the text, with the JSON to download.
 
 ## Briefings
-- [Board member or executive](https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.md): The php2shell story for a board member or executive: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [Security lead](https://php.oct.2026.newsroom.sgit.ai/briefings/security/index.md): The php2shell story for a security lead: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [PHP or platform engineer](https://php.oct.2026.newsroom.sgit.ai/briefings/engineer/index.md): The php2shell story for a php or platform engineer: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [Journalist](https://php.oct.2026.newsroom.sgit.ai/briefings/journalist/index.md): The php2shell story for a journalist: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [Security researcher](https://php.oct.2026.newsroom.sgit.ai/briefings/researcher/index.md): The php2shell story for a security researcher: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [Analyst or advisor](https://php.oct.2026.newsroom.sgit.ai/briefings/analyst/index.md): The php2shell story for a analyst or advisor: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [CISO](https://php.oct.2026.newsroom.sgit.ai/briefings/ciso/index.md): The php2shell story for a ciso: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [CTO](https://php.oct.2026.newsroom.sgit.ai/briefings/cto/index.md): The php2shell story for a cto: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [CFO](https://php.oct.2026.newsroom.sgit.ai/briefings/cfo/index.md): The php2shell story for a cfo: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [Head of AppSec](https://php.oct.2026.newsroom.sgit.ai/briefings/appsec/index.md): The php2shell story for a head of appsec: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [Developer](https://php.oct.2026.newsroom.sgit.ai/briefings/developer/index.md): The php2shell story for a developer: what to decide, the claims it rests on with their status and sources, and what is still open.
-- [Media and communications team](https://php.oct.2026.newsroom.sgit.ai/briefings/comms/index.md): The php2shell story for a media and communications team: what to decide, the claims it rests on with their status and sources, and what is still open.
+- [Curious reader](https://php.oct.2026.newsroom.sgit.ai/briefings/everyone/index.md): The php2shell story for a curious reader: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [Website owner](https://php.oct.2026.newsroom.sgit.ai/briefings/site-owner/index.md): The php2shell story for a website owner: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [Project or programme manager](https://php.oct.2026.newsroom.sgit.ai/briefings/pm/index.md): The php2shell story for a project or programme manager: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [Board member or executive](https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.md): The php2shell story for a board member or executive: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [Security lead](https://php.oct.2026.newsroom.sgit.ai/briefings/security/index.md): The php2shell story for a security lead: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [PHP or platform engineer](https://php.oct.2026.newsroom.sgit.ai/briefings/engineer/index.md): The php2shell story for a php or platform engineer: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [Journalist](https://php.oct.2026.newsroom.sgit.ai/briefings/journalist/index.md): The php2shell story for a journalist: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [Security researcher](https://php.oct.2026.newsroom.sgit.ai/briefings/researcher/index.md): The php2shell story for a security researcher: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [Analyst or advisor](https://php.oct.2026.newsroom.sgit.ai/briefings/analyst/index.md): The php2shell story for a analyst or advisor: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [CISO](https://php.oct.2026.newsroom.sgit.ai/briefings/ciso/index.md): The php2shell story for a ciso: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [CTO](https://php.oct.2026.newsroom.sgit.ai/briefings/cto/index.md): The php2shell story for a cto: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [CFO](https://php.oct.2026.newsroom.sgit.ai/briefings/cfo/index.md): The php2shell story for a cfo: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [Head of AppSec](https://php.oct.2026.newsroom.sgit.ai/briefings/appsec/index.md): The php2shell story for a head of appsec: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [Developer](https://php.oct.2026.newsroom.sgit.ai/briefings/developer/index.md): The php2shell story for a developer: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+- [Media and communications team](https://php.oct.2026.newsroom.sgit.ai/briefings/comms/index.md): The php2shell story for a media and communications team: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
 ## About
 - [The method](https://php.oct.2026.newsroom.sgit.ai/method/index.md): How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.
-- [The team](https://php.oct.2026.newsroom.sgit.ai/team/index.md): Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the six audiences.
+- [The team](https://php.oct.2026.newsroom.sgit.ai/team/index.md): Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the 15 audiences.
 - [The billing model](https://php.oct.2026.newsroom.sgit.ai/billing/index.md): How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
 - [Your reading account](https://php.oct.2026.newsroom.sgit.ai/account/index.md): The balance, history and receipts of your reading on this site, kept in your browser.
 - [The brief](https://php.oct.2026.newsroom.sgit.ai/brief/index.md): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.

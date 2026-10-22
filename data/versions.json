@@ -1,6 +1,25 @@
 {
- "current": "0.2.2",
+ "current": "0.3.0",
  "versions": [
+  {
+   "version": "0.3.0",
+   "date": "2026-10-22",
+   "title": "the first reader-first pass: fifteen named readers mapped by job and technical depth, a briefing for each opening with a thirty-second plain answer and a reading path, three new briefings (curious reader, website owner, project manager), a plain-English explainer, a glossary of 40 terms linked and hover-defined on first use on every page, every CVE ID linked, a plain-English line on every technical page, a reader bar that keeps your place, and a front page that leads with where things stand and who you are",
+   "summary": "Designed from the question the editor asked: who is reading, and what does the first screen do for them? The evidence is unchanged; every new sentence of fact cites the vault.",
+   "changes": [
+    "data/personas.json",
+    "data/glossary.json",
+    "data/plain.json",
+    "data/roles.json",
+    "admin/build/build.py",
+    "admin/build/validate.py",
+    "assets/site.css",
+    "assets/personas.js",
+    "assets/site.js"
+   ],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.2",
    "date": "2026-10-22",

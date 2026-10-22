@@ -1,6 +1,6 @@
 # The team: the editor, the pipeline and the agents
 
-Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the six audiences.
+Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the 15 audiences.
 
 # The team: one editor, a pipeline, and the agents on it
 
@@ -99,6 +99,9 @@ The site is built and run by one person and a set of software agents, and this p
 ## The audiences
 
 Each briefing is a role too: a reader whose question the site answers in one page.
+- [Curious reader](../briefings/everyone/index.html): What happened, does it affect me, and should I worry?
+- [Website owner](../briefings/site-owner/index.html): My website runs on WordPress or similar: am I affected, and what do I ask my host?
+- [Project or programme manager](../briefings/pm/index.html): What unplanned work does this create, who do I chase, and what do I tell stakeholders?
 - [Board member or executive](../briefings/board/index.html): Are we exposed, what is it costing us, and who owns the decision to pull a system?
 - [Security lead](../briefings/security/index.html): What do I patch first, what do I watch for, and when do I take something offline?
 - [PHP or platform engineer](../briefings/engineer/index.html): Which versions, which SAPIs, which settings, which commands?
@@ -130,4 +133,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html

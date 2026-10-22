@@ -4,6 +4,8 @@ Every scale figure in circulation about php2shell, with what it measures, who sa
 
 # The numbers, and what each one measures
 
+In plain English The big numbers in the headlines measure different things. 70% is a share of websites, not of the Internet; 2.6 million is a count of servers.
+
 The editor's starting point for this site was a figure that did not add up: *70% of the internet*. It turns out to be a headline's restatement of a share-of-websites statistic that nobody on this beat sources, sitting next to a host count a thousand times smaller and a national count a thousand times smaller again. None of them is wrong on its own terms. The table says what each one counts.
 
 | Figure | What it measures | Who said it | Status | Note | Sources |
@@ -42,4 +44,4 @@ The number a reader actually wants, how many systems were exploitable at a given
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/numbers/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/numbers/index.html

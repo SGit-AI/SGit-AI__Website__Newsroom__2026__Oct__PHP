@@ -1,10 +1,17 @@
 # Briefing for a media and communications team: What can we say that is true, what should we not say, and what will we be asked?
 
-The php2shell story for a media and communications team: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a media and communications team: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · Media and communications team · from the same 70 claims, selected and ordered for one reader
+Briefing for Riley, communications team · ******Plain English · from the same 70 claims, selected and ordered for one reader
 
 # What can we say that is true, what should we not say, and what will we be asked?
+
+R
+The answer in thirty seconds
+
+Safe to say: two critical flaws in PHP were fixed on 21 October; we updated or isolated our systems; we have no evidence of compromise and review continues. Do not say '70% of the Internet', 'the most severe ever' or 'exploited everywhere'. Point people to php.net and your national agency.
+
+[Read the site as Riley →](../../explained/index.html)
 
 What is true, what is not, and what you will be asked. The story most readers saw on the morning of 22 October carried three things this site could not confirm, and the questions will come from that story.
 
@@ -15,8 +22,33 @@ What is true, what is not, and what you will be asked. The story most readers sa
 - Attribution: three research teams and the PHP Foundation each tell the discovery story differently; do not pick one. The flaw was seen in 2024 and not fixed because exploitation could not be shown.
 - Point at primary sources: php.net's advisory and your national agency. Do not link a vendor blog as the authority.
 
+## Your reading path
+- [Your briefing](../../briefings/comms/index.html) 3 min
+- [Explained from scratch](../../explained/index.html) 6 min
+- [The numbers](../../numbers/index.html) 2 min
+- [Impact: offline vs compromised](../../impact/index.html) 2 min
+- [The agencies](../../agencies/index.html) 1 min
+
+About 14 minutes in all. Choose *read as Riley* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- the safe statement
+- the phrases to avoid
+- the questions coming
+- where to point people
+
+### What you can skip
+- the code
+- the settings
+
+## Words you will meet
+
+[PHP](../../glossary/index.html#php)[Exploit, exploitation](../../glossary/index.html#exploit)[Patch](../../glossary/index.html#patch)[CDN](../../glossary/index.html#cdn)[Honeypot](../../glossary/index.html#honeypot)[Primary source](../../glossary/index.html#primary)[php2shell](../../glossary/index.html#php2shell)[CVE](../../glossary/index.html#cve)[CISA](../../glossary/index.html#cisa)[NCSC](../../glossary/index.html#ncsc)[Web server](../../glossary/index.html#web-server)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Out of memory (OOM)](../../glossary/index.html#oom)[Vulnerability](../../glossary/index.html#vulnerability)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
+
 ## The facts this rests on
-- confirmed two or more primary sources agree, or the fact was counted from a captured file
+Show the 32 claims behind this briefing, each with its status and sources- confirmed two or more primary sources agree, or the fact was counted from a captured file
 - reported one party says so, and it has not been contradicted
 - disputed the sources disagree, and both readings are shown
 - contradicted a primary source says otherwise
@@ -58,6 +90,8 @@ What is true, what is not, and what you will be asked. The story most readers sa
 | 'Where immediate remediation is not feasible, organisations should consider taking the system offline until it can be fully mitigated'That sentence is not on the NCSC page as captured at 08:09Z on 22 October. The page's offline advice is step 4 of 6 and is worded differently. The page was modified at 07:30Z that morning. The sentence's opening matches the Canadian CCCS text. | UK NCSC, as quoted by the BBC | disputed | 2/3 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html) [CCCS](../../sources/cccs-al26-026/index.html) |
 | The UK's NCSC, the NSA and their counterparts in the EU and Australia advise taking systems offline where patching is not feasibleAustralia's ACSC gives no offline advice. CERT-EU says isolate. The Netherlands, Italy, Japan and New Zealand give no offline advice. | BBC | contradicted | 4/6 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [ACSC](../../sources/acsc-alert-php/index.html) [CERT-EU](../../sources/certeu-sa-2026-018/index.html) [NCSC-NL](../../sources/ncsc-nl-php2shell/index.html) [ACN / CSIRT Italia](../../sources/acn-it-php2shell/index.html) [JPCERT/CC](../../sources/jpcert-at260033/index.html) |
 
+Every sentence above rests on these rows. They are folded away because they are written in the sources' own vocabulary; the glossary explains each term.
+
 ## What is still open
 - Who first leaked the CVE IDs on 20 October, and where. The PHP Foundation does not say; a PHP security team member points to an anonymous Hacker News post. No copy of that post is in the vault.
 - Whether the deleted Calif video is the one now embedded on Calif's own write-up. Calif's page does not mention the leak.
@@ -65,8 +99,8 @@ What is true, what is not, and what you will be asked. The story most readers sa
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/comms/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/comms/index.html

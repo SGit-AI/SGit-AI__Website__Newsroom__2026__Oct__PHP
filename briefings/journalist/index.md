@@ -1,10 +1,17 @@
 # Briefing for a journalist: Which numbers hold up, who said what first, and what is still unverified?
 
-The php2shell story for a journalist: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a journalist: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · Journalist · from the same 70 claims, selected and ordered for one reader
+Briefing for Rowan, journalist · ******Some technical · from the same 70 claims, selected and ordered for one reader
 
 # Which numbers hold up, who said what first, and what is still unverified?
+
+R
+The answer in thirty seconds
+
+The 70% figure is a share of websites that use PHP, restated as a share of the Internet. The release was 21 October, not 22. Three parties claim the discovery; their dates do not conflict, their framing does. No agency has confirmed a successful compromise, and CISA has not listed either flaw as exploited.
+
+[Read the site as Rowan →](../../numbers/index.html)
 
 Which numbers hold up, who said what first, which quotes are on the page they are attributed to, and what nobody has verified. Every row links to the captured source so the quote can be checked against the bytes.
 
@@ -14,6 +21,31 @@ Which numbers hold up, who said what first, which quotes are on the page they ar
 - The sentence the BBC attributes to the NCSC is not on the NCSC page as captured; the opening matches Canada's text.
 - Australia's agency gives no offline advice; the EU's says isolate.
 - Three parties claim discovery; their own dates do not conflict, their framing does. The Foundation says Calif and OpenAI reported the same root cause on the same day.
+
+## Your reading path
+- [Your briefing](../../briefings/journalist/index.html) 3 min
+- [The numbers](../../numbers/index.html) 2 min
+- [Every claim](../../claims/index.html) 1 min
+- [Who found it](../../discovery/index.html) 2 min
+- [How disclosure broke](../../leak/index.html) 1 min
+- [The agencies](../../agencies/index.html) 1 min
+
+About 10 minutes in all. Choose *read as Rowan* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- which numbers hold up
+- who said what first
+- quotes checked against their source
+- what is unverified
+
+### What you can skip
+- server settings
+
+## Words you will meet
+
+[PHP](../../glossary/index.html#php)[Exploit, exploitation](../../glossary/index.html#exploit)[CISA](../../glossary/index.html#cisa)[NCSC](../../glossary/index.html#ncsc)[Primary source](../../glossary/index.html#primary)[Patch](../../glossary/index.html#patch)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Out of memory (OOM)](../../glossary/index.html#oom)[Vulnerability](../../glossary/index.html#vulnerability)[Honeypot](../../glossary/index.html#honeypot)[CVE](../../glossary/index.html#cve)[CVSS](../../glossary/index.html#cvss)[php2shell](../../glossary/index.html#php2shell)[Proof of concept (PoC)](../../glossary/index.html#poc)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
 ## The facts this rests on
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -66,8 +98,8 @@ Which numbers hold up, who said what first, which quotes are on the page they ar
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Security researcher](../researcher/index.html) · [Analyst or advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/journalist/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/journalist/index.html

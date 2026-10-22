@@ -1,10 +1,17 @@
 # Briefing for a php or platform engineer: Which versions, which SAPIs, which settings, which commands?
 
-The php2shell story for a php or platform engineer: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a php or platform engineer: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · PHP or platform engineer · from the same 70 claims, selected and ordered for one reader
+Briefing for Drew, php or platform engineer · ******Deeply technical · from the same 70 claims, selected and ordered for one reader
 
 # Which versions, which SAPIs, which settings, which commands?
+
+D
+The answer in thirty seconds
+
+Target 8.5.12, 8.4.27, 8.3.36 or 8.2.35; restart every worker and rebuild images. Until then: session.upload_progress.enabled=0 in php.ini or the pool, low post_max_size, fatal_error_backtraces=0 on 8.5, pm.max_requests=1 on FPM. Verify with php -v inside the running container.
+
+[Read the site as Drew →](../../flaws/index.html)
 
 Versions, SAPIs, settings and what each does. The claims are the primary records' own words where they exist.
 
@@ -14,6 +21,31 @@ Versions, SAPIs, settings and what each does. The claims are the primary records
 - The CVE record calls 7.4 to 8.1 unaffected by omission; the backport branches say otherwise. Do not trust a scanner on this.
 - The 8.5.12 fix may have a follow-up; watch php.net and oss-security.
 - Verify the running version with phpinfo or php -v inside the container, after the restart.
+
+## Your reading path
+- [Your briefing](../../briefings/engineer/index.html) 3 min
+- [The two flaws](../../flaws/index.html) 4 min
+- [If you run PHP](../../playbook/index.html) 3 min
+- [Affected systems](../../affected/index.html) 1 min
+- [The code](../../code/index.html) 7 min
+
+About 18 minutes in all. Choose *read as Drew* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- fixed versions
+- which SAPI is how exposed
+- the exact settings and where they must be set
+- how to verify the running version
+
+### What you can skip
+- the board line
+- the money
+
+## Words you will meet
+
+[PHP-FPM](../../glossary/index.html#fpm)[SAPI](../../glossary/index.html#sapi)[CVE](../../glossary/index.html#cve)[Backport](../../glossary/index.html#backport)[Primary source](../../glossary/index.html#primary)[PHP](../../glossary/index.html#php)[CVSS](../../glossary/index.html#cvss)[Vulnerability](../../glossary/index.html#vulnerability)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Remote code execution (RCE)](../../glossary/index.html#rce)[mod_php](../../glossary/index.html#mod-php)[Out of memory (OOM)](../../glossary/index.html#oom)[longjmp](../../glossary/index.html#longjmp)[Exploit, exploitation](../../glossary/index.html#exploit)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
 ## The facts this rests on
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -47,8 +79,8 @@ Versions, SAPIs, settings and what each does. The claims are the primary records
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/engineer/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/engineer/index.html

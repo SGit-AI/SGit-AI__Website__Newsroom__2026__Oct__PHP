@@ -1,10 +1,17 @@
 # Briefing for a security lead: What do I patch first, what do I watch for, and when do I take something offline?
 
-The php2shell story for a security lead: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a security lead: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
-Briefing · Security lead · from the same 70 claims, selected and ordered for one reader
+Briefing for Sam, security lead · ******Some technical · from the same 70 claims, selected and ordered for one reader
 
 # What do I patch first, what do I watch for, and when do I take something offline?
+
+S
+The answer in thirty seconds
+
+Internet-facing mod_php first, then FPM, then everything else. Where patching slips, apply php.net's temporary settings and record that each blocks a known path only. Alert on PHP workers spawning shells or fetching tools. Decide now who calls isolate or offline, and when.
+
+[Read the site as Sam →](../../playbook/index.html)
 
 Patch order, mitigations, signals and the offline decision. The claims are grouped so that the ones your runbook depends on come first.
 
@@ -14,6 +21,30 @@ Patch order, mitigations, signals and the offline decision. The claims are group
 - Alert on PHP workers spawning shells or fetching tools; log multipart and oversized requests at the edge.
 - Decide the isolate-or-offline threshold now and name who calls it.
 - Re-check KEV and oss-security daily: the exploitation picture and the incomplete-fix question will both move.
+
+## Your reading path
+- [Your briefing](../../briefings/security/index.html) 3 min
+- [If you run PHP](../../playbook/index.html) 3 min
+- [Exploitation signals](../../exploitation/index.html) 2 min
+- [Detection and defence](../../defence/index.html) 3 min
+- [The agencies](../../agencies/index.html) 1 min
+
+About 12 minutes in all. Choose *read as Sam* and the bar under the menu keeps your place on every page.
+
+### What this briefing covers
+- patch order
+- temporary mitigations and what each misses
+- what to alert on
+- the offline threshold
+
+### What you can skip
+- the leak forensics
+
+## Words you will meet
+
+[PHP](../../glossary/index.html#php)[Shell](../../glossary/index.html#shell)[Patch](../../glossary/index.html#patch)[mod_php](../../glossary/index.html#mod-php)[PHP-FPM](../../glossary/index.html#fpm)[Multipart](../../glossary/index.html#multipart)[Exploit, exploitation](../../glossary/index.html#exploit)[KEV](../../glossary/index.html#kev)[Primary source](../../glossary/index.html#primary)[CVSS](../../glossary/index.html#cvss)[Vulnerability](../../glossary/index.html#vulnerability)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Remote code execution (RCE)](../../glossary/index.html#rce)[Out of memory (OOM)](../../glossary/index.html#oom)
+
+Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
 ## The facts this rests on
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -72,8 +103,8 @@ Patch order, mitigations, signals and the offline decision. The claims are group
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other briefings: [Board member or executive](../board/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Media and communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.2.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/security/index.html
+site v0.3.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/security/index.html

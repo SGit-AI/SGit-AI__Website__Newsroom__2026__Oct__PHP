@@ -82,6 +82,20 @@ for n in ('affected', 'roles', 'versions', 'billing', 'vault', 'software', 'grap
 aff = load('affected') or {}
 for s in aff.get('ranges_sources', []) + aff.get('mitigations_sources', []) + sum([x.get('sources', []) for x in aff.get('sapis', [])], []):
     if s not in slugs: fails.append(f'data/affected.json cites unknown slug {s}')
+# 4b. the readers: plain-English facts cite known slugs; every persona path and glossary link points at a page that exists
+plain = load('plain') or {}
+for c in plain.get('cards', []) + plain.get('moments', []):
+    for s in c.get('sources', []):
+        if s not in slugs: fails.append(f'data/plain.json: {c.get("q") or c.get("when")} cites unknown slug {s}')
+    if not os.path.exists(os.path.join(ROOT, c['href'].split('#')[0])): fails.append(f'data/plain.json: link to missing page {c["href"]}')
+personas = load('personas') or {}
+aud = {a['id'] for a in (load('roles') or {}).get('audiences', [])}
+for pr in personas.get('personas', []):
+    if pr['id'] not in aud: fails.append(f'data/personas.json: {pr["id"]} has no briefing audience in roles.json')
+    for x in pr.get('path', []):
+        if not os.path.exists(os.path.join(ROOT, x)): fails.append(f'data/personas.json: {pr["id"]} path points at missing page {x}')
+for t in (load('glossary') or {}).get('terms', []):
+    if not os.path.exists(os.path.join(ROOT, t['more'].split('#')[0])): fails.append(f'data/glossary.json: {t["id"]} links to missing page {t["more"]}')
 # 5. determinism: rebuild into a temp copy and compare hashes
 def tree_hash():
     h = hashlib.sha256()
@@ -107,7 +121,7 @@ for root, dirs, files in os.walk(ROOT):
         m = PAT.search(b.decode('utf-8', 'replace'))
         if m: fails.append(f'{rel(fp)}: credential shape {m.group(0)[:12]}...')
 # 8. no external script/style/img (checked above); also check the vendored meter is present
-for f in ('assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js', 'assets/components/base/v1/v1.0/v1.0.0/sg-component.js', 'assets/site.css', 'assets/site.js', 'CNAME', '.nojekyll', 'VERSION', '.github/workflows/pages.yml'):
+for f in ('assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js', 'assets/components/base/v1/v1.0/v1.0.0/sg-component.js', 'assets/site.css', 'assets/site.js', 'assets/personas.js', 'CNAME', '.nojekyll', 'VERSION', '.github/workflows/pages.yml'):
     if not os.path.exists(os.path.join(ROOT, f)): fails.append(f'missing {f}')
 # version consistency
 ver = open(os.path.join(ROOT, 'VERSION')).read().strip()
