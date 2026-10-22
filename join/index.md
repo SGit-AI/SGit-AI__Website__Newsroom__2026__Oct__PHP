@@ -16,11 +16,11 @@ Loading…
 
 ## How it works
 
-- **An invitation.** Ask Dinis, by email or on WhatsApp, or with [the join form](../collaborators/index.html#join). He sends you a link or a QR code meant for you alone.
+- **An invitation.** Ask Dinis, by email or on WhatsApp, or with [the join form](../collaborators/index.html#join). He makes it on his phone ([Invite](invite/index.html)) and sends you a link or a QR code meant for you alone.
 
 - **One tap.** The link opens this page, which makes a key pair in your browser: one half signs, the other half is public. The signing half stays in this browser and cannot be copied out of it, by this site or anyone else.
 
-- **Enrolled.** Your public key goes to the editor, encrypted, with the invitation. He checks it and adds it to the list below; from then on what you sign shows as yours.
+- **Enrolled.** Your public key goes to the team, encrypted, with the invitation. When the invitation's signature checks out, your key is added to the list below; from then on what you sign shows as yours.
 
 - **Feedback from any page.** Press **Feedback**, next to Ask at the top of every page: say what is wrong, unclear, missing or good, with a screenshot if you like, and send. It is signed with your key and encrypted to the team.
 

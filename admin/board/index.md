@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 110 items, 77 open, 31 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 115 items, 82 open, 31 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -120,6 +120,11 @@ The work, as rows in `data/admin.json`: 110 items, 77 open, 31 done. An item is 
 | 108 | Invitations for the editor's own devices (role editor) and for Vicky (role team); then the power users, one invitation each, sent by the editor | open | editor |  |
 | 109 | A feedback desk: who reads the drained feedback every day, turns it into board items and answers the sender; the conductor until an agent takes it | open | conductor |  |
 | 110 | Security review of the feedback keys (assets/feedback/identity.js, join.js, pane.js; admin/build/contributors.py, invite.py): non-extractable keys in IndexedDB, the invitation code in the link's fragment, signatures checked with sgit | open | security |  |
+| 111 | The run record, sgit.newsroom.run/1: one JSON object per agent run (trigger, model, objectives, raw, JSON and programmatic reads, writes, commits, network calls, tokens, cost, article, handovers), read by /team/runs/ (the digital twin brief, step 1) | open | conductor |  |
+| 112 | The organisation as a digital twin: data/twin.json (roles, artefacts, typed edges: produces, consumes, hands over to, triggers, escalates to) and /team/twin/, the state machine drawn, with the schedules on a 24-hour clock and the escalation lanes | open | conductor |  |
+| 113 | The accountant: tokens and cost per agent, artefact and day against a budget; runs that read raw where JSON exists; messages nobody acted on; loops between agents; a daily ledger and the cuts it proposes | open | conductor |  |
+| 114 | A bulletin board for agents (one append-only notice file per agent per day, each naming who must act) before any mail between agents | open | conductor |  |
+| 115 | The twin's open questions: the budget, the escalation ladder at night, which outside agents join (ChatGPT, Perplexity) and how, and which ABP site's per-session review the run record should match | open | editor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 

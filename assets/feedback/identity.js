@@ -92,3 +92,27 @@ export async function siteData(root) {
   const [collab, contributors] = await Promise.all([get('data/collaborators.json'), get('data/contributors.json')])
   return { lane: collab.lane, contributors }
 }
+
+// ------------------------------------------------------------------ invitations, signed in the browser
+// An invitation is a small signed object: { v, kind: 'invite', exp (YYYY-MM-DD), nonce, role, handle, from, sig },
+// signed by an enrolled key the way every message is. It travels in a link's fragment as base64url JSON:
+// <site>/join/#i1.<invitation>. It needs nothing written anywhere to be valid: the drain checks that its signer is an
+// enrolled key allowed to invite, that it has not expired, and how many devices it has already enrolled.
+const b64url = s => btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+const unb64url = s => atob(s.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((s.length + 3) % 4))
+
+export async function makeInvite(me, { handle, role, days = 14 }) {
+  const exp = new Date(Date.now() + days * 864e5).toISOString().slice(0, 10)
+  const nonce = hex(crypto.getRandomValues(new Uint8Array(12)))
+  return sign(me, { v: 1, kind: 'invite', exp, nonce, role, handle })
+}
+export const inviteLink = (root, inv) => root + 'join/#i1.' + b64url(unescape(encodeURIComponent(JSON.stringify(inv))))
+export function readInvite(fragment) {
+  const m = /^#i1\.([A-Za-z0-9_-]{40,4000})$/.exec(fragment || '')
+  if (!m) return null
+  try {
+    const inv = JSON.parse(decodeURIComponent(escape(unb64url(m[1]))))
+    if (inv.kind !== 'invite' || !/^[a-z0-9-]{1,40}$/.test(inv.handle) || !/^\d{4}-\d{2}-\d{2}$/.test(inv.exp) || !inv.sig) return null
+    return inv
+  } catch (e) { return null }
+}

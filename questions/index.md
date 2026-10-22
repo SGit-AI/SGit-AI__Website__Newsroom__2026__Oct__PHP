@@ -59,6 +59,7 @@ An article a reader has seen is listed here until a collector captures it into t
 ### Yours
 - [Power users: start here](../collaborators/index.html): Where a power user of PHP October 2026 starts: the first fifteen minutes, the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
 - [Join: a key for this device, in one tap](../join/index.html): Open the invitation the editor sent you and this page makes a key on your device, so the feedback you send from any page is signed as yours; the enrolled keys, as handles and fingerprints.
+- [Invite someone: a link and a QR code, signed on this device](../join/invite/index.html): For the editor: make an invitation to give signed feedback on this site, as a QR code, a link and a share button, signed in the browser with an enrolled key.
 - [Now: the phone app](../now/index.html):
 - [Your desk: what is new to you, and what changed](../you/index.html): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
 - [The feed viewer: this site, the records, and your own feeds](../reader/index.html): Read this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.

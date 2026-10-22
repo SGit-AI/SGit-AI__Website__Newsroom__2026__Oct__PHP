@@ -14,7 +14,7 @@ Nothing from here is copied to the site, which is public.
 import argparse, base64, datetime, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from telemetry_drain import post, decrypt
-from contributors import status as signer_status, load as load_contributors
+from contributors import status as signer_status, load as load_contributors, enrol as enrol_key, save as save_contributors
 
 def main():
     ap = argparse.ArgumentParser()
@@ -47,12 +47,20 @@ def main():
                 msg = json.loads(decrypt(content, a.fingerprint, passphrase))
             except Exception as e:
                 msg = {'v': 0, 'undecryptable': True, 'error': str(e)[:120]}
-            if msg.get('sig') or msg.get('kind') in ('enrol', 'review'):
-                msg['_signer'] = signer_status(msg, contributors)          # checked before the drain adds its own '_' fields
             msg['_file'] = fid
             rows.append(msg)
         if not a.keep_pending and files:
             post(f"{base}/mark-processed/{lane['vault_id']}", {'inbox': lane['append_token'], 'file_ids': [x.get('file_id') or x.get('id') for x in files]}, H)
+    # Enrolment is automatic: a key joins when its enrolment and its invitation both verify (admin/build/contributors.py).
+    enrolled = 0
+    for m in (x for x in rows if x.get('kind') == 'enrol'):
+        ok, what = enrol_key(m, contributors)
+        enrolled += ok
+        print(('enrolled: ' if ok else 'not enrolled: ') + what)
+    if enrolled: save_contributors(contributors)
+    for m in rows:                                                       # after enrolment, so a new key's first message counts as enrolled
+        if m.get('sig') or m.get('kind') in ('enrol', 'review'):
+            m['_signer'] = signer_status(m, contributors)                  # verify() ignores the drain's own '_' fields
     kinds = {}
     for m in rows:
         k = m.get('kind') if m.get('kind') in ('join', 'feedback', 'enrol', 'review') else 'other'

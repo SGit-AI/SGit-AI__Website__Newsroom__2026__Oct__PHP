@@ -187,7 +187,7 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('collaborators/index.html', 'Power users: start here'), ('join/index.html', 'Join: a key for feedback'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
+    ('Yours', [('collaborators/index.html', 'Power users: start here'), ('join/index.html', 'Join: a key for feedback'), ('join/invite/index.html', 'Invite someone'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -4326,9 +4326,9 @@ def build_join():
 <noscript><p class="sub-err">This page needs JavaScript: the key is made in your browser.</p></noscript>
 <div id="join-app" class="subform"><p class="small">Loading…</p></div>
 {section("how", "How it works", '''<ol>
-<li><b>An invitation.</b> Ask Dinis, by email or on WhatsApp, or with <a href="../collaborators/index.html#join">the join form</a>. He sends you a link or a QR code meant for you alone.</li>
+<li><b>An invitation.</b> Ask Dinis, by email or on WhatsApp, or with <a href="../collaborators/index.html#join">the join form</a>. He makes it on his phone (<a href="invite/index.html">Invite</a>) and sends you a link or a QR code meant for you alone.</li>
 <li><b>One tap.</b> The link opens this page, which makes a key pair in your browser: one half signs, the other half is public. The signing half stays in this browser and cannot be copied out of it, by this site or anyone else.</li>
-<li><b>Enrolled.</b> Your public key goes to the editor, encrypted, with the invitation. He checks it and adds it to the list below; from then on what you sign shows as yours.</li>
+<li><b>Enrolled.</b> Your public key goes to the team, encrypted, with the invitation. When the invitation's signature checks out, your key is added to the list below; from then on what you sign shows as yours.</li>
 <li><b>Feedback from any page.</b> Press <b>Feedback</b>, next to Ask at the top of every page: say what is wrong, unclear, missing or good, with a screenshot if you like, and send. It is signed with your key and encrypted to the team.</li>
 </ol>''')}
 {section("keys", "Enrolled keys", keys, "Handles and fingerprints only, never a name. " + "; ".join(f"{E(r)}: {E(t)}" for r, t in C["roles"]) + ".")}
@@ -4339,6 +4339,16 @@ def build_join():
 </ul><p class="small">Keys are in pki.sgit.ai's and sgit's format, so <code>sgit pki verify</code> checks every signature. The brief is on <a href="../admin/briefs/index.html#2026-10-22__brief__feedback-keys-and-review">briefs</a>.</p>''')}
 <script type="module" src="../assets/feedback/join.js"></script>
 '''
+    body2 = f'''
+<p class="crumb"><a href="../../collaborators/index.html">Power users</a> / <a href="../index.html">Join</a> / Invite</p>
+<h1>Invite someone: a link and a QR code, signed on this device</h1>
+<p class="lead">For a key that may invite ({E(", ".join(C["rules"]["may_invite"]))}). Give the person a handle (never their name), pick a role and how long the invitation lasts, and this page signs it with this device's key and shows a QR code, a link and a share button. Nothing is stored anywhere: when they join, the invitation is checked against your key, and their key is enrolled.</p>
+<noscript><p class="sub-err">This page needs JavaScript: the invitation is signed in your browser.</p></noscript>
+<div id="invite-app"><p class="small">Loading\u2026</p></div>
+<p class="small">An invitation enrols at most {C["rules"]["devices_per_invitation"]} devices and is a credential until it is used: send it to one person, in a private message.</p>
+<script type="module" src="../../assets/feedback/invite.js"></script>
+'''
+    page('join/invite/index.html', 'Invite someone: a link and a QR code, signed on this device', 'For the editor: make an invitation to give signed feedback on this site, as a QR code, a link and a share button, signed in the browser with an enrolled key.', body2, kind='account')
     page('join/index.html', 'Join: a key for this device, in one tap', 'Open the invitation the editor sent you and this page makes a key on your device, so the feedback you send from any page is signed as yours; the enrolled keys, as handles and fingerprints.', body, kind='account')
 
 

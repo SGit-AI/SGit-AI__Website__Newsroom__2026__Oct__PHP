@@ -5,11 +5,14 @@
 // this page removes it from the address bar at once. One tap makes this device's key (assets/feedback/identity.js)
 // and sends the enrolment, signed by the new key and encrypted to the collaborators key, to the collaborators lane;
 // the editor's side checks the signature and the code and enrols the key. Nothing else is stored or sent.
-import { getIdentity, createIdentity, sign, sendToLane, siteData } from './identity.js'
+import { getIdentity, createIdentity, sign, sendToLane, siteData, readInvite } from './identity.js'
 
 const root = new URL(document.documentElement.getAttribute('data-root') || '../', location.href).href
 const out = document.getElementById('join-app')
-const m = /^#j1\.([0-9a-f]{32})\.([a-z0-9-]{1,40})$/.exec(location.hash)
+// Two shapes of invitation: #i1.<a signed invitation> (made in the browser on /join/invite/), and #j1.<code>.<handle>
+// (the conductor's bootstrap, for the editor's first key). Either is removed from the address bar at once.
+const inv = readInvite(location.hash)
+const m = inv ? [null, null, inv.handle] : /^#j1\.([0-9a-f]{32})\.([a-z0-9-]{1,40})$/.exec(location.hash)
 if (location.hash) history.replaceState(null, '', location.pathname + location.search)
 
 function el(tag, attrs, ...kids) {
@@ -28,7 +31,7 @@ async function enrol(code, handle) {
     const { lane } = await siteData(root)
     let me = await getIdentity()
     if (!me) me = await createIdentity(handle)
-    const msg = await sign(me, { v: 1, kind: 'enrol', code, handle, bundle: me.bundle, device: device(), at: new Date().toISOString(),
+    const msg = await sign(me, { v: 1, kind: 'enrol', code: code || '', invite: inv || null, handle, bundle: me.bundle, device: device(), at: new Date().toISOString(),
                                  site: document.documentElement.getAttribute('data-ver') || '' })
     await sendToLane(lane, msg)
     show(el('p', { class: 'sub-ok' }, 'Done. Your key is made and your enrolment is sent.'), fpLine(me),
@@ -50,6 +53,7 @@ async function start() {
     return
   }
   const [, code, handle] = m
+  if (inv && inv.exp < new Date().toISOString().slice(0, 10)) { show(el('p', { class: 'sub-err' }, 'This invitation expired on ' + inv.exp + '. Ask for a new one.')); return }
   show(el('p', null, 'You have been invited to give feedback on this site as ', el('b', null, handle), '. One tap makes a key for this device and sends it to the editor.'),
     me ? fpLine(me) : '',
     el('button', { class: 'cta cta-pri', type: 'button', onclick: () => enrol(code, handle) }, me ? 'Use this device’s key' : 'Make my key and join'))

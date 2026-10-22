@@ -238,11 +238,15 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `/join/` (`assets/feedback/join.js`, `assets/feedback/identity.js`): an invitation link or QR code (`#j1..`, removed from the address bar at once) makes the device's key pair in sgit's format (RSA-OAEP 4096 and ECDSA P-256), private halves non-extractable in IndexedDB, and sends a signed enrolment.
 
-- `admin/build/invite.py new|enrol|list`: invitations recorded as SHA-256 hashes in `data/contributors.json` (three devices, fourteen days), the link and its QR code written outside the repository; enrolment checks the signature and the invitation. `admin/build/contributors.py` checks signatures with `sgit pki verify` over pki.sgit.ai's canonical bytes; `collaborators_drain.py` marks every signed row enrolled, unknown key or unsigned, and saves screenshots beside it.
+- `/join/invite/` (`assets/feedback/invite.js`): an enrolled key that may invite (the editor) signs an invitation in the browser and gets a QR code, a link and a share button; nothing is stored. The drain enrols a key automatically when its enrolment and its invitation both verify (`admin/build/contributors.py`): three devices an invitation, in date. `admin/build/invite.py` is only the bootstrap for the editor's first key. `admin/build/contributors.py` checks signatures with `sgit pki verify` over pki.sgit.ai's canonical bytes; `collaborators_drain.py` marks every signed row enrolled, unknown key or unsigned, and saves screenshots beside it.
 
-- Tested end to end in Chromium (invitation, key, enrolment, signed feedback with a screenshot, drain, enrolment, verification) with a negative control (a changed word fails).
+- Tested end to end in Chromium with two browser profiles (bootstrap, browser-signed invitation, second device enrolled automatically, signed feedback) with negative controls (a changed word, page, role or expiry fails; a key that may not invite cannot).
 
 - Not built: the editor's review queue (phase 2); a key on more than one device; links to pki.sgit.ai records. No invitation has been sent.
+
+### Recorded, not started
+
+- The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
 
 ### Not built
 

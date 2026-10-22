@@ -38,6 +38,10 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 | 100 | Write ask 002 after the next release worth looking at, and drain the collaborators lane into the board at every close | open |  |
 | 107 | The editor's review queue, /review/: every page or section new or changed since he last looked, one at a time on an iPad (Next, Good, Needs work, a comment), each decision signed feedback of kind review (brief: 2026-10-22__brief__feedback-keys-and-review.md, phase 2) | open |  |
 | 109 | A feedback desk: who reads the drained feedback every day, turns it into board items and answers the sender; the conductor until an agent takes it | open |  |
+| 111 | The run record, sgit.newsroom.run/1: one JSON object per agent run (trigger, model, objectives, raw, JSON and programmatic reads, writes, commits, network calls, tokens, cost, article, handovers), read by /team/runs/ (the digital twin brief, step 1) | open |  |
+| 112 | The organisation as a digital twin: data/twin.json (roles, artefacts, typed edges: produces, consumes, hands over to, triggers, escalates to) and /team/twin/, the state machine drawn, with the schedules on a 24-hour clock and the escalation lanes | open |  |
+| 113 | The accountant: tokens and cost per agent, artefact and day against a budget; runs that read raw where JSON exists; messages nobody acted on; loops between agents; a daily ledger and the cuts it proposes | open |  |
+| 114 | A bulletin board for agents (one append-only notice file per agent per day, each naming who must act) before any mail between agents | open |  |
 
 ## Waiting on someone else
 

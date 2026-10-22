@@ -8,7 +8,7 @@ names, that `from` is that fingerprint, and that the signature over canon(messag
 which key wrote it. Whether that key belongs to a contributor is data/contributors.json's question (status()).
 Standard library and the sgit CLI only.
 """
-import base64, hashlib, json, os, subprocess, tempfile
+import base64, datetime, hashlib, json, os, subprocess, tempfile
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
@@ -24,9 +24,9 @@ def fingerprint(pem_text):
     body = ''.join(l for l in pem_text.strip().splitlines() if not l.startswith('-----'))
     return 'sha256:' + hashlib.sha256(base64.b64decode(body)).hexdigest()[:16]
 
-def verify(msg):
-    """(True, '') when the message is signed by the key in its own bundle; (False, why) otherwise."""
-    b, sig, frm = msg.get('bundle') or {}, msg.get('sig'), msg.get('from')
+def verify(msg, bundle=None):
+    """(True, '') when the message is signed by the key in its own bundle (or the bundle given); (False, why) otherwise."""
+    b, sig, frm = bundle or msg.get('bundle') or {}, msg.get('sig'), msg.get('from')
     if not sig or not frm: return False, 'unsigned'
     if not b.get('sign') or fingerprint(b['sign']) != b.get('signing_fingerprint') or frm != b.get('signing_fingerprint'):
         return False, 'the bundle does not match the signer'
@@ -53,3 +53,39 @@ def status(msg, data=None):
     if not ok: return why
     keys = {k['signing_fingerprint']: k for k in (data or load())['keys']}
     return 'enrolled' if msg['from'] in keys else 'unknown key'
+
+def save(data):
+    p = os.path.join(ROOT, 'data', 'contributors.json')
+    json.dump(data, open(p, 'w', encoding='utf-8'), indent=1, ensure_ascii=False); open(p, 'a').write('\n')
+
+def enrol(m, data, today=None):
+    """Enrol the key in one drained enrolment, or say why not. Two shapes of invitation: a signed one made in the browser
+    (m['invite'], signed by an enrolled key whose role may invite) and the conductor's bootstrap (m['code'], whose
+    SHA-256 is an open invitation). Each enrols at most rules.devices_per_invitation devices, until it expires.
+    Returns (True, what happened) and changes data, or (False, why)."""
+    today = today or datetime.date.today().isoformat()
+    fp, rules = m.get('from'), data['rules']
+    if any(k['signing_fingerprint'] == fp for k in data['keys']): return False, f'{fp} is already enrolled'
+    ok, why = verify(m)
+    if not ok: return False, f'{fp}: the enrolment is not signed by its key ({why})'
+    inv = m.get('invite')
+    if inv:
+        signer = next((k for k in data['keys'] if k['signing_fingerprint'] == inv.get('from')), None)
+        if not signer or signer['role'] not in rules.get('may_invite', ['editor']): return False, f'{fp}: the invitation is not from a key that may invite'
+        ok, why = verify(inv, signer['bundle'])
+        if not ok: return False, f'{fp}: the invitation\'s signature does not verify ({why})'
+        h = hashlib.sha256(('invite|' + str(inv.get('nonce'))).encode()).hexdigest()
+        row = next((i for i in data['invitations'] if i['hash'] == h), None)
+        if not row:
+            row = {'hash': h, 'handle': inv['handle'], 'role': inv['role'], 'made': '', 'expires': inv['exp'], 'used': 0, 'by': signer['handle']}
+            data['invitations'].append(row)
+        if inv['role'] not in {r for r, _ in data['roles']} or inv['role'] == 'editor': return False, f'{fp}: an invitation cannot give the role {inv["role"]}'
+    else:
+        row = next((i for i in data['invitations'] if i['hash'] == hashlib.sha256(str(m.get('code', '')).encode()).hexdigest()), None)
+        if not row: return False, f'{fp}: its code is not an invitation'
+    if row['expires'] < today: return False, f'{fp}: the invitation for {row["handle"]} expired on {row["expires"]}'
+    if row['used'] >= rules['devices_per_invitation']: return False, f'{fp}: the invitation for {row["handle"]} has enrolled its devices'
+    row['used'] += 1
+    data['keys'].append({'handle': row['handle'], 'role': row['role'], 'signing_fingerprint': fp, 'fingerprint': m['bundle']['fingerprint'],
+                         'device': str(m.get('device', ''))[:20], 'enrolled': today, 'invited_by': row.get('by', 'conductor'), 'bundle': m['bundle']})
+    return True, f'enrolled {row["handle"]} ({row["role"]}): {fp} on a {m.get("device", "device")}'

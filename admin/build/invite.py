@@ -3,6 +3,9 @@
 session, never by the build. Kept by conductor@php.newsroom; the brief is
 admin/content/briefs/2026-10-22__brief__feedback-keys-and-review.md.
 
+  The people who invite do it in the browser, on /join/invite/, with an enrolled key: that needs nothing here. This
+  tool is the conductor's bootstrap, for the editor's first key, and a way to re-run enrolment.
+
   new --handle <h> --role <editor|team|power-user> --out <dir outside the repository>
         a random code; only its SHA-256 goes into data/contributors.json. Writes <dir>/invite-<handle>.txt (the link)
         and <dir>/invite-<handle>.svg (its QR code). The link is the credential until it is used: send it to one person.
@@ -14,7 +17,7 @@ admin/content/briefs/2026-10-22__brief__feedback-keys-and-review.md.
 """
 import argparse, datetime, glob, hashlib, json, os, re, secrets, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from contributors import ROOT, verify
+from contributors import ROOT, enrol as enrol_key
 
 P = os.path.join(ROOT, 'data', 'contributors.json')
 BASE = 'https://php.oct.2026.newsroom.sgit.ai/join/'
@@ -44,26 +47,12 @@ def new(a):
     print(f'invitation for {a.handle} ({a.role}): the link {qr} are in {out}; data/contributors.json has its hash only')
 
 def enrol(a):
-    d = json.load(open(P, encoding='utf-8'))
-    inv = {i['hash']: i for i in d['invitations']}
-    have = {k['signing_fingerprint'] for k in d['keys']}
-    today = datetime.date.today().isoformat()
-    added = 0
+    """Re-run enrolment over every drained enrolment (the drain already does it as messages arrive)."""
+    d, added = json.load(open(P, encoding='utf-8')), 0
     for f in sorted(glob.glob(os.path.join(os.path.abspath(a.vault), 'enrolments', '*.jsonl'))):
         for line in open(f, encoding='utf-8'):
-            m = json.loads(line)
-            fp = m.get('from')
-            if fp in have: continue
-            ok, why = verify(m)
-            i = inv.get(hashlib.sha256(str(m.get('code', '')).encode()).hexdigest())
-            if not ok: print(f'skipped {fp}: {why}'); continue
-            if not i: print(f'skipped {fp}: its code is not an invitation'); continue
-            if i['expires'] < today: print(f'skipped {fp}: the invitation for {i["handle"]} expired on {i["expires"]}'); continue
-            if i['used'] >= d['rules']['devices_per_invitation']: print(f'skipped {fp}: the invitation for {i["handle"]} has enrolled its devices'); continue
-            i['used'] += 1; have.add(fp); added += 1
-            d['keys'].append({'handle': i['handle'], 'role': i['role'], 'signing_fingerprint': fp, 'fingerprint': m['bundle']['fingerprint'],
-                              'device': str(m.get('device', ''))[:20], 'enrolled': today, 'bundle': m['bundle']})
-            print(f'enrolled {i["handle"]} ({i["role"]}): {fp} on a {m.get("device", "device")}')
+            ok, what = enrol_key(json.loads(line), d)
+            added += ok; print(what)
     save(d)
     print(f'{added} key(s) enrolled; {len(d["keys"])} in all')
 

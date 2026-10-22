@@ -893,6 +893,36 @@
    "title": "Security review of the feedback keys (assets/feedback/identity.js, join.js, pane.js; admin/build/contributors.py, invite.py): non-extractable keys in IndexedDB, the invitation code in the link's fragment, signatures checked with sgit",
    "status": "open",
    "owner": "security"
+  },
+  {
+   "id": "111",
+   "title": "The run record, sgit.newsroom.run/1: one JSON object per agent run (trigger, model, objectives, raw, JSON and programmatic reads, writes, commits, network calls, tokens, cost, article, handovers), read by /team/runs/ (the digital twin brief, step 1)",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "112",
+   "title": "The organisation as a digital twin: data/twin.json (roles, artefacts, typed edges: produces, consumes, hands over to, triggers, escalates to) and /team/twin/, the state machine drawn, with the schedules on a 24-hour clock and the escalation lanes",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "113",
+   "title": "The accountant: tokens and cost per agent, artefact and day against a budget; runs that read raw where JSON exists; messages nobody acted on; loops between agents; a daily ledger and the cuts it proposes",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "114",
+   "title": "A bulletin board for agents (one append-only notice file per agent per day, each naming who must act) before any mail between agents",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "115",
+   "title": "The twin's open questions: the budget, the escalation ladder at night, which outside agents join (ChatGPT, Perplexity) and how, and which ABP site's per-session review the run record should match",
+   "status": "open",
+   "owner": "editor"
   }
  ],
  "evidence_vault": {
