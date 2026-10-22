@@ -35,6 +35,7 @@ The partiesactors/index.htmlExploitation signalsexploitation/index.html
 | 033 | Capture the sources Perplexity named that the vault lacks, W3Techs first (it would close the front page's question on what 70% measures); listed on /readings/ | open |  |
 | 043 | Capture W3Techs' PHP version shares alongside its language share (see board 033): the number the patching story says is missing | open |  |
 | 058 | Capture raw on every change: page, rendered, text, screenshot, headers and the data itself (JSON, CSV, git, RSS), hashed, a new stamped folder only when the hash changes, a check-log line when it does notFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
+| 083 | Capture what the desk found outside the vault: the BBC live page as it stands (32 UK services, 90%), The Next Web, the PHPocalypse Tracker's sites.csv, KEV each run; then re-grade the claims they bear onFrom the brief: a fact-checker joins the team (22 October). | open |  |
 
 ## What they have done
 - Captured the researchers' and vendors' accounts; marked openai.com and Techzine second-hand where a bot challenge blocked them.

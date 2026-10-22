@@ -150,13 +150,14 @@
 <li><code>admin/build/issues_sync.py seed|import --vault &lt;clone&gt;</code>: the board into the issues vault, and back into <code>data/admin.json</code>; the round trip is byte-identical. <code>admin/build/conductor_drain.py --vault &lt;clone&gt;</code>: drains the conductor&#x27;s lane into <code>inbox/&lt;member&gt;/</code>.</li>
 <li>Not built: keys distributed to members (board 070); a schedule for the run (071); a digest page on the site (075). No member other than the conductor has opened its mailbox yet.</li>
 </ul>
-<h3>The fact-check desk (factcheck@php.newsroom, v0.4.8)</h3>
+<h3>The fact-check desk (factcheck@php.newsroom, v0.5.3)</h3>
 <ul>
 <li><code>admin/factcheck/README.md</code>: the role, the model and the runbook. Two axes per statement: kind (record, event, state, count, quote, attribution, opinion, advice) and level of evidence A0 to A6; a verdict (holds, holds in part, not shown, refuted); tension (measures differently, disputed, contradicted, superseded), where an open contradiction caps the displayed level at A1 and a dispute at A2.</li>
 <li><code>admin/factcheck/assessments.json</code>: one grade per claim, each naming the captures read by file and sha256. <code>contradictions.json</code>: the contradiction ledger (board 061). <code>runs/</code>: one report per run. <code>fc.py</code>: check, changed, extract, ticket, export.</li>
-<li>Tickets are a full Issues-FS graph in <code>admin/factcheck/.issues/</code> (issues-fs-cli 0.3.0): node types finding, contradiction, evidence-gap, new-evidence and run; typed links with inverses.</li>
+<li>Tickets are a full Issues-FS graph in <code>admin/factcheck/.issues/</code> (issues-fs-cli 0.3.0): node types finding, contradiction, gap, evidence and run (single words: the CLI cannot resolve a label whose type has a hyphen); typed links with inverses. The desk&#x27;s tracker is its own work plan, in the repository so the build can show it; the team&#x27;s issues vault (zjruy9vk) holds the desk&#x27;s queue of board items, and the desk has no key to it yet (board 070).</li>
 <li><code>data/factcheck.json</code> is written only by <code>fc.py export</code>; the build shows a badge on every claim and fact page and builds <code>/factcheck/</code> with the ladder, a filter down to &quot;only what I can be very sure of&quot;, the ledger and the tickets.</li>
 <li>Mode two (outside evidence) records URL, time and sha256 of what was fetched and never cites it; the fetched bytes are not kept in the repository.</li>
+<li>Run 1 (22 October, 18:14 to 18:55 UTC, vault head 31ccc515c29f): all 70 claims graded; 10 can be relied on without reservation, 11 carry a status word stronger than their evidence, 6 a weaker one, 2 are refuted as worded; 3 high, 56 medium and 65 low findings, 3 gaps, 10 contradictions, 6 pieces of new evidence; every excerpt re-found verbatim in its capture by <code>fc.py check</code>.</li>
 <li>Runs on a schedule bound to the editor&#x27;s session, every four hours. Not built: grading of numbers, timeline, agencies and impact rows beyond the claims they share; a check of the gate&#x27;s em-dash exemptions.</li>
 </ul>
 <h3>Not built</h3>

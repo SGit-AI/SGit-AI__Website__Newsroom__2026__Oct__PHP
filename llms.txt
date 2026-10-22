@@ -398,7 +398,7 @@ Site v0.5.2. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [synthetic@php.newsroom](https://php.oct.2026.newsroom.sgit.ai/team/synthetic/index.md): Synthetic readers; Six test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.
 - [Briefing writer](https://php.oct.2026.newsroom.sgit.ai/team/briefing-writer/index.md): One page per audience; One page per audience from the same claims.
 - [Cartographer](https://php.oct.2026.newsroom.sgit.ai/team/cartographer/index.md): The graph; Sources, claims, events, actors and the edges between them; the JSON every page is drawn from.
-- [Verifier](https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.md): Every claim against its capture; Re-reads each claim against its captures and downgrades anything the capture does not carry.
+- [Fact-check desk](https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.md): Every claim graded on a spectrum of evidence; factcheck@php.newsroom. Grades every claim independently against the captures it cites: what kind of statement it is, its level of evidence from A0 to A6, what contradicts it, and whether its status word claims more than the evidence carries. Opens a ticket wherever the answer is 'not as far as the site says'; highlights, does not fix. Runs on a schedule.
 
 ## Parties, one page each
 - [The PHP Group / php.net](https://php.oct.2026.newsroom.sgit.ai/actors/php-group/index.md): maintainer, CVE numbering authority

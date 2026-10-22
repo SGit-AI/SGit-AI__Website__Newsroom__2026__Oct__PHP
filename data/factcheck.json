@@ -8347,7 +8347,7 @@
  "runs": [
   {
    "id": "Run-1",
-   "site_version": "0.4.8",
+   "site_version": "0.5.3",
    "vault_commit": "31ccc515c29f",
    "site_export_commit": "200d08971937",
    "started": "2026-10-22T18:14Z",
