@@ -67,6 +67,12 @@ An article a reader has seen is listed here until a collector captures it into t
 - [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
 - [Evidence, derived, authored](../layers/index.html):
 
+### Vaults
+- [The vaults behind this site](../vaults/index.html): Every vault this site is built from: the evidence vault and the source watch, both public with their read keys, and the private telemetry vault with its write-only lane; what each holds, who writes to it and how to open it.
+- [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
+- [The source watch: every outside source on php2shell, watched and snapshotted](../vaults/source-watch/index.html): The public source-watch vault: 328 pages from 175 publishers in 38 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
+- [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
+
 ### Briefings
 - [Briefing for a board member or executive: Are we exposed, what is it costing us, and who owns the decision to pull a system?](../briefings/board/index.html): The php2shell story for a board member or executive: what to decide, the claims it rests on with their status and sources, and what is still open.
 - [Briefing for a security lead: What do I patch first, what do I watch for, and when do I take something offline?](../briefings/security/index.html): The php2shell story for a security lead: what to decide, the claims it rests on with their status and sources, and what is still open.
@@ -104,4 +110,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.2.12 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.2.13 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

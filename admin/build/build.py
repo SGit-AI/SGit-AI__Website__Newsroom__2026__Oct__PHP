@@ -22,7 +22,7 @@ def load(name):
 VERSION = open(os.path.join(ROOT, 'VERSION'), encoding='utf-8').read().strip()
 D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 'affected', 'exploitation',
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
-                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence', 'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'pipeline')}
+                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence', 'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'pipeline', 'vaults', 'source-watch')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
@@ -169,6 +169,7 @@ NAV = [
                       ('readings/index.html', 'Second readings: other models')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
                       ('layers/index.html', 'Evidence, derived, authored')]),
+    ('Vaults', [('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
     ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
@@ -986,7 +987,7 @@ def main():
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_briefings(); build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
-    build_admin_section(); build_status(); build_questions(); build_articles(); build_layers(); build_readings()
+    build_admin_section(); build_status(); build_vaults(); build_questions(); build_articles(); build_layers(); build_readings()
     build_llms(); build_sitejs()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
@@ -1286,11 +1287,13 @@ def build_admin_section():
     v = A['evidence_vault']; vt = D['vault']
     body = f"""
 <h1>The evidence vault, opened</h1>
+<p class="crumb"><a href="../../vaults/index.html">Vaults</a> / The evidence vault</p>
 <p class="lead">The vault behind every claim on this site, {vt["sources"]} sources and {vt["captures"]} captures at commit <code>{E(vt["head"]["commit"] or "")}</code>, opens read-only in the browser with the key below, the way every published vault on sgit.ai and the newsroom does. The key is a read key: derived one way from the vault key, it decrypts and cannot write, and there is no privilege inside it to escalate. It is published on purpose, so treat it as you would the content.</p>
 <p class="kv"><b>Read key</b> <code>{E(v["read_key"])}</code></p>
 <p><a class="door" href="{E(v["open_url"])}" rel="noopener"><b>Open the vault in the browser &rarr;</b><span>dev.vault.sgraph.ai decrypts it in your tab; the server that stores it cannot read it</span></a></p>
 <pre>$ sgit clone {E(v["read_key"])}</pre>
 <p class="caveat">{E(v["note"])}</p>
+{vault_live(v["read_key"], True, 2, 'The vault opens in its own app first: sources, captures, claims, the timeline, memos and notes, read from the vault as it is now. The vault browser is under it.')}
 <h2>What is in it</h2>
 <ul>
 <li><code>sources/&lt;slug&gt;/</code>: one folder per source, with <code>source.json</code>, <code>notes.md</code>, dated <code>captures/</code> (page, rendered page, text, screenshot, headers, provenance with hashes) and <code>raw/</code> with <code>SHA256SUMS</code>.</li>
@@ -1586,6 +1589,130 @@ def build_status():
 <script src="../assets/pipeline.js" defer></script>
 """
     page('status/index.html', 'The pipeline: what is live, what is deploying', 'Each newsroom site\'s deploy runs, read in your browser from GitHub\'s public API with no credential, beside the version the site serves now: what is live, what is deploying, what was superseded, what failed.', body, kind='site')
+
+
+# ----------------------------------------------------------------------------- the vaults (v0.2.13)
+
+def vault_open_url(read_key):
+    """The official UI's read-only link for a published read key: the key travels in the fragment, never to a server."""
+    rk, vid = read_key.rsplit(':', 1)
+    return f'https://dev.vault.sgraph.ai/en-gb/#{rk}%3A{vid}'
+
+def vault_note(read_key):
+    """The note box every published vault gets on sgit.ai: the key, the link that opens it, the clone command."""
+    return f"""<div class="vnote"><b>Open it yourself. The read key is the whole credential, and it is published on purpose.</b><br>
+Read key: <code>{E(read_key)}</code><br>
+In the official UI: <a href="{E(vault_open_url(read_key))}" rel="noopener" target="_blank">open it read-only in a new tab &#8599;</a> &middot; From the command line: <code>sgit clone {E(read_key)}</code><br>
+<span class="small">A read key decrypts and cannot write; it is derived one way from the vault key, which is not published and never will be.</span></div>"""
+
+def vault_live(read_key, app, depth, lead):
+    """The embedded vault: the official SG/Vault UI in a frame, handed the read key over postMessage (assets/vendor/vault-ui-embed.js)."""
+    rk, vid = read_key.rsplit(':', 1)
+    up = '../' * depth
+    return f"""<h2>See it live, here</h2>
+<p class="openrow"><a class="btn-open" href="{E(vault_open_url(read_key))}" rel="noopener" target="_blank">Open the vault in a new tab &#8599;</a> <span class="small">{lead}</span></p>
+<div class="sgv-uiembed" data-vault="{E(vid)}" data-readkey="{E(rk.replace("sgit_public_read_", ""))}" data-app="{1 if app else 0}"></div>
+<script src="{up}assets/vendor/vault-ui-embed.js" defer></script>"""
+
+def build_vaults():
+    VS = D['vaults']['vaults']; W = D['source-watch']; ev = D['admin']['evidence_vault']; vt = D['vault']; tl = D['telemetry']
+    keys = {'evidence': ev['read_key'], 'source-watch': W['read_key']}
+    facts = {'evidence': f'{vt["sources"]} sources, {vt["captures"]} captures, {vt["hashed_files"]} hashed files; head <code>{E(vt["head"]["commit"] or "")}</code>',
+             'source-watch': f'{W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries and {len(W["lang"])} languages; {W["snapshots"]} snapshots, {len(W["runs"])} runs; head <code>{E(W["head"]["commit"])}</code>',
+             'telemetry': f'lane <code>{E(tl["vault_id"])}</code> on <code>{E(tl["endpoint"])}</code>; events encrypted to <code>{E(tl["recipient"]["fingerprint"])}</code>'}
+    cards = ''
+    for x in VS:
+        k = keys.get(x['slug'])
+        how = (f'<p class="kv"><b>Read key</b> <code>{E(k)}</code></p><p><a href="{E(vault_open_url(k))}" rel="noopener" target="_blank">Open read-only in a new tab &#8599;</a> &middot; <code>sgit clone {E(k)}</code></p>' if k else
+               f'<p class="kv"><b>Not published:</b> the vault key, the lane\'s enum key and the key pair\'s passphrase. <b>Published:</b> the write-only append token <code>{E(tl["append_token"])}</code>, which adds rows and reads nothing.</p>')
+        cards += f"""<section class="vcard" id="{E(x["slug"])}">
+<h2><a href="../{E(x["page"])}">{E(x["name"])}</a> <span class="st {'st-confirmed' if k else ''}">{E(x["access"])}</span></h2>
+<p class="kv"><b>Vault</b> <code>{E(x["id"])}</code> &middot; {facts[x["slug"]]}{' &middot; opens in its own app' if x["app"] else ''}</p>
+<p>{E(x["holds"])}</p>
+<p class="small"><b>Written by</b> {E(x["writers"])}. Data on this site: <a href="../{E(x["data"])}">{E(x["data"])}</a>.</p>
+{how}
+</section>"""
+    body = f"""
+<h1>The vaults behind this site</h1>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} of them hold what it is built from: two are public and open read-only in your browser with the keys below, one is private and receives the site's anonymous telemetry through a write-only lane. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
+{cards}
+<p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
+"""
+    page('vaults/index.html', 'The vaults behind this site', 'Every vault this site is built from: the evidence vault and the source watch, both public with their read keys, and the private telemetry vault with its write-only lane; what each holds, who writes to it and how to open it.', body, kind='site')
+
+    # the source watch, published the way sgit.ai publishes a vault
+    acc = {a['id']: a['means'] for a in W['access_classes']}
+    sect = {x['id']: x['name'] for x in W['sectors']}
+    stats = ''.join(stat(n, l) for n, l in [(W['pages'], 'pages watched'), (W['publishers'], 'publishers'), (len(W['country']), 'countries'), (len(W['lang']), 'languages'),
+                                            (W['snapshots'], 'snapshots kept'), (W['graphs'], 'graphs'), (len(W['runs']), 'runs'), (W['files'], 'files in the vault')])
+    top_c = table(['Country', 'Pages'], [[f'<code>{E(c)}</code>', str(n)] for c, n in sorted(W['country'].items(), key=lambda kv: (-kv[1], kv[0]))[:12]])
+    top_s = table(['Sector', 'Pages'], [[f'<code>{E(c)}</code> {E(sect.get(c, ""))}', str(n)] for c, n in sorted(W['sector'].items(), key=lambda kv: (-kv[1], kv[0]))])
+    acc_t = table(['Access', 'Pages', 'Means'], [[pill(k) if k in STATUS_WORDS else f'<code>{E(k)}</code>', str(W['access'].get(k, 0)), E(m)] for k, m in acc.items()])
+    tiers = {'A': 'open or public-sector: keep and show', 'B': 'quote up to 25 words and link', 'C': 'link only'}
+    tier_t = table(['Tier', 'Publishers', 'What a site page may show'], [[f'<b>{t}</b>', str(W['tiers'].get(t, 0)), E(w)] for t, w in tiers.items()])
+    alt_t = table(['Altitude', 'What it describes'], [[f'<b>{E(k)}</b>', E(v if isinstance(v, str) else json.dumps(v))] for k, v in W['altitudes'].items()])
+    runs_t = table(['Run (UTC)', 'Due', 'Watched', 'Changed', 'Access'], [[f'<code>{E(r["run"])}</code>', str(r['pages_due']), str(r['pages_total']), str(r['changed']),
+                    ', '.join(f'{E(k)} {n}' for k, n in sorted((r.get('access') or {}).items(), key=lambda kv: -kv[1]))] for r in reversed(W['runs'])])
+    tips = ''.join(f"""<article class="rel"><p class="kicker">Tip {E(t["id"])} &middot; received {E(t["received"] or "")} &middot; {pill(t["status"] or "unverified")}</p>
+<p>{E(t["says"] or "")}</p><p class="small"><b>Watched as</b> {", ".join(f"<code>{E(w)}</code>" for w in t["watched_as"])}. <b>To check:</b> {"; ".join(E(c) for c in t["to_check"])}.</p></article>""" for t in W['tips'])
+    shot = 'assets/vaults/source-watch.png'  # captured from the official UI with the read key; the figure appears once it is in the repository
+    hero = (f"""<figure class="shot"><a href="{E(vault_open_url(W["read_key"]))}" rel="noopener" target="_blank"><img src="../../{shot}" alt="The source-watch vault open in the official SG/Vault UI, read-only." width="1280" height="800" loading="eager"></a>
+<figcaption>The vault in the official UI, opened read-only with the published key. <b>Click the image to open the real one &#8599;</b></figcaption></figure>""" if os.path.exists(os.path.join(ROOT, shot)) else '')
+    body = f"""
+<p class="crumb"><a href="../index.html">Vaults</a> / The source watch</p>
+<h1>The source watch: every outside source on php2shell, watched and snapshotted</h1>
+<p class="lead">A vault that does one thing. It watches every outside source on the story, {W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries, and on each run records what access it had and keeps a new snapshot whenever the content changed: the text, a screenshot, the HTML as served and as rendered, the headers and the sha256 of each, and a graph of what the page says and what changed since the last look. A small, focused Wayback Machine whose diffs are graphs. Run by <b>researcher@php.newsroom</b>; public, read-only.</p>
+{hero}
+{vault_note(W["read_key"])}
+{vault_live(W["read_key"], False, 2, f'The vault has no app of its own yet, so it opens in the vault browser. It holds {W["files"]:,} files; the browser decrypts the folder tree before it lists it, so the first open takes minutes. <code>sgit clone</code> is the fast way in.')}
+<h2>What is in it</h2>
+<div class="stats">{stats}</div>
+<p class="small">Counts read from the vault's <code>index/counts.json</code>, <code>runs/</code> and <code>tips/</code> at head <code>{E(W["head"]["commit"])}</code> by <code>admin/build/export_watch.py</code>; no capture is copied to this site. The vault's latest commit: <q>{E(W["head"]["message"])}</q></p>
+
+<h2>Raw and analysis are separate trees</h2>
+<div class="wt-row"><div><p>Raw is what was served; analysis is what the watcher made of it, and it can be regenerated from raw plus the vocabularies plus the tools. That rule is how you tell the two apart. A snapshot in <code>raw/</code> is never edited or deleted: a new look at the page makes a new folder, and only when something changed. Every check, changed or not, is still a line in <code>checks/</code> with its status, access and hashes.</p></div>
+<pre>sources/&lt;country&gt;/&lt;sector&gt;/&lt;publisher&gt;/&lt;page&gt;/page.json
+raw/&lt;country&gt;/&lt;sector&gt;/&lt;publisher&gt;/&lt;page&gt;/&lt;UTC&gt;/
+    text.txt  screenshot.jpg  page.html.gz  rendered.html.gz
+    headers.json  meta.json  provenance.json
+raw/.../&lt;page&gt;/checks/&lt;date&gt;.jsonl
+graph/.../&lt;page&gt;/&lt;UTC&gt;.json   snapshot and change
+runs/&lt;Y&gt;/&lt;M&gt;/&lt;D&gt;/&lt;HHMMSS&gt;/
+    run.json  graph.json  changes.md
+index/  state/  taxonomy/  tips/  tools/</pre></div>
+
+<h2>Country, then sector, then publisher, then page</h2>
+<p>Country is where the publisher is based (<code>eu</code> for EU institutions, <code>int</code> for publishers with no single home, such as php.net); language is a property of the page. Sector is what kind of organisation publishes it, one per publisher; it classifies the publisher, never a claim.</p>
+<div class="cols">{top_c}{top_s}</div>
+
+<h2>What we can and cannot read</h2>
+<p>Every check classifies the answer it got. A page the watcher cannot read stays on the list: the challenge page's hash is the record, and the gap is published.</p>
+{acc_t}
+<p>Every publisher also has a licence tier, after the newsroom wires' sources policy. The vault keeps what was served either way; the tier governs what a site page shows of it.</p>
+{tier_t}
+
+<h2>Graphs: one grammar at every altitude</h2>
+<p>Every graph in the vault uses the grammar in <code>taxonomy/verbs.json</code> ({W["verbs"]} verbs): an edge is a verb with a named inverse, and there is no generic association edge (<a href="https://graphs.sgit.ai/">graphs.sgit.ai</a>). The world graph alone has {W["world_graph"]["nodes"]} nodes and {W["world_graph"]["edges"]} edges. Entities (a CVE id, a PHP version, an organisation with this site's actor ids, a term with its translations) are where the altitudes join, and where the vault joins this site. What changed on a page is answered by a query over the change section, not by comparing two screenshots; the extractor is deterministic.</p>
+{alt_t}
+
+<h2>The runs</h2>
+<p>A run captures the pages that are due: hourly for the story, daily for background pages about earlier incidents. Feeds and APIs are fetched without a browser; everything else goes through Chromium at 1280 wide. The first run was a diff against the evidence vault's morning captures, imported as this vault's first snapshots.</p>
+{runs_t}
+
+<h2>Tips</h2>
+<p>A tip is a claim that reached the newsroom from outside, recorded with how it arrived, what it says, the pages added to watch it, and what has to be checked before anything on this site relies on it. Its status uses this site's words.</p>
+{tips}
+
+<h2>The tools</h2>
+<p>The watcher is in the vault, next to what it wrote: {", ".join(f"<code>{E(t)}</code>" for t in W["tools"])}.</p>
+<pre>python3 tools/watch.py run [--all] [--only &lt;text&gt;] [--limit N] [--commit] [--push]
+python3 tools/discover.py scan            # feeds to candidate publishers
+python3 tools/discover.py promote --limit 30
+python3 tools/watch.py add &lt;url&gt; --cc gb --sector news --publisher bbc</pre>
+<p class="small">The other vaults behind this site are on <a href="../index.html">the vaults</a>. The evidence vault, where the story was assembled by hand on the morning of 22 October, is <a href="../../admin/vault/index.html">opened here</a>.</p>
+"""
+    page('vaults/source-watch/index.html', 'The source watch: every outside source on php2shell, watched and snapshotted', f'The public source-watch vault: {W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.', body, kind='evidence', topics='php2shell vault source watch')
 
 
 if __name__ == '__main__':

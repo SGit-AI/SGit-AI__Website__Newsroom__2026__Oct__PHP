@@ -353,14 +353,22 @@
   {
    "id": "036",
    "title": "Publish the source-watch vault (oq9gflln) the way sgit.ai publishes vaults: screenshot, open-in-a-new-tab link, the vault embedded, its main features",
-   "status": "open",
-   "owner": "dev@php.newsroom"
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.2.13"
   },
   {
    "id": "037",
    "title": "A vaults section listing every vault behind the site, what each holds and how to open it",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.2.13"
+  },
+  {
+   "id": "038",
+   "title": "The source watch takes minutes to open in the browser: with no app, the official UI decrypts the whole tree (about 6,500 objects) before it shows anything. A small vault app that reads index/ and state/ first, or a lighter front vault, would open it in seconds",
    "status": "open",
-   "owner": "dev@php.newsroom"
+   "owner": "researcher@php.newsroom"
   }
  ],
  "evidence_vault": {

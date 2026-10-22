@@ -151,3 +151,19 @@ nav.site .ver.newer{color:var(--accent-dk);border-color:currentColor;margin-left
 .pl-badge{vertical-align:middle}
 .pl-runs td{white-space:nowrap}
 #pl-refresh{font:inherit;font-size:.85rem;padding:.2rem .7rem;border:1px solid var(--line2);border-radius:6px;background:var(--panel);color:inherit;cursor:pointer}
+/* published vaults (/vaults/): the note box, the open button, the embedded official UI, the hero shot */
+.vnote{border:1px solid var(--line2);border-left:3px solid var(--accent-dk);background:var(--panel);border-radius:0 8px 8px 0;padding:.6rem .8rem;margin:1rem 0;font-size:.9rem;overflow-wrap:anywhere}
+.openrow{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.btn-open{display:inline-block;padding:.35rem .9rem;border-radius:8px;border:1px solid var(--accent-dk);color:var(--accent-dk);text-decoration:none;font-weight:600}
+.sgv-uiembed-label{font-family:var(--mono);font-size:.85rem;font-weight:600;color:var(--accent-dk);margin:1.2rem 0 0}
+.sgv-embed-frame{width:100%;border:1px solid var(--line2);border-radius:10px;background:var(--panel)}
+.sgv-embed-frame.sgv-embed-ui{height:clamp(560px,78vh,1050px)}
+.sgv-breakout{width:min(94vw,1400px);position:relative;left:50%;transform:translateX(-50%)}
+figure.shot{margin:1.2rem 0}
+figure.shot img{display:block;width:100%;height:auto;border:1px solid var(--line2);border-radius:10px}
+figure.shot figcaption{font-size:.84rem;color:var(--dim);margin-top:.4rem}
+.wt-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+@media (max-width:900px){.wt-row{grid-template-columns:1fr}}
+.vcard{border-top:1px solid var(--line);padding-top:.4rem}
+.vcard h2 .st{vertical-align:middle;margin-left:.4rem}
+.crumb{font-size:.84rem;color:var(--dim);margin:0 0 .3rem}

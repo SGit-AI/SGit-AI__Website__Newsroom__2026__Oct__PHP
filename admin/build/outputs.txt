@@ -476,3 +476,7 @@ team/index.html
 team/index.md
 timeline/index.html
 timeline/index.md
+vaults/index.html
+vaults/index.md
+vaults/source-watch/index.html
+vaults/source-watch/index.md

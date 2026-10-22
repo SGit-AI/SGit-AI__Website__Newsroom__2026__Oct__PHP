@@ -4,7 +4,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.2.12. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.2.13. The data is [data/versions.json](../data/versions.json).
+
+### v0.2.13 · 2026-10-22
+
+the vaults: a Vaults section listing every vault behind the site (the evidence vault and the source watch with their read keys, the private telemetry vault with its write-only lane); the source watch (oq9gflln) published the way sgit.ai publishes vaults, with its key, a link that opens it in a new tab, the official UI embedded and its features (raw and analysis trees, country to page taxonomy, access classes, licence tiers, graphs at four altitudes, runs, tips, tools) from data/source-watch.json; the evidence vault page embeds its app too
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.2.12 · 2026-10-22
 
@@ -120,4 +128,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.2.12 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.2.13 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

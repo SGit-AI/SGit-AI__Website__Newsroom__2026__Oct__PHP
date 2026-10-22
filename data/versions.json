@@ -1,6 +1,15 @@
 {
- "current": "0.2.12",
+ "current": "0.2.13",
  "versions": [
+  {
+   "version": "0.2.13",
+   "date": "2026-10-22",
+   "title": "the vaults: a Vaults section listing every vault behind the site (the evidence vault and the source watch with their read keys, the private telemetry vault with its write-only lane); the source watch (oq9gflln) published the way sgit.ai publishes vaults, with its key, a link that opens it in a new tab, the official UI embedded and its features (raw and analysis trees, country to page taxonomy, access classes, licence tiers, graphs at four altitudes, runs, tips, tools) from data/source-watch.json; the evidence vault page embeds its app too",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.12",
    "date": "2026-10-22",
