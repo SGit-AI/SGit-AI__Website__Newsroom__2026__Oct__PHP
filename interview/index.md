@@ -64,4 +64,4 @@ The questions for the next round, in the editor's own time:
 
 
 ---
-site v0.5.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/interview/index.html
+site v0.5.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/interview/index.html

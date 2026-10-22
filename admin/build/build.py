@@ -284,6 +284,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
 <script src="{up}assets/personas.js" defer></script>
 <script src="{up}assets/site.js" defer></script>
 <script src="{up}assets/reader-state.js" defer></script>
+<script src="{up}assets/site-tools.js" defer></script>
 <script src="{up}assets/telemetry.js" defer></script>
 </head>
 <body>

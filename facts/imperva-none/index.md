@@ -43,4 +43,4 @@ Sources: imperva-blog-php2shell
 
 
 ---
-site v0.5.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/imperva-none/index.html
+site v0.5.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/imperva-none/index.html

@@ -706,6 +706,25 @@
    "title": "Send AGENTS.md to every member through the conductor vault's broadcast, and ask each to confirm they read it",
    "status": "open",
    "owner": "conductor"
+  },
+  {
+   "id": "082",
+   "title": "Ask: talk to the site from any page; the model uses the site's tools (window.__tools, also for any agent in the browser), proposes changes to your record only with your Allow; your OpenRouter key and your desk kept in your vault, shared with the phone app",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.5.4"
+  },
+  {
+   "id": "083",
+   "title": "One copy of the vault code: move the phone app (/now/) onto the same open, pull and push as the Ask pane, or both onto a shared module",
+   "status": "open",
+   "owner": "design"
+  },
+  {
+   "id": "084",
+   "title": "Open the reader vault with a passkey, as newsroom.sgit.ai and pki.sgit.ai do (the door design), instead of a pasted key",
+   "status": "open",
+   "owner": "dev@php.newsroom"
   }
  ],
  "evidence_vault": {

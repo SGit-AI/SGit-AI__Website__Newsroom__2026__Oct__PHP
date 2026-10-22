@@ -45,4 +45,4 @@ Sources: github-rjmendez-phpup-2026, huntress-php2shell-rapid-response
 
 
 ---
-site v0.5.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/pocs-wrong/index.html
+site v0.5.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/pocs-wrong/index.html

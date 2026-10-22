@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.5.4 · 22 October 2026new since your last visit
+
+Ask, on every page: a pane on the right where you talk to the site with your own OpenRouter key; the model calls the site's read-only tools itself (search, items, pages, what is new to you, your notes, the situation), every call shown, every fact cited to an item; it can only propose marking items read or adding a note, and does nothing without your Allow; the tools are also published as window.__tools for any agent in your browser; your key, your reading record, notes, feeds and chats are kept in your vault, the same one the phone app opens
+
+No reader-facing section changed in this release.
+
 ## v0.5.3 · 22 October 2026new since your last visit
 
 guidance for every agent, AGENTS.md and /admin/agents/: push to your own branch after every step that builds and take in dev often, dev@php.newsroom carries branches into dev and releases; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements (no secret in any repository, secrets sealed to pki.sgit.ai keys, readers' data in their browser or their own vault, untrusted input shown as text, a model given data not instructions)
@@ -353,4 +359,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.5.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.5.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

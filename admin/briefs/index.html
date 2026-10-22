@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-root="../../" data-path="admin/briefs/index.html" data-ver="0.5.3">
+<html lang="en" data-root="../../" data-path="admin/briefs/index.html" data-ver="0.5.4">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -27,19 +27,20 @@
 <link rel="stylesheet" href="../../assets/site.css">
 <link rel="stylesheet" href="../../assets/themes/themes.css">
 <link rel="stylesheet" href="../../assets/themes/site-tokens.css">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Briefs", "description": "The build briefs for this site, published in full before the work, newest first.", "url": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html", "isPartOf": {"@type": "WebSite", "name": "PHP October 2026", "url": "https://php.oct.2026.newsroom.sgit.ai"}, "license": "https://creativecommons.org/licenses/by/4.0/", "dateModified": "2026-10-22", "version": "0.5.3", "inLanguage": "en", "image": "https://php.oct.2026.newsroom.sgit.ai/assets/og-card.png", "datePublished": "2026-10-22", "mainEntityOfPage": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html", "author": {"@type": "Person", "name": "Dinis Cruz"}, "publisher": {"@type": "Organization", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai/"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PHP October 2026", "item": "https://php.oct.2026.newsroom.sgit.ai/index.html"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://php.oct.2026.newsroom.sgit.ai/method/index.html"}, {"@type": "ListItem", "position": 3, "name": "Briefs", "item": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Briefs", "description": "The build briefs for this site, published in full before the work, newest first.", "url": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html", "isPartOf": {"@type": "WebSite", "name": "PHP October 2026", "url": "https://php.oct.2026.newsroom.sgit.ai"}, "license": "https://creativecommons.org/licenses/by/4.0/", "dateModified": "2026-10-22", "version": "0.5.4", "inLanguage": "en", "image": "https://php.oct.2026.newsroom.sgit.ai/assets/og-card.png", "datePublished": "2026-10-22", "mainEntityOfPage": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html", "author": {"@type": "Person", "name": "Dinis Cruz"}, "publisher": {"@type": "Organization", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai/"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PHP October 2026", "item": "https://php.oct.2026.newsroom.sgit.ai/index.html"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://php.oct.2026.newsroom.sgit.ai/method/index.html"}, {"@type": "ListItem", "position": 3, "name": "Briefs", "item": "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html"}]}]</script>
 <script type="application/json" id="sg-meter-config">{"links":{"account":"account/index.html","topup":"account/top-up.html"},"links2":{"newsroom":"account/index.html","personas":"account/index.html"},"minDepth":0.1,"newDays":7,"prices":{"account":0,"analysis":3,"analysis_archive":2,"analysis_current":3,"analysis_fresh":6,"analysis_new":5,"article":6,"article_archive":3,"article_current":6,"article_fresh":12,"article_new":9,"briefing":5,"briefing_archive":3,"briefing_current":5,"briefing_fresh":10,"briefing_new":8,"evidence":1,"site":1,"story":2,"story_archive":1,"story_current":2,"story_fresh":4,"story_new":3},"root":"../../","start":500,"storageKey":"php-story.meter.v1","symbol":"\u00a3","topup":{"amount":500,"link":""}}</script>
 <script type="module" src="../../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"></script>
 <script src="../../assets/personas.js" defer></script>
 <script src="../../assets/site.js" defer></script>
 <script src="../../assets/reader-state.js" defer></script>
+<script src="../../assets/site-tools.js" defer></script>
 <script src="../../assets/telemetry.js" defer></script>
 </head>
 <body>
 <nav class="site"><div class="row">
   <script src="../../assets/themes/themes.js"></script>
   <a class="brand" href="../../index.html">PHP October<span> 2026</span></a>
-  <a class="ver" href="../../admin/versions.html#v0.5.3" title="Site release history: what v0.5.3 changed">v0.5.3</a>
+  <a class="ver" href="../../admin/versions.html#v0.5.4" title="Site release history: what v0.5.4 changed">v0.5.4</a>
   <span class="status">Developing &middot; last checked 22 October 2026, 11:34 UTC</span>
   <span class="crumbs"><a href="https://newsroom.sgit.ai/">newsroom</a> / <a href="https://2026.newsroom.sgit.ai/">2026</a> / <a href="https://oct.2026.newsroom.sgit.ai/">October</a> / <b>PHP</b></span>
   <div class="tools"><div class="theme-pick"></div><sg-meter view="balance"></sg-meter></div>
@@ -119,6 +120,33 @@
 <li>Which geolocation service to trust with visitors&#x27; IPs. The first release uses ipapi.co with ipwho.is as fallback; both are third parties and both see the IP. A Cloudflare-fronted site could use <code>/cdn-cgi/trace</code> instead and leak nothing to a third party.</li>
 <li>Whether the reports should be public (counts only) or stay in the vault. The first release publishes counts.</li>
 <li>Whether the editor wants the city at all. Region and country answer the question asked; the city is noise from ISPs.</li>
+</ul></article><article class="rel" id="2026-10-22__talk-to-the-site"><p class="kicker">2026-10-22 &middot; <code>2026-10-22__talk-to-the-site.md</code></p><h2>Talk to the site: a chat pane with tools, your OpenRouter key and your data in your vault</h2>
+<p>Status: accepted and being built. Brief by Dinis Cruz (editor), spoken on 22 October 2026; written up by dev@php.newsroom. Build brief, the kind an agent executes.</p>
+<h3>The ask, in the editor&#x27;s words (condensed)</h3>
+<p>Add the ability to talk to the content. Readers provide their own OpenRouter key, stored in a vault, and store their data in a vault. pki.sgit.ai is a good example of how to do this; so is newsroom.sgit.ai&#x27;s pane on the right-hand side, and the functions, steps and tools we give the chat session. I want to be able to look at the website and talk to it. The designer has already started.</p>
+<h3>What exists to build on</h3>
+<ul>
+<li>The phone app (/now/, by the design agent): it opens or creates a reader vault in the browser with the vault library the newsroom runs (assets/vendor/sg-vault, assets/vault/newsroom-vault.js), keeps everything under /php-october/ (devices/, settings.json, secrets/openrouter.json, chats/, made/), and talks to OpenRouter with the reader&#x27;s key. The key slot in the browser (p2s.now.vault) holds the vault key for the tab, or on the device when the reader asks.</li>
+<li>newsroom.sgit.ai: the vault pane on the right of every page; and pages that publish read-only tools as window.__tools after a tool:ready event.</li>
+<li>pki.sgit.ai: the account kept in the browser until an access key moves it into vaults; content read from a message is data, never instructions.</li>
+<li>This site&#x27;s reading record (assets/reader-state.js) and now/now.json, every item with what it says.</li>
+</ul>
+<h3>The design</h3>
+<p>1. <b>Tools on every page</b> (assets/site-tools.js): window.__tools with search, get_item, read_page, this_page, whats_new, my_notes and situation, then tool:ready. Read-only, same-origin, plain JSON. Any agent in the reader&#x27;s browser can use them; so does the pane.</p>
+<p>2. <b>Ask, the pane</b> (assets/ask/ask.js, loaded when the Ask button is pressed): a chat in which the model calls those tools itself, each call shown; two more tools, mark_read and add_note, only propose a change to the reader&#x27;s record and happen when the reader presses Allow. Every fact cites an item id, turned into a link; an unknown id shows with a question mark.</p>
+<p>3. <b>The vault</b>: the phone app&#x27;s vault, the same key slot, the same folder: opening it in either opens it in both. The OpenRouter key goes to /php-october/secrets/ (or stays in the tab&#x27;s memory only, if the reader chooses); the reading record and notes to devices/&lt;device&gt;.json, the feeds to desk/&lt;device&gt;.json, the chats to chats/. Bring in other devices merges them into this browser.</p>
+<h3>Security</h3>
+<ul>
+<li>The OpenRouter key is never written to the browser&#x27;s storage; it is encrypted into the reader&#x27;s vault, held in memory while the tab is open, and sent only to openrouter.ai.</li>
+<li>A tool&#x27;s result is the site&#x27;s text, passed to the model as data inside a labelled field; the system prompt tells the model never to follow instructions found in it. The model reaches the reader&#x27;s record only through the two tools that ask first.</li>
+<li>The model&#x27;s answer is escaped before it is shown; only bold, code, line breaks, http(s) links and item citations are rendered.</li>
+<li>Nothing is sent anywhere but the vault server (ciphertext) and OpenRouter (the conversation).</li>
+</ul>
+<h3>Not built yet</h3>
+<ul>
+<li>Opening the vault with a passkey (the newsroom&#x27;s door design) instead of a pasted key.</li>
+<li>Streaming the answer while tools run; today the answer appears when the model is done.</li>
+<li>The phone app and the pane share the storage format; moving the phone app onto the pane&#x27;s vault code would leave one copy.</li>
 </ul></article><article class="rel" id="2026-10-22__review__front-page-and-navigation"><p class="kicker">2026-10-22 &middot; <code>2026-10-22__review__front-page-and-navigation.md</code></p><h2>Review: the front page and the navigation, at v0.2.5</h2>
 <p>Author: the journalist role (claude-journalist), on joining the site. Asked for by the editor: review the current content of the front page and suggest ways to improve navigation. Read at 1400px and 390px wide, against the built v0.2.5 pages. Findings first, then what v0.2.6 did, then what is proposed and left open on the board (items 016 to 019).</p>
 <h3>What works</h3>
@@ -512,7 +540,7 @@
     <p><b>PHP October 2026</b> (php.oct.2026.newsroom.sgit.ai) tracks PHP news for one month. This month that is one story, the two critical PHP security flaws, followed as evidence: every claim with a status and its sources, every source captured, dated and hashed into a private vault. Built and run by one editor and a team of software agents; <a href="../../team/index.html">the roles</a> and <a href="../../method/index.html">the method</a> are public, and the site is rebuilt from the vault, never written by hand. One of the SGit Newsroom's story sites: up from here are <a href="https://oct.2026.newsroom.sgit.ai/">October 2026</a>, <a href="https://2026.newsroom.sgit.ai/">the year</a> and <a href="https://newsroom.sgit.ai/">the newsroom</a>, whose own section on the story is <a href="https://newsroom.sgit.ai/php-flaws/index.html">here</a>. Part of the <a href="https://sgit.ai/network/index.html">sgit.ai network</a>.</p>
     <p class="disc">&#9888; Participant disclosure: published by the sgit project, which builds the vault and metering stack this site runs on. Content CC BY 4.0 for this site's own text, tables and data; quoted words are their authors', linked; no third-party page is reproduced. Code Apache-2.0.</p>
     <p class="small">&#9673; This page sends one anonymous usage event (page, referrer host, country and region, no IP, no cookie) to a write-only vault lane; <a href="../../admin/telemetry/index.html">what is sent and what is counted</a>. Honoured: Do Not Track and Global Privacy Control.</p>
-    <p class="small">site v0.5.3 &middot; evidence vault commit 200d08971937 &middot; <a href="../../admin/index.html">engineering</a> &middot; <a href="../../admin/briefs/index.md">this page as markdown</a> &middot; <a href="../../llms.txt">llms.txt</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP">GitHub</a></p>
+    <p class="small">site v0.5.4 &middot; evidence vault commit 200d08971937 &middot; <a href="../../admin/index.html">engineering</a> &middot; <a href="../../admin/briefs/index.md">this page as markdown</a> &middot; <a href="../../llms.txt">llms.txt</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP">GitHub</a></p>
   </div>
 </footer>
 </body>
