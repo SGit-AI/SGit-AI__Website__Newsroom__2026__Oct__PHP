@@ -101,6 +101,14 @@ for f in layers.get('files', []):
     if f.get('layer') not in ids: fails.append(f'data/layers.json: {f["path"]} has layer {f.get("layer")!r}')
 for fn in sorted(os.listdir(os.path.join(ROOT, 'data'))):
     if fn.endswith('.json') and classified.count('data/' + fn) != 1: fails.append(f'data/{fn}: listed {classified.count("data/" + fn)} times in data/layers.json, not once')
+qs = load('questions') or {}
+for q in qs.get('questions', []):
+    for a in q.get('answer', []):
+        for s in a.get('sources', []):
+            if s not in slugs: fails.append(f'data/questions.json: {q.get("id")} cites unknown slug {s}')
+    for pth in q.get('see', []):
+        if not os.path.exists(os.path.join(ROOT, pth.split('#')[0])): fails.append(f'data/questions.json: {q.get("id")} points at missing page {pth}')
+    if not q.get('see'): fails.append(f'data/questions.json: {q.get("id")} points at no page')
 # 5. determinism: rebuild into a temp copy and compare hashes
 def tree_hash():
     h = hashlib.sha256()

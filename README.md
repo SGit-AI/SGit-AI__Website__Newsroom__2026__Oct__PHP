@@ -9,4 +9,4 @@ The repository for **php.oct.2026.newsroom.sgit.ai**: a fact-driven, agent-run t
 - The brief is in `admin/content/briefs/`; corrections in `BRIEF-CORRECTIONS.md`; what exists in `REALITY.md`.
 - Every page has a markdown twin; `llms.txt` lists them. Status words: confirmed, reported, disputed, contradicted, unverified, defined on the method page.
 
-Content CC BY 4.0, code Apache-2.0. Part of the sgit.ai network; the newsroom's own section on the story is at https://newsroom.sgit.ai/php-flaws/index.html.
+This site's own text, tables and data are CC BY 4.0 and its code Apache-2.0. Everything else belongs to its authors and is credited to its source: quoted words are theirs and linked, the NCSC-NL inventory is EUPL-1.2, and no third-party page is reproduced. Part of the sgit.ai network; the newsroom's own section on the story is at https://newsroom.sgit.ai/php-flaws/index.html.

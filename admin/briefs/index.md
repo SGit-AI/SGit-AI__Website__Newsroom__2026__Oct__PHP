@@ -72,7 +72,7 @@ Add logging using an append lane. Capture who is visiting the website, which pag
 
 ## Review: the front page and the navigation, at v0.2.5
 
-Author: the journalist role (claude-journalist), on joining the site. Asked for by the editor: review the current content of the front page and suggest ways to improve navigation. Read at 1400px and 390px wide, against the built v0.2.5 pages. Findings first, then what v0.2.6 did, then what is proposed and left open on the board (items 014 to 017).
+Author: the journalist role (claude-journalist), on joining the site. Asked for by the editor: review the current content of the front page and suggest ways to improve navigation. Read at 1400px and 390px wide, against the built v0.2.5 pages. Findings first, then what v0.2.6 did, then what is proposed and left open on the board (items 016 to 019).
 
 ### What works
 
@@ -102,7 +102,7 @@ Author: the journalist role (claude-journalist), on joining the site. Asked for 
 
 - **There was nowhere for dated, signed writing.** Every page is rebuilt from the vault on each release, which is right for the evidence, but means the site had no way to say "this is what we knew at 11:34 UTC on 22 October" and keep it.
 
-### What v0.2.6 did
+### What v0.2.7 did
 
 - The menu splits by layer: **The story** (unchanged), **Articles** (new: signed, dated), **The analysis** (claims, numbers, agencies, affected systems, who says what, the graph: derived from the evidence), **The evidence** (every source, the software inventory, the vault opened, and the new layers page). The vault page moved from About to The evidence.
 
@@ -114,19 +114,19 @@ Author: the journalist role (claude-journalist), on joining the site. Asked for 
 
 ### Proposed, on the board
 
-- **014, a start-here row.** Four doors directly under the lead: If you run PHP; the two flaws; exploitation signals; offline versus compromised. They answer the four questions a cold reader arrives with: what do I do, what is it, is it being used, how bad has it been.
+- **016, a start-here row.** Four doors directly under the lead: If you run PHP; the two flaws; exploitation signals; offline versus compromised. They answer the four questions a cold reader arrives with: what do I do, what is it, is it being used, how bad has it been.
 
-- **015, "Since the last release" instead of "The last 48 hours".** The timeline rows added since the previous version, story events only. It turns the section into a changelog of the story, which is also the hook a returning reader needs.
+- **017, "Since the last release" instead of "The last 48 hours".** The timeline rows added since the previous version, story events only. It turns the section into a changelog of the story, which is also the hook a returning reader needs.
 
-- **016, About split in two.** About (method, team, brief, corrections, layers) for readers; Engineering (admin, board, roles, briefs, telemetry, releases) for agents and the editor. Billing and the reading account move to the balance in the bar, which already links to them. llms.txt moves to the footer.
+- **018, About split in two.** About (method, team, brief, corrections, layers) for readers; Engineering (admin, board, roles, briefs, telemetry, releases) for agents and the editor. Billing and the reading account move to the balance in the bar, which already links to them. llms.txt moves to the footer.
 
-- **017, a layer badge on every page**, from data/layers.json: evidence, derived or authored, in the kicker. A reader should never have to guess whether they are reading a capture, the site's analysis of it, or someone's signed opinion.
+- **019, a layer badge on every page**, from data/layers.json: evidence, derived or authored, in the kicker. A reader should never have to guess whether they are reading a capture, the site's analysis of it, or someone's signed opinion.
 
 - Smaller: seven stat tiles in a grid that fits seven, or six tiles; the kicker's time in reader form; on phones, the caveat box after the start-here row rather than before it.
 
 ### Open questions for the editor
 
-- Should articles carry the reading meter like story pages (they do in v0.2.6, at the article price), or be free like the method and the brief?
+- Should articles carry the reading meter like story pages (they do in v0.2.7, at the article price), or be free like the method and the brief?
 
 - Should the newsroom's own section on the story (newsroom.sgit.ai/php-flaws) carry the opinion pieces, as memo 2 suggests, with this site keeping only the journalist's and historian's dated reports? This review assumes yes.
 
@@ -154,4 +154,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.2.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.2.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

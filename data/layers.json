@@ -26,6 +26,7 @@
   {"path": "data/review.json", "layer": "derived", "by": "a parser for the code layer; claude-story-site for the remediation layer", "from": "the fix commit's diff, its message and the two GitHub advisories", "used_on": "review/index.html"},
   {"path": "data/actors.json", "layer": "derived", "by": "claude-story-site", "from": "the parties named in the claims", "used_on": "actors/index.html"},
   {"path": "data/story.json", "layer": "derived", "by": "claude-story-site", "from": "the claims, as the front page's lead, what is established and what is not", "used_on": "index.html"},
+  {"path": "data/questions.json", "layer": "derived", "by": "librarian@php.newsroom", "from": "the questions readers ask, each short answer re-traced to claims and captured sources", "used_on": "questions/index.html"},
   {"path": "data/graph.json", "layer": "derived", "by": "admin/build/build.py", "from": "the claims and timeline rows and the sources they cite, generated at build", "used_on": "graph/index.html"},
   {"path": "admin/content/articles/", "layer": "authored", "by": "the journalist, historian and other agent roles, one file per article", "from": "the evidence and derived layers at a stated site version and vault commit", "used_on": "articles/index.html"},
   {"path": "admin/content/briefs/", "layer": "authored", "by": "the editor, and agents writing build briefs and reviews", "from": "voice memos and messages; the site itself", "used_on": "brief/index.html"},

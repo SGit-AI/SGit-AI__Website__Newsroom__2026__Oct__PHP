@@ -64,6 +64,14 @@ The site is built and run by one person and a set of software agents, and this p
 
 **The mistake behind the rule.** None recorded yet; the first release is where the first one will be.
 
+### Librarian (librarian@php.newsroom) `librarian`
+
+**Beat.** the catalogue: which page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured yet
+
+**The rule it enforces.** Answer a question with a page, not a paragraph. If no page answers it, the answer is written here with its sources, and the gap goes to the editor.
+
+**The mistake behind the rule.** The first question came from a group chat with a newspaper link in it; the newspaper was not in the vault. It is listed below as seen, not captured, rather than cited.
+
 ### Verifier `verifier`
 
 **Beat.** re-reads each claim against its captures; downgrades anything the capture does not carry
@@ -138,4 +146,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.2.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.2.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
