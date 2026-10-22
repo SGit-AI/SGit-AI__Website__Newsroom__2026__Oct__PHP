@@ -10,11 +10,11 @@ Where the brief was wrong, where a page was wrong, what was found and what was d
 
 Newest first. A correction names the date, what was wrong, what was found, and what was done instead. The mistake stays visible where it was made.
 
-### 2026-10-22, v0.2.9: "both ChatGPT and Claude", in part
+### 2026-10-22, v0.2.10: "both ChatGPT and Claude", in part
 
 The v0.1.0 entry below says no second model had read the vault. That is still true of the vault. What changed: the editor ran a research chat in Perplexity and gave this site its notes, which are now published in full and credited at /readings/, compared with the vault point by point. Perplexity read the web through search excerpts, not the vault, so this is a second reading of the story, not of the evidence. Board item 009 stays open for a second model reading the vault itself.
 
-### 2026-10-22, v0.2.9: the pages that were free
+### 2026-10-22, v0.2.10: the pages that were free
 
 The billing model said the site's account of itself was free, so that a reader would not be charged for checking it. The editor's rule is that every page is metered. Those pages are now metered at the 1p floor and never more; only the meter's own account pages stay free. The argument for the floor is kept on the billing page.
 
@@ -36,4 +36,4 @@ The second memo asks for the whole semantic fractal graph. What exists is one gr
 
 
 ---
-site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/corrections/index.html
+site v0.2.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/corrections/index.html

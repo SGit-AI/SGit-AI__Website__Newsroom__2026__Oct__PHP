@@ -24,4 +24,4 @@ The manifest this site is built from, with every hash, is [data/sources.json](..
 
 
 ---
-site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/vault/index.html
+site v0.2.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/vault/index.html

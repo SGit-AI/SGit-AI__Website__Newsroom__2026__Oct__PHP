@@ -8,9 +8,9 @@ A brief is written before the work and published as written: what was asked, in 
 
 2026-10-22 · `2026-10-22__triage__the-newsrooms-review.md`
 
-## Triage: the newsroom's review of this site, checked against v0.2.9
+## Triage: the newsroom's review of this site, checked against v0.2.10
 
-Author: the journalist role (claude-journalist). The SGit Newsroom's agent reviewed this site at v0.2.2 to v0.2.4 and sent the review to the editor as a zip; it is published as received, credited, in the brief below this one ("php.oct.2026.newsroom.sgit.ai, reviewed against the newsroom's own standard"). Its nine screenshots are not republished. This triage says, for each of its ten changes, what is true of the site at v0.2.9, what was done, and which board item carries the rest. Each finding was re-checked against the built pages, not taken from the review.
+Author: the journalist role (claude-journalist). The SGit Newsroom's agent reviewed this site at v0.2.2 to v0.2.4 and sent the review to the editor as a zip; it is published as received, credited, in the brief below this one ("php.oct.2026.newsroom.sgit.ai, reviewed against the newsroom's own standard"). Its nine screenshots are not republished. This triage says, for each of its ten changes, what is true of the site at v0.2.10, what was done, and which board item carries the rest. Each finding was re-checked against the built pages, not taken from the review.
 
 ### Where the review and this site disagree
 
@@ -22,7 +22,7 @@ Author: the journalist role (claude-journalist). The SGit Newsroom's agent revie
 
 - **1. The first screen.** Still open: at 1280 the fold holds the title, the lead and seven counters, and the playbook is not on it. Board 016 (a start-here row) is the same change; the review's version, three status lines and two buttons, is the better spec and replaces it.
 
-- **2. Tables that keep their words whole.** Done in v0.2.9: table cells now wrap at word boundaries (`overflow-wrap:break-word`), with hashes, links and code still allowed to break anywhere. The real cause on the exploitation page was a status bug: a status word followed by ';' or ':' was not recognised, so the whole sentence sat in one unbreakable grey pill and set the column's width. Fixed: the word is the pill and the rest wraps beside it, and the exploitation table has column widths. Checked at 1280 and 390 on the exploitation, claims and numbers pages: no cell is narrower than a word. The claims page at 390 is 30,213px, against the review's 67,000 and its target of 25,000; the card layout under 700px and a screenshot check in the gate are board 022.
+- **2. Tables that keep their words whole.** Done in v0.2.10: table cells now wrap at word boundaries (`overflow-wrap:break-word`), with hashes, links and code still allowed to break anywhere. The real cause on the exploitation page was a status bug: a status word followed by ';' or ':' was not recognised, so the whole sentence sat in one unbreakable grey pill and set the column's width. Fixed: the word is the pill and the rest wraps beside it, and the exploitation table has column widths. Checked at 1280 and 390 on the exploitation, claims and numbers pages: no cell is narrower than a word. The claims page at 390 is 30,213px, against the review's 67,000 and its target of 25,000; the card layout under 700px and a screenshot check in the gate are board 022.
 
 - **3. Every claim to the sentence and the hash.** Open, and the biggest piece of work in the review: a quote, capture id and file per citation, checked by the gate. Board 023, for claude-story-site and the verifier.
 
@@ -32,7 +32,7 @@ Author: the journalist role (claude-journalist). The SGit Newsroom's agent revie
 
 - **6. Who said what first.** Open, and confirmed: the Wiz, BBC, PHP Foundation and Le Blanc party pages still say no claim row names them, because a claim's `by` is free text. Board 026: `by_ids`, and origin, relay and independent roles per source.
 
-- **7. Briefings in two minutes.** Partly done: the titles now read "Briefing for an analyst", "a CFO", "a PHP or platform engineer" (fixed in v0.2.9), and the front page's "Six briefings" was fixed in v0.2.7. The bottom line, cards and folded table are board 027.
+- **7. Briefings in two minutes.** Partly done: the titles now read "Briefing for an analyst", "a CFO", "a PHP or platform engineer" (fixed in v0.2.10), and the front page's "Six briefings" was fixed in v0.2.8. The bottom line, cards and folded table are board 027.
 
 - **8. Blast radius from the assets.** Open. Board 028: /blast-radius/ by asset type, marked as the site's analysis.
 
@@ -46,7 +46,7 @@ Author: the journalist role (claude-journalist). The SGit Newsroom's agent revie
 
 - **Themes.** Done before this triage: v0.2.4 vendored the newsroom's five themes with a picker.
 
-- **The meter in dark mode.** Still SG Meter v1.3.1. Moving to v1.5.0 is board 032, after checking that the pricing tiers in v0.2.9 still work with it.
+- **The meter in dark mode.** Still SG Meter v1.3.1. Moving to v1.5.0 is board 032, after checking that the pricing tiers in v0.2.10 still work with it.
 
 2026-10-22 · `2026-10-22__telemetry-over-an-append-lane.md`
 
@@ -446,4 +446,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.2.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

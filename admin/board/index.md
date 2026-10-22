@@ -28,8 +28,8 @@ The work, as rows in `data/admin.json`: 34 items, 26 open, 7 done. An item is ad
 | 017 | Front page: replace 'The last 48 hours' with 'Since the last release', drawn from the timeline rows added since the previous version, and drop this site's own events from it | open | journalist |  |
 | 018 | Navigation: split About into About (method, team, brief, corrections) and Engineering (admin, board, roles, briefs, telemetry, releases); move billing and the reading account to the bar's balance | open | dev |  |
 | 019 | A layer badge (evidence, derived, authored) in every page's kicker, from data/layers.json, so a reader always knows what kind of page they are on | open | dev |  |
-| 020 | Pricing by content type and freshness: every content page metered, price = max(1p, round(base x freshness)) x share read x rating; tiers fresh, new, current, archive picked in the reader's browser; rules on the billing page | done | journalist | 0.2.9 |
-| 021 | Second readings: Perplexity's notes published in full and credited, compared with the vault point by point at /readings/ | done | journalist | 0.2.9 |
+| 020 | Pricing by content type and freshness: every content page metered, price = max(1p, round(base x freshness)) x share read x rating; tiers fresh, new, current, archive picked in the reader's browser; rules on the billing page | done | journalist | 0.2.10 |
+| 021 | Second readings: Perplexity's notes published in full and credited, compared with the vault point by point at /readings/ | done | journalist | 0.2.10 |
 | 022 | Tables as cards under 700px, and a screenshot check at 390px in the gate (newsroom review, change 2) | open | dev |  |
 | 023 | Per citation: the quoted sentence, capture id and file hash, checked by the gate against the capture text (newsroom review, change 3) | open | claude-story-site |  |
 | 024 | Re-export from the vault head (184 sources against 144 here) and publish /status.json in the newsroom's shape (newsroom review, change 4) | open | dev |  |
@@ -47,4 +47,4 @@ Who the owners are is on [roles](../roles/index.html); the briefs that open item
 
 
 ---
-site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.2.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

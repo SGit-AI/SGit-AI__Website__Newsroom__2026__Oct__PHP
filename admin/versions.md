@@ -4,11 +4,19 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.2.9. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.2.10. The data is [data/versions.json](../data/versions.json).
+
+### v0.2.10 · 2026-10-22
+
+pricing by content type and freshness: every content page metered (only the meter's own pages are not), price = max(1p, round(base x freshness)) with tiers picked in the reader's browser, the formula and rules of engagement on the billing page; second readings: Perplexity's notes published in full and credited, compared with the vault point by point; the newsroom's review of the site published as received, with a triage and fourteen board items; briefing titles and table word-wrapping fixed
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.2.9 · 2026-10-22
 
-pricing by content type and freshness: every content page metered (only the meter's own pages are not), price = max(1p, round(base x freshness)) with tiers picked in the reader's browser, the formula and rules of engagement on the billing page; second readings: Perplexity's notes published in full and credited, compared with the vault point by point; the newsroom's review of the site published as received, with a triage and fourteen board items; briefing titles and table word-wrapping fixed
+the release check now accepts this version or later, because several agents release to dev and one can land on top of another inside the polling window (v0.2.8 landed on v0.2.7 and the old exact check called a live release unverified)
 
  Vault commit `200d08971937`.
 
@@ -96,4 +104,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.2.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
