@@ -25,10 +25,10 @@ To paste back where it was asked: the paragraph above and `https://php.oct.2026.
 ## The pages that carry it
 - [The two flaws: CVE-2026-109618 and CVE-2026-109619](../../flaws/index.html#versions)
 - [If you run PHP: the steps, in order, with their sources](../../playbook/index.html)
-- [Briefing for a cto: What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?](../../briefings/cto/index.html)
+- [Briefing for a CTO: What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?](../../briefings/cto/index.html)
 
 Next question: [We are behind Cloudflare (or another firewall). Are we safe?](../waf-enough/index.html) · [every question](../index.html). Nothing here is advice for your environment; the [php.net advisory](https://www.php.net/archive/2026.php#2026-10-21-5) and your national agency are the authorities.
 
 
 ---
-site v0.2.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/old-php/index.html
+site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/old-php/index.html

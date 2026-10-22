@@ -1,6 +1,15 @@
 {
- "current": "0.2.8",
+ "current": "0.2.9",
  "versions": [
+  {
+   "version": "0.2.9",
+   "date": "2026-10-22",
+   "title": "pricing by content type and freshness: every content page metered (only the meter's own pages are not), price = max(1p, round(base x freshness)) with tiers picked in the reader's browser, the formula and rules of engagement on the billing page; second readings: Perplexity's notes published in full and credited, compared with the vault point by point; the newsroom's review of the site published as received, with a triage and fourteen board items; briefing titles and table word-wrapping fixed",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.8",
    "date": "2026-10-22",

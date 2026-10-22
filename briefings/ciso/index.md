@@ -1,6 +1,6 @@
-# Briefing for a ciso: What is our exposure, what is our evidence we were not hit, and what do I tell the board?
+# Briefing for a CISO: What is our exposure, what is our evidence we were not hit, and what do I tell the board?
 
-The php2shell story for a ciso: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a CISO: what to decide, the claims it rests on with their status and sources, and what is still open.
 
 Briefing · CISO · from the same 70 claims, selected and ordered for one reader
 
@@ -86,4 +86,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.2.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/ciso/index.html
+site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/ciso/index.html

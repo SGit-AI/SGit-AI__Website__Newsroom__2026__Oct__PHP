@@ -6,7 +6,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**6** evidence · **15** derived · **2** authored · **7** site
+**6** evidence · **16** derived · **3** authored · **7** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -47,6 +47,7 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/actors.json` | claude-story-site | the parties named in the claims | [actors/index.html](../actors/index.html) |
 | `data/story.json` | claude-story-site | the claims, as the front page's lead, what is established and what is not | [index.html](../index.html) |
 | `data/questions.json` | librarian@php.newsroom | the questions readers ask, each short answer re-traced to claims and captured sources | [questions/index.html](../questions/index.html) |
+| `data/readings.json` | claude-journalist | other models' notes, compared point by point with the claims and captured sources | [readings/index.html](../readings/index.html) |
 | `data/graph.json` | admin/build/build.py | the claims and timeline rows and the sources they cite, generated at build | [graph/index.html](../graph/index.html) |
 
 ## Authored
@@ -56,6 +57,7 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 | File | Made by | From | Shown on |
 |---|---|---|---|
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
+| `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
 | `admin/content/briefs/` | the editor, and agents writing build briefs and reviews | voice memos and messages; the site itself | [brief/index.html](../brief/index.html) |
 
 ## Site
@@ -76,4 +78,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.2.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

@@ -1,6 +1,6 @@
-# Briefing for a cto: What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?
+# Briefing for a CTO: What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?
 
-The php2shell story for a cto: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for a CTO: what to decide, the claims it rests on with their status and sources, and what is still open.
 
 Briefing · CTO · from the same 70 claims, selected and ordered for one reader
 
@@ -61,4 +61,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.2.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/cto/index.html
+site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/cto/index.html

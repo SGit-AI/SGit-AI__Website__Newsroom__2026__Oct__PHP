@@ -230,7 +230,7 @@
    "title": "Front page: a 'start here' row above the numbers (If you run PHP, the two flaws, exploitation, impact); today the playbook is not linked from the front page body",
    "status": "open",
    "owner": "journalist",
-   "note": "From the front page and navigation review, 22 October."
+   "note": "From the front page and navigation review, 22 October. Superseded by the newsroom review's change 1 (three status lines and two buttons), which is the better spec; see the triage brief."
   },
   {
    "id": "017",
@@ -249,6 +249,92 @@
    "title": "A layer badge (evidence, derived, authored) in every page's kicker, from data/layers.json, so a reader always knows what kind of page they are on",
    "status": "open",
    "owner": "dev"
+  },
+  {
+   "id": "020",
+   "title": "Pricing by content type and freshness: every content page metered, price = max(1p, round(base x freshness)) x share read x rating; tiers fresh, new, current, archive picked in the reader's browser; rules on the billing page",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.2.10"
+  },
+  {
+   "id": "021",
+   "title": "Second readings: Perplexity's notes published in full and credited, compared with the vault point by point at /readings/",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.2.10"
+  },
+  {
+   "id": "022",
+   "title": "Tables as cards under 700px, and a screenshot check at 390px in the gate (newsroom review, change 2)",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "023",
+   "title": "Per citation: the quoted sentence, capture id and file hash, checked by the gate against the capture text (newsroom review, change 3)",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "024",
+   "title": "Re-export from the vault head (184 sources against 144 here) and publish /status.json in the newsroom's shape (newsroom review, change 4)",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "025",
+   "title": "Exploitation over time: a strip chart from data/exploitation.json with count and count_basis per signal (newsroom review, change 5)",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "026",
+   "title": "Who said what first: by_ids on claims, origin, relay and independent roles per source; fixes the party pages that say no claim names them (newsroom review, change 6)",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "027",
+   "title": "Briefings in two minutes: a bottom line, five to eight claims as cards, the full table folded, read next (newsroom review, change 7)",
+   "status": "open",
+   "owner": "briefing-writer"
+  },
+  {
+   "id": "028",
+   "title": "/blast-radius/ by asset type, marked as the site's analysis, linked from the playbook and two briefings (newsroom review, change 8)",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "029",
+   "title": "The playbook in three phases, each step opening to the agency's sentence, taking offline last (newsroom review, change 9)",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "030",
+   "title": "The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fractal layer)",
+   "status": "open",
+   "owner": "cartographer"
+  },
+  {
+   "id": "031",
+   "title": "Narrow the gate's em-dash exemption to quoted text and titles, and rewrite the 20 source and party pages' notes",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "032",
+   "title": "SG Meter v1.3.1 to v1.5.0 for dark-mode contrast, keeping the pricing tiers working",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "033",
+   "title": "Capture the sources Perplexity named that the vault lacks, W3Techs first (it would close the front page's question on what 70% measures); listed on /readings/",
+   "status": "open",
+   "owner": "collector-researchers"
   }
  ],
  "evidence_vault": {

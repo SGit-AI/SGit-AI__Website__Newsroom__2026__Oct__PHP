@@ -1,6 +1,6 @@
-# Briefing for a analyst or advisor: How did coordinated disclosure fail, and what does AI-assisted discovery change?
+# Briefing for an analyst or advisor: How did coordinated disclosure fail, and what does AI-assisted discovery change?
 
-The php2shell story for a analyst or advisor: what to decide, the claims it rests on with their status and sources, and what is still open.
+The php2shell story for an analyst or advisor: what to decide, the claims it rests on with their status and sources, and what is still open.
 
 Briefing · Analyst or advisor · from the same 70 claims, selected and ordered for one reader
 
@@ -77,4 +77,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.2.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/analyst/index.html
+site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/briefings/analyst/index.html

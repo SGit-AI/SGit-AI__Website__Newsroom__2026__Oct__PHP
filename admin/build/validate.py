@@ -41,7 +41,7 @@ for p in pages:
     md = re.sub(r'\.html$', '.md', p)
     if not os.path.exists(md): fails.append(f'{rel(p)}: no markdown twin')
     # 6. em-dash in the site's prose (sources page exempt: third-party titles)
-    if os.sep + 'sources' + os.sep not in p and os.sep + 'actors' + os.sep not in p and not p.endswith(os.path.join('affected', 'software.html')) and not p.endswith(os.path.join('brief', 'index.html')):
+    if os.sep + 'sources' + os.sep not in p and os.sep + 'actors' + os.sep not in p and not p.endswith(os.path.join('affected', 'software.html')) and not p.endswith(os.path.join('brief', 'index.html')) and not re.search(r'readings/[^/]+/index\.html$', p.replace(os.sep, '/')):
         body = re.sub(r'<q>.*?</q>', '', s, flags=re.S)
         body = re.sub(r'title="[^"]*"', '', body)
         if '—' in body:
@@ -93,6 +93,16 @@ for fn in sorted(os.listdir(adir)) if os.path.isdir(adir) else []:
     for g in re.findall(r'\[\[([^\]]+)\]\]', t):
         for s in g.split(','):
             if s.strip() not in slugs: fails.append(f'articles/{fn}: cites unknown slug {s.strip()}')
+# 4b2. second readings: every row's sources and claims exist, and the other model's text is on disk
+rd = load('readings') or {}
+cids = {c['id'] for c in (load('claims') or [])}
+for r in rd.get('readings', []):
+    if not os.path.exists(os.path.join(ROOT, r.get('file', ''))): fails.append(f'data/readings.json: {r.get("id")} file {r.get("file")} missing')
+    for x in r.get('rows', []):
+        for s in x.get('sources', []):
+            if s not in slugs: fails.append(f'data/readings.json: {r.get("id")} / {x.get("point")} cites unknown slug {s}')
+        for c in x.get('claims', []):
+            if c not in cids: fails.append(f'data/readings.json: {r.get("id")} / {x.get("point")} names unknown claim {c}')
 # 4c. layers: every data file is classified exactly once
 layers = load('layers') or {}
 classified = [f['path'] for f in layers.get('files', [])]

@@ -22,7 +22,7 @@ def load(name):
 VERSION = open(os.path.join(ROOT, 'VERSION'), encoding='utf-8').read().strip()
 D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 'affected', 'exploitation',
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
-                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence', 'admin', 'telemetry', 'review', 'layers', 'questions')}
+                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence', 'admin', 'telemetry', 'review', 'layers', 'questions', 'readings')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
@@ -63,8 +63,11 @@ STATUS_WORDS = OrderedDict([
 ])
 
 def pill(status):
-    s = (status or '').split(' ')[0].split(',')[0].lower()
-    cls = s if s in STATUS_WORDS else 'other'
+    w = re.match(r'[a-z]*', (status or '').lower()).group(0)  # the leading word, without the ';' or ':' that may follow it
+    cls = w if w in STATUS_WORDS else 'other'
+    m = re.match(r'^(\w+)([;:,]?\s+[(;:]?.*)$', status or '') if cls != 'other' else None
+    if m and len(status) > 24:  # a status word with a qualifier: the word is the pill, the qualifier wraps beside it
+        return f'<span class="st st-{cls}">{E(m.group(1))}</span> <span class="small">{E(m.group(2).strip(" ;:,"))}</span>'
     return f'<span class="st st-{cls}">{E(status)}</span>'
 
 def src_links(slugs, depth):
@@ -162,7 +165,8 @@ NAV = [
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP')]),
     ('Articles', [('articles/index.html', 'All articles, dated')] + [(f'articles/{a["slug"]}/index.html', f'{AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0]}') for a in ARTICLES]),
     ('The analysis', [('claims/index.html', 'Every claim'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
-                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph')]),
+                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'),
+                      ('readings/index.html', 'Second readings: other models')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
                       ('layers/index.html', 'Evidence, derived, authored')]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
@@ -174,7 +178,15 @@ NAV = [
 
 PAGES = []  # (path, title, description) in order, for llms.txt
 
-def layout(path, title, description, body, kind='page', date=None, topics='', ld_type='Article'):
+# Pricing (data/billing.json, pricing): a page's kind is its content type; a type that decays gets its freshness tier
+# appended in the reader's browser, from the page's date, before the meter reads it. The build stays clock-free.
+PRICE_TYPES = {t['type']: t for t in D['billing']['pricing']['types']}
+_tiers = D['billing']['pricing']['tiers']
+FRESHNESS_JS = ('<script>(function(m){var a=(Date.now()-Date.parse(m.getAttribute("date")))/864e5;m.setAttribute("kind",m.getAttribute("kind")+"_"+('
+                + ''.join(f'a<={t["max_days"]}?"{t["tier"]}":' for t in _tiers if t['max_days'] is not None)
+                + f'"{_tiers[-1]["tier"]}"))}})(document.currentScript.previousElementSibling)</script>')
+
+def layout(path, title, description, body, kind='site', date=None, topics='', ld_type='Article'):
     depth = path.count('/')
     up = '../' * depth
     PAGES.append((path, title, description, kind))
@@ -187,14 +199,14 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
     cfg = D['billing']['runs']
     meter_cfg = {
         'storageKey': cfg['storageKey'], 'start': cfg['start'], 'symbol': cfg['symbol'],
-        'prices': {**cfg['prices'], 'article': cfg['prices']['story'], 'article_new': cfg['prices']['story']},
+        'prices': cfg['prices'],
         'newDays': cfg['newDays'], 'minDepth': cfg['minDepth'], 'topup': cfg['topup'],
         'links': {'account': 'account/index.html', 'topup': 'account/top-up.html'},
         'links2': {'newsroom': 'account/index.html', 'personas': 'account/index.html'},
         'root': up,
     }
     meter_json = json.dumps(meter_cfg, sort_keys=True, separators=(',', ':'))
-    page_meter = '' if kind == 'free' else f'<sg-meter view="page" quiet kind="{E(kind)}" date="{E(date or STORY["data_as_of"][:10])}" topics="{E(topics)}" title="{E(title)}"></sg-meter>'
+    page_meter = '' if PRICE_TYPES[kind]['base'] == 0 else f'<sg-meter view="page" quiet kind="{E(kind)}" date="{E(date or STORY["data_as_of"][:10])}" topics="{E(topics)}" title="{E(title)}"></sg-meter>' + (FRESHNESS_JS if PRICE_TYPES[kind]['decays'] else '')
     ld = {
         '@context': 'https://schema.org', '@type': ld_type, 'headline': title, 'description': description,
         'url': f'{BASE_URL}/{path}', 'isPartOf': {'@type': 'WebSite', 'name': SITE, 'url': BASE_URL},
@@ -612,7 +624,9 @@ def build_briefings():
 {section("open", "What is still open", f'<ul class="open">{openq}</ul>')}
 <p>The full set of claims is on <a href="../../claims/index.html">every claim</a>; the ordered steps for a vulnerable system are on <a href="../../playbook/index.html">if you run PHP</a>. Other briefings: {" &middot; ".join(f'<a href="../{b["id"]}/index.html">{E(b["name"])}</a>' for b in aud if b["id"] != a["id"])}.</p>
 '''
-        page(f'briefings/{a["id"]}/index.html', f'Briefing for a {a["name"].lower()}: {a["question"]}', f'The php2shell story for a {a["name"].lower()}: what to decide, the claims it rests on with their status and sources, and what is still open.', body, kind='briefing', topics=f'php2shell briefing {a["id"]}')
+        who = a['name'][0].lower() + a['name'][1:] if a['name'][1:2].islower() else a['name']  # keep CFO, PHP, AppSec as written
+        who = ('an ' if who[0] in 'aeiou' else 'a ') + who
+        page(f'briefings/{a["id"]}/index.html', f'Briefing for {who}: {a["question"]}', f'The php2shell story for {who}: what to decide, the claims it rests on with their status and sources, and what is still open.', body, kind='briefing', topics=f'php2shell briefing {a["id"]}')
 
 def build_sources():
     kinds = Counter(s.get('kind') for s in D['sources'])
@@ -701,7 +715,7 @@ def build_method():
 {section("agents", "For an agent", f'''<p>Everything on this site is in <code>data/</code> as JSON and every page has a markdown twin at the same path; <a href="../llms.txt">llms.txt</a> lists them. To add a source: capture it into the vault with the vault's tool, write its <code>source.json</code> and <code>notes.md</code>, add rows to your own <code>claims/&lt;agent&gt;.json</code> and <code>timeline/&lt;agent&gt;.json</code>, commit with your agent's name, push. To change this site: edit <code>data/</code>, run the build, run the gate. Do not edit a generated page; the build will overwrite it. The vault's claims and timeline files are exported as <a href="../data/vault-claims.json">vault-claims.json</a> and <a href="../data/vault-timeline.json">vault-timeline.json</a>; this site's own rows are in <a href="../data/claims.json">claims.json</a> and <a href="../data/timeline.json">timeline.json</a>, written by the agent <code>claude-story-site</code> from every note in the vault.</p>''')}
 {section("replicate", "Replicate it for the next incident", '''<p>Nothing here is specific to PHP. The vault protocol, the capture tool, the five status words, the export, the build and the gate would carry a story about any incident, outage or disclosure. The repository is public under Apache-2.0 and CC BY 4.0; the next story starts by copying it, emptying <code>data/</code>, and opening a vault.</p>''')}
 '''
-    page('method/index.html', 'The method: capture, hash, claim, build, gate', 'How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.', body, kind='free', topics='method provenance')
+    page('method/index.html', 'The method: capture, hash, claim, build, gate', 'How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.', body, kind='site', topics='method provenance')
 
 def build_team():
     r = D['roles']
@@ -725,11 +739,14 @@ def build_team():
 <li><b>Verify live.</b> A release is done when the live site serves the version, not when the push succeeds.</li>
 </ul>''')}
 '''
-    page('team/index.html', 'The team: the editor, the pipeline and the agents', 'Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the ' + str(len(r['audiences'])) + ' audiences.', body, kind='free', topics='team agents')
+    page('team/index.html', 'The team: the editor, the pipeline and the agents', 'Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the ' + str(len(r['audiences'])) + ' audiences.', body, kind='site', topics='team agents')
 
 def build_billing():
     b = D['billing']
-    kinds = table(['Kind', 'Price, read to the end', 'Pages', 'Why'], [[E(k['kind']), f'{k["price"]}p', E(k['pages']), E(k['why'])] for k in b['kinds']])
+    P = b['pricing']; pr = b['runs']['prices']
+    tier_h = [f'{E(t["tier"].capitalize())}<br><span class="small">{"up to " + str(t["max_days"]) + " day" + ("s" if t["max_days"] > 1 else "") if t["max_days"] else "older"}, &times;{t["multiplier"]:g}</span>' for t in P['tiers']]
+    kinds = table(['Type', 'Layer', 'Base'] + tier_h + ['Pages', 'Why'], [[f'<b>{E(t["type"])}</b>', E(t['layer']), f'{t["base"]}p'] + [f'{pr[t["type"] + "_" + tr["tier"]]}p' if t['decays'] else (f'{pr[t["type"]]}p' if i == 0 else '&middot;') for i, tr in enumerate(P['tiers'])] + [E(t['pages']), E(t['why'])] for t in P['types']])
+    kinds = f'<h3>The formula</h3><p class="kv"><code>{E(P["formula"])}</code>, with a floor of {P["floor"]}p.</p>' + kinds + f'<p class="small">A dot means the price does not decay: the type costs the same at any age. {E(P["age_from"])}</p><h3>The rules of engagement</h3><ol>' + ''.join(f'<li>{E(r)}</li>' for r in P['rules']) + '</ol>' + ''.join(f'<p class="small"><b>{E(t["tier"].capitalize())}.</b> {E(t["why"])}</p>' for t in P['tiers'])
     designed = ''.join(f'<li><b>{E(d["what"])}.</b> {E(d["text"])}</li>' for d in b['designed'])
     cm = b['cost_model']
     unit_counts = {'data/vault.json: sources': C['sources'], 'data/vault.json: captures': C['captures'],
@@ -751,9 +768,9 @@ def build_billing():
 {section("runs", "What runs: the reading meter", f'''<p>Every page carries <code>&lt;sg-meter&gt;</code>, SG Meter v1.3.1, vendored under <code>assets/components/</code> and loaded from this site only. You start with {runs["symbol"]}{runs["start"] / 100:.2f} of credit in this browser; the balance is in the top bar and goes below zero without anything being blocked. A page costs its price times the share of it you scrolled through, rounded to 5% and never less than a tenth, once per page per session. At the foot of each page you can rate how useful it was, which sets the price from free to double, or decline to pay with a reason. Nothing leaves the browser: no account, no cookie, no server of ours, no analytics listening to the meter's events. <a href="../account/index.html">Your reading account</a> shows the history and exports it as JSON.</p>''' + kinds + f'''<p>Top-ups are {runs["symbol"]}{runs["topup"]["amount"] / 100:.2f} of credit on a payment page. No payment link is configured for this site yet, so <a href="../account/top-up.html">the top-up page</a> runs the meter's simulated cart and says so. When a link is added, the credit is added on the return page without verifying the payment, because a static site has nowhere to receive a webhook; the meter's security model is explicit that this is an honesty box, not a paywall.</p>''')}
 {section("designed", "What is designed: paying for provenance", f'<ul class="designed">{designed}</ul><p>None of this is live. The newsroom\'s pages on <a href="https://newsroom.sgit.ai/economics/index.html">paying the fact creator</a> and <a href="https://newsroom.sgit.ai/provenance/index.html">provenance as the product</a> carry the argument; this site is the first with a claim table granular enough to price.</p>')}
 {section("cost", "What this story cost to assemble, as a model", f'<p>{E(cm["note"])}</p>' + cost_t + f'<p>Total at those assumptions: <b>£{total / 100:.2f}</b>. The counts are from the data files named; the prices are the site\'s assumptions and a reader is invited to substitute their own. What the model leaves out is the editor\'s time and the model inference behind each agent run, neither of which is counted anywhere yet; the honest column on this is <i>not measured</i>.</p>')}
-{section("prices", "The prices, as data", f'<pre>{E(json.dumps({"storageKey": runs["storageKey"], "start": runs["start"], "symbol": runs["symbol"], "prices": runs["prices"], "topup": runs["topup"]}, indent=1))}</pre><p>This block is <code>data/billing.json</code>, which is also what every page\'s meter config is generated from, so the table above and the meter cannot disagree.</p>')}
+{section("prices", "The prices, as data", f'<pre>{E(json.dumps({"storageKey": runs["storageKey"], "start": runs["start"], "symbol": runs["symbol"], "prices": runs["prices"], "topup": runs["topup"]}, indent=1, sort_keys=True))}</pre><p>This block is <code>data/billing.json</code>, which is also what every page\'s meter config is generated from, so the table above and the meter cannot disagree.</p>')}
 '''
-    page('billing/index.html', 'The billing model: what runs and what is designed', 'How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.', body, kind='free', topics='billing meter economics')
+    page('billing/index.html', 'The billing model: what runs and what is designed', 'How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.', body, kind='site', topics='billing meter economics')
 
 def build_account():
     body = '''
@@ -762,28 +779,38 @@ def build_account():
 <sg-meter view="account"></sg-meter>
 <p>How the meter works, and why it works this way, is on <a href="../billing/index.html">the billing model</a>. The account needs JavaScript: the balance lives here, not on a server.</p>
 '''
-    page('account/index.html', 'Your reading account', 'The balance, history and receipts of your reading on this site, kept in your browser.', body, kind='free')
+    page('account/index.html', 'Your reading account', 'The balance, history and receipts of your reading on this site, kept in your browser.', body, kind='account')
     body = '''
 <h1>Top up</h1>
 <p class="lead">Reading credit, paid on a payment page. No payment link is configured for this site yet, so what follows is the meter's simulated cart, which says it is simulated. When a link is added, this page will say so and the credit will be added on the return page without verifying the payment.</p>
 <sg-meter view="topup"></sg-meter>
 <p>Where your data is kept, and what can leave your browser, is on <a href="../billing/index.html">the billing model</a>. A payment returns to <a href="topped-up.html">the topped-up page</a>.</p>
 '''
-    page('account/top-up.html', 'Top up', 'Add reading credit to the balance kept in your browser.', body, kind='free')
+    page('account/top-up.html', 'Top up', 'Add reading credit to the balance kept in your browser.', body, kind='account')
     body = '''
 <h1>Thank you</h1>
 <p class="lead">If you arrived here from a payment page, the credit has been added to the balance in this browser. If you opened this page on its own, nothing is added and the meter says so.</p>
 <sg-meter view="topped-up"></sg-meter>
 <p><a href="index.html">Your reading account</a> &middot; <a href="../index.html">The front page</a></p>
 '''
-    page('account/topped-up.html', 'Topped up', 'The page a payment returns to.', body, kind='free')
+    page('account/topped-up.html', 'Topped up', 'The page a payment returns to.', body, kind='account')
 
 def render_md_file(path):
     """A small markdown renderer for the brief and corrections files: headings, paragraphs, lists, code."""
     with open(os.path.join(ROOT, path), encoding='utf-8') as f:
         text = f.read()
-    out, in_list, in_code = [], False, False
+    out, in_list, in_code, rows = [], False, False, []
+    def flush():
+        if rows:
+            out.append(table([inline_md(c) for c in rows[0]], [[inline_md(c) for c in r] for r in rows[1:]])); rows.clear()
     for line in text.splitlines():
+        if not in_code and line.strip().startswith('|'):
+            if in_list: out.append('</ul>'); in_list = False
+            cells = [c.strip() for c in line.strip().strip('|').split('|')]
+            if not all(re.match(r'^:?-+:?$', c) for c in cells):
+                rows.append(cells)
+            continue
+        flush()
         if line.strip().startswith('```'):
             if in_code:
                 out.append('</pre>'); in_code = False
@@ -803,6 +830,7 @@ def render_md_file(path):
         if in_list: out.append('</ul>'); in_list = False
         if line.strip():
             out.append('<p>' + inline_md(line) + '</p>')
+    flush()
     if in_list: out.append('</ul>')
     if in_code: out.append('</pre>')
     return '\n'.join(out)
@@ -811,6 +839,7 @@ def inline_md(s):
     s = E(s)
     s = re.sub(r'`([^`]+)`', r'<code>\1</code>', s)
     s = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', s)
+    s = re.sub(r'(?<![\w*])\*([^*\s][^*]*)\*(?![\w*])', r'<i>\1</i>', s)
     s = re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)', r'<a href="\2" rel="noopener">\1</a>', s)
     return s
 
@@ -829,7 +858,7 @@ def build_brief():
 {section("memos", "The two voice memos", "".join(memos))}
 {section("status", "Status", '<p>Accepted by the editor on 22 October 2026 by sending it; the first release of the site is the reply. What was built against each point of the brief is in the <a href="../admin/index.html">reality file</a>.</p>')}
 '''
-    page('brief/index.html', 'The brief: a written request and two voice memos', 'The brief this site was built from, published in full: the editor\'s written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.', body, kind='free')
+    page('brief/index.html', 'The brief: a written request and two voice memos', 'The brief this site was built from, published in full: the editor\'s written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.', body, kind='site')
 
 def build_corrections():
     body = f'''
@@ -837,7 +866,7 @@ def build_corrections():
 <p class="lead">Where the brief was wrong, where a page was wrong, what was found and what was done instead. A correction is published above the mistake, dated, and the mistake stays visible. The file is <code>BRIEF-CORRECTIONS.md</code> in the repository.</p>
 {render_md_file("BRIEF-CORRECTIONS.md")}
 '''
-    page('corrections/index.html', 'Corrections', 'Where the brief or a page of this site was wrong, what was found and what was done instead.', body, kind='free')
+    page('corrections/index.html', 'Corrections', 'Where the brief or a page of this site was wrong, what was found and what was done instead.', body, kind='site')
 
 def build_admin():
     vs = D['versions']
@@ -847,7 +876,7 @@ def build_admin():
 <p class="lead">One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v{E(vs["current"])}. The data is <a href="../data/versions.json">data/versions.json</a>.</p>
 {rows}
 '''
-    page('admin/versions.html', 'Release history', 'Every release of this site, with what changed, why, and the vault commit it was built from.', body, kind='free')
+    page('admin/versions.html', 'Release history', 'Every release of this site, with what changed, why, and the vault commit it was built from.', body, kind='site')
     checks = [
         ('Every internal link resolves against the real file tree', 'a link to a page that does not exist'),
         ('Every page is linked from at least one other page', 'a page nothing can find, which is the same as unpublished'),
@@ -886,7 +915,7 @@ def build_admin():
 <li><b>No review folder yet:</b> the estate's guidance asks for <code>review/</code> from the first commit; this repository starts it from its next change.</li>
 </ul>''')}
 '''
-    page('admin/index.html', 'Admin and engineering', 'How this site is built, the checks in its gate, where things are, the reality file and the honest column.', body, kind='free')
+    page('admin/index.html', 'Admin and engineering', 'How this site is built, the checks in its gate, where things are, the reality file and the honest column.', body, kind='site')
 
 def build_llms():
     lines = [f'# {SITE}', '', f'> {STORY["description"]}', '', f'Site v{VERSION}. Data as of {STORY["data_as_of"]} (the latest capture in the evidence vault, commit {D["vault"]["head"]["commit"]}). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.', '']
@@ -940,7 +969,7 @@ def main():
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_briefings(); build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
-    build_admin_section(); build_questions(); build_articles(); build_layers()
+    build_admin_section(); build_questions(); build_articles(); build_layers(); build_readings()
     build_llms(); build_sitejs()
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
@@ -1204,7 +1233,7 @@ def build_admin_section():
 {table(['#', 'Item', 'Status', 'Owner', 'Shipped in'], rows, 'board')}
 <p>Who the owners are is on <a href="../roles/index.html">roles</a>; the briefs that open items are on <a href="../briefs/index.html">briefs</a>.</p>
 """
-    page('admin/board/index.html', 'The board', 'The work on this site and its vault, as rows: what is open, who owns it, what shipped it.', body, kind='free')
+    page('admin/board/index.html', 'The board', 'The work on this site and its vault, as rows: what is open, who owns it, what shipped it.', body, kind='site')
     def pki_html(r):
         k = r.get('pki')
         if not k: return ''
@@ -1224,7 +1253,7 @@ def build_admin_section():
 <li>Commit messages name the agent. Corrections go in <code>BRIEF-CORRECTIONS.md</code>, above the mistake.</li>
 </ol>
 """
-    page('admin/roles/index.html', 'Roles and responsibilities', 'The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.', body, kind='free')
+    page('admin/roles/index.html', 'Roles and responsibilities', 'The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.', body, kind='site')
     bdir = os.path.join(ROOT, 'admin', 'content', 'briefs')
     items = ''
     for fn in sorted(os.listdir(bdir), reverse=True):
@@ -1235,7 +1264,7 @@ def build_admin_section():
 <p class="lead">A brief is written before the work and published as written: what was asked, in whose words, what exists to build on, the design, what it cannot do, the deliverables and the open questions. The newsroom and the sgit.ai sites keep theirs the same way. The file is the record; this page renders <code>admin/content/briefs/</code>, newest first. The written request and the two voice memos that started the site are on <a href="../../brief/index.html">the brief</a>.</p>
 {items}
 """
-    page('admin/briefs/index.html', 'Briefs', 'The build briefs for this site, published in full before the work, newest first.', body, kind='free')
+    page('admin/briefs/index.html', 'Briefs', 'The build briefs for this site, published in full before the work, newest first.', body, kind='site')
     v = A['evidence_vault']; vt = D['vault']
     body = f"""
 <h1>The evidence vault, opened</h1>
@@ -1252,7 +1281,7 @@ def build_admin_section():
 </ul>
 <p>The manifest this site is built from, with every hash, is <a href="../../data/sources.json">data/sources.json</a>; the sources are listed on <a href="../../sources/index.html">every source</a>. The telemetry vault (<code>{E(A["telemetry_vault"]["id"])}</code>) is separate and private: {E(A["telemetry_vault"]["note"])}</p>
 """
-    page('admin/vault/index.html', 'The evidence vault, opened', 'The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.', body, kind='free')
+    page('admin/vault/index.html', 'The evidence vault, opened', 'The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.', body, kind='site')
     t = D['telemetry']; rep = TREP
     def tt(pairs, h):
         return table([h, 'Events'], [[E(str(k)), E(str(n))] for k, n in pairs]) if pairs else '<p class="small">Nothing yet.</p>'
@@ -1279,7 +1308,7 @@ def build_admin_section():
 </ul>
 <p>Mechanics: <code>assets/telemetry.js</code> sends; <code>admin/build/telemetry_drain.py</code>, run by whoever holds the telemetry vault key, lists the lane with the enum key, fetches, decrypts with the private key, marks processed and writes <code>reports/</code>; <code>data/telemetry-report.json</code> is the latest report, copied into this repository at each drain.</p>
 """
-    page('admin/telemetry/index.html', 'Who reads this site: anonymous telemetry over an append lane', 'What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.', body, kind='free')
+    page('admin/telemetry/index.html', 'Who reads this site: anonymous telemetry over an append lane', 'What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.', body, kind='site')
 
 
 # ----------------------------------------------------------------------------- the review layer (v0.2.5)
@@ -1394,7 +1423,7 @@ def build_articles():
 <p>Who writes here: the <b>journalist</b> reports the state of affairs at a point in time; the <b>historian</b> sets it against what came before and says what the record still needs. More roles will join; the list is on <a href="../team/index.html">the team</a>.</p>
 {groups}
 """
-    page('articles/index.html', 'Articles: signed, dated, written against the evidence', f'{len(ARTICLES)} articles about php2shell by the journalist and historian roles, each pinned to the site version and vault commit it was written against.', body, kind='free')
+    page('articles/index.html', 'Articles: signed, dated, written against the evidence', f'{len(ARTICLES)} articles about php2shell by the journalist and historian roles, each pinned to the site version and vault commit it was written against.', body, kind='site')
 
 def build_layers():
     L = D['layers']
@@ -1420,7 +1449,7 @@ def build_layers():
 {out}
 <p>The classification is <a href="../data/layers.json">data/layers.json</a>; the gate fails a release if a file in <code>data/</code> is missing from it.</p>
 """
-    page('layers/index.html', 'Evidence, derived, authored: what each file is', 'Every file this site is built from, sorted into evidence captured from the vault, transformations derived by agents, signed and dated articles, and the files that run the site.', body, kind='free')
+    page('layers/index.html', 'Evidence, derived, authored: what each file is', 'Every file this site is built from, sorted into evidence captured from the vault, transformations derived by agents, signed and dated articles, and the files that run the site.', body, kind='site')
 
 
 # ----------------------------------------------------------------------------- questions, kept by the librarian (v0.2.6)
@@ -1469,6 +1498,43 @@ def build_questions():
 {section("ask", "Asking a new question", f'<p>{E(lib["rule"])} A question that is asked twice gets a page. The librarian\'s role, rules and the mistake behind them are on <a href="../team/index.html#librarian">the team page</a>.</p>')}
 '''
     page('questions/index.html', 'Questions readers ask about php2shell', 'Can anything be done or do we wait for updates? Has anyone been hacked? Is it really most websites? Short answers to paste back, the sources behind them, and the pages that carry each one.', body, kind='story', topics='php2shell questions faq')
+
+
+# ----------------------------------------------------------------------------- second readings: other models, checked against the vault (v0.2.10)
+
+def build_readings():
+    R = D['readings']
+    verdicts = {v['id']: v for v in R['verdicts']}
+    claim_ids = {c['id'] for c in D['claims']}
+    out = ''
+    for r in R['readings']:
+        tally = Counter(x['verdict'] for x in r['rows'])
+        rows = [[f'<b>{E(x["point"])}</b><div class="note">section {E(x["section"])}</div>', E(x['found']), pill(verdicts[x['verdict']]['name']),
+                 E(x['vault']) + ('<div class="note">' + ', '.join(f'<a href="../claims/index.html#{E(c)}">{E(c)}</a>' for c in x['claims'] if c in claim_ids) + '</div>' if x['claims'] else ''),
+                 src_links(x['sources'], 1)] for x in r['rows']]
+        leads = ''.join(f'<li><a href="{E(l["url"])}" rel="noopener nofollow">{E(l["what"])}</a> <span class="small">{E(l["priority"])}</span></li>' for l in r['leads'])
+        out += section(r['id'], f'{E(r["model"])}: {E(r["title"])}', f'''<p>{E(r["how"])} <a href="{E(r["id"])}/index.html">The notes in full &rarr;</a></p>
+<p class="kv">{" &middot; ".join(f"<b>{tally[v['id']]}</b> {E(v['name'])}" for v in R["verdicts"] if tally[v["id"]])}</p>
+{table(["Point", f"What {E(r['model'])} found", "Against the vault", "What the vault holds", "Sources"], rows, "claims")}
+<h3>Sources {E(r["model"])} named that the vault has not captured</h3>
+<p>Listed for the collectors, in the order they should be captured. None is cited on this site until it is captured; this list is the whole of what they are used for.</p>
+<ul>{leads}</ul>''')
+        notes = render_md_file(r['file'])
+        body = f'''
+<p class="kicker">Second reading &middot; by {E(r["model"])} &middot; compiled {E(r["compiled"])}</p>
+<div class="caveat"><p><b>This page is {E(r["model"])}'s text, not this site's.</b> {E(r["how"])} It is published in full and unedited, credited to {E(r["model"])}, from <code>{E(r["file"])}</code>. Its links go to the open web; none of its sources is cited by this site until a collector has captured it. Where it agrees or disagrees with the evidence vault is on <a href="../index.html#{E(r["id"])}">second readings</a>.</p></div>
+<div class="memo">{notes}</div>
+'''
+        page(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes on php2shell, in full', f'{r["title"]}: the notes {r["model"]} compiled on {r["compiled"]}, published in full and credited, with the comparison against the evidence vault one page up.', body, kind='evidence', topics=f'php2shell {r["model"].lower()} second reading')
+    legend = '<ul class="legend">' + ''.join(f'<li>{pill(v["name"])} {E(v["what"])}</li>' for v in R['verdicts']) + '</ul>'
+    body = f'''
+<h1>Second readings: other models, checked against the vault</h1>
+<p class="lead">The editor's first memo asked for more than one model to read this story. The vault was read by Claude agents; this page sets readings by other models beside it, point by point. Each other model's text is published in full and credited, and nothing in it is cited on this site until a collector has captured its source.</p>
+{legend}
+{out}
+<p class="small">The comparison rows are <a href="../data/readings.json">data/readings.json</a>, in the derived layer; the other models' text is in the authored layer (<a href="../layers/index.html">evidence, derived, authored</a>). The gate checks every source and claim a row cites.</p>
+'''
+    page('readings/index.html', 'Second readings: other models, checked against the vault', 'Another model\'s notes on php2shell, published in full and credited, set beside the evidence vault point by point: where they agree, where the vault resolves or goes further, and the new leads for capture.', body, kind='analysis', topics='php2shell second reading models')
 
 
 if __name__ == '__main__':

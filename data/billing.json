@@ -5,12 +5,29 @@
   "start": 500,
   "symbol": "£",
   "prices": {
-   "story": 2,
+   "article_fresh": 12,
+   "article_new": 9,
+   "article_current": 6,
+   "article_archive": 3,
+   "article": 6,
+   "briefing_fresh": 10,
+   "briefing_new": 8,
+   "briefing_current": 5,
+   "briefing_archive": 3,
    "briefing": 5,
+   "analysis_fresh": 6,
+   "analysis_new": 5,
+   "analysis_current": 3,
+   "analysis_archive": 2,
    "analysis": 3,
+   "story_fresh": 4,
+   "story_new": 3,
+   "story_current": 2,
+   "story_archive": 1,
+   "story": 2,
    "evidence": 1,
-   "page": 1,
-   "free": 0
+   "site": 1,
+   "account": 0
   },
   "topup": {
    "amount": 500,
@@ -19,38 +36,6 @@
   "newDays": 7,
   "minDepth": 0.1
  },
- "kinds": [
-  {
-   "kind": "story",
-   "price": 2,
-   "pages": "the front page, the flaws, the timeline, the leak, the discovery, the exploitation signals, the playbook",
-   "why": "Pages assembled from the vault by agents; the reader pays for the assembly."
-  },
-  {
-   "kind": "analysis",
-   "price": 3,
-   "pages": "the numbers, the claims, the agencies, the affected systems",
-   "why": "Pages where the site did work a reader cannot do by reading one source: counting, comparing, converting times."
-  },
-  {
-   "kind": "briefing",
-   "price": 5,
-   "pages": "the six briefings",
-   "why": "The most compressed form of the work: one page for one reader's decision."
-  },
-  {
-   "kind": "evidence",
-   "price": 1,
-   "pages": "the sources page, the graph",
-   "why": "Reference pages. Cheap, because the value is in checking, not reading."
-  },
-  {
-   "kind": "free",
-   "price": 0,
-   "pages": "the method, the team, the billing model, corrections, the release history, admin",
-   "why": "The site's own account of itself is free; charging for it would be charging to be checked."
-  }
- ],
  "designed": [
   {
    "what": "A price per verified claim",
@@ -108,6 +93,104 @@
     "assumed_price_pence": 0,
     "why": "the build is deterministic and costs nothing to run again"
    }
+  ]
+ },
+ "pricing": {
+  "formula": "price = max(floor, round(base[type] x freshness[tier])), then x the share of the page read (never under a tenth) x the reader's usefulness rating",
+  "floor": 1,
+  "types": [
+   {
+    "type": "article",
+    "layer": "authored",
+    "base": 6,
+    "decays": true,
+    "pages": "the signed, dated articles",
+    "why": "A conclusion someone signed, written against a stated state of the evidence: the most judgement per word on the site."
+   },
+   {
+    "type": "briefing",
+    "layer": "derived",
+    "base": 5,
+    "decays": true,
+    "pages": "the twelve briefings",
+    "why": "The most compressed form of the work: one page for one reader's decision."
+   },
+   {
+    "type": "analysis",
+    "layer": "derived",
+    "base": 3,
+    "decays": true,
+    "pages": "the claims, the numbers, the agencies, affected systems, the code, the review, in context",
+    "why": "Work a reader cannot do by reading one source: counting, comparing, converting times, reading the code."
+   },
+   {
+    "type": "story",
+    "layer": "derived",
+    "base": 2,
+    "decays": true,
+    "pages": "the front page, the flaws, the timeline, the leak, discovery, exploitation, impact, defence, the playbook, the questions",
+    "why": "Pages assembled from the vault by agents; the reader pays for the assembly."
+   },
+   {
+    "type": "evidence",
+    "layer": "evidence",
+    "base": 1,
+    "decays": false,
+    "pages": "every source and its page, the inventory, the parties, the graph",
+    "why": "Reference pages: the value is in checking, and checking must never cost more at the moment it matters most."
+   },
+   {
+    "type": "site",
+    "layer": "site",
+    "base": 1,
+    "decays": false,
+    "pages": "the method, the team, the billing model, the brief, corrections, the layers, the article index, admin",
+    "why": "The site's account of itself. Metered at the floor, because the editor asked for no free pages, and never more, because a reader checking how the site works should not be charged for checking."
+   },
+   {
+    "type": "account",
+    "layer": "site",
+    "base": 0,
+    "decays": false,
+    "pages": "your reading account, top up, topped up",
+    "why": "The meter's own pages. Charging a reader to see their bill is not a price; the one exception to no free pages."
+   }
+  ],
+  "tiers": [
+   {
+    "tier": "fresh",
+    "max_days": 1,
+    "multiplier": 2.0,
+    "why": "The first day: when the content is news and a reader is deciding something now."
+   },
+   {
+    "tier": "new",
+    "max_days": 7,
+    "multiplier": 1.5,
+    "why": "The first week: still the current state of a developing story."
+   },
+   {
+    "tier": "current",
+    "max_days": 30,
+    "multiplier": 1.0,
+    "why": "The base price: settled enough to rely on, recent enough to act on."
+   },
+   {
+    "tier": "archive",
+    "max_days": null,
+    "multiplier": 0.5,
+    "why": "The record: worth reading, priced for the reader doing history, never free."
+   }
+  ],
+  "age_from": "The date the page's content last changed: for a rebuilt page, the time of the latest capture its data comes from (so new evidence makes a page fresh again); for an article, the date it was written (so an article only ever ages).",
+  "rules": [
+   "Every content page is metered. The only unmetered pages are the meter's own: your account, top up and topped up.",
+   "The price depends on two things only: what kind of content the page is, and how fresh it is. Not on who is reading, not on demand, not on the topic.",
+   "Fresh costs more and the price halves into the archive, never to zero. Evidence and the site's account of itself do not decay and stay at the floor.",
+   "A page costs its price times the share of it you read, never less than a tenth; once per page per session; rating it re-prices it from free to double.",
+   "Nothing is ever blocked. The balance can go below zero, and a reader can decline to pay and say why.",
+   "The age is worked out in your browser from the date on the page; the build has no clock, so the same release serves the same prices table to everyone.",
+   "The prices table is published here and generated from the same data file as the meter, so the page and the meter cannot disagree."
   ]
  }
 }

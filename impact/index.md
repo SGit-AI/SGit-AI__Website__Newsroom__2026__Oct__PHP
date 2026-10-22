@@ -31,10 +31,10 @@ Two ledgers. The first is systems taken offline, which is a decision an operator
 | Cloudflare: thousands of attempts in the ten hours before announcement, tens of thousands within 45 minutes after, hundreds of thousands within two hours, 'millions now' | Matthew Prince on X, 22 October 01:25 UTC; attempts seen at the edge, not compromises; no blocked count published | reported (primary party) | [Matthew Prince , Cloudflare CEO on](../sources/x-eastdakota-php2shell-stats/index.html) [Cloudflare](../sources/cloudflare-blog-php2shell-waf/index.html) |
 | Imperva: no traffic matching the exploit patterns during pre-disclosure monitoring | Imperva had the details under embargo and monitored customer traffic before the announcement | reported (primary party); a negative finding | [Imperva Threat Research](../sources/imperva-blog-php2shell/index.html) |
 | Huntress: no exploitation observed on partner systems as of 20:30 UTC on 21 October; no public exploit code known | Huntress's own rapid-response post | reported (primary party); a negative finding | [Huntress](../sources/huntress-php2shell-rapid-response/index.html) |
-| watchTowr: active exploitation attempts seen; the flaws 'exploited in the wild' | watchTowr's pages, which block automated capture (HTTP 403); known through search summaries only | unverified: the source could not be read | [watchTowr](../sources/watchtowr-php2shell/index.html) [watchTowr](../sources/watchtowr-php2shell-faq/index.html) |
+| watchTowr: active exploitation attempts seen; the flaws 'exploited in the wild' | watchTowr's pages, which block automated capture (HTTP 403); known through search summaries only | unverified the source could not be read | [watchTowr](../sources/watchtowr-php2shell/index.html) [watchTowr](../sources/watchtowr-php2shell-faq/index.html) |
 | Chainguard's honeypots trapped IPs from China and Russia; 'several other security vendors' reported exploits in the wild | Dan Lorenc, as reported by The Register; vendors not named, no evidence published | reported, second-hand | [The Register](../sources/theregister-php-blames-chainguard/index.html) |
 | NCSC New Zealand: 'aware of reports of active exploitation' | Unattributed | reported | [NCSC New Zealand](../sources/ncsc-nz-alert-php/index.html) |
-| Weird Gloop: 'extremely likely that a bunch of old PHP fansites and forums have had their databases compromised' | The author's expectation; no case named | unverified: an expectation, not a finding | [Weird Gloop](../sources/weirdgloop-blog-php2shell/index.html) |
+| Weird Gloop: 'extremely likely that a bunch of old PHP fansites and forums have had their databases compromised' | The author's expectation; no case named | unverified an expectation, not a finding | [Weird Gloop](../sources/weirdgloop-blog-php2shell/index.html) |
 | A named organisation confirms it was compromised through php2shell | No captured source carries one | none found | [CISA](../sources/cisa-kev-json/index.html) [Huntress](../sources/huntress-php2shell-rapid-response/index.html) [Imperva Threat Research](../sources/imperva-blog-php2shell/index.html) |
 
 ## What the two ledgers say together
@@ -51,4 +51,4 @@ What a compromise of one system would reach is on [the blast-radius section](../
 
 
 ---
-site v0.2.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html
+site v0.2.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html
