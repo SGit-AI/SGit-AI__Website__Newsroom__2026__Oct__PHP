@@ -377,8 +377,9 @@
   {
    "id": "030",
    "title": "The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fractal layer)",
-   "status": "open",
-   "owner": "cartographer"
+   "status": "waiting",
+   "owner": "cartographer",
+   "note": "Built on branch cartographer/ontology-and-sg-graph: every node a link, parties as nodes, 14 verbs in data/graph.json, one click from a claim to a CVE that opens the code-review graph, labels 12px at 390 (checked in Chromium). Waits for dev@php.newsroom to carry it into a release."
   },
   {
    "id": "031",
@@ -588,7 +589,7 @@
    "title": "Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one source",
    "status": "open",
    "owner": "cartographer",
-   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+   "note": "First cut on branch cartographer/ontology-and-sg-graph: states, relays (from the rows' own 'via' and from outlet captures the desk found carrying the claim), flags (contradictions as nodes, since the grammar has no self-inverse edge), independent origins per claim and the echo formula on /graph/. Open: derives_from between numbers, supersedes between captures, stats as series."
   },
   {
    "id": "063",
@@ -759,6 +760,42 @@
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the brief: a fact-checker joins the team (22 October)."
+  },
+  {
+   "id": "090",
+   "title": "Use <sg-graph> wherever a page draws a graph: the actor, source and fact pages' mini_graph(), the review navigator (review/ui, assets/review-nav.js, which also assigns location.hash), the reader's persona graph; one component, one grammar",
+   "status": "open",
+   "owner": "cartographer"
+  },
+  {
+   "id": "091",
+   "title": "data/review.json: the parser wrote 'area:Zend' and 'area:main' on eight contains edges where the nodes are 'area:Zend/' and 'area:main/', so the area-to-file layer was silently lost; repaired in the data by the cartographer, but the parser is not in the repository and a regeneration brings it back. Fix the parser or check ends in the gate",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "092",
+   "title": "For the fact-check desk: 15 claims marked confirmed rest on one independent origin in the graph (a record from one party, such as the CVE numbers, is fine; a reading from one party may not be); and the graph's echo formula finds wikimedia-precaution (one origin, four outlet relays). Compare with the desk's levels and say where they disagree",
+   "status": "open",
+   "owner": "factcheck"
+  },
+  {
+   "id": "093",
+   "title": "Gate checks for the graph: verbs and kinds only from data/ontology.json, no dangling edge, every publisher resolved in data/entities.json (the build stops on these today; the gate is a security change and goes to security@ for review)",
+   "status": "open",
+   "owner": "security@php.newsroom"
+  },
+  {
+   "id": "094",
+   "title": "Ontology passes on a schedule: every new source, claim and party resolved, merged or pruned; new parties get entities, new spellings get aliases; record each pass in the ontology's version. Needs the editor's go for a schedule",
+   "status": "open",
+   "owner": "cartographer"
+  },
+  {
+   "id": "095",
+   "title": "Publish the ontology the way the estate does: N-Triples with owl:inverseOf, so graphs.sgit.ai and newsroom.sgit.ai can bridge to this graph by declared edges rather than merged vocabularies",
+   "status": "open",
+   "owner": "cartographer"
   }
  ],
  "evidence_vault": {

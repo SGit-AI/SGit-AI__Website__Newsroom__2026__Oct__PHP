@@ -96,5 +96,12 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - `/admin/keys/` from `data/keys.json`: the root (the editor's key, pinned from `CLAUDE.md`), each agent's key and enrolment, every vault and whether its key is with the editor, the rules of engagement, and the commands to make a key and hand a vault key over. The gate checks the file holds fingerprints and vault ids only.
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
+## The graph, its ontology and the component (cartographer@php.newsroom)
+- `data/ontology.json` (12 kinds, 14 verbs with inverses, two taxonomies, four formulas, banned verbs), `data/entities.json` (113 parties, every publisher spelling an alias), `data/attribution.json` (who states and relays each claim, number and exploitation row). Brief: `admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md`.
+- `data/graph.json`: 614 nodes, 1178 edges, 14 verbs; independent origins and relays per claim. The build stops on a verb or kind not in the ontology, an unresolved publisher or an unknown party (not yet a gate check: board 093).
+- `<sg-graph>` v1.0.0 (`assets/components/sg-graph/v1/v1.0/v1.0.0/`), embedded with `sg_graph()`: four views, search, verb filters, trail, path between two nodes, fractal zoom into a graph a node names. Used on /graph/, /graph/parties/ and /graph/component/; tested in Chromium at 1280 and 390, light and dark, and with JavaScript off. The test scripts ran in the cartographer's session and are not in the repository.
+- One fractal step that meets the estate's test: a CVE node opens the code-review graph in its own vocabulary. Source to capture to file is addressing, and is described as such.
+- Not built: sentence-level nodes (008); series and `derives_from`/`supersedes` (062); the other graph drawings moved onto the component (090); a scheduled ontology pass (094).
+
 ## Not built
-- A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.
+- A second fact-check desk on a different model; a review folder; a second model reading the vault; a Stripe link; tests beyond the gate.

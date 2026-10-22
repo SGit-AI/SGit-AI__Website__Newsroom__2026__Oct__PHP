@@ -193,7 +193,7 @@ NAV = [
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
     ('The analysis', [('claims/index.html', 'Every claim'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
-                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'),
+                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'), ('graph/parties/index.html', 'Every party'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
                       ('layers/index.html', 'Evidence, derived, authored'),
@@ -202,7 +202,7 @@ NAV = [
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
     ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
-               ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'), ('admin/agents/index.html', 'Guidance for agents'),
+               ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'), ('admin/agents/index.html', 'Guidance for agents'), ('graph/component/index.html', 'The graph component'),
                ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
 ]
 
@@ -923,47 +923,7 @@ def build_sources():
 '''
     page('sources/index.html', f'Every source: {C["sources"]} pages, {C["captures"]} captures, {C["hashed"]} hashes', f'The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.', body, kind='evidence', topics='php2shell sources evidence')
 
-def build_graph():
-    claims = D['claims']
-    used = OrderedDict()
-    for c in claims:
-        for s in c['sources']:
-            if s in SOURCES:
-                used.setdefault(s, 0)
-                used[s] += 1
-    src_list = sorted(used, key=lambda s: (-used[s], s))
-    nodes = [{'id': 'claim:' + c['id'], 'kind': 'claim', 'label': c['claim'][:90], 'status': c['status'], 'topic': c['topic']} for c in claims]
-    nodes += [{'id': 'source:' + s, 'kind': 'source', 'label': SOURCES[s].get('publisher') or s, 'publisher': SOURCES[s].get('publisher'), 'url': SOURCES[s]['url'], 'primary': bool(SOURCES[s].get('primary'))} for s in src_list]
-    nodes += [{'id': 'event:' + str(i), 'kind': 'event', 'label': t['event'][:90], 'at': t['at']} for i, t in enumerate(D['timeline'])]
-    edges = [{'from': 'claim:' + c['id'], 'to': 'source:' + s, 'rel': 'cites'} for c in claims for s in c['sources'] if s in SOURCES]
-    edges += [{'from': 'event:' + str(i), 'to': 'source:' + s, 'rel': 'cites'} for i, t in enumerate(D['timeline']) for s in t['sources'] if s in SOURCES]
-    graph = {'site': SITE, 'version': VERSION, 'vault_commit': D['vault']['head']['commit'], 'nodes': nodes, 'edges': edges,
-             'note': 'A node is just a node; meaning lives in the edges. Every edge is a citation from a claim or an event to a captured source.'}
-    write('data/graph.json', json.dumps(graph, indent=1, ensure_ascii=False) + '\n')
-    # SVG: claims on the left, sources on the right
-    rh = 16
-    n_l, n_r = len(claims), len(src_list)
-    H = max(n_l, n_r) * rh + 40
-    W = 1000
-    xl, xr = 330, 670
-    y_l = {c['id']: 20 + i * (H - 40) / max(1, n_l - 1) for i, c in enumerate(claims)}
-    y_r = {s: 20 + i * (H - 40) / max(1, n_r - 1) for i, s in enumerate(src_list)}
-    lines = ''.join(f'<path class="e e-{E(c["status"])}" d="M{xl},{y_l[c["id"]]:.1f} C{xl+170},{y_l[c["id"]]:.1f} {xr-170},{y_r[s]:.1f} {xr},{y_r[s]:.1f}"/>' for c in claims for s in c['sources'] if s in y_r)
-    left = ''.join(f'<a href="../claims/index.html#{E(c["id"])}"><text class="n n-{E(c["status"])}" x="{xl-6}" y="{y_l[c["id"]]+4:.1f}" text-anchor="end">{E(c["claim"][:46])}{"…" if len(c["claim"]) > 46 else ""}</text><circle class="d d-{E(c["status"])}" cx="{xl}" cy="{y_l[c["id"]]:.1f}" r="3"/></a>' for c in claims)
-    right = ''.join(f'<a href="../sources/index.html#{E(s)}"><circle class="d d-src{" d-pri" if SOURCES[s].get("primary") else ""}" cx="{xr}" cy="{y_r[s]:.1f}" r="3"/><text class="n" x="{xr+6}" y="{y_r[s]+4:.1f}">{E(short_name(SOURCES[s]))} ({used[s]})</text></a>' for s in src_list)
-    svg = f'<figure class="graph"><svg viewBox="0 0 {W} {H}" width="100%" role="img" aria-label="Claims on the left, sources on the right, one line per citation"><text class="t" x="{xl-6}" y="10" text-anchor="end">claims ({n_l})</text><text class="t" x="{xr+6}" y="10">sources cited ({n_r}), with how many claims cite each</text>{lines}{left}{right}</svg><figcaption>Every line is one citation. Colour is the claim\'s status: green confirmed, grey reported, amber disputed or contradicted, red unverified. A source with a filled dot is primary.</figcaption></figure>'
-    body = f'''
-<h1>The story as a graph</h1>
-<p class="lead">{len(nodes)} nodes and {len(edges)} edges: {n_l} claims, {len(D["timeline"])} events and the {n_r} sources they cite. There is no second graph behind this one: the page, the briefings and the timeline are all drawn from the same rows, so the picture cannot disagree with the text. The JSON is <a href="../data/graph.json">data/graph.json</a>; this page shows the claims-to-sources slice.</p>
-{svg}
-{section("read", "How to read it", '''<ul>
-<li>A claim with many lines to primary sources is well-founded; a claim with one line to a news page is one party's word relayed once.</li>
-<li>The BBC live page sits near the top of the right column because the early claims all came through it; the work of the last day was to draw second lines from those claims to the pages the BBC was reporting on.</li>
-<li>A source with no line is captured but not yet cited: a home page kept for context, a block recorded for the record, or a page whose claims nobody has traced yet. The sources page lists them all.</li>
-<li>Events cite sources the same way; they are in the JSON and on the timeline, and are left off the drawing to keep it legible.</li>
-</ul>''')}
-'''
-    page('graph/index.html', 'The story as a graph: claims, events and the sources they cite', f'{len(nodes)} nodes and {len(edges)} citation edges from the php2shell claims and timeline to the captured sources, drawn from the same rows as the text, with the JSON to download.', body, kind='evidence', topics='php2shell graph')
+# build_graph() is in the cartographer's block at the end of this file.
 
 def build_method():
     v = D['vault']
@@ -3540,6 +3500,298 @@ def build_agents_guide():
 <p class="small">The source is <code>AGENTS.md</code> at the root of the repository; every agent reads it there or here.</p>
 """
     page('admin/agents/index.html', 'How to work on this site: guidance for every agent', 'Push to your own branch early and often and let dev@php.newsroom carry it into dev; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements.', body, kind='site')
+
+
+# ----------------------------------------------------------------------------- the story graph (cartographer@php.newsroom)
+# Brief: admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md. One graph, data/graph.json, built from every
+# row the pages are built from, joined through data/entities.json and data/attribution.json under the verbs of
+# data/ontology.json. The build stops on a verb or kind the ontology does not list, a publisher no entity claims, an
+# attribution to an unknown entity, or an exploitation row whose 'who' moved: the graph cannot drift from its grammar.
+
+ONT, ENT, ATT = load('ontology'), load('entities'), load('attribution')
+ENTITIES = OrderedDict((e['id'], e) for e in ENT['entities'])
+ALIAS = {a: e['id'] for e in ENT['entities'] for a in e.get('aliases', [])}
+SG_GRAPH_JS = 'assets/components/sg-graph/v1/v1.0/v1.0.0/sg-graph.js'
+SG_GRAPH_FILES = ['sg-graph.js', 'sg-graph-core.js', 'sg-graph.tpl', 'sg-graph.css']
+
+def sg_graph(path, src=None, data=None, focus=None, view=None, depth=None, height=None, max_nodes=None, verbs=None, controls=None, fallback=''):
+    """Embed <sg-graph> on the page at path: the one way every page on this site draws a graph. src is a JSON file
+    relative to the site root; data is a graph to inline instead. fallback is the HTML shown without JavaScript (a linked
+    list of the same nodes), which is also what the page's markdown twin carries."""
+    up = '../' * path.count('/')
+    attrs = [('src', up + src if src else None), ('base', up), ('focus', focus), ('view', view), ('depth', depth),
+             ('height', height), ('max', max_nodes), ('verbs', ','.join(verbs) if verbs else None), ('controls', controls)]
+    a = ''.join(f' {k}="{U(v) if k in ("src", "base") else E(str(v))}"' for k, v in attrs if v not in (None, ''))
+    inner = fallback + (f'<script type="application/json">{J(data, sort_keys=True)}</script>' if data is not None else '')
+    return f'<sg-graph{a}>{inner}</sg-graph><script type="module" src="{up}{SG_GRAPH_JS}"></script>'
+
+def entity_root(eid):
+    """Fold a party into the voice it speaks with: a person into their employer, a part into its whole, a member into a
+    group that speaks with one voice. Independence is counted between roots."""
+    seen = set()
+    while eid not in seen:
+        seen.add(eid)
+        e = ENTITIES[eid]
+        nxt = e.get('works_for') or e.get('part_of') or (e.get('member_of') if ENTITIES.get(e.get('member_of'), {}).get('one_voice') else None)
+        if not nxt: break
+        eid = nxt
+    return eid
+
+def party_href(eid):
+    return f'actors/{eid}/index.html' if ENTITIES[eid].get('actor') else f'graph/parties/index.html#p-{eid}'
+
+def story_graph():
+    kinds = {t['id'] for t in ONT['node_types']}
+    verbs = {v['verb']: v for v in ONT['edges']}
+    nodes, edges = OrderedDict(), OrderedDict()
+
+    def node(nid, kind, label, **kw):
+        if kind not in kinds: sys.exit(f'graph: node kind {kind!r} is not in data/ontology.json')
+        if nid not in nodes:
+            nodes[nid] = dict({'id': nid, 'kind': kind, 'label': label}, **{k: v for k, v in kw.items() if v not in (None, '', [])})
+        return nid
+
+    def edge(a, verb, b, **kw):
+        if verb not in verbs: sys.exit(f'graph: verb {verb!r} is not in data/ontology.json')
+        if a in nodes and b in nodes and a != b:
+            edges.setdefault((a, verb, b), dict({'from': a, 'verb': verb, 'to': b}, **kw))
+
+    for eid, e in ENTITIES.items():
+        node('party:' + eid, 'party', e['name'], **{'class': e['kind'], 'country': e.get('country'), 'href': party_href(eid)})
+    for eid, e in ENTITIES.items():
+        for key, verb in (('part_of', 'part_of'), ('member_of', 'member_of'), ('works_for', 'works_for')):
+            if e.get(key):
+                if e[key] not in ENTITIES: sys.exit(f'data/entities.json: {eid} {key} unknown {e[key]!r}')
+                edge('party:' + eid, verb, 'party:' + e[key])
+        for m in e.get('has_members', []):
+            edge('party:' + m, 'member_of', 'party:' + eid)
+
+    for slug, s in SOURCES.items():
+        if s['publisher'] not in ALIAS: sys.exit(f'data/entities.json: no entity has the alias {s["publisher"]!r} (source {slug})')
+        node('source:' + slug, 'source', f'{short_name(s)}: {s.get("title") or slug}', href=f'sources/{slug}/index.html',
+             url=s['url'], primary=bool(s.get('primary')), published=s.get('published'), source_kind=s.get('kind'))
+        edge('source:' + slug, 'published_by', 'party:' + ALIAS[s['publisher']])
+        for c in s['captures']:
+            cid = node(f'capture:{slug}/{c["stamp"]}', 'capture', f'{short_name(s)}, captured {c["stamp"]}', href=f'sources/{slug}/index.html',
+                       http_status=c.get('status'), files=[{'name': fn, 'sha256': f['sha256']} for fn, f in sorted(c['files'].items())])
+            edge('source:' + slug, 'captured_in', cid)
+
+    for cve in sorted({m.group(0) for row in D['claims'] + D['numbers'] + D['timeline'] for m in CVE_RX.finditer(json.dumps(row, ensure_ascii=False))}):
+        inner = 'cve-' + cve.split('-')[-1]
+        zoom = inner in {n['id'] for n in D['review']['nodes']}
+        node('cve:' + cve, 'cve', cve + (f', {FLAGSHIP[cve]}' if cve in FLAGSHIP else ''),
+             href=f'flaws/index.html#{cve}' if cve in FLAGSHIP else f'https://www.cve.org/CVERecord?id={cve}',
+             graph='data/review.json' if zoom else None, graph_focus=inner if zoom else None)
+
+    def names(nid, row):
+        for cve in sorted({m.group(0) for m in CVE_RX.finditer(json.dumps(row, ensure_ascii=False))}):
+            edge(nid, 'names', 'cve:' + cve)
+
+    def stated(nid, row, att, where):
+        if not att: sys.exit(f'data/attribution.json: no attribution for {where}')
+        for eid in att['states']:
+            if eid not in ENTITIES: sys.exit(f'data/attribution.json: {where} names unknown entity {eid!r}')
+            edge('party:' + eid, 'states', nid)
+        if att.get('counts'): edge('party:this-site', 'counts', nid)
+        for eid in att.get('relays', []):
+            if eid not in ENTITIES: sys.exit(f'data/attribution.json: {where} relayed by unknown entity {eid!r}')
+            edge('party:' + eid, 'relays', nid, basis='attribution')
+        # a cited source is evidence: it may support or contradict, so citing it makes no one a relay
+        for s in row['sources']:
+            if s in SOURCES: edge(nid, 'cites', 'source:' + s)
+
+    open_k = {}
+    for k in load('factcheck')['contradictions']:
+        for c in k['claims']: open_k.setdefault(c, []).append(k)
+    for c in D['claims']:
+        att = ATT['claims'].get(c['id'])
+        origins = sorted({entity_root(e) for e in (att or {'states': []})['states'] if e != 'unnamed'})
+        nid = node('claim:' + c['id'], 'claim', c['claim'], status=c['status'], href=f'facts/{c["id"]}/index.html', by=c['by'])
+        stated(nid, c, att, 'claim ' + c['id'])
+        node('topic:' + c['topic'], 'topic', c['topic'], href=f'claims/index.html#t-{c["topic"]}')
+        edge(nid, 'classified_as', 'topic:' + c['topic'])
+        names(nid, c)
+        nodes[nid].update({'origins': len(origins),
+                           'tension': ', '.join(k['id'] for k in open_k.get(c['id'], []) if k['status'] == 'open') or None})
+        if not nodes[nid]['tension']: del nodes[nid]['tension']
+    for n in D['numbers']:
+        nid = node('number:' + n['id'], 'number', f'{n["value"]} {n["of"]}', status=n['status'], href=f'numbers/index.html#{n["id"]}', by=n['who'], measures=n.get('measures'))
+        stated(nid, n, ATT['numbers'].get(n['id']), 'number ' + n['id'])
+        names(nid, n)
+    for t in D['timeline']:
+        nid = node('event:' + event_id(t), 'event', f'{fmt_at(t["at"])}: {t["event"]}', at=t['at'], confidence=t.get('confidence'),
+                   href=f'timeline/index.html#ph-{t["phase"]}' if t.get('phase') else 'timeline/index.html')
+        for s in t['sources']:
+            if s in SOURCES: edge(nid, 'cites', 'source:' + s)
+        if t.get('phase'):
+            node('phase:' + t['phase'], 'phase', t['phase'], href=f'timeline/index.html#ph-{t["phase"]}')
+            edge(nid, 'classified_as', 'phase:' + t['phase'])
+        names(nid, t)
+    classes = next(x for x in ONT['taxonomy'] if x['id'] == 'signal-class')['maps']
+    if len(ATT['exploitation']) != len(D['exploitation']): sys.exit('data/attribution.json: exploitation rows differ in number from data/exploitation.json')
+    for i, (x, att) in enumerate(zip(D['exploitation'], ATT['exploitation'])):
+        if att['who'] != x['who']: sys.exit(f'data/attribution.json: exploitation row {i} is {x["who"]!r}, attributed as {att["who"]!r}')
+        if x['kind'] not in classes: sys.exit(f'data/ontology.json: exploitation kind {x["kind"]!r} is not in the signal-class map')
+        nid = node(f'signal:{i}', 'signal', f'{x["who"]}: {x["what"]}', status=x['status'], href='exploitation/index.html', when=x['when'], signal_class=classes[x['kind']])
+        stated(nid, x, att, f'exploitation row {i}')
+    for a in D['agencies']:
+        eid = ATT['agencies'].get(a['agency'] + '|' + a['country'])
+        if not eid: sys.exit(f'data/attribution.json: agency {a["agency"]}|{a["country"]} not mapped')
+        nid = node('advice:' + eid, 'advice', f'{a["agency"]} ({a["country"]}): take offline? {a["offline"]}', href='agencies/index.html',
+                   offline=a['offline'], says=a.get('offline_text'), exploitation=a.get('exploitation'))
+        edge('party:' + eid, 'advises', nid)
+        for s in a['sources']:
+            if s in SOURCES: edge(nid, 'cites', 'source:' + s)
+    for k in load('factcheck')['contradictions']:
+        kid = node('contradiction:' + k['id'], 'contradiction', f'{k["id"]}: {k["measure"]}', status=k['status'], href=f'factcheck/index.html#{k["id"]}')
+        for c in k['claims']:
+            if 'claim:' + c not in nodes: sys.exit(f'factcheck contradiction {k["id"]} names unknown claim {c!r}')
+            edge(kid, 'flags', 'claim:' + c)
+    for a in load('factcheck')['assessments']:
+        for ch in a.get('checked', []):
+            m = re.match(r'sources/([^/]+)/captures/([^/]+)/', ch.get('file') or '')
+            # a capture outside the manifest is the desk's outside evidence: recorded, never cited
+            if m and ch.get('result') == 'carries' and m.group(1) in SOURCES:
+                edge('claim:' + a['id'], 'appears_in', f'capture:{m.group(1)}/{m.group(2)}', file=ch['file'].split('/')[-1], sha256=ch.get('sha256'))
+                # 'carries' means the capture bears on the claim: an agency carrying it is an original in its own right,
+                # and a primary record can carry the fact that refutes it. Only an outlet carrying another party's
+                # statement, on a claim not refuted, has passed it on.
+                pub = ALIAS[SOURCES[m.group(1)]['publisher']]
+                origins = {entity_root(e) for e in ATT['claims'][a['id']]['states']}
+                if ENTITIES[pub]['kind'] == 'outlet' and a.get('verdict') != 'refuted' and entity_root(pub) not in origins and 'this-site' not in origins:
+                    edge('party:' + pub, 'relays', 'claim:' + a['id'], basis='capture carries it', capture=f'{m.group(1)}/{m.group(2)}')
+    for c in D['claims']:
+        nid = 'claim:' + c['id']
+        relays = len({a for (a, v, b) in edges if b == nid and v == 'relays'})
+        nodes[nid]['relays'] = relays
+        nodes[nid]['echo'] = relays >= 3 and nodes[nid]['origins'] <= 1
+
+    used = {e['from'] for e in edges.values()} | {e['to'] for e in edges.values()}
+    out_nodes = [n for n in nodes.values() if n['id'] in used]
+    def say(v): return v.replace('_', ' ')
+    ontology = {'id': ONT['id'], 'version': ONT['version'],
+                'kinds': OrderedDict((t['id'], {'label': t['label'], 'plural': t['plural'], 'altitude': t['altitude']}) for t in ONT['node_types']),
+                'verbs': OrderedDict([(v['verb'], {'label': say(v['verb']), 'inverse': say(v['inverse']), 'origin': v['origin']}) for v in ONT['edges']] +
+                                     [(v['verb'], {'label': v['verb'], 'inverse': v['inverse'], 'origin': 'code-review'}) for sc in ONT['scopes'].values() for v in sc['edges']])}
+    return {'site': SITE, 'version': VERSION, 'vault_commit': D['vault']['head']['commit'], 'title': 'The story graph',
+            'note': 'A node means what its edges say about it. Every edge is a verb from data/ontology.json with a named inverse; there is no generic association edge. Parties are resolved through data/entities.json and data/attribution.json; relays are derived, so many outlets passing on one statement count as one origin.',
+            'ontology': ontology, 'nodes': out_nodes, 'edges': list(edges.values())}
+
+def graph_census(G):
+    kinds = Counter(n['kind'] for n in G['nodes'])
+    verbs = Counter(e['verb'] for e in G['edges'])
+    return kinds, verbs
+
+def build_graph():
+    G = story_graph()
+    write('data/graph.json', json.dumps(G, indent=1, ensure_ascii=False) + '\n')
+    kinds, verbs = graph_census(G)
+    K = G['ontology']['kinds']
+    claims = [n for n in G['nodes'] if n['kind'] == 'claim']
+    by_kind = ', '.join(f'{n} {K[k]["plural"] if n != 1 else K[k]["label"].lower()}' for k, n in kinds.most_common())
+    fallback = ('<div class="graph-fallback"><p>The interactive graph needs JavaScript. Every node is also on a page: '
+                + ', '.join(f'<a href="../{h}">{E(t)}</a>' for h, t in (('claims/index.html', 'the claims'), ('sources/index.html', 'the sources'),
+                            ('graph/parties/index.html', 'the parties'), ('timeline/index.html', 'the timeline'), ('factcheck/index.html', 'the tensions')))
+                + '; the whole graph is <a href="../data/graph.json">data/graph.json</a>.</p></div>')
+    widget = sg_graph('graph/index.html', src='data/graph.json', focus='claim:scale-70pc-internet', fallback=fallback)
+    vrows = []
+    for v in ONT['edges']:
+        n = verbs.get(v['verb'], 0)
+        origin = f'inherited from {E(v.get("from", ""))}' if v['origin'] == 'inherited' else 'proposed here'
+        vrows.append([f'<code>{E(v["verb"])}</code>', f'<code>{E(v["inverse"])}</code>', E(v['reads'].replace('{s}', 'A').replace('{t}', 'B')), E(str(n)), origin])
+    verbs_t = table(['Verb', 'Inverse', 'Reads', 'Edges', 'Where it comes from'], vrows)
+    kinds_t = table(['Kind', 'Altitude', 'Nodes', 'What it is'], [[E(t['label']), E(t['altitude']), E(str(kinds.get(t['id'], 0))), E(t['definition'])] for t in ONT['node_types']])
+    banned = ''.join(f'<li><code>{E(b["verb"])}</code>: {E(b["why"])}</li>' for b in ONT['banned'])
+    spectrum = sorted(claims, key=lambda n: (-n.get('origins', 0), n.get('relays', 0), n['id']))
+    srow = lambda n: [f'<a href="../{U(n["href"])}">{E(n["label"][:110])}</a>', f'<span class="st st-{E(n["status"])}">{E(n["status"])}</span>', E(str(n['origins'])), E(str(n['relays'])),
+                      E(str(sum(1 for e in G['edges'] if e['from'] == n['id'] and e['verb'] == 'appears_in'))), E(n.get('tension', ''))]
+    spectrum_t = table(['Claim', 'Status', 'Independent origins', 'Relays', 'Captures that carry it', 'Open tension'], [srow(n) for n in spectrum])
+    echoes = [n for n in claims if n.get('echo')]
+    unnamed = [n for n in claims if any(e['from'] == 'party:unnamed' and e['to'] == n['id'] for e in G['edges']) and n['origins'] == 0]
+    li = lambda ns: '<ul>' + ''.join(f'<li><a href="../{U(n["href"])}">{E(n["label"])}</a> ({n["relays"]} relays)</li>' for n in ns) + '</ul>' if ns else '<p class="small">None.</p>'
+    body = f'''
+<h1>The story as a graph</h1>
+<p class="lead">{len(G["nodes"])} nodes and {len(G["edges"])} edges in {len(verbs)} verbs: {E(by_kind)}. Each is drawn from the same rows as the pages, so the picture cannot disagree with the text. Start anywhere, follow a link, and the graph re-centres on it; a node with a thick ring opens a graph of its own.</p>
+{widget}
+{section("read", "Read it as sentences", '<p>Every edge is a verb, and read from the other end it has a different name: Wiz <i>states</i> a claim, the claim is <i>stated by</i> Wiz. There is no edge that only says two things are related. The verbs, with how many edges use each:</p>' + verbs_t)}
+{section("spectrum", "How many voices, not how many pages", f'<p>A claim is as strong as the number of <b>independent</b> parties that state it, not the number of pages that carry it. A person is counted with the organisation they speak for, and an outlet that passes a statement on is a <i>relay</i>, not a second origin. The fact-check desk grades the same claims by reading their captures (<a href="../factcheck/index.html">the spectrum of evidence</a>); this is the reading the graph gives from its edges alone.</p><h3>Echoes: one origin, many relays ({len(echoes)})</h3>{li(echoes)}<h3>Unnamed origins ({len(unnamed)})</h3><p class="small">Stated only by sources a page does not name: a gap in the evidence, not a party.</p>{li(unnamed)}<h3>Every claim</h3>' + spectrum_t)}
+{section("zoom", "Zooming in: the fractal layers", '''<ul>
+<li><b>A CVE opens the code.</b> The two CVE nodes open the review graph of the fix, which has its own ontology (the flaws, the design of the patch, the files and functions changed) and its own verbs, joined to this one by a named bridge. This is the estate's test of a fractal graph: going down opens a new vocabulary under the same grammar.</li>
+<li><b>A source opens its captures</b>, and each capture lists its files with their SHA-256. A claim <i>appears in</i> a capture where the fact-check desk found its words there. This step is addressing rather than a new ontology, and is described as such.</li>
+<li><b>A party opens what it said and what it passed on</b>: the claims and numbers it states, the ones it relays, the sources it publishes, the organisation it is part of. <a href="parties/index.html">Every party</a>.</li>
+<li><b>A tension opens the claims it flags</b>: the contradiction ledger of the fact-check desk, one node per row, because two claims that disagree are not one edge with the same name both ways.</li>
+</ul>''')}
+{section("ontology", "The ontology", f'<p>Kinds of node:</p>{kinds_t}<p>Verbs this graph will not use, and why:</p><ul>{banned}</ul><p>The grammar is the estate&#39;s, from <a href="https://graphs.sgit.ai/v1/grammar/">graphs.sgit.ai</a>; the files are <a href="../data/ontology.json">data/ontology.json</a> (kinds, verbs, taxonomies, formulas), <a href="../data/entities.json">data/entities.json</a> (one node per party, whatever a page calls it) and <a href="../data/attribution.json">data/attribution.json</a> (who states each row). The graph is <a href="../data/graph.json">data/graph.json</a>. Kept by the cartographer. The component that draws it is documented for every agent on <a href="component/index.html">the graph component</a> page.</p>')}
+'''
+    page('graph/index.html', 'The story as a graph: who states what, who relays it, and what it rests on',
+         f'{len(G["nodes"])} nodes and {len(G["edges"])} typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.', body, kind='evidence', topics='php2shell graph ontology')
+    build_parties(G)
+    build_graph_component(G)
+
+def build_parties(G):
+    path = 'graph/parties/index.html'
+    count = lambda eid, verb: sum(1 for e in G['edges'] if e['from'] == 'party:' + eid and e['verb'] == verb)
+    stated = {}
+    for e in G['edges']:
+        if e['verb'] == 'states' and e['to'].startswith('claim:'): stated.setdefault(e['from'][6:], []).append(e['to'][6:])
+    order = ['organisation', 'agency', 'person', 'group', 'outlet', 'registry', 'project', 'platform', 'unnamed', 'this-site']
+    secs = []
+    for cls in order:
+        rows = [e for e in ENTITIES.values() if e['kind'] == cls]
+        rows.sort(key=lambda e: (-(count(e['id'], 'states') + count(e['id'], 'relays')), e['name']))
+        trs = []
+        for e in rows:
+            claims = ' '.join(f'<a href="../../facts/{E(c)}/index.html">{E(c)}</a>' for c in stated.get(e['id'], []))
+            up = [f'{v.replace("_", " ")} {ENTITIES[e[k]]["name"]}' for k, v in (('works_for', 'works_for'), ('part_of', 'part_of'), ('member_of', 'member_of')) if e.get(k)]
+            name = f'<a href="../../{party_href(e["id"])}">{E(e["name"])}</a>' if e.get('actor') else E(e['name'])
+            trs.append([f'<span id="p-{E(e["id"])}"></span>{name}' + (f'<br><span class="small">{E("; ".join(up))}</span>' if up else ''),
+                        E(str(count(e['id'], 'states'))), E(str(count(e['id'], 'relays'))), E(str(sum(1 for x in G['edges'] if x['to'] == 'party:' + e['id'] and x['verb'] == 'published_by'))), claims])
+        if trs: secs.append(section('c-' + cls, f'{cls.capitalize()} ({len(trs)})', table(['Party', 'States', 'Relays', 'Sources published', 'Claims it states'], trs)))
+    widget = sg_graph(path, src='data/graph.json', focus='party:php-foundation', depth=1, fallback='<p class="small">The graph of each party needs JavaScript; the tables below carry the same counts.</p>')
+    body = f'''
+<p class="crumb"><a href="../index.html">The story as a graph</a> / Parties</p>
+<h1>Every party, whatever a page calls it</h1>
+<p class="lead">{len(ENTITIES)} parties: the people, organisations, agencies, outlets and platforms that published a source or are named as saying something. The sources spell them {len(ALIAS)} ways; each spelling resolves to one node here, so CISA is one party however many pages name it. <i>States</i> counts the claims, numbers and signals a party originates; <i>relays</i> counts those it passed on from someone else.</p>
+{widget}
+{"".join(secs)}
+<p class="small">The file is <a href="../../data/entities.json">data/entities.json</a>, with who states each row in <a href="../../data/attribution.json">data/attribution.json</a>. A party with a page of its own links to it.</p>
+'''
+    page(path, 'Every party on the story: who states, who relays, who publishes', f'{len(ENTITIES)} parties resolved from {len(ALIAS)} spellings, with the claims each one states and passes on.', body, kind='evidence', topics='php2shell graph parties')
+
+def build_graph_component(G):
+    path = 'graph/component/index.html'
+    base = os.path.join(ROOT, os.path.dirname(SG_GRAPH_JS))
+    hashes = table(['File', 'Bytes', 'SHA-256'], [[f'<code>{E(f)}</code>', E(f'{os.path.getsize(os.path.join(base, f)):,}'), f'<code>{E(hashlib.sha256(open(os.path.join(base, f), "rb").read()).hexdigest())}</code>'] for f in SG_GRAPH_FILES])
+    demo = {'ontology': {'kinds': {'party': {'label': 'Party'}, 'claim': {'label': 'Claim'}, 'source': {'label': 'Source'}},
+                         'verbs': {'states': {'label': 'states', 'inverse': 'stated by'}, 'relays': {'label': 'relays', 'inverse': 'relayed by'}, 'cites': {'label': 'cites', 'inverse': 'cited by'}}},
+            'nodes': [{'id': 'wiz', 'kind': 'party', 'label': 'Wiz'}, {'id': 'thn', 'kind': 'party', 'label': 'The Hacker News'},
+                      {'id': 'c', 'kind': 'claim', 'label': '70% of the Internet', 'status': 'unverified', 'href': 'facts/scale-70pc-internet/index.html'},
+                      {'id': 's1', 'kind': 'source', 'label': 'Wiz blog'}, {'id': 's2', 'kind': 'source', 'label': 'THN article'}],
+            'edges': [{'from': 'wiz', 'verb': 'states', 'to': 'c'}, {'from': 'thn', 'verb': 'relays', 'to': 'c'}, {'from': 'c', 'verb': 'cites', 'to': 's1'}, {'from': 'c', 'verb': 'cites', 'to': 's2'}]}
+    attrs = table(['Attribute', 'What it does'], [[f'<code>{E(a)}</code>', E(d)] for a, d in [
+        ('src', 'A graph JSON file, relative to the page. Without it, the first <script type="application/json"> child is read.'),
+        ('base', 'The path from the page to the site root, put in front of every node href. sg_graph() sets it.'),
+        ('focus', 'The node in the middle. Default: the node with most edges.'),
+        ('view', 'ego (the focus and its neighbours; the default), layers (columns by kind), map (a seeded force layout; pan by dragging, zoom with ctrl and the wheel), list (text only).'),
+        ('depth', 'Hops from the focus, 1 to 3.'), ('max', 'The most nodes drawn at once (default 60); the list under the drawing has every link.'),
+        ('height', 'The drawing height in px; default from its width.'), ('verbs', 'A comma list of verbs to show at first.'), ('controls', '"none" hides the toolbar.')]])
+    body = f'''
+<p class="crumb"><a href="../index.html">The story as a graph</a> / The graph component</p>
+<h1>The graph component: one way to draw every graph on this site</h1>
+<p class="lead"><code>&lt;sg-graph&gt;</code> draws any graph that has nodes and verb-labelled edges, from five nodes to the whole story. Every agent that puts a graph on a page uses it, through <code>sg_graph()</code> in the build, so all of them walk the same way, follow the same grammar and get the same fixes. Kept by the cartographer. Version 1.0.0; native web component on this site&#39;s <code>sg-component</code> base, no library, no build step, nothing fetched from anywhere else.</p>
+{section("small", "Five nodes, inline", sg_graph(path, data=demo, focus='c', controls='none', height=260, fallback='<p>Wiz states that PHP is 70% of the Internet; The Hacker News relays it; it cites two sources.</p>') + '<p class="small">The graph above is inline JSON in the page. Click a node to walk to it, or tab to it and press Enter.</p>')}
+{section("layers", "A graph in another vocabulary, in layers", sg_graph(path, src='data/review.json', view='layers', depth=2, focus='fix-commit', fallback='<p>The review graph of the fix: <a href="../../review/index.html">the fix, mapped to the code</a>.</p>') + '<p class="small">The code-review graph (<code>data/review.json</code>), which uses <code>rel</code> and <code>name</code>; the component reads both shapes.</p>')}
+{section("use", "Using it from the build", '''<pre><code># in admin/build/build.py, on any page
+body += sg_graph('actors/wiz/index.html', src='data/graph.json', focus='party:wiz',
+                 fallback='&lt;ul&gt;...the same links as a list...&lt;/ul&gt;')
+# or a graph of your own, inline
+body += sg_graph(path, data={'nodes': [...], 'edges': [...]}, view='layers')</code></pre>
+<p>The rules it brings with it: an edge with no verb is not drawn (there is no generic association edge); each verb should have an inverse in the graph's <code>ontology.verbs</code>, or it is shown as an arrow back; a node's <code>href</code> is followed only if it is relative or http(s); a node with <code>graph</code> (and <code>graph_focus</code>) opens that graph, which is how a layer zooms into the next. The fallback is what a reader without JavaScript sees and what the markdown twin carries: give it the same links.</p>''')}
+{section("contract", "Attributes, data, events", attrs + '''<p><b>Data</b>: <code>{ nodes: [{ id, kind, label, href?, status?, graph?, graph_focus?, files? }], edges: [{ from, verb, to }], ontology?: { kinds: { id: { label } }, verbs: { verb: { label, inverse } } } }</code>. Older shapes (<code>rel</code>, <code>name</code>, <code>layer</code>) are read too.</p>
+<p><b>Events</b> on <code>document</code>: <code>sg:graph.focus</code> and <code>sg:graph.open</code>. <b>From script</b>: <code>el.focusOn(id)</code>, <code>el.pathTo(id)</code> (the shortest path from the focus, read back as a sentence), <code>el.model</code> and <code>el.core</code>, the model in <code>sg-graph-core.js</code>, which has no DOM and runs in a worker or in node.</p>''')}
+{section("files", "Files", hashes + f'<p class="small">Under <code>{E(os.path.dirname(SG_GRAPH_JS))}/</code>. The path is the version: a change is a new directory, never an edit in place. The markup file is <code>.tpl</code> rather than <code>.html</code> because every <code>.html</code> file on this site is a page to the gate.</p>')}
+'''
+    page(path, 'The graph component: one way to draw every graph on this site', 'sg-graph, the web component every agent uses to put a graph on a page: the views, the data contract, the build helper, and the hashes of its files.', body, kind='site', topics='graph component')
 
 
 if __name__ == '__main__':
