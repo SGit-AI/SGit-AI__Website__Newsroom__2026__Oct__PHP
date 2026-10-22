@@ -1,0 +1,16 @@
+# Front page: right now: version history
+
+Every version of the section "Front page: right now" on PHP October 2026, with the site release that created it and the changes between versions.
+
+Version history · front
+
+# Front page: right now: every version
+
+This section is a projection of the site's data, rebuilt on every release. A new version is recorded only when the text a reader sees changes, so a release that changed something elsewhere leaves this section's version alone. It has 1 version; the newest is first, and each is shown as the changes from the one before. [Read the current version →](../../index.html)
+
+v1 · site v0.3.2 · 22 October 2026 · the first version · 259691b587bd
+A fix has been available since 21 October. Organisations that run websites on PHP are installing it. [php-net-advisory] Government cyber agencies in the US, the UK, the EU and elsewhere say: install the fix now, and take a website offline if you cannot. [cisa-alert-php-20261021, ncsc-news-php, certeu-sa-2026-018, nsa-x-2112903220209098897] Attackers are trying to use the flaws, in large numbers. No organisation has said it was broken into. [x-eastdakota-php2shell-stats, cisa-kev-json] Some organisations took websites offline as a precaution, among them Dutch government services such as the DigiD login. [rijksoverheid-ncsc-php-news, bbc-live-ckgel5xp2xv9t] [Every section, across every release →](../index.html)
+
+
+---
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/front-now/index.html

@@ -20,8 +20,11 @@ As of 22 October 2026, 11:34 UTC, the time of the latest page this site saved.
 - Attackers are trying to use the flaws, in large numbers. No organisation has said it was broken into. [Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [CISA](sources/cisa-kev-json/index.html)
 - Some organisations took websites offline as a precaution, among them Dutch government services such as the DigiD login. [Rijksoverheid / NCSC-NL](sources/rijksoverheid-ncsc-php-news/index.html) [BBC News](sources/bbc-live-ckgel5xp2xv9t/index.html)
 
+This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 October 2026 · [history](versions/front-now/index.html)
+
 ## At a glance
 Is there a fix?Yesinstall PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35How serious?Critical9.2 out of 10, both flawsAre attackers trying?Yesmillions of attempts, seen by one internet security companyAnyone confirmed hacked?Not yetno organisation, as of the latest checkWebsites taken offline10 organisationsreported, as a precautionOn the US 'used in attacks' list?Not yetthe US government's official list of flaws known to be used by attackersWhat do governments say?Update nowor take the website offline if you cannot; 16 agencies compared
+This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 October 2026 · [history](versions/front-glance/index.html)
 
 ## The core facts, and the evidence for each
 
@@ -40,6 +43,8 @@ Each fact links to the original pages it rests on: the PHP project, government a
 - confirmedEvery agency says install the fix. They disagree on what to do if you cannot: the US says take the website offline, the UK lists that as a last resort, several European agencies say cut it off from the public internet, and some say nothing about it.[CISA](sources/cisa-alert-php-20261021/index.html) [NCSC UK](sources/ncsc-news-php/index.html) [CERT-EU](sources/certeu-sa-2026-018/index.html) [ACSC](sources/acsc-alert-php/index.html) [More →](agencies/index.html)
 - confirmedThe headline '70% of the Internet' is not what it sounds like. It is roughly the share of websites built with PHP, which is what the same company's own article says; nobody has measured how many are actually at risk.[Wiz](sources/wiz-blog-php2shell/index.html) [Wiz on X](sources/x-wiz-io-php2shell/index.html) [Cloudflare](sources/cloudflare-blog-php2shell-waf/index.html) [More →](numbers/index.html)
 
+This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 October 2026 · [history](versions/front-facts/index.html)
+
 ## What nobody knows yet
 
 Stated, not papered over. This site will update each one when the evidence does.
@@ -49,6 +54,8 @@ Stated, not papered over. This site will update each one when the evidence does.
 - [Exactly which websites went offline, and why. Most of the list comes from one news live page and has not been confirmed by the organisations named.](impact/index.html)
 - [Where the 70% figure comes from. None of the pages that use it says how it was measured.](numbers/index.html)
 
+This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 October 2026 · [history](versions/front-unknown/index.html)
+
 ## Latest
 - 22 Oct, 05:20 UTCJapan's national cyber agency issues its alert. [JPCERT/CC](sources/jpcert-at260033/index.html)
 - 22 Oct, 06:16 UTCBBC News opens a live page: 'Global scramble to fix critical cyber-security flaws as many websites taken offline'. [BBC News](sources/bbc-live-ckgel5xp2xv9t/index.html)
@@ -56,7 +63,9 @@ Stated, not papered over. This site will update each one when the evidence does.
 - 22 Oct, 07:00 UTCOne of the researchers who found the flaws tells BBC Radio 4 there is no evidence yet of them being used in attacks. [BBC News](sources/bbc-live-ckgel5xp2xv9t/index.html)
 - 22 Oct, 08:40 UTCThe Dutch national cyber agency's list of affected software reaches 674 products. [NCSC-NL](sources/ncsc-nl-php2shell-software-list/index.html)
 
-[Everything, in order, on the timeline →](timeline/index.html)
+[Everything, in order, on the timeline →](timeline/index.html) · [What changed on this site, release by release →](whatsnew/index.html)
+
+This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 October 2026 · [history](versions/front-latest/index.html)
 
 ## The briefing for you
 
@@ -98,4 +107,4 @@ Already know the vocabulary? [The specialist summary](summary/index.html) has th
 
 
 ---
-site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html

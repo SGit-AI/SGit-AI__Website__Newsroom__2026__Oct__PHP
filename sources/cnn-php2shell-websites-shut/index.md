@@ -22,7 +22,7 @@ Captured by claude-story-site. Status: captured. Wikimedia Foundation to CNN: sy
 
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
-| The Wikimedia Foundation took down a number of systems 'as a precautionary measure until they can be safely patched'No Wikimedia-published statement captured. | the Foundation, as quoted by CNN and The Cyber Express | reported | 0/2 | [CNN](../../sources/cnn-php2shell-websites-shut/index.html) [The Cyber Express](../../sources/cyberexpress-php2shell-gov-sites/index.html) |
+| The Wikimedia Foundation took down a number of systems 'as a precautionary measure until they can be safely patched'No Wikimedia-published statement captured. [fact timeline →](../../facts/wikimedia-precaution/index.html) | the Foundation, as quoted by CNN and The Cyber Express | reported | 0/2 | [CNN](../../sources/cnn-php2shell-websites-shut/index.html) [The Cyber Express](../../sources/cyberexpress-php2shell-gov-sites/index.html) |
 
 ## Events that cite it
 
@@ -40,4 +40,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/cnn-php2shell-websites-shut/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/cnn-php2shell-websites-shut/index.html

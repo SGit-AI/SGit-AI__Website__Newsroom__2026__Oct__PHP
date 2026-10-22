@@ -67,6 +67,16 @@
   });
   renderBar();
 
+  // Since your last visit: the release you last saw is remembered, and what's new marks every release after it.
+  var ver = html.getAttribute('data-ver') || '', lastVer = get('p2s.ver');
+  function newer(a, b) { var x = a.split('.'), y = b.split('.'); for (var i = 0; i < 3; i++) { var d = (+x[i] || 0) - (+y[i] || 0); if (d) return d > 0; } return false; }
+  if (ver && lastVer && lastVer !== ver) set('p2s.since', lastVer);
+  if (ver) set('p2s.ver', ver);
+  var since = get('p2s.since');
+  if (since) {
+    document.querySelectorAll('[data-rel]').forEach(function (el) { if (newer(el.getAttribute('data-rel'), since)) el.classList.add('unseen'); });
+  }
+
   // Glossary hover cards: the first use of a term on a page carries its one-line definition.
   var tip = null, tipFor = null;
   function showTip(a) {

@@ -70,6 +70,16 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: persona-specific rewrites of the evidence pages themselves; a reader test with real people from each group.
 
+### Versions, facts, search (v0.3.2)
+
+- `data/sections.json`, the section ledger: every briefing, front-page section, story page and fact is hashed on every build and gets a new version only when its reader-facing text changes, naming the release that wrote it. History before v0.3.2 reconstructed from git by `admin/build/seed_ledger.py`.
+
+- A history page with diffs per section (`versions/`), the release-by-section matrix, a page per fact with its timeline (`facts/`), what's new with a since-your-last-visit marker, an Atom feed, the fact pipeline, the editor's interview in his own words.
+
+- `sitemap.xml`, `robots.txt`, Open Graph card, JSON-LD (NewsArticle, BreadcrumbList, WebSite); `data/seo.json` takes a Google Search Console verification token.
+
+- Not built: new evidence since the vault's last capture (11:34Z): compromise reports need a vault session to capture them.
+
 ### Build, gate, release
 
 - `admin/build/build.py`: deterministic, standard library only.
@@ -104,4 +114,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

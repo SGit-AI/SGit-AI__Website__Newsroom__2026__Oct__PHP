@@ -1,0 +1,38 @@
+# Fact: Oxford City Council: 'a precaution because of a worldwide issue with the underly
+
+Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident' Who says it, its status (reported), its sources, and its timeline from publication to this site.
+
+Fact · impact · reported
+
+# Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident'
+
+**Who says it:** the council's social post, via Oxford Chronicle · **Sources:** [Oxford Chronicle](../../sources/oxfordchronicle-councils-offline/index.html)
+
+## This fact over time
+- 2026-10-21Oxford Chronicle publishes [Oxfordshire council websites offline amid critical global security issue | Oxford Chronicle](../../sources/oxfordchronicle-councils-offline/index.html)
+- 2026-10-22 11:29 UTCSaved into the evidence vault: Oxford Chronicle
+- 2026-10-22Enters this site as reported in v0.2.0 (reconstructed from git)
+
+Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
+
+## What it rests on
+
+## Where this fact appears
+
+In the briefings for:
+AAlexCurious readerTTaylorProject or programme managerJJordanBoard member or executiveRRobinCISOQQuinnCFORRileyCommunications team
+And on [every claim](../../claims/index.html#oxford).
+
+## Every version of this fact
+v1 · site v0.2.0 · 22 October 2026 · reported
+```
+Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident'
+Who says it: the council's social post, via Oxford Chronicle
+Status: reported
+Topic: impact
+Sources: oxfordchronicle-councils-offline
+```
+
+
+---
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/oxford/index.html

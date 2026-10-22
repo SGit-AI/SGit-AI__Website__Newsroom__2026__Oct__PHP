@@ -4,7 +4,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.3.1. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.3.2. The data is [data/versions.json](../data/versions.json).
+
+### v0.3.2 · 2026-10-22
+
+every section versioned and every fact given a timeline: each briefing, front-page section and story page records the release that wrote it, with its history and a diff of every change; a page per fact, from publication to this site; what's new, release by release, with a feed; the fact pipeline; the editor interviewed in his own words; a sitemap, robots.txt and structured data for search engines
+
+From the editor: what's new must be visible, every section must say which release wrote it, a version must move only when what its reader sees changes, and every fact needs a timeline. Vault commit `200d08971937`.
+
+Files: `data/sections.json`, `data/interview.json`, `data/seo.json`, `admin/build/build.py`, `admin/build/seed_ledger.py`, `admin/build/validate.py`, `assets/site.css`, `assets/og-card.png`, `sitemap.xml`, `robots.txt`, `feed.xml`
 
 ### v0.3.1 · 2026-10-22
 
@@ -56,4 +64,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

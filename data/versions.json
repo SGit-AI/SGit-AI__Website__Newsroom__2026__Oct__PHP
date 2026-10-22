@@ -1,6 +1,27 @@
 {
- "current": "0.3.1",
+ "current": "0.3.2",
  "versions": [
+  {
+   "version": "0.3.2",
+   "date": "2026-10-22",
+   "title": "every section versioned and every fact given a timeline: each briefing, front-page section and story page records the release that wrote it, with its history and a diff of every change; a page per fact, from publication to this site; what's new, release by release, with a feed; the fact pipeline; the editor interviewed in his own words; a sitemap, robots.txt and structured data for search engines",
+   "summary": "From the editor: what's new must be visible, every section must say which release wrote it, a version must move only when what its reader sees changes, and every fact needs a timeline.",
+   "changes": [
+    "data/sections.json",
+    "data/interview.json",
+    "data/seo.json",
+    "admin/build/build.py",
+    "admin/build/seed_ledger.py",
+    "admin/build/validate.py",
+    "assets/site.css",
+    "assets/og-card.png",
+    "sitemap.xml",
+    "robots.txt",
+    "feed.xml"
+   ],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.3.1",
    "date": "2026-10-22",

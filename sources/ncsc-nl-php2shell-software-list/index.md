@@ -18,7 +18,7 @@ No note has been written for this source yet; the row above is what the collecto
 
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
-| 674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, 3 not vulnerableCounted, not quoted. NCSC-NL calls unbacked entries 'investigation leads'. | NCSC-NL, counted by this site from the file at commit cca173c64ec5 | confirmed | 1/1 | [NCSC-NL](../../sources/ncsc-nl-php2shell-software-list/index.html) |
+| 674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, 3 not vulnerableCounted, not quoted. NCSC-NL calls unbacked entries 'investigation leads'. [fact timeline →](../../facts/scale-ncsc-nl/index.html) | NCSC-NL, counted by this site from the file at commit cca173c64ec5 | confirmed | 1/1 | [NCSC-NL](../../sources/ncsc-nl-php2shell-software-list/index.html) |
 
 ## Events that cite it
 
@@ -47,4 +47,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/ncsc-nl-php2shell-software-list/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/ncsc-nl-php2shell-software-list/index.html

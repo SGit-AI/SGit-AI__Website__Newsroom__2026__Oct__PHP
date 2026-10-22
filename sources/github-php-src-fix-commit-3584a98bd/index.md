@@ -34,8 +34,8 @@ git show output of the fix commit (stat, file list, engine/main/session hunks), 
 
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
-| The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 UTC on 21 October, with merges into 8.3, 8.4 and 8.5 between 14:12 and 14:30 UTCCounted from the repository, not from a page. Five authors; 389 files; 10,689 insertions. | php/php-src commit 3584a98bd, read from a clone | confirmed | 2/2 | [php/php-src, read from a clone](../../sources/github-php-src-fix-commit-3584a98bd/index.html) [php-src](../../sources/github-php-src-tag-php-8.5.12/index.html) |
-| Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on out-of-memory, and request globals that survive a failed requestThe fix replaces bailout with a delayed error and an UnwindExit at a safe point, adds a hard limit that _exits, and resets the globals. See the code page. | php/php-src fix commit; the GitHub advisories | confirmed | 3/3 | [php/php-src, read from a clone](../../sources/github-php-src-fix-commit-3584a98bd/index.html) [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) |
+| The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 UTC on 21 October, with merges into 8.3, 8.4 and 8.5 between 14:12 and 14:30 UTCCounted from the repository, not from a page. Five authors; 389 files; 10,689 insertions. [fact timeline →](../../facts/fix-authored/index.html) | php/php-src commit 3584a98bd, read from a clone | confirmed | 2/2 | [php/php-src, read from a clone](../../sources/github-php-src-fix-commit-3584a98bd/index.html) [php-src](../../sources/github-php-src-tag-php-8.5.12/index.html) |
+| Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on out-of-memory, and request globals that survive a failed requestThe fix replaces bailout with a delayed error and an UnwindExit at a safe point, adds a hard limit that _exits, and resets the globals. See the code page. [fact timeline →](../../facts/fix-engine/index.html) | php/php-src fix commit; the GitHub advisories | confirmed | 3/3 | [php/php-src, read from a clone](../../sources/github-php-src-fix-commit-3584a98bd/index.html) [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) |
 
 ## Events that cite it
 
@@ -65,4 +65,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/github-php-src-fix-commit-3584a98bd/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/github-php-src-fix-commit-3584a98bd/index.html

@@ -1,0 +1,63 @@
+# How the story changed, release by release
+
+Every section of the site, every reader's briefing and every fact, versioned across every release: what changed, when, and in which release.
+
+The evidence · versions
+
+# How the story changed, release by release
+
+Every section of this site is a projection of the evidence, and every projection is versioned. Across: each release of the site. Down: the front page's sections, each reader's briefing, and the story and evidence pages. A filled cell is a new version written in that release; a faint cell is a section that existed and did not change. A new fact for engineers moves the engineer's briefing and leaves the board's alone, and this table is where that shows.
+
+| Section | [0.1.0](../admin/versions.html#v0.1.0) | [0.2.0](../admin/versions.html#v0.2.0) | [0.2.1](../admin/versions.html#v0.2.1) | [0.2.2](../admin/versions.html#v0.2.2) | [0.3.0](../admin/versions.html#v0.3.0) | [0.3.1](../admin/versions.html#v0.3.1) | [0.3.2](../admin/versions.html#v0.3.2) |
+|---|---|---|---|---|---|---|---|
+| The front page |
+| [Front page: right now](front-now/index.html) |  |  |  |  |  |  | [v1](front-now/index.html#v1) |
+| [Front page: at a glance](front-glance/index.html) |  |  |  |  |  |  | [v1](front-glance/index.html#v1) |
+| [Front page: the core facts](front-facts/index.html) |  |  |  |  |  |  | [v1](front-facts/index.html#v1) |
+| [Front page: what nobody knows yet](front-unknown/index.html) |  |  |  |  |  |  | [v1](front-unknown/index.html#v1) |
+| [Front page: latest](front-latest/index.html) |  |  |  |  |  |  | [v1](front-latest/index.html#v1) |
+| The briefings, one per reader |
+| J [Briefing: Board member or executive](briefing-board/index.html) | [v1](briefing-board/index.html#v1) | [v2](briefing-board/index.html#v2) |  |  | [v3](briefing-board/index.html#v3) | [v4](briefing-board/index.html#v4) |  |
+| S [Briefing: Security lead](briefing-security/index.html) | [v1](briefing-security/index.html#v1) | [v2](briefing-security/index.html#v2) |  |  | [v3](briefing-security/index.html#v3) | [v4](briefing-security/index.html#v4) |  |
+| D [Briefing: PHP or platform engineer](briefing-engineer/index.html) | [v1](briefing-engineer/index.html#v1) | [v2](briefing-engineer/index.html#v2) |  |  | [v3](briefing-engineer/index.html#v3) | [v4](briefing-engineer/index.html#v4) |  |
+| R [Briefing: Journalist](briefing-journalist/index.html) | [v1](briefing-journalist/index.html#v1) | [v2](briefing-journalist/index.html#v2) |  |  | [v3](briefing-journalist/index.html#v3) | [v4](briefing-journalist/index.html#v4) |  |
+| A [Briefing: Security researcher](briefing-researcher/index.html) | [v1](briefing-researcher/index.html#v1) | [v2](briefing-researcher/index.html#v2) |  |  | [v3](briefing-researcher/index.html#v3) | [v4](briefing-researcher/index.html#v4) |  |
+| B [Briefing: Analyst or advisor](briefing-analyst/index.html) | [v1](briefing-analyst/index.html#v1) | [v2](briefing-analyst/index.html#v2) |  |  | [v3](briefing-analyst/index.html#v3) | [v4](briefing-analyst/index.html#v4) |  |
+| R [Briefing: CISO](briefing-ciso/index.html) |  | [v1](briefing-ciso/index.html#v1) |  |  | [v2](briefing-ciso/index.html#v2) | [v3](briefing-ciso/index.html#v3) |  |
+| A [Briefing: CTO](briefing-cto/index.html) |  | [v1](briefing-cto/index.html#v1) |  |  | [v2](briefing-cto/index.html#v2) | [v3](briefing-cto/index.html#v3) |  |
+| Q [Briefing: CFO](briefing-cfo/index.html) |  | [v1](briefing-cfo/index.html#v1) |  |  | [v2](briefing-cfo/index.html#v2) | [v3](briefing-cfo/index.html#v3) |  |
+| J [Briefing: Head of AppSec](briefing-appsec/index.html) |  | [v1](briefing-appsec/index.html#v1) |  |  | [v2](briefing-appsec/index.html#v2) | [v3](briefing-appsec/index.html#v3) |  |
+| L [Briefing: Developer](briefing-developer/index.html) |  | [v1](briefing-developer/index.html#v1) |  |  | [v2](briefing-developer/index.html#v2) | [v3](briefing-developer/index.html#v3) |  |
+| R [Briefing: Media and communications team](briefing-comms/index.html) |  | [v1](briefing-comms/index.html#v1) |  |  | [v2](briefing-comms/index.html#v2) | [v3](briefing-comms/index.html#v3) |  |
+| A [Briefing: Curious reader](briefing-everyone/index.html) |  |  |  |  | [v1](briefing-everyone/index.html#v1) | [v2](briefing-everyone/index.html#v2) |  |
+| C [Briefing: Website owner](briefing-site-owner/index.html) |  |  |  |  | [v1](briefing-site-owner/index.html#v1) | [v2](briefing-site-owner/index.html#v2) |  |
+| T [Briefing: Project or programme manager](briefing-pm/index.html) |  |  |  |  | [v1](briefing-pm/index.html#v1) | [v2](briefing-pm/index.html#v2) |  |
+| The story and evidence pages |
+| A [The two flaws](page-flaws/index.html) | [v1](page-flaws/index.html#v1) |  |  |  | [v2](page-flaws/index.html#v2) |  |  |
+| A [Timeline](page-timeline/index.html) | [v1](page-timeline/index.html#v1) | [v2](page-timeline/index.html#v2) |  |  | [v3](page-timeline/index.html#v3) | [v4](page-timeline/index.html#v4) |  |
+| A [Who found it](page-discovery/index.html) | [v1](page-discovery/index.html#v1) | [v2](page-discovery/index.html#v2) |  |  | [v3](page-discovery/index.html#v3) | [v4](page-discovery/index.html#v4) |  |
+| A [How disclosure broke](page-leak/index.html) | [v1](page-leak/index.html#v1) | [v2](page-leak/index.html#v2) |  |  | [v3](page-leak/index.html#v3) | [v4](page-leak/index.html#v4) |  |
+| A [Exploitation signals](page-exploitation/index.html) | [v1](page-exploitation/index.html#v1) | [v2](page-exploitation/index.html#v2) |  |  | [v3](page-exploitation/index.html#v3) | [v4](page-exploitation/index.html#v4) |  |
+| A [If you run PHP](page-playbook/index.html) | [v1](page-playbook/index.html#v1) |  |  |  | [v2](page-playbook/index.html#v2) |  |  |
+| A [Every claim](page-claims/index.html) | [v1](page-claims/index.html#v1) | [v2](page-claims/index.html#v2) |  |  | [v3](page-claims/index.html#v3) | [v4](page-claims/index.html#v4) |  |
+| A [The numbers](page-numbers/index.html) | [v1](page-numbers/index.html#v1) | [v2](page-numbers/index.html#v2) |  |  | [v3](page-numbers/index.html#v3) | [v4](page-numbers/index.html#v4) |  |
+| A [The agencies](page-agencies/index.html) | [v1](page-agencies/index.html#v1) |  |  |  | [v2](page-agencies/index.html#v2) |  |  |
+| A [Affected systems](page-affected/index.html) | [v1](page-affected/index.html#v1) |  |  |  | [v2](page-affected/index.html#v2) |  |  |
+| A [The method](page-method/index.html) | [v1](page-method/index.html#v1) | [v2](page-method/index.html#v2) |  |  | [v3](page-method/index.html#v3) |  |  |
+| A [The code](page-code/index.html) |  | [v1](page-code/index.html#v1) |  |  | [v2](page-code/index.html#v2) | [v3](page-code/index.html#v3) |  |
+| A [Impact: offline vs compromised](page-impact/index.html) |  | [v1](page-impact/index.html#v1) |  |  | [v2](page-impact/index.html#v2) | [v3](page-impact/index.html#v3) |  |
+| A [Detection and defence](page-defence/index.html) |  | [v1](page-defence/index.html#v1) |  |  | [v2](page-defence/index.html#v2) | [v3](page-defence/index.html#v3) |  |
+| A [In context: 2008 to 2026](page-context/index.html) |  | [v1](page-context/index.html#v1) |  |  | [v2](page-context/index.html#v2) |  |  |
+| A [Who says what](page-actors/index.html) |  | [v1](page-actors/index.html#v1) |  |  | [v2](page-actors/index.html#v2) | [v3](page-actors/index.html#v3) |  |
+| A [Explained from the start](page-explained/index.html) |  |  |  |  | [v1](page-explained/index.html#v1) | [v2](page-explained/index.html#v2) |  |
+| A [Glossary: every term, in plain English](page-glossary/index.html) |  |  |  |  | [v1](page-glossary/index.html#v1) |  |  |
+| A [The specialist summary](page-summary/index.html) |  |  |  |  |  | [v1](page-summary/index.html#v1) |  |
+| A [Interview: the editor](page-interview/index.html) |  |  |  |  |  |  | [v1](page-interview/index.html#v1) |
+| The facts |
+| [70 facts](../claims/index.html): added, status changes, edits | **+49** | **+21** 1 status 3 edited |  |  |  |  |  |
+
+Versions before v0.3.2 are reconstructed from each release's markdown twins and data files in git. The ledger itself is [data/sections.json](../data/sections.json). What each release changed, in a sentence, is the [release history](../admin/versions.html); what changed for readers is [what's new](../whatsnew/index.html).
+
+
+---
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/index.html

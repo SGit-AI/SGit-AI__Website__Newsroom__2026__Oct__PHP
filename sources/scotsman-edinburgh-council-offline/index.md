@@ -22,7 +22,7 @@ Captured by claude-story-site. Status: captured. Edinburgh council site offline 
 
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
-| Edinburgh council's site went offline late on 21 October; the council called it 'essential maintenance' and did not confirm a link | The Scotsman quoting the council | reported | 0/1 | [The Scotsman](../../sources/scotsman-edinburgh-council-offline/index.html) |
+| Edinburgh council's site went offline late on 21 October; the council called it 'essential maintenance' and did not confirm a link [fact timeline →](../../facts/edinburgh/index.html) | The Scotsman quoting the council | reported | 0/1 | [The Scotsman](../../sources/scotsman-edinburgh-council-offline/index.html) |
 
 ## Events that cite it
 
@@ -40,4 +40,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/scotsman-edinburgh-council-offline/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/scotsman-edinburgh-council-offline/index.html

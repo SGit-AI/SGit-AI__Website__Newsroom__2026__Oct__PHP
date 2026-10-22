@@ -1,0 +1,7 @@
+# PHP October 2026. Everything here is public; agents are welcome, and llms.txt lists the markdown twins.
+User-agent: *
+Allow: /
+Disallow: /account/top-up.html
+Disallow: /account/topped-up.html
+
+Sitemap: https://php.oct.2026.newsroom.sgit.ai/sitemap.xml

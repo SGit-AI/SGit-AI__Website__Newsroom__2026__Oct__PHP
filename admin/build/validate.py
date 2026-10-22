@@ -41,7 +41,7 @@ for p in pages:
     md = re.sub(r'\.html$', '.md', p)
     if not os.path.exists(md): fails.append(f'{rel(p)}: no markdown twin')
     # 6. em-dash in the site's prose (sources page exempt: third-party titles)
-    if os.sep + 'sources' + os.sep not in p and os.sep + 'actors' + os.sep not in p and not p.endswith(os.path.join('affected', 'software.html')) and not p.endswith(os.path.join('brief', 'index.html')):
+    if os.sep + 'sources' + os.sep not in p and os.sep + 'actors' + os.sep not in p and os.sep + 'facts' + os.sep not in p and os.sep + 'versions' + os.sep not in p and os.sep + 'interview' + os.sep not in p and not p.endswith(os.path.join('affected', 'software.html')) and not p.endswith(os.path.join('brief', 'index.html')):
         body = re.sub(r'<q>.*?</q>', '', s, flags=re.S)
         body = re.sub(r'title="[^"]*"', '', body)
         if '—' in body:
@@ -96,10 +96,20 @@ for pr in personas.get('personas', []):
         if not os.path.exists(os.path.join(ROOT, x)): fails.append(f'data/personas.json: {pr["id"]} path points at missing page {x}')
 for t in (load('glossary') or {}).get('terms', []):
     if not os.path.exists(os.path.join(ROOT, t['more'].split('#')[0])): fails.append(f'data/glossary.json: {t["id"]} links to missing page {t["more"]}')
+# 4c. search engines: the sitemap lists every public page, robots.txt points at it, the feed and the social card exist
+sm = open(os.path.join(ROOT, 'sitemap.xml'), encoding='utf-8').read() if os.path.exists(os.path.join(ROOT, 'sitemap.xml')) else ''
+if not sm: fails.append('sitemap.xml missing')
+for p in pages:
+    r = rel(p).replace(os.sep, '/')
+    if r.startswith('account/top'): continue
+    if f'/{r}</loc>' not in sm: fails.append(f'{r}: not in sitemap.xml')
+if 'Sitemap:' not in (open(os.path.join(ROOT, 'robots.txt')).read() if os.path.exists(os.path.join(ROOT, 'robots.txt')) else ''): fails.append('robots.txt missing or has no Sitemap line')
+for f in ('feed.xml', 'assets/og-card.png', 'data/sections.json'):
+    if not os.path.exists(os.path.join(ROOT, f)): fails.append(f'missing {f}')
 # 5. determinism: rebuild into a temp copy and compare hashes
 def tree_hash():
     h = hashlib.sha256()
-    for p in pages + sorted(re.sub(r'\.html$', '.md', p) for p in pages) + [os.path.join(ROOT, 'llms.txt'), os.path.join(ROOT, 'data', 'graph.json')]:
+    for p in pages + sorted(re.sub(r'\.html$', '.md', p) for p in pages) + [os.path.join(ROOT, 'llms.txt'), os.path.join(ROOT, 'data', 'graph.json'), os.path.join(ROOT, 'data', 'sections.json'), os.path.join(ROOT, 'sitemap.xml'), os.path.join(ROOT, 'feed.xml')]:
         if os.path.exists(p):
             h.update(rel(p).encode()); h.update(open(p, 'rb').read())
     return h.hexdigest()

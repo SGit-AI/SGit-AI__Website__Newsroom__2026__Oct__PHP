@@ -24,7 +24,7 @@ VERSION = open(os.path.join(ROOT, 'VERSION'), encoding='utf-8').read().strip()
 D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 'affected', 'exploitation',
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
-                          'personas', 'glossary', 'plain')}
+                          'personas', 'glossary', 'plain', 'interview', 'seo')}
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
 if D['vault'].get('latest_capture'):
@@ -137,15 +137,16 @@ def to_markdown(fragment):
 
 NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
-    ('The story', [('index.html', 'Front page'), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
+    ('The story', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP')]),
     ('The evidence', [('claims/index.html', 'Every claim'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
                       ('affected/index.html', 'Affected systems'), ('affected/software.html', 'Software inventory'), ('sources/index.html', 'Every source'),
-                      ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph')]),
+                      ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'),
+                      ('pipeline/index.html', 'The fact pipeline'), ('versions/index.html', 'How the story changed')]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
+    ('About', [('interview/index.html', 'Interview: the editor'), ('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('admin/index.html', 'Admin & engineering')]),
 ]
@@ -177,10 +178,24 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
         '@context': 'https://schema.org', '@type': ld_type, 'headline': title, 'description': description,
         'url': f'{BASE_URL}/{path}', 'isPartOf': {'@type': 'WebSite', 'name': SITE_NAME, 'url': BASE_URL},
         'license': 'https://creativecommons.org/licenses/by/4.0/', 'dateModified': STORY['data_as_of'][:10],
-        'version': VERSION,
+        'version': VERSION, 'inLanguage': 'en', 'image': f'{BASE_URL}/{SEO.get("image", "assets/og-card.png")}',
+        'datePublished': SEO.get('date_published', '2026-10-22'), 'mainEntityOfPage': f'{BASE_URL}/{path}',
+        'author': {'@type': 'Person', 'name': SEO.get('author', 'Dinis Cruz')},
+        'publisher': {'@type': 'Organization', 'name': SEO.get('publisher', 'SGit Newsroom'), 'url': SEO.get('publisher_url', 'https://newsroom.sgit.ai/')},
     }
+    verify = f'\n<meta name="google-site-verification" content="{E(SEO["google_site_verification"])}">' if SEO.get('google_site_verification') else ''
+    crumbs = [{'@type': 'ListItem', 'position': 1, 'name': SITE_NAME, 'item': f'{BASE_URL}/index.html'}]
+    for label, items in NAV:
+        if any(p == path for p, _ in items) and path != 'index.html':
+            crumbs.append({'@type': 'ListItem', 'position': 2, 'name': label, 'item': f'{BASE_URL}/{items[0][0]}'})
+            break
+    if path != 'index.html':
+        crumbs.append({'@type': 'ListItem', 'position': len(crumbs) + 1, 'name': title, 'item': f'{BASE_URL}/{path}'})
+    ld = [ld, {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': crumbs}]
+    if path == 'index.html':
+        ld.append({'@context': 'https://schema.org', '@type': 'WebSite', 'name': SITE_NAME, 'url': BASE_URL + '/', 'description': STORY['description'], 'inLanguage': 'en'})
     return f'''<!doctype html>
-<html lang="en" data-root="{up}" data-path="{path}">
+<html lang="en" data-root="{up}" data-path="{path}" data-ver="{VERSION}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -192,7 +207,14 @@ def layout(path, title, description, body, kind='page', date=None, topics='', ld
 <meta property="og:url" content="{BASE_URL}/{path}">
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(description)}">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="{BASE_URL}/{SEO.get('image', 'assets/og-card.png')}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="{E(SEO.get('author', ''))}">{verify}
+<link rel="alternate" type="application/atom+xml" title="{SITE_NAME}: what's new" href="{up}feed.xml">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
 <link rel="icon" href="data:,">
 <link rel="alternate" type="text/markdown" href="{up}{md_path(path)}">
@@ -242,10 +264,15 @@ def page(path, title, description, body, **kw):
     if plain:
         body = body.replace('</h1>', f'</h1>\n<aside class="plainbox"><b>In plain English</b> {E(plain)}</aside>', 1)
     WORDS[path] = len(re.sub(r'<[^>]+>', ' ', re.sub(r'<(svg|script|table).*?</\1>', ' ', body, flags=re.S)).split())
-    html_out = layout(path, title, description, gloss(body, path), **kw)
+    md_text = f'# {title}\n\n{description}\n\n' + to_markdown(body)
+    sec = ledger_for_page(path, md_text)
+    hbody = body
+    if sec:
+        badge = vbadge(section_id(path), path.count('/'), 'This briefing' if path.startswith('briefings/') else 'This page')
+        hbody = body.replace('</h1>', '</h1>\n' + badge, 1)
+    html_out = layout(path, title, description, gloss(hbody, path), **kw)
     write(path, html_out)
-    md = f'<!-- {SITE} v{VERSION} · {path} · {title} -->\n'
-    write(md_path(path), f'# {title}\n\n{description}\n\n' + to_markdown(body) + f'\n\n---\nsite v{VERSION} · data as of {STORY["data_as_of"]} · vault commit {D["vault"]["head"]["commit"]} · {BASE_URL}/{path}\n')
+    write(md_path(path), md_text + f'\n\n---\nsite v{VERSION} · data as of {STORY["data_as_of"]} · vault commit {D["vault"]["head"]["commit"]} · {BASE_URL}/{path}\n')
 
 def table(headers, rows, cls='t'):
     th = ''.join(f'<th>{h}</th>' for h in headers)
@@ -270,7 +297,7 @@ def claim_rows(claims, depth):
         note = f'<div class="note">{E(c["note"])}</div>' if c.get('note') else ''
         p, n, b = weight(c)
         wt = f'<span class="wt" title="primary sources among the sources cited; blocked captures">{p}/{n}' + (f' <small>({b} blocked)</small>' if b else '') + '</span>'
-        rows.append([f'<span id="{E(c["id"])}">{E(c["claim"])}</span>{note}', E(c['by']), pill(c['status']), wt, src_links(c['sources'], depth)])
+        rows.append([f'<span id="{E(c["id"])}">{E(c["claim"])}</span>{note} <a class="flink" href="{"../" * depth}facts/{E(c["id"])}/index.html">fact timeline &rarr;</a>', E(c['by']), pill(c['status']), wt, src_links(c['sources'], depth)])
     return table(['Claim', 'Who says it', 'Status', 'Primary', 'Sources'], rows, 'claims')
 
 def status_legend(depth=0):
@@ -434,6 +461,14 @@ def build_index():
         stat(C['events'], 'dated events, from 2024 to today', 'timeline/index.html'),
         stat(C['agencies'], "government agencies' advice compared", 'agencies/index.html'),
     ])
+    def fsec(sid, title, text):
+        ledger('front-' + sid, 'Front page: ' + title, 'front', 'index.html', text, scope='front')
+        return vbadge('front-' + sid, 0, 'This section')
+    b_now = fsec('now', 'right now', '\n'.join(f'{x["text"]} [{", ".join(x["sources"])}]' for x in pl['now']))
+    b_glance = fsec('glance', 'at a glance', '\n'.join(f'{l}: {v} ({n})' for t, l, v, n, h in tiles))
+    b_facts = fsec('facts', 'the core facts', '\n'.join(f'{f["status"]}: {f["text"]} [{", ".join(f["sources"])}]' for f in pl['facts']))
+    b_unknown = fsec('unknown', 'what nobody knows yet', '\n'.join(u['text'] for u in pl['unknown']))
+    b_latest = fsec('latest', 'latest', '\n'.join(f'{x["when"]}: {x["text"]} [{", ".join(x["sources"])}]' for x in pl['latest']))
     who_lead = f'The same evidence, put in order for {len(PERSONAS)} kinds of reader. Each starts with a thirty-second answer in plain words. <a href="start/index.html">How the readers are mapped</a>.'
     body = f'''
 <header class="hero hero2">
@@ -443,11 +478,11 @@ def build_index():
   <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a></div>
   <p class="aka">{E(pl["aka"])}</p>
 </header>
-<section id="now"><h2>Right now</h2><p class="small">As of {E(when)}, the time of the latest page this site saved.</p><ul class="nowlist">{now}</ul></section>
-{section("state", "At a glance", f'<div class="tiles">{board}</div>')}
-{section("facts", "The core facts, and the evidence for each", f'<ul class="legend">{legend}</ul><ol class="facts">{facts}</ol>', "Each fact links to the original pages it rests on: the PHP project, government agencies, the researchers. Click a source to see when it was saved and its fingerprint.")}
-{section("unknown", "What nobody knows yet", f'<ul class="unknown">{unknown}</ul>', "Stated, not papered over. This site will update each one when the evidence does.")}
-{section("latest", "Latest", f'<ol class="latest">{latest}</ol><p><a href="timeline/index.html">Everything, in order, on the timeline &rarr;</a></p>')}
+<section id="now"><h2>Right now</h2><p class="small">As of {E(when)}, the time of the latest page this site saved.</p><ul class="nowlist">{now}</ul>{b_now}</section>
+{section("state", "At a glance", f'<div class="tiles">{board}</div>{b_glance}')}
+{section("facts", "The core facts, and the evidence for each", f'<ul class="legend">{legend}</ul><ol class="facts">{facts}</ol>{b_facts}', "Each fact links to the original pages it rests on: the PHP project, government agencies, the researchers. Click a source to see when it was saved and its fingerprint.")}
+{section("unknown", "What nobody knows yet", f'<ul class="unknown">{unknown}</ul>{b_unknown}', "Stated, not papered over. This site will update each one when the evidence does.")}
+{section("latest", "Latest", f'<ol class="latest">{latest}</ol><p><a href="timeline/index.html">Everything, in order, on the timeline &rarr;</a> &middot; <a href="whatsnew/index.html">What changed on this site, release by release &rarr;</a></p>{b_latest}')}
 {section("who", "The briefing for you", persona_doors(), who_lead)}
 {section("moments", "How it unfolded", f'<ol class="moments">{moments}</ol>')}
 {section("evidence", "How this site knows", f'<div class="stats">{evidence}</div><p>Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read <a href="https://www.php.net/archive/2026.php#2026-10-21-5" rel="noopener">the PHP project\'s announcement</a> and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; <a href="method/index.html">how it works</a>.</p><p>Already know the vocabulary? <a href="summary/index.html">The specialist summary</a> has the technical version of this page, with every number and the full last 48 hours.</p>')}
@@ -735,6 +770,7 @@ def build_briefings():
     for a in aud:
         s = sel[a['id']]
         p = PERSONAS[a['id']]
+        BRIEF_TOPICS[a['id']] = s['topics']
         cl = [c for c in D['claims'] if c['topic'] in s['topics']]
         order = {t: i for i, t in enumerate(s['topics'])}
         cl.sort(key=lambda c: (order[c['topic']], list(STATUS_WORDS).index(c['status']) if c['status'] in STATUS_WORDS else 9))
@@ -1045,6 +1081,15 @@ def build_llms():
     for slug, src in SOURCES.items():
         lines.append(f'- [{src.get("title") or slug}]({BASE_URL}/sources/{slug}/index.md): {src.get("publisher") or ""}')
     lines.append('')
+    lines.append('## Facts, one page each, with a timeline and every version')
+    for c in D['claims']:
+        lines.append(f'- [{c["claim"][:100]}]({BASE_URL}/facts/{c["id"]}/index.md): {c["status"]}')
+    lines.append('')
+    lines.append('## Version histories, one per section')
+    for sid, sec in LEDGER['sections'].items():
+        if sec['kind'] != 'fact':
+            lines.append(f'- [{sec["title"]}]({BASE_URL}/versions/{sid}/index.md): {len(sec["versions"])} versions')
+    lines.append('')
     lines.append('## Parties, one page each')
     for a in D['actors']:
         lines.append(f'- [{a["name"]}]({BASE_URL}/actors/{a["id"]}/index.md): {a["role"]}')
@@ -1130,6 +1175,16 @@ def build_sitejs():
   });
   renderBar();
 
+  // Since your last visit: the release you last saw is remembered, and what's new marks every release after it.
+  var ver = html.getAttribute('data-ver') || '', lastVer = get('p2s.ver');
+  function newer(a, b) { var x = a.split('.'), y = b.split('.'); for (var i = 0; i < 3; i++) { var d = (+x[i] || 0) - (+y[i] || 0); if (d) return d > 0; } return false; }
+  if (ver && lastVer && lastVer !== ver) set('p2s.since', lastVer);
+  if (ver) set('p2s.ver', ver);
+  var since = get('p2s.since');
+  if (since) {
+    document.querySelectorAll('[data-rel]').forEach(function (el) { if (newer(el.getAttribute('data-rel'), since)) el.classList.add('unseen'); });
+  }
+
   // Glossary hover cards: the first use of a term on a page carries its one-line definition.
   var tip = null, tipFor = null;
   function showTip(a) {
@@ -1164,12 +1219,13 @@ def build_all():
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
+    build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
     build_all()
     build_all()
-    build_llms(); build_sitejs(); build_personas_js()
+    build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger()
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
 
@@ -1546,6 +1602,412 @@ def build_personas_js():
         data['personas'][p['id']] = {'person': p['person'], 'label': p['label'], 'group': p['group'], 'depth': p['depth'],
                                      'path': [[x, nav_title(x), minutes(x)] for x in p['path']]}
     write('assets/personas.js', '// Generated by admin/build/build.py from data/personas.json: the readers, their paths and reading times.\nwindow.P2S = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n')
+
+
+
+# ----------------------------------------------------------------------------- v0.3.2: every section versioned, every fact with a timeline
+
+import difflib, hashlib
+
+LEDGER_PATH = os.path.join(DATA, 'sections.json')
+LEDGER = json.load(open(LEDGER_PATH, encoding='utf-8')) if os.path.exists(LEDGER_PATH) else {'sections': OrderedDict()}
+LEDGER['note'] = ('The section ledger. Every major section of the site, every briefing and every fact is a projection of the data; '
+                  'its text is hashed on every build, and a new version is recorded only when that text changes. A version names the site '
+                  'release that created it and the date of that release. Versions marked reconstructed were rebuilt from the markdown twins '
+                  'and data files of earlier releases in git. Written by admin/build/build.py; never edit by hand.')
+RELEASES = list(reversed(D['versions']['versions']))  # oldest first
+REL_DATE = {r['version']: r['date'] for r in RELEASES}
+SEO = D.get('seo') or {}
+PAGE_VERSIONED = ['summary/index.html', 'flaws/index.html', 'code/index.html', 'timeline/index.html', 'discovery/index.html', 'leak/index.html',
+                  'exploitation/index.html', 'impact/index.html', 'defence/index.html', 'context/index.html', 'playbook/index.html',
+                  'claims/index.html', 'numbers/index.html', 'agencies/index.html', 'affected/index.html', 'actors/index.html',
+                  'explained/index.html', 'glossary/index.html', 'method/index.html', 'interview/index.html']
+
+def norm_md(md):
+    """The text a section is versioned on: the markdown twin without its footer, links reduced to their words."""
+    md = md.split('\n\n---\nsite v')[0]
+    md = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', md)
+    md = md.replace(" fact timeline →", "")  # a navigation link added to claim rows in v0.3.2, not content
+    md = re.sub(r'[ \t]+\n', '\n', md)
+    return re.sub(r'\n{3,}', '\n\n', md).strip()
+
+def briefing_norm(md):
+    """A briefing's text without what changes when other pages change: reading times and the glossary chips."""
+    md = norm_md(md)
+    md = re.sub(r'\n## Words you will meet\n.*?(?=\n## |\Z)', '\n', md, flags=re.S)
+    md = re.sub(r' ?\b\d+ min\b', '', md)
+    md = re.sub(r'About \d+ minutes in all\. ?', '', md)
+    md = re.sub(r' &middot; from the same \d+ claims, selected and ordered for one reader| · from the same \d+ claims, selected and ordered for one reader', '', md)
+    return md.strip()
+
+def section_id(path):
+    if path.startswith('briefings/'):
+        return 'briefing-' + path.split('/')[1]
+    return 'page-' + re.sub(r'/index\.html$|\.html$', '', path).replace('/', '-')
+
+def ledger(sid, title, kind, path, text, scope='everyone', site=None, date=None, reconstructed=False):
+    """Record a section's text; return its ledger entry. Idempotent: the same text never makes a second version."""
+    site, date = site or VERSION, date or REL_DATE.get(site or VERSION, '')
+    h = hashlib.sha256(text.encode('utf-8')).hexdigest()[:12]
+    sec = LEDGER['sections'].setdefault(sid, {'title': title, 'kind': kind, 'path': path, 'scope': scope, 'versions': []})
+    sec.update({'title': title, 'kind': kind, 'path': path, 'scope': scope})
+    vs = sec['versions']
+    if vs and vs[-1]['hash'] == h:
+        return sec
+    if vs and vs[-1]['site'] == site and not reconstructed:
+        if len(vs) >= 2 and vs[-2]['hash'] == h:
+            vs.pop()
+        else:
+            vs[-1].update({'hash': h, 'text': text})
+        return sec
+    vs.append({'v': len(vs) + 1, 'hash': h, 'site': site, 'date': date, 'reconstructed': reconstructed, 'text': text})
+    return sec
+
+def ledger_for_page(path, md):
+    if path.startswith('briefings/'):
+        a = AUD.get(path.split('/')[1])
+        return ledger(section_id(path), f'Briefing: {a["name"] if a else path}', 'briefing', path, briefing_norm(md), scope=path.split('/')[1])
+    if path in PAGE_VERSIONED:
+        return ledger(section_id(path), nav_title(path), 'page', path, norm_md(md))
+    return None
+
+def save_ledger():
+    out = json.dumps(LEDGER, indent=1, ensure_ascii=False) + '\n'
+    old = open(LEDGER_PATH, encoding='utf-8').read() if os.path.exists(LEDGER_PATH) else ''
+    if out != old:
+        write('data/sections.json', out)
+
+def nice_date(d):
+    return human_time(d + 'T00:00').replace(', 00:00 UTC', '') if d else ''
+
+def vbadge(sid, depth, label='This section'):
+    sec = LEDGER['sections'].get(sid)
+    if not sec or not sec['versions']:
+        return ''
+    v, n, up = sec['versions'][-1], len(sec['versions']), '../' * depth
+    hist = f'<a href="{up}versions/{E(sid)}/index.html">{"history and changes, " + str(n - 1) + " earlier" if n > 1 else "history"}</a>'
+    return (f'<p class="vbadge"><span class="vb-v">{E(label)} v{v["v"]}</span> written in site <a href="{up}admin/versions.html#v{E(v["site"])}">v{E(v["site"])}</a>'
+            f' on {E(nice_date(v["date"]))} &middot; {hist}</p>')
+
+def word_diff(a, b):
+    ta, tb = re.split(r'(\s+)', a), re.split(r'(\s+)', b)
+    sm = difflib.SequenceMatcher(None, ta, tb, autojunk=False)
+    out = []
+    for op, i1, i2, j1, j2 in sm.get_opcodes():
+        if op == 'equal':
+            out.append(E(''.join(ta[i1:i2])))
+        else:
+            if i2 > i1: out.append(f'<del>{E("".join(ta[i1:i2]))}</del>')
+            if j2 > j1: out.append(f'<ins>{E("".join(tb[j1:j2]))}</ins>')
+    return ''.join(out)
+
+def diff_html(a, b):
+    """Line diff of two versions, with a word diff inside lines that were edited rather than replaced."""
+    al, bl = a.splitlines(), b.splitlines()
+    sm = difflib.SequenceMatcher(None, al, bl, autojunk=False)
+    out, added, removed = [], 0, 0
+    for op, i1, i2, j1, j2 in sm.get_opcodes():
+        if op == 'equal':
+            lines = al[i1:i2]
+            if len(lines) > 3:
+                out.append(f'<div class="dl dl-ctx">{E(lines[0])}</div><div class="dl dl-skip">{len(lines) - 2} unchanged lines</div><div class="dl dl-ctx">{E(lines[-1])}</div>')
+            else:
+                out.extend(f'<div class="dl dl-ctx">{E(x)}</div>' for x in lines)
+        elif op == 'replace' and i2 - i1 == j2 - j1 and sum(len(x) for x in al[i1:i2]) < 6000:
+            for x, y in zip(al[i1:i2], bl[j1:j2]):
+                out.append(f'<div class="dl dl-chg">{word_diff(x, y)}</div>')
+                added += 1; removed += 1
+        else:
+            out.extend(f'<div class="dl dl-del">{E(x)}</div>' for x in al[i1:i2])
+            out.extend(f'<div class="dl dl-ins">{E(x)}</div>' for x in bl[j1:j2])
+            removed += i2 - i1; added += j2 - j1
+    return f'<div class="diff">{"".join(out)}</div>', added, removed
+
+def fact_text(c):
+    return f'{c["claim"]}\nWho says it: {c["by"]}\nStatus: {c["status"]}\nTopic: {c["topic"]}\nSources: {", ".join(c["sources"])}'
+
+def fact_field(text, field):
+    m = re.search(r'^' + field + r': (.*)$', text, flags=re.M)
+    return m.group(1) if m else ''
+
+def parse_when(s):
+    """A sortable ISO-ish instant from the shapes the manifest uses, or None."""
+    if not s:
+        return None
+    s = str(s)
+    m = re.match(r'^(\d{8})T(\d{2})(\d{2})(\d{2})Z', s)
+    if m:
+        d = m.group(1)
+        return f'{d[:4]}-{d[4:6]}-{d[6:]}T{m.group(2)}:{m.group(3)}Z'
+    m = re.match(r'^(\d{4}-\d{2}-\d{2})(?:[T ](\d{2}:\d{2}))?', s)
+    if m:
+        return m.group(1) + ('T' + m.group(2) + 'Z' if m.group(2) else '')
+    m = re.match(r'^(\d{4})$', s)
+    return m.group(1) if m else None
+
+def fact_projections(c):
+    """Where a fact is shown: the briefings whose selection includes its topic, and the pages that list it."""
+    out = [(f'briefings/{pid}/index.html', PERSONAS[pid]) for pid, sel in BRIEF_TOPICS.items() if c['topic'] in sel and pid in PERSONAS]
+    return out
+
+BRIEF_TOPICS = {}  # filled by build_briefings: persona id -> topics
+
+def build_facts():
+    for c in D['claims']:
+        ledger('fact-' + c['id'], c['claim'][:90], 'fact', f'facts/{c["id"]}/index.html', fact_text(c), scope='fact')
+    for c in D['claims']:
+        sec = LEDGER['sections']['fact-' + c['id']]
+        evs = []
+        for s in c['sources']:
+            if s not in SOURCES:
+                continue
+            row = SOURCES[s]
+            pw = parse_when(row.get('published'))
+            if pw:
+                evs.append((pw, 'pub', f'{short_name(row)} publishes <a href="../../sources/{E(s)}/index.html">{E((row.get("title") or s)[:110])}</a>'))
+            caps = sorted(parse_when(x.get('stamp')) or '' for x in row.get('captures', []))
+            if caps and caps[0]:
+                evs.append((caps[0], 'cap', f'Saved into the evidence vault: {short_name(row)}' + (f', then {len(caps) - 1} more capture{"s" if len(caps) > 2 else ""}' if len(caps) > 1 else '')))
+        prev = None
+        for v in sec['versions']:
+            st = fact_field(v['text'], 'Status')
+            if prev is None:
+                what = f'Enters this site as {pill(st)} in v{E(v["site"])}'
+            elif fact_field(prev['text'], 'Status') != st:
+                what = f'Status changes from {pill(fact_field(prev["text"], "Status"))} to {pill(st)} in v{E(v["site"])}'
+            else:
+                what = f'Reworded or re-sourced in v{E(v["site"])}'
+            evs.append((v['date'] + 'T23:59Z', 'site', what + (' <span class="small">(reconstructed from git)</span>' if v.get('reconstructed') else '')))
+            prev = v
+        evs.sort(key=lambda e: e[0])
+        rail = ''.join(f'<li class="tk tk-{k}"><span class="when">{E(fmt_at(w) if "T" in w and not w.endswith("T23:59Z") else w[:10])}</span><span>{t}</span></li>' for w, k, t in evs)
+        rows = []
+        for i, v in enumerate(sec['versions']):
+            d = ''
+            if i:
+                d, _, _ = diff_html(sec['versions'][i - 1]['text'], v['text'])
+            rows.append(f'<details{" open" if i == len(sec["versions"]) - 1 else ""}><summary>v{v["v"]} &middot; site v{E(v["site"])} &middot; {E(nice_date(v["date"]))} &middot; {pill(fact_field(v["text"], "Status"))}</summary>{d or "<pre>" + E(v["text"]) + "</pre>"}</details>')
+        proj = fact_projections(c)
+        pj = ''.join(f'<a class="pchip" href="../../{E(p)}">{avatar(pp)}<span><b>{E(pp["person"])}</b><small>{E(pp["label"])}</small></span></a>' for p, pp in proj)
+        g = mini_graph('fact ' + c['id'], c['status'], [(SOURCES[s].get('title') or s, f'../../sources/{s}/index.html', 'src') for s in c['sources'] if s in SOURCES], 2)
+        body = f'''
+<p class="kicker">Fact &middot; {E(c["topic"])} &middot; {pill(c["status"])}</p>
+<h1>{E(c["claim"])}</h1>
+<p class="meta"><b>Who says it:</b> {E(c["by"])} &middot; <b>Sources:</b> {src_links(c["sources"], 2)}</p>
+{f'<p class="note">{E(c["note"])}</p>' if c.get("note") else ""}
+{section("timeline", "This fact over time", f'<ol class="rail">{rail}</ol><p class="small">Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.</p>')}
+{section("graph", "What it rests on", g)}
+{section("where", "Where this fact appears", (f'<p>In the briefings for:</p><div class="pchips">{pj}</div>' if pj else '<p class="small">Not in any briefing yet.</p>') + f'<p>And on <a href="../../claims/index.html#{E(c["id"])}">every claim</a>.</p>')}
+{section("versions", "Every version of this fact", "".join(rows))}
+'''
+        page(f'facts/{c["id"]}/index.html', f'Fact: {c["claim"][:80]}', f'{c["claim"]} Who says it, its status ({c["status"]}), its sources, and its timeline from publication to this site.', body, kind='evidence', topics='php2shell fact')
+
+def history_page(sid, sec):
+    vs = sec['versions']
+    items = []
+    for i in range(len(vs) - 1, -1, -1):
+        v = vs[i]
+        if i:
+            d, add, rem = diff_html(vs[i - 1]['text'], v['text'])
+            head = f'{add} lines added or changed, {rem} removed or changed, against v{vs[i - 1]["v"]}'
+        else:
+            d, head = f'<pre class="vtext">{E(v["text"][:20000])}</pre>', 'the first version'
+        items.append(f'<details id="v{v["v"]}"{" open" if i == len(vs) - 1 else ""}><summary><b>v{v["v"]}</b> &middot; site <a href="../../admin/versions.html#v{E(v["site"])}">v{E(v["site"])}</a> &middot; {E(nice_date(v["date"]))}{" &middot; reconstructed from git" if v.get("reconstructed") else ""} &middot; {head} &middot; <code>{E(v["hash"])}</code></summary>{d}</details>')
+    scope = sec.get('scope')
+    who = f' It is written for {E(PERSONAS[scope]["person"])}, {E(PERSONAS[scope]["label"].lower())}.' if scope in PERSONAS else ''
+    body = f'''
+<p class="kicker">Version history &middot; {E(sec["kind"])}</p>
+<h1>{E(sec["title"])}: every version</h1>
+<p class="lead">This section is a projection of the site's data, rebuilt on every release.{who} A new version is recorded only when the text a reader sees changes, so a release that changed something elsewhere leaves this section's version alone. It has {len(vs)} version{"s" if len(vs) != 1 else ""}; the newest is first, and each is shown as the changes from the one before. <a href="../../{E(sec["path"])}">Read the current version &rarr;</a></p>
+{"".join(items)}
+<p><a href="../index.html">Every section, across every release &rarr;</a></p>
+'''
+    page(f'versions/{sid}/index.html', f'{sec["title"]}: version history', f'Every version of the section "{sec["title"]}" on {SITE_NAME}, with the site release that created it and the changes between versions.', body, kind='free')
+
+def build_versions():
+    secs = [(sid, s) for sid, s in LEDGER['sections'].items() if s['kind'] != 'fact']
+    for sid, s in secs:
+        history_page(sid, s)
+    rels = [r['version'] for r in RELEASES]
+    head = ''.join(f'<th class="rv"><a href="../admin/versions.html#v{E(r)}">{E(r)}</a></th>' for r in rels)
+    groups = [('front', 'The front page'), ('briefing', 'The briefings, one per reader'), ('page', 'The story and evidence pages')]
+    rows = ''
+    for kind, label in groups:
+        rows += f'<tr class="vg"><th colspan="{len(rels) + 1}">{E(label)}</th></tr>'
+        for sid, s in secs:
+            if s['kind'] != kind:
+                continue
+            made = {v['site']: v for v in s['versions']}
+            first = s['versions'][0]['site']
+            cells = ''
+            alive = False
+            for r in rels:
+                alive = alive or r == first
+                if r in made:
+                    cells += f'<td><a class="vc vc-new" href="{E(sid)}/index.html#v{made[r]["v"]}" title="v{made[r]["v"]} written in {E(r)}">v{made[r]["v"]}</a></td>'
+                else:
+                    cells += f'<td><span class="vc{" vc-same" if alive else ""}" title="{"unchanged" if alive else "did not exist"}"></span></td>'
+            who = avatar(PERSONAS[s['scope']]) + ' ' if s.get('scope') in PERSONAS else ''
+            rows += f'<tr><th class="vn">{who}<a href="{E(sid)}/index.html">{E(s["title"])}</a></th>{cells}</tr>'
+    facts = [s for s in LEDGER['sections'].values() if s['kind'] == 'fact']
+    frow = ''
+    for r in rels:
+        added = sum(1 for s in facts if s['versions'][0]['site'] == r)
+        changed = sum(1 for s in facts for i, v in enumerate(s['versions']) if i and v['site'] == r and fact_field(v['text'], 'Status') != fact_field(s['versions'][i - 1]['text'], 'Status'))
+        reworded = sum(1 for s in facts for i, v in enumerate(s['versions']) if i and v['site'] == r) - changed
+        frow += f'<td class="fc">{f"<b>+{added}</b>" if added else ""}{f"<br><span>{changed} status</span>" if changed else ""}{f"<br><span>{reworded} edited</span>" if reworded else ""}</td>'
+    body = f'''
+<p class="kicker">The evidence &middot; versions</p>
+<h1>How the story changed, release by release</h1>
+<p class="lead">Every section of this site is a projection of the evidence, and every projection is versioned. Across: each release of the site. Down: the front page's sections, each reader's briefing, and the story and evidence pages. A filled cell is a new version written in that release; a faint cell is a section that existed and did not change. A new fact for engineers moves the engineer's briefing and leaves the board's alone, and this table is where that shows.</p>
+<div class="tw vt"><table class="vmatrix"><thead><tr><th>Section</th>{head}</tr></thead><tbody>{rows}<tr class="vg"><th colspan="{len(rels) + 1}">The facts</th></tr><tr><th class="vn"><a href="../claims/index.html">{len(facts)} facts</a>: added, status changes, edits</th>{frow}</tr></tbody></table></div>
+<p class="small">Versions before v0.3.2 are reconstructed from each release's markdown twins and data files in git. The ledger itself is <a href="../data/sections.json">data/sections.json</a>. What each release changed, in a sentence, is the <a href="../admin/versions.html">release history</a>; what changed for readers is <a href="../whatsnew/index.html">what's new</a>.</p>
+'''
+    page('versions/index.html', 'How the story changed, release by release', 'Every section of the site, every reader\'s briefing and every fact, versioned across every release: what changed, when, and in which release.', body, kind='free')
+
+def changes_in(rel):
+    secs, facts_new, facts_status, facts_edit = [], [], [], []
+    for sid, s in LEDGER['sections'].items():
+        for i, v in enumerate(s['versions']):
+            if v['site'] != rel:
+                continue
+            if s['kind'] == 'fact':
+                fid = sid[5:]
+                if i == 0:
+                    facts_new.append((fid, s, v))
+                elif fact_field(v['text'], 'Status') != fact_field(s['versions'][i - 1]['text'], 'Status'):
+                    facts_status.append((fid, s, v, s['versions'][i - 1]))
+                else:
+                    facts_edit.append((fid, s, v))
+            else:
+                secs.append((sid, s, v, i))
+    return secs, facts_new, facts_status, facts_edit
+
+def build_whatsnew():
+    out = ''
+    for r in reversed(RELEASES):
+        rel = r['version']
+        secs, fn, fs, fe = changes_in(rel)
+        parts = []
+        if fs:
+            parts.append('<h3>Facts whose status changed</h3><ul>' + ''.join(f'<li><a href="../facts/{E(f)}/index.html">{E(s["title"])}</a>: {pill(fact_field(p["text"], "Status"))} &rarr; {pill(fact_field(v["text"], "Status"))}</li>' for f, s, v, p in fs) + '</ul>')
+        if fn:
+            parts.append(f'<h3>{len(fn)} new fact{"s" if len(fn) != 1 else ""}</h3><ul class="cmp">' + ''.join(f'<li><a href="../facts/{E(f)}/index.html">{E(s["title"])}</a> {pill(fact_field(v["text"], "Status"))}</li>' for f, s, v in fn[:40]) + ('<li>and more on <a href="../claims/index.html">every claim</a></li>' if len(fn) > 40 else '') + '</ul>')
+        if fe:
+            parts.append(f'<p class="small">{len(fe)} fact{"s" if len(fe) != 1 else ""} reworded or re-sourced: ' + ', '.join(f'<a href="../facts/{E(f)}/index.html">{E(f)}</a>' for f, s, v in fe[:30]) + '.</p>')
+        readers = [(sid, s, v, i) for sid, s, v, i in secs if s['kind'] == 'briefing']
+        if readers:
+            parts.append('<h3>Briefings that changed</h3><div class="pchips">' + ''.join(f'<a class="pchip" href="../versions/{E(sid)}/index.html#v{v["v"]}">{avatar(PERSONAS[s["scope"]]) if s["scope"] in PERSONAS else ""}<span><b>{E(PERSONAS[s["scope"]]["person"]) if s["scope"] in PERSONAS else ""}</b><small>{E(s["title"].replace("Briefing: ", ""))} &middot; {"new" if i == 0 else "v" + str(v["v"])}</small></span></a>' for sid, s, v, i in readers) + '</div>')
+        others = [(sid, s, v, i) for sid, s, v, i in secs if s['kind'] != 'briefing']
+        if others:
+            parts.append('<h3>Sections that changed</h3><ul class="cmp">' + ''.join(f'<li><a href="../versions/{E(sid)}/index.html#v{v["v"]}">{E(s["title"])}</a> {"(new)" if i == 0 else "v" + str(v["v"])}</li>' for sid, s, v, i in others) + '</ul>')
+        out += f'<article class="rel wn" id="v{E(rel)}" data-rel="{E(rel)}"><h2>v{E(rel)} &middot; {E(nice_date(r["date"]))}<span class="newmark">new since your last visit</span></h2><p>{E(r["title"])}</p>{"".join(parts) or "<p class=small>No reader-facing section changed in this release.</p>"}</article>'
+    body = f'''
+<p class="kicker">The story &middot; what's new</p>
+<h1>What's new</h1>
+<p class="lead">Every release of this site, newest first, with what changed in it for readers: facts added, facts whose status changed, the briefings that moved and the sections that were rewritten. Releases you have not seen since your last visit are marked. To follow along, subscribe to <a href="../feed.xml">the feed</a>.</p>
+<p class="caveat">New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.</p>
+{out}
+'''
+    page('whatsnew/index.html', "What's new: every change, release by release", 'What changed on this site in each release: new facts, facts whose status changed, the briefings that moved for each reader and the sections that were rewritten.', body, kind='free', topics='php october 2026 updates')
+
+def build_pipeline():
+    srcs = D['sources']
+    captured = sum(1 for s in srcs if s.get('status') == 'captured')
+    blocked = sum(1 for s in srcs if s.get('status') in ('blocked', 'failed'))
+    noted = sum(1 for s in srcs if s.get('has_notes'))
+    cited = {x for c in D['claims'] for x in c['sources']} | {x for t in D['timeline'] for x in t['sources']}
+    claims = len(D['claims'])
+    proj = sum(1 for s in LEDGER['sections'].values() if s['kind'] != 'fact')
+    stages = [
+        ('Found', C['sources'], 'sources the agents found and logged in the vault', 'sources/index.html'),
+        ('Saved', captured, f'captured as served and as rendered, each file hashed; {blocked} blocked by bot checks, the block recorded', 'sources/index.html'),
+        ('Read', noted, 'with a collector\'s note of what the page actually says', 'sources/index.html'),
+        ('Cited', len(cited & set(SOURCES)), 'cited by at least one fact or timeline event', 'graph/index.html'),
+        ('Facts', claims, f'facts, each with who says it and a status: {C["by_status"]["confirmed"]} confirmed', 'claims/index.html'),
+        ('Sections', proj, 'versioned sections and briefings built from those facts', 'versions/index.html'),
+        ('Readers', len(PERSONAS), 'kinds of reader, each with a briefing', 'start/index.html'),
+    ]
+    mx = max(n for _, n, _, _ in stages)
+    funnel = ''.join(f'<a class="fn" href="../{h}"><span class="fl">{E(l)}</span><span class="fb"><i style="width:{max(4, round(100 * n / mx))}%"></i></span><b>{n}</b><span class="ft">{E(t)}</span></a>' for l, n, t, h in stages)
+    facts = [s for s in LEDGER['sections'].values() if s['kind'] == 'fact']
+    order = ['confirmed', 'reported', 'disputed', 'contradicted', 'unverified']
+    bars = ''
+    for r in RELEASES:
+        cnt = Counter()
+        for s in facts:
+            live = [v for v in s['versions'] if [x['version'] for x in RELEASES].index(v['site']) <= [x['version'] for x in RELEASES].index(r['version'])]
+            if live:
+                cnt[fact_field(live[-1]['text'], 'Status')] += 1
+        total = sum(cnt.values())
+        segs = ''.join(f'<i class="sb sb-{k}" style="flex:{cnt[k]}" title="{cnt[k]} {k}"></i>' for k in order if cnt[k])
+        bars += f'<div class="sbr"><span class="sbl">v{E(r["version"])}</span><span class="sbb">{segs}</span><b>{total}</b></div>'
+    body = f'''
+<p class="kicker">The evidence &middot; the pipeline</p>
+<h1>The fact pipeline: from a web page to a reader</h1>
+<p class="lead">Every fact on this site has travelled the same path: a source is found, saved and fingerprinted, read, cited by a fact with a status, built into sections, and selected for the readers it matters to. Each bar is a count at that stage, as of this release; each links to the stage itself.</p>
+<div class="funnel">{funnel}</div>
+{section("status", "The facts by status, release by release", f'<div class="sbars">{bars}</div>' + status_legend(), "How many facts the site carried in each release and how far each could be trusted. A fact that moves from reported to confirmed is a second primary source found; one that moves the other way is a correction.")}
+{section("verify", "Verification: what runs and what does not", """<ul class="howlist">
+<li><b>Runs on every build:</b> every fact cites only sources that exist in the vault's manifest; every link resolves; every section's text is hashed and versioned; the site is byte-identical when rebuilt.</li>
+<li><b>Runs when an agent writes a fact:</b> the status word is chosen from the sources it cites, and a fact never gets a better word than its sources give it.</li>
+<li><b>Not yet run:</b> an independent verifier that re-reads every fact against the saved text of its sources, and a second model reading the vault. Both are on the list; neither has happened, and this line will change when they do.</li>
+</ul>""")}
+{section("each", "Every fact has its own timeline", '<p>Each fact has a page of its own: when each of its sources was published, when it was saved, when it entered this site and every change of wording or status since, the sources it rests on as a graph, and the briefings it appears in. Start from <a href="../claims/index.html">every claim</a> and follow the timeline link on any row.</p>')}
+'''
+    page('pipeline/index.html', 'The fact pipeline: from a web page to a reader', 'How a source becomes a fact and a fact reaches a reader on this site: found, saved, read, cited, given a status, built into versioned sections and selected per reader, with counts at every stage and the facts by status in every release.', body, kind='free', topics='provenance pipeline verification')
+
+def build_interview():
+    iv = D['interview']
+    qa = ''.join(f'<div class="iq" id="q{i + 1}"><h3>{E(x["q"])}</h3><blockquote><p>{E(x["a"])}</p><footer>{E(x["from"])}</footer></blockquote></div>' for i, x in enumerate(iv['qa']))
+    pending = ''.join(f'<li>{E(q)}</li>' for q in iv['pending'])
+    body = f'''
+<p class="kicker">About &middot; interview</p>
+<h1>{E(iv["title"])}</h1>
+<p class="lead">{E(iv["intro"])}</p>
+<p class="caveat">{E(iv["method"])}</p>
+{qa}
+{section("pending", "Not yet answered", f'<p>The questions for the next round, in the editor\'s own time:</p><ul>{pending}</ul>')}
+'''
+    page('interview/index.html', iv['title'], iv['description'], body, kind='free', topics='interview editor')
+
+def build_feed():
+    items = ''
+    for r in reversed(RELEASES):
+        u = f'{BASE_URL}/whatsnew/index.html#v{r["version"]}'
+        items += (f'<entry><title>{E("v" + r["version"] + ": " + r["title"][:140])}</title><id>{u}</id><link href="{u}"/>'
+                  f'<updated>{r["date"]}T00:00:00Z</updated><summary>{E(r["title"] + (" " + r["summary"] if r.get("summary") else ""))}</summary></entry>\n')
+    updated = RELEASES[-1]['date'] + 'T00:00:00Z'
+    write('feed.xml', f'''<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>{E(SITE_NAME)}: what's new</title>
+<subtitle>{E(STORY["description"])}</subtitle>
+<link href="{BASE_URL}/feed.xml" rel="self"/>
+<link href="{BASE_URL}/"/>
+<id>{BASE_URL}/</id>
+<updated>{updated}</updated>
+<author><name>Dinis Cruz</name></author>
+{items}</feed>
+''')
+
+def page_lastmod(path):
+    sec = LEDGER['sections'].get(section_id(path))
+    if sec and sec['versions']:
+        return sec['versions'][-1]['date']
+    if path.startswith('facts/'):
+        s = LEDGER['sections'].get('fact-' + path.split('/')[1])
+        if s: return s['versions'][-1]['date']
+    return RELEASES[-1]['date']
+
+def build_seo():
+    urls = []
+    for p, _, _, kind in PAGES:
+        if p.startswith('account/top') or p == 'account/topped-up.html':
+            continue
+        pr = '1.0' if p == 'index.html' else '0.8' if p.count('/') == 1 and not p.startswith(('versions/', 'admin/', 'account/')) else '0.5'
+        urls.append(f'<url><loc>{BASE_URL}/{p}</loc><lastmod>{page_lastmod(p)}</lastmod><priority>{pr}</priority></url>')
+    write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n')
+    write('robots.txt', f'# {SITE_NAME}. Everything here is public; agents are welcome, and llms.txt lists the markdown twins.\nUser-agent: *\nAllow: /\nDisallow: /account/top-up.html\nDisallow: /account/topped-up.html\n\nSitemap: {BASE_URL}/sitemap.xml\n')
 
 
 if __name__ == '__main__':

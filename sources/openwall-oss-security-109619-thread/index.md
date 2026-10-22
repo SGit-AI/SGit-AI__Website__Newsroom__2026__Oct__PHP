@@ -30,9 +30,9 @@ raw/ curl copies of four replies. Fediverse report (fedi.katze.sh/@elise) that t
 
 | Claim | Who says it | Status | Primary | Sources |
 |---|---|---|---|---|
-| The 8.5.12 fix may be incomplete, or there is a third, different bugPer a Matrix channel, Canonical asked PHP and 'was told that it's unrelated and not a real issue'. Second-hand. Nothing from PHP on the list at capture. | Fediverse posts relayed to oss-security by Aaron Rainbolt and Yves-Alexis Perez | unverified | 0/1 | [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) |
-| All PHP versions from 5 onwards are affected by at least one of the flawsThe CVE records list only 8.2 to 8.5 with defaultStatus 'unaffected'. php.net published source backports for 7.4, 8.0 and 8.1, which implies they are affected. A scanner that trusts the CVE record will miss 7.4 to 8.1. | NCSC-NL; Wiz ('>= 5.4'); CERT-FR (5.x, 6.x, 7.x, 8.0, 8.1) | disputed | 3/4 | [NCSC-NL](../../sources/ncsc-nl-advisories/index.html) [Wiz on X](../../sources/x-wiz-io-php2shell/index.html) [CERT-FR](../../sources/certfr-2026-ale-014/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) |
-| Patching the demonstrated paths does not make the bailout mechanism safe; more paths should be expectedA position, from a vendor; consistent with the Fediverse report of a third bug. | Fastly | reported | 1/2 | [Fastly](../../sources/fastly-blog-php2shell/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) |
+| The 8.5.12 fix may be incomplete, or there is a third, different bugPer a Matrix channel, Canonical asked PHP and 'was told that it's unrelated and not a real issue'. Second-hand. Nothing from PHP on the list at capture. [fact timeline →](../../facts/fix-incomplete/index.html) | Fediverse posts relayed to oss-security by Aaron Rainbolt and Yves-Alexis Perez | unverified | 0/1 | [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) |
+| All PHP versions from 5 onwards are affected by at least one of the flawsThe CVE records list only 8.2 to 8.5 with defaultStatus 'unaffected'. php.net published source backports for 7.4, 8.0 and 8.1, which implies they are affected. A scanner that trusts the CVE record will miss 7.4 to 8.1. [fact timeline →](../../facts/versions-old/index.html) | NCSC-NL; Wiz ('>= 5.4'); CERT-FR (5.x, 6.x, 7.x, 8.0, 8.1) | disputed | 3/4 | [NCSC-NL](../../sources/ncsc-nl-advisories/index.html) [Wiz on X](../../sources/x-wiz-io-php2shell/index.html) [CERT-FR](../../sources/certfr-2026-ale-014/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) |
+| Patching the demonstrated paths does not make the bailout mechanism safe; more paths should be expectedA position, from a vendor; consistent with the Fediverse report of a third bug. [fact timeline →](../../facts/more-paths/index.html) | Fastly | reported | 1/2 | [Fastly](../../sources/fastly-blog-php2shell/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html) |
 
 ## Events that cite it
 
@@ -54,4 +54,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.3.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/openwall-oss-security-109619-thread/index.html
+site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/openwall-oss-security-109619-thread/index.html
