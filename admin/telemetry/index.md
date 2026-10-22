@@ -61,4 +61,4 @@ Mechanics: `assets/telemetry.js` sends; `admin/build/telemetry_drain.py`, run by
 
 
 ---
-site v0.2.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html
+site v0.2.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html

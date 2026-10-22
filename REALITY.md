@@ -26,5 +26,10 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - The board, roles, briefs, the evidence vault's public read key with a browser link, and the telemetry page, all from `data/admin.json`, `data/telemetry.json` and `admin/content/briefs/`.
 - `assets/telemetry.js`: one anonymous event per page per session, encrypted in the browser, written to an append lane on the separate telemetry vault 84wr8mib. `admin/build/telemetry_drain.py` drains it and writes counts to `data/telemetry-report.json`. Tested end to end from the CLI before shipping.
 
+## Articles and layers (v0.2.6)
+- `admin/content/articles/`: signed, dated articles, one markdown file each, with front matter naming the site version, vault commit and capture time written against. Two exist: the journalist's "Where php2shell stands" and the historian's "php2shell in perspective", both against v0.2.5 and vault commit 200d08971937. Rendered at `/articles/`; citations are `[[slug]]`, checked by the gate.
+- `data/layers.json`: every data file classified as evidence, derived, authored or site; rendered at `/layers/`; the gate fails on an unclassified data file.
+- The journalist and historian roles are filled by agents (`claude-journalist`, `claude-historian`); the front page and navigation review is in `admin/content/briefs/`.
+
 ## Not built
 - A verifier agent run; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.

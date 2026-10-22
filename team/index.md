@@ -1,6 +1,6 @@
 # The team: the editor, the pipeline and the agents
 
-Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the six audiences.
+Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the 12 audiences.
 
 # The team: one editor, a pipeline, and the agents on it
 
@@ -88,13 +88,21 @@ The site is built and run by one person and a set of software agents, and this p
 
 **The mistake behind the rule.** None yet.
 
+### Journalist `journalist`
+
+**Beat.** dated state-of-affairs articles: what is settled, where the alarm and the evidence part company, what would change the story
+
+**The rule it enforces.** An article is written against a stated site version and vault commit and is not revised; when the evidence moves, a new article says so. Every factual sentence carries a captured source.
+
+**The mistake behind the rule.** The first draft said the BBC offline framing held for two of the four agencies it named; checked against the agencies data it holds for one, and the draft was corrected before release.
+
 ### Historian `historian`
 
-**Beat.** the release history, the corrections file, the reality file
+**Beat.** dated essays that set the story against earlier vulnerabilities and the KEV catalog; the release history, the corrections file, the reality file
 
-**The rule it enforces.** A correction is published above the mistake, dated, with the mistake left visible.
+**The rule it enforces.** Say how early you are writing. A sentence from the record carries its source; a reading is offered as a reading. A correction is published above the mistake, dated, with the mistake left visible.
 
-**The mistake behind the rule.** None yet.
+**The mistake behind the rule.** None yet. The first essay, at v0.2.5, names the evidence that would overturn its own readings.
 
 ## The audiences
 
@@ -130,4 +138,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.2.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.2.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html

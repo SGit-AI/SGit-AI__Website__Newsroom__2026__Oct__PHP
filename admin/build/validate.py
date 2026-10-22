@@ -82,6 +82,25 @@ for n in ('affected', 'roles', 'versions', 'billing', 'vault', 'software', 'grap
 aff = load('affected') or {}
 for s in aff.get('ranges_sources', []) + aff.get('mitigations_sources', []) + sum([x.get('sources', []) for x in aff.get('sapis', [])], []):
     if s not in slugs: fails.append(f'data/affected.json cites unknown slug {s}')
+# 4b. articles: front matter present, every [[slug]] in the manifest
+adir = os.path.join(ROOT, 'admin', 'content', 'articles')
+for fn in sorted(os.listdir(adir)) if os.path.isdir(adir) else []:
+    if not fn.endswith('.md'): continue
+    t = open(os.path.join(adir, fn), encoding='utf-8').read()
+    fm = re.match(r'^---\n(.*?)\n---\n', t, flags=re.S)
+    for k in ('slug', 'title', 'dek', 'role', 'author', 'written', 'as_of_version', 'vault_commit', 'data_as_of'):
+        if not fm or not re.search(r'^' + k + r':\s*\S', fm.group(1), flags=re.M): fails.append(f'articles/{fn}: front matter has no {k}')
+    for g in re.findall(r'\[\[([^\]]+)\]\]', t):
+        for s in g.split(','):
+            if s.strip() not in slugs: fails.append(f'articles/{fn}: cites unknown slug {s.strip()}')
+# 4c. layers: every data file is classified exactly once
+layers = load('layers') or {}
+classified = [f['path'] for f in layers.get('files', [])]
+ids = {l['id'] for l in layers.get('layers', [])}
+for f in layers.get('files', []):
+    if f.get('layer') not in ids: fails.append(f'data/layers.json: {f["path"]} has layer {f.get("layer")!r}')
+for fn in sorted(os.listdir(os.path.join(ROOT, 'data'))):
+    if fn.endswith('.json') and classified.count('data/' + fn) != 1: fails.append(f'data/{fn}: listed {classified.count("data/" + fn)} times in data/layers.json, not once')
 # 5. determinism: rebuild into a temp copy and compare hashes
 def tree_hash():
     h = hashlib.sha256()

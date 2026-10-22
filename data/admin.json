@@ -8,7 +8,8 @@
   {"id": "verifier", "name": "Verifier", "who": "unfilled", "owns": "re-reading every claim against its capture text and downgrading what the capture does not carry", "rules": ["A quote that is not in the captured text is not a quote."]},
   {"id": "briefing-writer", "name": "Briefing writer", "who": "dev@php.newsroom until filled", "owns": "one page per audience from the same claims", "rules": ["A briefing adds no claim."]},
   {"id": "cartographer", "name": "Cartographer", "who": "unfilled", "owns": "the graph: nodes, typed edges, the per-source and per-party pages, the next layer down", "rules": ["A node is just a node; an edge without a source is deleted."]},
-  {"id": "historian", "name": "Historian", "who": "dev@php.newsroom until filled", "owns": "the release history, the corrections file, the reality file", "rules": ["A correction is published above the mistake, dated, with the mistake left visible."]}
+  {"id": "journalist", "name": "Journalist", "who": "claude-journalist", "owns": "dated state-of-affairs articles (admin/content/articles/*__journalist__*.md); the review of the front page and navigation", "rules": ["An article names the site version, vault commit and capture time it was written against, and is not revised afterwards.", "Every factual sentence cites a captured source with [[slug]]; the gate refuses an unknown one."]},
+  {"id": "historian", "name": "Historian", "who": "claude-historian", "owns": "dated essays putting the story in perspective (admin/content/articles/*__historian__*.md); the release history, the corrections file, the reality file", "rules": ["Say how early you are writing; mark a reading as a reading.", "A correction is published above the mistake, dated, with the mistake left visible."]}
  ],
  "board": [
   {"id": "001", "title": "Pages deploy workflow and breadcrumbs up to the month, the year and the newsroom", "status": "done", "owner": "dev", "version": "0.2.2", "note": "The first run failed because admin/build/ was ignored by the repository's Python .gitignore template."},
@@ -22,7 +23,12 @@
   {"id": "009", "title": "A second model reads the vault and writes its own claims file; disagreements become disputed rows", "status": "open", "owner": "editor"},
   {"id": "010", "title": "Re-check KEV and oss-security daily; record the day php2shell enters KEV if it does", "status": "open", "owner": "collector-primary"},
   {"id": "011", "title": "Resolve the rights question on publishing the evidence vault's read key: third-party pages are held verbatim", "status": "open", "owner": "editor", "note": "The read key is published on the vault page at the editor's request; the editor will check the vault for anything confidential."},
-  {"id": "012", "title": "Reconcile the fix commit hash rjmendez names (82f8f31b16a) with 3584a98bd", "status": "open", "owner": "collector-primary"}
+  {"id": "012", "title": "Reconcile the fix commit hash rjmendez names (82f8f31b16a) with 3584a98bd", "status": "open", "owner": "collector-primary"},
+  {"id": "013", "title": "Articles layer and the evidence, derived, authored split: data/layers.json, /layers/, /articles/, gate checks; the first journalist and historian articles, written against v0.2.5", "status": "done", "owner": "journalist", "version": "0.2.6"},
+  {"id": "014", "title": "Front page: a 'start here' row above the numbers (If you run PHP, the two flaws, exploitation, impact); today the playbook is not linked from the front page body", "status": "open", "owner": "journalist", "note": "From the front page and navigation review, 22 October."},
+  {"id": "015", "title": "Front page: replace 'The last 48 hours' with 'Since the last release', drawn from the timeline rows added since the previous version, and drop this site's own events from it", "status": "open", "owner": "journalist"},
+  {"id": "016", "title": "Navigation: split About into About (method, team, brief, corrections) and Engineering (admin, board, roles, briefs, telemetry, releases); move billing and the reading account to the bar's balance", "status": "open", "owner": "dev"},
+  {"id": "017", "title": "A layer badge (evidence, derived, authored) in every page's kicker, from data/layers.json, so a reader always knows what kind of page they are on", "status": "open", "owner": "dev"}
  ],
  "evidence_vault": {
   "id": "3ytzxm3g",

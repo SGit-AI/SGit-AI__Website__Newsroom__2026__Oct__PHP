@@ -12,6 +12,10 @@ On 21 October 2026 at 14:00 UTC the PHP project released fixes for two critical 
 
 **Developing, and agent-produced.** Software agents assemble this site from sources captured into a private evidence vault; the editor is Dinis Cruz. Nothing here is advice on what to patch in your environment. For that, read the [php.net advisory](https://www.php.net/archive/2026.php#2026-10-21-5) and your national cyber-security agency. Where this site says a thing is *confirmed*, it means two or more primary sources agree, or the fact was counted from a captured file; *reported* means one party says so; *disputed* means the sources disagree; *unverified* means even the reporting outlet could not check it.
 
+## Articles, signed and dated
+Where php2shell stands: many sites dark, millions of attempts, no confirmed breachJournalist · 2026-10-22 · written against v0.2.5php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proofHistorian · 2026-10-22 · written against v0.2.5
+[All articles →](articles/index.html) The pages of this site are rebuilt from the vault on every release; an article is written once, against the evidence as it stood, and says which version that was.
+
 ## Six numbers, and what each one measures
 70%the Internetunverifiedalmost 70%websitesreportedabout 30 millionwebsitesreported2,608,039internet-facing hosts running PHPreportedabout 6,000potentially affected resources in Latvia, a few hundred in the public sectorreported674software entries in the NCSC-NL php2shell inventoryconfirmed
 The figures in circulation range from 2.6 million hosts to 70% of the Internet. They are not contradictory so much as incommensurable: each measures a different thing. [The numbers page](numbers/index.html) says what each one counts, who said it, and whether anyone has checked it.
@@ -55,7 +59,7 @@ Open questions, stated rather than papered over. Each one names what would close
 
 ## Read it for your job
 
-Six briefings from the same claims. None adds a claim; each selects, orders and keeps every source.
+12 briefings from the same claims. None adds a claim; each selects, orders and keeps every source.
 Board member or executiveAre we exposed, what is it costing us, and who owns the decision to pull a system?Security leadWhat do I patch first, what do I watch for, and when do I take something offline?PHP or platform engineerWhich versions, which SAPIs, which settings, which commands?JournalistWhich numbers hold up, who said what first, and what is still unverified?Security researcherWhat are the bug classes, what was demonstrated, and what is still open?Analyst or advisorHow did coordinated disclosure fail, and what does AI-assisted discovery change?CISOWhat is our exposure, what is our evidence we were not hit, and what do I tell the board?CTOWhat does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?CFOWhat is the financial exposure, what does downtime cost against breach cost, and will insurance respond?Head of AppSecWhich of our applications are in scope, which settings matter, and what do we add to the pipeline?DeveloperIs my code the problem, what do I change, and how do I check the box I deployed to?Media and communications teamWhat can we say that is true, what should we not say, and what will we be asked?
 
 ## How this site works
@@ -74,4 +78,4 @@ The site is a deterministic function of the vault and a version number: the same
 
 
 ---
-site v0.2.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.2.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html

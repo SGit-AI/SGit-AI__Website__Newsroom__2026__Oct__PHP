@@ -22,7 +22,7 @@ def load(name):
 VERSION = open(os.path.join(ROOT, 'VERSION'), encoding='utf-8').read().strip()
 D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 'affected', 'exploitation',
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
-                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence', 'admin', 'telemetry', 'review')}
+                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence', 'admin', 'telemetry', 'review', 'layers')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
@@ -30,6 +30,27 @@ if D['vault'].get('latest_capture'):
     STORY['data_as_of'] = D['vault']['latest_capture']  # the time of the latest capture in the vault, never a clock
 
 E = html.escape
+
+ARTICLES_DIR = os.path.join(ROOT, 'admin', 'content', 'articles')
+
+def load_articles():
+    """Every article in admin/content/articles/: a front matter block of key: value lines, then markdown. Newest first."""
+    out = []
+    for fn in sorted(os.listdir(ARTICLES_DIR)) if os.path.isdir(ARTICLES_DIR) else []:
+        if not fn.endswith('.md'):
+            continue
+        text = open(os.path.join(ARTICLES_DIR, fn), encoding='utf-8').read()
+        m = re.match(r'^---\n(.*?)\n---\n(.*)$', text, flags=re.S)
+        if not m:
+            sys.exit(f'article {fn}: no front matter')
+        meta = dict(re.match(r'^(\w+):\s*(.*)$', l).groups() for l in m.group(1).splitlines() if l.strip())
+        meta['file'], meta['text'] = fn, m.group(2)
+        meta['cites'] = list(OrderedDict.fromkeys(x.strip() for g in re.findall(r'\[\[([^\]]+)\]\]', meta['text']) for x in g.split(',')))
+        out.append(meta)
+    return sorted(out, key=lambda a: (a['written'], a['file']), reverse=True)
+
+ARTICLES = load_articles()
+AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian')])
 
 # ----------------------------------------------------------------------------- small helpers
 
@@ -138,14 +159,16 @@ NAV = [
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP')]),
-    ('The evidence', [('claims/index.html', 'Every claim'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
-                      ('affected/index.html', 'Affected systems'), ('affected/software.html', 'Software inventory'), ('sources/index.html', 'Every source'),
-                      ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph')]),
+    ('Articles', [('articles/index.html', 'All articles, dated')] + [(f'articles/{a["slug"]}/index.html', f'{AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0]}') for a in ARTICLES]),
+    ('The analysis', [('claims/index.html', 'Every claim'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
+                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph')]),
+    ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
+                      ('layers/index.html', 'Evidence, derived, authored')]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
     ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('admin/index.html', 'Admin & engineering'),
-               ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'), ('admin/briefs/index.html', 'Briefs'), ('admin/vault/index.html', 'The vault, opened'), ('admin/telemetry/index.html', 'Who reads this site')]),
+               ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'), ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site')]),
 ]
 
 PAGES = []  # (path, title, description) in order, for llms.txt
@@ -312,11 +335,12 @@ def build_index():
   <div class="stats">{stats}</div>
   <p class="caveat">{s["caveat_html"]}</p>
 </header>
+{articles_row()}
 {section("numbers", "Six numbers, and what each one measures", f'<div class="nums">{numrow}</div><p>The figures in circulation range from 2.6 million hosts to 70% of the Internet. They are not contradictory so much as incommensurable: each measures a different thing. <a href="numbers/index.html">The numbers page</a> says what each one counts, who said it, and whether anyone has checked it.</p>')}
 {section("known", "What is established", f'<ul class="known">{known}</ul>')}
 {section("open", "What is not", f'<ul class="open">{openq}</ul>', "Open questions, stated rather than papered over. Each one names what would close it.")}
 {section("latest", "The last 48 hours", table(["When (UTC)", "What", "Source"], latest_rows, "tl") + '<p><a href="timeline/index.html">The whole timeline &rarr;</a> runs from the 2024 audit to the latest capture, with every time stated as its source states it and every conversion marked.</p>')}
-{section("doors", "Read it for your job", f'<div class="doors">{doors}</div>', "Six briefings from the same claims. None adds a claim; each selects, orders and keeps every source.")}
+{section("doors", "Read it for your job", f'<div class="doors">{doors}</div>', f"{len(D['roles']['audiences'])} briefings from the same claims. None adds a claim; each selects, orders and keeps every source.")}
 {section("how", "How this site works", '''<div class="how">
 <div><h3>Capture, don't paraphrase</h3><p>Every source is captured into a private, encrypted vault: the page as served, as rendered, its text, a screenshot and its headers, each file hashed at capture time. Captures are only ever added, so a page that changes leaves a series. The captures are third-party pages and are not republished; <a href="sources/index.html">their hashes are</a>.</p></div>
 <div><h3>Claims carry a status</h3><p>Five words, each defined: confirmed, reported, disputed, contradicted, unverified. A claim is a row pointing at the sources that give it that status, and the page never upgrades a claim its sources do not support.</p></div>
@@ -699,7 +723,7 @@ def build_team():
 <li><b>Verify live.</b> A release is done when the live site serves the version, not when the push succeeds.</li>
 </ul>''')}
 '''
-    page('team/index.html', 'The team: the editor, the pipeline and the agents', 'Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the six audiences.', body, kind='free', topics='team agents')
+    page('team/index.html', 'The team: the editor, the pipeline and the agents', 'Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the ' + str(len(r['audiences'])) + ' audiences.', body, kind='free', topics='team agents')
 
 def build_billing():
     b = D['billing']
@@ -883,7 +907,7 @@ def build_llms():
               f'- [timeline.json]({BASE_URL}/data/timeline.json): every dated event', f'- [numbers.json]({BASE_URL}/data/numbers.json): the scale figures and what each measures',
               f'- [agencies.json]({BASE_URL}/data/agencies.json): the agencies\' stances', f'- [affected.json]({BASE_URL}/data/affected.json): versions, SAPIs, mitigations',
               f'- [software.json]({BASE_URL}/data/software.json): the NCSC-NL inventory, parsed', f'- [exploitation.json]({BASE_URL}/data/exploitation.json): the signals',
-              f'- [graph.json]({BASE_URL}/data/graph.json): nodes and citation edges', f'- [vault.json]({BASE_URL}/data/vault.json): the vault\'s head, counts and agents',
+              f'- [graph.json]({BASE_URL}/data/graph.json): nodes and citation edges', f'- [layers.json]({BASE_URL}/data/layers.json): which file is evidence, derived, authored or site', f'- [vault.json]({BASE_URL}/data/vault.json): the vault\'s head, counts and agents',
               f'- [billing.json]({BASE_URL}/data/billing.json): the meter configuration and the designed model', f'- [versions.json]({BASE_URL}/data/versions.json): release history', '',
               '## Status words', *[f'- {k}: {v}' for k, v in STATUS_WORDS.items()], '',
               f'Newsroom section on the same story: {NEWSROOM}', f'Repository: {REPO_URL}', 'Licence: content CC BY 4.0, code Apache-2.0.', '']
@@ -912,7 +936,7 @@ def main():
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_briefings(); build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
-    build_admin_section()
+    build_admin_section(); build_articles(); build_layers()
     build_llms(); build_sitejs()
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
@@ -1285,6 +1309,108 @@ def build_review():
 <script src="../../assets/review-nav.js" defer></script>
 '''
     page('review/ui/index.html', 'Walk the graph: the fix and the code', 'A navigator over the php2shell review graph: the fix, the flaws it closes, and the files and functions it changed, each a link.', body, kind='evidence', topics='php2shell code review navigator')
+
+
+# ----------------------------------------------------------------------------- articles and layers (v0.2.6)
+
+def article_inline(s, depth):
+    """Inline markdown for articles: [[slug, slug]] citations, [text](/site/path) links, bold, italic."""
+    s = E(s, quote=False)
+    s = re.sub(r'\[\[([^\]]+)\]\]', lambda m: '<span class="refs">' + src_links([x.strip() for x in m.group(1).split(',')], depth) + '</span>', s)
+    s = re.sub(r'\[([^\]]+)\]\(/([^)]*)\)', lambda m: f'<a href="{"../" * depth}{m.group(2)}">{m.group(1)}</a>', s)
+    s = re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)', r'<a href="\2" rel="noopener">\1</a>', s)
+    s = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', s)
+    s = re.sub(r'\*([^*]+)\*', r'<i>\1</i>', s)
+    return s
+
+def render_article(text, depth):
+    out, lst = [], None
+    for line in text.splitlines():
+        m = re.match(r'^(#{2,4})\s+(.*)$', line)
+        item = re.match(r'^(?:-|\d+\.)\s+(.*)$', line)
+        kind = ('ol' if re.match(r'^\d+\.', line) else 'ul') if item else None
+        if lst and kind != lst:
+            out.append(f'</{lst}>'); lst = None
+        if m:
+            out.append(f'<h{len(m.group(1))}>{article_inline(m.group(2), depth)}</h{len(m.group(1))}>')
+        elif item:
+            if not lst:
+                out.append(f'<{kind}>'); lst = kind
+            out.append(f'<li>{article_inline(item.group(1), depth)}</li>')
+        elif line.strip():
+            out.append(f'<p>{article_inline(line, depth)}</p>')
+    if lst:
+        out.append(f'</{lst}>')
+    return '\n'.join(out)
+
+def article_stamp(a):
+    return f'site v{E(a["as_of_version"])} &middot; vault commit <code>{E(a["vault_commit"])}</code> &middot; data as of {E(a["data_as_of"])}'
+
+def articles_row():
+    if not ARTICLES:
+        return ''
+    cards = ''.join(f'<a class="door" href="articles/{E(a["slug"])}/index.html"><b>{E(a["title"])}</b><span>{E(AUTHOR_ROLES.get(a["role"], a["role"]))} &middot; {E(a["written"])} &middot; written against v{E(a["as_of_version"])}</span></a>' for a in ARTICLES[:4])
+    return section('articles', 'Articles, signed and dated', f'<div class="doors">{cards}</div><p><a href="articles/index.html">All articles &rarr;</a> The pages of this site are rebuilt from the vault on every release; an article is written once, against the evidence as it stood, and says which version that was.</p>')
+
+def build_articles():
+    for a in ARTICLES:
+        role = AUTHOR_ROLES.get(a['role'], a['role'])
+        moved = '' if a['data_as_of'] >= STORY['data_as_of'] else f'<p class="caveat"><b>The evidence has moved since this was written.</b> This article was written against data as of {E(a["data_as_of"])}; the site now has data as of {E(STORY["data_as_of"])}. The <a href="../../index.html">front page</a> and <a href="../../claims/index.html">every claim</a> are current; this article is kept as written.</p>'
+        others = ''.join(f'<li><a href="../{E(b["slug"])}/index.html">{E(b["title"])}</a> <span class="small">{E(AUTHOR_ROLES.get(b["role"], b["role"]))}, {E(b["written"])}</span></li>' for b in ARTICLES if b is not a)
+        cited = section("cited", "Sources cited", f'<p>{len(a["cites"])} captured sources, in the order this article first cites them. Each opens on its page with its capture times and hashes.</p><p class="refs">{src_links(a["cites"], 2)}</p>')
+        more = section("more", "Other articles", f'<ul>{others}</ul>') if others else ''
+        body = f"""
+<article class="piece">
+<p class="kicker">Article &middot; {E(role)} &middot; {E(a["written"])}</p>
+<h1>{E(a["title"])}</h1>
+<p class="lead">{E(a["dek"])}</p>
+<p class="kv"><b>By</b> the {E(role.lower())} role, agent <code>{E(a["author"])}</code> &middot; <b>written against</b> {article_stamp(a)}</p>
+{moved}
+{render_article(a["text"], 2)}
+</article>
+{cited}
+{more}
+<p class="small">Source file: <code>admin/content/articles/{E(a["file"])}</code>, in the authored layer; see <a href="../../layers/index.html">evidence, derived, authored</a>.</p>
+"""
+        page(f'articles/{a["slug"]}/index.html', a['title'], a['dek'], body, kind='article', date=a['written'], topics=f'php2shell {a["role"]}', ld_type='NewsArticle')
+    groups = ''
+    for rid, rname in AUTHOR_ROLES.items():
+        rows = [a for a in ARTICLES if a['role'] == rid]
+        if rows:
+            groups += section('r-' + rid, rname, ''.join(f'<article class="rel"><h3><a href="{E(a["slug"])}/index.html">{E(a["title"])}</a></h3><p>{E(a["dek"])}</p><p class="small">{E(a["written"])} &middot; <code>{E(a["author"])}</code> &middot; {article_stamp(a)} &middot; {len(a["cites"])} sources cited</p></article>' for a in rows))
+    body = f"""
+<h1>Articles</h1>
+<p class="lead">Signed, dated writing about the story by the agent roles on this site. Everything else here is rebuilt from the evidence on every release; an article is not. It is written once, against the evidence as it stood at a stated site version and vault commit, and kept as written. When the evidence moves, a new article says so. Every citation in an article is a captured source, and the gate refuses one that is not in the manifest.</p>
+<p>Who writes here: the <b>journalist</b> reports the state of affairs at a point in time; the <b>historian</b> sets it against what came before and says what the record still needs. More roles will join; the list is on <a href="../team/index.html">the team</a>.</p>
+{groups}
+"""
+    page('articles/index.html', 'Articles: signed, dated, written against the evidence', f'{len(ARTICLES)} articles about php2shell by the journalist and historian roles, each pinned to the site version and vault commit it was written against.', body, kind='free')
+
+def build_layers():
+    L = D['layers']
+    names = {l['id']: l['name'] for l in L['layers']}
+    def link(f):
+        u = f.get('used_on')
+        return f'<a href="../{E(u)}">{E(u)}</a>' if u else ''
+    out = ''
+    for l in L['layers']:
+        rows = [[f'<code>{E(f["path"])}</code>', E(f['by']), E(f['from']), link(f)] for f in L['files'] if f['layer'] == l['id']]
+        out += section('l-' + l['id'], l['name'], table(['File', 'Made by', 'From', 'Shown on'], rows), f'{E(l["what"])} <b>Rule.</b> {E(l["rule"])}')
+    counts = Counter(f['layer'] for f in L['files'])
+    tally = ' &middot; '.join(f'<b>{counts[l["id"]]}</b> {E(names[l["id"]].lower())}' for l in L['layers'])
+    body = f"""
+<h1>Evidence, derived, authored</h1>
+<p class="lead">This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. {E(L["note"])}</p>
+<p class="kv">{tally}</p>
+<ul>
+<li><b>Evidence</b> answers <i>what was captured?</i> The pages that show it are <a href="../sources/index.html">every source</a>, <a href="../affected/software.html">the software inventory</a> and <a href="../admin/vault/index.html">the vault, opened</a>.</li>
+<li><b>Derived</b> answers <i>what does the evidence say?</i> The story pages and the analysis (<a href="../claims/index.html">claims</a>, <a href="../numbers/index.html">numbers</a>, <a href="../agencies/index.html">agencies</a>) are built from it, and change when it changes.</li>
+<li><b>Authored</b> answers <i>what did someone conclude, and when?</i> <a href="../articles/index.html">Articles</a> and <a href="../brief/index.html">the brief</a> are signed and dated.</li>
+</ul>
+{out}
+<p>The classification is <a href="../data/layers.json">data/layers.json</a>; the gate fails a release if a file in <code>data/</code> is missing from it.</p>
+"""
+    page('layers/index.html', 'Evidence, derived, authored: what each file is', 'Every file this site is built from, sorted into evidence captured from the vault, transformations derived by agents, signed and dated articles, and the files that run the site.', body, kind='free')
 
 
 if __name__ == '__main__':

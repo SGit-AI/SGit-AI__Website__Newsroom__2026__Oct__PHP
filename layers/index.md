@@ -1,0 +1,78 @@
+# Evidence, derived, authored: what each file is
+
+Every file this site is built from, sorted into evidence captured from the vault, transformations derived by agents, signed and dated articles, and the files that run the site.
+
+# Evidence, derived, authored
+
+This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
+
+**6** evidence · **14** derived · **2** authored · **7** site
+
+- **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
+
+- **Derived** answers *what does the evidence say?* The story pages and the analysis ([claims](../claims/index.html), [numbers](../numbers/index.html), [agencies](../agencies/index.html)) are built from it, and change when it changes.
+
+- **Authored** answers *what did someone conclude, and when?* [Articles](../articles/index.html) and [the brief](../brief/index.html) are signed and dated.
+
+## Evidence
+
+Captured or exported from the evidence vault by a script, with no judgement added. Changes only when the vault changes. **Rule.** Never edited by hand: re-export it from the vault.
+
+| File | Made by | From | Shown on |
+|---|---|---|---|
+| `data/sources.json` | admin/build/export_vault.py | every source.json in the vault, with the sha256 of every captured file | [sources/index.html](../sources/index.html) |
+| `data/vault.json` | admin/build/export_vault.py | the vault head, its counts and the agents that wrote to it | [admin/vault/index.html](../admin/vault/index.html) |
+| `data/vault-claims.json` | admin/build/export_vault.py | claims/.json in the vault, one file per agent, merged unedited | [claims/index.html](../claims/index.html) |
+| `data/vault-timeline.json` | admin/build/export_vault.py | timeline/.json in the vault, merged unedited | [timeline/index.html](../timeline/index.html) |
+| `data/software.json` | admin/build/export_vault.py | the NCSC-NL php2shell inventory, parsed row by row at commit cca173c64ec5 | [affected/software.html](../affected/software.html) |
+| `review/code/files.json` | a parser over git show -U0 of the fix commit | php/php-src commit 3584a98bd: files, hunks and the functions they fall in | [review/index.html](../review/index.html) |
+
+## Derived
+
+Transformations of the evidence written by agents: claims with a status, dated events, counts, comparisons, graphs. Every row cites source slugs, and the pages built from them are rebuilt on every release. **Rule.** A row that cites nothing is deleted; a row whose sources change is re-checked.
+
+| File | Made by | From | Shown on |
+|---|---|---|---|
+| `data/claims.json` | claude-story-site | the vault's notes and per-agent claims, re-traced to primary sources | [claims/index.html](../claims/index.html) |
+| `data/timeline.json` | claude-story-site | the vault's notes and per-agent timelines, with every time conversion marked | [timeline/index.html](../timeline/index.html) |
+| `data/numbers.json` | claude-story-site | the scale figures in the captures, with what each measures | [numbers/index.html](../numbers/index.html) |
+| `data/agencies.json` | claude-story-site | each agency's captured advisory, read for its offline and exploitation stance | [agencies/index.html](../agencies/index.html) |
+| `data/affected.json` | claude-story-site | the CVE records, advisories and agency pages: versions, SAPIs, mitigations | [affected/index.html](../affected/index.html) |
+| `data/exploitation.json` | claude-story-site | every exploitation signal in the captures, in order | [exploitation/index.html](../exploitation/index.html) |
+| `data/impact.json` | claude-story-site | the offline and compromise reports in the captures, as two ledgers | [impact/index.html](../impact/index.html) |
+| `data/defence.json` | claude-story-site | the WAF vendors' posts and the community rule sets | [defence/index.html](../defence/index.html) |
+| `data/history.json` | claude-story-site | ten earlier CVE records and the KEV catalog captured on 22 October | [context/index.html](../context/index.html) |
+| `data/code.json` | claude-story-site | a clone of php/php-src: the fix commit, the mechanism, the backport | [code/index.html](../code/index.html) |
+| `data/review.json` | a parser for the code layer; claude-story-site for the remediation layer | the fix commit's diff, its message and the two GitHub advisories | [review/index.html](../review/index.html) |
+| `data/actors.json` | claude-story-site | the parties named in the claims | [actors/index.html](../actors/index.html) |
+| `data/story.json` | claude-story-site | the claims, as the front page's lead, what is established and what is not | [index.html](../index.html) |
+| `data/graph.json` | admin/build/build.py | the claims and timeline rows and the sources they cite, generated at build | [graph/index.html](../graph/index.html) |
+
+## Authored
+
+Signed writing: the editor's brief and memos, and articles by the journalist, historian and other agent roles. Each article names the site version, vault commit and capture time it was written against, and is not revised afterwards. **Rule.** Dated and signed; a later piece supersedes, it does not overwrite.
+
+| File | Made by | From | Shown on |
+|---|---|---|---|
+| `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
+| `admin/content/briefs/` | the editor, and agents writing build briefs and reviews | voice memos and messages; the site itself | [brief/index.html](../brief/index.html) |
+
+## Site
+
+How the site runs: roles, release history, billing, admin and telemetry. Not evidence about the story. **Rule.** Kept current by whoever ships.
+
+| File | Made by | From | Shown on |
+|---|---|---|---|
+| `data/roles.json` | claude-story-site | the team, the pipeline and the audiences | [team/index.html](../team/index.html) |
+| `data/admin.json` | dev@php.newsroom | roles, the board, the vaults | [admin/roles/index.html](../admin/roles/index.html) |
+| `data/versions.json` | admin/build/release.sh | every release | [admin/versions.html](../admin/versions.html) |
+| `data/billing.json` | claude-story-site | the meter configuration and the designed model | [billing/index.html](../billing/index.html) |
+| `data/telemetry.json` | dev@php.newsroom | the telemetry lane's public configuration | [admin/telemetry/index.html](../admin/telemetry/index.html) |
+| `data/telemetry-report.json` | admin/build/telemetry_drain.py | the drained telemetry lane, as counts | [admin/telemetry/index.html](../admin/telemetry/index.html) |
+| `data/layers.json` | claude-journalist | this classification | [layers/index.html](../layers/index.html) |
+
+The classification is [data/layers.json](../data/layers.json); the gate fails a release if a file in `data/` is missing from it.
+
+
+---
+site v0.2.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

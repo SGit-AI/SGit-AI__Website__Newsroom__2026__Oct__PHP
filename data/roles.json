@@ -106,11 +106,18 @@
    "mistake": "None yet."
   },
   {
+   "id": "journalist",
+   "name": "Journalist",
+   "beat": "dated state-of-affairs articles: what is settled, where the alarm and the evidence part company, what would change the story",
+   "rule": "An article is written against a stated site version and vault commit and is not revised; when the evidence moves, a new article says so. Every factual sentence carries a captured source.",
+   "mistake": "The first draft said the BBC offline framing held for two of the four agencies it named; checked against the agencies data it holds for one, and the draft was corrected before release."
+  },
+  {
    "id": "historian",
    "name": "Historian",
-   "beat": "the release history, the corrections file, the reality file",
-   "rule": "A correction is published above the mistake, dated, with the mistake left visible.",
-   "mistake": "None yet."
+   "beat": "dated essays that set the story against earlier vulnerabilities and the KEV catalog; the release history, the corrections file, the reality file",
+   "rule": "Say how early you are writing. A sentence from the record carries its source; a reading is offered as a reading. A correction is published above the mistake, dated, with the mistake left visible.",
+   "mistake": "None yet. The first essay, at v0.2.5, names the evidence that would overturn its own readings."
   }
  ],
  "audiences": [

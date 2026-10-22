@@ -2,7 +2,7 @@
 
 > A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
 
-Site v0.2.5. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.2.6. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## The story
 - [Front page](https://php.oct.2026.newsroom.sgit.ai/index.md): A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
@@ -19,15 +19,24 @@ Site v0.2.5. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [In context: 2008 to 2026](https://php.oct.2026.newsroom.sgit.ai/context/index.md): Ten landmark vulnerabilities with their CVE records and KEV rows, the KEV catalog counted, and what the comparison says about severity, exposure, urgency and the discovery pipeline.
 - [If you run PHP](https://php.oct.2026.newsroom.sgit.ai/playbook/index.md): Inventory, patch, mitigate, shield, isolate or take offline, look for compromise, verify: every agency's php2shell advice merged into one ordered list with the sentence each step comes from.
 
-## The evidence
+## Articles
+- [All articles, dated](https://php.oct.2026.newsroom.sgit.ai/articles/index.md): 2 articles about php2shell by the journalist and historian roles, each pinned to the site version and vault commit it was written against.
+- [Journalist: Where php2shell stands](https://php.oct.2026.newsroom.sgit.ai/articles/where-php2shell-stands/index.md): A state-of-affairs report on the two PHP flaws, written against the evidence vault as it stood at site v0.2.5: what is settled, where the alarm and the evidence part company, and the five things that would change the story.
+- [Historian: php2shell in perspective](https://php.oct.2026.newsroom.sgit.ai/articles/php2shell-in-perspective/index.md): A historian's reading of the first day, set against ten earlier vulnerabilities and the KEV catalog: which parts of this story have happened before, which have not, and what the record will need to settle it.
+
+## The analysis
 - [Every claim](https://php.oct.2026.newsroom.sgit.ai/claims/index.md): 70 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
 - [The numbers](https://php.oct.2026.newsroom.sgit.ai/numbers/index.md): Every scale figure in circulation about php2shell, with what it measures, who said it, whether anyone checked it, and why they differ by four orders of magnitude.
 - [The agencies](https://php.oct.2026.newsroom.sgit.ai/agencies/index.md): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
 - [Affected systems](https://php.oct.2026.newsroom.sgit.ai/affected/index.md): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
-- [Software inventory](https://php.oct.2026.newsroom.sgit.ai/affected/software.md): Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, with its status per CVE.
-- [Every source](https://php.oct.2026.newsroom.sgit.ai/sources/index.md): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
 - [Who says what](https://php.oct.2026.newsroom.sgit.ai/actors/index.md): 27 parties in the php2shell story, each with the claims this site attributes to it and the sources behind them.
 - [As a graph](https://php.oct.2026.newsroom.sgit.ai/graph/index.md): 209 nodes and 281 citation edges from the php2shell claims and timeline to the captured sources, drawn from the same rows as the text, with the JSON to download.
+
+## The evidence
+- [Every source](https://php.oct.2026.newsroom.sgit.ai/sources/index.md): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
+- [Software inventory](https://php.oct.2026.newsroom.sgit.ai/affected/software.md): Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, with its status per CVE.
+- [The vault, opened](https://php.oct.2026.newsroom.sgit.ai/admin/vault/index.md): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
+- [Evidence, derived, authored](https://php.oct.2026.newsroom.sgit.ai/layers/index.md): Every file this site is built from, sorted into evidence captured from the vault, transformations derived by agents, signed and dated articles, and the files that run the site.
 
 ## Briefings
 - [Board member or executive](https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.md): The php2shell story for a board member or executive: what to decide, the claims it rests on with their status and sources, and what is still open.
@@ -45,7 +54,7 @@ Site v0.2.5. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 
 ## About
 - [The method](https://php.oct.2026.newsroom.sgit.ai/method/index.md): How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.
-- [The team](https://php.oct.2026.newsroom.sgit.ai/team/index.md): Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the six audiences.
+- [The team](https://php.oct.2026.newsroom.sgit.ai/team/index.md): Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the 12 audiences.
 - [The billing model](https://php.oct.2026.newsroom.sgit.ai/billing/index.md): How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
 - [Your reading account](https://php.oct.2026.newsroom.sgit.ai/account/index.md): The balance, history and receipts of your reading on this site, kept in your browser.
 - [The brief](https://php.oct.2026.newsroom.sgit.ai/brief/index.md): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.
@@ -55,7 +64,6 @@ Site v0.2.5. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [The board](https://php.oct.2026.newsroom.sgit.ai/admin/board/index.md): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles](https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.md): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
 - [Briefs](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.md): The build briefs for this site, published in full before the work, newest first.
-- [The vault, opened](https://php.oct.2026.newsroom.sgit.ai/admin/vault/index.md): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
 - [Who reads this site](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 
 ## Sources, one page each
@@ -243,6 +251,7 @@ Site v0.2.5. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [software.json](https://php.oct.2026.newsroom.sgit.ai/data/software.json): the NCSC-NL inventory, parsed
 - [exploitation.json](https://php.oct.2026.newsroom.sgit.ai/data/exploitation.json): the signals
 - [graph.json](https://php.oct.2026.newsroom.sgit.ai/data/graph.json): nodes and citation edges
+- [layers.json](https://php.oct.2026.newsroom.sgit.ai/data/layers.json): which file is evidence, derived, authored or site
 - [vault.json](https://php.oct.2026.newsroom.sgit.ai/data/vault.json): the vault's head, counts and agents
 - [billing.json](https://php.oct.2026.newsroom.sgit.ai/data/billing.json): the meter configuration and the designed model
 - [versions.json](https://php.oct.2026.newsroom.sgit.ai/data/versions.json): release history
