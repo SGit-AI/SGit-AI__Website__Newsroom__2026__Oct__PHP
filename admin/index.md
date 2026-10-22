@@ -90,6 +90,16 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: new evidence since the vault's last capture (11:34Z): compromise reports need a vault session to capture them.
 
+### The phone app (v0.5.0)
+
+- `/now/`: what to know for the time you have (1, 5, 10, 30 minutes) against what you read, deterministic or agentic; built from `now/now.json` by `build_now()`; the app is `assets/now/`.
+
+- The reader's vault: the newsroom's vault library vendored unedited (`assets/vendor/sg-vault/`, `assets/vault/newsroom-vault.js`, hashes in VENDOR.md); everything under `/php-october/` in the reader's vault, the OpenRouter key in `secrets/`.
+
+- Agentic: OpenRouter from the browser with the reader's key; Sonnet for text and chat, Gemini for infographics; every claim must cite an item id.
+
+- Not built: passkey unlock, push notifications, the graph drawn on the phone; not yet run against the real OpenRouter.
+
 ### Build, gate, release
 
 - `admin/build/build.py`: deterministic, standard library only.
@@ -176,4 +186,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.4.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.5.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

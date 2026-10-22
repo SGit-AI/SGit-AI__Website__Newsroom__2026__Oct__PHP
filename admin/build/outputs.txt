@@ -317,6 +317,10 @@ leak/index.md
 llms.txt
 method/index.html
 method/index.md
+now/index.html
+now/index.md
+now/manifest.webmanifest
+now/now.json
 numbers/index.html
 numbers/index.md
 patching/index.html

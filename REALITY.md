@@ -27,6 +27,12 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - `sitemap.xml`, `robots.txt`, Open Graph card, JSON-LD (NewsArticle, BreadcrumbList, WebSite); `data/seo.json` takes a Google Search Console verification token.
 - Not built: new evidence since the vault's last capture (11:34Z): compromise reports need a vault session to capture them.
 
+## The phone app (v0.5.0)
+- `/now/`: what to know for the time you have (1, 5, 10, 30 minutes) against what you read, deterministic or agentic; built from `now/now.json` by `build_now()`; the app is `assets/now/`.
+- The reader's vault: the newsroom's vault library vendored unedited (`assets/vendor/sg-vault/`, `assets/vault/newsroom-vault.js`, hashes in VENDOR.md); everything under `/php-october/` in the reader's vault, the OpenRouter key in `secrets/`.
+- Agentic: OpenRouter from the browser with the reader's key; Sonnet for text and chat, Gemini for infographics; every claim must cite an item id.
+- Not built: passkey unlock, push notifications, the graph drawn on the phone; not yet run against the real OpenRouter.
+
 ## Build, gate, release
 - `admin/build/build.py`: deterministic, standard library only.
 - `admin/build/validate.py`: links, orphans, twins, llms.txt, citations, determinism, em-dashes, credential shapes, external resources, version consistency.

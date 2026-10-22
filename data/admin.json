@@ -546,6 +546,35 @@
    "status": "open",
    "owner": "journalist",
    "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "064",
+   "title": "The phone app (/now/): what to know for one, five, ten or thirty minutes against what you read; deterministic and agentic modes; the reader's vault with the OpenRouter key; chat with Sonnet; infographics with Gemini",
+   "status": "done",
+   "owner": "dev",
+   "note": "From the brief on the phone app (22 October).",
+   "version": "0.5.0"
+  },
+  {
+   "id": "065",
+   "title": "First live run of the agentic mode with the editor's OpenRouter key: check that every sentence Sonnet writes cites an item, and that the infographic adds no number of its own",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief on the phone app (22 October)."
+  },
+  {
+   "id": "066",
+   "title": "Open the phone app's vault with a passkey, through the newsroom's door design, so a phone needs no pasted key",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on the phone app (22 October)."
+  },
+  {
+   "id": "067",
+   "title": "Draw the semantic graph on the phone: what changed, and what it connects to, as nodes and edges",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the brief on the phone app (22 October)."
   }
  ],
  "evidence_vault": {

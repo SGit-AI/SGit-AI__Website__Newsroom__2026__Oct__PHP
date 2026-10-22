@@ -1,6 +1,15 @@
 {
- "current": "0.4.7",
+ "current": "0.5.0",
  "versions": [
+  {
+   "version": "0.5.0",
+   "date": "2026-10-22",
+   "title": "Now, the phone app (/now/): what you need to know for one, five, ten or thirty minutes against what you read before; a deterministic mode from the data and an agentic one where Sonnet writes your briefing and answers in a chat and Gemini draws an infographic, with your OpenRouter key kept in your own vault; the newsroom's vault library vendored for it",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.4.7",
    "date": "2026-10-22",

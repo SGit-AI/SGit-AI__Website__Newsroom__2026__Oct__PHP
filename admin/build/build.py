@@ -176,7 +176,7 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
+    ('Yours', [('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -557,7 +557,7 @@ def build_index():
   <p class="kicker">PHP news &middot; October 2026 &middot; <span class="live">{E(s["status"])}</span> &middot; last checked {E(when)}</p>
   <h1>{E(pl["headline"])}</h1>
   <p class="deck">{E(pl["deck"])}</p>
-  <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a></div>
+  <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a><a class="cta" href="now/index.html">On your phone: Now &rarr;</a></div>
   <p class="aka">{E(pl["aka"])}</p>
 </header>
 <section id="now"><h2>Right now</h2><p class="small">As of {E(when)}, the time of the latest page this site saved.</p><ul class="nowlist">{now}</ul>{b_now}</section>
@@ -1344,7 +1344,7 @@ def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
     build_all()
     build_all()
-    build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); save_items()
+    build_now(); build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); save_items()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
@@ -3099,6 +3099,155 @@ def build_subscribe():
 """
     page('subscribe/index.html', 'Subscribe: what changed, sent to you', 'Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.', body, kind='account')
 
+
+
+
+# ----------------------------------------------------------------------------- the phone app: Now (v0.5.0)
+# The editor's brief: admin/content/briefs/2026-10-22__brief__the-phone-app.md. One page, now/index.html, built for a
+# phone: what do I need to know, given how long I have (one, five, ten or thirty minutes), against what I read before.
+# Two modes. Deterministic: the items, their order and their connections come from the data and nothing else.
+# Agentic: the same items handed to a model (OpenRouter, with the reader's own key kept in the reader's own vault), for
+# a briefing in prose, an infographic and a chat. The page is a shell; now/now.json is everything it reads; assets/now.js
+# is the app. The reader's state lives in this browser (assets/reader-state.js, shared with the rest of the site) and,
+# when the reader opens a vault, in that vault under /php-october/.
+
+NOW_MODELS = {'text': 'anthropic/claude-sonnet-5.5', 'image': 'google/gemini-3.1-flash-image'}
+NOW_KIND_WEIGHT = {'front': 100, 'fact': 80, 'event': 60, 'question': 55, 'briefing': 50, 'story': 45, 'page': 30, 'source': 10}
+
+def now_summary(iid, it):
+    """The words the app shows for an item: what it says now, in a sentence or two, and its connections."""
+    k, links, status = it['kind'], [], ''
+    if k == 'fact':
+        c = next((c for c in D['claims'] if 'fact-' + c['id'] == iid), None)
+        if c:
+            status = c['status']
+            links = [['source', s, short_name(SOURCES[s]), f'sources/{s}/index.html'] for s in c['sources'] if s in SOURCES]
+            links += [['briefing', p, PERSONAS[p]['label'], f'briefings/{p}/index.html'] for p, t in BRIEF_TOPICS.items() if c['topic'] in t and p in PERSONAS]
+            claim = c['claim'].rstrip()
+            return f'{claim}{"" if claim.endswith((".", "?", "!")) else "."} Who says it: {c["by"]}.', status, links
+    if k == 'event':
+        t = next((t for t in D['timeline'] if event_id(t) == iid), None)
+        if t:
+            links = [['source', s, short_name(SOURCES[s]), f'sources/{s}/index.html'] for s in t['sources'] if s in SOURCES]
+            return f'{fmt_at(t["at"])}: {t["event"]}', t.get('confidence', ''), links
+    if k == 'question':
+        q = next((q for q in D['questions']['questions'] if 'q-' + q['id'] == iid), None)
+        if q:
+            return q.get('short') or q['q'], '', [['page', p, nav_title(p), p] for p in (q.get('see') or [])[:4]]
+    if k == 'briefing':
+        p = PERSONAS.get(iid.replace('briefing-', ''))
+        if p:
+            return p['answer'], '', [['page', x, nav_title(x), x] for x in p['path'][1:]]
+    if k == 'front':
+        sec = LEDGER['sections'].get(iid)
+        if sec:
+            t = re.sub(r'\s*\[[^\]]*\]', '', sec['versions'][-1]['text'])
+            t = re.sub(r'(?m)^(confirmed|reported|disputed|contradicted|unverified): ', '', t)
+            t = ' '.join(x.strip().rstrip('.') + '.' for x in t.split('\n') if x.strip())
+            return (t[:420].rsplit('. ', 1)[0] + '.') if len(t) > 420 else t, '', []
+    if k == 'source':
+        s = SOURCES.get(iid.replace('src-', ''))
+        if s:
+            return (s.get('notes') or s.get('title') or '')[:300], s.get('status', ''), []
+    if k == 'story':
+        a = next((a for a in ARTICLES if 'story-' + a.get('slug', '') == iid), None)
+        if a:
+            return (a.get('dek') or a.get('standfirst') or a.get('text') or a['title'])[:400], '', []
+    return D['plain']['pages'].get(it['path'], '') or it['title'], '', []
+
+def build_now():
+    items = []
+    for iid, it in all_items().items():
+        text, status, links = now_summary(iid, it)
+        words = len((it['title'] + ' ' + text).split())
+        title = it['title']
+        if it['kind'] == 'fact':
+            c = next((c for c in D['claims'] if 'fact-' + c['id'] == iid), None)
+            title = c['claim'] if c else title
+        items.append({'id': iid, 'kind': it['kind'], 'zone': it['zone'], 'title': title, 'path': it['path'], 'hash': it['hash'],
+                      'v': it['v'], 'first': it['first'], 'changed': it['changed'], 'date': it['date'], 'text': text, 'status': status,
+                      'links': links[:8], 'w': NOW_KIND_WEIGHT.get(it['kind'], 20), 'sec': max(10, round(words / 230 * 60)),
+                      'history': it.get('history', '')})
+    pl = D['plain']
+    doc = {
+        'about': 'Everything the phone app (now/) reads, built from the same data as every page: the items a reader can read, '
+                 'with what each says now, its hash, its connections and its reading time; the situation; the readers; the facts '
+                 'for grounding a model. Deterministic: the same data produces the same file.',
+        'site': VERSION, 'data_as_of': STORY['data_as_of'], 'when': human_time(STORY['data_as_of']),
+        'releases': [{'version': r['version'], 'date': r['date'], 'title': r['title']} for r in reversed(RELEASES)][:20],
+        'headline': pl['headline'], 'deck': re.sub(r'<[^>]+>', '', pl['deck']),
+        'now': [{'text': x['text'], 'sources': [[s, short_name(SOURCES[s])] for s in x['sources'] if s in SOURCES]} for x in pl['now']],
+        'unknown': [u['text'] for u in pl['unknown']],
+        'facts': [{'text': f['text'], 'status': f['status'], 'href': f['href']} for f in pl['facts']],
+        'personas': [{'id': p['id'], 'person': p['person'], 'label': p['label'], 'group': p['group'], 'depth': p['depth'], 'answer': p['answer'],
+                      'path': p['path']} for p in PERSONAS.values()],
+        'claims': [{'id': c['id'], 'status': c['status'], 'claim': c['claim'], 'by': c['by'], 'topic': c['topic']} for c in D['claims']],
+        'models': NOW_MODELS,
+        'vault': {'endpoint': 'https://dev.send.sgraph.ai', 'folder': '/php-october'},
+        'items': items,
+    }
+    write('now/now.json', json.dumps(doc, ensure_ascii=False, separators=(',', ':')) + '\n')
+    write('now/manifest.webmanifest', json.dumps({
+        'name': 'PHP October 2026: Now', 'short_name': 'PHP Now', 'start_url': './index.html', 'scope': './', 'display': 'standalone',
+        'background_color': '#f7f6f2', 'theme_color': '#8a2416', 'description': 'What you need to know about the PHP flaws, for the time you have.',
+        'icons': [{'src': '../assets/now/icon-192.png', 'sizes': '192x192', 'type': 'image/png'}, {'src': '../assets/now/icon-512.png', 'sizes': '512x512', 'type': 'image/png'}]},
+        indent=1) + '\n')
+    title = 'Now: PHP October on your phone'
+    desc = 'What you need to know about the PHP flaws for the time you have, one, five, ten or thirty minutes, against what you read before; deterministic from the data, or written by a model with your own key kept in your own vault, with a chat.'
+    PAGES.append(('now/index.html', title, desc, 'account'))
+    html_out = f'''<!doctype html>
+<html lang="en" data-root="../" data-path="now/index.html" data-ver="{VERSION}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#8a2416">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PHP Now">
+<title>{E(title)} &middot; {SITE_NAME}</title>
+<meta name="description" content="{E(desc)}">
+<link rel="canonical" href="{BASE_URL}/now/index.html">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/now/icon-192.png">
+<link rel="icon" href="data:,">
+<link rel="alternate" type="text/markdown" href="index.md">
+<link rel="stylesheet" href="../assets/now/now.css">
+<script src="../assets/reader-state.js" defer></script>
+<script src="../assets/telemetry.js" defer></script>
+<script type="module" src="../assets/now/now.js"></script>
+</head>
+<body>
+<div id="app" class="app">
+<header class="top"><a class="brand" href="../index.html">PHP October<span> 2026</span></a><span class="b-now">Now</span><button class="vchip" id="vchip" type="button">This phone only</button></header>
+<main id="view"><section class="card"><h1>What you need to know, for the time you have</h1><p>{E(pl["headline"])}. {E(re.sub(r"<[^>]+>", "", pl["deck"]))}</p><p>This app needs JavaScript. Without it, start from <a href="../index.html">the front page</a> or <a href="../whatsnew/index.html">what's new</a>.</p></section></main>
+<nav class="tabs" id="tabs"><a href="#now" data-tab="now">Now</a><a href="#chat" data-tab="chat">Ask</a><a href="#vault" data-tab="vault">Vault &amp; keys</a></nav>
+</div>
+</body>
+</html>
+'''
+    write('now/index.html', html_out)
+    md = f'''# {title}
+
+{desc}
+
+> For you: an app in your browser, kept by the agents that run this site.
+
+The phone app at {BASE_URL}/now/index.html answers one question: what do I need to know now, given how long I have? Choose one, five, ten or thirty minutes; it shows what is new or changed since you last read it, most important first, until the time is used. If nothing is new, it says so.
+
+## Two modes
+
+- **Deterministic**: the items, their order and their connections (each fact to its sources and to the briefings that carry it) come from the site's data and nothing else. The same data gives the same answer.
+- **Agentic**: the same items handed to a model through OpenRouter with your own key: a briefing in prose for your time budget (Claude Sonnet), an infographic (Gemini), and a chat grounded in the site's facts. Every generated piece says which model wrote it from which items, and links each claim back to its fact.
+
+## Your vault
+
+Open a vault (an sgit vault key; a newsroom.sgit.ai reader vault works) or create one, and the app keeps in it, encrypted in your browser before it leaves: what you have read, your settings, your OpenRouter key, your chats and what the models made for you, under `/php-october/`. Without a vault, what you have read is kept in this browser only and the agentic mode is off.
+
+The data the app reads is [now.json]({BASE_URL}/now/now.json). The brief is on [the briefs page]({BASE_URL}/admin/briefs/index.html).
+
+---
+site v{VERSION} · data as of {STORY["data_as_of"]} · {BASE_URL}/now/index.html
+'''
+    write('now/index.md', md)
 
 if __name__ == '__main__':
     main()
