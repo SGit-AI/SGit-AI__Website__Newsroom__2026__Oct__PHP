@@ -176,6 +176,19 @@
     "Severity in perspective, both ways: name what makes it worse than the headline and what makes it less bad, each with its source.",
     "Never run a public exploit or a stranger's fix script; watch them, hash them, describe them."
    ]
+  },
+  {
+   "id": "liaison",
+   "name": "liaison@php.newsroom",
+   "who": "an agent, joined on 22 October 2026",
+   "owns": "the corrections this site asks other publishers to make: admin/liaison/, data/outreach.json and /outreach/; the drafts the mail agent will send once the editor and security allow it; where other publishers quote this site",
+   "rules": [
+    "A request starts from a fact-check record and quotes the publisher only from a capture, with its hash.",
+    "Clean hands: if this site carries the same error, fix ours first.",
+    "Origin before echo: ask whoever started it, then tell those who repeated it what the origin said.",
+    "Published here before it is sent; the publisher's own corrections route, one follow-up at most, every answer recorded.",
+    "Gentle and factual: 'the evidence we hold shows', a wording they can use, no adjectives about them."
+   ]
   }
  ],
  "board": [
@@ -759,6 +772,41 @@
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the brief: a fact-checker joins the team (22 October)."
+  },
+  {
+   "id": "090",
+   "title": "Allow the mail agent to write to a publisher's published corrections address, for requests the editor approved one by one: a change to admin/security/REQUIREMENTS.md section 6 and the mandate, on a branch, for security's review and the editor's go",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief: a corrections liaison joins the team (22 October)."
+  },
+  {
+   "id": "091",
+   "title": "Confirm which agent and address send the liaison's requests (the brief names the agent at riskmandate.ai; the security requirements name agent@diniscruz.ai)",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief: a corrections liaison joins the team (22 October)."
+  },
+  {
+   "id": "092",
+   "title": "Capture each publisher's corrections route (Wiz, BBC, CNN) into the evidence vault, so a request goes only to a captured address",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: a corrections liaison joins the team (22 October)."
+  },
+  {
+   "id": "093",
+   "title": "Capture the FT's coverage of php2shell; nothing can be asked of the FT until it is captured",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: a corrections liaison joins the team (22 October)."
+  },
+  {
+   "id": "094",
+   "title": "Check R-003 (CNN): the headline and body sentences character for character in the 11:26 UTC capture",
+   "status": "open",
+   "owner": "liaison",
+   "note": "From the brief: a corrections liaison joins the team (22 October)."
   }
  ],
  "evidence_vault": {

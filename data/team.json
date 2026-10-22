@@ -27,6 +27,7 @@
   "librarian": "librarian",
   "verifier": "verifier",
   "factcheck": "verifier",
+  "liaison": "liaison",
   "briefing-writer": "briefing-writer",
   "cartographer": "cartographer",
   "journalist": "journalist",
@@ -310,6 +311,21 @@
    "rules": ["A quote that is not in the captured text is not a quote. Mark it and say which capture was checked.", "Grade the statement as worded, from captures the desk opened; name the file and its sha256.", "Ten outlets restating one headline are one source.", "Outside evidence is a request to capture, never a citation.", "Highlight, do not fix."],
    "home": [["factcheck/index.html", "Fact-check: how sure we are"], ["claims/index.html", "Every claim"]],
    "achieved": ["Run 1, 22 October: all 70 claims graded against vault 31ccc515c29f; 3 high and 56 medium findings, 10 contradictions recorded, 6 pieces of outside evidence; Italy's offline advice found misread"]
+  },
+  {
+   "id": "liaison",
+   "name": "Corrections liaison",
+   "kind": "agent",
+   "group": "writing",
+   "alias": "@Liaison",
+   "mail": "liaison",
+   "role": "Asks other publishers to correct what the evidence does not carry",
+   "status": "active",
+   "summary": "liaison@php.newsroom. Turns the fact-check desk's findings about other publishers' words into gentle, public correction requests: the publisher's words from a dated capture, what the evidence shows, a wording they can use. Each request is on /outreach/ before it is sent; the mail agent sends it once the editor approves. Tracks every answer, and where other publishers quote this site.",
+   "owns": ["admin/liaison/: the role and the runbook", "data/outreach.json and /outreach/"],
+   "rules": ["Start from a fact-check record; quote only from a capture, with its hash.", "Clean hands: fix this site's own copy of an error first.", "Origin before echo.", "Published before sent; one follow-up at most; every answer recorded."],
+   "home": [["outreach/index.html", "Corrections we have asked for"], ["factcheck/index.html", "Fact-check: how sure we are"]],
+   "achieved": ["Named the role and drafted the first three requests on the 70% figure (Wiz, BBC, CNN), all held until this site's own wording is fixed and sending is allowed"]
   }
  ]
 }
