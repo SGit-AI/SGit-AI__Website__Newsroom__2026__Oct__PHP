@@ -1,5 +1,7 @@
 # Fact: Edinburgh council's site went offline late on 21 October; the council called it 
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Edinburgh council's site went offline late on 21 October; the council called it 'essential maintenance' and did not confirm a link Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · impact · reported
@@ -35,4 +37,4 @@ Sources: scotsman-edinburgh-council-offline
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/edinburgh/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/edinburgh/index.html

@@ -1,0 +1,15 @@
+{
+ "enabled": true,
+ "endpoint": "https://dev.send.sgraph.ai",
+ "vault_id": "84wr8mib",
+ "append_token": "43ed24b413cdf8c2405d0b72cddcd36c04fd7ae1ad852b872ed25727b6d61fb3",
+ "recipient": {
+  "fingerprint": "sha256:8b2b26ff9386078f",
+  "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA2eWJSSnd9+s2VjObHUc6\nacOgnVxCaUavKP7eex/kMjUhaSCMHDIr6phTVS/mtjs+5toVNtYPkMS1eHbo1ivu\ngOiCVn5iJz4r75Lrn9t6Kj7YiBQzNpFngeDAq3RhI9BkfwVtc6Ds/hNIiaHXdZAF\np9Fbd3GiH3aY6EK1iHGIRD2QF/eIcI5tEtzEZG8fa+AyyDrK2otOXgI2SlabA+bh\nsm344AfE+3FIbre/NqP6NLG4a0Odtw5xLfNUiJRP2kuFapj0ryVeRkyom30UNeCQ\njS7JHZKkumeqAglLbRDyJ0GSkbbQdzGUSd8B++hHgf+rwPsZG9BxzTNT2jc4LGzM\neB8fxr4ujMCCU35ZsOWQBgjXwnzpOnFCxdXsHKIq13Yuxc+2sJiSBmaYZJDVkfxx\nSzVowtBHS1Ad1qRZC/dojFmvaHqYOEajHsxH/aJokW5LqCLuYBir9vniqS7GkJNO\n2HBkozg3m/gjNMB6k+g6hz0brWfZ5/r28bOdRtBoof7AEcXzHYzmCX6AdDQ7ho+A\ngdLDNaSYLyTH0b2OIwDTaU+/tSdTQ+v8D7b3gXQwn0Fbe0YTbL1ZIxrILxzKuEhX\n2WAKYR/IrJeCVhy6yKJtDv9iQ8j98+CFFbTfpiTXJ/DIS99XJgj1m9fO35QUJWFO\nJM7i64/3L87WlSvDQftSensCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+ },
+ "geo": [
+  "https://ipapi.co/json/",
+  "https://ipwho.is/"
+ ],
+ "what": "One anonymous event per page per session: path, referrer host, country, region, city (from a geolocation lookup; the lookup service sees your IP, the event does not carry it), language, screen class, time zone, a random session id, the site version. Encrypted in your browser to the key below and written to a write-only lane. The brief and the counts are in the admin section."
+}

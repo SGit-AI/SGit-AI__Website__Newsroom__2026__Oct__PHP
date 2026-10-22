@@ -1,5 +1,7 @@
 # Source: AL26-026 - Critical vulnerabilities impacting PHP - CVE-2026-109618 and CVE-2026-109619
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Canadian Centre for Cyber Security (CCCS): what it says, the claims and events that cite it, and the hashes of every captured file.
 
 Source · advisory · primary · captured
@@ -52,4 +54,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/cccs-al26-026/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/cccs-al26-026/index.html

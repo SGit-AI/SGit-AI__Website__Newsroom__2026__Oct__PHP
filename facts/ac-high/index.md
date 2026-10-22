@@ -1,5 +1,7 @@
 # Fact: Triggering the bug is much easier than turning it into code execution; the CVSS 
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Triggering the bug is much easier than turning it into code execution; the CVSS vector says attack complexity high Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · technical · confirmed
@@ -41,4 +43,4 @@ Sources: imperva-blog-php2shell, fastly-blog-php2shell, cve-cve-2026-109618
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/ac-high/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/ac-high/index.html

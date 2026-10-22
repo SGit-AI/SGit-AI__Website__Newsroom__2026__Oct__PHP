@@ -1,5 +1,7 @@
 # Fact: CISA has not observed exploitation; neither CVE is in the Known Exploited Vulner
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 CISA has not observed exploitation; neither CVE is in the Known Exploited Vulnerabilities catalog Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · exploitation · confirmed
@@ -40,4 +42,4 @@ Sources: cisa-alert-php-20261021, cisa-kev-json, cve-cve-2026-109618
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/cisa-none/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/cisa-none/index.html

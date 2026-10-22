@@ -1,5 +1,7 @@
 # Fact: The fix was authored on 18 October at 15:26 UTC and entered the public branches 
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 UTC on 21 October, with merges into 8.3, 8.4 and 8.5 between 14:12 and 14:30 UTC Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · timing · confirmed
@@ -38,4 +40,4 @@ Sources: github-php-src-fix-commit-3584a98bd, github-php-src-tag-php-8.5.12
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-authored/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-authored/index.html

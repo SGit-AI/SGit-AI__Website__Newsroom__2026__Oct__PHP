@@ -1,0 +1,315 @@
+{
+ "about": "The public shape of the source-watch vault, exported by admin/build/export_watch.py. Counts and vocabularies only: no capture is copied.",
+ "vault_id": "oq9gflln",
+ "read_key": "sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277:oq9gflln",
+ "head": {
+  "commit": "9ba748ac18aa",
+  "message": "researcher@php.newsroom: tip 2026-10-22/001 (php2shell Checker extension), noise filter, run 2 over the 143 new pages, discovery scan"
+ },
+ "commits": [
+  {
+   "commit": "9ba748ac18aa",
+   "message": "researcher@php.newsroom: tip 2026-10-22/001 (php2shell Checker extension), noise filter, run 2 over the 143 new pages, discovery scan"
+  },
+  {
+   "commit": "a03fcf881946",
+   "message": "researcher@php.newsroom: the source watch: taxonomy, tools, 184 pages imported from the evidence vault with 171 snapshots, 143 more seeded (48 Google News editions, registry APIs, 34 CERTs, premium press), run 20261022T142033Z: 184 checked, 125 changed"
+  }
+ ],
+ "pages": 328,
+ "publishers": 175,
+ "country": {
+  "us": 148,
+  "int": 35,
+  "gb": 25,
+  "fr": 18,
+  "nl": 14,
+  "ch": 7,
+  "de": 7,
+  "au": 6,
+  "jp": 6,
+  "eu": 5,
+  "fi": 5,
+  "in": 5,
+  "ca": 4,
+  "it": 4,
+  "pt": 4,
+  "es": 3,
+  "nz": 3,
+  "sg": 3,
+  "be": 2,
+  "br": 2,
+  "ie": 2,
+  "kr": 2,
+  "lu": 2,
+  "lv": 2,
+  "at": 1,
+  "cz": 1,
+  "dk": 1,
+  "ee": 1,
+  "hk": 1,
+  "il": 1,
+  "lt": 1,
+  "no": 1,
+  "pl": 1,
+  "ro": 1,
+  "sa": 1,
+  "se": 1,
+  "tw": 1,
+  "ua": 1
+ },
+ "sector": {
+  "cert": 63,
+  "aggregator": 54,
+  "news": 52,
+  "tech-press": 33,
+  "registry": 28,
+  "security-vendor": 21,
+  "project": 16,
+  "affected": 15,
+  "social": 15,
+  "reference": 10,
+  "research": 9,
+  "community": 6,
+  "ai-lab": 3,
+  "cloud": 1,
+  "government": 1,
+  "tool": 1
+ },
+ "lang": {
+  "en": 214,
+  "fr": 23,
+  "nl": 13,
+  "de": 11,
+  "es": 8,
+  "pt": 8,
+  "ja": 6,
+  "fi": 5,
+  "it": 4,
+  "ko": 3,
+  "lv": 3,
+  "zh": 3,
+  "ar": 2,
+  "cs": 2,
+  "nb": 2,
+  "pl": 2,
+  "ro": 2,
+  "sv": 2,
+  "uk": 2,
+  "bg": 1,
+  "da": 1,
+  "el": 1,
+  "et": 1,
+  "he": 1,
+  "hu": 1,
+  "id": 1,
+  "lt": 1,
+  "ms": 1,
+  "sk": 1,
+  "th": 1,
+  "tr": 1,
+  "vi": 1
+ },
+ "access": {
+  "open": 277,
+  "bot-challenge": 33,
+  "down": 12,
+  "gone": 5,
+  "paywalled": 1
+ },
+ "tiers": {
+  "A": 64,
+  "B": 97,
+  "C": 14
+ },
+ "snapshots": 440,
+ "graphs": 440,
+ "files": 3711,
+ "world_graph": {
+  "nodes": 589,
+  "edges": 1190
+ },
+ "access_classes": [
+  {
+   "id": "open",
+   "means": "Served the content to an anonymous browser."
+  },
+  {
+   "id": "paywalled",
+   "means": "Served a subscription or registration wall instead of the content. We hold no licence to go past it."
+  },
+  {
+   "id": "bot-challenge",
+   "means": "Served a bot or browser challenge (Cloudflare, Akamai, DataDome, PerimeterX, Vercel). The challenge page's hash is kept as the record."
+  },
+  {
+   "id": "login-wall",
+   "means": "Wants a signed-in account (some social posts)."
+  },
+  {
+   "id": "geo-blocked",
+   "means": "Refused because of where the request came from."
+  },
+  {
+   "id": "gone",
+   "means": "404 or 410: the page no longer exists at this address."
+  },
+  {
+   "id": "down",
+   "means": "5xx, a timeout, a DNS failure or a refused connection: the site is not answering. For the affected sites this is the finding."
+  },
+  {
+   "id": "not-attempted",
+   "means": "Listed, but the watcher is told not to fetch it (licence or editorial decision)."
+  }
+ ],
+ "sectors": [
+  {
+   "id": "cert",
+   "name": "National cyber agency or CSIRT"
+  },
+  {
+   "id": "government",
+   "name": "Other government body"
+  },
+  {
+   "id": "registry",
+   "name": "Vulnerability registry"
+  },
+  {
+   "id": "project",
+   "name": "The open-source project and its foundation"
+  },
+  {
+   "id": "research",
+   "name": "Security researcher or research firm"
+  },
+  {
+   "id": "ai-lab",
+   "name": "AI lab"
+  },
+  {
+   "id": "security-vendor",
+   "name": "Security, WAF, CDN or detection vendor"
+  },
+  {
+   "id": "cloud",
+   "name": "Cloud or hosting provider"
+  },
+  {
+   "id": "news",
+   "name": "General news"
+  },
+  {
+   "id": "tech-press",
+   "name": "Technology and security press"
+  },
+  {
+   "id": "social",
+   "name": "Social platform post or account"
+  },
+  {
+   "id": "community",
+   "name": "Forum, mailing list, gist or repository"
+  },
+  {
+   "id": "reference",
+   "name": "Reference work"
+  },
+  {
+   "id": "education",
+   "name": "University or school"
+  },
+  {
+   "id": "affected",
+   "name": "Affected organisation's own site"
+  },
+  {
+   "id": "aggregator",
+   "name": "News aggregator, search feed or tag stream"
+  },
+  {
+   "id": "tool",
+   "name": "Tool published for the incident"
+  }
+ ],
+ "altitudes": {
+  "world": "country, sector, publisher, page, language: where the watched pages sit (index/world.json)",
+  "watch": "run, check, page, access, snapshot: what the watcher did and saw (runs/**/graph.json)",
+  "document": "snapshot, block, entity: what one snapshot of a page says (graph/**/<UTC>.json)",
+  "change": "change, block, entity: what moved between two snapshots (graph/**/<UTC>.json, section change)"
+ },
+ "verbs": 22,
+ "runs": [
+  {
+   "run": "20261022T142033Z",
+   "agent": "researcher@php.newsroom",
+   "started": "2026-10-22T14:20:33Z",
+   "finished": "2026-10-22T14:35:30Z",
+   "pages_due": 184,
+   "pages_total": 184,
+   "changed": 125,
+   "access": {
+    "down": 7,
+    "open": 157,
+    "paywalled": 1,
+    "bot-challenge": 18,
+    "gone": 1
+   }
+  },
+  {
+   "run": "20261022T145444Z",
+   "agent": "researcher@php.newsroom",
+   "started": "2026-10-22T14:54:44Z",
+   "finished": "2026-10-22T14:54:49Z",
+   "pages_due": 1,
+   "pages_total": 328,
+   "changed": 1,
+   "access": {
+    "open": 1
+   }
+  },
+  {
+   "run": "20261022T150854Z",
+   "agent": "researcher@php.newsroom",
+   "started": "2026-10-22T15:08:54Z",
+   "finished": "2026-10-22T15:11:42Z",
+   "pages_due": 143,
+   "pages_total": 328,
+   "changed": 143,
+   "access": {
+    "open": 119,
+    "down": 5,
+    "bot-challenge": 15,
+    "gone": 4
+   }
+  }
+ ],
+ "tips": [
+  {
+   "id": "2026-10-22/001",
+   "received": "2026-10-22T14:38:00+02:00",
+   "status": "reported",
+   "says": "Their browser extension, php2shell-checker, was just approved on the Chrome Web Store. It checks whether a website runs outdated PHP or a supported PHP application such as WordPress. They describe it as privacy friendly and read-only, with nothing leaving the browser, and aimed at CISOs in the SME segment as easier than running scripts.",
+   "watched_as": [
+    "us/tool/chrome-web-store/php2shell-checker"
+   ],
+   "to_check": [
+    "The publisher named on the store listing, and whether it matches who made the claim",
+    "The permissions the listing and the manifest ask for, against 'read-only, nothing leaves the browser'",
+    "The version history and user count, run by run",
+    "Whether it detects the fixed versions (8.5.12 and the backports) correctly"
+   ]
+  }
+ ],
+ "tools": [
+  "capture_batch.mjs",
+  "discover.py",
+  "extract.py",
+  "import_evidence.py",
+  "lib.py",
+  "publishers_seed.py",
+  "seed_world.py",
+  "watch.py"
+ ]
+}

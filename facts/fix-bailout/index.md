@@ -1,5 +1,7 @@
 # Fact: The fix removes longjmp() for out-of-memory errors in favour of a delayed soft O
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The fix removes longjmp() for out-of-memory errors in favour of a delayed soft OOM at the next VM safe point and a hard OOM via _exit(); the changelog line is 'Avoid state corruption via bailout' Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · technical · confirmed
@@ -38,4 +40,4 @@ Sources: github-ghsa-w8hw-w9fx-j79w, php-net-changelog-8, github-php-src-branch-
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-bailout/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-bailout/index.html

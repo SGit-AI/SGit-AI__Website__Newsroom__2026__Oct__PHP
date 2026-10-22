@@ -1,5 +1,7 @@
 # Source: Re: CVE-2026-109619 thread (21/16, 21/17, 21/23, 22/2)
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 oss-security list (replies: Aaron Rainbolt, Yves-Alexis Perez/Debian, Christian Fischer/Greenbone): what it says, the claims and events that cite it, and the hashes of every captured file.
 
 Source · forum · secondary · captured
@@ -54,4 +56,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/openwall-oss-security-109619-thread/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/openwall-oss-security-109619-thread/index.html

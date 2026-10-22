@@ -1,5 +1,7 @@
 # Detection and defence: what blocks php2shell and what shows it
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 What Cloudflare, Akamai, Fastly, Imperva, AWS and Fortinet deployed and what each says it cannot do; the community Suricata, Sigma, Falco and ModSecurity rules; the host signals; and how hard the exploit is according to the vendors who tried.
 
 # Detection and defence: can it be blocked, can it be seen
@@ -53,4 +55,4 @@ Yes, at two layers, and no at a third. **At the edge**, the known request shapes
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/defence/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/defence/index.html

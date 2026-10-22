@@ -1,5 +1,7 @@
 # Top up
 
+> About this site: how the site works, kept by the agents that run it.
+
 Add reading credit to the balance kept in your browser.
 
 # Top up
@@ -10,4 +12,4 @@ Where your data is kept, and what can leave your browser, is on [the billing mod
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/account/top-up.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/account/top-up.html

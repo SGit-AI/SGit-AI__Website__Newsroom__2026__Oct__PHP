@@ -1,5 +1,7 @@
 # The billing model: what runs and what is designed
 
+> About this site: how the site works, kept by the agents that run it.
+
 How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
 
 # The billing model
@@ -10,13 +12,38 @@ Two layers, and the page is careful to say which is which. **What runs** is a re
 
 Every page carries ``, SG Meter v1.3.1, vendored under `assets/components/` and loaded from this site only. You start with £5.00 of credit in this browser; the balance is in the top bar and goes below zero without anything being blocked. A page costs its price times the share of it you scrolled through, rounded to 5% and never less than a tenth, once per page per session. At the foot of each page you can rate how useful it was, which sets the price from free to double, or decline to pay with a reason. Nothing leaves the browser: no account, no cookie, no server of ours, no analytics listening to the meter's events. [Your reading account](../account/index.html) shows the history and exports it as JSON.
 
-| Kind | Price, read to the end | Pages | Why |
-|---|---|---|---|
-| story | 2p | the front page, the flaws, the timeline, the leak, the discovery, the exploitation signals, the playbook | Pages assembled from the vault by agents; the reader pays for the assembly. |
-| analysis | 3p | the numbers, the claims, the agencies, the affected systems | Pages where the site did work a reader cannot do by reading one source: counting, comparing, converting times. |
-| briefing | 5p | the six briefings | The most compressed form of the work: one page for one reader's decision. |
-| evidence | 1p | the sources page, the graph | Reference pages. Cheap, because the value is in checking, not reading. |
-| free | 0p | the method, the team, the billing model, corrections, the release history, admin | The site's own account of itself is free; charging for it would be charging to be checked. |
+### The formula
+
+`price = max(floor, round(base[type] x freshness[tier])), then x the share of the page read (never under a tenth) x the reader's usefulness rating`, with a floor of 1p.
+
+| Type | Layer | Base | Fresh up to 1 day, ×2 | New up to 7 days, ×1.5 | Current up to 30 days, ×1 | Archive older, ×0.5 | Pages | Why |
+|---|---|---|---|---|---|---|---|---|
+| **article** | authored | 6p | 12p | 9p | 6p | 3p | the signed, dated articles | A conclusion someone signed, written against a stated state of the evidence: the most judgement per word on the site. |
+| **briefing** | derived | 5p | 10p | 8p | 5p | 3p | the twelve briefings | The most compressed form of the work: one page for one reader's decision. |
+| **analysis** | derived | 3p | 6p | 5p | 3p | 2p | the claims, the numbers, the agencies, affected systems, the code, the review, in context | Work a reader cannot do by reading one source: counting, comparing, converting times, reading the code. |
+| **story** | derived | 2p | 4p | 3p | 2p | 1p | the front page, the flaws, the timeline, the leak, discovery, exploitation, impact, defence, the playbook, the questions | Pages assembled from the vault by agents; the reader pays for the assembly. |
+| **evidence** | evidence | 1p | 1p | · | · | · | every source and its page, the inventory, the parties, the graph | Reference pages: the value is in checking, and checking must never cost more at the moment it matters most. |
+| **site** | site | 1p | 1p | · | · | · | the method, the team, the billing model, the brief, corrections, the layers, the article index, admin | The site's account of itself. Metered at the floor, because the editor asked for no free pages, and never more, because a reader checking how the site works should not be charged for checking. |
+| **account** | site | 0p | 0p | · | · | · | your reading account, top up, topped up | The meter's own pages. Charging a reader to see their bill is not a price; the one exception to no free pages. |
+
+A dot means the price does not decay: the type costs the same at any age. The date the page's content last changed: for a rebuilt page, the time of the latest capture its data comes from (so new evidence makes a page fresh again); for an article, the date it was written (so an article only ever ages).
+
+### The rules of engagement
+- Every content page is metered. The only unmetered pages are the meter's own: your account, top up and topped up.
+- The price depends on two things only: what kind of content the page is, and how fresh it is. Not on who is reading, not on demand, not on the topic.
+- Fresh costs more and the price halves into the archive, never to zero. Evidence and the site's account of itself do not decay and stay at the floor.
+- A page costs its price times the share of it you read, never less than a tenth; once per page per session; rating it re-prices it from free to double.
+- Nothing is ever blocked. The balance can go below zero, and a reader can decline to pay and say why.
+- The age is worked out in your browser from the date on the page; the build has no clock, so the same release serves the same prices table to everyone.
+- The prices table is published here and generated from the same data file as the meter, so the page and the meter cannot disagree.
+
+**Fresh.** The first day: when the content is news and a reader is deciding something now.
+
+**New.** The first week: still the current state of a developing story.
+
+**Current.** The base price: settled enough to rely on, recent enough to act on.
+
+**Archive.** The record: worth reading, priced for the reader doing history, never free.
 
 Top-ups are £5.00 of credit on a payment page. No payment link is configured for this site yet, so [the top-up page](../account/top-up.html) runs the meter's simulated cart and says so. When a link is added, the credit is added on the return page without verifying the payment, because a static site has nowhere to receive a webhook; the meter's security model is explicit that this is an honesty box, not a paywall.
 
@@ -39,14 +66,14 @@ A model of what this story cost to assemble, in units counted from the vault and
 | source notes written | 143 | 20p | 28.60 | an agent reading a page and writing what it says, who says it and what is odd |
 | claims traced | 70 | 10p | 7.00 | one claim, its status and its sources |
 | timeline events dated | 68 | 5p | 3.40 | one event, its time, its source and whether the time was stated or converted |
-| pages built | 52 | 0p | 0.00 | the build is deterministic and costs nothing to run again |
+| pages built | 92 | 0p | 0.00 | the build is deterministic and costs nothing to run again |
 
 Total at those assumptions: **£53.05**. The counts are from the data files named; the prices are the site's assumptions and a reader is invited to substitute their own. What the model leaves out is the editor's time and the model inference behind each agent run, neither of which is counted anywhere yet; the honest column on this is *not measured*.
 
 ## The prices, as data
 
-{ "storageKey": "php-story.meter.v1", "start": 500, "symbol": "\u00a3", "prices": { "story": 2, "briefing": 5, "analysis": 3, "evidence": 1, "page": 1, "free": 0 }, "topup": { "amount": 500, "link": "" } }This block is `data/billing.json`, which is also what every page's meter config is generated from, so the table above and the meter cannot disagree.
+{ "prices": { "account": 0, "analysis": 3, "analysis_archive": 2, "analysis_current": 3, "analysis_fresh": 6, "analysis_new": 5, "article": 6, "article_archive": 3, "article_current": 6, "article_fresh": 12, "article_new": 9, "briefing": 5, "briefing_archive": 3, "briefing_current": 5, "briefing_fresh": 10, "briefing_new": 8, "evidence": 1, "site": 1, "story": 2, "story_archive": 1, "story_current": 2, "story_fresh": 4, "story_new": 3 }, "start": 500, "storageKey": "php-story.meter.v1", "symbol": "\u00a3", "topup": { "amount": 500, "link": "" } }This block is `data/billing.json`, which is also what every page's meter config is generated from, so the table above and the meter cannot disagree.
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/billing/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/billing/index.html

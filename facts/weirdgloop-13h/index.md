@@ -1,5 +1,7 @@
 # Fact: Weird Gloop turned off its wiki web servers for 13 hours and still served about 
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Weird Gloop turned off its wiki web servers for 13 hours and still served about 94% of page views from cache Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · impact · confirmed
@@ -37,4 +39,4 @@ Sources: weirdgloop-blog-php2shell
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/weirdgloop-13h/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/weirdgloop-13h/index.html

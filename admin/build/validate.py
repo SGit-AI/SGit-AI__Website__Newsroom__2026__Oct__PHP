@@ -41,7 +41,7 @@ for p in pages:
     md = re.sub(r'\.html$', '.md', p)
     if not os.path.exists(md): fails.append(f'{rel(p)}: no markdown twin')
     # 6. em-dash in the site's prose (sources page exempt: third-party titles)
-    if os.sep + 'sources' + os.sep not in p and os.sep + 'actors' + os.sep not in p and os.sep + 'facts' + os.sep not in p and os.sep + 'versions' + os.sep not in p and os.sep + 'interview' + os.sep not in p and not p.endswith(os.path.join('affected', 'software.html')) and not p.endswith(os.path.join('brief', 'index.html')):
+    if os.sep + 'sources' + os.sep not in p and os.sep + 'actors' + os.sep not in p and os.sep + 'facts' + os.sep not in p and os.sep + 'versions' + os.sep not in p and os.sep + 'interview' + os.sep not in p and not p.endswith(os.path.join('affected', 'software.html')) and not p.endswith(os.path.join('brief', 'index.html')) and not re.search(r'readings/[^/]+/index\.html$', p.replace(os.sep, '/')):
         body = re.sub(r'<q>.*?</q>', '', s, flags=re.S)
         body = re.sub(r'title="[^"]*"', '', body)
         if '—' in body:
@@ -82,6 +82,63 @@ for n in ('affected', 'roles', 'versions', 'billing', 'vault', 'software', 'grap
 aff = load('affected') or {}
 for s in aff.get('ranges_sources', []) + aff.get('mitigations_sources', []) + sum([x.get('sources', []) for x in aff.get('sapis', [])], []):
     if s not in slugs: fails.append(f'data/affected.json cites unknown slug {s}')
+# 4b. articles: front matter present, every [[slug]] in the manifest
+adir = os.path.join(ROOT, 'admin', 'content', 'articles')
+for fn in sorted(os.listdir(adir)) if os.path.isdir(adir) else []:
+    if not fn.endswith('.md'): continue
+    t = open(os.path.join(adir, fn), encoding='utf-8').read()
+    fm = re.match(r'^---\n(.*?)\n---\n', t, flags=re.S)
+    if fm and not re.search(r'^origin:\s*(house|guest|interview)\s*$', fm.group(1), flags=re.M): fails.append(f'articles/{fn}: origin must be house, guest or interview')
+    for k in ('slug', 'title', 'dek', 'role', 'author', 'written', 'as_of_version', 'vault_commit', 'data_as_of'):
+        if not fm or not re.search(r'^' + k + r':\s*\S', fm.group(1), flags=re.M): fails.append(f'articles/{fn}: front matter has no {k}')
+    for g in re.findall(r'\[\[([^\]]+)\]\]', t):
+        for s in g.split(','):
+            if s.strip() not in slugs: fails.append(f'articles/{fn}: cites unknown slug {s.strip()}')
+# 4b2. second readings: every row's sources and claims exist, and the other model's text is on disk
+rd = load('readings') or {}
+cids = {c['id'] for c in (load('claims') or [])}
+for r in rd.get('readings', []):
+    if not os.path.exists(os.path.join(ROOT, r.get('file', ''))): fails.append(f'data/readings.json: {r.get("id")} file {r.get("file")} missing')
+    for x in r.get('rows', []):
+        for s in x.get('sources', []):
+            if s not in slugs: fails.append(f'data/readings.json: {r.get("id")} / {x.get("point")} cites unknown slug {s}')
+        for c in x.get('claims', []):
+            if c not in cids: fails.append(f'data/readings.json: {r.get("id")} / {x.get("point")} names unknown claim {c}')
+# 4d. patching: every downstream row is a real inventory row with the status shown; status.json is built and parses
+pt = load('patching') or {}
+inv = {(r['supplier'], r['product']): r.get('status_109618') for r in (load('software') or {}).get('rows', [])}
+prow = [d for l in pt.get('ladder', []) for d in l.get('downstream', [])] + [r for m in pt.get('models', []) for r in m.get('rows', [])]
+for sup, prod, st in prow:
+    if (sup, prod) not in inv: fails.append(f'data/patching.json: no inventory row {sup!r} / {prod!r}')
+    elif inv[(sup, prod)] != st: fails.append(f'data/patching.json: {prod!r} is {st!r} here but {inv[(sup, prod)]!r} in the inventory')
+for x in pt.get('ladder', []) + pt.get('side_effects', []) + pt.get('why_not_every_version', []):
+    for s in x.get('sources', []):
+        if s not in slugs: fails.append(f'data/patching.json cites unknown slug {s}')
+try:
+    json.load(open(os.path.join(ROOT, 'status.json'), encoding='utf-8'))
+except Exception as e:
+    fails.append(f'status.json: {e}')
+# 4e. signals: every layer, family and barrier cites only manifest slugs
+sg = load('signals') or {}
+for x in sg.get('ladder', []) + sg.get('families', []) + sg.get('barriers', []):
+    for s in x.get('sources', []):
+        if s not in slugs: fails.append(f'data/signals.json: {x.get("id")} cites unknown slug {s}')
+# 4c. layers: every data file is classified exactly once
+layers = load('layers') or {}
+classified = [f['path'] for f in layers.get('files', [])]
+ids = {l['id'] for l in layers.get('layers', [])}
+for f in layers.get('files', []):
+    if f.get('layer') not in ids: fails.append(f'data/layers.json: {f["path"]} has layer {f.get("layer")!r}')
+for fn in sorted(os.listdir(os.path.join(ROOT, 'data'))):
+    if fn.endswith('.json') and classified.count('data/' + fn) != 1: fails.append(f'data/{fn}: listed {classified.count("data/" + fn)} times in data/layers.json, not once')
+qs = load('questions') or {}
+for q in qs.get('questions', []):
+    for a in q.get('answer', []):
+        for s in a.get('sources', []):
+            if s not in slugs: fails.append(f'data/questions.json: {q.get("id")} cites unknown slug {s}')
+    for pth in q.get('see', []):
+        if not os.path.exists(os.path.join(ROOT, pth.split('#')[0])): fails.append(f'data/questions.json: {q.get("id")} points at missing page {pth}')
+    if not q.get('see'): fails.append(f'data/questions.json: {q.get("id")} points at no page')
 # 4b. the readers: plain-English facts cite known slugs; every persona path and glossary link points at a page that exists
 plain = load('plain') or {}
 for c in plain.get('cards', []) + plain.get('moments', []):
@@ -131,7 +188,7 @@ for root, dirs, files in os.walk(ROOT):
         m = PAT.search(b.decode('utf-8', 'replace'))
         if m: fails.append(f'{rel(fp)}: credential shape {m.group(0)[:12]}...')
 # 8. no external script/style/img (checked above); also check the vendored meter is present
-for f in ('assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js', 'assets/components/base/v1/v1.0/v1.0.0/sg-component.js', 'assets/site.css', 'assets/site.js', 'assets/personas.js', 'CNAME', '.nojekyll', 'VERSION', '.github/workflows/pages.yml'):
+for f in ('assets/review-nav.js', 'data/review.json', 'review/code/files.json', 'assets/themes/themes.css', 'assets/themes/themes.js', 'assets/themes/site-tokens.css', 'assets/telemetry.js', 'data/telemetry.json', 'data/admin.json', 'assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js', 'assets/components/base/v1/v1.0/v1.0.0/sg-component.js', 'assets/site.css', 'assets/site.js', 'CNAME', '.nojekyll', 'VERSION', '.github/workflows/pages.yml', 'assets/personas.js'):
     if not os.path.exists(os.path.join(ROOT, f)): fails.append(f'missing {f}')
 # version consistency
 ver = open(os.path.join(ROOT, 'VERSION')).read().strip()

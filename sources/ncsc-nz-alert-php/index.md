@@ -1,5 +1,7 @@
 # Source: UPDATED: CVE-2026-109618 and CVE-2026-109619 affecting PHP
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 NCSC New Zealand: what it says, the claims and events that cite it, and the hashes of every captured file.
 
 Source · advisory · primary · captured
@@ -50,4 +52,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/ncsc-nz-alert-php/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/ncsc-nz-alert-php/index.html

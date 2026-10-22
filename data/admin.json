@@ -1,0 +1,501 @@
+{
+ "roles": [
+  {
+   "id": "editor",
+   "name": "Editor",
+   "who": "Dinis Cruz",
+   "owns": "every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys",
+   "rules": [
+    "A brief is the editor's words, in either hand; agents write next to it, never over it.",
+    "Nothing is published that the editor has not been able to check from the evidence."
+   ]
+  },
+  {
+   "id": "dev",
+   "name": "dev@php.newsroom",
+   "who": "the agent in this session",
+   "owns": "the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file",
+   "rules": [
+    "Every push is a version; the release is not done until the live site serves it.",
+    "Content exists once: the build reads data/, never a page.",
+    "Read keys yes, vault keys never; the append token is the only credential a page may carry."
+   ],
+   "pki": {
+    "record": "sha256:8025e2a4470e73f0",
+    "encryption": "sha256:c2d463f96c597c01",
+    "key_link": "https://pki.sgit.ai/send/#k1.MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAmAl6IjgGY_4KGefEgncTD5LQLRnffcW61Ou6VPzMot2uo3dmyJuBpXyRaLeB02e_yOzAKAIZ7DH7Kv-f7oqgbITjVbC3RCn6r-EU--lBWARK1GRb5LJ6zttaZTcjKYNu4awVwugK6sIur_ggmeiAs_u3EfaCS8s2A77YXryW1d3WIciUuFfUYYnNW8St004MpZQlJZ4mZ9jCsfmmP4n6xXdle4SNsd5-ESfncQEMKwZbJAliq6f6pG-q_OjLglqMN7cNK4RLUnwV1H5RtLRxrvPEQrGriLI0D8A7sFdgPqN2O4qkBG3kPS04VXkuGqdHs_Ic62sgbEB-il8HP7ZsoTzq8-mpiKP4cLORzm81H3OnpJLe6bVskACn_P5myOlyp-jZ82paW9UfLpQo6BHXj1jnFhqfvrPIlI28KTvTHhuD4TWUndnrhC7ibbIe5qeV7rp3mWe62fTROVVdqDlQL-gURQM-GVErXYHk4azMoAvdowT90ufifYFEj9Tq1WvkWaOY_PwKD9TySOrWRT5DuN1fxLg-z8o9tWWbPQwRqu-fFH4cWLp86vnzpyT99qmhab45HHnt5UPqIc8rsIOTKxKFO7Crc8Q0jIcIeqfAKr3DnB1YR7tyrDln5uredHwzqv9rrl8dtmDV2_BFOeRICbm8d_eoEotSrd7rvPQmbQUCAwEAAQ.MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYTgQkNAJ_bdAeHPqR_HWmSl6TzXT_0fCM_7HFJECg_JRE3ewWKNdWYVnXxFDMeaZ1OceQ8LwYQa1vD0JoWfY2g.ZGV2QHBocC5uZXdzcm9vbQ",
+    "qr": "assets/keys/dev-php-newsroom.svg",
+    "made": "2026-10-22T14:44:39Z",
+    "tool": "pki.sgit.ai/agents/pki-agent.mjs (keygen --session)",
+    "note": "A session key: it dies with this session. Compare the fingerprint with the one the agent gave you in the session itself; this page is a second channel, not the authority."
+   }
+  },
+  {
+   "id": "collector-primary",
+   "name": "Primary-source collector",
+   "who": "an agent",
+   "owns": "php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone",
+   "rules": [
+    "Capture before you read.",
+    "One source.json and one notes.md per source; never edit another agent's files."
+   ]
+  },
+  {
+   "id": "collector-gov",
+   "name": "Government and CERT collector",
+   "who": "an agent",
+   "owns": "every national agency's advisory, in its own language, with the translation marked",
+   "rules": [
+    "What an agency does not say is a finding.",
+    "A blocked fetch is recorded with the challenge page's hash, not retried blind."
+   ]
+  },
+  {
+   "id": "collector-researchers",
+   "name": "Researcher, vendor and press collector",
+   "who": "an agent",
+   "owns": "Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press",
+   "rules": [
+    "Social posts first, because they get deleted; decode a post's time from its id."
+   ]
+  },
+  {
+   "id": "librarian",
+   "name": "librarian@php.newsroom",
+   "who": "an agent, joined in v0.2.6",
+   "owns": "the catalogue: the questions readers ask and the page that answers each; data/questions.json and /questions/; the list of articles readers have seen that the vault has not captured",
+   "rules": [
+    "Answer a question with a page, not a paragraph; if no page answers it, write the answer on /questions/ with its sources and open a board item.",
+    "An article a reader saw is listed as seen, not captured, until a collector captures it; it is never cited before then.",
+    "Strip personal share tokens from any link a reader sends."
+   ]
+  },
+  {
+   "id": "verifier",
+   "name": "Verifier",
+   "who": "unfilled",
+   "owns": "re-reading every claim against its capture text and downgrading what the capture does not carry",
+   "rules": [
+    "A quote that is not in the captured text is not a quote."
+   ]
+  },
+  {
+   "id": "briefing-writer",
+   "name": "Briefing writer",
+   "who": "dev@php.newsroom until filled",
+   "owns": "one page per audience from the same claims",
+   "rules": [
+    "A briefing adds no claim."
+   ]
+  },
+  {
+   "id": "cartographer",
+   "name": "Cartographer",
+   "who": "unfilled",
+   "owns": "the graph: nodes, typed edges, the per-source and per-party pages, the next layer down",
+   "rules": [
+    "A node is just a node; an edge without a source is deleted."
+   ]
+  },
+  {
+   "id": "journalist",
+   "name": "Journalist",
+   "who": "claude-journalist",
+   "owns": "dated state-of-affairs articles (admin/content/articles/*__journalist__*.md); the review of the front page and navigation",
+   "rules": [
+    "An article names the site version, vault commit and capture time it was written against, and is not revised afterwards.",
+    "Every factual sentence cites a captured source with [[slug]]; the gate refuses an unknown one."
+   ]
+  },
+  {
+   "id": "historian",
+   "name": "Historian",
+   "who": "claude-historian",
+   "owns": "dated essays putting the story in perspective (admin/content/articles/*__historian__*.md); the release history, the corrections file, the reality file",
+   "rules": [
+    "Say how early you are writing; mark a reading as a reading.",
+    "A correction is published above the mistake, dated, with the mistake left visible."
+   ]
+  }
+ ],
+ "board": [
+  {
+   "id": "001",
+   "title": "Pages deploy workflow and breadcrumbs up to the month, the year and the newsroom",
+   "status": "done",
+   "owner": "dev",
+   "version": "0.2.2",
+   "note": "The first run failed because admin/build/ was ignored by the repository's Python .gitignore template."
+  },
+  {
+   "id": "002",
+   "title": "Admin section: the board, the roles, the briefs, the vault with its public read key, telemetry",
+   "status": "done",
+   "owner": "dev",
+   "version": "0.2.3"
+  },
+  {
+   "id": "003",
+   "title": "Anonymous telemetry over an append lane, from the front end, into a separate vault",
+   "status": "done",
+   "owner": "dev",
+   "version": "0.2.3",
+   "note": "Brief: admin/content/briefs/2026-10-22__telemetry-over-an-append-lane.md. End-to-end tested from the CLI before shipping."
+  },
+  {
+   "id": "013",
+   "title": "Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key",
+   "status": "waiting",
+   "owner": "dev",
+   "note": "Sealed on 22 October 2026 to the editor's key on pki.sgit.ai (record sha256:db7f79fdd87e030a, the register's anchor), together with the subscriptions vault's keys; the m1 link was given to the editor in the session. Waiting for him to open it."
+  },
+  {
+   "id": "004",
+   "title": "Run the verifier over every claim: check each quote against its capture text",
+   "status": "open",
+   "owner": "verifier",
+   "note": "The BBC's NCSC sentence is the first case."
+  },
+  {
+   "id": "005",
+   "title": "Retry the blocked sources from another egress: openai.com, watchtowr.com, techzine.eu, socket.dev, ccn-cert.cni.es, dyn.cncs.gov.pt",
+   "status": "open",
+   "owner": "collector-researchers"
+  },
+  {
+   "id": "006",
+   "title": "Find the primary posts behind second-hand figures: Censys, VirusTotal, Unit 42, Cloudflare's CTO at 07:43 UTC, Gina Banyard's Mastodon post, the fedi.katze.sh posts",
+   "status": "open",
+   "owner": "collector-researchers"
+  },
+  {
+   "id": "007",
+   "title": "The 2024 trail in php-src: the audit finding whose fix surfaced the OOM problem, with a deeper clone",
+   "status": "open",
+   "owner": "collector-primary"
+  },
+  {
+   "id": "008",
+   "title": "The next graph layer: facts inside a source (sentence-level nodes) so every noun on a page links somewhere",
+   "status": "open",
+   "owner": "cartographer"
+  },
+  {
+   "id": "009",
+   "title": "A second model reads the vault and writes its own claims file; disagreements become disputed rows",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "010",
+   "title": "Re-check KEV and oss-security daily; record the day php2shell enters KEV if it does",
+   "status": "open",
+   "owner": "collector-primary"
+  },
+  {
+   "id": "011",
+   "title": "Resolve the rights question on publishing the evidence vault's read key: third-party pages are held verbatim",
+   "status": "open",
+   "owner": "editor",
+   "note": "The read key is published on the vault page at the editor's request; the editor will check the vault for anything confidential."
+  },
+  {
+   "id": "012",
+   "title": "Reconcile the fix commit hash rjmendez names (82f8f31b16a) with 3584a98bd",
+   "status": "open",
+   "owner": "collector-primary"
+  },
+  {
+   "id": "013",
+   "title": "Questions readers ask: /questions/, one page per question, each answer pointing at the pages and sources that carry it; first question from a reader's group chat",
+   "status": "done",
+   "owner": "librarian",
+   "version": "0.2.6"
+  },
+  {
+   "id": "014",
+   "title": "Capture The Times, 'Race to fix PHP security issue in software behind most websites' (22 October), seen by a reader, paywalled; listed on /questions/ as seen, not captured",
+   "status": "open",
+   "owner": "collector-researchers"
+  },
+  {
+   "id": "015",
+   "title": "Articles layer and the evidence, derived, authored split: data/layers.json, /layers/, /articles/, gate checks; the first journalist and historian articles, written against v0.2.5",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.2.7"
+  },
+  {
+   "id": "016",
+   "title": "Front page: a 'start here' row above the numbers (If you run PHP, the two flaws, exploitation, impact); today the playbook is not linked from the front page body",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the front page and navigation review, 22 October. Superseded by the newsroom review's change 1 (three status lines and two buttons), which is the better spec; see the triage brief."
+  },
+  {
+   "id": "017",
+   "title": "Front page: replace 'The last 48 hours' with 'Since the last release', drawn from the timeline rows added since the previous version, and drop this site's own events from it",
+   "status": "open",
+   "owner": "journalist"
+  },
+  {
+   "id": "018",
+   "title": "Navigation: split About into About (method, team, brief, corrections) and Engineering (admin, board, roles, briefs, telemetry, releases); move billing and the reading account to the bar's balance",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "019",
+   "title": "A layer badge (evidence, derived, authored) in every page's kicker, from data/layers.json, so a reader always knows what kind of page they are on",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "020",
+   "title": "Pricing by content type and freshness: every content page metered, price = max(1p, round(base x freshness)) x share read x rating; tiers fresh, new, current, archive picked in the reader's browser; rules on the billing page",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.2.10"
+  },
+  {
+   "id": "021",
+   "title": "Second readings: Perplexity's notes published in full and credited, compared with the vault point by point at /readings/",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.2.10"
+  },
+  {
+   "id": "022",
+   "title": "Tables as cards under 700px, and a screenshot check at 390px in the gate (newsroom review, change 2)",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "023",
+   "title": "Per citation: the quoted sentence, capture id and file hash, checked by the gate against the capture text (newsroom review, change 3)",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "024",
+   "title": "Publish /status.json in a stable shape (schema sgit.newsroom.story-status/1), with its own admin page; the re-export from the vault head is board item 039",
+   "status": "done",
+   "owner": "dev",
+   "version": "0.4.1"
+  },
+  {
+   "id": "025",
+   "title": "Exploitation over time: a strip chart from data/exploitation.json with count and count_basis per signal (newsroom review, change 5)",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "026",
+   "title": "Who said what first: by_ids on claims, origin, relay and independent roles per source; fixes the party pages that say no claim names them (newsroom review, change 6)",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "027",
+   "title": "Briefings in two minutes: a bottom line, five to eight claims as cards, the full table folded, read next (newsroom review, change 7)",
+   "status": "open",
+   "owner": "briefing-writer"
+  },
+  {
+   "id": "028",
+   "title": "/blast-radius/ by asset type, marked as the site's analysis, linked from the playbook and two briefings (newsroom review, change 8)",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "029",
+   "title": "The playbook in three phases, each step opening to the agency's sentence, taking offline last (newsroom review, change 9)",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "030",
+   "title": "The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fractal layer)",
+   "status": "open",
+   "owner": "cartographer"
+  },
+  {
+   "id": "031",
+   "title": "Narrow the gate's em-dash exemption to quoted text and titles, and rewrite the 20 source and party pages' notes",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "032",
+   "title": "SG Meter v1.3.1 to v1.5.0 for dark-mode contrast, keeping the pricing tiers working",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "033",
+   "title": "Capture the sources Perplexity named that the vault lacks, W3Techs first (it would close the front page's question on what 70% measures); listed on /readings/",
+   "status": "open",
+   "owner": "collector-researchers"
+  },
+  {
+   "id": "034",
+   "title": "Deploys from several agents: a started deploy is never cut off (the Pages workflow queues instead of cancelling), and release.sh takes in what other agents released before it bumps, and again if its push loses a race",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.2.12"
+  },
+  {
+   "id": "035",
+   "title": "/status/: each newsroom site's deploy runs, read from GitHub's public API with no credential, beside the version each site serves; every page notes when a newer release is live",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.2.12"
+  },
+  {
+   "id": "036",
+   "title": "Publish the source-watch vault (oq9gflln) the way sgit.ai publishes vaults: screenshot, open-in-a-new-tab link, the vault embedded, its main features",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.2.13"
+  },
+  {
+   "id": "037",
+   "title": "A vaults section listing every vault behind the site, what each holds and how to open it",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.2.13"
+  },
+  {
+   "id": "038",
+   "title": "The source watch is slow to open in the browser: with no app, the official UI decrypts the folder tree (2,678 objects) before it shows anything; from this sandbox that took 17 minutes. A small vault app that reads index/ and state/ first, or a lighter front vault, would open it in seconds",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "039",
+   "title": "Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "040",
+   "title": "Guest writers and interviewers: an intake (how a piece reaches the editor, the byline, the 'Guest' mark, the licence) and the first guest piece",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "041",
+   "title": "Follow the patching curve: re-read the NCSC-NL inventory per commit and draw how the 418 'under investigation' rows turn into fixed or vulnerable",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.4.2",
+   "note": "The inventory over time: /patching/inventory/, 38 versions read from the public git history; the curve keeps growing with each re-run of admin/build/inventory_history.py."
+  },
+  {
+   "id": "042",
+   "title": "Top-level navigation, Research and Stories: the editor's call on names and order after living with the first cut",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "043",
+   "title": "Capture W3Techs' PHP version shares alongside its language share (see board 033): the number the patching story says is missing",
+   "status": "open",
+   "owner": "collector-researchers"
+  },
+  {
+   "id": "044",
+   "title": "Patching and status.json: /patching/ with every downstream row checked against the inventory; the story 'Why can't every version of PHP just be patched?'; Research and Stories zones in the menu and an origin strip on every page",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.4.1"
+  },
+  {
+   "id": "045",
+   "title": "Feeds: one RSS feed per zone (for you, research, stories, about the site) and one for everything; an entry for every new item and every change; /feeds/",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.2"
+  },
+  {
+   "id": "046",
+   "title": "The delta since your last visit: every item marked new, changed or read in your browser; mark a page or everything read; fade or hide what you have read; decisions and notes per item in the newsroom's record format; your desk at /you/ with export and import",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.2"
+  },
+  {
+   "id": "047",
+   "title": "The feed viewer at /reader/: this site's feeds, the records and discussion a browser may read directly, and feeds the reader adds, fetched and shown safely",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.2"
+  },
+  {
+   "id": "048",
+   "title": "Subscriptions: a private vault (wgeiqabu) with an append lane, /subscribe/ (requests encrypted in the browser, confirmed before anything is sent), messages from and to agent@diniscruz.ai; its keys sealed to the editor",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.3"
+  },
+  {
+   "id": "049",
+   "title": "Carry the desk into the reader's own vault: bring the newsroom's vault pane here (it already reads sgit.notes.v1)",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "050",
+   "title": "Serve the source watch's latest snapshot of the feeds browsers cannot read (php.net, NCSC, CISA advisories, the press) to the viewer",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "051",
+   "title": "The second stories: /signals/ (the ladder from exposed to exploited, four signal families, barrier times) and the story 'Exposed is not exploited' by the journalist and the historian",
+   "status": "done",
+   "owner": "journalist",
+   "version": "0.4.2"
+  },
+  {
+   "id": "052",
+   "title": "Fix the vault's export of the NCSC-NL inventory: it dropped one row (iBabs bestuursportaal) at cca173c64ec5, so pages say 674 and 3 where the list has 675 and 4",
+   "status": "open",
+   "owner": "collector-gov"
+  },
+  {
+   "id": "053",
+   "title": "Capture the NCSC-NL inventory's later commits into the vault, so the history on /patching/inventory/ rests on captures as well as on the public repository",
+   "status": "open",
+   "owner": "collector-gov"
+  },
+  {
+   "id": "054",
+   "title": "Ask the edge providers for the number nobody has: how many exposed hosts sat behind a rule that blocked the request",
+   "status": "open",
+   "owner": "journalist"
+  },
+  {
+   "id": "055",
+   "title": "Record the first confirmed compromise with two dates, when it happened and when it was announced, against the barrier times on /signals/",
+   "status": "open",
+   "owner": "historian"
+  },
+  {
+   "id": "056",
+   "title": "Find the editor's article on exploitation, patching, internal vulnerability and network protection signals; the SaaS apocalypse piece as published does not carry it",
+   "status": "open",
+   "owner": "editor"
+  }
+ ],
+ "evidence_vault": {
+  "id": "3ytzxm3g",
+  "read_key": "sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g",
+  "open_url": "https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8%3A3ytzxm3g",
+  "note": "Read-only. A read key cannot be turned into write access. Published at the editor's request on 22 October 2026; the editor is checking the vault for anything that should not be public (board item 011). The vault's own README calls its captures private evidence not for republication; opening it with this key is reading, not republishing, and the rights question stays open on the board."
+ },
+ "telemetry_vault": {
+  "id": "84wr8mib",
+  "note": "Private. Its vault key, enum key and key-pair passphrase are held by the editor and the drainer, never in this repository."
+ }
+}

@@ -1,5 +1,7 @@
 # Fact: Updating is the only complete mitigation; the configuration measures reduce expo
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Updating is the only complete mitigation; the configuration measures reduce exposure to specific paths and do not make an installation safe Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · technical · confirmed
@@ -39,4 +41,4 @@ Sources: php-net-advisory, openwall-oss-security-2026-10-21-7, github-ghsa-6wmf-
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/only-update/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/only-update/index.html

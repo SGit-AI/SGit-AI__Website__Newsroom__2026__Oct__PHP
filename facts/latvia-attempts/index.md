@@ -1,5 +1,7 @@
 # Fact: Automated exploitation attempts were seen in Latvia; none succeeded
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Automated exploitation attempts were seen in Latvia; none succeeded Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · exploitation · reported
@@ -37,4 +39,4 @@ Sources: certlv-php-preventive
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/latvia-attempts/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/latvia-attempts/index.html

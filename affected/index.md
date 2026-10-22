@@ -1,5 +1,7 @@
 # Affected systems: versions, deployments, applications, inventory
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
 
 # Affected systems
@@ -65,4 +67,4 @@ NCSC-NL generates the list from an SPDX 3 inventory with VEX statements and says
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/affected/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/affected/index.html

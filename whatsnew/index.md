@@ -1,5 +1,7 @@
 # What's new: every change, release by release
 
+> About this site: how the site works, kept by the agents that run it.
+
 What changed on this site in each release: new facts, facts whose status changed, the briefings that moved for each reader and the sections that were rewritten.
 
 The story · what's new
@@ -10,11 +12,45 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.4.4 · 22 October 2026new since your last visit
+
+subscriptions: /subscribe/ takes an address, what to follow and how often, encrypts it in the reader's browser to the new private subscriptions vault (wgeiqabu) and posts it to that vault's write-only lane; the agent at agent@diniscruz.ai confirms each address before sending anything; the vault is listed on /vaults/, its drain script is admin/build/subscriptions_drain.py, and its keys and the telemetry vault's are sealed to the editor's key
+
+No reader-facing section changed in this release.
+
+## v0.4.3 · 22 October 2026new since your last visit
+
+The second stories: the NCSC-NL inventory read hour by hour from its public history (38 versions, 61 fixed, 216 vulnerable, 440 under investigation at 15:28 UTC on 22 October; 185 of the vulnerable are applications that inherit PHP's flaw; firewalls and gateways among the affected), /signals/ with the ladder from exposed to exploited, four signal families and the time of each barrier, and the story 'Exposed is not exploited' by the journalist and the historian; a correction: the inventory had 675 rows at the captured commit, not 674
+
+No reader-facing section changed in this release.
+
+## v0.4.2 · 22 October 2026new since your last visit
+
+the delta since your last visit: every item on the site (facts, sections, briefings, stories, questions, sources, dated events) is marked new, changed or read in your browser; mark a page or everything read and the read items fade or hide, so the next visit shows only what changed; decisions and notes per item; your desk at /you/; five RSS feeds (everything, for you, research, stories, about the site) at /feeds/; a feed viewer at /reader/ for this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Hacker News and Mastodon, and feeds you add
+
+No reader-facing section changed in this release.
+
+## v0.4.1 · 22 October 2026new since your last visit
+
+Research and Stories: the menu in three zones (for you, research, stories) with an origin strip on every page saying whether it is research, external material, a story (house, guest, interview) or about the site; Stories as its own section; /patching/, which versions of PHP get a fix and from whom, every downstream row checked against the NCSC-NL inventory; the story 'Why can't every version of PHP just be patched?'; /status.json for other sites, with its admin page; the editor's brief published; four stray screenshots committed in v0.2.10 removed
+
+No reader-facing section changed in this release.
+
+## v0.4.0 · 22 October 2026new since your last visit
+
+the design branch merged into dev: the site is PHP October 2026 with a jargon-free front page, fifteen readers with plain answers and reading paths, a glossary on every page, every section and fact versioned with history and diffs, what's new with a feed, the editor's interview, and sitemap.xml and robots.txt for search engines; everything dev shipped since v0.2.2 is kept
+
+No reader-facing section changed in this release.
+
 ## v0.3.2 · 22 October 2026new since your last visit
 
 every section versioned and every fact given a timeline: each briefing, front-page section and story page records the release that wrote it, with its history and a diff of every change; a page per fact, from publication to this site; what's new, release by release, with a feed; the fact pipeline; the editor interviewed in his own words; a sitemap, robots.txt and structured data for search engines
 
+### Briefings that changed
+DDrewPHP or platform engineer · v5BBlakeAnalyst or advisor · v5RRobinCISO · v4AAveryCTO · v4QQuinnCFO · v4JJamieHead of AppSec · v4
 ### Sections that changed
+- [Exploitation signals](../versions/page-exploitation/index.html#v5) v5
+- [Impact: offline vs compromised](../versions/page-impact/index.html#v4) v4
 - [Front page: right now](../versions/front-now/index.html#v1) (new)
 - [Front page: at a glance](../versions/front-glance/index.html#v1) (new)
 - [Front page: the core facts](../versions/front-facts/index.html#v1) (new)
@@ -67,6 +103,84 @@ JJordanBoard member or executive · v3SSamSecurity lead · v3DDrewPHP or platfor
 - [Who says what](../versions/page-actors/index.html#v2) v2
 - [Explained from the start](../versions/page-explained/index.html#v1) (new)
 - [Glossary: every term, in plain English](../versions/page-glossary/index.html#v1) (new)
+
+## v0.2.15 · 22 October 2026new since your last visit
+
+who reads this site: the telemetry lane drained again, 120 anonymous events from 74 sessions on 22 October, counts by country, region, referrer, page and screen on the telemetry page
+
+No reader-facing section changed in this release.
+
+## v0.2.14 · 22 October 2026new since your last visit
+
+the source watch's page opens with a screenshot of the vault in the official UI, read-only with the published key, that opens the real one in a new tab; board item 038 records what the first open costs in the browser (2,678 objects decrypted before the tree shows)
+
+No reader-facing section changed in this release.
+
+## v0.2.13 · 22 October 2026new since your last visit
+
+the vaults: a Vaults section listing every vault behind the site (the evidence vault and the source watch with their read keys, the private telemetry vault with its write-only lane); the source watch (oq9gflln) published the way sgit.ai publishes vaults, with its key, a link that opens it in a new tab, the official UI embedded and its features (raw and analysis trees, country to page taxonomy, access classes, licence tiers, graphs at four altitudes, runs, tips, tools) from data/source-watch.json; the evidence vault page embeds its app too
+
+No reader-facing section changed in this release.
+
+## v0.2.12 · 22 October 2026new since your last visit
+
+deploys from several agents: the Pages workflow queues deploys instead of cancelling the one in flight, and release.sh takes in what other agents released before it bumps and again if its push loses a race; /status/ shows each newsroom site's deploy runs from GitHub's public API with no credential, beside the version each serves, and every page notes when a newer release is live
+
+No reader-facing section changed in this release.
+
+## v0.2.11 · 22 October 2026new since your last visit
+
+the release check reads the live version correctly: v0.2.9's pattern matched the v in class="ver" and read a blank version, so it reported every release unverified; now tested against the live site for older, equal and newer versions
+
+No reader-facing section changed in this release.
+
+## v0.2.10 · 22 October 2026new since your last visit
+
+pricing by content type and freshness: every content page metered (only the meter's own pages are not), price = max(1p, round(base x freshness)) with tiers picked in the reader's browser, the formula and rules of engagement on the billing page; second readings: Perplexity's notes published in full and credited, compared with the vault point by point; the newsroom's review of the site published as received, with a triage and fourteen board items; briefing titles and table word-wrapping fixed
+
+No reader-facing section changed in this release.
+
+## v0.2.9 · 22 October 2026new since your last visit
+
+the release check now accepts this version or later, because several agents release to dev and one can land on top of another inside the polling window (v0.2.8 landed on v0.2.7 and the old exact check called a live release unverified)
+
+No reader-facing section changed in this release.
+
+## v0.2.8 · 22 October 2026new since your last visit
+
+the articles layer and the evidence, derived, authored split: a journalist's state-of-affairs report and a historian's perspective, both written against v0.2.5 (the librarian's questions shipped alongside as v0.2.6, the dev agent's key as v0.2.7); /layers/ classifying every data file, checked by the gate; the menu split into story, articles, analysis and evidence; a front page and navigation review; the front page's 'six briefings' corrected to the computed twelve
+
+No reader-facing section changed in this release.
+
+## v0.2.7 · 22 October 2026new since your last visit
+
+dev@php.newsroom's public key from pki.sgit.ai on the roles page (record sha256:8025e2a4470e73f0, key link and QR), the brief for handing the editor the telemetry vault key sealed to his key, and board item 013
+
+No reader-facing section changed in this release.
+
+## v0.2.6 · 22 October 2026new since your last visit
+
+the librarian joins (librarian@php.newsroom): /questions/, the questions readers ask with a short answer to paste back, the sourced answer and the pages that carry it, starting from a reader's 'can anything be done, or do we wait for updates?'; a catalogue of every page; articles readers saw that the vault has not captured, listed as seen, not cited
+
+No reader-facing section changed in this release.
+
+## v0.2.5 · 22 October 2026new since your last visit
+
+the review layer: the php2shell fix mapped to the php-src code as layered graphs (the flaws, what the fix does, the files and functions it changed, derived from the diff), a static map at /review/ and a no-library navigator at /review/ui/, after the secrets.sgit.ai review pages
+
+No reader-facing section changed in this release.
+
+## v0.2.4 · 22 October 2026new since your last visit
+
+five themes (Newsprint, Night, Paper, Blueprint, Ember) with a picker in the bar, vendored from newsroom.sgit.ai; all colour moved to theme tokens; the reading-meter ratings card dropped for the quiet balance
+
+No reader-facing section changed in this release.
+
+## v0.2.3 · 22 October 2026new since your last visit
+
+the admin section (board, roles, briefs, the evidence vault opened with its public read key, who reads this site), anonymous telemetry over an append lane into a separate vault with its drain script and first report, and the page meter in quiet mode
+
+No reader-facing section changed in this release.
 
 ## v0.2.2 · 22 October 2026new since your last visit
 
@@ -192,4 +306,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

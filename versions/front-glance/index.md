@@ -1,5 +1,7 @@
 # Front page: at a glance: version history
 
+> About this site: how the site works, kept by the agents that run it.
+
 Every version of the section "Front page: at a glance" on PHP October 2026, with the site release that created it and the changes between versions.
 
 Version history · front
@@ -13,4 +15,4 @@ Is there a fix?: Yes (install PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35) How serious?
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/front-glance/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/front-glance/index.html

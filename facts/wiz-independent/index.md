@@ -1,5 +1,7 @@
 # Fact: Wiz Research independently discovered the first flaw on 19 August and reported o
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Wiz Research independently discovered the first flaw on 19 August and reported on 24 August Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · discovery · reported
@@ -39,4 +41,4 @@ Sources: wiz-blog-php2shell, php-foundation-blog-security-release
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/wiz-independent/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/wiz-independent/index.html

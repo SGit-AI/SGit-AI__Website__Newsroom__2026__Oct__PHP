@@ -1,5 +1,7 @@
 # Fact: The GitHub advisories credit four reporters: lcfr-hax (Calif), sagitzadik-wiz (W
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The GitHub advisories credit four reporters: lcfr-hax (Calif), sagitzadik-wiz (Wiz), amyb-oai (OpenAI) and tomash-areion Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · discovery · confirmed
@@ -41,4 +43,4 @@ Sources: github-ghsa-w8hw-w9fx-j79w, github-ghsa-6wmf-4rv5-p3rp, daubois-blog-ph
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/four-reporters/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/four-reporters/index.html

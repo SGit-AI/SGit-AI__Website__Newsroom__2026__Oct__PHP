@@ -1,5 +1,7 @@
 # Detection and defence: version history
 
+> About this site: how the site works, kept by the agents that run it.
+
 Every version of the section "Detection and defence" on PHP October 2026, with the site release that created it and the changes between versions.
 
 Version history · page
@@ -13,4 +15,4 @@ v3 · site v0.3.1 · 22 October 2026 · reconstructed from git · 2 lines added 
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/page-defence/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/page-defence/index.html

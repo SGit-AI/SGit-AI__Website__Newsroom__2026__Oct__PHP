@@ -1,5 +1,7 @@
 # Fact: The fixes were released at 14:00 UTC on 21 October
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The fixes were released at 14:00 UTC on 21 October Who says it, its status (disputed), its sources, and its timeline from publication to this site.
 
 Fact · timing · disputed
@@ -50,4 +52,4 @@ Sources: openwall-oss-security-2026-10-20-34, daubois-blog-php2shell-rumors, cer
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/release-time/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/release-time/index.html

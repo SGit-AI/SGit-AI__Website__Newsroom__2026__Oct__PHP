@@ -1,5 +1,7 @@
 # Fact: The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOver
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
 
 Fact · impact · confirmed
@@ -39,4 +41,4 @@ Sources: rijksoverheid-ncsc-php-news, dutchitleaders-websites-offline
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html

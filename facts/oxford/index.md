@@ -1,5 +1,7 @@
 # Fact: Oxford City Council: 'a precaution because of a worldwide issue with the underly
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident' Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · impact · reported
@@ -35,4 +37,4 @@ Sources: oxfordchronicle-councils-offline
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/oxford/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/oxford/index.html

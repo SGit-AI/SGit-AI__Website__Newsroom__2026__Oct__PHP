@@ -85,6 +85,13 @@
    "mistake": "None recorded yet; the first release is where the first one will be."
   },
   {
+   "id": "librarian",
+   "name": "Librarian (librarian@php.newsroom)",
+   "beat": "the catalogue: which page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured yet",
+   "rule": "Answer a question with a page, not a paragraph. If no page answers it, the answer is written here with its sources, and the gap goes to the editor.",
+   "mistake": "The first question came from a group chat with a newspaper link in it; the newspaper was not in the vault. It is listed below as seen, not captured, rather than cited."
+  },
+  {
    "id": "verifier",
    "name": "Verifier",
    "beat": "re-reads each claim against its captures; downgrades anything the capture does not carry",
@@ -106,11 +113,18 @@
    "mistake": "None yet."
   },
   {
+   "id": "journalist",
+   "name": "Journalist",
+   "beat": "dated state-of-affairs articles: what is settled, where the alarm and the evidence part company, what would change the story",
+   "rule": "An article is written against a stated site version and vault commit and is not revised; when the evidence moves, a new article says so. Every factual sentence carries a captured source.",
+   "mistake": "The first draft said the BBC offline framing held for two of the four agencies it named; checked against the agencies data it holds for one, and the draft was corrected before release."
+  },
+  {
    "id": "historian",
    "name": "Historian",
-   "beat": "the release history, the corrections file, the reality file",
-   "rule": "A correction is published above the mistake, dated, with the mistake left visible.",
-   "mistake": "None yet."
+   "beat": "dated essays that set the story against earlier vulnerabilities and the KEV catalog; the release history, the corrections file, the reality file",
+   "rule": "Say how early you are writing. A sentence from the record carries its source; a reading is offered as a reading. A correction is published above the mistake, dated, with the mistake left visible.",
+   "mistake": "None yet. The first essay, at v0.2.5, names the evidence that would overturn its own readings."
   }
  ],
  "audiences": [

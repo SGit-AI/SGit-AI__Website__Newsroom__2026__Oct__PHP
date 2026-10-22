@@ -1,5 +1,7 @@
 # Fact: Patching the demonstrated paths does not make the bailout mechanism safe; more p
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 Patching the demonstrated paths does not make the bailout mechanism safe; more paths should be expected Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · technical · reported
@@ -38,4 +40,4 @@ Sources: fastly-blog-php2shell, openwall-oss-security-109619-thread
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/more-paths/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/more-paths/index.html

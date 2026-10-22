@@ -1,5 +1,7 @@
 # Every claim, with its status and sources
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 70 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
 
 # Every claim, and who makes it
@@ -129,4 +131,4 @@ The newsroom's own twelve claims, seeded from the BBC live page on the morning o
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/claims/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/claims/index.html

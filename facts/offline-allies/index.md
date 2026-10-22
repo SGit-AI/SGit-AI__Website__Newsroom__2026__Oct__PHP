@@ -1,5 +1,7 @@
 # Fact: The UK's NCSC, the NSA and their counterparts in the EU and Australia advise tak
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 The UK's NCSC, the NSA and their counterparts in the EU and Australia advise taking systems offline where patching is not feasible Who says it, its status (contradicted), its sources, and its timeline from publication to this site.
 
 Fact · advice · contradicted
@@ -47,4 +49,4 @@ Sources: bbc-live-ckgel5xp2xv9t, acsc-alert-php, certeu-sa-2026-018, ncsc-nl-php
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/offline-allies/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/offline-allies/index.html

@@ -1,5 +1,7 @@
 # The PHP security flaws, explained from the start
 
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
 No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.
 
 Start here · ******Plain English
@@ -92,4 +94,4 @@ Every one of those statements links to the pages it comes from, and every one of
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/explained/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/explained/index.html
