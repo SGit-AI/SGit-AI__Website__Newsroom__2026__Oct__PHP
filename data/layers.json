@@ -217,6 +217,13 @@
    "used_on": "readings/index.html"
   },
   {
+   "path": "admin/content/updates/",
+   "layer": "authored",
+   "by": "the conductor, and whoever holds the updates beat for it",
+   "from": "the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written",
+   "used_on": "updates/index.html"
+  },
+  {
    "path": "admin/content/briefs/",
    "layer": "authored",
    "by": "the editor, and agents writing build briefs and reviews",

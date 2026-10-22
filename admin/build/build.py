@@ -66,13 +66,38 @@ def load_articles():
 
 ARTICLES = load_articles()
 
+# the updates (admin/content/updates/), loaded here because the menu lists the latest ones
+UPDATES_DIR = os.path.join(ROOT, 'admin', 'content', 'updates')
+UPDATE_KINDS = OrderedDict([('flash', 'Flash'), ('hourly', 'Hourly'), ('daily', 'Daily')])
+
+def load_updates():
+    out = []
+    for fn in sorted(os.listdir(UPDATES_DIR)) if os.path.isdir(UPDATES_DIR) else []:
+        if not re.match(r'^\d{4}-\d{2}-\d{2}T\d{4}Z__[a-z]+\.md$', fn):
+            continue  # README.md and anything else that is not an update
+        m = re.match(r'^---\n(.*?)\n---\n(.*)$', open(os.path.join(UPDATES_DIR, fn), encoding='utf-8').read(), flags=re.S)
+        if not m:
+            sys.exit(f'update {fn}: no front matter')
+        meta = dict(re.match(r'^(\w+):\s*(.*)$', l).groups() for l in m.group(1).splitlines() if l.strip())
+        for k in ('id', 'at', 'kind', 'title', 'summary', 'covers_from', 'covers_to', 'author'):
+            if not meta.get(k):
+                sys.exit(f'update {fn}: front matter has no {k}')
+        if meta['kind'] not in UPDATE_KINDS:
+            sys.exit(f'update {fn}: kind must be one of {", ".join(UPDATE_KINDS)}')
+        meta['file'], meta['text'] = fn, m.group(2)
+        out.append(meta)
+    return sorted(out, key=lambda u: u['at'], reverse=True)
+
+UPDATES = load_updates()
+
 # The two halves of the site, and what each page is. Research: material collected from outside and what this
 # site derives from it. Stories: written here, signed and dated. Every page carries one of these at its top.
-ZONES = OrderedDict([('Start here', 'For you'), ('Questions', 'For you'), ('Briefings', 'For you'), ('Yours', 'For you'), ('The incident', 'Research'),
+ZONES = OrderedDict([('Updates', 'Updates'), ('Start here', 'For you'), ('Questions', 'For you'), ('Briefings', 'For you'), ('Yours', 'For you'), ('The incident', 'Research'),
                      ('The analysis', 'Research'), ('The evidence', 'Research'), ('Stories', 'Stories'), ('About', 'Site')])
 ORIGINS = {
     'house': {'short': 'House', 'label': 'Story', 'text': 'written here by this site, signed and dated'},
     'guest': {'short': 'Guest', 'label': 'Story, guest', 'text': 'written by a guest writer, published here under their name'},
+    'update': {'short': 'Update', 'label': 'Update', 'text': 'written here for the conductor from the repository\'s record and the evidence; dated, kept as written'},
     'interview': {'short': 'Interview', 'label': 'Story, interview', 'text': 'an interview conducted for this site, the answers in the interviewee\'s own words'},
 }
 AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('journalist-historian', 'Journalist and historian'), ('cyber', 'Cyber desk')])
@@ -184,6 +209,7 @@ def to_markdown(fragment):
 # ----------------------------------------------------------------------------- layout
 
 NAV = [
+    ('Updates', [('updates/index.html', 'Every update, newest first')] + [(f'updates/{u["id"]}/index.html', f'{UPDATE_KINDS[u["kind"]]}: {int(u["at"][8:10])} {"Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()[int(u["at"][5:7]) - 1]} {u["at"][11:16]} UTC') for u in UPDATES[:6]] + [('updates/readme/index.html', 'How an update is written')]),
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
@@ -1452,7 +1478,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
+    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_status_json(); build_factcheck()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -2004,6 +2030,7 @@ def build_articles():
 <p class="lead">{E(a["dek"])}</p>
 <p class="kv"><b>By</b> the {E(role.lower())} {"roles, agents" if "," in a["author"] else "role, agent"} <code>{E(a["author"])}</code> &middot; <b>written against</b> {article_stamp(a)}</p>
 {moved}
+{''.join(f'<div class="caveat correction" id="correction-{k[10:]}"><p><b>Correction, {E(human_time(v.split(" | ", 1)[0]))}.</b> {E(v.split(" | ", 1)[1])}</p></div>' for k, v in sorted(a.items()) if re.match(r'^correction\d+$', k))}
 {render_article(a["text"], 2)}
 </article>
 {cited}
@@ -3540,6 +3567,46 @@ def build_agents_guide():
 <p class="small">The source is <code>AGENTS.md</code> at the root of the repository; every agent reads it there or here.</p>
 """
     page('admin/agents/index.html', 'How to work on this site: guidance for every agent', 'Push to your own branch early and often and let dev@php.newsroom carry it into dev; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements.', body, kind='site')
+
+
+# ----------------------------------------------------------------------------- the updates, held by the conductor (claude-journalist, v0.5.x)
+# What changed on the site, in the story and across the team, dated, for the editor first. One markdown file per update in
+# admin/content/updates/ (README.md there is how to write one); facts drafted with admin/build/updates_digest.py.
+
+
+def build_updates():
+    for i, u in enumerate(UPDATES):
+        newer = UPDATES[i - 1] if i > 0 else None
+        older = UPDATES[i + 1] if i + 1 < len(UPDATES) else None
+        nav = ' &middot; '.join(x for x in [f'<a href="../{E(older["id"])}/index.html">&larr; the one before</a>' if older else '', f'<a href="../{E(newer["id"])}/index.html">the one after &rarr;</a>' if newer else '', '<a href="../index.html">every update</a>'] if x)
+        body = f'''
+<p class="kicker">Update &middot; {E(UPDATE_KINDS[u["kind"]])} &middot; {E(human_time(u["at"]))}</p>
+<h1>{E(u["title"])}</h1>
+<p class="lead">{E(u["summary"])}</p>
+<p class="kv"><b>Covers</b> {E(u["covers_from"])} to {E(u["covers_to"])} &middot; <b>by</b> {E(u["author"])}</p>
+{render_article(u["text"], 2)}
+<p class="small">{nav} &middot; <a href="../../feeds/updates.xml">the updates feed</a> &middot; source <code>admin/content/updates/{E(u["file"])}</code></p>
+'''
+        page(f'updates/{u["id"]}/index.html', u['title'], u['summary'], body, kind='site', date=u['at'][:10], topics='updates', origin='update', byline=u['author'])
+    rows = ''.join(f'<article class="rel"><p class="kicker">{E(UPDATE_KINDS[u["kind"]])} &middot; {E(human_time(u["at"]))}</p><h3><a href="{E(u["id"])}/index.html">{E(u["title"])}</a></h3><p>{E(u["summary"])}</p></article>' for u in UPDATES)
+    body = f'''
+<h1>Updates</h1>
+<p class="lead">What changed on this site, in the story and across the team that runs it, dated, newest first: hourly while things are moving, daily at the end of the day, and at once when something changes what a reader should do. Written for the editor first, and for anyone following the work. Every update is drafted from the repository's own record and cites the evidence for anything it says about the story. Held by the conductor; <a href="../admin/briefs/index.html#2026-10-22__brief__the-conductor-and-the-updates">the brief</a> and <a href="readme/index.html">how an update is written</a> are public.</p>
+<p><a class="cta" href="../feeds/updates.xml">Follow the updates (RSS)</a></p>
+{rows or "<p>None yet.</p>"}
+'''
+    page('updates/index.html', 'Updates: what changed, on the site and in the story', 'Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.', body, kind='site', topics='updates')
+    page('updates/readme/index.html', 'How an update is written', 'The conductor\'s guide to the updates: what an update is, when, where the facts come from, its shape and its rules.',
+         '<h1>How an update is written</h1>' + render_md_file('admin/content/updates/README.md').split('</h2>', 1)[-1], kind='site', topics='updates method')
+    items = ''.join(f'<item><title>{E(UPDATE_KINDS[u["kind"]] + ": " + u["title"])}</title><link>{E(BASE_URL + "/updates/" + u["id"] + "/index.html")}</link>'
+                    f'<guid isPermaLink="false">update-{E(u["id"])}</guid><pubDate>{rfc822(u["at"])}</pubDate><category>{E(u["kind"])}</category>'
+                    f'<description>{E(u["summary"])}</description></item>\n' for u in UPDATES)
+    head = ('<?xml version="1.0" encoding="utf-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n'
+            f'<title>{E(SITE_NAME)}: updates</title>\n<link>{BASE_URL}/updates/index.html</link>\n'
+            f'<atom:link href="{BASE_URL}/feeds/updates.xml" rel="self" type="application/rss+xml"/>\n'
+            f'<description>{E(SITE_NAME)}: what changed on the site, in the story and across the team, hourly, daily and flash.</description>\n'
+            f'<language>en-gb</language>\n<lastBuildDate>{rfc822(UPDATES[0]["at"]) if UPDATES else rfc822(REL_DATE.get(VERSION, ""))}</lastBuildDate>\n')
+    write('feeds/updates.xml', head + items + '</channel>\n</rss>\n')
 
 
 if __name__ == '__main__':

@@ -24,11 +24,12 @@
    "id": "conductor",
    "name": "conductor@php.newsroom",
    "who": "an agent, joined 22 October 2026; also the comms agent for now",
-   "owns": "the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team",
+   "owns": "the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team; the updates (/updates/ and /feeds/updates.xml): hourly while things move, daily, and flash, for the editor first, from admin/content/updates/README.md",
    "rules": [
     "Every task has one owner, and the owner opens it: the conductor asks by mail and never writes into another member's queue.",
     "A digest names every blocker and who it waits on.",
-    "Vault keys never go into a file, a page or a message."
+    "Vault keys never go into a file, a page or a message.",
+    "An update says what moved and who it waits on; it is drafted from the repository's record with admin/build/updates_digest.py, never from memory."
    ]
   },
   {
@@ -759,6 +760,36 @@
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the brief: a fact-checker joins the team (22 October)."
+  },
+  {
+   "id": "090",
+   "title": "The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/README.md), the digest tool (admin/build/updates_digest.py) and the first daily update, for the conductor's beat; carries board 075's page",
+   "status": "done",
+   "owner": "journalist"
+  },
+  {
+   "id": "091",
+   "title": "Take the updates beat: read the brief and admin/content/updates/README.md, confirm on your branch, and write the next update when something moves",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "092",
+   "title": "Go for scheduled updates: an hourly run (only when something moved) and a daily one, with the run's cadence in board 071",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "093",
+   "title": "Every commit names its agent: 40 of the first day's 46 commits carry no Agent: line, so updates cannot say who did what; remind every member through the conductor's broadcast",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "094",
+   "title": "Act on the fact-check's corrections to the journalist's and the historian's stories: done for 'Where php2shell stands' and 'php2shell in perspective'; the agencies and claims data they inherited are board 088",
+   "status": "done",
+   "owner": "journalist"
   }
  ],
  "evidence_vault": {

@@ -3,6 +3,7 @@ slug: php2shell-in-perspective
 title: php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proof
 dek: A historian's reading of the first day, set against ten earlier vulnerabilities and the KEV catalog: which parts of this story have happened before, which have not, and what the record will need to settle it.
 origin: house
+correction1: 2026-10-22T20:03Z | One example in 'How the story was first told' is wrong, found by the fact-check desk's first run (finding 45) and checked against the BBC capture. The BBC did not turn the American agencies' offline advice into the stated position of the UK, the EU and Australia: its captured page says those agencies urged users 'to apply the fixes', and gives the offline quote to the UK's NCSC alone. That example of a story hardening does not stand. The desk adds that 'disclosed on 22 October' is wrong in UTC but true in Australian time. The sentences below are left as written.
 role: historian
 author: claude-historian
 written: 2026-10-22

@@ -96,5 +96,11 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - `/admin/keys/` from `data/keys.json`: the root (the editor's key, pinned from `CLAUDE.md`), each agent's key and enrolment, every vault and whether its key is with the editor, the rules of engagement, and the commands to make a key and hand a vault key over. The gate checks the file holds fingerprints and vault ids only.
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
+## The updates (journalist, for the conductor)
+- `/updates/` and `/feeds/updates.xml` from `admin/content/updates/<time>__<kind>.md` (front matter: id, at, kind flash|hourly|daily, title, summary, covers_from, covers_to, author); the guide is `admin/content/updates/README.md`, also at `/updates/readme/`. One update so far: the daily of 22 October, 20:03 UTC.
+- `admin/build/updates_digest.py --since <ref|vX.Y.Z> --until origin/dev`: the facts for an update, from git alone.
+- Stories can carry dated corrections (`correction1: <UTC> | <text>` in front matter), shown above the text, which stays as written.
+- Not built: a schedule for the updates (needs the editor's go); the conductor's own session has not taken the beat yet.
+
 ## Not built
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.
