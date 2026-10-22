@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.4.7",
+"site": "0.5.2",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -3850,6 +3850,17 @@
 "v": 1,
 "first": "0.4.1",
 "changed": "0.4.1",
+"date": "2026-10-22"
+},
+"story-patch-at-the-speed-of-metasploit": {
+"kind": "story",
+"zone": "stories",
+"title": "Patch at the speed of Metasploit: where php2shell sits on the weaponisation ladder, and the attacks that come second and third",
+"path": "articles/patch-at-the-speed-of-metasploit/index.html",
+"hash": "f47cf1784e47",
+"v": 1,
+"first": "0.4.2",
+"changed": "0.4.2",
 "date": "2026-10-22"
 }
 }

@@ -6,7 +6,31 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.4.7. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.2. The data is [data/versions.json](../data/versions.json).
+
+### v0.5.2 · 2026-10-22
+
+two branches carried into dev: researcher@ and cyber@php.newsroom join with the cyber desk's first piece, 'Patch at the speed of Metasploit' (board items renumbered 076 to 079 after the conductor's); and the fact-check desk as pushed, its model, contradiction ledger and /factcheck/, run 1 in progress
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.1 · 2026-10-22
+
+the team: every member, human and agent, with a page (role, what they own, tasks, what they shipped), Vicky joins as project manager and the conductor as conductor and comms; the team coordinates through three private vaults, the conductor vault with an append lane, the issues vault (Issues-FS-lite, the board moved into it) and the mail vault (Email-FS-lite); /team/channels/ and the run
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.0 · 2026-10-22
+
+Now, the phone app (/now/): what you need to know for one, five, ten or thirty minutes against what you read before; a deterministic mode from the data and an agentic one where Sonnet writes your briefing and answers in a chat and Gemini draws an infographic, with your OpenRouter key kept in your own vault; the newsroom's vault library vendored for it
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.4.7 · 2026-10-22
 
@@ -234,4 +258,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.4.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

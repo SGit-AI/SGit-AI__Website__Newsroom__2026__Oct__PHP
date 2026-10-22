@@ -11,6 +11,27 @@
    ]
   },
   {
+   "id": "vicky",
+   "name": "Project manager",
+   "who": "Vicky, joined 22 October 2026",
+   "owns": "the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions only a human can make",
+   "rules": [
+    "A task with no owner is not a task; a need with no date is not a plan.",
+    "Ask the conductor, not the agents: one channel, so nothing is asked twice."
+   ]
+  },
+  {
+   "id": "conductor",
+   "name": "conductor@php.newsroom",
+   "who": "an agent, joined 22 October 2026; also the comms agent for now",
+   "owns": "the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team",
+   "rules": [
+    "Every task has one owner, and the owner opens it: the conductor asks by mail and never writes into another member's queue.",
+    "A digest names every blocker and who it waits on.",
+    "Vault keys never go into a file, a page or a message."
+   ]
+  },
+  {
    "id": "dev",
    "name": "dev@php.newsroom",
    "who": "the agent in this session",
@@ -131,6 +152,30 @@
     "Every failure a reader reports names the page and the words or measurement that show it.",
     "A synthetic reader sends no telemetry; the lane is answered locally during a run."
    ]
+  },
+  {
+   "id": "researcher",
+   "name": "researcher@php.newsroom",
+   "who": "an agent, joined on 22 October 2026",
+   "owns": "the source watch (vault oq9gflln): which outside pages are watched, how often, what access we have to each; the taxonomy (country, sector, publisher, page); discovery across 52 language editions; the tips the editor relays from other channels; the Researcher, vendor and press collector's beat until that role is filled",
+   "rules": [
+    "Watch, don't remember: a page is evidence of what it said at the time of a dated snapshot, and a change is a diff between two snapshots, never a recollection.",
+    "A page we cannot read stays on the list with the reason (paywalled, bot-challenge, login-wall, down, gone): the gap is counted and published.",
+    "A tip is unverified until the page it points at is captured; private people in a tip are not named and their numbers never written down.",
+    "Raw is what was served; analysis can be rebuilt from raw, the taxonomy and the tools."
+   ]
+  },
+  {
+   "id": "cyber",
+   "name": "cyber@php.newsroom",
+   "who": "an agent, joined on 22 October 2026 (run by the researcher's session)",
+   "owns": "the cybersecurity reading: where php2shell sits on the weaponisation ladder (private capability, public PoC, scanners, framework modules, KEV, monetisation), the MITRE ATT&CK path and what is seen against what is expected, the comparison with earlier mass-exploited flaws, and the second and third stories (patching, testing, the response's own supply chain, detection debt); the weaponisation pages of the source watch",
+   "rules": [
+    "Capability is not commodity: say which rung a bug is on, and what artefact would move it up a rung.",
+    "Attempts are not compromises; a technique is 'seen' only when a source reports it for this bug, otherwise 'expected' or 'precedent'.",
+    "Severity in perspective, both ways: name what makes it worse than the headline and what makes it less bad, each with its source.",
+    "Never run a public exploit or a stranger's fix script; watch them, hash them, describe them."
+   ]
   }
  ],
  "board": [
@@ -175,7 +220,8 @@
    "id": "005",
    "title": "Retry the blocked sources from another egress: openai.com, watchtowr.com, techzine.eu, socket.dev, ccn-cert.cni.es, dyn.cncs.gov.pt",
    "status": "open",
-   "owner": "collector-researchers"
+   "owner": "collector-researchers",
+   "note": "researcher@php.newsroom, source watch run 20261022T142033Z: openai.com (the coordinated-disclosure post), watchtowr.com, socket.dev and armis.com now serve their pages; techzine.eu still serves a challenge, as does ccn-cert.cni.es; dyn.cncs.gov.pt answers 513. Captures are in the source-watch vault, not yet in the evidence vault."
   },
   {
    "id": "006",
@@ -550,6 +596,103 @@
    "status": "open",
    "owner": "journalist",
    "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+  },
+  {
+   "id": "064",
+   "title": "The phone app (/now/): what to know for one, five, ten or thirty minutes against what you read; deterministic and agentic modes; the reader's vault with the OpenRouter key; chat with Sonnet; infographics with Gemini",
+   "status": "done",
+   "owner": "dev",
+   "note": "From the brief on the phone app (22 October).",
+   "version": "0.5.0"
+  },
+  {
+   "id": "065",
+   "title": "First live run of the agentic mode with the editor's OpenRouter key: check that every sentence Sonnet writes cites an item, and that the infographic adds no number of its own",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief on the phone app (22 October)."
+  },
+  {
+   "id": "066",
+   "title": "Open the phone app's vault with a passkey, through the newsroom's door design, so a phone needs no pasted key",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on the phone app (22 October)."
+  },
+  {
+   "id": "067",
+   "title": "Draw the semantic graph on the phone: what changed, and what it connects to, as nodes and edges",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the brief on the phone app (22 October)."
+  },
+  {
+   "id": "069",
+   "title": "Map every member of the team, human and agent, with a page each; the three coordination vaults (conductor, issues, mail); the board moved into the issues vault; the conductor's append lane, one token per member, and its drain (admin/build/conductor_drain.py), tested end to end",
+   "status": "done",
+   "owner": "conductor",
+   "version": "0.5.1"
+  },
+  {
+   "id": "070",
+   "title": "Decide how each member receives the coordination vaults' keys: the conductor vault's read key, the issues and mail vaults' keys, each member's append token (sealed per member on pki.sgit.ai, or handed in each session's launch prompt)",
+   "status": "open",
+   "owner": "editor",
+   "note": "Until this is decided, the conductor holds every key and members are reached through the editor."
+  },
+  {
+   "id": "071",
+   "title": "Set the cadence of the scheduled run (open by the conductor, work by the agents, close by the conductor) and which agents take part in the first one",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "072",
+   "title": "Review the team map: each member's page, role, owners and status; correct anything wrong by mail to the conductor",
+   "status": "open",
+   "owner": "vicky"
+  },
+  {
+   "id": "073",
+   "title": "Prioritise the open board: the first run's top five, and which needs the editor must answer first",
+   "status": "open",
+   "owner": "vicky"
+  },
+  {
+   "id": "074",
+   "title": "First run: the plan, the assignments as mail to each member, the digest at the close, and the site's snapshot of the team after it",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "075",
+   "title": "A digest on the site at every close: the conductor vault's status (what moved, what is blocked and on whom, what the humans must decide) as a page under /team/",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "076",
+   "title": "Run the source watch hourly: today it runs by hand in a session; a scheduled run needs the vault key held by the runner, never in a repository",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "077",
+   "title": "Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so the publishers it surfaces are mapped but not followed; Bing carries article addresses but only for the query 'php2shell'",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "078",
+   "title": "Cyber desk, first piece: 'Patch at the speed of Metasploit', php2shell on the weaponisation ladder, the ATT&CK path (seen, expected, precedent) and the second and third stories",
+   "status": "done",
+   "owner": "cyber@php.newsroom"
+  },
+  {
+   "id": "079",
+   "title": "The weaponisation clock: watch for a merged Metasploit module, an exploiting nuclei template, a KEV listing, an EPSS step, upstream Sigma/ET/Snort rules, a second patch or regression; write the next cyber piece when one moves",
+   "status": "open",
+   "owner": "cyber@php.newsroom"
   },
   {
    "id": "080",

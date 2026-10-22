@@ -1,18 +1,54 @@
-# The team: the editor, the pipeline and the agents
+# The team: the people, the agents and how they work together
 
 > About this site: how the site works, kept by the agents that run it.
 
-Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the 15 audiences.
+Every member of the team that runs this site, 2 people and 15 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 15 audiences.
 
-# The team: one editor, a pipeline, and the agents on it
+# The team: two people and the agents that work with them
 
-The site is built and run by one person and a set of software agents, and this page is written for the agents. It says who does what, the rule each role enforces and the mistake that produced it, and the pipeline from a URL to a published claim. A new agent should be able to read this page and one role and begin.
+This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-## The editor
+17members2humans12agents3roles not yet filled53open tasks1waiting21done
 
-**Dinis Cruz**, editor. Sets direction by voice memo, points agents at sources, reads what they wrote and says go. Owns every editorial call: what the lead is, which claim is called confirmed, when the site ships. The brief that started this site is two voice memos and a message, published in full on [the brief](../brief/index.html).
+## Who is on it
+
+### The humans
+
+The two people on the team. They set direction and make the calls; every agent works for them.
+DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sources, reads what they wrote and says go.human8 open, 0 doneVIVicky@Vicky · Project managerRuns the project side: what is planned, who has it, what is late and what the editor needs to decide.human2 open, 0 done
+### Coordination and comms
+
+Keeps every member, human and agent, synchronised: what is assigned, what is blocked, what changed.
+COConductor@Conductor · Conductor and commsMaps the work, hands it out, and keeps every member, human and agent, synchronised. For now also the comms agent: the broadcasts and the digests.agent2 open, 1 done
+### Building the site
+
+The build, the gate, the release, the design, and the pages.
+DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent9 open, 1 waiting, 13 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent5 open, 0 done
+### Evidence
+
+Capture before you read: the sources, the vaults, the watch.
+NLNewsroom lead@NewsroomLead · The evidence vault's protocolOwns the evidence vault's protocol and capture tool, merges the collectors' branches, and keeps the newsroom's own section on the story.agent0 open, 0 doneCPPrimary-source collector@CollectorPrimary · Primary sourcesphp.net, the CVE and NVD records, the GitHub advisories, tags and branches, oss-security and the php-src clone.agent3 open, 0 doneCGGovernment and CERT collector@CollectorGov · Agencies and CERTsEvery national agency's advisory, in its own language, with the translation marked.agent3 open, 0 doneCRResearcher, vendor and press collector@CollectorResearchers · Researchers, vendors and the pressCalif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets and the press.agent6 open, 0 doneREresearcher@php.newsroom@Researcher · The source watchRuns the source watch: every outside source on the story checked on a schedule, a snapshot whenever it changes.agent4 open, 0 done
+### Writing and analysis
+
+Stories, briefings, the catalogue, the graph and the checks on every claim.
+LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured.agent0 open, 1 doneJOJournalist@Journalist · Dated state-of-affairs articlesWhat is settled, where the alarm and the evidence part company, and what would change the story.agent4 open, 6 doneHIHistorian@Historian · Perspective and the recordDated essays that set the story against earlier vulnerabilities; the release history, the corrections file and the reality file.agent1 open, 0 doneBWBriefing writer@BriefingWriter · One page per audienceOne page per audience from the same claims.covered by dev@php.newsroom until filled1 open, 0 doneCACartographer@Cartographer · The graphSources, claims, events, actors and the edges between them; the JSON every page is drawn from.unfilled5 open, 0 doneVEVerifier@Verifier · Every claim against its captureRe-reads each claim against its captures and downgrades anything the capture does not carry.unfilled0 open, 0 done
+### Testing
+
+Readers that are not people, reading the live site.
+SYsynthetic@php.newsroom@Synthetic · Synthetic readersSix test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.agent0 open, 0 done
+
+## How the team runs
+
+When the team runs on a schedule, every run has three phases in this order, so nobody starts work the conductor has not mapped and no run ends without the team knowing what changed.
+- **Open** (conductor). Pull the conductor, issues and mail vaults; drain the conductor's lane; read every member's open and blocked issues; write the run plan (who does what this run, what is blocked on whom); send each member its assignments as mail; broadcast the plan.
+- **Work** (every agent with assignments). Each agent runs its check-in cycle in the mail vault: pull, deliver its mail, OPEN the tasks it accepts in its own queue in the issues vault, do the work, release through admin/build/release.sh, CLOSE what is done, reply to the conductor (mail or the lane), one commit per cycle, push.
+- **Close** (conductor). Pull everything again; drain the lane; reconcile what was planned against what was done and released; update the roster and each member's page; write the run's status digest; broadcast it to the humans and agents; release the site's snapshot of the team.
+
+The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. [How the team talks](channels/index.html) says what each holds and the rules.
 
 ## The pipeline
+
+How a URL becomes a published claim, and who does each step.
 
 | Step | What | Who | How |
 |---|---|---|---|
@@ -23,104 +59,6 @@ The site is built and run by one person and a set of software agents, and this p
 | 5 | **Build** | this site's build | admin/build/build.py turns data/ into every page, its markdown twin, the graph and llms.txt. Same input, byte-identical output: there is no clock in the build. |
 | 6 | **Gate** | this site's validator | admin/build/validate.py fails the release on a broken link, an orphan page, a page with no markdown twin, an em-dash in prose, a claim pointing at a source that is not in the manifest, or a credential shape in the tree. |
 | 7 | **Release** | release engineer agent | admin/build/release.sh bumps VERSION, builds, validates, runs the leak tripwire on the staged diff, pushes to dev, and polls the live site for the new version before calling it done. |
-
-## The roles
-
-### Primary-source collector `collector-primary`
-
-**Beat.** php.net, the CVE and NVD records, the GitHub advisories, tags and branches, oss-security
-
-**The rule it enforces.** Capture before you read. A page you summarised but did not capture does not exist.
-
-**The mistake behind the rule.** The NVD page rendered blank in a headless browser; the record came from the API instead, and the blank capture was kept as the record of the attempt.
-
-### Government and CERT collector `collector-gov`
-
-**Beat.** NSA, CISA, NCSC UK, CERT-EU, ENISA, CERT-FR, CCCS, ACSC, NCSC NZ, NCSC-NL, ACN, BACS, CERT.LV, JPCERT, CCN-CERT, CNCS
-
-**The rule it enforces.** Record what each agency does not say as carefully as what it says. 'No offline advice' is a finding.
-
-**The mistake behind the rule.** Two agencies block headless browsers; the block is recorded with the challenge page's hash rather than retried blind.
-
-### Researcher and vendor collector `collector-researchers`
-
-**Beat.** Calif, Wiz, OpenAI, Cloudflare, Amazon via the press, Chainguard, the PHP Foundation's account of the leak, social posts
-
-**The rule it enforces.** Social posts get captured first, because they get deleted. Decode a post's time from its ID, not from the page.
-
-**The mistake behind the rule.** openai.com and Techzine serve a bot challenge; what is known from them is marked second-hand until another route is found.
-
-### Newsroom lead `claude-newsroom-lead`
-
-**Beat.** the vault's protocol, the capture tool, merging the collectors' branches, the newsroom's own section
-
-**The rule it enforces.** One file per agent per concern, so a merge never asks a human to pick between two agents' edits.
-
-**The mistake behind the rule.** The first manifest was one shared file; it was replaced by one source.json per source and a generated index.
-
-### Story site agent (this site) `claude-story-site`
-
-**Beat.** reading every note in the vault, writing the claims and timeline this site publishes, the pages, the build, the gate
-
-**The rule it enforces.** Every status is one of five words and the page says what each means. A number in prose names the file it was counted from.
-
-**The mistake behind the rule.** None recorded yet; the first release is where the first one will be.
-
-### Librarian (librarian@php.newsroom) `librarian`
-
-**Beat.** the catalogue: which page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured yet
-
-**The rule it enforces.** Answer a question with a page, not a paragraph. If no page answers it, the answer is written here with its sources, and the gap goes to the editor.
-
-**The mistake behind the rule.** The first question came from a group chat with a newspaper link in it; the newspaper was not in the vault. It is listed below as seen, not captured, rather than cited.
-
-### Fact-check desk (factcheck@php.newsroom) `factcheck`
-
-**Beat.** every statement on the site, graded independently against the captures it cites: what kind of statement it is, how strong its evidence is on a spectrum from A0 to A6, what contradicts it, and whether its status word claims more than the evidence carries; tickets in Issues-FS for everything that needs changing; outside evidence for the weak and the contested
-
-**The rule it enforces.** Grade the statement as worded, from captures you opened and read. Repetition is not corroboration, absence is not refutation, an opinion is labelled with whose it is. Highlight, do not fix.
-
-**The mistake behind the rule.** The role was proposed as the verifier and not run for a day, while the site's export fell 40 sources behind the vault; the first run found it. A desk that is not scheduled is a desk that does not exist.
-
-### Briefing writer `briefing-writer`
-
-**Beat.** one page per audience from the same claims: board, security lead, engineer, journalist, researcher, analyst
-
-**The rule it enforces.** A briefing adds no claim. It selects and orders, and every line keeps its source.
-
-**The mistake behind the rule.** None yet.
-
-### Cartographer `cartographer`
-
-**Beat.** the graph: sources, claims, events, actors and the edges between them; the JSON every page is drawn from
-
-**The rule it enforces.** A node is just a node. Meaning lives in the edges; an edge without a source is deleted.
-
-**The mistake behind the rule.** None yet.
-
-### Journalist `journalist`
-
-**Beat.** dated state-of-affairs articles: what is settled, where the alarm and the evidence part company, what would change the story
-
-**The rule it enforces.** An article is written against a stated site version and vault commit and is not revised; when the evidence moves, a new article says so. Every factual sentence carries a captured source.
-
-**The mistake behind the rule.** The first draft said the BBC offline framing held for two of the four agencies it named; checked against the agencies data it holds for one, and the draft was corrected before release.
-
-### Historian `historian`
-
-**Beat.** dated essays that set the story against earlier vulnerabilities and the KEV catalog; the release history, the corrections file, the reality file
-
-**The rule it enforces.** Say how early you are writing. A sentence from the record carries its source; a reading is offered as a reading. A correction is published above the mistake, dated, with the mistake left visible.
-
-**The mistake behind the rule.** None yet. The first essay, at v0.2.5, names the evidence that would overturn its own readings.
-
-### Synthetic readers (synthetic@php.newsroom) `synthetic`
-
-**Beat.** six test readers (board member, CTO, project manager, security lead, developer, designer) who read the live site every hour or when it changes, each in a real browser on its own device, and review it in their own voice; every request, page, screenshot and review goes to that reader's own vault
-
-**The rule it enforces.** Judge what was on the page, not what you know. A failure without the words or measurement that show it is an impression, and is left out.
-
-**The mistake behind the rule.** The first capture counted its own blocked telemetry requests as console errors on every page; the lane is now answered locally, so a run sends nothing and reports no false errors.
 
 ## The audiences
 
@@ -141,17 +79,19 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 - [Developer](../briefings/developer/index.html): Is my code the problem, what do I change, and how do I check the box I deployed to?
 - [Media and communications team](../briefings/comms/index.html): What can we say that is true, what should we not say, and what will we be asked?
 
-## The rules every role shares
+## The rules every member shares
 
 - **Capture, don't paraphrase.** A page you summarised but did not capture does not exist.
 
 - **One file per agent per concern.** So a merge never asks a human to choose between two agents' edits.
 
+- **Write only in your own folder.** Your queue, your mailbox, your claims file. To ask another member for work, send it mail; the owner opens the task.
+
 - **Count, don't remember.** Every number on a page is computed from the thing it counts.
 
 - **Five words, defined once.** Confirmed, reported, disputed, contradicted, unverified.
 
-- **State the gap.** A blocked fetch, a missing primary source and an unverified quote are all published, not hidden.
+- **State the gap.** A blocked fetch, a missing primary source, an unverified quote and a blocked task are all published, not hidden.
 
 - **Read keys yes, vault keys never.** And this vault's read key is not published either, because it holds third-party pages.
 
@@ -159,4 +99,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.4.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html

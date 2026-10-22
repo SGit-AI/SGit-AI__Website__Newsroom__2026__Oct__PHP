@@ -64,7 +64,7 @@ ORIGINS = {
     'guest': {'short': 'Guest', 'label': 'Story, guest', 'text': 'written by a guest writer, published here under their name'},
     'interview': {'short': 'Interview', 'label': 'Story, interview', 'text': 'an interview conducted for this site, the answers in the interviewee\'s own words'},
 }
-AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('journalist-historian', 'Journalist and historian')])
+AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('journalist-historian', 'Journalist and historian'), ('cyber', 'Cyber desk')])
 
 # ----------------------------------------------------------------------------- small helpers
 
@@ -176,7 +176,7 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
+    ('Yours', [('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -557,7 +557,7 @@ def build_index():
   <p class="kicker">PHP news &middot; October 2026 &middot; <span class="live">{E(s["status"])}</span> &middot; last checked {E(when)}</p>
   <h1>{E(pl["headline"])}</h1>
   <p class="deck">{E(pl["deck"])}</p>
-  <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a></div>
+  <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a><a class="cta" href="now/index.html">On your phone: Now &rarr;</a></div>
   <p class="aka">{E(pl["aka"])}</p>
 </header>
 <section id="now"><h2>Right now</h2><p class="small">As of {E(when)}, the time of the latest page this site saved.</p><ul class="nowlist">{now}</ul>{b_now}</section>
@@ -970,29 +970,120 @@ def build_method():
 '''
     page('method/index.html', 'The method: capture, hash, claim, build, gate', 'How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.', body, kind='site', topics='method provenance')
 
+TEAM = load('team')
+GROUP_AV = {'humans': 'decide', 'coordination': 'communicate', 'site': 'act', 'evidence': 'understand', 'writing': 'study', 'testing': 'study'}
+KIND_LABEL = {'human': 'human', 'agent': 'agent', 'role': 'role, no agent of its own yet'}
+
+def member_tasks(mid):
+    owners = TEAM['board_owners']
+    return [b for b in D['admin']['board'] if owners.get(b['owner']) == mid]
+
+def member_initials(m):
+    w = re.findall(r'[A-Za-z]+', m['alias'].lstrip('@'))
+    caps = re.findall(r'[A-Z]', m['alias'])
+    return (''.join(caps[:2]) if len(caps) >= 2 else (w[0][:2] if w else '?')).upper()
+
+def member_card(m, depth):
+    t = member_tasks(m['id']); st = Counter(b['status'] for b in t)
+    counts = f'{st.get("open", 0)} open' + (f', {st["waiting"]} waiting' if st.get('waiting') else '') + f', {st.get("done", 0)} done'
+    return (f'<a class="door door-{GROUP_AV[m["group"]]}" id="{E(m["id"])}" href="{"../" * depth}team/{E(m["id"])}/index.html">'
+            f'<span class="dh"><span class="av av-{GROUP_AV[m["group"]]}">{E(member_initials(m))}</span><span><b>{E(m["name"])}</b>'
+            f'<small>{E(m["alias"])} &middot; {E(m["role"])}</small></span></span>'
+            f'<span class="dq">{E(m["summary"])}</span>'
+            f'<span class="dm"><span>{E(KIND_LABEL[m["kind"]] if m["status"] == "active" else m["status"])}</span><span>{counts}</span></span></a>')
+
+def task_table(rows, depth):
+    if not rows: return '<p class="small">None.</p>'
+    return table(['#', 'Task', 'Status', 'Shipped in'], [[E(b['id']), E(b['title']) + (f'<div class="note">{E(b["note"])}</div>' if b.get('note') else ''), pill(b['status']), E(b.get('version') or '')] for b in rows], 'board')
+
 def build_team():
-    r = D['roles']
+    r = D['roles']; T = TEAM; M = T['members']
+    by_id = {m['id']: m for m in M}
+    allt = [b for m in M for b in member_tasks(m['id'])]
+    st = Counter(b['status'] for b in allt)
+    stats = ''.join(stat(n, l) for n, l in [(len(M), 'members'), (sum(m['kind'] == 'human' for m in M), 'humans'), (sum(m['kind'] == 'agent' for m in M), 'agents'),
+                                            (sum(m['kind'] == 'role' for m in M), 'roles not yet filled'), (st.get('open', 0), 'open tasks'), (st.get('waiting', 0), 'waiting'), (st.get('done', 0), 'done')])
+    groups = ''.join(f'<section id="g-{E(g["id"])}"><h3>{E(g["name"])}</h3><p class="small">{E(g["about"])}</p><div class="doors">{"".join(member_card(m, 1) for m in M if m["group"] == g["id"])}</div></section>' for g in T['groups'])
+    run = ''.join(f'<li><b>{E(p["name"])}</b> ({E(p["who"])}). {E(p["what"])}</li>' for p in T['cycle']['phases'])
     pipe = table(['Step', 'What', 'Who', 'How'], [[E(str(p['step'])), f'<b>{E(p["name"])}</b>', E(p['who']), E(p['what'])] for p in r['pipeline']])
-    agents = ''.join(f'<article class="role" id="{E(a["id"])}"><h3>{E(a["name"])} <code>{E(a["id"])}</code></h3><p><b>Beat.</b> {E(a["beat"])}</p><p><b>The rule it enforces.</b> {E(a["rule"])}</p><p><b>The mistake behind the rule.</b> {E(a["mistake"])}</p></article>' for a in r['agents'])
     auds = ''.join(f'<li><a href="../briefings/{E(a["id"])}/index.html"><b>{E(a["name"])}</b></a>: {E(a["question"])}</li>' for a in r['audiences'])
+    humans = ' and '.join(f'<a href="{E(m["id"])}/index.html">{E(m["name"])}</a> ({E(m["role"].lower())})' for m in M if m['kind'] == 'human')
     body = f'''
-<h1>The team: one editor, a pipeline, and the agents on it</h1>
-<p class="lead">The site is built and run by one person and a set of software agents, and this page is written for the agents. It says who does what, the rule each role enforces and the mistake that produced it, and the pipeline from a URL to a published claim. A new agent should be able to read this page and one role and begin.</p>
-{section("editor", "The editor", f'<p><b>{E(r["human"]["name"])}</b>, {E(r["human"]["role"]).lower()}. {E(r["human"]["does"])} The brief that started this site is two voice memos and a message, published in full on <a href="../brief/index.html">the brief</a>.</p>')}
-{section("pipeline", "The pipeline", pipe)}
-{section("roles", "The roles", f'<div class="roles">{agents}</div>')}
+<h1>The team: two people and the agents that work with them</h1>
+<p class="lead">This site is built and run by {humans}, and a team of software agents. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is <a href="../data/team.json">data/team.json</a>, kept by <a href="conductor/index.html">the conductor</a>.</p>
+<div class="stats">{stats}</div>
+{section("members", "Who is on it", groups)}
+{section("run", "How the team runs", f'<p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
+{section("pipeline", "The pipeline", pipe, "How a URL becomes a published claim, and who does each step.")}
 {section("audiences", "The audiences", f'<ul>{auds}</ul>', "Each briefing is a role too: a reader whose question the site answers in one page.")}
-{section("rules", "The rules every role shares", '''<ul>
+{section("rules", "The rules every member shares", '''<ul>
 <li><b>Capture, don't paraphrase.</b> A page you summarised but did not capture does not exist.</li>
 <li><b>One file per agent per concern.</b> So a merge never asks a human to choose between two agents' edits.</li>
+<li><b>Write only in your own folder.</b> Your queue, your mailbox, your claims file. To ask another member for work, send it mail; the owner opens the task.</li>
 <li><b>Count, don't remember.</b> Every number on a page is computed from the thing it counts.</li>
 <li><b>Five words, defined once.</b> Confirmed, reported, disputed, contradicted, unverified.</li>
-<li><b>State the gap.</b> A blocked fetch, a missing primary source and an unverified quote are all published, not hidden.</li>
+<li><b>State the gap.</b> A blocked fetch, a missing primary source, an unverified quote and a blocked task are all published, not hidden.</li>
 <li><b>Read keys yes, vault keys never.</b> And this vault's read key is not published either, because it holds third-party pages.</li>
 <li><b>Verify live.</b> A release is done when the live site serves the version, not when the push succeeds.</li>
 </ul>''')}
 '''
-    page('team/index.html', 'The team: the editor, the pipeline and the agents', f'Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the {len(r["audiences"])} audiences.', body, kind='site', topics='team agents')
+    page('team/index.html', 'The team: the people, the agents and how they work together', f'Every member of the team that runs this site, {sum(m["kind"] == "human" for m in M)} people and {len(M) - sum(m["kind"] == "human" for m in M)} agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the {len(r["audiences"])} audiences.', body, kind='site', topics='team agents')
+
+    legacy = {a['id']: a for a in r['agents']}
+    legacy.update({'story-site': legacy.get('claude-story-site', {}), 'newsroom-lead': legacy.get('claude-newsroom-lead', {})})
+    for m in M:
+        t = member_tasks(m['id'])
+        opn = [b for b in t if b['status'] == 'open']; wait = [b for b in t if b['status'] == 'waiting']; done = [b for b in t if b['status'] == 'done']
+        lg = legacy.get(m['id']) or {}
+        home = ''.join(f'<a class="door door-{GROUP_AV[m["group"]]}" href="../../{E(h)}"><b>{E(n)}</b><span>{E(h)}</span></a>' for h, n in m['home'])
+        addr = m.get('address') or (m['mail'] + '@php.newsroom')
+        facts = [('Kind', E(KIND_LABEL[m['kind']])), ('Status', E(m['status'])), ('Alias', f'<code>{E(m["alias"])}</code>'), ('Known as', f'<code>{E(addr)}</code>')]
+        if m.get('joined'): facts.append(('Joined', E(m['joined'])))
+        kv = ' &middot; '.join(f'<b>{k}</b> {v}' for k, v in facts)
+        mistake = f'<p><b>The mistake behind the rules.</b> {E(lg["mistake"])}</p>' if lg.get('mistake') else ''
+        beat = f'<p><b>Beat.</b> {E(lg["beat"])}</p>' if lg.get('beat') else ''
+        achieved = ''.join(f'<li>{E(x)}</li>' for x in m['achieved'])
+        waiting_on = ''
+        if m['kind'] == 'human' and opn:
+            waiting_on = section('waiting', 'Waiting on ' + E(m['name'].split()[0]), task_table(opn, 2), 'Decisions and work only a person can supply. Each is a card in this member\'s queue in the issues vault, and the conductor names it in every digest until it is answered.')
+        tasks = '' if (m['kind'] == 'human' and opn) else section('tasks', 'Open tasks', task_table(opn, 2))
+        body = f'''
+<p class="crumb"><a href="../index.html">The team</a> / {E(m["name"])}</p>
+<h1>{E(m["name"])}: {E(m["role"].lower() if m["kind"] != "human" else m["role"])}</h1>
+<p class="lead">{E(m["summary"])}</p>
+<p class="kv">{kv}</p>
+{beat}
+{section("owns", "What they own", "<ul>" + "".join(f"<li>{E(x)}</li>" for x in m["owns"]) + "</ul>")}
+{section("rules", "The rules they work by", "<ul>" + "".join(f"<li>{E(x)}</li>" for x in m["rules"]) + "</ul>" + mistake)}
+{section("home", "Their home on this site", f'<div class="doors">{home}</div>')}
+{waiting_on}
+{tasks}
+{section("blocked", "Waiting on someone else", task_table(wait, 2)) if wait else ''}
+{section("achieved", "What they have done", (f'<ul>{achieved}</ul>' if achieved else '<p class="small">Nothing yet.</p>') + (f'<h3>Closed on the board</h3>{task_table(done, 2)}' if done else ''))}
+{section("reach", "How to reach them", f'<ul><li><b>Mail</b>: an <code>.eml</code> in <code>mail/mailroom/{E(m["mail"])}/</code> in the mail vault (<code>fmb2tpl2</code>).</li><li><b>Their queue</b>: <code>issues/{E(m["id"])}/open|blocked|done/</code> in the issues vault (<code>zjruy9vk</code>). Read it; do not write in it.</li><li><b>Their page in the conductor vault</b>: <code>team/members/{E(m["id"])}.md</code>.</li></ul><p class="small">What the three vaults are and who holds their keys: <a href="../channels/index.html">how the team talks</a>.</p>')}
+'''
+        page(f'team/{m["id"]}/index.html', f'{m["name"]}, {m["role"].lower() if m["kind"] != "human" else m["role"]}: the team', f'{m["name"]} ({m["alias"]}) on the team behind this site: {m["summary"]}', body, kind='site', topics='team agents')
+
+    chans = ''.join(f'''<section class="vcard" id="{E(c["id"])}"><h2>{E(c["name"])} <span class="st">private</span></h2>
+<p class="kv"><b>Vault</b> <code>{E(c["vault"])}</code> &middot; <b>written by</b> {E(c["writes"])} &middot; <b>read by</b> {E(c["reads"])}</p>
+<p>{E(c["holds"])}</p><p class="small"><b>How.</b> {E(c["how"])}</p></section>''' for c in T['channels'])
+    cond = by_id['conductor']
+    body = f'''
+<p class="crumb"><a href="../index.html">The team</a> / How the team talks</p>
+<h1>How the team talks: three vaults and one run</h1>
+<p class="lead">The members of this team, two people and the agents, do not share a chat. They coordinate through three encrypted vaults, using two protocols from the sgit.ai estate: Email-FS-lite for messages and Issues-FS-lite for tasks. Every message and every change of a task is a file, and every cycle is one commit, so the history of the vaults is the record of who asked for what, who took it and when it was done.</p>
+{chans}
+{section("run", "The run", f'<p>{E(T["cycle"]["about"])}</p><ol>{run}</ol>')}
+{section("protocols", "The two protocols", '''<ul>
+<li><b>Email-FS-lite.</b> To send, a member writes an <code>.eml</code> file into the recipient's <code>mailroom/</code> and a copy into its own <code>outbox/</code>; the recipient moves it into its <code>inbox/</code>, and into <code>done/</code> when the work is finished. Messages are never edited or deleted, only moved. <a href="https://sgraph.ai/en-gb/library/how-it-works/email-fs-lite">The reference</a>.</li>
+<li><b>Issues-FS-lite.</b> Each member's tasks are markdown files in its own <code>open/</code>, <code>blocked/</code> and <code>done/</code> folders; opening, blocking, unblocking and closing a task are four moves. Anyone may read any queue; only its owner writes in it. <a href="https://issues-fs.sgit.ai/lite/index.html">The reference</a>.</li>
+<li><b>The conductor's lane.</b> A write-only channel on the conductor vault: a member encrypts a message to the conductor's public key (<code>sha256:742d442b1c5b07bd</code>) and appends it with its own token, which can write and cannot read. The conductor drains it at every run with <code>admin/build/conductor_drain.py</code>.</li>
+</ul>''')}
+{section("keys", "Keys", '<p>None of the three vaults is published. The conductor holds their keys; every member gets the conductor vault\'s read key and the keys to the issues and mail vaults privately, and its own lane token, in the way the editor decides (<a href="../../admin/board/index.html">board</a> 070). No key or token is on this site or in its repository.</p>')}
+{section("board", "The board", f'<p>The site\'s <a href="../../admin/board/index.html">board</a> moved into the issues vault on 22 October 2026: each row became a card in its owner\'s queue. The vault is now the truth; <code>admin/build/issues_sync.py import</code> writes the board on this site from it before a release, so the board here is a snapshot as of the release that built it.</p>')}
+<p>The channels are kept by <a href="../{E(cond["id"])}/index.html">{E(cond["name"])}</a>.</p>
+'''
+    page('team/channels/index.html', 'How the team talks: three vaults and one run', 'The three private vaults the team coordinates through (the conductor vault, Issues-FS-lite tasks and Email-FS-lite mail), the run that opens and closes every scheduled cycle, and the rules.', body, kind='site', topics='team agents')
 
 def build_billing():
     b = D['billing']
@@ -1191,6 +1282,11 @@ def build_llms():
         if sec['kind'] != 'fact':
             lines.append(f'- [{sec["title"]}]({BASE_URL}/versions/{sid}/index.md): {len(sec["versions"])} versions')
     lines.append('')
+    lines.append('## The team, one page per member')
+    lines.append(f'- [How the team talks: three vaults and one run]({BASE_URL}/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules')
+    for m in TEAM['members']:
+        lines.append(f'- [{m["name"]}]({BASE_URL}/team/{m["id"]}/index.md): {m["role"]}; {m["summary"]}')
+    lines.append('')
     lines.append('## Parties, one page each')
     for a in D['actors']:
         lines.append(f'- [{a["name"]}]({BASE_URL}/actors/{a["id"]}/index.md): {a["role"]}')
@@ -1344,7 +1440,7 @@ def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
     build_all()
     build_all()
-    build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); save_items()
+    build_now(); build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); save_items()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
@@ -1770,8 +1866,9 @@ def build_review():
 # ----------------------------------------------------------------------------- articles and layers (v0.2.6)
 
 def article_inline(s, depth):
-    """Inline markdown for articles: [[slug, slug]] citations, [text](/site/path) links, bold, italic."""
+    """Inline markdown for articles: [[slug, slug]] citations, [text](/site/path) links, `code`, bold, italic."""
     s = E(s, quote=False)
+    s = re.sub(r'`([^`]+)`', r'<code>\1</code>', s)
     s = re.sub(r'\[\[([^\]]+)\]\]', lambda m: '<span class="refs">' + src_links([x.strip() for x in m.group(1).split(',')], depth) + '</span>', s)
     s = re.sub(r'\[([^\]]+)\]\(/([^)]*)\)', lambda m: f'<a href="{"../" * depth}{m.group(2)}">{m.group(1)}</a>', s)
     s = re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)', r'<a href="\2" rel="noopener">\1</a>', s)
@@ -1780,8 +1877,19 @@ def article_inline(s, depth):
     return s
 
 def render_article(text, depth):
-    out, lst = [], None
+    out, lst, rows = [], None, []
+    def flush():
+        if rows:
+            out.append(table([article_inline(c, depth) for c in rows[0]], [[article_inline(c, depth) for c in r] for r in rows[1:]])); rows.clear()
     for line in text.splitlines():
+        if line.strip().startswith('|'):
+            if lst:
+                out.append(f'</{lst}>'); lst = None
+            cells = [c.strip() for c in line.strip().strip('|').split('|')]
+            if not all(re.match(r'^:?-+:?$', c) for c in cells):
+                rows.append(cells)
+            continue
+        flush()
         m = re.match(r'^(#{2,4})\s+(.*)$', line)
         item = re.match(r'^(?:-|\d+\.)\s+(.*)$', line)
         kind = ('ol' if re.match(r'^\d+\.', line) else 'ul') if item else None
@@ -1795,6 +1903,7 @@ def render_article(text, depth):
             out.append(f'<li>{article_inline(item.group(1), depth)}</li>')
         elif line.strip():
             out.append(f'<p>{article_inline(line, depth)}</p>')
+    flush()
     if lst:
         out.append(f'</{lst}>')
     return '\n'.join(out)
@@ -2040,7 +2149,7 @@ def build_vaults():
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests{"; and one more is private and never published, because it holds other people's pages" if any(x["access"] == "private" for x in VS) else ""}. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
@@ -3101,12 +3210,160 @@ def build_subscribe():
     page('subscribe/index.html', 'Subscribe: what changed, sent to you', 'Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.', body, kind='account')
 
 
+
+
+# ----------------------------------------------------------------------------- the phone app: Now (v0.5.0)
+# The editor's brief: admin/content/briefs/2026-10-22__brief__the-phone-app.md. One page, now/index.html, built for a
+# phone: what do I need to know, given how long I have (one, five, ten or thirty minutes), against what I read before.
+# Two modes. Deterministic: the items, their order and their connections come from the data and nothing else.
+# Agentic: the same items handed to a model (OpenRouter, with the reader's own key kept in the reader's own vault), for
+# a briefing in prose, an infographic and a chat. The page is a shell; now/now.json is everything it reads; assets/now.js
+# is the app. The reader's state lives in this browser (assets/reader-state.js, shared with the rest of the site) and,
+# when the reader opens a vault, in that vault under /php-october/.
+
+NOW_MODELS = {'text': 'anthropic/claude-sonnet-5.5', 'image': 'google/gemini-3.1-flash-image'}
+NOW_KIND_WEIGHT = {'front': 100, 'fact': 80, 'event': 60, 'question': 55, 'briefing': 50, 'story': 45, 'page': 30, 'source': 10}
+
+def now_summary(iid, it):
+    """The words the app shows for an item: what it says now, in a sentence or two, and its connections."""
+    k, links, status = it['kind'], [], ''
+    if k == 'fact':
+        c = next((c for c in D['claims'] if 'fact-' + c['id'] == iid), None)
+        if c:
+            status = c['status']
+            links = [['source', s, short_name(SOURCES[s]), f'sources/{s}/index.html'] for s in c['sources'] if s in SOURCES]
+            links += [['briefing', p, PERSONAS[p]['label'], f'briefings/{p}/index.html'] for p, t in BRIEF_TOPICS.items() if c['topic'] in t and p in PERSONAS]
+            claim = c['claim'].rstrip()
+            return f'{claim}{"" if claim.endswith((".", "?", "!")) else "."} Who says it: {c["by"]}.', status, links
+    if k == 'event':
+        t = next((t for t in D['timeline'] if event_id(t) == iid), None)
+        if t:
+            links = [['source', s, short_name(SOURCES[s]), f'sources/{s}/index.html'] for s in t['sources'] if s in SOURCES]
+            return f'{fmt_at(t["at"])}: {t["event"]}', t.get('confidence', ''), links
+    if k == 'question':
+        q = next((q for q in D['questions']['questions'] if 'q-' + q['id'] == iid), None)
+        if q:
+            return q.get('short') or q['q'], '', [['page', p, nav_title(p), p] for p in (q.get('see') or [])[:4]]
+    if k == 'briefing':
+        p = PERSONAS.get(iid.replace('briefing-', ''))
+        if p:
+            return p['answer'], '', [['page', x, nav_title(x), x] for x in p['path'][1:]]
+    if k == 'front':
+        sec = LEDGER['sections'].get(iid)
+        if sec:
+            t = re.sub(r'\s*\[[^\]]*\]', '', sec['versions'][-1]['text'])
+            t = re.sub(r'(?m)^(confirmed|reported|disputed|contradicted|unverified): ', '', t)
+            t = ' '.join(x.strip().rstrip('.') + '.' for x in t.split('\n') if x.strip())
+            return (t[:420].rsplit('. ', 1)[0] + '.') if len(t) > 420 else t, '', []
+    if k == 'source':
+        s = SOURCES.get(iid.replace('src-', ''))
+        if s:
+            return (s.get('notes') or s.get('title') or '')[:300], s.get('status', ''), []
+    if k == 'story':
+        a = next((a for a in ARTICLES if 'story-' + a.get('slug', '') == iid), None)
+        if a:
+            return (a.get('dek') or a.get('standfirst') or a.get('text') or a['title'])[:400], '', []
+    return D['plain']['pages'].get(it['path'], '') or it['title'], '', []
+
+def build_now():
+    items = []
+    for iid, it in all_items().items():
+        text, status, links = now_summary(iid, it)
+        words = len((it['title'] + ' ' + text).split())
+        title = it['title']
+        if it['kind'] == 'fact':
+            c = next((c for c in D['claims'] if 'fact-' + c['id'] == iid), None)
+            title = c['claim'] if c else title
+        items.append({'id': iid, 'kind': it['kind'], 'zone': it['zone'], 'title': title, 'path': it['path'], 'hash': it['hash'],
+                      'v': it['v'], 'first': it['first'], 'changed': it['changed'], 'date': it['date'], 'text': text, 'status': status,
+                      'links': links[:8], 'w': NOW_KIND_WEIGHT.get(it['kind'], 20), 'sec': max(10, round(words / 230 * 60)),
+                      'history': it.get('history', '')})
+    pl = D['plain']
+    doc = {
+        'about': 'Everything the phone app (now/) reads, built from the same data as every page: the items a reader can read, '
+                 'with what each says now, its hash, its connections and its reading time; the situation; the readers; the facts '
+                 'for grounding a model. Deterministic: the same data produces the same file.',
+        'site': VERSION, 'data_as_of': STORY['data_as_of'], 'when': human_time(STORY['data_as_of']),
+        'releases': [{'version': r['version'], 'date': r['date'], 'title': r['title']} for r in reversed(RELEASES)][:20],
+        'headline': pl['headline'], 'deck': re.sub(r'<[^>]+>', '', pl['deck']),
+        'now': [{'text': x['text'], 'sources': [[s, short_name(SOURCES[s])] for s in x['sources'] if s in SOURCES]} for x in pl['now']],
+        'unknown': [u['text'] for u in pl['unknown']],
+        'facts': [{'text': f['text'], 'status': f['status'], 'href': f['href']} for f in pl['facts']],
+        'personas': [{'id': p['id'], 'person': p['person'], 'label': p['label'], 'group': p['group'], 'depth': p['depth'], 'answer': p['answer'],
+                      'path': p['path']} for p in PERSONAS.values()],
+        'claims': [{'id': c['id'], 'status': c['status'], 'claim': c['claim'], 'by': c['by'], 'topic': c['topic']} for c in D['claims']],
+        'models': NOW_MODELS,
+        'vault': {'endpoint': 'https://dev.send.sgraph.ai', 'folder': '/php-october'},
+        'items': items,
+    }
+    write('now/now.json', json.dumps(doc, ensure_ascii=False, separators=(',', ':')) + '\n')
+    write('now/manifest.webmanifest', json.dumps({
+        'name': 'PHP October 2026: Now', 'short_name': 'PHP Now', 'start_url': './index.html', 'scope': './', 'display': 'standalone',
+        'background_color': '#f7f6f2', 'theme_color': '#8a2416', 'description': 'What you need to know about the PHP flaws, for the time you have.',
+        'icons': [{'src': '../assets/now/icon-192.png', 'sizes': '192x192', 'type': 'image/png'}, {'src': '../assets/now/icon-512.png', 'sizes': '512x512', 'type': 'image/png'}]},
+        indent=1) + '\n')
+    title = 'Now: PHP October on your phone'
+    desc = 'What you need to know about the PHP flaws for the time you have, one, five, ten or thirty minutes, against what you read before; deterministic from the data, or written by a model with your own key kept in your own vault, with a chat.'
+    PAGES.append(('now/index.html', title, desc, 'account'))
+    html_out = f'''<!doctype html>
+<html lang="en" data-root="../" data-path="now/index.html" data-ver="{VERSION}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#8a2416">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PHP Now">
+<title>{E(title)} &middot; {SITE_NAME}</title>
+<meta name="description" content="{E(desc)}">
+<link rel="canonical" href="{BASE_URL}/now/index.html">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/now/icon-192.png">
+<link rel="icon" href="data:,">
+<link rel="alternate" type="text/markdown" href="index.md">
+<link rel="stylesheet" href="../assets/now/now.css">
+<script src="../assets/reader-state.js" defer></script>
+<script src="../assets/telemetry.js" defer></script>
+<script type="module" src="../assets/now/now.js"></script>
+</head>
+<body>
+<div id="app" class="app">
+<header class="top"><a class="brand" href="../index.html">PHP October<span> 2026</span></a><span class="b-now">Now</span><button class="vchip" id="vchip" type="button">This phone only</button></header>
+<main id="view"><section class="card"><h1>What you need to know, for the time you have</h1><p>{E(pl["headline"])}. {E(re.sub(r"<[^>]+>", "", pl["deck"]))}</p><p>This app needs JavaScript. Without it, start from <a href="../index.html">the front page</a> or <a href="../whatsnew/index.html">what's new</a>.</p></section></main>
+<nav class="tabs" id="tabs"><a href="#now" data-tab="now">Now</a><a href="#chat" data-tab="chat">Ask</a><a href="#vault" data-tab="vault">Vault &amp; keys</a></nav>
+</div>
+</body>
+</html>
+'''
+    write('now/index.html', html_out)
+    md = f'''# {title}
+
+{desc}
+
+> For you: an app in your browser, kept by the agents that run this site.
+
+The phone app at {BASE_URL}/now/index.html answers one question: what do I need to know now, given how long I have? Choose one, five, ten or thirty minutes; it shows what is new or changed since you last read it, most important first, until the time is used. If nothing is new, it says so.
+
+## Two modes
+
+- **Deterministic**: the items, their order and their connections (each fact to its sources and to the briefings that carry it) come from the site's data and nothing else. The same data gives the same answer.
+- **Agentic**: the same items handed to a model through OpenRouter with your own key: a briefing in prose for your time budget (Claude Sonnet), an infographic (Gemini), and a chat grounded in the site's facts. Every generated piece says which model wrote it from which items, and links each claim back to its fact.
+
+## Your vault
+
+Open a vault (an sgit vault key; a newsroom.sgit.ai reader vault works) or create one, and the app keeps in it, encrypted in your browser before it leaves: what you have read, your settings, your OpenRouter key, your chats and what the models made for you, under `/php-october/`. Without a vault, what you have read is kept in this browser only and the agentic mode is off.
+
+The data the app reads is [now.json]({BASE_URL}/now/now.json). The brief is on [the briefs page]({BASE_URL}/admin/briefs/index.html).
+
+---
+site v{VERSION} · data as of {STORY["data_as_of"]} · {BASE_URL}/now/index.html
+'''
+    write('now/index.md', md)
 # ----------------------------------------------------------------------------- the fact-check desk (factcheck@php.newsroom)
 
 FC = load('factcheck') if os.path.exists(os.path.join(DATA, 'factcheck.json')) else None
 FCA = {a['id']: a for a in FC['assessments']} if FC else {}
 FCL = {l['n']: l for l in FC['levels']} if FC else {}
-KIND_WORD = {'record': 'Record', 'event': 'Event', 'state': 'State', 'count': 'Count', 'quote': 'Quote', 'attribution': 'Attribution', 'reading': 'Opinion', 'advice': 'Advice'}
+FC_KIND_WORD = {'record': 'Record', 'event': 'Event', 'state': 'State', 'count': 'Count', 'quote': 'Quote', 'attribution': 'Attribution', 'reading': 'Opinion', 'advice': 'Advice'}
 
 def assure(cid, short=False):
     """The desk's grade for a claim as a badge: the level's code, name and a six-dot meter, so it never rests on colour alone."""
@@ -3145,7 +3402,7 @@ def fc_section(cid):
     rows = [[f'<a href="../../sources/{E(x["source"])}/index.html">{E(x["source"])}</a>' if x['source'] in SOURCES else f'{E(x["source"])} <span class="small">(in the vault, not yet on this site)</span>',
              E(x['result']), f'<q>{E(x["excerpt"])}</q>' if x.get('excerpt') else '<i>nothing that carries it</i>', f'<code title="{E(x.get("file", ""))}">{E((x.get("sha256") or "")[:16])}</code>'] for x in a.get('checked', [])]
     tk = ', '.join(f'<a href="../../factcheck/index.html#{E(l)}">{E(l)}</a>' for l in a.get('tickets', []))
-    inner = (f'<p>{assure(cid)} &middot; {E(KIND_WORD.get(a["kind"], a["kind"]))} &middot; verdict: <b>{E(a["verdict"].replace("-", " "))}</b>'
+    inner = (f'<p>{assure(cid)} &middot; {E(FC_KIND_WORD.get(a["kind"], a["kind"]))} &middot; verdict: <b>{E(a["verdict"].replace("-", " "))}</b>'
              f'{" &middot; the status word overstates the evidence" if a.get("status_fit") == "overstated" else ""}{" &middot; the status word understates the evidence" if a.get("status_fit") == "understated" else ""}</p>'
              f'<p>{E(a["reason"])}</p>' + (table(['Capture checked', 'Result', 'What it says', 'sha256 of the text read'], rows) if rows else '') +
              (f'<p>Open tickets: {tk}.</p>' if tk else '') + f'<p class="small">Graded in {E(a.get("run", ""))}, resting on captures up to {E(fmt_at(parse_when(a.get("as_of")) or "") if a.get("as_of") else "")}. The scale is on <a href="../../factcheck/index.html#ladder">the fact-check page</a>.</p>')
@@ -3171,7 +3428,7 @@ def build_factcheck():
         tk = ' '.join(f'<a href="#{E(l)}">{E(l)}</a>' for l in a.get('tickets', []))
         rows.append(f'<tr data-lv="{-1 if a["verdict"] == "refuted" else a["display"]}" data-kind="{E(a["kind"])}" data-t="{E(a.get("tension", "none"))}" data-v="{E(a["verdict"])}" data-f="{1 if a["id"] in flagged else 0}">'
                     f'<td><a href="../facts/{E(a["id"])}/index.html">{E(c["claim"])}</a><div class="note">{E(a["reason"])}</div></td>'
-                    f'<td>{assure(a["id"])}</td><td>{E(KIND_WORD.get(a["kind"], a["kind"]))}</td><td>{E(a["verdict"].replace("-", " "))}</td><td>{pill(c["status"])}</td><td>{tk}</td></tr>')
+                    f'<td>{assure(a["id"])}</td><td>{E(FC_KIND_WORD.get(a["kind"], a["kind"]))}</td><td>{E(a["verdict"].replace("-", " "))}</td><td>{pill(c["status"])}</td><td>{tk}</td></tr>')
     th = ''.join(f'<th>{h}</th>' for h in ['Claim, and why it is graded so', 'Fact-check', 'Kind', 'Verdict', 'Site status', 'Tickets'])
     grid = f'<div class="tw"><table class="t fc-grid"><thead><tr>{th}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
     filt = '''<form class="fc-filter" aria-label="Filter claims by assurance"><label>Show claims graded at least <select id="fc-min"><option value="-1">everything, refuted too</option><option value="0">A0</option><option value="2">A2 Reported</option><option value="4">A4 Corroborated</option><option value="5">A5 Confirmed</option><option value="6">A6 Established</option></select></label>

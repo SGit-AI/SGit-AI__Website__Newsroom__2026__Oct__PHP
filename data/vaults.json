@@ -57,6 +57,42 @@
    "note": "The review written from it is published in the repository; its findings become facts on this site only once they cite a capture.",
    "page": "vaults/index.html#coverage",
    "data": "admin/content/reviews/2026-10-22__coverage-review.md"
+  },
+  {
+   "slug": "conductor",
+   "id": "5iwos28w",
+   "name": "The conductor vault",
+   "access": "private, with an append lane",
+   "app": false,
+   "holds": "Where the team is: the roster, the plan that opens every run and the digest that closes it, the broadcasts, and what members send the conductor through its lane, one token per member, each message encrypted to the conductor's key.",
+   "writers": "conductor@php.newsroom only; every member of the team reads it",
+   "note": "Its read key goes to members privately; the lane's tokens are not published.",
+   "page": "team/channels/index.html#conductor",
+   "data": "data/team.json"
+  },
+  {
+   "slug": "issues",
+   "id": "zjruy9vk",
+   "name": "The issues vault",
+   "access": "private",
+   "app": false,
+   "holds": "The team's tasks as files (Issues-FS-lite): one queue per member with open, blocked and done, one markdown card per task. The board on this site is a snapshot of it.",
+   "writers": "each member of the team, only inside its own queue",
+   "note": "Its key goes to members privately.",
+   "page": "team/channels/index.html#issues",
+   "data": "data/admin.json"
+  },
+  {
+   "slug": "mail",
+   "id": "fmb2tpl2",
+   "name": "The mail vault",
+   "access": "private",
+   "app": false,
+   "holds": "The team's messages (Email-FS-lite): a mailroom, an inbox, a done folder and an outbox per member, and each member's session notes.",
+   "writers": "each member of the team, in its own folders and other members' mailrooms",
+   "note": "Its key goes to members privately.",
+   "page": "team/channels/index.html#mail",
+   "data": "data/team.json"
   }
  ]
 }

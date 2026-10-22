@@ -10,7 +10,7 @@ PHP news · October 2026 · Developing · last checked 22 October 2026, 11:34 UT
 
 PHP is the software that WordPress and millions of other websites run on. A fix came out on 21 October 2026. Government cyber agencies have told organisations to install it now, or to take websites offline if they cannot. Phones and personal computers are not affected.
 
-  What is happening nowThe briefing for youExplain it from the start
+  What is happening nowThe briefing for youExplain it from the startOn your phone: Now →
 
 You may also see this called php2shell, or by its two official reference numbers, CVE-2026-109618 and CVE-2026-109619.
 
@@ -115,4 +115,4 @@ Already know the vocabulary? [The specialist summary](summary/index.html) has th
 
 
 ---
-site v0.4.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html

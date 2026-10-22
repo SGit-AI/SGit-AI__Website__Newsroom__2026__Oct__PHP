@@ -238,6 +238,13 @@
    "used_on": "admin/roles/index.html"
   },
   {
+   "path": "data/team.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "the roster of the team, human and agent: role, what each owns, rules, home pages, what each has done; the run and the three coordination vaults",
+   "used_on": "team/index.html"
+  },
+  {
    "path": "data/versions.json",
    "layer": "site",
    "by": "admin/build/release.sh",

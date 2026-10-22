@@ -90,9 +90,10 @@ This is a dated article, not a page of the site. It was written by the journalis
 - [Why can't every version of PHP just be patched?](../why-not-patch-every-version/index.html) Journalist, 2026-10-22
 - [Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit](../exposed-is-not-exploited/index.html) Journalist and historian, 2026-10-22
 - [php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proof](../php2shell-in-perspective/index.html) Historian, 2026-10-22
+- [Patch at the speed of Metasploit: where php2shell sits on the weaponisation ladder, and the attacks that come second and third](../patch-at-the-speed-of-metasploit/index.html) Cyber desk, 2026-10-22
 
 Source file: `admin/content/articles/2026-10-22__journalist__where-php2shell-stands.md`, in the authored layer; see [evidence, derived, authored](../../layers/index.html).
 
 
 ---
-site v0.4.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/articles/where-php2shell-stands/index.html
+site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/articles/where-php2shell-stands/index.html

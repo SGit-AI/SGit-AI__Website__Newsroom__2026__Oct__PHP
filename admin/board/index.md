@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 68 items, 47 open, 20 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 79 items, 56 open, 22 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -15,7 +15,7 @@ The work, as rows in `data/admin.json`: 68 items, 47 open, 20 done. An item is a
 | 003 | Anonymous telemetry over an append lane, from the front end, into a separate vaultBrief: admin/content/briefs/2026-10-22__telemetry-over-an-append-lane.md. End-to-end tested from the CLI before shipping. | done | dev | 0.2.3 |
 | 013 | Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai keySealed on 22 October 2026 to the editor's key on pki.sgit.ai (record sha256:db7f79fdd87e030a, the register's anchor), together with the subscriptions vault's keys; the m1 link was given to the editor in the session. Waiting for him to open it. | waiting | dev |  |
 | 004 | Run the verifier over every claim: check each quote against its capture textThe BBC's NCSC sentence is the first case. | open | factcheck |  |
-| 005 | Retry the blocked sources from another egress: openai.com, watchtowr.com, techzine.eu, socket.dev, ccn-cert.cni.es, dyn.cncs.gov.pt | open | collector-researchers |  |
+| 005 | Retry the blocked sources from another egress: openai.com, watchtowr.com, techzine.eu, socket.dev, ccn-cert.cni.es, dyn.cncs.gov.ptresearcher@php.newsroom, source watch run 20261022T142033Z: openai.com (the coordinated-disclosure post), watchtowr.com, socket.dev and armis.com now serve their pages; techzine.eu still serves a challenge, as does ccn-cert.cni.es; dyn.cncs.gov.pt answers 513. Captures are in the source-watch vault, not yet in the evidence vault. | open | collector-researchers |  |
 | 006 | Find the primary posts behind second-hand figures: Censys, VirusTotal, Unit 42, Cloudflare's CTO at 07:43 UTC, Gina Banyard's Mastodon post, the fedi.katze.sh posts | open | collector-researchers |  |
 | 007 | The 2024 trail in php-src: the audit finding whose fix surfaced the OOM problem, with a deeper clone | open | collector-primary |  |
 | 008 | The next graph layer: facts inside a source (sentence-level nodes) so every noun on a page links somewhere | open | cartographer |  |
@@ -74,13 +74,24 @@ The work, as rows in `data/admin.json`: 68 items, 47 open, 20 done. An item is a
 | 061 | The contradiction ledger: a first-class record per disagreement (the statements, who, when, captures, what each measures, the reading, status), seeded with the seven from the 22 October coverage review, and a page that shows itFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | factcheck |  |
 | 062 | Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one sourceFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | cartographer |  |
 | 063 | Carry every stat as its series: each number on the site drawn as a line whose points link to their captures, starting with sites offline, products fixed, attempts and unpatched hostsFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open | journalist |  |
-| 064 | The fact-check desk: a spectrum of evidence (kind, level A0 to A6, verdict, tension), an Issues-FS tracker, the contradiction ledger, the first full run over all 70 claims, and /factcheck/ with a view of only what can be relied onFrom the brief: a fact-checker joins the team (22 October). | done | factcheck | 0.4.8 |
-| 065 | Run the desk on a schedule, every four hours: the claims that changed, the open tickets, the weak and the contested, KEV and the moving sources; a full sweep once a dayFrom the brief: a fact-checker joins the team (22 October). | open | factcheck |  |
-| 066 | Act on the desk's high and medium findings on claims, agencies, exploitation and impact data: first Italy's offline advice, the allies' 'contradicted' mark, the five quotes not in their captures, and the eleven overstated status words (tickets on /factcheck/)From the brief: a fact-checker joins the team (22 October). | open | claude-story-site |  |
-| 067 | Capture what the desk found outside the vault: the BBC live page as it stands (32 UK services, 90%), The Next Web, the PHPocalypse Tracker's sites.csv, KEV each run; then re-grade the claims they bear onFrom the brief: a fact-checker joins the team (22 October). | open | collector-researchers |  |
+| 064 | The phone app (/now/): what to know for one, five, ten or thirty minutes against what you read; deterministic and agentic modes; the reader's vault with the OpenRouter key; chat with Sonnet; infographics with GeminiFrom the brief on the phone app (22 October). | done | dev | 0.5.0 |
+| 065 | First live run of the agentic mode with the editor's OpenRouter key: check that every sentence Sonnet writes cites an item, and that the infographic adds no number of its ownFrom the brief on the phone app (22 October). | open | editor |  |
+| 066 | Open the phone app's vault with a passkey, through the newsroom's door design, so a phone needs no pasted keyFrom the brief on the phone app (22 October). | open | dev |  |
+| 067 | Draw the semantic graph on the phone: what changed, and what it connects to, as nodes and edgesFrom the brief on the phone app (22 October). | open | cartographer |  |
+| 069 | Map every member of the team, human and agent, with a page each; the three coordination vaults (conductor, issues, mail); the board moved into the issues vault; the conductor's append lane, one token per member, and its drain (admin/build/conductor_drain.py), tested end to end | done | conductor | 0.5.1 |
+| 070 | Decide how each member receives the coordination vaults' keys: the conductor vault's read key, the issues and mail vaults' keys, each member's append token (sealed per member on pki.sgit.ai, or handed in each session's launch prompt)Until this is decided, the conductor holds every key and members are reached through the editor. | open | editor |  |
+| 071 | Set the cadence of the scheduled run (open by the conductor, work by the agents, close by the conductor) and which agents take part in the first one | open | editor |  |
+| 072 | Review the team map: each member's page, role, owners and status; correct anything wrong by mail to the conductor | open | vicky |  |
+| 073 | Prioritise the open board: the first run's top five, and which needs the editor must answer first | open | vicky |  |
+| 074 | First run: the plan, the assignments as mail to each member, the digest at the close, and the site's snapshot of the team after it | open | conductor |  |
+| 075 | A digest on the site at every close: the conductor vault's status (what moved, what is blocked and on whom, what the humans must decide) as a page under /team/ | open | conductor |  |
+| 076 | Run the source watch hourly: today it runs by hand in a session; a scheduled run needs the vault key held by the runner, never in a repository | open | researcher@php.newsroom |  |
+| 077 | Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so the publishers it surfaces are mapped but not followed; Bing carries article addresses but only for the query 'php2shell' | open | researcher@php.newsroom |  |
+| 078 | Cyber desk, first piece: 'Patch at the speed of Metasploit', php2shell on the weaponisation ladder, the ATT&CK path (seen, expected, precedent) and the second and third stories | done | cyber@php.newsroom |  |
+| 079 | The weaponisation clock: watch for a merged Metasploit module, an exploiting nuclei template, a KEV listing, an EPSS step, upstream Sigma/ET/Snort rules, a second patch or regression; write the next cyber piece when one moves | open | cyber@php.newsroom |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.4.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

@@ -58,4 +58,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.4.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/techzine-php-chainguard/index.html
+site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/techzine-php-chainguard/index.html

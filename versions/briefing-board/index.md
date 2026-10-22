@@ -15,4 +15,4 @@ v5 · site v0.4.7 · 22 October 2026 · 37 lines added or changed, 37 removed or
 
 
 ---
-site v0.4.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-board/index.html
+site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-board/index.html

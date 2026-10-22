@@ -56,6 +56,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Briefing for a media and communications team: What can we say that is true, what should we not say, and what will we be asked?](../briefings/comms/index.html): The php2shell story for a media and communications team: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
 ### Yours
+- [Now: the phone app](../now/index.html):
 - [Your desk: what is new to you, and what changed](../you/index.html): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
 - [The feed viewer: this site, the records, and your own feeds](../reader/index.html): Read this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.
 - [Feeds: what is new and what changed](../feeds/index.html): RSS feeds for everything new and changed on this site and for each of its parts: an entry for every new item and every change, and where to read them.
@@ -105,6 +106,9 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Subscribe: what changed, sent to you](../subscribe/index.html): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.
 - [The vaults behind this site](../vaults/index.html#coverage):
+- [How the team talks: three vaults and one run](../team/channels/index.html#conductor):
+- [How the team talks: three vaults and one run](../team/channels/index.html#issues):
+- [How the team talks: three vaults and one run](../team/channels/index.html#mail):
 
 ### Stories
 - [All stories, written here](../articles/index.html):
@@ -112,11 +116,12 @@ An article a reader has seen is listed here until a collector captures it into t
 - [House · Journalist: Where php2shell stands](../articles/where-php2shell-stands/index.html):
 - [House · Journalist and historian: Exposed is not exploited](../articles/exposed-is-not-exploited/index.html):
 - [House · Historian: php2shell in perspective](../articles/php2shell-in-perspective/index.html):
+- [House · Cyber desk: Patch at the speed of Metasploit](../articles/patch-at-the-speed-of-metasploit/index.html):
 - [The editor, interviewed: Dinis Cruz on why this site exists](../interview/index.html): Dinis Cruz, the editor of PHP October 2026, on why he started tracking the PHP flaws, the 70% figure, what remote code execution does and does not mean, pulling the plug, and why every section of the site is versioned. In his own words.
 
 ### About
 - [The method: capture, hash, claim, build, gate](../method/index.html): How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.
-- [The team: the editor, the pipeline and the agents](../team/index.html): Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the 15 audiences.
+- [The team: the people, the agents and how they work together](../team/index.html): Every member of the team that runs this site, 2 people and 15 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 15 audiences.
 - [The billing model: what runs and what is designed](../billing/index.html): How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
 - [Your reading account](../account/index.html): The balance, history and receipts of your reading on this site, kept in your browser.
 - [The brief: a written request and two voice memos](../brief/index.html): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.
@@ -139,4 +144,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.4.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
