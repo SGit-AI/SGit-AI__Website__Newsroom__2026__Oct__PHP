@@ -46,6 +46,8 @@
   {"path": "data/plain.json", "layer": "derived", "by": "the design agent", "from": "the front page's plain-English questions and moments; every fact cites vault slugs", "used_on": "index.html"},
   {"path": "data/sections.json", "layer": "site", "by": "admin/build/build.py", "from": "the section ledger: every section hashed on every build, versioned when its reader-facing text changes", "used_on": "versions/index.html"},
   {"path": "data/seo.json", "layer": "site", "by": "the design agent", "from": "search-engine settings: the Search Console verification token and the social card", "used_on": "index.html"},
+  {"path": "data/items.json", "layer": "site", "by": "admin/build/build.py", "from": "every item a reader can read, with its id, zone, link and the hash of what it says; written by every build", "used_on": "you/index.html"},
+  {"path": "data/feed-sources.json", "layer": "site", "by": "dev@php.newsroom", "from": "the feeds the viewer offers, which allow a browser to read them, checked on 22 October 2026", "used_on": "reader/index.html"},
   {"path": "data/telemetry.json", "layer": "site", "by": "dev@php.newsroom", "from": "the telemetry lane's public configuration", "used_on": "admin/telemetry/index.html"},
   {"path": "data/telemetry-report.json", "layer": "site", "by": "admin/build/telemetry_drain.py", "from": "the drained telemetry lane, as counts", "used_on": "admin/telemetry/index.html"},
   {"path": "data/layers.json", "layer": "site", "by": "claude-journalist", "from": "this classification", "used_on": "layers/index.html"}

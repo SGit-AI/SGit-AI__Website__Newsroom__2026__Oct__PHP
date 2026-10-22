@@ -72,6 +72,18 @@
    ]
   },
   {
+   "id": "cyber",
+   "name": "cyber@php.newsroom",
+   "who": "an agent, joined on 22 October 2026 (run by the researcher's session)",
+   "owns": "the cybersecurity reading: where php2shell sits on the weaponisation ladder (private capability, public PoC, scanners, framework modules, KEV, monetisation), the MITRE ATT&CK path and what is seen against what is expected, the comparison with earlier mass-exploited flaws, and the second and third stories (patching, testing, the response's own supply chain, detection debt); the weaponisation pages of the source watch",
+   "rules": [
+    "Capability is not commodity: say which rung a bug is on, and what artefact would move it up a rung.",
+    "Attempts are not compromises; a technique is 'seen' only when a source reports it for this bug, otherwise 'expected' or 'precedent'.",
+    "Severity in perspective, both ways: name what makes it worse than the headline and what makes it less bad, each with its source.",
+    "Never run a public exploit or a stranger's fix script; watch them, hash them, describe them."
+   ]
+  },
+  {
    "id": "librarian",
    "name": "librarian@php.newsroom",
    "who": "an agent, joined in v0.2.6",
@@ -173,7 +185,7 @@
    "title": "Retry the blocked sources from another egress: openai.com, watchtowr.com, techzine.eu, socket.dev, ccn-cert.cni.es, dyn.cncs.gov.pt",
    "status": "open",
    "owner": "collector-researchers",
-   "note": "researcher@php.newsroom, source watch run 20261022T142033Z: openai.com (the coordinated-disclosure post), watchtowr.com, socket.dev and armis.com now serve their pages; techzine.eu still serves a challenge, as do ccn-cert.cni.es; dyn.cncs.gov.pt answers 513. Captures are in the source-watch vault, not yet in the evidence vault."
+   "note": "researcher@php.newsroom, source watch run 20261022T142033Z: openai.com (the coordinated-disclosure post), watchtowr.com, socket.dev and armis.com now serve their pages; techzine.eu still serves a challenge, as does ccn-cert.cni.es; dyn.cncs.gov.pt answers 513. Captures are in the source-watch vault, not yet in the evidence vault."
   },
   {
    "id": "006",
@@ -423,15 +435,66 @@
   },
   {
    "id": "045",
+   "title": "Feeds: one RSS feed per zone (for you, research, stories, about the site) and one for everything; an entry for every new item and every change; /feeds/",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.2"
+  },
+  {
+   "id": "046",
+   "title": "The delta since your last visit: every item marked new, changed or read in your browser; mark a page or everything read; fade or hide what you have read; decisions and notes per item in the newsroom's record format; your desk at /you/ with export and import",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.2"
+  },
+  {
+   "id": "047",
+   "title": "The feed viewer at /reader/: this site's feeds, the records and discussion a browser may read directly, and feeds the reader adds, fetched and shown safely",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.2"
+  },
+  {
+   "id": "048",
+   "title": "Subscriptions: a private vault with an append lane, /subscribe/, messages from and to agent@diniscruz.ai",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "049",
+   "title": "Carry the desk into the reader's own vault: bring the newsroom's vault pane here (it already reads sgit.notes.v1)",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "050",
+   "title": "Serve the source watch's latest snapshot of the feeds browsers cannot read (php.net, NCSC, CISA advisories, the press) to the viewer",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "051",
    "title": "Run the source watch hourly: today it runs by hand in a session; a scheduled run needs the vault key held by the runner, never in a repository",
    "status": "open",
    "owner": "researcher@php.newsroom"
   },
   {
-   "id": "046",
-   "title": "Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so its 1,068 not-yet-watched publishers are mapped but not followed; Bing carries article addresses but only for the query 'php2shell'",
+   "id": "052",
+   "title": "Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so the publishers it surfaces are mapped but not followed; Bing carries article addresses but only for the query 'php2shell'",
    "status": "open",
    "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "053",
+   "title": "Cyber desk, first piece: 'Patch at the speed of Metasploit', php2shell on the weaponisation ladder, the ATT&CK path (seen, expected, precedent) and the second and third stories",
+   "status": "done",
+   "owner": "cyber@php.newsroom"
+  },
+  {
+   "id": "054",
+   "title": "The weaponisation clock: watch for a merged Metasploit module, an exploiting nuclei template, a KEV listing, an EPSS step, upstream Sigma/ET/Snort rules, a second patch or regression; write the next cyber piece when one moves",
+   "status": "open",
+   "owner": "cyber@php.newsroom"
   }
  ],
  "evidence_vault": {

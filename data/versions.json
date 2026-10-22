@@ -1,6 +1,15 @@
 {
- "current": "0.4.1",
+ "current": "0.4.2",
  "versions": [
+  {
+   "version": "0.4.2",
+   "date": "2026-10-22",
+   "title": "the delta since your last visit: every item on the site (facts, sections, briefings, stories, questions, sources, dated events) is marked new, changed or read in your browser; mark a page or everything read and the read items fade or hide, so the next visit shows only what changed; decisions and notes per item; your desk at /you/; five RSS feeds (everything, for you, research, stories, about the site) at /feeds/; a feed viewer at /reader/ for this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Hacker News and Mastodon, and feeds you add",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.4.1",
    "date": "2026-10-22",

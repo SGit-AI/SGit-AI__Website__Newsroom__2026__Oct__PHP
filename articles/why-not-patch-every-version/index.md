@@ -79,9 +79,10 @@ A house story, written here by the journalist role against site v0.4.0, vault co
 ## Other articles
 - [Where php2shell stands: many sites dark, millions of attempts, no confirmed breach](../where-php2shell-stands/index.html) Journalist, 2026-10-22
 - [php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proof](../php2shell-in-perspective/index.html) Historian, 2026-10-22
+- [Patch at the speed of Metasploit: where php2shell sits on the weaponisation ladder, and the attacks that come second and third](../patch-at-the-speed-of-metasploit/index.html) Cyber desk, 2026-10-22
 
 Source file: `admin/content/articles/2026-10-22__journalist__why-not-patch-every-version.md`, in the authored layer; see [evidence, derived, authored](../../layers/index.html).
 
 
 ---
-site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.html
+site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.html

@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.4.2 · 22 October 2026new since your last visit
+
+the delta since your last visit: every item on the site (facts, sections, briefings, stories, questions, sources, dated events) is marked new, changed or read in your browser; mark a page or everything read and the read items fade or hide, so the next visit shows only what changed; decisions and notes per item; your desk at /you/; five RSS feeds (everything, for you, research, stories, about the site) at /feeds/; a feed viewer at /reader/ for this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Hacker News and Mastodon, and feeds you add
+
+No reader-facing section changed in this release.
+
 ## v0.4.1 · 22 October 2026new since your last visit
 
 Research and Stories: the menu in three zones (for you, research, stories) with an origin strip on every page saying whether it is research, external material, a story (house, guest, interview) or about the site; Stories as its own section; /patching/, which versions of PHP get a fix and from whom, every downstream row checked against the NCSC-NL inventory; the story 'Why can't every version of PHP just be patched?'; /status.json for other sites, with its admin page; the editor's brief published; four stray screenshots committed in v0.2.10 removed
@@ -288,4 +294,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.4.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.4.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
