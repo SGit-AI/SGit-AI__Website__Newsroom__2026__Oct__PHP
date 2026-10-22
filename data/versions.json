@@ -1,6 +1,15 @@
 {
- "current": "0.2.13",
+ "current": "0.2.14",
  "versions": [
+  {
+   "version": "0.2.14",
+   "date": "2026-10-22",
+   "title": "the source watch's page opens with a screenshot of the vault in the official UI, read-only with the published key, that opens the real one in a new tab; board item 038 records what the first open costs in the browser (2,678 objects decrypted before the tree shows)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.13",
    "date": "2026-10-22",

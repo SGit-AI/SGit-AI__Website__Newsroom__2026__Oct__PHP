@@ -46,10 +46,10 @@ The work, as rows in `data/admin.json`: 39 items, 27 open, 11 done. An item is a
 | 035 | /status/: each newsroom site's deploy runs, read from GitHub's public API with no credential, beside the version each site serves; every page notes when a newer release is live | done | dev@php.newsroom | 0.2.12 |
 | 036 | Publish the source-watch vault (oq9gflln) the way sgit.ai publishes vaults: screenshot, open-in-a-new-tab link, the vault embedded, its main features | done | dev@php.newsroom | 0.2.13 |
 | 037 | A vaults section listing every vault behind the site, what each holds and how to open it | done | dev@php.newsroom | 0.2.13 |
-| 038 | The source watch takes minutes to open in the browser: with no app, the official UI decrypts the whole tree (about 6,500 objects) before it shows anything. A small vault app that reads index/ and state/ first, or a lighter front vault, would open it in seconds | open | researcher@php.newsroom |  |
+| 038 | The source watch is slow to open in the browser: with no app, the official UI decrypts the folder tree (2,678 objects) before it shows anything; from this sandbox that took 17 minutes. A small vault app that reads index/ and state/ first, or a lighter front vault, would open it in seconds | open | researcher@php.newsroom |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.2.13 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.2.14 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
