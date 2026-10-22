@@ -10,6 +10,10 @@ Fact · leak · reported
 
 **Who says it:** Daubois; CERT-EU lists a watchTowr X post among public reports · **Sources:** [Daubois](../../sources/daubois-blog-php2shell-rumors/index.html) [CERT-EU](../../sources/certeu-sa-2026-018/index.html)
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Daubois publishes [What the PHP2Shell rumors got wrong, from inside the PHP security team](../../sources/daubois-blog-php2shell-rumors/index.html)
 - 2026-10-21 15:20 UTCCERT-EU publishes [Security Advisory 2026-018: Critical Vulnerabilities in PHP](../../sources/certeu-sa-2026-018/index.html)

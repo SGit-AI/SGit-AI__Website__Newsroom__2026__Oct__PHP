@@ -10,6 +10,10 @@ Fact · exploitation · reported
 
 **Who says it:** Huntress · **Sources:** [Huntress](../../sources/huntress-php2shell-rapid-response/index.html)
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Huntress publishes [Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619) | Huntress](../../sources/huntress-php2shell-rapid-response/index.html)
 - 2026-10-22 11:28 UTCSaved into the evidence vault: Huntress

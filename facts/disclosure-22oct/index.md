@@ -12,6 +12,10 @@ Fact · timing · contradicted
 
 Primary sources put the release at 21 October: GHSAs 13:34Z, tags 13:35Z, CVE records 13:48Z and 13:54Z, GitHub release 14:06Z.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21php.net publishes [Security advisory: Critical remote code execution vulnerabilities, update now](../../sources/php-net-advisory/index.html)
 - 2026-10-21 14:06 UTCphp-src publishes [Release PHP 8.5.12](../../sources/github-php-src-tag-php-8.5.12/index.html)

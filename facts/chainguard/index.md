@@ -12,6 +12,10 @@ Fact · leak · disputed
 
 Dan Lorenc (via The Register): 'I made the call to get these out early when exploits hit in the wild'; several unnamed vendors had reported exploits; Chainguard's honeypots trapped IPs; a researcher warned the company on the Friday and its team then found the bugs independently with an AI harness. No evidence published. The PHP security team found no functional exploit by release time.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)
 - 2026-10-22The Register publishes [PHP blames supply chain security biz Chainguard for putting huge chunks of the web at risk](../../sources/theregister-php-blames-chainguard/index.html)

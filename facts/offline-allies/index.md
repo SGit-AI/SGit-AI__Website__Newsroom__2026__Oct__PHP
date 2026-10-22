@@ -12,6 +12,10 @@ Fact · advice · contradicted
 
 Australia's ACSC gives no offline advice. CERT-EU says isolate. The Netherlands, Italy, Japan and New Zealand give no offline advice.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21ACSC publishes [Critical vulnerabilities in PHP](../../sources/acsc-alert-php/index.html)
 - 2026-10-21ACN / CSIRT Italia publishes [PHP2Shell: sanate vulnerabilità critiche in PHP (AL07/261021/CSIRT-ITA)](../../sources/acn-it-php2shell/index.html)

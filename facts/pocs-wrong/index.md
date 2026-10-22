@@ -12,6 +12,10 @@ Fact · technical · reported
 
 The Hacker News says the same of the public code. Fastly: working RCE needs knowledge of the running binary's layout on x86_64.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21rjmendez, GitHub publishes [GitHub - rjmendez/phpup-2026: IOCs and detection rules for CVE-2026-109618 / CVE-2026-109619 (PHP session.uplo](../../sources/github-rjmendez-phpup-2026/index.html)
 - 2026-10-21Huntress publishes [Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619) | Huntress](../../sources/huntress-php2shell-rapid-response/index.html)

@@ -12,6 +12,10 @@ Fact · technical · disputed
 
 The CVE records list only 8.2 to 8.5 with defaultStatus 'unaffected'. php.net published source backports for 7.4, 8.0 and 8.1, which implies they are affected. A scanner that trusts the CVE record will miss 7.4 to 8.1.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21CERT-FR publishes [[Màj] Multiples vulnérabilités dans PHP (CERTFR-2026-ALE-014)](../../sources/certfr-2026-ale-014/index.html)
 - 2026-10-21 13:32 UTCWiz on X publishes [Wiz on X: BREAKING ... #PHP2SHELL ... impacting 70% of the Internet](../../sources/x-wiz-io-php2shell/index.html)

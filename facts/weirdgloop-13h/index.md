@@ -12,6 +12,10 @@ Fact · impact · confirmed
 
 Primary, and the one outage with a measured cost.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Weird Gloop publishes [Recent wiki downtime (PHP2Shell mitigation) | Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html)
 - 2026-10-22 11:18 UTCSaved into the evidence vault: Weird Gloop

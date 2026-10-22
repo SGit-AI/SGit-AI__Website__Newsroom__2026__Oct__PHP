@@ -12,6 +12,10 @@ Fact · exploitation · confirmed
 
 Counted from the captured catalog.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2024Akamai Security Research publishes [CVE-2024-4577 Exploits in the Wild One Day After Disclosure](../../sources/akamai-blog-cve-2024-4577-one-day/index.html)
 - 2024-06-09 19:42 UTCCVE record publishes [CVE-2024-4577 (PHP-CGI argument injection)](../../sources/cve-cve-2024-4577/index.html)

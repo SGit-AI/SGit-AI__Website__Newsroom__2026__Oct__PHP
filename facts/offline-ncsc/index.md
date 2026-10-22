@@ -12,6 +12,10 @@ Fact · advice · disputed
 
 That sentence is not on the NCSC page as captured at 08:09Z on 22 October. The page's offline advice is step 4 of 6 and is worded differently. The page was modified at 07:30Z that morning. The sentence's opening matches the Canadian CCCS text.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21NCSC UK publishes [Critical security issue affecting PHP](../../sources/ncsc-news-php/index.html)
 - 2026-10-21CCCS publishes [AL26-026 - Critical vulnerabilities impacting PHP - CVE-2026-109618 and CVE-2026-109619](../../sources/cccs-al26-026/index.html)

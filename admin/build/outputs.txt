@@ -152,6 +152,8 @@ explained/index.html
 explained/index.md
 exploitation/index.html
 exploitation/index.md
+factcheck/index.html
+factcheck/index.md
 facts/ac-high/index.html
 facts/ac-high/index.md
 facts/affected-sites/index.html

@@ -12,6 +12,10 @@ Fact · exploitation · reported
 
 The only agency saying so, and it does not say whose reports.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-22 08:17 UTCSaved into the evidence vault: NCSC New Zealand
 - 2026-10-22 09:15 UTCNCSC New Zealand publishes [UPDATED: CVE-2026-109618 and CVE-2026-109619 affecting PHP](../../sources/ncsc-nz-alert-php/index.html)

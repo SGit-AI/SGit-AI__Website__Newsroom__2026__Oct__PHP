@@ -12,6 +12,10 @@ Fact · exploitation · unverified
 
 watchtowr.com returns HTTP 403 to this site's capture tool; known only from search summaries.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-22 11:18 UTCSaved into the evidence vault: watchTowr
 - 2026-10-22 11:18 UTCSaved into the evidence vault: watchTowr

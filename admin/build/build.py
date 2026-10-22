@@ -181,7 +181,7 @@ NAV = [
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
-    ('The analysis', [('claims/index.html', 'Every claim'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
+    ('The analysis', [('claims/index.html', 'Every claim'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
                       ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
@@ -379,8 +379,8 @@ def claim_rows(claims, depth):
         note = f'<div class="note">{E(c["note"])}</div>' if c.get('note') else ''
         p, n, b = weight(c)
         wt = f'<span class="wt" title="primary sources among the sources cited; blocked captures">{p}/{n}' + (f' <small>({b} blocked)</small>' if b else '') + '</span>'
-        rows.append([f'{it_ledger("fact-" + c["id"])}<span id="{E(c["id"])}">{E(c["claim"])}</span>{note} <a class="flink" href="{"../" * depth}facts/{E(c["id"])}/index.html">fact timeline &rarr;</a>', E(c['by']), pill(c['status']), wt, src_links(c['sources'], depth)])
-    return table(['Claim', 'Who says it', 'Status', 'Primary', 'Sources'], rows, 'claims')
+        rows.append([f'{it_ledger("fact-" + c["id"])}<span id="{E(c["id"])}">{E(c["claim"])}</span>{note} <a class="flink" href="{"../" * depth}facts/{E(c["id"])}/index.html">fact timeline &rarr;</a>', E(c['by']), pill(c['status']), assure(c['id']), wt, src_links(c['sources'], depth)])
+    return table(['Claim', 'Who says it', 'Status', f'<a href="{"../" * depth}factcheck/index.html">Fact-check</a>', 'Primary', 'Sources'], rows, 'claims')
 
 def status_legend(depth=0):
     items = ''.join(f'<li>{pill(k)} {E(v)}</li>' for k, v in STATUS_WORDS.items())
@@ -1434,7 +1434,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json()
+    build_review(); build_admin_section(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -2551,6 +2551,7 @@ def build_facts():
 <h1>{E(c["claim"])}</h1>
 <p class="meta"><b>Who says it:</b> {E(c["by"])} &middot; <b>Sources:</b> {src_links(c["sources"], 2)}</p>
 {f'<p class="note">{E(c["note"])}</p>' if c.get("note") else ""}
+{fc_section(c["id"])}
 {section("timeline", "This fact over time", f'<ol class="rail">{rail}</ol><p class="small">Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.</p>')}
 {section("graph", "What it rests on", g)}
 {section("where", "Where this fact appears", (f'<p>In the briefings for:</p><div class="pchips">{pj}</div>' if pj else '<p class="small">Not in any briefing yet.</p>') + f'<p>And on <a href="../../claims/index.html#{E(c["id"])}">every claim</a>.</p>')}
@@ -3357,6 +3358,109 @@ The data the app reads is [now.json]({BASE_URL}/now/now.json). The brief is on [
 site v{VERSION} · data as of {STORY["data_as_of"]} · {BASE_URL}/now/index.html
 '''
     write('now/index.md', md)
+# ----------------------------------------------------------------------------- the fact-check desk (factcheck@php.newsroom)
+
+FC = load('factcheck') if os.path.exists(os.path.join(DATA, 'factcheck.json')) else None
+FCA = {a['id']: a for a in FC['assessments']} if FC else {}
+FCL = {l['n']: l for l in FC['levels']} if FC else {}
+FC_KIND_WORD = {'record': 'Record', 'event': 'Event', 'state': 'State', 'count': 'Count', 'quote': 'Quote', 'attribution': 'Attribution', 'reading': 'Opinion', 'advice': 'Advice'}
+
+def assure(cid, short=False):
+    """The desk's grade for a claim as a badge: the level's code, name and a six-dot meter, so it never rests on colour alone."""
+    a = FCA.get(cid)
+    if not a:
+        return '<span class="as as-none" title="Not yet checked by the fact-check desk">not checked</span>'
+    n = a['display']
+    lv = FCL[n]
+    dots = '&#9679;' * n + '&#9675;' * (6 - n)
+    if a['verdict'] == 'refuted':
+        b = f'<span class="as as-ref" title="Refuted: a stronger source says otherwise">refuted</span>'
+    else:
+        b = f'<span class="as as-{n}" title="{E(lv["means"])}"><b>{E(lv["code"])}</b> {E(lv["name"])}<i aria-hidden="true">{dots}</i></span>'
+    if short:
+        return b
+    extra = ''
+    if a['kind'] == 'reading':
+        extra += ' <span class="as-k">opinion</span>'
+    if a.get('tension', 'none') not in ('none',):
+        extra += f' <span class="as-k as-t">{E(a["tension"].replace("-", " "))}</span>'
+    if a.get('status_fit') == 'overstated':
+        extra += ' <span class="as-k as-t" title="The status word claims more than the evidence carries">status overstated</span>'
+    return b + extra
+
+def fc_status_line(cid, depth):
+    a = FCA.get(cid)
+    if not a:
+        return ''
+    t = ''.join(f' <a href="{"../" * depth}factcheck/index.html#{E(l)}">{E(l)}</a>' for l in a.get('tickets', []))
+    return f'<div class="note"><b>Fact-check:</b> {assure(cid)} {E(a["reason"])}{(" Tickets:" + t) if t else ""}</div>'
+
+def fc_section(cid):
+    a = FCA.get(cid)
+    if not a:
+        return section('factcheck', 'Fact-check', '<p class="small">Not yet checked by the <a href="../../factcheck/index.html">fact-check desk</a>.</p>') if FC else ''
+    rows = [[f'<a href="../../sources/{E(x["source"])}/index.html">{E(x["source"])}</a>' if x['source'] in SOURCES else f'{E(x["source"])} <span class="small">(in the vault, not yet on this site)</span>',
+             E(x['result']), f'<q>{E(x["excerpt"])}</q>' if x.get('excerpt') else '<i>nothing that carries it</i>', f'<code title="{E(x.get("file", ""))}">{E((x.get("sha256") or "")[:16])}</code>'] for x in a.get('checked', [])]
+    tk = ', '.join(f'<a href="../../factcheck/index.html#{E(l)}">{E(l)}</a>' for l in a.get('tickets', []))
+    inner = (f'<p>{assure(cid)} &middot; {E(FC_KIND_WORD.get(a["kind"], a["kind"]))} &middot; verdict: <b>{E(a["verdict"].replace("-", " "))}</b>'
+             f'{" &middot; the status word overstates the evidence" if a.get("status_fit") == "overstated" else ""}{" &middot; the status word understates the evidence" if a.get("status_fit") == "understated" else ""}</p>'
+             f'<p>{E(a["reason"])}</p>' + (table(['Capture checked', 'Result', 'What it says', 'sha256 of the text read'], rows) if rows else '') +
+             (f'<p>Open tickets: {tk}.</p>' if tk else '') + f'<p class="small">Graded in {E(a.get("run", ""))}, resting on captures up to {E(fmt_at(parse_when(a.get("as_of")) or "") if a.get("as_of") else "")}. The scale is on <a href="../../factcheck/index.html#ladder">the fact-check page</a>.</p>')
+    return section('factcheck', 'Fact-check', inner)
+
+def build_factcheck():
+    if not FC:
+        return
+    A, K, T, R = FC['assessments'], FC['contradictions'], FC['tickets'], FC['runs']
+    claims = {c['id']: c for c in D['claims']}
+    by_lv = Counter(a['display'] for a in A if a['verdict'] != 'refuted')
+    refuted = sum(1 for a in A if a['verdict'] == 'refuted')
+    comfy = [a for a in A if a['display'] >= 5 and a['verdict'] == 'holds' and a.get('tension', 'none') == 'none' and a['kind'] != 'reading']
+    over = [a for a in A if a.get('status_fit') == 'overstated']
+    open_t = [t for t in T if t['status'] in ('open', 'proposed', 'acknowledged')]
+    last = R[-1] if R else {}
+    ladder = table(['Level', 'Means', 'Claims now'], [[f'<span class="as as-{l["n"]}"><b>{E(l["code"])}</b> {E(l["name"])}<i aria-hidden="true">{"&#9679;" * l["n"] + "&#9675;" * (6 - l["n"])}</i></span>', E(l['means']), str(by_lv.get(l['n'], 0))] for l in FC['levels']] +
+                   [['<span class="as as-ref">refuted</span>', 'A stronger source says otherwise', str(refuted)]])
+    rows = []
+    for a in sorted(A, key=lambda a: (-a['display'] if a['verdict'] != 'refuted' else 1, a['id'])):
+        c = claims[a['id']]
+        tk = ' '.join(f'<a href="#{E(l)}">{E(l)}</a>' for l in a.get('tickets', []))
+        rows.append(f'<tr data-lv="{-1 if a["verdict"] == "refuted" else a["display"]}" data-kind="{E(a["kind"])}" data-t="{E(a.get("tension", "none"))}" data-v="{E(a["verdict"])}">'
+                    f'<td><a href="../facts/{E(a["id"])}/index.html">{E(c["claim"])}</a><div class="note">{E(a["reason"])}</div></td>'
+                    f'<td>{assure(a["id"])}</td><td>{E(FC_KIND_WORD.get(a["kind"], a["kind"]))}</td><td>{E(a["verdict"].replace("-", " "))}</td><td>{pill(c["status"])}</td><td>{tk}</td></tr>')
+    th = ''.join(f'<th>{h}</th>' for h in ['Claim, and why it is graded so', 'Fact-check', 'Kind', 'Verdict', 'Site status', 'Tickets'])
+    grid = f'<div class="tw"><table class="t fc-grid"><thead><tr>{th}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
+    filt = '''<form class="fc-filter" aria-label="Filter claims by assurance"><label>Show claims graded at least <select id="fc-min"><option value="-1">everything, refuted too</option><option value="0">A0</option><option value="2">A2 Reported</option><option value="4">A4 Corroborated</option><option value="5">A5 Confirmed</option><option value="6">A6 Established</option></select></label>
+<label><input type="checkbox" id="fc-op" checked> include opinions</label> <label><input type="checkbox" id="fc-tn" checked> include contested</label> <button type="button" id="fc-comfy">Only what I can be very sure of</button> <span id="fc-n" class="small"></span></form>
+<script>(function(){var m=document.getElementById("fc-min"),o=document.getElementById("fc-op"),t=document.getElementById("fc-tn"),n=document.getElementById("fc-n"),rs=document.querySelectorAll(".fc-grid tbody tr");
+function f(){var k=0;rs.forEach(function(r){var s=+r.dataset.lv>=+m.value&&(o.checked||r.dataset.kind!=="reading")&&(t.checked||r.dataset.t==="none");if(+m.value>=5&&r.dataset.v!=="holds")s=false;r.hidden=!s;if(s)k++});n.textContent=k+" of "+rs.length+" claims shown";}
+[m,o,t].forEach(function(x){x.addEventListener("change",f)});document.getElementById("fc-comfy").addEventListener("click",function(){m.value="5";o.checked=false;t.checked=false;f()});f();})();</script>'''
+    ks = []
+    for k in K:
+        st = ''.join(f'<li><b>{E(s["who"])}</b>{(", " + E(s["when"])) if s.get("when") else ""}: <q>{E(s["says"])}</q> <span class="small">{E(s.get("measures", ""))}</span> {src_links([x for x in s.get("sources", []) if x in SOURCES], 1)}{"".join(f" <span class=small>(outside the vault: {E(u)})</span>" for u in s.get("outside", []))}</li>' for s in k['statements'])
+        ks.append(f'<article class="role" id="{E(k["id"])}"><h3>{E(k["measure"])} <span class="st st-{"contradicted" if k["status"] == "open" else "confirmed"}">{E(k["status"])}</span></h3><ul>{st}</ul><p><b>The desk\'s reading.</b> {E(k["reading"])}</p>{("<p><b>What would settle it.</b> " + E(k["settle"]) + "</p>") if k.get("settle") else ""}<p class="small">{E(k["id"])}{(" &middot; ticket " + E(k["ticket"])) if k.get("ticket") else ""}{(" &middot; claims: " + ", ".join(f"<a href=../facts/{E(c)}/index.html>{E(c)}</a>" for c in k.get("claims", []))) if k.get("claims") else ""}</p></article>')
+    def trow(t):
+        extra = ''
+        if t['type'] == 'new-evidence' and t.get('url'):
+            extra = f'<div class="note">Found at <a href="{E(t["url"])}" rel="noopener">{E(re.sub(r"^https?://", "", t["url"])[:70])}</a>, {E(t["retrieved_at"])}, sha256 <code>{E(t["sha256"][:16])}</code>. Not cited until captured.{(" <q>" + E(t["excerpt"]) + "</q>") if t.get("excerpt") else ""}</div>'
+        about = ', '.join(f'<a href="../facts/{E(c)}/index.html">{E(c)}</a>' for c in t['claims'] if c in claims)
+        return [f'<span id="{E(t["label"])}">{E(t["label"])}</span>', f'<b>{E(t["title"])}</b><div class="note">{E(t["description"])}</div>{extra}', E(t['severity']), f'<span class="st st-{"unverified" if t["status"] in ("open", "proposed") else "confirmed"}">{E(t["status"])}</span>', about]
+    groups = OrderedDict([('finding', 'Findings: things on this site to change'), ('contradiction', 'Contradictions between sources'), ('evidence-gap', 'Evidence gaps'), ('new-evidence', 'New evidence found outside the vault')])
+    tix = ''.join(section('t-' + g, f'{title} ({sum(1 for t in T if t["type"] == g)})', table(['Ticket', 'What', 'Severity', 'Status', 'About'], [trow(t) for t in T if t['type'] == g])) for g, title in groups.items() if any(t['type'] == g for t in T))
+    runs = table(['Run', 'Against', 'Checked', 'Opened', 'Summary'], [[E(r['id']), f'site v{E(r["site_version"])}, vault <code>{E(r["vault_commit"])}</code>', E(r['checked']), E(str(r.get('opened', ''))), E(r['summary'])] for r in reversed(R)])
+    body = f'''
+<h1>Fact-check: how sure can you be of each claim</h1>
+<p class="lead">Every claim on this site has a status word chosen by the agent that wrote it. The fact-check desk grades each one again, independently, by opening the captures it cites and reading them: what kind of statement it is (a record, a count, a quote, an opinion), how strong the evidence is on a scale from A0 to A6, whether anything contradicts it, and whether the status word claims more than the evidence carries. Where the answer is "not as far as the site says", it opens a ticket. It highlights; it does not fix.</p>
+<p><b>{len(A)} of {len(claims)} claims graded</b>{(", last run " + E(last.get("id", "")) + " against vault commit <code>" + E(last.get("vault_commit", "")) + "</code>") if last else ""}. <b>{len(comfy)}</b> can be relied on without reservation (A5 or A6, holding as worded, uncontested, not an opinion). <b>{len(over)}</b> carry a status word stronger than their evidence. <b>{len(open_t)}</b> tickets are open.</p>
+{section("ladder", "The spectrum of evidence", ladder + '<p>A level is earned from captures the desk opened and read, never from how often a thing is repeated: ten outlets restating one headline are one source. An open contradiction caps a claim at A1 and a dispute at A2 until it is explained. An opinion is shown as an opinion and never rises above A3 as a fact; the facts under it are graded in its note. Absence of evidence is <i>not shown</i>, which is not the same as false.</p>')}
+{section("claims", "Every claim, graded", filt + grid, 'Pick how sure you need to be. "Only what I can be very sure of" shows claims at A5 or A6 that hold as worded, are not contested, and are not opinions.')}
+{section("contradictions", "The contradiction ledger", "".join(ks) or "<p>None recorded yet.</p>", "Where the reporting disagrees. Each record keeps every statement, who made it and when, what each actually measures, and the desk's reading of why they differ. A contradiction is not resolved by picking a winner; it is explained, or it stays open.")}
+{tix}
+{section("runs", "Runs", runs, "Each run is checked against a stated site version and vault commit, so its grades can be repeated by anyone with the vault's read key.")}
+{section("how", "How the desk works", '<p>The desk is <code>factcheck@php.newsroom</code>. Its role, the full model and the runbook a scheduled run follows are in <a href="' + REPO_URL + '/blob/dev/admin/factcheck/README.md">admin/factcheck/README.md</a>; its tickets are an <a href="https://issues-fs.sgit.ai/">Issues-FS</a> graph in <code>admin/factcheck/.issues/</code>, typed nodes and typed edges in plain JSON files; its grades are <a href="../data/factcheck.json">data/factcheck.json</a>. Mode one checks every claim against the evidence vault. Mode two goes outside for the weak and the contested, and records what it finds as a request to capture, never as a citation.</p>')}
+'''
+    page('factcheck/index.html', 'Fact-check: how sure can you be of each claim', f'Every claim on the PHP flaws site graded independently by the fact-check desk on a spectrum of evidence from A0 to A6, with a filter for only what can be relied on, the contradiction ledger, and the open tickets.', body, kind='analysis', topics='php2shell fact-check assurance')
+
 
 if __name__ == '__main__':
     main()

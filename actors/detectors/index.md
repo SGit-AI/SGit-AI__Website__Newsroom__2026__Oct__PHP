@@ -12,9 +12,9 @@ the rules, and the correction of the leaked PoC's mechanism
 
 ## Claims this site attributes to this party
 
-| Claim | Who says it | Status | Primary | Sources |
-|---|---|---|---|---|
-| None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechanism; a lab reproduction of the leaked PoC's precondition produced a clean 200The Hacker News says the same of the public code. Fastly: working RCE needs knowledge of the running binary's layout on x86_64. [fact timeline →](../../facts/pocs-wrong/index.html) | rjmendez (detection author) citing VulnCheck; Huntress | reported | 1/2 | [rjmendez, GitHub](../../sources/github-rjmendez-phpup-2026/index.html) [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) |
+| Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
+|---|---|---|---|---|---|
+| None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechanism; a lab reproduction of the leaked PoC's precondition produced a clean 200The Hacker News says the same of the public code. Fastly: working RCE needs knowledge of the running binary's layout on x86_64. [fact timeline →](../../facts/pocs-wrong/index.html) | rjmendez (detection author) citing VulnCheck; Huntress | reported | not checked | 1/2 | [rjmendez, GitHub](../../sources/github-rjmendez-phpup-2026/index.html) [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) |
 
 ## Its sources in the vault
 - [GitHub - darkfibr/php2shell-detect: Defensive detection toolkit for php2shell (CVE-2026-109618/109619, PHP session.upload_progress UAF): UA-independent shape scanner, estate checker, Suricata/Snort rules · GitHub](../../sources/github-darkfibr-php2shell-detect/index.html) darkfibr (Mike Haddock), GitHub

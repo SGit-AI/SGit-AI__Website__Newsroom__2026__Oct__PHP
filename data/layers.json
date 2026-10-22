@@ -369,6 +369,13 @@
    "by": "admin/synthetic/run.py summarise (synthetic@php.newsroom)",
    "from": "each synthetic reader's vault: its latest run and review, with no keys",
    "used_on": "admin/synthetic/index.html"
+  },
+  {
+   "path": "data/factcheck.json",
+   "layer": "derived",
+   "by": "admin/factcheck/fc.py export (factcheck@php.newsroom)",
+   "from": "the desk's assessments, contradiction ledger, Issues-FS tickets and run reports in admin/factcheck/, each grade resting on captures named by sha256",
+   "used_on": "factcheck/index.html"
   }
  ]
 }

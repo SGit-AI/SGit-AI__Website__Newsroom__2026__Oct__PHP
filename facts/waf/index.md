@@ -12,6 +12,10 @@ Fact · technical · disputed
 
 Swiss BACS: 'Even a web application firewall alone is not sufficient.' Cloudflare says its rules blocked the traffic it saw and that attackers mutated payloads to get past them.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21CISA publishes [Critical Vulnerabilities in PHP Require Immediate Patching](../../sources/cisa-alert-php-20261021/index.html)
 - 2026-10-21BACS publishes [Critical vulnerabilities in PHP: Install security updates immediately](../../sources/ch-bacs-warnung-php/index.html)

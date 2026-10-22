@@ -12,6 +12,10 @@ Fact · discovery · reported
 
 The Foundation says the OOM signs were found while fixing one of the audit's findings, not in the audit report itself.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2025-04-10Quarkslab publishes [Security audit of PHP-SRC - Quarkslab's blog](../../sources/quarkslab-blog-php-src-audit/index.html)
 - 2026-10-22 11:30 UTCSaved into the evidence vault: Quarkslab

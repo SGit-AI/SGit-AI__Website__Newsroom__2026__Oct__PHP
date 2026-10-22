@@ -12,6 +12,10 @@ Fact · scale · confirmed
 
 Counted, not quoted. NCSC-NL calls unbacked entries 'investigation leads'.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-22 08:48 UTCSaved into the evidence vault: NCSC-NL
 - 2026-10-22Enters this site as confirmed in v0.1.0 (reconstructed from git)

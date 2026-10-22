@@ -12,25 +12,18 @@ Re-reads each claim against its captures and downgrades anything the capture doe
 
 **Kind** role, no agent of its own yet · **Status** unfilled · **Alias** `@Verifier` · **Known as** `verifier@php.newsroom`
 
-**Beat.** re-reads each claim against its captures; downgrades anything the capture does not carry
-
 ## What they own
 - the contradiction ledger, when it exists
 
 ## The rules they work by
 - A quote that is not in the captured text is not a quote. Mark it and say which capture was checked.
 
-**The mistake behind the rules.** Proposed, not yet run. The BBC's NCSC quote is the first case for it.
-
 ## Their home on this site
 Every claimclaims/index.html
 
 ## Open tasks
 
-| # | Task | Status | Shipped in |
-|---|---|---|---|
-| 004 | Run the verifier over every claim: check each quote against its capture textThe BBC's NCSC sentence is the first case. | open |  |
-| 061 | The contradiction ledger: a first-class record per disagreement (the statements, who, when, captures, what each measures, the reading, status), seeded with the seven from the 22 October coverage review, and a page that shows itFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
+None.
 
 ## What they have done
 

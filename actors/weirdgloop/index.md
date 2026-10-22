@@ -12,9 +12,9 @@ the one operator with a measured outage
 
 ## Claims this site attributes to this party
 
-| Claim | Who says it | Status | Primary | Sources |
-|---|---|---|---|---|
-| Weird Gloop turned off its wiki web servers for 13 hours and still served about 94% of page views from cachePrimary, and the one outage with a measured cost. [fact timeline →](../../facts/weirdgloop-13h/index.html) | Weird Gloop | confirmed | 1/1 | [Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html) |
+| Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
+|---|---|---|---|---|---|
+| Weird Gloop turned off its wiki web servers for 13 hours and still served about 94% of page views from cachePrimary, and the one outage with a measured cost. [fact timeline →](../../facts/weirdgloop-13h/index.html) | Weird Gloop | confirmed | not checked | 1/1 | [Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html) |
 
 ## Its sources in the vault
 - [Recent wiki downtime (PHP2Shell mitigation) | Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html) Weird Gloop (cookmeplox)

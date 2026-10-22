@@ -12,6 +12,10 @@ Fact · discovery · disputed
 
 Amazon reports an exploit attempt against a honeypot on 17 October, four days before disclosure, from an actor whose source of exploit information is unknown.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21 14:04 UTCOpenAI on X publishes [OpenAI on X: OpenAI models helped researchers ... discover critical security flaws in PHP](../../sources/x-openai-php2shell/index.html)
 - 2026-10-22THN publishes [Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed](../../sources/thehackernews-php2shell-4days/index.html)

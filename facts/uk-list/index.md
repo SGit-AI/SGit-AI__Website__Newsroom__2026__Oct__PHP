@@ -10,6 +10,10 @@ Fact · impact · reported
 
 **Who says it:** LBC; Insurance Business · **Sources:** [LBC](../../sources/lbc-uk-websites-offline/index.html) [Insurance Business](../../sources/insurancebusiness-uk-councils-met/index.html)
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21LBC publishes [Websites taken offline as ‘critical’ security flaw hits Met Police, Traitors and government sites | LBC](../../sources/lbc-uk-websites-offline/index.html)
 - 2026-10-21Insurance Business publishes [UK councils and Met Police among sites pulled offline after NCSC alert | Insurance Business](../../sources/insurancebusiness-uk-councils-met/index.html)

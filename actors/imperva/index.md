@@ -12,9 +12,9 @@ had the details under embargo; saw nothing before disclosure
 
 ## Claims this site attributes to this party
 
-| Claim | Who says it | Status | Primary | Sources |
-|---|---|---|---|---|
-| No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosure monitoringA negative finding from a party that had the details under embargo. [fact timeline →](../../facts/imperva-none/index.html) | Imperva Threat Research | reported | 1/1 | [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html) |
+| Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
+|---|---|---|---|---|---|
+| No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosure monitoringA negative finding from a party that had the details under embargo. [fact timeline →](../../facts/imperva-none/index.html) | Imperva Threat Research | reported | not checked | 1/1 | [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html) |
 
 ## Its sources in the vault
 - [PHP2Shell: When PHP Runs Out of Memory at the Wrong Moment | Imperva](../../sources/imperva-blog-php2shell/index.html) Imperva Threat Research (Nadav Avital, Bar Menachem)

@@ -12,6 +12,10 @@ Fact · discovery · reported
 
 Unverified by anyone else.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-22The Register publishes [PHP blames supply chain security biz Chainguard for putting huge chunks of the web at risk](../../sources/theregister-php-blames-chainguard/index.html)
 - 2026-10-22 11:32 UTCSaved into the evidence vault: The Register

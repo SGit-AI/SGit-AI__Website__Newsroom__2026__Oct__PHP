@@ -12,6 +12,10 @@ Fact · impact · reported
 
 Not captured from any of the named organisations.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-22 06:16 UTCBBC News publishes [PHP: Global scramble to fix critical cyber-security flaws as many websites taken offline - follow live](../../sources/bbc-live-ckgel5xp2xv9t/index.html)
 - 2026-10-22 08:04 UTCSaved into the evidence vault: BBC News, then 2 more captures
