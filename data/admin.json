@@ -412,37 +412,76 @@
   },
   {
    "id": "045",
+   "title": "Feeds: one RSS feed per zone (for you, research, stories, about the site) and one for everything; an entry for every new item and every change; /feeds/",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.2"
+  },
+  {
+   "id": "046",
+   "title": "The delta since your last visit: every item marked new, changed or read in your browser; mark a page or everything read; fade or hide what you have read; decisions and notes per item in the newsroom's record format; your desk at /you/ with export and import",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.2"
+  },
+  {
+   "id": "047",
+   "title": "The feed viewer at /reader/: this site's feeds, the records and discussion a browser may read directly, and feeds the reader adds, fetched and shown safely",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.2"
+  },
+  {
+   "id": "048",
+   "title": "Subscriptions: a private vault with an append lane, /subscribe/, messages from and to agent@diniscruz.ai",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "049",
+   "title": "Carry the desk into the reader's own vault: bring the newsroom's vault pane here (it already reads sgit.notes.v1)",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "050",
+   "title": "Serve the source watch's latest snapshot of the feeds browsers cannot read (php.net, NCSC, CISA advisories, the press) to the viewer",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "051",
    "title": "The second stories: /signals/ (the ladder from exposed to exploited, four signal families, barrier times) and the story 'Exposed is not exploited' by the journalist and the historian",
    "status": "done",
    "owner": "journalist",
    "version": "0.4.2"
   },
   {
-   "id": "046",
+   "id": "052",
    "title": "Fix the vault's export of the NCSC-NL inventory: it dropped one row (iBabs bestuursportaal) at cca173c64ec5, so pages say 674 and 3 where the list has 675 and 4",
    "status": "open",
    "owner": "collector-gov"
   },
   {
-   "id": "047",
+   "id": "053",
    "title": "Capture the NCSC-NL inventory's later commits into the vault, so the history on /patching/inventory/ rests on captures as well as on the public repository",
    "status": "open",
    "owner": "collector-gov"
   },
   {
-   "id": "048",
+   "id": "054",
    "title": "Ask the edge providers for the number nobody has: how many exposed hosts sat behind a rule that blocked the request",
    "status": "open",
    "owner": "journalist"
   },
   {
-   "id": "049",
+   "id": "055",
    "title": "Record the first confirmed compromise with two dates, when it happened and when it was announced, against the barrier times on /signals/",
    "status": "open",
    "owner": "historian"
   },
   {
-   "id": "050",
+   "id": "056",
    "title": "Find the editor's article on exploitation, patching, internal vulnerability and network protection signals; the SaaS apocalypse piece as published does not carry it",
    "status": "open",
    "owner": "editor"

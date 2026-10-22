@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.4.2. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.4.3. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Start here
 - [Who are you? Pick a reader](https://php.oct.2026.newsroom.sgit.ai/start/index.md): 15 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
@@ -38,6 +38,11 @@ Site v0.4.2. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [Head of AppSec](https://php.oct.2026.newsroom.sgit.ai/briefings/appsec/index.md): The php2shell story for a head of AppSec: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 - [Developer](https://php.oct.2026.newsroom.sgit.ai/briefings/developer/index.md): The php2shell story for a developer: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 - [Media and communications team](https://php.oct.2026.newsroom.sgit.ai/briefings/comms/index.md): The php2shell story for a media and communications team: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
+
+## Yours
+- [Your desk: new, changed, notes](https://php.oct.2026.newsroom.sgit.ai/you/index.md): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
+- [The feed viewer](https://php.oct.2026.newsroom.sgit.ai/reader/index.md): Read this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.
+- [Feeds (RSS)](https://php.oct.2026.newsroom.sgit.ai/feeds/index.md): RSS feeds for everything new and changed on this site and for each of its parts: an entry for every new item and every change, and where to read them.
 
 ## The incident
 - [Front page](https://php.oct.2026.newsroom.sgit.ai/index.md): PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.

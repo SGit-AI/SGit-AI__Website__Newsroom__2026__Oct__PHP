@@ -138,6 +138,8 @@ context/index.md
 corrections/index.html
 corrections/index.md
 data/graph.json
+data/items.json
+data/sections.json
 defence/index.html
 defence/index.md
 discovery/index.html
@@ -287,6 +289,13 @@ facts/wiz-independent/index.md
 facts/wordpress-drupal/index.html
 facts/wordpress-drupal/index.md
 feed.xml
+feeds/all.xml
+feeds/for-you.xml
+feeds/index.html
+feeds/index.md
+feeds/research.xml
+feeds/site.xml
+feeds/stories.xml
 flaws/index.html
 flaws/index.md
 glossary/index.html
@@ -338,6 +347,8 @@ questions/waf-enough/index.html
 questions/waf-enough/index.md
 questions/why-big-news/index.html
 questions/why-big-news/index.md
+reader/index.html
+reader/index.md
 readings/index.html
 readings/index.md
 readings/perplexity-2026-10-22/index.html
@@ -739,3 +750,5 @@ versions/page-timeline/index.html
 versions/page-timeline/index.md
 whatsnew/index.html
 whatsnew/index.md
+you/index.html
+you/index.md

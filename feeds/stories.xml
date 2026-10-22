@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>PHP October 2026: Stories</title>
+<link>https://php.oct.2026.newsroom.sgit.ai/</link>
+<atom:link href="https://php.oct.2026.newsroom.sgit.ai/feeds/stories.xml" rel="self" type="application/rss+xml"/>
+<description>PHP October 2026: stories written here, signed and dated. A new entry when an item is new, and again each time what it says changes.</description>
+<language>en-gb</language>
+<lastBuildDate>Thu, 22 Oct 2026 00:00:00 +0000</lastBuildDate>
+<item><title>Story: Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit</title><link>https://php.oct.2026.newsroom.sgit.ai/articles/exposed-is-not-exploited/index.html</link><guid isPermaLink="false">story-exposed-is-not-exploited@v1</guid><pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate><category>story</category><description>Story. Dated 2026-10-22.</description></item>
+<item><title>Front page: Stories: written here (updated)</title><link>https://php.oct.2026.newsroom.sgit.ai/index.html#stories</link><guid isPermaLink="false">home-stories@v2</guid><pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate><category>front</category><description>Front page. Updated (v2) in site v0.4.3.</description></item>
+<item><title>Story: Why can&#x27;t every version of PHP just be patched?</title><link>https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.html</link><guid isPermaLink="false">story-why-not-patch-every-version@v1</guid><pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate><category>story</category><description>Story. Dated 2026-10-22.</description></item>
+<item><title>Story: Where php2shell stands: many sites dark, millions of attempts, no confirmed breach</title><link>https://php.oct.2026.newsroom.sgit.ai/articles/where-php2shell-stands/index.html</link><guid isPermaLink="false">story-where-php2shell-stands@v1</guid><pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate><category>story</category><description>Story. Dated 2026-10-22.</description></item>
+<item><title>Story: php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proof</title><link>https://php.oct.2026.newsroom.sgit.ai/articles/php2shell-in-perspective/index.html</link><guid isPermaLink="false">story-php2shell-in-perspective@v1</guid><pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate><category>story</category><description>Story. Dated 2026-10-22.</description></item>
+<item><title>Page: Interview: the editor</title><link>https://php.oct.2026.newsroom.sgit.ai/interview/index.html</link><guid isPermaLink="false">page-interview@v1</guid><pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate><category>page</category><description>Page. New in site v0.3.2.</description></item>
+</channel>
+</rss>
