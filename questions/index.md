@@ -59,6 +59,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Your desk: what is new to you, and what changed](../you/index.html): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
 - [The feed viewer: this site, the records, and your own feeds](../reader/index.html): Read this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.
 - [Feeds: what is new and what changed](../feeds/index.html): RSS feeds for everything new and changed on this site and for each of its parts: an entry for every new item and every change, and where to read them.
+- [Subscribe: what changed, sent to you](../subscribe/index.html): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.
 
 ### The incident
 - [PHP in October 2026: two critical security flaws, tracked as evidence](../index.html): PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
@@ -101,6 +102,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
 - [The source watch: every outside source on php2shell, watched and snapshotted](../vaults/source-watch/index.html): The public source-watch vault: 328 pages from 175 publishers in 38 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
+- [Subscribe: what changed, sent to you](../subscribe/index.html): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.
 
 ### Stories
 - [All stories, written here](../articles/index.html):
@@ -134,4 +136,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.4.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

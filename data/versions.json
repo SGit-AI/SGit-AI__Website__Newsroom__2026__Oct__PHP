@@ -1,6 +1,15 @@
 {
- "current": "0.4.3",
+ "current": "0.4.4",
  "versions": [
+  {
+   "version": "0.4.4",
+   "date": "2026-10-22",
+   "title": "subscriptions: /subscribe/ takes an address, what to follow and how often, encrypts it in the reader's browser to the new private subscriptions vault (wgeiqabu) and posts it to that vault's write-only lane; the agent at agent@diniscruz.ai confirms each address before sending anything; the vault is listed on /vaults/, its drain script is admin/build/subscriptions_drain.py, and its keys and the telemetry vault's are sealed to the editor's key",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.4.3",
    "date": "2026-10-22",

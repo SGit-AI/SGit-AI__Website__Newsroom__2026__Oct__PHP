@@ -502,3 +502,12 @@ html[data-read-view="fade"] .it-read:hover,html[data-read-view="fade"] .it-read:
 .fv-t{font-weight:600}
 .fv-s{font-size:.86rem;color:var(--dim);margin:.2rem 0 0;overflow-wrap:anywhere}
 .feedrow h3 code{font-size:.78rem;margin-left:.3rem}
+/* v0.4.3: subscribe */
+.subform{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;max-width:42rem}
+.subform input[type=email],.subform textarea{width:100%;font:inherit;padding:.35rem .5rem;border:1px solid var(--line2);border-radius:6px;background:var(--bg);color:var(--fg)}
+.subform fieldset{border:1px solid var(--line);border-radius:8px;margin:.6rem 0;padding:.4rem .7rem}
+.subform legend{font-size:.8rem;color:var(--dim);padding:0 .3rem}
+.sub-c{display:block;margin:.2rem 0;font-size:.92rem}
+.sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.sub-ok{color:var(--ok-ink);font-weight:600}.sub-err{color:var(--bad-ink);font-weight:600}
+.subform button.cta{cursor:pointer;font:inherit}

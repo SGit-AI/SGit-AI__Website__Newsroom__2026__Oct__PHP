@@ -147,7 +147,7 @@
    "title": "Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key",
    "status": "waiting",
    "owner": "dev",
-   "note": "dev@php.newsroom's key is made (sha256:8025e2a4470e73f0) and published on the roles page; the handover payload is ready. Waiting on the editor's fingerprint and key link, or his record in the register."
+   "note": "Sealed on 22 October 2026 to the editor's key on pki.sgit.ai (record sha256:db7f79fdd87e030a, the register's anchor), together with the subscriptions vault's keys; the m1 link was given to the editor in the session. Waiting for him to open it."
   },
   {
    "id": "004",
@@ -433,9 +433,10 @@
   },
   {
    "id": "048",
-   "title": "Subscriptions: a private vault with an append lane, /subscribe/, messages from and to agent@diniscruz.ai",
-   "status": "open",
-   "owner": "dev@php.newsroom"
+   "title": "Subscriptions: a private vault (wgeiqabu) with an append lane, /subscribe/ (requests encrypted in the browser, confirmed before anything is sent), messages from and to agent@diniscruz.ai; its keys sealed to the editor",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.4.3"
   },
   {
    "id": "049",

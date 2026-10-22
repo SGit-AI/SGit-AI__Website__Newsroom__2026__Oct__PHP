@@ -656,6 +656,8 @@ start/index.md
 status.json
 status/index.html
 status/index.md
+subscribe/index.html
+subscribe/index.md
 summary/index.html
 summary/index.md
 team/index.html

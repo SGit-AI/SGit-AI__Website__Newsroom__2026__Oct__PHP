@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
@@ -175,7 +175,7 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)')]),
+    ('Yours', [('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -1337,7 +1337,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json()
+    build_review(); build_admin_section(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -1982,12 +1982,14 @@ def build_vaults():
     keys = {'evidence': ev['read_key'], 'source-watch': W['read_key']}
     facts = {'evidence': f'{vt["sources"]} sources, {vt["captures"]} captures, {vt["hashed_files"]} hashed files; head <code>{E(vt["head"]["commit"] or "")}</code>',
              'source-watch': f'{W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries and {len(W["lang"])} languages; {W["snapshots"]} snapshots, {len(W["runs"])} runs; head <code>{E(W["head"]["commit"])}</code>',
-             'telemetry': f'lane <code>{E(tl["vault_id"])}</code> on <code>{E(tl["endpoint"])}</code>; events encrypted to <code>{E(tl["recipient"]["fingerprint"])}</code>'}
+             'telemetry': f'lane <code>{E(tl["vault_id"])}</code> on <code>{E(tl["endpoint"])}</code>; events encrypted to <code>{E(tl["recipient"]["fingerprint"])}</code>',
+             'subscriptions': f'lane <code>{E(D["subscriptions"]["vault_id"])}</code> on <code>{E(D["subscriptions"]["endpoint"])}</code>; requests encrypted to <code>{E(D["subscriptions"]["recipient"]["fingerprint"])}</code>'}
+    lanes = {'telemetry': tl['append_token'], 'subscriptions': D['subscriptions']['append_token']}
     cards = ''
     for x in VS:
         k = keys.get(x['slug'])
         how = (f'<p class="kv"><b>Read key</b> <code>{E(k)}</code></p><p><a href="{E(vault_open_url(k))}" rel="noopener" target="_blank">Open read-only in a new tab &#8599;</a> &middot; <code>sgit clone {E(k)}</code></p>' if k else
-               f'<p class="kv"><b>Not published:</b> the vault key, the lane\'s enum key and the key pair\'s passphrase. <b>Published:</b> the write-only append token <code>{E(tl["append_token"])}</code>, which adds rows and reads nothing.</p>')
+               f'<p class="kv"><b>Not published:</b> the vault key, the lane\'s enum key and the key pair\'s passphrase. <b>Published:</b> the write-only append token <code>{E(lanes.get(x["slug"], ""))}</code>, which adds rows and reads nothing.</p>')
         cards += f"""<section class="vcard" id="{E(x["slug"])}">
 <h2><a href="../{E(x["page"])}">{E(x["name"])}</a> <span class="st {'st-confirmed' if k else ''}">{E(x["access"])}</span></h2>
 <p class="kv"><b>Vault</b> <code>{E(x["id"])}</code> &middot; {facts[x["slug"]]}{' &middot; opens in its own app' if x["app"] else ''}</p>
@@ -1997,7 +1999,7 @@ def build_vaults():
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} of them hold what it is built from: two are public and open read-only in your browser with the keys below, one is private and receives the site's anonymous telemetry through a write-only lane. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it: two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
@@ -3021,6 +3023,40 @@ def build_reader():
 <script src="../assets/feed-viewer.js" defer></script>
 """
     page('reader/index.html', 'The feed viewer: this site, the records, and your own feeds', 'Read this site\'s feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.', body, kind='account')
+
+
+# ----------------------------------------------------------------------------- subscriptions (v0.4.3)
+
+def build_subscribe():
+    sc = D['subscriptions']
+    cfg = json.dumps({k: sc[k] for k in ('contact', 'endpoint', 'vault_id', 'append_token', 'recipient', 'zones', 'cadences')}, ensure_ascii=False, separators=(',', ':'))
+    zones = ''.join(f'<label class="sub-c"><input type="checkbox" name="zones" value="{E(z)}"{" checked" if z == "all" else ""}> {E(t)}</label>' for z, t in sc['zones'])
+    cads = ''.join(f'<label class="sub-c"><input type="radio" name="cadence" value="{E(c)}"{" checked" if i == 1 else ""}> {E(t)}</label>' for i, (c, t) in enumerate(sc['cadences']))
+    mail = f'mailto:{sc["contact"]}?subject=' + 'Subscribe%20to%20PHP%20October%202026' + '&body=' + 'Please%20subscribe%20me.%20Follow%3A%20everything%20%2F%20research%20%2F%20for%20you%20%2F%20stories.%20How%20often%3A%20as%20it%20changes%20%2F%20daily%20%2F%20weekly.'
+    body = f"""
+<h1>Subscribe: what changed, sent to you</h1>
+<p class="lead">The cheapest way to follow this story is to be told only what changed. Pick what to follow and how often, and the agent at <a href="mailto:{E(sc["contact"])}">{E(sc["contact"])}</a> sends it: a message per release that changes what you follow, or a digest. No account; one address. Or skip email entirely: the <a href="../feeds/index.html">feeds</a> carry the same changes.</p>
+<form id="sub-form" class="subform" autocomplete="on">
+<p><label>Your email address<br><input type="email" name="email" required maxlength="254" placeholder="you@example.org"></label></p>
+<fieldset><legend>What to follow</legend>{zones}</fieldset>
+<fieldset><legend>How often</legend>{cads}</fieldset>
+<p><label>Anything we should know (optional)<br><textarea name="note" rows="2" maxlength="500"></textarea></label></p>
+<p class="sub-hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
+<p><button class="cta cta-pri" type="submit" name="kind" value="subscribe">Subscribe</button> <button class="cta" type="submit" name="kind" value="unsubscribe" formnovalidate>Unsubscribe this address</button></p>
+<p id="sub-out" role="status" aria-live="polite"></p>
+</form>
+<script type="application/json" id="sub-config">{cfg}</script>
+<p>Rather write? <a href="{E(mail)}">Email {E(sc["contact"])}</a> and say what you want to follow.</p>
+<h2>What happens to your address</h2>
+<ul>
+<li>It is encrypted in your browser, to the subscriptions vault's key (<code>{E(sc["recipient"]["fingerprint"])}</code>), and posted to a write-only lane on that private vault (<code>{E(sc["vault_id"])}</code>). The lane answers the same whatever arrives, so this page can say it was sent, never that it was received.</li>
+<li>Anyone can type any address, so the agent writes to it first and sends nothing more until the address answers. Unsubscribe here, or by answering any message.</li>
+<li>It is kept in that vault and nowhere else: not on this site, not in its repository, not in its telemetry. The vault's key is held by the editor and the agent that sends.</li>
+<li>Messages come from {E(sc["contact"])}, the agent the editor runs and reads, until the newsroom has a domain of its own for them.</li>
+</ul>
+<script src="../assets/subscribe.js" defer></script>
+"""
+    page('subscribe/index.html', 'Subscribe: what changed, sent to you', 'Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.', body, kind='account')
 
 
 if __name__ == '__main__':

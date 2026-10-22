@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.4.4 · 22 October 2026new since your last visit
+
+subscriptions: /subscribe/ takes an address, what to follow and how often, encrypts it in the reader's browser to the new private subscriptions vault (wgeiqabu) and posts it to that vault's write-only lane; the agent at agent@diniscruz.ai confirms each address before sending anything; the vault is listed on /vaults/, its drain script is admin/build/subscriptions_drain.py, and its keys and the telemetry vault's are sealed to the editor's key
+
+No reader-facing section changed in this release.
+
 ## v0.4.3 · 22 October 2026new since your last visit
 
 The second stories: the NCSC-NL inventory read hour by hour from its public history (38 versions, 61 fixed, 216 vulnerable, 440 under investigation at 15:28 UTC on 22 October; 185 of the vulnerable are applications that inherit PHP's flaw; firewalls and gateways among the affected), /signals/ with the ladder from exposed to exploited, four signal families and the time of each barrier, and the story 'Exposed is not exploited' by the journalist and the historian; a correction: the inventory had 675 rows at the captured commit, not 674
@@ -300,4 +306,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.4.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.4.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
