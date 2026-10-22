@@ -1,6 +1,15 @@
 {
- "current": "0.2.10",
+ "current": "0.2.11",
  "versions": [
+  {
+   "version": "0.2.11",
+   "date": "2026-10-22",
+   "title": "the release check reads the live version correctly: v0.2.9's pattern matched the v in class=\"ver\" and read a blank version, so it reported every release unverified; now tested against the live site for older, equal and newer versions",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.10",
    "date": "2026-10-22",

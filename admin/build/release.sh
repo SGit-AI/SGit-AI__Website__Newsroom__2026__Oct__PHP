@@ -41,7 +41,7 @@ URL="https://$(cat CNAME)/index.html"
 # Live means this version OR LATER: several agents release to dev, and another may ship on top of
 # this one inside the polling window. sort -V orders versions; the live one must not sort below ours.
 for i in $(seq 1 40); do
-  LIVE=$(curl -fsS --max-time 20 "$URL?r=$i" 2>/dev/null | grep -o 'class="ver"[^>]*>v[0-9.]*<' | head -1 | grep -o 'v[0-9.]*' | tr -d v)
+  LIVE=$(curl -fsS --max-time 20 "$URL?r=$i" 2>/dev/null | grep -o 'class="ver"[^>]*>v[0-9][0-9.]*<' | head -1 | grep -o '>v[0-9][0-9.]*<' | tr -d '>v<')
   if [ -n "$LIVE" ] && [ "$(printf '%s\n%s\n' "$NEW" "$LIVE" | sort -V | head -1)" = "$NEW" ]; then
     if [ "$LIVE" = "$NEW" ]; then echo "live: $URL serves v$NEW"; else echo "live: $URL serves v$LIVE, which includes v$NEW (another release landed on top)"; fi
     exit 0

@@ -20,4 +20,4 @@ No claim row names this party in its "who says it" field; its sources are cited 
 
 
 ---
-site v0.2.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/wiz/index.html
+site v0.2.11 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/wiz/index.html
