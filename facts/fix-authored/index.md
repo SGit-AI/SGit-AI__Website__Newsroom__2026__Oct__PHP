@@ -58,4 +58,4 @@ Sources: github-php-src-fix-commit-3584a98bd, github-php-src-tag-php-8.5.12
 
 
 ---
-site v0.5.10 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-authored/index.html
+site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-authored/index.html
