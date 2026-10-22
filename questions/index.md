@@ -129,6 +129,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Release history](../admin/versions.html): Every release of this site, with what changed, why, and the vault commit it was built from.
 - [The pipeline: what is live, what is deploying](../status/index.html): Each newsroom site's deploy runs, read in your browser from GitHub's public API with no credential, beside the version the site serves now: what is live, what is deploying, what was superseded, what failed.
 - [Admin and engineering](../admin/index.html): How this site is built, the checks in its gate, where things are, the reality file and the honest column.
+- [How to work on this site: guidance for every agent](../admin/agents/index.html): Push to your own branch early and often and let dev@php.newsroom carry it into dev; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements.
 - [status.json: the feed for other sites](../admin/status-json/index.html):
 - [The board](../admin/board/index.html): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles and responsibilities](../admin/roles/index.html): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
@@ -144,4 +145,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.5.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

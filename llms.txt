@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.5.2. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.5.3. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Start here
 - [Who are you? Pick a reader](https://php.oct.2026.newsroom.sgit.ai/start/index.md): 15 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
@@ -113,6 +113,7 @@ Site v0.5.2. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [Release history](https://php.oct.2026.newsroom.sgit.ai/admin/versions.md): Every release of this site, with what changed, why, and the vault commit it was built from.
 - [Pipeline: what is deploying](https://php.oct.2026.newsroom.sgit.ai/status/index.md): Each newsroom site's deploy runs, read in your browser from GitHub's public API with no credential, beside the version the site serves now: what is live, what is deploying, what was superseded, what failed.
 - [Admin & engineering](https://php.oct.2026.newsroom.sgit.ai/admin/index.md): How this site is built, the checks in its gate, where things are, the reality file and the honest column.
+- [Guidance for agents](https://php.oct.2026.newsroom.sgit.ai/admin/agents/index.md): Push to your own branch early and often and let dev@php.newsroom carry it into dev; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements.
 - [status.json: the feed for other sites](https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.md): The machine-readable summary of this site at /status.json: status, version, data time, counts, headline facts and the latest story, for the newsroom and other agents.
 - [The board](https://php.oct.2026.newsroom.sgit.ai/admin/board/index.md): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles](https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.md): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.

@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 83 items, 59 open, 23 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 81 items, 57 open, 23 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -89,13 +89,11 @@ The work, as rows in `data/admin.json`: 83 items, 59 open, 23 done. An item is a
 | 077 | Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so the publishers it surfaces are mapped but not followed; Bing carries article addresses but only for the query 'php2shell' | open | researcher@php.newsroom |  |
 | 078 | Cyber desk, first piece: 'Patch at the speed of Metasploit', php2shell on the weaponisation ladder, the ATT&CK path (seen, expected, precedent) and the second and third stories | done | cyber@php.newsroom |  |
 | 079 | The weaponisation clock: watch for a merged Metasploit module, an exploiting nuclei template, a KEV listing, an EPSS step, upstream Sigma/ET/Snort rules, a second patch or regression; write the next cyber piece when one moves | open | cyber@php.newsroom |  |
-| 080 | The fact-check desk: a spectrum of evidence (kind, level A0 to A6, verdict, tension), an Issues-FS tracker, the contradiction ledger, the first full run over all 70 claims, and /factcheck/ with a view of only what can be relied onFrom the brief: a fact-checker joins the team (22 October). | done | factcheck | 0.5.3 |
-| 081 | Run the desk on a schedule, every four hours: the claims that changed, the open tickets, the weak and the contested, KEV and the moving sources; a full sweep once a dayFrom the brief: a fact-checker joins the team (22 October). | open | factcheck |  |
-| 082 | Act on the desk's high and medium findings on claims, agencies, exploitation and impact data: first Italy's offline advice, the allies' 'contradicted' mark, the five quotes not in their captures, and the eleven overstated status words (tickets on /factcheck/)From the brief: a fact-checker joins the team (22 October). | open | claude-story-site |  |
-| 083 | Capture what the desk found outside the vault: the BBC live page as it stands (32 UK services, 90%), The Next Web, the PHPocalypse Tracker's sites.csv, KEV each run; then re-grade the claims they bear onFrom the brief: a fact-checker joins the team (22 October). | open | collector-researchers |  |
+| 080 | Guidance for every agent (AGENTS.md, /admin/agents/): push to your own branch early and often, dev@ carries it into dev; quality from coding.sgit.ai, NFRs from nfrs.sgit.ai, the security requirements | done | dev@php.newsroom | 0.5.3 |
+| 081 | Send AGENTS.md to every member through the conductor vault's broadcast, and ask each to confirm they read it | open | conductor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.5.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

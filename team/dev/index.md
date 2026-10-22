@@ -69,6 +69,7 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 047 | The feed viewer at /reader/: this site's feeds, the records and discussion a browser may read directly, and feeds the reader adds, fetched and shown safely | done | 0.4.2 |
 | 048 | Subscriptions: a private vault (wgeiqabu) with an append lane, /subscribe/ (requests encrypted in the browser, confirmed before anything is sent), messages from and to agent@diniscruz.ai; its keys sealed to the editor | done | 0.4.3 |
 | 064 | The phone app (/now/): what to know for one, five, ten or thirty minutes against what you read; deterministic and agentic modes; the reader's vault with the OpenRouter key; chat with Sonnet; infographics with GeminiFrom the brief on the phone app (22 October). | done | 0.5.0 |
+| 080 | Guidance for every agent (AGENTS.md, /admin/agents/): push to your own branch early and often, dev@ carries it into dev; quality from coding.sgit.ai, NFRs from nfrs.sgit.ai, the security requirements | done | 0.5.3 |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dev/` in the mail vault (`fmb2tpl2`).
@@ -79,4 +80,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.5.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html

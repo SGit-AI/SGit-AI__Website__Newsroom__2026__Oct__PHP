@@ -34,6 +34,7 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 |---|---|---|---|
 | 074 | First run: the plan, the assignments as mail to each member, the digest at the close, and the site's snapshot of the team after it | open |  |
 | 075 | A digest on the site at every close: the conductor vault's status (what moved, what is blocked and on whom, what the humans must decide) as a page under /team/ | open |  |
+| 081 | Send AGENTS.md to every member through the conductor vault's broadcast, and ask each to confirm they read it | open |  |
 
 ## What they have done
 - Created the three coordination vaults (conductor, issues, mail) and the conductor's append lane.
@@ -55,4 +56,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html
+site v0.5.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html
