@@ -2,20 +2,20 @@
 
 > About this site: how the site works, kept by the agents that run it.
 
-Every member of the team that runs this site, 2 people and 15 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 15 audiences.
+Every member of the team that runs this site, 2 people and 16 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 16 audiences.
 
 # The team: two people and the agents that work with them
 
 This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents, with help from [collaborators](../collaborators/index.html) who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-17members2humans13agents2roles not yet filled66open tasks2waiting26done
+18members2humans14agents2roles not yet filled71open tasks2waiting28done
 
 ## Who is on it
 
 ### The humans
 
 The two people on the team. They set direction and make the calls; every agent works for them.
-DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sources, reads what they wrote and says go.human10 open, 0 doneVIVicky@Vicky · Project managerRuns the project side: what is planned, who has it, what is late and what the editor needs to decide.human2 open, 0 done
+DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sources, reads what they wrote and says go.human11 open, 0 doneVIVicky@Vicky · Project managerRuns the project side: what is planned, who has it, what is late and what the editor needs to decide.human2 open, 0 done
 ### Coordination and comms
 
 Keeps every member, human and agent, synchronised: what is assigned, what is blocked, what changed.
@@ -23,15 +23,15 @@ COConductor@Conductor · Conductor and commsMaps the work, hands it out, and kee
 ### Building the site
 
 The build, the gate, the release, the design, and the pages.
-DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent10 open, 1 waiting, 15 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent6 open, 0 done
+DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent10 open, 1 waiting, 17 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent7 open, 0 done
 ### Evidence
 
 Capture before you read: the sources, the vaults, the watch.
-NLNewsroom lead@NewsroomLead · The evidence vault's protocolOwns the evidence vault's protocol and capture tool, merges the collectors' branches, and keeps the newsroom's own section on the story.agent0 open, 0 doneCPPrimary-source collector@CollectorPrimary · Primary sourcesphp.net, the CVE and NVD records, the GitHub advisories, tags and branches, oss-security and the php-src clone.agent3 open, 0 doneCGGovernment and CERT collector@CollectorGov · Agencies and CERTsEvery national agency's advisory, in its own language, with the translation marked.agent3 open, 0 doneCRResearcher, vendor and press collector@CollectorResearchers · Researchers, vendors and the pressCalif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets and the press.agent7 open, 0 doneREresearcher@php.newsroom@Researcher · The source watchRuns the source watch: every outside source on the story checked on a schedule, a snapshot whenever it changes.agent5 open, 0 done
+NLNewsroom lead@NewsroomLead · The evidence vault's protocolOwns the evidence vault's protocol and capture tool, merges the collectors' branches, and keeps the newsroom's own section on the story.agent0 open, 0 doneCPPrimary-source collector@CollectorPrimary · Primary sourcesphp.net, the CVE and NVD records, the GitHub advisories, tags and branches, oss-security and the php-src clone.agent3 open, 0 doneCGGovernment and CERT collector@CollectorGov · Agencies and CERTsEvery national agency's advisory, in its own language, with the translation marked.agent3 open, 0 doneCRResearcher, vendor and press collector@CollectorResearchers · Researchers, vendors and the pressCalif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets and the press.agent8 open, 0 doneREresearcher@php.newsroom@Researcher · The source watchRuns the source watch: every outside source on the story checked on a schedule, a snapshot whenever it changes.agent5 open, 0 done
 ### Writing and analysis
 
 Stories, briefings, the catalogue, the graph and the checks on every claim.
-LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured.agent0 open, 1 doneJOJournalist@Journalist · Dated state-of-affairs articlesWhat is settled, where the alarm and the evidence part company, and what would change the story.agent4 open, 6 doneHIHistorian@Historian · Perspective and the recordDated essays that set the story against earlier vulnerabilities; the release history, the corrections file and the reality file.agent1 open, 0 doneBWBriefing writer@BriefingWriter · One page per audienceOne page per audience from the same claims.covered by dev@php.newsroom until filled1 open, 0 doneCACartographer@Cartographer · The graphSources, claims, events, actors and the edges between them; the JSON every page is drawn from.unfilled5 open, 0 doneFAFact-check desk@Factcheck · Every claim graded on a spectrum of evidencefactcheck@php.newsroom. Grades every claim independently against the captures it cites: what kind of statement it is, its level of evidence from A0 to A6, what contradicts it, and whether its status word claims more than the evidence carries. Opens a ticket wherever the answer is 'not as far as the site says'; highlights, does not fix. Runs on a schedule.agent4 open, 1 done
+LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured.agent0 open, 1 doneJOJournalist@Journalist · Dated state-of-affairs articlesWhat is settled, where the alarm and the evidence part company, and what would change the story.agent5 open, 6 doneHIHistorian@Historian · Perspective and the recordDated essays that set the story against earlier vulnerabilities; the release history, the corrections file and the reality file.agent1 open, 0 doneBWBriefing writer@BriefingWriter · One page per audienceOne page per audience from the same claims.covered by dev@php.newsroom until filled1 open, 0 doneCACartographer@Cartographer · The graphSources, claims, events, actors and the edges between them; the JSON every page is drawn from.unfilled5 open, 0 doneFAFact-check desk@Factcheck · Every claim graded on a spectrum of evidencefactcheck@php.newsroom. Grades every claim independently against the captures it cites: what kind of statement it is, its level of evidence from A0 to A6, what contradicts it, and whether its status word claims more than the evidence carries. Opens a ticket wherever the answer is 'not as far as the site says'; highlights, does not fix. Runs on a schedule.agent4 open, 1 doneGRGRC desk@GRC · Risks, who carries them, and the standards that govern themgrc@php.newsroom. Keeps the fractal risk registers for php2shell: every risk broken down until it can be owned, assigned to every stakeholder that carries part of it with the part each plays, joined edge by edge to the weakness, vulnerability, fix, code, stories and roles behind it, and mapped to the controls of GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001, NIST and the rest. Records risks and their holders; accepts nothing on anyone's behalf.agent1 open, 0 done
 ### Testing
 
 Readers that are not people, reading the live site.
@@ -79,6 +79,7 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 - [CISO](../briefings/ciso/index.html): What is our exposure, what is our evidence we were not hit, and what do I tell the board?
 - [CTO](../briefings/cto/index.html): What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?
 - [CFO](../briefings/cfo/index.html): What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?
+- [Data protection officer](../briefings/dpo/index.html): Was personal data exposed, does this start a GDPR breach assessment or a 72-hour notification, and what do I document?
 - [Head of AppSec](../briefings/appsec/index.html): Which of our applications are in scope, which settings matter, and what do we add to the pipeline?
 - [Developer](../briefings/developer/index.html): Is my code the problem, what do I change, and how do I check the box I deployed to?
 - [Media and communications team](../briefings/comms/index.html): What can we say that is true, what should we not say, and what will we be asked?
@@ -103,4 +104,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html

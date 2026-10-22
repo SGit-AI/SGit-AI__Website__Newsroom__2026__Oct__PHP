@@ -6,7 +6,55 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.5. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.6.0. The data is [data/versions.json](../data/versions.json).
+
+### v0.6.0 · 2026-10-22
+
+GRC: a new section, /grc/, with fractal risk registers for php2shell (34 risks assigned to 53 stakeholders, each joined to its weakness, CVE, fix, code, stories and roles, mapped to 95 controls in 20 frameworks including GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001 and NIST), and the data protection officer added to the readers with a briefing on exposure, the GDPR 72-hour clock and what to document
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.10 · 2026-10-22
+
+the telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages), the telemetry vault imports it and drains its own lane from the browser (40 events drained that way, 275 from 176 sessions now), and the dashboard vault i4diy82d is superseded
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.9 · 2026-10-22
+
+no named organisation has said it was compromised through php2shell: claim no-confirmed-compromise reworded with its time (20:50 UTC, 22 October) and moved from confirmed to reported, the plain-English lines that said nobody had confirmed a break-in corrected, and a page of its own (/compromise/) mapping the evidence behind the statement: what was searched, 33 statements by kind with their sources or source-watch snapshots, the layers from attempts to a named compromise, a timeline, and what would change it
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.8 · 2026-10-22
+
+factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.7 · 2026-10-22
+
+the telemetry dashboard: a new private vault (i4diy82d) holding a vault app over the telemetry vault, which is linked inside it read-only (vault-in-vault), so the app always draws the latest drain; listed on /vaults/
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.6 · 2026-10-22
+
+who reads this site: the telemetry lane drained again, 235 anonymous events from 161 sessions on 22 October; the subscriptions lane drained, nothing waiting
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.5.5 · 2026-10-22
 
@@ -282,4 +330,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

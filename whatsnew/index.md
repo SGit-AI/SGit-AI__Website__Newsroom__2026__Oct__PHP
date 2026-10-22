@@ -12,6 +12,53 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.6.0 · 22 October 2026new since your last visit
+
+GRC: a new section, /grc/, with fractal risk registers for php2shell (34 risks assigned to 53 stakeholders, each joined to its weakness, CVE, fix, code, stories and roles, mapped to 95 controls in 20 frameworks including GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001 and NIST), and the data protection officer added to the readers with a briefing on exposure, the GDPR 72-hour clock and what to document
+
+No reader-facing section changed in this release.
+
+## v0.5.10 · 22 October 2026new since your last visit
+
+the telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages), the telemetry vault imports it and drains its own lane from the browser (40 events drained that way, 275 from 176 sessions now), and the dashboard vault i4diy82d is superseded
+
+No reader-facing section changed in this release.
+
+## v0.5.9 · 22 October 2026new since your last visit
+
+no named organisation has said it was compromised through php2shell: claim no-confirmed-compromise reworded with its time (20:50 UTC, 22 October) and moved from confirmed to reported, the plain-English lines that said nobody had confirmed a break-in corrected, and a page of its own (/compromise/) mapping the evidence behind the statement: what was searched, 33 statements by kind with their sources or source-watch snapshots, the layers from attempts to a named compromise, a timeline, and what would change it
+
+### Briefings that changed
+JJordanBoard member or executive · v7SSamSecurity lead · v6DDrewPHP or platform engineer · v7RRowanJournalist · v6AAshSecurity researcher · v6BBlakeAnalyst or advisor · v7RRobinCISO · v7AAveryCTO · v6QQuinnCFO · v7JJamieHead of AppSec · v6LLeeDeveloper · v5RRileyMedia and communications team · v6AAlexCurious reader · v5CCaseyWebsite owner · v4TTaylorProject or programme manager · v5MMorganData protection officer · new
+## v0.5.8 · 22 October 2026new since your last visit
+
+factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction
+
+### Facts whose status changed
+- [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
+
+### Briefings that changed
+JJordanBoard member or executive · v6RRobinCISO · v6QQuinnCFO · v6RRileyMedia and communications team · v5AAlexCurious reader · v4TTaylorProject or programme manager · v4
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v6) v6
+- [Impact: offline vs compromised](../versions/page-impact/index.html#v5) v5
+- [In context: 2008 to 2026](../versions/page-context/index.html#v3) v3
+- [The specialist summary](../versions/page-summary/index.html#v2) v2
+- [Front page: right now](../versions/front-now/index.html#v2) v2
+- [Front page: the core facts](../versions/front-facts/index.html#v2) v2
+
+## v0.5.7 · 22 October 2026new since your last visit
+
+the telemetry dashboard: a new private vault (i4diy82d) holding a vault app over the telemetry vault, which is linked inside it read-only (vault-in-vault), so the app always draws the latest drain; listed on /vaults/
+
+No reader-facing section changed in this release.
+
+## v0.5.6 · 22 October 2026new since your last visit
+
+who reads this site: the telemetry lane drained again, 235 anonymous events from 161 sessions on 22 October; the subscriptions lane drained, nothing waiting
+
+No reader-facing section changed in this release.
+
 ## v0.5.5 · 22 October 2026new since your last visit
 
 two more branches carried in: security@php.newsroom's first pass (the security requirements, security_check.py in the gate and in release.sh, hardened build, workflows and drains, the rules of engagement for keys, the root pinned in CLAUDE.md; /admin/keys/ waits for data/keys.json) and the fact-check desk's run 1 (all 70 claims graded against the vault, 10 contradictions, /factcheck/)
@@ -265,7 +312,7 @@ the code read from php-src, php2shell in context against ten earlier flaws, an i
 - [No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosur](../facts/imperva-none/index.html) reported
 - [No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no pub](../facts/huntress-none/index.html) reported
 - [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../facts/watchtowr-itw/index.html) unverified
-- [No named organisation has confirmed a compromise through php2shell](../facts/no-confirmed-compromise/index.html) confirmed
+- [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
 - [None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechani](../facts/pocs-wrong/index.html) reported
 - [Triggering the bug is much easier than turning it into code execution; the CVSS vector say](../facts/ac-high/index.html) confirmed
 - [The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 U](../facts/fix-authored/index.html) confirmed
@@ -365,4 +412,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

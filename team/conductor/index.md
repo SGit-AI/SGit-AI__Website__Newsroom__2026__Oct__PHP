@@ -35,13 +35,13 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 | 074 | First run: the plan, the assignments as mail to each member, the digest at the close, and the site's snapshot of the team after it | open |  |
 | 075 | A digest on the site at every close: the conductor vault's status (what moved, what is blocked and on whom, what the humans must decide) as a page under /team/ | open |  |
 | 081 | Send AGENTS.md to every member through the conductor vault's broadcast, and ask each to confirm they read it | open |  |
-| 093 | Write ask 002 after the next release worth looking at, and drain the collaborators lane into the board at every close | open |  |
+| 100 | Write ask 002 after the next release worth looking at, and drain the collaborators lane into the board at every close | open |  |
 
 ## Waiting on someone else
 
 | # | Task | Status | Shipped in |
 |---|---|---|---|
-| 092 | Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, key-pair passphrases) to the root: the session's permission check stopped it; the four vault keys are sealed | waiting |  |
+| 099 | Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, key-pair passphrases) to the root: the session's permission check stopped it; the four vault keys are sealed | waiting |  |
 
 ## What they have done
 - Created the three coordination vaults (conductor, issues, mail) and the conductor's append lane.
@@ -53,8 +53,8 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 069 | Map every member of the team, human and agent, with a page each; the three coordination vaults (conductor, issues, mail); the board moved into the issues vault; the conductor's append lane, one token per member, and its drain (admin/build/conductor_drain.py), tested end to end | done | 0.5.1 |
-| 090 | Collaborators: /collaborators/ with this week's ask, the WhatsApp and email messages per ask, a join form and a feedback form encrypted to the new collaborators vault (58526ytp); its drain; brief admin/content/briefs/2026-10-22__brief__collaborators.md | done |  |
-| 098 | Runs: /team/runs/, the register of every schedule (who, where, how often, how many runs fall in the quiet hours) and every recorded run with the article it should leave (data/schedules.json) | done |  |
+| 097 | Collaborators: /collaborators/ with this week's ask, the WhatsApp and email messages per ask, a join form and a feedback form encrypted to the new collaborators vault (58526ytp); its drain; brief admin/content/briefs/2026-10-22__brief__collaborators.md | done |  |
+| 105 | Runs: /team/runs/, the register of every schedule (who, where, how often, how many runs fall in the quiet hours) and every recorded run with the article it should leave (data/schedules.json) | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/conductor/` in the mail vault (`fmb2tpl2`).
@@ -65,4 +65,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html
+site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html

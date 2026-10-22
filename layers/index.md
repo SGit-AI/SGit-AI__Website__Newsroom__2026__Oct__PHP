@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **20** derived · **6** authored · **18** site
+**8** evidence · **24** derived · **7** authored · **18** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -57,6 +57,10 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/graph.json` | admin/build/build.py | the claims and timeline rows and the sources they cite, generated at build | [graph/index.html](../graph/index.html) |
 | `data/plain.json` | the design agent | the front page's plain-English questions and moments; every fact cites vault slugs | [index.html](../index.html) |
 | `data/factcheck.json` | admin/factcheck/fc.py export (factcheck@php.newsroom) | the desk's assessments, contradiction ledger, Issues-FS tickets and run reports in admin/factcheck/, each grade resting on captures named by sha256 | [factcheck/index.html](../factcheck/index.html) |
+| `data/grc.json` | grc@php.newsroom | the claims, sources, code review graph, stories and team on this site, with ratings and assignments by the GRC desk | [grc/index.html](../grc/index.html) |
+| `data/grc-frameworks.json` | grc@php.newsroom | the official texts of the laws, standards and frameworks, each linked; control titles paraphrased | [grc/frameworks/index.html](../grc/frameworks/index.html) |
+| `data/grc-network.json` | grc@php.newsroom | the risk models, articles and vaults of the sgit network, described in their publishers' terms and linked | [grc/network/index.html](../grc/network/index.html) |
+| `data/grc-graph.json` | admin/build/build.py | data/grc.json, data/grc-frameworks.json, data/review.json, data/claims.json and the articles, on every build | [grc/graph/index.html](../grc/graph/index.html) |
 
 ## Authored
 
@@ -67,6 +71,7 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
 | `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
 | `admin/content/briefs/` | the editor, and agents writing build briefs and reviews | voice memos and messages; the site itself | [brief/index.html](../brief/index.html) |
+| `data/compromise.json` | researcher@php.newsroom | the evidence vault and the source-watch vault (oq9gflln): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot | [compromise/index.html](../compromise/index.html) |
 | `data/glossary.json` | the design agent | 40 terms in plain English, each linked on first use on every page | [glossary/index.html](../glossary/index.html) |
 | `data/interview.json` | the editor, interviewed by the design agent | the editor's answers in his own words | [interview/index.html](../interview/index.html) |
 | `data/personas.json` | the design agent | fifteen readers by job and technical depth, each with a thirty-second answer and a reading path | [start/index.html](../start/index.html) |
@@ -100,4 +105,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

@@ -44,7 +44,7 @@ Your email address
 
 How you know Dinis, or how you found this (optional)
 
-The reader closest to you (optional) (none in particular)Curious readerWebsite ownerBoard member or executiveProject or programme managerCFOCISOCTOJournalistCommunications teamSecurity leadHead of AppSecPHP or platform engineerDeveloperSecurity researcherAnalyst or policy advisor
+The reader closest to you (optional) (none in particular)Curious readerWebsite ownerBoard member or executiveProject or programme managerCFOData protection officerCISOCTOJournalistCommunications teamSecurity leadHead of AppSecPHP or platform engineerDeveloperSecurity researcherAnalyst or policy advisor
 
  Add me to the WhatsApp group too (Dinis will ask for your number; it is not collected here)
 
@@ -60,7 +60,7 @@ On an ask, or on anything else on the site. Short is fine. Your name and address
 
 Which ask 001: Your first look: the site, a reader of your own, and four new featuresSomething else
 
-Which reader you read as (optional) (none in particular)Curious readerWebsite ownerBoard member or executiveProject or programme managerCFOCISOCTOJournalistCommunications teamSecurity leadHead of AppSecPHP or platform engineerDeveloperSecurity researcherAnalyst or policy advisor
+Which reader you read as (optional) (none in particular)Curious readerWebsite ownerBoard member or executiveProject or programme managerCFOData protection officerCISOCTOJournalistCommunications teamSecurity leadHead of AppSecPHP or platform engineerDeveloperSecurity researcherAnalyst or policy advisor
 
 Which page (optional)
 
@@ -96,4 +96,4 @@ Nobody yet: be the first.
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/collaborators/index.html
+site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/collaborators/index.html

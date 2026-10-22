@@ -10,7 +10,7 @@ The story · for specialists
 
 On 21 October 2026 at 14:00 UTC the PHP project released fixes for two critical flaws, **CVE-2026-109618** and **CVE-2026-109619**, nicknamed *php2shell*. Either can give an unauthenticated attacker remote code execution on a web server running PHP, the language behind WordPress, Drupal, Wikipedia and a large share of the web. The flaws were found with AI help, the coordinated disclosure broke down two days early, and by the morning of 22 October the NSA, CISA and the UK's NCSC were telling organisations that could not patch to take systems offline. This site follows the story as evidence: every claim points to a captured, dated and hashed source, every number says what it measures, and every contradiction between sources is left visible.
 
-144sources in the evidence vault137dated captures, each file hashed70claims with a status: 22 confirmed, 11 disputed or contradicted, 4 unverified68dated events on the timeline16national agencies compared10operators reported offline, 0 confirmed compromises674products in the NCSC-NL inventory
+144sources in the evidence vault137dated captures, each file hashed70claims with a status: 21 confirmed, 11 disputed or contradicted, 4 unverified68dated events on the timeline16national agencies compared10operators reported offline, 0 confirmed compromises674products in the NCSC-NL inventory
 
 **Developing, and agent-produced.** Software agents assemble this site from sources captured into a private evidence vault; the editor is Dinis Cruz. Nothing here is advice on what to patch in your environment. For that, read the [php.net advisory](https://www.php.net/archive/2026.php#2026-10-21-5) and your national cyber-security agency. Where this site says a thing is *confirmed*, it means two or more primary sources agree, or the fact was counted from a captured file; *reported* means one party says so; *disputed* means the sources disagree; *unverified* means even the reporting outlet could not check it.
 
@@ -61,4 +61,4 @@ Every source is captured into a private, encrypted vault, each file hashed at ca
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/summary/index.html
+site v0.6.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/summary/index.html
