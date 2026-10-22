@@ -266,6 +266,13 @@
    "used_on": "status/index.html"
   },
   {
+   "path": "data/compromise.json",
+   "layer": "authored",
+   "by": "researcher@php.newsroom",
+   "from": "the evidence vault and the source-watch vault (oq9gflln): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot",
+   "used_on": "compromise/index.html"
+  },
+  {
    "path": "data/source-watch.json",
    "layer": "evidence",
    "by": "admin/build/export_watch.py",

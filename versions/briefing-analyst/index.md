@@ -15,4 +15,4 @@ v6 · site v0.4.7 · 22 October 2026 · 42 lines added or changed, 42 removed or
 
 
 ---
-site v0.5.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-analyst/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-analyst/index.html

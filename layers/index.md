@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **20** derived · **6** authored · **16** site
+**8** evidence · **20** derived · **7** authored · **16** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -67,6 +67,7 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
 | `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
 | `admin/content/briefs/` | the editor, and agents writing build briefs and reviews | voice memos and messages; the site itself | [brief/index.html](../brief/index.html) |
+| `data/compromise.json` | researcher@php.newsroom | the evidence vault and the source-watch vault (oq9gflln): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot | [compromise/index.html](../compromise/index.html) |
 | `data/glossary.json` | the design agent | 40 terms in plain English, each linked on first use on every page | [glossary/index.html](../glossary/index.html) |
 | `data/interview.json` | the editor, interviewed by the design agent | the editor's answers in his own words | [interview/index.html](../interview/index.html) |
 | `data/personas.json` | the design agent | fifteen readers by job and technical depth, each with a thirty-second answer and a reading path | [start/index.html](../start/index.html) |
@@ -98,4 +99,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.5.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

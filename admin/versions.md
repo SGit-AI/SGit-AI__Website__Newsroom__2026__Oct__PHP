@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.8. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.9. The data is [data/versions.json](../data/versions.json).
+
+### v0.5.9 · 2026-10-22
+
+no named organisation has said it was compromised through php2shell: claim no-confirmed-compromise reworded with its time (20:50 UTC, 22 October) and moved from confirmed to reported, the plain-English lines that said nobody had confirmed a break-in corrected, and a page of its own (/compromise/) mapping the evidence behind the statement: what was searched, 33 statements by kind with their sources or source-watch snapshots, the layers from attempts to a named compromise, a timeline, and what would change it
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.5.8 · 2026-10-22
 
@@ -306,4 +314,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.5.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

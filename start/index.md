@@ -51,7 +51,7 @@ I want to understand it · ******Plain English
 
 The answer in thirty seconds
 
-Two serious holes were found in PHP, software that runs on the servers behind a large share of websites. They were fixed on 21 October 2026. Your phone and laptop are not the target: websites are, and it is the job of whoever runs them to update. Some sites were taken offline as a precaution. No organisation has confirmed being broken into as of the latest evidence.
+Two serious holes were found in PHP, software that runs on the servers behind a large share of websites. They were fixed on 21 October 2026. Your phone and laptop are not the target: websites are, and it is the job of whoever runs them to update. Some sites were taken offline as a precaution. As of the evening of 22 October, no named organisation has said it was compromised through php2shell.
 
 #### Reading path
 - [Your briefing](../briefings/everyone/index.html) 3 min
@@ -63,7 +63,7 @@ About 13 minutes in all. Choose *read as Alex* and the bar under the menu keeps 
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[Primary source](../glossary/index.html#primary)[php2shell](../glossary/index.html#php2shell)[CVE](../glossary/index.html#cve)[Exploit, exploitation](../glossary/index.html#exploit)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[Patch](../glossary/index.html#patch)[KEV](../glossary/index.html#kev)
+[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Primary source](../glossary/index.html#primary)[Exploit, exploitation](../glossary/index.html#exploit)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)[Patch](../glossary/index.html#patch)[CVE](../glossary/index.html#cve)
 
 [Read as Alex →](../briefings/everyone/index.html)
 
@@ -127,7 +127,7 @@ I make the decisions · ******Plain English
 
 The answer in thirty seconds
 
-A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. No named organisation has confirmed a break-in. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
+A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of the evening of 22 October, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
 
 #### Reading path
 - [Your briefing](../briefings/board/index.html) 3 min
@@ -179,7 +179,7 @@ About 16 minutes in all. Choose *read as Taylor* and the bar under the menu keep
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[NSA](../glossary/index.html#nsa)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[php2shell](../glossary/index.html#php2shell)[CVE](../glossary/index.html#cve)[Exploit, exploitation](../glossary/index.html#exploit)[Web server](../glossary/index.html#web-server)
+[PHP](../glossary/index.html#php)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[NSA](../glossary/index.html#nsa)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[Exploit, exploitation](../glossary/index.html#exploit)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Remote code execution (RCE)](../glossary/index.html#rce)
 
 [Read as Taylor →](../briefings/pm/index.html)
 
@@ -203,7 +203,7 @@ I make the decisions · ******Plain English
 
 The answer in thirty seconds
 
-The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. No named organisation has confirmed a compromise. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
+The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. As of the evening of 22 October, no named organisation has said it was compromised through this flaw. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
 
 #### Reading path
 - [Your briefing](../briefings/cfo/index.html) 3 min
@@ -216,7 +216,7 @@ About 16 minutes in all. Choose *read as Quinn* and the bar under the menu keeps
 
 #### Words they will meet
 
-[Patch](../glossary/index.html#patch)[Unauthenticated](../glossary/index.html#unauthenticated)[Primary source](../glossary/index.html#primary)[php2shell](../glossary/index.html#php2shell)[CVE](../glossary/index.html#cve)[Exploit, exploitation](../glossary/index.html#exploit)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[PHP](../glossary/index.html#php)
+[Patch](../glossary/index.html#patch)[Unauthenticated](../glossary/index.html#unauthenticated)[Primary source](../glossary/index.html#primary)[Exploit, exploitation](../glossary/index.html#exploit)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[PHP](../glossary/index.html#php)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)
 
 [Read as Quinn →](../briefings/cfo/index.html)
 
@@ -367,7 +367,7 @@ About 14 minutes in all. Choose *read as Riley* and the bar under the menu keeps
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[Exploit, exploitation](../glossary/index.html#exploit)[Patch](../glossary/index.html#patch)[CDN](../glossary/index.html#cdn)[Honeypot](../glossary/index.html#honeypot)[Primary source](../glossary/index.html#primary)[php2shell](../glossary/index.html#php2shell)[CVE](../glossary/index.html#cve)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)
+[PHP](../glossary/index.html#php)[Exploit, exploitation](../glossary/index.html#exploit)[Patch](../glossary/index.html#patch)[CDN](../glossary/index.html#cdn)[Honeypot](../glossary/index.html#honeypot)[Primary source](../glossary/index.html#primary)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Remote code execution (RCE)](../glossary/index.html#rce)
 
 [Read as Riley →](../briefings/comms/index.html)
 
@@ -601,4 +601,4 @@ The first version of this site opened with a sentence that was accurate and unre
 
 
 ---
-site v0.5.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
