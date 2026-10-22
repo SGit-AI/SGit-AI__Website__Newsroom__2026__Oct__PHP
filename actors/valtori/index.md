@@ -22,4 +22,4 @@ Finland's precautionary shutdown
 
 
 ---
-site v0.2.14 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/valtori/index.html
+site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/valtori/index.html

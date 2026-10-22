@@ -16,38 +16,85 @@ One anonymous event per page per session: path, referrer host, country, region, 
 
 ## The counts
 
-Report as of **2026-10-22**: **4** events from **1** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
+Report as of **2026-10-22**: **120** events from **74** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
 
 | Country | Events |
 |---|---|
-| US | 4 |
+| US | 78 |
+| GB | 22 |
+| PT | 8 |
+| AU | 4 |
+| NL | 3 |
+| SG | 2 |
+| (none) | 2 |
+| IE | 1 |
 
 | Region | Events |
 |---|---|
-| California | 4 |
+| California | 61 |
+| England | 22 |
+| Virginia | 10 |
+| Lisbon | 6 |
+| Florida | 5 |
+| New South Wales | 4 |
+| (none) | 3 |
+| Leiria | 2 |
+| Washington | 2 |
+| North Brabant | 2 |
+| Central Singapore | 1 |
+| Groningen | 1 |
+| Leinster | 1 |
 
 | Referrer host | Events |
 |---|---|
-| (none) | 4 |
+| (none) | 100 |
+| php.oct.2026.newsroom.sgit.ai | 19 |
+| newsroom.sgit.ai | 1 |
 
 | Screen | Events |
 |---|---|
-| desktop | 4 |
+| desktop | 80 |
+| phone | 40 |
 
 ### By page
 
 | Page | Events |
 |---|---|
-| /index.html | 1 |
+| / | 36 |
+| /index.html | 13 |
+| /claims/index.html | 9 |
+| /briefings/board/index.html | 9 |
+| /sources/index.html | 7 |
+| /articles/where-php2shell-stands/index.html | 5 |
+| /questions/fix-or-wait/index.html | 5 |
+| /method/index.html | 5 |
+| /exploitation/index.html | 5 |
+| /billing/index.html | 3 |
+| /readings/index.html | 3 |
+| /questions/index.html | 2 |
+| /account/index.html | 2 |
 | /admin/telemetry/index.html | 1 |
 | /admin/vault/index.html | 1 |
 | /admin/board/index.html | 1 |
+| /briefings/developer/index.html | 1 |
+| /review/index.html | 1 |
+| /review/ui/index.html | 1 |
+| /numbers/index.html | 1 |
+| /timeline/index.html | 1 |
+| /articles/php2shell-in-perspective/index.html | 1 |
+| /admin/versions.html | 1 |
+| /articles/index.html | 1 |
+| /briefings/journalist/index.html | 1 |
+| /briefings/ciso/index.html | 1 |
+| /briefings/comms/index.html | 1 |
+| /affected/software.html | 1 |
+| /briefings/security/index.html | 1 |
 
 ### By day
 
 | Day | Events |
 |---|---|
-| 2026-10-22 | 4 |
+| 2026-10-22 | 120 |
 
 ## What the counts are worth
 
@@ -61,4 +108,4 @@ Mechanics: `assets/telemetry.js` sends; `admin/build/telemetry_drain.py`, run by
 
 
 ---
-site v0.2.14 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html
+site v0.2.15 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html

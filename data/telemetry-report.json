@@ -1,19 +1,67 @@
 {
  "as_of": "2026-10-22",
- "drained_now": 4,
- "events": 4,
+ "drained_now": 116,
+ "events": 120,
  "test_or_undecryptable": 1,
- "sessions": 1,
+ "sessions": 74,
  "by_day": [
   [
    "2026-10-22",
-   4
+   120
   ]
  ],
  "by_path": [
   [
+   "/",
+   36
+  ],
+  [
    "/index.html",
-   1
+   13
+  ],
+  [
+   "/claims/index.html",
+   9
+  ],
+  [
+   "/briefings/board/index.html",
+   9
+  ],
+  [
+   "/sources/index.html",
+   7
+  ],
+  [
+   "/articles/where-php2shell-stands/index.html",
+   5
+  ],
+  [
+   "/questions/fix-or-wait/index.html",
+   5
+  ],
+  [
+   "/method/index.html",
+   5
+  ],
+  [
+   "/exploitation/index.html",
+   5
+  ],
+  [
+   "/billing/index.html",
+   3
+  ],
+  [
+   "/readings/index.html",
+   3
+  ],
+  [
+   "/questions/index.html",
+   2
+  ],
+  [
+   "/account/index.html",
+   2
   ],
   [
    "/admin/telemetry/index.html",
@@ -26,42 +74,314 @@
   [
    "/admin/board/index.html",
    1
+  ],
+  [
+   "/briefings/developer/index.html",
+   1
+  ],
+  [
+   "/review/index.html",
+   1
+  ],
+  [
+   "/review/ui/index.html",
+   1
+  ],
+  [
+   "/numbers/index.html",
+   1
+  ],
+  [
+   "/timeline/index.html",
+   1
+  ],
+  [
+   "/articles/php2shell-in-perspective/index.html",
+   1
+  ],
+  [
+   "/admin/versions.html",
+   1
+  ],
+  [
+   "/articles/index.html",
+   1
+  ],
+  [
+   "/briefings/journalist/index.html",
+   1
+  ],
+  [
+   "/briefings/ciso/index.html",
+   1
+  ],
+  [
+   "/briefings/comms/index.html",
+   1
+  ],
+  [
+   "/affected/software.html",
+   1
+  ],
+  [
+   "/briefings/security/index.html",
+   1
   ]
  ],
  "by_country": [
   [
    "US",
+   78
+  ],
+  [
+   "GB",
+   22
+  ],
+  [
+   "PT",
+   8
+  ],
+  [
+   "AU",
    4
+  ],
+  [
+   "NL",
+   3
+  ],
+  [
+   "SG",
+   2
+  ],
+  [
+   "(none)",
+   2
+  ],
+  [
+   "IE",
+   1
   ]
  ],
  "by_region": [
   [
    "California",
+   61
+  ],
+  [
+   "England",
+   22
+  ],
+  [
+   "Virginia",
+   10
+  ],
+  [
+   "Lisbon",
+   6
+  ],
+  [
+   "Florida",
+   5
+  ],
+  [
+   "New South Wales",
    4
+  ],
+  [
+   "(none)",
+   3
+  ],
+  [
+   "Leiria",
+   2
+  ],
+  [
+   "Washington",
+   2
+  ],
+  [
+   "North Brabant",
+   2
+  ],
+  [
+   "Central Singapore",
+   1
+  ],
+  [
+   "Groningen",
+   1
+  ],
+  [
+   "Leinster",
+   1
   ]
  ],
  "by_city": [
   [
    "San Francisco",
+   56
+  ],
+  [
+   "London",
+   17
+  ],
+  [
+   "Ashburn",
+   6
+  ],
+  [
+   "Lisbon",
+   6
+  ],
+  [
+   "Dulles",
    4
+  ],
+  [
+   "Sydney",
+   4
+  ],
+  [
+   "Pembroke Pines",
+   4
+  ],
+  [
+   "Nazare",
+   2
+  ],
+  [
+   "San Jose",
+   2
+  ],
+  [
+   "Singapore",
+   2
+  ],
+  [
+   "Seattle",
+   2
+  ],
+  [
+   "Oosterhout",
+   2
+  ],
+  [
+   "(none)",
+   2
+  ],
+  [
+   "Cricklewood",
+   2
+  ],
+  [
+   "Palm Springs",
+   1
+  ],
+  [
+   "Groningen",
+   1
+  ],
+  [
+   "St Agnes",
+   1
+  ],
+  [
+   "Yuba City",
+   1
+  ],
+  [
+   "Hayes",
+   1
+  ],
+  [
+   "Dublin",
+   1
+  ],
+  [
+   "Sunnyvale",
+   1
+  ],
+  [
+   "Margate",
+   1
+  ],
+  [
+   "Cambridge",
+   1
   ]
  ],
  "by_referrer": [
   [
    "(none)",
-   4
+   100
+  ],
+  [
+   "php.oct.2026.newsroom.sgit.ai",
+   19
+  ],
+  [
+   "newsroom.sgit.ai",
+   1
   ]
  ],
  "by_screen": [
   [
    "desktop",
-   4
+   80
+  ],
+  [
+   "phone",
+   40
   ]
  ],
  "by_version": [
   [
+   "v0.2.8",
+   32
+  ],
+  [
+   "v0.2.11",
+   21
+  ],
+  [
+   "v0.2.12",
+   14
+  ],
+  [
+   "v0.2.14",
+   13
+  ],
+  [
+   "v0.2.9",
+   12
+  ],
+  [
+   "v0.2.5",
+   11
+  ],
+  [
+   "v0.2.4",
+   5
+  ],
+  [
    "v0.2.2",
    4
+  ],
+  [
+   "v0.2.6",
+   3
+  ],
+  [
+   "v0.2.10",
+   2
+  ],
+  [
+   "v0.2.13",
+   2
+  ],
+  [
+   "v0.2.3",
+   1
   ]
  ],
  "note": "Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault."

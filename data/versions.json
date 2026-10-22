@@ -1,6 +1,15 @@
 {
- "current": "0.2.14",
+ "current": "0.2.15",
  "versions": [
+  {
+   "version": "0.2.15",
+   "date": "2026-10-22",
+   "title": "who reads this site: the telemetry lane drained again, 120 anonymous events from 74 sessions on 22 October, counts by country, region, referrer, page and screen on the telemetry page",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.14",
    "date": "2026-10-22",
