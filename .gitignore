@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# credentials tier and vault clones: never committed
+.sg_vault/
+*.sg_vault*

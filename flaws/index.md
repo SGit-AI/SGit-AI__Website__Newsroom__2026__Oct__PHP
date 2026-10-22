@@ -1,0 +1,96 @@
+# The two flaws: CVE-2026-109618 and CVE-2026-109619
+
+What the CVE records, the GitHub advisories and the PHP security team say about php2shell: the bug classes, what was demonstrated, which deployments, which versions, the fix and the temporary mitigations, with the blast-radius questions.
+
+# The two flaws
+
+Two bugs in the PHP engine, the same severity, the same fix, the same four releases. Both are memory-safety failures in how PHP recovers from an error, and both can be reached by an unauthenticated HTTP request. This page keeps to what the primary records say and marks where they differ.
+
+**Fixed in** PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35 · **Vector** `CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N` · **Nickname** php2shell (NSA: PHP2Shell) · **CNA** PHP Group
+
+### CVE-2026-109618: RCE via OOM corruption
+
+GHSA-w8hw-w9fx-j79w · CVSS v4.0 **9.2** · CWE-416, 755, 824, 1325, 1419 · reserved 2026-10-12 21:03:58 UTC · advisory 2026-10-21 13:34:25 UTC · CVE record 2026-10-21 13:48:34 UTC
+
+**The record's description, verbatim.** *PHP uses longjmp() for out-of-memory (OOM) errors to exit the current context and abort handling of the request. Some contexts may not properly account for this scenario and leave request memory in an uninitialized state before performing an allocation. The subsequent request cleanup procedure may read or branch on this memory. Multiple OOM strategies can consistently trigger this condition and lead to remote code execution (RCE).*
+
+**What was demonstrated.** Complete RCE validated over HTTP against mod_php with default input and memory limits, before any application code runs. FPM: susceptible by source analysis; the GitHub advisory says no complete FPM exploit has been demonstrated. FrankenPHP likely susceptible; LSAPI likely but unvalidated.
+
+**The fix.** Removes longjmp() for OOM. A delayed, graceful soft OOM at the next VM safe point, plus a hard OOM via _exit() at a higher threshold.
+
+[CVE record](../sources/index.html#cve-cve-2026-109618) [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) [NVD](../sources/index.html#nvd-cve-2026-109618) [oss-security](../sources/index.html#openwall-oss-security-2026-10-21-6)
+
+### CVE-2026-109619: RCE via stale global state
+
+GHSA-6wmf-4rv5-p3rp · CVSS v4.0 **9.2** · CWE-416, 755, 824, 1325, 1419 · reserved 2026-10-12 21:04:00 UTC · advisory 2026-10-21 13:34:13 UTC · CVE record 2026-10-21 13:54:43 UTC
+
+**The record's description, verbatim.** *PHP has various global state that temporarily points into request memory. In some scenarios, global state may not be correctly reset, or may be repopulated after being reset. The global state may then refer to request memory even after it has been freed. Subsequent requests may read or branch on this stale state before it is fully initialized. Multiple strategies can trigger this condition and produce remote code execution (RCE).*
+
+**What was demonstrated.** A use-after-free of worker global state across requests: a producer request and a consumer request on the same worker. Confirmed on the PHP 8.5 fatal-error-backtrace path (the basis of the mod_php exploit) and the session upload progress path, which is enabled by default and needs no session_start(); the session path was validated against mod_php and FPM.
+
+**The fix.** Part of the same change, "Avoid state corruption via bailout": global state is reset so it cannot refer to freed request memory.
+
+[CVE record](../sources/index.html#cve-cve-2026-109619) [PHP](../sources/index.html#github-ghsa-6wmf-4rv5-p3rp) [NVD](../sources/index.html#nvd-cve-2026-109619) [oss-security](../sources/index.html#openwall-oss-security-2026-10-21-7)
+
+## Which deployments
+
+The flaw is in the engine, so what matters is how PHP is wired to the web server. php.net ranks mod_php highest.
+
+| SAPI | Risk | What the primary sources say | Sources |
+|---|---|---|---|
+| Apache mod_php | highest | Unauthenticated RCE demonstrated over HTTP with default input and memory limits, before any application code runs. | [php.net](../sources/index.html#php-net-advisory) [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) [oss-security](../sources/index.html#openwall-oss-security-2026-10-21-6) |
+| PHP-FPM | susceptible | For CVE-2026-109618 the GitHub advisory says no complete FPM exploit has been demonstrated; the PHP Foundation blog says RCE was confirmed on FPM through application-level paths. For CVE-2026-109619 the session path was validated against FPM. | [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) [PHP Foundation](../sources/index.html#php-foundation-blog-security-release) [PHP](../sources/index.html#github-ghsa-6wmf-4rv5-p3rp) [oss-security](../sources/index.html#openwall-oss-security-2026-10-21-7) |
+| php-cgi | at risk | Listed by php.net among installations serving web requests. | [php.net](../sources/index.html#php-net-advisory) |
+| FrankenPHP | likely susceptible | 'likely susceptible' per the GitHub advisory. | [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) |
+| LiteSpeed (LSAPI) | likely, unvalidated | 'application-specific exploits being likely but unvalidated'. | [PHP](../sources/index.html#github-ghsa-w8hw-w9fx-j79w) |
+| CLI, cron, queue workers | not web-serving | The advisory scopes the risk to installations serving web requests. A CLI process that parses untrusted input is not covered either way by the primary sources. | [php.net](../sources/index.html#php-net-advisory) |
+
+## What a compromise would mean: the blast radius
+
+This section is the site's own analysis, written from the sources it cites. It is a way of asking the question, not an assessment of any system.
+
+Remote code execution *as the web worker* is the floor, not the ceiling, and not yet a breach. What an attacker gets is whatever that worker can reach: the application's source and configuration, the database credentials in it, the session store, the files the worker can read or write, the outbound network it can open, and anything that trusts requests from that host. What they do not automatically get is the database server's other schemas, the credentials that were never on that host, or a system behind an allow-list the worker is not on. The blast radius of one compromised PHP worker is therefore a property of the system around it, and that is the first thing to map. The questions, with where the answer usually lives:
+
+- **What runs there?** A brochure site with no login, a shop with payment data, an intranet with single sign-on, a mail client, an admin panel. The same bug has a different consequence in each. (The NCSC-NL inventory is a start; your asset register is the real answer.)
+
+- **What credentials sit on the host?** Database passwords, API keys, cloud instance roles, SSH keys in a deploy user's home. A key that cannot be used from anywhere else is a much smaller loss than one that can.
+
+- **What can the worker reach outbound?** Egress rules decide whether a shell becomes a download of tooling, a callback, or a pivot.
+
+- **What trusts the host?** Internal services that accept any request from the web tier, shared file systems, backup agents.
+
+- **What would you see?** CISA's signal is concrete: PHP worker processes launching shells or downloading tools. JPCERT warns that with several exploit paths, one detection rule can miss an attack and a clean log does not prove a clean system.
+
+- **How fast can you pull the plug?** Taking a system offline is the last step in every agency's list, but the ability to do it in minutes, cleanly, is a property worth having before the next one of these.
+
+[CISA](../sources/index.html#cisa-alert-php-20261021) [JPCERT/CC](../sources/index.html#jpcert-at260033) [PHP](../sources/index.html#github-ghsa-6wmf-4rv5-p3rp) [NCSC-NL](../sources/index.html#ncsc-nl-php2shell-software-list)
+
+## Affected and fixed versions
+
+| Branch | Affected | Fixed | In the CVE record |
+|---|---|---|---|
+| 8.5 | = 5.4' (Wiz); 'toutes versions 5.x, 6.x, 7.x' (CERT-FR) | no release, no backport | **no** |
+
+The CVE records carry defaultStatus 'unaffected' and list only 8.2 to 8.5, so an automated scanner reading the CVE will call 7.4 to 8.1 unaffected. The php.net advisory, the backport branches and a Greenbone reply on oss-security say otherwise.
+
+[CVE record](../sources/index.html#cve-cve-2026-109618) [php.net](../sources/index.html#php-net-advisory) [php-src](../sources/index.html#github-php-src-branch-7.4-backport) [NCSC-NL](../sources/index.html#ncsc-nl-advisories) [Wiz on X](../sources/index.html#x-wiz-io-php2shell) [CERT-FR](../sources/index.html#certfr-2026-ale-014) [oss-security](../sources/index.html#openwall-oss-security-109619-thread)
+
+## The temporary mitigations, and what each one does not do
+
+| For | Setting | Caveat, from the same source |
+|---|---|---|
+| CVE-2026-109618 (OOM corruption) | memory_limit=-1, set where applications cannot override it (php_admin_value in the FPM pool or Apache config); check no pool, directory or app setting restores a finite limit. | Removes the controllable memory-limit failure; an underlying allocation failure can still reach the vulnerable path. |
+| CVE-2026-109618 | A low post_max_size (8M without uploads, 32M with), upload_max_filesize below it, and web-server or proxy limits on decoded request size, field count, multipart part count, header count and nesting depth, including for requests without a usable Content-Length. | Reduces exposure to specific attack paths; does not make an installation safe. |
+| CVE-2026-109618 | A container or cgroup memory limit as an availability boundary, killing only the affected worker. | Do not use RLIMIT_AS or RLIMIT_DATA: they can cause the vulnerable allocation failure. |
+| CVE-2026-109619 (stale global state) | session.upload_progress.enabled=0 in php.ini, the FPM pool or server configuration, then restart every worker. | Blocks the confirmed session paths only. ini_set() and .user.ini are too late. |
+| CVE-2026-109619, PHP 8.5 only | fatal_error_backtraces=0, then restart every worker. | Blocks the confirmed fatal-backtrace path only. |
+| CVE-2026-109619 | Remove invalid or deprecated per-request settings that emit diagnostics before initialisation; fix attacker-reachable fatal errors and execution timeouts. | Hiding diagnostics with error_reporting, display_errors or @ does not help. |
+| both | pm.max_requests=1 on FPM (GitHub advisory). | 'Updating is the only reliable mitigation.' |
+
+php.net: *while only an update is a complete solution, the following measures reduce exposure to specific attack paths but do not make an installation safe.* [php.net](../sources/index.html#php-net-advisory) [PHP](../sources/index.html#github-ghsa-6wmf-4rv5-p3rp) [CERT-EU](../sources/index.html#certeu-sa-2026-018) [NCSC-NL](../sources/index.html#ncsc-nl-php2shell)
+
+The engineering steps, in order, are on [If you run PHP](../playbook/index.html). The disagreement between the two primary accounts of FPM is [claim rce-fpm](../claims/index.html#rce-fpm).
+
+
+---
+site v0.1.0 · data as of 2026-10-22T08:48Z · vault commit 379e3d7f172a · https://php.oct-2026.story.sgit.ai/flaws/index.html

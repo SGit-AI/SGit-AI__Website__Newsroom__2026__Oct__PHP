@@ -1,0 +1,22 @@
+{
+ "current": "0.1.0",
+ "versions": [
+  {
+   "version": "0.1.0",
+   "date": "2026-10-22",
+   "title": "The site exists: a story front, the two flaws, the timeline, every claim with a status, the numbers that do not add up, the agencies compared, the affected versions and software, the exploitation signals, a playbook, six briefings, every source with its hashes, the graph, the method, the team, the billing model and this history.",
+   "summary": "First release, built from the evidence vault at commit 379e3d7f172a (61 sources, 62 captures, 390 hashed files).",
+   "changes": [
+    "admin/build/build.py",
+    "admin/build/export_vault.py",
+    "admin/build/validate.py",
+    "admin/build/release.sh",
+    "data/*.json",
+    "assets/site.css",
+    "assets/components/sg-meter/v1/v1.3/v1.3.1/"
+   ],
+   "vault_commit": "379e3d7f172a",
+   "reconstructed": false
+  }
+ ]
+}

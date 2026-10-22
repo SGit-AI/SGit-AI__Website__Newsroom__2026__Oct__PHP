@@ -1,0 +1,2126 @@
+{
+ "site": "php.oct-2026.story.sgit.ai",
+ "version": "0.1.0",
+ "vault_commit": "379e3d7f172a",
+ "nodes": [
+  {
+   "id": "claim:two-cves-9.2",
+   "kind": "claim",
+   "label": "Two critical vulnerabilities, CVE-2026-109618 and CVE-2026-109619, each CVSS v4.0 9.2, fix",
+   "status": "confirmed",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:cvss-10",
+   "kind": "claim",
+   "label": "The flaws are CVSS 10.0",
+   "status": "contradicted",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:rce-modphp",
+   "kind": "claim",
+   "label": "Unauthenticated RCE over HTTP against Apache mod_php with default settings, before any app",
+   "status": "confirmed",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:rce-fpm",
+   "kind": "claim",
+   "label": "Remote code execution is confirmed on PHP-FPM",
+   "status": "disputed",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:fix-bailout",
+   "kind": "claim",
+   "label": "The fix removes longjmp() for out-of-memory errors in favour of a delayed soft OOM at the ",
+   "status": "confirmed",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:fix-incomplete",
+   "kind": "claim",
+   "label": "The 8.5.12 fix may be incomplete, or there is a third, different bug",
+   "status": "unverified",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:versions-old",
+   "kind": "claim",
+   "label": "All PHP versions from 5 onwards are affected by at least one of the flaws",
+   "status": "disputed",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:only-update",
+   "kind": "claim",
+   "label": "Updating is the only complete mitigation; the configuration measures reduce exposure to sp",
+   "status": "confirmed",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:waf",
+   "kind": "claim",
+   "label": "A web application firewall may provide some protection until systems are patched",
+   "status": "disputed",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:wordpress-drupal",
+   "kind": "claim",
+   "label": "Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcu",
+   "status": "reported",
+   "topic": "technical"
+  },
+  {
+   "id": "claim:scale-70pc-internet",
+   "kind": "claim",
+   "label": "Roughly 70% of the Internet is affected",
+   "status": "unverified",
+   "topic": "scale"
+  },
+  {
+   "id": "claim:scale-70pc-websites",
+   "kind": "claim",
+   "label": "PHP is used by almost 70% of websites",
+   "status": "reported",
+   "topic": "scale"
+  },
+  {
+   "id": "claim:scale-30m",
+   "kind": "claim",
+   "label": "Something like 30 million websites could be affected",
+   "status": "reported",
+   "topic": "scale"
+  },
+  {
+   "id": "claim:scale-2.6m-hosts",
+   "kind": "claim",
+   "label": "PHP is exposed on 2,608,039 internet-facing hosts",
+   "status": "reported",
+   "topic": "scale"
+  },
+  {
+   "id": "claim:scale-latvia",
+   "kind": "claim",
+   "label": "About 6,000 potentially affected resources in Latvia, a few hundred in the public sector",
+   "status": "reported",
+   "topic": "scale"
+  },
+  {
+   "id": "claim:scale-ncsc-nl",
+   "kind": "claim",
+   "label": "674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, ",
+   "status": "confirmed",
+   "topic": "scale"
+  },
+  {
+   "id": "claim:ai-found",
+   "kind": "claim",
+   "label": "The flaws were found by researchers using frontier AI under OpenAI's Patch the Planet init",
+   "status": "reported",
+   "topic": "discovery"
+  },
+  {
+   "id": "claim:who-first",
+   "kind": "claim",
+   "label": "Calif found the flaws first: discovery 1 August, hash commitment 5 August, report to PHP 1",
+   "status": "confirmed",
+   "topic": "discovery"
+  },
+  {
+   "id": "claim:openai-same-day",
+   "kind": "claim",
+   "label": "OpenAI independently reported the same root cause on 11 August, with further vectors on 18",
+   "status": "reported",
+   "topic": "discovery"
+  },
+  {
+   "id": "claim:wiz-independent",
+   "kind": "claim",
+   "label": "Wiz Research independently discovered the first flaw on 19 August and reported on 24 Augus",
+   "status": "reported",
+   "topic": "discovery"
+  },
+  {
+   "id": "claim:four-reporters",
+   "kind": "claim",
+   "label": "The GitHub advisories credit four reporters: lcfr-hax (Calif), sagitzadik-wiz (Wiz), amyb-",
+   "status": "confirmed",
+   "topic": "discovery"
+  },
+  {
+   "id": "claim:quarkslab-2024",
+   "kind": "claim",
+   "label": "The out-of-memory issue was found in a 2024 audit by Quarkslab (funded through OSTIF and t",
+   "status": "confirmed",
+   "topic": "discovery"
+  },
+  {
+   "id": "claim:ahead-of-attackers",
+   "kind": "claim",
+   "label": "Frontier AI found the flaw ahead of attackers, giving defenders time to prepare",
+   "status": "disputed",
+   "topic": "discovery"
+  },
+  {
+   "id": "claim:most-severe",
+   "kind": "claim",
+   "label": "The most severe flaws ever detected by AI",
+   "status": "reported",
+   "topic": "discovery"
+  },
+  {
+   "id": "claim:leak-cve-ids",
+   "kind": "claim",
+   "label": "On 20 October at about 15:00 UTC the two CVE IDs began circulating on forums and social me",
+   "status": "reported",
+   "topic": "leak"
+  },
+  {
+   "id": "claim:leak-hn",
+   "kind": "claim",
+   "label": "The leak started with an anonymous Hacker News post citing a reliable source, which came d",
+   "status": "reported",
+   "topic": "leak"
+  },
+  {
+   "id": "claim:leak-watchtowr",
+   "kind": "claim",
+   "label": "watchTowr confirmed in public that the bugs were real and posted both CVE numbers before t",
+   "status": "reported",
+   "topic": "leak"
+  },
+  {
+   "id": "claim:leak-video",
+   "kind": "claim",
+   "label": "Calif mistakenly published a video around 20:00 UTC on 20 October showing its proof of con",
+   "status": "reported",
+   "topic": "leak"
+  },
+  {
+   "id": "claim:leak-mitigations",
+   "kind": "claim",
+   "label": "Mitigation advice given to a few critical-infrastructure providers from about 23:00 UTC on",
+   "status": "reported",
+   "topic": "leak"
+  },
+  {
+   "id": "claim:chainguard",
+   "kind": "claim",
+   "label": "Chainguard unilaterally broke the embargo on 21 October at 07:41 UTC by publishing built i",
+   "status": "disputed",
+   "topic": "leak"
+  },
+  {
+   "id": "claim:release-moved",
+   "kind": "claim",
+   "label": "The release moved forward from 22 October 14:00 UTC to 21 October 14:00 UTC because of the",
+   "status": "confirmed",
+   "topic": "leak"
+  },
+  {
+   "id": "claim:disclosure-22oct",
+   "kind": "claim",
+   "label": "The flaws were disclosed on 22 October 2026",
+   "status": "contradicted",
+   "topic": "timing"
+  },
+  {
+   "id": "claim:release-time",
+   "kind": "claim",
+   "label": "The fixes were released at 14:00 UTC on 21 October",
+   "status": "disputed",
+   "topic": "timing"
+  },
+  {
+   "id": "claim:preannounce-time",
+   "kind": "claim",
+   "label": "The pre-announcement was published at 19:30 UTC on 20 October",
+   "status": "disputed",
+   "topic": "timing"
+  },
+  {
+   "id": "claim:no-exploitation",
+   "kind": "claim",
+   "label": "There is no evidence yet that hackers have exploited the flaw",
+   "status": "reported",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:cisa-none",
+   "kind": "claim",
+   "label": "CISA has not observed exploitation; neither CVE is in the Known Exploited Vulnerabilities ",
+   "status": "confirmed",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:nz-active",
+   "kind": "claim",
+   "label": "Reports of active exploitation exist",
+   "status": "reported",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:amazon-honeypot",
+   "kind": "claim",
+   "label": "An exploit attempt hit an Amazon honeypot on 17 October from an anonymisation network, and",
+   "status": "reported",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:cloudflare-traffic",
+   "kind": "claim",
+   "label": "Cloudflare observed attack traffic targeting its customers after the leak, with attackers ",
+   "status": "reported",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:probing",
+   "kind": "claim",
+   "label": "Amazon and Cloudflare saw sites being probed for the flaw",
+   "status": "reported",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:latvia-attempts",
+   "kind": "claim",
+   "label": "Automated exploitation attempts were seen in Latvia; none succeeded",
+   "status": "reported",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:vibe-code",
+   "kind": "claim",
+   "label": "Criminals are using AI to 'vibe code' an attack method",
+   "status": "unverified",
+   "topic": "exploitation"
+  },
+  {
+   "id": "claim:offline-nsa",
+   "kind": "claim",
+   "label": "If an immediate update is not feasible, take the system offline until it can be fully miti",
+   "status": "confirmed",
+   "topic": "advice"
+  },
+  {
+   "id": "claim:offline-cisa",
+   "kind": "claim",
+   "label": "Organisations that cannot update immediately, or that run PHP 8.1 or older, should take PH",
+   "status": "confirmed",
+   "topic": "advice"
+  },
+  {
+   "id": "claim:offline-ncsc",
+   "kind": "claim",
+   "label": "'Where immediate remediation is not feasible, organisations should consider taking the sys",
+   "status": "disputed",
+   "topic": "advice"
+  },
+  {
+   "id": "claim:offline-allies",
+   "kind": "claim",
+   "label": "The UK's NCSC, the NSA and their counterparts in the EU and Australia advise taking system",
+   "status": "contradicted",
+   "topic": "advice"
+  },
+  {
+   "id": "claim:affected-sites",
+   "kind": "claim",
+   "label": "Parts of Wikipedia, Edinburgh council, French government sites, the University of Geneva, ",
+   "status": "reported",
+   "topic": "impact"
+  },
+  {
+   "id": "claim:latvia-offline",
+   "kind": "claim",
+   "label": "Latvia restricted access from abroad to several state digital resources, possibly until 26",
+   "status": "confirmed",
+   "topic": "impact"
+  },
+  {
+   "id": "claim:gov-patch-required",
+   "kind": "claim",
+   "label": "The risks require immediate patching across United States Government departments and agenc",
+   "status": "reported",
+   "topic": "advice"
+  },
+  {
+   "id": "source:bbc-live-ckgel5xp2xv9t",
+   "kind": "source",
+   "label": "BBC News",
+   "publisher": "BBC News",
+   "url": "https://www.bbc.co.uk/news/live/ckgel5xp2xv9t",
+   "primary": false
+  },
+  {
+   "id": "source:php-foundation-blog-security-release",
+   "kind": "source",
+   "label": "The PHP Foundation",
+   "publisher": "The PHP Foundation",
+   "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
+   "primary": true
+  },
+  {
+   "id": "source:github-ghsa-w8hw-w9fx-j79w",
+   "kind": "source",
+   "label": "PHP (php/php-src GitHub security advisory, published by bukka)",
+   "publisher": "PHP (php/php-src GitHub security advisory, published by bukka)",
+   "url": "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w",
+   "primary": true
+  },
+  {
+   "id": "source:php-net-advisory",
+   "kind": "source",
+   "label": "PHP Group (php.net)",
+   "publisher": "PHP Group (php.net)",
+   "url": "https://www.php.net/archive/2026.php#2026-10-21-5",
+   "primary": true
+  },
+  {
+   "id": "source:wiz-blog-php2shell",
+   "kind": "source",
+   "label": "Wiz (Wiz Research)",
+   "publisher": "Wiz (Wiz Research)",
+   "url": "https://www.wiz.io/blog/php2shell-php-rce",
+   "primary": true
+  },
+  {
+   "id": "source:calif-php2shell",
+   "kind": "source",
+   "label": "Calif (Calif Research)",
+   "publisher": "Calif (Calif Research)",
+   "url": "https://calif.io/php2shell/",
+   "primary": true
+  },
+  {
+   "id": "source:daubois-blog-php2shell-rumors",
+   "kind": "source",
+   "label": "Alexandre Daubois (PHP security team / PHP Foundation)",
+   "publisher": "Alexandre Daubois (PHP security team / PHP Foundation)",
+   "url": "https://daubois.dev/blog/cve-2026-109618-php2shell-rumors/",
+   "primary": false
+  },
+  {
+   "id": "source:cloudflare-blog-php2shell-waf",
+   "kind": "source",
+   "label": "Cloudflare",
+   "publisher": "Cloudflare",
+   "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+   "primary": true
+  },
+  {
+   "id": "source:github-ghsa-6wmf-4rv5-p3rp",
+   "kind": "source",
+   "label": "PHP (php/php-src GitHub security advisory, published by bukka)",
+   "publisher": "PHP (php/php-src GitHub security advisory, published by bukka)",
+   "url": "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp",
+   "primary": true
+  },
+  {
+   "id": "source:thehackernews-php2shell-4days",
+   "kind": "source",
+   "label": "The Hacker News (Ravie Lakshmanan)",
+   "publisher": "The Hacker News (Ravie Lakshmanan)",
+   "url": "https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html",
+   "primary": false
+  },
+  {
+   "id": "source:certeu-sa-2026-018",
+   "kind": "source",
+   "label": "CERT-EU",
+   "publisher": "CERT-EU",
+   "url": "https://cert.europa.eu/publications/security-advisories/2026-018/",
+   "primary": true
+  },
+  {
+   "id": "source:certlv-php-preventive",
+   "kind": "source",
+   "label": "CERT.LV (Latvia)",
+   "publisher": "CERT.LV (Latvia)",
+   "url": "https://cert.lv/lv/2026/10/saistiba-ar-globali-atklatam-php-ievainojamibam-latvija-ievies-preventivus-pasakumus",
+   "primary": true
+  },
+  {
+   "id": "source:cisa-alert-php-20261021",
+   "kind": "source",
+   "label": "US Cybersecurity and Infrastructure Security Agency (CISA)",
+   "publisher": "US Cybersecurity and Infrastructure Security Agency (CISA)",
+   "url": "https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching",
+   "primary": true
+  },
+  {
+   "id": "source:openwall-oss-security-2026-10-20-34",
+   "kind": "source",
+   "label": "oss-security list (Alan Coopersmith, Oracle)",
+   "publisher": "oss-security list (Alan Coopersmith, Oracle)",
+   "url": "https://www.openwall.com/lists/oss-security/2026/10/20/34",
+   "primary": true
+  },
+  {
+   "id": "source:x-openai-php2shell",
+   "kind": "source",
+   "label": "OpenAI (@OpenAI)",
+   "publisher": "OpenAI (@OpenAI)",
+   "url": "https://x.com/OpenAI/status/2112907856018309586",
+   "primary": true
+  },
+  {
+   "id": "source:x-wiz-io-php2shell",
+   "kind": "source",
+   "label": "Wiz (@wiz_io)",
+   "publisher": "Wiz (@wiz_io)",
+   "url": "https://x.com/wiz_io/status/2112899813264277528",
+   "primary": true
+  },
+  {
+   "id": "source:certfr-2026-ale-014",
+   "kind": "source",
+   "label": "CERT-FR (ANSSI)",
+   "publisher": "CERT-FR (ANSSI)",
+   "url": "https://cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-014/",
+   "primary": true
+  },
+  {
+   "id": "source:cve-cve-2026-109618",
+   "kind": "source",
+   "label": "CVE Program (CNA: PHP Group)",
+   "publisher": "CVE Program (CNA: PHP Group)",
+   "url": "https://www.cve.org/CVERecord?id=CVE-2026-109618",
+   "primary": true
+  },
+  {
+   "id": "source:github-php-src-tag-php-8.5.12",
+   "kind": "source",
+   "label": "php/php-src on GitHub (release by adoy)",
+   "publisher": "php/php-src on GitHub (release by adoy)",
+   "url": "https://github.com/php/php-src/releases/tag/php-8.5.12",
+   "primary": true
+  },
+  {
+   "id": "source:nsa-press-php-4630238",
+   "kind": "source",
+   "label": "US National Security Agency (NSA)",
+   "publisher": "US National Security Agency (NSA)",
+   "url": "https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4630238/nsa-advisory-critical-patches-recommended-for-php-vulnerabilities/",
+   "primary": true
+  },
+  {
+   "id": "source:openwall-oss-security-109619-thread",
+   "kind": "source",
+   "label": "oss-security list (replies: Aaron Rainbolt, Yves-Alexis Perez/Debian, Christian Fischer/Greenbone)",
+   "publisher": "oss-security list (replies: Aaron Rainbolt, Yves-Alexis Perez/Debian, Christian Fischer/Greenbone)",
+   "url": "https://www.openwall.com/lists/oss-security/2026/10/21/16",
+   "primary": false
+  },
+  {
+   "id": "source:openwall-oss-security-2026-10-21-6",
+   "kind": "source",
+   "label": "oss-security list (Jakub Zelenka, PHP security team)",
+   "publisher": "oss-security list (Jakub Zelenka, PHP security team)",
+   "url": "https://www.openwall.com/lists/oss-security/2026/10/21/6",
+   "primary": true
+  },
+  {
+   "id": "source:php-net-changelog-8",
+   "kind": "source",
+   "label": "PHP Group (php.net)",
+   "publisher": "PHP Group (php.net)",
+   "url": "https://www.php.net/ChangeLog-8.php",
+   "primary": true
+  },
+  {
+   "id": "source:phpfoundation-blog-security-release-leak",
+   "kind": "source",
+   "label": "The PHP Foundation",
+   "publisher": "The PHP Foundation",
+   "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
+   "primary": true
+  },
+  {
+   "id": "source:acn-it-php2shell",
+   "kind": "source",
+   "label": "ACN / CSIRT Italia",
+   "publisher": "ACN / CSIRT Italia",
+   "url": "https://www.acn.gov.it/portale/w/php2shell-sanate-vulnerabilita-critiche-in-php",
+   "primary": false
+  },
+  {
+   "id": "source:acsc-alert-php",
+   "kind": "source",
+   "label": "ASD's ACSC (Australia)",
+   "publisher": "ASD's ACSC (Australia)",
+   "url": "https://www.cyber.gov.au/alert/critical-vulnerabilities-in-php",
+   "primary": true
+  },
+  {
+   "id": "source:cccs-al26-026",
+   "kind": "source",
+   "label": "Canadian Centre for Cyber Security (CCCS)",
+   "publisher": "Canadian Centre for Cyber Security (CCCS)",
+   "url": "https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619",
+   "primary": true
+  },
+  {
+   "id": "source:ch-bacs-warnung-php",
+   "kind": "source",
+   "label": "Swiss Federal Office for Cyber Security (BACS / NCSC)",
+   "publisher": "Swiss Federal Office for Cyber Security (BACS / NCSC)",
+   "url": "https://www.bacs.admin.ch/en/warnung-php-en",
+   "primary": true
+  },
+  {
+   "id": "source:cisa-home",
+   "kind": "source",
+   "label": "CISA",
+   "publisher": "CISA",
+   "url": "https://www.cisa.gov/",
+   "primary": false
+  },
+  {
+   "id": "source:cisa-kev-json",
+   "kind": "source",
+   "label": "CISA",
+   "publisher": "CISA",
+   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "primary": true
+  },
+  {
+   "id": "source:cve-cve-2026-109619",
+   "kind": "source",
+   "label": "CVE Program (CNA: PHP Group)",
+   "publisher": "CVE Program (CNA: PHP Group)",
+   "url": "https://www.cve.org/CVERecord?id=CVE-2026-109619",
+   "primary": true
+  },
+  {
+   "id": "source:github-php-src-branch-7.4-backport",
+   "kind": "source",
+   "label": "php/php-src on GitHub",
+   "publisher": "php/php-src on GitHub",
+   "url": "https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619",
+   "primary": true
+  },
+  {
+   "id": "source:github-php-src-tags",
+   "kind": "source",
+   "label": "php/php-src on GitHub",
+   "publisher": "php/php-src on GitHub",
+   "url": "https://github.com/php/php-src/tags",
+   "primary": true
+  },
+  {
+   "id": "source:jpcert-at260033",
+   "kind": "source",
+   "label": "JPCERT/CC (Japan)",
+   "publisher": "JPCERT/CC (Japan)",
+   "url": "https://www.jpcert.or.jp/at/2026/at260033.html",
+   "primary": true
+  },
+  {
+   "id": "source:ncsc-news-php",
+   "kind": "source",
+   "label": "UK National Cyber Security Centre (NCSC)",
+   "publisher": "UK National Cyber Security Centre (NCSC)",
+   "url": "https://www.ncsc.gov.uk/news/critical-security-issue-affecting-php",
+   "primary": true
+  },
+  {
+   "id": "source:ncsc-nl-advisories",
+   "kind": "source",
+   "label": "NCSC-NL",
+   "publisher": "NCSC-NL",
+   "url": "https://advisories.ncsc.nl/advisories",
+   "primary": true
+  },
+  {
+   "id": "source:ncsc-nl-php2shell",
+   "kind": "source",
+   "label": "NCSC-NL (Netherlands National Cyber Security Centre)",
+   "publisher": "NCSC-NL (Netherlands National Cyber Security Centre)",
+   "url": "https://github.com/NCSC-NL/php2shell",
+   "primary": true
+  },
+  {
+   "id": "source:ncsc-nl-php2shell-software-list",
+   "kind": "source",
+   "label": "NCSC-NL (Netherlands National Cyber Security Centre)",
+   "publisher": "NCSC-NL (Netherlands National Cyber Security Centre)",
+   "url": "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list.md",
+   "primary": true
+  },
+  {
+   "id": "source:ncsc-nz-alert-php",
+   "kind": "source",
+   "label": "NCSC New Zealand",
+   "publisher": "NCSC New Zealand",
+   "url": "https://www.ncsc.govt.nz/alerts/cve-2026-109618-and-cve-2026-109619-affecting-php/",
+   "primary": true
+  },
+  {
+   "id": "source:nsa-x-2112903220209098897",
+   "kind": "source",
+   "label": "NSA Cybersecurity (@NSACyber)",
+   "publisher": "NSA Cybersecurity (@NSACyber)",
+   "url": "https://x.com/NSACyber/status/2112903220209098897",
+   "primary": true
+  },
+  {
+   "id": "source:openwall-oss-security-2026-10-21-7",
+   "kind": "source",
+   "label": "oss-security list (Jakub Zelenka, PHP security team)",
+   "publisher": "oss-security list (Jakub Zelenka, PHP security team)",
+   "url": "https://www.openwall.com/lists/oss-security/2026/10/21/7",
+   "primary": true
+  },
+  {
+   "id": "source:techzine-php-chainguard",
+   "kind": "source",
+   "label": "Techzine Global",
+   "publisher": "Techzine Global",
+   "url": "https://www.techzine.eu/news/security/145182/php-accuses-chainguard-in-php2shell/",
+   "primary": false
+  },
+  {
+   "id": "source:x-lcfr-hax-hash-tweet",
+   "kind": "source",
+   "label": "Ryan Austin (@lcfr_hax), Calif",
+   "publisher": "Ryan Austin (@lcfr_hax), Calif",
+   "url": "https://x.com/lcfr_hax/status/2085031675382071483",
+   "primary": true
+  },
+  {
+   "id": "event:0",
+   "kind": "event",
+   "label": "Quarkslab audits PHP (funded through OSTIF and the Sovereign Tech Agency). While fixing on",
+   "at": "2024"
+  },
+  {
+   "id": "event:1",
+   "kind": "event",
+   "label": "OpenAI launches Patch the Planet (a Daybreak initiative with Trail of Bits, HackerOne and ",
+   "at": "2026-06"
+  },
+  {
+   "id": "event:2",
+   "kind": "event",
+   "label": "Calif begins an audit of PHP under Patch the Planet; Volker Dusch accepts the invitation.",
+   "at": "2026-07-30"
+  },
+  {
+   "id": "event:3",
+   "kind": "event",
+   "label": "Calif discovers 'multiple different paths independently leading to RCE that resurfaced the",
+   "at": "2026-08-01"
+  },
+  {
+   "id": "event:4",
+   "kind": "event",
+   "label": "Ryan Austin (@lcfr_hax) posts a SHA-256 hash on X as a commitment to one finding.",
+   "at": "2026-08-05T15:54Z"
+  },
+  {
+   "id": "event:5",
+   "kind": "event",
+   "label": "Calif reports the first bug to PHP and coordinated disclosure begins. OpenAI independently",
+   "at": "2026-08-11"
+  },
+  {
+   "id": "event:6",
+   "kind": "event",
+   "label": "Calif shares an RCE proof of concept with PHP; PHP confirms it works on 15 August.",
+   "at": "2026-08-14"
+  },
+  {
+   "id": "event:7",
+   "kind": "event",
+   "label": "Wiz Research discovers the first vulnerability using Wiz Atlas, Gemini 4 Argon and GPT-5.6",
+   "at": "2026-08-19"
+  },
+  {
+   "id": "event:8",
+   "kind": "event",
+   "label": "Calif reports the second bug to PHP.",
+   "at": "2026-08-21"
+  },
+  {
+   "id": "event:9",
+   "kind": "event",
+   "label": "Wiz reports to the PHP security team.",
+   "at": "2026-08-24"
+  },
+  {
+   "id": "event:10",
+   "kind": "event",
+   "label": "The GitHub security advisory is opened, credited to lcfr-hax, sagitzadik-wiz, amyb-oai and",
+   "at": "2026-08-27"
+  },
+  {
+   "id": "event:11",
+   "kind": "event",
+   "label": "Further attack vectors reported by OpenAI.",
+   "at": "2026-09-18"
+  },
+  {
+   "id": "event:12",
+   "kind": "event",
+   "label": "PHP acknowledges Wiz's reports 'and begins developing a coordinated fix'.",
+   "at": "2026-09-21"
+  },
+  {
+   "id": "event:13",
+   "kind": "event",
+   "label": "The fix pull request is opened.",
+   "at": "2026-09-25"
+  },
+  {
+   "id": "event:14",
+   "kind": "event",
+   "label": "Cloudflare starts developing WAF protections 'since early October 2026'.",
+   "at": "2026-10"
+  },
+  {
+   "id": "event:15",
+   "kind": "event",
+   "label": "CVE-2026-109618 and CVE-2026-109619 are reserved.",
+   "at": "2026-10-12T21:03:58Z"
+  },
+  {
+   "id": "event:16",
+   "kind": "event",
+   "label": "An exploit attempt from an anonymisation-network IP hits an Amazon MadPot honeypot.",
+   "at": "2026-10-17"
+  },
+  {
+   "id": "event:17",
+   "kind": "event",
+   "label": "The final fix commit is authored; the 7.4 backport branch's commit is dated 18:10:24Z.",
+   "at": "2026-10-18"
+  },
+  {
+   "id": "event:18",
+   "kind": "event",
+   "label": "Release commits for 8.5.12, 8.4.27, 8.3.36 and 8.2.35 are made under embargo (14:00 to 17:",
+   "at": "2026-10-19T14:00Z"
+  },
+  {
+   "id": "event:19",
+   "kind": "event",
+   "label": "The two CVE IDs begin circulating on forums and social media with a wrong release time and",
+   "at": "2026-10-20T15:00Z"
+  },
+  {
+   "id": "event:20",
+   "kind": "event",
+   "label": "php.net publishes the pre-announcement: release moved to 21 October 14:00 UTC, two critica",
+   "at": "2026-10-20T19:30Z"
+  },
+  {
+   "id": "event:21",
+   "kind": "event",
+   "label": "Calif 'mistakenly published a video' showing its proof of concept against several targets;",
+   "at": "2026-10-20T20:00Z"
+  },
+  {
+   "id": "event:22",
+   "kind": "event",
+   "label": "Alan Coopersmith relays the php.net pre-announcement to oss-security.",
+   "at": "2026-10-20T20:22:51Z"
+  },
+  {
+   "id": "event:23",
+   "kind": "event",
+   "label": "Swiss BACS posts a warning (home-page teaser dated 20 October; the page itself now says 21",
+   "at": "2026-10-20"
+  },
+  {
+   "id": "event:24",
+   "kind": "event",
+   "label": "The PHP project starts giving mitigation advice to a few critical-infrastructure providers",
+   "at": "2026-10-20T23:00Z"
+  },
+  {
+   "id": "event:25",
+   "kind": "event",
+   "label": "Amazon sees proof-of-concept attempts, then six hours of attempts from anonymised infrastr",
+   "at": "2026-10-21T02:00Z"
+  },
+  {
+   "id": "event:26",
+   "kind": "event",
+   "label": "Cloudflare's WAF protections go live for all customers, about nine hours ahead of disclosu",
+   "at": "2026-10-21T03:02Z"
+  },
+  {
+   "id": "event:27",
+   "kind": "event",
+   "label": "Chainguard publishes built images containing the fix, 'more than six hours before the coor",
+   "at": "2026-10-21T07:41Z"
+  },
+  {
+   "id": "event:28",
+   "kind": "event",
+   "label": "ELLIO records its first sensor hit.",
+   "at": "2026-10-21T08:36Z"
+  },
+  {
+   "id": "event:29",
+   "kind": "event",
+   "label": "CERT-EU's stated release time for the PHP fixes.",
+   "at": "2026-10-21T13:30Z"
+  },
+  {
+   "id": "event:30",
+   "kind": "event",
+   "label": "Wiz posts 'BREAKING ... #PHP2SHELL ... impacting 70% of the Internet', 28 minutes before t",
+   "at": "2026-10-21T13:32Z"
+  },
+  {
+   "id": "event:31",
+   "kind": "event",
+   "label": "GHSA-6wmf-4rv5-p3rp (CVE-2026-109619) and, twelve seconds later, GHSA-w8hw-w9fx-j79w (CVE-",
+   "at": "2026-10-21T13:34:13Z"
+  },
+  {
+   "id": "event:32",
+   "kind": "event",
+   "label": "Signed tags php-8.5.12, php-8.4.27, php-8.3.36 and php-8.2.35 are created.",
+   "at": "2026-10-21T13:35:38Z"
+  },
+  {
+   "id": "event:33",
+   "kind": "event",
+   "label": "NSA Cybersecurity posts on X: 'Effective Immediately ... be prepared for an update address",
+   "at": "2026-10-21T13:45:58Z"
+  },
+  {
+   "id": "event:34",
+   "kind": "event",
+   "label": "The CVE record for CVE-2026-109618 is published; CVE-2026-109619 follows at 13:54:43Z.",
+   "at": "2026-10-21T13:48:34Z"
+  },
+  {
+   "id": "event:35",
+   "kind": "event",
+   "label": "The planned release time. php.net's advisory 'Critical remote code execution vulnerabiliti",
+   "at": "2026-10-21T14:00Z"
+  },
+  {
+   "id": "event:36",
+   "kind": "event",
+   "label": "OpenAI posts: models 'helped researchers ... discover critical security flaws in PHP ... u",
+   "at": "2026-10-21T14:04Z"
+  },
+  {
+   "id": "event:37",
+   "kind": "event",
+   "label": "CISA releases KEV catalog version 2026.10.21; neither PHP CVE is in it.",
+   "at": "2026-10-21T14:04:39Z"
+  },
+  {
+   "id": "event:38",
+   "kind": "event",
+   "label": "GitHub release php-8.5.12 is published by adoy.",
+   "at": "2026-10-21T14:06:46Z"
+  },
+  {
+   "id": "event:39",
+   "kind": "event",
+   "label": "NVD publishes both CVEs with the CNA's CVSS v4.0 9.2 and no NIST score.",
+   "at": "2026-10-21T14:17:09Z"
+  },
+  {
+   "id": "event:40",
+   "kind": "event",
+   "label": "CISA's ADP assessment on both CVE records: exploitation none, automatable no, technical im",
+   "at": "2026-10-21T14:34Z"
+  },
+  {
+   "id": "event:41",
+   "kind": "event",
+   "label": "Jakub Zelenka announces CVE-2026-109618 on oss-security; CVE-2026-109619 at 14:44:06Z.",
+   "at": "2026-10-21T14:41:54Z"
+  },
+  {
+   "id": "event:42",
+   "kind": "event",
+   "label": "CISA alert 'Critical Vulnerabilities in PHP Require Immediate Patching': take systems offl",
+   "at": "2026-10-21"
+  },
+  {
+   "id": "event:43",
+   "kind": "event",
+   "label": "CERT-EU Security Advisory 2026-018 (stated 15:20:18, timezone not given).",
+   "at": "2026-10-21T15:20Z"
+  },
+  {
+   "id": "event:44",
+   "kind": "event",
+   "label": "Aaron Rainbolt relays to oss-security a Fediverse report that the 8.5.12 fix may be incomp",
+   "at": "2026-10-21T15:24:37Z"
+  },
+  {
+   "id": "event:45",
+   "kind": "event",
+   "label": "NCSC-NL's php2shell README last significant change (17:25 CEST). CERT.LV publishes: Latvia",
+   "at": "2026-10-21T15:25Z"
+  },
+  {
+   "id": "event:46",
+   "kind": "event",
+   "label": "Per a Matrix channel, Canonical asked PHP about the Fediverse report and was told it is 'u",
+   "at": "2026-10-21T17:29Z"
+  },
+  {
+   "id": "event:47",
+   "kind": "event",
+   "label": "CERT.LV update: the unified state website platform is patched; lsm.lv and 112.lv restored;",
+   "at": "2026-10-21T20:00Z"
+  },
+  {
+   "id": "event:48",
+   "kind": "event",
+   "label": "NCSC New Zealand: 'aware of reports of active exploitation' (09:15 NZDT 22 October; update",
+   "at": "2026-10-21T20:15Z"
+  },
+  {
+   "id": "event:49",
+   "kind": "event",
+   "label": "NSA Cybersecurity posts 'UPDATE: Specific mitigation guidance ... is now available', linki",
+   "at": "2026-10-22T00:43:58Z"
+  },
+  {
+   "id": "event:50",
+   "kind": "event",
+   "label": "JVN publishes its note (14:20 JST); JPCERT/CC alert JPCERT-AT-2026-0033 is dated 22 Octobe",
+   "at": "2026-10-22T05:20Z"
+  },
+  {
+   "id": "event:51",
+   "kind": "event",
+   "label": "BBC News opens its live page: 'Global scramble to fix critical cyber-security flaws as man",
+   "at": "2026-10-22T06:16:24Z"
+  },
+  {
+   "id": "event:52",
+   "kind": "event",
+   "label": "Greenbone on oss-security: the backports imply versions down to 7.4 are affected, whatever",
+   "at": "2026-10-22T06:45:47Z"
+  },
+  {
+   "id": "event:53",
+   "kind": "event",
+   "label": "The BBC reports the NSA's X post.",
+   "at": "2026-10-22T06:55:50Z"
+  },
+  {
+   "id": "event:54",
+   "kind": "event",
+   "label": "Ryan Austin on BBC Radio 4: no evidence of exploitation yet.",
+   "at": "2026-10-22T07:00Z"
+  },
+  {
+   "id": "event:55",
+   "kind": "event",
+   "label": "The UK NCSC page is modified (HTTP last-modified).",
+   "at": "2026-10-22T07:30:02Z"
+  },
+  {
+   "id": "event:56",
+   "kind": "event",
+   "label": "The evidence vault behind this site is opened; the first capture of the BBC live page is a",
+   "at": "2026-10-22T08:03Z"
+  },
+  {
+   "id": "event:57",
+   "kind": "event",
+   "label": "NCSC-NL merges pull request 10; the inventory has 674 entries at commit cca173c64ec5.",
+   "at": "2026-10-22T08:40:58Z"
+  },
+  {
+   "id": "event:58",
+   "kind": "event",
+   "label": "The Hacker News publishes Amazon's account of the 17 October honeypot attempt and VulnChec",
+   "at": "2026-10-22"
+  }
+ ],
+ "edges": [
+  {
+   "from": "claim:two-cves-9.2",
+   "to": "source:cve-cve-2026-109618",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:two-cves-9.2",
+   "to": "source:cve-cve-2026-109619",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:two-cves-9.2",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:two-cves-9.2",
+   "to": "source:github-ghsa-6wmf-4rv5-p3rp",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:two-cves-9.2",
+   "to": "source:php-net-advisory",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:cvss-10",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:cvss-10",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:rce-modphp",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:rce-modphp",
+   "to": "source:openwall-oss-security-2026-10-21-6",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:rce-modphp",
+   "to": "source:php-net-advisory",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:rce-fpm",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:rce-fpm",
+   "to": "source:github-ghsa-6wmf-4rv5-p3rp",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:rce-fpm",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:rce-fpm",
+   "to": "source:openwall-oss-security-2026-10-21-6",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fix-bailout",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fix-bailout",
+   "to": "source:php-net-changelog-8",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fix-bailout",
+   "to": "source:github-php-src-branch-7.4-backport",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:fix-incomplete",
+   "to": "source:openwall-oss-security-109619-thread",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:versions-old",
+   "to": "source:ncsc-nl-advisories",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:versions-old",
+   "to": "source:x-wiz-io-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:versions-old",
+   "to": "source:certfr-2026-ale-014",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:versions-old",
+   "to": "source:openwall-oss-security-109619-thread",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:only-update",
+   "to": "source:php-net-advisory",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:only-update",
+   "to": "source:openwall-oss-security-2026-10-21-7",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:only-update",
+   "to": "source:github-ghsa-6wmf-4rv5-p3rp",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:waf",
+   "to": "source:cisa-alert-php-20261021",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:waf",
+   "to": "source:ch-bacs-warnung-php",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:waf",
+   "to": "source:cloudflare-blog-php2shell-waf",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:wordpress-drupal",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:wordpress-drupal",
+   "to": "source:wiz-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:scale-70pc-internet",
+   "to": "source:wiz-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:scale-70pc-internet",
+   "to": "source:x-wiz-io-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:scale-70pc-internet",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:scale-70pc-websites",
+   "to": "source:cloudflare-blog-php2shell-waf",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:scale-70pc-websites",
+   "to": "source:x-openai-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:scale-70pc-websites",
+   "to": "source:wiz-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:scale-30m",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:scale-2.6m-hosts",
+   "to": "source:thehackernews-php2shell-4days",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:scale-latvia",
+   "to": "source:certlv-php-preventive",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:scale-ncsc-nl",
+   "to": "source:ncsc-nl-php2shell-software-list",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:ai-found",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:ai-found",
+   "to": "source:x-openai-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:ai-found",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:ai-found",
+   "to": "source:wiz-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:who-first",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:who-first",
+   "to": "source:x-lcfr-hax-hash-tweet",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:who-first",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:openai-same-day",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:openai-same-day",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:wiz-independent",
+   "to": "source:wiz-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:wiz-independent",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:four-reporters",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:four-reporters",
+   "to": "source:github-ghsa-6wmf-4rv5-p3rp",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:four-reporters",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:quarkslab-2024",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:quarkslab-2024",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:ahead-of-attackers",
+   "to": "source:x-openai-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:ahead-of-attackers",
+   "to": "source:thehackernews-php2shell-4days",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:most-severe",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:most-severe",
+   "to": "source:wiz-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:leak-cve-ids",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:leak-cve-ids",
+   "to": "source:phpfoundation-blog-security-release-leak",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:leak-hn",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:leak-watchtowr",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:leak-watchtowr",
+   "to": "source:certeu-sa-2026-018",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:leak-video",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:leak-video",
+   "to": "source:phpfoundation-blog-security-release-leak",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:leak-video",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:leak-video",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:leak-mitigations",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:chainguard",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:chainguard",
+   "to": "source:techzine-php-chainguard",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-moved",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-moved",
+   "to": "source:openwall-oss-security-2026-10-20-34",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-moved",
+   "to": "source:x-wiz-io-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-moved",
+   "to": "source:php-net-changelog-8",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:disclosure-22oct",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:disclosure-22oct",
+   "to": "source:php-net-advisory",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:disclosure-22oct",
+   "to": "source:github-php-src-tag-php-8.5.12",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-time",
+   "to": "source:openwall-oss-security-2026-10-20-34",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-time",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-time",
+   "to": "source:certfr-2026-ale-014",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-time",
+   "to": "source:certeu-sa-2026-018",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-time",
+   "to": "source:github-php-src-tags",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-time",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-time",
+   "to": "source:github-php-src-tag-php-8.5.12",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:release-time",
+   "to": "source:php-net-advisory",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:preannounce-time",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:preannounce-time",
+   "to": "source:openwall-oss-security-2026-10-20-34",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:preannounce-time",
+   "to": "source:php-net-advisory",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-exploitation",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:cisa-none",
+   "to": "source:cisa-alert-php-20261021",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:cisa-none",
+   "to": "source:cisa-kev-json",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:cisa-none",
+   "to": "source:cve-cve-2026-109618",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:nz-active",
+   "to": "source:ncsc-nz-alert-php",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:amazon-honeypot",
+   "to": "source:thehackernews-php2shell-4days",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:cloudflare-traffic",
+   "to": "source:cloudflare-blog-php2shell-waf",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:probing",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:probing",
+   "to": "source:cloudflare-blog-php2shell-waf",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:probing",
+   "to": "source:thehackernews-php2shell-4days",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:latvia-attempts",
+   "to": "source:certlv-php-preventive",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:vibe-code",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-nsa",
+   "to": "source:nsa-x-2112903220209098897",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-nsa",
+   "to": "source:nsa-press-php-4630238",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-cisa",
+   "to": "source:cisa-alert-php-20261021",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-ncsc",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-ncsc",
+   "to": "source:ncsc-news-php",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-ncsc",
+   "to": "source:cccs-al26-026",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-allies",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-allies",
+   "to": "source:acsc-alert-php",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-allies",
+   "to": "source:certeu-sa-2026-018",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-allies",
+   "to": "source:ncsc-nl-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-allies",
+   "to": "source:acn-it-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:offline-allies",
+   "to": "source:jpcert-at260033",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:affected-sites",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:latvia-offline",
+   "to": "source:certlv-php-preventive",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:gov-patch-required",
+   "to": "source:nsa-press-php-4630238",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:gov-patch-required",
+   "to": "source:cisa-home",
+   "rel": "cites"
+  },
+  {
+   "from": "event:0",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:0",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:0",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "event:1",
+   "to": "source:openai-patch-the-planet-launch",
+   "rel": "cites"
+  },
+  {
+   "from": "event:1",
+   "to": "source:patchtheplanet-org",
+   "rel": "cites"
+  },
+  {
+   "from": "event:2",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:2",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:3",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:4",
+   "to": "source:x-lcfr-hax-hash-tweet",
+   "rel": "cites"
+  },
+  {
+   "from": "event:4",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:5",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:5",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:6",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:7",
+   "to": "source:wiz-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:8",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:9",
+   "to": "source:wiz-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:9",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:10",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "event:11",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:12",
+   "to": "source:wiz-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:13",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "event:14",
+   "to": "source:cloudflare-blog-php2shell-waf",
+   "rel": "cites"
+  },
+  {
+   "from": "event:15",
+   "to": "source:cve-cve-2026-109618",
+   "rel": "cites"
+  },
+  {
+   "from": "event:15",
+   "to": "source:cve-cve-2026-109619",
+   "rel": "cites"
+  },
+  {
+   "from": "event:16",
+   "to": "source:thehackernews-php2shell-4days",
+   "rel": "cites"
+  },
+  {
+   "from": "event:17",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "event:17",
+   "to": "source:github-php-src-branch-7.4-backport",
+   "rel": "cites"
+  },
+  {
+   "from": "event:18",
+   "to": "source:github-php-src-tags",
+   "rel": "cites"
+  },
+  {
+   "from": "event:18",
+   "to": "source:github-php-src-tag-php-8.5.12",
+   "rel": "cites"
+  },
+  {
+   "from": "event:19",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:19",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "event:20",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:20",
+   "to": "source:openwall-oss-security-2026-10-20-34",
+   "rel": "cites"
+  },
+  {
+   "from": "event:20",
+   "to": "source:php-net-advisory",
+   "rel": "cites"
+  },
+  {
+   "from": "event:21",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:21",
+   "to": "source:phpfoundation-blog-security-release-leak",
+   "rel": "cites"
+  },
+  {
+   "from": "event:22",
+   "to": "source:openwall-oss-security-2026-10-20-34",
+   "rel": "cites"
+  },
+  {
+   "from": "event:23",
+   "to": "source:ch-ncsc-home",
+   "rel": "cites"
+  },
+  {
+   "from": "event:23",
+   "to": "source:ch-bacs-warnung-php",
+   "rel": "cites"
+  },
+  {
+   "from": "event:24",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:25",
+   "to": "source:thehackernews-php2shell-4days",
+   "rel": "cites"
+  },
+  {
+   "from": "event:26",
+   "to": "source:cloudflare-blog-php2shell-waf",
+   "rel": "cites"
+  },
+  {
+   "from": "event:27",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:27",
+   "to": "source:techzine-php-chainguard",
+   "rel": "cites"
+  },
+  {
+   "from": "event:28",
+   "to": "source:thehackernews-php2shell-4days",
+   "rel": "cites"
+  },
+  {
+   "from": "event:28",
+   "to": "source:phpfoundation-blog-security-release-leak",
+   "rel": "cites"
+  },
+  {
+   "from": "event:29",
+   "to": "source:certeu-sa-2026-018",
+   "rel": "cites"
+  },
+  {
+   "from": "event:30",
+   "to": "source:x-wiz-io-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:31",
+   "to": "source:github-ghsa-6wmf-4rv5-p3rp",
+   "rel": "cites"
+  },
+  {
+   "from": "event:31",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w",
+   "rel": "cites"
+  },
+  {
+   "from": "event:32",
+   "to": "source:github-php-src-tags",
+   "rel": "cites"
+  },
+  {
+   "from": "event:33",
+   "to": "source:nsa-x-2112903220209098897",
+   "rel": "cites"
+  },
+  {
+   "from": "event:34",
+   "to": "source:cve-cve-2026-109618",
+   "rel": "cites"
+  },
+  {
+   "from": "event:34",
+   "to": "source:cve-cve-2026-109619",
+   "rel": "cites"
+  },
+  {
+   "from": "event:35",
+   "to": "source:php-net-advisory",
+   "rel": "cites"
+  },
+  {
+   "from": "event:35",
+   "to": "source:openwall-oss-security-2026-10-20-34",
+   "rel": "cites"
+  },
+  {
+   "from": "event:35",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "event:36",
+   "to": "source:x-openai-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:37",
+   "to": "source:cisa-kev-json",
+   "rel": "cites"
+  },
+  {
+   "from": "event:38",
+   "to": "source:github-php-src-tag-php-8.5.12",
+   "rel": "cites"
+  },
+  {
+   "from": "event:39",
+   "to": "source:nvd-cve-2026-109618",
+   "rel": "cites"
+  },
+  {
+   "from": "event:39",
+   "to": "source:nvd-cve-2026-109619",
+   "rel": "cites"
+  },
+  {
+   "from": "event:40",
+   "to": "source:cve-cve-2026-109618",
+   "rel": "cites"
+  },
+  {
+   "from": "event:40",
+   "to": "source:cve-cve-2026-109619",
+   "rel": "cites"
+  },
+  {
+   "from": "event:41",
+   "to": "source:openwall-oss-security-2026-10-21-6",
+   "rel": "cites"
+  },
+  {
+   "from": "event:41",
+   "to": "source:openwall-oss-security-2026-10-21-7",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:cisa-alert-php-20261021",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:nsa-press-php-4630238",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:ncsc-news-php",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:cccs-al26-026",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:certfr-2026-ale-014",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:acn-it-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:cloudflare-blog-php2shell-waf",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:wiz-blog-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:calif-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:php-foundation-blog-security-release",
+   "rel": "cites"
+  },
+  {
+   "from": "event:42",
+   "to": "source:daubois-blog-php2shell-rumors",
+   "rel": "cites"
+  },
+  {
+   "from": "event:43",
+   "to": "source:certeu-sa-2026-018",
+   "rel": "cites"
+  },
+  {
+   "from": "event:44",
+   "to": "source:openwall-oss-security-109619-thread",
+   "rel": "cites"
+  },
+  {
+   "from": "event:45",
+   "to": "source:ncsc-nl-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:45",
+   "to": "source:certlv-php-preventive",
+   "rel": "cites"
+  },
+  {
+   "from": "event:46",
+   "to": "source:openwall-oss-security-109619-thread",
+   "rel": "cites"
+  },
+  {
+   "from": "event:47",
+   "to": "source:certlv-php-preventive",
+   "rel": "cites"
+  },
+  {
+   "from": "event:48",
+   "to": "source:ncsc-nz-alert-php",
+   "rel": "cites"
+  },
+  {
+   "from": "event:49",
+   "to": "source:nsa-x-2113068811058622971",
+   "rel": "cites"
+  },
+  {
+   "from": "event:49",
+   "to": "source:nsa-press-php-4630238",
+   "rel": "cites"
+  },
+  {
+   "from": "event:50",
+   "to": "source:jpcert-home",
+   "rel": "cites"
+  },
+  {
+   "from": "event:50",
+   "to": "source:jpcert-at260033",
+   "rel": "cites"
+  },
+  {
+   "from": "event:51",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "event:52",
+   "to": "source:openwall-oss-security-109619-thread",
+   "rel": "cites"
+  },
+  {
+   "from": "event:53",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "event:54",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "event:55",
+   "to": "source:ncsc-news-php",
+   "rel": "cites"
+  },
+  {
+   "from": "event:56",
+   "to": "source:bbc-live-ckgel5xp2xv9t",
+   "rel": "cites"
+  },
+  {
+   "from": "event:57",
+   "to": "source:ncsc-nl-php2shell-software-list",
+   "rel": "cites"
+  },
+  {
+   "from": "event:57",
+   "to": "source:ncsc-nl-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "event:58",
+   "to": "source:thehackernews-php2shell-4days",
+   "rel": "cites"
+  }
+ ],
+ "note": "A node is just a node; meaning lives in the edges. Every edge is a citation from a claim or an event to a captured source."
+}

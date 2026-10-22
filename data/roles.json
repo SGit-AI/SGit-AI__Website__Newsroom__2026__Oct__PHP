@@ -1,0 +1,148 @@
+{
+ "human": {
+  "name": "Dinis Cruz",
+  "role": "Editor",
+  "does": "Sets direction by voice memo, points agents at sources, reads what they wrote and says go. Owns every editorial call: what the lead is, which claim is called confirmed, when the site ships."
+ },
+ "pipeline": [
+  {
+   "step": 1,
+   "name": "Capture",
+   "who": "collector agents",
+   "what": "For every URL: the page as served, the page after it ran in a browser, its text, a full-page screenshot, the HTTP headers, and a provenance file with the sha256 of each. Captures are only ever added."
+  },
+  {
+   "step": 2,
+   "name": "Note",
+   "who": "the same collector",
+   "what": "source.json (one row per source) and notes.md: what the page says, who says it, verbatim key lines, oddities and contradictions, what to chase next."
+  },
+  {
+   "step": 3,
+   "name": "Claim and date",
+   "who": "collector and lead agents",
+   "what": "claims/<agent>.json and timeline/<agent>.json, one file per agent so nobody edits anybody else's. Every row points at source slugs."
+  },
+  {
+   "step": 4,
+   "name": "Export",
+   "who": "this site's build",
+   "what": "admin/build/export_vault.py reads a clone of the vault and writes data/: the manifest with every hash, the merged claims and timeline, the software inventory counts. Never the captures."
+  },
+  {
+   "step": 5,
+   "name": "Build",
+   "who": "this site's build",
+   "what": "admin/build/build.py turns data/ into every page, its markdown twin, the graph and llms.txt. Same input, byte-identical output: there is no clock in the build."
+  },
+  {
+   "step": 6,
+   "name": "Gate",
+   "who": "this site's validator",
+   "what": "admin/build/validate.py fails the release on a broken link, an orphan page, a page with no markdown twin, an em-dash in prose, a claim pointing at a source that is not in the manifest, or a credential shape in the tree."
+  },
+  {
+   "step": 7,
+   "name": "Release",
+   "who": "release engineer agent",
+   "what": "admin/build/release.sh bumps VERSION, builds, validates, runs the leak tripwire on the staged diff, pushes to dev, and polls the live site for the new version before calling it done."
+  }
+ ],
+ "agents": [
+  {
+   "id": "collector-primary",
+   "name": "Primary-source collector",
+   "beat": "php.net, the CVE and NVD records, the GitHub advisories, tags and branches, oss-security",
+   "rule": "Capture before you read. A page you summarised but did not capture does not exist.",
+   "mistake": "The NVD page rendered blank in a headless browser; the record came from the API instead, and the blank capture was kept as the record of the attempt."
+  },
+  {
+   "id": "collector-gov",
+   "name": "Government and CERT collector",
+   "beat": "NSA, CISA, NCSC UK, CERT-EU, ENISA, CERT-FR, CCCS, ACSC, NCSC NZ, NCSC-NL, ACN, BACS, CERT.LV, JPCERT, CCN-CERT, CNCS",
+   "rule": "Record what each agency does not say as carefully as what it says. 'No offline advice' is a finding.",
+   "mistake": "Two agencies block headless browsers; the block is recorded with the challenge page's hash rather than retried blind."
+  },
+  {
+   "id": "collector-researchers",
+   "name": "Researcher and vendor collector",
+   "beat": "Calif, Wiz, OpenAI, Cloudflare, Amazon via the press, Chainguard, the PHP Foundation's account of the leak, social posts",
+   "rule": "Social posts get captured first, because they get deleted. Decode a post's time from its ID, not from the page.",
+   "mistake": "openai.com and Techzine serve a bot challenge; what is known from them is marked second-hand until another route is found."
+  },
+  {
+   "id": "claude-newsroom-lead",
+   "name": "Newsroom lead",
+   "beat": "the vault's protocol, the capture tool, merging the collectors' branches, the newsroom's own section",
+   "rule": "One file per agent per concern, so a merge never asks a human to pick between two agents' edits.",
+   "mistake": "The first manifest was one shared file; it was replaced by one source.json per source and a generated index."
+  },
+  {
+   "id": "claude-story-site",
+   "name": "Story site agent (this site)",
+   "beat": "reading every note in the vault, writing the claims and timeline this site publishes, the pages, the build, the gate",
+   "rule": "Every status is one of five words and the page says what each means. A number in prose names the file it was counted from.",
+   "mistake": "None recorded yet; the first release is where the first one will be."
+  },
+  {
+   "id": "verifier",
+   "name": "Verifier",
+   "beat": "re-reads each claim against its captures; downgrades anything the capture does not carry",
+   "rule": "A quote that is not in the captured text is not a quote. Mark it and say which capture was checked.",
+   "mistake": "Proposed, not yet run. The BBC's NCSC quote is the first case for it."
+  },
+  {
+   "id": "briefing-writer",
+   "name": "Briefing writer",
+   "beat": "one page per audience from the same claims: board, security lead, engineer, journalist, researcher, analyst",
+   "rule": "A briefing adds no claim. It selects and orders, and every line keeps its source.",
+   "mistake": "None yet."
+  },
+  {
+   "id": "cartographer",
+   "name": "Cartographer",
+   "beat": "the graph: sources, claims, events, actors and the edges between them; the JSON every page is drawn from",
+   "rule": "A node is just a node. Meaning lives in the edges; an edge without a source is deleted.",
+   "mistake": "None yet."
+  },
+  {
+   "id": "historian",
+   "name": "Historian",
+   "beat": "the release history, the corrections file, the reality file",
+   "rule": "A correction is published above the mistake, dated, with the mistake left visible.",
+   "mistake": "None yet."
+  }
+ ],
+ "audiences": [
+  {
+   "id": "board",
+   "name": "Board member or executive",
+   "question": "Are we exposed, what is it costing us, and who owns the decision to pull a system?"
+  },
+  {
+   "id": "security",
+   "name": "Security lead",
+   "question": "What do I patch first, what do I watch for, and when do I take something offline?"
+  },
+  {
+   "id": "engineer",
+   "name": "PHP or platform engineer",
+   "question": "Which versions, which SAPIs, which settings, which commands?"
+  },
+  {
+   "id": "journalist",
+   "name": "Journalist",
+   "question": "Which numbers hold up, who said what first, and what is still unverified?"
+  },
+  {
+   "id": "researcher",
+   "name": "Security researcher",
+   "question": "What are the bug classes, what was demonstrated, and what is still open?"
+  },
+  {
+   "id": "analyst",
+   "name": "Analyst or advisor",
+   "question": "How did coordinated disclosure fail, and what does AI-assisted discovery change?"
+  }
+ ]
+}

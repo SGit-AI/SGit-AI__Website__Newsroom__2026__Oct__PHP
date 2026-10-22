@@ -1,0 +1,841 @@
+# Every source: 61 pages, 62 captures, 390 hashes
+
+The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
+
+# Every source, every capture, every hash
+
+61 sources, 46 of them primary, 62 dated captures and 390 hashed files, from the evidence vault at commit `379e3d7f172a`. 6 sources could not be read because the site blocked an automated browser; the block, with the challenge page's hash, is the record. The captures are third-party pages held privately and are not republished; this page links to the originals and lists the SHA-256 of every captured file, so that anyone the vault is later opened to can check that the bytes are the ones the agents saw, at the minute they saw them.
+
+| Kind | Sources |
+|---|---|
+| advisory | 25 |
+| government | 10 |
+| social | 7 |
+| researcher | 6 |
+| cve | 4 |
+| code | 3 |
+| forum | 2 |
+| news | 2 |
+| news-live | 1 |
+| vendor | 1 |
+
+Each capture holds `page.html` (as served), `rendered.html` (after scripts ran), `text.txt`, `screenshot.png`, `headers.json` and `provenance.json`. A `raw/` folder holds anything fetched another way, with its own checksum file. The manifest this page is built from is [data/sources.json](../data/sources.json).
+
+### [PHP2Shell: sanate vulnerabilità critiche in PHP (AL07/261021/CSIRT-ITA)](https://www.acn.gov.it/portale/w/php2shell-sanate-vulnerabilita-critiche-in-php)
+
+**ACN / CSIRT Italia** · advisory · secondary · captured · published 2026-10-21 · added by `collector-gov` · `acn-it-php2shell`
+
+Alert AL07/261021/CSIRT-ITA, published 21-10-2026. CVSS v4.0 9.2 each (Use After Free). Mitigation: only 'aggiornare i prodotti vulnerabili' (update); it gives no offline advice.
+
+capture 20261022T081354Z · HTTP 200 · https://www.acn.gov.it/portale/w/php2shell-sanate-vulnerabilita-critiche-in-php- `headers.json` c44211ff9b8440ef6922919056abed0873179324fdf7db7ddf969c8d1dd6bd15 732 bytes
+- `page.html` 6ab511ebb1dd7a3d6235d88dc71a02c8ecefec27283538cec68a134d33d67440 118,598 bytes
+- `provenance.json` b832861c53d09b3d98083bc23e3c4578748f1f8173e2ea7c23bd8c9dfa6f1c8b 1,038 bytes
+- `rendered.html` 91c9550654c551eeacb33e829fe2246a7307efbcf7cd00d4cf10f5a44413cf07 131,205 bytes
+- `screenshot.png` 94246ab38f323d629edf5c1820908d804f7f45f61bc276e7c77e756aa549fc65 687,162 bytes
+- `text.txt` 19fac2edc25161cd867bda0ea1c8bf8b6ce7625fbdd1e9a9a7cd41bdd8d1bef6 6,137 bytes
+
+### [Critical vulnerabilities in PHP](https://www.cyber.gov.au/alert/critical-vulnerabilities-in-php)
+
+**ASD's ACSC (Australia)** · advisory · primary · captured · published 2026-10-21 (Published); Last reviewed 2026-10-22 · added by `collector-gov` · `acsc-alert-php`
+
+Alert Status: Critical. Published 21 Oct 2026, last reviewed 22 Oct 2026. 'Recent update': identify PHP, review php.net, apply updates and mitigations, monitor. NO offline advice. 'not aware of successful active exploitation within Australia'. Says full details were announced 'Thursday 22 October 2026 at 0100 AEDT' (=21 Oct 14:00Z). The body text is stale (pre-patch).
+
+capture 20261022T081658Z · HTTP 200 · https://www.cyber.gov.au/alert/critical-vulnerabilities-in-php- `headers.json` 3f7c0fe9c702d22193630225a56b0991c08fc52fb05ef53f26ea0f611b798b4e 1,985 bytes
+- `page.html` 650742fe93abb6dec911f58d21b7cd6d8d82c2d4a7b89eb9745e9a9857bc0c72 1,541,271 bytes
+- `provenance.json` 37ce725a8459c6db87ef8d7e3abd3cf92d350bab9e4228852c7d07dd08d65a6f 985 bytes
+- `rendered.html` 731eef8ce851ccf1650bc66cf3bb8658569c3de13b3a8084c14761658743e931 1,557,700 bytes
+- `screenshot.png` 39318847477c383a130dbafc83210dc27ed7ccae88107979ed124e372d67da9d 345,966 bytes
+- `text.txt` 9370af142ded6de9a44fed4330585d677fde367d90d33ce355e9ebe6a75f7d56 6,299 bytes
+
+### [cyber.gov.au home](https://www.cyber.gov.au/)
+
+**ASD's ACSC** · government · secondary · captured · published not stated · added by `collector-gov` · `acsc-home`
+
+Home at 08:16Z: the PHP alert teaser is dated 22 Oct 2026 with the stale pre-disclosure blurb.
+
+capture 20261022T081604Z · HTTP 200 · https://www.cyber.gov.au/- `headers.json` 3d448cbb053930039edd6bcb6779264beb2fa8c4c073bc5084ca3a5b0c369a5f 1,937 bytes
+- `page.html` bd81a8f884e1cbe1f2ae88c146b6198346568f2324677adce3198b5578db19c3 1,854,064 bytes
+- `provenance.json` 992e9c6ce0b26d2edb42343e569ac2634e532a277a5e804ec657ed66acda47a9 879 bytes
+- `rendered.html` e22b8af8cb588bdf894c62c53337db8940108a269e2f517f1d6ffa1886d8d904 1,889,870 bytes
+- `screenshot.png` 3f7acad6a96208dca53692a35f83a89e3b21e8266fcd183892673c6e4b3b39b0 723,009 bytes
+- `text.txt` b7198501ad800f9312359edf414e81c46b1b35f7d0fae787ff629a8f029ad0b9 13,389 bytes
+
+### [PHP: Global scramble to fix critical cyber-security flaws as many websites taken offline - follow live](https://www.bbc.co.uk/news/live/ckgel5xp2xv9t)
+
+**BBC News** · news-live · secondary · captured · published 2026-10-22T06:16:24Z · added by `claude-newsroom-lead` · `bbc-live-ckgel5xp2xv9t`
+
+Live page; bbc.co.uk redirects to bbc.com. raw/ holds a curl copy at 07:55Z and its __INITIAL_DATA__. Captures 080453Z and 080526Z have no raw body (the tool's first fallback was blocked by egress); 080559Z is complete. Edited by Kieran Kelly and Imogen James.
+
+capture 20261022T080453Z · HTTP 200 · https://www.bbc.com/news/live/ckgel5xp2xv9t- `headers.json` 6f92f9cc2df7e178c6a5480cde0a0d07eaa057374c17573ed0539cd2ec5e4f76 5,640 bytes
+- `page.html` dc9a4c45bac2ffecb6c3904ab17c14f29288f0928f0247acd449f62d0b715981 24 bytes
+- `provenance.json` de7ccc50e0cd85c96d0c814a87e22d61df580452ccc7cc08bec00fe2acb36000 1,094 bytes
+- `rendered.html` e9ae7f01673df9b32a99007f255c2106bc6f4179841891af83732ce54cac1bde 500,416 bytes
+- `screenshot.png` a466ce380b452e0a851e07db1d769f1ccb1b41391a8bf001b5febe1a6b0a8352 2,737,568 bytes
+- `text.txt` df1dbe6b553a8c004f6d950a1d606138f2795062d3225feaa37043d24343bc99 14,389 bytes
+capture 20261022T080526Z · HTTP 200 · https://www.bbc.com/news/live/ckgel5xp2xv9t- `headers.json` d63c60c458f9e0144dfc1ec7336b7e7eb13ac35383008623841bf01030b99175 5,690 bytes
+- `page.html` dc9a4c45bac2ffecb6c3904ab17c14f29288f0928f0247acd449f62d0b715981 24 bytes
+- `provenance.json` b0b6c73c98d7b9af8e3cea8a007eb2212d89e38f80d8fdcb1c99b32cac545a18 1,094 bytes
+- `rendered.html` b42a90b0ed17266eac83cb8bc81fc6e2321285b3b3dd01c15aed55411ec51255 511,866 bytes
+- `screenshot.png` 65eb8a2dd5d93f8ef2399b62dd91d4bae200c41997a77ccae9b9388d33c505bf 3,587,122 bytes
+- `text.txt` 9ae96265aa96cff67f4da71f5ed410376023b17283d83b617eab7e98d2602738 14,501 bytes
+capture 20261022T080559Z · HTTP 200 · https://www.bbc.com/news/live/ckgel5xp2xv9t- `headers.json` adef455045234df0fcb6936e0b86ce89d83c6b68719892c1e08bc498d0704517 5,647 bytes
+- `page.html` 50bc0fc20681b834b1a40742cf921b27ceb5356d5ab38b417c7e53513016eefd 501,921 bytes
+- `provenance.json` b62c78eb8ac92bd2d3d7bbd6749e8f0c24519b5d2edac76d107af558eaf78d2f 1,092 bytes
+- `rendered.html` 8ae9c4bca9c7ff8b5037ffa58536c2b75c45efdee1f851d583a80ac5cd05ff5c 501,515 bytes
+- `screenshot.png` f3cf0359a5f9aec2edf5dfa6cd060f55f94aa3c64b90f7e260edec02180a434c 2,685,632 bytes
+- `text.txt` c88b8c5f4c6bc07d2ef85b78d0d66482f0322075621abb0631ef4352932aa97d 14,389 bytes
+raw, 2 files with SHA256SUMS- `initial-data.json` ee7445a58187bcd67df827007a8100941993a24dc3e7eea7e8a45f723a9e3305
+- `page.2026-10-22T0755Z.html` fe32274b64ee109a7e37fc4c26e37e793dc22481a6122888782c393e01102488
+
+### [php2shell by Calif Research — A tale of two PHP remote vulnerabilities](https://calif.io/php2shell/)
+
+**Calif (Calif Research)** · researcher · primary · captured · published 2026-10-21 · added by `collector-researchers` · `calif-php2shell`
+
+Calif's own write-up by Ryan Austin (@lcfr_hax). Page has no machine timestamp; story panel dated 'Oct 21, 2026'. Embeds two YouTube exploit demo videos (pfWZrdzvooc 'php2shell exploit demonstration', cE4h79AWbT4 'Exploiting Nginx with PHP-FPM'); videos NOT downloaded. Its timeline omits the leaked/deleted video.
+
+capture 20261022T081033Z · HTTP 200 · https://calif.io/php2shell/- `headers.json` 1fc0b2864079499b5911e31166e216c1c753a83da9a65d38086609e84372794e 759 bytes
+- `page.html` 9f3df4d68b9d185563f9b5eec4b1e910f296389f54e02b4f6a25fef2573662a3 68,302 bytes
+- `provenance.json` c800836bfdf2759a20495415eb65bff17d26b8d9127d0695f7be27870b1dc67b 906 bytes
+- `rendered.html` 24e345e4514f5240f94df7537536a5ed14ba6e440cffffae74f8c38c7c8e5644 68,280 bytes
+- `screenshot.png` 38990c6ce9af5828a86614d9dff808d621097986d5288e8136bda70412b3ac63 20,097,747 bytes
+- `text.txt` 23afef81971778f954d3cefb62c4901814afddd6ae0948c941af3edead40ced4 23,876 bytes
+
+### [AL26-026 - Critical vulnerabilities impacting PHP - CVE-2026-109618 and CVE-2026-109619](https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619)
+
+**Canadian Centre for Cyber Security (CCCS)** · advisory · primary · captured · published 2026-10-21 · added by `collector-gov` · `cccs-al26-026`
+
+Date: October 21, 2026; Date modified 2026-10-21. 'Where immediate remediation is not feasible, organisations should consider isolating internet-facing applications from public networks until a fix can be applied.' PoC available; no active exploitation identified. Also AV26-1070 (PHP security advisory), same date.
+
+capture 20261022T081700Z · HTTP 200 · https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619- `headers.json` 0db6dd151e1887553a32a56de4d1f6a133645e87d6dbee931f362e8a21a370f3 583 bytes
+- `page.html` 171c897e4a6fde98e73f9d1e221188dae6d0c04b49e8b6a242fba591739a11c9 39,250 bytes
+- `provenance.json` 9759aec757d5df865a795a86bf304ffdcc697988c45f47adcc0159a6771a4fa1 1,195 bytes
+- `rendered.html` d6536d39602e9709a1afb05fb61fad1b88b57a5d1b839a7f5de58c7f3588300c 149,258 bytes
+- `screenshot.png` 9df75da37b7ed8ceb13b241f71f041d29c9f33055750a65070c6c785bbe9cdd2 538,343 bytes
+- `text.txt` 9e7f44cc73e21ad54d1caf36c5273a289839c76ff1e1ac35bf377e4645ad91a2 5,403 bytes
+
+### [Alerts and advisories - Canadian Centre for Cyber Security](https://www.cyber.gc.ca/en/alerts-advisories)
+
+**CCCS** · government · secondary · captured · published not stated · added by `collector-gov` · `cccs-alerts`
+
+Listing page at 08:16Z: AL26-026 and AV26-1070 (PHP), both 2026-10-21.
+
+capture 20261022T081604Z · HTTP 200 · https://www.cyber.gc.ca/en/alerts-advisories- `headers.json` 43f213e29f0be568c8c4a231d0404fc7c33db33ea4b6d75c538f505a2a139b88 586 bytes
+- `page.html` b7e604271809b8579356f2e76d4be26c44d1aa9a92893b73efa23358036ba52e 21,909,500 bytes
+- `provenance.json` bcff9a25cb070bd8554c2d407548464544b8792a9046b93a670f29e70dc5c6ad 1,026 bytes
+- `rendered.html` b15a0c243be41ff42e41fd4f94617f75373bce255f915cc57cded297c97ef6a4 50,788,748 bytes
+- `screenshot.png` 9029e12095ac74977c8777919e317ffd20cc42da26e60903f1964abddab3774d 494,360 bytes
+- `text.txt` c226b8df2f21a14934c6c79d53fae9685707e4adcca0fcf2d7b6143e296b2000 3,812 bytes
+
+### [CCN-CERT AL 11/26: Actualización inmediata de vulnerabilidad crítica en PHP](https://www.ccn-cert.cni.es/es/seguridad-al-dia/alertas-ccn-cert/13200-ccn-cert-al-11-26-actualizacion-inmediata-de-vulnerabilidad-critica-en-php.html)
+
+**CCN-CERT (Spain)** · advisory · primary · blocked · published not stated · added by `collector-gov` · `ccn-cert-al-11-26`
+
+HTTP 403 bot challenge ('Voight-Kampff Browser Test') to both Playwright and curl; WebFetch also got 403. The URL and title come from ENISA CNW-2026-04. The challenge body is saved in raw/.
+
+capture 20261022T081353Z · HTTP 403 · https://www.ccn-cert.cni.es/es/seguridad-al-dia/alertas-ccn-cert/13200-ccn-cert-al-11-26-actualizacion-inmediata-de-vulnerabilidad-critica-en-php.html error: page.title: Execution context was destroyed, most likely because of a navigation- `provenance.json` 3499d3985dcda97902ce1e89dd5edffba4a20b56ba01cab266db1e9fc7f50c36 780 bytes
+raw, 2 files with SHA256SUMS- `curl-body.20261022T0814Z.html` a3de1982de0d6d2967b7ac55d2787011ba4fdd8707f4a8e9e25e1b50b345d9f7
+- `curl-headers.20261022T0814Z.txt` a397cde2f98a7851bb54672621f25f4834926a0250ea5140f65c91110b53d3f8
+
+### [Security Advisory 2026-018: Critical Vulnerabilities in PHP](https://cert.europa.eu/publications/security-advisories/2026-018/)
+
+**CERT-EU** · advisory · primary · captured · published 2026-10-21 15:20:18 (as stated; timezone not given) · added by `collector-gov` · `certeu-sa-2026-018`
+
+v1.0 and v1.1 both 21/10/2026. States the PHP fixes were released '21 October 2026 at 13:30 UTC'. CVSS 9.2 each. Advice: 'patch affected assets immediately. Where that is not feasible, organisations should consider isolating internet-facing applications from public networks until a fix is applied and verified.' Notes PoCs are circulating.
+
+capture 20261022T081329Z · HTTP 200 · https://cert.europa.eu/publications/security-advisories/2026-018/- `headers.json` 035d980d7924b86c61cd912c5ae8e55b5adbdf20e9f99f9c780d7b37e830e596 1,370 bytes
+- `page.html` 1cc49d8c9b94ac2e09eb5f4e2bcb732a0d1fd4f630eaedad06da28a295978e53 24,504 bytes
+- `provenance.json` d5c1ea12a493fd9c195d90ee56eba85c93cd77d6131bce3ac08929d72f275820 999 bytes
+- `rendered.html` abb92e1078d68ea54089f704855e78b2a71cee27a6244c2d3f26cd1b8c90b759 23,744 bytes
+- `screenshot.png` 894baac8f7c1a2e25439f481a468e1c086cf4c783d11e7f020bb354120ef6c99 624,274 bytes
+- `text.txt` c65c95cf165d9ed7ec5d362642e92dd918c77fdfca1d4f88b303db6a3ab24ae3 7,105 bytes
+
+### [[Màj] Multiples vulnérabilités dans PHP (CERTFR-2026-ALE-014)](https://cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-014/)
+
+**CERT-FR (ANSSI)** · advisory · primary · captured · published 2026-10-21 · added by `collector-gov` · `certfr-2026-ale-014`
+
+First and last version 21 Oct 2026. 'Le CERT-FR recommande d'isoler les équipements affectés puis de procéder à la migration vers une version maintenue...'. Affected: all 5.x, 6.x, 7.x, 8.0, 8.1, and 8.2-8.5 below the fixed versions. Workarounds: session.upload_progress off; block multipart Content-Type at WAF.
+
+capture 20261022T081353Z · HTTP 200 · https://cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-014/- `headers.json` 96a5cd42d4ca38099fc910e8c06f10cfd15f15e6ca7bebdb699b3b7245d08d58 1,075 bytes
+- `page.html` 91f474e2f0f414b2d8575b91cecd59d880e62f0179033baae665177100fc094a 26,782 bytes
+- `provenance.json` 53ea7bfd63a634427908cc6846e7e974b45c9cdc7028b88d7e87d148408ecd59 989 bytes
+- `rendered.html` f71933fcd112f86a98d8838cc53fa38dabffe5f27a6c4dc7bfc62f9ef6e9aa7c 27,674 bytes
+- `screenshot.png` e6ccac8825818ecc2cfd2223035c6c335a3de1c38fad734d7dd292215618cef7 502,064 bytes
+- `text.txt` f9e9557ab49ddb9598b22d6774d5466de0429deba8720e6e3fba62d778b5d0f3 5,127 bytes
+
+### [Saistībā ar globāli atklātām PHP ievainojamībām Latvijā ievieš preventīvus pasākumus](https://cert.lv/lv/2026/10/saistiba-ar-globali-atklatam-php-ievainojamibam-latvija-ievies-preventivus-pasakumus)
+
+**CERT.LV (Latvia)** · government · primary · captured · published 2026-10-21T18:25 local (EEST, =15:25Z); updated 2026-10-21T23:00 local (=20:00Z) · added by `collector-gov` · `certlv-php-preventive`
+
+Latvia restricted access from abroad to several state digital resources (geo-blocking, possibly until Mon 26 Oct). Update 23:00: the TVP unified website platform is patched and reachable from Latvia; latvija.gov.lv is restricted only from abroad; lsm.lv and 112.lv restored. About 6000 potentially affected resources in Latvia, a few hundred of them public sector. Automated exploitation attempts seen, none successful so far.
+
+capture 20261022T081354Z · HTTP 200 · https://cert.lv/lv/2026/10/saistiba-ar-globali-atklatam-php-ievainojamibam-latvija-ievies-preventivus-pasakumus- `headers.json` b75279eb611beef16c83a6ab4d307db8ec59d18614d4d21ea1c78320a4346166 737 bytes
+- `page.html` de622b5e59bf43071dcb45655edbd42b337e97f28b3e41e801ebaacc64a33581 35,634 bytes
+- `provenance.json` e046187fdaa6dc172317abf6fa62152e1b5594b3c2d59c75c1de1baafa4667ba 1,158 bytes
+- `rendered.html` 4f3a30ed3f755cd5965265ba1cc6f1cce9e514537463c1f9d2b87fdfceaaf514 35,482 bytes
+- `screenshot.png` 504fd0c9b36378f8039c94b1157842426c17d95ab822429554c1bfc0cdbfb4d2 750,435 bytes
+- `text.txt` e37a6582c4e6c685ad840001892ea94cd8e91ec107708ce4e7b7110899c2d05e 6,579 bytes
+
+### [Critical vulnerabilities in PHP: Install security updates immediately](https://www.bacs.admin.ch/en/warnung-php-en)
+
+**Swiss Federal Office for Cyber Security (BACS / NCSC)** · advisory · primary · captured · published 2026-10-21 · added by `collector-gov` · `ch-bacs-warnung-php`
+
+Published on 21 October 2026 (the home page teaser shows 20 October 2026). 'If an immediate update is not possible': restrict access; 'Check, particularly for critical applications, whether a temporary disconnection from the internet or taking the system offline is necessary.' Says a WAF alone is not sufficient.
+
+capture 20261022T081700Z · HTTP 200 · https://www.bacs.admin.ch/en/warnung-php-en- `headers.json` 603765d5dfe2bc360d0d8becb67c71a6a5810ad02fbe68f5d677488189ac7317 6,406 bytes
+- `page.html` bdef753f8a5972cd0d5af92574637f8edd425df0511ef469bf2c11ee39207e0f 160,186 bytes
+- `provenance.json` 1574e8470bf5e04e0a830d2ee1ffd4d728872599f3828cba3399f0b095066f39 984 bytes
+- `rendered.html` 7400fa0917a78b8192f819815d7bddbc76a93e9ddb57e9ce574cb60b713b4e0b 174,883 bytes
+- `screenshot.png` b14b81a2939d7eafc4abdd581e6591629c66d8728ce4402a2c68421d788a9f63 846,454 bytes
+- `text.txt` 99886a19aead8abe4faab9f41918c8654a2e070c816f856c0dd3e14a194d6890 4,966 bytes
+
+### [BACS home](https://www.ncsc.admin.ch/ncsc/en/home.html)
+
+**Swiss BACS** · government · secondary · captured · published not stated · added by `collector-gov` · `ch-ncsc-home`
+
+Redirects to bacs.admin.ch/en; the PHP teaser is dated 20 October 2026.
+
+capture 20261022T081604Z · HTTP 200 · https://www.bacs.admin.ch/en- `headers.json` 80c563292cf0e8178e58809441cc65504b120a6299d27979fc429c606efaa3fd 6,406 bytes
+- `page.html` db63fa0b832d6e1c47503189a9e2dd40e5a0dc6e8aab560cae02e8db1f3806f4 683,600 bytes
+- `provenance.json` a459bb8ebb915fac015c2f06c8c45177516e9c968f132531f1d20fa7053e7c69 923 bytes
+- `rendered.html` 772da1668f48bd3c5a4f64e05a57da3b25759fb0029663257cdb7ffef85aec1f 739,577 bytes
+- `screenshot.png` 0aaffb075e051c6b2ad0f9f8261010a963e502b32700d1fc07b0cdee4d9a835e 1,095,138 bytes
+- `text.txt` 29c1b2cfeb73db9702347d8cbb1b37690641e3abf5ddda16da0af6451f54e41b 11,068 bytes
+
+### [Critical Vulnerabilities in PHP Require Immediate Patching](https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching)
+
+**US Cybersecurity and Infrastructure Security Agency (CISA)** · advisory · primary · captured · published 2026-10-21 · added by `collector-gov` · `cisa-alert-php-20261021`
+
+CISA Alert, Release Date October 21, 2026. Names CVE-2026-109618/109619 'php2shell'. 'Organizations that cannot update immediately, or that continue to use PHP 8.1 or earlier unsupported versions, should take PHP-based systems offline until they can be patched or updated.' CISA 'has not observed exploitation ... as of the time of publication'. Not in KEV as of catalog 2026.10.21.
+
+capture 20261022T081353Z · HTTP 200 · https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching- `headers.json` 30fb6764c792111ac226e0fb1ca4f574f5e2faadfc10d2150ae9dfa35ea0858d 2,825 bytes
+- `page.html` be6b410fc0da16de2c1b96dc3132a195632d636467ab7c859c343494fa7accfa 53,868 bytes
+- `provenance.json` ea18f4dbc502d3c87b5d9a6c83d49ff128544ad074140c502f37abff350d9f8a 1,110 bytes
+- `rendered.html` 0e3e08492a52d48e8ccb18f836df984af4f15f251f6089697676b540458b3371 78,116 bytes
+- `screenshot.png` 2724e9107ccae45a888b3531fdc43373b154be3eeadb78841791dcb6a60a34c1 384,239 bytes
+- `text.txt` 7bf853872a073bde9c2d71a41fbf9bfd3cda8147c278ab15426ebc9c8e627a9f 3,223 bytes
+
+### [Home Page | CISA](https://www.cisa.gov/)
+
+**CISA** · government · secondary · captured · published not stated · added by `collector-gov` · `cisa-home`
+
+Home page at 08:13Z: the PHP alert (Oct 21, 2026) is top of the news list. No emergency directive is shown.
+
+capture 20261022T081329Z · HTTP 200 · https://www.cisa.gov/- `headers.json` a76ca34b24fba67b623a4b3e4b5748241af7aac12f07bb31b73a1f88445398b2 2,712 bytes
+- `page.html` 24ba8c3fe3e00e4445bd9fbbbabf113099d53e872bb4d594e92c8575084cfe31 71,972 bytes
+- `provenance.json` 364cc06b578cd41d9fc3e1155cd62c9694ca854bdfe27923863a3a00eb71ee53 877 bytes
+- `rendered.html` 06fa4013f8e36ab399d6cef932f7d506a073b84357e4e4c40627479b5a3a1fa5 92,635 bytes
+- `screenshot.png` ed352cf8665d21d75d282faefdb680a9c65965edae9b6cbf4541c84f9dcbba23 1,291,590 bytes
+- `text.txt` ab2aa07bb46ba14c14a2f76a312ff7b81e2c8c19ca3588de9313236b10007a34 4,261 bytes
+
+### [Known Exploited Vulnerabilities Catalog (JSON feed)](https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json)
+
+**CISA** · government · primary · captured · published 2026-10-21T14:04:39Z · added by `collector-primary` · `cisa-kev-catalog`
+
+raw/ only (JSON feed). catalogVersion 2026.10.21, dateReleased 2026-10-21T14:04:39Z. Neither CVE-2026-109618 nor CVE-2026-109619 is listed as of fetch ~08:12Z on 22 Oct.
+
+raw, 1 files with SHA256SUMS- `known_exploited_vulnerabilities.json` ef8fffede5c472001da046c7751beb2a3242458896d0ce08da52b30968b8b56b
+
+### [CISA Known Exploited Vulnerabilities catalog (JSON feed)](https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json)
+
+**CISA** · advisory · primary · captured · published 2026-10-21T14:04:39Z (catalogVersion 2026.10.21) · added by `collector-gov` · `cisa-kev-json`
+
+At 08:15Z on 22 Oct: catalogVersion 2026.10.21, dateReleased 2026-10-21T14:04:39.8983Z, 1754 entries. CVE-2026-109618/109619 NOT in KEV. Raw JSON + headers + SHA256SUMS in raw/.
+
+raw, 2 files with SHA256SUMS- `headers.20261022T0816Z.txt` e3a7dc7610f87ca2b7829303cd01ef65a3d0d08be833334024807456cc943db9
+- `known_exploited_vulnerabilities.20261022T0816Z.json` ef8fffede5c472001da046c7751beb2a3242458896d0ce08da52b30968b8b56b
+
+### [Cloudflare deploys protections against php2shell vulnerability](https://blog.cloudflare.com/php-vulnerabilities-waf-protection/)
+
+**Cloudflare** · vendor · primary · captured · published 2026-10-21 · added by `collector-researchers` · `cloudflare-blog-php2shell-waf`
+
+Dated OCTOBER 21, 2026. Says the vulnerability 'was leaked before the official release date and we observed attack traffic targeting our customers'. WAF protection live from Oct 21 03:02 UTC (~9h before disclosure). Lists disclosers as 'Calif.io, Wiz, OpenAI and Quarkslab'. 'PHP is used by almost 70% of websites.'
+
+capture 20261022T081216Z · HTTP 200 · https://blog.cloudflare.com/php-vulnerabilities-waf-protection/- `headers.json` 904849b322ddad92fccc55d4ce8527d9c4138d07d61937ce1da5602ea2bef244 7,260 bytes
+- `page.html` 421005107f81d30d16850fdbf830446d6fd544746dfa7d201be9b4bd3f656e72 301,730 bytes
+- `provenance.json` 7f98162527014e2989dfaa73146a26c079c634ddf24eff95ae99fad7ea43beb0 1,045 bytes
+- `rendered.html` a0d3c37cde7c1721a08b028748a412672817c45958d05cc7fedaede582b5537b 373,881 bytes
+- `screenshot.png` 1784904e6fdda092941881d0e5c85d73801054f216295ca43b17f76e7f5cd34b 989,488 bytes
+- `text.txt` 302408765abf45e3ae84473d9050c1c65b35c2858e5b53be4fee29dda4de2823 10,205 bytes
+
+### [Alerta de Vulnerabilidade PHP (CNCS)](https://dyn.cncs.gov.pt/pt/alerta-detalhe/art/136114/alerta-de-vulnerabilidade-php)
+
+**CNCS (Portugal)** · advisory · primary · blocked · published not stated · added by `collector-gov` · `cncs-pt-alerta-136114`
+
+HTTP 513 'Verifying your browser | DiamWall' challenge to Playwright; curl got a 167-byte stub; WebFetch got a redirect loop. The URL comes from ENISA CNW-2026-04.
+
+capture 20261022T081354Z · HTTP 513 · https://dyn.cncs.gov.pt/pt/alerta-detalhe/art/136114/alerta-de-vulnerabilidade-php- `headers.json` 5c140f9296dcaee3311e6857332cd02f3ecef21ddea2f8e064632238f0723a07 411 bytes
+- `page.html` edb193e6b70aacbf1578ad062b6fa5085bfef2f34cbf0fd97aa924338c502db7 1,083 bytes
+- `provenance.json` e1e0d3e656a7c6ebfab6919cf39d5574b3af7346b5b2a843039c2dbcb844b2e9 1,028 bytes
+- `rendered.html` ee72ee19cc622226439df3668a6e44283b40bf5c8a256279d4ca08a5381fe4ad 1,094 bytes
+- `screenshot.png` 5950f00ba8371e122d55c0b80325546131c084d32f70aed1fdf1bafdbf9f5d27 39,887 bytes
+- `text.txt` e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 bytes
+raw, 2 files with SHA256SUMS- `curl-body.20261022T0814Z.html` 9171fe017af37f1f055d8e8bac037fc72bf67dd77e534de433be05297a582b0f
+- `curl-headers.20261022T0814Z.txt` b246a0bf67a34295b2bb54fc5724574f6176d92a46b05886076810bacd9a7e6c
+
+### [CVE-2026-109618: RCE via OOM corruption](https://www.cve.org/CVERecord?id=CVE-2026-109618)
+
+**CVE Program (CNA: PHP Group)** · cve · primary · captured · published 2026-10-21T13:48:34.845Z · added by `collector-primary` · `cve-cve-2026-109618`
+
+CVE record JSON in raw/ (cveawg API). dateReserved 2026-10-12T21:03:58Z, datePublished 2026-10-21T13:48:34Z, dateUpdated 2026-10-21T16:07:52Z at fetch. CISA ADP SSVC at 14:34Z: Exploitation none, Automatable no, Technical Impact total.
+
+capture 20261022T081218Z · HTTP 200 · https://www.cve.org/CVERecord?id=CVE-2026-109618- `headers.json` 58be2c1dc484c3910605b35d9e612014fc4b6e0c9de9f605d6286d788fde6c7a 1,500 bytes
+- `page.html` a112001fc560b257188b1628cf8f547b421b7bb934cbd574254375a26151ab50 880 bytes
+- `provenance.json` adc09f106ba451478b387bb819c13df4cc15e0ac6f7ab6507a24175c8cc75458 952 bytes
+- `rendered.html` 37b9582087865e1776a98adadf13b2fd1cda169569affa0d7e113500697e5edb 146,271 bytes
+- `screenshot.png` bfb16ac90b930eabd692ee995fc41e848022b6b3ad486b96eaab255d08553229 341,195 bytes
+- `text.txt` f8705d8e0aa2a2488fd26ae277c71e7f460465f1c2566805b29408d46c08db4b 3,115 bytes
+raw, 1 files with SHA256SUMS- `cveawg-api.json` f856138e139c216e7b499d86b519d6371b92494c7d63fcccbcd79117102750a1
+
+### [CVE-2026-109619: RCE via stale global state](https://www.cve.org/CVERecord?id=CVE-2026-109619)
+
+**CVE Program (CNA: PHP Group)** · cve · primary · captured · published 2026-10-21T13:54:43.866Z · added by `collector-primary` · `cve-cve-2026-109619`
+
+CVE record JSON in raw/. dateReserved 2026-10-12T21:04:00Z, datePublished 2026-10-21T13:54:43Z, dateUpdated 2026-10-22T08:09:24Z (updated minutes before our fetch; CVE Program container lists oss-security refs incl. 22/2). CISA ADP SSVC: Exploitation none.
+
+capture 20261022T081219Z · HTTP 200 · https://www.cve.org/CVERecord?id=CVE-2026-109619- `headers.json` 03c46200ee6c4d6c0d0a06fdaae6fb0a376986fa48431cdc5543e5ae073ca8f7 1,500 bytes
+- `page.html` a112001fc560b257188b1628cf8f547b421b7bb934cbd574254375a26151ab50 880 bytes
+- `provenance.json` 7de30cfb3eb2de89b08dcd062e6eee6c14efb0710ba248992dd2c1e2d3636335 952 bytes
+- `rendered.html` 83e446fe17d5717ad7f281973b506b4ba9e19b1b7cec8a4687132cd84419c71f 150,334 bytes
+- `screenshot.png` ae02d0aca995d93891d5bc181141c569b6b465a32272d727709884750ecdb50b 367,927 bytes
+- `text.txt` 3162135e82a9edd4b3ce352b41d2ecc34275ee0bb55a6444ed40c2146f1566c5 3,351 bytes
+raw, 1 files with SHA256SUMS- `cveawg-api.json` d045248b93425b1a6f5a0fc29ae36b5cfcd3c8188d969664a0d8e5f82ff05f61
+
+### [What the PHP2Shell rumors got wrong, from inside the PHP security team](https://daubois.dev/blog/cve-2026-109618-php2shell-rumors/)
+
+**Alexandre Daubois (PHP security team / PHP Foundation)** · researcher · secondary · captured · published 2026-10-21 · added by `collector-researchers` · `daubois-blog-php2shell-rumors`
+
+Personal blog of a PHP Foundation contractor on the PHP security team, dated 21 OCT 2026. Describes anonymous HN post Oct 20, leaked 'PHP2Shell tool' screenshot credited to Calif.IO, the short exploitation video, and watchTowr confirming the CVEs publicly. Gives GHSA advisory opened 2026-08-27 credited to lcfr-hax, sagitzadik-wiz, amyb-oai and tomash-areion.
+
+capture 20261022T081256Z · HTTP 200 · https://daubois.dev/blog/cve-2026-109618-php2shell-rumors/- `headers.json` 7f4da02c6bd4388f7475aed4c30ba66fbfd5e93f9e9b69537b21005081745afa 1,049 bytes
+- `page.html` 8f85e508b569e07d58f4ab54611fc7bb886c13f58b8c0448198f44899bf54d10 22,135 bytes
+- `provenance.json` c86d302cfb9e3442fe758ce082c1015c8500db089f7e8350402efbd4b259241d 1,046 bytes
+- `rendered.html` 8bc8f77f0b030a431c17cfb6048a516fae5d743bcf9af1d571e1a377dbe77fbd 21,926 bytes
+- `screenshot.png` c86032b5d2ce179ae664684fe600ba45c0b3ff7003c835716b5cce042a13e514 817,325 bytes
+- `text.txt` 5ef17f9886aa93f7f15ab1f6657ef6991a8ec008e5e309bdde5b5e51d961c4d8 8,821 bytes
+
+### [CSIRTs Network - php2shell (CNW-2026-04)](https://github.com/enisaeu/CNW/blob/main/advisories/2026/CNW-2026-04_php.md)
+
+**ENISA / EU CSIRTs Network (CNW)** · advisory · primary · captured · published 2026-10-21 · added by `collector-gov` · `enisa-cnw-2026-04-php`
+
+EU CSIRTs Network index of national advisories (date 21-October-2026). Lists ~30 national CSIRT alert links. The 'Mitigation' field still holds unfilled template text. The title has a typo: 'CVE-2026-10961'. curl got 403 from GitHub; Playwright got 200.
+
+capture 20261022T081329Z · HTTP 200 · https://github.com/enisaeu/CNW/blob/main/advisories/2026/CNW-2026-04_php.md- `headers.json` 4fddd3b1827235c9608b8a4c92566f15c7fde3ea496d7a74061d64b18fdd4072 5,637 bytes
+- `page.html` 212f41dffb19edf392212f2ec2997428225cc9da6dbbcf1361dffc30f3ac163f 252,581 bytes
+- `provenance.json` ce33999aec2752cab53039232bb4a7da90a38f090b374d68f470a0f9c78f4c7a 1,052 bytes
+- `rendered.html` 3d40c318822605660674e8a69d6a51d523c3df892b77cd2ccf520e51bb9ad552 295,999 bytes
+- `screenshot.png` 0b9c0e94049921b40590086857c547bc0dea05461fad30201388de32c3f35c8e 451,547 bytes
+- `text.txt` dfcaa1afe1c4194c00ff2dc38b4fab496a900ce9b4e770a722b4bae96b886093 3,930 bytes
+
+### [RCE via stale global state (CVE-2026-109619)](https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp)
+
+**PHP (php/php-src GitHub security advisory, published by bukka)** · advisory · primary · captured · published 2026-10-21T13:34:13Z · added by `collector-primary` · `github-ghsa-6wmf-4rv5-p3rp`
+
+CVSS v4 9.2, same vector as 109618. Use-after-free of worker global state across requests. Confirmed RCE mod_php (PHP 8.5 fatal_error_backtraces path) and session upload progress path on mod_php and FPM. GitHub API blocked; timestamp from page.
+
+capture 20261022T080901Z · HTTP 200 · https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp- `headers.json` 9474439a8ed75c50ba02584a2c67a564bf208b0caa8b2aefe0d7d2704e46c263 5,440 bytes
+- `page.html` 93ff984c03081442f47f1c338683875fabf1741564d711e2a3862d71cef29fdd 221,023 bytes
+- `provenance.json` ab199ddc3636b44804bf4b7da3949fe9d22f000959f8fc04c7f00eb3e416a0bb 1,039 bytes
+- `rendered.html` 89eb250785b0066130856745323cc48cd37a515b3264c10da91dfee64deb45cb 222,855 bytes
+- `screenshot.png` bb279a6b633c6e9d1de5a4778673aa4b3ed7dc5e1a1d9f08a3ba27c30f99820a 1,024,722 bytes
+- `text.txt` 99d85c973c41c0242c944f052d5f13beee1b0e381b83f8f89416c986099db4fc 13,502 bytes
+
+### [RCE via OOM corruption (CVE-2026-109618)](https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w)
+
+**PHP (php/php-src GitHub security advisory, published by bukka)** · advisory · primary · captured · published 2026-10-21T13:34:25Z · added by `collector-primary` · `github-ghsa-w8hw-w9fx-j79w`
+
+CVSS v4 9.2 CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N. Affected capture 20261022T080901Z · HTTP 200 · https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w- `headers.json` a5b68bac81984833a0df448856c563c0abaaf285f4eac25b6fc9a01c0b4d705f 5,447 bytes
+- `page.html` f429f17d81fee9dced4234a3f88772e1a7fdb87170b5bf5e3c6a016758b2a14e 212,571 bytes
+- `provenance.json` bb24fb081f4677b9fb91aac8bf728da3b708aec4d694572ccf432df9c0e5162b 1,035 bytes
+- `rendered.html` 79647ef8c491692c787e535f84364db88577ccdd26a84a066643ac2d8f0a1110 214,403 bytes
+- `screenshot.png` 4e10459ced9f68c1f9fb25ce9f8c603fad05b9e1981b2b9de3c10c16ade86d77 535,897 bytes
+- `text.txt` 84ab95d3b1d538ba0ff48d9f7371e482501999c23847fbecb67de6840324bfc4 6,692 bytes
+
+### [Branch PHP-7.4-CVE-2026-109618-109619](https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619)
+
+**php/php-src on GitHub** · code · primary · captured · published 2026-10-18T18:10:24Z · added by `collector-primary` · `github-php-src-branch-7.4-backport`
+
+Unofficial minimal source backport for EOL 7.4. '1 commit ahead of ... master'; latest commit 'Avoid state corruption via bailout', commit date 2026-10-18T18:10:24Z. The 8.0 and 8.1 branches are not captured (same naming pattern).
+
+capture 20261022T081558Z · HTTP 200 · https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619- `headers.json` a849a6e452711b855043ae9fe1fd0982b11d14633681acc628fa56e60ceb8323 5,439 bytes
+- `page.html` 04dcda73bc626ce33da19b196795fd7c00b63b030f9fd6a530acedcbbe4f2b77 363,416 bytes
+- `provenance.json` b879f4cb8fe1d72fc30175af0e12496f9df0b4e09ce90b1de15b99d1e8ed29fc 1,040 bytes
+- `rendered.html` f6eba14e4661be71a25a3f70b5e988478a727cc6ea78f657fe86284d54d727fd 412,706 bytes
+- `screenshot.png` 6a7c4e4d30f1cb137b32490feb57c7053ca293f0f59d4aada14082309c525f0a 759,378 bytes
+- `text.txt` bd71e98ee89b7c6ca97f0ec6029e0200f86d26f2528387a96c99ac93ea63dc1f 6,550 bytes
+
+### [Release PHP 8.5.12](https://github.com/php/php-src/releases/tag/php-8.5.12)
+
+**php/php-src on GitHub (release by adoy)** · code · primary · captured · published 2026-10-21T14:06:46Z · added by `collector-primary` · `github-php-src-tag-php-8.5.12`
+
+GitHub release published 2026-10-21T14:06:46Z by adoy; tag object 2026-10-21 13:35:38 UTC; tagged commit dated 2026-10-19T17:04:37Z.
+
+capture 20261022T081558Z · HTTP 200 · https://github.com/php/php-src/releases/tag/php-8.5.12- `headers.json` 5c5686f2496a1b93d144afdd699626ee85dc4af2813a242dbf615446ddb664eb 5,448 bytes
+- `page.html` 67ce23eedb690c74470175cf0a56c7a573cbd02ec5f27120c3ced5d05fa5eb3b 207,502 bytes
+- `provenance.json` 8e480c6bdb33a1d5e82ddf99493ac5149329b2ab40d2fe95c088ba4b9672832a 990 bytes
+- `rendered.html` 330630ed887249f612aa5637d43d010f74ecc0970060b8bed32da7957a2521aa 214,534 bytes
+- `screenshot.png` ca5cc2bad8c65a0a5325554ef804f2b83d3fc7a4b7e9c2750dfd7047e564208c 123,213 bytes
+- `text.txt` 3fa0b4ca147ee06698f340ee959bf381aee7c0fda597bd687ff1f128f4978799 1,184 bytes
+
+### [Tags · php/php-src](https://github.com/php/php-src/tags)
+
+**php/php-src on GitHub** · code · primary · captured · published not stated · added by `collector-primary` · `github-php-src-tags`
+
+Tags php-8.5.12, php-8.4.27, php-8.3.36, php-8.2.35 all show 'Verified' and tag dates of 2026-10-21 13:35:38 UTC; php-8.6.0RC4 at 14:57:44 UTC. php-8.5.12RC1 and php-8.4.27RC1 tags also exist.
+
+capture 20261022T081558Z · HTTP 200 · https://github.com/php/php-src/tags- `headers.json` c1e8341353ae8ccbb1b8406734139fd6ade271a8ecb16de19cc396443719b543 5,449 bytes
+- `page.html` 9dd05842513d6ae6569812a9aad0f4abef35733b14f8515c3b86b3d1fac53d49 279,656 bytes
+- `provenance.json` fb3a77d83afa6bbbffbf5b0dba33cf24208559ef6dafc50b4fe37998fd225316 928 bytes
+- `rendered.html` ca0a96e8466a34796c2120346612561d23d3d53e81a8b52e679148924f0abcd9 281,310 bytes
+- `screenshot.png` 9208f3cecdd6dd08a577e0172d3a114ac84322533de8e95591e5b0694b085eda 125,085 bytes
+- `text.txt` 850531b6512cfe4d37a2bb6b7fdcd37ec9cbb42ed6ceea172d081be054e28c61 924 bytes
+
+### [PHPにおける複数の脆弱性（CVE-2026-109618、CVE-2026-109619）に関する注意喚起 (JPCERT-AT-2026-0033)](https://www.jpcert.or.jp/at/2026/at260033.html)
+
+**JPCERT/CC (Japan)** · advisory · primary · captured · published 2026-10-22 · added by `collector-gov` · `jpcert-at260033`
+
+JPCERT-AT-2026-0033, published 2026-10-22, updated 2026-10-22 (wording fix in section V). Advice: apply fixed versions promptly 'after sufficient testing' and investigate for compromise. No offline advice. Says PHP is widely used in Japan. JVN entry also listed 2026-10-22 14:20 JST.
+
+capture 20261022T081700Z · HTTP 200 · https://www.jpcert.or.jp/at/2026/at260033.html- `headers.json` cbc1e287bde3882e41d91bfa7315dcbaccf9a996c0a383acc62f9095fbe921eb 605 bytes
+- `page.html` 85db7a09e865158643525fef5aa5cfc69513aaf896fcb2da4562189d43decf44 31,008 bytes
+- `provenance.json` 4ba4d01fa5ebe5235184ed530cedbac6cd8985446a10845775da38efa45aa5b9 1,013 bytes
+- `rendered.html` c4ba52d8393f4189aade005389d1b8c2923eeb29f0d917a7221b5330cff3bf91 30,690 bytes
+- `screenshot.png` 99789e60674ab7b0d3f01afbc2012337348a1434417d4820d6c89133f2d6ff64 722,717 bytes
+- `text.txt` 1fea87241b307f92c5ddc2b16356954d947ec3e0f5ad55158315dc08d98127f5 8,327 bytes
+
+### [JPCERT home](https://www.jpcert.or.jp/)
+
+**JPCERT/CC** · government · secondary · captured · published not stated · added by `collector-gov` · `jpcert-home`
+
+Home page at 08:16Z: the PHP alert (2026-10-22) and a JVN item at 2026-10-22 14:20.
+
+capture 20261022T081606Z · HTTP 200 · https://www.jpcert.or.jp/- `headers.json` ffa0d53fc7fd1c2d4339dd045991caa54d31c4515face33fcad2b50bfbfdb00f 605 bytes
+- `page.html` 07612f480101608a837f0a0dfff30db2d1f5091eabb55fe048bf6546979e25f7 31,630 bytes
+- `provenance.json` deeeef14fce691e60314064b4efa728667689e9676e5263b880005c0cdcc5ca3 917 bytes
+- `rendered.html` b41d0ff975f9a0815c4626b027f239c76e939b2070f0e7221fdeef67c9615d21 32,010 bytes
+- `screenshot.png` 0870f642b705aeed4116685bb2897f814fff8eb758a665a969b80be60f36dc81 1,483,609 bytes
+- `text.txt` 0e3188607f06a768281c4dd19a88acecbe0e7fe6b5c20a312e9095a2a498dfba 6,293 bytes
+
+### [Critical security issue affecting PHP](https://www.ncsc.gov.uk/news/critical-security-issue-affecting-php)
+
+**UK National Cyber Security Centre (NCSC)** · advisory · primary · captured · published 2026-10-21 · added by `collector-gov` · `ncsc-news-php`
+
+NCSC Alert. Page: PUBLISHED 21 October 2026; JSON-LD dateModified 2026-10-22; HTTP last-modified Thu, 22 Oct 2026 07:30:02 GMT. Names CVE-2026-109618 and CVE-2026-109619. Advice: update; else PHP Foundation temporary mitigations; 'If you are unable to apply the temporary mitigations, or applying them would take too long, you should consider taking the system offline until it can be fully mitigated.' Wording differs from BBC's quote.
+
+capture 20261022T080903Z · HTTP 200 · https://www.ncsc.gov.uk/news/critical-security-issue-affecting-php- `headers.json` 642ad2462903a32f7050dae5e198654e710dadc0a6225333d96370031c7ede4c 852 bytes
+- `page.html` 2d8e9e72ec5efa695b2d587a4af1bcb75662ead0add90b964cf767e8023ff4f8 225,168 bytes
+- `provenance.json` fe3daad10ed2709f256ce5547b2a21d8b35120fe041248d698a63d75652a19fb 1,025 bytes
+- `rendered.html` 0b839c8974dc2310cc6f85d334620ae5b5cd944842d6de180bf76938f5b6dcf5 761,056 bytes
+- `screenshot.png` 260b9c91a3bf1a838fd1a81633415032eacd24ccaf249c11227903c6038b4544 542,775 bytes
+- `text.txt` a18ceeb011a3fe6f0311d92399618b5231abb0f57f3b94ffd7371cab6eccc339 5,135 bytes
+
+### [NCSC NL | Security Advisories (PHP banner: Ernstige kwetsbaarheden in PHP: bereid je voor op patchen)](https://advisories.ncsc.nl/advisories)
+
+**NCSC-NL** · advisory · primary · captured · published not stated · added by `collector-gov` · `ncsc-nl-advisories`
+
+Final URL advisories.ncsc.nl/. A banner is still the pre-patch text: 'bereid je voor op patchen', patch expected '21 oktober 16:00 Nederlandse tijd'; 'Er is een publieke Proof of Concept (PoC)- code beschikbaar, maar het NCSC heeft nog geen actief misbruik gesignaleerd.' Affects 'alle versies vanaf versie 5'.
+
+capture 20261022T081605Z · HTTP 200 · https://advisories.ncsc.nl/- `headers.json` 3e389f62cb8a1de496ebc873bbcfb98ccf729f22e1ec56c94d0893bba1bef324 884 bytes
+- `page.html` c0c4e5aa82e2eaec26497f7eb201c72888ecdcb1361964f73aab7b5dcc046c5f 240 bytes
+- `provenance.json` cd3655ebd5a05e5e7a94cfc0438e17c9f78418f1c570bf5097613f30ba7612ca 980 bytes
+- `rendered.html` f008b1f5da4c00459105f979db89eebc16702be90d3a6de1656acfab41951cc6 69,813 bytes
+- `screenshot.png` 9bd5b7a047aff8b7f81e8c61b6f1ccc1475f7be1ad89a7d9d32a6f2aee84abbe 611,099 bytes
+- `text.txt` b7e4ac6caf7d177d8b7e55fa8c587da75a1e78fafc951012d2d2595a6dfa5e8b 8,130 bytes
+
+### [NCSC-NL/php2shell: Operational information regarding the 2026 php2shell vulnerabilities](https://github.com/NCSC-NL/php2shell)
+
+**NCSC-NL (Netherlands National Cyber Security Centre)** · advisory · primary · captured · published 2026-10-21T15:25:00Z · added by `collector-gov` · `ncsc-nl-php2shell`
+
+README: 'Readme last significant change: 21 October 2026 17:25 CEST TLP:CLEAR' (=15:25Z). Fixed releases: PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35. Links to CERT-EU SA 2026-018 and ENISA CNW-2026-04. Holds the software inventory list (the NCSC UK cites it). Does NOT advise taking systems offline.
+
+capture 20261022T080925Z · HTTP 200 · https://github.com/NCSC-NL/php2shell- `headers.json` dbef75c6f088a0a21eeac77ab2178aead9e625d6ed750dd4894fc7fb9537f297 5,443 bytes
+- `page.html` 4e1f8dc6dd2c6d494b9d1229a0de601b0e1096e81337d8a4b5b06fa7c3c293ce 261,528 bytes
+- `provenance.json` 939b683f13402c1f5d315ff79800619b30e3780d4eb31bfc2b17282148c8e03a 1,005 bytes
+- `rendered.html` 323e0a19a3dd13c2b214ff7b1a8553eacac4c17bdfb8b8c1a9bf2032781934db 273,849 bytes
+- `screenshot.png` a27d227bafcdfbc38ca5c431a5fb525aa95eeac6e7bfbe31c98ae8057c2e4d64 494,937 bytes
+- `text.txt` 8944dd45c25fa7c1fc1c6f3e2a646d86fe0849a83248fe1f91cec791a58589e6 4,852 bytes
+capture 20261022T084815Z · HTTP 200 · https://github.com/NCSC-NL/php2shell- `headers.json` dc374a245415e7981501c8d9adea6d18ac20101116a21380bafe62b351dba7c0 5,453 bytes
+- `page.html` 556efff0dd62f6bdf88e3ed5566f6f2213e828b2bbfeba7eef0b3cd3ac622057 261,276 bytes
+- `provenance.json` 7544f40915d6c5cb74cdc60621deee2e3d7773de3a0191201caf4089fbd5d094 1,005 bytes
+- `rendered.html` 42194f5b28315e862789c25ed7c3a2bbbfa3244da3bb68e8e3ff284f321ccd38 275,802 bytes
+- `screenshot.png` c6a14bc8234e3b2b5692240e1f2821e9e80e51e52bd5bec2e89dcf3a7a8a1764 497,834 bytes
+- `text.txt` f3eec24a226910fb8440714b4f44c40db5c5f7826f3c23b65aece1cc5775712e 4,854 bytes
+raw, 3 files with SHA256SUMS- `commits-cca173c64ec5.txt` 4d4f80bd9da0076e2bd74323e947a05f1e0f1a246a5a25b2874dd9370b4a2ea9
+- `php2shell-cca173c64ec5.bundle` 4a72bcc9bbc58e886df6eee7cc875bd5deab547f1028f7525a7e7e808859411f
+- `software-list-cca173c64ec5.json` f0a17e96a336a8782231290acf4ba4a4f4fa469270c59a7c87a95da2207dad01
+
+### [List of software with PHP dependency potentially affected by php2shell CVEs](https://github.com/NCSC-NL/php2shell/blob/main/software/software_list.md)
+
+**NCSC-NL (Netherlands National Cyber Security Centre)** · government · primary · captured · published generated from the repo's SPDX inventory; commit cca173c64ec5 at 2026-10-22T08:40:58Z · added by `claude-newsroom-lead` · `ncsc-nl-php2shell-software-list`
+
+Pointed out by the editor as the source for affected systems. 674 entries at commit cca173c64ec5. CVE-2026-109618: Fix 46, Investigation 418, Vulnerable 206, Not vuln 3. The parsed list, the repo bundle and the tree are in ../ncsc-nl-php2shell/raw/.
+
+capture 20261022T084807Z · HTTP 200 · https://github.com/NCSC-NL/php2shell/blob/main/software/software_list.md- `headers.json` ced0e6933669176a62c459545b9b58df2ecd44f502200c04ac548e8bf513cf2d 5,624 bytes
+- `page.html` b6810b0801213bba67b7fff83b519ffc971c4271b217cf2ab4083ecee77d2c81 223,836 bytes
+- `provenance.json` d02a4a269f2919ede5233e84a57e72d3dc9adb56e4d98d2ca23fb319384925b9 1,059 bytes
+- `rendered.html` ed0e84fc69079d5df2c192b657719a25a29e9ce62aae2034ece866b27ee6c079 288,875 bytes
+- `screenshot.png` c610a27540c7c58e4e02cc90bc268c1a5f5b8bd8295fd543badb47cfcdad0e3c 137,355 bytes
+- `text.txt` 83f3aa60070e20b847980ff396e3f2468de1e291562a6a16a69f6a20ffbe2004 1,255 bytes
+
+### [UPDATED: CVE-2026-109618 and CVE-2026-109619 affecting PHP](https://www.ncsc.govt.nz/alerts/cve-2026-109618-and-cve-2026-109619-affecting-php/)
+
+**NCSC New Zealand** · advisory · primary · captured · published 2026-10-22T09:15+13:00 (=2026-10-21T20:15Z); updated 10:20am 22-10-26 NZDT (=21:20Z) · added by `collector-gov` · `ncsc-nz-alert-php`
+
+TLP:CLEAR. 'The NCSC is aware of reports of active exploitation.' The only agency so far to say this. Advice: update to fixed versions 'as soon as possible'; investigate compromise. No offline advice.
+
+capture 20261022T081700Z · HTTP 200 · https://www.ncsc.govt.nz/alerts/cve-2026-109618-and-cve-2026-109619-affecting-php/- `headers.json` 5e5b7ef0258116f0d6925dab7f8189e2223e414a58521729043ca4f399ceabcc 1,992 bytes
+- `page.html` 9f3205c8338c598bedc1fa1f1b0726243fd7cce324d6d0a797a7c55fbd277915 49,604 bytes
+- `provenance.json` 7536377248a3645980d9a70e1d2e6c3bb2f1c0e799ff9ccd12b4320bd1724b01 1,049 bytes
+- `rendered.html` 32cdd5364dd2c631a73c0c834763cf3cb9b776145d2ebf5e4f3376e25e89758e 41,928 bytes
+- `screenshot.png` 4dd2cb007efcf0696650ebca1087f184c6ed83297bc6f80dd678d9f6954146ac 528,343 bytes
+- `text.txt` 992fc3b6639069a9eb6618d9f6a71e994633960f0d6d4c77bd74bc797caa5301 3,799 bytes
+
+### [Alerts listing](https://www.ncsc.govt.nz/alerts/)
+
+**NCSC New Zealand** · government · secondary · captured · published not stated · added by `collector-gov` · `ncsc-nz-alerts`
+
+Listing at 08:16Z: the PHP alert, dated 22 October 2026.
+
+capture 20261022T081605Z · HTTP 200 · https://www.ncsc.govt.nz/alerts/- `headers.json` 74c848feb39a21fb80f489bb294b8d8a697fe6fdae03a6c61098de514241564c 2,034 bytes
+- `page.html` 328191a093edcb0fb9ff08b20687f3c271db0b69eb58c770700dbfdfa080da96 75,111 bytes
+- `provenance.json` 1e8d90e0d23cf4b63e37636b005fac4be349ebd5ce37cd39f3e8e921d84644fb 894 bytes
+- `rendered.html` ccc94fffbb92d25658fbb11c5935488c45109113a44b5ec6bf775ad2240cea3f 53,664 bytes
+- `screenshot.png` f9033cc86d53addc1cf8ed9db6855d4e30e30eec050db17bec1d47beb99651ee 226,803 bytes
+- `text.txt` d1c97bbc45ba4cc7861035a6f606f1bc1c7b782b44ce8bdc279c7143640f4a5f 1,276 bytes
+
+### [NSA Advisory: Critical Patches Recommended for PHP Vulnerabilities](https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4630238/nsa-advisory-critical-patches-recommended-for-php-vulnerabilities/)
+
+**US National Security Agency (NSA)** · government · primary · captured · published 2026-10-21 · added by `collector-gov` · `nsa-press-php-4630238`
+
+Press release dated Oct. 21, 2026 (no time given). Nicknames the bugs 'PHP2Shell'. Recommends patching, inventory, enhanced logging, replacing EOL PHP; 'If an immediate update is not feasible, it is recommended that organizations take the system offline until it can be fully mitigated.' Says the risks 'require immediate patching across United States Government departments and agencies'.
+
+capture 20261022T080954Z · HTTP 200 · https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4630238/nsa-advisory-critical-patches-recommended-for-php-vulnerabilities/- `headers.json` 97a8c93336e9eaf70c80dd55bf2a30afda4f796323bb1e628388046b2d71ff58 671 bytes
+- `page.html` 18db3cea62d9017227ca3bc12cc73fe965e84f2a0d946dbc0278c4772dd415f3 98,539 bytes
+- `provenance.json` 246b632f5be873be48cc8894fb4abdb03858ee784e155a5f703c690e0c937495 1,286 bytes
+- `rendered.html` 0e42d4e7ce3e0af33f09f09b458d895320523102285301139861be8ba95f5889 122,356 bytes
+- `screenshot.png` 1bc158a28beb2de8ef2533cca0ddffbec42a196ae7094ca2d019ff076cd27725 992,031 bytes
+- `text.txt` 8a8553ea1ffcd794a5f6a39dea4162c7f84f0737d5061577a3e569cb39b79154 4,995 bytes
+
+### [NSA Cyber on X: Effective Immediately ... two critical vulnerabilities](https://x.com/NSACyber/status/2112903220209098897)
+
+**NSA Cybersecurity (@NSACyber)** · social · primary · captured · published 2026-10-21T13:45:58Z · added by `collector-gov` · `nsa-x-2112903220209098897`
+
+First NSA post (pinned). Time from tweet snowflake ID = 2026-10-21T13:45:58Z; the page shows '13:45 · 21 Oct 2026' (UTC browser). 10.1M views at capture. 'If an immediate update is not feasible, it is recommend that organizations take the system offline until it can be fully mitigated.'
+
+capture 20261022T080954Z · HTTP 200 · https://x.com/NSACyber/status/2112903220209098897- `headers.json` 2b72f04731267bb06c6ed80fb9fab697c55697ef2b83303924c315720ed63729 9,020 bytes
+- `page.html` 49362e7db1112702cb4586ed77daa898c86293d85b5ebe33b7a7dca7db1396a2 139,058 bytes
+- `provenance.json` 569e1386915c3d850f140375196be63051f6099dd3eaa803bee46f3d014e8984 1,240 bytes
+- `rendered.html` a95403e3cb7230cb93a3aad7f6f4a09998596f2636f7516355cf3d52bb8fcf58 162,779 bytes
+- `screenshot.png` f9e02ad5c04f114f4ab6cc0cd14b556924d445869fb512f4306683da40d50564 452,042 bytes
+- `text.txt` 92ebce791a7b35429d2fee94427932a19b1629de3821a52201648a58298d52e7 1,811 bytes
+
+### [NSA Cyber on X: UPDATE: Specific mitigation guidance ... now available](https://x.com/NSACyber/status/2113068811058622971)
+
+**NSA Cybersecurity (@NSACyber)** · social · primary · captured · published 2026-10-22T00:43:58Z · added by `collector-gov` · `nsa-x-2113068811058622971`
+
+Second NSA post, from the snowflake ID: 2026-10-22T00:43:58Z. It links (t.co/nuXgQ10Fzc) to the NSA press release 4630238. 206.4K views at capture.
+
+capture 20261022T080954Z · HTTP 200 · https://x.com/NSACyber/status/2113068811058622971- `headers.json` 9292b5863f63684cb58479f72ed4579062a1ff66108183ddfd21a51a34f25f60 9,022 bytes
+- `page.html` 8b2c9d9cbd6c8cfa6e5614e7900653b6bcddb21e5d8e4a0a880b9613ae9d1bfe 166,142 bytes
+- `provenance.json` 0931b8c67b66649c978bd87fd385c5c0e597b091e5e840db5dc9d4d1e1b63c9d 1,154 bytes
+- `rendered.html` 3a297e1972ba61e2d78a5ca5842af0507e79e8d8b04aa8c7dcfa311794d9242c 167,035 bytes
+- `screenshot.png` 846daf6b3e0004aee5355c16bf1ad5d57544d6b38547e5cf26d513a0dc8d168a 224,980 bytes
+- `text.txt` 899e5ba4af69c5311210a846d98721e674abded497de292dfdc4af17b2ff1bd3 2,052 bytes
+
+### [NSA Cyber (@NSACyber) / X profile timeline](https://x.com/NSACyber)
+
+**NSA Cybersecurity (@NSACyber)** · social · secondary · captured · published not stated · added by `collector-gov` · `nsa-x-nsacyber`
+
+Profile timeline at 08:09Z: the pinned PHP post plus the UPDATE post; 201.8K followers.
+
+capture 20261022T080925Z · HTTP 200 · https://x.com/NSACyber- `headers.json` 9fa8661bfa8f332a71ed3f88de6e09033b05073ba537b3d891f1b4209bf1c757 9,022 bytes
+- `page.html` 35b05885b38c909cd06bc0f6617a32454843249a5c4d5c92274ca3a543b98310 160,043 bytes
+- `provenance.json` 0680efdf34c9fb08e25e730dbadcc178f7f0a02d64d82260f9802d4fdaf70a00 893 bytes
+- `rendered.html` ae4abd70be7db953acec8f33cae64b339eb2729b8661c3191dc88e62eb17ee1d 198,521 bytes
+- `screenshot.png` 20541dc8b918cda68c8be3b4a94e4698a53f3edb149d38ba9d8344210189f384 1,255,100 bytes
+- `text.txt` 5889a1c26173dac8ee58b5269e4f78aeb57dc93520afa220d496e634b5e5b7c0 2,388 bytes
+
+### [nitter.net (shutdown notice, no tweets)](https://nitter.net/NSACyber)
+
+**nitter.net** · social · secondary · failed · published not stated · added by `collector-gov` · `nsa-x-nsacyber-nitter`
+
+Mirror is dead: it serves only the maintainer's 10 Oct 2026 notice about X Corp cease-and-desist letters. xcancel.com/NSACyber returned HTTP 451 via curl (not captured).
+
+capture 20261022T080925Z · HTTP 200 · https://nitter.net/NSACyber- `headers.json` ab425e76be267227a6680e0572e20c30271e2d99585b0cb665f948349e7e5e22 700 bytes
+- `page.html` 846a9048bdd79311b1c92ef549dc68d73a61edd0f9832264cea107686a3f53cc 12,341 bytes
+- `provenance.json` 5866931f9bcffc1f87e58582a3b73e4fd0fe9414f675213c27278464589fa4c8 895 bytes
+- `rendered.html` 21e41f57eb9abbe1a4b2db26e202689f711d079cff963c4af7c549714eccd108 12,292 bytes
+- `screenshot.png` d179e4f97e7b7e0371b33c4fc9e9dd245980aa3bf0ef5add188775144552c848 162,950 bytes
+- `text.txt` f4e954159062308642561f65d6f65c068c8ee1001bcafdf6e9388181a78d2d93 1,513 bytes
+
+### [NVD - CVE-2026-109618](https://nvd.nist.gov/vuln/detail/CVE-2026-109618)
+
+**NIST National Vulnerability Database** · cve · primary · captured · published 2026-10-21T14:17:09.357Z · added by `collector-primary` · `nvd-cve-2026-109618`
+
+NVD page did not render in two Playwright captures (empty text); the authoritative copy is raw/nvd-api-2.0.json. NVD published 14:17:09Z, lastModified 17:18:24Z, status Modified. Only CNA (security@php.net, Secondary) CVSS v4 9.2; no NIST primary score yet. NVD CWEs: 416, 755, 824, 1325 (no 1419). No CISA KEV fields.
+
+capture 20261022T081218Z · HTTP 200 · https://nvd.nist.gov/vuln/detail/cve-2026-109618- `headers.json` f81072c6a6dc3dda5884e2b701c37879b7d8762357ffa7bd4ea88ab95f9e5d6a 1,414 bytes
+- `page.html` 5218b57d88785ba853fce0de8804f8994d73d4cb3209339fa458c4a5cbb9881f 2,453 bytes
+- `provenance.json` f9105904aa37fc65ae54d1cb66b08b59b354c3eb7b20bf7cc925bd7ff4cfce78 935 bytes
+- `rendered.html` b4880a9e6a29cbee557232a66f9db3531b225dd95a517433c6e326be8bb41e87 2,827 bytes
+- `screenshot.png` 442aa587ff9ee582c291e7c7a8bca102504856b7a4db838cb313226e016f993e 106,759 bytes
+- `text.txt` e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 bytes
+capture 20261022T081302Z · HTTP 200 · https://nvd.nist.gov/vuln/detail/cve-2026-109618- `headers.json` 5d77eaec3eb1fe5d7fb3a76a35571380e31671576d24b40c26f0f87d75f2c610 1,414 bytes
+- `page.html` f372c9f8983a6331efb78d85ea53abc653d4bbe75457c02c9a25d9cc1ec2086e 2,453 bytes
+- `provenance.json` 578b5687fe8afa3ad4f74ab69b8ca2471a0b0ee0a650e832021623cf9e346931 935 bytes
+- `rendered.html` 2aa4037a7f7c9c97111573860083b648f53df74a60cea8fc7f9205b76d01f36e 2,827 bytes
+- `screenshot.png` 8d848319be976cd91ac761f8f5b19ff3d8547393428ff570f273a774b5094d39 106,512 bytes
+- `text.txt` e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 bytes
+raw, 1 files with SHA256SUMS- `nvd-api-2.0.json` dd864fa6ed53d4b549d2429fad6a22878ddb5a6def44b80cac0628cf4fdab438
+
+### [NVD - CVE-2026-109619](https://nvd.nist.gov/vuln/detail/CVE-2026-109619)
+
+**NIST National Vulnerability Database** · cve · primary · captured · published 2026-10-21T14:17:09.823Z · added by `collector-primary` · `nvd-cve-2026-109619`
+
+Page rendered only as 'Loading CVE Information'; use raw/nvd-api-2.0.json. NVD published 14:17:09Z, lastModified 21:17:52Z. CNA CVSS v4 9.2 only; no NIST score. No KEV fields.
+
+capture 20261022T081219Z · HTTP 200 · https://nvd.nist.gov/vuln/detail/cve-2026-109619- `headers.json` fc8d0ec5d6feaed052fd64b49abaebe2394f7ef3bc2ce70aee91e20e1306822e 1,413 bytes
+- `page.html` fbdf9ac8177380bc8093bab92baaa18402cc52721b3aaa5b037cb507c15a3bf3 2,453 bytes
+- `provenance.json` bad76168518f8666d20502a4cb32e9b3425e785e7abbf63160cbd9081db807b5 944 bytes
+- `rendered.html` 3784d224686072278cb9ed34c55c7390353818b2d9b35535eb289099d5bb536f 31,323 bytes
+- `screenshot.png` 56539f358f1226f93c35cc6828cee0c2edbcda7da8a3fce9e8deaad68f133fea 106,528 bytes
+- `text.txt` fbcf781e4294ea8f1f693ce52cf0e7c6ff9e8dff930df337294d54fb9f849466 839 bytes
+raw, 1 files with SHA256SUMS- `nvd-api-2.0.json` 627fdaed31c96626e2dcc8af24a6acab1b2da1658bb32b5cf627e30149a0b61c
+
+### [Patch the Planet: global response coordination as agents uncover critical vulnerabilities](https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/)
+
+**OpenAI** · researcher · primary · blocked · published 2026-10-21 · added by `collector-researchers` · `openai-blog-coordinated-disclosure`
+
+openai.com served a Cloudflare 'Just a moment...' challenge (HTTP 403) to capture.mjs, curl and WebFetch at 2026-10-22T08:11Z. The 403 capture folder is kept as the record. Content known only via secondary quotes; another agent should retry.
+
+capture 20261022T081113Z · HTTP 403 · https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/- `headers.json` 7b02609d3cb8321fcd39f1fb944357b1becd2b3914b213682188380e551a576e 1,912 bytes
+- `page.html` fdf2d9f575486a9ace314ca2636c5ddac6e6cbe0cb71fbd74c561248b86caef2 10,672 bytes
+- `provenance.json` 044271cf8e68e02415a432222e0036e63e3bc6ba426046d653313c6cf329a96e 1,012 bytes
+- `rendered.html` 582d07e3d24a3e25bdb6f9515a3ecee4de66710e90c88b8fe2bb35f6457f1387 11,479 bytes
+- `screenshot.png` c3713ab2f5047798e977f0bad1562ea67d8aa85432c230ecbeb28d7c937cb5dc 13,108 bytes
+- `text.txt` e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 bytes
+
+### [OpenAI models help researchers uncover critical PHP security flaws](https://community.openai.com/t/openai-models-help-researchers-uncover-critical-php-security-flaws/1408490)
+
+**OpenAI Developer Community (user 'sps', Leader)** · forum · secondary · captured · published 2026-10-21 · added by `collector-researchers` · `openai-community-php-flaws`
+
+Forum repost of OpenAI's announcement text, Oct 21; links https://github.com/openai/php2shell-checker (Codex skill).
+
+capture 20261022T081721Z · HTTP 200 · https://community.openai.com/t/openai-models-help-researchers-uncover-critical-php-security-flaws/1408490- `headers.json` 86f75f0dcbf3bc611bd0c24cc8c87f49138270eaac36ff55f379acd57638d537 1,273 bytes
+- `page.html` 9b1e1cbea269bc3fe068f7344d39a81937b9ec473044047d9d0700cb653af679 296,980 bytes
+- `provenance.json` 1394b5dabf1a6c5064c6bd0a2a0750815ffb787cf14f7155f7a1c680a5566c8d 1,153 bytes
+- `rendered.html` f20e90bdf364618ef6f4900343a7e3abbdb5e6006e628ae4e80a8b92bd8bdf47 624,051 bytes
+- `screenshot.png` e3138cd2f1d4e9539051514491c494acd19c7c4afffabe913081dd1ef8d3a691 370,209 bytes
+- `text.txt` 43afe7a0a3b96a86e52cbeea1c6ae41560bab1566da848fc4f9067152f739cd5 3,504 bytes
+
+### [Patch the Planet (launch announcement)](https://openai.com/index/patch-the-planet/)
+
+**OpenAI** · researcher · primary · blocked · published not stated · added by `collector-researchers` · `openai-patch-the-planet-launch`
+
+Cloudflare challenge (403) at 2026-10-22T08:17Z. Launch date reported by secondary sources as June 2026 (unverified); Calif says invitation came by July 30 2026; BBC says PHP Foundation joined in July 2026.
+
+capture 20261022T081658Z · HTTP 403 · https://openai.com/index/patch-the-planet/- `headers.json` dabb6d316b2a9ca13a6a49cd3d11a59538e1df05d7bd684ec04dd3ff4a830c61 1,920 bytes
+- `page.html` 1debac9983b263577c7488d66e2818ce992f602955f908219aa39abff4854500 10,484 bytes
+- `provenance.json` eecdf8db164ee1e68d9f8e7f6c9705554227dbe3f65fa9ddf547d56f2aa0fb54 940 bytes
+- `rendered.html` 80b0289e281954fb599df1170766a5d6f8a6bdecad2a5b444dd54e0a109542ab 11,291 bytes
+- `screenshot.png` c3713ab2f5047798e977f0bad1562ea67d8aa85432c230ecbeb28d7c937cb5dc 13,108 bytes
+- `text.txt` e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 bytes
+
+### [Re: CVE-2026-109619 thread (21/16, 21/17, 21/23, 22/2)](https://www.openwall.com/lists/oss-security/2026/10/21/16)
+
+**oss-security list (replies: Aaron Rainbolt, Yves-Alexis Perez/Debian, Christian Fischer/Greenbone)** · forum · secondary · captured · published 2026-10-21T15:24:37Z · added by `collector-primary` · `openwall-oss-security-109619-thread`
+
+raw/ curl copies of four replies. Fediverse report (fedi.katze.sh/@elise) that the 8.5.12 fix may be incomplete or a different new bug; Canonical reportedly told by PHP 'unrelated and not a real issue' (second-hand, via Matrix). Greenbone notes 7.4-8.1 are implicitly affected.
+
+raw, 4 files with SHA256SUMS- `oss-security-2026-10-21-16.html` 6a76141ae5a06584e8c6f6e61f4c455ce078152d6c56ce05206ee1c9ef7acccf
+- `oss-security-2026-10-21-17.html` 059317aa4a1f458e19196e6add44a6b3106632b82c82f104a5b83d0df6fbe09f
+- `oss-security-2026-10-21-23.html` 39555f34a419becc6a47480eabb369e05f4bac6ce06e9e3843e4dfcb5c99801b
+- `oss-security-2026-10-22-2.html` bbc0f0fc06953b13308925334e39e7808796e46ea9505630917762502996bea2
+
+### [Upcoming Critical PHP Security Release](https://www.openwall.com/lists/oss-security/2026/10/20/34)
+
+**oss-security list (Alan Coopersmith, Oracle)** · advisory · primary · captured · published 2026-10-20T20:22:51Z · added by `collector-primary` · `openwall-oss-security-2026-10-20-34`
+
+Date header Tue, 20 Oct 2026 13:22:51 -0700 (= 20:22:51Z). Quotes the php.net pre-announcement verbatim: scheduled 21 Oct 14:00 UTC, two vulns CVSS v4.0 9.2.
+
+capture 20261022T081408Z · HTTP 200 · https://www.openwall.com/lists/oss-security/2026/10/20/34- `headers.json` 716db9e977d3bc55b5045e260d9914e03196ed370f73c86c22880782e6a6a114 239 bytes
+- `page.html` 46a94f610255e2ee75ab240c658666ef2589e34e4dd4fcb93b5c5e45fc9917d4 5,800 bytes
+- `provenance.json` 04ff8e63e2b72caeb3d48ed4a44ecc28434a0414db9f8d59022e7b75af8ccb40 1,012 bytes
+- `rendered.html` 5c80dc74b7328496b9f3ee62eef06aa707db7327bd0bcdd7ab9aa4f0c5a5a5d8 6,056 bytes
+- `screenshot.png` c03f4fc0fefe0485485685cdf28d3e439a4b167b3022a946ee928be55cd4ee0d 120,872 bytes
+- `text.txt` 57b273733e7d5fe658deca4275db17ad5fd01aeb06d84d973d55551983dfa392 1,415 bytes
+
+### [CVE-2026-109618: PHP 8.2–8.5 RCE via OOM corruption](https://www.openwall.com/lists/oss-security/2026/10/21/6)
+
+**oss-security list (Jakub Zelenka, PHP security team)** · advisory · primary · captured · published 2026-10-21T14:41:54Z · added by `collector-primary` · `openwall-oss-security-2026-10-21-6`
+
+Date header Wed, 21 Oct 2026 16:41:54 +0200. Official PHP security team announcement.
+
+capture 20261022T081408Z · HTTP 200 · https://www.openwall.com/lists/oss-security/2026/10/21/6- `headers.json` 716db9e977d3bc55b5045e260d9914e03196ed370f73c86c22880782e6a6a114 239 bytes
+- `page.html` d43a7569e9b4ff185814a61ed2a17e0b058d4554558a9fee8e3a7a29810169c5 6,170 bytes
+- `provenance.json` 9ab3756501428b0a77ed30c1d7ef15298f6a8edb131b1dc1436043a045609b4b 1,024 bytes
+- `rendered.html` 0686ceff1b17dfaad334b167b4f0fbb9dc9cbcdc897203d210b9a1d7a9630269 6,426 bytes
+- `screenshot.png` 6604c447fd5c7db94e64b0c9eeb75cd7301d461bd4f903890db31f9971d20236 146,765 bytes
+- `text.txt` 2f2d3ff13f3a32b7b624d0c1f0e16f1d9172beabd52d42d7c20e504cb4cf8e4f 1,805 bytes
+
+### [CVE-2026-109619: PHP 8.2–8.5 RCE via stale global state](https://www.openwall.com/lists/oss-security/2026/10/21/7)
+
+**oss-security list (Jakub Zelenka, PHP security team)** · advisory · primary · captured · published 2026-10-21T14:44:06Z · added by `collector-primary` · `openwall-oss-security-2026-10-21-7`
+
+Date header Wed, 21 Oct 2026 16:44:06 +0200. Replies at 21/16, 21/17, 21/23, 22/2 are in openwall-oss-security-109619-thread.
+
+capture 20261022T081407Z · HTTP 200 · https://www.openwall.com/lists/oss-security/2026/10/21/7- `headers.json` ffb76440772a63ed2186c00ea575b6e673ca3c7222ae89205c2bbb9de07e38ae 239 bytes
+- `page.html` 81caae4759a5e9cd8e501221e12f31928874e9d16d7f7e8523e8cb1d36aa69fd 6,323 bytes
+- `provenance.json` deeabe8cb21005c2d60c6ffcca6537969877e4411a8d1bbc88503109265756ce 1,028 bytes
+- `rendered.html` b797761c288a2b59dad8b9bf3c0f4810af1b669a685b93013a7d6edc0e688638 6,579 bytes
+- `screenshot.png` d6c5ab360073ebc5769973dc76493c74acf62cdc6e099f668ebffae91de551fa 154,322 bytes
+- `text.txt` ceef70b4943f78182c26af1c04cdac8a7986a9c2c5f5cbb5385a73efdd112384 1,934 bytes
+
+### [Patch the Planet — OpenAI](https://patchtheplanet.org/)
+
+**OpenAI (Patch the Planet / Daybreak)** · researcher · primary · captured · published not stated · added by `collector-researchers` · `patchtheplanet-org`
+
+OpenAI microsite. 'An OpenAI Daybreak initiative'; 'In collaboration with Trail of Bits, Calif, HackerOne'. Latest disclosure php2shell links to https://php2shell.com/. No date on page.
+
+capture 20261022T081652Z · HTTP 200 · https://patchtheplanet.org/- `headers.json` 2efe5a08cc256108fdb7a72a5bdeb92c7596564181f1d63e2e31fd2b71e2a321 563 bytes
+- `page.html` 280b5c18a8bb8c6254841014830e299d803e1d21ffd98141296156a2b5423bda 2,325 bytes
+- `provenance.json` e6def2821be82e7593e0ea8682f9c24fdf763a48424e1814e65b815a1db3a78f 909 bytes
+- `rendered.html` d347cfa4c1e9dc2c990b725259875a732e38470560bfc51b6bb21da3419d2662 7,680 bytes
+- `screenshot.png` 0872d96463aabdeccdeb873b9cb455601fe9cdea8cb6b15f45c65a9e85f1bb75 285,779 bytes
+- `text.txt` 3e32706fb7c0ed83bb988da8372dbca5e70dbdfebc6135060f3f777805f852ae 1,053 bytes
+
+### [Today's PHP Security Release, and How We're Strengthening PHP Security](https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/)
+
+**The PHP Foundation** · advisory · primary · captured · published 2026-10-21 · added by `collector-primary` · `php-foundation-blog-security-release`
+
+Foundation's account of discovery, 2024 audit origin, leak timeline (20 Oct 15:00Z), Calif video, Chainguard embargo break (21 Oct 07:41Z). Page embeds an r/PHP comment thread (third-party, not Foundation).
+
+capture 20261022T080901Z · HTTP 200 · https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/- `headers.json` c18914982a4c07d0a15b76e052d18c5f77f345016e356ea5cb65e766f0096b0f 857 bytes
+- `page.html` 6b8915a800a5311c06544c4c47fe0e6b69586e9d75aeab49d2922a6a71446223 40,324 bytes
+- `provenance.json` 2acdcc9ae9ee9e14a8960ed26727dee21b5561915fc6632378e78c9ae27a3f1b 1,218 bytes
+- `rendered.html` 874a78d766936a3c9d375512a1882ac83f25921f0a1050ed8169c5f37ea72cf2 126,413 bytes
+- `screenshot.png` f6eb5d0b42048f1570880df5c5e38adea3d5ee8635a98b8fef51f6234e5d2089 2,631,098 bytes
+- `text.txt` a1be057adc1c5bfabad6a59007bd08960168346230f03967fba68f2402ab3f04 31,882 bytes
+
+### [Security advisory: Critical remote code execution vulnerabilities, update now](https://www.php.net/archive/2026.php#2026-10-21-5)
+
+**PHP Group (php.net)** · advisory · primary · captured · published 2026-10-21 · added by `collector-primary` · `php-net-advisory`
+
+Official php.net advisory (archive anchor 2026-10-21-5) plus the 8.2.35/8.3.36/8.4.27/8.5.12 release posts and the 20 Oct pre-announcement on the same page. Feed  timestamps (00:05-00:35Z on 21 Oct; 20:32Z on 20 Oct) do not match the Foundation's stated times (release 14:00Z, pre-announcement 19:30Z). raw/ holds feed.atom and a curl copy.
+
+capture 20261022T080901Z · HTTP 200 · https://www.php.net/archive/2026.php#2026-10-21-5- `headers.json` 42812c4d4f151d93b62d63d08b84b83e50a94a9e2ab79427924d5b5df582cc72 899 bytes
+- `page.html` 3b02b9e9f8ebedb87cbe39a2852c8cc3205067f59572000c730844fbc4a03555 99,388 bytes
+- `provenance.json` b1c9672106ace3646ee3912d7e4e87d94dc91cc5b60b9acc1066295675ce5014 948 bytes
+- `rendered.html` a8cbeb0c17b3646681217db64cce0e0beb6dc71765bd1bad550f8e20170ef7d0 238,404 bytes
+- `screenshot.png` 4727eaed5a4a5a90eb95aed5c3c0093702f427e1aae4bc63ed9ccfea2ca92da4 3,983,360 bytes
+- `text.txt` df0b1bba3deae2823b3f7c6200d5a4fafa1625c51cde86e50f650e0b0726b31e 35,947 bytes
+raw, 2 files with SHA256SUMS- `archive-2026.curl.html` 3b02b9e9f8ebedb87cbe39a2852c8cc3205067f59572000c730844fbc4a03555
+- `feed.atom` 79c12996a433f66b2e2422e32d1dd5d4251c7c24531f75c3a0611f58dc1894a8
+
+### [PHP 8 ChangeLog](https://www.php.net/ChangeLog-8.php)
+
+**PHP Group (php.net)** · advisory · primary · captured · published not stated · added by `collector-primary` · `php-net-changelog-8`
+
+8.5.12, 8.4.27, 8.3.36, 8.2.35 entries dated '22 Oct 2026' (the original target date), although they were released 21 Oct. Core entry: 'Fixed GHSA-w8hw-w9fx-j79w, GHSA-6wmf-4rv5-p3rp (Avoid state corruption via bailout).' 8.5.12 and 8.4.27 also carry unrelated bug fixes.
+
+capture 20261022T081558Z · HTTP 200 · https://www.php.net/ChangeLog-8.php- `headers.json` 7e0f775cb09c408472e389bec122b0fc703a450df430b26aca98e4539caf6f4f 892 bytes
+- `page.html` 8d771e4a97a9457c8ff4dfff88d79661cf8b5d520666b8799a944f033e620e68 752,126 bytes
+- `provenance.json` 08d9493b6d1480061ad20e23c5ea875c121bb9741f79ccf69dd923284133f1c9 919 bytes
+- `rendered.html` 03ecb3465829e89ba578ae7bc7f36881fbbd37d9bc77ae5bb3c74bdd15e2d36a 751,162 bytes
+- `screenshot.png` 0954e33d2a52ac1470b5c204eaaeea8d8fe811854486542ece88541cf7dbc526 15,023,593 bytes
+- `text.txt` e39f8d2cb60ee8a58c5400536714b0688b198b31bc07685fd7cdada8f2f0dd70 417,190 bytes
+raw, 1 files with SHA256SUMS- `ChangeLog-8.curl.html` 8d771e4a97a9457c8ff4dfff88d79661cf8b5d520666b8799a944f033e620e68
+
+### [Today's PHP Security Release, and How We're Strengthening PHP Security](https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/)
+
+**The PHP Foundation** · advisory · primary · captured · published 2026-10-21 · added by `collector-researchers` · `phpfoundation-blog-security-release-leak`
+
+Dated Oct 21, 2026. Primary account of the leak: CVE IDs circulating Oct 20 ~15:00 UTC; Calif 'mistakenly published a video' ~20:00 UTC; mitigation advice may have leaked; Chainguard broke embargo Oct 21 07:41 UTC. Captured text also contains reader comments below the post (lines ~90 onward) — those are third-party, unverified.
+
+capture 20261022T081244Z · HTTP 200 · https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/- `headers.json` 3b9ca485b393afa38381b67bb251208dca58e32f815fd1aed95ba69e1d88dda3 856 bytes
+- `page.html` 6b8915a800a5311c06544c4c47fe0e6b69586e9d75aeab49d2922a6a71446223 40,324 bytes
+- `provenance.json` 777ac74e8e4915a67c651d019c1cdcf9a099773e9963221b097b676fa5054bde 1,222 bytes
+- `rendered.html` 074da5662f04df8f88a2efc163726c553f5bb43c8095278a089daa0faf364955 126,414 bytes
+- `screenshot.png` 09956999247e6e42a5635bb2b1234a2f8a11f0c66c26b88fafc020c31f3b6cd6 2,630,327 bytes
+- `text.txt` b9f29cfdc1c0cd65dd505738d06d5f7d590d5d3da95801309990871870d2e0dd 31,883 bytes
+
+### [PHP accuses Chainguard in PHP2shell](https://www.techzine.eu/news/security/145182/php-accuses-chainguard-in-php2shell/)
+
+**Techzine Global** · news · secondary · blocked · published not stated · added by `collector-researchers` · `techzine-php-chainguard`
+
+Cloudflare challenge (HTTP 403) at 2026-10-22T08:13Z; 403 capture folder kept. Per search snippet: Chainguard CEO Dan Lorenc does not dispute timeline but denies leaking. Unverified until captured.
+
+capture 20261022T081301Z · HTTP 403 · https://www.techzine.eu/news/security/145182/php-accuses-chainguard-in-php2shell/?ki-cf-botcl=1- `headers.json` e4c1c978fae1d476008a0220bd56d79c287115d6dca754076ac5c220c8403209 1,084 bytes
+- `page.html` f261423d1da97890ff6bfccd31ff4ee0b74f69351cf75095fbe791cb16cbf5bd 103 bytes
+- `provenance.json` 0b93d24048c39675ef0bec6c63cbadc201cd4c761b3fd85f96538ec7afa93ea9 1,084 bytes
+- `rendered.html` 8631afb05e141985b74d3ac4fc67eca679d940e50dcd377593b0a5faf473e4a8 29,118 bytes
+- `screenshot.png` 83e27bf325b865db2d303c7c20ec30a0a5c0b452145b2b48175a74d4b292d20f 38,816 bytes
+- `text.txt` a709538005b7efca9f1059e2eeaa4a13cd196d9f8215befc91b286d42f56d334 263 bytes
+
+### [Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed](https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html)
+
+**The Hacker News (Ravie Lakshmanan)** · news · secondary · captured · published 2026-10-22 · added by `collector-researchers` · `thehackernews-php2shell-4days`
+
+Dated Oct 22, 2026. Quotes Amazon CISO CJ Moses ('post shared with The Hacker News'): MadPot honeypot exploit attempt Oct 17 2026 from anonymization network IP geolocated to Australia; PoC attempts from ~02:00 UTC Oct 21. Says 'details about the CVE identifiers and a proof-of-concept (PoC) exploit leaked ahead of time' — contrast PHP Foundation 'No technical details leaked'. VulnCheck: PHP on 2,608,039 internet-facing hosts.
+
+capture 20261022T081320Z · HTTP 200 · https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html- `headers.json` 54c094189f50f4afa3962d0e484ef93cf0f92bd1fefb71ae2fec7e63b71b3b14 783 bytes
+- `page.html` b2b51b3736eab8ebf9fb584770654a563ec0cde9a258c8ccc9b2cac5e2759495 181,180 bytes
+- `provenance.json` ef03914e372ab683b87cf258b84ec703ba5cc140e8b724fe1fa547d0f7a066fe 1,081 bytes
+- `rendered.html` a7caeb00fddc406d6dcfeb68c7fdce453fdb39446eb83daa364cb3f2986a7834 176,478 bytes
+- `screenshot.png` 71b28408de124895b1534822f79eff33a445be5296c09203d51f152ef67d089c 2,255,956 bytes
+- `text.txt` c1cb63141287484c7b96b6f842f983bb978a108b3b82eebb95ebe78c4ed608f4 12,295 bytes
+
+### [PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet](https://www.wiz.io/blog/php2shell-php-rce)
+
+**Wiz (Wiz Research)** · researcher · primary · captured · published 2026-10-21 · added by `collector-researchers` · `wiz-blog-php2shell`
+
+Wiz Research post dated October 21, 2026. Source of '70% of the Internet' headline; body basis is 'powers 70% of all websites'. Disclosure timeline: discovered Aug 19, reported Aug 24, PHP ack Sep 21. Credits Gemini 4 Argon, GPT-5.6 Sol, Wiz Atlas.
+
+capture 20261022T081047Z · HTTP 200 · https://www.wiz.io/blog/php2shell-php-rce- `headers.json` f3a7f515bda9ae91541c7792cad2fbb4d5864a7962be4f5db93bccbe8caa2d03 5,075 bytes
+- `page.html` 32408c9f60071e7bdcf0e702160f6c398d6967cb89fbc81b5f0e0029e34af07b 438,665 bytes
+- `provenance.json` 4e362d46ccd571e124b20fb3518c8d00076dc508a0146ee5338a7dce931d1fa1 1,002 bytes
+- `rendered.html` 6db43e32910bdf4bc2b82a93afa5097900aa4a205b5cdde32d1a2510beff4c68 580,534 bytes
+- `screenshot.png` 4ba83874c540e1f7faf4c817b6b8c3ae1ef61eacda5851a112d6601e47d6d91f 2,753,995 bytes
+- `text.txt` e3568b6f88c93f6bb08eebe3c8811f9fd283212f7331b287d5170b91d6bad1ea 19,147 bytes
+
+### [LCFR on X: hash commitment d935be02…](https://x.com/lcfr_hax/status/2085031675382071483)
+
+**Ryan Austin (@lcfr_hax), Calif** · social · primary · captured · published 2026-08-05T15:54Z · added by `collector-researchers` · `x-lcfr-hax-hash-tweet`
+
+Hash-only tweet shown as '15:54 · 5 Aug 2026' (capture browser in UTC). Cited by Calif's timeline and by X Community Note on OpenAI's post as proof of prior discovery. Pre-image not published here.
+
+capture 20261022T081603Z · HTTP 200 · https://x.com/lcfr_hax/status/2085031675382071483- `headers.json` ea81d1bf086428a65e67d0551ac1c3aebc53a1cd4c39b43d3ed837bbd8acee28 9,022 bytes
+- `page.html` 11a7ec8817e3966590490fb928089c210339261afe54cc2f72353dca15f41391 132,347 bytes
+- `provenance.json` 508544ce2c74aa23119fa27daa5a30b5ae63e47e7cd3e690fb9cf9a54ef7cded 1,012 bytes
+- `rendered.html` 9a1b5b36d22e9689e136b35c76adc712c6977f4ec6f1bd41655bdb1caff65fac 160,702 bytes
+- `screenshot.png` 9dfa4845de672eb2ec27885a9cff17fe9af803635a290c1cfc17f6ee5902d54e 262,114 bytes
+- `text.txt` 2c10f3991caf3a74b21df9d9e0362fd1bab8aefc5113877a412dac999ca36372 1,018 bytes
+
+### [OpenAI on X: OpenAI models helped researchers ... discover critical security flaws in PHP](https://x.com/OpenAI/status/2112907856018309586)
+
+**OpenAI (@OpenAI)** · social · primary · captured · published 2026-10-21T14:04Z · added by `collector-researchers` · `x-openai-php2shell`
+
+Shown '14:04 · 21 Oct 2026', 5.2m views. Full text captured (stands in for the blocked openai.com post). Carries an X Community Note disputing OpenAI's discovery role and linking lcfr_hax.
+
+capture 20261022T081645Z · HTTP 200 · https://x.com/OpenAI/status/2112907856018309586- `headers.json` 427b75f5bb12cb7b0acee221f2065095d92c82279e0db87f9b80909525886df3 9,023 bytes
+- `page.html` 8e6a0183b6982e8530d7b48277e4b0f6f010b22d3348b30328cc4460cc371d90 160,064 bytes
+- `provenance.json` 3e52aad242520de5ca4db4103baf86c58e7d477a8f7c04c19b841034f1ca49e3 1,232 bytes
+- `rendered.html` 2e31eee6ab72f0703675cd74158267dbe5cfb55bf03b80153deaa1b899be4c10 147,195 bytes
+- `screenshot.png` aaf750d50e69e80b34fbdf908a9fdc330ac315b765eacb2e3e8361cb40f2cbb2 570,247 bytes
+- `text.txt` 785b7cae55e3748b3d11e002f9b254408a57849c1ef08eb9fcc16a2cd196f189 3,316 bytes
+
+### [Wiz on X: BREAKING ... #PHP2SHELL ... impacting 70% of the Internet](https://x.com/wiz_io/status/2112899813264277528)
+
+**Wiz (@wiz_io)** · social · primary · captured · published 2026-10-21T13:32Z · added by `collector-researchers` · `x-wiz-io-php2shell`
+
+Shown '13:32 · 21 Oct 2026' (UTC in capture browser) — 28 min before the 14:00 UTC release. Thread says 'Apply the Oct 22 security release immediately' — stale date from the original schedule.
+
+capture 20261022T081624Z · HTTP 200 · https://x.com/wiz_io/status/2112899813264277528- `headers.json` f9a8ec8c80b7e7b13a6e772a718ece30ec0796dffd3481acc57a310616eca249 9,022 bytes
+- `page.html` 6adc23abb012a9e89f22453d2d8d4f0eff574edc67373bc94eef59cfc12ebe85 183,867 bytes
+- `provenance.json` 5df6949985ad1cf4a150d5b9a7e52f1355bac3b127484b31c70c8052986b1556 1,086 bytes
+- `rendered.html` 9c5f87ac8afbe6aad1205a23ecbe79d83dc801c77f4d0ffb750ffb5b53625888 193,354 bytes
+- `screenshot.png` d2187dc09d49ec23ea5593aa7ffef5df60cd2385f290922ec6d77b6861fc7abb 578,314 bytes
+- `text.txt` 6c17977662815b0cb25a32e0987d1b1f95942156825b0cc616dc43a3f7f46809 2,222 bytes
+
+
+---
+site v0.1.0 · data as of 2026-10-22T08:48Z · vault commit 379e3d7f172a · https://php.oct-2026.story.sgit.ai/sources/index.html

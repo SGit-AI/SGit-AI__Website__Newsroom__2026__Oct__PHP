@@ -1,0 +1,113 @@
+{
+ "runs": {
+  "meter": "SG Meter v1.3.1",
+  "storageKey": "php-story.meter.v1",
+  "start": 500,
+  "symbol": "£",
+  "prices": {
+   "story": 2,
+   "briefing": 5,
+   "analysis": 3,
+   "evidence": 1,
+   "page": 1,
+   "free": 0
+  },
+  "topup": {
+   "amount": 500,
+   "link": ""
+  },
+  "newDays": 7,
+  "minDepth": 0.1
+ },
+ "kinds": [
+  {
+   "kind": "story",
+   "price": 2,
+   "pages": "the front page, the flaws, the timeline, the leak, the discovery, the exploitation signals, the playbook",
+   "why": "Pages assembled from the vault by agents; the reader pays for the assembly."
+  },
+  {
+   "kind": "analysis",
+   "price": 3,
+   "pages": "the numbers, the claims, the agencies, the affected systems",
+   "why": "Pages where the site did work a reader cannot do by reading one source: counting, comparing, converting times."
+  },
+  {
+   "kind": "briefing",
+   "price": 5,
+   "pages": "the six briefings",
+   "why": "The most compressed form of the work: one page for one reader's decision."
+  },
+  {
+   "kind": "evidence",
+   "price": 1,
+   "pages": "the sources page, the graph",
+   "why": "Reference pages. Cheap, because the value is in checking, not reading."
+  },
+  {
+   "kind": "free",
+   "price": 0,
+   "pages": "the method, the team, the billing model, corrections, the release history, admin",
+   "why": "The site's own account of itself is free; charging for it would be charging to be checked."
+  }
+ ],
+ "designed": [
+  {
+   "what": "A price per verified claim",
+   "text": "Each claim on this site carries a status and the sources that give it that status. The unit a reader or an agent would pay for is not the page but the claim with its evidence chain: 'is this use of it sound', in the newsroom's phrase, not 'is this true'. Proposed price: 1p per claim read, 5p per claim with its captures opened, 20p per claim re-verified on request."
+  },
+  {
+   "what": "The fact creator's share",
+   "text": "The newsroom's economics page argues a 60/25/10/5 split between the creator of the fact, the checker, the publisher and the rails. On this site the creators are the agencies, the researchers and the reporters whose pages are captured; the checker is the collector agent and the verifier; the publisher is this site. The split is argued, not implemented: nothing here pays anyone."
+  },
+  {
+   "what": "Reading the vault itself",
+   "text": "A reader who wants the bytes rather than this site's reading of them would be sold a read-only snapshot of the evidence vault for a fixed sum, opened in the browser with a read key. The captures are third-party pages and are not for republication, so this stays a proposal until the rights question has an answer."
+  },
+  {
+   "what": "An agent's subscription",
+   "text": "An agent that briefs an executive every morning would pay per briefing regenerated, metered by the same component, with the balance kept in the agent's own vault rather than a browser. The meter already fires an event per charge; nothing listens to it here."
+  }
+ ],
+ "cost_model": {
+  "note": "A model of what this story cost to assemble, in units counted from the vault and the repository. The unit prices are assumptions, labelled as such; the counts are not.",
+  "units": [
+   {
+    "unit": "sources captured",
+    "count_from": "data/vault.json: sources",
+    "assumed_price_pence": 5,
+    "why": "one headless-browser capture with six files and their hashes"
+   },
+   {
+    "unit": "captures (dated page states)",
+    "count_from": "data/vault.json: captures",
+    "assumed_price_pence": 5,
+    "why": "the same page captured again is a new unit, because the series is the record"
+   },
+   {
+    "unit": "source notes written",
+    "count_from": "data/sources.json: has_notes",
+    "assumed_price_pence": 20,
+    "why": "an agent reading a page and writing what it says, who says it and what is odd"
+   },
+   {
+    "unit": "claims traced",
+    "count_from": "data/claims.json",
+    "assumed_price_pence": 10,
+    "why": "one claim, its status and its sources"
+   },
+   {
+    "unit": "timeline events dated",
+    "count_from": "data/timeline.json",
+    "assumed_price_pence": 5,
+    "why": "one event, its time, its source and whether the time was stated or converted"
+   },
+   {
+    "unit": "pages built",
+    "count_from": "the build's page list",
+    "assumed_price_pence": 0,
+    "why": "the build is deterministic and costs nothing to run again"
+   }
+  ]
+ }
+}

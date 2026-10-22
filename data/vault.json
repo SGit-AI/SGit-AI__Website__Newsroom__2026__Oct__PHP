@@ -1,0 +1,20 @@
+{
+ "head": {
+  "commit": "379e3d7f172a",
+  "subject": "claude-story-site: site claims (49) and timeline (59), the editor's memo transcripts, working notes  +5  [blobs:+5 trees:+2]",
+  "commits": 11
+ },
+ "sources": 61,
+ "captures": 62,
+ "hashed_files": 390,
+ "primary": 46,
+ "blocked": 6,
+ "agents": [
+  "claude-newsroom-lead",
+  "collector-gov",
+  "collector-primary",
+  "collector-researchers"
+ ],
+ "opened": "2026-10-22T08:03Z",
+ "note": "The captures are third-party pages kept privately for the record and are not published. Only their hashes are."
+}

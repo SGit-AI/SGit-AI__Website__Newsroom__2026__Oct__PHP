@@ -1,0 +1,66 @@
+# php.oct-2026.story.sgit.ai
+
+> A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
+
+Site v0.1.0. Data as of 2026-10-22T08:48Z (the latest capture in the evidence vault, commit 379e3d7f172a). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+
+## The story
+- [Front page](https://php.oct-2026.story.sgit.ai/index.md): A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
+- [The two flaws](https://php.oct-2026.story.sgit.ai/flaws/index.md): What the CVE records, the GitHub advisories and the PHP security team say about php2shell: the bug classes, what was demonstrated, which deployments, which versions, the fix and the temporary mitigations, with the blast-radius questions.
+- [Timeline](https://php.oct-2026.story.sgit.ai/timeline/index.md): 59 dated events in the php2shell story, from the 2024 audit through discovery, coordinated disclosure, the leak, the release and the response, every one tied to a captured source.
+- [Who found it](https://php.oct-2026.story.sgit.ai/discovery/index.md): Calif, OpenAI and Wiz each claim the discovery of php2shell; their own timelines side by side, the 2024 audit that saw it first, the credits on the advisories, and what the sources do and do not say about the models.
+- [How disclosure broke](https://php.oct-2026.story.sgit.ai/leak/index.md): Hour by hour from the first circulation of the CVE IDs on 20 October to the release on 21 October: the pre-announcement, the deleted video, the early WAF rules, the embargo break, the first attempts, and the three accounts that disagree on what leaked.
+- [Exploitation signals](https://php.oct-2026.story.sgit.ai/exploitation/index.md): Every signal of php2shell exploitation in the captured sources, from an Amazon honeypot hit on 17 October to the KEV catalog, with what exploitation would look like on a host.
+- [If you run PHP](https://php.oct-2026.story.sgit.ai/playbook/index.md): Inventory, patch, mitigate, shield, isolate or take offline, look for compromise, verify: every agency's php2shell advice merged into one ordered list with the sentence each step comes from.
+
+## The evidence
+- [Every claim](https://php.oct-2026.story.sgit.ai/claims/index.md): 49 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
+- [The numbers](https://php.oct-2026.story.sgit.ai/numbers/index.md): Every scale figure in circulation about php2shell, with what it measures, who said it, whether anyone checked it, and why they differ by four orders of magnitude.
+- [The agencies](https://php.oct-2026.story.sgit.ai/agencies/index.md): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
+- [Affected systems](https://php.oct-2026.story.sgit.ai/affected/index.md): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
+- [Software inventory](https://php.oct-2026.story.sgit.ai/affected/software.md): Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, with its status per CVE.
+- [Every source](https://php.oct-2026.story.sgit.ai/sources/index.md): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
+- [As a graph](https://php.oct-2026.story.sgit.ai/graph/index.md): 151 nodes and 215 citation edges from the php2shell claims and timeline to the captured sources, drawn from the same rows as the text, with the JSON to download.
+
+## Briefings
+- [Board member or executive](https://php.oct-2026.story.sgit.ai/briefings/board/index.md): The php2shell story for a board member or executive: what to decide, the claims it rests on with their status and sources, and what is still open.
+- [Security lead](https://php.oct-2026.story.sgit.ai/briefings/security/index.md): The php2shell story for a security lead: what to decide, the claims it rests on with their status and sources, and what is still open.
+- [PHP or platform engineer](https://php.oct-2026.story.sgit.ai/briefings/engineer/index.md): The php2shell story for a php or platform engineer: what to decide, the claims it rests on with their status and sources, and what is still open.
+- [Journalist](https://php.oct-2026.story.sgit.ai/briefings/journalist/index.md): The php2shell story for a journalist: what to decide, the claims it rests on with their status and sources, and what is still open.
+- [Security researcher](https://php.oct-2026.story.sgit.ai/briefings/researcher/index.md): The php2shell story for a security researcher: what to decide, the claims it rests on with their status and sources, and what is still open.
+- [Analyst or advisor](https://php.oct-2026.story.sgit.ai/briefings/analyst/index.md): The php2shell story for a analyst or advisor: what to decide, the claims it rests on with their status and sources, and what is still open.
+
+## About
+- [The method](https://php.oct-2026.story.sgit.ai/method/index.md): How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.
+- [The team](https://php.oct-2026.story.sgit.ai/team/index.md): Who does what on this site: the editor, the seven-step pipeline from URL to published claim, each agent role with the rule it enforces and the mistake behind it, and the six audiences.
+- [The billing model](https://php.oct-2026.story.sgit.ai/billing/index.md): How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
+- [Your reading account](https://php.oct-2026.story.sgit.ai/account/index.md): The balance, history and receipts of your reading on this site, kept in your browser.
+- [The brief](https://php.oct-2026.story.sgit.ai/brief/index.md): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.
+- [Corrections](https://php.oct-2026.story.sgit.ai/corrections/index.md): Where the brief or a page of this site was wrong, what was found and what was done instead.
+- [Release history](https://php.oct-2026.story.sgit.ai/admin/versions.md): Every release of this site, with what changed, why, and the vault commit it was built from.
+- [Admin & engineering](https://php.oct-2026.story.sgit.ai/admin/index.md): How this site is built, the checks in its gate, where things are, the reality file and the honest column.
+
+## Data
+- [sources.json](https://php.oct-2026.story.sgit.ai/data/sources.json): the vault manifest with every capture and hash
+- [claims.json](https://php.oct-2026.story.sgit.ai/data/claims.json): every claim with status, who says it and sources
+- [timeline.json](https://php.oct-2026.story.sgit.ai/data/timeline.json): every dated event
+- [numbers.json](https://php.oct-2026.story.sgit.ai/data/numbers.json): the scale figures and what each measures
+- [agencies.json](https://php.oct-2026.story.sgit.ai/data/agencies.json): the agencies' stances
+- [affected.json](https://php.oct-2026.story.sgit.ai/data/affected.json): versions, SAPIs, mitigations
+- [software.json](https://php.oct-2026.story.sgit.ai/data/software.json): the NCSC-NL inventory, parsed
+- [exploitation.json](https://php.oct-2026.story.sgit.ai/data/exploitation.json): the signals
+- [graph.json](https://php.oct-2026.story.sgit.ai/data/graph.json): nodes and citation edges
+- [vault.json](https://php.oct-2026.story.sgit.ai/data/vault.json): the vault's head, counts and agents
+- [billing.json](https://php.oct-2026.story.sgit.ai/data/billing.json): the meter configuration and the designed model
+- [versions.json](https://php.oct-2026.story.sgit.ai/data/versions.json): release history
+
+## Status words
+- confirmed: two or more primary sources agree, or the fact was counted from a captured file
+- reported: one party says so, and it has not been contradicted
+- disputed: the sources disagree, and both readings are shown
+- contradicted: a primary source says otherwise
+- unverified: even the reporting outlet could not check it
+
+Newsroom section on the same story: https://newsroom.sgit.ai/php-flaws/index.html
+Repository: https://github.com/SGit-AI/SGit-AI__Website__Story__Oct-2026__PHP
+Licence: content CC BY 4.0, code Apache-2.0.
