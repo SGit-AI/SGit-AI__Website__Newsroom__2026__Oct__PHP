@@ -53,6 +53,17 @@ Open questions, stated rather than papered over. Each one names what would close
 
 [The whole timeline →](timeline/index.html) runs from the 2024 audit to the latest capture, with every time stated as its source states it and every conversion marked.
 
+## Questions readers ask
+
+Asked in group chats, newsrooms and boardrooms; each answer is short enough to paste back, and points at the pages and sources behind it.
+- [Can anything be done to fix it, or do we just have to wait for updates?](questions/fix-or-wait/index.html) The updates already exist: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 were released on 21 October and fix both flaws.
+- [Is PHP really the software behind most websites?](questions/most-websites/index.html) Roughly, if you count websites, not servers or the internet.
+- [Has anyone actually been hacked?](questions/been-hacked/index.html) Not that anyone has confirmed.
+- [Do I need to change my passwords?](questions/passwords/index.html) Not because of this, as things stand.
+- [How do I know whether my site is affected?](questions/am-i-affected/index.html) If the site runs on PHP (WordPress, Drupal, Joomla, Magento, MediaWiki, and Laravel all do) and the running PHP version is older than 8.5.12, 8.4.27, 8.3.36 or 8.2.35 without a distribution backport, it is affected.
+
+[Every question, and the page that answers it →](questions/index.html)
+
 ## Read it for your job
 
 Six briefings from the same claims. None adds a claim; each selects, orders and keeps every source.
@@ -74,4 +85,4 @@ The site is a deterministic function of the vault and a version number: the same
 
 
 ---
-site v0.2.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.2.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html

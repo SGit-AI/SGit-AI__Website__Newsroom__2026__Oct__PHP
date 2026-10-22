@@ -82,6 +82,14 @@ for n in ('affected', 'roles', 'versions', 'billing', 'vault', 'software', 'grap
 aff = load('affected') or {}
 for s in aff.get('ranges_sources', []) + aff.get('mitigations_sources', []) + sum([x.get('sources', []) for x in aff.get('sapis', [])], []):
     if s not in slugs: fails.append(f'data/affected.json cites unknown slug {s}')
+qs = load('questions') or {}
+for q in qs.get('questions', []):
+    for a in q.get('answer', []):
+        for s in a.get('sources', []):
+            if s not in slugs: fails.append(f'data/questions.json: {q.get("id")} cites unknown slug {s}')
+    for pth in q.get('see', []):
+        if not os.path.exists(os.path.join(ROOT, pth.split('#')[0])): fails.append(f'data/questions.json: {q.get("id")} points at missing page {pth}')
+    if not q.get('see'): fails.append(f'data/questions.json: {q.get("id")} points at no page')
 # 5. determinism: rebuild into a temp copy and compare hashes
 def tree_hash():
     h = hashlib.sha256()

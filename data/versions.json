@@ -1,6 +1,15 @@
 {
- "current": "0.2.5",
+ "current": "0.2.6",
  "versions": [
+  {
+   "version": "0.2.6",
+   "date": "2026-10-22",
+   "title": "the librarian joins (librarian@php.newsroom): /questions/, the questions readers ask with a short answer to paste back, the sourced answer and the pages that carry it, starting from a reader's 'can anything be done, or do we wait for updates?'; a catalogue of every page; articles readers saw that the vault has not captured, listed as seen, not cited",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.5",
    "date": "2026-10-22",

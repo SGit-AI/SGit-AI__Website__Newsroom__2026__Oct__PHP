@@ -4,7 +4,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 12 items, 9 open, 3 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 14 items, 10 open, 4 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -20,9 +20,11 @@ The work, as rows in `data/admin.json`: 12 items, 9 open, 3 done. An item is add
 | 010 | Re-check KEV and oss-security daily; record the day php2shell enters KEV if it does | open | collector-primary |  |
 | 011 | Resolve the rights question on publishing the evidence vault's read key: third-party pages are held verbatimThe read key is published on the vault page at the editor's request; the editor will check the vault for anything confidential. | open | editor |  |
 | 012 | Reconcile the fix commit hash rjmendez names (82f8f31b16a) with 3584a98bd | open | collector-primary |  |
+| 013 | Questions readers ask: /questions/, one page per question, each answer pointing at the pages and sources that carry it; first question from a reader's group chat | done | librarian | 0.2.6 |
+| 014 | Capture The Times, 'Race to fix PHP security issue in software behind most websites' (22 October), seen by a reader, paywalled; listed on /questions/ as seen, not captured | open | collector-researchers |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.2.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.2.6 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

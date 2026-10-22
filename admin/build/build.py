@@ -22,7 +22,7 @@ def load(name):
 VERSION = open(os.path.join(ROOT, 'VERSION'), encoding='utf-8').read().strip()
 D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 'affected', 'exploitation',
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
-                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence', 'admin', 'telemetry', 'review')}
+                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence', 'admin', 'telemetry', 'review', 'questions')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
@@ -134,6 +134,7 @@ def to_markdown(fragment):
 # ----------------------------------------------------------------------------- layout
 
 NAV = [
+    ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('The story', [('index.html', 'Front page'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -316,6 +317,7 @@ def build_index():
 {section("known", "What is established", f'<ul class="known">{known}</ul>')}
 {section("open", "What is not", f'<ul class="open">{openq}</ul>', "Open questions, stated rather than papered over. Each one names what would close it.")}
 {section("latest", "The last 48 hours", table(["When (UTC)", "What", "Source"], latest_rows, "tl") + '<p><a href="timeline/index.html">The whole timeline &rarr;</a> runs from the 2024 audit to the latest capture, with every time stated as its source states it and every conversion marked.</p>')}
+{section("questions", "Questions readers ask", '<ul class="asks">' + ''.join(f'<li><a href="questions/{E(q["id"])}/index.html"><b>{E(q["q"])}</b></a> {E(q["short"].split(". ")[0])}.</li>' for q in D['questions']['questions'][:5]) + '</ul><p><a href="questions/index.html">Every question, and the page that answers it &rarr;</a></p>', "Asked in group chats, newsrooms and boardrooms; each answer is short enough to paste back, and points at the pages and sources behind it.")}
 {section("doors", "Read it for your job", f'<div class="doors">{doors}</div>', "Six briefings from the same claims. None adds a claim; each selects, orders and keeps every source.")}
 {section("how", "How this site works", '''<div class="how">
 <div><h3>Capture, don't paraphrase</h3><p>Every source is captured into a private, encrypted vault: the page as served, as rendered, its text, a screenshot and its headers, each file hashed at capture time. Captures are only ever added, so a page that changes leaves a series. The captures are third-party pages and are not republished; <a href="sources/index.html">their hashes are</a>.</p></div>
@@ -884,7 +886,8 @@ def build_llms():
               f'- [agencies.json]({BASE_URL}/data/agencies.json): the agencies\' stances', f'- [affected.json]({BASE_URL}/data/affected.json): versions, SAPIs, mitigations',
               f'- [software.json]({BASE_URL}/data/software.json): the NCSC-NL inventory, parsed', f'- [exploitation.json]({BASE_URL}/data/exploitation.json): the signals',
               f'- [graph.json]({BASE_URL}/data/graph.json): nodes and citation edges', f'- [vault.json]({BASE_URL}/data/vault.json): the vault\'s head, counts and agents',
-              f'- [billing.json]({BASE_URL}/data/billing.json): the meter configuration and the designed model', f'- [versions.json]({BASE_URL}/data/versions.json): release history', '',
+              f'- [billing.json]({BASE_URL}/data/billing.json): the meter configuration and the designed model', f'- [versions.json]({BASE_URL}/data/versions.json): release history',
+              f'- [questions.json]({BASE_URL}/data/questions.json): the questions readers ask, each answer with its sources and the pages that carry it', '',
               '## Status words', *[f'- {k}: {v}' for k, v in STATUS_WORDS.items()], '',
               f'Newsroom section on the same story: {NEWSROOM}', f'Repository: {REPO_URL}', 'Licence: content CC BY 4.0, code Apache-2.0.', '']
     write('llms.txt', '\n'.join(lines))
@@ -912,7 +915,7 @@ def main():
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_briefings(); build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
-    build_admin_section()
+    build_admin_section(); build_questions()
     build_llms(); build_sitejs()
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
@@ -1285,6 +1288,54 @@ def build_review():
 <script src="../../assets/review-nav.js" defer></script>
 '''
     page('review/ui/index.html', 'Walk the graph: the fix and the code', 'A navigator over the php2shell review graph: the fix, the flaws it closes, and the files and functions it changed, each a link.', body, kind='evidence', topics='php2shell code review navigator')
+
+
+# ----------------------------------------------------------------------------- questions, kept by the librarian (v0.2.6)
+
+def q_link(path, depth):
+    """A site page as a link with its own title, so a question points at pages, not paragraphs."""
+    bare = path.split('#')[0]
+    title = next((t for p, t, _, _ in PAGES if p == bare), None) or next((t for _, items in NAV for p, t in items if p == bare), bare)
+    return f'<a href="{"../" * depth}{E(path)}">{E(title)}</a>'
+
+def build_questions():
+    Q = D['questions']
+    qs = Q['questions']
+    lib = Q['librarian']
+    for i, q in enumerate(qs):
+        paras = ''.join(f'<p>{a["html"]} <span class="refs">{src_links(a["sources"], 2)}</span></p>' for a in q['answer'])
+        who = table(['If', 'Then'], [[E(w['if']), w['then']] for w in q['who']]) if q.get('who') else ''
+        see = ''.join(f'<li>{q_link(p, 2)}</li>' for p in q['see'])
+        nxt = qs[(i + 1) % len(qs)]
+        url = f'{BASE_URL}/questions/{q["id"]}/index.html'
+        body = f'''
+<p class="kicker">Question &middot; kept by the {E(lib["name"].lower())} &middot; <code>{E(lib["address"])}</code></p>
+<h1>{E(q["q"])}</h1>
+<p class="small">How it was asked: {E(q["heard"])}</p>
+{section("short", "The short answer", f'<p class="lead">{E(q["short"])}</p><p class="small">To paste back where it was asked: the paragraph above and <code>{E(url)}</code></p>')}
+{section("who", "What it means for you", who) if who else ""}
+{section("why", "The answer, with its sources", paras)}
+{section("see", "The pages that carry it", f'<ul>{see}</ul>')}
+<p>Next question: <a href="../{E(nxt["id"])}/index.html">{E(nxt["q"])}</a> &middot; <a href="../index.html">every question</a>. Nothing here is advice for your environment; the <a href="https://www.php.net/archive/2026.php#2026-10-21-5" rel="noopener">php.net advisory</a> and your national agency are the authorities.</p>
+'''
+        page(f'questions/{q["id"]}/index.html', q['q'], q['short'], body, kind='story', topics='php2shell questions')
+    rows = [[f'<a href="{E(q["id"])}/index.html"><b>{E(q["q"])}</b></a>', E(q['short']), ' '.join(q_link(p, 1) for p in q['see'][:3])] for q in qs]
+    seen = table(['Seen', 'What', 'State', 'Answered by'], [[E(x['seen']), f'<b>{E(x["publisher"])}</b>: <a href="{E(x["url"])}" rel="noopener nofollow">{E(x["title"])}</a><div class="note">{E(x["standfirst"])}</div>', E(x['state']), '<br>'.join(f'<a href="{E(a)}/index.html">{E(next(q["q"] for q in qs if q["id"] == a))}</a>' for a in x['answered_by'])] for x in Q['seen']])
+    catalogue = ''
+    for label, items in NAV:
+        if label == 'Questions':
+            continue
+        lis = ''.join(f'<li>{q_link(p, 1)}: {E(next((d for pp, _, d, _ in PAGES if pp == p), ""))}</li>' for p, _ in items)
+        catalogue += f'<h3>{E(label)}</h3><ul class="small">{lis}</ul>'
+    body = f'''
+<h1>Questions readers ask</h1>
+<p class="lead">The questions people ask about php2shell when they see the headline, each with a short answer that can be pasted back where it was asked, the longer answer with its sources, and the pages that carry it. Kept by the {E(lib["name"].lower())}, <code>{E(lib["address"])}</code>: {E(lib["beat"])}.</p>
+{section("questions", "The questions", table(['Question', 'The short answer', 'Read'], rows, 'claims'))}
+{section("seen", "Seen by readers, not yet in the vault", seen + '<p class="small">An article a reader has seen is listed here until a collector captures it into the evidence vault. Until then it is not cited anywhere on this site; the answers above rest on what is captured.</p>')}
+{section("catalogue", "The catalogue: every page, and what it answers", catalogue + '<p class="small">Every page also has a markdown twin, listed in <a href="../llms.txt">llms.txt</a>; the questions themselves are <a href="../data/questions.json">data/questions.json</a>.</p>')}
+{section("ask", "Asking a new question", f'<p>{E(lib["rule"])} A question that is asked twice gets a page. The librarian\'s role, rules and the mistake behind them are on <a href="../team/index.html#librarian">the team page</a>.</p>')}
+'''
+    page('questions/index.html', 'Questions readers ask about php2shell', 'Can anything be done or do we wait for updates? Has anyone been hacked? Is it really most websites? Short answers to paste back, the sources behind them, and the pages that carry each one.', body, kind='story', topics='php2shell questions faq')
 
 
 if __name__ == '__main__':

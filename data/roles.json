@@ -85,6 +85,13 @@
    "mistake": "None recorded yet; the first release is where the first one will be."
   },
   {
+   "id": "librarian",
+   "name": "Librarian (librarian@php.newsroom)",
+   "beat": "the catalogue: which page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured yet",
+   "rule": "Answer a question with a page, not a paragraph. If no page answers it, the answer is written here with its sources, and the gap goes to the editor.",
+   "mistake": "The first question came from a group chat with a newspaper link in it; the newspaper was not in the vault. It is listed below as seen, not captured, rather than cited."
+  },
+  {
    "id": "verifier",
    "name": "Verifier",
    "beat": "re-reads each claim against its captures; downgrades anything the capture does not carry",
