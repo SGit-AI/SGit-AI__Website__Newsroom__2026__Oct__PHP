@@ -4,7 +4,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.2.11. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.2.12. The data is [data/versions.json](../data/versions.json).
+
+### v0.2.12 · 2026-10-22
+
+deploys from several agents: the Pages workflow queues deploys instead of cancelling the one in flight, and release.sh takes in what other agents released before it bumps and again if its push loses a race; /status/ shows each newsroom site's deploy runs from GitHub's public API with no credential, beside the version each serves, and every page notes when a newer release is live
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.2.11 · 2026-10-22
 
@@ -112,4 +120,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.2.11 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.2.12 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

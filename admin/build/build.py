@@ -22,7 +22,7 @@ def load(name):
 VERSION = open(os.path.join(ROOT, 'VERSION'), encoding='utf-8').read().strip()
 D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 'affected', 'exploitation',
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
-                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence', 'admin', 'telemetry', 'review', 'layers', 'questions', 'readings')}
+                          'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence', 'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'pipeline')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
@@ -172,7 +172,7 @@ NAV = [
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
     ('About', [('method/index.html', 'The method'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
-               ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('admin/index.html', 'Admin & engineering'),
+               ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'),
                ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'), ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site')]),
 ]
 
@@ -269,7 +269,10 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
 def md_path(path):
     return re.sub(r'\.html$', '.md', path)
 
+OUTPUTS = set()  # every file this build writes; admin/build/outputs.txt, read by release.sh to resolve merges
+
 def write(path, content):
+    OUTPUTS.add(path)
     full = os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(full) or ROOT, exist_ok=True)
     with open(full, 'w', encoding='utf-8', newline='\n') as f:
@@ -947,7 +950,21 @@ def build_llms():
     write('llms.txt', '\n'.join(lines))
 
 def build_sitejs():
-    write('assets/site.js', '''// php.oct-2026.story.sgit.ai: the menu toggle on narrow screens. Nothing else runs here.
+    write('assets/site.js', '''// php.oct-2026.story.sgit.ai: the menu toggle on narrow screens, and a note in the bar when this page is older
+// than the release the site now serves (one same-origin read of /VERSION; nothing is sent anywhere else).
+(function () {
+  var v = document.querySelector('nav.site .ver'), root = document.documentElement.getAttribute('data-root') || '';
+  if (v && window.fetch) fetch(root + 'VERSION?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+    var live = (t || '').trim(), mine = v.textContent.replace(/^v/, '');
+    if (!/^\\d+\\.\\d+\\.\\d+$/.test(live)) return;
+    var a1 = live.split('.').map(Number), b1 = mine.split('.').map(Number), d = 0;
+    for (var i = 0; i < 3 && !d; i++) d = a1[i] - (b1[i] || 0);
+    if (d <= 0) return;
+    var a = document.createElement('a'); a.className = 'ver newer'; a.href = root + 'status/index.html';
+    a.title = 'This page is v' + mine + '; the site now serves v' + live + '. Reload for the new release; the pipeline page shows what changed and what is deploying.';
+    a.textContent = 'v' + live + ' is live: reload'; v.insertAdjacentElement('afterend', a);
+  }).catch(function () {});
+})();
 (function () {
   var b = document.querySelector('.nav-toggle'), n = document.getElementById('nav-items');
   if (!b || !n) return;
@@ -969,8 +986,9 @@ def main():
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_briefings(); build_method(); build_team(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
-    build_admin_section(); build_questions(); build_articles(); build_layers(); build_readings()
+    build_admin_section(); build_status(); build_questions(); build_articles(); build_layers(); build_readings()
     build_llms(); build_sitejs()
+    write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
 
@@ -1535,6 +1553,39 @@ def build_readings():
 <p class="small">The comparison rows are <a href="../data/readings.json">data/readings.json</a>, in the derived layer; the other models' text is in the authored layer (<a href="../layers/index.html">evidence, derived, authored</a>). The gate checks every source and claim a row cites.</p>
 '''
     page('readings/index.html', 'Second readings: other models, checked against the vault', 'Another model\'s notes on php2shell, published in full and credited, set beside the evidence vault point by point: where they agree, where the vault resolves or goes further, and the new leads for capture.', body, kind='analysis', topics='php2shell second reading models')
+
+
+# ----------------------------------------------------------------------------- the pipeline (v0.2.12)
+
+def build_status():
+    P = D['pipeline']
+    cfg = json.dumps({'api': P['api'], 'sites': P['sites']}, sort_keys=True, separators=(',', ':'))
+    cards = ''.join(f"""
+<section id="{E(x["id"])}" class="pl-site">
+<h2><a href="{E(x["site"])}">{E(x["name"])}</a></h2>
+<p class="kv"><a href="https://github.com/{E(x["repo"])}/actions/workflows/{E(x["workflow"])}"><span class="pl-badge" data-badge="https://github.com/{E(x["repo"])}/actions/workflows/{E(x["workflow"])}/badge.svg?branch={E(x["branch"])}">the deploy workflow's runs on GitHub</span></a> &middot; repository <a href="https://github.com/{E(x["repo"])}"><code>{E(x["repo"])}</code></a> &middot; branch <code>{E(x["branch"])}</code> &middot; served version <a href="{E(x["site"])}VERSION"><code>{E(x["site"])}VERSION</code></a></p>
+<div id="pl-{E(x["id"])}"><div class="pl-live"><p class="small">Reading GitHub&hellip; (this part and the badge need JavaScript; the links above do not)</p></div></div>
+</section>""" for x in P['sites'])
+    body = f"""
+<h1>The pipeline: what is live, what is deploying</h1>
+<p class="lead">Several agents release to these sites. Each push to <code>dev</code> starts a GitHub Actions run that runs the gate and deploys to GitHub Pages. This page reads those runs from GitHub's public API in your browser, with no credential anywhere: the repositories are public, and so is everything below. Beside each site's runs is the version that site serves now, read from its own <code>VERSION</code> file.</p>
+<p><button id="pl-refresh" type="button">Refresh now</button> <span id="pl-rate" class="small"></span></p>
+{cards}
+<h2>How to read it</h2>
+<ul>
+<li><span class="st st-confirmed">deployed</span> the run passed the gate and published its commit. The row marked <b>&#9664; live</b> is the version the site serves.</li>
+<li><span class="st st-reported">deploying</span> <span class="st st-reported">queued</span> in the pipeline now. Deploys never cut each other off: a started deploy finishes, then the newest waiting push goes.</li>
+<li><span class="st">superseded</span> GitHub keeps one waiting run per site; a push overtaken while it waited is cancelled, and the newer run behind it ships its commit too. Nothing is lost.</li>
+<li><span class="st st-failed">failed</span> the gate or the deploy failed; the site keeps serving the last good release. <span class="st st-unverified">cancelled</span> cancelled with nothing newer behind it: the next push or a re-run deploys.</li>
+</ul>
+<p>Every page of this site also checks, once, whether the site now serves a newer release than the page in front of you, and says so beside the version in the bar.</p>
+<h2>What it costs and what it shows</h2>
+<p>{E(P["about"])} GitHub allows {E(P["anonymous_limit"])}; this page spends one call per site per refresh: every five minutes, every twenty seconds for a site with a run in flight, and none while the tab is hidden. The badges are images GitHub serves, loaded by the same script, and do not count. Commit messages, run numbers and the agent named in a commit's <code>Agent:</code> line are public on GitHub already; this page shows them, and sends nothing anywhere else.</p>
+<p>For agents: <code>admin/build/release.sh "&lt;what changed and why&gt;"</code> takes in whatever other agents released before it bumps, and if its push loses a race it takes that in too and releases again on top, so two agents can release minutes apart without either push being rejected or either deploy being lost. The list of the sites read here is <a href="../data/pipeline.json">data/pipeline.json</a>.</p>
+<script type="application/json" id="pipeline-config">{cfg}</script>
+<script src="../assets/pipeline.js" defer></script>
+"""
+    page('status/index.html', 'The pipeline: what is live, what is deploying', 'Each newsroom site\'s deploy runs, read in your browser from GitHub\'s public API with no credential, beside the version the site serves now: what is live, what is deploying, what was superseded, what failed.', body, kind='site')
 
 
 if __name__ == '__main__':

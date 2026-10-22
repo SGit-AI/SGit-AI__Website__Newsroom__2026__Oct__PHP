@@ -4,7 +4,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 34 items, 26 open, 7 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 38 items, 28 open, 9 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -42,9 +42,13 @@ The work, as rows in `data/admin.json`: 34 items, 26 open, 7 done. An item is ad
 | 031 | Narrow the gate's em-dash exemption to quoted text and titles, and rewrite the 20 source and party pages' notes | open | dev |  |
 | 032 | SG Meter v1.3.1 to v1.5.0 for dark-mode contrast, keeping the pricing tiers working | open | dev |  |
 | 033 | Capture the sources Perplexity named that the vault lacks, W3Techs first (it would close the front page's question on what 70% measures); listed on /readings/ | open | collector-researchers |  |
+| 034 | Deploys from several agents: a started deploy is never cut off (the Pages workflow queues instead of cancelling), and release.sh takes in what other agents released before it bumps, and again if its push loses a race | done | dev@php.newsroom | 0.2.12 |
+| 035 | /status/: each newsroom site's deploy runs, read from GitHub's public API with no credential, beside the version each site serves; every page notes when a newer release is live | done | dev@php.newsroom | 0.2.12 |
+| 036 | Publish the source-watch vault (oq9gflln) the way sgit.ai publishes vaults: screenshot, open-in-a-new-tab link, the vault embedded, its main features | open | dev@php.newsroom |  |
+| 037 | A vaults section listing every vault behind the site, what each holds and how to open it | open | dev@php.newsroom |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.2.11 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.2.12 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

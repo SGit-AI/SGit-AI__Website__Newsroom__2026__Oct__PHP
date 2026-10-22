@@ -36,6 +36,7 @@
   {"path": "data/admin.json", "layer": "site", "by": "dev@php.newsroom", "from": "roles, the board, the vaults", "used_on": "admin/roles/index.html"},
   {"path": "data/versions.json", "layer": "site", "by": "admin/build/release.sh", "from": "every release", "used_on": "admin/versions.html"},
   {"path": "data/billing.json", "layer": "site", "by": "claude-story-site", "from": "the meter configuration and the designed model", "used_on": "billing/index.html"},
+  {"path": "data/pipeline.json", "layer": "site", "by": "dev@php.newsroom", "from": "the public repositories and Pages workflows of the newsroom sites", "used_on": "status/index.html"},
   {"path": "data/telemetry.json", "layer": "site", "by": "dev@php.newsroom", "from": "the telemetry lane's public configuration", "used_on": "admin/telemetry/index.html"},
   {"path": "data/telemetry-report.json", "layer": "site", "by": "admin/build/telemetry_drain.py", "from": "the drained telemetry lane, as counts", "used_on": "admin/telemetry/index.html"},
   {"path": "data/layers.json", "layer": "site", "by": "claude-journalist", "from": "this classification", "used_on": "layers/index.html"}

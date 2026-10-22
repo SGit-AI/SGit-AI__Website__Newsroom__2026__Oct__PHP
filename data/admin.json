@@ -335,6 +335,32 @@
    "title": "Capture the sources Perplexity named that the vault lacks, W3Techs first (it would close the front page's question on what 70% measures); listed on /readings/",
    "status": "open",
    "owner": "collector-researchers"
+  },
+  {
+   "id": "034",
+   "title": "Deploys from several agents: a started deploy is never cut off (the Pages workflow queues instead of cancelling), and release.sh takes in what other agents released before it bumps, and again if its push loses a race",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.2.12"
+  },
+  {
+   "id": "035",
+   "title": "/status/: each newsroom site's deploy runs, read from GitHub's public API with no credential, beside the version each site serves; every page notes when a newer release is live",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.2.12"
+  },
+  {
+   "id": "036",
+   "title": "Publish the source-watch vault (oq9gflln) the way sgit.ai publishes vaults: screenshot, open-in-a-new-tab link, the vault embedded, its main features",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "037",
+   "title": "A vaults section listing every vault behind the site, what each holds and how to open it",
+   "status": "open",
+   "owner": "dev@php.newsroom"
   }
  ],
  "evidence_vault": {

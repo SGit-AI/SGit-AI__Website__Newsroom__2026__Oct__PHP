@@ -2,7 +2,7 @@
 
 > A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
 
-Site v0.2.11. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.2.12. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Questions
 - [Questions readers ask](https://php.oct.2026.newsroom.sgit.ai/questions/index.md): Can anything be done or do we wait for updates? Has anyone been hacked? Is it really most websites? Short answers to paste back, the sources behind them, and the pages that carry each one.
@@ -75,6 +75,7 @@ Site v0.2.11. Data as of 2026-10-22T11:34Z (the latest capture in the evidence v
 - [The brief](https://php.oct.2026.newsroom.sgit.ai/brief/index.md): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.
 - [Corrections](https://php.oct.2026.newsroom.sgit.ai/corrections/index.md): Where the brief or a page of this site was wrong, what was found and what was done instead.
 - [Release history](https://php.oct.2026.newsroom.sgit.ai/admin/versions.md): Every release of this site, with what changed, why, and the vault commit it was built from.
+- [Pipeline: what is deploying](https://php.oct.2026.newsroom.sgit.ai/status/index.md): Each newsroom site's deploy runs, read in your browser from GitHub's public API with no credential, beside the version the site serves now: what is live, what is deploying, what was superseded, what failed.
 - [Admin & engineering](https://php.oct.2026.newsroom.sgit.ai/admin/index.md): How this site is built, the checks in its gate, where things are, the reality file and the honest column.
 - [The board](https://php.oct.2026.newsroom.sgit.ai/admin/board/index.md): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles](https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.md): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
