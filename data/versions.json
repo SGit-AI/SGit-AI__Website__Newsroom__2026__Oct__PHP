@@ -1,6 +1,15 @@
 {
- "current": "0.3.2",
+ "current": "0.4.0",
  "versions": [
+  {
+   "version": "0.4.0",
+   "date": "2026-10-22",
+   "title": "the design branch merged into dev: the site is PHP October 2026 with a jargon-free front page, fifteen readers with plain answers and reading paths, a glossary on every page, every section and fact versioned with history and diffs, what's new with a feed, the editor's interview, and sitemap.xml and robots.txt for search engines; everything dev shipped since v0.2.2 is kept",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.3.2",
    "date": "2026-10-22",

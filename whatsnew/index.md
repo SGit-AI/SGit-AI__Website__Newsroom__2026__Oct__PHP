@@ -10,6 +10,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.4.0 · 22 October 2026new since your last visit
+
+the design branch merged into dev: the site is PHP October 2026 with a jargon-free front page, fifteen readers with plain answers and reading paths, a glossary on every page, every section and fact versioned with history and diffs, what's new with a feed, the editor's interview, and sitemap.xml and robots.txt for search engines; everything dev shipped since v0.2.2 is kept
+
+No reader-facing section changed in this release.
+
 ## v0.3.2 · 22 October 2026new since your last visit
 
 every section versioned and every fact given a timeline: each briefing, front-page section and story page records the release that wrote it, with its history and a diff of every change; a page per fact, from publication to this site; what's new, release by release, with a feed; the fact pipeline; the editor interviewed in his own words; a sitemap, robots.txt and structured data for search engines
@@ -274,4 +280,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

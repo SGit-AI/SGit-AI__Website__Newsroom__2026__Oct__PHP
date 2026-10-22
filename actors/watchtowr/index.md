@@ -23,4 +23,4 @@ confirmed the CVE numbers in public on 20 October, per Daubois
 
 
 ---
-site v0.3.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/watchtowr/index.html
+site v0.4.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/watchtowr/index.html
