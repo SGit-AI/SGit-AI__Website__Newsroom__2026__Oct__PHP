@@ -1334,7 +1334,7 @@ def build_admin():
   ['The meter', '<code>assets/components/sg-meter/v1/v1.3/v1.3.1/</code> and <code>assets/components/base/v1/v1.0/v1.0.0/</code>, vendored, immutable paths'],
   ['Credentials', 'none in the repository; the vault key and the push token live in the agents\' sessions and in a gitignored tier, scanned by the tripwire'],
 ]))}
-{section("section", "The admin section", '<ul><li><a href="board/index.html">The board</a>: the work, as rows.</li><li><a href="roles/index.html">Roles</a>: who does what, and how an agent joins.</li><li><a href="briefs/index.html">Briefs</a>: the build briefs, in full.</li><li><a href="vault/index.html">The vault, opened</a>: the read key and the browser link.</li><li><a href="telemetry/index.html">Who reads this site</a>: the telemetry lane and its counts.</li><li><a href="synthetic/index.html">Synthetic readers</a>: six test readers who read the live site every hour and say what works and what does not.</li></ul>')}
+{section("section", "The admin section", '<ul><li><a href="board/index.html">The board</a>: the work, as rows.</li><li><a href="roles/index.html">Roles</a>: who does what, and how an agent joins.</li><li><a href="briefs/index.html">Briefs</a>: the build briefs, in full.</li><li><a href="vault/index.html">The vault, opened</a>: the read key and the browser link.</li><li><a href="telemetry/index.html">Who reads this site</a>: the telemetry lane and its counts.</li><li><a href="synthetic/index.html">Synthetic readers</a>: six test readers who read the live site and say what works and what does not.</li></ul>')}
 {section("gate", "The gate", checks_t)}
 {section("reality", "The reality file", render_md_file("REALITY.md"))}
 {section("honest", "The honest column", '''<ul>
@@ -1966,7 +1966,7 @@ def build_synthetic():
 </ol>''')}
 {section("vaults", "The vaults", '<p>One private vault per reader, ids in the table above. Each holds <code>README.md</code> (the reader), <code>latest.json</code>, <code>history.jsonl</code>, <code>heartbeats.jsonl</code> and <code>runs/&lt;run&gt;/</code> with <code>run.json</code>, <code>requests.jsonl</code>, <code>console.jsonl</code>, <code>pages/</code>, <code>review-request.md</code>, <code>feedback.json</code> and <code>feedback.md</code>. The vault keys are held by the editor and the agent that runs the readers; none is in this repository.</p>')}
 """
-    page('admin/synthetic/index.html', 'Synthetic readers: six test readers who read the live site every hour', 'A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader\'s own vault.', body, kind='site')
+    page('admin/synthetic/index.html', 'Synthetic readers: six test readers who read the live site', 'A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader\'s own vault.', body, kind='site')
 
 
 # ----------------------------------------------------------------------------- the review layer (v0.2.5)

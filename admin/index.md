@@ -28,7 +28,7 @@ How the site is built, what the gate checks, where things are, and what exists a
 - [Briefs](briefs/index.html): the build briefs, in full.
 - [The vault, opened](vault/index.html): the read key and the browser link.
 - [Who reads this site](telemetry/index.html): the telemetry lane and its counts.
-- [Synthetic readers](synthetic/index.html): six test readers who read the live site every hour and say what works and what does not.
+- [Synthetic readers](synthetic/index.html): six test readers who read the live site and say what works and what does not.
 
 ## The gate
 
@@ -162,7 +162,7 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Reviews: structured JSON against `admin/synthetic/review-guide.md`, by the Claude API (`--review api`, needs ANTHROPIC_API_KEY) or by an agent session; `run.py finish` renders `feedback.md` and pushes. `run.py summarise` writes `data/synthetic.json`; the page is `/admin/synthetic/`.
 
-- `.github/workflows/synthetic.yml`: hourly at :23 and after each deploy, `--if-changed` (an unchanged site gets a heartbeat, not a run). Needs repository secrets SG_SEND_ACCESS_TOKEN and SYNTHETIC_VAULT_KEYS; until they are set it does nothing. It never commits to this repository, so the page is the snapshot at the last release.
+- No schedule: the readers run when an agent session runs `admin/synthetic/run.py capture` (`--if-changed` gives an unchanged site a heartbeat, not a run). The GitHub workflow was removed on the editor's instruction on 22 October.
 
 - Not built: a trend view across runs; readers beyond the six; real-reader testing.
 
@@ -200,7 +200,7 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `admin/build/security_check.py`, run by the gate (credential shapes and secret values, vault-key and decrypted-vault files, hidden characters, text addressed to a model, JSON script blocks, script URLs, slugs, workflow pinning), by `release.sh` on the staged diff, and on the security pass with `--report --history --vault `.
 
-- The build escapes JSON inside `` (`J()`), refuses script URLs from data (`U()`), writes only inside the site tree and renders markdown only from `admin/content/` and the top-level notes. The workflows pin actions to commits; the deploy job alone holds the Pages permissions; the synthetic job gives its secrets only to the step that runs, and no longer caches vault clones. The synthetic review fences page text as untrusted. The subscriptions drain keeps only the fields the form sends, checked against the site's lists, and holds an address with a flood of requests.
+- The build escapes JSON inside `` (`J()`), refuses script URLs from data (`U()`), writes only inside the site tree and renders markdown only from `admin/content/` and the top-level notes. The workflows pin actions to commits; the deploy job alone holds the Pages permissions (the synthetic readers' workflow, hardened here, has since been removed). The synthetic review fences page text as untrusted. The subscriptions drain keeps only the fields the form sends, checked against the site's lists, and holds an address with a flood of requests.
 
 - `/admin/keys/` from `data/keys.json`: the root (the editor's key, pinned from `CLAUDE.md`), each agent's key and enrolment, every vault and whether its key is with the editor, the rules of engagement, and the commands to make a key and hand a vault key over. The gate checks the file holds fingerprints and vault ids only.
 
@@ -228,7 +228,7 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 ### Runs (branch conductor/collaborators, conductor@php.newsroom)
 
-- `/team/runs/` from `data/schedules.json`: the three schedules the team runs (the source watch every 30 minutes, the fact-check desk every four hours, the synthetic readers hourly), each with how many runs fall in the quiet hours, computed from its schedule; and every recorded run, newest first, read from the release history, the source watch, the fact-check runs and the synthetic readers, with the article each run with changes should leave (matched by `run:` in an article's front matter).
+- `/team/runs/` from `data/schedules.json`: the schedules the team runs (the source watch every 30 minutes, the fact-check desk every four hours), each with how many runs fall in the quiet hours, computed from its schedule; and every recorded run, newest first, read from the release history, the source watch, the fact-check runs and the synthetic readers, with the article each run with changes should leave (matched by `run:` in an article's front matter).
 
 - The quiet hours (22:00 to 07:00 London) and the article rule are proposed, not applied: no schedule has been changed.
 

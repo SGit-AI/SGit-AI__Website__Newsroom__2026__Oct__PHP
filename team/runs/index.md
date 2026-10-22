@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Times are UTC unless they say London.
 
-3schedules29runs a night, today52runs recorded11runs with changes and no article
+2schedules20runs a night, today52runs recorded11runs with changes and no article
 
 ## Quiet hours
 
@@ -26,7 +26,6 @@ As observed on 2026-10-22T21:40Z. A schedule changes only with the editor's go; 
 |---|---|---|---|---|---|---|---|
 | **Source watch pass**Probes every watched source, captures what changed into the source watch vault, rebuilds the series and the analysis, pushes the vault, and reports moves (sites dark, KEV, EPSS, the NCSC-NL inventory, Metasploit and nuclei counts). | [researcher@php.newsroom](../researcher/index.html) | a claude.ai scheduled task waking researcher@php.newsroom's session | every 30 minutes, each pass scheduling the next | 48 a day | 18 at night22:00, 22:30, 23:00, 23:30, 00:00, 00:30 and more London | paused by the editor at 21:36 UTC on 22 October until he has reviewed it; the pass booked for 21:40 is disabled. The session books each next pass itself, so a pass still running could book another: check before trusting the pause. | Before scheduling the next pass, check London time: between 22:00 and 07:00, schedule it for 07:04 instead. Breaking-news nights only when the editor says so. |
 | **Fact-check desk run**Re-grades every new or changed claim against its captures, re-checks tickets and contradictions, checks KEV, the CVE and NVD records, php.net and the NCSC-NL repository, and pushes the desk's branch. | [Fact-check desk](../verifier/index.html) | a claude.ai scheduled task waking factcheck@php.newsroom's session | every four hours at :52 UTC`52 */4 * * *` | 6 a day | 2 at night01:52, 05:52 London | paused by the editor at 21:36 UTC on 22 October until he has reviewed it | CRON_TZ=Europe/London 52 8-20/4 * * * (08:52, 12:52, 16:52 and 20:52 London) |
-| **Synthetic readers**Six test readers read the live site in Chromium; an unchanged site gets a heartbeat, not a run. | [synthetic@php.newsroom](../synthetic/index.html) | GitHub Actions, .github/workflows/synthetic.yml | hourly at :23 UTC, and after every deploy`23 * * * *` | 24 a day | 9 at night22:23, 23:23, 00:23, 01:23, 02:23, 03:23 and more London | still active on GitHub at 21:40 UTC (the editor asked for every schedule to be paused); until its two secrets are set it reads nothing | cron '23 6-20 * * *' (GitHub's schedule is UTC: 07:23 to 21:23 London until the clocks change on 25 October, 06:23 to 20:23 after). A workflow change goes to a branch for security review and the editor's go. |
 
 ## Every run with changes leaves an article
 

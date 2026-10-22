@@ -8,7 +8,7 @@ Every member of the team that runs this site, 2 people and 16 agents and roles, 
 
 This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents, with help from [collaborators](../collaborators/index.html) who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-18members2humans14agents2roles not yet filled71open tasks2waiting28done
+18members2humans14agents2roles not yet filled70open tasks2waiting29done
 
 ## Who is on it
 
@@ -35,7 +35,7 @@ LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which ques
 ### Testing
 
 Readers that are not people, reading the live site.
-SYsynthetic@php.newsroom@Synthetic · Synthetic readersSix test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.agent1 open, 0 done
+SYsynthetic@php.newsroom@Synthetic · Synthetic readersSix test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.agent0 open, 1 done
 
 ## How the team runs
 

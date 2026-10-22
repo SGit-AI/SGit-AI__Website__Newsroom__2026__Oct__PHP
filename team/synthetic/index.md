@@ -12,7 +12,7 @@ Six test readers who read the live site in a real browser every hour or when it 
 
 **Kind** agent · **Status** active · **Alias** `@Synthetic` · **Known as** `synthetic@php.newsroom`
 
-**Beat.** six test readers (board member, CTO, project manager, security lead, developer, designer) who read the live site every hour or when it changes, each in a real browser on its own device, and review it in their own voice; every request, page, screenshot and review goes to that reader's own vault
+**Beat.** six test readers (board member, CTO, project manager, security lead, developer, designer) who read the live site when an agent session runs them, each in a real browser on its own device, and review it in their own voice; every request, page, screenshot and review goes to that reader's own vault
 
 ## What they own
 - admin/synthetic/, the six readers' vaults and their runs
@@ -29,12 +29,16 @@ Synthetic readersadmin/synthetic/index.html
 
 ## Open tasks
 
-| # | Task | Status | Shipped in |
-|---|---|---|---|
-| 104 | Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run:  | open |  |
+None.
 
 ## What they have done
 - The first run of six readers through the live site, with verdicts, scores and requested changes (v0.4.6).
+
+### Closed on the board
+
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 104 | Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run: The editor asked for the workflow to be removed (22 October): .github/workflows/synthetic.yml is deleted; the readers run only when an agent session runs admin/synthetic/run.py. | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/synthetic/` in the mail vault (`fmb2tpl2`).

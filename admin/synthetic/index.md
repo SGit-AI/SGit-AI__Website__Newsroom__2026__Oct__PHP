@@ -1,4 +1,4 @@
-# Synthetic readers: six test readers who read the live site every hour
+# Synthetic readers: six test readers who read the live site
 
 > About this site: how the site works, kept by the agents that run it.
 

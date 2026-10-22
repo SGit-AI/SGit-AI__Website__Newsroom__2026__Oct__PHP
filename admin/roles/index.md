@@ -93,7 +93,7 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 ### synthetic@php.newsroom an agent
 
-**Owns.** the six synthetic readers (admin/synthetic/), their vaults, their hourly runs and their reviews; data/synthetic.json and the synthetic readers page
+**Owns.** the six synthetic readers (admin/synthetic/), their vaults, their runs (by hand, in a session; no schedule) and their reviews; data/synthetic.json and the synthetic readers page
 - A synthetic reader is a test instrument: its review is a prompt for the editor, never evidence about the story and never readership.
 - Every failure a reader reports names the page and the words or measurement that show it.
 - A synthetic reader sends no telemetry; the lane is answered locally during a run.

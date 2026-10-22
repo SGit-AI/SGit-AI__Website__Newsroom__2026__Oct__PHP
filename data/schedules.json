@@ -39,20 +39,6 @@
    "status": "paused by the editor at 21:36 UTC on 22 October until he has reviewed it",
    "since": "2026-10-22T18:52Z",
    "proposed": "CRON_TZ=Europe/London 52 8-20/4 * * *  (08:52, 12:52, 16:52 and 20:52 London)"
-  },
-  {
-   "id": "synthetic",
-   "member": "synthetic",
-   "name": "Synthetic readers",
-   "where": "GitHub Actions, .github/workflows/synthetic.yml",
-   "kind": "cron",
-   "cron": "23 * * * *",
-   "cadence": "hourly at :23 UTC, and after every deploy",
-   "does": "Six test readers read the live site in Chromium; an unchanged site gets a heartbeat, not a run.",
-   "writes": "the six readers' vaults; never this repository",
-   "status": "still active on GitHub at 21:40 UTC (the editor asked for every schedule to be paused); until its two secrets are set it reads nothing",
-   "since": "2026-10-22",
-   "proposed": "cron '23 6-20 * * *' (GitHub's schedule is UTC: 07:23 to 21:23 London until the clocks change on 25 October, 06:23 to 20:23 after). A workflow change goes to a branch for security review and the editor's go."
   }
  ]
 }
