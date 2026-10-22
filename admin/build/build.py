@@ -187,7 +187,7 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('collaborators/index.html', 'Collaborators: help us build it'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
+    ('Yours', [('collaborators/index.html', 'Power users: help us build it'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -3663,10 +3663,10 @@ def build_collaborators():
     thanks = ', '.join(E(x) for x in C['thanks']) or 'Nobody yet: be the first.'
     ed = C['editor']
     body = f'''
-<h1>Collaborators: help us build this site by using it</h1>
+<h1>Power users: help us build this site by using it</h1>
 <p class="lead">This site is being built in public, every day, by {E(ed["name"])} and a team of AI agents. We are looking for people who will use it as it grows: read what is new when we ask, as the kind of reader you are, and tell us what works and what does not. {E(C["time"])} If you have not seen agentic workflows doing real work, this is a close look at one.</p>
-<p><a class="cta cta-pri" href="#join">Join the collaborators</a> <a class="cta" href="#ask-{E(asks[0]["id"]) if asks else ""}">See this week\'s ask</a> <a class="cta" href="#feedback">Send feedback</a></p>
-{section("ask", "This week\'s ask", latest)}
+<p><a class="cta cta-pri" href="#join">Join the power users</a> <a class="cta" href="#ask-{E(asks[0]["id"]) if asks else ""}">See the latest ask</a> <a class="cta" href="#feedback">Send feedback</a></p>
+{section("ask", "The latest ask", latest)}
 {section("what", "What we ask of you", li(C["what_we_ask"]))}
 {section("get", "What you get", li(C["what_you_get"]))}
 {section("how", "How it works", f'<ul>{chans}</ul><p>The readers you can read as are on <a href="../start/index.html">Start here</a>: each has a plain answer, what it needs and a reading path. The team you are helping is on <a href="../team/index.html">the team page</a>.</p>')}
@@ -3705,7 +3705,7 @@ def build_collaborators():
 {section("thanks", "Thank you", f'<p>{thanks}</p>')}
 <script src="../assets/collaborators.js" defer></script>
 '''
-    page('collaborators/index.html', 'Collaborators: help us build this site by using it', 'Join the people who use PHP October 2026 as it is built: this week\'s ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.', body, kind='account')
+    page('collaborators/index.html', 'Power users: help us build this site by using it', 'Join the power users of PHP October 2026: the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.', body, kind='account')
 
 
 # ----------------------------------------------------------------------------- what runs on its own, and every run (conductor@php.newsroom)

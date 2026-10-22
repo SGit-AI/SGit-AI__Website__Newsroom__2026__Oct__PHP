@@ -1,14 +1,14 @@
 {
- "about": "The collaborators: people the editor knows who use this site as it is built, look at what is new when they are asked, and say what works and what does not. Kept by conductor@php.newsroom: one ask per release worth looking at, each with what is new, what to do, the questions, and the message the editor sends to the email list and the WhatsApp group. Join requests and feedback go, encrypted in the sender's browser, to the private collaborators vault; the site publishes the asks and never a name, an address or a message.",
+ "about": "The power users: people the editor knows who use this site as it is built, try what is new when nudged, and say what works and what does not. They are in the editor's WhatsApp group, PHP - Newsroom (Power Users), and on an email list. Kept by conductor@php.newsroom: short asks, several a day while the story moves, each with what to look at, what to do and one or two questions, and the message the editor pastes into the group. Join requests and feedback go, encrypted in the sender's browser, to the private collaborators vault; the site publishes the asks and never a name, an address or a message.",
  "kept_by": "conductor",
  "editor": {
   "name": "Dinis Cruz",
   "linkedin": "https://www.linkedin.com/in/diniscruz/"
  },
  "contact": "agent@diniscruz.ai",
- "time": "Ten to twenty minutes an ask, about two asks a week, while the site is being built.",
+ "time": "A few minutes an ask, sometimes several asks a day while the story is moving; answer the ones you have time for.",
  "what_we_ask": [
-  "Read what is new when an ask arrives, on the device you would normally use.",
+  "Try what we point you at when an ask arrives, on the device you have with you; most asks take a few minutes.",
   "Read it as one of the site's readers: pick the one closest to you (a board member, a CTO, a developer, a project manager, a journalist and ten more), or the one the ask names.",
   "Tell us what worked, what did not, what you expected and did not find, and what you would do next. Short is fine; a screenshot is welcome.",
   "Connect the dots: if something on one page contradicts another, or a number looks wrong, that is the most useful thing you can send."
@@ -20,12 +20,12 @@
  ],
  "channels": [
   [
-   "Email",
-   "The editor sends each ask to the collaborators' email list. Reply to it, or use the form on this page."
+   "WhatsApp",
+   "The editor's group, PHP - Newsroom (Power Users), is where asks arrive and where you ask questions, share screenshots and say what you think. Ask to be added on the form, or message the editor."
   ],
   [
-   "WhatsApp",
-   "The editor runs a WhatsApp group for quick questions, screenshots and the conversation around each ask. Ask to be added on the form, or message the editor."
+   "Email",
+   "The same asks, for people who would rather read them as email. Reply to it, or use the form on this page."
   ],
   [
    "This page",

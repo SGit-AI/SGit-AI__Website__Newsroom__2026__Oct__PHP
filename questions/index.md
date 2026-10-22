@@ -57,7 +57,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Briefing for a media and communications team: What can we say that is true, what should we not say, and what will we be asked?](../briefings/comms/index.html): The php2shell story for a media and communications team: a thirty-second answer, what to decide, a reading path, the claims it rests on with their status and sources, and what is still open.
 
 ### Yours
-- [Collaborators: help us build this site by using it](../collaborators/index.html): Join the people who use PHP October 2026 as it is built: this week's ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
+- [Power users: help us build this site by using it](../collaborators/index.html): Join the power users of PHP October 2026: the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
 - [Now: the phone app](../now/index.html):
 - [Your desk: what is new to you, and what changed](../you/index.html): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
 - [The feed viewer: this site, the records, and your own feeds](../reader/index.html): Read this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.
@@ -114,7 +114,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [How the team talks: three vaults and one run](../team/channels/index.html#mail):
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
-- [Collaborators: help us build this site by using it](../collaborators/index.html): Join the people who use PHP October 2026 as it is built: this week's ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
+- [Power users: help us build this site by using it](../collaborators/index.html): Join the power users of PHP October 2026: the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
 
 ### GRC
 - [GRC: risks, owners, standards](../grc/index.html):
