@@ -176,6 +176,18 @@
     "Severity in perspective, both ways: name what makes it worse than the headline and what makes it less bad, each with its source.",
     "Never run a public exploit or a stranger's fix script; watch them, hash them, describe them."
    ]
+  },
+  {
+   "id": "narrator",
+   "name": "desk@php.newsroom",
+   "who": "an agent, joined on 22 October 2026 at the editor's request",
+   "owns": "the narrative: the line of the story and what it is not, the agenda (which questions the newsroom answers next and why), a strong opinion on the front page and each section's lead, answers to the editor's questions from the evidence, and the work those answers need, proposed as briefs and board rows",
+   "rules": [
+    "Proposes, never instructs: tasks reach other agents as a brief and board rows with the editor's go, delivered by the conductor.",
+    "A hypothesis is labelled as one until the data tests it, the editor's included; say what would prove it wrong.",
+    "No count without its unit and its basis: what was counted, by whom, as of when.",
+    "Name the bias in what we collect before drawing a pattern from it, and read the fact-check desk's grade before leading with anything."
+   ]
   }
  ],
  "board": [
@@ -759,6 +771,55 @@
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the brief: a fact-checker joins the team (22 October)."
+  },
+  {
+   "id": "090",
+   "title": "Add the narrator (desk@php.newsroom) to the team: data/team.json, its member page and board_owners, from the brief 'a narrator joins the team'",
+   "status": "open",
+   "owner": "conductor",
+   "note": "From the brief: a narrator joins the team (22 October)."
+  },
+  {
+   "id": "091",
+   "title": "Discovery in other languages straight from the source: the national CERTs and public broadcasters of DE, FR, ES, IT, PL, PT, BR and JP, not through Google News (board 077)",
+   "status": "open",
+   "owner": "researcher@php.newsroom",
+   "note": "From the brief: how many sites went offline, and where (22 October; the narrator's proposal, for the editor's go)."
+  },
+  {
+   "id": "092",
+   "title": "The posture map: every EU and EEA national CERT's advice on php2shell coded as offline, isolate or update only, each with its capture",
+   "status": "open",
+   "owner": "collector-gov",
+   "note": "From the brief: how many sites went offline, and where (22 October; the narrator's proposal, for the editor's go)."
+  },
+  {
+   "id": "093",
+   "title": "The denominator: W3Techs PHP share and PHP version shares by country domain (extends 033 and 043), and any per-country host count from Censys, Shodan or VulnCheck",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: how many sites went offline, and where (22 October; the narrator's proposal, for the editor's go)."
+  },
+  {
+   "id": "094",
+   "title": "Reshape the offline ledger: one row per organisation, a unit (site, platform, whole government), a domain count where known, the source's language and who said it; then a count with its basis on the front page",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the brief: how many sites went offline, and where (22 October; the narrator's proposal, for the editor's go)."
+  },
+  {
+   "id": "095",
+   "title": "Grade the reshaped offline ledger as rows land, the Netherlands row first, and the basis of the count",
+   "status": "open",
+   "owner": "factcheck",
+   "note": "From the brief: how many sites went offline, and where (22 October; the narrator's proposal, for the editor's go)."
+  },
+  {
+   "id": "096",
+   "title": "The piece on where the web went dark and why, once 092 and 093 are in, not before",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the brief: how many sites went offline, and where (22 October; the narrator's proposal, for the editor's go)."
   }
  ],
  "evidence_vault": {
