@@ -38,7 +38,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 065 | First live run of the agentic mode with the editor's OpenRouter key: check that every sentence Sonnet writes cites an item, and that the infographic adds no number of its ownFrom the brief on the phone app (22 October). | open |  |
 | 070 | Decide how each member receives the coordination vaults' keys: the conductor vault's read key, the issues and mail vaults' keys, each member's append token (sealed per member on pki.sgit.ai, or handed in each session's launch prompt)Until this is decided, the conductor holds every key and members are reached through the editor. | open |  |
 | 071 | Set the cadence of the scheduled run (open by the conductor, work by the agents, close by the conductor) and which agents take part in the first one | open |  |
-| 090 | Record the holders' acceptance of the newsroom's own risks (R10 and beneath it): accept for an interval, fund or fix; nobody can accept them for the editorFrom the brief: a GRC desk joins the team (22 October). | open |  |
+| 091 | Record the holders' acceptance of the newsroom's own risks (R10 and beneath it): accept for an interval, fund or fix; nobody can accept them for the editorFrom the brief: a GRC desk joins the team (22 October). | open |  |
 
 ## What they have done
 - Started the site from two voice memos and a message on 22 October 2026, and set every brief since.
@@ -54,4 +54,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

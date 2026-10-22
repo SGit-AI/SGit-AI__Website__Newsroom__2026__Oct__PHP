@@ -405,7 +405,7 @@
    "controls": [{"text": "Rate on exposure and precedent, not only on confirmed exploitation", "status": "partial", "page": "signals/index.html"}],
    "frameworks": ["kev:KEV-entry", "nistcsf:ID.RA-02", "nistcsf:GV.RR-01"],
    "stories": ["exposed-is-not-exploited"],
-   "pages": ["signals/index.html", "exploitation/index.html"],
+   "pages": ["compromise/index.html", "signals/index.html", "exploitation/index.html"],
    "team": ["journalist", "historian"]
   },
   {
@@ -542,7 +542,7 @@
    "controls": [{"text": "A breach-assessment step in the incident plan, started at the first sign of compromise", "status": "partial", "page": "playbook/index.html"}],
    "frameworks": ["gdpr:Art.32", "gdpr:Art.33", "gdpr:Art.34", "nis2:Art.23", "dora:Art.19", "cra:Art.14"],
    "stories": [],
-   "pages": ["impact/index.html", "playbook/index.html"],
+   "pages": ["compromise/index.html", "impact/index.html", "playbook/index.html"],
    "team": ["story-site"]
   },
   {

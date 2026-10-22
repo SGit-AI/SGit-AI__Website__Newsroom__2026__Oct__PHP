@@ -460,6 +460,47 @@
    "reading": "The original embargo time has two values, 14:00 UTC (the Foundation, echoed by The Hacker News) and 11:00 ET, which is 15:00 UTC (watchTowr, echoed by CybelAngel and others). The release itself is stamped 13:34 UTC on the GitHub advisories, ahead of the announced 14:00. The ChangeLog still carries the original date. The site should say 'about 14:00 UTC, advisories at 13:34' and give both original times.",
    "settle": "A PHP project statement of the embargo time, or the pre-announcement's original text.",
    "ticket": "Contradiction-10"
+  },
+  {
+   "id": "K-011",
+   "measure": "Is the fix in PHP 8.5.12 incomplete?",
+   "status": "open",
+   "claims": [
+    "fix-incomplete",
+    "more-paths"
+   ],
+   "statements": [
+    {
+     "who": "Aaron Rainbolt on oss-security, relaying a Fediverse post",
+     "when": "2026-10-21 15:24 UTC",
+     "says": "the Fediverse is reporting that the fix to at least PHP 8.5.12 may be incomplete",
+     "measures": "an unconfirmed report from an unnamed person, relayed",
+     "sources": [
+      "openwall-oss-security-109619-thread"
+     ]
+    },
+    {
+     "who": "The same, relaying Canonical via a Matrix channel",
+     "when": "2026-10-21 17:29 UTC",
+     "says": "was told that it's \"unrelated and not a real issue\"",
+     "measures": "PHP's answer to Canonical, second-hand",
+     "sources": [
+      "openwall-oss-security-109619-thread"
+     ]
+    },
+    {
+     "who": "Jakub Zelenka, PHP security team, on oss-security (post 2026/10/22/15)",
+     "when": "2026-10-22 09:11 UTC",
+     "says": "This is unrelated issue with minimal impact (crash in one component in slightly unlikely scenario). It has nothing to do with the RCE.",
+     "measures": "PHP's own public answer",
+     "outside": [
+      "https://www.openwall.com/lists/oss-security/2026/10/22/15 (fetched 2026-10-22 20:5x UTC, sha256 94c69d8f1c07e67d)"
+     ]
+    }
+   ],
+   "reading": "The report and the answer are about different things: the Fediverse post describes some flaw in 8.5.12; the PHP security team says it is a separate crash bug of minimal impact, not a way around the RCE fix. The answer came at 09:11 UTC on 22 October, after the vault's copy of the thread (which stops at 22/2), so the site still says PHP has not answered. Open only until the reply is captured; then it should be marked explained and the claim re-graded.",
+   "settle": "Capture oss-security 2026/10/22/15 into the vault.",
+   "ticket": "Contradiction-11"
   }
  ]
 }

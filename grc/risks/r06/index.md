@@ -46,7 +46,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
-| [No named organisation has confirmed a compromise through php2shell](../../../facts/no-confirmed-compromise/index.html) | confirmed | **A4** Corroborated●●●●○○ | [CISA](../../../sources/cisa-kev-json/index.html) [Huntress](../../../sources/huntress-php2shell-rapid-response/index.html) [Imperva Threat Research](../../../sources/imperva-blog-php2shell/index.html) [Amazon](../../../sources/aws-security-blog-madpot/index.html) [Weird Gloop](../../../sources/weirdgloop-blog-php2shell/index.html) |
+| [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.](../../../facts/no-confirmed-compromise/index.html) | reported | **A4** Corroborated●●●●○○ | [CISA](../../../sources/cisa-kev-json/index.html) [CISA](../../../sources/cisa-alert-php-20261021/index.html) [Huntress](../../../sources/huntress-php2shell-rapid-response/index.html) [Amazon](../../../sources/aws-security-blog-madpot/index.html) [SecurityWeek](../../../sources/securityweek-first-attempts-sensors/index.html) [SecurityWeek](../../../sources/securityweek-exploitation-days-before/index.html) [Recorded Future](../../../sources/recordedfuture-php2shell/index.html) [Imperva Threat Research](../../../sources/imperva-blog-php2shell/index.html) [Weird Gloop](../../../sources/weirdgloop-blog-php2shell/index.html) |
 | [Unauthenticated RCE over HTTP against Apache mod_php with default settings, before any application code runs](../../../facts/rce-modphp/index.html) | confirmed | **A6** Established●●●●●● | [PHP](../../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [oss-security](../../../sources/openwall-oss-security-2026-10-21-6/index.html) [php.net](../../../sources/php-net-advisory/index.html) |
 
 ## Treatments
@@ -73,4 +73,4 @@ On this site: [Impact: taken offline versus compromised](../../../impact/index.h
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06/index.html

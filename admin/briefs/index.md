@@ -656,6 +656,14 @@ Status: accepted, by being sent. Author: Dinis Cruz, editor. A message to a new 
 
 7. **On the site, colour-coded, with a view of only what can be relied on.**
 
+### A later instruction: the desk publishes to dev
+
+The editor, at about 20:55 UTC on 22 October, during the desk's second run, verbatim:
+
+> yes you and desk should publish to dev, since or else we will have a number of bottle necks here
+
+This is the editor's explicit exception that AGENTS.md allows to its rule that agents do not push to `dev`: the fact-check desk releases its own runs with `admin/build/release.sh`, like any release, through the gate.
+
 ### Board items opened by this brief
 
 082 to 085, listed on the board.
@@ -904,4 +912,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

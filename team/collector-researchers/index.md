@@ -36,7 +36,7 @@ The partiesactors/index.htmlExploitation signalsexploitation/index.html
 | 043 | Capture W3Techs' PHP version shares alongside its language share (see board 033): the number the patching story says is missing | open |  |
 | 058 | Capture raw on every change: page, rendered, text, screenshot, headers and the data itself (JSON, CSV, git, RSS), hashed, a new stamped folder only when the hash changes, a check-log line when it does notFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
 | 089 | Capture what the desk found outside the vault: the BBC live page as it stands (32 UK services, 90%), The Next Web, the PHPocalypse Tracker's sites.csv, KEV each run; then re-grade the claims they bear onFrom the brief: a fact-checker joins the team (22 October). | open |  |
-| 093 | Capture into the vault what the GRC section cites from the sgit network (risks.sgit.ai, the riskmandate.ai model, the newsroom's risk articles) so the network page can cite captures, not live pagesFrom the brief: a GRC desk joins the team (22 October). | open |  |
+| 094 | Capture into the vault what the GRC section cites from the sgit network (risks.sgit.ai, the riskmandate.ai model, the newsroom's risk articles) so the network page can cite captures, not live pagesFrom the brief: a GRC desk joins the team (22 October). | open |  |
 
 ## What they have done
 - Captured the researchers' and vendors' accounts; marked openai.com and Techzine second-hand where a bot challenge blocked them.
@@ -50,4 +50,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/collector-researchers/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/collector-researchers/index.html

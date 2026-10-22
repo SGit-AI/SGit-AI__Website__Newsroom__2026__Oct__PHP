@@ -24,7 +24,7 @@ The only carrier is a relay on oss-security of unnamed Fediverse posts ('While n
 | [openwall-oss-security-109619-thread](../../sources/openwall-oss-security-109619-thread/index.html) | partial | *ok thinking more about this, there's no way this is the same vuln, this is > another one.* | 059317aa4a1f458e |
 | [openwall-oss-security-109619-thread](../../sources/openwall-oss-security-109619-thread/index.html) | partial | *was told that it's "unrelated and not a real issue".* | 39555f34a419becc |
 
-Open tickets: [Evidence-5](../../factcheck/index.html#Evidence-5), [Finding-72](../../factcheck/index.html#Finding-72), [Gap-2](../../factcheck/index.html#Gap-2).
+Open tickets: [Contradiction-11](../../factcheck/index.html#Contradiction-11), [Evidence-5](../../factcheck/index.html#Evidence-5), [Evidence-7](../../factcheck/index.html#Evidence-7), [Evidence-8](../../factcheck/index.html#Evidence-8), [Finding-125](../../factcheck/index.html#Finding-125), [Finding-72](../../factcheck/index.html#Finding-72), [Gap-2](../../factcheck/index.html#Gap-2).
 
 Graded in Run-1, resting on captures up to 2026-10-22 08:14 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -54,4 +54,4 @@ Sources: openwall-oss-security-109619-thread
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-incomplete/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-incomplete/index.html

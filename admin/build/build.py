@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 SYN = load('synthetic') if os.path.exists(os.path.join(DATA, 'synthetic.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
@@ -190,7 +190,7 @@ NAV = [
     ('Yours', [('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
-                   ('exploitation/index.html', 'Exploitation signals'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
+                   ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
     ('The analysis', [('claims/index.html', 'Every claim'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
                       ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'),
@@ -785,6 +785,72 @@ def build_exploitation():
 {section("kev", "The Known Exploited Vulnerabilities catalog", f'<p>CISA adds a CVE to KEV when it has reliable evidence of exploitation in the wild. At catalog version 2026.10.21, released 2026-10-21 14:04:39 UTC and fetched 2026-10-22 08:15 UTC, neither CVE-2026-109618 nor CVE-2026-109619 is listed; the catalog has 1,754 entries and its newest additions are dated 20 October. CISA\'s vulnerability-enrichment assessment on both CVE records at 14:34 UTC says exploitation <i>none</i>. This is a point-in-time negative finding; the vault keeps the file and its hash so that the time can be proven later. <span class="refs">{src_links(["cisa-kev-json", "cisa-kev-catalog", "cve-cve-2026-109618"], 1)}</span></p>')}
 '''
     page('exploitation/index.html', 'Exploitation signals, in order', 'Every signal of php2shell exploitation in the captured sources, from an Amazon honeypot hit on 17 October to the KEV catalog, with what exploitation would look like on a host.', body, kind='story', topics='php2shell exploitation detection')
+
+KIND_INK = {'attempts': 'var(--warm)', 'vendor-exploitation': 'var(--bad-ink)', 'no-success-known': 'var(--ok-ink)',
+            'named-organisation': 'var(--accent)', 'allegation': 'var(--dim)', 'official-signal': 'var(--accent-dk)'}
+
+def build_compromise():
+    """One statement and the evidence behind it, row by row, with what each kind of evidence can and cannot show.
+    Drawn from data/compromise.json; maps evidence, makes no assessment of risk."""
+    C = D['compromise']; rows, kinds = C['rows'], C['kinds']
+    kname = {k['id']: k['name'] for k in kinds}
+    def where(r):
+        out = src_links(r['sources'], 1) if r.get('sources') else ''
+        if r.get('watch'):
+            out += f' <span class="note">source watch: <code>{E(r["watch"])}</code></span>'
+        return out
+    # 1. the evidence by kind, as bars
+    counts = [(k, sum(1 for r in rows if r['kind'] == k['id'])) for k in kinds]
+    mx = max(n for _, n in counts) or 1; W, bh = 640, 26
+    bars = ''.join(f'<text x="0" y="{i*bh+17}" style="font-size:12px;fill:var(--fg)">{E(k["name"])}</text>'
+                   f'<rect x="280" y="{i*bh+5}" width="{int(320*n/mx)}" height="16" rx="3" style="fill:{KIND_INK[k["id"]]}"/>'
+                   f'<text x="{288+int(320*n/mx)}" y="{i*bh+18}" style="font-size:12px;font-weight:700;fill:var(--fg)">{n}</text>' for i, (k, n) in enumerate(counts))
+    chart_kinds = (f'<figure class="graph"><svg viewBox="0 0 {W} {len(counts)*bh+8}" width="100%" role="img" aria-label="Statements on this page by kind">{bars}</svg>'
+                   f'<figcaption>{len(rows)} statements on this page, by what kind of evidence they are. A count of statements, not of events: one party can report millions of attempts in one statement.</figcaption></figure>')
+    # 2. the timeline, one lane per kind
+    import datetime as _dt
+    def t(w):
+        w = w if 'T' in w else w + 'T12:00Z'
+        return _dt.datetime.strptime(w.replace('Z', ''), '%Y-%m-%dT%H:%M')
+    t0, t1 = _dt.datetime(2026, 10, 17), _dt.datetime(2026, 10, 23)
+    X0, X1, lane = 200, 630, 28
+    def x(w): return X0 + (X1 - X0) * (t(w) - t0).total_seconds() / (t1 - t0).total_seconds()
+    ticks = ''.join(f'<line x1="{x(f"2026-10-{d}T00:00Z"):.0f}" x2="{x(f"2026-10-{d}T00:00Z"):.0f}" y1="10" y2="{len(kinds)*lane}" style="stroke:var(--line);stroke-width:1"/>'
+                    f'<text x="{x(f"2026-10-{d}T00:00Z")+3:.0f}" y="{len(kinds)*lane+18}" style="font-size:10px;fill:var(--dim)">{d} Oct</text>' for d in range(17, 23))
+    asof = f'<line x1="{x(C["as_of"]):.0f}" x2="{x(C["as_of"]):.0f}" y1="10" y2="{len(kinds)*lane}" style="stroke:var(--fg);stroke-dasharray:3 3"/><text x="{x(C["as_of"])-4:.0f}" y="8" text-anchor="end" style="font-size:10px;font-weight:700;fill:var(--fg)">as of 22 Oct 20:50</text>'
+    lanes = ''.join(f'<text x="0" y="{i*lane+22}" style="font-size:11px;fill:var(--fg)">{E(k["name"])}</text>' for i, k in enumerate(kinds))
+    li = {k['id']: i for i, k in enumerate(kinds)}
+    dots = ''.join(f'<circle cx="{x(r["when"]):.1f}" cy="{li[r["kind"]]*lane+18}" r="5" style="fill:{KIND_INK[r["kind"]]};fill-opacity:.8"><title>{E(r["when"])} · {E(r["who"])}</title></circle>' for r in rows)
+    chart_time = (f'<figure class="graph"><svg viewBox="0 0 640 {len(kinds)*lane+26}" width="100%" role="img" aria-label="The statements over time, one lane per kind">{ticks}{lanes}{dots}{asof}</svg>'
+                  f'<figcaption>Each dot is one statement on this page, placed at the time the source gives (noon where it gives only a date). Hover a dot for who said it.</figcaption></figure>')
+    # 3. the layers, as an infographic (not to scale)
+    L = C['layers']; lh = 52
+    shapes = ''.join(f'<rect x="{10+i*25}" y="{i*lh}" width="{620-i*50}" height="{lh-8}" rx="4" style="fill:var(--panel);stroke:{["var(--warm)","var(--bad-ink)","var(--accent)","var(--fg)"][i]};stroke-width:2"/>'
+                     f'<text x="320" y="{i*lh+19}" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--fg)">{E(l["value"])} · {E(l["label"])}</text>'
+                     f'<text x="320" y="{i*lh+35}" text-anchor="middle" style="font-size:10.5px;fill:var(--dim)">{E(l["note"])}</text>' for i, l in enumerate(L))
+    chart_layers = (f'<figure class="graph"><svg viewBox="0 0 640 {len(L)*lh}" width="100%" role="img" aria-label="From attempts to a named compromise: what each layer of evidence holds">{shapes}</svg>'
+                    f'<figcaption>Not to scale. Each layer is a different kind of statement, and a statement in one layer does not move a case into the next: an attempt is not a compromise, and a vendor\'s report without a victim is not a victim\'s statement. The bottom layer is the statement this page is about.</figcaption></figure>')
+    searched = '<div class="stats">' + ''.join(stat(f'{s["count"]:,}', f'{E(s["what"])}: {E(s["unit"])}<br><small>{E(s["detail"])}</small>') for s in C['searched']) + '</div>'
+    kind_tables = ''
+    for k in kinds:
+        rs = [r for r in rows if r['kind'] == k['id']]
+        if not rs: continue
+        head = ['When', 'Who', 'What they said'] + (['Reading'] if k['id'] == 'named-organisation' else []) + ['Where it is held']
+        body_rows = [[E(fmt_at(r['when'])), f'<b>{E(r["who"])}</b>', E(r['says'])] + ([E(r.get('reading', ''))] if k['id'] == 'named-organisation' else []) + [where(r)] for r in sorted(rs, key=lambda r: r['when'])]
+        kind_tables += section('k-' + k['id'], f'{E(k["name"])} <small>({len(rs)})</small>', table(head, body_rows),
+                               f'This kind of statement can show {E(k["can"])}. It cannot show {E(k["cannot"])}.')
+    body = f"""
+<h1>{E(C["statement"])}</h1>
+<p class="lead">This page holds the evidence behind one statement, as of <b>{E(fmt_at(C["as_of"]))}</b>: every statement found about attacks on, or compromises of, real systems through php2shell, sorted by what kind of evidence it is, with the words of the party that made it and where its capture is held. It makes no assessment of risk. The statement's status is <b>{E(C["status"])}</b>: {E(C["status_note"])} It is <a href="../claims/index.html#{E(C["claim"])}">claim {E(C["claim"])}</a>.</p>
+{section("searched", "What was searched", searched, "Where the statement was checked. A statement that something does not exist is only as good as the search behind it.")}
+{section("layers", "From attempts to a named compromise", chart_layers)}
+{section("kinds", "The evidence, by kind", chart_kinds + chart_time)}
+{kind_tables}
+{section("change", "What would change the statement", "<ul>" + "".join(f"<li>{E(w)}</li>" for w in C["would_change_it"]) + "</ul><p>The source watch checks the official lists and the named organisations' pages every 30 minutes; this page is rebuilt from data/compromise.json when the evidence changes.</p>")}
+{section("ledger", "The disagreements, recorded", "<p>Where sources disagree, the disagreement is a record of its own in the source watch's contradiction ledger, with both statements and their captures: " + ", ".join(f"<code>contradictions/{E(c)}.json</code>" for c in C["contradictions"]) + ".</p>")}
+{section("how", "How this page is made", '<p>Every row is in <a href="../data/compromise.json">data/compromise.json</a>. Rows with sources cite captures in the evidence vault, which the build checks. Rows marked <i>source watch</i> cite a dated snapshot folder in the source-watch vault (<a href="../vaults/source-watch/index.html">oq9gflln</a>), read with its published key; they move into the evidence vault as the evidence curator promotes them. Statements read in another language carry the reader&rsquo;s English translation beside the verbatim original in the watch&rsquo;s <code>translations/</code> files. The charts are drawn from the same rows when the site is built.</p>')}
+"""
+    page('compromise/index.html', 'No named organisation has said it was compromised through php2shell: the evidence', f'The evidence behind one statement, as of {fmt_at(C["as_of"])}: attempts, vendor reports, statements that no success is known, named organisations, allegations and official lists, each with its source.', body, kind='story', topics='php2shell exploitation compromise evidence')
 
 def build_discovery():
     cols = [
@@ -1454,7 +1520,7 @@ def build_sitejs():
 
 def build_all():
     PAGES.clear()
-    build_flaws(); build_timeline(); build_discovery(); build_leak(); build_exploitation(); build_playbook()
+    build_flaws(); build_timeline(); build_discovery(); build_leak(); build_exploitation(); build_compromise(); build_playbook()
     build_code(); build_context(); build_impact(); build_defence()
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
@@ -2226,7 +2292,7 @@ def build_vaults():
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an app, the telemetry dashboard, with the telemetry vault linked inside it read-only; one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>

@@ -30,7 +30,7 @@ GRC: risks, owners, standardsgrc/index.htmlThe risk graphgrc/graph/index.html
 
 | # | Task | Status | Shipped in |
 |---|---|---|---|
-| 094 | GRC run 2: re-rate every risk against the next vault capture (a KEV listing or a confirmed compromise moves R03 and R06), add the stakeholders the next captures name, and map the remaining controls each holder will be asked aboutFrom the brief: a GRC desk joins the team (22 October). | open |  |
+| 095 | GRC run 2: re-rate every risk against the next vault capture (a KEV listing or a confirmed compromise moves R03 and R06), add the stakeholders the next captures name, and map the remaining controls each holder will be asked aboutFrom the brief: a GRC desk joins the team (22 October). | open |  |
 
 ## What they have done
 - 22 October: the first registers: 34 risks under 10 at the top, 53 stakeholders, 14 weaknesses, 20 frameworks and 120 controls; every risk with a path to code and to a team member, 30 of 34 to a vulnerability and to a role inside an organisation, 26 of 34 to a story, and the gaps named on /grc/
@@ -44,4 +44,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/grc/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/grc/index.html

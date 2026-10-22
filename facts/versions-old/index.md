@@ -29,7 +29,7 @@ Wiz (a finder) says '>= 5.4'; PHP's own source backports for 7.4, 8.0 and 8.1 im
 | [daubois-blog-php2shell-rumors](../../sources/daubois-blog-php2shell-rumors/index.html) | partial | *the same jump sits in the PHP-5.3 allocator. I have not seen an exploit shown on those old versions either.* | 5ef17f9886aa93f7 |
 | [thehackernews-php2shell-unpatched-alert](../../sources/thehackernews-php2shell-unpatched-alert/index.html) | partial | *a post on HN said two PHP remote code execution flaws, rated CVSS 10.0 and affecting versions from PHP 5 onward* | 33ba8292e26406d7 |
 
-Open tickets: [Contradiction-3](../../factcheck/index.html#Contradiction-3), [Finding-107](../../factcheck/index.html#Finding-107), [Finding-50](../../factcheck/index.html#Finding-50).
+Open tickets: [Contradiction-3](../../factcheck/index.html#Contradiction-3), [Evidence-9](../../factcheck/index.html#Evidence-9), [Finding-107](../../factcheck/index.html#Finding-107), [Finding-50](../../factcheck/index.html#Finding-50).
 
 Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -64,4 +64,4 @@ Sources: ncsc-nl-advisories, x-wiz-io-php2shell, certfr-2026-ale-014, openwall-o
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/versions-old/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/versions-old/index.html

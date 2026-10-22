@@ -38,7 +38,7 @@ The front pageindex.htmlEvery claimclaims/index.htmlThe timelinetimeline/index.h
 | 028 | /blast-radius/ by asset type, marked as the site's analysis, linked from the playbook and two briefings (newsroom review, change 8) | open |  |
 | 029 | The playbook in three phases, each step opening to the agency's sentence, taking offline last (newsroom review, change 9) | open |  |
 | 088 | Act on the desk's high and medium findings on claims, agencies, exploitation and impact data: first Italy's offline advice, the allies' 'contradicted' mark, the five quotes not in their captures, and the eleven overstated status words (tickets on /factcheck/)From the brief: a fact-checker joins the team (22 October). | open |  |
-| 092 | Fix the cycle in assets/themes/site-tokens.css line 8: --warn-bg, --warn-ink, --info-bg and --info-ink are defined as themselves, so they are invalid and every amber and blue pill and graph edge that reads them renders without colourFrom the brief: a GRC desk joins the team (22 October). | open |  |
+| 093 | Fix the cycle in assets/themes/site-tokens.css line 8: --warn-bg, --warn-ink, --info-bg and --info-ink are defined as themselves, so they are invalid and every amber and blue pill and graph edge that reads them renders without colourFrom the brief: a GRC desk joins the team (22 October). | open |  |
 
 ## What they have done
 - The first release: every claim with a status and its sources (v0.1.0).
@@ -55,4 +55,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html

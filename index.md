@@ -19,10 +19,10 @@ You may also see this called php2shell, or by its two official reference numbers
 As of 22 October 2026, 11:34 UTC, the time of the latest page this site saved.
 - A fix has been available since 21 October. Organisations that run websites on PHP are installing it. [php.net](sources/php-net-advisory/index.html)
 - Government cyber agencies in the US, the UK, the EU and elsewhere say: install the fix now, and take a website offline if you cannot. [CISA](sources/cisa-alert-php-20261021/index.html) [NCSC UK](sources/ncsc-news-php/index.html) [CERT-EU](sources/certeu-sa-2026-018/index.html) [NSA Cyber on X](sources/nsa-x-2112903220209098897/index.html)
-- Attackers are trying to use the flaws, in large numbers. No organisation has said it was broken into. [Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [CISA](sources/cisa-kev-json/index.html)
+- Attackers are trying to use the flaws, in large numbers. As of the evening of 22 October, no named organisation has said it was compromised through php2shell. [Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [CISA](sources/cisa-kev-json/index.html)
 - Some organisations took websites offline as a precaution, among them Dutch government services such as the DigiD login. [Rijksoverheid / NCSC-NL](sources/rijksoverheid-ncsc-php-news/index.html) [BBC News](sources/bbc-live-ckgel5xp2xv9t/index.html)
 
-This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 October 2026 · [history](versions/front-now/index.html)
+This section v2 written in site [v0.5.8](admin/versions.html#v0.5.8) on 22 October 2026 · [history and changes, 1 earlier](versions/front-now/index.html)
 
 ## At a glance
 Is there a fix?Yesinstall PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35How serious?Critical9.2 out of 10, both flawsAre attackers trying?Yesmillions of attempts, seen by one internet security companyAnyone confirmed hacked?Not yetno organisation, as of the latest checkWebsites taken offline10 organisationsreported, as a precautionOn the US 'used in attacks' list?Not yetthe US government's official list of flaws known to be used by attackersWhat do governments say?Update nowor take the website offline if you cannot; 16 agencies compared
@@ -41,11 +41,11 @@ Each fact links to the original pages it rests on: the PHP project, government a
 - reportedThe weak spot was first noticed in 2024 and left alone, because nobody could show it was dangerous. In August 2026, three research teams using AI tools showed that it was, and told the PHP project.[PHP Foundation](sources/php-foundation-blog-security-release/index.html) [Calif](sources/calif-php2shell/index.html) [Wiz](sources/wiz-blog-php2shell/index.html) [More →](discovery/index.html)
 - confirmedThe plan was to announce the fix on 22 October. Word leaked out on 20 October, so it was released a day early.[PHP Foundation](sources/php-foundation-blog-security-release/index.html) [Daubois](sources/daubois-blog-php2shell-rumors/index.html) [More →](leak/index.html)
 - reportedAttackers are trying. One internet security company reports millions of attempts; Amazon reports a decoy server was hit four days before the announcement.[Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [THN](sources/thehackernews-php2shell-4days/index.html) [More →](exploitation/index.html)
-- confirmedNo organisation has confirmed a break-in, and the US government's official list of flaws known to be used in attacks did not include these two when last checked.[CISA](sources/cisa-kev-json/index.html) [CISA](sources/cisa-kev-catalog/index.html) [More →](impact/index.html)
+- confirmedAttackers are trying, in large numbers. No organisation has said it was broken into through this flaw, as of the evening of 22 October, and the US government's official list of flaws known to be used in attacks did not include these two when last checked.[CISA](sources/cisa-kev-json/index.html) [CISA](sources/cisa-kev-catalog/index.html) [More →](impact/index.html)
 - confirmedEvery agency says install the fix. They disagree on what to do if you cannot: the US says take the website offline, the UK lists that as a last resort, several European agencies say cut it off from the public internet, and some say nothing about it.[CISA](sources/cisa-alert-php-20261021/index.html) [NCSC UK](sources/ncsc-news-php/index.html) [CERT-EU](sources/certeu-sa-2026-018/index.html) [ACSC](sources/acsc-alert-php/index.html) [More →](agencies/index.html)
 - confirmedThe headline '70% of the Internet' is not what it sounds like. It is roughly the share of websites built with PHP, which is what the same company's own article says; nobody has measured how many are actually at risk.[Wiz](sources/wiz-blog-php2shell/index.html) [Wiz on X](sources/x-wiz-io-php2shell/index.html) [Cloudflare](sources/cloudflare-blog-php2shell-waf/index.html) [More →](numbers/index.html)
 
-This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 October 2026 · [history](versions/front-facts/index.html)
+This section v2 written in site [v0.5.8](admin/versions.html#v0.5.8) on 22 October 2026 · [history and changes, 1 earlier](versions/front-facts/index.html)
 
 ## What nobody knows yet
 
@@ -108,11 +108,11 @@ Why can't every version of PHP just be patched?House story · Journalist · 2026
 [All stories →](articles/index.html)
 
 ## How this site knows
-144web pages saved as evidence, each with the time it was saved70statements checked: 22 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
+144web pages saved as evidence, each with the time it was saved70statements checked: 21 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
 Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read [the PHP project's announcement](https://www.php.net/archive/2026.php#2026-10-21-5) and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; [how it works](method/index.html).
 
 Already know the vocabulary? [The specialist summary](summary/index.html) has the technical version of this page, with every number and the full last 48 hours.
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.5.9 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html

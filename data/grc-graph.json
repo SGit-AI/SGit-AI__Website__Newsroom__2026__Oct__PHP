@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.5.5",
+ "version": "0.5.9",
  "kept_by": "grc@php.newsroom",
  "as_of": "2026-10-22",
  "verbs": [
@@ -1704,8 +1704,26 @@
   {
    "id": "claim:no-confirmed-compromise",
    "kind": "claim",
-   "label": "No named organisation has confirmed a compromise through php2shell",
+   "label": "As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p",
    "href": "facts/no-confirmed-compromise/index.html"
+  },
+  {
+   "id": "source:securityweek-first-attempts-sensors",
+   "kind": "source",
+   "label": "SecurityWeek",
+   "href": "sources/securityweek-first-attempts-sensors/index.html"
+  },
+  {
+   "id": "source:securityweek-exploitation-days-before",
+   "kind": "source",
+   "label": "SecurityWeek",
+   "href": "sources/securityweek-exploitation-days-before/index.html"
+  },
+  {
+   "id": "source:recordedfuture-php2shell",
+   "kind": "source",
+   "label": "Recorded Future",
+   "href": "sources/recordedfuture-php2shell/index.html"
   },
   {
    "id": "source:weirdgloop-blog-php2shell",
@@ -2534,12 +2552,6 @@
    "kind": "claim",
    "label": "PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 mi",
    "href": "facts/scale-2.6m-hosts/index.html"
-  },
-  {
-   "id": "source:securityweek-exploitation-days-before",
-   "kind": "source",
-   "label": "SecurityWeek",
-   "href": "sources/securityweek-exploitation-days-before/index.html"
   },
   {
    "id": "treatment:r09.1",
@@ -5397,19 +5409,43 @@
    "from": "claim:no-confirmed-compromise",
    "rel": "cites",
    "inverse": "cited_by",
+   "to": "source:cisa-alert-php-20261021"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
    "to": "source:huntress-php2shell-rapid-response"
   },
   {
    "from": "claim:no-confirmed-compromise",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:imperva-blog-php2shell"
+   "to": "source:aws-security-blog-madpot"
   },
   {
    "from": "claim:no-confirmed-compromise",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:aws-security-blog-madpot"
+   "to": "source:securityweek-first-attempts-sensors"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:securityweek-exploitation-days-before"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:recordedfuture-php2shell"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:imperva-blog-php2shell"
   },
   {
    "from": "claim:no-confirmed-compromise",
@@ -6453,19 +6489,43 @@
    "from": "claim:no-confirmed-compromise",
    "rel": "cites",
    "inverse": "cited_by",
+   "to": "source:cisa-alert-php-20261021"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
    "to": "source:huntress-php2shell-rapid-response"
   },
   {
    "from": "claim:no-confirmed-compromise",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:imperva-blog-php2shell"
+   "to": "source:aws-security-blog-madpot"
   },
   {
    "from": "claim:no-confirmed-compromise",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:aws-security-blog-madpot"
+   "to": "source:securityweek-first-attempts-sensors"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:securityweek-exploitation-days-before"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:recordedfuture-php2shell"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:imperva-blog-php2shell"
   },
   {
    "from": "claim:no-confirmed-compromise",
@@ -6717,19 +6777,43 @@
    "from": "claim:no-confirmed-compromise",
    "rel": "cites",
    "inverse": "cited_by",
+   "to": "source:cisa-alert-php-20261021"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
    "to": "source:huntress-php2shell-rapid-response"
   },
   {
    "from": "claim:no-confirmed-compromise",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:imperva-blog-php2shell"
+   "to": "source:aws-security-blog-madpot"
   },
   {
    "from": "claim:no-confirmed-compromise",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:aws-security-blog-madpot"
+   "to": "source:securityweek-first-attempts-sensors"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:securityweek-exploitation-days-before"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:recordedfuture-php2shell"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:imperva-blog-php2shell"
   },
   {
    "from": "claim:no-confirmed-compromise",
