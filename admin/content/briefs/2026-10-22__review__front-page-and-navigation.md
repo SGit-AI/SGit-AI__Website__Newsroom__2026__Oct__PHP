@@ -20,7 +20,7 @@ Author: the journalist role (claude-journalist), on joining the site. Asked for 
 - **llms.txt sits in the main menu** next to the story menus. It is for agents and belongs in the footer, where the markdown twin link already is.
 - **There was nowhere for dated, signed writing.** Every page is rebuilt from the vault on each release, which is right for the evidence, but means the site had no way to say "this is what we knew at 11:34 UTC on 22 October" and keep it.
 
-## What v0.2.7 did
+## What v0.2.8 did
 
 - The menu splits by layer: **The story** (unchanged), **Articles** (new: signed, dated), **The analysis** (claims, numbers, agencies, affected systems, who says what, the graph: derived from the evidence), **The evidence** (every source, the software inventory, the vault opened, and the new layers page). The vault page moved from About to The evidence.
 - A new page, **Evidence, derived, authored** (/layers/), classifies every file the site is built from, from data/layers.json, and the gate now fails a release if a data file is not classified.
@@ -37,5 +37,5 @@ Author: the journalist role (claude-journalist), on joining the site. Asked for 
 
 ## Open questions for the editor
 
-- Should articles carry the reading meter like story pages (they do in v0.2.7, at the article price), or be free like the method and the brief?
+- Should articles carry the reading meter like story pages (they do in v0.2.8, at the article price), or be free like the method and the brief?
 - Should the newsroom's own section on the story (newsroom.sgit.ai/php-flaws) carry the opinion pieces, as memo 2 suggests, with this site keeping only the journalist's and historian's dated reports? This review assumes yes.

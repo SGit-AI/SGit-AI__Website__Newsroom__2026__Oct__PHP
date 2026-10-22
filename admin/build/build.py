@@ -1205,7 +1205,13 @@ def build_admin_section():
 <p>Who the owners are is on <a href="../roles/index.html">roles</a>; the briefs that open items are on <a href="../briefs/index.html">briefs</a>.</p>
 """
     page('admin/board/index.html', 'The board', 'The work on this site and its vault, as rows: what is open, who owns it, what shipped it.', body, kind='free')
-    cards = ''.join(f'<article class="role" id="{E(r["id"])}"><h3>{E(r["name"])} <span class="small">{E(r["who"])}</span></h3><p><b>Owns.</b> {E(r["owns"])}</p><ul>{"".join(f"<li>{E(x)}</li>" for x in r["rules"])}</ul></article>' for r in A['roles'])
+    def pki_html(r):
+        k = r.get('pki')
+        if not k: return ''
+        return (f'<p><b>Public key on pki.sgit.ai.</b> record <code>{E(k["record"])}</code>, encryption <code>{E(k["encryption"])}</code>, made {E(k["made"])}. '
+                f'<a href="{E(k["key_link"])}" rel="noopener">Open the key link</a> (pki.sgit.ai recomputes the fingerprint in your browser). {E(k["note"])}</p>'
+                f'<p><img src="../../{E(k["qr"])}" alt="QR code of dev@php.newsroom\'s public key" width="180" height="180" style="background:#fff;padding:4px;border-radius:6px"></p>')
+    cards = ''.join(f'<article class="role" id="{E(r["id"])}"><h3>{E(r["name"])} <span class="small">{E(r["who"])}</span></h3><p><b>Owns.</b> {E(r["owns"])}</p><ul>{"".join(f"<li>{E(x)}</li>" for x in r["rules"])}</ul>{pki_html(r)}</article>' for r in A['roles'])
     body = f"""
 <h1>Roles and responsibilities</h1>
 <p class="lead">{len(A["roles"])} roles, each a row in <code>data/admin.json</code>: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on <a href="../../team/index.html">the team page</a>.</p>

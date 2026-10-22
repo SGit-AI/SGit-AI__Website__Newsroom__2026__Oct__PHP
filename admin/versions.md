@@ -4,11 +4,19 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.2.7. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.2.8. The data is [data/versions.json](../data/versions.json).
+
+### v0.2.8 · 2026-10-22
+
+the articles layer and the evidence, derived, authored split: a journalist's state-of-affairs report and a historian's perspective, both written against v0.2.5 (the librarian's questions shipped alongside as v0.2.6, the dev agent's key as v0.2.7); /layers/ classifying every data file, checked by the gate; the menu split into story, articles, analysis and evidence; a front page and navigation review; the front page's 'six briefings' corrected to the computed twelve
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.2.7 · 2026-10-22
 
-the articles layer and the evidence, derived, authored split: a journalist's state-of-affairs report and a historian's perspective, both written against v0.2.5 (the librarian's questions shipped alongside as v0.2.6); /layers/ classifying every data file, checked by the gate; the menu split into story, articles, analysis and evidence; a front page and navigation review; the front page's 'six briefings' corrected to the computed twelve
+dev@php.newsroom's public key from pki.sgit.ai on the roles page (record sha256:8025e2a4470e73f0, key link and QR), the brief for handing the editor the telemetry vault key sealed to his key, and board item 013
 
  Vault commit `200d08971937`.
 
@@ -80,4 +88,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.2.7 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.2.8 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
