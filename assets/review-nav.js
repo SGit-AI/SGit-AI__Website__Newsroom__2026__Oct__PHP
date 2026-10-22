@@ -52,7 +52,7 @@
     if (n.file) extra.push(`<p><b>In.</b> <code>${esc(n.file)}</code></p>`)
     if (n.ini) extra.push(`<p><b>New setting.</b> <code>${esc(n.ini)}</code></p>`)
     if (n.functions && n.functions.length) extra.push(`<p><b>Functions the fix changed.</b> ${n.functions.map(f => `<code>${esc(f)}</code>`).join(' ')}</p>`)
-    if (n.url) extra.push(`<p><a href="${esc(n.url)}" rel="noopener nofollow">Open in php-src &#8599;</a></p>`)
+    if (n.url && /^https:\/\//.test(n.url)) extra.push(`<p><a href="${esc(n.url)}" rel="noopener nofollow">Open in php-src &#8599;</a></p>`)
     if (n.source) extra.push(`<p><a href="${root}sources/${esc(n.source)}/index.html">The source &rarr;</a></p>`)
     document.getElementById('rv').innerHTML =
       `<p class="crumb">${G.layers.map(l => `<span class="ly l-${l.id}${l.id === n.layer ? ' on' : ''}">${esc(l.name)}</span>`).join(' &rsaquo; ')}</p>

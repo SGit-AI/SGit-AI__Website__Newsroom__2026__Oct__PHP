@@ -8,9 +8,37 @@ telemetry_drain.py), appends them to requests/<date>.jsonl, marks them processed
 one row per address with its latest request and status (requested, left; confirmed is set by the agent at
 agent@diniscruz.ai when the address answers). Nothing from here is ever copied to the site, which is public.
 """
-import argparse, datetime, json, os, sys
+import argparse, datetime, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from telemetry_drain import post, decrypt
+
+# The lane's append token is public, so a request can come from anyone, written by hand rather than by the form.
+# Everything in it is untrusted: only the fields the form sends survive, each checked against the site's own lists,
+# and the note is kept as data for a person, marked untrusted so no agent reads it as instructions.
+SITE = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'data', 'subscriptions.json')))
+ZONES = {z[0] for z in SITE.get('zones', [])}
+CADENCES = {c[0] for c in SITE.get('cadences', [])}
+EMAIL = re.compile(r'[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+')
+CTRL = re.compile(r'[\x00-\x1f\x7f\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff\U000e0000-\U000e007f]')
+MAX_PER_ADDRESS = 3   # more requests than this for one address in one drain: held, so nobody is mailed on a flood
+
+def clean(q):
+    """The request as the form would have sent it, or a reason it is rejected."""
+    email = q.get('email')
+    if not isinstance(email, str) or len(email) > 254 or not EMAIL.fullmatch(email.strip()):
+        return None, 'email is not a plain address'
+    kind = q.get('kind') or 'subscribe'
+    if kind not in ('subscribe', 'unsubscribe'): return None, 'unknown kind'
+    out = {'email': email.strip().lower(), 'kind': kind, 'at': str(q.get('at') or '')[:40]}
+    if kind == 'subscribe':
+        zones = q.get('zones') or []
+        if not isinstance(zones, list) or not zones or not set(zones) <= ZONES: return None, 'zones not on the site\'s list'
+        if q.get('cadence') not in CADENCES: return None, 'cadence not on the site\'s list'
+        out.update({'zones': sorted(set(zones)), 'cadence': q['cadence']})
+    note = q.get('note')
+    if isinstance(note, str) and note.strip():
+        out['note_untrusted'] = CTRL.sub(' ', note)[:500]
+    return out, None
 
 def main():
     ap = argparse.ArgumentParser()
@@ -52,8 +80,16 @@ def main():
         for q in rows: f.write(json.dumps(q, ensure_ascii=False, sort_keys=True) + '\n')
     sp = os.path.join(V, 'subscribers.json')
     subs = json.load(open(sp)) if os.path.exists(sp) else {'about': 'One row per address. status: requested (unconfirmed), confirmed (the address answered), left.', 'subscribers': {}}
-    for q in sorted((x for x in rows if x.get('email')), key=lambda x: x.get('at') or ''):
-        e = q['email'].strip().lower()
+    ok, per = [], {}
+    for q in rows:
+        c, why = clean(q) if not q.get('undecryptable') else (None, 'undecryptable')
+        if c is None:
+            q['_rejected'] = why
+            continue
+        per[c['email']] = per.get(c['email'], 0) + 1
+        ok.append(c)
+    for q in sorted(ok, key=lambda x: x.get('at') or ''):
+        e = q['email']
         row = subs['subscribers'].get(e, {'status': 'requested', 'first': q.get('at')})
         if q.get('kind') == 'unsubscribe':
             row['status'] = 'left'
@@ -61,6 +97,8 @@ def main():
             row.update({'zones': q.get('zones'), 'cadence': q.get('cadence')})
             if row.get('status') == 'left': row['status'] = 'requested'
         row['last'] = q.get('at'); row['requests'] = row.get('requests', 0) + 1
+        if per[e] > MAX_PER_ADDRESS:
+            row['hold'] = f'{per[e]} requests in one drain: held for a person before anything is sent'
         subs['subscribers'][e] = row
     json.dump(subs, open(sp, 'w'), indent=1, ensure_ascii=False, sort_keys=True)
     c = {}

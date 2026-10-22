@@ -174,19 +174,12 @@ before = tree_hash()
 r = subprocess.run([sys.executable, os.path.join(ROOT, 'admin', 'build', 'build.py')], capture_output=True, text=True)
 if r.returncode != 0: fails.append('rebuild failed: ' + r.stderr[-500:])
 elif tree_hash() != before: fails.append('build is not deterministic: a second run changed the output')
-# 7. credential shapes anywhere in the tree (not .git)
-PAT = re.compile(r'sgit_private_(vault|read)_[0-9a-f]{12,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|AKIA[0-9A-Z]{16}|sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{30,}|xox[baprs]-[0-9A-Za-z-]{10,}')
-for root, dirs, files in os.walk(ROOT):
-    dirs[:] = [d for d in dirs if d not in ('.git', '.sg_vault')]
-    for f in files:
-        fp = os.path.join(root, f)
-        try:
-            b = open(fp, 'rb').read()
-        except Exception:
-            continue
-        if b'\x00' in b[:4000]: continue
-        m = PAT.search(b.decode('utf-8', 'replace'))
-        if m: fails.append(f'{rel(fp)}: credential shape {m.group(0)[:12]}...')
+# 7. security (admin/build/security_check.py, kept by security@php.newsroom): credential shapes and secret values,
+# vault-key and decrypted-vault files, hidden characters and text addressed to a model, JSON script blocks that their
+# data could close, javascript: URLs, slug shapes, workflows pinned to commits
+sys.path.insert(0, os.path.join(ROOT, 'admin', 'build'))
+import security_check
+fails += security_check.tree_fails(ROOT)
 # 8. no external script/style/img (checked above); also check the vendored meter is present
 for f in ('assets/review-nav.js', 'data/review.json', 'review/code/files.json', 'assets/themes/themes.css', 'assets/themes/themes.js', 'assets/themes/site-tokens.css', 'assets/telemetry.js', 'data/telemetry.json', 'data/admin.json', 'assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js', 'assets/components/base/v1/v1.0/v1.0.0/sg-component.js', 'assets/site.css', 'assets/site.js', 'CNAME', '.nojekyll', 'VERSION', '.github/workflows/pages.yml', 'assets/personas.js'):
     if not os.path.exists(os.path.join(ROOT, f)): fails.append(f'missing {f}')

@@ -142,6 +142,13 @@
 <li><code>.github/workflows/synthetic.yml</code>: hourly at :23 and after each deploy, <code>--if-changed</code> (an unchanged site gets a heartbeat, not a run). Needs repository secrets SG_SEND_ACCESS_TOKEN and SYNTHETIC_VAULT_KEYS; until they are set it does nothing. It never commits to this repository, so the page is the snapshot at the last release.</li>
 <li>Not built: a trend view across runs; readers beyond the six; real-reader testing.</li>
 </ul>
+<h3>Security (security@php.newsroom)</h3>
+<ul>
+<li><code>admin/security/</code>: the requirements every agent works to, this deployment&#x27;s agent behaviour policy (grant, mandate as a draft for the editor, delta) in the riskmandate.ai vocabulary, and the allowlist for text addressed to a model. <code>CLAUDE.md</code> points every agent session at them.</li>
+<li><code>admin/build/security_check.py</code>, run by the gate (credential shapes and secret values, vault-key and decrypted-vault files, hidden characters, text addressed to a model, JSON script blocks, script URLs, slugs, workflow pinning), by <code>release.sh</code> on the staged diff, and on the security pass with <code>--report --history --vault &lt;clone&gt;</code>.</li>
+<li>The build escapes JSON inside <code>&lt;script&gt;</code> (<code>J()</code>), refuses script URLs from data (<code>U()</code>), writes only inside the site tree and renders markdown only from <code>admin/content/</code> and the top-level notes. The workflows pin actions to commits; the deploy job alone holds the Pages permissions; the synthetic job gives its secrets only to the step that runs, and no longer caches vault clones. The synthetic review fences page text as untrusted. The subscriptions drain keeps only the fields the form sends, checked against the site&#x27;s lists, and holds an address with a flood of requests.</li>
+<li>Not built: branch protection or rulesets (the editor&#x27;s to set); a content security policy; a security pass on a schedule.</li>
+</ul>
 <h3>Not built</h3>
 <ul>
 <li>A verifier agent run; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.</li>

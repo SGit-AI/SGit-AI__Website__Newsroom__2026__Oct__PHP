@@ -38,9 +38,9 @@
       p.path.forEach(function (x, i) {
         var done = seen.indexOf(x[0]) >= 0, cur = x[0] === here;
         if (!next && !done && !cur) next = x;
-        steps += '<li class="' + (cur ? 'here' : done ? 'seen' : '') + '"><a href="' + root + x[0] + '" title="' + esc(x[1]) + ', ' + x[2] + ' min">' + (i + 1) + '</a></li>';
+        steps += '<li class="' + (cur ? 'here' : done ? 'seen' : '') + '"><a href="' + root + esc(x[0]) + '" title="' + esc(x[1]) + ', ' + esc(String(x[2])) + ' min">' + (i + 1) + '</a></li>';
       });
-      var nx = next ? '<span class="nx">Next: <a href="' + root + next[0] + '">' + esc(next[1]) + '</a> <small>' + next[2] + ' min</small></span>'
+      var nx = next ? '<span class="nx">Next: <a href="' + root + esc(next[0]) + '">' + esc(next[1]) + '</a> <small>' + esc(String(next[2])) + ' min</small></span>'
                     : '<span class="nx">Path read. <a href="' + root + 'start/index.html">Try another reader</a></span>';
       bar.className = 'pbar';
       bar.innerHTML = '<div class="row"><span class="av av-' + esc(p.group) + '" aria-hidden="true">' + esc(p.person.charAt(0)) + '</span>' +
