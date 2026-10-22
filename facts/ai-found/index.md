@@ -12,6 +12,10 @@ Fact · discovery · reported
 
 All three research parties say AI was used. Calif: 'No special harness, or access to models that weren't generally available to everyone were used'. Calif does not name a model; Wiz names Gemini 4 Argon, GPT-5.6 Sol and Wiz Atlas; OpenAI's blog reportedly names GPT-5.6 Sol but is blocked.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Calif publishes [php2shell by Calif Research — A tale of two PHP remote vulnerabilities](../../sources/calif-php2shell/index.html)
 - 2026-10-21Wiz publishes [PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet](../../sources/wiz-blog-php2shell/index.html)

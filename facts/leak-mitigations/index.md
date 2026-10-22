@@ -10,6 +10,10 @@ Fact · leak · reported
 
 **Who says it:** PHP Foundation · **Sources:** [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html)
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)
 - 2026-10-22 08:09 UTCSaved into the evidence vault: PHP Foundation

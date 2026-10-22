@@ -12,6 +12,10 @@ Fact · scale · reported
 
 None of the three cites the survey it comes from. A share of websites using PHP is an upper bound on exposure, not a count of vulnerable systems.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Cloudflare publishes [Cloudflare deploys protections against php2shell vulnerability](../../sources/cloudflare-blog-php2shell-waf/index.html)
 - 2026-10-21Wiz publishes [PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet](../../sources/wiz-blog-php2shell/index.html)

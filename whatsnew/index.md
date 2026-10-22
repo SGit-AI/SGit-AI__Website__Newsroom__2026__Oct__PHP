@@ -16,7 +16,12 @@ New evidence (for example the first confirmed compromise of a named organisation
 
 the editor's critical brief on scheduled capture: the sources that move are checked on a schedule, captured raw, turned into timestamped JSON and analysed on every change; contradictions between reports are recorded as first-class records, seeded with seven from the coverage review; meaning through connectivity, with every fact and stat on a spectrum of evidence; board items 057 to 063
 
-No reader-facing section changed in this release.
+### Briefings that changed
+JJordanBoard member or executive · v5SSamSecurity lead · v5DDrewPHP or platform engineer · v6RRowanJournalist · v5AAshSecurity researcher · v5BBlakeAnalyst or advisor · v6RRobinCISO · v5AAveryCTO · v5QQuinnCFO · v5JJamieHead of AppSec · v5LLeeDeveloper · v4RRileyMedia and communications team · v4AAlexCurious reader · v3CCaseyWebsite owner · v3TTaylorProject or programme manager · v3
+### Sections that changed
+- [Who found it](../versions/page-discovery/index.html#v5) v5
+- [How disclosure broke](../versions/page-leak/index.html#v5) v5
+- [Every claim](../versions/page-claims/index.html#v5) v5
 
 ## v0.4.6 · 22 October 2026new since your last visit
 

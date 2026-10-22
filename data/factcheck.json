@@ -1,0 +1,151 @@
+{
+ "schema": "sgit.newsroom.factcheck/1",
+ "desk": "factcheck@php.newsroom",
+ "levels": [
+  {
+   "code": "A0",
+   "n": 0,
+   "name": "Unsupported",
+   "means": "No capture carries it, or the cited capture does not say it"
+  },
+  {
+   "code": "A1",
+   "n": 1,
+   "name": "Weak signal",
+   "means": "Second hand, unnamed, blocked, or only partly carried by its capture"
+  },
+  {
+   "code": "A2",
+   "n": 2,
+   "name": "Reported",
+   "means": "One named party says it, in a capture this desk checked"
+  },
+  {
+   "code": "A3",
+   "n": 3,
+   "name": "Echoed",
+   "means": "Several outlets say it, tracing to one origin"
+  },
+  {
+   "code": "A4",
+   "n": 4,
+   "name": "Corroborated",
+   "means": "Two or more independent parties say it, at least one checked in a capture"
+  },
+  {
+   "code": "A5",
+   "n": 5,
+   "name": "Confirmed",
+   "means": "Two or more independent primary sources say it, each checked in a capture"
+  },
+  {
+   "code": "A6",
+   "n": 6,
+   "name": "Established",
+   "means": "The authoritative primary record carries it, or this site counted it from a captured file"
+  }
+ ],
+ "kinds": [
+  "record",
+  "event",
+  "state",
+  "count",
+  "quote",
+  "attribution",
+  "reading",
+  "advice"
+ ],
+ "verdicts": [
+  "holds",
+  "holds-in-part",
+  "not-shown",
+  "refuted"
+ ],
+ "tensions": [
+  "none",
+  "measures-differently",
+  "disputed",
+  "contradicted",
+  "superseded"
+ ],
+ "tension_cap": {
+  "contradicted": 1,
+  "disputed": 2
+ },
+ "assessments": [],
+ "unassessed": [
+  "ac-high",
+  "affected-sites",
+  "ahead-of-attackers",
+  "ai-found",
+  "amazon-honeypot",
+  "cf-millions",
+  "chainguard",
+  "cisa-none",
+  "cloudflare-traffic",
+  "cvss-10",
+  "disclosure-22oct",
+  "edinburgh",
+  "fi-offline",
+  "fix-authored",
+  "fix-bailout",
+  "fix-engine",
+  "fix-incomplete",
+  "four-reporters",
+  "gov-patch-required",
+  "huntress-none",
+  "imperva-none",
+  "kev-precedent",
+  "latvia-attempts",
+  "latvia-offline",
+  "leak-cve-ids",
+  "leak-hn",
+  "leak-mitigations",
+  "leak-video",
+  "leak-watchtowr",
+  "lorenc-ai-found",
+  "more-paths",
+  "most-severe",
+  "nl-offline",
+  "no-confirmed-compromise",
+  "no-exploitation",
+  "nz-active",
+  "offline-allies",
+  "offline-cisa",
+  "offline-ncsc",
+  "offline-nsa",
+  "only-update",
+  "openai-same-day",
+  "oxford",
+  "pocs-wrong",
+  "preannounce-time",
+  "probing",
+  "quarkslab-2024",
+  "quarkslab-redacted",
+  "rce-fpm",
+  "rce-modphp",
+  "release-moved",
+  "release-time",
+  "scale-2.6m-hosts",
+  "scale-30m",
+  "scale-70pc-internet",
+  "scale-70pc-websites",
+  "scale-latvia",
+  "scale-ncsc-nl",
+  "two-cves-9.2",
+  "uk-list",
+  "versions-old",
+  "vibe-code",
+  "waf",
+  "waf-nine-hours",
+  "watchtowr-itw",
+  "weirdgloop-13h",
+  "who-first",
+  "wikimedia-precaution",
+  "wiz-independent",
+  "wordpress-drupal"
+ ],
+ "contradictions": [],
+ "tickets": [],
+ "runs": []
+}

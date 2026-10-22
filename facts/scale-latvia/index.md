@@ -12,6 +12,10 @@ Fact · scale · reported
 
 Primary source, one country, says 'potentially'.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21 18:25 UTCCERT.LV publishes [Saistībā ar globāli atklātām PHP ievainojamībām Latvijā ievieš preventīvus pasākumus](../../sources/certlv-php-preventive/index.html)
 - 2026-10-22 08:13 UTCSaved into the evidence vault: CERT.LV

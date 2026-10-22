@@ -10,6 +10,10 @@ Fact · impact · reported
 
 **Who says it:** the council's social post, via Oxford Chronicle · **Sources:** [Oxford Chronicle](../../sources/oxfordchronicle-councils-offline/index.html)
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Oxford Chronicle publishes [Oxfordshire council websites offline amid critical global security issue | Oxford Chronicle](../../sources/oxfordchronicle-councils-offline/index.html)
 - 2026-10-22 11:29 UTCSaved into the evidence vault: Oxford Chronicle

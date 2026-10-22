@@ -12,9 +12,9 @@ Party
 
 ## Claims this site attributes to this party
 
-| Claim | Who says it | Status | Primary | Sources |
-|---|---|---|---|---|
-| Quarkslab's published audit summary lists 27 findings, two redacted because their fixes were complex and in progress; it does not describe an out-of-memory findingThe Foundation says the OOM signs were found while fixing one of the audit's findings, not in the audit report itself. [fact timeline →](../../facts/quarkslab-redacted/index.html) | Quarkslab's blog; a Substack analysis | reported | 1/2 | [Quarkslab](../../sources/quarkslab-blog-php-src-audit/index.html) [David Lopez-Kurtz](../../sources/substack-lopezkurtz-patch-is-the-exploit/index.html) |
+| Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
+|---|---|---|---|---|---|
+| Quarkslab's published audit summary lists 27 findings, two redacted because their fixes were complex and in progress; it does not describe an out-of-memory findingThe Foundation says the OOM signs were found while fixing one of the audit's findings, not in the audit report itself. [fact timeline →](../../facts/quarkslab-redacted/index.html) | Quarkslab's blog; a Substack analysis | reported | not checked | 1/2 | [Quarkslab](../../sources/quarkslab-blog-php-src-audit/index.html) [David Lopez-Kurtz](../../sources/substack-lopezkurtz-patch-is-the-exploit/index.html) |
 
 ## Its sources in the vault
 - [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html) The PHP Foundation

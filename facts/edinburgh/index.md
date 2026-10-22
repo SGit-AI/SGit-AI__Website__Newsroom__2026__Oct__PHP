@@ -10,6 +10,10 @@ Fact · impact · reported
 
 **Who says it:** The Scotsman quoting the council · **Sources:** [The Scotsman](../../sources/scotsman-edinburgh-council-offline/index.html)
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21 18:09 UTCThe Scotsman publishes [Edinburgh council website offline amid global cyber security alert](../../sources/scotsman-edinburgh-council-offline/index.html)
 - 2026-10-22 11:21 UTCSaved into the evidence vault: The Scotsman

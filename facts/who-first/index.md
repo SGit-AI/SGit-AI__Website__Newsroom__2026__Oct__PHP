@@ -12,6 +12,10 @@ Fact · discovery · confirmed
 
 The hash tweet is dated 5 August 2026 on X; its pre-image has not been published, so what it commits to cannot be checked.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-08-05 15:54 UTCRyan Austin, Calif on X publishes [LCFR on X: hash commitment d935be02…](../../sources/x-lcfr-hax-hash-tweet/index.html)
 - 2026-10-21Calif publishes [php2shell by Calif Research — A tale of two PHP remote vulnerabilities](../../sources/calif-php2shell/index.html)

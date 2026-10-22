@@ -12,6 +12,10 @@ Fact · exploitation · confirmed
 
 Catalog version 2026.10.21 fetched 2026-10-22T08:15Z, 1,754 entries. A point-in-time negative finding.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21CISA publishes [Critical Vulnerabilities in PHP Require Immediate Patching](../../sources/cisa-alert-php-20261021/index.html)
 - 2026-10-21 13:48 UTCCVE record publishes [CVE-2026-109618: RCE via OOM corruption](../../sources/cve-cve-2026-109618/index.html)

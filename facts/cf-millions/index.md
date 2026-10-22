@@ -12,6 +12,10 @@ Fact · exploitation · reported
 
 Primary party. Attempts, not compromises; no blocked count; 1.4 million views at capture.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-22 01:25 UTCMatthew Prince, Cloudflare CEO on… publishes [Matthew Prince 🌥 on X: "Some stats on #php2shell. In the 10 hours before it was publicly announced, across the](../../sources/x-eastdakota-php2shell-stats/index.html)
 - 2026-10-22 11:18 UTCSaved into the evidence vault: Matthew Prince, Cloudflare CEO on…

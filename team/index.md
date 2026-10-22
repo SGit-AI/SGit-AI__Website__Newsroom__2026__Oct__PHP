@@ -74,13 +74,13 @@ The site is built and run by one person and a set of software agents, and this p
 
 **The mistake behind the rule.** The first question came from a group chat with a newspaper link in it; the newspaper was not in the vault. It is listed below as seen, not captured, rather than cited.
 
-### Verifier `verifier`
+### Fact-check desk (factcheck@php.newsroom) `factcheck`
 
-**Beat.** re-reads each claim against its captures; downgrades anything the capture does not carry
+**Beat.** every statement on the site, graded independently against the captures it cites: what kind of statement it is, how strong its evidence is on a spectrum from A0 to A6, what contradicts it, and whether its status word claims more than the evidence carries; tickets in Issues-FS for everything that needs changing; outside evidence for the weak and the contested
 
-**The rule it enforces.** A quote that is not in the captured text is not a quote. Mark it and say which capture was checked.
+**The rule it enforces.** Grade the statement as worded, from captures you opened and read. Repetition is not corroboration, absence is not refutation, an opinion is labelled with whose it is. Highlight, do not fix.
 
-**The mistake behind the rule.** Proposed, not yet run. The BBC's NCSC quote is the first case for it.
+**The mistake behind the rule.** The role was proposed as the verifier and not run for a day, while the site's export fell 40 sources behind the vault; the first run found it. A desk that is not scheduled is a desk that does not exist.
 
 ### Briefing writer `briefing-writer`
 

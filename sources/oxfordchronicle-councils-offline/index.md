@@ -22,9 +22,9 @@ Captured by claude-story-site. Status: captured. Oxford City Council: 'a precaut
 
 ## Claims that cite it
 
-| Claim | Who says it | Status | Primary | Sources |
-|---|---|---|---|---|
-| Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident' [fact timeline →](../../facts/oxford/index.html) | the council's social post, via Oxford Chronicle | reported | 0/1 | [Oxford Chronicle](../../sources/oxfordchronicle-councils-offline/index.html) |
+| Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
+|---|---|---|---|---|---|
+| Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cyber incident' [fact timeline →](../../facts/oxford/index.html) | the council's social post, via Oxford Chronicle | reported | not checked | 0/1 | [Oxford Chronicle](../../sources/oxfordchronicle-councils-offline/index.html) |
 
 ## Events that cite it
 

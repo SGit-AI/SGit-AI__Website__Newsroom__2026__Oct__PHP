@@ -12,6 +12,10 @@ Fact · exploitation · confirmed
 
 Both companies have since said so themselves.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Cloudflare publishes [Cloudflare deploys protections against php2shell vulnerability](../../sources/cloudflare-blog-php2shell-waf/index.html)
 - 2026-10-21Amazon publishes [Amazon Threat Intelligence identifies PHP2Shell exploitation prior to public disclosure in MadPot | AWS Securi](../../sources/aws-security-blog-madpot/index.html)

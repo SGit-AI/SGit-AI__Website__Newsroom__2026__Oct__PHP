@@ -12,6 +12,10 @@ Fact · advice · reported
 
 No CISA emergency directive was visible on the CISA home page at capture.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21NSA publishes [NSA Advisory: Critical Patches Recommended for PHP Vulnerabilities](../../sources/nsa-press-php-4630238/index.html)
 - 2026-10-22 08:09 UTCSaved into the evidence vault: NSA

@@ -10,6 +10,10 @@ Fact · advice · confirmed
 
 **Who says it:** CISA · **Sources:** [CISA](../../sources/cisa-alert-php-20261021/index.html)
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21CISA publishes [Critical Vulnerabilities in PHP Require Immediate Patching](../../sources/cisa-alert-php-20261021/index.html)
 - 2026-10-22 08:13 UTCSaved into the evidence vault: CISA

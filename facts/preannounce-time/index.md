@@ -12,6 +12,10 @@ Fact · timing · disputed
 
 The php.net feed says 20:32 UTC; oss-security relayed it at 20:22:51 UTC, so it was public by then.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-20 20:22 UTCoss-security publishes [Upcoming Critical PHP Security Release](../../sources/openwall-oss-security-2026-10-20-34/index.html)
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)

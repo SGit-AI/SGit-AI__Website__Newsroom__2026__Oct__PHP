@@ -47,10 +47,14 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 - An article a reader saw is listed as seen, not captured, until a collector captures it; it is never cited before then.
 - Strip personal share tokens from any link a reader sends.
 
-### Verifier unfilled
+### factcheck@php.newsroom an agent, on a schedule
 
-**Owns.** re-reading every claim against its capture text and downgrading what the capture does not carry
+**Owns.** the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, the desk's Issues-FS tickets and run reports, data/factcheck.json and the fact-check page
 - A quote that is not in the captured text is not a quote.
+- Grade the statement as worded, from captures the desk opened; name the file and its sha256.
+- Ten outlets restating one headline are one source.
+- Outside evidence is a request to capture, never a citation.
+- Highlight, do not fix: the owner of the data fixes it, and the next run checks the fix.
 
 ### Briefing writer dev@php.newsroom until filled
 

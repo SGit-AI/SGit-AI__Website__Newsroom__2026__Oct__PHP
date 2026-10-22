@@ -28,9 +28,9 @@ Hash-only tweet shown as '15:54 · 5 Aug 2026' (capture browser in UTC). Cited b
 
 ## Claims that cite it
 
-| Claim | Who says it | Status | Primary | Sources |
-|---|---|---|---|---|
-| Calif found the flaws first: discovery 1 August, hash commitment 5 August, report to PHP 11 AugustThe hash tweet is dated 5 August 2026 on X; its pre-image has not been published, so what it commits to cannot be checked. [fact timeline →](../../facts/who-first/index.html) | Calif; PHP Foundation (report date) | confirmed | 3/3 | [Calif](../../sources/calif-php2shell/index.html) [Ryan Austin, Calif on X](../../sources/x-lcfr-hax-hash-tweet/index.html) [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) |
+| Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
+|---|---|---|---|---|---|
+| Calif found the flaws first: discovery 1 August, hash commitment 5 August, report to PHP 11 AugustThe hash tweet is dated 5 August 2026 on X; its pre-image has not been published, so what it commits to cannot be checked. [fact timeline →](../../facts/who-first/index.html) | Calif; PHP Foundation (report date) | confirmed | not checked | 3/3 | [Calif](../../sources/calif-php2shell/index.html) [Ryan Austin, Calif on X](../../sources/x-lcfr-hax-hash-tweet/index.html) [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) |
 
 ## Events that cite it
 

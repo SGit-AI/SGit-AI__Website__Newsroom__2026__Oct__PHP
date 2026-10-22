@@ -12,6 +12,10 @@ Fact · technical · confirmed
 
 The fix replaces bailout with a delayed error and an UnwindExit at a safe point, adds a hard limit that _exits, and resets the globals. See the code page.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-18 15:26 UTCphp/php-src, read from a clone publishes [Commit 3584a98bd: Avoid state corruption via bailout (the php2shell fix) and the PHP-7.4 backport 712e60f9e](../../sources/github-php-src-fix-commit-3584a98bd/index.html)
 - 2026-10-21 13:34 UTCPHP publishes [RCE via OOM corruption (CVE-2026-109618)](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html)

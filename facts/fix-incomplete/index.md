@@ -12,6 +12,10 @@ Fact · technical · unverified
 
 Per a Matrix channel, Canonical asked PHP and 'was told that it's unrelated and not a real issue'. Second-hand. Nothing from PHP on the list at capture.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21 15:24 UTCoss-security publishes [Re: CVE-2026-109619 thread (21/16, 21/17, 21/23, 22/2)](../../sources/openwall-oss-security-109619-thread/index.html)
 - 2026-10-22Enters this site as unverified in v0.1.0 (reconstructed from git)

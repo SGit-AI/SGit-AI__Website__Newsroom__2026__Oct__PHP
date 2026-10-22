@@ -12,6 +12,10 @@ Fact · leak · reported
 
 Contradicts the Foundation's 'no technical details leaked' and The Hacker News's 'a proof-of-concept exploit leaked'. No copy of the post, screenshot or video is in the vault.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Daubois publishes [What the PHP2Shell rumors got wrong, from inside the PHP security team](../../sources/daubois-blog-php2shell-rumors/index.html)
 - 2026-10-22 08:12 UTCSaved into the evidence vault: Daubois

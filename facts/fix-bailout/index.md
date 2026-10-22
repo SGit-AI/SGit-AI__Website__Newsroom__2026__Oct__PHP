@@ -10,6 +10,10 @@ Fact · technical · confirmed
 
 **Who says it:** PHP security team · **Sources:** [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html) [php.net](../../sources/php-net-changelog-8/index.html) [php-src](../../sources/github-php-src-branch-7.4-backport/index.html)
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-18 18:10 UTCphp-src publishes [Branch PHP-7.4-CVE-2026-109618-109619](../../sources/github-php-src-branch-7.4-backport/index.html)
 - 2026-10-21 13:34 UTCPHP publishes [RCE via OOM corruption (CVE-2026-109618)](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html)

@@ -10,6 +10,10 @@ Fact · impact · reported
 
 **Who says it:** Yle; Helsinki Times, quoting Valtori · **Sources:** [Yle](../../sources/yle-finland-government-sites-shut/index.html) [Helsinki Times](../../sources/helsinkitimes-finland-shutdown/index.html)
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Yle publishes [Finland temporarily shuts down government websites as a precaution for critical vulnerabilities | Yle News | Y](../../sources/yle-finland-government-sites-shut/index.html)
 - 2026-10-21Helsinki Times publishes [Government websites shut down in Finland over critical security flaws - Helsinki Times](../../sources/helsinkitimes-finland-shutdown/index.html)

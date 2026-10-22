@@ -67,6 +67,7 @@ Site v0.4.7. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 
 ## The analysis
 - [Every claim](https://php.oct.2026.newsroom.sgit.ai/claims/index.md): 70 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
+- [Fact-check: how sure we are](https://php.oct.2026.newsroom.sgit.ai/factcheck/index.md): Every claim on the PHP flaws site graded independently by the fact-check desk on a spectrum of evidence from A0 to A6, with a filter for only what can be relied on, the contradiction ledger, and the open tickets.
 - [The numbers](https://php.oct.2026.newsroom.sgit.ai/numbers/index.md): Every scale figure in circulation about php2shell, with what it measures, who said it, whether anyone checked it, and why they differ by four orders of magnitude.
 - [The agencies](https://php.oct.2026.newsroom.sgit.ai/agencies/index.md): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
 - [Affected systems](https://php.oct.2026.newsroom.sgit.ai/affected/index.md): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
@@ -335,37 +336,37 @@ Site v0.4.7. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 ## Version histories, one per section
 - [The two flaws](https://php.oct.2026.newsroom.sgit.ai/versions/page-flaws/index.md): 2 versions
 - [Timeline](https://php.oct.2026.newsroom.sgit.ai/versions/page-timeline/index.md): 4 versions
-- [Who found it](https://php.oct.2026.newsroom.sgit.ai/versions/page-discovery/index.md): 4 versions
-- [How disclosure broke](https://php.oct.2026.newsroom.sgit.ai/versions/page-leak/index.md): 4 versions
+- [Who found it](https://php.oct.2026.newsroom.sgit.ai/versions/page-discovery/index.md): 5 versions
+- [How disclosure broke](https://php.oct.2026.newsroom.sgit.ai/versions/page-leak/index.md): 5 versions
 - [Exploitation signals](https://php.oct.2026.newsroom.sgit.ai/versions/page-exploitation/index.md): 5 versions
 - [If you run PHP](https://php.oct.2026.newsroom.sgit.ai/versions/page-playbook/index.md): 2 versions
-- [Every claim](https://php.oct.2026.newsroom.sgit.ai/versions/page-claims/index.md): 4 versions
+- [Every claim](https://php.oct.2026.newsroom.sgit.ai/versions/page-claims/index.md): 5 versions
 - [The numbers](https://php.oct.2026.newsroom.sgit.ai/versions/page-numbers/index.md): 4 versions
 - [The agencies](https://php.oct.2026.newsroom.sgit.ai/versions/page-agencies/index.md): 2 versions
 - [Affected systems](https://php.oct.2026.newsroom.sgit.ai/versions/page-affected/index.md): 2 versions
 - [The method](https://php.oct.2026.newsroom.sgit.ai/versions/page-method/index.md): 3 versions
-- [Briefing: Board member or executive](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-board/index.md): 4 versions
-- [Briefing: Security lead](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-security/index.md): 4 versions
-- [Briefing: PHP or platform engineer](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-engineer/index.md): 5 versions
-- [Briefing: Journalist](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-journalist/index.md): 4 versions
-- [Briefing: Security researcher](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-researcher/index.md): 4 versions
-- [Briefing: Analyst or advisor](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-analyst/index.md): 5 versions
+- [Briefing: Board member or executive](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-board/index.md): 5 versions
+- [Briefing: Security lead](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-security/index.md): 5 versions
+- [Briefing: PHP or platform engineer](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-engineer/index.md): 6 versions
+- [Briefing: Journalist](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-journalist/index.md): 5 versions
+- [Briefing: Security researcher](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-researcher/index.md): 5 versions
+- [Briefing: Analyst or advisor](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-analyst/index.md): 6 versions
 - [The code](https://php.oct.2026.newsroom.sgit.ai/versions/page-code/index.md): 3 versions
 - [Impact: offline vs compromised](https://php.oct.2026.newsroom.sgit.ai/versions/page-impact/index.md): 4 versions
 - [Detection and defence](https://php.oct.2026.newsroom.sgit.ai/versions/page-defence/index.md): 3 versions
 - [In context: 2008 to 2026](https://php.oct.2026.newsroom.sgit.ai/versions/page-context/index.md): 2 versions
 - [Who says what](https://php.oct.2026.newsroom.sgit.ai/versions/page-actors/index.md): 3 versions
-- [Briefing: CISO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-ciso/index.md): 4 versions
-- [Briefing: CTO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-cto/index.md): 4 versions
-- [Briefing: CFO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-cfo/index.md): 4 versions
-- [Briefing: Head of AppSec](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-appsec/index.md): 4 versions
-- [Briefing: Developer](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-developer/index.md): 3 versions
-- [Briefing: Media and communications team](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-comms/index.md): 3 versions
+- [Briefing: CISO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-ciso/index.md): 5 versions
+- [Briefing: CTO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-cto/index.md): 5 versions
+- [Briefing: CFO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-cfo/index.md): 5 versions
+- [Briefing: Head of AppSec](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-appsec/index.md): 5 versions
+- [Briefing: Developer](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-developer/index.md): 4 versions
+- [Briefing: Media and communications team](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-comms/index.md): 4 versions
 - [Explained from the start](https://php.oct.2026.newsroom.sgit.ai/versions/page-explained/index.md): 2 versions
 - [Glossary: every term, in plain English](https://php.oct.2026.newsroom.sgit.ai/versions/page-glossary/index.md): 1 versions
-- [Briefing: Curious reader](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-everyone/index.md): 2 versions
-- [Briefing: Website owner](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-site-owner/index.md): 2 versions
-- [Briefing: Project or programme manager](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-pm/index.md): 2 versions
+- [Briefing: Curious reader](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-everyone/index.md): 3 versions
+- [Briefing: Website owner](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-site-owner/index.md): 3 versions
+- [Briefing: Project or programme manager](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-pm/index.md): 3 versions
 - [The specialist summary](https://php.oct.2026.newsroom.sgit.ai/versions/page-summary/index.md): 1 versions
 - [Front page: right now](https://php.oct.2026.newsroom.sgit.ai/versions/front-now/index.md): 1 versions
 - [Front page: at a glance](https://php.oct.2026.newsroom.sgit.ai/versions/front-glance/index.md): 1 versions

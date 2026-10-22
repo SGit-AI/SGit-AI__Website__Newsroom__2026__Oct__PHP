@@ -12,6 +12,10 @@ Fact · impact · confirmed
 
 Primary statement.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Rijksoverheid / NCSC-NL publishes [NCSC: Ernstige kwetsbaarheden in PHP | Rijksoverheid.nl](../../sources/rijksoverheid-ncsc-php-news/index.html)
 - 2026-10-21Dutch IT Leaders publishes [Just a moment...](../../sources/dutchitleaders-websites-offline/index.html)

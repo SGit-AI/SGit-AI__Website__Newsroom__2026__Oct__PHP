@@ -12,6 +12,10 @@ Fact · impact · reported
 
 No Wikimedia-published statement captured.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21CNN publishes [Websites shut down globally after AI finds a critical flaw affecting 70% of the internet | CNN Business](../../sources/cnn-php2shell-websites-shut/index.html)
 - 2026-10-21The Cyber Express publishes [PHP2Shell CVE-2026-109618 PHP Flaw Hits Gov Sites](../../sources/cyberexpress-php2shell-gov-sites/index.html)

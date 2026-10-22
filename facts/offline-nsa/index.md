@@ -12,6 +12,10 @@ Fact · advice · confirmed
 
 X post 13:45:58Z 21 October (10.1 million views at capture) and the press release.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21NSA publishes [NSA Advisory: Critical Patches Recommended for PHP Vulnerabilities](../../sources/nsa-press-php-4630238/index.html)
 - 2026-10-21 13:45 UTCNSA Cyber on X publishes [NSA Cyber on X: Effective Immediately ... two critical vulnerabilities](../../sources/nsa-x-2112903220209098897/index.html)

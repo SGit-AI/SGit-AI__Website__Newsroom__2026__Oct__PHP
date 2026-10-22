@@ -12,6 +12,10 @@ Fact · timing · confirmed
 
 Counted from the repository, not from a page. Five authors; 389 files; 10,689 insertions.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-18 15:26 UTCphp/php-src, read from a clone publishes [Commit 3584a98bd: Avoid state corruption via bailout (the php2shell fix) and the PHP-7.4 backport 712e60f9e](../../sources/github-php-src-fix-commit-3584a98bd/index.html)
 - 2026-10-21 14:06 UTCphp-src publishes [Release PHP 8.5.12](../../sources/github-php-src-tag-php-8.5.12/index.html)

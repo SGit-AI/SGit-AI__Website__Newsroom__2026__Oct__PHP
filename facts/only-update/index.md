@@ -10,6 +10,10 @@ Fact · technical · confirmed
 
 **Who says it:** php.net; PHP security team · **Sources:** [php.net](../../sources/php-net-advisory/index.html) [oss-security](../../sources/openwall-oss-security-2026-10-21-7/index.html) [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html)
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21php.net publishes [Security advisory: Critical remote code execution vulnerabilities, update now](../../sources/php-net-advisory/index.html)
 - 2026-10-21 13:34 UTCPHP publishes [RCE via stale global state (CVE-2026-109619)](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html)

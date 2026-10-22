@@ -71,12 +71,16 @@
    ]
   },
   {
-   "id": "verifier",
-   "name": "Verifier",
-   "who": "unfilled",
-   "owns": "re-reading every claim against its capture text and downgrading what the capture does not carry",
+   "id": "factcheck",
+   "name": "factcheck@php.newsroom",
+   "who": "an agent, on a schedule",
+   "owns": "the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, the desk's Issues-FS tickets and run reports, data/factcheck.json and the fact-check page",
    "rules": [
-    "A quote that is not in the captured text is not a quote."
+    "A quote that is not in the captured text is not a quote.",
+    "Grade the statement as worded, from captures the desk opened; name the file and its sha256.",
+    "Ten outlets restating one headline are one source.",
+    "Outside evidence is a request to capture, never a citation.",
+    "Highlight, do not fix: the owner of the data fixes it, and the next run checks the fix."
    ]
   },
   {
@@ -164,7 +168,7 @@
    "id": "004",
    "title": "Run the verifier over every claim: check each quote against its capture text",
    "status": "open",
-   "owner": "verifier",
+   "owner": "factcheck",
    "note": "The BBC's NCSC sentence is the first case."
   },
   {
@@ -530,7 +534,7 @@
    "id": "061",
    "title": "The contradiction ledger: a first-class record per disagreement (the statements, who, when, captures, what each measures, the reading, status), seeded with the seven from the 22 October coverage review, and a page that shows it",
    "status": "open",
-   "owner": "verifier",
+   "owner": "factcheck",
    "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
   },
   {

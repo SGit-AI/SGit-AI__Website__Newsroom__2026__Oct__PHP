@@ -18,9 +18,9 @@ No note has been written for this source yet; the row above is what the collecto
 
 ## Claims that cite it
 
-| Claim | Who says it | Status | Primary | Sources |
-|---|---|---|---|---|
-| 674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, 3 not vulnerableCounted, not quoted. NCSC-NL calls unbacked entries 'investigation leads'. [fact timeline →](../../facts/scale-ncsc-nl/index.html) | NCSC-NL, counted by this site from the file at commit cca173c64ec5 | confirmed | 1/1 | [NCSC-NL](../../sources/ncsc-nl-php2shell-software-list/index.html) |
+| Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
+|---|---|---|---|---|---|
+| 674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, 3 not vulnerableCounted, not quoted. NCSC-NL calls unbacked entries 'investigation leads'. [fact timeline →](../../facts/scale-ncsc-nl/index.html) | NCSC-NL, counted by this site from the file at commit cca173c64ec5 | confirmed | not checked | 1/1 | [NCSC-NL](../../sources/ncsc-nl-php2shell-software-list/index.html) |
 
 ## Events that cite it
 

@@ -12,6 +12,10 @@ Fact · exploitation · reported
 
 Primary party, no volumes.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Cloudflare publishes [Cloudflare deploys protections against php2shell vulnerability](../../sources/cloudflare-blog-php2shell-waf/index.html)
 - 2026-10-22 08:12 UTCSaved into the evidence vault: Cloudflare

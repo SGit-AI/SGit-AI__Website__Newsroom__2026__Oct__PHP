@@ -12,6 +12,10 @@ Fact · exploitation · reported
 
 A negative finding from a party that had the details under embargo.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Imperva Threat Research publishes [PHP2Shell: When PHP Runs Out of Memory at the Wrong Moment | Imperva](../../sources/imperva-blog-php2shell/index.html)
 - 2026-10-22 11:18 UTCSaved into the evidence vault: Imperva Threat Research

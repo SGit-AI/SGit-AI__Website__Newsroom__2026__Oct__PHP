@@ -12,6 +12,10 @@ Fact · technical · contradicted
 
 The PHP Foundation: 'a wrong CVSS score of 10.0 (the actual score is 9.2)'. Daubois traces it to a social post relayed by Phoenix Security and to watchTowr via Cyber Daily.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)
 - 2026-10-21Daubois publishes [What the PHP2Shell rumors got wrong, from inside the PHP security team](../../sources/daubois-blog-php2shell-rumors/index.html)

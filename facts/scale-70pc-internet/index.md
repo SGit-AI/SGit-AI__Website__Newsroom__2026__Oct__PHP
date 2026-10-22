@@ -12,6 +12,10 @@ Fact · scale · unverified
 
 The BBC was 'unable to independently verify that figure'. Wiz's body text says 70% of websites and cites no measurement.
 
+## Fact-check
+
+Not yet checked by the [fact-check desk](../../factcheck/index.html).
+
 ## This fact over time
 - 2026-10-21Wiz publishes [PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet](../../sources/wiz-blog-php2shell/index.html)
 - 2026-10-21 13:32 UTCWiz on X publishes [Wiz on X: BREAKING ... #PHP2SHELL ... impacting 70% of the Internet](../../sources/x-wiz-io-php2shell/index.html)
