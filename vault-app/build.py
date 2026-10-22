@@ -4,7 +4,7 @@
     python3 vault-app/build.py --vault <path to an sgit clone of the evidence vault>
 
 Writes, inside the clone only (never into this repository, which is public):
-  index.html                the app: src/index.html with a snapshot of the vault inlined as its fallback
+  index.html                the app: src/index.html.tpl with a snapshot of the vault inlined as its fallback
   .vault/app.json           the manifest (minimal chrome, read-only: no grants)
   app/manifest.json         what the build saw: screenshots and their derived sizes, files per source
   app/shots/<slug>/<capture>.thumb.webp   480x300, the top of the page
@@ -163,9 +163,9 @@ def main():
     compact = compact.replace('</', '<\\/')  # never close the inline <script> early
     assert '\n' not in compact
 
-    tpl = (HERE / 'src' / 'index.html').read_text(encoding='utf-8')
+    tpl = (HERE / 'src' / 'index.html.tpl').read_text(encoding='utf-8')
     if tpl.count(MARKER) != 1:
-        sys.exit('the snapshot marker must appear exactly once in src/index.html')
+        sys.exit('the snapshot marker must appear exactly once in src/index.html.tpl')
     html = tpl.replace(MARKER, 'const SNAPSHOT = /*__SNAPSHOT__*/' + compact + ';')
     html = html.replace('__APP_VERSION__', version)
     (vault / 'index.html').write_text(html, encoding='utf-8')
