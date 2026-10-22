@@ -23,4 +23,4 @@ shipped patched images early; says exploits were in the wild and denies leaking
 
 
 ---
-site v0.2.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/chainguard-lorenc/index.html
+site v0.2.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/actors/chainguard-lorenc/index.html

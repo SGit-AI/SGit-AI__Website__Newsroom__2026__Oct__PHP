@@ -2,7 +2,7 @@
 
 > A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
 
-Site v0.2.4. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.2.5. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## The story
 - [Front page](https://php.oct.2026.newsroom.sgit.ai/index.md): A fact-driven, agent-run tracker for CVE-2026-109618 and CVE-2026-109619: what is established, who said what and when, which numbers add up, what to do about a vulnerable system, and the captured, hashed evidence behind every line.
@@ -12,6 +12,8 @@ Site v0.2.4. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [Who found it](https://php.oct.2026.newsroom.sgit.ai/discovery/index.md): Calif, OpenAI and Wiz each claim the discovery of php2shell; their own timelines side by side, the 2024 audit that saw it first, the credits on the advisories, and what the sources do and do not say about the models.
 - [How disclosure broke](https://php.oct.2026.newsroom.sgit.ai/leak/index.md): Hour by hour from the first circulation of the CVE IDs on 20 October to the release on 21 October: the pre-announcement, the deleted video, the early WAF rules, the embargo break, the first attempts, and the three accounts that disagree on what leaked.
 - [Exploitation signals](https://php.oct.2026.newsroom.sgit.ai/exploitation/index.md): Every signal of php2shell exploitation in the captured sources, from an Amazon honeypot hit on 17 October to the KEV catalog, with what exploitation would look like on a host.
+- [The fix, mapped to the code](https://php.oct.2026.newsroom.sgit.ai/review/index.md): The php2shell fix as layered graphs: the two flaws, the design of the patch, and the php-src files and functions it changed, derived from the diff.
+- [Walk the graph](https://php.oct.2026.newsroom.sgit.ai/review/ui/index.md): A navigator over the php2shell review graph: the fix, the flaws it closes, and the files and functions it changed, each a link.
 - [Impact: offline vs compromised](https://php.oct.2026.newsroom.sgit.ai/impact/index.md): Two ledgers for php2shell: every system reported taken offline with who said so, and every claim of compromise with its basis. As of the latest capture, no named organisation has confirmed a compromise.
 - [Detection and defence](https://php.oct.2026.newsroom.sgit.ai/defence/index.md): What Cloudflare, Akamai, Fastly, Imperva, AWS and Fortinet deployed and what each says it cannot do; the community Suricata, Sigma, Falco and ModSecurity rules; the host signals; and how hard the exploit is according to the vendors who tried.
 - [In context: 2008 to 2026](https://php.oct.2026.newsroom.sgit.ai/context/index.md): Ten landmark vulnerabilities with their CVE records and KEV rows, the KEV catalog counted, and what the comparison says about severity, exposure, urgency and the discovery pipeline.

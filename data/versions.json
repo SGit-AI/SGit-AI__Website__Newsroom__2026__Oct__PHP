@@ -1,6 +1,15 @@
 {
- "current": "0.2.4",
+ "current": "0.2.5",
  "versions": [
+  {
+   "version": "0.2.5",
+   "date": "2026-10-22",
+   "title": "the review layer: the php2shell fix mapped to the php-src code as layered graphs (the flaws, what the fix does, the files and functions it changed, derived from the diff), a static map at /review/ and a no-library navigator at /review/ui/, after the secrets.sgit.ai review pages",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.2.4",
    "date": "2026-10-22",
