@@ -2,13 +2,13 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-438 nodes and 909 typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.
+442 nodes and 914 typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.
 
 [GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [From the network](../../grc/network/index.html)
 
 # The risk graph: stakeholders, risks, weaknesses, vulnerabilities, code
 
-438 nodes and 909 edges, built from the register on every release and joined to the graphs already on this site: the claims and their sources ([the story graph](../../graph/index.html)) and the fix and the code it changed ([the code review graph](../../review/index.html)). One graph, no copies: a claim, a source or a file is the same node here as there. The JSON is [data/grc-graph.json](../../data/grc-graph.json).
+442 nodes and 914 edges, built from the register on every release and joined to the graphs already on this site: the claims and their sources ([the story graph](../../graph/index.html)) and the fix and the code it changed ([the code review graph](../../review/index.html)). One graph, no copies: a claim, a source or a file is the same node here as there. The JSON is [data/grc-graph.json](../../data/grc-graph.json).
 
 A line from a stakeholder group to a risk means someone in the group carries part of it or of a risk beneath it; a line from a risk to a weakness means the risk, or one beneath it, arises from it; the weaknesses on the two CVEs reach the fix and the code on [the code review graph](../../review/index.html). Each risk's own page draws its whole path.
 
@@ -110,12 +110,12 @@ Gives rise to: [R10 This newsroom's own agents are steered, leak or mislead](../
 | stakeholder | 43 |
 | treatment | 41 |
 | risk | 34 |
-| page | 24 |
+| page | 26 |
 | code | 16 |
 | weakness | 14 |
 | role | 10 |
-| briefing | 8 |
-| member | 7 |
+| briefing | 9 |
+| member | 8 |
 | remediation | 6 |
 | story | 5 |
 | vulnerability | 2 |
@@ -136,10 +136,10 @@ Every edge is a verb read from the first node to the second; its inverse is read
 | `governed_by` | `governs` | 139 |
 | `concerns` | `concerned_in` | 12 |
 | `told_in` | `tells` | 26 |
-| `tracked_by` | `tracks` | 44 |
-| `briefed_by` | `briefs` | 8 |
+| `tracked_by` | `tracks` | 45 |
+| `briefed_by` | `briefs` | 9 |
 | `cites` | `cited_by` | 225 |
-| `shown_on` | `shows` | 55 |
+| `shown_on` | `shows` | 58 |
 | `owned_by` | `owns` | 40 |
 | `borne_by` | `bears` | 22 |
 | `treated_by` | `treats` | 24 |

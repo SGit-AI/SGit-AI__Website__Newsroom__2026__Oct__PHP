@@ -16,8 +16,8 @@ New evidence (for example the first confirmed compromise of a named organisation
 
 no named organisation has said it was compromised through php2shell: claim no-confirmed-compromise reworded with its time (20:50 UTC, 22 October) and moved from confirmed to reported, the plain-English lines that said nobody had confirmed a break-in corrected, and a page of its own (/compromise/) mapping the evidence behind the statement: what was searched, 33 statements by kind with their sources or source-watch snapshots, the layers from attempts to a named compromise, a timeline, and what would change it
 
-No reader-facing section changed in this release.
-
+### Briefings that changed
+JJordanBoard member or executive · v7SSamSecurity lead · v6DDrewPHP or platform engineer · v7RRowanJournalist · v6AAshSecurity researcher · v6BBlakeAnalyst or advisor · v7RRobinCISO · v7AAveryCTO · v6QQuinnCFO · v7JJamieHead of AppSec · v6LLeeDeveloper · v5RRileyMedia and communications team · v6AAlexCurious reader · v5CCaseyWebsite owner · v4TTaylorProject or programme manager · v5MMorganData protection officer · new
 ## v0.5.8 · 22 October 2026new since your last visit
 
 factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction

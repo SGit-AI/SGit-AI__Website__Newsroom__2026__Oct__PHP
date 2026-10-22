@@ -71,16 +71,16 @@ This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 Octob
 
 ## The briefing for you
 
-The same evidence, put in order for 15 kinds of reader. Each starts with a thirty-second answer in plain words. [How the readers are mapped](start/index.html).
+The same evidence, put in order for 16 kinds of reader. Each starts with a thirty-second answer in plain words. [How the readers are mapped](start/index.html).
 
 ### I want to understand it
 
 You heard about this on the news or from a colleague and want to know what it is and whether it touches you.
-ACurious readerAlex · Plain EnglishWhat happened, does it affect me, and should I worry?4 reads · about 13 min Start →CWebsite ownerCasey · Plain EnglishMy website runs on WordPress or similar: am I affected, and what do I ask my host?4 reads · about 14 min Start →
+ACurious readerAlex · Plain EnglishWhat happened, does it affect me, and should I worry?4 reads · about 14 min Start →CWebsite ownerCasey · Plain EnglishMy website runs on WordPress or similar: am I affected, and what do I ask my host?4 reads · about 14 min Start →
 ### I make the decisions
 
 You own a budget, a plan or a risk, and need what to decide, in what order, and what to ask your team.
-JBoard member or executiveJordan · Plain EnglishAre we exposed, what is it costing us, and who owns the decision to pull a system?5 reads · about 15 min Start →TProject or programme managerTaylor · Plain EnglishWhat unplanned work does this create, who do I chase, and what do I tell stakeholders?5 reads · about 16 min Start →QCFOQuinn · Plain EnglishWhat is the financial exposure, what does downtime cost against breach cost, and will insurance respond?5 reads · about 16 min Start →RCISORobin · Some technicalWhat is our exposure, what is our evidence we were not hit, and what do I tell the board?6 reads · about 14 min Start →ACTOAvery · Some technicalWhat does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?5 reads · about 20 min Start →
+JBoard member or executiveJordan · Plain EnglishAre we exposed, what is it costing us, and who owns the decision to pull a system?5 reads · about 15 min Start →TProject or programme managerTaylor · Plain EnglishWhat unplanned work does this create, who do I chase, and what do I tell stakeholders?5 reads · about 16 min Start →QCFOQuinn · Plain EnglishWhat is the financial exposure, what does downtime cost against breach cost, and will insurance respond?5 reads · about 16 min Start →MData protection officerMorgan · Some technicalWas personal data exposed, does this start a GDPR breach assessment or a 72-hour notification, and what do I document?6 reads · about 15 min Start →RCISORobin · Some technicalWhat is our exposure, what is our evidence we were not hit, and what do I tell the board?6 reads · about 14 min Start →ACTOAvery · Some technicalWhat does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?5 reads · about 20 min Start →
 ### I tell others
 
 You write or speak about this, and need what is true, what is not, and who said it first.

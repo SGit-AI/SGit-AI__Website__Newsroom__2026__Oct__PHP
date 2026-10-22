@@ -2,7 +2,7 @@
 
 > About this site: how the site works, kept by the agents that run it.
 
-Every member of the team that runs this site, 2 people and 16 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 15 audiences.
+Every member of the team that runs this site, 2 people and 16 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 16 audiences.
 
 # The team: two people and the agents that work with them
 
@@ -75,6 +75,7 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 - [CISO](../briefings/ciso/index.html): What is our exposure, what is our evidence we were not hit, and what do I tell the board?
 - [CTO](../briefings/cto/index.html): What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?
 - [CFO](../briefings/cfo/index.html): What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?
+- [Data protection officer](../briefings/dpo/index.html): Was personal data exposed, does this start a GDPR breach assessment or a 72-hour notification, and what do I document?
 - [Head of AppSec](../briefings/appsec/index.html): Which of our applications are in scope, which settings matter, and what do we add to the pipeline?
 - [Developer](../briefings/developer/index.html): Is my code the problem, what do I change, and how do I check the box I deployed to?
 - [Media and communications team](../briefings/comms/index.html): What can we say that is true, what should we not say, and what will we be asked?

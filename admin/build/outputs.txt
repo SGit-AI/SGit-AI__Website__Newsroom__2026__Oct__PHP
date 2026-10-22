@@ -121,6 +121,8 @@ briefings/cto/index.html
 briefings/cto/index.md
 briefings/developer/index.html
 briefings/developer/index.md
+briefings/dpo/index.html
+briefings/dpo/index.md
 briefings/engineer/index.html
 briefings/engineer/index.md
 briefings/everyone/index.html
@@ -963,6 +965,8 @@ versions/briefing-cto/index.html
 versions/briefing-cto/index.md
 versions/briefing-developer/index.html
 versions/briefing-developer/index.md
+versions/briefing-dpo/index.html
+versions/briefing-dpo/index.md
 versions/briefing-engineer/index.html
 versions/briefing-engineer/index.md
 versions/briefing-everyone/index.html

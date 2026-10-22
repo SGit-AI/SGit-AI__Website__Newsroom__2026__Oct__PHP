@@ -24,7 +24,7 @@ grc@php.newsroom. Keeps the fractal risk registers for php2shell: every risk bro
 - Every edge is a verb with a named inverse; nothing is merely related.
 
 ## Their home on this site
-GRC: risks, owners, standardsgrc/index.htmlThe risk graphgrc/graph/index.html
+GRC: risks, owners, standardsgrc/index.htmlThe risk graphgrc/graph/index.htmlBriefing for a data protection officerbriefings/dpo/index.html
 
 ## Open tasks
 
@@ -34,6 +34,7 @@ GRC: risks, owners, standardsgrc/index.htmlThe risk graphgrc/graph/index.html
 
 ## What they have done
 - 22 October: the first registers: 34 risks under 10 at the top, 53 stakeholders, 14 weaknesses, 20 frameworks and 120 controls; every risk with a path to code and to a team member, 30 of 34 to a vulnerability and to a role inside an organisation, 26 of 34 to a story, and the gaps named on /grc/
+- 22 October: the data protection officer added to the readers, with a briefing: was personal data exposed, when the GDPR 72-hour clock starts, what to ask processors and what to document
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/grc/` in the mail vault (`fmb2tpl2`).

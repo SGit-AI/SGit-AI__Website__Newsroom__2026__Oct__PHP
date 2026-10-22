@@ -25,12 +25,12 @@ You do not need to know anything about computers to follow this. Below are the f
 - **The big numbers in the headlines are not what they sound like.** 70% is roughly the share of websites built with PHP, not a share of the Internet that is broken. [The numbers page](../../numbers/index.html) explains each one.
 
 ## Your reading path
-- [Your briefing](../../briefings/everyone/index.html) 3 min
+- [Your briefing](../../briefings/everyone/index.html) 4 min
 - [Explained from the start](../../explained/index.html) 6 min
 - [Impact: offline vs compromised](../../impact/index.html) 2 min
 - [The numbers](../../numbers/index.html) 2 min
 
-About 13 minutes in all. Choose *read as Alex* and the bar under the menu keeps your place on every page.
+About 14 minutes in all. Choose *read as Alex* and the bar under the menu keeps your place on every page.
 
 ### What this briefing covers
 - what PHP is, in one sentence
@@ -98,7 +98,7 @@ Every sentence above rests on these rows. They are folded away because they are 
 - Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself.
 - Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
 
-The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
+The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Data protection officer](../dpo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---

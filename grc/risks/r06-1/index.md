@@ -12,7 +12,7 @@ Because PHP applications hold accounts, orders and records, code execution on on
 
 **Rating** **15** high · **Likelihood** 3 Possible · **Impact** 5 Severe · **Kind** Compliance · **Acceptance** not recorded
 
-**Basis.** Follows from code execution; no breach confirmed.
+**Basis.** Follows from code execution; no named organisation has reported a breach through php2shell.
 
 ## The path
 
@@ -57,7 +57,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 ## The stories that tell it
 - No story on this site tells this risk yet.
 
-On this site: [Impact: taken offline versus compromised](../../../impact/index.html)
+On this site: [Briefing for a data protection officer: Was personal data exposed, does this start a GDPR breach assessment or a 72-hour notification, and what do I document?](../../../briefings/dpo/index.html) · [Impact: taken offline versus compromised](../../../impact/index.html)
 
 
 ---

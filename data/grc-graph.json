@@ -406,6 +406,12 @@
    "href": "grc/stakeholders/dpo/index.html"
   },
   {
+   "id": "briefing:dpo",
+   "kind": "briefing",
+   "label": "Data protection officer",
+   "href": "briefings/dpo/index.html"
+  },
+  {
    "id": "stakeholder:people",
    "kind": "stakeholder",
    "label": "People who use PHP services",
@@ -1756,6 +1762,12 @@
    "href": "grc/frameworks/nistcsf/index.html#c-gv-rr-01"
   },
   {
+   "id": "page:compromise/index.html",
+   "kind": "page",
+   "label": "No named compromise: the evidence",
+   "href": "compromise/index.html"
+  },
+  {
    "id": "risk:r03-4",
    "kind": "risk",
    "label": "Detections built on a proof of concept with the wrong mechanism",
@@ -2246,6 +2258,18 @@
    "kind": "control",
    "label": "GDPR Art.28: Processors: the controller uses only processors that give sufficient guarantees",
    "href": "grc/frameworks/gdpr/index.html#c-art-28"
+  },
+  {
+   "id": "member:grc",
+   "kind": "member",
+   "label": "GRC desk",
+   "href": "team/grc/index.html"
+  },
+  {
+   "id": "page:briefings/dpo/index.html",
+   "kind": "page",
+   "label": "Your briefing",
+   "href": "briefings/dpo/index.html"
   },
   {
    "id": "risk:r06-2",
@@ -3028,6 +3052,12 @@
    "rel": "part_of",
    "inverse": "has_part",
    "to": "stakeholder:org-roles"
+  },
+  {
+   "from": "stakeholder:dpo",
+   "rel": "briefed_by",
+   "inverse": "briefs",
+   "to": "briefing:dpo"
   },
   {
    "from": "stakeholder:people",
@@ -5511,6 +5541,12 @@
    "from": "risk:r03-3",
    "rel": "shown_on",
    "inverse": "shows",
+   "to": "page:compromise/index.html"
+  },
+  {
+   "from": "risk:r03-3",
+   "rel": "shown_on",
+   "inverse": "shows",
    "to": "page:signals/index.html"
   },
   {
@@ -6609,6 +6645,12 @@
    "from": "risk:r06",
    "rel": "shown_on",
    "inverse": "shows",
+   "to": "page:compromise/index.html"
+  },
+  {
+   "from": "risk:r06",
+   "rel": "shown_on",
+   "inverse": "shows",
    "to": "page:impact/index.html"
   },
   {
@@ -6718,6 +6760,18 @@
    "rel": "tracked_by",
    "inverse": "tracks",
    "to": "member:story-site"
+  },
+  {
+   "from": "risk:r06-1",
+   "rel": "tracked_by",
+   "inverse": "tracks",
+   "to": "member:grc"
+  },
+  {
+   "from": "risk:r06-1",
+   "rel": "shown_on",
+   "inverse": "shows",
+   "to": "page:briefings/dpo/index.html"
   },
   {
    "from": "risk:r06-1",

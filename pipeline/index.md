@@ -10,7 +10,7 @@ The evidence · the pipeline
 
 Every fact on this site has travelled the same path: a source is found, saved and fingerprinted, read, cited by a fact with a status, built into sections, and selected for the readers it matters to. Each bar is a count at that stage, as of this release; each links to the stage itself.
 
-Found144sources the agents found and logged in the vaultSaved134captured as served and as rendered, each file hashed; 10 blocked by bot checks, the block recordedRead143with a collector's note of what the page actually saysCited83cited by at least one fact or timeline eventFacts70facts, each with who says it and a status: 21 confirmedSections40versioned sections and briefings built from those factsReaders15kinds of reader, each with a briefing
+Found144sources the agents found and logged in the vaultSaved134captured as served and as rendered, each file hashed; 10 blocked by bot checks, the block recordedRead143with a collector's note of what the page actually saysCited83cited by at least one fact or timeline eventFacts70facts, each with who says it and a status: 21 confirmedSections41versioned sections and briefings built from those factsReaders16kinds of reader, each with a briefing
 
 ## The facts by status, release by release
 

@@ -10,7 +10,7 @@ The fractal risk register for Data protection officer: 2 risks assigned to it or
 
 Decides whether a compromise is a personal data breach and whether the 72-hour clock has started.
 
-**Kind** role · **Assigned here** 2 · **In its register** 2
+**Kind** role · **Assigned here** 2 · **In its register** 2 · [the briefing for a data protection officer](../../../briefings/dpo/index.html)
 
 ## The register
 

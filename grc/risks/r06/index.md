@@ -12,7 +12,7 @@ Because a server running an attacker's code exposes the personal data and the se
 
 **Rating** **15** high · **Likelihood** 3 Possible · **Impact** 5 Severe · **Kind** Compliance · **Acceptance** not recorded
 
-**Basis.** No confirmed compromise yet; if one comes, the clocks are 24 and 72 hours.
+**Basis.** No named organisation has said it was compromised; two vendors report successful exploitation without naming a victim. If one comes, the clocks are 24 and 72 hours.
 
 ## The path
 
@@ -69,7 +69,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 ## The stories that tell it
 - No story on this site tells this risk yet.
 
-On this site: [Impact: taken offline versus compromised](../../../impact/index.html) · [If you run PHP: the steps, in order, with their sources](../../../playbook/index.html)
+On this site: [No named organisation has said it was compromised through php2shell: the evidence](../../../compromise/index.html) · [Impact: taken offline versus compromised](../../../impact/index.html) · [If you run PHP: the steps, in order, with their sources](../../../playbook/index.html)
 
 
 ---

@@ -84,7 +84,7 @@
   {"id": "engineers", "parent": "org-roles", "name": "Platform engineers and developers", "kind": "role", "about": "Find every PHP runtime, upgrade it, rebuild the images and prove it is done.", "audience": "engineer"},
   {"id": "site-owner", "parent": "org-roles", "name": "Website owner", "kind": "role", "about": "Often one person with one hosting account and no security team: depends entirely on the host.", "audience": "site-owner"},
   {"id": "comms", "parent": "org-roles", "name": "Communications team", "kind": "role", "about": "Says why the site is down without saying more than is known.", "audience": "comms"},
-  {"id": "dpo", "parent": "org-roles", "name": "Data protection officer", "kind": "role", "about": "Decides whether a compromise is a personal data breach and whether the 72-hour clock has started."},
+  {"id": "dpo", "parent": "org-roles", "name": "Data protection officer", "kind": "role", "about": "Decides whether a compromise is a personal data breach and whether the 72-hour clock has started.", "audience": "dpo"},
 
   {"id": "people", "parent": "world", "name": "People who use PHP services", "kind": "group", "about": "Citizens, customers and readers: they cannot patch anything, and they bear the outage and the breach."},
   {"id": "data-subjects", "parent": "people", "name": "People whose data is held in PHP applications", "kind": "group", "about": "Accounts, orders and records in the databases behind the applications at risk."},
@@ -529,7 +529,7 @@
    "id": "r06", "parent": null, "title": "A compromise becomes a reportable breach",
    "statement": "Because a server running an attacker's code exposes the personal data and the services behind it, a single compromise can trigger breach notification under GDPR, incident reporting under NIS2 and DORA, and, for a manufacturer, reporting under the Cyber Resilience Act, resulting in deadlines measured in hours and fines measured in turnover.",
    "category": "compliance", "likelihood": 3, "impact": 5,
-   "basis": "No confirmed compromise yet; if one comes, the clocks are 24 and 72 hours.",
+   "basis": "No named organisation has said it was compromised; two vendors report successful exploitation without naming a victim. If one comes, the clocks are 24 and 72 hours.",
    "assign": [
     {"to": "operators", "as": "owner", "why": "Controllers and essential entities."},
     {"to": "dpo", "as": "owner", "why": "Decides whether the 72-hour clock has started."},
@@ -549,7 +549,7 @@
    "id": "r06-1", "parent": "r06", "title": "Personal data taken from a compromised PHP application",
    "statement": "Because PHP applications hold accounts, orders and records, code execution on one gives the attacker its database, resulting in a personal data breach the controller must assess within 72 hours.",
    "category": "compliance", "likelihood": 3, "impact": 5,
-   "basis": "Follows from code execution; no breach confirmed.",
+   "basis": "Follows from code execution; no named organisation has reported a breach through php2shell.",
    "assign": [
     {"to": "dpo", "as": "owner", "why": "Runs the breach assessment."},
     {"to": "data-subjects", "as": "bearer", "why": "Their data."},
@@ -560,8 +560,8 @@
    "controls": [{"text": "Security of processing kept current, tested and evaluated", "status": "partial", "page": "playbook/index.html"}],
    "frameworks": ["gdpr:Art.5(1)(f)", "gdpr:Art.24", "gdpr:Art.28", "gdpr:Art.32", "gdpr:Art.33", "gdpr:Art.34"],
    "stories": [],
-   "pages": ["impact/index.html"],
-   "team": ["story-site"]
+   "pages": ["briefings/dpo/index.html", "impact/index.html"],
+   "team": ["story-site", "grc"]
   },
   {
    "id": "r06-2", "parent": "r06", "title": "Essential and financial entities miss their reporting clocks",
