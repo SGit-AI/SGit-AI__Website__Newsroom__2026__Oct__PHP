@@ -94,3 +94,61 @@ them the big list. This is collection only.
   - the inbox key, sealed to the root
   - the drain step in the 30-minute pass
   - the submit page
+
+## Update, 23 October 2026: the first run, a Lambda runner, and a news job
+
+### What ChatGPT's first run showed (job 01, 00:01 to 00:06 UTC)
+
+The editor pasted job 01's first ten sites into ChatGPT, and its JSON reply was ingested with `tools/collectors.py`.
+The reply arrived with typographic quotes, as text pasted through a chat window often does. The ingest now
+straightens them and records that it did.
+
+- **Four sites answered ChatGPT that refuse or ignore the watch's cloud address:** police.be, interieur.gouv.fr,
+  schiphol.nl and bka.de, each with HTTP 200, a title and an exact quote. That's the first evidence the watch could
+  not get for itself: these sites are up, at least for some networks.
+- **valtori.fi** showed a bot challenge to both.
+- **Five rows said nothing about the sites:** president.lv, latvija.gov.lv, ti.ch, politiaromana.ro and cyber.gov.au.
+  Each was a 503 whose plain-text body read "upstream connect error or disconnect/reset before headers", served by
+  Envoy. That's the error page of ChatGPT's own outbound proxy when it can't connect. ChatGPT's tool was curl
+  "through the configured network proxy", so its vantage point is a cloud network too, just a different one. The
+  ingest now recognises that page and marks the row as the collector's network failing, not the site.
+
+Two lessons. A collector adds most where its network differs from ours. And a collector's error page has to be told
+apart from the site's, which only works because the report carries the exact text it received.
+
+### A Lambda runner
+
+A Lambda function, deployed in several AWS regions and fired every 30 minutes by EventBridge, can run job 01 on a
+schedule that doesn't depend on any session.
+- **Each region gives a vantage point.** That separates "down" from "blocked in some regions".
+- **It holds only a public key and its own append token.** It reports exactly as ChatGPT does: a
+  `collector-report/v1`, encrypted to the inbox key and posted to its lane.
+
+What it cannot do: Lambda addresses are data-centre addresses. Sites that challenge cloud traffic challenge Lambda
+too, as they do the watch and ChatGPT. A residential vantage point needs a machine on a home or office network: the
+editor's, a volunteer's from the collaborators page, or a small box on such a network. Paid residential proxy
+networks are not used, because how they come by their addresses is often unclear.
+
+What it needs:
+- the editor's go, because it creates infrastructure that outlives a session
+- an AWS account to deploy into, by the editor or dev@
+- phase 2 on the watch side: one lane per region, the inbox key sealed to the root, and the drain step
+
+### Job 02: ChatGPT monitors the news and advisory feeds
+
+`job-02-news` asks a collector to read a list of feeds and report every item about php2shell since a given time.
+Each item carries:
+- the article URL, title, publisher, feed, publication time in UTC and language
+- one plain line saying what it reports
+- an exact quote of up to 40 words, with an English translation
+- a kind: named organisation, official signal, vendor-reported exploitation, attempts, no success known, allegation,
+  outage, patch, advisory, weaponisation, or other
+
+The first batch is 12 feeds. Four of them refuse the watch's address: CISA's advisories, BleepingComputer,
+SecurityWeek and php-src releases on GitHub. The other eight are agency and press feeds the watch can read, which
+check the collector against the watch. The schema gained optional fields for this: `found` items carry title,
+source, feed, published time, language and kind, and `feeds_checked` records every feed and whether it could be
+read.
+
+Every item a collector reports goes into the watch's discovery queue as a lead. The watch captures the page itself
+before anything cites it, and a collector's `kind` is a suggestion, never a status.
