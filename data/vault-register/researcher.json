@@ -8,6 +8,12 @@
    "what": "The source watch: every outside source on php2shell, captured on a schedule, a snapshot on every change, raw kept apart from analysis; public read key published",
    "created": "2026-10-22",
    "key_sealed_to_root": "2026-10-22"
+  },
+  {
+   "id": "7r83qic5",
+   "what": "Pack-mode experiment (sgit 0.24.0): a pack-vault copy of the source watch, made with sgit pack import from a full clone of oq9gflln on 23 October to measure push and clone; not the live watch, which stays oq9gflln",
+   "created": "2026-10-23",
+   "key_sealed_to_root": "2026-10-23"
   }
  ],
  "holds": [
@@ -28,6 +34,12 @@
    "key": "read key",
    "from": "the site (published in data/admin.json)",
    "since": "2026-10-22"
+  },
+  {
+   "id": "7r83qic5",
+   "key": "vault key",
+   "from": "made it",
+   "since": "2026-10-23"
   }
  ]
 }
