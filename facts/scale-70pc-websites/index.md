@@ -26,8 +26,8 @@ Cloudflare, OpenAI and Wiz each state roughly 70%, but they restate one survey (
 | [wiz-blog-php2shell](../../sources/wiz-blog-php2shell/index.html) | carries | *a popular general-purpose scripting language that powers 70% of all websites in the world.* | e3568b6f88c93f6b |
 | [imperva-blog-php2shell](../../sources/imperva-blog-php2shell/index.html) | partial | *With PHP used by over 69% of websites whose server-side programming language is known* | 3da873bdb21219a6 |
 | [tenable-php2shell-faq](../../sources/tenable-php2shell-faq/index.html) | partial | *According to W3Techs, PHP is used by 69.3% of websites whose server-side language is known.* | 10d98694b9c0243e |
-| rte-reuters-websites-go-dark (in the vault, not yet on this site) | partial | *PHP runs roughly 75% of websites whose programming language can be identified, according to web technology tracker W3Techs* | 99bb92662561bd29 |
-| abc-au-gov-sites-exposed (in the vault, not yet on this site) | partial | *PHP runs about 75 per cent of websites whose programming language can be identified, according to web technology tracker W3Techs.* | 84937c7c5b87e7c9 |
+| [rte-reuters-websites-go-dark](../../sources/rte-reuters-websites-go-dark/index.html) | partial | *PHP runs roughly 75% of websites whose programming language can be identified, according to web technology tracker W3Techs* | 99bb92662561bd29 |
+| [abc-au-gov-sites-exposed](../../sources/abc-au-gov-sites-exposed/index.html) | partial | *PHP runs about 75 per cent of websites whose programming language can be identified, according to web technology tracker W3Techs.* | 84937c7c5b87e7c9 |
 
 Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Finding-103](../../factcheck/index.html#Finding-103), [Finding-32](../../factcheck/index.html#Finding-32), [Finding-33](../../factcheck/index.html#Finding-33).
 
@@ -64,4 +64,4 @@ Sources: cloudflare-blog-php2shell-waf, x-openai-php2shell, wiz-blog-php2shell
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html

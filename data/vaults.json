@@ -146,6 +146,17 @@
    "note": "Its key, the lane's enum key and the key pair's passphrase are never published.",
    "page": "collaborators/index.html",
    "data": "data/collaborators.json"
+  },
+  {
+   "slug": "schedule",
+   "id": "weic8imn",
+   "name": "The schedule vault",
+   "access": "public read",
+   "app": false,
+   "holds": "Every scheduled agent's schedule, its queued tasks and every run with its log: the control panel for what the team runs on its own.",
+   "writers": "each scheduled agent, its own runs; the editor's session and the conductor queue tasks",
+   "page": "team/schedule/index.html",
+   "data": "data/schedule-vault.json"
   }
  ]
 }

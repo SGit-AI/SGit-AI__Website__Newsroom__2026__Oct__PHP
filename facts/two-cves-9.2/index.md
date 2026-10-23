@@ -64,4 +64,4 @@ Sources: cve-cve-2026-109618, cve-cve-2026-109619, github-ghsa-w8hw-w9fx-j79w, g
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/two-cves-9.2/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/two-cves-9.2/index.html

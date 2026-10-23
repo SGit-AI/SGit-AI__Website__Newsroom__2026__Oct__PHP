@@ -35,7 +35,7 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 022 | Tables as cards under 700px, and a screenshot check at 390px in the gate (newsroom review, change 2) | open |  |
 | 031 | Narrow the gate's em-dash exemption to quoted text and titles, and rewrite the 20 source and party pages' notes | open |  |
 | 032 | SG Meter v1.3.1 to v1.5.0 for dark-mode contrast, keeping the pricing tiers working | open |  |
-| 039 | Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3 | open |  |
+| 039 | Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3Done on the journalist's branch on 23 October: re-exported from the evidence vault at f3c5db0d9873 (227 sources, data as of 01:20 UTC on 23 October), for dev@php.newsroom to carry in and close. | open |  |
 | 049 | Carry the desk into the reader's own vault: bring the newsroom's vault pane here (it already reads sgit.notes.v1) | open |  |
 | 057 | Schedule the watch list: every source in the scheduled-capture brief checked on a cadence (15 minutes while breaking, hourly, then daily), extending the source watch rather than starting a second schedulerFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
 | 066 | Open the phone app's vault with a passkey, through the newsroom's door design, so a phone needs no pasted keyFrom the brief on the phone app (22 October). | open |  |
@@ -47,6 +47,7 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 139 | Move the design tokens and the wide grid (to 1,680px, two or three columns, readable text columns) into the live stylesheetFrom the brief on the redesign (23 October). | open |  |
 | 140 | Replace the menu with the top bar and the two dials; the view decides which entries exist; remembered in the browser and the reader's vaultFrom the brief on the redesign (23 October). | open |  |
 | 142 | Move the admin pages into the team console (layout D), with its own menu; out of the reader menu, still publicFrom the brief on the redesign (23 October). | open |  |
+| 153 | Show a rewritten line in diffs as removed then added, not word-diffed, when the two lines share little (diff_html): the state of affairs' delta interleaves rewritten paragraphs | open |  |
 
 ## Waiting on someone else
 
@@ -96,4 +97,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html

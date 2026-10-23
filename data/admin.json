@@ -24,11 +24,12 @@
    "id": "conductor",
    "name": "conductor@php.newsroom",
    "who": "an agent, joined 22 October 2026; also the comms agent for now",
-   "owns": "the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team",
+   "owns": "the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team; the updates (/updates/ and /feeds/updates.xml): hourly while things move, daily, and flash, for the editor first, from admin/content/updates/README.md",
    "rules": [
     "Every task has one owner, and the owner opens it: the conductor asks by mail and never writes into another member's queue.",
     "A digest names every blocker and who it waits on.",
-    "Vault keys never go into a file, a page or a message."
+    "Vault keys never go into a file, a page or a message.",
+    "An update says what moved and who it waits on; it is drafted from the repository's record with admin/build/updates_digest.py, never from memory."
    ]
   },
   {
@@ -436,7 +437,8 @@
    "id": "039",
    "title": "Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3",
    "status": "open",
-   "owner": "dev"
+   "owner": "dev",
+   "note": "Done on the journalist's branch on 23 October: re-exported from the evidence vault at f3c5db0d9873 (227 sources, data as of 01:20 UTC on 23 October), for dev@php.newsroom to carry in and close."
   },
   {
    "id": "040",
@@ -1114,6 +1116,114 @@
    "title": "Scanner test in a lab (editor, 23 October: a task for later, not now): run the public php2shell scanners and check scripts against a distribution-patched PHP (e.g. Ubuntu 8.5.4-0ubuntu1.5) and an unpatched one in an isolated lab, and record which ones get each right; tests the tools, never anyone's systems; starts only on the editor's go",
    "status": "open",
    "owner": "cyber@php.newsroom"
+  },
+  {
+   "id": "146",
+   "title": "The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/README.md), the digest tool (admin/build/updates_digest.py) and the first daily update, for the conductor's beat; carries board 075's page",
+   "status": "done",
+   "owner": "journalist"
+  },
+  {
+   "id": "147",
+   "title": "Take the updates beat: read the brief and admin/content/updates/README.md, confirm on your branch, and write the next update when something moves",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "148",
+   "title": "Go for scheduled updates: an hourly run (only when something moved) and a daily one, with the run's cadence in board 071",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "149",
+   "title": "Every commit names its agent: 40 of the first day's 46 commits carry no Agent: line, so updates cannot say who did what; remind every member through the conductor's broadcast",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "150",
+   "title": "Act on the fact-check's corrections to the journalist's and the historian's stories: done for 'Where php2shell stands' and 'php2shell in perspective'; the agencies and claims data they inherited are board 088",
+   "status": "done",
+   "owner": "journalist"
+  },
+  {
+   "id": "151",
+   "title": "Views: the journalist's state of affairs as a versioned page (/views/state/), its own version numbers, a page per version, a delta page per pair (measures and text), data in data/state.json; v0 (22 Oct, reconstructed) and v1 (23 Oct 14:11 UTC); the story 'What changed in a day'",
+   "status": "done",
+   "owner": "journalist"
+  },
+  {
+   "id": "152",
+   "title": "Take the curator's 36 claims and 18 timeline rows (claims/curator@php.newsroom.json, now in data/vault-claims.json) into the claims table the front page uses",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "153",
+   "title": "Show a rewritten line in diffs as removed then added, not word-diffed, when the two lines share little (diff_html): the state of affairs' delta interleaves rewritten paragraphs",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "154",
+   "title": "Write the next version of the state of affairs when the evidence moves: a KEV listing, a named victim, GMO's cause, or the inventory's investigation pile resolving",
+   "status": "open",
+   "owner": "journalist"
+  },
+  {
+   "id": "155",
+   "title": "Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "156",
+   "title": "Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.md and README.md say so",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "157",
+   "title": "One agent behaviour policy per agent that sets its scope: what it may change and release, which vaults and keys it may hold, what it may read and send; from the draft in admin/security/abp/MANDATE.md, for the editor to agree (the editor, 23 October: 'solid ABPs that define the scope of each agent')",
+   "status": "open",
+   "owner": "abp"
+  },
+  {
+   "id": "158",
+   "title": "Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaults/, its runs on /team/runs/), and make the gate or release.sh refuse a release outside an agent's scope where that can be checked",
+   "status": "open",
+   "owner": "security"
+  },
+  {
+   "id": "159",
+   "title": "The schedule vault (weic8imn, public) and /team/schedule/, read live in the browser: every schedule, task queue and run with its log; tools/schedule.py and the wake protocol (AGENTS.md section 7, CLAUDE.md)",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "160",
+   "title": "Run every scheduled wake through the schedule vault: pull, schedule.py due curator, start/finish with the log, index, push; your routine is task T-001, repeating until 31 October",
+   "status": "open",
+   "owner": "curator"
+  },
+  {
+   "id": "161",
+   "title": "Run every scheduled wake through the schedule vault (researcher's T-001, the source watch pass), and say your real cadence and model in schedules/researcher.json",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "162",
+   "title": "The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:00 London), on Sonnet; then they move from 'setting up' to 'active' in the schedule vault",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "163",
+   "title": "Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the schedule vault, so a task can be queued without a Claude session",
+   "status": "open",
+   "owner": "conductor"
   }
  ],
  "evidence_vault": {

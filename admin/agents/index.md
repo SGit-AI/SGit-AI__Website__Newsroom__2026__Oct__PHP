@@ -18,9 +18,15 @@ Read this before your first commit, and again when the editor says it changed. I
 
 - **Take in dev often**: `git fetch origin dev && git merge origin/dev`, then rebuild (`python3 admin/build/build.py`). Never hand-merge a generated page; resolve the source and rebuild. Never rewrite history on a branch you have pushed.
 
-- **Do not push to `dev`.** dev@php.newsroom carries branches into dev, resolves what collides, runs the gate and releases (`admin/build/release.sh`). The exception is an explicit instruction from the editor. This is coding.sgit.ai's rule too: agents never push to dev directly.
+- **Release your own work to `dev`.** The editor's rule of 23 October 2026, replacing the one before it: "you should push to dev". When a piece of work is finished and the gate passes on your branch, release it yourself with `admin/build/release.sh ""`, the only way anything reaches `dev`. It takes in what other agents released first, rebuilds, runs the gate and the security check, pushes, and confirms the live site serves the new version. Do not leave finished work on a branch waiting for someone else to carry it: a branch that waited eighteen hours is why the rule changed.
 
-- Say what is for dev in the commit: `Not a release: for dev@php.newsroom to carry into the next release.` and an `Agent: ` line.
+- **Before you release:** take in `dev` and rebuild; run `python3 admin/build/validate.py` and `python3 admin/build/security_check.py`; read your own diff. If `release.sh` stops on a conflict in a source file another agent changed, merge it by hand (keep both sides' rows; renumber only your own board rows), rebuild and run it again. Never force-push, never `--no-verify`, never push to `main`.
+
+- **Still for review first, not for you to release:** changes to `admin/build/validate.py`, `admin/build/security_check.py`, `admin/build/release.sh`, `.github/workflows/` and `admin/security/` go to your branch, for security@php.newsroom's review and the editor's go (CLAUDE.md). dev@php.newsroom still looks after the build and resolves what collides when asked.
+
+- **Release only what is in your scope.** Each agent's scope (what it may change, release, read and hold) is to be set by an agent behaviour policy of its own, written by abp@ and security@php.newsroom from the draft in `admin/security/abp/MANDATE.md` and agreed by the editor (board). Until yours exists, your scope is what your role owns on `/team//`: anything outside it goes to your branch and to the agent that owns it.
+
+- Every release commit carries an `Agent: ` line (`RELEASE_TRAILER`). Work in progress on your branch says so: `Not a release: work in progress.`
 
 ### 2. What a good commit contains
 
@@ -116,7 +122,21 @@ So: when you make a vault with a lane, set it up that way from the start. Never 
 
 - If your session's permissions stop pki-agent, say so to the editor and stop. There is no plain-text fallback.
 
-### 7. Where to look first
+### 7. Running on a schedule: the schedule vault
+
+The editor's rule of 23 October 2026 (the brief: `admin/content/briefs/2026-10-23__brief__the-schedule-vault.md`). Everything an agent does on a schedule is driven and recorded by the public schedule vault, `weic8imn`, which `/team/schedule/` shows live.
+
+- **Your schedule** is `schedules/.json` in that vault: when you are woken, on which model (Sonnet for routine runs), under which agent behaviour policy, active or paused. It is created or changed only with the editor's go.
+
+- **On every wake:** `sgit pull` the vault; `python3 tools/schedule.py due `. Nothing due: `tools/schedule.py idle `, `index`, commit, push, and stop, saying so in one line. Otherwise `start` the due tasks, do what each brief says and nothing else, `finish` with the outcome, a summary and your log (`--log`), `index`, commit, push. A run that changes something a reader can see also leaves an article on the site, named with `--article`.
+
+- **No task, no work.** If your schedule wakes you and nothing is queued for you, you do nothing. Never queue work for yourself to keep a schedule busy; the editor's session or the conductor queues tasks.
+
+- **It is public.** Never a key, a token, a passphrase, a sealed link or a personal detail in a task, a summary or a log; the tool refuses the obvious shapes, you are responsible for the rest.
+
+- **Never create a scheduled task, a session or a workflow yourself** without the editor's go (CLAUDE.md). When he gives it, add or update your schedule in the vault in the same breath, so the page shows it.
+
+### 8. Where to look first
 
 `README.md` (how the site is built and released), `REALITY.md` (what exists), `/admin/board/` (what is open and whose), `/team/` (who is who), `/admin/roles/` (the rules each role enforces), this file.
 
@@ -124,4 +144,4 @@ The source is `AGENTS.md` at the root of the repository; every agent reads it th
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/index.html

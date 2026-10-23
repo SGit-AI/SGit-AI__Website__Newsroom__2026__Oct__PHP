@@ -2,7 +2,7 @@
 
 A three-column working view for a security lead: their reading path and the site by task on the left, what changed since the last visit and the next three actions in the middle, and the state of the evidence as charts on the right.
 
-> Mockup B for review, built from the data of release v0.10.3. Not the live site.
+> Mockup B for review, built from the data of release v0.10.7. Not the live site.
 
 S 
  Sam 
@@ -13,7 +13,7 @@ Your reading path
 2 of 5 read · next: Exploitation signals 
  Today 9 new What to do The incident Detection and defence The agencies 16 Every claim 70 Ask 
 
-Since your last visit · 22 October 2026, 11:34 UTC 
+Since your last visit · 23 October 2026, 01:20 UTC 
 
 ## 9 things are new, 3 changed. Two matter for your runbook.
 
@@ -49,17 +49,27 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ✓ 
 
+ New story v0.10.3 
+#### What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list
+
+✓ 
+
+ New front v0.10.3 
+#### Stories: written here
+
+✓ 
+
  New event v0.4.1 
 #### NCSC-NL merges pull request 10; the inventory has 674 entries at commit cca173c64ec5.
 
 ✓ 
 
- New event v0.4.1 
+ Changed event v0.4.1 
 #### The evidence vault behind this site is opened; the first capture of the BBC live page is at 08:04:53Z.
 
 ✓ 
 
- New event v0.4.1 
+ Changed event v0.4.1 
 #### The UK NCSC page is modified (HTTP last-modified).
 
 ✓ 
@@ -76,16 +86,6 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
  Changed event v0.4.1 
 #### Greenbone on oss-security: the backports imply versions down to 7.4 are affected, whatever the subject line says.
-
-✓ 
-
- Changed event v0.4.1 
-#### BBC News opens its live page: 'Global scramble to fix critical cyber-security flaws as many websites taken offline'.
-
-✓ 
-
- Changed event v0.4.1 
-#### JVN publishes its note (14:20 JST); JPCERT/CC alert JPCERT-AT-2026-0033 is dated 22 October.
 
 ✓ 
 
@@ -122,4 +122,4 @@ Amazon: Proof-of-concept attempts begin, then six hours of attempts from anonymi
 8.1 and older: source backports only.
 
 ---
-site v0.10.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html
+site v0.10.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html

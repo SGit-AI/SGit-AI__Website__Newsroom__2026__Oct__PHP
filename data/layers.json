@@ -84,6 +84,13 @@
    "used_on": "signals/index.html"
   },
   {
+   "path": "data/state.json",
+   "layer": "derived",
+   "by": "claude-journalist",
+   "from": "the evidence vault, the source watch's dated series and the NCSC-NL inventory's history: the measures of the state of affairs, one row per version, each with its as-of time and basis",
+   "used_on": "views/state/index.html"
+  },
+  {
    "path": "data/claims.json",
    "layer": "derived",
    "by": "claude-story-site",
@@ -217,6 +224,20 @@
    "used_on": "readings/index.html"
   },
   {
+   "path": "admin/content/updates/",
+   "layer": "authored",
+   "by": "the conductor, and whoever holds the updates beat for it",
+   "from": "the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written",
+   "used_on": "updates/index.html"
+  },
+  {
+   "path": "admin/content/views/",
+   "layer": "authored",
+   "by": "claude-journalist",
+   "from": "the state of affairs, one immutable file per version, written against the stamped evidence",
+   "used_on": "views/index.html"
+  },
+  {
    "path": "admin/content/briefs/",
    "layer": "authored",
    "by": "the editor, and agents writing build briefs and reviews",
@@ -250,6 +271,13 @@
    "by": "conductor@php.newsroom",
    "from": "the account's scheduled tasks and this repository's workflows, as observed; the quiet-hours rule and the article rule",
    "used_on": "team/runs/index.html"
+  },
+  {
+   "path": "data/schedule-vault.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "the public schedule vault's id and published read key",
+   "used_on": "team/schedule/index.html"
   },
   {
    "path": "data/agents-status.json",

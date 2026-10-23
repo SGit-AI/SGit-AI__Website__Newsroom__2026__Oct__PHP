@@ -6,7 +6,39 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.3. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.7. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.7 · 2026-10-23
+
+schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8imn); an agent woken with no task due records an idle run and stops; the wake protocol every scheduled agent follows (AGENTS.md section 7)
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.6 · 2026-10-23
+
+the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source watch's latest run and the NCSC-NL inventory's latest change read, each shown with its time on the front page; source watch re-exported at 20afaa62129d
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.5 · 2026-10-23
+
+guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a branch (the editor's rule, 23 October); release only what is in your scope, which each agent's behaviour policy will set (abp@ and security@, on the board)
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.4 · 2026-10-23
+
+the site catches up with its two vaults (evidence vault re-exported at f3c5db0d9873: 144 sources to 227, data as of 01:20 UTC on 23 October; the NCSC-NL inventory read to 12:50 UTC on 23 October, 109 of 751 products fixed), Views with the journalist's versioned state of affairs (v0 of 22 October and v1 of 23 October, a page per version and a page for what changed between them), the story 'What changed in a day', and the Updates section with its feed and the first daily update
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
 
 ### v0.10.3 · 2026-10-23
 
@@ -442,4 +474,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

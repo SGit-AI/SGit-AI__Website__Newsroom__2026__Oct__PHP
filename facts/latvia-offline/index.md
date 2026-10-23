@@ -24,7 +24,7 @@ The CERT.LV notice, the national authority's own record, carries every part: a d
 | [certlv-php-preventive](../../sources/certlv-php-preventive/index.html) | carries | *Piekļuves ierobežojumi varētu būt spēkā līdz pirmdienai, 26. oktobrim* | e37a6582c4e6c685 |
 | [certlv-php-preventive](../../sources/certlv-php-preventive/index.html) | carries | *[Informācija papildināta: 21.10.2026, plkst. 23:00]* | e37a6582c4e6c685 |
 | [certlv-php-preventive](../../sources/certlv-php-preventive/index.html) | carries | *Šobrīd pieejamība atjaunota arī lsm.lv un 112.lv vietnēm.* | e37a6582c4e6c685 |
-| lv-latvija-gov (in the vault, not yet on this site) | blocked | *nothing that carries it* |  |
+| [lv-latvija-gov](../../sources/lv-latvija-gov/index.html) | blocked | *nothing that carries it* |  |
 
 Open tickets: [Finding-24](../../factcheck/index.html#Finding-24), [Finding-25](../../factcheck/index.html#Finding-25), [Finding-77](../../factcheck/index.html#Finding-77).
 
@@ -57,4 +57,4 @@ Sources: certlv-php-preventive
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/latvia-offline/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/latvia-offline/index.html

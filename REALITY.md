@@ -147,5 +147,22 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - `/team/vaults/`: every agent's vaults by ID and, from 23 October, the keys each agent holds (the `holds` list), never a key.
 - The feedback pane takes up to three screenshots; `/join/` says whether this device's key is enrolled or waiting.
 
+## The updates (journalist, for the conductor)
+- `/updates/` and `/feeds/updates.xml` from `admin/content/updates/<time>__<kind>.md` (front matter: id, at, kind flash|hourly|daily, title, summary, covers_from, covers_to, author); the guide is `admin/content/updates/README.md`, also at `/updates/readme/`. One update so far: the daily of 22 October, 20:03 UTC.
+- `admin/build/updates_digest.py --since <ref|vX.Y.Z> --until origin/dev`: the facts for an update, from git alone.
+- Stories can carry dated corrections (`correction1: <UTC> | <text>` in front matter), shown above the text, which stays as written.
+- Not built: a schedule for the updates (needs the editor's go); the conductor's own session has not taken the beat yet.
+
+## Views: the journalist's state of affairs (23 October)
+- `/views/`, `/views/state/` (the current version), `/views/state/v<N>/` (every version), `/views/state/v<N>-v<N+1>/` (what changed: the measures side by side, the text as a line diff), `/views/state/history/`. Versions are the journalist's own, independent of the site's releases: `admin/content/views/state/v<N>.md` (immutable) and `data/state.json` (the measures, each with as-of and basis). The current version is also in the site's ledger. Two versions: v0 (22 October, reconstructed) and v1 (23 October, 14:11 UTC).
+- `data/` re-exported from the evidence vault at `f3c5db0d9873` (227 sources, latest capture 01:20 UTC on 23 October); the inventory history re-read to `2fdc314ded28` (12:50 UTC on 23 October).
+- "Last checked" in the header and on the front page is the newest of three times, each shown on the front page: the evidence vault's latest capture (still `data_as_of`, which the claims, articles and status.json are built from), the source watch's latest run (`data/source-watch.json`, re-exported at `20afaa62129d`) and the NCSC-NL inventory's latest change read (`data/inventory-history.json`). Before v0.10.6 it was the evidence vault's alone, which read as stale whenever the vault had not taken a capture for hours while the other two had moved.
+
+## The schedule vault (23 October 2026, conductor@php.newsroom)
+- A public vault, `weic8imn` (read key on `/vaults/` and `/team/schedule/`): `schedules/<agent>.json`, `tasks/<agent>/queued|done|failed/T-NNN.json` (a brief, `not_before`, `due_by`, `repeat_until`), `runs/<agent>/<date>/<run>.json` (schema `sgit.newsroom.run/1`, with the log), `index.json`, and `tools/schedule.py` (due, start, finish, idle, queue, index; refuses key and token shapes). Seeded with four schedules (curator and researcher setting up, fact-check paused, synthetic readers paused pending removal), the curator's and the researcher's routine tasks (repeating until 31 October) and 42 runs already recorded elsewhere.
+- `/team/schedule/` reads the vault live in the browser with its read key (`assets/schedule/schedule.js`): schedules, tasks due and overdue, every run, a run's log on demand, by agent; tested in Chromium against the live vault.
+- `AGENTS.md` section 7 and `CLAUDE.md`: every scheduled wake goes through the vault; no task due means one idle run and nothing else.
+- Not built: queueing a task from the page (board); no scheduled agent has run through the vault yet.
+
 ## Not built
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.

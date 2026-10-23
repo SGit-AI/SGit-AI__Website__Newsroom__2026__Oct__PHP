@@ -24,8 +24,8 @@ The quoted words are verbatim in The Cyber Express and, outside this claim's cit
 | [cnn-php2shell-websites-shut](../../sources/cnn-php2shell-websites-shut/index.html) | partial | *and that a number of its systems had been taken down as a “precautionary measure.”* | ee49fc4265ae1c7c |
 | [newsweek-php2shell-websites](../../sources/newsweek-php2shell-websites/index.html) | carries | *We have taken down a number of other systems as a precautionary measure until they can be safely patched.* | 323ccf78f4d6f2d0 |
 | [reuters-factbox-websites-offline](../../sources/reuters-factbox-websites-offline/index.html) | carries | *"We have taken down a number of other systems as a precautionary measure until they can be safely patched," the foundation added.* | d562e28995b00a19 |
-| insiderpaper-archive-wikipedia (in the vault, not yet on this site) | partial | *It said several systems had been taken offline as a precaution while security patches were being applied.* | dba4741ae1b287de |
-| wikimediastatus-page (in the vault, not yet on this site) | absent | *All Systems Operational* | 13e068d2c2b3665d |
+| [insiderpaper-archive-wikipedia](../../sources/insiderpaper-archive-wikipedia/index.html) | partial | *It said several systems had been taken offline as a precaution while security patches were being applied.* | dba4741ae1b287de |
+| [wikimediastatus-page](../../sources/wikimediastatus-page/index.html) | absent | *All Systems Operational* | 13e068d2c2b3665d |
 
 Open tickets: [Finding-114](../../factcheck/index.html#Finding-114), [Finding-29](../../factcheck/index.html#Finding-29).
 
@@ -60,4 +60,4 @@ Sources: cnn-php2shell-websites-shut, cyberexpress-php2shell-gov-sites
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/wikimedia-precaution/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/wikimedia-precaution/index.html

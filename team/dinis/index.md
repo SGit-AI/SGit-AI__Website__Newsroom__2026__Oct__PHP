@@ -43,6 +43,8 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 108 | Invitations for the editor's own devices (role editor) and for Vicky (role team); then the power users, one invitation each, sent by the editor | open |  |
 | 115 | The twin's open questions: the budget, the escalation ladder at night, which outside agents join (ChatGPT, Perplexity) and how, and which ABP site's per-session review the run record should match | open |  |
 | 138 | Editor review of the four mockups: pick, mark up, decide the Focus/Standard/Everything split per readerFrom the brief on the redesign (23 October). | open |  |
+| 148 | Go for scheduled updates: an hourly run (only when something moved) and a daily one, with the run's cadence in board 071 | open |  |
+| 162 | The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:00 London), on Sonnet; then they move from 'setting up' to 'active' in the schedule vault | open |  |
 
 ## What they have done
 - Started the site from two voice memos and a message on 22 October 2026, and set every brief since.
@@ -64,4 +66,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

@@ -40,6 +40,8 @@ The front pageindex.htmlEvery claimclaims/index.htmlThe timelinetimeline/index.h
 | 088 | Act on the desk's high and medium findings on claims, agencies, exploitation and impact data: first Italy's offline advice, the allies' 'contradicted' mark, the five quotes not in their captures, and the eleven overstated status words (tickets on /factcheck/)From the brief: a fact-checker joins the team (22 October). | open |  |
 | 094 | Fix the cycle in assets/themes/site-tokens.css line 8: --warn-bg, --warn-ink, --info-bg and --info-ink are defined as themselves, so they are invalid and every amber and blue pill and graph edge that reads them renders without colourFrom the brief: a GRC desk joins the team (22 October). | open |  |
 | 130 | Confirm data/vault-register/story-site.json and seal the coverage vault's key (dcsmxese) to the root | open |  |
+| 152 | Take the curator's 36 claims and 18 timeline rows (claims/curator@php.newsroom.json, now in data/vault-claims.json) into the claims table the front page uses | open |  |
+| 155 | Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement | open |  |
 
 ## What they have done
 - The first release: every claim with a status and its sources (v0.1.0).
@@ -56,4 +58,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html

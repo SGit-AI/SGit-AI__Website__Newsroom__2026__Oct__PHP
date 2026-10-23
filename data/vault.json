@@ -1,22 +1,24 @@
 {
  "head": {
-  "commit": "200d08971937",
-  "subject": "claude-story-site: 86 sources (AWS, Cloudflare CEO, Imperva, Fastly, Akamai, Huntress, Weird Gloop, Rijksoverheid, Finland, UK councils, detection rule sets, The Register on Chainguard, ten historical CVE records, Wikipedia comparators), the php-src fix commit patches with hashes, rebuilt index  +655 ~8  [blobs:+663 trees:+241]",
-  "commits": 12
+  "commit": "f3c5db0d9873",
+  "subject": "curator@php.newsroom: promote 45 sources from the source watch (35 from the 22 Oct queue incl. ncsc-nl-php2shell-software-list-letters, 10 break-in reports; 2 as new captures of recordedfuture-php2shell and securityweek-exploitation-days-before; facebook-cvut-statement skipped; every slug in notes/promotions__curator.json)  +404 ~1  [blobs:+405 trees:+131]",
+  "commits": 17
  },
- "sources": 144,
- "captures": 137,
- "hashed_files": 857,
- "primary": 73,
- "blocked": 10,
+ "sources": 227,
+ "captures": 222,
+ "hashed_files": 1386,
+ "primary": 89,
+ "blocked": 15,
  "agents": [
   "claude-newsroom-lead",
   "claude-story-site",
   "collector-gov",
+  "collector-news",
   "collector-primary",
-  "collector-researchers"
+  "collector-researchers",
+  "curator@php.newsroom"
  ],
  "opened": "2026-10-22T08:03Z",
- "latest_capture": "2026-10-22T11:34Z",
+ "latest_capture": "2026-10-23T01:20Z",
  "note": "The captures are third-party pages kept privately for the record and are not published. Only their hashes are."
 }

@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 145 items, 103 open, 40 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 163 items, 116 open, 45 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -49,7 +49,7 @@ The work, as rows in `data/admin.json`: 145 items, 103 open, 40 done. An item is
 | 036 | Publish the source-watch vault (oq9gflln) the way sgit.ai publishes vaults: screenshot, open-in-a-new-tab link, the vault embedded, its main features | done | dev@php.newsroom | 0.2.13 |
 | 037 | A vaults section listing every vault behind the site, what each holds and how to open it | done | dev@php.newsroom | 0.2.13 |
 | 038 | The source watch is slow to open in the browser: with no app, the official UI decrypts the folder tree (2,678 objects) before it shows anything; from this sandbox that took 17 minutes. A small vault app that reads index/ and state/ first, or a lighter front vault, would open it in seconds | open | researcher@php.newsroom |  |
-| 039 | Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3 | open | dev |  |
+| 039 | Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3Done on the journalist's branch on 23 October: re-exported from the evidence vault at f3c5db0d9873 (227 sources, data as of 01:20 UTC on 23 October), for dev@php.newsroom to carry in and close. | open | dev |  |
 | 040 | Guest writers and interviewers: an intake (how a piece reaches the editor, the byline, the 'Guest' mark, the licence) and the first guest piece | open | editor |  |
 | 041 | Follow the patching curve: re-read the NCSC-NL inventory per commit and draw how the 418 'under investigation' rows turn into fixed or vulnerableThe inventory over time: /patching/inventory/, 38 versions read from the public git history; the curve keeps growing with each re-run of admin/build/inventory_history.py. | done | journalist | 0.4.2 |
 | 042 | Top-level navigation, Research and Stories: the editor's call on names and order after living with the first cut | open | editor |  |
@@ -155,9 +155,27 @@ The work, as rows in `data/admin.json`: 145 items, 103 open, 40 done. An item is
 | 143 | Scanner noise, a research angle (editor, 23 October, after a public post by Jeremiah Grossman): how php2shell scanners and detection rules decide, their false positives and false negatives, and the noise they make; 12 captured rows in the source watch (index/angles/scanner-noise.json), counts tracked hourly; brief on /admin/briefs/ | open | researcher@php.newsroom |  |
 | 144 | Perplexity reads the community spaces (job-03-community): Reddit, Hacker News, X, Bluesky, Mastodon and GitHub issues, for scanner false positives and negatives, first-hand accounts and named statements; phase 1 prompt on /admin/briefs/, waiting on its first reply | open | researcher@php.newsroom |  |
 | 145 | Scanner test in a lab (editor, 23 October: a task for later, not now): run the public php2shell scanners and check scripts against a distribution-patched PHP (e.g. Ubuntu 8.5.4-0ubuntu1.5) and an unpatched one in an isolated lab, and record which ones get each right; tests the tools, never anyone's systems; starts only on the editor's go | open | cyber@php.newsroom |  |
+| 146 | The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/README.md), the digest tool (admin/build/updates_digest.py) and the first daily update, for the conductor's beat; carries board 075's page | done | journalist |  |
+| 147 | Take the updates beat: read the brief and admin/content/updates/README.md, confirm on your branch, and write the next update when something moves | open | conductor |  |
+| 148 | Go for scheduled updates: an hourly run (only when something moved) and a daily one, with the run's cadence in board 071 | open | editor |  |
+| 149 | Every commit names its agent: 40 of the first day's 46 commits carry no Agent: line, so updates cannot say who did what; remind every member through the conductor's broadcast | open | conductor |  |
+| 150 | Act on the fact-check's corrections to the journalist's and the historian's stories: done for 'Where php2shell stands' and 'php2shell in perspective'; the agencies and claims data they inherited are board 088 | done | journalist |  |
+| 151 | Views: the journalist's state of affairs as a versioned page (/views/state/), its own version numbers, a page per version, a delta page per pair (measures and text), data in data/state.json; v0 (22 Oct, reconstructed) and v1 (23 Oct 14:11 UTC); the story 'What changed in a day' | done | journalist |  |
+| 152 | Take the curator's 36 claims and 18 timeline rows (claims/curator@php.newsroom.json, now in data/vault-claims.json) into the claims table the front page uses | open | claude-story-site |  |
+| 153 | Show a rewritten line in diffs as removed then added, not word-diffed, when the two lines share little (diff_html): the state of affairs' delta interleaves rewritten paragraphs | open | dev@php.newsroom |  |
+| 154 | Write the next version of the state of affairs when the evidence moves: a KEV listing, a named victim, GMO's cause, or the inventory's investigation pile resolving | open | journalist |  |
+| 155 | Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement | open | claude-story-site |  |
+| 156 | Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.md and README.md say so | done | conductor |  |
+| 157 | One agent behaviour policy per agent that sets its scope: what it may change and release, which vaults and keys it may hold, what it may read and send; from the draft in admin/security/abp/MANDATE.md, for the editor to agree (the editor, 23 October: 'solid ABPs that define the scope of each agent') | open | abp |  |
+| 158 | Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaults/, its runs on /team/runs/), and make the gate or release.sh refuse a release outside an agent's scope where that can be checked | open | security |  |
+| 159 | The schedule vault (weic8imn, public) and /team/schedule/, read live in the browser: every schedule, task queue and run with its log; tools/schedule.py and the wake protocol (AGENTS.md section 7, CLAUDE.md) | done | conductor |  |
+| 160 | Run every scheduled wake through the schedule vault: pull, schedule.py due curator, start/finish with the log, index, push; your routine is task T-001, repeating until 31 October | open | curator |  |
+| 161 | Run every scheduled wake through the schedule vault (researcher's T-001, the source watch pass), and say your real cadence and model in schedules/researcher.json | open | researcher@php.newsroom |  |
+| 162 | The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:00 London), on Sonnet; then they move from 'setting up' to 'active' in the schedule vault | open | editor |  |
+| 163 | Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the schedule vault, so a task can be queued without a Claude session | open | conductor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

@@ -12,6 +12,10 @@ Where the brief was wrong, where a page was wrong, what was found and what was d
 
 Newest first. A correction names the date, what was wrong, what was found, and what was done instead. The mistake stays visible where it was made.
 
+### 2026-10-22, 20:03 UTC: two house stories, corrected from the fact-check desk's first run
+
+"Where php2shell stands" said Italy gives no offline advice, and that the BBC's morning summary had the UK, US, EU and Australian agencies all advising offline. The fact-check desk (findings 43 and 45) found, in the same captures, that Italy's ACN does advise taking sites offline, and that the BBC page says those agencies urged users 'to apply the fixes', with the offline quote given to the NCSC alone. "php2shell in perspective" used the same BBC sentence as an example of a story hardening. Both stories now carry a dated correction above their text, which is left as written. The agencies and claims data the stories inherited the error from belong to claude-story-site (board 088).
+
 ### 2026-10-22, v0.4.2: the NCSC-NL inventory had 675 rows at the captured commit, not 674
 
 Every page that counts the NCSC-NL inventory at commit cca173c64ec5 says 674 products, 3 of them not vulnerable. Reading the list's public history commit by commit, this site's new reader found 675: the vault's export had dropped one row, iBabs bestuursportaal, marked not vulnerable ('PHP is not being used in iBabs. This is confirmed by an email of the supplier.'). The other 674 rows and every status agree. The counts on the existing pages come from `data/software.json`, which is evidence and is only ever regenerated from the vault, so they are left as they are until the vault's export is fixed and re-run (board); the inventory pages built from the history carry the right count and say why.
@@ -46,4 +50,4 @@ The second memo asks for the whole semantic fractal graph. What exists is one gr
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/corrections/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/corrections/index.html

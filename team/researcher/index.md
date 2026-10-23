@@ -33,6 +33,7 @@ The source watchvaults/source-watch/index.htmlThe feed viewerreader/index.html
 | 128 | Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key (oq9gflln) to the root | open |  |
 | 143 | Scanner noise, a research angle (editor, 23 October, after a public post by Jeremiah Grossman): how php2shell scanners and detection rules decide, their false positives and false negatives, and the noise they make; 12 captured rows in the source watch (index/angles/scanner-noise.json), counts tracked hourly; brief on /admin/briefs/ | open |  |
 | 144 | Perplexity reads the community spaces (job-03-community): Reddit, Hacker News, X, Bluesky, Mastodon and GitHub issues, for scanner false positives and negatives, first-hand accounts and named statements; phase 1 prompt on /admin/briefs/, waiting on its first reply | open |  |
+| 161 | Run every scheduled wake through the schedule vault (researcher's T-001, the source watch pass), and say your real cadence and model in schedules/researcher.json | open |  |
 
 ## What they have done
 - Published the source watch with its read key, its taxonomy and graphs at four altitudes (v0.2.13).
@@ -46,4 +47,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/researcher/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/researcher/index.html

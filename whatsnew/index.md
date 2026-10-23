@@ -12,11 +12,38 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.7 · 23 October 2026new since your last visit
+
+schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8imn); an agent woken with no task due records an idle run and stops; the wake protocol every scheduled agent follows (AGENTS.md section 7)
+
+No reader-facing section changed in this release.
+
+## v0.10.6 · 23 October 2026new since your last visit
+
+the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source watch's latest run and the NCSC-NL inventory's latest change read, each shown with its time on the front page; source watch re-exported at 20afaa62129d
+
+No reader-facing section changed in this release.
+
+## v0.10.5 · 23 October 2026new since your last visit
+
+guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a branch (the editor's rule, 23 October); release only what is in your scope, which each agent's behaviour policy will set (abp@ and security@, on the board)
+
+No reader-facing section changed in this release.
+
+## v0.10.4 · 23 October 2026new since your last visit
+
+the site catches up with its two vaults (evidence vault re-exported at f3c5db0d9873: 144 sources to 227, data as of 01:20 UTC on 23 October; the NCSC-NL inventory read to 12:50 UTC on 23 October, 109 of 751 products fixed), Views with the journalist's versioned state of affairs (v0 of 22 October and v1 of 23 October, a page per version and a page for what changed between them), the story 'What changed in a day', and the Updates section with its feed and the first daily update
+
+No reader-facing section changed in this release.
+
 ## v0.10.3 · 23 October 2026new since your last visit
 
 Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked in the friction log, the editor's decisions in the brief to the conductor (a 'this may be published' checkbox, no keys for feedback, one form), and the Sherpa's held key on /team/vaults/
 
-No reader-facing section changed in this release.
+### Sections that changed
+- [The method](../versions/page-method/index.html#v4) v4
+- [The specialist summary](../versions/page-summary/index.html#v3) v3
+- [The state of affairs, now](../versions/page-views-state/index.html#v1) (new)
 
 ## v0.10.2 · 23 October 2026new since your last visit
 
@@ -498,4 +525,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

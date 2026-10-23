@@ -268,6 +268,38 @@ Your one job: keep the **evidence vault** (`3ytzxm3g`) current by promoting the 
 
 - Promote only what the queue lists. Do not create scheduled tasks, sessions or workflows.
 
+2026-10-23 · `2026-10-23__brief__the-schedule-vault.md`
+
+## The schedule vault: what runs, when, what it did, and what it does next
+
+Status: built by conductor@php.newsroom on 23 October 2026 (the vault, its protocol and the page); the schedules of the curator and the researcher are being set up by the editor. Brief by Dinis Cruz (editor), a voice memo of 23 October 2026; written up by conductor@php.newsroom.
+
+### The ask, in the editor's words (through a transcriber, condensed)
+
+"One of the pages we need to add, a super critical section of the website, is the scheduling, because this is where I have the least visibility, and the area where we don't have good control. Because of the limitations in Claude and in secrets management, in the short term we run the schedules in Claude sessions, which can now run and trigger scheduling by themselves, similar to what we do with the agentic workflows for the mailbox.
+
+I need a web-based control and management system: a UI to manage scheduled functions, like the services that provide on-demand scheduling, where you see the schedules, what will run, who ran, and for every run its log. We use a vault for this, a public vault: all the materials are public anyway, so we don't pollute the GitHub repo, and it is a good example for archiving. The vault holds the logging, and also the next schedule: the log contains both the next tasks and the previous tasks. When an agent comes online at its interval, it looks at this vault, reads the brief it is to execute, and executes it. That lets me change, tweak, control and monitor. It should be controlled by an agent behaviour policy, mapped to it.
+
+With a Claude session on the left and this on the right, I can say: can you see the task with this ID? Execute it. Two primitives: the schedule, which runs at an interval; and the tasks to be done. Each task can say when it should run, and if it does not run by then there is a problem: tasks have a timestamp. And if a schedule has no task for it, the agent pauses or does nothing, because nothing in the vault is defined for it. So the vault is how we control, visualise, understand and track, and eventually the accountant runs over it. There is a good visual way to represent this."
+
+### The design
+
+1. **A public vault** (its read key published on the site): `schedules/.json` (when the agent wakes, its session, its model, its ABP, active or paused), `tasks//queued|done|failed/.json` (what to do, a brief, `due_by`, optional `repeat_until`), `runs///.json` (one per wake: started, finished, the tasks it ran, outcome, summary, log, the article it left), `index.json` (everything above in one file, for the page), `tools/schedule.py` (the agent's commands).
+
+2. **The wake protocol**, the same for every scheduled agent: pull the vault; `schedule.py due `; no task due means one run record with outcome `idle: no task` and nothing else; otherwise run each task's brief, `start` and `finish` it (a run record with its log), move a one-off task to done (a repeating one stays queued until `repeat_until`), `index`, commit, push.
+
+3. **Control is the queue.** To stop an agent, take its tasks away or set its schedule to paused; to make it do something, queue a task with a brief. Nothing an agent does on a schedule is outside a task someone queued.
+
+4. **The page**, `/team/schedule/`, reads the vault live in the browser with the read key: schedules, what runs next, tasks due and overdue, every run with its log, by agent; and the line to paste into a Claude session to run a task by its ID.
+
+5. **What is never in it:** a key, a token, a passphrase, a personal detail. It is public; the gate's rules apply to what an agent writes there.
+
+### Not built
+
+- Writing from the page (queueing a task in the browser with an enrolled key): the editor asks his Claude session for now.
+
+- The accountant's view over the runs, and the ABP check per run (abp@, security@: board).
+
 2026-10-23 · `2026-10-23__brief__the-redesign.md`
 
 ## Brief: the redesign, who you are and how much you see
@@ -317,6 +349,44 @@ Hi designer agent and /design can you if you look at this design and help to mak
 3. Whether the console replaces the About menu's admin entries outright.
 
 The rollout is on the board, items 137 to 142.
+
+2026-10-23 · `2026-10-23__brief__the-journalists-views.md`
+
+## Brief: the two vaults, the site's update, and the journalist's views
+
+Status: accepted, by being sent. Author: Dinis Cruz, editor. A message to the journalist on 23 October 2026, reproduced verbatim. What was built against it is listed at the end.
+
+### The message
+
+Hi @journalist agent, let focus this thread on this agent actions (I will setup a different one for the @historian) should be a whole number of updates on the two vaults that we've been using. Can you take a look at them? And I think we need to do a lot of updates on the website to take into account the latest information and the latest materials, right? Also, I think you need to start to have a section where you start to write these views. So every time you do a big analysis, we need to have like, this is the state of affair, including the data that you update. And remember that in principle, every time that you do an update now, you're doing on a page that is version control. So I should be able to go back and forward and also see the delta between the different changes. That's also very important. So I need to be able to see in a particular page what happened, what changed. And that's, again, the stuff that you need to capture on the article that you write about it.
+
+### What was read
+
+- **The evidence vault** (3ytzxm3g), cloned read-only with its published key at head `f3c5db0d9873`: 227 sources, the curator's 45 promotions of 23 October (10 break-in reports among them), its 36 claims and 18 timeline rows.
+
+- **The source watch** (oq9gflln), cloned read-only at head `c26dce84136f`: the researcher's passes to 08:30 UTC on 23 October, its 14 contradiction records and its dated series (KEV, NVD, EPSS, public repositories, framework pulls, sites dark, products by status).
+
+- **The NCSC-NL inventory's** public history to `2fdc314ded28` (12:50 UTC on 23 October).
+
+### What was built against it
+
+- **The site caught up with its evidence**: `data/` re-exported from the evidence vault's head (144 sources to 227; data as of 01:20 UTC on 23 October). This is board 039, done on the journalist's branch for dev@php.newsroom to carry in, because the state of affairs could not be written on stale data.
+
+- **The inventory history** re-read to 12:50 UTC on 23 October.
+
+- **Views** (/views/): the state of affairs as a living page with its own version numbers. Each version is an immutable file (`admin/content/views/state/v.md`) and a row of measures (`data/state.json`), each value with its as-of time and basis. Every version keeps its own page with back and forward links; every pair of consecutive versions has a delta page, the measures side by side and the text line by line. The current version also enters the site's ledger and appears on /versions/.
+
+- **Version 0** (22 October, reconstructed from what the site published then, and labelled so) and **version 1** (23 October, 14:11 UTC).
+
+- **The story** "What changed in a day", which reads the change from v0 to v1 and links the delta.
+
+### What is left
+
+- The curator's 36 claims are in the raw export but not in the claims table the front page uses (claude-story-site).
+
+- The vault's own parse of the NCSC-NL inventory still drops one row (board 052).
+
+- The site's shared word diff interleaves rewritten paragraphs; showing a rewritten line as removed and added would read better (for dev@php.newsroom).
 
 2026-10-23 · `2026-10-23__brief__scanner-noise.md`
 
@@ -1362,6 +1432,42 @@ This is the editor's explicit exception that AGENTS.md allows to its rule that a
 
 082 to 085, listed on the board.
 
+2026-10-22 · `2026-10-22__brief__the-conductor-and-the-updates.md`
+
+## Brief: the conductor takes the updates, and the site gets an Updates section
+
+Status: accepted, by being sent. Author: Dinis Cruz, editor. A voice message to the journalist on 22 October 2026, transcribed and reproduced verbatim, hesitations included. What was built against it, and what was not, is listed at the end.
+
+### The message
+
+So this is actually another brief for the journalist, and I guess even historian, but mainly journalist. Although it's a meta request, because, you know, because of the amount of content we're creating, actually, I think the best way to do this is to think about this is actually to create a new agent. Maybe you start here, but I'll move it to a different section. But why don't you onboard the agent here, which is the conductor agent, and we basically give the conductor agent the responsibility to write daily, hour, whenever it's relevant, updates on what's going on and what's actually happening, right? Because this is now so fast pacing and moving that, for example, like I'm working with a whole bunch of agents now, I need to literally be briefed on what was added to the website, what's going on, are there any new developments, what's going on. So in a way, I'm already a massive consumer of everything that we're creating here. So yeah, I think the conductor, and then that agent could also take responsibility on the coordination of this. So in a way, we need a RSS feed and a whole website section just for the updates of what we're doing here.
+
+### How it fits what exists
+
+- **The conductor already exists.** conductor@php.newsroom joined on 22 October (v0.5.1): it owns the team map, the three coordination vaults, and the run, opened with a plan and closed with a digest. Its board item 075 asks for exactly this: a digest on the site at every close. So this brief does not make a second agent. It gives the conductor the updates beat, and builds the section its digests can be published in.
+
+- **Three jobs, three owners.** The news desk chief, named on the editor's call, holds the line of the story: what the story is today. The conductor coordinates: who owns what, what is blocked and on whom. The updates, held by the conductor, say what moved: on the site, in the story, across the team, and what is waiting on the editor.
+
+### What was built against it
+
+- **/updates/**, newest first, one page per update, in its own zone at the front of the menu, and **/feeds/updates.xml**, an RSS feed beside the site's other five.
+
+- **How an update is written**, `admin/content/updates/README.md`, published at /updates/readme/: what an update is, when (hourly when something moves, daily, flash), where the facts come from, its shape, its rules. It is written so that any session can be pointed at it, wherever the editor moves the beat.
+
+- **`admin/build/updates_digest.py`**: drafts the facts for an update from git alone (releases, commits by agent, board rows, pages, briefs, stories, corrections, the evidence counts, and the branches dev has not carried in).
+
+- **The first update**, the daily of 22 October, written by the journalist for the conductor.
+
+- **The conductor's role** on the roles page now names the updates.
+
+### What was not, and needs the editor
+
+- **A schedule.** Hourly updates without a session need a scheduled run, and `CLAUDE.md` says nothing that outlives a session starts without the editor's go. Board 071 (the run's cadence) already asks; this brief adds the updates to it.
+
+- **The conductor's own session** has not taken the beat yet: it reads this brief and the README and says so, on its branch.
+
+- **Not pushed to dev.** Under `AGENTS.md`, this is on the journalist's branch for dev@php.newsroom to carry in.
+
 2026-10-22 · `2026-10-22__brief__scheduled-capture-json-and-analysis.md`
 
 ## Brief: scheduled capture of the sources that move, raw to JSON to analysis, and contradictions as the product
@@ -1954,4 +2060,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

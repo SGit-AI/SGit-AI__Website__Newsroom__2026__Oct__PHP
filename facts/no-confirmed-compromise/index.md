@@ -30,7 +30,7 @@ A search of every vault capture (manifest and unexported) finds no named organis
 | [certlv-php-preventive](../../sources/certlv-php-preventive/index.html) | carries | *taču līdz šim nav ziņu par sekmīgiem uzbrukumiem.* | e37a6582c4e6c685 |
 | [insurancebusiness-uk-councils-met](../../sources/insurancebusiness-uk-councils-met/index.html) | carries | *No successful break-ins had been confirmed as of Wednesday afternoon.* | 89357150e0bc8363 |
 | [reuters-factbox-websites-offline](../../sources/reuters-factbox-websites-offline/index.html) | carries | *The temporary deactivation was purely preventive and no security incidents were known to have occurred, the spokesperson said.* | d562e28995b00a19 |
-| abc-au-politics-live (in the vault, not yet on this site) | carries | *Industry and Innovation Minister Tim Ayres says there has been no breach of Australian government websites* | a86331d9b7a21f78 |
+| [abc-au-politics-live](../../sources/abc-au-politics-live/index.html) | carries | *Industry and Innovation Minister Tim Ayres says there has been no breach of Australian government websites* | a86331d9b7a21f78 |
 
 Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-3](../../factcheck/index.html#Evidence-3), [Finding-26](../../factcheck/index.html#Finding-26), [Finding-85](../../factcheck/index.html#Finding-85).
 
@@ -51,9 +51,9 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:28 UTC. The scale is on
 - 2026-10-22 11:18 UTCSaved into the evidence vault: Imperva Threat Research
 - 2026-10-22 11:18 UTCSaved into the evidence vault: Weird Gloop
 - 2026-10-22 11:23 UTCSaved into the evidence vault: SecurityWeek
-- 2026-10-22 11:23 UTCSaved into the evidence vault: SecurityWeek
+- 2026-10-22 11:23 UTCSaved into the evidence vault: SecurityWeek, then 1 more capture
 - 2026-10-22 11:28 UTCSaved into the evidence vault: Huntress
-- 2026-10-22 11:30 UTCSaved into the evidence vault: Recorded Future
+- 2026-10-22 11:30 UTCSaved into the evidence vault: Recorded Future, then 1 more capture
 - 2026-10-22Enters this site as confirmed in v0.2.0 (reconstructed from git)
 - 2026-10-22Status changes from confirmed to reported in v0.5.8
 
@@ -80,4 +80,4 @@ v2 · site v0.5.8 · 22 October 2026 · reportedNoAs of 20:50 UTC on 22 October,
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html

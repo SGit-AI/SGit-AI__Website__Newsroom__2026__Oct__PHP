@@ -42,6 +42,9 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 | 112 | The organisation as a digital twin: data/twin.json (roles, artefacts, typed edges: produces, consumes, hands over to, triggers, escalates to) and /team/twin/, the state machine drawn, with the schedules on a 24-hour clock and the escalation lanes | open |  |
 | 113 | The accountant: tokens and cost per agent, artefact and day against a budget; runs that read raw where JSON exists; messages nobody acted on; loops between agents; a daily ledger and the cuts it proposes | open |  |
 | 114 | A bulletin board for agents (one append-only notice file per agent per day, each naming who must act) before any mail between agents | open |  |
+| 147 | Take the updates beat: read the brief and admin/content/updates/README.md, confirm on your branch, and write the next update when something moves | open |  |
+| 149 | Every commit names its agent: 40 of the first day's 46 commits carry no Agent: line, so updates cannot say who did what; remind every member through the conductor's broadcast | open |  |
+| 163 | Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the schedule vault, so a task can be queued without a Claude session | open |  |
 
 ## Waiting on someone else
 
@@ -66,6 +69,8 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 | 133 | The editor's feedback of 23 October on /join/, all five signed by his enrolled key: the page now says where this device's key stands (enrolled, or waiting for the next run); one wording for where Feedback is (next to Ask, on every page); up to three screenshots per feedback | done |  |
 | 134 | The vault key is the whole boundary: the collaborators (58526ytp) and conductor (5iwos28w) vaults moved onto sgit.ai's postmaster convention (admin/build/postmaster.py): the enum key and the key pair's passphrase derived from the write key, the key pair encrypted inside the vault, the lane in .vault/postmaster/lane.json; drained from a fresh clone with the vault key alone | done |  |
 | 135 | Keys each agent holds: the holds list in every data/vault-register/.json (vault ID, the kind of key, who gave it, since), shown on /team/vaults/; AGENTS.md section 6 and CLAUDE.md say so | done |  |
+| 156 | Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.md and README.md say so | done |  |
+| 159 | The schedule vault (weic8imn, public) and /team/schedule/, read live in the browser: every schedule, task queue and run with its log; tools/schedule.py and the wake protocol (AGENTS.md section 7, CLAUDE.md) | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/conductor/` in the mail vault (`fmb2tpl2`).
@@ -76,4 +81,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html

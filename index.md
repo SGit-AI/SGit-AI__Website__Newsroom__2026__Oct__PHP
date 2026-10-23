@@ -4,7 +4,7 @@
 
 PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-PHP news · October 2026 · Developing · last checked 22 October 2026, 11:34 UTC
+PHP news · October 2026 · Developing · [last checked 23 October 2026, 12:50 UTC](#checked)
 
 # Two serious security flaws in PHP, the software behind many of the world's websites
 
@@ -14,9 +14,11 @@ PHP is the software that WordPress and millions of other websites run on. A fix 
 
 You may also see this called php2shell, or by its two official reference numbers, CVE-2026-109618 and CVE-2026-109619.
 
+Last checked: [the evidence vault](sources/index.html), latest capture 23 October 2026, 01:20 UTC · [the source watch](vaults/source-watch/index.html), latest run 23 October 2026, 12:40 UTC · [the NCSC-NL inventory](patching/inventory/index.html), latest change read 23 October 2026, 12:50 UTC.
+
 ## Right now
 
-As of 22 October 2026, 11:34 UTC, the time of the latest page this site saved.
+As of 23 October 2026, 01:20 UTC, the time of the latest page this site saved.
 - A fix has been available since 21 October. Organisations that run websites on PHP are installing it. [php.net](sources/php-net-advisory/index.html)
 - Government cyber agencies in the US, the UK, the EU and elsewhere say: install the fix now, and take a website offline if you cannot. [CISA](sources/cisa-alert-php-20261021/index.html) [NCSC UK](sources/ncsc-news-php/index.html) [CERT-EU](sources/certeu-sa-2026-018/index.html) [NSA Cyber on X](sources/nsa-x-2112903220209098897/index.html)
 - Attackers are trying to use the flaws, in large numbers. As of the evening of 22 October, no named organisation has said it was compromised through php2shell. [Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [CISA](sources/cisa-kev-json/index.html)
@@ -104,15 +106,15 @@ ASecurity researcherAsh · Deeply technicalWhat are the bug classes, what was de
 ## Stories: written here
 
 Everything above is research: collected from outside sources, each fact linked to a saved copy. These are written here, signed and dated, and kept as written.
-Why can't every version of PHP just be patched?House story · Journalist · 2026-10-22Where php2shell stands: many sites dark, millions of attempts, no confirmed breachHouse story · Journalist · 2026-10-22Exposed is not exploited: the sites php2shell did not hit, and what a hit will admitHouse story · Journalist and historian · 2026-10-22The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
+What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the listHouse story · Journalist · 2026-10-23Why can't every version of PHP just be patched?House story · Journalist · 2026-10-22Where php2shell stands: many sites dark, millions of attempts, no confirmed breachHouse story · Journalist · 2026-10-22The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
 [All stories →](articles/index.html)
 
 ## How this site knows
-144web pages saved as evidence, each with the time it was saved70statements checked: 21 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
+227web pages saved as evidence, each with the time it was saved70statements checked: 21 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
 Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read [the PHP project's announcement](https://www.php.net/archive/2026.php#2026-10-21-5) and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; [how it works](method/index.html).
 
 Already know the vocabulary? [The specialist summary](summary/index.html) has the technical version of this page, with every number and the full last 48 hours.
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/index.html
