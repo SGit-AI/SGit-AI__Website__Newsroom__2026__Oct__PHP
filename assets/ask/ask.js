@@ -13,6 +13,7 @@
 //             secrets/openrouter.json   the OpenRouter key (never in this browser's storage; in memory while open)
 //             devices/<device>.json     what this device has read and its notes (the phone app's format)
 //             desk/<device>.json        the feeds this device added in the feed viewer
+//             stack/<device>.json       the stacks this device described on /stack/ (the newer copy of each wins)
 //             chats/<id>.json           every conversation, from here or from the phone app
 //   Tools   the tools, as the model and any agent sees them.
 // Nothing here is sent anywhere except to the vault server (ciphertext) and to OpenRouter (the conversation).
@@ -86,7 +87,7 @@ async function createVault(token, remember) {
     const NV = await loadLib(), send = NV.client({ endpoint: ENDPOINT, token: token.trim() })
     const v = await NV.createVault(send, { name: 'php-october-reader', description: 'My PHP October 2026 reader vault' })
     await NV.writeFile(v, '/.vault', 'access-token.json', JSON.stringify({ token: token.trim() }))
-    await NV.writeFile(v, FOLDER, 'README.md', '# PHP October 2026, mine\n\nKept by php.oct.2026.newsroom.sgit.ai (the Ask pane and the phone app): what I have read (devices/), my desk (desk/), my OpenRouter key (secrets/), my chats (chats/) and what the models made for me (made/). Encrypted in my browser before it left.\n')
+    await NV.writeFile(v, FOLDER, 'README.md', '# PHP October 2026, mine\n\nKept by php.oct.2026.newsroom.sgit.ai (the Ask pane and the phone app): what I have read (devices/), my desk (desk/), my stacks (stack/), my OpenRouter key (secrets/), my chats (chats/) and what the models made for me (made/). Encrypted in my browser before it left.\n')
     Object.assign(V, { nv: NV, vault: v, send, key: NV.prefixedKey(v), writable: true, status: 'open', fresh: true })
     try { sessionStorage.setItem(KEY_S, V.key); if (remember) localStorage.setItem(KEY_S, V.key) } catch (e) {}
     await push()
@@ -117,6 +118,21 @@ async function pull() {
     for (const fd of j.feeds) if (fd && /^https:\/\//.test(fd.url) && !mineF.feeds.some(x => x.url === fd.url)) mineF.feeds.push({ id: String(fd.id), url: String(fd.url), name: String(fd.name || '').slice(0, 80), added: String(fd.added || '') })
     try { localStorage.setItem('p2s.feeds.v1', JSON.stringify(mineF)) } catch (e) {}
   }
+  // Stacks (/stack/): one file per device; for each stack the copy saved last wins. A stack deleted on one device
+  // comes back from another's file until that device deletes it too.
+  let mineS; try { mineS = JSON.parse(localStorage.getItem('p2s.stack.v1') || 'null') } catch (e) {}
+  if (!mineS || mineS.v !== 1 || typeof mineS.stacks !== 'object') mineS = { v: 1, current: null, stacks: {} }
+  let gotS = false
+  for (const f of await NV.listFiles(v, FOLDER + '/stack').catch(() => [])) {
+    const j = f.endsWith('.json') && await NV.readJson(v, `${FOLDER}/stack/${f}`).catch(() => null)
+    if (!j || !j.stacks || typeof j.stacks !== 'object') continue
+    for (const [id, sk] of Object.entries(j.stacks)) {
+      if (!/^[A-Za-z0-9_-]{1,40}$/.test(id) || !sk || !Array.isArray(sk.components)) continue
+      const cur = mineS.stacks[id]
+      if (!cur || String(sk.updated || '') > String(cur.updated || '')) { mineS.stacks[id] = sk; gotS = true }
+    }
+  }
+  if (gotS) { if (!mineS.current) mineS.current = Object.keys(mineS.stacks)[0]; try { localStorage.setItem('p2s.stack.v1', JSON.stringify(mineS)) } catch (e) {} window.dispatchEvent(new CustomEvent('p2s-stack-pulled')) }
   const st = await NV.readJson(v, FOLDER + '/settings.json').catch(() => null)
   V.model = (st && st.models && st.models.text) || V.model
   const sec = await NV.readJson(v, FOLDER + '/secrets/openrouter.json').catch(() => null)
@@ -128,6 +144,8 @@ async function push() {
   await NV.writeFile(V.vault, FOLDER + '/devices', deviceId() + '.json', JSON.stringify({ v: 1, device: deviceId(), at: new Date().toISOString(), site: html.getAttribute('data-ver'), reader: r ? r.store() : null, notes: r ? r.notes() : [] }))
   let feeds = null; try { feeds = JSON.parse(localStorage.getItem('p2s.feeds.v1') || 'null') } catch (e) {}
   await NV.writeFile(V.vault, FOLDER + '/desk', deviceId() + '.json', JSON.stringify({ v: 1, device: deviceId(), at: new Date().toISOString(), feeds: (feeds && feeds.feeds) || [] }))
+  let stacks = null; try { stacks = JSON.parse(localStorage.getItem('p2s.stack.v1') || 'null') } catch (e) {}
+  if (stacks && stacks.stacks && Object.keys(stacks.stacks).length) await NV.writeFile(V.vault, FOLDER + '/stack', deviceId() + '.json', JSON.stringify({ v: 1, device: deviceId(), at: new Date().toISOString(), stacks: stacks.stacks }))
   await NV.publish(V.vault)
 }
 // Every change to the reading record, the notes or the feeds goes to the vault a few seconds later, and at once when
@@ -135,6 +153,7 @@ async function push() {
 let syncT = null
 function scheduleSync() { if (!V.vault || !V.writable) return; clearTimeout(syncT); syncT = setTimeout(() => { syncT = null; push().catch(() => {}) }, 4000) }
 window.addEventListener('p2s-reader', scheduleSync)
+window.addEventListener('p2s-stack', scheduleSync)
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden' && syncT) { clearTimeout(syncT); syncT = null; push().catch(() => {}) } })
 async function saveKey(k, where) {
   k = k.trim()
@@ -246,6 +265,12 @@ export function open() {
   html.classList.add('ask-on'); draw()
 }
 function close() { html.classList.remove('ask-on') }
+// Feedback (conductor@php.newsroom): a signed note on this page, with a screenshot; the tab is its own module,
+// assets/feedback/pane.js, loaded when the tab is first drawn. The brief: 2026-10-22__brief__feedback-keys-and-review.md.
+export function openFeedback() { tab = 'feedback'; open() }
+function drawFeedback(body) {
+  import(ROOT + 'assets/feedback/pane.js').then(m => m.draw(body, { h, root: ROOT })).catch(e => body.append(h('p', { class: 'sub-err' }, 'The feedback form could not load: ' + e.message)))
+}
 const LOG = h('div', { class: 'ask-log', 'aria-live': 'polite' })
 function draw(keepLog) {
   if (!pane) return
@@ -253,10 +278,10 @@ function draw(keepLog) {
   const head = h('div', { class: 'ask-head' }, h('b', null, 'Ask this site'),
     h('span', { class: 'ask-v' + (V.status === 'open' ? ' on' : '') }, V.status === 'open' ? `vault ${V.key.split(':').pop()}` : V.status === 'busy' ? 'vault…' : 'no vault'),
     h('button', { type: 'button', class: 'it-b', 'aria-label': 'Close', onclick: close }, '×'))
-  const tabs = h('div', { class: 'ask-tabs', role: 'tablist' }, ...['ask', 'vault', 'tools'].map(t => h('button', { type: 'button', role: 'tab', 'aria-selected': tab === t ? 'true' : 'false', class: tab === t ? 'on' : '', onclick: () => { tab = t; draw(true) } }, t === 'ask' ? 'Ask' : t === 'vault' ? 'Your vault' : 'Tools')))
+  const tabs = h('div', { class: 'ask-tabs', role: 'tablist' }, ...['ask', 'feedback', 'vault', 'tools'].map(t => h('button', { type: 'button', role: 'tab', 'aria-selected': tab === t ? 'true' : 'false', class: tab === t ? 'on' : '', onclick: () => { tab = t; draw(true) } }, t === 'ask' ? 'Ask' : t === 'feedback' ? 'Feedback' : t === 'vault' ? 'Your vault' : 'Tools')))
   pane.append(head, tabs)
   const body = h('div', { class: 'ask-body' }); pane.append(body)
-  if (tab === 'ask') drawAsk(body); else if (tab === 'vault') drawVault(body); else drawTools(body)
+  if (tab === 'ask') drawAsk(body); else if (tab === 'vault') drawVault(body); else if (tab === 'feedback') drawFeedback(body); else drawTools(body)
 }
 function drawAsk(body) {
   if (!V.orKey) {

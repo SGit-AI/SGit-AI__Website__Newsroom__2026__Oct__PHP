@@ -252,11 +252,25 @@
    "used_on": "team/runs/index.html"
   },
   {
+   "path": "data/agents-status.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "each agent's session record, the repository's branches, the scheduled tasks and the data files' dates, read without asking the agents",
+   "used_on": "team/status/index.html"
+  },
+  {
    "path": "data/collaborators.json",
    "layer": "site",
    "by": "conductor@php.newsroom",
    "from": "the asks to the collaborators (what is new, what to do, the questions) and the collaborators lane's public descriptor",
    "used_on": "collaborators/index.html"
+  },
+  {
+   "path": "data/contributors.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "admin/build/invite.py: the open invitations (hashes only) and the enrolled keys (handle, role, fingerprints)",
+   "used_on": "join/index.html"
   },
   {
    "path": "data/versions.json",
@@ -364,6 +378,13 @@
    "used_on": "subscribe/index.html"
   },
   {
+   "path": "data/stack.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the blast-radius tool's model: component kinds, links, settings mapped to the published mitigations, the two CVEs as rules, example stacks; joined at build with affected, defence and software",
+   "used_on": "stack/index.html"
+  },
+  {
    "path": "data/telemetry.json",
    "layer": "site",
    "by": "dev@php.newsroom",
@@ -375,6 +396,20 @@
    "layer": "site",
    "by": "admin/build/telemetry_drain.py",
    "from": "the drained telemetry lane, as counts",
+   "used_on": "admin/telemetry/index.html"
+  },
+  {
+   "path": "data/telemetry-public.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "admin/build/telemetry_publish.py at every drain: the curated counts by group, per hour and per day, and over readers by country, device, language, version, page and referrer host; the same file as the public stats vault",
+   "used_on": "admin/telemetry/index.html"
+  },
+  {
+   "path": "data/world.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "Natural Earth admin-0 countries 1:50m v5.1.2 (public domain), projected to Equal Earth and simplified by a script; the map on admin/telemetry/ and in the public stats vault",
    "used_on": "admin/telemetry/index.html"
   },
   {

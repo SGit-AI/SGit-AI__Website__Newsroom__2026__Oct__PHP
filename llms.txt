@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.7.0. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.8.4. Data as of 2026-10-22T11:34Z (the latest capture in the evidence vault, commit 200d08971937). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Start here
 - [Who are you? Pick a reader](https://php.oct.2026.newsroom.sgit.ai/start/index.md): 16 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
@@ -42,8 +42,11 @@ Site v0.7.0. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 
 ## Yours
 - [Power users: start here](https://php.oct.2026.newsroom.sgit.ai/collaborators/index.md): Where a power user of PHP October 2026 starts: the first fifteen minutes, the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
+- [Join: a key for feedback](https://php.oct.2026.newsroom.sgit.ai/join/index.md): Open the invitation the editor sent you and this page makes a key on your device, so the feedback you send from any page is signed as yours; the enrolled keys, as handles and fingerprints.
+- [Invite someone](https://php.oct.2026.newsroom.sgit.ai/join/invite/index.md): For the editor: make an invitation to give signed feedback on this site, as a QR code, a link and a share button, signed in the browser with an enrolled key.
 - [Now: the phone app](https://php.oct.2026.newsroom.sgit.ai/now/index.md): What you need to know about the PHP flaws for the time you have, one, five, ten or thirty minutes, against what you read before; deterministic from the data, or written by a model with your own key kept in your own vault, with a chat.
 - [Your desk: new, changed, notes](https://php.oct.2026.newsroom.sgit.ai/you/index.md): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
+- [Your stack: the blast radius](https://php.oct.2026.newsroom.sgit.ai/stack/index.md): Describe what you run, the internet, the edge, the applications, the PHP and where it comes from, and what each can reach; see which runtimes the two flaws affect, the blast radius, what to do first and what on this site is about your stack. In your browser and your own vault.
 - [The feed viewer](https://php.oct.2026.newsroom.sgit.ai/reader/index.md): Read this site's feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.
 - [Feeds (RSS)](https://php.oct.2026.newsroom.sgit.ai/feeds/index.md): RSS feeds for everything new and changed on this site and for each of its parts: an entry for every new item and every change, and where to read them.
 - [Subscribe by email](https://php.oct.2026.newsroom.sgit.ai/subscribe/index.md): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.
@@ -91,6 +94,7 @@ Site v0.7.0. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [The evidence vault](https://php.oct.2026.newsroom.sgit.ai/admin/vault/index.md): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
 - [The source watch](https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.md): The public source-watch vault: 328 pages from 175 publishers in 38 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
 - [The telemetry vault](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
+- [The public telemetry stats](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [The subscriptions vault](https://php.oct.2026.newsroom.sgit.ai/subscribe/index.md): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.
 - [The coverage vault](https://php.oct.2026.newsroom.sgit.ai/vaults/index.html#coverage): 
 - [The conductor vault](https://php.oct.2026.newsroom.sgit.ai/team/channels/index.html#conductor): 
@@ -359,7 +363,7 @@ Site v0.7.0. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [Who found it](https://php.oct.2026.newsroom.sgit.ai/versions/page-discovery/index.md): 5 versions
 - [How disclosure broke](https://php.oct.2026.newsroom.sgit.ai/versions/page-leak/index.md): 5 versions
 - [Exploitation signals](https://php.oct.2026.newsroom.sgit.ai/versions/page-exploitation/index.md): 5 versions
-- [If you run PHP](https://php.oct.2026.newsroom.sgit.ai/versions/page-playbook/index.md): 2 versions
+- [If you run PHP](https://php.oct.2026.newsroom.sgit.ai/versions/page-playbook/index.md): 3 versions
 - [Every claim](https://php.oct.2026.newsroom.sgit.ai/versions/page-claims/index.md): 6 versions
 - [The numbers](https://php.oct.2026.newsroom.sgit.ai/versions/page-numbers/index.md): 4 versions
 - [The agencies](https://php.oct.2026.newsroom.sgit.ai/versions/page-agencies/index.md): 2 versions
@@ -389,7 +393,7 @@ Site v0.7.0. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 - [Briefing: Project or programme manager](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-pm/index.md): 5 versions
 - [The specialist summary](https://php.oct.2026.newsroom.sgit.ai/versions/page-summary/index.md): 2 versions
 - [Front page: right now](https://php.oct.2026.newsroom.sgit.ai/versions/front-now/index.md): 2 versions
-- [Front page: at a glance](https://php.oct.2026.newsroom.sgit.ai/versions/front-glance/index.md): 1 versions
+- [Front page: at a glance](https://php.oct.2026.newsroom.sgit.ai/versions/front-glance/index.md): 2 versions
 - [Front page: the core facts](https://php.oct.2026.newsroom.sgit.ai/versions/front-facts/index.md): 2 versions
 - [Front page: what nobody knows yet](https://php.oct.2026.newsroom.sgit.ai/versions/front-unknown/index.md): 1 versions
 - [Front page: latest](https://php.oct.2026.newsroom.sgit.ai/versions/front-latest/index.md): 1 versions
@@ -398,6 +402,7 @@ Site v0.7.0. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 
 ## The team, one page per member
 - [How the team talks: three vaults and one run](https://php.oct.2026.newsroom.sgit.ai/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules
+- [Status](https://php.oct.2026.newsroom.sgit.ai/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev
 - [Runs](https://php.oct.2026.newsroom.sgit.ai/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run
 - [Dinis Cruz](https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.md): Editor; Sets direction by voice memo, points agents at sources, reads what they wrote and says go.
 - [Vicky](https://php.oct.2026.newsroom.sgit.ai/team/vicky/index.md): Project manager; Runs the project side: what is planned, who has it, what is late and what the editor needs to decide.

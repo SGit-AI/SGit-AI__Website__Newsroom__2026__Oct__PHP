@@ -818,8 +818,9 @@
   {
    "id": "098",
    "title": "Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp group",
-   "status": "open",
-   "owner": "editor"
+   "status": "done",
+   "owner": "editor",
+   "note": "The editor confirmed the LinkedIn link on 22 October 2026."
   },
   {
    "id": "099",
@@ -862,6 +863,106 @@
    "title": "Runs: /team/runs/, the register of every schedule (who, where, how often, how many runs fall in the quiet hours) and every recorded run with the article it should leave (data/schedules.json)",
    "status": "done",
    "owner": "conductor"
+  },
+  {
+   "id": "106",
+   "title": "Feedback from any page, signed: a Feedback button beside Ask opens the pane's Feedback tab (kind, words, a screenshot from a file or captured), signed with the device's key and encrypted to the collaborators lane; /join/ makes the key from an invitation's QR code in one tap; admin/build/invite.py makes invitations and enrols keys; the drain verifies every signature with sgit pki verify",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "107",
+   "title": "The editor's review queue, /review/: every page or section new or changed since he last looked, one at a time on an iPad (Next, Good, Needs work, a comment), each decision signed feedback of kind review (brief: 2026-10-22__brief__feedback-keys-and-review.md, phase 2)",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "108",
+   "title": "Invitations for the editor's own devices (role editor) and for Vicky (role team); then the power users, one invitation each, sent by the editor",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "109",
+   "title": "A feedback desk: who reads the drained feedback every day, turns it into board items and answers the sender; the conductor until an agent takes it",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "110",
+   "title": "Security review of the feedback keys (assets/feedback/identity.js, join.js, pane.js; admin/build/contributors.py, invite.py): non-extractable keys in IndexedDB, the invitation code in the link's fragment, signatures checked with sgit",
+   "status": "open",
+   "owner": "security"
+  },
+  {
+   "id": "111",
+   "title": "The run record, sgit.newsroom.run/1: one JSON object per agent run (trigger, model, objectives, raw, JSON and programmatic reads, writes, commits, network calls, tokens, cost, article, handovers), read by /team/runs/ (the digital twin brief, step 1)",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "112",
+   "title": "The organisation as a digital twin: data/twin.json (roles, artefacts, typed edges: produces, consumes, hands over to, triggers, escalates to) and /team/twin/, the state machine drawn, with the schedules on a 24-hour clock and the escalation lanes",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "113",
+   "title": "The accountant: tokens and cost per agent, artefact and day against a budget; runs that read raw where JSON exists; messages nobody acted on; loops between agents; a daily ledger and the cuts it proposes",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "114",
+   "title": "A bulletin board for agents (one append-only notice file per agent per day, each naming who must act) before any mail between agents",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "115",
+   "title": "The twin's open questions: the budget, the escalation ladder at night, which outside agents join (ChatGPT, Perplexity) and how, and which ABP site's per-session review the run record should match",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "116",
+   "title": "Your stack, the blast radius (/stack/): describe what you run (internet, edge, apps, platforms, PHP runtimes, data, secrets, services) and see each runtime against both CVEs, the blast radius as a graph, what to do first and what on the site is about your stack; in the browser and the reader's vault",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.1"
+  },
+  {
+   "id": "117",
+   "title": "Stack, next: the pulse's vulnerabilities as rows in data/stack.json (rules beyond PHP: product and version ranges), news from the feeds matched to a saved stack, a test of the vault sync with a real reader vault, deletions that carry across devices",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "118",
+   "title": "Design: --warn-* and --info-* tokens were mapped to themselves in assets/themes/site-tokens.css (cyclic, so invalid) since v0.2.4: every warning and info pill rendered with no colour. Fixed in v0.8.1; checked in all five themes (computed tokens and a pill on /claims/)",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.1"
+  },
+  {
+   "id": "119",
+   "title": "Who is who in the telemetry: every session a reader, the editor, a power user or team member, synthetic (agents, tests, headless browsers) or a crawler; declared by the browser since v0.8.4 (agent: automation by class; who: the role of its /join/ key or this browser's setting on /admin/telemetry/), inferred before (time zone, place, language, first page); admin/build/telemetry_classes.py, the same rules in the telemetry app v0.2.1",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.4"
+  },
+  {
+   "id": "120",
+   "title": "The public telemetry stats vault (0cfkdcvh, read key published): its own app with the hourly chart by group, a world map of readers, what readers read; curated counts only, written at every drain by admin/build/telemetry_flow.sh (drain, classify, publish, push both vaults); the same counts and map on /admin/telemetry/",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.4"
+  },
+  {
+   "id": "121",
+   "title": "Telemetry, next: the editor confirms the inferred rule for his browsers (Europe/Lisbon, English) or sets them on /admin/telemetry/; enrolled /join/ keys start declaring roles once data/contributors.json lists them; the in-browser drain cannot write the public vault (an app cannot write another vault), so public stats follow the next run of telemetry_flow.sh; a schedule for that run needs the editor's go",
+   "status": "open",
+   "owner": "dev@php.newsroom"
   }
  ],
  "evidence_vault": {

@@ -549,6 +549,10 @@ index.html
 index.md
 interview/index.html
 interview/index.md
+join/index.html
+join/index.md
+join/invite/index.html
+join/invite/index.md
 layers/index.html
 layers/index.md
 leak/index.html
@@ -896,6 +900,9 @@ sources/x-wiz-io-php2shell/index.html
 sources/x-wiz-io-php2shell/index.md
 sources/yle-finland-government-sites-shut/index.html
 sources/yle-finland-government-sites-shut/index.md
+stack/catalogue.json
+stack/index.html
+stack/index.md
 start/index.html
 start/index.md
 status.json
@@ -939,6 +946,8 @@ team/researcher/index.html
 team/researcher/index.md
 team/runs/index.html
 team/runs/index.md
+team/status/index.html
+team/status/index.md
 team/story-site/index.html
 team/story-site/index.md
 team/synthetic/index.html

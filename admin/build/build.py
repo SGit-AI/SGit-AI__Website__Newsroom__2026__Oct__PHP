@@ -25,8 +25,10 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
+TPUB = load('telemetry-public') if os.path.exists(os.path.join(DATA, 'telemetry-public.json')) else None
+WORLD = load('world')
 SYN = load('synthetic') if os.path.exists(os.path.join(DATA, 'synthetic.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
 STORY = D['story']
@@ -187,7 +189,7 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('collaborators/index.html', 'Power users: start here'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
+    ('Yours', [('collaborators/index.html', 'Power users: start here'), ('join/index.html', 'Join: a key for feedback'), ('join/invite/index.html', 'Invite someone'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('stack/index.html', 'Your stack: the blast radius'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -540,6 +542,7 @@ def build_index():
     tiles = [
         ('ok', 'Is there a fix?', 'Yes', f'install PHP {fixed}', 'playbook/index.html'),
         ('bad', 'How serious?', 'Critical', '9.2 out of 10, both flaws', 'flaws/index.html'),
+        ('warn', 'Does it reach you?', 'Check your stack', 'describe what you run and see what an attacker could reach in it', 'stack/index.html'),
         ('warn', 'Are attackers trying?', 'Yes', 'millions of attempts, seen by one internet security company', 'exploitation/index.html'),
         ('info', 'Anyone confirmed hacked?', 'Not yet', 'no organisation, as of the latest check', 'impact/index.html'),
         ('warn', 'Websites taken offline', f'{len(im["offline"])} organisations', 'reported, as a precaution', 'impact/index.html'),
@@ -573,7 +576,7 @@ def build_index():
   <p class="kicker">PHP news &middot; October 2026 &middot; <span class="live">{E(s["status"])}</span> &middot; last checked {E(when)}</p>
   <h1>{E(pl["headline"])}</h1>
   <p class="deck">{E(pl["deck"])}</p>
-  <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a><a class="cta" href="now/index.html">On your phone: Now &rarr;</a></div>
+  <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a><a class="cta" href="stack/index.html">Check your stack</a><a class="cta" href="now/index.html">On your phone: Now &rarr;</a></div>
   <p class="aka">{E(pl["aka"])}</p>
 </header>
 <section id="now"><h2>Right now</h2><p class="small">As of {E(when)}, the time of the latest page this site saved.</p><ul class="nowlist">{now}</ul>{b_now}</section>
@@ -907,6 +910,7 @@ def build_playbook():
     body = f'''
 <h1>If you run PHP</h1>
 <p class="lead">Every agency's advice, merged into one ordered list, with the sentence each step comes from. This is a guide to what the sources say, assembled by agents and not reviewed by your security team; the php.net advisory is the authority and your national agency is the one that applies to you. Taking a system offline is the last step on every list, and the one list where it comes earlier is the one that says <q>isolate, then migrate</q>.</p>
+<p>To do step 0 and see what steps 1 to 4 mean for your own systems, describe them in <a href="../stack/index.html">your stack</a>: it checks each PHP runtime against both flaws and shows what an attacker who reaches one could touch.</p>
 <ol class="steps">{rows}</ol>
 {section("plug", "Pulling the plug, as a capability", '''<p>Four agencies told organisations to be ready to take systems offline within hours. How long it takes you to do that for one system, cleanly, with a holding page and a way back, is a measurable property of your stack, and it is the property this incident tested. A system that can be removed from the internet in minutes without data loss is one you can afford to leave running until the patch is tested; a system that cannot is one you take offline early, because you will not be able to later. The site's own position is that the decision belongs to a named person and the execution belongs to a rehearsed runbook, and that the inventory in step 0 is where both start.</p>''')}
 <p>The technical detail behind each step is on <a href="../flaws/index.html">the two flaws</a>; which versions and products are in scope is on <a href="../affected/index.html">affected systems</a>; what the agencies said, agency by agency, is on <a href="../agencies/index.html">the agencies</a>.</p>
@@ -1096,7 +1100,7 @@ def build_team():
 <p class="lead">This site is built and run by {humans}, and a team of software agents, with help from <a href="../collaborators/index.html">collaborators</a> who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is <a href="../data/team.json">data/team.json</a>, kept by <a href="conductor/index.html">the conductor</a>.</p>
 <div class="stats">{stats}</div>
 {section("members", "Who is on it", groups)}
-{section("run", "How the team runs", f'<p class="caveat">{E(T.get("now", ""))}</p><p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>What the agents run on their own, when, and every run they made: <a href="runs/index.html">runs</a>.</p><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
+{section("run", "How the team runs", f'<p class="caveat">{E(T.get("now", ""))}</p><p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>Where every agent is right now, what each waits for and from whom: <a href="status/index.html">status</a>. What the agents run on their own, when, and every run they made: <a href="runs/index.html">runs</a>.</p><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
 {section("pipeline", "The pipeline", pipe, "How a URL becomes a published claim, and who does each step.")}
 {section("audiences", "The audiences", f'<ul>{auds}</ul>', "Each briefing is a role too: a reader whose question the site answers in one page.")}
 {section("rules", "The rules every member shares", '''<ul>
@@ -1371,6 +1375,7 @@ def build_llms():
     lines.append('')
     lines.append('## The team, one page per member')
     lines.append(f'- [How the team talks: three vaults and one run]({BASE_URL}/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules')
+    lines.append(f'- [Status]({BASE_URL}/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev')
     lines.append(f'- [Runs]({BASE_URL}/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run')
     for m in TEAM['members']:
         lines.append(f'- [{m["name"]}]({BASE_URL}/team/{m["id"]}/index.md): {m["role"]}; {m["summary"]}')
@@ -1527,15 +1532,15 @@ def build_all():
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
-    build_method(); build_team(); build_collaborators(); build_runs(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
+    build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck(); build_grc()
+    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck(); build_grc()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
     build_all()
     build_all()
-    build_now(); build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); save_items()
+    build_now(); build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); build_stack_catalogue(); save_items()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
@@ -1839,6 +1844,86 @@ node pki-agent.mjs seal --from-vault &lt;the vault's folder&gt; --name "vault ke
 """
     page('admin/keys/index.html', 'Keys: who holds what, and how a secret moves', 'The newsroom\'s keys: the editor\'s root key, every agent\'s key pair on pki.sgit.ai, every vault and whether its key is safe with the editor, the rules of engagement, and how an agent hands a vault key over. No secrets.', body, kind='site')
 
+
+# ----------------------------------------------------------------------------- who reads this site, in public (v0.8.4)
+
+TG = [('readers', 'tg1'), ('us', 'tg2'), ('synthetic', 'tg3'), ('crawlers', 'tg4')]
+
+def telemetry_hourly_svg(P):
+    H = P['hourly']; G = P['groups']; W, HH, pl, pb, pt = 960, 200, 34, 24, 8
+    n = len(H); bw = (W - pl) / max(n, 1)
+    tot = [sum(h[1]) for h in H]; mx = max(tot + [1]); step = max(5, -(-mx // 4 // 5) * 5); top = step * -(-mx // step)
+    y = lambda v: pt + (HH - pt - pb) * (1 - v / top)
+    out = [f'<svg class="tchart" viewBox="0 0 {W} {HH}" role="img" aria-label="Page views per hour, by group">']
+    for v in range(0, top + 1, step):
+        out.append(f'<line x1="{pl}" x2="{W}" y1="{y(v):.1f}" y2="{y(v):.1f}" class="tgrid"/><text x="{pl - 6}" y="{y(v) + 4:.1f}" text-anchor="end">{v}</text>')
+    every = max(1, -(-n // ((W - pl) // 44)))
+    for k, h in enumerate(H):
+        base, x, w = 0, pl + k * bw + 1, max(1, bw - 2)
+        tip = E(h[0].replace('T', ' ') + ':00 UTC: ' + ', '.join(f'{P["labels"][g].split(":")[0]} {h[1][i]}' for i, g in enumerate(G)))
+        out.append(f'<g><title>{tip}</title>')
+        for i, g in enumerate(G):
+            v = h[1][i]
+            if not v: continue
+            y0, y1 = y(base), y(base + v)
+            out.append(f'<rect x="{x:.1f}" y="{y1:.1f}" width="{w:.1f}" height="{max(0.5, y0 - y1 - 1):.1f}" class="{dict(TG)[g]}"/>')
+            base += v
+        out.append(f'<rect x="{pl + k * bw:.1f}" y="{pt}" width="{bw:.1f}" height="{HH - pt - pb}" fill="transparent"/></g>')
+        if k % every == 0:
+            lab = h[0][8:10] + ' Oct' if h[0][11:] == '00' else h[0][11:] + ':00'
+            out.append(f'<text x="{pl + k * bw + bw / 2:.1f}" y="{HH - 7}" text-anchor="middle">{lab}</text>')
+    out.append(f'<line x1="{pl}" x2="{W}" y1="{HH - pb}" y2="{HH - pb}" class="taxis"/></svg>')
+    return ''.join(out)
+
+def telemetry_map_svg(P):
+    rows = {c: (v, s) for c, v, s in P['readers']['countries'] if c}
+    mx = max([v for v, s in rows.values()] + [1])
+    steps = [0.18, 0.34, 0.52, 0.72, 0.92]
+    def op(v):
+        import math
+        return steps[min(4, int(4.999 * math.log(v) / math.log(mx))) if mx > 1 else 0]
+    out = [f'<svg class="tmap" viewBox="0 0 {WORLD["width"]:g} {WORLD["height"]:g}" role="img" aria-label="Readers by country">']
+    for code, c in WORLD['countries'].items():
+        r = rows.get(code)
+        title = E(f'{c["name"]}: {r[0]} page views, {r[1]} sessions' if r else f'{c["name"]}: no readers yet')
+        out.append(f'<path d="{E(c["d"])}" class="{"tg1" if r else "tm0"}"{f" fill-opacity=\"{op(r[0])}\"" if r else ""}><title>{title}</title></path>')
+    out.append('</svg>')
+    ramp = ''.join(f'<i class="tg1" style="opacity:{o}"></i>' for o in steps)
+    return ''.join(out) + f'<p class="tramp">fewer {ramp} more page views (log scale; most: {mx})</p>'
+
+def telemetry_public_html():
+    P = TPUB
+    if not P:
+        return '<p class="small">No public stats yet.</p>'
+    T, R = P['totals'], P['readers']
+    pv = next((x for x in D['vaults']['vaults'] if x['slug'] == 'telemetry-public'), None)
+    legend = ''.join(f'<span><i class="{c}"></i>{E(P["labels"][g])}</span>' for g, c in TG)
+    groups = table(['Group', 'Page views', 'Sessions', 'Of which declared'], [[f'<i class="tsw {c}"></i> {E(P["labels"][g])}', str(T[g]['views']), str(T[g]['sessions']), str(T[g]['declared'])] for g, c in TG])
+    countries = table(['Country', 'Page views', 'Sessions'], [[f'<code>{E(c or "?")}</code> {E(WORLD["countries"].get(c, {}).get("name", "not known"))}', str(v), str(n)] for c, v, n in R['countries']])
+    rules = ''.join(f'<li><b>{E(x["how"])}.</b> {E(x["text"])}</li>' for x in P['method']['classes'])
+    live = vault_live(pv['read_key'], True, 2, 'The same counts, and more, in the public stats vault: its own app, updated at every drain.') if pv else ''
+    return f"""<p>Not everyone who opens a page is a reader. Each session (one browser tab) is put in one of four groups: <b>readers</b>; <b>the editor, team and power users</b>; <b>synthetic</b> visitors, the headless browsers of this site's own agents and of anyone testing it; and <b>crawlers</b>, search engines rendering the pages. As of <b>{E(P["as_of"])}</b>, since {E(P["first"])}:</p>
+{groups}
+<p class="tlegend">{legend}</p>
+<div class="tfig">{telemetry_hourly_svg(P)}</div>
+<p class="small">Page views per UTC hour, stacked by group. Hover a column for its numbers.</p>
+<h3>Where readers are</h3>
+<p>Readers only: {R["views"]} page views in {R["sessions"]} sessions, {R["read_on"]} of which read more than one page; {len([c for c in R["countries"] if c[0]])} countries. Country from a lookup in the reader's browser; nothing finer is published.</p>
+<div class="tfig">{telemetry_map_svg(P)}</div>
+<details><summary>Every country</summary>{countries}</details>
+<h3>How the groups are told apart</h3>
+<ol>{rules}</ol>
+<p>{E(P["method"]["note"])}</p>
+<div class="twho" id="twho"><p><b>This browser counts as:</b> <span class="small">(kept in this browser only; the next page you open sends it)</span></p><p class="twho-b"></p></div>
+<script>(function(){{var box=document.querySelector('#twho .twho-b');if(!box)return;var k='p2s.telemetry.who',cur='';try{{cur=localStorage.getItem(k)||''}}catch(e){{}}
+[['','work it out'],['editor','the editor'],['team','team'],['power-user','a power user'],['reader','a reader']].forEach(function(o){{var b=document.createElement('button');b.type='button';b.className='rs-b'+(cur===o[0]?' on':'');b.textContent=o[1];b.setAttribute('aria-pressed',String(cur===o[0]));
+b.addEventListener('click',function(){{try{{if(o[0])localStorage.setItem(k,o[0]);else localStorage.removeItem(k)}}catch(e){{}}cur=o[0];box.querySelectorAll('button').forEach(function(x,i){{x.className='rs-b';x.setAttribute('aria-pressed','false')}});b.className='rs-b on';b.setAttribute('aria-pressed','true')}});box.appendChild(b)}})}})()</script>
+<h3>The public stats vault</h3>
+<p>The curated counts above are written at every drain into a public vault, <code>{E(pv["id"]) if pv else ""}</code>, by <code>admin/build/telemetry_publish.py</code> (run by <code>admin/build/telemetry_flow.sh</code>): per hour and per day by group, and over readers only, countries, devices, languages, versions, pages and referrer hosts. No row, session id, city, region, time zone or time finer than the hour leaves the private vault. Its read key is published here.</p>
+{vault_note(pv["read_key"]) if pv else ""}
+{live}
+"""
+
 def build_admin_section():
     A = D['admin']
     st = Counter(b['status'] for b in A['board'])
@@ -1908,15 +1993,19 @@ def build_admin_section():
 <div class="cols">{tt(rep["by_country"], "Country")}{tt(rep["by_region"], "Region")}{tt(rep["by_referrer"], "Referrer host")}{tt(rep["by_screen"], "Screen")}</div>
 <h3>By page</h3>{tt(rep["by_path"], "Page")}
 <h3>By day</h3>{tt(rep["by_day"], "Day")}"""
+    public_html = telemetry_public_html()
     body = f"""
 <h1>Who reads this site</h1>
-<p class="lead">Every page sends one anonymous event to a write-only lane on a separate, private vault: which page, the referrer's host, the visitor's country, region and city from a geolocation lookup, language, screen class and time zone, with a random session id that lives in the tab. No IP address, no cookie, no name, no user-agent string. The event is encrypted in your browser to the key below before it leaves; the lane's reply is a blind <code>{{"ok": true}}</code>. Do Not Track and Global Privacy Control switch it off. The brief is on <a href="../briefs/index.html#2026-10-22__telemetry-over-an-append-lane">briefs</a>.</p>
+<p class="lead">Every page sends one anonymous event to a write-only lane on a separate, private vault: which page, the referrer's host, the visitor's country, region and city from a geolocation lookup, language, screen class and time zone, with a random session id that lives in the tab. No IP address, no cookie, no name, no user-agent string; since v0.8.4, whether the browser is automated (by class: a crawler's name, webdriver, headless) and, if this browser holds a key from <a href="../../join/index.html">/join/</a> or was set below, its role (editor, team, power user), never who. The event is encrypted in your browser to the key below before it leaves; the lane's reply is a blind <code>{{"ok": true}}</code>. Do Not Track and Global Privacy Control switch it off. The brief is on <a href="../briefs/index.html#2026-10-22__telemetry-over-an-append-lane">briefs</a>.</p>
 <h2>What this page carries</h2>
 <p>{E(t["what"])}</p>
 <p class="kv"><b>Lane</b> vault <code>{E(t["vault_id"])}</code> on <code>{E(t["endpoint"])}</code> &middot; <b>append token</b> <code>{E(t["append_token"])}</code> (write-only; publishable by design) &middot; <b>encrypted to</b> <code>{E(t["recipient"]["fingerprint"])}</code></p>
 <pre>{E(t["recipient"]["encrypt"])}</pre>
 <p>The geolocation lookup goes to {" then ".join(f"<code>{E(u)}</code>" for u in t["geo"])}; that service sees your IP address and returns a country, a region and a city; the event keeps the three names and nothing else. The vault server sees that a lane received something, its size and the time, and the requesting IP, as any server does.</p>
-<h2>The counts</h2>
+<h2>Who is who</h2>
+{public_html}
+<h2>Every event, every group</h2>
+<p class="small">The drainer's own report, over every event: readers, the editor and power users, agents and crawlers together.</p>
 {repo_html}
 <h2>What the counts are worth</h2>
 <ul>
@@ -2282,7 +2371,7 @@ def build_vaults():
     lanes = {'telemetry': tl['append_token'], 'subscriptions': D['subscriptions']['append_token'], 'collaborators': load('collaborators')['lane']['append_token']}
     cards = ''
     for x in VS:
-        k = keys.get(x['slug'])
+        k = keys.get(x['slug']) or x.get('read_key')
         how = (f'<p class="kv"><b>Not published:</b> the vault key. {E(x.get("note", ""))}</p>' if not k and x['slug'] not in lanes else f'<p class="kv"><b>Read key</b> <code>{E(k)}</code></p><p><a href="{E(vault_open_url(k))}" rel="noopener" target="_blank">Open read-only in a new tab &#8599;</a> &middot; <code>sgit clone {E(k)}</code></p>' if k else
                f'<p class="kv"><b>Not published:</b> the vault key, the lane\'s enum key and the key pair\'s passphrase. <b>Published:</b> the write-only append token <code>{E(lanes.get(x["slug"], ""))}</code>, which adds rows and reads nothing.</p>')
         cards += f"""<section class="vcard" id="{E(x["slug"])}">
@@ -2294,7 +2383,7 @@ def build_vaults():
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch, and the public face of the telemetry, its curated counts); two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
@@ -3321,6 +3410,66 @@ def build_reader():
     page('reader/index.html', 'The feed viewer: this site, the records, and your own feeds', 'Read this site\'s feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.', body, kind='account')
 
 
+# ----------------------------------------------------------------------------- your stack: the blast radius (v0.8.1)
+
+def stack_catalogue():
+    """data/stack.json joined with the ranges, SAPIs and mitigations (affected), the edge vendors (defence) and the
+    NCSC-NL inventory (software), for assets/stack.js. Everything in it is already published on this site."""
+    st, a = D['stack'], D['affected']
+    for v in st['vulns']:
+        for slug in v['sources']:
+            if slug not in SOURCES: sys.exit(f'data/stack.json: {v["id"]} cites unknown source {slug}')
+    ctl = []
+    for c in st['controls']:
+        m = a['mitigations'][c['mitigation']]
+        ctl.append(dict({k: c[k] for k in c if k != 'mitigation'}, what=m['what'], caveat=m['caveat'], **{'for': m['for']}))
+    inv = []
+    for r in D['software']['rows']:
+        note = (r['notes'] or '').split('\n')
+        inv.append([r['supplier'], r['product'], r['version'], r['status_109618'], r['status_109619'],
+                    (note[-1] if len(note) > 1 else note[0])[:280], (r['links'] or [''])[0]])
+    items = [[iid, it['title'], it['path'], it['kind']] for iid, it in all_items().items() if it.get('path')]
+    return {'schema': st['schema'], 'site': VERSION, 'data_as_of': STORY['data_as_of'],
+            'kinds': st['kinds'], 'links': st['links'], 'sensitivity': st['sensitivity'], 'controls': ctl, 'vulns': st['vulns'],
+            'ranges': a['ranges'], 'ranges_note': a['ranges_note'], 'fixed': a['fixed'],
+            'sapis': [{k: x[k] for k in ('sapi', 'risk', 'text')} for x in a['sapis']],
+            'edge': [{k: x[k] for k in ('vendor', 'what', 'when', 'caveat')} for x in D['defence']['edge']],
+            'inventory': {'source': D['software']['source'], 'commit': D['software']['commit'], 'licence': D['software']['licence'],
+                          'columns': ['supplier', 'product', 'version', 'status_109618', 'status_109619', 'note', 'link'], 'rows': inv},
+            'items': items, 'examples': st['examples'], 'pulse': st['pulse']}
+
+def build_stack_catalogue():
+    write('stack/catalogue.json', json.dumps(stack_catalogue(), ensure_ascii=False, separators=(',', ':'), sort_keys=False) + '\n')
+
+def build_stack():
+    st = D['stack']
+    kinds = ''.join(f'<li><b>{E(k["name"])}.</b> {E(k["what"])}</li>' for k in st['kinds'])
+    vulns = ''.join(f'<li><a href="../{U(v["page"])}">{E(v["id"])}</a>: {E(v["name"])}. Scope: {E(v["scope"])}; at worst {E(v["impact"])}.</li>' for v in st['vulns'])
+    body = f"""
+<h1>Your stack: what php2shell can reach in it</h1>
+<p class="lead">Describe what you run, the way you would draw it on a whiteboard: what the internet reaches, what sits in front, the applications, the PHP under them and where it comes from, and what each can reach. The tool checks every PHP runtime against the two flaws with what this site knows (the version ranges, how PHP serves requests, the settings that reduce exposure, the edge rules, the NCSC-NL inventory) and shows the blast radius: what an attacker who runs code as your PHP worker can touch. Then it lists what on this site is about your stack.</p>
+<div id="stack" class="sk"><p class="small">The tool needs JavaScript: it runs in your browser, on <a href="catalogue.json">its catalogue</a>, and sends nothing anywhere.</p></div>
+<h2>How it decides</h2>
+<ul>
+<li><b>The version.</b> A runtime on a supported branch is affected below the fixed release ({E(', '.join(D['affected']['fixed']))}) and fixed at or above it. 8.1, 8.0 and 7.4 are affected with no upstream release, only backport branches; earlier versions have no fix at all. {E(D['affected']['ranges_note'])}</li>
+<li><b>Where the PHP comes from.</b> A distribution package or a vendor image keeps its own version number when it backports a fix, so a version that looks old can be fixed. When the runtime is provided by a product in the inventory, the inventory's status for that product wins over the version number, and the tool says so.</li>
+<li><b>How it serves requests.</b> The risk is for PHP serving web requests; Apache mod_php is where remote code execution was demonstrated. CLI, cron and queue workers are outside the advisory's scope.</li>
+<li><b>Whether it can be reached.</b> A runtime the internet reaches, through an edge or not, is exposed; one reached only from inside is not exposed from the internet, which is not the same as safe.</li>
+<li><b>What reduces it.</b> Each setting and each edge rule is shown with its caveat. None of them turns an affected runtime into a fixed one: updating is the only reliable mitigation.</li>
+<li><b>The blast radius.</b> Remote code execution runs as the PHP worker, so everything an affected runtime runs, and everything it or its applications can reach, is in the blast radius; what those can reach in turn is one step further.</li>
+</ul>
+<p>The kinds of component:</p>
+<ul>{kinds}</ul>
+<p>What is checked today:</p>
+<ul>{vulns}</ul>
+<p class="small">{E(st['pulse'])}</p>
+<h2>Where your stack is kept</h2>
+<p>In this browser, under <code>p2s.stack.v1</code>, and in your own vault when you open it in the Ask pane (under <code>/php-october/stack/</code>, encrypted here before it leaves), with the rest of what you keep on this site. Export it as a file to share it with your team; import theirs. Nothing about your stack is sent to this site or anyone else. A stack describes your systems: treat the file as you would an architecture diagram.</p>
+<p class="small">This is a first version, a thinking tool and not a scanner: it knows only what you tell it and what this site has captured. Check every finding against your own systems and your vendor's advisory.</p>
+<script src="../assets/stack.js" defer></script>
+"""
+    page('stack/index.html', 'Your stack: what php2shell can reach in it', 'Describe what you run, the internet, the edge, the applications, the PHP and where it comes from, and what each can reach; see which runtimes the two flaws affect, the blast radius, what to do first and what on this site is about your stack. In your browser and your own vault.', body, kind='account')
+
 # ----------------------------------------------------------------------------- subscriptions (v0.4.3)
 
 def build_subscribe():
@@ -3672,7 +3821,8 @@ def build_collaborators():
 {section("get", "What you get", li(C["what_you_get"]))}
 {section("how", "How it works", f'<ul>{chans}</ul><p>The readers you can read as are on <a href="../start/index.html">Start here</a>: each has a plain answer, what it needs and a reading path. The team you are helping is on <a href="../team/index.html">the team page</a>.</p>')}
 <section id="join"><h2>Join</h2>
-<p>Know {E(ed["name"].split()[0])}? <a href="{U(ed["linkedin"])}" rel="noopener">Message him on LinkedIn</a>, or fill this in. He reads every request and adds you to the email list, and to the WhatsApp group if you ask.</p>
+<p><b>Have an invitation?</b> Open it: it lands on <a href="../join/index.html">Join</a>, which makes your key in one tap, and then the <b>Feedback</b> button at the top of every page sends signed feedback, with screenshots.</p>
+<p>No invitation yet? Know {E(ed["name"].split()[0])}? <a href="{U(ed["linkedin"])}" rel="noopener">Message him on LinkedIn</a>, or fill this in. He reads every request and adds you to the email list, and to the WhatsApp group if you ask.</p>
 <form id="join-form" class="subform" autocomplete="on">
 <p><label>Your name<br><input type="text" name="name" required maxlength="120"></label></p>
 <p><label>Your email address<br><input type="email" name="email" required maxlength="254" placeholder="you@example.org"></label></p>
@@ -4308,6 +4458,83 @@ def build_grc_network(G, nav):
 <p class="small">Third-party and sibling material, described in its publisher's own terms and linked, not reproduced. Vaults are named by id; each opens from its publisher's page with the read key published there. Surveyed {E(N["surveyed"])}.</p>
 '''
     page('grc/network/index.html', 'From the network: sgit risk models, vaults and standards graphs mapped to php2shell', 'The risk models, fractal registers, semantic graphs and standards vaults across the sgit network, and which php2shell risks and frameworks each bears on.', body, kind='analysis', topics='php2shell grc network', origin='external')
+
+# ----------------------------------------------------------------------------- joining: a key, and feedback from any page (conductor@php.newsroom)
+# The editor's memo of 22 October 2026: feedback from any page, signed, after an onboarding as simple as a QR code. The
+# brief: admin/content/briefs/2026-10-22__brief__feedback-keys-and-review.md. The page is a shell; assets/feedback/join.js
+# makes the key and sends the enrolment; data/contributors.json lists the invitations (hashes) and the enrolled keys.
+
+def build_join():
+    C = load('contributors')
+    roles = dict(C['roles'])
+    keys = table(['Handle', 'Role', 'Signing key', 'Device', 'Enrolled'], [[E(k['handle']), E(k['role']), f'<code>{E(k["signing_fingerprint"])}</code>', E(k['device']), E(k['enrolled'])] for k in C['keys']]) if C['keys'] else '<p class="small">None yet.</p>'
+    body = f'''
+<p class="crumb"><a href="../collaborators/index.html">Power users</a> / Join</p>
+<h1>Join: a key for this device, in one tap</h1>
+<p class="lead">To give feedback on this site you sign it with a key of your own, so the team knows who it came from. Getting one is one tap: open the invitation the editor sent you (a link or a QR code), and this page makes a key on this device and sends it to him.</p>
+<noscript><p class="sub-err">This page needs JavaScript: the key is made in your browser.</p></noscript>
+<div id="join-app" class="subform"><p class="small">Loading…</p></div>
+{section("how", "How it works", '''<ol>
+<li><b>An invitation.</b> Ask Dinis, by email or on WhatsApp, or with <a href="../collaborators/index.html#join">the join form</a>. He makes it on his phone (<a href="invite/index.html">Invite</a>) and sends you a link or a QR code meant for you alone.</li>
+<li><b>One tap.</b> The link opens this page, which makes a key pair in your browser: one half signs, the other half is public. The signing half stays in this browser and cannot be copied out of it, by this site or anyone else.</li>
+<li><b>Enrolled.</b> Your public key goes to the team, encrypted, with the invitation. When the invitation's signature checks out, your key is added to the list below; from then on what you sign shows as yours.</li>
+<li><b>Feedback from any page.</b> Press <b>Feedback</b>, next to Ask at the top of every page: say what is wrong, unclear, missing or good, with a screenshot if you like, and send. It is signed with your key and encrypted to the team.</li>
+</ol>''')}
+{section("keys", "Enrolled keys", keys, "Handles and fingerprints only, never a name. " + "; ".join(f"{E(r)}: {E(t)}" for r, t in C["roles"]) + ".")}
+{section("limits", "What it does not do", '''<ul>
+<li>A key belongs to one browser on one device. Another device needs its own invitation; clearing this site's data deletes the key.</li>
+<li>An invitation is a credential until it is used: whoever opens it first can join with it. Each one enrols at most three devices and expires in two weeks.</li>
+<li>A signature proves which key wrote a message, not who holds the key: that is what the editor's enrolment adds.</li>
+</ul><p class="small">Keys are in pki.sgit.ai's and sgit's format, so <code>sgit pki verify</code> checks every signature. The brief is on <a href="../admin/briefs/index.html#2026-10-22__brief__feedback-keys-and-review">briefs</a>.</p>''')}
+<script type="module" src="../assets/feedback/join.js"></script>
+'''
+    body2 = f'''
+<p class="crumb"><a href="../../collaborators/index.html">Power users</a> / <a href="../index.html">Join</a> / Invite</p>
+<h1>Invite someone: a link and a QR code, signed on this device</h1>
+<p class="lead">For a key that may invite ({E(", ".join(C["rules"]["may_invite"]))}). Give the person a handle (never their name), pick a role and how long the invitation lasts, and this page signs it with this device's key and shows a QR code, a link and a share button. Nothing is stored anywhere: when they join, the invitation is checked against your key, and their key is enrolled.</p>
+<noscript><p class="sub-err">This page needs JavaScript: the invitation is signed in your browser.</p></noscript>
+<div id="invite-app"><p class="small">Loading\u2026</p></div>
+<p class="small">An invitation enrols at most {C["rules"]["devices_per_invitation"]} devices and is a credential until it is used: send it to one person, in a private message.</p>
+<script type="module" src="../../assets/feedback/invite.js"></script>
+'''
+    page('join/invite/index.html', 'Invite someone: a link and a QR code, signed on this device', 'For the editor: make an invitation to give signed feedback on this site, as a QR code, a link and a share button, signed in the browser with an enrolled key.', body2, kind='account')
+    page('join/index.html', 'Join: a key for this device, in one tap', 'Open the invitation the editor sent you and this page makes a key on your device, so the feedback you send from any page is signed as yours; the enrolled keys, as handles and fingerprints.', body, kind='account')
+
+# ----------------------------------------------------------------------------- where every agent is (conductor@php.newsroom)
+# The editor's memo of 23 October 2026 (admin/content/briefs/2026-10-23__brief__day-two-situation-awareness.md): the
+# status of every agent, the vaults and the desk. data/agents-status.json is the conductor's snapshot, read from the
+# sessions, the branches and the schedules without asking any agent; this page draws it.
+
+def build_status_page():
+    S = load('agents-status')
+    members = {m['id']: m for m in TEAM['members']}
+    STATE = {'working': 'confirmed', 'blocked': 'contradicted', 'review ready': 'disputed', 'completed': 'reported'}
+    def who(a):
+        m = members.get(a['member'])
+        return f'<a href="../{E(a["member"])}/index.html">{E(a["agent"])}</a>' if m else E(a['agent'])
+    order = {'blocked': 0, 'review ready': 1, 'working': 2, 'completed': 3}
+    ag = sorted(S['agents'], key=lambda a: (order.get(a['state'], 9), a['last']))
+    rows = [[who(a), f'<span class="st st-{STATE.get(a["state"], "other")}">{E(a["state"])}</span>', E(a['last'].replace('T', ' ')), E(a['did']),
+             E(a['waiting']) + (f'<div class="note">on: {E(a["on"])}</div>' if a['on'] else ''), ('$' + format(a['cost'], '.2f')) if a['cost'] is not None else '']
+            for a in ag]
+    st = Counter(a['state'] for a in S['agents'])
+    on_ed = sum(1 for a in S['agents'] if 'editor' in a['on'])
+    total = sum(a['cost'] for a in S['agents'] if a['cost'] is not None)
+    stats = ''.join(stat(n, l) for n, l in [(len(S['agents']), 'agents'), (st.get('working', 0), 'working'), (st.get('blocked', 0), 'blocked'), (on_ed, 'waiting on the editor'),
+                                            (len(S['branches']), 'branches waiting for dev'), ('$' + str(round(total)), 'spent, sessions so far')])
+    body = f'''
+<p class="crumb"><a href="../index.html">The team</a> / Status</p>
+<h1>Status: where every agent is</h1>
+<p class="lead">{E(S["about"])}</p>
+<p class="kv"><b>As of</b> {E(S["as_of"].replace("T", " "))} UTC &middot; <b>live site</b> v{E(S["live_version"])}</p>
+<div class="stats">{stats}</div>
+{section("decisions", "What needs a decision first", "<ol>" + "".join(f"<li>{E(x)}</li>" for x in S["decisions"]) + "</ol>")}
+{section("agents", "Every agent", table(["Agent", "State", "Last activity (UTC)", "Last did", "Waiting for", "Cost"], rows, "board"), "Blocked first, then ready for review, then working, then done.")}
+{section("branches", "Branches waiting to be carried into dev", table(["Branch", "By", "Commits ahead", "What"], [[f"<code>{E(b)}</code>", E(w), str(n), E(t)] for b, w, n, t in S["branches"]], "board"), "Agents push to their own branches; dev@php.newsroom carries them into dev and releases. Until then, none of this is on the site.")}
+{section("schedules", "What ran on its own", table(["Schedule", "State"], [[E(a), E(b)] for a, b in S["schedules"]]), 'The register of schedules and every recorded run is on <a href="../runs/index.html">runs</a>.')}
+{section("freshness", "How fresh this site\'s data is", table(["Data", "As of", "Note"], [[E(a), E(b), E(c)] for a, b, c in S["freshness"]]), "The vaults move ahead of the site; a fact reaches the site only when its vault is exported and the site released.")}
+'''
+    page('team/status/index.html', 'Status: where every agent is', 'Every agent on the team: what it last did, what it waits for and from whom, the branches waiting for dev, what ran on a schedule and how fresh the data is; a snapshot by the conductor.', body, kind='site', topics='team agents')
 
 
 if __name__ == '__main__':

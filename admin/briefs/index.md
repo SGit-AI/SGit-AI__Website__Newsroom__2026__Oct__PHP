@@ -8,6 +8,40 @@ The build briefs for this site, published in full before the work, newest first.
 
 A brief is written before the work and published as written: what was asked, in whose words, what exists to build on, the design, what it cannot do, the deliverables and the open questions. The newsroom and the sgit.ai sites keep theirs the same way. The file is the record; this page renders `admin/content/briefs/`, newest first. The written request and the two voice memos that started the site are on [the brief](../../brief/index.html).
 
+2026-10-23 · `2026-10-23__brief__day-two-situation-awareness.md`
+
+## Day two: from what happened to what is happening; and where every agent is
+
+Status: recorded on the morning of 23 October 2026; part 3 (the agents' status) started. Brief by Dinis Cruz (editor), a voice memo to the conductor; written up by conductor@php.newsroom.
+
+### The ask, in the editor's words (through a transcriber, condensed)
+
+"This is day two of the news story, and it's important to think of the story as an evolving thing. We moved from yesterday's front page, which was what is going on, to the next stage: what is happening today, what is the current situation, situation awareness. We need to experiment with different types of homepages and customised pages, because this is what we want the users to experience. New users also need that personalised homepage and that view of: I have seen this, what is new? That is where the homepage gets interesting. So a couple more design rounds, and A/B tests on what is the best homepage, the best way to present the material so it is engaging; and are we moving to a push of material rather than a pull? It is an important visualisation and understanding: what is going on on the site?
+
+One challenge is the website news and the retrieval we need to do. I was thinking of a lambda function, but we already have a Playwright image we can deploy, so I'm going to start there: install it and retrieve the same website from around the world, see how it plays out, and map it from there.
+
+For the conductor: I need to know the status of all agents. The first focus is situation awareness of the data points: make sure the vaults are updated, the desk is updated, and get a status update from all agents. Maybe the conductor runs all the agents in its environment in one go, to make sure we have a status update on all of them; see if we can run the agents on Sonnet, one by one, and create a mapping. I can spin up all of the agents in one go, and we could use a workflow if needed, though Claude might do that. First thing this morning: let's understand where we are."
+
+### Three pieces of work
+
+1. **Day two's front page: situation awareness.** The front page moves from "what happened" to "what is the situation now", and a returning reader sees what changed since they last looked. Design rounds and A/B tests between homepage variants; the question of push (we tell you) against pull (you come and look). The design agent and dev@php.newsroom own the pages; the site already has the delta per item (`/you/`, the reading record), the feeds, subscriptions and the phone app to build on.
+
+2. **Retrieval from around the world** with the Playwright image (sg-playwright), deployed in several regions, fetching the same pages to see what each region is served. The editor starts this himself.
+
+3. **Where every agent is**, the conductor's: what each agent last did, what it is waiting for and from whom, which branches wait to be carried into dev, which schedules ran, whether the vaults are current; published where the team and the editor can read it, refreshed at every run. Then the question of running every agent on a schedule, on Sonnet, one by one, and mapping what each needs (the digital twin brief of 22 October).
+
+### What the conductor can see without asking anyone
+
+- Every session's state (working, blocked on the editor, review ready, completed) and its last message, from the session list and each session's record.
+
+- Every branch, how far it is ahead of dev and its last commit; what reached dev and when; the live version.
+
+- Every scheduled task on the editor's account and every GitHub workflow, with their last runs.
+
+- The board, by owner and status.
+
+What it cannot see without asking: work an agent has in its container and has not pushed, and what it would do next. That needs a message to each session, which the editor approves.
+
 2026-10-22 · `2026-10-22__triage__the-newsrooms-review.md`
 
 ## Triage: the newsroom's review of this site, checked against v0.2.10
@@ -630,6 +664,76 @@ Status: accepted, by being sent. Author: Dinis Cruz, editor. A voice memo to the
 
 - The semantic graph drawn as a graph on the phone: today each item lists its connections.
 
+2026-10-22 · `2026-10-22__brief__the-organisation-as-a-digital-twin.md`
+
+## The organisation as a digital twin: a state machine of roles, runs and handovers; and four briefs that ride with it
+
+Status: recorded, not started. Brief by Dinis Cruz (editor), a voice memo of 22 October 2026 recorded cycling home, to the conductor; written up by conductor@php.newsroom. Five briefs in one recording, kept apart below so each can be picked up on its own.
+
+### The ask, in the editor's words (through a transcriber, condensed)
+
+"We need to create a digital twin for our organisation. We now have a lot of agents, and it's the whole communication flow: how do we communicate effectively as a team, and how do we map it out? The problem is how do you keep sixteen agents synchronised on the same task, aligned, with some kind of broadcast. And we want to do it with a minimum of private data: ideally only the public keys, the vaults and their read keys. Everything public.
+
+One way is a flow where the agents run at specific times of the day, or specific runs that run all the agents. A lot of the agents can run with Sonnet, which should be the model we go for, at least the ones that run at regular intervals. We should map the tasks they should be doing.
+
+We need a digital twin of our organisation that we can visualise as a team: the roles, the dependencies, the handovers. All we are building is a state machine. Map the roles that need to run regularly and the roles that run for a specific operation, and see those runs; we might have a vault for that. Then we can ask the model: we need the site updated every hour, what's needed to do that? This research, that data. And we are adding ChatGPT, Perplexity and maybe other agents to the mix, so the flow has to take them into account: a control flow, if this then that, and the exceptions. What happens if there is a major vulnerability, a major exploit, a major problem? What's the escalation? Ultimately the website should run by itself. I should not be the one controlling what happens next. Once it stabilises, it should just run, unless major news occurs.
+
+The power of the digital twin is the intermediate representation: simulations, tests, visualisations and mappings without dealing with the real thing; and it shows the primitives in our ontology, taxonomies and graphs. A story, a website, evidence, a fact: each schema becomes a twin we can replace with the real one. It solidifies our schema. Meaning comes through connectivity, but eventually we normalise on a schema, a definition of events, across languages, cultures and terms: a schema that emerges, not one defined top down, and that we commit to change over time and maintain.
+
+Agents have no memory apart from what we give them between runs. If an agent does its passes and then the ontology agent improves the mappings, the next time the first agent starts it reads the vault and takes it from there."
+
+Then, bundled in the same recording:
+
+1. **Every run ends in an article.** "Every agent, when it finishes a piece of work, writes an article with a full debrief of what happened, explaining to the other agents and to me what was done; and a JSON object with a common schema, so we can visualise it and make stats from it."
+
+2. **The accountant agent**, as defined on the Send site: "Not just about saving money. Tracking tokens is one requirement: how many tokens, what it cost, per run. It is responsible for making everybody more productive: finding inefficiencies, seeing the connections and the requests between agents, because agents giving tasks to agents gets inefficient. How much raw data is read versus JSON versus programmatic: we want to move to programmatic and deterministic actions as much as possible; a search or a query should read JSON files. Every action connected to the agent behaviour policy that triggered it. We have a good review on one of the ABP sites: for every session of work, the objectives, what was done, the number of actions, calls, files opened, commits, network calls. It's also a great way to detect security vulnerabilities, which the security agent should check."
+
+3. **A bulletin board**: "a page where agents push notifications that other agents can read, and maybe an inbox per agent. But don't fully build the email system yet: make sure it is as efficient as possible. I have seen sites end up with a huge number of messages that were not needed."
+
+4. **A self-improvement loop**: "One agent with the responsibility to propose fixes and improvements to the whole workflow, the desk or the conductor: every day it looks at what inefficiencies we have and what we can do better, even new visualisations. This is why we need a budget, or this gets out of control very fast."
+
+### What exists to build on
+
+- `/team/` and `data/team.json`: every member, human and agent, with what each owns; `/team/runs/` and `data/schedules.json`: every schedule, the quiet hours, and every recorded run with the article it should leave (the article rule, proposed). This is the first, flat version of the twin: nodes without the edges that make it a state machine.
+
+- The board (`data/admin.json`), the run records each desk already publishes (releases, the source watch's runs, the fact-check runs, the synthetic readers), and the section ledger: the events a state machine would consume.
+
+- The scheduled tasks on the editor's account, paused on 22 October until he has reviewed them; the agent behaviour policy work in `admin/security/abp/`.
+
+- The fact-check desk's and the GRC desk's runbooks: two agents that already run from a written procedure against stated inputs.
+
+### A proposed design (for the editor to cut down)
+
+1. **The twin as data, `data/twin.json`.** Nodes: roles (each member of `team.json`), artefacts (a source, a capture, a claim, a fact, a story, a page, a release: the schemas the editor names), and runs. Edges, typed: *produces*, *consumes*, *hands over to*, *triggers*, *escalates to*, *blocks*. Each role gets its triggers (a time, a change in an artefact, an event such as a KEV listing) and its outputs. Built and checked by the build like every other data file: an edge to a role or artefact that does not exist fails the gate.
+
+2. **The state machine, drawn.** `/team/twin/`: the roles and artefacts as a graph, the handovers as arrows, the schedules on a 24-hour clock with the quiet hours shaded, and the escalation paths (major vulnerability, major exploit, a contradiction the fact-check desk cannot resolve) drawn as their own lanes. "What does an hourly site need?" is answered by walking the graph back from *page published*.
+
+3. **Simulation before the real thing.** Each artefact schema gets a twin: a synthetic instance (a made-up source, claim, fact, story) that flows through the graph in a dry run, so a change to a schema or a handover is tested on twins before any agent runs it. The dry run is a script over `twin.json`; its report says which roles would run, in what order, what each would read and write, and where it would stall.
+
+4. **The run record, `sgit.newsroom.run/1`.** One JSON object per run, the same for every agent: who, which trigger, model, started and finished, objectives, what was read (raw pages, JSON files, programmatic calls, counted separately), what was written, commits, network calls, tokens in and out, cost, the article it left, what it handed over and to whom. `/team/runs/` reads these instead of each desk's own format. The article is the human version of the same run.
+
+5. **The accountant**, a role that runs after the agents: reads the run records, totals tokens and cost per agent, per artefact and per day against a budget, flags runs that read raw where JSON exists, messages that nobody acted on, and loops between agents; publishes a daily ledger and proposes the cuts. The security desk reads the same records for actions no policy allows.
+
+6. **The bulletin board**, before any mail: one append-only file per agent per day under `admin/board/notices/`, a page that shows the last day's notices, and a rule that a notice names who must act. Mail between agents only where a notice is not enough.
+
+7. **The improvement loop**, owned by the conductor until a desk takes it: one short daily proposal, read by the editor, drawn from the accountant's ledger and the twin's dry runs, with a budget it may not exceed.
+
+8. **Scheduled roles on Sonnet** by default; a role that needs a larger model says why in the twin.
+
+### Order, if the editor agrees
+
+The run record first (it is the input to everything else), then `twin.json` and its page from what exists today, then the accountant, then the board, then the dry runs. Nothing scheduled starts again until the editor has reviewed the twin's clock.
+
+### Open questions for the editor
+
+- The budget: per day, per agent, or per run; and who may raise it.
+
+- The escalation ladder: who is woken, by what, at night (the quiet hours say no one, by default).
+
+- Which outside agents join (ChatGPT, Perplexity) and through what: their own vault and lane, or a desk that runs them.
+
+- The ABP site with the per-session review the editor mentioned: which one, so the run record matches it.
+
 2026-10-22 · `2026-10-22__brief__the-fact-checker.md`
 
 ## Brief: a fact-checker joins the team
@@ -888,6 +992,70 @@ So the other couple of stories that we need to capture, and I think this is impo
 
 - Material from the network is described in its publisher's terms and linked, never cited as evidence about the flaws. Vault read keys are not copied here: each vault is named by id and opens from its publisher's page.
 
+2026-10-22 · `2026-10-22__brief__feedback-keys-and-review.md`
+
+## Feedback from any page, signed; onboarding by QR code; a review queue for the editor
+
+Status: phase 1 being built on branch conductor/collaborators. Brief by Dinis Cruz (editor), a voice memo of 22 October 2026 to the conductor; written up by conductor@php.newsroom. Build brief, the kind an agent executes.
+
+### The ask, in the editor's words (through a transcriber, condensed)
+
+"We should have an append lane to provide feedback from the website: anybody, in any part of the website, can open the sidebar and provide feedback about the page, with screenshots, something that somebody can then open and review. Maybe we need a new agent that reviews it. That includes me.
+
+What's cool is that you can now sign it. Anybody who wants to provide feedback for now needs to have a key: they go through the onboarding process. Part of the exercise is to make this onboarding as simple as possible. Take the workflow we have with the PKI and make it super simple: here is the flow, here is a QR code, we just created your thing; even me giving them a QR code to paste, with what they need, my public key, and some instructions. I want to onboard more contributors and more people. If you want to provide feedback and be involved, contact me by email or ping me on WhatsApp, and we create that web of trust.
+
+The other thing is for me. You have my key, and I can identify myself. How can we create UIs unique to me, and to the team? We have lots of new pages and I need to review them: see what is there, provide comments, on an iPad: next, next, next. How can you get feedback from me, and especially you, the conductor, on the pages that are being created and the pages that will be created next?"
+
+### What exists to build on
+
+- The pane on the right of every page (`assets/ask/ask.js`, dev@php.newsroom's): tabs, and the reader's vault in the same key slot as the phone app.
+
+- The collaborators vault (58526ytp) and its public write-only lane, encrypted in the browser to `sha256:e3ff50abd96816ef`, drained by `admin/build/collaborators_drain.py`: join requests and feedback from /collaborators/ already arrive there.
+
+- pki.sgit.ai's key formats: a key pair is RSA-OAEP 4096 (to receive secrets) and ECDSA P-256 (to sign), the public half the JSON bundle `sgit pki export` emits, the fingerprint `sha256:` and the first 16 hex of the SHA-256 of the key's SPKI bytes; `sgit pki verify` checks a signature. The register's web of trust (invitations, two-way links, the editor as root) is where these keys can go later.
+
+- The section ledger (`data/sections.json`): every page and section with its versions, so "what is new or changed since I last looked" is already counted.
+
+### The design
+
+#### Phase 1: a key, an invitation, and feedback from any page
+
+1. **A key per device, made in the browser.** On `/join/`, the browser makes the person's key pair with Web Crypto, in sgit's format. The private halves are kept in this browser as non-extractable keys (IndexedDB): they sign, and nothing on the page, no script and no extension that reads the page's storage, can read them back out. The public bundle and its fingerprint are shown.
+
+2. **The invitation is a QR code, made in the browser.** On `/join/invite/`, a device whose key is enrolled with a role that may invite (the editor, for now) types a handle (never a name), picks a role and how long it lasts, and the page signs the invitation with that key and shows a QR code, the link and a share button (WhatsApp, Messages, email). The invitation is `https://php.oct.2026.newsroom.sgit.ai/join/#i1.`: self-verifying, so nothing is written anywhere when it is made. The editor's correction of 22 October: "all of these need to be run from a browser; we cannot have any command to be typed from a Python environment: look at how we do it with pki.sgit.ai." The one exception is the very first key, the editor's own, which the conductor bootstraps with `admin/build/invite.py` and hands to him sealed to his pki.sgit.ai key.
+
+3. **Joining is one tap, and enrolment is automatic.** The join page makes the key and sends an enrolment, `{kind: "enrol", invite, handle, bundle, device}`, signed by the new key and encrypted to the collaborators key, to the collaborators lane. When the conductor's run drains the lane, the key is enrolled if the enrolment's signature verifies and the invitation's signature verifies against an enrolled key that may invite, in date and with devices left. Nobody types anything.
+
+4. **Feedback from any page.** A Feedback tab in the pane: the page and version are filled in; a kind (something wrong, unclear, missing, an idea, good); the text; a screenshot (pick a file, or capture this screen, scaled down in the browser). It is signed with the person's key over its canonical bytes, encrypted to the collaborators key, and posted to the lane. Without a key, the tab says how to get one: ask the editor by email or WhatsApp, as /collaborators/ says.
+
+5. **Draining verifies.** `collaborators_drain.py` checks every signature with `sgit pki verify` against the bundle the message carries, and marks each row `signed by an enrolled key`, `signed by an unknown key` or `unsigned`. Screenshots are saved next to the row. Nothing reaches the site; the conductor turns feedback into board items, and a feedback desk agent can take this over.
+
+#### Phase 2: the editor's review queue
+
+6. **`/review/`**, for a key with the role editor (and later the team): every page and section that is new or changed since the reviewer last looked, from the section ledger, one at a time, sized for an iPad: the page, then Next, Good, Needs work, a comment. Each decision is signed feedback of kind `review`, so the conductor reads the editor's reviews from the same lane. Where the reviewer has got to is kept in this browser and in their vault.
+
+7. **The conductor's queue**, the same view of what the agents are about to publish: the branches waiting for dev@, so the editor reviews before the release, not after.
+
+### What it cannot do, said up front
+
+- A key in one browser is that device's key: a second device is a second invitation. Moving a key between devices, and linking it to the person's record on pki.sgit.ai, is later.
+
+- The invitation code is a bearer credential until it is used: whoever sees the QR code can enrol with it. Send it to one person; each code enrols at most three devices and expires in fourteen days.
+
+- Signing proves which key wrote a message, not who holds it: that is what the editor's enrolment adds, and only as far as the person he sent the code to.
+
+- The lane is public, so anyone can still post unsigned rows; they are kept and marked unsigned.
+
+- The site only shows fingerprints and handles, never a name, unless the person agreed.
+
+### Deliverables (phase 1)
+
+- `/join/` and `assets/feedback/identity.js` (keys, signing, the envelope, the lane), `assets/feedback/join.js`, the Feedback tab (`assets/feedback/pane.js`, loaded by the pane).
+
+- `/join/invite/` and `assets/feedback/invite.js` (invitations signed in the browser, QR code from pki.sgit.ai's vendored generator); `data/contributors.json` (enrolled keys, invitations as hashes); automatic enrolment in the drain (`admin/build/contributors.py`); `admin/build/invite.py` for the bootstrap only.
+
+- Tested end to end in Chromium with two separate browser profiles: the editor's first key bootstrapped and enrolled; an invitation signed on his device; a second device joining with it, enrolled automatically, and sending feedback that drains as signed by an enrolled key. Negative controls: a changed word, page, role or expiry fails, and a key that may not invite cannot.
+
 2026-10-22 · `2026-10-22__brief__collaborators.md`
 
 ## Collaborators: the people who use the site as it is built
@@ -950,4 +1118,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.7.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

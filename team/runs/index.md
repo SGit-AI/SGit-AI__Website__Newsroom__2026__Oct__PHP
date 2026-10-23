@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Times are UTC unless they say London.
 
-3schedules29runs a night, today52runs recorded11runs with changes and no article
+3schedules29runs a night, today57runs recorded11runs with changes and no article
 
 ## Quiet hours
 
@@ -34,10 +34,14 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 41, synthetic@php.newsroom: 6, researcher@php.newsroom: 3, Fact-check desk: 2.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 46, synthetic@php.newsroom: 6, researcher@php.newsroom: 3, Fact-check desk: 2.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
+| 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.4` | who reads this site, by group: every session a reader, the editor, a power user or team member, synthetic (agents and tests) or a crawler, declared by the browser from now on (automation by class, the role of a /join/ key or of this browser's setting) and inferred before; the groups, an hourly chart and a world map of readers on /admin/telemetry/; and a public stats vault (0cfkdcvh, read key published) with its own app, updated at every drain by admin/build/telemetry_flow.sh | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.3` | your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) and from step 0 of If you run PHP; the telemetry lane drained on the morning of 23 October: 483 events overnight, 758 in all | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.2` | status (/team/status/): where every agent is on the morning of 23 October, what each last did and waits for and from whom, the eleven branches waiting for dev, what ran on a schedule overnight, how fresh the site's data is against its vaults; and the brief for day two, situation awareness | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.1` | your stack, the blast radius (/stack/): describe what you run, the internet, the edge, the applications, the platforms and PHP runtimes, data, secrets and services, and see each runtime against both CVEs (versions, backports in the inventory, SAPI, exposure, settings, edge rules), the blast radius as a graph, what to do first and what on the site is about your stack, kept in your browser and your vault; and the warning and info colours restored on every page (their tokens were mapped to themselves since v0.2.4) | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-22T20:52Z | [Fact-check desk](../verifier/index.html) | Fact-check run | `Run-2` | 1 high finding; 1 contradiction (K-011); 5 new evidence (1 high); 0 tickets closed | yes | missing | [output](../../factcheck/index.html) |
 | 2026-10-22T18:14Z | [Fact-check desk](../verifier/index.html) | Fact-check run | `Run-1` | 3 high, 56 medium and 65 low findings; 3 evidence gaps; 10 contradictions; 6 new evidence | yes | missing | [output](../../factcheck/index.html) |
 | 2026-10-22T17:56:14Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Designer | `designer/2026-10-22T1755Z` | site v0.4.3: 0 high, 2 medium checks; answered the question partly | yes | missing | [output](../../admin/synthetic/index.html) |
@@ -49,6 +53,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-22T15:08:54Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261022T150854Z` | 143 pages due, 143 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-22T14:54:44Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261022T145444Z` | 1 pages due, 1 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-22T14:20:33Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261022T142033Z` | 184 pages due, 125 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
+| 2026-10-22 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.0` | feedback from any page, signed: a Feedback button beside Ask on every page (what is wrong, unclear, missing or good, with a screenshot), signed with a key made on the reader's device; /join/ makes the key from an invitation in one tap and /join/invite/ makes invitations in the browser, as a QR code and a share button, signed by the editor's key; keys are enrolled automatically when both signatures check; and the brief for the organisation as a digital twin | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-22 | [dev@php.newsroom](../dev/index.html) | Release | `v0.7.0` | power users, start here (/collaborators/): a generic onboarding for the people the editor nudges in his WhatsApp group and by email, the latest ask with its messages, and join and feedback forms encrypted to a private vault; runs (/team/runs/): every schedule the agents run, the quiet hours, and every recorded run with the article it should leave | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-22 | [dev@php.newsroom](../dev/index.html) | Release | `v0.6.0` | GRC: a new section, /grc/, with fractal risk registers for php2shell (34 risks assigned to 53 stakeholders, each joined to its weakness, CVE, fix, code, stories and roles, mapped to 95 controls in 20 frameworks including GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001 and NIST), and the data protection officer added to the readers with a briefing on exposure, the GDPR 72-hour clock and what to document | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-22 | [dev@php.newsroom](../dev/index.html) | Release | `v0.5.9` | no named organisation has said it was compromised through php2shell: claim no-confirmed-compromise reworded with its time (20:50 UTC, 22 October) and moved from confirmed to reported, the plain-English lines that said nobody had confirmed a break-in corrected, and a page of its own (/compromise/) mapping the evidence behind the statement: what was searched, 33 statements by kind with their sources or source-watch snapshots, the layers from attempts to a named compromise, a timeline, and what would change it | yes | its release note | [output](../../admin/versions.html) |
@@ -93,4 +98,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.7.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

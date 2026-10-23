@@ -71,7 +71,8 @@
   "conductor": "conductor",
   "vicky": "vicky",
   "grc": "grc",
-  "grc@php.newsroom": "grc"
+  "grc@php.newsroom": "grc",
+  "security": "security"
  },
  "groups": [
   {
