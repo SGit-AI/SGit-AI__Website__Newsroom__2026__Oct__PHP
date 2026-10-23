@@ -58,4 +58,4 @@ Sources: cisa-kev-json, cve-cve-2024-4577, akamai-blog-cve-2024-4577-one-day
 
 
 ---
-site v0.9.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.html
+site v0.10.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.html

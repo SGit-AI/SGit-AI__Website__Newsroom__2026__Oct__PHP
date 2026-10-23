@@ -1,6 +1,15 @@
 {
- "current": "0.9.3",
+ "current": "0.10.0",
  "versions": [
+  {
+   "version": "0.10.0",
+   "date": "2026-10-23",
+   "title": "the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); which pages each reader sees; the menu per view; four mockups built from the live data: a board member's front page, a security lead's three-column front page, the agencies as answer, picture and cards, and a team console with its own menu",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.9.3",
    "date": "2026-10-23",

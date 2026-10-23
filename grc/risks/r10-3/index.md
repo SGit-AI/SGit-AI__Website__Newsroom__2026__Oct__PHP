@@ -55,4 +55,4 @@ On this site: [Fact-check: how sure can you be of each claim](../../../factcheck
 
 
 ---
-site v0.9.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10-3/index.html
+site v0.10.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10-3/index.html
