@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 89 items, 63 open, 25 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 118 items, 83 open, 33 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -99,9 +99,38 @@ The work, as rows in `data/admin.json`: 89 items, 63 open, 25 done. An item is a
 | 087 | Run the desk on a schedule, every four hours: the claims that changed, the open tickets, the weak and the contested, KEV and the moving sources; a full sweep once a dayFrom the brief: a fact-checker joins the team (22 October). | open | factcheck |  |
 | 088 | Act on the desk's high and medium findings on claims, agencies, exploitation and impact data: first Italy's offline advice, the allies' 'contradicted' mark, the five quotes not in their captures, and the eleven overstated status words (tickets on /factcheck/)From the brief: a fact-checker joins the team (22 October). | open | claude-story-site |  |
 | 089 | Capture what the desk found outside the vault: the BBC live page as it stands (32 UK services, 90%), The Next Web, the PHPocalypse Tracker's sites.csv, KEV each run; then re-grade the claims they bear onFrom the brief: a fact-checker joins the team (22 October). | open | collector-researchers |  |
+| 090 | The telemetry dashboard: a new private vault (i4diy82d) with a vault app over the telemetry vault, linked inside it read-only (vault-in-vault); its key sealed to the editor | done | dev@php.newsroom | 0.5.7 |
+| 091 | The telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages); the telemetry vault imports it and drains its own lane from the browser (Queue & drain: the count waiting, the passphrase-sealed key, push before mark-processed); the dashboard vault i4diy82d superseded | done | dev@php.newsroom | 0.5.10 |
+| 092 | Record the holders' acceptance of the newsroom's own risks (R10 and beneath it): accept for an interval, fund or fix; nobody can accept them for the editorFrom the brief: a GRC desk joins the team (22 October). | open | editor |  |
+| 093 | A story on the reporting clocks php2shell can start (GDPR 72 hours, NIS2 24 hours, the Cyber Resilience Act's 24-hour report since 11 September 2026, DORA): R06 and the risks beneath it have no story yet (/grc/)From the brief: a GRC desk joins the team (22 October). | open | journalist |  |
+| 094 | Fix the cycle in assets/themes/site-tokens.css line 8: --warn-bg, --warn-ink, --info-bg and --info-ink are defined as themselves, so they are invalid and every amber and blue pill and graph edge that reads them renders without colourFrom the brief: a GRC desk joins the team (22 October). | open | claude-story-site |  |
+| 095 | Capture into the vault what the GRC section cites from the sgit network (risks.sgit.ai, the riskmandate.ai model, the newsroom's risk articles) so the network page can cite captures, not live pagesFrom the brief: a GRC desk joins the team (22 October). | open | collector-researchers |  |
+| 096 | GRC run 2: re-rate every risk against the next vault capture (a KEV listing or a confirmed compromise moves R03 and R06), add the stakeholders the next captures name, and map the remaining controls each holder will be asked aboutFrom the brief: a GRC desk joins the team (22 October). | open | grc |  |
+| 097 | Collaborators: /collaborators/ with this week's ask, the WhatsApp and email messages per ask, a join form and a feedback form encrypted to the new collaborators vault (58526ytp); its drain; brief admin/content/briefs/2026-10-22__brief__collaborators.md | done | conductor |  |
+| 098 | Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp groupThe editor confirmed the LinkedIn link on 22 October 2026. | done | editor |  |
+| 099 | Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, key-pair passphrases) to the root: the session's permission check stopped it; the four vault keys are sealed | waiting | conductor |  |
+| 100 | Write ask 002 after the next release worth looking at, and drain the collaborators lane into the board at every close | open | conductor |  |
+| 101 | Quiet hours: decide the window (proposed 22:00 to 07:00 London) and whether the source watch may run through the night while the story is breaking; then the three schedules on /team/runs/ are changed to match | open | editor |  |
+| 102 | Source watch: before scheduling the next pass, check London time and move a pass in the quiet hours to 07:04; a pass that changes something leaves a dated article with run:  | open | researcher@php.newsroom |  |
+| 103 | Fact-check runs: move the schedule to CRON_TZ=Europe/London 52 8-20/4 * * * once the editor agrees; a run that moves a grade or opens a ticket leaves a dated article with run:  | open | factcheck |  |
+| 104 | Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run:  | open | synthetic |  |
+| 105 | Runs: /team/runs/, the register of every schedule (who, where, how often, how many runs fall in the quiet hours) and every recorded run with the article it should leave (data/schedules.json) | done | conductor |  |
+| 106 | Feedback from any page, signed: a Feedback button beside Ask opens the pane's Feedback tab (kind, words, a screenshot from a file or captured), signed with the device's key and encrypted to the collaborators lane; /join/ makes the key from an invitation's QR code in one tap; admin/build/invite.py makes invitations and enrols keys; the drain verifies every signature with sgit pki verify | done | conductor |  |
+| 107 | The editor's review queue, /review/: every page or section new or changed since he last looked, one at a time on an iPad (Next, Good, Needs work, a comment), each decision signed feedback of kind review (brief: 2026-10-22__brief__feedback-keys-and-review.md, phase 2) | open | conductor |  |
+| 108 | Invitations for the editor's own devices (role editor) and for Vicky (role team); then the power users, one invitation each, sent by the editor | open | editor |  |
+| 109 | A feedback desk: who reads the drained feedback every day, turns it into board items and answers the sender; the conductor until an agent takes it | open | conductor |  |
+| 110 | Security review of the feedback keys (assets/feedback/identity.js, join.js, pane.js; admin/build/contributors.py, invite.py): non-extractable keys in IndexedDB, the invitation code in the link's fragment, signatures checked with sgit | open | security |  |
+| 111 | The run record, sgit.newsroom.run/1: one JSON object per agent run (trigger, model, objectives, raw, JSON and programmatic reads, writes, commits, network calls, tokens, cost, article, handovers), read by /team/runs/ (the digital twin brief, step 1) | open | conductor |  |
+| 112 | The organisation as a digital twin: data/twin.json (roles, artefacts, typed edges: produces, consumes, hands over to, triggers, escalates to) and /team/twin/, the state machine drawn, with the schedules on a 24-hour clock and the escalation lanes | open | conductor |  |
+| 113 | The accountant: tokens and cost per agent, artefact and day against a budget; runs that read raw where JSON exists; messages nobody acted on; loops between agents; a daily ledger and the cuts it proposes | open | conductor |  |
+| 114 | A bulletin board for agents (one append-only notice file per agent per day, each naming who must act) before any mail between agents | open | conductor |  |
+| 115 | The twin's open questions: the budget, the escalation ladder at night, which outside agents join (ChatGPT, Perplexity) and how, and which ABP site's per-session review the run record should match | open | editor |  |
+| 116 | Your stack, the blast radius (/stack/): describe what you run (internet, edge, apps, platforms, PHP runtimes, data, secrets, services) and see each runtime against both CVEs, the blast radius as a graph, what to do first and what on the site is about your stack; in the browser and the reader's vault | done | dev@php.newsroom | 0.8.1 |
+| 117 | Stack, next: the pulse's vulnerabilities as rows in data/stack.json (rules beyond PHP: product and version ranges), news from the feeds matched to a saved stack, a test of the vault sync with a real reader vault, deletions that carry across devices | open | dev@php.newsroom |  |
+| 118 | Design: --warn-* and --info-* tokens were mapped to themselves in assets/themes/site-tokens.css (cyclic, so invalid) since v0.2.4: every warning and info pill rendered with no colour. Fixed in v0.8.1; checked in all five themes (computed tokens and a pill on /claims/) | done | dev@php.newsroom | 0.8.1 |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

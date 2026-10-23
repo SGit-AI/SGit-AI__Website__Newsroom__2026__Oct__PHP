@@ -45,7 +45,7 @@ Published: when the source says it was published. Saved: the first capture into 
 ## Where this fact appears
 
 In the briefings for:
-CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOJJamieHead of AppSecLLeeDeveloper
+CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOMMorganData protection officerJJamieHead of AppSecLLeeDeveloper
 And on [every claim](../../claims/index.html#waf).
 
 ## Every version of this fact
@@ -60,4 +60,4 @@ Sources: cisa-alert-php-20261021, ch-bacs-warnung-php, cloudflare-blog-php2shell
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/waf/index.html
+site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/waf/index.html

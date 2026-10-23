@@ -43,7 +43,7 @@ Published: when the source says it was published. Saved: the first capture into 
 ## Where this fact appears
 
 In the briefings for:
-CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOJJamieHead of AppSecLLeeDeveloper
+CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOMMorganData protection officerJJamieHead of AppSecLLeeDeveloper
 And on [every claim](../../claims/index.html#pocs-wrong).
 
 ## Every version of this fact
@@ -58,4 +58,4 @@ Sources: github-rjmendez-phpup-2026, huntress-php2shell-rapid-response
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/pocs-wrong/index.html
+site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/pocs-wrong/index.html

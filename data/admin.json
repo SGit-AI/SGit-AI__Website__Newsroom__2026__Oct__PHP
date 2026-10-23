@@ -774,49 +774,233 @@
   },
   {
    "id": "090",
+   "title": "The telemetry dashboard: a new private vault (i4diy82d) with a vault app over the telemetry vault, linked inside it read-only (vault-in-vault); its key sealed to the editor",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.5.7"
+  },
+  {
+   "id": "091",
+   "title": "The telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages); the telemetry vault imports it and drains its own lane from the browser (Queue & drain: the count waiting, the passphrase-sealed key, push before mark-processed); the dashboard vault i4diy82d superseded",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.5.10"
+  },
+  {
+   "id": "092",
+   "title": "Record the holders' acceptance of the newsroom's own risks (R10 and beneath it): accept for an interval, fund or fix; nobody can accept them for the editor",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief: a GRC desk joins the team (22 October)."
+  },
+  {
+   "id": "093",
+   "title": "A story on the reporting clocks php2shell can start (GDPR 72 hours, NIS2 24 hours, the Cyber Resilience Act's 24-hour report since 11 September 2026, DORA): R06 and the risks beneath it have no story yet (/grc/)",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the brief: a GRC desk joins the team (22 October)."
+  },
+  {
+   "id": "094",
+   "title": "Fix the cycle in assets/themes/site-tokens.css line 8: --warn-bg, --warn-ink, --info-bg and --info-ink are defined as themselves, so they are invalid and every amber and blue pill and graph edge that reads them renders without colour",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the brief: a GRC desk joins the team (22 October)."
+  },
+  {
+   "id": "095",
+   "title": "Capture into the vault what the GRC section cites from the sgit network (risks.sgit.ai, the riskmandate.ai model, the newsroom's risk articles) so the network page can cite captures, not live pages",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: a GRC desk joins the team (22 October)."
+  },
+  {
+   "id": "096",
+   "title": "GRC run 2: re-rate every risk against the next vault capture (a KEV listing or a confirmed compromise moves R03 and R06), add the stakeholders the next captures name, and map the remaining controls each holder will be asked about",
+   "status": "open",
+   "owner": "grc",
+   "note": "From the brief: a GRC desk joins the team (22 October)."
+  },
+  {
+   "id": "097",
+   "title": "Collaborators: /collaborators/ with this week's ask, the WhatsApp and email messages per ask, a join form and a feedback form encrypted to the new collaborators vault (58526ytp); its drain; brief admin/content/briefs/2026-10-22__brief__collaborators.md",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "098",
+   "title": "Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp group",
+   "status": "done",
+   "owner": "editor",
+   "note": "The editor confirmed the LinkedIn link on 22 October 2026."
+  },
+  {
+   "id": "099",
+   "title": "Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, key-pair passphrases) to the root: the session's permission check stopped it; the four vault keys are sealed",
+   "status": "waiting",
+   "owner": "conductor"
+  },
+  {
+   "id": "100",
+   "title": "Write ask 002 after the next release worth looking at, and drain the collaborators lane into the board at every close",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "101",
+   "title": "Quiet hours: decide the window (proposed 22:00 to 07:00 London) and whether the source watch may run through the night while the story is breaking; then the three schedules on /team/runs/ are changed to match",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "102",
+   "title": "Source watch: before scheduling the next pass, check London time and move a pass in the quiet hours to 07:04; a pass that changes something leaves a dated article with run: <run id>",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "103",
+   "title": "Fact-check runs: move the schedule to CRON_TZ=Europe/London 52 8-20/4 * * * once the editor agrees; a run that moves a grade or opens a ticket leaves a dated article with run: <run id>",
+   "status": "open",
+   "owner": "factcheck"
+  },
+  {
+   "id": "104",
+   "title": "Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run: <run id>",
+   "status": "open",
+   "owner": "synthetic"
+  },
+  {
+   "id": "105",
+   "title": "Runs: /team/runs/, the register of every schedule (who, where, how often, how many runs fall in the quiet hours) and every recorded run with the article it should leave (data/schedules.json)",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "106",
+   "title": "Feedback from any page, signed: a Feedback button beside Ask opens the pane's Feedback tab (kind, words, a screenshot from a file or captured), signed with the device's key and encrypted to the collaborators lane; /join/ makes the key from an invitation's QR code in one tap; admin/build/invite.py makes invitations and enrols keys; the drain verifies every signature with sgit pki verify",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "107",
+   "title": "The editor's review queue, /review/: every page or section new or changed since he last looked, one at a time on an iPad (Next, Good, Needs work, a comment), each decision signed feedback of kind review (brief: 2026-10-22__brief__feedback-keys-and-review.md, phase 2)",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "108",
+   "title": "Invitations for the editor's own devices (role editor) and for Vicky (role team); then the power users, one invitation each, sent by the editor",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "109",
+   "title": "A feedback desk: who reads the drained feedback every day, turns it into board items and answers the sender; the conductor until an agent takes it",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "110",
+   "title": "Security review of the feedback keys (assets/feedback/identity.js, join.js, pane.js; admin/build/contributors.py, invite.py): non-extractable keys in IndexedDB, the invitation code in the link's fragment, signatures checked with sgit",
+   "status": "open",
+   "owner": "security"
+  },
+  {
+   "id": "111",
+   "title": "The run record, sgit.newsroom.run/1: one JSON object per agent run (trigger, model, objectives, raw, JSON and programmatic reads, writes, commits, network calls, tokens, cost, article, handovers), read by /team/runs/ (the digital twin brief, step 1)",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "112",
+   "title": "The organisation as a digital twin: data/twin.json (roles, artefacts, typed edges: produces, consumes, hands over to, triggers, escalates to) and /team/twin/, the state machine drawn, with the schedules on a 24-hour clock and the escalation lanes",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "113",
+   "title": "The accountant: tokens and cost per agent, artefact and day against a budget; runs that read raw where JSON exists; messages nobody acted on; loops between agents; a daily ledger and the cuts it proposes",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "114",
+   "title": "A bulletin board for agents (one append-only notice file per agent per day, each naming who must act) before any mail between agents",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "115",
+   "title": "The twin's open questions: the budget, the escalation ladder at night, which outside agents join (ChatGPT, Perplexity) and how, and which ABP site's per-session review the run record should match",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "116",
+   "title": "Your stack, the blast radius (/stack/): describe what you run (internet, edge, apps, platforms, PHP runtimes, data, secrets, services) and see each runtime against both CVEs, the blast radius as a graph, what to do first and what on the site is about your stack; in the browser and the reader's vault",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.1"
+  },
+  {
+   "id": "117",
+   "title": "Stack, next: the pulse's vulnerabilities as rows in data/stack.json (rules beyond PHP: product and version ranges), news from the feeds matched to a saved stack, a test of the vault sync with a real reader vault, deletions that carry across devices",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "118",
+   "title": "Design: --warn-* and --info-* tokens were mapped to themselves in assets/themes/site-tokens.css (cyclic, so invalid) since v0.2.4: every warning and info pill rendered with no colour. Fixed in v0.8.1; checked in all five themes (computed tokens and a pill on /claims/)",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.1"
+  },
+  {
+   "id": "119",
    "title": "Add the news desk chief (desk@php.newsroom) to the team: data/team.json, its member page and board_owners, from the brief 'a news desk chief joins the team'",
    "status": "open",
    "owner": "conductor",
    "note": "From the brief: a news desk chief joins the team (22 October)."
   },
   {
-   "id": "091",
+   "id": "120",
    "title": "Discovery in other languages straight from the source: the national CERTs and public broadcasters of DE, FR, ES, IT, PL, PT, BR and JP, not through Google News (board 077)",
    "status": "open",
    "owner": "researcher@php.newsroom",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "092",
+   "id": "121",
    "title": "The posture map: every EU and EEA national CERT's advice on php2shell coded as offline, isolate or update only, each with its capture",
    "status": "open",
    "owner": "collector-gov",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "093",
+   "id": "122",
    "title": "The denominator: W3Techs PHP share and PHP version shares by country domain (extends 033 and 043), and any per-country host count from Censys, Shodan or VulnCheck",
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "094",
+   "id": "123",
    "title": "Reshape the offline ledger: one row per organisation, a unit (site, platform, whole government), a domain count where known, the source's language and who said it; then a count with its basis on the front page",
    "status": "open",
    "owner": "claude-story-site",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "095",
+   "id": "124",
    "title": "Grade the reshaped offline ledger as rows land, the Netherlands row first, and the basis of the count",
    "status": "open",
    "owner": "factcheck",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "096",
-   "title": "The piece on where the web went dark and why, once 092 and 093 are in, not before",
+   "id": "125",
+   "title": "The piece on where the web went dark and why, once 121 and 122 are in, not before",
    "status": "open",
    "owner": "journalist",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."

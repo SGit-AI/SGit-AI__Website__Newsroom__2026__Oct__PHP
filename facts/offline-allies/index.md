@@ -56,7 +56,7 @@ Published: when the source says it was published. Saved: the first capture into 
 ## Where this fact appears
 
 In the briefings for:
-CCaseyWebsite ownerTTaylorProject or programme managerJJordanBoard member or executiveSSamSecurity leadRRowanJournalistRRobinCISOAAveryCTOJJamieHead of AppSecRRileyCommunications team
+CCaseyWebsite ownerTTaylorProject or programme managerJJordanBoard member or executiveSSamSecurity leadRRowanJournalistRRobinCISOAAveryCTOMMorganData protection officerJJamieHead of AppSecRRileyCommunications team
 And on [every claim](../../claims/index.html#offline-allies).
 
 ## Every version of this fact
@@ -71,4 +71,4 @@ Sources: bbc-live-ckgel5xp2xv9t, acsc-alert-php, certeu-sa-2026-018, ncsc-nl-php
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/offline-allies/index.html
+site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/offline-allies/index.html

@@ -19,10 +19,10 @@ One small file at the site root, [/status.json](../../status.json), that another
 | `story` | "php2shell" |
 | `cves` | ["CVE-2026-109618", "CVE-2026-109619"] |
 | `status` | "developing" |
-| `version` | "0.5.5" |
+| `version` | "0.8.1" |
 | `data_as_of` | "2026-10-22T11:34Z" |
 | `vault_commit` | "200d08971937" |
-| `counts` | {"sources": 144, "captures": 137, "claims": 70, "claims_by_status": {"confirmed": 22, "reported": 33, "disputed": 8, "contradicted": 3, "unverified": 4}, "event |
+| `counts` | {"sources": 144, "captures": 137, "claims": 70, "claims_by_status": {"confirmed": 21, "reported": 34, "disputed": 8, "contradicted": 3, "unverified": 4}, "event |
 | `headline_facts` | [{"id": "two-cves-9.2", "text": "Two critical vulnerabilities, CVE-2026-109618 and CVE-2026-109619, each CVSS v4.0 9.2, fixed in PHP 8.5.12, 8.4.27, 8.3.36 and |
 | `latest_story` | {"title": "Why can't every version of PHP just be patched?", "url": "https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.html", "wr |
 | `links` | {"front": "https://php.oct.2026.newsroom.sgit.ai/index.html", "sources": "https://php.oct.2026.newsroom.sgit.ai/sources/index.html", "claims": "https://php.oct. |
@@ -49,7 +49,7 @@ One small file at the site root, [/status.json](../../status.json), that another
   "CVE-2026-109619"
  ],
  "status": "developing",
- "version": "0.5.5",
+ "version": "0.8.1",
  "data_as_of": "2026-10-22T11:34Z",
  "vault_commit": "200d08971937",
  "counts": {
@@ -57,8 +57,8 @@ One small file at the site root, [/status.json](../../status.json), that another
   "captures": 137,
   "claims": 70,
   "claims_by_status": {
-   "confirmed": 22,
-   "reported": 33,
+   "confirmed": 21,
+   "reported": 34,
    "disputed": 8,
    "contradicted": 3,
    "unverified": 4
@@ -84,14 +84,18 @@ One small file at the site root, [/status.json](../../status.json), that another
   },
   {
    "id": "no-confirmed-compromise",
-   "text": "No named organisation has confirmed a compromise through php2shell",
-   "status": "confirmed",
+   "text": "As of 20:50 UTC on 22 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.",
+   "status": "reported",
    "url": "https://php.oct.2026.newsroom.sgit.ai/claims/index.html#no-confirmed-compromise",
    "sources": [
     "cisa-kev-json",
+    "cisa-alert-php-20261021",
     "huntress-php2shell-rapid-response",
-    "imperva-blog-php2shell",
     "aws-security-blog-madpot",
+    "securityweek-first-attempts-sensors",
+    "securityweek-exploitation-days-before",
+    "recordedfuture-php2shell",
+    "imperva-blog-php2shell",
     "weirdgloop-blog-php2shell"
    ]
   },
@@ -127,4 +131,4 @@ One small file at the site root, [/status.json](../../status.json), that another
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html
+site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html

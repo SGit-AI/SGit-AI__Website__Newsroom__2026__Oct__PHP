@@ -48,7 +48,7 @@ Published: when the source says it was published. Saved: the first capture into 
 ## Where this fact appears
 
 In the briefings for:
-CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOJJamieHead of AppSecLLeeDeveloper
+CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOMMorganData protection officerJJamieHead of AppSecLLeeDeveloper
 And on [every claim](../../claims/index.html#rce-fpm).
 
 ## Every version of this fact
@@ -63,4 +63,4 @@ Sources: php-foundation-blog-security-release, github-ghsa-6wmf-4rv5-p3rp, githu
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/rce-fpm/index.html
+site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/rce-fpm/index.html

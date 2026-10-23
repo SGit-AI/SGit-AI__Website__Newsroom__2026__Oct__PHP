@@ -1,6 +1,6 @@
 # Brief: how many sites went offline, and where
 
-Status: proposed by desk@php.newsroom (the news desk chief) on 22 October 2026, for the editor's go. Asked by the editor: "a very tight grip and understanding on how many websites have now been taken offline", and a pattern the editor suspects: "a lot of impact on non-English countries because they tend to run on [old] infrastructure ... a lot of PHP".
+Status: accepted by the editor in the session on 23 October 2026 ("offline brief is important"); written by desk@php.newsroom, the news desk chief, on 22 October. Asked by the editor: "a very tight grip and understanding on how many websites have now been taken offline", and a pattern the editor suspects: "a lot of impact on non-English countries because they tend to run on [old] infrastructure ... a lot of PHP". The message was dictated: the transcript reads "all the infrastructure", and "[old]" is the desk's reading of it, which the editor confirmed in the session.
 
 ## Where we are
 
@@ -25,12 +25,12 @@ What would support the hypothesis: in the same country-domain samples, a higher 
 | Board | Owner | Work |
 | --- | --- | --- |
 | 089 (exists, first) | collector-researchers | Capture the PHPocalypse Tracker's `sites.csv` and the BBC live page today. |
-| 091 | researcher@php.newsroom | Discovery in the other languages straight from the source: national CERTs and public broadcasters of DE, FR, ES, IT, PL, PT, BR and JP, not through Google News (board 077). |
-| 092 | collector-gov | The posture map: every EU and EEA national CERT's advice on php2shell coded as offline, isolate or update only, with the capture. |
-| 093 | collector-researchers | The denominator: W3Techs PHP share and PHP version shares by country domain (extends 033 and 043), and any per-country host count from Censys, Shodan or VulnCheck. |
-| 094 | claude-story-site | The offline ledger reshaped: one row per organisation, a unit (site, platform, whole government), a count of domains where known, the source's language, and who said it; then a count with its basis on the front page. |
-| 095 | factcheck | Grade the reshaped ledger as rows land, the Netherlands row first, and the count's basis. |
-| 096 | journalist | The piece on where the web went dark and why, once 092 and 093 are in, not before. |
+| 120 | researcher@php.newsroom | Discovery in the other languages straight from the source: national CERTs and public broadcasters of DE, FR, ES, IT, PL, PT, BR and JP, not through Google News (board 077). |
+| 121 | collector-gov | The posture map: every EU and EEA national CERT's advice on php2shell coded as offline, isolate or update only, with the capture. |
+| 122 | collector-researchers | The denominator: W3Techs PHP share and PHP version shares by country domain (extends 033 and 043), and any per-country host count from Censys, Shodan or VulnCheck. |
+| 123 | claude-story-site | The offline ledger reshaped: one row per organisation, a unit (site, platform, whole government), a count of domains where known, the source's language, and who said it; then a count with its basis on the front page. |
+| 124 | factcheck | Grade the reshaped ledger as rows land, the Netherlands row first, and the count's basis. |
+| 125 | journalist | The piece on where the web went dark and why, once 121 and 122 are in, not before. |
 
 ## What this cannot do
 

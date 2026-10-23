@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **20** derived · **6** authored · **16** site
+**8** evidence · **24** derived · **7** authored · **20** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -57,6 +57,10 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/graph.json` | admin/build/build.py | the claims and timeline rows and the sources they cite, generated at build | [graph/index.html](../graph/index.html) |
 | `data/plain.json` | the design agent | the front page's plain-English questions and moments; every fact cites vault slugs | [index.html](../index.html) |
 | `data/factcheck.json` | admin/factcheck/fc.py export (factcheck@php.newsroom) | the desk's assessments, contradiction ledger, Issues-FS tickets and run reports in admin/factcheck/, each grade resting on captures named by sha256 | [factcheck/index.html](../factcheck/index.html) |
+| `data/grc.json` | grc@php.newsroom | the claims, sources, code review graph, stories and team on this site, with ratings and assignments by the GRC desk | [grc/index.html](../grc/index.html) |
+| `data/grc-frameworks.json` | grc@php.newsroom | the official texts of the laws, standards and frameworks, each linked; control titles paraphrased | [grc/frameworks/index.html](../grc/frameworks/index.html) |
+| `data/grc-network.json` | grc@php.newsroom | the risk models, articles and vaults of the sgit network, described in their publishers' terms and linked | [grc/network/index.html](../grc/network/index.html) |
+| `data/grc-graph.json` | admin/build/build.py | data/grc.json, data/grc-frameworks.json, data/review.json, data/claims.json and the articles, on every build | [grc/graph/index.html](../grc/graph/index.html) |
 
 ## Authored
 
@@ -67,6 +71,7 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
 | `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
 | `admin/content/briefs/` | the editor, and agents writing build briefs and reviews | voice memos and messages; the site itself | [brief/index.html](../brief/index.html) |
+| `data/compromise.json` | researcher@php.newsroom | the evidence vault and the source-watch vault (oq9gflln): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot | [compromise/index.html](../compromise/index.html) |
 | `data/glossary.json` | the design agent | 40 terms in plain English, each linked on first use on every page | [glossary/index.html](../glossary/index.html) |
 | `data/interview.json` | the editor, interviewed by the design agent | the editor's answers in his own words | [interview/index.html](../interview/index.html) |
 | `data/personas.json` | the design agent | fifteen readers by job and technical depth, each with a thirty-second answer and a reading path | [start/index.html](../start/index.html) |
@@ -80,6 +85,9 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/roles.json` | claude-story-site | the team, the pipeline and the audiences | [team/index.html](../team/index.html) |
 | `data/admin.json` | dev@php.newsroom | roles, the board, the vaults | [admin/roles/index.html](../admin/roles/index.html) |
 | `data/team.json` | conductor@php.newsroom | the roster of the team, human and agent: role, what each owns, rules, home pages, what each has done; the run and the three coordination vaults | [team/index.html](../team/index.html) |
+| `data/schedules.json` | conductor@php.newsroom | the account's scheduled tasks and this repository's workflows, as observed; the quiet-hours rule and the article rule | [team/runs/index.html](../team/runs/index.html) |
+| `data/collaborators.json` | conductor@php.newsroom | the asks to the collaborators (what is new, what to do, the questions) and the collaborators lane's public descriptor | [collaborators/index.html](../collaborators/index.html) |
+| `data/contributors.json` | conductor@php.newsroom | admin/build/invite.py: the open invitations (hashes only) and the enrolled keys (handle, role, fingerprints) | [join/index.html](../join/index.html) |
 | `data/versions.json` | admin/build/release.sh | every release | [admin/versions.html](../admin/versions.html) |
 | `data/billing.json` | claude-story-site | the meter configuration and the designed model | [billing/index.html](../billing/index.html) |
 | `data/pipeline.json` | dev@php.newsroom | the public repositories and Pages workflows of the newsroom sites | [status/index.html](../status/index.html) |
@@ -89,6 +97,7 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/items.json` | admin/build/build.py | every item a reader can read, with its id, zone, link and the hash of what it says; written by every build | [you/index.html](../you/index.html) |
 | `data/feed-sources.json` | dev@php.newsroom | the feeds the viewer offers, which allow a browser to read them, checked on 22 October 2026 | [reader/index.html](../reader/index.html) |
 | `data/subscriptions.json` | dev@php.newsroom | the subscriptions lane's public configuration: vault id, write-only token, the key requests are encrypted to, the contact address | [subscribe/index.html](../subscribe/index.html) |
+| `data/stack.json` | dev@php.newsroom | the blast-radius tool's model: component kinds, links, settings mapped to the published mitigations, the two CVEs as rules, example stacks; joined at build with affected, defence and software | [stack/index.html](../stack/index.html) |
 | `data/telemetry.json` | dev@php.newsroom | the telemetry lane's public configuration | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/telemetry-report.json` | admin/build/telemetry_drain.py | the drained telemetry lane, as counts | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/layers.json` | claude-journalist | this classification | [layers/index.html](../layers/index.html) |
@@ -98,4 +107,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

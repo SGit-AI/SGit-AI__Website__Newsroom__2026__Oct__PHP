@@ -1,0 +1,27 @@
+{
+ "about": "Who may sign feedback on this site: the enrolled keys (a handle, a role and the key's fingerprints; never a name unless the person agreed) and the invitations they came from (only a hash of each). Invitations are made in the browser, on /join/invite/, signed by an enrolled key that may invite; a key is enrolled automatically when its enrolment and its invitation both verify. Kept by conductor@php.newsroom; the brief is admin/content/briefs/2026-10-22__brief__feedback-keys-and-review.md.",
+ "kept_by": "conductor",
+ "rules": {
+  "devices_per_invitation": 3,
+  "invitation_days": 14,
+  "may_invite": [
+   "editor"
+  ]
+ },
+ "roles": [
+  [
+   "editor",
+   "The editor: his feedback and reviews come first, and the review queue is his"
+  ],
+  [
+   "team",
+   "A member of the team that runs the site"
+  ],
+  [
+   "power-user",
+   "A power user: reads what is new when asked, and says what works"
+  ]
+ ],
+ "invitations": [],
+ "keys": []
+}

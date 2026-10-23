@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.5.5",
+ "version": "0.8.1",
  "vault_commit": "200d08971937",
  "nodes": [
   {
@@ -377,8 +377,8 @@
   {
    "id": "claim:no-confirmed-compromise",
    "kind": "claim",
-   "label": "No named organisation has confirmed a compromise through php2shell",
-   "status": "confirmed",
+   "label": "As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p",
+   "status": "reported",
    "topic": "impact"
   },
   {
@@ -566,6 +566,14 @@
    "primary": true
   },
   {
+   "id": "source:cisa-alert-php-20261021",
+   "kind": "source",
+   "label": "US Cybersecurity and Infrastructure Security Agency (CISA)",
+   "publisher": "US Cybersecurity and Infrastructure Security Agency (CISA)",
+   "url": "https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching",
+   "primary": true
+  },
+  {
    "id": "source:imperva-blog-php2shell",
    "kind": "source",
    "label": "Imperva Threat Research (Nadav Avital, Bar Menachem)",
@@ -595,14 +603,6 @@
    "label": "CERT.LV (Latvia)",
    "publisher": "CERT.LV (Latvia)",
    "url": "https://cert.lv/lv/2026/10/saistiba-ar-globali-atklatam-php-ievainojamibam-latvija-ievies-preventivus-pasakumus",
-   "primary": true
-  },
-  {
-   "id": "source:cisa-alert-php-20261021",
-   "kind": "source",
-   "label": "US Cybersecurity and Infrastructure Security Agency (CISA)",
-   "publisher": "US Cybersecurity and Infrastructure Security Agency (CISA)",
-   "url": "https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching",
    "primary": true
   },
   {
@@ -732,6 +732,14 @@
    "publisher": "The PHP Foundation",
    "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
    "primary": true
+  },
+  {
+   "id": "source:securityweek-exploitation-days-before",
+   "kind": "source",
+   "label": "SecurityWeek",
+   "publisher": "SecurityWeek",
+   "url": "https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/",
+   "primary": false
   },
   {
    "id": "source:theregister-php-blames-chainguard",
@@ -982,6 +990,14 @@
    "primary": true
   },
   {
+   "id": "source:recordedfuture-php2shell",
+   "kind": "source",
+   "label": "Recorded Future",
+   "publisher": "Recorded Future",
+   "url": "https://www.recordedfuture.com/blog/php2shell-vulnerability-exploitation",
+   "primary": false
+  },
+  {
    "id": "source:rijksoverheid-ncsc-php-news",
    "kind": "source",
    "label": "Rijksoverheid (Dutch government) / NCSC-NL",
@@ -998,11 +1014,11 @@
    "primary": false
   },
   {
-   "id": "source:securityweek-exploitation-days-before",
+   "id": "source:securityweek-first-attempts-sensors",
    "kind": "source",
    "label": "SecurityWeek",
    "publisher": "SecurityWeek",
-   "url": "https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/",
+   "url": "https://www.securityweek.com/php2shell-patches-land-as-first-exploitation-attempts-hit-sensors/",
    "primary": false
   },
   {
@@ -2108,17 +2124,37 @@
   },
   {
    "from": "claim:no-confirmed-compromise",
+   "to": "source:cisa-alert-php-20261021",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
    "to": "source:huntress-php2shell-rapid-response",
    "rel": "cites"
   },
   {
    "from": "claim:no-confirmed-compromise",
-   "to": "source:imperva-blog-php2shell",
+   "to": "source:aws-security-blog-madpot",
    "rel": "cites"
   },
   {
    "from": "claim:no-confirmed-compromise",
-   "to": "source:aws-security-blog-madpot",
+   "to": "source:securityweek-first-attempts-sensors",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:securityweek-exploitation-days-before",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:recordedfuture-php2shell",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:imperva-blog-php2shell",
    "rel": "cites"
   },
   {

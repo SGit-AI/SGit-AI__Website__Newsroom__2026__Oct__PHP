@@ -245,6 +245,27 @@
    "used_on": "team/index.html"
   },
   {
+   "path": "data/schedules.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "the account's scheduled tasks and this repository's workflows, as observed; the quiet-hours rule and the article rule",
+   "used_on": "team/runs/index.html"
+  },
+  {
+   "path": "data/collaborators.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "the asks to the collaborators (what is new, what to do, the questions) and the collaborators lane's public descriptor",
+   "used_on": "collaborators/index.html"
+  },
+  {
+   "path": "data/contributors.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "admin/build/invite.py: the open invitations (hashes only) and the enrolled keys (handle, role, fingerprints)",
+   "used_on": "join/index.html"
+  },
+  {
    "path": "data/versions.json",
    "layer": "site",
    "by": "admin/build/release.sh",
@@ -264,6 +285,13 @@
    "by": "dev@php.newsroom",
    "from": "the public repositories and Pages workflows of the newsroom sites",
    "used_on": "status/index.html"
+  },
+  {
+   "path": "data/compromise.json",
+   "layer": "authored",
+   "by": "researcher@php.newsroom",
+   "from": "the evidence vault and the source-watch vault (oq9gflln): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot",
+   "used_on": "compromise/index.html"
   },
   {
    "path": "data/source-watch.json",
@@ -343,6 +371,13 @@
    "used_on": "subscribe/index.html"
   },
   {
+   "path": "data/stack.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the blast-radius tool's model: component kinds, links, settings mapped to the published mitigations, the two CVEs as rules, example stacks; joined at build with affected, defence and software",
+   "used_on": "stack/index.html"
+  },
+  {
    "path": "data/telemetry.json",
    "layer": "site",
    "by": "dev@php.newsroom",
@@ -376,6 +411,34 @@
    "by": "admin/factcheck/fc.py export (factcheck@php.newsroom)",
    "from": "the desk's assessments, contradiction ledger, Issues-FS tickets and run reports in admin/factcheck/, each grade resting on captures named by sha256",
    "used_on": "factcheck/index.html"
+  },
+  {
+   "path": "data/grc.json",
+   "layer": "derived",
+   "by": "grc@php.newsroom",
+   "from": "the claims, sources, code review graph, stories and team on this site, with ratings and assignments by the GRC desk",
+   "used_on": "grc/index.html"
+  },
+  {
+   "path": "data/grc-frameworks.json",
+   "layer": "derived",
+   "by": "grc@php.newsroom",
+   "from": "the official texts of the laws, standards and frameworks, each linked; control titles paraphrased",
+   "used_on": "grc/frameworks/index.html"
+  },
+  {
+   "path": "data/grc-network.json",
+   "layer": "derived",
+   "by": "grc@php.newsroom",
+   "from": "the risk models, articles and vaults of the sgit network, described in their publishers' terms and linked",
+   "used_on": "grc/network/index.html"
+  },
+  {
+   "path": "data/grc-graph.json",
+   "layer": "derived",
+   "by": "admin/build/build.py",
+   "from": "data/grc.json, data/grc-frameworks.json, data/review.json, data/claims.json and the articles, on every build",
+   "used_on": "grc/graph/index.html"
   }
  ]
 }

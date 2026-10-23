@@ -18,85 +18,106 @@ One anonymous event per page per session: path, referrer host, country, region, 
 
 ## The counts
 
-Report as of **2026-10-22**: **120** events from **74** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
+Report as of **2026-10-22**: **275** events from **176** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
 
 | Country | Events |
 |---|---|
-| US | 78 |
-| GB | 22 |
+| US | 168 |
+| GB | 56 |
+| (none) | 31 |
 | PT | 8 |
 | AU | 4 |
 | NL | 3 |
 | SG | 2 |
-| (none) | 2 |
 | IE | 1 |
+| ES | 1 |
+| FR | 1 |
 
 | Region | Events |
 |---|---|
-| California | 61 |
-| England | 22 |
-| Virginia | 10 |
+| California | 131 |
+| England | 56 |
+| (none) | 32 |
+| Virginia | 18 |
+| Florida | 10 |
 | Lisbon | 6 |
-| Florida | 5 |
 | New South Wales | 4 |
-| (none) | 3 |
+| Washington | 3 |
 | Leiria | 2 |
-| Washington | 2 |
 | North Brabant | 2 |
+| New York | 2 |
 | Central Singapore | 1 |
 | Groningen | 1 |
 | Leinster | 1 |
+| Madrid | 1 |
+| Nevada | 1 |
+| Iowa | 1 |
+| Arizona | 1 |
+| New Jersey | 1 |
+| Nouvelle-Aquitaine | 1 |
 
 | Referrer host | Events |
 |---|---|
-| (none) | 100 |
-| php.oct.2026.newsroom.sgit.ai | 19 |
-| newsroom.sgit.ai | 1 |
+| (none) | 237 |
+| php.oct.2026.newsroom.sgit.ai | 34 |
+| newsroom.sgit.ai | 4 |
 
 | Screen | Events |
 |---|---|
-| desktop | 80 |
-| phone | 40 |
+| desktop | 167 |
+| phone | 107 |
+| tablet | 1 |
 
 ### By page
 
 | Page | Events |
 |---|---|
-| / | 36 |
-| /index.html | 13 |
-| /claims/index.html | 9 |
+| / | 77 |
+| /index.html | 17 |
+| /claims/index.html | 11 |
 | /briefings/board/index.html | 9 |
+| /now/index.html | 8 |
 | /sources/index.html | 7 |
-| /articles/where-php2shell-stands/index.html | 5 |
+| /articles/where-php2shell-stands/index.html | 6 |
+| /graph/index.html | 6 |
+| /review/ui/index.html | 5 |
 | /questions/fix-or-wait/index.html | 5 |
 | /method/index.html | 5 |
 | /exploitation/index.html | 5 |
+| /storyboards/briefing-2026-10-22/index.html | 5 |
+| /compromise/index.html | 5 |
+| /factcheck/index.html | 4 |
+| /admin/agents/librarian/index.html | 4 |
+| /admin/agents/rounds/index.html | 4 |
+| /questions/index.html | 3 |
 | /billing/index.html | 3 |
 | /readings/index.html | 3 |
-| /questions/index.html | 2 |
+| /fractal/ui/index.html | 3 |
+| /fractal/index.html | 3 |
+| /admin/agents/roles/index.html | 3 |
+| /admin/vault/index.html | 2 |
+| /briefings/developer/index.html | 2 |
+| /timeline/index.html | 2 |
 | /account/index.html | 2 |
-| /admin/telemetry/index.html | 1 |
-| /admin/vault/index.html | 1 |
-| /admin/board/index.html | 1 |
-| /briefings/developer/index.html | 1 |
-| /review/index.html | 1 |
-| /review/ui/index.html | 1 |
-| /numbers/index.html | 1 |
-| /timeline/index.html | 1 |
-| /articles/php2shell-in-perspective/index.html | 1 |
-| /admin/versions.html | 1 |
-| /articles/index.html | 1 |
-| /briefings/journalist/index.html | 1 |
-| /briefings/ciso/index.html | 1 |
-| /briefings/comms/index.html | 1 |
-| /affected/software.html | 1 |
-| /briefings/security/index.html | 1 |
+| /articles/index.html | 2 |
+| /briefings/ciso/index.html | 2 |
+| /briefings/comms/index.html | 2 |
+| /articles/patch-at-the-speed-of-metasploit/index.html | 2 |
+| /explained/index.html | 2 |
+| /grc/index.html | 2 |
+| /grc/risks/r01-3/index.html | 2 |
+| /grc/graph/index.html | 2 |
+| /grc/stakeholders/board/index.html | 2 |
+| /collaborators/index.html | 2 |
+| /impact/index.html | 2 |
+| /compromise/ | 2 |
+| /facts/kev-precedent/index.html | 2 |
 
 ### By day
 
 | Day | Events |
 |---|---|
-| 2026-10-22 | 120 |
+| 2026-10-22 | 275 |
 
 ## What the counts are worth
 
@@ -106,8 +127,8 @@ Report as of **2026-10-22**: **120** events from **74** sessions (1 test or unde
 
 - Nobody can be identified from them, by design, and no row leaves the vault; the drainer publishes counts.
 
-Mechanics: `assets/telemetry.js` sends; `admin/build/telemetry_drain.py`, run by whoever holds the telemetry vault key, lists the lane with the enum key, fetches, decrypts with the private key, marks processed and writes `reports/`; `data/telemetry-report.json` is the latest report, copied into this repository at each drain.
+Mechanics: `assets/telemetry.js` sends; `admin/build/telemetry_drain.py`, run by whoever holds the telemetry vault key, lists the lane with the enum key, fetches, decrypts with the private key, marks processed and writes `reports/`; `data/telemetry-report.json` is the latest report, copied into this repository at each drain. The same drain runs in the browser: open the telemetry vault with its vault key and its Queue & drain page shows what waits in the lane and drains it, with the same steps and the same files, publishing the commit before it marks anything processed.
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html
+site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html
