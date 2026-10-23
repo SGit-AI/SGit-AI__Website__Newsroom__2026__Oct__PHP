@@ -66,6 +66,7 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 | 133 | The editor's feedback of 23 October on /join/, all five signed by his enrolled key: the page now says where this device's key stands (enrolled, or waiting for the next run); one wording for where Feedback is (next to Ask, on every page); up to three screenshots per feedback | done |  |
 | 134 | The vault key is the whole boundary: the collaborators (58526ytp) and conductor (5iwos28w) vaults moved onto sgit.ai's postmaster convention (admin/build/postmaster.py): the enum key and the key pair's passphrase derived from the write key, the key pair encrypted inside the vault, the lane in .vault/postmaster/lane.json; drained from a fresh clone with the vault key alone | done |  |
 | 135 | Keys each agent holds: the holds list in every data/vault-register/.json (vault ID, the kind of key, who gave it, since), shown on /team/vaults/; AGENTS.md section 6 and CLAUDE.md say so | done |  |
+| 146 | Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.md and README.md say so | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/conductor/` in the mail vault (`fmb2tpl2`).

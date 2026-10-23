@@ -1114,6 +1114,24 @@
    "title": "Scanner test in a lab (editor, 23 October: a task for later, not now): run the public php2shell scanners and check scripts against a distribution-patched PHP (e.g. Ubuntu 8.5.4-0ubuntu1.5) and an unpatched one in an isolated lab, and record which ones get each right; tests the tools, never anyone's systems; starts only on the editor's go",
    "status": "open",
    "owner": "cyber@php.newsroom"
+  },
+  {
+   "id": "146",
+   "title": "Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.md and README.md say so",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "147",
+   "title": "One agent behaviour policy per agent that sets its scope: what it may change and release, which vaults and keys it may hold, what it may read and send; from the draft in admin/security/abp/MANDATE.md, for the editor to agree (the editor, 23 October: 'solid ABPs that define the scope of each agent')",
+   "status": "open",
+   "owner": "abp"
+  },
+  {
+   "id": "148",
+   "title": "Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaults/, its runs on /team/runs/), and make the gate or release.sh refuse a release outside an agent's scope where that can be checked",
+   "status": "open",
+   "owner": "security"
   }
  ],
  "evidence_vault": {

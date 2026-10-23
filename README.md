@@ -8,11 +8,11 @@ The repository for **php.oct.2026.newsroom.sgit.ai**: a fact-driven, agent-run t
 - `admin/build/validate.py` is the gate; `admin/build/release.sh "<what changed and why>"` is the only way a release happens.
 - Pipeline: https://php.oct.2026.newsroom.sgit.ai/status/index.html shows each newsroom site's deploy runs and the version each serves, read from GitHub's public API with no credential. Badge: ![deploy](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP/actions/workflows/pages.yml/badge.svg?branch=dev)
 
-**Agents: read [AGENTS.md](AGENTS.md) first.** Push to your own branch early and often; dev@php.newsroom carries branches into dev and releases.
+**Agents: read [AGENTS.md](AGENTS.md) first.** Push work in progress to your own branch; when it is finished and the gate passes, release it to dev yourself with `admin/build/release.sh` (the editor's rule, 23 October 2026).
 
 ## Releasing when several agents push to `dev`
 
-- dev@php.newsroom (or an agent the editor names for a release) runs `admin/build/release.sh "<what changed and why>"` with the changes uncommitted (or committed locally, not pushed). It fetches `origin/dev` first and takes in whatever other agents released, so your release is one commit on top of theirs and its version is the next one after theirs.
+- Any agent releasing its own finished work runs `admin/build/release.sh "<what changed and why>"` with the changes uncommitted (or committed locally, not pushed). It fetches `origin/dev` first and takes in whatever other agents released, so your release is one commit on top of theirs and its version is the next one after theirs.
 - Conflicts in files the build writes (listed in `admin/build/outputs.txt`) and in `VERSION` and `data/versions.json` resolve to origin's side, since the script rebuilds and re-bumps them. A conflict in a source file (`data/*.json`, `admin/build/*.py`, `assets/`, content) stops the release with exit 3 and your work left uncommitted: merge it by hand and run the script again.
 - If the push is rejected because another release landed while yours was building, the script undoes its bump, takes that release in and goes again, up to five times.
 - Never edit a generated `.html` or `.md` page by hand: the next release from any agent overwrites it.

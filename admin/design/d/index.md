@@ -4,7 +4,7 @@ The admin section as a console with its own menu and layout: a dark sidebar by a
 
 > Mockup D for review, built from the data of release v0.10.3. Not the live site.
 
-PHP Team console Console Overview Board 103 Agents 16 Releases 54 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 105 Agents 16 Releases 54 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -16,8 +16,8 @@ v0.10.3
 54 releases since 22 Oct 
 
 Open on the board 
-103 
-40 done, 2 waiting 
+105 
+41 done, 2 waiting 
 
 Pages built 
 526 
@@ -30,8 +30,14 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 103
+#### Open 105
 
+ #148 
+Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaul… 
+ security 
+ #147 
+One agent behaviour policy per agent that sets its scope: what it may change and release, which vaults and keys it may h… 
+ abp 
  #145 
 Scanner test in a lab (editor, 23 October: a task for later, not now): run the public php2shell scanners and check scrip… 
  cyber@php.newsroom 
@@ -47,12 +53,6 @@ Move the admin pages into the team console (layout D), with its own menu; out of
  #141 
 Front page and briefings to layouts A and B by persona group; content pages to pattern C, starting with agencies, number… 
  briefing-writer 
- #140 
-Replace the menu with the top bar and the two dials; the view decides which entries exist; remembered in the browser and… 
- dev 
- #139 
-Move the design tokens and the wide grid (to 1,680px, two or three columns, readable text columns) into the live stylesh… 
- dev 
 
 #### Waiting 2
 
@@ -63,8 +63,11 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 40
+#### Done 41
 
+ #146 
+Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.… 
+ conductor 
  #137 
 Redesign mockups for review at /admin/design/: the two dials (who you are, how much you see), the visibility matrix, the… 
  dev v0.10.0 
@@ -82,9 +85,6 @@ Vaults: /team/vaults/ lists every vault each agent made, by ID only, from one fi
  conductor 
  #120 
 The public telemetry stats vault (0cfkdcvh, read key published): its own app with the hourly chart by group, a world map… 
- dev@php.newsroom v0.8.4 
- #119 
-Who is who in the telemetry: every session a reader, the editor, a power user or team member, synthetic (agents, tests, … 
  dev@php.newsroom v0.8.4 
 
 ### Releases

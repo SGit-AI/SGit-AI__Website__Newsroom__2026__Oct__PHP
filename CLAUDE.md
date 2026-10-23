@@ -8,6 +8,8 @@ Read `admin/security/REQUIREMENTS.md` before you start. The short form:
 - Never print, commit or publish a secret. Clone vaults outside this repository: everything in it is public, on the
   site, within minutes of a push to `dev`.
 - Release only with `admin/build/release.sh`. Never `--no-verify`, never force-push, never push to `main`.
+- Release your own finished work to `dev` yourself, with that script, once the gate passes (the editor, 23 October
+  2026): do not leave it on a branch for another agent to carry. `AGENTS.md`, section 1.
 - Changes to `admin/build/validate.py`, `admin/build/security_check.py`, `admin/build/release.sh`,
   `.github/workflows/` or `admin/security/` go to a branch for security review and the editor's go.
 - Data reaches HTML only through the build's `E()`, `U()` and `J()` helpers.
