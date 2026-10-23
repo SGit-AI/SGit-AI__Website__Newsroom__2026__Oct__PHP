@@ -1,6 +1,6 @@
 # Brief: the scheduled curator, a Sonnet session that keeps the evidence vault current on a schedule
 
-Status: proposed, waiting for the editor's go on the schedule. Author: curator@php.newsroom (the first curator session), at the request of Dinis Cruz, editor, on 23 October 2026. It moves the evidence curator's routine work into a session of its own that is woken on a schedule, and leaves the first curator session free for questions about the curated evidence. The prompt the new session starts from is the last section, as it will be sent.
+Status: running from 23 October 2026 (the editor's go, in the session; the decisions are under "Decided"). Author: curator@php.newsroom (the first curator session), at the request of Dinis Cruz, editor, on 23 October 2026. It moves the evidence curator's routine work into a session of its own that is woken on a schedule, and leaves the first curator session free for questions about the curated evidence. The prompt the new session starts from is the last section, as it will be sent.
 
 ## The request
 
@@ -29,11 +29,14 @@ And, on publishing it: "publish that brief on the site, since we should have a g
 - **Judge everything alone.** It runs unattended over text from the open web. It reads each capture before promoting it, skips what does not hold what the queue says or would publish private people's details, and reports anything that addresses an AI. The editor reads its reports.
 - **Notify by itself.** A schedule that wakes an existing session does not send push or email notifications; the reports stay in that session.
 
-## Open questions, for the editor
+## Decided, by the editor, 23 October 2026
 
-- How often: hourly or every two hours, and in which hours.
-- Whether to rotate the evidence vault key first, so that only the scheduled curator holds the new one. The current key was printed once in the first curator's session log, because it was sent as message text rather than as a file.
-- The new session's fingerprint, to be added here once it exists.
+- **When it wakes:** five times a day, UK time, in the working day: 08:00, 10:30, 13:00, 15:30 and 18:00, every day, none overnight (two scheduled tasks, `CRON_TZ=Europe/London`; the scheduler adds a few minutes' jitter). The editor can also run it by hand in the session at any time.
+- **No key rotation.** The vault key was printed once in the first curator's session log; the editor accepted that, because those sessions are reachable only by him and sessions cannot query one another.
+- **The first handshake sent the key as message text, not as a file.** The editor accepted it for this once (his tool sends text for now). The session read it from the opened message into a mode-700 file without printing it, cloned with it and deleted the file. A bare `<key>:3ytzxm3g` token, not the `sgit_private_vault_` shape, cloned the vault.
+- **The session's fingerprint:** `sha256:6c81ae257fee1938` (encryption key `sha256:a48a6ff38982eae5`), made on 23 October 2026. The `pki-agent.mjs` it ran had sha256 `e4080d8ee4292ae5a93c2627fe7027d36e155a732c7af9cc2dea1017f46ce74c`, not the one the prompt names (`8ec809cf...`); its commands were read first and only reach the register, DNS and gists.
+- **It depends on the source watch.** A wake only promotes what the watch's queue (`oq9gflln`, `index/promote.json`) already holds, so the watch must have run and pushed before a wake. The watch is run by hand today and has no schedule of its own (board); once it has one, it should run at least half an hour before each wake: for these times, 07:30, 10:00, 12:30, 15:00 and 17:30 London. A wake before the watch has pushed says "nothing new".
+- **Registered:** `data/vault-register/curator.json` lists the evidence vault key and the watch's read key as held, never the keys.
 
 ## The prompt the scheduled curator starts from
 

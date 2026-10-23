@@ -1,6 +1,15 @@
 {
- "current": "0.10.7",
+ "current": "0.10.8",
  "versions": [
+  {
+   "version": "0.10.8",
+   "date": "2026-10-23",
+   "title": "the scheduled curator is running: five wakes a day in UK daytime (08:00, 10:30, 13:00, 15:30, 18:00), no key rotation, its session fingerprint, its dependence on the source watch, and its held keys on /team/vaults/ (never the keys)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.7",
    "date": "2026-10-23",

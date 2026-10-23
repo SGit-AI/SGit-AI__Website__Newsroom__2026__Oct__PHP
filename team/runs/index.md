@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Times are UTC unless they say London.
 
-3schedules29runs a night, today104runs recorded45runs with changes and no article
+3schedules29runs a night, today105runs recorded45runs with changes and no article
 
 ## Quiet hours
 
@@ -34,7 +34,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 58, researcher@php.newsroom: 38, synthetic@php.newsroom: 6, Fact-check desk: 2.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 59, researcher@php.newsroom: 38, synthetic@php.newsroom: 6, Fact-check desk: 2.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -59,6 +59,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.3` | your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) and from step 0 of If you run PHP; the telemetry lane drained on the morning of 23 October: 483 events overnight, 758 in all | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.2` | status (/team/status/): where every agent is on the morning of 23 October, what each last did and waits for and from whom, the eleven branches waiting for dev, what ran on a schedule overnight, how fresh the site's data is against its vaults; and the brief for day two, situation awareness | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.1` | your stack, the blast radius (/stack/): describe what you run, the internet, the edge, the applications, the platforms and PHP runtimes, data, secrets and services, and see each runtime against both CVEs (versions, backports in the inventory, SAPI, exposure, settings, edge rules), the blast radius as a graph, what to do first and what on the site is about your stack, kept in your browser and your vault; and the warning and info colours restored on every page (their tokens were mapped to themselves since v0.2.4) | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.8` | the scheduled curator is running: five wakes a day in UK daytime (08:00, 10:30, 13:00, 15:30, 18:00), no key rotation, its session fingerprint, its dependence on the source watch, and its held keys on /team/vaults/ (never the keys) | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.7` | schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8imn); an agent woken with no task due records an idle run and stops; the wake protocol every scheduled agent follows (AGENTS.md section 7) | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.6` | the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source watch's latest run and the NCSC-NL inventory's latest change read, each shown with its time on the front page; source watch re-exported at 20afaa62129d | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.5` | guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a branch (the editor's rule, 23 October); release only what is in your scope, which each agent's behaviour policy will set (abp@ and security@, on the board) | yes | its release note | [output](../../admin/versions.html) |
@@ -145,4 +146,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.10.8 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

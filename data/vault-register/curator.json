@@ -1,0 +1,20 @@
+{
+ "agent": "curator@php.newsroom",
+ "member": "curator",
+ "note": "The scheduled curator session (Claude Code, Sonnet), set up on 23 October 2026. It made no vault; it holds the keys below, given by the editor as a message sealed to its session key on pki.sgit.ai.",
+ "vaults": [],
+ "holds": [
+  {
+   "id": "3ytzxm3g",
+   "key": "vault key",
+   "from": "the editor, sealed to this session's key (23 October 2026)",
+   "since": "2026-10-23"
+  },
+  {
+   "id": "oq9gflln",
+   "key": "read key",
+   "from": "the published read key (the brief's prompt)",
+   "since": "2026-10-23"
+  }
+ ]
+}

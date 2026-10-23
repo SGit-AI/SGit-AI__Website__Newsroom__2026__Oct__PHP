@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.7. Not the live site.
+> Mockup D for review, built from the data of release v0.10.8. Not the live site.
 
-PHP Team console Console Overview Board 116 Agents 16 Releases 58 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 116 Agents 16 Releases 59 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 23 October 2026, 01:20 UTC 
 
 Release 
-v0.10.7 
-58 releases since 22 Oct 
+v0.10.8 
+59 releases since 22 Oct 
 
 Open on the board 
 116 
@@ -90,6 +90,7 @@ Keys each agent holds: the holds list in every data/vault-register/<agent>.json 
 ### Releases
  latest 8 
 
+ v0.10.8 2026-10-23 the scheduled curator is running: five wakes a day in UK daytime (08:00, 10:30, 13:00, 15:30, 18:00), no key rotation, its session… 
  v0.10.7 2026-10-23 schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8… 
  v0.10.6 2026-10-23 the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source wat… 
  v0.10.5 2026-10-23 guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a … 
@@ -97,7 +98,6 @@ Keys each agent holds: the holds list in every data/vault-register/<agent>.json 
  v0.10.3 2026-10-23 Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked i… 
  v0.10.2 2026-10-23 the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evid… 
  v0.10.1 2026-10-23 three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they… 
- v0.10.0 2026-10-23 the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); … 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ Keys each agent holds: the holds list in every data/vault-register/<agent>.json 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.8 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
