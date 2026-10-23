@@ -548,6 +548,74 @@
       "last_seen": "0.9.1",
       "status": "open",
       "source": "UF-003"
+    },
+    {
+      "id": "F027",
+      "reader": "the editor",
+      "page": "the Feedback pane and the feedback form",
+      "stage": "act",
+      "actual": "Nothing tells a person their feedback may be published, so every message needs the editor's consent after the fact.",
+      "severity": "high",
+      "proposal": "A required checkbox: 'I agree this can be published' (words, screenshots, page, time; never name, email or key), stored in the message with the wording's version; a line under 'Capture this screen' to check the screenshot; removal on request; the collaborators vault's README to say rows marked public are published.",
+      "owner": "conductor",
+      "evidence": [
+        "the editor's decision in session, 23 October"
+      ],
+      "first_seen": "0.9.3",
+      "last_seen": "0.9.3",
+      "status": "open",
+      "source": "the editor's decision in session, 23 October"
+    },
+    {
+      "id": "F028",
+      "reader": "the editor",
+      "page": "/join/ and the Feedback pane",
+      "stage": "arrive",
+      "actual": "Signing keys and invitations are too much for a new user, and most of this is ephemeral (the editor, 23 October).",
+      "severity": "high",
+      "proposal": "Remove the key and invitation step for feedback (the editor's decision); with no signatures, a flood limit and a 'held for a person' state on the drain, as the subscriptions drain already does. F017, F018, F022, F023 and F024 are superseded when it ships.",
+      "owner": "conductor",
+      "evidence": [
+        "the editor's decision in session, 23 October"
+      ],
+      "first_seen": "0.9.3",
+      "last_seen": "0.9.3",
+      "status": "open",
+      "source": "the editor's decision in session, 23 October"
+    },
+    {
+      "id": "F029",
+      "reader": "the editor, testing",
+      "page": "/collaborators/ and the Feedback pane",
+      "stage": "act",
+      "actual": "Two feedback forms of two shapes: the power users' form asks for the page as text; the Feedback button fills it in.",
+      "severity": "low",
+      "proposal": "One feedback form, filling in the page and version itself, with the publish checkbox (F027).",
+      "owner": "conductor",
+      "evidence": [
+        "UF-004"
+      ],
+      "first_seen": "0.9.3",
+      "last_seen": "0.9.3",
+      "status": "open",
+      "source": "UF-004"
+    },
+    {
+      "id": "F030",
+      "reader": "the editor, testing",
+      "page": "the readers (data/personas.json) and the join form",
+      "stage": "find-my-path",
+      "actual": "No Founder among the readers; the join form's list is not in alphabetical order.",
+      "severity": "low",
+      "proposal": "Add a Founder reader and sort the join form's list alphabetically, once the editor confirms.",
+      "owner": "story-site",
+      "evidence": [
+        "UF-004"
+      ],
+      "first_seen": "0.9.3",
+      "last_seen": "0.9.3",
+      "status": "open",
+      "source": "UF-004"
     }
   ]
 }
