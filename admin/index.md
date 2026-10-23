@@ -264,6 +264,18 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: a schedule for the flow (needs the editor's go); public stats after an in-browser drain (an app cannot write another vault).
 
+### The Sherpa (branch sherpa/joins, sherpa@php.newsroom)
+
+- `admin/sherpa/`: the role (adapted from the SG/Send team's Sherpa), `friction-log.json` (schema `sgit.newsroom.friction-log/1`: nine frictions, each with reader, page, stage, intended, actual, expected, evidence, owner and status) and `reviews/` (the first walk, of v0.8.1). Advisory: it proposes and routes to owners, and fixes nothing itself.
+
+- In the roster (`data/team.json`), so `/team/sherpa/` exists; four board rows, the frictions it tracks to release.
+
+- Readers' feedback: `admin/sherpa/feedback.json` (schema `sgit.newsroom.reader-feedback/1`), one record per message with an id (UF-nnn), date, channel, site version, the reader's words as received and, point by point, the Sherpa's comment, whether it was reproduced, the recommendation and who can act. `build_sherpa()` (the Sherpa's block at the end of `build.py`) builds `/sherpa/` ("I'm the Sherpa, here to help you", the feedback register and the friction log) and one page per message; screenshots in `assets/sherpa/`, metadata stripped. UF-001 (23 October, a power user, by email): ten points, two interface bugs reproduced in Chromium (F015, F016). Readers are not named; whether a reader's words may be published is the editor's to confirm before release.
+
+- Ideas from collaborators: `admin/sherpa/ideas.json` (schema `sgit.newsroom.collaborator-ideas/1`), one record per conversation (CI-nnn), each comment, idea and question set against what the site has today, with links, what is missing, a recommendation and who could take it; built as `/sherpa/ideas//` and a section on `/sherpa/`. CI-001 (22 to 23 October, LinkedIn, a collaborator joining the power users): two comments, three ideas (user stories to execution paths and tests; threat scenarios and security assumptions beside stories; verified versus AI-inferred edges), three questions, an offer. Collaborators are named only when they agree (`name_on_site`).
+
+- Not built: the Sherpa's line on the front page and the "Where next" block (proposed); the trail additions (proposed, for dev and the editor's go); a key enrolled on pki.sgit.ai.
+
 ### Recorded, not started
 
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
@@ -288,4 +300,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.9.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
