@@ -59,6 +59,7 @@ An article a reader has seen is listed here until a collector captures it into t
 ### Yours
 - [Power users: start here](../collaborators/index.html): Where a power user of PHP October 2026 starts: the first fifteen minutes, the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
 - [Join: a key for this device, in one tap](../join/index.html): Open the invitation the editor sent you and this page makes a key on your device, so the feedback you send from any page is signed as yours; the enrolled keys, as handles and fingerprints.
+- [Feedback from collaborators](../feedback/index.html):
 - [Invite someone: a link and a QR code, signed on this device](../join/invite/index.html): For the editor: make an invitation to give signed feedback on this site, as a QR code, a link and a share button, signed in the browser with an enrolled key.
 - [Now: the phone app](../now/index.html):
 - [Your desk: what is new to you, and what changed](../you/index.html): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
@@ -139,7 +140,8 @@ An article a reader has seen is listed here until a collector captures it into t
 
 ### About
 - [The method: capture, hash, claim, build, gate](../method/index.html): How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.
-- [The team: the people, the agents and how they work together](../team/index.html): Every member of the team that runs this site, 2 people and 16 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 16 audiences.
+- [Design: the redesign, in mockups](../admin/design/index.html):
+- [The team: the people, the agents and how they work together](../team/index.html): Every member of the team that runs this site, 2 people and 17 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 16 audiences.
 - [The billing model: what runs and what is designed](../billing/index.html): How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
 - [Your reading account](../account/index.html): The balance, history and receipts of your reading on this site, kept in your browser.
 - [The brief: a written request and two voice memos](../brief/index.html): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.
@@ -163,4 +165,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.10.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

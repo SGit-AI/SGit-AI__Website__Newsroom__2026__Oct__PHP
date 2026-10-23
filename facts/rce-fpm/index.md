@@ -63,4 +63,4 @@ Sources: php-foundation-blog-security-release, github-ghsa-6wmf-4rv5-p3rp, githu
 
 
 ---
-site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/rce-fpm/index.html
+site v0.10.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/rce-fpm/index.html

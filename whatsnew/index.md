@@ -12,6 +12,36 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.0 · 23 October 2026new since your last visit
+
+the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); which pages each reader sees; the menu per view; four mockups built from the live data: a board member's front page, a security lead's three-column front page, the agencies as answer, picture and cards, and a team console with its own menu
+
+No reader-facing section changed in this release.
+
+## v0.9.3 · 23 October 2026new since your last visit
+
+Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highlights and notes, the numbers, and the briefs it became (to the conductor, and to pki.sgit.ai); UF-003, the first power user through the whole invitation, imported with her screenshots; and the brief for three views over time, the executive first, with the knowledge gap as a view of its own
+
+No reader-facing section changed in this release.
+
+## v0.9.2 · 23 October 2026new since your last visit
+
+the vault key is the whole boundary: whoever holds a vault's key can drain its lane (the enum key and the key pair's passphrase derived from the vault key, the key pair inside the vault), and the keys each agent holds listed on /team/vaults/; the editor's first key enrolled; his feedback on /join/ answered: where this device's key stands, one wording for Feedback, up to three screenshots
+
+No reader-facing section changed in this release.
+
+## v0.9.1 · 23 October 2026new since your last visit
+
+vaults (/team/vaults/): every vault each agent made, listed by agent and by ID only, with whether its key is sealed to the editor; and guidance every agent reads (AGENTS.md section 6, CLAUDE.md): add a vault's ID when you make it, seal its key to the root with pki-agent, and when asked for a key send the sealed link and its QR code, never the key
+
+No reader-facing section changed in this release.
+
+## v0.9.0 · 23 October 2026new since your last visit
+
+The Sherpa joins (/sherpa/): the agent that walks with the reader; readers' feedback recorded and answered point by point (UF-001 from a power user, UF-002 from an agent testing the invitation link), with both interface bugs reproduced; ideas from collaborators set against what the site has today (CI-001); the friction log of what gets in readers' way, with who can fix each; and the Sherpa on the team
+
+No reader-facing section changed in this release.
+
 ## v0.8.4 · 23 October 2026new since your last visit
 
 who reads this site, by group: every session a reader, the editor, a power user or team member, synthetic (agents and tests) or a crawler, declared by the browser from now on (automation by class, the role of a /join/ key or of this browser's setting) and inferred before; the groups, an hourly chart and a world map of readers on /admin/telemetry/; and a public stats vault (0cfkdcvh, read key published) with its own app, updated at every drain by admin/build/telemetry_flow.sh
@@ -450,4 +480,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -14,6 +14,7 @@ Nothing from here is copied to the site, which is public.
 import argparse, base64, datetime, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from telemetry_drain import post, decrypt
+from postmaster import open_postmaster, post_retry, configure
 from contributors import status as signer_status, load as load_contributors, enrol as enrol_key, save as save_contributors
 
 def main():
@@ -22,8 +23,12 @@ def main():
     ap.add_argument('--keep-pending', action='store_true')
     a = ap.parse_args()
     V = os.path.abspath(a.vault)
-    lane = json.load(open(os.path.join(V, '.sg_vault', 'local', 'lane.json')))
-    passphrase = open(os.path.join(V, '.sg_vault', 'local', 'pki-passphrase')).read().strip()
+    if os.path.exists(os.path.join(V, '.vault', 'postmaster', 'lane.json')):      # the vault key alone (admin/build/postmaster.py)
+        lane, passphrase, home = open_postmaster(V)
+        lane['append_token'] = lane['tokens']['public']; os.environ['HOME'] = home   # sgit pki decrypt reads this keystore
+    else:                                                                           # before the vault adopted it: this session's files
+        lane = json.load(open(os.path.join(V, '.sg_vault', 'local', 'lane.json')))
+        passphrase = open(os.path.join(V, '.sg_vault', 'local', 'pki-passphrase')).read().strip()
     H = {'x-sgraph-vault-enum-key': lane['enum_key']}
     base = f"{lane['endpoint']}/api/vault/append"
     today = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')
@@ -32,7 +37,7 @@ def main():
     while True:
         body = {'include_content': False}
         if after: body['after_file_id'] = after
-        r = post(f"{base}/list/{lane['vault_id']}", body, H)
+        r = post_retry(post, f"{base}/list/{lane['vault_id']}", body, H, heal=(lambda: configure(V, lane)) if 'tokens' in lane else None)
         entries = r.get('entries', [])
         got += entries
         if not r.get('truncated') or not entries: break
@@ -67,12 +72,14 @@ def main():
         kinds[k] = kinds.get(k, 0) + 1
         folder = {'join': 'requests', 'enrol': 'enrolments'}.get(k, 'feedback')
         os.makedirs(os.path.join(V, folder), exist_ok=True)
-        shot = m.get('screenshot') if isinstance(m.get('screenshot'), str) else ''
-        if shot.startswith('data:image/jpeg;base64,'):                    # also kept beside the row as a file, to look at
+        shots = m.get('screenshots') if isinstance(m.get('screenshots'), list) else [m.get('screenshot')]   # up to three, or the one of v0.8
+        files = []
+        for n, shot in enumerate(s for s in shots if isinstance(s, str) and s.startswith('data:image/jpeg;base64,')):
             sdir = os.path.join(V, 'feedback', 'screenshots'); os.makedirs(sdir, exist_ok=True)
-            name = f"{m['_file'].rsplit('.', 1)[0]}.jpg"
+            name = f"{m['_file'].rsplit('.', 1)[0]}{'-' + str(n + 1) if n else ''}.jpg"
             open(os.path.join(sdir, name), 'wb').write(base64.b64decode(shot.split(',', 1)[1]))
-            m['_screenshot_file'] = f'feedback/screenshots/{name}'      # the row keeps the screenshot too: the signature covers it
+            files.append(f'feedback/screenshots/{name}')                # also kept beside the row as files, to look at
+        if files: m['_screenshot_files'] = files                          # the row keeps the screenshots too: the signature covers them
         with open(os.path.join(V, folder, f'{today}.jsonl'), 'a', encoding='utf-8') as out:
             out.write(json.dumps(m, ensure_ascii=False, sort_keys=True) + '\n')
     pp = os.path.join(V, 'panel.json')

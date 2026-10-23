@@ -6,7 +6,47 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.8.4. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.0. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.0 · 2026-10-23
+
+the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); which pages each reader sees; the menu per view; four mockups built from the live data: a board member's front page, a security lead's three-column front page, the agencies as answer, picture and cards, and a team console with its own menu
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.3 · 2026-10-23
+
+Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highlights and notes, the numbers, and the briefs it became (to the conductor, and to pki.sgit.ai); UF-003, the first power user through the whole invitation, imported with her screenshots; and the brief for three views over time, the executive first, with the knowledge gap as a view of its own
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.2 · 2026-10-23
+
+the vault key is the whole boundary: whoever holds a vault's key can drain its lane (the enum key and the key pair's passphrase derived from the vault key, the key pair inside the vault), and the keys each agent holds listed on /team/vaults/; the editor's first key enrolled; his feedback on /join/ answered: where this device's key stands, one wording for Feedback, up to three screenshots
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.1 · 2026-10-23
+
+vaults (/team/vaults/): every vault each agent made, listed by agent and by ID only, with whether its key is sealed to the editor; and guidance every agent reads (AGENTS.md section 6, CLAUDE.md): add a vault's ID when you make it, seal its key to the root with pki-agent, and when asked for a key send the sealed link and its QR code, never the key
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.0 · 2026-10-23
+
+The Sherpa joins (/sherpa/): the agent that walks with the reader; readers' feedback recorded and answered point by point (UF-001 from a power user, UF-002 from an agent testing the invitation link), with both interface bugs reproduced; ideas from collaborators set against what the site has today (CI-001); the friction log of what gets in readers' way, with who can fix each; and the Sherpa on the team
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.8.4 · 2026-10-23
 
@@ -378,4 +418,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

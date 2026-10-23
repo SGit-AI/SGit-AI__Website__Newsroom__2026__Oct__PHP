@@ -227,6 +227,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/historian/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/synthetic/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/team/sherpa/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/briefing-writer/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/cartographer/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
@@ -237,6 +238,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/join/invite/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/join/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/status/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/billing/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/account/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/brief/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
@@ -513,5 +515,17 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/owasp/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/grc/graph/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/grc/network/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/feedback/uf-001/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/feedback/uf-002/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/feedback/uf-003/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-001/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/feedback/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/feedback/briefs/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/sherpa/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/now/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/design/c/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
 </urlset>

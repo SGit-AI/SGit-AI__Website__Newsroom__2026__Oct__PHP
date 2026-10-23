@@ -315,6 +315,13 @@
    "used_on": "vaults/index.html"
   },
   {
+   "path": "data/vault-register/",
+   "layer": "site",
+   "by": "each agent, its own file (data/vault-register/<agent>.json)",
+   "from": "every vault an agent has made: its ID, what it holds, when, and whether its key is sealed to the root; never a key",
+   "used_on": "team/vaults/index.html"
+  },
+  {
    "path": "data/glossary.json",
    "layer": "authored",
    "by": "the design agent",

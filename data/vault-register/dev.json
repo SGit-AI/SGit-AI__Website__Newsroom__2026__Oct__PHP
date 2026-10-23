@@ -1,0 +1,38 @@
+{
+ "agent": "dev@php.newsroom",
+ "member": "dev",
+ "note": "Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.",
+ "vaults": [
+  {
+   "id": "84wr8mib",
+   "what": "The telemetry vault: anonymous page events through a write-only lane",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "sealed to the editor on 22 October (board 013)"
+  },
+  {
+   "id": "wgeiqabu",
+   "what": "The subscriptions vault: subscription requests through a write-only lane",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "sealed to the editor on 22 October (board 013)"
+  },
+  {
+   "id": "0cfkdcvh",
+   "what": "The public telemetry vault: counts published at every drain",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "not recorded"
+  },
+  {
+   "id": "i4diy82d",
+   "what": "The telemetry dashboard: a vault app over the telemetry vault",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "not recorded"
+  },
+  {
+   "id": "5wnsr5h8",
+   "what": "The telemetry application, versioned in a vault of its own",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "not recorded"
+  }
+ ],
+ "holds": []
+}

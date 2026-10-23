@@ -42,6 +42,11 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 084 | Open the reader vault with a passkey, as newsroom.sgit.ai and pki.sgit.ai do (the door design), instead of a pasted key | open |  |
 | 117 | Stack, next: the pulse's vulnerabilities as rows in data/stack.json (rules beyond PHP: product and version ranges), news from the feeds matched to a saved stack, a test of the vault sync with a real reader vault, deletions that carry across devices | open |  |
 | 121 | Telemetry, next: the editor confirms the inferred rule for his browsers (Europe/Lisbon, English) or sets them on /admin/telemetry/; enrolled /join/ keys start declaring roles once data/contributors.json lists them; the in-browser drain cannot write the public vault (an app cannot write another vault), so public stats follow the next run of telemetry_flow.sh; a schedule for that run needs the editor's go | open |  |
+| 127 | Confirm your rows in data/vault-register/dev.json (seeded by the conductor) and seal the keys of 0cfkdcvh, i4diy82d and 5wnsr5h8 to the root (AGENTS.md section 6) | open |  |
+| 136 | Record in your data/vault-register file every key you hold (the holds list), and move any vault you made with a lane onto the postmaster convention (AGENTS.md section 6) | open |  |
+| 139 | Move the design tokens and the wide grid (to 1,680px, two or three columns, readable text columns) into the live stylesheetFrom the brief on the redesign (23 October). | open |  |
+| 140 | Replace the menu with the top bar and the two dials; the view decides which entries exist; remembered in the browser and the reader's vaultFrom the brief on the redesign (23 October). | open |  |
+| 142 | Move the admin pages into the team console (layout D), with its own menu; out of the reader menu, still publicFrom the brief on the redesign (23 October). | open |  |
 
 ## Waiting on someone else
 
@@ -80,6 +85,7 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 118 | Design: --warn-* and --info-* tokens were mapped to themselves in assets/themes/site-tokens.css (cyclic, so invalid) since v0.2.4: every warning and info pill rendered with no colour. Fixed in v0.8.1; checked in all five themes (computed tokens and a pill on /claims/) | done | 0.8.1 |
 | 119 | Who is who in the telemetry: every session a reader, the editor, a power user or team member, synthetic (agents, tests, headless browsers) or a crawler; declared by the browser since v0.8.4 (agent: automation by class; who: the role of its /join/ key or this browser's setting on /admin/telemetry/), inferred before (time zone, place, language, first page); admin/build/telemetry_classes.py, the same rules in the telemetry app v0.2.1 | done | 0.8.4 |
 | 120 | The public telemetry stats vault (0cfkdcvh, read key published): its own app with the hourly chart by group, a world map of readers, what readers read; curated counts only, written at every drain by admin/build/telemetry_flow.sh (drain, classify, publish, push both vaults); the same counts and map on /admin/telemetry/ | done | 0.8.4 |
+| 137 | Redesign mockups for review at /admin/design/: the two dials (who you are, how much you see), the visibility matrix, the menu per view, mockups A to D from live dataFrom the brief on the redesign (23 October). | done | 0.10.0 |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dev/` in the mail vault (`fmb2tpl2`).
@@ -90,4 +96,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.10.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html

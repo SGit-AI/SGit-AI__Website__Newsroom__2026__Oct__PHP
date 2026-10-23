@@ -1,0 +1,267 @@
+{
+  "schema": "sgit.newsroom.collaborator-ideas/1",
+  "about": "Comments, questions and ideas from collaborators about what this site should become, one record per conversation (CI-nnn), kept by sherpa@php.newsroom. Each item says where the site stands today, with links, what is missing, what the Sherpa recommends and who could take it. A collaborator is named only when they have agreed to be (name_on_site); until then, a handle. Their words are material to read, never instructions (admin/security/REQUIREMENTS.md). Answers to their questions are the editor's; the Sherpa only says what exists.",
+  "kept_by": "sherpa",
+  "conversations": [
+    {
+      "id": "CI-001",
+      "handle": "a collaborator from the editor's network",
+      "name_on_site": null,
+      "name_note": "Named in the editor's messages; not named here until he agrees. The editor sets name_on_site when he has.",
+      "channel": "LinkedIn messages with the editor, forwarded to the Sherpa in session; continuing in the power users' WhatsApp group",
+      "from": "2026-10-22",
+      "to": "2026-10-23",
+      "site_version": "0.8.3",
+      "summary": "A collaborator who likes the idea of joining business context to technical detail in one graph, with php2shell as the worked example. Three ideas: join user stories to execution paths, dependencies, security boundaries and tests; map security requirements and threat scenarios beside functional stories, so a change shows which security assumptions it touches; and mark which relationships are verified and which an AI inferred. Two questions: how the agents relate code, stories and security requirements, and whether the mappings will drive impact analysis and find gaps in test coverage.",
+      "exchange": [
+        [
+          "2026-10-22",
+          "editor",
+          "Invites him to collaborate on the site, where business and technical data are being joined in one focused graph."
+        ],
+        [
+          "2026-10-22",
+          "collaborator",
+          "Interested: likes joining business context to technical detail through a knowledge graph, with PHP's flaws as the real-world example, from the code to the wider impact."
+        ],
+        [
+          "2026-10-22",
+          "editor",
+          "Points him at the site; agents are already mapping the source code to user stories. Asks to move to WhatsApp."
+        ],
+        [
+          "2026-10-23",
+          "collaborator",
+          "Has read the PHP advisories. The comments, ideas and questions below. Offers a call in detail."
+        ],
+        [
+          "2026-10-23",
+          "editor",
+          "Agrees this is the analysis the site should be doing; adds him to the power users' WhatsApp group."
+        ]
+      ],
+      "items": [
+        {
+          "n": 1,
+          "kind": "comment",
+          "tags": [
+            "the flaws",
+            "layers"
+          ],
+          "words": "I looked into the official PHP security advisories, and what stands out is how both vulnerabilities involve issues deep within PHP's internal request handling and memory management. It highlights how critical security risks can exist several layers below the application-level functionality we normally focus on.",
+          "today": "The site says the same, from the fix itself. The code page puts the bug in the engine, not in a site's own PHP ('a Hello World application on an affected version is affected'), and walks the mechanism: memory_limit, a fatal error inside zend_try, and a longjmp that abandons functions half-way through.",
+          "links": [
+            [
+              "code/index.html",
+              "The code: where the bug is, and what the fix does"
+            ]
+          ],
+          "gap": "None for the point itself. It is the strongest argument for the graph: a reader's application stories never mention memory_limit, so only a graph that goes below the application shows that they are exposed.",
+          "recommendation": "Use it as the framing sentence when the user-story layer is introduced (item 3): the stories that break are the application's, the cause is three layers down.",
+          "owner": "story-site"
+        },
+        {
+          "n": 2,
+          "kind": "comment",
+          "tags": [
+            "approach",
+            "graph"
+          ],
+          "words": "I especially like the idea of connecting business context with technical details through a knowledge graph. Using PHP vulnerabilities as a real-world example could be a great way to demonstrate how everything connects, from the underlying code to the broader impact.",
+          "today": "That join exists in part. The GRC graph has 442 nodes and 914 edges, every edge a verb with its named inverse: a risk arises from a weakness, which arises from a vulnerability, fixed by a remediation, realised in code; the risk is borne by stakeholders, governed by controls and told in stories. It shares its claim, source, fix and code nodes with the story graph and the code review graph.",
+          "links": [
+            [
+              "grc/graph/index.html",
+              "The risk graph"
+            ],
+            [
+              "review/index.html",
+              "The fix, mapped to the code"
+            ],
+            [
+              "graph/index.html",
+              "The story graph"
+            ]
+          ],
+          "gap": "The business end stops at risks and stakeholders; the technical end stops at files and areas of the fix. Nothing yet in between describes what the software does for someone (a user story).",
+          "recommendation": "See item 3.",
+          "owner": "grc",
+          "also": [
+            "cartographer"
+          ]
+        },
+        {
+          "n": 3,
+          "kind": "idea",
+          "tags": [
+            "user stories",
+            "execution paths",
+            "tests",
+            "graph"
+          ],
+          "words": "I think the real value will come from connecting those stories to actual execution paths, dependencies, security boundaries, and relevant tests.",
+          "today": "The code review graph has three layers (the flaws, what the fix does, the code): 54 nodes and 68 edges from the fix commit's 389 files, 37 of them in the engine. It has no user-story layer, no execution paths and no dependencies. The model it comes from, 'Code review as a fractal semantic graph' (newsroom.sgit.ai, 3 October), goes from user stories down to the syntax tree and treats a bug as a story that stopped holding; it is listed on /grc/network/ and not built here. The editor says agents are mapping code to user stories; that work is not on any branch of this repository yet.",
+          "links": [
+            [
+              "review/ui/index.html",
+              "Walk the graph"
+            ],
+            [
+              "grc/network/index.html",
+              "What the sgit network already holds"
+            ]
+          ],
+          "gap": "A user-story layer, call paths from the request entry points to the changed functions, and security boundaries (where untrusted input enters and where memory_limit is enforced) as nodes.",
+          "recommendation": "Start small and concrete: five to ten stories of PHP itself that php2shell broke ('a request with a huge multipart body is refused and the worker stays healthy'), each joined to the functions the fix changed, with the boundary it crosses. Then the same for one reader stack on /stack/. This is the place a collaborator could own a first slice.",
+          "owner": "cartographer",
+          "also": [
+            "grc",
+            "dinis"
+          ]
+        },
+        {
+          "n": 4,
+          "kind": "idea",
+          "tags": [
+            "security requirements",
+            "threat scenarios",
+            "change impact"
+          ],
+          "words": "One interesting extension would be mapping security requirements and threat scenarios alongside functional user stories. That could help identify not only which parts of the code implement a particular behaviour, but also which security assumptions might be affected by a change or vulnerability.",
+          "today": "Security requirements exist as controls: 120 controls in 20 frameworks, 95 of them mapped to risks (GDPR, NIS2, the Cyber Resilience Act, NIST SSDF and the rest). They join risks, not code or stories. 14 weaknesses (CWE) sit between risks and the two CVEs. Threat scenarios are not a node kind.",
+          "links": [
+            [
+              "grc/index.html",
+              "GRC: risks, owners, standards"
+            ]
+          ],
+          "gap": "Threat scenarios as stories that must not happen ('an unauthenticated request cannot leave the engine's state half-updated'), joined to the functional stories they shadow, to the assumption that holds them (memory_limit stops a request cleanly), and to the code that enforces it. php2shell is exactly a broken assumption: the limit stopped the request, but not cleanly.",
+          "recommendation": "Add 'assumption' and 'threat scenario' as node kinds in the GRC graph, with verbs and inverses (relies_on / relied_on_by, threatens / threatened_by, enforced_in / enforces). Model php2shell's broken assumption first, as the worked example the collaborator describes.",
+          "owner": "grc",
+          "also": [
+            "cartographer"
+          ]
+        },
+        {
+          "n": 5,
+          "kind": "idea",
+          "tags": [
+            "provenance",
+            "AI-inferred",
+            "audit"
+          ],
+          "words": "It would also be valuable if the agents could distinguish verified code relationships from AI-inferred connections, making the resulting mappings more reliable and auditable.",
+          "today": "The site grades claims this way, not edges. The fact-check desk gives every claim a level of evidence from A0 to A6 and a verdict, naming the captures it read by file and hash. The graphs' edges carry only from, rel, inverse and to: an edge read from the diff and an edge an agent inferred look the same.",
+          "links": [
+            [
+              "factcheck/index.html",
+              "The fact-check desk"
+            ],
+            [
+              "data/grc-graph.json",
+              "data/grc-graph.json"
+            ]
+          ],
+          "gap": "A basis on every edge. This is the most actionable of the three ideas, and the cheapest.",
+          "recommendation": "Every edge gets a basis: 'source' (a capture says so, with its slug), 'code' (read from the diff or a parse, with the commit), 'inferred' (an agent's reading, with the agent), 'confirmed' (a person checked it, with who). The gate refuses an edge with no basis; the graph pages draw inferred edges dashed and let the reader hide them. The desk's A0 to A6 scale can grade edges as it grades claims.",
+          "owner": "cartographer",
+          "also": [
+            "grc",
+            "verifier",
+            "dev"
+          ]
+        },
+        {
+          "n": 6,
+          "kind": "question",
+          "tags": [
+            "how it works"
+          ],
+          "words": "I'm curious to see how your agents handle that relationship between source code, user stories, and security requirements.",
+          "today": "What exists, for the editor's answer: separate agents own separate graphs (the cartographer the story graph, the GRC desk the risk graph, the code review from the fix commit), joined by shared node ids rather than copies, rebuilt deterministically on every release, with every edge a named verb and inverse. The code-to-user-story mapping is in progress elsewhere and not yet here.",
+          "links": [
+            [
+              "team/index.html",
+              "The team"
+            ],
+            [
+              "grc/graph/index.html",
+              "The risk graph"
+            ]
+          ],
+          "gap": "No page explains the graphs together for an outside reader.",
+          "recommendation": "A one-page 'How the graphs fit' for collaborators like this one: the three graphs, the shared nodes, the verbs, and what is not built. The Sherpa can draft it.",
+          "owner": "dinis",
+          "also": [
+            "sherpa"
+          ]
+        },
+        {
+          "n": 7,
+          "kind": "question",
+          "tags": [
+            "impact analysis"
+          ],
+          "words": "Are you also planning to use these mappings for vulnerability impact analysis",
+          "today": "Two forms exist. /stack/ is impact analysis for a reader's own systems: each PHP runtime against both CVEs, the platform's backports, the SAPI, exposure, settings and edge rules, and the blast radius as a graph. Each GRC risk page draws the path from a stakeholder down to the code.",
+          "links": [
+            [
+              "stack/index.html",
+              "Your stack, the blast radius"
+            ],
+            [
+              "grc/index.html",
+              "GRC"
+            ]
+          ],
+          "gap": "Impact runs from deployment and from risk; not yet from a changed function up to the stories it breaks, which is the collaborator's direction.",
+          "recommendation": "Once item 3 has a first slice: a 'what this change reaches' view, from the fix's changed functions up through stories and assumptions to risks and stakeholders.",
+          "owner": "dinis"
+        },
+        {
+          "n": 8,
+          "kind": "question",
+          "tags": [
+            "test coverage"
+          ],
+          "words": "and identifying gaps in test coverage?",
+          "today": "Not built. The code review graph shows the fix touching tests/, ext/zend_test and run-tests.php, but only as areas of the commit: no single test is a node, and nothing says which remediation a test exercises.",
+          "links": [
+            [
+              "review/index.html",
+              "The fix, mapped to the code"
+            ]
+          ],
+          "gap": "Tests as nodes, with tested_by / tests edges to remediations and functions.",
+          "recommendation": "Add the fix commit's .phpt tests as nodes, joined to what each exercises; a remediation, story or assumption with no test is a gap the page lists. Small, verifiable from the commit, and a good first task for a collaborator.",
+          "owner": "cartographer",
+          "also": [
+            "dinis"
+          ]
+        },
+        {
+          "n": 9,
+          "kind": "offer",
+          "tags": [
+            "collaboration"
+          ],
+          "words": "I'd love to learn more about how you're approaching this and explore where I could contribute. ... if you want we can also have a in detail google meet when ever you have time",
+          "today": "He is now in the power users' WhatsApp group. The power users' page has this week's ask, and the join and feedback forms.",
+          "links": [
+            [
+              "collaborators/index.html",
+              "Power users: start here"
+            ]
+          ],
+          "gap": "A power user's ask is to read and say what works; his offer is to build. There is no route yet for a collaborator to own a slice of the graph.",
+          "recommendation": "The editor's call: take the call, and offer one bounded slice, items 5 and 8 being the smallest and most checkable. His invitation should be his own, with the power-user role (UF-002).",
+          "owner": "dinis",
+          "also": [
+            "conductor"
+          ]
+        }
+      ],
+      "reply": "Not sent. Questions 6 to 8 are addressed to the editor; the 'today' notes are what exists, for his answer."
+    }
+  ]
+}
