@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.5. Not the live site.
+> Mockup D for review, built from the data of release v0.10.6. Not the live site.
 
-PHP Team console Console Overview Board 112 Agents 16 Releases 56 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 112 Agents 16 Releases 57 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 23 October 2026, 01:20 UTC 
 
 Release 
-v0.10.5 
-56 releases since 22 Oct 
+v0.10.6 
+57 releases since 22 Oct 
 
 Open on the board 
 112 
@@ -90,6 +90,7 @@ The vault key is the whole boundary: the collaborators (58526ytp) and conductor 
 ### Releases
  latest 8 
 
+ v0.10.6 2026-10-23 the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source wat… 
  v0.10.5 2026-10-23 guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a … 
  v0.10.4 2026-10-23 the site catches up with its two vaults (evidence vault re-exported at f3c5db0d9873: 144 sources to 227, data as of 01:20 UTC on 2… 
  v0.10.3 2026-10-23 Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked i… 
@@ -97,7 +98,6 @@ The vault key is the whole boundary: the collaborators (58526ytp) and conductor 
  v0.10.1 2026-10-23 three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they… 
  v0.10.0 2026-10-23 the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); … 
  v0.9.3 2026-10-23 Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highl… 
- v0.9.2 2026-10-23 the vault key is the whole boundary: whoever holds a vault's key can drain its lane (the enum key and the key pair's passphrase de… 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ The vault key is the whole boundary: the collaborators (58526ytp) and conductor 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.6 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

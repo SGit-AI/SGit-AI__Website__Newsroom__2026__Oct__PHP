@@ -1,6 +1,15 @@
 {
- "current": "0.10.5",
+ "current": "0.10.6",
  "versions": [
+  {
+   "version": "0.10.6",
+   "date": "2026-10-23",
+   "title": "the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source watch's latest run and the NCSC-NL inventory's latest change read, each shown with its time on the front page; source watch re-exported at 20afaa62129d",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.5",
    "date": "2026-10-23",

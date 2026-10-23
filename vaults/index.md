@@ -24,7 +24,7 @@ The story as it was assembled on the morning of 22 October 2026: every source as
 
 ## [The source watch](../vaults/source-watch/index.html) public read
 
-**Vault** `oq9gflln` · 328 pages from 175 publishers in 38 countries and 32 languages; 440 snapshots, 3 runs; head `9ba748ac18aa`
+**Vault** `oq9gflln` · 913 pages from 597 publishers in 59 countries and 34 languages; 2946 snapshots, 38 runs; head `20afaa62129d`
 
 Every outside source on the story, watched on a schedule: country, sector, publisher and page; what access each check had; a snapshot whenever the content changed; and every snapshot and every change as a graph. The evidence vault's 184 sources were its first snapshots.
 
@@ -140,4 +140,4 @@ The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgi
 
 
 ---
-site v0.10.5 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.10.6 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html

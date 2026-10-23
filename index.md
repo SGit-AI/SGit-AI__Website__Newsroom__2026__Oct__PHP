@@ -4,7 +4,7 @@
 
 PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-PHP news · October 2026 · Developing · last checked 23 October 2026, 01:20 UTC
+PHP news · October 2026 · Developing · [last checked 23 October 2026, 12:50 UTC](#checked)
 
 # Two serious security flaws in PHP, the software behind many of the world's websites
 
@@ -13,6 +13,8 @@ PHP is the software that WordPress and millions of other websites run on. A fix 
   What is happening nowThe briefing for youExplain it from the startCheck your stackOn your phone: Now →
 
 You may also see this called php2shell, or by its two official reference numbers, CVE-2026-109618 and CVE-2026-109619.
+
+Last checked: [the evidence vault](sources/index.html), latest capture 23 October 2026, 01:20 UTC · [the source watch](vaults/source-watch/index.html), latest run 23 October 2026, 12:40 UTC · [the NCSC-NL inventory](patching/inventory/index.html), latest change read 23 October 2026, 12:50 UTC.
 
 ## Right now
 
@@ -115,4 +117,4 @@ Already know the vocabulary? [The specialist summary](summary/index.html) has th
 
 
 ---
-site v0.10.5 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.10.6 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/index.html

@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.10.5. Data as of 2026-10-23T01:20Z (the latest capture in the evidence vault, commit f3c5db0d9873). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.10.6. Data as of 2026-10-23T01:20Z (the latest capture in the evidence vault, commit f3c5db0d9873). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -98,7 +98,7 @@ Site v0.10.5. Data as of 2026-10-23T01:20Z (the latest capture in the evidence v
 - [How the story changed](https://php.oct.2026.newsroom.sgit.ai/versions/index.md): Every section of the site, every reader's briefing and every fact, versioned across every release: what changed, when, and in which release.
 - [Every vault behind this site](https://php.oct.2026.newsroom.sgit.ai/vaults/index.md): Every vault this site is built from: the evidence vault and the source watch, both public with their read keys, and the private telemetry vault with its write-only lane; what each holds, who writes to it and how to open it.
 - [The evidence vault](https://php.oct.2026.newsroom.sgit.ai/admin/vault/index.md): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
-- [The source watch](https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.md): The public source-watch vault: 328 pages from 175 publishers in 38 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
+- [The source watch](https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.md): The public source-watch vault: 913 pages from 597 publishers in 59 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
 - [The telemetry vault](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [The public telemetry stats](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [The subscriptions vault](https://php.oct.2026.newsroom.sgit.ai/subscribe/index.md): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.

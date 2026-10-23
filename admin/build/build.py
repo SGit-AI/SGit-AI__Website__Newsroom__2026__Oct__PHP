@@ -35,6 +35,23 @@ STORY = D['story']
 if D['vault'].get('latest_capture'):
     STORY['data_as_of'] = D['vault']['latest_capture']  # the time of the latest capture in the vault, never a clock
 
+def _minute(t):
+    """2026-10-23T12:39:02Z or 2026-10-23T12:39Z as 2026-10-23T12:39Z; anything else as None."""
+    m = re.match(r'^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2})', t or '')
+    return m.group(1) + 'Z' if m else None
+
+# What 'last checked' means: the newest of the three places this site reads the story from, each with its own time.
+# The evidence vault's latest capture stays data_as_of (claims, articles and status.json are built from it).
+CHECKS = [c for c in [
+    ('the evidence vault', 'latest capture', _minute(STORY['data_as_of']), 'sources/index.html'),
+    ('the source watch', 'latest run', max(filter(None, (_minute(r.get('finished')) for r in D['source-watch']['runs'])), default=None), 'vaults/source-watch/index.html'),
+    ('the NCSC-NL inventory', 'latest change read', _minute(D['inventory-history']['snapshots'][-1]['at']), 'patching/inventory/index.html'),
+] if c[2]]
+STORY['checked_at'] = max(c[2] for c in CHECKS)
+
+def checks_title():
+    return '; '.join(f'{w}: {k} {human_time(t)}' for w, k, t, _ in CHECKS)
+
 E = html.escape
 
 def J(o, **kw):
@@ -334,7 +351,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
   <script src="{up}assets/themes/themes.js"></script>
   <a class="brand" href="{up}index.html">PHP October<span> 2026</span></a>
   <a class="ver" href="{up}admin/versions.html#v{E(VERSION)}" title="Site release history: what v{E(VERSION)} changed">v{E(VERSION)}</a>
-  <span class="status">{E(STORY["status"])} &middot; last checked {E(human_time(STORY["data_as_of"]))}</span>
+  <span class="status" title="{E(checks_title())}">{E(STORY["status"])} &middot; last checked {E(human_time(STORY["checked_at"]))}</span>
   <span class="crumbs"><a href="https://newsroom.sgit.ai/">newsroom</a> / <a href="https://2026.newsroom.sgit.ai/">2026</a> / <a href="https://oct.2026.newsroom.sgit.ai/">October</a> / <b>PHP</b></span>
   <div class="tools"><div class="theme-pick"></div><sg-meter view="balance"></sg-meter></div>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-items" aria-label="Menu">Menu</button>
@@ -565,6 +582,7 @@ PLAIN_STATUS = {'confirmed': 'Confirmed', 'reported': 'Reported', 'disputed': 'D
 def build_index():
     s, pl, im = STORY, D['plain'], D['impact']
     when = human_time(s['data_as_of'])
+    checked = ' &middot; '.join(f'<a href="{E(href)}">{E(w)}</a>, {E(k)} {E(human_time(t))}' for w, k, t, href in CHECKS)
     fixed = ', '.join(D['affected']['fixed'][:-1]) + ' or ' + D['affected']['fixed'][-1]
     tiles = [
         ('ok', 'Is there a fix?', 'Yes', f'install PHP {fixed}', 'playbook/index.html'),
@@ -600,11 +618,12 @@ def build_index():
     who_lead = f'The same evidence, put in order for {len(PERSONAS)} kinds of reader. Each starts with a thirty-second answer in plain words. <a href="start/index.html">How the readers are mapped</a>.'
     body = f'''
 <header class="hero hero2">
-  <p class="kicker">PHP news &middot; October 2026 &middot; <span class="live">{E(s["status"])}</span> &middot; last checked {E(when)}</p>
+  <p class="kicker">PHP news &middot; October 2026 &middot; <span class="live">{E(s["status"])}</span> &middot; <a href="#checked">last checked {E(human_time(s["checked_at"]))}</a></p>
   <h1>{E(pl["headline"])}</h1>
   <p class="deck">{E(pl["deck"])}</p>
   <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a><a class="cta" href="stack/index.html">Check your stack</a><a class="cta" href="now/index.html">On your phone: Now &rarr;</a></div>
   <p class="aka">{E(pl["aka"])}</p>
+  <p class="aka" id="checked">Last checked: {checked}.</p>
 </header>
 <section id="now"><h2>Right now</h2><p class="small">As of {E(when)}, the time of the latest page this site saved.</p><ul class="nowlist">{now}</ul>{b_now}</section>
 {section("state", "At a glance", f'<div class="tiles">{board}</div>{b_glance}')}
