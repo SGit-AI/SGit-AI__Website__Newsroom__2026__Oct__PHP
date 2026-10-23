@@ -946,6 +946,8 @@ team/researcher/index.html
 team/researcher/index.md
 team/runs/index.html
 team/runs/index.md
+team/status/index.html
+team/status/index.md
 team/story-site/index.html
 team/story-site/index.md
 team/synthetic/index.html

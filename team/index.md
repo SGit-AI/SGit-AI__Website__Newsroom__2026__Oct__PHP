@@ -46,7 +46,7 @@ When the team runs on a schedule, every run has three phases in this order, so n
 - **Work** (every agent with assignments). Each agent runs its check-in cycle in the mail vault: pull, deliver its mail, OPEN the tasks it accepts in its own queue in the issues vault, do the work, release through admin/build/release.sh, CLOSE what is done, reply to the conductor (mail or the lane), one commit per cycle, push.
 - **Close** (conductor). Pull everything again; drain the lane; reconcile what was planned against what was done and released; update the roster and each member's page; write the run's status digest; broadcast it to the humans and agents; release the site's snapshot of the team.
 
-What the agents run on their own, when, and every run they made: [runs](runs/index.html).
+Where every agent is right now, what each waits for and from whom: [status](status/index.html). What the agents run on their own, when, and every run they made: [runs](runs/index.html).
 
 The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. [How the team talks](channels/index.html) says what each holds and the rules.
 
@@ -104,4 +104,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.8.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
