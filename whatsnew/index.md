@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.17 · 23 October 2026new since your last visit
+
+the scheduled curator follows the source watch into its pack-mode copy (7r83qic5): the brief records the move, the 15 + 18 captures promoted so far (evidence vault 260 sources, head 51debd0e98f0) and the pace; the curator's register row lists the pack vault key as held, never the key
+
+No reader-facing section changed in this release.
+
 ## v0.10.16 · 23 October 2026new since your last visit
 
 pack mode, measured: the pack vault in use by two writers, a pull of the scheduled session's commit in 176 s and a one-file correction pushed in 77 s
@@ -579,4 +585,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.16 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.17 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

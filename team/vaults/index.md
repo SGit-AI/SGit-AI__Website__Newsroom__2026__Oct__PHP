@@ -63,6 +63,7 @@ Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records 
 |---|---|---|---|
 | `3ytzxm3g` | vault key | the editor, sealed to this session's key (23 October 2026) | 2026-10-23 |
 | `oq9gflln` | read key | the published read key (the brief's prompt) | 2026-10-23 |
+| `7r83qic5` | vault key | the editor, as message text in the session (23 October 2026); used to read the pack copy of the source watch only, never to write | 2026-10-23 |
 
 The scheduled curator session (Claude Code, Sonnet), set up on 23 October 2026. It made no vault; it holds the keys below, given by the editor as a message sealed to its session key on pki.sgit.ai.
 
@@ -154,4 +155,4 @@ What each vault is for, and the published read keys and write-only lanes, are on
 
 
 ---
-site v0.10.16 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html
+site v0.10.17 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html

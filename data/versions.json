@@ -1,6 +1,15 @@
 {
- "current": "0.10.16",
+ "current": "0.10.17",
  "versions": [
+  {
+   "version": "0.10.17",
+   "date": "2026-10-23",
+   "title": "the scheduled curator follows the source watch into its pack-mode copy (7r83qic5): the brief records the move, the 15 + 18 captures promoted so far (evidence vault 260 sources, head 51debd0e98f0) and the pace; the curator's register row lists the pack vault key as held, never the key",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.16",
    "date": "2026-10-23",

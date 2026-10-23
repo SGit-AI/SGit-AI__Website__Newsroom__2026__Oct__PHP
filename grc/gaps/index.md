@@ -208,4 +208,4 @@ A rule is a kind of node, what it should reach, within how many steps and throug
 
 
 ---
-site v0.10.16 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/gaps/index.html
+site v0.10.17 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/gaps/index.html

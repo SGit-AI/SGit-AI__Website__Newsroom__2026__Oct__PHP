@@ -336,6 +336,12 @@ And, on publishing it: "publish that brief on the site, since we should have a g
 
 - **It depends on the source watch.** A wake only promotes what the watch's queue (`oq9gflln`, `index/promote.json`) already holds, so the watch must have run and pushed before a wake. The watch is run by hand today and has no schedule of its own (board); once it has one, it should run at least half an hour before each wake: for these times, 07:30, 10:00, 12:30, 15:00 and 17:30 London. A wake before the watch has pushed says "nothing new".
 
+- **The queue moved to the pack vault (the editor, evening of 23 October).** The source watch continues in `7r83qic5`, its sgit 0.24.0 pack-mode copy (see [moving a vault to pack mode](#2026-10-23__brief__moving-a-vault-to-pack-mode)); the researcher's queue there (282 rows, written 22:42 UTC) is the one the curator works. The wake prompts were changed to clone and pull that vault, and to match rows to the evidence vault by URL as well as slug. The editor sent that vault's key as message text; the curator only reads from it. The evidence vault stays a normal vault (the site's browser links need that).
+
+- **Work done before the queue arrived (the editor's go, 23 October):** 15 English captures from the watch's 08:30 UTC pass, chosen mechanically and read, promoted under the curator's own slugs; then 18 priority-3 rows of the new queue (260 sources in the vault after that). The evidence vault was at head `51debd0e98f0`.
+
+- **Pace:** about 18 rows a wake, read one by one; 164 rows were pending after the second batch. The editor can run the curator by hand in the session to go faster.
+
 - **Registered:** `data/vault-register/curator.json` lists the evidence vault key and the watch's read key as held, never the keys.
 
 ### The prompt the scheduled curator starts from
@@ -2300,4 +2306,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.10.16 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.10.17 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
