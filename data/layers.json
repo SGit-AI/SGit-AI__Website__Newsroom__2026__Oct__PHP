@@ -399,6 +399,20 @@
    "used_on": "admin/telemetry/index.html"
   },
   {
+   "path": "data/telemetry-public.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "admin/build/telemetry_publish.py at every drain: the curated counts by group, per hour and per day, and over readers by country, device, language, version, page and referrer host; the same file as the public stats vault",
+   "used_on": "admin/telemetry/index.html"
+  },
+  {
+   "path": "data/world.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "Natural Earth admin-0 countries 1:50m v5.1.2 (public domain), projected to Equal Earth and simplified by a script; the map on admin/telemetry/ and in the public stats vault",
+   "used_on": "admin/telemetry/index.html"
+  },
+  {
    "path": "data/layers.json",
    "layer": "site",
    "by": "claude-journalist",

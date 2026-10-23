@@ -1,9 +1,9 @@
 {
  "as_of": "2026-10-23",
- "drained_now": 483,
- "events": 758,
+ "drained_now": 2,
+ "events": 772,
  "test_or_undecryptable": 1,
- "sessions": 275,
+ "sessions": 279,
  "by_day": [
   [
    "2026-10-22",
@@ -11,7 +11,7 @@
   ],
   [
    "2026-10-23",
-   342
+   356
   ]
  ],
  "by_path": [
@@ -21,7 +21,7 @@
   ],
   [
    "/index.html",
-   24
+   25
   ],
   [
    "/claims/index.html",
@@ -40,11 +40,11 @@
    10
   ],
   [
-   "/method/index.html",
-   8
+   "/join/",
+   10
   ],
   [
-   "/join/",
+   "/method/index.html",
    8
   ],
   [
@@ -80,6 +80,10 @@
    6
   ],
   [
+   "/team/index.html",
+   6
+  ],
+  [
    "/flaws/index.html",
    6
   ],
@@ -96,11 +100,11 @@
    5
   ],
   [
-   "/team/index.html",
+   "/storyboards/briefing-2026-10-22/index.html",
    5
   ],
   [
-   "/storyboards/briefing-2026-10-22/index.html",
+   "/grc/graph/index.html",
    5
   ],
   [
@@ -170,28 +174,24 @@
   [
    "/briefings/developer/index.html",
    3
-  ],
-  [
-   "/review/index.html",
-   3
   ]
  ],
  "by_country": [
   [
    "US",
-   325
+   330
   ],
   [
    "(none)",
-   273
+   276
   ],
   [
    "GB",
-   88
+   91
   ],
   [
    "PT",
-   26
+   29
   ],
   [
    "ES",
@@ -241,15 +241,15 @@
  "by_region": [
   [
    "(none)",
-   274
+   277
   ],
   [
    "California",
-   266
+   271
   ],
   [
    "England",
-   87
+   90
   ],
   [
    "Virginia",
@@ -257,7 +257,7 @@
   ],
   [
    "Lisbon",
-   24
+   27
   ],
   [
    "Madrid",
@@ -343,23 +343,23 @@
  "by_city": [
   [
    "(none)",
-   273
+   276
   ],
   [
    "San Francisco",
-   132
+   133
   ],
   [
    "Mountain View",
-   124
+   128
   ],
   [
    "London",
-   32
+   35
   ],
   [
    "Lisbon",
-   24
+   27
   ],
   [
    "Bridgwater",
@@ -445,11 +445,11 @@
  "by_referrer": [
   [
    "(none)",
-   671
+   682
   ],
   [
    "php.oct.2026.newsroom.sgit.ai",
-   70
+   73
   ],
   [
    "www.linkedin.com",
@@ -475,11 +475,11 @@
  "by_screen": [
   [
    "phone",
-   439
+   446
   ],
   [
    "desktop",
-   306
+   313
   ],
   [
    "tablet",
@@ -500,15 +500,15 @@
    52
   ],
   [
+   "v0.8.2",
+   41
+  ],
+  [
    "v0.8.0",
    33
   ],
   [
    "v0.2.8",
-   32
-  ],
-  [
-   "v0.8.2",
    32
   ],
   [
@@ -572,6 +572,10 @@
    5
   ],
   [
+   "v0.8.3",
+   5
+  ],
+  [
    "v0.2.2",
    4
   ],
@@ -582,10 +586,6 @@
   [
    "v0.4.1",
    4
-  ],
-  [
-   "v0.2.6",
-   3
   ]
  ],
  "note": "Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault."
