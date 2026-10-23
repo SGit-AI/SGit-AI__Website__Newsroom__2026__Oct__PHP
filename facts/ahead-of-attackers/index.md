@@ -56,4 +56,4 @@ Sources: x-openai-php2shell, thehackernews-php2shell-4days
 
 
 ---
-site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/ahead-of-attackers/index.html
+site v0.10.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/ahead-of-attackers/index.html
