@@ -1,6 +1,15 @@
 {
- "current": "0.10.0",
+ "current": "0.10.1",
  "versions": [
+  {
+   "version": "0.10.1",
+   "date": "2026-10-23",
+   "title": "three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they get wrong (12 captured rows, with Jeremiah Grossman's post); Perplexity reading the community spaces (job 03, its prompt in full); and the external collectors brief with ChatGPT's first run; briefs now render quotes and pictures",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.10.0",
    "date": "2026-10-23",

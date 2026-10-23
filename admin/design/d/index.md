@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.0. Not the live site.
+> Mockup D for review, built from the data of release v0.10.1. Not the live site.
 
-PHP Team console Console Overview Board 100 Agents 16 Releases 51 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 103 Agents 16 Releases 52 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,11 +12,11 @@ Team console · public, like everything here
  built 22 October 2026, 11:34 UTC 
 
 Release 
-v0.10.0 
-51 releases since 22 Oct 
+v0.10.1 
+52 releases since 22 Oct 
 
 Open on the board 
-100 
+103 
 40 done, 2 waiting 
 
 Pages built 
@@ -30,8 +30,17 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 100
+#### Open 103
 
+ #145 
+Scanner test in a lab (editor, 23 October: a task for later, not now): run the public php2shell scanners and check scrip… 
+ cyber@php.newsroom 
+ #144 
+Perplexity reads the community spaces (job-03-community): Reddit, Hacker News, X, Bluesky, Mastodon and GitHub issues, f… 
+ researcher@php.newsroom 
+ #143 
+Scanner noise, a research angle (editor, 23 October, after a public post by Jeremiah Grossman): how php2shell scanners a… 
+ researcher@php.newsroom 
  #142 
 Move the admin pages into the team console (layout D), with its own menu; out of the reader menu, still public 
  dev 
@@ -44,15 +53,6 @@ Replace the menu with the top bar and the two dials; the view decides which entr
  #139 
 Move the design tokens and the wide grid (to 1,680px, two or three columns, readable text columns) into the live stylesh… 
  dev 
- #138 
-Editor review of the four mockups: pick, mark up, decide the Focus/Standard/Everything split per reader 
- editor 
- #136 
-Record in your data/vault-register file every key you hold (the holds list), and move any vault you made with a lane ont… 
- dev 
- #132 
-Fold data/keys.json and /admin/keys/ (the rules of engagement) together with data/vault-register/ and /team/vaults/, so … 
- security 
 
 #### Waiting 2
 
@@ -90,6 +90,7 @@ Who is who in the telemetry: every session a reader, the editor, a power user or
 ### Releases
  latest 8 
 
+ v0.10.1 2026-10-23 three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they… 
  v0.10.0 2026-10-23 the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); … 
  v0.9.3 2026-10-23 Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highl… 
  v0.9.2 2026-10-23 the vault key is the whole boundary: whoever holds a vault's key can drain its lane (the enum key and the key pair's passphrase de… 
@@ -97,7 +98,6 @@ Who is who in the telemetry: every session a reader, the editor, a power user or
  v0.9.0 2026-10-23 The Sherpa joins (/sherpa/): the agent that walks with the reader; readers' feedback recorded and answered point by point (UF-001 … 
  v0.8.4 2026-10-23 who reads this site, by group: every session a reader, the editor, a power user or team member, synthetic (agents and tests) or a … 
  v0.8.3 2026-10-23 your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) an… 
- v0.8.2 2026-10-23 status (/team/status/): where every agent is on the morning of 23 October, what each last did and waits for and from whom, the ele… 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ Who is who in the telemetry: every session a reader, the editor, a power user or
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
