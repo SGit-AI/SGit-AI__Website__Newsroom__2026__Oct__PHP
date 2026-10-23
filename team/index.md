@@ -8,7 +8,7 @@ Every member of the team that runs this site, 2 people and 16 agents and roles, 
 
 This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents, with help from [collaborators](../collaborators/index.html) who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-18members2humans14agents2roles not yet filled80open tasks2waiting34done
+18members2humans14agents2roles not yet filled85open tasks2waiting35done
 
 ## Who is on it
 
@@ -19,15 +19,15 @@ DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sourc
 ### Coordination and comms
 
 Keeps every member, human and agent, synchronised: what is assigned, what is blocked, what changed.
-COConductor@Conductor · Conductor and commsMaps the work, hands it out, and keeps every member, human and agent, synchronised. For now also the comms agent: the broadcasts and the digests.agent10 open, 1 waiting, 4 done
+COConductor@Conductor · Conductor and commsMaps the work, hands it out, and keeps every member, human and agent, synchronised. For now also the comms agent: the broadcasts and the digests.agent10 open, 1 waiting, 5 done
 ### Building the site
 
 The build, the gate, the release, the design, and the pages.
-DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent12 open, 1 waiting, 21 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent7 open, 0 done
+DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent13 open, 1 waiting, 21 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent8 open, 0 done
 ### Evidence
 
 Capture before you read: the sources, the vaults, the watch.
-NLNewsroom lead@NewsroomLead · The evidence vault's protocolOwns the evidence vault's protocol and capture tool, merges the collectors' branches, and keeps the newsroom's own section on the story.agent0 open, 0 doneCPPrimary-source collector@CollectorPrimary · Primary sourcesphp.net, the CVE and NVD records, the GitHub advisories, tags and branches, oss-security and the php-src clone.agent3 open, 0 doneCGGovernment and CERT collector@CollectorGov · Agencies and CERTsEvery national agency's advisory, in its own language, with the translation marked.agent3 open, 0 doneCRResearcher, vendor and press collector@CollectorResearchers · Researchers, vendors and the pressCalif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets and the press.agent8 open, 0 doneREresearcher@php.newsroom@Researcher · The source watchRuns the source watch: every outside source on the story checked on a schedule, a snapshot whenever it changes.agent5 open, 0 done
+NLNewsroom lead@NewsroomLead · The evidence vault's protocolOwns the evidence vault's protocol and capture tool, merges the collectors' branches, and keeps the newsroom's own section on the story.agent1 open, 0 doneCPPrimary-source collector@CollectorPrimary · Primary sourcesphp.net, the CVE and NVD records, the GitHub advisories, tags and branches, oss-security and the php-src clone.agent3 open, 0 doneCGGovernment and CERT collector@CollectorGov · Agencies and CERTsEvery national agency's advisory, in its own language, with the translation marked.agent3 open, 0 doneCRResearcher, vendor and press collector@CollectorResearchers · Researchers, vendors and the pressCalif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets and the press.agent8 open, 0 doneREresearcher@php.newsroom@Researcher · The source watchRuns the source watch: every outside source on the story checked on a schedule, a snapshot whenever it changes.agent6 open, 0 done
 ### Writing and analysis
 
 Stories, briefings, the catalogue, the graph and the checks on every claim.
@@ -35,7 +35,7 @@ LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which ques
 ### Testing
 
 Readers that are not people, reading the live site.
-SYsynthetic@php.newsroom@Synthetic · Synthetic readersSix test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.agent1 open, 0 done
+SYsynthetic@php.newsroom@Synthetic · Synthetic readersSix test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.agent2 open, 0 done
 
 ## How the team runs
 
@@ -46,7 +46,7 @@ When the team runs on a schedule, every run has three phases in this order, so n
 - **Work** (every agent with assignments). Each agent runs its check-in cycle in the mail vault: pull, deliver its mail, OPEN the tasks it accepts in its own queue in the issues vault, do the work, release through admin/build/release.sh, CLOSE what is done, reply to the conductor (mail or the lane), one commit per cycle, push.
 - **Close** (conductor). Pull everything again; drain the lane; reconcile what was planned against what was done and released; update the roster and each member's page; write the run's status digest; broadcast it to the humans and agents; release the site's snapshot of the team.
 
-Where every agent is right now, what each waits for and from whom: [status](status/index.html). What the agents run on their own, when, and every run they made: [runs](runs/index.html).
+Where every agent is right now, what each waits for and from whom: [status](status/index.html). Every vault the agents made, by ID: [vaults](vaults/index.html). What the agents run on their own, when, and every run they made: [runs](runs/index.html).
 
 The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. [How the team talks](channels/index.html) says what each holds and the rules.
 

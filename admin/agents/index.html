@@ -97,7 +97,26 @@
 <li><b>A model is given data, not instructions</b>: page text handed to a model is quoted as material; the reader&#x27;s own key is used from the reader&#x27;s browser and kept in their vault, never in this repository or in telemetry.</li>
 <li><b>No <a class="term" href="../../glossary/index.html#exploit" data-term="Exploit, exploitation" data-tip="To exploit a flaw is to actually use it in an attack. Exploitation attempts are tries; a compromise is a success.">exploit</a> or trigger-path content</b>: the code analysis stays on the fix, the versions and the defence.</li>
 </ul>
-<h3>6. Where to look first</h3>
+<h3>6. Vaults and keys: every vault listed, every key sealed</h3>
+<p>Added by conductor@php.newsroom at the editor&#x27;s request, 23 October 2026: &quot;a page on the website that lists the agent name and the vaults they created, just the vault ID, which is public anyway; it&#x27;s the vault key that we can&#x27;t share&quot;; and &quot;when I say send me a vault key or a QR code, every agent does it with the instructions on pki.sgit.ai&quot;.</p>
+<p><b>When you make a vault</b></p>
+<p>1. In the same commit, add a row to your own file, <code>data/vault-register/&lt;you&gt;.json</code> (make it if it is new: copy the shape of <code>conductor.json</code>): <code>id</code> (the eight-character vault ID), <code>what</code> (one line), <code>created</code> (the date), <code>key_sealed_to_root</code>. <code>/team/vaults/</code> lists every agent&#x27;s vaults from these files. The build refuses anything in <code>id</code> that is not a bare vault ID. Never write a key, a read key you were not told to publish, an enum key, a token or a passphrase in it.</p>
+<p>2. Before your session ends, seal the vault key to the root:</p>
+<pre>
+curl -sO https://pki.sgit.ai/agents/pki-agent.mjs          # into your scratchpad, not the repository
+node pki-agent.mjs pin sha256:db7f79fdd87e030a             # the root, from CLAUDE.md, once per session
+node pki-agent.mjs seal --from-vault &lt;your clone&gt; --name &quot;&lt;vault id&gt; vault key&quot; --expires 14 \
+     --qr &lt;scratchpad&gt;/&lt;vault id&gt;.png --qr-link
+</pre>
+<p>   <code>seal --from-vault</code> reads the key straight from sgit and never prints it. It prints a <code>https://pki.sgit.ai/m/#m1.…</code> link that only the root&#x27;s passkey opens. Put the date in <code>key_sealed_to_root</code> and tell the editor the link and when it expires.</p>
+<p><b>When the editor asks you for a key, or a QR code of one</b></p>
+<ul>
+<li>Seal it as above and send him two things: the sealed link, and the QR image (<code>--qr &lt;file&gt;.png --qr-link</code> makes one a phone&#x27;s camera opens; send the file, do not describe it). Say which vault, and when the link expires.</li>
+<li>Any other secret (an enum key, a lane token, a passphrase) goes the same way: <code>seal --file &lt;a file in your scratchpad&gt; --name &quot;…&quot;</code>, then delete the file.</li>
+<li>Never the key itself: not in your reply, not in a file in the repository, not on a page, not in a commit message, not in a message to another agent. A vault ID is fine anywhere.</li>
+<li>If your session&#x27;s permissions stop pki-agent, say so to the editor and stop. There is no plain-text fallback.</li>
+</ul>
+<h3>7. Where to look first</h3>
 <p><code>README.md</code> (how the site is built and released), <code>REALITY.md</code> (what exists), <code>/admin/board/</code> (what is open and whose), <code>/team/</code> (who is who), <code>/admin/roles/</code> (the rules each role enforces), this file.</p></div>
 <p class="small">The source is <code>AGENTS.md</code> at the root of the repository; every agent reads it there or here.</p>
 

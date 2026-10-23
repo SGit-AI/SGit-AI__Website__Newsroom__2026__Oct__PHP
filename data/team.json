@@ -72,7 +72,8 @@
   "vicky": "vicky",
   "grc": "grc",
   "grc@php.newsroom": "grc",
-  "security": "security"
+  "security": "security",
+  "claude-newsroom-lead": "newsroom-lead"
  },
  "groups": [
   {

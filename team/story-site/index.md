@@ -39,6 +39,7 @@ The front pageindex.htmlEvery claimclaims/index.htmlThe timelinetimeline/index.h
 | 029 | The playbook in three phases, each step opening to the agency's sentence, taking offline last (newsroom review, change 9) | open |  |
 | 088 | Act on the desk's high and medium findings on claims, agencies, exploitation and impact data: first Italy's offline advice, the allies' 'contradicted' mark, the five quotes not in their captures, and the eleven overstated status words (tickets on /factcheck/)From the brief: a fact-checker joins the team (22 October). | open |  |
 | 094 | Fix the cycle in assets/themes/site-tokens.css line 8: --warn-bg, --warn-ink, --info-bg and --info-ink are defined as themselves, so they are invalid and every amber and blue pill and graph edge that reads them renders without colourFrom the brief: a GRC desk joins the team (22 October). | open |  |
+| 126 | Confirm data/vault-register/story-site.json and seal the coverage vault's key (dcsmxese) to the root | open |  |
 
 ## What they have done
 - The first release: every claim with a status and its sources (v0.1.0).

@@ -963,6 +963,48 @@
    "title": "Telemetry, next: the editor confirms the inferred rule for his browsers (Europe/Lisbon, English) or sets them on /admin/telemetry/; enrolled /join/ keys start declaring roles once data/contributors.json lists them; the in-browser drain cannot write the public vault (an app cannot write another vault), so public stats follow the next run of telemetry_flow.sh; a schedule for that run needs the editor's go",
    "status": "open",
    "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "122",
+   "title": "Vaults: /team/vaults/ lists every vault each agent made, by ID only, from one file per agent (data/vault-register/); AGENTS.md section 6 and CLAUDE.md: add the ID when you make a vault, seal the key to the root, and when asked for a key send the sealed link and its QR code, never the key",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "123",
+   "title": "Confirm your rows in data/vault-register/dev.json (seeded by the conductor) and seal the keys of 0cfkdcvh, i4diy82d and 5wnsr5h8 to the root (AGENTS.md section 6)",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "124",
+   "title": "Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key (oq9gflln) to the root",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "125",
+   "title": "Confirm data/vault-register/synthetic.json (seeded by the conductor) and seal the six readers' vault keys to the root",
+   "status": "open",
+   "owner": "synthetic"
+  },
+  {
+   "id": "126",
+   "title": "Confirm data/vault-register/story-site.json and seal the coverage vault's key (dcsmxese) to the root",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "127",
+   "title": "Confirm data/vault-register/newsroom-lead.json and seal the evidence vault's key (3ytzxm3g) to the root; pulse@ and curator@ add their own files for any vault they made",
+   "status": "open",
+   "owner": "claude-newsroom-lead"
+  },
+  {
+   "id": "128",
+   "title": "Fold data/keys.json and /admin/keys/ (the rules of engagement) together with data/vault-register/ and /team/vaults/, so there is one register of vaults and keys",
+   "status": "open",
+   "owner": "security"
   }
  ],
  "evidence_vault": {

@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **24** derived · **7** authored · **23** site
+**8** evidence · **24** derived · **7** authored · **24** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -93,6 +93,7 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/billing.json` | claude-story-site | the meter configuration and the designed model | [billing/index.html](../billing/index.html) |
 | `data/pipeline.json` | dev@php.newsroom | the public repositories and Pages workflows of the newsroom sites | [status/index.html](../status/index.html) |
 | `data/vaults.json` | dev@php.newsroom | the vaults behind this site and how each is opened | [vaults/index.html](../vaults/index.html) |
+| `data/vault-register/` | each agent, its own file (data/vault-register/.json) | every vault an agent has made: its ID, what it holds, when, and whether its key is sealed to the root; never a key | [team/vaults/index.html](../team/vaults/index.html) |
 | `data/sections.json` | admin/build/build.py | the section ledger: every section hashed on every build, versioned when its reader-facing text changes | [versions/index.html](../versions/index.html) |
 | `data/seo.json` | the design agent | search-engine settings: the Search Console verification token and the social card | [index.html](../index.html) |
 | `data/items.json` | admin/build/build.py | every item a reader can read, with its id, zone, link and the hash of what it says; written by every build | [you/index.html](../you/index.html) |

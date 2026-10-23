@@ -402,6 +402,7 @@ Site v0.8.4. Data as of 2026-10-22T11:34Z (the latest capture in the evidence va
 
 ## The team, one page per member
 - [How the team talks: three vaults and one run](https://php.oct.2026.newsroom.sgit.ai/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules
+- [Vaults: who made each one](https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.md): every vault each agent made, by ID only, and whether its key is sealed to the editor
 - [Status](https://php.oct.2026.newsroom.sgit.ai/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev
 - [Runs](https://php.oct.2026.newsroom.sgit.ai/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run
 - [Dinis Cruz](https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.md): Editor; Sets direction by voice memo, points agents at sources, reads what they wrote and says go.

@@ -32,6 +32,7 @@ Synthetic readersadmin/synthetic/index.html
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 104 | Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run:  | open |  |
+| 125 | Confirm data/vault-register/synthetic.json (seeded by the conductor) and seal the six readers' vault keys to the root | open |  |
 
 ## What they have done
 - The first run of six readers through the live site, with verdicts, scores and requested changes (v0.4.6).

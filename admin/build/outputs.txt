@@ -952,6 +952,8 @@ team/story-site/index.html
 team/story-site/index.md
 team/synthetic/index.html
 team/synthetic/index.md
+team/vaults/index.html
+team/vaults/index.md
 team/verifier/index.html
 team/verifier/index.md
 team/vicky/index.html

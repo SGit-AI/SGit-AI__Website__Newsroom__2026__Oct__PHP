@@ -28,7 +28,9 @@ The evidence vaultadmin/vault/index.htmlEvery sourcesources/index.html
 
 ## Open tasks
 
-None.
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 127 | Confirm data/vault-register/newsroom-lead.json and seal the evidence vault's key (3ytzxm3g) to the root; pulse@ and curator@ add their own files for any vault they made | open |  |
 
 ## What they have done
 - Replaced the shared manifest with one source.json per source and a generated index.
