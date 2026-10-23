@@ -1,6 +1,15 @@
 {
- "current": "0.9.0",
+ "current": "0.9.1",
  "versions": [
+  {
+   "version": "0.9.1",
+   "date": "2026-10-23",
+   "title": "vaults (/team/vaults/): every vault each agent made, listed by agent and by ID only, with whether its key is sealed to the editor; and guidance every agent reads (AGENTS.md section 6, CLAUDE.md): add a vault's ID when you make it, seal its key to the root with pki-agent, and when asked for a key send the sealed link and its QR code, never the key",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.9.0",
    "date": "2026-10-23",

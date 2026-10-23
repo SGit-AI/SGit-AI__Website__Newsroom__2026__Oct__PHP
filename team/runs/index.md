@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Times are UTC unless they say London.
 
-3schedules29runs a night, today58runs recorded11runs with changes and no article
+3schedules29runs a night, today59runs recorded11runs with changes and no article
 
 ## Quiet hours
 
@@ -34,10 +34,11 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 47, synthetic@php.newsroom: 6, researcher@php.newsroom: 3, Fact-check desk: 2.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 48, synthetic@php.newsroom: 6, researcher@php.newsroom: 3, Fact-check desk: 2.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
+| 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.9.1` | vaults (/team/vaults/): every vault each agent made, listed by agent and by ID only, with whether its key is sealed to the editor; and guidance every agent reads (AGENTS.md section 6, CLAUDE.md): add a vault's ID when you make it, seal its key to the root with pki-agent, and when asked for a key send the sealed link and its QR code, never the key | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.9.0` | The Sherpa joins (/sherpa/): the agent that walks with the reader; readers' feedback recorded and answered point by point (UF-001 from a power user, UF-002 from an agent testing the invitation link), with both interface bugs reproduced; ideas from collaborators set against what the site has today (CI-001); the friction log of what gets in readers' way, with who can fix each; and the Sherpa on the team | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.4` | who reads this site, by group: every session a reader, the editor, a power user or team member, synthetic (agents and tests) or a crawler, declared by the browser from now on (automation by class, the role of a /join/ key or of this browser's setting) and inferred before; the groups, an hourly chart and a world map of readers on /admin/telemetry/; and a public stats vault (0cfkdcvh, read key published) with its own app, updated at every drain by admin/build/telemetry_flow.sh | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.3` | your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) and from step 0 of If you run PHP; the telemetry lane drained on the morning of 23 October: 483 events overnight, 758 in all | yes | its release note | [output](../../admin/versions.html) |
@@ -99,4 +100,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.9.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.9.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

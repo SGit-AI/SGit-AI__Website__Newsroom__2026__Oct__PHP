@@ -66,4 +66,4 @@ On this site: [The NCSC-NL inventory: 674 products](../../../affected/software.h
 
 
 ---
-site v0.9.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-6/index.html
+site v0.9.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-6/index.html

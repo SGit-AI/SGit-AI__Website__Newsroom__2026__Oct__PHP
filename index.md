@@ -115,4 +115,4 @@ Already know the vocabulary? [The specialist summary](summary/index.html) has th
 
 
 ---
-site v0.9.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.9.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
