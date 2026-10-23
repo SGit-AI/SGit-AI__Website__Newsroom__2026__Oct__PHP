@@ -59,4 +59,4 @@ Sources: bbc-live-ckgel5xp2xv9t, wiz-blog-php2shell
 
 
 ---
-site v0.9.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/most-severe/index.html
+site v0.9.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/most-severe/index.html
