@@ -2,7 +2,7 @@
   "schema": "sgit.newsroom.friction-log/1",
   "about": "Every friction a reader meets on this site, structured: who, where, what they tried, what happened, what they expected, the evidence, who can fix it and whether it landed. Kept by sherpa@php.newsroom; see admin/sherpa/README.md. Synthetic readers are test instruments, not people: their findings are prompts, and each is re-checked on the current version before it is logged.",
   "kept_by": "sherpa",
-  "as_of_version": "0.8.2",
+  "as_of_version": "0.9.0",
   "stages": [
     "arrive",
     "first-screen",
@@ -27,7 +27,8 @@
         "sherpa walk on v0.8.1: h1 top at 649px on briefings/board/, 631px on briefings/cto/ and briefings/pm/, 569px on claims/, 550px on the front page (390x844, mobile)",
         "telemetry to v0.5.9: 107 of 275 events (39%) from phones",
         "UF-001 point 5: a real reader finds pages dense with icons and links (see F011)",
-        "UF-002 point 6"
+        "UF-002 point 6",
+        "UF-003 point 3: a fourth reader"
       ],
       "severity": "high",
       "affects": "every page, every phone reader",
@@ -37,7 +38,7 @@
         "dev"
       ],
       "first_seen": "0.4.3",
-      "last_seen": "0.8.2",
+      "last_seen": "0.9.0",
       "status": "open",
       "trend": "worse: the Ask and Feedback row of v0.8.0 added about 60px above the fold"
     },
@@ -136,12 +137,13 @@
       "evidence": [
         "synthetic designer run 2026-10-22T1753Z on v0.4.3 (top fail, high)",
         "sherpa walk on v0.8.1 with the meter loading (desktop, 1280px): the masthead shows an unlabelled '£5.00' pill beside the theme switch",
-        "UF-002 point 6: the pound pill moved from £5.00 to £4.99 while reading, unexplained"
+        "UF-002 point 6: the pound pill moved from £5.00 to £4.99 while reading, unexplained",
+        "UF-003 point 11: a fourth reader"
       ],
       "severity": "medium",
       "owner": "dev",
       "first_seen": "0.4.3",
-      "last_seen": "0.8.2",
+      "last_seen": "0.9.0",
       "status": "open"
     },
     {
@@ -241,7 +243,8 @@
       "evidence": [
         "UF-001 point 5, received 2026-10-23",
         "Counted on 0.8.1 in Chromium: links and buttons per page as above.",
-        "UF-002 points 6, 10 and 11: unexplained chrome; the theme pill and the banner link seemed to do nothing"
+        "UF-002 points 6, 10 and 11: unexplained chrome; the theme pill and the banner link seemed to do nothing",
+        "UF-003 point 3: reading buttons with nothing to act on say nothing; a fourth reader"
       ],
       "severity": "medium",
       "proposal": "Three steps, cheapest first: a one-screen guide to the site's own tools, linked from a '?' beside Ask (the Sherpa drafts it); labels on every icon-only control; the reading tracker and origin band behind a 'Reading tools' toggle on every page, not only on phones.",
@@ -250,7 +253,7 @@
         "sherpa"
       ],
       "first_seen": "0.8.1",
-      "last_seen": "0.8.2",
+      "last_seen": "0.9.0",
       "status": "open",
       "source": "UF-001.5"
     },
@@ -307,7 +310,8 @@
       "evidence": [
         "UF-001 point 8, received 2026-10-23",
         "collaborators/index.html and REALITY.md on 0.8.1.",
-        "UF-002 point 4: the Feedback tab sends a person holding an invitation back to ask for one"
+        "UF-002 point 4: the Feedback tab sends a person holding an invitation back to ask for one",
+        "UF-003 point 7: two wordings for Feedback"
       ],
       "severity": "medium",
       "proposal": "Use the reader's structure for the collaborators form: a progress field (none, partial, done), the pages read, then pros, cons and bugs, each optional. Let the Feedback button send unsigned feedback too, marked unsigned, so a reader without a key can report a bug from the page it is on. Email stays welcome; the Sherpa logs every message, whichever way it comes.",
@@ -316,7 +320,7 @@
         "sherpa"
       ],
       "first_seen": "0.8.1",
-      "last_seen": "0.8.2",
+      "last_seen": "0.9.0",
       "status": "open",
       "source": "UF-001.8"
     },
@@ -372,10 +376,11 @@
       "proposal": "Held.",
       "owner": "dinis",
       "evidence": [
-        "UF-002, received 2026-10-23"
+        "UF-002, received 2026-10-23",
+        "UF-003 point 2: the tester joined from the link and sees no role"
       ],
       "first_seen": "0.8.1",
-      "last_seen": "0.8.2",
+      "last_seen": "0.9.0",
       "status": "open",
       "source": "UF-002",
       "also": [
@@ -433,10 +438,11 @@
       "proposal": "'You don't need anything here to read or to give feedback.' at the top; the Tools tab labelled 'For agents'.",
       "owner": "dev",
       "evidence": [
-        "UF-002, received 2026-10-23"
+        "UF-002, received 2026-10-23",
+        "UF-003 point 10: \"no vault\" unexplained"
       ],
       "first_seen": "0.8.1",
-      "last_seen": "0.8.2",
+      "last_seen": "0.9.0",
       "status": "open",
       "source": "UF-002"
     },
@@ -456,6 +462,74 @@
       "last_seen": "0.8.2",
       "status": "open",
       "source": "UF-002"
+    },
+    {
+      "id": "F022",
+      "reader": "a power user, as a project manager",
+      "page": "join/index.html",
+      "stage": "come-back",
+      "actual": "After joining, nothing shows that the key is waiting for approval; the enrolled list says 'None yet', so joining looks failed.",
+      "severity": "high",
+      "proposal": "Show the key's state on the join page: waiting, then approved, checked against the published fingerprints.",
+      "owner": "conductor",
+      "evidence": [
+        "UF-003, received 2026-10-23"
+      ],
+      "first_seen": "0.8.2",
+      "last_seen": "0.9.0",
+      "status": "open",
+      "source": "UF-003"
+    },
+    {
+      "id": "F023",
+      "reader": "a power user, as a project manager",
+      "page": "join/index.html",
+      "stage": "come-back",
+      "actual": "Bug: with a key and no invitation in the address, the page says 'This device already has a key. To get one, ask Dinis...'.",
+      "severity": "medium",
+      "proposal": "Append 'To get one' only when there is no key.",
+      "owner": "conductor",
+      "evidence": [
+        "UF-003, received 2026-10-23"
+      ],
+      "first_seen": "0.8.2",
+      "last_seen": "0.9.0",
+      "status": "open",
+      "source": "UF-003"
+    },
+    {
+      "id": "F024",
+      "reader": "a power user, as a project manager",
+      "page": "join/index.html",
+      "stage": "act",
+      "actual": "Nothing reassures a person that there is nothing to save, or warns that other browsers, profiles and private windows have no key.",
+      "severity": "medium",
+      "proposal": "One line: nothing to save; other browsers, private windows and devices will not have it; how to get a new invitation.",
+      "owner": "conductor",
+      "evidence": [
+        "UF-003, received 2026-10-23"
+      ],
+      "first_seen": "0.8.2",
+      "last_seen": "0.9.0",
+      "status": "open",
+      "source": "UF-003"
+    },
+    {
+      "id": "F025",
+      "reader": "a power user, as a project manager",
+      "page": "the Feedback pane",
+      "stage": "act",
+      "actual": "One kind and one screenshot per message, and no copy of what was sent.",
+      "severity": "medium",
+      "proposal": "Several kinds, up to three screenshots, and 'Feedback I've sent' kept in the reader's own browser or vault.",
+      "owner": "conductor",
+      "evidence": [
+        "UF-003, received 2026-10-23"
+      ],
+      "first_seen": "0.8.2",
+      "last_seen": "0.9.0",
+      "status": "open",
+      "source": "UF-003"
     }
   ]
 }

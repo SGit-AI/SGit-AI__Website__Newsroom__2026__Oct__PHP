@@ -463,6 +463,221 @@
         "Point 11: the banner's link goes to /start/."
       ],
       "reply": "Not sent. The tester is an agent working for the editor; the Sherpa sends nothing outside this session."
+    },
+    {
+      "id": "UF-003",
+      "received": "2026-10-23",
+      "channel": "a report the tester published herself, sent to the editor and forwarded to the Sherpa in session; her signed feedback from the site is in the collaborators lane, not yet drained",
+      "reader": "a power user from the editor's WhatsApp group, a project manager by trade: not a developer, uses AI assistants every day, keys and vaults new to her",
+      "ask": "001",
+      "site_version": "0.8.2",
+      "site_version_note": "Stated in the report: v0.8.2, then v0.8.3 while she tested. Re-checked on v0.9.0 in the code.",
+      "progress": "done: joined with the invitation link, sent signed feedback, checked the page after a refresh and in a private window",
+      "pages_read": [
+        [
+          "join/index.html",
+          "from the invitation link, after joining, after a refresh, in a private window"
+        ]
+      ],
+      "summary": "The first person through the whole invitation: joining works in one click, the success message is clear, and signed feedback goes out with a confirmation that says who reads it and when. The gaps are about what happens next: no sign that the key is waiting for approval, a message that contradicts itself after a refresh (a bug), nothing that says a private window or another browser has no key, no way to see the feedback you sent, one kind and one screenshot per message, an unexplained 'no vault' label, and the busy top of the page again.",
+      "attachments": [],
+      "points": [
+        {
+          "n": 1,
+          "kind": "praise",
+          "tags": [
+            "join",
+            "success message",
+            "send confirmation"
+          ],
+          "words": "One click to join, and a clear success message with next steps. 'How it works' and 'What it does not do': plain, honest, complete. The send confirmation: signed with which key, who reads it, when. 'Capture this screen', quoting selected text, and the page name filled in. The key survives a refresh.",
+          "comment": "Kept as the baseline. The first evidence from a person that the conductor's invitation, key and signed feedback work end to end outside a test.",
+          "replicated": "n/a",
+          "recommendation": "Keep all of these as they are.",
+          "owner": "conductor"
+        },
+        {
+          "n": 2,
+          "kind": "problem",
+          "tags": [
+            "join",
+            "role"
+          ],
+          "words": "the link says editor, but I was invited as a power user. After I joined, nothing on the site showed which role I joined as, so I can't tell which one I have.",
+          "comment": "Confirmed: the page shows the invitation's handle and never the role, before or after joining. The role on the link itself is UF-002 point 1, held for the editor and security.",
+          "replicated": "yes",
+          "recommendation": "Show the role, in words, before the button and after joining ('You are joining as a power user: you read what is new when asked and say what works'). The rest is with UF-002 point 1.",
+          "owner": "conductor",
+          "evidence": "assets/feedback/join.js on 0.9.0: the invitation line shows the handle only.",
+          "also": [
+            "dinis",
+            "security"
+          ],
+          "friction": "F017",
+          "severity": "high"
+        },
+        {
+          "n": 3,
+          "kind": "problem",
+          "tags": [
+            "join",
+            "first-screen",
+            "reading tools"
+          ],
+          "words": "above the title ... there are six layers ... I couldn't tell where this page actually begins. ... I pressed 'Mark everything read': nothing visible happened. I pressed fade, hide and show: nothing visible happened either.",
+          "comment": "Confirmed, and now the fourth independent reader on the busy first screen (F001, F011; UF-001, UF-002 and the synthetic readers before her). On a page with '0 new and 0 changed' the reading buttons have nothing to act on, and say nothing.",
+          "replicated": "yes",
+          "recommendation": "Hide the reading box on pages that are not content (join, account, admin); when a reading button has nothing to act on, say so in the box ('Nothing new here to fade'); one line saying what fade, hide and show do. Raised with the conductor for priority: four readers, one friction.",
+          "owner": "story-site",
+          "evidence": "The counts she quotes; assets/site.js renders the box on every page.",
+          "also": [
+            "dev",
+            "conductor"
+          ],
+          "friction": "F011",
+          "severity": "high"
+        },
+        {
+          "n": 4,
+          "kind": "problem",
+          "tags": [
+            "join",
+            "key",
+            "reassurance",
+            "private window"
+          ],
+          "words": "My first instinct was to save it somewhere, the way I would save a password, and I felt uneasy that I couldn't. ... It does not say in plain words that another browser, a private window or another Chrome profile won't have the key either. ... in a Chrome Incognito window ... the site treats me as a stranger. That's correct, but nothing warned me.",
+          "comment": "Confirmed: the success message says the key 'cannot be copied out of it' and that another device needs its own invitation; it says nothing about another browser, a profile or a private window, and nothing reassuring.",
+          "replicated": "yes",
+          "recommendation": "As she proposes: 'Nothing to save: this browser remembers your key. Other browsers, private windows and other devices will not have it; if you lose it, ask Dinis for a new invitation.'",
+          "owner": "conductor",
+          "evidence": "assets/feedback/join.js line 42 on 0.9.0.",
+          "friction": "F024",
+          "severity": "medium"
+        },
+        {
+          "n": 5,
+          "kind": "problem",
+          "tags": [
+            "join",
+            "approval",
+            "status"
+          ],
+          "words": "'Enrolled keys' still says 'None yet' right after I joined ... nothing says 'yours is waiting for approval', so it looks as if joining failed. ... Check whether my key was approved: the site doesn't show approval status anywhere I could find.",
+          "comment": "Confirmed: the enrolled list is built from data/contributors.json at release, and the page knows nothing of a key waiting in the lane. A key is enrolled only when the conductor drains the lane.",
+          "replicated": "yes",
+          "recommendation": "When this browser has a key, the join page shows its state: 'Waiting for the editor's approval' until its fingerprint appears in the published list, then 'Approved: your feedback shows as yours'. The page can check that itself against the published fingerprints, with no new server.",
+          "owner": "conductor",
+          "evidence": "build_join() and assets/feedback/join.js on 0.9.0.",
+          "friction": "F022",
+          "severity": "high"
+        },
+        {
+          "n": 6,
+          "kind": "bug",
+          "tags": [
+            "join",
+            "refresh",
+            "contradiction"
+          ],
+          "words": "'This device already has a key. To get one, ask Dinis by email or on WhatsApp, or use the join form.' ... the second sentence contradicts the first: I already have a key, so why ask Dinis for one?",
+          "comment": "Confirmed in the code: when the page has no invitation in its address, it always appends 'To get one, ask Dinis...', whether or not this device has a key.",
+          "replicated": "yes",
+          "recommendation": "Append 'To get one...' only when there is no key; when there is one, show its state (point 5) and a link to send feedback.",
+          "owner": "conductor",
+          "evidence": "assets/feedback/join.js lines 50 to 51 on 0.9.0.",
+          "friction": "F023",
+          "severity": "medium"
+        },
+        {
+          "n": 7,
+          "kind": "problem",
+          "tags": [
+            "feedback",
+            "instructions"
+          ],
+          "words": "Here, step 4 says 'Press Feedback, next to Ask at the top of every page'. The success message says 'open the pane on the right (the Ask button) and choose Feedback'.",
+          "comment": "Confirmed: the two texts differ (build_join's step 4 and join.js's success message). Both work; the second predates the Feedback button.",
+          "replicated": "yes",
+          "recommendation": "One wording, the newer one, in both places: 'Press Feedback, next to Ask at the top of every page.'",
+          "owner": "conductor",
+          "evidence": "assets/feedback/join.js line 40; build_join() in admin/build/build.py.",
+          "friction": "F014",
+          "severity": "low"
+        },
+        {
+          "n": 8,
+          "kind": "problem",
+          "tags": [
+            "feedback form",
+            "kinds",
+            "screenshots"
+          ],
+          "words": "my notes usually mix praise and suggestions, so I had to split one note into two submissions ... Only one screenshot. A problem that spans two screens ... needs two.",
+          "comment": "Confirmed: one kind from five, one screenshot per message.",
+          "replicated": "yes",
+          "recommendation": "Let a message carry several kinds (tick boxes) and up to three screenshots, each scaled as now.",
+          "owner": "conductor",
+          "evidence": "assets/feedback/pane.js on 0.9.0: KINDS is one select; one shot.",
+          "friction": "F025",
+          "severity": "medium"
+        },
+        {
+          "n": 9,
+          "kind": "problem",
+          "tags": [
+            "feedback form",
+            "history"
+          ],
+          "words": "I can't see what I sent. The text box clears, and the note says 'The site never shows it'. If I want to follow up or add to it, there is no record.",
+          "comment": "Confirmed, and by design for the site: it never publishes a message. But the sender's own copy is a different thing, and it can stay in her browser or her own vault, like her reading record.",
+          "replicated": "yes",
+          "recommendation": "Keep a copy of each message sent, in this browser (and the reader's vault when open), listed under Your desk as 'Feedback I've sent', with the time and the page. Nothing leaves the browser that did not already.",
+          "owner": "conductor",
+          "evidence": "assets/feedback/pane.js line 71 on 0.9.0.",
+          "also": [
+            "dev"
+          ],
+          "friction": "F025",
+          "severity": "medium"
+        },
+        {
+          "n": 10,
+          "kind": "problem",
+          "tags": [
+            "ask pane",
+            "no vault"
+          ],
+          "words": "'no vault'? A label at the top of the pane, with no explanation. Is something missing or broken?",
+          "comment": "Confirmed: the pane shows 'no vault' with no explanation; UF-002 met the same pane and its three credentials.",
+          "replicated": "yes",
+          "recommendation": "A line under it: 'You don't need a vault to read or to give feedback. A vault keeps your reading, notes and chats across devices.' Same as F020.",
+          "owner": "dev",
+          "evidence": "assets/ask/ask.js line 279 on 0.9.0.",
+          "friction": "F020",
+          "severity": "medium"
+        },
+        {
+          "n": 11,
+          "kind": "problem",
+          "tags": [
+            "meter",
+            "theme"
+          ],
+          "words": "Also unexplained: the £ pill (£4.72 here, £5.00 in a private window) and 'Newsprint'.",
+          "comment": "Confirmed, the fourth reader to say so (F006).",
+          "replicated": "yes",
+          "recommendation": "Label them: 'Reading credit, free' and 'Theme: Newsprint'.",
+          "owner": "story-site",
+          "also": [
+            "dev"
+          ],
+          "friction": "F006",
+          "severity": "high"
+        }
+      ],
+      "not_reproduced": [],
+      "reply": "Not sent. Her signed feedback from the site is in the lane; when the conductor drains it, the Sherpa adds it here. Her key, if enrolled from that drain as it stands, would take the role on the link: see UF-002 point 1, held."
     }
   ]
 }
