@@ -1891,4 +1891,4 @@ capture 20261022T113225Z · HTTP 200 · https://yle.fi/a/74-20252600- `headers.j
 
 
 ---
-site v0.9.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/index.html
+site v0.9.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/index.html
