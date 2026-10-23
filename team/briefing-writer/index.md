@@ -30,6 +30,7 @@ Start herestart/index.html
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 027 | Briefings in two minutes: a bottom line, five to eight claims as cards, the full table folded, read next (newsroom review, change 7) | open |  |
+| 141 | Front page and briefings to layouts A and B by persona group; content pages to pattern C, starting with agencies, numbers and impactFrom the brief on the redesign (23 October). | open |  |
 
 ## What they have done
 
@@ -44,4 +45,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.9.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/briefing-writer/index.html
+site v0.10.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/briefing-writer/index.html

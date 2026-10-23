@@ -12,6 +12,24 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.2 · 23 October 2026new since your last visit
+
+the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evidence vault current from the source watch's queue; proposed, waiting for the editor's go on the schedule
+
+No reader-facing section changed in this release.
+
+## v0.10.1 · 23 October 2026new since your last visit
+
+three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they get wrong (12 captured rows, with Jeremiah Grossman's post); Perplexity reading the community spaces (job 03, its prompt in full); and the external collectors brief with ChatGPT's first run; briefs now render quotes and pictures
+
+No reader-facing section changed in this release.
+
+## v0.10.0 · 23 October 2026new since your last visit
+
+the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); which pages each reader sees; the menu per view; four mockups built from the live data: a board member's front page, a security lead's three-column front page, the agencies as answer, picture and cards, and a team console with its own menu
+
+No reader-facing section changed in this release.
+
 ## v0.9.3 · 23 October 2026new since your last visit
 
 Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highlights and notes, the numbers, and the briefs it became (to the conductor, and to pki.sgit.ai); UF-003, the first power user through the whole invitation, imported with her screenshots; and the brief for three views over time, the executive first, with the knowledge gap as a view of its own
@@ -474,4 +492,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.9.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

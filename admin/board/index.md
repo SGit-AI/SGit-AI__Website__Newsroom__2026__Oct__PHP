@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 136 items, 95 open, 39 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 145 items, 103 open, 40 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -146,9 +146,18 @@ The work, as rows in `data/admin.json`: 136 items, 95 open, 39 done. An item is 
 | 134 | The vault key is the whole boundary: the collaborators (58526ytp) and conductor (5iwos28w) vaults moved onto sgit.ai's postmaster convention (admin/build/postmaster.py): the enum key and the key pair's passphrase derived from the write key, the key pair encrypted inside the vault, the lane in .vault/postmaster/lane.json; drained from a fresh clone with the vault key alone | done | conductor |  |
 | 135 | Keys each agent holds: the holds list in every data/vault-register/.json (vault ID, the kind of key, who gave it, since), shown on /team/vaults/; AGENTS.md section 6 and CLAUDE.md say so | done | conductor |  |
 | 136 | Record in your data/vault-register file every key you hold (the holds list), and move any vault you made with a lane onto the postmaster convention (AGENTS.md section 6) | open | dev |  |
+| 137 | Redesign mockups for review at /admin/design/: the two dials (who you are, how much you see), the visibility matrix, the menu per view, mockups A to D from live dataFrom the brief on the redesign (23 October). | done | dev | 0.10.0 |
+| 138 | Editor review of the four mockups: pick, mark up, decide the Focus/Standard/Everything split per readerFrom the brief on the redesign (23 October). | open | editor |  |
+| 139 | Move the design tokens and the wide grid (to 1,680px, two or three columns, readable text columns) into the live stylesheetFrom the brief on the redesign (23 October). | open | dev |  |
+| 140 | Replace the menu with the top bar and the two dials; the view decides which entries exist; remembered in the browser and the reader's vaultFrom the brief on the redesign (23 October). | open | dev |  |
+| 141 | Front page and briefings to layouts A and B by persona group; content pages to pattern C, starting with agencies, numbers and impactFrom the brief on the redesign (23 October). | open | briefing-writer |  |
+| 142 | Move the admin pages into the team console (layout D), with its own menu; out of the reader menu, still publicFrom the brief on the redesign (23 October). | open | dev |  |
+| 143 | Scanner noise, a research angle (editor, 23 October, after a public post by Jeremiah Grossman): how php2shell scanners and detection rules decide, their false positives and false negatives, and the noise they make; 12 captured rows in the source watch (index/angles/scanner-noise.json), counts tracked hourly; brief on /admin/briefs/ | open | researcher@php.newsroom |  |
+| 144 | Perplexity reads the community spaces (job-03-community): Reddit, Hacker News, X, Bluesky, Mastodon and GitHub issues, for scanner false positives and negatives, first-hand accounts and named statements; phase 1 prompt on /admin/briefs/, waiting on its first reply | open | researcher@php.newsroom |  |
+| 145 | Scanner test in a lab (editor, 23 October: a task for later, not now): run the public php2shell scanners and check scripts against a distribution-patched PHP (e.g. Ubuntu 8.5.4-0ubuntu1.5) and an unpatched one in an isolated lab, and record which ones get each right; tests the tools, never anyone's systems; starts only on the editor's go | open | cyber@php.newsroom |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.9.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.10.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

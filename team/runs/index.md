@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Times are UTC unless they say London.
 
-3schedules29runs a night, today61runs recorded11runs with changes and no article
+3schedules29runs a night, today64runs recorded11runs with changes and no article
 
 ## Quiet hours
 
@@ -34,7 +34,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 50, synthetic@php.newsroom: 6, researcher@php.newsroom: 3, Fact-check desk: 2.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 53, synthetic@php.newsroom: 6, researcher@php.newsroom: 3, Fact-check desk: 2.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -46,6 +46,9 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.3` | your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) and from step 0 of If you run PHP; the telemetry lane drained on the morning of 23 October: 483 events overnight, 758 in all | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.2` | status (/team/status/): where every agent is on the morning of 23 October, what each last did and waits for and from whom, the eleven branches waiting for dev, what ran on a schedule overnight, how fresh the site's data is against its vaults; and the brief for day two, situation awareness | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.8.1` | your stack, the blast radius (/stack/): describe what you run, the internet, the edge, the applications, the platforms and PHP runtimes, data, secrets and services, and see each runtime against both CVEs (versions, backports in the inventory, SAPI, exposure, settings, edge rules), the blast radius as a graph, what to do first and what on the site is about your stack, kept in your browser and your vault; and the warning and info colours restored on every page (their tokens were mapped to themselves since v0.2.4) | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.2` | the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evidence vault current from the source watch's queue; proposed, waiting for the editor's go on the schedule | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.1` | three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they get wrong (12 captured rows, with Jeremiah Grossman's post); Perplexity reading the community spaces (job 03, its prompt in full); and the external collectors brief with ChatGPT's first run; briefs now render quotes and pictures | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.0` | the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); which pages each reader sees; the menu per view; four mockups built from the live data: a board member's front page, a security lead's three-column front page, the agencies as answer, picture and cards, and a team console with its own menu | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-22T20:52Z | [Fact-check desk](../verifier/index.html) | Fact-check run | `Run-2` | 1 high finding; 1 contradiction (K-011); 5 new evidence (1 high); 0 tickets closed | yes | missing | [output](../../factcheck/index.html) |
 | 2026-10-22T18:14Z | [Fact-check desk](../verifier/index.html) | Fact-check run | `Run-1` | 3 high, 56 medium and 65 low findings; 3 evidence gaps; 10 contradictions; 6 new evidence | yes | missing | [output](../../factcheck/index.html) |
 | 2026-10-22T17:56:14Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Designer | `designer/2026-10-22T1755Z` | site v0.4.3: 0 high, 2 medium checks; answered the question partly | yes | missing | [output](../../admin/synthetic/index.html) |
@@ -102,4 +105,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.9.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.10.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

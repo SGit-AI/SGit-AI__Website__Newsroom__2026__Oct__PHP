@@ -67,6 +67,16 @@ admin/board/index.md
 admin/briefs/index.html
 admin/briefs/index.md
 admin/build/outputs.txt
+admin/design/a/index.html
+admin/design/a/index.md
+admin/design/b/index.html
+admin/design/b/index.md
+admin/design/c/index.html
+admin/design/c/index.md
+admin/design/d/index.html
+admin/design/d/index.md
+admin/design/index.html
+admin/design/index.md
 admin/index.html
 admin/index.md
 admin/roles/index.html

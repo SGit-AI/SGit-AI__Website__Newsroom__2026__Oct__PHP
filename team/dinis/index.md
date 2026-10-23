@@ -42,6 +42,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 101 | Quiet hours: decide the window (proposed 22:00 to 07:00 London) and whether the source watch may run through the night while the story is breaking; then the three schedules on /team/runs/ are changed to match | open |  |
 | 108 | Invitations for the editor's own devices (role editor) and for Vicky (role team); then the power users, one invitation each, sent by the editor | open |  |
 | 115 | The twin's open questions: the budget, the escalation ladder at night, which outside agents join (ChatGPT, Perplexity) and how, and which ABP site's per-session review the run record should match | open |  |
+| 138 | Editor review of the four mockups: pick, mark up, decide the Focus/Standard/Everything split per readerFrom the brief on the redesign (23 October). | open |  |
 
 ## What they have done
 - Started the site from two voice memos and a message on 22 October 2026, and set every brief since.
@@ -63,4 +64,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.9.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.10.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
