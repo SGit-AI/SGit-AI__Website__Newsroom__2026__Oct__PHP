@@ -1,6 +1,15 @@
 {
- "current": "0.10.4",
+ "current": "0.10.5",
  "versions": [
+  {
+   "version": "0.10.5",
+   "date": "2026-10-23",
+   "title": "guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a branch (the editor's rule, 23 October); release only what is in your scope, which each agent's behaviour policy will set (abp@ and security@, on the board)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.4",
    "date": "2026-10-23",

@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 155 items, 110 open, 43 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 158 items, 112 open, 44 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -165,9 +165,12 @@ The work, as rows in `data/admin.json`: 155 items, 110 open, 43 done. An item is
 | 153 | Show a rewritten line in diffs as removed then added, not word-diffed, when the two lines share little (diff_html): the state of affairs' delta interleaves rewritten paragraphs | open | dev@php.newsroom |  |
 | 154 | Write the next version of the state of affairs when the evidence moves: a KEV listing, a named victim, GMO's cause, or the inventory's investigation pile resolving | open | journalist |  |
 | 155 | Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement | open | claude-story-site |  |
+| 156 | Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.md and README.md say so | done | conductor |  |
+| 157 | One agent behaviour policy per agent that sets its scope: what it may change and release, which vaults and keys it may hold, what it may read and send; from the draft in admin/security/abp/MANDATE.md, for the editor to agree (the editor, 23 October: 'solid ABPs that define the scope of each agent') | open | abp |  |
+| 158 | Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaults/, its runs on /team/runs/), and make the gate or release.sh refuse a release outside an agent's scope where that can be checked | open | security |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.10.4 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.10.5 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

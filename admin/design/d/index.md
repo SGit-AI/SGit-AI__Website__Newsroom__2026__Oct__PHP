@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.4. Not the live site.
+> Mockup D for review, built from the data of release v0.10.5. Not the live site.
 
-PHP Team console Console Overview Board 110 Agents 16 Releases 55 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 112 Agents 16 Releases 56 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 23 October 2026, 01:20 UTC 
 
 Release 
-v0.10.4 
-55 releases since 22 Oct 
+v0.10.5 
+56 releases since 22 Oct 
 
 Open on the board 
-110 
-43 done, 2 waiting 
+112 
+44 done, 2 waiting 
 
 Pages built 
 620 
@@ -30,8 +30,14 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 110
+#### Open 112
 
+ #158 
+Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaul… 
+ security 
+ #157 
+One agent behaviour policy per agent that sets its scope: what it may change and release, which vaults and keys it may h… 
+ abp 
  #155 
 Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement 
  claude-story-site 
@@ -47,12 +53,6 @@ Take the curator's 36 claims and 18 timeline rows (claims/curator@php.newsroom.j
  #149 
 Every commit names its agent: 40 of the first day's 46 commits carry no Agent: line, so updates cannot say who did what;… 
  conductor 
- #148 
-Go for scheduled updates: an hourly run (only when something moved) and a daily one, with the run's cadence in board 071 
- editor 
- #147 
-Take the updates beat: read the brief and admin/content/updates/README.md, confirm on your branch, and write the next up… 
- conductor 
 
 #### Waiting 2
 
@@ -63,8 +63,11 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 43
+#### Done 44
 
+ #156 
+Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.… 
+ conductor 
  #151 
 Views: the journalist's state of affairs as a versioned page (/views/state/), its own version numbers, a page per versio… 
  journalist 
@@ -83,13 +86,11 @@ Keys each agent holds: the holds list in every data/vault-register/<agent>.json 
  #134 
 The vault key is the whole boundary: the collaborators (58526ytp) and conductor (5iwos28w) vaults moved onto sgit.ai's p… 
  conductor 
- #133 
-The editor's feedback of 23 October on /join/, all five signed by his enrolled key: the page now says where this device'… 
- conductor 
 
 ### Releases
  latest 8 
 
+ v0.10.5 2026-10-23 guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a … 
  v0.10.4 2026-10-23 the site catches up with its two vaults (evidence vault re-exported at f3c5db0d9873: 144 sources to 227, data as of 01:20 UTC on 2… 
  v0.10.3 2026-10-23 Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked i… 
  v0.10.2 2026-10-23 the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evid… 
@@ -97,7 +98,6 @@ The editor's feedback of 23 October on /join/, all five signed by his enrolled k
  v0.10.0 2026-10-23 the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); … 
  v0.9.3 2026-10-23 Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highl… 
  v0.9.2 2026-10-23 the vault key is the whole boundary: whoever holds a vault's key can drain its lane (the enum key and the key pair's passphrase de… 
- v0.9.1 2026-10-23 vaults (/team/vaults/): every vault each agent made, listed by agent and by ID only, with whether its key is sealed to the editor;… 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ The editor's feedback of 23 October on /join/, all five signed by his enrolled k
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.4 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
