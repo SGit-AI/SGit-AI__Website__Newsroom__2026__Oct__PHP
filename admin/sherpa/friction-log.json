@@ -2,7 +2,7 @@
   "schema": "sgit.newsroom.friction-log/1",
   "about": "Every friction a reader meets on this site, structured: who, where, what they tried, what happened, what they expected, the evidence, who can fix it and whether it landed. Kept by sherpa@php.newsroom; see admin/sherpa/README.md. Synthetic readers are test instruments, not people: their findings are prompts, and each is re-checked on the current version before it is logged.",
   "kept_by": "sherpa",
-  "as_of_version": "0.9.0",
+  "as_of_version": "0.9.3",
   "stages": [
     "arrive",
     "first-screen",
@@ -320,8 +320,8 @@
         "sherpa"
       ],
       "first_seen": "0.8.1",
-      "last_seen": "0.9.0",
-      "status": "open",
+      "last_seen": "0.9.3",
+      "status": "fixed in v0.9.2 (one wording), seen in the code; to check on the live site",
       "source": "UF-001.8"
     },
     {
@@ -476,8 +476,8 @@
         "UF-003, received 2026-10-23"
       ],
       "first_seen": "0.8.2",
-      "last_seen": "0.9.0",
-      "status": "open",
+      "last_seen": "0.9.3",
+      "status": "fixed in v0.9.2 (the join page shows where this device's key stands), seen in the code; to check on the live site",
       "source": "UF-003"
     },
     {
@@ -493,8 +493,8 @@
         "UF-003, received 2026-10-23"
       ],
       "first_seen": "0.8.2",
-      "last_seen": "0.9.0",
-      "status": "open",
+      "last_seen": "0.9.3",
+      "status": "fixed in v0.9.2 (the contradiction is gone), seen in the code; to check on the live site",
       "source": "UF-003"
     },
     {
@@ -527,8 +527,8 @@
         "UF-003, received 2026-10-23"
       ],
       "first_seen": "0.8.2",
-      "last_seen": "0.9.0",
-      "status": "open",
+      "last_seen": "0.9.3",
+      "status": "partly fixed in v0.9.2 (up to three screenshots); several kinds and a copy of what was sent still open",
       "source": "UF-003"
     },
     {
@@ -548,6 +548,74 @@
       "last_seen": "0.9.1",
       "status": "open",
       "source": "UF-003"
+    },
+    {
+      "id": "F027",
+      "reader": "the editor",
+      "page": "the Feedback pane and the feedback form",
+      "stage": "act",
+      "actual": "Nothing tells a person their feedback may be published, so every message needs the editor's consent after the fact.",
+      "severity": "high",
+      "proposal": "A required checkbox: 'I agree this can be published' (words, screenshots, page, time; never name, email or key), stored in the message with the wording's version; a line under 'Capture this screen' to check the screenshot; removal on request; the collaborators vault's README to say rows marked public are published.",
+      "owner": "conductor",
+      "evidence": [
+        "the editor's decision in session, 23 October"
+      ],
+      "first_seen": "0.9.3",
+      "last_seen": "0.9.3",
+      "status": "open",
+      "source": "the editor's decision in session, 23 October"
+    },
+    {
+      "id": "F028",
+      "reader": "the editor",
+      "page": "/join/ and the Feedback pane",
+      "stage": "arrive",
+      "actual": "Signing keys and invitations are too much for a new user, and most of this is ephemeral (the editor, 23 October).",
+      "severity": "high",
+      "proposal": "Remove the key and invitation step for feedback (the editor's decision); with no signatures, a flood limit and a 'held for a person' state on the drain, as the subscriptions drain already does. F017, F018, F022, F023 and F024 are superseded when it ships.",
+      "owner": "conductor",
+      "evidence": [
+        "the editor's decision in session, 23 October"
+      ],
+      "first_seen": "0.9.3",
+      "last_seen": "0.9.3",
+      "status": "open",
+      "source": "the editor's decision in session, 23 October"
+    },
+    {
+      "id": "F029",
+      "reader": "the editor, testing",
+      "page": "/collaborators/ and the Feedback pane",
+      "stage": "act",
+      "actual": "Two feedback forms of two shapes: the power users' form asks for the page as text; the Feedback button fills it in.",
+      "severity": "low",
+      "proposal": "One feedback form, filling in the page and version itself, with the publish checkbox (F027).",
+      "owner": "conductor",
+      "evidence": [
+        "UF-004"
+      ],
+      "first_seen": "0.9.3",
+      "last_seen": "0.9.3",
+      "status": "open",
+      "source": "UF-004"
+    },
+    {
+      "id": "F030",
+      "reader": "the editor, testing",
+      "page": "the readers (data/personas.json) and the join form",
+      "stage": "find-my-path",
+      "actual": "No Founder among the readers; the join form's list is not in alphabetical order.",
+      "severity": "low",
+      "proposal": "Add a Founder reader and sort the join form's list alphabetically, once the editor confirms.",
+      "owner": "story-site",
+      "evidence": [
+        "UF-004"
+      ],
+      "first_seen": "0.9.3",
+      "last_seen": "0.9.3",
+      "status": "open",
+      "source": "UF-004"
     }
   ]
 }

@@ -6,7 +6,23 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.1. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.3. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.3 · 2026-10-23
+
+Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked in the friction log, the editor's decisions in the brief to the conductor (a 'this may be published' checkbox, no keys for feedback, one form), and the Sherpa's held key on /team/vaults/
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.10.2 · 2026-10-23
+
+the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evidence vault current from the source watch's queue; proposed, waiting for the editor's go on the schedule
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.10.1 · 2026-10-23
 
@@ -426,4 +442,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

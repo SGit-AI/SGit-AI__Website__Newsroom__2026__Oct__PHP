@@ -15,4 +15,4 @@ v3 · site v0.3.1 · 22 October 2026 · reconstructed from git · 4 lines added 
 
 
 ---
-site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/page-actors/index.html
+site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/versions/page-actors/index.html

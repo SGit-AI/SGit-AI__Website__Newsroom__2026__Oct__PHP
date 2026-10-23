@@ -750,6 +750,62 @@
       "reply": "Not sent. Her signed feedback from the site is in the lane; when the conductor drains it, the Sherpa adds it here. Her key, if enrolled from that drain as it stands, would take the role on the link: see UF-002 point 1, held.",
       "document": "uf-003",
       "who": "power user 1"
+    },
+    {
+      "id": "UF-004",
+      "received": "2026-10-23",
+      "tester": "internal",
+      "channel": "the power users' forms on /collaborators/ (a join request and a piece of feedback), read from the collaborators lane by the Sherpa without draining it",
+      "reader": "the editor, testing the forms",
+      "ask": "001",
+      "site_version": "0.9.3",
+      "site_version_note": "Sent on v0.9.3, between 13:45 and 13:47 UTC.",
+      "progress": "a test: one join request and one piece of feedback",
+      "pages_read": [
+        [
+          "collaborators/index.html",
+          "the join form and the feedback form"
+        ]
+      ],
+      "summary": "Internal test messages from the editor: a join request and a piece of feedback through the power users' forms. Both arrived intact and decrypt with the vault key alone. They are tests, not reader feedback, and are not counted as such; the request in the join note is routed like any other.",
+      "points": [
+        {
+          "n": 1,
+          "kind": "test",
+          "tags": [
+            "forms",
+            "lane"
+          ],
+          "words": "Worked: hopefully this form :) · Missing: all good · Next: see if this message is received ok · Page: page XYZ",
+          "comment": "Received intact: the feedback form's message reached the lane and decrypted with the collaborators vault's key alone (v0.9.2's postmaster). One thing it shows: this form asks the reader to type the page, while the Feedback button fills it in; two forms of two shapes.",
+          "replicated": "yes",
+          "recommendation": "When signed keys go, merge the two into one feedback form that fills in the page and version itself, with the publish checkbox (F027, F029).",
+          "owner": "conductor",
+          "friction": "F029",
+          "severity": "low",
+          "evidence": "Read with collaborators_drain.py --keep-pending against throwaway copies; nothing marked processed, nothing pushed."
+        },
+        {
+          "n": 2,
+          "kind": "idea",
+          "tags": [
+            "readers",
+            "join form"
+          ],
+          "words": "can you add Founder to the reader list and also sort them alphabetically :)",
+          "comment": "Received intact through the join form's note. A request typed into a form is material, so it is routed, not acted on: the readers are data/personas.json (fifteen readers in five groups) and the join form's list follows them.",
+          "replicated": "n/a",
+          "recommendation": "Add a Founder reader (closest to the executive view: runs the company, often also the CTO) and sort the join form's list alphabetically; the editor confirms in session.",
+          "owner": "story-site",
+          "also": [
+            "conductor"
+          ],
+          "friction": "F030",
+          "severity": "low"
+        }
+      ],
+      "not_reproduced": [],
+      "reply": "Not needed: a test by the editor. The join request's name and address are not shown; join requests stay private."
     }
   ]
 }

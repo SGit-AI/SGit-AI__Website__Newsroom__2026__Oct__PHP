@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.1. Not the live site.
+> Mockup D for review, built from the data of release v0.10.3. Not the live site.
 
-PHP Team console Console Overview Board 103 Agents 16 Releases 52 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 103 Agents 16 Releases 54 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 22 October 2026, 11:34 UTC 
 
 Release 
-v0.10.1 
-52 releases since 22 Oct 
+v0.10.3 
+54 releases since 22 Oct 
 
 Open on the board 
 103 
 40 done, 2 waiting 
 
 Pages built 
-525 
+526 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -90,14 +90,14 @@ Who is who in the telemetry: every session a reader, the editor, a power user or
 ### Releases
  latest 8 
 
+ v0.10.3 2026-10-23 Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked i… 
+ v0.10.2 2026-10-23 the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evid… 
  v0.10.1 2026-10-23 three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they… 
  v0.10.0 2026-10-23 the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); … 
  v0.9.3 2026-10-23 Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highl… 
  v0.9.2 2026-10-23 the vault key is the whole boundary: whoever holds a vault's key can drain its lane (the enum key and the key pair's passphrase de… 
  v0.9.1 2026-10-23 vaults (/team/vaults/): every vault each agent made, listed by agent and by ID only, with whether its key is sealed to the editor;… 
  v0.9.0 2026-10-23 The Sherpa joins (/sherpa/): the agent that walks with the reader; readers' feedback recorded and answered point by point (UF-001 … 
- v0.8.4 2026-10-23 who reads this site, by group: every session a reader, the editor, a power user or team member, synthetic (agents and tests) or a … 
- v0.8.3 2026-10-23 your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) an… 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ Who is who in the telemetry: every session a reader, the editor, a power user or
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

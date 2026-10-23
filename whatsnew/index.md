@@ -12,6 +12,18 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.3 · 23 October 2026new since your last visit
+
+Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked in the friction log, the editor's decisions in the brief to the conductor (a 'this may be published' checkbox, no keys for feedback, one form), and the Sherpa's held key on /team/vaults/
+
+No reader-facing section changed in this release.
+
+## v0.10.2 · 23 October 2026new since your last visit
+
+the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evidence vault current from the source watch's queue; proposed, waiting for the editor's go on the schedule
+
+No reader-facing section changed in this release.
+
 ## v0.10.1 · 23 October 2026new since your last visit
 
 three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they get wrong (12 captured rows, with Jeremiah Grossman's post); Perplexity reading the community spaces (job 03, its prompt in full); and the external collectors brief with ChatGPT's first run; briefs now render quotes and pictures
@@ -486,4 +498,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

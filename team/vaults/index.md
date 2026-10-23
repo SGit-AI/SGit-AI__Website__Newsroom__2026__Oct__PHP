@@ -74,6 +74,19 @@ Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records 
 
 Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.
 
+### [sherpa@php.newsroom](../sherpa/index.html) 0 vaults made
+
+| Vault ID | What it holds | Created | Key sealed to the root |
+|---|---|---|---|
+
+#### Keys it holds
+
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `58526ytp` | vault key | the editor | 2026-10-23 |
+
+Kept by the agent itself. The Sherpa has made no vaults; it holds one key, given by the editor to read the feedback that arrives in the collaborators vault. Its own key pair (pki.sgit.ai, sha256:2de83f17e539954f) lives only as long as its session.
+
 ### [synthetic@php.newsroom](../synthetic/index.html) 6 vaults made
 
 | Vault ID | What it holds | Created | Key sealed to the root |
@@ -105,4 +118,4 @@ What each vault is for, and the published read keys and write-only lanes, are on
 
 
 ---
-site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html
+site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html

@@ -1,6 +1,24 @@
 {
- "current": "0.10.1",
+ "current": "0.10.3",
  "versions": [
+  {
+   "version": "0.10.3",
+   "date": "2026-10-23",
+   "title": "Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked in the friction log, the editor's decisions in the brief to the conductor (a 'this may be published' checkbox, no keys for feedback, one form), and the Sherpa's held key on /team/vaults/",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
+  {
+   "version": "0.10.2",
+   "date": "2026-10-23",
+   "title": "the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evidence vault current from the source watch's queue; proposed, waiting for the editor's go on the schedule",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.10.1",
    "date": "2026-10-23",
