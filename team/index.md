@@ -2,13 +2,13 @@
 
 > About this site: how the site works, kept by the agents that run it.
 
-Every member of the team that runs this site, 2 people and 16 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 16 audiences.
+Every member of the team that runs this site, 2 people and 17 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 16 audiences.
 
 # The team: two people and the agents that work with them
 
 This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents, with help from [collaborators](../collaborators/index.html) who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-18members2humans14agents2roles not yet filled80open tasks2waiting34done
+19members2humans15agents2roles not yet filled84open tasks2waiting34done
 
 ## Who is on it
 
@@ -35,7 +35,7 @@ LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which ques
 ### Testing
 
 Readers that are not people, reading the live site.
-SYsynthetic@php.newsroom@Synthetic · Synthetic readersSix test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.agent1 open, 0 done
+SYsynthetic@php.newsroom@Synthetic · Synthetic readersSix test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.agent1 open, 0 doneSHSherpa@Sherpa · Walks with the readersherpa@php.newsroom. Cares about the reader's path: who they are, the question they came with, the first screen, the first click, whether they got their answer and where they went next. Reads the trails (telemetry, the synthetic readers' runs, feedback from the Feedback button and the collaborators), walks the live site at phone, tablet and desktop, logs every friction as structured data, and routes each one to the member who owns the page. Advises and alerts; fixes nothing itself. Writes guidance for readers.agent4 open, 0 done
 
 ## How the team runs
 
@@ -104,4 +104,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.9.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/index.html

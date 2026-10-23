@@ -1,6 +1,15 @@
 {
- "current": "0.8.4",
+ "current": "0.9.0",
  "versions": [
+  {
+   "version": "0.9.0",
+   "date": "2026-10-23",
+   "title": "The Sherpa joins (/sherpa/): the agent that walks with the reader; readers' feedback recorded and answered point by point (UF-001 from a power user, UF-002 from an agent testing the invitation link), with both interface bugs reproduced; ideas from collaborators set against what the site has today (CI-001); the friction log of what gets in readers' way, with who can fix each; and the Sherpa on the team",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.8.4",
    "date": "2026-10-23",

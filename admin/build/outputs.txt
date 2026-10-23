@@ -607,6 +607,14 @@ review/index.md
 review/ui/index.html
 review/ui/index.md
 robots.txt
+sherpa/feedback/uf-001/index.html
+sherpa/feedback/uf-001/index.md
+sherpa/feedback/uf-002/index.html
+sherpa/feedback/uf-002/index.md
+sherpa/ideas/ci-001/index.html
+sherpa/ideas/ci-001/index.md
+sherpa/index.html
+sherpa/index.md
 signals/index.html
 signals/index.md
 sitemap.xml
@@ -946,6 +954,8 @@ team/researcher/index.html
 team/researcher/index.md
 team/runs/index.html
 team/runs/index.md
+team/sherpa/index.html
+team/sherpa/index.md
 team/status/index.html
 team/status/index.md
 team/story-site/index.html

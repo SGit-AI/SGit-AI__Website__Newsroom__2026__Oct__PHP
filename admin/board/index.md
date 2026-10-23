@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 121 items, 84 open, 35 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 125 items, 88 open, 35 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -131,9 +131,13 @@ The work, as rows in `data/admin.json`: 121 items, 84 open, 35 done. An item is 
 | 119 | Who is who in the telemetry: every session a reader, the editor, a power user or team member, synthetic (agents, tests, headless browsers) or a crawler; declared by the browser since v0.8.4 (agent: automation by class; who: the role of its /join/ key or this browser's setting on /admin/telemetry/), inferred before (time zone, place, language, first page); admin/build/telemetry_classes.py, the same rules in the telemetry app v0.2.1 | done | dev@php.newsroom | 0.8.4 |
 | 120 | The public telemetry stats vault (0cfkdcvh, read key published): its own app with the hourly chart by group, a world map of readers, what readers read; curated counts only, written at every drain by admin/build/telemetry_flow.sh (drain, classify, publish, push both vaults); the same counts and map on /admin/telemetry/ | done | dev@php.newsroom | 0.8.4 |
 | 121 | Telemetry, next: the editor confirms the inferred rule for his browsers (Europe/Lisbon, English) or sets them on /admin/telemetry/; enrolled /join/ keys start declaring roles once data/contributors.json lists them; the in-browser drain cannot write the public vault (an app cannot write another vault), so public stats follow the next run of telemetry_flow.sh; a schedule for that run needs the editor's go | open | dev@php.newsroom |  |
+| 122 | Phone first screen (F001): the headline starts 550 to 650px down an 844px screen on every page; proposed to story-site and dev: collapse 'Your reading' and the origin band into one line under the standfirst, the 'New to this story?' banner on the front page only; target h1 in the top 250px. Tracked by the Sherpa until measured on a release | open | sherpa |  |
+| 123 | Synthetic readers' findings to owners (F002 to F006): 'What to tell the board' in the CTO briefing, deadlines and a status template in the PM briefing, Docker image tags and a backport-safe check, grades applied by the published rule, the masthead pound figure. Raised with briefing-writer, story-site, verifier and dev; tracked until each lands | open | sherpa |  |
+| 124 | Trails (F007 to F009): proposed to dev, for the editor's go: persona and furthest-scroll in the page event, next-page paths, opens of Ask, Feedback and the reading tools, unknown paths counted apart; synthetic readers after every release. Telemetry lists six paths this site does not serve: for security to look at | open | sherpa |  |
+| 125 | The Sherpa on the site: replace the 'New to this story?' banner with one line from the Sherpa linking to /start/, a 'Where next' block at the foot of every page from the reader's persona path, a one-screen guide to the site's own tools; drafts by the Sherpa, placement by story-site | open | sherpa |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.9.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
