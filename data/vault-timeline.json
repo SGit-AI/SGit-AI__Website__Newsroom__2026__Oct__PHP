@@ -902,5 +902,35 @@
   "confidence": "stated",
   "phase": "exploitation",
   "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-20",
+  "event": "PHP maintainers publish advance notice of two patches, both rated 9.2 out of 10, after purported exploit details leak",
+  "sources": [
+   "arstechnica-security-2026-10-php-maintainers-tell-web-devs-to-prepare-th"
+  ],
+  "confidence": "stated",
+  "phase": "disclosure",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-17",
+  "event": "Earliest exploitation attempt against CVE-2026-109618 and CVE-2026-109619 in Amazon's MadPot honeypot telemetry",
+  "sources": [
+   "cyberpress-php2shell-exploits-predate-patches"
+  ],
+  "confidence": "stated",
+  "phase": "exploitation",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-21T02:00Z",
+  "event": "First proof-of-concept exploits seen by Amazon, about 12 hours before the scheduled 14:00 UTC release",
+  "sources": [
+   "cyberpress-php2shell-exploits-predate-patches"
+  ],
+  "confidence": "stated",
+  "phase": "exploitation",
+  "agent": "curator@php.newsroom"
  }
 ]
