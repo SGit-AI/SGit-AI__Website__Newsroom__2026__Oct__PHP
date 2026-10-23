@@ -189,7 +189,7 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('collaborators/index.html', 'Power users: start here'), ('join/index.html', 'Join: a key for feedback'), ('join/invite/index.html', 'Invite someone'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('stack/index.html', 'Your stack: the blast radius'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
+    ('Yours', [('collaborators/index.html', 'Power users: start here'), ('join/index.html', 'Join: a key for feedback'), ('feedback/index.html', 'Feedback from collaborators'), ('join/invite/index.html', 'Invite someone'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('stack/index.html', 'Your stack: the blast radius'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -1380,9 +1380,9 @@ def build_llms():
     for m in TEAM['members']:
         lines.append(f'- [{m["name"]}]({BASE_URL}/team/{m["id"]}/index.md): {m["role"]}; {m["summary"]}')
     lines.append('')
-    lines.append("## The Sherpa: readers' feedback, one page each")
+    lines.append("## The Sherpa and the feedback from collaborators, one page each")
     for p, t, d, _ in PAGES:
-        if p.startswith('sherpa/'):
+        if p.startswith(('sherpa/', 'feedback/')):
             lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
     lines.append('')
     lines.append('## Parties, one page each')
@@ -4565,50 +4565,152 @@ def sherpa_pill(cls, label):
 def sherpa_shot(up, src, cap):
     return f'<figure class="shot"><img src="{up}{U(src)}" alt="{E(cap)}" loading="lazy" style="max-width:100%;height:auto"><figcaption>{E(cap)}</figcaption></figure>'
 
-def sherpa_point(r, p, d):
-    up = '../' * d
-    if p.get('held'):
-        return f'<article class="fbpoint" id="p{p["n"]}"><h3>{E(r["id"])}.{p["n"]}: held</h3><p>{E(p["comment"])}</p><p class="small">Who can act: {sherpa_who(p["owner"], d)}.</p></article>'
-    rep = p.get('replication')
-    also = (', with ' + ', '.join(sherpa_who(x, d) for x in p['also'])) if p.get('also') else ''
-    return f'''<article class="fbpoint" id="p{p["n"]}">
-<h3>{E(r["id"])}.{p["n"]}: {E(p["kind"])} {sherpa_pill(*SHERPA_SEEN[p["replicated"]])}</h3>
-<p class="small">Tags: {E(", ".join(p["tags"]))}{(" · friction " + E(p["friction"])) if p.get("friction") else ""}</p>
-<blockquote><p><q>{E(p["words"])}</q></p><footer>The reader's words, as received</footer></blockquote>
-<p><b>The Sherpa's comment.</b> {E(p["comment"])}</p>
-{f'<p><b>Evidence.</b> {E(p["evidence"])}</p>' if p.get("evidence") else ""}
-{sherpa_shot(up, *rep) if rep else ""}
-<p><b>Recommendation.</b> {E(p["recommendation"])}</p>
-<p class="small">Who can act: {sherpa_who(p["owner"], d)}{also}.</p>
-</article>'''
+def sherpa_doc(r):
+    """The document a feedback record was received as, in blocks the comments anchor to. A record imported in full has
+    admin/sherpa/documents/<id>.json; otherwise its points' own words are the document, one block each."""
+    if r.get('document'):
+        return sherpa_load('documents/' + r['document'])['blocks']
+    return [{'id': f'p{p["n"]}', 't': 'q', 'text': p['words'], 'kind': p['kind']} for p in r['points']]
 
-def build_sherpa_feedback(r):
-    d = 3; up = '../' * d
-    pages_read = ''.join(f'<li><a href="{up}{U(pth)}">{E(pth)}</a>{(" " + E(how)) if how else ""}</li>' for pth, how in r['pages_read'])
-    att = ''.join(sherpa_shot(up, src, cap) for src, cap in r.get('attachments', []))
-    rows = [[f'<a href="#p{p["n"]}">{p["n"]}</a>', E(p['kind']), sherpa_pill(*SHERPA_SEEN[p['replicated']]),
-             sherpa_pill(SHERPA_SEVERITY[p['severity']], p['severity']) if p.get('severity') else '', sherpa_who(p['owner'], d), E(p.get('friction', ''))] for p in r['points']]
-    points = ''.join(sherpa_point(r, p, d) for p in r['points'])
+def sherpa_blocks_of(r, p):
+    return p.get('blocks') or [f'p{p["n"]}']
+
+def sherpa_block_html(r, b, up):
+    t = b['t']
+    if t in ('h2', 'h3'):
+        return f'<h3 class="fv-h">{E(b["text"])}</h3>'
+    if t == 'li':
+        return f'<p class="fv-li">{E(b["text"])}</p>'
+    if t == 'img':
+        alt = f'Screenshot from the report: {b["src"].rsplit(".", 1)[0].split("-", 1)[-1].replace("-", " ")}'
+        return f'<figure class="shot"><img src="{up}assets/sherpa/{E(r["id"].lower())}/{U(b["src"])}" alt="{E(alt)}" loading="lazy"></figure>'
+    if t == 'row':
+        return '<div class="fv-cells">' + ''.join(f'<span>{E(c)}</span>' for c in b['cells']) + '</div>'
+    if t == 'q':
+        return f'<p><span class="small">{E(b.get("kind", ""))}</span><br><q>{E(b["text"])}</q></p>'
+    return f'<p>{E(b["text"])}</p>'
+
+def sherpa_card(r, p, d):
+    if p.get('held'):
+        return f'<div class="fv-card" id="c{p["n"]}"><b>{E(r["id"])}.{p["n"]}: held</b><p>{E(p["comment"])}</p></div>'
+    also = (', with ' + ', '.join(sherpa_who(x, d) for x in p['also'])) if p.get('also') else ''
+    sev = sherpa_pill(SHERPA_SEVERITY[p['severity']], p['severity']) if p.get('severity') else ''
+    return f'''<div class="fv-card" id="c{p["n"]}"><b>{E(r["id"])}.{p["n"]} · {E(p["kind"])}</b> {sherpa_pill(*SHERPA_SEEN[p["replicated"]])} {sev}
+<p>{E(p["comment"])}</p>{f'<p class="small"><b>Evidence.</b> {E(p["evidence"])}</p>' if p.get("evidence") else ""}
+<p><b>Recommend.</b> {E(p["recommendation"])}</p>
+<p class="small">Who can act: {sherpa_who(p["owner"], d)}{also}{(" · friction " + E(p["friction"])) if p.get("friction") else ""}</p></div>'''
+
+def sherpa_nav(FB, CI, cur, up):
+    def item(href, label, sub, on):
+        return f'<a href="{href}"{" aria-current=page" if on else ""}><b>{E(label)}</b><span>{E(sub)}</span></a>'
+    groups = [("From readers and power users", [r for r in FB if r.get('tester') != 'agent']), ("Tests by agents", [r for r in FB if r.get('tester') == 'agent'])]
+    out = item(f'{up}feedback/index.html', 'All feedback', 'the section, with its numbers', cur == 'home')
+    for name, rs in groups:
+        out += f'<p class="fv-g">{E(name)}</p>' + ''.join(item(f'{up}feedback/{E(r["id"].lower())}/index.html', r['id'], (r.get('who') or r['reader'].split(',')[0])[:60], cur == r['id']) for r in rs)
+    out += '<p class="fv-g">Ideas from collaborators</p>' + ''.join(item(f'{up}sherpa/ideas/{E(c["id"].lower())}/index.html', c['id'], c['name_on_site'] or c['handle'], False) for c in CI)
+    out += '<p class="fv-g">What happens next</p>' + item(f'{up}feedback/briefs/index.html', 'The briefs', 'to the conductor, and to other teams', cur == 'briefs')
+    return f'<nav class="fv-nav" aria-label="Feedback">{out}</nav>'
+
+def sherpa_brief_of(r, d):
+    by = {}
+    for p in r['points']:
+        if p['kind'] == 'praise' or p.get('held'):
+            continue
+        by.setdefault(p['owner'], []).append(p)
+    if not by:
+        return '<p>Nothing to brief: praise only.</p>'
+    out = ''
+    for own, ps in by.items():
+        out += f'<h3>For {sherpa_who(own, d)}</h3><ol>' + ''.join(f'<li>{E(p["recommendation"])} <span class="small">({E(r["id"])}.{p["n"]}{(", " + E(p["friction"])) if p.get("friction") else ""})</span></li>' for p in ps) + '</ol>'
+    return '<p>Everything goes to the conductor, who hands each part to the member named. What this record asks of each member:</p>' + out
+
+def sherpa_viewer(r, FB, CI, d):
+    up = '../' * d
+    blocks = sherpa_doc(r)
+    first, at = {}, {}
+    for p in r['points']:
+        bs = sherpa_blocks_of(r, p)
+        first.setdefault(bs[0], []).append(p)
+        for b in bs[1:]:
+            at.setdefault(b, []).append(p)
+    rows = ''
+    for b in blocks:
+        cards = ''.join(sherpa_card(r, p, d) for p in first.get(b['id'], []))
+        refs = ''.join(f'<a class="fv-ref" href="#c{p["n"]}">{E(r["id"])}.{p["n"]}</a>' for p in at.get(b['id'], []))
+        rows += f'<div class="fv-row" id="{E(b["id"])}"><div class="fv-b" data-b="{E(b["id"])}">{sherpa_block_html(r, b, up)}</div><aside class="fv-c">{cards}{refs}</aside></div>'
+    kinds = Counter(p['kind'] for p in r['points'])
+    chips = ''.join(f'<a class="fv-chip fv-k-{E(p["kind"])}" href="#c{p["n"]}" title="{E(p["kind"])}">{p["n"]}</a>' for p in r['points'])
+    return f'''<div class="fv-map"><span class="small">Points, in order ({", ".join(f"{n} {E(k)}" for k, n in kinds.most_common())}):</span> {chips}</div>
+<div class="fv-doc" data-doc="{E(r["id"])}"><div class="fv-row fv-head"><div>The document, as received</div><div>The Sherpa's comments</div></div>{rows}</div>'''
+
+def build_sherpa_feedback(r, FB, CI):
+    d = 2; up = '../' * d
+    pages_read = ', '.join(f'<a href="{up}{U(pth)}">{E(pth)}</a>{(" (" + E(how) + ")") if how else ""}' for pth, how in r['pages_read'])
+    who = "A test by an agent, not a person: its findings are prompts to re-check, not evidence about readers." if r.get("tester") == "agent" else "Readers are never named here."
+    facts = ''.join(f'<dt>{k}</dt><dd>{v}</dd>' for k, v in [('From', f'{E(r["reader"])}. {who}'), ('How it came', E(r['channel']) + ((', about ask ' + E(r['ask'])) if r.get('ask') else '')),
+        ('Received', E(r['received'])), ('Site version', f'v{E(r["site_version"])}. {E(r["site_version_note"])}'), ('Progress', E(r['progress'])), ('Pages read', pages_read)])
     nr = ''.join(f'<li>{E(x)}</li>' for x in r.get('not_reproduced', []))
-    record = f'''<ul>
-<li><b>From:</b> {E(r["reader"])}. {"A test by an agent, not a person: its findings are prompts to re-check, not evidence about readers." if r.get("tester") == "agent" else "Readers are never named here."}</li>
-<li><b>How it came:</b> {E(r["channel"])}{(", about ask " + E(r["ask"])) if r.get("ask") else ""}.</li>
-<li><b>Version:</b> v{E(r["site_version"])}. {E(r["site_version_note"])}</li>
-<li><b>Progress:</b> {E(r["progress"])}.</li>
-<li><b>Pages read:</b><ul>{pages_read}</ul></li>
-</ul>{att}'''
-    stats = ''.join(stat(n, l) for n, l in [(r['id'], 'feedback id'), (r['received'], 'received'), ('v' + r['site_version'], 'site version'), (len(r['points']), 'points'), (sum(p['replicated'] == 'yes' for p in r['points']), 'reproduced')])
-    title = f'{r["id"]}: reader feedback of {r["received"]}, on v{r["site_version"]}'
+    title = f'{r["id"]}: feedback of {r["received"]}, on v{r["site_version"]}'
     body = f'''
-<p class="crumb"><a href="../../index.html">The Sherpa</a> / <a href="../../index.html#feedback">Readers' feedback</a> / {E(r["id"])}</p>
+<link rel="stylesheet" href="{up}assets/sherpa/viewer.css">
+<p class="crumb"><a href="../index.html">Feedback from collaborators</a> / {E(r["id"])}</p>
+<div class="fv">{sherpa_nav(FB, CI, r["id"], up)}<div class="fv-main">
 <h1>{E(title)}</h1>
 <p class="lead">{E(r["summary"])}</p>
-<div class="stats">{stats}</div>
-{section("record", "The record", record)}
-{section("points", "Point by point", table(["#", "Kind", "Seen by the Sherpa", "Severity", "Who can act", "Friction"], rows, "board") + points, "Each point in the reader's words, then the Sherpa's comment, whether the Sherpa could see what the reader saw (re-checked on the version above, in Chromium), and the recommendation. The Sherpa proposes; the member named acts.")}
+<dl class="fv-facts">{facts}</dl>
+{section("doc", "The document and the Sherpa's comments, side by side", sherpa_viewer(r, FB, CI, d), "Select any text in the document to highlight it and add a note of your own; your notes stay in this browser, and you can export them.")}
+{section("mine", "Your notes", '<div id="fv-notes"><p class="small">None yet. Select text in the document to add one. This needs JavaScript; notes are kept in this browser only.</p></div>')}
+{section("brief", "The brief", sherpa_brief_of(r, d))}
 {section("open", "Not reproduced, and the reply", f"<ul>{nr}</ul><p>{E(r.get('reply', ''))}</p>")}
+</div></div>
+<script type="module" src="{up}assets/sherpa/viewer.js"></script>
 '''
-    page(f'sherpa/feedback/{r["id"].lower()}/index.html', title, r['summary'], body, kind='site', topics='readers feedback')
+    page(f'feedback/{r["id"].lower()}/index.html', title, r['summary'], body, kind='site', topics='readers feedback collaborators')
+def build_feedback_section(FB, CI, FL):
+    d = 1; up = '../'
+    ST = sherpa_load('collab-stats')
+    opn = [f for f in FL['frictions'] if f['status'] != 'closed']
+    pts = [p for r in FB for p in r['points']]
+    stats = ''.join(stat(n, l) for n, l in [(len(FB), 'pieces of feedback'), (len(pts), 'points answered'), (sum(p['replicated'] == 'yes' for p in pts), 'reproduced by the Sherpa'),
+        (len(opn), 'frictions open'), (ST['power_users_joined'], 'power users joined'), (ST['signed_messages'], 'signed messages received'), (len(CI), 'conversations of ideas')])
+    rows = [[f'<a href="{E(r["id"].lower())}/index.html">{E(r["id"])}</a>', E(r['received']), 'v' + E(r['site_version']), E(r.get('who') or r['reader'][:70]), 'agent test' if r.get('tester') == 'agent' else 'person',
+             str(len(r['points'])), E(r['summary'])] for r in FB]
+    body = f'''
+<link rel="stylesheet" href="{up}assets/sherpa/viewer.css">
+<p class="crumb"><a href="../collaborators/index.html">Power users</a> / Feedback from collaborators</p>
+<div class="fv">{sherpa_nav(FB, CI, "home", up)}<div class="fv-main">
+<h1>Feedback from collaborators</h1>
+<p class="lead">Everything the power users and collaborators have told us about this site, each piece kept whole, with the Sherpa's comment beside every part of it, what was reproduced, and the brief it turned into. Kept by <a href="../sherpa/index.html">the Sherpa</a>. People are not named; tests run by agents are marked as tests.</p>
+<div class="stats">{stats}</div>
+<p class="small">{E(ST["note"])}</p>
+{section("all", "Every piece of feedback", table(["Id", "Received", "Version", "From", "Kind", "Points", "In short"], rows, "board"))}
+{section("next", "What happens next", '<p>Each piece of feedback becomes frictions in <a href="../sherpa/index.html#friction">the friction log</a> and a line in <a href="briefs/index.html">the brief to the conductor</a>, who hands it to the member who owns the page. When a fix ships, the Sherpa checks it on the live site and closes the friction.</p>')}
+</div></div>
+'''
+    page('feedback/index.html', 'Feedback from collaborators', 'Every piece of feedback from power users and collaborators, kept whole and answered point by point beside it, with the numbers and the briefs it turned into.', body, kind='site', topics='readers feedback collaborators')
+    by = {}
+    for f in opn:
+        by.setdefault(f['owner'], []).append(f)
+    order = sorted(by, key=lambda o: (-sum(f['severity'] == 'high' for f in by[o]), o))
+    inner = ''
+    for own in order:
+        fs = sorted(by[own], key=lambda f: ({'high': 0, 'medium': 1, 'low': 2}[f['severity']], f['id']))
+        inner += f'<h3>For {sherpa_who(own, 2)}</h3><ol>' + ''.join(f'<li>{sherpa_pill(SHERPA_SEVERITY[f["severity"]], f["severity"])} <b>{E(f["page"])}:</b> {E(f.get("proposal") or f.get("expected", ""))} <span class="small">({E(f["id"])}; seen v{E(f["first_seen"])} to v{E(f["last_seen"])}; {E(f.get("source", "the Sherpa"))})</span></li>' for f in fs) + '</ol>'
+    BR = sherpa_load('briefs')
+    ext = ''
+    for t in BR['teams']:
+        ext += f'<h3>For <a href="{U(t["url"])}">{E(t["name"])}</a></h3><ol>' + ''.join(f'<li>{sherpa_pill(SHERPA_SEVERITY[i["severity"]], i["severity"])} <b>{E(i["title"])}.</b> {E(i["what"])} <i>Evidence:</i> {E(i["evidence"])} <i>Proposal:</i> {E(i["proposal"])}</li>' for i in t['items']) + '</ol>'
+    body = f'''
+<link rel="stylesheet" href="{up}../assets/sherpa/viewer.css">
+<p class="crumb"><a href="../index.html">Feedback from collaborators</a> / The briefs</p>
+<div class="fv">{sherpa_nav(FB, CI, "briefs", "../../")}<div class="fv-main">
+<h1>The briefs: what the feedback asks of each team</h1>
+<p class="lead">One brief to the conductor, built from every open friction, grouped by the member who owns the page and ordered by severity; the conductor hands each part on. Then the requirements for teams outside this newsroom. Every line names where it came from.</p>
+{section("conductor", "To the conductor", inner)}
+{section("other", "To other teams", ext)}
+</div></div>
+'''
+    page('feedback/briefs/index.html', 'The briefs: what the feedback asks of each team', 'The brief to the conductor from every open friction, by owner and severity, and the requirements for teams outside the newsroom (pki.sgit.ai).', body, kind='site', topics='readers feedback briefs')
 
 SHERPA_KIND = {'comment': 'Comments', 'idea': 'Ideas', 'question': 'Questions', 'offer': 'The offer'}
 
@@ -4657,13 +4759,14 @@ def build_sherpa_ideas(c):
 
 def build_sherpa():
     FB, FL = sherpa_load('feedback')['feedback'], sherpa_load('friction-log')
-    for r in FB:
-        build_sherpa_feedback(r)
     CI = sherpa_load('ideas')['conversations']
+    for r in FB:
+        build_sherpa_feedback(r, FB, CI)
     for c in CI:
         build_sherpa_ideas(c)
+    build_feedback_section(FB, CI, FL)
     me = [m for m in TEAM['members'] if m['id'] == 'sherpa'][0]
-    fbrows = [[f'<a href="feedback/{E(r["id"].lower())}/index.html">{E(r["id"])}</a>', E(r['received']), 'v' + E(r['site_version']), E(r['reader']), E(r['progress']),
+    fbrows = [[f'<a href="../feedback/{E(r["id"].lower())}/index.html">{E(r["id"])}</a>', E(r['received']), 'v' + E(r['site_version']), E(r['reader']), E(r['progress']),
                str(len(r['points'])), str(sum(p['replicated'] == 'yes' for p in r['points'])), E(r['summary'])] for r in FB]
     frows = [[E(f['id']), E(f['page']), E(f['stage']), sherpa_pill(SHERPA_SEVERITY[f['severity']], f['severity']), sherpa_who(f['owner'], 1), E(f['status']),
               f'v{E(f["first_seen"])} to v{E(f["last_seen"])}', E(f.get('proposal', f.get('expected', '')))] for f in FL['frictions']]

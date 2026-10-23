@@ -494,7 +494,20 @@
           "comment": "Kept as the baseline. The first evidence from a person that the conductor's invitation, key and signed feedback work end to end outside a test.",
           "replicated": "n/a",
           "recommendation": "Keep all of these as they are.",
-          "owner": "conductor"
+          "owner": "conductor",
+          "blocks": [
+            "b07",
+            "b23",
+            "b29",
+            "b43",
+            "b44",
+            "b45",
+            "b67",
+            "b68",
+            "b69",
+            "b70",
+            "b71"
+          ]
         },
         {
           "n": 2,
@@ -514,7 +527,11 @@
             "security"
           ],
           "friction": "F017",
-          "severity": "high"
+          "severity": "high",
+          "blocks": [
+            "b11",
+            "b12"
+          ]
         },
         {
           "n": 3,
@@ -535,7 +552,14 @@
             "conductor"
           ],
           "friction": "F011",
-          "severity": "high"
+          "severity": "high",
+          "blocks": [
+            "b15",
+            "b16",
+            "b17",
+            "b18",
+            "b81"
+          ]
         },
         {
           "n": 4,
@@ -553,7 +577,16 @@
           "owner": "conductor",
           "evidence": "assets/feedback/join.js line 42 on 0.9.0.",
           "friction": "F024",
-          "severity": "medium"
+          "severity": "medium",
+          "blocks": [
+            "b24",
+            "b25",
+            "b33",
+            "b58",
+            "b59",
+            "b60",
+            "b77"
+          ]
         },
         {
           "n": 5,
@@ -570,7 +603,13 @@
           "owner": "conductor",
           "evidence": "build_join() and assets/feedback/join.js on 0.9.0.",
           "friction": "F022",
-          "severity": "high"
+          "severity": "high",
+          "blocks": [
+            "b31",
+            "b65",
+            "b73",
+            "b76"
+          ]
         },
         {
           "n": 6,
@@ -587,7 +626,13 @@
           "owner": "conductor",
           "evidence": "assets/feedback/join.js lines 50 to 51 on 0.9.0.",
           "friction": "F023",
-          "severity": "medium"
+          "severity": "medium",
+          "blocks": [
+            "b53",
+            "b54",
+            "b55",
+            "b64"
+          ]
         },
         {
           "n": 7,
@@ -603,7 +648,12 @@
           "owner": "conductor",
           "evidence": "assets/feedback/join.js line 40; build_join() in admin/build/build.py.",
           "friction": "F014",
-          "severity": "low"
+          "severity": "low",
+          "blocks": [
+            "b32",
+            "b63",
+            "b82"
+          ]
         },
         {
           "n": 8,
@@ -620,7 +670,14 @@
           "owner": "conductor",
           "evidence": "assets/feedback/pane.js on 0.9.0: KINDS is one select; one shot.",
           "friction": "F025",
-          "severity": "medium"
+          "severity": "medium",
+          "blocks": [
+            "b36",
+            "b37",
+            "b38",
+            "b47",
+            "b80"
+          ]
         },
         {
           "n": 9,
@@ -639,7 +696,12 @@
             "dev"
           ],
           "friction": "F025",
-          "severity": "medium"
+          "severity": "medium",
+          "blocks": [
+            "b48",
+            "b74",
+            "b78"
+          ]
         },
         {
           "n": 10,
@@ -655,7 +717,12 @@
           "owner": "dev",
           "evidence": "assets/ask/ask.js line 279 on 0.9.0.",
           "friction": "F020",
-          "severity": "medium"
+          "severity": "medium",
+          "blocks": [
+            "b49",
+            "b50",
+            "b79"
+          ]
         },
         {
           "n": 11,
@@ -673,11 +740,16 @@
             "dev"
           ],
           "friction": "F006",
-          "severity": "high"
+          "severity": "high",
+          "blocks": [
+            "b19"
+          ]
         }
       ],
       "not_reproduced": [],
-      "reply": "Not sent. Her signed feedback from the site is in the lane; when the conductor drains it, the Sherpa adds it here. Her key, if enrolled from that drain as it stands, would take the role on the link: see UF-002 point 1, held."
+      "reply": "Not sent. Her signed feedback from the site is in the lane; when the conductor drains it, the Sherpa adds it here. Her key, if enrolled from that drain as it stands, would take the role on the link: see UF-002 point 1, held.",
+      "document": "uf-003",
+      "who": "power user 1"
     }
   ]
 }

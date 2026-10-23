@@ -530,6 +530,24 @@
       "last_seen": "0.9.0",
       "status": "open",
       "source": "UF-003"
+    },
+    {
+      "id": "F026",
+      "reader": "a power user, as a project manager",
+      "page": "the Feedback pane",
+      "stage": "act",
+      "actual": "After a screen capture is refused, the pane says 'No screenshot taken' while an earlier screenshot is still in the preview, and that earlier screenshot is sent with the message.",
+      "severity": "low",
+      "proposal": "On a refused capture, say 'The earlier screenshot is still attached' (or clear it), so the message and the preview agree.",
+      "owner": "conductor",
+      "evidence": [
+        "assets/feedback/pane.js on 0.9.1: the capture's catch does not clear the shot",
+        "Seen in a screenshot sent from the site on 23 October"
+      ],
+      "first_seen": "0.8.2",
+      "last_seen": "0.9.1",
+      "status": "open",
+      "source": "UF-003"
     }
   ]
 }
