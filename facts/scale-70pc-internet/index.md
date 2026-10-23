@@ -60,4 +60,4 @@ Sources: wiz-blog-php2shell, x-wiz-io-php2shell, bbc-live-ckgel5xp2xv9t
 
 
 ---
-site v0.10.17 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.html

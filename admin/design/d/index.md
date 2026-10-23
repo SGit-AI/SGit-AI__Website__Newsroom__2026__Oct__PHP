@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.17. Not the live site.
+> Mockup D for review, built from the data of release v0.10.18. Not the live site.
 
-PHP Team console Console Overview Board 115 Agents 16 Releases 68 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 115 Agents 16 Releases 69 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 23 October 2026, 01:20 UTC 
 
 Release 
-v0.10.17 
-68 releases since 22 Oct 
+v0.10.18 
+69 releases since 22 Oct 
 
 Open on the board 
 115 
@@ -90,6 +90,7 @@ The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once 
 ### Releases
  latest 8 
 
+ v0.10.18 2026-10-23 /team/status/ at 23:30 UTC: all twenty sessions read; the scheduled curator and source watch running, the evidence vault at 260 so… 
  v0.10.17 2026-10-23 the scheduled curator follows the source watch into its pack-mode copy (7r83qic5): the brief records the move, the 15 + 18 capture… 
  v0.10.16 2026-10-23 pack mode, measured: the pack vault in use by two writers, a pull of the scheduled session's commit in 176 s and a one-file correc… 
  v0.10.15 2026-10-23 pack mode, measured on the source watch (/admin/pack-mode/): the same vault as a normal and a pack vault, a fresh clone in 95 s ag… 
@@ -97,7 +98,6 @@ The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once 
  v0.10.13 2026-10-23 the risk graph as a tool (CI-002, steps 1 to 5): every edge says how it is known (read from a capture, from the fix commit, or inf… 
  v0.10.12 2026-10-23 a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a ha… 
  v0.10.11 2026-10-23 Ideas from collaborators, CI-002: the collaborator's ideas for turning the risk graph into a tool (start from one node, a basis on… 
- v0.10.10 2026-10-23 the telemetry app v0.4.0: new events checked on focus, every chart and cell a filter (click to keep, shift-click to exclude), colo… 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.17 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.18 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

@@ -10,15 +10,17 @@ Every agent on the team: what it last did, what it waits for and from whom, the 
 
 Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.
 
-**As of** 2026-10-23 09:55Z UTC · **live site** v0.8.1
+**As of** 2026-10-23 23:30Z UTC · **live site** vv0.10.17
 
-16agents4working6blocked12waiting on the editor11branches waiting for dev$403spent, sessions so far
+20agents2working2blocked15waiting on the editor10branches waiting for dev$588spent, sessions so far
 
 ## What needs a decision first
-- A write key for the curator, which holds a night's work uncommitted.
-- A go to dev@ to carry the waiting branches into dev, and to synthetic@ to release the workflow's removal.
-- Open security@'s two sealed keys before they expire (about 29 October).
-- The front page's 'incomplete fix' claim is stale (the fact-check desk's K-011).
+- A go to the scheduled curator to re-export the evidence vault (227 to 260 sources) and release it.
+- Which vault type the two schedules use, then their schedules and tasks corrected in the schedule vault.
+- Design picks (board 138), dev's three calls, desk's board 128 (now overtaken), GRC 092.
+- Unblock pulse (a push rule) and abp (hooks off in its session: its work is uncommitted).
+- Security review of synthetic/remove-workflow and the librarian's CLAUDE.md branch; open the two sealed keys of 22 October before they expire.
+- Confirm the two public-form feedback messages sherpa holds, and the pending device enrolment.
 
 ## Every agent
 
@@ -26,22 +28,26 @@ Blocked first, then ready for review, then working, then done.
 
 | Agent | State | Last activity (UTC) | Last did | Waiting for | Cost |
 |---|---|---|---|---|---|
-| security@php.newsroom | blocked | 2026-10-22 18:53Z | Built /admin/keys/ on its branch; no agent has a registered key yet and none of the eleven vault keys is confirmed with the editor. | The editor to open two sealed keys before they expire (about 29 October), choose a vault keeper and give a go to release.on: editor | $14.02 |
-| liaison@php.newsroom (outreach) | blocked | 2026-10-22 19:27Z | Built the corrections liaison desk and /outreach/ with three held requests about the '70%' figure; nothing sent. | Which sender to use, approval of each send or a standing rule, and the FT capture.on: editor | $2.21 |
-| storyboards@php.newsroom | blocked | 2026-10-22 19:57Z | Rebuilt the briefing deck as sixteen portrait pages with a PDF; the gate passes. | An image model key to draw four images, then it reprints and pushes.on: editor | $15.21 |
-| abp@newsroom.sgit | blocked | 2026-10-22 19:58Z | Agent behaviour policies and their guard hook; its own hook now blocks every tool call, so its work exists only in its container. | The editor to switch its hooks off by hand so it can fix them, commit and switch them back on.on: editor | $5.27 |
-| [synthetic@php.newsroom](../synthetic/index.html) | blocked | 2026-10-22 22:48Z | Removed the synthetic readers' GitHub workflow on its branch; not merged, so the readers still ran at 00:43 and 06:05 UTC. | A go to release the removal.on: editor | $15.90 |
-| pulse@newsroom | blocked | 2026-10-22 23:58Z | Capture passes, claims and attention counts kept in its vault; three commits (about 95 MB) did not push: the connection reset. | A way to push its vault: the route it was given was refused by the session's permission check.on: editor | $6.65 |
-| [factcheck@php.newsroom](../verifier/index.html) | review ready | 2026-10-22 20:59Z | Run 2 released as v0.5.8; the PHP team answered the 'incomplete fix' report, so a front-page claim is stale (contradiction K-011); seven tickets opened. | Whether its scheduled task stays (paused since 21:36) or goes through security review first.on: editor | $37.31 |
-| [researcher@php.newsroom](../researcher/index.html) | working | 2026-10-23 08:01Z | The source watch ran overnight (a pass at about 01:17 UTC, pushes from 04:03 to 04:15) and a one-off pass from 08:00 UTC; the ten break-in articles are in the curator's queue. | Nothing; the editor's question of 09:04 is not answered yet. | $75.77 |
-| [curator@php.newsroom](../newsroom-lead/index.html) | working | 2026-10-23 09:03Z | Promoted 35 of 36 queued captures into its copy of the evidence vault overnight; flagged drift in three claims (no exploitation, the NCSC-NL count 674 to 724, the 9.2 score against Palo Alto's 8.7). | A write key to the evidence vault: until then nothing it promoted is committed, and a container restart would lose it. Whether to promote one capture it skipped.on: editor | $4.87 |
-| desk@php.newsroom | working | 2026-10-23 09:52Z | Renamed from narrator to news desk chief; this morning wrote the day-two front page brief (board 126 to 129). | The editor's go on the offline brief and two naming questions.on: editor | $1.40 |
-| [conductor@php.newsroom](../conductor/index.html) | working | 2026-10-23 09:55Z | This page; the day-two brief; feedback, keys and invitations (v0.8.0). | The editor to join with his first key, then a release to enrol it.on: editor |  |
-| [ontologist@php.newsroom (cartographer)](../cartographer/index.html) | completed | 2026-10-22 19:49Z | The ontology and the story graph, on its branch. | dev@ to carry it in.on: dev | $15.81 |
-| [journalist and historian](../journalist/index.html) | completed | 2026-10-22 20:10Z | Extended the Updates section and two stories, on its branch. | dev@ to carry it in.on: dev | $34.84 |
-| [librarian@php.newsroom](../librarian/index.html) | completed | 2026-10-22 20:20Z | Wrote how every agent hands a vault key to the editor, on its branch. | Security review and the editor's go (a change to CLAUDE.md).on: security, editor | $18.61 |
-| [grc@php.newsroom](../grc/index.html) | completed | 2026-10-22 21:45Z | Released v0.6.0: the GRC section and the DPO reader. | Board 092: accept, fund or fix the newsroom's own risks.on: editor | $17.52 |
-| [dev@php.newsroom](../dev/index.html) | completed | 2026-10-23 00:13Z | Released v0.8.1: your stack, the blast radius (/stack/). | Nothing asked; nobody is carrying the branches below into dev while it is idle. | $137.38 |
+| abp@newsroom.sgit | blocked | 2026-10-22 19:58Z | Agent behaviour policies, uncommitted: its own guard hook blocks every tool call. | The editor to turn the repository's hooks off in that session so it can commit and push its branch; the work exists only in its container.on: editor | $5.27 |
+| pulse@newsroom | blocked | 2026-10-23 13:29Z | Four records committed in its vault, not pushed. | A permission rule for its vault push (the session's auto mode blocks it); then it pushes and starts its hourly pass.on: editor | $10.06 |
+| [researcher@php.newsroom (scheduled)](../researcher/index.html) | working | 2026-10-23 23:24Z | A source watch pass (third attempt, started 23:23 UTC, two-hour limit) after two container restarts lost the first two; the plan for a pass in three phases is on its branch. | The pass to finish and its vault push; the three-phase plan to be released. | $3.53 |
+| [conductor@php.newsroom](../conductor/index.html) | working | 2026-10-23 23:30Z | This snapshot; the schedule vault (weic8imn) and /team/schedule/. | The vault type for the two schedules, before they adopt the schedule vault.on: editor | $0.00 |
+| security@php.newsroom | waiting | 2026-10-22 18:53Z | The keys page /admin/keys/ on its branch. | Four calls: open the two sealed keys of 22 October before they expire, an inbox lane in the editor's register record, a vault keeper, a go to release; and permission for pki-agent so it makes its own key.on: editor | $14.02 |
+| liaison@php.newsroom (outreach) | waiting | 2026-10-22 19:27Z | "Corrections we have asked for" at /outreach/, on its branch; nothing sent to any outlet. | Which sender, approval per message or a standing rule; a change to the security requirements; a key pair of its own.on: editor | $2.21 |
+| [ontologist@php.newsroom (cartographer)](../cartographer/index.html) | done | 2026-10-22 19:49Z | The ontology and the graph, on its branch. | Release of the branch. | $15.81 |
+| storyboards@php.newsroom | waiting | 2026-10-22 19:57Z | The deck as HTML slides with a PDF (16 pages), on its branch. | A model key for four images; it must arrive sealed (pki.sgit.ai), not pasted.on: editor | $15.21 |
+| [librarian@php.newsroom](../librarian/index.html) | review | 2026-10-22 20:20Z | Handover steps for vault keys in CLAUDE.md, on its branch. | Security review (board 097) and security@'s update of the requirements (102).on: security | $18.61 |
+| [factcheck@php.newsroom](../verifier/index.html) | paused | 2026-10-22 20:59Z | Run 2 (v0.5.8): the PHP security team answered the incomplete-fix report; 7 tickets opened, 0 closed. | Its schedule was paused on 22 October; the front page still lists the PHP project's reply as unknown (K-011).on: editor | $37.31 |
+| [grc@php.newsroom](../grc/index.html) | done | 2026-10-22 21:45Z | The GRC section and the data protection officer's briefing (v0.6.0). | Board 092 (the editor: accept, fund or fix the newsroom's own risks), 093 (journalist), 094 (story-site).on: editor | $17.52 |
+| [synthetic@php.newsroom](../synthetic/index.html) | waiting | 2026-10-22 22:48Z | Removed the synthetic readers' workflow on its branch; the gate passes. | Security review and the editor's go (a change under .github/workflows/); meanwhile the workflow still runs on each release and reviews nothing.on: editor | $15.90 |
+| desk@php.newsroom | waiting | 2026-10-23 09:52Z | The offline ledger: seven page problems on day two, on its branch. | Board 128: since overtaken, as the source watch and the curator run again; the branch still waits to be released.on: editor | $3.04 |
+| [designer@php.newsroom](../story-site/index.html) | waiting | 2026-10-23 13:47Z | The redesign for review at /admin/design/ (v0.10.0): four mockups, the Focus / Standard / Everything dial; no reader page changed. | The editor's picks on board 138: which mockups, whether the dial is right, whether the console replaces the admin menu entries.on: editor | $33.87 |
+| [journalist and historian](../journalist/index.html) | done | 2026-10-23 15:37Z | Fixed the misleading "last checked" label (v0.10.6) and re-exported the source watch. | nothing | $54.92 |
+| [sherpa@php.newsroom](../sherpa/index.html) | waiting | 2026-10-23 21:51Z | Read two new feedback messages from the site's public form (on a source page and on /views/state/), and leaves them unprocessed until their sender is confirmed; three views of the team on its branch. | The editor to confirm the two messages are his (the public form takes any name), and whether a pending device enrolment under the editor's invitation is his.on: editor | $29.52 |
+| [dev@php.newsroom](../dev/index.html) | review | 2026-10-23 22:06Z | The risk graph as a tool (CI-002) and its before-and-after article for the collaborator (v0.10.11 to 0.10.14). | Three editorial calls: the design direction, the persona views, the user stories; the collaborator's next comments become CI-003.on: editor | $181.97 |
+| [researcher@php.newsroom (first session)](../researcher/index.html) | review | 2026-10-23 22:57Z | Pack mode measured and written up (v0.10.15 to 0.10.16); reviewed the schedule vault: it works, nothing secret in it, and should stay a normal vault. | The schedule vault entries corrected before the two schedules adopt it (which vault holds the queue; the researcher's wake times).on: editor | $103.19 |
+| [curator@php.newsroom (first session)](../newsroom-lead/index.html) | done | 2026-10-23 23:06Z | Measured the evidence vault against the source watch: about a tenth of the size, its object listing answers in 3.3 s. Advised against moving it to pack mode yet: a pack vault does not open in the browser, and the vault app and /admin/vault/ need that. | nothing: the scheduled session took over | $20.78 |
+| [curator@php.newsroom (scheduled)](../newsroom-lead/index.html) | waiting | 2026-10-23 23:24Z | Follows the source watch into its pack-mode copy (7r83qic5): 33 captures promoted today, the evidence vault at 260 sources with 28 new claims (6 disputed); 164 queue rows still to promote, about 18 a wake. | A go to re-export the evidence vault into the site and release it: until then the site shows 227 sources and the journalist cannot cite the 33 new ones. Which rows to promote first, if any.on: editor | $4.97 |
 
 ## Branches waiting to be carried into dev
 
@@ -49,17 +55,16 @@ Agents push to their own branches; dev@php.newsroom carries them into dev and re
 
 | Branch | By | Commits ahead | What |
 |---|---|---|---|
+| `claude/vibrant-gauss-s70yod` | researcher@ | 1 | the source watch pass in three phases (proposal) |
+| `sherpa/three-views` | sherpa@ | 4 | three views of the team |
 | `narrator/offline-ledger` | desk@ | 4 | the front page on day two, the offline ledger |
-| `conductor/collaborators` | conductor@ | 2 | the day-two brief, this page |
-| `claude/serene-planck-qq6xsu` | researcher@ | 2 | the external collectors brief, update of 23 October |
-| `synthetic/remove-workflow` | synthetic@ | 1 | remove the synthetic readers' workflow |
-| `conductor/pause-synthetic` | conductor@ | 1 | superseded by synthetic/remove-workflow |
-| `synthetic/pause-schedule` | synthetic@ | 1 | superseded by synthetic/remove-workflow |
-| `claude/sweet-wright-1e5iju` | librarian@ | 3 | how an agent hands a vault key to the editor (needs security review) |
-| `claude/epic-faraday-y7q7ko` | journalist@ | 1 | the Updates section and two stories |
-| `claude/gallant-dijkstra-uucoop` | storyboards@ | 2 | the briefing deck, sixteen pages |
-| `cartographer/ontology-and-sg-graph` | ontologist@ | 1 | the ontology and the story graph |
-| `claude/corrections-liaison-desk` | liaison@ | 1 | the corrections liaison desk and /outreach/ |
+| `synthetic/remove-workflow` | synthetic@ | 1 | removes the synthetic readers' workflow: security review |
+| `claude/sweet-wright-1e5iju` | librarian@ | 3 | vault key handover in CLAUDE.md: security review |
+| `claude/gallant-dijkstra-uucoop` | storyboards@ | 2 | the deck |
+| `cartographer/ontology-and-sg-graph` | ontologist@ | 1 | the ontology and the graph |
+| `claude/corrections-liaison-desk` | liaison@ | 1 | /outreach/ |
+| `conductor/pause-synthetic` | conductor@ | 1 | superseded: can be deleted |
+| `synthetic/pause-schedule` | synthetic@ | 1 | superseded: can be deleted |
 
 ## What ran on its own
 
@@ -67,9 +72,10 @@ The register of schedules and every recorded run is on [runs](../runs/index.html
 
 | Schedule | State |
 |---|---|
-| Source watch | paused at 21:36 UTC, but the session kept working: a pass about 01:17 UTC and a one-off pass at 08:00 UTC |
-| Fact-check runs | paused at 21:36 UTC; no run since 20:52 UTC |
-| Synthetic readers (GitHub Actions) | still active: ran at 00:43 and 06:05 UTC; its removal waits on a branch |
+| Curator (scheduled) | active: 08:00, 10:30, 13:00, 15:30, 18:00 London; not yet on the schedule vault |
+| Source watch (scheduled researcher) | active: 07:00, 09:30, 12:00, 14:30, 17:00 London; not yet on the schedule vault |
+| Fact-check runs | paused since 22 October |
+| Synthetic readers (GitHub Actions) | runs after each release (last 23:01 UTC) and reviews nothing; its removal waits on a branch |
 
 ## How fresh this site's data is
 
@@ -77,11 +83,11 @@ The vaults move ahead of the site; a fact reaches the site only when its vault i
 
 | Data | As of | Note |
 |---|---|---|
-| Evidence vault, as exported to this site | 2026-10-22T11:34Z | 144 sources; the curator has promoted more since, not yet committed |
-| Source watch, as exported to this site | 2026-10-22T15:08Z | the watch has run several times since |
-| Synthetic readers' last review | 2026-10-22T17:56Z | the runs since have no secrets and review nothing |
-| Telemetry report | 2026-10-22 | 275 events |
+| Evidence vault, as exported to this site | 2026-10-23T01:20Z | 227 sources; the vault holds 260, waiting on a re-export |
+| Source watch, as exported to this site | 2026-10-23T12:40Z | 38 runs; a pass is running now |
+| Synthetic readers' last review | 2026-10-22T17:56Z | the runs since review nothing |
+| Telemetry report | 2026-10-23 | 1,093 events |
 
 
 ---
-site v0.10.17 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html

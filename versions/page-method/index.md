@@ -15,4 +15,4 @@ v4 · site v0.10.3 · 23 October 2026 · 1 lines added or changed, 1 removed or 
 
 
 ---
-site v0.10.17 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/versions/page-method/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/versions/page-method/index.html

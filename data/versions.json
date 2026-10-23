@@ -1,6 +1,15 @@
 {
- "current": "0.10.17",
+ "current": "0.10.18",
  "versions": [
+  {
+   "version": "0.10.18",
+   "date": "2026-10-23",
+   "title": "/team/status/ at 23:30 UTC: all twenty sessions read; the scheduled curator and source watch running, the evidence vault at 260 sources waiting on a re-export, ten branches ahead of dev, and the decisions waiting on the editor",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.17",
    "date": "2026-10-23",
