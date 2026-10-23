@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.12 · 23 October 2026new since your last visit
+
+a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a half (groups, the public vault, a dashboard where every chart is a filter, journeys, what works) and what they say on day two: the front page leaks; articles can now carry screenshots, and markdown twins keep images
+
+No reader-facing section changed in this release.
+
 ## v0.10.11 · 23 October 2026new since your last visit
 
 Ideas from collaborators, CI-002: the collaborator's ideas for turning the risk graph into a tool (start from one node, a basis on every link, tests and impact from code, a computed list of what is missing), each set against the graph as it is, and a brief to dev for the five steps that need no editorial call (board 166 to 170)
@@ -549,4 +555,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

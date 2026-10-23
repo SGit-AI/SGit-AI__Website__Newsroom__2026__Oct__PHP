@@ -106,7 +106,7 @@ ASecurity researcherAsh · Deeply technicalWhat are the bug classes, what was de
 ## Stories: written here
 
 Everything above is research: collected from outside sources, each fact linked to a saved copy. These are written here, signed and dated, and kept as written.
-What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the listHouse story · Journalist · 2026-10-23Why can't every version of PHP just be patched?House story · Journalist · 2026-10-22Where php2shell stands: many sites dark, millions of attempts, no confirmed breachHouse story · Journalist · 2026-10-22The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
+What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the listHouse story · Journalist · 2026-10-23Who reads this site, and what works on it: the tools we built to find out, and what they say on day twoHouse story · Dev desk · 2026-10-23Why can't every version of PHP just be patched?House story · Journalist · 2026-10-22The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
 [All stories →](articles/index.html)
 
 ## How this site knows
@@ -117,4 +117,4 @@ Already know the vocabulary? [The specialist summary](summary/index.html) has th
 
 
 ---
-site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/index.html

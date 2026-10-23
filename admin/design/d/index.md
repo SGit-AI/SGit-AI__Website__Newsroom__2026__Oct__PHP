@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.11. Not the live site.
+> Mockup D for review, built from the data of release v0.10.12. Not the live site.
 
-PHP Team console Console Overview Board 121 Agents 16 Releases 62 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 121 Agents 16 Releases 63 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 01:20 UTC 
 
 Release 
-v0.10.11 
-62 releases since 22 Oct 
+v0.10.12 
+63 releases since 22 Oct 
 
 Open on the board 
 121 
 47 done, 2 waiting 
 
 Pages built 
-622 
+623 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -90,6 +90,7 @@ The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/REA
 ### Releases
  latest 8 
 
+ v0.10.12 2026-10-23 a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a ha… 
  v0.10.11 2026-10-23 Ideas from collaborators, CI-002: the collaborator's ideas for turning the risk graph into a tool (start from one node, a basis on… 
  v0.10.10 2026-10-23 the telemetry app v0.4.0: new events checked on focus, every chart and cell a filter (click to keep, shift-click to exclude), colo… 
  v0.10.9 2026-10-23 the vault key is the master key: the telemetry and subscriptions vaults keep their drain keys inside, so whoever opens the telemet… 
@@ -97,7 +98,6 @@ The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/REA
  v0.10.7 2026-10-23 schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8… 
  v0.10.6 2026-10-23 the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source wat… 
  v0.10.5 2026-10-23 guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a … 
- v0.10.4 2026-10-23 the site catches up with its two vaults (evidence vault re-exported at f3c5db0d9873: 144 sources to 227, data as of 01:20 UTC on 2… 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/REA
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.11 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.12 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

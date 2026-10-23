@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.11. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.12. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.12 · 2026-10-23
+
+a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a half (groups, the public vault, a dashboard where every chart is a filter, journeys, what works) and what they say on day two: the front page leaks; articles can now carry screenshots, and markdown twins keep images
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
 
 ### v0.10.11 · 2026-10-23
 
@@ -506,4 +514,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

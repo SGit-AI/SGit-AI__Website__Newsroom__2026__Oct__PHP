@@ -53,6 +53,7 @@ A house story by the journalist, written against site v0.10.1, evidence vault `f
 [WIRED](../../sources/wired-exploited-days-before-patched/index.html) [BleepingComputer](../../sources/bleepingcomputer-amazon-4-days-before/index.html) [CISA](../../sources/cisa-kev-json/index.html) [Akamai Security Research](../../sources/akamai-blog-cve-2024-4577-one-day/index.html) [INTERNET Watch](../../sources/impress-watch-valtec/index.html) [Lupa.cz](../../sources/lupa-cvut-cyber-attack/index.html) [Yahoo! News Japan](../../sources/yahoo-jp-gmo-fx-login-leak/index.html) [産経ニュース](../../sources/sankei-dmm-service-halt/index.html) [The Verge](../../sources/the-verge-php2shell-websites-down/index.html) [NCSC-NL](../../sources/ncsc-nl-php2shell-software-list-letters/index.html) [TugaTech](../../sources/tugatech-t93092-milhoes-de-servidores-php-expostos-ao-risco/index.html) [Palo Alto Networks](../../sources/paloalto-psirt-cve-2026-109618/index.html) [NVD](../../sources/nvd-cve-2026-109618/index.html) [NVD](../../sources/nvd-cve-2026-109619/index.html) [PHPocalypse Tracker](../../sources/phpocalypse-tracker-sites-csv/index.html)
 
 ## Other articles
+- [Who reads this site, and what works on it: the tools we built to find out, and what they say on day two](../the-telemetry-tools/index.html) Dev desk, 2026-10-23
 - [Why can't every version of PHP just be patched?](../why-not-patch-every-version/index.html) Journalist, 2026-10-22
 - [Where php2shell stands: many sites dark, millions of attempts, no confirmed breach](../where-php2shell-stands/index.html) Journalist, 2026-10-22
 - [Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit](../exposed-is-not-exploited/index.html) Journalist and historian, 2026-10-22
@@ -63,4 +64,4 @@ Source file: `admin/content/articles/2026-10-23__journalist__what-changed-in-a-d
 
 
 ---
-site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/articles/what-changed-in-a-day/index.html
+site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/articles/what-changed-in-a-day/index.html

@@ -1,9 +1,9 @@
 {
  "as_of": "2026-10-23",
- "drained_now": 0,
- "events": 978,
+ "drained_now": 107,
+ "events": 1093,
  "test_or_undecryptable": 1,
- "sessions": 349,
+ "sessions": 366,
  "by_day": [
   [
    "2026-10-22",
@@ -11,20 +11,24 @@
   ],
   [
    "2026-10-23",
-   562
+   677
   ]
  ],
  "by_path": [
   [
    "/",
-   150
+   154
   ],
   [
    "/index.html",
-   35
+   36
   ],
   [
    "/claims/index.html",
+   19
+  ],
+  [
+   "/sources/calif-php2shell/index.html",
    19
   ],
   [
@@ -36,8 +40,12 @@
    13
   ],
   [
-   "/sources/calif-php2shell/index.html",
+   "/join/",
    13
+  ],
+  [
+   "/sources/index.html",
+   12
   ],
   [
    "/method/index.html",
@@ -48,31 +56,31 @@
    12
   ],
   [
-   "/join/",
-   12
-  ],
-  [
-   "/sources/index.html",
-   11
-  ],
-  [
    "/team/index.html",
    11
   ],
   [
    "/start/index.html",
-   10
+   11
+  ],
+  [
+   "/account/index.html",
+   9
+  ],
+  [
+   "/affected/software.html",
+   9
   ],
   [
    "/factcheck/index.html",
    9
   ],
   [
-   "/account/index.html",
+   "/graph/index.html",
    8
   ],
   [
-   "/graph/index.html",
+   "/collaborators/index.html",
    8
   ],
   [
@@ -96,7 +104,7 @@
    7
   ],
   [
-   "/collaborators/index.html",
+   "/grc/graph/index.html",
    7
   ],
   [
@@ -104,8 +112,16 @@
    7
   ],
   [
+   "/compromise/index.html",
+   7
+  ],
+  [
    "/briefings/pm/index.html",
    7
+  ],
+  [
+   "/review/index.html",
+   6
   ],
   [
    "/review/ui/index.html",
@@ -116,15 +132,7 @@
    6
   ],
   [
-   "/affected/software.html",
-   6
-  ],
-  [
-   "/grc/graph/index.html",
-   6
-  ],
-  [
-   "/review/index.html",
+   "/questions/index.html",
    5
   ],
   [
@@ -144,15 +152,19 @@
    5
   ],
   [
-   "/compromise/index.html",
-   5
-  ],
-  [
    "/briefings/everyone/index.html",
    5
   ],
   [
    "/playbook/index.html",
+   5
+  ],
+  [
+   "/glossary/index.html",
+   5
+  ],
+  [
+   "/sources/certeu-sa-2026-018/index.html",
    5
   ],
   [
@@ -162,32 +174,20 @@
   [
    "/admin/vault/index.html",
    4
-  ],
-  [
-   "/admin/board/index.html",
-   4
-  ],
-  [
-   "/questions/index.html",
-   4
-  ],
-  [
-   "/billing/index.html",
-   4
   ]
  ],
  "by_country": [
   [
    "US",
-   383
+   436
   ],
   [
    "(none)",
-   310
+   345
   ],
   [
    "GB",
-   131
+   136
   ],
   [
    "PT",
@@ -195,30 +195,30 @@
   ],
   [
    "NO",
-   18
+   24
   ],
   [
    "ES",
-   13
+   23
+  ],
+  [
+   "NL",
+   6
   ],
   [
    "IE",
    6
   ],
   [
-   "NL",
-   5
-  ],
-  [
    "FR",
    5
   ],
   [
-   "AU",
-   4
+   "DE",
+   5
   ],
   [
-   "DE",
+   "AU",
    4
   ],
   [
@@ -238,26 +238,38 @@
    2
   ],
   [
+   "BE",
+   2
+  ],
+  [
    "PK",
    1
   ],
   [
    "IT",
    1
+  ],
+  [
+   "UZ",
+   1
+  ],
+  [
+   "EG",
+   1
   ]
  ],
  "by_region": [
   [
    "California",
-   314
+   367
   ],
   [
    "(none)",
-   311
+   346
   ],
   [
    "England",
-   128
+   133
   ],
   [
    "Lisbon",
@@ -269,11 +281,15 @@
   ],
   [
    "Madrid",
-   13
+   23
   ],
   [
    "Florida",
    11
+  ],
+  [
+   "Oslo",
+   8
   ],
   [
    "Iowa",
@@ -289,10 +305,6 @@
   ],
   [
    "New York",
-   5
-  ],
-  [
-   "Oslo",
    5
   ],
   [
@@ -351,11 +363,11 @@
  "by_city": [
   [
    "(none)",
-   310
+   345
   ],
   [
    "Mountain View",
-   164
+   214
   ],
   [
    "San Francisco",
@@ -367,7 +379,11 @@
   ],
   [
    "London",
-   66
+   70
+  ],
+  [
+   "Madrid",
+   23
   ],
   [
    "Bridgwater",
@@ -376,10 +392,6 @@
   [
    "Ashburn",
    14
-  ],
-  [
-   "Madrid",
-   13
   ],
   [
    "Boydton",
@@ -391,7 +403,15 @@
   ],
   [
    "Sunbury-on-Thames",
-   7
+   8
+  ],
+  [
+   "Oslo",
+   8
+  ],
+  [
+   "San Jose",
+   6
   ],
   [
    "Pembroke Pines",
@@ -402,19 +422,11 @@
    5
   ],
   [
-   "Oslo",
-   5
-  ],
-  [
    "Nesoddtangen",
    5
   ],
   [
    "Dulles",
-   4
-  ],
-  [
-   "San Jose",
    4
   ],
   [
@@ -453,19 +465,19 @@
  "by_referrer": [
   [
    "(none)",
-   796
+   892
   ],
   [
    "php.oct.2026.newsroom.sgit.ai",
-   145
+   155
   ],
   [
    "www.linkedin.com",
-   13
+   14
   ],
   [
    "www.kode24.no",
-   8
+   14
   ],
   [
    "newsroom.sgit.ai",
@@ -473,7 +485,7 @@
   ],
   [
    "www.google.com",
-   4
+   6
   ],
   [
    "com.linkedin.android",
@@ -495,11 +507,11 @@
  "by_screen": [
   [
    "phone",
-   504
+   572
   ],
   [
    "desktop",
-   454
+   501
   ],
   [
    "tablet",
@@ -514,6 +526,10 @@
   [
    "v0.7.0",
    89
+  ],
+  [
+   "v0.10.11",
+   82
   ],
   [
    "v0.8.4",
@@ -545,6 +561,10 @@
   ],
   [
    "v0.2.11",
+   22
+  ],
+  [
+   "v0.10.10",
    22
   ],
   [
@@ -596,16 +616,8 @@
    11
   ],
   [
-   "v0.5.0",
-   10
-  ],
-  [
-   "v0.9.0",
-   10
-  ],
-  [
-   "v0.4.7",
-   9
+   "v0.10.9",
+   11
   ]
  ],
  "note": "Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault."

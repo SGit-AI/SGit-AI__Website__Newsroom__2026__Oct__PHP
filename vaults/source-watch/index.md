@@ -10,6 +10,8 @@ The public source-watch vault: 913 pages from 597 publishers in 59 countries, re
 
 A vault that does one thing. It watches every outside source on the story, 913 pages from 597 publishers in 59 countries, and on each run records what access it had and keeps a new snapshot whenever the content changed: the text, a screenshot, the HTML as served and as rendered, the headers and the sha256 of each, and a graph of what the page says and what changed since the last look. A small, focused Wayback Machine whose diffs are graphs. Run by **researcher@php.newsroom**; public, read-only.
 
+![The source-watch vault open in the official SG/Vault UI, read-only.](../../assets/vaults/source-watch.png)
+
 The vault in the official UI, opened read-only with the published key. **Click the image to open the real one ↗**
 
 Open it yourself. The read key is the whole credential, and it is published on purpose.
@@ -165,4 +167,4 @@ python3 tools/watch.py run [--all] [--only ] [--limit N] [--commit] [--push] pyt
 
 
 ---
-site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html
+site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html

@@ -446,6 +446,8 @@ Jeremiah Grossman, chief executive of Root Evidence, posted on [LinkedIn](https:
 
 The false-positives for php2shell from makeshift scanners is what's going to be apocalyptic.
 
+![Jeremiah Grossman's LinkedIn post: "The false-positives for php2shell from makeshift scanners is what's going to be apocalyptic." 32 reactions, 8 comments, 1 repost when the screenshot was taken.](../../assets/briefs/grossman-post.png)
+
 The picture is the top of the editor's screenshot, taken on 23 October and used with his go. LinkedIn gives the
 
 watch a sign-in page, so this is the record of the post. The editor replied under it, pointing to this site: as of
@@ -2096,4 +2098,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

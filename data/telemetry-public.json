@@ -1,6 +1,6 @@
 {
  "about": "The curated, public view of who reads php.oct.2026.newsroom.sgit.ai, made from the private telemetry vault at each drain by admin/build/telemetry_publish.py. Counts only: no row, session id, city, region, time zone or time finer than the hour leaves the private vault.",
- "as_of": "2026-10-23T16:15Z",
+ "as_of": "2026-10-23T20:26Z",
  "first": "2026-10-22T13:43Z",
  "groups": [
   "readers",
@@ -16,14 +16,14 @@
  },
  "totals": {
   "readers": {
-   "views": 215,
-   "sessions": 154,
+   "views": 233,
+   "sessions": 168,
    "declared": 0
   },
   "us": {
-   "views": 109,
-   "sessions": 38,
-   "declared": 12
+   "views": 119,
+   "sessions": 41,
+   "declared": 16
   },
   "synthetic": {
    "views": 176,
@@ -31,7 +31,7 @@
    "declared": 5
   },
   "crawlers": {
-   "views": 478,
+   "views": 565,
    "sessions": 27,
    "declared": 1
   }
@@ -55,38 +55,38 @@
   [
    "2026-10-23",
    [
-    119,
-    100,
+    137,
+    110,
     27,
-    318
+    405
    ],
    [
-    83,
-    34,
+    97,
+    37,
     26,
     14
    ]
   ]
  ],
  "readers": {
-  "views": 215,
-  "sessions": 154,
-  "read_on": 35,
+  "views": 233,
+  "sessions": 168,
+  "read_on": 37,
   "countries": [
    [
     "GB",
-    122,
-    78
+    127,
+    80
    ],
    [
     "US",
-    39,
-    36
+    40,
+    37
    ],
    [
     "NO",
-    18,
-    10
+    24,
+    16
    ],
    [
     "IE",
@@ -95,6 +95,11 @@
    ],
    [
     "NL",
+    6,
+    6
+   ],
+   [
+    "DE",
     5,
     5
    ],
@@ -102,11 +107,6 @@
     "AU",
     4,
     2
-   ],
-   [
-    "DE",
-    4,
-    4
    ],
    [
     "CA",
@@ -129,6 +129,11 @@
     1
    ],
    [
+    "BE",
+    2,
+    1
+   ],
+   [
     "ES",
     2,
     2
@@ -136,6 +141,11 @@
    [
     "SG",
     2,
+    1
+   ],
+   [
+    "EG",
+    1,
     1
    ],
    [
@@ -147,16 +157,21 @@
     "PK",
     1,
     1
+   ],
+   [
+    "UZ",
+    1,
+    1
    ]
   ],
   "devices": [
    [
     "desktop",
-    112
+    118
    ],
    [
     "phone",
-    102
+    114
    ],
    [
     "tablet",
@@ -166,18 +181,26 @@
   "languages": [
    [
     "en",
-    200
+    212
    ],
    [
     "nb",
-    12
+    16
    ],
    [
     "es",
     2
    ],
    [
+    "de",
+    1
+   ],
+   [
     "nl",
+    1
+   ],
+   [
+    "uz",
     1
    ]
   ],
@@ -193,6 +216,10 @@
    [
     "v0.2.11",
     15
+   ],
+   [
+    "v0.10.11",
+    13
    ],
    [
     "v0.8.4",
@@ -237,28 +264,28 @@
    [
     "v0.9.1",
     6
-   ],
-   [
-    "v0.4.7",
-    4
    ]
   ],
   "pages": [
    [
     "/",
-    108
-   ],
-   [
-    "/index.html",
-    12
+    111
    ],
    [
     "/sources/calif-php2shell/index.html",
-    9
+    15
+   ],
+   [
+    "/index.html",
+    13
    ],
    [
     "/briefings/board/index.html",
     6
+   ],
+   [
+    "/affected/software.html",
+    4
    ],
    [
     "/briefings/journalist/index.html",
@@ -277,11 +304,11 @@
     4
    ],
    [
-    "/admin/versions.html",
+    "/account/index.html",
     3
    ],
    [
-    "/affected/software.html",
+    "/admin/versions.html",
     3
    ],
    [
@@ -297,10 +324,6 @@
     3
    ],
    [
-    "/account/index.html",
-    2
-   ],
-   [
     "/briefings/ciso/index.html",
     2
    ],
@@ -314,6 +337,10 @@
    ],
    [
     "/compromise/",
+    2
+   ],
+   [
+    "/compromise/index.html",
     2
    ],
    [
@@ -345,6 +372,10 @@
     2
    ],
    [
+    "/questions/index.html",
+    2
+   ],
+   [
     "/team/vicky/index.html",
     2
    ],
@@ -355,43 +386,35 @@
    [
     "/admin/vault/index.html",
     1
-   ],
-   [
-    "/articles/index.html",
-    1
-   ],
-   [
-    "/briefings/cto/index.html",
-    1
    ]
   ],
   "referrers": [
    [
     "(none: typed, bookmarked or shared)",
-    110
+    115
+   ],
+   [
+    "www.kode24.no",
+    14
    ],
    [
     "www.linkedin.com",
-    13
+    14
    ],
    [
     "this site",
     11
    ],
    [
-    "www.kode24.no",
-    8
-   ],
-   [
     "newsroom.sgit.ai",
     6
    ],
    [
-    "other",
-    3
+    "www.google.com",
+    5
    ],
    [
-    "www.google.com",
+    "other",
     3
    ]
   ]
@@ -838,13 +861,73 @@
   [
    "2026-10-23T16",
    [
+    3,
     0,
     0,
-    0,
-    3
+    8
    ],
    [
+    2,
     0,
+    0,
+    1
+   ]
+  ],
+  [
+   "2026-10-23T17",
+   [
+    2,
+    5,
+    0,
+    17
+   ],
+   [
+    1,
+    4,
+    0,
+    1
+   ]
+  ],
+  [
+   "2026-10-23T18",
+   [
+    2,
+    5,
+    0,
+    18
+   ],
+   [
+    2,
+    2,
+    0,
+    1
+   ]
+  ],
+  [
+   "2026-10-23T19",
+   [
+    6,
+    0,
+    0,
+    26
+   ],
+   [
+    5,
+    0,
+    0,
+    1
+   ]
+  ],
+  [
+   "2026-10-23T20",
+   [
+    5,
+    0,
+    0,
+    21
+   ],
+   [
+    5,
     0,
     0,
     1

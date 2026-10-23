@@ -1,6 +1,15 @@
 {
- "current": "0.10.11",
+ "current": "0.10.12",
  "versions": [
+  {
+   "version": "0.10.12",
+   "date": "2026-10-23",
+   "title": "a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a half (groups, the public vault, a dashboard where every chart is a filter, journeys, what works) and what they say on day two: the front page leaks; articles can now carry screenshots, and markdown twins keep images",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.11",
    "date": "2026-10-23",

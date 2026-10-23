@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.10.11",
+"site": "0.10.12",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -4618,10 +4618,10 @@
 "zone": "stories",
 "title": "Stories: written here",
 "path": "index.html#stories",
-"hash": "7687c238485d",
-"v": 3,
+"hash": "4537279815cc",
+"v": 4,
 "first": "0.4.1",
-"changed": "0.10.3",
+"changed": "0.10.11",
 "date": "2026-10-23"
 },
 "home-how": {
@@ -4754,6 +4754,17 @@
 "v": 1,
 "first": "0.10.3",
 "changed": "0.10.3",
+"date": "2026-10-23"
+},
+"story-the-telemetry-tools": {
+"kind": "story",
+"zone": "stories",
+"title": "Who reads this site, and what works on it: the tools we built to find out, and what they say on day two",
+"path": "articles/the-telemetry-tools/index.html",
+"hash": "df43f14a86e4",
+"v": 1,
+"first": "0.10.11",
+"changed": "0.10.11",
 "date": "2026-10-23"
 },
 "story-why-not-patch-every-version": {

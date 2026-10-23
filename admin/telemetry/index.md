@@ -18,14 +18,14 @@ One anonymous event per page per session: path, referrer host, country, region, 
 
 ## Who is who
 
-Not everyone who opens a page is a reader. Each session (one browser tab) is put in one of four groups: **readers**; **the editor, team and power users**; **synthetic** visitors, the headless browsers of this site's own agents and of anyone testing it; and **crawlers**, search engines rendering the pages. As of **2026-10-23T16:15Z**, since 2026-10-22T13:43Z:
+Not everyone who opens a page is a reader. Each session (one browser tab) is put in one of four groups: **readers**; **the editor, team and power users**; **synthetic** visitors, the headless browsers of this site's own agents and of anyone testing it; and **crawlers**, search engines rendering the pages. As of **2026-10-23T20:26Z**, since 2026-10-22T13:43Z:
 
 | Group | Page views | Sessions | Of which declared |
 |---|---|---|---|
-| Readers | 215 | 154 | 0 |
-| The editor, team and power users | 109 | 38 | 12 |
+| Readers | 233 | 168 | 0 |
+| The editor, team and power users | 119 | 41 | 16 |
 | Synthetic: agents, tests, headless browsers | 176 | 130 | 5 |
-| Crawlers: search engines | 478 | 27 | 1 |
+| Crawlers: search engines | 565 | 27 | 1 |
 
 ReadersThe editor, team and power usersSynthetic: agents, tests, headless browsersCrawlers: search engines
 
@@ -33,28 +33,31 @@ Page views per UTC hour, stacked by group. Hover a column for its numbers.
 
 ### Where readers are
 
-Readers only: 215 page views in 154 sessions, 35 of which read more than one page; 15 countries. Country from a lookup in the reader's browser; nothing finer is published.
+Readers only: 233 page views in 168 sessions, 37 of which read more than one page; 18 countries. Country from a lookup in the reader's browser; nothing finer is published.
 
-fewer more page views (log scale; most: 122)
+fewer more page views (log scale; most: 127)
 
 Every country
 | Country | Page views | Sessions |
 |---|---|---|
-| `GB` United Kingdom | 122 | 78 |
-| `US` United States of America | 39 | 36 |
-| `NO` Norway | 18 | 10 |
+| `GB` United Kingdom | 127 | 80 |
+| `US` United States of America | 40 | 37 |
+| `NO` Norway | 24 | 16 |
 | `IE` Ireland | 6 | 5 |
-| `NL` Netherlands | 5 | 5 |
+| `NL` Netherlands | 6 | 6 |
+| `DE` Germany | 5 | 5 |
 | `AU` Ashmore and Cartier Islands | 4 | 2 |
-| `DE` Germany | 4 | 4 |
 | `CA` Canada | 3 | 3 |
 | `FR` France | 3 | 3 |
 | `TR` Turkey | 3 | 2 |
 | `AT` Austria | 2 | 1 |
+| `BE` Belgium | 2 | 1 |
 | `ES` Spain | 2 | 2 |
 | `SG` Singapore | 2 | 1 |
+| `EG` Egypt | 1 | 1 |
 | `IT` Italy | 1 | 1 |
 | `PK` Pakistan | 1 | 1 |
+| `UZ` Uzbekistan | 1 | 1 |
 
 ### How the groups are told apart
 
@@ -87,42 +90,45 @@ A read key decrypts and cannot write; it is derived one way from the vault key, 
 
 The drainer's own report, over every event: readers, the editor and power users, agents and crawlers together.
 
-Report as of **2026-10-23**: **978** events from **349** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
+Report as of **2026-10-23**: **1093** events from **366** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
 
 | Country | Events |
 |---|---|
-| US | 383 |
-| (none) | 310 |
-| GB | 131 |
+| US | 436 |
+| (none) | 345 |
+| GB | 136 |
 | PT | 87 |
-| NO | 18 |
-| ES | 13 |
+| NO | 24 |
+| ES | 23 |
+| NL | 6 |
 | IE | 6 |
-| NL | 5 |
 | FR | 5 |
+| DE | 5 |
 | AU | 4 |
-| DE | 4 |
 | CA | 3 |
 | TR | 3 |
 | SG | 2 |
 | AT | 2 |
+| BE | 2 |
 | PK | 1 |
 | IT | 1 |
+| UZ | 1 |
+| EG | 1 |
 
 | Region | Events |
 |---|---|
-| California | 314 |
-| (none) | 311 |
-| England | 128 |
+| California | 367 |
+| (none) | 346 |
+| England | 133 |
 | Lisbon | 85 |
 | Virginia | 32 |
-| Madrid | 13 |
+| Madrid | 23 |
 | Florida | 11 |
+| Oslo | 8 |
 | Iowa | 7 |
 | Leinster | 6 |
 | Akershus | 6 |
 | New York | 5 |
-| Oslo | 5 |
 | New South Wales | 4 |
 | Hessen | 4 |
 | Vestland | 4 |
@@ -139,12 +145,12 @@ Report as of **2026-10-23**: **978** events from **349** sessions (1 test or und
 
 | Referrer host | Events |
 |---|---|
-| (none) | 796 |
-| php.oct.2026.newsroom.sgit.ai | 145 |
-| www.linkedin.com | 13 |
-| www.kode24.no | 8 |
+| (none) | 892 |
+| php.oct.2026.newsroom.sgit.ai | 155 |
+| www.linkedin.com | 14 |
+| www.kode24.no | 14 |
 | newsroom.sgit.ai | 6 |
-| www.google.com | 4 |
+| www.google.com | 6 |
 | com.linkedin.android | 2 |
 | oct.2026.newsroom.sgit.ai | 2 |
 | teams.public.onecdn.static.microsoft | 1 |
@@ -152,61 +158,61 @@ Report as of **2026-10-23**: **978** events from **349** sessions (1 test or und
 
 | Screen | Events |
 |---|---|
-| phone | 504 |
-| desktop | 454 |
+| phone | 572 |
+| desktop | 501 |
 | tablet | 20 |
 
 ### By page
 
 | Page | Events |
 |---|---|
-| / | 150 |
-| /index.html | 35 |
+| / | 154 |
+| /index.html | 36 |
 | /claims/index.html | 19 |
+| /sources/calif-php2shell/index.html | 19 |
 | /now/index.html | 15 |
 | /briefings/board/index.html | 13 |
-| /sources/calif-php2shell/index.html | 13 |
+| /join/ | 13 |
+| /sources/index.html | 12 |
 | /method/index.html | 12 |
 | /explained/index.html | 12 |
-| /join/ | 12 |
-| /sources/index.html | 11 |
 | /team/index.html | 11 |
-| /start/index.html | 10 |
+| /start/index.html | 11 |
+| /account/index.html | 9 |
+| /affected/software.html | 9 |
 | /factcheck/index.html | 9 |
-| /account/index.html | 8 |
 | /graph/index.html | 8 |
+| /collaborators/index.html | 8 |
 | /collaborators/ | 8 |
 | /articles/where-php2shell-stands/index.html | 7 |
 | /admin/versions.html | 7 |
 | /exploitation/index.html | 7 |
 | /flaws/index.html | 7 |
-| /collaborators/index.html | 7 |
+| /grc/graph/index.html | 7 |
 | /impact/index.html | 7 |
+| /compromise/index.html | 7 |
 | /briefings/pm/index.html | 7 |
+| /review/index.html | 6 |
 | /review/ui/index.html | 6 |
 | /questions/fix-or-wait/index.html | 6 |
-| /affected/software.html | 6 |
-| /grc/graph/index.html | 6 |
-| /review/index.html | 5 |
+| /questions/index.html | 5 |
 | /briefings/ciso/index.html | 5 |
 | /readings/perplexity-2026-10-22/index.html | 5 |
 | /team/vicky/index.html | 5 |
 | /storyboards/briefing-2026-10-22/index.html | 5 |
-| /compromise/index.html | 5 |
 | /briefings/everyone/index.html | 5 |
 | /playbook/index.html | 5 |
+| /glossary/index.html | 5 |
+| /sources/certeu-sa-2026-018/index.html | 5 |
 | /admin/telemetry/index.html | 4 |
 | /admin/vault/index.html | 4 |
-| /admin/board/index.html | 4 |
-| /questions/index.html | 4 |
-| /billing/index.html | 4 |
 
 ### By day
 
 | Day | Events |
 |---|---|
 | 2026-10-22 | 416 |
-| 2026-10-23 | 562 |
+| 2026-10-23 | 677 |
 
 ## What the counts are worth
 
@@ -220,4 +226,4 @@ Mechanics: `assets/telemetry.js` sends; `admin/build/telemetry_drain.py`, run by
 
 
 ---
-site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html
+site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html

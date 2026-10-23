@@ -119,7 +119,7 @@ ORIGINS = {
     'update': {'short': 'Update', 'label': 'Update', 'text': 'written here for the conductor from the repository\'s record and the evidence; dated, kept as written'},
     'interview': {'short': 'Interview', 'label': 'Story, interview', 'text': 'an interview conducted for this site, the answers in the interviewee\'s own words'},
 }
-AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('journalist-historian', 'Journalist and historian'), ('cyber', 'Cyber desk')])
+AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('journalist-historian', 'Journalist and historian'), ('cyber', 'Cyber desk'), ('dev', 'Dev desk')])
 
 # ----------------------------------------------------------------------------- small helpers
 
@@ -217,6 +217,10 @@ def to_markdown(fragment):
     s = re.sub(r'<h3[^>]*>(.*?)</h3>', lambda m: '\n### ' + inline(m.group(1)) + '\n', s, flags=re.S)
     s = re.sub(r'<h4[^>]*>(.*?)</h4>', lambda m: '\n#### ' + inline(m.group(1)) + '\n', s, flags=re.S)
     s = re.sub(r'<li[^>]*>(.*?)</li>', lambda m: '- ' + inline(m.group(1)) + '\n', s, flags=re.S)
+    def _img(m):
+        attrs = dict(re.findall(r'(\w+)="([^"]*)"', m.group(0)))
+        return '\n![' + html.unescape(attrs.get('alt', '')) + '](' + attrs.get('src', '') + ')\n' if attrs.get('src') else ''
+    s = re.sub(r'<img\b[^>]*>', _img, s)
     s = re.sub(r'<(p|dt|dd|figcaption)[^>]*>(.*?)</\1>', lambda m: '\n' + inline(m.group(2)) + '\n', s, flags=re.S)
     s = re.sub(r'<pre[^>]*>(.*?)</pre>', lambda m: '\n```\n' + html.unescape(re.sub(r'<[^>]+>', '', m.group(1))) + '\n```\n', s, flags=re.S)
     s = re.sub(r'<[^>]+>', '', s)
@@ -2185,6 +2189,24 @@ def article_inline(s, depth):
     s = re.sub(r'\*([^*]+)\*', r'<i>\1</i>', s)
     return s
 
+def png_size(path):
+    """Width and height from a PNG's IHDR chunk, so the page reserves the space before the image arrives."""
+    with open(path, 'rb') as f:
+        head = f.read(24)
+    if head[:8] != b'\x89PNG\r\n\x1a\n':
+        sys.exit(f'{path}: not a PNG')
+    return int.from_bytes(head[16:20], 'big'), int.from_bytes(head[20:24], 'big')
+
+def article_figure(alt, path, caption, depth):
+    """![alt](/assets/articles/<slug>/<file>.png "caption"): a screenshot in an article. The image must be in the
+    repository under assets/articles/; the build stops on a missing one."""
+    full = os.path.join(ROOT, path)
+    if not os.path.exists(full):
+        sys.exit(f'article figure missing: {path}')
+    w, h = png_size(full)
+    cap = f'<figcaption>{article_inline(caption, depth)}</figcaption>' if caption else ''
+    return f'<figure class="shot"><img src="{"../" * depth}{E(path)}" alt="{E(alt)}" width="{w}" height="{h}" loading="lazy">{cap}</figure>'
+
 def render_article(text, depth):
     out, lst, rows = [], None, []
     def flush():
@@ -2199,6 +2221,12 @@ def render_article(text, depth):
                 rows.append(cells)
             continue
         flush()
+        fig = re.match(r'^!\[([^\]]+)\]\(/(assets/articles/[a-z0-9-]+/[a-z0-9-]+\.png)(?:\s+"([^"]*)")?\)\s*$', line)
+        if fig:
+            if lst:
+                out.append(f'</{lst}>'); lst = None
+            out.append(article_figure(fig.group(1), fig.group(2), fig.group(3) or '', depth))
+            continue
         m = re.match(r'^(#{2,4})\s+(.*)$', line)
         item = re.match(r'^(?:-|\d+\.)\s+(.*)$', line)
         kind = ('ol' if re.match(r'^\d+\.', line) else 'ul') if item else None
