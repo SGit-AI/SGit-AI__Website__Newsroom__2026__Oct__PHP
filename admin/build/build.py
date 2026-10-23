@@ -4524,10 +4524,58 @@ def build_sherpa_feedback(r):
 '''
     page(f'sherpa/feedback/{r["id"].lower()}/index.html', title, r['summary'], body, kind='site', topics='readers feedback')
 
+SHERPA_KIND = {'comment': 'Comments', 'idea': 'Ideas', 'question': 'Questions', 'offer': 'The offer'}
+
+def sherpa_idea(c, it, d):
+    up = '../' * d
+    links = ' · '.join(f'<a href="{up}{U(p)}">{E(t)}</a>' for p, t in it['links'])
+    also = (', with ' + ', '.join(sherpa_who(x, d) for x in it['also'])) if it.get('also') else ''
+    return f'''<article class="fbpoint" id="i{it["n"]}">
+<h3>{E(c["id"])}.{it["n"]}: {E(it["kind"])}, {E(", ".join(it["tags"]))}</h3>
+<blockquote><p><q>{E(it["words"])}</q></p><footer>In the collaborator's words, as received</footer></blockquote>
+<p><b>Where the site stands today.</b> {E(it["today"])}</p>
+<p class="small">See: {links}</p>
+<p><b>What is missing.</b> {E(it["gap"])}</p>
+<p><b>The Sherpa recommends.</b> {E(it["recommendation"])}</p>
+<p class="small">Who could take it: {sherpa_who(it["owner"], d)}{also}.</p>
+</article>'''
+
+def build_sherpa_ideas(c):
+    d = 3
+    who = c['name_on_site'] or c['handle']
+    title = f'{c["id"]}: comments, questions and ideas from {who}'
+    ex = table(['When', 'Who', 'What was said'], [[E(w), E(x), E(t)] for w, x, t in c['exchange']], 'board')
+    idx = table(['#', 'Kind', 'About', 'Who could take it'], [[f'<a href="#i{it["n"]}">{it["n"]}</a>', E(it['kind']), E(', '.join(it['tags'])), sherpa_who(it['owner'], d)] for it in c['items']], 'board')
+    groups = ''
+    for k, label in SHERPA_KIND.items():
+        its = [it for it in c['items'] if it['kind'] == k]
+        if its:
+            groups += section(f'k-{k}', label, ''.join(sherpa_idea(c, it, d) for it in its))
+    stats = ''.join(stat(sum(it['kind'] == k for it in c['items']), SHERPA_KIND[k].lower()) for k in SHERPA_KIND)
+    body = f'''
+<p class="crumb"><a href="../../index.html">The Sherpa</a> / <a href="../../index.html#ideas">Ideas from collaborators</a> / {E(c["id"])}</p>
+<h1>{E(title)}</h1>
+<p class="lead">{E(c["summary"])}</p>
+<div class="stats">{stats}</div>
+{section("record", "The record", f"""<ul>
+<li><b>From:</b> {E(who)}. {E(c["name_note"]) if not c["name_on_site"] else ""}</li>
+<li><b>How it came:</b> {E(c["channel"])}, {E(c["from"])} to {E(c["to"])}.</li>
+<li><b>Checked against:</b> site v{E(c["site_version"])}.</li>
+</ul>""")}
+{section("exchange", "The conversation, in short", ex, "Summarised; the collaborator's own words are quoted under each item below.")}
+{section("index", "At a glance", idx, "Each item: the collaborator's words, where the site stands today with links, what is missing, what the Sherpa recommends, and who could take it. Answers to the questions are the editor's; the Sherpa only says what exists.")}
+{groups}
+{section("reply", "The reply", f"<p>{E(c['reply'])}</p>")}
+'''
+    page(f'sherpa/ideas/{c["id"].lower()}/index.html', title, c['summary'], body, kind='site', topics='collaborators ideas graph')
+
 def build_sherpa():
     FB, FL = sherpa_load('feedback')['feedback'], sherpa_load('friction-log')
     for r in FB:
         build_sherpa_feedback(r)
+    CI = sherpa_load('ideas')['conversations']
+    for c in CI:
+        build_sherpa_ideas(c)
     me = [m for m in TEAM['members'] if m['id'] == 'sherpa'][0]
     fbrows = [[f'<a href="feedback/{E(r["id"].lower())}/index.html">{E(r["id"])}</a>', E(r['received']), 'v' + E(r['site_version']), E(r['reader']), E(r['progress']),
                str(len(r['points'])), str(sum(p['replicated'] == 'yes' for p in r['points'])), E(r['summary'])] for r in FB]
@@ -4549,6 +4597,7 @@ def build_sherpa():
 <div class="stats">{stats}</div>
 {section("help", "How I can help you now", help_)}
 {section("feedback", "What readers told us", table(["Id", "Received", "Version", "From", "Progress", "Points", "Reproduced", "In short"], fbrows, "board"), "Every message from a reader, one page each, answered point by point. Readers are not named; their words are shown as they wrote them.")}
+{section("ideas", "Ideas from collaborators", table(["Id", "From", "When", "Comments", "Ideas", "Questions", "In short"], [[f'<a href="ideas/{E(c["id"].lower())}/index.html">{E(c["id"])}</a>', E(c["name_on_site"] or c["handle"]), f'{E(c["from"])} to {E(c["to"])}', *[str(sum(it["kind"] == k for it in c["items"])) for k in ("comment", "idea", "question")], E(c["summary"])] for c in CI], "board"), "What collaborators think this site should become, one page per conversation, each item set against what the site has today.")}
 {section("friction", "What gets in readers' way", table(["Id", "Where", "Stage", "Severity", "Who can act", "Status", "Seen", "What I propose"], frows, "board"), "The friction log: every struggle a reader met, from real readers, the synthetic readers and my own walks of the site, with who can fix it. A friction closes when the trail shows it helped, not when a commit says so.")}
 {section("how", "How I work", how)}
 '''
