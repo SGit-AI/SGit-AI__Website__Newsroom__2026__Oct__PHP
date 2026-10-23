@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 170 items, 121 open, 47 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 170 items, 116 open, 52 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -175,14 +175,14 @@ The work, as rows in `data/admin.json`: 170 items, 121 open, 47 done. An item is
 | 163 | Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the schedule vault, so a task can be queued without a Claude session | open | conductor |  |
 | 164 | The vault key is the master key: the telemetry (84wr8mib) and subscriptions (wgeiqabu) vaults each hold their drain key in identity/private/drain-key.pkcs8.json, protected by the vault's encryption, and their lanes in identity/lanes.json; the telemetry app v0.3.0 drains with the vault key alone (206 events drained that way); managing lanes from the site is next | done | dev@php.newsroom | 0.10.9 |
 | 165 | The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once a minute); every mark a filter, Kibana-style (click to keep, shift-click to exclude, drag the timeline for a window); colour by who, section, device, country, source or version; Journeys (a Sankey step by step, the network of pages, paths, sessions side by side); What works (front doors that hold and leak, connectors, dead ends, every page and section in numbers, what each source brings); in modules with tests over real data | done | dev@php.newsroom | 0.10.10 |
-| 166 | From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1: a focus view of the risk graph: open at any node, its neighbours by verb, expand on click, the path back always shown, the focus in the address; in the browser from data/grc-graph.json | open | dev@php.newsroom |  |
-| 167 | From CI-002, step 2: a basis on every graph edge (source, code, inferred, confirmed, with its support), checked in build_grc; inferred edges dashed with a switch to hide them | open | dev@php.newsroom |  |
-| 168 | From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the remediation and code they exercise | open | dev@php.newsroom |  |
-| 169 | From CI-002, step 4: an impact view: pick a function or file, climb the graph to remediations, vulnerabilities, weaknesses, risks, controls and stakeholders, each with its path | open | dev@php.newsroom |  |
-| 170 | From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with no owner, risk with no story, treatment or holder, edge with no basis) | open | dev@php.newsroom |  |
+| 166 | From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1: a focus view of the risk graph: open at any node, its neighbours by verb, expand on click, the path back always shown, the focus in the address; in the browser from data/grc-graph.jsonDone: /grc/explore/, start from any node, neighbours by verb, open one step at a time with the path back shown; the address carries the view. | done | dev@php.newsroom | 0.10.13 |
+| 167 | From CI-002, step 2: a basis on every graph edge (source, code, inferred, confirmed, with its support), checked in build_grc; inferred edges dashed with a switch to hide themDone: every one of the 1,418 edges carries a basis (316 source, 287 code, 815 inferred); the build stops on an edge without a valid one; data/grc-basis.json records confirmations; inferred edges dashed in the explorer, with a switch to hide them. | done | dev@php.newsroom | 0.10.13 |
+| 168 | From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the remediation and code they exerciseDone: the 270 test files of the fix commit, from its file list in the evidence vault, joined to the commit (code) and, by name rules in data/grc-tests.json, to the remediation each exercises (inferred). | done | dev@php.newsroom | 0.10.13 |
+| 169 | From CI-002, step 4: an impact view: pick a function or file, climb the graph to remediations, vulnerabilities, weaknesses, risks, controls and stakeholders, each with its pathDone: What it puts at stake, in the explorer: from code, a test or a fix, the remediations, flaws, weaknesses, risks, controls, stakeholders, treatments and stories above it, each with its path. | done | dev@php.newsroom | 0.10.13 |
+| 170 | From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with no owner, risk with no story, treatment or holder, edge with no basis)Done: /grc/gaps/, eight rules as data (data/grc-gaps.json), computed at every build: all 95 controls joined to no code or test; 16 of 16 code nodes with no owner; 9 of 16 code nodes no test reaches (main/SAPI.c and main/main.c among them); 14 of 34 risks no story tells; 815 edges inferred and unchecked. | done | dev@php.newsroom | 0.10.13 |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

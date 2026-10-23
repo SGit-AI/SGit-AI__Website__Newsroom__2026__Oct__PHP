@@ -10,6 +10,8 @@ Because a server running an attacker's code exposes the personal data and the se
 
 Because a server running an attacker's code exposes the personal data and the services behind it, a single compromise can trigger breach notification under GDPR, incident reporting under NIS2 and DORA, and, for a manufacturer, reporting under the Cyber Resilience Act, resulting in deadlines measured in hours and fines measured in turnover.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r06) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **15** high · **Likelihood** 3 Possible · **Impact** 5 Severe · **Kind** Compliance · **Acceptance** not recorded
 
 **Basis.** No named organisation has said it was compromised; two vendors report successful exploitation without naming a victim. If one comes, the clocks are 24 and 72 hours.
@@ -73,4 +75,4 @@ On this site: [No named organisation has said it was compromised through php2she
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06/index.html

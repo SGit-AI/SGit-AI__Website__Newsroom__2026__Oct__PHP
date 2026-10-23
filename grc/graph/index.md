@@ -2,13 +2,13 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-442 nodes and 914 typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.
+713 nodes and 1418 typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.
 
-[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [From the network](../../grc/network/index.html)
+[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [Explore](../../grc/explore/index.html) · [Gaps](../../grc/gaps/index.html) · [From the network](../../grc/network/index.html)
 
 # The risk graph: stakeholders, risks, weaknesses, vulnerabilities, code
 
-442 nodes and 914 edges, built from the register on every release and joined to the graphs already on this site: the claims and their sources ([the story graph](../../graph/index.html)) and the fix and the code it changed ([the code review graph](../../review/index.html)). One graph, no copies: a claim, a source or a file is the same node here as there. The JSON is [data/grc-graph.json](../../data/grc-graph.json).
+713 nodes and 1418 edges, built from the register on every release and joined to the graphs already on this site: the claims and their sources ([the story graph](../../graph/index.html)) and the fix and the code it changed ([the code review graph](../../review/index.html)). One graph, no copies: a claim, a source or a file is the same node here as there. The JSON is [data/grc-graph.json](../../data/grc-graph.json).
 
 A line from a stakeholder group to a risk means someone in the group carries part of it or of a risk beneath it; a line from a risk to a weakness means the risk, or one beneath it, arises from it; the weaknesses on the two CVEs reach the fix and the code on [the code review graph](../../review/index.html). Each risk's own page draws its whole path.
 
@@ -104,6 +104,7 @@ Gives rise to: [R10 This newsroom's own agents are steered, leak or mislead](../
 
 | Kind of node | How many |
 |---|---|
+| test | 270 |
 | control | 95 |
 | source | 71 |
 | claim | 62 |
@@ -116,7 +117,7 @@ Gives rise to: [R10 This newsroom's own agents are steered, leak or mislead](../
 | role | 10 |
 | briefing | 9 |
 | member | 8 |
-| remediation | 6 |
+| remediation | 7 |
 | story | 5 |
 | vulnerability | 2 |
 
@@ -129,7 +130,7 @@ Every edge is a verb read from the first node to the second; its inverse is read
 | `part_of` | `has_part` | 76 |
 | `arises_from` | `gives_rise_to` | 51 |
 | `backed_by` | `evidences` | 91 |
-| `fixed_by` | `fixes` | 6 |
+| `fixed_by` | `fixes` | 8 |
 | `realised_in` | `realises` | 9 |
 | `located_in` | `location_of` | 8 |
 | `protected_by` | `protects` | 41 |
@@ -140,6 +141,7 @@ Every edge is a verb read from the first node to the second; its inverse is read
 | `briefed_by` | `briefs` | 9 |
 | `cites` | `cited_by` | 225 |
 | `shown_on` | `shows` | 58 |
+| `tests` | `tested_by` | 502 |
 | `owned_by` | `owns` | 40 |
 | `borne_by` | `bears` | 22 |
 | `treated_by` | `treats` | 24 |
@@ -147,6 +149,16 @@ Every edge is a verb read from the first node to the second; its inverse is read
 | `informed_by` | `informs` | 15 |
 | `regulated_by` | `regulates` | 6 |
 
+## How each edge is known
+
+Every edge says how it is known: read from a capture (with its slug), read from the fix commit, inferred by an agent (with the agent), or confirmed by a person (data/grc-basis.json). The drawing above shows the register's own joins, which are the GRC desk's inferences. To walk the graph one node at a time, with inferred edges dashed, use [explore](../explore/index.html); for what is missing, [the gaps](../gaps/index.html).
+
+| How it is known | Edges | Verbs |
+|---|---|---|
+| **source**: read from a capture | 316 | cites 225, backed_by 91 |
+| **code**: read from the fix commit | 287 | tests 270, realised_in 9, fixed_by 8 |
+| **inferred**: inferred by an agent, not yet checked | 815 | tests 232, governed_by 139, part_of 76, shown_on 58, arises_from 51, tracked_by 45, protected_by 41, owned_by 40, told_in 26, treated_by 24, borne_by 22, informed_by 15, concerns 12, raised_by 11, briefed_by 9, located_in 8, regulated_by 6 |
+
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/graph/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/graph/index.html

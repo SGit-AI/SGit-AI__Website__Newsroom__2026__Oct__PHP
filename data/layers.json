@@ -495,6 +495,27 @@
    "by": "admin/build/build.py",
    "from": "data/grc.json, data/grc-frameworks.json, data/review.json, data/claims.json and the articles, on every build",
    "used_on": "grc/graph/index.html"
+  },
+  {
+   "path": "data/grc-tests.json",
+   "layer": "derived",
+   "by": "dev@php.newsroom",
+   "from": "the fix commit's test files, from its file list in the evidence vault, and the name rules joining each to a remediation",
+   "used_on": "grc/explore/index.html"
+  },
+  {
+   "path": "data/grc-basis.json",
+   "layer": "derived",
+   "by": "dev@php.newsroom",
+   "from": "confirmations of risk-graph edges: who checked an edge and how",
+   "used_on": "grc/explore/index.html"
+  },
+  {
+   "path": "data/grc-gaps.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the rules the gaps page computes over the risk graph",
+   "used_on": "grc/gaps/index.html"
   }
  ]
 }

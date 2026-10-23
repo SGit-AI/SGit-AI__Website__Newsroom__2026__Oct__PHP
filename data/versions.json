@@ -1,6 +1,15 @@
 {
- "current": "0.10.12",
+ "current": "0.10.13",
  "versions": [
+  {
+   "version": "0.10.13",
+   "date": "2026-10-23",
+   "title": "the risk graph as a tool (CI-002, steps 1 to 5): every edge says how it is known (read from a capture, from the fix commit, or inferred by an agent; inferred drawn dashed and hideable); the fix commit's 270 tests as nodes; explore the graph from any node, one step at a time, or climb from a file or a test to the risks, controls and stakeholders above it; and a gaps page computed at every build: no control is joined to code or a test, no code has an owner, 14 risks have no story",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.12",
    "date": "2026-10-23",

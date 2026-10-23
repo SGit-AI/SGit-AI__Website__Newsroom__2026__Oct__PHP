@@ -10,6 +10,8 @@ Because NIS2 asks for an early warning within 24 hours and DORA for major-incide
 
 Because NIS2 asks for an early warning within 24 hours and DORA for major-incident reports on its own schedule, an entity that cannot tell a precautionary outage from an incident may report late or not at all, resulting in a regulatory finding on top of the incident.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r06-2) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 3 Possible · **Impact** 4 Major · **Kind** Compliance · **Acceptance** not recorded
 
 **Basis.** Precautionary shutdowns may themselves meet the significance tests; the evidence does not say how entities classified them.
@@ -62,4 +64,4 @@ On this site: [Impact: taken offline versus compromised](../../../impact/index.h
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-2/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-2/index.html

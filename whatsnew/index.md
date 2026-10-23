@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.13 · 23 October 2026new since your last visit
+
+the risk graph as a tool (CI-002, steps 1 to 5): every edge says how it is known (read from a capture, from the fix commit, or inferred by an agent; inferred drawn dashed and hideable); the fix commit's 270 tests as nodes; explore the graph from any node, one step at a time, or climb from a file or a test to the risks, controls and stakeholders above it; and a gaps page computed at every build: no control is joined to code or a test, no code has an owner, 14 risks have no story
+
+No reader-facing section changed in this release.
+
 ## v0.10.12 · 23 October 2026new since your last visit
 
 a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a half (groups, the public vault, a dashboard where every chart is a filter, journeys, what works) and what they say on day two: the front page leaks; articles can now carry screenshots, and markdown twins keep images
@@ -555,4 +561,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

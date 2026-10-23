@@ -141,6 +141,13 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - Feedback from collaborators, a section of its own (`/feedback/`, under Yours): every piece of feedback kept whole, in a viewer with a menu of all of them on the left, the document as received in the middle and the Sherpa's comments beside each part of it on the right; readers can select text to highlight it and add a note (kept in their browser only, exportable as JSON; `assets/sherpa/viewer.js`). A report imported whole is `admin/sherpa/documents/<id>.json` in blocks the comments anchor to (UF-003, with its seven screenshots, metadata stripped). `/feedback/briefs/`: the brief to the conductor from every open friction, by owner and severity, and requirements for other teams (`admin/sherpa/briefs.json`: pki.sgit.ai). Counts in `admin/sherpa/collab-stats.json`. The signed messages drained from the collaborators vault are counted, not published, until the editor confirms they may be.
 - Not built: the Sherpa's line on the front page and the "Where next" block (proposed); the trail additions (proposed, for dev and the editor's go); a key enrolled on pki.sgit.ai.
 
+## The risk graph as a tool (v0.10.13, dev@php.newsroom, the Sherpa's brief from CI-002)
+- Every edge of `data/grc-graph.json` carries `basis` {kind, ref}: `source` (a capture's slug), `code` (the fix commit), `inferred` (the agent), `confirmed` (who checked, from `data/grc-basis.json`); `build_grc` stops on an edge without a valid one. 1,418 edges: 316 source, 287 code, 815 inferred, 0 confirmed.
+- Tests as nodes: the 270 test files of the fix commit (`data/grc-tests.json`, from its file list in the evidence vault), each joined to the commit and, by name rules, to the remediation it exercises.
+- `/grc/explore/` (`assets/grc-explore.js`): start from any node and expand by verb, with the path back and the view in the address; or climb from code, a test or a fix to what it puts at stake. Inferred edges dashed, a switch hides them.
+- `/grc/gaps/`: eight rules as data (`data/grc-gaps.json`), computed at every build, each with its count, list and who could close it.
+- Not built, waiting for the editor: the design direction (CI-002.1), persona views of the graph (CI-002.7), user stories as a layer (CI-002.4).
+
 ## Recorded, not started
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
 

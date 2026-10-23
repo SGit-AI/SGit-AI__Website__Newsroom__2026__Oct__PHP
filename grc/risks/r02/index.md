@@ -10,6 +10,8 @@ Because the secret was held by four finders, a coalition, critical-infrastructur
 
 Because the secret was held by four finders, a coalition, critical-infrastructure providers and image builders at once, it leaked a day early, resulting in a release moved forward by 24 hours and defenders starting the race with attackers already told where to look.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r02) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 5 Happening · **Impact** 4 Major · **Kind** Disclosure process · **Acceptance** not recorded
 
 **Basis.** It happened: the release moved from 22 to 21 October because of the leak.
@@ -74,4 +76,4 @@ On this site: [How the coordinated disclosure broke](../../../leak/index.html) �
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02/index.html

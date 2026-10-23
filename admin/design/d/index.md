@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.12. Not the live site.
+> Mockup D for review, built from the data of release v0.10.13. Not the live site.
 
-PHP Team console Console Overview Board 121 Agents 16 Releases 63 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 116 Agents 16 Releases 64 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 01:20 UTC 
 
 Release 
-v0.10.12 
-63 releases since 22 Oct 
+v0.10.13 
+64 releases since 22 Oct 
 
 Open on the board 
-121 
-47 done, 2 waiting 
+116 
+52 done, 2 waiting 
 
 Pages built 
-623 
+625 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,29 +30,29 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 121
+#### Open 116
 
- #170 
-From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with n… 
- dev@php.newsroom 
- #169 
-From CI-002, step 4: an impact view: pick a function or file, climb the graph to remediations, vulnerabilities, weakness… 
- dev@php.newsroom 
- #168 
-From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the remediation and code they exercise 
- dev@php.newsroom 
- #167 
-From CI-002, step 2: a basis on every graph edge (source, code, inferred, confirmed, with its support), checked in build… 
- dev@php.newsroom 
- #166 
-From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1: a focus view of the risk graph: open a… 
- dev@php.newsroom 
  #163 
 Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the sch… 
  conductor 
  #162 
 The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:… 
  editor 
+ #161 
+Run every scheduled wake through the schedule vault (researcher's T-001, the source watch pass), and say your real caden… 
+ researcher@php.newsroom 
+ #160 
+Run every scheduled wake through the schedule vault: pull, schedule.py due curator, start/finish with the log, index, pu… 
+ curator 
+ #158 
+Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaul… 
+ security 
+ #157 
+One agent behaviour policy per agent that sets its scope: what it may change and release, which vaults and keys it may h… 
+ abp 
+ #155 
+Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement 
+ claude-story-site 
 
 #### Waiting 2
 
@@ -63,33 +63,34 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 47
+#### Done 52
 
+ #170 
+From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with n… 
+ dev@php.newsroom v0.10.13 
+ #169 
+From CI-002, step 4: an impact view: pick a function or file, climb the graph to remediations, vulnerabilities, weakness… 
+ dev@php.newsroom v0.10.13 
+ #168 
+From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the remediation and code they exercise 
+ dev@php.newsroom v0.10.13 
+ #167 
+From CI-002, step 2: a basis on every graph edge (source, code, inferred, confirmed, with its support), checked in build… 
+ dev@php.newsroom v0.10.13 
+ #166 
+From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1: a focus view of the risk graph: open a… 
+ dev@php.newsroom v0.10.13 
  #165 
 The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once a minute); every mark a filter, Kibana-s… 
  dev@php.newsroom v0.10.10 
  #164 
 The vault key is the master key: the telemetry (84wr8mib) and subscriptions (wgeiqabu) vaults each hold their drain key … 
  dev@php.newsroom v0.10.9 
- #159 
-The schedule vault (weic8imn, public) and /team/schedule/, read live in the browser: every schedule, task queue and run … 
- conductor 
- #156 
-Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.… 
- conductor 
- #151 
-Views: the journalist's state of affairs as a versioned page (/views/state/), its own version numbers, a page per versio… 
- journalist 
- #150 
-Act on the fact-check's corrections to the journalist's and the historian's stories: done for 'Where php2shell stands' a… 
- journalist 
- #146 
-The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/README.md), the digest tool (admin/build/up… 
- journalist 
 
 ### Releases
  latest 8 
 
+ v0.10.13 2026-10-23 the risk graph as a tool (CI-002, steps 1 to 5): every edge says how it is known (read from a capture, from the fix commit, or inf… 
  v0.10.12 2026-10-23 a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a ha… 
  v0.10.11 2026-10-23 Ideas from collaborators, CI-002: the collaborator's ideas for turning the risk graph into a tool (start from one node, a basis on… 
  v0.10.10 2026-10-23 the telemetry app v0.4.0: new events checked on focus, every chart and cell a filter (click to keep, shift-click to exclude), colo… 
@@ -97,7 +98,6 @@ The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/REA
  v0.10.8 2026-10-23 the scheduled curator is running: five wakes a day in UK daytime (08:00, 10:30, 13:00, 15:30, 18:00), no key rotation, its session… 
  v0.10.7 2026-10-23 schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8… 
  v0.10.6 2026-10-23 the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source wat… 
- v0.10.5 2026-10-23 guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a … 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/REA
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.12 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.13 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

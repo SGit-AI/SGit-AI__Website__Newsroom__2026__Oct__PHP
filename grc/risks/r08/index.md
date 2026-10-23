@@ -10,6 +10,8 @@ Because four parties, several using frontier models, found the same engine flaws
 
 Because four parties, several using frontier models, found the same engine flaws within weeks, and the same capability is open to attackers, the next critical bug in widely used C code may be found by someone who will not report it, resulting in flaws exploited before any embargo exists.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r08) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 4 Likely · **Impact** 5 Severe · **Kind** Strategic · **Acceptance** not recorded
 
 **Basis.** AI-assisted discovery reported by the finders and by Chainguard; 'ahead of attackers' is disputed.
@@ -74,4 +76,4 @@ On this site: [Who found php2shell, and what the AI did](../../../discovery/inde
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r08/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r08/index.html

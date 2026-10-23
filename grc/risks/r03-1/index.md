@@ -10,6 +10,8 @@ Because an exploit attempt hit an Amazon honeypot on 17 October from an anonymis
 
 Because an exploit attempt hit an Amazon honeypot on 17 October from an anonymisation network, someone may have had the flaw before the leak, resulting in compromises that pre-date every advisory and every log review window.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r03-1) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **15** high · **Likelihood** 3 Possible · **Impact** 5 Severe · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** One attempt reported by Amazon; Imperva saw nothing matching before disclosure.
@@ -61,4 +63,4 @@ On this site: [Exploitation signals, in order](../../../exploitation/index.html)
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03-1/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03-1/index.html

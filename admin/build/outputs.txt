@@ -344,6 +344,8 @@ glossary/index.html
 glossary/index.md
 graph/index.html
 graph/index.md
+grc/explore/index.html
+grc/explore/index.md
 grc/frameworks/attack/index.html
 grc/frameworks/attack/index.md
 grc/frameworks/cis/index.html
@@ -386,6 +388,8 @@ grc/frameworks/ssdf/index.html
 grc/frameworks/ssdf/index.md
 grc/frameworks/tlp/index.html
 grc/frameworks/tlp/index.md
+grc/gaps/index.html
+grc/gaps/index.md
 grc/graph/index.html
 grc/graph/index.md
 grc/index.html

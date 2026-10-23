@@ -4,7 +4,7 @@
 
 53 stakeholders in one tree, each with its own risk register, and the risks that connect them.
 
-[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [From the network](../../grc/network/index.html)
+[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [Explore](../../grc/explore/index.html) · [Gaps](../../grc/gaps/index.html) · [From the network](../../grc/network/index.html)
 
 # Stakeholders: a register for each, at every scale
 
@@ -85,4 +85,4 @@ The number in a cell is how many risks the two groups share: a risk assigned to 
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/stakeholders/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/stakeholders/index.html

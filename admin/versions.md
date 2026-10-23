@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.12. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.13. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.13 · 2026-10-23
+
+the risk graph as a tool (CI-002, steps 1 to 5): every edge says how it is known (read from a capture, from the fix commit, or inferred by an agent; inferred drawn dashed and hideable); the fix commit's 270 tests as nodes; explore the graph from any node, one step at a time, or climb from a file or a test to the risks, controls and stakeholders above it; and a gaps page computed at every build: no control is joined to code or a test, no code has an owner, 14 risks have no story
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
 
 ### v0.10.12 · 2026-10-23
 
@@ -514,4 +522,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

@@ -10,6 +10,8 @@ Because UK councils and the Met Police went offline calling it maintenance or a 
 
 Because UK councils and the Met Police went offline calling it maintenance or a precaution and did not confirm the link, residents could not tell an outage from an attack, resulting in lost trust and calls the council could not answer.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r04-2) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **15** high · **Likelihood** 5 Happening · **Impact** 3 Significant · **Kind** Reputational · **Acceptance** not recorded
 
 **Basis.** Reported by the press; Oxford's statement quoted.
@@ -61,4 +63,4 @@ On this site: [Impact: taken offline versus compromised](../../../impact/index.h
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04-2/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04-2/index.html

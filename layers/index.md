@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **25** derived · **9** authored · **25** site
+**8** evidence · **27** derived · **9** authored · **26** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -62,6 +62,8 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/grc-frameworks.json` | grc@php.newsroom | the official texts of the laws, standards and frameworks, each linked; control titles paraphrased | [grc/frameworks/index.html](../grc/frameworks/index.html) |
 | `data/grc-network.json` | grc@php.newsroom | the risk models, articles and vaults of the sgit network, described in their publishers' terms and linked | [grc/network/index.html](../grc/network/index.html) |
 | `data/grc-graph.json` | admin/build/build.py | data/grc.json, data/grc-frameworks.json, data/review.json, data/claims.json and the articles, on every build | [grc/graph/index.html](../grc/graph/index.html) |
+| `data/grc-tests.json` | dev@php.newsroom | the fix commit's test files, from its file list in the evidence vault, and the name rules joining each to a remediation | [grc/explore/index.html](../grc/explore/index.html) |
+| `data/grc-basis.json` | dev@php.newsroom | confirmations of risk-graph edges: who checked an edge and how | [grc/explore/index.html](../grc/explore/index.html) |
 
 ## Authored
 
@@ -110,9 +112,10 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/world.json` | dev@php.newsroom | Natural Earth admin-0 countries 1:50m v5.1.2 (public domain), projected to Equal Earth and simplified by a script; the map on admin/telemetry/ and in the public stats vault | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/layers.json` | claude-journalist | this classification | [layers/index.html](../layers/index.html) |
 | `data/synthetic.json` | admin/synthetic/run.py summarise (synthetic@php.newsroom) | each synthetic reader's vault: its latest run and review, with no keys | [admin/synthetic/index.html](../admin/synthetic/index.html) |
+| `data/grc-gaps.json` | dev@php.newsroom | the rules the gaps page computes over the risk graph | [grc/gaps/index.html](../grc/gaps/index.html) |
 
 The classification is [data/layers.json](../data/layers.json); the gate fails a release if a file in `data/` is missing from it.
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

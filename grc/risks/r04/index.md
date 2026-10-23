@@ -10,6 +10,8 @@ Because agencies advised taking systems offline where an update was not possible
 
 Because agencies advised taking systems offline where an update was not possible, governments, councils and companies switched off services people rely on, resulting in an outage caused by the defence rather than by an attack.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r04) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 5 Happening · **Impact** 4 Major · **Kind** Operational · **Acceptance** not recorded
 
 **Basis.** It happened: the Netherlands, Finland, Latvia, UK councils and the Wikimedia Foundation took services offline.
@@ -80,4 +82,4 @@ On this site: [Impact: taken offline versus compromised](../../../impact/index.h
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04/index.html

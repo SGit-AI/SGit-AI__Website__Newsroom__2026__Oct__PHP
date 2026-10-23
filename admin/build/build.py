@@ -249,7 +249,7 @@ NAV = [
                       ('pipeline/index.html', 'The fact pipeline'), ('versions/index.html', 'How the story changed'),
                       ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults']]),
     ('GRC', [('grc/index.html', 'GRC: risks, owners, standards'), ('grc/risks/index.html', 'The risk register'), ('grc/stakeholders/index.html', 'Stakeholders and their registers'),
-             ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/network/index.html', 'From the sgit network')]),
+             ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/explore/index.html', 'Explore the graph: from any node'), ('grc/gaps/index.html', 'What the graph is missing'), ('grc/network/index.html', 'From the sgit network')]),
     ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed')]),
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
@@ -4068,7 +4068,7 @@ GRC_AS_VERB = {'owner': ('owned_by', 'owns'), 'bearer': ('borne_by', 'bears'), '
 GRC_VERBS = OrderedDict([
     ('part_of', 'has_part'), ('arises_from', 'gives_rise_to'), ('backed_by', 'evidences'), ('fixed_by', 'fixes'),
     ('realised_in', 'realises'), ('located_in', 'location_of'), ('protected_by', 'protects'), ('governed_by', 'governs'),
-    ('concerns', 'concerned_in'), ('told_in', 'tells'), ('tracked_by', 'tracks'), ('briefed_by', 'briefs'), ('cites', 'cited_by'), ('shown_on', 'shows'),
+    ('concerns', 'concerned_in'), ('told_in', 'tells'), ('tracked_by', 'tracks'), ('briefed_by', 'briefs'), ('cites', 'cited_by'), ('shown_on', 'shows'), ('tests', 'tested_by'),
 ] + [v for v in GRC_AS_VERB.values()])
 GRC_CAT = OrderedDict([('security', 'Security'), ('supply-chain', 'Supply chain'), ('process', 'Disclosure process'), ('operational', 'Operational'),
                        ('compliance', 'Compliance'), ('governance', 'Governance'), ('reputational', 'Reputational'), ('strategic', 'Strategic'), ('ai', 'AI and agents')])
@@ -4159,60 +4159,116 @@ def grc_path(G, rid):
     return dict(weaknesses=ws, vulns=vulns, remediation=rem, code=code, repo=repo, stories=stories, roles=roles, team=team,
                 own_stories=R[rid]['stories'], through=line[1:])
 
+GRC_TESTS = load('grc-tests') if os.path.exists(os.path.join(DATA, 'grc-tests.json')) else None
+GRC_BASIS = load('grc-basis') if os.path.exists(os.path.join(DATA, 'grc-basis.json')) else {'confirmed': []}
+GRC_GAPS = load('grc-gaps') if os.path.exists(os.path.join(DATA, 'grc-gaps.json')) else None
+# How an edge is known (CI-002.5, the brief of 23 October): read from a capture, read from the commit, inferred by an
+# agent, or confirmed by a person; with what supports it.
+GRC_BASES = OrderedDict([('source', 'read from a capture'), ('code', 'read from the fix commit'), ('inferred', 'inferred by an agent, not yet checked'), ('confirmed', 'checked by a person')])
+
 def grc_graph(G):
-    """data/grc-graph.json: one node per thing, one edge per verb, the inverse named on the edge."""
+    """data/grc-graph.json: one node per thing, one edge per verb, the inverse named on the edge, and on every edge its
+    basis: how it is known ({kind, ref}: source and the capture's slug, code and the commit, inferred and the agent,
+    confirmed and who checked)."""
     nodes, edges, seen = [], [], set()
+    commit = D['code']['fix']['commit']
     def node(i, kind, label, href):
         if i not in seen:
             seen.add(i); nodes.append({'id': i, 'kind': kind, 'label': label, 'href': href})
-    def edge(a, verb, b):
-        edges.append({'from': a, 'rel': verb, 'inverse': GRC_VERBS[verb], 'to': b})
+    def edge(a, verb, b, kind, ref, note=None):
+        basis = {'kind': kind, 'ref': ref}
+        if note: basis['note'] = note
+        edges.append({'from': a, 'rel': verb, 'inverse': GRC_VERBS[verb], 'to': b, 'basis': basis})
+    by_grc = ('inferred', 'grc')
     for s in G['S'].values():
         node('stakeholder:' + s['id'], 'role' if s['kind'] == 'role' else 'stakeholder', s['name'], f'grc/stakeholders/{s["id"]}/index.html')
-        if s['parent']: edge('stakeholder:' + s['id'], 'part_of', 'stakeholder:' + s['parent'])
+        if s['parent']: edge('stakeholder:' + s['id'], 'part_of', 'stakeholder:' + s['parent'], *by_grc)
         if s.get('audience'):
             a = next(x for x in D['roles']['audiences'] if x['id'] == s['audience'])
-            node('briefing:' + a['id'], 'briefing', a['name'], f'briefings/{a["id"]}/index.html'); edge('stakeholder:' + s['id'], 'briefed_by', 'briefing:' + a['id'])
+            node('briefing:' + a['id'], 'briefing', a['name'], f'briefings/{a["id"]}/index.html'); edge('stakeholder:' + s['id'], 'briefed_by', 'briefing:' + a['id'], *by_grc)
         if s.get('member'):
-            m = G['members'][s['member']]; node('member:' + m['id'], 'member', m['name'], f'team/{m["id"]}/index.html'); edge('stakeholder:' + s['id'], 'tracked_by', 'member:' + m['id'])
+            m = G['members'][s['member']]; node('member:' + m['id'], 'member', m['name'], f'team/{m["id"]}/index.html'); edge('stakeholder:' + s['id'], 'tracked_by', 'member:' + m['id'], *by_grc)
     for w in G['W'].values():
         node('weakness:' + w['id'], 'weakness', w['name'], f'grc/graph/index.html#{w["id"]}')
         for v in w.get('vulns', []):
-            node('vulnerability:' + v, 'vulnerability', G['rev'][v]['name'], 'review/index.html#flaws'); edge('weakness:' + w['id'], 'arises_from', 'vulnerability:' + v)
+            node('vulnerability:' + v, 'vulnerability', G['rev'][v]['name'], 'review/index.html#flaws'); edge('weakness:' + w['id'], 'arises_from', 'vulnerability:' + v, *by_grc)
         for p in w.get('code', []):
-            node('repo:' + p, 'code', p, f'{REPO_URL}/blob/dev/{p}'); edge('weakness:' + w['id'], 'located_in', 'repo:' + p)
+            node('repo:' + p, 'code', p, f'{REPO_URL}/blob/dev/{p}'); edge('weakness:' + w['id'], 'located_in', 'repo:' + p, *by_grc)
     for e in D['review']['edges']:
-        if e['rel'] not in ('addresses', 'realised in'):
+        if e['rel'] not in ('addresses', 'realised in', 'fixes'):
             continue
         a, b = G['rev'][e['from']], G['rev'][e['to']]
-        if e['rel'] == 'addresses':
+        if e['rel'] in ('addresses', 'fixes'):
             node('remediation:' + a['id'], 'remediation', a['name'], f'review/index.html#{a["id"]}'); node('vulnerability:' + b['id'], 'vulnerability', b['name'], 'review/index.html#flaws')
-            edge('vulnerability:' + b['id'], 'fixed_by', 'remediation:' + a['id'])
+            edge('vulnerability:' + b['id'], 'fixed_by', 'remediation:' + a['id'], 'code', commit[:9])
         elif e['rel'] == 'realised in':
             node('remediation:' + a['id'], 'remediation', a['name'], f'review/index.html#{a["id"]}'); node('code:' + b['id'], 'code', b['name'].replace('file ', ''), 'review/index.html#areas')
-            edge('remediation:' + a['id'], 'realised_in', 'code:' + b['id'])
+            edge('remediation:' + a['id'], 'realised_in', 'code:' + b['id'], 'code', commit[:9])
+    # Tests as nodes (CI-002.4): every test file of the fix commit, joined to the commit (read from it) and, by the
+    # name rules in data/grc-tests.json, to the remediation it exercises (inferred until checked).
+    if GRC_TESTS:
+        if GRC_TESTS['source'] not in SOURCES or GRC_TESTS['commit'] != commit:
+            sys.exit('data/grc-tests.json: its source or commit is not the fix commit the site records')
+        for t in GRC_TESTS['files']:
+            rule = next((r for r in GRC_TESTS['rules'] if re.search(r['match'], t)), None)
+            ti = 'test:' + t
+            node(ti, 'test', t + (' (harness)' if rule and rule.get('harness') else ''), f'https://github.com/php/php-src/blob/{commit}/{t}')
+            edge(ti, 'tests', 'remediation:fix-commit', 'code', commit[:9])
+            if rule and rule.get('remediation'):
+                if 'remediation:' + rule['remediation'] not in seen:
+                    sys.exit(f'data/grc-tests.json: rule {rule["match"]!r} names an unknown remediation {rule["remediation"]!r}')
+                edge(ti, 'tests', 'remediation:' + rule['remediation'], 'inferred', 'dev', 'from the test name: ' + rule['why'])
     for r in G['R'].values():
         rn = 'risk:' + r['id']
         node(rn, 'risk', r['title'], f'grc/risks/{r["id"]}/index.html')
-        if r['parent']: edge(rn, 'part_of', 'risk:' + r['parent'])
-        for a in r['assign']: edge(rn, GRC_AS_VERB[a['as']][0], 'stakeholder:' + a['to'])
-        for w in r['weaknesses']: edge(rn, 'arises_from', 'weakness:' + w)
-        for v in r.get('concerns', []): edge(rn, 'concerns', 'vulnerability:' + v)
+        if r['parent']: edge(rn, 'part_of', 'risk:' + r['parent'], *by_grc)
+        for a in r['assign']: edge(rn, GRC_AS_VERB[a['as']][0], 'stakeholder:' + a['to'], *by_grc)
+        for w in r['weaknesses']: edge(rn, 'arises_from', 'weakness:' + w, *by_grc)
+        for v in r.get('concerns', []): edge(rn, 'concerns', 'vulnerability:' + v, *by_grc)
         for c in r['claims']:
-            cl = G['claims'][c]; node('claim:' + c, 'claim', cl['claim'][:90], f'facts/{c}/index.html'); edge(rn, 'backed_by', 'claim:' + c)
-            for s in cl['sources']:
-                if s in SOURCES: node('source:' + s, 'source', SOURCES[s].get('publisher') or s, f'sources/{s}/index.html'); edge('claim:' + c, 'cites', 'source:' + s)
+            cl = G['claims'][c]; node('claim:' + c, 'claim', cl['claim'][:90], f'facts/{c}/index.html')
+            src = [s for s in cl['sources'] if s in SOURCES]
+            edge(rn, 'backed_by', 'claim:' + c, *(('source', src[0]) if src else by_grc))
+            for s in src:
+                node('source:' + s, 'source', SOURCES[s].get('publisher') or s, f'sources/{s}/index.html'); edge('claim:' + c, 'cites', 'source:' + s, 'source', s)
         for i, c in enumerate(r['controls']):
-            node(f'treatment:{r["id"]}.{i + 1}', 'treatment', c['text'], c['page']); edge(rn, 'protected_by', f'treatment:{r["id"]}.{i + 1}')
+            node(f'treatment:{r["id"]}.{i + 1}', 'treatment', c['text'], c['page']); edge(rn, 'protected_by', f'treatment:{r["id"]}.{i + 1}', *by_grc)
         for x in r['frameworks']:
-            f, c = G['CTL'][x]; node('control:' + x, 'control', f'{f["name"]} {c["id"]}: {c["title"]}', f'grc/frameworks/{f["id"]}/index.html#{grc_cid(c["id"])}'); edge(rn, 'governed_by', 'control:' + x)
+            f, c = G['CTL'][x]; node('control:' + x, 'control', f'{f["name"]} {c["id"]}: {c["title"]}', f'grc/frameworks/{f["id"]}/index.html#{grc_cid(c["id"])}'); edge(rn, 'governed_by', 'control:' + x, *by_grc)
         for s in r['stories']:
-            a = G['arts'][s]; node('story:' + s, 'story', a['title'], f'articles/{s}/index.html'); edge(rn, 'told_in', 'story:' + s)
+            a = G['arts'][s]; node('story:' + s, 'story', a['title'], f'articles/{s}/index.html'); edge(rn, 'told_in', 'story:' + s, *by_grc)
         for m in r['team']:
-            mm = G['members'][m]; node('member:' + m, 'member', mm['name'], f'team/{m}/index.html'); edge(rn, 'tracked_by', 'member:' + m)
+            mm = G['members'][m]; node('member:' + m, 'member', mm['name'], f'team/{m}/index.html'); edge(rn, 'tracked_by', 'member:' + m, *by_grc)
         for p in r['pages']:
-            node('page:' + p, 'page', nav_title(p) if p in TITLES else p, p); edge(rn, 'shown_on', 'page:' + p)
+            node('page:' + p, 'page', nav_title(p) if p in TITLES else p, p); edge(rn, 'shown_on', 'page:' + p, *by_grc)
+    grc_confirm(edges)
+    grc_check_basis(edges, seen)
     return nodes, edges
+
+def grc_confirm(edges):
+    """data/grc-basis.json: an edge somebody checked becomes confirmed, by whom and how; an unknown edge or person stops the build."""
+    members = {m['id'] for m in TEAM['members']}
+    for c in GRC_BASIS.get('confirmed', []):
+        hit = [e for e in edges if e['from'] == c['from'] and e['rel'] == c['rel'] and e['to'] == c['to']]
+        if not hit:
+            sys.exit(f'data/grc-basis.json: no edge {c["from"]} {c["rel"]} {c["to"]}')
+        if c.get('by') not in members:
+            sys.exit(f'data/grc-basis.json: {c.get("by")!r} is not on the team')
+        for e in hit:
+            e['basis'] = {'kind': 'confirmed', 'ref': c['by'], 'note': c.get('how', ''), 'was': e['basis']['kind']}
+
+def grc_check_basis(edges, seen):
+    """Every edge says how it is known, and what it names exists: a capture, the fix commit, an agent or a person on the team."""
+    members = {m['id'] for m in TEAM['members']}
+    commit = D['code']['fix']['commit']
+    for e in edges:
+        b = e.get('basis') or {}
+        k, ref = b.get('kind'), b.get('ref', '')
+        ok = (k == 'source' and ref in SOURCES) or (k == 'code' and ref and commit.startswith(ref)) or (k in ('inferred', 'confirmed') and ref in members)
+        if not ok:
+            sys.exit(f'risk graph: edge {e["from"]} {e["rel"]} {e["to"]} has no valid basis ({b!r})')
+        if e['from'] not in seen or e['to'] not in seen:
+            sys.exit(f'risk graph: edge {e["from"]} {e["rel"]} {e["to"]} names a node that does not exist')
 
 TITLES = {}
 
@@ -4334,7 +4390,7 @@ def build_grc():
     used_ctl = Counter(c for r in R.values() for c in r['frameworks'])
     kinds = Counter(n['kind'] for n in nodes)
     acc = '<p>No risk on this register is <b>accepted</b>. An acceptance is an act by the holder of a risk, for a stated interval, and nobody can accept on anyone else\'s behalf; this desk records risks and their holders, it does not accept for them. Until a holder accepts, funds or fixes, each risk stands as it is rated here.</p>'
-    nav = '<p class="crumb"><a href="{u}grc/index.html">GRC</a> &middot; <a href="{u}grc/risks/index.html">Risks</a> &middot; <a href="{u}grc/stakeholders/index.html">Stakeholders</a> &middot; <a href="{u}grc/frameworks/index.html">Frameworks</a> &middot; <a href="{u}grc/graph/index.html">The graph</a> &middot; <a href="{u}grc/network/index.html">From the network</a></p>'
+    nav = '<p class="crumb"><a href="{u}grc/index.html">GRC</a> &middot; <a href="{u}grc/risks/index.html">Risks</a> &middot; <a href="{u}grc/stakeholders/index.html">Stakeholders</a> &middot; <a href="{u}grc/frameworks/index.html">Frameworks</a> &middot; <a href="{u}grc/graph/index.html">The graph</a> &middot; <a href="{u}grc/explore/index.html">Explore</a> &middot; <a href="{u}grc/gaps/index.html">Gaps</a> &middot; <a href="{u}grc/network/index.html">From the network</a></p>'
     # --- the front page of the section
     stats = ''.join(stat(n, l) for n, l in [(len(R), 'risks'), (len(top), 'at the top'), (len(S), 'stakeholders'), (sum(1 for s in S.values() if s['kind'] == 'role'), 'roles'),
                                            (len(W), 'weaknesses'), (len(FW), 'frameworks'), (len(used_ctl), 'controls mapped'), (len(edges), 'edges')])
@@ -4391,6 +4447,7 @@ def build_grc():
 <p class="crumb">{crumb}</p>
 <h1>{E(x.upper())}: {E(r["title"])}</h1>
 <p class="lead">{E(r["statement"])}</p>
+<p class="small"><a href="../../explore/index.html#focus=risk:{E(x)}">Explore the graph from this risk</a> &middot; <a href="../../gaps/index.html">What the graph is missing</a></p>
 <p class="kv"><b>Rating</b> {grc_pill(r)} &middot; <b>Likelihood</b> {r["likelihood"]} {E(GRC["scales"]["likelihood"][r["likelihood"] - 1]["name"])} &middot; <b>Impact</b> {r["impact"]} {E(GRC["scales"]["impact"][r["impact"] - 1]["name"])} &middot; <b>Kind</b> {E(GRC_CAT[r["category"]])} &middot; <b>Acceptance</b> not recorded</p>
 <p class="note"><b>Basis.</b> {E(r["basis"])}</p>
 {section("path", "The path", grc_path_svg(G, x, P))}
@@ -4496,6 +4553,9 @@ def build_grc():
         page(f'grc/frameworks/{f["id"]}/index.html', f'{f["name"]}: the php2shell risks it governs', f'Each {f["name"]} clause or control the GRC desk cites, the php2shell risks mapped to it and who owns them.', body, kind='analysis', topics='php2shell grc ' + f['id'])
     # --- the graph
     kinds_t = table(['Kind of node', 'How many'], [[E(k), str(n)] for k, n in kinds.most_common()])
+    bk = Counter((e['basis']['kind'], e['rel']) for e in edges)
+    basis_t = table(['How it is known', 'Edges', 'Verbs'], [[f'<b>{E(k)}</b>: {E(t)}', str(sum(n for (kk, _), n in bk.items() if kk == k)),
+                     E(', '.join(f'{v} {n}' for (kk, v), n in sorted(bk.items(), key=lambda x: -x[1]) if kk == k))] for k, t in GRC_BASES.items() if any(kk == k for kk, _ in bk)])
     verbs_t = table(['Verb', 'Inverse', 'Edges'], [[f'<code>{E(v)}</code>', f'<code>{E(i)}</code>', str(sum(1 for e in edges if e['rel'] == v))] for v, i in GRC_VERBS.items() if any(e['rel'] == v for e in edges)])
     wl = ''.join(f'<article class="role" id="{E(w["id"])}"><h3>{E(w["name"])}</h3><p>{E(w["about"])}</p><p class="small">Gives rise to: {", ".join(grc_r_link(G, x, 2, pill=False) for x in R if w["id"] in R[x]["weaknesses"])}'
                  + (f'<br>Arises from: {", ".join(E(G["rev"][v]["name"]) for v in w.get("vulns", []))}' if w.get('vulns') else '')
@@ -4529,9 +4589,91 @@ def build_grc():
 {section("weaknesses", "The weaknesses", wl, "What the risks arise from. Two are the CVEs themselves; the rest are conditions of the ecosystem, the disclosure process and this newsroom, each joined to the risks it gives rise to and, where there is one, to the code.")}
 {section("kinds", "What is in it", kinds_t)}
 {section("verbs", "The verbs", verbs_t, "Every edge is a verb read from the first node to the second; its inverse is read back. No edge says only that two things are related.")}
+{section("basis", "How each edge is known", basis_t, "Every edge says how it is known: read from a capture (with its slug), read from the fix commit, inferred by an agent (with the agent), or confirmed by a person (data/grc-basis.json). The drawing above shows the register's own joins, which are the GRC desk's inferences. To walk the graph one node at a time, with inferred edges dashed, use <a href=\"../explore/index.html\">explore</a>; for what is missing, <a href=\"../gaps/index.html\">the gaps</a>.")}
 '''
     page('grc/graph/index.html', 'The risk graph: php2shell stakeholders, risks, weaknesses, vulnerabilities and code', f'{len(nodes)} nodes and {len(edges)} typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.', body, kind='analysis', topics='php2shell grc graph')
+    build_grc_explore(nodes, edges, nav)
+    build_grc_gaps(nodes, edges, nav)
     build_grc_network(G, nav)
+
+# ----------------------------------------------------------------------------- the risk graph as a tool (CI-002, the brief of 23 October)
+
+def build_grc_explore(nodes, edges, nav):
+    """/grc/explore/: start from any node and expand, or climb from code to what it puts at stake (assets/grc-explore.js)."""
+    kinds = Counter(n['kind'] for n in nodes)
+    body = f"""
+{nav.format(u="../../")}
+<h1>Explore the risk graph: start from one thing and follow it</h1>
+<p class="lead">The whole graph is {len(nodes)} nodes and {len(edges)} edges, too much to read at once. Start from one thing you care about (a CVE, a risk, the people who run PHP, a file of the fix, a test, a control) and see only what touches it, grouped by how; open any of those to go one step further, with the way back always shown. Or start from code or a test and climb: the fixes it realises, the flaws they fix, the risks above them, and the controls, stakeholders and stories of each risk.</p>
+<div id="explore" class="gx"><p class="small">The explorer needs JavaScript; it reads <a href="../../data/grc-graph.json">data/grc-graph.json</a> in your browser and sends nothing anywhere.</p></div>
+<h2>How to read it</h2>
+<ul>
+<li><b>Every edge is a verb</b>, read from the node you are on: a risk <i>arises from</i> a weakness, a test <i>tests</i> a fix, a file <i>realises</i> a fix.</li>
+<li><b>Every edge says how it is known.</b> Read from a capture, read from the fix commit, inferred by an agent, or confirmed by a person. Inferred edges are dashed; one switch hides them, and the view shows what is left. Each link names what supports it.</li>
+<li><b>The address is the view.</b> Copy it to send someone exactly what you are looking at: the start, everything you opened, and whether inferred edges are hidden.</li>
+</ul>
+<p class="small">In the graph: {E(', '.join(f'{n} {k}' for k, n in kinds.most_common()))}. The tests are the {kinds.get('test', 0)} test files of the fix commit, from its file list in the evidence vault (<a href="../../data/grc-tests.json">data/grc-tests.json</a>).</p>
+<script src="../../assets/grc-explore.js" defer></script>
+"""
+    page('grc/explore/index.html', 'Explore the risk graph: start from one thing and follow it', 'Start from a CVE, a risk, a stakeholder, a file, a test or a control and see only what touches it, grouped by verb, one step at a time; or climb from code to the risks, controls and stakeholders above it. Every edge says how it is known.', body, kind='analysis', topics='php2shell grc graph explore')
+
+def grc_reach(adj, start, kinds, verbs, within):
+    """Breadth-first from start, in either direction, up to `within` steps (through `verbs` only, if named). The first
+    node of one of `kinds` found, or None."""
+    frontier, seen = [start], {start}
+    for _ in range(within):
+        nxt = []
+        for x in frontier:
+            for verb, y, kind in adj.get(x, ()):
+                if y in seen or (verbs and verb not in verbs):
+                    continue
+                if kind in kinds:
+                    return y
+                seen.add(y); nxt.append(y)
+        frontier = nxt
+    return None
+
+def build_grc_gaps(nodes, edges, nav):
+    """/grc/gaps/: what the graph is missing, computed at every build from the rules in data/grc-gaps.json."""
+    if not GRC_GAPS:
+        return
+    N = {n['id']: n for n in nodes}
+    adj = {}
+    for e in edges:
+        adj.setdefault(e['from'], []).append((e['rel'], e['to'], N[e['to']]['kind']))
+        adj.setdefault(e['to'], []).append((e['rel'], e['from'], N[e['from']]['kind']))
+    members = {m['id']: m for m in TEAM['members']}
+    out, tiles = [], []
+    for rule in GRC_GAPS['rules']:
+        if rule.get('close') not in members:
+            sys.exit(f'data/grc-gaps.json: rule {rule["id"]} names {rule.get("close")!r}, who is not on the team')
+        who = f'<a href="../../team/{E(rule["close"])}/index.html">{E(members[rule["close"]]["name"])}</a>'
+        if rule['of'] == 'edge':
+            hit = [e for e in edges if e['basis']['kind'] == rule['basis']]
+            total = len(edges)
+            by = Counter(e['rel'] for e in hit)
+            detail = table(['Verb', 'Edges', 'Example'], [[f'<code>{E(v)}</code>', str(n), E(next(f'{N[e["from"]]["label"][:50]} {v} {N[e["to"]]["label"][:50]}' for e in hit if e['rel'] == v))] for v, n in by.most_common()])
+        else:
+            kinds = rule['reach'] if isinstance(rule['reach'], list) else [rule['reach']]
+            pool = [n for n in nodes if n['kind'] == rule['of']]
+            if not pool:
+                sys.exit(f'data/grc-gaps.json: rule {rule["id"]} looks at {rule["of"]!r}, a kind the graph does not have')
+            hit = [n for n in pool if grc_reach(adj, n['id'], set(kinds), set(rule.get('verbs') or []), rule['within']) is None]
+            total = len(pool)
+            items = ''.join(f'<li><a href="../explore/index.html#focus={E(n["id"])}">{E(n["label"])}</a></li>' for n in sorted(hit, key=lambda n: n['label']))
+            detail = f'<details{" open" if len(hit) <= 12 else ""}><summary>The {len(hit)}, each opening in the explorer</summary><ul class="cols-list">{items}</ul></details>' if hit else '<p class="small">None: every one reaches it.</p>'
+        reach = '' if rule['of'] == 'edge' else f' Looks at every <b>{E(rule["of"])}</b> for a path to {E(" or ".join(kinds))} within {rule["within"]} step{"s" if rule["within"] > 1 else ""}' + (f' through {E(", ".join(rule["verbs"]))}' if rule.get('verbs') else '') + '.'
+        tiles.append(stat(len(hit), f'{E(rule["title"].lower())} (of {total})', f'#{rule["id"]}', 2))
+        out.append(f'<section class="vcard" id="{E(rule["id"])}"><h2>{E(rule["title"])}: {len(hit)} of {total}</h2><p>{E(rule["why"])}{reach} Who could close it: {who}.</p>{detail}</section>')
+    body = f"""
+{nav.format(u="../../")}
+<h1>What the risk graph is missing</h1>
+<p class="lead">The graph shows what is joined; this page shows what is not. Each gap below is a rule, written as data in <a href="../../data/grc-gaps.json">data/grc-gaps.json</a>, computed over the {len(nodes)} nodes and {len(edges)} edges at every release: a control no test reaches, code nobody owns, a risk no story tells, a join an agent inferred that nobody has checked. Each names who could close it; each item opens in <a href="../explore/index.html">the explorer</a>.</p>
+<div class="stats">{''.join(tiles)}</div>
+{''.join(out)}
+<p class="small">A rule is a kind of node, what it should reach, within how many steps and through which verbs. Add one to the data and it appears here at the next release. A gap is not a fault: some are there by design (a control in a framework the fix commit was never meant to test); the page says where to look, not what to conclude.</p>
+"""
+    page('grc/gaps/index.html', 'What the risk graph is missing: controls without tests, code without owners, risks without stories', 'Gaps in the php2shell risk graph, computed at every release from rules written as data: controls no test reaches, code with no owner, risks with no story or treatment, edges an agent inferred and nobody checked; each with its count, its list and who could close it.', body, kind='analysis', topics='php2shell grc graph gaps')
 
 def grc_s_rids(G, sid):
     below = set(grc_below(G['kids_s'], sid))

@@ -133,6 +133,8 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Stakeholders and their registers](../grc/stakeholders/index.html):
 - [Frameworks: GDPR, NIS2, CRA, ISO, NIST](../grc/frameworks/index.html):
 - [The risk graph](../grc/graph/index.html):
+- [Explore the graph: from any node](../grc/explore/index.html):
+- [What the graph is missing](../grc/gaps/index.html):
 - [From the sgit network](../grc/network/index.html):
 
 ### Views
@@ -178,4 +180,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.10.12 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

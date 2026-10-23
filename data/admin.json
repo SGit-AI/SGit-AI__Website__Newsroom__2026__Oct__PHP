@@ -1242,32 +1242,42 @@
   {
    "id": "166",
    "title": "From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1: a focus view of the risk graph: open at any node, its neighbours by verb, expand on click, the path back always shown, the focus in the address; in the browser from data/grc-graph.json",
-   "status": "open",
-   "owner": "dev@php.newsroom"
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: /grc/explore/, start from any node, neighbours by verb, open one step at a time with the path back shown; the address carries the view.",
+   "version": "0.10.13"
   },
   {
    "id": "167",
    "title": "From CI-002, step 2: a basis on every graph edge (source, code, inferred, confirmed, with its support), checked in build_grc; inferred edges dashed with a switch to hide them",
-   "status": "open",
-   "owner": "dev@php.newsroom"
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: every one of the 1,418 edges carries a basis (316 source, 287 code, 815 inferred); the build stops on an edge without a valid one; data/grc-basis.json records confirmations; inferred edges dashed in the explorer, with a switch to hide them.",
+   "version": "0.10.13"
   },
   {
    "id": "168",
    "title": "From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the remediation and code they exercise",
-   "status": "open",
-   "owner": "dev@php.newsroom"
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: the 270 test files of the fix commit, from its file list in the evidence vault, joined to the commit (code) and, by name rules in data/grc-tests.json, to the remediation each exercises (inferred).",
+   "version": "0.10.13"
   },
   {
    "id": "169",
    "title": "From CI-002, step 4: an impact view: pick a function or file, climb the graph to remediations, vulnerabilities, weaknesses, risks, controls and stakeholders, each with its path",
-   "status": "open",
-   "owner": "dev@php.newsroom"
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: What it puts at stake, in the explorer: from code, a test or a fix, the remediations, flaws, weaknesses, risks, controls, stakeholders, treatments and stories above it, each with its path.",
+   "version": "0.10.13"
   },
   {
    "id": "170",
    "title": "From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with no owner, risk with no story, treatment or holder, edge with no basis)",
-   "status": "open",
-   "owner": "dev@php.newsroom"
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: /grc/gaps/, eight rules as data (data/grc-gaps.json), computed at every build: all 95 controls joined to no code or test; 16 of 16 code nodes with no owner; 9 of 16 code nodes no test reaches (main/SAPI.c and main/main.c among them); 14 of 34 risks no story tells; 815 edges inferred and unchecked.",
+   "version": "0.10.13"
   }
  ],
  "evidence_vault": {
