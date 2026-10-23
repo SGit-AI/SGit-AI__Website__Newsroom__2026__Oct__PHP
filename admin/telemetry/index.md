@@ -18,106 +18,121 @@ One anonymous event per page per session: path, referrer host, country, region, 
 
 ## The counts
 
-Report as of **2026-10-22**: **275** events from **176** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
+Report as of **2026-10-23**: **758** events from **275** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
 
 | Country | Events |
 |---|---|
-| US | 168 |
-| GB | 56 |
-| (none) | 31 |
-| PT | 8 |
+| US | 325 |
+| (none) | 273 |
+| GB | 88 |
+| PT | 26 |
+| ES | 13 |
+| IE | 6 |
+| NL | 5 |
+| FR | 5 |
 | AU | 4 |
-| NL | 3 |
+| DE | 3 |
+| TR | 3 |
 | SG | 2 |
-| IE | 1 |
-| ES | 1 |
-| FR | 1 |
+| CA | 2 |
+| AT | 2 |
+| PK | 1 |
 
 | Region | Events |
 |---|---|
-| California | 131 |
-| England | 56 |
-| (none) | 32 |
-| Virginia | 18 |
-| Florida | 10 |
-| Lisbon | 6 |
+| (none) | 274 |
+| California | 266 |
+| England | 87 |
+| Virginia | 27 |
+| Lisbon | 24 |
+| Madrid | 13 |
+| Florida | 11 |
+| Iowa | 7 |
+| Leinster | 6 |
 | New South Wales | 4 |
 | Washington | 3 |
+| New York | 3 |
+| Pennsylvania | 3 |
+| Hessen | 3 |
+| Ile-de-France | 3 |
+| Istanbul | 3 |
 | Leiria | 2 |
 | North Brabant | 2 |
-| New York | 2 |
+| Arizona | 2 |
+| New Jersey | 2 |
+| Nouvelle-Aquitaine | 2 |
+| British Columbia | 2 |
+| Vienna | 2 |
 | Central Singapore | 1 |
 | Groningen | 1 |
-| Leinster | 1 |
-| Madrid | 1 |
-| Nevada | 1 |
-| Iowa | 1 |
-| Arizona | 1 |
-| New Jersey | 1 |
-| Nouvelle-Aquitaine | 1 |
 
 | Referrer host | Events |
 |---|---|
-| (none) | 237 |
-| php.oct.2026.newsroom.sgit.ai | 34 |
-| newsroom.sgit.ai | 4 |
+| (none) | 671 |
+| php.oct.2026.newsroom.sgit.ai | 70 |
+| www.linkedin.com | 8 |
+| newsroom.sgit.ai | 6 |
+| com.linkedin.android | 1 |
+| teams.public.onecdn.static.microsoft | 1 |
+| com.google.android.gm | 1 |
 
 | Screen | Events |
 |---|---|
-| desktop | 167 |
-| phone | 107 |
-| tablet | 1 |
+| phone | 439 |
+| desktop | 306 |
+| tablet | 13 |
 
 ### By page
 
 | Page | Events |
 |---|---|
-| / | 77 |
-| /index.html | 17 |
-| /claims/index.html | 11 |
-| /briefings/board/index.html | 9 |
-| /now/index.html | 8 |
-| /sources/index.html | 7 |
-| /articles/where-php2shell-stands/index.html | 6 |
-| /graph/index.html | 6 |
-| /review/ui/index.html | 5 |
-| /questions/fix-or-wait/index.html | 5 |
-| /method/index.html | 5 |
-| /exploitation/index.html | 5 |
+| / | 129 |
+| /index.html | 24 |
+| /claims/index.html | 15 |
+| /now/index.html | 12 |
+| /briefings/board/index.html | 11 |
+| /sources/index.html | 10 |
+| /method/index.html | 8 |
+| /join/ | 8 |
+| /articles/where-php2shell-stands/index.html | 7 |
+| /exploitation/index.html | 7 |
+| /explained/index.html | 7 |
+| /graph/index.html | 7 |
+| /factcheck/index.html | 7 |
+| /review/ui/index.html | 6 |
+| /questions/fix-or-wait/index.html | 6 |
+| /account/index.html | 6 |
+| /flaws/index.html | 6 |
+| /impact/index.html | 6 |
+| /admin/versions.html | 5 |
+| /readings/perplexity-2026-10-22/index.html | 5 |
+| /team/index.html | 5 |
 | /storyboards/briefing-2026-10-22/index.html | 5 |
 | /compromise/index.html | 5 |
-| /factcheck/index.html | 4 |
+| /admin/telemetry/index.html | 4 |
+| /admin/vault/index.html | 4 |
+| /billing/index.html | 4 |
+| /readings/index.html | 4 |
+| /briefings/ciso/index.html | 4 |
+| /affected/software.html | 4 |
+| /vaults/source-watch/index.html | 4 |
+| /collaborators/index.html | 4 |
 | /admin/agents/librarian/index.html | 4 |
 | /admin/agents/rounds/index.html | 4 |
-| /questions/index.html | 3 |
-| /billing/index.html | 3 |
-| /readings/index.html | 3 |
-| /fractal/ui/index.html | 3 |
-| /fractal/index.html | 3 |
-| /admin/agents/roles/index.html | 3 |
-| /admin/vault/index.html | 2 |
-| /briefings/developer/index.html | 2 |
-| /timeline/index.html | 2 |
-| /account/index.html | 2 |
-| /articles/index.html | 2 |
-| /briefings/ciso/index.html | 2 |
-| /briefings/comms/index.html | 2 |
-| /articles/patch-at-the-speed-of-metasploit/index.html | 2 |
-| /explained/index.html | 2 |
-| /grc/index.html | 2 |
-| /grc/risks/r01-3/index.html | 2 |
-| /grc/graph/index.html | 2 |
-| /grc/stakeholders/board/index.html | 2 |
-| /collaborators/index.html | 2 |
-| /impact/index.html | 2 |
-| /compromise/ | 2 |
-| /facts/kev-precedent/index.html | 2 |
+| /questions/am-i-affected/index.html | 4 |
+| /briefings/everyone/index.html | 4 |
+| /sources/gist-blevene-detection-guide/index.html | 4 |
+| /leak/index.html | 4 |
+| /admin/board/index.html | 3 |
+| /briefings/developer/index.html | 3 |
+| /review/index.html | 3 |
 
 ### By day
 
 | Day | Events |
 |---|---|
-| 2026-10-22 | 275 |
+| 2026-10-22 | 416 |
+| 2026-10-23 | 342 |
 
 ## What the counts are worth
 
@@ -131,4 +146,4 @@ Mechanics: `assets/telemetry.js` sends; `admin/build/telemetry_drain.py`, run by
 
 
 ---
-site v0.8.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html
+site v0.8.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html

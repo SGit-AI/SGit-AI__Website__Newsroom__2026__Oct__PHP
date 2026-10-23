@@ -1,6 +1,15 @@
 {
- "current": "0.8.2",
+ "current": "0.8.3",
  "versions": [
+  {
+   "version": "0.8.3",
+   "date": "2026-10-23",
+   "title": "your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) and from step 0 of If you run PHP; the telemetry lane drained on the morning of 23 October: 483 events overnight, 758 in all",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.8.2",
    "date": "2026-10-23",

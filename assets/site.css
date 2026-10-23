@@ -626,3 +626,6 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1
 .sk-v h3{margin:.2rem 0 .3rem;font-size:1rem}.sk-vu{border-top:1px solid var(--line);padding-top:.3rem;margin-top:.3rem}
 .sk-why{margin:.2rem 0 .3rem 1.1rem;padding:0;font-size:.86rem}
 .sk-acts li{margin:.3rem 0}.sk-note{background:var(--info-bg);color:var(--info-ink);border-radius:8px;padding:.5rem .8rem}
+
+/* v0.8.3: eight tiles at a glance, two rows of four on wide screens */
+@media (min-width:900px){#state .tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}

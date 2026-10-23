@@ -10,7 +10,7 @@ PHP news · October 2026 · Developing · last checked 22 October 2026, 11:34 UT
 
 PHP is the software that WordPress and millions of other websites run on. A fix came out on 21 October 2026. Government cyber agencies have told organisations to install it now, or to take websites offline if they cannot. Phones and personal computers are not affected.
 
-  What is happening nowThe briefing for youExplain it from the startOn your phone: Now →
+  What is happening nowThe briefing for youExplain it from the startCheck your stackOn your phone: Now →
 
 You may also see this called php2shell, or by its two official reference numbers, CVE-2026-109618 and CVE-2026-109619.
 
@@ -25,8 +25,8 @@ As of 22 October 2026, 11:34 UTC, the time of the latest page this site saved.
 This section v2 written in site [v0.5.8](admin/versions.html#v0.5.8) on 22 October 2026 · [history and changes, 1 earlier](versions/front-now/index.html)
 
 ## At a glance
-Is there a fix?Yesinstall PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35How serious?Critical9.2 out of 10, both flawsAre attackers trying?Yesmillions of attempts, seen by one internet security companyAnyone confirmed hacked?Not yetno organisation, as of the latest checkWebsites taken offline10 organisationsreported, as a precautionOn the US 'used in attacks' list?Not yetthe US government's official list of flaws known to be used by attackersWhat do governments say?Update nowor take the website offline if you cannot; 16 agencies compared
-This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 October 2026 · [history](versions/front-glance/index.html)
+Is there a fix?Yesinstall PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35How serious?Critical9.2 out of 10, both flawsDoes it reach you?Check your stackdescribe what you run and see what an attacker could reach in itAre attackers trying?Yesmillions of attempts, seen by one internet security companyAnyone confirmed hacked?Not yetno organisation, as of the latest checkWebsites taken offline10 organisationsreported, as a precautionOn the US 'used in attacks' list?Not yetthe US government's official list of flaws known to be used by attackersWhat do governments say?Update nowor take the website offline if you cannot; 16 agencies compared
+This section v2 written in site [v0.8.2](admin/versions.html#v0.8.2) on 23 October 2026 · [history and changes, 1 earlier](versions/front-glance/index.html)
 
 ## The core facts, and the evidence for each
 
@@ -115,4 +115,4 @@ Already know the vocabulary? [The specialist summary](summary/index.html) has th
 
 
 ---
-site v0.8.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.8.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/index.html

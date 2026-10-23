@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.8.2",
+"site": "0.8.3",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -67,11 +67,11 @@
 "zone": "research",
 "title": "If you run PHP",
 "path": "playbook/index.html",
-"hash": "04ed7f7ccac3",
-"v": 2,
+"hash": "74d423474096",
+"v": 3,
 "first": "0.1.0",
-"changed": "0.3.0",
-"date": "2026-10-22",
+"changed": "0.8.2",
+"date": "2026-10-23",
 "history": "versions/page-playbook/index.html"
 },
 "page-claims": {
@@ -1267,11 +1267,11 @@
 "zone": "research",
 "title": "Front page: at a glance",
 "path": "index.html#glance",
-"hash": "8ff454557e0a",
-"v": 1,
+"hash": "2ca51355b39b",
+"v": 2,
 "first": "0.3.2",
-"changed": "0.3.2",
-"date": "2026-10-22",
+"changed": "0.8.2",
+"date": "2026-10-23",
 "history": "versions/front-glance/index.html"
 },
 "front-facts": {
