@@ -6,7 +6,7 @@ Every vault this site is built from: the evidence vault and the source watch, bo
 
 # The vaults behind this site
 
-This site is rebuilt from vaults, never written by hand. 11 vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
+This site is rebuilt from vaults, never written by hand. 12 vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch, and the public face of the telemetry, its curated counts); two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
 
 Every vault behind this site: what each holds, who writes to it, and how to open it. Three kinds of credential appear here. A vault key reads and writes; it is never published. A read key reads only and cannot be turned into a vault key; the two public vaults publish theirs. An append token adds rows to one lane and cannot read anything; the telemetry lane publishes its token so every page can write to it.
 
@@ -43,6 +43,18 @@ One anonymous event per page view (page, referrer host, country, region and city
 **Written by** every page of this site, through the write-only lane; dev@php.newsroom drains it. Data on this site: [data/telemetry.json](../data/telemetry.json).
 
 **Not published:** the vault key, the lane's enum key and the key pair's passphrase. **Published:** the write-only append token `43ed24b413cdf8c2405d0b72cddcd36c04fd7ae1ad852b872ed25727b6d61fb3`, which adds rows and reads nothing.
+
+## [The public telemetry stats](../admin/telemetry/index.html) public read
+
+**Vault** `0cfkdcvh` · written by admin/build/telemetry_publish.py from the telemetry vault (84wr8mib) at every drain; its own app · opens in its own app
+
+The curated, public view of the telemetry: page views and sessions per hour and per day for readers, for the editor, team and power users, for synthetic visitors and for crawlers; and, over readers only, countries (with a world map), devices, languages, site versions, pages and referrer hosts. Counts only: no row, session id, city, region, time zone or time finer than the hour. Written at every drain.
+
+**Written by** dev@php.newsroom, at every drain (admin/build/telemetry_flow.sh). Data on this site: [data/telemetry-public.json](../data/telemetry-public.json).
+
+**Read key** `sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800:0cfkdcvh`
+
+[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800%3A0cfkdcvh) · `sgit clone sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800:0cfkdcvh`
 
 ## [The subscriptions vault](../subscribe/index.html) private, with a public append lane
 
@@ -128,4 +140,4 @@ The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgi
 
 
 ---
-site v0.8.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html

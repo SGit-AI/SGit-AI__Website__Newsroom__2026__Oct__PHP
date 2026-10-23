@@ -626,3 +626,19 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1
 .sk-v h3{margin:.2rem 0 .3rem;font-size:1rem}.sk-vu{border-top:1px solid var(--line);padding-top:.3rem;margin-top:.3rem}
 .sk-why{margin:.2rem 0 .3rem 1.1rem;padding:0;font-size:.86rem}
 .sk-acts li{margin:.3rem 0}.sk-note{background:var(--info-bg);color:var(--info-ink);border-radius:8px;padding:.5rem .8rem}
+
+/* v0.8.3: eight tiles at a glance, two rows of four on wide screens */
+@media (min-width:900px){#state .tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* v0.8.4: who reads this site, by group (admin/telemetry/). One validated categorical set: readers blue, us orange,
+   machines in two greys so readers stand out; dark themes take the dark steps. */
+:root{--tg1:#2a78d6;--tg2:#eb6834;--tg3:#8f8d86;--tg4:#c9c7bf}
+:root[data-theme="night"],:root[data-theme="ember"]{--tg1:#3987e5;--tg2:#d95926;--tg3:#7d7c75;--tg4:#4a4945}
+.tg1{fill:var(--tg1);background:var(--tg1)}.tg2{fill:var(--tg2);background:var(--tg2)}.tg3{fill:var(--tg3);background:var(--tg3)}.tg4{fill:var(--tg4);background:var(--tg4)}
+.tm0{fill:var(--line)}
+.tfig{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:.5rem;overflow-x:auto}
+.tchart{display:block;width:100%;min-width:600px;height:auto}.tchart text{fill:var(--dim);font-size:11px}.tchart .tgrid{stroke:var(--line)}.tchart .taxis{stroke:var(--line2)}
+.tmap{display:block;width:100%;height:auto}.tmap path{stroke:var(--panel);stroke-width:.5}
+.tlegend{display:flex;flex-wrap:wrap;gap:.3rem 1rem;font-size:.84rem;color:var(--dim)}.tlegend i,.tsw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:.35rem;vertical-align:-1px}
+.tramp{font-size:.8rem;color:var(--dim);margin:.3rem .2rem 0}.tramp i{display:inline-block;width:22px;height:10px;vertical-align:-1px}
+.twho{border:1px solid var(--line);border-radius:10px;padding:.5rem .8rem;margin:1rem 0}.twho-b{display:flex;flex-wrap:wrap;gap:.35rem}.twho .rs-b.on{background:var(--accent);color:var(--bg);border-color:var(--accent)}

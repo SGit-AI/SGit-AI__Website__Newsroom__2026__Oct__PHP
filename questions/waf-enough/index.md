@@ -30,4 +30,4 @@ Next question: [Do our developers need to change our code?](../change-code/index
 
 
 ---
-site v0.8.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/waf-enough/index.html
+site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/waf-enough/index.html

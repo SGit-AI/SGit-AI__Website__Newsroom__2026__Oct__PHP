@@ -254,6 +254,16 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: vulnerabilities beyond the two (the pulse), feed items matched to a stack, deletions carried across devices.
 
+### Who reads this site, by group, and in public (v0.8.4, dev@php.newsroom)
+
+- `admin/build/telemetry_classes.py`: every session is a reader, the editor, a power user or team member, synthetic (agents, tests, headless browsers) or a crawler. Declared by the browser since v0.8.4 (`assets/telemetry.js` sends `agent`, automation by class, never the user-agent string, and `who`, the role of an enrolled `/join/` key or the browser's setting on `/admin/telemetry/`), inferred before that (time zone, place, language, first page). The telemetry app (UX vault 5wnsr5h8, v0.2.1) runs the same rules, checked identical on all 279 sessions drained so far, filters every page by group and has a map.
+
+- The public telemetry stats vault `0cfkdcvh`, read key published on `/vaults/` and `/admin/telemetry/`: its own app (hourly by group, a world map of readers, what readers read, by day, the method), `stats/summary.json` and `stats/hourly.json`. Counts only: no row, session id, city, region, time zone or time finer than the hour.
+
+- `admin/build/telemetry_flow.sh  `: pull both, drain, classify (`reports/classes.json` in the private vault), publish (`admin/build/telemetry_publish.py`), push both; writes `data/telemetry-report.json` and `data/telemetry-public.json` for the next release. `/admin/telemetry/` draws the groups, the hourly chart and the map from them; `data/world.json` is Natural Earth 1:50m (public domain) in Equal Earth.
+
+- Not built: a schedule for the flow (needs the editor's go); public stats after an in-browser drain (an app cannot write another vault).
+
 ### Recorded, not started
 
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
@@ -278,4 +288,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.8.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

@@ -50,4 +50,4 @@ This is a first version, a thinking tool and not a scanner: it knows only what y
 
 
 ---
-site v0.8.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/stack/index.html
+site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/stack/index.html

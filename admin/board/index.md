@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 118 items, 83 open, 33 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 121 items, 84 open, 35 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -128,9 +128,12 @@ The work, as rows in `data/admin.json`: 118 items, 83 open, 33 done. An item is 
 | 116 | Your stack, the blast radius (/stack/): describe what you run (internet, edge, apps, platforms, PHP runtimes, data, secrets, services) and see each runtime against both CVEs, the blast radius as a graph, what to do first and what on the site is about your stack; in the browser and the reader's vault | done | dev@php.newsroom | 0.8.1 |
 | 117 | Stack, next: the pulse's vulnerabilities as rows in data/stack.json (rules beyond PHP: product and version ranges), news from the feeds matched to a saved stack, a test of the vault sync with a real reader vault, deletions that carry across devices | open | dev@php.newsroom |  |
 | 118 | Design: --warn-* and --info-* tokens were mapped to themselves in assets/themes/site-tokens.css (cyclic, so invalid) since v0.2.4: every warning and info pill rendered with no colour. Fixed in v0.8.1; checked in all five themes (computed tokens and a pill on /claims/) | done | dev@php.newsroom | 0.8.1 |
+| 119 | Who is who in the telemetry: every session a reader, the editor, a power user or team member, synthetic (agents, tests, headless browsers) or a crawler; declared by the browser since v0.8.4 (agent: automation by class; who: the role of its /join/ key or this browser's setting on /admin/telemetry/), inferred before (time zone, place, language, first page); admin/build/telemetry_classes.py, the same rules in the telemetry app v0.2.1 | done | dev@php.newsroom | 0.8.4 |
+| 120 | The public telemetry stats vault (0cfkdcvh, read key published): its own app with the hourly chart by group, a world map of readers, what readers read; curated counts only, written at every drain by admin/build/telemetry_flow.sh (drain, classify, publish, push both vaults); the same counts and map on /admin/telemetry/ | done | dev@php.newsroom | 0.8.4 |
+| 121 | Telemetry, next: the editor confirms the inferred rule for his browsers (Europe/Lisbon, English) or sets them on /admin/telemetry/; enrolled /join/ keys start declaring roles once data/contributors.json lists them; the in-browser drain cannot write the public vault (an app cannot write another vault), so public stats follow the next run of telemetry_flow.sh; a schedule for that run needs the editor's go | open | dev@php.newsroom |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.8.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

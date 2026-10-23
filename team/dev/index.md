@@ -41,6 +41,7 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 066 | Open the phone app's vault with a passkey, through the newsroom's door design, so a phone needs no pasted keyFrom the brief on the phone app (22 October). | open |  |
 | 084 | Open the reader vault with a passkey, as newsroom.sgit.ai and pki.sgit.ai do (the door design), instead of a pasted key | open |  |
 | 117 | Stack, next: the pulse's vulnerabilities as rows in data/stack.json (rules beyond PHP: product and version ranges), news from the feeds matched to a saved stack, a test of the vault sync with a real reader vault, deletions that carry across devices | open |  |
+| 121 | Telemetry, next: the editor confirms the inferred rule for his browsers (Europe/Lisbon, English) or sets them on /admin/telemetry/; enrolled /join/ keys start declaring roles once data/contributors.json lists them; the in-browser drain cannot write the public vault (an app cannot write another vault), so public stats follow the next run of telemetry_flow.sh; a schedule for that run needs the editor's go | open |  |
 
 ## Waiting on someone else
 
@@ -77,6 +78,8 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 091 | The telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages); the telemetry vault imports it and drains its own lane from the browser (Queue & drain: the count waiting, the passphrase-sealed key, push before mark-processed); the dashboard vault i4diy82d superseded | done | 0.5.10 |
 | 116 | Your stack, the blast radius (/stack/): describe what you run (internet, edge, apps, platforms, PHP runtimes, data, secrets, services) and see each runtime against both CVEs, the blast radius as a graph, what to do first and what on the site is about your stack; in the browser and the reader's vault | done | 0.8.1 |
 | 118 | Design: --warn-* and --info-* tokens were mapped to themselves in assets/themes/site-tokens.css (cyclic, so invalid) since v0.2.4: every warning and info pill rendered with no colour. Fixed in v0.8.1; checked in all five themes (computed tokens and a pill on /claims/) | done | 0.8.1 |
+| 119 | Who is who in the telemetry: every session a reader, the editor, a power user or team member, synthetic (agents, tests, headless browsers) or a crawler; declared by the browser since v0.8.4 (agent: automation by class; who: the role of its /join/ key or this browser's setting on /admin/telemetry/), inferred before (time zone, place, language, first page); admin/build/telemetry_classes.py, the same rules in the telemetry app v0.2.1 | done | 0.8.4 |
+| 120 | The public telemetry stats vault (0cfkdcvh, read key published): its own app with the hourly chart by group, a world map of readers, what readers read; curated counts only, written at every drain by admin/build/telemetry_flow.sh (drain, classify, publish, push both vaults); the same counts and map on /admin/telemetry/ | done | 0.8.4 |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dev/` in the mail vault (`fmb2tpl2`).
@@ -87,4 +90,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.8.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.8.4 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
