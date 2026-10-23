@@ -36,4 +36,4 @@ Next question: [Should we take our site offline?](../take-offline/index.html) ·
 
 
 ---
-site v0.10.9 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/am-i-affected/index.html
+site v0.10.10 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/am-i-affected/index.html

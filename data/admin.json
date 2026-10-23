@@ -1230,7 +1230,14 @@
    "title": "The vault key is the master key: the telemetry (84wr8mib) and subscriptions (wgeiqabu) vaults each hold their drain key in identity/private/drain-key.pkcs8.json, protected by the vault's encryption, and their lanes in identity/lanes.json; the telemetry app v0.3.0 drains with the vault key alone (206 events drained that way); managing lanes from the site is next",
    "status": "done",
    "owner": "dev@php.newsroom",
-   "version": "0.10.8"
+   "version": "0.10.9"
+  },
+  {
+   "id": "165",
+   "title": "The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once a minute); every mark a filter, Kibana-style (click to keep, shift-click to exclude, drag the timeline for a window); colour by who, section, device, country, source or version; Journeys (a Sankey step by step, the network of pages, paths, sessions side by side); What works (front doors that hold and leak, connectors, dead ends, every page and section in numbers, what each source brings); in modules with tests over real data",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.10.10"
   }
  ],
  "evidence_vault": {

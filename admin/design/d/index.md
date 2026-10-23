@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.9. Not the live site.
+> Mockup D for review, built from the data of release v0.10.10. Not the live site.
 
-PHP Team console Console Overview Board 116 Agents 16 Releases 60 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 116 Agents 16 Releases 61 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 23 October 2026, 01:20 UTC 
 
 Release 
-v0.10.9 
-60 releases since 22 Oct 
+v0.10.10 
+61 releases since 22 Oct 
 
 Open on the board 
 116 
-46 done, 2 waiting 
+47 done, 2 waiting 
 
 Pages built 
 621 
@@ -63,11 +63,14 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 46
+#### Done 47
 
+ #165 
+The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once a minute); every mark a filter, Kibana-s… 
+ dev@php.newsroom v0.10.10 
  #164 
 The vault key is the master key: the telemetry (84wr8mib) and subscriptions (wgeiqabu) vaults each hold their drain key … 
- dev@php.newsroom v0.10.8 
+ dev@php.newsroom v0.10.9 
  #159 
 The schedule vault (weic8imn, public) and /team/schedule/, read live in the browser: every schedule, task queue and run … 
  conductor 
@@ -83,13 +86,11 @@ Act on the fact-check's corrections to the journalist's and the historian's stor
  #146 
 The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/README.md), the digest tool (admin/build/up… 
  journalist 
- #137 
-Redesign mockups for review at /admin/design/: the two dials (who you are, how much you see), the visibility matrix, the… 
- dev v0.10.0 
 
 ### Releases
  latest 8 
 
+ v0.10.10 2026-10-23 the telemetry app v0.4.0: new events checked on focus, every chart and cell a filter (click to keep, shift-click to exclude), colo… 
  v0.10.9 2026-10-23 the vault key is the master key: the telemetry and subscriptions vaults keep their drain keys inside, so whoever opens the telemet… 
  v0.10.8 2026-10-23 the scheduled curator is running: five wakes a day in UK daytime (08:00, 10:30, 13:00, 15:30, 18:00), no key rotation, its session… 
  v0.10.7 2026-10-23 schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8… 
@@ -97,7 +98,6 @@ Redesign mockups for review at /admin/design/: the two dials (who you are, how m
  v0.10.5 2026-10-23 guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a … 
  v0.10.4 2026-10-23 the site catches up with its two vaults (evidence vault re-exported at f3c5db0d9873: 144 sources to 227, data as of 01:20 UTC on 2… 
  v0.10.3 2026-10-23 Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked i… 
- v0.10.2 2026-10-23 the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evid… 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ Redesign mockups for review at /admin/design/: the two dials (who you are, how m
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.9 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.10 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

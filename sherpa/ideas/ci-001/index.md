@@ -197,4 +197,4 @@ Not sent. Questions 6 to 8 are addressed to the editor; the 'today' notes are wh
 
 
 ---
-site v0.10.9 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-001/index.html
+site v0.10.10 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-001/index.html

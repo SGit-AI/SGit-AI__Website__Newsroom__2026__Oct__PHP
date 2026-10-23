@@ -87,7 +87,8 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 119 | Who is who in the telemetry: every session a reader, the editor, a power user or team member, synthetic (agents, tests, headless browsers) or a crawler; declared by the browser since v0.8.4 (agent: automation by class; who: the role of its /join/ key or this browser's setting on /admin/telemetry/), inferred before (time zone, place, language, first page); admin/build/telemetry_classes.py, the same rules in the telemetry app v0.2.1 | done | 0.8.4 |
 | 120 | The public telemetry stats vault (0cfkdcvh, read key published): its own app with the hourly chart by group, a world map of readers, what readers read; curated counts only, written at every drain by admin/build/telemetry_flow.sh (drain, classify, publish, push both vaults); the same counts and map on /admin/telemetry/ | done | 0.8.4 |
 | 137 | Redesign mockups for review at /admin/design/: the two dials (who you are, how much you see), the visibility matrix, the menu per view, mockups A to D from live dataFrom the brief on the redesign (23 October). | done | 0.10.0 |
-| 164 | The vault key is the master key: the telemetry (84wr8mib) and subscriptions (wgeiqabu) vaults each hold their drain key in identity/private/drain-key.pkcs8.json, protected by the vault's encryption, and their lanes in identity/lanes.json; the telemetry app v0.3.0 drains with the vault key alone (206 events drained that way); managing lanes from the site is next | done | 0.10.8 |
+| 164 | The vault key is the master key: the telemetry (84wr8mib) and subscriptions (wgeiqabu) vaults each hold their drain key in identity/private/drain-key.pkcs8.json, protected by the vault's encryption, and their lanes in identity/lanes.json; the telemetry app v0.3.0 drains with the vault key alone (206 events drained that way); managing lanes from the site is next | done | 0.10.9 |
+| 165 | The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once a minute); every mark a filter, Kibana-style (click to keep, shift-click to exclude, drag the timeline for a window); colour by who, section, device, country, source or version; Journeys (a Sankey step by step, the network of pages, paths, sessions side by side); What works (front doors that hold and leak, connectors, dead ends, every page and section in numbers, what each source brings); in modules with tests over real data | done | 0.10.10 |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dev/` in the mail vault (`fmb2tpl2`).
@@ -98,4 +99,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.9 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.10.10 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html

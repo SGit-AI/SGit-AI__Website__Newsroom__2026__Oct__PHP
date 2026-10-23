@@ -1,6 +1,15 @@
 {
- "current": "0.10.9",
+ "current": "0.10.10",
  "versions": [
+  {
+   "version": "0.10.10",
+   "date": "2026-10-23",
+   "title": "the telemetry app v0.4.0: new events checked on focus, every chart and cell a filter (click to keep, shift-click to exclude), colour by any breakdown, journeys as a Sankey and a page network, and what works page by page; dev's vault register confirmed, with the keys it holds",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.9",
    "date": "2026-10-23",
