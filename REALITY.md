@@ -125,6 +125,11 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - Kept in this browser (`p2s.stack.v1`); several stacks, export and import (an imported file is cleaned and rendered as text); synced by the Ask pane's vault to `/php-october/stack/<device>.json`, the newer copy of each stack winning. Checked in Chromium (three examples, edits, a hostile import, phone, dark); the vault sync not yet run against a real reader vault.
 - Not built: vulnerabilities beyond the two (the pulse), feed items matched to a stack, deletions carried across devices.
 
+## The Sherpa (branch sherpa/joins, sherpa@php.newsroom)
+- `admin/sherpa/`: the role (adapted from the SG/Send team's Sherpa), `friction-log.json` (schema `sgit.newsroom.friction-log/1`: nine frictions, each with reader, page, stage, intended, actual, expected, evidence, owner and status) and `reviews/` (the first walk, of v0.8.1). Advisory: it proposes and routes to owners, and fixes nothing itself.
+- In the roster (`data/team.json`), so `/team/sherpa/` exists; four board rows, the frictions it tracks to release.
+- Not built: anything on the site that shows the friction log; the Sherpa's line on the front page and the "Where next" block (proposed); the trail additions (proposed, for dev and the editor's go); a key enrolled on pki.sgit.ai.
+
 ## Recorded, not started
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
 
