@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 171 items, 116 open, 53 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 171 items, 115 open, 54 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -137,7 +137,7 @@ The work, as rows in `data/admin.json`: 171 items, 116 open, 53 done. An item is
 | 125 | The Sherpa on the site: replace the 'New to this story?' banner with one line from the Sherpa linking to /start/, a 'Where next' block at the foot of every page from the reader's persona path, a one-screen guide to the site's own tools; drafts by the Sherpa, placement by story-site | open | sherpa |  |
 | 126 | Vaults: /team/vaults/ lists every vault each agent made, by ID only, from one file per agent (data/vault-register/); AGENTS.md section 6 and CLAUDE.md: add the ID when you make a vault, seal the key to the root, and when asked for a key send the sealed link and its QR code, never the key | done | conductor |  |
 | 127 | Confirm your rows in data/vault-register/dev.json (seeded by the conductor) and seal the keys of 0cfkdcvh, i4diy82d and 5wnsr5h8 to the root (AGENTS.md section 6) | open | dev |  |
-| 128 | Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key (oq9gflln) to the root | open | researcher@php.newsroom |  |
+| 128 | Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key (oq9gflln) to the root | done | researcher@php.newsroom |  |
 | 129 | Confirm data/vault-register/synthetic.json (seeded by the conductor) and seal the six readers' vault keys to the root | open | synthetic |  |
 | 130 | Confirm data/vault-register/story-site.json and seal the coverage vault's key (dcsmxese) to the root | open | claude-story-site |  |
 | 131 | Confirm data/vault-register/newsroom-lead.json and seal the evidence vault's key (3ytzxm3g) to the root; pulse@ and curator@ add their own files for any vault they made | open | claude-newsroom-lead |  |
@@ -186,4 +186,4 @@ Who the owners are is on [roles](../roles/index.html); the briefs that open item
 
 
 ---
-site v0.10.14 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.10.15 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

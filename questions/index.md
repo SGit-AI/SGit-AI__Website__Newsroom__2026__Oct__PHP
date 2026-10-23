@@ -170,6 +170,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [The board](../admin/board/index.html): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles and responsibilities](../admin/roles/index.html): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
 - [Briefs](../admin/briefs/index.html): The build briefs for this site, published in full before the work, newest first.
+- [Pack mode, measured on the source watch](../admin/pack-mode/index.html): One vault as a normal sgit vault and as a pack vault: a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and why the normal vault has hit a wall.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Synthetic readers: six test readers who read the live site every hour](../admin/synthetic/index.html): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader's own vault.
 
@@ -181,4 +182,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.10.14 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.10.15 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

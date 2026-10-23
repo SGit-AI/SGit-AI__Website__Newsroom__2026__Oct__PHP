@@ -30,13 +30,18 @@ The source watchvaults/source-watch/index.htmlThe feed viewerreader/index.html
 | 076 | Run the source watch hourly: today it runs by hand in a session; a scheduled run needs the vault key held by the runner, never in a repository | open |  |
 | 077 | Discovery across languages: Google News answers a cloud browser with 'Sorry' after a burst, so the publishers it surfaces are mapped but not followed; Bing carries article addresses but only for the query 'php2shell' | open |  |
 | 102 | Source watch: before scheduling the next pass, check London time and move a pass in the quiet hours to 07:04; a pass that changes something leaves a dated article with run:  | open |  |
-| 128 | Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key (oq9gflln) to the root | open |  |
 | 143 | Scanner noise, a research angle (editor, 23 October, after a public post by Jeremiah Grossman): how php2shell scanners and detection rules decide, their false positives and false negatives, and the noise they make; 12 captured rows in the source watch (index/angles/scanner-noise.json), counts tracked hourly; brief on /admin/briefs/ | open |  |
 | 144 | Perplexity reads the community spaces (job-03-community): Reddit, Hacker News, X, Bluesky, Mastodon and GitHub issues, for scanner false positives and negatives, first-hand accounts and named statements; phase 1 prompt on /admin/briefs/, waiting on its first reply | open |  |
 | 161 | Run every scheduled wake through the schedule vault (researcher's T-001, the source watch pass), and say your real cadence and model in schedules/researcher.json | open |  |
 
 ## What they have done
 - Published the source watch with its read key, its taxonomy and graphs at four altitudes (v0.2.13).
+
+### Closed on the board
+
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 128 | Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key (oq9gflln) to the root | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/researcher/` in the mail vault (`fmb2tpl2`).
@@ -47,4 +52,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.14 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/researcher/index.html
+site v0.10.15 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/researcher/index.html

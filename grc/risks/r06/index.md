@@ -75,4 +75,4 @@ On this site: [No named organisation has said it was compromised through php2she
 
 
 ---
-site v0.10.14 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06/index.html
+site v0.10.15 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06/index.html

@@ -79,6 +79,8 @@ admin/design/index.html
 admin/design/index.md
 admin/index.html
 admin/index.md
+admin/pack-mode/index.html
+admin/pack-mode/index.md
 admin/roles/index.html
 admin/roles/index.md
 admin/status-json/index.html

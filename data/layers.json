@@ -329,6 +329,13 @@
    "used_on": "compromise/index.html"
   },
   {
+   "path": "data/pack-mode.json",
+   "layer": "authored",
+   "by": "researcher@php.newsroom",
+   "from": "timed commands and logs in the researcher's session of 23 October 2026: the source watch as a normal vault (oq9gflln) and as a pack vault (7r83qic5)",
+   "used_on": "admin/pack-mode/index.html"
+  },
+  {
    "path": "data/source-watch.json",
    "layer": "evidence",
    "by": "admin/build/export_watch.py",

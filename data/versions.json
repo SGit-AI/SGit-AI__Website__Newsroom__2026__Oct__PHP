@@ -1,6 +1,15 @@
 {
- "current": "0.10.14",
+ "current": "0.10.15",
  "versions": [
+  {
+   "version": "0.10.15",
+   "date": "2026-10-23",
+   "title": "pack mode, measured on the source watch (/admin/pack-mode/): the same vault as a normal and a pack vault, a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and the normal vault's object listing now timing out on the server; with the brief for moving a heavy vault to pack mode, and the scheduled source watch's brief",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.14",
    "date": "2026-10-23",

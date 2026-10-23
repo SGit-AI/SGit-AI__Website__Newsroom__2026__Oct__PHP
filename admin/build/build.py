@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 TPUB = load('telemetry-public') if os.path.exists(os.path.join(DATA, 'telemetry-public.json')) else None
 WORLD = load('world')
@@ -255,7 +255,7 @@ NAV = [
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'), ('admin/agents/index.html', 'Guidance for agents'),
-               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
+               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/pack-mode/index.html', 'Pack mode, measured'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
 ]
 
 PAGES = []  # (path, title, description) in order, for llms.txt
@@ -904,6 +904,77 @@ def build_compromise():
 {section("how", "How this page is made", '<p>Every row is in <a href="../data/compromise.json">data/compromise.json</a>. Rows with sources cite captures in the evidence vault, which the build checks. Rows marked <i>source watch</i> cite a dated snapshot folder in the source-watch vault (<a href="../vaults/source-watch/index.html">oq9gflln</a>), read with its published key; they move into the evidence vault as the evidence curator promotes them. Statements read in another language carry the reader&rsquo;s English translation beside the verbatim original in the watch&rsquo;s <code>translations/</code> files. The charts are drawn from the same rows when the site is built.</p>')}
 """
     page('compromise/index.html', 'No named organisation has said it was compromised through php2shell: the evidence', f'The evidence behind one statement, as of {fmt_at(C["as_of"])}: attempts, vendor reports, statements that no success is known, named organisations, allegations and official lists, each with its source.', body, kind='story', topics='php2shell exploitation compromise evidence')
+
+def build_pack_mode():
+    """sgit's pack mode, measured on the source watch: one vault as a normal vault and as a pack vault, from
+    data/pack-mode.json. Every number is a timed command or a log line from the researcher's session."""
+    P = D['pack-mode']; V = P['vault']
+    NORMAL, PACK = 'var(--warm)', 'var(--accent-dk)'
+    def secs(s):
+        return '' if s is None else (f'{s:.2f} s' if s < 1 else f'{s:.0f} s' if s < 120 else f'{s // 60:.0f} min {s % 60:.0f} s')
+    # 1. like for like, one small chart per operation, each on its own scale (labelled), normal above pack
+    W, X0, X1 = 640, 150, 560
+    panels = ''
+    for i, c in enumerate(P['compare']):
+        mx = max(c['normal_s'], c['pack_s']); y = i * 92
+        bars = ''
+        for j, (name, s, ink, note) in enumerate([(f'normal ({P["normal"]["id"]})', c['normal_s'], NORMAL, c['normal_note']), (f'pack ({P["pack"]["id"]})', c['pack_s'], PACK, c['pack_note'])]):
+            w = max(3, (X1 - X0) * s / mx); yy = y + 26 + j * 28
+            bars += (f'<text x="{X0 - 8}" y="{yy + 14}" text-anchor="end" style="font-size:12px;fill:var(--fg)">{E(name)}</text>'
+                     f'<rect x="{X0}" y="{yy}" width="{w:.1f}" height="20" rx="4" style="fill:{ink}"><title>{E(note)}</title></rect>'
+                     f'<text x="{X0 + w + 6:.1f}" y="{yy + 14}" style="font-size:12px;font-weight:700;fill:var(--fg)">{E(c["normal_failed"] if j == 0 and c.get("normal_failed") else secs(s))}</text>')
+        ratio = c['normal_s'] / c['pack_s']
+        verdict = 'the normal vault timed out' if c.get('normal_failed') else f'pack is {ratio:.0f}&#215; faster'
+        panels += (f'<text x="0" y="{y + 15}" style="font-size:13px;font-weight:700;fill:var(--fg)">{E(c["op"])}</text>'
+                   f'<text x="{W}" y="{y + 15}" text-anchor="end" style="font-size:12px;fill:var(--dim)">{verdict}</text>{bars}')
+    chart_compare = (f'<figure class="graph"><svg viewBox="0 0 {W} {len(P["compare"]) * 92}" width="100%" role="img" aria-label="Normal vault against pack vault, three operations">{panels}</svg>'
+                     f'<figcaption>The same vault, the same server, the same sandbox. Each operation has its own scale: read the labels, not the bar lengths across panels. Hover a bar for what exactly was run.</figcaption></figure>')
+    # 2. one pass's push to the normal vault, attempt by attempt
+    def mins(hm):
+        h, m = hm.split(':'); return int(h) * 60 + int(m)
+    A = P['attempts']; t0, t1 = mins('16:30'), mins('19:20'); AX0, AX1, lane = 120, 630, 19
+    def ax(hm): return AX0 + (AX1 - AX0) * (mins(hm) - t0) / (t1 - t0)
+    ticks = ''.join(f'<line x1="{ax(h):.1f}" x2="{ax(h):.1f}" y1="0" y2="{len(A) * lane}" style="stroke:var(--line);stroke-width:1"/>'
+                    f'<text x="{ax(h):.1f}" y="{len(A) * lane + 14}" text-anchor="middle" style="font-size:10px;fill:var(--dim)">{h}</text>' for h in ('16:30', '17:00', '17:30', '18:00', '18:30', '19:00'))
+    rows_svg = ''
+    for i, a in enumerate(A):
+        ok = a['outcome'] == 'pushed'; x0 = ax(a['start']); w = max(3, ax(a['end']) - x0)
+        rows_svg += (f'<text x="0" y="{i * lane + 13}" style="font-size:11px;fill:var(--fg)">{i + 1}. {E(a["start"])}{" pushed" if ok else ""}</text>'
+                     f'<rect x="{x0:.1f}" y="{i * lane + 3}" width="{w:.1f}" height="13" rx="3" style="fill:{"var(--ok-ink)" if ok else "var(--bad-ink)"};fill-opacity:{1 if ok else .7}"><title>{E(a["start"])} to {E(a["end"])} UTC: {E(a["why"])}</title></rect>')
+    chart_attempts = (f'<figure class="graph"><svg viewBox="0 0 640 {len(A) * lane + 20}" width="100%" role="img" aria-label="{E(P["attempts_title"])}">{ticks}{rows_svg}</svg>'
+                      f'<figcaption>{E(P["attempts_title"])}: {len(A) - 1} failed attempts, then one that took 4 minutes 29 seconds. Hover a bar for the error. {E(P["attempts_note"])}</figcaption></figure>')
+    # 3. what each commit adds: the push a normal vault has to make, object by object
+    Cm = P['commits']; mx = max(c['blobs'] for c in Cm); bw = 600 / len(Cm)
+    cols = ''.join(f'<rect x="{20 + i * bw + 3:.1f}" y="{200 - 180 * c["blobs"] / mx:.1f}" width="{bw - 6:.1f}" height="{max(1, 180 * c["blobs"] / mx):.1f}" rx="3" style="fill:{PACK if c["what"] == "pass" else "var(--dim)"}"><title>{E(c["when"])}, {E(c["what"])}: {c["blobs"]:,} file objects</title></rect>'
+                   + (f'<text x="{20 + i * bw + bw / 2:.1f}" y="{194 - 180 * c["blobs"] / mx:.1f}" text-anchor="middle" style="font-size:10px;font-weight:700;fill:var(--fg)">{c["blobs"]:,}</text>' if c['blobs'] > 2000 else '') for i, c in enumerate(Cm))
+    chart_commits = (f'<figure class="graph"><svg viewBox="0 0 640 222" width="100%" role="img" aria-label="File objects added by each commit to the source watch">'
+                     f'<line x1="20" x2="620" y1="200" y2="200" style="stroke:var(--line2)"/>{cols}'
+                     f'<text x="20" y="216" style="font-size:10px;fill:var(--dim)">22 Oct 14:20</text><text x="620" y="216" text-anchor="end" style="font-size:10px;fill:var(--dim)">23 Oct 16:31</text></svg>'
+                     f'<figcaption>File objects added by each of the watch&rsquo;s {len(Cm)} commits, in order; the full passes are in colour, labelled. Each one a normal vault uploads as its own request; a pack vault uploads the commit as one zip. Hover a column for the commit.</figcaption></figure>')
+    stats_html = '<div class="stats">' + ''.join(stat(v, l) for v, l in [
+        (f'{P["compare"][0]["normal_s"] / P["compare"][0]["pack_s"]:.1f}×', 'faster fresh clone<br><small>827 s against 95 s</small>'),
+        ('96 s', f'to push the whole history<br><small>{V["objects"]:,} objects, {V["snapshot_mb"]:,} MB, one go</small>'),
+        ('4', 'requests for a fresh clone<br><small>one snapshot, whatever the history</small>'),
+        (f'{V["ratio"]}×', f'smaller on the server<br><small>{V["mb_normal"]:,} MB to {V["mb_pack"]:,} MB</small>')]) + '</div>'
+    compare_tbl = table(['Operation', f'Normal vault ({E(P["normal"]["client"])})', f'Pack vault ({E(P["pack"]["client"])})'],
+                        [[E(c['op']), f'<b>{E(c.get("normal_failed") or secs(c["normal_s"]))}</b><br><small>{E(c["normal_note"])}</small>', f'<b>{E(secs(c["pack_s"]))}</b><br><small>{E(c["pack_note"])}</small>'] for c in P['compare']])
+    pack_tbl = table(['On the pack vault', 'Time', 'What'], [[E(p['op']), E(secs(p['s'])) or '&mdash;', E(p['note'])] for p in P['pack_only']])
+    attempts_tbl = table(['#', 'Start (UTC)', 'End', 'Outcome', 'What happened'], [[str(i + 1), E(a['start']), E(a['end']), f'<b>{E(a["outcome"])}</b>', E(a['why'])] for i, a in enumerate(P['attempts'])])
+    commits_tbl = table(['When', 'Commit', 'File objects'], [[E(c['when']), E(c['what']), f'{c["blobs"]:,}'] for c in P['commits']])
+    p22 = table(['Push, 22 October', 'File objects', 'Outcome'], [[E(p['what']), f'{p["objects"]:,}', E(p['outcome'])] for p in P['pushes_22oct']])
+    body = f"""
+<h1>Pack mode, measured on the source watch</h1>
+<p class="lead">The source watch is the newsroom&rsquo;s biggest vault: {V["commits"]} commits, {V["files"]:,} files, {V["objects"]:,} objects, {V["mb_normal"]:,} MB, growing by about 5,000 objects a pass. On 23 October it was copied, with <code>sgit pack import</code>, into a pack vault (<code>{E(P["pack"]["id"])}</code>), pushed, cloned fresh and checked file for file. The same operations were then run against both. The pack vault cloned in 95 seconds where the normal vault took 13 minutes 47 seconds, and pushed its whole history in 96 seconds, while one pass&rsquo;s push to the normal vault took 2 hours 42 minutes and 12 attempts. How to move a vault is in <a href="../briefs/index.html#2026-10-23__brief__moving-a-vault-to-pack-mode">the brief</a>.</p>
+{stats_html}
+{section("compare", "The same operations, side by side", chart_compare + compare_tbl)}
+{section("wall", "Why the normal vault got slower: the server can no longer list it", f"<p>A normal vault stores every object as its own file on the server, and several operations start by asking the server for the list of them. For the watch, that list now holds over 60,000 entries, and the server&rsquo;s gateway gives up first: listing <code>bare/data/</code> for <code>{E(P['normal']['id'])}</code> returned <b>504 Gateway Timeout after 90.8 seconds</b>, while the same call for the pack vault answered in 0.73 seconds. A clone then falls back to walking the history and fetching objects as it finds them, which is why it took 827 seconds. A push that cannot list the vault fails outright: five of the attempts below. It will only get worse as the watch grows.</p>")}
+{section("push", "One pass, pushed to the normal vault", chart_attempts + attempts_tbl + "<p>The day before, on 22 October, pushes of 1,000 to 6,000 objects failed the same ways: connections reset or closed by the remote end, a 401 in the middle of a retry, and refusals to retry while files were uncommitted.</p>" + p22)}
+{section("growth", "Every pass is a bigger push", chart_commits + commits_tbl)}
+{section("pack", "What the pack vault did, and how it was checked", pack_tbl + "<ul>" + "".join(f"<li>{E(c)}</li>" for c in P["check"]) + "</ul>")}
+{section("limits", "What pack mode does not fix", "<ul>" + "".join(f"<li>{E(n)}</li>" for n in P["not_fixed"]) + "</ul>")}
+{section("how", "How this page is made", f'<p>Every number is in <a href="../../data/pack-mode.json">data/pack-mode.json</a>, from a timed command or a log line in researcher@php.newsroom&rsquo;s session on {E(P["measured"])}, from a cloud sandbox to dev.send.sgraph.ai. One run of each, not a median: network times from a sandbox vary between runs, and the CLI team&rsquo;s own medians are on <a href="https://cli.sgit.ai/docs/update-to-0-24-0.html">cli.sgit.ai</a>. The charts are drawn from the same file when the site is built. The live watch stays <code>{E(P["normal"]["id"])}</code> until the editor decides; the pack vault is registered on <a href="../../team/vaults/index.html">the vaults page</a>.</p>')}
+"""
+    page('admin/pack-mode/index.html', 'Pack mode, measured on the source watch', 'One vault as a normal sgit vault and as a pack vault: a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and why the normal vault has hit a wall.', body, kind='site')
 
 def build_discovery():
     cols = [
@@ -1613,7 +1684,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
+    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.

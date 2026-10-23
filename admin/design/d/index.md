@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.14. Not the live site.
+> Mockup D for review, built from the data of release v0.10.15. Not the live site.
 
-PHP Team console Console Overview Board 116 Agents 16 Releases 65 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 115 Agents 16 Releases 66 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 01:20 UTC 
 
 Release 
-v0.10.14 
-65 releases since 22 Oct 
+v0.10.15 
+66 releases since 22 Oct 
 
 Open on the board 
-116 
-53 done, 2 waiting 
+115 
+54 done, 2 waiting 
 
 Pages built 
-626 
+627 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,7 +30,7 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 116
+#### Open 115
 
  #163 
 Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the sch… 
@@ -63,7 +63,7 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 53
+#### Done 54
 
  #171 
 From CI-002: a debrief for the collaborator, before and after: each change as the old page against the new, side by side… 
@@ -90,6 +90,7 @@ The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once 
 ### Releases
  latest 8 
 
+ v0.10.15 2026-10-23 pack mode, measured on the source watch (/admin/pack-mode/): the same vault as a normal and a pack vault, a fresh clone in 95 s ag… 
  v0.10.14 2026-10-23 the risk graph, before and after: a debrief for the collaborator whose ideas became v0.10.13, every change shown as the old page a… 
  v0.10.13 2026-10-23 the risk graph as a tool (CI-002, steps 1 to 5): every edge says how it is known (read from a capture, from the fix commit, or inf… 
  v0.10.12 2026-10-23 a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a ha… 
@@ -97,7 +98,6 @@ The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once 
  v0.10.10 2026-10-23 the telemetry app v0.4.0: new events checked on focus, every chart and cell a filter (click to keep, shift-click to exclude), colo… 
  v0.10.9 2026-10-23 the vault key is the master key: the telemetry and subscriptions vaults keep their drain keys inside, so whoever opens the telemet… 
  v0.10.8 2026-10-23 the scheduled curator is running: five wakes a day in UK daytime (08:00, 10:30, 13:00, 15:30, 18:00), no key rotation, its session… 
- v0.10.7 2026-10-23 schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8… 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.14 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.15 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
