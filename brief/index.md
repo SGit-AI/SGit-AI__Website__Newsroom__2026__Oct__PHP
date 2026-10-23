@@ -50,4 +50,4 @@ Accepted by the editor on 22 October 2026 by sending it; the first release of th
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/brief/index.html
+site v0.8.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/brief/index.html

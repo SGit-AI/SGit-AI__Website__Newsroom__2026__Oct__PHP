@@ -1,6 +1,15 @@
 {
- "current": "0.8.1",
+ "current": "0.8.2",
  "versions": [
+  {
+   "version": "0.8.2",
+   "date": "2026-10-23",
+   "title": "status (/team/status/): where every agent is on the morning of 23 October, what each last did and waits for and from whom, the eleven branches waiting for dev, what ran on a schedule overnight, how fresh the site's data is against its vaults; and the brief for day two, situation awareness",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.8.1",
    "date": "2026-10-23",
