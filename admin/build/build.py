@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 TPUB = load('telemetry-public') if os.path.exists(os.path.join(DATA, 'telemetry-public.json')) else None
 WORLD = load('world')
@@ -68,13 +68,38 @@ def load_articles():
 
 ARTICLES = load_articles()
 
+# the updates (admin/content/updates/), loaded here because the menu lists the latest ones
+UPDATES_DIR = os.path.join(ROOT, 'admin', 'content', 'updates')
+UPDATE_KINDS = OrderedDict([('flash', 'Flash'), ('hourly', 'Hourly'), ('daily', 'Daily')])
+
+def load_updates():
+    out = []
+    for fn in sorted(os.listdir(UPDATES_DIR)) if os.path.isdir(UPDATES_DIR) else []:
+        if not re.match(r'^\d{4}-\d{2}-\d{2}T\d{4}Z__[a-z]+\.md$', fn):
+            continue  # README.md and anything else that is not an update
+        m = re.match(r'^---\n(.*?)\n---\n(.*)$', open(os.path.join(UPDATES_DIR, fn), encoding='utf-8').read(), flags=re.S)
+        if not m:
+            sys.exit(f'update {fn}: no front matter')
+        meta = dict(re.match(r'^(\w+):\s*(.*)$', l).groups() for l in m.group(1).splitlines() if l.strip())
+        for k in ('id', 'at', 'kind', 'title', 'summary', 'covers_from', 'covers_to', 'author'):
+            if not meta.get(k):
+                sys.exit(f'update {fn}: front matter has no {k}')
+        if meta['kind'] not in UPDATE_KINDS:
+            sys.exit(f'update {fn}: kind must be one of {", ".join(UPDATE_KINDS)}')
+        meta['file'], meta['text'] = fn, m.group(2)
+        out.append(meta)
+    return sorted(out, key=lambda u: u['at'], reverse=True)
+
+UPDATES = load_updates()
+
 # The two halves of the site, and what each page is. Research: material collected from outside and what this
 # site derives from it. Stories: written here, signed and dated. Every page carries one of these at its top.
-ZONES = OrderedDict([('Start here', 'For you'), ('Questions', 'For you'), ('Briefings', 'For you'), ('Yours', 'For you'), ('The incident', 'Research'),
-                     ('The analysis', 'Research'), ('The evidence', 'Research'), ('GRC', 'Research'), ('Stories', 'Stories'), ('About', 'Site')])
+ZONES = OrderedDict([('Updates', 'Updates'), ('Start here', 'For you'), ('Questions', 'For you'), ('Briefings', 'For you'), ('Yours', 'For you'), ('The incident', 'Research'),
+                     ('The analysis', 'Research'), ('The evidence', 'Research'), ('GRC', 'Research'), ('Views', 'Stories'), ('Stories', 'Stories'), ('About', 'Site')])
 ORIGINS = {
     'house': {'short': 'House', 'label': 'Story', 'text': 'written here by this site, signed and dated'},
     'guest': {'short': 'Guest', 'label': 'Story, guest', 'text': 'written by a guest writer, published here under their name'},
+    'update': {'short': 'Update', 'label': 'Update', 'text': 'written here for the conductor from the repository\'s record and the evidence; dated, kept as written'},
     'interview': {'short': 'Interview', 'label': 'Story, interview', 'text': 'an interview conducted for this site, the answers in the interviewee\'s own words'},
 }
 AUTHOR_ROLES = OrderedDict([('journalist', 'Journalist'), ('historian', 'Historian'), ('journalist-historian', 'Journalist and historian'), ('cyber', 'Cyber desk')])
@@ -186,6 +211,7 @@ def to_markdown(fragment):
 # ----------------------------------------------------------------------------- layout
 
 NAV = [
+    ('Updates', [('updates/index.html', 'Every update, newest first')] + [(f'updates/{u["id"]}/index.html', f'{UPDATE_KINDS[u["kind"]]}: {int(u["at"][8:10])} {"Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()[int(u["at"][5:7]) - 1]} {u["at"][11:16]} UTC') for u in UPDATES[:6]] + [('updates/readme/index.html', 'How an update is written')]),
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
@@ -203,6 +229,7 @@ NAV = [
                       ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults']]),
     ('GRC', [('grc/index.html', 'GRC: risks, owners, standards'), ('grc/risks/index.html', 'The risk register'), ('grc/stakeholders/index.html', 'Stakeholders and their registers'),
              ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/network/index.html', 'From the sgit network')]),
+    ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed')]),
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
@@ -1398,6 +1425,11 @@ def build_llms():
     for m in TEAM['members']:
         lines.append(f'- [{m["name"]}]({BASE_URL}/team/{m["id"]}/index.md): {m["role"]}; {m["summary"]}')
     lines.append('')
+    lines.append("## Views and updates: every version of the state of affairs, what changed between them, every update")
+    for p, t, d, _ in PAGES:
+        if p.startswith(('views/', 'updates/')):
+            lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
+    lines.append('')
     lines.append("## The Sherpa and the feedback from collaborators, one page each")
     for p, t, d, _ in PAGES:
         if p.startswith(('sherpa/', 'feedback/')):
@@ -1557,7 +1589,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
+    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -2193,6 +2225,7 @@ def build_articles():
 <p class="lead">{E(a["dek"])}</p>
 <p class="kv"><b>By</b> the {E(role.lower())} {"roles, agents" if "," in a["author"] else "role, agent"} <code>{E(a["author"])}</code> &middot; <b>written against</b> {article_stamp(a)}</p>
 {moved}
+{''.join(f'<div class="caveat correction" id="correction-{k[10:]}"><p><b>Correction, {E(human_time(v.split(" | ", 1)[0]))}.</b> {E(v.split(" | ", 1)[1])}</p></div>' for k, v in sorted(a.items()) if re.match(r'^correction\d+$', k))}
 {render_article(a["text"], 2)}
 </article>
 {cited}
@@ -4853,6 +4886,155 @@ def build_sherpa():
 {section("how", "How I work", how)}
 '''
     page('sherpa/index.html', "The Sherpa: I'm here to help you find your way", "The Sherpa, the agent that walks with the reader: how to find your path on this site, every message readers have sent answered point by point, and the friction log of what gets in readers' way, with who can fix it.", body, kind='site', topics='readers feedback')
+
+
+# ----------------------------------------------------------------------------- the updates, held by the conductor (claude-journalist, v0.5.x)
+# What changed on the site, in the story and across the team, dated, for the editor first. One markdown file per update in
+# admin/content/updates/ (README.md there is how to write one); facts drafted with admin/build/updates_digest.py.
+
+
+def build_updates():
+    for i, u in enumerate(UPDATES):
+        newer = UPDATES[i - 1] if i > 0 else None
+        older = UPDATES[i + 1] if i + 1 < len(UPDATES) else None
+        nav = ' &middot; '.join(x for x in [f'<a href="../{E(older["id"])}/index.html">&larr; the one before</a>' if older else '', f'<a href="../{E(newer["id"])}/index.html">the one after &rarr;</a>' if newer else '', '<a href="../index.html">every update</a>'] if x)
+        body = f'''
+<p class="kicker">Update &middot; {E(UPDATE_KINDS[u["kind"]])} &middot; {E(human_time(u["at"]))}</p>
+<h1>{E(u["title"])}</h1>
+<p class="lead">{E(u["summary"])}</p>
+<p class="kv"><b>Covers</b> {E(u["covers_from"])} to {E(u["covers_to"])} &middot; <b>by</b> {E(u["author"])}</p>
+{render_article(u["text"], 2)}
+<p class="small">{nav} &middot; <a href="../../feeds/updates.xml">the updates feed</a> &middot; source <code>admin/content/updates/{E(u["file"])}</code></p>
+'''
+        page(f'updates/{u["id"]}/index.html', u['title'], u['summary'], body, kind='site', date=u['at'][:10], topics='updates', origin='update', byline=u['author'])
+    rows = ''.join(f'<article class="rel"><p class="kicker">{E(UPDATE_KINDS[u["kind"]])} &middot; {E(human_time(u["at"]))}</p><h3><a href="{E(u["id"])}/index.html">{E(u["title"])}</a></h3><p>{E(u["summary"])}</p></article>' for u in UPDATES)
+    body = f'''
+<h1>Updates</h1>
+<p class="lead">What changed on this site, in the story and across the team that runs it, dated, newest first: hourly while things are moving, daily at the end of the day, and at once when something changes what a reader should do. Written for the editor first, and for anyone following the work. Every update is drafted from the repository's own record and cites the evidence for anything it says about the story. Held by the conductor; <a href="../admin/briefs/index.html#2026-10-22__brief__the-conductor-and-the-updates">the brief</a> and <a href="readme/index.html">how an update is written</a> are public.</p>
+<p><a class="cta" href="../feeds/updates.xml">Follow the updates (RSS)</a></p>
+{rows or "<p>None yet.</p>"}
+'''
+    page('updates/index.html', 'Updates: what changed, on the site and in the story', 'Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.', body, kind='site', topics='updates')
+    page('updates/readme/index.html', 'How an update is written', 'The conductor\'s guide to the updates: what an update is, when, where the facts come from, its shape and its rules.',
+         '<h1>How an update is written</h1>' + render_md_file('admin/content/updates/README.md').split('</h2>', 1)[-1], kind='site', topics='updates method')
+    items = ''.join(f'<item><title>{E(UPDATE_KINDS[u["kind"]] + ": " + u["title"])}</title><link>{E(BASE_URL + "/updates/" + u["id"] + "/index.html")}</link>'
+                    f'<guid isPermaLink="false">update-{E(u["id"])}</guid><pubDate>{rfc822(u["at"])}</pubDate><category>{E(u["kind"])}</category>'
+                    f'<description>{E(u["summary"])}</description></item>\n' for u in UPDATES)
+    head = ('<?xml version="1.0" encoding="utf-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n'
+            f'<title>{E(SITE_NAME)}: updates</title>\n<link>{BASE_URL}/updates/index.html</link>\n'
+            f'<atom:link href="{BASE_URL}/feeds/updates.xml" rel="self" type="application/rss+xml"/>\n'
+            f'<description>{E(SITE_NAME)}: what changed on the site, in the story and across the team, hourly, daily and flash.</description>\n'
+            f'<language>en-gb</language>\n<lastBuildDate>{rfc822(UPDATES[0]["at"]) if UPDATES else rfc822(REL_DATE.get(VERSION, ""))}</lastBuildDate>\n')
+    write('feeds/updates.xml', head + items + '</channel>\n</rss>\n')
+
+
+# ----------------------------------------------------------------------------- views: the journalist's state of affairs, versioned (claude-journalist)
+# A living page with its own version numbers, independent of the site's releases: each version is an immutable file in
+# admin/content/views/state/v<N>.md plus a row in data/state.json (the measures). Every version keeps a permanent page;
+# every pair of consecutive versions gets a delta page (the measures side by side, the text as a line diff). The
+# current version also enters the site's ledger, so it appears on /versions/ like every other section.
+
+VIEWS_DIR = os.path.join(ROOT, 'admin', 'content', 'views', 'state')
+
+def load_state_versions():
+    st = D['state']; texts = {}
+    for fn in sorted(os.listdir(VIEWS_DIR)) if os.path.isdir(VIEWS_DIR) else []:
+        m = re.match(r'^v(\d+)\.md$', fn)
+        if not m:
+            continue
+        mm = re.match(r'^---\n(.*?)\n---\n(.*)$', open(os.path.join(VIEWS_DIR, fn), encoding='utf-8').read(), flags=re.S)
+        meta = dict(re.match(r'^(\w+):\s*(.*)$', l).groups() for l in mm.group(1).splitlines() if l.strip())
+        meta['text'] = mm.group(2); texts[int(m.group(1))] = meta
+    out = []
+    for row in st['versions']:
+        if row['v'] not in texts:
+            sys.exit(f'data/state.json: version {row["v"]} has no admin/content/views/state/v{row["v"]}.md')
+        for mid, val in row['values'].items():
+            for s in val.get('sources', []):
+                if s not in SOURCES:
+                    sys.exit(f'data/state.json: v{row["v"]} {mid} cites unknown slug {s}')
+        for g in re.findall(r'\[\[([^\]]+)\]\]', texts[row['v']]['text']):
+            for s in (x.strip() for x in g.split(',')):
+                if s not in SOURCES:
+                    sys.exit(f'views/state/v{row["v"]}.md cites unknown slug {s}')
+        out.append({**row, **{k: v for k, v in texts[row['v']].items() if k not in ('v',)}})
+    return sorted(out, key=lambda r: r['v'])
+
+def _stamp(r):
+    s = r['stamp']
+    bits = [f'site v{E(s["site"])}', f'evidence vault <code>{E(s["evidence_vault"])}</code>']
+    if s.get('source_watch'):
+        bits.append(f'source watch <code>{E(s["source_watch"])}</code>')
+    bits += [f'NCSC-NL inventory <code>{E(s["inventory"])}</code>', f'data as of {E(human_time(s["data_as_of"]))}']
+    return ' &middot; '.join(bits)
+
+def _val(v, depth):
+    if not v:
+        return '<span class="small">not tracked</span>'
+    extra = ''.join([f'<div class="note">{E(v["note"])}</div>' if v.get('note') else '',
+                     f'<div class="note">{E(v["basis"])}</div>' if v.get('basis') else '',
+                     f'<div class="note">source watch: {E(v["watch"])}</div>' if v.get('watch') else ''])
+    when = f'<div class="small">as of {E(human_time(v["as_of"]) if "T" in (v.get("as_of") or "") else (v.get("as_of") or "no time"))}</div>'
+    return f'<b>{E(v["value"])}</b>{when}{extra}' + (f'<div class="refs">{src_links(v["sources"], depth)}</div>' if v.get('sources') else '')
+
+def build_views():
+    VS = load_state_versions()
+    if not VS:
+        return
+    M = D['state']['measures']; cur = VS[-1]
+    def vpage(r, depth):
+        i = VS.index(r); prev = VS[i - 1] if i else None; nxt = VS[i + 1] if i + 1 < len(VS) else None
+        up = '../' * (depth - 2)  # to views/state/: '' from the current page, '../' from a version's own page
+        rows = []
+        for m in M:
+            a = prev['values'].get(m['id']) if prev else None; b = r['values'].get(m['id'])
+            moved = prev is not None and (a or {}).get('value') != (b or {}).get('value')
+            rows.append([f'<b>{E(m["label"])}</b>', _val(b, depth), (f'<span class="small">was</span> {E((a or {}).get("value", "not tracked"))}' if moved else ('<span class="small">unchanged</span>' if prev else '')) ])
+        nav = ' &middot; '.join(x for x in [f'<a href="{up}v{prev["v"]}/index.html">&larr; v{prev["v"]}</a>' if prev else '',
+                                            f'<a href="{up}v{prev["v"]}-v{r["v"]}/index.html">what changed from v{prev["v"]}</a>' if prev else '',
+                                            f'<a href="{up}v{nxt["v"]}/index.html">v{nxt["v"]} &rarr;</a>' if nxt else '',
+                                            f'<a href="{up}index.html">the current state</a>', f'<a href="{up}history/index.html">every version</a>'] if x)
+        recon = '<p class="caveat"><b>Reconstructed.</b> This version was not written at the time; it is rebuilt from what the site published then, so that the next version has something to be compared with.</p>' if r.get('reconstructed') else ''
+        return f'''<p class="kicker">View &middot; the state of affairs &middot; v{r["v"]} &middot; {E(human_time(r["at"]))}</p>
+<h1>{E(r["title"])}</h1>
+<p class="lead">{E(r["summary"])}</p>
+<p class="kv"><b>Version</b> v{r["v"]} of {len(VS) - 1} &middot; <b>by</b> {E(r["author"])} &middot; <b>written against</b> {_stamp(r)}</p>
+{recon}
+<p class="small">{nav}</p>
+{section("measures", "The measures", table(["Measure", f"v{r['v']}", f"Since v{prev['v']}" if prev else ""], rows, "claims") + "<p class=small>The data is <a href='" + "../" * depth + "data/state.json'>data/state.json</a>: one row per version, each value with its as-of time and its basis.</p>")}
+{render_article(r["text"], depth)}
+<p class="small">{nav}</p>'''
+    for r in VS:
+        page(f'views/state/v{r["v"]}/index.html', f'The state of affairs, v{r["v"]}: {r["title"]}', r['summary'], vpage(r, 3), kind='analysis', date=r['at'][:10], topics='state of affairs', origin='house', byline=f'By the journalist, {r["author"]}, version {r["v"]}')
+    for a, b in zip(VS, VS[1:]):
+        rows = []
+        for m in M:
+            va, vb = a['values'].get(m['id']), b['values'].get(m['id'])
+            same = (va or {}).get('value') == (vb or {}).get('value')
+            rows.append([f'<b>{E(m["label"])}</b>', E((va or {}).get('value', 'not tracked')), E((vb or {}).get('value', 'not tracked')), '<span class="small">unchanged</span>' if same else '<b>changed</b>'])
+        n_changed = sum(1 for r_ in rows if r_[3] == '<b>changed</b>')
+        dhtml, added, removed = diff_html(a['text'].strip(), b['text'].strip())
+        body = f'''<p class="kicker">View &middot; the state of affairs &middot; what changed</p>
+<h1>What changed between v{a["v"]} and v{b["v"]}</h1>
+<p class="lead">From {E(human_time(a["at"]))} to {E(human_time(b["at"]))}: {n_changed} of {len(M)} measures changed, and the text gained {added} lines and lost {removed}.</p>
+<p class="kv"><b>v{a["v"]}</b> {_stamp(a)}<br><b>v{b["v"]}</b> {_stamp(b)}</p>
+<p class="small"><a href="../v{a["v"]}/index.html">&larr; v{a["v"]} in full</a> &middot; <a href="../v{b["v"]}/index.html">v{b["v"]} in full &rarr;</a> &middot; <a href="../history/index.html">every version</a></p>
+{section("measures", "The measures, side by side", table(["Measure", f"v{a['v']}", f"v{b['v']}", ""], rows, "claims"))}
+{section("text", "The text, line by line", "<p class=small>Removed lines are struck through, added lines are marked; within an edited line, the words that changed.</p>" + dhtml)}'''
+        page(f'views/state/v{a["v"]}-v{b["v"]}/index.html', f'The state of affairs: what changed between v{a["v"]} and v{b["v"]}', f'The measures and the text of the state of affairs, v{a["v"]} against v{b["v"]}.', body, kind='analysis', date=b['at'][:10], topics='state of affairs changes', origin='house', byline='By the journalist')
+    hist = ''.join(f'<article class="rel"><p class="kicker">v{r["v"]} &middot; {E(human_time(r["at"]))}{" &middot; reconstructed" if r.get("reconstructed") else ""}</p><h3><a href="../v{r["v"]}/index.html">{E(r["title"])}</a></h3><p>{E(r["summary"])}</p>' + (f'<p class="small"><a href="../v{VS[i - 1]["v"]}-v{r["v"]}/index.html">What changed from v{VS[i - 1]["v"]} &rarr;</a></p>' if i else '') + '</article>' for i, r in reversed(list(enumerate(VS))))
+    page('views/state/history/index.html', 'The state of affairs: every version', f'{len(VS)} versions of the journalist\'s state of affairs, newest first, each with what changed from the one before.',
+         f'<p class="kicker">View &middot; the state of affairs &middot; history</p><h1>The state of affairs: every version</h1><p class="lead">Every version stays as it was written; the next one says what changed. Newest first.</p>{hist}', kind='site', topics='state of affairs history', origin='house', byline='By the journalist')
+    # the current state, at a stable address; it is also versioned in the site's ledger like every other section
+    page('views/state/index.html', f'The state of affairs: {cur["title"]}', cur['summary'], vpage(cur, 2), kind='analysis', date=cur['at'][:10], topics='state of affairs', origin='house', byline=f'By the journalist, {cur["author"]}, version {cur["v"]}')
+    stories = ''.join(f'<li><a href="../articles/{E(a["slug"])}/index.html">{E(a["title"])}</a> <span class="small">{E(a["written"])}</span></li>' for a in ARTICLES if a['role'] in ('journalist', 'journalist-historian'))
+    body = f'''<h1>Views: the journalist's reading of where things stand</h1>
+<p class="lead">Two things, kept apart. <b>The state of affairs</b> is one living page: what is known now, with the measures that say so, rewritten whenever the evidence moves enough to matter. Every version is kept, and every change can be seen, measure by measure and line by line. <b>The analyses</b> are the journalist's dated stories, each written against one state of the evidence and kept as written.</p>
+{section("state", "The state of affairs, now", f'<p><a class="door" href="state/index.html"><b>v{cur["v"]}: {E(cur["title"])}</b><span>{E(human_time(cur["at"]))} &middot; {E(cur["summary"])}</span></a></p><p><a href="state/history/index.html">Every version</a>' + (f' &middot; <a href="state/v{VS[-2]["v"]}-v{cur["v"]}/index.html">what changed in the latest</a>' if len(VS) > 1 else '') + '</p>')}
+{section("analyses", "The analyses", f'<ul>{stories}</ul>')}'''
+    page('views/index.html', 'Views: the state of affairs and the journalist\'s analyses', 'The journalist\'s living state of affairs, versioned with every change visible, and the dated analyses behind it.', body, kind='site', topics='views', origin='house', byline='By the journalist')
+
+PAGE_VERSIONED.append('views/state/index.html')
 
 
 if __name__ == '__main__':

@@ -1,4 +1,4 @@
-# Every source: 144 pages, 137 captures, 857 hashes
+# Every source: 227 pages, 222 captures, 1386 hashes
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
@@ -8,23 +8,87 @@ The manifest of the php2shell evidence vault: every captured source with its pub
 
 In plain English Every web page this site relied on, with the time it was saved and a fingerprint proving it has not been altered since.
 
-144 sources, 73 of them primary, 137 dated captures and 857 hashed files, from the evidence vault at commit `200d08971937`. 10 sources could not be read because the site blocked an automated browser; the block, with the challenge page's hash, is the record. The captures are third-party pages held privately and are not republished; this page links to the originals and lists the SHA-256 of every captured file, so that anyone the vault is later opened to can check that the bytes are the ones the agents saw, at the minute they saw them.
+227 sources, 89 of them primary, 222 dated captures and 1386 hashed files, from the evidence vault at commit `f3c5db0d9873`. 15 sources could not be read because the site blocked an automated browser; the block, with the challenge page's hash, is the record. The captures are third-party pages held privately and are not republished; this page links to the originals and lists the SHA-256 of every captured file, so that anyone the vault is later opened to can check that the bytes are the ones the agents saw, at the minute they saw them.
 
 | Kind | Sources |
 |---|---|
-| news | 29 |
+| news | 86 |
+| government | 31 |
+| vendor | 27 |
 | advisory | 25 |
-| vendor | 22 |
 | cve | 14 |
-| government | 13 |
 | researcher | 11 |
+| other | 10 |
 | code | 9 |
-| other | 9 |
 | social | 9 |
+| news-live | 3 |
 | forum | 2 |
-| news-live | 1 |
 
 Each capture holds `page.html` (as served), `rendered.html` (after scripts ran), `text.txt`, `screenshot.png`, `headers.json` and `provenance.json`. A `raw/` folder holds anything fetched another way, with its own checksum file. The manifest this page is built from is [data/sources.json](../data/sources.json).
+
+### [Faille de sécurité: Panne mondiale: la Suisse romande fortement impactée - 20 minutes](20-minuten-20min-fr-suisse-romande/index.html) [original ↗](https://www.20min.ch/fr/story/vulnerabilite-it-panne-mondiale-des-sites-web-la-suisse-romande-touchee-103653792)
+
+**20 minutes / 20 Minuten** · news · secondary · captured · published 2026-10-22T06:25:10.292Z · added by `curator@php.newsroom` · `20-minuten-20min-fr-suisse-romande`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 4 new items in fr: 20 Minutes reports that French-speaking Switzerland was heavily affected: the universities of Geneva and Fribourg, EPFL and the canton of Basel-Stadt took services offline, and several Romandy communes were disrupted. La
+
+capture 20261022T181608Z · HTTP 200 · https://www.20min.ch/fr/story/vulnerabilite-it-panne-mondiale-des-sites-web-la-suisse-romande-touchee-103653792- `headers.json` 9aef40669d0201d439c47909509365a37137d09199d8c388612cab0f3a29c553 1,029 bytes
+- `page.html` 358331e9dc87d8f08acab4bbaeb6774b1d19fe55e7824c522206baffe72d33c9 306,879 bytes
+- `provenance.json` 58151440f0c86b5e464fbde2d27cd829a27cc49575fd2c108baeb74dae50c3a1 1,744 bytes
+- `rendered.html` 338f5ad40d6bf3467a1a4513b54a58819dbd98e8874a971bf1bb5d2a226c879d 476,953 bytes
+- `text.txt` d8cc82c5b6a9481087a4ef62989c8855f0cd8432771d1e02fa8a4b9572387e65 8,032 bytes
+
+### [Faille de sécurité: Panne mondiale des sites web: la Suisse romande touchée - 20 minutes](20min-fr-suisse-romande/index.html) [original ↗](https://www.20min.ch/fr/story/vulnerabilite-it-panne-mondiale-des-sites-web-la-suisse-romande-touchee-103653792)
+
+**20min.ch** · news · secondary · captured · published not stated · added by `collector-news` · `20min-fr-suisse-romande`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081421Z · HTTP 200 · https://www.20min.ch/fr/story/vulnerabilite-it-panne-mondiale-des-sites-web-la-suisse-romande-touchee-103653792- `headers.json` ec6caf4135da86719aa40d4ab03f56d65f84c1393a323affb9b5f566075a2e33 1,030 bytes
+- `page.html` c122c6a713574ec43e9c27b9bdd9afe662a2f25cfd14112bb4c399a34fe6aeb6 306,897 bytes
+- `provenance.json` a8bd1322043249d1ceb3331e4025987411e7ae56db3c8d5db4199e90f81ae86c 1,146 bytes
+- `rendered.html` 18773701ad81c36911a593f2d4138ca96ea9955371f3e7022556ab7340ced316 500,134 bytes
+- `screenshot.png` c6d13f3785d57ca5b3405690794daba119f9a746779960b2867a560f25784a42 1,280,191 bytes
+- `text.txt` 97a639a7c23eb1a480daf7e711e19852b387f74e01996372a8e3a23d59839dc4 8,850 bytes
+
+### [Alerta de PHP: por qué gobiernos, hospitales y colegios desconectan sus webs](20minutos-tecnologia-ciberseguridad-por-que-gobiernos-hospit/index.html) [original ↗](https://www.20minutos.es/tecnologia/ciberseguridad/por-que-gobiernos-hospitales-colegios-desconectan-webs-alerta-php_7051888_0.html)
+
+**20Minutos** · news · secondary · captured · published 2026-10-22T09:57:42+02:00 · added by `curator@php.newsroom` · `20minutos-tecnologia-ciberseguridad-por-que-gobiernos-hospit`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 8 new items in es: 20minutos explains why European governments, hospitals and schools disconnected their sites. It cites an EU joint statement, a warning from BSI vice-president Thomas Caspers, and a detailed (EFE-sourced) list of Belgian
+
+capture 20261022T181608Z · HTTP 200 · https://www.20minutos.es/tecnologia/ciberseguridad/por-que-gobiernos-hospitales-colegios-desconectan-webs-alerta-php_7051888_0.html- `headers.json` 3b530c0136bed295474acf950e476f09ae9c7b5dbb85b3d66293e016854e77f2 674 bytes
+- `page.html` a42a8667a49876b3b4ae75f6ac8b985200cd0871f5443e3d7b149b3e1da82eed 236,595 bytes
+- `provenance.json` 1ab349bdf6ba1f266a1e5536cfc5a32f60bc80cb0bd8afe85e0a6c9fc6e4ac8b 1,866 bytes
+- `rendered.html` 6d72d1dd7ea4a27f9b093a48a5f7e1cc75d88573091f6b58513efe7a8c678e91 390,108 bytes
+- `screenshot.jpg` 95c9fa8ba98b9927fb742e0496de6c33e0da29f10fc10fe63ebc5addaf21305a 662,231 bytes
+- `text.txt` 96ea536b04fe59c76df5ae9fc13efbf08dc59d6eeb8232b7d4c22a85becff632 10,690 bytes
+
+### [Australian government sites among those exposed to 'critical' PHP software flaw - ABC News](abc-au-gov-sites-exposed/index.html) [original ↗](https://www.abc.net.au/news/2026-10-22/php-vulnerabilities-cyber-asd/107294812)
+
+**abc.net.au** · news · secondary · captured · published not stated · added by `collector-news` · `abc-au-gov-sites-exposed`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081518Z · HTTP 200 · https://www.abc.net.au/news/2026-10-22/php-vulnerabilities-cyber-asd/107294812- `headers.json` 7eb1bee622cf88c19ad0c31a199ac5c5fa98f148909ca4ffda4aeef8ee212c8e 980 bytes
+- `page.html` 506809c0c2a4827c59244c5f032fedc30ff94c21df141cc94f292f2aeb920e41 355,918 bytes
+- `provenance.json` c69347feb600272b4099bc58e7e72cb706de4d81fb734b5ebf4f1f0c1ef88666 1,080 bytes
+- `rendered.html` 142b8b27452f3beaf38f835213c9448696b78ff4c6232ec416384dcdb6ddd8c5 373,382 bytes
+- `screenshot.png` dd71e33143d109e44b4c5fb22a80f0d797c698d1cf4260e20d5d40edc3ffc378 2,393,273 bytes
+- `text.txt` 84937c7c5b87e7c94cf87f2aed94f82ebbf2824d6dea9841cd50e39111d2cb48 9,085 bytes
+
+### [Federal politics: No government websites hacked after global security flaw found — as it happened - ABC News](abc-au-politics-live/index.html) [original ↗](https://www.abc.net.au/news/2026-10-22/federal-politics-live-blog-helen-haines/107294950)
+
+**abc.net.au** · news · secondary · captured · published not stated · added by `collector-news` · `abc-au-politics-live`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081530Z · HTTP 200 · https://www.abc.net.au/news/2026-10-22/federal-politics-live-blog-helen-haines/107294950- `headers.json` 78001e770a86a878a5ebbf2ed9724c2eeaf6f9a29dcdbbc821df7c4043fbe78c 956 bytes
+- `page.html` e91a707c8b974b1afe24cd6863a6b4e860bb4facdf86456630dde038f9ae025d 911,394 bytes
+- `provenance.json` 7f0e05f09575c7515b8f03d9afa0bb0948122701de5fd040cf69b20506ce3839 1,116 bytes
+- `rendered.html` ac5782fe9d12a17ebc032bb0cd75e0b92b2074fd68a151cea865e274104429c6 1,003,403 bytes
+- `screenshot.png` 92b44e296ddf641d1d22a62d5bbb43fa39efd8bf9c2bbb3120a6aa976cf28fb3 4,591,087 bytes
+- `text.txt` a86331d9b7a21f78af1750d3daf6ebbb696253e1216649e973e34262313040b1 43,063 bytes
 
 ### [PHP2Shell: sanate vulnerabilità critiche in PHP (AL07/261021/CSIRT-ITA)](acn-it-php2shell/index.html) [original ↗](https://www.acn.gov.it/portale/w/php2shell-sanate-vulnerabilita-critiche-in-php)
 
@@ -65,6 +129,19 @@ capture 20261022T081604Z · HTTP 200 · https://www.cyber.gov.au/- `headers.json
 - `screenshot.png` 3f7acad6a96208dca53692a35f83a89e3b21e8266fcd183892673c6e4b3b39b0 723,009 bytes
 - `text.txt` b7198501ad800f9312359edf414e81c46b1b35f7d0fae787ff629a8f029ad0b9 13,389 bytes
 
+### [Failles critiques dans PHP : des sites coupés en urgence dans le monde entier, dont ceux des préfectures en France](actu17-prefectures/index.html) [original ↗](https://actu17.fr/societe/failles-critiques-dans-php-des-sites-coupes-en-urgence-dans-le-monde-entier-dont-ceux-des-prefectures-en-france.html)
+
+**actu17.fr** · news · secondary · captured · published not stated · added by `collector-news` · `actu17-prefectures`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081432Z · HTTP 200 · https://actu17.fr/societe/failles-critiques-dans-php-des-sites-coupes-en-urgence-dans-le-monde-entier-dont-ceux-des-prefectures-en-france.html- `headers.json` 51ca3518271f6b77dfd5502a1084de33fcdcc75aa21d76280fd7b10227be55d2 910 bytes
+- `page.html` e4744fede4d347f630287801ecbdbefc7a21ab25a961f5bb12a06dcc959c3585 37,354 bytes
+- `provenance.json` 2faf46b7a81953effd2d1256c51fe7dae806b2c5671339fc78ae35e43432c07e 1,228 bytes
+- `rendered.html` a31b9a050ff5cf246e67672d2863411d61d66aa22c7b054dafc0ec617050cec2 637,675 bytes
+- `screenshot.png` 8a46e45f9c1b73734d153216ebbff665fd9ea8d86befee39b20ea269d2a41b64 10,462,799 bytes
+- `text.txt` 84edb7f59b55a5ce64bf9458671e49987b9e48e0e8388039de616a4c8c1e534d 16,675 bytes
+
 ### [PHP flaws: France's ANSSI orders sites offline](actuia-anssi-sites-offline/index.html) [original ↗](https://www.actuia.com/en/news/php-flaws-frances-anssi-orders-sites-offline-after-ai-assisted-discovery/)
 
 **ActuIA** · news · secondary · captured · published 2026-10-22 · added by `claude-story-site` · `actuia-anssi-sites-offline`
@@ -77,6 +154,19 @@ capture 20261022T112454Z · HTTP 200 · https://www.actuia.com/en/news/php-flaws
 - `rendered.html` 74e68194027420a7a98f41f234f8da46f93ff0e5c77fec86c07d115f15365688 122,914 bytes
 - `screenshot.png` f934a67b32d8386b43d01a1a9baece42d7406c36ed9bec407ef19f9a26d73475 1,673,964 bytes
 - `text.txt` 8f399970329ffcead878dced88dbb206b9677895965091d0efb60334becc9f9a 10,744 bytes
+
+### [Offline door PHP kwetsbaarheden: Welke Nederlandse websites waren uit de lucht?](agconnect-maatschappij-security-welke-nederlandse-websites-w/index.html) [original ↗](https://www.agconnect.nl/maatschappij/security/welke-nederlandse-websites-waren-uit-de-lucht)
+
+**AG Connect** · news · secondary · captured · published 2026-10-21T20:55:05+02:00 · added by `curator@php.newsroom` · `agconnect-maatschappij-security-welke-nederlandse-websites-w`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 7 new items in nl: AG Connect lists Dutch websites that went offline: at least 13 of 25 safety regions, the Schiphol app, the Port of Rotterdam, Odido's BEN and Simpel brands, many political parties, the Tweede Kamer and MijnOverheid, seve
+
+capture 20261022T181608Z · HTTP 200 · https://www.agconnect.nl/maatschappij/security/welke-nederlandse-websites-waren-uit-de-lucht- `headers.json` 7225010355dbfcd01a55cf7b99ee6c5b8037357178f53cb5a187bece7cf79015 598 bytes
+- `page.html` 367f64895fae9a5747832edea3af9968270b22166991f49a61cdd221e2c32202 72,981 bytes
+- `provenance.json` c89b09ab27440860478f4dc92f031ca378a261db0a49b3fcd4fb422648ba8f2d 1,790 bytes
+- `rendered.html` 787bd9fd2c74a4ae3dfce48d3c514034b797b7b86c06a673320fa807bd327859 146,785 bytes
+- `screenshot.jpg` 4836abeb16e1d3583a117a35296b477e61bab178c52c88a797244b502ec60af4 500,736 bytes
+- `text.txt` 505809e89b530fe70249289f22bf5d7aa6c94100d0656851754fb9a469552cbc 6,233 bytes
 
 ### [CVE-2024-4577 Exploits in the Wild One Day After Disclosure](akamai-blog-cve-2024-4577-one-day/index.html) [original ↗](https://www.akamai.com/blog/security-research/2024-php-exploit-cve-one-day-after-disclosure)
 
@@ -170,6 +260,32 @@ capture 20261022T080559Z · HTTP 200 · https://www.bbc.com/news/live/ckgel5xp2x
 raw, 2 files with SHA256SUMS- `initial-data.json` ee7445a58187bcd67df827007a8100941993a24dc3e7eea7e8a45f723a9e3305
 - `page.2026-10-22T0755Z.html` fe32274b64ee109a7e37fc4c26e37e793dc22481a6122888782c393e01102488
 
+### [Amazon says PHP2Shell exploitation began 4 days before patches](bleepingcomputer-amazon-4-days-before/index.html) [original ↗](https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/)
+
+**BleepingComputer** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `bleepingcomputer-amazon-4-days-before`
+
+Promoted from the source watch (oq9gflln), snapshot 20261023T012042Z. Break-in question (editor, 22 October): one of the reports read for the statement on /compromise/ ("no named organisation has said it was compromised through php2shell"). Break-in question (editor, 22 October 20:49 UTC): "unclear how man...
+
+capture 20261023T012042Z · HTTP 200 · https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/- `headers.json` 668fb6eaa9fed6428617810fa613ea89128912ab5a69ca9b6b07745619eca389 1,034 bytes
+- `page.html` e0b6621a06d202fe071370cdaabe66d71c2f5140fa24ed84944ee545eadc0c0c 90,448 bytes
+- `provenance.json` 4b9107ed9dfda71ba900872536cb9a543352733b8b9cf058ac39652728d7ff33 1,732 bytes
+- `rendered.html` af0f5bafbd31cd2f15782a44bb16120c0356bcb9d0b4b1023880e8c5fa904d4e 150,348 bytes
+- `screenshot.jpg` cd8f6c7adbf3fd996cf0fa8b8fc6045875dc12132019c0dcf9440db26e55862d 518,677 bytes
+- `text.txt` 2978662261ce3880962943cd129485066fab46e3bc7a181762dbe83479aa8997 5,970 bytes
+
+### [PHP ships emergency patches for critical PHP2Shell flaws](bleepingcomputer-php2shell/index.html) [original ↗](https://www.bleepingcomputer.com/news/security/php-ships-emergency-patches-for-critical-php2shell-flaws/)
+
+**bleepingcomputer.com** · news · secondary · captured · published not stated · added by `collector-news` · `bleepingcomputer-php2shell`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081018Z · HTTP 200 · https://www.bleepingcomputer.com/news/security/php-ships-emergency-patches-for-critical-php2shell-flaws/- `headers.json` 9204c9d3cedc821d3f1fe3b9b829b20b9fce7eaddb285be33ddc3ce09bc61974 1,034 bytes
+- `page.html` e6f9f8d5119ac7742807418bf305184e2b93a11051d35241184ba320a7e80651 91,998 bytes
+- `provenance.json` 79d14d3581b9b39dcd1feb8a7848a6c6f3a697a6b91f615cb747919d14f16c43 1,100 bytes
+- `rendered.html` 5357928e9e81ec6b27c56d8bd9c89953bdfdac5cd5f098d3ffdb2943bf6c0e3f 170,279 bytes
+- `screenshot.png` 7bface94f50938d69eff243e48acb16f1cdcb1f94fd50644f07d7dc744d8cf6d 1,525,231 bytes
+- `text.txt` ad35f92f5f9bf98f235b92c8180ba7ba15b7a222bf882cb8b3d074e060f862b1 7,078 bytes
+
 ### [Bloomberg - Are you a robot?](bloomberg-governments-offline/index.html) [original ↗](https://www.bloomberg.com/news/articles/2026-10-21/governments-take-websites-offline-after-php-security-warnings)
 
 **Bloomberg** · news · secondary · blocked · published 2026-10-21 · added by `claude-story-site` · `bloomberg-governments-offline`
@@ -182,6 +298,19 @@ capture 20261022T112602Z · HTTP 403 · https://www.bloomberg.com/news/articles/
 - `rendered.html` cf863d12c016944da5fa0f4a5d5a6b20441810b9d390e4cd795477677e22219c 15,882 bytes
 - `screenshot.png` 381a9b176a6f0b8aa7805f9ddb22a7cd17826528afa7a41b24b0015b1c3a355e 78,255 bytes
 - `text.txt` a66e04101bddd06c4cc5019d69b57bd2db4ff7d0a6ecdfe0fbd4d6fc5e05b303 665 bytes
+
+### [Des sites gouvernementaux hors service sur fond de failles dans PHP, un correctif critique attendu - 21/10/2026 à 16:44 - Boursorama](boursorama-reuters-sites-gouv/index.html) [original ↗](https://www.boursorama.com/bourse/actualites/des-sites-gouvernementaux-hors-service-sur-fond-de-failles-dans-php-un-correctif-critique-attendu-70b6b2c5823e9cf3e5dd17efb767a981)
+
+**boursorama.com** · news · secondary · captured · published not stated · added by `collector-news` · `boursorama-reuters-sites-gouv`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081500Z · HTTP 200 · https://www.boursorama.com/bourse/actualites/des-sites-gouvernementaux-hors-service-sur-fond-de-failles-dans-php-un-correctif-critique-attendu-70b6b2c5823e9cf3e5dd17efb767a981- `headers.json` 4cfefb7acbde24b1c20a1ba8333fc6bf7b3f9306ff39e4b0f2e46bd4d1d16dc0 713 bytes
+- `page.html` a3ff1c1936dbdc9e95bfd9f790a2d8efca4f5142ae1ca227ac2fb0328f04163e 945,994 bytes
+- `provenance.json` cdb64045594736d1dfb6ffca73b7d9bd3a24f19eead44272bed34cfca44b1bb1 1,322 bytes
+- `rendered.html` fa0c4547e744675c7372948ee9a090d77cad1b8539e4fc859472aac46d96024d 1,003,767 bytes
+- `screenshot.png` 08778bfe5be98ae08aedcdf07c1abddac7bab7bc05be669ae0f808932a489685 966,367 bytes
+- `text.txt` cc4667b91c744182995cf31ded0e703d9cfd3ea1f87983a11b665ae840d784d1 11,528 bytes
 
 ### [PHP2Shell: Two Critical PHP Flaws Allow Unauthenticated Remote Code Execution | SECURITY.COM](broadcom-security-php2shell/index.html) [original ↗](https://www.security.com/blog-post/php2shell-critical-vulns-cve-2026-109618-109619)
 
@@ -196,6 +325,19 @@ capture 20261022T112608Z · HTTP 200 · https://www.security.com/blog-post/php2s
 - `screenshot.png` a4a4f3fec342e365df75bcdd5a2b61bac1edb4a1417b9a1200702734cd579cff 2,841,458 bytes
 - `text.txt` ade5eb86aa233a2122f483429993bf21453456fc608ee191949dacc2f7e3a260 13,607 bytes
 
+### [PHP’deki kritik güvenlik açığı alarmı! Dünya genelinde çok sayıda site erişime kapatıldı - Bursa Hakimiyet](bursahakimiyet-teknoloji-php-deki-kritik-guvenlik-acigi-alar/index.html) [original ↗](https://www.bursahakimiyet.com.tr/teknoloji/php-deki-kritik-guvenlik-acigi-alarmi-dunya-genelinde-cok-sayida-site-erisime-kapatildi-1734665)
+
+**Bursa Hakimiyet** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `bursahakimiyet-teknoloji-php-deki-kritik-guvenlik-acigi-alar`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 5 new items in tr: Bursa Hakimiyet compiles international reactions. The FBI advised taking sites offline; Japan's health ministry suspended a long-term-care information site (Kyodo); Denmark's agency urged updates; and Norway's NSM warned
+
+capture 20261022T181608Z · HTTP 200 · https://www.bursahakimiyet.com.tr/teknoloji/php-deki-kritik-guvenlik-acigi-alarmi-dunya-genelinde-cok-sayida-site-erisime-kapatildi-1734665- `headers.json` ee7c2ff55056fdd5205bf22839c6a4098141ab77bd076586a41dbec94a2c9e3c 1,277 bytes
+- `page.html` b22e098c612d6edf368f9e35c9526317bcc77a9fa8bf6e4eaf97c00948734cf5 145,833 bytes
+- `provenance.json` d15e81672ea2ad1fe040471edb81e47ccbac2188eabd5caed2f38ba4a72a8c78 1,935 bytes
+- `rendered.html` e1ec6baba97ee252baf342aa63560981ae22c58f9904352e9cdbdd50d4cd1a39 207,604 bytes
+- `screenshot.jpg` 685610fa48aa5a89720ed16794fe8c20e973f4defd0758e712e8a7e5b7e65a85 710,490 bytes
+- `text.txt` 123ba1f9630dac63b317075915e88355e1da3a67680aae5df46d9db571a4ed32 9,715 bytes
+
 ### [php2shell by Calif Research — A tale of two PHP remote vulnerabilities](calif-php2shell/index.html) [original ↗](https://calif.io/php2shell/)
 
 **Calif (Calif Research)** · researcher · primary · captured · published 2026-10-21 · added by `collector-researchers` · `calif-php2shell`
@@ -208,6 +350,19 @@ capture 20261022T081033Z · HTTP 200 · https://calif.io/php2shell/- `headers.js
 - `rendered.html` 24e345e4514f5240f94df7537536a5ed14ba6e440cffffae74f8c38c7c8e5644 68,280 bytes
 - `screenshot.png` 38990c6ce9af5828a86614d9dff808d621097986d5288e8136bda70412b3ac63 20,097,747 bytes
 - `text.txt` 23afef81971778f954d3cefb62c4901814afddd6ae0948c941af3edead40ced4 23,876 bytes
+
+### [Falhas no PHP chegam ao Brasil e fazem Anatel e tribunais suspenderem sistemas - Canaltech](canaltech-seguranca-falhas-no-php-chegam-ao-brasil-e-fazem-a/index.html) [original ↗](https://canaltech.com.br/seguranca/falhas-no-php-chegam-ao-brasil-e-fazem-anatel-e-tribunais-suspenderem-sistemas/)
+
+**Canaltech** · news · secondary · captured · published 2026-10-21T15:48:39.000-03:00 · added by `curator@php.newsroom` · `canaltech-seguranca-falhas-no-php-chegam-ao-brasil-e-fazem-a`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 6 new items in pt: Canaltech reports that the PHP flaws reached Brazil. Anatel took its SEI electronic-process system offline, federal courts TRF1, TRF4 (Justiça Federal da 4ª Região) and TRF6 suspended external access or deadlines, and th
+
+capture 20261022T181608Z · HTTP 200 · https://canaltech.com.br/seguranca/falhas-no-php-chegam-ao-brasil-e-fazem-anatel-e-tribunais-suspenderem-sistemas/- `headers.json` 368957ca4ad660d4b59134fb78844bc19e9a466fb04d090e559ba419cc17b29d 623 bytes
+- `page.html` 2d85fe534c28b399f20a6f9953c176ee1ea036a0dbae60b62b0a9a9fec1cc26f 103,764 bytes
+- `provenance.json` e044551b114d050bbeb624642a1b11e328fe9aecb95bffd46ed7dc93f3558b52 1,845 bytes
+- `rendered.html` 3a2788a5c93a734f8d4a540d043eaa4c3c4f07c3b21170ddae43f8b8a8c271cf 424,150 bytes
+- `screenshot.jpg` 99e5531aeb8dddfbf3fbc93d4fa3605d074a31ed132ab4e9476ceb77618f0edb 493,674 bytes
+- `text.txt` 974a10fda0668457316ff8ce01e2236748efd7a86c13dbd9a585ed0cea380e77 5,982 bytes
 
 ### [AL26-026 - Critical vulnerabilities impacting PHP - CVE-2026-109618 and CVE-2026-109619](cccs-al26-026/index.html) [original ↗](https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619)
 
@@ -310,6 +465,19 @@ capture 20261022T081604Z · HTTP 200 · https://www.bacs.admin.ch/en- `headers.j
 - `screenshot.png` 0aaffb075e051c6b2ad0f9f8261010a963e502b32700d1fc07b0cdee4d9a835e 1,095,138 bytes
 - `text.txt` 29c1b2cfeb73db9702347d8cbb1b37690641e3abf5ddda16da0af6451f54e41b 11,068 bytes
 
+### [Error 503](ch-unige-down/index.html) [original ↗](https://www.unige.ch/)
+
+**unige.ch** · government · primary · captured · published not stated · added by `collector-gov` · `ch-unige-down`
+
+A capture of the site itself on 22 October (HTTP 503, no error), taken to record whether it was up. Row written by claude-newsroom-lead from provenance.json: the collector-gov agent stopped before committing.
+
+capture 20261022T081939Z · HTTP 503 · https://www.unige.ch/- `headers.json` 45d418c6a1e13df367e5e13dfedc3c3513a91092939f89a4eb322a8f42577c36 156 bytes
+- `page.html` 4588df31ba75c0a04c05e175d37f8cc5a25d23d6db540d28a36f66fec14254f9 19,901 bytes
+- `provenance.json` a570e18cd6797853524a4a28bb0f07494febd3045de07a5606b05023a7db03ec 874 bytes
+- `rendered.html` 3454bd4fa582794fc00a7bbbb8c4221bb4538f45a3a4bbeeca936dbc7d14ff23 19,945 bytes
+- `screenshot.png` 74550933cbe68c3937fb109ad47c67a313c15e0a8a3be3d823cb57aebabb0158 41,360 bytes
+- `text.txt` 103ffaac2e23754954ddd1bdaa2cc5d9afa05b829ba0fe1ccd4e5c701d982a6c 241 bytes
+
 ### [Apache Releases Log4j Version 2.15.0 to Address Critical RCE Vulnerability Under Exploitation | CISA](cisa-alert-log4j-2021/index.html) [original ↗](https://www.cisa.gov/news-events/alerts/2021/12/10/apache-releases-log4j-version-2150-address-critical-rce-vulnerability-under-exploitation)
 
 **CISA** · government · primary · captured · published 2021-12-10 · added by `claude-story-site` · `cisa-alert-log4j-2021`
@@ -379,6 +547,32 @@ At 08:15Z on 22 Oct: catalogVersion 2026.10.21, dateReleased 2026-10-21T14:04:39
 raw, 2 files with SHA256SUMS- `headers.20261022T0816Z.txt` e3a7dc7610f87ca2b7829303cd01ef65a3d0d08be833334024807456cc943db9
 - `known_exploited_vulnerabilities.20261022T0816Z.json` ef8fffede5c472001da046c7751beb2a3242458896d0ce08da52b30968b8b56b
 
+### [Vulnerabilities in PHP Affecting Cisco Products: October 2026](cisco-sa-php-october26/index.html) [original ↗](https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq)
+
+**Cisco** · vendor · primary · captured · published not stated · added by `curator@php.newsroom` · `cisco-sa-php-october26`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191727Z. Cisco investigation and product status (primary)
+
+capture 20261022T191727Z · HTTP 200 · https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq- `headers.json` 9284c87155511b2c471216e2096bb1e32f5357928e3cd57fc8d43df4a07370bb 2,545 bytes
+- `page.html` d5ac143be2171987bc719cac0f05a076fabe7a2d7943168014ff0d7ee05000d4 228,863 bytes
+- `provenance.json` 5723badb3711c11909083e6771ff8d1b43cf871797a07e8ba2b3784f6c0e2dbd 1,694 bytes
+- `rendered.html` 1cd58949d6a33eb4802ef0dbff15bd15ce7471bccfba710d79c9c5b9fca98b50 886,276 bytes
+- `screenshot.jpg` 817ee2282f96dd868da4716cb46c821f57699aded67586674bbaf16363355b97 396,794 bytes
+- `text.txt` a8149d16b8912fdf12a0d16895c2c484226ca5744e048033c39c1f8d8d1e9cdb 7,868 bytes
+
+### [Des failles PHP critiques menacent les sites web du monde entier : DPG Media et les pouvoirs publics mettent leurs sites hors ligne | Clickx](clickx-fr-actualites-200877-des-failles-php-critiques-menace/index.html) [original ↗](https://www.clickx.be/fr/actualites/200877/des-failles-php-critiques-menacent-les-sites-web-du-monde-entier-dpg-media-et-les-pouvoirs-publics-mettent-leurs-sites-hors-ligne/)
+
+**www.clickx.be** · news · secondary · captured · published 2026-10-21T12:31:18+00:00 · added by `curator@php.newsroom` · `clickx-fr-actualites-200877-des-failles-php-critiques-menace`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 4 new items in fr: Clickx reports that DPG Media and public authorities took sites offline. It names DPG Media's Tweakers and RTL Nieuws, Belgium's Smartschool, and Dutch government sites. Belgium's CCB had seen no attacks on Belgian sites
+
+capture 20261022T181608Z · HTTP 200 · https://www.clickx.be/fr/actualites/200877/des-failles-php-critiques-menacent-les-sites-web-du-monde-entier-dpg-media-et-les-pouvoirs-publics-mettent-leurs-sites-hors-ligne/- `headers.json` 6b45cddbbf163b39958bc4b5094d18b3ce21d4e63996f705a5226ba95e34e3af 1,189 bytes
+- `page.html` 0951c9c98dafd8cf5331802051ebb7efc8813177268131e37991aca794a95627 260,560 bytes
+- `provenance.json` ba8bf19e634d1001aa5abfddd06f26d51d7de6e0aa8d96e8f84b1adaa4afef32 2,005 bytes
+- `rendered.html` b997e23ea15f293a1a587e7c9fc7442b2bc1045a3289bc04fa6f9dbe0b7531c4 338,306 bytes
+- `screenshot.jpg` 0f5569538118bb4b241b1f0e55b95d57301cea54e6500ec232837d0d7b8ce0fa 522,688 bytes
+- `text.txt` f1876f8dd43053e0c0b3e106e9409256b3487f7228617f8e2abf7aca5e6c053d 6,290 bytes
+
 ### [Cloudflare deploys protections against php2shell vulnerability](cloudflare-blog-php2shell-waf/index.html) [original ↗](https://blog.cloudflare.com/php-vulnerabilities-waf-protection/)
 
 **Cloudflare** · vendor · primary · captured · published 2026-10-21 · added by `collector-researchers` · `cloudflare-blog-php2shell-waf`
@@ -407,6 +601,19 @@ capture 20261022T081354Z · HTTP 513 · https://dyn.cncs.gov.pt/pt/alerta-detalh
 raw, 2 files with SHA256SUMS- `curl-body.20261022T0814Z.html` 9171fe017af37f1f055d8e8bac037fc72bf67dd77e534de433be05297a582b0f
 - `curl-headers.20261022T0814Z.txt` b246a0bf67a34295b2bb54fc5724574f6176d92a46b05886076810bacd9a7e6c
 
+### [PHP2Shell: AI helped find a critical security flaw affecting 70% of the internet | CNN Business](cnn-php2shell-ai/index.html) [original ↗](https://www.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai)
+
+**cnn.com** · news · secondary · captured · published not stated · added by `collector-news` · `cnn-php2shell-ai`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T080952Z · HTTP 200 · https://www.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai- `headers.json` b64d36e94223282247e008d1c8fac9c008a3af688e0aec349909e67073a0f99b 2,395 bytes
+- `page.html` d6d531efb9e3232aec5c2c74cdb854c9b4be45356e8b187001490e9ba5ed6a18 5,605,787 bytes
+- `provenance.json` 726278ecd313e258d9f1e8278775af8f14c75e895d2c4632e288314cdff80131 1,045 bytes
+- `rendered.html` 66701f20de23dd4e5c1a9b4ddc55f38cff8552185314c84015ae9af8feb284ba 5,827,372 bytes
+- `screenshot.png` 2facb080dde6129efd10472048d29104b0b5321b0e43f755895240f244f8e398 144,239 bytes
+- `text.txt` 81bf5a9a7a84ad06077d46e5c782bcd925860cc16ca9e696ebacf90832db3fef 6,595 bytes
+
 ### [Websites shut down globally after AI finds a critical flaw affecting 70% of the internet | CNN Business](cnn-php2shell-websites-shut/index.html) [original ↗](https://www.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai-intl)
 
 **CNN** · news · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `cnn-php2shell-websites-shut`
@@ -419,6 +626,32 @@ capture 20261022T112616Z · HTTP 200 · https://www.cnn.com/2026/10/21/tech/php2
 - `rendered.html` 9928b7deeb656b8f9d34f7844cf0e79c2e5a9ea2b05721c03e84a0bc404646d8 5,844,671 bytes
 - `screenshot.png` a531b130b77be1e05bf3c9896abfc3abc4a70cc920a819eee04f7665c1a438e9 161,563 bytes
 - `text.txt` ee49fc4265ae1c7cfb7ed245597071af43f17d437ed08be951d8388502f5a533 8,896 bytes
+
+### ["Um dos incidentes mais impactantes da memória recente": o que se está a passar na Internet? - CNN Portugal](cnnportugal-php/index.html) [original ↗](https://cnnportugal.iol.pt/php/internet/um-dos-incidentes-mais-impactantes-da-memoria-recente-o-que-se-esta-a-passar-na-internet/20261022/6ad9be61d34e53c759c776e2)
+
+**cnnportugal.iol.pt** · news · secondary · captured · published not stated · added by `collector-news` · `cnnportugal-php`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081548Z · HTTP 200 · https://cnnportugal.iol.pt/php/internet/um-dos-incidentes-mais-impactantes-da-memoria-recente-o-que-se-esta-a-passar-na-internet/20261022/6ad9be61d34e53c759c776e2- `headers.json` cd1f9101b255c06dcc65efa8a462262b0124e12dc78a4212e714e6f672957362 697 bytes
+- `page.html` aabf9d1f6cb549ab9ef2affb4395b9e57fa37ef017602b4c3499aeb56e38f613 124,957 bytes
+- `provenance.json` 2ab5eab908ae48f5311002b82ca343698ee994d045b30704d96111f99861d2e7 1,260 bytes
+- `rendered.html` 881042229ef5a6897b016fce3e1a7bada7056865f7e3ebc594d760aeaf0059e0 1,315,826 bytes
+- `screenshot.png` eb0fe8e63035865baa90a43ca5d367188e4d539217ac94e8c1f0daf65bf92ef6 1,325,277 bytes
+- `text.txt` de3c730717888f1395fbb1acc2b293846e9b0bf90bc7104fec23d64aad5886c2 9,295 bytes
+
+### [Fundação PHP admite que “falha estrutural” atrasou correção de segurança](cointelegraph-news-php-foundation-admits-structural-failure/index.html) [original ↗](https://cointelegraph.com.br/news/php-foundation-admits-structural-failure-delayed-critical-security-fix)
+
+**Cointelegraph Brasil** · news · secondary · captured · published 2026-10-22T00:44:00.287Z · added by `curator@php.newsroom` · `cointelegraph-news-php-foundation-admits-structural-failure`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 5 new items in pt: Cointelegraph Brasil covers the PHP Foundation's admission that a 'structural failure' delayed the fix, and the worldwide shutdowns. It adds Australia's ASD, Japan's prime minister, crypto-sector exposure data from SlowM
+
+capture 20261022T181608Z · HTTP 200 · https://cointelegraph.com.br/news/php-foundation-admits-structural-failure-delayed-critical-security-fix- `headers.json` 3056212e7d04339b43bd6477a993570d2e60bf22ba49c163f940e537aafd1cc3 2,690 bytes
+- `page.html` dbd36c7e29a293dae189773f136e4c767c33d3bc4eb4a2b07d8eb4947bfb3f0c 166,544 bytes
+- `provenance.json` ac3ba91b53d7b7cd66dc956319982ac0302cdd97b93467378eec92826cc8c03c 1,823 bytes
+- `rendered.html` 3454035f5d3ffc1ce0a21a17266aab9c354cc5635b4b2d0156f8f93e4a426120 167,236 bytes
+- `screenshot.jpg` d838e687904086ebdf85e3aeb96963af9de712cbffaec80e02bf950b73eb5c5b 534,711 bytes
+- `text.txt` 67d4e56887747e5353ee3c1417bdeba7fe00233e7aab9b158c69d6e2123296bb 8,169 bytes
 
 ### [CVE-2008-1447 (DNS cache poisoning, Kaminsky)](cve-cve-2008-1447/index.html) [original ↗](https://cveawg.mitre.org/api/cve/CVE-2008-1447)
 
@@ -541,6 +774,14 @@ capture 20261022T112625Z · HTTP 200 · https://cybelangel.com/blog/critical-php
 - `screenshot.png` 64c9ca6ef1602bd645b956fe272f9fcb7d3d50ec0f24b4af5b980edfc9e424d5 1,631,217 bytes
 - `text.txt` 4ffc5347bfe22fb45007c6d0d169a6cdff75522822604e9d8e0e421fda4e2f27 12,396 bytes
 
+### [cyber-gov-au-site](cyber-gov-au-site/index.html) [original ↗](https://www.cyber.gov.au/)
+
+**cyber.gov.au** · government · secondary · failed · published not stated · added by `collector-news` · `cyber-gov-au-site`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081951Z · HTTP None ·  error: page.goto: net::ERR_ABORTED at https://www.cyber.gov.au/- `provenance.json` 42c2c30f7de1649cf0873e3cf2759758856b8ebd94fa2254f3b4ca2961c3f876 447 bytes
+
 ### [PHP2Shell CVE-2026-109618 PHP Flaw Hits Gov Sites](cyberexpress-php2shell-gov-sites/index.html) [original ↗](https://thecyberexpress.com/php2shell-cve-2026-109618-php-flaw/)
 
 **The Cyber Express** · news · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `cyberexpress-php2shell-gov-sites`
@@ -593,6 +834,19 @@ capture 20261022T081256Z · HTTP 200 · https://daubois.dev/blog/cve-2026-109618
 - `screenshot.png` c86032b5d2ce179ae664684fe600ba45c0b3ff7003c835716b5cce042a13e514 817,325 bytes
 - `text.txt` 5ef17f9886aa93f7f15ab1f6657ef6991a8ec008e5e309bdde5b5e51d961c4d8 8,821 bytes
 
+### ["Cert.lv" novēro mēģinājumus izmantot PHP ievainojamības kiberuzbrukumos; pagaidām uzbrukumi nesekmīgi](delfi-bizness-44467736-tehnologijas-120139480-certlv-novero/index.html) [original ↗](https://www.delfi.lv/bizness/44467736/tehnologijas/120139480/certlv-novero-atseviskus-meginajumus-izmantot-php-ievainojamibas-kiberuzbrukumos)
+
+**DELFI** · news · secondary · captured · published 2026-10-21T17:53:19.000Z · added by `curator@php.newsroom` · `delfi-bizness-44467736-tehnologijas-120139480-certlv-novero`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 5 new items in lv: Delfi reports that CERT.LV deputy head Varis Teivāns told LTV's Panorāma that mostly automated, bot-driven exploitation attempts against private and state systems in Latvia have so far failed. He said about 6,000 resourc
+
+capture 20261022T181608Z · HTTP 200 · https://www.delfi.lv/bizness/44467736/tehnologijas/120139480/certlv-novero-atseviskus-meginajumus-izmantot-php-ievainojamibas-kiberuzbrukumos- `headers.json` 8a9ff64bb037e10f8619989dbdad6e8a5828d2b6423c7c915a14b4b9b4702ad4 745 bytes
+- `page.html` 5f491916b03eb65cb52c5711afea2cdff4ecb36a64fcca64eee7a7982a4a7c68 220,811 bytes
+- `provenance.json` 7fb85d627bad83b9c7d1c065e9357ee85681b62068056c0fa16c3a22f9b19b58 1,911 bytes
+- `rendered.html` fa55bdf3cdc6fb68a654f1f8e30a74a99e796b353e92d5804e86a8aa83c1a580 231,020 bytes
+- `screenshot.jpg` 592102c9b29d2d4f9d69f7964ad4afacd5671d68590d668c646aa458c41ad63e 288,920 bytes
+- `text.txt` 916cc9c47bec9f4e9cb06de60da0d0b43a8f3251642b42825df581deaff221e8 4,756 bytes
+
 ### [Just a moment...](dutchitleaders-websites-offline/index.html) [original ↗](https://www.dutchitleaders.nl/news/763189/diverse-websites-offline-door-kritieke-kwetsbaarheden-in-php)
 
 **Dutch IT Leaders** · news · secondary · blocked · published 2026-10-21 · added by `claude-story-site` · `dutchitleaders-websites-offline`
@@ -619,6 +873,32 @@ capture 20261022T112742Z · HTTP 200 · https://www.eadt.co.uk/news/national/266
 - `screenshot.png` 5079181e1c5eb09fb0b82305b4599b7b3767e0da3fdd0263cb2fc25a3cd8c349 1,490,164 bytes
 - `text.txt` 4c8556b5aaedee9f059a9862338d94d85df76b55d648396c2a7f964507cda4dc 7,475 bytes
 
+### [Home – The City of Edinburgh Council](edinburgh-council-site/index.html) [original ↗](https://www.edinburgh.gov.uk/)
+
+**edinburgh.gov.uk** · government · secondary · captured · published not stated · added by `collector-news` · `edinburgh-council-site`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081903Z · HTTP 200 · https://www.edinburgh.gov.uk/- `headers.json` 3db91a541f2cf7c4f3d76752f43c56bef4372e62b4ac0b8f309810008b1d662b 664 bytes
+- `page.html` 2163dd11e33228af8669e2da021b61c265764eeb38647d58f7cd87e97ebf92c5 64,820 bytes
+- `provenance.json` f2805581fa9badaba2c438cbd97c178663d6cc1916480b895b8a226f492bbf06 928 bytes
+- `rendered.html` 409acf83e164b76627324f651cf203ea0e4bd0629fd3fe0344a5c2e7f66fe78f 85,320 bytes
+- `screenshot.png` 8d784233c15729623423aec71e016f26af6a8e692efe968707933fbab42d2f50 935,396 bytes
+- `text.txt` a1add594e2848a98ce202e01007453d32f25473f0665e95b6b5412d81665524e 2,792 bytes
+
+### [Edinburgh council website offline as operators race to patch critical vulnerability](edinburghnews-council-offline/index.html) [original ↗](https://www.edinburghnews.scotsman.com/news/edinburgh-council-website-offline-as-operators-race-to-patch-critical-vulnerability-9302597)
+
+**edinburghnews.scotsman.com** · news · secondary · captured · published not stated · added by `collector-news` · `edinburghnews-council-offline`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081124Z · HTTP 200 · https://www.edinburghnews.scotsman.com/news/edinburgh-council-website-offline-as-operators-race-to-patch-critical-vulnerability-9302597- `headers.json` 1eb9dcef9574ab7d6866c511237c9123ad009e29f3be926d53909e2d2f33707b 1,508 bytes
+- `page.html` ef17d1be8aea7718c5afb4d6d207e0201d954555fee4c8a73bf4dd17f9a51937 253,961 bytes
+- `provenance.json` c182f93fb8230419e2b79d3b764bb790a224188e58f63e52dd0ed1e21ab57287 1,192 bytes
+- `rendered.html` fbd4f185d407d87293e272b53090d6617a049d4f483075b6134bd6b176bde0f2 640,085 bytes
+- `screenshot.png` cc000383e04351c03cf813489d560f7e4214dccc32809ab492b5a9debfe0490a 1,643,684 bytes
+- `text.txt` ec7b1d470016d4f655c747a0bcd2b1f77d65d6b3d9e69ccf0386e948a34178e0 9,721 bytes
+
 ### [CSIRTs Network - php2shell (CNW-2026-04)](enisa-cnw-2026-04-php/index.html) [original ↗](https://github.com/enisaeu/CNW/blob/main/advisories/2026/CNW-2026-04_php.md)
 
 **ENISA / EU CSIRTs Network (CNW)** · advisory · primary · captured · published 2026-10-21 · added by `collector-gov` · `enisa-cnw-2026-04-php`
@@ -631,6 +911,19 @@ capture 20261022T081329Z · HTTP 200 · https://github.com/enisaeu/CNW/blob/main
 - `rendered.html` 3d40c318822605660674e8a69d6a51d523c3df892b77cd2ccf520e51bb9ad552 295,999 bytes
 - `screenshot.png` 0b9c0e94049921b40590086857c547bc0dea05461fad30201388de32c3f35c8e 451,547 bytes
 - `text.txt` dfcaa1afe1c4194c00ff2dc38b4fab496a900ce9b4e770a722b4bae96b886093 3,930 bytes
+
+### [EPFL](epfl-site/index.html) [original ↗](https://www.epfl.ch/)
+
+**epfl.ch** · government · secondary · captured · published not stated · added by `collector-news` · `epfl-site`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081913Z · HTTP 200 · https://www.epfl.ch/en/- `headers.json` 71e94789020c6c4c4865396b8083f9363945273387a12cf1b8099331557f7763 1,985 bytes
+- `page.html` 4f32cdfa87dfcb2e8cefa3f66fa5fb1f7cbc051e4b857f87a6f0d17ad9def390 54,622 bytes
+- `provenance.json` de73766f9e91d943f5daf93228e41a6ebf70cf5e97f0b69b93a389a57e4647da 866 bytes
+- `rendered.html` dddeb8e3424dceed5e931abc113b9e234e486bb6d4a862e10f41f2eceb3e4cee 309,261 bytes
+- `screenshot.png` 9dffda66f8102b91cf8fd809c878f0efa917a63c2b0cb98488f453de43353425 1,141,176 bytes
+- `text.txt` 64c6b41680b8451e2b495d134a010f3ba099573dcb4896577174321e56fdcf39 2,321 bytes
 
 ### [CVE-2026-109618 and CVE-2026-109619: What we know about PHP2Shell and how to prepare | Equixly](equixly-php2shell-what-we-know/index.html) [original ↗](https://equixly.com/blog/2026/10/21/cve-2026-109618-and-cve-2026-109619-what-we-know-about-php2shell-and-how-to-prepare/)
 
@@ -658,6 +951,27 @@ capture 20261022T111906Z · HTTP 200 · https://www.fastly.com/blog/fastlys-proa
 - `screenshot.png` 259708a035d74a2d833a8fe3a555097ecee5678d854a5e5357b94bf20566b7e4 2,470,515 bytes
 - `text.txt` bacf27615fe1180a00a1b2085b55ead30ce7e828eca5a4aa47c46d0c5808913f 20,043 bytes
 
+### [fi-valtori](fi-valtori/index.html) [original ↗](https://valtori.fi/)
+
+**valtori.fi** · government · primary · failed · published not stated · added by `collector-gov` · `fi-valtori`
+
+A capture of the site itself on 22 October (HTTP None, page.evaluate: Target page, context or browser has been closed), taken to record whether it was up. Row written by claude-newsroom-lead from provenance.json: the collector-gov agent stopped before committing.
+
+capture 20261022T081938Z · HTTP None ·  error: page.evaluate: Target page, context or browser has been closed- `provenance.json` a524455c8bce437ef41ddd72da2d3bb7ef1b59eb1d510c54e71e0c256b484215 440 bytes
+
+### [PSIRT | FortiGuard Labs](fortinet-fg-ir-26-186/index.html) [original ↗](https://fortiguard.fortinet.com/psirt/FG-IR-26-186)
+
+**Fortinet** · vendor · primary · captured · published not stated · added by `curator@php.newsroom` · `fortinet-fg-ir-26-186`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191713Z. Fortinet investigation and product status (primary)
+
+capture 20261022T191713Z · HTTP 200 · https://fortiguard.fortinet.com/psirt/FG-IR-26-186- `headers.json` b5fc379c961afb5b761eec930d09fc2bca76fdfa529536804adf20b2c81bb962 2,122 bytes
+- `page.html` c9f8832a001bf9eb296b5d7d3b4796f4e34e2843d6ddd238f141993944c37b9b 103,438 bytes
+- `provenance.json` 2da4895b7972284d959f5a12404efa148e8a9b638cf6c6621160b7bc09a7e053 1,547 bytes
+- `rendered.html` 6032cffb5942e5d75091a6cc30d4c842d8206af5e4e64b1e89e928300459e3e8 96,822 bytes
+- `screenshot.jpg` 64d162eaae299990dfa73cdda8a3e505228359e3aaeabb32e278ebb5b0f0a627 196,340 bytes
+- `text.txt` 9143f822233ec0825da53d15f088af72cc826cdb87501af1322f4904dcf2ea9a 2,650 bytes
+
 ### [How to block PHP2Shell (CVE-2026-109618, CVE-2026-109619) on FortiWeb | Community](fortinet-fortiweb-php2shell/index.html) [original ↗](https://community.fortinet.com/fortiweb-40/how-to-block-php2shell-cve-2026-109618-cve-2026-109619-on-fortiweb-230750)
 
 **Fortinet Community (FortiWeb knowledge base)** · vendor · primary · captured · published 2026-10-22T07:55 (article time, timezone not stated) · added by `claude-story-site` · `fortinet-fortiweb-php2shell`
@@ -670,6 +984,74 @@ capture 20261022T112039Z · HTTP 200 · https://community.fortinet.com/fortiweb-
 - `rendered.html` 2d8aabfc30d2116425651b788f2c8e4d58122738b69721391022332ab628815b 1,208,805 bytes
 - `screenshot.png` 03a275af997e6093c4700503437ee405b77df000307b546eda109ddb0f40acff 826,331 bytes
 - `text.txt` 66beb7cb9c50e017b68c7c28ce5f985fd12b156c4060ecd82205cea19185d2a4 6,244 bytes
+
+### [AI helped discover the PHP vulnerability that could take down 70% of the internet | Fortune](fortune-ai-tools-php-vulnerability/index.html) [original ↗](https://fortune.com/2026/10/21/ai-tools-discovered-the-php-vulnerability-that-could-take-down-70-of-the-internet-now-the-race-is-on-to-patch-it-before-ai-powered-hackers-attack/)
+
+**Fortune** · news · secondary · captured · published 2026-10-21 (URL date; updated 22 October per the page) · added by `curator@php.newsroom` · `fortune-ai-tools-php-vulnerability`
+
+Promoted from the source watch (oq9gflln), snapshot 20261023T012042Z. Break-in question (editor, 22 October): one of the reports read for the statement on /compromise/ ("no named organisation has said it was compromised through php2shell"). Break-in question (editor, 22 October 20:49 UTC): an anonymous sta...
+
+capture 20261023T012042Z · HTTP 200 · https://fortune.com/2026/10/21/ai-tools-discovered-the-php-vulnerability-that-could-take-down-70-of-the-internet-now-the-race-is-on-to-patch-it-before-ai-powered-hackers-attack/- `headers.json` 02c444c26c3d0f3f1095630d1581deff98ab74328b387d4f28d8f55b6f7277ca 1,256 bytes
+- `page.html` cd967fa20c098c9ad5adc7efb498607c1cbaa17dabf496d151ee77c8ffb52fe7 468,302 bytes
+- `provenance.json` 1f99d4968da56a802c82b84801d19d52733755fded99aea1c3d1b0cf120d2296 1,874 bytes
+- `rendered.html` e65edc6aefa8fb6f947050a3d812d9c5d66b6731c13e0846ea39417e8527ddfc 453,260 bytes
+- `screenshot.jpg` 071bd30ee33cd70590c2d462392b28f9c974558bd7f95b7814f83a1956ed6fac 558,797 bytes
+- `text.txt` cdcba1b8c212b9e8d3928e5d5ea0a7e09ea4c719e7bef44139d3f9f2f0612808 11,029 bytes
+
+### [Accueil - France Titres (ANTS)](fr-ants-down/index.html) [original ↗](https://www.ants.gouv.fr/)
+
+**ants.gouv.fr** · government · primary · captured · published not stated · added by `collector-gov` · `fr-ants-down`
+
+A capture of the site itself on 22 October (HTTP 200, no error), taken to record whether it was up. Row written by claude-newsroom-lead from provenance.json: the collector-gov agent stopped before committing.
+
+capture 20261022T081939Z · HTTP 200 · https://www.ants.gouv.fr/- `headers.json` 3a8b686eaad61ad3c1166c5a557b643d60cf33b41d6f3b36da8500ba6f8df09a 448 bytes
+- `page.html` 0a3fbbc3089a9497aac6380d9ebe9a45effda4cb1339b1a03e0a16cfce2ce7f1 222 bytes
+- `provenance.json` c823c1300f78d7baec58e9965ee9e7b5b8d7a2c69e363951f201833daf553c85 961 bytes
+- `rendered.html` 441259fbdac1ceaf407a56a24a7b5e8f5e5c86b846587c2a6e86a73bbab1fc24 2,565,821 bytes
+- `screenshot.png` 9149cf7d9bc4fdc8ee7c7413c754d4bc9d60e979eebfe736f13e2a232f95197b 526,676 bytes
+- `text.txt` 7e5c2700ea66b9047b95730e581b84900e9a80c99e7f7aaba270f8840cd1db04 3,337 bytes
+
+### [fr-interieur-down](fr-interieur-down/index.html) [original ↗](https://www.interieur.gouv.fr/)
+
+**interieur.gouv.fr** · government · primary · failed · published not stated · added by `collector-gov` · `fr-interieur-down`
+
+A capture of the site itself on 22 October (HTTP None, page.evaluate: Target page, context or browser has been closed), taken to record whether it was up. Row written by claude-newsroom-lead from provenance.json: the collector-gov agent stopped before committing.
+
+capture 20261022T081938Z · HTTP None ·  error: page.evaluate: Target page, context or browser has been closed- `provenance.json` 7dc87fec965083beeac47ac408eaf6c86e405e70d4b393f3bccfc51a7583039e 458 bytes
+
+### [fr-ppolice-down](fr-ppolice-down/index.html) [original ↗](https://www.prefecturedepolice.interieur.gouv.fr/)
+
+**prefecturedepolice.interieur.gouv.fr** · government · primary · failed · published not stated · added by `collector-gov` · `fr-ppolice-down`
+
+A capture of the site itself on 22 October (HTTP None, page.goto: Target page, context or browser has been closed), taken to record whether it was up. Row written by claude-newsroom-lead from provenance.json: the collector-gov agent stopped before committing.
+
+capture 20261022T081939Z · HTTP None ·  error: page.goto: Target page, context or browser has been closed- `provenance.json` 9230a0d6e075c2454a4e97c83ce614bc0bd184ba8af16c76ea5aea23a6325dc7 471 bytes
+
+### [Site en maintenance | Les Services de l'État](fr-prefecture-nord-down/index.html) [original ↗](https://www.nord.gouv.fr/)
+
+**nord.gouv.fr** · government · primary · captured · published not stated · added by `collector-gov` · `fr-prefecture-nord-down`
+
+A capture of the site itself on 22 October (HTTP 200, no error), taken to record whether it was up. Row written by claude-newsroom-lead from provenance.json: the collector-gov agent stopped before committing.
+
+capture 20261022T081940Z · HTTP 200 · https://www.nord.gouv.fr/- `headers.json` 29cb6331cf00cd335fa38386f85d1dd1812ecba458b235679f31f5793b2efa4c 94 bytes
+- `page.html` ef6f28223628c5de2e03d6a6579bfb1298a9528970063f00fd96f464c5d06d94 4,199 bytes
+- `provenance.json` 1f5059bc03a54444a169ce5d0ae12285bc1c92dd76bc2f3f504616729e130aca 928 bytes
+- `rendered.html` 271a758211ac1eed716bbc27902260eb62e7dea8b54e7856f2c3d76290ee2dc0 3,893 bytes
+- `screenshot.png` 405a1f823fb044886b626bd8af9aa1931c7b93bcc850ac68c4e39cbbaac7fd89 30,298 bytes
+- `text.txt` 72b685717874bab2691f10c9628e0e77dca37522ce5dbf2efdb20e12635ca678 140 bytes
+
+### [Site en maintenance | Les Services de l'État](fr-prefecture-rhone-down/index.html) [original ↗](https://www.rhone.gouv.fr/)
+
+**rhone.gouv.fr** · government · primary · captured · published not stated · added by `collector-gov` · `fr-prefecture-rhone-down`
+
+A capture of the site itself on 22 October (HTTP 200, no error), taken to record whether it was up. Row written by claude-newsroom-lead from provenance.json: the collector-gov agent stopped before committing.
+
+capture 20261022T081939Z · HTTP 200 · https://www.rhone.gouv.fr/- `headers.json` 29cb6331cf00cd335fa38386f85d1dd1812ecba458b235679f31f5793b2efa4c 94 bytes
+- `page.html` ef6f28223628c5de2e03d6a6579bfb1298a9528970063f00fd96f464c5d06d94 4,199 bytes
+- `provenance.json` 9a65cec4c7c60bd05a1e0f81e3bbbb8ebdfa841ad86f936ba481de0cff685dd3 931 bytes
+- `rendered.html` 271a758211ac1eed716bbc27902260eb62e7dea8b54e7856f2c3d76290ee2dc0 3,893 bytes
+- `screenshot.png` 405a1f823fb044886b626bd8af9aa1931c7b93bcc850ac68c4e39cbbaac7fd89 30,298 bytes
+- `text.txt` 72b685717874bab2691f10c9628e0e77dca37522ce5dbf2efdb20e12635ca678 140 bytes
 
 ### [PHP2Shell: Detection Opportunities · GitHub](gist-blevene-detection-guide/index.html) [original ↗](https://gist.github.com/Blevene/472692937d05145d29d17dc3c6edc2a0)
 
@@ -813,6 +1195,19 @@ capture 20261022T112003Z · HTTP 200 · https://github.com/rjmendez/phpup-2026- 
 - `screenshot.png` a69607bd90cb0667ecdd5ab2e0191ae6c1534b599824084514dbcc1055712cde 940,580 bytes
 - `text.txt` 84742b6e86fb259d4db36361e86d4b739c6cd09184337f365f5e2958271f5379 9,221 bytes
 
+### [Ottawa taking down some federal websites over critical global vulnerability - National | Globalnews.ca](globalnews-ottawa-sites/index.html) [original ↗](https://globalnews.ca/news/12110881/government-sites-go-dark-vuln-in-code/)
+
+**globalnews.ca** · news · secondary · captured · published not stated · added by `collector-news` · `globalnews-ottawa-sites`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081641Z · HTTP 200 · https://globalnews.ca/news/12110881/government-sites-go-dark-vuln-in-code/- `headers.json` 3ca16762cb530a7381a789bfc088e122e6def06f38e9ea491f51fa91b00d1039 1,247 bytes
+- `page.html` f8be121063104c5bba4690a17d1b54eb8ce9ea1281b3e164b1fc4fe7c9f86b87 328,580 bytes
+- `provenance.json` f9fbf0f2893919b24df4ffcee19026399d3510b4cb555b1e6668c573d7ed9e2b 1,142 bytes
+- `rendered.html` 13874eedb62c81b7afcf3028b4c61858f5efe21fda76b7a02d53b631d4500085 357,724 bytes
+- `screenshot.png` c6264dead5508467c41b7c442d261bf34cf473033bbe6b342c780b59703429f0 1,859,701 bytes
+- `text.txt` 87d2ae5079c3620bd0b22f78e743865d283f1915fde2bc8badc1b1c56daf2ae8 7,761 bytes
+
 ### [Government websites shut down in Finland over critical security flaws - Helsinki Times](helsinkitimes-finland-shutdown/index.html) [original ↗](https://www.helsinkitimes.fi/finland/finland-news/domestic/29412-government-websites-shut-down-in-finland-over-critical-security-flaws.html)
 
 **Helsinki Times** · news · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `helsinkitimes-finland-shutdown`
@@ -825,6 +1220,19 @@ capture 20261022T112845Z · HTTP 200 · https://www.helsinkitimes.fi/finland/fin
 - `rendered.html` 86c43a2ba4b2b595bc14316aefdf8f5d08736e778a980690075033168a6258ec 155,636 bytes
 - `screenshot.png` 9c23d876698ad3081c6ac7846ed601a071d01e5b57de834755b1ef846cc2d26a 701,429 bytes
 - `text.txt` 524315badf6e56339623c59b54db482dffa48d62583a026e7134dae4bb30d118 6,660 bytes
+
+### [Your favorite websites are down due to an internet-breaking PHP security flaw](howtogeek-sites-down/index.html) [original ↗](https://www.howtogeek.com/your-favorite-websites-are-down-due-to-an-internet-breaking-security-failure/)
+
+**howtogeek.com** · news · secondary · captured · published not stated · added by `collector-news` · `howtogeek-sites-down`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081803Z · HTTP 200 · https://www.howtogeek.com/your-favorite-websites-are-down-due-to-an-internet-breaking-security-failure/- `headers.json` ac1300d5bc9c199bf479be95f33a4939aba8b6f5d29bd87c5dd9f2bd7a1c7b4e 3,627 bytes
+- `page.html` 60b8a3bd8b3a31dee5eb2f99f4cdce0153e463a0c7f5dcc79189ea108fc9f9ae 282,466 bytes
+- `provenance.json` 2cbaf467287d1420c18817f1b1b4257ed2c58ec119d691654b1329b118e80881 1,113 bytes
+- `rendered.html` 7285bee583a2028e859815011ff311cdc7cd58e833cd2db577fbf150f92e4889 291,892 bytes
+- `screenshot.png` c74fddd0b93069d97b4424669c834a62d22e29d7a49e65463c24cfcce3689f02 1,518,193 bytes
+- `text.txt` fc428f513db5fdc848312aa42f77bb2464902cdfa826e007e7d23427a88a6a2b 5,511 bytes
 
 ### [Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619) | Huntress](huntress-php2shell-rapid-response/index.html) [original ↗](https://www.huntress.com/blog/php2shell-leaked-critical-php-vulnerabilities)
 
@@ -852,6 +1260,58 @@ capture 20261022T111855Z · HTTP 200 · https://www.imperva.com/blog/php2shell-v
 - `screenshot.png` 1f96ba16ce949cfd1d6f4051df3dd2b7910754612bb6fae060c14d96950f9c9e 1,932,384 bytes
 - `text.txt` 3da873bdb21219a616245663c1c5bfccb9d8d5db507092c70bb2c20519e031e4 15,842 bytes
 
+### [バルテック、サイバー攻撃によりサービス停止、情報流出の可能性（記事訂正） - INTERNET Watch](impress-watch-valtec/index.html) [original ↗](https://internet.watch.impress.co.jp/docs/news/2150396.html)
+
+**INTERNET Watch (Impress)** · news · secondary · captured · published 2026-10-22 (corrected later the same day) · added by `curator@php.newsroom` · `impress-watch-valtec`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191433Z. Valtec blamed php2shell, then corrected: its own service's flaw (resolved, not PHP)
+
+capture 20261022T191433Z · HTTP 200 · https://internet.watch.impress.co.jp/docs/news/2150396.html- `headers.json` 58df97fc9062fc234eef8d1d1582710ea444eb72b939acee668cee7c988492b9 286 bytes
+- `page.html` 54dca16481319543e0f7f4de7c4bfffb04af2e3ea7b963baa4ea5b6dd06212e0 112,513 bytes
+- `provenance.json` 29864193cb9702d80c121e6d555f57f9562b46db8d07df01587de8e5986dbc2e 1,664 bytes
+- `rendered.html` f241ae871799c4086033623f373f304027ad469bdaad5687cf3e21e58e636e88 408,910 bytes
+- `screenshot.jpg` d0eb4e865c0189bf912fa7f318a5e994d85516c9b51f582289ae00be950d916a 829,142 bytes
+- `text.txt` 8eb3458dda2e5e8f5ae7763944d9c1d9fe1733285b87b6b21481c02b28d7fd76 12,992 bytes
+
+### [Internet Archive down, Wikipedia hit by outages amid PHP issues - Insider Paper](insiderpaper-archive-wikipedia/index.html) [original ↗](https://insiderpaper.com/internet-archive-wikipedia-down-php/)
+
+**insiderpaper.com** · news · secondary · captured · published not stated · added by `collector-news` · `insiderpaper-archive-wikipedia`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081314Z · HTTP 200 · https://insiderpaper.com/internet-archive-wikipedia-down-php/- `headers.json` 5adf01bc00583d1a001661e4324a94447f30fc180f9172d640bd9b20031debac 843 bytes
+- `page.html` 6c34cea33f4415eef2040587c46e31fef1f843bd25cbfd3bd08f7245207fb2db 105,403 bytes
+- `provenance.json` 55b2f4e9919b640d8b8d086f609f0f07506af08b29b2f1442230cc2ce0f99a7c 1,041 bytes
+- `rendered.html` c0a05a9cf251c8172dfbde3ba3cfaf240b14263a4e1dd9ea5e6ecb4f8d661bcf 120,653 bytes
+- `screenshot.png` 238bd10edbbac79827d10be4d221864096a471909266507d8f4c9963268f14fe 1,361,810 bytes
+- `text.txt` dba4741ae1b287deea2eafb352e4943ec73bc0fc0e568707b6083cdf1baade63 4,921 bytes
+
+### [Critical global website flaw sparks alerts across Asia-Pac as attacks begin | Insurance Business](insurance-business-au-asiapac-attacks-begin/index.html) [original ↗](https://www.insurancebusinessmag.com/au/news/cyber/critical-global-website-flaw-sparks-alerts-across-asiapac-as-attacks-begin-594446.aspx)
+
+**Insurance Business** · news · secondary · captured · published 2026-10-22T11:59:56Z (modified 15:52:31Z, per the page's metadata) · added by `curator@php.newsroom` · `insurance-business-au-asiapac-attacks-begin`
+
+Promoted from the source watch (oq9gflln), snapshot 20261023T012042Z. Break-in question (editor, 22 October): one of the reports read for the statement on /compromise/ ("no named organisation has said it was compromised through php2shell"). Break-in question (editor, 22 October 20:49 UTC): Patchstack "conf...
+
+capture 20261023T012042Z · HTTP 200 · https://www.insurancebusinessmag.com/au/news/cyber/critical-global-website-flaw-sparks-alerts-across-asiapac-as-attacks-begin-594446.aspx- `headers.json` d7c6037a3d486dcfea6be77442fd206f61bc6906e70e92270a8041eb3f5543cb 1,441 bytes
+- `page.html` 98d4b6426324d21a0f86b027448e1edb42f7f14f078cb666b8c2fb7df882f03e 103,632 bytes
+- `provenance.json` 6e01812fd9981745cf7bddb9cfe50b700144a4470cdc9291f482f5a82c1dde8f 1,838 bytes
+- `rendered.html` 4017fbe931ba3e838695e7ab60fc4c3b0b9976750eb6b68b958bc939e4bac0d7 275,204 bytes
+- `screenshot.jpg` e3b290e88f04e0036da577427acade1fa7f0aaee342ce10de8c8f2d2aa846d00 823,298 bytes
+- `text.txt` 8d88bddde485e36f27c001a80e9ad0506055b64f3879347345be5ad336a10cad 9,469 bytes
+
+### [UK councils and Met Police among sites pulled offline after NCSC alert | Insurance Business](insurancebusiness-uk-councils/index.html) [original ↗](https://www.insurancebusinessmag.com/uk/news/cyber/uk-councils-and-met-police-among-sites-pulled-offline-after-ncsc-alert-594424.aspx)
+
+**insurancebusinessmag.com** · news · secondary · captured · published not stated · added by `collector-news` · `insurancebusiness-uk-councils`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081252Z · HTTP 200 · https://www.insurancebusinessmag.com/uk/news/cyber/uk-councils-and-met-police-among-sites-pulled-offline-after-ncsc-alert-594424.aspx- `headers.json` 30acd0390cc491cfdaf72982b9c580d022f1401872425588f56eac11e5d46509 1,441 bytes
+- `page.html` 7a49498f54bbb46f5db660369044e8443b338c2d46bf6c6077f3cbcfd609163b 222,907 bytes
+- `provenance.json` 207911ae60de17b7791b5892a7782f1555d7f31014f6487bb6b8f460b41fdf1f 1,196 bytes
+- `rendered.html` 8df24098f293286c5fc875108d9d11e344de84a882116093920e43ceff9e1608 401,343 bytes
+- `screenshot.png` 76be0be292fecd0fd681fc80c534f4e1464d412dc5f68cd11ef02942386b54fd 1,999,104 bytes
+- `text.txt` daa04c79edfb56f49761d38fa7ce81c2aa1828f78a0b0b4694519818e4e507ca 7,092 bytes
+
 ### [UK councils and Met Police among sites pulled offline after NCSC alert | Insurance Business](insurancebusiness-uk-councils-met/index.html) [original ↗](https://www.insurancebusinessmag.com/uk/news/cyber/uk-councils-and-met-police-among-sites-pulled-offline-after-ncsc-alert-594424.aspx)
 
 **Insurance Business (Matthew Sellers)** · news · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `insurancebusiness-uk-councils-met`
@@ -877,6 +1337,32 @@ capture 20261022T112142Z · HTTP 200 · https://itdaily.com/blogs/software/php-a
 - `rendered.html` b634233f4e687df8538e68d9f0af3af145ab15dc5bbe966f7a1457f2350eaf4a 134,246 bytes
 - `screenshot.png` 5a11124ea720acd8ae8b3af6b0df0a3925b72abfa059d3db627464c578ae2700 1,036,421 bytes
 - `text.txt` 27772c396e4bd60e2e200b2ba8db0273291060cad355f3927bdcd0ee9c2aa7ad 6,719 bytes
+
+### [Erro crítico em PHP obriga desligação de vários sites](jn-pt-sites-desligados/index.html) [original ↗](https://www.jn.pt/inovacao/artigo/internet-em-alarme-com-erro-detetado-que-obrigou-a-desligar-varios-sites/18139512)
+
+**jn.pt** · news · secondary · captured · published not stated · added by `collector-news` · `jn-pt-sites-desligados`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081616Z · HTTP 200 · https://www.jn.pt/inovacao/artigo/internet-em-alarme-com-erro-detetado-que-obrigou-a-desligar-varios-sites/18139512- `headers.json` f37963c01b0139ff38b53cefb27705bfda717ce5793706d747faaa8251270e42 1,688 bytes
+- `page.html` 7473d16b8275d2fd7f7ed70f9ef63386cb0b64e5594c7dd07bc7f89efc6bab20 223,187 bytes
+- `provenance.json` 181d49aac38478ace922953fb01e53d6401909aac8bd9a47082cd18e25d965ed 1,119 bytes
+- `rendered.html` 2bd81ec1cd9612b7e6a085664d7cbd5133934d10fe8502c9368b777ab59d6f1e 295,643 bytes
+- `screenshot.png` 0790304d2c70e0946039f7f9e21b42041558a80c19bb4048a54356cdcc297b01 929,926 bytes
+- `text.txt` d0ab599600817fabee6ab55163b27b2738e2ac00ac5659cd0bac26dfa4eafd2e 4,337 bytes
+
+### [PHP2Shell : préfectures, impôts, Bercy et Météo-France coupés sur demande de l'ANSSI - Journal du Coin](journalducoin-technologies-php2shell-prefectures-impots-berc/index.html) [original ↗](https://journalducoin.com/technologies/php2shell-prefectures-impots-bercy-sites-coupes-anssi/)
+
+**Journal Du Coin** · news · secondary · captured · published 2026-10-21T16:21:30+00:00 · added by `curator@php.newsroom` · `journalducoin-technologies-php2shell-prefectures-impots-berc`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T171501Z. 4 new items in fr: Journal du Coin reports that, at ANSSI's request, French prefecture sites, parts of the tax portal, the Economy ministry, Météo-France and Les Echos were cut off on 21 October. It cites the Interior Ministry's statement
+
+capture 20261022T171501Z · HTTP 200 · https://journalducoin.com/technologies/php2shell-prefectures-impots-bercy-sites-coupes-anssi/- `headers.json` 548212ff886ff3e26dbf1be6a11113740680f437ced5e3352ff1e4dffc8a50e1 831 bytes
+- `page.html` d403208aaab2bfa0dbc4a2873934b14868837429df1440d72ed7d2f7311b86fd 202,949 bytes
+- `provenance.json` b22d029fbfb73d857b4d7ddacdb5c35906e80b7366b8e03752acb4afd81bc5cc 1,816 bytes
+- `rendered.html` a34e7562e8bc7a71b521f209620af9bf6441b12c7496accf5bc547d1aa50cd36 215,834 bytes
+- `screenshot.jpg` 8f4cecf99f8f4a4aa2efbc24a71011d299a101f8dbe013400ecccb1ce2a955d6 526,874 bytes
+- `text.txt` ca7e51715f8e31ec5e851af199a5f139eed1ae54b1e2449cc52b39e20f7137a5 9,675 bytes
 
 ### [PHPにおける複数の脆弱性（CVE-2026-109618、CVE-2026-109619）に関する注意喚起 (JPCERT-AT-2026-0033)](jpcert-at260033/index.html) [original ↗](https://www.jpcert.or.jp/at/2026/at260033.html)
 
@@ -904,6 +1390,32 @@ capture 20261022T081606Z · HTTP 200 · https://www.jpcert.or.jp/- `headers.json
 - `screenshot.png` 0870f642b705aeed4116685bb2897f814fff8eb758a665a969b80be60f36dc81 1,483,609 bytes
 - `text.txt` 0e3188607f06a768281c4dd19a88acecbe0e7fe6b5c20a312e9095a2a498dfba 6,293 bytes
 
+### [Upaya Global Perbaiki Celah Keamanan Siber PHP, dari Amazon hingga Kementerian Jepang](koran-jakarta-2026-10-22-upaya-global-perbaiki-celah-keamana/index.html) [original ↗](https://koran-jakarta.com/2026-10-22/upaya-global-perbaiki-celah-keamanan-siber-php-dari-amazon-hingga-kementerian-jepang)
+
+**Koran Jakarta ®** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `koran-jakarta-2026-10-22-upaya-global-perbaiki-celah-keamana`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 5 new items in id: Koran Jakarta round-up from BBC and Kyodo. A photo caption shows the Keihan Holdings website suspended. Danish IT firm Kombit closed services including the national school platform. Several Japanese ministry pages, inclu
+
+capture 20261022T181608Z · HTTP 200 · https://koran-jakarta.com/2026-10-22/upaya-global-perbaiki-celah-keamanan-siber-php-dari-amazon-hingga-kementerian-jepang- `headers.json` 9766db410658d31c0e988a0716096bfaf3c67ca7d4ea2d25e2e1b720f2560ea7 1,641 bytes
+- `page.html` 213c59ab19f11c47162fa098d33aad2f9718ed4f8c44cf3b35c218b6111f30cf 359,208 bytes
+- `provenance.json` 8fe27bd61bbf013f723fc63def6e6f9c351768d464a79fb81ba8b7718656de09 1,862 bytes
+- `rendered.html` ed53485564de5f215f4ce3b8076dc529fe9bc575ae2a7836685f7c95575883ed 427,173 bytes
+- `screenshot.jpg` 69d5c1a1ca7c639ee0fa500448849ef25b036a55ebb315f535036025594063ca 569,373 bytes
+- `text.txt` f5c3e92816a8aaf3d21543436c76aa52fac6863eada37a37eb37b0618a5f987d 8,548 bytes
+
+### [Une faille critique menace des milliers de sites internet : plusieurs plateformes belges concernées, un correctif publié - La Libre](lalibre-economie-digital-2026-10-21-une-faille-critique-mena/index.html) [original ↗](https://www.lalibre.be/economie/digital/2026/10/21/une-faille-critique-menace-des-milliers-de-sites-internet-plusieurs-plateformes-belges-concernees-Q3XDVDBQEJGXLJMEVDSHWNRQHU/)
+
+**La Libre.be** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `lalibre-economie-digital-2026-10-21-une-faille-critique-mena`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 6 new items in fr: La Libre lists Belgian platforms taken offline: Flemish Region sites (on Minister-President Matthias Diependaele's order), the Flemish Parliament, FPS Finance informational sites, DPG Media and Roularta titles, Smartscho
+
+capture 20261022T181608Z · HTTP 200 · https://www.lalibre.be/economie/digital/2026/10/21/une-faille-critique-menace-des-milliers-de-sites-internet-plusieurs-plateformes-belges-concernees-Q3XDVDBQEJGXLJMEVDSHWNRQHU/- `headers.json` 7def206a8427e76a9a77b82ecc63f8856f763f90db0c5deaeb192b11faef8291 1,112 bytes
+- `page.html` 0ebcecda232383168fe35812770704692fc72c1147d2ad701401ce7782b0be9b 699,483 bytes
+- `provenance.json` 61e4d3306274d69bf7d8ed83a79b8e460269884a1480f881a3704ac7b3ad4c2f 2,008 bytes
+- `rendered.html` b0d149422f2695bb5599c0e0816ace3df42630195015c7dc8d39f5d3c74e8df9 859,999 bytes
+- `screenshot.jpg` e3e73da31b8e6317627b63188ba51038f7dceb0d37fc52fe3abb7087f8552c46 285,740 bytes
+- `text.txt` 49a06a7962f4ad397daaf732e939f6d92d6cd72aef024115b5e9f7c5c58eeca1 8,410 bytes
+
 ### [Websites taken offline as ‘critical’ security flaw hits Met Police, Traitors and government sites | LBC](lbc-uk-websites-offline/index.html) [original ↗](https://www.lbc.co.uk/article/uk-internet-outage-php-websites-tech-5HjdkDd_2/)
 
 **LBC** · news · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `lbc-uk-websites-offline`
@@ -917,6 +1429,19 @@ capture 20261022T112915Z · HTTP 200 · https://www.lbc.co.uk/article/uk-interne
 - `screenshot.png` 72e82d8825a1870d48523fc0b7ecfd8f99a8f2f981f64bb572699545b7dfd811 1,602,728 bytes
 - `text.txt` 125176f10b5494a60744d6f6d3c7918b76c38477c6c229b636fbeb00b3bed173 6,376 bytes
 
+### [Alerte sur le Web: des millions de sites sont débranchés en urgence à cause de failles majeures au cœur de PHP - Le Temps](letemps-php-sites-debranches/index.html) [original ↗](https://letemps.ch/cyber/alerte-sur-le-web-des-millions-de-sites-sont-debranches-en-urgence-a-cause-de-failles-majeures-au-coeur-de-php)
+
+**letemps.ch** · news · secondary · captured · published not stated · added by `collector-news` · `letemps-php-sites-debranches`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081413Z · HTTP 200 · https://www.letemps.ch/cyber/alerte-sur-le-web-des-millions-de-sites-sont-debranches-en-urgence-a-cause-de-failles-majeures-au-coeur-de-php- `headers.json` 5007331df9736e8ac4b73506dda7fdd2ae63f582c30c5dd68d79778b99102a1d 3,689 bytes
+- `page.html` d3a65e2fd0737ae7ab9132c8a84956cfb69749c94b3db910f7ebb3cb25a9192d 240,147 bytes
+- `provenance.json` acb4558f59f74d9c45deb47a41342784dc02f034806942b610e559b72ac56652 1,237 bytes
+- `rendered.html` 4d516cac6cb2207d7a2c0ce63b755be7d4b8aabd358d4725d56d681d239d5f89 423,533 bytes
+- `screenshot.png` 8cbde5fe818acba1bff61e838a4829c20afca0b4dc09f1e65ff54cc1ac9c716e 752,564 bytes
+- `text.txt` 4330f33c3b6763a95df44d21cfc602ec5f9bfd9df6141e863545c6a9a276cf4e 4,953 bytes
+
 ### [php2shell: Inside the Leaked Critical PHP Flaws Triggering Emergency RCE Patching (CVE-2026-109618 & CVE-2026-109619) | Lorikeet Security](lorikeet-php2shell/index.html) [original ↗](https://lorikeetsecurity.com/blog/php2shell-leaked-critical-php-vulnerabilities)
 
 **Lorikeet Security** · vendor · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `lorikeet-php2shell`
@@ -929,6 +1454,27 @@ capture 20261022T112438Z · HTTP 200 · https://lorikeetsecurity.com/blog/php2sh
 - `rendered.html` 38608a412a2fb2a979d5821ccb1a9764037d3d2bbad075a509f0d25884973ae5 904,734 bytes
 - `screenshot.png` 281038d16371213c89c2ce9df773de5a82e6eac69bdfe5c855e3975b02ac6387 8,419,643 bytes
 - `text.txt` db7958824da2628a693fcca386ac3ea9994977209f017b245fab2d3e894cb349 37,837 bytes
+
+### [ČVUT čelí kybernetickému útoku, údajně doplatilo na kritickou chybu v PHP - Lupa.cz](lupa-cvut-cyber-attack/index.html) [original ↗](https://www.lupa.cz/aktuality/cvut-celi-kybernetickemu-utoku-doplatilo-na-kritickou-chybu-v-php)
+
+**Lupa.cz** · news · secondary · captured · published 2026-10-22 ("Dnes"; updated 19:30 local time per the page) · added by `curator@php.newsroom` · `lupa-cvut-cyber-attack`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191510Z. ČVUT says it faces an attack "part of worldwide attempts against PHP sites", active attack stopped; success unconfirmed
+
+capture 20261022T191510Z · HTTP 200 · https://www.lupa.cz/aktuality/cvut-celi-kybernetickemu-utoku-doplatilo-na-kritickou-chybu-v-php/- `headers.json` 9e7cddcd02817e76193919fd96d24ce3c3b47557f4590a79a23862eac5fb3baf 662 bytes
+- `page.html` d5195979b8f5922d4b2052e2e8954a827aedff331c6794e8d7561328e6a41210 248,530 bytes
+- `provenance.json` b9993f69e78c56602b3d1be9b434d914f1451bb132d2dbac462d607cfd8fddb6 1,686 bytes
+- `rendered.html` d8db6b3b2b9b40c2b7d02632307aa6e8708644578ba1c95010426737f51175b8 538,864 bytes
+- `screenshot.jpg` bff2dc81e08976b5179f030294b31342fdca68d987b547e8568c7343bc383718 340,215 bytes
+- `text.txt` 0a0abb12fccb6fbccc2b675a8f1b26cc2ab83cfceb120010a8b4cb27effdd337 6,923 bytes
+
+### [lv-latvija-gov](lv-latvija-gov/index.html) [original ↗](https://www.latvija.gov.lv/)
+
+**latvija.gov.lv** · government · primary · failed · published not stated · added by `collector-gov` · `lv-latvija-gov`
+
+A capture of the site itself on 22 October (HTTP None, page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://www.latvija.gov.lv/), taken to record whether it was up. Row written by claude-newsroom-lead from provenance.json: the collector-gov agent stopped before committing.
+
+capture 20261022T081939Z · HTTP None ·  error: page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://www.latvija.gov.lv/- `provenance.json` c46e7265217bfc48f378b0011538b59f3e51a97263219d7ca72ed0fd55a3cfb5 465 bytes
 
 ### [Critical security issue affecting PHP](ncsc-news-php/index.html) [original ↗](https://www.ncsc.gov.uk/news/critical-security-issue-affecting-php)
 
@@ -991,6 +1537,81 @@ capture 20261022T084807Z · HTTP 200 · https://github.com/NCSC-NL/php2shell/blo
 - `screenshot.png` c610a27540c7c58e4e02cc90bc268c1a5f5b8bd8295fd543badb47cfcdad0e3c 137,355 bytes
 - `text.txt` 83f3aa60070e20b847980ff396e3f2468de1e291562a6a16a69f6a20ffbe2004 1,255 bytes
 
+### [NCSC-NL php2shell software inventory, all 27 per-letter files (snapshot 18:36 UTC, 22 October 2026)](ncsc-nl-php2shell-software-list-letters/index.html) [original ↗](https://github.com/NCSC-NL/php2shell/tree/main/software)
+
+**NCSC-NL** · government · primary · captured · published the files as served by raw.githubusercontent.com at 2026-10-22T18:36:24Z · added by `curator@php.newsroom` · `ncsc-nl-php2shell-software-list-letters`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T183624Z. The inventory now lives in 27 per-letter files (724 products at 18:36 UTC: 61 Fix, 216 Vulnerable, 440 Investigation per CVE); one evidence source holding all 27 as one capture
+
+capture 20261022T183624Z · HTTP None · https://github.com/NCSC-NL/php2shell/tree/main/software- `provenance.json` 96fefbdceedc7a77392ab4eb02113b66e1fe23086cee94e7d5915e8d4ba83529 27,536 bytes
+- `software_list_0-9.headers.json` 8b6c3861a446ab0e235a94c6fe581a8a8c29d07766d05ad27d1081395b00183f 1,084 bytes
+- `software_list_0-9.md` e90872af6f1fdb008813a09c19cf47ac5e35273f1b62b22de7f98689543d447e 994 bytes
+- `software_list_a.headers.json` 7a031d8aeaabee81d6e88e92327a4ffcc255bc9782d25eabdac5bea4c86839c1 1,088 bytes
+- `software_list_a.md` 662945741f0143d43f56c10f20b46a595e9e10e3880199fb2b2311b0c89e504a 12,423 bytes
+- `software_list_b.headers.json` a5fe813f15d6cfb9a849d51d1f508944ef2049dfe5bd999ab6b8ccbbbb0066d1 1,086 bytes
+- `software_list_b.md` cb1e67ea7608987077b79a4681f35965afa555b6592cc5cd8bec8f3c271fd9fb 8,636 bytes
+- `software_list_c.headers.json` 2942f75360df0abc6202f2202939b60a2e413694c35e62f5e04cf927ae309a3a 1,086 bytes
+- `software_list_c.md` 43013c1e1db1e111976262680a9e3cda0f4fd17a79352b2db8240528524187fc 40,915 bytes
+- `software_list_d.headers.json` ffea5957977ad9253169a44a1bd6143972eda64c577a32f1eb760433b481872f 1,087 bytes
+- `software_list_d.md` f56d6989bb7d533935ce59f47ec623db4fd40bc0fb4fcff4b50c35e4b6df9f20 12,025 bytes
+- `software_list_e.headers.json` 18deb3e0c81d2cfc91bbda13945bca9b5c614d2a0832decd6ff85a09daf61cbd 1,085 bytes
+- `software_list_e.md` bc44010fd79ae3c0fb75d072a4fe1eb48b980b4e25a67b6dc5307b052fc9a446 7,385 bytes
+- `software_list_f.headers.json` 13883536787fbb42283db2b451051ea1e894650295f2ab4a6ca37b427167712d 1,087 bytes
+- `software_list_f.md` 839e816c660e9b5a6660b8b904d9220919312db233bdb781684934c707164568 18,502 bytes
+- `software_list_g.headers.json` ae66666fc2a6dce8318687792be825299dcd76b50f3140572352ce377dc0db3b 1,089 bytes
+- `software_list_g.md` a1de1b0e10dd759cd2e3493b78555b76e37eab2e51b99fe9465a54235e29fe6f 9,783 bytes
+- `software_list_h.headers.json` 19700f8b2fd8516f4356d22200cb19793541f6e547bab91fb4961267b5584ab1 1,088 bytes
+- `software_list_h.md` 28b2a1ca72e63781edf9d40243b845792217f14d2b24f9faf1e50d3799e3d042 6,127 bytes
+- `software_list_i.headers.json` 14e4a0a8cdceb3c4488f20c81082c88f53e4f784cb49749d01197631c59f38cb 1,086 bytes
+- `software_list_i.md` f25e5ef68d476c053abd638b75441aa462fd630a83d7059696ff675f53fa55eb 9,544 bytes
+- `software_list_j.headers.json` 9a3a89932a8136873d2329df111b302a69a125a2eea210d176e5c18c5b49c3a9 1,084 bytes
+- `software_list_j.md` 1fece5bf0287178a9830d55a417ae41064449dc8b07c15145e3dfb21b0e0255f 4,328 bytes
+- `software_list_k.headers.json` d6f8dee8005fba048c718ec7143cda2c461dccea10e5a39876e32e7c2d444bd2 1,085 bytes
+- `software_list_k.md` 50ff337adf97f4e309944fc6e88ca0d2319c5fec10670a4c2c05f2f650fc1399 4,978 bytes
+- `software_list_l.headers.json` db1c368cbf02cfa10e902e7b9926ffd976c0caa6258da644484a8218afcf2822 1,087 bytes
+- `software_list_l.md` 0250e097e5e08cb8ec83f1bbd7c670838111746a0670c1005a4ad3d9e6462115 10,711 bytes
+- `software_list_m.headers.json` 79ffa6f42f1d8b23efe0a5da78cd4afaa03d00a6ed86090cc5ec423c14e90214 1,087 bytes
+- `software_list_m.md` 5cbd54517c4d4f0c7ea4c0ef47d368fc2a639d91b9ceb10280b0235887f8e222 16,116 bytes
+- `software_list_n.headers.json` e1af67c61abf4be0cf4f59ff84a1b0278e8de116baab69f8982f4bbb12fc3829 1,087 bytes
+- `software_list_n.md` dc21e57314a4f89399576af7e9f0587e3f25dd585d610881b84fc1e252b3239f 18,152 bytes
+- `software_list_o.headers.json` 1e3b2c062c0a4c739e0e9ce939b185c096423057767d8a802be897d363d48973 1,086 bytes
+- `software_list_o.md` 3ae25cad7f40224327009357d83d9ae970f05cedc3e7a877b763307f165edfef 14,380 bytes
+- `software_list_p.headers.json` c967aab44c297b58ff8112c62a249d4b0c767c28a069403049c2b4d6118b7061 1,089 bytes
+- `software_list_p.md` ad665b8c782cbf7225359bcca0f1ae51d320c0b76138401803899d0239cbdab7 36,990 bytes
+- `software_list_q.headers.json` a820ff9846f76569cb042649ceb3de18a0317b2d8968a962f4e5406f34ed7096 1,086 bytes
+- `software_list_q.md` 0c2f85c6cc5203850206c1a6e1d6495b2207b2a52152259871379a74795cf40d 6,289 bytes
+- `software_list_r.headers.json` 548df3d986e6c7f1a0fbdcb2efaa33fe266854d5c4fba1fbe4e713f9fd9b231c 1,087 bytes
+- `software_list_r.md` cf5264700a6574d02b6c446aa88faf87506af68581e0bccf1cd3bccc25eaaab2 6,473 bytes
+- `software_list_s.headers.json` bfcff85e346870ec70c5ecf2887aea4136f74d1eb06c318cc6be6fbcbbb13da7 1,086 bytes
+- `software_list_s.md` d77663690cb40c3130a659ecce4929ddacbaaad90261e1be317ae78ee54f9661 32,086 bytes
+- `software_list_t.headers.json` 82bac062177772af480d8b3831bfaa423eac771d1dc843c1b209e9142a28bb1b 1,087 bytes
+- `software_list_t.md` 6d3c76f3348ab1ab6d7d3518ab81fb9677b7b43d8901b4186efac826b0350e5e 54,594 bytes
+- `software_list_u.headers.json` 154b0a19184c0cbca223d090a6c71782d60bbf568c96f193452d139604d304e3 1,084 bytes
+- `software_list_u.md` 2314ce9b13c2b0739abb64cc0e130eee4233e5704ea03d9c698e3f1a4eecdb24 3,417 bytes
+- `software_list_v.headers.json` 6b25a8a110a18aa9a436d2d0bca8536f5f75f669b5fd7b18c8be85ac5ada0282 1,089 bytes
+- `software_list_v.md` 6bb20eaf53eea2e2b5373700830a143488d34b4ac155d15bbf1625b9c044b8da 5,264 bytes
+- `software_list_w.headers.json` 3353748d1be69cd5270077a030af25dc8bd196cbeb2ed11b8d21fe4744c27d55 1,086 bytes
+- `software_list_w.md` e8c883dc89ea18181d4dcc983e9f9a61a3cdc36a9735222913a5d147f68bd7fb 13,362 bytes
+- `software_list_x.headers.json` 8206f477c2e723b9a1a65b7bdffeb9198c5a127a022be7dffc2c3492a7e07252 1,086 bytes
+- `software_list_x.md` 7b4c34711d7e953b33d23f35aeba6ce69af769b058630b525d514d4f81ab8aa7 3,021 bytes
+- `software_list_y.headers.json` 35e0724c27915b35eb5a552757c58d4a7546aec7a5e489f4ec3f7017f5f88538 1,085 bytes
+- `software_list_y.md` 78990fac6d7071a22f609957976a7e9c9a9e1876b97822430fd7be92c1537fa0 2,828 bytes
+- `software_list_z.headers.json` 152b1ab0a8509afb6ac913c65e14454560dda814767397c43232cae20b3f8f29 1,086 bytes
+- `software_list_z.md` 25c393e4f1f8ebbf10b320f3cd9f4ec816c332e0e53e3d381e80a670defe4dea 2,454 bytes
+
+### [Home | NCSC](ncsc-nl-site/index.html) [original ↗](https://www.ncsc.nl/)
+
+**ncsc.nl** · government · secondary · captured · published not stated · added by `collector-news` · `ncsc-nl-site`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081919Z · HTTP 200 · https://www.ncsc.nl/- `headers.json` 6cbf05984f4a5ced5bbdf7a66efdeb3593bc31f42d8e5ece3b2374243aa4c93a 2,626 bytes
+- `page.html` 56e85c916a4374a807a48b56f862a59b3fcdc40d9bc7b2ab509da69c6839d3d4 388,144 bytes
+- `provenance.json` a65f48250e2eed9d26f87eeda6ebdd8b6400d508cb3c3af7da02f79073db395a 873 bytes
+- `rendered.html` e377634251464e2e41da76f3a2aa2fffafaa487377a619551dd90482c0692911 400,426 bytes
+- `screenshot.png` c606a866a453a17b8d6b58e4063e53825d2579eb38cea185a68df21786517ec3 1,096,351 bytes
+- `text.txt` 4cff0c7ba341429e99659d7404208300de0c4a702c9c28da82b183c71d30bd32 2,387 bytes
+
 ### [UPDATED: CVE-2026-109618 and CVE-2026-109619 affecting PHP](ncsc-nz-alert-php/index.html) [original ↗](https://www.ncsc.govt.nz/alerts/cve-2026-109618-and-cve-2026-109619-affecting-php/)
 
 **NCSC New Zealand** · advisory · primary · captured · published 2026-10-22T09:15+13:00 (=2026-10-21T20:15Z); updated 10:20am 22-10-26 NZDT (=21:20Z) · added by `collector-gov` · `ncsc-nz-alert-php`
@@ -1016,6 +1637,19 @@ capture 20261022T081605Z · HTTP 200 · https://www.ncsc.govt.nz/alerts/- `heade
 - `rendered.html` ccc94fffbb92d25658fbb11c5935488c45109113a44b5ec6bf775ad2240cea3f 53,664 bytes
 - `screenshot.png` f9033cc86d53addc1cf8ed9db6855d4e30e30eec050db17bec1d47beb99651ee 226,803 bytes
 - `text.txt` d1c97bbc45ba4cc7861035a6f606f1bc1c7b782b44ce8bdc279c7143640f4a5f 1,276 bytes
+
+### [PHP Vulnerability: List of Websites Powered by PHP as Hacker Threat Prompts Scramble - Newsweek](newsweek-php2shell-list/index.html) [original ↗](https://www.newsweek.com/php-vunerability-php2shell-issue-websites-hack-server-12601225)
+
+**newsweek.com** · news · secondary · captured · published not stated · added by `collector-news` · `newsweek-php2shell-list`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081350Z · HTTP 200 · https://www.newsweek.com/php-vunerability-php2shell-issue-websites-hack-server-12601225- `headers.json` 7732bbe45a2c2ac0eb9414f511a971483a2ff33927c5b2591150a5578b57774d 2,439 bytes
+- `page.html` 02014f6004d880e2069129f15e86dde9bc0690358b12879271104aa686ed7af0 559,900 bytes
+- `provenance.json` ae0d237da8f695dc44b28ffcd2fb2e36cac58cecad93ed3b5666d6c7871c5f9b 1,102 bytes
+- `rendered.html` 2f4d6beb749cd4010729eff950983514ed19755c1b44915b56ddb7f31c8debb3 804,597 bytes
+- `screenshot.png` b13b1042a450751a2cb5a722defaa60f78a4012c987c02e2549a0b9b5e82e299 2,054,746 bytes
+- `text.txt` dc7ff69a1e38d3d6a18e69e19cca63a0b086601d4ae1fb2fe1c77654b30957be 11,452 bytes
 
 ### [PHP Vulnerability: List of Websites Powered by PHP as Hacker Threat Prompts Scramble - Newsweek](newsweek-php2shell-websites/index.html) [original ↗](https://www.newsweek.com/php-vunerability-php2shell-issue-websites-hack-server-12601225)
 
@@ -1094,6 +1728,19 @@ capture 20261022T080925Z · HTTP 200 · https://nitter.net/NSACyber- `headers.js
 - `rendered.html` 21e41f57eb9abbe1a4b2db26e202689f711d079cff963c4af7c549714eccd108 12,292 bytes
 - `screenshot.png` d179e4f97e7b7e0371b33c4fc9e9dd245980aa3bf0ef5add188775144552c848 162,950 bytes
 - `text.txt` f4e954159062308642561f65d6f65c068c8ee1001bcafdf6e9388181a78d2d93 1,513 bytes
+
+### [Národní úřad pro kybernetickou a informační bezpečnost - NÚKIB upozorňuje na kritické zranitelnosti v PHP - jediným řešením je aktualizace](nukib-aktuality-2470/index.html) [original ↗](https://nukib.gov.cz/cs/infoservis/aktuality/2470-nukib-upozornuje-na-kriticke-zranitelnosti-v-php/)
+
+**NÚKIB** · government · primary · captured · published 2026-10-21 (as stated on the page) · added by `curator@php.newsroom` · `nukib-aktuality-2470`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191421Z. NÚKIB's own notice (Czech national agency, primary)
+
+capture 20261022T191421Z · HTTP 200 · https://nukib.gov.cz/cs/infoservis/aktuality/2470-nukib-upozornuje-na-kriticke-zranitelnosti-v-php/- `headers.json` f5321ce1db92227c40357773a8d05918af0f96b576298cee99e949176aba079e 668 bytes
+- `page.html` 296b1217f2035ac2359eb3d9a8d23272cab5d92b1b094e9b90bd30f3cb0e4921 20,034 bytes
+- `provenance.json` 1509e228b9e5bebec20f205996a0547bc6bbe773ca72bccbff27386e40813b57 1,746 bytes
+- `rendered.html` f2efe7588603ad22543871e1961496198708b432f02e180222490ab263ff8235 25,310 bytes
+- `screenshot.jpg` dee3d09770a0ff852d171814fe7f059ff4ac7ba21ef138be0e08120f2f33ec79 153,675 bytes
+- `text.txt` 6bd4d3066e7caa885325cee2a95e81530c916bc62bc45b78f676430944dfbbbb 3,868 bytes
 
 ### [NVD - CVE-2026-109618](nvd-cve-2026-109618/index.html) [original ↗](https://nvd.nist.gov/vuln/detail/CVE-2026-109618)
 
@@ -1230,6 +1877,32 @@ capture 20261022T081407Z · HTTP 200 · https://www.openwall.com/lists/oss-secur
 - `screenshot.png` d6c5ab360073ebc5769973dc76493c74acf62cdc6e099f668ebffae91de551fa 154,322 bytes
 - `text.txt` ceef70b4943f78182c26af1c04cdac8a7986a9c2c5f5cbb5385a73efdd112384 1,934 bytes
 
+### [PHP-Lücke: Millionen Angriffsversuche im Netz - news.ORF.at](orf-stories-3445806/index.html) [original ↗](https://orf.at/stories/3445806/)
+
+**ORF** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `orf-stories-3445806`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 6 new items in de: ORF reports Cloudflare's 'millions' of attack attempts and that institutions worldwide took sites offline. It names Austrian sites offline (Uni Wien, TU Wien, NÖN), quotes BSI vice-president Thomas Caspers and expert Chr
+
+capture 20261022T181608Z · HTTP 200 · https://orf.at/stories/3445806/- `headers.json` 7dda938522a9e06e23db8ac07a637b7a5e71391b0c097f4a60436e8eddd13bbf 970 bytes
+- `page.html` fe941fbb4ff6eab5be2d373b56a1d21596fd1f7da019c049d5130aad097fa7e8 28,555 bytes
+- `provenance.json` ef992ab43c609302291f8ae584725bba3392ef237c0056ddc12f7a8c826e13a6 1,506 bytes
+- `rendered.html` beb03fcd0e185c838e137f6b81d3908667a6a8d3ec13468cae9670ac96ef050d 1,051,193 bytes
+- `screenshot.jpg` 4bb4a201278373d57af25912a623e595853d5a34d407f448b8231da8f6a1cb3c 377,054 bytes
+- `text.txt` e88c6f39edbd6d1c325ec7cc18abe50a9b8ad94010b2d5a425ba59e4252b2d0d 7,659 bytes
+
+### [Homepage | Overheid.nl](overheid-nl-site/index.html) [original ↗](https://www.overheid.nl/)
+
+**overheid.nl** · government · secondary · captured · published not stated · added by `collector-news` · `overheid-nl-site`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081927Z · HTTP 200 · https://www.overheid.nl/- `headers.json` bf5d6a65737591b5c4ae5c9f0b4ab31b0f86d83a9eb676f1573f7a8ec4b7117b 1,659 bytes
+- `page.html` 35c79d57cc23f2a234e8501c31e556531a3176023c58ec67115742617270cd93 18,228 bytes
+- `provenance.json` b4e3d33bfcf26c6daeb90bacf96d905882f526c1925c8fbeb1be25a39d54c0d0 896 bytes
+- `rendered.html` 018fe9effcbc10e7d76127ec98e1fab7ebfa67830ab994cc643fc9bc7ac2ceee 19,560 bytes
+- `screenshot.png` 1162ac68eaaeb8ff7a05376c48939f345186554ffa661e62b4cca355e4be7749 776,840 bytes
+- `text.txt` 93278f942198c318881e84d7d62b8bf6f6613b8ed5da0dc5f37bd9f658d11c13 2,216 bytes
+
 ### [Oxfordshire council websites offline amid critical global security issue | Oxford Chronicle](oxfordchronicle-councils-offline/index.html) [original ↗](https://www.oxfordchronicle.co.uk/2026/10/21/oxfordshire-council-websites-offline-amid-critical-global-security-issue/)
 
 **Oxford Chronicle** · news · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `oxfordchronicle-councils-offline`
@@ -1242,6 +1915,19 @@ capture 20261022T112935Z · HTTP 200 · https://www.oxfordchronicle.co.uk/2026/1
 - `rendered.html` e1614eeb5b71eb2bebf826c3131167eed9cefd83826c53632ff386d1a1a90afa 477,225 bytes
 - `screenshot.png` 6e1d23c7119672f3ed76f38b59112885b43f6961b77abd0009ea77015e7ec42d 1,579,440 bytes
 - `text.txt` 35c847290193f872826f6d65f370bcb6863fafe692817cc449f97431f350ae73 6,281 bytes
+
+### [CVE-2026-109618 Impact of Critical Vulnerabilities in PHP (CVE-2026-109618, CVE-2026-109619) on Palo Alto Networks Products](paloalto-psirt-cve-2026-109618/index.html) [original ↗](https://security.paloaltonetworks.com/CVE-2026-109618)
+
+**Palo Alto Networks** · vendor · primary · captured · published not stated · added by `curator@php.newsroom` · `paloalto-psirt-cve-2026-109618`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191713Z. PAN-OS 10.2 to 12.2 affected: PHP inside firewalls (primary)
+
+capture 20261022T191713Z · HTTP 200 · https://security.paloaltonetworks.com/CVE-2026-109618- `headers.json` dbb0d97e793d1ab43471679575bd42cdcfe25371f3539b641bfc4e4b8134c45f 633 bytes
+- `page.html` 2223f8cf00418cf2174e08ad35e9e6113921fbfad65643a49eabc34f65ff7305 26,484 bytes
+- `provenance.json` 9f7ef8ede1978405b5d95d06ec70b54a29fee6138e5e29d45c3b52e92486877e 1,688 bytes
+- `rendered.html` 16f631fe00f8a74a26da4a70fd8b0e6874030910dd0913dd7a31024756e01d6f 27,036 bytes
+- `screenshot.jpg` eaa6bf9b8c388263b12fb52e625c80308697f89df7fcd7a8675bf516eacee049 364,463 bytes
+- `text.txt` 16cb7bd74aeeac250781e98cc4d8574d338480ada1651de0e53572d0e7bb760f 6,603 bytes
 
 ### [Patch the Planet — OpenAI](patchtheplanet-org/index.html) [original ↗](https://patchtheplanet.org/)
 
@@ -1337,6 +2023,37 @@ capture 20261022T081244Z · HTTP 200 · https://thephp.foundation/blog/2026/10/2
 - `screenshot.png` 09956999247e6e42a5635bb2b1234a2f8a11f0c66c26b88fafc020c31f3b6cd6 2,630,327 bytes
 - `text.txt` b9f29cfdc1c0cd65dd505738d06d5f7d590d5d3da95801309990871870d2e0dd 31,883 bytes
 
+### [PHPocalypse Tracker (allixsenos)](phpocalypse-tracker-sites-csv/index.html) [original ↗](https://allixsenos.github.io/phpocalypse-tracker/sites.csv)
+
+**PHPocalypse Tracker (allixsenos)** · other · secondary · captured · published not stated · added by `curator@php.newsroom` · `phpocalypse-tracker-sites-csv`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T183616Z. The community list of 50 sites dark and back, with times and cited claims (data)
+
+capture 20261022T183616Z · HTTP 200 · https://allixsenos.github.io/phpocalypse-tracker/sites.csv- `headers.json` 5b36e9822f2d454b789c5f6ffbe04185fa3ccc3c435cd4512241240f5f5ea478 826 bytes
+- `page.html` 8109506bc80264887f2bd36eb452c1ad5468db6330efe4f167623be9f9965fe6 18,969 bytes
+- `provenance.json` 83c0f400d5e4a6eb1dcbc049c4dae82a42be94efb84aeeb72dc7581ae29484a7 1,295 bytes
+- `text.txt` 8109506bc80264887f2bd36eb452c1ad5468db6330efe4f167623be9f9965fe6 18,969 bytes
+
+### [[종합] 靑, PHP 사이버 보안비상에 민관군 긴급회의…국내 취약 자산 11만건 추정 capture 20261022T181608Z · HTTP 200 · https://www.polinews.co.kr/news/articleView.html?idxno=746632- `headers.json` ae83250b82306abe2e1856516b552ca589dc081b94ee8dc3510d5a2eb419a0c7 355 bytes
+- `page.html` b7cada245604c7e609d57286d94cb94aaa17c0990e68b2b323102409bc7a8c19 153,197 bytes
+- `provenance.json` cd806083f05b72f0b87a699666a3cc2790e05f84290f3324a748e7fe6661a12d 1,721 bytes
+- `rendered.html` abab15a515f0e377f7658bdf5fd782d45e6f9510b2f12a347b520f4dcfe2f12d 507,749 bytes
+- `screenshot.jpg` 1f30415ca69f3c7857c286053e7e107bacda26ac54e6d6d7c09c591453dbeec7 523,290 bytes
+- `text.txt` b4f4006727c71782d57186c85e4f20f197589c088961d658ac30ccf8aac159f1 10,851 bytes
+
+### [Page accueil | Préfecture de Police](prefecture-police-site/index.html) [original ↗](https://www.prefecturedepolice.interieur.gouv.fr/)
+
+**prefecturedepolice.interieur.gouv.fr** · government · secondary · captured · published not stated · added by `collector-news` · `prefecture-police-site`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081934Z · HTTP 200 · https://www.prefecturedepolice.interieur.gouv.fr/- `headers.json` 9134dcb7c5881a8b194d3f9dd3ffbc2378b9c539130eeffa47ac45748d5f48d4 473 bytes
+- `page.html` 0d34ee20b6d729126f325918feec97ab0d8808e852e96e505214b643123a14e8 222 bytes
+- `provenance.json` 36da19b3c25610bbc46a1d736fbea1a8ebb03726e59893c483a481517ee1007a 1,025 bytes
+- `rendered.html` 8d759eec1f0249c6e5fd78724fad69cb850e27fc7c2a9c12d1b24afcd09e4af4 104,031 bytes
+- `screenshot.png` 65910824ad9b6a70a3d52b37c03081b28de5bcf27ce8d96459de86fc56a83f0e 219,205 bytes
+- `text.txt` 3689dd69c688f7c18520c26d77dfd3de27079a3ce0905e8154628e52a3b7698a 2,044 bytes
+
 ### [php2shell: Detecting and Investigating CVE-2026-109618 and CVE-2026-109619 | Prophet Security](prophetsecurity-php2shell-detect/index.html) [original ↗](https://www.prophetsecurity.ai/blog/php2shell)
 
 **Prophet Security** · vendor · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `prophetsecurity-php2shell-detect`
@@ -1349,6 +2066,31 @@ capture 20261022T112954Z · HTTP 200 · https://www.prophetsecurity.ai/blog/php2
 - `rendered.html` 3ac8595af5225424d4be82b0b063abfb5254d537481410f86cb935ebdb46b2a5 797,451 bytes
 - `screenshot.png` 8a43fab6765b4d462f55e613f1f5fec6d081c690d44afd1fc4af635f917078f4 1,773,221 bytes
 - `text.txt` 2e8efe1d3d72efc2c7357b939ba6e0a4ee639b3fb3cde21efaa44f5f60a00e51 15,452 bytes
+
+### [Vulnerabilities in PHP (PHP2Shell) Affecting Multiple QNAP Products - Security Advisory | QNAP](qnap-qsa-26-18/index.html) [original ↗](https://www.qnap.com/en/security-advisory/qsa-26-18)
+
+**QNAP** · vendor · primary · captured · published 2026-10-22 (release date on the page) · added by `curator@php.newsroom` · `qnap-qsa-26-18`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191720Z. QNAP products affected; take NAS offline (primary)
+
+capture 20261022T191720Z · HTTP 202 · https://www.qnap.com/en/security-advisory/qsa-26-18- `headers.json` aa08aaebb6e26e71a93712249fa6ad431e8d910a925ae174fa44959c2321f018 739 bytes
+- `provenance.json` 9ed0a563b1c7b28729c903b027ae9f66d5e825faa7b14caab83cf5c699111d72 1,555 bytes
+- `rendered.html` a49d81def04843e1e2bf1e474dfd384989bb9eeb992dc1cb33ca624a08fa4c42 209,652 bytes
+- `screenshot.jpg` 775851d837e4ee7b5e48ca2f7be725c84564336a7f215265a5861185023bc955 401,134 bytes
+- `text.txt` 45f3ae53efc4028d20fc6d29bf21d91f84ff1bf962beef861d70be6f72d04593 7,261 bytes
+
+### [QNAP Statement on Critical PHP Vulnerabilities (PHP2Shell): Assessment and Mitigation Guidance | QNAP](qnap-statement-php2shell/index.html) [original ↗](https://www.qnap.com/en/security-news/2026/qnap-statement-on-critical-php-vulnerabilities-php2shell-assessment-and-mitigation-guidance)
+
+**QNAP** · vendor · primary · captured · published 2026-10-22 (dateline Taipei) · added by `curator@php.newsroom` · `qnap-statement-php2shell`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191720Z. QNAP PSIRT saw scanning and attack attempts (primary)
+
+capture 20261022T191720Z · HTTP 200 · https://www.qnap.com/en/security-news/2026/qnap-statement-on-critical-php-vulnerabilities-php2shell-assessment-and-mitigation-guidance- `headers.json` c253a6f6b0a50935f373029d625f1816fe441abf971eae8fab073bd5ddd84df6 5,433 bytes
+- `page.html` 6d7e8996b605faaaa6df09930f6790a531f355fbe2fe16f5ffef4c1e93ebb781 169,112 bytes
+- `provenance.json` 5bde08241c094606508438d02703564d9ee44a9f24dff12bd8d67a88dba8840e 1,790 bytes
+- `rendered.html` 70a37c635627cbe7026e77c82a9d45f14fd116c035e5e8fb06787c951812aa94 200,745 bytes
+- `screenshot.jpg` 4c6ebb3a51a831ef15bcb4d9b250468467353cce02251de6b8eda4e444665fad 320,971 bytes
+- `text.txt` 7ef4fbb68cf300de902a7ae7193b4d2e5ce539e4b21c4040a0e6fcabf7e02e2f 4,716 bytes
 
 ### [403 Forbidden](qualys-blog-php-preannounce/index.html) [original ↗](https://blog.qualys.com/vulnerabilities-threat-research/2026/10/20/php-announces-critical-security-release-for-two-vulnerabilities)
 
@@ -1388,6 +2130,25 @@ capture 20261022T113014Z · HTTP 200 · https://www.recordedfuture.com/blog/php2
 - `rendered.html` ca1457d1d590d21807ebf2cd64d30304ff3607b8171472c2d205a8fd4365a37c 178,844 bytes
 - `screenshot.png` cd745753c1ec28fcaf45c4b291d01045bdf86c88cbd0184e664e196bdd0f8ddc 2,871,582 bytes
 - `text.txt` f9cb130d64545fe46a477766dce91126405f12d99e8051aff2c05e084a904fe9 18,444 bytes
+capture 20261023T012042Z · HTTP 200 · https://www.recordedfuture.com/blog/php2shell-vulnerability-exploitation- `headers.json` df92af5f1f15a9b85ac768da0a431d3d7aeadec8e8e1068f4d7d57e76f9b56b1 1,305 bytes
+- `page.html` cd54cc52e04832d03115211f9aca789fb9d4861a8460a25a4e6ccc45f2d11f9b 27,860 bytes
+- `provenance.json` 9c026e4540e485d466a7ebfb9befe5fe2ea5a26a87647d09af9bbb5d950e3209 1,706 bytes
+- `rendered.html` e4e4f2824c8737f38089591489f1357b6b278f491cc344717f0a01d6de090dee 91,816 bytes
+- `screenshot.jpg` 68cd85ed3f9dc7d419ee012d3ab12f44d57604bffc4dad62486f71cd98e5a098 899,644 bytes
+- `text.txt` 39efeb7b8ae8152f98ccf53437e4070f12339a7e718570de9f01ac96d23b0622 17,215 bytes
+
+### [Major European Websites Offline Amid Critical PHP Security Flaws](reuters-factbox-gbaf/index.html) [original ↗](https://www.globalbankingandfinance.com/factbox-websites-taken-offline-over-php-risks/)
+
+**globalbankingandfinance.com** · news · secondary · captured · published not stated · added by `collector-news` · `reuters-factbox-gbaf`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081002Z · HTTP 200 · https://www.globalbankingandfinance.com/factbox-websites-taken-offline-over-php-risks/- `headers.json` 0f82cac11c2c31881c8242d2bf90ed1ebc349bbb702d299abb0e94c2b2fc1880 1,330 bytes
+- `page.html` 8b08fae52d13b125e5261388eb67d5e549c6ee18d44c3d6d93c35a155d104314 211,274 bytes
+- `provenance.json` 0ec20c99fc8c619438aa226c1087f5d008ef9a7db541e19985ae4af428a0042f 1,066 bytes
+- `rendered.html` cdcd3539791cbe2e6d50b9b6206835f8ccf4f1fb48ed26adad8b43e163ba64f4 225,149 bytes
+- `screenshot.png` be60a7208d66854ef7c6ec0949fbd543dea20f03eb2f712803865e01ee11e6ce 3,384,956 bytes
+- `text.txt` 9703a69c2faf52b56bf06d29691f5173128b527dc9b76db27050db282fff262b 8,772 bytes
 
 ### [Global Websites Offline Amid PHP Security Flaws: Finance Sector Impact](reuters-factbox-websites-offline/index.html) [original ↗](https://www.globalbankingandfinance.com/factbox-websites-taken-offline-over-php-risks/)
 
@@ -1415,6 +2176,45 @@ capture 20261022T113033Z · HTTP 200 · https://www.rijksoverheid.nl/actueel/nie
 - `screenshot.png` 0b023dc6a8fca71e18932ef0a168051841129928264b33c1937fff623cab4457 435,918 bytes
 - `text.txt` 7e10bcf7cb44e5f753e057d6a6d5f07747f231c066728373806fa14d80bff5b3 3,720 bytes
 
+### [Websites go dark as AI exposes critical security flaws](rte-reuters-websites-go-dark/index.html) [original ↗](https://www.rte.ie/news/world/2026/1021/1596231-eu-cybersecurity/)
+
+**rte.ie** · news · secondary · captured · published not stated · added by `collector-news` · `rte-reuters-websites-go-dark`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081010Z · HTTP 200 · https://www.rte.ie/news/world/2026/1021/1596231-eu-cybersecurity/- `headers.json` f5b5b1d3b6b258e2668d1a3047ddb2a89d50c42adc9c44c86ef90afd467c1bc3 1,235 bytes
+- `page.html` 2945a45c012dc5bd698063f5c9a20f07fd33bcd8caf04a6367975d09fd13d668 113,113 bytes
+- `provenance.json` 76e5dfc557b4b3c9272c645b3194acdc2db8d1133b8afbb477a1aaed2ffb15d8 1,022 bytes
+- `rendered.html` 2e18e85345a2955f871b8555cb252692d6dbcf108944014933fa45e2c30fc839 332,598 bytes
+- `screenshot.png` 17168dd7f381156936039432350ee18a1b46c8e6f4906d21645fc0fcf7bf2a1f 1,313,851 bytes
+- `text.txt` 99bb92662561bd292bc1f931e1e6a22f14756140e4f67365d75961f4b05bb653 9,940 bytes
+
+### [PHP-Lücke: BSI warnt vor Cyber-Gefahr – Firmen oft unwissend](rtl-leben-digitales-php-luecke-bsi-warnt-vor-cyber-gefahr-fi/index.html) [original ↗](https://www.rtl.de/leben/digitales/php-luecke-bsi-warnt-vor-cyber-gefahr-firmen-oft-unwissend-id31448587.html)
+
+**RTL.de** · news · secondary · captured · published 2026-10-22T19:41:37 · added by `curator@php.newsroom` · `rtl-leben-digitales-php-luecke-bsi-warnt-vor-cyber-gefahr-fi`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 6 new items in de: RTL (dpa-based) reports the BSI has found no cases of exploitation so far and believes many operators have patched. Digital Minister Wildberger praised BSI and ITZBund and said shutting down sites was right; the Interior
+
+capture 20261022T181608Z · HTTP 200 · https://www.rtl.de/leben/digitales/php-luecke-bsi-warnt-vor-cyber-gefahr-firmen-oft-unwissend-id31448587.html- `headers.json` 321a40764cf371471d79d6f2d6b9f3227260276dfcb529eebfcd688f7e5ad5b9 1,618 bytes
+- `page.html` abe3016b1607d34a0956dd46eac3453997dad2d79d292600a3c1c90d5be02960 1,203,929 bytes
+- `provenance.json` 75a301ad356d6e1a61261537316a74a33e17dc037d70875abd177eb6b3483efa 1,796 bytes
+- `rendered.html` b15ecaa96265133b0343466847e71af449c249b10ed1a8622c8f2e0a57f90ce3 1,225,662 bytes
+- `screenshot.jpg` be70d324955662023d26ab0cc1419cadafc6d450f8bd3517d4fa5aab90fe120f 119,816 bytes
+- `text.txt` a69da5f39287ad4307292733dfaf03317eb57edfcc30fc1959d41922af77bcf7 7,400 bytes
+
+### [Alerta por fallos críticos en PHP: riesgo en servidores web](rtve-noticias-20261022-fallos-criticos-php2shell-vulnerabili/index.html) [original ↗](https://www.rtve.es/noticias/20261022/fallos-criticos-php2shell-vulnerabilidades-servidores-alerta-ciberseguridad/17277748.shtml)
+
+**RTVE.es** · news · secondary · captured · published 2026-10-22T01:49:29+02:00 · added by `curator@php.newsroom` · `rtve-noticias-20261022-fallos-criticos-php2shell-vulnerabili`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 5 new items in es: RTVE describes the global alert, Spain's INCIBE critical notice and the NSA warning. It lists precautionary shutdowns: ITZBund in Germany, French prefecture sites, Belgian portals, Finland, and Czechia's government page.
+
+capture 20261022T181608Z · HTTP 200 · https://www.rtve.es/noticias/20261022/fallos-criticos-php2shell-vulnerabilidades-servidores-alerta-ciberseguridad/17277748.shtml- `headers.json` b5dad02e568f4ab4cfd809b3fe342ed8cf08defddf91510779f5afe2637dc887 606 bytes
+- `page.html` af0bf01237b873ef9dcabdb4816360d6bd3f4ffd3ec09ada675afefde44af993 95,615 bytes
+- `provenance.json` 6201b6d432f17cc9fc0b4d70179f355634fd09105282bb90ee5d8e51d9339aec 1,833 bytes
+- `rendered.html` 3ef986deb6a9e2970044a3f98bb0ecf6bf0dce0baa34426bbaf3e2054bde3fb8 179,111 bytes
+- `screenshot.jpg` b96238b874f2f01b6987479aee95c2e60d58e80ffa155472735187d0e3e796b0 829,185 bytes
+- `text.txt` 0c7f8e327e5c8bd0d5c3b0c7c6ab7cb7ef3a383f5da908cecc7da96ba7a19ccf 11,153 bytes
+
 ### [PHP2Shell: How Hard Is It to Exploit, and What PHP Is Changing | Safeguard Blog](safeguard-how-hard-to-exploit/index.html) [original ↗](https://safeguard.sh/resources/blog/php2shell-how-hard-to-exploit-php-foundation-changes)
 
 **Safeguard (vendor blog)** · vendor · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `safeguard-how-hard-to-exploit`
@@ -1441,6 +2241,32 @@ capture 20261022T111928Z · HTTP 200 · https://safeguard.sh/resources/blog/php2
 - `screenshot.png` ec0109ce98dbf571daf5c08aeff60ae7e9957e2fc907b50f17bd9e196ef0c621 3,153,430 bytes
 - `text.txt` 664a398aae1f5c1df20e43deb46b962fd818b4403c864de8cab55f23c79c193c 36,136 bytes
 
+### ["Massive Sache": Folgen der PHP-Sicherheitslücke für heimische Wirtschaft noch unklar - Salzburg24.at](salzburg24-news-oesterreich-massive-sache-folgen-der-php-sic/index.html) [original ↗](https://www.salzburg24.at/news/oesterreich/massive-sache-folgen-der-php-sicherheitsluecke-fuer-heimische-wirtschaft-noch-unklar-art-342173)
+
+**salzburg24** · news · secondary · captured · published 2026-10-22T13:23:30+02:00 · added by `curator@php.newsroom` · `salzburg24-news-oesterreich-massive-sache-folgen-der-php-sic`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 5 new items in de: Salzburg24 (APA-based) says the damage to the Austrian economy cannot yet be estimated. The Interior Ministry reports no confirmed successful attacks so far; WKÖ's Markus Roth calls it 'a massive thing', VÖSI urges check
+
+capture 20261022T181608Z · HTTP 200 · https://www.salzburg24.at/news/oesterreich/massive-sache-folgen-der-php-sicherheitsluecke-fuer-heimische-wirtschaft-noch-unklar-art-342173- `headers.json` 6430448bafcff3d14b3338abb5a7e0b688efd672d89994532cd0a8a87f1b831c 458 bytes
+- `page.html` 98c9bd3cddf8b6da466f829144d927edfb8d2fcd418ed67f70032b634a635b4f 112,344 bytes
+- `provenance.json` ba66f55c36702b317066bdcdf72907e8c7ec45aabb5d7026df03f879a0bebc28 1,910 bytes
+- `rendered.html` 46d378c2461d705290e7367aa3267dbbbc33ebc9ac5ea969430d6697a5d5efd5 119,883 bytes
+- `screenshot.jpg` d42f5c02ab3a0d2c4e847c973e018677438181c10a51ff27163b2d60e9c5e577 535,431 bytes
+- `text.txt` c08f50a226214f7bc04c16d3d05dce23038cc1a460fa4349860046d0f0a1e74f 6,818 bytes
+
+### [エンタメサイトDMMがサービス停止、外部システムの脆弱性への対応 「情報漏洩は無し」 - 産経ニュース](sankei-dmm-service-halt/index.html) [original ↗](https://www.sankei.com/article/20261022-ARAQ7L3PNVFVLMMEJUZW4LJ4A4/)
+
+**産経ニュース** · news · secondary · captured · published 2026-10-22T11:11+09:00 (as stated on the page) · added by `curator@php.newsroom` · `sankei-dmm-service-halt`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191536Z. DMM halted services for an "external software vulnerability", would not confirm PHP
+
+capture 20261022T191536Z · HTTP 200 · https://www.sankei.com/article/20261022-ARAQ7L3PNVFVLMMEJUZW4LJ4A4/- `headers.json` fa65e324a3b7cf7c1196a64c9fd86793a9917fed803cb87912c7989f3d1b642a 1,835 bytes
+- `page.html` 9a5b021f7f274c1239b30a485f69d7cb47c8927c5282b90674b0b53df0a9d521 214,258 bytes
+- `provenance.json` 4704131fdfdbc8c60e3335bfd3137a614a4230409e82de18c060c74c538c3664 1,671 bytes
+- `rendered.html` a1873be5089d2750c1332f457f1981689089867c7ec13aa53a9fd51505b2cff6 380,702 bytes
+- `screenshot.jpg` 571e296c44ad89cc5f1581a63007d9b169a0b5556ce6633166924deb243cca71 91,325 bytes
+- `text.txt` 8baf5de68d8527ed2167041c1b91cafb575afa7165abb55cab5566fcd9e2d610 5,432 bytes
+
 ### [PHP2Shell: Critical PHP RCE (CVE-2026-109618, CVE-2026-109619) | Sansec](sansec-research-php2shell/index.html) [original ↗](https://sansec.io/research/php2shell)
 
 **Sansec** · researcher · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `sansec-research-php2shell`
@@ -1453,6 +2279,19 @@ capture 20261022T113104Z · HTTP 200 · https://sansec.io/research/php2shell- `h
 - `rendered.html` 31f57c6c03a271c045e195256e2d406614c505ca3c3d07ce40c299983be0cc0a 37,783 bytes
 - `screenshot.png` 21518bc8c146169d1d397668488e88840c646c1286340aa20808740f0538eed8 1,506,901 bytes
 - `text.txt` 281e3c508909a7002ae17602fd885f6acbd78e3766d8de3153f1139c7be8d134 9,554 bytes
+
+### [Edinburgh council website offline amid global cyber security alert](scotsman-edinburgh-council/index.html) [original ↗](https://www.scotsman.com/news/edinburgh-council-website-offline-amid-global-cyber-security-alert-9302652)
+
+**scotsman.com** · news · secondary · captured · published not stated · added by `collector-news` · `scotsman-edinburgh-council`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081043Z · HTTP 200 · https://www.scotsman.com/news/edinburgh-council-website-offline-amid-global-cyber-security-alert-9302652- `headers.json` 5611f99e1d303b8595b1fb461712ec67fcf267031ac6236b0c9132ed03f58115 1,606 bytes
+- `page.html` 85fe7278d49241428ba4260ba45ef05404b05a13506d4fd2f84ff3002f15edc3 262,891 bytes
+- `provenance.json` f5286c2605672538c7198984bab2fe42a0c6eaeaddb14ec027f66d04d8d19c7d 1,110 bytes
+- `rendered.html` c0b3ace7431c2f7a00313b57ca3b4f7e65b274431ac45fd1653c2281e8368546 545,168 bytes
+- `screenshot.png` d762e99ddb102895bafd39a1da11a34a4d00e0a6d3be8d8106a67a3ef473f1a3 1,619,065 bytes
+- `text.txt` 3598df2ac437acced78bcb4e6e3d00d9fefacec158ff9f8fcc2cbcb24f41d702 6,887 bytes
 
 ### [Edinburgh council website offline amid global cyber security alert](scotsman-edinburgh-council-offline/index.html) [original ↗](https://www.scotsman.com/news/edinburgh-council-website-offline-amid-global-cyber-security-alert-9302652)
 
@@ -1467,6 +2306,19 @@ capture 20261022T112150Z · HTTP 200 · https://www.scotsman.com/news/edinburgh-
 - `screenshot.png` bb1c80d6965bbdc9c3143e0ff88f84de54ca8c9af02419c854993868a6452a05 2,399,966 bytes
 - `text.txt` fcdbc39d82bfd477159635a160dc431f569345ad40cd7b1f23b050917f41ddd6 8,754 bytes
 
+### [Misbruik van PHP2Shell-lek gemeld, DigiD en andere sites weer online - Security.NL](securitynl-misbruik-gemeld/index.html) [original ↗](https://www.security.nl/posting/958424/Misbruik+van+PHP2Shell-lek+gemeld%2C+DigiD+en+andere+sites+weer+online)
+
+**Security.NL** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `securitynl-misbruik-gemeld`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191411Z. "Abuse reported" headline that is attempts in the body; Previdian: attackers failed to execute PHP
+
+capture 20261022T191411Z · HTTP 200 · https://www.security.nl/posting/958424/Misbruik+van+PHP2Shell-lek+gemeld%2C+DigiD+en+andere+sites+weer+online- `headers.json` c37024d430f2b3fa5c95ea5683e5940449e88b7fd413a8b988d5b319ec8994cc 702 bytes
+- `page.html` cd6e2c2562a334ee538a1077307216c177a9519ccade2c2d0a9d40f148343ee7 74,522 bytes
+- `provenance.json` f78382e73afa9d49b87094527fd7370934f9a39f7e1272487b9d005ddc94f61d 1,719 bytes
+- `rendered.html` 5e59252be35ff9eaeb2d499c3533191bc9cdde4e6e5e5afcfc01a5578845d3b4 74,281 bytes
+- `screenshot.jpg` d5216b9d695d581b8a409a63a898b4f230cb56b9ba77ec1347bb252de5ffd0c2 947,395 bytes
+- `text.txt` 95d1565c5959e61fa188ea5af37ef0518b3c171d442554cbee86484dd03ddd09 22,446 bytes
+
 ### [PHP2Shell Exploitation Started Days Before Patches - SecurityWeek](securityweek-exploitation-days-before/index.html) [original ↗](https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/)
 
 **SecurityWeek** · news · secondary · captured · published 2026-10-22 · added by `claude-story-site` · `securityweek-exploitation-days-before`
@@ -1479,6 +2331,12 @@ capture 20261022T112314Z · HTTP 200 · https://www.securityweek.com/php2shell-e
 - `rendered.html` e493b8fc733dacfc40164c4bb153884e96b82e984e2e3c738c13c536a5edce73 259,915 bytes
 - `screenshot.png` e5454077149da3ca0ea83a39c68e30ce9f6f984788c53349e104a0d45dea3fb9 2,097,665 bytes
 - `text.txt` ac663f2d9dbd0197d3721e1756bdc12e2491cb512eaa32197592ff9792f2632c 13,376 bytes
+capture 20261023T012042Z · HTTP 200 · https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/- `headers.json` b01a0edd023e17c2f04a4913c33e56ac238c88c8e9485fb7626d944108450f84 1,154 bytes
+- `page.html` f647ac130d515c7b5c236e72825fe19525346633a458f5418dd0c7f086b1f105 168,791 bytes
+- `provenance.json` 9c39d001855e1787e2c3cca3b9f32ebd1eb7ed763fd137f8650e9e3a183e0d98 1,755 bytes
+- `rendered.html` dba965e893cc4ff6b487e9ba323d2d44187ec4dec5f54b7a12701b556e6c1f06 168,220 bytes
+- `screenshot.jpg` 9377de12373bc83afe1223d09bfd971c7e094cedf8d6ed2d183c3454b734a04e 745,141 bytes
+- `text.txt` b922b47f8fab0fa86af000c740795a67ad78d0d4cdc6a57a316408988acb5835 12,604 bytes
 
 ### [PHP2Shell Patches Land as First Exploitation Attempts Hit Sensors - SecurityWeek](securityweek-first-attempts-sensors/index.html) [original ↗](https://www.securityweek.com/php2shell-patches-land-as-first-exploitation-attempts-hit-sensors/)
 
@@ -1545,6 +2403,45 @@ capture 20261022T113134Z · HTTP 200 · https://davidlopezkurtz.substack.com/p/t
 - `screenshot.png` 4f94dc2329c6fd545b1a600cccfc7b2ce2db41deb2b8288403a9eec27e63dd56 3,979,940 bytes
 - `text.txt` cb3714dc12f96c969959784164a40f12aa923b46cf56df83aa950a9ea2573330 33,564 bytes
 
+### [Sicherheitslücke: „Millionen“ Hacker-Versuche: Viele Webseiten noch offline](tagesspiegel-dpa-noch-offline/index.html) [original ↗](https://www.tagesspiegel.de/gesellschaft/medien/dpa-sicherheitslucke-millionen-hacker-versuche-viele-webseiten-noch-offline-16186782.html)
+
+**tagesspiegel.de** · news · secondary · captured · published not stated · added by `collector-news` · `tagesspiegel-dpa-noch-offline`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081509Z · HTTP 200 · https://www.tagesspiegel.de/gesellschaft/medien/dpa-sicherheitslucke-millionen-hacker-versuche-viele-webseiten-noch-offline-16186782.html- `headers.json` 86ad8f46f4091f6f34bd73d9618834a0d24ae6b34d21aff82c63dddd22685989 2,206 bytes
+- `page.html` 964ba8f9a0f47fa611d089cc83f40fdc86ece4c050c602c0dc4661e681cfe8e0 427,516 bytes
+- `provenance.json` 930f043564eecbeff95506cb2928c7e186e06d30a7ce31a08ac09d6d78701805 1,193 bytes
+- `rendered.html` a85f172a5b4be987ce218fb4e2a01b1db2301e6d9daa9c09735d00f16245c082 395,185 bytes
+- `screenshot.png` 9716d20f18ff56bd31a88188f81e8a38aef651c6e4bedbe0e81f190dfba22755 740,028 bytes
+- `text.txt` 0255857572a7411c4f2c88bf5ff7fd00a0bcb89cfca6f84234f0a55999ff3c79 5,013 bytes
+
+### [日本政府全力應對「PHP」漏洞 通過SNS廣泛提醒注意](tchina-kyodonews-articles-15266/index.html) [original ↗](https://tchina.kyodonews.net/articles/-/15266)
+
+**共同網** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `tchina-kyodonews-articles-15266`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 5 new items in zh: Kyodo (Chinese edition): the Japanese government is coordinating its PHP response through the National Cybersecurity Office (NCO). The NCO posted on X on 21 Oct and advised temporarily stopping websites that cannot be pa
+
+capture 20261022T181608Z · HTTP 200 · https://tchina.kyodonews.net/articles/-/15266- `headers.json` 41b14dbd6bfd7cae983a3c789bb5fcc6bb1b7fde60d2a962ccc64dd2d3b9abf5 629 bytes
+- `page.html` 0992c7a3d2e34db52eba96c7ccd42dd28971bb55794a61bfb7fa80da9b059ebf 41,675 bytes
+- `provenance.json` dd348f2f793e79fab81b7510d109d933794bb63abcf9d7b3861abb7157af9300 1,577 bytes
+- `rendered.html` 05a6b62c1ba5b3b6ed8aa822340563f5400ac6b220527930f64e1437ca0593a8 145,362 bytes
+- `screenshot.jpg` 0221e66ed7476307936a6f062a8747fb6dc8c022648172564a8333d513ea7306 259,279 bytes
+- `text.txt` f638db697df7eced152a6cc515ffdad78ae8f0ae06c827284e7f40cc04652173 4,377 bytes
+
+### [PHP2Shell disclosure unravels after leaks forced early patch drop | TechTarget](techtarget-disclosure-unravels/index.html) [original ↗](https://www.techtarget.com/cybersecurity/news/366652613/PHP2Shell-disclosure-unravels-after-leaks-forced-early-patch-drop)
+
+**TechTarget** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `techtarget-disclosure-unravels`
+
+Promoted from the source watch (oq9gflln), snapshot 20261023T012042Z. Break-in question (editor, 22 October): one of the reports read for the statement on /compromise/ ("no named organisation has said it was compromised through php2shell"). Break-in question (editor, 22 October 20:49 UTC): "hard vulnerabil...
+
+capture 20261023T012042Z · HTTP 200 · https://www.techtarget.com/cybersecurity/news/366652613/PHP2Shell-disclosure-unravels-after-leaks-forced-early-patch-drop- `headers.json` 87d33c4caf1882ea5e9811dcd54795674e0daed96eda7777f7747cbeee38db5a 649 bytes
+- `page.html` 0223170b84edc3cf77a3901e446e8f957010d65649c750657d38ee5bf934a171 328,498 bytes
+- `provenance.json` 69ff5c6742e78f811ceeedfb7649bef62e0bd8b0e55f6aa02961068734c0df60 1,749 bytes
+- `rendered.html` 0fc25e764308756339016f1356395c2d0c9df502cb917185f4a3f0c7740568cf 353,658 bytes
+- `screenshot.jpg` bb1a9c86e83b49f116612264096508106615025ce4df63205f5f31aaa75c0d6a 729,081 bytes
+- `text.txt` c186055de6bb1abc70e426281fe382563363ff7b1fe80ba32542b4b9a45f9374 10,677 bytes
+
 ### [PHP accuses Chainguard in PHP2shell](techzine-php-chainguard/index.html) [original ↗](https://www.techzine.eu/news/security/145182/php-accuses-chainguard-in-php2shell/)
 
 **Techzine Global** · news · secondary · blocked · published not stated · added by `collector-researchers` · `techzine-php-chainguard`
@@ -1564,6 +2461,19 @@ capture 20261022T112124Z · HTTP 403 · https://www.techzine.eu/news/security/14
 - `screenshot.png` 6127fef1895a985b7bcd7168fff19347a8ca8f67cfc409d39a802caebc1fce9c 38,923 bytes
 - `text.txt` 93f61d068317f6ef84245b70a7d8b8ea0f4b1d351af10fc89a31cbe4ae7eb1da 263 bytes
 
+### [Exposição de Portugal ao PHP2SHELL: Em trinta segundos - Tek Notícias](tek-sapo-opiniao-artigos-exposicao-de-portugal-ao-php2shell/index.html) [original ↗](https://tek.sapo.pt/opiniao/artigos/exposicao-de-portugal-ao-php2shell-em-trinta-segundos/)
+
+**SAPO Tek** · news · secondary · captured · published 2026-10-22T07:50:00+00:00 · added by `curator@php.newsroom` · `tek-sapo-opiniao-artigos-exposicao-de-portugal-ao-php2shell`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 5 new items in pt: In a TEK Sapo opinion piece, Sérgio Silva of CyberS3c measures Portugal's PHP2Shell exposure. He finds 58% of 391 public-sector sites show PHP and many run long-unsupported versions, Shodan sees 2,339 Portuguese PHP serv
+
+capture 20261022T181608Z · HTTP 200 · https://tek.sapo.pt/opiniao/artigos/exposicao-de-portugal-ao-php2shell-em-trinta-segundos/- `headers.json` 121c973fd73d36bc65dfc31653a2ff19422a7b8e25d1f328f86411b7d8c3c77d 1,738 bytes
+- `page.html` 8d41c37fca5cebfd108617002fc0317fffc002ca8c41b3b9a66fb17c2c45ba89 353,947 bytes
+- `provenance.json` 5f6cbedc7a1d7e479d21d57a1c6ac4dff7f7f572029fd0e0f56a7405c4ba6e25 1,778 bytes
+- `rendered.html` 72eded33521a415c81fd37e27d2afe80e2d4e2c4c14c08faad6584dbb4c0a2fc 373,282 bytes
+- `screenshot.jpg` 83bdcf2750a1108c7ef489988c10baeed1011c19c18e79b17e3a7e86acf6e14d 902,271 bytes
+- `text.txt` 7203d6e735dd3989c864ca946af9c9743d051148d4c016d9fc4c0af587b4023a 18,453 bytes
+
 ### [php2shell (CVE-2026-109618, CVE-2026-109619): Critical PHP RCE FAQ | Tenable®](tenable-php2shell-faq/index.html) [original ↗](https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote)
 
 **Tenable** · vendor · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `tenable-php2shell-faq`
@@ -1576,6 +2486,32 @@ capture 20261022T112331Z · HTTP 200 · https://www.tenable.com/blog/php2shell-c
 - `rendered.html` bbc941dd99bd25fbb24457889bb89c0cd2213187cc104c491b15a86ad1167425 469,247 bytes
 - `screenshot.png` fb42572ffc60b269206740e6d85216b9fa06d7226bfb49682d148b44740c897c 2,222,099 bytes
 - `text.txt` 10d98694b9c0243efaf17de612d27de215138873b711598eae3f68ceb9b11b54 16,528 bytes
+
+### [Hackers pile on PHP2Shell as AWS reveals attacks began before disclosure](the-register-hackers-pile-on-php2shell/index.html) [original ↗](https://www.theregister.com/cyber-crime/2026/10/22/hackers-pile-on-php2shell-as-aws-reveals-attacks-began-before-disclosure/5304749)
+
+**The Register** · news · secondary · captured · published 2026-10-22T12:15Z (page metadata) · added by `curator@php.newsroom` · `the-register-hackers-pile-on-php2shell`
+
+Promoted from the source watch (oq9gflln), snapshot 20261023T012042Z. Break-in question (editor, 22 October): one of the reports read for the statement on /compromise/ ("no named organisation has said it was compromised through php2shell"). Break-in question (editor, 22 October 20:49 UTC): Hadrian "exploit...
+
+capture 20261023T012042Z · HTTP 200 · https://www.theregister.com/cyber-crime/2026/10/22/hackers-pile-on-php2shell-as-aws-reveals-attacks-began-before-disclosure/5304749- `headers.json` 3cfdc7a18e4e95df52e618a5577820ba9581c24d8855b4d3aecd33ff83bcc675 681 bytes
+- `page.html` 148ef10bfbb853f07c9a557ad0fcdcc0e9f426031b2db8b35ef02eb74e388e48 177,151 bytes
+- `provenance.json` 1ec8e239956f02724e1a998759c4233e281a4bec4a595c22bba308b9d01a7171 1,787 bytes
+- `rendered.html` 38861fc6b57607a8dfa8f014cad3832159f9b54efa5f873ba6a8fc63016cfe23 191,595 bytes
+- `screenshot.jpg` 770a3106cd4f7fc29127787f5dd14f505c0c3919890e7ed4466f4e5ab5a8e3b6 717,098 bytes
+- `text.txt` 84de32feb23a6eb85ee2770c86b383a8219f0adcf22756f9b38c00a680f09a13 9,167 bytes
+
+### [Everything we know so far about the PHP2Shell vulnerability | The Verge](the-verge-php2shell-websites-down/index.html) [original ↗](https://www.theverge.com/tech/1016574/php2shell-security-vulnerability-websites-down)
+
+**The Verge** · news-live · secondary · captured · published 2026-10-22T15:12:27Z (modified 16:49:48Z, per the page's metadata) · added by `curator@php.newsroom` · `the-verge-php2shell-websites-down`
+
+Promoted from the source watch (oq9gflln), snapshot 20261023T012042Z. Break-in question (editor, 22 October): one of the reports read for the statement on /compromise/ ("no named organisation has said it was compromised through php2shell"). Break-in question (editor, 22 October 20:49 UTC): PHP Foundation E...
+
+capture 20261023T012042Z · HTTP 200 · https://www.theverge.com/tech/1016574/php2shell-security-vulnerability-websites-down- `headers.json` 72488aee5271c869c30dbc34fd1f73be05596b76500d2d7c01afbd7b5b326334 1,261 bytes
+- `page.html` f55d379b157610b1272175bd8026288fe5bac8641b3baaf66e69bb6ebf9a784f 270,997 bytes
+- `provenance.json` f1547601bdcc8989fbbe161f438dfc162581a8ba708a13b4d8ece17d4f022eff 1,677 bytes
+- `rendered.html` 4dce1bbf4c543244209fdb9ff0730f6ddf7ed9b7e83ef7a59372e028ca555129 464,122 bytes
+- `screenshot.jpg` 8b53a0fc3da806d09328a78fdf251eea67a748f0ac8bda9783fafee8fa05603a 591,159 bytes
+- `text.txt` 1a9a20537e477cc84bdd688c3d13f165e980a7bae0aa54bd2f88011d32d3b3d3 8,601 bytes
 
 ### [Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed](thehackernews-php2shell-4days/index.html) [original ↗](https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html)
 
@@ -1629,6 +2565,19 @@ capture 20261022T113158Z · HTTP 200 · https://therecord.media/php-foundation-s
 - `screenshot.png` 31f0aeaac3e78e1ab3c579a6217361b9148b439f02245b029c43c19d4f7f759a 1,498,927 bytes
 - `text.txt` 28c72344e03a5a79b2ee018193bbd930283c78444f9cffcea3dc7a422c49051e 7,717 bytes
 
+### [Hundreds of websites taken offline as concern grows over two PHP vulnerabilities | The Record from Recorded Future News](therecord-php-warnings/index.html) [original ↗](https://therecord.media/php-script-vulnerabilities-warnings)
+
+**therecord.media** · news · secondary · captured · published not stated · added by `collector-news` · `therecord-php-warnings`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T080854Z · HTTP 200 · https://therecord.media/php-script-vulnerabilities-warnings- `headers.json` bf9113e74b1e6fc5bdd612ddf58eda8304cdbe00ea65f0e32c62070fe5c48171 985 bytes
+- `page.html` cdc8d409db3a15177c95696d32903a6f181766a8f37ef3f114e63810f7adaf50 92,880 bytes
+- `provenance.json` 67050f29346e8aa3be54f2ab569c9e34e21f12f48d2f4458f9ff96f9e7c05dee 1,069 bytes
+- `rendered.html` 6b4ce2be2649726e849b9a114c3d0c6c1e9477082e820c0c1561f427cbad00d0 97,133 bytes
+- `screenshot.png` 7b41ac3613b3db9c15c197aef53bcda877ae332bff01b2155e5dbb4e5291927f 1,516,966 bytes
+- `text.txt` 39efe473da414c018f1d06c944097b5fbee7132a7cbc76df44a89656db344443 7,551 bytes
+
 ### [PHP blames supply chain security biz Chainguard for putting huge chunks of the web at risk](theregister-php-blames-chainguard/index.html) [original ↗](https://www.theregister.com/security/2026/10/22/php-blames-supply-chain-security-biz-chainguard-for-putting-huge-chunks-of-the-web-at-risk/5304611)
 
 **The Register** · news · secondary · captured · published 2026-10-22 · added by `claude-story-site` · `theregister-php-blames-chainguard`
@@ -1654,6 +2603,83 @@ capture 20261022T113213Z · HTTP 200 · https://tpo.nl/2026/10/21/php2shell-webs
 - `rendered.html` d32cd4732dc20dda8b4464a52f471b942ec7756397f0ff01d40dd7344843c936 407,728 bytes
 - `screenshot.png` 50d028e45666fd51dea41fe9359edc265ec4671d4ca742a6acc17eb2ef119a4d 1,351,320 bytes
 - `text.txt` 2ddfd8817abf25b62a1d65842ea2e1eda4c28468ef7c075bdcb2b736ab509dcb 3,796 bytes
+
+### [PHP-lek legt DigiD, MijnOverheid en Tweede Kamer plat | TPO.NL](tpo-tpo-nl-digid-offline/index.html) [original ↗](https://tpo.nl/2026/10/21/php2shell-websites-offline-digid-ncsc/)
+
+**TPO** · news · secondary · captured · published 2026-10-21T14:53:56+00:00 · added by `curator@php.newsroom` · `tpo-tpo-nl-digid-offline`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T171501Z. 6 new items in nl: TPO reports that NotuBiz, used by about 100 municipalities, went down first, followed by the Dutch Data Protection Authority, the Union of Water Boards, UWV's sick-leave tool, RTL, ANP, the Schiphol app, hospitals and KW
+
+capture 20261022T171501Z · HTTP 200 · https://tpo.nl/2026/10/21/php2shell-websites-offline-digid-ncsc/- `headers.json` d679fd249c5d952dda77dd7e6cacb7c092e618eb15c5e59246e6deaedfd6bfe4 903 bytes
+- `page.html` 1ad044bff8e96636aba6f7cd64ffc320eea5c69055aa087a1b96187ccb5cacad 233,569 bytes
+- `provenance.json` 01b81cb90dbf7aa36af6f95353411d042db7aaebbfc47685d58e68efa55540ae 1,577 bytes
+- `rendered.html` 115512a91059970f03be37577b59b1af81dd6f12a2e113783ecfa9740cfd65b0 406,102 bytes
+- `screenshot.jpg` c831463120c4b1e47b6e6d8123de97f6e1c5d84a5e959062aad715898eeee87c 348,035 bytes
+- `text.txt` 2ddfd8817abf25b62a1d65842ea2e1eda4c28468ef7c075bdcb2b736ab509dcb 3,796 bytes
+
+### [Milhões de servidores PHP expostos ao risco da falha PHP2Shell | TugaTech](tugatech-t93092-milhoes-de-servidores-php-expostos-ao-risco/index.html) [original ↗](https://tugatech.com.pt/t93092-milhoes-de-servidores-php-expostos-ao-risco-da-falha-php2shell)
+
+**TugaTech** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `tugatech-t93092-milhoes-de-servidores-php-expostos-ao-risco`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 5 new items in pt: TugaTech reports a global VirusTotal analysis of PHP exposure: about 5.1 million PHP IPs, of which 3.8 million have open ports and 1.1 million disclose their version. Only about 272,000 run supported branches, while abou
+
+capture 20261022T181608Z · HTTP 200 · https://tugatech.com.pt/t93092-milhoes-de-servidores-php-expostos-ao-risco-da-falha-php2shell- `headers.json` 9ba4e8c110dfec261e69ff9e30583f3035699374cdc4c8bbda36e6ffbd8be6a6 1,238 bytes
+- `page.html` 5eb2708e19df644429bd5ac2756cb2c61c3e5e6404055fe5e598966c814d6a35 94,257 bytes
+- `provenance.json` ce02f1eecf8e728dc52f46b35ef04cd30431f0d48c23a3a7ce338c973434e38f 1,787 bytes
+- `rendered.html` 3e2919e620909a26d898f060386cd197035237503335812de34a61a73a525b5b 447,588 bytes
+- `text.txt` 86e513bd05a0b5fdd5b9e959b368b60b23112bfffe99f7d9ae4097f42042cc26 8,239 bytes
+
+### [Due gravi falle in PHP mandano offline i siti web governativi](tuttotech-news-2026-10-22-vulnerabilita-php-html/index.html) [original ↗](https://www.tuttotech.net/news/2026/10/22/vulnerabilita-php.html)
+
+**TuttoTech.net** · news · secondary · captured · published 2026-10-22T16:41:29+02:00 · added by `curator@php.newsroom` · `tuttotech-news-2026-10-22-vulnerabilita-php-html`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 7 new items in it: TuttoTech reports government shutdowns in the Netherlands, France, Denmark and Finland, plus Canada, Wikipedia and the Internet Archive. It covers the AI discovery and AWS's early detection, and cites Censys data that 1.
+
+capture 20261022T181608Z · HTTP 200 · https://www.tuttotech.net/news/2026/10/22/vulnerabilita-php.html- `headers.json` a1887304d23ff9d1adb3f4ea5a2ab31d260170b5c193a662ee297f69283fd170 794 bytes
+- `page.html` d565db358e1e3174b9bee376602cb8654314a0e1b36d29b47478e8730b12c075 206,784 bytes
+- `provenance.json` 6f96056f90767210f819d3048606463447f461b4558c9d8f322f7a103687b0a3 1,660 bytes
+- `rendered.html` e555f146d258fe7ed6e95496fb0cd0daa3d9a4e40db7b332d71a234c93d20e22 211,746 bytes
+- `screenshot.jpg` 3b6f02b69024fd2de862fe8555157c453c8fef3e29b2b7f720ed33f226bff325 676,024 bytes
+- `text.txt` cd3f99c6c9f942595087eaa47ae8e71639cd4526a4453110ddd6a6365de3ae26 11,890 bytes
+
+### [Home – The City of Edinburgh Council](uk-edinburgh-council/index.html) [original ↗](https://www.edinburgh.gov.uk/)
+
+**edinburgh.gov.uk** · government · primary · captured · published not stated · added by `collector-gov` · `uk-edinburgh-council`
+
+A capture of the site itself on 22 October (HTTP 200, no error), taken to record whether it was up. Row written by claude-newsroom-lead from provenance.json: the collector-gov agent stopped before committing.
+
+capture 20261022T081940Z · HTTP 200 · https://www.edinburgh.gov.uk/- `headers.json` 5b0c2f2f2f2adac16e8aea91766e3bf330147b025746aefc77de7cbc15b28b80 621 bytes
+- `page.html` 91d7847df525e1b8df2d6e6df1ca60c56e5def200252796893d555bf256b5360 64,820 bytes
+- `provenance.json` 479d5602d1a8929b0e89a474628de89b7091e747ec84c503d26442211780c7fb 926 bytes
+- `rendered.html` 3b404767e790607c81648c674f2c3a6f2c1cf4e0b5f510c60372e7ced18b4f04 85,320 bytes
+- `screenshot.png` 612cdf82ad70d709d2f503e5bd0e4bbe0d95286c72e51e9e2dcceb4c4dda1a9d 934,354 bytes
+- `text.txt` eef60737c49dfded7a4cf9d305998ac3db3278cf7683c33adb852be709ee3b97 2,792 bytes
+
+### [Error 503](unige-site/index.html) [original ↗](https://www.unige.ch/)
+
+**unige.ch** · government · secondary · captured · published not stated · added by `collector-news` · `unige-site`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081909Z · HTTP 503 · https://www.unige.ch/- `headers.json` 45d418c6a1e13df367e5e13dfedc3c3513a91092939f89a4eb322a8f42577c36 156 bytes
+- `page.html` 4588df31ba75c0a04c05e175d37f8cc5a25d23d6db540d28a36f66fec14254f9 19,901 bytes
+- `provenance.json` 6c2047a27366d8503e5879f2b0f2c3944b2955861f810845b58c9686c7784120 871 bytes
+- `rendered.html` 1a4e507f0d762ff9c1a560b5ee5c9d49cefcab50d31cb7a71e961b34e611a01a 19,945 bytes
+- `screenshot.png` d1297a7617fc41349319a3083ffb2125087cc9d2d9e00983e19af3ea4f21a14d 41,256 bytes
+- `text.txt` 4bdf3d6eb3f0d3b621b80a040ea09917da9c7b4a435f5ab1d995009e57ed3e92 241 bytes
+
+### [Latest on PHP vulnerability as patch gets released, NSA issues warning](usa-today-php2shell-live/index.html) [original ↗](https://www.usatoday.com/story/news/nation/2026/10/21/php-vulnerability-php2shell-updates--live/92362348007/)
+
+**USA Today** · news-live · secondary · captured · published 2026-10-21T15:48:36Z (modified 20:32:11Z, per the page's metadata) · added by `curator@php.newsroom` · `usa-today-php2shell-live`
+
+Promoted from the source watch (oq9gflln), snapshot 20261023T012042Z. Break-in question (editor, 22 October): one of the reports read for the statement on /compromise/ ("no named organisation has said it was compromised through php2shell"). Break-in question (editor, 22 October 20:49 UTC): Cloudflare: atte...
+
+capture 20261023T012042Z · HTTP 200 · https://www.usatoday.com/story/news/nation/2026/10/21/php-vulnerability-php2shell-updates--live/92362348007/- `headers.json` 986913b020afb8175c71098e3c5ae0a1dd98b5e4946f4fdf9aaae4210d123029 3,227 bytes
+- `page.html` 2fd5c3af9f85319dbc2a5ed6bcee683a64e480fb1b923b9b1e311ee541d0f299 238,686 bytes
+- `provenance.json` 2b254772d214775a4d8b0ccdff400e4e98bca7f49709467c73bb13ada1d85c40 1,685 bytes
+- `rendered.html` cda4c0f9cd9bc2cb7444c5c9440efa87788e7228859c88e885d1b36f32d4ad76 1,301,168 bytes
+- `screenshot.jpg` 465c18afd0371a4b6dc4990243f5594fdacc682deec3820eeab7b9f325103966 538,847 bytes
+- `text.txt` ad354dc6d75d42e28616703bb73ff6a1e2d63576f6e94a3b63868e689a8cd355 18,287 bytes
 
 ### [watchtowr.com](watchtowr-php2shell/index.html) [original ↗](https://watchtowr.com/intelligence/php-remote-code-execution-php2shell/)
 
@@ -1681,6 +2707,19 @@ capture 20261022T111847Z · HTTP 200 · chrome-error://chromewebdata/- `headers.
 - `screenshot.png` cf4d945cb2330cd935081e252fc10d1572223e7a321e3d7f8c1e4e333a7737ee 21,632 bytes
 - `text.txt` 1837b6e2c766cabd6d7c651bca1ee976260ea128783d9173159ed738d75ff2ab 106 bytes
 
+### [PHP2Shell: Laut Bund keine Hackerangriffe in der Schweiz bekannt](watson-wirtschaft-schweiz-322033892-php2shell-laut-bund-kein/index.html) [original ↗](https://www.watson.ch/wirtschaft/schweiz/322033892-php2shell-laut-bund-keine-hackerangriffe-in-der-schweiz-bekannt)
+
+**Watson** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `watson-wirtschaft-schweiz-322033892-php2shell-laut-bund-kein`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T181608Z. 5 new items in de: Watson (Keystone-SDA) reports the Swiss Federal Office for Cyber Security (BACS) knows of no attacks in Switzerland and has no reliable figures, but confirms PHP applications in the federal administration were affected.
+
+capture 20261022T181608Z · HTTP 200 · https://www.watson.ch/wirtschaft/schweiz/322033892-php2shell-laut-bund-keine-hackerangriffe-in-der-schweiz-bekannt- `headers.json` d076c07a3a2f4ade16f12ce6a3fce3efb319f6cd5ab2345bc1ab3213346ba530 860 bytes
+- `page.html` 48610e805d8f58a45344032ed4eee18b235df468dd0fc08045b0f262cff47b63 690,448 bytes
+- `provenance.json` b2040a586fb4888425c0d92e3bafe5d567c47fd11670fc929e65fa54f07d585e 1,813 bytes
+- `rendered.html` eeb6716159d724161fe63d1b9ea9be7af3f313efd005a75a0c93e95848fc4725 872,416 bytes
+- `screenshot.jpg` e4169bfc29bd37d796008bffff79d8dc547e9c37deda057432bc710668e6950e 676,413 bytes
+- `text.txt` 6fe889c621b7f2e10f0d7e50707cf7b1293585ce07ebcb55833beb176c3e2ac5 8,097 bytes
+
 ### [Recent wiki downtime (PHP2Shell mitigation) | Weird Gloop](weirdgloop-blog-php2shell/index.html) [original ↗](https://weirdgloop.org/blog/php2shell)
 
 **Weird Gloop (cookmeplox)** · vendor · primary · captured · published 2026-10-21 · added by `claude-story-site` · `weirdgloop-blog-php2shell`
@@ -1694,6 +2733,19 @@ capture 20261022T111827Z · HTTP 200 · https://weirdgloop.org/blog/php2shell- `
 - `screenshot.png` 8014b0889ab8777b9c1ef8b2562da1fe3f4c2d0d858c2727dfe7d79acae1ceaa 369,760 bytes
 - `text.txt` 6bd492a6220e8eea4b3f89a098f09f546ccd4df2f38848c651a016aa215ae962 4,262 bytes
 
+### [Wikimedia Status](wikimediastatus-page/index.html) [original ↗](https://www.wikimediastatus.net/)
+
+**wikimediastatus.net** · news · secondary · captured · published not stated · added by `collector-news` · `wikimediastatus-page`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081850Z · HTTP 200 · https://www.wikimediastatus.net/- `headers.json` 43b0b5cfcac9a0b20aec9f323980f25fc68c73a4c28cd03779fd05bf1ef170df 2,587 bytes
+- `page.html` 932bc299819bdcdd36ea74d48217ba41c86685f95b95ef4e681ec151a52a9626 98,053 bytes
+- `provenance.json` 14eb7c6e76fec0a2d270f7346e0e6f69f27e24c14bb016e7413b30504cc18dc8 910 bytes
+- `rendered.html` bd57bc4e1fab2c0e051a4b7b577e24a15117ce0315f32b8c5ea5af9c6dc67706 232,435 bytes
+- `screenshot.png` 93eb032f0b0834ff0c5e4ce281e745d4c53afc0c9426480e0cbf541d56996704 309,152 bytes
+- `text.txt` 13e068d2c2b3665d1ad67a02da3752c77bb617ab952507f4cbc16168b0e1a72f 2,228 bytes
+
 ### [Dan Kaminsky - Wikipedia](wikipedia-dan-kaminsky/index.html) [original ↗](https://en.wikipedia.org/wiki/Dan_Kaminsky)
 
 **Wikipedia (English)** · other · secondary · captured · published not stated · added by `claude-story-site` · `wikipedia-dan-kaminsky`
@@ -1706,6 +2758,19 @@ capture 20261022T113323Z · HTTP 200 · https://en.wikipedia.org/wiki/Dan_Kamins
 - `rendered.html` 6965408cf93703569203e0b1fa6278195218e7179ca2f79c981126987636c876 431,088 bytes
 - `screenshot.png` 615f1446bfe1602439edb7b7273d7e7b74aeb78f40c45e5ef95312ecab6b44d8 2,208,990 bytes
 - `text.txt` 565033cfb92639ca1311f148e4c1fddbec463cd655a7b253b698b0d3bbee7d5b 19,564 bytes
+
+### [Wikipedia, the free encyclopedia](wikipedia-en-mainpage/index.html) [original ↗](https://en.wikipedia.org/wiki/Main_Page)
+
+**en.wikipedia.org** · news · secondary · captured · published not stated · added by `collector-news` · `wikipedia-en-mainpage`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081858Z · HTTP 200 · https://en.wikipedia.org/wiki/Main_Page- `headers.json` e955926167e0071dc046d0d19f1e93de7c6f689da1fd735810200711d198ec98 6,588 bytes
+- `page.html` 124c0cf0f5d69d4eb2f539691b78a3d2b7f775276d7d403ce7b41c790d05afc8 256,072 bytes
+- `provenance.json` 2069c319a6a98a5ea0b1b892cbce10d6403fedecbdbb77caa0b194640df7976e 941 bytes
+- `rendered.html` 342d21cca365ec9dca361d699b42b88ffee199c899ee2903183a7b86ad1a441c 417,303 bytes
+- `screenshot.png` 9e9389a0f25bde4e29d9de15fffef615450272353491c9a719285f4a0cdce022 1,270,714 bytes
+- `text.txt` e1f68a6602ba7fa72443285d1a741f99af7d3266877b5cb3d6dfcdfe655d35ad 8,195 bytes
 
 ### [2017 Equifax data breach - Wikipedia](wikipedia-equifax-breach/index.html) [original ↗](https://en.wikipedia.org/wiki/2017_Equifax_data_breach)
 
@@ -1798,6 +2863,19 @@ capture 20261022T113341Z · HTTP 200 · https://en.wikipedia.org/wiki/Spring_Fra
 - `screenshot.png` 0601fe81d23975fda4d4036553b0ff37eb4fe8ea9928d9b697df2d4791acf6da 4,931,001 bytes
 - `text.txt` 710060585680e022348a35516ce4f13f4d99c2df75fe72a6ec01fe1a223081d1 49,455 bytes
 
+### [Hackers Exploited the PHP Vulnerabilities Days Before They Were Patched | WIRED](wired-exploited-days-before-patched/index.html) [original ↗](https://www.wired.com/story/hackers-exploited-the-php-vulnerabilities-days-before-they-were-patched/)
+
+**WIRED** · news · secondary · captured · published 2026-10-22T02:24Z (page metadata) · added by `curator@php.newsroom` · `wired-exploited-days-before-patched`
+
+Promoted from the source watch (oq9gflln), snapshot 20261023T012042Z. Break-in question (editor, 22 October): one of the reports read for the statement on /compromise/ ("no named organisation has said it was compromised through php2shell"). Break-in question (editor, 22 October 20:49 UTC): PHP Foundation: ...
+
+capture 20261023T012042Z · HTTP 200 · https://www.wired.com/story/hackers-exploited-the-php-vulnerabilities-days-before-they-were-patched/- `headers.json` cdea39f9041c102d99987c0678b106458e3ea49746c7b6df268cd29ff1610a17 1,668 bytes
+- `page.html` fb4d5d01f6a54a59b38b324364e19dc66eaf270a0528f0468dffebe21b015afc 1,245,418 bytes
+- `provenance.json` c88e3863ab2f3db40fa3d4bad4d2f8b6c49dc11bb2e0b264727c9de6f242ecf7 1,723 bytes
+- `rendered.html` 3dfcff4c0800daedd95b55f7510974ced8eac740a0e6ab92d8e0eb5cd206ecf9 1,499,604 bytes
+- `screenshot.jpg` 4d6198142ef9e78fff96238d160eb6750b0c420c9e963ec76b2b13ae49b48d5d 706,558 bytes
+- `text.txt` d43b99af65d563ddd047c20c80d5318813eda28abd497763f91dd0a6ab8427cd 9,384 bytes
+
 ### [PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet](wiz-blog-php2shell/index.html) [original ↗](https://www.wiz.io/blog/php2shell-php-rce)
 
 **Wiz (Wiz Research)** · researcher · primary · captured · published 2026-10-21 · added by `collector-researchers` · `wiz-blog-php2shell`
@@ -1876,6 +2954,32 @@ capture 20261022T081624Z · HTTP 200 · https://x.com/wiz_io/status/211289981326
 - `screenshot.png` d2187dc09d49ec23ea5593aa7ffef5df60cd2385f290922ec6d77b6861fc7abb 578,314 bytes
 - `text.txt` 6c17977662815b0cb25a32e0987d1b1f95942156825b0cc616dc43a3f7f46809 2,222 bytes
 
+### [GMO「悪用確認されず」から一転 FX口座ログイン情報、流出の可能性 不正操作報告も（J-CASTニュース） - Yahoo!ニュース](yahoo-jp-gmo-fx-login-leak/index.html) [original ↗](https://news.yahoo.co.jp/articles/d6083f71bbeab0f1488fac1edbb1e75d9156e358)
+
+**Yahoo! News Japan (J-CAST)** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `yahoo-jp-gmo-fx-login-leak`
+
+Promoted from the source watch (oq9gflln), snapshot 20261022T191523Z. GMO FX VPS compromise: 26,739 servers, logins possibly taken, fraud reported; cause not stated
+
+capture 20261022T191523Z · HTTP 200 · https://news.yahoo.co.jp/articles/d6083f71bbeab0f1488fac1edbb1e75d9156e358- `headers.json` 8089e945f23a0dff3b1328e4d3d1ccf2adccd21dee3ce523093c79be2c59f641 1,350 bytes
+- `page.html` f87878e9d634a797da428109b424f11ac2d1b2ec5f69f14006d048fba00e62f1 158,328 bytes
+- `provenance.json` b8ce463ecb94a4bb90fa9db888989e777e612c4c2b78513fed0a314d7c463dc3 1,724 bytes
+- `rendered.html` 4fe1a7d56ce6ed822914bdbec4af2771bc55d380a56364c1284352f72d6af220 632,171 bytes
+- `screenshot.jpg` f7f8063a4acbf8153c3c3b4d01d948ddf21e998f37822649e9dc4101b49ca5eb 796,250 bytes
+- `text.txt` f3823c3f22ffbc12645f52b502bdce26ced07bcb0865b7d9fb26529e49c85c0b 16,504 bytes
+
+### [PHP vulnerability: Which websites and services are affected?](yahoo-mashable-affected-list/index.html) [original ↗](https://tech.yahoo.com/cybersecurity/articles/php-vulnerability-websites-services-affected-183230666.html)
+
+**tech.yahoo.com** · news · secondary · captured · published not stated · added by `collector-news` · `yahoo-mashable-affected-list`
+
+Row written by claude-newsroom-lead from the capture's provenance.json: the collector-news agent stopped before writing it. The publisher is the host name, and the publication time has not been read from the page yet.
+
+capture 20261022T081334Z · HTTP 200 · https://tech.yahoo.com/cybersecurity/articles/php-vulnerability-websites-services-affected-183230666.html- `headers.json` cde379d690d5370a749d5505b292a9ef1fe0714d62672b58d76ea7e55e1eadfa 4,323 bytes
+- `page.html` 6198af91fb2af8f05ce115ff0db9c18ce2b421b477e4303f59bd6e396225de06 551,620 bytes
+- `provenance.json` 04fba138ed4d27a76e8797ab54d65eb7d6eaa507b4e3ba604d79bba53ac1cf47 1,108 bytes
+- `rendered.html` aa107002ef0db63caa902fee00205df466b8cb37838c7c34a1fe7fab3d432f28 946,086 bytes
+- `screenshot.png` e343558921b9040566f12c213a9d8572a3f0e1192301c2cd54537a8f2adc4ce1 2,896,297 bytes
+- `text.txt` 8b1d776cdacbd0a5685d30dc147ad864aa9ddd07a905b9bc8d27bbaf1b49fe46 14,640 bytes
+
 ### [Finland temporarily shuts down government websites as a precaution for critical vulnerabilities | Yle News | Yle](yle-finland-government-sites-shut/index.html) [original ↗](https://yle.fi/a/74-20252600)
 
 **Yle (Finnish public broadcaster)** · news · secondary · captured · published 2026-10-21 · added by `claude-story-site` · `yle-finland-government-sites-shut`
@@ -1891,4 +2995,4 @@ capture 20261022T113225Z · HTTP 200 · https://yle.fi/a/74-20252600- `headers.j
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/index.html
+site v0.10.4 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sources/index.html

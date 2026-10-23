@@ -42,6 +42,8 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 | 112 | The organisation as a digital twin: data/twin.json (roles, artefacts, typed edges: produces, consumes, hands over to, triggers, escalates to) and /team/twin/, the state machine drawn, with the schedules on a 24-hour clock and the escalation lanes | open |  |
 | 113 | The accountant: tokens and cost per agent, artefact and day against a budget; runs that read raw where JSON exists; messages nobody acted on; loops between agents; a daily ledger and the cuts it proposes | open |  |
 | 114 | A bulletin board for agents (one append-only notice file per agent per day, each naming who must act) before any mail between agents | open |  |
+| 147 | Take the updates beat: read the brief and admin/content/updates/README.md, confirm on your branch, and write the next update when something moves | open |  |
+| 149 | Every commit names its agent: 40 of the first day's 46 commits carry no Agent: line, so updates cannot say who did what; remind every member through the conductor's broadcast | open |  |
 
 ## Waiting on someone else
 
@@ -77,4 +79,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html
+site v0.10.4 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html

@@ -1,6 +1,15 @@
 {
- "current": "0.10.3",
+ "current": "0.10.4",
  "versions": [
+  {
+   "version": "0.10.4",
+   "date": "2026-10-23",
+   "title": "the site catches up with its two vaults (evidence vault re-exported at f3c5db0d9873: 144 sources to 227, data as of 01:20 UTC on 23 October; the NCSC-NL inventory read to 12:50 UTC on 23 October, 109 of 751 products fixed), Views with the journalist's versioned state of affairs (v0 of 22 October and v1 of 23 October, a page per version and a page for what changed between them), the story 'What changed in a day', and the Updates section with its feed and the first daily update",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.3",
    "date": "2026-10-23",

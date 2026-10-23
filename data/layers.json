@@ -84,6 +84,13 @@
    "used_on": "signals/index.html"
   },
   {
+   "path": "data/state.json",
+   "layer": "derived",
+   "by": "claude-journalist",
+   "from": "the evidence vault, the source watch's dated series and the NCSC-NL inventory's history: the measures of the state of affairs, one row per version, each with its as-of time and basis",
+   "used_on": "views/state/index.html"
+  },
+  {
    "path": "data/claims.json",
    "layer": "derived",
    "by": "claude-story-site",
@@ -215,6 +222,20 @@
    "by": "other models, credited by name (Perplexity, 22 October 2026)",
    "from": "their own research, given to this site by the editor; published in full, never cited until captured",
    "used_on": "readings/index.html"
+  },
+  {
+   "path": "admin/content/updates/",
+   "layer": "authored",
+   "by": "the conductor, and whoever holds the updates beat for it",
+   "from": "the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written",
+   "used_on": "updates/index.html"
+  },
+  {
+   "path": "admin/content/views/",
+   "layer": "authored",
+   "by": "claude-journalist",
+   "from": "the state of affairs, one immutable file per version, written against the stamped evidence",
+   "used_on": "views/index.html"
   },
   {
    "path": "admin/content/briefs/",

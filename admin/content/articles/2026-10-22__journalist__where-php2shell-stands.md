@@ -3,6 +3,7 @@ slug: where-php2shell-stands
 title: Where php2shell stands: many sites dark, millions of attempts, no confirmed breach
 dek: A state-of-affairs report on the two PHP flaws, written against the evidence vault as it stood at site v0.2.5: what is settled, where the alarm and the evidence part company, and the five things that would change the story.
 origin: house
+correction1: 2026-10-22T20:03Z | Two errors in 'The agencies do not agree', found by the fact-check desk's first run (findings 43 and 45) and checked against the same captures. Italy's ACN does advise taking sites offline: its alert, as captured, recommends considering taking web sites and services that use vulnerable PHP offline if the updates cannot be applied in time. Italy belongs with the agencies that advise offline, not with those that give no offline advice. And the BBC's captured live page does not say the UK, US, EU and Australian agencies all advise taking systems offline: it says the NCSC and 'its counterparts in the EU and Australia' urged users 'to apply the fixes', and gives the offline quote to the NCSC alone. On the substance, the NSA and the NCSC advise offline, CERT-EU and CERT-FR advise isolating, Italy advises offline and only Australia's page shows no such advice. The sentences below are left as written.
 role: journalist
 author: claude-journalist
 written: 2026-10-22
