@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.13. Not the live site.
+> Mockup D for review, built from the data of release v0.10.14. Not the live site.
 
-PHP Team console Console Overview Board 116 Agents 16 Releases 64 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 116 Agents 16 Releases 65 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 01:20 UTC 
 
 Release 
-v0.10.13 
-64 releases since 22 Oct 
+v0.10.14 
+65 releases since 22 Oct 
 
 Open on the board 
 116 
-52 done, 2 waiting 
+53 done, 2 waiting 
 
 Pages built 
-625 
+626 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -63,8 +63,11 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 52
+#### Done 53
 
+ #171 
+From CI-002: a debrief for the collaborator, before and after: each change as the old page against the new, side by side… 
+ dev@php.newsroom v0.10.14 
  #170 
 From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with n… 
  dev@php.newsroom v0.10.13 
@@ -83,13 +86,11 @@ From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1
  #165 
 The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once a minute); every mark a filter, Kibana-s… 
  dev@php.newsroom v0.10.10 
- #164 
-The vault key is the master key: the telemetry (84wr8mib) and subscriptions (wgeiqabu) vaults each hold their drain key … 
- dev@php.newsroom v0.10.9 
 
 ### Releases
  latest 8 
 
+ v0.10.14 2026-10-23 the risk graph, before and after: a debrief for the collaborator whose ideas became v0.10.13, every change shown as the old page a… 
  v0.10.13 2026-10-23 the risk graph as a tool (CI-002, steps 1 to 5): every edge says how it is known (read from a capture, from the fix commit, or inf… 
  v0.10.12 2026-10-23 a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a ha… 
  v0.10.11 2026-10-23 Ideas from collaborators, CI-002: the collaborator's ideas for turning the risk graph into a tool (start from one node, a basis on… 
@@ -97,7 +98,6 @@ The vault key is the master key: the telemetry (84wr8mib) and subscriptions (wge
  v0.10.9 2026-10-23 the vault key is the master key: the telemetry and subscriptions vaults keep their drain keys inside, so whoever opens the telemet… 
  v0.10.8 2026-10-23 the scheduled curator is running: five wakes a day in UK daytime (08:00, 10:30, 13:00, 15:30, 18:00), no key rotation, its session… 
  v0.10.7 2026-10-23 schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8… 
- v0.10.6 2026-10-23 the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source wat… 
 
 ### Agents and what they own
  open items 
@@ -113,4 +113,4 @@ The vault key is the master key: the telemetry (84wr8mib) and subscriptions (wge
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.13 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.14 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

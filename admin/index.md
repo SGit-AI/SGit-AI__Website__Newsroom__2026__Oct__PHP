@@ -294,6 +294,8 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built, waiting for the editor: the design direction (CI-002.1), persona views of the graph (CI-002.7), user stories as a layer (CI-002.4).
 
+- The debrief for the collaborator (v0.10.14): `/articles/the-risk-graph-before-and-after/`, every change as v0.10.12 against v0.10.13 in real screenshots. Articles now take `!split[before](/png)[after](/png)` (side by side, stacked on a phone), `!slider[alt|left|right](/old.png)(/new.png) "note // note"` (one picture, fade or wipe between the two, `assets/compare.js`; without JavaScript the two stack) and ```diff blocks; a site link may carry a view address with `=`, `:`, `&` and `,`.
+
 ### Recorded, not started
 
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
@@ -354,4 +356,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.10.14 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

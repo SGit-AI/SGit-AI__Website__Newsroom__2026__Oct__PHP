@@ -1,6 +1,15 @@
 {
- "current": "0.10.13",
+ "current": "0.10.14",
  "versions": [
+  {
+   "version": "0.10.14",
+   "date": "2026-10-23",
+   "title": "the risk graph, before and after: a debrief for the collaborator whose ideas became v0.10.13, every change shown as the old page against the new, side by side or as one picture with a slider that fades or wipes between them, with diffs where the change is data; articles can now carry split, slider and diff blocks",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.13",
    "date": "2026-10-23",

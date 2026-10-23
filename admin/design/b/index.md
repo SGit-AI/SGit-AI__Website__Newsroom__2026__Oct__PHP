@@ -2,7 +2,7 @@
 
 A three-column working view for a security lead: their reading path and the site by task on the left, what changed since the last visit and the next three actions in the middle, and the state of the evidence as charts on the right.
 
-> Mockup B for review, built from the data of release v0.10.13. Not the live site.
+> Mockup B for review, built from the data of release v0.10.14. Not the live site.
 
 S 
  Sam 
@@ -54,13 +54,18 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ✓ 
 
- New story v0.10.11 
-#### Who reads this site, and what works on it: the tools we built to find out, and what they say on day two
+ New story v0.10.13 
+#### The risk graph, before and after: what changed from one reader's five ideas
 
 ✓ 
 
- New front v0.10.11 
+ New front v0.10.13 
 #### Stories: written here
+
+✓ 
+
+ Changed story v0.10.11 
+#### Who reads this site, and what works on it: the tools we built to find out, and what they say on day two
 
 ✓ 
 
@@ -81,11 +86,6 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
  Changed event v0.4.1 
 #### Ryan Austin on BBC Radio 4: no evidence of exploitation yet.
-
-✓ 
-
- Changed event v0.4.1 
-#### The BBC reports the NSA's X post.
 
 ✓ 
 
@@ -122,4 +122,4 @@ Amazon: Proof-of-concept attempts begin, then six hours of attempts from anonymi
 8.1 and older: source backports only.
 
 ---
-site v0.10.13 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html
+site v0.10.14 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html

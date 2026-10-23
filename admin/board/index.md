@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 170 items, 116 open, 52 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 171 items, 116 open, 53 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -180,9 +180,10 @@ The work, as rows in `data/admin.json`: 170 items, 116 open, 52 done. An item is
 | 168 | From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the remediation and code they exerciseDone: the 270 test files of the fix commit, from its file list in the evidence vault, joined to the commit (code) and, by name rules in data/grc-tests.json, to the remediation each exercises (inferred). | done | dev@php.newsroom | 0.10.13 |
 | 169 | From CI-002, step 4: an impact view: pick a function or file, climb the graph to remediations, vulnerabilities, weaknesses, risks, controls and stakeholders, each with its pathDone: What it puts at stake, in the explorer: from code, a test or a fix, the remediations, flaws, weaknesses, risks, controls, stakeholders, treatments and stories above it, each with its path. | done | dev@php.newsroom | 0.10.13 |
 | 170 | From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with no owner, risk with no story, treatment or holder, edge with no basis)Done: /grc/gaps/, eight rules as data (data/grc-gaps.json), computed at every build: all 95 controls joined to no code or test; 16 of 16 code nodes with no owner; 9 of 16 code nodes no test reaches (main/SAPI.c and main/main.c among them); 14 of 34 risks no story tells; 815 edges inferred and unchecked. | done | dev@php.newsroom | 0.10.13 |
+| 171 | From CI-002: a debrief for the collaborator, before and after: each change as the old page against the new, side by side or with a slider, and diffs where the change is dataDone: /articles/the-risk-graph-before-and-after/, 14 screenshots of v0.10.12 and v0.10.13; split, slider and diff blocks for every article. | done | dev@php.newsroom | 0.10.14 |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.10.14 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

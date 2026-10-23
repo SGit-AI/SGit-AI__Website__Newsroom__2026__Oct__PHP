@@ -15,4 +15,4 @@ v2 · site v0.3.0 · 22 October 2026 · reconstructed from git · 2 lines added 
 
 
 ---
-site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/versions/page-affected/index.html
+site v0.10.14 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/versions/page-affected/index.html

@@ -146,6 +146,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [All stories, written here](../articles/index.html):
 - [House · Journalist: What changed in a day](../articles/what-changed-in-a-day/index.html):
 - [House · Dev desk: Who reads this site, and what works on it](../articles/the-telemetry-tools/index.html):
+- [House · Dev desk: The risk graph, before and after](../articles/the-risk-graph-before-and-after/index.html):
 - [House · Journalist: Why can't every version of PHP just be patched](../articles/why-not-patch-every-version/index.html):
 - [House · Journalist: Where php2shell stands](../articles/where-php2shell-stands/index.html):
 - [House · Journalist and historian: Exposed is not exploited](../articles/exposed-is-not-exploited/index.html):
@@ -180,4 +181,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.10.14 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

@@ -2183,7 +2183,8 @@ def article_inline(s, depth):
     s = E(s, quote=False)
     s = re.sub(r'`([^`]+)`', r'<code>\1</code>', s)
     s = re.sub(r'\[\[([^\]]+)\]\]', lambda m: '<span class="refs">' + src_links([x.strip() for x in m.group(1).split(',')], depth) + '</span>', s)
-    s = re.sub(r'\[([^\]]+)\]\(/([^)]*)\)', lambda m: f'<a href="{"../" * depth}{E(m.group(2))}">{m.group(1)}</a>' if re.fullmatch(r'[A-Za-z0-9/._#-]*', m.group(2)) else m.group(0), s)
+    # the path was escaped with the rest of the line: unescape it to check it (a view address carries &), escape it once
+    s = re.sub(r'\[([^\]]+)\]\(/([^)]*)\)', lambda m: f'<a href="{"../" * depth}{E(html.unescape(m.group(2)))}">{m.group(1)}</a>' if re.fullmatch(r'[A-Za-z0-9/._#=:&,%-]*', html.unescape(m.group(2))) else m.group(0), s)
     s = re.sub(r'\[([^\]]+)\]\((https?://[^)\s"<>]+)\)', r'<a href="\2" rel="noopener">\1</a>', s)
     s = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', s)
     s = re.sub(r'\*([^*]+)\*', r'<i>\1</i>', s)
@@ -2207,12 +2208,68 @@ def article_figure(alt, path, caption, depth):
     cap = f'<figcaption>{article_inline(caption, depth)}</figcaption>' if caption else ''
     return f'<figure class="shot"><img src="{"../" * depth}{E(path)}" alt="{E(alt)}" width="{w}" height="{h}" loading="lazy">{cap}</figure>'
 
+def article_img(path, depth, cls, alt):
+    full = os.path.join(ROOT, path)
+    if not os.path.exists(full):
+        sys.exit(f'article figure missing: {path}')
+    w, h = png_size(full)
+    return f'<img class="{cls}" src="{"../" * depth}{E(path)}" alt="{E(alt)}" width="{w}" height="{h}" loading="lazy">'
+
+IMG_PATH = r'/(assets/articles/[a-z0-9-]+/[a-z0-9-]+\.png)'
+
+def article_split(m, depth):
+    """!split[before caption](/assets/...png)[after caption](/assets/...png): the old and the new side by side."""
+    side = lambda tag, label, cap, path: (f'<figure class="ba-side"><span class="ba-tag ba-{tag}">{label}</span>{article_img(path, depth, "", label + ": " + re.sub(r"[*`]", "", cap))}'
+                                          f'<figcaption>{article_inline(cap, depth)}</figcaption></figure>')
+    return f'<div class="ba-split ba-wide">{side("before", "Before", m.group(1), m.group(2))}{side("after", "After", m.group(3), m.group(4))}</div>'
+
+def article_slider(m, depth):
+    """!slider[what it shows](/assets/before.png)(/assets/after.png) "commentary": one stage, a slider that fades (or wipes)
+    from before to after, the commentary beside it. Without JavaScript the two images show one above the other."""
+    parts = m.group(1).split('|')
+    alt, l_old, l_new = parts[0], (parts[1] if len(parts) > 2 else 'Before'), (parts[2] if len(parts) > 2 else 'After')
+    old, new, note = m.group(2), m.group(3), m.group(4) or ''
+    for p in (old, new):
+        if png_size(os.path.join(ROOT, p)) != png_size(os.path.join(ROOT, old)):
+            sys.exit(f'article slider: {old} and {new} are not the same size')
+    return (f'<figure class="ba-slider ba-wide"><div><div class="ba-stage" data-ba>'
+            f'<span class="ba-cap"><span class="ba-tag ba-before">{E(l_old)}</span></span>{article_img(old, depth, "ba-old", l_old + ": " + alt)}'
+            f'<span class="ba-cap"><span class="ba-tag ba-after">{E(l_new)}</span></span>{article_img(new, depth, "ba-new", l_new + ": " + alt)}</div>'
+            f'<div class="ba-ctl" data-ba-ctl data-left="{E(l_old)}" data-right="{E(l_new)}"></div></div>'
+            f'<figcaption class="ba-note">{"".join(f"<p>{article_inline(x.strip(), depth)}</p>" for x in note.split(" // ") if x.strip())}</figcaption></figure>')
+
+def article_diff(lines):
+    cls = lambda l: 'd-add' if l.startswith('+') else 'd-del' if l.startswith('-') else 'd-ctx'
+    return '<pre class="diff">' + ''.join(f'<span class="{cls(l)}">{E(l) or " "}</span>' for l in lines) + '</pre>'
+
 def render_article(text, depth):
     out, lst, rows = [], None, []
+    diff, has_slider = None, False
     def flush():
         if rows:
             out.append(table([article_inline(c, depth) for c in rows[0]], [[article_inline(c, depth) for c in r] for r in rows[1:]])); rows.clear()
     for line in text.splitlines():
+        if diff is not None:
+            if line.strip() == '```':
+                out.append(article_diff(diff)); diff = None
+            else:
+                diff.append(line)
+            continue
+        if line.strip() == '```diff':
+            flush()
+            if lst:
+                out.append(f'</{lst}>'); lst = None
+            diff = []
+            continue
+        sp = re.match(r'^!split\[([^\]]+)\]\(' + IMG_PATH + r'\)\[([^\]]+)\]\(' + IMG_PATH + r'\)\s*$', line)
+        sl = re.match(r'^!slider\[([^\]]+)\]\(' + IMG_PATH + r'\)\(' + IMG_PATH + r'\)(?:\s+"([^"]*)")?\s*$', line)
+        if sp or sl:
+            flush()
+            if lst:
+                out.append(f'</{lst}>'); lst = None
+            out.append(article_split(sp, depth) if sp else article_slider(sl, depth))
+            has_slider = has_slider or bool(sl)
+            continue
         if line.strip().startswith('|'):
             if lst:
                 out.append(f'</{lst}>'); lst = None
@@ -2243,6 +2300,10 @@ def render_article(text, depth):
     flush()
     if lst:
         out.append(f'</{lst}>')
+    if diff is not None:
+        sys.exit('article: a ```diff block is not closed')
+    if has_slider:
+        out.append(f'<script src="{"../" * depth}assets/compare.js" defer></script>')
     return '\n'.join(out)
 
 def article_stamp(a):

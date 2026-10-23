@@ -81,6 +81,7 @@ A house story, written here by the journalist role against site v0.4.0, vault co
 ## Other articles
 - [What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list](../what-changed-in-a-day/index.html) Journalist, 2026-10-23
 - [Who reads this site, and what works on it: the tools we built to find out, and what they say on day two](../the-telemetry-tools/index.html) Dev desk, 2026-10-23
+- [The risk graph, before and after: what changed from one reader's five ideas](../the-risk-graph-before-and-after/index.html) Dev desk, 2026-10-23
 - [Where php2shell stands: many sites dark, millions of attempts, no confirmed breach](../where-php2shell-stands/index.html) Journalist, 2026-10-22
 - [Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit](../exposed-is-not-exploited/index.html) Journalist and historian, 2026-10-22
 - [php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proof](../php2shell-in-perspective/index.html) Historian, 2026-10-22
@@ -90,4 +91,4 @@ Source file: `admin/content/articles/2026-10-22__journalist__why-not-patch-every
 
 
 ---
-site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.html
+site v0.10.14 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.html

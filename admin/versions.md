@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.13. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.14. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.14 · 2026-10-23
+
+the risk graph, before and after: a debrief for the collaborator whose ideas became v0.10.13, every change shown as the old page against the new, side by side or as one picture with a slider that fades or wipes between them, with diffs where the change is data; articles can now carry split, slider and diff blocks
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
 
 ### v0.10.13 · 2026-10-23
 
@@ -522,4 +530,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.10.13 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.14 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

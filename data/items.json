@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.10.13",
+"site": "0.10.14",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -4618,10 +4618,10 @@
 "zone": "stories",
 "title": "Stories: written here",
 "path": "index.html#stories",
-"hash": "4537279815cc",
-"v": 4,
+"hash": "589f1185b057",
+"v": 5,
 "first": "0.4.1",
-"changed": "0.10.11",
+"changed": "0.10.13",
 "date": "2026-10-23"
 },
 "home-how": {
@@ -4765,6 +4765,17 @@
 "v": 1,
 "first": "0.10.11",
 "changed": "0.10.11",
+"date": "2026-10-23"
+},
+"story-the-risk-graph-before-and-after": {
+"kind": "story",
+"zone": "stories",
+"title": "The risk graph, before and after: what changed from one reader's five ideas",
+"path": "articles/the-risk-graph-before-and-after/index.html",
+"hash": "b503c4ce683f",
+"v": 1,
+"first": "0.10.13",
+"changed": "0.10.13",
 "date": "2026-10-23"
 },
 "story-why-not-patch-every-version": {

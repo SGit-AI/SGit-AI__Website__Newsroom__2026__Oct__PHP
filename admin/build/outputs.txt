@@ -105,6 +105,8 @@ articles/patch-at-the-speed-of-metasploit/index.html
 articles/patch-at-the-speed-of-metasploit/index.md
 articles/php2shell-in-perspective/index.html
 articles/php2shell-in-perspective/index.md
+articles/the-risk-graph-before-and-after/index.html
+articles/the-risk-graph-before-and-after/index.md
 articles/the-telemetry-tools/index.html
 articles/the-telemetry-tools/index.md
 articles/what-changed-in-a-day/index.html

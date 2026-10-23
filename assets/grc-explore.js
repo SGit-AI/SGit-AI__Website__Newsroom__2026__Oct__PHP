@@ -158,7 +158,7 @@
     var H = Math.max(70, 34 * maxRows + 26), pos = {};
     cols.forEach(function (c, i) { c.forEach(function (id, j) { pos[id] = { x: 14 + i * colW, y: 20 + (j + 0.5) * (H - 30) / c.length }; }); });
     ghosts.forEach(function (id, j) { pos[id] = { x: 14 + cols.length * colW, y: 20 + (j + 0.5) * (H - 30) / ghosts.length, ghost: true }; });
-    var s = svg('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'gx-svg', role: 'img', 'aria-label': 'The open part of the risk graph' });
+    var s = svg('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, class: 'gx-svg', role: 'img', 'aria-label': 'The open part of the risk graph' });
     var ids = Object.keys(pos);
     G.edges.forEach(function (e) {
       if (!pos[e.from] || !pos[e.to] || !visible(e)) return;
