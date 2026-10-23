@@ -6,7 +6,7 @@
 <atom:link href="https://php.oct.2026.newsroom.sgit.ai/feeds/all.xml" rel="self" type="application/rss+xml"/>
 <description>PHP October 2026: every new or changed fact, page, briefing, story, question, source and dated event. A new entry when an item is new, and again each time what it says changes.</description>
 <language>en-gb</language>
-<lastBuildDate>Thu, 22 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Fri, 23 Oct 2026 00:00:00 +0000</lastBuildDate>
 <item><title>Source: CISA: Page Not Found | CISA</title><link>https://php.oct.2026.newsroom.sgit.ai/sources/cisa-ed-22-02-log4j/index.html</link><guid isPermaLink="false">src-cisa-ed-22-02-log4j@v1</guid><pubDate>Thu, 22 Oct 2026 11:34:00 +0000</pubDate><category>source</category><description>Source. Dated 2026-10-22 11:34.</description></item>
 <item><title>Source: Wikipedia (English): Spring Framework - Wikipedia</title><link>https://php.oct.2026.newsroom.sgit.ai/sources/wikipedia-spring-framework/index.html</link><guid isPermaLink="false">src-wikipedia-spring-framework@v1</guid><pubDate>Thu, 22 Oct 2026 11:33:00 +0000</pubDate><category>source</category><description>Source. Dated 2026-10-22 11:33.</description></item>
 <item><title>Source: Wikipedia (English): Shellshock (software bug) - Wikipedia</title><link>https://php.oct.2026.newsroom.sgit.ai/sources/wikipedia-shellshock/index.html</link><guid isPermaLink="false">src-wikipedia-shellshock@v1</guid><pubDate>Thu, 22 Oct 2026 11:33:00 +0000</pubDate><category>source</category><description>Source. Dated 2026-10-22 11:33.</description></item>

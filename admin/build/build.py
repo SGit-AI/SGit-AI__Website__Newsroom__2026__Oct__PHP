@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 SYN = load('synthetic') if os.path.exists(os.path.join(DATA, 'synthetic.json')) else None
 SOURCES = OrderedDict((s['slug'], s) for s in D['sources'])
@@ -187,7 +187,7 @@ NAV = [
     ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
-    ('Yours', [('collaborators/index.html', 'Power users: start here'), ('join/index.html', 'Join: a key for feedback'), ('join/invite/index.html', 'Invite someone'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
+    ('Yours', [('collaborators/index.html', 'Power users: start here'), ('join/index.html', 'Join: a key for feedback'), ('join/invite/index.html', 'Invite someone'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('stack/index.html', 'Your stack: the blast radius'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
     ('The incident', [('index.html', 'Front page'), ('whatsnew/index.html', "What's new"), ('summary/index.html', 'The specialist summary'), ('flaws/index.html', 'The two flaws'), ('code/index.html', 'The code'), ('timeline/index.html', 'Timeline'),
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
@@ -1529,13 +1529,13 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck(); build_grc()
+    build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_status_json(); build_factcheck(); build_grc()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
     build_all()
     build_all()
-    build_now(); build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); save_items()
+    build_now(); build_llms(); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); build_stack_catalogue(); save_items()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
@@ -3320,6 +3320,66 @@ def build_reader():
 """
     page('reader/index.html', 'The feed viewer: this site, the records, and your own feeds', 'Read this site\'s feeds, the CVE records, NVD, OSV, CISA KEV, GitHub, Wikipedia, Hacker News and Mastodon, and any feed you add, in your browser, with what you have read marked and only what is new shown next time.', body, kind='account')
 
+
+# ----------------------------------------------------------------------------- your stack: the blast radius (v0.8.1)
+
+def stack_catalogue():
+    """data/stack.json joined with the ranges, SAPIs and mitigations (affected), the edge vendors (defence) and the
+    NCSC-NL inventory (software), for assets/stack.js. Everything in it is already published on this site."""
+    st, a = D['stack'], D['affected']
+    for v in st['vulns']:
+        for slug in v['sources']:
+            if slug not in SOURCES: sys.exit(f'data/stack.json: {v["id"]} cites unknown source {slug}')
+    ctl = []
+    for c in st['controls']:
+        m = a['mitigations'][c['mitigation']]
+        ctl.append(dict({k: c[k] for k in c if k != 'mitigation'}, what=m['what'], caveat=m['caveat'], **{'for': m['for']}))
+    inv = []
+    for r in D['software']['rows']:
+        note = (r['notes'] or '').split('\n')
+        inv.append([r['supplier'], r['product'], r['version'], r['status_109618'], r['status_109619'],
+                    (note[-1] if len(note) > 1 else note[0])[:280], (r['links'] or [''])[0]])
+    items = [[iid, it['title'], it['path'], it['kind']] for iid, it in all_items().items() if it.get('path')]
+    return {'schema': st['schema'], 'site': VERSION, 'data_as_of': STORY['data_as_of'],
+            'kinds': st['kinds'], 'links': st['links'], 'sensitivity': st['sensitivity'], 'controls': ctl, 'vulns': st['vulns'],
+            'ranges': a['ranges'], 'ranges_note': a['ranges_note'], 'fixed': a['fixed'],
+            'sapis': [{k: x[k] for k in ('sapi', 'risk', 'text')} for x in a['sapis']],
+            'edge': [{k: x[k] for k in ('vendor', 'what', 'when', 'caveat')} for x in D['defence']['edge']],
+            'inventory': {'source': D['software']['source'], 'commit': D['software']['commit'], 'licence': D['software']['licence'],
+                          'columns': ['supplier', 'product', 'version', 'status_109618', 'status_109619', 'note', 'link'], 'rows': inv},
+            'items': items, 'examples': st['examples'], 'pulse': st['pulse']}
+
+def build_stack_catalogue():
+    write('stack/catalogue.json', json.dumps(stack_catalogue(), ensure_ascii=False, separators=(',', ':'), sort_keys=False) + '\n')
+
+def build_stack():
+    st = D['stack']
+    kinds = ''.join(f'<li><b>{E(k["name"])}.</b> {E(k["what"])}</li>' for k in st['kinds'])
+    vulns = ''.join(f'<li><a href="../{U(v["page"])}">{E(v["id"])}</a>: {E(v["name"])}. Scope: {E(v["scope"])}; at worst {E(v["impact"])}.</li>' for v in st['vulns'])
+    body = f"""
+<h1>Your stack: what php2shell can reach in it</h1>
+<p class="lead">Describe what you run, the way you would draw it on a whiteboard: what the internet reaches, what sits in front, the applications, the PHP under them and where it comes from, and what each can reach. The tool checks every PHP runtime against the two flaws with what this site knows (the version ranges, how PHP serves requests, the settings that reduce exposure, the edge rules, the NCSC-NL inventory) and shows the blast radius: what an attacker who runs code as your PHP worker can touch. Then it lists what on this site is about your stack.</p>
+<div id="stack" class="sk"><p class="small">The tool needs JavaScript: it runs in your browser, on <a href="catalogue.json">its catalogue</a>, and sends nothing anywhere.</p></div>
+<h2>How it decides</h2>
+<ul>
+<li><b>The version.</b> A runtime on a supported branch is affected below the fixed release ({E(', '.join(D['affected']['fixed']))}) and fixed at or above it. 8.1, 8.0 and 7.4 are affected with no upstream release, only backport branches; earlier versions have no fix at all. {E(D['affected']['ranges_note'])}</li>
+<li><b>Where the PHP comes from.</b> A distribution package or a vendor image keeps its own version number when it backports a fix, so a version that looks old can be fixed. When the runtime is provided by a product in the inventory, the inventory's status for that product wins over the version number, and the tool says so.</li>
+<li><b>How it serves requests.</b> The risk is for PHP serving web requests; Apache mod_php is where remote code execution was demonstrated. CLI, cron and queue workers are outside the advisory's scope.</li>
+<li><b>Whether it can be reached.</b> A runtime the internet reaches, through an edge or not, is exposed; one reached only from inside is not exposed from the internet, which is not the same as safe.</li>
+<li><b>What reduces it.</b> Each setting and each edge rule is shown with its caveat. None of them turns an affected runtime into a fixed one: updating is the only reliable mitigation.</li>
+<li><b>The blast radius.</b> Remote code execution runs as the PHP worker, so everything an affected runtime runs, and everything it or its applications can reach, is in the blast radius; what those can reach in turn is one step further.</li>
+</ul>
+<p>The kinds of component:</p>
+<ul>{kinds}</ul>
+<p>What is checked today:</p>
+<ul>{vulns}</ul>
+<p class="small">{E(st['pulse'])}</p>
+<h2>Where your stack is kept</h2>
+<p>In this browser, under <code>p2s.stack.v1</code>, and in your own vault when you open it in the Ask pane (under <code>/php-october/stack/</code>, encrypted here before it leaves), with the rest of what you keep on this site. Export it as a file to share it with your team; import theirs. Nothing about your stack is sent to this site or anyone else. A stack describes your systems: treat the file as you would an architecture diagram.</p>
+<p class="small">This is a first version, a thinking tool and not a scanner: it knows only what you tell it and what this site has captured. Check every finding against your own systems and your vendor's advisory.</p>
+<script src="../assets/stack.js" defer></script>
+"""
+    page('stack/index.html', 'Your stack: what php2shell can reach in it', 'Describe what you run, the internet, the edge, the applications, the PHP and where it comes from, and what each can reach; see which runtimes the two flaws affect, the blast radius, what to do first and what on this site is about your stack. In your browser and your own vault.', body, kind='account')
 
 # ----------------------------------------------------------------------------- subscriptions (v0.4.3)
 

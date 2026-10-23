@@ -1,6 +1,15 @@
 {
- "current": "0.8.0",
+ "current": "0.8.1",
  "versions": [
+  {
+   "version": "0.8.1",
+   "date": "2026-10-23",
+   "title": "your stack, the blast radius (/stack/): describe what you run, the internet, the edge, the applications, the platforms and PHP runtimes, data, secrets and services, and see each runtime against both CVEs (versions, backports in the inventory, SAPI, exposure, settings, edge rules), the blast radius as a graph, what to do first and what on the site is about your stack, kept in your browser and your vault; and the warning and info colours restored on every page (their tokens were mapped to themselves since v0.2.4)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "200d08971937",
+   "reconstructed": false
+  },
   {
    "version": "0.8.0",
    "date": "2026-10-22",

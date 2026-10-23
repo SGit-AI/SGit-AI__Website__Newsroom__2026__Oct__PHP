@@ -371,6 +371,13 @@
    "used_on": "subscribe/index.html"
   },
   {
+   "path": "data/stack.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the blast-radius tool's model: component kinds, links, settings mapped to the published mitigations, the two CVEs as rules, example stacks; joined at build with affected, defence and software",
+   "used_on": "stack/index.html"
+  },
+  {
    "path": "data/telemetry.json",
    "layer": "site",
    "by": "dev@php.newsroom",

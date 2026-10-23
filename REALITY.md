@@ -119,6 +119,12 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - Tested end to end in Chromium with two browser profiles (bootstrap, browser-signed invitation, second device enrolled automatically, signed feedback) with negative controls (a changed word, page, role or expiry fails; a key that may not invite cannot).
 - Not built: the editor's review queue (phase 2); a key on more than one device; links to pki.sgit.ai records. No invitation has been sent.
 
+## Your stack, the blast radius (v0.8.1, dev@php.newsroom)
+- `/stack/` from `data/stack.json` (component kinds, links, settings mapped to the published mitigations, the two CVEs as rules, three example stacks), joined at build with `affected`, `defence` and `software` into `stack/catalogue.json`; the tool is `assets/stack.js`.
+- Per PHP runtime and CVE: the version against the ranges (EOL branches affected with no upstream release), the providing platform against the NCSC-NL inventory (a distribution backport keeps its old version number, so the reader confirms the vendor build; an image's version is taken as it is), the SAPI's scope, whether the internet reaches it, the settings and edge rules that reduce it, each with its caveat. The blast radius: what runs on an affected runtime, what it and they can reach, one step further. What to do first; the inventory rows, edge entries and pages that name the stack.
+- Kept in this browser (`p2s.stack.v1`); several stacks, export and import (an imported file is cleaned and rendered as text); synced by the Ask pane's vault to `/php-october/stack/<device>.json`, the newer copy of each stack winning. Checked in Chromium (three examples, edits, a hostile import, phone, dark); the vault sync not yet run against a real reader vault.
+- Not built: vulnerabilities beyond the two (the pulse), feed items matched to a stack, deletions carried across devices.
+
 ## Recorded, not started
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
 

@@ -900,6 +900,9 @@ sources/x-wiz-io-php2shell/index.html
 sources/x-wiz-io-php2shell/index.md
 sources/yle-finland-government-sites-shut/index.html
 sources/yle-finland-government-sites-shut/index.md
+stack/catalogue.json
+stack/index.html
+stack/index.md
 start/index.html
 start/index.md
 status.json

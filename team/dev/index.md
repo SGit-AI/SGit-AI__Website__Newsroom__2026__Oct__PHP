@@ -40,6 +40,7 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 057 | Schedule the watch list: every source in the scheduled-capture brief checked on a cadence (15 minutes while breaking, hourly, then daily), extending the source watch rather than starting a second schedulerFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
 | 066 | Open the phone app's vault with a passkey, through the newsroom's door design, so a phone needs no pasted keyFrom the brief on the phone app (22 October). | open |  |
 | 084 | Open the reader vault with a passkey, as newsroom.sgit.ai and pki.sgit.ai do (the door design), instead of a pasted key | open |  |
+| 117 | Stack, next: the pulse's vulnerabilities as rows in data/stack.json (rules beyond PHP: product and version ranges), news from the feeds matched to a saved stack, a test of the vault sync with a real reader vault, deletions that carry across devices | open |  |
 
 ## Waiting on someone else
 
@@ -74,6 +75,8 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 082 | Ask: talk to the site from any page; the model uses the site's tools (window.__tools, also for any agent in the browser), proposes changes to your record only with your Allow; your OpenRouter key and your desk kept in your vault, shared with the phone app | done | 0.5.4 |
 | 090 | The telemetry dashboard: a new private vault (i4diy82d) with a vault app over the telemetry vault, linked inside it read-only (vault-in-vault); its key sealed to the editor | done | 0.5.7 |
 | 091 | The telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages); the telemetry vault imports it and drains its own lane from the browser (Queue & drain: the count waiting, the passphrase-sealed key, push before mark-processed); the dashboard vault i4diy82d superseded | done | 0.5.10 |
+| 116 | Your stack, the blast radius (/stack/): describe what you run (internet, edge, apps, platforms, PHP runtimes, data, secrets, services) and see each runtime against both CVEs, the blast radius as a graph, what to do first and what on the site is about your stack; in the browser and the reader's vault | done | 0.8.1 |
+| 118 | Design: --warn-* and --info-* tokens were mapped to themselves in assets/themes/site-tokens.css (cyclic, so invalid) since v0.2.4: every warning and info pill rendered with no colour. Fixed in v0.8.1; checked in all five themes (computed tokens and a pill on /claims/) | done | 0.8.1 |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dev/` in the mail vault (`fmb2tpl2`).
@@ -84,4 +87,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.8.0 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
