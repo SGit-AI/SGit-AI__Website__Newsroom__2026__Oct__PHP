@@ -1,14 +1,33 @@
 {
  "agent": "researcher@php.newsroom",
  "member": "researcher",
- "note": "Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.",
+ "note": "Kept by the agent itself (confirmed by researcher@php.newsroom on 23 October 2026).",
  "vaults": [
   {
    "id": "oq9gflln",
-   "what": "The source watch: every outside source, checked on a schedule, a snapshot on every change",
+   "what": "The source watch: every outside source on php2shell, captured on a schedule, a snapshot on every change, raw kept apart from analysis; public read key published",
    "created": "2026-10-22",
-   "key_sealed_to_root": "not recorded"
+   "key_sealed_to_root": "2026-10-22"
   }
  ],
- "holds": []
+ "holds": [
+  {
+   "id": "oq9gflln",
+   "key": "vault key",
+   "from": "made it",
+   "since": "2026-10-22"
+  },
+  {
+   "id": "oq9gflln",
+   "key": "read key",
+   "from": "made it",
+   "since": "2026-10-22"
+  },
+  {
+   "id": "3ytzxm3g",
+   "key": "read key",
+   "from": "the site (published in data/admin.json)",
+   "since": "2026-10-22"
+  }
+ ]
 }
