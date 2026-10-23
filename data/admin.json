@@ -437,7 +437,8 @@
    "id": "039",
    "title": "Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3",
    "status": "open",
-   "owner": "dev"
+   "owner": "dev",
+   "note": "Done on the journalist's branch on 23 October: re-exported from the evidence vault at f3c5db0d9873 (227 sources, data as of 01:20 UTC on 23 October), for dev@php.newsroom to carry in and close."
   },
   {
    "id": "040",
@@ -1145,6 +1146,36 @@
    "title": "Act on the fact-check's corrections to the journalist's and the historian's stories: done for 'Where php2shell stands' and 'php2shell in perspective'; the agencies and claims data they inherited are board 088",
    "status": "done",
    "owner": "journalist"
+  },
+  {
+   "id": "151",
+   "title": "Views: the journalist's state of affairs as a versioned page (/views/state/), its own version numbers, a page per version, a delta page per pair (measures and text), data in data/state.json; v0 (22 Oct, reconstructed) and v1 (23 Oct 14:11 UTC); the story 'What changed in a day'",
+   "status": "done",
+   "owner": "journalist"
+  },
+  {
+   "id": "152",
+   "title": "Take the curator's 36 claims and 18 timeline rows (claims/curator@php.newsroom.json, now in data/vault-claims.json) into the claims table the front page uses",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "153",
+   "title": "Show a rewritten line in diffs as removed then added, not word-diffed, when the two lines share little (diff_html): the state of affairs' delta interleaves rewritten paragraphs",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "154",
+   "title": "Write the next version of the state of affairs when the evidence moves: a KEV listing, a named victim, GMO's cause, or the inventory's investigation pile resolving",
+   "status": "open",
+   "owner": "journalist"
+  },
+  {
+   "id": "155",
+   "title": "Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement",
+   "status": "open",
+   "owner": "claude-story-site"
   }
  ],
  "evidence_vault": {

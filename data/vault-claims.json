@@ -769,5 +769,445 @@
   "topic": "advice",
   "note": "No CISA emergency directive was visible on the CISA home page at capture.",
   "agent": "claude-story-site"
+ },
+ {
+  "id": "cvut-attack-part-of-php-attempts",
+  "claim": "ČVUT (Czech Technical University in Prague) is dealing with a cyber attack on its IT infrastructure that it calls part of worldwide attempts to hit PHP websites; the active attack was stopped and some systems were taken offline as a precaution",
+  "by": "ČVUT, quoted by Lupa.cz",
+  "sources": [
+   "lupa-cvut-cyber-attack"
+  ],
+  "status": "disputed",
+  "topic": "compromise",
+  "note": "From the source watch's contradiction ledger, record compromise-cvut (open), statement 1. The organisation's own words describe attempts and a stopped attack, not a successful compromise. The queue's Facebook capture of ČVUT's post was not promoted: it holds no statement text (login wall).",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cvut-link-unclear",
+  "claim": "It is not yet clear whether the unavailability of ČVUT's sites really relates to PHP2Shell; the community has found no evidence of real exploitation",
+  "by": "Lupa.cz",
+  "sources": [
+   "lupa-cvut-cyber-attack"
+  ],
+  "status": "disputed",
+  "topic": "compromise",
+  "note": "From the source watch's contradiction ledger, record compromise-cvut (open), statement 2.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "gmo-fx-vps-compromise",
+  "claim": "Unauthorised programs were found on 20 October on some servers of GMO's FX automated-trading VPS (お名前.com デスクトップクラウド); 26,739 servers may be affected, trading-account logins may have been taken, and fraudulent operations on trading accounts have been reported",
+  "by": "GMO Internet Group, via J-CAST / Yahoo! News Japan",
+  "sources": [
+   "yahoo-jp-gmo-fx-login-leak"
+  ],
+  "status": "disputed",
+  "topic": "compromise",
+  "note": "From the source watch's contradiction ledger, record compromise-gmo-fx-vps (open), statement 1. The compromise is stated by GMO; what is disputed is any link to php2shell.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "gmo-fx-vps-cause-unstated",
+  "claim": "The GMO article does not name PHP or php2shell as the cause; the link exists only in other outlets' juxtaposition",
+  "by": "the source watch (reading of the same capture)",
+  "sources": [
+   "yahoo-jp-gmo-fx-login-leak"
+  ],
+  "status": "disputed",
+  "topic": "compromise",
+  "note": "From the source watch's contradiction ledger, record compromise-gmo-fx-vps (open), statement 2. The curator's reading of the capture agrees: PHP appears only in related-article links.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "dmm-external-software-vulnerability",
+  "claim": "DMM halted services from 22:00 on 21 October for emergency maintenance to respond to a vulnerability found in external software it uses; no personal data leaked",
+  "by": "DMM, via Sankei",
+  "sources": [
+   "sankei-dmm-service-halt"
+  ],
+  "status": "disputed",
+  "topic": "compromise",
+  "note": "From the source watch's contradiction ledger, record compromise-dmm (open), statement 1.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "dmm-no-php-confirmation",
+  "claim": "DMM told Sankei it cannot say more than its announcement and would not confirm a link to PHP",
+  "by": "Sankei",
+  "sources": [
+   "sankei-dmm-service-halt"
+  ],
+  "status": "disputed",
+  "topic": "compromise",
+  "note": "From the source watch's contradiction ledger, record compromise-dmm (open), statement 2.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "valtec-php-attack",
+  "claim": "Valtec halted services and may have leaked personal data after a cyberattack targeting the PHP vulnerability",
+  "by": "Valtec (first statement, 22 October), via INTERNET Watch",
+  "sources": [
+   "impress-watch-valtec"
+  ],
+  "status": "contradicted",
+  "topic": "compromise",
+  "note": "From the source watch's contradiction ledger, record compromise-valtec (resolved). The company retracted its PHP attribution the same day: the cause was a vulnerability in its own service.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "valtec-own-service-flaw",
+  "claim": "Valtec's correction: the attack exploited a vulnerability in its own service, not PHP; it confused the two because it was handling the PHP vulnerability at the time",
+  "by": "Valtec (correction), via INTERNET Watch (same article, updated)",
+  "sources": [
+   "impress-watch-valtec"
+  ],
+  "status": "reported",
+  "topic": "compromise",
+  "note": "From the source watch's contradiction ledger, record compromise-valtec (resolved), statement 2: the resolution.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "bsi-no-exploitation",
+  "claim": "The BSI has found no cases of exploitation so far, and the absence of reports suggests many operators have patched",
+  "by": "BSI, via RTL Deutschland (dpa)",
+  "sources": [
+   "rtl-leben-digitales-php-luecke-bsi-warnt-vor-cyber-gefahr-fi"
+  ],
+  "status": "disputed",
+  "topic": "exploitation",
+  "note": "From the source watch's contradiction ledger, record exploitation-germany-netherlands (open), statement 1.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "securitynl-abuse-reported",
+  "claim": "Abuse of the PHP2Shell flaw has been reported: several security firms report attack attempts; whether any succeeded is unclear, and Previdian says attackers did not manage to execute PHP or upload files",
+  "by": "Security.NL",
+  "sources": [
+   "securitynl-misbruik-gemeld"
+  ],
+  "status": "disputed",
+  "topic": "exploitation",
+  "note": "From the source watch's contradiction ledger, record exploitation-germany-netherlands (open), statement 2. The headline says abuse; the body says attempts.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "sites-offline-tracker-50",
+  "claim": "50 sites went dark over php2shell, 2 of them still dark at 18:36 UTC on 22 October",
+  "by": "PHPocalypse Tracker (community)",
+  "sources": [
+   "phpocalypse-tracker-sites-csv"
+  ],
+  "status": "disputed",
+  "topic": "impact",
+  "note": "From the source watch's contradiction ledger, record sites-taken-offline (open), statement 2. The other statement there (10 operators, the site's own impact ledger) has no evidence source to cite, so it is not recorded here. Each tracker row is only as good as the source it cites.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "ncsc-nl-inventory-1836",
+  "claim": "724 products in the NCSC-NL inventory at 18:36 UTC on 22 October, now in 27 per-letter files: for each CVE 216 vulnerable, 61 fixed, 440 under investigation, 6 not vulnerable",
+  "by": "NCSC-NL",
+  "sources": [
+   "ncsc-nl-php2shell-software-list-letters",
+   "ncsc-nl-php2shell-software-list"
+  ],
+  "status": "confirmed",
+  "topic": "scale",
+  "note": "Counted by the curator from the captured files. Supersedes by time the 674-product count at commit cca173c64ec5 (08:40 UTC), claim scale-ncsc-nl in claude-story-site's file; that count was right for its time.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "qnap-attempts-in-wild",
+  "claim": "QNAP PSIRT observed scanning activity and exploitation attempts against the PHP2Shell vulnerabilities in the wild, and blocked attempted attacks on QNAP's website, online store and cloud services",
+  "by": "QNAP",
+  "sources": [
+   "qnap-statement-php2shell"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "A vendor's first-hand observation of attempts, not of a successful compromise. Its advisory says QNAP has no reports of exploitation targeting QNAP products (qnap-qsa-26-18).",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "qnap-products-affected",
+  "claim": "QNAP products are affected (QTS, QuTS hero, QuTScloud, QuMagie, Note Station 3, QNE, QVR Surveillance on ARM32, TVR OS); fixed versions pending, users told to keep devices off the internet",
+  "by": "QNAP (QSA-26-18)",
+  "sources": [
+   "qnap-qsa-26-18"
+  ],
+  "status": "confirmed",
+  "topic": "appliances",
+  "note": "",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "panos-management-affected",
+  "claim": "PAN-OS 10.2, 11.1, 11.2, 12.1 and 12.2 are affected through the management web interface; fixes pending; Palo Alto is not aware of malicious exploitation against its products and rates it HIGH (CVSS-B 8.7) in its product",
+  "by": "Palo Alto Networks",
+  "sources": [
+   "paloalto-psirt-cve-2026-109618"
+  ],
+  "status": "confirmed",
+  "topic": "appliances",
+  "note": "Palo Alto's product vectors score availability impact only (VC:N/VI:N/VA:H), not code execution, unlike the 9.2 PHP vendor score it also shows (claim two-cves-9.2).",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cisco-none-known-affected",
+  "claim": "Cisco is investigating seven products; no Cisco product is yet known to be affected, and Cisco PSIRT is not aware of malicious use",
+  "by": "Cisco PSIRT (cisco-sa-php-october26, v1.2)",
+  "sources": [
+   "cisco-sa-php-october26"
+  ],
+  "status": "reported",
+  "topic": "appliances",
+  "note": "",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "fortinet-investigating",
+  "claim": "Fortinet is investigating FortiDDoS, FortiDDoS-F, FortiClient Cloud Services, FortiSOAR and FortiSOAR PaaS; FortiOS and others are confirmed not impacted",
+  "by": "Fortinet PSIRT (FG-IR-26-186)",
+  "sources": [
+   "fortinet-fg-ir-26-186"
+  ],
+  "status": "reported",
+  "topic": "appliances",
+  "note": "",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "nukib-update-only-fix",
+  "claim": "NÚKIB: updating is the only solution; fixed in PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12; information enabling exploitation is publicly available",
+  "by": "NÚKIB (Czech national cyber agency)",
+  "sources": [
+   "nukib-aktuality-2470"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "Agrees with the fixed versions in claim two-cves-9.2.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "bacs-no-attacks-switzerland",
+  "claim": "The Swiss Federal Office for Cyber Security (BACS) knows of no attacks in Switzerland",
+  "by": "BACS, via Watson (Keystone-SDA)",
+  "sources": [
+   "watson-wirtschaft-schweiz-322033892-php2shell-laut-bund-kein"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "English from the source watch reader's translation.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "japan-no-damage-reported",
+  "claim": "Japan's Chief Cabinet Secretary Kihara said no damage had been reported",
+  "by": "Japanese government, via Kyodo (Chinese edition) and Koran Jakarta",
+  "sources": [
+   "tchina-kyodonews-articles-15266",
+   "koran-jakarta-2026-10-22-upaya-global-perbaiki-celah-keamana"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "Sits alongside the GMO FX VPS compromise and Valtec's (retracted) PHP attribution, both in Japan on the same days; neither is attributed to php2shell by the company.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "latvia-attempts-failed-6000",
+  "claim": "Mostly automated exploitation attempts against private and state systems in Latvia have so far failed; about 6,000 resources in Latvia could be affected, several hundred in the public sector",
+  "by": "CERT.LV deputy head, via Delfi (LTV Panorāma)",
+  "sources": [
+   "delfi-bizness-44467736-tehnologijas-120139480-certlv-novero"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "Adds a source and the 6,000 estimate to claim latvia-attempts (claude-story-site). English from the source watch reader's translation.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "scale-22m-paloalto",
+  "claim": "About 22 million servers are exposed (an estimate attributed to Palo Alto Networks)",
+  "by": "Salzburg24 (APA)",
+  "sources": [
+   "salzburg24-news-oesterreich-massive-sache-folgen-der-php-sic"
+  ],
+  "status": "unverified",
+  "topic": "scale",
+  "note": "Second-hand; Palo Alto's own advisory (paloalto-psirt-cve-2026-109618) gives no such figure. Not comparable with claim scale-2.6m-hosts (Censys hosts) or scale-30m (websites).",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "scale-1.5m-of-2.6m-unpatched",
+  "claim": "1.5 million of 2.6 million hosts ran unpatched PHP (Censys data)",
+  "by": "TuttoTech, citing Censys",
+  "sources": [
+   "tuttotech-news-2026-10-22-vulnerabilita-php-html"
+  ],
+  "status": "reported",
+  "topic": "scale",
+  "note": "The 2.6 million agrees with claim scale-2.6m-hosts. English from the source watch reader's translation.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "scale-5.1m-virustotal",
+  "claim": "About 5.1 million IPs run PHP (VirusTotal analysis), 1.1 million disclose their version, about 272,000 run supported branches and about 758,000 run end-of-life versions",
+  "by": "TugaTech, citing a VirusTotal analysis",
+  "sources": [
+   "tugatech-t93092-milhoes-de-servidores-php-expostos-ao-risco"
+  ],
+  "status": "reported",
+  "topic": "scale",
+  "note": "A different measure (IPs) from Censys's 2.6 million hosts. English from the source watch reader's translation.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "php-foundation-no-successful-rce",
+  "claim": "To the PHP Foundation's knowledge there has been no successful attempt at remote code execution",
+  "by": "Elizabeth Barron, PHP Foundation executive director, to WIRED and The Verge",
+  "sources": [
+   "wired-exploited-days-before-patched",
+   "the-verge-php2shell-websites-down"
+  ],
+  "status": "reported",
+  "topic": "compromise",
+  "note": "Break-in question. Stated on 21-22 October; 'to our knowledge'.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "dataminr-no-known-compromises",
+  "claim": "Observed activity since disclosure remains limited to scanning, fingerprinting and non-working exploits, with no known compromises",
+  "by": "Dataminr TRACE, via BleepingComputer",
+  "sources": [
+   "bleepingcomputer-amazon-4-days-before"
+  ],
+  "status": "reported",
+  "topic": "compromise",
+  "note": "Break-in question.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "no-confirmed-breach-at-release",
+  "claim": "No breach at a real organisation had been confirmed by the time the fixes were released; watchTowr's decoy servers recorded attempts",
+  "by": "Insurance Business (Australia)",
+  "sources": [
+   "insurance-business-au-asiapac-attacks-begin"
+  ],
+  "status": "reported",
+  "topic": "compromise",
+  "note": "Break-in question. The same page's 22 October update says vendors now report exploitation beyond honeypots, not yet confirmed by agencies.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "patchstack-exploitation-incidents",
+  "claim": "Patchstack received reports of multiple active exploitation incidents from hosting partners by 07:34 UTC on 21 October, and says it has confirmed multiple active exploitation incidents",
+  "by": "Patchstack, via Recorded Future and Insurance Business",
+  "sources": [
+   "recordedfuture-php2shell",
+   "insurance-business-au-asiapac-attacks-begin"
+  ],
+  "status": "unverified",
+  "topic": "compromise",
+  "note": "Break-in question. The strongest vendor claim of real incidents, but second-hand here, and no victim organisation is named. Recorded Future: public evidence 'remains insufficient to establish the extent of successful compromise'.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "aws-broadly-exploited",
+  "claim": "PHP2Shell is now being broadly exploited in the wild; it is unclear whether any of the observed attempts would have succeeded on real-world systems",
+  "by": "Amazon (CJ Moses, AWS CISO), via WIRED, BleepingComputer, The Register and SecurityWeek",
+  "sources": [
+   "wired-exploited-days-before-patched",
+   "bleepingcomputer-amazon-4-days-before",
+   "the-register-hackers-pile-on-php2shell",
+   "securityweek-exploitation-days-before"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "Both halves are Amazon's own words: 'exploited' here means attempts seen on honeypots and sensors, not confirmed break-ins.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "hadrian-exploited-at-scale",
+  "claim": "PHP2Shell is being exploited in the wild at scale, mostly through PHP's session upload-progress mechanism",
+  "by": "Hadrian, via The Register, TechTarget and Insurance Business",
+  "sources": [
+   "the-register-hackers-pile-on-php2shell",
+   "techtarget-disclosure-unravels",
+   "insurance-business-au-asiapac-attacks-begin"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "huntress-none-observed",
+  "claim": "Huntress had not observed exploitation across its partner systems",
+  "by": "Huntress, via Insurance Business",
+  "sources": [
+   "insurance-business-au-asiapac-attacks-begin"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cloudflare-attempts-not-compromises",
+  "claim": "Cloudflare observed exploit attempts in spikes of thousands, rising to millions by the evening of 21 October; these describe attack attempts and do not by themselves establish successful compromises",
+  "by": "Cloudflare (Daniele Molteni to USA Today; Matthew Prince via The Verge; counts via Fortune)",
+  "sources": [
+   "usa-today-php2shell-live",
+   "the-verge-php2shell-websites-down",
+   "fortune-ai-tools-php-vulnerability"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "vulncheck-webshell-attempt",
+  "claim": "At least one Chinese IP address unsuccessfully attempted to exploit PHP2Shell to deploy a webshell",
+  "by": "VulnCheck, via SecurityWeek",
+  "sources": [
+   "securityweek-exploitation-days-before"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "startup-source-code-theft",
+  "claim": "A startup owner says hackers stole their source code, exposed cookie data and leaked legal documents through the PHP bug",
+  "by": "an unnamed startup owner, via Fortune (linking to a post on X)",
+  "sources": [
+   "fortune-ai-tools-php-vulnerability"
+  ],
+  "status": "unverified",
+  "topic": "compromise",
+  "note": "Break-in question. The only claimed break-in in this batch. 'Allegedly' in Fortune's words; no company is named and nothing shown links the theft to php2shell. The person is not named here. Not a named organisation, so it does not contradict the statement on /compromise/.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "headlines-exploited-before-patch",
+  "claim": "The PHP vulnerabilities were exploited days before they were patched",
+  "by": "WIRED and The Verge (headlines)",
+  "sources": [
+   "wired-exploited-days-before-patched",
+   "the-verge-php2shell-websites-down"
+  ],
+  "status": "disputed",
+  "topic": "exploitation",
+  "note": "The headlines say exploited; both bodies describe an attempt on an Amazon honeypot on 17 October and quote the PHP Foundation that no successful RCE is known.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "chainguard-lorenc-account",
+  "claim": "Chainguard independently found the vulnerability on 16 October with an AI harness, and published fixed builds early because vendors in the disclosure channel reported active exploitation overnight on 20-21 October",
+  "by": "Dan Lorenc, Chainguard CEO, to TechTarget",
+  "sources": [
+   "techtarget-disclosure-unravels"
+  ],
+  "status": "disputed",
+  "topic": "disclosure",
+  "note": "Chainguard's side of claim chainguard (claude-story-site, disputed). Lorenc does not dispute publishing early; he disputes the PHP Foundation's account that Chainguard had the patch early for its customers.",
+  "agent": "curator@php.newsroom"
  }
 ]
