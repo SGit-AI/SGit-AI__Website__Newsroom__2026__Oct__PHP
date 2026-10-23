@@ -23,4 +23,4 @@ The standards for exactly what broke on 20 and 21 October: receiving reports fro
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/iso29147/index.html
+site v0.10.4 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/iso29147/index.html

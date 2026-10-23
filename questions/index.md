@@ -33,6 +33,11 @@ An article a reader has seen is listed here until a collector captures it into t
 
 ## The catalogue: every page, and what it answers
 
+### Updates
+- [Every update, newest first](../updates/index.html):
+- [Daily: 22 Oct 20:03 UTC](../updates/2026-10-22T2003Z/index.html):
+- [How an update is written](../updates/readme/index.html):
+
 ### Start here
 - [Who is reading? The readers of this site, mapped](../start/index.html): 16 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
 - [The PHP security flaws, explained from the start](../explained/index.html): No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.
@@ -101,7 +106,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Perplexity's notes, in full](../readings/perplexity-2026-10-22/index.html):
 
 ### The evidence
-- [Every source: 144 pages, 137 captures, 857 hashes](../sources/index.html): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
+- [Every source: 227 pages, 222 captures, 1386 hashes](../sources/index.html): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
 - [The NCSC-NL inventory: 674 products](../affected/software.html): Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, with its status per CVE.
 - [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
 - [Evidence, derived, authored](../layers/index.html):
@@ -129,8 +134,14 @@ An article a reader has seen is listed here until a collector captures it into t
 - [The risk graph](../grc/graph/index.html):
 - [From the sgit network](../grc/network/index.html):
 
+### Views
+- [Views: the journalist's reading](../views/index.html):
+- [The state of affairs, now](../views/state/index.html):
+- [Every version, and what changed](../views/state/history/index.html):
+
 ### Stories
 - [All stories, written here](../articles/index.html):
+- [House · Journalist: What changed in a day](../articles/what-changed-in-a-day/index.html):
 - [House · Journalist: Why can't every version of PHP just be patched](../articles/why-not-patch-every-version/index.html):
 - [House · Journalist: Where php2shell stands](../articles/where-php2shell-stands/index.html):
 - [House · Journalist and historian: Exposed is not exploited](../articles/exposed-is-not-exploited/index.html):
@@ -165,4 +176,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.10.4 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

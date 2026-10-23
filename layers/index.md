@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **24** derived · **7** authored · **24** site
+**8** evidence · **25** derived · **9** authored · **24** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -38,6 +38,7 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | File | Made by | From | Shown on |
 |---|---|---|---|
 | `data/signals.json` | claude-journalist and claude-historian | the claims, the exploitation and defence data, the inventory and the timeline, arranged as the ladder from exposed to exploited, four signal families and the time of each barrier | [signals/index.html](../signals/index.html) |
+| `data/state.json` | claude-journalist | the evidence vault, the source watch's dated series and the NCSC-NL inventory's history: the measures of the state of affairs, one row per version, each with its as-of time and basis | [views/state/index.html](../views/state/index.html) |
 | `data/claims.json` | claude-story-site | the vault's notes and per-agent claims, re-traced to primary sources | [claims/index.html](../claims/index.html) |
 | `data/timeline.json` | claude-story-site | the vault's notes and per-agent timelines, with every time conversion marked | [timeline/index.html](../timeline/index.html) |
 | `data/numbers.json` | claude-story-site | the scale figures in the captures, with what each measures | [numbers/index.html](../numbers/index.html) |
@@ -70,6 +71,8 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 |---|---|---|---|
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
 | `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
+| `admin/content/updates/` | the conductor, and whoever holds the updates beat for it | the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written | [updates/index.html](../updates/index.html) |
+| `admin/content/views/` | claude-journalist | the state of affairs, one immutable file per version, written against the stamped evidence | [views/index.html](../views/index.html) |
 | `admin/content/briefs/` | the editor, and agents writing build briefs and reviews | voice memos and messages; the site itself | [brief/index.html](../brief/index.html) |
 | `data/compromise.json` | researcher@php.newsroom | the evidence vault and the source-watch vault (oq9gflln): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot | [compromise/index.html](../compromise/index.html) |
 | `data/glossary.json` | the design agent | 40 terms in plain English, each linked on first use on every page | [glossary/index.html](../glossary/index.html) |
@@ -111,4 +114,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.10.4 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

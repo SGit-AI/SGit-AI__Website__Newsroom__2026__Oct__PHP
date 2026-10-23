@@ -318,6 +318,44 @@ Hi designer agent and /design can you if you look at this design and help to mak
 
 The rollout is on the board, items 137 to 142.
 
+2026-10-23 · `2026-10-23__brief__the-journalists-views.md`
+
+## Brief: the two vaults, the site's update, and the journalist's views
+
+Status: accepted, by being sent. Author: Dinis Cruz, editor. A message to the journalist on 23 October 2026, reproduced verbatim. What was built against it is listed at the end.
+
+### The message
+
+Hi @journalist agent, let focus this thread on this agent actions (I will setup a different one for the @historian) should be a whole number of updates on the two vaults that we've been using. Can you take a look at them? And I think we need to do a lot of updates on the website to take into account the latest information and the latest materials, right? Also, I think you need to start to have a section where you start to write these views. So every time you do a big analysis, we need to have like, this is the state of affair, including the data that you update. And remember that in principle, every time that you do an update now, you're doing on a page that is version control. So I should be able to go back and forward and also see the delta between the different changes. That's also very important. So I need to be able to see in a particular page what happened, what changed. And that's, again, the stuff that you need to capture on the article that you write about it.
+
+### What was read
+
+- **The evidence vault** (3ytzxm3g), cloned read-only with its published key at head `f3c5db0d9873`: 227 sources, the curator's 45 promotions of 23 October (10 break-in reports among them), its 36 claims and 18 timeline rows.
+
+- **The source watch** (oq9gflln), cloned read-only at head `c26dce84136f`: the researcher's passes to 08:30 UTC on 23 October, its 14 contradiction records and its dated series (KEV, NVD, EPSS, public repositories, framework pulls, sites dark, products by status).
+
+- **The NCSC-NL inventory's** public history to `2fdc314ded28` (12:50 UTC on 23 October).
+
+### What was built against it
+
+- **The site caught up with its evidence**: `data/` re-exported from the evidence vault's head (144 sources to 227; data as of 01:20 UTC on 23 October). This is board 039, done on the journalist's branch for dev@php.newsroom to carry in, because the state of affairs could not be written on stale data.
+
+- **The inventory history** re-read to 12:50 UTC on 23 October.
+
+- **Views** (/views/): the state of affairs as a living page with its own version numbers. Each version is an immutable file (`admin/content/views/state/v.md`) and a row of measures (`data/state.json`), each value with its as-of time and basis. Every version keeps its own page with back and forward links; every pair of consecutive versions has a delta page, the measures side by side and the text line by line. The current version also enters the site's ledger and appears on /versions/.
+
+- **Version 0** (22 October, reconstructed from what the site published then, and labelled so) and **version 1** (23 October, 14:11 UTC).
+
+- **The story** "What changed in a day", which reads the change from v0 to v1 and links the delta.
+
+### What is left
+
+- The curator's 36 claims are in the raw export but not in the claims table the front page uses (claude-story-site).
+
+- The vault's own parse of the NCSC-NL inventory still drops one row (board 052).
+
+- The site's shared word diff interleaves rewritten paragraphs; showing a rewritten line as removed and added would read better (for dev@php.newsroom).
+
 2026-10-23 · `2026-10-23__brief__scanner-noise.md`
 
 ## Brief: scanner noise, how good the php2shell scanners and detection rules are
@@ -1362,6 +1400,42 @@ This is the editor's explicit exception that AGENTS.md allows to its rule that a
 
 082 to 085, listed on the board.
 
+2026-10-22 · `2026-10-22__brief__the-conductor-and-the-updates.md`
+
+## Brief: the conductor takes the updates, and the site gets an Updates section
+
+Status: accepted, by being sent. Author: Dinis Cruz, editor. A voice message to the journalist on 22 October 2026, transcribed and reproduced verbatim, hesitations included. What was built against it, and what was not, is listed at the end.
+
+### The message
+
+So this is actually another brief for the journalist, and I guess even historian, but mainly journalist. Although it's a meta request, because, you know, because of the amount of content we're creating, actually, I think the best way to do this is to think about this is actually to create a new agent. Maybe you start here, but I'll move it to a different section. But why don't you onboard the agent here, which is the conductor agent, and we basically give the conductor agent the responsibility to write daily, hour, whenever it's relevant, updates on what's going on and what's actually happening, right? Because this is now so fast pacing and moving that, for example, like I'm working with a whole bunch of agents now, I need to literally be briefed on what was added to the website, what's going on, are there any new developments, what's going on. So in a way, I'm already a massive consumer of everything that we're creating here. So yeah, I think the conductor, and then that agent could also take responsibility on the coordination of this. So in a way, we need a RSS feed and a whole website section just for the updates of what we're doing here.
+
+### How it fits what exists
+
+- **The conductor already exists.** conductor@php.newsroom joined on 22 October (v0.5.1): it owns the team map, the three coordination vaults, and the run, opened with a plan and closed with a digest. Its board item 075 asks for exactly this: a digest on the site at every close. So this brief does not make a second agent. It gives the conductor the updates beat, and builds the section its digests can be published in.
+
+- **Three jobs, three owners.** The news desk chief, named on the editor's call, holds the line of the story: what the story is today. The conductor coordinates: who owns what, what is blocked and on whom. The updates, held by the conductor, say what moved: on the site, in the story, across the team, and what is waiting on the editor.
+
+### What was built against it
+
+- **/updates/**, newest first, one page per update, in its own zone at the front of the menu, and **/feeds/updates.xml**, an RSS feed beside the site's other five.
+
+- **How an update is written**, `admin/content/updates/README.md`, published at /updates/readme/: what an update is, when (hourly when something moves, daily, flash), where the facts come from, its shape, its rules. It is written so that any session can be pointed at it, wherever the editor moves the beat.
+
+- **`admin/build/updates_digest.py`**: drafts the facts for an update from git alone (releases, commits by agent, board rows, pages, briefs, stories, corrections, the evidence counts, and the branches dev has not carried in).
+
+- **The first update**, the daily of 22 October, written by the journalist for the conductor.
+
+- **The conductor's role** on the roles page now names the updates.
+
+### What was not, and needs the editor
+
+- **A schedule.** Hourly updates without a session need a scheduled run, and `CLAUDE.md` says nothing that outlives a session starts without the editor's go. Board 071 (the run's cadence) already asks; this brief adds the updates to it.
+
+- **The conductor's own session** has not taken the beat yet: it reads this brief and the README and says so, on its branch.
+
+- **Not pushed to dev.** Under `AGENTS.md`, this is on the journalist's branch for dev@php.newsroom to carry in.
+
 2026-10-22 · `2026-10-22__brief__scheduled-capture-json-and-analysis.md`
 
 ## Brief: scheduled capture of the sources that move, raw to JSON to analysis, and contradictions as the product
@@ -1954,4 +2028,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.10.4 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

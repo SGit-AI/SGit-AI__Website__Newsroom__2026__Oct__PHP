@@ -290,6 +290,22 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - The feedback pane takes up to three screenshots; `/join/` says whether this device's key is enrolled or waiting.
 
+### The updates (journalist, for the conductor)
+
+- `/updates/` and `/feeds/updates.xml` from `admin/content/updates/__.md` (front matter: id, at, kind flash|hourly|daily, title, summary, covers_from, covers_to, author); the guide is `admin/content/updates/README.md`, also at `/updates/readme/`. One update so far: the daily of 22 October, 20:03 UTC.
+
+- `admin/build/updates_digest.py --since  --until origin/dev`: the facts for an update, from git alone.
+
+- Stories can carry dated corrections (`correction1:  | ` in front matter), shown above the text, which stays as written.
+
+- Not built: a schedule for the updates (needs the editor's go); the conductor's own session has not taken the beat yet.
+
+### Views: the journalist's state of affairs (23 October)
+
+- `/views/`, `/views/state/` (the current version), `/views/state/v/` (every version), `/views/state/v-v/` (what changed: the measures side by side, the text as a line diff), `/views/state/history/`. Versions are the journalist's own, independent of the site's releases: `admin/content/views/state/v.md` (immutable) and `data/state.json` (the measures, each with as-of and basis). The current version is also in the site's ledger. Two versions: v0 (22 October, reconstructed) and v1 (23 October, 14:11 UTC).
+
+- `data/` re-exported from the evidence vault at `f3c5db0d9873` (227 sources, latest capture 01:20 UTC on 23 October); the inventory history re-read to `2fdc314ded28` (12:50 UTC on 23 October).
+
 ### Not built
 
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.
@@ -310,4 +326,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.10.4 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

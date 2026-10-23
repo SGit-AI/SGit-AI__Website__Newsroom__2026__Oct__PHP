@@ -24,12 +24,12 @@ Every element is carried by the BBC live page, but Edinburgh council, online sto
 | [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | partial | *Government websites are down around the world, including France, due to the exposure* | c88b8c5f4c6bc07d |
 | [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | carries | *Among the impacted sites are Wikipedia, Edinburgh council, many online stores and the BBC* | fe32274b64ee109a |
 | [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | carries | *the university of geneva's website shows an error message that says it is down for maintenance.* | ee7445a58187bcd6 |
-| unige-site (in the vault, not yet on this site) | carries | *The requested service is under maintenance for the moment.* | 4bdf3d6eb3f0d3b6 |
-| fr-prefecture-nord-down (in the vault, not yet on this site) | carries | *Maintenance en cours Notre site sera à nouveau accessible d'ici quelques instants.* | 72b685717874bab2 |
-| fr-prefecture-rhone-down (in the vault, not yet on this site) | carries | *Maintenance en cours Notre site sera à nouveau accessible d'ici quelques instants.* | 72b685717874bab2 |
-| actu17-prefectures (in the vault, not yet on this site) | carries | *Les sites internet des préfectures, dont celui de la préfecture de police, sont inaccessibles depuis ce mercredi 21 octobre.* | 84edb7f59b55a5ce |
-| uk-edinburgh-council (in the vault, not yet on this site) | absent | *nothing that carries it* | eef60737c49dfded |
-| wikimediastatus-page (in the vault, not yet on this site) | absent | *All Systems Operational* | 13e068d2c2b3665d |
+| [unige-site](../../sources/unige-site/index.html) | carries | *The requested service is under maintenance for the moment.* | 4bdf3d6eb3f0d3b6 |
+| [fr-prefecture-nord-down](../../sources/fr-prefecture-nord-down/index.html) | carries | *Maintenance en cours Notre site sera à nouveau accessible d'ici quelques instants.* | 72b685717874bab2 |
+| [fr-prefecture-rhone-down](../../sources/fr-prefecture-rhone-down/index.html) | carries | *Maintenance en cours Notre site sera à nouveau accessible d'ici quelques instants.* | 72b685717874bab2 |
+| [actu17-prefectures](../../sources/actu17-prefectures/index.html) | carries | *Les sites internet des préfectures, dont celui de la préfecture de police, sont inaccessibles depuis ce mercredi 21 octobre.* | 84edb7f59b55a5ce |
+| [uk-edinburgh-council](../../sources/uk-edinburgh-council/index.html) | absent | *nothing that carries it* | eef60737c49dfded |
+| [wikimediastatus-page](../../sources/wikimediastatus-page/index.html) | absent | *All Systems Operational* | 13e068d2c2b3665d |
 | [cyberexpress-php2shell-gov-sites](../../sources/cyberexpress-php2shell-gov-sites/index.html) | partial | *Edinburgh council’s website and pages for BBC programmes, including Doctor Who and The Traitors, also went dark, though neither has confirmed a PHP link.* | f45bc7599367343e |
 
 Open tickets: [Contradiction-6](../../factcheck/index.html#Contradiction-6), [Evidence-11](../../factcheck/index.html#Evidence-11), [Evidence-3](../../factcheck/index.html#Evidence-3), [Evidence-4](../../factcheck/index.html#Evidence-4), [Finding-22](../../factcheck/index.html#Finding-22), [Finding-23](../../factcheck/index.html#Finding-23), [Finding-57](../../factcheck/index.html#Finding-57), [Gap-1](../../factcheck/index.html#Gap-1).
@@ -63,4 +63,4 @@ Sources: bbc-live-ckgel5xp2xv9t
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/affected-sites/index.html
+site v0.10.4 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/affected-sites/index.html

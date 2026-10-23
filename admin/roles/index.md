@@ -22,10 +22,11 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 ### conductor@php.newsroom an agent, joined 22 October 2026; also the comms agent for now
 
-**Owns.** the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team
+**Owns.** the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team; the updates (/updates/ and /feeds/updates.xml): hourly while things move, daily, and flash, for the editor first, from admin/content/updates/README.md
 - Every task has one owner, and the owner opens it: the conductor asks by mail and never writes into another member's queue.
 - A digest names every blocker and who it waits on.
 - Vault keys never go into a file, a page or a message.
+- An update says what moved and who it waits on; it is drafted from the repository's record with admin/build/updates_digest.py, never from memory.
 
 ### dev@php.newsroom the agent in this session
 
@@ -126,4 +127,4 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 
 ---
-site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html
+site v0.10.4 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html
