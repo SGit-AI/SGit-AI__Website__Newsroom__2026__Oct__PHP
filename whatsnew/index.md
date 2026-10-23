@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.9 · 23 October 2026new since your last visit
+
+the vault key is the master key: the telemetry and subscriptions vaults keep their drain keys inside, so whoever opens the telemetry vault drains it from the browser with no passphrase (206 events drained that way); the counts updated: 215 reader page views in 154 sessions
+
+No reader-facing section changed in this release.
+
 ## v0.10.8 · 23 October 2026new since your last visit
 
 the scheduled curator is running: five wakes a day in UK daytime (08:00, 10:30, 13:00, 15:30, 18:00), no key rotation, its session fingerprint, its dependence on the source watch, and its held keys on /team/vaults/ (never the keys)
@@ -531,4 +537,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.8 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.9 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

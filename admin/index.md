@@ -262,6 +262,8 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `admin/build/telemetry_flow.sh  `: pull both, drain, classify (`reports/classes.json` in the private vault), publish (`admin/build/telemetry_publish.py`), push both; writes `data/telemetry-report.json` and `data/telemetry-public.json` for the next release. `/admin/telemetry/` draws the groups, the hourly chart and the map from them; `data/world.json` is Natural Earth 1:50m (public domain) in Equal Earth.
 
+- The vault key is the master key (v0.8.5): the telemetry and subscriptions vaults hold their drain keys in `identity/private/drain-key.pkcs8.json` (protected by the vault's encryption) and their lanes in `identity/lanes.json`; the telemetry app (v0.3.0) drains with the vault key alone. The command-line drainers still use the local passphrase and the sgit key store.
+
 - Not built: a schedule for the flow (needs the editor's go); public stats after an in-browser drain (an app cannot write another vault).
 
 ### The Sherpa (branch sherpa/joins, sherpa@php.newsroom)
@@ -338,4 +340,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.10.8 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.10.9 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

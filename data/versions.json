@@ -1,6 +1,15 @@
 {
- "current": "0.10.8",
+ "current": "0.10.9",
  "versions": [
+  {
+   "version": "0.10.9",
+   "date": "2026-10-23",
+   "title": "the vault key is the master key: the telemetry and subscriptions vaults keep their drain keys inside, so whoever opens the telemetry vault drains it from the browser with no passphrase (206 events drained that way); the counts updated: 215 reader page views in 154 sessions",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.8",
    "date": "2026-10-23",

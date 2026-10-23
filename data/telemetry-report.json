@@ -1,9 +1,9 @@
 {
  "as_of": "2026-10-23",
- "drained_now": 2,
- "events": 772,
+ "drained_now": 0,
+ "events": 978,
  "test_or_undecryptable": 1,
- "sessions": 279,
+ "sessions": 349,
  "by_day": [
   [
    "2026-10-22",
@@ -11,40 +11,72 @@
   ],
   [
    "2026-10-23",
-   356
+   562
   ]
  ],
  "by_path": [
   [
    "/",
-   129
+   150
   ],
   [
    "/index.html",
-   25
+   35
   ],
   [
    "/claims/index.html",
-   15
+   19
   ],
   [
    "/now/index.html",
-   12
+   15
   ],
   [
    "/briefings/board/index.html",
-   11
+   13
   ],
   [
-   "/sources/index.html",
-   10
-  ],
-  [
-   "/join/",
-   10
+   "/sources/calif-php2shell/index.html",
+   13
   ],
   [
    "/method/index.html",
+   12
+  ],
+  [
+   "/explained/index.html",
+   12
+  ],
+  [
+   "/join/",
+   12
+  ],
+  [
+   "/sources/index.html",
+   11
+  ],
+  [
+   "/team/index.html",
+   11
+  ],
+  [
+   "/start/index.html",
+   10
+  ],
+  [
+   "/factcheck/index.html",
+   9
+  ],
+  [
+   "/account/index.html",
+   8
+  ],
+  [
+   "/graph/index.html",
+   8
+  ],
+  [
+   "/collaborators/",
    8
   ],
   [
@@ -52,19 +84,27 @@
    7
   ],
   [
+   "/admin/versions.html",
+   7
+  ],
+  [
    "/exploitation/index.html",
    7
   ],
   [
-   "/explained/index.html",
+   "/flaws/index.html",
    7
   ],
   [
-   "/graph/index.html",
+   "/collaborators/index.html",
    7
   ],
   [
-   "/factcheck/index.html",
+   "/impact/index.html",
+   7
+  ],
+  [
+   "/briefings/pm/index.html",
    7
   ],
   [
@@ -76,23 +116,19 @@
    6
   ],
   [
-   "/account/index.html",
+   "/affected/software.html",
    6
   ],
   [
-   "/team/index.html",
+   "/grc/graph/index.html",
    6
   ],
   [
-   "/flaws/index.html",
-   6
+   "/review/index.html",
+   5
   ],
   [
-   "/impact/index.html",
-   6
-  ],
-  [
-   "/admin/versions.html",
+   "/briefings/ciso/index.html",
    5
   ],
   [
@@ -100,15 +136,23 @@
    5
   ],
   [
+   "/team/vicky/index.html",
+   5
+  ],
+  [
    "/storyboards/briefing-2026-10-22/index.html",
    5
   ],
   [
-   "/grc/graph/index.html",
+   "/compromise/index.html",
    5
   ],
   [
-   "/compromise/index.html",
+   "/briefings/everyone/index.html",
+   5
+  ],
+  [
+   "/playbook/index.html",
    5
   ],
   [
@@ -120,78 +164,38 @@
    4
   ],
   [
+   "/admin/board/index.html",
+   4
+  ],
+  [
+   "/questions/index.html",
+   4
+  ],
+  [
    "/billing/index.html",
    4
-  ],
-  [
-   "/readings/index.html",
-   4
-  ],
-  [
-   "/briefings/ciso/index.html",
-   4
-  ],
-  [
-   "/affected/software.html",
-   4
-  ],
-  [
-   "/vaults/source-watch/index.html",
-   4
-  ],
-  [
-   "/collaborators/index.html",
-   4
-  ],
-  [
-   "/admin/agents/librarian/index.html",
-   4
-  ],
-  [
-   "/admin/agents/rounds/index.html",
-   4
-  ],
-  [
-   "/questions/am-i-affected/index.html",
-   4
-  ],
-  [
-   "/briefings/everyone/index.html",
-   4
-  ],
-  [
-   "/sources/gist-blevene-detection-guide/index.html",
-   4
-  ],
-  [
-   "/leak/index.html",
-   4
-  ],
-  [
-   "/admin/board/index.html",
-   3
-  ],
-  [
-   "/briefings/developer/index.html",
-   3
   ]
  ],
  "by_country": [
   [
    "US",
-   330
+   383
   ],
   [
    "(none)",
-   276
+   310
   ],
   [
    "GB",
-   91
+   131
   ],
   [
    "PT",
-   29
+   87
+  ],
+  [
+   "NO",
+   18
   ],
   [
    "ES",
@@ -215,6 +219,10 @@
   ],
   [
    "DE",
+   4
+  ],
+  [
+   "CA",
    3
   ],
   [
@@ -226,38 +234,38 @@
    2
   ],
   [
-   "CA",
-   2
-  ],
-  [
    "AT",
    2
   ],
   [
    "PK",
    1
+  ],
+  [
+   "IT",
+   1
   ]
  ],
  "by_region": [
   [
-   "(none)",
-   277
+   "California",
+   314
   ],
   [
-   "California",
-   271
+   "(none)",
+   311
   ],
   [
    "England",
-   90
-  ],
-  [
-   "Virginia",
-   27
+   128
   ],
   [
    "Lisbon",
-   27
+   85
+  ],
+  [
+   "Virginia",
+   32
   ],
   [
    "Madrid",
@@ -276,7 +284,27 @@
    6
   ],
   [
+   "Akershus",
+   6
+  ],
+  [
+   "New York",
+   5
+  ],
+  [
+   "Oslo",
+   5
+  ],
+  [
    "New South Wales",
+   4
+  ],
+  [
+   "Hessen",
+   4
+  ],
+  [
+   "Vestland",
    4
   ],
   [
@@ -284,7 +312,7 @@
    3
   ],
   [
-   "New York",
+   "Arizona",
    3
   ],
   [
@@ -292,7 +320,7 @@
    3
   ],
   [
-   "Hessen",
+   "British Columbia",
    3
   ],
   [
@@ -312,54 +340,34 @@
    2
   ],
   [
-   "Arizona",
-   2
-  ],
-  [
    "New Jersey",
    2
   ],
   [
    "Nouvelle-Aquitaine",
    2
-  ],
-  [
-   "British Columbia",
-   2
-  ],
-  [
-   "Vienna",
-   2
-  ],
-  [
-   "Central Singapore",
-   1
-  ],
-  [
-   "Groningen",
-   1
   ]
  ],
  "by_city": [
   [
    "(none)",
-   276
-  ],
-  [
-   "San Francisco",
-   133
+   310
   ],
   [
    "Mountain View",
-   128
+   164
   ],
   [
-   "London",
-   35
+   "San Francisco",
+   140
   ],
   [
    "Lisbon",
-   27
+   85
+  ],
+  [
+   "London",
+   66
   ],
   [
    "Bridgwater",
@@ -367,26 +375,38 @@
   ],
   [
    "Ashburn",
-   13
+   14
   ],
   [
    "Madrid",
    13
   ],
   [
+   "Boydton",
+   10
+  ],
+  [
    "Manchester",
-   7
+   10
   ],
   [
    "Sunbury-on-Thames",
    7
   ],
   [
-   "Boydton",
-   6
+   "Pembroke Pines",
+   5
   ],
   [
-   "Pembroke Pines",
+   "Northampton",
+   5
+  ],
+  [
+   "Oslo",
+   5
+  ],
+  [
+   "Nesoddtangen",
    5
   ],
   [
@@ -406,6 +426,10 @@
    4
   ],
   [
+   "Frankfurt am Main",
+   4
+  ],
+  [
    "Council Bluffs",
    4
   ],
@@ -414,45 +438,33 @@
    4
   ],
   [
+   "Hayes",
+   3
+  ],
+  [
    "Dublin",
    3
   ],
   [
    "Des Moines",
    3
-  ],
-  [
-   "Northampton",
-   3
-  ],
-  [
-   "Brighstone",
-   3
-  ],
-  [
-   "Frankfurt am Main",
-   3
-  ],
-  [
-   "Paris",
-   3
-  ],
-  [
-   "Durrow",
-   3
   ]
  ],
  "by_referrer": [
   [
    "(none)",
-   682
+   796
   ],
   [
    "php.oct.2026.newsroom.sgit.ai",
-   73
+   145
   ],
   [
    "www.linkedin.com",
+   13
+  ],
+  [
+   "www.kode24.no",
    8
   ],
   [
@@ -460,8 +472,16 @@
    6
   ],
   [
+   "www.google.com",
+   4
+  ],
+  [
    "com.linkedin.android",
-   1
+   2
+  ],
+  [
+   "oct.2026.newsroom.sgit.ai",
+   2
   ],
   [
    "teams.public.onecdn.static.microsoft",
@@ -475,25 +495,29 @@
  "by_screen": [
   [
    "phone",
-   446
+   504
   ],
   [
    "desktop",
-   313
+   454
   ],
   [
    "tablet",
-   13
+   20
   ]
  ],
  "by_version": [
   [
    "v0.8.1",
-   299
+   301
   ],
   [
    "v0.7.0",
    89
+  ],
+  [
+   "v0.8.4",
+   58
   ],
   [
    "v0.5.5",
@@ -502,6 +526,10 @@
   [
    "v0.8.2",
    41
+  ],
+  [
+   "v0.9.1",
+   35
   ],
   [
    "v0.8.0",
@@ -524,19 +552,31 @@
    19
   ],
   [
+   "v0.10.3",
+   19
+  ],
+  [
+   "v0.2.12",
+   18
+  ],
+  [
    "v0.2.14",
    18
   ],
   [
-   "v0.2.12",
+   "v0.10.6",
    17
   ],
   [
-   "v0.2.9",
-   12
+   "(none)",
+   15
   ],
   [
-   "(none)",
+   "v0.10.5",
+   14
+  ],
+  [
+   "v0.2.9",
    12
   ],
   [
@@ -544,48 +584,28 @@
    11
   ],
   [
+   "v0.9.3",
+   11
+  ],
+  [
+   "v0.10.2",
+   11
+  ],
+  [
+   "v0.10.7",
+   11
+  ],
+  [
    "v0.5.0",
+   10
+  ],
+  [
+   "v0.9.0",
    10
   ],
   [
    "v0.4.7",
    9
-  ],
-  [
-   "v0.5.2",
-   8
-  ],
-  [
-   "v0.5.1",
-   7
-  ],
-  [
-   "v0.5.8",
-   6
-  ],
-  [
-   "v0.2.4",
-   5
-  ],
-  [
-   "v0.5.7",
-   5
-  ],
-  [
-   "v0.8.3",
-   5
-  ],
-  [
-   "v0.2.2",
-   4
-  ],
-  [
-   "v0.4.0",
-   4
-  ],
-  [
-   "v0.4.1",
-   4
   ]
  ],
  "note": "Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault."

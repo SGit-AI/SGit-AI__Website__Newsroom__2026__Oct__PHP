@@ -18,14 +18,14 @@ One anonymous event per page per session: path, referrer host, country, region, 
 
 ## Who is who
 
-Not everyone who opens a page is a reader. Each session (one browser tab) is put in one of four groups: **readers**; **the editor, team and power users**; **synthetic** visitors, the headless browsers of this site's own agents and of anyone testing it; and **crawlers**, search engines rendering the pages. As of **2026-10-23T10:58Z**, since 2026-10-22T13:43Z:
+Not everyone who opens a page is a reader. Each session (one browser tab) is put in one of four groups: **readers**; **the editor, team and power users**; **synthetic** visitors, the headless browsers of this site's own agents and of anyone testing it; and **crawlers**, search engines rendering the pages. As of **2026-10-23T16:15Z**, since 2026-10-22T13:43Z:
 
 | Group | Page views | Sessions | Of which declared |
 |---|---|---|---|
-| Readers | 148 | 113 | 0 |
-| The editor, team and power users | 49 | 24 | 0 |
-| Synthetic: agents, tests, headless browsers | 166 | 121 | 0 |
-| Crawlers: search engines | 409 | 21 | 0 |
+| Readers | 215 | 154 | 0 |
+| The editor, team and power users | 109 | 38 | 12 |
+| Synthetic: agents, tests, headless browsers | 176 | 130 | 5 |
+| Crawlers: search engines | 478 | 27 | 1 |
 
 ReadersThe editor, team and power usersSynthetic: agents, tests, headless browsersCrawlers: search engines
 
@@ -33,25 +33,27 @@ Page views per UTC hour, stacked by group. Hover a column for its numbers.
 
 ### Where readers are
 
-Readers only: 148 page views in 113 sessions, 24 of which read more than one page; 13 countries. Country from a lookup in the reader's browser; nothing finer is published.
+Readers only: 215 page views in 154 sessions, 35 of which read more than one page; 15 countries. Country from a lookup in the reader's browser; nothing finer is published.
 
-fewer more page views (log scale; most: 84)
+fewer more page views (log scale; most: 122)
 
 Every country
 | Country | Page views | Sessions |
 |---|---|---|
-| `GB` United Kingdom | 84 | 58 |
-| `US` United States of America | 31 | 28 |
+| `GB` United Kingdom | 122 | 78 |
+| `US` United States of America | 39 | 36 |
+| `NO` Norway | 18 | 10 |
 | `IE` Ireland | 6 | 5 |
 | `NL` Netherlands | 5 | 5 |
 | `AU` Ashmore and Cartier Islands | 4 | 2 |
-| `DE` Germany | 3 | 3 |
+| `DE` Germany | 4 | 4 |
+| `CA` Canada | 3 | 3 |
 | `FR` France | 3 | 3 |
 | `TR` Turkey | 3 | 2 |
 | `AT` Austria | 2 | 1 |
-| `CA` Canada | 2 | 2 |
 | `ES` Spain | 2 | 2 |
 | `SG` Singapore | 2 | 1 |
+| `IT` Italy | 1 | 1 |
 | `PK` Pakistan | 1 | 1 |
 
 ### How the groups are told apart
@@ -85,121 +87,126 @@ A read key decrypts and cannot write; it is derived one way from the vault key, 
 
 The drainer's own report, over every event: readers, the editor and power users, agents and crawlers together.
 
-Report as of **2026-10-23**: **772** events from **279** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
+Report as of **2026-10-23**: **978** events from **349** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
 
 | Country | Events |
 |---|---|
-| US | 330 |
-| (none) | 276 |
-| GB | 91 |
-| PT | 29 |
+| US | 383 |
+| (none) | 310 |
+| GB | 131 |
+| PT | 87 |
+| NO | 18 |
 | ES | 13 |
 | IE | 6 |
 | NL | 5 |
 | FR | 5 |
 | AU | 4 |
-| DE | 3 |
+| DE | 4 |
+| CA | 3 |
 | TR | 3 |
 | SG | 2 |
-| CA | 2 |
 | AT | 2 |
 | PK | 1 |
+| IT | 1 |
 
 | Region | Events |
 |---|---|
-| (none) | 277 |
-| California | 271 |
-| England | 90 |
-| Virginia | 27 |
-| Lisbon | 27 |
+| California | 314 |
+| (none) | 311 |
+| England | 128 |
+| Lisbon | 85 |
+| Virginia | 32 |
 | Madrid | 13 |
 | Florida | 11 |
 | Iowa | 7 |
 | Leinster | 6 |
+| Akershus | 6 |
+| New York | 5 |
+| Oslo | 5 |
 | New South Wales | 4 |
+| Hessen | 4 |
+| Vestland | 4 |
 | Washington | 3 |
-| New York | 3 |
+| Arizona | 3 |
 | Pennsylvania | 3 |
-| Hessen | 3 |
+| British Columbia | 3 |
 | Ile-de-France | 3 |
 | Istanbul | 3 |
 | Leiria | 2 |
 | North Brabant | 2 |
-| Arizona | 2 |
 | New Jersey | 2 |
 | Nouvelle-Aquitaine | 2 |
-| British Columbia | 2 |
-| Vienna | 2 |
-| Central Singapore | 1 |
-| Groningen | 1 |
 
 | Referrer host | Events |
 |---|---|
-| (none) | 682 |
-| php.oct.2026.newsroom.sgit.ai | 73 |
-| www.linkedin.com | 8 |
+| (none) | 796 |
+| php.oct.2026.newsroom.sgit.ai | 145 |
+| www.linkedin.com | 13 |
+| www.kode24.no | 8 |
 | newsroom.sgit.ai | 6 |
-| com.linkedin.android | 1 |
+| www.google.com | 4 |
+| com.linkedin.android | 2 |
+| oct.2026.newsroom.sgit.ai | 2 |
 | teams.public.onecdn.static.microsoft | 1 |
 | com.google.android.gm | 1 |
 
 | Screen | Events |
 |---|---|
-| phone | 446 |
-| desktop | 313 |
-| tablet | 13 |
+| phone | 504 |
+| desktop | 454 |
+| tablet | 20 |
 
 ### By page
 
 | Page | Events |
 |---|---|
-| / | 129 |
-| /index.html | 25 |
-| /claims/index.html | 15 |
-| /now/index.html | 12 |
-| /briefings/board/index.html | 11 |
-| /sources/index.html | 10 |
-| /join/ | 10 |
-| /method/index.html | 8 |
+| / | 150 |
+| /index.html | 35 |
+| /claims/index.html | 19 |
+| /now/index.html | 15 |
+| /briefings/board/index.html | 13 |
+| /sources/calif-php2shell/index.html | 13 |
+| /method/index.html | 12 |
+| /explained/index.html | 12 |
+| /join/ | 12 |
+| /sources/index.html | 11 |
+| /team/index.html | 11 |
+| /start/index.html | 10 |
+| /factcheck/index.html | 9 |
+| /account/index.html | 8 |
+| /graph/index.html | 8 |
+| /collaborators/ | 8 |
 | /articles/where-php2shell-stands/index.html | 7 |
+| /admin/versions.html | 7 |
 | /exploitation/index.html | 7 |
-| /explained/index.html | 7 |
-| /graph/index.html | 7 |
-| /factcheck/index.html | 7 |
+| /flaws/index.html | 7 |
+| /collaborators/index.html | 7 |
+| /impact/index.html | 7 |
+| /briefings/pm/index.html | 7 |
 | /review/ui/index.html | 6 |
 | /questions/fix-or-wait/index.html | 6 |
-| /account/index.html | 6 |
-| /team/index.html | 6 |
-| /flaws/index.html | 6 |
-| /impact/index.html | 6 |
-| /admin/versions.html | 5 |
+| /affected/software.html | 6 |
+| /grc/graph/index.html | 6 |
+| /review/index.html | 5 |
+| /briefings/ciso/index.html | 5 |
 | /readings/perplexity-2026-10-22/index.html | 5 |
+| /team/vicky/index.html | 5 |
 | /storyboards/briefing-2026-10-22/index.html | 5 |
-| /grc/graph/index.html | 5 |
 | /compromise/index.html | 5 |
+| /briefings/everyone/index.html | 5 |
+| /playbook/index.html | 5 |
 | /admin/telemetry/index.html | 4 |
 | /admin/vault/index.html | 4 |
+| /admin/board/index.html | 4 |
+| /questions/index.html | 4 |
 | /billing/index.html | 4 |
-| /readings/index.html | 4 |
-| /briefings/ciso/index.html | 4 |
-| /affected/software.html | 4 |
-| /vaults/source-watch/index.html | 4 |
-| /collaborators/index.html | 4 |
-| /admin/agents/librarian/index.html | 4 |
-| /admin/agents/rounds/index.html | 4 |
-| /questions/am-i-affected/index.html | 4 |
-| /briefings/everyone/index.html | 4 |
-| /sources/gist-blevene-detection-guide/index.html | 4 |
-| /leak/index.html | 4 |
-| /admin/board/index.html | 3 |
-| /briefings/developer/index.html | 3 |
 
 ### By day
 
 | Day | Events |
 |---|---|
 | 2026-10-22 | 416 |
-| 2026-10-23 | 356 |
+| 2026-10-23 | 562 |
 
 ## What the counts are worth
 
@@ -209,8 +216,8 @@ Report as of **2026-10-23**: **772** events from **279** sessions (1 test or und
 
 - Nobody can be identified from them, by design, and no row leaves the vault; the drainer publishes counts.
 
-Mechanics: `assets/telemetry.js` sends; `admin/build/telemetry_drain.py`, run by whoever holds the telemetry vault key, lists the lane with the enum key, fetches, decrypts with the private key, marks processed and writes `reports/`; `data/telemetry-report.json` is the latest report, copied into this repository at each drain. The same drain runs in the browser: open the telemetry vault with its vault key and its Queue & drain page shows what waits in the lane and drains it, with the same steps and the same files, publishing the commit before it marks anything processed.
+Mechanics: `assets/telemetry.js` sends; `admin/build/telemetry_drain.py`, run by whoever holds the telemetry vault key, lists the lane with the enum key, fetches, decrypts with the private key, marks processed and writes `reports/`; `data/telemetry-report.json` is the latest report, copied into this repository at each drain. The same drain runs in the browser: open the telemetry vault with its vault key and its Queue & drain page shows what waits in the lane and drains it, with no other secret (the vault key is the master key: the drain key is kept inside the vault, protected by its encryption), with the same steps and the same files, publishing the commit before it marks anything processed.
 
 
 ---
-site v0.10.8 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html
+site v0.10.9 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html

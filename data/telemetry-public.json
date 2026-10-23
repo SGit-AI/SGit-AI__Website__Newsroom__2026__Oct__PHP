@@ -1,6 +1,6 @@
 {
  "about": "The curated, public view of who reads php.oct.2026.newsroom.sgit.ai, made from the private telemetry vault at each drain by admin/build/telemetry_publish.py. Counts only: no row, session id, city, region, time zone or time finer than the hour leaves the private vault.",
- "as_of": "2026-10-23T10:58Z",
+ "as_of": "2026-10-23T16:15Z",
  "first": "2026-10-22T13:43Z",
  "groups": [
   "readers",
@@ -16,24 +16,24 @@
  },
  "totals": {
   "readers": {
-   "views": 148,
-   "sessions": 113,
+   "views": 215,
+   "sessions": 154,
    "declared": 0
   },
   "us": {
-   "views": 49,
-   "sessions": 24,
-   "declared": 0
+   "views": 109,
+   "sessions": 38,
+   "declared": 12
   },
   "synthetic": {
-   "views": 166,
-   "sessions": 121,
-   "declared": 0
+   "views": 176,
+   "sessions": 130,
+   "declared": 5
   },
   "crawlers": {
-   "views": 409,
-   "sessions": 21,
-   "declared": 0
+   "views": 478,
+   "sessions": 27,
+   "declared": 1
   }
  },
  "daily": [
@@ -55,33 +55,38 @@
   [
    "2026-10-23",
    [
-    52,
-    40,
-    17,
-    249
+    119,
+    100,
+    27,
+    318
    ],
    [
-    42,
-    20,
-    17,
-    8
+    83,
+    34,
+    26,
+    14
    ]
   ]
  ],
  "readers": {
-  "views": 148,
-  "sessions": 113,
-  "read_on": 24,
+  "views": 215,
+  "sessions": 154,
+  "read_on": 35,
   "countries": [
    [
     "GB",
-    84,
-    58
+    122,
+    78
    ],
    [
     "US",
-    31,
-    28
+    39,
+    36
+   ],
+   [
+    "NO",
+    18,
+    10
    ],
    [
     "IE",
@@ -100,6 +105,11 @@
    ],
    [
     "DE",
+    4,
+    4
+   ],
+   [
+    "CA",
     3,
     3
    ],
@@ -119,11 +129,6 @@
     1
    ],
    [
-    "CA",
-    2,
-    2
-   ],
-   [
     "ES",
     2,
     2
@@ -134,6 +139,11 @@
     1
    ],
    [
+    "IT",
+    1,
+    1
+   ],
+   [
     "PK",
     1,
     1
@@ -141,12 +151,12 @@
   ],
   "devices": [
    [
-    "phone",
-    87
+    "desktop",
+    112
    ],
    [
-    "desktop",
-    60
+    "phone",
+    102
    ],
    [
     "tablet",
@@ -156,7 +166,11 @@
   "languages": [
    [
     "en",
-    145
+    200
+   ],
+   [
+    "nb",
+    12
    ],
    [
     "es",
@@ -170,7 +184,7 @@
   "versions": [
    [
     "v0.8.1",
-    36
+    38
    ],
    [
     "v0.2.14",
@@ -181,6 +195,18 @@
     15
    ],
    [
+    "v0.8.4",
+    13
+   ],
+   [
+    "v0.10.5",
+    12
+   ],
+   [
+    "v0.2.12",
+    12
+   ],
+   [
     "v0.5.5",
     12
    ],
@@ -189,8 +215,12 @@
     12
    ],
    [
-    "v0.2.12",
-    11
+    "v0.10.3",
+    8
+   ],
+   [
+    "v0.10.6",
+    7
    ],
    [
     "v0.5.9",
@@ -201,54 +231,74 @@
     6
    ],
    [
+    "v0.9.0",
+    6
+   ],
+   [
+    "v0.9.1",
+    6
+   ],
+   [
     "v0.4.7",
     4
-   ],
-   [
-    "v0.2.4",
-    3
-   ],
-   [
-    "v0.5.7",
-    3
-   ],
-   [
-    "v0.2.13",
-    2
-   ],
-   [
-    "v0.2.15",
-    2
-   ],
-   [
-    "v0.2.8",
-    2
-   ],
-   [
-    "v0.4.1",
-    2
    ]
   ],
   "pages": [
    [
     "/",
-    95
+    108
    ],
    [
     "/index.html",
-    6
+    12
+   ],
+   [
+    "/sources/calif-php2shell/index.html",
+    9
    ],
    [
     "/briefings/board/index.html",
-    4
+    6
    ],
    [
     "/briefings/journalist/index.html",
-    3
+    4
+   ],
+   [
+    "/claims/index.html",
+    4
+   ],
+   [
+    "/explained/index.html",
+    4
    ],
    [
     "/team/index.html",
+    4
+   ],
+   [
+    "/admin/versions.html",
     3
+   ],
+   [
+    "/affected/software.html",
+    3
+   ],
+   [
+    "/sherpa/ideas/ci-001/index.html",
+    3
+   ],
+   [
+    "/sources/index.html",
+    3
+   ],
+   [
+    "/start/index.html",
+    3
+   ],
+   [
+    "/account/index.html",
+    2
    ],
    [
     "/briefings/ciso/index.html",
@@ -267,7 +317,15 @@
     2
    ],
    [
-    "/explained/index.html",
+    "/glossary/index.html",
+    2
+   ],
+   [
+    "/graph/index.html",
+    2
+   ],
+   [
+    "/grc/graph/",
     2
    ],
    [
@@ -279,11 +337,11 @@
     2
    ],
    [
-    "/questions/fix-or-wait/index.html",
+    "/method/index.html",
     2
    ],
    [
-    "/sources/index.html",
+    "/questions/fix-or-wait/index.html",
     2
    ],
    [
@@ -291,77 +349,37 @@
     2
    ],
    [
+    "/admin/briefs/index.html",
+    1
+   ],
+   [
     "/admin/vault/index.html",
     1
    ],
    [
-    "/admin/versions.html",
-    1
-   ],
-   [
-    "/affected/software.html",
+    "/articles/index.html",
     1
    ],
    [
     "/briefings/cto/index.html",
-    1
-   ],
-   [
-    "/briefings/developer/index.html",
-    1
-   ],
-   [
-    "/briefings/site-owner/index.html",
-    1
-   ],
-   [
-    "/claims/index.html",
-    1
-   ],
-   [
-    "/code/index.html",
-    1
-   ],
-   [
-    "/flaws/index.html",
-    1
-   ],
-   [
-    "/graph/index.html",
-    1
-   ],
-   [
-    "/grc/index.html",
-    1
-   ],
-   [
-    "/now/index.html",
-    1
-   ],
-   [
-    "/sources/bloomberg-governments-offline/index.html",
-    1
-   ],
-   [
-    "/sources/jpcert-at260033/index.html",
-    1
-   ],
-   [
-    "/stack/",
     1
    ]
   ],
   "referrers": [
    [
     "(none: typed, bookmarked or shared)",
-    87
-   ],
-   [
-    "this site",
-    10
+    110
    ],
    [
     "www.linkedin.com",
+    13
+   ],
+   [
+    "this site",
+    11
+   ],
+   [
+    "www.kode24.no",
     8
    ],
    [
@@ -370,7 +388,11 @@
    ],
    [
     "other",
-    2
+    3
+   ],
+   [
+    "www.google.com",
+    3
    ]
   ]
  },
@@ -736,6 +758,96 @@
     6,
     5,
     8
+   ]
+  ],
+  [
+   "2026-10-23T11",
+   [
+    5,
+    11,
+    1,
+    12
+   ],
+   [
+    5,
+    5,
+    1,
+    1
+   ]
+  ],
+  [
+   "2026-10-23T12",
+   [
+    16,
+    25,
+    0,
+    14
+   ],
+   [
+    11,
+    7,
+    0,
+    3
+   ]
+  ],
+  [
+   "2026-10-23T13",
+   [
+    17,
+    22,
+    4,
+    7
+   ],
+   [
+    9,
+    3,
+    3,
+    1
+   ]
+  ],
+  [
+   "2026-10-23T14",
+   [
+    9,
+    2,
+    2,
+    18
+   ],
+   [
+    7,
+    2,
+    2,
+    1
+   ]
+  ],
+  [
+   "2026-10-23T15",
+   [
+    20,
+    0,
+    3,
+    15
+   ],
+   [
+    10,
+    0,
+    3,
+    5
+   ]
+  ],
+  [
+   "2026-10-23T16",
+   [
+    0,
+    0,
+    0,
+    3
+   ],
+   [
+    0,
+    0,
+    0,
+    1
    ]
   ]
  ]

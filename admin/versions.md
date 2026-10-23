@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.8. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.9. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.9 · 2026-10-23
+
+the vault key is the master key: the telemetry and subscriptions vaults keep their drain keys inside, so whoever opens the telemetry vault drains it from the browser with no passphrase (206 events drained that way); the counts updated: 215 reader page views in 154 sessions
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
 
 ### v0.10.8 · 2026-10-23
 
@@ -482,4 +490,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.10.8 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.9 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
