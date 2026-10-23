@@ -4479,6 +4479,8 @@ def sherpa_shot(up, src, cap):
 
 def sherpa_point(r, p, d):
     up = '../' * d
+    if p.get('held'):
+        return f'<article class="fbpoint" id="p{p["n"]}"><h3>{E(r["id"])}.{p["n"]}: held</h3><p>{E(p["comment"])}</p><p class="small">Who can act: {sherpa_who(p["owner"], d)}.</p></article>'
     rep = p.get('replication')
     also = (', with ' + ', '.join(sherpa_who(x, d) for x in p['also'])) if p.get('also') else ''
     return f'''<article class="fbpoint" id="p{p["n"]}">
@@ -4501,7 +4503,7 @@ def build_sherpa_feedback(r):
     points = ''.join(sherpa_point(r, p, d) for p in r['points'])
     nr = ''.join(f'<li>{E(x)}</li>' for x in r.get('not_reproduced', []))
     record = f'''<ul>
-<li><b>From:</b> {E(r["reader"])}. Readers are never named here.</li>
+<li><b>From:</b> {E(r["reader"])}. {"A test by an agent, not a person: its findings are prompts to re-check, not evidence about readers." if r.get("tester") == "agent" else "Readers are never named here."}</li>
 <li><b>How it came:</b> {E(r["channel"])}{(", about ask " + E(r["ask"])) if r.get("ask") else ""}.</li>
 <li><b>Version:</b> v{E(r["site_version"])}. {E(r["site_version_note"])}</li>
 <li><b>Progress:</b> {E(r["progress"])}.</li>
