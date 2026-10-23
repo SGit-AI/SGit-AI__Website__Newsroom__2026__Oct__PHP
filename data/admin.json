@@ -943,6 +943,26 @@
    "status": "done",
    "owner": "dev@php.newsroom",
    "version": "0.8.1"
+  },
+  {
+   "id": "119",
+   "title": "Who is who in the telemetry: every session a reader, the editor, a power user or team member, synthetic (agents, tests, headless browsers) or a crawler; declared by the browser since v0.8.4 (agent: automation by class; who: the role of its /join/ key or this browser's setting on /admin/telemetry/), inferred before (time zone, place, language, first page); admin/build/telemetry_classes.py, the same rules in the telemetry app v0.2.1",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.4"
+  },
+  {
+   "id": "120",
+   "title": "The public telemetry stats vault (0cfkdcvh, read key published): its own app with the hourly chart by group, a world map of readers, what readers read; curated counts only, written at every drain by admin/build/telemetry_flow.sh (drain, classify, publish, push both vaults); the same counts and map on /admin/telemetry/",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.4"
+  },
+  {
+   "id": "121",
+   "title": "Telemetry, next: the editor confirms the inferred rule for his browsers (Europe/Lisbon, English) or sets them on /admin/telemetry/; enrolled /join/ keys start declaring roles once data/contributors.json lists them; the in-browser drain cannot write the public vault (an app cannot write another vault), so public stats follow the next run of telemetry_flow.sh; a schedule for that run needs the editor's go",
+   "status": "open",
+   "owner": "dev@php.newsroom"
   }
  ],
  "evidence_vault": {

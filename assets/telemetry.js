@@ -4,6 +4,10 @@
 // time zone, a random session id that lives in memory. Encrypted in this browser to the telemetry
 // vault's public key (sgit hybrid envelope v2) and posted to a write-only lane. Never blocks,
 // fails silently. The brief: admin/briefs/index.html. The data: data/telemetry.json.
+// Two optional fields since v0.8.4, so the counts can tell readers from everyone else (admin/build/telemetry_classes.py):
+//   agent  automation, by class only (webdriver, headless, lighthouse, googlebot, bingbot, ..., bot), never the user-agent string
+//   who    a role, never an identity: what this browser was set to on /admin/telemetry/, or the role of its /join/ key
+//          in data/contributors.json (editor, team, power-user). The identity store is read only if it already exists.
 (async function () {
   try {
     if (!window.crypto || !crypto.subtle || !window.fetch) return
@@ -25,6 +29,8 @@
     const ev = { v: 1, site: location.host, ver: (document.querySelector('nav .ver') || {}).textContent || '', ts: new Date().toISOString().slice(0, 16) + 'Z',
                  sid, path: location.pathname, ref, country: '', region: '', city: '', lang: navigator.language || '',
                  screen: w < 600 ? 'phone' : w < 1000 ? 'tablet' : 'desktop', tz: (Intl.DateTimeFormat().resolvedOptions().timeZone || '') }
+    const agent = automation(); if (agent) ev.agent = agent
+    const who = await role(root); if (who) ev.who = who
     const geo = await lookup(cfg.geo || ['https://ipapi.co/json/', 'https://ipwho.is/'])
     if (geo) { ev.country = geo.country || ''; ev.region = geo.region || ''; ev.city = geo.city || '' }
     const payload = await envelope(cfg.recipient.encrypt, JSON.stringify(ev))
@@ -32,6 +38,35 @@
     if (r.ok) { seen.push(location.pathname); try { sessionStorage.setItem(seenKey, JSON.stringify(seen.slice(-50))) } catch (e) {} }
   } catch (e) { /* telemetry never surfaces */ }
 
+  function automation() {
+    const ua = navigator.userAgent || ''
+    const named = [['googlebot', /Googlebot|Google-InspectionTool|Storebot-Google|AdsBot-Google/], ['bingbot', /bingbot|BingPreview/i], ['applebot', /Applebot/],
+                   ['duckduckbot', /DuckDuckBot/], ['yandexbot', /YandexBot/], ['baiduspider', /Baiduspider/], ['lighthouse', /Lighthouse/]]
+    for (const [n, re] of named) if (re.test(ua)) return n
+    if (/bot\b|crawler|spider/i.test(ua)) return 'bot'
+    if (navigator.webdriver) return 'webdriver'
+    if (/HeadlessChrome/.test(ua)) return 'headless'
+    return ''
+  }
+  async function role(root) {
+    const ok = r => ['editor', 'team', 'power-user', 'reader'].includes(r) ? r : ''
+    try { const set = ok(localStorage.getItem('p2s.telemetry.who') || ''); if (set) return set === 'reader' ? '' : set } catch (e) {}
+    try {
+      if (!indexedDB || !indexedDB.databases) return ''
+      if (!(await indexedDB.databases()).some(d => d.name === 'p2s-identity')) return ''
+      const me = await new Promise((done) => {
+        const req = indexedDB.open('p2s-identity')
+        req.onsuccess = () => { try { const g = req.result.transaction('keys', 'readonly').objectStore('keys').get('me'); g.onsuccess = () => done(g.result || null); g.onerror = () => done(null) } catch (e) { done(null) } }
+        req.onerror = () => done(null)
+      })
+      if (!me || !me.bundle) return ''
+      const c = await (await fetch(root + 'data/contributors.json', { cache: 'no-store' })).json()
+      const fp = [me.bundle.signing_fingerprint, me.bundle.fingerprint]
+      const k = (c.keys || []).find(k => fp.includes(k.signing_fingerprint) || fp.includes(k.fingerprint) || fp.includes(k.from))
+      if (k && k.role) return ok(k.role)
+      return me.bundle.label === 'editor' ? 'editor' : 'power-user'           // a key from an invitation, not enrolled yet
+    } catch (e) { return '' }
+  }
   async function lookup(urls) {
     for (const u of urls) {
       try {
