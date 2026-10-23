@@ -1,6 +1,6 @@
 # Brief: three views, over time; the C-level executive first
 
-Status: accepted, by being sent. Author: Dinis Cruz, editor. A voice memo to the Sherpa (sherpa@php.newsroom) on 23 October 2026, transcribed by otter.ai and reproduced verbatim, hesitations included ("chamfer" is the transcriber's spelling of Sherpa). The transcript is `memos/2026-10-23__memo-3__three-views-over-time-c-level-first.txt`. The Sherpa's reading and plan follow the memo; nothing has been built against it yet.
+Status: accepted, by being sent. Author: Dinis Cruz, editor. A voice memo to the Sherpa (sherpa@php.newsroom) on 23 October 2026, transcribed by otter.ai and reproduced verbatim, hesitations included ("chamfer" is the transcriber's spelling of Sherpa). The transcript is `memos/2026-10-23__memo-3__three-views-over-time-c-level-first.txt`. The Sherpa's reading and plan follow the memo, with the editor's answers at the end; nothing has been built against it yet.
 
 ## The memo
 
@@ -26,11 +26,11 @@ What the memo asks for, in the order the Sherpa will work it. Each point names w
 
 | View | Who opens it | Readers it gathers |
 | --- | --- | --- |
-| The executive | a CEO, a board member, a CFO; more often, the security team preparing what to send them | board, cfo, everyone |
-| The security leader | a CISO, a head of security, a DPO, a PM running the response | ciso, security, dpo, pm, comms, cto |
+| The executive | a CEO, a CTO, a board member, a CFO; more often, the security team preparing what to send them | board, cto, cfo, everyone |
+| The security leader | a CISO, a head of security, a DPO, a PM running the response | ciso, security, dpo, pm, comms |
 | The operator | whoever patches, verifies and watches | developer, engineer, appsec, site-owner |
 
-The journalist, the researcher and the analyst stay below the three, under "more readers". Open question: is the CTO a security leader here or an operator (see the end).
+The journalist, the researcher and the analyst stay below the three, under "more readers". The CTO is an executive, with more knowledge of technology (the editor, 23 October).
 
 ### 2. A view is a semantic graph for one audience, with its assumptions written down
 
@@ -64,7 +64,7 @@ The journalist, the researcher and the analyst stay below the three, under "more
 | Pre-announcement (20 Oct, 19:30 UTC) | 21 | 3 | 0 |
 | T0: the coordinated release (21 Oct, 14:00 UTC) | 39 | 12 | 0 |
 | T0 + 2 hours | 49 | 22 | 0 |
-| T0 + 6 hours | 51 | 24 | 0 |
+| T0 + 4 hours | 50 | 25 | 0 |
 | T0 + 1 day | 65 | 62 | 62 |
 | T0 + 2 days (23 Oct, 14:00 UTC) | 67 | 66 | 62 |
 
@@ -72,7 +72,7 @@ The journalist, the researcher and the analyst stay below the three, under "more
 
 **The gap in the data:** only 38 of the 144 sources have a publication time; the rest have a day, so "public by T0 + 2 hours" is a lower bound. For the slices to be exact, every source needs a first-public time to the minute (from the page, its headers or the feed), and every timeline row a "known from" time derived from its sources. That is collectors' and dev's work; the Sherpa proposes it on the board.
 
-**Proposal for the slices:** fixed milestones (before T0, T0, +2h, +6h, +1 day, +2 days, today) and, between them, the moments that matter to one audience (a significant update for the executive is not the same as one for the operator). Each slice shows only what was public then, says what was not yet known, and links to the next slice.
+**Proposal for the slices:** fixed milestones (before T0, T0, +2h, +4h, +1 day, +2 days, today) and, between them, the moments that matter to one audience (a significant update for the executive is not the same as one for the operator). Each slice shows only what was public then, says what was not yet known, and links to the next slice.
 
 ### 4. The incremental update, and "nothing has changed since you were here"
 
@@ -100,6 +100,20 @@ The journalist, the researcher and the analyst stay below the three, under "more
 
 **Proposal:** the executive deck is the first presentation: the six questions of section 2, one slide each, with one picture per slide where a picture helps (the timeline as a strip; exposed versus exploited as the ladder `/signals/` already draws).
 
+### 7. The knowledge gap: a view of its own (added after the editor's comments)
+
+**Asked, in the editor's reply to this brief:** the difference between "had happened" and "was public" is "ridiculously powerful", worth a view of its own, but not for the executive, who knows when it was public. The slices of the three views reverse-engineer what was public at each moment, and they do not change afterwards. The gap is a separate analysis, with graphs of the deltas, the numbers that changed over time (after a day, for example), the sources and where they are. It serves the angle the newsroom is working on: saving the recipient time, by giving them information as soon as it is available instead of leaving them to dig for it.
+
+**Proposal:** a page of its own, in Research (it is derived from the evidence, not written for one reader), with the slices of the three views each linking to it in one line ("what had happened that was not yet public"). It shows:
+
+- **The three clocks, event by event:** when it happened, when it was first public and where, when this newsroom captured it; the lag between each pair, as a strip per event.
+- **The curves:** events happened, public and captured over time, on one chart; the gap between the curves is what nobody outside knew yet.
+- **Where it came from:** first public source by kind (the project, agencies, researchers, vendors, the press, social posts) and by country; who was first, and how often.
+- **The numbers that moved:** each figure in `data/numbers.json` as it stood at each slice (attempts, organisations offline, the inventory's counts), from the sources that gave it then.
+- **Time saved:** for each event, the time between its first public source and this newsroom carrying it, and between this newsroom and the slower channels a reader might wait for (an agency's page, the press). This is the measure of the claim that the site saves its reader time; it can come out against us, and the page says so when it does.
+
+The slices of the three views are frozen once written (a slice is what was public then); the gap analysis is recomputed at every release, because new captures can move an event's "first public" earlier.
+
 ## The plan
 
 | Step | What | Who | Needs |
@@ -111,8 +125,18 @@ The journalist, the researcher and the analyst stay below the three, under "more
 | 5 | The security leader's and the operator's views, the same way | Sherpa, then story-site | steps 1 to 3 |
 | 6 | Ask 002 to the power users: are these the executive's six questions? | conductor, from the Sherpa's draft | step 2 |
 | 7 | Editable assumptions, saved in the reader's browser or vault | dev | step 2 |
+| 8 | The knowledge gap: its own view and analysis (section 7), linked from each slice | Sherpa (analysis), cartographer (graphs), collectors (the publication clock) | step 4 for exact hours; a first cut now |
 
-## Questions for the editor
+## The editor's answers (23 October)
+
+1. **T0** is the coordinated release, 21 October 14:00 UTC, with slices before it for the pre-announcement and the leak. Yes.
+2. **Slices:** fixed milestones (before T0, T0, +2 hours, +4 hours, +1 day, +2 days and on), and between them the significant updates for each audience, which differ: the executive may get one every three or four days while the operator gets them all the time. Yes.
+3. **The CTO** goes with the executive: three views, the executive, the security leader, the operator.
+4. **Page and deck** from one source. Yes.
+5. **The guidance on reuse:** written by the Sherpa first, published under the Sherpa's name; the journalist can pick it up later.
+6. **Added:** the knowledge gap is a view of its own, not the executive's (section 7).
+
+## Questions for the editor (answered above)
 
 1. **T0:** the coordinated release (21 October, 14:00 UTC), with "before T0" slices for the pre-announcement and the leak? The Sherpa proposes yes.
 2. **Slices:** fixed milestones, plus a significant-update flag per audience between them?
