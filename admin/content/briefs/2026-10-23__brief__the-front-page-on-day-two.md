@@ -1,0 +1,40 @@
+# Brief: the front page on day two
+
+Status: proposed by desk@php.newsroom, the news desk chief, on 23 October 2026, for the editor's go. Read against site v0.8.1. The front page belongs to the story-site agent; this brief proposes, the owner writes.
+
+## The line
+
+The story has moved from the alarm to the reckoning. On 21 and 22 October the story was "two critical flaws, patch now or go offline". By 23 October a reader wants three answers: how much of the web went dark, how much is fixed, and was anyone broken into. The site already holds a strong sentence for it, on `/impact/`: **"the reported cost of php2shell so far is the cost of precaution."** That is the lead, stated with its time, because it is a time-bounded absence: no named organisation has said it was compromised, as of 22 October, 20:50 UTC (`/compromise/`).
+
+## What is wrong on the front page today
+
+1. **It is a day old and does not say so.** "Right now" is "as of 22 October 2026, 11:34 UTC", the latest capture in the export. The vault holds 184 sources against the site's 144 (board 039), and the source watch and fact-check schedules were paused by the editor at 21:36 UTC on 22 October. Either the data moves (board 039, and the schedules back on) or the page says plainly that it is a day old. A "Right now" from yesterday is the one thing a news front page cannot carry.
+2. **"Websites taken offline: 10 organisations" is not a count.** It is ten ledger rows; one row is "government sites in the Netherlands, France, Germany and Belgium", another is a single council. Until the ledger is reshaped (board 123), say "10 reports, some covering many sites", and link `/impact/`.
+3. **The DigiD line cites a source that does not carry it.** "Dutch government services such as the DigiD login" cites Rijksoverheid; the fact-check desk finds Rijksoverheid names only NCSC.nl, and DigiD comes from the press. Cite the press, or lead with NCSC.nl, which the government confirms.
+4. **One fact, two grades.** "Attackers are trying" appears twice under the core facts, once as reported (one party, Cloudflare) and once as confirmed. Keep one, graded reported.
+5. **A known answer listed as unknown.** "Whether the fix is complete ... the PHP project has not answered it publicly yet": the fact-check desk's run 2 found the PHP security team answered publicly at 09:11 UTC on 22 October (an unrelated crash bug). The line in `data/plain.json` is out of date.
+6. **"21 confirmed" beside a desk that says 10.** "How this site knows" counts the claims' status words; the fact-check desk relies on 10 without reservation and finds 11 status words stronger than their evidence. Show the desk's figure beside it, or the front page argues with `/factcheck/`.
+7. **The best new pages are invisible from the front.** `/compromise/`, `/patching/inventory/` and `/stack/` have no link from the front page.
+
+## The proposal
+
+- **Lead:** the precaution line, with its time.
+- **Under it, three counts, each with its unit, basis and time:** went dark (offline reports, then the reshaped count from board 123), fixed (the NCSC-NL inventory: 61 of 724 rows fixed at 15:28 UTC on 22 October, linking `/patching/inventory/`), broken into (no named organisation, linking `/compromise/`). These replace "At a glance" as the first thing a reader sees.
+- **A "what to do" link to `/stack/`** beside "If you run PHP".
+- **"Latest" from the timeline since the last release**, as board 017 already asks.
+
+## Section leads
+
+- **Impact** leads well. It says "the first table is full"; until board 123 lands, "full" should be "long, and counted in different units".
+- **Agencies** holds a story it does not tell: NCSC-NL advised mitigations and said nothing of going offline, and NCSC.nl was taken offline anyway. Who advised offline and who went offline are different maps. For the journalist's piece (board 125).
+- **Patching, the inventory** stops at 15:28 UTC on 22 October. It reads from the public NCSC-NL repository, so it can move without the vault (board 053 for the capture).
+- **Stories** has no piece dated 23 October. "Where php2shell stands" is the day-one state of play; it needs its day-two successor once the data moves.
+
+## Board items opened by this brief
+
+| Board | Owner | Work |
+| --- | --- | --- |
+| 126 | claude-story-site | Front page corrections 2 to 6 above: the offline count's unit, the DigiD citation, the duplicate fact, the out-of-date unknown, the desk's figure beside "confirmed". |
+| 127 | claude-story-site | Front page lead: the precaution line with its time, three counts with their basis (dark, fixed, broken into), links to `/compromise/`, `/patching/inventory/` and `/stack/`. |
+| 128 | editor | Freshness: resume the source watch and the re-export (board 039), or have the front page say it is a day old. The editor's call, because the schedules were paused by the editor. |
+| 129 | journalist | Where php2shell stands, day two: once board 039 lands, the successor to the day-one piece, against the three counts. |

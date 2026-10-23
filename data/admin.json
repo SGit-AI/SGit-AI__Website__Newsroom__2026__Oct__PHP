@@ -972,7 +972,7 @@
   },
   {
    "id": "121",
-   "title": "The posture map: every EU and EEA national CERT's advice on php2shell coded as offline, isolate or update only, each with its capture",
+   "title": "The posture map, extended: add every other EU and EEA national CERT to data/agencies.json (Finland, Germany and Belgium first), coded as the 16 are; and, per offline row, whether the operator followed its CERT's advice or went further",
    "status": "open",
    "owner": "collector-gov",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
@@ -1004,6 +1004,34 @@
    "status": "open",
    "owner": "journalist",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "126",
+   "title": "Front page corrections: the offline count's unit ('10 reports', not '10 organisations'), the DigiD line's citation, the duplicate 'attackers are trying' fact, the out-of-date 'fix complete' unknown, the fact-check desk's figure beside '21 confirmed'",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "127",
+   "title": "Front page lead: 'the cost so far is the cost of precaution' with its time, then three counts with unit, basis and time (went dark, fixed, broken into), linking /compromise/, /patching/inventory/ and /stack/",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "128",
+   "title": "Freshness: resume the source watch and the re-export (board 039), or have the front page say plainly that it is a day old",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "129",
+   "title": "Where php2shell stands, day two: the successor to the day-one piece, against the three counts, once board 039 lands",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go)."
   }
  ],
  "evidence_vault": {
