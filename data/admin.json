@@ -1238,6 +1238,36 @@
    "status": "done",
    "owner": "dev@php.newsroom",
    "version": "0.10.10"
+  },
+  {
+   "id": "166",
+   "title": "From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1: a focus view of the risk graph: open at any node, its neighbours by verb, expand on click, the path back always shown, the focus in the address; in the browser from data/grc-graph.json",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "167",
+   "title": "From CI-002, step 2: a basis on every graph edge (source, code, inferred, confirmed, with its support), checked in build_grc; inferred edges dashed with a switch to hide them",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "168",
+   "title": "From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the remediation and code they exercise",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "169",
+   "title": "From CI-002, step 4: an impact view: pick a function or file, climb the graph to remediations, vulnerabilities, weaknesses, risks, controls and stakeholders, each with its path",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "170",
+   "title": "From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with no owner, risk with no story, treatment or holder, edge with no basis)",
+   "status": "open",
+   "owner": "dev@php.newsroom"
   }
  ],
  "evidence_vault": {

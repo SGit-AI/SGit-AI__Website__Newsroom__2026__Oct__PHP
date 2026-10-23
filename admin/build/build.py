@@ -4844,7 +4844,7 @@ def sherpa_idea(c, it, d):
 </article>'''
 
 def build_sherpa_ideas(c):
-    d = 3
+    d = 3; up = '../' * d
     who = c['name_on_site'] or c['handle']
     title = f'{c["id"]}: comments, questions and ideas from {who}'
     ex = table(['When', 'Who', 'What was said'], [[E(w), E(x), E(t)] for w, x, t in c['exchange']], 'board')
@@ -4863,7 +4863,7 @@ def build_sherpa_ideas(c):
 {section("record", "The record", f"""<ul>
 <li><b>From:</b> {E(who)}. {E(c["name_note"]) if not c["name_on_site"] else ""}</li>
 <li><b>How it came:</b> {E(c["channel"])}, {E(c["from"])} to {E(c["to"])}.</li>
-<li><b>Checked against:</b> site v{E(c["site_version"])}.</li>
+<li><b>Checked against:</b> site v{E(c["site_version"])}.</li>{f'<li><b>The brief:</b> <a href="{up}{U(c["brief"][0])}">{E(c["brief"][1])}</a>.</li>' if c.get("brief") else ""}
 </ul>""")}
 {section("exchange", "The conversation, in short", ex, "Summarised; the collaborator's own words are quoted under each item below.")}
 {section("index", "At a glance", idx, "Each item: the collaborator's words, where the site stands today with links, what is missing, what the Sherpa recommends, and who could take it. Answers to the questions are the editor's; the Sherpa only says what exists.")}
