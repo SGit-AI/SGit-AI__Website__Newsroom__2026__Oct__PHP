@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.7 · 23 October 2026new since your last visit
+
+schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8imn); an agent woken with no task due records an idle run and stops; the wake protocol every scheduled agent follows (AGENTS.md section 7)
+
+No reader-facing section changed in this release.
+
 ## v0.10.6 · 23 October 2026new since your last visit
 
 the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source watch's latest run and the NCSC-NL inventory's latest change read, each shown with its time on the front page; source watch re-exported at 20afaa62129d
@@ -519,4 +525,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.6 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

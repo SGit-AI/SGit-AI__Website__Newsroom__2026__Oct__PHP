@@ -64,4 +64,4 @@ None yet. A guest writer or interviewer sends a piece to the editor; it is publi
 
 
 ---
-site v0.10.6 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/articles/index.html
+site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/articles/index.html

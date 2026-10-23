@@ -1,6 +1,15 @@
 {
- "current": "0.10.6",
+ "current": "0.10.7",
  "versions": [
+  {
+   "version": "0.10.7",
+   "date": "2026-10-23",
+   "title": "schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8imn); an agent woken with no task due records an idle run and stops; the wake protocol every scheduled agent follows (AGENTS.md section 7)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.6",
    "date": "2026-10-23",
