@@ -1,0 +1,44 @@
+{
+ "agent": "synthetic@php.newsroom",
+ "member": "synthetic",
+ "note": "Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.",
+ "vaults": [
+  {
+   "id": "1zq458zk",
+   "what": "A synthetic reader’s vault (board member): every run, page, screenshot and review",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "not recorded"
+  },
+  {
+   "id": "wlhgl8pk",
+   "what": "A synthetic reader’s vault (CTO): every run, page, screenshot and review",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "not recorded"
+  },
+  {
+   "id": "9p6jpsd2",
+   "what": "A synthetic reader’s vault (project manager): every run, page, screenshot and review",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "not recorded"
+  },
+  {
+   "id": "vjsqjhvp",
+   "what": "A synthetic reader’s vault (security lead): every run, page, screenshot and review",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "not recorded"
+  },
+  {
+   "id": "3l7tzwh9",
+   "what": "A synthetic reader’s vault (developer): every run, page, screenshot and review",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "not recorded"
+  },
+  {
+   "id": "dpdx3q13",
+   "what": "A synthetic reader’s vault (designer): every run, page, screenshot and review",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "not recorded"
+  }
+ ],
+ "holds": []
+}

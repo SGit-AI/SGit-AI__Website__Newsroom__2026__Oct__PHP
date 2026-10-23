@@ -6,7 +6,151 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.5.5. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.1. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.1 · 2026-10-23
+
+three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they get wrong (12 captured rows, with Jeremiah Grossman's post); Perplexity reading the community spaces (job 03, its prompt in full); and the external collectors brief with ChatGPT's first run; briefs now render quotes and pictures
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.10.0 · 2026-10-23
+
+the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); which pages each reader sees; the menu per view; four mockups built from the live data: a board member's front page, a security lead's three-column front page, the agencies as answer, picture and cards, and a team console with its own menu
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.3 · 2026-10-23
+
+Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highlights and notes, the numbers, and the briefs it became (to the conductor, and to pki.sgit.ai); UF-003, the first power user through the whole invitation, imported with her screenshots; and the brief for three views over time, the executive first, with the knowledge gap as a view of its own
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.2 · 2026-10-23
+
+the vault key is the whole boundary: whoever holds a vault's key can drain its lane (the enum key and the key pair's passphrase derived from the vault key, the key pair inside the vault), and the keys each agent holds listed on /team/vaults/; the editor's first key enrolled; his feedback on /join/ answered: where this device's key stands, one wording for Feedback, up to three screenshots
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.1 · 2026-10-23
+
+vaults (/team/vaults/): every vault each agent made, listed by agent and by ID only, with whether its key is sealed to the editor; and guidance every agent reads (AGENTS.md section 6, CLAUDE.md): add a vault's ID when you make it, seal its key to the root with pki-agent, and when asked for a key send the sealed link and its QR code, never the key
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.0 · 2026-10-23
+
+The Sherpa joins (/sherpa/): the agent that walks with the reader; readers' feedback recorded and answered point by point (UF-001 from a power user, UF-002 from an agent testing the invitation link), with both interface bugs reproduced; ideas from collaborators set against what the site has today (CI-001); the friction log of what gets in readers' way, with who can fix each; and the Sherpa on the team
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.8.4 · 2026-10-23
+
+who reads this site, by group: every session a reader, the editor, a power user or team member, synthetic (agents and tests) or a crawler, declared by the browser from now on (automation by class, the role of a /join/ key or of this browser's setting) and inferred before; the groups, an hourly chart and a world map of readers on /admin/telemetry/; and a public stats vault (0cfkdcvh, read key published) with its own app, updated at every drain by admin/build/telemetry_flow.sh
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.8.3 · 2026-10-23
+
+your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) and from step 0 of If you run PHP; the telemetry lane drained on the morning of 23 October: 483 events overnight, 758 in all
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.8.2 · 2026-10-23
+
+status (/team/status/): where every agent is on the morning of 23 October, what each last did and waits for and from whom, the eleven branches waiting for dev, what ran on a schedule overnight, how fresh the site's data is against its vaults; and the brief for day two, situation awareness
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.8.1 · 2026-10-23
+
+your stack, the blast radius (/stack/): describe what you run, the internet, the edge, the applications, the platforms and PHP runtimes, data, secrets and services, and see each runtime against both CVEs (versions, backports in the inventory, SAPI, exposure, settings, edge rules), the blast radius as a graph, what to do first and what on the site is about your stack, kept in your browser and your vault; and the warning and info colours restored on every page (their tokens were mapped to themselves since v0.2.4)
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.8.0 · 2026-10-22
+
+feedback from any page, signed: a Feedback button beside Ask on every page (what is wrong, unclear, missing or good, with a screenshot), signed with a key made on the reader's device; /join/ makes the key from an invitation in one tap and /join/invite/ makes invitations in the browser, as a QR code and a share button, signed by the editor's key; keys are enrolled automatically when both signatures check; and the brief for the organisation as a digital twin
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.7.0 · 2026-10-22
+
+power users, start here (/collaborators/): a generic onboarding for the people the editor nudges in his WhatsApp group and by email, the latest ask with its messages, and join and feedback forms encrypted to a private vault; runs (/team/runs/): every schedule the agents run, the quiet hours, and every recorded run with the article it should leave
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.6.0 · 2026-10-22
+
+GRC: a new section, /grc/, with fractal risk registers for php2shell (34 risks assigned to 53 stakeholders, each joined to its weakness, CVE, fix, code, stories and roles, mapped to 95 controls in 20 frameworks including GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001 and NIST), and the data protection officer added to the readers with a briefing on exposure, the GDPR 72-hour clock and what to document
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.10 · 2026-10-22
+
+the telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages), the telemetry vault imports it and drains its own lane from the browser (40 events drained that way, 275 from 176 sessions now), and the dashboard vault i4diy82d is superseded
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.9 · 2026-10-22
+
+no named organisation has said it was compromised through php2shell: claim no-confirmed-compromise reworded with its time (20:50 UTC, 22 October) and moved from confirmed to reported, the plain-English lines that said nobody had confirmed a break-in corrected, and a page of its own (/compromise/) mapping the evidence behind the statement: what was searched, 33 statements by kind with their sources or source-watch snapshots, the layers from attempts to a named compromise, a timeline, and what would change it
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.8 · 2026-10-22
+
+factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.7 · 2026-10-22
+
+the telemetry dashboard: a new private vault (i4diy82d) holding a vault app over the telemetry vault, which is linked inside it read-only (vault-in-vault), so the app always draws the latest drain; listed on /vaults/
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.5.6 · 2026-10-22
+
+who reads this site: the telemetry lane drained again, 235 anonymous events from 161 sessions on 22 October; the subscriptions lane drained, nothing waiting
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.5.5 · 2026-10-22
 
@@ -282,4 +426,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

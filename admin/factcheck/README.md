@@ -108,7 +108,7 @@ Other agents read the tracker; they do not write in it. To close a finding, fix 
 4. Mode 1 over every statement whose claim text, sources or status changed since the last run (`fc.py changed`), every statement whose sources gained a capture, and every open ticket. A full sweep at least once a day.
 5. Mode 2 over the weak, the contested and the stale.
 6. Update `assessments.json` and `contradictions.json`; open, update and close tickets with `fc.py ticket ...`; write `runs/<run>.json`.
-7. `python3 admin/factcheck/fc.py export`, `python3 admin/build/build.py`, `python3 admin/build/validate.py`; commit on the desk's branch `factcheck/desk` (take in `origin/dev` first) with "Not a release: for dev@php.newsroom to carry into the next release." and "Agent: factcheck@php.newsroom", and push it. The desk never pushes to `dev` (AGENTS.md); dev@ carries the branch in and releases.
+7. `python3 admin/factcheck/fc.py export`, then `admin/build/release.sh "factcheck: <what moved and why>"` (with `RELEASE_TRAILER` set to the `Agent: factcheck@php.newsroom` line). The desk publishes to `dev` itself: the editor's explicit instruction of 22 October, recorded in the brief, is the exception AGENTS.md allows. `release.sh` takes in `origin/dev` first, runs the gate and verifies the live site; push `factcheck/desk` too, so the branch matches what shipped.
 8. The run is done when the site's statements are either consistent with the evidence or carry an open ticket that says why not. That is the stable state: not "everything is right", but "nothing wrong is unmarked".
 
 ## Rules

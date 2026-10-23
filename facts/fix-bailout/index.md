@@ -41,7 +41,7 @@ Published: when the source says it was published. Saved: the first capture into 
 ## Where this fact appears
 
 In the briefings for:
-CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOJJamieHead of AppSecLLeeDeveloper
+CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOMMorganData protection officerJJamieHead of AppSecLLeeDeveloper
 And on [every claim](../../claims/index.html#fix-bailout).
 
 ## Every version of this fact
@@ -56,4 +56,4 @@ Sources: github-ghsa-w8hw-w9fx-j79w, php-net-changelog-8, github-php-src-branch-
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-bailout/index.html
+site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/fix-bailout/index.html

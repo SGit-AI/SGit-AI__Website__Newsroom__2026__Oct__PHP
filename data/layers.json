@@ -252,6 +252,34 @@
    "used_on": "team/index.html"
   },
   {
+   "path": "data/schedules.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "the account's scheduled tasks and this repository's workflows, as observed; the quiet-hours rule and the article rule",
+   "used_on": "team/runs/index.html"
+  },
+  {
+   "path": "data/agents-status.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "each agent's session record, the repository's branches, the scheduled tasks and the data files' dates, read without asking the agents",
+   "used_on": "team/status/index.html"
+  },
+  {
+   "path": "data/collaborators.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "the asks to the collaborators (what is new, what to do, the questions) and the collaborators lane's public descriptor",
+   "used_on": "collaborators/index.html"
+  },
+  {
+   "path": "data/contributors.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "admin/build/invite.py: the open invitations (hashes only) and the enrolled keys (handle, role, fingerprints)",
+   "used_on": "join/index.html"
+  },
+  {
    "path": "data/versions.json",
    "layer": "site",
    "by": "admin/build/release.sh",
@@ -273,6 +301,13 @@
    "used_on": "status/index.html"
   },
   {
+   "path": "data/compromise.json",
+   "layer": "authored",
+   "by": "researcher@php.newsroom",
+   "from": "the evidence vault and the source-watch vault (oq9gflln): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot",
+   "used_on": "compromise/index.html"
+  },
+  {
    "path": "data/source-watch.json",
    "layer": "evidence",
    "by": "admin/build/export_watch.py",
@@ -285,6 +320,13 @@
    "by": "dev@php.newsroom",
    "from": "the vaults behind this site and how each is opened",
    "used_on": "vaults/index.html"
+  },
+  {
+   "path": "data/vault-register/",
+   "layer": "site",
+   "by": "each agent, its own file (data/vault-register/<agent>.json)",
+   "from": "every vault an agent has made: its ID, what it holds, when, and whether its key is sealed to the root; never a key",
+   "used_on": "team/vaults/index.html"
   },
   {
    "path": "data/glossary.json",
@@ -350,6 +392,13 @@
    "used_on": "subscribe/index.html"
   },
   {
+   "path": "data/stack.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the blast-radius tool's model: component kinds, links, settings mapped to the published mitigations, the two CVEs as rules, example stacks; joined at build with affected, defence and software",
+   "used_on": "stack/index.html"
+  },
+  {
    "path": "data/telemetry.json",
    "layer": "site",
    "by": "dev@php.newsroom",
@@ -361,6 +410,20 @@
    "layer": "site",
    "by": "admin/build/telemetry_drain.py",
    "from": "the drained telemetry lane, as counts",
+   "used_on": "admin/telemetry/index.html"
+  },
+  {
+   "path": "data/telemetry-public.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "admin/build/telemetry_publish.py at every drain: the curated counts by group, per hour and per day, and over readers by country, device, language, version, page and referrer host; the same file as the public stats vault",
+   "used_on": "admin/telemetry/index.html"
+  },
+  {
+   "path": "data/world.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "Natural Earth admin-0 countries 1:50m v5.1.2 (public domain), projected to Equal Earth and simplified by a script; the map on admin/telemetry/ and in the public stats vault",
    "used_on": "admin/telemetry/index.html"
   },
   {
@@ -383,6 +446,34 @@
    "by": "admin/factcheck/fc.py export (factcheck@php.newsroom)",
    "from": "the desk's assessments, contradiction ledger, Issues-FS tickets and run reports in admin/factcheck/, each grade resting on captures named by sha256",
    "used_on": "factcheck/index.html"
+  },
+  {
+   "path": "data/grc.json",
+   "layer": "derived",
+   "by": "grc@php.newsroom",
+   "from": "the claims, sources, code review graph, stories and team on this site, with ratings and assignments by the GRC desk",
+   "used_on": "grc/index.html"
+  },
+  {
+   "path": "data/grc-frameworks.json",
+   "layer": "derived",
+   "by": "grc@php.newsroom",
+   "from": "the official texts of the laws, standards and frameworks, each linked; control titles paraphrased",
+   "used_on": "grc/frameworks/index.html"
+  },
+  {
+   "path": "data/grc-network.json",
+   "layer": "derived",
+   "by": "grc@php.newsroom",
+   "from": "the risk models, articles and vaults of the sgit network, described in their publishers' terms and linked",
+   "used_on": "grc/network/index.html"
+  },
+  {
+   "path": "data/grc-graph.json",
+   "layer": "derived",
+   "by": "admin/build/build.py",
+   "from": "data/grc.json, data/grc-frameworks.json, data/review.json, data/claims.json and the articles, on every build",
+   "used_on": "grc/graph/index.html"
   }
  ]
 }

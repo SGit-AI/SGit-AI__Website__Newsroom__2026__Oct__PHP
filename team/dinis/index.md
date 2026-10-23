@@ -38,11 +38,22 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 065 | First live run of the agentic mode with the editor's OpenRouter key: check that every sentence Sonnet writes cites an item, and that the infographic adds no number of its ownFrom the brief on the phone app (22 October). | open |  |
 | 070 | Decide how each member receives the coordination vaults' keys: the conductor vault's read key, the issues and mail vaults' keys, each member's append token (sealed per member on pki.sgit.ai, or handed in each session's launch prompt)Until this is decided, the conductor holds every key and members are reached through the editor. | open |  |
 | 071 | Set the cadence of the scheduled run (open by the conductor, work by the agents, close by the conductor) and which agents take part in the first one | open |  |
+| 092 | Record the holders' acceptance of the newsroom's own risks (R10 and beneath it): accept for an interval, fund or fix; nobody can accept them for the editorFrom the brief: a GRC desk joins the team (22 October). | open |  |
+| 101 | Quiet hours: decide the window (proposed 22:00 to 07:00 London) and whether the source watch may run through the night while the story is breaking; then the three schedules on /team/runs/ are changed to match | open |  |
+| 108 | Invitations for the editor's own devices (role editor) and for Vicky (role team); then the power users, one invitation each, sent by the editor | open |  |
+| 115 | The twin's open questions: the budget, the escalation ladder at night, which outside agents join (ChatGPT, Perplexity) and how, and which ABP site's per-session review the run record should match | open |  |
+| 138 | Editor review of the four mockups: pick, mark up, decide the Focus/Standard/Everything split per readerFrom the brief on the redesign (23 October). | open |  |
 
 ## What they have done
 - Started the site from two voice memos and a message on 22 October 2026, and set every brief since.
 - Renamed the site PHP October 2026 and set the rule that the front page opens with the situation, not the CVE numbers (v0.3.1).
 - Set the rule that every page is metered (v0.2.10).
+
+### Closed on the board
+
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 098 | Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp groupThe editor confirmed the LinkedIn link on 22 October 2026. | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dinis.human/` in the mail vault (`fmb2tpl2`).
@@ -53,4 +64,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

@@ -12,6 +12,127 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.1 · 23 October 2026new since your last visit
+
+three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they get wrong (12 captured rows, with Jeremiah Grossman's post); Perplexity reading the community spaces (job 03, its prompt in full); and the external collectors brief with ChatGPT's first run; briefs now render quotes and pictures
+
+No reader-facing section changed in this release.
+
+## v0.10.0 · 23 October 2026new since your last visit
+
+the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); which pages each reader sees; the menu per view; four mockups built from the live data: a board member's front page, a security lead's three-column front page, the agencies as answer, picture and cards, and a team console with its own menu
+
+No reader-facing section changed in this release.
+
+## v0.9.3 · 23 October 2026new since your last visit
+
+Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highlights and notes, the numbers, and the briefs it became (to the conductor, and to pki.sgit.ai); UF-003, the first power user through the whole invitation, imported with her screenshots; and the brief for three views over time, the executive first, with the knowledge gap as a view of its own
+
+No reader-facing section changed in this release.
+
+## v0.9.2 · 23 October 2026new since your last visit
+
+the vault key is the whole boundary: whoever holds a vault's key can drain its lane (the enum key and the key pair's passphrase derived from the vault key, the key pair inside the vault), and the keys each agent holds listed on /team/vaults/; the editor's first key enrolled; his feedback on /join/ answered: where this device's key stands, one wording for Feedback, up to three screenshots
+
+No reader-facing section changed in this release.
+
+## v0.9.1 · 23 October 2026new since your last visit
+
+vaults (/team/vaults/): every vault each agent made, listed by agent and by ID only, with whether its key is sealed to the editor; and guidance every agent reads (AGENTS.md section 6, CLAUDE.md): add a vault's ID when you make it, seal its key to the root with pki-agent, and when asked for a key send the sealed link and its QR code, never the key
+
+No reader-facing section changed in this release.
+
+## v0.9.0 · 23 October 2026new since your last visit
+
+The Sherpa joins (/sherpa/): the agent that walks with the reader; readers' feedback recorded and answered point by point (UF-001 from a power user, UF-002 from an agent testing the invitation link), with both interface bugs reproduced; ideas from collaborators set against what the site has today (CI-001); the friction log of what gets in readers' way, with who can fix each; and the Sherpa on the team
+
+No reader-facing section changed in this release.
+
+## v0.8.4 · 23 October 2026new since your last visit
+
+who reads this site, by group: every session a reader, the editor, a power user or team member, synthetic (agents and tests) or a crawler, declared by the browser from now on (automation by class, the role of a /join/ key or of this browser's setting) and inferred before; the groups, an hourly chart and a world map of readers on /admin/telemetry/; and a public stats vault (0cfkdcvh, read key published) with its own app, updated at every drain by admin/build/telemetry_flow.sh
+
+No reader-facing section changed in this release.
+
+## v0.8.3 · 23 October 2026new since your last visit
+
+your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) and from step 0 of If you run PHP; the telemetry lane drained on the morning of 23 October: 483 events overnight, 758 in all
+
+No reader-facing section changed in this release.
+
+## v0.8.2 · 23 October 2026new since your last visit
+
+status (/team/status/): where every agent is on the morning of 23 October, what each last did and waits for and from whom, the eleven branches waiting for dev, what ran on a schedule overnight, how fresh the site's data is against its vaults; and the brief for day two, situation awareness
+
+### Sections that changed
+- [If you run PHP](../versions/page-playbook/index.html#v3) v3
+- [Front page: at a glance](../versions/front-glance/index.html#v2) v2
+
+## v0.8.1 · 23 October 2026new since your last visit
+
+your stack, the blast radius (/stack/): describe what you run, the internet, the edge, the applications, the platforms and PHP runtimes, data, secrets and services, and see each runtime against both CVEs (versions, backports in the inventory, SAPI, exposure, settings, edge rules), the blast radius as a graph, what to do first and what on the site is about your stack, kept in your browser and your vault; and the warning and info colours restored on every page (their tokens were mapped to themselves since v0.2.4)
+
+No reader-facing section changed in this release.
+
+## v0.8.0 · 22 October 2026new since your last visit
+
+feedback from any page, signed: a Feedback button beside Ask on every page (what is wrong, unclear, missing or good, with a screenshot), signed with a key made on the reader's device; /join/ makes the key from an invitation in one tap and /join/invite/ makes invitations in the browser, as a QR code and a share button, signed by the editor's key; keys are enrolled automatically when both signatures check; and the brief for the organisation as a digital twin
+
+No reader-facing section changed in this release.
+
+## v0.7.0 · 22 October 2026new since your last visit
+
+power users, start here (/collaborators/): a generic onboarding for the people the editor nudges in his WhatsApp group and by email, the latest ask with its messages, and join and feedback forms encrypted to a private vault; runs (/team/runs/): every schedule the agents run, the quiet hours, and every recorded run with the article it should leave
+
+No reader-facing section changed in this release.
+
+## v0.6.0 · 22 October 2026new since your last visit
+
+GRC: a new section, /grc/, with fractal risk registers for php2shell (34 risks assigned to 53 stakeholders, each joined to its weakness, CVE, fix, code, stories and roles, mapped to 95 controls in 20 frameworks including GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001 and NIST), and the data protection officer added to the readers with a briefing on exposure, the GDPR 72-hour clock and what to document
+
+No reader-facing section changed in this release.
+
+## v0.5.10 · 22 October 2026new since your last visit
+
+the telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages), the telemetry vault imports it and drains its own lane from the browser (40 events drained that way, 275 from 176 sessions now), and the dashboard vault i4diy82d is superseded
+
+No reader-facing section changed in this release.
+
+## v0.5.9 · 22 October 2026new since your last visit
+
+no named organisation has said it was compromised through php2shell: claim no-confirmed-compromise reworded with its time (20:50 UTC, 22 October) and moved from confirmed to reported, the plain-English lines that said nobody had confirmed a break-in corrected, and a page of its own (/compromise/) mapping the evidence behind the statement: what was searched, 33 statements by kind with their sources or source-watch snapshots, the layers from attempts to a named compromise, a timeline, and what would change it
+
+### Briefings that changed
+JJordanBoard member or executive · v7SSamSecurity lead · v6DDrewPHP or platform engineer · v7RRowanJournalist · v6AAshSecurity researcher · v6BBlakeAnalyst or advisor · v7RRobinCISO · v7AAveryCTO · v6QQuinnCFO · v7JJamieHead of AppSec · v6LLeeDeveloper · v5RRileyMedia and communications team · v6AAlexCurious reader · v5CCaseyWebsite owner · v4TTaylorProject or programme manager · v5MMorganData protection officer · new
+## v0.5.8 · 22 October 2026new since your last visit
+
+factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction
+
+### Facts whose status changed
+- [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
+
+### Briefings that changed
+JJordanBoard member or executive · v6RRobinCISO · v6QQuinnCFO · v6RRileyMedia and communications team · v5AAlexCurious reader · v4TTaylorProject or programme manager · v4
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v6) v6
+- [Impact: offline vs compromised](../versions/page-impact/index.html#v5) v5
+- [In context: 2008 to 2026](../versions/page-context/index.html#v3) v3
+- [The specialist summary](../versions/page-summary/index.html#v2) v2
+- [Front page: right now](../versions/front-now/index.html#v2) v2
+- [Front page: the core facts](../versions/front-facts/index.html#v2) v2
+
+## v0.5.7 · 22 October 2026new since your last visit
+
+the telemetry dashboard: a new private vault (i4diy82d) holding a vault app over the telemetry vault, which is linked inside it read-only (vault-in-vault), so the app always draws the latest drain; listed on /vaults/
+
+No reader-facing section changed in this release.
+
+## v0.5.6 · 22 October 2026new since your last visit
+
+who reads this site: the telemetry lane drained again, 235 anonymous events from 161 sessions on 22 October; the subscriptions lane drained, nothing waiting
+
+No reader-facing section changed in this release.
+
 ## v0.5.5 · 22 October 2026new since your last visit
 
 two more branches carried in: security@php.newsroom's first pass (the security requirements, security_check.py in the gate and in release.sh, hardened build, workflows and drains, the rules of engagement for keys, the root pinned in CLAUDE.md; /admin/keys/ waits for data/keys.json) and the fact-check desk's run 1 (all 70 claims graded against the vault, 10 contradictions, /factcheck/)
@@ -265,7 +386,7 @@ the code read from php-src, php2shell in context against ten earlier flaws, an i
 - [No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosur](../facts/imperva-none/index.html) reported
 - [No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no pub](../facts/huntress-none/index.html) reported
 - [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../facts/watchtowr-itw/index.html) unverified
-- [No named organisation has confirmed a compromise through php2shell](../facts/no-confirmed-compromise/index.html) confirmed
+- [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
 - [None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechani](../facts/pocs-wrong/index.html) reported
 - [Triggering the bug is much easier than turning it into code execution; the CVSS vector say](../facts/ac-high/index.html) confirmed
 - [The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 U](../facts/fix-authored/index.html) confirmed
@@ -365,4 +486,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

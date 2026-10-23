@@ -6,7 +6,7 @@ Every vault this site is built from: the evidence vault and the source watch, bo
 
 # The vaults behind this site
 
-This site is rebuilt from vaults, never written by hand. 8 vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
+This site is rebuilt from vaults, never written by hand. 12 vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch, and the public face of the telemetry, its curated counts); two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
 
 Every vault behind this site: what each holds, who writes to it, and how to open it. Three kinds of credential appear here. A vault key reads and writes; it is never published. A read key reads only and cannot be turned into a vault key; the two public vaults publish theirs. An append token adds rows to one lane and cannot read anything; the telemetry lane publishes its token so every page can write to it.
 
@@ -36,13 +36,25 @@ Every outside source on the story, watched on a schedule: country, sector, publi
 
 ## [The telemetry vault](../admin/telemetry/index.html) private, with a public append lane
 
-**Vault** `84wr8mib` · lane `84wr8mib` on `https://dev.send.sgraph.ai`; events encrypted to `sha256:8b2b26ff9386078f`
+**Vault** `84wr8mib` · lane `84wr8mib` on `https://dev.send.sgraph.ai`; events encrypted to `sha256:8b2b26ff9386078f` · opens in its own app
 
 One anonymous event per page view (page, referrer host, country, region and city; no IP address, no cookie), each encrypted in the reader's browser to a key held by the drainer, and the counts drained from them.
 
 **Written by** every page of this site, through the write-only lane; dev@php.newsroom drains it. Data on this site: [data/telemetry.json](../data/telemetry.json).
 
 **Not published:** the vault key, the lane's enum key and the key pair's passphrase. **Published:** the write-only append token `43ed24b413cdf8c2405d0b72cddcd36c04fd7ae1ad852b872ed25727b6d61fb3`, which adds rows and reads nothing.
+
+## [The public telemetry stats](../admin/telemetry/index.html) public read
+
+**Vault** `0cfkdcvh` · written by admin/build/telemetry_publish.py from the telemetry vault (84wr8mib) at every drain; its own app · opens in its own app
+
+The curated, public view of the telemetry: page views and sessions per hour and per day for readers, for the editor, team and power users, for synthetic visitors and for crawlers; and, over readers only, countries (with a world map), devices, languages, site versions, pages and referrer hosts. Counts only: no row, session id, city, region, time zone or time finer than the hour. Written at every drain.
+
+**Written by** dev@php.newsroom, at every drain (admin/build/telemetry_flow.sh). Data on this site: [data/telemetry-public.json](../data/telemetry-public.json).
+
+**Read key** `sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800:0cfkdcvh`
+
+[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800%3A0cfkdcvh) · `sgit clone sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800:0cfkdcvh`
 
 ## [The subscriptions vault](../subscribe/index.html) private, with a public append lane
 
@@ -94,8 +106,38 @@ The team's messages (Email-FS-lite): a mailroom, an inbox, a done folder and an 
 
 **Not published:** the vault key. Its key goes to members privately.
 
+## [The telemetry application](../admin/telemetry/index.html) private
+
+**Vault** `5wnsr5h8` · linked read-only inside the telemetry vault (84wr8mib) at telemetry-ux/; v0.1.1 · opens in its own app
+
+The application that reads the telemetry, and nothing else: eight pages (overview, audience, content, journeys, sources and devices, every event, the lane's queue and its drain, about), versioned in the vault itself: a VERSION file, a changelog and one commit per release. It holds no data; the telemetry vault links it read-only and runs its latest version over its own events.
+
+**Written by** dev@php.newsroom. Data on this site: [data/telemetry.json](../data/telemetry.json).
+
+**Not published:** the vault key. It is held by the editor, sealed to the editor's key on pki.sgit.ai. Nothing in it is secret.
+
+## [The telemetry dashboard (superseded)](../admin/telemetry/index.html) private
+
+**Vault** `i4diy82d` · links the telemetry vault (84wr8mib) at telemetry/, read-only · opens in its own app
+
+A vault app that draws the telemetry: page views by hour, pages, countries, regions and cities, devices, referrers, languages, versions, pages per session and the latest events, each a filter. It holds no telemetry itself: the telemetry vault is linked inside it read-only (vault-in-vault), so the app always reads the latest drain.
+
+**Written by** dev@php.newsroom. Data on this site: [data/telemetry.json](../data/telemetry.json).
+
+**Not published:** the vault key. Superseded on 22 October by the telemetry application (5wnsr5h8), which the telemetry vault now imports: the data vault opens the app, not the other way round. It is held by the editor, sealed to the editor's key on pki.sgit.ai. Its owner record carries the telemetry vault's read key only, never its write key.
+
+## [The collaborators vault](../collaborators/index.html) private, with a public append lane
+
+**Vault** `58526ytp` ·
+
+What the collaborators send from /collaborators/: requests to join (a name, an email address, the reader closest to them) and feedback on each ask, each encrypted in the sender's browser to a key held by the conductor and the editor.
+
+**Written by** collaborators and anyone else, through the write-only lane on /collaborators/; conductor@php.newsroom drains it; the editor reads it. Data on this site: [data/collaborators.json](../data/collaborators.json).
+
+**Not published:** the vault key, the lane's enum key and the key pair's passphrase. **Published:** the write-only append token `10dc702bf741107894dbf81d506aedac3f127cf7cf61e9b09944e0eb4e810474`, which adds rows and reads nothing.
+
 The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgit.ai network, published the same way, are at [sgit.ai's vaults](https://sgit.ai/demos/vaults/index.html).
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html

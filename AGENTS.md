@@ -49,6 +49,45 @@ From sgit.ai/security and this site's own rules; the gate and `release.sh` check
 - **A model is given data, not instructions**: page text handed to a model is quoted as material; the reader's own key is used from the reader's browser and kept in their vault, never in this repository or in telemetry.
 - **No exploit or trigger-path content**: the code analysis stays on the fix, the versions and the defence.
 
-## 6. Where to look first
+## 6. Vaults and keys: every vault listed, every key sealed
+
+Added by conductor@php.newsroom at the editor's request, 23 October 2026: "a page on the website that lists the agent name and the vaults they created, just the vault ID, which is public anyway; it's the vault key that we can't share"; and "when I say send me a vault key or a QR code, every agent does it with the instructions on pki.sgit.ai".
+
+**When you make a vault**
+
+1. In the same commit, add a row to your own file, `data/vault-register/<you>.json` (make it if it is new: copy the shape of `conductor.json`): `id` (the eight-character vault ID), `what` (one line), `created` (the date), `key_sealed_to_root`. `/team/vaults/` lists every agent's vaults from these files. The build refuses anything in `id` that is not a bare vault ID. Never write a key, a read key you were not told to publish, an enum key, a token or a passphrase in it.
+2. Before your session ends, seal the vault key to the root:
+
+```
+curl -sO https://pki.sgit.ai/agents/pki-agent.mjs          # into your scratchpad, not the repository
+node pki-agent.mjs pin sha256:db7f79fdd87e030a             # the root, from CLAUDE.md, once per session
+node pki-agent.mjs seal --from-vault <your clone> --name "<vault id> vault key" --expires 14 \
+     --qr <scratchpad>/<vault id>.png --qr-link
+```
+
+   `seal --from-vault` reads the key straight from sgit and never prints it. It prints a `https://pki.sgit.ai/m/#m1.…` link that only the root's passkey opens. Put the date in `key_sealed_to_root` and tell the editor the link and when it expires.
+
+**Record the keys you hold, not only the vaults you made**
+
+In the same file, the `holds` list: one row for every key you were given or made, `{"id": "<vault id>", "key": "vault key" | "read key" | "append token", "from": "<who gave it, or 'made it'>", "since": "<date>"}`. Never the key itself: the build refuses anything in `key` but those three words. This is what lets the editor start a new session for you, or for an agent that takes over your work, with exactly the keys it needs. When a key is taken back or rotated, remove the row.
+
+**The vault key is the whole boundary**
+
+Whoever holds a vault's key must be able to do everything that vault is for, including draining its lane and decrypting what arrives: a vault app, the editor or another agent with the key, without anything from your session. That is sgit.ai's convention, "the vault key is the only secret" (sgit.ai/docs/append-lane-messaging.md, section 7.1), and `admin/build/postmaster.py` implements it here:
+
+- the lane's enum key and the key pair's passphrase are derived from the vault's write key (HMAC-SHA256 with the labels in that file), never stored and never random;
+- the key pair that decrypts what arrives lives inside the vault, at `.vault/postmaster/front-door-keypair/`, its private halves encrypted under that derived passphrase;
+- `.vault/postmaster/lane.json` says which lane, which recipient key, and each sender's token (published, or derived from the vault key).
+
+So: when you make a vault with a lane, set it up that way from the start. Never leave an enum key, a passphrase or a private key only in your session or your scratchpad: when your session ends, the vault would be undrainable. If your session's permissions stop you writing the key pair into the vault, say so and stop.
+
+**When the editor asks you for a key, or a QR code of one**
+
+- Seal it as above and send him two things: the sealed link, and the QR image (`--qr <file>.png --qr-link` makes one a phone's camera opens; send the file, do not describe it). Say which vault, and when the link expires.
+- Any other secret (an enum key, a lane token, a passphrase) goes the same way: `seal --file <a file in your scratchpad> --name "…"`, then delete the file.
+- Never the key itself: not in your reply, not in a file in the repository, not on a page, not in a commit message, not in a message to another agent. A vault ID is fine anywhere.
+- If your session's permissions stop pki-agent, say so to the editor and stop. There is no plain-text fallback.
+
+## 7. Where to look first
 
 `README.md` (how the site is built and released), `REALITY.md` (what exists), `/admin/board/` (what is open and whose), `/team/` (who is who), `/admin/roles/` (the rules each role enforces), this file.

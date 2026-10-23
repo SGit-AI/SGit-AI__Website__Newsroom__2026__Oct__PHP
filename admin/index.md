@@ -206,6 +206,90 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
+### GRC: fractal risk registers (grc@php.newsroom)
+
+- `/grc/` from `data/grc.json`, `data/grc-frameworks.json` and `data/grc-network.json`, built by `build_grc()`: 34 risks in a tree (10 at the top), 53 stakeholders in a tree from "everyone with PHP in the path" down to the roles inside one organisation, 14 weaknesses, 20 frameworks (GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO/IEC 27001, 42001, 29147 and 30111, NIST CSF 2.0, SP 800-53, SSDF, AI RMF, CIS, PCI DSS, SOC 2, Cyber Essentials, KEV, TLP, ATT&CK, OWASP) with 120 controls, 95 of them mapped.
+
+- Pages: the front page with a heat map and the path coverage; the register as a tree; one page per risk with its path drawn (stories, roles and stakeholders, then weakness, vulnerability, fix and code); one register per stakeholder (assigned here, or arriving through its parts) with who it shares risks with; one page per framework; the risk graph; what the sgit network already holds.
+
+- `data/grc-graph.json` is generated: every edge a verb with its inverse, joined to the same claim, source, fix and code nodes as the story graph and the code review graph. The build stops on any unknown reference or an ownerless risk.
+
+- Every risk reaches code and a team member; 30 of 34 reach a vulnerability (the four that do not are the newsroom's own agent risks, which reach this repository's code instead) and a role inside an organisation; 26 of 34 reach a story (the reporting-obligation risks and the newsroom's own have none yet, board 093).
+
+- Not built: acceptance (no holder has accepted anything; board 092), per-stakeholder ratings (one rating per risk), the network's material captured into a vault (board 095), a graph of ISO 27001, NIST CSF, DORA or SOC 2 anywhere in the network.
+
+### Collaborators (branch conductor/collaborators, conductor@php.newsroom)
+
+- `/collaborators/` from `data/collaborators.json`: what we ask of collaborators, this week's ask (ask 001, Friday 23 October 2026) with what is new, the readers to read it as, the steps and the questions, and the messages for the WhatsApp group and the email list, generated with full URLs.
+
+- Two forms (`assets/collaborators.js`), join and feedback, encrypted in the browser to the private collaborators vault (58526ytp, key sha256:e3ff50abd96816ef) and posted to its write-only lane; tested end to end from Chromium and drained by `admin/build/collaborators_drain.py`. The vault key is sealed to the root; the lane's enum key and the key pair's passphrase are not yet (board).
+
+- Not built: sending. The email list and the WhatsApp group are the editor's own; nothing on the site sends mail.
+
+### Runs (branch conductor/collaborators, conductor@php.newsroom)
+
+- `/team/runs/` from `data/schedules.json`: the three schedules the team runs (the source watch every 30 minutes, the fact-check desk every four hours, the synthetic readers hourly), each with how many runs fall in the quiet hours, computed from its schedule; and every recorded run, newest first, read from the release history, the source watch, the fact-check runs and the synthetic readers, with the article each run with changes should leave (matched by `run:` in an article's front matter).
+
+- The quiet hours (22:00 to 07:00 London) and the article rule are proposed, not applied: no schedule has been changed.
+
+### Feedback from any page, signed (branch conductor/collaborators, conductor@php.newsroom)
+
+- A **Feedback** button beside Ask on every page opens the pane on its Feedback tab (`assets/feedback/pane.js`): the page and version, a kind, the words, the selected text, and a screenshot (a file, or this screen captured with the browser's permission prompt, scaled down to JPEG). Signed with the device's key, encrypted to the collaborators key, posted to the collaborators lane. Without a key, the tab says how to get an invitation.
+
+- `/join/` (`assets/feedback/join.js`, `assets/feedback/identity.js`): an invitation link or QR code (`#j1..`, removed from the address bar at once) makes the device's key pair in sgit's format (RSA-OAEP 4096 and ECDSA P-256), private halves non-extractable in IndexedDB, and sends a signed enrolment.
+
+- `/join/invite/` (`assets/feedback/invite.js`): an enrolled key that may invite (the editor) signs an invitation in the browser and gets a QR code, a link and a share button; nothing is stored. The drain enrols a key automatically when its enrolment and its invitation both verify (`admin/build/contributors.py`): three devices an invitation, in date. `admin/build/invite.py` is only the bootstrap for the editor's first key. `admin/build/contributors.py` checks signatures with `sgit pki verify` over pki.sgit.ai's canonical bytes; `collaborators_drain.py` marks every signed row enrolled, unknown key or unsigned, and saves screenshots beside it.
+
+- Tested end to end in Chromium with two browser profiles (bootstrap, browser-signed invitation, second device enrolled automatically, signed feedback) with negative controls (a changed word, page, role or expiry fails; a key that may not invite cannot).
+
+- Not built: the editor's review queue (phase 2); a key on more than one device; links to pki.sgit.ai records. No invitation has been sent.
+
+### Your stack, the blast radius (v0.8.1, dev@php.newsroom)
+
+- `/stack/` from `data/stack.json` (component kinds, links, settings mapped to the published mitigations, the two CVEs as rules, three example stacks), joined at build with `affected`, `defence` and `software` into `stack/catalogue.json`; the tool is `assets/stack.js`.
+
+- Per PHP runtime and CVE: the version against the ranges (EOL branches affected with no upstream release), the providing platform against the NCSC-NL inventory (a distribution backport keeps its old version number, so the reader confirms the vendor build; an image's version is taken as it is), the SAPI's scope, whether the internet reaches it, the settings and edge rules that reduce it, each with its caveat. The blast radius: what runs on an affected runtime, what it and they can reach, one step further. What to do first; the inventory rows, edge entries and pages that name the stack.
+
+- Kept in this browser (`p2s.stack.v1`); several stacks, export and import (an imported file is cleaned and rendered as text); synced by the Ask pane's vault to `/php-october/stack/.json`, the newer copy of each stack winning. Checked in Chromium (three examples, edits, a hostile import, phone, dark); the vault sync not yet run against a real reader vault.
+
+- Not built: vulnerabilities beyond the two (the pulse), feed items matched to a stack, deletions carried across devices.
+
+### Who reads this site, by group, and in public (v0.8.4, dev@php.newsroom)
+
+- `admin/build/telemetry_classes.py`: every session is a reader, the editor, a power user or team member, synthetic (agents, tests, headless browsers) or a crawler. Declared by the browser since v0.8.4 (`assets/telemetry.js` sends `agent`, automation by class, never the user-agent string, and `who`, the role of an enrolled `/join/` key or the browser's setting on `/admin/telemetry/`), inferred before that (time zone, place, language, first page). The telemetry app (UX vault 5wnsr5h8, v0.2.1) runs the same rules, checked identical on all 279 sessions drained so far, filters every page by group and has a map.
+
+- The public telemetry stats vault `0cfkdcvh`, read key published on `/vaults/` and `/admin/telemetry/`: its own app (hourly by group, a world map of readers, what readers read, by day, the method), `stats/summary.json` and `stats/hourly.json`. Counts only: no row, session id, city, region, time zone or time finer than the hour.
+
+- `admin/build/telemetry_flow.sh  `: pull both, drain, classify (`reports/classes.json` in the private vault), publish (`admin/build/telemetry_publish.py`), push both; writes `data/telemetry-report.json` and `data/telemetry-public.json` for the next release. `/admin/telemetry/` draws the groups, the hourly chart and the map from them; `data/world.json` is Natural Earth 1:50m (public domain) in Equal Earth.
+
+- Not built: a schedule for the flow (needs the editor's go); public stats after an in-browser drain (an app cannot write another vault).
+
+### The Sherpa (branch sherpa/joins, sherpa@php.newsroom)
+
+- `admin/sherpa/`: the role (adapted from the SG/Send team's Sherpa), `friction-log.json` (schema `sgit.newsroom.friction-log/1`: nine frictions, each with reader, page, stage, intended, actual, expected, evidence, owner and status) and `reviews/` (the first walk, of v0.8.1). Advisory: it proposes and routes to owners, and fixes nothing itself.
+
+- In the roster (`data/team.json`), so `/team/sherpa/` exists; four board rows, the frictions it tracks to release.
+
+- Readers' feedback: `admin/sherpa/feedback.json` (schema `sgit.newsroom.reader-feedback/1`), one record per message with an id (UF-nnn), date, channel, site version, the reader's words as received and, point by point, the Sherpa's comment, whether it was reproduced, the recommendation and who can act. `build_sherpa()` (the Sherpa's block at the end of `build.py`) builds `/sherpa/` ("I'm the Sherpa, here to help you", the feedback register and the friction log) and one page per message; screenshots in `assets/sherpa/`, metadata stripped. UF-001 (23 October, a power user, by email): ten points, two interface bugs reproduced in Chromium (F015, F016). Readers are not named; whether a reader's words may be published is the editor's to confirm before release.
+
+- Ideas from collaborators: `admin/sherpa/ideas.json` (schema `sgit.newsroom.collaborator-ideas/1`), one record per conversation (CI-nnn), each comment, idea and question set against what the site has today, with links, what is missing, a recommendation and who could take it; built as `/sherpa/ideas//` and a section on `/sherpa/`. CI-001 (22 to 23 October, LinkedIn, a collaborator joining the power users): two comments, three ideas (user stories to execution paths and tests; threat scenarios and security assumptions beside stories; verified versus AI-inferred edges), three questions, an offer. Collaborators are named only when they agree (`name_on_site`).
+
+- Feedback from collaborators, a section of its own (`/feedback/`, under Yours): every piece of feedback kept whole, in a viewer with a menu of all of them on the left, the document as received in the middle and the Sherpa's comments beside each part of it on the right; readers can select text to highlight it and add a note (kept in their browser only, exportable as JSON; `assets/sherpa/viewer.js`). A report imported whole is `admin/sherpa/documents/.json` in blocks the comments anchor to (UF-003, with its seven screenshots, metadata stripped). `/feedback/briefs/`: the brief to the conductor from every open friction, by owner and severity, and requirements for other teams (`admin/sherpa/briefs.json`: pki.sgit.ai). Counts in `admin/sherpa/collab-stats.json`. The signed messages drained from the collaborators vault are counted, not published, until the editor confirms they may be.
+
+- Not built: the Sherpa's line on the front page and the "Where next" block (proposed); the trail additions (proposed, for dev and the editor's go); a key enrolled on pki.sgit.ai.
+
+### Recorded, not started
+
+- The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
+
+### The vault key is the whole boundary (23 October 2026, conductor@php.newsroom)
+
+- `admin/build/postmaster.py`: sgit.ai's convention (the vault key is the only secret): a lane's enum key, the key pair's passphrase and, where derived, the senders' tokens are HMAC-SHA256 of the vault's write key with fixed labels; the key pair lives in the vault at `.vault/postmaster/front-door-keypair/`, encrypted; the lane in `.vault/postmaster/lane.json`. The collaborators (58526ytp) and conductor (5iwos28w) vaults use it; both drains work from a clone with the vault key alone (tested from a fresh clone with the session's own key pair moved aside). A lane that answers 404 to the derived key is re-registered once by the drain (seen once on 23 October, cause unknown).
+
+- `/team/vaults/`: every agent's vaults by ID and, from 23 October, the keys each agent holds (the `holds` list), never a key.
+
+- The feedback pane takes up to three screenshots; `/join/` says whether this device's key is enrolled or waiting.
+
 ### Not built
 
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.
@@ -226,4 +310,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.10.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

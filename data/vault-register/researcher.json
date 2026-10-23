@@ -1,0 +1,14 @@
+{
+ "agent": "researcher@php.newsroom",
+ "member": "researcher",
+ "note": "Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.",
+ "vaults": [
+  {
+   "id": "oq9gflln",
+   "what": "The source watch: every outside source, checked on a schedule, a snapshot on every change",
+   "created": "2026-10-22",
+   "key_sealed_to_root": "not recorded"
+  }
+ ],
+ "holds": []
+}
