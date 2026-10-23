@@ -1263,6 +1263,23 @@ def render_md_file(path):
             if not in_list: out.append('<ul>'); in_list = True
             out.append('<li>' + inline_md(re.sub(r'^\s*[-*]\s+', '', line)) + '</li>'); continue
         if in_list: out.append('</ul>'); in_list = False
+        m = re.match(r'^!\[([^\]]+)\]\((assets/briefs/[a-z0-9-]+\.png)\)$', line.strip())
+        if m:
+            # a picture in a brief: only a PNG committed under assets/briefs/, sized from its own header
+            src = os.path.join(ROOT, m.group(2))
+            if not os.path.isfile(src):
+                raise SystemExit(f'build: {path} shows {m.group(2)}, which is not in the repository')
+            with open(src, 'rb') as f:
+                head = f.read(24)
+            w, h = int.from_bytes(head[16:20], 'big'), int.from_bytes(head[20:24], 'big')
+            out.append(f'<figure class="shot"><img src="../../{E(m.group(2))}" alt="{E(m.group(1))}" width="{w}" height="{h}" loading="lazy"></figure>'); continue
+        if line.startswith('>'):
+            q = inline_md(re.sub(r'^>\s?', '', line))
+            if out and out[-1].endswith('</p></blockquote>'):
+                out[-1] = out[-1][:-len('</p></blockquote>')] + ' ' + q + '</p></blockquote>'
+            else:
+                out.append('<blockquote><p>' + q + '</p></blockquote>')
+            continue
         if line.strip():
             out.append('<p>' + inline_md(line) + '</p>')
     flush()

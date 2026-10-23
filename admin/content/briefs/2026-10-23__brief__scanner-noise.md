@@ -11,17 +11,15 @@ the sources of data, look for people commenting on it, and see how the noise flo
 
 ## What started it
 
-Jeremiah Grossman, chief executive of Root Evidence, posted on LinkedIn on the evening of 22 October (UTC), going by
-the post's age in the editor's screenshot:
+Jeremiah Grossman, chief executive of Root Evidence, posted on [LinkedIn](https://www.linkedin.com/posts/grossmanjeremiah_the-false-positives-for-php2shell-from-makeshift-share-7519173707991433217-Qh3E/) on the evening of 22 October (UTC), going by the post's age in the editor's screenshot:
 
 > The false-positives for php2shell from makeshift scanners is what's going to be apocalyptic.
 
-The editor replied under it, pointing to this site:
+![Jeremiah Grossman's LinkedIn post: "The false-positives for php2shell from makeshift scanners is what's going to be apocalyptic." 32 reactions, 8 comments, 1 repost when the screenshot was taken.](assets/briefs/grossman-post.png)
 
-> here is another interesting data point, as part of creating the site https://php.oct.2026.newsroom.sgit.ai/ site to
-> track what is going on, as of last night, there was no public record of companies being hit…
-
-Both are from the editor's screenshot. LinkedIn gives the watch a sign-in page, so it holds no capture of either.
+The picture is the top of the editor's screenshot, taken on 23 October and used with his go. LinkedIn gives the
+watch a sign-in page, so this is the record of the post. The editor replied under it, pointing to this site: as of
+the night before, there was no public record of companies being hit.
 
 ## The questions
 
@@ -97,9 +95,10 @@ the scanner question as its first one (job 03 in the watch vault).
   - a section of the cyber desk's analysis on scanner method, once there are more reports than the ones above
   - a table on the site once the counts have moved for a day
 
-## Open questions for the editor
+## Decided by the editor (23 October)
 
-1. Should the post and your reply be captured from a signed-in browser (yours), so the site can cite them as evidence?
-   Until then they are quoted here from your screenshot only.
-2. Should the cyber desk test the scanners against a patched, distro-backported PHP in a lab, so the site holds its
-   own result and not only reports? That's a test of tools, not of anyone's systems, but it needs your go.
+1. The post is recorded from the editor's screenshot, cropped to the post itself, with its link.
+2. Testing the scanners in a lab is a task for later, not for now. It's on the board, owned by the cyber desk: run the
+   public scanners against a distribution-patched PHP (for example Ubuntu's `8.5.4-0ubuntu1.5`) and an unpatched
+   one, in an isolated lab, and record which ones get each right. It tests the tools, never anyone's systems, and it
+   starts only on the editor's go.
