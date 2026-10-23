@@ -314,6 +314,16 @@ facts/wiz-independent/index.md
 facts/wordpress-drupal/index.html
 facts/wordpress-drupal/index.md
 feed.xml
+feedback/briefs/index.html
+feedback/briefs/index.md
+feedback/index.html
+feedback/index.md
+feedback/uf-001/index.html
+feedback/uf-001/index.md
+feedback/uf-002/index.html
+feedback/uf-002/index.md
+feedback/uf-003/index.html
+feedback/uf-003/index.md
 feeds/all.xml
 feeds/for-you.xml
 feeds/index.html
@@ -617,10 +627,6 @@ review/index.md
 review/ui/index.html
 review/ui/index.md
 robots.txt
-sherpa/feedback/uf-001/index.html
-sherpa/feedback/uf-001/index.md
-sherpa/feedback/uf-002/index.html
-sherpa/feedback/uf-002/index.md
 sherpa/ideas/ci-001/index.html
 sherpa/ideas/ci-001/index.md
 sherpa/index.html
