@@ -14,7 +14,7 @@ UF-002an agent tester (Claude in a browser on the editor's compute
 Internal tests
 UF-004the editor
 Ideas from collaborators
-CI-001a collaborator from the editor's network
+CI-001a collaborator from the editor's networkCI-002the same collaborator as CI-001
 What happens next
 The briefsto the conductor, and to other teams
 
@@ -22,7 +22,7 @@ The briefsto the conductor, and to other teams
 
 Everything the power users and collaborators have told us about this site, each piece kept whole, with the Sherpa's comment beside every part of it, what was reproduced, and the brief it turned into. Kept by [the Sherpa](../sherpa/index.html). People are not named; tests run by agents are marked as tests.
 
-3pieces of feedback33points answered23reproduced by the Sherpa30frictions open1power users joined5signed messages received1conversations of ideas
+3pieces of feedback33points answered23reproduced by the Sherpa30frictions open1power users joined5signed messages received2conversations of ideas
 
 Counts as of 23 October 2026: one power user has joined with a key and sent five signed messages from the site, counted from the collaborators vault's first drain; the messages themselves stay in the vault until the editor says they may be published (their substance is in UF-003, the same power user's published report).
 
@@ -41,4 +41,4 @@ Each piece of feedback becomes frictions in [the friction log](../sherpa/index.h
 
 
 ---
-site v0.10.10 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/feedback/index.html
+site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/feedback/index.html

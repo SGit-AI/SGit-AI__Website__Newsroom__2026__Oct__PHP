@@ -2,7 +2,7 @@
 
 The proposed redesign of the site for review: what is wrong now, the two dials (who you are and how much you see), which pages each reader sees, the menu per view, and four mockups built from the live data.
 
-> Mockup notes for review, built from the data of release v0.10.10. Not the live site.
+> Mockup notes for review, built from the data of release v0.10.11. Not the live site.
 
 Admin · design · for review 
 ## The redesign: who you are, and how much you want to see
@@ -71,7 +71,7 @@ front page, what is new, the phone app · 8 pages
  Your briefing 
 the briefing written for your role · 17 pages 
  Ask 
-questions readers ask, the Sherpa · 14 pages 
+questions readers ask, the Sherpa · 15 pages 
  Explained 
 plain-English explainer, glossary · 2 pages 
  What to do 
@@ -94,15 +94,15 @@ method, roles, board, releases, admin · 60 pages
 ### Pages per reader, per view
 
  Reader Focus Standard Everything 
- Alex Curious reader 26 64 621 
- Jordan Board member or executive 26 212 621 
- Quinn CFO 26 212 621 
- Robin CISO 153 212 621 
- Rowan Journalist 422 445 621 
- Sam Security lead 40 102 621 
- Drew PHP or platform engineer 33 102 621 
- Ash Security researcher 383 448 621 
-Counted from the 621 pages this release builds. 
+ Alex Curious reader 27 65 622 
+ Jordan Board member or executive 27 213 622 
+ Quinn CFO 27 213 622 
+ Robin CISO 154 213 622 
+ Rowan Journalist 423 446 622 
+ Sam Security lead 41 103 622 
+ Drew PHP or platform engineer 34 103 622 
+ Ash Security researcher 384 449 622 
+Counted from the 622 pages this release builds. 
 
 #### Who sees the team console
 
@@ -151,7 +151,7 @@ All of it, for power users and the team.
 
 - The admin pages move into console D. 
 
- Mockups built by the design agent from release v0.10.10; the brief is on the briefs page. Board items record each step.
+ Mockups built by the design agent from release v0.10.11; the brief is on the briefs page. Board items record each step.
 
 ---
-site v0.10.10 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html
+site v0.10.11 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html

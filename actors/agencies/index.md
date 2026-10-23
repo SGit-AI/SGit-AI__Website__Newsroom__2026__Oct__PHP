@@ -35,4 +35,4 @@ advisories; see the agency table
 
 
 ---
-site v0.10.10 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/actors/agencies/index.html
+site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/actors/agencies/index.html

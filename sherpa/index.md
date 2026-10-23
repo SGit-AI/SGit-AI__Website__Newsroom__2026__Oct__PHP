@@ -40,6 +40,7 @@ What collaborators think this site should become, one page per conversation, eac
 | Id | From | When | Comments | Ideas | Questions | In short |
 |---|---|---|---|---|---|---|
 | [CI-001](ideas/ci-001/index.html) | a collaborator from the editor's network | 2026-10-22 to 2026-10-23 | 2 | 3 | 3 | A collaborator who likes the idea of joining business context to technical detail in one graph, with php2shell as the worked example. Three ideas: join user stories to execution paths, dependencies, security boundaries and tests; map security requirements and threat scenarios beside functional stories, so a change shows which security assumptions it touches; and mark which relationships are verified and which an AI inferred. Two questions: how the agents relate code, stories and security requirements, and whether the mappings will drive impact analysis and find gaps in test coverage. |
+| [CI-002](ideas/ci-002/index.html) | the same collaborator as CI-001 | 2026-10-23 to 2026-10-23 | 4 | 6 | 0 | The collaborator's response to the mockups and the risk graph: an editorial design for the main experience and a graph-oriented interface for depth; and five ideas to turn the risk graph from a picture into a tool: start small and expand, trace end to end, mark what is verified and what an AI inferred, run impact analysis from a vulnerable function, and serve each persona the same graph at its own depth. Plus one: let the graph find what is missing, such as requirements without tests or code without an owner. Five of the steps need no decision from the editor and are briefed to dev; the design direction and the persona views wait for the editor's review of the mockups. |
 
 ## What gets in readers' way
 
@@ -89,4 +90,4 @@ The role in full: `admin/sherpa/README.md`. My page on the team: [the Sherpa](..
 
 
 ---
-site v0.10.10 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sherpa/index.html
+site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sherpa/index.html

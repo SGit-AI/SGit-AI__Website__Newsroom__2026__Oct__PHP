@@ -1,6 +1,15 @@
 {
- "current": "0.10.10",
+ "current": "0.10.11",
  "versions": [
+  {
+   "version": "0.10.11",
+   "date": "2026-10-23",
+   "title": "Ideas from collaborators, CI-002: the collaborator's ideas for turning the risk graph into a tool (start from one node, a basis on every link, tests and impact from code, a computed list of what is missing), each set against the graph as it is, and a brief to dev for the five steps that need no editorial call (board 166 to 170)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.10",
    "date": "2026-10-23",

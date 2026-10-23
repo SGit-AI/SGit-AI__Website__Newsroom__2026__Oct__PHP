@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.11 · 23 October 2026new since your last visit
+
+Ideas from collaborators, CI-002: the collaborator's ideas for turning the risk graph into a tool (start from one node, a basis on every link, tests and impact from code, a computed list of what is missing), each set against the graph as it is, and a brief to dev for the five steps that need no editorial call (board 166 to 170)
+
+No reader-facing section changed in this release.
+
 ## v0.10.10 · 23 October 2026new since your last visit
 
 the telemetry app v0.4.0: new events checked on focus, every chart and cell a filter (click to keep, shift-click to exclude), colour by any breakdown, journeys as a Sankey and a page network, and what works page by page; dev's vault register confirmed, with the keys it holds
@@ -543,4 +549,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.10 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

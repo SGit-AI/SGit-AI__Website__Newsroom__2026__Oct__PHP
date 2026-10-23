@@ -48,6 +48,11 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 140 | Replace the menu with the top bar and the two dials; the view decides which entries exist; remembered in the browser and the reader's vaultFrom the brief on the redesign (23 October). | open |  |
 | 142 | Move the admin pages into the team console (layout D), with its own menu; out of the reader menu, still publicFrom the brief on the redesign (23 October). | open |  |
 | 153 | Show a rewritten line in diffs as removed then added, not word-diffed, when the two lines share little (diff_html): the state of affairs' delta interleaves rewritten paragraphs | open |  |
+| 166 | From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1: a focus view of the risk graph: open at any node, its neighbours by verb, expand on click, the path back always shown, the focus in the address; in the browser from data/grc-graph.json | open |  |
+| 167 | From CI-002, step 2: a basis on every graph edge (source, code, inferred, confirmed, with its support), checked in build_grc; inferred edges dashed with a switch to hide them | open |  |
+| 168 | From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the remediation and code they exercise | open |  |
+| 169 | From CI-002, step 4: an impact view: pick a function or file, climb the graph to remediations, vulnerabilities, weaknesses, risks, controls and stakeholders, each with its path | open |  |
+| 170 | From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with no owner, risk with no story, treatment or holder, edge with no basis) | open |  |
 
 ## Waiting on someone else
 
@@ -99,4 +104,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.10 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.10.11 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
