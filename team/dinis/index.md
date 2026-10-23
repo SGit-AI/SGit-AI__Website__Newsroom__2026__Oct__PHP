@@ -44,6 +44,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 115 | The twin's open questions: the budget, the escalation ladder at night, which outside agents join (ChatGPT, Perplexity) and how, and which ABP site's per-session review the run record should match | open |  |
 | 138 | Editor review of the four mockups: pick, mark up, decide the Focus/Standard/Everything split per readerFrom the brief on the redesign (23 October). | open |  |
 | 148 | Go for scheduled updates: an hourly run (only when something moved) and a daily one, with the run's cadence in board 071 | open |  |
+| 162 | The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:00 London), on Sonnet; then they move from 'setting up' to 'active' in the schedule vault | open |  |
 
 ## What they have done
 - Started the site from two voice memos and a message on 22 October 2026, and set every brief since.

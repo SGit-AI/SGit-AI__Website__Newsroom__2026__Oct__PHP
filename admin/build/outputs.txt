@@ -1141,6 +1141,8 @@ team/researcher/index.html
 team/researcher/index.md
 team/runs/index.html
 team/runs/index.md
+team/schedule/index.html
+team/schedule/index.md
 team/sherpa/index.html
 team/sherpa/index.md
 team/status/index.html

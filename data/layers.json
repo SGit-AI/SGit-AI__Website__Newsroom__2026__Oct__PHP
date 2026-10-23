@@ -273,6 +273,13 @@
    "used_on": "team/runs/index.html"
   },
   {
+   "path": "data/schedule-vault.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "the public schedule vault's id and published read key",
+   "used_on": "team/schedule/index.html"
+  },
+  {
    "path": "data/agents-status.json",
    "layer": "site",
    "by": "conductor@php.newsroom",

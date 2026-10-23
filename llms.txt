@@ -109,6 +109,7 @@ Site v0.10.6. Data as of 2026-10-23T01:20Z (the latest capture in the evidence v
 - [The telemetry application](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [The telemetry dashboard (superseded)](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [The collaborators vault](https://php.oct.2026.newsroom.sgit.ai/collaborators/index.md): Where a power user of PHP October 2026 starts: the first fifteen minutes, the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
+- [The schedule vault](https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.md): Every scheduled agent, its task queue and every run with its log, read live from a public vault: the control panel for what the team runs on its own.
 
 ## GRC
 - [GRC: risks, owners, standards](https://php.oct.2026.newsroom.sgit.ai/grc/index.md): 34 risks in a fractal register assigned to 53 stakeholders, each joined to the weakness, vulnerability, fix, code, stories and roles behind it, and mapped to 95 controls in 20 frameworks including GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001 and NIST CSF.
@@ -499,6 +500,7 @@ Site v0.10.6. Data as of 2026-10-23T01:20Z (the latest capture in the evidence v
 
 ## The team, one page per member
 - [How the team talks: three vaults and one run](https://php.oct.2026.newsroom.sgit.ai/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules
+- [Schedule](https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.md): every scheduled agent, its task queue and every run with its log, read live from a public vault
 - [Vaults: who made each one](https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.md): every vault each agent made, by ID only, and whether its key is sealed to the editor
 - [Status](https://php.oct.2026.newsroom.sgit.ai/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev
 - [Runs](https://php.oct.2026.newsroom.sgit.ai/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run

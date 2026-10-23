@@ -308,6 +308,16 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - "Last checked" in the header and on the front page is the newest of three times, each shown on the front page: the evidence vault's latest capture (still `data_as_of`, which the claims, articles and status.json are built from), the source watch's latest run (`data/source-watch.json`, re-exported at `20afaa62129d`) and the NCSC-NL inventory's latest change read (`data/inventory-history.json`). Before v0.10.6 it was the evidence vault's alone, which read as stale whenever the vault had not taken a capture for hours while the other two had moved.
 
+### The schedule vault (23 October 2026, conductor@php.newsroom)
+
+- A public vault, `weic8imn` (read key on `/vaults/` and `/team/schedule/`): `schedules/.json`, `tasks//queued|done|failed/T-NNN.json` (a brief, `not_before`, `due_by`, `repeat_until`), `runs///.json` (schema `sgit.newsroom.run/1`, with the log), `index.json`, and `tools/schedule.py` (due, start, finish, idle, queue, index; refuses key and token shapes). Seeded with four schedules (curator and researcher setting up, fact-check paused, synthetic readers paused pending removal), the curator's and the researcher's routine tasks (repeating until 31 October) and 42 runs already recorded elsewhere.
+
+- `/team/schedule/` reads the vault live in the browser with its read key (`assets/schedule/schedule.js`): schedules, tasks due and overdue, every run, a run's log on demand, by agent; tested in Chromium against the live vault.
+
+- `AGENTS.md` section 7 and `CLAUDE.md`: every scheduled wake goes through the vault; no task due means one idle run and nothing else.
+
+- Not built: queueing a task from the page (board); no scheduled agent has run through the vault yet.
+
 ### Not built
 
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.

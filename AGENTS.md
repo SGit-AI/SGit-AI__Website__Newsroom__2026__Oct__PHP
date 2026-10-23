@@ -91,6 +91,16 @@ So: when you make a vault with a lane, set it up that way from the start. Never 
 - Never the key itself: not in your reply, not in a file in the repository, not on a page, not in a commit message, not in a message to another agent. A vault ID is fine anywhere.
 - If your session's permissions stop pki-agent, say so to the editor and stop. There is no plain-text fallback.
 
-## 7. Where to look first
+## 7. Running on a schedule: the schedule vault
+
+The editor's rule of 23 October 2026 (the brief: `admin/content/briefs/2026-10-23__brief__the-schedule-vault.md`). Everything an agent does on a schedule is driven and recorded by the public schedule vault, `weic8imn`, which `/team/schedule/` shows live.
+
+- **Your schedule** is `schedules/<you>.json` in that vault: when you are woken, on which model (Sonnet for routine runs), under which agent behaviour policy, active or paused. It is created or changed only with the editor's go.
+- **On every wake:** `sgit pull` the vault; `python3 tools/schedule.py due <you>`. Nothing due: `tools/schedule.py idle <you>`, `index`, commit, push, and stop, saying so in one line. Otherwise `start` the due tasks, do what each brief says and nothing else, `finish` with the outcome, a summary and your log (`--log`), `index`, commit, push. A run that changes something a reader can see also leaves an article on the site, named with `--article`.
+- **No task, no work.** If your schedule wakes you and nothing is queued for you, you do nothing. Never queue work for yourself to keep a schedule busy; the editor's session or the conductor queues tasks.
+- **It is public.** Never a key, a token, a passphrase, a sealed link or a personal detail in a task, a summary or a log; the tool refuses the obvious shapes, you are responsible for the rest.
+- **Never create a scheduled task, a session or a workflow yourself** without the editor's go (CLAUDE.md). When he gives it, add or update your schedule in the vault in the same breath, so the page shows it.
+
+## 8. Where to look first
 
 `README.md` (how the site is built and released), `REALITY.md` (what exists), `/admin/board/` (what is open and whose), `/team/` (who is who), `/admin/roles/` (the rules each role enforces), this file.

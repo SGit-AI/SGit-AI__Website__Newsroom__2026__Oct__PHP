@@ -26,6 +26,12 @@
    "what": "The collaborators vault: join requests, signed feedback and key enrolments, through its write-only lane",
    "created": "2026-10-22",
    "key_sealed_to_root": "2026-10-22"
+  },
+  {
+   "id": "weic8imn",
+   "what": "The schedule vault: schedules, task queues and every run with its log; public",
+   "created": "2026-10-23",
+   "key_sealed_to_root": "2026-10-23"
   }
  ],
  "holds": [
@@ -52,6 +58,12 @@
    "key": "vault key",
    "from": "made it",
    "since": "2026-10-22"
+  },
+  {
+   "id": "weic8imn",
+   "key": "vault key",
+   "from": "made it",
+   "since": "2026-10-23"
   }
  ]
 }

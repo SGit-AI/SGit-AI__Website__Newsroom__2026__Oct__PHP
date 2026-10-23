@@ -40,7 +40,7 @@ Pages stop at 1,080 pixels; on a laptop half the screen is empty. The proposal r
 
 #### The menu is the site map
 
-Eleven groups and 124 entries, ordered by how the site was built, not by what a reader wants to do. The proposal: four to eight entries, chosen by who you are and how much you want. 
+Eleven groups and 125 entries, ordered by how the site was built, not by what a reader wants to do. The proposal: four to eight entries, chosen by who you are and how much you want. 
 
 #### Everyone sees everything
 
@@ -89,27 +89,27 @@ signed articles written here · 7 pages
  The evidence 
 every source, the vaults, the pipeline, versions · 346 pages 
  The site and the team 
-method, roles, board, releases, admin · 59 pages 
+method, roles, board, releases, admin · 60 pages 
 
 ### Pages per reader, per view
 
  Reader Focus Standard Everything 
- Alex Curious reader 26 64 620 
- Jordan Board member or executive 26 212 620 
- Quinn CFO 26 212 620 
- Robin CISO 153 212 620 
- Rowan Journalist 422 445 620 
- Sam Security lead 40 102 620 
- Drew PHP or platform engineer 33 102 620 
- Ash Security researcher 383 448 620 
-Counted from the 620 pages this release builds. 
+ Alex Curious reader 26 64 621 
+ Jordan Board member or executive 26 212 621 
+ Quinn CFO 26 212 621 
+ Robin CISO 153 212 621 
+ Rowan Journalist 422 445 621 
+ Sam Security lead 40 102 621 
+ Drew PHP or platform engineer 33 102 621 
+ Ash Security researcher 383 448 621 
+Counted from the 621 pages this release builds. 
 
 #### Who sees the team console
 
 Everything view only. It stays public, because how the site is run is part of the story; it just stops being in a reader's way. 
 
 ### The menu, per view
- today: 11 groups, 124 entries, the same for everyone 
+ today: 11 groups, 125 entries, the same for everyone 
 
 Focus 
 Four places. For a board member, a CFO, a website owner. 

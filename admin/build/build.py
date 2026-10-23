@@ -1146,7 +1146,7 @@ def build_team():
 <p class="lead">This site is built and run by {humans}, and a team of software agents, with help from <a href="../collaborators/index.html">collaborators</a> who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is <a href="../data/team.json">data/team.json</a>, kept by <a href="conductor/index.html">the conductor</a>.</p>
 <div class="stats">{stats}</div>
 {section("members", "Who is on it", groups)}
-{section("run", "How the team runs", f'<p class="caveat">{E(T.get("now", ""))}</p><p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>Where every agent is right now, what each waits for and from whom: <a href="status/index.html">status</a>. Every vault the agents made, by ID: <a href="vaults/index.html">vaults</a>. What the agents run on their own, when, and every run they made: <a href="runs/index.html">runs</a>.</p><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
+{section("run", "How the team runs", f'<p class="caveat">{E(T.get("now", ""))}</p><p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>What runs on a schedule, its tasks and every run with its log, live: <a href="schedule/index.html">schedule</a>. Where every agent is right now, what each waits for and from whom: <a href="status/index.html">status</a>. Every vault the agents made, by ID: <a href="vaults/index.html">vaults</a>. What the agents run on their own, when, and every run they made: <a href="runs/index.html">runs</a>.</p><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
 {section("pipeline", "The pipeline", pipe, "How a URL becomes a published claim, and who does each step.")}
 {section("audiences", "The audiences", f'<ul>{auds}</ul>', "Each briefing is a role too: a reader whose question the site answers in one page.")}
 {section("rules", "The rules every member shares", '''<ul>
@@ -1438,6 +1438,7 @@ def build_llms():
     lines.append('')
     lines.append('## The team, one page per member')
     lines.append(f'- [How the team talks: three vaults and one run]({BASE_URL}/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules')
+    lines.append(f'- [Schedule]({BASE_URL}/team/schedule/index.md): every scheduled agent, its task queue and every run with its log, read live from a public vault')
     lines.append(f'- [Vaults: who made each one]({BASE_URL}/team/vaults/index.md): every vault each agent made, by ID only, and whether its key is sealed to the editor')
     lines.append(f'- [Status]({BASE_URL}/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev')
     lines.append(f'- [Runs]({BASE_URL}/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run')
@@ -1606,7 +1607,7 @@ def build_all():
     build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
-    build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
+    build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
     build_review(); build_admin_section(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
 
@@ -2438,7 +2439,7 @@ def vault_live(read_key, app, depth, lead):
 
 def build_vaults():
     VS = D['vaults']['vaults']; W = D['source-watch']; ev = D['admin']['evidence_vault']; vt = D['vault']; tl = D['telemetry']
-    keys = {'evidence': ev['read_key'], 'source-watch': W['read_key']}
+    keys = {'evidence': ev['read_key'], 'source-watch': W['read_key'], 'schedule': load('schedule-vault')['read_key']}
     facts = {'evidence': f'{vt["sources"]} sources, {vt["captures"]} captures, {vt["hashed_files"]} hashed files; head <code>{E(vt["head"]["commit"] or "")}</code>',
              'source-watch': f'{W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries and {len(W["lang"])} languages; {W["snapshots"]} snapshots, {len(W["runs"])} runs; head <code>{E(W["head"]["commit"])}</code>',
              'telemetry': f'lane <code>{E(tl["vault_id"])}</code> on <code>{E(tl["endpoint"])}</code>; events encrypted to <code>{E(tl["recipient"]["fingerprint"])}</code>',
@@ -5054,6 +5055,33 @@ def build_views():
     page('views/index.html', 'Views: the state of affairs and the journalist\'s analyses', 'The journalist\'s living state of affairs, versioned with every change visible, and the dated analyses behind it.', body, kind='site', topics='views', origin='house', byline='By the journalist')
 
 PAGE_VERSIONED.append('views/state/index.html')
+
+# ----------------------------------------------------------------------------- the schedule (conductor@php.newsroom)
+# The editor's memo of 23 October 2026 (admin/content/briefs/2026-10-23__brief__the-schedule-vault.md): a control panel
+# for everything scheduled. The truth is a public vault (data/schedule-vault.json); this page is a shell that reads it
+# live in the browser (assets/schedule/schedule.js), so it shows the vault as it is now, not as of the last release.
+
+def build_schedule():
+    S = load('schedule-vault')
+    cfg = J({'vault_id': S['vault_id'], 'read_key': S['read_key'], 'endpoint': S['endpoint'], 'open_url': vault_open_url(S['read_key'])}, separators=(',', ':'))
+    body = f'''
+<p class="crumb"><a href="../index.html">The team</a> / Schedule</p>
+<h1>Schedule: what runs, when, what it did, what it does next</h1>
+<p class="lead">Every agent that runs on a schedule, the tasks queued for it, and every run with its log, read live from a public vault. The rule is simple: an agent woken with no task due records an idle run and stops; to stop an agent, take its tasks away or pause its schedule; to make it do something, queue a task. With this page beside a Claude session, ask it to run a task by its ID.</p>
+<noscript><p class="sub-err">This page reads the vault in your browser and needs JavaScript. The vault also opens in <a href="{E(vault_open_url(S["read_key"]))}">the vault browser</a>.</p></noscript>
+<div id="schedule-app"><p class="small">Reading the vault\u2026</p></div>
+<script type="application/json" id="schedule-config">{cfg}</script>
+{section("how", "How it works", '''<ul>
+<li><b>Two primitives.</b> A schedule says when an agent is woken (a scheduled task waking its persistent session), on which model, under which agent behaviour policy, and whether it is active. A task says what to do: a brief, when it may start, when it is due (after that it shows overdue) and, for a routine, until when it repeats.</li>
+<li><b>On every wake</b> the agent pulls the vault, takes its tasks that are due, runs them within its policy, writes one run record with its log, and pushes. The commands are <code>tools/schedule.py</code> in the vault; the protocol is in its README.</li>
+<li><b>Public on purpose.</b> Everything here is already public; the vault keeps the logs out of the site's repository and is an archive of every run. It never holds a key, a token or a personal detail.</li>
+<li><b>Changing a schedule</b> needs the editor's go. Queueing a task needs his session or the conductor.</li>
+</ul>''')}
+<p class="kv"><b>The vault</b> <code>{E(S["vault_id"])}</code> &middot; <b>read key</b> <code>{E(S["read_key"])}</code> (reads only) &middot; <a href="{E(vault_open_url(S["read_key"]))}" rel="noopener" target="_blank">open it in the vault browser</a></p>
+<p class="small">The register of schedules and the quiet hours are on <a href="../runs/index.html">runs</a>; where every agent is, on <a href="../status/index.html">status</a>. The brief is on <a href="../../admin/briefs/index.html#2026-10-23__brief__the-schedule-vault">briefs</a>.</p>
+<script type="module" src="../../assets/schedule/schedule.js"></script>
+'''
+    page('team/schedule/index.html', 'Schedule: what runs, when, what it did, what it does next', 'Every scheduled agent, its task queue and every run with its log, read live from a public vault: the control panel for what the team runs on its own.', body, kind='site', topics='team agents')
 
 
 if __name__ == '__main__':

@@ -1194,6 +1194,36 @@
    "title": "Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaults/, its runs on /team/runs/), and make the gate or release.sh refuse a release outside an agent's scope where that can be checked",
    "status": "open",
    "owner": "security"
+  },
+  {
+   "id": "159",
+   "title": "The schedule vault (weic8imn, public) and /team/schedule/, read live in the browser: every schedule, task queue and run with its log; tools/schedule.py and the wake protocol (AGENTS.md section 7, CLAUDE.md)",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "160",
+   "title": "Run every scheduled wake through the schedule vault: pull, schedule.py due curator, start/finish with the log, index, push; your routine is task T-001, repeating until 31 October",
+   "status": "open",
+   "owner": "curator"
+  },
+  {
+   "id": "161",
+   "title": "Run every scheduled wake through the schedule vault (researcher's T-001, the source watch pass), and say your real cadence and model in schedules/researcher.json",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "162",
+   "title": "The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:00 London), on Sonnet; then they move from 'setting up' to 'active' in the schedule vault",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "163",
+   "title": "Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the schedule vault, so a task can be queued without a Claude session",
+   "status": "open",
+   "owner": "conductor"
   }
  ],
  "evidence_vault": {

@@ -8,9 +8,9 @@ Every vault the team's agents have made, listed by agent, by ID only, with wheth
 
 # Vaults: who made each one, and who holds which keys
 
-Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. 18 vaults; for 12 of them, the sealing is not recorded yet.
+Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. 19 vaults; for 12 of them, the sealing is not recorded yet.
 
-### [conductor@php.newsroom](../conductor/index.html) 4 vaults made
+### [conductor@php.newsroom](../conductor/index.html) 5 vaults made
 
 | Vault ID | What it holds | Created | Key sealed to the root |
 |---|---|---|---|
@@ -18,6 +18,7 @@ Every vault the agents on this team have made, listed by the agent that made it,
 | `zjruy9vk` | The issues vault: Issues-FS-lite, one queue per member | 2026-10-22 | 2026-10-22 |
 | `fmb2tpl2` | The mail vault: Email-FS-lite, a mailbox per member | 2026-10-22 | 2026-10-22 |
 | `58526ytp` | The collaborators vault: join requests, signed feedback and key enrolments, through its write-only lane | 2026-10-22 | 2026-10-22 |
+| `weic8imn` | The schedule vault: schedules, task queues and every run with its log; public | 2026-10-23 | 2026-10-23 |
 
 #### Keys it holds
 
@@ -27,6 +28,7 @@ Every vault the agents on this team have made, listed by the agent that made it,
 | `zjruy9vk` | vault key | made it | 2026-10-22 |
 | `fmb2tpl2` | vault key | made it | 2026-10-22 |
 | `58526ytp` | vault key | made it | 2026-10-22 |
+| `weic8imn` | vault key | made it | 2026-10-23 |
 
 Kept by the agent itself.
 

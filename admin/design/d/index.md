@@ -4,7 +4,7 @@ The admin section as a console with its own menu and layout: a dark sidebar by a
 
 > Mockup D for review, built from the data of release v0.10.6. Not the live site.
 
-PHP Team console Console Overview Board 112 Agents 16 Releases 57 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 12 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 116 Agents 16 Releases 57 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -16,11 +16,11 @@ v0.10.6
 57 releases since 22 Oct 
 
 Open on the board 
-112 
-44 done, 2 waiting 
+116 
+45 done, 2 waiting 
 
 Pages built 
-620 
+621 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,20 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 112
+#### Open 116
 
+ #163 
+Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the sch… 
+ conductor 
+ #162 
+The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:… 
+ editor 
+ #161 
+Run every scheduled wake through the schedule vault (researcher's T-001, the source watch pass), and say your real caden… 
+ researcher@php.newsroom 
+ #160 
+Run every scheduled wake through the schedule vault: pull, schedule.py due curator, start/finish with the log, index, pu… 
+ curator 
  #158 
 Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaul… 
  security 
@@ -41,18 +53,6 @@ One agent behaviour policy per agent that sets its scope: what it may change and
  #155 
 Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement 
  claude-story-site 
- #154 
-Write the next version of the state of affairs when the evidence moves: a KEV listing, a named victim, GMO's cause, or t… 
- journalist 
- #153 
-Show a rewritten line in diffs as removed then added, not word-diffed, when the two lines share little (diff_html): the … 
- dev@php.newsroom 
- #152 
-Take the curator's 36 claims and 18 timeline rows (claims/curator@php.newsroom.json, now in data/vault-claims.json) into… 
- claude-story-site 
- #149 
-Every commit names its agent: 40 of the first day's 46 commits carry no Agent: line, so updates cannot say who did what;… 
- conductor 
 
 #### Waiting 2
 
@@ -63,8 +63,11 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 44
+#### Done 45
 
+ #159 
+The schedule vault (weic8imn, public) and /team/schedule/, read live in the browser: every schedule, task queue and run … 
+ conductor 
  #156 
 Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.… 
  conductor 
@@ -83,9 +86,6 @@ Redesign mockups for review at /admin/design/: the two dials (who you are, how m
  #135 
 Keys each agent holds: the holds list in every data/vault-register/<agent>.json (vault ID, the kind of key, who gave it,… 
  conductor 
- #134 
-The vault key is the whole boundary: the collaborators (58526ytp) and conductor (5iwos28w) vaults moved onto sgit.ai's p… 
- conductor 
 
 ### Releases
  latest 8 
@@ -102,9 +102,9 @@ The vault key is the whole boundary: the collaborators (58526ytp) and conductor 
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 14 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 15 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
- conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 12 
+ conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 13 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 13 
  Primary-source collector php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone 3 
  Government and CERT collector every national agency's advisory, in its own language, with the translation marked 3 
