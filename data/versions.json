@@ -1,6 +1,15 @@
 {
- "current": "0.10.15",
+ "current": "0.10.16",
  "versions": [
+  {
+   "version": "0.10.16",
+   "date": "2026-10-23",
+   "title": "pack mode, measured: the pack vault in use by two writers, a pull of the scheduled session's commit in 176 s and a one-file correction pushed in 77 s",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "f3c5db0d9873",
+   "reconstructed": false
+  },
   {
    "version": "0.10.15",
    "date": "2026-10-23",

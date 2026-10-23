@@ -83,15 +83,18 @@ File objects added by each of the watch’s 15 commits, in order; the full passe
 | Import (local: rewrite the history into packs) | 3 min 14 s | 16 commits, 29,193 trees, 34,453 blobs; 1,614.4 MB to 1,184.2 MB |
 | First push: the whole history | 96 s | Pushed 16 commit(s), 63,662 object(s) uploaded |
 | Push of one small commit | 77 s | 4 objects; most of the time is local |
+| Pull of another agent's commit (22:32 UTC) | 2 min 56 s | the scheduled Sonnet session's commit 1cc186cccd43, 241 rows queued in index/promote.json: fast-forward, 1 file modified; the download is one zip, the rest is local |
+| Commit and push of a one-file correction (22:4x UTC) | 77 s | commit 43595f6f6fe3, the corrected queue: 4 objects uploaded, in sync after; the same 77 s as the first small push |
 | Pull of one new commit into a second clone | 5 min 24 s | 1 file added; not yet profiled, the network part is one zip |
 | Verify every object in the pack | — | sgit pack verify: 63,662 members checked against their ids, ok |
 - a fresh clone of the pack vault and the import are identical, file for file (diff -rq): 29,861 files
 - against the live clone, the only differences are empty folders and Python's __pycache__, which a vault does not store
 - the same 16 commits, messages and times; the commit ids are new, as the import says they will be
 - sgit pack verify: ok
+- in use: the scheduled Sonnet session pushed its first commit to the pack vault at about 22:17 UTC, researcher@php.newsroom pulled it and pushed a correction on top; two writers in turn, no merge needed, the vault in sync after each
 
 ## What pack mode does not fix
-- Local walks: commit, status, push and pull still walk the working tree; on 29,861 files a push of 4 objects took 77 s and a pull of one commit took 324 s on the pack vault.
+- Local walks: commit, status, push and pull still walk the working tree; on 29,861 files a push of 4 objects took 77 s (twice, the same) and a pull of one commit took 176 s to 324 s on the pack vault.
 - No web view: vault.sgraph.ai, dev.vault.sgraph.ai and vault apps cannot read packs, so a pack vault opens there as empty.
 - --path and --depth download the whole vault on a pack vault in this version.
 - Compaction is manual: one named agent runs sgit pack compact every ~50 pushes; a clone that was behind then downloads the whole snapshot (1.2 GB here).
@@ -102,4 +105,4 @@ Every number is in [data/pack-mode.json](../../data/pack-mode.json), from a time
 
 
 ---
-site v0.10.15 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.html
+site v0.10.16 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.html
