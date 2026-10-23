@@ -8,7 +8,7 @@ Every member of the team that runs this site, 2 people and 17 agents and roles, 
 
 This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents, with help from [collaborators](../collaborators/index.html) who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-19members2humans15agents2roles not yet filled89open tasks2waiting35done
+19members2humans15agents2roles not yet filled90open tasks2waiting38done
 
 ## Who is on it
 
@@ -19,11 +19,11 @@ DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sourc
 ### Coordination and comms
 
 Keeps every member, human and agent, synchronised: what is assigned, what is blocked, what changed.
-COConductor@Conductor · Conductor and commsMaps the work, hands it out, and keeps every member, human and agent, synchronised. For now also the comms agent: the broadcasts and the digests.agent10 open, 1 waiting, 5 done
+COConductor@Conductor · Conductor and commsMaps the work, hands it out, and keeps every member, human and agent, synchronised. For now also the comms agent: the broadcasts and the digests.agent10 open, 1 waiting, 8 done
 ### Building the site
 
 The build, the gate, the release, the design, and the pages.
-DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent13 open, 1 waiting, 21 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent8 open, 0 done
+DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent14 open, 1 waiting, 21 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent8 open, 0 done
 ### Evidence
 
 Capture before you read: the sources, the vaults, the watch.

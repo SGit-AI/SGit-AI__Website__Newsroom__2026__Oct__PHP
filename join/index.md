@@ -28,7 +28,9 @@ Loading…
 
 Handles and fingerprints only, never a name. editor: The editor: his feedback and reviews come first, and the review queue is his; team: A member of the team that runs the site; power-user: A power user: reads what is new when asked, and says what works.
 
-None yet.
+| Handle | Role | Signing key | Device | Enrolled |
+|---|---|---|---|---|
+| editor | editor | `sha256:89984d97af4d2deb` | desktop | 2026-10-23 |
 
 ## What it does not do
 

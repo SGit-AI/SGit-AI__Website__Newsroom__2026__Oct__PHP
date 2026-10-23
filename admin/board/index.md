@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 132 items, 94 open, 36 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 136 items, 95 open, 39 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -142,6 +142,10 @@ The work, as rows in `data/admin.json`: 132 items, 94 open, 36 done. An item is 
 | 130 | Confirm data/vault-register/story-site.json and seal the coverage vault's key (dcsmxese) to the root | open | claude-story-site |  |
 | 131 | Confirm data/vault-register/newsroom-lead.json and seal the evidence vault's key (3ytzxm3g) to the root; pulse@ and curator@ add their own files for any vault they made | open | claude-newsroom-lead |  |
 | 132 | Fold data/keys.json and /admin/keys/ (the rules of engagement) together with data/vault-register/ and /team/vaults/, so there is one register of vaults and keys | open | security |  |
+| 133 | The editor's feedback of 23 October on /join/, all five signed by his enrolled key: the page now says where this device's key stands (enrolled, or waiting for the next run); one wording for where Feedback is (next to Ask, on every page); up to three screenshots per feedback | done | conductor |  |
+| 134 | The vault key is the whole boundary: the collaborators (58526ytp) and conductor (5iwos28w) vaults moved onto sgit.ai's postmaster convention (admin/build/postmaster.py): the enum key and the key pair's passphrase derived from the write key, the key pair encrypted inside the vault, the lane in .vault/postmaster/lane.json; drained from a fresh clone with the vault key alone | done | conductor |  |
+| 135 | Keys each agent holds: the holds list in every data/vault-register/.json (vault ID, the kind of key, who gave it, since), shown on /team/vaults/; AGENTS.md section 6 and CLAUDE.md say so | done | conductor |  |
+| 136 | Record in your data/vault-register file every key you hold (the holds list), and move any vault you made with a lane onto the postmaster convention (AGENTS.md section 6) | open | dev |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 

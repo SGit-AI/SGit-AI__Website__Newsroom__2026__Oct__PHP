@@ -4551,24 +4551,33 @@ def build_vault_register():
     d = os.path.join(DATA, 'vault-register')
     regs = [json.load(open(os.path.join(d, f), encoding='utf-8')) for f in sorted(os.listdir(d)) if f.endswith('.json')]
     members = {m['id']: m for m in TEAM['members']}
+    KINDS = ('vault key', 'read key', 'append token')
     for r in regs:
-        for v in r['vaults']:
+        for v in r['vaults'] + r.get('holds', []):
             if not re.fullmatch(r'[0-9a-z]{8}', v['id']): sys.exit(f'data/vault-register: {r["agent"]}: {v["id"][:12]}... is not a vault id; a key never goes here')
+        for h in r.get('holds', []):
+            if h['key'] not in KINDS: sys.exit(f'data/vault-register: {r["agent"]}: "key" names what kind of key is held ({", ".join(KINDS)}), never the key itself')
     sealed = lambda s: s[:10] if re.match(r'\d{4}-\d{2}-\d{2}$', s) else s
     secs = ''
     for r in sorted(regs, key=lambda r: (r['agent'] != 'conductor@php.newsroom', r['agent'])):
         m = members.get(r['member'])
         name = f'<a href="../{E(r["member"])}/index.html">{E(r["agent"])}</a>' if m else E(r['agent'])
         rows = [[f'<code>{E(v["id"])}</code>', E(v['what']), E(v['created']), E(sealed(v['key_sealed_to_root']))] for v in r['vaults']]
-        secs += f'<section class="vcard"><h3>{name} <span class="small">{len(r["vaults"])} vault{"s" if len(r["vaults"]) != 1 else ""}</span></h3>{table(["Vault ID", "What it holds", "Created", "Key sealed to the root"], rows)}<p class="small">{E(r["note"])}</p></section>'
+        held = r.get('holds', [])
+        hrows = [[f'<code>{E(h["id"])}</code>', E(h['key']), E(h['from']), E(h['since'])] for h in held]
+        htab = (f'<h4>Keys it holds</h4>{table(["Vault ID", "Kind of key", "From", "Since"], hrows)}' if held
+                else '<p class="small"><b>Keys it holds:</b> not recorded yet.</p>')
+        secs += f'<section class="vcard"><h3>{name} <span class="small">{len(r["vaults"])} vault{"s" if len(r["vaults"]) != 1 else ""} made</span></h3>{table(["Vault ID", "What it holds", "Created", "Key sealed to the root"], rows)}{htab}<p class="small">{E(r["note"])}</p></section>'
     n = sum(len(r['vaults']) for r in regs)
     unsealed = sum(1 for r in regs for v in r['vaults'] if not re.match(r'\d{4}-\d{2}-\d{2}|sealed', v['key_sealed_to_root']))
     body = f'''
 <p class="crumb"><a href="../index.html">The team</a> / Vaults</p>
-<h1>Vaults: who made each one</h1>
-<p class="lead">Every vault the agents on this team have made, listed by the agent that made it. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. {n} vaults; for {unsealed} of them, the sealing is not recorded yet.</p>
+<h1>Vaults: who made each one, and who holds which keys</h1>
+<p class="lead">Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. {n} vaults; for {unsealed} of them, the sealing is not recorded yet.</p>
 {secs}
 {section("rules", "The rules", '''<ul>
+<li><b>Record the keys you hold</b>, not only the vaults you made: every vault key, read key or append token you were given, by vault ID, the kind of key and who gave it (the <code>holds</code> list in your file). It is what lets the editor start a new session for you with the right keys. Never the key itself.</li>
+<li><b>The vault key is the whole boundary.</b> Whoever holds a vault's key can do everything with it, including draining its lane: the lane's enum key and the key pair's passphrase are derived from the vault key, and the key pair lives inside the vault, encrypted (sgit.ai, the vault key is the only secret). No secret a vault needs lives only in a session.</li>
 <li><b>Make a vault, add a row.</b> In the same commit, in your own file: <code>data/vault-register/&lt;you&gt;.json</code>, with the ID, what it holds, the date, and when its key was sealed to the root. The build refuses anything that is not a bare vault ID.</li>
 <li><b>Seal every key to the root</b> (<code>sha256:db7f79fdd87e030a</code>) with pki.sgit.ai's agent tool before your session ends, and record the date.</li>
 <li><b>Asked for a key, or a QR code of it?</b> Seal it and send the sealed link and its QR code; never the key itself, in a page, a file, a commit, a chat or a message. The steps are in <code>AGENTS.md</code>, section 7, and on <a href="../../admin/agents/index.html">guidance for agents</a>.</li>

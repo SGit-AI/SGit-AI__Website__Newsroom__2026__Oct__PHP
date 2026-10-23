@@ -25,6 +25,18 @@ function show(...kids) { out.replaceChildren(...kids) }
 const device = () => /iPad|Tablet/i.test(navigator.userAgent) ? 'tablet' : /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'phone' : 'desktop'
 const fpLine = me => el('p', { class: 'kv' }, el('b', null, 'This device’s key '), el('code', null, me.bundle.signing_fingerprint), ' (signing) · ', el('code', null, me.bundle.fingerprint), ' (encryption)')
 
+// Where this device's key stands, from the site's own list (data/contributors.json): enrolled, or waiting for the team's
+// next run. The editor's feedback of 23 October: right after joining, "Enrolled keys" said "None yet", with no word on
+// whether joining had worked.
+async function standing(me) {
+  let k = null, may = ['editor']
+  try { const { contributors } = await siteData(root); k = contributors.keys.find(x => x.signing_fingerprint === me.bundle.signing_fingerprint); may = contributors.rules.may_invite || may } catch (e) {}
+  if (!k) return el('p', { class: 'kv' }, el('b', null, 'Waiting to be enrolled. '), 'Your enrolment reached the team; it is checked at the next run and your key appears in the list below after the release that follows. What you send in the meantime is kept, and counts as yours once you are enrolled.')
+  return el('p', { class: 'kv' }, el('b', null, 'Enrolled. '), `This device’s key is enrolled as ${k.handle} (${k.role}) since ${k.enrolled}.`,
+    may.includes(k.role) ? el('span', null, ' You can ', el('a', { href: root + 'join/invite/index.html' }, 'invite someone'), '.') : '')
+}
+const FEEDBACK_HOW = 'Press Feedback, next to Ask at the top of any page: say what is wrong, unclear, missing or good, with screenshots if you like. It is signed with this key.'
+
 async function enrol(code, handle) {
   show(el('p', { class: 'sub-ok' }, 'Making this device’s key… (a few seconds)'))
   try {
@@ -34,10 +46,10 @@ async function enrol(code, handle) {
     const msg = await sign(me, { v: 1, kind: 'enrol', code: code || '', invite: inv || null, handle, bundle: me.bundle, device: device(), at: new Date().toISOString(),
                                  site: document.documentElement.getAttribute('data-ver') || '' })
     await sendToLane(lane, msg)
-    show(el('p', { class: 'sub-ok' }, 'Done. Your key is made and your enrolment is sent.'), fpLine(me),
+    show(el('p', { class: 'sub-ok' }, 'Done. Your key is made and your enrolment is sent.'), fpLine(me), await standing(me),
       el('ol', null,
-        el('li', null, 'The editor checks it and adds your key to the contributors: usually within a day. You can send feedback straight away; it is kept until then.'),
-        el('li', null, 'On any page, open the pane on the right (the Ask button) and choose Feedback: say what is wrong, unclear, missing or good, with a screenshot if you like. It is signed with this key.'),
+        el('li', null, 'Your key is checked at the team’s next run and added to the contributors. You can send feedback straight away; it is kept until then.'),
+        el('li', null, FEEDBACK_HOW),
         el('li', null, 'Start with ', el('a', { href: root + 'collaborators/index.html' }, 'Power users: start here'), '.')),
       el('p', { class: 'small' }, 'The key lives in this browser only and cannot be copied out of it. Another device needs its own invitation. Clearing this site’s data deletes the key.'))
   } catch (e) {
@@ -48,7 +60,8 @@ async function enrol(code, handle) {
 async function start() {
   const me = await getIdentity()
   if (!m) {
-    show(me ? fpLine(me) : '', el('p', null, me ? 'This device already has a key. ' : 'This page needs an invitation: a link or QR code from the editor. ',
+    if (me) { show(fpLine(me), await standing(me), el('p', null, FEEDBACK_HOW)); return }
+    show(el('p', null, 'This page needs an invitation: a link or QR code from the editor. ',
       'To get one, ask Dinis by email or on WhatsApp, or use ', el('a', { href: root + 'collaborators/index.html#join' }, 'the join form'), '.'))
     return
   }

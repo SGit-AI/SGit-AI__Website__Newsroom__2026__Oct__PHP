@@ -1029,6 +1029,30 @@
    "title": "Fold data/keys.json and /admin/keys/ (the rules of engagement) together with data/vault-register/ and /team/vaults/, so there is one register of vaults and keys",
    "status": "open",
    "owner": "security"
+  },
+  {
+   "id": "133",
+   "title": "The editor's feedback of 23 October on /join/, all five signed by his enrolled key: the page now says where this device's key stands (enrolled, or waiting for the next run); one wording for where Feedback is (next to Ask, on every page); up to three screenshots per feedback",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "134",
+   "title": "The vault key is the whole boundary: the collaborators (58526ytp) and conductor (5iwos28w) vaults moved onto sgit.ai's postmaster convention (admin/build/postmaster.py): the enum key and the key pair's passphrase derived from the write key, the key pair encrypted inside the vault, the lane in .vault/postmaster/lane.json; drained from a fresh clone with the vault key alone",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "135",
+   "title": "Keys each agent holds: the holds list in every data/vault-register/<agent>.json (vault ID, the kind of key, who gave it, since), shown on /team/vaults/; AGENTS.md section 6 and CLAUDE.md say so",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "136",
+   "title": "Record in your data/vault-register file every key you hold (the holds list), and move any vault you made with a lane onto the postmaster convention (AGENTS.md section 6)",
+   "status": "open",
+   "owner": "dev"
   }
  ],
  "evidence_vault": {

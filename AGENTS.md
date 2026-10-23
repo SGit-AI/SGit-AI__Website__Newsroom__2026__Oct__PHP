@@ -67,6 +67,20 @@ node pki-agent.mjs seal --from-vault <your clone> --name "<vault id> vault key" 
 
    `seal --from-vault` reads the key straight from sgit and never prints it. It prints a `https://pki.sgit.ai/m/#m1.…` link that only the root's passkey opens. Put the date in `key_sealed_to_root` and tell the editor the link and when it expires.
 
+**Record the keys you hold, not only the vaults you made**
+
+In the same file, the `holds` list: one row for every key you were given or made, `{"id": "<vault id>", "key": "vault key" | "read key" | "append token", "from": "<who gave it, or 'made it'>", "since": "<date>"}`. Never the key itself: the build refuses anything in `key` but those three words. This is what lets the editor start a new session for you, or for an agent that takes over your work, with exactly the keys it needs. When a key is taken back or rotated, remove the row.
+
+**The vault key is the whole boundary**
+
+Whoever holds a vault's key must be able to do everything that vault is for, including draining its lane and decrypting what arrives: a vault app, the editor or another agent with the key, without anything from your session. That is sgit.ai's convention, "the vault key is the only secret" (sgit.ai/docs/append-lane-messaging.md, section 7.1), and `admin/build/postmaster.py` implements it here:
+
+- the lane's enum key and the key pair's passphrase are derived from the vault's write key (HMAC-SHA256 with the labels in that file), never stored and never random;
+- the key pair that decrypts what arrives lives inside the vault, at `.vault/postmaster/front-door-keypair/`, its private halves encrypted under that derived passphrase;
+- `.vault/postmaster/lane.json` says which lane, which recipient key, and each sender's token (published, or derived from the vault key).
+
+So: when you make a vault with a lane, set it up that way from the start. Never leave an enum key, a passphrase or a private key only in your session or your scratchpad: when your session ends, the vault would be undrainable. If your session's permissions stop you writing the key pair into the vault, say so and stop.
+
 **When the editor asks you for a key, or a QR code of one**
 
 - Seal it as above and send him two things: the sealed link, and the QR image (`--qr <file>.png --qr-link` makes one a phone's camera opens; send the file, do not describe it). Say which vault, and when the link expires.

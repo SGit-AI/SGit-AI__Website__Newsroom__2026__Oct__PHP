@@ -280,6 +280,14 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
 
+### The vault key is the whole boundary (23 October 2026, conductor@php.newsroom)
+
+- `admin/build/postmaster.py`: sgit.ai's convention (the vault key is the only secret): a lane's enum key, the key pair's passphrase and, where derived, the senders' tokens are HMAC-SHA256 of the vault's write key with fixed labels; the key pair lives in the vault at `.vault/postmaster/front-door-keypair/`, encrypted; the lane in `.vault/postmaster/lane.json`. The collaborators (58526ytp) and conductor (5iwos28w) vaults use it; both drains work from a clone with the vault key alone (tested from a fresh clone with the session's own key pair moved aside). A lane that answers 404 to the derived key is re-registered once by the drain (seen once on 23 October, cause unknown).
+
+- `/team/vaults/`: every agent's vaults by ID and, from 23 October, the keys each agent holds (the `holds` list), never a key.
+
+- The feedback pane takes up to three screenshots; `/join/` says whether this device's key is enrolled or waiting.
+
 ### Not built
 
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.

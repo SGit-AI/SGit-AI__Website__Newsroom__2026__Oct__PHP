@@ -27,5 +27,31 @@
    "created": "2026-10-22",
    "key_sealed_to_root": "2026-10-22"
   }
+ ],
+ "holds": [
+  {
+   "id": "5iwos28w",
+   "key": "vault key",
+   "from": "made it",
+   "since": "2026-10-22"
+  },
+  {
+   "id": "zjruy9vk",
+   "key": "vault key",
+   "from": "made it",
+   "since": "2026-10-22"
+  },
+  {
+   "id": "fmb2tpl2",
+   "key": "vault key",
+   "from": "made it",
+   "since": "2026-10-22"
+  },
+  {
+   "id": "58526ytp",
+   "key": "vault key",
+   "from": "made it",
+   "since": "2026-10-22"
+  }
  ]
 }

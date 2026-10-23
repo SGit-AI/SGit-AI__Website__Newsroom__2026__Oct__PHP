@@ -109,6 +109,16 @@ node pki-agent.mjs seal --from-vault &lt;your clone&gt; --name &quot;&lt;vault i
      --qr &lt;scratchpad&gt;/&lt;vault id&gt;.png --qr-link
 </pre>
 <p>   <code>seal --from-vault</code> reads the key straight from sgit and never prints it. It prints a <code>https://pki.sgit.ai/m/#m1.…</code> link that only the root&#x27;s passkey opens. Put the date in <code>key_sealed_to_root</code> and tell the editor the link and when it expires.</p>
+<p><b>Record the keys you hold, not only the vaults you made</b></p>
+<p>In the same file, the <code>holds</code> list: one row for every key you were given or made, <code>{&quot;id&quot;: &quot;&lt;vault id&gt;&quot;, &quot;key&quot;: &quot;vault key&quot; | &quot;read key&quot; | &quot;append token&quot;, &quot;from&quot;: &quot;&lt;who gave it, or &#x27;made it&#x27;&gt;&quot;, &quot;since&quot;: &quot;&lt;date&gt;&quot;}</code>. Never the key itself: the build refuses anything in <code>key</code> but those three words. This is what lets the editor start a new session for you, or for an agent that takes over your work, with exactly the keys it needs. When a key is taken back or rotated, remove the row.</p>
+<p><b>The vault key is the whole boundary</b></p>
+<p>Whoever holds a vault&#x27;s key must be able to do everything that vault is for, including draining its lane and decrypting what arrives: a vault app, the editor or another agent with the key, without anything from your session. That is sgit.ai&#x27;s convention, &quot;the vault key is the only secret&quot; (sgit.ai/docs/append-lane-messaging.md, section 7.1), and <code>admin/build/postmaster.py</code> implements it here:</p>
+<ul>
+<li>the lane&#x27;s enum key and the key pair&#x27;s passphrase are derived from the vault&#x27;s write key (HMAC-SHA256 with the labels in that file), never stored and never random;</li>
+<li>the key pair that decrypts what arrives lives inside the vault, at <code>.vault/postmaster/front-door-keypair/</code>, its private halves encrypted under that derived passphrase;</li>
+<li><code>.vault/postmaster/lane.json</code> says which lane, which recipient key, and each sender&#x27;s token (published, or derived from the vault key).</li>
+</ul>
+<p>So: when you make a vault with a lane, set it up that way from the start. Never leave an enum key, a passphrase or a private key only in your session or your scratchpad: when your session ends, the vault would be undrainable. If your session&#x27;s permissions stop you writing the key pair into the vault, say so and stop.</p>
 <p><b>When the editor asks you for a key, or a QR code of one</b></p>
 <ul>
 <li>Seal it as above and send him two things: the sealed link, and the QR image (<code>--qr &lt;file&gt;.png --qr-link</code> makes one a phone&#x27;s camera opens; send the file, do not describe it). Say which vault, and when the link expires.</li>
