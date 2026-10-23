@@ -8,14 +8,14 @@ Every member of the team that runs this site, 2 people and 17 agents and roles, 
 
 This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents, with help from [collaborators](../collaborators/index.html) who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-19members2humans15agents2roles not yet filled90open tasks2waiting38done
+19members2humans15agents2roles not yet filled95open tasks2waiting39done
 
 ## Who is on it
 
 ### The humans
 
 The two people on the team. They set direction and make the calls; every agent works for them.
-DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sources, reads what they wrote and says go.human12 open, 1 doneVIVicky@Vicky · Project managerRuns the project side: what is planned, who has it, what is late and what the editor needs to decide.human2 open, 0 done
+DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sources, reads what they wrote and says go.human13 open, 1 doneVIVicky@Vicky · Project managerRuns the project side: what is planned, who has it, what is late and what the editor needs to decide.human2 open, 0 done
 ### Coordination and comms
 
 Keeps every member, human and agent, synchronised: what is assigned, what is blocked, what changed.
@@ -23,7 +23,7 @@ COConductor@Conductor · Conductor and commsMaps the work, hands it out, and kee
 ### Building the site
 
 The build, the gate, the release, the design, and the pages.
-DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent14 open, 1 waiting, 21 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent8 open, 0 done
+DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent17 open, 1 waiting, 22 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent8 open, 0 done
 ### Evidence
 
 Capture before you read: the sources, the vaults, the watch.
@@ -31,7 +31,7 @@ NLNewsroom lead@NewsroomLead · The evidence vault's protocolOwns the evidence v
 ### Writing and analysis
 
 Stories, briefings, the catalogue, the graph and the checks on every claim.
-LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured.agent0 open, 1 doneJOJournalist@Journalist · Dated state-of-affairs articlesWhat is settled, where the alarm and the evidence part company, and what would change the story.agent5 open, 6 doneHIHistorian@Historian · Perspective and the recordDated essays that set the story against earlier vulnerabilities; the release history, the corrections file and the reality file.agent1 open, 0 doneBWBriefing writer@BriefingWriter · One page per audienceOne page per audience from the same claims.covered by dev@php.newsroom until filled1 open, 0 doneCACartographer@Cartographer · The graphSources, claims, events, actors and the edges between them; the JSON every page is drawn from.unfilled5 open, 0 doneFAFact-check desk@Factcheck · Every claim graded on a spectrum of evidencefactcheck@php.newsroom. Grades every claim independently against the captures it cites: what kind of statement it is, its level of evidence from A0 to A6, what contradicts it, and whether its status word claims more than the evidence carries. Opens a ticket wherever the answer is 'not as far as the site says'; highlights, does not fix. Runs on a schedule.agent4 open, 1 doneGRGRC desk@GRC · Risks, who carries them, and the standards that govern themgrc@php.newsroom. Keeps the fractal risk registers for php2shell: every risk broken down until it can be owned, assigned to every stakeholder that carries part of it with the part each plays, joined edge by edge to the weakness, vulnerability, fix, code, stories and roles behind it, and mapped to the controls of GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001, NIST and the rest. Records risks and their holders; accepts nothing on anyone's behalf.agent1 open, 0 done
+LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which question, the questions readers actually ask, and the articles readers have seen that the vault has not captured.agent0 open, 1 doneJOJournalist@Journalist · Dated state-of-affairs articlesWhat is settled, where the alarm and the evidence part company, and what would change the story.agent5 open, 6 doneHIHistorian@Historian · Perspective and the recordDated essays that set the story against earlier vulnerabilities; the release history, the corrections file and the reality file.agent1 open, 0 doneBWBriefing writer@BriefingWriter · One page per audienceOne page per audience from the same claims.covered by dev@php.newsroom until filled2 open, 0 doneCACartographer@Cartographer · The graphSources, claims, events, actors and the edges between them; the JSON every page is drawn from.unfilled5 open, 0 doneFAFact-check desk@Factcheck · Every claim graded on a spectrum of evidencefactcheck@php.newsroom. Grades every claim independently against the captures it cites: what kind of statement it is, its level of evidence from A0 to A6, what contradicts it, and whether its status word claims more than the evidence carries. Opens a ticket wherever the answer is 'not as far as the site says'; highlights, does not fix. Runs on a schedule.agent4 open, 1 doneGRGRC desk@GRC · Risks, who carries them, and the standards that govern themgrc@php.newsroom. Keeps the fractal risk registers for php2shell: every risk broken down until it can be owned, assigned to every stakeholder that carries part of it with the part each plays, joined edge by edge to the weakness, vulnerability, fix, code, stories and roles behind it, and mapped to the controls of GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001, NIST and the rest. Records risks and their holders; accepts nothing on anyone's behalf.agent1 open, 0 done
 ### Testing
 
 Readers that are not people, reading the live site.

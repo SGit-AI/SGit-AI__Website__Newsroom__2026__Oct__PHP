@@ -1053,6 +1053,49 @@
    "title": "Record in your data/vault-register file every key you hold (the holds list), and move any vault you made with a lane onto the postmaster convention (AGENTS.md section 6)",
    "status": "open",
    "owner": "dev"
+  },
+  {
+   "id": "137",
+   "title": "Redesign mockups for review at /admin/design/: the two dials (who you are, how much you see), the visibility matrix, the menu per view, mockups A to D from live data",
+   "status": "done",
+   "owner": "dev",
+   "note": "From the brief on the redesign (23 October).",
+   "version": "0.10.0"
+  },
+  {
+   "id": "138",
+   "title": "Editor review of the four mockups: pick, mark up, decide the Focus/Standard/Everything split per reader",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief on the redesign (23 October)."
+  },
+  {
+   "id": "139",
+   "title": "Move the design tokens and the wide grid (to 1,680px, two or three columns, readable text columns) into the live stylesheet",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on the redesign (23 October)."
+  },
+  {
+   "id": "140",
+   "title": "Replace the menu with the top bar and the two dials; the view decides which entries exist; remembered in the browser and the reader's vault",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on the redesign (23 October)."
+  },
+  {
+   "id": "141",
+   "title": "Front page and briefings to layouts A and B by persona group; content pages to pattern C, starting with agencies, numbers and impact",
+   "status": "open",
+   "owner": "briefing-writer",
+   "note": "From the brief on the redesign (23 October)."
+  },
+  {
+   "id": "142",
+   "title": "Move the admin pages into the team console (layout D), with its own menu; out of the reader menu, still public",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on the redesign (23 October)."
   }
  ],
  "evidence_vault": {

@@ -30,6 +30,7 @@ Start herestart/index.html
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 027 | Briefings in two minutes: a bottom line, five to eight claims as cards, the full table folded, read next (newsroom review, change 7) | open |  |
+| 141 | Front page and briefings to layouts A and B by persona group; content pages to pattern C, starting with agencies, numbers and impactFrom the brief on the redesign (23 October). | open |  |
 
 ## What they have done
 
