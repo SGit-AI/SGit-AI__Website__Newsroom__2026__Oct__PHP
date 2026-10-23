@@ -145,4 +145,4 @@ Source file: `admin/content/articles/2026-10-22__cyber__patch-at-the-speed-of-me
 
 
 ---
-site v0.10.2 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/articles/patch-at-the-speed-of-metasploit/index.html
+site v0.10.3 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/articles/patch-at-the-speed-of-metasploit/index.html
