@@ -1,6 +1,15 @@
 {
- "current": "0.11.3",
+ "current": "0.11.4",
  "versions": [
+  {
+   "version": "0.11.4",
+   "date": "2026-10-24",
+   "title": "The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to 21:45 London; the conductor's card no longer drains them; a message to an agent no wake reads now stops the build",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.11.3",
    "date": "2026-10-24",
