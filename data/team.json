@@ -303,7 +303,8 @@
    "owns": [
     "data/claims.json, timeline.json and the other authored data",
     "the front page, the facts, the patching and signals pages",
-    "the coverage vault (dcsmxese) and its review"
+    "the coverage vault (dcsmxese) and its review",
+    "(from 24 October 2026 the refresh of these files after each evidence export is the journalist's, the editor's decision; see /views/desk/)"
    ],
    "rules": [
     "Every status is one of five words and the page says what each means.",
@@ -537,7 +538,8 @@
    "summary": "What is settled, where the alarm and the evidence part company, and what would change the story.",
    "owns": [
     "admin/content/articles/*__journalist__*.md",
-    "the review of the front page and navigation"
+    "the review of the front page and navigation",
+    "the site's refresh after every evidence export (the editor, 24 October 2026): the hand-kept data files on /views/desk/, the claims review and the state of affairs"
    ],
    "rules": [
     "An article names the site version, vault commit and capture time it was written against, and is not revised afterwards.",

@@ -12,7 +12,7 @@ A brief is written before the work and published as written: what was asked, in 
 
 ## Plan: the journalist's full pass, so the site settles after every vault export
 
-Status: proposed, for the editor's go. Author: the journalist role (claude-journalist), 24 October 2026, written against site v0.10.22 and the evidence vault at `1845598d9a38` (295 sources, latest capture 16:04 UTC on 23 October). Asked for by the editor on 24 October: "do a big pass on all the areas of the website, but again, map it all out ... once the curated vault goes through, and you go through, the website should be in a very stable place ... as much of the website is created dynamically, so that this is simpler".
+Status: accepted by the editor on 24 October 2026 ("I think you should do it ... it should be you that maintain this ... part of your workflow ... push these things kind of in turn"). Progress is kept on /views/desk/. Author: the journalist role (claude-journalist), 24 October 2026, written against site v0.10.22 and the evidence vault at `1845598d9a38` (295 sources, latest capture 16:04 UTC on 23 October). Asked for by the editor on 24 October: "do a big pass on all the areas of the website, but again, map it all out ... once the curated vault goes through, and you go through, the website should be in a very stable place ... as much of the website is created dynamically, so that this is simpler".
 
 ### Where the site stands
 
@@ -2644,4 +2644,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.11.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

@@ -1517,6 +1517,8 @@ versions/page-timeline/index.html
 versions/page-timeline/index.md
 versions/page-views-state/index.html
 versions/page-views-state/index.md
+views/desk/index.html
+views/desk/index.md
 views/index.html
 views/index.md
 views/state/history/index.html

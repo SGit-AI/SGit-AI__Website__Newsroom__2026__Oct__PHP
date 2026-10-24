@@ -17,6 +17,7 @@ What is settled, where the alarm and the evidence part company, and what would c
 ## What they own
 - admin/content/articles/*__journalist__*.md
 - the review of the front page and navigation
+- the site's refresh after every evidence export (the editor, 24 October 2026): the hand-kept data files on /views/desk/, the claims review and the state of affairs
 
 ## The rules they work by
 - An article names the site version, vault commit and capture time it was written against, and is not revised afterwards.
@@ -65,4 +66,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html

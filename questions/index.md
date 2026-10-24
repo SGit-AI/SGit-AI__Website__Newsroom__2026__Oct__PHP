@@ -144,6 +144,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Views: the journalist's reading](../views/index.html):
 - [The state of affairs, now](../views/state/index.html):
 - [Every version, and what changed](../views/state/history/index.html):
+- [The journalist's desk: what is still stale](../views/desk/index.html):
 
 ### Stories
 - [All stories, written here](../articles/index.html):
@@ -189,4 +190,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.11.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

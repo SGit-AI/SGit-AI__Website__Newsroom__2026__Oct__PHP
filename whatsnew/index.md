@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.11.7 · 24 October 2026new since your last visit
+
+the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness report computed at every build; step 1 of the pass
+
+No reader-facing section changed in this release.
+
 ## v0.11.6 · 24 October 2026new since your last visit
 
 The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the editor's two asks recorded (UF-005: an analysis of Fortune's '70% of the internet' article; verification across several model providers), the synthetic readers' second run in the friction log (most of what they raised on 22 October still open), the Sherpa's tasks on the board, and its schedule card, the conductor's draft and the Sherpa's combined: drain every two hours, the full pass at 11:45 and 17:45, proposed
@@ -674,4 +680,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.11.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
