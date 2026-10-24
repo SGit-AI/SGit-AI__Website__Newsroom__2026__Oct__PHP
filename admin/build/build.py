@@ -6225,7 +6225,7 @@ def build_desk():
     n_phr = sum(len(h) for _, _, h in pages)
     settled = not (pages or files or unreviewed)
     cyc = ''.join(f'<li class="dk-step"><b>{E(c["label"])}</b><span class="dk-who">{E(c["who"])}</span><span>{E(c["what"])}</span></li>' for c in dk['cycle'])
-    cycle_fig = f'<figure class="dk-fig"><ol class="dk-cycle">{cyc}</ol><figcaption>Each export, in order. The last step is reached when the report at the foot of this page is empty; the next curator wake starts the cycle again.</figcaption></figure>'
+    cycle_fig = f'<figure class="dk-fig"><ol class="dk-cycle">{cyc}</ol><figcaption>Each export, in order, from the researcher to the correspondent; the semantic graphs only after the correspondent. The last step is reached when the report at the foot of this page is empty; the next curator wake starts again.</figcaption></figure>'
     pas = ''.join(f'<li class="dk-pass dk-{E(s["status"].replace(" ", "-"))}"><span class="dk-n">{s["n"]}</span><b>{E(s["title"])}</b><span class="dk-st">{E(s["status"])}{(", v" + E(s["release"])) if s.get("release") else ""}</span><span>{E(s["what"])}</span></li>' for s in dk['pass'])
     pass_fig = f'<figure class="dk-fig"><ol class="dk-seq">{pas}</ol><figcaption>One step per release, in this order, so that no release carries the whole pass.</figcaption></figure>'
     frows = [[f'<code>{E(f["path"])}</code>', E(f['kept_by_before']), (f'<code>{E(f["checked_against"])}</code>' + (' <span class="st st-confirmed">current</span>' if f['checked_against'] == head else ' <span class="st st-disputed">older head</span>')) if f.get('checked_against') else '<span class="st st-unverified">not yet</span>', E(f.get('note') or '')] for f in dk['files']]
@@ -6236,8 +6236,8 @@ def build_desk():
               + section('r-claims', f'Vault claims not yet reviewed ({len(unreviewed)})', f'<p>Listed with their sources on <a href="../../claims/review/index.html#g-not-yet-reviewed">the claims waiting for review</a>.</p>'))
     body = f'''
 <h1>The journalist's desk: keeping the site current</h1>
-<p class="lead">After every export of the evidence vault, the journalist goes through the site so that it says what the evidence now says. This page is that work in the open: the cycle each export goes through, the full pass and where it stands, and a report, computed at every build, of what is still older than the evidence. The editor's decision ({E(dk["decided"]["on"])}): {E(dk["decided"]["says"])}.</p>
-{section("cycle", "The cycle, after every export", cycle_fig)}
+<p class="lead">After every export of the evidence vault, the journalist publishes it and the correspondent reviews what went live, so that the site says what the evidence now says. This page is that work in the open: the pipeline each export goes through, the full pass and where it stands, and a report, computed at every build, of what is still older than the evidence. The editor's decision ({E(dk["decided"]["on"])}): {E(dk["decided"]["says"])}.</p>
+{section("cycle", "The pipeline, after every export", cycle_fig)}
 {section("pass", "The full pass, step by step", pass_fig + '<p>The plan in full is <a href="../../admin/briefs/index.html">among the briefs</a>, as written on 24 October.</p>')}
 {section("report", "What is still stale", report)}
 <p class="small">Computed from <a href="../../data/desk.json">data/desk.json</a>, the pages of this build and the vault's claims, at vault head <code>{E(head)}</code>.</p>
@@ -6348,6 +6348,7 @@ def build_pulse():
 ONT, ENT, ATT = load('ontology'), load('entities'), load('attribution')
 ENTITIES = OrderedDict((e['id'], e) for e in ENT['entities'])
 ALIAS = {a: e['id'] for e in ENT['entities'] for a in e.get('aliases', [])}
+UNMAPPED_PUBLISHERS = {}  # publisher -> source slugs, for the ontologist; filled by the graph build
 SG_GRAPH_JS = 'assets/components/sg-graph/v1/v1.0/v1.0.0/sg-graph.js'
 SG_GRAPH_FILES = ['sg-graph.js', 'sg-graph-core.js', 'sg-graph.tpl', 'sg-graph.css']
 
@@ -6426,10 +6427,15 @@ def story_graph():
             edge('party:' + m, 'member_of', 'party:' + eid)
 
     for slug, s in SOURCES.items():
-        if s['publisher'] not in ALIAS: sys.exit(f'data/entities.json: no entity has the alias {s["publisher"]!r} (source {slug})')
+        # a publisher no entity claims yet does not stop the build: the journalist publishes each export as it comes, and
+        # the ontologist maps new publishers after the correspondent's run (the editor, 24 October 2026). The source is
+        # in the graph without its published_by edge, and the publisher is listed in data/graph.json 'unmapped_publishers'.
+        if s['publisher'] not in ALIAS:
+            UNMAPPED_PUBLISHERS.setdefault(s['publisher'], set()).add(slug)
         node('source:' + slug, 'source', f'{short_name(s)}: {s.get("title") or slug}', href=f'sources/{slug}/index.html',
              url=s['url'], primary=bool(s.get('primary')), published=s.get('published'), source_kind=s.get('kind'))
-        edge('source:' + slug, 'published_by', 'party:' + ALIAS[s['publisher']])
+        if s['publisher'] in ALIAS:
+            edge('source:' + slug, 'published_by', 'party:' + ALIAS[s['publisher']])
         syn = ATT.get('sources', {}).get(slug)
         if syn:
             if syn['syndicates'] not in ENTITIES: sys.exit(f'data/attribution.json: source {slug} syndicates unknown entity {syn["syndicates"]!r}')
@@ -6520,7 +6526,9 @@ def story_graph():
                 # 'carries' means the capture bears on the claim: an agency carrying it is an original in its own right,
                 # and a primary record can carry the fact that refutes it. Only an outlet carrying another party's
                 # statement, on a claim not refuted, has passed it on.
-                pub = ALIAS[SOURCES[m.group(1)]['publisher']]
+                pub = ALIAS.get(SOURCES[m.group(1)]['publisher'])
+                if pub is None:
+                    continue  # an unmapped publisher: no relays edge until the ontologist maps it
                 origins = {entity_root(e) for e in ATT['claims'][a['id']]['states']}
                 if ENTITIES[pub]['kind'] == 'outlet' and a.get('verdict') != 'refuted' and entity_root(pub) not in origins and 'this-site' not in origins:
                     edge('party:' + pub, 'relays', 'claim:' + a['id'], basis='capture carries it', capture=f'{m.group(1)}/{m.group(2)}')
@@ -6576,6 +6584,7 @@ def graph_census(G):
 
 def build_graph():
     G = story_graph()
+    G['unmapped_publishers'] = {p: sorted(v) for p, v in sorted(UNMAPPED_PUBLISHERS.items())}  # for the ontologist's run
     write('data/graph.json', json.dumps(G, indent=1, ensure_ascii=False) + '\n')
     kinds, verbs = graph_census(G)
     K = G['ontology']['kinds']

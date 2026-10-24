@@ -1,59 +1,47 @@
 {
- "note": "The journalist's desk: the cycle every evidence export goes through, the full pass and where it stands, and the pass ledger, one row per hand-kept data file with the evidence vault head it was last checked against. Kept by claude-journalist. The staleness report on /views/desk/ is computed from this file, the built pages and the vault's claims at every build.",
+ "note": "The journalist's desk: the cycle every evidence export goes through, the full pass and where it stands, and the pass ledger, one row per hand-kept data file with the evidence vault head it was last checked against. Kept by correspondent@php.newsroom (until 24 October, claude-journalist). The staleness report on /views/desk/ is computed from this file, the built pages and the vault's claims at every build.",
  "author": "claude-journalist",
  "decided": {
   "by": "Dinis Cruz, editor",
   "on": "2026-10-24",
-  "says": "the journalist does the full pass and maintains the site after each export as part of its workflow, released in turn rather than in one large push"
+  "says": "the journalist does the full pass and maintains the site after each export as part of its workflow, released in turn rather than in one large push; and, the same day, the pipeline: researcher, curator, journalist (Sonnet, publishes), correspondent (Opus, reviews and writes the analysis), then the ontologist, the librarian and the desk"
  },
  "cycle": [
   {
-   "id": "watch",
-   "who": "researcher@php.newsroom",
-   "label": "Watch",
-   "what": "The source watch re-reads every outside page on a schedule and keeps a dated snapshot when one changes."
+   "id": "research",
+   "who": "researcher@php.newsroom (Sonnet)",
+   "label": "Research",
+   "what": "Makes the network requests to the live websites and keeps everything it reads in the source-watch vault, the largest vault."
   },
   {
    "id": "curate",
-   "who": "curator@php.newsroom",
+   "who": "curator@php.newsroom (Sonnet)",
    "label": "Curate",
-   "what": "Five times a day the curator promotes about 18 snapshots into the evidence vault, reads each, and records its claims and timeline rows."
+   "what": "Reads only the researcher's vault, reads each capture, and writes promotions, claims and timeline rows into the evidence vault."
   },
   {
-   "id": "export",
-   "who": "claude-journalist",
-   "label": "Export",
-   "what": "The journalist pulls the evidence vault read-only and re-exports it into data/: sources, counts, claims, timeline, the latest capture."
+   "id": "publish",
+   "who": "journalist@php.newsroom (Sonnet)",
+   "label": "Publish",
+   "what": "Reads only the evidence vault: exports it, gives every new claim a verdict, refreshes the data the pages draw from, and releases to the live site."
   },
   {
    "id": "review",
-   "who": "claude-journalist",
+   "who": "correspondent@php.newsroom (Opus)",
    "label": "Review",
-   "what": "Every new vault claim appears on /claims/review/ as not yet reviewed; each gets a verdict (used, agrees, held back) checked against the saved page and the ledger."
+   "what": "Reads what went live, fixes and tweaks it in the open, writes the state of affairs and the analysis, and tightens the journalist's rules."
   },
   {
-   "id": "refresh",
-   "who": "claude-journalist",
-   "label": "Refresh",
-   "what": "The hand-kept data files the new evidence touches are updated, each row citing a capture, and the pass ledger below records the head each was checked against."
-  },
-  {
-   "id": "state",
-   "who": "claude-journalist",
-   "label": "State",
-   "what": "When the evidence moves enough to change what a reader should know, a new version of the state of affairs is written; its delta is on /views/."
-  },
-  {
-   "id": "release",
-   "who": "claude-journalist",
-   "label": "Release",
-   "what": "Build, gate, security check, release.sh to dev, check live. One step of the pass per release, not one large push."
+   "id": "graphs",
+   "who": "the ontologist, the librarian and the desk",
+   "label": "Graphs",
+   "what": "Only after the correspondent: the semantic graphs, the parties and the attribution are brought up to the reviewed data."
   },
   {
    "id": "settled",
    "who": "the build",
    "label": "Settled",
-   "what": "The staleness report on this page is empty: no 'as of' older than the latest capture, every file checked against the current head, every vault claim reviewed."
+   "what": "The report at the foot of this page is empty: no 'as of' older than the latest capture, every file checked against the current head, every vault claim reviewed."
   }
  ],
  "pass": [
