@@ -121,8 +121,9 @@ Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records 
 | Vault ID | Kind of key | From | Since |
 |---|---|---|---|
 | `84wr8mib` | vault key | the editor, sealed by sha256:956934e47063ceaa | 2026-10-24 |
+| `5wnsr5h8` | vault key | the editor, sealed by sha256:956934e47063ceaa | 2026-10-24 |
 
-Started by observability@php.newsroom on 24 October 2026, its first round. No vault made yet. The key of 84wr8mib came sealed to sha256:b9ddd39416d71cbb from sha256:956934e47063ceaa (chains to the root), at the editor's hand; the key of 5wnsr5h8 is still to come.
+Started by observability@php.newsroom on 24 October 2026, its first round. No vault made yet. The keys of 84wr8mib and 5wnsr5h8 came sealed to sha256:b9ddd39416d71cbb from sha256:956934e47063ceaa (chains to the root), at the editor's hand.
 
 ### [researcher@php.newsroom](../researcher/index.html) 2 vaults made
 

@@ -1809,7 +1809,7 @@
      "branch": "claude/wonderful-allen-vu7tzg",
      "commits": []
     },
-    "state": "round 1: joined; holds the telemetry vault's key (84wr8mib); waiting for the telemetry application's key (5wnsr5h8)",
+    "state": "round 1: joined; holds the keys of 84wr8mib and 5wnsr5h8; the telemetry application v0.4.1 committed in 5wnsr5h8, not yet pushed (needs an SG/Send access token)",
     "done": [
      {
       "what": "Joined at the editor's request: the member folder (ROLE.md, a draft policy.json, status.json) and an empty vault register",
@@ -1834,6 +1834,10 @@
      {
       "what": "The lane's 1,000-event cap traced to the SG/Send server (APPEND_MAX_FILES in Service__Vault__Append.py) and checked by running that code: event 1,001 is refused (507) and lost; a brief with the options",
       "evidence": "admin/content/briefs/2026-10-24__brief__the-lane-cap-and-sharded-lanes.md"
+     },
+     {
+      "what": "The telemetry application v0.4.1: Queue & drain shows a progress bar while the lane is checked, and while it drains the seven steps with their counts, a bar over the events, each batch's size and time, and a summary; 8 more tests (36 pass over 1,543 real events); checked in a dry-run host against the real lane (first run, a repeat over the same events, a failed publish). Committed in the vault; the push is waiting for an SG/Send access token",
+      "evidence": "5wnsr5h8: CHANGELOG.md 0.4.1; debriefs/img/2026-10-24__joining__2 to 5"
      }
     ],
     "tasks": {
@@ -1846,8 +1850,8 @@
     },
     "next": [
      {
-      "what": "The telemetry application v0.4.1: a progress bar while the lane is checked; while it drains, each step shown (fetch, open, append, recompute, publish, mark) with counts",
-      "why": "the editor's first ask; needs the key of 5wnsr5h8 (board 271)"
+      "what": "Push v0.4.1 to 5wnsr5h8 and check it in App Mode on 84wr8mib with a real drain",
+      "why": "committed locally; the push needs an SG/Send access token (asks)"
      },
      {
       "what": "A card for a scheduled lane check, proposed, if the editor wants one",
@@ -1860,7 +1864,7 @@
       "from": "the editor"
      },
      {
-      "what": "The vault key of 5wnsr5h8 (the telemetry application), sealed to sha256:b9ddd39416d71cbb: the Queue & drain changes are in that vault (board 271)",
+      "what": "An SG/Send access token for this session, sealed to sha256:b9ddd39416d71cbb, to push 5wnsr5h8 (and 84wr8mib, for drains from the command line)",
       "from": "the editor"
      },
      {
@@ -1891,7 +1895,7 @@
     {
      "file": "2026-10-24__joining.md",
      "date": "2026-10-24",
-     "title": "Joined as the observability agent; key made; dev and the conductor told"
+     "title": "Joined as the observability agent; the lane's cap traced; the telemetry application v0.4.1 (Queue & drain progress)"
     }
    ]
   },

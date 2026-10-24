@@ -122,15 +122,15 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 | Field | Value |
 |---|---|
 | Round | {"n": 1, "date": "2026-10-24", "branch": "claude/wonderful-allen-vu7tzg", "commits": []} |
-| Done | Joined at the editor's request: the member folder (ROLE.md, a draft policy.json, status.json) and an empty vault register Its key made on pki.sgit.ai (sha256:b9ddd39416d71cbb), the root pinned from CLAUDE.md, the operator link to the root signed; the enrolment record and the key's QR codes handed to the editor in the session Read the history: dev@php.newsroom built the telemetry application (5wnsr5h8, v0.1.1 to v0.4.0) and the drain; told dev and the conductor, by message and in the commit Board rows 270 to 272: the key's enrolment, the vault keys' handover, the telemetry files' owner Received the vault key of 84wr8mib, sealed to this member's key (signature checks, sender chains to the root, expires 31 October); cloned it outside the repository with the key read from stdin The lane's 1,000-event cap traced to the SG/Send server (APPEND_MAX_FILES in Service__Vault__Append.py) and checked by running that code: event 1,001 is refused (507) and lost; a brief with the options |
-| Next | The telemetry application v0.4.1: a progress bar while the lane is checked; while it drains, each step shown (fetch, open, append, recompute, publish, mark) with counts A card for a scheduled lane check, proposed, if the editor wants one |
-| Asks | Enrol sha256:b9ddd39416d71cbb (board 270) (from the editor) The vault key of 5wnsr5h8 (the telemetry application), sealed to sha256:b9ddd39416d71cbb: the Queue & drain changes are in that vault (board 271) (from the editor) Whether the telemetry files move from dev (board 272) (from the editor and abp@) Whether to rekey 84wr8mib after its private read key appeared in this session's output (from the editor) |
+| Done | Joined at the editor's request: the member folder (ROLE.md, a draft policy.json, status.json) and an empty vault register Its key made on pki.sgit.ai (sha256:b9ddd39416d71cbb), the root pinned from CLAUDE.md, the operator link to the root signed; the enrolment record and the key's QR codes handed to the editor in the session Read the history: dev@php.newsroom built the telemetry application (5wnsr5h8, v0.1.1 to v0.4.0) and the drain; told dev and the conductor, by message and in the commit Board rows 270 to 272: the key's enrolment, the vault keys' handover, the telemetry files' owner Received the vault key of 84wr8mib, sealed to this member's key (signature checks, sender chains to the root, expires 31 October); cloned it outside the repository with the key read from stdin The lane's 1,000-event cap traced to the SG/Send server (APPEND_MAX_FILES in Service__Vault__Append.py) and checked by running that code: event 1,001 is refused (507) and lost; a brief with the options The telemetry application v0.4.1: Queue & drain shows a progress bar while the lane is checked, and while it drains the seven steps with their counts, a bar over the events, each batch's size and time, and a summary; 8 more tests (36 pass over 1,543 real events); checked in a dry-run host against the real lane (first run, a repeat over the same events, a failed publish). Committed in the vault; the push is waiting for an SG/Send access token |
+| Next | Push v0.4.1 to 5wnsr5h8 and check it in App Mode on 84wr8mib with a real drain A card for a scheduled lane check, proposed, if the editor wants one |
+| Asks | Enrol sha256:b9ddd39416d71cbb (board 270) (from the editor) An SG/Send access token for this session, sealed to sha256:b9ddd39416d71cbb, to push 5wnsr5h8 (and 84wr8mib, for drains from the command line) (from the editor) Whether the telemetry files move from dev (board 272) (from the editor and abp@) Whether to rekey 84wr8mib after its private read key appeared in this session's output (from the editor) |
 | Tokens | unknown · the session does not show a token count |
 | Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope 1, injection_seen 0, detail One write outside scope: admin/content/agents/observability/policy.json, which abp@newsroom.sgit keeps; written as the member's first draft (the librarian's step for a new member), for abp@ to take over and the editor to agree (board 272's note). Appends only otherwise: own board rows in data/admin.json, own message files in data/messages/. The roster (data/team.json) is the conductor's: asked by message, not edited. One exposure, said to the editor at once: sgit clone printed the private read key of 84wr8mib into this session's tool output (the masking pattern missed it). It is in the session transcript only: no file, commit, page or message. Rotation (a rekey of 84wr8mib) is the editor's call. |
 
 ## Its rounds
 
-### Joined as the observability agent; key made; dev and the conductor told
+### Joined as the observability agent; the lane's cap traced; the telemetry application v0.4.1 (Queue & drain progress)
 
 2026-10-24 · round 1 · branch `claude/wonderful-allen-vu7tzg` · commits `see status.json` · tokens unknown · outside scope 1 (policy.json, abp@'s) · overrides 0
 
@@ -150,19 +150,45 @@ The editor, in this session, on 24 October 2026: join as the observability agent
 
 - Board rows 270 to 272.
 
+- The lane's 1,000-event cap traced to the SG/Send server (`APPEND_MAX_FILES` in `Service__Vault__Append.py`) and checked by running that code: event 1,001 is refused with 507 and lost. The brief is `admin/content/briefs/2026-10-24__brief__the-lane-cap-and-sharded-lanes.md`.
+
+- Received the vault keys of 84wr8mib and 5wnsr5h8, each sealed to my key by `sha256:956934e47063ceaa` (signature checks, chains to the root); cloned both outside the repository with the key read from stdin; recorded in `holds`.
+
+- The telemetry application v0.4.1, in 5wnsr5h8 (`app/modules/drain.js`, `live.js`, the stylesheet, the tests, `VERSION`, `CHANGELOG.md`): a progress bar while the lane is checked; the drain's seven steps with their state and counts, a bar over the events, each batch's size and time, a summary. 36 tests pass over 1,543 real events (8 new). Checked in a dry-run host: the app from the vault, the events from a copy of 84wr8mib, the lane listed and fetched for real, nothing published and nothing marked processed. Committed in the vault; **not pushed**: the push needs an SG/Send access token, which this session does not hold.
+
 #### What it looks like
 
 ![The member's page, /admin/agents/observability/](../../../admin/content/agents/observability/debriefs/img/2026-10-24__joining__1.png)
 
 The member's page, /admin/agents/observability/
 
+![Checking the lane: the bar and what it is doing (dry-run host)](../../../admin/content/agents/observability/debriefs/img/2026-10-24__joining__2-checking.png)
+
+Checking the lane: the bar and what it is doing (dry-run host)
+
+![Draining: the steps, the bar and the log, mid-run (dry-run host)](../../../admin/content/agents/observability/debriefs/img/2026-10-24__joining__3-draining.png)
+
+Draining: the steps, the bar and the log, mid-run (dry-run host)
+
+![A drain done: every step with its counts and the summary (dry-run host; the lane still shows 5 because the host marks nothing processed)](../../../admin/content/agents/observability/debriefs/img/2026-10-24__joining__4-done.png)
+
+A drain done: every step with its counts and the summary (dry-run host; the lane still shows 5 because the host marks nothing processed)
+
+![A failed publish: its step marked with the reason, nothing marked processed (dry-run host)](../../../admin/content/agents/observability/debriefs/img/2026-10-24__joining__5-failed.png)
+
+A failed publish: its step marked with the reason, nothing marked processed (dry-run host)
+
 #### New features
 
-None for readers. Other members can now see who looks after the telemetry, and seal a key to it once it is enrolled.
+None for readers. Other members can now see who looks after the telemetry. Whoever drains the telemetry vault will see each step of the check and the drain as it happens, once v0.4.1 is pushed.
 
 #### What I did not do
 
-- The Queue & drain changes: the application lives in vault 5wnsr5h8, and I hold no key for it yet (board 271).
+- Push v0.4.1: the push needs an SG/Send access token (asked of the editor). It has not been seen in the vault's own App Mode yet, only in the dry-run host.
+
+- A real drain: the editor drained at 11:19; 5 events were waiting at 12:08, left for the editor or the next drain.
+
+- Release to dev: the gate fails on `/team/comms/` links to schedule pages that do not exist (the conductor's block of `build.py`), for every agent; my notes add `To-dev`, which breaks the same way.
 
 - The roster (`data/team.json`) and the roles in `data/admin.json` are the conductor's: asked by message, not edited.
 
@@ -176,11 +202,17 @@ One write outside scope: `policy.json` in my own folder, which abp@newsroom.sgit
 
 Opened 270 (the editor: enrol the key), 271 (the editor, through dev: the vault keys), 272 (abp@: the telemetry files' owner).
 
+#### Policy, continued
+
+One exposure, said to the editor at once: `sgit clone` printed the private read key of 84wr8mib into this session's tool output (my masking pattern missed that shape). It is in the session transcript only; rotation (a rekey) is the editor's call. Later commands suppress every key-shaped line.
+
 #### Next
 
-1. The telemetry application v0.4.1, Queue & drain: a progress bar while the lane is checked, each drain step shown with counts.
+1. Push v0.4.1 to 5wnsr5h8 once an access token is here; check it in App Mode on 84wr8mib with a real drain.
 
-2. A proposed card for a lane check, if the editor wants one: the lane refuses at 1,000 waiting.
+2. A proposed card for a lane check and drain, for the editor's go: the lane refuses at 1,000 waiting.
+
+3. Count events the cap refuses (the brief's option 4), with dev, whose `assets/telemetry.js` it is.
 
 Files: [admin/content/agents/observability/](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP/tree/dev/admin/content/agents/observability) · the same data for every member in [data/agents.json](../../../data/agents.json).
 
