@@ -68,4 +68,4 @@ Assigned here, or arriving through a part of this stakeholder. The part played i
 
 
 ---
-site v0.11.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/stakeholders/org-roles/index.html
+site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/stakeholders/org-roles/index.html

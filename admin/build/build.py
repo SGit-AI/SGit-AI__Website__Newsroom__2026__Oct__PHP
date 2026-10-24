@@ -432,7 +432,7 @@ def section(id, title, inner, lead=None):
 
 def stat(n, label, href=None, depth=0):
     inner = f'<b>{E(str(n))}</b><span>{label}</span>'
-    return f'<a class="stat" href="{"../" * depth}{href}">{inner}</a>' if href else f'<div class="stat">{inner}</div>'
+    return f'<a class="stat" href="{"../" * depth}{U(href)}">{inner}</a>' if href else f'<div class="stat">{inner}</div>'
 
 def weight(c):
     prim = sum(1 for s in c['sources'] if s in SOURCES and SOURCES[s].get('primary'))
@@ -3586,7 +3586,7 @@ def build_signals():
 {section("ladder", "From exposed to what matters", f'<p>Each layer is a smaller population than the one above, until the evidence runs out. The two bars are counts of the same thing, hosts, on one linear scale: 1.57 million of 2.6 million were unpatched on the first day; a dashed box is a layer nobody has measured; a single line is zero. The units change down the ladder, from a share of websites to hosts to attempts, and the ladder says so rather than drawing them as one funnel.</p>{ladder}')}
 {section("families", "The four kinds of signal", f'<div class="roles">{fams}</div>', "The editor's four families: what each would show, what it shows now, and what would change it.")}
 {section("barriers", "Every barrier has a time", f'<p>The barriers between this bug and a breach, with the moment each became available. A dot is a stated time; a band is a day with no time given. Read across: a compromise after the dot says something about the organisation, not only about PHP.</p>{bars}')}
-{section("reading", "The reading", f'<ul>{reading}</ul><p class="small">This page is the site\'s analysis, marked as research because every row rests on captured sources; the argument it supports is made in {f"<a href=../articles/{E(story["slug"])}/index.html>{E(story['title'])}</a>" if story else "a story"}.</p>')}
+{section("reading", "The reading", f'<ul>{reading}</ul><p class="small">This page is the site\'s analysis, marked as research because every row rests on captured sources; the argument it supports is made in {f"<a href=\"../articles/{E(story["slug"])}/index.html\">{E(story['title'])}</a>" if story else "a story"}.</p>')}
 '''
     page('signals/index.html', 'The second stories: exposed, attempted, exploited, and what was within reach', 'php2shell as signals: the ladder from websites that use PHP to the sites that were exploited and held something worth reaching, the four kinds of signal and what each shows now, and the time each barrier became available.', body, kind='analysis', topics='php2shell signals exposure reach second stories')
 
@@ -4102,11 +4102,11 @@ function f(){var k=0;rs.forEach(function(r){var s=+r.dataset.lv>=+m.value&&(o.ch
     ks = []
     for k in K:
         st = ''.join(f'<li><b>{E(s["who"])}</b>{(", " + E(s["when"])) if s.get("when") else ""}: <q>{E(s["says"])}</q> <span class="small">{E(s.get("measures", ""))}</span> {src_links([x for x in s.get("sources", []) if x in SOURCES], 1)}{"".join(f" <span class=small>(outside the vault: {E(u)})</span>" for u in s.get("outside", []))}</li>' for s in k['statements'])
-        ks.append(f'<article class="role" id="{E(k["id"])}"><h3>{E(k["measure"])} <span class="st st-{"contradicted" if k["status"] == "open" else "confirmed"}">{E(k["status"])}</span></h3><ul>{st}</ul><p><b>The desk\'s reading.</b> {E(k["reading"])}</p>{("<p><b>What would settle it.</b> " + E(k["settle"]) + "</p>") if k.get("settle") else ""}<p class="small">{E(k["id"])}{(" &middot; ticket " + E(k["ticket"])) if k.get("ticket") else ""}{(" &middot; claims: " + ", ".join(f"<a href=../facts/{E(c)}/index.html>{E(c)}</a>" for c in k.get("claims", []))) if k.get("claims") else ""}</p></article>')
+        ks.append(f'<article class="role" id="{E(k["id"])}"><h3>{E(k["measure"])} <span class="st st-{"contradicted" if k["status"] == "open" else "confirmed"}">{E(k["status"])}</span></h3><ul>{st}</ul><p><b>The desk\'s reading.</b> {E(k["reading"])}</p>{("<p><b>What would settle it.</b> " + E(k["settle"]) + "</p>") if k.get("settle") else ""}<p class="small">{E(k["id"])}{(" &middot; ticket " + E(k["ticket"])) if k.get("ticket") else ""}{(" &middot; claims: " + ", ".join(f"<a href=\"../facts/{E(c)}/index.html\">{E(c)}</a>" for c in k.get("claims", []))) if k.get("claims") else ""}</p></article>')
     def trow(t):
         extra = ''
         if t['type'] == 'evidence' and t.get('url'):
-            extra = f'<div class="note">Found at <a href="{E(t["url"])}" rel="noopener">{E(re.sub(r"^https?://", "", t["url"])[:70])}</a>, {E(t["retrieved_at"])}, sha256 <code>{E(t["sha256"][:16])}</code>. Not cited until captured.{(" <q>" + E(t["excerpt"]) + "</q>") if t.get("excerpt") else ""}</div>'
+            extra = f'<div class="note">Found at <a href="{U(t["url"])}" rel="noopener">{E(re.sub(r"^https?://", "", t["url"])[:70])}</a>, {E(t["retrieved_at"])}, sha256 <code>{E(t["sha256"][:16])}</code>. Not cited until captured.{(" <q>" + E(t["excerpt"]) + "</q>") if t.get("excerpt") else ""}</div>'
         about = ', '.join(f'<a href="../facts/{E(c)}/index.html">{E(c)}</a>' for c in t['claims'] if c in claims)
         return [f'<span id="{E(t["label"])}">{E(t["label"])}</span>', f'<b>{E(t["title"])}</b><div class="note">{E(t["description"])}</div>{extra}', E(t['severity']), f'<span class="st st-{"unverified" if t["status"] in ("open", "proposed") else "confirmed"}">{E(t["status"])}</span>', about]
     groups = OrderedDict([('finding', 'Findings: things on this site to change'), ('contradiction', 'Contradictions between sources'), ('gap', 'Evidence gaps'), ('evidence', 'New evidence found outside the vault')])

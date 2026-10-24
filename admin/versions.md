@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.11.0. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.11.1. The data is [data/versions.json](../data/versions.json).
+
+### v0.11.1 · 2026-10-24
+
+Security pass 2: the Ask pane renders the model's answer as DOM nodes, so a captured page title can no longer break out of a citation's title attribute and run script (a stored XSS that could reach the /now/ vault key); the collaborators drain drops sender-supplied '_' fields (a forged '_signer: enrolled') and survives malformed rows; schedule.py refuses a message as the editor, a multi-line subject or a repeated header, and prints bodies inside an untrusted fence; two unquoted hrefs quoted and two data URLs through U(); .gitignore no longer hides data/*.json
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.11.0 · 2026-10-24
 
@@ -618,4 +626,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.11.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
