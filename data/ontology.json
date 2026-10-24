@@ -2,7 +2,7 @@
  "id": "php-newsroom-story-ontology",
  "version": "0.2.0",
  "updated": "2026-10-24",
- "kept_by": "cartographer",
+ "kept_by": "ontologist",
  "about": "The ontology of this site's story graph (data/graph.json), in the shape the estate's newsroom ontologies use (portugal-ontology, governance-beat-ontology on newsroom.sgit.ai). The grammar is the estate's (graphs.sgit.ai/v1/grammar/): every edge is a verb with a different, named inverse; no generic association edge; no self-inverse edge, so a tension between claims is a node that flags them; supersede, never delete; weight by independence, not by count. Each verb says whether it is inherited from an estate ontology or proposed here. The build refuses an edge whose verb is not listed, and a node whose kind is not listed.",
  "inherits_from": [
   {

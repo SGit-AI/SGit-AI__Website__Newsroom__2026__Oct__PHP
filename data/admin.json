@@ -117,10 +117,22 @@
   {
    "id": "cartographer",
    "name": "Cartographer",
-   "who": "unfilled",
+   "who": "paused: archived on 24 October 2026; the graph is the ontologist's",
    "owns": "the graph: nodes, typed edges, the per-source and per-party pages, the next layer down",
    "rules": [
     "A node is just a node; an edge without a source is deleted."
+   ]
+  },
+  {
+   "id": "ontologist",
+   "name": "Ontologist",
+   "who": "ontologist@php.newsroom",
+   "owns": "fractal semantic graphs: the ontologies and taxonomies, one node per party, the story graph, the bridges to the site's other graphs, and the graph component",
+   "rules": [
+    "Every edge is a verb with a different, named inverse; no generic association edge, no self-inverse edge.",
+    "Assert only what the data shows: a cited source is evidence, not a relay.",
+    "Weight by independence, not by count.",
+    "Bridges between graphs, never a merge of their vocabularies."
    ]
   },
   {
@@ -240,7 +252,7 @@
    "id": "008",
    "title": "The next graph layer: facts inside a source (sentence-level nodes) so every noun on a page links somewhere",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "009",
@@ -379,8 +391,8 @@
    "id": "030",
    "title": "The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fractal layer)",
    "status": "waiting",
-   "owner": "cartographer",
-   "note": "Built on branch cartographer/ontology-and-sg-graph: every node a link, parties as nodes, 14 verbs in data/graph.json, one click from a claim to a CVE that opens the code-review graph, labels 12px at 390 (checked in Chromium). Released by the cartographer (AGENTS.md section 1)."
+   "owner": "ontologist",
+   "note": "Built on branch cartographer/ontology-and-sg-graph: every node a link, parties as nodes, 14 verbs in data/graph.json, one click from a claim to a CVE that opens the code-review graph, labels 12px at 390 (checked in Chromium). Released by the ontologist (then the cartographer) (AGENTS.md section 1)."
   },
   {
    "id": "031",
@@ -576,7 +588,7 @@
    "id": "060",
    "title": "The analysis run triggered by every new series: changes and rates within a source, and the same measure lined up across sources on one time axis and unit, with charts and a what-changed summary written to the vault",
    "status": "open",
-   "owner": "cartographer",
+   "owner": "ontologist",
    "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
   },
   {
@@ -590,7 +602,7 @@
    "id": "062",
    "title": "Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one source",
    "status": "open",
-   "owner": "cartographer",
+   "owner": "ontologist",
    "note": "First cut on branch cartographer/ontology-and-sg-graph: states, relays (from the rows' own 'via' and from outlet captures the desk found carrying the claim), flags (contradictions as nodes, since the grammar has no self-inverse edge), independent origins per claim and the echo formula on /graph/. Open: derives_from between numbers, supersedes between captures, stats as series."
   },
   {
@@ -626,7 +638,7 @@
    "id": "067",
    "title": "Draw the semantic graph on the phone: what changed, and what it connects to, as nodes and edges",
    "status": "open",
-   "owner": "cartographer",
+   "owner": "ontologist",
    "note": "From the brief on the phone app (22 October)."
   },
   {
@@ -1356,7 +1368,7 @@
    "id": "181",
    "title": "Use <sg-graph> wherever a page draws a graph: the actor, source and fact pages' mini_graph(), the review navigator (review/ui, assets/review-nav.js, which also assigns location.hash), the reader's persona graph; one component, one grammar",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "182",
@@ -1380,13 +1392,13 @@
    "id": "185",
    "title": "Ontology passes on a schedule: every new source, claim and party resolved, merged or pruned; new parties get entities, new spellings get aliases; record each pass in the ontology's version. Needs the editor's go for a schedule",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "186",
    "title": "Publish the ontology the way the estate does: N-Triples with owl:inverseOf, so graphs.sgit.ai and newsroom.sgit.ai can bridge to this graph by declared edges rather than merged vocabularies",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "187",
@@ -1399,8 +1411,8 @@
    "id": "188",
    "title": "Read data/compromise.json (researcher@php.newsroom's evidence behind 'no named organisation has said it was compromised', 33 rows) into the story graph: each named organisation as a party, each row as its statement on no-confirmed-compromise, Valtec's retraction as a superseded statement, so the long tail of possible compromises (GMO, ČVUT, Valtec, DMM) is walkable from the claim",
    "status": "open",
-   "owner": "cartographer",
-   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+   "owner": "ontologist",
+   "note": "From the ontologist's first pass of 24 October (admin/ontologist/passes/2026-10-24__pass-1.md)."
   },
   {
    "id": "189",
@@ -1413,8 +1425,8 @@
    "id": "190",
    "title": "Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the story graph, so the long-tail sources reach the claims they bear on, with supersedes where a statement was corrected; and trace the 143 captured sources no row cites yet",
    "status": "open",
-   "owner": "cartographer",
-   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+   "owner": "ontologist",
+   "note": "From the ontologist's first pass of 24 October (admin/ontologist/passes/2026-10-24__pass-1.md)."
   }
  ],
  "evidence_vault": {

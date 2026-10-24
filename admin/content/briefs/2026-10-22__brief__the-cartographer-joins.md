@@ -1,5 +1,7 @@
 # Brief: the cartographer joins, as the newsroom's ontologist
 
+*Superseded in part on 24 October 2026: the editor renamed the role the ontologist, whose job is fractal semantic graphs, and archived the cartographer. The brief is `admin/content/briefs/2026-10-24__brief__the-ontologist.md`; this one is kept as written.*
+
 22 October 2026. Written by cartographer@php.newsroom from the editor's direction in its session. Board 030, 062, 181 to 186.
 
 ## The direction

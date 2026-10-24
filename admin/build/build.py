@@ -1152,7 +1152,7 @@ def build_sources():
 '''
     page('sources/index.html', f'Every source: {C["sources"]} pages, {C["captures"]} captures, {C["hashed"]} hashes', f'The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.', body, kind='evidence', topics='php2shell sources evidence')
 
-# build_graph() is in the cartographer's block at the end of this file.
+# build_graph() is in the ontologist's block at the end of this file.
 
 def build_method():
     v = D['vault']
@@ -5790,8 +5790,8 @@ def build_pulse():
 <p class="small">{head}.</p>
 '''
         page(path, f'{v["cve"]} in Pulse: {v["vendor"]} {v["product"]}', f'Pulse\'s record of {v["cve"]} ({v["vendor"]} {v["product"]}): the evidence of exploitation as eight rungs, each with the capture it rests on, and the attention it gets. A separate section, not this site\'s evidence.', body, kind='evidence', topics='vulnerabilities exploitation pulse')
-# ----------------------------------------------------------------------------- the story graph (cartographer@php.newsroom)
-# Brief: admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md. One graph, data/graph.json, built from every
+# ----------------------------------------------------------------------------- the story graph (ontologist@php.newsroom)
+# Brief: admin/content/briefs/2026-10-24__brief__the-ontologist.md (first: 2026-10-22__brief__the-cartographer-joins.md). One graph, data/graph.json, built from every
 # row the pages are built from, joined through data/entities.json and data/attribution.json under the verbs of
 # data/ontology.json. The build stops on a verb or kind the ontology does not list, a publisher no entity claims, an
 # attribution to an unknown entity, or an exploitation row whose 'who' moved: the graph cannot drift from its grammar.
@@ -6065,7 +6065,7 @@ def build_graph():
 <li><b>A party steps across into the risk graph.</b> The risk desk keeps its own graph (<a href="../grc/graph/index.html">the risk graph</a>), where parties appear as stakeholders, mostly as classes (WAF vendors, local councils, national governments). <a href="../data/crosswalk.json">data/crosswalk.json</a> declares the bridges: a party <i>is</i> a stakeholder, or is <i>among</i> a class of them; a CVE is the same anchor in all three graphs. Bridges, not a merge: each graph keeps its words.</li>
 <li><b>A tension opens the claims it flags</b>: the contradiction ledger of the fact-check desk, one node per row, because two claims that disagree are not one edge with the same name both ways.</li>
 </ul>''')}
-{section("ontology", "The ontology", f'<p>Kinds of node:</p>{kinds_t}<p>Verbs this graph will not use, and why:</p><ul>{banned}</ul><p>The grammar is the estate&#39;s, from <a href="https://graphs.sgit.ai/v1/grammar/">graphs.sgit.ai</a>; the files are <a href="../data/ontology.json">data/ontology.json</a> (kinds, verbs, taxonomies, formulas), <a href="../data/entities.json">data/entities.json</a> (one node per party, whatever a page calls it) and <a href="../data/attribution.json">data/attribution.json</a> (who states each row). The graph is <a href="../data/graph.json">data/graph.json</a>. Kept by the cartographer. The component that draws it is documented for every agent on <a href="component/index.html">the graph component</a> page.</p>')}
+{section("ontology", "The ontology", f'<p>Kinds of node:</p>{kinds_t}<p>Verbs this graph will not use, and why:</p><ul>{banned}</ul><p>The grammar is the estate&#39;s, from <a href="https://graphs.sgit.ai/v1/grammar/">graphs.sgit.ai</a>; the files are <a href="../data/ontology.json">data/ontology.json</a> (kinds, verbs, taxonomies, formulas), <a href="../data/entities.json">data/entities.json</a> (one node per party, whatever a page calls it) and <a href="../data/attribution.json">data/attribution.json</a> (who states each row). The graph is <a href="../data/graph.json">data/graph.json</a>. Kept by the ontologist. The component that draws it is documented for every agent on <a href="component/index.html">the graph component</a> page.</p>')}
 '''
     page('graph/index.html', 'The story as a graph: who states what, who relays it, and what it rests on',
          f'{len(G["nodes"])} nodes and {len(G["edges"])} typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.', body, kind='evidence', topics='php2shell graph ontology')
@@ -6122,7 +6122,7 @@ def build_graph_component(G):
     body = f'''
 <p class="crumb"><a href="../index.html">The story as a graph</a> / The graph component</p>
 <h1>The graph component: one way to draw every graph on this site</h1>
-<p class="lead"><code>&lt;sg-graph&gt;</code> draws any graph that has nodes and verb-labelled edges, from five nodes to the whole story. Every agent that puts a graph on a page uses it, through <code>sg_graph()</code> in the build, so all of them walk the same way, follow the same grammar and get the same fixes. Kept by the cartographer. Version 1.0.0; native web component on this site&#39;s <code>sg-component</code> base, no library, no build step, nothing fetched from anywhere else.</p>
+<p class="lead"><code>&lt;sg-graph&gt;</code> draws any graph that has nodes and verb-labelled edges, from five nodes to the whole story. Every agent that puts a graph on a page uses it, through <code>sg_graph()</code> in the build, so all of them walk the same way, follow the same grammar and get the same fixes. Kept by the ontologist. Version 1.0.0; native web component on this site&#39;s <code>sg-component</code> base, no library, no build step, nothing fetched from anywhere else.</p>
 {section("small", "Five nodes, inline", sg_graph(path, data=demo, focus='c', controls='none', height=260, fallback='<p>Wiz states that PHP is 70% of the Internet; The Hacker News relays it; it cites two sources.</p>') + '<p class="small">The graph above is inline JSON in the page. Click a node to walk to it, or tab to it and press Enter.</p>')}
 {section("layers", "A graph in another vocabulary, in layers", sg_graph(path, src='data/review.json', view='layers', depth=2, focus='fix-commit', fallback='<p>The review graph of the fix: <a href="../../review/index.html">the fix, mapped to the code</a>.</p>') + '<p class="small">The code-review graph (<code>data/review.json</code>), which uses <code>rel</code> and <code>name</code>; the component reads both shapes.</p>')}
 {section("use", "Using it from the build", '''<pre><code># in admin/build/build.py, on any page

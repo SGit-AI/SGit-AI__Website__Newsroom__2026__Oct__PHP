@@ -1,6 +1,6 @@
 {
- "about": "The authority file for parties: one node per person, organisation, agency, outlet, channel or platform, whatever string a source or a row uses for it. Kept by the cartographer (cartographer@php.newsroom). An id from data/actors.json is reused unchanged, so the actor pages and this file name the same node. 'aliases' are the exact publisher strings in data/sources.json; the build refuses a publisher that resolves to no entity. Kinds and verbs are defined in data/ontology.json.",
- "kept_by": "cartographer",
+ "about": "The authority file for parties: one node per person, organisation, agency, outlet, channel or platform, whatever string a source or a row uses for it. Kept by the ontologist (ontologist@php.newsroom). An id from data/actors.json is reused unchanged, so the actor pages and this file name the same node. 'aliases' are the exact publisher strings in data/sources.json; the build refuses a publisher that resolves to no entity. Kinds and verbs are defined in data/ontology.json.",
+ "kept_by": "ontologist",
  "entities": [
   {
    "id": "php-group",
