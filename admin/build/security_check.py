@@ -16,20 +16,26 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 
 # Credential shapes. The published keys (sgit_public_read_*, the two lanes' append tokens) are public on purpose and
 # are not matched; a vault key is sgit_private_vault_<secret>:<vault id>.
-SECRET = re.compile('|'.join([
-    r'sgit_private_[a-z]+_[0-9A-Za-z]{12,}',               # sgit vault and private read keys
-    r'-----BEGIN [A-Z ]*PRIVATE KEY-----',
-    r'\b(AKIA|ASIA)[0-9A-Z]{16}\b',                         # AWS access key ids
-    r'\bsk-ant-[A-Za-z0-9_-]{20,}',                         # Anthropic
-    r'\bsk-(proj-|or-v1-)?[A-Za-z0-9_-]{32,}',              # OpenAI, OpenRouter
-    r'\b(ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{30,}',            # GitHub tokens
-    r'\bgithub_pat_[A-Za-z0-9_]{40,}',
-    r'\bxox[baprs]-[0-9A-Za-z-]{10,}',                      # Slack
-    r'hooks\.slack\.com/services/[A-Za-z0-9/]{20,}',
-    r'\bAIza[0-9A-Za-z_-]{35}\b',                           # Google API keys
-    r'\beyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}',  # JWTs
-    r'\bsg-send_[A-Za-z0-9]{6,}',                           # SG/Send access tokens
-]))
+SECRET_KINDS = [
+    ('an sgit private key', r'sgit_private_[a-z]+_[0-9A-Za-z]{12,}'),            # sgit vault and private read keys
+    ('a PEM private key', r'-----BEGIN [A-Z ]*PRIVATE KEY-----'),
+    ('an AWS access key id', r'\b(?:AKIA|ASIA)[0-9A-Z]{16}\b'),
+    ('an Anthropic key', r'\bsk-ant-[A-Za-z0-9_-]{20,}'),
+    ('an OpenAI or OpenRouter key', r'\bsk-(?:proj-|or-v1-)?[A-Za-z0-9_-]{32,}'),
+    ('a GitHub token', r'\b(?:ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{30,}'),
+    ('a GitHub fine-grained token', r'\bgithub_pat_[A-Za-z0-9_]{40,}'),
+    ('a Slack token', r'\bxox[baprs]-[0-9A-Za-z-]{10,}'),
+    ('a Slack webhook', r'hooks\.slack\.com/services/[A-Za-z0-9/]{20,}'),
+    ('a Google API key', r'\bAIza[0-9A-Za-z_-]{35}\b'),
+    ('a JWT', r'\beyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}'),
+    ('an SG/Send access token', r'\bsg-send_[A-Za-z0-9]{6,}'),
+]
+SECRET = re.compile('|'.join(f'(?P<k{i}>{rx})' for i, (_, rx) in enumerate(SECRET_KINDS)))
+
+
+def kind_of(m):
+    """What a match is, by name: a finding never repeats any character of the secret it found (CodeQL py/clear-text-logging)."""
+    return SECRET_KINDS[int(m.lastgroup[1:])][0]
 # Environment variables whose values must never appear in the tree, whatever their shape.
 SECRET_ENV = ('SG_SEND_ACCESS_TOKEN', 'SYNTHETIC_VAULT_KEYS', 'ANTHROPIC_API_KEY', 'OPENROUTER_API_KEY', 'GITHUB_TOKEN', 'GH_TOKEN')
 # Paths that hold decrypted vault content or keys and must never be committed (the site publishes the whole tree).
@@ -108,7 +114,7 @@ def tree_fails(root=ROOT):
             continue
         m = SECRET.search(t)
         if m:
-            fails.append(f'{rp}:{line_of(t, m.start())}: credential shape ({m.group(0)[:10]}...)')
+            fails.append(f'{rp}:{line_of(t, m.start())}: credential shape: {kind_of(m)}')
         for k, v in envs:
             if v in t:
                 fails.append(f'{rp}: holds the value of {k}')
@@ -241,7 +247,7 @@ def staged_fails(root=ROOT):
         elif line.startswith('+') and not line.startswith('+++') and cur != 'admin/build/security_check.py':
             m = SECRET.search(line)
             if m:
-                fails.append(f'{cur}: credential shape in an added line ({m.group(0)[:10]}...)')
+                fails.append(f'{cur}: credential shape in an added line: {kind_of(m)}')
             for k, v in envs:
                 if v in line:
                     fails.append(f'{cur}: an added line holds the value of {k}')
@@ -269,7 +275,7 @@ def history_fails(root=ROOT):
         elif line.startswith('+') and cur != 'admin/build/security_check.py':
             m = SECRET.search(line)
             if m:
-                fails.append(f'history {commit} {cur}: credential shape ({m.group(0)[:10]}...)')
+                fails.append(f'history {commit} {cur}: credential shape: {kind_of(m)}')
             for k, v in envs:
                 if v in line:
                     fails.append(f'history {commit} {cur}: holds the value of {k}')
