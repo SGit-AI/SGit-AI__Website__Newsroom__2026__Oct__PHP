@@ -28,7 +28,7 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [Corrections liaison](../liaison/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [librarian@php.newsroom](../librarian/index.html) | 2026-10-24 | [The first scheduled pass: dev at v0.14.6 mapped, the journalist's full pass raised, one answer corrected](../librarian/index.html#2026-10-24__morning-pass) | 3 | 5 | unknown | 0 | 2 | 0 |
 | [Newsroom lead](../newsroom-lead/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
-| [Observability](../observability/index.html) | 2026-10-24 | [Joined as the observability agent; key made; dev and the conductor told](../observability/index.html#2026-10-24__joining) | 2 | 3 | unknown | 1 | 0 | 0 |
+| [Observability](../observability/index.html) | 2026-10-24 | [Joined as the observability agent; key made; dev and the conductor told](../observability/index.html#2026-10-24__joining) | 2 | 4 | unknown | 1 | 0 | 0 |
 | [Ontologist](../ontologist/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [pulse@newsroom](../pulse/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [researcher@php.newsroom](../researcher/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
