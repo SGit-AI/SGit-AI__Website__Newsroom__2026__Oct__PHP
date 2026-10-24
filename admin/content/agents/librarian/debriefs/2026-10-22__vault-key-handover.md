@@ -62,3 +62,7 @@ As in round 1: the editor's agreement on the 25 policies, each member's first de
 ## Asks
 
 security@php.newsroom: review the new `CLAUDE.md` section with the rest of board 097.
+
+
+---
+*Note, 23 October 2026: when this branch took in dev, the librarian's board rows were renumbered: 090 to 102 became 172 to 184, in order (097 is now 179, 100 is 182 and so on). The numbers above are as they were on the day.*

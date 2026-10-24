@@ -2,18 +2,18 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-The NCSC-NL php2shell inventory across 38 commits: how 724 products moved between fixed, vulnerable and under investigation after the release, what kind of products they are, and when each supplier was first recorded fixed.
+The NCSC-NL php2shell inventory across 50 commits: how 751 products moved between fixed, vulnerable and under investigation after the release, what kind of products they are, and when each supplier was first recorded fixed.
 
 # The inventory, hour by hour: fixed, vulnerable, still under investigation
 
-The Dutch NCSC keeps a public list of software that ships or depends on PHP, with a status for each product. This site captured it once, at 08:40 UTC on 22 October. Its git history shows the rest: 38 versions from 21 October 2026, 11:20 UTC to 22 October 2026, 15:28 UTC, each read from the commit that made it. At the last one, 61 of 724 rows were fixed, 216 vulnerable and 440 still under investigation, about 25 hours after the release.
+The Dutch NCSC keeps a public list of software that ships or depends on PHP, with a status for each product. This site captured it once, at 08:40 UTC on 22 October. Its git history shows the rest: 50 versions from 21 October 2026, 11:20 UTC to 23 October 2026, 12:50 UTC, each read from the commit that made it. At the last one, 109 of 751 rows were fixed, 222 vulnerable and 389 still under investigation, about 47 hours after the release.
 
 - Fixed
 - Not affected
 - Vulnerable
 - Under investigation
 
-Rows by status at every commit of the inventory that changed it. Hover a column for the commit and its counts; the table below has the same numbers. Read from a clone of [https://github.com/NCSC-NL/php2shell](https://github.com/NCSC-NL/php2shell) at `94b4b16db9e5`.
+Rows by status at every commit of the inventory that changed it. Hover a column for the commit and its counts; the table below has the same numbers. Read from a clone of [https://github.com/NCSC-NL/php2shell](https://github.com/NCSC-NL/php2shell) at `2fdc314ded28`.
 
 The same numbers as a table
 | When (UTC) | Commit | Rows | Fixed | Not affected | Vulnerable | Under investigation |
@@ -56,29 +56,41 @@ The same numbers as a table
 | 22 October 2026, 14:41 UTC | `51b0962ecd42` | 715 | 61 | 6 | 216 | 431 |
 | 22 October 2026, 15:04 UTC | `6e65576e2003` | 715 | 61 | 6 | 216 | 431 |
 | 22 October 2026, 15:28 UTC | `94b4b16db9e5` | 724 | 61 | 6 | 216 | 440 |
+| 22 October 2026, 22:27 UTC | `7c1b84f732ce` | 724 | 61 | 6 | 216 | 440 |
+| 22 October 2026, 22:48 UTC | `302d139b8b75` | 725 | 62 | 6 | 216 | 440 |
+| 22 October 2026, 22:50 UTC | `b5b6f85fafb4` | 725 | 62 | 6 | 216 | 440 |
+| 22 October 2026, 23:54 UTC | `ecad8f7dbcc8` | 725 | 62 | 6 | 216 | 440 |
+| 23 October 2026, 08:50 UTC | `b6458a205421` | 726 | 63 | 6 | 216 | 440 |
+| 23 October 2026, 09:34 UTC | `c3ecfc62d0aa` | 726 | 84 | 30 | 226 | 385 |
+| 23 October 2026, 09:44 UTC | `bc4c0dddb9f7` | 728 | 86 | 30 | 226 | 385 |
+| 23 October 2026, 10:43 UTC | `f6f57510376f` | 728 | 86 | 30 | 226 | 385 |
+| 23 October 2026, 11:13 UTC | `5669ab341570` | 732 | 86 | 30 | 228 | 387 |
+| 23 October 2026, 11:33 UTC | `44ee95fe19ad` | 746 | 108 | 30 | 220 | 387 |
+| 23 October 2026, 11:48 UTC | `b216139f5b83` | 749 | 108 | 30 | 221 | 389 |
+| 23 October 2026, 12:50 UTC | `2fdc314ded28` | 751 | 109 | 30 | 222 | 389 |
 
 ## How to read it
 
-- **Vulnerable mostly means inherited.** 185 of the 216 vulnerable rows are applications the inventory marks *affected when deployed on an affected web-serving PHP runtime*. Their fix is patching PHP underneath them, not a release from their maker, so they stay vulnerable in the list whatever the server does. That is why only 1 row moved from vulnerable to fixed.
+- **Vulnerable mostly means inherited.** 184 of the 222 vulnerable rows are applications the inventory marks *affected when deployed on an affected web-serving PHP runtime*. Their fix is patching PHP underneath them, not a release from their maker, so they stay vulnerable in the list whatever the server does. That is why only 10 row moved from vulnerable to fixed.
 
-- **Fixes came from the people who ship PHP.** Operating systems, container images, platforms and hosting panels: the 61 fixed rows are almost all runtimes, recorded from 15:30 UTC on 21 October.
+- **Fixes came from the people who ship PHP.** Operating systems, container images, platforms and hosting panels: the 109 fixed rows are almost all runtimes, recorded from 15:30 UTC on 21 October.
 
-- **The investigation pile grew while it shrank.** 207 rows were resolved to vulnerable and 44 to fixed, and 78 new rows arrived under investigation.
+- **The investigation pile grew while it shrank.** 217 rows were resolved to vulnerable and 64 to fixed, and 82 new rows arrived under investigation.
 
-- **The boxes in front run PHP too.** Vulnerable: **Check Point firewall web interfaces** (Check Point), **NetScaler ADC** (Citrix / NetScaler), **PAN-OS** (Palo Alto Networks), **Panorama** (Palo Alto Networks). Under investigation: Cisco (29), Fortinet (10), F5 (2), Juniper Networks (1), Sophos (1).
+- **The boxes in front run PHP too.** Vulnerable: **Check Point firewall web interfaces** (Check Point), **Cisco Expressway Select Series** (Cisco), **Cisco Expressway Series** (Cisco), **Cisco Ultra-Reliable Wireless Backhaul (URWB)** (Cisco), **Citrix NetScaler ADC and Citrix NetScaler Gateway** (Citrix / NetScaler), **BIG-IP APM PHP page templates** (F5), **BIG-IP TMOS platform PHP** (F5), **PAN-OS** (Palo Alto Networks), **Panorama** (Palo Alto Networks), **MyUTM portal** (Sophos). Under investigation: Cisco (10), Fortinet (5), Juniper Networks (1).
 
 ## Every change of status
 
 | From | To | Rows |
 |---|---|---|
-| under investigation | vulnerable | 207 |
-| added to the list | under investigation | 78 |
-| under investigation | fixed | 44 |
-| added to the list | fixed | 17 |
-| added to the list | vulnerable | 12 |
+| under investigation | vulnerable | 217 |
+| added to the list | under investigation | 82 |
+| under investigation | fixed | 64 |
+| added to the list | fixed | 36 |
+| under investigation | not affected | 27 |
+| added to the list | vulnerable | 18 |
+| vulnerable | fixed | 10 |
 | added to the list | not affected | 3 |
-| under investigation | not affected | 3 |
-| vulnerable | fixed | 1 |
 | fixed | none | 1 |
 
 Between consecutive commits, per row. A row added already fixed counts as added.
@@ -87,17 +99,17 @@ Between consecutive commits, per row. A row added already fixed counts as added.
 
 | What kind of row | Rows | Fixed | Not affected | Vulnerable | Under investigation |
 |---|---|---|---|---|---|
-| Affected because it runs on affected PHP | 185 |  |  | 185 |  |
-| From a security or network vendor (matched on the supplier) | 49 |  | 2 | 4 | 43 |
-| Named in a vendor advisory | 51 | 20 | 3 | 21 | 7 |
-| A fixed build or release | 55 | 41 |  | 5 | 8 |
-| Ships or hosts PHP itself | 90 |  |  |  | 90 |
-| Runs on PHP; whether it is exposed is not yet assessed | 172 |  |  |  | 172 |
+| Affected because it runs on affected PHP | 184 |  |  | 184 |  |
+| From a security or network vendor (matched on the supplier) | 52 |  | 26 | 10 | 16 |
+| Named in a vendor advisory | 45 | 25 | 3 | 13 | 4 |
+| A fixed build or release | 105 | 84 |  | 13 | 7 |
+| Ships or hosts PHP itself | 73 |  |  |  | 73 |
+| Runs on PHP; whether it is exposed is not yet assessed | 171 |  |  |  | 171 |
 | Development, CI or admin tooling | 44 |  |  |  | 44 |
 | A library: only the caller's PHP matters | 26 |  |  |  | 26 |
 | Another engine, the browser, or history | 37 |  |  |  | 37 |
-| Only a requirement or an SBOM says it uses PHP | 12 |  |  |  | 12 |
-| No rule matched | 3 |  | 1 | 1 | 1 |
+| Only a requirement or an SBOM says it uses PHP | 10 |  |  |  | 10 |
+| No rule matched | 4 |  | 1 | 2 | 1 |
 
 Read from each row's own *CVE assessment* line by 11 rules, applied in order; the rules are in `admin/build/inventory_history.py` and in [the data](../../data/inventory-history.json). The words matched are the inventory's; the grouping is this site's.
 
@@ -140,4 +152,4 @@ The patching ladder, version by version, is on [Patching](../index.html); the si
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/patching/inventory/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/patching/inventory/index.html

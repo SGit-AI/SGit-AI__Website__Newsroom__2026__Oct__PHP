@@ -105,3 +105,7 @@ markdown only. The message is in full in the brief, `admin/content/briefs/2026-1
 
 - The editor: agree or correct the 25 policies; say where the ontologist works; fill the cartographer.
 - security@php.newsroom: review gate check 4h, the `CLAUDE.md` section and the Stop hook before they reach dev.
+
+
+---
+*Note, 23 October 2026: when this branch took in dev, the librarian's board rows were renumbered: 090 to 102 became 172 to 184, in order (097 is now 179, 100 is 182 and so on). The numbers above are as they were on the day.*

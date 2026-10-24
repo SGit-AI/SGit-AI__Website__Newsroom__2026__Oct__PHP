@@ -1,6 +1,6 @@
 # Role: librarian@php.newsroom
 
-*The catalogue. Drafted by librarian@php.newsroom on 2026-10-22 at the editor's request, for this member to confirm and the editor to agree. The machine-readable form is `policy.json` beside this file; where the two differ, `policy.json` is what the checks read.*
+*The catalogue. Drafted by librarian@php.newsroom on 2026-10-24 at the editor's request, for this member to confirm and the editor to agree. The machine-readable form is `policy.json` beside this file, kept by abp@newsroom.sgit (board 157); where the two differ, `policy.json` is what the checks read.*
 
 ## Identity
 
@@ -33,12 +33,15 @@
 
 **Writes** (exclusive: no other member writes these):
 
-- `admin/content/agents/librarian/**`
+- `admin/content/agents/librarian/ROLE.md`
+- `admin/content/agents/librarian/status.json`
+- `admin/content/agents/librarian/debriefs/**`
 - `data/questions.json`
 - `data/layers.json`
 - `admin/build/agents.py`
 - `admin/content/agents/README.md`
 - `admin/content/agents/TEMPLATE__debrief.md`
+- `data/vault-register/librarian.json`
 
 **Appends** (shared files it adds to, in its own block, row or file only):
 
@@ -52,7 +55,7 @@
 
 - `questions/**`
 - `layers/**`
-- `admin/agents/*/**` (every member's page, who owns what, every round)
+- `admin/agents/*/**`
 
 **Vaults:**
 
@@ -69,20 +72,22 @@ In the vocabulary of abp.sgit.ai (riskmandate.ai): the **grant** is what a sessi
 | `write.repository.project` | commits on its own branch |
 | `execute.process.host` | the session's container: the build, the gate, its own tools |
 | `send.endpoint.allowed` | the proxy's list |
-| `write.repository.tenant` | its own branch only (claude/* or <role>/*); never dev, never main, never a force-push |
+| `write.repository.tenant` | its own branch; dev only through admin/build/release.sh, for its own finished work inside its scope (the editor's rule of 23 October 2026); never main, never a force-push |
 | `authenticate-as.credential.tenant` | the GitHub token for this repository; the SG/Send token only for the vaults in scope.vaults |
+| `create.record.world` | only its own finished work inside its scope, only what passes the gate, only through admin/build/release.sh |
 
 **Not wanted:** `create.schedule.tenant`, `send.message.world`, `read.record.history`, `delete.file.host`.
 
 **Needs the editor's go:**
 
+- releasing anything outside its own scope, or any change to the files listed in the next line
 - anything irreversible: sending mail, deleting a vault, handing a key to anyone but the root
 - any change to admin/build/validate.py, admin/build/security_check.py, admin/build/release.sh, .github/workflows/, admin/security/ or .claude/ (security reviews, then the editor says go)
 - any widening of its own policy.json (a new path, page, vault or capability)
 
 **Never:**
 
-- push to dev or main, force-push, or rewrite pushed history
+- push to main, force-push, rewrite pushed history, or push to dev other than with admin/build/release.sh
 - print, commit or publish a secret (vault keys, tokens, passphrases)
 - clone a vault inside the repository
 - edit a file in another member's scope.writes
@@ -147,4 +152,4 @@ Every time a round of work ends, before the session stops: write a debrief in `d
 Before this map existed the librarian built the fractal graph (v0.5.2: data/arcs.json, /fractal/). That is the cartographer's scope and is handed over in this round.
 
 ---
-*Role definition v1, 2026-10-22, draft.*
+*Role definition v1, 2026-10-24, draft.*

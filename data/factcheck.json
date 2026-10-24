@@ -243,6 +243,7 @@
    "quotes_checked": [],
    "tickets": [
     "Contradiction-6",
+    "Evidence-11",
     "Evidence-3",
     "Evidence-4",
     "Finding-22",
@@ -639,6 +640,7 @@
    "tickets": [
     "Contradiction-2",
     "Evidence-1",
+    "Evidence-10",
     "Evidence-6",
     "Finding-13",
     "Finding-63"
@@ -1172,7 +1174,9 @@
    "level": 1,
    "verdict": "not-shown",
    "tension": "disputed",
-   "contradictions": [],
+   "contradictions": [
+    "K-011"
+   ],
    "volatile": true,
    "as_of": "20261022T081408Z",
    "status_fit": "ok",
@@ -1211,7 +1215,11 @@
     }
    ],
    "tickets": [
+    "Contradiction-11",
     "Evidence-5",
+    "Evidence-7",
+    "Evidence-8",
+    "Finding-125",
     "Finding-72",
     "Gap-2"
    ],
@@ -2000,6 +2008,8 @@
    ],
    "quotes_checked": [],
    "tickets": [
+    "Contradiction-11",
+    "Evidence-7",
     "Finding-54",
     "Finding-55"
    ],
@@ -2301,6 +2311,7 @@
    "tickets": [
     "Contradiction-2",
     "Evidence-1",
+    "Evidence-10",
     "Evidence-3",
     "Finding-26",
     "Finding-85"
@@ -3956,6 +3967,7 @@
    "tickets": [
     "Contradiction-3",
     "Contradiction-7",
+    "Evidence-10",
     "Evidence-6"
    ],
    "mode2": "",
@@ -4125,6 +4137,7 @@
    ],
    "tickets": [
     "Contradiction-3",
+    "Evidence-9",
     "Finding-107",
     "Finding-50"
    ],
@@ -5168,6 +5181,47 @@
    "reading": "The original embargo time has two values, 14:00 UTC (the Foundation, echoed by The Hacker News) and 11:00 ET, which is 15:00 UTC (watchTowr, echoed by CybelAngel and others). The release itself is stamped 13:34 UTC on the GitHub advisories, ahead of the announced 14:00. The ChangeLog still carries the original date. The site should say 'about 14:00 UTC, advisories at 13:34' and give both original times.",
    "settle": "A PHP project statement of the embargo time, or the pre-announcement's original text.",
    "ticket": "Contradiction-10"
+  },
+  {
+   "id": "K-011",
+   "measure": "Is the fix in PHP 8.5.12 incomplete?",
+   "status": "open",
+   "claims": [
+    "fix-incomplete",
+    "more-paths"
+   ],
+   "statements": [
+    {
+     "who": "Aaron Rainbolt on oss-security, relaying a Fediverse post",
+     "when": "2026-10-21 15:24 UTC",
+     "says": "the Fediverse is reporting that the fix to at least PHP 8.5.12 may be incomplete",
+     "measures": "an unconfirmed report from an unnamed person, relayed",
+     "sources": [
+      "openwall-oss-security-109619-thread"
+     ]
+    },
+    {
+     "who": "The same, relaying Canonical via a Matrix channel",
+     "when": "2026-10-21 17:29 UTC",
+     "says": "was told that it's \"unrelated and not a real issue\"",
+     "measures": "PHP's answer to Canonical, second-hand",
+     "sources": [
+      "openwall-oss-security-109619-thread"
+     ]
+    },
+    {
+     "who": "Jakub Zelenka, PHP security team, on oss-security (post 2026/10/22/15)",
+     "when": "2026-10-22 09:11 UTC",
+     "says": "This is unrelated issue with minimal impact (crash in one component in slightly unlikely scenario). It has nothing to do with the RCE.",
+     "measures": "PHP's own public answer",
+     "outside": [
+      "https://www.openwall.com/lists/oss-security/2026/10/22/15 (fetched 2026-10-22 20:5x UTC, sha256 94c69d8f1c07e67d)"
+     ]
+    }
+   ],
+   "reading": "The report and the answer are about different things: the Fediverse post describes some flaw in 8.5.12; the PHP security team says it is a separate crash bug of minimal impact, not a way around the RCE fix. The answer came at 09:11 UTC on 22 October, after the vault's copy of the thread (which stops at 22/2), so the site still says PHP has not answered. Open only until the reply is captured; then it should be marked explained and the claim re-graded.",
+   "settle": "Capture oss-security 2026/10/22/15 into the vault.",
+   "ticket": "Contradiction-11"
   }
  ],
  "tickets": [
@@ -5239,6 +5293,10 @@
     },
     {
      "verb": "supported-by",
+     "to": "Evidence-10"
+    },
+    {
+     "verb": "supported-by",
      "to": "Evidence-3"
     },
     {
@@ -5272,7 +5330,12 @@
    "sha256": "",
    "excerpt": "",
    "run": "Run-1",
-   "links": []
+   "links": [
+    {
+     "verb": "supported-by",
+     "to": "Evidence-9"
+    }
+   ]
   },
   {
    "label": "Contradiction-4",
@@ -5342,6 +5405,10 @@
    "excerpt": "",
    "run": "Run-1",
    "links": [
+    {
+     "verb": "supported-by",
+     "to": "Evidence-11"
+    },
     {
      "verb": "supported-by",
      "to": "Evidence-4"
@@ -5453,6 +5520,41 @@
    "excerpt": "",
    "run": "Run-1",
    "links": []
+  },
+  {
+   "label": "Contradiction-11",
+   "type": "contradiction",
+   "status": "open",
+   "title": "K-011: Is the fix in PHP 8.5.12 incomplete?",
+   "description": "The report and the answer are about different things: the Fediverse post describes some flaw in 8.5.12; the PHP security team says it is a separate crash bug of minimal impact, not a way around the RCE fix. The answer came at 09:11 UTC on 22 October, after the vault's copy of the thread (which stops at 22/2), so the site still says PHP has not answered. Open only until the reply is captured; then it should be marked explained and the claim re-graded.",
+   "severity": "medium",
+   "claims": [
+    "fix-incomplete",
+    "more-paths"
+   ],
+   "sources": [
+    "openwall-oss-security-109619-thread"
+   ],
+   "pages": [],
+   "url": "",
+   "retrieved_at": "",
+   "sha256": "",
+   "excerpt": "",
+   "run": "Run-2",
+   "links": [
+    {
+     "verb": "relates-to",
+     "to": "Finding-125"
+    },
+    {
+     "verb": "supported-by",
+     "to": "Evidence-7"
+    },
+    {
+     "verb": "supported-by",
+     "to": "Evidence-8"
+    }
+   ]
   },
   {
    "label": "Evidence-1",
@@ -5598,6 +5700,129 @@
     {
      "verb": "supports",
      "to": "Contradiction-2"
+    }
+   ]
+  },
+  {
+   "label": "Evidence-7",
+   "type": "evidence",
+   "status": "proposed",
+   "title": "PHP security team on oss-security, 22 October 09:11 UTC: the 'incomplete fix' report is 'unrelated' and 'has nothing to do with the RCE'",
+   "description": "Jakub Zelenka (who published both advisories) answering Rainbolt's relay of the Fediverse report. This is PHP's public answer that the site's front page says does not exist. High priority to capture: once captured, fix-incomplete should be re-graded and the front page's open question closed or reworded.",
+   "severity": "high",
+   "claims": [
+    "fix-incomplete",
+    "more-paths"
+   ],
+   "sources": [],
+   "pages": [],
+   "url": "https://www.openwall.com/lists/oss-security/2026/10/22/15",
+   "retrieved_at": "2026-10-22T20:54Z",
+   "sha256": "94c69d8f1c07e67d6fd44cfaeeb6e1805262c60d07acd5cd750e0b7d1a90026d",
+   "excerpt": "This is unrelated issue with minimal impact (crash in one component in slightly unlikely scenario). It has nothing to do with the RCE.",
+   "run": "Run-2",
+   "links": [
+    {
+     "verb": "supports",
+     "to": "Contradiction-11"
+    }
+   ]
+  },
+  {
+   "label": "Evidence-8",
+   "type": "evidence",
+   "status": "proposed",
+   "title": "oss-security 22_14: the deb.sury.org tracker quotes the PHP team, 'aware of that report and there are no new plans as of now'",
+   "description": "Nicolas Vigier relays a comment on the Debian/Ubuntu PHP packager's issue tracker. Third-hand, but consistent with PHP's own answer in 22/15.",
+   "severity": "low",
+   "claims": [
+    "fix-incomplete"
+   ],
+   "sources": [],
+   "pages": [],
+   "url": "https://www.openwall.com/lists/oss-security/2026/10/22/14",
+   "retrieved_at": "2026-10-22T20:54Z",
+   "sha256": "7f8f85193e75133f88647d70733a69938c17e6f2773b4755c0dc67acd3512dbb",
+   "excerpt": "The PHP team is aware of that report and there are no new plans as of now.",
+   "run": "Run-2",
+   "links": [
+    {
+     "verb": "supports",
+     "to": "Contradiction-11"
+    }
+   ]
+  },
+  {
+   "label": "Evidence-9",
+   "type": "evidence",
+   "status": "proposed",
+   "title": "oss-security 22_16, 22_19, 22_20: list members say every version from PHP 5.4 is affected, each citing Wiz",
+   "description": "Three replies to Greenbone's question about versions older than 8.2. All three trace to Wiz's write-up (restates, not corroborates); no reply from the PHP project on versions. Adds echoes to K-003, not evidence.",
+   "severity": "low",
+   "claims": [
+    "versions-old"
+   ],
+   "sources": [],
+   "pages": [],
+   "url": "https://www.openwall.com/lists/oss-security/2026/10/22/16",
+   "retrieved_at": "2026-10-22T20:54Z",
+   "sha256": "04f109cae98defca4e2db749e7dc1cf106fc8503ae907aff9e16d60a285ea45e",
+   "excerpt": "It's pubblically document in the writeup that everything from PHP 5.4 is affected",
+   "run": "Run-2",
+   "links": [
+    {
+     "verb": "supports",
+     "to": "Contradiction-3"
+    }
+   ]
+  },
+  {
+   "label": "Evidence-10",
+   "type": "evidence",
+   "status": "proposed",
+   "title": "Primary feeds at 20:53 UTC: KEV unchanged (neither CVE), no PHP release after 21 October, NVD now 'Analyzed', CVE-2026-109619 updated 20:08 UTC with five oss-security references",
+   "description": "KEV is byte-identical to run 1 (catalog 2026.10.21). php.net releases unchanged. NVD moved CVE-2026-109618 from Modified to Analyzed at 20:45 UTC (scores unchanged). The CVE-2026-109619 record's ADP container added oss-security 22/14, 15, 16, 19 and 20 as references. The NCSC-NL repository head is unchanged at 94b4b16db9e5.",
+   "severity": "low",
+   "claims": [
+    "cisa-none",
+    "no-confirmed-compromise",
+    "two-cves-9.2"
+   ],
+   "sources": [],
+   "pages": [],
+   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "retrieved_at": "2026-10-22T20:53Z",
+   "sha256": "ef8fffede5c472001da046c7751beb2a3242458896d0ce08da52b30968b8b56b",
+   "excerpt": "",
+   "run": "Run-2",
+   "links": [
+    {
+     "verb": "supports",
+     "to": "Contradiction-2"
+    }
+   ]
+  },
+  {
+   "label": "Evidence-11",
+   "type": "evidence",
+   "status": "proposed",
+   "title": "PHPocalypse Tracker, 20:53 UTC: the Dutch data protection authority back at 19:25 UTC; one site still dark (French prefecture websites)",
+   "description": "Was 2 still dark at 18:27 UTC. Of 50 rows, 49 now have a back-up time.",
+   "severity": "low",
+   "claims": [
+    "affected-sites"
+   ],
+   "sources": [],
+   "pages": [],
+   "url": "https://allixsenos.github.io/phpocalypse-tracker/sites.csv",
+   "retrieved_at": "2026-10-22T20:53Z",
+   "sha256": "1534d904219babed6a62bab19cbd061d9cc156b24b96f621b606af4e6587495b",
+   "excerpt": "",
+   "run": "Run-2",
+   "links": [
+    {
+     "verb": "supports",
+     "to": "Contradiction-6"
     }
    ]
   },
@@ -8278,6 +8503,33 @@
    ]
   },
   {
+   "label": "Finding-125",
+   "type": "finding",
+   "status": "open",
+   "title": "Front page: 'the PHP project has not answered it publicly yet' has been out of date since 09:11 UTC on 22 October",
+   "description": "data/plain.json, unknown: 'Whether the fix is complete. A report on 21 October suggested it may not be; the PHP project has not answered it publicly yet.' PHP's security team answered on oss-security at 09:11 UTC (2026/10/22/15): an unrelated crash bug of minimal impact, nothing to do with the RCE. It was true of the vault's capture, which stops before the reply; it is not true of the world. Capture the reply, then close or reword the question, and re-grade fix-incomplete (whose note says 'Nothing from PHP on the list at capture').",
+   "severity": "high",
+   "claims": [
+    "fix-incomplete"
+   ],
+   "sources": [],
+   "pages": [
+    "index.html",
+    "code/index.html"
+   ],
+   "url": "",
+   "retrieved_at": "",
+   "sha256": "",
+   "excerpt": "",
+   "run": "Run-2",
+   "links": [
+    {
+     "verb": "relates-to",
+     "to": "Contradiction-11"
+    }
+   ]
+  },
+  {
    "label": "Gap-1",
    "type": "gap",
    "status": "open",
@@ -8357,6 +8609,18 @@
    "audit": "Every excerpt recorded (one per capture checked) was re-found verbatim in its capture file by fc.py check, and every capture's sha256 matched the manifest: 0 mismatches.",
    "summary": "First run. 10 of 70 claims can be relied on without reservation; 11 carry a status word stronger than their evidence, 6 a weaker one; 2 are refuted as worded (the CVSS 10.0 and 'disclosed on 22 October', which is true only in Australian time). Five quotes on the site are not in the captures they are attributed to. Highest: Italy's ACN does advise taking sites offline, which the agencies table says it does not; the 'contradicted' mark on the allies' offline advice rests on something the BBC did not say; and the site is 40 sources behind the vault. KEV still lists neither CVE at 18:27 UTC.",
    "note": "Checked against the claims as they stood at site v0.4.7; data/claims.json is unchanged in dev up to v0.5.3."
+  },
+  {
+   "id": "Run-2",
+   "site_version": "0.5.7",
+   "vault_commit": "31ccc515c29f",
+   "site_export_commit": "200d08971937",
+   "started": "2026-10-22T20:52Z",
+   "finished": "2026-10-22T21:10Z",
+   "checked": "fc.py changed (no claim changed since run 1, no source or agencies, exploitation, impact or front-page data changed, vault head unchanged); every open ticket against the current data (none fixed); mode 2: CISA KEV, the CVE and NVD records, php.net releases, the NCSC-NL repository head, the PHPocalypse Tracker, and the five oss-security posts newly referenced by the CVE-2026-109619 record",
+   "opened": "1 high finding; 1 contradiction (K-011); 5 new evidence (1 high); 0 tickets closed",
+   "audit": "fc.py check: 0 failures; every recorded excerpt re-found verbatim, every hash matching.",
+   "summary": "Nothing on the site changed and none of run 1's 143 tickets can close yet. The world moved: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (an unrelated crash bug, 'nothing to do with the RCE'), so the front page's 'PHP has not answered it publicly yet' is out of date; capture the reply (Evidence-7). KEV still lists neither CVE; no PHP release after 21 October; NVD now 'Analyzed'; the PHPocalypse Tracker has one site still dark."
   }
  ]
 }

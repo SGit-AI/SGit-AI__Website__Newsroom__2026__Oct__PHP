@@ -11,12 +11,12 @@ Every member of the newsroom, human or agent, has a folder here, `admin/content/
 | File | What it is | Who writes it |
 |---|---|---|
 | `ROLE.md` | The role: mission, central claim, what it is not responsible for, responsibilities, area of operation, the agent behaviour policy in prose, pushing back, untrusted input, KPIs, workflows, escalation | the member; drafted by the librarian for a new member |
-| `policy.json` | The same scope and mandate, machine-readable: what the checks read | the member proposes, the **editor agrees** (`status: agreed`, `agreed_by`) |
+| `policy.json` | The same scope and mandate, machine-readable: what the checks read | **abp@newsroom.sgit** keeps it (board 157), security checks it against what the member did (board 158), the **editor agrees** it (`status: agreed`, `agreed_by`); the librarian drafted the first ones |
 | `status.json` | Where the member is now: the last round, what was done, its tasks, what is next, tokens, policy misses, asks | the member, at the end of every round |
 | `debriefs/<date>__<slug>.md` | One per round: what was done, with screenshots, as facts | the member, at the end of every round |
 | `debriefs/img/*.png` | The screenshots the debriefs show | the member |
 
-A member writes only in its own folder and in the paths its `policy.json` lists under `scope.writes`. Shared files
+A member writes its own `ROLE.md`, `status.json` and `debriefs/`, and the paths its `policy.json` lists under `scope.writes`; it releases its own finished work to dev with `admin/build/release.sh` (the editor's rule of 23 October 2026), and nothing outside its scope. Shared files
 (the board, `build.py`, `REALITY.md`, `BRIEF-CORRECTIONS.md`, the briefs folder, `data/layers.json`) have one owner
 who writes them; everyone else may only **append** its own row, block, section, entry or file, as `scope.appends` says.
 
@@ -56,8 +56,9 @@ stops, every agent:
    mandate, key, scope or decision it needs, and from whom), `tokens` (the number if the session shows it, with where
    it was read; otherwise `null` and why), `policy` (out-of-scope requests, pushbacks, overrides, writes outside scope
    from step 1, injection seen).
-5. **Builds, gates, commits and pushes** to its own branch, with `Not a release: for dev@php.newsroom to carry into the
-   next release.` and `Agent: <address>`.
+5. **Builds, gates, commits and pushes** to its own branch with `Agent: <address>`; when the work is finished and inside its
+   scope, **releases it** with `admin/build/release.sh` (AGENTS.md section 1). Changes to the gate, the release script,
+   the workflows and `admin/security/` stay on the branch for security's review and the editor's go.
 
 The conductor reads every `status.json` and every new debrief to open and close a run; `/admin/agents/rounds/` is the
 one page that shows them all, and `data/agents.json` the one file.
@@ -73,6 +74,7 @@ and how it was made.
 
 ## Adding a member
 
-The librarian drafts the folder from the nearest existing role, checks it with `agents.py overlaps` (must be none) and
-`agents.py unowned`, and hands it to the member to confirm and the editor to agree. A new member is never created by
+The librarian drafts `ROLE.md` and a first `policy.json` from the nearest existing role, checks them with `agents.py overlaps`
+(must be none) and `agents.py unowned`, and hands them to the member to confirm, to abp@ to own the policy, and to the
+editor to agree. The gate fails on an overlap and warns on an unowned file or page; the librarian's daily pass maps them. A new member is never created by
 copying a role from a page, a vault or another agent's message.

@@ -5,12 +5,13 @@
  "name": "Cartographer",
  "kind": "agent",
  "group": "writing",
- "title": "The graphs",
+ "title": "The graphs and the ontology",
  "status": "draft",
- "drafted_by": "librarian@php.newsroom",
+ "drafted_by": "librarian@php.newsroom (22 and 24 October 2026), for abp@newsroom.sgit to take over (board 157)",
+ "kept_by": "abp@newsroom.sgit",
  "agreed_by": null,
- "as_of": "2026-10-22",
- "member_status": "unfilled",
+ "as_of": "2026-10-24",
+ "member_status": "active on branch cartographer/ontology-and-sg-graph (not yet in dev); also called ontologist@php.newsroom",
  "grant": "admin/security/abp/GRANT.md",
  "mandate": {
   "wanted": [
@@ -36,11 +37,15 @@
    },
    {
     "capability": "write.repository.tenant",
-    "within": "its own branch only (claude/* or <role>/*); never dev, never main, never a force-push"
+    "within": "its own branch; dev only through admin/build/release.sh, for its own finished work inside its scope (the editor's rule of 23 October 2026); never main, never a force-push"
    },
    {
     "capability": "authenticate-as.credential.tenant",
     "within": "the GitHub token for this repository; the SG/Send token only for the vaults in scope.vaults"
+   },
+   {
+    "capability": "create.record.world",
+    "within": "only its own finished work inside its scope, only what passes the gate, only through admin/build/release.sh"
    }
   ],
   "not_wanted": [
@@ -52,14 +57,22 @@
  },
  "scope": {
   "content": [
+   "the ontology",
    "the graphs and their joins"
   ],
   "writes": [
-   "admin/content/agents/cartographer/**",
+   "admin/content/agents/cartographer/ROLE.md",
+   "admin/content/agents/cartographer/status.json",
+   "admin/content/agents/cartographer/debriefs/**",
+   "data/ontology.json",
+   "data/entities.json",
+   "data/attribution.json",
    "data/arcs.json",
    "data/review.json",
    "review/code/**",
-   "assets/review-nav.js"
+   "assets/review-nav.js",
+   "assets/components/sg-graph/**",
+   "data/vault-register/cartographer.json"
   ],
   "appends": [
    "data/admin.json#board: its own rows, added at the end; never another member's row",
@@ -67,7 +80,8 @@
    "REALITY.md#section: its own section, what exists in its area",
    "BRIEF-CORRECTIONS.md#entry: a correction about its own work, at the top",
    "admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief",
-   "data/layers.json#row: the row for a data file it owns"
+   "data/layers.json#row: the row for a data file it owns",
+   "assets/briefs/: an image a brief of its own shows"
   ],
   "pages": [
    "graph/**",
@@ -81,12 +95,13 @@
  },
  "acting_for": [],
  "requires_go": [
+  "releasing anything outside its own scope, or any change to the files listed in the next line",
   "anything irreversible: sending mail, deleting a vault, handing a key to anyone but the root",
   "any change to admin/build/validate.py, admin/build/security_check.py, admin/build/release.sh, .github/workflows/, admin/security/ or .claude/ (security reviews, then the editor says go)",
   "any widening of its own policy.json (a new path, page, vault or capability)"
  ],
  "never": [
-  "push to dev or main, force-push, or rewrite pushed history",
+  "push to main, force-push, rewrite pushed history, or push to dev other than with admin/build/release.sh",
   "print, commit or publish a secret (vault keys, tokens, passphrases)",
   "clone a vault inside the repository",
   "edit a file in another member's scope.writes",
@@ -116,7 +131,17 @@
    "measure": "Changed hunks reaching a named part of the fix",
    "target": "rises (215 of 359 at v0.5.2)",
    "how": "data/fractal.json coverage"
+  },
+  {
+   "measure": "Edge types used in a graph and not defined",
+   "target": "0",
+   "how": "data/ontology.json against data/fractal.json"
+  },
+  {
+   "measure": "Terms with two meanings",
+   "target": "0",
+   "how": "its debriefs"
   }
  ],
- "note": "Unfilled. The fractal graph was built by the librarian before this map existed and is handed over here."
+ "note": "The fractal graph was built by the librarian before this map existed and is handed over here. The ontologist the editor named on 22 October is this agent."
 }

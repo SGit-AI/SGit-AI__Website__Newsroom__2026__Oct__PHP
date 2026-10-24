@@ -12,6 +12,232 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.18 · 23 October 2026new since your last visit
+
+/team/status/ at 23:30 UTC: all twenty sessions read; the scheduled curator and source watch running, the evidence vault at 260 sources waiting on a re-export, ten branches ahead of dev, and the decisions waiting on the editor
+
+No reader-facing section changed in this release.
+
+## v0.10.17 · 23 October 2026new since your last visit
+
+the scheduled curator follows the source watch into its pack-mode copy (7r83qic5): the brief records the move, the 15 + 18 captures promoted so far (evidence vault 260 sources, head 51debd0e98f0) and the pace; the curator's register row lists the pack vault key as held, never the key
+
+No reader-facing section changed in this release.
+
+## v0.10.16 · 23 October 2026new since your last visit
+
+pack mode, measured: the pack vault in use by two writers, a pull of the scheduled session's commit in 176 s and a one-file correction pushed in 77 s
+
+No reader-facing section changed in this release.
+
+## v0.10.15 · 23 October 2026new since your last visit
+
+pack mode, measured on the source watch (/admin/pack-mode/): the same vault as a normal and a pack vault, a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and the normal vault's object listing now timing out on the server; with the brief for moving a heavy vault to pack mode, and the scheduled source watch's brief
+
+No reader-facing section changed in this release.
+
+## v0.10.14 · 23 October 2026new since your last visit
+
+the risk graph, before and after: a debrief for the collaborator whose ideas became v0.10.13, every change shown as the old page against the new, side by side or as one picture with a slider that fades or wipes between them, with diffs where the change is data; articles can now carry split, slider and diff blocks
+
+No reader-facing section changed in this release.
+
+## v0.10.13 · 23 October 2026new since your last visit
+
+the risk graph as a tool (CI-002, steps 1 to 5): every edge says how it is known (read from a capture, from the fix commit, or inferred by an agent; inferred drawn dashed and hideable); the fix commit's 270 tests as nodes; explore the graph from any node, one step at a time, or climb from a file or a test to the risks, controls and stakeholders above it; and a gaps page computed at every build: no control is joined to code or a test, no code has an owner, 14 risks have no story
+
+No reader-facing section changed in this release.
+
+## v0.10.12 · 23 October 2026new since your last visit
+
+a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a half (groups, the public vault, a dashboard where every chart is a filter, journeys, what works) and what they say on day two: the front page leaks; articles can now carry screenshots, and markdown twins keep images
+
+No reader-facing section changed in this release.
+
+## v0.10.11 · 23 October 2026new since your last visit
+
+Ideas from collaborators, CI-002: the collaborator's ideas for turning the risk graph into a tool (start from one node, a basis on every link, tests and impact from code, a computed list of what is missing), each set against the graph as it is, and a brief to dev for the five steps that need no editorial call (board 166 to 170)
+
+No reader-facing section changed in this release.
+
+## v0.10.10 · 23 October 2026new since your last visit
+
+the telemetry app v0.4.0: new events checked on focus, every chart and cell a filter (click to keep, shift-click to exclude), colour by any breakdown, journeys as a Sankey and a page network, and what works page by page; dev's vault register confirmed, with the keys it holds
+
+No reader-facing section changed in this release.
+
+## v0.10.9 · 23 October 2026new since your last visit
+
+the vault key is the master key: the telemetry and subscriptions vaults keep their drain keys inside, so whoever opens the telemetry vault drains it from the browser with no passphrase (206 events drained that way); the counts updated: 215 reader page views in 154 sessions
+
+No reader-facing section changed in this release.
+
+## v0.10.8 · 23 October 2026new since your last visit
+
+the scheduled curator is running: five wakes a day in UK daytime (08:00, 10:30, 13:00, 15:30, 18:00), no key rotation, its session fingerprint, its dependence on the source watch, and its held keys on /team/vaults/ (never the keys)
+
+No reader-facing section changed in this release.
+
+## v0.10.7 · 23 October 2026new since your last visit
+
+schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8imn); an agent woken with no task due records an idle run and stops; the wake protocol every scheduled agent follows (AGENTS.md section 7)
+
+No reader-facing section changed in this release.
+
+## v0.10.6 · 23 October 2026new since your last visit
+
+the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source watch's latest run and the NCSC-NL inventory's latest change read, each shown with its time on the front page; source watch re-exported at 20afaa62129d
+
+No reader-facing section changed in this release.
+
+## v0.10.5 · 23 October 2026new since your last visit
+
+guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a branch (the editor's rule, 23 October); release only what is in your scope, which each agent's behaviour policy will set (abp@ and security@, on the board)
+
+No reader-facing section changed in this release.
+
+## v0.10.4 · 23 October 2026new since your last visit
+
+the site catches up with its two vaults (evidence vault re-exported at f3c5db0d9873: 144 sources to 227, data as of 01:20 UTC on 23 October; the NCSC-NL inventory read to 12:50 UTC on 23 October, 109 of 751 products fixed), Views with the journalist's versioned state of affairs (v0 of 22 October and v1 of 23 October, a page per version and a page for what changed between them), the story 'What changed in a day', and the Updates section with its feed and the first daily update
+
+No reader-facing section changed in this release.
+
+## v0.10.3 · 23 October 2026new since your last visit
+
+Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked in the friction log, the editor's decisions in the brief to the conductor (a 'this may be published' checkbox, no keys for feedback, one form), and the Sherpa's held key on /team/vaults/
+
+### Sections that changed
+- [The method](../versions/page-method/index.html#v4) v4
+- [The specialist summary](../versions/page-summary/index.html#v3) v3
+- [The state of affairs, now](../versions/page-views-state/index.html#v1) (new)
+
+## v0.10.2 · 23 October 2026new since your last visit
+
+the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evidence vault current from the source watch's queue; proposed, waiting for the editor's go on the schedule
+
+No reader-facing section changed in this release.
+
+## v0.10.1 · 23 October 2026new since your last visit
+
+three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they get wrong (12 captured rows, with Jeremiah Grossman's post); Perplexity reading the community spaces (job 03, its prompt in full); and the external collectors brief with ChatGPT's first run; briefs now render quotes and pictures
+
+No reader-facing section changed in this release.
+
+## v0.10.0 · 23 October 2026new since your last visit
+
+the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); which pages each reader sees; the menu per view; four mockups built from the live data: a board member's front page, a security lead's three-column front page, the agencies as answer, picture and cards, and a team console with its own menu
+
+No reader-facing section changed in this release.
+
+## v0.9.3 · 23 October 2026new since your last visit
+
+Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highlights and notes, the numbers, and the briefs it became (to the conductor, and to pki.sgit.ai); UF-003, the first power user through the whole invitation, imported with her screenshots; and the brief for three views over time, the executive first, with the knowledge gap as a view of its own
+
+No reader-facing section changed in this release.
+
+## v0.9.2 · 23 October 2026new since your last visit
+
+the vault key is the whole boundary: whoever holds a vault's key can drain its lane (the enum key and the key pair's passphrase derived from the vault key, the key pair inside the vault), and the keys each agent holds listed on /team/vaults/; the editor's first key enrolled; his feedback on /join/ answered: where this device's key stands, one wording for Feedback, up to three screenshots
+
+No reader-facing section changed in this release.
+
+## v0.9.1 · 23 October 2026new since your last visit
+
+vaults (/team/vaults/): every vault each agent made, listed by agent and by ID only, with whether its key is sealed to the editor; and guidance every agent reads (AGENTS.md section 6, CLAUDE.md): add a vault's ID when you make it, seal its key to the root with pki-agent, and when asked for a key send the sealed link and its QR code, never the key
+
+No reader-facing section changed in this release.
+
+## v0.9.0 · 23 October 2026new since your last visit
+
+The Sherpa joins (/sherpa/): the agent that walks with the reader; readers' feedback recorded and answered point by point (UF-001 from a power user, UF-002 from an agent testing the invitation link), with both interface bugs reproduced; ideas from collaborators set against what the site has today (CI-001); the friction log of what gets in readers' way, with who can fix each; and the Sherpa on the team
+
+No reader-facing section changed in this release.
+
+## v0.8.4 · 23 October 2026new since your last visit
+
+who reads this site, by group: every session a reader, the editor, a power user or team member, synthetic (agents and tests) or a crawler, declared by the browser from now on (automation by class, the role of a /join/ key or of this browser's setting) and inferred before; the groups, an hourly chart and a world map of readers on /admin/telemetry/; and a public stats vault (0cfkdcvh, read key published) with its own app, updated at every drain by admin/build/telemetry_flow.sh
+
+No reader-facing section changed in this release.
+
+## v0.8.3 · 23 October 2026new since your last visit
+
+your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) and from step 0 of If you run PHP; the telemetry lane drained on the morning of 23 October: 483 events overnight, 758 in all
+
+No reader-facing section changed in this release.
+
+## v0.8.2 · 23 October 2026new since your last visit
+
+status (/team/status/): where every agent is on the morning of 23 October, what each last did and waits for and from whom, the eleven branches waiting for dev, what ran on a schedule overnight, how fresh the site's data is against its vaults; and the brief for day two, situation awareness
+
+### Sections that changed
+- [If you run PHP](../versions/page-playbook/index.html#v3) v3
+- [Front page: at a glance](../versions/front-glance/index.html#v2) v2
+
+## v0.8.1 · 23 October 2026new since your last visit
+
+your stack, the blast radius (/stack/): describe what you run, the internet, the edge, the applications, the platforms and PHP runtimes, data, secrets and services, and see each runtime against both CVEs (versions, backports in the inventory, SAPI, exposure, settings, edge rules), the blast radius as a graph, what to do first and what on the site is about your stack, kept in your browser and your vault; and the warning and info colours restored on every page (their tokens were mapped to themselves since v0.2.4)
+
+No reader-facing section changed in this release.
+
+## v0.8.0 · 22 October 2026new since your last visit
+
+feedback from any page, signed: a Feedback button beside Ask on every page (what is wrong, unclear, missing or good, with a screenshot), signed with a key made on the reader's device; /join/ makes the key from an invitation in one tap and /join/invite/ makes invitations in the browser, as a QR code and a share button, signed by the editor's key; keys are enrolled automatically when both signatures check; and the brief for the organisation as a digital twin
+
+No reader-facing section changed in this release.
+
+## v0.7.0 · 22 October 2026new since your last visit
+
+power users, start here (/collaborators/): a generic onboarding for the people the editor nudges in his WhatsApp group and by email, the latest ask with its messages, and join and feedback forms encrypted to a private vault; runs (/team/runs/): every schedule the agents run, the quiet hours, and every recorded run with the article it should leave
+
+No reader-facing section changed in this release.
+
+## v0.6.0 · 22 October 2026new since your last visit
+
+GRC: a new section, /grc/, with fractal risk registers for php2shell (34 risks assigned to 53 stakeholders, each joined to its weakness, CVE, fix, code, stories and roles, mapped to 95 controls in 20 frameworks including GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001 and NIST), and the data protection officer added to the readers with a briefing on exposure, the GDPR 72-hour clock and what to document
+
+No reader-facing section changed in this release.
+
+## v0.5.10 · 22 October 2026new since your last visit
+
+the telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages), the telemetry vault imports it and drains its own lane from the browser (40 events drained that way, 275 from 176 sessions now), and the dashboard vault i4diy82d is superseded
+
+No reader-facing section changed in this release.
+
+## v0.5.9 · 22 October 2026new since your last visit
+
+no named organisation has said it was compromised through php2shell: claim no-confirmed-compromise reworded with its time (20:50 UTC, 22 October) and moved from confirmed to reported, the plain-English lines that said nobody had confirmed a break-in corrected, and a page of its own (/compromise/) mapping the evidence behind the statement: what was searched, 33 statements by kind with their sources or source-watch snapshots, the layers from attempts to a named compromise, a timeline, and what would change it
+
+### Briefings that changed
+JJordanBoard member or executive · v7SSamSecurity lead · v6DDrewPHP or platform engineer · v7RRowanJournalist · v6AAshSecurity researcher · v6BBlakeAnalyst or advisor · v7RRobinCISO · v7AAveryCTO · v6QQuinnCFO · v7JJamieHead of AppSec · v6LLeeDeveloper · v5RRileyMedia and communications team · v6AAlexCurious reader · v5CCaseyWebsite owner · v4TTaylorProject or programme manager · v5MMorganData protection officer · new
+## v0.5.8 · 22 October 2026new since your last visit
+
+factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction
+
+### Facts whose status changed
+- [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
+
+### Briefings that changed
+JJordanBoard member or executive · v6RRobinCISO · v6QQuinnCFO · v6RRileyMedia and communications team · v5AAlexCurious reader · v4TTaylorProject or programme manager · v4
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v6) v6
+- [Impact: offline vs compromised](../versions/page-impact/index.html#v5) v5
+- [In context: 2008 to 2026](../versions/page-context/index.html#v3) v3
+- [The specialist summary](../versions/page-summary/index.html#v2) v2
+- [Front page: right now](../versions/front-now/index.html#v2) v2
+- [Front page: the core facts](../versions/front-facts/index.html#v2) v2
+
+## v0.5.7 · 22 October 2026new since your last visit
+
+the telemetry dashboard: a new private vault (i4diy82d) holding a vault app over the telemetry vault, which is linked inside it read-only (vault-in-vault), so the app always draws the latest drain; listed on /vaults/
+
+No reader-facing section changed in this release.
+
+## v0.5.6 · 22 October 2026new since your last visit
+
+who reads this site: the telemetry lane drained again, 235 anonymous events from 161 sessions on 22 October; the subscriptions lane drained, nothing waiting
+
+No reader-facing section changed in this release.
+
 ## v0.5.5 · 22 October 2026new since your last visit
 
 two more branches carried in: security@php.newsroom's first pass (the security requirements, security_check.py in the gate and in release.sh, hardened build, workflows and drains, the rules of engagement for keys, the root pinned in CLAUDE.md; /admin/keys/ waits for data/keys.json) and the fact-check desk's run 1 (all 70 claims graded against the vault, 10 contradictions, /factcheck/)
@@ -265,7 +491,7 @@ the code read from php-src, php2shell in context against ten earlier flaws, an i
 - [No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosur](../facts/imperva-none/index.html) reported
 - [No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no pub](../facts/huntress-none/index.html) reported
 - [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../facts/watchtowr-itw/index.html) unverified
-- [No named organisation has confirmed a compromise through php2shell](../facts/no-confirmed-compromise/index.html) confirmed
+- [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
 - [None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechani](../facts/pocs-wrong/index.html) reported
 - [Triggering the bug is much easier than turning it into code execution; the CVSS vector say](../facts/ac-high/index.html) confirmed
 - [The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 U](../facts/fix-authored/index.html) confirmed
@@ -365,4 +591,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

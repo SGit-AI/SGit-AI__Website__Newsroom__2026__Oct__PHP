@@ -25,7 +25,7 @@ Fastly's post says nearly these words; it is one vendor's position (a reading), 
 | [openwall-oss-security-109619-thread](../../sources/openwall-oss-security-109619-thread/index.html) | absent | *While not yet fully confirmed, the Fediverse is reporting that the fix to at least PHP 8.5.12 may be incomplete:* | 6a76141ae5a06584 |
 | [github-php-src-fix-commit-3584a98bd](../../sources/github-php-src-fix-commit-3584a98bd/index.html) | partial | *- Replace bailout on OOM with UnwindExit* | 26bed812bcc7c89e |
 
-Open tickets: [Finding-54](../../factcheck/index.html#Finding-54), [Finding-55](../../factcheck/index.html#Finding-55).
+Open tickets: [Contradiction-11](../../factcheck/index.html#Contradiction-11), [Evidence-7](../../factcheck/index.html#Evidence-7), [Finding-54](../../factcheck/index.html#Finding-54), [Finding-55](../../factcheck/index.html#Finding-55).
 
 Graded in Run-1, resting on captures up to 2026-10-22 11:19 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -42,7 +42,7 @@ Published: when the source says it was published. Saved: the first capture into 
 ## Where this fact appears
 
 In the briefings for:
-CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOJJamieHead of AppSecLLeeDeveloper
+CCaseyWebsite ownerSSamSecurity leadDDrewPHP or platform engineerAAshSecurity researcherRRobinCISOAAveryCTOMMorganData protection officerJJamieHead of AppSecLLeeDeveloper
 And on [every claim](../../claims/index.html#more-paths).
 
 ## Every version of this fact
@@ -57,4 +57,4 @@ Sources: fastly-blog-php2shell, openwall-oss-security-109619-thread
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/more-paths/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/more-paths/index.html

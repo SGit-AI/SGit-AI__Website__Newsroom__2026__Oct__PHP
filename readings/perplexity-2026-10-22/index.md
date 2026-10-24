@@ -44,7 +44,7 @@ https://www.bbc.com/news/articles/cmly0lg3w5x2o
 
 The W3Techs search excerpt read:
 
-> PHP is used by 69.3% of all the websites whose server-side programming language we know.
+PHP is used by 69.3% of all the websites whose server-side programming language we know.
 
 Source:
 
@@ -76,7 +76,7 @@ https://www.wiz.io/blog/php2shell-php-rce
 
 #### More defensible wording
 
-> Critical flaws affect widely deployed versions of PHP, a language used by roughly 70% of websites whose server-side technology can be identified. The proportion of websites currently exposed has not been established by the evidence gathered here.
+Critical flaws affect widely deployed versions of PHP, a language used by roughly 70% of websites whose server-side technology can be identified. The proportion of websites currently exposed has not been established by the evidence gathered here.
 
 ### 3. Name and identifiers
 
@@ -188,4 +188,4 @@ The evidence collected supports a widely reported, potentially serious PHP core 
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/readings/perplexity-2026-10-22/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/readings/perplexity-2026-10-22/index.html

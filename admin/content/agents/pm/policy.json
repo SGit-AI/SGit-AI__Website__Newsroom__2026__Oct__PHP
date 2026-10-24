@@ -7,9 +7,10 @@
  "group": "humans",
  "title": "Project manager",
  "status": "draft",
- "drafted_by": "librarian@php.newsroom",
+ "drafted_by": "librarian@php.newsroom (22 and 24 October 2026), for abp@newsroom.sgit to take over (board 157)",
+ "kept_by": "abp@newsroom.sgit",
  "agreed_by": null,
- "as_of": "2026-10-22",
+ "as_of": "2026-10-24",
  "member_status": "active",
  "grant": null,
  "mandate": {
@@ -22,7 +23,7 @@
    "the priorities"
   ],
   "writes": [
-   "admin/content/agents/pm/**"
+   "admin/content/agents/pm/ROLE.md"
   ],
   "appends": [],
   "pages": [],

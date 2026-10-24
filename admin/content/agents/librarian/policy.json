@@ -7,9 +7,10 @@
  "group": "writing",
  "title": "The catalogue",
  "status": "draft",
- "drafted_by": "librarian@php.newsroom",
+ "drafted_by": "librarian@php.newsroom (22 and 24 October 2026), for abp@newsroom.sgit to take over (board 157)",
+ "kept_by": "abp@newsroom.sgit",
  "agreed_by": null,
- "as_of": "2026-10-22",
+ "as_of": "2026-10-24",
  "member_status": "active",
  "grant": "admin/security/abp/GRANT.md",
  "mandate": {
@@ -36,11 +37,15 @@
    },
    {
     "capability": "write.repository.tenant",
-    "within": "its own branch only (claude/* or <role>/*); never dev, never main, never a force-push"
+    "within": "its own branch; dev only through admin/build/release.sh, for its own finished work inside its scope (the editor's rule of 23 October 2026); never main, never a force-push"
    },
    {
     "capability": "authenticate-as.credential.tenant",
     "within": "the GitHub token for this repository; the SG/Send token only for the vaults in scope.vaults"
+   },
+   {
+    "capability": "create.record.world",
+    "within": "only its own finished work inside its scope, only what passes the gate, only through admin/build/release.sh"
    }
   ],
   "not_wanted": [
@@ -57,12 +62,15 @@
    "who owns what"
   ],
   "writes": [
-   "admin/content/agents/librarian/**",
+   "admin/content/agents/librarian/ROLE.md",
+   "admin/content/agents/librarian/status.json",
+   "admin/content/agents/librarian/debriefs/**",
    "data/questions.json",
    "data/layers.json",
    "admin/build/agents.py",
    "admin/content/agents/README.md",
-   "admin/content/agents/TEMPLATE__debrief.md"
+   "admin/content/agents/TEMPLATE__debrief.md",
+   "data/vault-register/librarian.json"
   ],
   "appends": [
    "data/admin.json#board: its own rows, added at the end; never another member's row",
@@ -89,12 +97,13 @@
  },
  "acting_for": [],
  "requires_go": [
+  "releasing anything outside its own scope, or any change to the files listed in the next line",
   "anything irreversible: sending mail, deleting a vault, handing a key to anyone but the root",
   "any change to admin/build/validate.py, admin/build/security_check.py, admin/build/release.sh, .github/workflows/, admin/security/ or .claude/ (security reviews, then the editor says go)",
   "any widening of its own policy.json (a new path, page, vault or capability)"
  ],
  "never": [
-  "push to dev or main, force-push, or rewrite pushed history",
+  "push to main, force-push, rewrite pushed history, or push to dev other than with admin/build/release.sh",
   "print, commit or publish a secret (vault keys, tokens, passphrases)",
   "clone a vault inside the repository",
   "edit a file in another member's scope.writes",

@@ -29,7 +29,10 @@ Synthetic readersadmin/synthetic/index.html
 
 ## Open tasks
 
-None.
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 104 | Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run:  | open |  |
+| 129 | Confirm data/vault-register/synthetic.json (seeded by the conductor) and seal the six readers' vault keys to the root | open |  |
 
 ## What they have done
 - The first run of six readers through the live site, with verdicts, scores and requested changes (v0.4.6).
@@ -43,4 +46,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/synthetic/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/synthetic/index.html

@@ -24,7 +24,7 @@ Comparators chosen by the editor's memory and the KEV catalog, not by any rankin
 | **CVE-2022-22965** Spring4Shell | Spring Framework on JDK 9+ | 2022-04-01 | 2022-04-04 | Unknown | Leaked before the patch; named after Log4Shell; real exposure needed a specific deployment shape (WAR on Tomcat). | The precedent for a leak forcing the release, and for a '-Shell' name outrunning the actual exposure. | [CVE record](../sources/cve-cve-2022-22965/index.html) |
 | **CVE-2023-34362** MOVEit Transfer | Progress MOVEit | 2023-06-02 | 2023-06-02 | Known | Exploited before disclosure by one group (Cl0p); thousands of organisations' data taken; same-day KEV. | The precedent for exploitation preceding disclosure, which Amazon's 17 October honeypot hit suggests here. | [CVE record](../sources/cve-cve-2023-34362/index.html) |
 | **CVE-2024-4577** PHP-CGI argument injection (Windows) | PHP on Windows in CGI mode | 2024-06-09 | 2024-06-12 | Known | Exploits in the wild one day after disclosure (Akamai); KEV three days after; ransomware use recorded. | The most recent PHP core RCE before this one: in KEV within three days. php2shell, broader in scope, is not in KEV after one day. | [CVE record](../sources/cve-cve-2024-4577/index.html) |
-| **CVE-2026-109618 and CVE-2026-109619** php2shell | PHP engine (Zend allocator, request lifecycle) | 2026-10-21 | not in KEV as of 2026-10-22T08:15Z | … | Leaked two days early; patched a day early; five agencies say take systems offline or isolate; governments and councils pulled sites; millions of attempts seen at one CDN; no confirmed compromise of a named system in any captured source. | The row this site exists for. What it shares with Log4Shell is shape; what it has not yet shown is Log4Shell's exploitation. | [CISA](../sources/cisa-kev-json/index.html) |
+| **CVE-2026-109618 and CVE-2026-109619** php2shell | PHP engine (Zend allocator, request lifecycle) | 2026-10-21 | not in KEV as of 2026-10-22T08:15Z | … | Leaked two days early; patched a day early; five agencies say take systems offline or isolate; governments and councils pulled sites; millions of attempts seen at one CDN; no named organisation saying it was compromised through php2shell in any captured source as of 20:50 UTC on 22 October. | The row this site exists for. What it shares with Log4Shell is shape; what it has not yet shown is Log4Shell's exploitation. | [CISA](../sources/cisa-kev-json/index.html) |
 
 ## The catalog itself, counted
 
@@ -64,4 +64,4 @@ The signals that would move php2shell into the catalog are on [the exploitation 
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/context/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/context/index.html

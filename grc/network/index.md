@@ -1,0 +1,74 @@
+# From the network: sgit risk models, vaults and standards graphs mapped to php2shell
+
+> Research, external: material from outside, published as received and credited; not written here.
+
+The risk models, fractal registers, semantic graphs and standards vaults across the sgit network, and which php2shell risks and frameworks each bears on.
+
+[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [Explore](../../grc/explore/index.html) · [Gaps](../../grc/gaps/index.html) · [From the network](../../grc/network/index.html)
+
+# From the network: what the sgit sites already hold on risk
+
+This desk did not invent its model. The sgit network has been writing about risk as a graph for months: fractal registers, acceptance by a named holder for an interval, typed edges with named inverses, grants against mandates. Its vaults already hold several of the standards as graphs. Below is what the desk surveyed, what each holds by its publisher's own description, and which php2shell risks and frameworks it bears on. Much of it says of itself that it is designed rather than built; the desk cites it as a model, not as evidence about the flaws.
+
+## The risk model
+
+Where the vocabulary of this section comes from.
+
+| Material | Date | What it holds, as its publisher describes it | Bears on | Frameworks |
+|---|---|---|---|---|
+| [risks.sgit.ai: the concepts](https://risks.sgit.ai/) | 2026 | 43 concepts: acceptance is underwriting, not prediction; there is no deny button; the interval is the decision; unaccepted is rated critical; the grounding ladder from reality to fact to vulnerability to risk; fractal registers where only the role's own register is stored and the rest are queries; confirmed, validated and accepted as acts by three roles. | *the model* |  |
+| [Every risk is already accepted. The only question is by whom, and for how long.](https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html) | 2026-09-24 | A risk exists as soon as the exposure does; every risk has a holder, every holder a boss, every chain ends at the board; nobody accepts on anyone else's behalf; what is assigned to a role is kept apart from what arrives through it. | [R04 Services lost to precautionary shutdowns](../../grc/risks/r04/index.html), [R06 A compromise becomes a reportable breach](../../grc/risks/r06/index.html) | [EU AI Act](../frameworks/euaiact/index.html), [NIS2](../frameworks/nis2/index.html) |
+| [Fractal Semantic Graphs](https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html) | 2026-09-20 | Five rules: every edge is a verb with a named inverse, no generic 'relates to', properties carry data never meaning, supersede never delete, render the answer to a question. The ladder from law and standard through fact, risk, owner and acceptance down to the compute instance. | *the model* |  |
+| [graphs.sgit.ai: the edge set and fractal risk registers](https://graphs.sgit.ai/v1/grammar/edge-set.html) | 2026 | The established edges with their inverses (gives_rise_to, backed_by, owned_by, protected_by, exposes, accepted_by and the rest) and the rule that wherever a stakeholder accepts a risk there is a register. | *the model* |  |
+| [Code review as a fractal semantic graph](https://newsroom.sgit.ai/articles/code-review-as-a-fractal-semantic-graph.html) | 2026-10-03 | Code in layers from user stories down to the syntax tree; a bug is a story that stopped holding; blast radius is the climb from changed methods to the stories they reach. The model behind this site's code review graph, which this section's paths run into. | [R01 Remote code execution on internet-facing PHP servers](../../grc/risks/r01/index.html), [R01-4 The fix is incomplete, or a third flaw follows](../../grc/risks/r01-4/index.html) | [NIST SSDF](../frameworks/ssdf/index.html) |
+| [Risk governance for a newsroom](https://newsroom.sgit.ai/documents/risk-governance-newsroom.html) | 2026 | The publication owns evidence and fact, the customer owns reality, twin and measure, and a vulnerability exists only where the two meet. | [R07 Decisions made on numbers that measure something else](../../grc/risks/r07/index.html), [R10-3 A status word stronger than its evidence](../../grc/risks/r10-3/index.html) |  |
+
+## Risk registers and acceptance, as vaults
+
+Working examples of a register as a graph, with risks assigned to several roles.
+
+| Material | Date | What it holds, as its publisher describes it | Bears on | Frameworks |
+|---|---|---|---|---|
+| [Risk Graph Explorer](https://sgit.ai/demos/vaults/risk-graph-explorer/index.md)vault `3simlnqe` | 2026-08-17 | Facts, risks, roles and the provisions they touch (EU AI Act, GDPR, NIS2, PCI DSS) as one graph; one risk assigned to several roles; roles that report to roles up to the board; an acceptance policy where a role may accept only what is assigned to it. | [R06 A compromise becomes a reportable breach](../../grc/risks/r06/index.html), [R06-1 Personal data taken from a compromised PHP application](../../grc/risks/r06-1/index.html), [R06-2 Essential and financial entities miss their reporting clocks](../../grc/risks/r06-2/index.html) | [GDPR](../frameworks/gdpr/index.html), [NIS2](../frameworks/nis2/index.html), [PCI DSS](../frameworks/pcidss/index.html), [EU AI Act](../frameworks/euaiact/index.html) |
+| [Agentic Browser Isolation](https://sgit.ai/demos/vaults/agentic-browser-isolation/index.md)vault `0610gsp9` | 2026-08-17 | A living risk graph per stakeholder, at seven altitudes: the worked example of a fractal register. | [R10 This newsroom's own agents are steered, leak or mislead](../../grc/risks/r10/index.html), [R10-1 Prompt injection through captured material](../../grc/risks/r10-1/index.html) | [OWASP Top 10s](../frameworks/owasp/index.html) |
+| [Risk Acceptance Office](https://sgit.ai/demos/vaults/risk-acceptance/index.md)vault `odn10gfp` | 2026-09-24 | One risk replayed: established on facts, accepted for an interval, escalated, funded and ended on facts, with a hash-chained decision record. | [R01-3 Versions the PHP project no longer fixes stay vulnerable](../../grc/risks/r01-3/index.html) | [ISO/IEC 27001](../frameworks/iso27001/index.html) |
+| [Risk Mandate](https://sgit.ai/demos/vaults/risk-mandate/index.md)vault `4zf6pf2z` | 2026-08-17 | A working software project delivered as a vault. | *the model* |  |
+| [Ten questions, one graph (the Thistlewood twin)](https://newsroom.sgit.ai/articles/ten-questions-one-graph.html) | 2026-10-19 | Ten CISO questions answered on the graph of an invented retailer: board risks with risks beneath them, accepted until a date, joined to processes, systems, suppliers, controls, incidents and people ranked by blast radius. | [R01-6 Products that embed PHP stay vulnerable while their suppliers investigate](../../grc/risks/r01-6/index.html), [R09 Not knowing where PHP runs](../../grc/risks/r09/index.html) | [NIST CSF 2.0](../frameworks/nistcsf/index.html) |
+
+## Standards already held as graphs
+
+The frameworks this section maps to that the network has already turned into graphs.
+
+| Material | Date | What it holds, as its publisher describes it | Bears on | Frameworks |
+|---|---|---|---|---|
+| [Regulation Graph: the EU AI Act](https://sgit.ai/demos/vaults/regulation-graph/index.md)vault `73heuprz` | 2026-08-20 | The EU AI Act parsed from the official Formex XML, article by article: 1,523 nodes and 1,944 edges. | [R08 Frontier AI finds critical flaws faster than maintainers can fix them](../../grc/risks/r08/index.html), [R10 This newsroom's own agents are steered, leak or mislead](../../grc/risks/r10/index.html) | [EU AI Act](../frameworks/euaiact/index.html) |
+| [Standards Atlas: GDPR](https://sgit.ai/demos/vaults/standards-atlas-gdpr/index.md)vault `4zv4bvmu` | 2026-08-25 | GDPR as a semantic graph: articles, recitals, court rulings and regulators' guidance. | [R06 A compromise becomes a reportable breach](../../grc/risks/r06/index.html), [R06-1 Personal data taken from a compromised PHP application](../../grc/risks/r06-1/index.html) | [GDPR](../frameworks/gdpr/index.html) |
+| [PCI DSS Graph](https://sgit.ai/demos/vaults/pci-dss-graph/index.md)vault `7xyzg5zs` | 2026-09-29 | PCI DSS v4.0.1 as a graph of goals, requirements, sections and identifiers, the licensed text left with its holder. | [R01-1 Default Apache mod_php installations exploited before application code runs](../../grc/risks/r01-1/index.html), [R01-5 Popular applications compromised before authentication](../../grc/risks/r01-5/index.html), [R05 A web application firewall taken for a patch](../../grc/risks/r05/index.html) | [PCI DSS](../frameworks/pcidss/index.html) |
+| [AI Baseline Control Framework as a graph](https://sgit.ai/demos/vaults/aibcf-graph/index.md)vault `lop5iqzw` | 2026-10-07 | Twenty controls cited to clauses of the EU AI Act, ISO/IEC 42001 and the NIST AI RMF. | [R08 Frontier AI finds critical flaws faster than maintainers can fix them](../../grc/risks/r08/index.html), [R10 This newsroom's own agents are steered, leak or mislead](../../grc/risks/r10/index.html) | [EU AI Act](../frameworks/euaiact/index.html), [ISO/IEC 42001](../frameworks/iso42001/index.html), [NIST AI RMF](../frameworks/nistairmf/index.html) |
+| [The AI governance stack, as a graph](https://sgit.ai/demos/vaults/ai-governance-graph/index.md)vault `1wp3xpf4` | 2026-10-09 | A ten-layer AI governance stack (law, standards, inventory, testing, accountability, people and more), with a governance gap modelled as a missing edge. | [R08 Frontier AI finds critical flaws faster than maintainers can fix them](../../grc/risks/r08/index.html), [R10 This newsroom's own agents are steered, leak or mislead](../../grc/risks/r10/index.html) | [ISO/IEC 42001](../frameworks/iso42001/index.html), [NIST AI RMF](../frameworks/nistairmf/index.html), [EU AI Act](../frameworks/euaiact/index.html) |
+| [AIUC-1 conformance layer](https://sgit.ai/demos/vaults/aiuc-1-conformance/index.md)vault `2wzct4k7` | 2026-09-05 | The AIUC-1 standard as a graph, with its crosswalks to the NIST AI RMF, ISO 42001, the EU AI Act and the OWASP lists, and a conformance layer that computes insurability. | [R10 This newsroom's own agents are steered, leak or mislead](../../grc/risks/r10/index.html) | [NIST AI RMF](../frameworks/nistairmf/index.html), [ISO/IEC 42001](../frameworks/iso42001/index.html), [EU AI Act](../frameworks/euaiact/index.html), [OWASP Top 10s](../frameworks/owasp/index.html) |
+| [Threat-sized security](https://sgit.ai/demos/vaults/threat-sized-security/index.md)vault `zwlqqvkm` | 2026-10-08 | A six-tier ladder of attackers built on NIST SP 800-30, the NCSC and MITRE ATT&CK. | [R03 Exploitation outpaces patching](../../grc/risks/r03/index.html), [R08 Frontier AI finds critical flaws faster than maintainers can fix them](../../grc/risks/r08/index.html) | [MITRE ATT&CK](../frameworks/attack/index.html), [NIST SP 800-53](../frameworks/nist80053/index.html) |
+| [DSIT AI Risk Toolkit](https://sgit.ai/demos/vaults/dsit-ai-risk-toolkit/index.md)vault `0q4sfr57` | 2026-09-20 | An AI decision traced back to UK government guidance. | [R10 This newsroom's own agents are steered, leak or mislead](../../grc/risks/r10/index.html) |  |
+| [riskmandate.ai: the OWASP lists as a graph](https://riskmandate.ai/owasp-graph.html) | 2026 | The OWASP Top 10s (web, LLM, agentic, API, CI/CD and others) as one graph of item ids and titles, bridged to the risk model. | [R01-5 Popular applications compromised before authentication](../../grc/risks/r01-5/index.html), [R10-1 Prompt injection through captured material](../../grc/risks/r10-1/index.html) | [OWASP Top 10s](../frameworks/owasp/index.html) |
+
+## Agents under a mandate
+
+The vocabulary this newsroom's own security pass uses for its agents, and the risks it gives rise to here.
+
+| Material | Date | What it holds, as its publisher describes it | Bears on | Frameworks |
+|---|---|---|---|---|
+| [abp.sgit.ai: the Agent Behaviour Policy](https://abp.sgit.ai/model/index.md) | 2026 | Mandate, grant and delta: what an agent is authorised to do, what it can do, and the difference, in a verb.object.reach grammar with barriers and undo classes. Carries no score and no rating by design. This newsroom's own grant, mandate and delta are written in it. | [R10 This newsroom's own agents are steered, leak or mislead](../../grc/risks/r10/index.html), [R10-2 A vault key or token published](../../grc/risks/r10-2/index.html) | [OWASP Top 10s](../frameworks/owasp/index.html), [NIST AI RMF](../frameworks/nistairmf/index.html) |
+| [riskmandate.ai: the grant gap](https://riskmandate.ai/grant-gap.html) | 2026 | A grant is what a credential technically permits, a mandate is what the holder is authorised and expected to do; the gap is excess authority. A mandate needs an issuer, a subject, a scope, an interval and a revocation path. | [R10 This newsroom's own agents are steered, leak or mislead](../../grc/risks/r10/index.html) |  |
+| [Licence to Operate](https://sgit.ai/demos/vaults/licence-to-operate/index.md)vault `posrhzp3` | 2026-09-04 | An insurance policy for an agent, simulated: grant, mandate, and the delta nothing covers. | [R10 This newsroom's own agents are steered, leak or mislead](../../grc/risks/r10/index.html) |  |
+| [This newsroom's own grant, mandate and delta](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP/tree/dev/admin/security/abp) | 2026-10-22 | Measured by security@php.newsroom: sixteen capabilities in the grant, eight wanted, nine with no boundary in the way. The source of weakness w-agent-reach. | [R10 This newsroom's own agents are steered, leak or mislead](../../grc/risks/r10/index.html), [R10-2 A vault key or token published](../../grc/risks/r10-2/index.html) | [OWASP Top 10s](../frameworks/owasp/index.html) |
+
+## What the network does not have yet
+- No graph of ISO/IEC 27001, NIST CSF 2.0, NIST SP 800-53, DORA, SOC 2 or the CIS Controls exists in the network yet: this section maps to them from the published texts directly.
+- NIS2 and the Cyber Resilience Act appear only in passing; the CRA's reporting duty, which applies to php2shell, has no graph.
+- The network's registers are worked examples on invented organisations; this is the first applied to a live incident.
+
+Third-party and sibling material, described in its publisher's own terms and linked, not reproduced. Vaults are named by id; each opens from its publisher's page with the read key published there. Surveyed 22 October 2026, by grc@php.newsroom, from the published pages and, for some vaults, a read-only clone made outside this repository with the published read key.
+
+
+---
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/network/index.html

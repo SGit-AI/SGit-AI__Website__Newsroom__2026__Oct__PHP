@@ -1,13 +1,13 @@
 {
-  "total_nodes": 144,
-  "last_updated": 1792694673418,
+  "total_nodes": 152,
+  "last_updated": 1792702578975,
   "type_counts": [
     {
-      "count": 124,
+      "count": 125,
       "node_type": "finding"
     },
     {
-      "count": 10,
+      "count": 11,
       "node_type": "contradiction"
     },
     {
@@ -15,11 +15,11 @@
       "node_type": "gap"
     },
     {
-      "count": 6,
+      "count": 11,
       "node_type": "evidence"
     },
     {
-      "count": 1,
+      "count": 2,
       "node_type": "run"
     }
   ]
