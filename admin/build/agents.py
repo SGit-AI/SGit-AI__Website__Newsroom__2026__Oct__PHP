@@ -85,9 +85,13 @@ def pattern_overlap(a, b, universe):
             return [x]
     return []
 
-def overlaps(policies=None):
+def overlaps(policies=None, pages=None):
+    """Pairs of members claiming the same file or page. pages=None checks against the pages the last build wrote
+    (admin/build/outputs.txt), for the gate and the CLI; the build passes pages=[] so its own output never depends on
+    the previous run's list (then two page patterns overlap only if one names a page the other matches)."""
     P = policies or load_policies()
-    files, pages = source_files(), sorted(f for f in outputs() if f.endswith('.html'))
+    files = source_files()
+    pages = sorted(f for f in outputs() if f.endswith('.html')) if pages is None else pages
     found = []
     ids = sorted(P)
     for i, a in enumerate(ids):

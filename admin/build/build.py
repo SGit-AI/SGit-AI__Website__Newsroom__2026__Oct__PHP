@@ -5647,7 +5647,7 @@ def build_members():
     P = AGT.load_policies()
     if not P:
         return
-    ov, un, da = AGT.overlaps(P), AGT.unowned(P), AGT.dangling_appends(P)
+    ov, un, da = AGT.overlaps(P, pages=[]), AGT.unowned(P), AGT.dangling_appends(P)  # pages=[]: never read the last build's output list
     groups = OrderedDict([('humans', 'The humans'), ('coordination', 'Coordination'), ('site', 'The site'), ('evidence', 'Evidence'), ('writing', 'Writing and analysis'), ('testing', 'Testing')])
     rows, agg = [], []
     for a, p in P.items():
@@ -5705,7 +5705,7 @@ def build_members():
     body = f"""
 <h1>Every member: who owns what</h1>
 <p class="lead">{len(P)} members, {sum(1 for x in agg if x["kind"] == "agent")} of them agents. Each owns a set of files nobody else writes, a set of pages, and the vaults it may hold, in <code>admin/content/agents/&lt;id&gt;/policy.json</code>; shared files have one owner and everyone else only appends. {sum(1 for p in P.values() if p["status"] == "agreed")} of {len(P)} policies are agreed by the editor; the rest are drafts. A request outside a member's scope is refused with the owner named, and counted.</p>
-{section("overlaps", "Overlaps", ovt + f'<p>Checked by <code>admin/build/agents.py overlaps</code> against every source file in the repository and every page the build writes. Source files nobody owns: <b>{len(un)}</b>{(": " + ", ".join("<code>" + E(u) + "</code>" for u in un[:20])) if un else ""}. Appends to a file nobody owns: <b>{len(da)}</b>.</p>')}
+{section("overlaps", "Overlaps", ovt + f'<p>Checked against every tracked source file here, and against every page the build writes by the gate (check 4h) and <code>admin/build/agents.py overlaps</code>. Source files nobody owns: <b>{len(un)}</b>{(": " + ", ".join("<code>" + E(u) + "</code>" for u in un[:20])) if un else ""}. Appends to a file nobody owns: <b>{len(da)}</b>.</p>')}
 {section("members", "The members", table(['Member', 'Group', 'Status', 'Writes (exclusive)', 'Pages', 'Mandate', 'Policy'], trs, 'claims'))}
 {section("how", "How it works", render_md_file("admin/content/agents/README.md"))}
 """
