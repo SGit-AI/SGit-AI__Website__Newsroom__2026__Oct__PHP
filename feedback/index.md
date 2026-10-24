@@ -24,7 +24,7 @@ The briefsto the conductor, and to other teams
 
 Everything the power users and collaborators have told us about this site, each piece kept whole, with the Sherpa's comment beside every part of it, what was reproduced, and the brief it turned into. Kept by [the Sherpa](../sherpa/index.html). People are not named; tests run by agents are marked as tests.
 
-4pieces of feedback35points answered23reproduced by the Sherpa32frictions open1power users joined5signed messages received2conversations of ideas
+4pieces of feedback35points answered23reproduced by the Sherpa33frictions open1power users joined5signed messages received2conversations of ideas
 
 Counts as of 23 October 2026: one power user has joined with a key and sent five signed messages from the site, counted from the collaborators vault's first drain; the messages themselves stay in the vault until the editor says they may be published (their substance is in UF-003, the same power user's published report).
 
@@ -44,4 +44,4 @@ Each piece of feedback becomes frictions in [the friction log](../sherpa/index.h
 
 
 ---
-site v0.14.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/feedback/index.html
+site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/feedback/index.html

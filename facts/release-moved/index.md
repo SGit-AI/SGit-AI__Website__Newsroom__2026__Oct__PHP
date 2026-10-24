@@ -64,4 +64,4 @@ Sources: php-foundation-blog-security-release, openwall-oss-security-2026-10-20-
 
 
 ---
-site v0.14.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/release-moved/index.html
+site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/release-moved/index.html

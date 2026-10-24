@@ -1,6 +1,15 @@
 {
- "current": "0.14.4",
+ "current": "0.14.5",
  "versions": [
+  {
+   "version": "0.14.5",
+   "date": "2026-10-24",
+   "title": "The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents, with screenshots; and a friction on /team/vaults/",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.4",
    "date": "2026-10-24",

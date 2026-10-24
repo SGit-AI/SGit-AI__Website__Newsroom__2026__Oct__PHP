@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.5 · 24 October 2026new since your last visit
+
+The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents, with screenshots; and a friction on /team/vaults/
+
+No reader-facing section changed in this release.
+
 ## v0.14.4 · 24 October 2026new since your last visit
 
 factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-compromise claim, the Dutch offline row, the front page's fix-complete line), K-004 and K-009 explained, so the correction requests to Wiz, the BBC and CNN no longer wait on the desk; Finding-32 stays open (Cloudflare does link W3Techs); the desk's schedule card, and the brief for its investigations
@@ -749,4 +755,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
