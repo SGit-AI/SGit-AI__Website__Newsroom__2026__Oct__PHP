@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.16 · 24 October 2026new since your last visit
+
+Conductor full pass 11:15 London: agents-status, schedules checked against runs, Sherpa note, run record
+
+No reader-facing section changed in this release.
+
 ## v0.14.15 · 24 October 2026new since your last visit
 
 CI-003 corrected against the redesign that shipped in v0.14.0: the collaborator's design preference is what was built; his first step for newcomers made precise (the three ways to read are by role and twelve phone screens down the front page); a correction entry for the Sherpa's brief
@@ -815,4 +821,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.15 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.16 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

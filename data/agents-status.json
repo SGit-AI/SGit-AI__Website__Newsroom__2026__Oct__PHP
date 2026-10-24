@@ -1,28 +1,28 @@
 {
  "about": "Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.",
  "kept_by": "conductor",
- "as_of": "2026-10-24T08:20Z",
- "live_version": "v0.14.6",
+ "as_of": "2026-10-24T10:25Z",
+ "live_version": "v0.14.15",
  "agents": [
   {
    "agent": "curator@php.newsroom (scheduled)",
    "member": "newsroom-lead",
    "state": "waiting",
-   "last": "2026-10-23T23:32Z",
-   "did": "Promoted 68 sources in all (the evidence vault is past 260 now); 128 queue rows left, about 18 a wake. Next wakes 08:00 and 10:30 London.",
-   "waiting": "A go to re-export the evidence vault into the site and release it: the site still shows 227 sources.",
+   "last": "2026-10-24T09:51Z",
+   "did": "Promoted 15 more rows: the evidence vault holds 328 sources. Woken at 08:00 and 10:30 London; no run record for either. Next wake 13:00.",
+   "waiting": "A go to re-export the evidence vault into the site (the front page \"Right now\" is about 16 hours stale; the site shows 227 sources).",
    "on": "editor",
-   "cost": 5.96
+   "cost": 10
   },
   {
    "agent": "researcher@php.newsroom (scheduled)",
    "member": "researcher",
-   "state": "working",
-   "last": "2026-10-24T06:09Z",
-   "did": "Stopped a duplicate pass (309); a pass started 06:08 UTC is running, its report due about 07:40 London. Two scheduled tasks wake this session (07:00/12:00/17:00 and 09:30/14:30) and the card lists five times.",
-   "waiting": "The pass to finish and push to 7r83qic5; the three-phase plan on its branch to be released.",
+   "state": "waiting",
+   "last": "2026-10-24T09:46Z",
+   "did": "The 09:30 pass is pushed (208 MB) with 25 pages queued; the 07:00 pass was lost. No run record for any of today's wakes.",
+   "waiting": "Run records; nothing from the editor.",
    "on": "",
-   "cost": 5.84
+   "cost": 7
   },
   {
    "agent": "curator@php.newsroom (first session)",
@@ -57,12 +57,12 @@
   {
    "agent": "sherpa@php.newsroom",
    "member": "sherpa",
-   "state": "waiting",
-   "last": "2026-10-24T01:53Z",
-   "did": "Released v0.14.5 with the inbox lane and a debrief; its schedule card is active: every two hours at :45, 07:45 to 21:45 London.",
-   "waiting": "The conductor's lane key (5iwos28w) handed to it sealed (board 180); the two public-form messages and the device enrolment still need the editor to confirm.",
+   "state": "working",
+   "last": "2026-10-24T10:16Z",
+   "did": "Read the v0.14.0 design, logged friction F035, releasing a correction now. Its 09:45 wake left no run record.",
+   "waiting": "The conductor's lane key (5iwos28w) handed to it sealed; the two public-form messages and the device enrolment.",
    "on": "editor",
-   "cost": 40.95
+   "cost": 54
   },
   {
    "agent": "journalist and historian",
@@ -78,31 +78,31 @@
    "agent": "designer@php.newsroom",
    "member": "story-site",
    "state": "waiting",
-   "last": "2026-10-24T01:46Z",
-   "did": "The redesign is live with a sidebar menu and dials.",
-   "waiting": "The designer's agent key enrolled (the editor); the picks on board 138.",
+   "last": "2026-10-24T10:06Z",
+   "did": "Explained vaults dcsmxese (coverage) and w5ie1crc (test) to the editor.",
+   "waiting": "Its agent key to be enrolled; the picks on board 138.",
    "on": "editor",
-   "cost": 47.7
+   "cost": 49
   },
   {
    "agent": "pulse@newsroom",
    "member": "",
-   "state": "working",
-   "last": "2026-10-24T06:13Z",
-   "did": "A pass is running (woken 06:44 London by its scheduled task, twice a day: 06:44 and 14:44). No card in data/schedule/ yet.",
-   "waiting": "A card (data/schedule/pulse.json) and run records.",
-   "on": "pulse",
-   "cost": 16.59
+   "state": "waiting",
+   "last": "2026-10-24T07:04Z",
+   "did": "Vault synced after the 06:44 pass; 2 items await a go. Next pass 14:44 London. No card.",
+   "waiting": "A go on 2 items; a card (data/schedule/pulse.json).",
+   "on": "editor",
+   "cost": 18
   },
   {
    "agent": "desk@php.newsroom",
    "member": "",
    "state": "waiting",
-   "last": "2026-10-24T01:40Z",
-   "did": "On its offline-ledger branch (2 commits ahead of dev); card active: 09:20 and 16:20 London.",
-   "waiting": "Your call on its scope: keep data/outreach.json and the front-page wording or hand them over; then the board 235 designs.",
+   "last": "2026-10-24T08:34Z",
+   "did": "Morning check done (run record 09:20).",
+   "waiting": "A go for the curator to re-export the evidence vault; your calls on dev's question, security's four and its own scope.",
    "on": "editor",
-   "cost": 10.85
+   "cost": 15
   },
   {
    "agent": "synthetic@php.newsroom",
@@ -127,22 +127,22 @@
   {
    "agent": "factcheck@php.newsroom",
    "member": "verifier",
-   "state": "working",
-   "last": "2026-10-24T02:12Z",
-   "did": "A fact-check pass: Amazon quietly changed a key PHP2Shell line. Card active: 08:52, 12:52, 16:52, 20:52 London; its first run record is 01:25 UTC.",
-   "waiting": "K-011 (the PHP project reply) still unknown on the front page; next wake 08:52 London.",
+   "state": "waiting",
+   "last": "2026-10-24T08:04Z",
+   "did": "Run 4 released v0.14.11: audit 0 failures, no claim changes. Next 12:52 London.",
+   "waiting": "K-011 still unknown on the front page.",
    "on": "",
-   "cost": 67.06
+   "cost": 75
   },
   {
    "agent": "librarian@php.newsroom",
    "member": "librarian",
-   "state": "working",
-   "last": "2026-10-24T06:13Z",
-   "did": "Woken 07:13 London by its scheduled task; a pass is running.",
-   "waiting": "Security review of its CLAUDE.md branch (board 097).",
-   "on": "security",
-   "cost": 37.27
+   "state": "waiting",
+   "last": "2026-10-24T06:26Z",
+   "did": "Released v0.14.8 after its 07:13 pass.",
+   "waiting": "Two board decisions; security review of its CLAUDE.md branch.",
+   "on": "editor",
+   "cost": 47
   },
   {
    "agent": "abp@newsroom.sgit",
@@ -198,11 +198,11 @@
    "agent": "conductor@php.newsroom",
    "member": "conductor",
    "state": "working",
-   "last": "2026-10-24T06:15Z",
-   "did": "The scheduled conductor (this session) is live: hourly 07:15 to 21:15 London. The editor session conductor/collaborators holds the Sherpa card and was still draining.",
+   "last": "2026-10-24T10:15Z",
+   "did": "The scheduled conductor: full pass at 11:15 London. The editor-session conductor (conductor/collaborators) is idle.",
    "waiting": "The lanes 58526ytp and 5iwos28w: no key in this session.",
    "on": "editor",
-   "cost": 67.63
+   "cost": 1
   }
  ],
  "branches": [
@@ -231,12 +231,6 @@
    "onboarding and tasks"
   ],
   [
-   "narrator/offline-ledger",
-   "desk@",
-   2,
-   "the front page on day two, the offline ledger"
-  ],
-  [
    "security/gate-pass-2",
    "security@",
    1,
@@ -247,12 +241,6 @@
    "synthetic@",
    2,
    "the readers' pages"
-  ],
-  [
-   "synthetic/remove-workflow",
-   "synthetic@",
-   1,
-   "removes the synthetic readers' workflow (a merge into dev is reported)"
   ],
   [
    "claude/gallant-dijkstra-uucoop",
@@ -277,6 +265,12 @@
    "synthetic@",
    1,
    "superseded: can be deleted"
+  ],
+  [
+   "sherpa/wake-2026-10-24",
+   "sherpa@",
+   1,
+   "the Sherpa's wake branch"
   ]
  ],
  "schedules": [
@@ -286,15 +280,15 @@
   ],
   [
    "Source watch (scheduled researcher)",
-   "active: 07:00, 09:30, 12:00, 14:30, 17:00 London; still no run record for the 07:00 wake at 09:15"
+   "active: 07:00, 09:30, 12:00, 14:30, 17:00 London; woken 07:00 and 09:30, no run record for either (messaged 08:15)"
   ],
   [
    "Curator (scheduled)",
-   "active: 08:00, 10:30, 13:00, 15:30, 18:00 London; no run record for the 08:00 wake at 09:15 (message sent)"
+   "active: 08:00, 10:30, 13:00, 15:30, 18:00 London; woken 08:00 and 10:30, no run record for either (messaged 09:15)"
   ],
   [
    "Pulse",
-   "scheduled task at 06:44 and 14:44 London (the task is named 07:00 and 15:00); NO CARD"
+   "scheduled task at 06:44 and 14:44 London (the task is named 07:00 and 15:00); woke 06:44, NO CARD and no run record"
   ],
   [
    "Librarian",
@@ -302,15 +296,15 @@
   ],
   [
    "Sherpa",
-   "active: every two hours at :45, 07:45 to 21:45 London"
+   "active: every two hours at :45, 07:45 to 21:45 London; the 07:45 left a run, the 09:45 none (messaged 11:15)"
   ],
   [
    "Desk",
-   "active: 09:20 and 16:20 London"
+   "active: 09:20 and 16:20 London; the 09:20 left a run"
   ],
   [
    "Fact-check runs",
-   "active: 08:52, 12:52, 16:52, 20:52 London; the 08:52 wake left a run"
+   "active: 08:52, 12:52, 16:52, 20:52 London; the 08:52 left a run"
   ],
   [
    "Ontologist",
@@ -325,12 +319,12 @@
   [
    "Evidence vault, as exported to this site",
    "2026-10-23T01:20Z",
-   "227 sources on the site; the vault holds more (68 promoted since); waiting on a re-export"
+   "227 sources on the site; the vault holds 328; waiting on a re-export"
   ],
   [
    "Source watch, as exported to this site",
    "2026-10-23T12:40Z",
-   "a pass started 06:08 UTC is running now"
+   "the 09:30 pass is pushed to the vault (208 MB); not yet exported"
   ],
   [
    "Site build",
@@ -339,12 +333,12 @@
   ]
  ],
  "decisions": [
+  "A go for the curator to re-export the evidence vault into the site (328 held, 227 shown; the front page is about 16 hours stale).",
   "Reply go to security/gate-pass-2 and decide security's four calls (agent release rights to dev, the editor's invite, telemetry city and region, a CSP).",
-  "Answer dev's open question in its session (blocked on an AskUserQuestion since 01:23 UTC).",
-  "A go to the curator to re-export the evidence vault into the site and release it (227 shown; more held).",
-  "Hand the Sherpa the conductor's lane key (5iwos28w) sealed, and hand this session the two lanes' keys (58526ytp, 5iwos28w): until then the lanes are not drained here.",
-  "Desk's scope (outreach.json, the front page wording) and the board 235 designs.",
-  "Pulse has a scheduled task and no card: ask it to write one. The designer's agent key is to be enrolled. The abp session still needs its hooks off.",
-  "Confirm the two public-form feedback messages the Sherpa holds, and the pending device enrolment."
+  "Answer dev's open question (blocked on an AskUserQuestion since 01:23 UTC).",
+  "Hand the conductor's lane key (5iwos28w) to the Sherpa, and the two lanes' keys to this session: until then the lanes are not drained here.",
+  "Pulse: 2 items await your go; it has no card.",
+  "Desk's scope and the board 235 designs; the designer's agent key to enrol; the abp session's hooks.",
+  "Your 14:00 UTC reminder: the Sherpa's article and the two sealed QR codes."
  ]
 }
