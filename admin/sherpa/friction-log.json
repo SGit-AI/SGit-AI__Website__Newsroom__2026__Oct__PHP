@@ -662,6 +662,26 @@
       "last_seen": "0.10.18",
       "status": "open",
       "source": "synthetic readers, run 2"
+    },
+    {
+      "id": "F033",
+      "reader": "the editor and the team",
+      "page": "team/vaults/index.html",
+      "stage": "get-the-answer",
+      "actual": "A vault ID breaks across two lines in a narrow column ('d6zak0o' then '3'), so it cannot be read or copied as one word.",
+      "severity": "low",
+      "proposal": "Keep IDs on one line (white-space: nowrap on the ID cell, or give the column a minimum width).",
+      "owner": "conductor",
+      "also": [
+        "dev"
+      ],
+      "evidence": [
+        "The Sherpa's screenshot of /team/vaults/ on v0.14.3, 24 October"
+      ],
+      "first_seen": "0.14.3",
+      "last_seen": "0.14.3",
+      "status": "open",
+      "source": "the Sherpa"
     }
   ]
 }
