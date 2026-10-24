@@ -1,12 +1,12 @@
-"""The cartographer's pass: what in data/ the ontology does not yet resolve, and where the graphs do not join.
+"""The ontologist's pass: what in data/ the ontology does not yet resolve, and where the graphs do not join.
 
 Read only: it writes nothing and prints a report; the build (admin/build/build.py) is what refuses to build when the
 graph would break its grammar. Run it first on every pass, fix what it lists in data/entities.json,
 data/attribution.json and data/crosswalk.json, then build. Standard library only.
-Runbook: admin/cartographer/README.md. Brief: admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md.
+Runbook: admin/ontologist/README.md. Brief: admin/content/briefs/2026-10-24__brief__the-ontologist.md.
 
-    python3 admin/cartographer/pass.py            # the report
-    python3 admin/cartographer/pass.py --strict   # exit 1 if anything would stop the build
+    python3 admin/ontologist/pass.py            # the report
+    python3 admin/ontologist/pass.py --strict   # exit 1 if anything would stop the build
 """
 import collections, json, os, sys
 

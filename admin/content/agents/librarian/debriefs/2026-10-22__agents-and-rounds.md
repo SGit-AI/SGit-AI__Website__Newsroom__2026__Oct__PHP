@@ -111,3 +111,5 @@ markdown only. The message is in full in the brief, `admin/content/briefs/2026-1
 *Note, 23 October 2026: when this branch took in dev, the librarian's board rows were renumbered: 090 to 102 became 172 to 184, in order (097 is now 179, 100 is 182 and so on). The numbers above are as they were on the day.*
 
 *Note, 24 October 2026, later: when this branch took in dev at v0.11.2 the librarian's rows were renumbered again: 172 to 190 became 191 to 209, in order.*
+
+*Note, 24 October 2026, later still: dev at v0.11.5 took row 191, so the librarian's rows moved once more: 191 to 209 became 192 to 210, in order.*

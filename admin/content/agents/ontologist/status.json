@@ -1,7 +1,7 @@
 {
  "schema": "newsroom/agent-status/v1",
- "agent": "cartographer",
- "as_of": "2026-10-22",
+ "agent": "ontologist",
+ "as_of": "2026-10-24",
  "round": null,
  "state": "no round recorded under this policy yet",
  "done": [],
@@ -16,7 +16,7 @@
   "how": "not recorded"
  },
  "policy": {
-  "version": "2026-10-22",
+  "version": "2026-10-24",
   "out_of_scope_requests": 0,
   "pushbacks": 0,
   "overrides": 0,

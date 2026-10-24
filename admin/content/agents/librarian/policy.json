@@ -116,7 +116,7 @@
  "pushback": [
   {
    "if_asked_to": "build or change a graph",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "if_asked_to": "define a node or edge type",
@@ -157,5 +157,5 @@
    "how": "data/questions.json"
   }
  ],
- "note": "Before this map existed the librarian built the fractal graph (v0.5.2: data/arcs.json, /fractal/). That is the cartographer's scope and is handed over in this round."
+ "note": "Before this map existed the librarian built the fractal graph (v0.5.2: data/arcs.json, /fractal/). That is the ontologist's scope and is handed over in this round."
 }

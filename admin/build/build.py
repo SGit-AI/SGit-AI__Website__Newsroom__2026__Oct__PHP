@@ -1152,7 +1152,7 @@ def build_sources():
 '''
     page('sources/index.html', f'Every source: {C["sources"]} pages, {C["captures"]} captures, {C["hashed"]} hashes', f'The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.', body, kind='evidence', topics='php2shell sources evidence')
 
-# build_graph() is in the cartographer's block at the end of this file.
+# build_graph() is in the ontologist's block at the end of this file.
 
 def build_method():
     v = D['vault']
@@ -2798,7 +2798,7 @@ def build_vaults():
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch, and the public face of the telemetry, its curated counts); two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch as it was until 23 October, and the public face of the telemetry, its curated counts); one, the source watch as it runs now, in sgit's pack mode, is private until the vault UI can open pack vaults; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
@@ -2820,6 +2820,7 @@ def build_vaults():
                     ', '.join(f'{E(k)} {n}' for k, n in sorted((r.get('access') or {}).items(), key=lambda kv: -kv[1]))] for r in reversed(W['runs'])])
     tips = ''.join(f"""<article class="rel"><p class="kicker">Tip {E(t["id"])} &middot; received {E(t["received"] or "")} &middot; {pill(t["status"] or "unverified")}</p>
 <p>{E(t["says"] or "")}</p><p class="small"><b>Watched as</b> {", ".join(f"<code>{E(w)}</code>" for w in t["watched_as"])}. <b>To check:</b> {"; ".join(E(c) for c in t["to_check"])}.</p></article>""" for t in W['tips'])
+    PACK = next(x for x in D['vaults']['vaults'] if x['slug'] == 'source-watch-pack')  # where the watch runs now
     shot = 'assets/vaults/source-watch.png'  # captured from the official UI with the read key; the figure appears once it is in the repository
     hero = (f"""<figure class="shot"><a href="{E(vault_open_url(W["read_key"]))}" rel="noopener" target="_blank"><img src="../../{shot}" alt="The source-watch vault open in the official SG/Vault UI, read-only." width="1280" height="800" loading="eager"></a>
 <figcaption>The vault in the official UI, opened read-only with the published key. <b>Click the image to open the real one &#8599;</b></figcaption></figure>""" if os.path.exists(os.path.join(ROOT, shot)) else '')
@@ -2827,6 +2828,7 @@ def build_vaults():
 <p class="crumb"><a href="../index.html">Vaults</a> / The source watch</p>
 <h1>The source watch: every outside source on php2shell, watched and snapshotted</h1>
 <p class="lead">A vault that does one thing. It watches every outside source on the story, {W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries, and on each run records what access it had and keeps a new snapshot whenever the content changed: the text, a screenshot, the HTML as served and as rendered, the headers and the sha256 of each, and a graph of what the page says and what changed since the last look. A small, focused Wayback Machine whose diffs are graphs. Run by <b>researcher@php.newsroom</b>; public, read-only.</p>
+<div class="caveat"><p><b>Retired on 23 October 2026.</b> The watch moved to its pack-mode copy, vault <code>{E(PACK["id"])}</code> (<a href="../../admin/pack-mode/index.html">pack mode, measured</a>), and every pass since writes there. {E(PACK["note"])} This page, and every watch snapshot this site cites, is read from this vault, <code>{E(W["vault_id"])}</code>, as last exported.</p></div>
 {hero}
 {vault_note(W["read_key"])}
 {vault_live(W["read_key"], False, 2, f'The vault has no app of its own yet, so it opens in the vault browser. It holds {W["files"]:,} files; the browser decrypts the folder tree before it lists it, so the first open takes minutes. <code>sgit clone</code> is the fast way in.')}
@@ -5577,6 +5579,9 @@ def sched_load():
         runs.append(r)
     runs.sort(key=lambda r: (r['started'], r['run']), reverse=True)
     msgs = sorted((sched_message(fn) for fn in glob.glob(os.path.join(DATA, 'messages', '*', '*.md'))), key=lambda m: m['id'], reverse=True)
+    known = set(cards) | {m['id'] for m in TEAM['members']} | {e['agent'] for e in load('schedules').get('expected', [])} | {'all', 'editor'}
+    for m in msgs:
+        if m['box'] not in known: sys.exit(f'data/messages/{m["box"]}/: no agent is called {m["box"]!r}, so no wake would read it; use the id on its card or on /team/')
     read = {}
     for r in reversed(runs):
         for i in r.get('read', []): read.setdefault(i, r)
@@ -5796,8 +5801,8 @@ def build_pulse():
 <p class="small">{head}.</p>
 '''
         page(path, f'{v["cve"]} in Pulse: {v["vendor"]} {v["product"]}', f'Pulse\'s record of {v["cve"]} ({v["vendor"]} {v["product"]}): the evidence of exploitation as eight rungs, each with the capture it rests on, and the attention it gets. A separate section, not this site\'s evidence.', body, kind='evidence', topics='vulnerabilities exploitation pulse')
-# ----------------------------------------------------------------------------- the story graph (cartographer@php.newsroom)
-# Brief: admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md. One graph, data/graph.json, built from every
+# ----------------------------------------------------------------------------- the story graph (ontologist@php.newsroom)
+# Brief: admin/content/briefs/2026-10-24__brief__the-ontologist.md (first: 2026-10-22__brief__the-cartographer-joins.md). One graph, data/graph.json, built from every
 # row the pages are built from, joined through data/entities.json and data/attribution.json under the verbs of
 # data/ontology.json. The build stops on a verb or kind the ontology does not list, a publisher no entity claims, an
 # attribution to an unknown entity, or an exploitation row whose 'who' moved: the graph cannot drift from its grammar.
@@ -6071,7 +6076,7 @@ def build_graph():
 <li><b>A party steps across into the risk graph.</b> The risk desk keeps its own graph (<a href="../grc/graph/index.html">the risk graph</a>), where parties appear as stakeholders, mostly as classes (WAF vendors, local councils, national governments). <a href="../data/crosswalk.json">data/crosswalk.json</a> declares the bridges: a party <i>is</i> a stakeholder, or is <i>among</i> a class of them; a CVE is the same anchor in all three graphs. Bridges, not a merge: each graph keeps its words.</li>
 <li><b>A tension opens the claims it flags</b>: the contradiction ledger of the fact-check desk, one node per row, because two claims that disagree are not one edge with the same name both ways.</li>
 </ul>''')}
-{section("ontology", "The ontology", f'<p>Kinds of node:</p>{kinds_t}<p>Verbs this graph will not use, and why:</p><ul>{banned}</ul><p>The grammar is the estate&#39;s, from <a href="https://graphs.sgit.ai/v1/grammar/">graphs.sgit.ai</a>; the files are <a href="../data/ontology.json">data/ontology.json</a> (kinds, verbs, taxonomies, formulas), <a href="../data/entities.json">data/entities.json</a> (one node per party, whatever a page calls it) and <a href="../data/attribution.json">data/attribution.json</a> (who states each row). The graph is <a href="../data/graph.json">data/graph.json</a>. Kept by the cartographer. The component that draws it is documented for every agent on <a href="component/index.html">the graph component</a> page.</p>')}
+{section("ontology", "The ontology", f'<p>Kinds of node:</p>{kinds_t}<p>Verbs this graph will not use, and why:</p><ul>{banned}</ul><p>The grammar is the estate&#39;s, from <a href="https://graphs.sgit.ai/v1/grammar/">graphs.sgit.ai</a>; the files are <a href="../data/ontology.json">data/ontology.json</a> (kinds, verbs, taxonomies, formulas), <a href="../data/entities.json">data/entities.json</a> (one node per party, whatever a page calls it) and <a href="../data/attribution.json">data/attribution.json</a> (who states each row). The graph is <a href="../data/graph.json">data/graph.json</a>. Kept by the ontologist. The component that draws it is documented for every agent on <a href="component/index.html">the graph component</a> page.</p>')}
 '''
     page('graph/index.html', 'The story as a graph: who states what, who relays it, and what it rests on',
          f'{len(G["nodes"])} nodes and {len(G["edges"])} typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.', body, kind='evidence', topics='php2shell graph ontology')
@@ -6128,7 +6133,7 @@ def build_graph_component(G):
     body = f'''
 <p class="crumb"><a href="../index.html">The story as a graph</a> / The graph component</p>
 <h1>The graph component: one way to draw every graph on this site</h1>
-<p class="lead"><code>&lt;sg-graph&gt;</code> draws any graph that has nodes and verb-labelled edges, from five nodes to the whole story. Every agent that puts a graph on a page uses it, through <code>sg_graph()</code> in the build, so all of them walk the same way, follow the same grammar and get the same fixes. Kept by the cartographer. Version 1.0.0; native web component on this site&#39;s <code>sg-component</code> base, no library, no build step, nothing fetched from anywhere else.</p>
+<p class="lead"><code>&lt;sg-graph&gt;</code> draws any graph that has nodes and verb-labelled edges, from five nodes to the whole story. Every agent that puts a graph on a page uses it, through <code>sg_graph()</code> in the build, so all of them walk the same way, follow the same grammar and get the same fixes. Kept by the ontologist. Version 1.0.0; native web component on this site&#39;s <code>sg-component</code> base, no library, no build step, nothing fetched from anywhere else.</p>
 {section("small", "Five nodes, inline", sg_graph(path, data=demo, focus='c', controls='none', height=260, fallback='<p>Wiz states that PHP is 70% of the Internet; The Hacker News relays it; it cites two sources.</p>') + '<p class="small">The graph above is inline JSON in the page. Click a node to walk to it, or tab to it and press Enter.</p>')}
 {section("layers", "A graph in another vocabulary, in layers", sg_graph(path, src='data/review.json', view='layers', depth=2, focus='fix-commit', fallback='<p>The review graph of the fix: <a href="../../review/index.html">the fix, mapped to the code</a>.</p>') + '<p class="small">The code-review graph (<code>data/review.json</code>), which uses <code>rel</code> and <code>name</code>; the component reads both shapes.</p>')}
 {section("use", "Using it from the build", '''<pre><code># in admin/build/build.py, on any page

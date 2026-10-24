@@ -114,3 +114,5 @@ journalist's claim review, synthetic's run records): 0 overlaps, 0 unowned. The 
 active at 07:13 London, and the scheduled task `trig_015dBN3kZZNti6c9BFE2xMj4` wakes this session, as the card's prompt
 says word for word. The branch was released to dev with `release.sh` at the editor's go, including the changes to
 `validate.py`, `CLAUDE.md` and `.claude/settings.json` that security has not yet reviewed (board 198).
+
+*Note, 24 October 2026, later still: dev at v0.11.5 took row 191, so the librarian's rows moved once more: 191 to 209 became 192 to 210, in order.*

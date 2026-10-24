@@ -117,10 +117,22 @@
   {
    "id": "cartographer",
    "name": "Cartographer",
-   "who": "unfilled",
+   "who": "paused: archived on 24 October 2026; the graph is the ontologist's",
    "owns": "the graph: nodes, typed edges, the per-source and per-party pages, the next layer down",
    "rules": [
     "A node is just a node; an edge without a source is deleted."
+   ]
+  },
+  {
+   "id": "ontologist",
+   "name": "Ontologist",
+   "who": "ontologist@php.newsroom",
+   "owns": "fractal semantic graphs: the ontologies and taxonomies, one node per party, the story graph, the bridges to the site's other graphs, and the graph component",
+   "rules": [
+    "Every edge is a verb with a different, named inverse; no generic association edge, no self-inverse edge.",
+    "Assert only what the data shows: a cited source is evidence, not a relay.",
+    "Weight by independence, not by count.",
+    "Bridges between graphs, never a merge of their vocabularies."
    ]
   },
   {
@@ -240,7 +252,7 @@
    "id": "008",
    "title": "The next graph layer: facts inside a source (sentence-level nodes) so every noun on a page links somewhere",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "009",
@@ -379,8 +391,8 @@
    "id": "030",
    "title": "The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fractal layer)",
    "status": "waiting",
-   "owner": "cartographer",
-   "note": "Built on branch cartographer/ontology-and-sg-graph: every node a link, parties as nodes, 14 verbs in data/graph.json, one click from a claim to a CVE that opens the code-review graph, labels 12px at 390 (checked in Chromium). Released by the cartographer (AGENTS.md section 1)."
+   "owner": "ontologist",
+   "note": "Built on branch cartographer/ontology-and-sg-graph: every node a link, parties as nodes, 14 verbs in data/graph.json, one click from a claim to a CVE that opens the code-review graph, labels 12px at 390 (checked in Chromium). Released by the ontologist (then the cartographer) (AGENTS.md section 1)."
   },
   {
    "id": "031",
@@ -576,7 +588,7 @@
    "id": "060",
    "title": "The analysis run triggered by every new series: changes and rates within a source, and the same measure lined up across sources on one time axis and unit, with charts and a what-changed summary written to the vault",
    "status": "open",
-   "owner": "cartographer",
+   "owner": "ontologist",
    "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
   },
   {
@@ -590,7 +602,7 @@
    "id": "062",
    "title": "Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one source",
    "status": "open",
-   "owner": "cartographer",
+   "owner": "ontologist",
    "note": "First cut on branch cartographer/ontology-and-sg-graph: states, relays (from the rows' own 'via' and from outlet captures the desk found carrying the claim), flags (contradictions as nodes, since the grammar has no self-inverse edge), independent origins per claim and the echo formula on /graph/. Open: derives_from between numbers, supersedes between captures, stats as series."
   },
   {
@@ -626,7 +638,7 @@
    "id": "067",
    "title": "Draw the semantic graph on the phone: what changed, and what it connects to, as nodes and edges",
    "status": "open",
-   "owner": "cartographer",
+   "owner": "ontologist",
    "note": "From the brief on the phone app (22 October)."
   },
   {
@@ -1347,16 +1359,16 @@
   },
   {
    "id": "180",
-   "title": "Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then its wakes note \"lanes: no key\" and this session drains them",
+   "title": "The Sherpa drains the lanes (the editor, 24 October 2026): a go for its schedule (data/schedule/sherpa.json, proposed: every two hours at :45, 07:45 to 21:45 London), and the conductor's lane key (5iwos28w) handed to it sealed; it already holds the collaborators' lane key (58526ytp)",
    "status": "waiting",
    "owner": "editor",
-   "note": ""
+   "note": "Until then the conductor's editor session drains the lanes."
   },
   {
    "id": "181",
    "title": "Use <sg-graph> wherever a page draws a graph: the actor, source and fact pages' mini_graph(), the review navigator (review/ui, assets/review-nav.js, which also assigns location.hash), the reader's persona graph; one component, one grammar",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "182",
@@ -1380,13 +1392,13 @@
    "id": "185",
    "title": "Ontology passes on a schedule: every new source, claim and party resolved, merged or pruned; new parties get entities, new spellings get aliases; record each pass in the ontology's version. Needs the editor's go for a schedule",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "186",
    "title": "Publish the ontology the way the estate does: N-Triples with owl:inverseOf, so graphs.sgit.ai and newsroom.sgit.ai can bridge to this graph by declared edges rather than merged vocabularies",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "187",
@@ -1399,8 +1411,8 @@
    "id": "188",
    "title": "Read data/compromise.json (researcher@php.newsroom's evidence behind 'no named organisation has said it was compromised', 33 rows) into the story graph: each named organisation as a party, each row as its statement on no-confirmed-compromise, Valtec's retraction as a superseded statement, so the long tail of possible compromises (GMO, ČVUT, Valtec, DMM) is walkable from the claim",
    "status": "open",
-   "owner": "cartographer",
-   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+   "owner": "ontologist",
+   "note": "From the ontologist's first pass of 24 October (admin/ontologist/passes/2026-10-24__pass-1.md)."
   },
   {
    "id": "189",
@@ -1413,141 +1425,149 @@
    "id": "190",
    "title": "Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the story graph, so the long-tail sources reach the claims they bear on, with supersedes where a statement was corrected; and trace the 143 captured sources no row cites yet",
    "status": "open",
-   "owner": "cartographer",
-   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+   "owner": "ontologist",
+   "note": "From the ontologist's first pass of 24 October (admin/ontologist/passes/2026-10-24__pass-1.md)."
   },
   {
    "id": "191",
-   "title": "The fractal graph: one graph from the fifteen stakeholders through risks, story arcs, claims and sources to the flaws, the fix, files, functions and the 359 changed hunks of php-src, at /fractal/ and /fractal/ui/",
+   "title": "The source watch's vault of record: 7r83qic5 (pack mode) in use, oq9gflln retired, on /vaults/, the source-watch page, the team, the schedules and the researcher's register; no read key published for the pack vault until the vault UI supports it",
    "status": "done",
-   "owner": "librarian",
-   "note": "Renumbered from 090 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "dev@php.newsroom",
+   "note": "Done at the editor's word of 24 October. Still open: export_watch.py reads oq9gflln, so the watch's counts on the site stop at its last export.",
+   "version": "0.11.3"
   },
   {
    "id": "192",
-   "title": "Join the other engine files to a named part of the fix: 144 of 359 changed hunks reach the fix only as 'the commit touched this area'",
-   "status": "open",
-   "owner": "cartographer",
-   "note": "Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 091 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "title": "The fractal graph: one graph from the fifteen stakeholders through risks, story arcs, claims and sources to the flaws, the fix, files, functions and the 359 changed hunks of php-src, at /fractal/ and /fractal/ui/",
+   "status": "done",
+   "owner": "librarian",
+   "note": "Renumbered from 090 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "193",
-   "title": "Add the PHP 7.4 backport's hunks to the fractal graph as their own layer (the lines the backport wrote; never the vulnerable code before it)",
+   "title": "Join the other engine files to a named part of the fix: 144 of 359 changed hunks reach the fix only as 'the commit touched this area'",
    "status": "open",
-   "owner": "cartographer",
-   "note": "Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 092 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "ontologist",
+   "note": "Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 091 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "194",
-   "title": "Every member a folder (admin/content/agents/<id>/: ROLE.md, policy.json, status.json, debriefs/), 25 drafted; the scope map and overlap check (admin/build/agents.py, gate 4h); /admin/agents/roles/, /admin/agents/rounds/, a page per member; data/agents.json; the end-of-round rule in CLAUDE.md and the Stop hook",
-   "status": "done",
-   "owner": "librarian",
-   "note": "Renumbered from 093 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "title": "Add the PHP 7.4 backport's hunks to the fractal graph as their own layer (the lines the backport wrote; never the vulnerable code before it)",
+   "status": "open",
+   "owner": "ontologist",
+   "note": "Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 092 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "195",
-   "title": "Agree each member's policy.json (25 drafts): read the scope, the mandate and the pushback table; set status agreed and agreed_by, or correct",
-   "status": "open",
-   "owner": "editor",
-   "note": "Renumbered from 094 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "title": "Every member a folder (admin/content/agents/<id>/: ROLE.md, policy.json, status.json, debriefs/), 25 drafted; the scope map and overlap check (admin/build/agents.py, gate 4h); /admin/agents/roles/, /admin/agents/rounds/, a page per member; data/agents.json; the end-of-round rule in CLAUDE.md and the Stop hook",
+   "status": "done",
+   "owner": "librarian",
+   "note": "Renumbered from 093 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "196",
-   "title": "Ask every member to read and confirm its folder in admin/content/agents/, and to close its next round with a debrief and status.json",
+   "title": "Agree each member's policy.json (25 drafts): read the scope, the mandate and the pushback table; set status agreed and agreed_by, or correct",
    "status": "open",
-   "owner": "conductor",
-   "note": "Renumbered from 095 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "editor",
+   "note": "Renumbered from 094 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "197",
-   "title": "One registry of roles: derive data/team.json's owns and rules, data/admin.json's roles and data/roles.json's agents from admin/content/agents/*/policy.json, or retire them",
+   "title": "Ask every member to read and confirm its folder in admin/content/agents/, and to close its next round with a debrief and status.json",
    "status": "open",
    "owner": "conductor",
-   "note": "Renumbered from 096 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "note": "Renumbered from 095 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "198",
-   "title": "Security review of the librarian's branch: gate check 4h in validate.py, the CLAUDE.md section, .claude/settings.json's Stop hook and admin/build/agents.py stop-hook",
+   "title": "One registry of roles: derive data/team.json's owns and rules, data/admin.json's roles and data/roles.json's agents from admin/content/agents/*/policy.json, or retire them",
    "status": "open",
-   "owner": "security@php.newsroom",
-   "note": "Renumbered from 097 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "conductor",
+   "note": "Renumbered from 096 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "199",
-   "title": "Accept or rework the librarian's edit inside build_llms() (one section listing the member pages), and carry the branch into dev",
+   "title": "Security review of the librarian's branch: gate check 4h in validate.py, the CLAUDE.md section, .claude/settings.json's Stop hook and admin/build/agents.py stop-hook",
    "status": "open",
-   "owner": "dev@php.newsroom",
-   "note": "Renumbered from 098 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "security@php.newsroom",
+   "note": "Renumbered from 097 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "200",
-   "title": "Move the briefings' selections out of build.py into data/briefings.json, so the briefing writer owns them apart from the build",
+   "title": "Accept or rework the librarian's edit inside build_llms() (one section listing the member pages), and carry the branch into dev",
    "status": "open",
-   "owner": "briefing-writer",
-   "note": "Renumbered from 099 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "dev@php.newsroom",
+   "note": "Renumbered from 098 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "201",
-   "title": "Confirm where the ontologist works: nothing of it is in this repository; its folder proposes data/ontology.json and /ontology/",
-   "status": "done",
-   "owner": "editor",
-   "note": "Renumbered from 100 on 23 October when the librarian's branch took in dev. Answered by the record: the ontologist is cartographer@php.newsroom, which joined \"as the newsroom's ontologist\" on its branch cartographer/ontology-and-sg-graph (data/ontology.json, entities, attribution, <sg-graph>). The two drafted roles are merged into one. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "title": "Move the briefings' selections out of build.py into data/briefings.json, so the briefing writer owns them apart from the build",
+   "status": "open",
+   "owner": "briefing-writer",
+   "note": "Renumbered from 099 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "202",
-   "title": "Fill the cartographer: the fractal graph, the review graph and the citation graph wait for an owner",
+   "title": "Confirm where the ontologist works: nothing of it is in this repository; its folder proposes data/ontology.json and /ontology/",
    "status": "done",
    "owner": "editor",
-   "note": "Renumbered from 101 on 23 October when the librarian's branch took in dev. Filled by cartographer@php.newsroom on its branch cartographer/ontology-and-sg-graph, not yet in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "note": "Renumbered from 100 on 23 October when the librarian's branch took in dev. Answered by the record: the ontologist is cartographer@php.newsroom, which joined \"as the newsroom's ontologist\" on its branch cartographer/ontology-and-sg-graph (data/ontology.json, entities, attribution, <sg-graph>). The two drafted roles are merged into one. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "203",
-   "title": "Point admin/security/REQUIREMENTS.md section 3 at the handover procedure (https://pki.sgit.ai/handover.md, now in CLAUDE.md) instead of the older brief, and review the CLAUDE.md section 'Handing a vault key to the editor'",
-   "status": "open",
-   "owner": "security@php.newsroom",
-   "note": "Renumbered from 102 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "title": "Fill the cartographer: the fractal graph, the review graph and the citation graph wait for an owner",
+   "status": "done",
+   "owner": "editor",
+   "note": "Renumbered from 101 on 23 October when the librarian's branch took in dev. Filled by cartographer@php.newsroom on its branch cartographer/ontology-and-sg-graph, not yet in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "204",
-   "title": "Claim no-confirmed-compromise says Hadrian and Patchstack 'report successful exploitation'; Security.NL and BleepingComputer's captures describe the same vendors' reports as attempts, not compromises. Grade the vendor half of the claim (found in the librarian's pass of 24 October)",
+   "title": "Point admin/security/REQUIREMENTS.md section 3 at the handover procedure (https://pki.sgit.ai/handover.md, now in CLAUDE.md) instead of the older brief, and review the CLAUDE.md section 'Handing a vault key to the editor'",
    "status": "open",
-   "owner": "factcheck",
-   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "security@php.newsroom",
+   "note": "Renumbered from 102 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "205",
-   "title": "The incomplete-fix wording: claim fix-incomplete's note ('nothing from PHP on the list at capture') and the playbook's step 6 ('has not been answered on-list') predate fact-check run 2 (v0.5.8), which found PHP's public answer; update both from the desk's run 2 record (found in the librarian's pass of 24 October)",
+   "title": "Claim no-confirmed-compromise says Hadrian and Patchstack 'report successful exploitation'; Security.NL and BleepingComputer's captures describe the same vendors' reports as attempts, not compromises. Grade the vendor half of the claim (found in the librarian's pass of 24 October)",
    "status": "open",
-   "owner": "claude-story-site",
-   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "factcheck",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "206",
-   "title": "The roster against the sessions: data/team.json has no member for abp@newsroom.sgit, pulse@newsroom, the storyboards desk, the corrections liaison or the news desk chief, and lists the cartographer as unfilled though cartographer@ (the ontologist) has a branch; the curator sessions are the newsroom lead's, as /team/status/ already says",
+   "title": "The incomplete-fix wording: claim fix-incomplete's note ('nothing from PHP on the list at capture') and the playbook's step 6 ('has not been answered on-list') predate fact-check run 2 (v0.5.8), which found PHP's public answer; update both from the desk's run 2 record (found in the librarian's pass of 24 October)",
    "status": "open",
-   "owner": "conductor",
-   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "claude-story-site",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "207",
-   "title": "Say what pulse@newsroom does: no file, brief or role row in this repository records its scope; its folder (admin/content/agents/pulse/) waits for it",
+   "title": "The roster against the sessions: data/team.json has no member for abp@newsroom.sgit, pulse@newsroom, the storyboards desk, the corrections liaison or the news desk chief, and lists the cartographer as unfilled though cartographer@ (the ontologist) has a branch; the curator sessions are the newsroom lead's, as /team/status/ already says",
    "status": "open",
-   "owner": "editor",
-   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "conductor",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "208",
-   "title": "The librarian's drafted policies are ready for abp@ (board 157): 27 members in admin/content/agents/*/policy.json, each now kept_by abp@newsroom.sgit; abp@ is blocked by its own guard hook (/team/status/)",
+   "title": "Say what pulse@newsroom does: no file, brief or role row in this repository records its scope; its folder (admin/content/agents/pulse/) waits for it",
    "status": "open",
-   "owner": "abp",
-   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2."
+   "owner": "editor",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
   },
   {
    "id": "209",
+   "title": "The librarian's drafted policies are ready for abp@ (board 157): 27 members in admin/content/agents/*/policy.json, each now kept_by abp@newsroom.sgit; abp@ is blocked by its own guard hook (/team/status/)",
+   "status": "open",
+   "owner": "abp",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "210",
    "title": "A daily librarian pass on a schedule: the editor's go on the time (proposed 07:13 London), then the schedule in the schedule vault (weic8imn) and a scheduled task, per AGENTS.md section 7",
    "status": "done",
    "owner": "editor",
-   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Done 24 October: the editor said 07:13; card data/schedule/librarian.json active; scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 created in the librarian's session."
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Done 24 October: the editor said 07:13; card data/schedule/librarian.json active; scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 created in the librarian's session. Renumbered a third time on 24 October (dev at v0.11.5)."
   }
  ],
  "evidence_vault": {

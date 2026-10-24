@@ -1,17 +1,17 @@
 {
  "schema": "newsroom/agent-policy/v1",
- "agent": "cartographer",
- "address": "cartographer@php.newsroom",
- "name": "Cartographer",
+ "agent": "ontologist",
+ "address": "ontologist@php.newsroom",
+ "name": "Ontologist",
  "kind": "agent",
  "group": "writing",
- "title": "The graphs and the ontology",
+ "title": "Fractal semantic graphs: the ontology, the graphs and the component",
  "status": "draft",
  "drafted_by": "librarian@php.newsroom (22 and 24 October 2026), for abp@newsroom.sgit to take over (board 157)",
  "kept_by": "abp@newsroom.sgit",
  "agreed_by": null,
  "as_of": "2026-10-24",
- "member_status": "active on branch cartographer/ontology-and-sg-graph (not yet in dev); also called ontologist@php.newsroom",
+ "member_status": "active; the cartographer role archived at the editor's word (v0.11.5, 24 October 2026); its card and runs kept as this member's history",
  "grant": "admin/security/abp/GRANT.md",
  "mandate": {
   "wanted": [
@@ -61,9 +61,9 @@
    "the graphs and their joins"
   ],
   "writes": [
-   "admin/content/agents/cartographer/ROLE.md",
-   "admin/content/agents/cartographer/status.json",
-   "admin/content/agents/cartographer/debriefs/**",
+   "admin/content/agents/ontologist/ROLE.md",
+   "admin/content/agents/ontologist/status.json",
+   "admin/content/agents/ontologist/debriefs/**",
    "data/ontology.json",
    "data/entities.json",
    "data/attribution.json",
@@ -73,10 +73,12 @@
    "assets/review-nav.js",
    "assets/components/sg-graph/**",
    "data/vault-register/cartographer.json",
-   "admin/cartographer/**",
+   "admin/ontologist/**",
    "data/crosswalk.json",
    "data/schedule/cartographer.json",
-   "data/runs/cartographer/**"
+   "data/runs/cartographer/**",
+   "data/schedule/ontologist.json",
+   "data/runs/ontologist/**"
   ],
   "appends": [
    "data/admin.json#board: its own rows, added at the end; never another member's row",
@@ -148,5 +150,5 @@
    "how": "its debriefs"
   }
  ],
- "note": "The fractal graph was built by the librarian before this map existed and is handed over here. The ontologist the editor named on 22 October is this agent."
+ "note": "The fractal graph was built by the librarian before the map existed and is handed over here. The member was drafted as the cartographer on 22 October; the editor named it the ontologist (v0.11.5)."
 }

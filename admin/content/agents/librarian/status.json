@@ -13,7 +13,7 @@
  "state": "round 4: dev taken in at v0.11.2; the map kept whole (0 overlaps, 0 unowned); the daily schedule active at 07:13 London; released to dev at the editor's go",
  "done": [
   {
-   "what": "Took in dev at v0.10.18 (63 commits): five source conflicts, each resolved keeping both sides; the librarian's board rows renumbered 090-102 to 191-203",
+   "what": "Took in dev at v0.10.18 (63 commits): five source conflicts, each resolved keeping both sides; the librarian's board rows renumbered 090-102 to 192-204",
    "evidence": "the merge commit; BRIEF-CORRECTIONS.md"
   },
   {
@@ -33,11 +33,11 @@
    "evidence": "data/questions.json"
   },
   {
-   "what": "Opened board 204 to 209 for the fact-check desk, the story site, the conductor, the editor (twice) and abp@",
+   "what": "Opened board 205 to 210 for the fact-check desk, the story site, the conductor, the editor (twice) and abp@",
    "evidence": "data/admin.json"
   },
   {
-   "what": "Took in dev at v0.11.2 (three conflicts, both sides kept; the librarian's rows renumbered 172-190 to 191-209) and mapped the 34 files and pages that arrived since the morning: schedule cards and runs are each agent's, messages the conductor's with every agent appending, pulse's export and section pulse@'s; 0 overlaps, 0 unowned",
+   "what": "Took in dev at v0.11.2 (three conflicts, both sides kept; the librarian's rows renumbered 172-190 to 192-210) and mapped the 34 files and pages that arrived since the morning: schedule cards and runs are each agent's, messages the conductor's with every agent appending, pulse's export and section pulse@'s; 0 overlaps, 0 unowned",
    "evidence": "admin/content/agents/; python3 admin/build/agents.py report"
   },
   {
@@ -45,19 +45,23 @@
    "evidence": "data/schedule/librarian.json"
   },
   {
-   "what": "Released the branch to dev with release.sh at the editor's go, including the changes still waiting on security's review (board 198)",
+   "what": "Released the branch to dev with release.sh at the editor's go, including the changes still waiting on security's review (board 199)",
    "evidence": "data/versions.json"
+  },
+  {
+   "what": "Took in dev at v0.11.5: the cartographer is now the ontologist at the editor's word; the member renamed in the map (its old card and runs kept as its history), its board rows re-owned; the librarian's rows renumbered once more, 191-209 to 192-210",
+   "evidence": "admin/content/agents/ontologist/"
   }
  ],
  "tasks": {
   "board": [
-   "194 done (was 093)",
-   "201 and 202 done (the ontologist is the cartographer; the cartographer is filled on its branch)",
-   "204 to 209 opened for others",
-   "195 to 200 and 203 still open, owned by others",
-   "209 done (the daily schedule)"
+   "195 done (was 093)",
+   "202 and 203 done (the ontologist is the cartographer; the cartographer is filled on its branch)",
+   "205 to 210 opened for others",
+   "196 to 201 and 204 still open, owned by others",
+   "210 done (the daily schedule)"
   ],
-  "note": "the librarian's own open work is the daily pass (209, waiting on the editor) and the reader questions"
+  "note": "the librarian's own open work is the daily pass (210, waiting on the editor) and the reader questions"
  },
  "next": [
   {
@@ -66,10 +70,10 @@
   },
   {
    "what": "When abp@ is unblocked, hand over the 27 drafted policies and keep the scope map in step with what it agrees",
-   "why": "board 157 and 208"
+   "why": "board 157 and 209"
   },
   {
-   "what": "Check the four branch members' real files (cartographer, desk, liaison, storyboards) against their drafts when they reach dev",
+   "what": "Check the three branch members' real files (desk, liaison, storyboards) against their drafts when they reach dev; the ontologist (once the cartographer) is on dev and mapped",
    "why": "their paths may differ from the branch snapshots"
   },
   {
@@ -87,7 +91,7 @@
    "from": "the editor"
   },
   {
-   "what": "Review gate check 4h, the CLAUDE.md sections and the Stop hook, now on dev by the editor's go before your review (board 198)",
+   "what": "Review gate check 4h, the CLAUDE.md sections and the Stop hook, now on dev by the editor's go before your review (board 199)",
    "from": "security@php.newsroom"
   }
  ],

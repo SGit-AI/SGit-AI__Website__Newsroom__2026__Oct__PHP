@@ -1,14 +1,14 @@
-# The cartographer (cartographer@php.newsroom)
+# The ontologist (ontologist@php.newsroom)
 
-The newsroom's ontologist. Keeps the story graph and its grammar, joins it to the site's other graphs, and keeps
+Fractal semantic graphs: the ontologies and taxonomies, the story graph and its grammar, joins it to the site's other graphs, and keeps
 `<sg-graph>`, the component every agent uses to draw a graph. Brief:
-`admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md`.
+`admin/content/briefs/2026-10-24__brief__the-ontologist.md` (the first brief, `admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md`, is kept as written: the role was called the ontologist until 24 October).
 
 | File | What |
 |---|---|
-| `admin/cartographer/README.md` | This file: the role and the runbook a pass follows |
-| `admin/cartographer/pass.py` | The pass: what the ontology does not resolve yet; `--strict` exits 1 if the build would stop |
-| `admin/cartographer/passes/<date>__pass-<n>.md` | One record per pass: what changed, what was found, what was handed to whom |
+| `admin/ontologist/README.md` | This file: the role and the runbook a pass follows |
+| `admin/ontologist/pass.py` | The pass: what the ontology does not resolve yet; `--strict` exits 1 if the build would stop |
+| `admin/ontologist/passes/<date>__pass-<n>.md` | One record per pass: what changed, what was found, what was handed to whom |
 | `data/ontology.json` | Kinds, verbs with inverses, taxonomies, formulas, banned verbs. Its `version` moves on every pass that changes it |
 | `data/entities.json` | One node per party, every publisher spelling an alias |
 | `data/attribution.json` | Who states and relays each claim, number and signal; which sources carry another party's wire copy |
@@ -30,9 +30,9 @@ The newsroom's ontologist. Keeps the story graph and its grammar, joins it to th
 
 A pass takes in what other agents added since the last one and leaves the graph whole. In order:
 
-1. **Take in dev.** `git fetch origin dev && git merge origin/dev` on the cartographer's branch; resolve source
-   conflicts by keeping both sides (renumber only the cartographer's own board rows).
-2. **Read what is unresolved.** `python3 admin/cartographer/pass.py`. Everything under "would stop the build" is
+1. **Take in dev.** `git fetch origin dev && git merge origin/dev` on the ontologist's own branch; resolve source
+   conflicts by keeping both sides (renumber only the ontologist's own board rows).
+2. **Read what is unresolved.** `python3 admin/ontologist/pass.py`. Everything under "would stop the build" is
    fixed in this pass:
    - a new publisher spelling: an alias on an existing entity when it is the same party; a new entity when it is not.
      Check the page (its title and address) before deciding; write a `note` where a name misleads (near but not the same).
@@ -49,16 +49,17 @@ A pass takes in what other agents added since the last one and leaves the graph 
    row for the desk that owns it, with the slugs.
 6. **Check it works.** `python3 admin/build/validate.py`; the component in Chromium at 1280 and 390, light and dark
    and without JavaScript, when the component or the graph's shape changed.
-7. **Record and release.** A record in `admin/cartographer/passes/`, the ontology's `version` if it changed, board
+7. **Record and release.** A record in `admin/ontologist/passes/`, the ontology's `version` if it changed, board
    rows, `REALITY.md` if what exists changed; then `admin/build/release.sh "<what the pass changed>"` (AGENTS.md
    section 1). A conflict is solved by hand and said in the run's log; the board is where it happens, since every
    agent appends to it. A pass that changed nothing ends with one line and no commit (AGENTS.md section 7).
 
 ## On a schedule
 
-The card is `data/schedule/cartographer.json` (AGENTS.md section 7): proposed on 24 October 2026 for once a day at
-14:40 London, after the curator's 13:00 promotion and the fact-check desk's midday run, before the conductor's 15:15
-full pass. It becomes `active` only with the editor's go, when he creates the scheduled task; this role never creates
-one. A scheduled pass follows the runbook above and the card's `each_wake`, and stops at step 7: anything that needs a
-judgement about another desk's data, or the editor's, is left as a board row, never done. It never changes the
-component, which is session work tested in Chromium.
+The card is `data/schedule/ontologist.json` (AGENTS.md section 7), active since 24 October 2026 at the editor's go:
+once a day at 14:40 London, after the curator's 13:00 promotion and the fact-check desk's midday run, before the
+conductor's 15:15 full pass. The claude.ai scheduled task "Ontologist daily pass" starts a fresh Sonnet session each
+day with the card's wake prompt, word for word; it holds no key. A scheduled pass follows the runbook above and the
+card's `each_wake`, and stops at step 7: anything that needs a judgement about another desk's data, or the editor's,
+is left as a board row, never done. It never changes the component, which is session work tested in Chromium. A
+change to the times or the prompt changes the card and the scheduled task together, with the editor's go.

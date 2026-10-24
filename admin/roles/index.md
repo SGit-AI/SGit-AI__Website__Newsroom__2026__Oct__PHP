@@ -6,7 +6,7 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 # Roles and responsibilities
 
-16 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
+17 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
 
 ### Editor Dinis Cruz
 
@@ -77,10 +77,18 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 **Owns.** one page per audience from the same claims
 - A briefing adds no claim.
 
-### Cartographer unfilled
+### Cartographer paused: archived on 24 October 2026; the graph is the ontologist's
 
 **Owns.** the graph: nodes, typed edges, the per-source and per-party pages, the next layer down
 - A node is just a node; an edge without a source is deleted.
+
+### Ontologist ontologist@php.newsroom
+
+**Owns.** fractal semantic graphs: the ontologies and taxonomies, one node per party, the story graph, the bridges to the site's other graphs, and the graph component
+- Every edge is a verb with a different, named inverse; no generic association edge, no self-inverse edge.
+- Assert only what the data shows: a cited source is evidence, not a relay.
+- Weight by independence, not by count.
+- Bridges between graphs, never a merge of their vocabularies.
 
 ### Journalist claude-journalist
 
@@ -129,4 +137,4 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 
 ---
-site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html
+site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html

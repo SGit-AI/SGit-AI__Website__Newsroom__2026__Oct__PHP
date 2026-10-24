@@ -6,7 +6,31 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.11.2. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.11.5. The data is [data/versions.json](../data/versions.json).
+
+### v0.11.5 · 2026-10-24
+
+The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartographer is archived; its daily pass is active, a fresh session at 14:40 London every day
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.11.4 · 2026-10-24
+
+The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to 21:45 London; the conductor's card no longer drains them; a message to an agent no wake reads now stops the build
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.11.3 · 2026-10-24
+
+the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because the site's watch data was exported from it); /vaults/, the source-watch page, the team, the schedules and the researcher's register say so; the pack vault's read key is not published until the vault UI opens pack vaults
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.11.2 · 2026-10-24
 
@@ -634,4 +658,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

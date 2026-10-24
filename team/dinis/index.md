@@ -52,7 +52,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 174 | The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed for KEV, NVD, EPSS and repository series after thatRead key only; the write key is neither wanted nor to be accepted. | waiting |  |
-| 180 | Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then its wakes note "lanes: no key" and this session drains them | waiting |  |
+| 180 | The Sherpa drains the lanes (the editor, 24 October 2026): a go for its schedule (data/schedule/sherpa.json, proposed: every two hours at :45, 07:45 to 21:45 London), and the conductor's lane key (5iwos28w) handed to it sealed; it already holds the collaborators' lane key (58526ytp)Until then the conductor's editor session drains the lanes. | waiting |  |
 
 ## What they have done
 - Started the site from two voice memos and a message on 22 October 2026, and set every brief since.
@@ -75,4 +75,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

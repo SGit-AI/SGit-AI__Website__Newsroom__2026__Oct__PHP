@@ -113,7 +113,7 @@
   },
   {
    "if_asked_to": "change the ontology",
-   "owner": "cartographer"
+   "owner": "ontologist"
   }
  ],
  "untrusted_inputs": [

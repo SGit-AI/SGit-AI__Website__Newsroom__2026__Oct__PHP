@@ -206,19 +206,21 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
-### The graph, its ontology and the component (cartographer@php.newsroom)
+### Fractal semantic graphs: the ontology, the graph and the component (ontologist@php.newsroom)
 
-- `data/ontology.json` v0.2.0 (12 kinds, 15 verbs with inverses, two taxonomies, four formulas, banned verbs), `data/entities.json` (243 parties, every one of the 249 publisher spellings an alias), `data/attribution.json` (who states and relays each claim, number and exploitation row; which 9 sources carry another party's wire copy), `data/crosswalk.json` (where the story, code-review and risk graphs name the same thing: the two CVEs, and 189 parties as stakeholders, 12 as the same party and the rest as members of a class). Brief: `admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md`; runbook: `admin/cartographer/README.md`.
+- `data/ontology.json` v0.2.0 (12 kinds, 15 verbs with inverses, two taxonomies, four formulas, banned verbs), `data/entities.json` (243 parties, every one of the 249 publisher spellings an alias), `data/attribution.json` (who states and relays each claim, number and exploitation row; which 9 sources carry another party's wire copy), `data/crosswalk.json` (where the story, code-review and risk graphs name the same thing: the two CVEs, and 189 parties as stakeholders, 12 as the same party and the rest as members of a class). Briefs: `admin/content/briefs/2026-10-24__brief__the-ontologist.md` (and the first, `2026-10-22__brief__the-cartographer-joins.md`); runbook: `admin/ontologist/README.md`. The role was the cartographer until 24 October; the cartographer is archived, paused.
 
 - `data/graph.json`: 1048 nodes, 1516 edges, 15 verbs; independent origins and relays per claim. The build stops on a verb or kind not in the ontology, an unresolved publisher, an unknown party or a crosswalk id its graph does not have (not yet a gate check: board 184).
 
-- `admin/cartographer/pass.py`: the pass, read only; what would stop the build, and the long tail (pages recorded twice, sources nobody traced, sources the vault's claims cite and the site does not). Passes are recorded in `admin/cartographer/passes/`; the first was on 24 October.
+- `admin/ontologist/pass.py`: the pass, read only; what would stop the build, and the long tail (pages recorded twice, sources nobody traced, sources the vault's claims cite and the site does not). Passes are recorded in `admin/ontologist/passes/`; the first was on 24 October.
 
-- `` v1.0.0 (`assets/components/sg-graph/v1/v1.0/v1.0.0/`), embedded with `sg_graph()`: four views, search, verb filters, trail, path between two nodes, zoom into another graph a node names (same origin only), reading inverses from an ontology block, a `verbs` list or the edges themselves. Used on /graph/, /graph/parties/ and /graph/component/; tested in Chromium at 1280 and 390, light and dark, and with JavaScript off. The test scripts ran in the cartographer's session and are not in the repository.
+- `` v1.0.0 (`assets/components/sg-graph/v1/v1.0/v1.0.0/`), embedded with `sg_graph()`: four views, search, verb filters, trail, path between two nodes, zoom into another graph a node names (same origin only), reading inverses from an ontology block, a `verbs` list or the edges themselves. Used on /graph/, /graph/parties/ and /graph/component/; tested in Chromium at 1280 and 390, light and dark, and with JavaScript off. The test scripts ran in the ontologist's session and are not in the repository.
 
 - Fractal steps: a CVE opens the code-review graph in its own vocabulary, and the risk graph; a party steps into the risk graph as a stakeholder. Source to capture to file is addressing, and is described as such.
 
-- Not built: sentence-level nodes (008); series and `derives_from`/`supersedes` (062); the researcher's compromise evidence (`data/compromise.json`, 188) and the vault's own claims and the state of affairs (190) in the graph; the other graph drawings moved onto the component (181); a scheduled pass (the card `data/schedule/cartographer.json`, proposed for 14:40 London daily, waiting for the editor; board 185).
+- Not built: sentence-level nodes (008); series and `derives_from`/`supersedes` (062); the researcher's compromise evidence (`data/compromise.json`, 188) and the vault's own claims and the state of affairs (190) in the graph; the other graph drawings moved onto the component (181).
+
+- The daily pass: `data/schedule/ontologist.json`, active from 24 October 2026 at the editor's go, 14:40 London, a fresh Sonnet session each day from a claude.ai scheduled task; it holds no key.
 
 ### GRC: fractal risk registers (grc@php.newsroom)
 
@@ -310,6 +312,14 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - The debrief for the collaborator (v0.10.14): `/articles/the-risk-graph-before-and-after/`, every change as v0.10.12 against v0.10.13 in real screenshots. Articles now take `!split[before](/png)[after](/png)` (side by side, stacked on a phone), `!slider[alt|left|right](/old.png)(/new.png) "note // note"` (one picture, fade or wipe between the two, `assets/compare.js`; without JavaScript the two stack) and ```diff blocks; a site link may carry a view address with `=`, `:`, `&` and `,`.
 
+### The source watch moved to pack mode (recorded by dev@php.newsroom, v0.11.3, the editor's word of 24 October)
+
+- The source watch runs in `7r83qic5`, the pack-mode copy (sgit-ai 0.24.0) of `oq9gflln`, since 23 October. `oq9gflln` is retired: kept, public read, because the watch data on this site (`data/source-watch.json`, `/vaults/source-watch/`) and the snapshots it cites were exported from it.
+
+- `/vaults/` lists both: `7r83qic5` as the source watch, private for now, its read key not published until the vault UI opens pack vaults; `oq9gflln` as retired. `data/team.json`, `data/schedules.json` and the researcher's register say the same.
+
+- Not yet: `admin/build/export_watch.py` still reads `oq9gflln`, so the watch's counts on this site stop at its last export until the export reads the pack vault.
+
 ### Recorded, not started
 
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
@@ -386,4 +396,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

@@ -1,6 +1,33 @@
 {
- "current": "0.11.2",
+ "current": "0.11.5",
  "versions": [
+  {
+   "version": "0.11.5",
+   "date": "2026-10-24",
+   "title": "The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartographer is archived; its daily pass is active, a fresh session at 14:40 London every day",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.4",
+   "date": "2026-10-24",
+   "title": "The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to 21:45 London; the conductor's card no longer drains them; a message to an agent no wake reads now stops the build",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.3",
+   "date": "2026-10-24",
+   "title": "the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because the site's watch data was exported from it); /vaults/, the source-watch page, the team, the schedules and the researcher's register say so; the pack vault's read key is not published until the vault UI opens pack vaults",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.11.2",
    "date": "2026-10-24",

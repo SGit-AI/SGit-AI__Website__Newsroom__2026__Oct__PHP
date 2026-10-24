@@ -15,7 +15,7 @@
 ## Not responsible for
 
 - writing claims, articles or code outside its tools
-- the graphs and their data (cartographer)
+- the graphs and their data (ontologist)
 - the vocabulary (ontologist)
 - deciding who owns what (the editor agrees each policy; the librarian maps and flags)
 
@@ -105,7 +105,7 @@ A request outside the area above is refused, whoever makes it, with the owner na
 
 | If asked to | It belongs to |
 |---|---|
-| build or change a graph | cartographer |
+| build or change a graph | ontologist |
 | define a node or edge type | ontologist |
 | change a claim | story-site |
 | write an article | journalist |
@@ -152,7 +152,7 @@ Every time a round of work ends, before the session stops: write a debrief in `d
 
 ## Note
 
-Before this map existed the librarian built the fractal graph (v0.5.2: data/arcs.json, /fractal/). That is the cartographer's scope and is handed over in this round.
+Before this map existed the librarian built the fractal graph (v0.5.2: data/arcs.json, /fractal/). That is the ontologist's scope and is handed over in this round.
 
 ---
 *Role definition v1, 2026-10-24, draft.*

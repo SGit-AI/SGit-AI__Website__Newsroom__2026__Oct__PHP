@@ -44,6 +44,58 @@ The journalist can do all five, but the files in steps 1 and 3 are kept by other
 
 Pulse (`/pulse/`) is a separate section, built from `data/pulse.json` by its own block of `build.py` and its own exporter, with one pointer from the front page ("What else is going on"). Nothing in the PHP pages reads it, and it can move to another site by taking that block, the exporter and the file.
 
+2026-10-24 · `2026-10-24__brief__the-ontologist.md`
+
+## Brief: the ontologist, and its daily pass
+
+24 October 2026. Written by ontologist@php.newsroom from the editor's direction in its session. The first brief,
+
+`2026-10-22__brief__the-cartographer-joins.md`, is kept as written; this one replaces it where they differ.
+
+### The direction
+
+The editor, on 24 October: the agent is the **ontologist**, "because your main job is to create fractal semantic
+
+graphs, and that's the name that you go for". There is no cartographer for now: pause and archive everything under
+
+that name, map everything to the ontologist, and start the daily schedule proposed the same day.
+
+### What changed
+
+- The agent is `ontologist` (ontologist@php.newsroom) in `data/team.json`, `data/admin.json` (roles, and the ten
+
+ board rows the role owned: 008, 030, 060, 062, 067, 181, 185, 186, 188, 190) and `data/roles.json`.
+
+- The cartographer is a role again, `paused`, archived with a note; nothing is deleted. The first brief, the first
+
+ pass's record and the first run (`data/runs/cartographer/`) stay as written, as history, with a note where it helps.
+
+- The role's folder is `admin/ontologist/`: the runbook, `pass.py`, and the record of every pass.
+
+- The data files the role keeps say so: `data/ontology.json`, `data/entities.json`, `data/attribution.json`,
+
+ `data/crosswalk.json`, `data/graph.json`, and the component ``.
+
+- The schedule card is `data/schedule/ontologist.json`; `data/schedule/cartographer.json` is `ended`, pointing to it.
+
+### The job, unchanged
+
+Fractal semantic graphs, as the estate defines them (graphs.sgit.ai): one grammar at every altitude, every edge a
+
+verb with a named inverse, a new ontology joined by a named edge at each zoom, meaning through connectivity, weighted
+
+by independence. In practice: the ontologies and taxonomies, one node per party, the story graph, the bridges to
+
+the site's other graphs, the long tail found by connection, and the component that lets every agent draw a graph.
+
+### The schedule
+
+Once a day at 14:40 London, on Sonnet, in a fresh session each day that holds no key (it reads and writes this
+
+repository only). The card has the objective, what each wake does, what it reads, writes and never does, and the
+
+wake prompt word for word; the runbook is `admin/ontologist/README.md`.
+
 2026-10-24 · `2026-10-24__brief__schedules-in-git.md`
 
 ## Schedules in the repository: each agent's card, every run, and messages between agents
@@ -1936,6 +1988,8 @@ So this is actually another brief for the journalist, and I guess even historian
 
 ## Brief: the cartographer joins, as the newsroom's ontologist
 
+*Superseded in part on 24 October 2026: the editor renamed the role the ontologist, whose job is fractal semantic graphs, and archived the cartographer. The brief is `admin/content/briefs/2026-10-24__brief__the-ontologist.md`; this one is kept as written.*
+
 22 October 2026. Written by cartographer@php.newsroom from the editor's direction in its session. Board 030, 062, 181 to 186.
 
 ### The direction
@@ -2590,4 +2644,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

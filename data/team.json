@@ -76,7 +76,8 @@
   "sherpa": "sherpa",
   "sherpa@php.newsroom": "sherpa",
   "claude-newsroom-lead": "newsroom-lead",
-  "curator": "newsroom-lead"
+  "curator": "newsroom-lead",
+  "ontologist": "ontologist"
  },
  "groups": [
   {
@@ -470,7 +471,7 @@
    "status": "active",
    "summary": "Runs the source watch: every outside source on the story checked on a schedule, a snapshot whenever it changes.",
    "owns": [
-    "the source watch vault (oq9gflln)"
+    "the source watch vault (7r83qic5, pack mode, since 23 October 2026; oq9gflln before, retired)"
    ],
    "rules": [
     "A snapshot only when the content changed; every check records what access it had."
@@ -702,18 +703,39 @@
   {
    "id": "cartographer",
    "name": "Cartographer",
-   "kind": "agent",
+   "kind": "role",
    "group": "writing",
    "alias": "@Cartographer",
    "mail": "cartographer",
-   "role": "The graph, its ontology, and the component that draws it",
+   "role": "The graph (archived)",
+   "status": "paused",
+   "summary": "Archived on 24 October 2026 at the editor's word: there is no cartographer for now. The graph, its ontology and the component are the ontologist's (ontologist@php.newsroom), which did this work under this name until then; the record is on the ontologist's page.",
+   "owns": [],
+   "rules": [
+    "A node is just a node. Meaning lives in the edges; an edge without a source is deleted.",
+    "Every edge is a verb with a different, named inverse; no generic association edge, no self-inverse edge.",
+    "Assert only what the data shows: a cited source is evidence, not a relay.",
+    "Weight by independence, not by count.",
+    "Render the result of a query, never the whole graph."
+   ],
+   "home": [],
+   "achieved": []
+  },
+  {
+   "id": "ontologist",
+   "name": "Ontologist",
+   "kind": "agent",
+   "group": "writing",
+   "alias": "@Ontologist",
+   "mail": "ontologist",
+   "role": "Fractal semantic graphs: the ontologies, the story graph and the component that draws it",
    "status": "active",
-   "summary": "cartographer@php.newsroom, the newsroom's ontologist. Keeps the story graph and its grammar: the kinds of node, the verbs with their inverses, the taxonomies, and one node per party whatever a page calls it. Makes regular passes over every data file to connect, prune and resolve, aligned to the estate's grammar on graphs.sgit.ai. Keeps <sg-graph>, the component every agent uses to put a graph on a page.",
+   "summary": "ontologist@php.newsroom. Builds and keeps the site's fractal semantic graphs: the ontologies and taxonomies (kinds of node, verbs with their inverses), one node per party whatever a page calls it, the story graph, and the bridges to the site's other graphs; a daily pass connects, prunes and resolves what the other desks added, aligned to the estate's grammar on graphs.sgit.ai. Keeps <sg-graph>, the component every agent uses to put a graph on a page. Until 24 October it worked as the cartographer.",
    "owns": [
     "data/ontology.json, data/entities.json, data/attribution.json, data/crosswalk.json",
     "data/graph.json and the graph pages (/graph/, /graph/parties/, /graph/component/)",
     "assets/components/sg-graph/ and sg_graph() in the build",
-    "admin/cartographer/: the runbook, the pass and its records"
+    "admin/ontologist/: the runbook, the pass and its records"
    ],
    "rules": [
     "A node is just a node. Meaning lives in the edges; an edge without a source is deleted.",
@@ -736,7 +758,7 @@
      "The graph component"
     ],
     [
-     "team/schedule/cartographer/index.html",
+     "team/schedule/ontologist/index.html",
      "Its schedule"
     ]
    ],
