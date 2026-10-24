@@ -2,7 +2,7 @@
 
 The front page for a board member who wants only what their role needs: the situation, five numbers, three questions for the team, what is new, and one picture each of how it unfolded and what governments advise.
 
-> Mockup A for review, built from the data of release v0.17.2. Not the live site.
+> Mockup A for review, built from the data of release v0.17.3. Not the live site.
 
 Developing  ·  last checked 24 October 2026, 16:05 UTC 
 
@@ -14,7 +14,7 @@ PHP is the software that WordPress and millions of other websites run on. A fix 
  Your answer in thirty seconds 
 for Jordan, board member or executive 
 
-A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of the evening of 22 October, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast. 
+A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of 16:05 UTC on 24 October, the latest capture in the evidence vault, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast. 
 
 A fix 
 Available 
@@ -105,4 +105,4 @@ All say install the fix. They split on what to do if you cannot.
  Focus view shows 28 of 947 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
 
 ---
-site v0.17.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html
+site v0.17.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html

@@ -60,4 +60,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/crn-news-security-2026-5-things-to-know-about-critical-php-vulne/index.html
+site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/crn-news-security-2026-5-things-to-know-about-critical-php-vulne/index.html

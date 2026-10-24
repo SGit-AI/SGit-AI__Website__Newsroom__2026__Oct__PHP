@@ -12,11 +12,20 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.17.3 · 24 October 2026new since your last visit
+
+The readers' answers on the home page, the start page and three briefings brought to 16:05 UTC on 24 October, and the engineer's answer warns of CVE-2026-115560 (persona answers, /briefings/engineer/)
+
+No reader-facing section changed in this release.
+
 ## v0.17.2 · 24 October 2026new since your last visit
 
 The correspondent's first review: nine corrections to the journalist's 94 verdicts and rows (/views/desk/, /claims/review/), PHP's third flaw CVE-2026-115560 on the summary page
 
-No reader-facing section changed in this release.
+### Briefings that changed
+JJordanBoard member or executive · v14DDrewPHP or platform engineer · v10QQuinnCFO · v14AAlexCurious reader · v12
+### Sections that changed
+- [In context: 2008 to 2026](../versions/page-context/index.html#v6) v6
 
 ## v0.17.1 · 24 October 2026new since your last visit
 
@@ -1107,4 +1116,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

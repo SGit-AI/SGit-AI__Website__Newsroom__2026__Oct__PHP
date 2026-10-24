@@ -11,7 +11,7 @@ Briefing for Alex, curious reader · ******Plain English · from the same 70 cla
 A
 The answer in thirty seconds
 
-Two serious holes were found in PHP, software that runs on the servers behind a large share of websites. They were fixed on 21 October 2026. Your phone and laptop are not the target: websites are, and it is the job of whoever runs them to update. Some sites were taken offline as a precaution. As of the evening of 22 October, no named organisation has said it was compromised through php2shell.
+Two serious holes were found in PHP, software that runs on the servers behind a large share of websites. They were fixed on 21 October 2026. Your phone and laptop are not the target: websites are, and it is the job of whoever runs them to update. Some sites were taken offline as a precaution. As of 16:05 UTC on 24 October, the latest capture in the evidence vault, no named organisation has said it was compromised through php2shell.
 
 [Read the site as Alex →](../../explained/index.html)
 
@@ -45,7 +45,7 @@ About 14 minutes in all. Choose *read as Alex* and the bar under the menu keeps 
 
 ## Words you will meet
 
-[PHP](../../glossary/index.html#php)[php2shell](../../glossary/index.html#php2shell)[Primary source](../../glossary/index.html#primary)[Web server](../../glossary/index.html#web-server)[Exploit, exploitation](../../glossary/index.html#exploit)[Remote code execution (RCE)](../../glossary/index.html#rce)[Honeypot](../../glossary/index.html#honeypot)[Evidence vault](../../glossary/index.html#vault)[NCSC](../../glossary/index.html#ncsc)[Patch](../../glossary/index.html#patch)[CVE](../../glossary/index.html#cve)[KEV](../../glossary/index.html#kev)[CISA](../../glossary/index.html#cisa)[Proof of concept (PoC)](../../glossary/index.html#poc)
+[PHP](../../glossary/index.html#php)[php2shell](../../glossary/index.html#php2shell)[Evidence vault](../../glossary/index.html#vault)[Primary source](../../glossary/index.html#primary)[Web server](../../glossary/index.html#web-server)[Exploit, exploitation](../../glossary/index.html#exploit)[Remote code execution (RCE)](../../glossary/index.html#rce)[Honeypot](../../glossary/index.html#honeypot)[NCSC](../../glossary/index.html#ncsc)[Patch](../../glossary/index.html#patch)[CVE](../../glossary/index.html#cve)[KEV](../../glossary/index.html#kev)[CISA](../../glossary/index.html#cisa)[Proof of concept (PoC)](../../glossary/index.html#poc)
 
 Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
@@ -102,4 +102,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/everyone/index.html
+site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/everyone/index.html

@@ -11,7 +11,7 @@ Briefing for Quinn, cfo · ******Plain English · from the same 70 claims, selec
 Q
 The answer in thirty seconds
 
-The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. As of the evening of 22 October, no named organisation has said it was compromised through this flaw. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
+The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. As of 16:05 UTC on 24 October, the latest capture in the evidence vault, no named organisation has said it was compromised through this flaw. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
 
 [Read the site as Quinn →](../../explained/index.html)
 
@@ -44,7 +44,7 @@ About 17 minutes in all. Choose *read as Quinn* and the bar under the menu keeps
 
 ## Words you will meet
 
-[Patch](../../glossary/index.html#patch)[Unauthenticated](../../glossary/index.html#unauthenticated)[Primary source](../../glossary/index.html#primary)[Web server](../../glossary/index.html#web-server)[php2shell](../../glossary/index.html#php2shell)[Exploit, exploitation](../../glossary/index.html#exploit)[PHP](../../glossary/index.html#php)[Remote code execution (RCE)](../../glossary/index.html#rce)[Honeypot](../../glossary/index.html#honeypot)[Evidence vault](../../glossary/index.html#vault)[NCSC](../../glossary/index.html#ncsc)[CVE](../../glossary/index.html#cve)[KEV](../../glossary/index.html#kev)[CISA](../../glossary/index.html#cisa)
+[Evidence vault](../../glossary/index.html#vault)[Patch](../../glossary/index.html#patch)[Unauthenticated](../../glossary/index.html#unauthenticated)[Primary source](../../glossary/index.html#primary)[Web server](../../glossary/index.html#web-server)[php2shell](../../glossary/index.html#php2shell)[Exploit, exploitation](../../glossary/index.html#exploit)[PHP](../../glossary/index.html#php)[Remote code execution (RCE)](../../glossary/index.html#rce)[Honeypot](../../glossary/index.html#honeypot)[NCSC](../../glossary/index.html#ncsc)[CVE](../../glossary/index.html#cve)[KEV](../../glossary/index.html#kev)[CISA](../../glossary/index.html#cisa)
 
 Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
@@ -101,4 +101,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/cfo/index.html
+site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/cfo/index.html

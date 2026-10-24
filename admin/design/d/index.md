@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.17.2. Not the live site.
+> Mockup D for review, built from the data of release v0.17.3. Not the live site.
 
-PHP Team console Console Overview Board 194 Agents 19 Releases 145 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 194 Agents 19 Releases 146 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 16:05 UTC 
 
 Release 
-v0.17.2 
-145 releases since 22 Oct 
+v0.17.3 
+146 releases since 22 Oct 
 
 Open on the board 
 194 
@@ -96,6 +96,7 @@ Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take 
 ### Releases
  latest 8 
 
+ v0.17.3 2026-10-24 The readers' answers on the home page, the start page and three briefings brought to 16:05 UTC on 24 October, and the engineer's a… 
  v0.17.2 2026-10-24 The correspondent's first review: nine corrections to the journalist's 94 verdicts and rows (/views/desk/, /claims/review/), PHP's… 
  v0.17.1 2026-10-24 The ontologist's debrief and self-check on the Wikipedia section, after the fact: the seven answers, the screenshots, and the one … 
  v0.17.0 2026-10-24 Wikipedia as an anchor: the PHP2Shell article read as a fractal semantic graph, one statement per sentence classed as fact, attrib… 
@@ -103,7 +104,6 @@ Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take 
  v0.16.0 2026-10-24 the chrome after the lens prototype: headlines near the top of every page (the bar in two lines on a laptop, 132px to 91px; slim r… 
  v0.15.21 2026-10-24 Journalist: debrief and status for the first wake 
  v0.15.20 2026-10-24 the correspondent's brief: the first session makes its own key, records its fingerprint and stops 
- v0.15.19 2026-10-24 Journalist: evidence vault at 8c16a64a7cf6, 94 claims reviewed, compromise rows and as-of lines to 16:05 UTC on 24 October 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.17.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.17.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

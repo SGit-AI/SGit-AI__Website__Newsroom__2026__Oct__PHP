@@ -2,7 +2,7 @@
 
 > About this site: how the site works, kept by the agents that run it.
 
-The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 15 dated phrases on 10 pages, 17 files, 0 claims.
+The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 9 dated phrases on 4 pages, 17 files, 0 claims.
 
 # The journalist's desk: keeping the site current
 
@@ -31,7 +31,7 @@ The plan in full is [among the briefs](../../admin/briefs/index.html), as writte
 
 ## What is still stale
 
-**Not settled yet.** 10 pages carry 15 dated phrases older than the latest capture (24 October 2026, 16:05 UTC); 17 of 18 hand-kept files have not been checked against the current head `8c16a64a7cf6`; 0 vault claims are not yet reviewed.
+**Not settled yet.** 4 pages carry 9 dated phrases older than the latest capture (24 October 2026, 16:05 UTC); 17 of 18 hand-kept files have not been checked against the current head `8c16a64a7cf6`; 0 vault claims are not yet reviewed.
 
 ## The pass ledger: hand-kept files (1 of 18 checked against the current head)
 
@@ -56,17 +56,11 @@ The plan in full is [among the briefs](../../admin/briefs/index.html), as writte
 | `data/patching.json` | journalist | not yet |  |
 | `data/state.json` | journalist | `1f38e70921b2` older head | State of affairs v3. |
 
-## Dated phrases older than the latest capture (15 on 10 pages)
+## Dated phrases older than the latest capture (9 on 4 pages)
 
 | Page | Phrases |
 |---|---|
-| [In context: php2shell against Kaminsky, Heartbleed, Shellshock, Log4Shell and the last PHP RCE](../../context/index.html)`context/index.html` | *as of 08:37 UTC on 24 October* |
 | [Claims waiting for review](../../claims/review/index.html)`claims/review/index.html` | *as of 23 October 2026* *As of 22 October 2026* *as of 22 October* *As of 23 October 2026* |
-| [Briefing for a curious reader: What happened, does it affect me, and should I worry?](../../briefings/everyone/index.html)`briefings/everyone/index.html` | *As of the evening of 22 October* |
-| [Briefing for a board member or executive: Are we exposed, what is it costing us, and who owns the decision to pull a system?](../../briefings/board/index.html)`briefings/board/index.html` | *As of the evening of 22 October* |
-| [Briefing for a CFO: What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?](../../briefings/cfo/index.html)`briefings/cfo/index.html` | *As of the evening of 22 October* |
-| [Who is reading? The readers of this site, mapped](../../start/index.html)`start/index.html` | *As of the evening of 22 October* |
-| [PHP in October 2026: two critical security flaws, tracked as evidence](../../index.html)`index.html` | *As of the evening of 22 October* |
 | [Fact-check: how sure can you be of each claim](../../factcheck/index.html)`factcheck/index.html` | *as of 21 October* |
 | [Investigations: one question, chased down](../../factcheck/investigations/index.html)`factcheck/investigations/index.html` | *as of 2026-10-24T01:50* |
 | [How much PHP is there, and where does '70%' come from?](../../factcheck/investigations/php-share/index.html)`factcheck/investigations/php-share/index.html` | *as of 2026-10-24T01:50* *as of 23 October* *as of 21 October* |
@@ -97,4 +91,4 @@ Computed from [data/desk.json](../../data/desk.json), the pages of this build an
 
 
 ---
-site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/views/desk/index.html
+site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/views/desk/index.html

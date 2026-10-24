@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.17.2. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.17.3. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.17.3 · 2026-10-24
+
+The readers' answers on the home page, the start page and three briefings brought to 16:05 UTC on 24 October, and the engineer's answer warns of CVE-2026-115560 (persona answers, /briefings/engineer/)
+Pages changed (22): The journalist's desk: keeping the site current · Who is reading? The readers of this site, mapped · Briefing for a PHP or platform engineer: Which versions, which SAPIs… · Briefing for a board member or executive: Are we exposed, what is it… · Briefing for a CFO: What is the financial exposure, what does downti… · Briefing for a curious reader: What happened, does it affect me, and… · PHP in October 2026: two critical security flaws, tracked as evidence · In context: php2shell against Kaminsky, Heartbleed, Shellshock, Log4… and 14 more
+[The fact pipeline: from a web page to a reader](../pipeline/index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [Analysis: how sure we are, and where the sources disagree](../analysis/index.html) · [Operations: what changed, what to do next, how sure we are](../ops/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [Briefing: Board member or executive: version history](../versions/briefing-board/index.html) · [Briefing: CFO: version history](../versions/briefing-cfo/index.html) · [Briefing: PHP or platform engineer: version history](../versions/briefing-engineer/index.html) · [Briefing: Curious reader: version history](../versions/briefing-everyone/index.html) · [How the story changed, release by release](../versions/index.html) · [In context: 2008 to 2026: version history](../versions/page-context/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
 
 ### v0.17.2 · 2026-10-24
 
@@ -1127,4 +1135,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

@@ -52,4 +52,4 @@ The gate fails on any workflow action not pinned to a commit SHA.
 
 
 ---
-site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-006/index.html
+site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-006/index.html

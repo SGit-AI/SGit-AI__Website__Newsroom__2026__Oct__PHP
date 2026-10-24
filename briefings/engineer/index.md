@@ -11,7 +11,7 @@ Briefing for Drew, php or platform engineer · ******Deeply technical · from th
 D
 The answer in thirty seconds
 
-Target 8.5.12, 8.4.27, 8.3.36 or 8.2.35; restart every worker and rebuild images. Until then: session.upload_progress.enabled=0 in php.ini or the pool, low post_max_size, fatal_error_backtraces=0 on 8.5, pm.max_requests=1 on FPM. Verify with php -v inside the running container.
+Target 8.5.12, 8.4.27, 8.3.36 or 8.2.35; restart every worker and rebuild images. Until then: session.upload_progress.enabled=0 in php.ini or the pool, low post_max_size, fatal_error_backtraces=0 on 8.5, pm.max_requests=1 on FPM. Verify with php -v inside the running container. Keep session.upload_progress.enabled=0 after the update as well: CVE-2026-115560, published by PHP on 23 October (as Cloudflare and SOCRadar report), affects the fixed releases under a rare session setting and is fixed only in the next regular release.
 
 [Read the site as Drew →](../../flaws/index.html)
 
@@ -45,7 +45,7 @@ About 18 minutes in all. Choose *read as Drew* and the bar under the menu keeps 
 
 ## Words you will meet
 
-[PHP-FPM](../../glossary/index.html#fpm)[SAPI](../../glossary/index.html#sapi)[CVE](../../glossary/index.html#cve)[Backport](../../glossary/index.html#backport)[Primary source](../../glossary/index.html#primary)[PHP](../../glossary/index.html#php)[CVSS](../../glossary/index.html#cvss)[Vulnerability](../../glossary/index.html#vulnerability)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Remote code execution (RCE)](../../glossary/index.html#rce)[mod_php](../../glossary/index.html#mod-php)[Out of memory (OOM)](../../glossary/index.html#oom)[longjmp](../../glossary/index.html#longjmp)[Exploit, exploitation](../../glossary/index.html#exploit)
+[PHP](../../glossary/index.html#php)[PHP-FPM](../../glossary/index.html#fpm)[SAPI](../../glossary/index.html#sapi)[CVE](../../glossary/index.html#cve)[Backport](../../glossary/index.html#backport)[Primary source](../../glossary/index.html#primary)[CVSS](../../glossary/index.html#cvss)[Vulnerability](../../glossary/index.html#vulnerability)[GitHub advisory (GHSA)](../../glossary/index.html#ghsa)[Remote code execution (RCE)](../../glossary/index.html#rce)[mod_php](../../glossary/index.html#mod-php)[Out of memory (OOM)](../../glossary/index.html#oom)[longjmp](../../glossary/index.html#longjmp)[Exploit, exploitation](../../glossary/index.html#exploit)
 
 Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
@@ -85,4 +85,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/engineer/index.html
+site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/engineer/index.html

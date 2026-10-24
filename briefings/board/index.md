@@ -11,7 +11,7 @@ Briefing for Jordan, board member or executive · ******Plain English · from th
 J
 The answer in thirty seconds
 
-A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of the evening of 22 October, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
+A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of 16:05 UTC on 24 October, the latest capture in the evidence vault, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
 
 [Read the site as Jordan →](../../explained/index.html)
 
@@ -46,7 +46,7 @@ About 18 minutes in all. Choose *read as Jordan* and the bar under the menu keep
 
 ## Words you will meet
 
-[PHP](../../glossary/index.html#php)[Patch](../../glossary/index.html#patch)[Exploit, exploitation](../../glossary/index.html#exploit)[SAPI](../../glossary/index.html#sapi)[Primary source](../../glossary/index.html#primary)[CVE](../../glossary/index.html#cve)[KEV](../../glossary/index.html#kev)[CISA](../../glossary/index.html#cisa)[NCSC](../../glossary/index.html#ncsc)[php2shell](../../glossary/index.html#php2shell)[Proof of concept (PoC)](../../glossary/index.html#poc)[Honeypot](../../glossary/index.html#honeypot)[Coordinated disclosure](../../glossary/index.html#disclosure)[Remote code execution (RCE)](../../glossary/index.html#rce)
+[PHP](../../glossary/index.html#php)[Evidence vault](../../glossary/index.html#vault)[Patch](../../glossary/index.html#patch)[Exploit, exploitation](../../glossary/index.html#exploit)[SAPI](../../glossary/index.html#sapi)[Primary source](../../glossary/index.html#primary)[CVE](../../glossary/index.html#cve)[KEV](../../glossary/index.html#kev)[CISA](../../glossary/index.html#cisa)[NCSC](../../glossary/index.html#ncsc)[php2shell](../../glossary/index.html#php2shell)[Proof of concept (PoC)](../../glossary/index.html#poc)[Honeypot](../../glossary/index.html#honeypot)[Coordinated disclosure](../../glossary/index.html#disclosure)
 
 Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
@@ -109,4 +109,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.html
+site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.html
