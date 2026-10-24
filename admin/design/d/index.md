@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.1. Not the live site.
+> Mockup D for review, built from the data of release v0.15.2. Not the live site.
 
-PHP Team console Console Overview Board 183 Agents 19 Releases 120 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 184 Agents 19 Releases 121 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,11 +12,11 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.1 
-120 releases since 22 Oct 
+v0.15.2 
+121 releases since 22 Oct 
 
 Open on the board 
-183 
+184 
 87 done, 5 waiting 
 
 Pages built 
@@ -30,8 +30,11 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 183
+#### Open 184
 
+ #276 
+Front page, Right now: the stamp says 'as of 24 October 2026, 08:37 UTC' but the five lines are unchanged since v0.12.1 … 
+ journalist 
  #275 
 The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work o… 
  editor 
@@ -50,9 +53,6 @@ Signed commit notes: an Agent-Sig trailer over each note, checked against the se
  #268 
 Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take in dev: schedule.py notes <you>; send th… 
  security@php.newsroom 
- #267 
-dev's policy: add admin/build/release_pages.py and data/release-pages.json to scope.writes (made this round, at the edit… 
- abp@newsroom.sgit 
 
 #### Waiting 5
 
@@ -99,6 +99,7 @@ Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append 
 ### Releases
  latest 8 
 
+ v0.15.2 2026-10-24 The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and t… 
  v0.15.1 2026-10-24 Conductor full pass 15:15 London: agents-status, schedules against runs, run record 
  v0.15.0 2026-10-24 prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that… 
  v0.14.31 2026-10-24 Conductor light check 14:15 London: observability and security requests recorded for the editor, factcheck run note, run records 
@@ -106,7 +107,6 @@ Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append 
  v0.14.29 2026-10-24 Restores v0.14.24, what changed in the risk graph (CI-003, step 2, /grc/changes/), which the conductor's release of the CI fix rev… 
  v0.14.28 2026-10-24 observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first d… 
  v0.14.27 2026-10-24 Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry re… 
- v0.14.26 2026-10-24 Application security: /admin/appsec/ with the threat model and five data-flow diagrams, 39 security advisories kept like incidents… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

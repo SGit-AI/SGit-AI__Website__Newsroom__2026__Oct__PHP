@@ -194,4 +194,4 @@ Not sent. The editor shares this page and the brief with him.
 
 
 ---
-site v0.15.1 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-003/index.html
+site v0.15.2 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-003/index.html
