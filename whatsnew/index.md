@@ -12,11 +12,18 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.0 · 24 October 2026new since your last visit
+
+the redesign, live: three reader homes (Briefing on the front page, Operations at /ops/, Analysis at /analysis/), the menu by task with two dials (who you are; Focus, Standard, Everything), the wide layout, and every admin page in the team console
+
+No reader-facing section changed in this release.
+
 ## v0.13.0 · 24 October 2026new since your last visit
 
 The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the 1.57 million framing, the Dutch offline row, the front page's offline advice, DigiD and fix-complete lines), Corrections we have asked for (/outreach/) with eleven requests and the emails the editor sends, and the desk's briefs, review and schedule
 
-No reader-facing section changed in this release.
+### Sections that changed
+- [The agencies](../versions/page-agencies/index.html#v3) v3
 
 ## v0.12.1 · 24 October 2026new since your last visit
 
@@ -713,4 +720,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

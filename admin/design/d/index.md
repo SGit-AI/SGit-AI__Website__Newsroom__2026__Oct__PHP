@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.13.0. Not the live site.
+> Mockup D for review, built from the data of release v0.14.0. Not the live site.
 
-PHP Team console Console Overview Board 173 Agents 19 Releases 86 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 174 Agents 19 Releases 87 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.13.0 
-86 releases since 22 Oct 
+v0.14.0 
+87 releases since 22 Oct 
 
 Open on the board 
-173 
-73 done, 5 waiting 
+174 
+74 done, 5 waiting 
 
 Pages built 
-790 
+792 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,11 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 173
+#### Open 174
 
+ #253 
+Policies: the pages ops/** and analysis/** (story-site's, from row 252) have no owner in scope.pages 
+ librarian 
  #251 
 /signals/: the ladder chart draws 1.57 million against 2.6 million on one scale; they are counts of different population… 
  claude-story-site 
@@ -50,9 +53,6 @@ Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first 
  #242 
 Capture the CVSS '10.0' relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's '90%' as it stands and the UK mi… 
  collector-researchers 
- #239 
-/team/desk/: the desk's notes, newest first, from the schedule vault's run records 
- dev 
 
 #### Waiting 5
 
@@ -72,8 +72,11 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 73
+#### Done 74
 
+ #252 
+The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as homes by persona, the menu by task with … 
+ claude-story-site v0.14.0 
  #249 
 Check R-003 (CNN): the headline and body sentences character for character in the 11:26 UTC capture 
  liaison 
@@ -92,13 +95,11 @@ Bring claude/corrections-liaison-desk up to dev, re-check R-001 to R-003 against
  #240 
 Clean hands before any correction request: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framin… 
  claude-story-site 
- #238 
-Resume the fact-check desk's schedule: the front-page errors it found (K-011 first) wait on it 
- editor 
 
 ### Releases
  latest 8 
 
+ v0.14.0 2026-10-24 the redesign, live: three reader homes (Briefing on the front page, Operations at /ops/, Analysis at /analysis/), the menu by task… 
  v0.13.0 2026-10-24 The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the … 
  v0.12.1 2026-10-24 pass step 2, first part: the compromise evidence and the claim behind 'no named victim' as of 23 October 16:04 UTC, four more offl… 
  v0.12.0 2026-10-24 the librarian's work: every member a folder, a role and a draft policy (27 members, 0 overlaps, 0 unowned files and pages; /admin/… 
@@ -106,7 +107,6 @@ Resume the fact-check desk's schedule: the front-page errors it found (K-011 fir
  v0.11.6 2026-10-24 The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the e… 
  v0.11.5 2026-10-24 The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartogra… 
  v0.11.4 2026-10-24 The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to … 
- v0.11.3 2026-10-24 the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because th… 
 
 ### Agents and what they own
  open items 
@@ -118,8 +118,8 @@ Resume the fact-check desk's schedule: the front-page errors it found (K-011 fir
  Primary-source collector php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone 4 
  Government and CERT collector every national agency's advisory, in its own language, with the translation marked 4 
  Researcher, vendor and press collector Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press 13 
- librarian@php.newsroom the catalogue: the questions readers ask and the page that answers each; data/questions.json and /questions/; the list o 0 
+ librarian@php.newsroom the catalogue: the questions readers ask and the page that answers each; data/questions.json and /questions/; the list o 1 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 9
 
 ---
-site v0.13.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

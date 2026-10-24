@@ -133,10 +133,10 @@ A critical flaw in software that runs many websites, fixed on 21 October. Every 
 - [Your briefing](../briefings/board/index.html) 4 min
 - [Explained from the start](../explained/index.html) 6 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 16 minutes in all. Choose *read as Jordan* and the bar under the menu keeps your place on every page.
+About 18 minutes in all. Choose *read as Jordan* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -286,10 +286,10 @@ The flaw is in the PHP runtime, so exposure is every internet-facing system runn
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [Exploitation signals](../exploitation/index.html) 2 min
 - [Detection and defence](../defence/index.html) 3 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 14 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
+About 16 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -362,9 +362,9 @@ The 70% figure is a share of websites that use PHP, restated as a share of the I
 - [Every claim](../claims/index.html) 1 min
 - [Who found it](../discovery/index.html) 2 min
 - [How disclosure broke](../leak/index.html) 1 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 
-About 10 minutes in all. Choose *read as Rowan* and the bar under the menu keeps your place on every page.
+About 12 minutes in all. Choose *read as Rowan* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -400,9 +400,9 @@ Safe to say: two critical flaws in PHP were fixed on 21 October; we updated or i
 - [Explained from the start](../explained/index.html) 6 min
 - [The numbers](../numbers/index.html) 2 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 
-About 15 minutes in all. Choose *read as Riley* and the bar under the menu keeps your place on every page.
+About 17 minutes in all. Choose *read as Riley* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -437,9 +437,9 @@ Internet-facing mod_php first, then FPM, then everything else. Where patching sl
 - [If you run PHP](../playbook/index.html) 3 min
 - [Exploitation signals](../exploitation/index.html) 2 min
 - [Detection and defence](../defence/index.html) 3 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 
-About 12 minutes in all. Choose *read as Sam* and the bar under the menu keeps your place on every page.
+About 14 minutes in all. Choose *read as Sam* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -623,10 +623,10 @@ A bug class seen and shelved in 2024 was turned into working exploits by three A
 - [Who found it](../discovery/index.html) 2 min
 - [How disclosure broke](../leak/index.html) 1 min
 - [In context: 2008 to 2026](../context/index.html) 3 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 - [The numbers](../numbers/index.html) 2 min
 
-About 12 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
+About 14 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -640,4 +640,4 @@ The first version of this site opened with a sentence that was accurate and unre
 
 
 ---
-site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
+site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/start/index.html

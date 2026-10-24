@@ -14,7 +14,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/claims/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/claims/review/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/numbers/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
-<url><loc>https://php.oct.2026.newsroom.sgit.ai/agencies/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/agencies/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/affected/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/affected/software.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/sources/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
@@ -526,6 +526,8 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/versions/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/pipeline/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/ops/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/analysis/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/review/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/review/ui/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/fractal/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>

@@ -233,7 +233,7 @@ def to_markdown(fragment):
 
 NAV = [
     ('Updates', [('updates/index.html', 'Every update, newest first')] + [(f'updates/{u["id"]}/index.html', f'{UPDATE_KINDS[u["kind"]]}: {int(u["at"][8:10])} {"Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()[int(u["at"][5:7]) - 1]} {u["at"][11:16]} UTC') for u in UPDATES[:6]] + [('updates/readme/index.html', 'How an update is written')]),
-    ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
+    ('Start here', [('start/index.html', 'Who are you? Pick a reader'), ('ops/index.html', 'Operations view: patch and defend'), ('analysis/index.html', 'Analysis view: weigh the evidence'), ('explained/index.html', 'Explained from the start'), ('glossary/index.html', 'Glossary: every term, in plain English')]),
     ('Questions', [('questions/index.html', 'Questions readers ask')] + [(f'questions/{q["id"]}/index.html', q['q']) for q in D['questions']['questions']]),
     ('Briefings', [(f'briefings/{a["id"]}/index.html', a['name']) for a in D['roles']['audiences']]),
     ('Yours', [('collaborators/index.html', 'Power users: start here'), ('join/index.html', 'Join: a key for feedback'), ('feedback/index.html', 'Feedback from collaborators'), ('join/invite/index.html', 'Invite someone'), ('now/index.html', 'Now: the phone app'), ('you/index.html', 'Your desk: new, changed, notes'), ('stack/index.html', 'Your stack: the blast radius'), ('reader/index.html', 'The feed viewer'), ('feeds/index.html', 'Feeds (RSS)'), ('subscribe/index.html', 'Subscribe by email')]),
@@ -274,15 +274,10 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
     up = '../' * depth
     PAGES.append((path, title, description, kind))
     here = path
-    nav_items, zone = [], None
-    for label, items in NAV:
-        if ZONES.get(label, '') != zone:
-            zone = ZONES.get(label, '')
-            if zone:
-                nav_items.append(f'<span class="zone zone-{zone.split()[0].lower()}">{E(zone)}</span>')
-        active = any(p == here for p, _ in items)
-        subs = ''.join(f'<a class="sl{" here" if p == here else ""}" href="{up}{p}">{E(t)}</a>' for p, t in items)
-        nav_items.append(f'<div class="ni"><a class="nl{" here" if active else ""}" href="{up}{items[0][0]}">{E(label)}<span class="caret">&#9662;</span></a><div class="sub">{subs}</div></div>')
+    nav_items = [__import__('design').menu_html(globals(), here, up)]  # the task menu (admin/build/design.py); the dials pick what of it shows
+    if path.startswith('admin/'):
+        body = (__import__('design').console_overview(globals()) if path == 'admin/index.html' else '') + body
+        body = f'<div class="v2"><div class="console-live">{__import__('design').console_side(globals(), path, up)}<div class="cmain">{body}</div></div></div>'
     cfg = D['billing']['runs']
     meter_cfg = {
         'storageKey': cfg['storageKey'], 'start': cfg['start'], 'symbol': cfg['symbol'],
@@ -315,7 +310,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
     if path == 'index.html':
         ld.append({'@context': 'https://schema.org', '@type': 'WebSite', 'name': SITE_NAME, 'url': BASE_URL + '/', 'description': STORY['description'], 'inLanguage': 'en'})
     return f'''<!doctype html>
-<html lang="en" data-root="{up}" data-path="{path}" data-ver="{VERSION}">
+<html lang="en" data-root="{up}" data-path="{path}" data-ver="{VERSION}"{' data-track-home' if path in ('index.html', 'ops/index.html', 'analysis/index.html') else ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -342,6 +337,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
 <link rel="stylesheet" href="{up}assets/site.css">
 <link rel="stylesheet" href="{up}assets/themes/themes.css">
 <link rel="stylesheet" href="{up}assets/themes/site-tokens.css">
+<link rel="stylesheet" href="{up}assets/design/v2-live.css">
 <script type="application/ld+json">{J(ld, ensure_ascii=False)}</script>
 <script type="application/json" id="sg-meter-config">{meter_json}</script>
 <script type="module" src="{up}assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"></script>
@@ -350,6 +346,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
 <script src="{up}assets/reader-state.js" defer></script>
 <script src="{up}assets/site-tools.js" defer></script>
 <script src="{up}assets/telemetry.js" defer></script>
+<script src="{up}assets/design/dials.js" defer></script>
 </head>
 <body>
 <nav class="site"><div class="row">
@@ -358,7 +355,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
   <a class="ver" href="{up}admin/versions.html#v{E(VERSION)}" title="Site release history: what v{E(VERSION)} changed">v{E(VERSION)}</a>
   <span class="status" title="{E(checks_title())}">{E(STORY["status"])} &middot; last checked {E(human_time(STORY["checked_at"]))}</span>
   <span class="crumbs"><a href="https://newsroom.sgit.ai/">newsroom</a> / <a href="https://2026.newsroom.sgit.ai/">2026</a> / <a href="https://oct.2026.newsroom.sgit.ai/">October</a> / <b>PHP</b></span>
-  <div class="tools"><div class="theme-pick"></div><sg-meter view="balance"></sg-meter></div>
+  <div class="tools">{__import__('design').dials_html(globals(), up)}<div class="theme-pick"></div><sg-meter view="balance"></sg-meter></div>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-items" aria-label="Menu">Menu</button>
   <div class="nav-items" id="nav-items">{''.join(nav_items)}</div>
 </div></nav>
@@ -623,26 +620,50 @@ def build_index():
     b_unknown = fsec('unknown', 'what nobody knows yet', '\n'.join(u['text'] for u in pl['unknown']))
     b_latest = fsec('latest', 'latest', '\n'.join(f'{x["when"]}: {x["text"]} [{", ".join(x["sources"])}]' for x in pl['latest']))
     who_lead = f'The same evidence, put in order for {len(PERSONAS)} kinds of reader. Each starts with a thirty-second answer in plain words. <a href="start/index.html">How the readers are mapped</a>.'
-    body = f'''
-<header class="hero hero2">
-  <p class="kicker">PHP news &middot; October 2026 &middot; <span class="live">{E(s["status"])}</span> &middot; <a href="#checked">last checked {E(human_time(s["checked_at"]))}</a></p>
-  <h1>{E(pl["headline"])}</h1>
-  <p class="deck">{E(pl["deck"])}</p>
-  <div class="ctas"><a class="cta cta-pri" href="#now">What is happening now</a><a class="cta" href="#who">The briefing for you</a><a class="cta" href="explained/index.html">Explain it from the start</a><a class="cta" href="stack/index.html">Check your stack</a><a class="cta" href="now/index.html">On your phone: Now &rarr;</a></div>
-  <p class="aka">{E(pl["aka"])}</p>
-  <p class="aka" id="checked">Last checked: {checked}.</p>
-</header>
-<section id="now"><h2>Right now</h2><p class="small">As of {E(when)}, the time of the latest page this site saved.</p><ul class="nowlist">{now}</ul>{b_now}</section>
-{section("state", "At a glance", f'<div class="tiles">{board}</div>{b_glance}')}
-{section("facts", "The core facts, and the evidence for each", f'<ul class="legend">{legend}</ul><ol class="facts">{facts}</ol>{b_facts}', "Each fact links to the original pages it rests on: the PHP project, government agencies, the researchers. Click a source to see when it was saved and its fingerprint.")}
-{section("unknown", "What nobody knows yet", f'<ul class="unknown">{unknown}</ul>{b_unknown}', "Stated, not papered over. This site will update each one when the evidence does.")}
-{section("latest", "Latest", f'<ol class="latest">{latest}</ol><p><a href="timeline/index.html">Everything, in order, on the timeline &rarr;</a> &middot; <a href="whatsnew/index.html">What changed on this site, release by release &rarr;</a></p>{b_latest}')}
+    DZ = __import__('design')
+    tone = {'ok': 'good', 'bad': 'alert', 'warn': 'warn', 'info': 'info'}
+    kpis = ''.join(DZ.kpi(globals(), tone.get(t, 'info'), l, v, n, h) for t, l, v, n, h in tiles)
+    stance = Counter()
+    for a in D['agencies']:
+        o = a['offline']
+        stance['Take offline' if o == 'yes' else 'Isolate or restrict' if o.startswith('isolate') or o == 'restrict from abroad' else 'Offline after other steps' if o in ('after mitigations', 'consider') else 'No offline advice' if o == 'none' else 'Not readable'] += 1
+    sorder = [('Take offline', 'var(--alert)'), ('Isolate or restrict', 'var(--warn)'), ('Offline after other steps', '#d6a556'), ('No offline advice', 'var(--info)'), ('Not readable', 'var(--line-2)')]
+    sbar = ''.join(f'<div style="flex:{stance[k]};background:{c}" title="{stance[k]} {E(k)}"></div>' for k, c in sorder if stance[k])
+    slegend = ''.join(f'<li><i style="background:{c}"></i>{stance[k]} {E(k.lower())}</li>' for k, c in sorder if stance[k])
+    journey = ''.join(f'<a class="jst {tone.get(m["tone"], "")}" href="{U(m["href"])}" style="text-decoration:none;color:inherit"><div class="w">{E(m["when"])}</div><div class="x">{E(m["what"])}</div></a>' for m in pl['moments'])
+    tracks = D['personas'].get('tracks', {})
+    trackcards = ''.join(f'<a class="card" href="{U(t["home"])}" style="text-decoration:none;color:inherit"><p class="eyebrow">{E(t["label"])}</p><p style="margin:.3rem 0 .5rem;color:var(--ink-2)">{E(t["text"])}</p><div class="chips">' + ''.join(f'<span class="chip">{E(pp["label"])}</span>' for pp in PERSONAS.values() if pp.get('track') == k) + '</div></a>' for k, t in tracks.items())
+    body = f"""<div class="v2">
+<section class="band"><div class="shell hero">
+  <div><p class="eyebrow"><span class="live">{E(s["status"])}</span> &nbsp;&middot;&nbsp; PHP news, October 2026 &nbsp;&middot;&nbsp; <a href="#checked" style="color:inherit">last checked {E(human_time(s["checked_at"]))}</a></p>
+    <h1 class="display">{E(pl["headline"])}</h1>
+    <p class="lede">{E(pl["deck"])}</p>
+    <div class="chips" style="margin-top:1rem"><a class="iconbtn" href="#now">What is happening now</a><a class="chip" style="background:transparent;color:var(--band-ink);border-color:rgba(255,255,255,.3);padding:.45rem .9rem" href="explained/index.html">Explain it from the start</a><a class="chip" style="background:transparent;color:var(--band-ink);border-color:rgba(255,255,255,.3);padding:.45rem .9rem" href="stack/index.html">Check your stack</a><a class="chip" style="background:transparent;color:var(--band-ink);border-color:rgba(255,255,255,.3);padding:.45rem .9rem" href="now/index.html">On your phone</a></div>
+    <p class="small" style="color:var(--band-muted);margin-top:1rem">{E(pl["aka"])}</p></div>
+  {DZ.answer_card(globals(), 'board')}
+</div></section>
+<section class="block" id="state"><div class="tiles">{kpis}</div>{b_glance}</section>
+<section class="block"><div class="grid cols-12">
+  <div class="span-8 grid" style="align-content:start">
+    <div class="card" id="now"><div class="block-head"><h2 class="h2">Right now</h2><span class="small">as of {E(when)}, the latest page this site saved</span></div><ul class="nowlist" style="margin:0">{now}</ul>{b_now}</div>
+    <div class="card" id="facts"><div class="block-head"><h2 class="h2">The core facts, and the evidence for each</h2></div><ul class="legend" style="margin:0 0 .6rem">{legend}</ul><ol class="facts">{facts}</ol>{b_facts}</div>
+  </div>
+  <div class="span-4 grid" style="align-content:start">
+    <div class="card" id="latest"><div class="block-head"><h2 class="h2">Latest</h2><a class="small" href="whatsnew/index.html">what changed on the site</a></div><ol class="latest" style="margin:0">{latest}</ol><p class="small" style="margin-bottom:0"><a href="timeline/index.html">Everything, in order &rarr;</a></p>{b_latest}</div>
+    <div class="card" id="unknown"><h2 class="h2" style="margin-bottom:.4rem">What nobody knows yet</h2><ul class="unknown" style="margin:0">{unknown}</ul>{b_unknown}</div>
+    <div class="card flat" style="background:var(--brand-soft);border-color:transparent"><h3>Ask about it</h3><p class="small" style="color:var(--ink-2)">Answers cite the evidence on this site.</p><a class="iconbtn" href="questions/index.html">Questions readers ask</a></div>
+  </div></div></section>
+<section class="block"><div class="grid cols-12">
+  <div class="card span-7" id="moments">{item('home-moments', 'front', 'research', 'How it unfolded: five moments', 'index.html#moments', moments, REL_DATE.get(VERSION, ''))}<div class="block-head"><h2 class="h2">How it unfolded</h2><a class="small" href="timeline/index.html">The full timeline</a></div><div class="journey">{journey}</div></div>
+  <div class="card span-5"><div class="block-head"><h2 class="h2">What governments advise</h2><span class="small">{len(D["agencies"])} agencies</span></div><p style="margin:.2rem 0 .8rem;color:var(--ink-2)">All say install the fix. They split on what to do if you cannot.</p><div style="display:flex;height:22px;border-radius:7px;overflow:hidden;gap:2px">{sbar}</div><ul class="legend">{slegend}</ul><p class="small" style="margin-bottom:0"><a href="agencies/index.html">Every agency, in its own words &rarr;</a></p></div>
+</div></section>
+<section class="block" id="views"><div class="block-head"><h2 class="h2">Three ways to read this site</h2><span class="small">choose who you are in the bar above; the site takes you to yours</span></div><div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">{trackcards}</div></section>
+<section class="block" id="who">{item('home-who', 'front', 'for-you', 'The briefing for you: fifteen readers', 'index.html#who', re.sub(r'\d+', '#', persona_doors()), REL_DATE.get(VERSION, ''))}<div class="block-head"><h2 class="h2">The briefing for you</h2><span class="small"><a href="start/index.html">How the readers are mapped</a></span></div>{persona_doors()}</section>
+<section class="block" id="stories">{item('home-stories', 'front', 'stories', 'Stories: written here', 'index.html#stories', re.sub(r'\d+', '#', stories_row()), REL_DATE.get(VERSION, ''))}<div class="block-head"><h2 class="h2">Stories: written here</h2><span class="small">signed, dated and kept as written; everything above is research</span></div>{stories_row()}</section>
 <aside class="origin o-elsewhere"><b>What else is going on</b> <span>Other vulnerabilities in the news this month, with the evidence that each is exploited beside the attention it gets: the SGit newsroom's Pulse, in a separate section, not about PHP.</span> <a href="pulse/index.html">Pulse &rarr;</a></aside>
-{section("who", "The briefing for you", item('home-who', 'front', 'for-you', 'The briefing for you: fifteen readers', 'index.html#who', re.sub(r'\d+', '#', persona_doors()), REL_DATE.get(VERSION, '')) + persona_doors(), who_lead)}
-{section("moments", "How it unfolded", item('home-moments', 'front', 'research', 'How it unfolded: five moments', 'index.html#moments', moments, REL_DATE.get(VERSION, '')) + f'<ol class="moments">{moments}</ol>')}
-{section("stories", "Stories: written here", item('home-stories', 'front', 'stories', 'Stories: written here', 'index.html#stories', re.sub(r'\d+', '#', stories_row()), REL_DATE.get(VERSION, '')) + stories_row(), "Everything above is research: collected from outside sources, each fact linked to a saved copy. These are written here, signed and dated, and kept as written.")}
-{section("evidence", "How this site knows", item('home-how', 'front', 'site', 'How this site knows', 'index.html#evidence', 'how this site knows: saved, fingerprinted, agents for one editor', REL_DATE.get(VERSION, '')) + f'<div class="stats">{evidence}</div><p>Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read <a href="https://www.php.net/archive/2026.php#2026-10-21-5" rel="noopener">the PHP project\'s announcement</a> and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; <a href="method/index.html">how it works</a>.</p><p>Already know the vocabulary? <a href="summary/index.html">The specialist summary</a> has the technical version of this page, with every number and the full last 48 hours.</p>')}
-'''
+<section class="block" id="evidence">{item('home-how', 'front', 'site', 'How this site knows', 'index.html#evidence', 'how this site knows: saved, fingerprinted, agents for one editor', REL_DATE.get(VERSION, ''))}<div class="card"><h2 class="h2" style="margin-bottom:.6rem">How this site knows</h2><div class="stats">{evidence}</div><p>Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read <a href="https://www.php.net/archive/2026.php#2026-10-21-5" rel="noopener">the PHP project's announcement</a> and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; <a href="method/index.html">how it works</a>.</p><p id="checked" class="small">Last checked: {checked}. Already know the vocabulary? <a href="summary/index.html">The specialist summary</a> has the technical version of this page.</p></div></section>
+</div>{DZ.answers_json(globals())}
+"""
     page('index.html', s['title'], s['description'], body, kind='story', topics='php october 2026 overview', ld_type='NewsArticle')
 
 def build_summary():
@@ -819,8 +840,13 @@ def build_agencies():
     offl = Counter(a['offline'] for a in ag)
     rows = [[f'<b>{E(a["agency"])}</b><br><span class="small">{E(a["country"])}</span>', E(a['published']), f'{pill(a["offline"])}<div class="note">{E(a["offline_text"])}</div>', E(a['exploitation']), E(a['note']), src_links(a['sources'], 1)] for a in ag]
     summary = ', '.join(f'{n} say <i>{E(k)}</i>' for k, n in sorted(offl.items(), key=lambda kv: -kv[1]))
+    spectrum_c, cards_c = __import__('design').agency_parts(globals(), '../')
     body = f'''
 <h1>The agencies, side by side</h1>
+<div class="v2"><div class="card flat" style="background:var(--band);color:var(--band-ink);border:0;margin:.4rem 0 1.2rem"><p class="eyebrow" style="color:var(--band-muted);margin:0 0 .3rem">In one line</p><p style="font-size:1.15rem;margin:0">All {len(ag)} say install the fix. They split on what to do with a system you cannot patch today: the US says take it offline, the UK makes that the fourth step, Europe says isolate, and Australia, Japan and the Netherlands say nothing about it.</p></div>
+{spectrum_c}
+<div class="block-head" style="margin-top:1.6rem"><h2 class="h2">Agency by agency</h2><span class="small">each in its own words, with its saved sources</span></div>{cards_c}
+<h2 class="h2" style="margin-top:1.8rem">The evidence table</h2></div>
 <p class="lead">{len(ag)} national and supranational bodies, each read from its own page. The question that divides them is not whether to patch (all say patch) but what to do with a system that cannot be patched now. Of {len(ag)}: {summary}. Two could not be read because their sites block automated browsers; the block is recorded.</p>
 <p>The BBC's morning framing, <q>the UK's NCSC, the NSA and their counterparts in the EU and Australia advise taking systems offline</q>, holds for the NSA and CISA, is a simplification of the NCSC's fourth of six steps, and is not supported by the Australian page at all. The sentence the BBC quotes from the NCSC is not on the NCSC page as captured; its opening matches the Canadian text.</p>
 {table(['Agency', 'Published', 'Offline?', 'Exploitation', 'Note', 'Sources'], rows, 'ag')}
@@ -1697,14 +1723,14 @@ def build_all():
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
-    build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
+    build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline(); __import__('design').build_tracks(globals())
     build_review(); build_fractal(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa(); build_desk(); build_members()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
     build_all()
     build_all()
-    build_now(); build_llms(); _design_made = __import__('design').build(globals()); open(os.path.join(ROOT, 'llms.txt'), 'a', encoding='utf-8').write(__import__('design').llms_lines(_design_made, BASE_URL)); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); build_stack_catalogue(); save_items()
+    __import__('design').write_live_css(globals()); write('assets/design/dials.js', __import__('design').DIALS_JS); build_now(); build_llms(); _design_made = __import__('design').build(globals()); open(os.path.join(ROOT, 'llms.txt'), 'a', encoding='utf-8').write(__import__('design').llms_lines(_design_made, BASE_URL)); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); build_stack_catalogue(); save_items()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 

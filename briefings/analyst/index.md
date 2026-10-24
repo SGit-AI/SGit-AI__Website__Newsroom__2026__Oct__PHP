@@ -29,10 +29,10 @@ What this incident says about coordinated disclosure once models can find bugs, 
 - [Who found it](../../discovery/index.html) 2 min
 - [How disclosure broke](../../leak/index.html) 1 min
 - [In context: 2008 to 2026](../../context/index.html) 3 min
-- [The agencies](../../agencies/index.html) 1 min
+- [The agencies](../../agencies/index.html) 3 min
 - [The numbers](../../numbers/index.html) 2 min
 
-About 12 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
+About 14 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
 
 ### What this briefing covers
 - how coordinated disclosure failed
@@ -112,4 +112,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/briefings/analyst/index.html
+site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/briefings/analyst/index.html

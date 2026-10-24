@@ -40,6 +40,8 @@ An article a reader has seen is listed here until a collector captures it into t
 
 ### Start here
 - [Who is reading? The readers of this site, mapped](../start/index.html): 16 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
+- [Operations: what changed, what to do next, how sure we are](../ops/index.html): The home for people who patch and defend: the next three actions, everything that changed newest first with what you have read marked, and the state of the evidence as charts: facts by status, events per day, exploitation signals, fixed versions.
+- [Analysis: how sure we are, and where the sources disagree](../analysis/index.html): The home for people who weigh the evidence: every fact by status and topic, the numbers in the news with how far each holds, where governments disagree, and what is still contested, each linked to its saved sources.
 - [The PHP security flaws, explained from the start](../explained/index.html): No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.
 - [Glossary: every php2shell term in plain English](../glossary/index.html): 40 terms from the php2shell story (PHP, CVE, CVSS, remote code execution, WAF, KEV and more), each explained in plain English, in the sense it has in this story.
 
@@ -195,4 +197,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

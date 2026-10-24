@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.13.0. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.14.0. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -11,6 +11,8 @@ Site v0.13.0. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 
 ## Start here
 - [Who are you? Pick a reader](https://php.oct.2026.newsroom.sgit.ai/start/index.md): 16 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
+- [Operations view: patch and defend](https://php.oct.2026.newsroom.sgit.ai/ops/index.md): The home for people who patch and defend: the next three actions, everything that changed newest first with what you have read marked, and the state of the evidence as charts: facts by status, events per day, exploitation signals, fixed versions.
+- [Analysis view: weigh the evidence](https://php.oct.2026.newsroom.sgit.ai/analysis/index.md): The home for people who weigh the evidence: every fact by status and topic, the numbers in the news with how far each holds, where governments disagree, and what is still contested, each linked to its saved sources.
 - [Explained from the start](https://php.oct.2026.newsroom.sgit.ai/explained/index.md): No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.
 - [Glossary: every term, in plain English](https://php.oct.2026.newsroom.sgit.ai/glossary/index.md): 40 terms from the php2shell story (PHP, CVE, CVSS, remote code execution, WAF, KEV and more), each explained in plain English, in the sense it has in this story.
 
@@ -131,7 +133,7 @@ Site v0.13.0. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [Views: the journalist's reading](https://php.oct.2026.newsroom.sgit.ai/views/index.md): The journalist's living state of affairs, versioned with every change visible, and the dated analyses behind it.
 - [The state of affairs, now](https://php.oct.2026.newsroom.sgit.ai/views/state/index.md): Sixty-eight more sources, read by the curator, change none of the measures that matter most: no organisation has confirmed a compromise through php2shell, and neither CVE is in CISA's exploited list at this desk's last check. What moved is the advice. Singapore and Luxembourg now tell operators to check whether they were already broken into, and the first national count of servers still affected after the fix is in: about 3.5% in Switzerland.
 - [Every version, and what changed](https://php.oct.2026.newsroom.sgit.ai/views/state/history/index.md): 3 versions of the journalist's state of affairs, newest first, each with what changed from the one before.
-- [The journalist's desk: what is still stale](https://php.oct.2026.newsroom.sgit.ai/views/desk/index.md): The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 10 dated phrases on 8 pages, 13 files, 65 claims.
+- [The journalist's desk: what is still stale](https://php.oct.2026.newsroom.sgit.ai/views/desk/index.md): The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 11 dated phrases on 9 pages, 13 files, 65 claims.
 
 ## Stories
 - [All stories, written here](https://php.oct.2026.newsroom.sgit.ai/articles/index.md): 8 stories about the PHP flaws written for this site, plus the editor's interview: house stories by the journalist and historian, interviews, and guest pieces, each pinned to the evidence it was written against.
@@ -549,7 +551,7 @@ Site v0.13.0. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [If you run PHP](https://php.oct.2026.newsroom.sgit.ai/versions/page-playbook/index.md): 3 versions
 - [Every claim](https://php.oct.2026.newsroom.sgit.ai/versions/page-claims/index.md): 7 versions
 - [The numbers](https://php.oct.2026.newsroom.sgit.ai/versions/page-numbers/index.md): 4 versions
-- [The agencies](https://php.oct.2026.newsroom.sgit.ai/versions/page-agencies/index.md): 2 versions
+- [The agencies](https://php.oct.2026.newsroom.sgit.ai/versions/page-agencies/index.md): 3 versions
 - [Affected systems](https://php.oct.2026.newsroom.sgit.ai/versions/page-affected/index.md): 2 versions
 - [The method](https://php.oct.2026.newsroom.sgit.ai/versions/page-method/index.md): 5 versions
 - [Briefing: Board member or executive](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-board/index.md): 8 versions
@@ -663,7 +665,7 @@ Site v0.13.0. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [The state of affairs: every version](https://php.oct.2026.newsroom.sgit.ai/views/state/history/index.md): 3 versions of the journalist's state of affairs, newest first, each with what changed from the one before.
 - [The state of affairs: The state of affairs at the end of 23 October: still no named victim, and the advice turns from patching to looking for break-ins](https://php.oct.2026.newsroom.sgit.ai/views/state/index.md): Sixty-eight more sources, read by the curator, change none of the measures that matter most: no organisation has confirmed a compromise through php2shell, and neither CVE is in CISA's exploited list at this desk's last check. What moved is the advice. Singapore and Luxembourg now tell operators to check whether they were already broken into, and the first national count of servers still affected after the fix is in: about 3.5% in Switzerland.
 - [Views: the state of affairs and the journalist's analyses](https://php.oct.2026.newsroom.sgit.ai/views/index.md): The journalist's living state of affairs, versioned with every change visible, and the dated analyses behind it.
-- [The journalist's desk: keeping the site current](https://php.oct.2026.newsroom.sgit.ai/views/desk/index.md): The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 10 dated phrases on 8 pages, 13 files, 65 claims.
+- [The journalist's desk: keeping the site current](https://php.oct.2026.newsroom.sgit.ai/views/desk/index.md): The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 11 dated phrases on 9 pages, 13 files, 65 claims.
 
 ## Elsewhere: Pulse, a separate section not about PHP (the SGit newsroom's vault 4klm5qlt), one page per vulnerability
 - [What else is going on: Pulse, exploited vs. talked about](https://php.oct.2026.newsroom.sgit.ai/pulse/index.md): A separate section: the SGit newsroom's Pulse vault, 26 vulnerabilities with their evidence of exploitation as eight dated rungs beside the attention each gets. Not this site's evidence; no score, no ranking.

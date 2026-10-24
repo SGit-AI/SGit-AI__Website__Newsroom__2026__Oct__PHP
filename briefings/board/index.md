@@ -28,10 +28,10 @@ Three decisions sit with you: whether the organisation is exposed, what it costs
 - [Your briefing](../../briefings/board/index.html) 4 min
 - [Explained from the start](../../explained/index.html) 6 min
 - [Impact: offline vs compromised](../../impact/index.html) 2 min
-- [The agencies](../../agencies/index.html) 1 min
+- [The agencies](../../agencies/index.html) 3 min
 - [If you run PHP](../../playbook/index.html) 3 min
 
-About 16 minutes in all. Choose *read as Jordan* and the bar under the menu keeps your place on every page.
+About 18 minutes in all. Choose *read as Jordan* and the bar under the menu keeps your place on every page.
 
 ### What this briefing covers
 - are we exposed
@@ -109,4 +109,4 @@ The full set of claims is on [every claim](../../claims/index.html); the ordered
 
 
 ---
-site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.html
+site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.html

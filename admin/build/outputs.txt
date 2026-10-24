@@ -195,6 +195,8 @@ affected/software.html
 affected/software.md
 agencies/index.html
 agencies/index.md
+analysis/index.html
+analysis/index.md
 articles/exposed-is-not-exploited/index.html
 articles/exposed-is-not-exploited/index.md
 articles/index.html
@@ -213,6 +215,8 @@ articles/where-php2shell-stands/index.html
 articles/where-php2shell-stands/index.md
 articles/why-not-patch-every-version/index.html
 articles/why-not-patch-every-version/index.md
+assets/design/dials.js
+assets/design/v2-live.css
 assets/personas.js
 assets/site.js
 billing/index.html
@@ -711,6 +715,8 @@ now/manifest.webmanifest
 now/now.json
 numbers/index.html
 numbers/index.md
+ops/index.html
+ops/index.md
 outreach/index.html
 outreach/index.md
 patching/index.html

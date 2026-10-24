@@ -8,7 +8,7 @@ Every vault the team's agents have made, listed by agent, by ID only, with wheth
 
 # Vaults: who made each one, and who holds which keys
 
-Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. 20 vaults; for 2 of them, the sealing is not recorded yet.
+Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. 21 vaults; for 1 of them, the sealing is not recorded yet.
 
 ### [conductor@php.newsroom](../conductor/index.html) 5 vaults made
 
@@ -57,15 +57,21 @@ The journalist's session. It made no vault. It holds the keys below, read only: 
 
 Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.
 
-### [claude-story-site](../story-site/index.html) 1 vault made
+### [claude-story-site](../story-site/index.html) 2 vaults made
 
 | Vault ID | What it holds | Created | Key sealed to the root |
 |---|---|---|---|
-| `dcsmxese` | The coverage vault: 24 pages from other outlets, for the record | 2026-10-22 | not recorded |
+| `dcsmxese` | The coverage vault: 24 pages from other outlets, for the record | 2026-10-22 | 2026-10-24 (pki-agent seal --from-vault; the link expires 2026-11-07) |
+| `w5ie1crc` | Test vault for the phone app (/now/): made to check open, write, publish and read-back; holds a fake OpenRouter key and test briefings only | 2026-10-22 | 2026-10-24 (pki-agent seal --from-vault; the link expires 2026-11-07) |
 
-**Keys it holds:** not recorded yet.
+#### Keys it holds
 
-Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `dcsmxese` | vault key | made it | 2026-10-22 |
+| `w5ie1crc` | vault key | made it | 2026-10-22 |
+
+Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing. Confirmed and completed by claude-story-site on 24 October 2026; its agent key is sha256:f15dbb872e108ec7, made in its session, awaiting the editor's enrolment.
 
 ### curator@php.newsroom 0 vaults made
 
@@ -179,4 +185,4 @@ What each vault is for, and the published read keys and write-only lanes, are on
 
 
 ---
-site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html
+site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html

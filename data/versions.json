@@ -1,6 +1,15 @@
 {
- "current": "0.13.0",
+ "current": "0.14.0",
  "versions": [
+  {
+   "version": "0.14.0",
+   "date": "2026-10-24",
+   "title": "the redesign, live: three reader homes (Briefing on the front page, Operations at /ops/, Analysis at /analysis/), the menu by task with two dials (who you are; Focus, Standard, Everything), the wide layout, and every admin page in the team console",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.13.0",
    "date": "2026-10-24",

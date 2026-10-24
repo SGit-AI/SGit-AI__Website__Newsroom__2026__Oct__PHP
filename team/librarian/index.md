@@ -29,7 +29,9 @@ Questionsquestions/index.htmlSecond readingsreadings/index.html
 
 ## Open tasks
 
-None.
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 253 | Policies: the pages ops/** and analysis/** (story-site's, from row 252) have no owner in scope.pagesThe gate warns that no member owns them. story-site does not edit policy files. | open |  |
 
 ## What they have done
 - Ten questions readers ask, each with a short answer and the pages that carry it (v0.2.6).
@@ -51,4 +53,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/librarian/index.html
+site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/librarian/index.html

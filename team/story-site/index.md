@@ -64,6 +64,7 @@ The front pageindex.htmlEvery claimclaims/index.htmlThe timelinetimeline/index.h
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 240 | Clean hands before any correction request: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framing, about 32 pages), K-011 on the front page, the status words on nl-offline and kev-precedentFrom the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Done by the desk on the editor's instruction, 24 October: the 70% wordings, K-004 in the claim and the question, K-011 and the offline lines on the front page, nl-offline and kev-precedent to reported, and wordpress-drupal as researchers' tests. The /signals/ chart still sets 1.57 million against 2.6 million on one scale (board 251). | done |  |
+| 252 | The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as homes by persona, the menu by task with two dials (who you are; Focus, Standard, Everything), the wide layout, and every admin page in the team console (D)The editor, 24 October, in story-site's session: "I think you implement all of them." Covers most of 139 to 142 (rows of dev, the briefing writer and the editor, left for their owners to close): the dials are remembered in the browser, not yet in the reader's vault; pattern C is on the agencies page only. Brief: admin/content/briefs/2026-10-24__brief__the-redesign-live.md. | done | 0.14.0 |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/story-site/` in the mail vault (`fmb2tpl2`).
@@ -74,4 +75,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
+site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html

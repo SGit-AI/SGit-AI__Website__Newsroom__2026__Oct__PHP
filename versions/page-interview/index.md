@@ -15,4 +15,4 @@ v1 · site v0.3.2 · 22 October 2026 · the first version · 541f1653d7cb
 
 
 ---
-site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/versions/page-interview/index.html
+site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/versions/page-interview/index.html
