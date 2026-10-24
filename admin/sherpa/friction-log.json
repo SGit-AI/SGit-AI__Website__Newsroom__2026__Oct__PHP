@@ -682,6 +682,27 @@
       "last_seen": "0.14.3",
       "status": "open",
       "source": "the Sherpa"
+    },
+    {
+      "id": "F034",
+      "reader": "every phone reader (raised by a power user, CI-003)",
+      "page": "every page, the new design",
+      "stage": "first-screen",
+      "actual": "The sticky header is 233px tall on a phone, 30% of a 780px screen, and keeps that height when scrolling; the front page's headline starts at 642 to 691px.",
+      "severity": "high",
+      "proposal": "On phones, stick one line (the name and a menu button) or nothing; the menu groups go into the menu.",
+      "owner": "dev",
+      "also": [
+        "story-site"
+      ],
+      "evidence": [
+        "Measured in Chromium on v0.14.13 at 360 and 390 wide, 24 October",
+        "CI-003 item 3"
+      ],
+      "first_seen": "0.14.13",
+      "last_seen": "0.14.13",
+      "status": "open",
+      "source": "CI-003"
     }
   ]
 }

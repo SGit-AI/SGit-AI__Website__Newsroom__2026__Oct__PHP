@@ -1926,6 +1926,36 @@
    "status": "open",
    "owner": "claude-story-site",
    "note": "From the news desk chief's morning wake, 24 October."
+  },
+  {
+   "id": "260",
+   "title": "From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sticks as one line or not at all (233px today, 30% of the screen; F034)",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "261",
+   "title": "From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed, with the before-and-after blocks",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "262",
+   "title": "From CI-003, step 3: a progression measure at every drain: of front-page sessions, the share reaching a briefing, the guidance or the evidence, by device and chosen persona, the week before the redesign and each week after",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "263",
+   "title": "From CI-003, step 4: confirm or reject an inferred graph link, signed with an enrolled key and sent as a 'review' through the collaborators lane; the drain records it in the edge's history (who may review and how many confirmations: the editor's call)",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "264",
+   "title": "Sherpa: CI-003 to the editor: the design as complementary views (A to D), three doors for a first visit, and a power-user invitation for the collaborator so his feedback and reviews come signed",
+   "status": "open",
+   "owner": "sherpa"
   }
  ],
  "evidence_vault": {
