@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.14.7",
+"site": "0.14.8",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -5399,10 +5399,10 @@
 "zone": "for-you",
 "title": "Is PHP really the software behind most websites?",
 "path": "questions/most-websites/index.html",
-"hash": "b1a3d74002ab",
-"v": 2,
+"hash": "072e86945b47",
+"v": 3,
 "first": "0.4.1",
-"changed": "0.12.1",
+"changed": "0.14.8",
 "date": "2026-10-24"
 },
 "q-been-hacked": {

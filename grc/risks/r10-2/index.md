@@ -58,4 +58,4 @@ On this site: [The vaults behind this site](../../../vaults/index.html)
 
 
 ---
-site v0.14.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10-2/index.html
+site v0.14.8 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10-2/index.html

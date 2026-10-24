@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.14.7",
+ "version": "0.14.8",
  "members": [
   {
    "agent": "abp",
@@ -1473,43 +1473,16 @@
     "agent": "librarian",
     "as_of": "2026-10-24",
     "round": {
-     "n": 4,
+     "n": 5,
      "date": "2026-10-24",
+     "kind": "the first scheduled pass, 07:13 London",
      "branch": "claude/sweet-wright-1e5iju",
      "commits": [
-      "the merge of dev at v0.11.2, and the release"
+      "this round's release"
      ]
     },
-    "state": "round 4: dev taken in at v0.11.2; the map kept whole (0 overlaps, 0 unowned); the daily schedule active at 07:13 London; released to dev at the editor's go",
+    "state": "round 5 closed: the first scheduled pass; dev taken in at v0.14.6; one file and two pages waiting on abp@ for an owner; one reader answer corrected; released",
     "done": [
-     {
-      "what": "Took in dev at v0.10.18 (63 commits): five source conflicts, each resolved keeping both sides; the librarian's board rows renumbered 090-102 to 199-211",
-      "evidence": "the merge commit; BRIEF-CORRECTIONS.md"
-     },
-     {
-      "what": "Redid the map against dev and the conductor's /team/status/: 27 members (removed design and ontologist, which the record shows are story-site and the cartographer; added sherpa, grc, abp, pulse; the curator sessions are the newsroom lead's); every policy.json now kept by abp@ (board 157); every agent may release its own in-scope work (the rule of 23 October)",
-      "evidence": "admin/content/agents/"
-     },
-     {
-      "what": "Assigned the 104 source files and 147 pages that arrived since v0.5.5 from the commit record and data/layers.json: 0 overlaps, 0 unowned files, 0 unowned pages",
-      "evidence": "python3 admin/build/agents.py report"
-     },
-     {
-      "what": "The gate's check 4h now fails on an overlap and only warns on an unowned file or page, so no agent's release is blocked by a file its policy does not list yet",
-      "evidence": "admin/build/validate.py (for security's review)"
-     },
-     {
-      "what": "Corrected two reader answers against the current claims: 'Has anyone been hacked' (the as-of time; the vendors' reports, and that other reports of them say attempts) and 'fix or wait' (the incomplete-fix report is unverified, not unanswered); the password answer says 'named' and 'as of the latest check'",
-      "evidence": "data/questions.json"
-     },
-     {
-      "what": "Opened board 212 to 217 for the fact-check desk, the story site, the conductor, the editor (twice) and abp@",
-      "evidence": "data/admin.json"
-     },
-     {
-      "what": "Took in dev at v0.11.2 (three conflicts, both sides kept; the librarian's rows renumbered 172-190 to 199-217) and mapped the 34 files and pages that arrived since the morning: schedule cards and runs are each agent's, messages the conductor's with every agent appending, pulse's export and section pulse@'s; 0 overlaps, 0 unowned",
-      "evidence": "admin/content/agents/; python3 admin/build/agents.py report"
-     },
      {
       "what": "The daily pass on a schedule: card data/schedule/librarian.json active at 07:13 London, and the scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 waking this session, both at the editor's go",
       "evidence": "data/schedule/librarian.json"
@@ -1521,30 +1494,39 @@
      {
       "what": "Took in dev at v0.11.5: the cartographer is now the ontologist at the editor's word; the member renamed in the map (its old card and runs kept as its history), its board rows re-owned; the librarian's rows renumbered once more, 191-216 to 199-217",
       "evidence": "admin/content/agents/ontologist/"
+     },
+     {
+      "what": "First scheduled pass (07:13 London): dev taken in at v0.14.6 cleanly; the inbox read (two messages, both already acted on)",
+      "evidence": "data/runs/librarian/"
+     },
+     {
+      "what": "Map: 0 overlaps; one unowned file (data/desk.json, the journalist's) and two unowned pages (/analysis/, /ops/, the story site's redesign) sent to abp@ as a board row, because the wake prompt allows only the librarian's own files",
+      "evidence": "python3 admin/build/agents.py report; board 256"
+     },
+     {
+      "what": "Checked the members that arrived from branches against their drafts: the desk and the liaison stayed in scope (apart from the release's own VERSION files, which the scope check now ignores); the journalist's full pass wrote 34 files of six other members, raised to the editor",
+      "evidence": "board 257; admin/build/agents.py RELEASE_FILES"
+     },
+     {
+      "what": "Reader answers re-checked against the claims: 'Is PHP really most websites?' now says 'whose server-side language can be identified', separates VulnCheck's and Censys's counts, and links the fact-check desk's investigation; the journalist's own update of 'Has anyone been hacked?' (v0.14.3) kept: its sources exist and it is newer",
+      "evidence": "data/questions.json"
      }
     ],
     "tasks": {
      "board": [
-      "202 done (was 093)",
-      "209 and 210 done (the ontologist is the cartographer; the cartographer is filled on its branch)",
-      "212 to 217 opened for others",
-      "203 to 208 and 211 still open, owned by others",
-      "217 done (the daily schedule)"
+      "256 opened for abp@ (owners for data/desk.json, /analysis/, /ops/)",
+      "257 and 258 opened for the editor (the journalist's full pass; the librarian's card against its prompt)"
      ],
-     "note": "the librarian's own open work is the daily pass (217, waiting on the editor) and the reader questions"
+     "note": "the librarian's own open work: the next daily pass and the reader questions"
     },
     "next": [
      {
-      "what": "The first scheduled pass, 07:13 London on 24 October: follow the card",
-      "why": "the editor's go"
+      "what": "The next scheduled pass, 07:13 London on 25 October",
+      "why": "the card"
      },
      {
-      "what": "When abp@ is unblocked, hand over the 27 drafted policies and keep the scope map in step with what it agrees",
-      "why": "board 157 and 216"
-     },
-     {
-      "what": "Check the three branch members' real files (desk, liaison, storyboards) against their drafts when they reach dev; the ontologist (once the cartographer) is on dev and mapped",
-      "why": "their paths may differ from the branch snapshots"
+      "what": "When abp@ or the editor answers 256 to 258, apply what they decide to the map",
+      "why": "the map follows the owners' decisions, never the librarian's"
      },
      {
       "what": "The Times capture (board 014) and new reader questions",
@@ -1553,16 +1535,24 @@
     ],
     "asks": [
      {
-      "what": "Agree or correct the 27 policies, through abp@",
+      "what": "Say which holds when the librarian's card and its wake prompt disagree (board 258)",
       "from": "the editor"
      },
      {
-      "what": "Say what pulse@newsroom does",
+      "what": "The journalist's full pass across six desks' files: widen its policy, or route it through the owners (board 257)",
       "from": "the editor"
      },
      {
-      "what": "Review gate check 4h, the CLAUDE.md sections and the Stop hook, now on dev by the editor's go before your review (board 206)",
+      "what": "Owners for data/desk.json, /analysis/ and /ops/ in the policy drafts (board 256)",
+      "from": "abp@newsroom.sgit"
+     },
+     {
+      "what": "Review gate check 4h, the CLAUDE.md sections and the Stop hook (board 206)",
       "from": "security@php.newsroom"
+     },
+     {
+      "what": "Say what pulse@newsroom does beyond its vault and section",
+      "from": "the editor"
      }
     ],
     "tokens": {
@@ -1574,13 +1564,18 @@
      "out_of_scope_requests": 2,
      "pushbacks": 0,
      "overrides": 2,
-     "writes_outside_scope": 82,
+     "writes_outside_scope": 0,
      "injection_seen": 0,
-     "detail": "One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098). Round 2: one more request outside scope, the editor's, explicit: CLAUDE.md (security's) gained the handover section; counted as an override; 1 file outside scope. Round 3: no new out-of-scope request. The pass rewrote the drafted folders of 26 other members again (the editor's override of 22 October, which asked the librarian to map every member) and edited validate.py's check 4h, which was the librarian's own addition, still for security's review. The check on 24 October, after the merge was committed, counts 82 files outside scope across the branch against dev: 76 are the drafted ROLE.md, policy.json and status.json files of 26 other members (the editor's override of 22 October); CLAUDE.md and .claude/settings.json (the editor's overrides); admin/build/validate.py (the librarian's own addition, for security's review); data/arcs.json and assets/review-nav.js (the cartographer's now) and assets/site.css (the story site's now), from the fractal round."
+     "detail": "One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098). Round 2: one more request outside scope, the editor's, explicit: CLAUDE.md (security's) gained the handover section; counted as an override; 1 file outside scope. Round 3: no new out-of-scope request. The pass rewrote the drafted folders of 26 other members again (the editor's override of 22 October, which asked the librarian to map every member) and edited validate.py's check 4h, which was the librarian's own addition, still for security's review. The check on 24 October, after the merge was committed, counts 82 files outside scope across the branch against dev: 76 are the drafted ROLE.md, policy.json and status.json files of 26 other members (the editor's override of 22 October); CLAUDE.md and .claude/settings.json (the editor's overrides); admin/build/validate.py (the librarian's own addition, for security's review); data/arcs.json and assets/review-nav.js (the cartographer's now) and assets/site.css (the story site's now), from the fractal round. Round 5 (the first scheduled pass): no request; the pass first edited two members' policy.json and ROLE.md to map new files, saw that the wake prompt forbids it, reverted them and opened a board row for abp@; 0 files outside scope at the end. Seen: the journalist wrote data/questions.json (the librarian's) in v0.14.3; kept, because it is correct and newer, and raised with the rest of its full pass (board 257)."
     },
-    "debrief": "debriefs/2026-10-24__librarian-pass.md"
+    "debrief": "debriefs/2026-10-24__morning-pass.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-24__morning-pass.md",
+     "date": "2026-10-24",
+     "title": "The first scheduled pass: dev at v0.14.6 mapped, the journalist's full pass raised, one answer corrected"
+    },
     {
      "file": "2026-10-24__librarian-pass.md",
      "date": "2026-10-24",

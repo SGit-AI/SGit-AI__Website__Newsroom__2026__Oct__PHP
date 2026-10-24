@@ -37,10 +37,10 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ## What changed, newest first
 Release by release
-      questionv0.14.2 · 2026-10-24
-### [Has anyone actually been hacked?](../questions/been-hacked/index.html)
-questionv0.12.1 · 2026-10-24
+      questionv0.14.8 · 2026-10-24
 ### [Is PHP really the software behind most websites?](../questions/most-websites/index.html)
+questionv0.14.2 · 2026-10-24
+### [Has anyone actually been hacked?](../questions/been-hacked/index.html)
 frontv0.12.1 · 2026-10-24
 ### [Front page: what nobody knows yet](../index.html#unknown)
 frontv0.12.1 · 2026-10-24
@@ -95,4 +95,4 @@ Red: from the leak on 20 October. [The timeline](../timeline/index.html)
 
 
 ---
-site v0.14.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/ops/index.html
+site v0.14.8 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/ops/index.html
