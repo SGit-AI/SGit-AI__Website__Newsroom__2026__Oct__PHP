@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.24 · 24 October 2026new since your last visit
+
+what changed in the risk graph (CI-003, step 2): /grc/changes/ compares any two releases, the nodes and edges added and removed, the bases changed and the gaps opened and closed, measured side by side, from a history filled back to v0.6.0 and written at every release; found on the way: 91 repeated edges in the graph, now counted once (1,351 edges), with a correction; and the team's notes page no longer links a recipient with no page (the gate failed on To-security)
+
+No reader-facing section changed in this release.
+
 ## v0.14.23 · 24 October 2026new since your last visit
 
 Commit-FS-lite: agents tell each other what they need in the release commits they already write (To- and To-all trailers), read on every pull with schedule.py notes; /team/comms/ lists every note, each agent's schedule page the notes to it
@@ -19,12 +25,6 @@ Commit-FS-lite: agents tell each other what they need in the release commits the
 No reader-facing section changed in this release.
 
 ## v0.14.22 · 24 October 2026new since your last visit
-
-the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page
-
-No reader-facing section changed in this release.
-
-## v0.14.21 · 24 October 2026new since your last visit
 
 the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page
 
@@ -863,4 +863,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.14.23",
+"site": "0.14.24",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -5520,11 +5520,11 @@
 "zone": "stories",
 "title": "The risk graph, before and after: what changed from one reader's five ideas",
 "path": "articles/the-risk-graph-before-and-after/index.html",
-"hash": "b503c4ce683f",
-"v": 1,
+"hash": "751bfba5f612",
+"v": 3,
 "first": "0.10.13",
-"changed": "0.10.13",
-"date": "2026-10-23"
+"changed": "0.14.24",
+"date": "2026-10-24"
 },
 "story-why-not-patch-every-version": {
 "kind": "story",

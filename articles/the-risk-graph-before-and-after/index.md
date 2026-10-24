@@ -142,6 +142,8 @@ Three of his points wait for the editor, because they are choices rather than ga
 
 - **User stories as a layer.** Whose stories, as above.
 
+**Correction, 24 October 2026.** The edge counts above counted some edges twice: when a claim backs several risks, its links to its sources were added once per risk. Counted once each, the graph of v0.10.12 had 839 edges, not 914, and v0.10.13 had 1,343, not 1,418, of which 815 are inferred. The build adds each edge once from v0.14.24; [what changed in the graph](../../grc/changes/index.html) compares any two releases with the repeats removed. The correction is in [corrections](../../corrections/index.html).
+
 ## The method, briefly
 
 Everything here is built from data the site already had, plus the fix commit's file list from the evidence vault. The explorer and the gaps run in the reader's browser and at build time respectively, and both read [data/grc-graph.json](../../data/grc-graph.json), so they cannot disagree with the graph. The rules for the gaps are in [data/grc-gaps.json](../../data/grc-gaps.json), the test joins in [data/grc-tests.json](../../data/grc-tests.json); the brief this work followed is [the risk graph as a tool](../../admin/briefs/index.html#2026-10-23__brief__the-risk-graph-as-a-tool). His next comments, if he has them, become CI-003.
@@ -163,4 +165,4 @@ Source file: `admin/content/articles/2026-10-23__dev__the-risk-graph-before-and-
 
 
 ---
-site v0.14.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/articles/the-risk-graph-before-and-after/index.html
+site v0.14.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/articles/the-risk-graph-before-and-after/index.html

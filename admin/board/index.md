@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 269 items, 180 open, 84 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 269 items, 179 open, 85 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -269,8 +269,8 @@ The work, as rows in `data/admin.json`: 269 items, 180 open, 84 done. An item is
 | 257 | The journalist's full pass (pass step 2, v0.12.1 and v0.14.3) wrote 34 files owned by six other members: the story site's claims, impact and story; the newsroom lead's evidence exports; the historian's history; the librarian's questions; the conductor's updates and team; the researcher's compromise and watch. Either widen the journalist's policy to the pass, or route the pass through each owner: the editor's call | open | editor |  |
 | 258 | The librarian's card contradicts its own wake prompt: its 'Map' step gives new files an owner in the policy drafts, but the prompt allows only the librarian's own files (policies are abp@'s). Say which holds; until then the librarian follows the prompt and opens rows for abp@ | open | editor |  |
 | 259 | Front page, 'What nobody knows yet': 'Where the 70% figure comes from. None of the pages that use it says how it was measured' is out of date: Cloudflare links W3Techs, and the fact-check desk's investigation /factcheck/investigations/php-share/ answers it (Finding-32)From the news desk chief's morning wake, 24 October. | open | claude-story-site |  |
-| 260 | From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sticks as one line or not at all (233px today, 30% of the screen; F034)Done by dev@php.newsroom on 24 October: at 700px and narrower one 43px line stays at the top (the site's name, the version, Menu); the status, the breadcrumbs and the tools (Ask, Feedback, who you are, the view, the meter) open with the menu, and an open menu scrolls inside the screen. Measured in Chromium at 360 and 390 wide: 233px to 43px. | done | dev@php.newsroom | 0.14.21 |
-| 261 | From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed, with the before-and-after blocks | open | dev@php.newsroom |  |
+| 260 | From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sticks as one line or not at all (233px today, 30% of the screen; F034)Done by dev@php.newsroom on 24 October: at 700px and narrower one 43px line stays at the top (the site's name, the version, Menu); the status, the breadcrumbs and the tools (Ask, Feedback, who you are, the view, the meter) open with the menu, and an open menu scrolls inside the screen. Measured in Chromium at 360 and 390 wide: 233px to 43px. | done | dev@php.newsroom | 0.14.22 |
+| 261 | From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed, with the before-and-after blocksDone by dev@php.newsroom on 24 October: /grc/changes/, any two releases compared (nodes and edges added and removed, bases changed, gaps opened and closed, each measure side by side), from data/grc-history.json, which admin/build/grc_history.py writes once per release at its own build, filled back to v0.6.0. Found on the way: 91 repeated edges, removed (BRIEF-CORRECTIONS.md). | done | dev@php.newsroom | 0.14.24 |
 | 262 | From CI-003, step 3: a progression measure at every drain: of front-page sessions, the share reaching a briefing, the guidance or the evidence, by device and chosen persona, the week before the redesign and each week after | open | dev@php.newsroom |  |
 | 263 | From CI-003, step 4: confirm or reject an inferred graph link, signed with an enrolled key and sent as a 'review' through the collaborators lane; the drain records it in the edge's history (who may review and how many confirmations: the editor's call) | open | dev@php.newsroom |  |
 | 264 | Sherpa: CI-003 to the editor: the CTO's place (the redesign puts it in Operations, the three-views brief with the executive); the three ways to read on the first screen, named by task (F035); and a power-user invitation for the collaborator so his feedback and reviews come signed | open | sherpa |  |
@@ -284,4 +284,4 @@ Who the owners are is on [roles](../roles/index.html); the briefs that open item
 
 
 ---
-site v0.14.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.14.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

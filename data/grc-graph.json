@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.14.23",
+ "version": "0.14.24",
  "kept_by": "grc@php.newsroom",
  "as_of": "2026-10-22",
  "verbs": [
@@ -11132,36 +11132,6 @@
    }
   },
   {
-   "from": "claim:rce-modphp",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:github-ghsa-w8hw-w9fx-j79w",
-   "basis": {
-    "kind": "source",
-    "ref": "github-ghsa-w8hw-w9fx-j79w"
-   }
-  },
-  {
-   "from": "claim:rce-modphp",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:openwall-oss-security-2026-10-21-6",
-   "basis": {
-    "kind": "source",
-    "ref": "openwall-oss-security-2026-10-21-6"
-   }
-  },
-  {
-   "from": "claim:rce-modphp",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:php-net-advisory",
-   "basis": {
-    "kind": "source",
-    "ref": "php-net-advisory"
-   }
-  },
-  {
    "from": "risk:r01-1",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -11169,36 +11139,6 @@
    "basis": {
     "kind": "source",
     "ref": "github-php-src-fix-commit-3584a98bd"
-   }
-  },
-  {
-   "from": "claim:fix-engine",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:github-php-src-fix-commit-3584a98bd",
-   "basis": {
-    "kind": "source",
-    "ref": "github-php-src-fix-commit-3584a98bd"
-   }
-  },
-  {
-   "from": "claim:fix-engine",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:github-ghsa-w8hw-w9fx-j79w",
-   "basis": {
-    "kind": "source",
-    "ref": "github-ghsa-w8hw-w9fx-j79w"
-   }
-  },
-  {
-   "from": "claim:fix-engine",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:github-ghsa-6wmf-4rv5-p3rp",
-   "basis": {
-    "kind": "source",
-    "ref": "github-ghsa-6wmf-4rv5-p3rp"
    }
   },
   {
@@ -12772,26 +12712,6 @@
    }
   },
   {
-   "from": "claim:leak-cve-ids",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:php-foundation-blog-security-release",
-   "basis": {
-    "kind": "source",
-    "ref": "php-foundation-blog-security-release"
-   }
-  },
-  {
-   "from": "claim:leak-cve-ids",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:phpfoundation-blog-security-release-leak",
-   "basis": {
-    "kind": "source",
-    "ref": "phpfoundation-blog-security-release-leak"
-   }
-  },
-  {
    "from": "risk:r02-1",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -12849,46 +12769,6 @@
    "basis": {
     "kind": "source",
     "ref": "php-foundation-blog-security-release"
-   }
-  },
-  {
-   "from": "claim:leak-video",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:php-foundation-blog-security-release",
-   "basis": {
-    "kind": "source",
-    "ref": "php-foundation-blog-security-release"
-   }
-  },
-  {
-   "from": "claim:leak-video",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:phpfoundation-blog-security-release-leak",
-   "basis": {
-    "kind": "source",
-    "ref": "phpfoundation-blog-security-release-leak"
-   }
-  },
-  {
-   "from": "claim:leak-video",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:bbc-live-ckgel5xp2xv9t",
-   "basis": {
-    "kind": "source",
-    "ref": "bbc-live-ckgel5xp2xv9t"
-   }
-  },
-  {
-   "from": "claim:leak-video",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:calif-php2shell",
-   "basis": {
-    "kind": "source",
-    "ref": "calif-php2shell"
    }
   },
   {
@@ -13012,16 +12892,6 @@
    }
   },
   {
-   "from": "claim:leak-mitigations",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:php-foundation-blog-security-release",
-   "basis": {
-    "kind": "source",
-    "ref": "php-foundation-blog-security-release"
-   }
-  },
-  {
    "from": "risk:r02-2",
    "rel": "protected_by",
    "inverse": "protects",
@@ -13139,36 +13009,6 @@
    "basis": {
     "kind": "source",
     "ref": "php-foundation-blog-security-release"
-   }
-  },
-  {
-   "from": "claim:chainguard",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:php-foundation-blog-security-release",
-   "basis": {
-    "kind": "source",
-    "ref": "php-foundation-blog-security-release"
-   }
-  },
-  {
-   "from": "claim:chainguard",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:theregister-php-blames-chainguard",
-   "basis": {
-    "kind": "source",
-    "ref": "theregister-php-blames-chainguard"
-   }
-  },
-  {
-   "from": "claim:chainguard",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:x-feross-chainguard",
-   "basis": {
-    "kind": "source",
-    "ref": "x-feross-chainguard"
    }
   },
   {
@@ -13712,26 +13552,6 @@
    }
   },
   {
-   "from": "claim:amazon-honeypot",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:aws-security-blog-madpot",
-   "basis": {
-    "kind": "source",
-    "ref": "aws-security-blog-madpot"
-   }
-  },
-  {
-   "from": "claim:amazon-honeypot",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:thehackernews-php2shell-4days",
-   "basis": {
-    "kind": "source",
-    "ref": "thehackernews-php2shell-4days"
-   }
-  },
-  {
    "from": "risk:r03-1",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -13902,16 +13722,6 @@
    }
   },
   {
-   "from": "claim:cloudflare-traffic",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cloudflare-blog-php2shell-waf",
-   "basis": {
-    "kind": "source",
-    "ref": "cloudflare-blog-php2shell-waf"
-   }
-  },
-  {
    "from": "risk:r03-2",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -13919,36 +13729,6 @@
    "basis": {
     "kind": "source",
     "ref": "bbc-live-ckgel5xp2xv9t"
-   }
-  },
-  {
-   "from": "claim:probing",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:bbc-live-ckgel5xp2xv9t",
-   "basis": {
-    "kind": "source",
-    "ref": "bbc-live-ckgel5xp2xv9t"
-   }
-  },
-  {
-   "from": "claim:probing",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cloudflare-blog-php2shell-waf",
-   "basis": {
-    "kind": "source",
-    "ref": "cloudflare-blog-php2shell-waf"
-   }
-  },
-  {
-   "from": "claim:probing",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:aws-security-blog-madpot",
-   "basis": {
-    "kind": "source",
-    "ref": "aws-security-blog-madpot"
    }
   },
   {
@@ -14109,36 +13889,6 @@
    "basis": {
     "kind": "source",
     "ref": "cisa-alert-php-20261021"
-   }
-  },
-  {
-   "from": "claim:cisa-none",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cisa-alert-php-20261021",
-   "basis": {
-    "kind": "source",
-    "ref": "cisa-alert-php-20261021"
-   }
-  },
-  {
-   "from": "claim:cisa-none",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cisa-kev-json",
-   "basis": {
-    "kind": "source",
-    "ref": "cisa-kev-json"
-   }
-  },
-  {
-   "from": "claim:cisa-none",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cve-cve-2026-109618",
-   "basis": {
-    "kind": "source",
-    "ref": "cve-cve-2026-109618"
    }
   },
   {
@@ -14742,16 +14492,6 @@
    }
   },
   {
-   "from": "claim:offline-cisa",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cisa-alert-php-20261021",
-   "basis": {
-    "kind": "source",
-    "ref": "cisa-alert-php-20261021"
-   }
-  },
-  {
    "from": "risk:r04",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -15072,26 +14812,6 @@
    }
   },
   {
-   "from": "claim:nl-offline",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:rijksoverheid-ncsc-php-news",
-   "basis": {
-    "kind": "source",
-    "ref": "rijksoverheid-ncsc-php-news"
-   }
-  },
-  {
-   "from": "claim:nl-offline",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:tpo-nl-digid-offline",
-   "basis": {
-    "kind": "source",
-    "ref": "tpo-nl-digid-offline"
-   }
-  },
-  {
    "from": "risk:r04-1",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -15102,40 +14822,10 @@
    }
   },
   {
-   "from": "claim:fi-offline",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:yle-finland-government-sites-shut",
-   "basis": {
-    "kind": "source",
-    "ref": "yle-finland-government-sites-shut"
-   }
-  },
-  {
-   "from": "claim:fi-offline",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:helsinkitimes-finland-shutdown",
-   "basis": {
-    "kind": "source",
-    "ref": "helsinkitimes-finland-shutdown"
-   }
-  },
-  {
    "from": "risk:r04-1",
    "rel": "backed_by",
    "inverse": "evidences",
    "to": "claim:latvia-offline",
-   "basis": {
-    "kind": "source",
-    "ref": "certlv-php-preventive"
-   }
-  },
-  {
-   "from": "claim:latvia-offline",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:certlv-php-preventive",
    "basis": {
     "kind": "source",
     "ref": "certlv-php-preventive"
@@ -15572,40 +15262,10 @@
    }
   },
   {
-   "from": "claim:offline-nsa",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:nsa-x-2112903220209098897",
-   "basis": {
-    "kind": "source",
-    "ref": "nsa-x-2112903220209098897"
-   }
-  },
-  {
-   "from": "claim:offline-nsa",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:nsa-press-php-4630238",
-   "basis": {
-    "kind": "source",
-    "ref": "nsa-press-php-4630238"
-   }
-  },
-  {
    "from": "risk:r04-3",
    "rel": "backed_by",
    "inverse": "evidences",
    "to": "claim:offline-cisa",
-   "basis": {
-    "kind": "source",
-    "ref": "cisa-alert-php-20261021"
-   }
-  },
-  {
-   "from": "claim:offline-cisa",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cisa-alert-php-20261021",
    "basis": {
     "kind": "source",
     "ref": "cisa-alert-php-20261021"
@@ -15862,36 +15522,6 @@
    }
   },
   {
-   "from": "claim:only-update",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:php-net-advisory",
-   "basis": {
-    "kind": "source",
-    "ref": "php-net-advisory"
-   }
-  },
-  {
-   "from": "claim:only-update",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:openwall-oss-security-2026-10-21-7",
-   "basis": {
-    "kind": "source",
-    "ref": "openwall-oss-security-2026-10-21-7"
-   }
-  },
-  {
-   "from": "claim:only-update",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:github-ghsa-6wmf-4rv5-p3rp",
-   "basis": {
-    "kind": "source",
-    "ref": "github-ghsa-6wmf-4rv5-p3rp"
-   }
-  },
-  {
    "from": "risk:r05",
    "rel": "protected_by",
    "inverse": "protects",
@@ -16062,176 +15692,6 @@
    }
   },
   {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cisa-kev-json",
-   "basis": {
-    "kind": "source",
-    "ref": "cisa-kev-json"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cisa-alert-php-20261021",
-   "basis": {
-    "kind": "source",
-    "ref": "cisa-alert-php-20261021"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:huntress-php2shell-rapid-response",
-   "basis": {
-    "kind": "source",
-    "ref": "huntress-php2shell-rapid-response"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:aws-security-blog-madpot",
-   "basis": {
-    "kind": "source",
-    "ref": "aws-security-blog-madpot"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:securityweek-first-attempts-sensors",
-   "basis": {
-    "kind": "source",
-    "ref": "securityweek-first-attempts-sensors"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:securityweek-exploitation-days-before",
-   "basis": {
-    "kind": "source",
-    "ref": "securityweek-exploitation-days-before"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:recordedfuture-php2shell",
-   "basis": {
-    "kind": "source",
-    "ref": "recordedfuture-php2shell"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:imperva-blog-php2shell",
-   "basis": {
-    "kind": "source",
-    "ref": "imperva-blog-php2shell"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:weirdgloop-blog-php2shell",
-   "basis": {
-    "kind": "source",
-    "ref": "weirdgloop-blog-php2shell"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:paperjam-article-php2shell-des-milliers-de-sites",
-   "basis": {
-    "kind": "source",
-    "ref": "paperjam-article-php2shell-des-milliers-de-sites"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
-   "basis": {
-    "kind": "source",
-    "ref": "pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:itsocial-cybersecurite-cybersecurite-articles-php",
-   "basis": {
-    "kind": "source",
-    "ref": "itsocial-cybersecurite-cybersecurite-articles-php"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:lupa-cvut-cyber-attack",
-   "basis": {
-    "kind": "source",
-    "ref": "lupa-cvut-cyber-attack"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:yahoo-jp-gmo-fx-login-leak",
-   "basis": {
-    "kind": "source",
-    "ref": "yahoo-jp-gmo-fx-login-leak"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:sankei-dmm-service-halt",
-   "basis": {
-    "kind": "source",
-    "ref": "sankei-dmm-service-halt"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:impress-watch-valtec",
-   "basis": {
-    "kind": "source",
-    "ref": "impress-watch-valtec"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:the-verge-php2shell-websites-down",
-   "basis": {
-    "kind": "source",
-    "ref": "the-verge-php2shell-websites-down"
-   }
-  },
-  {
    "from": "risk:r06",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -16239,36 +15699,6 @@
    "basis": {
     "kind": "source",
     "ref": "github-ghsa-w8hw-w9fx-j79w"
-   }
-  },
-  {
-   "from": "claim:rce-modphp",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:github-ghsa-w8hw-w9fx-j79w",
-   "basis": {
-    "kind": "source",
-    "ref": "github-ghsa-w8hw-w9fx-j79w"
-   }
-  },
-  {
-   "from": "claim:rce-modphp",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:openwall-oss-security-2026-10-21-6",
-   "basis": {
-    "kind": "source",
-    "ref": "openwall-oss-security-2026-10-21-6"
-   }
-  },
-  {
-   "from": "claim:rce-modphp",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:php-net-advisory",
-   "basis": {
-    "kind": "source",
-    "ref": "php-net-advisory"
    }
   },
   {
@@ -16439,36 +15869,6 @@
    "basis": {
     "kind": "source",
     "ref": "github-ghsa-w8hw-w9fx-j79w"
-   }
-  },
-  {
-   "from": "claim:rce-modphp",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:github-ghsa-w8hw-w9fx-j79w",
-   "basis": {
-    "kind": "source",
-    "ref": "github-ghsa-w8hw-w9fx-j79w"
-   }
-  },
-  {
-   "from": "claim:rce-modphp",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:openwall-oss-security-2026-10-21-6",
-   "basis": {
-    "kind": "source",
-    "ref": "openwall-oss-security-2026-10-21-6"
-   }
-  },
-  {
-   "from": "claim:rce-modphp",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:php-net-advisory",
-   "basis": {
-    "kind": "source",
-    "ref": "php-net-advisory"
    }
   },
   {
@@ -16652,176 +16052,6 @@
    }
   },
   {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cisa-kev-json",
-   "basis": {
-    "kind": "source",
-    "ref": "cisa-kev-json"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cisa-alert-php-20261021",
-   "basis": {
-    "kind": "source",
-    "ref": "cisa-alert-php-20261021"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:huntress-php2shell-rapid-response",
-   "basis": {
-    "kind": "source",
-    "ref": "huntress-php2shell-rapid-response"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:aws-security-blog-madpot",
-   "basis": {
-    "kind": "source",
-    "ref": "aws-security-blog-madpot"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:securityweek-first-attempts-sensors",
-   "basis": {
-    "kind": "source",
-    "ref": "securityweek-first-attempts-sensors"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:securityweek-exploitation-days-before",
-   "basis": {
-    "kind": "source",
-    "ref": "securityweek-exploitation-days-before"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:recordedfuture-php2shell",
-   "basis": {
-    "kind": "source",
-    "ref": "recordedfuture-php2shell"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:imperva-blog-php2shell",
-   "basis": {
-    "kind": "source",
-    "ref": "imperva-blog-php2shell"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:weirdgloop-blog-php2shell",
-   "basis": {
-    "kind": "source",
-    "ref": "weirdgloop-blog-php2shell"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:paperjam-article-php2shell-des-milliers-de-sites",
-   "basis": {
-    "kind": "source",
-    "ref": "paperjam-article-php2shell-des-milliers-de-sites"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
-   "basis": {
-    "kind": "source",
-    "ref": "pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:itsocial-cybersecurite-cybersecurite-articles-php",
-   "basis": {
-    "kind": "source",
-    "ref": "itsocial-cybersecurite-cybersecurite-articles-php"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:lupa-cvut-cyber-attack",
-   "basis": {
-    "kind": "source",
-    "ref": "lupa-cvut-cyber-attack"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:yahoo-jp-gmo-fx-login-leak",
-   "basis": {
-    "kind": "source",
-    "ref": "yahoo-jp-gmo-fx-login-leak"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:sankei-dmm-service-halt",
-   "basis": {
-    "kind": "source",
-    "ref": "sankei-dmm-service-halt"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:impress-watch-valtec",
-   "basis": {
-    "kind": "source",
-    "ref": "impress-watch-valtec"
-   }
-  },
-  {
-   "from": "claim:no-confirmed-compromise",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:the-verge-php2shell-websites-down",
-   "basis": {
-    "kind": "source",
-    "ref": "the-verge-php2shell-websites-down"
-   }
-  },
-  {
    "from": "risk:r06-2",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -16829,26 +16059,6 @@
    "basis": {
     "kind": "source",
     "ref": "rijksoverheid-ncsc-php-news"
-   }
-  },
-  {
-   "from": "claim:nl-offline",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:rijksoverheid-ncsc-php-news",
-   "basis": {
-    "kind": "source",
-    "ref": "rijksoverheid-ncsc-php-news"
-   }
-  },
-  {
-   "from": "claim:nl-offline",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:tpo-nl-digid-offline",
-   "basis": {
-    "kind": "source",
-    "ref": "tpo-nl-digid-offline"
    }
   },
   {
@@ -17022,16 +16232,6 @@
    }
   },
   {
-   "from": "claim:scale-ncsc-nl",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:ncsc-nl-php2shell-software-list",
-   "basis": {
-    "kind": "source",
-    "ref": "ncsc-nl-php2shell-software-list"
-   }
-  },
-  {
    "from": "risk:r06-3",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -17042,26 +16242,6 @@
    }
   },
   {
-   "from": "claim:watchtowr-itw",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:watchtowr-php2shell",
-   "basis": {
-    "kind": "source",
-    "ref": "watchtowr-php2shell"
-   }
-  },
-  {
-   "from": "claim:watchtowr-itw",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:watchtowr-php2shell-faq",
-   "basis": {
-    "kind": "source",
-    "ref": "watchtowr-php2shell-faq"
-   }
-  },
-  {
    "from": "risk:r06-3",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -17069,36 +16249,6 @@
    "basis": {
     "kind": "source",
     "ref": "cisa-alert-php-20261021"
-   }
-  },
-  {
-   "from": "claim:cisa-none",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cisa-alert-php-20261021",
-   "basis": {
-    "kind": "source",
-    "ref": "cisa-alert-php-20261021"
-   }
-  },
-  {
-   "from": "claim:cisa-none",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cisa-kev-json",
-   "basis": {
-    "kind": "source",
-    "ref": "cisa-kev-json"
-   }
-  },
-  {
-   "from": "claim:cisa-none",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:cve-cve-2026-109618",
-   "basis": {
-    "kind": "source",
-    "ref": "cve-cve-2026-109618"
    }
   },
   {
@@ -17732,16 +16882,6 @@
    }
   },
   {
-   "from": "claim:lorenc-ai-found",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:theregister-php-blames-chainguard",
-   "basis": {
-    "kind": "source",
-    "ref": "theregister-php-blames-chainguard"
-   }
-  },
-  {
    "from": "risk:r08",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -18252,26 +17392,6 @@
    }
   },
   {
-   "from": "claim:openai-same-day",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:php-foundation-blog-security-release",
-   "basis": {
-    "kind": "source",
-    "ref": "php-foundation-blog-security-release"
-   }
-  },
-  {
-   "from": "claim:openai-same-day",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:github-ghsa-w8hw-w9fx-j79w",
-   "basis": {
-    "kind": "source",
-    "ref": "github-ghsa-w8hw-w9fx-j79w"
-   }
-  },
-  {
    "from": "risk:r08-2",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -18279,26 +17399,6 @@
    "basis": {
     "kind": "source",
     "ref": "wiz-blog-php2shell"
-   }
-  },
-  {
-   "from": "claim:wiz-independent",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:wiz-blog-php2shell",
-   "basis": {
-    "kind": "source",
-    "ref": "wiz-blog-php2shell"
-   }
-  },
-  {
-   "from": "claim:wiz-independent",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:php-foundation-blog-security-release",
-   "basis": {
-    "kind": "source",
-    "ref": "php-foundation-blog-security-release"
    }
   },
   {
@@ -18426,16 +17526,6 @@
    "rel": "backed_by",
    "inverse": "evidences",
    "to": "claim:scale-ncsc-nl",
-   "basis": {
-    "kind": "source",
-    "ref": "ncsc-nl-php2shell-software-list"
-   }
-  },
-  {
-   "from": "claim:scale-ncsc-nl",
-   "rel": "cites",
-   "inverse": "cited_by",
-   "to": "source:ncsc-nl-php2shell-software-list",
    "basis": {
     "kind": "source",
     "ref": "ncsc-nl-php2shell-software-list"

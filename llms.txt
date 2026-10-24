@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.14.23. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.14.24. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -123,9 +123,10 @@ Site v0.14.23. Data as of 2026-10-23T16:04Z (the latest capture in the evidence 
 - [The risk register](https://php.oct.2026.newsroom.sgit.ai/grc/risks/index.md): All 34 risks in the fractal register, with their rating, kind, owner and the number of stakeholders and controls each touches.
 - [Stakeholders and their registers](https://php.oct.2026.newsroom.sgit.ai/grc/stakeholders/index.md): 53 stakeholders in one tree, each with its own risk register, and the risks that connect them.
 - [Frameworks: GDPR, NIS2, CRA, ISO, NIST](https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/index.md): 20 frameworks and 120 controls, and which php2shell risks map to each.
-- [The risk graph](https://php.oct.2026.newsroom.sgit.ai/grc/graph/index.md): 721 nodes and 1442 typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.
+- [The risk graph](https://php.oct.2026.newsroom.sgit.ai/grc/graph/index.md): 721 nodes and 1351 typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.
 - [Explore the graph: from any node](https://php.oct.2026.newsroom.sgit.ai/grc/explore/index.md): Start from a CVE, a risk, a stakeholder, a file, a test or a control and see only what touches it, grouped by verb, one step at a time; or climb from code to the risks, controls and stakeholders above it. Every edge says how it is known.
 - [What the graph is missing](https://php.oct.2026.newsroom.sgit.ai/grc/gaps/index.md): Gaps in the php2shell risk graph, computed at every release from rules written as data: controls no test reaches, code with no owner, risks with no story or treatment, edges an agent inferred and nobody checked; each with its count, its list and who could close it.
+- [What changed in the graph](https://php.oct.2026.newsroom.sgit.ai/grc/changes/index.md): The php2shell risk graph compared between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed; computed from git at every release.
 - [From the sgit network](https://php.oct.2026.newsroom.sgit.ai/grc/network/index.md): The risk models, fractal registers, semantic graphs and standards vaults across the sgit network, and which php2shell risks and frameworks each bears on.
 
 ## Views

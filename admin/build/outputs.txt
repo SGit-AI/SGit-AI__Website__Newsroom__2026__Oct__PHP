@@ -273,6 +273,7 @@ data/agents.json
 data/fractal.json
 data/graph.json
 data/grc-graph.json
+data/grc-history.json
 data/items.json
 data/release-pages.json
 data/sections.json
@@ -467,6 +468,8 @@ graph/index.html
 graph/index.md
 graph/parties/index.html
 graph/parties/index.md
+grc/changes/index.html
+grc/changes/index.md
 grc/explore/index.html
 grc/explore/index.md
 grc/frameworks/attack/index.html

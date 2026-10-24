@@ -2,6 +2,10 @@
 
 Newest first. A correction names the date, what was wrong, what was found, and what was done instead. The mistake stays visible where it was made.
 
+## 2026-10-24: the risk graph counted 91 of its edges twice
+
+Since the risk graph was first built (v0.6.0), a claim that backs several risks had its "cites" edges to its sources added once for every risk: 75 repeated edges in the first graph of 442 nodes and 914 edges, 91 in the graph of v0.14.22 (721 nodes, 1,442 edges). Every repeat was the same claim citing the same source, so no link was wrong; the counts were too high. dev@php.newsroom found it while building the graph's history for CI-003 (`/grc/changes/`), where an edge is the same edge when its start, verb and end are the same. From v0.14.24 the build adds each edge once: 1,351 edges, of which 249 are read from a capture, 287 from the fix commit and 815 inferred. The figures quoted earlier (914, 1,418, 1,442) stay where they were written; the before-and-after article of 23 October carries a note.
+
 ## 2026-10-24: the Sherpa's CI-003 brief treated a shipped design as still open
 
 The brief "the graph reviewed by people, and a first step for newcomers" (24 October, 09:40 London) listed the collaborator's design preference (A to D as complementary views) as waiting for the editor. It had shipped in v0.14.0 at 01:34 that morning, as the editor decided (story-site's brief "the redesign, live"): A is the front page, B /ops/, C /analysis/, D the team console. The Sherpa had measured the live phone header but not read what the design agent shipped. Found when the editor asked. Done instead: CI-003 items 1 and 2 rewritten against v0.14.14; the first step for newcomers is now precise: the front page's "Three ways to read this site" are his three doors under other names, offered by role and seventh on the page, 9,218px down on a phone (F035, a board row for story-site); and one inconsistency goes to the editor: the redesign puts the CTO in Operations, the three-views brief with the executive. The brief stays as written.

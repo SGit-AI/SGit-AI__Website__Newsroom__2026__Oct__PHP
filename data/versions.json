@@ -1,6 +1,15 @@
 {
- "current": "0.14.23",
+ "current": "0.14.24",
  "versions": [
+  {
+   "version": "0.14.24",
+   "date": "2026-10-24",
+   "title": "what changed in the risk graph (CI-003, step 2): /grc/changes/ compares any two releases, the nodes and edges added and removed, the bases changed and the gaps opened and closed, measured side by side, from a history filled back to v0.6.0 and written at every release; found on the way: 91 repeated edges in the graph, now counted once (1,351 edges), with a correction; and the team's notes page no longer links a recipient with no page (the gate failed on To-security)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.23",
    "date": "2026-10-24",
@@ -12,15 +21,6 @@
   },
   {
    "version": "0.14.22",
-   "date": "2026-10-24",
-   "title": "the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page",
-   "summary": "",
-   "changes": [],
-   "vault_commit": "1845598d9a38",
-   "reconstructed": false
-  },
-  {
-   "version": "0.14.21",
    "date": "2026-10-24",
    "title": "the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page",
    "summary": "",

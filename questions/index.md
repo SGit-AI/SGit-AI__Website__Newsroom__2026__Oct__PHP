@@ -142,6 +142,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [The risk graph](../grc/graph/index.html):
 - [Explore the graph: from any node](../grc/explore/index.html):
 - [What the graph is missing](../grc/gaps/index.html):
+- [What changed in the graph](../grc/changes/index.html):
 - [From the sgit network](../grc/network/index.html):
 
 ### Views
@@ -196,4 +197,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.14.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.14.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

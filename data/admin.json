@@ -1933,13 +1933,15 @@
    "status": "done",
    "owner": "dev@php.newsroom",
    "note": "Done by dev@php.newsroom on 24 October: at 700px and narrower one 43px line stays at the top (the site's name, the version, Menu); the status, the breadcrumbs and the tools (Ask, Feedback, who you are, the view, the meter) open with the menu, and an open menu scrolls inside the screen. Measured in Chromium at 360 and 390 wide: 233px to 43px.",
-   "version": "0.14.21"
+   "version": "0.14.22"
   },
   {
    "id": "261",
    "title": "From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed, with the before-and-after blocks",
-   "status": "open",
-   "owner": "dev@php.newsroom"
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.14.24",
+   "note": "Done by dev@php.newsroom on 24 October: /grc/changes/, any two releases compared (nodes and edges added and removed, bases changed, gaps opened and closed, each measure side by side), from data/grc-history.json, which admin/build/grc_history.py writes once per release at its own build, filled back to v0.6.0. Found on the way: 91 repeated edges, removed (BRIEF-CORRECTIONS.md)."
   },
   {
    "id": "262",
