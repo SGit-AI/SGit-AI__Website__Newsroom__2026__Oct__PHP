@@ -70,4 +70,4 @@ What is established is the shape: a bug class seen in 2024 and left because nobo
 
 
 ---
-site v0.10.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/discovery/index.html
+site v0.10.21 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/discovery/index.html

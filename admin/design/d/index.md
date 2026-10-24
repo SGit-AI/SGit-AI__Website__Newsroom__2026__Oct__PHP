@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.20. Not the live site.
+> Mockup D for review, built from the data of release v0.10.21. Not the live site.
 
-PHP Team console Console Overview Board 117 Agents 16 Releases 71 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 117 Agents 16 Releases 72 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.10.20 
-71 releases since 22 Oct 
+v0.10.21 
+72 releases since 22 Oct 
 
 Open on the board 
 117 
 55 done, 3 waiting 
 
 Pages built 
-697 
+716 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -93,6 +93,7 @@ From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1
 ### Releases
  latest 8 
 
+ v0.10.21 2026-10-24 synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey… 
  v0.10.20 2026-10-24 the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle 
  v0.10.19 2026-10-23 the site catches up with the evidence vault at 1845598d9a38 (295 sources): the journalist's state of affairs v2, with the delta fr… 
  v0.10.18 2026-10-23 /team/status/ at 23:30 UTC: all twenty sessions read; the scheduled curator and source watch running, the evidence vault at 260 so… 
@@ -100,7 +101,6 @@ From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1
  v0.10.16 2026-10-23 pack mode, measured: the pack vault in use by two writers, a pull of the scheduled session's commit in 176 s and a one-file correc… 
  v0.10.15 2026-10-23 pack mode, measured on the source watch (/admin/pack-mode/): the same vault as a normal and a pack vault, a fresh clone in 95 s ag… 
  v0.10.14 2026-10-23 the risk graph, before and after: a debrief for the collaborator whose ideas became v0.10.13, every change shown as the old page a… 
- v0.10.13 2026-10-23 the risk graph as a tool (CI-002, steps 1 to 5): every edge says how it is known (read from a capture, from the fix commit, or inf… 
 
 ### Agents and what they own
  open items 
@@ -116,4 +116,4 @@ From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.20 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.21 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

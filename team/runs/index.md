@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Times are UTC unless they say London.
 
-3schedules29runs a night, today117runs recorded45runs with changes and no article
+3schedules29runs a night, today124runs recorded51runs with changes and no article
 
 ## Quiet hours
 
@@ -34,11 +34,18 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 71, researcher@php.newsroom: 38, synthetic@php.newsroom: 6, Fact-check desk: 2.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 72, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Fact-check desk: 2.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
+| 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.21` | synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey, the instruments' flags) and a page-by-page index of what all six said about each page of the site; the second run, on v0.10.18, reviewed by all six against their first: most of what they asked for on 22 October is still open; the vault register for the six vaults confirmed, each key sealed to the root | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.20` | the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-23T23:58:59Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Designer | `designer/2026-10-23T2358Z` | site v0.10.18: answered the question partly; 14 failures named (2 high); 0 high, 2 medium instrument flags | yes | missing | [output](../../admin/synthetic/designer/2026-10-23T2358Z/index.html) |
+| 2026-10-23T23:58:11Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Developer | `developer/2026-10-23T2357Z` | site v0.10.18: answered the question partly; 13 failures named (3 high); 0 high, 0 medium instrument flags | yes | missing | [output](../../admin/synthetic/developer/2026-10-23T2357Z/index.html) |
+| 2026-10-23T23:57:40Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Security lead | `security/2026-10-23T2357Z` | site v0.10.18: answered the question yes; 13 failures named (4 high); 0 high, 0 medium instrument flags | yes | missing | [output](../../admin/synthetic/security/2026-10-23T2357Z/index.html) |
+| 2026-10-23T23:56:48Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Project manager | `pm/2026-10-23T2356Z` | site v0.10.18: answered the question partly; 11 failures named (3 high); 0 high, 4 medium instrument flags | yes | missing | [output](../../admin/synthetic/pm/2026-10-23T2356Z/index.html) |
+| 2026-10-23T23:56:25Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: CTO | `cto/2026-10-23T2356Z` | site v0.10.18: answered the question partly; 11 failures named (1 high); 0 high, 0 medium instrument flags | yes | missing | [output](../../admin/synthetic/cto/2026-10-23T2356Z/index.html) |
+| 2026-10-23T23:55:59Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Board member | `board/2026-10-23T2355Z` | site v0.10.18: answered the question partly; 11 failures named (2 high); 0 high, 7 medium instrument flags | yes | missing | [output](../../admin/synthetic/board/2026-10-23T2355Z/index.html) |
 | 2026-10-23T12:40:24Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261023T124024Z` | 1 pages due, 1 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-23T12:40:18Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261023T124018Z` | 1 pages due, 1 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-23T12:39:02Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261023T123902Z` | 1 pages due, 1 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
@@ -99,12 +106,12 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-22T18:16:08Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261022T181608Z` | 632 pages due, 454 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-22T18:14Z | [Fact-check desk](../verifier/index.html) | Fact-check run | `Run-1` | 3 high, 56 medium and 65 low findings; 3 evidence gaps; 10 contradictions; 6 new evidence | yes | missing | [output](../../factcheck/index.html) |
 | 2026-10-22T18:14:40Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261022T181440Z` | 33 pages due, 33 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
-| 2026-10-22T17:56:14Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Designer | `designer/2026-10-22T1755Z` | site v0.4.3: 0 high, 2 medium checks; answered the question partly | yes | missing | [output](../../admin/synthetic/index.html) |
-| 2026-10-22T17:55:23Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Developer | `developer/2026-10-22T1755Z` | site v0.4.3: 0 high, 0 medium checks; answered the question partly | yes | missing | [output](../../admin/synthetic/index.html) |
-| 2026-10-22T17:54:55Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Security lead | `security/2026-10-22T1754Z` | site v0.4.3: 0 high, 0 medium checks; answered the question yes | yes | missing | [output](../../admin/synthetic/index.html) |
-| 2026-10-22T17:54:20Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Project manager | `pm/2026-10-22T1754Z` | site v0.4.3: 0 high, 4 medium checks; answered the question partly | yes | missing | [output](../../admin/synthetic/index.html) |
-| 2026-10-22T17:53:57Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: CTO | `cto/2026-10-22T1753Z` | site v0.4.3: 0 high, 0 medium checks; answered the question partly | yes | missing | [output](../../admin/synthetic/index.html) |
-| 2026-10-22T17:53:31Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Board member | `board/2026-10-22T1753Z` | site v0.4.3: 0 high, 7 medium checks; answered the question partly | yes | missing | [output](../../admin/synthetic/index.html) |
+| 2026-10-22T17:56:14Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Designer | `designer/2026-10-22T1755Z` | site v0.4.3: answered the question partly; 9 failures named (2 high); 0 high, 2 medium instrument flags | yes | missing | [output](../../admin/synthetic/designer/2026-10-22T1755Z/index.html) |
+| 2026-10-22T17:55:23Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Developer | `developer/2026-10-22T1755Z` | site v0.4.3: answered the question partly; 12 failures named (3 high); 0 high, 0 medium instrument flags | yes | missing | [output](../../admin/synthetic/developer/2026-10-22T1755Z/index.html) |
+| 2026-10-22T17:54:55Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Security lead | `security/2026-10-22T1754Z` | site v0.4.3: answered the question yes; 10 failures named (2 high); 0 high, 0 medium instrument flags | yes | missing | [output](../../admin/synthetic/security/2026-10-22T1754Z/index.html) |
+| 2026-10-22T17:54:20Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Project manager | `pm/2026-10-22T1754Z` | site v0.4.3: answered the question partly; 10 failures named (2 high); 0 high, 4 medium instrument flags | yes | missing | [output](../../admin/synthetic/pm/2026-10-22T1754Z/index.html) |
+| 2026-10-22T17:53:57Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: CTO | `cto/2026-10-22T1753Z` | site v0.4.3: answered the question partly; 8 failures named (1 high); 0 high, 0 medium instrument flags | yes | missing | [output](../../admin/synthetic/cto/2026-10-22T1753Z/index.html) |
+| 2026-10-22T17:53:31Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Board member | `board/2026-10-22T1753Z` | site v0.4.3: answered the question partly; 8 failures named (1 high); 0 high, 7 medium instrument flags | yes | missing | [output](../../admin/synthetic/board/2026-10-22T1753Z/index.html) |
 | 2026-10-22T17:52:53Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261022T175253Z` | 14 pages due, 14 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-22T17:51:00Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261022T175100Z` | 11 pages due, 11 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-22T17:15:01Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261022T171501Z` | 384 pages due, 297 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
@@ -158,4 +165,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.10.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.10.21 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

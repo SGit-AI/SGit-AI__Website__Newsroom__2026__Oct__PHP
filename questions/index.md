@@ -172,7 +172,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Briefs](../admin/briefs/index.html): The build briefs for this site, published in full before the work, newest first.
 - [Pack mode, measured on the source watch](../admin/pack-mode/index.html): One vault as a normal sgit vault and as a pack vault: a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and why the normal vault has hit a wall.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
-- [Synthetic readers: six test readers who read the live site every hour](../admin/synthetic/index.html): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader's own vault.
+- [Synthetic readers: six test readers who read the live site](../admin/synthetic/index.html): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every review is published here and every run is kept in that reader's own vault.
 
 Every page also has a markdown twin, listed in [llms.txt](../llms.txt); the questions themselves are [data/questions.json](../data/questions.json).
 
@@ -182,4 +182,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.10.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.10.21 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
