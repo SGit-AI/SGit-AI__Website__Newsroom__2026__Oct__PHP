@@ -8,7 +8,7 @@ sg-graph, the web component every agent uses to put a graph on a page: the views
 
 # The graph component: one way to draw every graph on this site
 
-`` draws any graph that has nodes and verb-labelled edges, from five nodes to the whole story. Every agent that puts a graph on a page uses it, through `sg_graph()` in the build, so all of them walk the same way, follow the same grammar and get the same fixes. Kept by the cartographer. Version 1.0.0; native web component on this site's `sg-component` base, no library, no build step, nothing fetched from anywhere else.
+`` draws any graph that has nodes and verb-labelled edges, from five nodes to the whole story. Every agent that puts a graph on a page uses it, through `sg_graph()` in the build, so all of them walk the same way, follow the same grammar and get the same fixes. Kept by the ontologist. Version 1.0.0; native web component on this site's `sg-component` base, no library, no build step, nothing fetched from anywhere else.
 
 ## Five nodes, inline
 
@@ -57,4 +57,4 @@ Under `assets/components/sg-graph/v1/v1.0/v1.0.0/`. The path is the version: a c
 
 
 ---
-site v0.11.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/graph/component/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/graph/component/index.html

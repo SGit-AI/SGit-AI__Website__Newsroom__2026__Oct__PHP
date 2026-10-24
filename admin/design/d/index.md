@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.11.3. Not the live site.
+> Mockup D for review, built from the data of release v0.11.7. Not the live site.
 
-PHP Team console Console Overview Board 128 Agents 16 Releases 79 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 135 Agents 17 Releases 83 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.11.3 
-79 releases since 22 Oct 
+v0.11.7 
+83 releases since 22 Oct 
 
 Open on the board 
-128 
+135 
 58 done, 5 waiting 
 
 Pages built 
-750 
+755 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,34 +30,34 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 128
+#### Open 135
 
- #190 
-Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the s… 
- cartographer 
- #189 
-One spelling for a verb across the site's graphs: data/review.json writes 'realised in', 'fixed by' with spaces, the ris… 
- claude-story-site 
- #188 
-Read data/compromise.json (researcher@php.newsroom's evidence behind 'no named organisation has said it was compromised'… 
- cartographer 
- #187 
-Twelve pages are recorded twice in data/sources.json under different slugs (for example tpo-nl-digid-offline and tpo-tpo… 
- collector-researchers 
- #186 
-Publish the ontology the way the estate does: N-Triples with owl:inverseOf, so graphs.sgit.ai and newsroom.sgit.ai can b… 
- cartographer 
- #185 
-Ontology passes on a schedule: every new source, claim and party resolved, merged or pruned; new parties get entities, n… 
- cartographer 
- #184 
-Gate checks for the graph: verbs and kinds only from data/ontology.json, no dangling edge, every publisher resolved in d… 
- security@php.newsroom 
+ #198 
+Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the… 
+ sherpa 
+ #197 
+Sherpa: three views over time, step 1 (the executive view and its slices as data); the guidance on reuse; the knowledge-… 
+ sherpa 
+ #196 
+Sherpa: a way for the editor to identify himself when he cannot sign in (a key he can present), with dev and security; l… 
+ sherpa 
+ #195 
+Sherpa: track the fact-check desk's analysis of Fortune's '70% of the internet' article (UF-005.1) to a story 
+ sherpa 
+ #194 
+Sherpa: draft the brief and thread for several verification workflows across model providers on key pages (UF-005.2), wi… 
+ sherpa 
+ #193 
+Sherpa: to the conductor for priority: all six synthetic readers, run 2 on v0.10.18, say most of what they raised on v0.… 
+ sherpa 
+ #192 
+Sherpa: check CI-002's five steps on the live site, phone and desktop (/grc/explore/, edge basis, tests as nodes, the cl… 
+ sherpa 
 
 #### Waiting 5
 
  #180 
-Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then … 
+The Sherpa drains the lanes (the editor, 24 October 2026): a go for its schedule (data/schedule/sherpa.json, proposed: e… 
  editor 
  #174 
 The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed … 
@@ -67,7 +67,7 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
  conductor 
  #030 
 The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fract… 
- cartographer 
+ ontologist 
  #013 
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
@@ -99,14 +99,14 @@ From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the
 ### Releases
  latest 8 
 
+ v0.11.7 2026-10-24 the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness repo… 
+ v0.11.6 2026-10-24 The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the e… 
+ v0.11.5 2026-10-24 The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartogra… 
+ v0.11.4 2026-10-24 The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to … 
  v0.11.3 2026-10-24 the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because th… 
  v0.11.2 2026-10-24 claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit n… 
  v0.11.1 2026-10-24 Security pass 2: the Ask pane renders the model's answer as DOM nodes, so a captured page title can no longer break out of a citat… 
  v0.11.0 2026-10-24 The cartographer joins: the ontology (15 verbs, each with its inverse), one node per party (243, from every publisher spelling), t… 
- v0.10.24 2026-10-24 The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and t… 
- v0.10.23 2026-10-24 synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the v… 
- v0.10.22 2026-10-24 Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its obje… 
- v0.10.21 2026-10-24 synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 5
 
 ---
-site v0.11.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.11.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

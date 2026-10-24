@@ -1,6 +1,6 @@
 {
- "about": "Where the site's graphs meet. Kept by the cartographer. The story graph (data/graph.json), the code-review graph (data/review.json) and the risk graph (data/grc-graph.json) each keep their own vocabulary; this file declares which of their nodes denote the same anchor, or a party and the class of stakeholder it belongs to, so a reader can step from one graph into the next. Bridges, not a merge (graphs.sgit.ai rule 7). The build refuses an id here that its graph does not have.",
- "kept_by": "cartographer",
+ "about": "Where the site's graphs meet. Kept by the ontologist. The story graph (data/graph.json), the code-review graph (data/review.json) and the risk graph (data/grc-graph.json) each keep their own vocabulary; this file declares which of their nodes denote the same anchor, or a party and the class of stakeholder it belongs to, so a reader can step from one graph into the next. Bridges, not a merge (graphs.sgit.ai rule 7). The build refuses an id here that its graph does not have.",
+ "kept_by": "ontologist",
  "graphs": {
   "story": {
    "file": "data/graph.json",

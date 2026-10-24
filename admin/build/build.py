@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode', 'claim-review')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode', 'claim-review', 'desk')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 TPUB = load('telemetry-public') if os.path.exists(os.path.join(DATA, 'telemetry-public.json')) else None
 WORLD = load('world')
@@ -250,7 +250,7 @@ NAV = [
                       ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults'] if x.get('nav', True)]),
     ('GRC', [('grc/index.html', 'GRC: risks, owners, standards'), ('grc/risks/index.html', 'The risk register'), ('grc/stakeholders/index.html', 'Stakeholders and their registers'),
              ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/explore/index.html', 'Explore the graph: from any node'), ('grc/gaps/index.html', 'What the graph is missing'), ('grc/network/index.html', 'From the sgit network')]),
-    ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed')]),
+    ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed'), ('views/desk/index.html', "The journalist's desk: what is still stale")]),
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
@@ -1152,7 +1152,7 @@ def build_sources():
 '''
     page('sources/index.html', f'Every source: {C["sources"]} pages, {C["captures"]} captures, {C["hashed"]} hashes', f'The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.', body, kind='evidence', topics='php2shell sources evidence')
 
-# build_graph() is in the cartographer's block at the end of this file.
+# build_graph() is in the ontologist's block at the end of this file.
 
 def build_method():
     v = D['vault']
@@ -1692,7 +1692,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa()
+    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa(); build_desk()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -5276,7 +5276,7 @@ def sherpa_card(r, p, d):
 def sherpa_nav(FB, CI, cur, up):
     def item(href, label, sub, on):
         return f'<a href="{href}"{" aria-current=page" if on else ""}><b>{E(label)}</b><span>{E(sub)}</span></a>'
-    groups = [("From readers and power users", [r for r in FB if not r.get('tester')]), ("Tests by agents", [r for r in FB if r.get('tester') == 'agent']), ("Internal tests", [r for r in FB if r.get('tester') == 'internal'])]
+    groups = [("From readers and power users", [r for r in FB if not r.get('tester')]), ("Tests by agents", [r for r in FB if r.get('tester') == 'agent']), ("From the editor", [r for r in FB if r.get('tester') == 'editor']), ("Internal tests", [r for r in FB if r.get('tester') == 'internal'])]
     out = item(f'{up}feedback/index.html', 'All feedback', 'the section, with its numbers', cur == 'home')
     for name, rs in groups:
         out += f'<p class="fv-g">{E(name)}</p>' + ''.join(item(f'{up}feedback/{E(r["id"].lower())}/index.html', r['id'], (r.get('who') or r['reader'].split(',')[0])[:60], cur == r['id']) for r in rs)
@@ -5319,7 +5319,7 @@ def sherpa_viewer(r, FB, CI, d):
 def build_sherpa_feedback(r, FB, CI):
     d = 2; up = '../' * d
     pages_read = ', '.join(f'<a href="{up}{U(pth)}">{E(pth)}</a>{(" (" + E(how) + ")") if how else ""}' for pth, how in r['pages_read'])
-    who = {"agent": "A test by an agent, not a person: its findings are prompts to re-check, not evidence about readers.", "internal": "An internal test, not reader feedback, and not counted as such."}.get(r.get("tester"), "Readers are never named here.")
+    who = {"agent": "A test by an agent, not a person: its findings are prompts to re-check, not evidence about readers.", "internal": "An internal test, not reader feedback, and not counted as such.", "editor": "The editor's own feedback, through the site's form."}.get(r.get("tester"), "Readers are never named here.")
     facts = ''.join(f'<dt>{k}</dt><dd>{v}</dd>' for k, v in [('From', f'{E(r["reader"])}. {who}'), ('How it came', E(r['channel']) + ((', about ask ' + E(r['ask'])) if r.get('ask') else '')),
         ('Received', E(r['received'])), ('Site version', f'v{E(r["site_version"])}. {E(r["site_version_note"])}'), ('Progress', E(r['progress'])), ('Pages read', pages_read)])
     nr = ''.join(f'<li>{E(x)}</li>' for x in r.get('not_reproduced', []))
@@ -5346,7 +5346,7 @@ def build_feedback_section(FB, CI, FL):
     pts = [p for r in FB if r.get('tester') != 'internal' for p in r['points']]
     stats = ''.join(stat(n, l) for n, l in [(sum(r.get('tester') != 'internal' for r in FB), 'pieces of feedback'), (len(pts), 'points answered'), (sum(p['replicated'] == 'yes' for p in pts), 'reproduced by the Sherpa'),
         (len(opn), 'frictions open'), (ST['power_users_joined'], 'power users joined'), (ST['signed_messages'], 'signed messages received'), (len(CI), 'conversations of ideas')])
-    rows = [[f'<a href="{E(r["id"].lower())}/index.html">{E(r["id"])}</a>', E(r['received']), 'v' + E(r['site_version']), E(r.get('who') or r['reader'][:70]), {'agent': 'agent test', 'internal': 'internal test'}.get(r.get('tester'), 'person'),
+    rows = [[f'<a href="{E(r["id"].lower())}/index.html">{E(r["id"])}</a>', E(r['received']), 'v' + E(r['site_version']), E(r.get('who') or r['reader'][:70]), {'agent': 'agent test', 'internal': 'internal test', 'editor': 'the editor'}.get(r.get('tester'), 'person'),
              str(len(r['points'])), E(r['summary'])] for r in FB]
     body = f'''
 <link rel="stylesheet" href="{up}assets/sherpa/viewer.css">
@@ -5651,6 +5651,9 @@ def sched_load():
         runs.append(r)
     runs.sort(key=lambda r: (r['started'], r['run']), reverse=True)
     msgs = sorted((sched_message(fn) for fn in glob.glob(os.path.join(DATA, 'messages', '*', '*.md'))), key=lambda m: m['id'], reverse=True)
+    known = set(cards) | {m['id'] for m in TEAM['members']} | {e['agent'] for e in load('schedules').get('expected', [])} | {'all', 'editor'}
+    for m in msgs:
+        if m['box'] not in known: sys.exit(f'data/messages/{m["box"]}/: no agent is called {m["box"]!r}, so no wake would read it; use the id on its card or on /team/')
     read = {}
     for r in reversed(runs):
         for i in r.get('read', []): read.setdefault(i, r)
@@ -5775,6 +5778,75 @@ def build_schedule():
 '''
         page(f'team/schedule/{a}/index.html', f'Schedule: {a}', f'{a}: {c["objective"]} When it wakes, its instructions, every run and its messages.', body, kind='site', topics='team agents schedule')
 
+# ----------------------------------------------------------------------------- the journalist's desk (/views/desk/)
+# The cycle every evidence export goes through, the full pass and where it stands, the pass ledger (data/desk.json),
+# and a staleness report computed from the pages this build has just written: every dated 'as of' older than the
+# latest capture, every hand-kept file not checked against the current vault head, every vault claim not reviewed.
+
+_MONTHS = {m: i + 1 for i, m in enumerate(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])}
+_ASOF = re.compile(r'\b[Aa]s of (?:the (?:morning|afternoon|evening|end) of )?(?:(\d{1,2}):(\d{2}) UTC on )?(\d{1,2}) (October|November)(?: 2026)?(?:, (\d{1,2}):(\d{2}) UTC)?'
+                   r'|\b[Aa]s of (2026)-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2}))?')
+
+def _asof_key(m):
+    """A matched 'as of' phrase as a sortable (month, day, minutes or None)."""
+    if m.group(3):
+        hh, mm = (m.group(1), m.group(2)) if m.group(1) else (m.group(5), m.group(6))
+        return (_MONTHS[m.group(4)], int(m.group(3)), int(hh) * 60 + int(mm) if hh else None)
+    return (int(m.group(8)), int(m.group(9)), int(m.group(10)) * 60 + int(m.group(11)) if m.group(10) else None)
+
+def staleness():
+    """What is older than the latest capture, from the markdown twins this build wrote. Deterministic: pages, then phrases, in order."""
+    dk = D['desk']
+    a = STORY['data_as_of']
+    latest = (int(a[5:7]), int(a[8:10]), int(a[11:13]) * 60 + int(a[14:16]))
+    accepted = {(x['page'], x['phrase']) for x in dk['accepted']}
+    pages = []
+    for p, t, _, _ in PAGES:
+        if p.startswith(tuple(dk['kept_as_written'])) or not os.path.exists(os.path.join(ROOT, md_path(p))):
+            continue
+        md = open(os.path.join(ROOT, md_path(p)), encoding='utf-8').read().split('\n\n---\nsite v')[0]
+        hits = []
+        for m in _ASOF.finditer(md):
+            k = _asof_key(m)
+            old = (k[0], k[1]) < latest[:2] or (k[:2] == latest[:2] and k[2] is not None and k[2] < latest[2])
+            if old and (p, m.group(0)) not in accepted and ('*', m.group(0)) not in accepted and m.group(0) not in hits:
+                hits.append(m.group(0))
+        if hits:
+            pages.append((p, t, hits))
+    head = D['vault']['head']['commit']
+    files = [f for f in dk['files'] if f.get('checked_against') != head]
+    site_ids = {c['id'] for c in D['claims']}
+    reviewed = {r['id'] for r in D['claim-review']['reviews']}
+    unreviewed = [c for c in D['vault-claims'] if c['id'] not in site_ids and c['id'] not in reviewed]
+    return pages, files, unreviewed
+
+def build_desk():
+    dk = D['desk']
+    path = 'views/desk/index.html'
+    head = D['vault']['head']['commit']
+    pages, files, unreviewed = staleness()
+    n_phr = sum(len(h) for _, _, h in pages)
+    settled = not (pages or files or unreviewed)
+    cyc = ''.join(f'<li class="dk-step"><b>{E(c["label"])}</b><span class="dk-who">{E(c["who"])}</span><span>{E(c["what"])}</span></li>' for c in dk['cycle'])
+    cycle_fig = f'<figure class="dk-fig"><ol class="dk-cycle">{cyc}</ol><figcaption>Each export, in order. The last step is reached when the report at the foot of this page is empty; the next curator wake starts the cycle again.</figcaption></figure>'
+    pas = ''.join(f'<li class="dk-pass dk-{E(s["status"].replace(" ", "-"))}"><span class="dk-n">{s["n"]}</span><b>{E(s["title"])}</b><span class="dk-st">{E(s["status"])}{(", v" + E(s["release"])) if s.get("release") else ""}</span><span>{E(s["what"])}</span></li>' for s in dk['pass'])
+    pass_fig = f'<figure class="dk-fig"><ol class="dk-seq">{pas}</ol><figcaption>One step per release, in this order, so that no release carries the whole pass.</figcaption></figure>'
+    frows = [[f'<code>{E(f["path"])}</code>', E(f['kept_by_before']), (f'<code>{E(f["checked_against"])}</code>' + (' <span class="st st-confirmed">current</span>' if f['checked_against'] == head else ' <span class="st st-disputed">older head</span>')) if f.get('checked_against') else '<span class="st st-unverified">not yet</span>', E(f.get('note') or '')] for f in dk['files']]
+    prows = [[f'<a href="../../{E(p)}">{E(t)}</a><div class="small"><code>{E(p)}</code></div>', '<br>'.join(f'<q>{E(h)}</q>' for h in hs)] for p, t, hs in pages]
+    report = (f'<p class="lead">{"<b>Settled.</b> Nothing on the site is older than the latest capture." if settled else f"<b>Not settled yet.</b> {len(pages)} pages carry {n_phr} dated phrases older than the latest capture ({E(human_time(STORY['data_as_of']))}); {len(files)} of {len(dk['files'])} hand-kept files have not been checked against the current head <code>{E(head)}</code>; {len(unreviewed)} vault claims are not yet reviewed."}</p>'
+              + section('r-files', f'The pass ledger: hand-kept files ({len(dk["files"]) - len(files)} of {len(dk["files"])} checked against the current head)', table(['File', 'Kept before 24 October by', 'Last checked against', 'Note'], frows, 'dk-t'))
+              + section('r-pages', f'Dated phrases older than the latest capture ({n_phr} on {len(pages)} pages)', (table(['Page', 'Phrases'], prows, 'dk-t') if prows else '<p>None.</p>') + f'<p class="small">Pages kept as written by design are not scanned: {E(", ".join(dk["kept_as_written"]))}. {E(dk["kept_as_written_why"])} A phrase that is a source\'s own date, rightly kept, is accepted in <code>data/desk.json</code> and leaves the report.</p>')
+              + section('r-claims', f'Vault claims not yet reviewed ({len(unreviewed)})', f'<p>Listed with their sources on <a href="../../claims/review/index.html#g-not-yet-reviewed">the claims waiting for review</a>.</p>'))
+    body = f'''
+<h1>The journalist's desk: keeping the site current</h1>
+<p class="lead">After every export of the evidence vault, the journalist goes through the site so that it says what the evidence now says. This page is that work in the open: the cycle each export goes through, the full pass and where it stands, and a report, computed at every build, of what is still older than the evidence. The editor's decision ({E(dk["decided"]["on"])}): {E(dk["decided"]["says"])}.</p>
+{section("cycle", "The cycle, after every export", cycle_fig)}
+{section("pass", "The full pass, step by step", pass_fig + '<p>The plan in full is <a href="../../admin/briefs/index.html">among the briefs</a>, as written on 24 October.</p>')}
+{section("report", "What is still stale", report)}
+<p class="small">Computed from <a href="../../data/desk.json">data/desk.json</a>, the pages of this build and the vault's claims, at vault head <code>{E(head)}</code>.</p>
+'''
+    page(path, "The journalist's desk: keeping the site current", f'The cycle every evidence export goes through, the journalist\'s full pass over the site and where it stands, and what is still older than the latest capture: {"settled" if settled else f"{n_phr} dated phrases on {len(pages)} pages, {len(files)} files, {len(unreviewed)} claims"}.', body, kind='site', topics='php2shell method freshness')
+
 # ----------------------------------------------------------------------------- elsewhere: Pulse, a separate section
 # Pulse is pulse@newsroom's vault for the SGit newsroom: exploitation evidence beside attention, for 26 vulnerabilities
 # of which php2shell is two. It is kept apart from the PHP pages on purpose (the editor, 24 October 2026): its own
@@ -5870,8 +5942,8 @@ def build_pulse():
 <p class="small">{head}.</p>
 '''
         page(path, f'{v["cve"]} in Pulse: {v["vendor"]} {v["product"]}', f'Pulse\'s record of {v["cve"]} ({v["vendor"]} {v["product"]}): the evidence of exploitation as eight rungs, each with the capture it rests on, and the attention it gets. A separate section, not this site\'s evidence.', body, kind='evidence', topics='vulnerabilities exploitation pulse')
-# ----------------------------------------------------------------------------- the story graph (cartographer@php.newsroom)
-# Brief: admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md. One graph, data/graph.json, built from every
+# ----------------------------------------------------------------------------- the story graph (ontologist@php.newsroom)
+# Brief: admin/content/briefs/2026-10-24__brief__the-ontologist.md (first: 2026-10-22__brief__the-cartographer-joins.md). One graph, data/graph.json, built from every
 # row the pages are built from, joined through data/entities.json and data/attribution.json under the verbs of
 # data/ontology.json. The build stops on a verb or kind the ontology does not list, a publisher no entity claims, an
 # attribution to an unknown entity, or an exploitation row whose 'who' moved: the graph cannot drift from its grammar.
@@ -6145,7 +6217,7 @@ def build_graph():
 <li><b>A party steps across into the risk graph.</b> The risk desk keeps its own graph (<a href="../grc/graph/index.html">the risk graph</a>), where parties appear as stakeholders, mostly as classes (WAF vendors, local councils, national governments). <a href="../data/crosswalk.json">data/crosswalk.json</a> declares the bridges: a party <i>is</i> a stakeholder, or is <i>among</i> a class of them; a CVE is the same anchor in all three graphs. Bridges, not a merge: each graph keeps its words.</li>
 <li><b>A tension opens the claims it flags</b>: the contradiction ledger of the fact-check desk, one node per row, because two claims that disagree are not one edge with the same name both ways.</li>
 </ul>''')}
-{section("ontology", "The ontology", f'<p>Kinds of node:</p>{kinds_t}<p>Verbs this graph will not use, and why:</p><ul>{banned}</ul><p>The grammar is the estate&#39;s, from <a href="https://graphs.sgit.ai/v1/grammar/">graphs.sgit.ai</a>; the files are <a href="../data/ontology.json">data/ontology.json</a> (kinds, verbs, taxonomies, formulas), <a href="../data/entities.json">data/entities.json</a> (one node per party, whatever a page calls it) and <a href="../data/attribution.json">data/attribution.json</a> (who states each row). The graph is <a href="../data/graph.json">data/graph.json</a>. Kept by the cartographer. The component that draws it is documented for every agent on <a href="component/index.html">the graph component</a> page.</p>')}
+{section("ontology", "The ontology", f'<p>Kinds of node:</p>{kinds_t}<p>Verbs this graph will not use, and why:</p><ul>{banned}</ul><p>The grammar is the estate&#39;s, from <a href="https://graphs.sgit.ai/v1/grammar/">graphs.sgit.ai</a>; the files are <a href="../data/ontology.json">data/ontology.json</a> (kinds, verbs, taxonomies, formulas), <a href="../data/entities.json">data/entities.json</a> (one node per party, whatever a page calls it) and <a href="../data/attribution.json">data/attribution.json</a> (who states each row). The graph is <a href="../data/graph.json">data/graph.json</a>. Kept by the ontologist. The component that draws it is documented for every agent on <a href="component/index.html">the graph component</a> page.</p>')}
 '''
     page('graph/index.html', 'The story as a graph: who states what, who relays it, and what it rests on',
          f'{len(G["nodes"])} nodes and {len(G["edges"])} typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.', body, kind='evidence', topics='php2shell graph ontology')
@@ -6202,7 +6274,7 @@ def build_graph_component(G):
     body = f'''
 <p class="crumb"><a href="../index.html">The story as a graph</a> / The graph component</p>
 <h1>The graph component: one way to draw every graph on this site</h1>
-<p class="lead"><code>&lt;sg-graph&gt;</code> draws any graph that has nodes and verb-labelled edges, from five nodes to the whole story. Every agent that puts a graph on a page uses it, through <code>sg_graph()</code> in the build, so all of them walk the same way, follow the same grammar and get the same fixes. Kept by the cartographer. Version 1.0.0; native web component on this site&#39;s <code>sg-component</code> base, no library, no build step, nothing fetched from anywhere else.</p>
+<p class="lead"><code>&lt;sg-graph&gt;</code> draws any graph that has nodes and verb-labelled edges, from five nodes to the whole story. Every agent that puts a graph on a page uses it, through <code>sg_graph()</code> in the build, so all of them walk the same way, follow the same grammar and get the same fixes. Kept by the ontologist. Version 1.0.0; native web component on this site&#39;s <code>sg-component</code> base, no library, no build step, nothing fetched from anywhere else.</p>
 {section("small", "Five nodes, inline", sg_graph(path, data=demo, focus='c', controls='none', height=260, fallback='<p>Wiz states that PHP is 70% of the Internet; The Hacker News relays it; it cites two sources.</p>') + '<p class="small">The graph above is inline JSON in the page. Click a node to walk to it, or tab to it and press Enter.</p>')}
 {section("layers", "A graph in another vocabulary, in layers", sg_graph(path, src='data/review.json', view='layers', depth=2, focus='fix-commit', fallback='<p>The review graph of the fix: <a href="../../review/index.html">the fix, mapped to the code</a>.</p>') + '<p class="small">The code-review graph (<code>data/review.json</code>), which uses <code>rel</code> and <code>name</code>; the component reads both shapes.</p>')}
 {section("use", "Using it from the build", '''<pre><code># in admin/build/build.py, on any page

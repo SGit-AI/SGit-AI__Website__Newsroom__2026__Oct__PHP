@@ -1,6 +1,42 @@
 {
- "current": "0.11.3",
+ "current": "0.11.7",
  "versions": [
+  {
+   "version": "0.11.7",
+   "date": "2026-10-24",
+   "title": "the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness report computed at every build; step 1 of the pass",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.6",
+   "date": "2026-10-24",
+   "title": "The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the editor's two asks recorded (UF-005: an analysis of Fortune's '70% of the internet' article; verification across several model providers), the synthetic readers' second run in the friction log (most of what they raised on 22 October still open), the Sherpa's tasks on the board, and its schedule card, the conductor's draft and the Sherpa's combined: drain every two hours, the full pass at 11:45 and 17:45, proposed",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.5",
+   "date": "2026-10-24",
+   "title": "The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartographer is archived; its daily pass is active, a fresh session at 14:40 London every day",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.4",
+   "date": "2026-10-24",
+   "title": "The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to 21:45 London; the conductor's card no longer drains them; a message to an agent no wake reads now stops the build",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.11.3",
    "date": "2026-10-24",

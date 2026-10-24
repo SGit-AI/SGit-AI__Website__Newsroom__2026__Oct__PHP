@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**9** evidence · **28** derived · **14** authored · **30** site
+**9** evidence · **28** derived · **14** authored · **31** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -73,10 +73,10 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 
 | File | Made by | From | Shown on |
 |---|---|---|---|
-| `data/ontology.json` | the cartographer | the estate's grammar (graphs.sgit.ai, newsroom.sgit.ai's ontologies), board 030 and 062, the newsroom review's change 10 | [graph/index.html](../graph/index.html) |
-| `data/entities.json` | the cartographer | the publisher strings of data/sources.json and the parties named in the claims, numbers, exploitation and agency rows; actor ids reused from data/actors.json | [graph/parties/index.html](../graph/parties/index.html) |
-| `data/attribution.json` | the cartographer | the free-text 'by' and 'who' of each claim, number and exploitation row, resolved to entities | [graph/parties/index.html](../graph/parties/index.html) |
-| `data/crosswalk.json` | the cartographer | the node ids of the story, code-review and risk graphs, and data/grc.json's stakeholders | [graph/index.html](../graph/index.html) |
+| `data/ontology.json` | the ontologist | the estate's grammar (graphs.sgit.ai, newsroom.sgit.ai's ontologies), board 030 and 062, the newsroom review's change 10 | [graph/index.html](../graph/index.html) |
+| `data/entities.json` | the ontologist | the publisher strings of data/sources.json and the parties named in the claims, numbers, exploitation and agency rows; actor ids reused from data/actors.json | [graph/parties/index.html](../graph/parties/index.html) |
+| `data/attribution.json` | the ontologist | the free-text 'by' and 'who' of each claim, number and exploitation row, resolved to entities | [graph/parties/index.html](../graph/parties/index.html) |
+| `data/crosswalk.json` | the ontologist | the node ids of the story, code-review and risk graphs, and data/grc.json's stakeholders | [graph/index.html](../graph/index.html) |
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
 | `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
 | `admin/content/updates/` | the conductor, and whoever holds the updates beat for it | the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written | [updates/index.html](../updates/index.html) |
@@ -124,9 +124,10 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/synthetic.json` | admin/synthetic/run.py summarise (synthetic@php.newsroom) | each synthetic reader's vault: every reader, its runs with scores and counts, with no keys | [admin/synthetic/index.html](../admin/synthetic/index.html) |
 | `data/synthetic-runs/` | admin/synthetic/run.py summarise (synthetic@php.newsroom) | each run in a synthetic reader's vault: the review, the journey, per-page measurements and the instruments' flags; never page bodies or a key | [admin/synthetic/index.html](../admin/synthetic/index.html) |
 | `data/grc-gaps.json` | dev@php.newsroom | the rules the gaps page computes over the risk graph | [grc/gaps/index.html](../grc/gaps/index.html) |
+| `data/desk.json` | claude-journalist | the editor's decision of 24 October 2026 and the journalist's pass over the site after each evidence export | [views/desk/index.html](../views/desk/index.html) |
 
 The classification is [data/layers.json](../data/layers.json); the gate fails a release if a file in `data/` is missing from it.
 
 
 ---
-site v0.11.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

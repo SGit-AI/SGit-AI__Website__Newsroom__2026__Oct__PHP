@@ -1,6 +1,6 @@
 {
- "about": "Who states each claim, number and exploitation row, as entity ids from data/entities.json. Kept by the cartographer. The free-text 'by' and 'who' on each row stay as written by its author; this file resolves them to nodes. 'states' names the originators. 'relays' names who passed a statement on, where the row says so ('via The Hacker News'). The build adds a relay only where the fact-check desk found the claim's words in a capture whose publisher is not an origin; a source that is merely cited is evidence, not a relay, and may support or contradict. 'counts' marks a figure this site counted from a captured file or a clone. Exploitation rows are keyed by position and carry their 'who' so the build can refuse a mismatch when that file is reordered.",
- "kept_by": "cartographer",
+ "about": "Who states each claim, number and exploitation row, as entity ids from data/entities.json. Kept by the ontologist. The free-text 'by' and 'who' on each row stay as written by its author; this file resolves them to nodes. 'states' names the originators. 'relays' names who passed a statement on, where the row says so ('via The Hacker News'). The build adds a relay only where the fact-check desk found the claim's words in a capture whose publisher is not an origin; a source that is merely cited is evidence, not a relay, and may support or contradict. 'counts' marks a figure this site counted from a captured file or a clone. Exploitation rows are keyed by position and carry their 'who' so the build can refuse a mismatch when that file is reordered.",
+ "kept_by": "ontologist",
  "claims": {
   "two-cves-9.2": {
    "states": [

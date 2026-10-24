@@ -203,8 +203,8 @@ Who could take it: [dev@php.newsroom](../../../team/dev/index.html), with [GRC d
 
 ## The reply
 
-Not sent. The editor shares this page and the brief with him.
+Shared by the editor. Steps 1 to 5 of the brief to dev shipped in v0.10.13 (every edge's basis, the fix commit's 270 tests as nodes, explore from any node, climb from a file or test, a gaps page) and v0.10.14 is a before-and-after debrief for him; the Sherpa is to check each on the live site.
 
 
 ---
-site v0.11.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-002/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-002/index.html

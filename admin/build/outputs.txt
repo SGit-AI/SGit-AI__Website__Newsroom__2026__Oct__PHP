@@ -374,6 +374,8 @@ feedback/uf-003/index.html
 feedback/uf-003/index.md
 feedback/uf-004/index.html
 feedback/uf-004/index.md
+feedback/uf-005/index.html
+feedback/uf-005/index.md
 feeds/all.xml
 feeds/for-you.xml
 feeds/index.html
@@ -1383,6 +1385,8 @@ team/librarian/index.html
 team/librarian/index.md
 team/newsroom-lead/index.html
 team/newsroom-lead/index.md
+team/ontologist/index.html
+team/ontologist/index.md
 team/researcher/index.html
 team/researcher/index.md
 team/runs/index.html
@@ -1395,8 +1399,12 @@ team/schedule/curator/index.html
 team/schedule/curator/index.md
 team/schedule/index.html
 team/schedule/index.md
+team/schedule/ontologist/index.html
+team/schedule/ontologist/index.md
 team/schedule/researcher/index.html
 team/schedule/researcher/index.md
+team/schedule/sherpa/index.html
+team/schedule/sherpa/index.md
 team/sherpa/index.html
 team/sherpa/index.md
 team/status/index.html
@@ -1509,6 +1517,8 @@ versions/page-timeline/index.html
 versions/page-timeline/index.md
 versions/page-views-state/index.html
 versions/page-views-state/index.md
+views/desk/index.html
+views/desk/index.md
 views/index.html
 views/index.md
 views/state/history/index.html

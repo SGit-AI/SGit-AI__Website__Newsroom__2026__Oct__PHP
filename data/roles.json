@@ -108,9 +108,16 @@
   {
    "id": "cartographer",
    "name": "Cartographer",
-   "beat": "the graph: sources, claims, events, actors and the edges between them; the JSON every page is drawn from",
+   "beat": "archived on 24 October 2026; the graph is the ontologist's",
    "rule": "A node is just a node. Meaning lives in the edges; an edge without a source is deleted.",
    "mistake": "None yet."
+  },
+  {
+   "id": "ontologist",
+   "name": "Ontologist",
+   "beat": "fractal semantic graphs: the ontologies, one node per party, the story graph and the bridges between the site's graphs",
+   "rule": "Every edge is a verb with a different, named inverse; meaning lives in connectivity, weighted by independence, not by count.",
+   "mistake": "Its first pass took a cited source for a relay, and a renumbering by pattern rewrote a count; both caught before release (admin/ontologist/passes/)."
   },
   {
    "id": "journalist",

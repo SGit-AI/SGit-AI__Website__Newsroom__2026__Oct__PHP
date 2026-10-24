@@ -206,19 +206,21 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
-### The graph, its ontology and the component (cartographer@php.newsroom)
+### Fractal semantic graphs: the ontology, the graph and the component (ontologist@php.newsroom)
 
-- `data/ontology.json` v0.2.0 (12 kinds, 15 verbs with inverses, two taxonomies, four formulas, banned verbs), `data/entities.json` (243 parties, every one of the 249 publisher spellings an alias), `data/attribution.json` (who states and relays each claim, number and exploitation row; which 9 sources carry another party's wire copy), `data/crosswalk.json` (where the story, code-review and risk graphs name the same thing: the two CVEs, and 189 parties as stakeholders, 12 as the same party and the rest as members of a class). Brief: `admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md`; runbook: `admin/cartographer/README.md`.
+- `data/ontology.json` v0.2.0 (12 kinds, 15 verbs with inverses, two taxonomies, four formulas, banned verbs), `data/entities.json` (243 parties, every one of the 249 publisher spellings an alias), `data/attribution.json` (who states and relays each claim, number and exploitation row; which 9 sources carry another party's wire copy), `data/crosswalk.json` (where the story, code-review and risk graphs name the same thing: the two CVEs, and 189 parties as stakeholders, 12 as the same party and the rest as members of a class). Briefs: `admin/content/briefs/2026-10-24__brief__the-ontologist.md` (and the first, `2026-10-22__brief__the-cartographer-joins.md`); runbook: `admin/ontologist/README.md`. The role was the cartographer until 24 October; the cartographer is archived, paused.
 
 - `data/graph.json`: 1048 nodes, 1516 edges, 15 verbs; independent origins and relays per claim. The build stops on a verb or kind not in the ontology, an unresolved publisher, an unknown party or a crosswalk id its graph does not have (not yet a gate check: board 184).
 
-- `admin/cartographer/pass.py`: the pass, read only; what would stop the build, and the long tail (pages recorded twice, sources nobody traced, sources the vault's claims cite and the site does not). Passes are recorded in `admin/cartographer/passes/`; the first was on 24 October.
+- `admin/ontologist/pass.py`: the pass, read only; what would stop the build, and the long tail (pages recorded twice, sources nobody traced, sources the vault's claims cite and the site does not). Passes are recorded in `admin/ontologist/passes/`; the first was on 24 October.
 
-- `` v1.0.0 (`assets/components/sg-graph/v1/v1.0/v1.0.0/`), embedded with `sg_graph()`: four views, search, verb filters, trail, path between two nodes, zoom into another graph a node names (same origin only), reading inverses from an ontology block, a `verbs` list or the edges themselves. Used on /graph/, /graph/parties/ and /graph/component/; tested in Chromium at 1280 and 390, light and dark, and with JavaScript off. The test scripts ran in the cartographer's session and are not in the repository.
+- `` v1.0.0 (`assets/components/sg-graph/v1/v1.0/v1.0.0/`), embedded with `sg_graph()`: four views, search, verb filters, trail, path between two nodes, zoom into another graph a node names (same origin only), reading inverses from an ontology block, a `verbs` list or the edges themselves. Used on /graph/, /graph/parties/ and /graph/component/; tested in Chromium at 1280 and 390, light and dark, and with JavaScript off. The test scripts ran in the ontologist's session and are not in the repository.
 
 - Fractal steps: a CVE opens the code-review graph in its own vocabulary, and the risk graph; a party steps into the risk graph as a stakeholder. Source to capture to file is addressing, and is described as such.
 
-- Not built: sentence-level nodes (008); series and `derives_from`/`supersedes` (062); the researcher's compromise evidence (`data/compromise.json`, 188) and the vault's own claims and the state of affairs (190) in the graph; the other graph drawings moved onto the component (181); a scheduled pass (the card `data/schedule/cartographer.json`, proposed for 14:40 London daily, waiting for the editor; board 185).
+- Not built: sentence-level nodes (008); series and `derives_from`/`supersedes` (062); the researcher's compromise evidence (`data/compromise.json`, 188) and the vault's own claims and the state of affairs (190) in the graph; the other graph drawings moved onto the component (181).
+
+- The daily pass: `data/schedule/ontologist.json`, active from 24 October 2026 at the editor's go, 14:40 London, a fresh Sonnet session each day from a claude.ai scheduled task; it holds no key.
 
 ### GRC: fractal risk registers (grc@php.newsroom)
 
@@ -293,6 +295,8 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - Ideas from collaborators: `admin/sherpa/ideas.json` (schema `sgit.newsroom.collaborator-ideas/1`), one record per conversation (CI-nnn), each comment, idea and question set against what the site has today, with links, what is missing, a recommendation and who could take it; built as `/sherpa/ideas//` and a section on `/sherpa/`. CI-001 (22 to 23 October, LinkedIn, a collaborator joining the power users): two comments, three ideas (user stories to execution paths and tests; threat scenarios and security assumptions beside stories; verified versus AI-inferred edges), three questions, an offer. Collaborators are named only when they agree (`name_on_site`).
 
 - Feedback from collaborators, a section of its own (`/feedback/`, under Yours): every piece of feedback kept whole, in a viewer with a menu of all of them on the left, the document as received in the middle and the Sherpa's comments beside each part of it on the right; readers can select text to highlight it and add a note (kept in their browser only, exportable as JSON; `assets/sherpa/viewer.js`). A report imported whole is `admin/sherpa/documents/.json` in blocks the comments anchor to (UF-003, with its seven screenshots, metadata stripped). `/feedback/briefs/`: the brief to the conductor from every open friction, by owner and severity, and requirements for other teams (`admin/sherpa/briefs.json`: pki.sgit.ai). Counts in `admin/sherpa/collab-stats.json`. The signed messages drained from the collaborators vault are counted, not published, until the editor confirms they may be.
+
+- The Sherpa drains the collaborators lane (`collaborators_drain.py` against its own clone of 58526ytp, then pushes the vault); first drain 24 October: five messages, one power user's key enrolled as `power-user-1`, the `editor` bootstrap invitation retired (its code had appeared in drained rows). A schedule twice a day is proposed (`data/schedule/sherpa.json`), not active.
 
 - Not built: the Sherpa's line on the front page and the "Where next" block (proposed); the trail additions (proposed, for dev and the editor's go); a key enrolled on pki.sgit.ai.
 
@@ -378,6 +382,8 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `/pulse/`: a separate section, not about PHP. The SGit newsroom's Pulse vault (`4klm5qlt`, pulse@newsroom), exported by `admin/build/export_pulse.py` into `data/pulse.json` (ladders, dates, attention counts, short quotes with their capture paths and hashes; no capture, no key), built by its own block at the end of `build.py`, one page per vulnerability (26). The PHP pages do not read it; the front page has one pointer, "What else is going on".
 
+- `/views/desk/`, the journalist's desk (the editor's decision, 24 October 2026: the journalist keeps the site current after every evidence export): the cycle each export goes through, the five steps of the full pass and their status, the pass ledger (one row per hand-kept data file and the vault head it was last checked against) and a staleness report computed at every build from the markdown twins (dated 'as of' phrases older than the latest capture, outside pages kept as written by design), all from `data/desk.json`.
+
 ## The honest column
 
 - **Not measured:** the editor's time and the inference cost behind each agent run.
@@ -394,4 +400,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.11.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

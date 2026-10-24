@@ -6,7 +6,39 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.11.3. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.11.7. The data is [data/versions.json](../data/versions.json).
+
+### v0.11.7 · 2026-10-24
+
+the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness report computed at every build; step 1 of the pass
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.11.6 · 2026-10-24
+
+The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the editor's two asks recorded (UF-005: an analysis of Fortune's '70% of the internet' article; verification across several model providers), the synthetic readers' second run in the friction log (most of what they raised on 22 October still open), the Sherpa's tasks on the board, and its schedule card, the conductor's draft and the Sherpa's combined: drain every two hours, the full pass at 11:45 and 17:45, proposed
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.11.5 · 2026-10-24
+
+The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartographer is archived; its daily pass is active, a fresh session at 14:40 London every day
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.11.4 · 2026-10-24
+
+The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to 21:45 London; the conductor's card no longer drains them; a message to an agent no wake reads now stops the build
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.11.3 · 2026-10-24
 
@@ -642,4 +674,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.11.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
