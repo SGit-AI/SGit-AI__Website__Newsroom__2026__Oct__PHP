@@ -822,6 +822,8 @@ sherpa/ideas/ci-001/index.html
 sherpa/ideas/ci-001/index.md
 sherpa/ideas/ci-002/index.html
 sherpa/ideas/ci-002/index.md
+sherpa/ideas/ci-003/index.html
+sherpa/ideas/ci-003/index.md
 sherpa/index.html
 sherpa/index.md
 signals/index.html

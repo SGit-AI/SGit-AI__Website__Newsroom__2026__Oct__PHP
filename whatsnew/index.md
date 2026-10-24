@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.14 · 24 October 2026new since your last visit
+
+Ideas from collaborators, CI-003: a power user's review of the new design, the telemetry and the risk graph (complementary views, a first step for newcomers, people confirming the graph's inferred links with signed reviews, the graph's changes between releases), the phone header measured at 30% of the screen, and a brief to dev (board 260 to 263)
+
+No reader-facing section changed in this release.
+
 ## v0.14.13 · 24 October 2026new since your last visit
 
 The desk's morning wake: correction requests updated (AWS reworded its own 'broadly exploited', so R-004 is held and WIRED's request stands on its own; CNN needs a fresh capture; The Hacker News's request unblocked by K-009), and the front page's out-of-date 70% unknown on the board
@@ -803,4 +809,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.13 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.14 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

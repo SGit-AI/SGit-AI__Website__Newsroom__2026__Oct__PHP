@@ -51,6 +51,10 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 207 | Accept or rework the librarian's edit inside build_llms() (one section listing the member pages), and carry the branch into devRenumbered from 098 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 | 232 | design.py: every number from data (the 6 countries, the 9 new, the 9 and 3), and one 'as of' for each statement across the front page, personas and mockupsFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
 | 234 | 'What changed' in the reader's path lists story changes only: no version tags, commit hashes or page furnitureFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
+| 260 | From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sticks as one line or not at all (233px today, 30% of the screen; F034) | open |  |
+| 261 | From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed, with the before-and-after blocks | open |  |
+| 262 | From CI-003, step 3: a progression measure at every drain: of front-page sessions, the share reaching a briefing, the guidance or the evidence, by device and chosen persona, the week before the redesign and each week after | open |  |
+| 263 | From CI-003, step 4: confirm or reject an inferred graph link, signed with an enrolled key and sent as a 'review' through the collaborators lane; the drain records it in the edge's history (who may review and how many confirmations: the editor's call) | open |  |
 
 ## Waiting on someone else
 
@@ -110,4 +114,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.13 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.14.14 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html

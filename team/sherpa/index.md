@@ -40,6 +40,7 @@ The Sherpa: here to help yousherpa/index.htmlFeedback from collaboratorsfeedback
 | 194 | Sherpa: draft the brief and thread for several verification workflows across model providers on key pages (UF-005.2), with the fact-check desk | open |  |
 | 196 | Sherpa: a way for the editor to identify himself when he cannot sign in (a key he can present), with dev and security; later, at the editor's word | open |  |
 | 197 | Sherpa: three views over time, step 1 (the executive view and its slices as data); the guidance on reuse; the knowledge-gap view | open |  |
+| 264 | Sherpa: CI-003 to the editor: the design as complementary views (A to D), three doors for a first visit, and a power-user invitation for the collaborator so his feedback and reviews come signed | open |  |
 
 ## What they have done
 - 23 October: joined; the first walk of v0.8.1: nine frictions logged with evidence, six of them from the synthetic readers' v0.4.3 runs re-checked on v0.8.1, four still open; where the headline starts on a phone measured on seven pages; proposals for better trails and for making the Sherpa visible to readers
@@ -65,4 +66,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.13 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/sherpa/index.html
+site v0.14.14 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/sherpa/index.html

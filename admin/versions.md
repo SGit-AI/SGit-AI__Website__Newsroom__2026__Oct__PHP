@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.14.13. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.14.14. The data is [data/versions.json](../data/versions.json).
+
+### v0.14.14 · 2026-10-24
+
+Ideas from collaborators, CI-003: a power user's review of the new design, the telemetry and the risk graph (complementary views, a first step for newcomers, people confirming the graph's inferred links with signed reviews, the graph's changes between releases), the phone header measured at 30% of the screen, and a brief to dev (board 260 to 263)
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.14.13 · 2026-10-24
 
@@ -810,4 +818,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.14.13 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.14.14 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

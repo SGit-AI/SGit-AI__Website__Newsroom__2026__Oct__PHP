@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 259 items, 172 open, 82 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 264 items, 177 open, 82 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -269,9 +269,14 @@ The work, as rows in `data/admin.json`: 259 items, 172 open, 82 done. An item is
 | 257 | The journalist's full pass (pass step 2, v0.12.1 and v0.14.3) wrote 34 files owned by six other members: the story site's claims, impact and story; the newsroom lead's evidence exports; the historian's history; the librarian's questions; the conductor's updates and team; the researcher's compromise and watch. Either widen the journalist's policy to the pass, or route the pass through each owner: the editor's call | open | editor |  |
 | 258 | The librarian's card contradicts its own wake prompt: its 'Map' step gives new files an owner in the policy drafts, but the prompt allows only the librarian's own files (policies are abp@'s). Say which holds; until then the librarian follows the prompt and opens rows for abp@ | open | editor |  |
 | 259 | Front page, 'What nobody knows yet': 'Where the 70% figure comes from. None of the pages that use it says how it was measured' is out of date: Cloudflare links W3Techs, and the fact-check desk's investigation /factcheck/investigations/php-share/ answers it (Finding-32)From the news desk chief's morning wake, 24 October. | open | claude-story-site |  |
+| 260 | From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sticks as one line or not at all (233px today, 30% of the screen; F034) | open | dev@php.newsroom |  |
+| 261 | From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed, with the before-and-after blocks | open | dev@php.newsroom |  |
+| 262 | From CI-003, step 3: a progression measure at every drain: of front-page sessions, the share reaching a briefing, the guidance or the evidence, by device and chosen persona, the week before the redesign and each week after | open | dev@php.newsroom |  |
+| 263 | From CI-003, step 4: confirm or reject an inferred graph link, signed with an enrolled key and sent as a 'review' through the collaborators lane; the drain records it in the edge's history (who may review and how many confirmations: the editor's call) | open | dev@php.newsroom |  |
+| 264 | Sherpa: CI-003 to the editor: the design as complementary views (A to D), three doors for a first visit, and a power-user invitation for the collaborator so his feedback and reviews come signed | open | sherpa |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.14.13 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.14.14 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

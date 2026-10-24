@@ -1,6 +1,15 @@
 {
- "current": "0.14.13",
+ "current": "0.14.14",
  "versions": [
+  {
+   "version": "0.14.14",
+   "date": "2026-10-24",
+   "title": "Ideas from collaborators, CI-003: a power user's review of the new design, the telemetry and the risk graph (complementary views, a first step for newcomers, people confirming the graph's inferred links with signed reviews, the graph's changes between releases), the phone header measured at 30% of the screen, and a brief to dev (board 260 to 263)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.13",
    "date": "2026-10-24",
