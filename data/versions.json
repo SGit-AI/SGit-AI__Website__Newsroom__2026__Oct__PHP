@@ -1,6 +1,15 @@
 {
- "current": "0.15.8",
+ "current": "0.15.9",
  "versions": [
+  {
+   "version": "0.15.9",
+   "date": "2026-10-24",
+   "title": "the journalist's and the correspondent's public key fingerprints recorded in their register files",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.8",
    "date": "2026-10-24",
