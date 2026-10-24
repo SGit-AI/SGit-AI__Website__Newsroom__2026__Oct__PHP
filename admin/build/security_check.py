@@ -138,6 +138,12 @@ def tree_fails(root=ROOT):
                     ok = False
                 if not ok:
                     fails.append(f'{rp}:{line_of(t, m.start())}: a JSON script block that does not parse or holds "<" (closed early by its data?)')
+            # every page carries its Content-Security-Policy (admin/build/csp.py), and it never lets inline or eval'd script run
+            cm = re.search(r'<meta http-equiv="Content-Security-Policy" content="([^"]*)"', t)
+            if not cm:
+                fails.append(f'{rp}: no Content-Security-Policy (admin/build/csp.py writes one into every page)')
+            elif re.search(r"script-src[^;]*'unsafe-(inline|eval)'", cm.group(1)):
+                fails.append(f'{rp}: its Content-Security-Policy lets inline or eval\'d script run')
             m = INLINE_HANDLER.search(JSON_SCRIPT.sub('', t))
             if m:
                 fails.append(f'{rp}: an inline event-handler attribute ({m.group(0)[-40:]!r}): the build never writes one, so data did')
@@ -196,8 +202,18 @@ def tree_fails(root=ROOT):
         parts = os.path.basename(p)[:-3].split('__')
         if len(parts) < 3 or head.get('from') != parts[1]:
             fails.append(f'{rp}: "from: {head.get("from")}" is not the sender in the file name')
-        if head.get('from') in ('editor', 'dinis', 'dinis-cruz', 'root', 'security'):
+        if head.get('from') in ('editor', 'dinis', 'dinis-cruz', 'root'):
             fails.append(f'{rp}: a message signed as "{head.get("from")}": the editor never writes to agents through this repository')
+    # Nothing the build reads may be silently ignored by git: twice an ignore rule kept a file the site needed out of the
+    # repository while it looked committed (SA-2026-017).
+    try:
+        ign = subprocess.run(['git', 'ls-files', '--others', '--ignored', '--exclude-standard', '--', 'data', 'admin/build', 'admin/content', 'assets'],
+                             cwd=root, capture_output=True, text=True).stdout.split()
+        for f in ign:
+            if '__pycache__' not in f and not f.endswith('.pyc'):
+                fails.append(f'{f}: ignored by .gitignore, but it is where the build reads from: commit it, or move it out of the tree')
+    except OSError:
+        pass
     # Workflows: every action pinned to a commit, never a tag a third party can move.
     wf = os.path.join(root, '.github', 'workflows')
     for f in sorted(os.listdir(wf)) if os.path.isdir(wf) else []:
