@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.14.25. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.14.26. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -162,6 +162,7 @@ Site v0.14.25. Data as of 2026-10-23T16:04Z (the latest capture in the evidence 
 - [status.json: the feed for other sites](https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.md): The machine-readable summary of this site at /status.json: status, version, data time, counts, headline facts and the latest story, for the newsroom and other agents.
 - [The board](https://php.oct.2026.newsroom.sgit.ai/admin/board/index.md): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles](https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.md): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
+- [Application security](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/index.md): The newsroom's application security: its threat model and data flows, every vulnerability found and fixed as an advisory with its root cause, who can do what, the incident runbooks, the bug bounty and the outside reviews.
 - [Briefs](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.md): The build briefs for this site, published in full before the work, newest first.
 - [Pack mode, measured](https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.md): One vault as a normal sgit vault and as a pack vault: a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and why the normal vault has hit a wall.
 - [Who reads this site](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
@@ -171,6 +172,56 @@ Site v0.14.25. Data as of 2026-10-23T16:04Z (the latest capture in the evidence 
 
 ## Elsewhere
 - [What else is going on: Pulse](https://php.oct.2026.newsroom.sgit.ai/pulse/index.md): A separate section: the SGit newsroom's Pulse vault, 26 vulnerabilities with their evidence of exploitation as eight dated rungs beside the attention each gets. Not this site's evidence; no score, no ranking.
+
+## Application security (security@php.newsroom)
+- [Application security](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/index.md): The newsroom's application security: its threat model and data flows, every vulnerability found and fixed as an advisory with its root cause, who can do what, the incident runbooks, the bug bounty and the outside reviews.
+- [Threat model and data flows](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/threat-model/index.md): The newsroom's threat model: assets, attackers, trust zones, the data flows from hostile pages to readers and from agents to the live site, and the threats at each boundary.
+- [Security advisories](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/index.md): Every vulnerability found in the newsroom, numbered SA-2026-nnn like CVEs, with severity, status, root cause and fix.
+- [Root causes and guidance](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/post-mortems/index.md): The post-mortems of every fixed vulnerability in the newsroom, grouped into the patterns they share, and the rule each pattern gives every agent.
+- [Who can do what](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/policies/index.md): Every member of the newsroom, what hostile text it reads, which vault keys it holds, whether it releases to the site or runs unsupervised, and what stands in the way of each right.
+- [What a client-side site does not have to care about](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/client-side/index.md): The attack classes a static, zero-knowledge, client-side site does not have, and the ones that move into the reader's browser, the build and the agents.
+- [Incidents and runbooks](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/incidents/index.md): How the newsroom handles a security finding, and the runbooks: responding, taking the site offline, shutting the whole system down, a leaked secret, a steered agent, script on the site.
+- [Bug bounty and leaderboard](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/bounty/index.md): The newsroom's bug bounty, paid in kudos: what is in scope, how to report, the safe harbour, and the leaderboard of everyone who has found or fixed a vulnerability here.
+- [Outside reviews and the agents' self-check](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/reviews/index.md): The prompts for outside security reviews (an architecture review, an independent code and browser audit, a pipeline and supply-chain review), their rules, and the security self-check every agent runs after its own work.
+- [SA-2026-001: Captured page titles could close the JSON-LD script block and run on the site](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-001/index.md): high, fixed
+- [SA-2026-002: Links built from captured data had no scheme check](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-002/index.md): medium, fixed
+- [SA-2026-003: Article links could inject attributes](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-003/index.md): medium, fixed
+- [SA-2026-004: The build read and wrote paths taken from data](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-004/index.md): medium, fixed
+- [SA-2026-005: The gate missed most secret formats and never read history](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-005/index.md): medium, fixed
+- [SA-2026-006: The synthetic readers' workflow gave every secret to every step](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-006/index.md): high, fixed
+- [SA-2026-007: Vault keys were stored in the GitHub Actions cache](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-007/index.md): high, fixed
+- [SA-2026-008: The deploy job ran repository code with Pages and OIDC rights](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-008/index.md): medium, fixed
+- [SA-2026-009: The synthetic review mixed untrusted page text with its instructions](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-009/index.md): high, fixed
+- [SA-2026-010: The subscriptions drain stored whatever arrived on a public lane](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-010/index.md): medium, fixed
+- [SA-2026-011: Small unescaped sinks in the site's scripts](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-011/index.md): low, fixed
+- [SA-2026-012: The Ask pane: a captured title could run script and reach the reader's vault key](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-012/index.md): high, fixed
+- [SA-2026-013: Feedback from anyone could carry the mark "enrolled", and one bad row stopped the drain](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-013/index.md): medium, fixed
+- [SA-2026-014: An agent could write a message signed as the editor](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-014/index.md): high, fixed
+- [SA-2026-015: Unquoted and unchecked links on the fact-check and signals pages](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-015/index.md): medium, fixed
+- [SA-2026-016: The editor's bootstrap invitation still had two device slots open](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-016/index.md): medium, fixed
+- [SA-2026-017: Ignore rules silently dropped files that should have been committed (twice)](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-017/index.md): low, fixed
+- [SA-2026-018: No Content-Security-Policy on a site that holds secrets in the browser](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-018/index.md): high, fixed
+- [SA-2026-019: The public telemetry report published visitors' cities and regions](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-019/index.md): low, fixed
+- [SA-2026-020: A refused invitation left a row that a later one could inherit](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-020/index.md): medium, fixed
+- [SA-2026-021: The vault app: prototype pollution and javascript: links from vault data](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-021/index.md): medium, fixed
+- [SA-2026-022: The conductor's drain used server-supplied names as file paths](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-022/index.md): low, fixed
+- [SA-2026-023: Nothing on GitHub enforces the release rules](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-023/index.md): high, open
+- [SA-2026-024: Agent messages and schedule cards are not authenticated](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-024/index.md): high, open
+- [SA-2026-025: Scheduled agents that read the open web may release to the site](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-025/index.md): medium, open
+- [SA-2026-026: Readers' keys on the shared origin: /now/ and the Ask pane](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-026/index.md): medium, mitigated
+- [SA-2026-027: Subscriptions: mail that anyone can cause](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-027/index.md): medium, open
+- [SA-2026-028: Public lanes can be flooded](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-028/index.md): medium, open
+- [SA-2026-029: Browser signing keys can be used by any script on the origin](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-029/index.md): medium, mitigated
+- [SA-2026-030: Telemetry sends readers' IP addresses to two third parties](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-030/index.md): medium, open
+- [SA-2026-031: Secrets on command lines can reach public run logs](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-031/index.md): medium, open
+- [SA-2026-032: Drain passphrases derive from a key the server also sees](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-032/index.md): low, open
+- [SA-2026-033: Production runs on development endpoints](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-033/index.md): low, open
+- [SA-2026-034: release.sh can be bent](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-034/index.md): low, open
+- [SA-2026-035: Outsiders' text flows into files agents read](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-035/index.md): low, open
+- [SA-2026-036: Captured pages keep their live scripts](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-036/index.md): low, open
+- [SA-2026-037: Fact-check and issues tools trust paths and owners from data](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-037/index.md): low, open
+- [SA-2026-038: An imported billing log can carry a script link](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-038/index.md): low, open
+- [SA-2026-039: No clickjacking protection](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-039/index.md): low, accepted
 
 ## Sources, one page each
 - [Failles PHP : pourquoi c'est un vrai casse-tête pour l'Internet mondial](https://php.oct.2026.newsroom.sgit.ai/sources/01net-actualites-failles-php-pourquoi-cest-vra/index.md): 01net

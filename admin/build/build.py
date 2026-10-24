@@ -225,7 +225,7 @@ def to_markdown(fragment):
         return '\n![' + html.unescape(attrs.get('alt', '')) + '](' + attrs.get('src', '') + ')\n' if attrs.get('src') else ''
     s = re.sub(r'<img\b[^>]*>', _img, s)
     s = re.sub(r'<(p|dt|dd|figcaption)[^>]*>(.*?)</\1>', lambda m: '\n' + inline(m.group(2)) + '\n', s, flags=re.S)
-    s = re.sub(r'<pre[^>]*>(.*?)</pre>', lambda m: '\n```\n' + html.unescape(re.sub(r'<[^>]+>', '', m.group(1))) + '\n```\n', s, flags=re.S)
+    s = re.sub(r'<pre([^>]*)>(.*?)</pre>', lambda m: '\n```' + (re.search(r'data-lang="([a-z]+)"', m.group(1)) or [None, ''])[1] + '\n' + html.unescape(re.sub(r'<[^>]+>', '', m.group(2))) + '\n```\n', s, flags=re.S)
     s = re.sub(r'<[^>]+>', '', s)
     s = html.unescape(s)
     s = re.sub(r'[ \t]+\n', '\n', s)
@@ -258,7 +258,7 @@ NAV = [
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'), ('admin/agents/index.html', 'Guidance for agents'), ('graph/component/index.html', 'The graph component'),
-               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/pack-mode/index.html', 'Pack mode, measured'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers'), ('admin/agents/roles/index.html', 'Every member: who owns what'), ('admin/agents/rounds/index.html', 'Every round: what each member did')]),
+               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'), ('admin/appsec/index.html', 'Application security'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/pack-mode/index.html', 'Pack mode, measured'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers'), ('admin/agents/roles/index.html', 'Every member: who owns what'), ('admin/agents/rounds/index.html', 'Every round: what each member did')]),
     ('Elsewhere', [('pulse/index.html', 'What else is going on: Pulse')])
 ]
 
@@ -407,6 +407,7 @@ def write(path, content):
         raise SystemExit(f'build: refusing to write outside the site tree: {path!r}')
     OUTPUTS.add(path)
     if path.endswith('.html'):
+        content = __import__('csp').with_csp(path, content)          # admin/build/csp.py: every page carries its policy
         HTML_OUT[path] = content.encode('utf-8')
     os.makedirs(os.path.dirname(full) or ROOT, exist_ok=True)
     with open(full, 'w', encoding='utf-8', newline='\n') as f:
@@ -1544,6 +1545,7 @@ def build_llms():
             desc = next((d for pp, _, d, _ in PAGES if pp == p), '')
             lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {desc}')
         lines.append('')
+    lines += appsec_llms_lines()                                    # security@php.newsroom's section
     lines.append('## Sources, one page each')
     for slug, src in SOURCES.items():
         lines.append(f'- [{src.get("title") or slug}]({BASE_URL}/sources/{slug}/index.md): {src.get("publisher") or ""}')
@@ -1755,7 +1757,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_comms(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline(); __import__('design').build_tracks(globals())
-    build_review(); build_fractal(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa(); build_desk(); build_members()
+    build_review(); build_fractal(); build_admin_section(); build_pack_mode(); build_keys(); build_appsec(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa(); build_desk(); build_members()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -2214,7 +2216,7 @@ def build_admin_section():
         return table([h, 'Events'], [[E(str(k)), E(str(n))] for k, n in pairs]) if pairs else '<p class="small">Nothing yet.</p>'
     repo_html = '<p class="small">No report has been drained yet.</p>' if not rep else f"""
 <p>Report as of <b>{E(rep["as_of"])}</b>: <b>{rep["events"]}</b> events from <b>{rep["sessions"]}</b> sessions ({rep["test_or_undecryptable"]} test or undecryptable rows excluded). {E(rep["note"])}</p>
-<div class="cols">{tt(rep["by_country"], "Country")}{tt(rep["by_region"], "Region")}{tt(rep["by_referrer"], "Referrer host")}{tt(rep["by_screen"], "Screen")}</div>
+<div class="cols">{tt(rep["by_country"], "Country")}{tt(rep["by_referrer"], "Referrer host")}{tt(rep["by_screen"], "Screen")}</div>
 <h3>By page</h3>{tt(rep["by_path"], "Page")}
 <h3>By day</h3>{tt(rep["by_day"], "Day")}"""
     public_html = telemetry_public_html()
@@ -6959,6 +6961,212 @@ To-all: the schedule vault is retired; read AGENTS.md section 7.</pre>
 '''
     page('team/comms/index.html', 'Commit notes: what the agents tell each other', 'Commit-FS-lite: the notes agents leave each other in their release commits, To-<agent> or To-all, read on every pull; every note, newest first.', body, kind='site', topics='team agents comms')
 
+
+# ============================================================================== security@php.newsroom: application security
+# admin/appsec/: the threat model and data flows, who can do what, the advisories (one page each, kept like incidents),
+# the post-mortem patterns, what a client-side site does not have to care about, the incident process and runbooks, the
+# bug bounty and its leaderboard, and the prompts for outside reviewers. From data/appsec.json and data/advisories.json.
+
+SEV_CLASS = {'critical': 'st-failed', 'high': 'st-contradicted', 'medium': 'st-disputed', 'low': 'st-unverified'}
+STATUS_CLASS = {'fixed': 'st-confirmed', 'open': 'st-contradicted', 'mitigated': 'st-disputed', 'accepted': 'st-unverified'}
+
+def appsec_badge(word, classes):
+    return f'<span class="st {classes.get(word, "")}">{E(word)}</span>'
+
+def appsec_credit(s):
+    """'security@php.newsroom (pass 2 review)' and 'a; b' -> the names to credit."""
+    return [re.sub(r'\s*\(.*?\)\s*', '', x).strip() for x in str(s or '').split(';') if x.strip()]
+
+def appsec_diagram(spec):
+    dg = __import__('diagram')
+    return (f'<figure class="flowfig" id="d-{E(spec["id"])}"><figcaption><b>{E(spec["title"])}.</b> {E(spec["caption"])}</figcaption>'
+            f'<div class="flowwrap" style="overflow-x:auto">{dg.svg(spec)}</div>{dg.legend()}'
+            f'<details><summary>Mermaid source</summary><pre data-lang="mermaid"><code>{E(dg.mermaid(spec))}</code></pre></details></figure>')
+
+def build_appsec():
+    if not os.path.exists(os.path.join(DATA, 'appsec.json')):
+        return
+    X, AD = load('appsec'), load('advisories')
+    adv = AD['advisories']; byid = {a['id']: a for a in adv}
+    pts = AD['scoring']
+    sev_n = Counter(a['severity'] for a in adv); st_n = Counter(a['status'] for a in adv)
+    nav = [('index.html', 'Overview'), ('threat-model/index.html', 'Threat model and data flows'), ('advisories/index.html', 'Advisories'),
+           ('post-mortems/index.html', 'Root causes and guidance'), ('policies/index.html', 'Who can do what'), ('client-side/index.html', 'What a client-side site does not have to care about'),
+           ('incidents/index.html', 'Incidents and runbooks'), ('bounty/index.html', 'Bug bounty and leaderboard'), ('reviews/index.html', 'Outside reviews and the agents\' self-check')]
+    def crumbs(depth, here):
+        up = '../' * depth
+        return '<nav class="small appsec-nav" aria-label="Application security">' + ' &middot; '.join(
+            (f'<b>{E(t)}</b>' if p == here else f'<a href="{up}{p}">{E(t)}</a>') for p, t in nav) + '</nav>'
+    def links(text, depth):
+        """SA-2026-nnn in text become links to the advisory pages; everything else is escaped."""
+        up = '../' * depth
+        out, last = '', 0
+        for m in re.finditer(r'SA-2026-(\d{3})((?:,\s*\d{3})*)', str(text)):
+            out += E(str(text)[last:m.start()])
+            ids = [m.group(1)] + re.findall(r'\d{3}', m.group(2))
+            out += ', '.join(f'<a href="{up}advisories/SA-2026-{i}/index.html">{"SA-2026-" + i if n == 0 else i}</a>' for n, i in enumerate(ids) if f'SA-2026-{i}' in byid)
+            last = m.end()
+        return out + E(str(text)[last:])
+    def adv_table(rows, depth):
+        up = '../' * depth
+        return table(['Advisory', 'Severity', 'Status', 'Title', 'Component', 'Fixed in'],
+                     [[f'<a href="{up}advisories/{E(a["id"])}/index.html"><code>{E(a["id"])}</code></a>', appsec_badge(a['severity'], SEV_CLASS), appsec_badge(a['status'], STATUS_CLASS),
+                       E(a['title']), f'<code>{E(a["component"])}</code>', E(a['fixed_in'] if a['fixed_in'] != 'pending' else 'this release')] for a in rows], 't appsec')
+    # the leaderboard: finders by severity points; fixers listed beside
+    board = {}
+    for a in adv:
+        for who in appsec_credit(a['found_by']):
+            r = board.setdefault(who, {'points': 0, 'found': [], 'fixed': []})
+            r['points'] += pts.get(a['severity'], 0); r['found'].append(a['id'])
+        for who in appsec_credit(a['fixed_by']):
+            board.setdefault(who, {'points': 0, 'found': [], 'fixed': []})['fixed'].append(a['id'])
+    ranking = sorted(board.items(), key=lambda kv: (-kv[1]['points'], kv[0]))
+
+    # ---------------------------------------------------------------- overview
+    stats = ''.join(stat(n, l) for n, l in [(len(adv), 'advisories'), (st_n.get('fixed', 0), 'fixed'), (st_n.get('open', 0) + st_n.get('mitigated', 0), 'open or mitigated'),
+                                             (sev_n.get('high', 0), 'high'), (sev_n.get('medium', 0), 'medium'), (sev_n.get('low', 0), 'low')])
+    openrows = [a for a in adv if a['status'] in ('open', 'mitigated')]
+    body = f"""
+<h1>Application security</h1>
+{crumbs(0, 'index.html')}
+<p class="lead">{E(X['lead'])}</p>
+<div class="stats">{stats}</div>
+{appsec_diagram(X['diagrams'][0])}
+{section('sections', 'In this section', '<ul>' + ''.join(f'<li><a href="{p}">{E(t)}</a></li>' for p, t in nav[1:]) + '</ul>')}
+{section('open', 'Open now', adv_table(openrows, 0), E('Open and mitigated advisories, by number. Those marked limited disclosure name the issue; their details follow the fix.'))}
+<p class="small">Kept by security@php.newsroom. The advisories are in <code>data/advisories.json</code>, this section in <code>data/appsec.json</code>; the rules every agent works to are in <code>admin/security/REQUIREMENTS.md</code> and <code>AGENTS.md</code>, section 5. As of {E(X['as_of'])}.</p>
+"""
+    page('admin/appsec/index.html', 'Application security', 'The newsroom\'s application security: its threat model and data flows, every vulnerability found and fixed as an advisory with its root cause, who can do what, the incident runbooks, the bug bounty and the outside reviews.', body, kind='site')
+
+    # ---------------------------------------------------------------- threat model
+    tm = f"""
+<h1>Threat model and data flows</h1>
+{crumbs(1, 'threat-model/index.html')}
+<p class="lead">What we protect, who might attack it, the ways in, and the walls in front of each. The diagrams are drawn by the build from <code>data/appsec.json</code>; each carries its Mermaid source.</p>
+{section('assets', 'What we protect', table(['Asset', 'What it is', 'Advisories'], [[E(a), E(b), links(c, 1)] for a, b, c in X['assets']], 't'))}
+{section('actors', 'Who might attack it', table(['Actor', 'Who they are', 'What they can try'], [[E(a), E(b), E(c)] for a, b, c in X['actors']], 't'))}
+{''.join(appsec_diagram(d) for d in X['diagrams'][:4])}
+{section('threats', 'Threats, by boundary', table(['#', 'STRIDE', 'Where', 'Threat', 'What stands in the way', 'Barrier', 'Advisories'], [[E(t[0]), E(t[1]), E(t[2]), E(t[3]), E(t[4]), E(t[5]), links(t[6], 1)] for t in X['threats']], 't'), E('A barrier is a boundary only when something outside the agent enforces it; a setting is something the agent itself could change; an expectation is a rule in prose.'))}
+"""
+    page('admin/appsec/threat-model/index.html', 'Threat model and data flows', 'The newsroom\'s threat model: assets, attackers, trust zones, the data flows from hostile pages to readers and from agents to the live site, and the threats at each boundary.', tm, kind='site')
+
+    # ---------------------------------------------------------------- advisories
+    lst = f"""
+<h1>Security advisories</h1>
+{crumbs(1, 'advisories/index.html')}
+<p class="lead">{E(AD['about'])}</p>
+{adv_table(adv, 1)}
+"""
+    page('admin/appsec/advisories/index.html', 'Security advisories', 'Every vulnerability found in the newsroom, numbered SA-2026-nnn like CVEs, with severity, status, root cause and fix.', lst, kind='site')
+    for a in adv:
+        limited = a['disclosure'] == 'limited' and a['status'] != 'fixed'
+        rows = [('Severity', appsec_badge(a['severity'], SEV_CLASS)), ('Status', appsec_badge(a['status'], STATUS_CLASS)), ('Weakness', E(a['cwe'])), ('Component', f'<code>{E(a["component"])}</code>'),
+                ('Found by', E(a['found_by'])), ('Found', E(a['found'])), ('Fixed in', E(a['fixed_in'] if a['fixed_in'] != 'pending' else 'this release') or 'not yet'), ('Fixed by', E(a['fixed_by']) or '')]
+        facts = table(['', ''], [[f'<b>{k}</b>', v] for k, v in rows if v], 't kv')
+        if limited:
+            detail = '<p><b>Limited disclosure.</b> This issue is open and its details would help an attacker, so they are held until it is fixed. The editor and security@ hold them.</p>' + f'<p>{E(a["summary"])}</p>'
+        else:
+            detail = (section('what', 'What it is', f'<p>{E(a["summary"])}</p>') + section('impact', 'What an attacker could do', f'<p>{E(a["impact"])}</p>' + (f'<p class="small"><b>How:</b> {E(a["attack_path"])}</p>' if a['attack_path'] else ''))
+                      + section('root', 'Root cause', f'<p>{E(a["root_cause"])}</p>')
+                      + (section('contributing', 'What contributed', '<ul>' + ''.join(f'<li>{E(x)}</li>' for x in a['contributing']) + '</ul>') if a['contributing'] else '')
+                      + (section('missing', 'What was not in place', f'<p>{E(a["missing_control"])}</p>') if a['missing_control'] else '')
+                      + (section('fix', 'The fix', f'<p>{E(a["fix"])}</p>') if a['fix'] else '')
+                      + section('prevention', 'What prevents it now' if a['status'] == 'fixed' else 'What would fix it', f'<p>{links(a["prevention"], 2)}</p>'))
+        refs = ('<p class="small">References: ' + ', '.join(f'<code>{E(r)}</code>' for r in a['refs']) + '</p>') if a['refs'] else ''
+        body = f"""
+<p class="crumb"><a href="../index.html">Advisories</a> / {E(a['id'])}</p>
+<h1>{E(a['id'])}: {E(a['title'])}</h1>
+{crumbs(2, '')}
+{facts}
+{detail}
+{refs}
+"""
+        page(f'admin/appsec/advisories/{a["id"]}/index.html', f'{a["id"]}: {a["title"]}', f'Security advisory {a["id"]} ({a["severity"]}, {a["status"]}): {a["title"]}.', body, kind='site')
+
+    # ---------------------------------------------------------------- root causes
+    fixed = [a for a in adv if a['status'] == 'fixed']
+    pm = f"""
+<h1>Root causes, and the guidance they give</h1>
+{crumbs(1, 'post-mortems/index.html')}
+<p class="lead">Every finding was handled as an incident: what went wrong, why, what was not in place, and what now stands in the way. Read together, {len(adv)} advisories come down to {len(X['patterns'])} patterns. Each pattern is a rule for every agent.</p>
+{section('patterns', 'The patterns', table(['Pattern', 'Advisories', 'The rule it gives'], [[f'<b>{E(p[0])}</b>', links(p[1], 1), E(p[2])] for p in X['patterns']], 't'))}
+{section('fixed', 'Every fixed advisory, its root cause and its guard', table(['Advisory', 'Root cause', 'What was not in place', 'What prevents it now'], [[f'<a href="../advisories/{E(a["id"])}/index.html"><code>{E(a["id"])}</code></a><div class="note">{E(a["title"])}</div>', E(a['root_cause']), E(a['missing_control']), links(a['prevention'], 1)] for a in fixed], 't'))}
+"""
+    page('admin/appsec/post-mortems/index.html', 'Root causes and guidance', 'The post-mortems of every fixed vulnerability in the newsroom, grouped into the patterns they share, and the rule each pattern gives every agent.', pm, kind='site')
+
+    # ---------------------------------------------------------------- who can do what
+    pol = f"""
+<h1>Who can do what</h1>
+{crumbs(1, 'policies/index.html')}
+<p class="lead">{E(X['policies_about'])}</p>
+{table(['Who'] + [E(c) for c in X['policy_columns']] + ['Barrier on releases'], [[E(c) for c in r] for r in X['policies']], 't')}
+{section('next', 'What would turn settings into boundaries', '<ol>' + ''.join(f'<li>{links(x, 1)}</li>' for x in X['policies_next']) + '</ol>')}
+<p class="small">Each member's own draft policy is in <code>admin/content/agents/&lt;member&gt;/policy.json</code> (the librarian's work); this page's vocabulary and the measured grant are in <code>admin/security/abp/</code>.</p>
+"""
+    page('admin/appsec/policies/index.html', 'Who can do what', 'Every member of the newsroom, what hostile text it reads, which vault keys it holds, whether it releases to the site or runs unsupervised, and what stands in the way of each right.', pol, kind='site')
+
+    # ---------------------------------------------------------------- client side
+    cs = X['client_side']
+    cl = f"""
+<h1>What a client-side site does not have to care about, and what it must</h1>
+{crumbs(1, 'client-side/index.html')}
+<p class="lead">This site has no server of its own: static pages on GitHub Pages, encrypted vaults whose server cannot read them, and everything else in the reader's browser. Whole classes of attack are gone. The ones that are left are concentrated, and some got worse.</p>
+{section('gone', 'Gone, by design', table(['', 'Why'], [[f'<b>{E(a)}</b>', E(b)] for a, b in cs['gone']], 't'))}
+{section('moved', 'Moved, and bigger for it', table(['', 'Why'], [[f'<b>{E(a)}</b>', links(b, 1)] for a, b in cs['moved']], 't'))}
+{appsec_diagram(X['diagrams'][3])}
+"""
+    page('admin/appsec/client-side/index.html', 'What a client-side site does not have to care about', 'The attack classes a static, zero-knowledge, client-side site does not have, and the ones that move into the reader\'s browser, the build and the agents.', cl, kind='site')
+
+    # ---------------------------------------------------------------- incidents and runbooks
+    rb = ''.join(f'<article class="role" id="{E(r["id"])}"><h3>{E(r["title"])}</h3><p class="small"><b>When:</b> {E(r["when"])}</p><ol>' + ''.join(f'<li>{E(s)}</li>' for s in r['steps']) + '</ol></article>' for r in X['runbooks'])
+    inc = f"""
+<h1>Incidents and runbooks</h1>
+{crumbs(1, 'incidents/index.html')}
+<p class="lead">Every security finding is an incident, however small: it gets an advisory, a root cause and a change to what prevents the next one. These are the steps, and who takes them.</p>
+{appsec_diagram(X['diagrams'][4])}
+{section('process', 'The process', table(['', ''], [[f'<b>{E(a)}</b>', E(b)] for a, b in X['process']], 't kv'))}
+{section('runbooks', 'Runbooks', '<ul>' + ''.join(f'<li><a href="#{E(r["id"])}">{E(r["title"])}</a></li>' for r in X['runbooks']) + '</ul>' + rb)}
+"""
+    page('admin/appsec/incidents/index.html', 'Incidents and runbooks', 'How the newsroom handles a security finding, and the runbooks: responding, taking the site offline, shutting the whole system down, a leaked secret, a steered agent, script on the site.', inc, kind='site')
+
+    # ---------------------------------------------------------------- bounty and leaderboard
+    B = X['bounty']
+    lb = table(['#', 'Who', 'Points', 'Found', 'Fixed'], [[str(i + 1), f'<b>{E(w)}</b>', str(r['points']), ', '.join(f'<a href="../advisories/{E(x)}/index.html">{E(x[-3:])}</a>' for x in r['found']) or '', ', '.join(f'<a href="../advisories/{E(x)}/index.html">{E(x[-3:])}</a>' for x in r['fixed']) or ''] for i, (w, r) in enumerate(ranking)], 't')
+    bb = f"""
+<h1>Bug bounty: paid in kudos</h1>
+{crumbs(1, 'bounty/index.html')}
+<p class="lead">{E(B['lead'])}</p>
+{section('leaderboard', 'Leaderboard', lb, E('Points per advisory found: ' + B['points'] + '. Fixes are credited beside them.'))}
+{section('in', 'In scope', '<ul>' + ''.join(f'<li>{E(x)}</li>' for x in B['scope_in']) + '</ul>')}
+{section('out', 'Out of scope', '<ul>' + ''.join(f'<li>{links(x, 1)}</li>' for x in B['scope_out']) + '</ul>')}
+{section('how', 'How to report', '<ol>' + ''.join(f'<li>{E(x)}</li>' for x in B['how']) + '</ol>' + '<p class="small">Also published as <a href="../../../.well-known/security.txt">/.well-known/security.txt</a>.</p>')}
+{section('harbour', 'Safe harbour', f'<p>{E(B["safe_harbour"])}</p>')}
+"""
+    page('admin/appsec/bounty/index.html', 'Bug bounty and leaderboard', 'The newsroom\'s bug bounty, paid in kudos: what is in scope, how to report, the safe harbour, and the leaderboard of everyone who has found or fixed a vulnerability here.', bb, kind='site')
+
+    # ---------------------------------------------------------------- outside reviews and the self-check
+    rv = ''.join(f'<article class="role" id="{E(r["id"])}"><h3>{E(r["name"])}</h3><p class="small"><b>Focus:</b> {E(r["focus"])}</p><pre><code>{E(r["prompt"] + chr(10) + chr(10) + "Rules:" + chr(10) + chr(10).join("- " + x for x in X["reviewer_rules"]))}</code></pre></article>' for r in X['reviewers'])
+    rw = f"""
+<h1>Outside reviews, and every agent's self-check</h1>
+{crumbs(1, 'reviews/index.html')}
+<p class="lead">{E(X['reviews_about'])}</p>
+{section('rules', 'Rules every outside reviewer gets', '<ol>' + ''.join(f'<li>{E(x)}</li>' for x in X['reviewer_rules']) + '</ol>')}
+{section('prompts', 'The prompts', rv, E('Copy one whole block into a fresh session. Each already ends with the rules.'))}
+{section('self', 'Every agent, after every piece of work', '<ol>' + ''.join(f'<li>{E(x)}</li>' for x in X['self_check']) + '</ol>', E('Not a security audit: a pass over one\'s own change before it ships. The same list is in AGENTS.md, section 5.'))}
+"""
+    page('admin/appsec/reviews/index.html', 'Outside reviews and the agents\' self-check', 'The prompts for outside security reviews (an architecture review, an independent code and browser audit, a pipeline and supply-chain review), their rules, and the security self-check every agent runs after its own work.', rw, kind='site')
+
+
+def appsec_llms_lines():
+    if not os.path.exists(os.path.join(DATA, 'advisories.json')):
+        return []
+    out = ['## Application security (security@php.newsroom)']
+    for p, t, d, _ in PAGES:
+        if p.startswith('admin/appsec/') and '/advisories/SA-' not in p:
+            out.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
+    for a in load('advisories')['advisories']:
+        out.append(f'- [{a["id"]}: {a["title"]}]({BASE_URL}/admin/appsec/advisories/{a["id"]}/index.md): {a["severity"]}, {a["status"]}')
+    return out + ['']
 
 if __name__ == '__main__':
     main()

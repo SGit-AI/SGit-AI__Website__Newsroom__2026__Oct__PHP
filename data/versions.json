@@ -1,6 +1,15 @@
 {
- "current": "0.14.25",
+ "current": "0.14.26",
  "versions": [
+  {
+   "version": "0.14.26",
+   "date": "2026-10-24",
+   "title": "Application security: /admin/appsec/ with the threat model and five data-flow diagrams, 39 security advisories kept like incidents (root cause, what was not in place, the fix, the guard), the patterns they share, who can do what, what a client-side site does not have to care about, the incident process and six runbooks (taking the site offline, emergency shutdown), a bug bounty paid in kudos with its leaderboard, and prompts for three outside reviewers; a Content-Security-Policy on every page; cities and regions no longer published in the telemetry report; the invitation check order, the vault app's preset merge and the conductor drain's file names fixed",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.25",
    "date": "2026-10-24",

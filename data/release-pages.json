@@ -1,6 +1,761 @@
 {
  "about": "A page counts as changed when the content of its <main> differs from the previous release's, with the two site version numbers masked: the header, the footer and the version stamp change on every page at every release and say nothing about what the release did. Pages are compared as built and committed, so the list is what a reader would have seen change. Stored in data/release-pages.json, one entry per release, written once and never recomputed:",
  "releases": {
+  "0.14.26": {
+   "against": "0.14.25",
+   "pages": [
+    {
+     "path": "admin/appsec/reviews/index.html",
+     "title": "Outside reviews and the agents' self-check",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/post-mortems/index.html",
+     "title": "Root causes and guidance",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/incidents/index.html",
+     "title": "Incidents and runbooks",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/threat-model/index.html",
+     "title": "Threat model and data flows",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/index.html",
+     "title": "Security advisories",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/index.html",
+     "title": "Application security",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/client-side/index.html",
+     "title": "What a client-side site does not have to care about",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/policies/index.html",
+     "title": "Who can do what",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/bounty/index.html",
+     "title": "Bug bounty and leaderboard",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-001/index.html",
+     "title": "SA-2026-001: Captured page titles could close the JSON-LD script block and run on the site",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-012/index.html",
+     "title": "SA-2026-012: The Ask pane: a captured title could run script and reach the reader's vault key",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-014/index.html",
+     "title": "SA-2026-014: An agent could write a message signed as the editor",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-017/index.html",
+     "title": "SA-2026-017: Ignore rules silently dropped files that should have been committed (twice)",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-005/index.html",
+     "title": "SA-2026-005: The gate missed most secret formats and never read history",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-009/index.html",
+     "title": "SA-2026-009: The synthetic review mixed untrusted page text with its instructions",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-018/index.html",
+     "title": "SA-2026-018: No Content-Security-Policy on a site that holds secrets in the browser",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-013/index.html",
+     "title": "SA-2026-013: Feedback from anyone could carry the mark \"enrolled\", and one bad row stopped the drain",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-002/index.html",
+     "title": "SA-2026-002: Links built from captured data had no scheme check",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-010/index.html",
+     "title": "SA-2026-010: The subscriptions drain stored whatever arrived on a public lane",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-004/index.html",
+     "title": "SA-2026-004: The build read and wrote paths taken from data",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-019/index.html",
+     "title": "SA-2026-019: The public telemetry report published visitors' cities and regions",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-007/index.html",
+     "title": "SA-2026-007: Vault keys were stored in the GitHub Actions cache",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-023/index.html",
+     "title": "SA-2026-023: Nothing on GitHub enforces the release rules",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-020/index.html",
+     "title": "SA-2026-020: A refused invitation left a row that a later one could inherit",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-021/index.html",
+     "title": "SA-2026-021: The vault app: prototype pollution and javascript: links from vault data",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-026/index.html",
+     "title": "SA-2026-026: Readers' keys on the shared origin: /now/ and the Ask pane",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-006/index.html",
+     "title": "SA-2026-006: The synthetic readers' workflow gave every secret to every step",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-003/index.html",
+     "title": "SA-2026-003: Article links could inject attributes",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-024/index.html",
+     "title": "SA-2026-024: Agent messages and schedule cards are not authenticated",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-016/index.html",
+     "title": "SA-2026-016: The editor's bootstrap invitation still had two device slots open",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-008/index.html",
+     "title": "SA-2026-008: The deploy job ran repository code with Pages and OIDC rights",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-015/index.html",
+     "title": "SA-2026-015: Unquoted and unchecked links on the fact-check and signals pages",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-011/index.html",
+     "title": "SA-2026-011: Small unescaped sinks in the site's scripts",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-031/index.html",
+     "title": "SA-2026-031: Secrets on command lines can reach public run logs",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-025/index.html",
+     "title": "SA-2026-025: Scheduled agents that read the open web may release to the site",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-022/index.html",
+     "title": "SA-2026-022: The conductor's drain used server-supplied names as file paths",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-032/index.html",
+     "title": "SA-2026-032: Drain passphrases derive from a key the server also sees",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-030/index.html",
+     "title": "SA-2026-030: Telemetry sends readers' IP addresses to two third parties",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-029/index.html",
+     "title": "SA-2026-029: Browser signing keys can be used by any script on the origin",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-028/index.html",
+     "title": "SA-2026-028: Public lanes can be flooded",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-035/index.html",
+     "title": "SA-2026-035: Outsiders' text flows into files agents read",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-034/index.html",
+     "title": "SA-2026-034: release.sh can be bent",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-037/index.html",
+     "title": "SA-2026-037: Fact-check and issues tools trust paths and owners from data",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-036/index.html",
+     "title": "SA-2026-036: Captured pages keep their live scripts",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-038/index.html",
+     "title": "SA-2026-038: An imported billing log can carry a script link",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-033/index.html",
+     "title": "SA-2026-033: Production runs on development endpoints",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-027/index.html",
+     "title": "SA-2026-027: Subscriptions: mail that anyone can cause",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-039/index.html",
+     "title": "SA-2026-039: No clickjacking protection",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/conductor/index.html",
+     "title": "Schedule: conductor",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/cartographer/index.html",
+     "title": "Schedule: cartographer",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/curator/index.html",
+     "title": "Schedule: curator",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/desk/index.html",
+     "title": "Schedule: desk",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/factcheck/index.html",
+     "title": "Schedule: factcheck",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/journalist/index.html",
+     "title": "Schedule: journalist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/librarian/index.html",
+     "title": "Schedule: librarian",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/ontologist/index.html",
+     "title": "Schedule: ontologist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/researcher/index.html",
+     "title": "Schedule: researcher",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/sherpa/index.html",
+     "title": "Schedule: sherpa",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/telemetry/index.html",
+     "title": "Who reads this site: anonymous telemetry over an append lane",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "layers/index.html",
+     "title": "Evidence, derived, authored: what each file is",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "questions/index.html",
+     "title": "Questions readers ask about php2shell",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/roles/index.html",
+     "title": "Every member: who owns what",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/abp/index.html",
+     "title": "abp@newsroom.sgit: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/briefing-writer/index.html",
+     "title": "Briefing writer: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/collector-gov/index.html",
+     "title": "Government and CERT collector: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/collector-primary/index.html",
+     "title": "Primary-source collector: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/collector-researchers/index.html",
+     "title": "Researcher, vendor and press collector: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/conductor/index.html",
+     "title": "Conductor: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/cyber/index.html",
+     "title": "cyber@php.newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/desk/index.html",
+     "title": "News desk chief: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/dev/index.html",
+     "title": "dev@php.newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/editor/index.html",
+     "title": "Dinis Cruz: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/factcheck/index.html",
+     "title": "Fact-check desk: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/grc/index.html",
+     "title": "GRC desk: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/historian/index.html",
+     "title": "Historian: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/index.html",
+     "title": "How to work on this site: guidance for every agent",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/journalist/index.html",
+     "title": "Journalist: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/liaison/index.html",
+     "title": "Corrections liaison: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/librarian/index.html",
+     "title": "librarian@php.newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/mail/index.html",
+     "title": "agent@diniscruz.ai: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/newsroom-lead/index.html",
+     "title": "Newsroom lead: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/ontologist/index.html",
+     "title": "Ontologist: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/pm/index.html",
+     "title": "Vicky: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/pulse/index.html",
+     "title": "pulse@newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/researcher/index.html",
+     "title": "researcher@php.newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/security/index.html",
+     "title": "security@php.newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/sherpa/index.html",
+     "title": "Sherpa: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/story-site/index.html",
+     "title": "Story site agent: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/storyboard/index.html",
+     "title": "storyboard@php.newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/synthetic/index.html",
+     "title": "synthetic@php.newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/pack-mode/index.html",
+     "title": "Pack mode, measured on the source watch",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/roles/index.html",
+     "title": "Roles and responsibilities",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/status-json/index.html",
+     "title": "status.json: the feed for other sites",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/board/2026-10-22T1753Z/index.html",
+     "title": "Board member, synthetic reader: the run of 2026-10-22T1753Z on v0.4.3",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/board/2026-10-23T2355Z/index.html",
+     "title": "Board member, synthetic reader: the run of 2026-10-23T2355Z on v0.10.18",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/board/index.html",
+     "title": "The synthetic board member: every run and its latest review",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/cto/2026-10-22T1753Z/index.html",
+     "title": "CTO, synthetic reader: the run of 2026-10-22T1753Z on v0.4.3",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/cto/2026-10-23T2356Z/index.html",
+     "title": "CTO, synthetic reader: the run of 2026-10-23T2356Z on v0.10.18",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/cto/index.html",
+     "title": "The synthetic cto: every run and its latest review",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/designer/2026-10-22T1755Z/index.html",
+     "title": "Designer, synthetic reader: the run of 2026-10-22T1755Z on v0.4.3",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/designer/2026-10-23T2358Z/index.html",
+     "title": "Designer, synthetic reader: the run of 2026-10-23T2358Z on v0.10.18",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/designer/index.html",
+     "title": "The synthetic designer: every run and its latest review",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/developer/2026-10-22T1755Z/index.html",
+     "title": "Developer, synthetic reader: the run of 2026-10-22T1755Z on v0.4.3",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/developer/2026-10-23T2357Z/index.html",
+     "title": "Developer, synthetic reader: the run of 2026-10-23T2357Z on v0.10.18",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/developer/index.html",
+     "title": "The synthetic developer: every run and its latest review",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/index.html",
+     "title": "Synthetic readers: six test readers who read the live site",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/pages/index.html",
+     "title": "Synthetic readers: what they said about each page",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/pm/2026-10-22T1754Z/index.html",
+     "title": "Project manager, synthetic reader: the run of 2026-10-22T1754Z on v0.4.3",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/pm/2026-10-23T2356Z/index.html",
+     "title": "Project manager, synthetic reader: the run of 2026-10-23T2356Z on v0.10.18",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/pm/index.html",
+     "title": "The synthetic project manager: every run and its latest review",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/security/2026-10-22T1754Z/index.html",
+     "title": "Security lead, synthetic reader: the run of 2026-10-22T1754Z on v0.4.3",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/security/2026-10-23T2357Z/index.html",
+     "title": "Security lead, synthetic reader: the run of 2026-10-23T2357Z on v0.10.18",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/synthetic/security/index.html",
+     "title": "The synthetic security lead: every run and its latest review",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/vault/index.html",
+     "title": "The evidence vault, opened",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "billing/index.html",
+     "title": "The billing model: what runs and what is designed",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
   "0.14.25": {
    "against": "0.14.24",
    "pages": [

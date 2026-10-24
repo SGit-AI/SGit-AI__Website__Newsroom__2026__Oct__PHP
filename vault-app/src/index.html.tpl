@@ -405,6 +405,7 @@ const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const attr = esc;
+const web = u => /^https?:\/\//i.test(String(u || '')) ? String(u) : '#';   // a source's URL from the vault: http(s) only
 const plural = (n, w, p) => n + ' ' + (n === 1 ? w : (p || w + 's'));
 const fmtBytes = n => n < 1024 ? n + ' B' : n < 1048576 ? (n/1024).toFixed(n < 10240 ? 1 : 0) + ' KB' : (n/1048576).toFixed(1) + ' MB';
 const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -987,7 +988,7 @@ async function openSource(slug){
   $('#db').innerHTML =
     '<div class="top1" style="display:flex;gap:6px;flex-wrap:wrap"><span class="pill p-kind">' + esc(s.kind) + '</span>' + (s.primary ? '<span class="pill p-prim">' + icon('star') + 'primary</span>' : '') + srcPill(s.status) + '</div>' +
     '<p class="kicker" style="margin-top:12px">' + esc(s.publisher || '') + '</p><h2 class="t">' + esc(s.title || s.url) + '</h2>' +
-    '<a href="' + attr(s.url) + '" rel="noopener" class="small" style="overflow-wrap:anywhere">' + esc(s.url) + ' ' + icon('ext') + '</a>' +
+    '<a href="' + attr(web(s.url)) + '" rel="noopener" class="small" style="overflow-wrap:anywhere">' + esc(s.url) + ' ' + icon('ext') + '</a>' +
     '<dl class="kv"><dt>Published</dt><dd>' + esc(s.published || 'not stated') + '</dd><dt>Captures</dt><dd>' + (caps.length ? plural(caps.length, 'capture') + ', ' + esc(fmtCap(caps[0])) + (caps.length > 1 ? ' to ' + esc(fmtCap(caps[caps.length - 1])) : '') : 'none') + '</dd>' +
     '<dt>Added by</dt><dd class="mono">' + esc(s.added_by || '') + '</dd><dt>Cited by</dt><dd>' + plural(cc.length, 'claim') + ', ' + plural(ce.length, 'timeline event') + '</dd>' + (s.notes ? '<dt>Row note</dt><dd>' + inline(s.notes) + '</dd>' : '') + '</dl>' +
     (caps.length ? '<div class="dsec"><h3>' + icon('camera') + 'Captures</h3><div class="caps">' + caps.map(c => { const sh = (D.shots[slug] || {})[c]; return '<button class="capc" data-cap="' + attr(slug + '|' + c) + '">' + thumbHTML(sh, s) + '<div class="m">' + esc(fmtCap(c)) + '</div></button>'; }).join('') + '</div></div>' : '') +
@@ -1066,7 +1067,7 @@ function renderViewer(){
     '<div class="col"><button class="b2" data-src="' + attr(c.slug) + '">' + icon('sources') + 'Source, notes and citations</button>' +
     '<button class="b2" data-file="' + attr(base + 'screenshot.png') + '">' + icon('expand') + 'Full-resolution original' + (c.shot ? ' (' + c.shot.ow + '×' + c.shot.oh + ')' : '') + '</button>' +
     '<button class="b2" data-file="' + attr(base + 'text.txt') + '">' + icon('text') + 'Page text as captured</button>' +
-    '<a class="b2" href="' + attr(s.url || '') + '" rel="noopener" style="text-decoration:none">' + icon('ext') + 'Live page (it may have changed)</a></div>' +
+    '<a class="b2" href="' + attr(web(s.url)) + '" rel="noopener" style="text-decoration:none">' + icon('ext') + 'Live page (it may have changed)</a></div>' +
     '<div class="pub">' + plural(cites(c.slug), 'citation') + ' · ' + plural((s.captures || []).length, 'capture') + ' of this source</div></div>';
   const img = $('#lb img[data-src]');
   if (img){ const p = img.getAttribute('data-src'); img.removeAttribute('data-src'); img.onload = () => { const l = $('#lb .loading'); l && l.remove(); }; img.onerror = () => { const l = $('#lb .loading'); if (l) l.textContent = 'Could not load the reduced screenshot.'; }; img.src = p; }
@@ -1127,7 +1128,14 @@ document.addEventListener('click', e => {
     if (d.preset){ try { preset = JSON.parse(d.preset); } catch(_){} }
     if (preset){ // a preset replaces that view's filters
       const blank = {src:{q:'', kind:null, status:null, primary:null, agent:null}, wall:{q:'', kind:null, bin:null}, cl:{q:'', status:null, topic:null, agent:null}, tl:{q:'', phase:null, conf:null, agent:null}};
-      for (const k of Object.keys(preset)) Object.assign(S[k], blank[k], preset[k]);
+      // only the four views' own filters, and only plain values: a preset comes from markup built from vault data,
+      // so a key such as __proto__ or a nested object never reaches Object.assign
+      for (const k of Object.keys(preset)) {
+        if (!Object.prototype.hasOwnProperty.call(blank, k) || !preset[k] || typeof preset[k] !== 'object') continue;
+        const clean = {};
+        for (const f of Object.keys(blank[k])) { const v = preset[k][f]; if (Object.prototype.hasOwnProperty.call(preset[k], f) && (v === null || typeof v === 'string')) clean[f] = v; }
+        Object.assign(S[k], blank[k], clean);
+      }
     }
     closeDrawer(); go(view); return;
   }

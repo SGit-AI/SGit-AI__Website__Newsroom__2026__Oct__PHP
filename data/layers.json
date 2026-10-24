@@ -301,6 +301,20 @@
    "used_on": "team/index.html"
   },
   {
+   "path": "data/advisories.json",
+   "layer": "site",
+   "by": "security@php.newsroom",
+   "from": "the security passes and outside reports: every vulnerability, its root cause and its fix",
+   "used_on": "admin/appsec/advisories/index.html"
+  },
+  {
+   "path": "data/appsec.json",
+   "layer": "site",
+   "by": "security@php.newsroom",
+   "from": "the threat model, data flows, policies, runbooks, bounty rules and reviewer prompts",
+   "used_on": "admin/appsec/index.html"
+  },
+  {
    "path": "data/admin.json",
    "layer": "site",
    "by": "dev@php.newsroom",

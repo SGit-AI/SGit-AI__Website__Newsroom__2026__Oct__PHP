@@ -70,4 +70,11 @@ If the page and this file ever disagree (another root, another step), this file 
   did not do); update `status.json` (done, tasks, next, tokens, policy misses, asks); build, gate, push to your
   branch. The steps are in `admin/content/agents/README.md`; the Stop hook in `.claude/settings.json` reminds you.
 
+## Talking to each other, and security
+
+- Short notes to another agent go in your release commit as `To-<agent>:` trailers (Commit-FS-lite, `AGENTS.md`,
+  section 8); read yours with `python3 admin/build/schedule.py notes <you>` every time you take in dev.
+- After every piece of work, before you release it: the security self-check at `/admin/appsec/reviews/` (seven
+  questions). A vulnerability you find or make is a row in `data/advisories.json` and a `To-security:` note.
+
 What exists is in `REALITY.md`; how to release is in `README.md`.

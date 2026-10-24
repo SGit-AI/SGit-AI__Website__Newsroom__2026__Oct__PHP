@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**9** evidence · **31** derived · **14** authored · **34** site
+**9** evidence · **31** derived · **14** authored · **36** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -98,6 +98,8 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | File | Made by | From | Shown on |
 |---|---|---|---|
 | `data/roles.json` | claude-story-site | the team, the pipeline and the audiences | [team/index.html](../team/index.html) |
+| `data/advisories.json` | security@php.newsroom | the security passes and outside reports: every vulnerability, its root cause and its fix | [admin/appsec/advisories/index.html](../admin/appsec/advisories/index.html) |
+| `data/appsec.json` | security@php.newsroom | the threat model, data flows, policies, runbooks, bounty rules and reviewer prompts | [admin/appsec/index.html](../admin/appsec/index.html) |
 | `data/admin.json` | dev@php.newsroom | roles, the board, the vaults | [admin/roles/index.html](../admin/roles/index.html) |
 | `data/team.json` | conductor@php.newsroom | the roster of the team, human and agent: role, what each owns, rules, home pages, what each has done; the run and the three coordination vaults | [team/index.html](../team/index.html) |
 | `data/agents.json` | admin/build/build.py (librarian@php.newsroom) | admin/content/agents/*/: every member's policy.json, status.json and debriefs, with the computed delta and the scope checks | [admin/agents/rounds/index.html](../admin/agents/rounds/index.html) |
@@ -136,4 +138,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.14.25 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.14.26 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

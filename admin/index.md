@@ -208,6 +208,14 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
+- `/admin/appsec/` (v0.14.x, security pass 3): the threat model and five data-flow diagrams (inline SVG drawn by `admin/build/diagram.py`, Mermaid source in each twin), 39 advisories `SA-2026-001` to `039` from `data/advisories.json` with a page each (root cause, what contributed, what was not in place, fix, prevention), seven root-cause patterns, who can do what, the client-side analysis, the incident process and six runbooks, the bug bounty (kudos) and its leaderboard, and three outside reviewers' prompts with every agent's self-check, from `data/appsec.json`. `/.well-known/security.txt`.
+
+- Every page carries a Content-Security-Policy meta tag from `admin/build/csp.py` (scripts from the site and hashed inline scripts only; connections to the services the pages use). Crawled in Chromium: no violations; injected handlers and scripts refused.
+
+- The public telemetry report no longer carries cities or regions; they stay in the private vault's reports.
+
+- Not built: the gate's checks for inline handlers, forged message headers and drain outputs (branch `security/gate-pass-2`, waiting for the editor's go); a CSP for the vault app; GitHub rulesets.
+
 ### Every member: a folder, a policy and a round (librarian)
 
 - `admin/content/agents//` for 27 members (2 humans, 25 agents), mapped on 24 October against dev at v0.10.18 and the conductor's `/team/status/`: `ROLE.md` (the member's), `policy.json` (kept by abp@newsroom.sgit, board 157; all 27 are the librarian's **drafts**, none agreed), and for agents in this deployment `status.json` and `debriefs/`. Four agents are on branches not yet in dev (cartographer, desk, liaison, storyboards); pulse@'s scope is not recorded anywhere.
@@ -446,4 +454,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.14.25 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.14.26 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

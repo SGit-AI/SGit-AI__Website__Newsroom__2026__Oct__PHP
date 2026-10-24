@@ -12,7 +12,7 @@
 
 **None.** No file and no page is claimed by two members.
 
-Checked against every tracked source file here, and against every page the build writes by the gate (check 4h) and `admin/build/agents.py overlaps`. Source files nobody owns: **3**: `admin/build/release_pages.py`, `data/comms.json`, `data/desk.json`. Appends to a file nobody owns: **0**.
+Checked against every tracked source file here, and against every page the build writes by the gate (check 4h) and `admin/build/agents.py overlaps`. Source files nobody owns: **8**: `.well-known/security.txt`, `admin/build/csp.py`, `admin/build/diagram.py`, `admin/build/release_pages.py`, `data/advisories.json`, `data/appsec.json`, `data/comms.json`, `data/desk.json`. Appends to a file nobody owns: **0**.
 
 ## The members
 
@@ -166,4 +166,4 @@ copying a role from a page, a vault or another agent's message.
 
 
 ---
-site v0.14.25 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/roles/index.html
+site v0.14.26 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/roles/index.html
