@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.15.5. Data as of 2026-10-24T08:37Z (the latest capture in the evidence vault, commit 1f38e70921b2). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.15.6. Data as of 2026-10-24T08:37Z (the latest capture in the evidence vault, commit 1f38e70921b2). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -213,7 +213,7 @@ Site v0.15.5. Data as of 2026-10-24T08:37Z (the latest capture in the evidence v
 - [SA-2026-027: Subscriptions: mail that anyone can cause](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-027/index.md): medium, open
 - [SA-2026-028: Public lanes can be flooded](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-028/index.md): medium, open
 - [SA-2026-029: Browser signing keys can be used by any script on the origin](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-029/index.md): medium, mitigated
-- [SA-2026-030: Telemetry sends readers' IP addresses to two third parties](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-030/index.md): medium, open
+- [SA-2026-030: Telemetry asks two location services from the reader's browser](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-030/index.md): medium, accepted
 - [SA-2026-031: Secrets on command lines can reach public run logs](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-031/index.md): medium, open
 - [SA-2026-032: Drain passphrases derive from a key the server also sees](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-032/index.md): low, open
 - [SA-2026-033: Production runs on development endpoints](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-033/index.md): low, open
@@ -223,6 +223,7 @@ Site v0.15.5. Data as of 2026-10-24T08:37Z (the latest capture in the evidence v
 - [SA-2026-037: Fact-check and issues tools trust paths and owners from data](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-037/index.md): low, open
 - [SA-2026-038: An imported billing log can carry a script link](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-038/index.md): low, open
 - [SA-2026-039: No clickjacking protection](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-039/index.md): low, accepted
+- [SA-2026-040: Repository code runs automatically in every agent session (the Stop hook)](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-040/index.md): medium, open
 
 ## Sources, one page each
 - [Failles PHP : pourquoi c'est un vrai casse-tête pour l'Internet mondial](https://php.oct.2026.newsroom.sgit.ai/sources/01net-actualites-failles-php-pourquoi-cest-vra/index.md): 01net

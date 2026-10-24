@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.6 · 24 October 2026new since your last visit
+
+Security round 1 closed: the telemetry policy, on the editor's decision to keep the location lookups (made by the reader's browser; this site has no server, so no IP address is ever captured or stored by us; SA-2026-030 accepted); SA-2026-040, the Stop hook runs repository code in every agent session, so .claude/ and agents.py go behind security review; rulesets deferred to user logins (SA-2026-023); board rows closed and opened; security's debrief and status
+
+No reader-facing section changed in this release.
+
 ## v0.15.5 · 24 October 2026new since your last visit
 
 The Sherpa's 17:45 pass: the phone header's fix checked live (one 43px line; a friction closed), headlines now on the first screen, the graph's changes page live, and the lens prototype noted as the answer to two open frictions
@@ -965,4 +971,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.5 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.6 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

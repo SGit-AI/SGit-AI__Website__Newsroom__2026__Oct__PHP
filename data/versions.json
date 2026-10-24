@@ -1,6 +1,15 @@
 {
- "current": "0.15.5",
+ "current": "0.15.6",
  "versions": [
+  {
+   "version": "0.15.6",
+   "date": "2026-10-24",
+   "title": "Security round 1 closed: the telemetry policy, on the editor's decision to keep the location lookups (made by the reader's browser; this site has no server, so no IP address is ever captured or stored by us; SA-2026-030 accepted); SA-2026-040, the Stop hook runs repository code in every agent session, so .claude/ and agents.py go behind security review; rulesets deferred to user logins (SA-2026-023); board rows closed and opened; security's debrief and status",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.5",
    "date": "2026-10-24",

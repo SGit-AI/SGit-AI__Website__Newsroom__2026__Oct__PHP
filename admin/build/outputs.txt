@@ -200,6 +200,8 @@ admin/appsec/advisories/SA-2026-038/index.html
 admin/appsec/advisories/SA-2026-038/index.md
 admin/appsec/advisories/SA-2026-039/index.html
 admin/appsec/advisories/SA-2026-039/index.md
+admin/appsec/advisories/SA-2026-040/index.html
+admin/appsec/advisories/SA-2026-040/index.md
 admin/appsec/advisories/index.html
 admin/appsec/advisories/index.md
 admin/appsec/bounty/index.html

@@ -769,8 +769,9 @@
   {
    "id": "085",
    "title": "Commit data/keys.json: .gitignore's keys*.json rule held it back, so /admin/keys/ is not built yet. Check it holds fingerprints and vault ids only, add it with an explicit !data/keys.json exception, and restore its row in data/layers.json (used on admin/keys/index.html); the page and its menu entry then build on their own",
-   "status": "open",
-   "owner": "security@php.newsroom"
+   "status": "done",
+   "owner": "security@php.newsroom",
+   "note": "Superseded, 24 October: the editor said the QR handover works as it is; the .gitignore rule was narrowed in v0.11.1 (SA-2026-017); data/vault-register/ is the one register of vault IDs."
   },
   {
    "id": "086",
@@ -932,8 +933,9 @@
   {
    "id": "110",
    "title": "Security review of the feedback keys (assets/feedback/identity.js, join.js, pane.js; admin/build/contributors.py, invite.py): non-extractable keys in IndexedDB, the invitation code in the link's fragment, signatures checked with sgit",
-   "status": "open",
-   "owner": "security"
+   "status": "done",
+   "owner": "security",
+   "note": "Done in security passes 2 and 3: SA-2026-013 (forged signer, fixed v0.11.1), SA-2026-020 (invitation check order, fixed v0.14.26), SA-2026-029 (keys usable by script on the origin, mitigated by the CSP)."
   },
   {
    "id": "111",
@@ -1068,8 +1070,9 @@
   {
    "id": "132",
    "title": "Fold data/keys.json and /admin/keys/ (the rules of engagement) together with data/vault-register/ and /team/vaults/, so there is one register of vaults and keys",
-   "status": "open",
-   "owner": "security"
+   "status": "done",
+   "owner": "security",
+   "note": "Superseded: data/keys.json was never committed (SA-2026-017) and the editor kept the QR handover; data/vault-register/ is the register."
   },
   {
    "id": "133",
@@ -1555,9 +1558,9 @@
   {
    "id": "206",
    "title": "Security review of the librarian's branch: gate check 4h in validate.py, the CLAUDE.md section, .claude/settings.json's Stop hook and admin/build/agents.py stop-hook",
-   "status": "open",
+   "status": "done",
    "owner": "security@php.newsroom",
-   "note": "Renumbered from 097 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+   "note": "Renumbered from 097 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). Reviewed 24 October: gate check 4h validates policies and is sound; the Stop hook's code is benign, but it runs repository code in every session unreviewed (SA-2026-040, open); CLAUDE.md now puts .claude/ and agents.py behind review."
   },
   {
    "id": "207",
@@ -1985,9 +1988,9 @@
   {
    "id": "268",
    "title": "Commit-FS-lite: a one-line pointer in CLAUDE.md (\"read your notes when you take in dev: schedule.py notes <you>; send them as To-<agent> trailers in your release commit; AGENTS.md section 8\")",
-   "status": "open",
+   "status": "done",
    "owner": "security@php.newsroom",
-   "note": "CLAUDE.md is in security@'s scope; asked by the conductor in the release commit of 24 October."
+   "note": "CLAUDE.md is in security@'s scope; asked by the conductor in the release commit of 24 October. Done in v0.14.26: CLAUDE.md, \"Talking to each other, and security\"."
   },
   {
    "id": "269",
@@ -2052,6 +2055,41 @@
    "status": "open",
    "owner": "abp@newsroom.sgit",
    "note": "The editor, in the journalist's Opus session: the Opus role is named correspondent@php.newsroom; the Sonnet journalist keeps journalist@. Asks: a folder and policy for correspondent (the views, the state of affairs, the plan and /views/desk/, the review of the journalist's releases, persona and briefing prose until generated); the journalist's policy to cover the refresh files of board 218 and data/schedule/journalist.json; the ontologist's graph work placed after the correspondent's run (the build no longer stops on an unmapped publisher: data/graph.json lists them in unmapped_publishers). Brief: admin/content/briefs/2026-10-24__brief__the-pipeline-researcher-to-correspondent.md. The correspondent's key: sha256:3dd464ff62b83ad0, operator linked to the root, waiting for the editor's enrolment."
+  },
+  {
+   "id": "278",
+   "title": "Enable private vulnerability reporting on this repository (Settings, Code security, Private vulnerability reporting): security.txt and the bug bounty page point reporters there; the session's proxy cannot change repository settings",
+   "status": "open",
+   "owner": "editor",
+   "note": "Opened by security@php.newsroom, 24 October 2026."
+  },
+  {
+   "id": "279",
+   "title": "Go, or not, on the branch security/gate-pass-2: the gate fails on inline event handlers, forged message headers, drain output in the tree, a page with no or an unsafe Content-Security-Policy, and files the build reads that git ignores",
+   "status": "open",
+   "owner": "editor",
+   "note": "Opened by security@php.newsroom, 24 October 2026."
+  },
+  {
+   "id": "280",
+   "title": "GitHub rulesets on dev and main (SA-2026-023): the editor's decision, 24 October, is to revisit when the site gets user logins",
+   "status": "open",
+   "owner": "editor",
+   "note": "Opened by security@php.newsroom, 24 October 2026."
+  },
+  {
+   "id": "281",
+   "title": "A Content-Security-Policy for the vault app (vault-app/src/index.html.tpl), which runs outside this site's policy (SA-2026-021)",
+   "status": "open",
+   "owner": "security",
+   "note": "Opened by security@php.newsroom, 24 October 2026."
+  },
+  {
+   "id": "282",
+   "title": "Signed messages and cards (SA-2026-024): a design using each agent's pki.sgit.ai key, for the editor and the conductor",
+   "status": "open",
+   "owner": "security",
+   "note": "Opened by security@php.newsroom, 24 October 2026."
   }
  ],
  "evidence_vault": {

@@ -54,6 +54,9 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 270 | Enrol observability@php.newsroom's key (sha256:b9ddd39416d71cbb) on pki.sgit.ai: its record links the root as operatorThe record is my-record.json from its session, handed to the editor on 24 October; it is public. Until enrolled, pki-agent trust refuses it and nothing can be sealed to it. | open |  |
 | 273 | An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39416d71cbb, to push the telemetry application (5wnsr5h8) and drain 84wr8mib from the command lineThe telemetry application v0.4.1 (Queue & drain shows its progress) is committed in 5wnsr5h8 and waits for this to be pushed: a vault key reads and commits, the server takes a push only with an access token. | open |  |
 | 275 | The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work on this site' is a readerFrom the brief on the lens (24 October). With a go, the steps in the brief's 'What it means for the site' go to dev: the boot script and stylesheet on every page, a part() helper in the build, the fallback for untagged pages, menus by the same rules, the settings in the reader's vault (board 140). Overlaps 140 and 235. | open |  |
+| 278 | Enable private vulnerability reporting on this repository (Settings, Code security, Private vulnerability reporting): security.txt and the bug bounty page point reporters there; the session's proxy cannot change repository settingsOpened by security@php.newsroom, 24 October 2026. | open |  |
+| 279 | Go, or not, on the branch security/gate-pass-2: the gate fails on inline event handlers, forged message headers, drain output in the tree, a page with no or an unsafe Content-Security-Policy, and files the build reads that git ignoresOpened by security@php.newsroom, 24 October 2026. | open |  |
+| 280 | GitHub rulesets on dev and main (SA-2026-023): the editor's decision, 24 October, is to revisit when the site gets user loginsOpened by security@php.newsroom, 24 October 2026. | open |  |
 
 ## Waiting on someone else
 
@@ -93,4 +96,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.15.5 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.15.6 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

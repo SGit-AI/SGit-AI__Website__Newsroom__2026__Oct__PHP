@@ -41,7 +41,7 @@ The security advisories of the PHP October 2026 newsroom: every vulnerability fo
 | [SA-2026-027](../advisories/SA-2026-027/index.html) | medium | open | Subscriptions: mail that anyone can cause | `subscriptions lane, agent@diniscruz.ai` |  |
 | [SA-2026-028](../advisories/SA-2026-028/index.html) | medium | open | Public lanes can be flooded | `telemetry, subscriptions, collaborators lanes` |  |
 | [SA-2026-029](../advisories/SA-2026-029/index.html) | medium | mitigated | Browser signing keys can be used by any script on the origin | `assets/feedback/identity.js` |  |
-| [SA-2026-030](../advisories/SA-2026-030/index.html) | medium | open | Telemetry sends readers' IP addresses to two third parties | `assets/telemetry.js` |  |
+| [SA-2026-030](../advisories/SA-2026-030/index.html) | medium | accepted | Telemetry asks two location services from the reader's browser | `assets/telemetry.js` |  |
 | [SA-2026-031](../advisories/SA-2026-031/index.html) | medium | open | Secrets on command lines can reach public run logs | `postmaster.py, run.py, schedule.py run --log` |  |
 | [SA-2026-032](../advisories/SA-2026-032/index.html) | low | open | Drain passphrases derive from a key the server also sees | `admin/build/postmaster.py` |  |
 | [SA-2026-033](../advisories/SA-2026-033/index.html) | low | open | Production runs on development endpoints | `dev.send.sgraph.ai, dev.vault.sgraph.ai` |  |
@@ -51,7 +51,8 @@ The security advisories of the PHP October 2026 newsroom: every vulnerability fo
 | [SA-2026-037](../advisories/SA-2026-037/index.html) | low | open | Fact-check and issues tools trust paths and owners from data | `admin/factcheck/fc.py, admin/build/issues_sync.py` |  |
 | [SA-2026-038](../advisories/SA-2026-038/index.html) | low | open | An imported billing log can carry a script link | `assets/components/sg-meter` |  |
 | [SA-2026-039](../advisories/SA-2026-039/index.html) | low | accepted | No clickjacking protection | `GitHub Pages` |  |
+| [SA-2026-040](../advisories/SA-2026-040/index.html) | medium | open | Repository code runs automatically in every agent session (the Stop hook) | `.claude/settings.json, admin/build/agents.py` |  |
 
 
 ---
-site v0.15.5 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/index.html
+site v0.15.6 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/index.html
