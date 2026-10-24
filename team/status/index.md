@@ -10,13 +10,15 @@ Every agent on the team: what it last did, what it waits for and from whom, the 
 
 Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.
 
-**As of** 2026-10-24 10:25Z UTC · **live site** vv0.14.15
+**As of** 2026-10-24 13:25Z UTC · **live site** vv0.14.30
 
-20agents3working2blocked15waiting on the editor11branches waiting for dev$786spent, sessions so far
+21agents3working2blocked16waiting on the editor11branches waiting for dev$786spent, sessions so far
 
 ## What needs a decision first
 - A go for the curator to re-export the evidence vault into the site (328 held, 227 shown; the front page is about 16 hours stale).
 - Reply go to security/gate-pass-2 and decide security's four calls (agent release rights to dev, the editor's invite, telemetry city and region, a CSP).
+- Security (message to the conductor) asks for a self-check paragraph in AGENTS.md section 5 and a step in every scheduled card; those are other owners' files, so the conductor has changed nothing. Say go, and who edits what. Two advisories about messages and cards also wait on you.
+- observability@ joins (roster row in data/team.json asked of the conductor, whose card does not cover that file): say who adds it, and enrol its key.
 - Answer dev's open question (blocked on an AskUserQuestion since 01:23 UTC).
 - Hand the conductor's lane key (5iwos28w) to the Sherpa, and the two lanes' keys to this session: until then the lanes are not drained here.
 - Pulse: 2 items await your go; it has no card.
@@ -49,6 +51,7 @@ Blocked first, then ready for review, then working, then done.
 | [researcher@php.newsroom (scheduled)](../researcher/index.html) | waiting | 2026-10-24 09:46Z | The 09:30 pass is pushed (208 MB) with 25 pages queued; the 07:00 pass was lost. No run record for any of today's wakes. | Run records; nothing from the editor. | $7.00 |
 | [curator@php.newsroom (scheduled)](../newsroom-lead/index.html) | waiting | 2026-10-24 09:51Z | Promoted 15 more rows: the evidence vault holds 328 sources. Woken at 08:00 and 10:30 London; no run record for either. Next wake 13:00. | A go to re-export the evidence vault into the site (the front page "Right now" is about 16 hours stale; the site shows 227 sources).on: editor | $10.00 |
 | [designer@php.newsroom](../story-site/index.html) | waiting | 2026-10-24 10:06Z | Explained vaults dcsmxese (coverage) and w5ie1crc (test) to the editor. | Its agent key to be enrolled; the picks on board 138.on: editor | $49.00 |
+| observability@php.newsroom | waiting | 2026-10-24 11:16Z | A new member (editor's ask, 24 October): keeps the telemetry application (5wnsr5h8), the telemetry vault (84wr8mib), its lane and the stats. Folder admin/content/agents/observability/. No schedule card. | Its key enrolled (the editor); the roster row in data/team.json (not on the conductor's card: your call).on: editor | $0.00 |
 
 ## Branches waiting to be carried into dev
 
@@ -79,9 +82,9 @@ The register of schedules and every recorded run is on [runs](../runs/index.html
 | Curator (scheduled) | active: 08:00, 10:30, 13:00, 15:30, 18:00 London; woken 08:00 and 10:30, no run record for either (messaged 09:15) |
 | Pulse | scheduled task at 06:44 and 14:44 London (the task is named 07:00 and 15:00); woke 06:44, NO CARD and no run record |
 | Librarian | active: 07:13 London; fired 06:13 UTC, pass running |
-| Sherpa | active: every two hours at :45, 07:45 to 21:45 London; the 07:45 left a run, the 09:45 none (messaged 11:15) |
+| Sherpa | active: every two hours at :45, 07:45 to 21:45 London; the 07:45 and 11:45 left runs, the 09:45 none |
 | Desk | active: 09:20 and 16:20 London; the 09:20 left a run |
-| Fact-check runs | active: 08:52, 12:52, 16:52, 20:52 London; the 08:52 left a run |
+| Fact-check runs | active: 08:52, 12:52, 16:52, 20:52 London; the 08:52 left a run, the 12:52 none (messaged 14:15) |
 | Ontologist | active: 14:40 London, daily; first wake today |
 | Cartographer | ended; the ontologist took its place |
 
@@ -97,4 +100,4 @@ The vaults move ahead of the site; a fact reaches the site only when its vault i
 
 
 ---
-site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html
+site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html

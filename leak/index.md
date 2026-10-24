@@ -66,4 +66,4 @@ Calif's own write-up has a timeline that ends *October 21 Patched versions relea
 
 
 ---
-site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/leak/index.html
+site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/leak/index.html

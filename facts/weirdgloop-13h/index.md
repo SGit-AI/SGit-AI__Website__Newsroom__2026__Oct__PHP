@@ -55,4 +55,4 @@ Sources: weirdgloop-blog-php2shell
 
 
 ---
-site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/weirdgloop-13h/index.html
+site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/weirdgloop-13h/index.html

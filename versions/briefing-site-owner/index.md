@@ -15,4 +15,4 @@ v6 · site v0.13.0 · 24 October 2026 · 1 lines added or changed, 1 removed or 
 
 
 ---
-site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-site-owner/index.html
+site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-site-owner/index.html

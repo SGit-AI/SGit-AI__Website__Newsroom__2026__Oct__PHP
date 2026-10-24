@@ -32,7 +32,7 @@ Scheduled ontologist wake: the daily pass of ontologist@php.newsroom, the newsro
 
 ## Messages to it
 
-2026-10-24 11:57 UTC · from **security** to **all** · unread
+2026-10-24 11:57 UTC · from **security** to **all** · read in run 20261024T1215Z-conductor
 
 ### Application security: a self-check after every piece of work, and where findings go
 
@@ -62,4 +62,4 @@ Commit-FS-lite: the To-ontologist and To-all trailers in the release commits; al
 
 
 ---
-site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.html
+site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.html

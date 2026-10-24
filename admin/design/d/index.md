@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.30. Not the live site.
+> Mockup D for review, built from the data of release v0.14.31. Not the live site.
 
-PHP Team console Console Overview Board 182 Agents 19 Releases 117 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 182 Agents 19 Releases 118 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.14.30 
-117 releases since 22 Oct 
+v0.14.31 
+118 releases since 22 Oct 
 
 Open on the board 
 182 
@@ -99,6 +99,7 @@ The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as 
 ### Releases
  latest 8 
 
+ v0.14.31 2026-10-24 Conductor light check 14:15 London: observability and security requests recorded for the editor, factcheck run note, run records 
  v0.14.30 2026-10-24 the evidence vault at 1f38e70921b2 (328 sources) and the state of affairs v3: a vendor's claim of a break-in withdrawn (Sophos), b… 
  v0.14.29 2026-10-24 Restores v0.14.24, what changed in the risk graph (CI-003, step 2, /grc/changes/), which the conductor's release of the CI fix rev… 
  v0.14.28 2026-10-24 observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first d… 
@@ -106,7 +107,6 @@ The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as 
  v0.14.26 2026-10-24 Application security: /admin/appsec/ with the threat model and five data-flow diagrams, 39 security advisories kept like incidents… 
  v0.14.25 2026-10-24 the scheduled journalist proposed: a Sonnet journalist that takes each curator batch through to the site, and an Opus chief corres… 
  v0.14.24 2026-10-24 what changed in the risk graph (CI-003, step 2): /grc/changes/ compares any two releases, the nodes and edges added and removed, t… 
- v0.14.23 2026-10-24 Commit-FS-lite: agents tell each other what they need in the release commits they already write (To-<agent> and To-all trailers), … 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.14.30 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.31 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

@@ -1,8 +1,8 @@
 {
  "about": "Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.",
  "kept_by": "conductor",
- "as_of": "2026-10-24T10:25Z",
- "live_version": "v0.14.15",
+ "as_of": "2026-10-24T13:25Z",
+ "live_version": "v0.14.30",
  "agents": [
   {
    "agent": "curator@php.newsroom (scheduled)",
@@ -203,6 +203,16 @@
    "waiting": "The lanes 58526ytp and 5iwos28w: no key in this session.",
    "on": "editor",
    "cost": 1
+  },
+  {
+   "agent": "observability@php.newsroom",
+   "member": "observability",
+   "state": "waiting",
+   "last": "2026-10-24T11:16Z",
+   "did": "A new member (editor's ask, 24 October): keeps the telemetry application (5wnsr5h8), the telemetry vault (84wr8mib), its lane and the stats. Folder admin/content/agents/observability/. No schedule card.",
+   "waiting": "Its key enrolled (the editor); the roster row in data/team.json (not on the conductor's card: your call).",
+   "on": "editor",
+   "cost": 0
   }
  ],
  "branches": [
@@ -296,7 +306,7 @@
   ],
   [
    "Sherpa",
-   "active: every two hours at :45, 07:45 to 21:45 London; the 07:45 left a run, the 09:45 none (messaged 11:15)"
+   "active: every two hours at :45, 07:45 to 21:45 London; the 07:45 and 11:45 left runs, the 09:45 none"
   ],
   [
    "Desk",
@@ -304,7 +314,7 @@
   ],
   [
    "Fact-check runs",
-   "active: 08:52, 12:52, 16:52, 20:52 London; the 08:52 left a run"
+   "active: 08:52, 12:52, 16:52, 20:52 London; the 08:52 left a run, the 12:52 none (messaged 14:15)"
   ],
   [
    "Ontologist",
@@ -335,6 +345,8 @@
  "decisions": [
   "A go for the curator to re-export the evidence vault into the site (328 held, 227 shown; the front page is about 16 hours stale).",
   "Reply go to security/gate-pass-2 and decide security's four calls (agent release rights to dev, the editor's invite, telemetry city and region, a CSP).",
+  "Security (message to the conductor) asks for a self-check paragraph in AGENTS.md section 5 and a step in every scheduled card; those are other owners' files, so the conductor has changed nothing. Say go, and who edits what. Two advisories about messages and cards also wait on you.",
+  "observability@ joins (roster row in data/team.json asked of the conductor, whose card does not cover that file): say who adds it, and enrol its key.",
   "Answer dev's open question (blocked on an AskUserQuestion since 01:23 UTC).",
   "Hand the conductor's lane key (5iwos28w) to the Sherpa, and the two lanes' keys to this session: until then the lanes are not drained here.",
   "Pulse: 2 items await your go; it has no card.",

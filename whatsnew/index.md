@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.31 · 24 October 2026new since your last visit
+
+Conductor light check 14:15 London: observability and security requests recorded for the editor, factcheck run note, run records
+
+No reader-facing section changed in this release.
+
 ## v0.14.30 · 24 October 2026new since your last visit
 
 the evidence vault at 1f38e70921b2 (328 sources) and the state of affairs v3: a vendor's claim of a break-in withdrawn (Sophos), banks and crypto platforms report none, KEV still without php2shell at 05:53 UTC today; 22 new claims reviewed; the build settles itself (board 175)
@@ -919,4 +925,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
