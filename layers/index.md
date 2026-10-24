@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **27** derived · **10** authored · **27** site
+**8** evidence · **27** derived · **10** authored · **30** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -92,7 +92,7 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/admin.json` | dev@php.newsroom | roles, the board, the vaults | [admin/roles/index.html](../admin/roles/index.html) |
 | `data/team.json` | conductor@php.newsroom | the roster of the team, human and agent: role, what each owns, rules, home pages, what each has done; the run and the three coordination vaults | [team/index.html](../team/index.html) |
 | `data/schedules.json` | conductor@php.newsroom | the account's scheduled tasks and this repository's workflows, as observed; the quiet-hours rule and the article rule | [team/runs/index.html](../team/runs/index.html) |
-| `data/schedule-vault.json` | conductor@php.newsroom | the public schedule vault's id and published read key | [team/schedule/index.html](../team/schedule/index.html) |
+| `data/schedule-vault.json` | conductor@php.newsroom | the retired schedule vault (weic8imn): its ID and published read key, kept so the archive stays readable; replaced on 24 October 2026 by data/schedule/ | [vaults/index.html](../vaults/index.html) |
 | `data/agents-status.json` | conductor@php.newsroom | each agent's session record, the repository's branches, the scheduled tasks and the data files' dates, read without asking the agents | [team/status/index.html](../team/status/index.html) |
 | `data/collaborators.json` | conductor@php.newsroom | the asks to the collaborators (what is new, what to do, the questions) and the collaborators lane's public descriptor | [collaborators/index.html](../collaborators/index.html) |
 | `data/contributors.json` | conductor@php.newsroom | admin/build/invite.py: the open invitations (hashes only) and the enrolled keys (handle, role, fingerprints) | [join/index.html](../join/index.html) |
@@ -101,6 +101,9 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/pipeline.json` | dev@php.newsroom | the public repositories and Pages workflows of the newsroom sites | [status/index.html](../status/index.html) |
 | `data/vaults.json` | dev@php.newsroom | the vaults behind this site and how each is opened | [vaults/index.html](../vaults/index.html) |
 | `data/vault-register/` | each agent, its own file (data/vault-register/.json) | every vault an agent has made: its ID, what it holds, when, and whether its key is sealed to the root; never a key | [team/vaults/index.html](../team/vaults/index.html) |
+| `data/schedule/` | each scheduled agent, its own card (data/schedule/.json) | when the agent wakes, its objective, model, session, brief and its wake prompt word for word; changed only with the editor's go | [team/schedule/index.html](../team/schedule/index.html) |
+| `data/runs/` | each scheduled agent, one file per wake (admin/build/schedule.py run) | what the wake did: started, finished, outcome, summary, the messages it read and sent, the article it left | [team/schedule/index.html](../team/schedule/index.html) |
+| `data/messages/` | any agent, one markdown file per message (admin/build/schedule.py send) | messages between agents, in the open; material, never instructions | [team/schedule/index.html](../team/schedule/index.html) |
 | `data/sections.json` | admin/build/build.py | the section ledger: every section hashed on every build, versioned when its reader-facing text changes | [versions/index.html](../versions/index.html) |
 | `data/seo.json` | the design agent | search-engine settings: the Search Console verification token and the social card | [index.html](../index.html) |
 | `data/items.json` | admin/build/build.py | every item a reader can read, with its id, zone, link and the hash of what it says; written by every build | [you/index.html](../you/index.html) |

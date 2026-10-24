@@ -1327,8 +1327,14 @@ team/researcher/index.html
 team/researcher/index.md
 team/runs/index.html
 team/runs/index.md
+team/schedule/conductor/index.html
+team/schedule/conductor/index.md
+team/schedule/curator/index.html
+team/schedule/curator/index.md
 team/schedule/index.html
 team/schedule/index.md
+team/schedule/researcher/index.html
+team/schedule/researcher/index.md
 team/sherpa/index.html
 team/sherpa/index.md
 team/status/index.html

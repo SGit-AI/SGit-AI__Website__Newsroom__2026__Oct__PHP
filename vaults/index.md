@@ -136,13 +136,13 @@ What the collaborators send from /collaborators/: requests to join (a name, an e
 
 **Not published:** the vault key, the lane's enum key and the key pair's passphrase. **Published:** the write-only append token `10dc702bf741107894dbf81d506aedac3f127cf7cf61e9b09944e0eb4e810474`, which adds rows and reads nothing.
 
-## [The schedule vault](../team/schedule/index.html) public read
+## [The schedule vault (retired)](../team/schedule/index.html) public read
 
 **Vault** `weic8imn` ·
 
-Every scheduled agent's schedule, its queued tasks and every run with its log: the control panel for what the team runs on its own.
+Retired on 24 October 2026, kept as an archive: the first schedules, tasks and runs. Schedules, runs and messages are now kept in the site's repository (/team/schedule/).
 
-**Written by** each scheduled agent, its own runs; the editor's session and the conductor queue tasks. Data on this site: [data/schedule-vault.json](../data/schedule-vault.json).
+**Written by** nobody since 24 October 2026. Data on this site: [data/schedule-vault.json](../data/schedule-vault.json).
 
 **Read key** `sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06:weic8imn`
 

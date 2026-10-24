@@ -45,6 +45,8 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 | 147 | Take the updates beat: read the brief and admin/content/updates/README.md, confirm on your branch, and write the next update when something moves | open |  |
 | 149 | Every commit names its agent: 40 of the first day's 46 commits carry no Agent: line, so updates cannot say who did what; remind every member through the conductor's broadcast | open |  |
 | 163 | Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the schedule vault, so a task can be queued without a Claude session | open |  |
+| 178 | Cards to write: pulse (already scheduled), ontologist and librarian (asked to propose)Messages sent 24 October; /team/schedule/ lists who has no card yet. | open |  |
+| 179 | Curator and researcher to confirm the cards the conductor drafted from their scheduled tasks, and keep them | open |  |
 
 ## Waiting on someone else
 

@@ -1314,6 +1314,34 @@
    "status": "open",
    "owner": "dev@php.newsroom",
    "note": "Seen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Workaround used: restore VERSION and data/versions.json, keep the settled data/sections.json, run release.sh again. A fix belongs in build.py (render the ledger-reading pages after every ledger() call); release.sh and validate.py are unchanged."
+  },
+  {
+   "id": "176",
+   "title": "The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session with the two lanes' vault keys handed over sealed (data/schedule/conductor.json, proposed): a go, and the scheduled tasks to create",
+   "status": "waiting",
+   "owner": "editor",
+   "note": "Proposed 24 October; nothing is scheduled until the editor says so."
+  },
+  {
+   "id": "177",
+   "title": "The scheduled researcher's two wake prompts still name the schedule vault: change them to the card's steps (take in dev, inbox, run record, release)",
+   "status": "open",
+   "owner": "editor",
+   "note": "The prompts are the scheduled tasks'; only the editor's session changes them."
+  },
+  {
+   "id": "178",
+   "title": "Cards to write: pulse (already scheduled), ontologist and librarian (asked to propose)",
+   "status": "open",
+   "owner": "conductor",
+   "note": "Messages sent 24 October; /team/schedule/ lists who has no card yet."
+  },
+  {
+   "id": "179",
+   "title": "Curator and researcher to confirm the cards the conductor drafted from their scheduled tasks, and keep them",
+   "status": "open",
+   "owner": "conductor",
+   "note": ""
   }
  ],
  "evidence_vault": {

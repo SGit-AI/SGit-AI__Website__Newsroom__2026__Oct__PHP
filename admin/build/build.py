@@ -1513,7 +1513,10 @@ def build_llms():
     lines.append('')
     lines.append('## The team, one page per member')
     lines.append(f'- [How the team talks: three vaults and one run]({BASE_URL}/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules')
-    lines.append(f'- [Schedule]({BASE_URL}/team/schedule/index.md): every scheduled agent, its task queue and every run with its log, read live from a public vault')
+    lines.append(f'- [Schedule]({BASE_URL}/team/schedule/index.md): every scheduled agent on one day, its objective and instructions, every run, and the messages between agents')
+    for fn in sorted(glob.glob(os.path.join(DATA, 'schedule', '*.json'))):
+        c = json.load(open(fn, encoding='utf-8'))
+        lines.append(f'- [Schedule: {c["agent"]}]({BASE_URL}/team/schedule/{c["agent"]}/index.md): {c["status"]}; {c["objective"]}')
     lines.append(f'- [Vaults: who made each one]({BASE_URL}/team/vaults/index.md): every vault each agent made, by ID only, and whether its key is sealed to the editor')
     lines.append(f'- [Status]({BASE_URL}/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev')
     lines.append(f'- [Runs]({BASE_URL}/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run')
@@ -4304,6 +4307,9 @@ def all_runs(S):
             runs.append((h['finished'], 'synthetic', f'Synthetic reader: {p["name"]}', f'{p["id"]}/{h["run"]}', bool(sum(fl.values())),
                          f'site v{h["site_version"]}: answered the question {h.get("answered_question") or "(not reviewed)"}; {sum(fl.values())} failures named ({fl.get("high", 0)} high); {ch.get("high", 0)} high, {ch.get("medium", 0)} medium instrument flags',
                          f'admin/synthetic/{p["id"]}/{h["run"]}/index.html'))
+    for fn in glob.glob(os.path.join(DATA, 'runs', '*', '*.json')):
+        r = json.load(open(fn, encoding='utf-8'))
+        runs.append((r['started'], r['agent'], 'Scheduled wake', r['run'], r['outcome'] in ('ok', 'partial'), r['summary'], f'team/schedule/{r["agent"]}/index.html'))
     return sorted(runs, key=lambda r: (r[0], r[3]), reverse=True)
 
 def build_runs():
@@ -5518,33 +5524,166 @@ def build_views():
 
 PAGE_VERSIONED.append('views/state/index.html')
 
-# ----------------------------------------------------------------------------- the schedule (conductor@php.newsroom)
-# The editor's memo of 23 October 2026 (admin/content/briefs/2026-10-23__brief__the-schedule-vault.md): a control panel
-# for everything scheduled. The truth is a public vault (data/schedule-vault.json); this page is a shell that reads it
-# live in the browser (assets/schedule/schedule.js), so it shows the vault as it is now, not as of the last release.
+# ----------------------------------------------------------------------------- schedules, runs and messages (conductor@php.newsroom)
+# The editor's change of plan, 24 October 2026 (admin/content/briefs/2026-10-24__brief__schedules-in-git.md), replacing
+# the schedule vault: each scheduled agent keeps its own card, data/schedule/<agent>.json (its objective, when it wakes,
+# its instructions); every wake leaves a run record, data/runs/<agent>/<run>.json; agents write to each other in
+# data/messages/<to>/<id>.md. All of it is in git, one file per agent or per run or per message, so two agents never
+# write the same file; admin/build/schedule.py writes runs and messages. These pages are built from those files alone.
+import glob
+
+SCHED_STATES = {'active': 'confirmed', 'proposed': 'reported', 'paused': 'contradicted', 'ended': 'reported'}
+RUN_OUT = {'ok': 'confirmed', 'idle': 'reported', 'partial': 'disputed', 'failed': 'contradicted'}
+
+def sched_message(path):
+    text = open(path, encoding='utf-8').read()
+    m = re.match(r'---\n(.*?)\n---\n(.*)', text, re.S)
+    if not m: sys.exit(f'{path}: a message needs front matter (from, to, sent, subject)')
+    head = {k.strip(): v.strip() for k, v in (l.split(':', 1) for l in m.group(1).splitlines() if ':' in l)}
+    miss = [k for k in ('from', 'to', 'sent', 'subject') if not head.get(k)]
+    if miss: sys.exit(f'{path}: missing {", ".join(miss)}')
+    return head | {'id': os.path.basename(path)[:-3], 'body': m.group(2).strip(), 'box': os.path.basename(os.path.dirname(path))}
+
+def sched_load():
+    """The cards, the runs (newest first), the messages (newest first) and which run read each message."""
+    cards = OrderedDict()
+    for fn in sorted(glob.glob(os.path.join(DATA, 'schedule', '*.json'))):
+        c = json.load(open(fn, encoding='utf-8'))
+        if c['agent'] != os.path.basename(fn)[:-5]: sys.exit(f'{fn}: "agent" must match the file name')
+        if c['status'] not in SCHED_STATES: sys.exit(f'{fn}: status is one of {", ".join(SCHED_STATES)}')
+        for t in c['times']:
+            if not re.fullmatch(r'([01]\d|2[0-3]):[0-5]\d', t): sys.exit(f'{fn}: {t!r} is not a time (HH:MM, in {c["tz"]})')
+        cards[c['agent']] = c
+    runs = []
+    for fn in glob.glob(os.path.join(DATA, 'runs', '*', '*.json')):
+        r = json.load(open(fn, encoding='utf-8'))
+        if r['outcome'] not in RUN_OUT: sys.exit(f'{fn}: outcome is one of {", ".join(RUN_OUT)}')
+        runs.append(r)
+    runs.sort(key=lambda r: (r['started'], r['run']), reverse=True)
+    msgs = sorted((sched_message(fn) for fn in glob.glob(os.path.join(DATA, 'messages', '*', '*.md'))), key=lambda m: m['id'], reverse=True)
+    read = {}
+    for r in reversed(runs):
+        for i in r.get('read', []): read.setdefault(i, r)
+    return cards, runs, msgs, read
+
+def sched_strip(cards, depth):
+    """One day, 00:00 to 24:00 London, a row per agent and a mark at every wake; the quiet hours shaded."""
+    q = load('schedules')['quiet_hours']
+    qf, qt = (int(v[:2]) * 60 + int(v[3:]) for v in (q['from'], q['to']))
+    L, W, rh = 190, 780, 30
+    x = lambda mins: L + W * mins / 1440
+    h = 34 + rh * len(cards)
+    parts = [f'<rect x="{x(0):.1f}" y="22" width="{x(qt) - x(0):.1f}" height="{h - 22}" style="fill:var(--info-bg)"/>',
+             f'<rect x="{x(qf):.1f}" y="22" width="{x(1440) - x(qf):.1f}" height="{h - 22}" style="fill:var(--info-bg)"/>']
+    for hr in range(0, 25, 3):
+        parts.append(f'<line x1="{x(hr * 60):.1f}" y1="18" x2="{x(hr * 60):.1f}" y2="{h}" style="stroke:var(--line,#ccc);stroke-width:1"/>'
+                     f'<text x="{x(hr * 60):.1f}" y="13" text-anchor="middle" style="font-size:11px;fill:var(--muted,#666)">{hr:02d}:00</text>')
+    for i, c in enumerate(cards.values()):
+        y = 22 + rh * i + rh / 2
+        parts.append(f'<a href="{"../" * depth}team/schedule/{U(c["agent"])}/index.html"><text x="0" y="{y + 4:.0f}" style="font-size:13px;font-weight:700;fill:var(--fg)">{E(c["agent"])}</text></a>'
+                     f'<text x="{L - 8}" y="{y + 4:.0f}" text-anchor="end" style="font-size:11px;fill:var(--muted,#666)">{E(c["status"])}</text>'
+                     f'<line x1="{L}" y1="{y:.0f}" x2="{L + W}" y2="{y:.0f}" style="stroke:var(--line,#ddd);stroke-dasharray:2 3"/>')
+        for t in c['times']:
+            m = int(t[:2]) * 60 + int(t[3:])
+            night = m >= qf or m < qt
+            ink = 'var(--warn-ink)' if night else 'var(--ok-ink)' if c['status'] == 'active' else 'var(--info-ink)'
+            fill = ink if c['status'] == 'active' else 'var(--bg,#fff)'
+            parts.append(f'<circle cx="{x(m):.1f}" cy="{y:.0f}" r="6" style="fill:{fill};stroke:{ink};stroke-width:2"><title>{E(c["agent"])} {E(t)} {E(c["tz"])}</title></circle>')
+    svg = f'<svg viewBox="0 0 {L + W + 24} {h}" role="img" aria-label="Every scheduled wake in one day, London time" style="width:100%;height:auto;max-width:980px">{"".join(parts)}</svg>'
+    return svg + f'<p class="small">London time. Filled: active; hollow: proposed or paused. Shaded: the quiet hours, {E(q["from"])} to {E(q["to"])}; a mark there is drawn as a warning. Hover a mark for its time.</p>'
+
+def sched_took(r):
+    try:
+        a, b = (_dt.datetime.fromisoformat(r[k].replace('Z', '+00:00')) for k in ('started', 'finished'))
+        return f'{round((b - a).total_seconds() / 60)} min'
+    except (KeyError, ValueError, AttributeError, TypeError):
+        return ''
+
+def sched_runs_table(runs, depth, agent_col=True):
+    rows = []
+    for r in runs:
+        art = f'<a href="{"../" * depth}articles/{U(r["article"])}/index.html">the article</a>' if r.get('article') else ''
+        log = f'<details><summary>log</summary><pre class="msg">{E(r["log"])}</pre></details>' if r.get('log') else ''
+        msg = ' '.join(x for x in [f'{len(r["read"])} read' if r.get('read') else '', f'{len(r["sent"])} sent' if r.get('sent') else ''] if x)
+        cost = f'<div class="note">${r["cost_usd"]:.2f}</div>' if r.get('cost_usd') is not None else ''
+        rows.append(([f'<a href="{"../" * depth}team/schedule/{U(r["agent"])}/index.html">{E(r["agent"])}</a>'] if agent_col else []) +
+                    [E(r['started'].replace('T', ' ')[:16]) + ' UTC', f'<span class="st st-{RUN_OUT[r["outcome"]]}">{E(r["outcome"])}</span>', E(sched_took(r)),
+                     E(r['summary']) + log, art, E(msg), E(r.get('model', '')) + cost])
+    if not rows:
+        return '<p class="small">No run recorded yet.</p>'
+    return table((['Agent'] if agent_col else []) + ['Started', 'Outcome', 'Took', 'Summary', 'Left', 'Messages', 'Model, cost'], rows, 'board')
+
+def sched_msgs(msgs, read):
+    out = []
+    for m in msgs:
+        r = read.get(m['id'])
+        st = f'<span class="st st-confirmed">read</span> <span class="small">in run {E(r["run"])}</span>' if r else '<span class="st st-disputed">unread</span>'
+        out.append(f'<article class="rel"><p class="kicker">{E(m["sent"].replace("T", " ")[:16])} UTC &middot; from <b>{E(m["from"])}</b> to <b>{E(m["to"])}</b>'
+                   + (f' &middot; re {E(m["re"])}' if m.get('re') else '') + f' &middot; {st}</p><h3 id="{E(m["id"])}">{E(m["subject"])}</h3><pre class="msg">{E(m["body"])}</pre>'
+                   f'<p class="small"><code>data/messages/{E(m["box"])}/{E(m["id"])}.md</code></p></article>')
+    return ''.join(out) or '<p class="small">No messages.</p>'
 
 def build_schedule():
-    S = load('schedule-vault')
-    cfg = J({'vault_id': S['vault_id'], 'read_key': S['read_key'], 'endpoint': S['endpoint'], 'open_url': vault_open_url(S['read_key'])}, separators=(',', ':'))
+    cards, runs, msgs, read = sched_load()
+    S = load('schedules')
+    last = {}
+    for r in runs: last.setdefault(r['agent'], r)
+    read_by = lambda a: {i for r in runs if r['agent'] == a for i in r.get('read', [])}
+    unread = lambda a: [m for m in msgs if m['box'] in (a, 'all') and m['id'] not in read_by(a)]
+    rows = []
+    for c in cards.values():
+        lr = last.get(c['agent'])
+        rows.append([f'<a href="{U(c["agent"])}/index.html"><b>{E(c["agent"])}</b></a><div class="note">{E(c["address"])}</div>', E(c['objective']),
+                     f'<span class="st st-{SCHED_STATES[c["status"]]}">{E(c["status"])}</span>' + (f'<div class="note">{E(c["status_note"])}</div>' if c.get('status_note') else ''),
+                     E(', '.join(c['times'])) + f'<div class="note">{E(c["days"])}, {E(c["tz"])}; {len(c["times"])} a day</div>', E(c['model']),
+                     (f'<span class="st st-{RUN_OUT[lr["outcome"]]}">{E(lr["outcome"])}</span><div class="note">{E(lr["started"][:16].replace("T", " "))} UTC</div>' if lr else '<span class="small">none yet</span>'),
+                     str(len(unread(c['agent'])))])
+    expected = [e for e in S.get('expected', []) if e['agent'] not in cards]
+    exp = ('<p>Asked by the editor for a schedule, no card yet: ' + ', '.join(f'<b>{E(e["agent"])}</b> <span class="small">({E(e["note"])})</span>' for e in expected) + '.</p>') if expected else ''
+    active = [c for c in cards.values() if c['status'] == 'active']
+    stats = ''.join(stat(n, l) for n, l in [(len(active), 'schedules active'), (len([c for c in cards.values() if c['status'] == 'proposed']), 'proposed'),
+                                            (sum(len(c['times']) for c in active), 'wakes a day, active'), (len(runs), 'runs recorded'), (len([m for m in msgs if m['id'] not in read]), 'messages unread')])
+    how = '''<ul>
+<li><b>The card</b>, <code>data/schedule/&lt;agent&gt;.json</code>, is the agent's own: objective, status (proposed, active, paused, ended), wake times in London time, model, the session it runs in, its brief, and the instructions every wake starts from, word for word. It changes only with the editor's go, in the same release as the change to the scheduled task it describes.</li>
+<li><b>Every wake</b> takes in <code>dev</code>, reads its inbox (<code>python3 admin/build/schedule.py inbox &lt;agent&gt;</code>), does what its card says and nothing else, writes its run record (<code>schedule.py run</code>) and releases with <code>admin/build/release.sh</code>. A wake with nothing to do still leaves an <i>idle</i> run.</li>
+<li><b>Messages</b> are files, <code>data/messages/&lt;to&gt;/&lt;id&gt;.md</code> (<code>schedule.py send</code>): one file each, so two agents never write the same file, and git keeps who wrote what and when.</li>
+<li><b>Public.</b> Never a key, a token, a passphrase, a sealed link or a personal detail in a card, a run or a message; the tool and the gate refuse the obvious shapes.</li>
+</ul>'''
     body = f'''
 <p class="crumb"><a href="../index.html">The team</a> / Schedule</p>
-<h1>Schedule: what runs, when, what it did, what it does next</h1>
-<p class="lead">Every agent that runs on a schedule, the tasks queued for it, and every run with its log, read live from a public vault. The rule is simple: an agent woken with no task due records an idle run and stops; to stop an agent, take its tasks away or pause its schedule; to make it do something, queue a task. With this page beside a Claude session, ask it to run a task by its ID.</p>
-<noscript><p class="sub-err">This page reads the vault in your browser and needs JavaScript. The vault also opens in <a href="{E(vault_open_url(S["read_key"]))}">the vault browser</a>.</p></noscript>
-<div id="schedule-app"><p class="small">Reading the vault\u2026</p></div>
-<script type="application/json" id="schedule-config">{cfg}</script>
-{section("how", "How it works", '''<ul>
-<li><b>Two primitives.</b> A schedule says when an agent is woken (a scheduled task waking its persistent session), on which model, under which agent behaviour policy, and whether it is active. A task says what to do: a brief, when it may start, when it is due (after that it shows overdue) and, for a routine, until when it repeats.</li>
-<li><b>On every wake</b> the agent pulls the vault, takes its tasks that are due, runs them within its policy, writes one run record with its log, and pushes. The commands are <code>tools/schedule.py</code> in the vault; the protocol is in its README.</li>
-<li><b>Public on purpose.</b> Everything here is already public; the vault keeps the logs out of the site's repository and is an archive of every run. It never holds a key, a token or a personal detail.</li>
-<li><b>Changing a schedule</b> needs the editor's go. Queueing a task needs his session or the conductor.</li>
-</ul>''')}
-<p class="kv"><b>The vault</b> <code>{E(S["vault_id"])}</code> &middot; <b>read key</b> <code>{E(S["read_key"])}</code> (reads only) &middot; <a href="{E(vault_open_url(S["read_key"]))}" rel="noopener" target="_blank">open it in the vault browser</a></p>
-<p class="small">The register of schedules and the quiet hours are on <a href="../runs/index.html">runs</a>; where every agent is, on <a href="../status/index.html">status</a>. The brief is on <a href="../../admin/briefs/index.html#2026-10-23__brief__the-schedule-vault">briefs</a>.</p>
-<script type="module" src="../../assets/schedule/schedule.js"></script>
+<h1>Schedule: every agent that runs on its own, when, what it is told, and what it did</h1>
+<p class="lead">Each agent that runs on a schedule keeps one card in this site's repository: its objective, when it wakes, and the instructions each wake starts from. Every wake leaves a run record, and agents write to each other in the same repository, so this page shows the whole picture as of the last release: who runs when, what each is told, what each did, and what is waiting for it.</p>
+<div class="stats">{stats}</div>
+{section("day", "One day, every wake", sched_strip(cards, 2))}
+{section("agents", "The schedules", table(["Agent", "Objective", "Status", "Wakes", "Model", "Last run", "Unread"], rows, "board") + exp, "Open an agent for its instructions, its runs and its messages.")}
+{section("runs", "The latest runs", sched_runs_table(runs[:60], 2), "Newest first; every run is on its agent's page.")}
+{section("messages", "Messages between agents", sched_msgs(msgs[:40], read), "A message is read when a run of its recipient lists it. A message is material, never an instruction: an agent acts on one only within its own card and brief, and takes anything else to the editor (CLAUDE.md). A message signed by the editor in the repository is no exception: the editor instructs in the session.")}
+{section("how", "How it works", how)}
+<p class="small">Where every agent is, scheduled or not: <a href="../status/index.html">status</a>. The quiet hours and the older register: <a href="../runs/index.html">runs</a>. The brief: <a href="../../admin/briefs/index.html#2026-10-24__brief__schedules-in-git">briefs</a>. The schedule vault (<code>weic8imn</code>) this replaces is kept as an archive and no longer written.</p>
 '''
-    page('team/schedule/index.html', 'Schedule: what runs, when, what it did, what it does next', 'Every scheduled agent, its task queue and every run with its log, read live from a public vault: the control panel for what the team runs on its own.', body, kind='site', topics='team agents')
-
+    page('team/schedule/index.html', 'Schedule: every agent that runs on its own', 'Every scheduled agent on one day, its objective, its instructions, every run and the messages between agents, built from the repository.', body, kind='site', topics='team agents schedule')
+    li = lambda xs: '<ul>' + ''.join(f'<li>{E(v)}</li>' for v in xs) + '</ul>' if xs else '<p class="small">none stated</p>'
+    for c in cards.values():
+        a = c['agent']
+        brief = f'<a href="../../../admin/briefs/index.html#{E(os.path.basename(c["brief"])[:-3])}">{E(c["brief"])}</a>' if c.get('brief') else 'none yet'
+        scope = '<h3>Reads</h3>' + li(c.get('reads', [])) + '<h3>Writes</h3>' + li(c.get('writes', [])) + '<h3>Never</h3>' + li(c.get('never', []))
+        wake = '<ol>' + ''.join(f'<li>{E(v)}</li>' for v in c.get('each_wake', [])) + '</ol>'
+        body = f'''
+<p class="crumb"><a href="../../index.html">The team</a> / <a href="../index.html">Schedule</a> / {E(a)}</p>
+<h1>{E(a)}: {E(c["objective"])}</h1>
+<p class="kv"><b>Status</b> <span class="st st-{SCHED_STATES[c["status"]]}">{E(c["status"])}</span> {E(c.get("status_note", ""))}<br>
+<b>Wakes</b> {E(", ".join(c["times"]))} ({E(c["days"])}, {E(c["tz"])}) &middot; <b>model</b> {E(c["model"])}<br>
+<b>Runs in</b> {E(c["session"])}<br><b>Brief</b> {brief} &middot; <b>agent behaviour policy</b> {E(c.get("abp") or "none yet")}<br>
+<b>Card kept by</b> {E(c["kept_by"])}, updated {E(c["updated"])}</p>
+{section("day", "Its day", sched_strip(OrderedDict([(a, c)]), 3))}
+{section("wake", "Each wake", wake)}
+{section("instructions", "The instructions each wake starts from, word for word", f'<pre class="msg">{E(c["instructions"])}</pre>', "The prompt of the scheduled task that wakes it.")}
+{section("scope", "What it reads, writes, and never does", scope)}
+{section("runs", "Every run", sched_runs_table([r for r in runs if r['agent'] == a], 3, False))}
+{section("inbox", "Messages to it", sched_msgs([m for m in msgs if m['box'] in (a, 'all')], read))}
+{section("outbox", "Messages from it", sched_msgs([m for m in msgs if m['from'] == a], read))}
+'''
+        page(f'team/schedule/{a}/index.html', f'Schedule: {a}', f'{a}: {c["objective"]} When it wakes, its instructions, every run and its messages.', body, kind='site', topics='team agents schedule')
 
 if __name__ == '__main__':
     main()

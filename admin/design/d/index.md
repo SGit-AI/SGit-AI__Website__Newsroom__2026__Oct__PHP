@@ -4,7 +4,7 @@ The admin section as a console with its own menu and layout: a dark sidebar by a
 
 > Mockup D for review, built from the data of release v0.10.21. Not the live site.
 
-PHP Team console Console Overview Board 117 Agents 16 Releases 72 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 120 Agents 16 Releases 72 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -16,11 +16,11 @@ v0.10.21
 72 releases since 22 Oct 
 
 Open on the board 
-117 
-55 done, 3 waiting 
+120 
+55 done, 4 waiting 
 
 Pages built 
-716 
+719 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,17 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 117
+#### Open 120
 
+ #179 
+Curator and researcher to confirm the cards the conductor drafted from their scheduled tasks, and keep them 
+ conductor 
+ #178 
+Cards to write: pulse (already scheduled), ontologist and librarian (asked to propose) 
+ conductor 
+ #177 
+The scheduled researcher's two wake prompts still name the schedule vault: change them to the card's steps (take in dev,… 
+ editor 
  #175 
 release.sh fails the gate's determinism check on the first try when a release changes a versioned page's text: the secti… 
  dev@php.newsroom 
@@ -44,18 +53,12 @@ Queue tasks from the page: a signed request from an enrolled key (the editor's) 
  #162 
 The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:… 
  editor 
- #161 
-Run every scheduled wake through the schedule vault (researcher's T-001, the source watch pass), and say your real caden… 
- researcher@php.newsroom 
- #160 
-Run every scheduled wake through the schedule vault: pull, schedule.py due curator, start/finish with the log, index, pu… 
- curator 
- #158 
-Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaul… 
- security 
 
-#### Waiting 3
+#### Waiting 4
 
+ #176 
+The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session wi… 
+ editor 
  #174 
 The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed … 
  editor 
@@ -105,9 +108,9 @@ From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 15 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 16 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
- conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 13 
+ conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 15 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 13 
  Primary-source collector php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone 3 
  Government and CERT collector every national agency's advisory, in its own language, with the translation marked 3 

@@ -8,9 +8,9 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 # Runs: what the agents do on their own, and every time they did it
 
-Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Times are UTC unless they say London.
+Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-3schedules29runs a night, today124runs recorded51runs with changes and no article
+3schedules29runs a night, today125runs recorded52runs with changes and no article
 
 ## Quiet hours
 
@@ -34,10 +34,11 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 72, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Fact-check desk: 2.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 72, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Fact-check desk: 2, Conductor: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
+| 2026-10-24T00:00:00Z | [Conductor](../conductor/index.html) | Scheduled wake | `20261024T0000Z-conductor` | Not a scheduled wake: the editor's session. Moved schedules, runs and messages into the repository (/team/schedule/), drafted the curator's and researcher's cards from their scheduled tasks, proposed the conductor's own, and wrote to every agent that runs or will run on a schedule. | yes | missing | [output](../../team/schedule/conductor/index.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.21` | synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey, the instruments' flags) and a page-by-page index of what all six said about each page of the site; the second run, on v0.10.18, reviewed by all six against their first: most of what they asked for on 22 October is still open; the vault register for the six vaults confirmed, each key sealed to the root | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.20` | the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23T23:58:59Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Designer | `designer/2026-10-23T2358Z` | site v0.10.18: answered the question partly; 14 failures named (2 high); 0 high, 2 medium instrument flags | yes | missing | [output](../../admin/synthetic/designer/2026-10-23T2358Z/index.html) |

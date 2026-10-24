@@ -150,11 +150,11 @@
   {
    "slug": "schedule",
    "id": "weic8imn",
-   "name": "The schedule vault",
+   "name": "The schedule vault (retired)",
    "access": "public read",
    "app": false,
-   "holds": "Every scheduled agent's schedule, its queued tasks and every run with its log: the control panel for what the team runs on its own.",
-   "writers": "each scheduled agent, its own runs; the editor's session and the conductor queue tasks",
+   "holds": "Retired on 24 October 2026, kept as an archive: the first schedules, tasks and runs. Schedules, runs and messages are now kept in the site's repository (/team/schedule/).",
+   "writers": "nobody since 24 October 2026",
    "page": "team/schedule/index.html",
    "data": "data/schedule-vault.json"
   }

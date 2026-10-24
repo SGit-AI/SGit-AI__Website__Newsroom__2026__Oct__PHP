@@ -125,7 +125,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Power users: start here](../collaborators/index.html): Where a power user of PHP October 2026 starts: the first fifteen minutes, the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
-- [Schedule: what runs, when, what it did, what it does next](../team/schedule/index.html): Every scheduled agent, its task queue and every run with its log, read live from a public vault: the control panel for what the team runs on its own.
+- [Schedule: every agent that runs on its own](../team/schedule/index.html): Every scheduled agent on one day, its objective, its instructions, every run and the messages between agents, built from the repository.
 
 ### GRC
 - [GRC: risks, owners, standards](../grc/index.html):
