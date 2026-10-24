@@ -101,7 +101,8 @@ An article a reader has seen is listed here until a collector captures it into t
 - [What sixteen agencies actually advise](../agencies/index.html): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
 - [Affected systems: versions, deployments, applications, inventory](../affected/index.html): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
 - [Who says what: every party and its claims](../actors/index.html): 27 parties in the php2shell story, each with the claims this site attributes to it and the sources behind them.
-- [The story as a graph: claims, events and the sources they cite](../graph/index.html): 211 nodes and 285 citation edges from the php2shell claims and timeline to the captured sources, drawn from the same rows as the text, with the JSON to download.
+- [The story as a graph: who states what, who relays it, and what it rests on](../graph/index.html): 1048 nodes and 1516 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
+- [Every party on the story: who states, who relays, who publishes](../graph/parties/index.html): 243 parties resolved from 249 spellings, with the claims each one states and passes on.
 - [From outside: other models and sites](../readings/index.html):
 - [Perplexity's notes, in full](../readings/perplexity-2026-10-22/index.html):
 
@@ -166,6 +167,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [The pipeline: what is live, what is deploying](../status/index.html): Each newsroom site's deploy runs, read in your browser from GitHub's public API with no credential, beside the version the site serves now: what is live, what is deploying, what was superseded, what failed.
 - [Admin and engineering](../admin/index.html): How this site is built, the checks in its gate, where things are, the reality file and the honest column.
 - [How to work on this site: guidance for every agent](../admin/agents/index.html): Push to your own branch early and often and let dev@php.newsroom carry it into dev; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements.
+- [The graph component: one way to draw every graph on this site](../graph/component/index.html): sg-graph, the web component every agent uses to put a graph on a page: the views, the data contract, the build helper, and the hashes of its files.
 - [status.json: the feed for other sites](../admin/status-json/index.html):
 - [The board](../admin/board/index.html): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles and responsibilities](../admin/roles/index.html): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
@@ -182,4 +184,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.11.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

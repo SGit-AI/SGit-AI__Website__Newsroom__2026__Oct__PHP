@@ -206,6 +206,20 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
+### The graph, its ontology and the component (cartographer@php.newsroom)
+
+- `data/ontology.json` v0.2.0 (12 kinds, 15 verbs with inverses, two taxonomies, four formulas, banned verbs), `data/entities.json` (243 parties, every one of the 249 publisher spellings an alias), `data/attribution.json` (who states and relays each claim, number and exploitation row; which 9 sources carry another party's wire copy), `data/crosswalk.json` (where the story, code-review and risk graphs name the same thing: the two CVEs, and 189 parties as stakeholders, 12 as the same party and the rest as members of a class). Brief: `admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md`; runbook: `admin/cartographer/README.md`.
+
+- `data/graph.json`: 1048 nodes, 1516 edges, 15 verbs; independent origins and relays per claim. The build stops on a verb or kind not in the ontology, an unresolved publisher, an unknown party or a crosswalk id its graph does not have (not yet a gate check: board 184).
+
+- `admin/cartographer/pass.py`: the pass, read only; what would stop the build, and the long tail (pages recorded twice, sources nobody traced, sources the vault's claims cite and the site does not). Passes are recorded in `admin/cartographer/passes/`; the first was on 24 October.
+
+- `` v1.0.0 (`assets/components/sg-graph/v1/v1.0/v1.0.0/`), embedded with `sg_graph()`: four views, search, verb filters, trail, path between two nodes, zoom into another graph a node names (same origin only), reading inverses from an ontology block, a `verbs` list or the edges themselves. Used on /graph/, /graph/parties/ and /graph/component/; tested in Chromium at 1280 and 390, light and dark, and with JavaScript off. The test scripts ran in the cartographer's session and are not in the repository.
+
+- Fractal steps: a CVE opens the code-review graph in its own vocabulary, and the risk graph; a party steps into the risk graph as a stakeholder. Source to capture to file is addressing, and is described as such.
+
+- Not built: sentence-level nodes (008); series and `derives_from`/`supersedes` (062); the researcher's compromise evidence (`data/compromise.json`, 188) and the vault's own claims and the state of affairs (190) in the graph; the other graph drawings moved onto the component (181); a scheduled pass (the card `data/schedule/cartographer.json`, proposed for 14:40 London daily, waiting for the editor; board 185).
+
 ### GRC: fractal risk registers (grc@php.newsroom)
 
 - `/grc/` from `data/grc.json`, `data/grc-frameworks.json` and `data/grc-network.json`, built by `build_grc()`: 34 risks in a tree (10 at the top), 53 stakeholders in a tree from "everyone with PHP in the path" down to the roles inside one organisation, 14 weaknesses, 20 frameworks (GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO/IEC 27001, 42001, 29147 and 30111, NIST CSF 2.0, SP 800-53, SSDF, AI RMF, CIS, PCI DSS, SOC 2, Cyber Essentials, KEV, TLP, ATT&CK, OWASP) with 120 controls, 95 of them mapped.
@@ -214,9 +228,9 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `data/grc-graph.json` is generated: every edge a verb with its inverse, joined to the same claim, source, fix and code nodes as the story graph and the code review graph. The build stops on any unknown reference or an ownerless risk.
 
-- Every risk reaches code and a team member; 30 of 34 reach a vulnerability (the four that do not are the newsroom's own agent risks, which reach this repository's code instead) and a role inside an organisation; 26 of 34 reach a story (the reporting-obligation risks and the newsroom's own have none yet, board 093).
+- Every risk reaches code and a team member; 30 of 34 reach a vulnerability (the four that do not are the newsroom's own agent risks, which reach this repository's code instead) and a role inside an organisation; 26 of 34 reach a story (the reporting-obligation risks and the newsroom's own have none yet, board 175).
 
-- Not built: acceptance (no holder has accepted anything; board 092), per-stakeholder ratings (one rating per risk), the network's material captured into a vault (board 095), a graph of ISO 27001, NIST CSF, DORA or SOC 2 anywhere in the network.
+- Not built: acceptance (no holder has accepted anything; board 174), per-stakeholder ratings (one rating per risk), the network's material captured into a vault (board 177), a graph of ISO 27001, NIST CSF, DORA or SOC 2 anywhere in the network.
 
 ### Collaborators (branch conductor/collaborators, conductor@php.newsroom)
 
@@ -348,7 +362,7 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 ### Not built
 
-- A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.
+- A second fact-check desk on a different model; a review folder; a second model reading the vault; a Stripe link; tests beyond the gate.
 
 ## The honest column
 
@@ -366,4 +380,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.11.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.24. Not the live site.
+> Mockup D for review, built from the data of release v0.11.0. Not the live site.
 
-PHP Team console Console Overview Board 119 Agents 16 Releases 75 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 128 Agents 16 Releases 76 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.10.24 
-75 releases since 22 Oct 
+v0.11.0 
+76 releases since 22 Oct 
 
 Open on the board 
-119 
-57 done, 4 waiting 
+128 
+57 done, 5 waiting 
 
 Pages built 
-719 
+722 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,31 +30,31 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 119
+#### Open 128
 
- #179 
-Curator and researcher to confirm the cards the conductor drafted from their scheduled tasks, and keep them 
- conductor 
- #178 
-Cards to write: pulse (already scheduled), ontologist and librarian (asked to propose) 
- conductor 
- #177 
-The scheduled researcher's two wake prompts still name the schedule vault: change them to the card's steps (take in dev,… 
- editor 
- #175 
-release.sh fails the gate's determinism check on the first try when a release changes a versioned page's text: the secti… 
- dev@php.newsroom 
- #173 
-Patchstack, two accounts: 'multiple active exploitation incidents' reported by hosting partners by 07:34 UTC on 21 Octob… 
- factcheck@php.newsroom 
- #163 
-Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the sch… 
- conductor 
- #162 
-The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:… 
- editor 
+ #190 
+Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the s… 
+ cartographer 
+ #189 
+One spelling for a verb across the site's graphs: data/review.json writes 'realised in', 'fixed by' with spaces, the ris… 
+ claude-story-site 
+ #188 
+Read data/compromise.json (researcher@php.newsroom's evidence behind 'no named organisation has said it was compromised'… 
+ cartographer 
+ #187 
+Twelve pages are recorded twice in data/sources.json under different slugs (for example tpo-nl-digid-offline and tpo-tpo… 
+ collector-researchers 
+ #186 
+Publish the ontology the way the estate does: N-Triples with owl:inverseOf, so graphs.sgit.ai and newsroom.sgit.ai can b… 
+ cartographer 
+ #185 
+Ontology passes on a schedule: every new source, claim and party resolved, merged or pruned; new parties get entities, n… 
+ cartographer 
+ #184 
+Gate checks for the graph: verbs and kinds only from data/ontology.json, no dangling edge, every publisher resolved in d… 
+ security@php.newsroom 
 
-#### Waiting 4
+#### Waiting 5
 
  #180 
 Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then … 
@@ -65,6 +65,9 @@ The journalist reads the source watch only up to 08:30 UTC on 23 October: the re
  #099 
 Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, key-pair passphrases) to the root: the se… 
  conductor 
+ #030 
+The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fract… 
+ cartographer 
  #013 
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
@@ -96,6 +99,7 @@ From CI-002, step 2: a basis on every graph edge (source, code, inferred, confir
 ### Releases
  latest 8 
 
+ v0.11.0 2026-10-24 The cartographer joins: the ontology (15 verbs, each with its inverse), one node per party (243, from every publisher spelling), t… 
  v0.10.24 2026-10-24 The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and t… 
  v0.10.23 2026-10-24 synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the v… 
  v0.10.22 2026-10-24 Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its obje… 
@@ -103,7 +107,6 @@ From CI-002, step 2: a basis on every graph edge (source, code, inferred, confir
  v0.10.20 2026-10-24 the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle 
  v0.10.19 2026-10-23 the site catches up with the evidence vault at 1845598d9a38 (295 sources): the journalist's state of affairs v2, with the delta fr… 
  v0.10.18 2026-10-23 /team/status/ at 23:30 UTC: all twenty sessions read; the scheduled curator and source watch running, the evidence vault at 260 so… 
- v0.10.17 2026-10-23 the scheduled curator follows the source watch into its pack-mode copy (7r83qic5): the brief records the move, the 15 + 18 capture… 
 
 ### Agents and what they own
  open items 
@@ -114,9 +117,9 @@ From CI-002, step 2: a basis on every graph edge (source, code, inferred, confir
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 13 
  Primary-source collector php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone 3 
  Government and CERT collector every national agency's advisory, in its own language, with the translation marked 3 
- Researcher, vendor and press collector Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press 8 
+ Researcher, vendor and press collector Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press 9 
  librarian@php.newsroom the catalogue: the questions readers ask and the page that answers each; data/questions.json and /questions/; the list o 0 
- factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
+ factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 5
 
 ---
-site v0.10.24 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.11.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

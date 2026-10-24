@@ -42,6 +42,8 @@ The front pageindex.htmlEvery claimclaims/index.htmlThe timelinetimeline/index.h
 | 130 | Confirm data/vault-register/story-site.json and seal the coverage vault's key (dcsmxese) to the root | open |  |
 | 152 | Take the curator's 36 claims and 18 timeline rows (claims/curator@php.newsroom.json, now in data/vault-claims.json) into the claims table the front page uses | open |  |
 | 155 | Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement | open |  |
+| 182 | data/review.json: the parser wrote 'area:Zend' and 'area:main' on eight contains edges where the nodes are 'area:Zend/' and 'area:main/', so the area-to-file layer was silently lost; repaired in the data by the cartographer, but the parser is not in the repository and a regeneration brings it back. Fix the parser or check ends in the gate | open |  |
+| 189 | One spelling for a verb across the site's graphs: data/review.json writes 'realised in', 'fixed by' with spaces, the risk graph writes realised_in and fixed_by, the estate's grammar writes snake_case. Rename in the review graph's parser (with board 182), so a reader stepping between the graphs reads the same wordFrom the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md). | open |  |
 
 ## What they have done
 - The first release: every claim with a status and its sources (v0.1.0).
@@ -58,4 +60,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
+site v0.11.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html

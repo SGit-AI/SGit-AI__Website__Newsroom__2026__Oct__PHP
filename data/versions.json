@@ -1,6 +1,15 @@
 {
- "current": "0.10.24",
+ "current": "0.11.0",
  "versions": [
+  {
+   "version": "0.11.0",
+   "date": "2026-10-24",
+   "title": "The cartographer joins: the ontology (15 verbs, each with its inverse), one node per party (243, from every publisher spelling), the story graph rebuilt with who states and who relays each claim, bridges to the code-review and risk graphs, <sg-graph> for every agent that draws a graph, the first pass over the evidence, and a daily pass proposed for 14:40 London",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.10.24",
    "date": "2026-10-24",

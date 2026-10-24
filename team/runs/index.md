@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today129runs recorded53runs with changes and no article
+2schedules20runs a night, today131runs recorded54runs with changes and no article
 
 ## Quiet hours
 
@@ -33,12 +33,14 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 75, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Conductor: 2, Fact-check desk: 2.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 76, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Conductor: 2, Fact-check desk: 2, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
 | 2026-10-24T00:15:00Z | [Conductor](../conductor/index.html) | Scheduled wake | `20261024T0015Z-conductor` | Not a scheduled wake: the editor's session. The editor's go on the conductor's schedule: created a Sonnet session and one scheduled task (hourly 07:15 to 21:15 London); the card is active. The rule changed: a wake where nothing happened need not commit; conflicts are solved by hand and written in the run's log. | yes | missing | [output](../../team/schedule/conductor/index.html) |
+| 2026-10-24T00:00Z | [Cartographer](../cartographer/index.html) | Scheduled wake | `20261024T0000Z-cartographer` | Pass 1, run by hand in the editor's session at his request (started by 00:00 UTC, the first file written then). Took in dev three times (v0.10.18, v0.10.22, v0.10.24; sources 144 to 295); 143 new publisher spellings resolved (243 parties); syndication as a verb (9 wire copies); data/crosswalk.json bridges the story, code-review and risk graphs; the component and build fixed from an independent review; admin/cartographer/pass.py; board 187 to 190; the card proposed for 14:40 London daily (data/schedule/cartographer.json). Record: admin/cartographer/passes/2026-10-24__pass-1.md. Collisions: release.sh stopped twice on data/admin.json, where other agents had appended board rows; solved by hand, keeping every row of theirs and renumbering only the cartographer's (090 to 095 became 172 to 177 on the first take-in, then 180 to 189, now 181 to 190). | yes | missing | [output](../../team/schedule/cartographer/index.html) |
 | 2026-10-24T00:00:00Z | [Conductor](../conductor/index.html) | Scheduled wake | `20261024T0000Z-conductor` | Not a scheduled wake: the editor's session. Moved schedules, runs and messages into the repository (/team/schedule/), drafted the curator's and researcher's cards from their scheduled tasks, proposed the conductor's own, and wrote to every agent that runs or will run on a schedule. | yes | missing | [output](../../team/schedule/conductor/index.html) |
+| 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.11.0` | The cartographer joins: the ontology (15 verbs, each with its inverse), one node per party (243, from every publisher spelling), the story graph rebuilt with who states and who relays each claim, bridges to the code-review and risk graphs,  for every agent that draws a graph, the first pass over the evidence, and a daily pass proposed for 14:40 London | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.24` | The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and the rule for every scheduled agent: a wake where nothing happened need not commit, and a conflict is solved by hand and written in the run's log | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.23` | synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the vault opened read-only in the official UI, and on /vaults/, so every request, page, screenshot and review behind a run can be checked; each run page names its folder; the synthetic readers' GitHub workflow removed (the editor's go), the readers run from an agent session | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.22` | Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its objective, wake times and wake prompt word for word; a run record for every wake; messages between agents as files; /team/schedule/ shows one day of every wake, the cards, the runs and the messages, with a page per agent; the conductor's own hourly schedule proposed | yes | its release note | [output](../../admin/versions.html) |
@@ -169,4 +171,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.11.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

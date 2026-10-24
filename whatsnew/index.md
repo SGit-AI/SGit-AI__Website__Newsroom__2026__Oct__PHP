@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.11.0 · 24 October 2026new since your last visit
+
+The cartographer joins: the ontology (15 verbs, each with its inverse), one node per party (243, from every publisher spelling), the story graph rebuilt with who states and who relays each claim, bridges to the code-review and risk graphs,  for every agent that draws a graph, the first pass over the evidence, and a daily pass proposed for 14:40 London
+
+No reader-facing section changed in this release.
+
 ## v0.10.24 · 24 October 2026new since your last visit
 
 The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and the rule for every scheduled agent: a wake where nothing happened need not commit, and a conflict is solved by hand and written in the run's log
@@ -632,4 +638,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.11.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
