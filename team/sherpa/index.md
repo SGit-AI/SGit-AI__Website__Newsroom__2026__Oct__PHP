@@ -41,7 +41,6 @@ The Sherpa: here to help yousherpa/index.htmlFeedback from collaboratorsfeedback
 | 195 | Sherpa: track the fact-check desk's analysis of Fortune's '70% of the internet' article (UF-005.1) to a story | open |  |
 | 196 | Sherpa: a way for the editor to identify himself when he cannot sign in (a key he can present), with dev and security; later, at the editor's word | open |  |
 | 197 | Sherpa: three views over time, step 1 (the executive view and its slices as data); the guidance on reuse; the knowledge-gap view | open |  |
-| 198 | Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed | open |  |
 
 ## What they have done
 - 23 October: joined; the first walk of v0.8.1: nine frictions logged with evidence, six of them from the synthetic readers' v0.4.3 runs re-checked on v0.8.1, four still open; where the headline starts on a phone measured on seven pages; proposals for better trails and for making the Sherpa visible to readers
@@ -49,6 +48,13 @@ The Sherpa: here to help yousherpa/index.htmlFeedback from collaboratorsfeedback
 - 23 October: the first collaborator's ideas, CI-001, on /sherpa/ideas/ci-001/: nine items, each set against what the site has today; the most actionable, a basis on every graph edge (source, code, inferred, confirmed), proposed to the cartographer and the GRC desk
 - 23 October: Feedback from collaborators, a section of its own: each piece kept whole beside the Sherpa's comments, readers' own highlights and notes, and the briefs to the conductor and to pki.sgit.ai; UF-003, the first power user through the whole invitation, imported with her screenshots
 - 24 October: the collaborators lane drained for the first time by the Sherpa (five messages, the vault pushed); a power user's key enrolled as power-user, and the editor's exposed bootstrap invitation retired; the editor's two asks recorded as UF-005; the synthetic readers' second run read into the friction log; a schedule proposed, twice a day
+
+### Closed on the board
+
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 198 | Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed (active 24 October: every two hours 07:45 to 21:45 London) | done |  |
+| 254 | Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, tokens derived, handed sealed), send_to_lane.py, drained on the Sherpa's schedule; next: the RiskMandate agent's own inbox for the other direction | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/sherpa/` in the mail vault (`fmb2tpl2`).
@@ -59,4 +65,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/sherpa/index.html
+site v0.14.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/sherpa/index.html

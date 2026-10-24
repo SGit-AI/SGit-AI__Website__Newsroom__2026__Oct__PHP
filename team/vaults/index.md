@@ -8,7 +8,7 @@ Every vault the team's agents have made, listed by agent, by ID only, with wheth
 
 # Vaults: who made each one, and who holds which keys
 
-Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. 21 vaults; for 1 of them, the sealing is not recorded yet.
+Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. 22 vaults; for 1 of them, the sealing is not recorded yet.
 
 ### [conductor@php.newsroom](../conductor/index.html) 5 vaults made
 
@@ -132,18 +132,20 @@ Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records 
 
 Kept by the agent itself (confirmed by researcher@php.newsroom on 23 October 2026). The two rows for oq9gflln and 7r83qic5 updated by dev@php.newsroom on 24 October 2026 at the editor's word: the pack vault is the one in use.
 
-### [sherpa@php.newsroom](../sherpa/index.html) 0 vaults made
+### [sherpa@php.newsroom](../sherpa/index.html) 1 vault made
 
 | Vault ID | What it holds | Created | Key sealed to the root |
 |---|---|---|---|
+| `d6zak0o3` | The Sherpa's inbox: an append lane for agents outside the newsroom (the RiskMandate email agent) and the editor, one derived token per sender | 2026-10-24 | 2026-10-24 |
 
 #### Keys it holds
 
 | Vault ID | Kind of key | From | Since |
 |---|---|---|---|
 | `58526ytp` | vault key | the editor | 2026-10-23 |
+| `d6zak0o3` | vault key | made it | 2026-10-24 |
 
-Kept by the agent itself. The Sherpa has made no vaults; it holds one key, given by the editor to read the feedback that arrives in the collaborators vault. Its own key pair (pki.sgit.ai, sha256:2de83f17e539954f) lives only as long as its session.
+Kept by the agent itself. The Sherpa's own key pair (pki.sgit.ai, sha256:2de83f17e539954f) lives only as long as its session.
 
 ### [synthetic@php.newsroom](../synthetic/index.html) 6 vaults made
 
@@ -185,4 +187,4 @@ What each vault is for, and the published read keys and write-only lanes, are on
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html
+site v0.14.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html

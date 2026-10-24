@@ -1499,8 +1499,8 @@
   },
   {
    "id": "198",
-   "title": "Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed",
-   "status": "open",
+   "title": "Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed (active 24 October: every two hours 07:45 to 21:45 London)",
+   "status": "done",
    "owner": "sherpa"
   },
   {
@@ -1888,6 +1888,12 @@
    "status": "open",
    "owner": "librarian",
    "note": "The gate warns that no member owns them. story-site does not edit policy files."
+  },
+  {
+   "id": "254",
+   "title": "Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, tokens derived, handed sealed), send_to_lane.py, drained on the Sherpa's schedule; next: the RiskMandate agent's own inbox for the other direction",
+   "status": "done",
+   "owner": "sherpa"
   }
  ],
  "evidence_vault": {

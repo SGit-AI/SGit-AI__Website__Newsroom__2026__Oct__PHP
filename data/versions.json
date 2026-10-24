@@ -1,6 +1,15 @@
 {
- "current": "0.14.1",
+ "current": "0.14.2",
  "versions": [
+  {
+   "version": "0.14.2",
+   "date": "2026-10-24",
+   "title": "The Sherpa: its schedule active (its lanes drained every two hours, 07:45 to 21:45 London, the full pass at 11:45 and 17:45), and an inbox for agents outside the newsroom: an append lane (d6zak0o3) where the RiskMandate email agent and the editor send messages and materials, with the tool to send to it",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.1",
    "date": "2026-10-24",

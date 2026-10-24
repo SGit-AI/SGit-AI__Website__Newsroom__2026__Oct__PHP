@@ -316,7 +316,9 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Feedback from collaborators, a section of its own (`/feedback/`, under Yours): every piece of feedback kept whole, in a viewer with a menu of all of them on the left, the document as received in the middle and the Sherpa's comments beside each part of it on the right; readers can select text to highlight it and add a note (kept in their browser only, exportable as JSON; `assets/sherpa/viewer.js`). A report imported whole is `admin/sherpa/documents/.json` in blocks the comments anchor to (UF-003, with its seven screenshots, metadata stripped). `/feedback/briefs/`: the brief to the conductor from every open friction, by owner and severity, and requirements for other teams (`admin/sherpa/briefs.json`: pki.sgit.ai). Counts in `admin/sherpa/collab-stats.json`. The signed messages drained from the collaborators vault are counted, not published, until the editor confirms they may be.
 
-- The Sherpa drains the collaborators lane (`collaborators_drain.py` against its own clone of 58526ytp, then pushes the vault); first drain 24 October: five messages, one power user's key enrolled as `power-user-1`, the `editor` bootstrap invitation retired (its code had appeared in drained rows). A schedule twice a day is proposed (`data/schedule/sherpa.json`), not active.
+- The Sherpa drains the collaborators lane (`collaborators_drain.py` against its own clone of 58526ytp, then pushes the vault); first drain 24 October: five messages, one power user's key enrolled as `power-user-1`, the `editor` bootstrap invitation retired (its code had appeared in drained rows). Its schedule is active (`data/schedule/sherpa.json`).
+
+- The Sherpa's inbox (`admin/sherpa/inbox/`): vault d6zak0o3 with an append lane on the postmaster convention, senders `riskmandate` and `editor` (tokens derived, handed sealed), recipient sha256:3b964d5e3abf03c0; `admin/sherpa/send_to_lane.py` sends a MIME message with attachments to any such lane; tested end to end on 24 October (sent, drained by conductor_drain.py, an .eml with its attachment). The Sherpa's schedule is active: every two hours 07:45 to 21:45 London, the full pass at 11:45 and 17:45.
 
 - Not built: the Sherpa's line on the front page and the "Where next" block (proposed); the trail additions (proposed, for dev and the editor's go); a key enrolled on pki.sgit.ai.
 
@@ -430,4 +432,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.14.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

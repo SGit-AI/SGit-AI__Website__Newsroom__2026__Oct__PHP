@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 253 items, 173 open, 75 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 254 items, 172 open, 77 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -207,7 +207,7 @@ The work, as rows in `data/admin.json`: 253 items, 173 open, 75 done. An item is
 | 195 | Sherpa: track the fact-check desk's analysis of Fortune's '70% of the internet' article (UF-005.1) to a story | open | sherpa |  |
 | 196 | Sherpa: a way for the editor to identify himself when he cannot sign in (a key he can present), with dev and security; later, at the editor's word | open | sherpa |  |
 | 197 | Sherpa: three views over time, step 1 (the executive view and its slices as data); the guidance on reuse; the knowledge-gap view | open | sherpa |  |
-| 198 | Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed | open | sherpa |  |
+| 198 | Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed (active 24 October: every two hours 07:45 to 21:45 London) | done | sherpa |  |
 | 199 | The fractal graph: one graph from the fifteen stakeholders through risks, story arcs, claims and sources to the flaws, the fix, files, functions and the 359 changed hunks of php-src, at /fractal/ and /fractal/ui/Renumbered from 090 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | done | librarian |  |
 | 200 | Join the other engine files to a named part of the fix: 144 of 359 changed hunks reach the fix only as 'the commit touched this area'Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 091 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open | ontologist |  |
 | 201 | Add the PHP 7.4 backport's hunks to the fractal graph as their own layer (the lines the backport wrote; never the vulnerable code before it)Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 092 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open | ontologist |  |
@@ -263,9 +263,10 @@ The work, as rows in `data/admin.json`: 253 items, 173 open, 75 done. An item is
 | 251 | /signals/: the ladder chart draws 1.57 million against 2.6 million on one scale; they are counts of different populations (K-004). Redraw against Censys's 1.58 million versioned hosts, or as two chartsFrom the editor's session, 24 October (desk@php.newsroom). | open | claude-story-site |  |
 | 252 | The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as homes by persona, the menu by task with two dials (who you are; Focus, Standard, Everything), the wide layout, and every admin page in the team console (D)The editor, 24 October, in story-site's session: "I think you implement all of them." Covers most of 139 to 142 (rows of dev, the briefing writer and the editor, left for their owners to close): the dials are remembered in the browser, not yet in the reader's vault; pattern C is on the agencies page only. Brief: admin/content/briefs/2026-10-24__brief__the-redesign-live.md. | done | claude-story-site | 0.14.0 |
 | 253 | Policies: the pages ops/** and analysis/** (story-site's, from row 252) have no owner in scope.pagesThe gate warns that no member owns them. story-site does not edit policy files. | open | librarian |  |
+| 254 | Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, tokens derived, handed sealed), send_to_lane.py, drained on the Sherpa's schedule; next: the RiskMandate agent's own inbox for the other direction | done | sherpa |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.14.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

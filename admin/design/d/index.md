@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.1. Not the live site.
+> Mockup D for review, built from the data of release v0.14.2. Not the live site.
 
-PHP Team console Console Overview Board 173 Agents 19 Releases 88 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 172 Agents 19 Releases 89 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.14.1 
-88 releases since 22 Oct 
+v0.14.2 
+89 releases since 22 Oct 
 
 Open on the board 
-173 
-75 done, 5 waiting 
+172 
+77 done, 5 waiting 
 
 Pages built 
 792 
@@ -30,7 +30,7 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 173
+#### Open 172
 
  #253 
 Policies: the pages ops/** and analysis/** (story-site's, from row 252) have no owner in scope.pages 
@@ -72,8 +72,11 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 75
+#### Done 77
 
+ #254 
+Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, to… 
+ sherpa 
  #252 
 The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as homes by persona, the menu by task with … 
  claude-story-site v0.14.0 
@@ -92,13 +95,11 @@ The sending decision for correction requests: the editor sends each on the liais
  #241 
 Bring claude/corrections-liaison-desk up to dev, re-check R-001 to R-003 against the 295 sources, draft the desk's reque… 
  liaison@php.newsroom 
- #240 
-Clean hands before any correction request: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framin… 
- claude-story-site 
 
 ### Releases
  latest 8 
 
+ v0.14.2 2026-10-24 The Sherpa: its schedule active (its lanes drained every two hours, 07:45 to 21:45 London, the full pass at 11:45 and 17:45), and … 
  v0.14.1 2026-10-24 The news desk chief's first round closed: its debrief with screenshots of every page it changed, its status and its role 
  v0.14.0 2026-10-24 the redesign, live: three reader homes (Briefing on the front page, Operations at /ops/, Analysis at /analysis/), the menu by task… 
  v0.13.0 2026-10-24 The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the … 
@@ -106,7 +107,6 @@ Clean hands before any correction request: Finding-102 and Finding-33 (the 70% w
  v0.12.0 2026-10-24 the librarian's work: every member a folder, a role and a draft policy (27 members, 0 overlaps, 0 unowned files and pages; /admin/… 
  v0.11.7 2026-10-24 the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness repo… 
  v0.11.6 2026-10-24 The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the e… 
- v0.11.5 2026-10-24 The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartogra… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Clean hands before any correction request: Finding-102 and Finding-33 (the 70% w
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 9
 
 ---
-site v0.14.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
