@@ -2,7 +2,7 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-Roughly, if you count websites, not servers or the internet. Cloudflare and OpenAI say PHP is used by almost 70% of websites; Wiz's '70% of the Internet' is the same figure restated and is not supported by anything the site has captured. Counts of internet-facing PHP hosts are in the low millions (2.6 million, of which Censys counted 1.57 million unpatched on 21 October).
+Roughly, if you count websites, not the Internet. About 69% of the websites whose server-side language can be identified run PHP, and the share is falling; on every site the HTTP Archive crawls, PHP is detected on about half (the fact-check desk's investigation). Wiz's '70% of the Internet' is that website figure restated: nobody measures a share of 'the Internet'. Internet-facing PHP hosts number in the low millions: VulnCheck counts about 2.6 million, and Censys counted 1.57 million unpatched on 21 October among the 1.58 million whose version it could read.
 
 Question · kept by the librarian · `librarian@php.newsroom`
 
@@ -12,7 +12,7 @@ How it was asked: The Times' headline: 'software behind most websites'.
 
 ## The short answer
 
-Roughly, if you count websites, not servers or the internet. Cloudflare and OpenAI say PHP is used by almost 70% of websites; Wiz's '70% of the Internet' is the same figure restated and is not supported by anything the site has captured. Counts of internet-facing PHP hosts are in the low millions (2.6 million, of which Censys counted 1.57 million unpatched on 21 October).
+Roughly, if you count websites, not the Internet. About 69% of the websites whose server-side language can be identified run PHP, and the share is falling; on every site the HTTP Archive crawls, PHP is detected on about half (the fact-check desk's investigation). Wiz's '70% of the Internet' is that website figure restated: nobody measures a share of 'the Internet'. Internet-facing PHP hosts number in the low millions: VulnCheck counts about 2.6 million, and Censys counted 1.57 million unpatched on 21 October among the 1.58 million whose version it could read.
 
 To paste back where it was asked: the paragraph above and `https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.html`
 
@@ -30,9 +30,10 @@ To paste back where it was asked: the paragraph above and `https://php.oct.2026.
 - [The numbers: 70%, 30 million, 2.6 million, 6,000, 674](../../numbers/index.html)
 - [Every claim, with its status and sources](../../claims/index.html#scale-70pc-internet)
 - [Affected systems: versions, deployments, applications, inventory](../../affected/index.html)
+- [factcheck/investigations/php-share/index.html](../../factcheck/investigations/php-share/index.html)
 
 Next question: [Has anyone actually been hacked?](../been-hacked/index.html) · [every question](../index.html). Nothing here is advice for your environment; the [php.net advisory](https://www.php.net/archive/2026.php#2026-10-21-5) and your national agency are the authorities.
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.html

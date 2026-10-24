@@ -242,14 +242,74 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 
 | Field | Value |
 |---|---|
-| Round | {"n": 4, "date": "2026-10-24", "branch": "claude/sweet-wright-1e5iju", "commits": ["the merge of dev at v0.11.2, and the release"]} |
-| Done | Took in dev at v0.10.18 (63 commits): five source conflicts, each resolved keeping both sides; the librarian's board rows renumbered 090-102 to 199-211 Redid the map against dev and the conductor's /team/status/: 27 members (removed design and ontologist, which the record shows are story-site and the cartographer; added sherpa, grc, abp, pulse; the curator sessions are the newsroom lead's); every policy.json now kept by abp@ (board 157); every agent may release its own in-scope work (the rule of 23 October) Assigned the 104 source files and 147 pages that arrived since v0.5.5 from the commit record and data/layers.json: 0 overlaps, 0 unowned files, 0 unowned pages The gate's check 4h now fails on an overlap and only warns on an unowned file or page, so no agent's release is blocked by a file its policy does not list yet Corrected two reader answers against the current claims: 'Has anyone been hacked' (the as-of time; the vendors' reports, and that other reports of them say attempts) and 'fix or wait' (the incomplete-fix report is unverified, not unanswered); the password answer says 'named' and 'as of the latest check' Opened board 212 to 217 for the fact-check desk, the story site, the conductor, the editor (twice) and abp@ Took in dev at v0.11.2 (three conflicts, both sides kept; the librarian's rows renumbered 172-190 to 199-217) and mapped the 34 files and pages that arrived since the morning: schedule cards and runs are each agent's, messages the conductor's with every agent appending, pulse's export and section pulse@'s; 0 overlaps, 0 unowned The daily pass on a schedule: card data/schedule/librarian.json active at 07:13 London, and the scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 waking this session, both at the editor's go Released the branch to dev with release.sh at the editor's go, including the changes still waiting on security's review (board 206) Took in dev at v0.11.5: the cartographer is now the ontologist at the editor's word; the member renamed in the map (its old card and runs kept as its history), its board rows re-owned; the librarian's rows renumbered once more, 191-216 to 199-217 |
-| Next | The first scheduled pass, 07:13 London on 24 October: follow the card When abp@ is unblocked, hand over the 27 drafted policies and keep the scope map in step with what it agrees Check the three branch members' real files (desk, liaison, storyboards) against their drafts when they reach dev; the ontologist (once the cartographer) is on dev and mapped The Times capture (board 014) and new reader questions |
-| Asks | Agree or correct the 27 policies, through abp@ (from the editor) Say what pulse@newsroom does (from the editor) Review gate check 4h, the CLAUDE.md sections and the Stop hook, now on dev by the editor's go before your review (board 206) (from security@php.newsroom) |
+| Round | {"n": 5, "date": "2026-10-24", "kind": "the first scheduled pass, 07:13 London", "branch": "claude/sweet-wright-1e5iju", "commits": ["this round's release"]} |
+| Done | The daily pass on a schedule: card data/schedule/librarian.json active at 07:13 London, and the scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 waking this session, both at the editor's go Released the branch to dev with release.sh at the editor's go, including the changes still waiting on security's review (board 206) Took in dev at v0.11.5: the cartographer is now the ontologist at the editor's word; the member renamed in the map (its old card and runs kept as its history), its board rows re-owned; the librarian's rows renumbered once more, 191-216 to 199-217 First scheduled pass (07:13 London): dev taken in at v0.14.6 cleanly; the inbox read (two messages, both already acted on) Map: 0 overlaps; one unowned file (data/desk.json, the journalist's) and two unowned pages (/analysis/, /ops/, the story site's redesign) sent to abp@ as a board row, because the wake prompt allows only the librarian's own files Checked the members that arrived from branches against their drafts: the desk and the liaison stayed in scope (apart from the release's own VERSION files, which the scope check now ignores); the journalist's full pass wrote 34 files of six other members, raised to the editor Reader answers re-checked against the claims: 'Is PHP really most websites?' now says 'whose server-side language can be identified', separates VulnCheck's and Censys's counts, and links the fact-check desk's investigation; the journalist's own update of 'Has anyone been hacked?' (v0.14.3) kept: its sources exist and it is newer |
+| Next | The next scheduled pass, 07:13 London on 25 October When abp@ or the editor answers 256 to 258, apply what they decide to the map The Times capture (board 014) and new reader questions |
+| Asks | Say which holds when the librarian's card and its wake prompt disagree (board 258) (from the editor) The journalist's full pass across six desks' files: widen its policy, or route it through the owners (board 257) (from the editor) Owners for data/desk.json, /analysis/ and /ops/ in the policy drafts (board 256) (from abp@newsroom.sgit) Review gate check 4h, the CLAUDE.md sections and the Stop hook (board 206) (from security@php.newsroom) Say what pulse@newsroom does beyond its vault and section (from the editor) |
 | Tokens | unknown · not readable from inside a Claude Code session; the session's usage is on the platform, not in the container |
-| Policy | out_of_scope_requests 2, pushbacks 0, overrides 2, writes_outside_scope 82, injection_seen 0, detail One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098). Round 2: one more request outside scope, the editor's, explicit: CLAUDE.md (security's) gained the handover section; counted as an override; 1 file outside scope. Round 3: no new out-of-scope request. The pass rewrote the drafted folders of 26 other members again (the editor's override of 22 October, which asked the librarian to map every member) and edited validate.py's check 4h, which was the librarian's own addition, still for security's review. The check on 24 October, after the merge was committed, counts 82 files outside scope across the branch against dev: 76 are the drafted ROLE.md, policy.json and status.json files of 26 other members (the editor's override of 22 October); CLAUDE.md and .claude/settings.json (the editor's overrides); admin/build/validate.py (the librarian's own addition, for security's review); data/arcs.json and assets/review-nav.js (the cartographer's now) and assets/site.css (the story site's now), from the fractal round. |
+| Policy | out_of_scope_requests 2, pushbacks 0, overrides 2, writes_outside_scope 0, injection_seen 0, detail One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098). Round 2: one more request outside scope, the editor's, explicit: CLAUDE.md (security's) gained the handover section; counted as an override; 1 file outside scope. Round 3: no new out-of-scope request. The pass rewrote the drafted folders of 26 other members again (the editor's override of 22 October, which asked the librarian to map every member) and edited validate.py's check 4h, which was the librarian's own addition, still for security's review. The check on 24 October, after the merge was committed, counts 82 files outside scope across the branch against dev: 76 are the drafted ROLE.md, policy.json and status.json files of 26 other members (the editor's override of 22 October); CLAUDE.md and .claude/settings.json (the editor's overrides); admin/build/validate.py (the librarian's own addition, for security's review); data/arcs.json and assets/review-nav.js (the cartographer's now) and assets/site.css (the story site's now), from the fractal round. Round 5 (the first scheduled pass): no request; the pass first edited two members' policy.json and ROLE.md to map new files, saw that the wake prompt forbids it, reverted them and opened a board row for abp@; 0 files outside scope at the end. Seen: the journalist wrote data/questions.json (the librarian's) in v0.14.3; kept, because it is correct and newer, and raised with the rest of its full pass (board 257). |
 
 ## Its rounds
+
+### The first scheduled pass: dev at v0.14.6 mapped, the journalist's full pass raised, one answer corrected
+
+2026-10-24 · round 5 · branch `claude/sweet-wright-1e5iju` · commits `this round's release` · tokens unknown · outside scope 0 · overrides 0
+
+#### What I was asked
+
+The scheduled wake at 07:13 London (trigger `trig_015dBN3kZZNti6c9BFE2xMj4`, the editor's go of 24 October): follow the
+
+card, `data/schedule/librarian.json`, and nothing else.
+
+#### What I did
+
+- **Took in dev at v0.14.6**, cleanly: the desk, the liaison's outreach, the redesign's reader homes, the fact-check desk's run 3 and first investigation, the Sherpa's schedule. Read the inbox: two messages from the conductor, both already acted on (the card exists; the schedule vault is retired).
+
+- **Mapped:** 0 overlaps; one unowned file, `data/desk.json` (the journalist's, by its layers row and the commit that added it), and two unowned pages, `/analysis/` and `/ops/` (the story site's redesign, v0.14.0). I first wrote them into the two members' policy drafts, then saw that my wake prompt allows only the librarian's own files, reverted both, and opened board 256 for abp@, who keeps the policies.
+
+- **Checked the members that came from branches against their drafts**, from the commits that carry their `Agent:` line: the desk (6 commits) and the liaison (1 commit) stayed inside their drafts, apart from `VERSION` and `data/versions.json`, which `release.sh` writes on every member's release; `agents.py check` now ignores those two. The journalist's full pass (19 commits) wrote 34 source files owned by six other members, including my `data/questions.json`; that is the editor's call (board 257).
+
+- **Reader answers:** "Is PHP really the software behind most websites?" now says "whose server-side language can be identified", gives VulnCheck's and Censys's counts separately (the framing the fact-check desk closed in run 3) and links the desk's investigation, attributed to it. The journalist's update of "Has anyone actually been hacked?" in v0.14.3 is newer than mine and every source it cites exists; it stays.
+
+- **Gate:** passes from a single build, so the journalist's fix of the first-build determinism fault (v0.14.3) holds, and the librarian's two-build workaround is no longer needed.
+
+#### What it looks like
+
+![The corrected short answer to "Is PHP really the software behind most websites?"](../../../admin/content/agents/librarian/debriefs/img/2026-10-24__morning-pass__1.png)
+
+The corrected short answer to "Is PHP really the software behind most websites?"
+
+![Every debrief, newest first: the desk, the fact-check desk and the Sherpa now close their rounds this way](../../../admin/content/agents/librarian/debriefs/img/2026-10-24__morning-pass__2.png)
+
+Every debrief, newest first: the desk, the fact-check desk and the Sherpa now close their rounds this way
+
+#### New features
+
+None for readers beyond the corrected answer. For the team: the scope check no longer counts the release's version
+
+files against the member that released.
+
+#### What I did not do
+
+- Give `data/desk.json`, `/analysis/` and `/ops/` an owner: the policies are abp@'s (board 256).
+
+- Decide the journalist's full pass (board 257), or change my own card where it contradicts its prompt (board 258).
+
+#### Policy
+
+0 files outside scope at the end of the round. The two policy edits made and reverted are named above.
+
+#### Tasks
+
+Opened 256 (abp@), 257 and 258 (the editor).
+
+#### Next
+
+The next scheduled pass, 07:13 London on 25 October; apply what abp@ and the editor decide on 256 to 258.
+
+#### Asks
+
+The editor: 257 and 258. abp@: 256. security@: board 206.
 
 ### The librarian's pass of 24 October: dev taken in, 27 members mapped, two answers corrected
 
@@ -561,4 +621,4 @@ Files: [admin/content/agents/librarian/](https://github.com/SGit-AI/SGit-AI__Web
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/librarian/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/librarian/index.html

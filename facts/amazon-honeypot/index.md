@@ -28,7 +28,7 @@ Amazon's own post (now cited first) carries all three parts and the quoted sente
 | [thehackernews-php2shell-4days](../../sources/thehackernews-php2shell-4days/index.html) | carries | *as the flaws come under broad exploitation in the wild following the release of the patches.* | c1cb63141287484c |
 | [securityweek-exploitation-days-before](../../sources/securityweek-exploitation-days-before/index.html) | partial | *The exploits being sprayed indiscriminately either don’t work at all, test for timing-based differences, or crash the target,* | ac663f2d9dbd0197 |
 
-Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Finding-122](../../factcheck/index.html#Finding-122), [Finding-14](../../factcheck/index.html#Finding-14), [Finding-60](../../factcheck/index.html#Finding-60).
+Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-12](../../factcheck/index.html#Evidence-12), [Finding-122](../../factcheck/index.html#Finding-122), [Finding-14](../../factcheck/index.html#Finding-14), [Finding-60](../../factcheck/index.html#Finding-60).
 
 Graded in Run-1, resting on captures up to 2026-10-22 11:17 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -63,4 +63,4 @@ v2 · site v0.2.0 · 22 October 2026 · reportedAn exploit attempt hit an Amazon
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/amazon-honeypot/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/amazon-honeypot/index.html

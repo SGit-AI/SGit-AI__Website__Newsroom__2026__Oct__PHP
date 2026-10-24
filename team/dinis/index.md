@@ -49,6 +49,8 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 203 | Agree each member's policy.json (25 drafts): read the scope, the mandate and the pushback table; set status agreed and agreed_by, or correctRenumbered from 094 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 | 215 | Say what pulse@newsroom does: no file, brief or role row in this repository records its scope; its folder (admin/content/agents/pulse/) waits for itRenumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 | 235 | Board 138 with the desk's review: A as the default front page and C as the model page; Focus capped at a few dozen pages for every reader; the dial's names in plain words; no view links to a page it hidesFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
+| 257 | The journalist's full pass (pass step 2, v0.12.1 and v0.14.3) wrote 34 files owned by six other members: the story site's claims, impact and story; the newsroom lead's evidence exports; the historian's history; the librarian's questions; the conductor's updates and team; the researcher's compromise and watch. Either widen the journalist's policy to the pass, or route the pass through each owner: the editor's call | open |  |
+| 258 | The librarian's card contradicts its own wake prompt: its 'Map' step gives new files an owner in the policy drafts, but the prompt allows only the librarian's own files (policies are abp@'s). Say which holds; until then the librarian follows the prompt and opens rows for abp@ | open |  |
 
 ## Waiting on someone else
 
@@ -87,4 +89,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

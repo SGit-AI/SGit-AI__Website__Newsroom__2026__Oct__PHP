@@ -14,9 +14,9 @@ The government's notice names only NCSC.nl; DigiD and MijnOverheid rest on the p
 
 ## Fact-check
 
-**A3** Echoed●●●○○○ status overstated · Event · verdict: **holds in part** · the status word overstates the evidence
+**A4** Corroborated●●●●○○ · Event · verdict: **holds**
 
-The cited primary (Rijksoverheid, 21 Oct 13:59) carries only NCSC.NL taken offline "uit voorzorg" and a general "no active misuse seen yet"; it does not name DigiD, MijnOverheid or Overheid.nl, and the second cited source is a blocked Cloudflare page. DigiD and MijnOverheid are carried by TPO and Insurance Business, Overheid.nl only by Reuters copy (one origin), so A3 for the claim as worded, and "of those services" is the site's own narrowing.
+Rewritten as the evidence carries it: the government's notice names only NCSC.nl, as a precaution (Finding-27 fixed), and the other services are attributed to the Dutch press, which the TPO capture carries (DigiD, MijnOverheid, the Tweede Kamer). The 'no signs of exploitation of those services' overreach is gone (Finding-28 fixed).
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -32,7 +32,7 @@ The cited primary (Rijksoverheid, 21 Oct 13:59) carries only NCSC.NL taken offli
 
 Open tickets: [Finding-27](../../factcheck/index.html#Finding-27), [Finding-28](../../factcheck/index.html#Finding-28), [Finding-84](../../factcheck/index.html#Finding-84).
 
-Graded in Run-1, resting on captures up to 2026-10-22 11:32 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-3, resting on captures up to 2026-10-22 11:32 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Rijksoverheid / NCSC-NL publishes [NCSC: Ernstige kwetsbaarheden in PHP | Rijksoverheid.nl](../../sources/rijksoverheid-ncsc-php-news/index.html)
@@ -65,4 +65,4 @@ v2 · site v0.12.1 · 24 October 2026 · reportedThe Dutch NCSCgovernment took i
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html

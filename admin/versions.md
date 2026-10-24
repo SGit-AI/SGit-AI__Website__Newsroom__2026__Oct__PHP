@@ -6,7 +6,95 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.14.1. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.14.12. The data is [data/versions.json](../data/versions.json).
+
+### v0.14.12 · 2026-10-24
+
+Conductor light check 09:15 London: curator missed-run note, status lines, run record
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.14.11 · 2026-10-24
+
+factcheck run 4 (scheduled, 08:52 London): no claim changed; CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 back to 5.4 (K-003); Siemens and PAN-OS now in the CVE and NVD records; KEV still lists neither CVE; every PHPocalypse site back; AWS's revised sentence still uncaptured
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.14.10 · 2026-10-24
+
+Conductor light check 08:15 London: researcher missed-run note, status line, run record
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.14.9 · 2026-10-24
+
+The Sherpa's first scheduled wake: both lanes drained (nothing waiting); the fact-check desk's analysis of Fortune's '70% of the internet' article linked from UF-005
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.14.8 · 2026-10-24
+
+the librarian's first scheduled pass (07:13 London): dev mapped at v0.14.6 (0 overlaps; data/desk.json, /analysis/ and /ops/ sent to abp@ for owners); the journalist's full pass across six desks raised to the editor; 'Is PHP really most websites?' corrected against the claims and the fact-check desk's investigation; the scope check ignores the release's own version files
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.14.7 · 2026-10-24
+
+Conductor full pass 24 October 07:15 London: agents-status rewritten from the sessions, tasks and branches; board 178 updated; run record
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.14.6 · 2026-10-24
+
+factcheck: Investigations, a new section, and the first: how much PHP there is and where '70%' comes from. PHP is on 69.3% of the websites whose server-side language W3Techs can identify (80.6% in 2015), about half of every site the HTTP Archive crawls, and WordPress alone on 39.6% of all sites; 127 statements of the share traced to Wiz's own post, a timeline, the lineage as a graph, 73 pages re-checked (none corrected; CNN reworded twice), Fortune analysed (UF-005.1); AWS quietly narrowed 'broadly exploited' to 'broad exploitation attempts' (Evidence-12, high)
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.14.5 · 2026-10-24
+
+The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents, with screenshots; and a friction on /team/vaults/
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.14.4 · 2026-10-24
+
+factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-compromise claim, the Dutch offline row, the front page's fix-complete line), K-004 and K-009 explained, so the correction requests to Wiz, the BBC and CNN no longer wait on the desk; Finding-32 stays open (Cloudflare does link W3Techs); the desk's schedule card, and the brief for its investigations
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.14.3 · 2026-10-24
+
+pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gate's first-build determinism failure fixed (design.py read items.json one build late, board 175)
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.14.2 · 2026-10-24
+
+The Sherpa: its schedule active (its lanes drained every two hours, 07:45 to 21:45 London, the full pass at 11:45 and 17:45), and an inbox for agents outside the newsroom: an append lane (d6zak0o3) where the RiskMandate email agent and the editor send messages and materials, with the tool to send to it
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.14.1 · 2026-10-24
 
@@ -714,4 +802,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.1. Not the live site.
+> Mockup D for review, built from the data of release v0.14.12. Not the live site.
 
-PHP Team console Console Overview Board 173 Agents 19 Releases 88 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 171 Agents 19 Releases 99 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.14.1 
-88 releases since 22 Oct 
+v0.14.12 
+99 releases since 22 Oct 
 
 Open on the board 
-173 
-75 done, 5 waiting 
+171 
+82 done, 5 waiting 
 
 Pages built 
-792 
+795 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,17 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 173
+#### Open 171
 
+ #258 
+The librarian's card contradicts its own wake prompt: its 'Map' step gives new files an owner in the policy drafts, but … 
+ editor 
+ #257 
+The journalist's full pass (pass step 2, v0.12.1 and v0.14.3) wrote 34 files owned by six other members: the story site'… 
+ editor 
+ #256 
+Ownership for the policy drafts, from the librarian's pass of 24 October: data/desk.json is the journalist's (its layers… 
+ abp 
  #253 
 Policies: the pages ops/** and analysis/** (story-site's, from row 252) have no owner in scope.pages 
  librarian 
@@ -43,15 +52,6 @@ Capture the PHP security team's reply on oss-security (2026/10/22/15) into the e
  collector-primary 
  #248 
 Capture the FT's coverage of php2shell; nothing can be asked of the FT until it is captured 
- collector-researchers 
- #247 
-Capture each publisher's published corrections route before a request goes: Wiz, AWS, WIRED, ISMG, The Hacker News, the … 
- collector-researchers 
- #244 
-Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs b… 
- factcheck 
- #242 
-Capture the CVSS '10.0' relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's '90%' as it stands and the UK mi… 
  collector-researchers 
 
 #### Waiting 5
@@ -72,8 +72,14 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 75
+#### Done 82
 
+ #255 
+Investigations: a section of the fact-check desk that chases one question down to its measurements; the first, how much … 
+ factcheck 
+ #254 
+Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, to… 
+ sherpa 
  #252 
 The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as homes by persona, the menu by task with … 
  claude-story-site v0.14.0 
@@ -86,32 +92,26 @@ Confirm which agent and address send the liaison's requests (the brief names the
  #245 
 Allow the mail agent to write to a publisher's published corrections address, for requests the editor approved one by on… 
  editor 
- #243 
-The sending decision for correction requests: the editor sends each on the liaison's draft (the desk's recommendation), … 
- editor 
- #241 
-Bring claude/corrections-liaison-desk up to dev, re-check R-001 to R-003 against the 295 sources, draft the desk's reque… 
- liaison@php.newsroom 
- #240 
-Clean hands before any correction request: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framin… 
- claude-story-site 
+ #244 
+Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs b… 
+ factcheck 
 
 ### Releases
  latest 8 
 
- v0.14.1 2026-10-24 The news desk chief's first round closed: its debrief with screenshots of every page it changed, its status and its role 
- v0.14.0 2026-10-24 the redesign, live: three reader homes (Briefing on the front page, Operations at /ops/, Analysis at /analysis/), the menu by task… 
- v0.13.0 2026-10-24 The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the … 
- v0.12.1 2026-10-24 pass step 2, first part: the compromise evidence and the claim behind 'no named victim' as of 23 October 16:04 UTC, four more offl… 
- v0.12.0 2026-10-24 the librarian's work: every member a folder, a role and a draft policy (27 members, 0 overlaps, 0 unowned files and pages; /admin/… 
- v0.11.7 2026-10-24 the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness repo… 
- v0.11.6 2026-10-24 The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the e… 
- v0.11.5 2026-10-24 The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartogra… 
+ v0.14.12 2026-10-24 Conductor light check 09:15 London: curator missed-run note, status lines, run record 
+ v0.14.11 2026-10-24 factcheck run 4 (scheduled, 08:52 London): no claim changed; CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 … 
+ v0.14.10 2026-10-24 Conductor light check 08:15 London: researcher missed-run note, status line, run record 
+ v0.14.9 2026-10-24 The Sherpa's first scheduled wake: both lanes drained (nothing waiting); the fact-check desk's analysis of Fortune's '70% of the i… 
+ v0.14.8 2026-10-24 the librarian's first scheduled pass (07:13 London): dev mapped at v0.14.6 (0 overlaps; data/desk.json, /analysis/ and /ops/ sent … 
+ v0.14.7 2026-10-24 Conductor full pass 24 October 07:15 London: agents-status rewritten from the sessions, tasks and branches; board 178 updated; run… 
+ v0.14.6 2026-10-24 factcheck: Investigations, a new section, and the first: how much PHP there is and where '70%' comes from. PHP is on 69.3% of the … 
+ v0.14.5 2026-10-24 The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the… 
 
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 19 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 21 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
  conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 19 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 15 
@@ -119,7 +119,7 @@ Clean hands before any correction request: Finding-102 and Finding-33 (the 70% w
  Government and CERT collector every national agency's advisory, in its own language, with the translation marked 4 
  Researcher, vendor and press collector Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press 13 
  librarian@php.newsroom the catalogue: the questions readers ask and the page that answers each; data/questions.json and /questions/; the list o 1 
- factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 9
+ factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.14.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.12 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

@@ -21,28 +21,31 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [cyber@php.newsroom](../cyber/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [News desk chief](../desk/index.html) | 2026-10-24 | [The news desk chief joins; the data put right; corrections drafted for the editor to send; the desk on a schedule](../desk/index.html#2026-10-24__first-round) | 3 | 3 | unknown | at the editor's direction: data/claims.json, plain.json, impact.json, questions.json, outreach.json, admin/build/build.py, admin/liaison/, team.json, layers.json, other members' board rows | 4 | 0 |
 | [dev@php.newsroom](../dev/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
-| [Fact-check desk](../factcheck/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Fact-check desk](../factcheck/index.html) | 2026-10-24 | [Run 3 (the desk chief's fixes checked) and the first investigation, how much PHP there is and where '70%' comes from](../factcheck/index.html#2026-10-24__run-3-and-the-first-investigation) | 4 | 3 | unknown | ['admin/build/build.py build_llms(): three lines for llms.txt'] | 0 | 0 |
 | [GRC desk](../grc/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Historian](../historian/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Journalist](../journalist/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Corrections liaison](../liaison/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
-| [librarian@php.newsroom](../librarian/index.html) | 2026-10-24 | [The librarian's pass of 24 October: dev taken in, 27 members mapped, two answers corrected](../librarian/index.html#2026-10-24__librarian-pass) | 4 | 3 | unknown | 82 | 2 | 0 |
+| [librarian@php.newsroom](../librarian/index.html) | 2026-10-24 | [The first scheduled pass: dev at v0.14.6 mapped, the journalist's full pass raised, one answer corrected](../librarian/index.html#2026-10-24__morning-pass) | 3 | 5 | unknown | 0 | 2 | 0 |
 | [Newsroom lead](../newsroom-lead/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Ontologist](../ontologist/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [pulse@newsroom](../pulse/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [researcher@php.newsroom](../researcher/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [security@php.newsroom](../security/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
-| [Sherpa](../sherpa/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Sherpa](../sherpa/index.html) | 2026-10-24 | [The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents](../sherpa/index.html#2026-10-24__drain-schedule-and-inbox) | 3 | 4 | unknown | 2 | 1 | 0 |
 | [Story site agent](../story-site/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [storyboard@php.newsroom](../storyboard/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [synthetic@php.newsroom](../synthetic/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 
 ## Every debrief, newest first
+- 2026-10-24 · [Sherpa: The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents](../sherpa/index.html#2026-10-24__drain-schedule-and-inbox)
+- 2026-10-24 · [librarian@php.newsroom: The first scheduled pass: dev at v0.14.6 mapped, the journalist's full pass raised, one answer corrected](../librarian/index.html#2026-10-24__morning-pass)
 - 2026-10-24 · [librarian@php.newsroom: The librarian's pass of 24 October: dev taken in, 27 members mapped, two answers corrected](../librarian/index.html#2026-10-24__librarian-pass)
+- 2026-10-24 · [Fact-check desk: Run 3 (the desk chief's fixes checked) and the first investigation, how much PHP there is and where '70%' comes from](../factcheck/index.html#2026-10-24__run-3-and-the-first-investigation)
 - 2026-10-24 · [News desk chief: The news desk chief joins; the data put right; corrections drafted for the editor to send; the desk on a schedule](../desk/index.html#2026-10-24__first-round)
 - 2026-10-22 · [librarian@php.newsroom: How every agent hands a vault key to the editor, in CLAUDE.md](../librarian/index.html#2026-10-22__vault-key-handover)
 - 2026-10-22 · [librarian@php.newsroom: Every member a folder, a policy and a round: 25 roles mapped, no overlaps, and the round system](../librarian/index.html#2026-10-22__agents-and-rounds)
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html

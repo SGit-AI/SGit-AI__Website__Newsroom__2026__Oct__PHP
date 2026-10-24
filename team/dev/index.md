@@ -48,7 +48,6 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 140 | Replace the menu with the top bar and the two dials; the view decides which entries exist; remembered in the browser and the reader's vaultFrom the brief on the redesign (23 October). | open |  |
 | 142 | Move the admin pages into the team console (layout D), with its own menu; out of the reader menu, still publicFrom the brief on the redesign (23 October). | open |  |
 | 153 | Show a rewritten line in diffs as removed then added, not word-diffed, when the two lines share little (diff_html): the state of affairs' delta interleaves rewritten paragraphs | open |  |
-| 175 | release.sh fails the gate's determinism check on the first try when a release changes a versioned page's text: the section ledger settles on the second buildSeen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Workaround used: restore VERSION and data/versions.json, keep the settled data/sections.json, run release.sh again. A fix belongs in build.py (render the ledger-reading pages after every ledger() call); release.sh and validate.py are unchanged. | open |  |
 | 207 | Accept or rework the librarian's edit inside build_llms() (one section listing the member pages), and carry the branch into devRenumbered from 098 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 | 232 | design.py: every number from data (the 6 countries, the 9 new, the 9 and 3), and one 'as of' for each statement across the front page, personas and mockupsFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
 | 234 | 'What changed' in the reader's path lists story changes only: no version tags, commit hashes or page furnitureFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
@@ -111,4 +110,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html

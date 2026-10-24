@@ -1555,6 +1555,11 @@ def build_llms():
         if p.startswith(('views/', 'updates/')):
             lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
     lines.append('')
+    lines.append("## The fact-check desk's investigations: one question chased down to its measurements (factcheck@php.newsroom)")
+    for p, t, d, _ in PAGES:
+        if p.startswith('factcheck/investigations/'):
+            lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
+    lines.append('')
     lines.append("## Elsewhere: Pulse, a separate section not about PHP (the SGit newsroom's vault 4klm5qlt), one page per vulnerability")
     for p, t, d, _ in PAGES:
         if p.startswith('pulse/'):
@@ -4194,10 +4199,227 @@ function f(){var k=0;rs.forEach(function(r){var s=+r.dataset.lv>=+m.value&&(o.ch
 {section("claims", "Every claim, graded", filt.split("<script>")[0] + grid + "<script>" + filt.split("<script>")[1], 'Pick how sure you need to be. "Only what I can be very sure of" shows claims at A5 or A6 that hold as worded, are not contested, are not opinions, and have no open finding of medium or high severity against them.')}
 {section("contradictions", "The contradiction ledger", "".join(ks) or "<p>None recorded yet.</p>", "Where the reporting disagrees. Each record keeps every statement, who made it and when, what each actually measures, and the desk's reading of why they differ. A contradiction is not resolved by picking a winner; it is explained, or it stays open.")}
 {tix}
+{section("investigations", "Investigations", '<p>Where a claim needs more than a grade, the desk chases the question down to its measurements: <a href="investigations/index.html">the investigations</a>, starting with how much PHP there is and where &#39;70%&#39; comes from.</p>')}
 {section("runs", "Runs", runs, "Each run is checked against a stated site version and vault commit, so its grades can be repeated by anyone with the vault's read key.")}
 {section("how", "How the desk works", '<p>The desk is <code>factcheck@php.newsroom</code>. Its role, the full model and the runbook a scheduled run follows are in <a href="' + REPO_URL + '/blob/dev/admin/factcheck/README.md">admin/factcheck/README.md</a>; its tickets are an <a href="https://issues-fs.sgit.ai/">Issues-FS</a> graph in <code>admin/factcheck/.issues/</code>, typed nodes and typed edges in plain JSON files; its grades are <a href="../data/factcheck.json">data/factcheck.json</a>. Mode one checks every claim against the evidence vault. Mode two goes outside for the weak and the contested, and records what it finds as a request to capture, never as a citation.</p>')}
 '''
     page('factcheck/index.html', 'Fact-check: how sure can you be of each claim', f'Every claim on the PHP flaws site graded independently by the fact-check desk on a spectrum of evidence from A0 to A6, with a filter for only what can be relied on, the contradiction ledger, and the open tickets.', body, kind='analysis', topics='php2shell fact-check assurance')
+    build_investigations()
+
+# The desk's investigations (the brief of 24 October 2026, admin/content/briefs/2026-10-24__brief__factcheck-investigations-how-much-php.md):
+# one question chased down to its measurements, every number with its measurer, population, method, date and hash.
+
+FCV_DEN = OrderedDict([('websites-known-language', 'Websites whose language is known'), ('websites-all', 'All websites'), ('internet', "'The Internet' or 'the web'"),
+                       ('servers-hosts', 'Servers or hosts'), ('applications', 'Web applications'), ('unspecified', 'No denominator given')])
+# The categorical palette, in fixed order, validated with the dataviz skill's checker against this site's surfaces
+# (light #ffffff: all checks pass, contrast relieved by labels and a table; dark #0f1115 and #16130f: all pass).
+FCV_LIGHT = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#6250d6']
+FCV_DARK = ['#3987e5', '#d95926', '#199e70', '#c98500', '#d55181', '#9085e9']
+
+def fcv_style():
+    """The charts' colour roles, inside an SVG so the markdown twin drops them with the charts."""
+    light = ''.join(f'--fcv-{i + 1}:{c};' for i, c in enumerate(FCV_LIGHT))
+    dark = ''.join(f'--fcv-{i + 1}:{c};' for i, c in enumerate(FCV_DARK))
+    css = (f'.fcv{{{light}}}@media (prefers-color-scheme: dark){{:root:not([data-theme]) .fcv{{{dark}}}}}'
+           f':root[data-theme="night"] .fcv,:root[data-theme="ember"] .fcv{{{dark}}}'
+           '.fcv{display:block;width:100%;height:auto;max-width:900px;font-family:var(--sans);overflow:visible}.fcv text{fill:var(--text);font-size:11px}.fcv .ax{fill:var(--dim)}'
+           '.fcv .gr{stroke:var(--line);stroke-width:1}.fcv .ref{stroke:var(--dim);stroke-width:1.5;stroke-dasharray:5 4}.fcv .ln{fill:none;stroke-width:2}'
+           '.fcv .dt{stroke:var(--bg);stroke-width:2}.fcv .org{stroke:var(--text);stroke-width:2}.fcv .hit{fill:transparent}.fcv .hit:hover+.dt,.fcv g:hover>.dt{stroke:var(--text)}'
+           + ''.join(f'.fcv .c{i + 1}{{fill:var(--fcv-{i + 1})}}.fcv .s{i + 1}{{stroke:var(--fcv-{i + 1})}}' for i in range(6)) +
+           '.fcv-key{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin:.3rem 0 .6rem;font-size:.85rem}.fcv-key span{display:inline-flex;align-items:center;gap:.35rem}'
+           '.fcv-key i{display:inline-block;width:.8rem;height:.8rem;border-radius:3px}' + ''.join(f'.fcv-key .k{i + 1}{{background:var(--fcv-{i + 1})}}' for i in range(6)))
+    return f'<svg class="fcv" width="0" height="0" aria-hidden="true" style="position:absolute"><style>{css}</style></svg>'
+
+def fcv_key(items):
+    return '<div class="fcv fcv-key" role="list">' + ''.join(f'<span role="listitem"><i class="k{n}"></i>{E(label)}</span>' for n, label in items) + '</div>'
+
+def fcv_day(d):
+    """Days since 2015-01-01 for a YYYY or YYYY-MM-DD date: the time axis of the shares chart, with no clock."""
+    m = re.match(r'^(\d{4})(?:-(\d{2})-(\d{2}))?', str(d))
+    y, mo, da = int(m.group(1)), int(m.group(2) or 7), int(m.group(3) or 1)
+    import datetime as _dt
+    return (_dt.date(y, mo, da) - _dt.date(2015, 1, 1)).days
+
+def fcv_shares_chart(series):
+    """Line chart, one axis in percent: each series is (n, name, points, note). A dashed line marks the 70% of the headlines."""
+    W, H, l, r, t, b = 760, 300, 40, 190, 14, 30
+    x0, x1 = 0, fcv_day('2026-12-31')
+    X = lambda d: l + (fcv_day(d) - x0) / (x1 - x0) * (W - l - r)
+    Y = lambda v: t + (100 - v) / 100 * (H - t - b)
+    g = ''.join(f'<line class="gr" x1="{l}" x2="{W - r}" y1="{Y(v):.1f}" y2="{Y(v):.1f}"/><text class="ax" x="{l - 6}" y="{Y(v) + 4:.1f}" text-anchor="end">{v}%</text>' for v in (0, 25, 50, 75, 100))
+    g += ''.join(f'<text class="ax" x="{X(f"{y}-01-01"):.1f}" y="{H - 10}" text-anchor="middle">{y}</text>' for y in range(2015, 2027, 2))
+    g += f'<line class="ref" x1="{l}" x2="{W - r}" y1="{Y(70):.1f}" y2="{Y(70):.1f}"/><text x="{l + 6}" y="{Y(70) - 6:.1f}">70%: the figure in the headlines</text>'
+    marks = ''
+    for n, name, pts, note in series:
+        pts = sorted(pts, key=lambda p: fcv_day(p['date']))
+        d = ' '.join(f'{"M" if i == 0 else "L"}{X(p["date"]):.1f},{Y(p["value"]):.1f}' for i, p in enumerate(pts))
+        marks += f'<path class="ln s{n}" d="{d}"/>'
+        for p in pts:
+            marks += f'<g><title>{E(name)}: {E(str(p["value"]))}% on {E(str(p["date"]))}</title><circle class="hit" cx="{X(p["date"]):.1f}" cy="{Y(p["value"]):.1f}" r="9"/><circle class="dt c{n}" cx="{X(p["date"]):.1f}" cy="{Y(p["value"]):.1f}" r="4"/></g>'
+        last = pts[-1]
+        marks += f'<text x="{X(last["date"]) + 8:.1f}" y="{Y(last["value"]) + 4:.1f}">{E(str(last["value"]))}% {E(note)}</text>'
+    return f'<svg class="fcv" viewBox="0 0 {W} {H}" role="img" aria-label="PHP\'s share of websites over time, by measurer">{g}{marks}</svg>'
+
+def fcv_bars(rows, unit_fmt, n=1, aria=''):
+    """Horizontal bars on one axis: rows are (label, value, note) or (label, value, note, colour slot). Every bar carries its value and its label."""
+    W, l, rh = 760, 250, 26
+    mx = max(r[1] for r in rows) or 1
+    H = rh * len(rows) + 8
+    out = ''
+    for i, row in enumerate(rows):
+        label, v, note = row[:3]
+        c = row[3] if len(row) > 3 else n
+        y = 4 + i * rh
+        w = max(2, v / mx * (W - l - 200))
+        out += (f'<g><title>{E(label)}: {E(unit_fmt(v))}{(", " + E(note)) if note else ""}</title><text x="{l - 8}" y="{y + 15}" text-anchor="end">{E(label)}</text>'
+                f'<rect class="c{c}" x="{l}" y="{y + 4}" width="{w:.1f}" height="14" rx="4"/><text x="{l + w + 6:.1f}" y="{y + 15}">{E(unit_fmt(v))}{(" " + E(note)) if note else ""}</text></g>')
+    return f'<svg class="fcv" viewBox="0 0 {W} {H}" role="img" aria-label="{E(aria)}">{out}</svg>'
+
+def fcv_iso(s):
+    m = re.match(r'^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})', s or '')
+    return m and (int(m.group(3)) - 21) * 24 + int(m.group(4)) + int(m.group(5)) / 60  # hours since 21 October 00:00 UTC
+
+def fcv_timeline(L):
+    """Every statement of the share as a dot: the row is its wording family, the colour what it claims to measure, a ringed dot the family's origin."""
+    fams = L['families']
+    st = {s['id']: s for s in L['statements']}
+    den_n = {k: i + 1 for i, k in enumerate(FCV_DEN)}
+    h0, h1 = 0, 60
+    in_win = lambda s: fcv_iso(s.get('time_utc')) is not None and h0 <= fcv_iso(s['time_utc']) <= h1
+    order = sorted(fams, key=lambda f: min([fcv_iso(st[m]['time_utc']) for m in f['members'] if in_win(st[m])] or [99]))
+    W, l, r, rh, top = 760, 300, 20, 24, 8
+    H = top + rh * len(order) + 34
+    X = lambda h: l + (h - h0) / (h1 - h0) * (W - l - r)
+    g = ''
+    for h in range(0, 61, 12):
+        g += f'<line class="gr" x1="{X(h):.1f}" x2="{X(h):.1f}" y1="{top}" y2="{H - 26}"/><text class="ax" x="{X(h):.1f}" y="{H - 10}" text-anchor="middle">{21 + h // 24} Oct {h % 24:02d}:00</text>'
+    wiz = fcv_iso('2026-10-21T13:32Z')
+    g += f'<line class="ref" x1="{X(wiz):.1f}" x2="{X(wiz):.1f}" y1="{top}" y2="{H - 26}"/>'
+    out, outside = '', 0
+    for i, f in enumerate(order):
+        y = top + i * rh + rh / 2
+        g += f'<text x="{l - 8}" y="{y + 4:.1f}" text-anchor="end">{E(f["wording"][:40])}{"..." if len(f["wording"]) > 40 else ""} ({len(f["members"])})</text>'
+        for m in f['members']:
+            s = st[m]
+            if not in_win(s):
+                outside += 1; continue
+            n = den_n.get(s['denominator_class'], 6)
+            org = ' org' if m == f.get('origin') else ''
+            out += (f'<g><title>{E(s["id"])} {E(s["publisher"])}, {E(s["time_utc"])} ({E(s.get("time_basis", ""))}): {E(s["excerpt"][:160])}</title>'
+                    f'<a href="#{E(s["id"])}"><circle class="hit" cx="{X(fcv_iso(s["time_utc"])):.1f}" cy="{y:.1f}" r="9"/><circle class="dt c{n}{org}" cx="{X(fcv_iso(s["time_utc"])):.1f}" cy="{y:.1f}" r="{6 if org else 4.5}"/></a></g>')
+    svg = f'<svg class="fcv" viewBox="0 0 {W} {H}" role="img" aria-label="Every statement of PHP\'s share, by time and wording family">{g}{out}</svg>'
+    return svg, outside
+
+def fcv_lineage_graph(L, path):
+    """The lineage as a graph for <sg-graph>: statements, the families they belong to, what they restate or reword, and the measurement they credit."""
+    verbs = {'belongs_to': {'label': 'belongs to', 'inverse': 'groups', 'origin': 'factcheck'}, 'restates': {'label': 'restates', 'inverse': 'restated by', 'origin': 'factcheck'},
+             'rewords': {'label': 'rewords', 'inverse': 'reworded as', 'origin': 'factcheck'}, 'credits': {'label': 'credits', 'inverse': 'credited by', 'origin': 'factcheck'}}
+    kinds = {'measure': {'label': 'Measurement', 'plural': 'measurements'}, 'family': {'label': 'Wording family', 'plural': 'wording families'}, 'statement': {'label': 'Statement', 'plural': 'statements'}}
+    here = 'factcheck/investigations/php-share/index.html'
+    nodes = [{'id': 'measure:w3techs', 'kind': 'measure', 'label': 'W3Techs: PHP on 69.3% of websites whose server-side language is known', 'href': here + '#measures'}]
+    nodes += [{'id': 'family:' + f['id'], 'kind': 'family', 'label': f['wording'], 'href': here + '#families'} for f in L['families']]
+    edges = []
+    for s in L['statements']:
+        nodes.append({'id': 'statement:' + s['id'], 'kind': 'statement', 'label': f'{s["publisher"]}: {s["excerpt"][:70]}', 'href': here + '#' + s['id'], 'class': s['denominator_class']})
+        edges.append({'from': 'statement:' + s['id'], 'verb': 'belongs_to', 'to': 'family:' + s['family']})
+        if s.get('restates'):
+            edges.append({'from': 'statement:' + s['id'], 'verb': 'rewords' if s['role'] == 'transforms' else 'restates', 'to': 'statement:' + s['restates']})
+        if s.get('links_to_measurement') and 'w3techs' in s['links_to_measurement'].lower():
+            edges.append({'from': 'statement:' + s['id'], 'verb': 'credits', 'to': 'measure:w3techs'})
+    data = {'title': 'Where 70% comes from', 'note': 'Statements of PHP\'s share of the web in the evidence vault, by the fact-check desk.', 'ontology': {'kinds': kinds, 'verbs': verbs}, 'nodes': nodes, 'edges': edges}
+    origins = ''.join(f'<li><a href="#{E(f["origin"])}">{E(f["wording"])}</a>: {len(f["members"])} statements</li>' for f in L['families'])
+    return sg_graph(path, data=data, focus='statement:S-008', depth=2, fallback=f'<p class="small">The graph needs JavaScript. The same lineage, by family:</p><ul>{origins}</ul>')
+
+def build_investigations():
+    invs = FC.get('investigations', []) if FC else []
+    if not invs:
+        return
+    rows = ''.join(f'<article class="role"><h3><a href="{E(i["id"])}/index.html">{E(i["title"])}</a> <span class="st st-{"reported" if i["status"] == "open" else "confirmed"}">{E(i["status"])}</span></h3><p><i>{E(i["question"])}</i></p><p>{E(i["answer"])}</p><p class="small">Opened {E(i["opened"])}, as of {E(i["as_of"])}; {len(i.get("measures", {}).get("measures", []))} measures, {len(i.get("lineage", {}).get("statements", []))} statements traced.</p></article>' for i in invs)
+    body = f'''
+<h1>Investigations: one question, chased down to its measurements</h1>
+<p class="lead">The claims ledger grades sentences. An investigation takes one question and chases it down: every number on it, who measured it, how, over what, as of when, and the bytes it was read from; then every place the number was repeated, how its wording changed on the way, and whether anyone corrected it. Run by the <a href="../index.html">fact-check desk</a>.</p>
+{rows}
+<p class="small">The data behind each investigation is in <code>admin/factcheck/investigations/</code> and in <a href="../../data/factcheck.json">data/factcheck.json</a>. Pages the desk fetched from outside the evidence vault are shown with their address, time and sha256, and are labelled as the desk's own fetches: they are not evidence of the story until a collector captures them.</p>
+'''
+    page('factcheck/investigations/index.html', 'Investigations: one question, chased down', 'The fact-check desk\'s investigations: a question chased down to every measurement, its provenance, every restatement and every correction.', body, kind='analysis', topics='php2shell fact-check investigation provenance')
+    for i in invs:
+        build_investigation_php_share(i)
+
+def build_investigation_php_share(inv):
+    path = f'factcheck/investigations/{inv["id"]}/index.html'
+    M = {m['id']: m for m in inv['measures']['measures']}
+    L, Lv = inv['lineage'], inv['live']
+    lv = lambda n: FCL[n]
+    verd = ''.join(f'<li><span class="as as-{v["level"]}"><b>{E(lv(v["level"])["code"])}</b> {E(lv(v["level"])["name"])}<i aria-hidden="true">{"&#9679;" * v["level"] + "&#9675;" * (6 - v["level"])}</i></span> <b><q>{E(v["wording"])}</q></b> &middot; {E(FC_KIND_WORD.get(v["kind"], v["kind"]))} &middot; {E(v["verdict"].replace("-", " "))}<div class="note">{E(v["basis"])}</div></li>' for v in inv['verdicts'])
+    finds = ''.join(f'<li>{E(f)}</li>' for f in inv['findings'])
+    shares = fcv_shares_chart([(1, 'W3Techs: websites whose server-side language is known', M['w3techs-php-share-known']['history'], 'W3Techs (known language)'),
+                               (2, 'HTTP Archive: all crawled origins, mobile (the desk\'s ratio)', M['httparchive-php-share-mobile']['history'], 'HTTP Archive (all sites)'),
+                               (3, 'W3Techs: WordPress on all websites', M['w3techs-wordpress-share-all']['history'], 'WordPress (all sites)')])
+    hist_rows = []
+    for mid, name in (('w3techs-php-share-known', 'W3Techs, PHP, known-language sites'), ('httparchive-php-share-mobile', 'HTTP Archive, PHP, all origins (mobile)'), ('w3techs-wordpress-share-all', 'W3Techs, WordPress, all sites')):
+        for p in M[mid]['history']:
+            hist_rows.append([E(name), E(str(p['date'])), E(str(p['value'])) + '%'])
+    hosts = [m for m in inv['measures']['measures'] if m['family'] == 'hosts' and m['unit'] == 'count' and m['id'] != 'censys-php-web-properties']
+    hosts.sort(key=lambda m: m['value'])
+    hb = fcv_bars([(m['measurer'], m['value'], '') for m in hosts], lambda v: f'{v / 1e6:.2f} million', 1, 'Internet-facing hosts counted running PHP, by counter')
+    def src_cell(m):
+        s = m['source']
+        if s['kind'] == 'vault':
+            slug = s.get('vault_slug') or ''
+            link = f'<a href="../../../sources/{E(slug)}/index.html">{E(slug)}</a>' if slug in SOURCES else f'{E(slug)} <span class="small">(in the vault)</span>'
+            return f'{link}<div class="small">capture sha256 <code>{E(s["sha256"][:16])}</code></div>'
+        return f'<a href="{U(s["url"])}" rel="noopener">{E(re.sub(r"^https?://(www\.)?", "", s["url"])[:48])}</a><div class="small">fetched by the desk {E(s.get("retrieved_at", ""))}, sha256 <code>{E(s["sha256"][:16])}</code></div>'
+    fam_names = OrderedDict([('websites', 'Websites'), ('applications', 'Applications built on PHP'), ('versions', 'PHP versions'), ('hosts', 'Hosts and servers on the internet'), ('packages', 'Packages'), ('developers', 'Developers')])
+    def fmt(m):
+        v = m['value']
+        return (f'{v:g}%' if m['unit'] == '%' else f'{v:,.0f}')
+    mt = ''
+    for fk, fname in fam_names.items():
+        ms = [m for m in inv['measures']['measures'] if m['family'] == fk]
+        if ms:
+            mt += f'<h3>{E(fname)}</h3>' + table(['Measure', 'Value', 'Over what, and how', 'As of', 'Source'], [[f'<b>{E(m["measurer"])}</b><div class="small">{E(m["what"])}</div>', f'<b>{E(fmt(m))}</b>', f'{E(m["population"])}<div class="note">{E(m.get("notes", ""))}</div>', E(m['as_of']), src_cell(m) + f'<div><q>{E(m["source"]["excerpt"])}</q></div>'] for m in ms])
+    tl, outside = fcv_timeline(L)
+    from collections import Counter as _C
+    dc = _C(s['denominator_class'] for s in L['statements'])
+    den_n = {k: i + 1 for i, k in enumerate(FCV_DEN)}
+    db = fcv_bars([(FCV_DEN[k], dc.get(k, 0), '', den_n[k]) for k in FCV_DEN], lambda v: f'{v:.0f} statements', 1, 'Statements of the share, by what they say they measure')
+    key = fcv_key([(den_n[k], v) for k, v in FCV_DEN.items()])
+    famt = table(['Family', 'Statements', 'Measures', 'Origin'], [[f'<b>{E(f["wording"])}</b>', str(len(f['members'])), E(FCV_DEN.get(f.get('denominator_class'), f.get('denominator_class') or '')), f'<a href="#{E(f["origin"])}">{E(f["origin"])}</a>'] for f in L['families']])
+    def surl(s):
+        return f'<a href="{U(s["url"])}" rel="noopener">{E(s["publisher"])}</a>' if s.get('url') else E(s['publisher'])
+    strows = [[f'<span id="{E(s["id"])}">{E(s["id"])}</span>', E(s.get('time_utc') or s.get('published') or ''), surl(s) + (f' <a class="small" href="../../../sources/{E(s["slug"])}/index.html">capture</a>' if s['slug'] in SOURCES else ''),
+               f'<q>{E(s["excerpt"])}</q>' + (f'<div class="small">{E(s["translation"])}</div>' if s.get('translation') and s.get('language') != 'en' else ''),
+               E(FCV_DEN.get(s['denominator_class'], s['denominator_class'])) + (f'<div class="small">{E(s["qualifier"])}</div>' if s.get('qualifier') else ''),
+               E(s.get('attribution') or 'none') + ('<div class="small">links the measurement</div>' if s.get('links_to_measurement') else ''),
+               E(s['role']) + (f' <a href="#{E(s["restates"])}">{E(s["restates"])}</a>' if s.get('restates') else ''),
+               f'<code title="{E(s["file"])}">{E(s["sha256"][:12])}</code>'] for s in sorted(L['statements'], key=lambda s: (s.get('time_utc') or '9', s['id']))]
+    stt = table(['#', 'When (UTC)', 'Who', 'The words', 'Measures', 'Credits', 'Role', 'sha256'], strows)
+    def side(x):
+        x = x or {}
+        words = f'<q>{E(x["excerpt"])}</q>' if x.get('excerpt') else '<i>not there</i>'
+        return words + f'<div class="small">{E(str(x.get("when") or ""))}</div>'
+    ch = table(['Who', 'What changed', 'Before', 'After'], [[E(c['publisher']), E(c['kind']), side(c.get('before')), side(c.get('after'))] for c in Lv['changes']])
+    cnt = Lv['counts']['by_classification']
+    fo = L['fortune']
+    graph = fcv_lineage_graph(L, path)
+    lim = ''.join(f'<li>{E(x)}</li>' for x in inv['limits'])
+    body = f'''
+{fcv_style()}
+<h1>{E(inv["title"])}</h1>
+<p class="lead">{E(inv["question"])} An investigation by the <a href="../../index.html">fact-check desk</a>, opened {E(inv["opened"])} at the editor's request; as of {E(inv["as_of"])}.</p>
+{section("answer", "The short answer", f'<p><b>{E(inv["answer"])}</b></p>')}
+{section("verdicts", "The versions of the claim, graded", f'<ul class="fc-verdicts">{verd}</ul>', 'On the desk\'s spectrum of evidence, from A0 (nothing carries it) to A6 (the primary record carries it).')}
+{section("findings", "What the evidence shows", f'<ol>{finds}</ol>')}
+{section("measures", "How much PHP there is, by who measures it", f'<p>Each measurer counts something different, so the measures are kept apart and never added together. The share charts use one axis, in percent; the counts are in a separate chart.</p>{fcv_key([(1, "W3Techs: PHP, websites whose server-side language is known"), (2, "HTTP Archive: PHP, all crawled origins (mobile)"), (3, "W3Techs: WordPress, all websites")])}{shares}<details><summary>The points as a table</summary>{table(["Series", "Date", "Share"], hist_rows)}</details><h3>Hosts on the internet counted running PHP</h3>{hb}<p class="small">Censys&#39;s 54.9 million &#39;web properties&#39; counts names, not machines, and reaches the vault third-hand; it is in the table below, not the chart. Palo Alto&#39;s 22.6 million &#39;instances&#39; is not in Palo Alto&#39;s own advisory.</p>{mt}')}
+{section("timeline", "Every statement of the share, by time and wording", f'{key}{tl}<p class="small">Each dot is one statement in the evidence vault, placed at its publication time where the page gives one (otherwise its first capture; each statement says which). A ringed dot is the family&#39;s origin; the dashed line is Wiz&#39;s X post at 13:32 UTC on 21 October. {outside} statement{"s" if outside != 1 else ""} fall outside 21 to 23 October and are in the table. Hover a dot for its words; click it for its row.</p>')}
+{section("denominators", "What the statements say they measure", f'{db}{famt}')}
+{section("lineage", "The lineage, as a graph", f'<p>Start at Wiz&#39;s X post and walk: which statements belong to which wording, which restate or reword which, and which credit the measurement.</p>{graph}')}
+{section("fortune", "Fortune: 'could take down 70% of the internet'", f'<p>The editor asked for this one (UF-005.1, board 195). Fortune&#39;s article by {E(fo.get("author", ""))}, {E(fo.get("published", ""))}, as captured in the vault:</p><ul>' + ''.join(f'<li><b>{E(k.replace("_", " "))}:</b> {" ".join(f"<q>{E(str(x))}</q>" for x in (v if isinstance(v, list) else [v]))}</li>' for k, v in (fo["wording"].items() if isinstance(fo.get("wording"), dict) else [("words", str(fo.get("wording", "")))])) + f'</ul><p><b>What it credits.</b> {E(str(fo.get("attributes", "")))}</p><p><b>Against Wiz.</b> {E(str(fo.get("vs_wiz", "")))}</p><p><b>Against W3Techs.</b> {E(str(fo.get("vs_w3techs", "")))}</p><p><b>Between its own versions.</b> {E(str(fo.get("edit", "")))}</p><p class="small">Statements {", ".join(f"<a href=#{E(x)}>{E(x)}</a>" for x in fo.get("statements", []))}; graded above as <q>could take down 70% of the internet</q>.</p>')}
+{section("corrections", "Did anyone correct it?", f'<p>Every page in the vault that uses the figure, and every page the corrections liaison has written to, was fetched again on 24 October and compared with its capture: {cnt.get("unchanged", 0)} unchanged, {cnt.get("changed", 0)} reworded, {cnt.get("blocked", 0)} blocked, {cnt.get("unverifiable", 0)} could not be checked, and none corrected. Every change the desk found, the figure&#39;s and others on the same pages:</p>{ch}')}
+{section("statements", f"All {len(L['statements'])} statements", f'<details><summary>The full table</summary>{stt}</details>')}
+{section("limits", "What this does not show", f'<ul>{lim}</ul>')}
+'''
+    page(path, inv['title'], f'{inv["answer"][:240]}', body, kind='analysis', topics='php2shell 70% W3Techs PHP usage share provenance')
 
 # ----------------------------------------------------------------------------- the corrections liaison (liaison@php.newsroom)
 # Brief: admin/content/briefs/2026-10-22__brief__the-corrections-liaison.md; desk: admin/liaison/README.md.

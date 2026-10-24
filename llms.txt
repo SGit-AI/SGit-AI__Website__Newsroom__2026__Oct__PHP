@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.14.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.14.12. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -19,8 +19,8 @@ Site v0.14.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 ## Questions
 - [Questions readers ask](https://php.oct.2026.newsroom.sgit.ai/questions/index.md): Can anything be done or do we wait for updates? Has anyone been hacked? Is it really most websites? Short answers to paste back, the sources behind them, and the pages that carry each one.
 - [Can anything be done to fix it, or do we just have to wait for updates?](https://php.oct.2026.newsroom.sgit.ai/questions/fix-or-wait/index.md): The updates already exist: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 were released on 21 October and fix both flaws. Nobody is waiting on PHP; the wait is for whoever runs each server to install them and restart. If that is you, update now; if you cannot today, there are temporary settings and, as a last resort, taking the site offline. If a hosting company runs your site, ask them whether it is patched.
-- [Is PHP really the software behind most websites?](https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.md): Roughly, if you count websites, not servers or the internet. Cloudflare and OpenAI say PHP is used by almost 70% of websites; Wiz's '70% of the Internet' is the same figure restated and is not supported by anything the site has captured. Counts of internet-facing PHP hosts are in the low millions (2.6 million, of which Censys counted 1.57 million unpatched on 21 October).
-- [Has anyone actually been hacked?](https://php.oct.2026.newsroom.sgit.ai/questions/been-hacked/index.md): Not that any named organisation has said, as of 20:50 UTC on 22 October. Attack attempts are real and in the millions at Cloudflare alone, Amazon saw one on a honeypot four days before disclosure, and two security vendors are reported as saying it is being exploited, without naming any victim (other reports of the same vendors describe attempts). CISA had not added it to its exploited-vulnerabilities list when last checked, and the sites that went offline say they did it as a precaution.
+- [Is PHP really the software behind most websites?](https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.md): Roughly, if you count websites, not the Internet. About 69% of the websites whose server-side language can be identified run PHP, and the share is falling; on every site the HTTP Archive crawls, PHP is detected on about half (the fact-check desk's investigation). Wiz's '70% of the Internet' is that website figure restated: nobody measures a share of 'the Internet'. Internet-facing PHP hosts number in the low millions: VulnCheck counts about 2.6 million, and Censys counted 1.57 million unpatched on 21 October among the 1.58 million whose version it could read.
+- [Has anyone actually been hacked?](https://php.oct.2026.newsroom.sgit.ai/questions/been-hacked/index.md): Not that any named organisation has said, as of 16:04 UTC on 23 October, the latest capture in the evidence vault. Attack attempts are real and in the millions at Cloudflare alone, Amazon saw one on a honeypot four days before disclosure, and two security vendors are reported as saying it is being exploited, without naming any victim (other reports of the same vendors describe attempts). CISA had not added it to its exploited-vulnerabilities list when last checked, and the sites that went offline say they did it as a precaution.
 - [Do I need to change my passwords?](https://php.oct.2026.newsroom.sgit.ai/questions/passwords/index.md): Not because of this, as things stand. The flaw is on web servers, not on your devices, and no named site has announced a breach through it, as of the latest check. If a site you use announces one, follow its instructions. Using a different password on every site is the protection that holds whatever the next flaw is.
 - [How do I know whether my site is affected?](https://php.oct.2026.newsroom.sgit.ai/questions/am-i-affected/index.md): If the site runs on PHP (WordPress, Drupal, Joomla, Magento, MediaWiki, and Laravel all do) and the running PHP version is older than 8.5.12, 8.4.27, 8.3.36 or 8.2.35 without a distribution backport, it is affected. Check the version where the code runs, after the restart, not the package list. For bought-in products, the Dutch NCSC keeps an inventory of 674 products and their status.
 - [Should we take our site offline?](https://php.oct.2026.newsroom.sgit.ai/questions/take-offline/index.md): Only if you cannot patch or apply the temporary mitigations in time. That is the advice from the NSA, CISA and the UK NCSC, and it is the last step on every agency's list. If the site is patched and the workers restarted, the advice is to keep it up and watch it.
@@ -89,7 +89,7 @@ Site v0.14.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [The agencies](https://php.oct.2026.newsroom.sgit.ai/agencies/index.md): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
 - [Affected systems](https://php.oct.2026.newsroom.sgit.ai/affected/index.md): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
 - [Who says what](https://php.oct.2026.newsroom.sgit.ai/actors/index.md): 27 parties in the php2shell story, each with the claims this site attributes to it and the sources behind them.
-- [As a graph](https://php.oct.2026.newsroom.sgit.ai/graph/index.md): 1048 nodes and 1524 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
+- [As a graph](https://php.oct.2026.newsroom.sgit.ai/graph/index.md): 1049 nodes and 1527 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
 - [Every party](https://php.oct.2026.newsroom.sgit.ai/graph/parties/index.md): 243 parties resolved from 249 spellings, with the claims each one states and passes on.
 - [From a line of code to a stakeholder](https://php.oct.2026.newsroom.sgit.ai/fractal/index.md): One graph for php2shell: 359 changed lines of php-src, up through functions, files, the fix and the flaws, the claims and sources, the story arcs and the risks, to the fifteen kinds of reader who face them.
 - [Walk the whole graph](https://php.oct.2026.newsroom.sgit.ai/fractal/ui/index.md): A navigator over the php2shell fractal graph: stakeholders, risks, story arcs, claims, sources, the flaws, the fix, files, functions and changed lines, each node a link.
@@ -133,7 +133,7 @@ Site v0.14.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [Views: the journalist's reading](https://php.oct.2026.newsroom.sgit.ai/views/index.md): The journalist's living state of affairs, versioned with every change visible, and the dated analyses behind it.
 - [The state of affairs, now](https://php.oct.2026.newsroom.sgit.ai/views/state/index.md): Sixty-eight more sources, read by the curator, change none of the measures that matter most: no organisation has confirmed a compromise through php2shell, and neither CVE is in CISA's exploited list at this desk's last check. What moved is the advice. Singapore and Luxembourg now tell operators to check whether they were already broken into, and the first national count of servers still affected after the fix is in: about 3.5% in Switzerland.
 - [Every version, and what changed](https://php.oct.2026.newsroom.sgit.ai/views/state/history/index.md): 3 versions of the journalist's state of affairs, newest first, each with what changed from the one before.
-- [The journalist's desk: what is still stale](https://php.oct.2026.newsroom.sgit.ai/views/desk/index.md): The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 11 dated phrases on 9 pages, 13 files, 65 claims.
+- [The journalist's desk: what is still stale](https://php.oct.2026.newsroom.sgit.ai/views/desk/index.md): The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 7 dated phrases on 7 pages, 13 files, 65 claims.
 
 ## Stories
 - [All stories, written here](https://php.oct.2026.newsroom.sgit.ai/articles/index.md): 8 stories about the PHP flaws written for this site, plus the editor's interview: house stories by the journalist and historian, interviews, and guest pieces, each pinned to the evidence it was written against.
@@ -546,36 +546,36 @@ Site v0.14.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [The two flaws](https://php.oct.2026.newsroom.sgit.ai/versions/page-flaws/index.md): 2 versions
 - [Timeline](https://php.oct.2026.newsroom.sgit.ai/versions/page-timeline/index.md): 4 versions
 - [Who found it](https://php.oct.2026.newsroom.sgit.ai/versions/page-discovery/index.md): 5 versions
-- [How disclosure broke](https://php.oct.2026.newsroom.sgit.ai/versions/page-leak/index.md): 5 versions
+- [How disclosure broke](https://php.oct.2026.newsroom.sgit.ai/versions/page-leak/index.md): 6 versions
 - [Exploitation signals](https://php.oct.2026.newsroom.sgit.ai/versions/page-exploitation/index.md): 5 versions
 - [If you run PHP](https://php.oct.2026.newsroom.sgit.ai/versions/page-playbook/index.md): 3 versions
-- [Every claim](https://php.oct.2026.newsroom.sgit.ai/versions/page-claims/index.md): 7 versions
+- [Every claim](https://php.oct.2026.newsroom.sgit.ai/versions/page-claims/index.md): 8 versions
 - [The numbers](https://php.oct.2026.newsroom.sgit.ai/versions/page-numbers/index.md): 4 versions
 - [The agencies](https://php.oct.2026.newsroom.sgit.ai/versions/page-agencies/index.md): 3 versions
 - [Affected systems](https://php.oct.2026.newsroom.sgit.ai/versions/page-affected/index.md): 2 versions
 - [The method](https://php.oct.2026.newsroom.sgit.ai/versions/page-method/index.md): 5 versions
-- [Briefing: Board member or executive](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-board/index.md): 8 versions
-- [Briefing: Security lead](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-security/index.md): 7 versions
+- [Briefing: Board member or executive](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-board/index.md): 9 versions
+- [Briefing: Security lead](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-security/index.md): 8 versions
 - [Briefing: PHP or platform engineer](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-engineer/index.md): 8 versions
-- [Briefing: Journalist](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-journalist/index.md): 7 versions
-- [Briefing: Security researcher](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-researcher/index.md): 7 versions
-- [Briefing: Analyst or advisor](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-analyst/index.md): 8 versions
+- [Briefing: Journalist](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-journalist/index.md): 8 versions
+- [Briefing: Security researcher](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-researcher/index.md): 8 versions
+- [Briefing: Analyst or advisor](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-analyst/index.md): 9 versions
 - [The code](https://php.oct.2026.newsroom.sgit.ai/versions/page-code/index.md): 3 versions
 - [Impact: offline vs compromised](https://php.oct.2026.newsroom.sgit.ai/versions/page-impact/index.md): 6 versions
 - [Detection and defence](https://php.oct.2026.newsroom.sgit.ai/versions/page-defence/index.md): 3 versions
-- [In context: 2008 to 2026](https://php.oct.2026.newsroom.sgit.ai/versions/page-context/index.md): 3 versions
+- [In context: 2008 to 2026](https://php.oct.2026.newsroom.sgit.ai/versions/page-context/index.md): 4 versions
 - [Who says what](https://php.oct.2026.newsroom.sgit.ai/versions/page-actors/index.md): 3 versions
-- [Briefing: CISO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-ciso/index.md): 8 versions
+- [Briefing: CISO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-ciso/index.md): 9 versions
 - [Briefing: CTO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-cto/index.md): 7 versions
-- [Briefing: CFO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-cfo/index.md): 8 versions
-- [Briefing: Head of AppSec](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-appsec/index.md): 7 versions
+- [Briefing: CFO](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-cfo/index.md): 9 versions
+- [Briefing: Head of AppSec](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-appsec/index.md): 8 versions
 - [Briefing: Developer](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-developer/index.md): 6 versions
-- [Briefing: Media and communications team](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-comms/index.md): 7 versions
+- [Briefing: Media and communications team](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-comms/index.md): 8 versions
 - [Explained from the start](https://php.oct.2026.newsroom.sgit.ai/versions/page-explained/index.md): 2 versions
 - [Glossary: every term, in plain English](https://php.oct.2026.newsroom.sgit.ai/versions/page-glossary/index.md): 1 versions
-- [Briefing: Curious reader](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-everyone/index.md): 6 versions
-- [Briefing: Website owner](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-site-owner/index.md): 5 versions
-- [Briefing: Project or programme manager](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-pm/index.md): 6 versions
+- [Briefing: Curious reader](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-everyone/index.md): 7 versions
+- [Briefing: Website owner](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-site-owner/index.md): 6 versions
+- [Briefing: Project or programme manager](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-pm/index.md): 7 versions
 - [The specialist summary](https://php.oct.2026.newsroom.sgit.ai/versions/page-summary/index.md): 5 versions
 - [Front page: right now](https://php.oct.2026.newsroom.sgit.ai/versions/front-now/index.md): 4 versions
 - [Front page: at a glance](https://php.oct.2026.newsroom.sgit.ai/versions/front-glance/index.md): 3 versions
@@ -583,7 +583,7 @@ Site v0.14.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [Front page: what nobody knows yet](https://php.oct.2026.newsroom.sgit.ai/versions/front-unknown/index.md): 2 versions
 - [Front page: latest](https://php.oct.2026.newsroom.sgit.ai/versions/front-latest/index.md): 2 versions
 - [Interview: the editor](https://php.oct.2026.newsroom.sgit.ai/versions/page-interview/index.md): 1 versions
-- [Briefing: Data protection officer](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-dpo/index.md): 2 versions
+- [Briefing: Data protection officer](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-dpo/index.md): 3 versions
 - [The state of affairs, now](https://php.oct.2026.newsroom.sgit.ai/versions/page-views-state/index.md): 2 versions
 
 ## The team, one page per member
@@ -593,10 +593,11 @@ Site v0.14.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [Schedule: conductor](https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.md): active; Keep every agent and the humans in step: what each is doing and waiting for, what came in on the lanes, what ran and what did not.
 - [Schedule: curator](https://php.oct.2026.newsroom.sgit.ai/team/schedule/curator/index.md): active; Promote what the source watch captured into the evidence vault, a bounded batch a wake, in priority order, each capture read first.
 - [Schedule: desk](https://php.oct.2026.newsroom.sgit.ai/team/schedule/desk/index.md): active; Keep the story's line, the front page and the section leads true to the evidence; keep the health of the publication and of the system in view; keep the corrections we ask of others ready for the editor.
+- [Schedule: factcheck](https://php.oct.2026.newsroom.sgit.ai/team/schedule/factcheck/index.md): active; Keep every statement on the site either consistent with the evidence or carrying an open ticket that says why not: re-grade what changed, check the fixes others made, look outside for the weak and the contested, and keep the investigations current.
 - [Schedule: librarian](https://php.oct.2026.newsroom.sgit.ai/team/schedule/librarian/index.md): active; Keep everything findable and owned as twenty sessions release on their own: every new file and page mapped to exactly one member, every member's folder in step with the record, every new debrief indexed, and every reader answer re-checked against the claims it rests on.
 - [Schedule: ontologist](https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.md): active; Keep the site's fractal semantic graphs whole as the evidence grows: every new party, spelling, claim, number and signal resolved into the ontology, the site's graphs joined by declared bridges, and the long tail found by connection handed to the desk that owns it.
 - [Schedule: researcher](https://php.oct.2026.newsroom.sgit.ai/team/schedule/researcher/index.md): active; The source watch: probe every watched source, capture what changed into the watch's pack vault, rebuild the series, and report what moved.
-- [Schedule: sherpa](https://php.oct.2026.newsroom.sgit.ai/team/schedule/sherpa/index.md): proposed; Keep the readers' side of the site in view: drain what readers and power users send through the collaborators lane, answer it point by point in Feedback from collaborators, walk what changed on the live site as a reader would, and keep the friction log and the brief to the conductor true.
+- [Schedule: sherpa](https://php.oct.2026.newsroom.sgit.ai/team/schedule/sherpa/index.md): active; Keep the readers' side of the site in view: drain what readers and power users send through the collaborators lane, answer it point by point in Feedback from collaborators, walk what changed on the live site as a reader would, and keep the friction log and the brief to the conductor true.
 - [Vaults: who made each one](https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.md): every vault each agent made, by ID only, and whether its key is sealed to the editor
 - [Status](https://php.oct.2026.newsroom.sgit.ai/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev
 - [Runs](https://php.oct.2026.newsroom.sgit.ai/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run
@@ -665,7 +666,11 @@ Site v0.14.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [The state of affairs: every version](https://php.oct.2026.newsroom.sgit.ai/views/state/history/index.md): 3 versions of the journalist's state of affairs, newest first, each with what changed from the one before.
 - [The state of affairs: The state of affairs at the end of 23 October: still no named victim, and the advice turns from patching to looking for break-ins](https://php.oct.2026.newsroom.sgit.ai/views/state/index.md): Sixty-eight more sources, read by the curator, change none of the measures that matter most: no organisation has confirmed a compromise through php2shell, and neither CVE is in CISA's exploited list at this desk's last check. What moved is the advice. Singapore and Luxembourg now tell operators to check whether they were already broken into, and the first national count of servers still affected after the fix is in: about 3.5% in Switzerland.
 - [Views: the state of affairs and the journalist's analyses](https://php.oct.2026.newsroom.sgit.ai/views/index.md): The journalist's living state of affairs, versioned with every change visible, and the dated analyses behind it.
-- [The journalist's desk: keeping the site current](https://php.oct.2026.newsroom.sgit.ai/views/desk/index.md): The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 11 dated phrases on 9 pages, 13 files, 65 claims.
+- [The journalist's desk: keeping the site current](https://php.oct.2026.newsroom.sgit.ai/views/desk/index.md): The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 7 dated phrases on 7 pages, 13 files, 65 claims.
+
+## The fact-check desk's investigations: one question chased down to its measurements (factcheck@php.newsroom)
+- [Investigations: one question, chased down](https://php.oct.2026.newsroom.sgit.ai/factcheck/investigations/index.md): The fact-check desk's investigations: a question chased down to every measurement, its provenance, every restatement and every correction.
+- [How much PHP is there, and where does '70%' come from?](https://php.oct.2026.newsroom.sgit.ai/factcheck/investigations/php-share/index.md): About 69% of the websites whose server-side language W3Techs can identify, and falling: it was 80.6% in 2015. On every site the HTTP Archive crawls, PHP is detected on about half (48%). WordPress alone, which needs PHP, is on 39.6% of all w
 
 ## Elsewhere: Pulse, a separate section not about PHP (the SGit newsroom's vault 4klm5qlt), one page per vulnerability
 - [What else is going on: Pulse, exploited vs. talked about](https://php.oct.2026.newsroom.sgit.ai/pulse/index.md): A separate section: the SGit newsroom's Pulse vault, 26 vulnerabilities with their evidence of exploitation as eight dated rungs beside the attention each gets. Not this site's evidence; no score, no ranking.

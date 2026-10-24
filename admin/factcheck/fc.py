@@ -180,7 +180,8 @@ def capture_text(vault, slug, src):
 
 def norm(s):
     s = s.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').replace(' ', ' ')
-    return re.sub(r'\s+', ' ', s).strip().lower()
+    s = re.sub(r'\s+', ' ', s).strip().lower()
+    return re.sub(r' ([,.;:!?)])', r'\1', s)  # a tag stripped before punctuation leaves a space the page never had
 
 
 def capture_any(path):
@@ -308,6 +309,21 @@ def cmd_extract(argv):
 
 # ----------------------------------------------------------------------------- export
 
+def investigations():
+    """Each investigation's case file and its data sets, from admin/factcheck/investigations/<id>/."""
+    base = os.path.join(HERE, 'investigations')
+    out = []
+    for d in sorted(os.listdir(base)) if os.path.isdir(base) else []:
+        p = os.path.join(base, d)
+        if os.path.exists(os.path.join(p, 'case.json')):
+            inv = load(os.path.join(p, 'case.json'))
+            for part in ('measures', 'lineage', 'live'):
+                if os.path.exists(os.path.join(p, part + '.json')):
+                    inv[part] = load(os.path.join(p, part + '.json'))
+            out.append(inv)
+    return out
+
+
 def cmd_export(argv):
     claims = {c['id']: c for c in data('claims')}
     A = sorted(desk('assessments.json', {'assessments': []})['assessments'], key=lambda a: a['id'])
@@ -353,6 +369,7 @@ def cmd_export(argv):
         'contradictions': K,
         'tickets': sorted(tix, key=lambda t: (t['type'], int(t['label'].rsplit('-', 1)[1]))),
         'runs': runs,
+        'investigations': investigations(),
     }
     with open(os.path.join(ROOT, 'data', 'factcheck.json'), 'w', encoding='utf-8') as f:
         json.dump(out, f, indent=1, ensure_ascii=False)

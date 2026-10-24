@@ -12,6 +12,73 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.12 · 24 October 2026new since your last visit
+
+Conductor light check 09:15 London: curator missed-run note, status lines, run record
+
+No reader-facing section changed in this release.
+
+## v0.14.11 · 24 October 2026new since your last visit
+
+factcheck run 4 (scheduled, 08:52 London): no claim changed; CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 back to 5.4 (K-003); Siemens and PAN-OS now in the CVE and NVD records; KEV still lists neither CVE; every PHPocalypse site back; AWS's revised sentence still uncaptured
+
+No reader-facing section changed in this release.
+
+## v0.14.10 · 24 October 2026new since your last visit
+
+Conductor light check 08:15 London: researcher missed-run note, status line, run record
+
+No reader-facing section changed in this release.
+
+## v0.14.9 · 24 October 2026new since your last visit
+
+The Sherpa's first scheduled wake: both lanes drained (nothing waiting); the fact-check desk's analysis of Fortune's '70% of the internet' article linked from UF-005
+
+No reader-facing section changed in this release.
+
+## v0.14.8 · 24 October 2026new since your last visit
+
+the librarian's first scheduled pass (07:13 London): dev mapped at v0.14.6 (0 overlaps; data/desk.json, /analysis/ and /ops/ sent to abp@ for owners); the journalist's full pass across six desks raised to the editor; 'Is PHP really most websites?' corrected against the claims and the fact-check desk's investigation; the scope check ignores the release's own version files
+
+No reader-facing section changed in this release.
+
+## v0.14.7 · 24 October 2026new since your last visit
+
+Conductor full pass 24 October 07:15 London: agents-status rewritten from the sessions, tasks and branches; board 178 updated; run record
+
+No reader-facing section changed in this release.
+
+## v0.14.6 · 24 October 2026new since your last visit
+
+factcheck: Investigations, a new section, and the first: how much PHP there is and where '70%' comes from. PHP is on 69.3% of the websites whose server-side language W3Techs can identify (80.6% in 2015), about half of every site the HTTP Archive crawls, and WordPress alone on 39.6% of all sites; 127 statements of the share traced to Wiz's own post, a timeline, the lineage as a graph, 73 pages re-checked (none corrected; CNN reworded twice), Fortune analysed (UF-005.1); AWS quietly narrowed 'broadly exploited' to 'broad exploitation attempts' (Evidence-12, high)
+
+No reader-facing section changed in this release.
+
+## v0.14.5 · 24 October 2026new since your last visit
+
+The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents, with screenshots; and a friction on /team/vaults/
+
+No reader-facing section changed in this release.
+
+## v0.14.4 · 24 October 2026new since your last visit
+
+factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-compromise claim, the Dutch offline row, the front page's fix-complete line), K-004 and K-009 explained, so the correction requests to Wiz, the BBC and CNN no longer wait on the desk; Finding-32 stays open (Cloudflare does link W3Techs); the desk's schedule card, and the brief for its investigations
+
+No reader-facing section changed in this release.
+
+## v0.14.3 · 24 October 2026new since your last visit
+
+pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gate's first-build determinism failure fixed (design.py read items.json one build late, board 175)
+
+No reader-facing section changed in this release.
+
+## v0.14.2 · 24 October 2026new since your last visit
+
+The Sherpa: its schedule active (its lanes drained every two hours, 07:45 to 21:45 London, the full pass at 11:45 and 17:45), and an inbox for agents outside the newsroom: an append lane (d6zak0o3) where the RiskMandate email agent and the editor send messages and materials, with the tool to send to it
+
+### Sections that changed
+- [In context: 2008 to 2026](../versions/page-context/index.html#v4) v4
+
 ## v0.14.1 · 24 October 2026new since your last visit
 
 The news desk chief's first round closed: its debrief with screenshots of every page it changed, its status and its role
@@ -28,7 +95,11 @@ No reader-facing section changed in this release.
 
 The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the 1.57 million framing, the Dutch offline row, the front page's offline advice, DigiD and fix-complete lines), Corrections we have asked for (/outreach/) with eleven requests and the emails the editor sends, and the desk's briefs, review and schedule
 
+### Briefings that changed
+JJordanBoard member or executive · v9SSamSecurity lead · v8RRowanJournalist · v8AAshSecurity researcher · v8BBlakeAnalyst or advisor · v9RRobinCISO · v9QQuinnCFO · v9JJamieHead of AppSec · v8RRileyMedia and communications team · v8AAlexCurious reader · v7CCaseyWebsite owner · v6TTaylorProject or programme manager · v7MMorganData protection officer · v3
 ### Sections that changed
+- [How disclosure broke](../versions/page-leak/index.html#v6) v6
+- [Every claim](../versions/page-claims/index.html#v8) v8
 - [The agencies](../versions/page-agencies/index.html#v3) v3
 
 ## v0.12.1 · 24 October 2026new since your last visit
@@ -726,4 +797,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -14,9 +14,9 @@ The BBC was 'unable to independently verify that figure'. Wiz's body text says 7
 
 ## Fact-check
 
-**A1** Weak signal●○○○○○ measures differently · Count · verdict: **holds in part**
+**A1** Weak signal●○○○○○ measures differently · Count · verdict: **not shown**
 
-Wiz's own headline and X post carry '70% of the Internet', but the body of the same post gives the basis as PHP powering '70% of all websites', a share of websites using PHP with no measurement of what is affected. A count with no population, method or counter for 'affected' stays weak; the status 'unverified' fits.
+Reworded to Wiz's own words, with the BBC's 'roughly' attributed to the BBC (Finding-102 and Finding-124 fixed). As a statement of fact it is not shown: no capture measures a share of 'the Internet'; it is Wiz's headline restating a share of websites (K-001). 'Unverified' fits.
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -25,9 +25,9 @@ Wiz's own headline and X post carry '70% of the Internet', but the body of the s
 | [x-wiz-io-php2shell](../../sources/x-wiz-io-php2shell/index.html) | partial | *a decade-old PHP Core vulnerability reaching CVSS 9.2 severity impacting 70% of the Internet.* | 6c17977662815b0c |
 | [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | partial | *with cyber-security firm Wiz estimating that "roughly 70%" of the internet is affected, though the BBC is unable to independently verify that figure.* | c88b8c5f4c6bc07d |
 
-Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Finding-102](../../factcheck/index.html#Finding-102), [Finding-124](../../factcheck/index.html#Finding-124).
+Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Evidence-13](../../factcheck/index.html#Evidence-13), [Evidence-14](../../factcheck/index.html#Evidence-14), [Evidence-15](../../factcheck/index.html#Evidence-15), [Finding-102](../../factcheck/index.html#Finding-102), [Finding-124](../../factcheck/index.html#Finding-124).
 
-Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-3, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Wiz publishes [PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet](../../sources/wiz-blog-php2shell/index.html)
@@ -62,4 +62,4 @@ v2 · site v0.12.1 · 24 October 2026 · unverifiedRoughly 70% of the Internet i
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.html

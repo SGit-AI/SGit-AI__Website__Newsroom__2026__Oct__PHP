@@ -7,7 +7,7 @@
   "description": "The one-day exploitation rests on one party (Akamai). The CVE record calls CVE-2024-4577 'Argument Injection in PHP-CGI' on Windows with certain code pages, a SAPI bug rather than the PHP core; and nothing captured shows it is the most recent PHP RCE (only that it is the most recent PHP entry in KEV). Say 'the last PHP flaw in KEV'.",
   "status": "open",
   "created_at": 1792694616060,
-  "updated_at": 1792694616319,
+  "updated_at": 1792805574035,
   "created_by": "0176b619",
   "tags": [],
   "links": [
@@ -27,6 +27,15 @@
       "facts/kev-precedent/index.html",
       "claims/index.html"
     ],
-    "severity": "medium"
+    "severity": "medium",
+    "comments": [
+      {
+        "id": "6cca75b5",
+        "author": "cli-user",
+        "text": "Run-3: status fixed ('reported'); still open for the text: 'the last PHP core RCE' is not carried by the CVE record, which calls CVE-2024-4577 a PHP-CGI argument injection.",
+        "created_at": 1792805574035,
+        "updated_at": 1792805574035
+      }
+    ]
   }
 }

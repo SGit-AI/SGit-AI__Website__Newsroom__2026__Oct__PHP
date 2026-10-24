@@ -14,9 +14,9 @@ Censys: 2.58 million hosts seen, 1.58 million reporting a version, 1.57 million 
 
 ## Fact-check
 
-**A2** Reported●●○○○○ measures differently · Count · verdict: **holds in part**
+**A2** Reported●●○○○○ · Count · verdict: **holds**
 
-Both figures are carried, but only second hand: VulnCheck's 2,608,039 hosts via The Hacker News and SecurityWeek (one origin), and Censys's 2.58 million seen, 1.57 million unpatched via SecurityWeek alone; no scanner's own page or method is captured, so A2. 'Of which' wrongly makes Censys's 1.57 million a subset of VulnCheck's 2.6 million; it is a subset of Censys's own 2.58 million.
+Rewritten to keep the counters apart: VulnCheck's 2.6 million hosts, and Censys's 1.57 million unpatched of the 1.58 million whose version it could read, of 2.58 million seen (Finding-34 fixed; K-004 now explained). Both reach the vault only through news outlets (Finding-100), so A2.
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -27,7 +27,7 @@ Both figures are carried, but only second hand: VulnCheck's 2,608,039 hosts via 
 
 Open tickets: [Contradiction-4](../../factcheck/index.html#Contradiction-4), [Finding-100](../../factcheck/index.html#Finding-100), [Finding-34](../../factcheck/index.html#Finding-34).
 
-Graded in Run-1, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-3, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-22THN publishes [Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed](../../sources/thehackernews-php2shell-4days/index.html)
@@ -61,4 +61,4 @@ v2 · site v0.2.0 · 22 October 2026 · reportedPHP is exposed on 2,608,039about
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-2.6m-hosts/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-2.6m-hosts/index.html

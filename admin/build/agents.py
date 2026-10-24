@@ -154,10 +154,13 @@ def changed(rng):
     files |= set(l[3:] for l in git('status', '--porcelain', '-uall').splitlines() if l.startswith('??'))
     return sorted(files)
 
+# Written by admin/build/release.sh on every member's release (the version bump), so never a member's own change.
+RELEASE_FILES = {'VERSION', 'data/versions.json'}
+
 def check(agent, rng='origin/dev...HEAD', policies=None):
     P = policies or load_policies()
     p = P[agent]
-    gen = outputs() | {'admin/build/outputs.txt'}
+    gen = outputs() | {'admin/build/outputs.txt'} | RELEASE_FILES
     res = {'agent': agent, 'range': rng, 'writes': [], 'appends': [], 'generated': [], 'outside': []}
     for f in changed(rng):
         if f in gen:

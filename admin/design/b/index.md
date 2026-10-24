@@ -2,7 +2,7 @@
 
 A three-column working view for a security lead: their reading path and the site by task on the left, what changed since the last visit and the next three actions in the middle, and the state of the evidence as charts on the right.
 
-> Mockup B for review, built from the data of release v0.14.1. Not the live site.
+> Mockup B for review, built from the data of release v0.14.12. Not the live site.
 
 S 
  Sam 
@@ -44,8 +44,13 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
  All Facts Timeline Questions Stories 
 
- New question v0.12.1 
+ New question v0.14.8 
 #### Is PHP really the software behind most websites?
+
+✓ 
+
+ New question v0.14.2 
+#### Has anyone actually been hacked?
 
 ✓ 
 
@@ -59,7 +64,7 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ✓ 
 
- New front v0.12.1 
+ Changed front v0.12.1 
 #### Front page: at a glance
 
 ✓ 
@@ -85,12 +90,6 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 #### 70% of the Internet is affected
 
  Wiz Wiz on X BBC News 
-✓ 
-
- Changed fact reported v0.12.1 
-#### VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those wer
-
- THN SecurityWeek 
 ✓ 
 
 Marked read, an item fades and then leaves this list; it comes back only if what it says changes. 
@@ -126,4 +125,4 @@ Amazon: Proof-of-concept attempts begin, then six hours of attempts from anonymi
 8.1 and older: source backports only.
 
 ---
-site v0.14.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html
+site v0.14.12 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html

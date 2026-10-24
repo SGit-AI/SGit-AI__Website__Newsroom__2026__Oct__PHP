@@ -1350,9 +1350,9 @@
   {
    "id": "175",
    "title": "release.sh fails the gate's determinism check on the first try when a release changes a versioned page's text: the section ledger settles on the second build",
-   "status": "open",
-   "owner": "dev@php.newsroom",
-   "note": "Seen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Workaround used: restore VERSION and data/versions.json, keep the settled data/sections.json, run release.sh again. A fix belongs in build.py (render the ledger-reading pages after every ledger() call); release.sh and validate.py are unchanged."
+   "status": "done",
+   "owner": "claude-journalist",
+   "note": "Seen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Cause found on 24 October: admin/build/design.py drew mockup B from data/items.json read from disk, but save_items() writes that file at the end of the build, so the mockup showed the previous build's items and the first rebuild after any content change differed (admin/design/b/). Fixed in one line: the mockup takes this build's items from all_items(). Checked: after a version bump, the first and second builds are identical. release.sh and validate.py unchanged. The same lag was in the new Operations and Analysis homes (design.py build_tracks, v0.14.0), fixed the same way."
   },
   {
    "id": "176",
@@ -1373,7 +1373,7 @@
    "title": "Cards to write: pulse (already scheduled), ontologist and librarian (asked to propose)",
    "status": "open",
    "owner": "conductor",
-   "note": "Messages sent 24 October; /team/schedule/ lists who has no card yet."
+   "note": "Messages sent 24 October. Ontologist and librarian have cards; pulse (already scheduled: 06:44 and 14:44 London) has none yet (conductor, 24 October 06:20 UTC)."
   },
   {
    "id": "179",
@@ -1481,8 +1481,8 @@
   },
   {
    "id": "195",
-   "title": "Sherpa: track the fact-check desk's analysis of Fortune's '70% of the internet' article (UF-005.1) to a story",
-   "status": "open",
+   "title": "Sherpa: track the fact-check desk's analysis of Fortune's '70% of the internet' article (UF-005.1) to a story (done by the fact-check desk on 24 October: /factcheck/investigations/php-share/, section 'Fortune')",
+   "status": "done",
    "owner": "sherpa"
   },
   {
@@ -1499,8 +1499,8 @@
   },
   {
    "id": "198",
-   "title": "Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed",
-   "status": "open",
+   "title": "Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed (active 24 October: every two hours 07:45 to 21:45 London)",
+   "status": "done",
    "owner": "sherpa"
   },
   {
@@ -1597,9 +1597,9 @@
   {
    "id": "212",
    "title": "Claim no-confirmed-compromise says Hadrian and Patchstack 'report successful exploitation'; Security.NL and BleepingComputer's captures describe the same vendors' reports as attempts, not compromises. Grade the vendor half of the claim (found in the librarian's pass of 24 October)",
-   "status": "open",
+   "status": "done",
    "owner": "factcheck",
-   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). Run 3 (24 October): graded. As reworded the vendor half holds: Hadrian's \"exploited at scale\" (Insurance Business) and Patchstack's partner reports (Recorded Future) against its own telemetry's \"only probing\" (PCMag, Bitpage); BleepingComputer's \"unsuccessful attempts\" are before disclosure, a different window. Neither vendor's own post is captured, so that half is A3."
   },
   {
    "id": "213",
@@ -1746,7 +1746,7 @@
    "title": "One status vocabulary on every page with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside it",
    "status": "open",
    "owner": "factcheck",
-   "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
+   "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). The fact-check desk, 24 October: outside the desk's scope (it owns factcheck/** only); the status words on other pages belong to story-site and the build's helpers to dev@php.newsroom. The desk's figure for every claim is in data/factcheck.json (assessments[].display) for them to show beside the five-way count."
   },
   {
    "id": "234",
@@ -1821,9 +1821,9 @@
   {
    "id": "244",
    "title": "Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs board 238)",
-   "status": "open",
+   "status": "done",
    "owner": "factcheck",
-   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go)."
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Run 3 (24 October): Finding-33 and Finding-102 closed as fixed (and Finding-124); K-009 explained by time (the Foundation describes the IDs at about 15:00 UTC; the exploit video came that evening). Finding-32 stays open: claim note, numbers.json and the front page still say no page names the survey, and Cloudflare links W3Techs."
   },
   {
    "id": "245",
@@ -1888,6 +1888,37 @@
    "status": "open",
    "owner": "librarian",
    "note": "The gate warns that no member owns them. story-site does not edit policy files."
+  },
+  {
+   "id": "254",
+   "title": "Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, tokens derived, handed sealed), send_to_lane.py, drained on the Sherpa's schedule; next: the RiskMandate agent's own inbox for the other direction",
+   "status": "done",
+   "owner": "sherpa"
+  },
+  {
+   "id": "255",
+   "title": "Investigations: a section of the fact-check desk that chases one question down to its measurements; the first, how much PHP there is and where '70%' comes from (measures, lineage, timeline, corrections, Fortune for UF-005.1)",
+   "status": "done",
+   "owner": "factcheck",
+   "note": "From the editor's brief of 24 October (admin/content/briefs/2026-10-24__brief__factcheck-investigations-how-much-php.md)."
+  },
+  {
+   "id": "256",
+   "title": "Ownership for the policy drafts, from the librarian's pass of 24 October: data/desk.json is the journalist's (its layers.json row and the commit that added it); analysis/** and ops/** are the story site's (the redesign's reader homes, v0.14.0). Add them to those members' policy.json and ROLE.md",
+   "status": "open",
+   "owner": "abp"
+  },
+  {
+   "id": "257",
+   "title": "The journalist's full pass (pass step 2, v0.12.1 and v0.14.3) wrote 34 files owned by six other members: the story site's claims, impact and story; the newsroom lead's evidence exports; the historian's history; the librarian's questions; the conductor's updates and team; the researcher's compromise and watch. Either widen the journalist's policy to the pass, or route the pass through each owner: the editor's call",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "258",
+   "title": "The librarian's card contradicts its own wake prompt: its 'Map' step gives new files an owner in the policy drafts, but the prompt allows only the librarian's own files (policies are abp@'s). Say which holds; until then the librarian follows the prompt and opens rows for abp@",
+   "status": "open",
+   "owner": "editor"
   }
  ],
  "evidence_vault": {

@@ -14,9 +14,9 @@ The KEV dates are counted from the captured catalog; 'exploited in the wild one 
 
 ## Fact-check
 
-**A2** Reported●●○○○○ status overstated · Record · verdict: **holds in part** · the status word overstates the evidence
+**A2** Reported●●○○○○ · Record · verdict: **holds in part**
 
-The KEV JSON (dateAdded 2024-06-12) and the CVE record (datePublished 2024-06-09T19:42Z) give three days (A6), and the php2shell KEV absence is A6 at 08:16Z on 22 Oct. 'Exploited in the wild one day after' rests on Akamai alone (A2), and it describes honeypot exploit attempts; 'the last PHP core RCE' is not shown (CVE-2024-4577 is a PHP-CGI argument injection on Windows).
+'Reported' now fits, and the note says the one-day exploitation rests on Akamai alone. The claim text still calls CVE-2024-4577 'the last PHP core RCE', which the CVE record does not carry (a PHP-CGI argument injection on Windows); and 'not in KEV after one day' should name the catalog version checked. Finding-20 partly fixed; Finding-21 open.
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -27,7 +27,7 @@ The KEV JSON (dateAdded 2024-06-12) and the CVE record (datePublished 2024-06-09
 
 Open tickets: [Evidence-1](../../factcheck/index.html#Evidence-1), [Finding-20](../../factcheck/index.html#Finding-20), [Finding-21](../../factcheck/index.html#Finding-21), [Finding-76](../../factcheck/index.html#Finding-76).
 
-Graded in Run-1, resting on captures up to 2026-10-22 11:25 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-3, resting on captures up to 2026-10-22 11:25 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2024Akamai Security Research publishes [CVE-2024-4577 Exploits in the Wild One Day After Disclosure](../../sources/akamai-blog-cve-2024-4577-one-day/index.html)
@@ -60,4 +60,4 @@ v2 · site v0.12.1 · 24 October 2026 · reportedThe last PHP core RCE, CVE-2024
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.html

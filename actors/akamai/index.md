@@ -14,7 +14,7 @@ rule 3000991; the 2024 precedent
 
 | Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
 |---|---|---|---|---|---|
-| The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one dayThe KEV dates are counted from the captured catalog; 'exploited in the wild one day after disclosure' rests on Akamai alone. [fact timeline →](../../facts/kev-precedent/index.html) | CISA KEV catalog; Akamai (2024) | reported | **A2** Reported●●○○○○ status overstated | 3/3 | [CISA](../../sources/cisa-kev-json/index.html) [CVE record](../../sources/cve-cve-2024-4577/index.html) [Akamai Security Research](../../sources/akamai-blog-cve-2024-4577-one-day/index.html) |
+| The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one dayThe KEV dates are counted from the captured catalog; 'exploited in the wild one day after disclosure' rests on Akamai alone. [fact timeline →](../../facts/kev-precedent/index.html) | CISA KEV catalog; Akamai (2024) | reported | **A2** Reported●●○○○○ | 3/3 | [CISA](../../sources/cisa-kev-json/index.html) [CVE record](../../sources/cve-cve-2024-4577/index.html) [Akamai Security Research](../../sources/akamai-blog-cve-2024-4577-one-day/index.html) |
 
 ## Its sources in the vault
 - [Critical Remote Code Execution Vulnerabilities in PHP Core | Akamai](../../sources/akamai-blog-php-core-rce/index.html) Akamai Security Research
@@ -24,4 +24,4 @@ rule 3000991; the 2024 precedent
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/actors/akamai/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/actors/akamai/index.html

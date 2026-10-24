@@ -14,9 +14,9 @@ A time-bounded absence, not a confirmed fact: it can only be true as of the last
 
 ## Fact-check
 
-**A4** Corroborated●●●●○○ status overstated · State · verdict: **holds** · the status word overstates the evidence
+**A4** Corroborated●●●●○○ · State · verdict: **holds**
 
-A search of every vault capture (manifest and unexported) finds no named organisation confirming a php2shell compromise, and several independent parties say none known (Huntress, Imperva, CERT.LV, the German digital ministry via Reuters, the Australian industry minister). A universal negative from a finite, time-bound capture set cannot exceed A4, and it is volatile; "confirmed" without an as-of in the claim text is overstated.
+Now dated (16:04 UTC on 23 October) and scoped to the vault (Finding-26 fixed), and 'reported' fits a time-bounded absence. Independent parties carry the negative: the PHP Foundation's director via The Verge, Paperjam for Luxembourg, Patchstack's own telemetry via PCMag. The vendor half (board 212) holds as reworded: Hadrian's 'exploited at scale' and Patchstack's partner reports come through the press (Insurance Business, Recorded Future, Bitpage), not their own posts, so that half is A3. Every quote checked verbatim in its capture.
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -31,10 +31,14 @@ A search of every vault capture (manifest and unexported) finds no named organis
 | [insurancebusiness-uk-councils-met](../../sources/insurancebusiness-uk-councils-met/index.html) | carries | *No successful break-ins had been confirmed as of Wednesday afternoon.* | 89357150e0bc8363 |
 | [reuters-factbox-websites-offline](../../sources/reuters-factbox-websites-offline/index.html) | carries | *The temporary deactivation was purely preventive and no security incidents were known to have occurred, the spokesperson said.* | d562e28995b00a19 |
 | [abc-au-politics-live](../../sources/abc-au-politics-live/index.html) | carries | *Industry and Innovation Minister Tim Ayres says there has been no breach of Australian government websites* | a86331d9b7a21f78 |
+| [the-verge-php2shell-websites-down](../../sources/the-verge-php2shell-websites-down/index.html) | carries | *to our knowledge, there has been no successful attempt at remote code execution* | 1a9a20537e477cc8 |
+| [pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw](../../sources/pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/index.html) | carries | *our telemetry shows only probing attacks, with no hard evidence of breaches yet* | 82ef905cd2201bd4 |
+| [recordedfuture-php2shell](../../sources/recordedfuture-php2shell/index.html) | partial | *Patchstack received reports of multiple active exploitation incidents from hosting partners by 07:34 UTC on October 21* | 39efeb7b8ae8152f |
+| [insurance-business-au-asiapac-attacks-begin](../../sources/insurance-business-au-asiapac-attacks-begin/index.html) | partial | *Hadrian says it is seeing PHP2Shell exploited at scale, mostly through PHP’s session upload progress path.* | 8d88bddde485e36f |
 
-Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-3](../../factcheck/index.html#Evidence-3), [Finding-26](../../factcheck/index.html#Finding-26), [Finding-85](../../factcheck/index.html#Finding-85).
+Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-12](../../factcheck/index.html#Evidence-12), [Evidence-18](../../factcheck/index.html#Evidence-18), [Evidence-3](../../factcheck/index.html#Evidence-3), [Finding-26](../../factcheck/index.html#Finding-26), [Finding-85](../../factcheck/index.html#Finding-85).
 
-Graded in Run-1, resting on captures up to 2026-10-22 11:28 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-3, resting on captures up to 2026-10-23 16:04 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21CISA publishes [Critical Vulnerabilities in PHP Require Immediate Patching](../../sources/cisa-alert-php-20261021/index.html)
@@ -95,4 +99,4 @@ v2 · site v0.5.8 · 22 October 2026 · reportedNoAs of 20:50 UTC on 22 October,
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html

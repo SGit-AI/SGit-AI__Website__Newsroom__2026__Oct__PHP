@@ -15,6 +15,7 @@ The brief to the conductor from every open friction, by owner and severity, and 
 - medium **the Feedback pane:** Several kinds, up to three screenshots, and 'Feedback I've sent' kept in the reader's own browser or vault. (F025; seen v0.8.2 to v0.9.3; UF-003)
 - low **the Feedback pane:** On a refused capture, say 'The earlier screenshot is still attached' (or clear it), so the message and the preview agree. (F026; seen v0.8.2 to v0.9.1; UF-003)
 - low **/collaborators/ and the Feedback pane:** One feedback form, filling in the page and version itself, with the publish checkbox (F027). (F029; seen v0.9.3 to v0.9.3; UF-004)
+- low **team/vaults/index.html:** Keep IDs on one line (white-space: nowrap on the ID cell, or give the column a minimum width). (F033; seen v0.14.3 to v0.14.3; the Sherpa)
 
 ### For [Briefing writer](../../team/briefing-writer/index.html)
 - high **briefings/cto/index.html:** Add a 'What to tell the board' box to the CTO and CISO briefings, generated from the same claims as the board briefing so it cannot drift. (F002; seen v0.4.3 to v0.10.18; the Sherpa)
@@ -57,4 +58,4 @@ The brief to the conductor from every open friction, by owner and severity, and 
 
 
 ---
-site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/feedback/briefs/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/feedback/briefs/index.html
