@@ -52,4 +52,4 @@ The gate check for inline event handlers (security branch); the CSP.
 
 
 ---
-site v0.15.6 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-015/index.html
+site v0.15.7 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-015/index.html

@@ -59,4 +59,4 @@ Sources: cisa-alert-php-20261021, cisa-kev-json, cve-cve-2026-109618
 
 
 ---
-site v0.15.6 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/cisa-none/index.html
+site v0.15.7 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/cisa-none/index.html

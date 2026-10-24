@@ -1,6 +1,15 @@
 {
- "current": "0.15.6",
+ "current": "0.15.7",
  "versions": [
+  {
+   "version": "0.15.7",
+   "date": "2026-10-24",
+   "title": "the journalist's brief for its first Sonnet session: the pipeline, the key handshake, every wake in seven steps, what to do when a release stops, and the never list",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.6",
    "date": "2026-10-24",
