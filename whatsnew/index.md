@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.11.2 · 24 October 2026new since your last visit
+
+claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit newsroom's Pulse in a separate section (/pulse/), and the plan for the journalist's full pass
+
+No reader-facing section changed in this release.
+
 ## v0.11.1 · 24 October 2026new since your last visit
 
 Security pass 2: the Ask pane renders the model's answer as DOM nodes, so a captured page title can no longer break out of a citation's title attribute and run script (a stored XSS that could reach the /now/ vault key); the collaborators drain drops sender-supplied '_' fields (a forged '_signer: enrolled') and survives malformed rows; schedule.py refuses a message as the editor, a multi-line subject or a repeated header, and prints bodies inside an untrusted fence; two unquoted hrefs quoted and two data URLs through U(); .gitignore no longer hides data/*.json
@@ -644,4 +650,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

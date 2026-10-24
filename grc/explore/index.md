@@ -24,4 +24,4 @@ In the graph: 270 test, 95 control, 71 source, 62 claim, 43 stakeholder, 41 trea
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/explore/index.html
+site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/explore/index.html

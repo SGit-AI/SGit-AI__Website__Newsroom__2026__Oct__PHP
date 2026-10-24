@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **27** derived · **14** authored · **30** site
+**9** evidence · **28** derived · **14** authored · **30** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -30,6 +30,7 @@ Captured or exported from the evidence vault by a script, with no judgement adde
 | `review/code/files.json` | a parser over git show -U0 of the fix commit | php/php-src commit 3584a98bd: files, hunks and the functions they fall in | [review/index.html](../review/index.html) |
 | `data/inventory-history.json` | admin/build/inventory_history.py | a git clone of NCSC-NL/php2shell: every commit that changed the inventory, counted per status, with every change of status; content-addressed and checked against the vault's own capture at cca173c64ec5. Read from the public repository, not yet captured into the vault | [patching/inventory/index.html](../patching/inventory/index.html) |
 | `data/source-watch.json` | admin/build/export_watch.py | the source-watch vault's index, taxonomy, runs and tips: counts and vocabularies, no capture | [vaults/source-watch/index.html](../vaults/source-watch/index.html) |
+| `data/pulse.json` | pulse@newsroom's vault (4klm5qlt), exported by admin/build/export_pulse.py | the Pulse vault's ladders, attention counts and the short quotes it recorded, each with its capture path and sha256; no capture copied, no key | [pulse/index.html](../pulse/index.html) |
 
 ## Derived
 
@@ -38,6 +39,7 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | File | Made by | From | Shown on |
 |---|---|---|---|
 | `data/signals.json` | claude-journalist and claude-historian | the claims, the exploitation and defence data, the inventory and the timeline, arranged as the ladder from exposed to exploited, four signal families and the time of each barrier | [signals/index.html](../signals/index.html) |
+| `data/claim-review.json` | claude-journalist | the vault's per-agent claims (data/vault-claims.json) checked against the saved pages, the site's claims and the contradiction ledger | [claims/review/index.html](../claims/review/index.html) |
 | `data/state.json` | claude-journalist | the evidence vault, the source watch's dated series and the NCSC-NL inventory's history: the measures of the state of affairs, one row per version, each with its as-of time and basis | [views/state/index.html](../views/state/index.html) |
 | `data/claims.json` | claude-story-site | the vault's notes and per-agent claims, re-traced to primary sources | [claims/index.html](../claims/index.html) |
 | `data/timeline.json` | claude-story-site | the vault's notes and per-agent timelines, with every time conversion marked | [timeline/index.html](../timeline/index.html) |
@@ -127,4 +129,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

@@ -364,6 +364,12 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a Stripe link; tests beyond the gate.
 
+- A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.
+
+- `/claims/review/`: every claim in the evidence vault's per-agent files that is not in the site's claim table (86 at `1845598d9a38`, 81 from the curator), each with the journalist's verdict from `data/claim-review.json` (used, agrees, held back, with the reason) or "not yet reviewed". A new export lists new claims there without anyone editing a page.
+
+- `/pulse/`: a separate section, not about PHP. The SGit newsroom's Pulse vault (`4klm5qlt`, pulse@newsroom), exported by `admin/build/export_pulse.py` into `data/pulse.json` (ladders, dates, attention counts, short quotes with their capture paths and hashes; no capture, no key), built by its own block at the end of `build.py`, one page per vulnerability (26). The PHP pages do not read it; the front page has one pointer, "What else is going on".
+
 ## The honest column
 
 - **Not measured:** the editor's time and the inference cost behind each agent run.
@@ -380,4 +386,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

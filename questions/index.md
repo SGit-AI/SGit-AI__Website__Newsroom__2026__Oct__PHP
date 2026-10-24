@@ -96,6 +96,7 @@ An article a reader has seen is listed here until a collector captures it into t
 
 ### The analysis
 - [Every claim, with its status and sources](../claims/index.html): 70 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
+- [Claims waiting for review](../claims/review/index.html): 86 claims from the evidence vault that are not in the site claim table yet, each with the agent that recorded it, its sources, and the journalist's verdict or "not yet reviewed".
 - [Fact-check: how sure we are](../factcheck/index.html):
 - [The numbers: 70%, 30 million, 2.6 million, 6,000, 674](../numbers/index.html): Every scale figure in circulation about php2shell, with what it measures, who said it, whether anyone checked it, and why they differ by four orders of magnitude.
 - [What sixteen agencies actually advise](../agencies/index.html): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
@@ -176,6 +177,9 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Synthetic readers: six test readers who read the live site](../admin/synthetic/index.html): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every review is published here and every run is kept in that reader's own vault.
 
+### Elsewhere
+- [What else is going on: Pulse](../pulse/index.html):
+
 Every page also has a markdown twin, listed in [llms.txt](../llms.txt); the questions themselves are [data/questions.json](../data/questions.json).
 
 ## Asking a new question
@@ -184,4 +188,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

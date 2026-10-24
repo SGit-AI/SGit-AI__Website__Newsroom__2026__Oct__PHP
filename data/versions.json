@@ -1,6 +1,15 @@
 {
- "current": "0.11.1",
+ "current": "0.11.2",
  "versions": [
+  {
+   "version": "0.11.2",
+   "date": "2026-10-24",
+   "title": "claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit newsroom's Pulse in a separate section (/pulse/), and the plan for the journalist's full pass",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.11.1",
    "date": "2026-10-24",
