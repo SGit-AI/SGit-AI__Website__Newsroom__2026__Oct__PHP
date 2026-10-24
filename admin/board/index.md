@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 190 items, 128 open, 57 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 191 items, 128 open, 58 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -189,7 +189,7 @@ The work, as rows in `data/admin.json`: 190 items, 128 open, 57 done. An item is
 | 177 | The scheduled researcher's two wake prompts still name the schedule vault: change them to the card's steps (take in dev, inbox, run record, release)The prompts are the scheduled tasks'; only the editor's session changes them. | open | editor |  |
 | 178 | Cards to write: pulse (already scheduled), ontologist and librarian (asked to propose)Messages sent 24 October; /team/schedule/ lists who has no card yet. | open | conductor |  |
 | 179 | Curator and researcher to confirm the cards the conductor drafted from their scheduled tasks, and keep them | open | conductor |  |
-| 180 | Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then its wakes note "lanes: no key" and this session drains them | waiting | editor |  |
+| 180 | The Sherpa drains the lanes (the editor, 24 October 2026): a go for its schedule (data/schedule/sherpa.json, proposed: every two hours at :45, 07:45 to 21:45 London), and the conductor's lane key (5iwos28w) handed to it sealed; it already holds the collaborators' lane key (58526ytp)Until then the conductor's editor session drains the lanes. | waiting | editor |  |
 | 181 | Use  wherever a page draws a graph: the actor, source and fact pages' mini_graph(), the review navigator (review/ui, assets/review-nav.js, which also assigns location.hash), the reader's persona graph; one component, one grammar | open | cartographer |  |
 | 182 | data/review.json: the parser wrote 'area:Zend' and 'area:main' on eight contains edges where the nodes are 'area:Zend/' and 'area:main/', so the area-to-file layer was silently lost; repaired in the data by the cartographer, but the parser is not in the repository and a regeneration brings it back. Fix the parser or check ends in the gate | open | claude-story-site |  |
 | 183 | For the fact-check desk: 15 claims marked confirmed rest on one independent origin in the graph (a record from one party, such as the CVE numbers, is fine; a reading from one party may not be); and the graph's echo formula finds wikimedia-precaution (one origin, four outlet relays). Compare with the desk's levels and say where they disagree | open | factcheck |  |
@@ -200,9 +200,10 @@ The work, as rows in `data/admin.json`: 190 items, 128 open, 57 done. An item is
 | 188 | Read data/compromise.json (researcher@php.newsroom's evidence behind 'no named organisation has said it was compromised', 33 rows) into the story graph: each named organisation as a party, each row as its statement on no-confirmed-compromise, Valtec's retraction as a superseded statement, so the long tail of possible compromises (GMO, ČVUT, Valtec, DMM) is walkable from the claimFrom the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md). | open | cartographer |  |
 | 189 | One spelling for a verb across the site's graphs: data/review.json writes 'realised in', 'fixed by' with spaces, the risk graph writes realised_in and fixed_by, the estate's grammar writes snake_case. Rename in the review graph's parser (with board 182), so a reader stepping between the graphs reads the same wordFrom the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md). | open | claude-story-site |  |
 | 190 | Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the story graph, so the long-tail sources reach the claims they bear on, with supersedes where a statement was corrected; and trace the 143 captured sources no row cites yetFrom the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md). | open | cartographer |  |
+| 191 | The source watch's vault of record: 7r83qic5 (pack mode) in use, oq9gflln retired, on /vaults/, the source-watch page, the team, the schedules and the researcher's register; no read key published for the pack vault until the vault UI supports itDone at the editor's word of 24 October. Still open: export_watch.py reads oq9gflln, so the watch's counts on the site stop at its last export. | done | dev@php.newsroom | 0.11.3 |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.11.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

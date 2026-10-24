@@ -471,7 +471,7 @@
    "status": "active",
    "summary": "Runs the source watch: every outside source on the story checked on a schedule, a snapshot whenever it changes.",
    "owns": [
-    "the source watch vault (oq9gflln)"
+    "the source watch vault (7r83qic5, pack mode, since 23 October 2026; oq9gflln before, retired)"
    ],
    "rules": [
     "A snapshot only when the content changed; every check records what access it had."

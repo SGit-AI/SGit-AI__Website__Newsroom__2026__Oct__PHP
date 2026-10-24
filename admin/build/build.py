@@ -2792,7 +2792,7 @@ def build_vaults():
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch, and the public face of the telemetry, its curated counts); two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch as it was until 23 October, and the public face of the telemetry, its curated counts); one, the source watch as it runs now, in sgit's pack mode, is private until the vault UI can open pack vaults; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
@@ -2814,6 +2814,7 @@ def build_vaults():
                     ', '.join(f'{E(k)} {n}' for k, n in sorted((r.get('access') or {}).items(), key=lambda kv: -kv[1]))] for r in reversed(W['runs'])])
     tips = ''.join(f"""<article class="rel"><p class="kicker">Tip {E(t["id"])} &middot; received {E(t["received"] or "")} &middot; {pill(t["status"] or "unverified")}</p>
 <p>{E(t["says"] or "")}</p><p class="small"><b>Watched as</b> {", ".join(f"<code>{E(w)}</code>" for w in t["watched_as"])}. <b>To check:</b> {"; ".join(E(c) for c in t["to_check"])}.</p></article>""" for t in W['tips'])
+    PACK = next(x for x in D['vaults']['vaults'] if x['slug'] == 'source-watch-pack')  # where the watch runs now
     shot = 'assets/vaults/source-watch.png'  # captured from the official UI with the read key; the figure appears once it is in the repository
     hero = (f"""<figure class="shot"><a href="{E(vault_open_url(W["read_key"]))}" rel="noopener" target="_blank"><img src="../../{shot}" alt="The source-watch vault open in the official SG/Vault UI, read-only." width="1280" height="800" loading="eager"></a>
 <figcaption>The vault in the official UI, opened read-only with the published key. <b>Click the image to open the real one &#8599;</b></figcaption></figure>""" if os.path.exists(os.path.join(ROOT, shot)) else '')
@@ -2821,6 +2822,7 @@ def build_vaults():
 <p class="crumb"><a href="../index.html">Vaults</a> / The source watch</p>
 <h1>The source watch: every outside source on php2shell, watched and snapshotted</h1>
 <p class="lead">A vault that does one thing. It watches every outside source on the story, {W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries, and on each run records what access it had and keeps a new snapshot whenever the content changed: the text, a screenshot, the HTML as served and as rendered, the headers and the sha256 of each, and a graph of what the page says and what changed since the last look. A small, focused Wayback Machine whose diffs are graphs. Run by <b>researcher@php.newsroom</b>; public, read-only.</p>
+<div class="caveat"><p><b>Retired on 23 October 2026.</b> The watch moved to its pack-mode copy, vault <code>{E(PACK["id"])}</code> (<a href="../../admin/pack-mode/index.html">pack mode, measured</a>), and every pass since writes there. {E(PACK["note"])} This page, and every watch snapshot this site cites, is read from this vault, <code>{E(W["vault_id"])}</code>, as last exported.</p></div>
 {hero}
 {vault_note(W["read_key"])}
 {vault_live(W["read_key"], False, 2, f'The vault has no app of its own yet, so it opens in the vault browser. It holds {W["files"]:,} files; the browser decrypts the folder tree before it lists it, so the first open takes minutes. <code>sgit clone</code> is the fast way in.')}
@@ -5571,6 +5573,9 @@ def sched_load():
         runs.append(r)
     runs.sort(key=lambda r: (r['started'], r['run']), reverse=True)
     msgs = sorted((sched_message(fn) for fn in glob.glob(os.path.join(DATA, 'messages', '*', '*.md'))), key=lambda m: m['id'], reverse=True)
+    known = set(cards) | {m['id'] for m in TEAM['members']} | {e['agent'] for e in load('schedules').get('expected', [])} | {'all', 'editor'}
+    for m in msgs:
+        if m['box'] not in known: sys.exit(f'data/messages/{m["box"]}/: no agent is called {m["box"]!r}, so no wake would read it; use the id on its card or on /team/')
     read = {}
     for r in reversed(runs):
         for i in r.get('read', []): read.setdefault(i, r)

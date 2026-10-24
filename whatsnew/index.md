@@ -12,6 +12,18 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.11.4 · 24 October 2026new since your last visit
+
+The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to 21:45 London; the conductor's card no longer drains them; a message to an agent no wake reads now stops the build
+
+No reader-facing section changed in this release.
+
+## v0.11.3 · 24 October 2026new since your last visit
+
+the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because the site's watch data was exported from it); /vaults/, the source-watch page, the team, the schedules and the researcher's register say so; the pack vault's read key is not published until the vault UI opens pack vaults
+
+No reader-facing section changed in this release.
+
 ## v0.11.2 · 24 October 2026new since your last visit
 
 claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit newsroom's Pulse in a separate section (/pulse/), and the plan for the journalist's full pass
@@ -650,4 +662,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.11.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

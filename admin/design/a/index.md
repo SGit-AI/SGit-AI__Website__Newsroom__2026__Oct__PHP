@@ -2,7 +2,7 @@
 
 The front page for a board member who wants only what their role needs: the situation, five numbers, three questions for the team, what is new, and one picture each of how it unfolded and what governments advise.
 
-> Mockup A for review, built from the data of release v0.11.2. Not the live site.
+> Mockup A for review, built from the data of release v0.11.4. Not the live site.
 
 Developing  ·  last checked 23 October 2026, 16:04 UTC 
 
@@ -102,7 +102,7 @@ All say install the fix. They split on what to do if you cannot.
 
  See every agency → 
 
- Focus view shows 27 of 750 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
+ Focus view shows 27 of 751 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
 
 ---
-site v0.11.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html
+site v0.11.4 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html
