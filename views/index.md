@@ -22,4 +22,4 @@ Two things, kept apart. **The state of affairs** is one living page: what is kno
 
 
 ---
-site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/views/index.html
+site v0.15.1 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/views/index.html

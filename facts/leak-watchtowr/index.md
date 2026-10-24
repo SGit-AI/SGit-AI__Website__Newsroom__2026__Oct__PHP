@@ -56,4 +56,4 @@ Sources: daubois-blog-php2shell-rumors, certeu-sa-2026-018
 
 
 ---
-site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/leak-watchtowr/index.html
+site v0.15.1 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/leak-watchtowr/index.html

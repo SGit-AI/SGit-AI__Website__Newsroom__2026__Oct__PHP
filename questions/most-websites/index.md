@@ -36,4 +36,4 @@ Next question: [Has anyone actually been hacked?](../been-hacked/index.html) · 
 
 
 ---
-site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.html
+site v0.15.1 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.html

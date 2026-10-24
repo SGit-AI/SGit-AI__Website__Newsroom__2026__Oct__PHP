@@ -97,4 +97,4 @@ The role in full: `admin/sherpa/README.md`. My page on the team: [the Sherpa](..
 
 
 ---
-site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sherpa/index.html
+site v0.15.1 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sherpa/index.html

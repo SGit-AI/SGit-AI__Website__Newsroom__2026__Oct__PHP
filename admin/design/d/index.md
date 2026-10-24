@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.0. Not the live site.
+> Mockup D for review, built from the data of release v0.15.1. Not the live site.
 
-PHP Team console Console Overview Board 183 Agents 19 Releases 119 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 183 Agents 19 Releases 120 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.0 
-119 releases since 22 Oct 
+v0.15.1 
+120 releases since 22 Oct 
 
 Open on the board 
 183 
@@ -99,6 +99,7 @@ Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append 
 ### Releases
  latest 8 
 
+ v0.15.1 2026-10-24 Conductor full pass 15:15 London: agents-status, schedules against runs, run record 
  v0.15.0 2026-10-24 prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that… 
  v0.14.31 2026-10-24 Conductor light check 14:15 London: observability and security requests recorded for the editor, factcheck run note, run records 
  v0.14.30 2026-10-24 the evidence vault at 1f38e70921b2 (328 sources) and the state of affairs v3: a vendor's claim of a break-in withdrawn (Sophos), b… 
@@ -106,7 +107,6 @@ Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append 
  v0.14.28 2026-10-24 observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first d… 
  v0.14.27 2026-10-24 Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry re… 
  v0.14.26 2026-10-24 Application security: /admin/appsec/ with the threat model and five data-flow diagrams, 39 security advisories kept like incidents… 
- v0.14.25 2026-10-24 the scheduled journalist proposed: a Sonnet journalist that takes each curator batch through to the site, and an Opus chief corres… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
