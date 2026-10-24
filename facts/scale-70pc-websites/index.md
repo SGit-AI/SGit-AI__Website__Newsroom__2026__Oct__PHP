@@ -64,4 +64,4 @@ Sources: cloudflare-blog-php2shell-waf, x-openai-php2shell, wiz-blog-php2shell
 
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html
+site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html

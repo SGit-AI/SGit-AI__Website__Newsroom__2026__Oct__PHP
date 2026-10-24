@@ -247,7 +247,7 @@ NAV = [
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
                       ('layers/index.html', 'Evidence, derived, authored'),
                       ('pipeline/index.html', 'The fact pipeline'), ('versions/index.html', 'How the story changed'),
-                      ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults']]),
+                      ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults'] if x.get('nav', True)]),
     ('GRC', [('grc/index.html', 'GRC: risks, owners, standards'), ('grc/risks/index.html', 'The risk register'), ('grc/stakeholders/index.html', 'Stakeholders and their registers'),
              ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/explore/index.html', 'Explore the graph: from any node'), ('grc/gaps/index.html', 'What the graph is missing'), ('grc/network/index.html', 'From the sgit network')]),
     ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed')]),
@@ -1436,7 +1436,7 @@ def build_admin():
   ['The meter', '<code>assets/components/sg-meter/v1/v1.3/v1.3.1/</code> and <code>assets/components/base/v1/v1.0/v1.0.0/</code>, vendored, immutable paths'],
   ['Credentials', 'none in the repository; the vault key and the push token live in the agents\' sessions and in a gitignored tier, scanned by the tripwire'],
 ]))}
-{section("section", "The admin section", '<ul><li><a href="board/index.html">The board</a>: the work, as rows.</li><li><a href="roles/index.html">Roles</a>: who does what, and how an agent joins.</li><li><a href="briefs/index.html">Briefs</a>: the build briefs, in full.</li><li><a href="vault/index.html">The vault, opened</a>: the read key and the browser link.</li><li><a href="telemetry/index.html">Who reads this site</a>: the telemetry lane and its counts.</li><li><a href="synthetic/index.html">Synthetic readers</a>: six test readers who read the live site every hour and say what works and what does not.</li></ul>')}
+{section("section", "The admin section", '<ul><li><a href="board/index.html">The board</a>: the work, as rows.</li><li><a href="roles/index.html">Roles</a>: who does what, and how an agent joins.</li><li><a href="briefs/index.html">Briefs</a>: the build briefs, in full.</li><li><a href="vault/index.html">The vault, opened</a>: the read key and the browser link.</li><li><a href="telemetry/index.html">Who reads this site</a>: the telemetry lane and its counts.</li><li><a href="synthetic/index.html">Synthetic readers</a>: six test readers who read the live site and say what works and what does not.</li></ul>')}
 {section("gate", "The gate", checks_t)}
 {section("reality", "The reality file", render_md_file("REALITY.md"))}
 {section("honest", "The honest column", '''<ul>
@@ -2148,7 +2148,7 @@ def build_synthetic():
             if os.path.exists(fp):
                 RUNS[(p['id'], h['run'])] = json.load(open(fp, encoding='utf-8'))
     SK = ('answered', 'clarity', 'trust', 'design', 'navigation')
-    def txt(x): return E(str(x if x is not None else '').replace('—', ', '))
+    def txt(x): return E(str(x if x is not None else '').replace('\u2014', ', '))
     def norm(x):
         x = str(x or '').split('#')[0].strip('` ').lstrip('./')
         if x in ('', '/'): return 'index.html'
@@ -2209,7 +2209,15 @@ def build_synthetic():
         if not x['checks']: return '<p>No instrument flagged anything.</p>'
         return table(['Severity', 'Page', 'Check', 'Evidence'], [[txt(c['severity']), pg(c['page'], depth) if str(c['page']).endswith('.html') else txt(c['page']), txt(c['check']), txt(c['evidence'])] for c in x['checks']])
 
+    RK = {x['id']: x['read_key'] for x in D['vaults']['vaults'] if x.get('read_key')}
     caveat = 'A synthetic reader is a test instrument, not a reader: its review is a prompt for the editor and the agents, never evidence about the story, and never counted as readership.'
+
+    def vault_block(p, depth, run=None):
+        k = RK.get(p['vault_id'])
+        if not k: return f'<p>Vault <code>{E(p["vault_id"] or "")}</code> (private).</p>'
+        where = f'This run is in the folder <code>runs/{E(run)}/</code>: the served and rendered HTML, the text and the screenshots of every page, every request and console message, and what the reviewer was given.' if run else 'Every run is a folder under <code>runs/</code>.'
+        return (f'<p class="kv"><b>Vault</b> <code>{E(p["vault_id"])}</code> &middot; <b>read key</b> <code>{E(k)}</code> (read-only, published on purpose)</p>'
+                f'<p><a href="{E(vault_open_url(k))}" rel="noopener" target="_blank">Open the vault read-only in a new tab &#8599;</a> &middot; <code>sgit clone {E(k)}</code></p><p>{where}</p>')
 
     # one page per run
     for (pid, run), x in sorted(RUNS.items()):
@@ -2224,6 +2232,7 @@ def build_synthetic():
 {section("review", "The review, in the reader's words", review_html(x["feedback"], dp))}
 {section("journey", "The journey", journey_html(x, dp), "The pages in the order read: the start, the reader's path, then the links that matched its interests.")}
 {section("checks", "What the instruments flagged", checks_html(x, dp), "Measurements, not verdicts: the review says which of them mattered to this reader.")}
+{section("vault", "Everything this run saw", vault_block(p, dp, run))}
 """
         page(f'admin/synthetic/{pid}/{run}/index.html', f'{p["name"]}, synthetic reader: the run of {run} on v{x["site_version"]}',
              f'What the synthetic {p["name"].lower()} read on the live site at {run}, what it measured, and its review: whether it got its answer, what works, what does not and what to change.', body, kind='site')
@@ -2249,6 +2258,7 @@ def build_synthetic():
 <p>Reading path after the front page: {", ".join(pg(y, dp) for y in p["path"])}.</p>
 {section("latest", f"The latest review: {E(L['run'])} on v{E(L['site_version'])}" if L else "The latest review", latest_html)}
 {section("history", "Every run", hist, "Scores are 0 to 5 from this reader's point of view.")}
+{section("vault", "Everything it saw: the vault", vault_block(p, dp) + (vault_live(RK[p['vault_id']], False, dp, 'Read-only, in the official vault UI.') if RK.get(p['vault_id']) else ''))}
 """
         page(f'admin/synthetic/{p["id"]}/index.html', f'The synthetic {p["name"].lower()}: every run and its latest review',
              f'A synthetic {p["name"].lower()} reads the live site on its own device with its own question; its latest review in full and every run before it.', body, kind='site')
@@ -2315,10 +2325,10 @@ def build_synthetic():
            '</ol>')
     vaults = ('<p>One vault per reader; its id is on that reader\'s page. Each holds <code>README.md</code> (the reader), <code>latest.json</code>, <code>history.jsonl</code>, <code>heartbeats.jsonl</code> and <code>runs/&lt;run&gt;/</code> with '
               '<code>run.json</code>, <code>requests.jsonl</code>, <code>console.jsonl</code>, <code>pages/</code> (served and rendered HTML, text, screenshots, measurements), <code>review-request.md</code>, <code>feedback.json</code> and <code>feedback.md</code>. '
-              'They hold nothing confidential: captures of this public site and the readers\' reviews. Their keys are sealed to the editor\'s key; none is in this repository.</p>')
+              'They hold nothing confidential: captures of this public site and the readers\' reviews, so their read keys are published, on each reader\'s page and on <a href="../../vaults/index.html">every vault behind this site</a>: anyone can open them read-only. Their vault keys are sealed to the editor\'s key; none is in this repository.</p>')
     body = f"""
 <h1>Synthetic readers</h1>
-<p class="lead">Six test readers, run by the agent synthetic@php.newsroom: a board member, a CTO, a project manager, a security lead, a developer and a designer. Each reads the live site in a real browser on its own device, follows its own reading path and the links that interest it, and then says, in its own voice, whether it got its answer, what worked, what did not and what it would change. Every review is published here; every request, page and screenshot is kept in that reader's own vault.</p>
+<p class="lead">Six test readers, run by the agent synthetic@php.newsroom: a board member, a CTO, a project manager, a security lead, a developer and a designer. Each reads the live site in a real browser on its own device, follows its own reading path and the links that interest it, and then says, in its own voice, whether it got its answer, what worked, what did not and what it would change. Every review is published here; every request, page and screenshot is kept in that reader's own vault, which anyone can open read-only.</p>
 <p class="caveat">{caveat} It sends no telemetry: the site's telemetry lane and geolocation lookups are answered locally during a run.</p>
 {section("now", "The latest run of each reader", table(['Reader', 'Device', 'Run (UTC)', 'Site', 'Got the answer', *[k.title() for k in SK], 'Runs'], rows), "Scores are 0 to 5 from that reader's point of view; the change since its previous review is in brackets.")}
 {section("verdicts", "In their own words", f'<ul>{verdicts}</ul>')}

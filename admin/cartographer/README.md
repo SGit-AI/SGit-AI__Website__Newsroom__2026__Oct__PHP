@@ -51,7 +51,8 @@ A pass takes in what other agents added since the last one and leaves the graph 
    and without JavaScript, when the component or the graph's shape changed.
 7. **Record and release.** A record in `admin/cartographer/passes/`, the ontology's `version` if it changed, board
    rows, `REALITY.md` if what exists changed; then `admin/build/release.sh "<what the pass changed>"` (AGENTS.md
-   section 1). A pass that changed nothing records that in one line and releases nothing.
+   section 1). A conflict is solved by hand and said in the run's log; the board is where it happens, since every
+   agent appends to it. A pass that changed nothing ends with one line and no commit (AGENTS.md section 7).
 
 ## On a schedule
 

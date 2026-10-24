@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 179 items, 120 open, 55 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 180 items, 119 open, 57 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -113,7 +113,7 @@ The work, as rows in `data/admin.json`: 179 items, 120 open, 55 done. An item is
 | 101 | Quiet hours: decide the window (proposed 22:00 to 07:00 London) and whether the source watch may run through the night while the story is breaking; then the three schedules on /team/runs/ are changed to match | open | editor |  |
 | 102 | Source watch: before scheduling the next pass, check London time and move a pass in the quiet hours to 07:04; a pass that changes something leaves a dated article with run:  | open | researcher@php.newsroom |  |
 | 103 | Fact-check runs: move the schedule to CRON_TZ=Europe/London 52 8-20/4 * * * once the editor agrees; a run that moves a grade or opens a ticket leaves a dated article with run:  | open | factcheck |  |
-| 104 | Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run:  | open | synthetic |  |
+| 104 | Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run: The editor asked for the workflow to be removed (22 October): .github/workflows/synthetic.yml is deleted; the readers run only when an agent session runs admin/synthetic/run.py. | done | synthetic |  |
 | 105 | Runs: /team/runs/, the register of every schedule (who, where, how often, how many runs fall in the quiet hours) and every recorded run with the article it should leave (data/schedules.json) | done | conductor |  |
 | 106 | Feedback from any page, signed: a Feedback button beside Ask opens the pane's Feedback tab (kind, words, a screenshot from a file or captured), signed with the device's key and encrypted to the collaborators lane; /join/ makes the key from an invitation's QR code in one tap; admin/build/invite.py makes invitations and enrols keys; the drain verifies every signature with sgit pki verify | done | conductor |  |
 | 107 | The editor's review queue, /review/: every page or section new or changed since he last looked, one at a time on an iPad (Next, Good, Needs work, a comment), each decision signed feedback of kind review (brief: 2026-10-22__brief__feedback-keys-and-review.md, phase 2) | open | conductor |  |
@@ -185,13 +185,14 @@ The work, as rows in `data/admin.json`: 179 items, 120 open, 55 done. An item is
 | 173 | Patchstack, two accounts: 'multiple active exploitation incidents' reported by hosting partners by 07:34 UTC on 21 October (Recorded Future) against 'only probing attacks, with no hard evidence of breaches yet' (PCMag); claim no-confirmed-compromise says Patchstack reports successful exploitationFor the contradiction ledger, and for claude-story-site on no-confirmed-compromise. Sources: recordedfuture-php2shell, pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw. | open | factcheck@php.newsroom |  |
 | 174 | The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed for KEV, NVD, EPSS and repository series after thatRead key only; the write key is neither wanted nor to be accepted. | waiting | editor |  |
 | 175 | release.sh fails the gate's determinism check on the first try when a release changes a versioned page's text: the section ledger settles on the second buildSeen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Workaround used: restore VERSION and data/versions.json, keep the settled data/sections.json, run release.sh again. A fix belongs in build.py (render the ledger-reading pages after every ledger() call); release.sh and validate.py are unchanged. | open | dev@php.newsroom |  |
-| 176 | The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session with the two lanes' vault keys handed over sealed (data/schedule/conductor.json, proposed): a go, and the scheduled tasks to createProposed 24 October; nothing is scheduled until the editor says so. | waiting | editor |  |
+| 176 | The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session with the two lanes' vault keys handed over sealed (data/schedule/conductor.json, proposed): a go, and the scheduled tasks to createThe editor's go, 24 October 2026: a Sonnet session, conductor@php.newsroom (scheduled), and one scheduled task, hourly at :15 from 07:15 to 21:15 London. A wake commits only when something changed. | done | editor |  |
 | 177 | The scheduled researcher's two wake prompts still name the schedule vault: change them to the card's steps (take in dev, inbox, run record, release)The prompts are the scheduled tasks'; only the editor's session changes them. | open | editor |  |
 | 178 | Cards to write: pulse (already scheduled), ontologist and librarian (asked to propose)Messages sent 24 October; /team/schedule/ lists who has no card yet. | open | conductor |  |
 | 179 | Curator and researcher to confirm the cards the conductor drafted from their scheduled tasks, and keep them | open | conductor |  |
+| 180 | Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then its wakes note "lanes: no key" and this session drains them | waiting | editor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

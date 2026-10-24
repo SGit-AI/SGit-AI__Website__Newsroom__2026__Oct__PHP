@@ -91,6 +91,18 @@ Scores are 0 to 5 from this reader's point of view.
 | [2026-10-23T2358Z](../../../admin/synthetic/designer/2026-10-23T2358Z/index.html) | v0.10.18 | partly | 3 | 3 | 4 | 3 | 3 | 2 / 5 / 7 | 7 |
 | [2026-10-22T1755Z](../../../admin/synthetic/designer/2026-10-22T1755Z/index.html) | v0.4.3 | partly | 3 | 3 | 4 | 3 | 3 | 2 / 4 / 3 | 7 |
 
+## Everything it saw: the vault
+
+**Vault** `dpdx3q13` · **read key** `sgit_public_read_d38e486c514c3f320e437bf757110c772af8241c595baa6ec0a4504d72069297:dpdx3q13` (read-only, published on purpose)
+
+[Open the vault read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_d38e486c514c3f320e437bf757110c772af8241c595baa6ec0a4504d72069297%3Adpdx3q13) · `sgit clone sgit_public_read_d38e486c514c3f320e437bf757110c772af8241c595baa6ec0a4504d72069297:dpdx3q13`
+
+Every run is a folder under `runs/`.
+
+## See it live, here
+
+[Open the vault in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_d38e486c514c3f320e437bf757110c772af8241c595baa6ec0a4504d72069297%3Adpdx3q13) Read-only, in the official vault UI.
+
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/designer/index.html
+site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/designer/index.html

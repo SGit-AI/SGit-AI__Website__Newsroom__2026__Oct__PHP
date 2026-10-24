@@ -52,7 +52,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 174 | The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed for KEV, NVD, EPSS and repository series after thatRead key only; the write key is neither wanted nor to be accepted. | waiting |  |
-| 176 | The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session with the two lanes' vault keys handed over sealed (data/schedule/conductor.json, proposed): a go, and the scheduled tasks to createProposed 24 October; nothing is scheduled until the editor says so. | waiting |  |
+| 180 | Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then its wakes note "lanes: no key" and this session drains them | waiting |  |
 
 ## What they have done
 - Started the site from two voice memos and a message on 22 October 2026, and set every brief since.
@@ -64,6 +64,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 098 | Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp groupThe editor confirmed the LinkedIn link on 22 October 2026. | done |  |
+| 176 | The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session with the two lanes' vault keys handed over sealed (data/schedule/conductor.json, proposed): a go, and the scheduled tasks to createThe editor's go, 24 October 2026: a Sonnet session, conductor@php.newsroom (scheduled), and one scheduled task, hourly at :15 from 07:15 to 21:15 London. A wake commits only when something changed. | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dinis.human/` in the mail vault (`fmb2tpl2`).
@@ -74,4 +75,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

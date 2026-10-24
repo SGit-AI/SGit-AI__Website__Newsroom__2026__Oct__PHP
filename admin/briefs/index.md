@@ -38,6 +38,8 @@ The schedule vault needed its own key handling, a client in the browser and an e
 
 Every hour at a quarter past, 07:15 to 21:15 London (15 wakes, none in the quiet hours, none on the curator's or the source watch's minutes): a light check each wake (inbox, the two lanes, every schedule against its runs, the board) and a full pass reading every agent session at 07:15, 11:15, 15:15 and 19:15, which rewrites `/team/status/`. On Sonnet, in a new persistent session given the two lanes' vault keys sealed by the editor. The card is `data/schedule/conductor.json`.
 
+**The editor's go, 24 October 2026:** "create your schedule... 15 wakes a day, because you're keeping an eye on everything. Not every wake needs to do a commit; Git can take way more commits than that per day. Conflicts: solve them, and document them." Created the same night: a Sonnet session and one scheduled task, first wake 07:15 London. A wake commits only when something changed; a conflict is solved by hand and written in the run's log (AGENTS.md, section 7).
+
 ### Not built
 
 - Writing a card, a run or a message from the browser (signed with an enrolled key): the feedback pane already signs; a later step.
@@ -2486,4 +2488,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
