@@ -37,7 +37,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
-| [The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services](../../../facts/nl-offline/index.html) | confirmed | **A3** Echoed●●●○○○ | [Rijksoverheid / NCSC-NL](../../../sources/rijksoverheid-ncsc-php-news/index.html) [Dutch IT Leaders](../../../sources/dutchitleaders-websites-offline/index.html) |
+| [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too](../../../facts/nl-offline/index.html) | reported | **A3** Echoed●●●○○○ | [Rijksoverheid / NCSC-NL](../../../sources/rijksoverheid-ncsc-php-news/index.html) [TPO.nl](../../../sources/tpo-nl-digid-offline/index.html) |
 | [Finland's state IT provider Valtori restricted public traffic to government web services from 12:45 local time on 21 October as a precaution](../../../facts/fi-offline/index.html) | reported | **A2** Reported●●○○○○ | [Yle](../../../sources/yle-finland-government-sites-shut/index.html) [Helsinki Times](../../../sources/helsinkitimes-finland-shutdown/index.html) |
 | [Latvia restricted access from abroad to several state digital resources, possibly until 26 October; lsm.lv and 112.lv were restored by 20:00 UTC](../../../facts/latvia-offline/index.html) | confirmed | **A6** Established●●●●●● | [CERT.LV](../../../sources/certlv-php-preventive/index.html) |
 
@@ -63,4 +63,4 @@ On this site: [Impact: taken offline versus compromised](../../../impact/index.h
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04-1/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04-1/index.html

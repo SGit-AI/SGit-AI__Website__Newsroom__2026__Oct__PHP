@@ -57,4 +57,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/andina-agencia-noticia-peru-y-otros-paises-advi/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/andina-agencia-noticia-peru-y-otros-paises-advi/index.html

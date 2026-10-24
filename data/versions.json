@@ -1,6 +1,15 @@
 {
- "current": "0.12.1",
+ "current": "0.13.0",
  "versions": [
+  {
+   "version": "0.13.0",
+   "date": "2026-10-24",
+   "title": "The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the 1.57 million framing, the Dutch offline row, the front page's offline advice, DigiD and fix-complete lines), Corrections we have asked for (/outreach/) with eleven requests and the emails the editor sends, and the desk's briefs, review and schedule",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.12.1",
    "date": "2026-10-24",

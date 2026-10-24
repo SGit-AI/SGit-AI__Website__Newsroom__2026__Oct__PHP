@@ -57,7 +57,7 @@ Each is the shortest path down the ladder from one reader to a changed line, com
 - Stakeholders [Board member or executive](../briefings/board/index.html)
 - Risks What the server holds is taken
 - Story arcs [The bug is in the engine, not in your code](../flaws/index.html)
-- Claims and events [Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS](../claims/index.html#wordpress-drupal) reported
+- Claims and events [In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS](../claims/index.html#wordpress-drupal) reported
 - The flaws [CVE-2026-109618: RCE via OOM corruption](../review/ui/index.html#cve-109618)
 - The fix [A soft memory limit that no longer jumps](../review/ui/index.html#fix-soft-limit)
 - Areas and files [Zend/zend_alloc.c](https://github.com/php/php-src/blob/3584a98bda0f2c0d367255b046798b0d3a221a19/Zend/zend_alloc.c)
@@ -94,7 +94,7 @@ Each is the shortest path down the ladder from one reader to a changed line, com
 - Stakeholders [Curious reader](../briefings/everyone/index.html)
 - Risks What the server holds is taken
 - Story arcs [The bug is in the engine, not in your code](../flaws/index.html)
-- Claims and events [Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS](../claims/index.html#wordpress-drupal) reported
+- Claims and events [In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS](../claims/index.html#wordpress-drupal) reported
 - The flaws [CVE-2026-109618: RCE via OOM corruption](../review/ui/index.html#cve-109618)
 - The fix [Allocations that may fail instead of abort](../review/ui/index.html#fix-fallible)
 - Areas and files [Zend/zend_hash.c](https://github.com/php/php-src/blob/3584a98bda0f2c0d367255b046798b0d3a221a19/Zend/zend_hash.c)
@@ -126,4 +126,4 @@ The fix-only version of this graph is [the fix mapped to the code](../review/ind
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/fractal/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/fractal/index.html

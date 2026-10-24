@@ -711,6 +711,8 @@ now/manifest.webmanifest
 now/now.json
 numbers/index.html
 numbers/index.md
+outreach/index.html
+outreach/index.md
 patching/index.html
 patching/index.md
 patching/inventory/index.html
@@ -1445,6 +1447,8 @@ team/index.html
 team/index.md
 team/journalist/index.html
 team/journalist/index.md
+team/liaison/index.html
+team/liaison/index.md
 team/librarian/index.html
 team/librarian/index.md
 team/newsroom-lead/index.html
@@ -1461,6 +1465,8 @@ team/schedule/conductor/index.html
 team/schedule/conductor/index.md
 team/schedule/curator/index.html
 team/schedule/curator/index.md
+team/schedule/desk/index.html
+team/schedule/desk/index.md
 team/schedule/index.html
 team/schedule/index.md
 team/schedule/librarian/index.html

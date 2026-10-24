@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.12.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.13.0. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -82,6 +82,7 @@ Site v0.12.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [Every claim](https://php.oct.2026.newsroom.sgit.ai/claims/index.md): 70 claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.
 - [Claims waiting for review](https://php.oct.2026.newsroom.sgit.ai/claims/review/index.md): 86 claims from the evidence vault that are not in the site claim table yet, each with the agent that recorded it, its sources, and the journalist's verdict or "not yet reviewed".
 - [Fact-check: how sure we are](https://php.oct.2026.newsroom.sgit.ai/factcheck/index.md): Every claim on the PHP flaws site graded independently by the fact-check desk on a spectrum of evidence from A0 to A6, with a filter for only what can be relied on, the contradiction ledger, and the open tickets.
+- [Corrections we have asked for](https://php.oct.2026.newsroom.sgit.ai/outreach/index.md): The corrections this site has asked other publishers to make about the PHP flaws, each with the publisher's words from a dated capture, the fact-check evidence, a suggested wording and where the request stands.
 - [The numbers](https://php.oct.2026.newsroom.sgit.ai/numbers/index.md): Every scale figure in circulation about php2shell, with what it measures, who said it, whether anyone checked it, and why they differ by four orders of magnitude.
 - [The agencies](https://php.oct.2026.newsroom.sgit.ai/agencies/index.md): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
 - [Affected systems](https://php.oct.2026.newsroom.sgit.ai/affected/index.md): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
@@ -147,7 +148,7 @@ Site v0.12.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 ## About
 - [The method](https://php.oct.2026.newsroom.sgit.ai/method/index.md): How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.
 - [Design: the redesign, in mockups](https://php.oct.2026.newsroom.sgit.ai/admin/design/index.md): 
-- [The team](https://php.oct.2026.newsroom.sgit.ai/team/index.md): Every member of the team that runs this site, 2 people and 18 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 16 audiences.
+- [The team](https://php.oct.2026.newsroom.sgit.ai/team/index.md): Every member of the team that runs this site, 2 people and 19 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 16 audiences.
 - [The billing model](https://php.oct.2026.newsroom.sgit.ai/billing/index.md): How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
 - [Your reading account](https://php.oct.2026.newsroom.sgit.ai/account/index.md): The balance, history and receipts of your reading on this site, kept in your browser.
 - [The brief](https://php.oct.2026.newsroom.sgit.ai/brief/index.md): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.
@@ -477,11 +478,11 @@ Site v0.12.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [All PHP versions from 5 onwards are affected by at least one of the flaws](https://php.oct.2026.newsroom.sgit.ai/facts/versions-old/index.md): disputed
 - [Updating is the only complete mitigation; the configuration measures reduce exposure to specific pat](https://php.oct.2026.newsroom.sgit.ai/facts/only-update/index.md): confirmed
 - [A web application firewall may provide some protection until systems are patched](https://php.oct.2026.newsroom.sgit.ai/facts/waf/index.md): disputed
-- [Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magent](https://php.oct.2026.newsroom.sgit.ai/facts/wordpress-drupal/index.md): reported
-- [Roughly 70% of the Internet is affected](https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.md): unverified
-- [PHP is used by almost 70% of websites](https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.md): reported
+- [In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, M](https://php.oct.2026.newsroom.sgit.ai/facts/wordpress-drupal/index.md): reported
+- [70% of the Internet is affected](https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.md): unverified
+- [PHP is used by almost 70% of websites whose server-side language is known](https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.md): reported
 - [Something like 30 million websites could be affected](https://php.oct.2026.newsroom.sgit.ai/facts/scale-30m/index.md): reported
-- [PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpa](https://php.oct.2026.newsroom.sgit.ai/facts/scale-2.6m-hosts/index.md): reported
+- [VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million h](https://php.oct.2026.newsroom.sgit.ai/facts/scale-2.6m-hosts/index.md): reported
 - [About 6,000 potentially affected resources in Latvia, a few hundred in the public sector](https://php.oct.2026.newsroom.sgit.ai/facts/scale-latvia/index.md): reported
 - [674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, 3 not vuln](https://php.oct.2026.newsroom.sgit.ai/facts/scale-ncsc-nl/index.md): confirmed
 - [The flaws were found by researchers using frontier AI under OpenAI's Patch the Planet initiative](https://php.oct.2026.newsroom.sgit.ai/facts/ai-found/index.md): reported
@@ -528,7 +529,7 @@ Site v0.12.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on out-of-memo](https://php.oct.2026.newsroom.sgit.ai/facts/fix-engine/index.md): confirmed
 - [Patching the demonstrated paths does not make the bailout mechanism safe; more paths should be expec](https://php.oct.2026.newsroom.sgit.ai/facts/more-paths/index.md): reported
 - [Edge protections went live hours before disclosure: Cloudflare at 03:02 UTC; Imperva, Akamai and Fas](https://php.oct.2026.newsroom.sgit.ai/facts/waf-nine-hours/index.md): confirmed
-- [The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl](https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.md): confirmed
+- [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch pre](https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.md): reported
 - [Finland's state IT provider Valtori restricted public traffic to government web services from 12:45 ](https://php.oct.2026.newsroom.sgit.ai/facts/fi-offline/index.md): reported
 - [The Wikimedia Foundation took down a number of systems 'as a precautionary measure until they can be](https://php.oct.2026.newsroom.sgit.ai/facts/wikimedia-precaution/index.md): reported
 - [Weird Gloop turned off its wiki web servers for 13 hours and still served about 94% of page views fr](https://php.oct.2026.newsroom.sgit.ai/facts/weirdgloop-13h/index.md): confirmed
@@ -537,7 +538,7 @@ Site v0.12.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [Edinburgh and Oxford councils, the Met Police and the Office for Budget Responsibility were unavaila](https://php.oct.2026.newsroom.sgit.ai/facts/uk-list/index.md): reported
 - [Quarkslab's published audit summary lists 27 findings, two redacted because their fixes were complex](https://php.oct.2026.newsroom.sgit.ai/facts/quarkslab-redacted/index.md): reported
 - [Chainguard's team found the same bugs independently with an AI harness and a frontier model after a ](https://php.oct.2026.newsroom.sgit.ai/facts/lorenc-ai-found/index.md): reported
-- [The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV ](https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.md): confirmed
+- [The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV ](https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.md): reported
 
 ## Version histories, one per section
 - [The two flaws](https://php.oct.2026.newsroom.sgit.ai/versions/page-flaws/index.md): 2 versions
@@ -574,10 +575,10 @@ Site v0.12.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [Briefing: Website owner](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-site-owner/index.md): 5 versions
 - [Briefing: Project or programme manager](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-pm/index.md): 6 versions
 - [The specialist summary](https://php.oct.2026.newsroom.sgit.ai/versions/page-summary/index.md): 5 versions
-- [Front page: right now](https://php.oct.2026.newsroom.sgit.ai/versions/front-now/index.md): 3 versions
+- [Front page: right now](https://php.oct.2026.newsroom.sgit.ai/versions/front-now/index.md): 4 versions
 - [Front page: at a glance](https://php.oct.2026.newsroom.sgit.ai/versions/front-glance/index.md): 3 versions
 - [Front page: the core facts](https://php.oct.2026.newsroom.sgit.ai/versions/front-facts/index.md): 3 versions
-- [Front page: what nobody knows yet](https://php.oct.2026.newsroom.sgit.ai/versions/front-unknown/index.md): 1 versions
+- [Front page: what nobody knows yet](https://php.oct.2026.newsroom.sgit.ai/versions/front-unknown/index.md): 2 versions
 - [Front page: latest](https://php.oct.2026.newsroom.sgit.ai/versions/front-latest/index.md): 2 versions
 - [Interview: the editor](https://php.oct.2026.newsroom.sgit.ai/versions/page-interview/index.md): 1 versions
 - [Briefing: Data protection officer](https://php.oct.2026.newsroom.sgit.ai/versions/briefing-dpo/index.md): 2 versions
@@ -589,6 +590,7 @@ Site v0.12.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [Schedule: cartographer](https://php.oct.2026.newsroom.sgit.ai/team/schedule/cartographer/index.md): ended; Keep the story graph whole as the evidence grows: every new party, spelling, claim, number and signal resolved into the ontology, the site's graphs joined by declared bridges, and the long tail found by connection handed to the desk that owns it.
 - [Schedule: conductor](https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.md): active; Keep every agent and the humans in step: what each is doing and waiting for, what came in on the lanes, what ran and what did not.
 - [Schedule: curator](https://php.oct.2026.newsroom.sgit.ai/team/schedule/curator/index.md): active; Promote what the source watch captured into the evidence vault, a bounded batch a wake, in priority order, each capture read first.
+- [Schedule: desk](https://php.oct.2026.newsroom.sgit.ai/team/schedule/desk/index.md): active; Keep the story's line, the front page and the section leads true to the evidence; keep the health of the publication and of the system in view; keep the corrections we ask of others ready for the editor.
 - [Schedule: librarian](https://php.oct.2026.newsroom.sgit.ai/team/schedule/librarian/index.md): active; Keep everything findable and owned as twenty sessions release on their own: every new file and page mapped to exactly one member, every member's folder in step with the record, every new debrief indexed, and every reader answer re-checked against the claims it rests on.
 - [Schedule: ontologist](https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.md): active; Keep the site's fractal semantic graphs whole as the evidence grows: every new party, spelling, claim, number and signal resolved into the ontology, the site's graphs joined by declared bridges, and the long tail found by connection handed to the desk that owns it.
 - [Schedule: researcher](https://php.oct.2026.newsroom.sgit.ai/team/schedule/researcher/index.md): active; The source watch: probe every watched source, capture what changed into the watch's pack vault, rebuild the series, and report what moved.
@@ -616,6 +618,7 @@ Site v0.12.1. Data as of 2026-10-23T16:04Z (the latest capture in the evidence v
 - [Ontologist](https://php.oct.2026.newsroom.sgit.ai/team/ontologist/index.md): Fractal semantic graphs: the ontologies, the story graph and the component that draws it; ontologist@php.newsroom. Builds and keeps the site's fractal semantic graphs: the ontologies and taxonomies (kinds of node, verbs with their inverses), one node per party whatever a page calls it, the story graph, and the bridges to the site's other graphs; a daily pass connects, prunes and resolves what the other desks added, aligned to the estate's grammar on graphs.sgit.ai. Keeps <sg-graph>, the component every agent uses to put a graph on a page. Until 24 October it worked as the cartographer.
 - [Fact-check desk](https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.md): Every claim graded on a spectrum of evidence; factcheck@php.newsroom. Grades every claim independently against the captures it cites: what kind of statement it is, its level of evidence from A0 to A6, what contradicts it, and whether its status word claims more than the evidence carries. Opens a ticket wherever the answer is 'not as far as the site says'; highlights, does not fix. Runs on a schedule.
 - [GRC desk](https://php.oct.2026.newsroom.sgit.ai/team/grc/index.md): Risks, who carries them, and the standards that govern them; grc@php.newsroom. Keeps the fractal risk registers for php2shell: every risk broken down until it can be owned, assigned to every stakeholder that carries part of it with the part each plays, joined edge by edge to the weakness, vulnerability, fix, code, stories and roles behind it, and mapped to the controls of GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001, NIST and the rest. Records risks and their holders; accepts nothing on anyone's behalf.
+- [Corrections liaison](https://php.oct.2026.newsroom.sgit.ai/team/liaison/index.md): Asks other publishers to correct what the evidence does not carry; liaison@php.newsroom. Turns the fact-check desk's findings about other publishers' words into gentle, public correction requests: the publisher's words from a dated capture, what the evidence shows, a wording they can use. Each request is on /outreach/ before it is sent; the mail agent sends it once the editor approves. Tracks every answer, and where other publishers quote this site.
 
 ## Every member: role, agent behaviour policy and rounds
 - [abp@newsroom.sgit: role, policy and rounds](https://php.oct.2026.newsroom.sgit.ai/admin/agents/abp/index.md): Agent behaviour policies: the role definition, what it writes and owns, its agent behaviour policy and computed delta, and every round it has recorded.

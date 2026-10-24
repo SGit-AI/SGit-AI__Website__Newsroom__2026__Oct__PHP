@@ -12,11 +12,21 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.13.0 · 24 October 2026new since your last visit
+
+The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the 1.57 million framing, the Dutch offline row, the front page's offline advice, DigiD and fix-complete lines), Corrections we have asked for (/outreach/) with eleven requests and the emails the editor sends, and the desk's briefs, review and schedule
+
+No reader-facing section changed in this release.
+
 ## v0.12.1 · 24 October 2026new since your last visit
 
 pass step 2, first part: the compromise evidence and the claim behind 'no named victim' as of 23 October 16:04 UTC, four more offline reports, the story summary and the front page's dated lines
 
-1 fact reworded or re-sourced: [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html).
+### Facts whose status changed
+- [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet;](../facts/nl-offline/index.html): confirmed → reported
+- [The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure a](../facts/kev-precedent/index.html): confirmed → reported
+
+5 facts reworded or re-sourced: [wordpress-drupal](../facts/wordpress-drupal/index.html), [scale-70pc-internet](../facts/scale-70pc-internet/index.html), [scale-70pc-websites](../facts/scale-70pc-websites/index.html), [scale-2.6m-hosts](../facts/scale-2.6m-hosts/index.html), [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html).
 
 ### Briefings that changed
 JJordanBoard member or executive · v8SSamSecurity lead · v7DDrewPHP or platform engineer · v8RRowanJournalist · v7AAshSecurity researcher · v7BBlakeAnalyst or advisor · v8RRobinCISO · v8AAveryCTO · v7QQuinnCFO · v8JJamieHead of AppSec · v7LLeeDeveloper · v6RRileyMedia and communications team · v7AAlexCurious reader · v6CCaseyWebsite owner · v5TTaylorProject or programme manager · v6MMorganData protection officer · v2
@@ -24,8 +34,10 @@ JJordanBoard member or executive · v8SSamSecurity lead · v7DDrewPHP or platfor
 - [Every claim](../versions/page-claims/index.html#v7) v7
 - [Impact: offline vs compromised](../versions/page-impact/index.html#v6) v6
 - [The specialist summary](../versions/page-summary/index.html#v5) v5
+- [Front page: right now](../versions/front-now/index.html#v4) v4
 - [Front page: at a glance](../versions/front-glance/index.html#v3) v3
 - [Front page: the core facts](../versions/front-facts/index.html#v3) v3
+- [Front page: what nobody knows yet](../versions/front-unknown/index.html#v2) v2
 
 ## v0.12.0 · 24 October 2026new since your last visit
 
@@ -608,7 +620,7 @@ the code read from php-src, php2shell in context against ten earlier flaws, an i
 - [Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on o](../facts/fix-engine/index.html) confirmed
 - [Patching the demonstrated paths does not make the bailout mechanism safe; more paths shoul](../facts/more-paths/index.html) reported
 - [Edge protections went live hours before disclosure: Cloudflare at 03:02 UTC; Imperva, Akam](../facts/waf-nine-hours/index.html) confirmed
-- [The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and O](../facts/nl-offline/index.html) confirmed
+- [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet;](../facts/nl-offline/index.html) confirmed
 - [Finland's state IT provider Valtori restricted public traffic to government web services f](../facts/fi-offline/index.html) reported
 - [The Wikimedia Foundation took down a number of systems 'as a precautionary measure until t](../facts/wikimedia-precaution/index.html) reported
 - [Weird Gloop turned off its wiki web servers for 13 hours and still served about 94% of pag](../facts/weirdgloop-13h/index.html) confirmed
@@ -651,11 +663,11 @@ The site exists: a story front, the two flaws, the timeline, every claim with a 
 - [All PHP versions from 5 onwards are affected by at least one of the flaws](../facts/versions-old/index.html) disputed
 - [Updating is the only complete mitigation; the configuration measures reduce exposure to sp](../facts/only-update/index.html) confirmed
 - [A web application firewall may provide some protection until systems are patched](../facts/waf/index.html) disputed
-- [Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcu](../facts/wordpress-drupal/index.html) reported
-- [Roughly 70% of the Internet is affected](../facts/scale-70pc-internet/index.html) unverified
-- [PHP is used by almost 70% of websites](../facts/scale-70pc-websites/index.html) reported
+- [In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal,](../facts/wordpress-drupal/index.html) reported
+- [70% of the Internet is affected](../facts/scale-70pc-internet/index.html) unverified
+- [PHP is used by almost 70% of websites whose server-side language is known](../facts/scale-70pc-websites/index.html) reported
 - [Something like 30 million websites could be affected](../facts/scale-30m/index.html) reported
-- [PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 mi](../facts/scale-2.6m-hosts/index.html) reported
+- [VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58](../facts/scale-2.6m-hosts/index.html) reported
 - [About 6,000 potentially affected resources in Latvia, a few hundred in the public sector](../facts/scale-latvia/index.html) reported
 - [674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, ](../facts/scale-ncsc-nl/index.html) confirmed
 - [The flaws were found by researchers using frontier AI under OpenAI's Patch the Planet init](../facts/ai-found/index.html) reported
@@ -701,4 +713,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

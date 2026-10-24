@@ -1,12 +1,12 @@
-# Fact: PHP is used by almost 70% of websites
+# Fact: PHP is used by almost 70% of websites whose server-side language is known
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-PHP is used by almost 70% of websites Who says it, its status (reported), its sources, and its timeline from publication to this site.
+PHP is used by almost 70% of websites whose server-side language is known Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · scale · reported
 
-# PHP is used by almost 70% of websites
+# PHP is used by almost 70% of websites whose server-side language is known
 
 **Who says it:** Cloudflare; OpenAI ('an estimated 70%'); Wiz body text · **Sources:** [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [OpenAI on X](../../sources/x-openai-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html)
 
@@ -41,6 +41,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:23 UTC. The scale is on
 - 2026-10-22 08:12 UTCSaved into the evidence vault: Cloudflare
 - 2026-10-22 08:16 UTCSaved into the evidence vault: OpenAI on X
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
+- 2026-10-24Reworded or re-sourced in v0.12.1
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
 
@@ -61,7 +62,8 @@ Status: reported
 Topic: scale
 Sources: cloudflare-blog-php2shell-waf, x-openai-php2shell, wiz-blog-php2shell
 ```
+v2 · site v0.12.1 · 24 October 2026 · reportedPHP is used by almost 70% of websites whose server-side language is knownWho says it: Cloudflare; OpenAI ('an estimated 70%'); Wiz body text2 unchanged linesSources: cloudflare-blog-php2shell-waf, x-openai-php2shell, wiz-blog-php2shell
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html

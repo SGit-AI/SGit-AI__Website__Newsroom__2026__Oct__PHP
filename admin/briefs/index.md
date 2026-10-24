@@ -8,6 +8,63 @@ The build briefs for this site, published in full before the work, newest first.
 
 A brief is written before the work and published as written: what was asked, in whose words, what exists to build on, the design, what it cannot do, the deliverables and the open questions. The newsroom and the sgit.ai sites keep theirs the same way. The file is the record; this page renders `admin/content/briefs/`, newest first. The written request and the two voice memos that started the site are on [the brief](../../brief/index.html).
 
+2026-10-24 · `2026-10-24__review__the-redesign-for-communication.md`
+
+## Review: the redesign, read for what it communicates
+
+Status: a review by desk@php.newsroom, the news desk chief, on 24 October 2026, of the redesign at `/admin/design/` (v0.10.0, brief `2026-10-23__brief__the-redesign.md`), for the editor's picks on board 138. Read against site v0.10.19. Engineering is not reviewed here; what a reader understands is.
+
+### The verdict
+
+The redesign's structure is right and its words are not yet. Fewer menu entries, "answer, picture, detail", quiet colour with loud status, and the team machinery moved out of the reader's path all help. Mockup C, the agencies page, is the model for the rest: **"16 agencies. All say update. They split on offline."** One line, a real answer, then the picture. Mockup A should be the default front page once its headline is the news.
+
+### The ten-second test fails on the front page, today and in mockup A
+
+A reader arriving on day three sees "Two serious security flaws in PHP, the software behind many of the world's websites": day one's news. The day-three news is on the page, below the fold: no named organisation has said it was broken into, and the advice is moving from "install the fix" to "check whether you were already broken into" (Singapore, Luxembourg). Mockup B's headline, "9 things are new, 3 changed. Two matter for your runbook.", counts updates and does not say which two.
+
+**The headline is the news of the day; the explainer is the second line.** For example: "Three days on: no confirmed break-ins, and the advice is now to check whether you were hit." It changes when the story does, and the journalist's state of affairs is where it comes from.
+
+### Where the redesign and the site disagree with themselves
+
+A reader who sees two numbers for one thing trusts neither.
+
+- **The lead overstates offline advice.** "Told organisations to install it now, or to take websites offline if they cannot", while the agencies page and mockup C count 2 of 16 saying take it offline (both American). Say so: "all say install the fix; two US agencies say take sites offline if you cannot."
+
+- **Three "as of" times for one statement.** No compromise "as of 23 October" (Right now), "as of the evening of 22 October" (core facts, the thirty-second answers in `data/personas.json`), "as of the latest capture" (mockup A's tile).
+
+- **Two status vocabularies.** The front page counts 21 confirmed, 11 disputed, 4 unverified, and its legend has no "contradicted"; mockup B counts 21 confirmed, 34 reported, 8 disputed, 3 contradicted, 4 unverified; the fact-check desk relies on 10.
+
+- **Hard-coded numbers in the mockups.** `admin/build/design.py`: "across 6 countries" (line 152), "9 new" (249), "9 things are new, 3 changed" (242), where the list below shows 4 new and 5 changed. Every number must come from data, as `AGENTS.md` asks.
+
+- **The UK three ways:** "a last resort" (front), "the fourth step" (C's line), "after mitigations" (C's card).
+
+- **Readers:** the front page offers 16; the matrix maps 8 and does not say where the other 8 go.
+
+### What hurts
+
+- **"Focus" does not focus.** It shows the board member 27 pages and the journalist 493, the researcher 452 (the matrix on `/admin/design/`). Focus should be a page or two of answers for everyone; depth belongs to Everything.
+
+- **A view links to pages it hides.** Mockup A's "See every agency" and "The full timeline" lead outside the board member's Focus set.
+
+- **Site machinery in the reader's path.** Mockup B's "What changed" lists "Front page: at a glance", version tags and a commit hash. A reader wants what changed in the story, not in the site.
+
+- **"Focus, Standard, Everything" and "view" are our words.** A reader understands "Short", "Full", "Everything we hold", or simply "Show more".
+
+- **Trust signals thinned.** The source chips on every front-page bullet are gone from mockups A and B; a footer saying "every number links to its source" is a promise, not evidence. Keep the chips, with the publisher's short name, and say the age of the data ("updated 18 hours ago"), not only the time.
+
+- **Phone.** The banner, the persona and the dial stack above the headline on a phone. The Sherpa measured today's front page at 550 to 650px down an 844px screen (F001, board 122); the redesign must put the headline in the top 250px, measured, before rollout.
+
+### Board items opened by this review
+
+| Board | Owner | Work |
+|---|---|---|
+| 230 | claude-story-site | The headline is the day's news, from the journalist's latest state of affairs; the explainer moves to the second line. Front page and mockup A. |
+| 231 | claude-story-site | The lead's offline sentence matches the agencies count: all say install, two US agencies say take offline. |
+| 232 | dev | `design.py`: every number from data (the 6 countries, the 9 new, the 9 and 3), one "as of" for each statement across the front page, personas and mockups. |
+| 233 | factcheck | One status vocabulary on every page, with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside it. |
+| 234 | dev | "What changed" in the reader's path lists story changes only: no version tags, commit hashes or page furniture. |
+| 235 | editor | Board 138, with this review: A as the default front page and C as the model page; Focus capped at a few dozen pages for every reader; the dial's names in plain words; no view links to a page it hides. |
+
 2026-10-24 · `2026-10-24__plan__the-journalists-full-pass.md`
 
 ## Plan: the journalist's full pass, so the site settles after every vault export
@@ -96,6 +153,86 @@ repository only). The card has the objective, what each wake does, what it reads
 
 wake prompt word for word; the runbook is `admin/ontologist/README.md`.
 
+2026-10-24 · `2026-10-24__brief__the-desk-on-a-schedule.md`
+
+## Brief: the news desk chief on a schedule, and the health of the publication
+
+Status: proposed by desk@php.newsroom, the news desk chief, on 24 October 2026, for the editor's go. Asked by the editor: "propose a schedule for when you should run", and "keep an eye on the health of the entire system and the health of the publication on the homepage". Nothing here is scheduled until the editor says go; then the schedule and its tasks go into the schedule vault (weic8imn) as `AGENTS.md` section 7 says.
+
+### When the desk runs
+
+Two runs a day, each after the data has moved, so the desk reads what the reader is about to read:
+
+| Wake (London) | After | Model | Task |
+|---|---|---|---|
+| 09:15 | the source watch (07:00) and the curator (08:00) | the editor's main model | **The morning line**: the story in one paragraph, the front page against it, the health check, the editor's decisions ranked. |
+| 16:15 | the curator (15:30) | Sonnet | **The afternoon check**: the health check again, the corrections queue (new overstatements in the coverage the curator promoted), and what changed since the morning. |
+
+None in the quiet hours (board 101 proposes 22:00 to 07:00). The editor can always ask the desk in a session; that is the third mode and needs no schedule.
+
+Both are repeating tasks queued once, with the editor's go, by the conductor: `desk-morning-line` and `desk-afternoon-check`, `repeat_until` a date the editor picks. A wake with neither due records an idle run and stops.
+
+### What each run leaves
+
+- **A desk note**, one file per run in the schedule vault's run record, and on the site at `/team/desk/` once dev builds it: the line, the health check as a table, what the desk proposed. A run that changes nothing a reader sees leaves the note only.
+
+- **Board rows**, with owners, for what it found. Never an edit to another agent's file.
+
+- **The editor's queue, ranked**: of everything waiting on the editor, the five that unblock the most. Today fifteen of twenty agents wait on the editor (`/team/status/`, 23 October, 23:30 UTC); the queue is the system's narrowest point, so the desk's most useful daily act is to sort it.
+
+### The health check
+
+#### The publication (the front page and the section leads)
+
+1. **Is the headline the day's news?** It must change when the journalist's state of affairs does; flag if it has not changed in 24 hours while the state of affairs has.
+
+2. **How old is "Right now"?** Flag over 12 hours in the daytime.
+
+3. **Does any front-page sentence contradict the fact-check desk?** An open contradiction (K-nnn) or an overstated finding on a claim the front page carries.
+
+4. **One number, one value.** The same count (offline, agencies, status words, the "as of" of no compromise) is the same on the front page, the briefings, the personas and the redesign mockups.
+
+5. **One fact, one grade.** No fact appears twice with two status words.
+
+6. **Do the best new pages have a door from the front?**
+
+7. **The phone's first screen**: the headline in the top 250px (from the Sherpa's and the synthetic readers' measurements, when they run).
+
+#### The system (from `/team/status/`, `/team/schedule/`, `/team/runs/` and the board)
+
+1. **Who is blocked, on whom, since when.** Over 24 hours on the editor goes to the top of the editor's queue.
+
+2. **Schedules**: each active schedule ran when due, and each run finished; a paused desk named with what its pause costs (today: the fact-check desk, paused since 22 October, so K-011 sits on the front page uncorrected).
+
+3. **Branches waiting**: over 24 hours unreleased, with the reason.
+
+4. **Data lag**: the evidence vault and the source watch against what the site shows.
+
+5. **Spend**: sessions against the budget, once the accountant exists (board 113).
+
+### The check, run by hand on 24 October (site v0.10.19)
+
+| Check | Result |
+|---|---|
+| Headline is the news | **Fails.** Day one's headline; the day-three news ("check whether you were already broken into") is a bullet in Right now. |
+| Right now's age | Passes: 23 October, 16:04 UTC. |
+| Contradicts the desk | **Fails.** "The PHP project has not answered it publicly yet" (K-011, answered at 09:11 UTC on 22 October). |
+| One number, one value | **Fails.** Offline "10 organisations" against the tracker's 50 sites; three "as of" times for no compromise; two status vocabularies. |
+| One fact, one grade | **Fails.** "Attackers are trying": reported and confirmed. |
+| Doors from the front | In part: `/compromise/` and `/factcheck/` have none. |
+| Blocked on the editor | **15 of 20 agents.** Two blocked outright (abp@, pulse@) on session settings only the editor can change. |
+| Schedules | The curator and the source watch run; the fact-check desk is paused; the synthetic readers run and review nothing. |
+| Branches waiting | 10, one of them this desk's, one (liaison@) since 22 October. |
+
+### Board items opened by this brief
+
+| Board | Owner | Work |
+|---|---|---|
+| 236 | editor | Go or no-go on the desk's two runs, and the `repeat_until` date. |
+| 237 | conductor | With the go: the desk's schedule and its two repeating tasks in the schedule vault. |
+| 238 | editor | Resume the fact-check desk's schedule: every front-page error it found waits on it. |
+| 239 | dev | `/team/desk/`: the desk's notes, newest first, from the schedule vault's run records. |
+
 2026-10-24 · `2026-10-24__brief__schedules-in-git.md`
 
 ## Schedules in the repository: each agent's card, every run, and messages between agents
@@ -135,6 +272,72 @@ Every hour at a quarter past, 07:15 to 21:15 London (15 wakes, none in the quiet
 - The accountant's view over the runs, and the agent behaviour policy check per run (abp@, security@: board).
 
 - Flagging a missed wake on the page automatically: the build has no clock; the conductor's wake does it.
+
+2026-10-24 · `2026-10-24__brief__asking-for-corrections.md`
+
+## Brief: asking other publications for corrections
+
+Status: proposed by desk@php.newsroom, the news desk chief, on 24 October 2026, for the editor's go. Asked by the editor: "start looking at the outreach to a bunch of other websites and corrections that we should do, because there's a bunch of articles that are really like quite over the top that we should try to propose corrections to those guys."
+
+### Start from what exists
+
+liaison@php.newsroom built this on 22 October: the rules (`admin/liaison/README.md`), `data/outreach.json` and the page `/outreach/`, "Corrections we have asked for", on the branch `claude/corrections-liaison-desk`. It was never released. Its rules are right and this brief keeps them: a request starts from a fact-check finding; the publisher's words are quoted character for character from a capture with its sha256; the origin is asked before the outlets that echoed it; only the publisher's own corrections channel; one follow-up at most, after seven days. It holds three drafts (Wiz, the BBC, CNN), all blocked on two open findings. The branch merges with dev at four small conflicts (`build.py`, `admin.json`, `layers.json`, `team.json`).
+
+### Clean hands first
+
+We cannot ask anyone to correct what our own pages still say. Before the first request:
+
+- **"Roughly 70% of the Internet is affected"** (claim `scale-70pc-internet`, on 25 pages) is our wording, not Wiz's: Wiz wrote "70% of the Internet", without "roughly". Quote Wiz exactly (Finding-102).
+
+- **"Almost 70% of websites"** (`scale-70pc-websites`) drops "whose server-side language is known" (Finding-33).
+
+- **"1.57 million unpatched"** is set against VulnCheck's 2.6 million hosts (about 60%); the source means 1.57 of 1.58 million hosts that show a version (about 99%). On about 32 pages, including the story "Where php2shell stands" (K-004).
+
+- **The front page's "not answered publicly yet"** about the fix (K-011), and the status words on `nl-offline` and `kev-precedent`, stronger than their evidence.
+
+### Who to ask, in order
+
+The quotes below are headlines or curators' notes; each is checked character for character against its capture before it goes in a request. "Our evidence" names the claim, contradiction (K-nnn) or grade on `/factcheck/`.
+
+#### The origins
+
+| # | Publisher | Their words | Our evidence | The correction we would propose |
+|---|---|---|---|---|
+| 1 | Wiz (blog and X post), 21 October | "70% of the Internet" | Its own body says "powers 70% of all websites"; the figure is the share of websites with a known server-side language that use PHP (K-001) | "the language behind about 70% of websites whose server-side language is known" |
+| 2 | WIRED, 22 October | "Hackers Exploited the PHP Vulnerabilities Days Before They Were Patched" | The body describes attempts; Amazon says it is unclear whether any succeeded; no named organisation has said it was compromised (K-002, `/compromise/`) | "Hackers Tried to Exploit ..." |
+| 3 | BankInfoSecurity, 21 October | "Attackers Exploit Leaked Zero-Day Flaws" | CISA has not observed exploitation; KEV lists neither CVE (K-002) | "Attackers Attempt to Exploit ..." |
+| 4 | Help Net Security, 22 October | "confirmed exploitation on" WordPress, Drupal, Joomla, phpMyAdmin, Nextcloud and Magento | Researchers' demonstrations, not attacks on victims | "researchers demonstrated code execution against ..." |
+| 5 | The Hacker News, 22 October | a proof-of-concept exploit "leaked ahead of time" | The PHP Foundation: "No technical details leaked"; no capture shows a leaked exploit (K-009, open) | "a screenshot and video of an exploit tool circulated" |
+
+#### The echoes, after their origin has been asked
+
+| # | Publisher | Their words | Our evidence |
+|---|---|---|---|
+| 6 | CNN Business | "affecting 70% of the internet" | K-001; CNN's own body says "70% of all websites" |
+| 7 | BBC live page | Wiz estimating "roughly 70%" | "roughly" is in neither Wiz capture; keep the BBC's own "unable to verify" |
+| 8 | Fortune | "could take down 70% of the internet" | K-001 |
+| 9 | CRN | "70 percent of the Internet affected" | K-001 |
+| 10 | Le Temps (French) | "des millions de sites sont débranchés" | The community tracker counts about 50 sites dark and back; our ledger, 10 reports (K-006) |
+| 11 | TechTarget Japan (Japanese) | "more than 22 million servers" at risk | Unit 42's figure, its method unpublished; Censys counts 1.57 million hosts |
+| 12 | Security.NL (Dutch) | "Misbruik ... gemeld" (abuse reported) | Its own body: whether the attacks succeeded is unclear |
+
+Not yet: the circulating CVSS "10.0", the BBC's "90%" and the UK minister's figures. None is captured; capture first (board 242).
+
+### Who sends, and how
+
+The liaison may not send mail: the security requirements allow mail only to subscribers (section 6), and the sender is undecided. **The desk recommends the editor sends each request, from the editor's own address, on the liaison's draft.** A correction request signed by a named journalist gets read; one from an agent's mailbox gets filtered. It needs no change to the security requirements, every message is approved by being sent, and `/outreach/` records each one with its status. Revisit a standing rule after the first ten.
+
+A request is one point, polite and checkable: their words, the primary source's words, the correction proposed, our page with the evidence. Never "over the top", never two outlets in one message.
+
+### Board items opened by this brief
+
+| Board | Owner | Work |
+|---|---|---|
+| 240 | claude-story-site | Clean hands: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framing, on about 32 pages), K-011 on the front page, the status words on `nl-offline` and `kev-precedent`. |
+| 241 | liaison@php.newsroom | Bring `claude/corrections-liaison-desk` up to dev; re-check R-001 to R-003 against the 295 sources; draft requests 2 to 12 above, each quote checked against its capture; release `/outreach/`. |
+| 242 | collector-researchers | Capture the CVSS "10.0" relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's "90%" as it stands and the UK minister's figures. |
+| 243 | editor | The sending decision: the editor sends each request on the liaison's draft (recommended), or a standing rule with a change to the security requirements. |
+| 244 | factcheck | Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first requests can unblock (needs board 238). |
 
 2026-10-23 · `2026-10-23__brief__three-views-over-time.md`
 
@@ -815,6 +1018,77 @@ number of the state of affairs, and anything in a page that contradicts what the
 - One contradiction found between two sources about Patchstack, put to the fact-check desk on the board.
 
 - No captured page in the 68 new sources was found addressing an AI; the one the curator skipped was not read.
+
+2026-10-23 · `2026-10-23__brief__the-front-page-on-day-two.md`
+
+## Brief: the front page on day two
+
+Status: proposed by desk@php.newsroom, the news desk chief, on 23 October 2026, for the editor's go. Read against site v0.8.1. The front page belongs to the story-site agent; this brief proposes, the owner writes.
+
+### The line
+
+The story has moved from the alarm to the reckoning. On 21 and 22 October the story was "two critical flaws, patch now or go offline". By 23 October a reader wants three answers: how much of the web went dark, how much is fixed, and was anyone broken into. The site already holds a strong sentence for it, on `/impact/`: **"the reported cost of php2shell so far is the cost of precaution."** That is the lead, stated with its time, because it is a time-bounded absence: no named organisation has said it was compromised, as of 22 October, 20:50 UTC (`/compromise/`).
+
+### What is wrong on the front page today
+
+1. **It is a day old and does not say so.** "Right now" is "as of 22 October 2026, 11:34 UTC", the latest capture in the export. The vault holds 184 sources against the site's 144 (board 039), and the source watch and fact-check schedules were paused by the editor at 21:36 UTC on 22 October. Either the data moves (board 039, and the schedules back on) or the page says plainly that it is a day old. A "Right now" from yesterday is the one thing a news front page cannot carry.
+
+2. **"Websites taken offline: 10 organisations" is not a count.** It is ten ledger rows; one row is "government sites in the Netherlands, France, Germany and Belgium", another is a single council. Until the ledger is reshaped (board 223), say "10 reports, some covering many sites", and link `/impact/`.
+
+3. **The DigiD line cites a source that does not carry it.** "Dutch government services such as the DigiD login" cites Rijksoverheid; the fact-check desk finds Rijksoverheid names only NCSC.nl, and DigiD comes from the press. Cite the press, or lead with NCSC.nl, which the government confirms.
+
+4. **One fact, two grades.** "Attackers are trying" appears twice under the core facts, once as reported (one party, Cloudflare) and once as confirmed. Keep one, graded reported.
+
+5. **A known answer listed as unknown.** "Whether the fix is complete ... the PHP project has not answered it publicly yet": the fact-check desk's run 2 found the PHP security team answered publicly at 09:11 UTC on 22 October (an unrelated crash bug). The line in `data/plain.json` is out of date.
+
+6. **"21 confirmed" beside a desk that says 10.** "How this site knows" counts the claims' status words; the fact-check desk relies on 10 without reservation and finds 11 status words stronger than their evidence. Show the desk's figure beside it, or the front page argues with `/factcheck/`.
+
+7. **The best new pages are invisible from the front.** `/compromise/`, `/patching/inventory/` and `/stack/` have no link from the front page.
+
+### The proposal
+
+- **Lead:** the precaution line, with its time.
+
+- **Under it, three counts, each with its unit, basis and time:** went dark (offline reports, then the reshaped count from board 223), fixed (the NCSC-NL inventory: 61 of 724 rows fixed at 15:28 UTC on 22 October, linking `/patching/inventory/`), broken into (no named organisation, linking `/compromise/`). These replace "At a glance" as the first thing a reader sees.
+
+- **A "what to do" link to `/stack/`** beside "If you run PHP".
+
+- **"Latest" from the timeline since the last release**, as board 017 already asks.
+
+### Section leads
+
+- **Impact** leads well. It says "the first table is full"; until board 223 lands, "full" should be "long, and counted in different units".
+
+- **Agencies** holds a story it does not tell: NCSC-NL advised mitigations and said nothing of going offline, and NCSC.nl was taken offline anyway. Who advised offline and who went offline are different maps. For the journalist's piece (board 225).
+
+- **Patching, the inventory** stops at 15:28 UTC on 22 October. It reads from the public NCSC-NL repository, so it can move without the vault (board 053 for the capture).
+
+- **Stories** has no piece dated 23 October. "Where php2shell stands" is the day-one state of play; it needs its day-two successor once the data moves.
+
+### Since: 24 October (site v0.10.19)
+
+Checked against the live front page after the journalist's state of affairs v2 and the re-export to 295 sources.
+
+| Problem | Now |
+|---|---|
+| 1. A day old and not saying so | **Fixed.** The stamp shows three clocks (evidence vault, source watch, NCSC-NL inventory) since v0.10.6, and "Right now" is from 23 October. Board 228 is overtaken and closed. |
+| 2. "10 organisations" | **Open.** At a glance still says it; the tracker's 50 sites now give a better basis (board 223). |
+| 3. DigiD cited to Rijksoverheid | **Open.** The new "Right now" line still cites Rijksoverheid first; Security.NL now carries DigiD back online. |
+| 4. One fact, two grades | **Open.** |
+| 5. The PHP project's answer listed as unknown | **Open.** The fact-check desk logged it as K-011; the desk's schedule is paused, so nobody is carrying it. |
+| 6. "21 confirmed" beside the desk's 10 | **Open.** |
+| 7. Best pages not linked | **In part.** The inventory is linked; `/compromise/` and `/factcheck/` are not; "Check your stack" is a button. |
+
+The lead has moved the right way: "Right now" now says the advice is shifting from "install the fix" to "check whether you were already broken into". That is the day-three story, and it belongs in the headline, which still reads as day one.
+
+### Board items opened by this brief
+
+| Board | Owner | Work |
+|---|---|---|
+| 226 | claude-story-site | Front page corrections 2 to 6 above: the offline count's unit, the DigiD citation, the duplicate fact, the out-of-date unknown, the desk's figure beside "confirmed". |
+| 227 | claude-story-site | Front page lead: the precaution line with its time, three counts with their basis (dark, fixed, broken into), links to `/compromise/`, `/patching/inventory/` and `/stack/`. |
+| 228 | editor | Freshness: resume the source watch and the re-export (board 039), or have the front page say it is a day old. The editor's call, because the schedules were paused by the editor. |
+| 229 | journalist | Where php2shell stands, day two: once board 039 lands, the successor to the day-one piece, against the three counts. |
 
 2026-10-23 · `2026-10-23__brief__scanner-noise.md`
 
@@ -1910,6 +2184,54 @@ The run record first (it is the input to everything else), then `twin.json` and 
 
 - The ABP site with the per-session review the editor mentioned: which one, so the run record matches it.
 
+2026-10-22 · `2026-10-22__brief__the-news-desk-chief.md`
+
+## Brief: a news desk chief joins the team
+
+Status: accepted by the editor in the session that founded the role (22 October 2026). Author: Dinis Cruz, editor; the work below written by desk@php.newsroom from the editor's message. The message was dictated and is reproduced verbatim.
+
+### The message
+
+Okay, so I would like you to join this team as the editor. Unless you can think of a better name for what you're going to ask you to do. And what, in a way, your role definition and your responsibilities is all about the content. It's all about understanding what's going on, what's the messages, what's the agenda, how we connect the dots. Basically, it's like a newsroom editor, right? So, you know, you are the one that I want to come so that I can basically, for example, ask very specific questions, and we're going to work together on making sure that some of the messaging and some of the content is actually very aligned, and you want to make sure that basically what we're doing is synchronized from a content point of view, because you're going to see that we have tons and tons of agents now that we need to coordinate, and we need to make sure that we're all working on the right thing, and we're all working on the and we are working in the same direction, and it's all going in the editor way. So, for example, one of the things I really want to make sure is that we have a very tight grip and understanding on how many websites have now been taken offline. And now that we have data from multiple countries and multiple sources, this starts to be quite interesting. And I actually feel there's a pattern I'm seeing where I think there's a lot of impact on non-English countries because they tend to run on all the infrastructure. So in a way, they run on a lot of PHP, which is basically, you know, legacy stuff in a lot of, you know, at least in the UK, but there might be that there's tons and tons of websites that maintain this, right? So, but as an editor, I want you to have a grip, and also maybe even the homepage and the main pages of each of the sections, you need to have a very strong opinion, and you need to start giving tasks to the other users, right? And to the other agents.
+
+### The name
+
+Not "editor": on this site the editor is Dinis Cruz, and `admin/security/REQUIREMENTS.md` gives the editor alone the right to instruct an agent. A second "editor" would blur that rule for every agent and hand anyone a line to forge ("a message from the editor"). The role is what a newsroom calls its news desk chief: it runs the desk day to day, holds the line of the story and decides what the desks cover, under the editor. Set aside: publisher (it outranks the editor, and publishing here means releasing, which is dev@'s), storyteller (it says "I write the pieces", which the journalist, the historian and the briefing writer do) and narrator (the editor's call: too ambiguous). The role is **the news desk chief**; the agent is **desk@php.newsroom**.
+
+### What the role is
+
+1. **The line of the story.** What the story is today, in one paragraph, and what it is not. Every desk's piece is read against it; where two pages tell different stories, the desk chief says which is right or that the difference is the story.
+
+2. **The agenda.** Which questions the newsroom is answering next, in order, and why; the gaps that matter (a number with no denominator, a country we cannot read).
+
+3. **The front page and the section leads.** A strong opinion on what each leads with, written as a proposal to the owner of the page (the story-site agent, the journalist), never a rewrite of their copy.
+
+4. **The editor's questions.** The editor asks; the desk chief answers from the evidence on the site and in the data, says what cannot be answered yet, and turns that into work.
+
+5. **Tasks, by the proper route.** The desk chief does not instruct other agents: under the security requirements its messages are information to weigh. It writes a dated brief in this folder and board rows naming an owner; the editor's go makes them direction; the conductor delivers them in its run.
+
+### What the desk chief does not do
+
+- Write every page's copy, or edit another agent's file. It proposes; the owner writes.
+
+- Release, push to `dev`, hold vault keys or send mail.
+
+- Call a claim confirmed. The fact-check desk grades; the editor makes the call.
+
+### Rules
+
+- A hypothesis is labelled as one until the data tests it, including the editor's. Say what would prove it wrong.
+
+- No count without its unit and its basis: what was counted, by whom, as of when.
+
+- Name the bias in what we collect before drawing a pattern from it.
+
+- Read the fact-check desk's grade before leading with anything.
+
+### Board items opened by this brief
+
+219 (the news desk chief on the team page, for the conductor). The desk chief's first piece of work is the next brief, `2026-10-22__brief__how-many-sites-went-offline.md`.
+
 2026-10-22 · `2026-10-22__brief__the-fact-checker.md`
 
 ## Brief: a fact-checker joins the team
@@ -1947,6 +2269,68 @@ This is the editor's explicit exception that AGENTS.md allows to its rule that a
 ### Board items opened by this brief
 
 082 to 085, listed on the board.
+
+2026-10-22 · `2026-10-22__brief__the-corrections-liaison.md`
+
+## Brief: a corrections liaison joins the team
+
+Status: accepted, by being sent. Author: Dinis Cruz, editor. A message to a new agent on 22 October 2026, reproduced verbatim (it was dictated, so the transcription's slips are kept). The agent's first task was to name its own role; the name, and what the message asks for as work, are set out below it. The desk is `admin/liaison/`, its data `data/outreach.json` and its page /outreach/.
+
+### The message
+
+So this is to add a new role to this project, although I actually not sure what to call it. So this could be almost your first task, is what you're going to call what you do. And your role is a role that is going to sort of coordinate the outreach to news organizations with a gentle correction. And so basically, but this is all public, right? So you're going to have public, you're going to maintain pages on the website, and you're going to correct, you're going to basically, in a nice factual and effective way, you're going to provide corrections to what they've done. So this is to take content that they have published and kind of say, actually, that is not entirely true, right? It's almost like this interesting way that this is a side effect of what we're going to be doing, because the fact checker is going to be picking up on all of these activities, and he's going to be picking up on a lot of these actions, and he's basically going to define I'm going to define all these gaps, right? So for example, a lot of people are saying 70% of the internet is impacted, which is clearly not right, and we should be correcting. So my thinking here is that we should be going to the BBC, to the FT, whatever sources we have, and we should be able to send them an email, and we have an email provider that can send this. We just need the data, so we have the agent at riskmandate.ai that can do this, right? And basically, that agent can send the emails out and can nudge them to say, by the way, you know, you should do some corrections to your news stories, and here's the data for you. And again, all the data that we provide is open source, is Creative Commons, so, you know, it's they should be able to use it. And eventually, we would like to track the quotes that we have on our side.
+
+### The name
+
+**liaison@php.newsroom, the corrections liaison.** Its page is called *Corrections we have asked for*.
+
+Why this name and not the others considered:
+
+- *Public editor* and *readers' editor* are taken by the trade: they are the people who handle complaints about a paper's own work. This site already has that, at /corrections/, and it stays there.
+
+- *Ombudsman* implies authority over the outlet. We have none; we have evidence.
+
+- *Outreach* sounds like marketing, and *press office* sounds like it speaks for someone.
+
+- A *liaison* carries something between two parties and has no power over either. That is the job: carry the fact-check desk's findings to the outlet that published the statement, in the outlet's own corrections process, and carry the outlet's answer back onto the page.
+
+### What it asks for, as work
+
+1. **A public page per request, maintained.** Every correction we ask an outlet to make is on the site before it is sent: what the outlet published (quoted, as third-party text, with the capture it was checked in), what the evidence shows (with the fact-check desk's grade and the contradiction record), the wording we suggest, and where the request stands. The page is the request; the message only points to it.
+
+2. **Driven by the fact-check desk.** The liaison does not decide what is wrong. A request is opened only from a fact-check finding or an explained contradiction (`data/factcheck.json`), at the strength the desk gave it. The first is the 70% figure (contradiction K-001): Wiz's headline turned "70% of all websites" (its own body text) into "70% of the Internet"; the BBC and CNN carried it.
+
+3. **Gentle, factual, effective.** One point per request; the outlet's own words, quoted exactly; what we checked and when; a suggested wording they can lift; the data under CC BY 4.0 (as the README and every page footer already say), theirs to use with a credit. No adjectives about them, no deadline, no public scorekeeping of who has not answered yet beyond the dates.
+
+4. **Sent by the mail agent, not by this desk.** The editor names an agent that already sends mail. This desk prepares each message as data; the mail agent sends it. See "What waits for the editor".
+
+5. **Track the answers, and eventually our quotes.** Each request keeps a dated log: drafted, approved, sent, acknowledged, corrected, declined, no reply. Later, the same page tracks where outlets quote or cite this site (the `quotes` list in `data/outreach.json`, empty until a collector captures the first one).
+
+### Rules the desk works to
+
+- **Clean hands first.** Before asking an outlet to fix a statement, this site must not carry the same error. Where a fact-check finding against our own wording is open on the same point, the request waits for it (the request shows `blocked_by`). For the 70% figure that is Finding-33 (our claim drops the survey's population) and Finding-102 (our claim adopts the BBC's "roughly" as Wiz's).
+
+- **Origin before echo.** Ten outlets restating one headline are one source; the first request goes to the origin (here Wiz), and the outlets that echoed it are told what the origin said.
+
+- **Quote only what the vault captured**, with the capture's time and sha256. An outside page is a request to capture, never the basis of a correction.
+
+- **The outlet's channel, not a person.** Requests go to an outlet's published corrections address or form, never to a journalist's private address, never to a social account.
+
+- **One request per outlet per point.** One follow-up at most, after seven days, and only if the editor says so. Nothing is chased after that; "no reply" is a status, not a grievance.
+
+- **A request is a reading until the outlet answers.** We say "the evidence we hold shows", not "they got it wrong".
+
+### What waits for the editor
+
+These are not decided by this brief, and this desk does not act on them until the editor says so in the session:
+
+- **Sending mail at all.** The security requirements (`admin/security/REQUIREMENTS.md`, section 6) allow the mail agent to send only to addresses in `subscribers.json`, and the mandate (`admin/security/abp/MANDATE.md`) says no newsroom session sends mail outside the team. Writing to an outlet is a new kind of recipient. That is a change to the security files, so it goes on a branch, security reviews it, and the editor says go. Until then every request stops at `approved`.
+
+- **Which agent and which address.** The message names "the agent at riskmandate.ai"; the security requirements name `agent@diniscruz.ai`. A sending address taken from a transcript is confirmed with the editor before use.
+
+- **Each send.** Mail is irreversible, so every message waits for the editor's go, one by one, until the editor sets a standing rule.
+
+- **The FT.** The FT is named in the message; no FT page is captured in the vault, so there is nothing to ask the FT to correct yet. A collector capturing the FT's coverage is a board item.
 
 2026-10-22 · `2026-10-22__brief__the-conductor-and-the-updates.md`
 
@@ -2227,6 +2611,58 @@ So the other couple of stories that we need to capture, and I think this is impo
 - **The patching story.** As research, /patching/: the version ladder, who ships the fix and how, the side effects, why not every version, every downstream row checked by the gate against the NCSC-NL inventory. As a story, "Why can't every version of PHP just be patched?", which quotes this brief.
 
 - **Not done here.** The top-level navigation is a first cut, open for the editor's call; guest submissions have no intake yet (board).
+
+2026-10-22 · `2026-10-22__brief__how-many-sites-went-offline.md`
+
+## Brief: how many sites went offline, and where
+
+Status: accepted by the editor in the session on 23 October 2026 ("offline brief is important"); written by desk@php.newsroom, the news desk chief, on 22 October. Asked by the editor: "a very tight grip and understanding on how many websites have now been taken offline", and a pattern the editor suspects: "a lot of impact on non-English countries because they tend to run on [old] infrastructure ... a lot of PHP". The message was dictated: the transcript reads "all the infrastructure", and "[old]" is the desk's reading of it, which the editor confirmed in the session.
+
+### Where we are
+
+- The offline ledger in `data/impact.json` has 10 rows. They count different things: one row is a whole government's public web services (Finland, Valtori), another is one council's site (Edinburgh). Ten rows are not ten of anything, so the site cannot give a count today.
+
+- Three rows rest on the organisation's own word (NCSC.nl, CERT.LV, Weird Gloop); the rest are the press. The fact-check desk grades the Netherlands row overstated: the government's notice names only NCSC.nl; DigiD, MijnOverheid and Overheid.nl come from the press.
+
+- The ledger's latest capture is about 11:30 UTC on 22 October. The two sources closest to a count are not captured yet: the PHPocalypse Tracker's `sites.csv` and the BBC live page as it stands ("32 UK services, 90%"), board 089.
+
+### The editor's hypothesis, and what tests it
+
+**Hypothesis:** non-English-speaking countries are hit harder because they run more old PHP.
+
+**What the data can say today: nothing either way.**
+
+1. **Our collection leans English.** The source watch is 214 of 333 pages in English (64%), and discovery across languages is blocked (board 077). The UK holds 4 of the 10 offline rows because we read the UK press.
+
+2. **A rival explanation fits the big takedowns.** The national-scale ones (the Netherlands, Finland, Latvia) were precautionary decisions by the operators of centralised state hosting: the Dutch government, Finland's state IT agency Valtori, Latvia's single "state website platform". One operator with one platform can switch a whole government off at once. It is the operator's posture, not the national CERT's published advice: NCSC-NL advised PHP's mitigations and said nothing of taking systems offline (`data/agencies.json`), yet NCSC.nl itself was taken offline "uit voorzorg". The offline map may be a map of who hosts centrally and how cautiously, not of old PHP.
+
+3. **There is no denominator.** "More old PHP" needs, per country: PHP's share of sites and the share on unsupported versions (8.1 and older). The only national count we hold is CERT.LV's "about 6,000 potentially affected" in Latvia.
+
+What would support the hypothesis: in the same country-domain samples, a higher share of unsupported PHP outside the English-speaking web, and offline or compromise rows that follow it rather than following CERT advice. What would refute it: offline rows that track CERT posture and centralised hosting, with version shares that do not differ.
+
+### The work
+
+| Board | Owner | Work |
+|---|---|---|
+| 089 (exists, first) | collector-researchers | Capture the PHPocalypse Tracker's `sites.csv` and the BBC live page today. |
+| 220 | researcher@php.newsroom | Discovery in the other languages straight from the source: national CERTs and public broadcasters of DE, FR, ES, IT, PL, PT, BR and JP, not through Google News (board 077). |
+| 221 | collector-gov | The posture map, extended: `data/agencies.json` compares 16 bodies; add every other EU and EEA national CERT (Finland, Germany and Belgium first: they are in the offline ledger and not in the comparison), coded the same way, each with its capture; and, for each offline row, whether the operator followed its CERT's advice or went further. |
+| 222 | collector-researchers | The denominator: W3Techs PHP share and PHP version shares by country domain (extends 033 and 043), and any per-country host count from Censys, Shodan or VulnCheck. |
+| 223 | claude-story-site | The offline ledger reshaped: one row per organisation, a unit (site, platform, whole government), a count of domains where known, the source's language, and who said it; then a count with its basis on the front page. |
+| 224 | factcheck | Grade the reshaped ledger as rows land, the Netherlands row first, and the count's basis. |
+| 225 | journalist | The piece on where the web went dark and why, once 221 and 222 are in, not before. |
+
+### Since: 24 October (site v0.10.19)
+
+- **Board 089 is half done.** The PHPocalypse Tracker's `sites.csv` is in the evidence vault (`phpocalypse-tracker-sites-csv`, snapshot 22 October, 18:36 UTC): a community list of 50 sites that went dark and came back, with times. It is the first basis for a count, and its unit is a site. The offline ledger in `data/impact.json` still has the same 10 rows; board 223 now has a source to build from.
+
+- **The first per-country figures with a denominator have arrived, from non-English sources.** ICTjournal (Switzerland, French): just over 23,000 of nearly 690,000 servers, about 3.5%, still affected a day after the fix. Paperjam (Luxembourg, French): thousands of sites exposed. With CERT.LV's 6,000 in Latvia, that is three countries; none is yet a share of *old* PHP, which is what the hypothesis needs (board 222).
+
+- **Collection is widening.** Korean, Japanese, French and Dutch sources now reach the front page's Latest. Board 220 should measure the language mix again before anyone reads a pattern from it.
+
+### What this cannot do
+
+It cannot count sites that went offline quietly: an outage nobody announced leaves no source. The count will be a floor, and the page says so.
 
 2026-10-22 · `2026-10-22__brief__grc-fractal-risk-registers.md`
 
@@ -2726,4 +3162,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

@@ -2,7 +2,7 @@
 
 A three-column working view for a security lead: their reading path and the site by task on the left, what changed since the last visit and the next three actions in the middle, and the state of the evidence as charts on the right.
 
-> Mockup B for review, built from the data of release v0.12.1. Not the live site.
+> Mockup B for review, built from the data of release v0.13.0. Not the live site.
 
 S 
  Sam 
@@ -44,58 +44,61 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
  All Facts Timeline Questions Stories 
 
+ New question v0.12.1 
+#### Is PHP really the software behind most websites?
+
+✓ 
+
+ New front v0.12.1 
+#### Front page: what nobody knows yet
+
+✓ 
+
+ New front v0.12.1 
+#### Front page: right now
+
+✓ 
+
  New front v0.12.1 
 #### Front page: at a glance
 
 ✓ 
 
- New front v0.12.1 
+ Changed front v0.12.1 
 #### Front page: the core facts
 
 ✓ 
 
- New fact reported v0.12.1 
-#### As of 16:04 UTC on 23 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploita
+ Changed fact reported v0.12.1 
+#### In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS
 
- CISA CISA Huntress Amazon 
+ Calif Wiz 
 ✓ 
 
- New story v0.10.3 
-#### What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list
+ Changed fact reported v0.12.1 
+#### PHP is used by almost 70% of websites whose server-side language is known
 
+ Cloudflare OpenAI on X Wiz 
 ✓ 
 
- Changed front v0.10.19 
-#### Front page: right now
+ Changed fact unverified v0.12.1 
+#### 70% of the Internet is affected
 
+ Wiz Wiz on X BBC News 
 ✓ 
 
- Changed front v0.10.19 
-#### Front page: latest
+ Changed fact reported v0.12.1 
+#### VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those wer
 
-✓ 
-
- Changed story v0.10.13 
-#### The risk graph, before and after: what changed from one reader's five ideas
-
-✓ 
-
- Changed front v0.10.13 
-#### Stories: written here
-
-✓ 
-
- Changed story v0.10.11 
-#### Who reads this site, and what works on it: the tools we built to find out, and what they say on day two
-
+ THN SecurityWeek 
 ✓ 
 
 Marked read, an item fades and then leaves this list; it comes back only if what it says changes. 
 
 #### How sure are we?
 
-- 21 confirmed 
-- 34 reported 
+- 19 confirmed 
+- 36 reported 
 - 8 disputed 
 - 3 contradicted 
 - 4 unverified 
@@ -123,4 +126,4 @@ Amazon: Proof-of-concept attempts begin, then six hours of attempts from anonymi
 8.1 and older: source backports only.
 
 ---
-site v0.12.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html
+site v0.13.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html

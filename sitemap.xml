@@ -387,6 +387,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/ontologist/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/grc/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/team/liaison/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/channels/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/collaborators/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
@@ -398,6 +399,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/cartographer/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/curator/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/desk/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/librarian/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/researcher/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
@@ -418,11 +420,11 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/versions-old/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/only-update/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/waf/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
-<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/wordpress-drupal/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
-<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
-<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/wordpress-drupal/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/scale-30m/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
-<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/scale-2.6m-hosts/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/scale-2.6m-hosts/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/scale-latvia/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/scale-ncsc-nl/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/ai-found/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
@@ -469,7 +471,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/fix-engine/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/more-paths/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/waf-nine-hours/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
-<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/fi-offline/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/wikimedia-precaution/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/weirdgloop-13h/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
@@ -478,7 +480,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/uk-list/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/quarkslab-redacted/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/lorenc-ai-found/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
-<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/versions/page-flaws/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/versions/page-timeline/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/versions/page-discovery/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
@@ -629,6 +631,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/pulse/cve-2026-96951/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/factcheck/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/outreach/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/grc/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/grc/risks/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>

@@ -2,15 +2,15 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one day Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
+The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one day Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
-Fact · exploitation · confirmed
+Fact · exploitation · reported
 
 # The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one day
 
 **Who says it:** CISA KEV catalog; Akamai (2024) · **Sources:** [CISA](../../sources/cisa-kev-json/index.html) [CVE record](../../sources/cve-cve-2024-4577/index.html) [Akamai Security Research](../../sources/akamai-blog-cve-2024-4577-one-day/index.html)
 
-Counted from the captured catalog.
+The KEV dates are counted from the captured catalog; 'exploited in the wild one day after disclosure' rests on Akamai alone.
 
 ## Fact-check
 
@@ -35,6 +35,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:25 UTC. The scale is on
 - 2026-10-21 14:04 UTCCISA publishes [CISA Known Exploited Vulnerabilities catalog (JSON feed)](../../sources/cisa-kev-json/index.html)
 - 2026-10-22 11:25 UTCSaved into the evidence vault: Akamai Security Research
 - 2026-10-22Enters this site as confirmed in v0.2.0 (reconstructed from git)
+- 2026-10-24Status changes from confirmed to reported in v0.12.1
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
 
@@ -55,7 +56,8 @@ Status: confirmed
 Topic: exploitation
 Sources: cisa-kev-json, cve-cve-2024-4577, akamai-blog-cve-2024-4577-one-day
 ```
+v2 · site v0.12.1 · 24 October 2026 · reportedThe last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one dayWho says it: CISA KEV catalog; Akamai (2024)Status: confirmedreportedTopic: exploitationSources: cisa-kev-json, cve-cve-2024-4577, akamai-blog-cve-2024-4577-one-day
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.html

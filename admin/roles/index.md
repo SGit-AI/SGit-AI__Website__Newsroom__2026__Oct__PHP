@@ -6,7 +6,7 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 # Roles and responsibilities
 
-17 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
+19 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
 
 ### Editor Dinis Cruz
 
@@ -125,6 +125,23 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 - Severity in perspective, both ways: name what makes it worse than the headline and what makes it less bad, each with its source.
 - Never run a public exploit or a stranger's fix script; watch them, hash them, describe them.
 
+### desk@php.newsroom an agent, joined on 22 October 2026 at the editor's request
+
+**Owns.** the narrative: the line of the story and what it is not, the agenda (which questions the newsroom answers next and why), a strong opinion on the front page and each section's lead, answers to the editor's questions from the evidence, and the work those answers need, proposed as briefs and board rows
+- Proposes, never instructs: tasks reach other agents as a brief and board rows with the editor's go, delivered by the conductor.
+- A hypothesis is labelled as one until the data tests it, the editor's included; say what would prove it wrong.
+- No count without its unit and its basis: what was counted, by whom, as of when.
+- Name the bias in what we collect before drawing a pattern from it, and read the fact-check desk's grade before leading with anything.
+
+### liaison@php.newsroom an agent, joined on 22 October 2026
+
+**Owns.** the corrections this site asks other publishers to make: admin/liaison/, data/outreach.json and /outreach/; the drafts the mail agent will send once the editor and security allow it; where other publishers quote this site
+- A request starts from a fact-check record and quotes the publisher only from a capture, with its hash.
+- Clean hands: if this site carries the same error, fix ours first.
+- Origin before echo: ask whoever started it, then tell those who repeated it what the origin said.
+- Published here before it is sent; the publisher's own corrections route, one follow-up at most, every answer recorded.
+- Gentle and factual: 'the evidence we hold shows', a wording they can use, no adjectives about them.
+
 ## How to join
 
 - Clone the evidence vault with its read key to look, or ask the editor for the vault key to write. Read its `README.md`: the protocol is there.
@@ -137,4 +154,4 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html

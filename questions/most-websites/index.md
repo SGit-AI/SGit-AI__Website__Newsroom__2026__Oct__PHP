@@ -22,7 +22,7 @@ To paste back where it was asked: the paragraph above and `https://php.oct.2026.
 
 **'70% of the Internet'** is the same number in a Wiz headline and post. The body of Wiz's own post says websites. This site marks the Internet version unverified. [Wiz](../../sources/wiz-blog-php2shell/index.html) [Wiz on X](../../sources/x-wiz-io-php2shell/index.html)
 
-**Hosts, not websites:** VulnCheck counts about 2.6 million internet-facing hosts running PHP; Censys counted 1.57 million of the 2.58 million it saw with a readable version still unpatched on 21 October. One host can serve thousands of sites. [THN](../../sources/thehackernews-php2shell-4days/index.html) [SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html)
+**Hosts, not websites:** VulnCheck counts about 2.6 million internet-facing hosts running PHP; Censys saw 2.58 million, could read a version on 1.58 million, and counted 1.57 million of those still unpatched on 21 October. One host can serve thousands of sites. [THN](../../sources/thehackernews-php2shell-4days/index.html) [SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html)
 
 **Being built on PHP is not the same as being exploitable.** The CVE vector says attack complexity is high, and Fastly says the public exploits need knowledge of the exact PHP build on a 64-bit server. [CVE record](../../sources/cve-cve-2026-109618/index.html) [Fastly](../../sources/fastly-blog-php2shell/index.html) [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html)
 
@@ -35,4 +35,4 @@ Next question: [Has anyone actually been hacked?](../been-hacked/index.html) · 
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/most-websites/index.html

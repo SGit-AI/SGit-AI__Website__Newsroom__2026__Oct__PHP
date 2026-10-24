@@ -1,14 +1,14 @@
-# Fact: Roughly 70% of the Internet is affected
+# Fact: 70% of the Internet is affected
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-Roughly 70% of the Internet is affected Who says it, its status (unverified), its sources, and its timeline from publication to this site.
+70% of the Internet is affected Who says it, its status (unverified), its sources, and its timeline from publication to this site.
 
 Fact · scale · unverified
 
-# Roughly 70% of the Internet is affected
+# 70% of the Internet is affected
 
-**Who says it:** Wiz (headline, X post); BBC attributing Wiz · **Sources:** [Wiz](../../sources/wiz-blog-php2shell/index.html) [Wiz on X](../../sources/x-wiz-io-php2shell/index.html) [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html)
+**Who says it:** Wiz (headline, X post); the BBC, which reports it as Wiz's 'roughly 70%' · **Sources:** [Wiz](../../sources/wiz-blog-php2shell/index.html) [Wiz on X](../../sources/x-wiz-io-php2shell/index.html) [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html)
 
 The BBC was 'unable to independently verify that figure'. Wiz's body text says 70% of websites and cites no measurement.
 
@@ -37,6 +37,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on
 - 2026-10-22 08:10 UTCSaved into the evidence vault: Wiz
 - 2026-10-22 08:16 UTCSaved into the evidence vault: Wiz on X
 - 2026-10-22Enters this site as unverified in v0.1.0 (reconstructed from git)
+- 2026-10-24Reworded or re-sourced in v0.12.1
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
 
@@ -57,7 +58,8 @@ Status: unverified
 Topic: scale
 Sources: wiz-blog-php2shell, x-wiz-io-php2shell, bbc-live-ckgel5xp2xv9t
 ```
+v2 · site v0.12.1 · 24 October 2026 · unverifiedRoughly 70% of the Internet is affectedWho says it: Wiz (headline, X post); BBCthe attributingBBC, Wizwhich reports it as Wiz's 'roughly 70%'Status: unverifiedTopic: scaleSources: wiz-blog-php2shell, x-wiz-io-php2shell, bbc-live-ckgel5xp2xv9t
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.html

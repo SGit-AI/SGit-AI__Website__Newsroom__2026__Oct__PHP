@@ -16,7 +16,7 @@ Two ledgers. The first is systems taken offline, which is a decision an operator
 
 | Who | What happened | When | Who says so | Status | Sources |
 |---|---|---|---|---|---|
-| **NCSC.nl (the Dutch national cyber security centre's own site)** NL | Taken offline 'uit voorzorg' (as a precaution); DigiD, MijnOverheid and Overheid.nl also offline; no signs of active exploitation of those services at the time | 2026-10-21 | the Dutch government (Rijksoverheid news) | confirmed | [Rijksoverheid / NCSC-NL](../sources/rijksoverheid-ncsc-php-news/index.html) [Dutch IT Leaders](../sources/dutchitleaders-websites-offline/index.html) [TPO.nl](../sources/tpo-nl-digid-offline/index.html) |
+| **NCSC.nl (the Dutch national cyber security centre's own site)** NL | NCSC.nl taken offline 'uit voorzorg' (as a precaution), with no active misuse seen yet, says the government; DigiD and MijnOverheid also offline, says the Dutch press | 2026-10-21 | the Dutch government (NCSC.nl); TPO.NL (DigiD, MijnOverheid) | reported | [Rijksoverheid / NCSC-NL](../sources/rijksoverheid-ncsc-php-news/index.html) [TPO.nl](../sources/tpo-nl-digid-offline/index.html) |
 | **Finland's government public web services (Valtori)** FI | Incoming public traffic restricted from 12:45 local (09:45 UTC); described as preventive, not a response to a breach; internal networks unaffected | 2026-10-21 09:45 UTC | Yle and Helsinki Times quoting Valtori and the National Cyber Security Centre Finland | reported | [Yle](../sources/yle-finland-government-sites-shut/index.html) [Helsinki Times](../sources/helsinkitimes-finland-shutdown/index.html) |
 | **Latvia: several state digital resources, lsm.lv, 112.lv** LV | Access restricted from abroad; state website platform patched by 20:00 UTC; lsm.lv and 112.lv restored; restrictions on others possibly until 26 October | 2026-10-21 15:25 UTC | CERT.LV itself | confirmed | [CERT.LV](../sources/certlv-php-preventive/index.html) |
 | **Wikimedia Foundation: 'a number of other systems'** US | 'taken down a number of other systems as a precautionary measure until they can be safely patched'; parts of Wikipedia affected | 2026-10-21 | the Foundation, as quoted by CNN and The Cyber Express; the BBC | reported | [CNN](../sources/cnn-php2shell-websites-shut/index.html) [The Cyber Express](../sources/cyberexpress-php2shell-gov-sites/index.html) [BBC News](../sources/bbc-live-ckgel5xp2xv9t/index.html) |
@@ -59,4 +59,4 @@ What a compromise of one system would reach is on [the blast-radius section](../
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html

@@ -34,6 +34,7 @@ The agenciesagencies/index.htmlAffected systemsaffected/index.html
 | 052 | Fix the vault's export of the NCSC-NL inventory: it dropped one row (iBabs bestuursportaal) at cca173c64ec5, so pages say 674 and 3 where the list has 675 and 4 | open |  |
 | 053 | Capture the NCSC-NL inventory's later commits into the vault, so the history on /patching/inventory/ rests on captures as well as on the public repository | open |  |
 | 059 | One parser per watched source turning each capture into timestamped JSON rows (observed_at, published_at, source_updated_at, capture hash, parser version), appended to a series per sourceFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
+| 221 | The posture map, extended: add every other EU and EEA national CERT to data/agencies.json (Finland, Germany and Belgium first), coded as the 16 are; and, per offline row, whether the operator followed its CERT's advice or went furtherFrom the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go). | open |  |
 
 ## What they have done
 - Captured sixteen agencies' positions, including what each does not say.
@@ -47,4 +48,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/collector-gov/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/collector-gov/index.html

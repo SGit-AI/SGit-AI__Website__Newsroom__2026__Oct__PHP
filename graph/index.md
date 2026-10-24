@@ -41,7 +41,7 @@ A claim is as strong as the number of **independent** parties that state it, not
 ### Echoes: one origin, many relays (4)
 - ['Where immediate remediation is not feasible, organisations should consider taking the system offline until it can be fully mitigated'](../facts/offline-ncsc/index.html) (3 relays)
 - [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../facts/watchtowr-itw/index.html) (3 relays)
-- [The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services](../facts/nl-offline/index.html) (3 relays)
+- [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too](../facts/nl-offline/index.html) (3 relays)
 - [The Wikimedia Foundation took down a number of systems 'as a precautionary measure until they can be safely patched'](../facts/wikimedia-precaution/index.html) (4 relays)
 
 ### Unnamed origins (3)
@@ -60,11 +60,11 @@ Stated only by sources a page does not name: a gap in the evidence, not a party.
 | [The flaws were found by researchers using frontier AI under OpenAI's Patch the Planet initiative](../facts/ai-found/index.html) | reported | 3 | 0 | 1 |  |
 | [None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechanism; a lab reproducti](../facts/pocs-wrong/index.html) | reported | 3 | 0 | 1 |  |
 | [The release moved forward from 22 October 14:00 UTC to 21 October 14:00 UTC because of the leak](../facts/release-moved/index.html) | confirmed | 3 | 0 | 1 | K-010 |
-| [PHP is used by almost 70% of websites](../facts/scale-70pc-websites/index.html) | reported | 3 | 0 | 3 |  |
+| [PHP is used by almost 70% of websites whose server-side language is known](../facts/scale-70pc-websites/index.html) | reported | 3 | 0 | 3 |  |
 | [All PHP versions from 5 onwards are affected by at least one of the flaws](../facts/versions-old/index.html) | disputed | 3 | 0 | 2 |  |
 | [Amazon and Cloudflare saw sites being probed for the flaw](../facts/probing/index.html) | confirmed | 3 | 1 | 3 |  |
 | [Chainguard unilaterally broke the embargo on 21 October at 07:41 UTC by publishing built images containing the](../facts/chainguard/index.html) | disputed | 2 | 0 | 1 |  |
-| [The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days](../facts/kev-precedent/index.html) | confirmed | 2 | 0 | 1 |  |
+| [The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days](../facts/kev-precedent/index.html) | reported | 2 | 0 | 1 |  |
 | [watchTowr confirmed in public that the bugs were real and posted both CVE numbers before the release](../facts/leak-watchtowr/index.html) | reported | 2 | 0 | 2 |  |
 | [The out-of-memory issue was found in a 2024 audit by Quarkslab (funded through OSTIF and the Sovereign Tech Ag](../facts/quarkslab-2024/index.html) | confirmed | 2 | 0 | 1 |  |
 | [Quarkslab's published audit summary lists 27 findings, two redacted because their fixes were complex and in pr](../facts/quarkslab-redacted/index.html) | reported | 2 | 0 | 3 |  |
@@ -72,9 +72,9 @@ Stated only by sources a page does not name: a gap in the evidence, not a party.
 | [The fixes were released at 14:00 UTC on 21 October](../facts/release-time/index.html) | disputed | 2 | 0 | 1 | K-010 |
 | [Calif found the flaws first: discovery 1 August, hash commitment 5 August, report to PHP 11 August](../facts/who-first/index.html) | confirmed | 2 | 0 | 2 |  |
 | [Wiz Research independently discovered the first flaw on 19 August and reported on 24 August](../facts/wiz-independent/index.html) | reported | 2 | 0 | 0 |  |
-| [Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAd](../facts/wordpress-drupal/index.html) | reported | 2 | 0 | 1 |  |
+| [In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, ](../facts/wordpress-drupal/index.html) | reported | 2 | 0 | 1 |  |
 | [Edinburgh and Oxford councils, the Met Police and the Office for Budget Responsibility were unavailable; Brist](../facts/uk-list/index.html) | reported | 2 | 1 | 3 | K-005 |
-| [PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpatched on 2](../facts/scale-2.6m-hosts/index.html) | reported | 2 | 3 | 3 | K-004 |
+| [VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it sa](../facts/scale-2.6m-hosts/index.html) | reported | 2 | 3 | 3 | K-004 |
 | [Frontier AI found the flaw ahead of attackers, giving defenders time to prepare](../facts/ahead-of-attackers/index.html) | disputed | 1 | 0 | 1 |  |
 | [Exploit attempts across Cloudflare's network: thousands in the ten hours before announcement, tens of thousand](../facts/cf-millions/index.html) | reported | 1 | 0 | 1 |  |
 | [CISA has not observed exploitation; neither CVE is in the Known Exploited Vulnerabilities catalog](../facts/cisa-none/index.html) | confirmed | 1 | 0 | 1 |  |
@@ -114,11 +114,11 @@ Stated only by sources a page does not name: a gap in the evidence, not a party.
 | [The most severe flaws ever detected by AI](../facts/most-severe/index.html) | reported | 1 | 1 | 2 |  |
 | [There is no evidence yet that hackers have exploited the flaw](../facts/no-exploitation/index.html) | reported | 1 | 1 | 1 |  |
 | [Something like 30 million websites could be affected](../facts/scale-30m/index.html) | reported | 1 | 1 | 1 |  |
-| [Roughly 70% of the Internet is affected](../facts/scale-70pc-internet/index.html) | unverified | 1 | 1 | 0 |  |
+| [70% of the Internet is affected](../facts/scale-70pc-internet/index.html) | unverified | 1 | 1 | 0 |  |
 | [Edinburgh council's site went offline late on 21 October; the council called it 'essential maintenance' and di](../facts/edinburgh/index.html) | reported | 1 | 2 | 2 |  |
 | [Finland's state IT provider Valtori restricted public traffic to government web services from 12:45 local time](../facts/fi-offline/index.html) | reported | 1 | 2 | 1 |  |
 | [Oxford City Council: 'a precaution because of a worldwide issue with the underlying technology and is not a cy](../facts/oxford/index.html) | reported | 1 | 2 | 1 |  |
-| [The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no ](../facts/nl-offline/index.html) | confirmed | 1 | 3 | 3 |  |
+| [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reporte](../facts/nl-offline/index.html) | reported | 1 | 3 | 3 |  |
 | ['Where immediate remediation is not feasible, organisations should consider taking the system offline until it](../facts/offline-ncsc/index.html) | disputed | 1 | 3 | 3 |  |
 | [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../facts/watchtowr-itw/index.html) | unverified | 1 | 3 | 5 |  |
 | [The Wikimedia Foundation took down a number of systems 'as a precautionary measure until they can be safely pa](../facts/wikimedia-precaution/index.html) | reported | 1 | 4 | 3 |  |
@@ -169,4 +169,4 @@ The grammar is the estate's, from [graphs.sgit.ai](https://graphs.sgit.ai/v1/gra
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html

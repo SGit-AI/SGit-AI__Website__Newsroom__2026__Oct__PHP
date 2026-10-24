@@ -38,6 +38,10 @@ The partiesactors/index.htmlExploitation signalsexploitation/index.html
 | 089 | Capture what the desk found outside the vault: the BBC live page as it stands (32 UK services, 90%), The Next Web, the PHPocalypse Tracker's sites.csv, KEV each run; then re-grade the claims they bear onFrom the brief: a fact-checker joins the team (22 October). | open |  |
 | 095 | Capture into the vault what the GRC section cites from the sgit network (risks.sgit.ai, the riskmandate.ai model, the newsroom's risk articles) so the network page can cite captures, not live pagesFrom the brief: a GRC desk joins the team (22 October). | open |  |
 | 187 | Twelve pages are recorded twice in data/sources.json under different slugs (for example tpo-nl-digid-offline and tpo-tpo-nl-digid-offline, cisa-kev-catalog and cisa-kev-json, ch-unige-down and unige-site); and unige.ch and epfl.ch, two universities, are classed 'government'. Merge or mark each pair as a later capture of the same page (supersedes), and fix the class. The list: python3 admin/cartographer/pass.pyFrom the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md). | open |  |
+| 222 | The denominator: W3Techs PHP share and PHP version shares by country domain (extends 033 and 043), and any per-country host count from Censys, Shodan or VulnCheckFrom the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go). | open |  |
+| 242 | Capture the CVSS '10.0' relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's '90%' as it stands and the UK minister's figures, before any request rests on themFrom the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). | open |  |
+| 247 | Capture each publisher's published corrections route before a request goes: Wiz, AWS, WIRED, ISMG, The Hacker News, the BBC, CNN, Fortune, Clarín, Le Temps, ITmediaFrom the brief: a corrections liaison joins the team (22 October). | open |  |
+| 248 | Capture the FT's coverage of php2shell; nothing can be asked of the FT until it is capturedFrom the brief: a corrections liaison joins the team (22 October). | open |  |
 
 ## What they have done
 - Captured the researchers' and vendors' accounts; marked openai.com and Techzine second-hand where a bot challenge blocked them.
@@ -51,4 +55,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/collector-researchers/index.html
+site v0.13.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/collector-researchers/index.html

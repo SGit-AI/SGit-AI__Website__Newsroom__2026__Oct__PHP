@@ -2,13 +2,13 @@
 
 The front page for a board member who wants only what their role needs: the situation, five numbers, three questions for the team, what is new, and one picture each of how it unfolded and what governments advise.
 
-> Mockup A for review, built from the data of release v0.12.1. Not the live site.
+> Mockup A for review, built from the data of release v0.13.0. Not the live site.
 
 Developing  ·  last checked 23 October 2026, 16:04 UTC 
 
 ## Two serious security flaws in PHP, the software behind many of the world's websites
 
-PHP is the software that WordPress and millions of other websites run on. A fix came out on 21 October 2026. Government cyber agencies have told organisations to install it now, or to take websites offline if they cannot. Phones and personal computers are not affected. 
+PHP is the software that WordPress and millions of other websites run on. A fix came out on 21 October 2026. Government cyber agencies have told organisations to install it now; the two US agencies add: take websites offline if you cannot. Phones and personal computers are not affected. 
 
  J 
  Your answer in thirty seconds 
@@ -102,7 +102,7 @@ All say install the fix. They split on what to do if you cannot.
 
  See every agency → 
 
- Focus view shows 27 of 787 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
+ Focus view shows 27 of 790 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
 
 ---
-site v0.12.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html
+site v0.13.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html
