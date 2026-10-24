@@ -33,12 +33,12 @@ SECRET = re.compile('|'.join([
 # Environment variables whose values must never appear in the tree, whatever their shape.
 SECRET_ENV = ('SG_SEND_ACCESS_TOKEN', 'SYNTHETIC_VAULT_KEYS', 'ANTHROPIC_API_KEY', 'OPENROUTER_API_KEY', 'GITHUB_TOKEN', 'GH_TOKEN')
 # Paths that hold decrypted vault content or keys and must never be committed (the site publishes the whole tree).
-SENSITIVE_PATH = re.compile(r'(^|/)(\.sg_vault|\.sg-send)(/|$)|(^|/)(lane\.json|pki-passphrase|subscribers\.json|keys?[-_.][^/]*\.json)$|(^|/)(requests|drain)/[^/]*\.jsonl$|\.(pem|key)$')
+SENSITIVE_PATH = re.compile(r'(^|/)(\.sg_vault|\.sg-send)(/|$)|(^|/)(lane\.json|pki-passphrase|subscribers\.json|panel\.json|keys?[-_.][^/]*\.json)$|(^|/)(requests|drain|feedback|enrolments)/[^/]*\.jsonl$|(^|/)inbox/[^/]*\.eml$|\.(pem|key)$')
 
 # Invisible characters that hide text from a person but not from a model: Unicode tags and bidi controls always,
 # zero-width characters in prose and data.
-TAGS_BIDI = re.compile('[\U000E0000-\U000E007F‪-‮⁦-⁩]')
-ZERO_WIDTH = re.compile('[​-‍⁠-⁤]')
+TAGS_BIDI = re.compile('[\U000E0000-\U000E007F\u202A-\u202E\u2066-\u2069]')
+ZERO_WIDTH = re.compile('[\u200B-\u200F\u2060-\u2064]')
 # Text addressed to a model. Kept narrow on purpose: a hit stops the release until a person allows it in
 # admin/security/injection-allowlist.json (for example a story that quotes a headline about prompt injection).
 INJECTION = re.compile(r'(ignore|disregard|forget) (all |any |the )?(previous|prior|above|earlier) (instructions|prompts?|context)'
@@ -49,6 +49,7 @@ TEXT_EXT = ('.html', '.md', '.txt', '.json', '.xml', '.jsonl', '.csv', '.webmani
 SKIP_DIRS = {'.git', '.sg_vault', 'node_modules', '__pycache__'}
 SLUG = re.compile(r'[a-z0-9][a-z0-9._-]*')
 JSON_SCRIPT = re.compile(r'<script type="application/(?:ld\+)?json"[^>]*>(.*?)</script>', re.S)
+INLINE_HANDLER = re.compile(r'<[a-zA-Z][^<>]*\son[a-z]+\s*=', re.I)    # the site never writes one; data that does is an injection
 BAD_SCHEME = re.compile(r'\b(href|src|action|formaction)\s*=\s*["\']?\s*(javascript|vbscript|data:text/html)', re.I)
 
 
@@ -137,6 +138,9 @@ def tree_fails(root=ROOT):
                     ok = False
                 if not ok:
                     fails.append(f'{rp}:{line_of(t, m.start())}: a JSON script block that does not parse or holds "<" (closed early by its data?)')
+            m = INLINE_HANDLER.search(JSON_SCRIPT.sub('', t))
+            if m:
+                fails.append(f'{rp}: an inline event-handler attribute ({m.group(0)[-40:]!r}): the build never writes one, so data did')
             m = BAD_SCHEME.search(t)
             if m:
                 fails.append(f'{rp}:{line_of(t, m.start())}: {m.group(2)}: URL in {m.group(1)}')
@@ -176,6 +180,24 @@ def tree_fails(root=ROOT):
             walk_keys(K)
         except (ValueError, KeyError, TypeError) as e:
             fails.append(f'data/keys.json: does not parse as the key register ({e})')
+    # Messages between agents (data/messages/<to>/<id>.md): the sender in the front matter is the one in the file name,
+    # no field is given twice, and nobody writes as the editor, who speaks to agents only in their own sessions.
+    for p in sorted(__import__('glob').glob(os.path.join(root, 'data', 'messages', '*', '*.md'))):
+        rp = os.path.relpath(p, root).replace(os.sep, '/')
+        t = read_text(p) or ''
+        m = re.match(r'---\n(.*?)\n---\n', t, re.S)
+        if not m:
+            fails.append(f'{rp}: a message with no front matter'); continue
+        keys = [l.split(':', 1)[0].strip() for l in m.group(1).splitlines() if ':' in l]
+        head = dict((k.strip(), v.strip()) for k, v in (l.split(':', 1) for l in m.group(1).splitlines() if ':' in l))
+        dup = sorted({k for k in keys if keys.count(k) > 1})
+        if dup:
+            fails.append(f'{rp}: front matter gives {", ".join(dup)} more than once (a forged header)')
+        parts = os.path.basename(p)[:-3].split('__')
+        if len(parts) < 3 or head.get('from') != parts[1]:
+            fails.append(f'{rp}: "from: {head.get("from")}" is not the sender in the file name')
+        if head.get('from') in ('editor', 'dinis', 'dinis-cruz', 'root', 'security'):
+            fails.append(f'{rp}: a message signed as "{head.get("from")}": the editor never writes to agents through this repository')
     # Workflows: every action pinned to a commit, never a tag a third party can move.
     wf = os.path.join(root, '.github', 'workflows')
     for f in sorted(os.listdir(wf)) if os.path.isdir(wf) else []:
