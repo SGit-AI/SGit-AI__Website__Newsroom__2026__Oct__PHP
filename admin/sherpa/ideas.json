@@ -802,7 +802,7 @@
           ]
         }
       ],
-      "reply": "Not sent. The editor shares this page and the brief with him."
+      "reply": "Shared by the editor. Step 1 shipped in v0.14.22 (the phone header, 43px; checked live) and step 2 in v0.14.24, restored in v0.14.29 (/grc/changes/, checked live). His first step for newcomers is prototype E's 'Aim' setting (v0.15.0, /admin/design/lens/), waiting for the editor's go."
     }
   ]
 }
