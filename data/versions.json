@@ -1,6 +1,15 @@
 {
- "current": "0.15.14",
+ "current": "0.15.15",
  "versions": [
+  {
+   "version": "0.15.15",
+   "date": "2026-10-24",
+   "title": "debrief: the Opus journalist's round, ending as the correspondent",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.14",
    "date": "2026-10-24",

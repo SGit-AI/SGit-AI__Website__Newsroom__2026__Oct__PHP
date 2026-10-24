@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.15.14",
+ "version": "0.15.15",
  "members": [
   {
    "agent": "abp",
@@ -1427,7 +1427,13 @@
     },
     "debrief": null
    },
-   "debriefs": []
+   "debriefs": [
+    {
+     "file": "2026-10-24__journalist-to-correspondent.md",
+     "date": "2026-10-24",
+     "title": "The Opus journalist's last round as journalist: two exports, three states of affairs, the desk, Pulse, and the pipeline that makes it the correspondent"
+    }
+   ]
   },
   {
    "agent": "liaison",

@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.15 · 24 October 2026new since your last visit
+
+debrief: the Opus journalist's round, ending as the correspondent
+
+No reader-facing section changed in this release.
+
 ## v0.15.14 · 24 October 2026new since your last visit
 
 merge rules for taking in dev, in the journalist's brief; board rows for AGENTS.md and for release.sh's stop message
@@ -1019,4 +1025,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.14 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.15 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
