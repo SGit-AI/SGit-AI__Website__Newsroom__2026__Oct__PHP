@@ -12,4 +12,4 @@ On the editor's instruction in the session of 24 October ("first of all start ge
 - admin/build/build.py: At a glance counts "reports", not "organisations".
 - data/questions.json: the Censys populations in the 70% answer.
 
-Still yours: the /signals/ ladder chart sets 1.57 million against 2.6 million on one scale (board 250), and the headline as the day's news (board 229).
+Still yours: the /signals/ ladder chart sets 1.57 million against 2.6 million on one scale (board 251), and the headline as the day's news (board 230).

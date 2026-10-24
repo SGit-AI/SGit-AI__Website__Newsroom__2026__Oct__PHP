@@ -24,7 +24,7 @@
   },
   {
    "q": "Has anyone been hacked?",
-   "a": "Attackers have been trying: Cloudflare reports millions of attempts and Amazon a honeypot hit four days before disclosure. But as of the evening of 22 October no named organisation has said it was broken into through this flaw, and CISA has not listed either flaw as exploited. One company in Japan is investigating a break-in without saying how it happened, and a Czech university says it stopped an attack.",
+   "a": "Attackers have been trying: Cloudflare reports millions of attempts and Amazon a honeypot hit four days before disclosure. But as of 23 October no named organisation has said it was broken into through this flaw, and CISA has not listed either flaw as exploited. One company in Japan is investigating a break-in without saying how it happened, and a Czech university says it stopped an attack.",
    "href": "impact/index.html",
    "sources": [
     "x-eastdakota-php2shell-stats",
@@ -112,7 +112,7 @@
   "discovery/index.html": "Who found the flaws (three research teams, all using AI help) and what the AI actually did, as far as anyone has said.",
   "leak/index.html": "The plan was to publish the fix and the details together on 22 October. The secret leaked on the 20th; this page is the hour-by-hour account.",
   "exploitation/index.html": "Every sign of attackers trying to use the flaws, in order. Lots of attempts; no confirmed break-in of a named organisation yet.",
-  "impact/index.html": "Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 22 October).",
+  "impact/index.html": "Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 23 October).",
   "defence/index.html": "Can these attacks be blocked or spotted? Yes at the edge and on the server, mostly; no from ordinary web logs alone.",
   "context/index.html": "How php2shell compares with famous past flaws such as Heartbleed and Log4Shell, using the official record of which ones were exploited.",
   "playbook/index.html": "What an organisation that runs PHP should do, step by step, merged from every agency's advice.",
@@ -268,7 +268,7 @@
    "href": "leak/index.html"
   },
   {
-   "text": "How many websites went offline, and why. This site holds ten reports, some covering a single site and some a whole government's; a community tracker lists about fifty sites that went dark and came back. Nobody has counted them all.",
+   "text": "How many websites went offline, and why. The reports this site holds range from a single site to a whole government's platform; a community tracker lists about fifty sites that went dark and came back. Nobody has counted them all.",
    "href": "impact/index.html"
   },
   {

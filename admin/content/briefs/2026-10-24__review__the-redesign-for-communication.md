@@ -19,7 +19,7 @@ A reader who sees two numbers for one thing trusts neither.
 - **The lead overstates offline advice.** "Told organisations to install it now, or to take websites offline if they cannot", while the agencies page and mockup C count 2 of 16 saying take it offline (both American). Say so: "all say install the fix; two US agencies say take sites offline if you cannot."
 - **Three "as of" times for one statement.** No compromise "as of 23 October" (Right now), "as of the evening of 22 October" (core facts, the thirty-second answers in `data/personas.json`), "as of the latest capture" (mockup A's tile).
 - **Two status vocabularies.** The front page counts 21 confirmed, 11 disputed, 4 unverified, and its legend has no "contradicted"; mockup B counts 21 confirmed, 34 reported, 8 disputed, 3 contradicted, 4 unverified; the fact-check desk relies on 10.
-- **Hard-coded numbers in the mockups.** `admin/build/design.py`: "across 6 countries" (line 152), "9 new" (248), "9 things are new, 3 changed" (241), where the list below shows 4 new and 5 changed. Every number must come from data, as `AGENTS.md` asks.
+- **Hard-coded numbers in the mockups.** `admin/build/design.py`: "across 6 countries" (line 152), "9 new" (249), "9 things are new, 3 changed" (242), where the list below shows 4 new and 5 changed. Every number must come from data, as `AGENTS.md` asks.
 - **The UK three ways:** "a last resort" (front), "the fourth step" (C's line), "after mitigations" (C's card).
 - **Readers:** the front page offers 16; the matrix maps 8 and does not say where the other 8 go.
 
@@ -36,9 +36,9 @@ A reader who sees two numbers for one thing trusts neither.
 
 | Board | Owner | Work |
 | --- | --- | --- |
-| 229 | claude-story-site | The headline is the day's news, from the journalist's latest state of affairs; the explainer moves to the second line. Front page and mockup A. |
-| 230 | claude-story-site | The lead's offline sentence matches the agencies count: all say install, two US agencies say take offline. |
-| 231 | dev | `design.py`: every number from data (the 6 countries, the 9 new, the 9 and 3), one "as of" for each statement across the front page, personas and mockups. |
-| 232 | factcheck | One status vocabulary on every page, with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside it. |
-| 233 | dev | "What changed" in the reader's path lists story changes only: no version tags, commit hashes or page furniture. |
-| 234 | editor | Board 138, with this review: A as the default front page and C as the model page; Focus capped at a few dozen pages for every reader; the dial's names in plain words; no view links to a page it hides. |
+| 230 | claude-story-site | The headline is the day's news, from the journalist's latest state of affairs; the explainer moves to the second line. Front page and mockup A. |
+| 231 | claude-story-site | The lead's offline sentence matches the agencies count: all say install, two US agencies say take offline. |
+| 232 | dev | `design.py`: every number from data (the 6 countries, the 9 new, the 9 and 3), one "as of" for each statement across the front page, personas and mockups. |
+| 233 | factcheck | One status vocabulary on every page, with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside it. |
+| 234 | dev | "What changed" in the reader's path lists story changes only: no version tags, commit hashes or page furniture. |
+| 235 | editor | Board 138, with this review: A as the default front page and C as the model page; Focus capped at a few dozen pages for every reader; the dial's names in plain words; no view links to a page it hides. |

@@ -59,7 +59,7 @@ Both are repeating tasks queued once, with the editor's go, by the conductor: `d
 
 | Board | Owner | Work |
 | --- | --- | --- |
-| 235 | editor | Go or no-go on the desk's two runs, and the `repeat_until` date. |
-| 236 | conductor | With the go: the desk's schedule and its two repeating tasks in the schedule vault. |
-| 237 | editor | Resume the fact-check desk's schedule: every front-page error it found waits on it. |
-| 238 | dev | `/team/desk/`: the desk's notes, newest first, from the schedule vault's run records. |
+| 236 | editor | Go or no-go on the desk's two runs, and the `repeat_until` date. |
+| 237 | conductor | With the go: the desk's schedule and its two repeating tasks in the schedule vault. |
+| 238 | editor | Resume the fact-check desk's schedule: every front-page error it found waits on it. |
+| 239 | dev | `/team/desk/`: the desk's notes, newest first, from the schedule vault's run records. |

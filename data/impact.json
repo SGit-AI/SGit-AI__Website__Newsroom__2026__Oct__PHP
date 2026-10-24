@@ -116,6 +116,50 @@
    "sources": [
     "reuters-factbox-websites-offline"
    ]
+  },
+  {
+   "who": "Germany: the City of Mainz's website; the Charité (website and online booking), Vivantes, MHH Hannover and other hospitals; the host Mittwald (all customer websites)",
+   "country": "DE",
+   "what": "Taken offline on 21 October. The Charité's spokesman: it had \"keinerlei Einfluss auf die Arbeit der Charité\" (no effect on the Charité's work), and its main site was back that evening. Mittwald: every customer website offline from the afternoon, patches going in from 21:28, first checks with no sign of exploitation.",
+   "when": "2026-10-21",
+   "said_by": "Bitpage.de's situation report, quoting the organisations",
+   "status": "reported",
+   "sources": [
+    "bitpage-php2shell-php-sicherheitsluecke-webseite"
+   ]
+  },
+  {
+   "who": "Morocco: the Maghreb Arabe Presse (MAP) and Bank Al-Maghrib websites",
+   "country": "MA",
+   "what": "MAP's site put into maintenance; Bank Al-Maghrib's unavailable for part of the night",
+   "when": "2026-10-21",
+   "said_by": "Journal du Canada",
+   "status": "reported",
+   "sources": [
+    "journalducanada-php2shell-des-serveurs-exposes-a-une-cyb"
+   ]
+  },
+  {
+   "who": "Romania: the Romanian Police website",
+   "country": "RO",
+   "what": "Replaced with a maintenance page",
+   "when": "2026-10-21",
+   "said_by": "Critic Arad",
+   "status": "reported",
+   "sources": [
+    "criticarad-php2shell-cve-2026-109618-ghid-patch"
+   ]
+  },
+  {
+   "who": "Japan: a bank's online services; Prime Minister Takaichi's website",
+   "country": "JP",
+   "what": "Companies and organisations took precautionary measures; a bank suspended its online service for a time, and the Prime Minister's website was also stopped \"for countermeasures\" (対策のため)",
+   "when": "2026-10-22",
+   "said_by": "Jiji Press, as illustrated by Yahoo! News Japan",
+   "status": "reported",
+   "sources": [
+    "news-yahoo-articles-d953e2a13109253ae974bf2a64ebe94"
+   ]
   }
  ],
  "compromised": [

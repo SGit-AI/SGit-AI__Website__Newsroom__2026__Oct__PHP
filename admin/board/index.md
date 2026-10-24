@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 217 items, 149 open, 63 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 218 items, 150 open, 63 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -227,9 +227,10 @@ The work, as rows in `data/admin.json`: 217 items, 149 open, 63 done. An item is
 | 215 | Say what pulse@newsroom does: no file, brief or role row in this repository records its scope; its folder (admin/content/agents/pulse/) waits for itRenumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open | editor |  |
 | 216 | The librarian's drafted policies are ready for abp@ (board 157): 27 members in admin/content/agents/*/policy.json, each now kept_by abp@newsroom.sgit; abp@ is blocked by its own guard hook (/team/status/)Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open | abp |  |
 | 217 | A daily librarian pass on a schedule: the editor's go on the time (proposed 07:13 London), then the schedule in the schedule vault (weic8imn) and a scheduled task, per AGENTS.md section 7Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Done 24 October: the editor said 07:13; card data/schedule/librarian.json active; scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 created in the librarian's session. Renumbered a third time on 24 October (dev at v0.11.5). | done | editor |  |
+| 218 | Policies: the editor gave the journalist the refresh of the site after every evidence export (24 October); scope.writes should followThe editor, 24 October 2026, in the journalist's session: the journalist does the full pass and maintains the site after each export. Files to move from story-site's (and the briefing writer's, the librarian's) scope.writes to the journalist's, or to be shared by rule: data/story.json, claims.json, impact.json, compromise.json, exploitation.json, numbers.json, agencies.json, timeline.json, history.json, defence.json, affected.json, plain.json, personas.json, questions.json; also unowned today: data/desk.json (journalist), data/pulse.json and admin/build/export_pulse.py (journalist, for the Pulse section, until pulse@newsroom takes it), pages views/desk/ and pulse/. The journalist has not edited any policy file. The pass is on /views/desk/. | open | abp@newsroom.sgit |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
