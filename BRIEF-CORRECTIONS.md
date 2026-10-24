@@ -2,6 +2,10 @@
 
 Newest first. A correction names the date, what was wrong, what was found, and what was done instead. The mistake stays visible where it was made.
 
+## 2026-10-24: the Sherpa's CI-003 brief treated a shipped design as still open
+
+The brief "the graph reviewed by people, and a first step for newcomers" (24 October, 09:40 London) listed the collaborator's design preference (A to D as complementary views) as waiting for the editor. It had shipped in v0.14.0 at 01:34 that morning, as the editor decided (story-site's brief "the redesign, live"): A is the front page, B /ops/, C /analysis/, D the team console. The Sherpa had measured the live phone header but not read what the design agent shipped. Found when the editor asked. Done instead: CI-003 items 1 and 2 rewritten against v0.14.14; the first step for newcomers is now precise: the front page's "Three ways to read this site" are his three doors under other names, offered by role and seventh on the page, 9,218px down on a phone (F035, a board row for story-site); and one inconsistency goes to the editor: the redesign puts the CTO in Operations, the three-views brief with the executive. The brief stays as written.
+
 ## 2026-10-24: the librarian's map had two members too many and one too few
 
 The map of 22 October drafted a **design** member and an **ontologist** member. The record says otherwise: the story-site member is "Design, claims and the story pages" in the roster and its session `designer@php.newsroom` is mapped to it on `/team/status/`; and the cartographer joined "as the newsroom's ontologist" on its branch. Both splits are undone: design's files are the story site's, the ontology is the cartographer's. The map also drafted every `policy.json` without knowing that board 157 gives them to **abp@newsroom.sgit**; they are now kept by abp@, and the librarian's drafts are its starting point. The sherpa, the GRC desk, abp@ and pulse@ joined the map; the curator sessions are the newsroom lead's.

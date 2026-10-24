@@ -538,12 +538,12 @@
       "channel": "a message to the editor after the new design, the telemetry article and the risk graph's before-and-after, forwarded to the Sherpa in session; continues CI-002",
       "from": "2026-10-24",
       "to": "2026-10-24",
-      "site_version": "0.14.13",
+      "site_version": "0.14.14",
       "brief": [
         "admin/briefs/index.html#2026-10-24__brief__the-graph-reviewed-and-a-first-step",
         "The brief to dev from this conversation"
       ],
-      "summary": "His review of the new design, the telemetry article and the risk graph after CI-002 shipped. Designs A to D as complementary experiences, not alternatives; a simple first step for newcomers before asking who they are; measure whether the redesign moves readers from the front page into briefings, guidance and evidence; a review workflow where people confirm or reject the graph's inferred links, with evidence and history; and before-and-after for the graph itself between releases. The editor's direction: align it with power users' keys recognised by the site, so feedback like this, and reviews, come through the site signed.",
+      "summary": "His review of the new design, the telemetry article and the risk graph after CI-002 shipped. Designs A to D as complementary experiences, not alternatives (which is what shipped in v0.14.0); a simple first step for newcomers before asking who they are; measure whether the redesign moves readers from the front page into briefings, guidance and evidence; a review workflow where people confirm or reject the graph's inferred links, with evidence and history; and before-and-after for the graph itself between releases. The editor's direction: align it with power users' keys recognised by the site, so feedback like this, and reviews, come through the site signed.",
       "exchange": [
         [
           "2026-10-24",
@@ -565,16 +565,27 @@
             "A to D"
           ],
           "words": "I think A, B, C, and D work best as complementary experiences rather than alternatives. My preference is A's clean, executive-friendly presentation for high-level information, B's action-oriented layout for technical users, C's structured approach to detailed content, and D as a separate operational console.",
-          "today": "His split maps onto the three views of the brief of 23 October (the executive: A; the operator: B; the security leader: C, the detail) plus the team console (D).",
+          "today": "Already decided and shipped: the editor chose all four as complementary tracks, and story-site built them in v0.14.0 (the brief 'the redesign, live'): A is the front page (Briefing), B is /ops/ (Operations), C is /analysis/ (Analysis), D is the team console around every admin page; the persona chosen in the bar sends a reader to their track's home. His preference matches what shipped, track for track.",
           "links": [
             [
-              "admin/design/index.html",
-              "The redesign"
+              "admin/briefs/index.html#2026-10-24__brief__the-redesign-live",
+              "The redesign, live"
+            ],
+            [
+              "ops/index.html",
+              "Operations"
+            ],
+            [
+              "analysis/index.html",
+              "Analysis"
             ]
           ],
-          "gap": "A decision: one design, or each view its own.",
-          "recommendation": "To the editor with his design review: each view keeps the layout that suits it, from one source of content.",
-          "owner": "dinis"
+          "gap": "None: shipped. One inconsistency for the editor: the redesign puts the CTO in Operations, while the three-views brief (the editor's answer of 23 October) puts the CTO with the executive.",
+          "recommendation": "Tell him it shipped as he suggests. The editor settles where the CTO belongs, and story-site and the three-views brief follow the one answer.",
+          "owner": "story-site",
+          "also": [
+            "dinis"
+          ]
         },
         {
           "n": 2,
@@ -585,7 +596,7 @@
             "navigation"
           ],
           "words": "One suggestion would be to give first-time visitors a simple starting point before asking them to select a role. Something like \"Understand the incident\", \"Check what I need to do\", or \"Explore the evidence\" could help people find their way naturally.",
-          "today": "The new design asks 'Who are you?' in the masthead; a newcomer meets a role list before knowing what the site is. The Sherpa proposed the same kind of first line (board 122). The telemetry article: 81% of sessions that start on the front page read nothing else.",
+          "today": "Partly there. The front page has 'Three ways to read this site' (Briefing, Operations, Analysis), which are his three doors under other names (understand the incident, check what I need to do, explore the evidence). But they are offered by role ('choose who you are'), not by task, and they come seventh, after the agencies: measured on v0.14.14, the section starts 9,218px down a 14,778px page on a phone (about twelve screens) and 3,643px down on a 1,440px-wide desktop.",
           "links": [
             [
               "index.html",
@@ -596,11 +607,11 @@
               "The telemetry article"
             ]
           ],
-          "gap": "Three plain doors for a first visit.",
-          "recommendation": "Three doors on a first visit, above the role choice: 'Understand the incident' (the explainer), 'Check what I need to do' (If you run PHP, then /stack/), 'Explore the evidence' (claims and the graph); the role choice after. A small change, but on the front page of a design under the editor's review: to him first, then story-site.",
-          "owner": "dinis",
+          "gap": "The three ways, named by task, where a first-time reader sees them.",
+          "recommendation": "Move the three ways to the first screen and name them by task ('Understand the incident', 'Check what I need to do', 'Explore the evidence'), each opening its track's home; the roles stay inside each, as they are now. The tracks exist, so this is placement and wording on story-site's front page: briefed (F035), for story-site, with the editor's design review.",
+          "owner": "story-site",
           "also": [
-            "story-site",
+            "dinis",
             "sherpa"
           ]
         },

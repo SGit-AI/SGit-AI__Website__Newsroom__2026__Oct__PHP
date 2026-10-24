@@ -703,6 +703,27 @@
       "last_seen": "0.14.13",
       "status": "open",
       "source": "CI-003"
+    },
+    {
+      "id": "F035",
+      "reader": "a first-time reader (raised by a power user, CI-003)",
+      "page": "index.html",
+      "stage": "find-my-path",
+      "actual": "The three ways to read the site (Briefing, Operations, Analysis) are offered by role and come seventh on the front page: 9,218px down on a phone, about twelve screens; 3,643px on desktop.",
+      "severity": "high",
+      "proposal": "Put them on the first screen, named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home.",
+      "owner": "story-site",
+      "also": [
+        "dinis"
+      ],
+      "evidence": [
+        "Measured in Chromium on v0.14.14, 390x780 and 1440x900, 24 October",
+        "CI-003 item 2"
+      ],
+      "first_seen": "0.14.14",
+      "last_seen": "0.14.14",
+      "status": "open",
+      "source": "CI-003"
     }
   ]
 }
