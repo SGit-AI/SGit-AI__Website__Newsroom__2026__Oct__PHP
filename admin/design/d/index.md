@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.19. Not the live site.
+> Mockup D for review, built from the data of release v0.14.20. Not the live site.
 
-PHP Team console Console Overview Board 179 Agents 19 Releases 106 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 179 Agents 19 Releases 107 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.14.19 
-106 releases since 22 Oct 
+v0.14.20 
+107 releases since 22 Oct 
 
 Open on the board 
 179 
@@ -76,7 +76,7 @@ Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key
 
  #266 
 Every release links the pages it changed: under each release on /admin/versions.html, the main pages it changed (new fir… 
- dev@php.newsroom v0.14.18 
+ dev@php.newsroom v0.14.19 
  #255 
 Investigations: a section of the fact-check desk that chases one question down to its measurements; the first, how much … 
  factcheck 
@@ -99,6 +99,7 @@ Allow the mail agent to write to a publisher's published corrections address, fo
 ### Releases
  latest 8 
 
+ v0.14.20 2026-10-24 dev: the release history's pages for v0.14.18 (released before the build wrote them), and board 266 and dev's debrief corrected to… 
  v0.14.19 2026-10-24 the release history links the pages each release changed (on /admin/versions.html: new pages first, then by how much their text ch… 
  v0.14.18 2026-10-24 The Sherpa's 11:45 pass: the join page's fixes checked live (two frictions closed), the risk graph's explore and gaps pages workin… 
  v0.14.17 2026-10-24 The Sherpa's round 2 debrief (24 October): two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against… 
@@ -106,7 +107,6 @@ Allow the mail agent to write to a publisher's published corrections address, fo
  v0.14.15 2026-10-24 CI-003 corrected against the redesign that shipped in v0.14.0: the collaborator's design preference is what was built; his first s… 
  v0.14.14 2026-10-24 Ideas from collaborators, CI-003: a power user's review of the new design, the telemetry and the risk graph (complementary views, … 
  v0.14.13 2026-10-24 The desk's morning wake: correction requests updated (AWS reworded its own 'broadly exploited', so R-004 is held and WIRED's reque… 
- v0.14.12 2026-10-24 Conductor light check 09:15 London: curator missed-run note, status lines, run record 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Allow the mail agent to write to a publisher's published corrections address, fo
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.14.19 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.20 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

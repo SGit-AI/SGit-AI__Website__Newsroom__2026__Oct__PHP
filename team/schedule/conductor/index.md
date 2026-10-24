@@ -109,4 +109,4 @@ The editor's change of plan, 24 October 2026: the schedule vault (weic8imn) is n
 
 
 ---
-site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.html
+site v0.14.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.html

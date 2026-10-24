@@ -1969,7 +1969,7 @@
    "status": "done",
    "owner": "dev@php.newsroom",
    "note": "Done at the editor's ask of 24 October: admin/build/release_pages.py, data/release-pages.json; guidance in AGENTS.md section 1 (name the main page in the message, check the entry after releasing).",
-   "version": "0.14.18"
+   "version": "0.14.19"
   },
   {
    "id": "267",

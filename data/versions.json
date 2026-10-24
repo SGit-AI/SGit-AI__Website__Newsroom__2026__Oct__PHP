@@ -1,6 +1,15 @@
 {
- "current": "0.14.19",
+ "current": "0.14.20",
  "versions": [
+  {
+   "version": "0.14.20",
+   "date": "2026-10-24",
+   "title": "dev: the release history's pages for v0.14.18 (released before the build wrote them), and board 266 and dev's debrief corrected to v0.14.19, the release that shipped the page links",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.19",
    "date": "2026-10-24",

@@ -104,7 +104,7 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 171 | From CI-002: a debrief for the collaborator, before and after: each change as the old page against the new, side by side or with a slider, and diffs where the change is dataDone: /articles/the-risk-graph-before-and-after/, 14 screenshots of v0.10.12 and v0.10.13; split, slider and diff blocks for every article. | done | 0.10.14 |
 | 191 | The source watch's vault of record is 7r83qic5 (pack mode), on /vaults/, the source-watch page, the team, the schedules, the registers and the export; no read key published until the vault UI opens pack vaultsDone at the editor's word of 24 October: the source watch is 7r83qic5 everywhere live (vaults, the source-watch page, its data and export, the team, the schedules, the registers' holds, the policies' vault grants, the live briefs). The next export_watch.py run, by a session holding the vault key, refreshes the counts. | done | 0.11.3 |
 | 239 | /team/desk/: the desk's notes, newest first, from the schedule vault's run recordsFrom the brief: the news desk chief on a schedule (24 October; for the editor's go). Superseded: the schedule vault is retired; the desk's card, runs and messages show on /team/schedule/ (24 October). | done |  |
-| 266 | Every release links the pages it changed: under each release on /admin/versions.html, the main pages it changed (new first, then by how much their text changed), eight shown and the rest behind a toggle; filled back to v0.2.0, and written at each release's own build from now onDone at the editor's ask of 24 October: admin/build/release_pages.py, data/release-pages.json; guidance in AGENTS.md section 1 (name the main page in the message, check the entry after releasing). | done | 0.14.18 |
+| 266 | Every release links the pages it changed: under each release on /admin/versions.html, the main pages it changed (new first, then by how much their text changed), eight shown and the rest behind a toggle; filled back to v0.2.0, and written at each release's own build from now onDone at the editor's ask of 24 October: admin/build/release_pages.py, data/release-pages.json; guidance in AGENTS.md section 1 (name the main page in the message, check the entry after releasing). | done | 0.14.19 |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dev/` in the mail vault (`fmb2tpl2`).
@@ -115,4 +115,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.14.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html

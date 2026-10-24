@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.14.19. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.14.20. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.14.20 · 2026-10-24
+
+dev: the release history's pages for v0.14.18 (released before the build wrote them), and board 266 and dev's debrief corrected to v0.14.19, the release that shipped the page links
+Pages changed (9): dev@php.newsroom: role, policy and rounds · dev@php.newsroom, build, gate and release: the team · The fact pipeline: from a web page to a reader · Release history · What's new: every change, release by release · Admin and engineering · Runs: what the agents do on their own, and every time they did it · The board and 1 more
+[How the story changed, release by release](../versions/index.html)
+
+ Vault commit `1845598d9a38`.
 
 ### v0.14.19 · 2026-10-24
 
@@ -19,6 +27,8 @@ Pages changed (73): dev@php.newsroom: role, policy and rounds · The source watc
 ### v0.14.18 · 2026-10-24
 
 The Sherpa's 11:45 pass: the join page's fixes checked live (two frictions closed), the risk graph's explore and gaps pages working on a phone, and the headline still 600 to 670 pixels down on every page walked
+Pages changed (14): Schedule: every agent that runs on its own · Schedule: sherpa · The Sherpa: I'm here to help you find your way · Sherpa, walks with the reader: the team · The briefs: what the feedback asks of each team · Schedule: conductor · The fact pipeline: from a web page to a reader · Runs: what the agents do on their own, and every time they did it and 6 more
+[What's new: every change, release by release](../whatsnew/index.html) · [Release history](../admin/versions.html) · [Admin and engineering](../admin/index.html) · [Mockup D: the team console](../admin/design/d/index.html) · [The board](../admin/board/index.html) · [How the story changed, release by release](../versions/index.html)
 
  Vault commit `1845598d9a38`.
 
@@ -826,4 +836,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.14.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

@@ -357,7 +357,7 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 
 ### Every release links the pages it changed; the source watch is 7r83qic5 everywhere live
 
-2026-10-24 · round 1 · branch `dev (released with admin/build/release.sh), mirrored to claude/trusting-mayer-t7eecb` · commits `the v0.14.18 release commit` · tokens unknown · outside scope 17 (13 files outside scope.writes, 4 existing briefs edited), all under the editor's override in this session · overrides 1
+2026-10-24 · round 1 · branch `dev (released with admin/build/release.sh), mirrored to claude/trusting-mayer-t7eecb` · commits `5fc41b789 (v0.14.19), and the follow-up that fixed this version number` · tokens unknown · outside scope 17 (13 files outside scope.writes, 4 existing briefs edited), all under the editor's override in this session · overrides 1
 
 #### What I was asked
 
@@ -483,4 +483,4 @@ Files: [admin/content/agents/dev/](https://github.com/SGit-AI/SGit-AI__Website__
 
 
 ---
-site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/dev/index.html
+site v0.14.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/dev/index.html
