@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode', 'claim-review', 'desk')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode', 'claim-review', 'desk', 'arcs', 'personas')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 TPUB = load('telemetry-public') if os.path.exists(os.path.join(DATA, 'telemetry-public.json')) else None
 WORLD = load('world')
@@ -242,7 +242,7 @@ NAV = [
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
     ('The analysis', [('claims/index.html', 'Every claim'), ('claims/review/index.html', 'Claims waiting for review'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('outreach/index.html', 'Corrections we have asked for'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
-                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'), ('graph/parties/index.html', 'Every party'),
+                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'), ('graph/parties/index.html', 'Every party'), ('fractal/index.html', 'From a line of code to a stakeholder'), ('fractal/ui/index.html', 'Walk the whole graph'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
                       ('layers/index.html', 'Evidence, derived, authored'),
@@ -255,7 +255,7 @@ NAV = [
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'), ('admin/agents/index.html', 'Guidance for agents'), ('graph/component/index.html', 'The graph component'),
-               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/pack-mode/index.html', 'Pack mode, measured'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
+               ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/pack-mode/index.html', 'Pack mode, measured'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers'), ('admin/agents/roles/index.html', 'Every member: who owns what'), ('admin/agents/rounds/index.html', 'Every round: what each member did')]),
     ('Elsewhere', [('pulse/index.html', 'What else is going on: Pulse')])
 ]
 
@@ -1518,6 +1518,12 @@ def build_llms():
     for m in TEAM['members']:
         lines.append(f'- [{m["name"]}]({BASE_URL}/team/{m["id"]}/index.md): {m["role"]}; {m["summary"]}')
     lines.append('')
+    # added by librarian@php.newsroom: every member's role, policy and rounds (admin/content/agents/)
+    lines.append('## Every member: role, agent behaviour policy and rounds')
+    for pp, t, d, _ in PAGES:
+        if re.match(r'^admin/agents/[^/]+/index\.html$', pp) and pp not in ('admin/agents/index.html',):
+            lines.append(f'- [{t}]({BASE_URL}/{md_path(pp)}): {d}')
+    lines.append('')
     lines.append("## Views and updates: every version of the state of affairs, what changed between them, every update")
     for p, t, d, _ in PAGES:
         if p.startswith(('views/', 'updates/')):
@@ -1692,7 +1698,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa(); build_desk()
+    build_review(); build_fractal(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa(); build_desk(); build_members()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -6288,6 +6294,345 @@ body += sg_graph(path, data={'nodes': [...], 'edges': [...]}, view='layers')</co
 {section("files", "Files", hashes + f'<p class="small">Under <code>{E(os.path.dirname(SG_GRAPH_JS))}/</code>. The path is the version: a change is a new directory, never an edit in place. The markup file is <code>.tpl</code> rather than <code>.html</code> because every <code>.html</code> file on this site is a page to the gate.</p>')}
 '''
     page(path, 'The graph component: one way to draw every graph on this site', 'sg-graph, the web component every agent uses to put a graph on a page: the views, the data contract, the build helper, and the hashes of its files.', body, kind='site', topics='graph component')
+
+
+# ----------------------------------------------------------------------------- the fractal graph (v0.5.2, the librarian)
+
+FR_LAYERS = [
+    ('stakeholder', 'Stakeholders', 'the fifteen readers in data/personas.json'),
+    ('risk', 'Risks', 'authored in data/arcs.json, each resting on claims'),
+    ('arc', 'Story arcs', 'authored in data/arcs.json, each carrying risks and resting on claims and events'),
+    ('claim', 'Claims and events', 'data/claims.json and data/timeline.json, each with a status or a date'),
+    ('source', 'Sources', 'the captured, hashed sources the claims and events cite'),
+    ('flaw', 'The flaws', 'the two CVEs, from data/review.json'),
+    ('fix', 'The fix', 'the commit and what it does, from data/review.json'),
+    ('code', 'Areas and files', 'php-src areas and files the fix changed, from review/code/files.json'),
+    ('function', 'Functions', 'the C functions the fix changed, from the diff'),
+    ('line', 'Lines', 'every changed hunk, with its line range in php-src'),
+]
+FR_RANK = {l: i for i, (l, _, _) in enumerate(FR_LAYERS)}
+
+def fractal_graph():
+    """Assemble one graph from stakeholders to changed lines. Deterministic: inputs are sorted or kept in file order."""
+    A, R = D['arcs'], D['review']
+    FJ = json.load(open(os.path.join(ROOT, 'review', 'code', 'files.json'), encoding='utf-8'))
+    nodes, edges, seen = OrderedDict(), [], set()
+    def node(i, layer, name, text='', **kw):
+        if i not in nodes: nodes[i] = {'id': i, 'layer': layer, 'name': name, 'text': text, **kw}
+    def edge(a, b, rel):
+        if a in nodes and b in nodes and (a, b, rel) not in seen:
+            seen.add((a, b, rel)); edges.append({'from': a, 'to': b, 'rel': rel})
+    claims = {c['id']: c for c in D['claims']}
+    for p in D['personas']['personas']:
+        node('who:' + p['id'], 'stakeholder', p['label'], p['who'], href=(p.get('path') or ['start/index.html'])[0])
+    for r in A['risks']:
+        node('risk:' + r['id'], 'risk', r['name'], r['text'])
+    for a in A['arcs']:
+        node('arc:' + a['id'], 'arc', a['name'], a['text'], href=a['page'])
+    for c in D['claims']:
+        node('claim:' + c['id'], 'claim', c['claim'], f'{c["status"]}, says {c["by"]}', status=c['status'], href=f'claims/index.html#{c["id"]}')
+    for i, t in enumerate(D['timeline']):
+        node(f'event:{i}', 'claim', f'{fmt_at(t["at"])}: {t["event"][:80]}', t['event'], href='timeline/index.html')
+    for c in D['claims']:
+        for s in c['sources']:
+            if s in SOURCES: node('source:' + s, 'source', short_name(SOURCES[s]), SOURCES[s].get('title') or s, href=f'sources/{s}/index.html')
+    for t in D['timeline']:
+        for s in t['sources']:
+            if s in SOURCES: node('source:' + s, 'source', short_name(SOURCES[s]), SOURCES[s].get('title') or s, href=f'sources/{s}/index.html')
+    for n in R['nodes']:
+        if n['layer'] in ('vulnerability', 'remediation'):
+            node(n['id'], 'flaw' if n['layer'] == 'vulnerability' else 'fix', n['name'], n['text'], href='review/ui/index.html#' + n['id'])
+        elif n['id'].startswith('area:'):
+            node(n['id'], 'code', n['name'], n['text'])
+    areas = sorted((i for i in nodes if i.startswith('area:')), key=lambda i: -len(i))
+    def area_of(path):
+        return next((a for a in areas if path.startswith(a[5:].rstrip('/') + '/') or path == a[5:].rstrip('/')), None)
+    for f in FJ['engine_files']:
+        fid = 'file:' + f['path']
+        fn_names = [x[0] for x in f['functions']]
+        node(fid, 'code', f['path'], f'+{f["add"]} / -{f["del"]} in the fix. Functions changed: {", ".join(fn_names) or "none named"}.', url=f['url'])
+        for fn in fn_names:
+            node(f'fn:{f["path"]}:{fn}', 'function', fn + '()', f'in {f["path"]}', file=f['path'], url=f['url'])
+        for h in f['hunks']:
+            end = h['new_start'] + max(h['new_len'], 1) - 1
+            lid = f'line:{f["path"]}:{h["new_start"]}'
+            node(lid, 'line', f'{f["path"].split("/")[-1]}:{h["new_start"]}' + (f'-{end}' if end > h['new_start'] else ''), (h.get('context') or '').strip()[:160], file=f['path'], url=f'{f["url"]}#L{h["new_start"]}-L{end}')
+    # edges, top down
+    for pid, rs in A['faces'].items():
+        for r in rs: edge('who:' + pid, 'risk:' + r, 'faces')
+    for a in A['arcs']:
+        for r in a['risks']: edge('risk:' + r, 'arc:' + a['id'], 'told in')
+    for r in A['risks']:
+        for c in r['claims']: edge('risk:' + r['id'], 'claim:' + c, 'rests on')
+    for a in A['arcs']:
+        for c in D['claims']:
+            if c['topic'] in a['topics']: edge('arc:' + a['id'], 'claim:' + c['id'], 'rests on')
+        for c in a.get('claims', []): edge('arc:' + a['id'], 'claim:' + c, 'rests on')
+        for i, t in enumerate(D['timeline']):
+            if t.get('phase') in a['phases']: edge('arc:' + a['id'], f'event:{i}', 'dated by')
+    for c in D['claims']:
+        for s in c['sources']: edge('claim:' + c['id'], 'source:' + s, 'cites')
+    for i, t in enumerate(D['timeline']):
+        for s in t['sources']: edge(f'event:{i}', 'source:' + s, 'cites')
+    for c, fl in A['claim_to_flaw'].items():
+        for f in fl: edge('claim:' + c, f, 'about')
+    for c, fx in A['claim_to_fix'].items():
+        for f in fx: edge('claim:' + c, f, 'about')
+    for e in R['edges']:
+        a, b = e['from'], e['to']
+        if a.startswith('area:') and a not in nodes and a + '/' in nodes: a += '/'
+        if e['rel'] in ('fixes', 'addresses'): edge(b, a, 'closed by')
+        elif e['rel'] == 'contains': edge(a, b, 'contains')
+        else: edge(a, b, e['rel'])
+    for f in FJ['engine_files']:
+        fid = 'file:' + f['path']
+        ar = area_of(f['path'])
+        if ar: edge(ar, fid, 'contains')
+        names = {x[0] for x in f['functions']}
+        for fn in sorted(names): edge(fid, f'fn:{f["path"]}:{fn}', 'changes')
+        for h in f['hunks']:
+            lid = f'line:{f["path"]}:{h["new_start"]}'
+            m = re.findall(r'([A-Za-z_]\w*)\s*\(', h.get('context') or '')
+            if m and m[0] in names: edge(f'fn:{f["path"]}:{m[0]}', lid, 'changed at')
+            else: edge(fid, lid, 'changed at')
+    return list(nodes.values()), edges
+
+def fractal_reach(nodes, edges):
+    """Downward and upward reach along edges that go down the layer ladder (or stay in it)."""
+    lay = {n['id']: n['layer'] for n in nodes}
+    down, up = {}, {}
+    for e in edges:
+        a, b = e['from'], e['to']
+        if FR_RANK[lay[a]] > FR_RANK[lay[b]]: a, b = b, a
+        down.setdefault(a, []).append(b); up.setdefault(b, []).append(a)
+    for k in down: down[k].sort()
+    for k in up: up[k].sort()
+    return down, up
+
+FR_STEPS = {'stakeholder': {'risk'}, 'risk': {'arc'}, 'arc': {'claim'}, 'claim': {'flaw', 'fix'}, 'flaw': {'fix'},
+            'fix': {'fix', 'code'}, 'code': {'code', 'function', 'line'}, 'function': {'line'}}
+
+def fractal_thread(start, goal_layer, down, lay, prefer=None, steps=FR_STEPS):
+    """The shortest path down the ladder from start to any node in goal_layer, ties broken by id.
+    With steps, each move must go to the next rung (so a thread passes a risk, an arc, a claim, a flaw where there is one);
+    without, any downward edge will do."""
+    prev, q, i = {start: None}, [start], 0
+    while i < len(q):
+        x = q[i]; i += 1
+        if lay[x] == goal_layer and (prefer is None or x.startswith(prefer)):
+            path = []
+            while x: path.append(x); x = prev[x]
+            return path[::-1]
+        for y in down.get(x, []):
+            if y not in prev and (steps is None or lay[y] in steps.get(lay[x], ())): prev[y] = x; q.append(y)
+    return fractal_thread(start, goal_layer, down, lay, prefer, None) if steps is not None else None
+
+def build_fractal():
+    nodes, edges = fractal_graph()
+    by = {n['id']: n for n in nodes}
+    lay = {n['id']: n['layer'] for n in nodes}
+    down, up = fractal_reach(nodes, edges)
+    def reach(start, nbr):
+        seen, q = {start}, [start]
+        while q:
+            x = q.pop()
+            for y in nbr.get(x, []):
+                if y not in seen: seen.add(y); q.append(y)
+        return seen
+    lines = [n['id'] for n in nodes if n['layer'] == 'line']
+    up_ok = sum(1 for l in lines if any(lay[x] == 'stakeholder' for x in reach(l, up)))
+    named_fix = sum(1 for l in lines if any(lay[x] == 'fix' and x != 'fix-commit' for x in reach(l, up)))
+    who = [n['id'] for n in nodes if n['layer'] == 'stakeholder']
+    who_ok = sum(1 for w in who if any(lay[x] == 'line' for x in reach(w, down)))
+    counts = OrderedDict((l, sum(1 for n in nodes if n['layer'] == l)) for l, _, _ in FR_LAYERS)
+    cov = {'lines': len(lines), 'lines_to_stakeholder': up_ok, 'lines_to_named_fix': named_fix, 'stakeholders': len(who), 'stakeholders_to_line': who_ok}
+    G = {'about': 'The fractal graph: one graph from the people affected, through the risks, the story and the evidence, to the flaws, the fix and the changed lines of php-src. A node is just a node; meaning lives in the edges. Every node opens into its own neighbourhood in the navigator.',
+         'site': SITE, 'version': VERSION, 'commit': D['review']['commit'],
+         'layers': [{'id': l, 'name': nm, 'note': nt} for l, nm, nt in FR_LAYERS], 'nodes': nodes, 'edges': edges,
+         'counts': {'nodes': len(nodes), 'edges': len(edges), 'by_layer': counts}, 'coverage': cov}
+    write('data/fractal.json', json.dumps(G, indent=1, ensure_ascii=False) + '\n')
+    # threads: from a stakeholder all the way down to a changed line, the shortest path, shown as a ladder
+    picks = [('who:site-owner', 'line:main/rfc1867.c'), ('who:board', 'line:Zend/zend_alloc.c'), ('who:journalist', 'line:'), ('who:developer', 'line:ext/session/session.c'), ('who:everyone', 'line:')]
+    def step(i, depth):
+        n = by[i]
+        name = E(n['name'])
+        if n.get('url'): name = f'<a href="{E(n["url"])}" rel="noopener nofollow">{name}</a>'
+        elif n.get('href'): name = f'<a href="{"../" * depth}{E(n["href"])}">{name}</a>'
+        st = ' ' + pill(n['status']) if n.get('status') else ''
+        return f'<li><span class="ly">{E(dict((l, nm) for l, nm, _ in FR_LAYERS)[n["layer"]])}</span> {name}{st}</li>'
+    threads = ''
+    out_rel = {}
+    for e in edges: out_rel.setdefault(e['from'], set()).add(e['to'])
+    def coherent(start, pref):
+        """A thread that is one argument: the claim is one the risk rests on and the arc carries."""
+        best = None
+        for r in sorted(x for x in out_rel.get(start, ()) if lay[x] == 'risk'):
+            for a in sorted(x for x in out_rel.get(r, ()) if lay[x] == 'arc'):
+                for c in sorted(x for x in out_rel.get(r, ()) & out_rel.get(a, set()) if lay[x] == 'claim'):
+                    tail = fractal_thread(c, 'line', down, lay, pref)
+                    if tail and lay[tail[1]] in ('flaw', 'fix'):
+                        t = [start, r, a] + tail
+                        if best is None or (len(t), t) < (len(best), best): best = t
+        return (best, True) if best else (fractal_thread(start, 'line', down, lay, pref), False)
+    for start, pref in picks:
+        t, whole = coherent(start, pref) if start in by else (None, False)
+        if t:
+            threads += f'<article class="role"><h3>{E(by[start]["name"])}, down to a line</h3><ol class="steps">{"".join(step(x, 1) for x in t)}</ol><p class="small">{"" if whole else "No single claim joins this reader's risks to the code, so this is the shortest path down instead. "}<a href="ui/index.html#{E(start)}">Walk it from the top</a> &middot; <a href="ui/index.html#{E(t[-1])}">walk it up from the line</a></p></article>'
+    ladder = table(['Layer', 'Nodes', 'Where it comes from'], [[f'<b>{E(nm)}</b>', E(str(counts[l])), E(nt)] for l, nm, nt in FR_LAYERS])
+    rels = Counter(e['rel'] for e in edges)
+    reltab = table(['Edge', 'Count'], [[E(k), E(str(v))] for k, v in sorted(rels.items(), key=lambda x: (-x[1], x[0]))])
+    body = f'''
+<h1>From a line of code to a stakeholder</h1>
+<p class="lead">One graph for the whole story. At the bottom, the {cov["lines"]} changed hunks of the php2shell fix, each a line range in php-src; above them the functions and files they sit in, the parts of the fix, the two flaws; then the claims and events that talk about them and the sources those cite; then the story arcs those claims carry, the risks the arcs describe, and at the top the fifteen kinds of reader who face those risks. {counts["stakeholder"] + counts["risk"] + counts["arc"] + counts["claim"] + counts["source"] + counts["flaw"] + counts["fix"] + counts["code"] + counts["function"] + counts["line"]} nodes, {len(edges)} edges. Every node opens into its own neighbourhood: <a href="ui/index.html">walk it</a>, from the top or from a line.</p>
+{section("ladder", "The layers", ladder + '<p>The top three layers and the joins from a claim to a flaw or a part of the fix are written by the librarian in <a href="../data/arcs.json">data/arcs.json</a>; everything else is derived by the build from files the site already publishes. The assembled graph is <a href="../data/fractal.json">data/fractal.json</a>.</p>')}
+{section("coverage", "What is joined, and what is not", f'''<ul>
+<li><b>{cov["lines_to_stakeholder"]} of {cov["lines"]}</b> changed hunks reach a stakeholder by walking up the graph.</li>
+<li><b>{cov["lines_to_named_fix"]} of {cov["lines"]}</b> reach a <i>named</i> part of the fix (a soft limit, an unwind, globals reset and so on). The rest reach the fix only as "the commit touched this area": the review joined nine files to what the fix does, and the other files of the engine wait for that join.</li>
+<li><b>{cov["stakeholders_to_line"]} of {cov["stakeholders"]}</b> stakeholders reach a changed line by walking down.</li>
+<li>Not here yet: the 352 files outside the engine and bundled extensions the fix also touched (mostly tests), and the lines of the PHP 7.4 backport.</li>
+<li>Not here by design: the vulnerable code before the fix. The graph maps the lines the fix wrote, never a trigger path (the site's security requirements, <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP/blob/dev/AGENTS.md">AGENTS.md</a>).</li>
+</ul>''')}
+{section("threads", "Five threads, top to bottom", '<p>Each is the shortest path down the ladder from one reader to a changed line, computed by the build. Click any rung.</p><div class="roles">' + threads + '</div>')}
+{section("edges", "The edges", reltab + '<p>Edges are read top down: a stakeholder <i>faces</i> a risk, a risk is <i>told in</i> an arc and <i>rests on</i> claims, a claim <i>cites</i> sources and is <i>about</i> a flaw or a part of the fix, a flaw is <i>closed by</i> the fix, which is <i>realised in</i> files, which <i>change</i> functions, which are <i>changed at</i> lines. The navigator walks them both ways.</p>')}
+<p>The fix-only version of this graph is <a href="../review/index.html">the fix mapped to the code</a>; the citation graph alone is <a href="../graph/index.html">as a graph</a>. This answers the second memo's ask for the semantic fractal graph; what it still lacks is on <a href="../corrections/index.html">corrections</a>.</p>
+'''
+    page('fractal/index.html', 'From a line of code to a stakeholder: the fractal graph', f'One graph for php2shell: {cov["lines"]} changed lines of php-src, up through functions, files, the fix and the flaws, the claims and sources, the story arcs and the risks, to the fifteen kinds of reader who face them.', body, kind='analysis', topics='php2shell graph fractal code stakeholders')
+    body = '''
+<h1>Walk the whole graph</h1>
+<p class="lead">The fractal graph in the navigator: the node in focus and its neighbours, every node a link, from a stakeholder at the top to a changed line at the bottom. Start at a reader and walk down, or at a line and walk up. The data is <a href="../../data/fractal.json">data/fractal.json</a>; the ladder and the threads are on <a href="../index.html">from a line of code to a stakeholder</a>.</p>
+<div id="rv" class="review-ui" data-graph="data/fractal.json" data-start="who:site-owner"><noscript>The navigator needs JavaScript. The threads are on <a href="../index.html">from a line of code to a stakeholder</a>.</noscript></div>
+<script src="../../assets/review-nav.js" defer></script>
+'''
+    page('fractal/ui/index.html', 'Walk the whole graph: stakeholders to lines of code', 'A navigator over the php2shell fractal graph: stakeholders, risks, story arcs, claims, sources, the flaws, the fix, files, functions and changed lines, each node a link.', body, kind='evidence', topics='php2shell graph fractal navigator')
+
+
+# ----------------------------------------------------------------------------- every member: a folder, a policy and a round (librarian@php.newsroom)
+# Brief: admin/content/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round.md. Reads admin/content/agents/*/
+# (ROLE.md, policy.json, status.json, debriefs/) through admin/build/agents.py, which also checks the scopes.
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import agents as AGT
+
+def load_debriefs(agent):
+    d = os.path.join(AGT.AGENTS, agent, 'debriefs')
+    out = []
+    for fn in sorted(os.listdir(d)) if os.path.isdir(d) else []:
+        if not fn.endswith('.md'):
+            continue
+        text = open(os.path.join(d, fn), encoding='utf-8').read()
+        m = re.match(r'^---\n(.*?)\n---\n(.*)$', text, flags=re.S)
+        if not m:
+            sys.exit(f'debrief {agent}/{fn}: no front matter')
+        meta = dict(re.match(r'^(\w+):\s*(.*)$', l).groups() for l in m.group(1).splitlines() if l.strip())
+        meta['file'], meta['text'], meta['agent'] = fn, m.group(2), agent
+        out.append(meta)
+    return sorted(out, key=lambda x: (x.get('date', ''), x['file']), reverse=True)
+
+def debrief_html(db, depth):
+    """Debrief markdown with its screenshots: an image line must name img/<file> inside the member's own debriefs folder."""
+    out, buf = [], []
+    def flush():
+        if buf: out.append(render_md_text('\n'.join(buf))); buf.clear()
+    for line in db['text'].splitlines():
+        m = re.match(r'^!\[([^\]]*)\]\((img/[A-Za-z0-9_.-]+\.(?:png|jpg|jpeg|webp))\)\s*$', line.strip())
+        if m:
+            rel = f'admin/content/agents/{db["agent"]}/debriefs/{m.group(2)}'
+            flush()
+            if os.path.isfile(os.path.join(ROOT, rel)):
+                out.append(f'<figure class="shot"><img src="{U("../" * depth + rel)}" alt="{E(m.group(1))}" loading="lazy"><figcaption>{E(m.group(1))}</figcaption></figure>')
+            else:
+                out.append(f'<p class="small">Missing screenshot: <code>{E(m.group(2))}</code></p>')
+            continue
+        buf.append(line)
+    flush()
+    return '\n'.join(out)
+
+def build_members():
+    P = AGT.load_policies()
+    if not P:
+        return
+    ov, un, da = AGT.overlaps(P, pages=[]), AGT.unowned(P), AGT.dangling_appends(P)  # pages=[]: never read the last build's output list
+    groups = OrderedDict([('humans', 'The humans'), ('coordination', 'Coordination'), ('site', 'The site'), ('evidence', 'Evidence'), ('writing', 'Writing and analysis'), ('testing', 'Testing')])
+    rows, agg = [], []
+    for a, p in P.items():
+        st = AGT.load_status(a) or {}
+        dl = AGT.delta(a, P)
+        dbs = load_debriefs(a)
+        agg.append({'agent': a, 'address': p['address'], 'name': p['name'], 'kind': p['kind'], 'group': p['group'], 'title': p['title'],
+                    'policy_status': p['status'], 'member_status': p['member_status'],
+                    'writes': p['scope']['writes'], 'pages': p['scope']['pages'], 'vaults': p['scope']['vaults'],
+                    'delta': dl, 'status': st or None, 'debriefs': [{'file': x['file'], 'date': x.get('date'), 'title': x.get('title')} for x in dbs]})
+    write('data/agents.json', json.dumps({'about': 'Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.',
+                                          'version': VERSION, 'members': agg, 'overlaps': ov, 'unowned': un, 'dangling_appends': da}, indent=1, ensure_ascii=False) + '\n')
+    # one page per member
+    for x in agg:
+        a, p = x['agent'], P[x['agent']]
+        role = render_md_file(f'admin/content/agents/{a}/ROLE.md')
+        dl = x['delta']
+        dtab = ''
+        if dl:
+            G = {r['capability']: r for r in AGT.grant_rows()}
+            dtab = table(['Capability', 'In the mandate', 'Barrier today'], [[f'<code>{E(c)}</code>', 'wanted' if c not in dl['excess'] else ('<b>excess, unbounded</b>' if c in dl['unbounded'] else 'excess, behind a boundary'), E(G[c]['barrier_text'])] for c in G]) + \
+                   f'<p>Grant {dl["grant"]} (measured once for every newsroom session, <code>admin/security/abp/GRANT.md</code>) &middot; wanted {dl["wanted"]} &middot; shortfall {len(dl["shortfall"])} &middot; excess {len(dl["excess"])} &middot; <b>unbounded excess {len(dl["unbounded"])}</b>. Computed by <code>admin/build/agents.py</code>; never written by hand. The boundaries that would bound the rest are the editor\'s to set (<code>admin/security/abp/DELTA.md</code>).</p>'
+        st = x['status'] or {}
+        stt = ''
+        if st:
+            pol = st.get('policy', {})
+            stt = table(['Field', 'Value'], [['Round', E(json.dumps(st.get('round'))) if st.get('round') else E(st.get('state', ''))],
+                                              ['Done', '<br>'.join(E(d.get('what', '')) for d in st.get('done', [])) or 'nothing recorded'],
+                                              ['Next', '<br>'.join(E(n.get('what', '')) for n in st.get('next', [])) or 'nothing proposed'],
+                                              ['Asks', '<br>'.join(E(n.get('what', '')) + (f' (from {E(n.get("from", ""))})' if n.get('from') else '') for n in st.get('asks', [])) or 'none'],
+                                              ['Tokens', E('unknown' if st.get('tokens', {}).get('value') is None else str(st['tokens']['value'])) + ' &middot; ' + E(st.get('tokens', {}).get('how', ''))],
+                                              ['Policy', E(', '.join(f'{k} {v}' for k, v in pol.items() if k != 'version'))]])
+        dbh = ''.join(f'<article class="role" id="{E(db["file"][:-3])}"><h3>{E(db.get("title", db["file"]))}</h3><p class="small">{E(db.get("date", ""))} &middot; round {E(db.get("round", ""))} &middot; branch <code>{E(db.get("branch", ""))}</code> &middot; commits <code>{E(db.get("commits", ""))}</code> &middot; tokens {E(db.get("tokens", ""))} &middot; outside scope {E(db.get("outside_scope", ""))} &middot; overrides {E(db.get("overrides", ""))}</p>{debrief_html(db, 3)}</article>' for db in load_debriefs(a))
+        body = f"""
+<p class="kicker">Member &middot; {E(groups.get(p["group"], p["group"]))} &middot; policy {E(p["status"])} &middot; <code>{E(p["address"])}</code></p>
+<h1>{E(p["name"])}: {E(p["title"])}</h1>
+<p class="lead">The role definition, the agent behaviour policy and every round, from <code>admin/content/agents/{E(a)}/</code>. Who this member is on the team, and the tasks it holds, are on <a href="../../../team/index.html">the team</a>; every member's scope side by side is <a href="../roles/index.html">who owns what</a>.</p>
+{section("role", "The role", role)}
+{section("delta", "The delta, computed", dtab) if dtab else ""}
+{section("status", "Where it is now", stt or '<p class="small">No status file.</p>')}
+{section("debriefs", "Its rounds", dbh or '<p class="small">No debrief yet.</p>')}
+<p class="small">Files: <a href="{U(REPO_URL + "/tree/dev/admin/content/agents/" + a)}">admin/content/agents/{E(a)}/</a> &middot; the same data for every member in <a href="../../../data/agents.json">data/agents.json</a>.</p>
+"""
+        page(f'admin/agents/{a}/index.html', f'{p["name"]}: role, policy and rounds', f'{p["title"]}: the role definition, what it writes and owns, its agent behaviour policy and computed delta, and every round it has recorded.', body, kind='site')
+    # who owns what
+    trs = []
+    for g, gname in groups.items():
+        for x in [y for y in agg if y['group'] == g]:
+            dl = x['delta']
+            trs.append([f'<a href="../{E(x["agent"])}/index.html"><b>{E(x["name"])}</b></a><div class="note">{E(x["title"])}</div>', E(gname), E(x['member_status']),
+                        '<br>'.join(f'<code>{E(w)}</code>' for w in x['writes']) or '<span class="small">none</span>',
+                        '<br>'.join(f'<code>{E(w)}</code>' for w in x['pages']) or '<span class="small">none</span>',
+                        (f'{dl["wanted"]} wanted &middot; {len(dl["unbounded"])} unbounded' if dl else '<span class="small">no grant here</span>'), E(P[x['agent']]['status'])])
+    ovt = table(['Kind', 'Members', 'Patterns', 'Example'], [[E(o['kind']), E(o['a'] + ' and ' + o['b']), f'<code>{E(o["pattern_a"])}</code> / <code>{E(o["pattern_b"])}</code>', E(', '.join(o['files'][:2]))] for o in ov]) if ov else '<p><b>None.</b> No file and no page is claimed by two members.</p>'
+    body = f"""
+<h1>Every member: who owns what</h1>
+<p class="lead">{len(P)} members, {sum(1 for x in agg if x["kind"] == "agent")} of them agents. Each owns a set of files nobody else writes, a set of pages, and the vaults it may hold, in <code>admin/content/agents/&lt;id&gt;/policy.json</code>; shared files have one owner and everyone else only appends. {sum(1 for p in P.values() if p["status"] == "agreed")} of {len(P)} policies are agreed by the editor; the rest are drafts. A request outside a member's scope is refused with the owner named, and counted.</p>
+{section("overlaps", "Overlaps", ovt + f'<p>Checked against every tracked source file here, and against every page the build writes by the gate (check 4h) and <code>admin/build/agents.py overlaps</code>. Source files nobody owns: <b>{len(un)}</b>{(": " + ", ".join("<code>" + E(u) + "</code>" for u in un[:20])) if un else ""}. Appends to a file nobody owns: <b>{len(da)}</b>.</p>')}
+{section("members", "The members", table(['Member', 'Group', 'Status', 'Writes (exclusive)', 'Pages', 'Mandate', 'Policy'], trs, 'claims'))}
+{section("how", "How it works", render_md_file("admin/content/agents/README.md"))}
+"""
+    page('admin/agents/roles/index.html', 'Every member: who owns what', f'{len(P)} members of the newsroom, each with the files it writes, the pages it owns, its vaults and its agent behaviour policy; overlaps and unowned files checked on every build.', body, kind='site')
+    # every round
+    dbs = sorted([db for a in P for db in load_debriefs(a)], key=lambda d: (d.get('date', ''), d['agent'], d['file']), reverse=True)
+    srows = []
+    for x in agg:
+        if P[x['agent']]['kind'] != 'agent' or x['agent'] == 'mail':
+            continue
+        st = x['status'] or {}
+        pol = st.get('policy', {})
+        last = x['debriefs'][0] if x['debriefs'] else None
+        srows.append([f'<a href="../{E(x["agent"])}/index.html">{E(x["name"])}</a>', E(st.get('as_of', '')), f'<a href="../{E(x["agent"])}/index.html#{E(last["file"][:-3])}">{E(last.get("title") or last["file"])}</a>' if last else '<span class="small">none yet</span>',
+                      E(str(len(st.get('next', [])))), E(str(len(st.get('asks', [])))), E('unknown' if st.get('tokens', {}).get('value') is None else str(st['tokens']['value'])), E('not run' if pol.get('writes_outside_scope') is None else str(pol['writes_outside_scope'])), E(str(pol.get('overrides', 0))), E(str(pol.get('injection_seen', 0)))])
+    dl = ''.join(f'<li>{E(d.get("date", ""))} &middot; <a href="../{E(d["agent"])}/index.html#{E(d["file"][:-3])}"><b>{E(P[d["agent"]]["name"])}</b>: {E(d.get("title", d["file"]))}</a></li>' for d in dbs)
+    body = f"""
+<h1>Every round: what each member did</h1>
+<p class="lead">At the end of every round of work each agent writes a debrief with screenshots and updates its <code>status.json</code>: what it did, its tasks, what it proposes next, the tokens it used, its policy misses and what it needs. This page is all of them at once, for the conductor and the editor; <a href="../../../data/agents.json">data/agents.json</a> is the same as one file. The rules are in <code>admin/content/agents/README.md</code>.</p>
+{section("status", "Every agent, now", table(['Agent', 'As of', 'Last debrief', 'Next', 'Asks', 'Tokens', 'Outside scope', 'Overrides', 'Injection seen'], srows))}
+{section("debriefs", "Every debrief, newest first", f'<ul>{dl}</ul>' if dl else '<p class="small">No debriefs yet.</p>')}
+"""
+    page('admin/agents/rounds/index.html', 'Every round: what each member did', 'Every agent\'s latest status and every debrief, newest first: what was done, with screenshots, what is next, tokens, policy misses and asks.', body, kind='site')
 
 
 if __name__ == '__main__':

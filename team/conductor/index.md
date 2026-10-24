@@ -47,6 +47,9 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 | 163 | Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the schedule vault, so a task can be queued without a Claude session | open |  |
 | 178 | Cards to write: pulse (already scheduled), ontologist and librarian (asked to propose)Messages sent 24 October; /team/schedule/ lists who has no card yet. | open |  |
 | 179 | Curator and researcher to confirm the cards the conductor drafted from their scheduled tasks, and keep them | open |  |
+| 204 | Ask every member to read and confirm its folder in admin/content/agents/, and to close its next round with a debrief and status.jsonRenumbered from 095 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
+| 205 | One registry of roles: derive data/team.json's owns and rules, data/admin.json's roles and data/roles.json's agents from admin/content/agents/*/policy.json, or retire themRenumbered from 096 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
+| 214 | The roster against the sessions: data/team.json has no member for abp@newsroom.sgit, pulse@newsroom, the storyboards desk, the corrections liaison or the news desk chief, and lists the cartographer as unfilled though cartographer@ (the ontologist) has a branch; the curator sessions are the newsroom lead's, as /team/status/ already saysRenumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 
 ## Waiting on someone else
 
@@ -83,4 +86,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html

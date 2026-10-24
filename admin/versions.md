@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.11.7. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.12.0. The data is [data/versions.json](../data/versions.json).
+
+### v0.12.0 · 2026-10-24
+
+the librarian's work: every member a folder, a role and a draft policy (27 members, 0 overlaps, 0 unowned files and pages; /admin/agents/roles/, /admin/agents/rounds/, a page per member, data/agents.json; gate check 4h and the Stop hook), the fractal graph from a line of php-src to a stakeholder (/fractal/, now the ontologist's), the end-of-round rule and the vault-key handover in CLAUDE.md, two reader answers corrected, and the librarian's daily pass at 07:13 London; released at the editor's go before security's review of validate.py, CLAUDE.md and .claude/settings.json (board 206)
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.11.7 · 2026-10-24
 
@@ -674,4 +682,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

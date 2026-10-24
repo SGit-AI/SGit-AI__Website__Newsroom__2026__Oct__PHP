@@ -46,6 +46,8 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 148 | Go for scheduled updates: an hourly run (only when something moved) and a daily one, with the run's cadence in board 071 | open |  |
 | 162 | The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:00 London), on Sonnet; then they move from 'setting up' to 'active' in the schedule vault | open |  |
 | 177 | The scheduled researcher's two wake prompts still name the schedule vault: change them to the card's steps (take in dev, inbox, run record, release)The prompts are the scheduled tasks'; only the editor's session changes them. | open |  |
+| 203 | Agree each member's policy.json (25 drafts): read the scope, the mandate and the pushback table; set status agreed and agreed_by, or correctRenumbered from 094 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
+| 215 | Say what pulse@newsroom does: no file, brief or role row in this repository records its scope; its folder (admin/content/agents/pulse/) waits for itRenumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 
 ## Waiting on someone else
 
@@ -65,6 +67,9 @@ Decisions and work only a person can supply. Each is a card in this member's que
 |---|---|---|---|
 | 098 | Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp groupThe editor confirmed the LinkedIn link on 22 October 2026. | done |  |
 | 176 | The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session with the two lanes' vault keys handed over sealed (data/schedule/conductor.json, proposed): a go, and the scheduled tasks to createThe editor's go, 24 October 2026: a Sonnet session, conductor@php.newsroom (scheduled), and one scheduled task, hourly at :15 from 07:15 to 21:15 London. A wake commits only when something changed. | done |  |
+| 209 | Confirm where the ontologist works: nothing of it is in this repository; its folder proposes data/ontology.json and /ontology/Renumbered from 100 on 23 October when the librarian's branch took in dev. Answered by the record: the ontologist is cartographer@php.newsroom, which joined "as the newsroom's ontologist" on its branch cartographer/ontology-and-sg-graph (data/ontology.json, entities, attribution, ). The two drafted roles are merged into one. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | done |  |
+| 210 | Fill the cartographer: the fractal graph, the review graph and the citation graph wait for an ownerRenumbered from 101 on 23 October when the librarian's branch took in dev. Filled by cartographer@php.newsroom on its branch cartographer/ontology-and-sg-graph, not yet in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | done |  |
+| 217 | A daily librarian pass on a schedule: the editor's go on the time (proposed 07:13 London), then the schedule in the schedule vault (weic8imn) and a scheduled task, per AGENTS.md section 7Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Done 24 October: the editor said 07:13; card data/schedule/librarian.json active; scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 created in the librarian's session. Renumbered a third time on 24 October (dev at v0.11.5). | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dinis.human/` in the mail vault (`fmb2tpl2`).
@@ -75,4 +80,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

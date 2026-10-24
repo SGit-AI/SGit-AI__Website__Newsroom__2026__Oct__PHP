@@ -1505,230 +1505,363 @@
   },
   {
    "id": "199",
+   "title": "The fractal graph: one graph from the fifteen stakeholders through risks, story arcs, claims and sources to the flaws, the fix, files, functions and the 359 changed hunks of php-src, at /fractal/ and /fractal/ui/",
+   "status": "done",
+   "owner": "librarian",
+   "note": "Renumbered from 090 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "200",
+   "title": "Join the other engine files to a named part of the fix: 144 of 359 changed hunks reach the fix only as 'the commit touched this area'",
+   "status": "open",
+   "owner": "ontologist",
+   "note": "Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 091 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "201",
+   "title": "Add the PHP 7.4 backport's hunks to the fractal graph as their own layer (the lines the backport wrote; never the vulnerable code before it)",
+   "status": "open",
+   "owner": "ontologist",
+   "note": "Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 092 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "202",
+   "title": "Every member a folder (admin/content/agents/<id>/: ROLE.md, policy.json, status.json, debriefs/), 25 drafted; the scope map and overlap check (admin/build/agents.py, gate 4h); /admin/agents/roles/, /admin/agents/rounds/, a page per member; data/agents.json; the end-of-round rule in CLAUDE.md and the Stop hook",
+   "status": "done",
+   "owner": "librarian",
+   "note": "Renumbered from 093 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "203",
+   "title": "Agree each member's policy.json (25 drafts): read the scope, the mandate and the pushback table; set status agreed and agreed_by, or correct",
+   "status": "open",
+   "owner": "editor",
+   "note": "Renumbered from 094 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "204",
+   "title": "Ask every member to read and confirm its folder in admin/content/agents/, and to close its next round with a debrief and status.json",
+   "status": "open",
+   "owner": "conductor",
+   "note": "Renumbered from 095 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "205",
+   "title": "One registry of roles: derive data/team.json's owns and rules, data/admin.json's roles and data/roles.json's agents from admin/content/agents/*/policy.json, or retire them",
+   "status": "open",
+   "owner": "conductor",
+   "note": "Renumbered from 096 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "206",
+   "title": "Security review of the librarian's branch: gate check 4h in validate.py, the CLAUDE.md section, .claude/settings.json's Stop hook and admin/build/agents.py stop-hook",
+   "status": "open",
+   "owner": "security@php.newsroom",
+   "note": "Renumbered from 097 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "207",
+   "title": "Accept or rework the librarian's edit inside build_llms() (one section listing the member pages), and carry the branch into dev",
+   "status": "open",
+   "owner": "dev@php.newsroom",
+   "note": "Renumbered from 098 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "208",
+   "title": "Move the briefings' selections out of build.py into data/briefings.json, so the briefing writer owns them apart from the build",
+   "status": "open",
+   "owner": "briefing-writer",
+   "note": "Renumbered from 099 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "209",
+   "title": "Confirm where the ontologist works: nothing of it is in this repository; its folder proposes data/ontology.json and /ontology/",
+   "status": "done",
+   "owner": "editor",
+   "note": "Renumbered from 100 on 23 October when the librarian's branch took in dev. Answered by the record: the ontologist is cartographer@php.newsroom, which joined \"as the newsroom's ontologist\" on its branch cartographer/ontology-and-sg-graph (data/ontology.json, entities, attribution, <sg-graph>). The two drafted roles are merged into one. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "210",
+   "title": "Fill the cartographer: the fractal graph, the review graph and the citation graph wait for an owner",
+   "status": "done",
+   "owner": "editor",
+   "note": "Renumbered from 101 on 23 October when the librarian's branch took in dev. Filled by cartographer@php.newsroom on its branch cartographer/ontology-and-sg-graph, not yet in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "211",
+   "title": "Point admin/security/REQUIREMENTS.md section 3 at the handover procedure (https://pki.sgit.ai/handover.md, now in CLAUDE.md) instead of the older brief, and review the CLAUDE.md section 'Handing a vault key to the editor'",
+   "status": "open",
+   "owner": "security@php.newsroom",
+   "note": "Renumbered from 102 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "212",
+   "title": "Claim no-confirmed-compromise says Hadrian and Patchstack 'report successful exploitation'; Security.NL and BleepingComputer's captures describe the same vendors' reports as attempts, not compromises. Grade the vendor half of the claim (found in the librarian's pass of 24 October)",
+   "status": "open",
+   "owner": "factcheck",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "213",
+   "title": "The incomplete-fix wording: claim fix-incomplete's note ('nothing from PHP on the list at capture') and the playbook's step 6 ('has not been answered on-list') predate fact-check run 2 (v0.5.8), which found PHP's public answer; update both from the desk's run 2 record (found in the librarian's pass of 24 October)",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "214",
+   "title": "The roster against the sessions: data/team.json has no member for abp@newsroom.sgit, pulse@newsroom, the storyboards desk, the corrections liaison or the news desk chief, and lists the cartographer as unfilled though cartographer@ (the ontologist) has a branch; the curator sessions are the newsroom lead's, as /team/status/ already says",
+   "status": "open",
+   "owner": "conductor",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "215",
+   "title": "Say what pulse@newsroom does: no file, brief or role row in this repository records its scope; its folder (admin/content/agents/pulse/) waits for it",
+   "status": "open",
+   "owner": "editor",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "216",
+   "title": "The librarian's drafted policies are ready for abp@ (board 157): 27 members in admin/content/agents/*/policy.json, each now kept_by abp@newsroom.sgit; abp@ is blocked by its own guard hook (/team/status/)",
+   "status": "open",
+   "owner": "abp",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "217",
+   "title": "A daily librarian pass on a schedule: the editor's go on the time (proposed 07:13 London), then the schedule in the schedule vault (weic8imn) and a scheduled task, per AGENTS.md section 7",
+   "status": "done",
+   "owner": "editor",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Done 24 October: the editor said 07:13; card data/schedule/librarian.json active; scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 created in the librarian's session. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "218",
    "title": "Add the news desk chief (desk@php.newsroom) to the team: data/team.json, its member page and board_owners, from the brief 'a news desk chief joins the team'",
    "status": "open",
    "owner": "conductor",
    "note": "From the brief: a news desk chief joins the team (22 October)."
   },
   {
-   "id": "200",
+   "id": "219",
    "title": "Discovery in other languages straight from the source: the national CERTs and public broadcasters of DE, FR, ES, IT, PL, PT, BR and JP, not through Google News (board 077)",
    "status": "open",
    "owner": "researcher@php.newsroom",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "201",
+   "id": "220",
    "title": "The posture map, extended: add every other EU and EEA national CERT to data/agencies.json (Finland, Germany and Belgium first), coded as the 16 are; and, per offline row, whether the operator followed its CERT's advice or went further",
    "status": "open",
    "owner": "collector-gov",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "202",
+   "id": "221",
    "title": "The denominator: W3Techs PHP share and PHP version shares by country domain (extends 033 and 043), and any per-country host count from Censys, Shodan or VulnCheck",
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "203",
+   "id": "222",
    "title": "Reshape the offline ledger: one row per organisation, a unit (site, platform, whole government), a domain count where known, the source's language and who said it; then a count with its basis on the front page",
    "status": "open",
    "owner": "claude-story-site",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "204",
+   "id": "223",
    "title": "Grade the reshaped offline ledger as rows land, the Netherlands row first, and the basis of the count",
    "status": "open",
    "owner": "factcheck",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "205",
-   "title": "The piece on where the web went dark and why, once 201 and 202 are in, not before",
+   "id": "224",
+   "title": "The piece on where the web went dark and why, once 220 and 221 are in, not before",
    "status": "open",
    "owner": "journalist",
    "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "206",
+   "id": "225",
    "title": "Front page corrections: the offline count's unit ('10 reports', not '10 organisations'), the DigiD line's citation, the duplicate 'attackers are trying' fact, the out-of-date 'fix complete' unknown, the fact-check desk's figure beside '21 confirmed'",
    "status": "open",
    "owner": "claude-story-site",
-   "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go). Done on 24 October by the desk except the fact-check desk's figure beside '21 confirmed' (board 213)."
+   "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go). Done on 24 October by the desk except the fact-check desk's figure beside '21 confirmed' (board 232)."
   },
   {
-   "id": "207",
+   "id": "226",
    "title": "Front page lead: 'the cost so far is the cost of precaution' with its time, then three counts with unit, basis and time (went dark, fixed, broken into), linking /compromise/, /patching/inventory/ and /stack/",
    "status": "open",
    "owner": "claude-story-site",
    "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "208",
+   "id": "227",
    "title": "Freshness: resume the source watch and the re-export (board 039), or have the front page say plainly that it is a day old",
    "status": "done",
    "owner": "editor",
    "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go). Overtaken on 23 October: the curator and the source watch run on a schedule, the site was re-exported to 295 sources, and the front page shows three clocks (v0.10.6)."
   },
   {
-   "id": "209",
+   "id": "228",
    "title": "Where php2shell stands, day two: the successor to the day-one piece, against the three counts, once board 039 lands",
    "status": "open",
    "owner": "journalist",
    "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go)."
   },
   {
-   "id": "210",
+   "id": "229",
    "title": "The headline is the day's news, from the journalist's latest state of affairs; the explainer moves to the second line (front page and mockup A)",
    "status": "open",
    "owner": "claude-story-site",
    "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
   },
   {
-   "id": "211",
+   "id": "230",
    "title": "The lead's offline sentence matches the agencies count: all say install the fix, two US agencies say take sites offline if you cannot",
    "status": "open",
    "owner": "claude-story-site",
    "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
   },
   {
-   "id": "212",
+   "id": "231",
    "title": "design.py: every number from data (the 6 countries, the 9 new, the 9 and 3), and one 'as of' for each statement across the front page, personas and mockups",
    "status": "open",
    "owner": "dev",
    "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
   },
   {
-   "id": "213",
+   "id": "232",
    "title": "One status vocabulary on every page with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside it",
    "status": "open",
    "owner": "factcheck",
    "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
   },
   {
-   "id": "214",
+   "id": "233",
    "title": "'What changed' in the reader's path lists story changes only: no version tags, commit hashes or page furniture",
    "status": "open",
    "owner": "dev",
    "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
   },
   {
-   "id": "215",
+   "id": "234",
    "title": "Board 138 with the desk's review: A as the default front page and C as the model page; Focus capped at a few dozen pages for every reader; the dial's names in plain words; no view links to a page it hides",
    "status": "open",
    "owner": "editor",
    "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
   },
   {
-   "id": "216",
+   "id": "235",
    "title": "Go or no-go on the desk's two runs (09:15 and 16:15 London) and the repeat_until date",
    "status": "done",
    "owner": "editor",
    "note": "From the brief: the news desk chief on a schedule (24 October; for the editor's go). The editor's go, 24 October: the desk's card is data/schedule/desk.json."
   },
   {
-   "id": "217",
+   "id": "236",
    "title": "With the editor's go: the desk's schedule and its two repeating tasks (desk-morning-line, desk-afternoon-check) in the schedule vault",
    "status": "done",
    "owner": "conductor",
    "note": "From the brief: the news desk chief on a schedule (24 October; for the editor's go). Superseded: schedules moved into the repository (data/schedule/); the desk wrote its own card."
   },
   {
-   "id": "218",
+   "id": "237",
    "title": "Resume the fact-check desk's schedule: the front-page errors it found (K-011 first) wait on it",
    "status": "done",
    "owner": "editor",
    "note": "From the brief: the news desk chief on a schedule (24 October; for the editor's go). The editor's go, 24 October ('continue with the fact checker'): its scheduled task re-enabled by the desk, on board 103's daytime hours."
   },
   {
-   "id": "219",
+   "id": "238",
    "title": "/team/desk/: the desk's notes, newest first, from the schedule vault's run records",
    "status": "open",
    "owner": "dev",
    "note": "From the brief: the news desk chief on a schedule (24 October; for the editor's go)."
   },
   {
-   "id": "220",
+   "id": "239",
    "title": "Clean hands before any correction request: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framing, about 32 pages), K-011 on the front page, the status words on nl-offline and kev-precedent",
    "status": "done",
    "owner": "claude-story-site",
-   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Done by the desk on the editor's instruction, 24 October: the 70% wordings, K-004 in the claim and the question, K-011 and the offline lines on the front page, nl-offline and kev-precedent to reported, and wordpress-drupal as researchers' tests. The /signals/ chart still sets 1.57 million against 2.6 million on one scale (board 231)."
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Done by the desk on the editor's instruction, 24 October: the 70% wordings, K-004 in the claim and the question, K-011 and the offline lines on the front page, nl-offline and kev-precedent to reported, and wordpress-drupal as researchers' tests. The /signals/ chart still sets 1.57 million against 2.6 million on one scale (board 250)."
   },
   {
-   "id": "221",
+   "id": "240",
    "title": "Bring claude/corrections-liaison-desk up to dev, re-check R-001 to R-003 against the 295 sources, draft the desk's requests 2 to 12 with every quote checked against its capture, and release /outreach/",
    "status": "done",
    "owner": "liaison@php.newsroom",
    "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Done by the desk, 24 October: the branch merged, eleven requests drafted with every quote checked in its capture, /outreach/ released with the emails."
   },
   {
-   "id": "222",
+   "id": "241",
    "title": "Capture the CVSS '10.0' relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's '90%' as it stands and the UK minister's figures, before any request rests on them",
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go)."
   },
   {
-   "id": "223",
+   "id": "242",
    "title": "The sending decision for correction requests: the editor sends each on the liaison's draft (the desk's recommendation), or a standing rule with a change to the security requirements",
    "status": "done",
    "owner": "editor",
    "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). The editor's decision, 24 October: the editor sends every request, under the editor's own name or riskmandate.ai, through the editor's own workflow."
   },
   {
-   "id": "224",
-   "title": "Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs board 218)",
+   "id": "243",
+   "title": "Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs board 237)",
    "status": "open",
    "owner": "factcheck",
    "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go)."
   },
   {
-   "id": "225",
+   "id": "244",
    "title": "Allow the mail agent to write to a publisher's published corrections address, for requests the editor approved one by one: a change to admin/security/REQUIREMENTS.md section 6 and the mandate, on a branch, for security's review and the editor's go",
    "status": "done",
    "owner": "editor",
    "note": "From the brief: a corrections liaison joins the team (22 October). Not needed: the editor sends each request (24 October); no agent writes to a publisher."
   },
   {
-   "id": "226",
+   "id": "245",
    "title": "Confirm which agent and address send the liaison's requests (the brief names the agent at riskmandate.ai; the security requirements name agent@diniscruz.ai)",
    "status": "done",
    "owner": "editor",
    "note": "From the brief: a corrections liaison joins the team (22 October). The editor, 24 October: the editor sends, under the editor's own name or riskmandate.ai."
   },
   {
-   "id": "227",
+   "id": "246",
    "title": "Capture each publisher's published corrections route before a request goes: Wiz, AWS, WIRED, ISMG, The Hacker News, the BBC, CNN, Fortune, Clarín, Le Temps, ITmedia",
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the brief: a corrections liaison joins the team (22 October)."
   },
   {
-   "id": "228",
+   "id": "247",
    "title": "Capture the FT's coverage of php2shell; nothing can be asked of the FT until it is captured",
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the brief: a corrections liaison joins the team (22 October)."
   },
   {
-   "id": "229",
+   "id": "248",
    "title": "Check R-003 (CNN): the headline and body sentences character for character in the 11:26 UTC capture",
    "status": "done",
    "owner": "liaison",
    "note": "From the brief: a corrections liaison joins the team (22 October). Done by the desk, 24 October: both CNN sentences found character for character in the 11:26 UTC capture."
   },
   {
-   "id": "230",
+   "id": "249",
    "title": "Capture the PHP security team's reply on oss-security (2026/10/22/15) into the evidence vault, so the front page can settle whether the fix is complete (K-011)",
    "status": "open",
    "owner": "collector-primary",
    "note": "From the editor's session, 24 October (desk@php.newsroom)."
   },
   {
-   "id": "231",
+   "id": "250",
    "title": "/signals/: the ladder chart draws 1.57 million against 2.6 million on one scale; they are counts of different populations (K-004). Redraw against Censys's 1.58 million versioned hosts, or as two charts",
    "status": "open",
    "owner": "claude-story-site",

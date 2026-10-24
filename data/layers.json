@@ -245,6 +245,20 @@
    "used_on": "graph/index.html"
   },
   {
+   "path": "data/arcs.json",
+   "layer": "derived",
+   "by": "the librarian (librarian@php.newsroom)",
+   "from": "the claims, timeline phases, personas and review nodes: risks and story arcs, and the joins from stakeholders to risks and from claims to the flaws and the parts of the fix; every row names ids that exist",
+   "used_on": "fractal/index.html"
+  },
+  {
+   "path": "data/fractal.json",
+   "layer": "derived",
+   "by": "admin/build/build.py",
+   "from": "data/arcs.json, claims, timeline, personas, review and review/code/files.json, assembled into one graph from stakeholders to changed lines",
+   "used_on": "fractal/ui/index.html"
+  },
+  {
    "path": "admin/content/articles/",
    "layer": "authored",
    "by": "the journalist, historian and other agent roles, one file per article",
@@ -299,6 +313,13 @@
    "by": "conductor@php.newsroom",
    "from": "the roster of the team, human and agent: role, what each owns, rules, home pages, what each has done; the run and the three coordination vaults",
    "used_on": "team/index.html"
+  },
+  {
+   "path": "data/agents.json",
+   "layer": "site",
+   "by": "admin/build/build.py (librarian@php.newsroom)",
+   "from": "admin/content/agents/*/: every member's policy.json, status.json and debriefs, with the computed delta and the scope checks",
+   "used_on": "admin/agents/rounds/index.html"
   },
   {
    "path": "data/schedules.json",

@@ -206,6 +206,26 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
+### Every member: a folder, a policy and a round (librarian)
+
+- `admin/content/agents//` for 27 members (2 humans, 25 agents), mapped on 24 October against dev at v0.10.18 and the conductor's `/team/status/`: `ROLE.md` (the member's), `policy.json` (kept by abp@newsroom.sgit, board 157; all 27 are the librarian's **drafts**, none agreed), and for agents in this deployment `status.json` and `debriefs/`. Four agents are on branches not yet in dev (cartographer, desk, liaison, storyboards); pulse@'s scope is not recorded anywhere.
+
+- `admin/build/agents.py`: overlaps (none), unowned source files and pages (none of 513 tracked source files and 663 pages on 24 October, before this round's new files are committed), shared files with no owner (none), the per-round scope check, the delta computed from the measured grant, and the Stop hook. The gate (check 4h) fails on an overlap or a malformed policy and warns on an unowned file or page.
+
+- `/admin/agents/roles/`, `/admin/agents/rounds/`, a page per member at `/admin/agents//`, and `data/agents.json`.
+
+- The end-of-round rule and the vault-key handover in `CLAUDE.md`, and `.claude/settings.json` with a Stop hook that reminds a session once if its branch has commits and no debrief.
+
+- Not built: tokens per round (a session cannot read its own use); a boundary above the agents (only GitHub rulesets would be one, the editor's to set); the older role registries are not yet derived from the folders (board 205, 214).
+
+### The fractal graph (librarian) (handed to the ontologist)
+
+- `data/arcs.json` (authored by the librarian, ids checked by the gate): nine risks, seven story arcs, which stakeholder faces which risk, and which claim is about which flaw or part of the fix.
+
+- `data/fractal.json`, assembled by `build.py` from arcs, claims, timeline, personas, review and `review/code/files.json`: ten layers from stakeholders to changed lines, every line linked to its range in php-src. `/fractal/` shows the ladder, the coverage and five computed threads; `/fractal/ui/` walks it.
+
+- Coverage, computed every build: every changed hunk reaches a stakeholder, 215 of 359 through a named part of the fix; not yet joined: the files outside the engine and the 7.4 backport; by design never the vulnerable code before the fix.
+
 ### Fractal semantic graphs: the ontology, the graph and the component (ontologist@php.newsroom)
 
 - `data/ontology.json` v0.2.0 (12 kinds, 15 verbs with inverses, two taxonomies, four formulas, banned verbs), `data/entities.json` (243 parties, every one of the 249 publisher spellings an alias), `data/attribution.json` (who states and relays each claim, number and exploitation row; which 9 sources carry another party's wire copy), `data/crosswalk.json` (where the story, code-review and risk graphs name the same thing: the two CVEs, and 189 parties as stakeholders, 12 as the same party and the rest as members of a class). Briefs: `admin/content/briefs/2026-10-24__brief__the-ontologist.md` (and the first, `2026-10-22__brief__the-cartographer-joins.md`); runbook: `admin/ontologist/README.md`. The role was the cartographer until 24 October; the cartographer is archived, paused.
@@ -376,7 +396,7 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a Stripe link; tests beyond the gate.
 
-- A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.
+- A second fact-check desk on a different model; a review folder; a second model reading the vault; a Stripe link; tests beyond the gate.
 
 - `/claims/review/`: every claim in the evidence vault's per-agent files that is not in the site's claim table (86 at `1845598d9a38`, 81 from the curator), each with the journalist's verdict from `data/claim-review.json` (used, agrees, held back, with the reason) or "not yet reviewed". A new export lists new claims there without anyone editing a page.
 
@@ -400,4 +420,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

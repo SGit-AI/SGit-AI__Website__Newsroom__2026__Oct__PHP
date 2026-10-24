@@ -39,6 +39,8 @@ None.
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 013 | Questions readers ask: /questions/, one page per question, each answer pointing at the pages and sources that carry it; first question from a reader's group chat | done | 0.2.6 |
+| 199 | The fractal graph: one graph from the fifteen stakeholders through risks, story arcs, claims and sources to the flaws, the fix, files, functions and the 359 changed hunks of php-src, at /fractal/ and /fractal/ui/Renumbered from 090 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | done |  |
+| 202 | Every member a folder (admin/content/agents//: ROLE.md, policy.json, status.json, debriefs/), 25 drafted; the scope map and overlap check (admin/build/agents.py, gate 4h); /admin/agents/roles/, /admin/agents/rounds/, a page per member; data/agents.json; the end-of-round rule in CLAUDE.md and the Stop hookRenumbered from 093 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/librarian/` in the mail vault (`fmb2tpl2`).
@@ -49,4 +51,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/librarian/index.html
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/librarian/index.html
