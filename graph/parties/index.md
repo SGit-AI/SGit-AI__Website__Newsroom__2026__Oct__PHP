@@ -2,17 +2,17 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-275 parties resolved from 281 spellings, with the claims each one states and passes on.
+295 parties resolved from 339 spellings, with the claims each one states and passes on.
 
 [The story as a graph](../index.html) / Parties
 
 # Every party, whatever a page calls it
 
-275 parties: the people, organisations, agencies, outlets and platforms that published a source or are named as saying something. The sources spell them 281 ways; each spelling resolves to one node here, so CISA is one party however many pages name it. *States* counts the claims, numbers and signals a party originates; *relays* counts those it passed on from someone else.
+295 parties: the people, organisations, agencies, outlets and platforms that published a source or are named as saying something. The sources spell them 339 ways; each spelling resolves to one node here, so CISA is one party however many pages name it. *States* counts the claims, numbers and signals a party originates; *relays* counts those it passed on from someone else.
 
 The graph of each party needs JavaScript; the tables below carry the same counts.
 
-## Organisation (53)
+## Organisation (58)
 
 | Party | States | Relays | Sources published | Claims it states |
 |---|---|---|---|---|
@@ -47,11 +47,13 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | Broadcom (Symantec) | 0 | 0 | 1 |  |
 | [Chainguard](../../actors/chainguard/index.html) | 0 | 0 | 0 |  |
 | Cisco | 0 | 0 | 1 |  |
+| CloudLinux | 0 | 0 | 0 |  |
 | CybelAngel | 0 | 0 | 1 |  |
 | EPFL | 0 | 0 | 1 |  |
 | Equixly | 0 | 0 | 1 |  |
 | French Ministry of the Interior | 0 | 0 | 1 |  |
 | Lorikeet Security | 0 | 0 | 1 |  |
+| MITRE | 0 | 0 | 0 |  |
 | Palo Alto Networks | 0 | 0 | 1 |  |
 | Prophet Security | 0 | 0 | 1 |  |
 | Préfecture de police (Paris) part of French Ministry of the Interior | 0 | 0 | 2 |  |
@@ -67,10 +69,13 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | SentinelOne | 0 | 0 | 1 |  |
 | Socket | 0 | 0 | 1 |  |
 | Tenable | 0 | 0 | 1 |  |
+| The Internet Archive | 0 | 0 | 0 |  |
 | Université de Genève | 0 | 0 | 2 |  |
+| W3Techs | 0 | 0 | 0 |  |
+| cPanel | 0 | 0 | 0 |  |
 | latvija.gov.lv, the Latvian state portal | 0 | 0 | 1 |  |
 
-## Agency (17)
+## Agency (18)
 
 | Party | States | Relays | Sources published | Claims it states |
 |---|---|---|---|---|
@@ -87,12 +92,13 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | UK NCSC member of National agencies | 1 | 0 | 1 | [offline-ncsc](../../facts/offline-ncsc/index.html) |
 | CCN-CERT member of National agencies | 0 | 0 | 1 |  |
 | CNCS member of National agencies | 0 | 0 | 1 |  |
+| Cyber Security Agency of Singapore member of National agencies | 0 | 0 | 0 |  |
 | ENISA CSIRTs Network member of National agencies | 0 | 0 | 1 |  |
 | JPCERT/CC member of National agencies | 0 | 0 | 2 |  |
 | NÚKIB member of National agencies | 0 | 0 | 1 |  |
 | Swiss BACS (NCSC) member of National agencies | 0 | 0 | 2 |  |
 
-## Person (20)
+## Person (21)
 
 | Party | States | Relays | Sources published | Claims it states |
 |---|---|---|---|---|
@@ -116,6 +122,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | adoy, PHP release manager member of The PHP Group / php.net | 0 | 0 | 1 |  |
 | allixsenos | 0 | 0 | 0 |  |
 | darkfibr (Mike Haddock) member of Community detection authors | 0 | 0 | 1 |  |
+| scherzer.dev | 0 | 0 | 0 |  |
 
 ## Group (5)
 
@@ -127,7 +134,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | [Community detection authors](../../actors/detectors/index.html) | 0 | 0 | 0 |  |
 | [National agencies](../../actors/agencies/index.html) | 0 | 0 | 0 |  |
 
-## Outlet (171)
+## Outlet (182)
 
 | Party | States | Relays | Sources published | Claims it states |
 |---|---|---|---|---|
@@ -170,6 +177,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | Ars Technica | 0 | 0 | 1 |  |
 | Asahi Shimbun Digital (朝日新聞デジタル) | 0 | 0 | 1 |  |
 | AsiaOne | 0 | 0 | 1 |  |
+| Australian Financial Review | 0 | 0 | 0 |  |
 | BTC-ECHO | 0 | 0 | 1 |  |
 | BankInfoSecurity | 0 | 0 | 1 |  |
 | Bgonair | 0 | 0 | 1 |  |
@@ -188,6 +196,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | CHIP | 0 | 0 | 1 |  |
 | CNA (Channel NewsAsia) | 0 | 0 | 1 |  |
 | CNN Portugal | 0 | 0 | 1 |  |
+| CP24 | 0 | 0 | 0 |  |
 | CRN | 0 | 0 | 1 |  |
 | Cairo 24 (القاهرة 24) | 0 | 0 | 1 |  |
 | Canaltech | 0 | 0 | 1 |  |
@@ -226,6 +235,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | IT Social | 0 | 0 | 1 |  |
 | ITWeb | 0 | 0 | 1 |  |
 | ITdaily | 0 | 0 | 1 |  |
+| ITmedia | 0 | 0 | 0 |  |
 | India TV News | 0 | 0 | 1 |  |
 | Infopoint Security | 0 | 0 | 1 |  |
 | Information Age (ACS) | 0 | 0 | 1 |  |
@@ -252,12 +262,14 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | MediaNama | 0 | 0 | 1 |  |
 | Milton Keynes Citizen | 0 | 0 | 1 |  |
 | Morocco World News | 0 | 0 | 1 |  |
+| NBC News | 0 | 0 | 0 |  |
 | News9Live | 0 | 0 | 1 |  |
 | Người Quan Sát | 0 | 0 | 1 |  |
 | Notebookcheck | 0 | 0 | 1 |  |
 | Notebookcheck.it | 0 | 0 | 1 |  |
 | ORF | 0 | 0 | 1 |  |
 | PA Media (the Press Association) | 0 | 0 | 0 |  |
+| PC Gamer | 0 | 0 | 0 |  |
 | PCMag | 0 | 0 | 1 |  |
 | Paperjam | 0 | 0 | 1 |  |
 | Peterborough Telegraph | 0 | 0 | 1 |  |
@@ -277,15 +289,21 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | SussexWorld | 0 | 0 | 1 |  |
 | TechRadar | 0 | 0 | 1 |  |
 | TechTarget | 0 | 0 | 2 |  |
-| TechTarget Japan | 0 | 0 | 1 |  |
+| TechTarget Japan part of ITmedia | 0 | 0 | 1 |  |
 | Techaeris | 0 | 0 | 1 |  |
 | Techzine Global | 0 | 0 | 1 |  |
+| The Atlantic | 0 | 0 | 0 |  |
+| The Brussels Times | 0 | 0 | 0 |  |
 | The Economic Times | 0 | 0 | 1 |  |
+| The Guardian | 0 | 0 | 0 |  |
 | The Indian Express | 0 | 0 | 1 |  |
 | The Mandarin | 0 | 0 | 1 |  |
+| The New York Times | 0 | 0 | 0 |  |
 | The Next Web | 0 | 0 | 1 |  |
+| The Next Web | 0 | 0 | 0 |  |
 | The Star | 0 | 0 | 1 |  |
 | The Verge | 0 | 0 | 1 |  |
+| The Wall Street Journal | 0 | 0 | 0 |  |
 | The420.in | 0 | 0 | 1 |  |
 | Trak.in | 0 | 0 | 1 |  |
 | TugaTech | 0 | 0 | 1 |  |
@@ -307,7 +325,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 
 | Party | States | Relays | Sources published | Claims it states |
 |---|---|---|---|---|
-| The CVE Program | 1 | 0 | 12 | [ac-high](../../facts/ac-high/index.html) |
+| The CVE Program part of MITRE | 1 | 0 | 12 | [ac-high](../../facts/ac-high/index.html) |
 | NIST National Vulnerability Database | 0 | 0 | 2 |  |
 
 ## Project (3)
@@ -318,11 +336,13 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | PHPocalypse Tracker | 0 | 0 | 1 |  |
 | php2shell.com, the joint microsite of OpenAI, Wiz and Calif | 0 | 0 | 1 |  |
 
-## Platform (2)
+## Platform (4)
 
 | Party | States | Relays | Sources published | Claims it states |
 |---|---|---|---|---|
 | X (Twitter) | 1 | 0 | 0 |  |
+| GitHub | 0 | 0 | 0 |  |
+| Hacker News (news.ycombinator.com) | 0 | 0 | 0 |  |
 | nitter.net, an X mirror | 0 | 0 | 1 |  |
 
 ## Unnamed (1)
@@ -341,4 +361,4 @@ The file is [data/entities.json](../../data/entities.json), with who states each
 
 
 ---
-site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/graph/parties/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/graph/parties/index.html

@@ -55,6 +55,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 275 | The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work on this site' is a readerFrom the brief on the lens (24 October). With a go, the steps in the brief's 'What it means for the site' go to dev: the boot script and stylesheet on every page, a part() helper in the build, the fallback for untagged pages, menus by the same rules, the settings in the reader's vault (board 140). Overlaps 140 and 235. | open |  |
 | 279 | Go, or not, on the branch security/gate-pass-2: the gate fails on inline event handlers, forged message headers, drain output in the tree, a page with no or an unsafe Content-Security-Policy, and files the build reads that git ignoresOpened by security@php.newsroom, 24 October 2026. | open |  |
 | 280 | GitHub rulesets on dev and main (SA-2026-023): the editor's decision, 24 October, is to revisit when the site gets user loginsOpened by security@php.newsroom, 24 October 2026. | open |  |
+| 293 | Wikipedia's text (CC BY-SA 4.0) is republished in full under /wikipedia/ and data/wikipedia/, with attribution and the same licence on those pages, against the site's rule that no third-party page is reproduced (written for unlicensed pages). Decide whether it stays, and whether README's licence line says soFrom the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md). | open |  |
 
 ## Waiting on someone else
 
@@ -96,4 +97,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

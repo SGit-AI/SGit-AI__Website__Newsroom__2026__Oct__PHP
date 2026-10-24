@@ -37,6 +37,7 @@ Fact-check: how sure we arefactcheck/index.htmlEvery claimclaims/index.html
 | 183 | For the fact-check desk: 15 claims marked confirmed rest on one independent origin in the graph (a record from one party, such as the CVE numbers, is fine; a reading from one party may not be); and the graph's echo formula finds wikimedia-precaution (one origin, four outlet relays). Compare with the desk's levels and say where they disagree | open |  |
 | 224 | Grade the reshaped offline ledger as rows land, the Netherlands row first, and the basis of the countFrom the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go). | open |  |
 | 233 | One status vocabulary on every page with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside itFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). The fact-check desk, 24 October: outside the desk's scope (it owns factcheck/** only); the status words on other pages belong to story-site and the build's helpers to dev@php.newsroom. The desk's figure for every claim is in data/factcheck.json (assessments[].display) for them to show beside the five-way count. | open |  |
+| 290 | Wikipedia's PHP2Shell article: grade its uncited statements (4 of 39) and its attributed ones against the captures of the parties it names; and the Wikidata item's dated claims (discovery August 2026; announcement 20 October 2026) against the timeline (disclosure 21 October; 20 October is the leak)From the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md). | open |  |
 
 ## What they have done
 - Run 1, 22 October: all 70 claims graded against vault 31ccc515c29f; 3 high and 56 medium findings, 10 contradictions recorded, 6 pieces of outside evidence; Italy's offline advice found misread
@@ -59,4 +60,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.html

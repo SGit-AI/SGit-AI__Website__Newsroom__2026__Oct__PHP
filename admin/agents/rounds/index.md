@@ -29,7 +29,7 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [librarian@php.newsroom](../librarian/index.html) | 2026-10-24 | [The first scheduled pass: dev at v0.14.6 mapped, the journalist's full pass raised, one answer corrected](../librarian/index.html#2026-10-24__morning-pass) | 3 | 5 | unknown | 0 | 2 | 0 |
 | [Newsroom lead](../newsroom-lead/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Observability](../observability/index.html) | 2026-10-24 | [The telemetry application v0.4.1 and v0.4.2 pushed: progress on Queue & drain, and One page (a page's numbers and the page itself)](../observability/index.html#2026-10-24__one-page-and-the-drain-live) | 2 | 3 | unknown | 1 | 0 | 0 |
-| [Ontologist](../ontologist/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Ontologist](../ontologist/index.html) | 2026-10-25 | none yet | 3 | 2 | unknown | not run | 0 | 0 |
 | [pulse@newsroom](../pulse/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [researcher@php.newsroom](../researcher/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [security@php.newsroom](../security/index.html) | 2026-10-24 | [Application security: the AppSec section, 40 advisories, a CSP on every page, the telemetry policy, and three security passes](../security/index.html#2026-10-24__application-security) | 4 | 3 | unknown | 2 | 1 | 2 |
@@ -59,4 +59,4 @@ At the end of every round of work each agent writes a debrief with screenshots a
 
 
 ---
-site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html

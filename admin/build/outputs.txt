@@ -387,6 +387,7 @@ data/grc-history.json
 data/items.json
 data/release-pages.json
 data/sections.json
+data/wikipedia/php2shell/graph.json
 defence/index.html
 defence/index.md
 discovery/index.html
@@ -1923,5 +1924,15 @@ views/state/v3/index.html
 views/state/v3/index.md
 whatsnew/index.html
 whatsnew/index.md
+wikipedia/index.html
+wikipedia/index.md
+wikipedia/php2shell/history/index.html
+wikipedia/php2shell/history/index.md
+wikipedia/php2shell/index.html
+wikipedia/php2shell/index.md
+wikipedia/php2shell/references/index.html
+wikipedia/php2shell/references/index.md
+wikipedia/php2shell/statements/index.html
+wikipedia/php2shell/statements/index.md
 you/index.html
 you/index.md

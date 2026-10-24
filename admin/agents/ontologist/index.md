@@ -244,10 +244,10 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 
 | Field | Value |
 |---|---|
-| Round | no round recorded under this policy yet |
-| Done | nothing recorded |
-| Next | nothing proposed |
-| Asks | none |
+| Round | "2026-10-25 (the editor's session)" |
+| Done | admin/wikipedia/fetch.py: 364 revisions of the PHP2Shell article, the Wikidata item Q141801185, 198 articles linking in admin/build/wikitext.py: one statement per sentence, classed by wording; references resolved to sources by address and to parties by host /wikipedia/php2shell/ with statements, references and history; the article's graph in the ontology's wikipedia scope, joined to the story graph by captured_as 25 new parties for the article's publishers; 'contains' spelled once across scopes |
+| Next | the daily pass fetches Wikipedia first (card updated) board 288 to 294: captures of the 26 uncaptured references (collectors), the desk's grading of uncited statements, the licence decision (editor), the growth of data/wikipedia/ /fractal/ and  brought together (board 181) |
+| Asks | abp@: add data/wikipedia/**, admin/wikipedia/**, admin/build/wikitext.py to scope.writes and wikipedia/** to scope.pages of this policy (the gate warns the pages are unowned) (from the librarian and security@ (the policy's keeper is abp@newsroom.sgit)) the editor: whether Wikipedia's CC BY-SA text stays republished in full (board 293) (from the editor) |
 | Tokens | unknown · not recorded |
 | Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope None, injection_seen 0 |
 
@@ -259,4 +259,4 @@ Files: [admin/content/agents/ontologist/](https://github.com/SGit-AI/SGit-AI__We
 
 
 ---
-site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/ontologist/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/ontologist/index.html

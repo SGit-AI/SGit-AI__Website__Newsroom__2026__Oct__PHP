@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.16.1. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.17.0. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.17.0 · 2026-10-24
+
+Wikipedia as an anchor: the PHP2Shell article read as a fractal semantic graph, one statement per sentence classed as fact, attribution or quote, each joined to its references and to the captures this site holds of them, every one of its 364 revisions kept as what it changed, its Wikidata item, and the daily pass now fetching it; with a brief for the researcher to follow every reference
+Pages changed (30): Every edit of Wikipedia&#39;s PHP2Shell article, as what it changed new · Every statement in Wikipedia&#39;s PHP2Shell article, with its evide… new · Wikipedia&#39;s PHP2Shell article, as a graph new · Every reference in Wikipedia&#39;s PHP2Shell article new · Wikipedia, as a graph new · Briefs · Schedule: ontologist · Schedule: every agent that runs on its own and 22 more
+[Questions readers ask about php2shell](../questions/index.html) · [Ontologist: role, policy and rounds](../admin/agents/ontologist/index.html) · [Schedule: librarian](../team/schedule/librarian/index.html) · [Ontologist, fractal semantic graphs: the ontologies, the story graph…](../team/ontologist/index.html) · [Evidence, derived, authored: what each file is](../layers/index.html) · [Researcher, vendor and press collector, researchers, vendors and the…](../team/collector-researchers/index.html) · [Dinis Cruz, Editor: the team](../team/dinis/index.html) · [Fact-check desk, every claim graded on a spectrum of evidence: the t…](../team/verifier/index.html) · [Every party on the story: who states, who relays, who publishes](../graph/parties/index.html) · [Every member: who owns what](../admin/agents/roles/index.html) · [The fact pipeline: from a web page to a reader](../pipeline/index.html) · [The story as a graph: who states what, who relays it, and what it re…](../graph/index.html) · [The team: the people, the agents and how they work together](../team/index.html) · [Every round: what each member did](../admin/agents/rounds/index.html) · [The billing model: what runs and what is designed](../billing/index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
 
 ### v0.16.1 · 2026-10-24
 
@@ -1103,4 +1111,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

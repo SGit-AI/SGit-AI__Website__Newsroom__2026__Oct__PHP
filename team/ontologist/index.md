@@ -47,6 +47,8 @@ The graphgraph/index.htmlEvery partygraph/parties/index.htmlThe graph componentg
 | 190 | Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the story graph, so the long-tail sources reach the claims they bear on, with supersedes where a statement was corrected; and trace the 143 captured sources no row cites yetFrom the ontologist's first pass of 24 October (admin/ontologist/passes/2026-10-24__pass-1.md). | open |  |
 | 200 | Join the other engine files to a named part of the fix: 144 of 359 changed hunks reach the fix only as 'the commit touched this area'Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 091 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 | 201 | Add the PHP 7.4 backport's hunks to the fractal graph as their own layer (the lines the backport wrote; never the vulnerable code before it)Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 092 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
+| 291 | Trust shown, not assumed: the same counts kept for Wikipedia (statements cited, references captured, reverts, contradictions touching its evidence) kept for every publication the site holds, so a correction rate can be compared across them; then a second Wikipedia article (PHP, or the list of security incidents)From the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md). | open |  |
+| 294 | data/wikipedia/ grows with every revision (6 MB for 364 revisions of one article): decide, with the researcher, whether old revisions move to the evidence vault and the repository keeps the latest text plus statement-level deltasFrom the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md). | open |  |
 
 ## Waiting on someone else
 
@@ -67,4 +69,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/ontologist/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/ontologist/index.html
