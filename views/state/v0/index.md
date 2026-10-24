@@ -10,7 +10,7 @@ View · the state of affairs · v0 · 22 October 2026, 11:34 UTC
 
 Reconstructed, not written at the time: what this site published with data as of 11:34 UTC on 22 October, so that the first real version has something to be compared with.
 
-**Version** v0 of 1 · **by** claude-journalist · **written against** site v0.2.5 · evidence vault `200d08971937` · NCSC-NL inventory `cca173c64ec5` · data as of 22 October 2026, 11:34 UTC
+**Version** v0 of 2 · **by** claude-journalist · **written against** site v0.2.5 · evidence vault `200d08971937` · NCSC-NL inventory `cca173c64ec5` · data as of 22 October 2026, 11:34 UTC
 
 **Reconstructed.** This version was not written at the time; it is rebuilt from what the site published then, so that the next version has something to be compared with.
 
@@ -31,6 +31,7 @@ Reconstructed, not written at the time: what this site published with data as of
 | **NCSC-NL inventory: products still under investigation** | **418**as of 22 October 2026, 08:40 UTC[NCSC-NL](../../../sources/ncsc-nl-php2shell-software-list/index.html) |  |
 | **Security and network vendors' products confirmed vulnerable** | **not counted**as of no time |  |
 | **PHP servers that disclose their version running an end-of-life branch** | **not known**as of no time |  |
+| **A national count of servers still affected after the fix** | not tracked |  |
 | **Sites that went dark over php2shell, and how many are still dark** | **10 operators reported offline**as of 22 October 2026, 11:34 UTC[Rijksoverheid / NCSC-NL](../../../sources/rijksoverheid-ncsc-php-news/index.html) [CERT.LV](../../../sources/certlv-php-preventive/index.html) [Weird Gloop](../../../sources/weirdgloop-blog-php2shell/index.html) |  |
 | **National authorities saying they know of no successful exploitation in their country** | **2 (CISA for the US, ACSC for Australia)**as of 2026-10-22[CISA](../../../sources/cisa-alert-php-20261021/index.html) [ACSC](../../../sources/acsc-alert-php/index.html) |  |
 | **Sources in the evidence vault, and the latest capture** | **144, latest capture 22 Oct 11:34 UTC**as of 22 October 2026, 11:34 UTCdata/vault.json at site v0.2.5 |  |
@@ -49,4 +50,4 @@ This version was not written on 22 October. It is rebuilt from the site at v0.2.
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/views/state/v0/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/views/state/v0/index.html

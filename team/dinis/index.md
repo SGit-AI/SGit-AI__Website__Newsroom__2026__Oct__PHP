@@ -46,6 +46,12 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 148 | Go for scheduled updates: an hourly run (only when something moved) and a daily one, with the run's cadence in board 071 | open |  |
 | 162 | The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:00 London), on Sonnet; then they move from 'setting up' to 'active' in the schedule vault | open |  |
 
+## Waiting on someone else
+
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 174 | The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed for KEV, NVD, EPSS and repository series after thatRead key only; the write key is neither wanted nor to be accepted. | waiting |  |
+
 ## What they have done
 - Started the site from two voice memos and a message on 22 October 2026, and set every brief since.
 - Renamed the site PHP October 2026 and set the rule that the front page opens with the situation, not the CVE numbers (v0.3.1).
@@ -66,4 +72,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

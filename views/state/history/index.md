@@ -2,13 +2,21 @@
 
 > Story: written here by this site, signed and dated. By the journalist.
 
-2 versions of the journalist's state of affairs, newest first, each with what changed from the one before.
+3 versions of the journalist's state of affairs, newest first, each with what changed from the one before.
 
 View · the state of affairs · history
 
 # The state of affairs: every version
 
 Every version stays as it was written; the next one says what changed. Newest first.
+
+v2 · 23 October 2026, 23:55 UTC
+
+### [The state of affairs at the end of 23 October: still no named victim, and the advice turns from patching to looking for break-ins](../v2/index.html)
+
+Sixty-eight more sources, read by the curator, change none of the measures that matter most: no organisation has confirmed a compromise through php2shell, and neither CVE is in CISA's exploited list at this desk's last check. What moved is the advice. Singapore and Luxembourg now tell operators to check whether they were already broken into, and the first national count of servers still affected after the fix is in: about 3.5% in Switzerland.
+
+[What changed from v1 →](../v1-v2/index.html)
 
 v1 · 23 October 2026, 14:11 UTC
 
@@ -26,4 +34,4 @@ Reconstructed, not written at the time: what this site published with data as of
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/views/state/history/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/views/state/history/index.html

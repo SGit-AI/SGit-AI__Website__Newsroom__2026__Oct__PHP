@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Times are UTC unless they say London.
 
-3schedules29runs a night, today115runs recorded45runs with changes and no article
+3schedules29runs a night, today116runs recorded45runs with changes and no article
 
 ## Quiet hours
 
@@ -34,7 +34,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 69, researcher@php.newsroom: 38, synthetic@php.newsroom: 6, Fact-check desk: 2.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 70, researcher@php.newsroom: 38, synthetic@php.newsroom: 6, Fact-check desk: 2.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -67,6 +67,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.4` | the site catches up with its two vaults (evidence vault re-exported at f3c5db0d9873: 144 sources to 227, data as of 01:20 UTC on 23 October; the NCSC-NL inventory read to 12:50 UTC on 23 October, 109 of 751 products fixed), Views with the journalist's versioned state of affairs (v0 of 22 October and v1 of 23 October, a page per version and a page for what changed between them), the story 'What changed in a day', and the Updates section with its feed and the first daily update | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.3` | Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked in the friction log, the editor's decisions in the brief to the conductor (a 'this may be published' checkbox, no keys for feedback, one form), and the Sherpa's held key on /team/vaults/ | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.2` | the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evidence vault current from the source watch's queue; proposed, waiting for the editor's go on the schedule | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.19` | the site catches up with the evidence vault at 1845598d9a38 (295 sources): the journalist's state of affairs v2, with the delta from v1 and the six curator claims held back as worded and why, and the front page's Right now and Latest from the new sources | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.18` | /team/status/ at 23:30 UTC: all twenty sessions read; the scheduled curator and source watch running, the evidence vault at 260 sources waiting on a re-export, ten branches ahead of dev, and the decisions waiting on the editor | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.17` | the scheduled curator follows the source watch into its pack-mode copy (7r83qic5): the brief records the move, the 15 + 18 captures promoted so far (evidence vault 260 sources, head 51debd0e98f0) and the pace; the curator's register row lists the pack vault key as held, never the key | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.16` | pack mode, measured: the pack vault in use by two writers, a pull of the scheduled session's commit in 176 s and a one-file correction pushed in 77 s | yes | its release note | [output](../../admin/versions.html) |
@@ -156,4 +157,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

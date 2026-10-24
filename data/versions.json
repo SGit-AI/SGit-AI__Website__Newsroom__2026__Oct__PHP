@@ -1,6 +1,15 @@
 {
- "current": "0.10.18",
+ "current": "0.10.19",
  "versions": [
+  {
+   "version": "0.10.19",
+   "date": "2026-10-23",
+   "title": "the site catches up with the evidence vault at 1845598d9a38 (295 sources): the journalist's state of affairs v2, with the delta from v1 and the six curator claims held back as worded and why, and the front page's Right now and Latest from the new sources",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.10.18",
    "date": "2026-10-23",

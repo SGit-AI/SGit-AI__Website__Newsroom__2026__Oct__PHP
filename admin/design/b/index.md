@@ -2,7 +2,7 @@
 
 A three-column working view for a security lead: their reading path and the site by task on the left, what changed since the last visit and the next three actions in the middle, and the state of the evidence as charts on the right.
 
-> Mockup B for review, built from the data of release v0.10.18. Not the live site.
+> Mockup B for review, built from the data of release v0.10.19. Not the live site.
 
 S 
  Sam 
@@ -13,7 +13,7 @@ Your reading path
 2 of 5 read · next: Exploitation signals 
  Today 9 new What to do The incident Detection and defence The agencies 16 Every claim 70 Ask 
 
-Since your last visit · 23 October 2026, 01:20 UTC 
+Since your last visit · 23 October 2026, 16:04 UTC 
 
 ## 9 things are new, 3 changed. Two matter for your runbook.
 
@@ -54,12 +54,22 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ✓ 
 
- New story v0.10.13 
+ New front v0.10.19 
+#### Front page: right now
+
+✓ 
+
+ New front v0.10.19 
+#### Front page: latest
+
+✓ 
+
+ Changed story v0.10.13 
 #### The risk graph, before and after: what changed from one reader's five ideas
 
 ✓ 
 
- New front v0.10.13 
+ Changed front v0.10.13 
 #### Stories: written here
 
 ✓ 
@@ -76,16 +86,6 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
  Changed event v0.4.1 
 #### The evidence vault behind this site is opened; the first capture of the BBC live page is at 08:04:53Z.
-
-✓ 
-
- Changed event v0.4.1 
-#### The UK NCSC page is modified (HTTP last-modified).
-
-✓ 
-
- Changed event v0.4.1 
-#### Ryan Austin on BBC Radio 4: no evidence of exploitation yet.
 
 ✓ 
 
@@ -122,4 +122,4 @@ Amazon: Proof-of-concept attempts begin, then six hours of attempts from anonymi
 8.1 and older: source backports only.
 
 ---
-site v0.10.18 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html
+site v0.10.19 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html

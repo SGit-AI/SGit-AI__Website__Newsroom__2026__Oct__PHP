@@ -326,6 +326,8 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - "Last checked" in the header and on the front page is the newest of three times, each shown on the front page: the evidence vault's latest capture (still `data_as_of`, which the claims, articles and status.json are built from), the source watch's latest run (`data/source-watch.json`, re-exported at `20afaa62129d`) and the NCSC-NL inventory's latest change read (`data/inventory-history.json`). Before v0.10.6 it was the evidence vault's alone, which read as stale whenever the vault had not taken a capture for hours while the other two had moved.
 
+- `data/` re-exported from the evidence vault at `1845598d9a38` (295 sources, latest capture 16:04 UTC on 23 October). The journalist's state of affairs is at version 2 (`/views/state/v2/`), written against it; the front page's "Right now" and "Latest" are from the same export. The source watch's pack vault `7r83qic5` is not read yet (no read key in this desk's session).
+
 ### The schedule vault (23 October 2026, conductor@php.newsroom)
 
 - A public vault, `weic8imn` (read key on `/vaults/` and `/team/schedule/`): `schedules/.json`, `tasks//queued|done|failed/T-NNN.json` (a brief, `not_before`, `due_by`, `repeat_until`), `runs///.json` (schema `sgit.newsroom.run/1`, with the log), `index.json`, and `tools/schedule.py` (due, start, finish, idle, queue, index; refuses key and token shapes). Seeded with four schedules (curator and researcher setting up, fact-check paused, synthetic readers paused pending removal), the curator's and the researcher's routine tasks (repeating until 31 October) and 42 runs already recorded elsewhere.
@@ -356,4 +358,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

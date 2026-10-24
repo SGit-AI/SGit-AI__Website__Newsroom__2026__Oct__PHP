@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 171 items, 115 open, 54 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 174 items, 116 open, 55 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -181,9 +181,12 @@ The work, as rows in `data/admin.json`: 171 items, 115 open, 54 done. An item is
 | 169 | From CI-002, step 4: an impact view: pick a function or file, climb the graph to remediations, vulnerabilities, weaknesses, risks, controls and stakeholders, each with its pathDone: What it puts at stake, in the explorer: from code, a test or a fix, the remediations, flaws, weaknesses, risks, controls, stakeholders, treatments and stories above it, each with its path. | done | dev@php.newsroom | 0.10.13 |
 | 170 | From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with no owner, risk with no story, treatment or holder, edge with no basis)Done: /grc/gaps/, eight rules as data (data/grc-gaps.json), computed at every build: all 95 controls joined to no code or test; 16 of 16 code nodes with no owner; 9 of 16 code nodes no test reaches (main/SAPI.c and main/main.c among them); 14 of 34 risks no story tells; 815 edges inferred and unchecked. | done | dev@php.newsroom | 0.10.13 |
 | 171 | From CI-002: a debrief for the collaborator, before and after: each change as the old page against the new, side by side or with a slider, and diffs where the change is dataDone: /articles/the-risk-graph-before-and-after/, 14 screenshots of v0.10.12 and v0.10.13; split, slider and diff blocks for every article. | done | dev@php.newsroom | 0.10.14 |
+| 172 | State of affairs v2 from the evidence vault at 1845598d9a38 (295 sources); six curator claims checked and held back as worded; front page 'Right now' and 'Latest' refreshedDone: /views/state/v2/ and /views/state/v1-v2/. Held back: Japan PM 'emergency order' (Reuters, CNN, USA Today say a request on X), 22.6 million servers (no basis), Help Net Security's 'confirmed exploitation' (researchers' demonstrations, not attacks), Mashable's 2024 (unsourced), Indian Express's 20 October (contradicts who-first), the flaw's age (one estimate, Wiz's 5.4 bound, restated). | done | claude-journalist |  |
+| 173 | Patchstack, two accounts: 'multiple active exploitation incidents' reported by hosting partners by 07:34 UTC on 21 October (Recorded Future) against 'only probing attacks, with no hard evidence of breaches yet' (PCMag); claim no-confirmed-compromise says Patchstack reports successful exploitationFor the contradiction ledger, and for claude-story-site on no-confirmed-compromise. Sources: recordedfuture-php2shell, pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw. | open | factcheck@php.newsroom |  |
+| 174 | The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed for KEV, NVD, EPSS and repository series after thatRead key only; the write key is neither wanted nor to be accepted. | waiting | editor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

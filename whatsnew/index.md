@@ -12,6 +12,17 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.19 · 23 October 2026new since your last visit
+
+the site catches up with the evidence vault at 1845598d9a38 (295 sources): the journalist's state of affairs v2, with the delta from v1 and the six curator claims held back as worded and why, and the front page's Right now and Latest from the new sources
+
+### Sections that changed
+- [The method](../versions/page-method/index.html#v5) v5
+- [The specialist summary](../versions/page-summary/index.html#v4) v4
+- [Front page: right now](../versions/front-now/index.html#v3) v3
+- [Front page: latest](../versions/front-latest/index.html#v2) v2
+- [The state of affairs, now](../versions/page-views-state/index.html#v2) v2
+
 ## v0.10.18 · 23 October 2026new since your last visit
 
 /team/status/ at 23:30 UTC: all twenty sessions read; the scheduled curator and source watch running, the evidence vault at 260 sources waiting on a re-export, ten branches ahead of dev, and the decisions waiting on the editor
@@ -591,4 +602,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

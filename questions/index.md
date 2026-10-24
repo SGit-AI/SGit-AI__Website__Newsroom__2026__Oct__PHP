@@ -106,7 +106,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Perplexity's notes, in full](../readings/perplexity-2026-10-22/index.html):
 
 ### The evidence
-- [Every source: 227 pages, 222 captures, 1386 hashes](../sources/index.html): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
+- [Every source: 295 pages, 290 captures, 1761 hashes](../sources/index.html): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
 - [The NCSC-NL inventory: 674 products](../affected/software.html): Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, with its status per CVE.
 - [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
 - [Evidence, derived, authored](../layers/index.html):
@@ -182,4 +182,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

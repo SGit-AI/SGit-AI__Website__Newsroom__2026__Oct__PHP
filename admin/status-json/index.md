@@ -19,10 +19,10 @@ One small file at the site root, [/status.json](../../status.json), that another
 | `story` | "php2shell" |
 | `cves` | ["CVE-2026-109618", "CVE-2026-109619"] |
 | `status` | "developing" |
-| `version` | "0.10.18" |
-| `data_as_of` | "2026-10-23T01:20Z" |
-| `vault_commit` | "f3c5db0d9873" |
-| `counts` | {"sources": 227, "captures": 222, "claims": 70, "claims_by_status": {"confirmed": 21, "reported": 34, "disputed": 8, "contradicted": 3, "unverified": 4}, "event |
+| `version` | "0.10.19" |
+| `data_as_of` | "2026-10-23T16:04Z" |
+| `vault_commit` | "1845598d9a38" |
+| `counts` | {"sources": 295, "captures": 290, "claims": 70, "claims_by_status": {"confirmed": 21, "reported": 34, "disputed": 8, "contradicted": 3, "unverified": 4}, "event |
 | `headline_facts` | [{"id": "two-cves-9.2", "text": "Two critical vulnerabilities, CVE-2026-109618 and CVE-2026-109619, each CVSS v4.0 9.2, fixed in PHP 8.5.12, 8.4.27, 8.3.36 and |
 | `latest_story` | {"title": "What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list", "url": "https://p |
 | `links` | {"front": "https://php.oct.2026.newsroom.sgit.ai/index.html", "sources": "https://php.oct.2026.newsroom.sgit.ai/sources/index.html", "claims": "https://php.oct. |
@@ -49,12 +49,12 @@ One small file at the site root, [/status.json](../../status.json), that another
   "CVE-2026-109619"
  ],
  "status": "developing",
- "version": "0.10.18",
- "data_as_of": "2026-10-23T01:20Z",
- "vault_commit": "f3c5db0d9873",
+ "version": "0.10.19",
+ "data_as_of": "2026-10-23T16:04Z",
+ "vault_commit": "1845598d9a38",
  "counts": {
-  "sources": 227,
-  "captures": 222,
+  "sources": 295,
+  "captures": 290,
   "claims": 70,
   "claims_by_status": {
    "confirmed": 21,
@@ -131,4 +131,4 @@ One small file at the site root, [/status.json](../../status.json), that another
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html
