@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.16.0. Not the live site.
+> Mockup D for review, built from the data of release v0.16.1. Not the live site.
 
-PHP Team console Console Overview Board 186 Agents 19 Releases 141 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 186 Agents 19 Releases 142 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 16:05 UTC 
 
 Release 
-v0.16.0 
-141 releases since 22 Oct 
+v0.16.1 
+142 releases since 22 Oct 
 
 Open on the board 
 186 
@@ -96,6 +96,7 @@ Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take 
 ### Releases
  latest 8 
 
+ v0.16.1 2026-10-24 Correspondent register: fingerprint of the scheduled Opus session's key (the vaults page) 
  v0.16.0 2026-10-24 the chrome after the lens prototype: headlines near the top of every page (the bar in two lines on a laptop, 132px to 91px; slim r… 
  v0.15.21 2026-10-24 Journalist: debrief and status for the first wake 
  v0.15.20 2026-10-24 the correspondent's brief: the first session makes its own key, records its fingerprint and stops 
@@ -103,7 +104,6 @@ Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take 
  v0.15.18 2026-10-24 the correspondent's schedule proposed (11:47 and 19:07 London, Opus, a fresh session each wake), its brief, and a count of what th… 
  v0.15.17 2026-10-24 CodeQL's second scan, triaged: the design dials derive their root as a count of ../ segments and accept only this site's pages as … 
  v0.15.16 2026-10-24 observability's round 2: the telemetry application v0.4.1 and v0.4.2, pushed to its vault (Queue & drain shows its progress; One p… 
- v0.15.15 2026-10-24 debrief: the Opus journalist's round, ending as the correspondent 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.16.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.16.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
