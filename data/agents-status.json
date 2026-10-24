@@ -1,28 +1,28 @@
 {
  "about": "Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.",
  "kept_by": "conductor",
- "as_of": "2026-10-24T14:25Z",
- "live_version": "v0.15.0",
+ "as_of": "2026-10-24T18:25Z",
+ "live_version": "v0.15.6",
  "agents": [
   {
    "agent": "curator@php.newsroom (scheduled)",
    "member": "newsroom-lead",
-   "state": "working",
-   "last": "2026-10-24T12:20Z",
-   "did": "Read 18 more sources (111 claims unconfirmed); the evidence vault re-exported on the site at 328 sources in v0.14.30. Woken at 13:00; next 15:30. No run records.",
-   "waiting": "Run records; nothing from the editor now.",
+   "state": "waiting",
+   "last": "2026-10-24T17:19Z",
+   "did": "The evidence vault holds 382 sources and 132 claims. Woken at 08:00, 10:30, 13:00, 15:30 and 18:00; no run records. Next wake Sunday 08:00 London.",
+   "waiting": "Run records.",
    "on": "",
-   "cost": 13
+   "cost": 18
   },
   {
    "agent": "researcher@php.newsroom (scheduled)",
    "member": "researcher",
-   "state": "working",
-   "last": "2026-10-24T14:16Z",
-   "did": "A pass is running (woken 14:32 London); no run records for any of the five wakes today.",
+   "state": "waiting",
+   "last": "2026-10-24T16:59Z",
+   "did": "The 17:00 pass pushed: 1 commit, 10,342 objects, no conflicts. Still no run records for any of its wakes.",
    "waiting": "Run records.",
    "on": "",
-   "cost": 9
+   "cost": 11
   },
   {
    "agent": "curator@php.newsroom (first session)",
@@ -48,31 +48,31 @@
    "agent": "dev@php.newsroom",
    "member": "dev",
    "state": "blocked",
-   "last": "2026-10-24T11:52Z",
-   "did": "Blocked on a Bash permission prompt since 11:52 UTC.",
-   "waiting": "Approve or deny the Bash call in its session.",
+   "last": "2026-10-24T16:45Z",
+   "did": "Blocked on a Bash permission prompt (since 11:52 UTC, asked again 16:45).",
+   "waiting": "Approve or deny the Bash call in its session; desk lists 6 decisions waiting on you.",
    "on": "editor",
-   "cost": 180.87
+   "cost": 181
   },
   {
    "agent": "sherpa@php.newsroom",
    "member": "sherpa",
    "state": "waiting",
-   "last": "2026-10-24T14:01Z",
-   "did": "Ran its 13:45 wake; the subscriptions lane is undrained.",
-   "waiting": "Your go for dev to seal the subscriptions vault key (wgeiqabu) to the Sherpa; optionally the conductor's lane key (5iwos28w).",
+   "last": "2026-10-24T16:55Z",
+   "did": "The 17:45 pass done, v0.15.5 released.",
+   "waiting": "Your go for dev to seal the subscriptions lane key (wgeiqabu) to the Sherpa; optionally the conductor's lane key (5iwos28w).",
    "on": "editor",
-   "cost": 71
+   "cost": 79
   },
   {
    "agent": "journalist and historian",
    "member": "journalist",
-   "state": "waiting",
-   "last": "2026-10-24T14:14Z",
-   "did": "Released v0.14.30. The scheduled journalist is proposed (card data/schedule/journalist.json).",
-   "waiting": "Confirm the name \"correspondent\" (and \"journalist\" for the Sonnet one); approve its Sonnet schedule card; a read key for 7r83qic5.",
+   "state": "working",
+   "last": "2026-10-24T18:11Z",
+   "did": "A session is running now (the scheduled journalist proposal; the correspondent role). Still no schedule task for it.",
+   "waiting": "Its names confirmed, its Sonnet schedule card approved, a read key for 7r83qic5.",
    "on": "editor",
-   "cost": 88
+   "cost": 99
   },
   {
    "agent": "designer@php.newsroom",
@@ -98,11 +98,11 @@
    "agent": "desk@php.newsroom",
    "member": "",
    "state": "waiting",
-   "last": "2026-10-24T08:34Z",
-   "did": "Morning check done (run record 09:20).",
-   "waiting": "A go for the curator to re-export the evidence vault; your calls on dev's question, security's four and its own scope.",
+   "last": "2026-10-24T15:32Z",
+   "did": "Afternoon check done (run record 16:20). Lists 6 decisions for you, starting with dev's stuck prompt.",
+   "waiting": "Your 6 ranked decisions; its scope.",
    "on": "editor",
-   "cost": 15
+   "cost": 20
   },
   {
    "agent": "synthetic@php.newsroom",
@@ -128,11 +128,11 @@
    "agent": "factcheck@php.newsroom",
    "member": "verifier",
    "state": "waiting",
-   "last": "2026-10-24T11:58Z",
-   "did": "The 12:52 wake was quiet: nothing released (its prompt leaves no record on a quiet wake). An Amazon rewording is not yet captured.",
+   "last": "2026-10-24T16:09Z",
+   "did": "Run 5 released as v0.15.4: the Amazon rewording is now in the vault. Next 20:52 London.",
    "waiting": "nothing",
    "on": "",
-   "cost": 81
+   "cost": 89
   },
   {
    "agent": "librarian@php.newsroom",
@@ -188,11 +188,11 @@
    "agent": "security@php.newsroom",
    "member": "",
    "state": "waiting",
-   "last": "2026-10-24T12:21Z",
-   "did": "Fixes done and released; gate-pass-2 now 3 commits ahead of dev.",
-   "waiting": "A go for security/gate-pass-2; log in to set the dev and main rulesets (SA-2026-023); keep, drop or consent decisions it lists.",
+   "last": "2026-10-24T17:06Z",
+   "did": "Round 1 closed (v0.15.6); the privacy policy updated.",
+   "waiting": "Reply go to ship security/gate-pass-2 (board 279); the rulesets at user logins (board 280); private vulnerability reporting (board 278).",
    "on": "editor",
-   "cost": 48
+   "cost": 56
   },
   {
    "agent": "conductor@php.newsroom",
@@ -213,6 +213,16 @@
    "waiting": "The SG/Send access token (board 273); a decision on re-keying 84wr8mib; its key enrolled; the roster row.",
    "on": "editor",
    "cost": 11
+  },
+  {
+   "agent": "sharness (cli)",
+   "member": "",
+   "state": "done",
+   "last": "2026-10-24T17:57Z",
+   "did": "Pages updated; term check clean; sgit doc 05 linked, not copied.",
+   "waiting": "nothing",
+   "on": "",
+   "cost": 13
   }
  ],
  "branches": [
@@ -302,11 +312,11 @@
   ],
   [
    "Source watch (scheduled researcher)",
-   "active: 07:00, 09:30, 12:00, 14:30, 17:00 London; woken at all five, no run records at all (messaged 08:15)"
+   "active: 07:00, 09:30, 12:00, 14:30, 17:00 London; woken at all five, passes pushed, no run records at all (messaged 08:15)"
   ],
   [
    "Curator (scheduled)",
-   "active: 08:00, 10:30, 13:00, 15:30, 18:00 London; woken at 08:00, 10:30, 13:00, no run records (messaged 09:15)"
+   "active: 08:00, 10:30, 13:00, 15:30, 18:00 London; woken at all five, no run records (messaged 09:15)"
   ],
   [
    "Pulse",
@@ -322,19 +332,19 @@
   ],
   [
    "Sherpa",
-   "active: every two hours at :45, 07:45 to 21:45 London; runs at 07:45 and 11:45 only (messaged 11:15)"
+   "active: every two hours at :45, 07:45 to 21:45 London; runs at 07:45, 11:45 and 17:45 (a run when it releases)"
   ],
   [
    "Desk",
-   "active: 09:20 and 16:20 London; the 09:20 left a run"
+   "active: 09:20 and 16:20 London; both left runs"
   ],
   [
    "Fact-check runs",
-   "active: 08:52, 12:52, 16:52, 20:52 London; 08:52 left a run; the quiet 12:52 left none (messaged 14:15)"
+   "active: 08:52, 12:52, 16:52, 20:52 London; 08:52 and 16:52 left runs, the quiet 12:52 none"
   ],
   [
    "Ontologist",
-   "active: 14:40 London, daily; fired 14:41, no run record yet"
+   "active: 14:40 London, daily; fired 14:41, still no run record"
   ],
   [
    "Cartographer",
@@ -359,13 +369,13 @@
   ]
  ],
  "decisions": [
-  "A go for security/gate-pass-2; log in to set the dev and main rulesets (SA-2026-023); the other keep, drop or consent calls security lists.",
-  "dev@ is blocked on a Bash permission prompt since 11:52 UTC (earlier: an open question).",
-  "Hand the Sherpa the subscriptions vault key (wgeiqabu), and the conductor's lane key (5iwos28w); hand this session both lane keys: until then the lanes are not drained here.",
-  "Confirm the journalist's names, approve its Sonnet schedule card, and give it a read key for 7r83qic5.",
+  "A go for security/gate-pass-2 (board 279); the rulesets at user logins (280); private vulnerability reporting (278).",
+  "dev@ is blocked on a Bash permission prompt since 11:52 UTC; the desk lists 6 decisions waiting on you, starting there.",
+  "Hand the Sherpa the subscriptions vault key (wgeiqabu) and the conductor's lane key (5iwos28w); hand this session both lane keys: until then the lanes are not drained here.",
+  "The new pipeline (researcher, curator, journalist, correspondent, then ontologist, librarian, desk): the journalist's and correspondent's cards and schedule tasks, their names, a read key for 7r83qic5. My notes on the brief are in the session.",
   "Security asked the conductor for a self-check paragraph in AGENTS.md and a step in every card; observability asked for a roster row in data/team.json. Neither file is on the conductor's card: say who edits.",
   "observability: the SG/Send access token (board 273), the re-keying of 84wr8mib, its key enrolled.",
-  "Pulse has no card and 2 items awaiting your go; desk's scope; the designer's key; the abp session's hooks; the two public-form messages.",
-  "Most scheduled agents leave no run record on a quiet wake (their prompts say so); AGENTS.md section 7 asks for one. Say which rule stands, and the conductor will stop flagging the other."
+  "Run records: most scheduled prompts leave none on a quiet wake; AGENTS.md section 7 asks for one. Say which rule stands (the researcher, curator, ontologist and pulse show as gaps).",
+  "Pulse has no card; desk's scope; the designer's key; the abp session's hooks; the two public-form messages."
  ]
 }

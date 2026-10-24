@@ -56,4 +56,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.15.7 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/journalducanada-php2shell-des-serveurs-exposes-a-une-cyb/index.html
+site v0.15.8 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/journalducanada-php2shell-des-serveurs-exposes-a-une-cyb/index.html

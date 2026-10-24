@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.7. Not the live site.
+> Mockup D for review, built from the data of release v0.15.8. Not the live site.
 
-PHP Team console Console Overview Board 184 Agents 19 Releases 126 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 184 Agents 19 Releases 127 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.7 
-126 releases since 22 Oct 
+v0.15.8 
+127 releases since 22 Oct 
 
 Open on the board 
 184 
@@ -99,6 +99,7 @@ From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sti
 ### Releases
  latest 8 
 
+ v0.15.8 2026-10-24 Conductor full pass 19:15 London: agents-status, schedules against runs, run record 
  v0.15.7 2026-10-24 the journalist's brief for its first Sonnet session: the pipeline, the key handshake, every wake in seven steps, what to do when a… 
  v0.15.6 2026-10-24 Security round 1 closed: the telemetry policy, on the editor's decision to keep the location lookups (made by the reader's browser… 
  v0.15.5 2026-10-24 The Sherpa's 17:45 pass: the phone header's fix checked live (one 43px line; a friction closed), headlines now on the first screen… 
@@ -106,7 +107,6 @@ From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sti
  v0.15.3 2026-10-24 the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's p… 
  v0.15.2 2026-10-24 The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and t… 
  v0.15.1 2026-10-24 Conductor full pass 15:15 London: agents-status, schedules against runs, run record 
- v0.15.0 2026-10-24 prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sti
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.8 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
