@@ -245,6 +245,20 @@
    "used_on": "graph/index.html"
   },
   {
+   "path": "data/wikipedia/",
+   "layer": "evidence",
+   "by": "admin/wikipedia/fetch.py, run by the ontologist",
+   "from": "the English Wikipedia's API: every revision of each watched article with its wikitext (CC BY-SA 4.0, by its contributors), its Wikidata item and the articles that link in; the text is third-party material",
+   "used_on": "wikipedia/index.html"
+  },
+  {
+   "path": "data/wikipedia/<article>/graph.json",
+   "layer": "derived",
+   "by": "admin/build/build.py (the ontologist's block) with admin/build/wikitext.py",
+   "from": "the article's latest revision parsed into sections, statements and references; the references matched to data/sources.json by address and to data/entities.json by host; every revision's delta",
+   "used_on": "wikipedia/index.html"
+  },
+  {
    "path": "data/arcs.json",
    "layer": "derived",
    "by": "the librarian (librarian@php.newsroom)",

@@ -77,6 +77,10 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "afr": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "agconnect": {
    "grc": "stakeholder:media",
    "relation": "among"
@@ -145,6 +149,10 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "brussels-times": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "bursa-hakimiyet": {
    "grc": "stakeholder:media",
    "relation": "among"
@@ -201,6 +209,10 @@
    "grc": "stakeholder:waf-vendors",
    "relation": "among"
   },
+  "cloudlinux": {
+   "grc": "stakeholder:panels",
+   "relation": "among"
+  },
   "cna-sg": {
    "grc": "stakeholder:media",
    "relation": "among"
@@ -235,6 +247,14 @@
   },
   "computerworld-es": {
    "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cp24": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cpanel": {
+   "grc": "stakeholder:panels",
    "relation": "among"
   },
   "critic-arad": {
@@ -345,6 +365,10 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "guardian": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "hardwarecooking": {
    "grc": "stakeholder:media",
    "relation": "among"
@@ -414,6 +438,10 @@
    "relation": "among"
   },
   "itdaily": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "itmedia": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -509,6 +537,10 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "nbc-news": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "ncsc-nl": {
    "grc": "stakeholder:eu-agencies",
    "relation": "among"
@@ -541,6 +573,10 @@
    "grc": "stakeholder:eu-agencies",
    "relation": "among"
   },
+  "nyt": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "openai": {
    "grc": "stakeholder:openai",
    "relation": "is"
@@ -566,6 +602,10 @@
    "relation": "among"
   },
   "paperjam": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "pc-gamer": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -693,6 +733,10 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "the-atlantic": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "the-mandarin": {
    "grc": "stakeholder:media",
    "relation": "among"
@@ -714,6 +758,10 @@
    "relation": "among"
   },
   "the420": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "thenextweb": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -788,6 +836,10 @@
   "wiz": {
    "grc": "stakeholder:wiz",
    "relation": "is"
+  },
+  "wsj": {
+   "grc": "stakeholder:media",
+   "relation": "among"
   },
   "yahoo": {
    "grc": "stakeholder:media",

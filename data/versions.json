@@ -1,6 +1,33 @@
 {
- "current": "0.15.21",
+ "current": "0.17.0",
  "versions": [
+  {
+   "version": "0.17.0",
+   "date": "2026-10-24",
+   "title": "Wikipedia as an anchor: the PHP2Shell article read as a fractal semantic graph, one statement per sentence classed as fact, attribution or quote, each joined to its references and to the captures this site holds of them, every one of its 364 revisions kept as what it changed, its Wikidata item, and the daily pass now fetching it; with a brief for the researcher to follow every reference",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.16.1",
+   "date": "2026-10-24",
+   "title": "Correspondent register: fingerprint of the scheduled Opus session's key (the vaults page)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.16.0",
+   "date": "2026-10-24",
+   "title": "the chrome after the lens prototype: headlines near the top of every page (the bar in two lines on a laptop, 132px to 91px; slim reading strip and page kind; /ops/ content before its rail on a phone; /analysis/ hero readable on a phone); story-site's round 2",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.15.21",
    "date": "2026-10-24",

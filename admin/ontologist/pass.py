@@ -1,8 +1,8 @@
 """The ontologist's pass: what in data/ the ontology does not yet resolve, and where the graphs do not join.
 
 Read only: it writes nothing and prints a report; the build (admin/build/build.py) is what refuses to build when the
-graph would break its grammar. Run it first on every pass, fix what it lists in data/entities.json,
-data/attribution.json and data/crosswalk.json, then build. Standard library only.
+graph would break its grammar. Run it first on every pass (after admin/wikipedia/fetch.py), fix what it lists in
+data/entities.json, data/attribution.json and data/crosswalk.json, then build. Standard library only.
 Runbook: admin/ontologist/README.md. Brief: admin/content/briefs/2026-10-24__brief__the-ontologist.md.
 
     python3 admin/ontologist/pass.py            # the report
@@ -73,10 +73,36 @@ def main():
     gap = sorted(vc - cited)
     if gap:
         notes.append(f'{len(gap)} sources the vault\'s own claims cite that no site row cites: ' + ', '.join(gap[:12]) + (' …' if len(gap) > 12 else ''))
+    # Wikipedia: references no capture holds and publishers no entity claims (admin/build/wikitext.py reads the latest revision)
+    wdir = os.path.join(ROOT, 'data', 'wikipedia')
+    if os.path.isdir(wdir):
+        sys.path.insert(0, os.path.join(ROOT, 'admin', 'build'))
+        import wikitext
+        from urllib.parse import urlsplit, unquote
+        def nurl(u):
+            u = unquote(u.strip()); x = urlsplit(u if '://' in u else 'https://' + u)
+            h = x.netloc.lower()
+            for p in ('www.', 'm.', 'edition.', 'amp.'):
+                h = h[len(p):] if h.startswith(p) else h
+            return (h + x.path.rstrip('/')).lower()
+        srcs = {nurl(s['url']) for s in src}
+        hosts = {a.lower() for e in ent for a in e.get('aliases', []) if '.' in a and ' ' not in a}
+        for a in json.load(open(os.path.join(wdir, 'index.json'), encoding='utf-8'))['articles']:
+            d = os.path.join(wdir, a['slug'])
+            art = json.load(open(os.path.join(d, 'article.json'), encoding='utf-8'))
+            rev = json.load(open(os.path.join(d, 'revisions', f'{art["latest_revid"]}.json'), encoding='utf-8'))
+            X = wikitext.statements(rev['wikitext'])
+            miss = [r for r in X['references'] if r.get('url') and nurl(r['url']) not in srcs]
+            nopub = sorted({(r.get('publisher') or urlsplit(r['url']).netloc) for r in X['references'] if r.get('url') and not any(urlsplit(r['url']).netloc.lower().removeprefix('www.').endswith(h) for h in hosts)})
+            notes.append(f'Wikipedia {a["title"]} (revision {art["latest_revid"]}): {len(miss)} of {sum(1 for r in X["references"] if r.get("url"))} references not captured in the vault: ' + ', '.join(r['url'][:60] for r in miss[:8]) + (' …' if len(miss) > 8 else ''))
+            if nopub:
+                blocking.append(f'Wikipedia {a["title"]}: references whose publisher no entity claims (add an alias or an entity): ' + ', '.join(nopub[:12]) + (' …' if len(nopub) > 12 else ''))
+            un = [s for s in X['statements'] if not s['cited']]
+            notes.append(f'Wikipedia {a["title"]}: {len(un)} of {len(X["statements"])} statements carry no reference; {art["revisions"]} revisions, latest {art["latest_revision"]}')
     unused = sorted(ids - set(alias.values()) - set(refs))
     notes.append(f'{len(ent)} entities; {len(unused)} named only by their own row (no source, no attribution, no link): ' + ', '.join(unused[:15]) + (' …' if len(unused) > 15 else ''))
 
-    print(f'cartographer pass: {len(src)} sources, {len(pubs)} publisher spellings, {len(ent)} entities, '
+    print(f'ontologist pass: {len(src)} sources, {len(pubs)} publisher spellings, {len(ent)} entities, '
           f'{len(claims)} claims, {len(nums)} numbers, {len(expl)} signals')
     print(f'\nWould stop the build ({len(blocking)}):')
     for b in blocking or ['nothing']:

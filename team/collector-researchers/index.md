@@ -42,6 +42,7 @@ The partiesactors/index.htmlExploitation signalsexploitation/index.html
 | 242 | Capture the CVSS '10.0' relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's '90%' as it stands and the UK minister's figures, before any request rests on themFrom the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). | open |  |
 | 247 | Capture each publisher's published corrections route before a request goes: Wiz, AWS, WIRED, ISMG, The Hacker News, the BBC, CNN, Fortune, Clarín, Le Temps, ITmediaFrom the brief: a corrections liaison joins the team (22 October). | open |  |
 | 248 | Capture the FT's coverage of php2shell; nothing can be asked of the FT until it is capturedFrom the brief: a corrections liaison joins the team (22 October). | open |  |
+| 288 | Capture every reference of Wikipedia's PHP2Shell article that the vault does not hold (26 of 42 at revision 1381798757; the list on /wikipedia/php2shell/references/ and in admin/ontologist/pass.py), W3Techs and CSA Singapore first; then add the article's reference list to the source watch so a reference added to the article is captured within the hourFrom the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md). | open |  |
 
 ## What they have done
 - Captured the researchers' and vendors' accounts; marked openai.com and Techzine second-hand where a bot challenge blocked them.
@@ -55,4 +56,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.15.21 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/collector-researchers/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/collector-researchers/index.html

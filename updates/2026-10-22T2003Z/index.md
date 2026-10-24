@@ -78,4 +78,4 @@ The site went from nothing to 391 pages in about ten hours, and its own fact-che
 
 
 ---
-site v0.15.21 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/updates/2026-10-22T2003Z/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/updates/2026-10-22T2003Z/index.html

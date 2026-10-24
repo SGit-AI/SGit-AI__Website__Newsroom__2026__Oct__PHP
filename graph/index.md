@@ -2,13 +2,13 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-1319 nodes and 1720 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
+1322 nodes and 1723 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
 
 # The story as a graph
 
 In plain English Who said each thing first, who passed it on, and which saved pages it rests on. Click anything to walk from it to what it is connected to.
 
-1319 nodes and 1720 edges in 15 verbs: 441 captures, 382 sources, 274 parties, 70 claims, 68 events, 20 exploitation signals, 17 numbers, 16 advice, 12 tensions, 8 topics, 8 phases, 3 CVEs. Each is drawn from the same rows as the pages, so the picture cannot disagree with the text. Start anywhere, follow a link, and the graph re-centres on it; a node with a thick ring opens a graph of its own.
+1322 nodes and 1723 edges in 15 verbs: 441 captures, 382 sources, 277 parties, 70 claims, 68 events, 20 exploitation signals, 17 numbers, 16 advice, 12 tensions, 8 topics, 8 phases, 3 CVEs. Each is drawn from the same rows as the pages, so the picture cannot disagree with the text. Start anywhere, follow a link, and the graph re-centres on it; a node with a thick ring opens a graph of its own.
 
 The interactive graph needs JavaScript. Every node is also on a page: [the claims](../claims/index.html), [the sources](../sources/index.html), [the parties](../graph/parties/index.html), [the timeline](../timeline/index.html), [the tensions](../factcheck/index.html); the whole graph is [data/graph.json](../data/graph.json).
 
@@ -30,8 +30,8 @@ Every edge is a verb, and read from the other end it has a different name: Wiz *
 | `advises` | `advised_by` | A advises B | 16 | proposed here |
 | `classified_as` | `classifies` | A is classified as B | 138 | proposed here |
 | `names` | `named_in` | A names B | 14 | proposed here |
-| `part_of` | `has_part` | A is part of B | 10 | inherited from governance-beat-ontology |
-| `member_of` | `has_member` | A is a member of B | 28 | proposed here |
+| `part_of` | `has_part` | A is part of B | 12 | inherited from governance-beat-ontology |
+| `member_of` | `has_member` | A is a member of B | 29 | proposed here |
 | `works_for` | `employs` | A works for B | 3 | proposed here |
 
 ## How many voices, not how many pages
@@ -152,7 +152,7 @@ Kinds of node:
 | Tension | story | 12 | A row of the fact-check desk's contradiction ledger: claims that measure differently, dispute or contradict each other. A node, because the grammar has no self-inverse edge. |
 | Topic | story | 8 | A class in the topic taxonomy of claims. |
 | Phase | story | 8 | A class in the phase taxonomy of the timeline. |
-| Party | world | 274 | A person, organisation, agency, outlet, group, registry, platform or project (data/entities.json); its class is in 'class'. |
+| Party | world | 277 | A person, organisation, agency, outlet, group, registry, platform or project (data/entities.json); its class is in 'class'. |
 | Source | evidence | 382 | A page in the evidence vault's manifest (data/sources.json). |
 | Capture | evidence | 441 | One time the vault saved a source: its files and their hashes. The first fractal layer below a source. |
 | CVE | anchor | 3 | An anchor node: a CVE identifier, where the story graph joins the code-review graph (data/review.json) and the outside world (cve.org). It has no authority of its own. |
@@ -169,4 +169,4 @@ The grammar is the estate's, from [graphs.sgit.ai](https://graphs.sgit.ai/v1/gra
 
 
 ---
-site v0.15.21 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html

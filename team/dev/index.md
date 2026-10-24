@@ -53,6 +53,7 @@ Adminadmin/index.htmlThe pipeline statusstatus/index.htmlThe vaultsvaults/index.
 | 234 | 'What changed' in the reader's path lists story changes only: no version tags, commit hashes or page furnitureFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
 | 262 | From CI-003, step 3: a progression measure at every drain: of front-page sessions, the share reaching a briefing, the guidance or the evidence, by device and chosen persona, the week before the redesign and each week after | open |  |
 | 263 | From CI-003, step 4: confirm or reject an inferred graph link, signed with an enrolled key and sent as a 'review' through the collaborators lane; the drain records it in the edge's history (who may review and how many confirmations: the editor's call) | open |  |
+| 287 | On a phone the reading strip ('Your reading: ... Mark this page read, Mark everything read, Read items: fade hide show, Your desk') takes three lines, and the newcomer line three more, above every headline: one line each, the actions behind a tapFrom story-site's review of the live pages against the lens prototype (24 October). assets/reader-state.js and assets/site.js are dev's; the styles are already slimmed in v2-live.css. With the lens live (board 275), the newcomer line becomes the lens's first question and can go. | open |  |
 
 ## Waiting on someone else
 
@@ -115,4 +116,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.15.21 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/dev/index.html

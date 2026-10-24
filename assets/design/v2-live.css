@@ -236,3 +236,28 @@ nav.site .tools{flex-wrap:wrap;max-width:100%;min-width:0}
 .console-live > .side{position:sticky;top:5rem;height:auto;max-height:calc(100vh - 6rem);border-radius:14px}
 .console-live > .cmain{min-width:0}
 @media (max-width:900px){.console-live{grid-template-columns:1fr}.console-live > .side{position:static;max-height:none}}
+/* the chrome, after the lens prototype (24 October): the headline near the top of every page. The bar is one line on
+   a laptop; the newcomer line, the reading strip and the page's kind are one slim line each; the rail of a track's
+   home comes after its content on a phone. */
+@media (min-width:1100px){
+  nav.site .row>.brand,nav.site .row>.crumbs{white-space:nowrap}
+  nav.site .row>.nav-items{flex:1 0 100%;order:9}
+  nav.site .row>.status{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:0 1 auto}
+  nav.site .row>.crumbs{white-space:nowrap}
+  nav.site .tools{flex-wrap:nowrap;margin-left:auto;flex:none}
+  .dials-live{flex-wrap:nowrap}
+  .dials-live select{max-width:11rem}
+}
+@media (min-width:1100px) and (max-width:1499px){nav.site .row>.status{display:none}}
+.pbar .row{padding-top:.2rem;padding-bottom:.2rem}
+.rs-strip{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .9rem;padding:.3rem .7rem;margin:.5rem 0 .5rem;font-size:.82rem}
+.rs-strip p{margin:0}
+.origin{display:inline-flex;max-width:100%;margin:0 0 .5rem;padding:.2rem .6rem}
+.origin span{flex:0 1 auto}
+@media (max-width:760px){
+  .origin span{display:none}
+  .rs-strip{font-size:.78rem}
+  .pbar{font-size:.78rem}
+  .v2 .app>div{order:1}
+  .v2 .app>.rail{order:2}
+}

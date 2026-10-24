@@ -12,6 +12,24 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.17.0 · 24 October 2026new since your last visit
+
+Wikipedia as an anchor: the PHP2Shell article read as a fractal semantic graph, one statement per sentence classed as fact, attribution or quote, each joined to its references and to the captures this site holds of them, every one of its 364 revisions kept as what it changed, its Wikidata item, and the daily pass now fetching it; with a brief for the researcher to follow every reference
+
+No reader-facing section changed in this release.
+
+## v0.16.1 · 24 October 2026new since your last visit
+
+Correspondent register: fingerprint of the scheduled Opus session's key (the vaults page)
+
+No reader-facing section changed in this release.
+
+## v0.16.0 · 24 October 2026new since your last visit
+
+the chrome after the lens prototype: headlines near the top of every page (the bar in two lines on a laptop, 132px to 91px; slim reading strip and page kind; /ops/ content before its rail on a phone; /analysis/ hero readable on a phone); story-site's round 2
+
+No reader-facing section changed in this release.
+
 ## v0.15.21 · 24 October 2026new since your last visit
 
 Journalist: debrief and status for the first wake
@@ -1072,4 +1090,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.21 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

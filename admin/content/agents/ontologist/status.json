@@ -1,16 +1,52 @@
 {
  "schema": "newsroom/agent-status/v1",
  "agent": "ontologist",
- "as_of": "2026-10-24",
- "round": null,
- "state": "no round recorded under this policy yet",
- "done": [],
+ "as_of": "2026-10-25",
+ "round": "2026-10-25 (the editor's session)",
+ "state": "Wikipedia as an anchor built and released: /wikipedia/, the fetch tool, the parser, the wikipedia scope of the ontology",
+ "done": [
+  {
+   "what": "admin/wikipedia/fetch.py: 364 revisions of the PHP2Shell article, the Wikidata item Q141801185, 198 articles linking in",
+   "when": "2026-10-25"
+  },
+  {
+   "what": "admin/build/wikitext.py: one statement per sentence, classed by wording; references resolved to sources by address and to parties by host",
+   "when": "2026-10-25"
+  },
+  {
+   "what": "/wikipedia/php2shell/ with statements, references and history; the article's graph in the ontology's wikipedia scope, joined to the story graph by captured_as",
+   "when": "2026-10-25"
+  },
+  {
+   "what": "25 new parties for the article's publishers; 'contains' spelled once across scopes",
+   "when": "2026-10-25"
+  }
+ ],
  "tasks": {
   "board": [],
   "note": "the board rows this member owns are in data/admin.json"
  },
- "next": [],
- "asks": [],
+ "next": [
+  {
+   "what": "the daily pass fetches Wikipedia first (card updated)"
+  },
+  {
+   "what": "board 288 to 294: captures of the 26 uncaptured references (collectors), the desk's grading of uncited statements, the licence decision (editor), the growth of data/wikipedia/"
+  },
+  {
+   "what": "/fractal/ and <sg-graph> brought together (board 181)"
+  }
+ ],
+ "asks": [
+  {
+   "what": "abp@: add data/wikipedia/**, admin/wikipedia/**, admin/build/wikitext.py to scope.writes and wikipedia/** to scope.pages of this policy (the gate warns the pages are unowned)",
+   "from": "the librarian and security@ (the policy's keeper is abp@newsroom.sgit)"
+  },
+  {
+   "what": "the editor: whether Wikipedia's CC BY-SA text stays republished in full (board 293)",
+   "from": "the editor"
+  }
+ ],
  "tokens": {
   "value": null,
   "how": "not recorded"
