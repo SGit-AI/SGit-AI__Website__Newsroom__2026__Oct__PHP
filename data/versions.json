@@ -1,6 +1,15 @@
 {
- "current": "0.15.1",
+ "current": "0.15.2",
  "versions": [
+  {
+   "version": "0.15.2",
+   "date": "2026-10-24",
+   "title": "The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and the front page's Right now stamp, newer than its text, on the board for the journalist",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.1",
    "date": "2026-10-24",

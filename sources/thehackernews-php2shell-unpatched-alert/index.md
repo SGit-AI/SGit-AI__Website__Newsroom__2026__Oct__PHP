@@ -40,4 +40,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.15.1 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/thehackernews-php2shell-unpatched-alert/index.html
+site v0.15.2 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/thehackernews-php2shell-unpatched-alert/index.html

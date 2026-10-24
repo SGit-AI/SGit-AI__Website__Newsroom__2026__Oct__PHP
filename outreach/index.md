@@ -8,7 +8,7 @@ The corrections this site has asked other publishers to make about the PHP flaws
 
 When the fact-check desk finds that another publisher's words say more than the evidence shows, this site asks them, politely and with the evidence, to correct the wording. Each request is published here before any message is sent: what they said, quoted from a dated capture with its hash; what the evidence shows; a wording they can use; and where the request stands. The data is CC BY 4.0 and theirs to use. If we are the ones who are wrong, our page is corrected first.
 
-**11** requests, **10** ready for the editor, **1** waiting, **0** sent, **0** corrected. The editor reads and sends each request personally; the email is under each ready request. No agent writes to a publisher.
+**12** requests, **11** ready for the editor, **1** waiting, **0** sent, **0** corrected. The editor reads and sends each request personally; the email is under each ready request. No agent writes to a publisher.
 
 ## The requests
 
@@ -214,9 +214,31 @@ Subject: A suggested correction: "des millions de sites sont débranchés en urg
 **A wording we suggest.** *Palo Alto Networks Unit 42の推計では、最大2260万件のシステムが脆弱な可能性がある（算出方法は非公開）。*
 
 Fact-check: none; claims [scale-2.6m-hosts](../facts/scale-2.6m-hosts/index.html). Channel: to find, ITmedia's published corrections route, captured before use.
+
+**Waiting on.**
+- [R-012](#R-012)
 The email to send (the editor sends it, from the editor's own address, to the channel above)
-Subject: A suggested correction: "2200万台以上のサーバが危険にさらされた" Hello, On 23 October 2026 you published: "2200万台以上のサーバが危険にさらされた" (https://techtarget.itmedia.co.jp/tt/article/2610/23/2000002526/) We think this says more than the evidence shows: The article says more than 22 million servers were put at risk, as a fact; the figure is one company's estimate of systems that could be vulnerable, with no published method. The evidence, with the saved copies we checked and their hashes, is here: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-011 A wording that would keep your piece accurate: "Palo Alto Networks Unit 42の推計では、最大2260万件のシステムが脆弱な可能性がある（算出方法は非公開）。" The data is CC BY 4.0; use any of it with a credit to php.oct.2026.newsroom.sgit.ai. If we have this wrong, tell us and we will correct our page. Dinis Cruz Editor, PHP October 2026 (php.oct.2026.newsroom.sgit.ai)**Log.**
+Subject: A suggested correction: "2200万台以上のサーバが危険にさらされた" Hello, On 23 October 2026 you published: "2200万台以上のサーバが危険にさらされた" (https://techtarget.itmedia.co.jp/tt/article/2610/23/2000002526/) We think this says more than the evidence shows: The article says more than 22 million servers were put at risk, as a fact; the figure is one company's estimate of systems that could be vulnerable, with no published method. The wording starts with TechTarget (SearchSecurity), which we have asked separately: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-012 The evidence, with the saved copies we checked and their hashes, is here: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-011 A wording that would keep your piece accurate: "Palo Alto Networks Unit 42の推計では、最大2260万件のシステムが脆弱な可能性がある（算出方法は非公開）。" The data is CC BY 4.0; use any of it with a credit to php.oct.2026.newsroom.sgit.ai. If we have this wrong, tell us and we will correct our page. Dinis Cruz Editor, PHP October 2026 (php.oct.2026.newsroom.sgit.ai)**Log.**
 - **2026-10-24** drafted by desk@php.newsroom, quote checked; the suggested wording in Japanese is the desk's translation, for a native reader to check before sending
+- **2026-10-24** the English original by the same author is now captured (R-012); this translation waits for it
+
+### R-012: TechTarget (SearchSecurity) drafted origin
+
+**The point.** The headline and standfirst state 22 million vulnerable servers as a fact; the article's own body gives it as Palo Alto Networks' count of instances potentially vulnerable.
+
+**What they published.**
+- headline, third-party words: *PHP2Shell: 22M exposed servers at risk as emergency patches released* [TechTarget](../sources/techtarget-cybersecurity-news-366652444-php2shell-2/index.html)Checked in `sources/techtarget-cybersecurity-news-366652444-php2shell-2/captures/20261023T232528Z/text.txt`, sha256 `9c9a0459deeccb0d`.
+- standfirst, third-party words: *across 22 million vulnerable servers* [TechTarget](../sources/techtarget-cybersecurity-news-366652444-php2shell-2/index.html)Checked in `sources/techtarget-cybersecurity-news-366652444-php2shell-2/captures/20261023T232528Z/text.txt`, sha256 `9c9a0459deeccb0d`.
+- body, third-party words: *Palo Alto Networks said Wednesday it had identified more than 22.6 million exposed instances potentially vulnerable to the PHP2Shell flaws.* [TechTarget](../sources/techtarget-cybersecurity-news-366652444-php2shell-2/index.html)Checked in `sources/techtarget-cybersecurity-news-366652444-php2shell-2/captures/20261023T232528Z/text.txt`, sha256 `9c9a0459deeccb0d`.
+
+**What the evidence shows.** The body is right: Palo Alto Networks' Unit 42 counted instances that are potentially vulnerable, and has not published its method. The headline and standfirst drop both the attribution and the 'potentially'. Censys, which publishes its method, counted 1.57 million unpatched hosts among the 1.58 million whose PHP version it could read. TechTarget Japan's translation carries the same figure as a fact (R-011).
+
+**A wording we suggest.** *PHP2Shell: Palo Alto counts 22M exposed instances potentially at risk as emergency patches released*
+
+Fact-check: none; claims [scale-2.6m-hosts](../facts/scale-2.6m-hosts/index.html). Channel: to find, TechTarget's published corrections route, captured before use.
+The email to send (the editor sends it, from the editor's own address, to the channel above)
+Subject: A suggested correction: "PHP2Shell: 22M exposed servers at risk as emergency patches released" Hello, On 21 October 2026 you published: "PHP2Shell: 22M exposed servers at risk as emergency patches released" (https://www.techtarget.com/cybersecurity/news/366652444/PHP2Shell-22M-exposed-servers-at-risk-as-emergency-patches-released) We think this says more than the evidence shows: The headline and standfirst state 22 million vulnerable servers as a fact; the article's own body gives it as Palo Alto Networks' count of instances potentially vulnerable. The evidence, with the saved copies we checked and their hashes, is here: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-012 A wording that would keep your piece accurate: "PHP2Shell: Palo Alto counts 22M exposed instances potentially at risk as emergency patches released" The data is CC BY 4.0; use any of it with a credit to php.oct.2026.newsroom.sgit.ai. If we have this wrong, tell us and we will correct our page. Dinis Cruz Editor, PHP October 2026 (php.oct.2026.newsroom.sgit.ai)**Log.**
+- **2026-10-24** drafted by desk@php.newsroom at the 16:20 wake from a capture promoted today; it is the English original of TechTarget Japan's article (R-011, same author)
 
 ## Considered, and not asked
 
@@ -232,7 +254,7 @@ Coverage the desk read and decided not to ask about, and why: a publisher who qu
 
 | Status | Means | Requests |
 |---|---|---|
-| drafted | Written from a fact-check record; not yet read by the editor | 10 |
+| drafted | Written from a fact-check record; not yet read by the editor | 11 |
 | blocked | Waits on something named in blocked_by: usually an open finding against this site's own wording on the same point | 1 |
 | approved | The editor has read it and said it may go; not sent | 0 |
 | sent | The mail agent sent it to the publisher's corrections channel; the log has the time | 0 |
@@ -253,4 +275,4 @@ The desk is `liaison@php.newsroom`; its rules, the runbook and the message it pr
 
 
 ---
-site v0.15.1 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/outreach/index.html
+site v0.15.2 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/outreach/index.html
