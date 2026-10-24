@@ -1,6 +1,15 @@
 {
- "current": "0.14.17",
+ "current": "0.14.18",
  "versions": [
+  {
+   "version": "0.14.18",
+   "date": "2026-10-24",
+   "title": "The Sherpa's 11:45 pass: the join page's fixes checked live (two frictions closed), the risk graph's explore and gaps pages working on a phone, and the headline still 600 to 670 pixels down on every page walked",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.17",
    "date": "2026-10-24",

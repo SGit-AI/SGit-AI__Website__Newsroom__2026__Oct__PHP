@@ -35,7 +35,7 @@ The Sherpa: here to help yousherpa/index.htmlFeedback from collaboratorsfeedback
 | 123 | Synthetic readers' findings to owners (F002 to F006): 'What to tell the board' in the CTO briefing, deadlines and a status template in the PM briefing, Docker image tags and a backport-safe check, grades applied by the published rule, the masthead pound figure. Raised with briefing-writer, story-site, verifier and dev; tracked until each lands | open |  |
 | 124 | Trails (F007 to F009): proposed to dev, for the editor's go: persona and furthest-scroll in the page event, next-page paths, opens of Ask, Feedback and the reading tools, unknown paths counted apart; synthetic readers after every release. Telemetry lists six paths this site does not serve: for security to look at | open |  |
 | 125 | The Sherpa on the site: replace the 'New to this story?' banner with one line from the Sherpa linking to /start/, a 'Where next' block at the foot of every page from the reader's persona path, a one-screen guide to the site's own tools; drafts by the Sherpa, placement by story-site | open |  |
-| 192 | Sherpa: check CI-002's five steps on the live site, phone and desktop (/grc/explore/, edge basis, tests as nodes, the climb, /grc/gaps/) and dev's join fixes of v0.9.2; close the frictions that hold | open |  |
+| 192 | Sherpa: check CI-002's five steps on the live site, phone and desktop (/grc/explore/, edge basis, tests as nodes, the climb, /grc/gaps/) and dev's join fixes of v0.9.2; close the frictions that hold (11:45 pass, 24 October: /grc/explore/ and /grc/gaps/ live and working on a phone; the join fixes live in code, F014 and F023 closed; the dashed drawing of inferred links not yet seen on a phone) | open |  |
 | 193 | Sherpa: to the conductor for priority: all six synthetic readers, run 2 on v0.10.18, say most of what they raised on v0.4.3 is untouched (F001 to F006, now high); and two new frictions (F031 grade against status word; F032 Latest and timeline stop on 22 October) | open |  |
 | 194 | Sherpa: draft the brief and thread for several verification workflows across model providers on key pages (UF-005.2), with the fact-check desk | open |  |
 | 196 | Sherpa: a way for the editor to identify himself when he cannot sign in (a key he can present), with dev and security; later, at the editor's word | open |  |
@@ -66,4 +66,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.17 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/sherpa/index.html
+site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/sherpa/index.html
