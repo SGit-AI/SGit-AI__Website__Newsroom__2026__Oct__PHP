@@ -537,15 +537,76 @@
     "kind": "to find",
     "note": "ITmedia's published corrections route, captured before use"
    },
-   "blocked_by": [],
+   "blocked_by": [
+    "R-012"
+   ],
    "status": "drafted",
    "log": [
     {
      "at": "2026-10-24",
      "event": "drafted by desk@php.newsroom, quote checked; the suggested wording in Japanese is the desk's translation, for a native reader to check before sending"
+    },
+    {
+     "at": "2026-10-24",
+     "event": "the English original by the same author is now captured (R-012); this translation waits for it"
     }
    ],
-   "date": "23 October 2026"
+   "date": "23 October 2026",
+   "origin": "R-012"
+  },
+  {
+   "id": "R-012",
+   "publisher": "TechTarget (SearchSecurity)",
+   "actor": null,
+   "role": "origin",
+   "date": "21 October 2026",
+   "point": "The headline and standfirst state 22 million vulnerable servers as a fact; the article's own body gives it as Palo Alto Networks' count of instances potentially vulnerable.",
+   "said": [
+    {
+     "source": "techtarget-cybersecurity-news-366652444-php2shell-2",
+     "where": "headline",
+     "words": "PHP2Shell: 22M exposed servers at risk as emergency patches released",
+     "file": "sources/techtarget-cybersecurity-news-366652444-php2shell-2/captures/20261023T232528Z/text.txt",
+     "sha256": "9c9a0459deeccb0d0f8702c4727cedf98afe67f8151d093511d9fd341ae175e2",
+     "quote_checked": true
+    },
+    {
+     "source": "techtarget-cybersecurity-news-366652444-php2shell-2",
+     "where": "standfirst",
+     "words": "across 22 million vulnerable servers",
+     "file": "sources/techtarget-cybersecurity-news-366652444-php2shell-2/captures/20261023T232528Z/text.txt",
+     "sha256": "9c9a0459deeccb0d0f8702c4727cedf98afe67f8151d093511d9fd341ae175e2",
+     "quote_checked": true
+    },
+    {
+     "source": "techtarget-cybersecurity-news-366652444-php2shell-2",
+     "where": "body",
+     "words": "Palo Alto Networks said Wednesday it had identified more than 22.6 million exposed instances potentially vulnerable to the PHP2Shell flaws.",
+     "file": "sources/techtarget-cybersecurity-news-366652444-php2shell-2/captures/20261023T232528Z/text.txt",
+     "sha256": "9c9a0459deeccb0d0f8702c4727cedf98afe67f8151d093511d9fd341ae175e2",
+     "quote_checked": true
+    }
+   ],
+   "evidence": "The body is right: Palo Alto Networks' Unit 42 counted instances that are potentially vulnerable, and has not published its method. The headline and standfirst drop both the attribution and the 'potentially'. Censys, which publishes its method, counted 1.57 million unpatched hosts among the 1.58 million whose PHP version it could read. TechTarget Japan's translation carries the same figure as a fact (R-011).",
+   "suggested": "PHP2Shell: Palo Alto counts 22M exposed instances potentially at risk as emergency patches released",
+   "factcheck": {
+    "claims": [
+     "scale-2.6m-hosts"
+    ],
+    "tickets": []
+   },
+   "channel": {
+    "kind": "to find",
+    "note": "TechTarget's published corrections route, captured before use"
+   },
+   "blocked_by": [],
+   "status": "drafted",
+   "log": [
+    {
+     "at": "2026-10-24",
+     "event": "drafted by desk@php.newsroom at the 16:20 wake from a capture promoted today; it is the English original of TechTarget Japan's article (R-011, same author)"
+    }
+   ]
   }
  ],
  "quotes": {
