@@ -1,59 +1,47 @@
 {
- "note": "The journalist's desk: the cycle every evidence export goes through, the full pass and where it stands, and the pass ledger, one row per hand-kept data file with the evidence vault head it was last checked against. Kept by claude-journalist. The staleness report on /views/desk/ is computed from this file, the built pages and the vault's claims at every build.",
+ "note": "The journalist's desk: the cycle every evidence export goes through, the full pass and where it stands, and the pass ledger, one row per hand-kept data file with the evidence vault head it was last checked against. Kept by correspondent@php.newsroom (until 24 October, claude-journalist). The staleness report on /views/desk/ is computed from this file, the built pages and the vault's claims at every build.",
  "author": "claude-journalist",
  "decided": {
   "by": "Dinis Cruz, editor",
   "on": "2026-10-24",
-  "says": "the journalist does the full pass and maintains the site after each export as part of its workflow, released in turn rather than in one large push"
+  "says": "the journalist does the full pass and maintains the site after each export as part of its workflow, released in turn rather than in one large push; and, the same day, the pipeline: researcher, curator, journalist (Sonnet, publishes), correspondent (Opus, reviews and writes the analysis), then the ontologist, the librarian and the desk"
  },
  "cycle": [
   {
-   "id": "watch",
-   "who": "researcher@php.newsroom",
-   "label": "Watch",
-   "what": "The source watch re-reads every outside page on a schedule and keeps a dated snapshot when one changes."
+   "id": "research",
+   "who": "researcher@php.newsroom (Sonnet)",
+   "label": "Research",
+   "what": "Makes the network requests to the live websites and keeps everything it reads in the source-watch vault, the largest vault."
   },
   {
    "id": "curate",
-   "who": "curator@php.newsroom",
+   "who": "curator@php.newsroom (Sonnet)",
    "label": "Curate",
-   "what": "Five times a day the curator promotes about 18 snapshots into the evidence vault, reads each, and records its claims and timeline rows."
+   "what": "Reads only the researcher's vault, reads each capture, and writes promotions, claims and timeline rows into the evidence vault."
   },
   {
-   "id": "export",
-   "who": "claude-journalist",
-   "label": "Export",
-   "what": "The journalist pulls the evidence vault read-only and re-exports it into data/: sources, counts, claims, timeline, the latest capture."
+   "id": "publish",
+   "who": "journalist@php.newsroom (Sonnet)",
+   "label": "Publish",
+   "what": "Reads only the evidence vault: exports it, gives every new claim a verdict, refreshes the data the pages draw from, and releases to the live site."
   },
   {
    "id": "review",
-   "who": "claude-journalist",
+   "who": "correspondent@php.newsroom (Opus)",
    "label": "Review",
-   "what": "Every new vault claim appears on /claims/review/ as not yet reviewed; each gets a verdict (used, agrees, held back) checked against the saved page and the ledger."
+   "what": "Reads what went live, fixes and tweaks it in the open, writes the state of affairs and the analysis, and tightens the journalist's rules."
   },
   {
-   "id": "refresh",
-   "who": "claude-journalist",
-   "label": "Refresh",
-   "what": "The hand-kept data files the new evidence touches are updated, each row citing a capture, and the pass ledger below records the head each was checked against."
-  },
-  {
-   "id": "state",
-   "who": "claude-journalist",
-   "label": "State",
-   "what": "When the evidence moves enough to change what a reader should know, a new version of the state of affairs is written; its delta is on /views/."
-  },
-  {
-   "id": "release",
-   "who": "claude-journalist",
-   "label": "Release",
-   "what": "Build, gate, security check, release.sh to dev, check live. One step of the pass per release, not one large push."
+   "id": "graphs",
+   "who": "the ontologist, the librarian and the desk",
+   "label": "Graphs",
+   "what": "Only after the correspondent: the semantic graphs, the parties and the attribution are brought up to the reviewed data."
   },
   {
    "id": "settled",
    "who": "the build",
    "label": "Settled",
-   "what": "The staleness report on this page is empty: no 'as of' older than the latest capture, every file checked against the current head, every vault claim reviewed."
+   "what": "The report at the foot of this page is empty: no 'as of' older than the latest capture, every file checked against the current head, every vault claim reviewed."
   }
  ],
  "pass": [
@@ -67,7 +55,7 @@
    "n": 2,
    "title": "Refresh the hand-kept data from the new evidence",
    "status": "in progress",
-   "what": "Story, the compromise line, the offline ledger, agencies, numbers, the timeline, the KEV snapshot and the software inventory, each checked against the current head."
+   "what": "Story, the compromise line, the offline ledger, agencies, numbers, the timeline, the KEV snapshot and the software inventory, each checked against the current head. Done so far: the compromise evidence and claim, the offline list, the story summary, the front page's dated lines, the 'been hacked' answer, the context row and the 22.6 million figure, at 1f38e70921b2; to do: agencies, numbers in full, the timeline, the software inventory, defence and affected systems."
   },
   {
    "n": 3,
@@ -92,26 +80,26 @@
   {
    "path": "data/story.json",
    "kept_by_before": "story-site",
-   "checked_against": "1845598d9a38",
-   "note": "What is known on exploitation rewritten; the turn to looking for break-ins and the Swiss count added; three open questions updated."
+   "checked_against": "1f38e70921b2",
+   "note": "Exploitation paragraph as of 08:37 UTC on 24 October, with the Sophos withdrawal."
   },
   {
    "path": "data/claims.json",
    "kept_by_before": "story-site",
    "checked_against": null,
-   "note": "Partly: no-confirmed-compromise refreshed (24 October); the other 69 claims not yet re-read."
+   "note": "Partly: no-confirmed-compromise refreshed to 08:37 UTC on 24 October; the other 69 claims not yet re-read."
   },
   {
    "path": "data/impact.json",
    "kept_by_before": "story-site",
-   "checked_against": "1845598d9a38",
-   "note": "Four reports added: Germany's hospitals and hosts, Morocco, Romania, Japan, each with its source."
+   "checked_against": "1f38e70921b2",
+   "note": "Switzerland added (the EPFL, Basel-Stadt, the University of Geneva, La Mobilière)."
   },
   {
    "path": "data/compromise.json",
    "kept_by_before": "story-site",
-   "checked_against": "1845598d9a38",
-   "note": "11 rows now cite the promoted copies in the evidence vault; ACSC, Patchstack (PCMag) and Luxembourg added; KEV row at the watch's 08:03 check; as of the latest capture."
+   "checked_against": "1f38e70921b2",
+   "note": "Sophos (attempt; the withdrawn success claim), American Banker and BTC-ECHO added; The Next Web row linked; as of 08:37 UTC on 24 October."
   },
   {
    "path": "data/exploitation.json",
@@ -123,7 +111,7 @@
    "path": "data/numbers.json",
    "kept_by_before": "story-site",
    "checked_against": null,
-   "note": ""
+   "note": "22.6 million: Palo Alto Networks, via Insurance Business and TechTarget; what it measures."
   },
   {
    "path": "data/agencies.json",
@@ -164,8 +152,8 @@
   {
    "path": "data/plain.json",
    "kept_by_before": "story-site",
-   "checked_against": "1845598d9a38",
-   "note": "Right now, Latest and the three 'as of' lines rewritten for 23 October; the rest re-read."
+   "checked_against": "1f38e70921b2",
+   "note": "'As of' lines to 24 October; Latest with the Sophos withdrawal and American Banker."
   },
   {
    "path": "data/personas.json",
@@ -177,7 +165,7 @@
    "path": "data/questions.json",
    "kept_by_before": "librarian",
    "checked_against": null,
-   "note": "Partly: 'Has anyone actually been hacked?' refreshed to 23 October 16:04 UTC (24 October); the other answers not yet re-read."
+   "note": "Partly: 'Has anyone actually been hacked?' as of 08:37 UTC on 24 October; the other answers not yet re-read."
   },
   {
    "path": "data/signals.json",
@@ -194,8 +182,8 @@
   {
    "path": "data/state.json",
    "kept_by_before": "journalist",
-   "checked_against": "1845598d9a38",
-   "note": "State of affairs v2."
+   "checked_against": "1f38e70921b2",
+   "note": "State of affairs v3."
   }
  ],
  "kept_as_written": [

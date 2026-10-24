@@ -1,7 +1,7 @@
 {
  "about": "The fractal graph: one graph from the people affected, through the risks, the story and the evidence, to the flaws, the fix and the changed lines of php-src. A node is just a node; meaning lives in the edges. Every node opens into its own neighbourhood in the navigator.",
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.14.27",
+ "version": "0.15.17",
  "commit": "3584a98bda0f2c0d367255b046798b0d3a221a19",
  "layers": [
   {
@@ -698,8 +698,8 @@
   {
    "id": "claim:no-confirmed-compromise",
    "layer": "claim",
-   "name": "As of 16:04 UTC on 23 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing.",
-   "text": "reported, says this site, from every captured source in the evidence vault (295 sources, head 1845598d9a38), as of its latest capture at 16:04 UTC on 23 October",
+   "name": "As of 08:37 UTC on 24 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing. Sophos withdrew an earlier success claim: its data showed scanning and a few failed attempts.",
+   "text": "reported, says this site, from every captured source in the evidence vault (328 sources, head 1f38e70921b2), as of its latest capture at 08:37 UTC on 24 October",
    "status": "reported",
    "href": "claims/index.html#no-confirmed-compromise"
   },
@@ -1740,6 +1740,27 @@
    "name": "The Verge",
    "text": "Everything we know so far about the PHP2Shell vulnerability | The Verge",
    "href": "sources/the-verge-php2shell-websites-down/index.html"
+  },
+  {
+   "id": "source:cybersecuritynews-critical-php2shell-exploit-code",
+   "layer": "source",
+   "name": "Cyber Security News",
+   "text": "Critical PHP2Shell Exploit Code Goes Public as Hackers Attempt to Deploy Botnet Malware",
+   "href": "sources/cybersecuritynews-critical-php2shell-exploit-code/index.html"
+  },
+  {
+   "id": "source:americanbanker-news-banks-dodge-early-damage-from-php2s",
+   "layer": "source",
+   "name": "American Banker",
+   "text": "Banks dodge early damage from PHP2Shell flaws | American Banker",
+   "href": "sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html"
+  },
+  {
+   "id": "source:the-next-web-php2shell-no-confirmed-breaches",
+   "layer": "source",
+   "name": "The Next Web",
+   "text": "Millions of PHP2Shell attempts so far, but officials see no break-in",
+   "href": "sources/the-next-web-php2shell-no-confirmed-breaches/index.html"
   },
   {
    "id": "source:github-rjmendez-phpup-2026",
@@ -8881,6 +8902,21 @@
    "rel": "cites"
   },
   {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:cybersecuritynews-critical-php2shell-exploit-code",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:americanbanker-news-banks-dodge-early-damage-from-php2s",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:the-next-web-php2shell-no-confirmed-breaches",
+   "rel": "cites"
+  },
+  {
    "from": "claim:pocs-wrong",
    "to": "source:github-rjmendez-phpup-2026",
    "rel": "cites"
@@ -13052,14 +13088,14 @@
   }
  ],
  "counts": {
-  "nodes": 895,
-  "edges": 1230,
+  "nodes": 898,
+  "edges": 1233,
   "by_layer": {
    "stakeholder": 16,
    "risk": 9,
    "arc": 7,
    "claim": 138,
-   "source": 91,
+   "source": 94,
    "flaw": 2,
    "fix": 7,
    "code": 73,

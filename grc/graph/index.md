@@ -2,13 +2,13 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-721 nodes and 1442 typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.
+724 nodes and 1354 typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.
 
-[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [Explore](../../grc/explore/index.html) · [Gaps](../../grc/gaps/index.html) · [From the network](../../grc/network/index.html)
+[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [Explore](../../grc/explore/index.html) · [Gaps](../../grc/gaps/index.html) · [Changes](../../grc/changes/index.html) · [From the network](../../grc/network/index.html)
 
 # The risk graph: stakeholders, risks, weaknesses, vulnerabilities, code
 
-721 nodes and 1442 edges, built from the register on every release and joined to the graphs already on this site: the claims and their sources ([the story graph](../../graph/index.html)) and the fix and the code it changed ([the code review graph](../../review/index.html)). One graph, no copies: a claim, a source or a file is the same node here as there. The JSON is [data/grc-graph.json](../../data/grc-graph.json).
+724 nodes and 1354 edges, built from the register on every release and joined to the graphs already on this site: the claims and their sources ([the story graph](../../graph/index.html)) and the fix and the code it changed ([the code review graph](../../review/index.html)). One graph, no copies: a claim, a source or a file is the same node here as there. The JSON is [data/grc-graph.json](../../data/grc-graph.json).
 
 A line from a stakeholder group to a risk means someone in the group carries part of it or of a risk beneath it; a line from a risk to a weakness means the risk, or one beneath it, arises from it; the weaknesses on the two CVEs reach the fix and the code on [the code review graph](../../review/index.html). Each risk's own page draws its whole path.
 
@@ -106,7 +106,7 @@ Gives rise to: [R10 This newsroom's own agents are steered, leak or mislead](../
 |---|---|
 | test | 270 |
 | control | 95 |
-| source | 79 |
+| source | 82 |
 | claim | 62 |
 | stakeholder | 43 |
 | treatment | 41 |
@@ -139,7 +139,7 @@ Every edge is a verb read from the first node to the second; its inverse is read
 | `told_in` | `tells` | 26 |
 | `tracked_by` | `tracks` | 45 |
 | `briefed_by` | `briefs` | 9 |
-| `cites` | `cited_by` | 249 |
+| `cites` | `cited_by` | 161 |
 | `shown_on` | `shows` | 58 |
 | `tests` | `tested_by` | 502 |
 | `owned_by` | `owns` | 40 |
@@ -155,10 +155,10 @@ Every edge says how it is known: read from a capture (with its slug), read from 
 
 | How it is known | Edges | Verbs |
 |---|---|---|
-| **source**: read from a capture | 340 | cites 249, backed_by 91 |
+| **source**: read from a capture | 252 | cites 161, backed_by 91 |
 | **code**: read from the fix commit | 287 | tests 270, realised_in 9, fixed_by 8 |
 | **inferred**: inferred by an agent, not yet checked | 815 | tests 232, governed_by 139, part_of 76, shown_on 58, arises_from 51, tracked_by 45, protected_by 41, owned_by 40, told_in 26, treated_by 24, borne_by 22, informed_by 15, concerns 12, raised_by 11, briefed_by 9, located_in 8, regulated_by 6 |
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/graph/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/grc/graph/index.html

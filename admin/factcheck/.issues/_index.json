@@ -1,9 +1,9 @@
 {
-  "total_nodes": 162,
-  "last_updated": 1792828702572,
+  "total_nodes": 164,
+  "last_updated": 1792857667637,
   "type_counts": [
     {
-      "count": 125,
+      "count": 126,
       "node_type": "finding"
     },
     {
@@ -19,7 +19,7 @@
       "node_type": "evidence"
     },
     {
-      "count": 4,
+      "count": 5,
       "node_type": "run"
     }
   ]

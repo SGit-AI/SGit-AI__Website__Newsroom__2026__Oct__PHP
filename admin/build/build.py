@@ -166,7 +166,7 @@ def short_name(row):
     pub = pub.replace('NSA Cybersecurity', 'NSA Cyber').replace("ASD's ACSC", 'ACSC')
     pub = pub.replace('Alexandre Daubois', 'Daubois').replace('The Hacker News', 'THN').replace('Techzine Global', 'Techzine')
     kind = row.get('kind')
-    if kind == 'social' and 'x.com' in (row.get('url') or ''):
+    if kind == 'social' and re.match(r'https?://(www\.)?(x|twitter)\.com/', row.get('url') or ''):
         pub += ' on X'
     pub = re.sub(r'\s+,', ',', pub)
     return pub if len(pub) <= 34 else pub[:34].rsplit(' ', 1)[0].rstrip(',') + '…'
@@ -189,7 +189,7 @@ def to_markdown(fragment):
     """A small, deterministic HTML to Markdown conversion for the .md twins."""
     s = fragment
     s = re.sub(r'<svg.*?</svg>', '', s, flags=re.S)
-    s = re.sub(r'<script.*?</script>', '', s, flags=re.S)
+    s = re.sub(r'<script\b.*?</script\b[^>]*>', '', s, flags=re.S | re.I)
     s = re.sub(r'<sg-meter[^>]*></sg-meter>', '', s)
     # tables
     def table(m):
@@ -252,7 +252,7 @@ NAV = [
                       ('pipeline/index.html', 'The fact pipeline'), ('versions/index.html', 'How the story changed'),
                       ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults'] if x.get('nav', True)]),
     ('GRC', [('grc/index.html', 'GRC: risks, owners, standards'), ('grc/risks/index.html', 'The risk register'), ('grc/stakeholders/index.html', 'Stakeholders and their registers'),
-             ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/explore/index.html', 'Explore the graph: from any node'), ('grc/gaps/index.html', 'What the graph is missing'), ('grc/network/index.html', 'From the sgit network')]),
+             ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/explore/index.html', 'Explore the graph: from any node'), ('grc/gaps/index.html', 'What the graph is missing'), ('grc/changes/index.html', 'What changed in the graph'), ('grc/network/index.html', 'From the sgit network')]),
     ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed'), ('views/desk/index.html', "The journalist's desk: what is still stale")]),
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
@@ -371,7 +371,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
   <div class="row">
     <p><b>{SITE_NAME}</b> ({SITE}) tracks PHP news for one month. This month that is one story, the two critical PHP security flaws, followed as evidence: every claim with a status and its sources, every source captured, dated and hashed into a private vault. Built and run by one editor and a team of software agents; <a href="{up}team/index.html">the roles</a> and <a href="{up}method/index.html">the method</a> are public, and the site is rebuilt from the vault, never written by hand. One of the SGit Newsroom's story sites: up from here are <a href="https://oct.2026.newsroom.sgit.ai/">October 2026</a>, <a href="https://2026.newsroom.sgit.ai/">the year</a> and <a href="https://newsroom.sgit.ai/">the newsroom</a>, whose own section on the story is <a href="{NEWSROOM}">here</a>. Part of the <a href="https://sgit.ai/network/index.html">sgit.ai network</a>.</p>
     <p class="disc">&#9888; Participant disclosure: published by the sgit project, which builds the vault and metering stack this site runs on. Content CC BY 4.0 for this site's own text, tables and data; quoted words are their authors', linked; no third-party page is reproduced. Code Apache-2.0.</p>
-    <p class="small">&#9673; This page sends one anonymous usage event (page, referrer host, country and region, no IP, no cookie) to a write-only vault lane; <a href="{up}admin/telemetry/index.html">what is sent and what is counted</a>. Honoured: Do Not Track and Global Privacy Control.</p>
+    <p class="small">&#9673; This page sends one anonymous usage event (page, referrer host, a coarse location your browser looks up itself; no IP stored by us, no cookie) to a write-only vault lane; <a href="{up}admin/telemetry/index.html">what is sent and what is counted</a>. Honoured: Do Not Track and Global Privacy Control.</p>
     <p class="small">site v{E(VERSION)} &middot; evidence vault commit {E(D["vault"]["head"]["commit"] or "unknown")} &middot; <a href="{up}admin/index.html">engineering</a> &middot; <a href="{up}{md_path(path)}">this page as markdown</a> &middot; <a href="{up}llms.txt">llms.txt</a> &middot; <a href="{REPO_URL}">GitHub</a></p>
   </div>
 </footer>
@@ -800,7 +800,7 @@ def build_claim_review():
         if i not in {c['id'] for c in vc}:
             sys.exit(f'data/claim-review.json: {i} is not a claim in data/vault-claims.json')
     pending = [c for c in vc if c['id'] not in site_ids]
-    groups = OrderedDict([('held back', []), ('used', []), ('agrees', []), ('not yet reviewed', [])])
+    groups = OrderedDict([('held back', [])] + [(k, []) for k in D['claim-review']['verdicts'] if k != 'held back'] + [('not yet reviewed', [])])
     for c in pending:
         groups[rv[c['id']]['verdict'] if c['id'] in rv else 'not yet reviewed'].append(c)
     words = D['claim-review']['verdicts']
@@ -1249,7 +1249,7 @@ def build_team():
 <p class="lead">This site is built and run by {humans}, and a team of software agents, with help from <a href="../collaborators/index.html">collaborators</a> who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is <a href="../data/team.json">data/team.json</a>, kept by <a href="conductor/index.html">the conductor</a>.</p>
 <div class="stats">{stats}</div>
 {section("members", "Who is on it", groups)}
-{section("run", "How the team runs", f'<p class="caveat">{E(T.get("now", ""))}</p><p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>What runs on a schedule, its tasks and every run with its log, live: <a href="schedule/index.html">schedule</a>. Where every agent is right now, what each waits for and from whom: <a href="status/index.html">status</a>. Every vault the agents made, by ID: <a href="vaults/index.html">vaults</a>. What the agents run on their own, when, and every run they made: <a href="runs/index.html">runs</a>.</p><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
+{section("run", "How the team runs", f'<p class="caveat">{E(T.get("now", ""))}</p><p>{E(T["cycle"]["about"])}</p><ol>{run}</ol><p>What runs on a schedule, its tasks and every run with its log, live: <a href="schedule/index.html">schedule</a>. Where every agent is right now, what each waits for and from whom: <a href="status/index.html">status</a>, or drawn as a <a href="control/index.html">control room</a>. Every vault the agents made, by ID: <a href="vaults/index.html">vaults</a>. What the agents run on their own, when, and every run they made: <a href="runs/index.html">runs</a>.</p><p>The team talks through three vaults: the conductor vault, which says where the team is; the issues vault, one task queue per member; and the mail vault, where members write to each other. <a href="channels/index.html">How the team talks</a> says what each holds and the rules.</p>')}
 {section("pipeline", "The pipeline", pipe, "How a URL becomes a published claim, and who does each step.")}
 {section("audiences", "The audiences", f'<ul>{auds}</ul>', "Each briefing is a role too: a reader whose question the site answers in one page.")}
 {section("rules", "The rules every member shares", '''<ul>
@@ -1568,6 +1568,7 @@ def build_llms():
         lines.append(f'- [Schedule: {c["agent"]}]({BASE_URL}/team/schedule/{c["agent"]}/index.md): {c["status"]}; {c["objective"]}')
     lines.append(f'- [Vaults: who made each one]({BASE_URL}/team/vaults/index.md): every vault each agent made, by ID only, and whether its key is sealed to the editor')
     lines.append(f'- [Status]({BASE_URL}/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev')
+    lines.append(f'- [Control room]({BASE_URL}/team/control/index.md): every agent, its schedule and runs, drawn from the same data as status')
     lines.append(f'- [Runs]({BASE_URL}/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run')
     for m in TEAM['members']:
         lines.append(f'- [{m["name"]}]({BASE_URL}/team/{m["id"]}/index.md): {m["role"]}; {m["summary"]}')
@@ -1644,7 +1645,7 @@ def build_sitejs():
     });
   }
 
-  var html = document.documentElement, root = html.getAttribute('data-root') || '', here = html.getAttribute('data-path') || '';
+  var html = document.documentElement, root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length), here = html.getAttribute('data-path') || '';
   function get(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v) { try { if (v === null) window.localStorage.removeItem(k); else window.localStorage.setItem(k, v); } catch (e) {} }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -1734,7 +1735,7 @@ def build_sitejs():
 
 // A note in the bar when this page is older than the release the site now serves (one same-origin read of /VERSION).
 (function () {
-  var v = document.querySelector('nav.site .ver'), root = document.documentElement.getAttribute('data-root') || '';
+  var v = document.querySelector('nav.site .ver'), root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length);
   if (v && window.fetch) fetch(root + 'VERSION?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
     var live = (t || '').trim(), mine = v.textContent.replace(/^v/, '');
     if (!/^\d+\.\d+\.\d+$/.test(live)) return;
@@ -1755,7 +1756,7 @@ def build_all():
     build_claims(); build_claim_review(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
-    build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_comms(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
+    build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); __import__('control').build_control(globals()); build_vault_register(); build_schedule(); build_comms(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline(); __import__('design').build_tracks(globals())
     build_review(); build_fractal(); build_admin_section(); build_pack_mode(); build_keys(); build_appsec(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa(); build_desk(); build_members()
 
@@ -1766,6 +1767,9 @@ def main():
     # the pages this release changed, against the last release commit; only at a release's own build (see release_pages.py)
     RELEASE_PAGES.update(__import__('release_pages').for_build(VERSION, HTML_OUT)['releases']); OUTPUTS.add('data/release-pages.json')
     build_release_history()
+    # and what this release changed in the risk graph (grc_history.py), for /grc/changes/
+    GRC_HISTORY.update(__import__('grc_history').for_build(VERSION, json.load(open(os.path.join(DATA, 'grc-graph.json'), encoding='utf-8')))); OUTPUTS.add('data/grc-history.json')
+    build_grc_changes()
     __import__('design').write_live_css(globals()); write('assets/design/dials.js', __import__('design').DIALS_JS); build_now(); build_llms(); _design_made = __import__('design').build(globals()); open(os.path.join(ROOT, 'llms.txt'), 'a', encoding='utf-8').write(__import__('design').llms_lines(_design_made, BASE_URL)); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); build_stack_catalogue(); save_items()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
@@ -2225,6 +2229,7 @@ def build_admin_section():
 <p class="lead">Every page sends one anonymous event to a write-only lane on a separate, private vault: which page, the referrer's host, the visitor's country, region and city from a geolocation lookup, language, screen class and time zone, with a random session id that lives in the tab. No IP address, no cookie, no name, no user-agent string; since v0.8.4, whether the browser is automated (by class: a crawler's name, webdriver, headless) and, if this browser holds a key from <a href="../../join/index.html">/join/</a> or was set below, its role (editor, team, power user), never who. The event is encrypted in your browser to the key below before it leaves; the lane's reply is a blind <code>{{"ok": true}}</code>. Do Not Track and Global Privacy Control switch it off. The brief is on <a href="../briefs/index.html#2026-10-22__telemetry-over-an-append-lane">briefs</a>.</p>
 <h2>What this page carries</h2>
 <p>{E(t["what"])}</p>
+{("<h3>The policy</h3><ol>" + "".join(f"<li>{E(x)}</li>" for x in t["policy"]) + "</ol>") if t.get("policy") else ""}
 <p class="kv"><b>Lane</b> vault <code>{E(t["vault_id"])}</code> on <code>{E(t["endpoint"])}</code> &middot; <b>append token</b> <code>{E(t["append_token"])}</code> (write-only; publishable by design) &middot; <b>encrypted to</b> <code>{E(t["recipient"]["fingerprint"])}</code></p>
 <pre>{E(t["recipient"]["encrypt"])}</pre>
 <p>The geolocation lookup goes to {" then ".join(f"<code>{E(u)}</code>" for u in t["geo"])}; that service sees your IP address and returns a country, a region and a city; the event keeps the three names and nothing else. The vault server sees that a lane received something, its size and the time, and the requesting IP, as any server does.</p>
@@ -4835,6 +4840,8 @@ def grc_path(G, rid):
 GRC_TESTS = load('grc-tests') if os.path.exists(os.path.join(DATA, 'grc-tests.json')) else None
 GRC_BASIS = load('grc-basis') if os.path.exists(os.path.join(DATA, 'grc-basis.json')) else {'confirmed': []}
 GRC_GAPS = load('grc-gaps') if os.path.exists(os.path.join(DATA, 'grc-gaps.json')) else None
+GRC_HISTORY = load('grc-history') if os.path.exists(os.path.join(DATA, 'grc-history.json')) else {'releases': [], 'unchanged': [], 'labels': {}}
+GRC_NAV = [None]  # the GRC section's crumb line, kept by build_grc for /grc/changes/, which is drawn again once this release's change is known
 # How an edge is known (CI-002.5, the brief of 23 October): read from a capture, read from the commit, inferred by an
 # agent, or confirmed by a person; with what supports it.
 GRC_BASES = OrderedDict([('source', 'read from a capture'), ('code', 'read from the fix commit'), ('inferred', 'inferred by an agent, not yet checked'), ('confirmed', 'checked by a person')])
@@ -4848,7 +4855,13 @@ def grc_graph(G):
     def node(i, kind, label, href):
         if i not in seen:
             seen.add(i); nodes.append({'id': i, 'kind': kind, 'label': label, 'href': href})
+    joined = set()
     def edge(a, verb, b, kind, ref, note=None):
+        # one edge per (from, verb, to): a claim that backs several risks cites its sources once, not once per risk
+        # (until v0.14.24 it was added again for every risk, 91 repeats in 1,442)
+        if (a, verb, b) in joined:
+            return
+        joined.add((a, verb, b))
         basis = {'kind': kind, 'ref': ref}
         if note: basis['note'] = note
         edges.append({'from': a, 'rel': verb, 'inverse': GRC_VERBS[verb], 'to': b, 'basis': basis})
@@ -5063,7 +5076,7 @@ def build_grc():
     used_ctl = Counter(c for r in R.values() for c in r['frameworks'])
     kinds = Counter(n['kind'] for n in nodes)
     acc = '<p>No risk on this register is <b>accepted</b>. An acceptance is an act by the holder of a risk, for a stated interval, and nobody can accept on anyone else\'s behalf; this desk records risks and their holders, it does not accept for them. Until a holder accepts, funds or fixes, each risk stands as it is rated here.</p>'
-    nav = '<p class="crumb"><a href="{u}grc/index.html">GRC</a> &middot; <a href="{u}grc/risks/index.html">Risks</a> &middot; <a href="{u}grc/stakeholders/index.html">Stakeholders</a> &middot; <a href="{u}grc/frameworks/index.html">Frameworks</a> &middot; <a href="{u}grc/graph/index.html">The graph</a> &middot; <a href="{u}grc/explore/index.html">Explore</a> &middot; <a href="{u}grc/gaps/index.html">Gaps</a> &middot; <a href="{u}grc/network/index.html">From the network</a></p>'
+    nav = '<p class="crumb"><a href="{u}grc/index.html">GRC</a> &middot; <a href="{u}grc/risks/index.html">Risks</a> &middot; <a href="{u}grc/stakeholders/index.html">Stakeholders</a> &middot; <a href="{u}grc/frameworks/index.html">Frameworks</a> &middot; <a href="{u}grc/graph/index.html">The graph</a> &middot; <a href="{u}grc/explore/index.html">Explore</a> &middot; <a href="{u}grc/gaps/index.html">Gaps</a> &middot; <a href="{u}grc/changes/index.html">Changes</a> &middot; <a href="{u}grc/network/index.html">From the network</a></p>'
     # --- the front page of the section
     stats = ''.join(stat(n, l) for n, l in [(len(R), 'risks'), (len(top), 'at the top'), (len(S), 'stakeholders'), (sum(1 for s in S.values() if s['kind'] == 'role'), 'roles'),
                                            (len(W), 'weaknesses'), (len(FW), 'frameworks'), (len(used_ctl), 'controls mapped'), (len(edges), 'edges')])
@@ -5267,6 +5280,7 @@ def build_grc():
     page('grc/graph/index.html', 'The risk graph: php2shell stakeholders, risks, weaknesses, vulnerabilities and code', f'{len(nodes)} nodes and {len(edges)} typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.', body, kind='analysis', topics='php2shell grc graph')
     build_grc_explore(nodes, edges, nav)
     build_grc_gaps(nodes, edges, nav)
+    GRC_NAV[0] = nav; build_grc_changes()
     build_grc_network(G, nav)
 
 # ----------------------------------------------------------------------------- the risk graph as a tool (CI-002, the brief of 23 October)
@@ -5305,6 +5319,103 @@ def grc_reach(adj, start, kinds, verbs, within):
                 seen.add(y); nxt.append(y)
         frontier = nxt
     return None
+
+def grc_vkey(v):
+    return [int(x) for x in v.split('.')]
+
+def grc_change_html(ch, depth):
+    """One comparison of the risk graph, old against new: the measures side by side, then what was added, removed,
+    re-based and which gaps opened or closed. The same structure assets/grc-changes.js draws for any two releases."""
+    L, up = GRC_HISTORY['labels'], '../' * depth
+    rules = {r['id']: r for r in (GRC_GAPS or {}).get('rules', [])}
+    def lab(i):
+        k, t = L.get(i, ['', i])
+        return f'<a href="{up}grc/explore/index.html#focus={E(i)}">{E(t)}</a> <span class="small">{E(k)}</span>'
+    def edge_txt(k):
+        a, v, b = k.split(' ', 2)
+        return f'{E(L.get(a, ["", a])[1][:60])} <i>{E(v.replace("_", " "))}</i> {E(L.get(b, ["", b])[1][:60])}'
+    def listing(items, fmt, cap=60):
+        more = f'<li class="small">and {len(items) - cap} more</li>' if len(items) > cap else ''
+        return '<ul class="gc-list">' + ''.join(f'<li>{fmt(x)}</li>' for x in items[:cap]) + more + '</ul>'
+    b0, b1 = ch['before'], ch['after']
+    rows = [['Nodes', b0['nodes'], b1['nodes']], ['Edges', b0['edges'], b1['edges']]]
+    for kind in ('source', 'code', 'inferred', 'confirmed', 'unrecorded'):
+        x, y = b0['basis'].get(kind, 0), b1['basis'].get(kind, 0)
+        if x or y:
+            rows.append([f'Edges {"with no basis recorded" if kind == "unrecorded" else "known as " + kind}', x, y])
+    for rid, r in rules.items():
+        rows.append([f'Gap: {r["title"]}', b0['gaps'].get(rid, 0), b1['gaps'].get(rid, 0)])
+    def delta(x, y):
+        d = y - x
+        return f'<span class="gc-{"up" if d > 0 else "down"}">{"+" if d > 0 else ""}{d:,}</span>' if d else '<span class="small">same</span>'
+    out = [f'<div class="tw"><table class="t gc-measures"><thead><tr><th>Measure</th><th>v{E(ch["from"] or "none")}</th><th>v{E(ch["to"])}</th><th>Change</th></tr></thead><tbody>'
+           + ''.join(f'<tr><td>{E(m)}</td><td>{x:,}</td><td>{y:,}</td><td>{delta(x, y)}</td></tr>' for m, x, y in rows) + '</tbody></table></div>']
+    def by_kind(ids):
+        k = Counter(L.get(i, ['?'])[0] for i in ids)
+        return ', '.join(f'{n} {E(kind)}' for kind, n in k.most_common())
+    if ch['nodes_added']:
+        out.append(f'<h3>Nodes added: {len(ch["nodes_added"])}</h3><p class="small">{by_kind(ch["nodes_added"])}</p>' + listing(ch['nodes_added'], lab))
+    if ch['nodes_removed']:
+        out.append(f'<h3>Nodes removed: {len(ch["nodes_removed"])}</h3>' + listing(ch['nodes_removed'], lambda i: E(L.get(i, ["", i])[1])))
+    if ch['edges_added']:
+        verbs = Counter(k.split(' ')[1] for k, _ in ch['edges_added'])
+        out.append(f'<h3>Edges added: {len(ch["edges_added"])}</h3><p class="small">' + ', '.join(f'{n} <i>{E(v.replace("_", " "))}</i>' for v, n in verbs.most_common()) + '</p>'
+                   + listing(ch['edges_added'], lambda kb: f'{edge_txt(kb[0])} <span class="gx-basis gx-b-{E(kb[1])}">{E(kb[1])}</span>', 40))
+    if ch['edges_removed']:
+        out.append(f'<h3>Edges removed: {len(ch["edges_removed"])}</h3>' + listing(ch['edges_removed'], edge_txt, 40))
+    if ch['basis_changed']:
+        out.append(f'<h3>How an edge is known, changed: {len(ch["basis_changed"])}</h3>' + listing(ch['basis_changed'], lambda x: f'{edge_txt(x[0])}: {E(x[1])} &rarr; <b>{E(x[2])}</b>'))
+    if ch['basis_recorded']:
+        k = Counter(b for _, b in ch['basis_recorded'])
+        out.append(f'<h3>Basis recorded for the first time: {len(ch["basis_recorded"])} edges</h3><p class="small">Before, edges carried no basis. Now: ' + ', '.join(f'{n} {E(b)}' for b, n in k.most_common()) + '.</p>')
+    for word, key in (('opened', 'gaps_opened'), ('closed', 'gaps_closed')):
+        for rid, ids in ch[key].items():
+            title = rules.get(rid, {}).get('title', rid)
+            out.append(f'<h3>Gap {word}: {E(title)} ({len(ids)})</h3>' + listing(ids, lab))
+    if len(out) == 1:
+        out.append('<p>Nothing in the graph changed between these two releases.</p>')
+    return ''.join(out)
+
+def grc_releases():
+    """Every release with a graph, oldest first, each with its totals (those of the last change at or before it)."""
+    ch = {r['version']: r for r in GRC_HISTORY['releases']}
+    vs = sorted(set(ch) | set(GRC_HISTORY.get('unchanged', [])), key=grc_vkey)
+    out, last = [], {'nodes': 0, 'edges': 0, 'basis': {}, 'gaps': {}}
+    for v in vs:
+        if v in ch:
+            last = ch[v]['totals']
+        out.append((v, ch.get(v), last))
+    return out
+
+def build_grc_changes():
+    """/grc/changes/: what changed in the risk graph between releases (CI-003.8), from data/grc-history.json."""
+    nav = GRC_NAV[0]
+    if nav is None or not GRC_HISTORY['releases']:
+        return
+    rels = grc_releases()
+    tot = {v: t for v, _, t in rels}
+    dates = {x['version']: x['date'] for x in D['versions']['versions']}
+    changed = [(v, c) for v, c, _ in rels if c]
+    def pair(c):
+        before = tot.get(c['against']) if c['against'] else {'nodes': 0, 'edges': 0, 'basis': {}, 'gaps': {}}
+        return dict(c, **{'from': c['against'], 'to': c['version'], 'before': before, 'after': c['totals']})
+    lv, lc = changed[-1]
+    rows = ''.join(f'<tr><td><a href="#from={E(c["against"] or "")}&amp;to={E(v)}">v{E(v)}</a> <span class="small">{E(dates.get(v, ""))}</span></td><td>{"v" + E(c["against"]) if c["against"] else "the first graph"}</td>'
+                   f'<td>+{len(c["nodes_added"])} &minus;{len(c["nodes_removed"])}</td><td>+{len(c["edges_added"])} &minus;{len(c["edges_removed"])}</td>'
+                   f'<td>{len(c["basis_changed"]) + len(c["basis_recorded"])}</td><td>+{sum(map(len, c["gaps_opened"].values()))} &minus;{sum(map(len, c["gaps_closed"].values()))}</td>'
+                   f'<td>{c["totals"]["nodes"]:,} / {c["totals"]["edges"]:,}</td></tr>' for v, c in reversed(changed))
+    body = f"""
+{nav.format(u="../../")}
+<h1>What changed in the risk graph, release by release</h1>
+<p class="lead">The graph is rebuilt at every release. This page compares two releases of it: the nodes and edges added and removed, the edges whose basis changed (from inferred to confirmed, say), and the gaps that opened or closed. {len(rels)} releases carry a graph; {len(changed)} of them changed it. Pick any two below; the default is the latest change.</p>
+<div class="gc-pick" id="gc-pick" data-releases="{E(" ".join(v for v, _, _ in rels))}"></div>
+<section id="gc-pair"><h2>v{E(lc["against"] or "none")} &rarr; v{E(lv)}</h2>{grc_change_html(pair(lc), 2)}</section>
+<h2 id="releases">Every release that changed the graph</h2>
+{'<div class="tw"><table class="t"><thead><tr><th>Release</th><th>Against</th><th>Nodes</th><th>Edges</th><th>Bases</th><th>Gaps</th><th>Nodes / edges after</th></tr></thead><tbody>' + rows + '</tbody></table></div>'}
+<p class="small">How it is made: every release commits the graph the build wrote (<a href="../../data/grc-graph.json">data/grc-graph.json</a>). <code>admin/build/grc_history.py</code> compares each release's graph with the one before and keeps what changed in <a href="../../data/grc-history.json">data/grc-history.json</a>, written once per release, at its own build. The gaps are counted with today's rules (<a href="../../data/grc-gaps.json">data/grc-gaps.json</a>) over each release's graph, so every pair is measured the same way. An edge is the same edge when its start, verb and end are the same. Graphs before v0.10.13 recorded no basis on an edge. Comparing two releases that are not next to each other replays the changes between them in your browser.</p>
+<script src="../../assets/grc-changes.js" defer></script>
+"""
+    page('grc/changes/index.html', 'What changed in the risk graph, release by release', 'The php2shell risk graph compared between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed; computed from git at every release.', body, kind='analysis', topics='php2shell grc graph changes releases')
 
 def build_grc_gaps(nodes, edges, nav):
     """/grc/gaps/: what the graph is missing, computed at every build from the rules in data/grc-gaps.json."""
@@ -6116,7 +6227,7 @@ def build_desk():
     n_phr = sum(len(h) for _, _, h in pages)
     settled = not (pages or files or unreviewed)
     cyc = ''.join(f'<li class="dk-step"><b>{E(c["label"])}</b><span class="dk-who">{E(c["who"])}</span><span>{E(c["what"])}</span></li>' for c in dk['cycle'])
-    cycle_fig = f'<figure class="dk-fig"><ol class="dk-cycle">{cyc}</ol><figcaption>Each export, in order. The last step is reached when the report at the foot of this page is empty; the next curator wake starts the cycle again.</figcaption></figure>'
+    cycle_fig = f'<figure class="dk-fig"><ol class="dk-cycle">{cyc}</ol><figcaption>Each export, in order, from the researcher to the correspondent; the semantic graphs only after the correspondent. The last step is reached when the report at the foot of this page is empty; the next curator wake starts again.</figcaption></figure>'
     pas = ''.join(f'<li class="dk-pass dk-{E(s["status"].replace(" ", "-"))}"><span class="dk-n">{s["n"]}</span><b>{E(s["title"])}</b><span class="dk-st">{E(s["status"])}{(", v" + E(s["release"])) if s.get("release") else ""}</span><span>{E(s["what"])}</span></li>' for s in dk['pass'])
     pass_fig = f'<figure class="dk-fig"><ol class="dk-seq">{pas}</ol><figcaption>One step per release, in this order, so that no release carries the whole pass.</figcaption></figure>'
     frows = [[f'<code>{E(f["path"])}</code>', E(f['kept_by_before']), (f'<code>{E(f["checked_against"])}</code>' + (' <span class="st st-confirmed">current</span>' if f['checked_against'] == head else ' <span class="st st-disputed">older head</span>')) if f.get('checked_against') else '<span class="st st-unverified">not yet</span>', E(f.get('note') or '')] for f in dk['files']]
@@ -6127,8 +6238,8 @@ def build_desk():
               + section('r-claims', f'Vault claims not yet reviewed ({len(unreviewed)})', f'<p>Listed with their sources on <a href="../../claims/review/index.html#g-not-yet-reviewed">the claims waiting for review</a>.</p>'))
     body = f'''
 <h1>The journalist's desk: keeping the site current</h1>
-<p class="lead">After every export of the evidence vault, the journalist goes through the site so that it says what the evidence now says. This page is that work in the open: the cycle each export goes through, the full pass and where it stands, and a report, computed at every build, of what is still older than the evidence. The editor's decision ({E(dk["decided"]["on"])}): {E(dk["decided"]["says"])}.</p>
-{section("cycle", "The cycle, after every export", cycle_fig)}
+<p class="lead">After every export of the evidence vault, the journalist publishes it and the correspondent reviews what went live, so that the site says what the evidence now says. This page is that work in the open: the pipeline each export goes through, the full pass and where it stands, and a report, computed at every build, of what is still older than the evidence. The editor's decision ({E(dk["decided"]["on"])}): {E(dk["decided"]["says"])}.</p>
+{section("cycle", "The pipeline, after every export", cycle_fig)}
 {section("pass", "The full pass, step by step", pass_fig + '<p>The plan in full is <a href="../../admin/briefs/index.html">among the briefs</a>, as written on 24 October.</p>')}
 {section("report", "What is still stale", report)}
 <p class="small">Computed from <a href="../../data/desk.json">data/desk.json</a>, the pages of this build and the vault's claims, at vault head <code>{E(head)}</code>.</p>
@@ -6188,7 +6299,7 @@ def build_pulse():
     hdr = ''.join(f'<th title="{E(rn[k])}">{k}</th>' for k in sorted(rn, key=int))
     trs = []
     for v in P['vulns']:
-        cells = ''.join(f'<td class="pr {"pr-yes" if r["status"] == "reached" else "pr-no"}" title="{E(r["rung"])}: {E(r["status"] or "")}{(" " + E(r["date"])) if r.get("date") else ""}">{E(_pulse_short(r.get("date")) if r.get("date") else ("yes" if r["status"] == "reached" else ""))}</td>' for r in v['rungs'])
+        cells = ''.join(f'<td class="pr {"pr-yes" if r["status"] == "reached" else ("pr-nc" if r["status"] == "not checked" else "pr-no")}" title="{E(r["rung"])}: {E(r["status"] or "")}{(" " + E(r["date"])) if r.get("date") else ""}">{E(_pulse_short(r.get("date")) if r.get("date") else ("yes" if r["status"] == "reached" else ("?" if r["status"] == "not checked" else "")))}</td>' for r in v['rungs'])
         a = v['attention']
         trs.append(f'<tr><td><a href="{E(_pulse_slug(v["cve"]))}/index.html"><b>{E(v["cve"])}</b></a><div class="small">{E(v["vendor"] or "")} {E(v["product"] or "")}{" &middot; " + E(v["brand_name"]) if v.get("brand_name") else ""}{" &middot; old flaw, newly listed" if v["old_flaw_newly_listed"] else ""}</div></td>{cells}<td>{E(str(a.get("news_items")))} <span class="small">over {E(str(a.get("feeds_checked")))} feeds</span></td></tr>')
     legend = ''.join(f'<li><b>{E(k)}</b> {E(rn[k])}</li>' for k in sorted(rn, key=int))
@@ -6197,7 +6308,7 @@ def build_pulse():
 <p class="lead">A separate section, not about PHP. Pulse is the SGit newsroom's record of {len(P["vulns"])} vulnerabilities in the news this month, php2shell among them: for each, the evidence that it is being exploited, as a ladder of eight dated rungs, and, beside it, how much attention it gets. It is kept apart from the rest of this site and may move to a site of its own.</p>
 <p class="small">{head}. Exported by <code>admin/build/export_pulse.py</code> into <a href="../data/pulse.json">data/pulse.json</a>; no capture is copied. Pulse says of itself: {E(P["pulse_says"])}</p>
 {section("read", "Before you read the table", caveats)}
-{section("ladder", "Evidence and attention, side by side", f'<ol class="legend">{legend}</ol><div class="tw"><table class="t pulse"><thead><tr><th>Vulnerability</th>{hdr}<th>News items</th></tr></thead><tbody>{"".join(trs)}</tbody></table></div><p class="small">A cell shows the month and day a rung was reached, or "yes" when Pulse records it reached without a date; an empty cell is not reached at the last check.</p>')}
+{section("ladder", "Evidence and attention, side by side", f'<ol class="legend">{legend}</ol><div class="tw"><table class="t pulse"><thead><tr><th>Vulnerability</th>{hdr}<th>News items</th></tr></thead><tbody>{"".join(trs)}</tbody></table></div><p class="small">A cell shows the day a rung was reached, or "yes" when Pulse records it reached without a date; "?" is a rung Pulse has not been able to check (no open capture shows it either way); an empty cell is not reached at the last check.</p>')}
 '''
     page('pulse/index.html', 'What else is going on: Pulse, exploited vs. talked about', f'A separate section: the SGit newsroom\'s Pulse vault, {len(P["vulns"])} vulnerabilities with their evidence of exploitation as eight dated rungs beside the attention each gets. Not this site\'s evidence; no score, no ranking.', body, kind='evidence', topics='vulnerabilities exploitation attention pulse')
     for v in P['vulns']:
@@ -6239,6 +6350,7 @@ def build_pulse():
 ONT, ENT, ATT = load('ontology'), load('entities'), load('attribution')
 ENTITIES = OrderedDict((e['id'], e) for e in ENT['entities'])
 ALIAS = {a: e['id'] for e in ENT['entities'] for a in e.get('aliases', [])}
+UNMAPPED_PUBLISHERS = {}  # publisher -> source slugs, for the ontologist; filled by the graph build
 SG_GRAPH_JS = 'assets/components/sg-graph/v1/v1.0/v1.0.0/sg-graph.js'
 SG_GRAPH_FILES = ['sg-graph.js', 'sg-graph-core.js', 'sg-graph.tpl', 'sg-graph.css']
 
@@ -6317,10 +6429,15 @@ def story_graph():
             edge('party:' + m, 'member_of', 'party:' + eid)
 
     for slug, s in SOURCES.items():
-        if s['publisher'] not in ALIAS: sys.exit(f'data/entities.json: no entity has the alias {s["publisher"]!r} (source {slug})')
+        # a publisher no entity claims yet does not stop the build: the journalist publishes each export as it comes, and
+        # the ontologist maps new publishers after the correspondent's run (the editor, 24 October 2026). The source is
+        # in the graph without its published_by edge, and the publisher is listed in data/graph.json 'unmapped_publishers'.
+        if s['publisher'] not in ALIAS:
+            UNMAPPED_PUBLISHERS.setdefault(s['publisher'], set()).add(slug)
         node('source:' + slug, 'source', f'{short_name(s)}: {s.get("title") or slug}', href=f'sources/{slug}/index.html',
              url=s['url'], primary=bool(s.get('primary')), published=s.get('published'), source_kind=s.get('kind'))
-        edge('source:' + slug, 'published_by', 'party:' + ALIAS[s['publisher']])
+        if s['publisher'] in ALIAS:
+            edge('source:' + slug, 'published_by', 'party:' + ALIAS[s['publisher']])
         syn = ATT.get('sources', {}).get(slug)
         if syn:
             if syn['syndicates'] not in ENTITIES: sys.exit(f'data/attribution.json: source {slug} syndicates unknown entity {syn["syndicates"]!r}')
@@ -6411,7 +6528,9 @@ def story_graph():
                 # 'carries' means the capture bears on the claim: an agency carrying it is an original in its own right,
                 # and a primary record can carry the fact that refutes it. Only an outlet carrying another party's
                 # statement, on a claim not refuted, has passed it on.
-                pub = ALIAS[SOURCES[m.group(1)]['publisher']]
+                pub = ALIAS.get(SOURCES[m.group(1)]['publisher'])
+                if pub is None:
+                    continue  # an unmapped publisher: no relays edge until the ontologist maps it
                 origins = {entity_root(e) for e in ATT['claims'][a['id']]['states']}
                 if ENTITIES[pub]['kind'] == 'outlet' and a.get('verdict') != 'refuted' and entity_root(pub) not in origins and 'this-site' not in origins:
                     edge('party:' + pub, 'relays', 'claim:' + a['id'], basis='capture carries it', capture=f'{m.group(1)}/{m.group(2)}')
@@ -6467,6 +6586,7 @@ def graph_census(G):
 
 def build_graph():
     G = story_graph()
+    G['unmapped_publishers'] = {p: sorted(v) for p, v in sorted(UNMAPPED_PUBLISHERS.items())}  # for the ontologist's run
     write('data/graph.json', json.dumps(G, indent=1, ensure_ascii=False) + '\n')
     kinds, verbs = graph_census(G)
     K = G['ontology']['kinds']
@@ -6929,8 +7049,18 @@ def comms_notes():
     if not os.path.exists(p): return []
     return [(n['commit'], n['when'], n['from'], n['to'], n['note'], n['subject']) for n in json.load(open(p, encoding='utf-8'))['notes']]
 
+def comms_to(to, depth):
+    # the recipient's schedule page when it has a card, else its team page, else its name: a note can be addressed to
+    # a member that does not run on a schedule (To-security), and a link to a page that is not built breaks the gate
+    if to == 'all':
+        return '<b>all</b>'
+    for path, src in ((f'team/schedule/{to}/index.html', os.path.join(DATA, 'schedule', f'{to}.json')), (f'team/{to}/index.html', os.path.join(ROOT, 'team', to, 'index.html'))):
+        if os.path.exists(src):
+            return f'<a href="{"../" * depth}{U(path)}">{E(to)}</a>'
+    return E(to)
+
 def comms_list(notes, depth):
-    rows = [[E(when[:16].replace('T', ' ')), E(sender or '?'), ('<b>all</b>' if to == 'all' else f'<a href="{"../" * depth}team/schedule/{U(to)}/index.html">{E(to)}</a>' if os.path.exists(os.path.join(DATA, 'schedule', to + '.json')) else E(to)),
+    rows = [[E(when[:16].replace('T', ' ')), E(sender or '?'), comms_to(to, depth),
              E(note), f'<code>{E(sha[:10])}</code><div class="note">{E(subj[:120])}</div>'] for sha, when, sender, to, note, subj in notes]
     return table(['When (UTC)', 'From', 'To', 'Note', 'Commit'], rows, 'board') if rows else '<p class="small">No notes yet.</p>'
 
@@ -7168,5 +7298,32 @@ def appsec_llms_lines():
         out.append(f'- [{a["id"]}: {a["title"]}]({BASE_URL}/admin/appsec/advisories/{a["id"]}/index.md): {a["severity"]}, {a["status"]}')
     return out + ['']
 
+def _state_hashes():
+    """The generated data files a build reads back at its start (the ledger, the items, the release pages, the risk
+    graph's history ...), by hash: every data/*.json the last build listed as its own output."""
+    import hashlib
+    try:
+        names = [l.strip() for l in open(os.path.join(ROOT, 'admin', 'build', 'outputs.txt'), encoding='utf-8') if l.startswith('data/') and l.strip().endswith('.json')]
+    except FileNotFoundError:
+        names = []
+    out = {}
+    for n in names:
+        try:
+            out[n] = hashlib.sha256(open(os.path.join(ROOT, n), 'rb').read()).hexdigest()
+        except FileNotFoundError:
+            out[n] = None
+    return out
+
 if __name__ == '__main__':
+    # Settle: a page that reads a generated file written later in the build (data/items.json, data/sections.json,
+    # data/release-pages.json, data/grc-history.json ...) lags one build, so the gate's rebuild differed from the first
+    # build of every release that changed content (board 175). When this build changed any of those files, build once
+    # more, at most twice, so the first build already writes what a second would.
+    _before = _state_hashes()
     main()
+    _round = int(os.environ.get('BUILD_SETTLE_ROUND', '0'))
+    if _state_hashes() != _before and _round < 2:
+        print(f'build: generated state changed; building again to settle it (round {_round + 1})')
+        os.environ['BUILD_SETTLE_ROUND'] = str(_round + 1)
+        sys.stdout.flush()
+        os.execv(sys.executable, [sys.executable] + sys.argv)

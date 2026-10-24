@@ -370,6 +370,12 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - The brief and the editor's words: `admin/content/briefs/2026-10-24__brief__the-redesign-live.md`.
 
+### The lens, a prototype (story-site, 24 October 2026)
+
+- `/admin/design/lens/`: three pages (the front page, the agencies, the team console) that re-shape in place from four settings at the top right: time (1, 5, 15 minutes, all), who, aim (understand, act, check the evidence) and seen. Built by `admin/build/design.py` (`build_lens`) from the live data; `assets/design/lens-boot.js`, `lens.css` and `lens.js` are generated.
+
+- Not on the live reader pages: the live site still has the two dials of v0.14.0. The brief and the editor's words: `admin/content/briefs/2026-10-24__brief__the-lens.md`.
+
 ### Recorded, not started
 
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
@@ -454,4 +460,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

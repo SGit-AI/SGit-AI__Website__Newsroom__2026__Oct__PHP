@@ -8,7 +8,7 @@
   'use strict';
   var R = window.P2SReader, box = document.getElementById('desk');
   if (!R || !box) return;
-  var root = document.documentElement.getAttribute('data-root') || '';
+  var root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length);   // only ever '../' repeated: the depth, never page text
   var ZONES = [['research', 'Research'], ['for-you', 'For you'], ['stories', 'Stories'], ['site', 'About the site']];
   var KW = { fact: 'Fact', page: 'Page', briefing: 'Briefing', front: 'Front page', story: 'Story', question: 'Question', source: 'Source', event: 'Timeline' };
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }

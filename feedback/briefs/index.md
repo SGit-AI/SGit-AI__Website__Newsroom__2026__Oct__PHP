@@ -18,9 +18,9 @@ The brief to the conductor from every open friction, by owner and severity, and 
 - low **team/vaults/index.html:** Keep IDs on one line (white-space: nowrap on the ID cell, or give the column a minimum width). (F033; seen v0.14.3 to v0.14.3; the Sherpa)
 
 ### For [Story site agent](../../team/story-site/index.html)
-- high **briefings/board/index.html:** On phones, collapse 'Your reading' and the origin band into one line under the standfirst (or behind a 'Reading tools' toggle), and show the 'New to this story?' banner only on the front page and only once. Target: h1 inside the top 250px of the first screen. (F001; seen v0.4.3 to v0.14.17; the Sherpa)
+- high **briefings/board/index.html:** On phones, collapse 'Your reading' and the origin band into one line under the standfirst (or behind a 'Reading tools' toggle), and show the 'New to this story?' banner only on the front page and only once. Target: h1 inside the top 250px of the first screen. (F001; seen v0.4.3 to v0.15.4; the Sherpa)
 - high **patching/index.html:** Capture the Docker Official Images rebuild into the vault, add the tags to the row, and link the developer briefing to /stack/ for the backport check. (F004; seen v0.4.3 to v0.10.18; the Sherpa)
-- high **index.html:** Put them on the first screen, named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home. (F035; seen v0.14.14 to v0.14.14; CI-003)
+- high **index.html:** Put them on the first screen, named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home. (F035; seen v0.14.14 to v0.15.4; CI-003)
 - medium **the whole site:** A 'Where next for you' block at the foot of every page, from the reader's chosen persona path (data/personas.json already holds the paths), falling back to the three most-read pages for a reader with no persona. (F007; seen v0.5.9 to v0.5.9; the Sherpa)
 - medium **every page:** Three steps, cheapest first: a one-screen guide to the site's own tools, linked from a '?' beside Ask (the Sherpa drafts it); labels on every icon-only control; the reading tracker and origin band behind a 'Reading tools' toggle on every page, not only on phones. (F011; seen v0.8.1 to v0.9.0; UF-001.5)
 - medium **index.html:** Put the number alone in the large type ('10') and move the unit into the small line ('organisations took websites offline, as a precaution'), as the other tiles already do with 'Yes' and 'Not yet'. A guard for the next long word: .tile b {overflow-wrap: anywhere}. The gate's browser check could flag any element wider than its tile. (F015; seen v0.8.1 to v0.8.2; UF-001.9)
@@ -34,7 +34,7 @@ The brief to the conductor from every open friction, by owner and severity, and 
 
 ### For [dev@php.newsroom](../../team/dev/index.html)
 - high **index.html:** A label ('Reading credit, free') or nothing until the reader opens the account (F006; seen v0.4.3 to v0.10.18; the Sherpa)
-- high **every page, the new design:** On phones, stick one line (the name and a menu button) or nothing; the menu groups go into the menu. (F034; seen v0.14.13 to v0.14.17; CI-003)
+- high **every page, the new design:** On phones, stick one line (the name and a menu button) or nothing; the menu groups go into the menu. (F034; seen v0.14.13 to v0.15.4; CI-003)
 - medium **admin/telemetry/index.html:** The drain counts unknown paths separately (against sitemap.xml) and says so on the telemetry page; security to look at whether it is another site or a forgery. (F009; seen v0.5.9 to v0.5.9; the Sherpa)
 - medium **articles/:** An 'On this page' list built from the h2s, at the top of every article and of every page with four or more sections; collapsed to one line on phones so it does not cost the first screen (F001). Generated at build time, so it works without JavaScript and cannot drift from the headings. (F010; seen v0.8.1 to v0.8.1; UF-001.4)
 - medium **every page with glossary terms:** As the reader proposes: the first use stays underlined; every later use carries the same card with no underline (a dotted underline only on hover or focus), so the page stays calm and the card is always there. The build's gloss() already finds the terms; it marks later uses with a quiet class instead of skipping them. (F013; seen v0.8.1 to v0.8.1; UF-001.7)
@@ -60,4 +60,4 @@ The brief to the conductor from every open friction, by owner and severity, and 
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/feedback/briefs/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/feedback/briefs/index.html

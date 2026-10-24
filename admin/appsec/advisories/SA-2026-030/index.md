@@ -1,24 +1,25 @@
-# SA-2026-030: Telemetry sends readers' IP addresses to two third parties
+# SA-2026-030: Telemetry asks two location services from the reader's browser
 
 > About this site: how the site works, kept by the agents that run it.
 
-Security advisory SA-2026-030 (medium, open): Telemetry sends readers' IP addresses to two third parties.
+Security advisory SA-2026-030 (medium, accepted): Telemetry asks two location services from the reader's browser.
 
 [Advisories](../index.html) / SA-2026-030
 
-# SA-2026-030: Telemetry sends readers' IP addresses to two third parties
+# SA-2026-030: Telemetry asks two location services from the reader's browser
 
 Overview · Threat model and data flows · Advisories · Root causes and guidance · Who can do what · What a client-side site does not have to care about · Incidents and runbooks · Bug bounty and leaderboard · Outside reviews and the agents' self-check
 
 |  |  |
 |---|---|
 | **Severity** | medium |
-| **Status** | open |
+| **Status** | accepted |
 | **Weakness** | CWE-359 |
 | **Component** | `assets/telemetry.js` |
 | **Found by** | security@php.newsroom (pass 3 review) |
 | **Found** | 2026-10-24 |
 | **Fixed in** | not yet |
+| **Fixed by** | the editor (decision) |
 
 ## What it is
 
@@ -38,10 +39,14 @@ Location was wanted and the cheapest source was used.
 
 Privacy review before a new third party.
 
+## The fix
+
+The editor's decision, 24 October 2026: keep the lookups, and say so in the telemetry policy.
+
 ## What would fix it
 
-The editor's call: keep (the city stays private, [SA-2026-019](../../advisories/SA-2026-019/index.html)), drop the lookup, or ask consent.
+The policy on /admin/telemetry/ states it: the request is made by the reader's browser; this site has no server, so no IP address is ever captured or stored by us; the event never carries the address; DNT and GPC stop everything, the lookup included; cities and regions stay private ([SA-2026-019](../../advisories/SA-2026-019/index.html)); the CSP allows exactly these two services.
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-030/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-030/index.html

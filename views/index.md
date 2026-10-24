@@ -10,9 +10,9 @@ Two things, kept apart. **The state of affairs** is one living page: what is kno
 
 ## The state of affairs, now
 
-[v2: The state of affairs at the end of 23 October: still no named victim, and the advice turns from patching to looking for break-ins23 October 2026, 23:55 UTC · Sixty-eight more sources, read by the curator, change none of the measures that matter most: no organisation has confirmed a compromise through php2shell, and neither CVE is in CISA's exploited list at this desk's last check. What moved is the advice. Singapore and Luxembourg now tell operators to check whether they were already broken into, and the first national count of servers still affected after the fix is in: about 3.5% in Switzerland.](state/index.html)
+[v3: The state of affairs on 24 October: a vendor withdraws the first claim of a break-in, banks report none, and the exploited list still does not have it24 October 2026, 12:30 UTC · Three days after the release, still no organisation has said it was compromised through php2shell. The one security vendor that had claimed a successful compromise, Sophos, withdrew it: its data showed scanning and a few failed attempts. US banks and the large crypto platforms report none, the Netherlands joins the authorities that have seen no attack succeed, and neither CVE was in CISA's exploited list at 05:53 UTC today.](state/index.html)
 
-[Every version](state/history/index.html) · [what changed in the latest](state/v1-v2/index.html)
+[Every version](state/history/index.html) · [what changed in the latest](state/v2-v3/index.html)
 
 ## The analyses
 - [What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list](../articles/what-changed-in-a-day/index.html) 2026-10-23
@@ -22,4 +22,4 @@ Two things, kept apart. **The state of affairs** is one living page: what is kno
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/views/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/views/index.html

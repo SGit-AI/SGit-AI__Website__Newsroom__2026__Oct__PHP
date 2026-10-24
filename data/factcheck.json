@@ -377,19 +377,19 @@
   {
    "id": "amazon-honeypot",
    "claim_hash": "f893a4f684799232",
-   "run": "Run-1",
+   "run": "Run-5",
    "mode": "vault",
    "kind": "attribution",
    "level": 2,
-   "verdict": "holds",
-   "tension": "disputed",
+   "verdict": "holds-in-part",
+   "tension": "superseded",
    "contradictions": [
     "K-002"
    ],
    "volatile": true,
-   "as_of": "20261022T111755Z",
+   "as_of": "20261023T160435Z",
    "status_fit": "ok",
-   "reason": "Amazon's own post (now cited first) carries all three parts and the quoted sentence character for character; The Hacker News is an echo of the same Amazon post, not independent, so the level stays A2. Amazon's 'broadly exploited in the wild' is disputed by CISA's dated negative and by Austin and Huntress, partly because they measure different things (attempts versus successful compromise) at different times.",
+   "reason": "The quoted words were Amazon's in its post as captured at 11:17 UTC on 22 October. Amazon revised the sentence at 21:25 UTC that day, without a note, to 'now seeing broad exploitation attempts in the wild'; the vault's 23 October capture carries the new wording. The claim gives the first wording as Amazon's without its date. The rest (17 October honeypot hit, PoC attempts from 02:00 UTC on 21 October) holds as Amazon wrote it; one party, A2.",
    "checked": [
     {
      "source": "aws-security-blog-madpot",
@@ -446,6 +446,14 @@
      "result": "partial",
      "excerpt": "The exploits being sprayed indiscriminately either don’t work at all, test for timing-based differences, or crash the target,",
      "outside_citation": true
+    },
+    {
+     "source": "aws-security-blog-madpot",
+     "file": "sources/aws-security-blog-madpot/captures/20261023T160435Z/text.txt",
+     "sha256": "4108b2850c48a8f2141f05996ef7e7ed115a0a0f80ce697b3d237b8d13e7c764",
+     "result": "partial",
+     "excerpt": "PHP2Shell is now seeing broad exploitation attempts in the wild.",
+     "outside_citation": false
     }
    ],
    "quotes_checked": [
@@ -464,6 +472,7 @@
     "Contradiction-2",
     "Evidence-12",
     "Finding-122",
+    "Finding-126",
     "Finding-14",
     "Finding-60"
    ],
@@ -2202,8 +2211,8 @@
   },
   {
    "id": "no-confirmed-compromise",
-   "claim_hash": "8e3ec69354bd8bdd",
-   "run": "Run-3",
+   "claim_hash": "954e9edc944cb1ca",
+   "run": "Run-5",
    "mode": "vault",
    "kind": "state",
    "level": 4,
@@ -2211,9 +2220,9 @@
    "tension": "none",
    "contradictions": [],
    "volatile": true,
-   "as_of": "20261023T160435Z",
+   "as_of": "20261024T083700Z",
    "status_fit": "ok",
-   "reason": "Now dated (16:04 UTC on 23 October) and scoped to the vault (Finding-26 fixed), and 'reported' fits a time-bounded absence. Independent parties carry the negative: the PHP Foundation's director via The Verge, Paperjam for Luxembourg, Patchstack's own telemetry via PCMag. The vendor half (board 212) holds as reworded: Hadrian's 'exploited at scale' and Patchstack's partner reports come through the press (Insurance Business, Recorded Future, Bitpage), not their own posts, so that half is A3. Every quote checked verbatim in its capture.",
+   "reason": "Refreshed to 08:37 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim.",
    "checked": [
     {
      "source": "cisa-kev-json",
@@ -2333,6 +2342,30 @@
      "sha256": "8d88bddde485e36f27c001a80e9ad0506055b64f3879347345be5ad336a10cad",
      "result": "partial",
      "excerpt": "Hadrian says it is seeing PHP2Shell exploited at scale, mostly through PHP’s session upload progress path.",
+     "outside_citation": false
+    },
+    {
+     "source": "cybersecuritynews-critical-php2shell-exploit-code",
+     "file": "sources/cybersecuritynews-critical-php2shell-exploit-code/captures/20261023T232528Z/text.txt",
+     "sha256": "bdf6e94a1a8a118b2f1a5546ec71c6eda552a7289fb2b15ed34885ddcbfa89ac",
+     "result": "carries",
+     "excerpt": "Sophos said its customer data showed scanning and a small number of failed exploit attempts.",
+     "outside_citation": false
+    },
+    {
+     "source": "americanbanker-news-banks-dodge-early-damage-from-php2s",
+     "file": "sources/americanbanker-news-banks-dodge-early-damage-from-php2s/captures/20261024T083755Z/text.txt",
+     "sha256": "2b6aa63f39e73b0ee1344ecc0362be26ac765764c3dac7b04da934c8ea3e6b3f",
+     "result": "carries",
+     "excerpt": "no U.S. bank or credit union has publicly reported a compromise",
+     "outside_citation": false
+    },
+    {
+     "source": "the-next-web-php2shell-no-confirmed-breaches",
+     "file": "sources/the-next-web-php2shell-no-confirmed-breaches/captures/20261024T083755Z/text.txt",
+     "sha256": "75d67773b979aa86ec9f32e1690fa2d13b8d5905d6cfac239cfcd9331d8c17dc",
+     "result": "carries",
+     "excerpt": "Officials in Germany, the Netherlands and Japan say they have not seen one succeed.",
      "outside_citation": false
     }
    ],
@@ -4883,13 +4916,23 @@
      "who": "Amazon (the same AWS Security Blog post, as revised)",
      "when": "modified 2026-10-22 21:25 UTC",
      "says": "PHP2Shell is now seeing broad exploitation attempts in the wild.",
-     "measures": "Amazon's own revision of 'is now being broadly exploited in the wild', with no note",
-     "outside": [
-      "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/ (fetched 2026-10-24 01:32 UTC, sha256 1889fa097c907352)"
+     "measures": "Amazon's own revision of 'is now being broadly exploited in the wild', with no note; captured in the vault on 23 October (capture 20261023T160435Z)",
+     "outside": [],
+     "sources": [
+      "aws-security-blog-madpot"
+     ]
+    },
+    {
+     "who": "Sophos, via Cyber Security News",
+     "when": "correction at 2026-10-22 21:21 UTC",
+     "says": "Sophos said its customer data showed scanning and a small number of failed exploit attempts.",
+     "measures": "Sophos's own success claim, withdrawn",
+     "sources": [
+      "cybersecuritynews-critical-php2shell-exploit-code"
      ]
     }
    ],
-   "reading": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises. Run 3 (24 October): Amazon itself has since narrowed its sentence from 'broadly exploited' to 'broad exploitation attempts', without a note: the strongest word on the exploitation side now agrees with the officials' reading.",
+   "reading": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises. Run 3 (24 October): Amazon itself has since narrowed its sentence from 'broadly exploited' to 'broad exploitation attempts', without a note: the strongest word on the exploitation side now agrees with the officials' reading. Run 5 (24 October): Sophos withdrew its earlier success claim at 21:21 UTC on 22 October, the same evening Amazon narrowed its wording: both strongest 'exploited' statements were walked back to attempts.",
    "settle": "A KEV entry for either CVE, or a named organisation confirming a compromise.",
    "ticket": "Contradiction-2"
   },
@@ -5782,7 +5825,7 @@
   {
    "label": "Evidence-3",
    "type": "evidence",
-   "status": "proposed",
+   "status": "captured",
    "title": "The Next Web: 'Officials in Germany, the Netherlands and Japan say they have not seen one succeed'; Mizuho and Shizuoka Bank halted services",
    "description": "Fetched by the desk; not in the vault. Bears on no-confirmed-compromise (a dated negative from three governments) and on impact (Japanese banks, via Bloomberg). Capture it, then chase the officials' own statements.",
    "severity": "medium",
@@ -5998,7 +6041,7 @@
   {
    "label": "Evidence-12",
    "type": "evidence",
-   "status": "proposed",
+   "status": "captured",
    "title": "AWS reworded its key sentence without a note: 'broadly exploited in the wild' is now 'seeing broad exploitation attempts in the wild'",
    "description": "Amazon's post (vault slug aws-security-blog-madpot, captured 11:17 UTC on 22 October with the first wording) was modified at 21:25 UTC on 22 October (article:modified_time 14:25:03 PDT). The vault's capture and every page of this site that quotes 'broadly exploited' carry the earlier wording. Capture the current page; then the pages that quote Amazon should give both wordings with their times.",
    "severity": "high",
@@ -8870,6 +8913,28 @@
    ]
   },
   {
+   "label": "Finding-126",
+   "type": "finding",
+   "status": "open",
+   "title": "amazon-honeypot quotes Amazon's first wording; Amazon revised it on 22 October at 21:25 UTC, and the vault now holds both",
+   "description": "The claim quotes 'PHP2Shell is now being broadly exploited in the wild' as Amazon's. The vault's second capture of the same post (20261023T160435Z, text sha256 4108b2850c48a8f2) reads 'PHP2Shell is now seeing broad exploitation attempts in the wild.', page modified 14:25 PDT on 22 October, with no note. The words were Amazon's at the time; they are not Amazon's now. The claim, and the other data files that quote it (impact.json, history.json, compromise.json and others), should give both wordings with their times. Correction request R-004 asked for this change and can close as corrected without being sent.",
+   "severity": "medium",
+   "claims": [
+    "amazon-honeypot"
+   ],
+   "sources": [],
+   "pages": [
+    "facts/amazon-honeypot/index.html",
+    "compromise/index.html"
+   ],
+   "url": "",
+   "retrieved_at": "",
+   "sha256": "",
+   "excerpt": "",
+   "run": "Run-5",
+   "links": []
+  },
+  {
    "label": "Gap-1",
    "type": "gap",
    "status": "open",
@@ -8985,6 +9050,19 @@
    "opened": "3 evidence (Evidence-16 CrowdStrike's version origins, Evidence-17 Siemens and PAN-OS in the record, Evidence-18 the primary feeds); Evidence-4 marked captured (byte-identical), Evidence-11 superseded",
    "audit": "fc.py check: 0 failures.",
    "summary": "No claim changed and no fix landed. The world moved a little: CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 back to 5.4 (bears on K-003, 'every version since 5.4'); Siemens and Palo Alto PAN-OS are now in the primary record; KEV (2026.10.23) still lists neither CVE and CISA's SSVC still says no exploitation; every PHPocalypse site is back. Amazon's revised sentence is still not captured (Evidence-12, high). The vault moved to b995a28fe67a; the site's export is still at 1845598d9a38."
+  },
+  {
+   "id": "Run-5",
+   "site_version": "0.15.3",
+   "vault_commit": "9cfe2778c1b0",
+   "site_export_commit": "1f38e70921b2",
+   "started": "2026-10-24T15:53Z",
+   "finished": "2026-10-24T16:10Z",
+   "checked": "fc.py changed (no-confirmed-compromise refreshed by the journalist); fc.py check (0 failures); the open tickets against the vault's new captures; the desk's pages under the new Content-Security-Policy (no violations); KEV, php.net releases, the CVE record",
+   "opened": "1 finding (Finding-126, amazon-honeypot quotes Amazon's first wording); closed: Evidence-12 and Evidence-3 captured",
+   "audit": "fc.py check: 0 failures; Sophos (Cyber Security News), American Banker, The Next Web and Amazon's revised sentence re-found verbatim in their captures.",
+   "quiet_wakes_before": 1,
+   "summary": "Amazon's revised sentence is now captured (aws-security-blog-madpot, 23 October): 'broadly exploited in the wild' became 'seeing broad exploitation attempts in the wild' at 21:25 UTC on 22 October, so correction request R-004 can close as corrected without being sent, and amazon-honeypot is graded superseded until it gives both wordings (Finding-126). no-confirmed-compromise refreshed to 08:37 UTC on 24 October and still holds, now with Sophos's withdrawn success claim. KEV still lists neither CVE; no PHP release after 21 October. The 12:52 wake before this one was quiet."
   }
  ],
  "investigations": [

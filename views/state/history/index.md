@@ -2,13 +2,21 @@
 
 > Story: written here by this site, signed and dated. By the journalist.
 
-3 versions of the journalist's state of affairs, newest first, each with what changed from the one before.
+4 versions of the journalist's state of affairs, newest first, each with what changed from the one before.
 
 View · the state of affairs · history
 
 # The state of affairs: every version
 
 Every version stays as it was written; the next one says what changed. Newest first.
+
+v3 · 24 October 2026, 12:30 UTC
+
+### [The state of affairs on 24 October: a vendor withdraws the first claim of a break-in, banks report none, and the exploited list still does not have it](../v3/index.html)
+
+Three days after the release, still no organisation has said it was compromised through php2shell. The one security vendor that had claimed a successful compromise, Sophos, withdrew it: its data showed scanning and a few failed attempts. US banks and the large crypto platforms report none, the Netherlands joins the authorities that have seen no attack succeed, and neither CVE was in CISA's exploited list at 05:53 UTC today.
+
+[What changed from v2 →](../v2-v3/index.html)
 
 v2 · 23 October 2026, 23:55 UTC
 
@@ -34,4 +42,4 @@ Reconstructed, not written at the time: what this site published with data as of
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/views/state/history/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/views/state/history/index.html

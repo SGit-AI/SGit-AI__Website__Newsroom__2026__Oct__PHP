@@ -165,14 +165,15 @@
  {
   "id": "n-22.6m",
   "value": "22.6 million",
-  "of": "internet-facing systems that 'could be vulnerable'",
-  "who": "Palo Alto Networks Unit 42, via Insurance Business",
+  "of": "exposed instances 'potentially vulnerable' to php2shell (TechTarget's wording; Insurance Business: internet-facing systems that 'could be vulnerable')",
+  "who": "Palo Alto Networks, via Insurance Business and TechTarget",
   "sources": [
-   "insurancebusiness-uk-councils-met"
+   "insurancebusiness-uk-councils-met",
+   "techtarget-cybersecurity-news-366652444-php2shell-2"
   ],
   "status": "reported",
-  "measures": "Not stated.",
-  "note": "Nine times Censys's host count; the method is not given."
+  "measures": "Instances found by Palo Alto's scanning on 21 October; the method is not given.",
+  "note": "Nine times Censys's host count. TechTarget Japan's '22.6 million servers put at risk' is the same figure, restated without its source."
  },
  {
   "id": "n-94pc",

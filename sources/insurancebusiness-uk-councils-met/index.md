@@ -40,7 +40,7 @@ Captured by claude-story-site. Status: captured. Edinburgh and Oxford councils a
 
 | Figure | Of | Status |
 |---|---|---|
-| 22.6 million | internet-facing systems that 'could be vulnerable' | reported |
+| 22.6 million | exposed instances 'potentially vulnerable' to php2shell (TechTarget's wording; Insurance Business: internet-facing systems that 'could be vulnerable') | reported |
 
 ## The bytes
 capture 20261022T112225Z · HTTP 200 · https://www.insurancebusinessmag.com/uk/news/cyber/uk-councils-and-met-police-among-sites-pulled-offline-after-ncsc-alert-594424.aspx- `headers.json` 3d07c50bb43d9b0530e97433ee53da60ac0afc3cb28ee547618e5cce5e68d8d0 1,370 bytes
@@ -54,4 +54,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/insurancebusiness-uk-councils-met/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/insurancebusiness-uk-councils-met/index.html

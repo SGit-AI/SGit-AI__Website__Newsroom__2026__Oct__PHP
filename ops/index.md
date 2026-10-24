@@ -15,7 +15,7 @@ Your reading path
 
     If you run PHPstepsCheck your stackPatching: who gets a fixThe two flawsExploitation signalsDetection and defenceThe agencies16Every claim70The code
 
-Operations · data as of 23 October 2026, 16:04 UTC
+Operations · data as of 24 October 2026, 08:37 UTC
 
 # What changed, what to do next, and how sure we are
 
@@ -37,18 +37,24 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ## What changed, newest first
 Release by release
-      questionv0.14.8 · 2026-10-24
+      frontv0.15.2 · 2026-10-24
+### [Front page: right now](../index.html#now)
+questionv0.14.8 · 2026-10-24
 ### [Is PHP really the software behind most websites?](../questions/most-websites/index.html)
-questionv0.14.2 · 2026-10-24
+questionv0.14.30 · 2026-10-24
 ### [Has anyone actually been hacked?](../questions/been-hacked/index.html)
+frontv0.14.30 · 2026-10-24
+### [Front page: latest](../index.html#latest)
+frontv0.14.30 · 2026-10-24
+### [Front page: at a glance](../index.html#glance)
+frontv0.14.30 · 2026-10-24
+### [Front page: the core facts](../index.html#facts)
+factreportedv0.14.30 · 2026-10-24
+### [As of 08:37 UTC on 24 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Pa](../facts/no-confirmed-compromise/index.html)
+CISACISAHuntressAmazonstoryv0.14.24 · 2026-10-24
+### [The risk graph, before and after: what changed from one reader's five ideas](../articles/the-risk-graph-before-and-after/index.html)
 frontv0.12.1 · 2026-10-24
 ### [Front page: what nobody knows yet](../index.html#unknown)
-frontv0.12.1 · 2026-10-24
-### [Front page: right now](../index.html#now)
-frontv0.12.1 · 2026-10-24
-### [Front page: at a glance](../index.html#glance)
-frontv0.12.1 · 2026-10-24
-### [Front page: the core facts](../index.html#facts)
 factreportedv0.12.1 · 2026-10-24
 ### [In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS](../facts/wordpress-drupal/index.html)
 CalifWizfactreportedv0.12.1 · 2026-10-24
@@ -58,13 +64,8 @@ CloudflareOpenAI on XWizfactunverifiedv0.12.1 · 2026-10-24
 WizWiz on XBBC Newsfactreportedv0.12.1 · 2026-10-24
 ### [VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 Oc](../facts/scale-2.6m-hosts/index.html)
 THNSecurityWeekfactreportedv0.12.1 · 2026-10-24
-### [As of 16:04 UTC on 23 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Pa](../facts/no-confirmed-compromise/index.html)
-CISACISAHuntressAmazonfactreportedv0.12.1 · 2026-10-24
 ### [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too](../facts/nl-offline/index.html)
-Rijksoverheid / NCSC-NLTPO.nlfactreportedv0.12.1 · 2026-10-24
-### [The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one day](../facts/kev-precedent/index.html)
-CISACVE recordAkamai Security Researchstoryv0.10.3 · 2026-10-23
-### [What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list](../articles/what-changed-in-a-day/index.html)
+Rijksoverheid / NCSC-NLTPO.nl
 
 Mark an item read with its circle: it fades, and leaves when you choose to hide read items. It comes back only if what it says changes.
 
@@ -95,4 +96,4 @@ Red: from the leak on 20 October. [The timeline](../timeline/index.html)
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/ops/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/ops/index.html

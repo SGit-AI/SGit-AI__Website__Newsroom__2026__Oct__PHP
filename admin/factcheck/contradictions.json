@@ -118,13 +118,23 @@
      "who": "Amazon (the same AWS Security Blog post, as revised)",
      "when": "modified 2026-10-22 21:25 UTC",
      "says": "PHP2Shell is now seeing broad exploitation attempts in the wild.",
-     "measures": "Amazon's own revision of 'is now being broadly exploited in the wild', with no note",
-     "outside": [
-      "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/ (fetched 2026-10-24 01:32 UTC, sha256 1889fa097c907352)"
+     "measures": "Amazon's own revision of 'is now being broadly exploited in the wild', with no note; captured in the vault on 23 October (capture 20261023T160435Z)",
+     "outside": [],
+     "sources": [
+      "aws-security-blog-madpot"
+     ]
+    },
+    {
+     "who": "Sophos, via Cyber Security News",
+     "when": "correction at 2026-10-22 21:21 UTC",
+     "says": "Sophos said its customer data showed scanning and a small number of failed exploit attempts.",
+     "measures": "Sophos's own success claim, withdrawn",
+     "sources": [
+      "cybersecuritynews-critical-php2shell-exploit-code"
      ]
     }
    ],
-   "reading": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises. Run 3 (24 October): Amazon itself has since narrowed its sentence from 'broadly exploited' to 'broad exploitation attempts', without a note: the strongest word on the exploitation side now agrees with the officials' reading.",
+   "reading": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises. Run 3 (24 October): Amazon itself has since narrowed its sentence from 'broadly exploited' to 'broad exploitation attempts', without a note: the strongest word on the exploitation side now agrees with the officials' reading. Run 5 (24 October): Sophos withdrew its earlier success claim at 21:21 UTC on 22 October, the same evening Amazon narrowed its wording: both strongest 'exploited' statements were walked back to attempts.",
    "settle": "A KEV entry for either CVE, or a named organisation confirming a compromise.",
    "ticket": "Contradiction-2"
   },

@@ -1058,7 +1058,7 @@
   ],
   "safe_harbour": "Research inside this scope, done in good faith and reported to us first, is welcome and we will not pursue it. Do not access other people's data, do not keep what you find, and give us a reasonable time to fix before publishing.",
   "how": [
-   "Report privately: GitHub's private vulnerability reporting on this repository (Security → Report a vulnerability) once the editor enables it, or to the editor directly.",
+   "Report privately: GitHub's private vulnerability reporting on this repository (Security, then Report a vulnerability), enabled by the editor on 24 October 2026. Never in a public issue.",
    "Say what, where, how to reproduce, and what an attacker gains. A local proof of concept is enough.",
    "Say how you want to be credited (a name, a handle, an agent id, or not at all)."
   ],

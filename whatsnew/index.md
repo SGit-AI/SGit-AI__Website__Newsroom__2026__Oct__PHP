@@ -12,6 +12,156 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.17 · 24 October 2026new since your last visit
+
+CodeQL's second scan, triaged: the design dials derive their root as a count of ../ segments and accept only this site's pages as a home; the reader's 'what changed' links take only well-formed item ids; the build's and the CSP's script-tag regexes match any end tag form (); and Dependabot, on the editor's go, keeps the workflows' pinned actions current with reviewed pull requests
+
+No reader-facing section changed in this release.
+
+## v0.15.16 · 24 October 2026new since your last visit
+
+observability's round 2: the telemetry application v0.4.1 and v0.4.2, pushed to its vault (Queue & drain shows its progress; One page shows everything known about a page beside the page itself), on the member's page /admin/agents/observability/ with its debrief and screenshots
+
+No reader-facing section changed in this release.
+
+## v0.15.15 · 24 October 2026new since your last visit
+
+debrief: the Opus journalist's round, ending as the correspondent
+
+No reader-facing section changed in this release.
+
+## v0.15.14 · 24 October 2026new since your last visit
+
+merge rules for taking in dev, in the journalist's brief; board rows for AGENTS.md and for release.sh's stop message
+
+No reader-facing section changed in this release.
+
+## v0.15.13 · 24 October 2026new since your last visit
+
+the journalist's brief corrected: it reads only the evidence vault, with its published read key, and needs no other key
+
+No reader-facing section changed in this release.
+
+## v0.15.12 · 24 October 2026new since your last visit
+
+CodeQL's first scan, triaged and hardened: every script that read data-root now derives root as a count of ../ segments, so page text can never become markup or a link; pipeline.js checks the GitHub API's URLs and commit ids before linking them; review-nav escapes a class name; the build's script-stripping and CSP inline-script regexes accept  forms; the X-source label checks the URL's host, not a substring
+
+No reader-facing section changed in this release.
+
+## v0.15.11 · 24 October 2026new since your last visit
+
+Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and security updates), so the bug bounty page and security.txt now point reporters at a live channel; board 278 closed
+
+No reader-facing section changed in this release.
+
+## v0.15.10 · 24 October 2026new since your last visit
+
+The control room: /team/control/, a visual, interactive view of every agent, the pipeline, the wake timeline and the editor's queue, drawn from data/control.json (built by admin/build/control.py); a wall mode for a big screen
+
+No reader-facing section changed in this release.
+
+## v0.15.9 · 24 October 2026new since your last visit
+
+the journalist's and the correspondent's public key fingerprints recorded in their register files
+
+No reader-facing section changed in this release.
+
+## v0.15.8 · 24 October 2026new since your last visit
+
+Conductor full pass 19:15 London: agents-status, schedules against runs, run record
+
+No reader-facing section changed in this release.
+
+## v0.15.7 · 24 October 2026new since your last visit
+
+the journalist's brief for its first Sonnet session: the pipeline, the key handshake, every wake in seven steps, what to do when a release stops, and the never list
+
+No reader-facing section changed in this release.
+
+## v0.15.6 · 24 October 2026new since your last visit
+
+Security round 1 closed: the telemetry policy, on the editor's decision to keep the location lookups (made by the reader's browser; this site has no server, so no IP address is ever captured or stored by us; SA-2026-030 accepted); SA-2026-040, the Stop hook runs repository code in every agent session, so .claude/ and agents.py go behind security review; rulesets deferred to user logins (SA-2026-023); board rows closed and opened; security's debrief and status
+
+No reader-facing section changed in this release.
+
+## v0.15.5 · 24 October 2026new since your last visit
+
+The Sherpa's 17:45 pass: the phone header's fix checked live (one 43px line; a friction closed), headlines now on the first screen, the graph's changes page live, and the lens prototype noted as the answer to two open frictions
+
+No reader-facing section changed in this release.
+
+## v0.15.4 · 24 October 2026new since your last visit
+
+factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploitation attempts' at 21:25 UTC on 22 October), so the correction request R-004 closes unsent and amazon-honeypot is graded superseded (Finding-126); no-confirmed-compromise still holds at 08:37 UTC on 24 October, with Sophos's withdrawn success claim; the desk's pages pass the new Content-Security-Policy
+
+No reader-facing section changed in this release.
+
+## v0.15.3 · 24 October 2026new since your last visit
+
+the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's proposed prompt updated, the build no longer stops on an unmapped publisher, and Right now carries the Sophos withdrawal
+
+### Briefings that changed
+JJordanBoard member or executive · v11SSamSecurity lead · v9BBlakeAnalyst or advisor · v10RRobinCISO · v11QQuinnCFO · v11JJamieHead of AppSec · v9AAlexCurious reader · v9CCaseyWebsite owner · v7MMorganData protection officer · v5
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v10) v10
+
+## v0.15.2 · 24 October 2026new since your last visit
+
+The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and the front page's Right now stamp, newer than its text, on the board for the journalist
+
+### Sections that changed
+- [Front page: right now](../versions/front-now/index.html#v5) v5
+
+## v0.15.1 · 24 October 2026new since your last visit
+
+Conductor full pass 15:15 London: agents-status, schedules against runs, run record
+
+No reader-facing section changed in this release.
+
+## v0.15.0 · 24 October 2026new since your last visit
+
+prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that re-shapes the page in place with no reload and no flash, on three pages at /admin/design/lens/ built from the live data; its brief; story-site's first round closed
+
+No reader-facing section changed in this release.
+
+## v0.14.31 · 24 October 2026new since your last visit
+
+Conductor light check 14:15 London: observability and security requests recorded for the editor, factcheck run note, run records
+
+No reader-facing section changed in this release.
+
+## v0.14.30 · 24 October 2026new since your last visit
+
+the evidence vault at 1f38e70921b2 (328 sources) and the state of affairs v3: a vendor's claim of a break-in withdrawn (Sophos), banks and crypto platforms report none, KEV still without php2shell at 05:53 UTC today; 22 new claims reviewed; the build settles itself (board 175)
+
+1 fact reworded or re-sourced: [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html).
+
+### Briefings that changed
+JJordanBoard member or executive · v10RRobinCISO · v10QQuinnCFO · v10RRileyMedia and communications team · v9AAlexCurious reader · v8TTaylorProject or programme manager · v8MMorganData protection officer · v4
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v9) v9
+- [The numbers](../versions/page-numbers/index.html#v5) v5
+- [The method](../versions/page-method/index.html#v6) v6
+- [Impact: offline vs compromised](../versions/page-impact/index.html#v7) v7
+- [In context: 2008 to 2026](../versions/page-context/index.html#v5) v5
+- [The specialist summary](../versions/page-summary/index.html#v6) v6
+- [Front page: at a glance](../versions/front-glance/index.html#v4) v4
+- [Front page: the core facts](../versions/front-facts/index.html#v4) v4
+- [Front page: latest](../versions/front-latest/index.html#v3) v3
+- [The state of affairs, now](../versions/page-views-state/index.html#v3) v3
+
+## v0.14.29 · 24 October 2026new since your last visit
+
+Restores v0.14.24, what changed in the risk graph (CI-003, step 2, /grc/changes/), which the conductor's release of the CI fix reverted by mistake (a branch kept in step with merge -s ours after dev had moved); with the conductor's round debrief
+
+No reader-facing section changed in this release.
+
+## v0.14.28 · 24 October 2026new since your last visit
+
+observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first debrief; a brief on the telemetry lane's 1,000-event cap (where it comes from, what happens to event 1,001, lanes in parallel); the keys it holds; board 270 to 273
+
+No reader-facing section changed in this release.
+
 ## v0.14.27 · 24 October 2026new since your last visit
 
 Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry report's cities and regions, the invitation check order, the vault app's preset merge, the conductor drain's file names)
@@ -32,7 +182,7 @@ No reader-facing section changed in this release.
 
 ## v0.14.24 · 24 October 2026new since your last visit
 
-Fix for dev's red CI since v0.14.23: /team/comms/ is built from data/comms.json, which the conductor's wakes export from the commit history, instead of from the history itself, which the shallow CI clone lacks; tested by running the gate in a depth-1 clone
+what changed in the risk graph (CI-003, step 2): /grc/changes/ compares any two releases, the nodes and edges added and removed, the bases changed and the gaps opened and closed, measured side by side, from a history filled back to v0.6.0 and written at every release; found on the way: 91 repeated edges in the graph, now counted once (1,351 edges), with a correction; and the team's notes page no longer links a recipient with no page (the gate failed on To-security)
 
 No reader-facing section changed in this release.
 
@@ -510,7 +660,7 @@ JJordanBoard member or executive · v7SSamSecurity lead · v6DDrewPHP or platfor
 factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction
 
 ### Facts whose status changed
-- [As of 16:04 UTC on 23 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
+- [As of 08:37 UTC on 24 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
 
 ### Briefings that changed
 JJordanBoard member or executive · v6RRobinCISO · v6QQuinnCFO · v6RRileyMedia and communications team · v5AAlexCurious reader · v4TTaylorProject or programme manager · v4
@@ -787,7 +937,7 @@ the code read from php-src, php2shell in context against ten earlier flaws, an i
 - [No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosur](../facts/imperva-none/index.html) reported
 - [No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no pub](../facts/huntress-none/index.html) reported
 - [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../facts/watchtowr-itw/index.html) unverified
-- [As of 16:04 UTC on 23 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
+- [As of 08:37 UTC on 24 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
 - [None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechani](../facts/pocs-wrong/index.html) reported
 - [Triggering the bug is much easier than turning it into code execution; the CVSS vector say](../facts/ac-high/index.html) confirmed
 - [The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 U](../facts/fix-authored/index.html) confirmed
@@ -887,4 +1037,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

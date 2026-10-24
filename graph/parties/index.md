@@ -2,17 +2,17 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-243 parties resolved from 249 spellings, with the claims each one states and passes on.
+275 parties resolved from 281 spellings, with the claims each one states and passes on.
 
 [The story as a graph](../index.html) / Parties
 
 # Every party, whatever a page calls it
 
-243 parties: the people, organisations, agencies, outlets and platforms that published a source or are named as saying something. The sources spell them 249 ways; each spelling resolves to one node here, so CISA is one party however many pages name it. *States* counts the claims, numbers and signals a party originates; *relays* counts those it passed on from someone else.
+275 parties: the people, organisations, agencies, outlets and platforms that published a source or are named as saying something. The sources spell them 281 ways; each spelling resolves to one node here, so CISA is one party however many pages name it. *States* counts the claims, numbers and signals a party originates; *relays* counts those it passed on from someone else.
 
 The graph of each party needs JavaScript; the tables below carry the same counts.
 
-## Organisation (52)
+## Organisation (53)
 
 | Party | States | Relays | Sources published | Claims it states |
 |---|---|---|---|---|
@@ -41,6 +41,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | The Wikimedia Foundation | 1 | 0 | 1 | [wikimedia-precaution](../../facts/wikimedia-precaution/index.html) |
 | [Valtori and NCSC-FI](../../actors/valtori/index.html) | 1 | 0 | 1 | [fi-offline](../../facts/fi-offline/index.html) |
 | ANTS (France Titres) part of French Ministry of the Interior | 0 | 0 | 1 |  |
+| ASK Corporation (株式会社アスク) | 0 | 0 | 1 |  |
 | Arctic Wolf Labs | 0 | 0 | 1 |  |
 | Armis | 0 | 0 | 1 |  |
 | Broadcom (Symantec) | 0 | 0 | 1 |  |
@@ -126,7 +127,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | [Community detection authors](../../actors/detectors/index.html) | 0 | 0 | 0 |  |
 | [National agencies](../../actors/agencies/index.html) | 0 | 0 | 0 |  |
 
-## Outlet (140)
+## Outlet (171)
 
 | Party | States | Relays | Sources published | Claims it states |
 |---|---|---|---|---|
@@ -154,27 +155,46 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | 01net | 0 | 0 | 1 |  |
 | 20 Minuten | 0 | 0 | 2 |  |
 | 20minutos | 0 | 0 | 1 |  |
+| 24 Heures | 0 | 0 | 1 |  |
+| 24.ae (موقع 24) | 0 | 0 | 1 |  |
+| 2days.kr | 0 | 0 | 1 |  |
 | ABC News (Australia) | 0 | 0 | 2 |  |
 | AG Connect | 0 | 0 | 1 |  |
+| AI Weekly | 0 | 0 | 1 |  |
 | AI4Business | 0 | 0 | 1 |  |
+| AIT News (البوابة التقنية) | 0 | 0 | 1 |  |
 | ActuIA | 0 | 0 | 1 |  |
 | Agencia Andina | 0 | 0 | 1 |  |
+| American Banker | 0 | 0 | 1 |  |
 | Analytics Insight | 0 | 0 | 1 |  |
 | Ars Technica | 0 | 0 | 1 |  |
+| Asahi Shimbun Digital (朝日新聞デジタル) | 0 | 0 | 1 |  |
 | AsiaOne | 0 | 0 | 1 |  |
+| BTC-ECHO | 0 | 0 | 1 |  |
 | BankInfoSecurity | 0 | 0 | 1 |  |
+| Bgonair | 0 | 0 | 1 |  |
 | Bitpage.de | 0 | 0 | 1 |  |
 | BleepingComputer | 0 | 0 | 2 |  |
+| BlockTempo (動區動趨) | 0 | 0 | 1 |  |
 | Blog du Modérateur (BDM) | 0 | 0 | 1 |  |
 | Bloomberg | 0 | 0 | 1 |  |
+| Boan News | 0 | 0 | 1 |  |
 | BornCity | 0 | 0 | 1 |  |
 | Boursorama | 0 | 0 | 1 |  |
 | Bursa Hakimiyet | 0 | 0 | 1 |  |
+| Bursada Bugün | 0 | 0 | 1 |  |
+| Báo Gia Lai điện tử | 0 | 0 | 1 |  |
+| CEONEWS (Korea) | 0 | 0 | 1 |  |
+| CHIP | 0 | 0 | 1 |  |
 | CNA (Channel NewsAsia) | 0 | 0 | 1 |  |
 | CNN Portugal | 0 | 0 | 1 |  |
 | CRN | 0 | 0 | 1 |  |
+| Cairo 24 (القاهرة 24) | 0 | 0 | 1 |  |
 | Canaltech | 0 | 0 | 1 |  |
+| ChannelPartner | 0 | 0 | 1 |  |
+| Chinaz (站长之家) | 0 | 0 | 1 |  |
 | Clarín (English edition) | 0 | 0 | 1 |  |
+| ClearanceJobs News | 0 | 0 | 1 |  |
 | Clickx | 0 | 0 | 1 |  |
 | Coingape | 0 | 0 | 1 |  |
 | Cointelegraph Brasil | 0 | 0 | 1 |  |
@@ -184,12 +204,15 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | Critic Arad | 0 | 0 | 1 |  |
 | Cyber Kendra | 0 | 0 | 1 |  |
 | Cyber Press | 0 | 0 | 1 |  |
+| Cyber Security News | 0 | 0 | 1 |  |
 | CyberScoop | 0 | 0 | 1 |  |
 | Cybernews | 0 | 0 | 1 |  |
 | DELFI | 0 | 0 | 1 |  |
 | Der Tagesspiegel | 0 | 0 | 1 |  |
 | DiarioBitcoin | 0 | 0 | 1 |  |
 | Dutch IT Leaders | 0 | 0 | 1 |  |
+| Economedia | 0 | 0 | 1 |  |
+| Estrella Digital | 0 | 0 | 1 |  |
 | Everyeye Tech | 0 | 0 | 1 |  |
 | Fortune | 0 | 0 | 1 |  |
 | GinjFo | 0 | 0 | 1 |  |
@@ -201,6 +224,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | IDX Channel | 0 | 0 | 1 |  |
 | INTERNET Watch (Impress) | 0 | 0 | 1 |  |
 | IT Social | 0 | 0 | 1 |  |
+| ITWeb | 0 | 0 | 1 |  |
 | ITdaily | 0 | 0 | 1 |  |
 | India TV News | 0 | 0 | 1 |  |
 | Infopoint Security | 0 | 0 | 1 |  |
@@ -226,14 +250,17 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | Mashable | 0 | 0 | 0 |  |
 | Mashable India | 0 | 0 | 1 |  |
 | MediaNama | 0 | 0 | 1 |  |
+| Milton Keynes Citizen | 0 | 0 | 1 |  |
 | Morocco World News | 0 | 0 | 1 |  |
 | News9Live | 0 | 0 | 1 |  |
 | Người Quan Sát | 0 | 0 | 1 |  |
+| Notebookcheck | 0 | 0 | 1 |  |
 | Notebookcheck.it | 0 | 0 | 1 |  |
 | ORF | 0 | 0 | 1 |  |
 | PA Media (the Press Association) | 0 | 0 | 0 |  |
 | PCMag | 0 | 0 | 1 |  |
 | Paperjam | 0 | 0 | 1 |  |
+| Peterborough Telegraph | 0 | 0 | 1 |  |
 | Polinews | 0 | 0 | 1 |  |
 | QA Financial | 0 | 0 | 1 |  |
 | RTL.de | 0 | 0 | 1 |  |
@@ -246,13 +273,17 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | Security.NL | 0 | 0 | 2 |  |
 | Shinailbo (신아일보) | 0 | 0 | 1 |  |
 | SiliconANGLE | 0 | 0 | 1 |  |
-| TechTarget | 0 | 0 | 1 |  |
+| Sunderland Echo | 0 | 0 | 1 |  |
+| SussexWorld | 0 | 0 | 1 |  |
+| TechRadar | 0 | 0 | 1 |  |
+| TechTarget | 0 | 0 | 2 |  |
 | TechTarget Japan | 0 | 0 | 1 |  |
 | Techaeris | 0 | 0 | 1 |  |
 | Techzine Global | 0 | 0 | 1 |  |
 | The Economic Times | 0 | 0 | 1 |  |
 | The Indian Express | 0 | 0 | 1 |  |
 | The Mandarin | 0 | 0 | 1 |  |
+| The Next Web | 0 | 0 | 1 |  |
 | The Star | 0 | 0 | 1 |  |
 | The Verge | 0 | 0 | 1 |  |
 | The420.in | 0 | 0 | 1 |  |
@@ -270,6 +301,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | php[architect] | 0 | 0 | 1 |  |
 | shattered.io | 0 | 0 | 1 |  |
 | watson | 0 | 0 | 1 |  |
+| Área Cúcuta | 0 | 0 | 1 |  |
 
 ## Registry (2)
 
@@ -309,4 +341,4 @@ The file is [data/entities.json](../../data/entities.json), with who states each
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/graph/parties/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/graph/parties/index.html

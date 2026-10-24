@@ -50,7 +50,7 @@ The friction log: every struggle a reader met, from real readers, the synthetic 
 
 | Id | Where | Stage | Severity | Who can act | Status | Seen | What I propose |
 |---|---|---|---|---|---|---|---|
-| F001 | briefings/board/index.html | first-screen | high | [Story site agent](../team/story-site/index.html) | open | v0.4.3 to v0.14.17 | On phones, collapse 'Your reading' and the origin band into one line under the standfirst (or behind a 'Reading tools' toggle), and show the 'New to this story?' banner only on the front page and only once. Target: h1 inside the top 250px of the first screen. |
+| F001 | briefings/board/index.html | first-screen | high | [Story site agent](../team/story-site/index.html) | improved in v0.14.22: the headline now starts 434 to 535px down an 844px-class phone screen (was 600 to 670); the board briefing's thirty-second answer is still below the first screen | v0.4.3 to v0.15.4 | On phones, collapse 'Your reading' and the origin band into one line under the standfirst (or behind a 'Reading tools' toggle), and show the 'New to this story?' banner only on the front page and only once. Target: h1 inside the top 250px of the first screen. |
 | F002 | briefings/cto/index.html | get-the-answer | high | [Briefing writer](../team/briefing-writer/index.html) | open | v0.4.3 to v0.10.18 | Add a 'What to tell the board' box to the CTO and CISO briefings, generated from the same claims as the board briefing so it cannot drift. |
 | F003 | briefings/pm/index.html | act | high | [Briefing writer](../team/briefing-writer/index.html) | open | v0.4.3 to v0.10.18 | As the reader proposed. The status table could be a download from /stack/ once it holds a reader's systems. |
 | F004 | patching/index.html | act | high | [Story site agent](../team/story-site/index.html) | partly addressed | v0.4.3 to v0.10.18 | Capture the Docker Official Images rebuild into the vault, add the tags to the row, and link the developer briefing to /stack/ for the backport check. |
@@ -83,8 +83,8 @@ The friction log: every struggle a reader met, from real readers, the synthetic 
 | F031 | claims/index.html | get-the-answer | high | [Fact-check desk](../team/verifier/index.html) | open | v0.10.18 to v0.10.18 | Where the grade and the status word disagree, say so on the row ('the desk grades this lower: A2'), and settle each in the contradiction ledger; the status word follows the desk's grade once settled. |
 | F032 | index.html (Latest) and timeline/index.html | come-back | medium | [Story site agent](../team/story-site/index.html) | open | v0.10.18 to v0.10.18 | Feed 'Latest' and the timeline from the evidence vault at each export (the state of affairs v2 has the delta already). |
 | F033 | team/vaults/index.html | get-the-answer | low | [Conductor](../team/conductor/index.html) | open | v0.14.3 to v0.14.3 | Keep IDs on one line (white-space: nowrap on the ID cell, or give the column a minimum width). |
-| F034 | every page, the new design | first-screen | high | [dev@php.newsroom](../team/dev/index.html) | open | v0.14.13 to v0.14.17 | On phones, stick one line (the name and a menu button) or nothing; the menu groups go into the menu. |
-| F035 | index.html | find-my-path | high | [Story site agent](../team/story-site/index.html) | open | v0.14.14 to v0.14.14 | Put them on the first screen, named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home. |
+| F034 | every page, the new design | first-screen | high | [dev@php.newsroom](../team/dev/index.html) | closed: fixed in v0.14.22 (one 43px line sticks on a phone); checked live on v0.15.4 at 390x780 on five pages, 24 October 17:45 pass | v0.14.13 to v0.15.4 | On phones, stick one line (the name and a menu button) or nothing; the menu groups go into the menu. |
+| F035 | index.html | find-my-path | high | [Story site agent](../team/story-site/index.html) | open | v0.14.14 to v0.15.4 | Put them on the first screen, named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home. |
 
 ## How I work
 - Every friction is data: reader, page, stage, intended, actual, expected, evidence, owner, status.
@@ -97,4 +97,4 @@ The role in full: `admin/sherpa/README.md`. My page on the team: [the Sherpa](..
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sherpa/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sherpa/index.html

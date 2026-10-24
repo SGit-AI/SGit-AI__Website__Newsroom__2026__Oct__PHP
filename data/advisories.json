@@ -566,7 +566,7 @@
    ],
    "missing_control": "A boundary above the agents.",
    "fix": "",
-   "prevention": "Rulesets: no force-push or deletion; main by pull request only; a path ruleset for the gate, the workflows and admin/security/; CI runs security_check.py from the base commit.",
+   "prevention": "Rulesets: no force-push or deletion; main by pull request only; a path ruleset for the gate, the workflows and admin/security/; CI runs security_check.py from the base commit. The editor's decision, 24 October 2026: revisit when the site gets user logins.",
    "refs": []
   },
   {
@@ -714,24 +714,24 @@
   },
   {
    "id": "SA-2026-030",
-   "title": "Telemetry sends readers' IP addresses to two third parties",
+   "title": "Telemetry asks two location services from the reader's browser",
    "severity": "medium",
-   "status": "open",
+   "status": "accepted",
    "disclosure": "full",
    "cwe": "CWE-359",
    "component": "assets/telemetry.js",
    "found_by": "security@php.newsroom (pass 3 review)",
    "found": "2026-10-24",
    "fixed_in": "",
-   "fixed_by": "",
+   "fixed_by": "the editor (decision)",
    "summary": "For a coarse location, every page view calls ipapi.co and ipwho.is from the reader's browser, which receive the IP address and the site's origin. Do Not Track and Global Privacy Control are honoured.",
    "impact": "Readers' IP addresses at two companies.",
    "attack_path": "Public.",
    "root_cause": "Location was wanted and the cheapest source was used.",
    "contributing": [],
    "missing_control": "Privacy review before a new third party.",
-   "fix": "",
-   "prevention": "The editor's call: keep (the city stays private, SA-2026-019), drop the lookup, or ask consent.",
+   "fix": "The editor's decision, 24 October 2026: keep the lookups, and say so in the telemetry policy.",
+   "prevention": "The policy on /admin/telemetry/ states it: the request is made by the reader's browser; this site has no server, so no IP address is ever captured or stored by us; the event never carries the address; DNT and GPC stop everything, the lookup included; cities and regions stay private (SA-2026-019); the CSP allows exactly these two services.",
    "refs": []
   },
   {
@@ -933,6 +933,34 @@
    "fix": "",
    "prevention": "Revisit when the site moves to a host that sets headers.",
    "refs": []
+  },
+  {
+   "id": "SA-2026-040",
+   "title": "Repository code runs automatically in every agent session (the Stop hook)",
+   "severity": "medium",
+   "status": "open",
+   "disclosure": "full",
+   "cwe": "CWE-829",
+   "component": ".claude/settings.json, admin/build/agents.py",
+   "found_by": "security@php.newsroom (review of board 206)",
+   "found": "2026-10-24",
+   "fixed_in": "",
+   "fixed_by": "",
+   "summary": "The project settings register a Claude Code Stop hook that runs python3 admin/build/agents.py stop-hook in every session that works in this repository. The hook itself only reads git and prints a reminder. But any agent that can push can change agents.py or the settings file, and every other agent session that pulls it then runs that code when it stops, holding its GitHub and SG/Send tokens.",
+   "impact": "One steered agent gets code execution in every other agent's session, unreviewed.",
+   "attack_path": "Change agents.py stop_hook (or add a hook to .claude/settings.json); release; wait for other sessions to take in dev and stop.",
+   "root_cause": "Automation that executes repository code was added without putting that code behind review.",
+   "contributing": [
+    ".claude/ and admin/build/agents.py were not on the list of paths that go to a branch for review (CLAUDE.md).",
+    "Every agent can release to dev (SA-2026-023)."
+   ],
+   "missing_control": "Review, and ideally a boundary, for any file that runs automatically in other sessions.",
+   "fix": "",
+   "prevention": "CLAUDE.md now lists .claude/ and admin/build/agents.py with the gate files that go to a branch for review. A path ruleset on GitHub (SA-2026-023) would make it a boundary; keep the hook minimal and run with python3 -I.",
+   "refs": [
+    ".claude/settings.json",
+    "admin/build/agents.py stop_hook()"
+   ]
   }
  ]
 }

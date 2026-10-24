@@ -769,8 +769,9 @@
   {
    "id": "085",
    "title": "Commit data/keys.json: .gitignore's keys*.json rule held it back, so /admin/keys/ is not built yet. Check it holds fingerprints and vault ids only, add it with an explicit !data/keys.json exception, and restore its row in data/layers.json (used on admin/keys/index.html); the page and its menu entry then build on their own",
-   "status": "open",
-   "owner": "security@php.newsroom"
+   "status": "done",
+   "owner": "security@php.newsroom",
+   "note": "Superseded, 24 October: the editor said the QR handover works as it is; the .gitignore rule was narrowed in v0.11.1 (SA-2026-017); data/vault-register/ is the one register of vault IDs."
   },
   {
    "id": "086",
@@ -932,8 +933,9 @@
   {
    "id": "110",
    "title": "Security review of the feedback keys (assets/feedback/identity.js, join.js, pane.js; admin/build/contributors.py, invite.py): non-extractable keys in IndexedDB, the invitation code in the link's fragment, signatures checked with sgit",
-   "status": "open",
-   "owner": "security"
+   "status": "done",
+   "owner": "security",
+   "note": "Done in security passes 2 and 3: SA-2026-013 (forged signer, fixed v0.11.1), SA-2026-020 (invitation check order, fixed v0.14.26), SA-2026-029 (keys usable by script on the origin, mitigated by the CSP)."
   },
   {
    "id": "111",
@@ -1068,8 +1070,9 @@
   {
    "id": "132",
    "title": "Fold data/keys.json and /admin/keys/ (the rules of engagement) together with data/vault-register/ and /team/vaults/, so there is one register of vaults and keys",
-   "status": "open",
-   "owner": "security"
+   "status": "done",
+   "owner": "security",
+   "note": "Superseded: data/keys.json was never committed (SA-2026-017) and the editor kept the QR handover; data/vault-register/ is the register."
   },
   {
    "id": "133",
@@ -1343,16 +1346,16 @@
   {
    "id": "174",
    "title": "The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed for KEV, NVD, EPSS and repository series after that",
-   "status": "waiting",
+   "status": "done",
    "owner": "editor",
-   "note": "Read key only; the write key is neither wanted nor to be accepted."
+   "note": "Read key only; the write key is neither wanted nor to be accepted. Closed 24 October: the editor, the journalist reads only the evidence vault (3ytzxm3g, published read key) and needs no key for the source watch; KEV and the other series come into the site through the curator's promotions (and, for the state of affairs, the Pulse vault)."
   },
   {
    "id": "175",
    "title": "release.sh fails the gate's determinism check on the first try when a release changes a versioned page's text: the section ledger settles on the second build",
    "status": "done",
    "owner": "claude-journalist",
-   "note": "Seen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Cause found on 24 October: admin/build/design.py drew mockup B from data/items.json read from disk, but save_items() writes that file at the end of the build, so the mockup showed the previous build's items and the first rebuild after any content change differed (admin/design/b/). Fixed in one line: the mockup takes this build's items from all_items(). Checked: after a version bump, the first and second builds are identical. release.sh and validate.py unchanged. The same lag was in the new Operations and Analysis homes (design.py build_tracks, v0.14.0), fixed the same way."
+   "note": "Seen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Cause found on 24 October: admin/build/design.py drew mockup B from data/items.json read from disk, but save_items() writes that file at the end of the build, so the mockup showed the previous build's items and the first rebuild after any content change differed (admin/design/b/). Fixed in one line: the mockup takes this build's items from all_items(). Checked: after a version bump, the first and second builds are identical. release.sh and validate.py unchanged. The same lag was in the new Operations and Analysis homes (design.py build_tracks, v0.14.0), fixed the same way. A third lag, 24 October: admin/build/release_pages.py ranked the always-changing hubs (admin/versions.html among them) by words changed, and admin/versions.html shows the store as read at the start of the build, so the release's own entry differed between the first and second build; the hubs now go last by path only. Then a fourth (grc/changes/ reads data/grc-history.json, written later), so the fix is now general: build.py, when a build changes any generated data file it reads back at its start (every data/*.json in outputs.txt), builds once more, at most twice; the first build of a release is the settled one and the gate's rebuild changes nothing. Costs one extra build on a release that changes content."
   },
   {
    "id": "176",
@@ -1555,9 +1558,9 @@
   {
    "id": "206",
    "title": "Security review of the librarian's branch: gate check 4h in validate.py, the CLAUDE.md section, .claude/settings.json's Stop hook and admin/build/agents.py stop-hook",
-   "status": "open",
+   "status": "done",
    "owner": "security@php.newsroom",
-   "note": "Renumbered from 097 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+   "note": "Renumbered from 097 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). Reviewed 24 October: gate check 4h validates policies and is sound; the Stop hook's code is benign, but it runs repository code in every session unreviewed (SA-2026-040, open); CLAUDE.md now puts .claude/ and agents.py behind review."
   },
   {
    "id": "207",
@@ -1933,13 +1936,15 @@
    "status": "done",
    "owner": "dev@php.newsroom",
    "note": "Done by dev@php.newsroom on 24 October: at 700px and narrower one 43px line stays at the top (the site's name, the version, Menu); the status, the breadcrumbs and the tools (Ask, Feedback, who you are, the view, the meter) open with the menu, and an open menu scrolls inside the screen. Measured in Chromium at 360 and 390 wide: 233px to 43px.",
-   "version": "0.14.21"
+   "version": "0.14.22"
   },
   {
    "id": "261",
    "title": "From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed, with the before-and-after blocks",
-   "status": "open",
-   "owner": "dev@php.newsroom"
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.14.24",
+   "note": "Done by dev@php.newsroom on 24 October: /grc/changes/, any two releases compared (nodes and edges added and removed, bases changed, gaps opened and closed, each measure side by side), from data/grc-history.json, which admin/build/grc_history.py writes once per release at its own build, filled back to v0.6.0. Found on the way: 91 repeated edges, removed (BRIEF-CORRECTIONS.md)."
   },
   {
    "id": "262",
@@ -1983,9 +1988,9 @@
   {
    "id": "268",
    "title": "Commit-FS-lite: a one-line pointer in CLAUDE.md (\"read your notes when you take in dev: schedule.py notes <you>; send them as To-<agent> trailers in your release commit; AGENTS.md section 8\")",
-   "status": "open",
+   "status": "done",
    "owner": "security@php.newsroom",
-   "note": "CLAUDE.md is in security@'s scope; asked by the conductor in the release commit of 24 October."
+   "note": "CLAUDE.md is in security@'s scope; asked by the conductor in the release commit of 24 October. Done in v0.14.26: CLAUDE.md, \"Talking to each other, and security\"."
   },
   {
    "id": "269",
@@ -1993,6 +1998,112 @@
    "status": "open",
    "owner": "conductor",
    "note": "After every agent has an enrolled key (abp@, security@)."
+  },
+  {
+   "id": "270",
+   "title": "Enrol observability@php.newsroom's key (sha256:b9ddd39416d71cbb) on pki.sgit.ai: its record links the root as operator",
+   "status": "open",
+   "owner": "editor",
+   "note": "The record is my-record.json from its session, handed to the editor on 24 October; it is public. Until enrolled, pki-agent trust refuses it and nothing can be sealed to it."
+  },
+  {
+   "id": "271",
+   "title": "Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the telemetry vault) to observability, sealed to its key",
+   "status": "done",
+   "owner": "editor",
+   "note": "The editor's plan of 24 October: dev seals them to sha256:b9ddd39416d71cbb, the fingerprint taken from the editor in dev's session. Blocks the application's v0.4.1 (Queue & drain: a progress bar while the lane is checked, step-by-step detail while it drains). Done 24 October: both keys sealed to sha256:b9ddd39416d71cbb by sha256:956934e47063ceaa and carried by the editor; opened, checked and held (data/vault-register/observability.json)."
+  },
+  {
+   "id": "272",
+   "title": "Move the telemetry files from dev's scope to observability's, or confirm they stay with dev: assets/telemetry.js, admin/build/telemetry_*, admin/telemetry/**, data/telemetry*.json",
+   "status": "open",
+   "owner": "abp@newsroom.sgit",
+   "note": "The editor asked observability to look after the telemetry on 24 October; dev's policy still lists the files, so observability does not edit them until this row closes. The editor decides. The member's first policy.json was written by observability itself as a draft (agents.py check names it outside scope): abp@ to take it over."
+  },
+  {
+   "id": "273",
+   "title": "An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39416d71cbb, to push the telemetry application (5wnsr5h8) and drain 84wr8mib from the command line",
+   "status": "done",
+   "owner": "editor",
+   "note": "The telemetry application v0.4.1 (Queue & drain shows its progress) is committed in 5wnsr5h8 and waits for this to be pushed: a vault key reads and commits, the server takes a push only with an access token. Done 24 October: the editor gave it in the session; v0.4.1 and v0.4.2 pushed."
+  },
+  {
+   "id": "274",
+   "title": "Prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that re-shapes every page in place, with no reload and no flash; three pages at /admin/design/lens/ built from the live data",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "The editor's note of 24 October, in story-site's session. Brief: admin/content/briefs/2026-10-24__brief__the-lens.md. Measured in Chromium: layout shift 0 between the prototype's pages; no horizontal scroll at 390px; no page errors.",
+   "version": "0.15.0"
+  },
+  {
+   "id": "275",
+   "title": "The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work on this site' is a reader",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief on the lens (24 October). With a go, the steps in the brief's 'What it means for the site' go to dev: the boot script and stylesheet on every page, a part() helper in the build, the fallback for untagged pages, menus by the same rules, the settings in the reader's vault (board 140). Overlaps 140 and 235."
+  },
+  {
+   "id": "276",
+   "title": "Front page, Right now: the stamp says 'as of 24 October 2026, 08:37 UTC' but the five lines are unchanged since v0.12.1 and still say 'as of 23 October'; the day's news (Sophos withdrew the only vendor claim of a compromise; banks and crypto platforms report none) is in the state of affairs v3 and not on the front page",
+   "status": "done",
+   "owner": "journalist",
+   "note": "From the news desk chief's afternoon wake, 24 October. Done by the correspondent the same afternoon: the third line of Right now is as of the morning of 24 October and carries the Sophos withdrawal and the banks and crypto platforms; the line had been missed because it began with a capital 'As of'."
+  },
+  {
+   "id": "277",
+   "title": "The pipeline decided (24 October): researcher, curator, journalist (Sonnet), correspondent (Opus), then the ontologist, the librarian and the desk; folders and policies to follow",
+   "status": "open",
+   "owner": "abp@newsroom.sgit",
+   "note": "The editor, in the journalist's Opus session: the Opus role is named correspondent@php.newsroom; the Sonnet journalist keeps journalist@. Asks: a folder and policy for correspondent (the views, the state of affairs, the plan and /views/desk/, the review of the journalist's releases, persona and briefing prose until generated); the journalist's policy to cover the refresh files of board 218 and data/schedule/journalist.json; the ontologist's graph work placed after the correspondent's run (the build no longer stops on an unmapped publisher: data/graph.json lists them in unmapped_publishers). Brief: admin/content/briefs/2026-10-24__brief__the-pipeline-researcher-to-correspondent.md. The correspondent's key: sha256:3dd464ff62b83ad0, operator linked to the root, waiting for the editor's enrolment."
+  },
+  {
+   "id": "278",
+   "title": "Enable private vulnerability reporting on this repository (Settings, Code security, Private vulnerability reporting): security.txt and the bug bounty page point reporters there; the session's proxy cannot change repository settings",
+   "status": "done",
+   "owner": "editor",
+   "note": "Opened by security@php.newsroom, 24 October 2026. Done 24 October: the editor enabled private vulnerability reporting, with Dependabot alerts, malware alerts and security updates; security@ confirmed it reads as enabled through the API."
+  },
+  {
+   "id": "279",
+   "title": "Go, or not, on the branch security/gate-pass-2: the gate fails on inline event handlers, forged message headers, drain output in the tree, a page with no or an unsafe Content-Security-Policy, and files the build reads that git ignores",
+   "status": "open",
+   "owner": "editor",
+   "note": "Opened by security@php.newsroom, 24 October 2026."
+  },
+  {
+   "id": "280",
+   "title": "GitHub rulesets on dev and main (SA-2026-023): the editor's decision, 24 October, is to revisit when the site gets user logins",
+   "status": "open",
+   "owner": "editor",
+   "note": "Opened by security@php.newsroom, 24 October 2026."
+  },
+  {
+   "id": "281",
+   "title": "A Content-Security-Policy for the vault app (vault-app/src/index.html.tpl), which runs outside this site's policy (SA-2026-021)",
+   "status": "open",
+   "owner": "security",
+   "note": "Opened by security@php.newsroom, 24 October 2026."
+  },
+  {
+   "id": "282",
+   "title": "Signed messages and cards (SA-2026-024): a design using each agent's pki.sgit.ai key, for the editor and the conductor",
+   "status": "open",
+   "owner": "security",
+   "note": "Opened by security@php.newsroom, 24 October 2026."
+  },
+  {
+   "id": "283",
+   "title": "AGENTS.md section 1: three additions to 'take in dev', from 24 October",
+   "status": "open",
+   "owner": "conductor@php.newsroom",
+   "note": "The editor agreed, in the correspondent's session: (1) at session start, merging origin/dev should be a fast-forward; if it is not, the branch carries others' commits (a new Sonnet session's branch had 60): do not merge them on into dev, check they live on another branch and start clean with git checkout -B <branch> origin/dev; (2) when release.sh stops, git status and git log -3 first; never git checkout -- . or git stash drop while your work is not in a commit (a whole export was lost that way on 24 October and recovered from the reflog); commit, merge origin/dev, resolve, rebuild, release; (3) conflicts: a generated file (outputs.txt), take dev's and rebuild; a source file, keep both sides; two board rows with the same id, keep theirs, renumber yours; build once, it settles itself (board 175). Written into the journalist's brief already (2026-10-24__brief__the-journalist.md)."
+  },
+  {
+   "id": "284",
+   "title": "release.sh: its stop message advises 'git stash; git merge origin/dev; git stash pop', which can lose work if the pop conflicts",
+   "status": "open",
+   "owner": "security@php.newsroom",
+   "note": "Needs security review and the editor's go (CLAUDE.md). Proposed message: 'your work is uncommitted, as it was: commit it (git add <your source files>; git commit), then git merge origin/dev, resolve (generated files: take dev's and rebuild; source: keep both sides), and run this again'. Also worth checking: the loss of 24 October came right after a push rejected mid-release and a second integrate that stopped; whether that path can leave committed work uncommitted is not established. Raised by the correspondent at the editor's request."
   }
  ],
  "evidence_vault": {

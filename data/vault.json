@@ -1,12 +1,12 @@
 {
  "head": {
-  "commit": "1845598d9a38",
-  "subject": "curator@php.newsroom: promote 18 more sources from the source watch's pack copy (7r83qic5), the last of priority 3 (mechanical selection, each read): Nguoi Quan Sat, Notebookcheck.it, Paperjam, QA Financial, la Repubblica, Security Measures Lab, Security.NL, shattered.io, Shin-A Ilbo, SiliconANGLE, SOCRadar, Everyeye, Techaeris, TechTarget Japan, The420, The Star, Trak.in, ZATAZ; 13 claims, 2 flagged for the ledger (Japan PM order, 22m servers); slugs in notes/promotions__curator.json  +133 ~3  [blobs:+136 trees:+54]",
-  "commits": 21
+  "commit": "1f38e70921b2",
+  "subject": "curator@php.newsroom: promote 15 sources from the source watch's pack copy (7r83qic5), priority 2 (queue of 24 Oct 09:29 UTC), scheduled wake of 24 Oct 10:30 (mechanical selection, each read): AI Weekly, American Banker, Cyber Security News, Economedia, Estrella Digital, TechRadar FR, ITWeb, Astra Security release syndicated on four local sites, ClearanceJobs, Notebookcheck, TechTarget, The Next Web; 11 claims  +118 ~3  [blobs:+121 trees:+45]",
+  "commits": 23
  },
- "sources": 295,
- "captures": 290,
- "hashed_files": 1761,
+ "sources": 328,
+ "captures": 323,
+ "hashed_files": 1951,
  "primary": 89,
  "blocked": 15,
  "agents": [
@@ -19,6 +19,6 @@
   "curator@php.newsroom"
  ],
  "opened": "2026-10-22T08:03Z",
- "latest_capture": "2026-10-23T16:04Z",
+ "latest_capture": "2026-10-24T08:37Z",
  "note": "The captures are third-party pages kept privately for the record and are not published. Only their hashes are."
 }

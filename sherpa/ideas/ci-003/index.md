@@ -190,8 +190,8 @@ Who could take it: [Dinis Cruz](../../../team/dinis/index.html), with [Sherpa](.
 
 ## The reply
 
-Not sent. The editor shares this page and the brief with him.
+Shared by the editor. Step 1 shipped in v0.14.22 (the phone header, 43px; checked live) and step 2 in v0.14.24, restored in v0.14.29 (/grc/changes/, checked live). His first step for newcomers is prototype E's 'Aim' setting (v0.15.0, /admin/design/lens/), waiting for the editor's go.
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-003/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-003/index.html

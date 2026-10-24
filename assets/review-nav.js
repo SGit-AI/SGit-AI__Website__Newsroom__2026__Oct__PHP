@@ -2,7 +2,7 @@
 // The graph is the #rv element's data-graph (default data/review.json), the first node its data-start; a force-laid SVG graph with no library,
 // a breadcrumb, and a panel for the node in focus. Click a node or a list item to move.
 (async function () {
-  const root = document.documentElement.getAttribute('data-root') || '../../'
+  const root = document.documentElement.hasAttribute('data-root') ? '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length) : '../../'   // only ever '../' repeated
   const box = document.getElementById('rv'), src = box.getAttribute('data-graph') || 'data/review.json', start = box.getAttribute('data-start') || 'fix-commit'
   let G
   try { G = await (await fetch(root + src, { cache: 'no-store' })).json() } catch (e) { document.getElementById('rv').textContent = 'Could not load the review graph.'; return }
@@ -58,7 +58,7 @@
     if (n.href && /^[a-z0-9][\w\/.#:-]*$/i.test(n.href) && !/^[a-z][a-z0-9+.-]*:/i.test(n.href)) extra.push(`<p><a href="${root}${esc(n.href)}">Its page on this site &rarr;</a></p>`)
     if (n.source) extra.push(`<p><a href="${root}sources/${esc(n.source)}/index.html">The source &rarr;</a></p>`)
     document.getElementById('rv').innerHTML =
-      `<p class="crumb">${G.layers.map(l => `<span class="ly l-${l.id}${l.id === n.layer ? ' on' : ''}">${esc(l.name)}</span>`).join(' &rsaquo; ')}</p>
+      `<p class="crumb">${G.layers.map(l => `<span class="ly l-${esc(l.id)}${l.id === n.layer ? ' on' : ''}">${esc(l.name)}</span>`).join(' &rsaquo; ')}</p>
        <figure class="rgraph">${svg}</figure>
        <article class="rnode"><p class="kicker">${esc(layerName[n.layer])}</p><h2>${esc(n.name)}</h2><p>${esc(n.text)}</p>${extra.join('')}
        <h3>Connected</h3><ul class="rel">${rel}</ul></article>`

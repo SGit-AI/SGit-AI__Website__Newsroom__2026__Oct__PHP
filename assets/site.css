@@ -749,3 +749,11 @@ ul.pev li{margin:.5rem 0}
   nav.site .nav-items{order:5}
   nav.site:has(.nav-items.open){max-height:100vh;max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
 }
+/* What changed in the risk graph (/grc/changes/) */
+.gc-pick{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;margin:.6rem 0 1rem;font-size:.9rem}
+.gc-pick select{font:inherit;padding:.2rem .4rem;border:1px solid var(--line2);border-radius:6px;background:var(--panel);color:var(--fg)}
+.gc-up{color:var(--ok-ink);font-weight:600}.gc-down{color:var(--bad-ink);font-weight:600}
+.gc-list{columns:2 22rem;column-gap:1.5rem;padding-left:1.1rem;font-size:.88rem}.gc-list li{break-inside:avoid;margin:.15rem 0}
+.gx-basis{font-size:.7rem;padding:0 .35rem;border-radius:999px;border:1px solid var(--line2);color:var(--dim)}
+.gx-b-inferred{border-style:dashed}.gx-b-confirmed{color:var(--ok-ink);border-color:currentColor}
+table.pulse td.pr-nc{color:var(--dim)}

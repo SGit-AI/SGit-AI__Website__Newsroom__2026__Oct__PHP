@@ -2,7 +2,7 @@
   "schema": "sgit.newsroom.friction-log/1",
   "about": "Every friction a reader meets on this site, structured: who, where, what they tried, what happened, what they expected, the evidence, who can fix it and whether it landed. Kept by sherpa@php.newsroom; see admin/sherpa/README.md. Synthetic readers are test instruments, not people: their findings are prompts, and each is re-checked on the current version before it is logged.",
   "kept_by": "sherpa",
-  "as_of_version": "0.14.17",
+  "as_of_version": "0.15.4",
   "stages": [
     "arrive",
     "first-screen",
@@ -30,7 +30,8 @@
         "UF-002 point 6",
         "UF-003 point 3: a fourth reader",
         "synthetic board and designer, run 2 on v0.10.18: still two screens of controls before the briefing on a phone; the designer counts three boxes now",
-        "11:45 pass on v0.14.17: the headline starts 603 to 671px down on a phone on every page walked (source, articles, fact-check, explore, gaps, join)"
+        "11:45 pass on v0.14.17: the headline starts 603 to 671px down on a phone on every page walked (source, articles, fact-check, explore, gaps, join)",
+        "17:45 pass on v0.15.4: h1 at 452 (front), 535 (board briefing), 455 (claims), 434 (fact-check), 482 (graph changes)"
       ],
       "severity": "high",
       "affects": "every page, every phone reader",
@@ -40,8 +41,8 @@
         "dev"
       ],
       "first_seen": "0.4.3",
-      "last_seen": "0.14.17",
-      "status": "open",
+      "last_seen": "0.15.4",
+      "status": "improved in v0.14.22: the headline now starts 434 to 535px down an 844px-class phone screen (was 600 to 670); the board briefing's thirty-second answer is still below the first screen",
       "trend": "worse: the Ask and Feedback row of v0.8.0 added about 60px above the fold"
     },
     {
@@ -251,7 +252,8 @@
         "UF-001 point 5, received 2026-10-23",
         "Counted on 0.8.1 in Chromium: links and buttons per page as above.",
         "UF-002 points 6, 10 and 11: unexplained chrome; the theme pill and the banner link seemed to do nothing",
-        "UF-003 point 3: reading buttons with nothing to act on say nothing; a fourth reader"
+        "UF-003 point 3: reading buttons with nothing to act on say nothing; a fourth reader",
+        "The lens prototype (v0.15.0) folds the reading tools into one control ('Seen: Show, Fade, Hide'), which answers UF-003's 'what do fade, hide and show do'; waits for the editor's go"
       ],
       "severity": "medium",
       "proposal": "Three steps, cheapest first: a one-screen guide to the site's own tools, linked from a '?' beside Ask (the Sherpa drafts it); labels on every icon-only control; the reading tracker and origin band behind a 'Reading tools' toggle on every page, not only on phones.",
@@ -702,8 +704,8 @@
         "11:45 pass on v0.14.17: the headline starts 603 to 671px down on a phone on every page walked (source, articles, fact-check, explore, gaps, join)"
       ],
       "first_seen": "0.14.13",
-      "last_seen": "0.14.17",
-      "status": "open",
+      "last_seen": "0.15.4",
+      "status": "closed: fixed in v0.14.22 (one 43px line sticks on a phone); checked live on v0.15.4 at 390x780 on five pages, 24 October 17:45 pass",
       "source": "CI-003"
     },
     {
@@ -720,10 +722,11 @@
       ],
       "evidence": [
         "Measured in Chromium on v0.14.14, 390x780 and 1440x900, 24 October",
-        "CI-003 item 2"
+        "CI-003 item 2",
+        "v0.15.0's prototype E (the lens, /admin/design/lens/) asks 'Aim: Understand it, Know what to do, Check the evidence' on a first visit: the collaborator's three doors; waits for the editor's go. Live front page unchanged: 'Three ways to read' at 9,204px on a phone (v0.15.4)"
       ],
       "first_seen": "0.14.14",
-      "last_seen": "0.14.14",
+      "last_seen": "0.15.4",
       "status": "open",
       "source": "CI-003"
     }

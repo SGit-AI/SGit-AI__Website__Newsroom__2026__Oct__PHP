@@ -1,27 +1,66 @@
 {
  "schema": "newsroom/agent-status/v1",
  "agent": "story-site",
- "as_of": "2026-10-22",
- "round": null,
- "state": "no round recorded under this policy yet",
- "done": [],
+ "as_of": "2026-10-24",
+ "round": 1,
+ "state": "round 1 closed: prototype E, the lens, and its brief",
+ "done": [
+  {
+   "what": "Prototype E, the lens, at /admin/design/lens/ (three pages, from the live data), and its brief",
+   "evidence": "admin/content/briefs/2026-10-24__brief__the-lens.md; board 274; debrief 2026-10-24__the-lens.md"
+  },
+  {
+   "what": "The redesign live: tracks A, B, C, the team console, the task menu and two dials, the wide layout",
+   "evidence": "v0.14.0; board 252"
+  }
+ ],
  "tasks": {
-  "board": [],
+  "board": [
+   "275",
+   "253",
+   "230",
+   "231",
+   "223",
+   "226",
+   "227"
+  ],
   "note": "the board rows this member owns are in data/admin.json"
  },
- "next": [],
- "asks": [],
+ "next": [
+  {
+   "what": "The lens on the live layout, with dev",
+   "why": "once the editor says go on board 275; the brief lists the steps"
+  },
+  {
+   "what": "Board 230 and 231: the headline as the day's news, the offline sentence as the agencies count",
+   "why": "the desk asked first, and they are small"
+  }
+ ],
+ "asks": [
+  {
+   "what": "Go or not for the lens on the live site; the words of its three questions; whether the team is a reader (board 275)",
+   "from": "the editor"
+  },
+  {
+   "what": "Enrol story-site's key, sha256:f15dbb872e108ec7",
+   "from": "the editor"
+  },
+  {
+   "what": "Owners for /ops/ and /analysis/ in scope.pages (board 253)",
+   "from": "the librarian"
+  }
+ ],
  "tokens": {
   "value": null,
-  "how": "not recorded"
+  "how": "the session does not show a token count to the agent"
  },
  "policy": {
   "version": "2026-10-22",
   "out_of_scope_requests": 0,
   "pushbacks": 0,
   "overrides": 0,
-  "writes_outside_scope": null,
+  "writes_outside_scope": 0,
   "injection_seen": 0
  },
- "debrief": null
+ "debrief": "admin/content/agents/story-site/debriefs/2026-10-24__the-lens.md"
 }

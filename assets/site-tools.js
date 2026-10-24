@@ -10,7 +10,7 @@
 // It also puts the Ask button in the bar, which loads the pane only when pressed.
 (function () {
   'use strict';
-  var html = document.documentElement, root = html.getAttribute('data-root') || '', here = html.getAttribute('data-path') || 'index.html';
+  var html = document.documentElement, root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length), here = html.getAttribute('data-path') || 'index.html';
   var NOW = null, ITEMS = null, nowP = null;
   function getJSON(p) { return fetch(root + p, { credentials: 'omit', cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(p + ': ' + r.status); return r.json(); }); }
   function now() { return nowP || (nowP = getJSON('now/now.json').then(function (j) { NOW = j; ITEMS = {}; (j.items || []).forEach(function (it) { ITEMS[it.id] = it; }); return j; })); }

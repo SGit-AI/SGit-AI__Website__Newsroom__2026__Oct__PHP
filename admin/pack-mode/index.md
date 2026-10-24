@@ -105,4 +105,4 @@ Every number is in [data/pack-mode.json](../../data/pack-mode.json), from a time
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.html

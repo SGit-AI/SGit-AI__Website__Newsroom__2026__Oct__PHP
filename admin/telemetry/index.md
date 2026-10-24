@@ -12,6 +12,15 @@ Every page sends one anonymous event to a write-only lane on a separate, private
 
 One anonymous event per page per session: path, referrer host, country, region, city (from a geolocation lookup; the lookup service sees your IP, the event does not carry it), language, screen class, time zone, a random session id, the site version. Encrypted in your browser to the key below and written to a write-only lane. The brief and the counts are in the admin section.
 
+### The policy
+- One anonymous event per page per session, encrypted in your browser before it leaves, to a key only the editor's drain holds.
+- This site has no server of its own: there are no web server logs, and no IP address is captured or stored by us anywhere, at any step. That alone is more than most websites do for their readers' privacy.
+- For a coarse location (country, region, city) your browser itself asks a location service: ipapi.co, or ipwho.is only if the first does not answer. That request goes from your browser, like any request your browser makes, so the service sees your IP address; the event this site records never carries it (the address in the service's answer is never read).
+- Cities and regions are kept in the private telemetry vault, for the editor. What is published is counts only: no row, session id, city, region, time zone or time finer than the hour.
+- Do Not Track and Global Privacy Control are honoured: with either set, your browser sends nothing, not even the location request.
+- The page's Content-Security-Policy allows exactly these two location services and the vault server, so no other third party can be added by a data change without a security review.
+- The editor's decision, 24 October 2026: keep the location lookups (security advisory SA-2026-030, accepted).
+
 **Lane** vault `84wr8mib` on `https://dev.send.sgraph.ai` · **append token** `43ed24b413cdf8c2405d0b72cddcd36c04fd7ae1ad852b872ed25727b6d61fb3` (write-only; publishable by design) · **encrypted to** `sha256:8b2b26ff9386078f`
 
 -----BEGIN PUBLIC KEY----- MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA2eWJSSnd9+s2VjObHUc6 acOgnVxCaUavKP7eex/kMjUhaSCMHDIr6phTVS/mtjs+5toVNtYPkMS1eHbo1ivu gOiCVn5iJz4r75Lrn9t6Kj7YiBQzNpFngeDAq3RhI9BkfwVtc6Ds/hNIiaHXdZAF p9Fbd3GiH3aY6EK1iHGIRD2QF/eIcI5tEtzEZG8fa+AyyDrK2otOXgI2SlabA+bh sm344AfE+3FIbre/NqP6NLG4a0Odtw5xLfNUiJRP2kuFapj0ryVeRkyom30UNeCQ jS7JHZKkumeqAglLbRDyJ0GSkbbQdzGUSd8B++hHgf+rwPsZG9BxzTNT2jc4LGzM eB8fxr4ujMCCU35ZsOWQBgjXwnzpOnFCxdXsHKIq13Yuxc+2sJiSBmaYZJDVkfxx SzVowtBHS1Ad1qRZC/dojFmvaHqYOEajHsxH/aJokW5LqCLuYBir9vniqS7GkJNO 2HBkozg3m/gjNMB6k+g6hz0brWfZ5/r28bOdRtBoof7AEcXzHYzmCX6AdDQ7ho+A gdLDNaSYLyTH0b2OIwDTaU+/tSdTQ+v8D7b3gXQwn0Fbe0YTbL1ZIxrILxzKuEhX 2WAKYR/IrJeCVhy6yKJtDv9iQ8j98+CFFbTfpiTXJ/DIS99XJgj1m9fO35QUJWFO JM7i64/3L87WlSvDQftSensCAwEAAQ== -----END PUBLIC KEY----- The geolocation lookup goes to `https://ipapi.co/json/` then `https://ipwho.is/`; that service sees your IP address and returns a country, a region and a city; the event keeps the three names and nothing else. The vault server sees that a lane received something, its size and the time, and the requesting IP, as any server does.
@@ -198,4 +207,4 @@ Mechanics: `assets/telemetry.js` sends; `admin/build/telemetry_drain.py`, run by
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html

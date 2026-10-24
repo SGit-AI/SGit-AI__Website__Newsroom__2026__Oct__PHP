@@ -15,7 +15,7 @@
   'use strict';
   var box = document.getElementById('stack');
   if (!box) return;
-  var root = document.documentElement.getAttribute('data-root') || '';
+  var root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length);   // only ever '../' repeated: the depth, never page text
   var KEY = 'p2s.stack.v1', FORMAT = 'p2s.stack/1';
   var CAT = null, ST = null, UI = { open: {} };
   var LEVEL = { ok: 0, low: 1, unknown: 2, high: 3, critical: 4 };

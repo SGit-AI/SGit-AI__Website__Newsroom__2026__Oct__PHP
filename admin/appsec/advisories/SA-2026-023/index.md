@@ -44,8 +44,8 @@ A boundary above the agents.
 
 ## What would fix it
 
-Rulesets: no force-push or deletion; main by pull request only; a path ruleset for the gate, the workflows and admin/security/; CI runs security_check.py from the base commit.
+Rulesets: no force-push or deletion; main by pull request only; a path ruleset for the gate, the workflows and admin/security/; CI runs security_check.py from the base commit. The editor's decision, 24 October 2026: revisit when the site gets user logins.
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-023/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-023/index.html

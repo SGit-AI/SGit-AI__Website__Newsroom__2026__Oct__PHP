@@ -2121,6 +2121,326 @@
    "aliases": [
     "合同会社ロケットボーイズ"
    ]
+  },
+  {
+   "id": "24heures",
+   "name": "24 Heures",
+   "kind": "outlet",
+   "country": "CH",
+   "aliases": [
+    "24 Heures"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "2days-kr",
+   "name": "2days.kr",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "2days.kr"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "american-banker",
+   "name": "American Banker",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "American Banker"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "btc-echo",
+   "name": "BTC-ECHO",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "BTC-ECHO"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "bgonair",
+   "name": "Bgonair",
+   "kind": "outlet",
+   "country": "BG",
+   "aliases": [
+    "Bgonair"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "bursada-bugun",
+   "name": "Bursada Bugün",
+   "kind": "outlet",
+   "country": "TR",
+   "aliases": [
+    "Bursada Bugün"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "bao-gia-lai",
+   "name": "Báo Gia Lai điện tử",
+   "kind": "outlet",
+   "country": "VN",
+   "aliases": [
+    "Báo Gia Lai điện tử"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "ceonews-kr",
+   "name": "CEONEWS (Korea)",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "CEONEWS"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "chip-de",
+   "name": "CHIP",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "CHIP"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "channelpartner",
+   "name": "ChannelPartner",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "ChannelPartner"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "clearancejobs",
+   "name": "ClearanceJobs News",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "ClearanceJobs News"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "cybersecuritynews",
+   "name": "Cyber Security News",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "Cyber Security News"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "economedia",
+   "name": "Economedia",
+   "kind": "outlet",
+   "country": "RO",
+   "aliases": [
+    "Economedia"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "estrella-digital",
+   "name": "Estrella Digital",
+   "kind": "outlet",
+   "country": "ES",
+   "aliases": [
+    "Estrella Digital"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "itweb",
+   "name": "ITWeb",
+   "kind": "outlet",
+   "country": "ZA",
+   "aliases": [
+    "ITWeb"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "milton-keynes-citizen",
+   "name": "Milton Keynes Citizen",
+   "kind": "outlet",
+   "country": "GB",
+   "aliases": [
+    "Milton Keynes Citizen"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "notebookcheck",
+   "name": "Notebookcheck",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "Notebookcheck"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "peterborough-telegraph",
+   "name": "Peterborough Telegraph",
+   "kind": "outlet",
+   "country": "GB",
+   "aliases": [
+    "Peterborough Telegraph"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "sunderland-echo",
+   "name": "Sunderland Echo",
+   "kind": "outlet",
+   "country": "GB",
+   "aliases": [
+    "Sunderland Echo"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "sussexworld",
+   "name": "SussexWorld",
+   "kind": "outlet",
+   "country": "GB",
+   "aliases": [
+    "SussexWorld"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "techradar",
+   "name": "TechRadar",
+   "kind": "outlet",
+   "country": "GB",
+   "aliases": [
+    "TechRadar"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "the-next-web",
+   "name": "The Next Web",
+   "kind": "outlet",
+   "country": "NL",
+   "aliases": [
+    "The Next Web"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "aiweekly",
+   "name": "AI Weekly",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "aiweekly"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "areacucuta",
+   "name": "Área Cúcuta",
+   "kind": "outlet",
+   "country": "CO",
+   "aliases": [
+    "areacucuta.com"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "boannews",
+   "name": "Boan News",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "boannews"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "aitnews",
+   "name": "AIT News (البوابة التقنية)",
+   "kind": "outlet",
+   "country": "SA",
+   "aliases": [
+    "البوابة التقنية"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "cairo24",
+   "name": "Cairo 24 (القاهرة 24)",
+   "kind": "outlet",
+   "country": "EG",
+   "aliases": [
+    "القاهرة 24"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "site24-ae",
+   "name": "24.ae (موقع 24)",
+   "kind": "outlet",
+   "country": "AE",
+   "aliases": [
+    "موقع 24"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "blocktempo",
+   "name": "BlockTempo (動區動趨)",
+   "kind": "outlet",
+   "country": "TW",
+   "aliases": [
+    "動區動趨"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "asahi-digital",
+   "name": "Asahi Shimbun Digital (朝日新聞デジタル)",
+   "kind": "outlet",
+   "country": "JP",
+   "aliases": [
+    "朝日新聞デジタル"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "ask-corp",
+   "name": "ASK Corporation (株式会社アスク)",
+   "kind": "organisation",
+   "country": "JP",
+   "aliases": [
+    "株式会社アスク"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "chinaz",
+   "name": "Chinaz (站长之家)",
+   "kind": "outlet",
+   "country": "CN",
+   "aliases": [
+    "站长之家"
+   ],
+   "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
   }
  ]
 }
