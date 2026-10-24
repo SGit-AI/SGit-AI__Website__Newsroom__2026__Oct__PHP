@@ -8,6 +8,8 @@ Fractal semantic graphs: the ontologies and taxonomies, the story graph and its 
 |---|---|
 | `admin/ontologist/README.md` | This file: the role and the runbook a pass follows |
 | `admin/ontologist/pass.py` | The pass: what the ontology does not resolve yet; `--strict` exits 1 if the build would stop |
+| `admin/wikipedia/fetch.py` | Every revision of a Wikipedia article, its Wikidata item and the links in, into `data/wikipedia/` |
+| `admin/build/wikitext.py` | The parser: wikitext to statements, classed by wording, with their references |
 | `admin/ontologist/passes/<date>__pass-<n>.md` | One record per pass: what changed, what was found, what was handed to whom |
 | `data/ontology.json` | Kinds, verbs with inverses, taxonomies, formulas, banned verbs. Its `version` moves on every pass that changes it |
 | `data/entities.json` | One node per party, every publisher spelling an alias |
@@ -32,24 +34,26 @@ A pass takes in what other agents added since the last one and leaves the graph 
 
 1. **Take in dev.** `git fetch origin dev && git merge origin/dev` on the ontologist's own branch; resolve source
    conflicts by keeping both sides (renumber only the ontologist's own board rows).
-2. **Read what is unresolved.** `python3 admin/ontologist/pass.py`. Everything under "would stop the build" is
+2. **Fetch Wikipedia.** `python3 admin/wikipedia/fetch.py <Title>` for every article in `data/wikipedia/index.json`:
+   the new revisions, the item, the links in. A new article is added with the editor's go.
+3. **Read what is unresolved.** `python3 admin/ontologist/pass.py`. Everything under "would stop the build" is
    fixed in this pass:
    - a new publisher spelling: an alias on an existing entity when it is the same party; a new entity when it is not.
      Check the page (its title and address) before deciding; write a `note` where a name misleads (near but not the same).
    - a new or changed claim, number or signal: who states it, and who relayed it where the row says so.
    - a new exploitation kind: a line in the `signal-class` map, or a new class in the ontology with a reason.
    - a source that is one outlet carrying another's wire copy: a `syndicates` row with its basis.
-3. **Build.** `python3 admin/build/build.py`. It stops on an unknown verb, kind, publisher, party or crosswalk id;
+4. **Build.** `python3 admin/build/build.py`. It stops on an unknown verb, kind, publisher, party or crosswalk id;
    fix the cause, never the check.
-4. **Read the graphs against each other.** Every other graph on the site (today `data/review.json` and
+5. **Read the graphs against each other.** Every other graph on the site (today `data/review.json` and
    `data/grc-graph.json`): verbs with inverses, no dangling edge, ids that name the same thing as the story graph's.
    A new shared anchor or stakeholder goes in `data/crosswalk.json`.
-5. **Look at the long tail.** The "to look at" list: pages recorded twice, sources nobody has traced, sources the
+6. **Look at the long tail.** The "to look at" list: pages recorded twice, sources nobody has traced, sources the
    vault's own claims cite that the site does not, misclassified sources. Each one worth acting on becomes a board
    row for the desk that owns it, with the slugs.
-6. **Check it works.** `python3 admin/build/validate.py`; the component in Chromium at 1280 and 390, light and dark
+7. **Check it works.** `python3 admin/build/validate.py`; the component in Chromium at 1280 and 390, light and dark
    and without JavaScript, when the component or the graph's shape changed.
-7. **Record and release.** A record in `admin/ontologist/passes/`, the ontology's `version` if it changed, board
+8. **Record and release.** A record in `admin/ontologist/passes/`, the ontology's `version` if it changed, board
    rows, `REALITY.md` if what exists changed; then `admin/build/release.sh "<what the pass changed>"` (AGENTS.md
    section 1). A conflict is solved by hand and said in the run's log; the board is where it happens, since every
    agent appends to it. A pass that changed nothing ends with one line and no commit (AGENTS.md section 7).
@@ -60,6 +64,6 @@ The card is `data/schedule/ontologist.json` (AGENTS.md section 7), active since 
 once a day at 14:40 London, after the curator's 13:00 promotion and the fact-check desk's midday run, before the
 conductor's 15:15 full pass. The claude.ai scheduled task "Ontologist daily pass" starts a fresh Sonnet session each
 day with the card's wake prompt, word for word; it holds no key. A scheduled pass follows the runbook above and the
-card's `each_wake`, and stops at step 7: anything that needs a judgement about another desk's data, or the editor's,
+card's `each_wake`, and stops at step 8: anything that needs a judgement about another desk's data, or the editor's,
 is left as a board row, never done. It never changes the component, which is session work tested in Chromium. A
 change to the times or the prompt changes the card and the scheduled task together, with the editor's go.

@@ -1,7 +1,7 @@
 {
  "id": "php-newsroom-story-ontology",
- "version": "0.2.0",
- "updated": "2026-10-24",
+ "version": "0.3.0",
+ "updated": "2026-10-25",
  "kept_by": "ontologist",
  "about": "The ontology of this site's story graph (data/graph.json), in the shape the estate's newsroom ontologies use (portugal-ontology, governance-beat-ontology on newsroom.sgit.ai). The grammar is the estate's (graphs.sgit.ai/v1/grammar/): every edge is a verb with a different, named inverse; no generic association edge; no self-inverse edge, so a tension between claims is a node that flags them; supersede, never delete; weight by independence, not by count. Each verb says whether it is inherited from an estate ontology or proposed here. The build refuses an edge whose verb is not listed, and a node whose kind is not listed.",
  "inherits_from": [
@@ -365,6 +365,13 @@
    "relation": "zooms_into",
    "basis": "the review graph's vulnerability layer has one node per CVE (cve-109618, cve-109619)",
    "note": "The fractal step: a CVE node in this graph opens the code-review graph, with its own ontology (flaws, remediation, code) and its own verbs, joined by this named bridge. Its verbs are listed below as their own scope, unchanged."
+  },
+  {
+   "from": "source",
+   "to": "data/wikipedia/<article>/graph.json",
+   "relation": "zooms_into",
+   "basis": "a source of this site that is a Wikipedia article opens the article's own graph; a source that a Wikipedia reference is captured_as is where the two graphs meet",
+   "note": "The fractal step for an encyclopedia: the article is a node in the story graph (a source), and inside it is a graph with its own kinds and verbs, joined to the story graph through the sources both cite."
   }
  ],
  "scopes": {
@@ -394,6 +401,234 @@
     {
      "verb": "touches",
      "inverse": "touched by"
+    }
+   ]
+  },
+  "wikipedia": {
+   "graph": "data/wikipedia/<article>/graph.json",
+   "about": "A Wikipedia article read as a graph of its own: the article, its sections, one statement per sentence, the references each statement cites, every revision and who made it, and the Wikidata item. Its own kinds and verbs, joined to the story graph by one named edge: a reference is captured_as a source of this site, and that source is what the site's claims cite. Two statements of fact that share a source meet at the source; there is no 'same as' edge (graphs.sgit.ai rule 7). The classes of statement are read from the wording by admin/build/wikitext.py, never from whether the statement is true.",
+   "node_types": [
+    {
+     "id": "article",
+     "label": "Article",
+     "plural": "articles",
+     "definition": "One Wikipedia article, at its latest revision fetched."
+    },
+    {
+     "id": "section",
+     "label": "Section",
+     "plural": "sections",
+     "definition": "A heading of the article; the lead is a section."
+    },
+    {
+     "id": "statement",
+     "label": "Statement",
+     "plural": "statements",
+     "definition": "One sentence of the article, with its class (quote, attributed, hedged, record, stated) and whether it is cited."
+    },
+    {
+     "id": "reference",
+     "label": "Reference",
+     "plural": "references",
+     "definition": "One <ref> of the article: a page somewhere, with the publisher the article names."
+    },
+    {
+     "id": "revision",
+     "label": "Revision",
+     "plural": "revisions",
+     "definition": "One saved edit of the article: when, by whom (a public username, or anonymous), what it added and removed."
+    },
+    {
+     "id": "editor",
+     "label": "Editor",
+     "plural": "editors",
+     "definition": "A registered Wikipedia editor by public username, or one node for every anonymous edit; never an address."
+    },
+    {
+     "id": "item",
+     "label": "Wikidata item",
+     "plural": "Wikidata items",
+     "definition": "The structured record Wikidata keeps for the subject, with its claims."
+    },
+    {
+     "id": "source",
+     "label": "Source",
+     "plural": "sources",
+     "definition": "A source of this site's evidence vault (the story graph's node, borrowed): where a reference has been captured."
+    },
+    {
+     "id": "party",
+     "label": "Party",
+     "plural": "parties",
+     "definition": "A party of this site's entities file (the story graph's node, borrowed): who publishes a reference."
+    },
+    {
+     "id": "cve",
+     "label": "CVE",
+     "plural": "CVEs",
+     "definition": "An anchor node (the story graph's), borrowed: a CVE identifier a statement names, where the article joins the story and code-review graphs."
+    }
+   ],
+   "taxonomy": [
+    {
+     "id": "statement-class",
+     "label": "Classes of statement, by wording",
+     "types": [
+      "quote",
+      "attributed",
+      "hedged",
+      "record",
+      "stated"
+     ],
+     "reads": {
+      "quote": "carries someone's words in quotation marks",
+      "attributed": "says a named party said, reported, estimated or believes it",
+      "hedged": "may, could, reportedly, is believed, estimated to: the article being careful",
+      "record": "a number, a date, a version or an identifier, stated plainly",
+      "stated": "a plain statement in the article's own voice"
+     },
+     "note": "Wikipedia's rule is that an article states facts and attributes opinions; so 'attributed' and 'quote' are where the article hands a view or a report to a party, and 'record' and 'stated' are what it asserts itself. The class says how a sentence is worded, not whether it holds; the evidence is in the references."
+    }
+   ],
+   "edges": [
+    {
+     "verb": "has_section",
+     "inverse": "section_of",
+     "domain": [
+      "article"
+     ],
+     "range": [
+      "section"
+     ],
+     "reads": "{s} has section {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "contains",
+     "inverse": "contained_in",
+     "domain": [
+      "section"
+     ],
+     "range": [
+      "statement"
+     ],
+     "reads": "{s} contains {t}",
+     "origin": "inherited",
+     "from": "Issues-FS link types"
+    },
+    {
+     "verb": "cites",
+     "inverse": "cited_by",
+     "domain": [
+      "statement",
+      "article"
+     ],
+     "range": [
+      "reference"
+     ],
+     "reads": "{s} cites {t}",
+     "origin": "inherited",
+     "from": "the story graph",
+     "note": "From the article itself where the reference sits in the infobox rather than in a sentence."
+    },
+    {
+     "verb": "captured_as",
+     "inverse": "capture_of",
+     "domain": [
+      "reference"
+     ],
+     "range": [
+      "source"
+     ],
+     "reads": "{s} is captured as {t}",
+     "origin": "proposed",
+     "note": "The bridge to the story graph: the reference's page is in the evidence vault under this source. Computed by the build from the URL, never authored."
+    },
+    {
+     "verb": "published_by",
+     "inverse": "publishes",
+     "domain": [
+      "reference"
+     ],
+     "range": [
+      "party"
+     ],
+     "reads": "{s} is published by {t}",
+     "origin": "inherited",
+     "from": "governance-beat-ontology"
+    },
+    {
+     "verb": "revises",
+     "inverse": "revised_in",
+     "domain": [
+      "revision"
+     ],
+     "range": [
+      "article"
+     ],
+     "reads": "{s} revises {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "adds",
+     "inverse": "added_in",
+     "domain": [
+      "revision"
+     ],
+     "range": [
+      "statement"
+     ],
+     "reads": "{s} adds {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "removes",
+     "inverse": "removed_in",
+     "domain": [
+      "revision"
+     ],
+     "range": [
+      "statement"
+     ],
+     "reads": "{s} removes {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "made_by",
+     "inverse": "made",
+     "domain": [
+      "revision"
+     ],
+     "range": [
+      "editor"
+     ],
+     "reads": "{s} was made by {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "described_by",
+     "inverse": "describes",
+     "domain": [
+      "article"
+     ],
+     "range": [
+      "item"
+     ],
+     "reads": "{s} is described by {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "names",
+     "inverse": "named_in",
+     "domain": [
+      "statement"
+     ],
+     "range": [
+      "cve"
+     ],
+     "reads": "{s} names {t}",
+     "origin": "inherited",
+     "from": "the story graph"
     }
    ]
   }

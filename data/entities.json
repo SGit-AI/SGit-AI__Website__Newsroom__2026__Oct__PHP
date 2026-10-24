@@ -8,7 +8,11 @@
    "kind": "organisation",
    "actor": true,
    "aliases": [
-    "PHP Group (php.net)"
+    "PHP Group (php.net)",
+    "PHP Lists",
+    "php.net",
+    "news-web.php.net",
+    "PHP"
    ]
   },
   {
@@ -43,7 +47,8 @@
    "kind": "organisation",
    "actor": true,
    "aliases": [
-    "The PHP Foundation"
+    "The PHP Foundation",
+    "thephp.foundation"
    ]
   },
   {
@@ -123,7 +128,9 @@
    "actor": true,
    "aliases": [
     "Wiz (Wiz Research)",
-    "Wiz (@wiz_io)"
+    "Wiz (@wiz_io)",
+    "Wiz Blog",
+    "wiz.io"
    ]
   },
   {
@@ -141,7 +148,9 @@
    "kind": "organisation",
    "actor": true,
    "aliases": [
-    "Cloudflare"
+    "Cloudflare",
+    "blog.cloudflare.com",
+    "cloudflare.com"
    ]
   },
   {
@@ -160,7 +169,9 @@
    "kind": "organisation",
    "actor": true,
    "aliases": [
-    "Amazon (CJ Moses, AWS Security Blog)"
+    "Amazon (CJ Moses, AWS Security Blog)",
+    "Amazon AWS",
+    "aws.amazon.com"
    ]
   },
   {
@@ -182,7 +193,9 @@
    "kind": "organisation",
    "actor": true,
    "aliases": [
-    "watchTowr"
+    "watchTowr",
+    "labs.watchtowr.com",
+    "watchtowr.com"
    ]
   },
   {
@@ -218,7 +231,8 @@
    "kind": "organisation",
    "actor": true,
    "aliases": [
-    "Huntress"
+    "Huntress",
+    "huntress.com"
    ]
   },
   {
@@ -411,7 +425,9 @@
    "member_of": "agencies",
    "aliases": [
     "NSA Cybersecurity (@NSACyber)",
-    "US National Security Agency (NSA)"
+    "US National Security Agency (NSA)",
+    "NSA Press Room",
+    "nsa.gov"
    ]
   },
   {
@@ -422,7 +438,8 @@
    "member_of": "agencies",
    "aliases": [
     "CISA",
-    "US Cybersecurity and Infrastructure Security Agency (CISA)"
+    "US Cybersecurity and Infrastructure Security Agency (CISA)",
+    "cisa.gov"
    ]
   },
   {
@@ -432,7 +449,9 @@
    "country": "UK",
    "member_of": "agencies",
    "aliases": [
-    "UK National Cyber Security Centre (NCSC)"
+    "UK National Cyber Security Centre (NCSC)",
+    "National Cyber Security Centre",
+    "ncsc.gov.uk"
    ]
   },
   {
@@ -600,8 +619,11 @@
    "kind": "registry",
    "aliases": [
     "CVE Program (CNA: PHP Group)",
-    "CVE Program (cveawg API)"
-   ]
+    "CVE Program (cveawg API)",
+    "cve.org",
+    "Mitre"
+   ],
+   "part_of": "mitre"
   },
   {
    "id": "nvd",
@@ -617,7 +639,9 @@
    "kind": "outlet",
    "actor": true,
    "aliases": [
-    "BBC News"
+    "BBC News",
+    "bbc.com",
+    "bbc.co.uk"
    ]
   },
   {
@@ -627,7 +651,8 @@
    "actor": true,
    "aliases": [
     "The Hacker News",
-    "The Hacker News (Ravie Lakshmanan)"
+    "The Hacker News (Ravie Lakshmanan)",
+    "thehackernews.com"
    ]
   },
   {
@@ -635,7 +660,8 @@
    "name": "The Register",
    "kind": "outlet",
    "aliases": [
-    "The Register"
+    "The Register",
+    "theregister.com"
    ]
   },
   {
@@ -732,7 +758,9 @@
    "id": "reuters",
    "name": "Reuters",
    "kind": "outlet",
-   "aliases": []
+   "aliases": [
+    "reuters.com"
+   ]
   },
   {
    "id": "bloomberg",
@@ -924,7 +952,8 @@
    "name": "Sansec",
    "kind": "organisation",
    "aliases": [
-    "Sansec"
+    "Sansec",
+    "sansec.io"
    ]
   },
   {
@@ -962,7 +991,11 @@
   {
    "id": "x",
    "name": "X (Twitter)",
-   "kind": "platform"
+   "kind": "platform",
+   "aliases": [
+    "x.com",
+    "twitter.com"
+   ]
   },
   {
    "id": "unnamed",
@@ -1122,7 +1155,10 @@
   {
    "id": "mashable",
    "name": "Mashable",
-   "kind": "outlet"
+   "kind": "outlet",
+   "aliases": [
+    "mashable.com"
+   ]
   },
   {
    "id": "j-cast",
@@ -1201,7 +1237,8 @@
    "kind": "outlet",
    "aliases": [
     "BleepingComputer",
-    "bleepingcomputer.com"
+    "bleepingcomputer.com",
+    "Bleeping Computer"
    ]
   },
   {
@@ -1580,7 +1617,8 @@
    "name": "Ars Technica",
    "kind": "outlet",
    "aliases": [
-    "Ars Technica"
+    "Ars Technica",
+    "arstechnica.com"
    ]
   },
   {
@@ -1633,7 +1671,9 @@
    "kind": "outlet",
    "country": "SG",
    "aliases": [
-    "CNA (Channel NewsAsia)"
+    "CNA (Channel NewsAsia)",
+    "CNA",
+    "channelnewsasia.com"
    ]
   },
   {
@@ -1924,7 +1964,8 @@
    "name": "PCMag",
    "kind": "outlet",
    "aliases": [
-    "PCMag"
+    "PCMag",
+    "pcmag.com"
    ]
   },
   {
@@ -2103,7 +2144,8 @@
    "note": "Run by ITmedia under licence; not part of TechTarget.",
    "aliases": [
     "TechTargetジャパン"
-   ]
+   ],
+   "part_of": "itmedia"
   },
   {
    "id": "socradar",
@@ -2441,6 +2483,185 @@
     "站长之家"
    ],
    "added_by": "claude-journalist, 24 October 2026, to carry the export at 1f38e70921b2; for the ontologist to check"
+  },
+  {
+   "id": "mitre",
+   "name": "MITRE",
+   "kind": "organisation",
+   "note": "Runs the CVE Program; cve.org is the program, this is the corporation."
+  },
+  {
+   "id": "nyt",
+   "name": "The New York Times",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "nytimes.com"
+   ]
+  },
+  {
+   "id": "wsj",
+   "name": "The Wall Street Journal",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "wsj.com"
+   ]
+  },
+  {
+   "id": "guardian",
+   "name": "The Guardian",
+   "kind": "outlet",
+   "country": "UK",
+   "aliases": [
+    "theguardian.com"
+   ]
+  },
+  {
+   "id": "the-atlantic",
+   "name": "The Atlantic",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "theatlantic.com"
+   ]
+  },
+  {
+   "id": "afr",
+   "name": "Australian Financial Review",
+   "kind": "outlet",
+   "country": "AU",
+   "aliases": [
+    "afr.com"
+   ]
+  },
+  {
+   "id": "brussels-times",
+   "name": "The Brussels Times",
+   "kind": "outlet",
+   "country": "BE",
+   "aliases": [
+    "brusselstimes.com"
+   ]
+  },
+  {
+   "id": "cp24",
+   "name": "CP24",
+   "kind": "outlet",
+   "country": "CA",
+   "aliases": [
+    "cp24.com"
+   ]
+  },
+  {
+   "id": "pc-gamer",
+   "name": "PC Gamer",
+   "kind": "outlet",
+   "aliases": [
+    "pcgamer.com"
+   ]
+  },
+  {
+   "id": "nbc-news",
+   "name": "NBC News",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "nbcnews.com"
+   ]
+  },
+  {
+   "id": "itmedia",
+   "name": "ITmedia",
+   "kind": "outlet",
+   "country": "JP",
+   "aliases": [
+    "itmedia.co.jp"
+   ]
+  },
+  {
+   "id": "csa-sg",
+   "name": "Cyber Security Agency of Singapore",
+   "kind": "agency",
+   "country": "SG",
+   "member_of": "agencies",
+   "aliases": [
+    "csa.gov.sg"
+   ]
+  },
+  {
+   "id": "cpanel",
+   "name": "cPanel",
+   "kind": "organisation",
+   "aliases": [
+    "support.cpanel.net",
+    "cpanel.net"
+   ]
+  },
+  {
+   "id": "cloudlinux",
+   "name": "CloudLinux",
+   "kind": "organisation",
+   "aliases": [
+    "blog.cloudlinux.com",
+    "cloudlinux.com"
+   ]
+  },
+  {
+   "id": "scherzer",
+   "name": "scherzer.dev",
+   "kind": "person",
+   "note": "A personal site; Wikipedia cites its php2shell timeline.",
+   "aliases": [
+    "scherzer.dev"
+   ]
+  },
+  {
+   "id": "ycombinator-hn",
+   "name": "Hacker News (news.ycombinator.com)",
+   "kind": "platform",
+   "note": "The Y Combinator forum, not The Hacker News (thehackernews.com), which is an outlet; Wikipedia cites both.",
+   "aliases": [
+    "Hacker News",
+    "news.ycombinator.com"
+   ]
+  },
+  {
+   "id": "w3techs",
+   "name": "W3Techs",
+   "kind": "organisation",
+   "note": "The usual origin of the 'PHP powers N% of websites' figure; contradiction K-001.",
+   "aliases": [
+    "w3techs.com"
+   ]
+  },
+  {
+   "id": "thenextweb",
+   "name": "The Next Web",
+   "kind": "outlet",
+   "country": "NL",
+   "aliases": [
+    "thenextweb.com"
+   ]
+  },
+  {
+   "id": "internet-archive",
+   "name": "The Internet Archive",
+   "kind": "organisation",
+   "country": "US",
+   "aliases": [
+    "archive.org"
+   ]
+  },
+  {
+   "id": "github",
+   "name": "GitHub",
+   "kind": "platform",
+   "aliases": [
+    "github.com",
+    "GitHub"
+   ],
+   "note": "A platform: it hosts advisories and code that others publish. A reference on it is published by the party the citation names, where that party is known."
   }
  ]
 }

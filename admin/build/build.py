@@ -245,7 +245,7 @@ NAV = [
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
     ('The analysis', [('claims/index.html', 'Every claim'), ('claims/review/index.html', 'Claims waiting for review'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('outreach/index.html', 'Corrections we have asked for'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
-                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'), ('graph/parties/index.html', 'Every party'), ('fractal/index.html', 'From a line of code to a stakeholder'), ('fractal/ui/index.html', 'Walk the whole graph'),
+                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'), ('graph/parties/index.html', 'Every party'), ('wikipedia/index.html', 'Wikipedia, as a graph'), ('wikipedia/php2shell/index.html', 'Wikipedia: the PHP2Shell article'), ('wikipedia/php2shell/statements/index.html', 'Wikipedia: every statement'), ('wikipedia/php2shell/references/index.html', 'Wikipedia: every reference'), ('wikipedia/php2shell/history/index.html', 'Wikipedia: every edit'), ('fractal/index.html', 'From a line of code to a stakeholder'), ('fractal/ui/index.html', 'Walk the whole graph'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
                       ('layers/index.html', 'Evidence, derived, authored'),
@@ -1753,7 +1753,7 @@ def build_all():
     PAGES.clear()
     build_flaws(); build_timeline(); build_discovery(); build_leak(); build_exploitation(); build_compromise(); build_playbook()
     build_code(); build_context(); build_impact(); build_defence()
-    build_claims(); build_claim_review(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
+    build_claims(); build_claim_review(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph(); build_wikipedia()
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); __import__('control').build_control(globals()); build_vault_register(); build_schedule(); build_comms(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
@@ -6390,9 +6390,11 @@ def check_grammar():
             if not v.get('verb') or not v.get('inverse') or v['verb'] == v['inverse']:
                 sys.exit(f'data/ontology.json: {scope} verb {v.get("verb")!r} needs an inverse that is not itself')
             if v['verb'] in banned: sys.exit(f'data/ontology.json: {v["verb"]!r} is both listed and banned')
-            if v['verb'] in seen and seen[v['verb']] != v['inverse']:
+            # 'contained in' and 'contained_in' are one spelling (board 189 asks for one); two different words are two meanings
+            key, inv = v['verb'].replace(' ', '_'), v['inverse'].replace(' ', '_')
+            if key in seen and seen[key] != inv:
                 sys.exit(f'data/ontology.json: {v["verb"]!r} has two inverses, in two scopes')
-            seen[v['verb']] = v['inverse']
+            seen[key] = inv
 
 def story_graph():
     check_grammar()
@@ -6547,8 +6549,11 @@ def story_graph():
     def say(v): return v.replace('_', ' ')
     ontology = {'id': ONT['id'], 'version': ONT['version'],
                 'kinds': OrderedDict((t['id'], {'label': t['label'], 'plural': t['plural'], 'altitude': t['altitude']}) for t in ONT['node_types']),
-                'verbs': OrderedDict([(v['verb'], {'label': say(v['verb']), 'inverse': say(v['inverse']), 'origin': v['origin']}) for v in ONT['edges']] +
-                                     [(v['verb'], {'label': v['verb'], 'inverse': v['inverse'], 'origin': 'code-review'}) for sc in ONT['scopes'].values() for v in sc['edges']])}
+                'verbs': OrderedDict([(v['verb'], {'label': say(v['verb']), 'inverse': say(v['inverse']), 'origin': v['origin']}) for v in ONT['edges']])}
+    # a scope's verbs are added for the graphs a reader zooms into, phrased, and never over the story graph's own
+    for name, sc in ONT['scopes'].items():
+        for v in sc['edges']:
+            ontology['verbs'].setdefault(v['verb'], {'label': say(v['verb']), 'inverse': say(v['inverse']), 'origin': name})
     return {'site': SITE, 'version': VERSION, 'vault_commit': D['vault']['head']['commit'], 'title': 'The story graph',
             'note': 'A node means what its edges say about it. Every edge is a verb from data/ontology.json with a named inverse; there is no generic association edge. Parties are resolved through data/entities.json and data/attribution.json; relays are derived, so many outlets passing on one statement count as one origin.',
             'ontology': ontology, 'nodes': out_nodes, 'edges': list(edges.values()),
@@ -6574,6 +6579,15 @@ def bridge(nodes):
         if not known('story', sid): sys.exit(f'data/crosswalk.json: the story graph has no node {sid!r}')
         for g in ('review', 'grc'):
             if g in a['ids']: zoom(sid, g, a['ids'][g], f'{a["anchor"]} in {X["graphs"][g]["title"]}')
+    # a source that is a Wikipedia article opens that article's graph; a source a reference is captured as opens it on that reference
+    for wslug in wiki_articles():
+        w = wiki_load(wslug)
+        for sid in nodes:
+            if sid.startswith('source:') and norm_url(SOURCES[sid[7:]]['url']) == norm_url(w['art']['url']):
+                nodes[sid].setdefault('zoom', []).append({'graph': f'data/wikipedia/{wslug}/graph.json', 'focus': 'article:' + wslug, 'label': f'Inside the article: {w["art"]["title"]} as a graph'})
+        for r in w['X']['references']:
+            if r['captured'] and 'source:' + r['captured'] in nodes:
+                nodes['source:' + r['captured']].setdefault('zoom', []).append({'graph': f'data/wikipedia/{wslug}/graph.json', 'focus': f'reference:{r["n"]}', 'label': f'In Wikipedia\'s {w["art"]["title"]} article: ' + (f'cited by {len(r["cited_by"])} statement{"s" if len(r["cited_by"]) != 1 else ""}' if r['cited_by'] else 'cited in the infobox')})
     for pid, b in sorted(X['parties'].items()):
         if pid not in ENTITIES: sys.exit(f'data/crosswalk.json: unknown party {pid!r}')
         name = stake.get(b['grc'].partition(':')[2], b['grc'])
@@ -7313,6 +7327,340 @@ def _state_hashes():
         except FileNotFoundError:
             out[n] = None
     return out
+
+# ----------------------------------------------------------------------------- Wikipedia, as a graph (ontologist@php.newsroom)
+# Brief: admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md. The fetch (admin/wikipedia/fetch.py) writes
+# data/wikipedia/<article>/; this block reads it, never the web. The parser is admin/build/wikitext.py: one statement per
+# sentence, classed by wording; references resolved to this site's sources by URL and to parties by host. The text is
+# Wikipedia's (CC BY-SA 4.0, by its contributors; the revision id is the attribution) and reaches a page only as text.
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import wikitext as WT
+
+WIKI_DIR = os.path.join(DATA, 'wikipedia')
+WIKI_CACHE = {}
+REVERT_TAGS = {'mw-reverted', 'mw-undo', 'mw-rollback', 'mw-manual-revert'}
+
+def T(x):
+    """Third-party text for a page: escaped, with its em-dashes as entities (the gate's em-dash rule is for this site's own prose)."""
+    return E(str(x or '')).replace('—', '&mdash;')
+
+def norm_url(u):
+    """The part of a URL that names the page: host without www/m/edition, path and query, lower-cased, no trailing slash."""
+    from urllib.parse import urlsplit, unquote
+    u = unquote(str(u or '').strip())
+    s = urlsplit(u if '://' in u else 'https://' + u)
+    host = s.netloc.lower()
+    for p in ('www.', 'm.', 'edition.', 'amp.'):
+        host = host[len(p):] if host.startswith(p) else host
+    q = ('?' + s.query) if s.query and 'status' not in s.path else ''
+    return (host + s.path.rstrip('/') + q).lower()
+
+def host_of(u):
+    from urllib.parse import urlsplit
+    h = urlsplit(u if '://' in u else 'https://' + u).netloc.lower()
+    return h[4:] if h.startswith('www.') else h
+
+HOST_ALIAS = None
+def party_for_host(host):
+    """The entity whose host alias matches this host or a parent of it (sec.cloudapps.cisco.com matches cisco.com)."""
+    global HOST_ALIAS
+    if HOST_ALIAS is None:
+        HOST_ALIAS = {a.lower(): e['id'] for e in ENT['entities'] for a in e.get('aliases', []) if '.' in a and ' ' not in a and '/' not in a}
+    parts = host.split('.')
+    for i in range(len(parts) - 1):
+        cand = '.'.join(parts[i:])
+        if cand in HOST_ALIAS:
+            return HOST_ALIAS[cand]
+    return None
+
+def wiki_load(slug):
+    """Everything the pages and the graph need for one article, computed once per build."""
+    if slug in WIKI_CACHE:
+        return WIKI_CACHE[slug]
+    d = os.path.join(WIKI_DIR, slug)
+    art = json.load(open(os.path.join(d, 'article.json'), encoding='utf-8'))
+    revs = []
+    for fn in os.listdir(os.path.join(d, 'revisions')):
+        if fn.endswith('.json'):
+            revs.append(json.load(open(os.path.join(d, 'revisions', fn), encoding='utf-8')))
+    revs.sort(key=lambda r: (r['timestamp'], r['revid']))
+    wd = json.load(open(os.path.join(d, 'wikidata.json'), encoding='utf-8')) if os.path.exists(os.path.join(d, 'wikidata.json')) else None
+    links_in = json.load(open(os.path.join(d, 'links-in.json'), encoding='utf-8')) if os.path.exists(os.path.join(d, 'links-in.json')) else {'articles': []}
+    parsed = {r['revid']: WT.statements(r['wikitext']) for r in revs}
+    latest = revs[-1]
+    X = parsed[latest['revid']]
+    src_by_url = {norm_url(s['url']): slug_ for slug_, s in SOURCES.items()}
+    name_alias = {a.lower(): e['id'] for e in ENT['entities'] for a in e.get('aliases', [])} | {e['name'].lower(): e['id'] for e in ENT['entities']}
+    claims_by_src = {}
+    for c in D['claims']:
+        for s in c['sources']:
+            claims_by_src.setdefault(s, []).append(c['id'])
+    for ref in X['references']:
+        url = ref.get('url') or ''
+        ref['captured'] = src_by_url.get(norm_url(url)) if url else None
+        ref['host'] = host_of(url) if url else None
+        pub = (ref.get('publisher') or '').strip()
+        by_host = party_for_host(ref['host']) if ref['host'] else None
+        by_name = name_alias.get(pub.lower()) or name_alias.get(pub.lower().removeprefix('the ').strip())
+        # the host names the publisher, except on a platform (GitHub, X), which hosts what the named party publishes
+        ref['party'] = (by_name or by_host) if by_host and ENTITIES[by_host]['kind'] == 'platform' else (by_host or by_name)
+        ref['claims'] = claims_by_src.get(ref['captured'], []) if ref['captured'] else []
+        ref['cited_by'] = [s['id'] for s in X['statements'] if ref['n'] in s['refs']]
+    by_n = {r['n']: r for r in X['references']}
+    for s in X['statements']:
+        s['captured'] = sorted({by_n[n]['captured'] for n in s['refs'] if by_n[n].get('captured')})
+        s['claims'] = sorted({c for n in s['refs'] for c in by_n[n]['claims']})
+    # the deltas: each revision against its parent, by statement
+    deltas = []
+    prev = None
+    for r in revs:
+        dlt = WT.delta(parsed[prev['revid']], parsed[r['revid']]) if prev else {'added': parsed[r['revid']]['statements'], 'removed': [], 'changed': [], 'refs_added': [], 'refs_removed': []}
+        dlt['revid'] = r['revid']
+        deltas.append(dlt)
+        prev = r
+    # the vault's capture of the article: the revision that was current then
+    cap = SOURCES.get('wikipedia-' + slug) or next((s for s in SOURCES.values() if norm_url(s['url']) == norm_url(art['url'])), None)
+    cap_stamp = cap['captures'][-1]['stamp'] if cap and cap.get('captures') else None
+    cap_rev = None
+    if cap_stamp:
+        t = f'{cap_stamp[:4]}-{cap_stamp[4:6]}-{cap_stamp[6:8]}T{cap_stamp[9:11]}:{cap_stamp[11:13]}:{cap_stamp[13:15]}Z'
+        cap_rev = max((r for r in revs if r['timestamp'] <= t), key=lambda r: (r['timestamp'], r['revid']), default=None)
+    since_capture = WT.delta(parsed[cap_rev['revid']], X) if cap_rev else None
+    out = {'slug': slug, 'art': art, 'revs': revs, 'latest': latest, 'X': X, 'wd': wd, 'links_in': links_in, 'deltas': deltas, 'parsed': parsed,
+           'capture': cap, 'capture_rev': cap_rev, 'since_capture': since_capture, 'path': f'wikipedia/{slug}/index.html'}
+    WIKI_CACHE[slug] = out
+    return out
+
+def wiki_articles():
+    idx = os.path.join(WIKI_DIR, 'index.json')
+    return [a['slug'] for a in json.load(open(idx, encoding='utf-8'))['articles']] if os.path.exists(idx) else []
+
+def wiki_ledger(w):
+    """The counts a proof of trust would start from. Not a score: the fact-check desk grades statements, this page counts."""
+    S, R, revs = w['X']['statements'], w['X']['references'], w['revs']
+    with_url = [r for r in R if r.get('url')]
+    captured = [r for r in with_url if r['captured']]
+    primary = [r for r in captured if SOURCES[r['captured']].get('primary')]
+    shared = [r for r in captured if r['claims']]
+    shared_claims = sorted({c for r in shared for c in r['claims']})
+    ks = [k for k in load('factcheck')['contradictions'] if set(k['claims']) & set(shared_claims)]
+    reverts = [r for r in revs if set(r['tags']) & REVERT_TAGS]
+    anon = sum(1 for r in revs if r['editor']['kind'] != 'registered')
+    return {'statements': len(S), 'cited': sum(1 for s in S if s['cited']), 'uncited': [s for s in S if not s['cited']],
+            'classes': Counter(s['class'] for s in S), 'with_evidence': sum(1 for s in S if s['captured']), 'with_claims': sum(1 for s in S if s['claims']),
+            'references': len(R), 'with_url': len(with_url), 'captured': len(captured), 'primary': len(primary), 'resolved': sum(1 for r in R if r['party']),
+            'publishers': len({r['party'] for r in R if r['party']}), 'shared': len(shared), 'shared_claims': shared_claims, 'contradictions': ks,
+            'revisions': len(revs), 'editors': len({r['editor']['name'] for r in revs if r['editor']['kind'] == 'registered'}), 'anonymous_edits': anon,
+            'reverts': len(reverts), 'minor': sum(1 for r in revs if r['minor']), 'size': w['latest']['size'], 'first': revs[0]['timestamp'], 'last': w['latest']['timestamp'],
+            'languages': len(w['wd']['sitelinks']) - (1 if w['wd'] and 'commonswiki' in w['wd']['sitelinks'] else 0) if w['wd'] else None, 'links_in': len(w['links_in']['articles'])}
+
+def wiki_graph(w):
+    """data/wikipedia/<slug>/graph.json: the article in its own kinds and verbs; sources and parties are the story graph's nodes, borrowed."""
+    slug, X, art = w['slug'], w['X'], w['art']
+    sc = ONT['scopes']['wikipedia']
+    kinds = {t['id'] for t in sc['node_types']}; verbs = {v['verb']: v for v in sc['edges']}
+    nodes, edges = OrderedDict(), OrderedDict()
+    def node(nid, kind, label, **kw):
+        if kind not in kinds: sys.exit(f'wikipedia graph: kind {kind!r} not in the ontology scope')
+        if nid not in nodes: nodes[nid] = dict({'id': nid, 'kind': kind, 'label': label}, **{k: v for k, v in kw.items() if v not in (None, '', [])})
+        return nid
+    def edge(a, verb, b, **kw):
+        if verb not in verbs: sys.exit(f'wikipedia graph: verb {verb!r} not in the ontology scope')
+        for end in (a, b):
+            if end not in nodes: sys.exit(f'wikipedia graph: {a} {verb} {b}: no node {end!r}')
+        if a != b: edges.setdefault((a, verb, b), dict({'from': a, 'verb': verb, 'to': b}, **kw))
+    base = f'wikipedia/{slug}/'
+    A = node('article:' + slug, 'article', art['title'], href=base + 'index.html', url=art['url'], revisions=art['revisions'], latest_revid=art['latest_revid'])
+    for s in X['sections']:
+        node('section:' + s['id'], 'section', s['title'], href=base + 'statements/index.html#s-' + s['id'])
+        edge(A, 'has_section', 'section:' + s['id'])
+    for st in X['statements']:
+        node('statement:' + st['id'], 'statement', st['text'], href=base + 'statements/index.html#' + st['id'], status=st['class'], cited=st['cited'], section=st['section'])
+        edge('section:' + st['section'], 'contains', 'statement:' + st['id'])
+        for cve in st['cves']:
+            node('cve:' + cve, 'cve', cve, href=f'flaws/index.html#{cve}' if cve in FLAGSHIP else f'https://www.cve.org/CVERecord?id={cve}', zoom=[{'graph': 'data/graph.json', 'focus': 'cve:' + cve, 'label': 'In the story graph'}])
+            edge('statement:' + st['id'], 'names', 'cve:' + cve)
+    for r in X['references']:
+        rid = node(f'reference:{r["n"]}', 'reference', f'[{r["n"]}] {r.get("title") or r.get("url") or "untitled"}', href=base + f'references/index.html#r-{r["n"]}', url=r.get('url'), publisher=r.get('publisher'), date=r.get('date'), where=r.get('where'))
+        if r.get('where') == 'infobox':
+            edge(A, 'cites', rid)
+        for sid in r['cited_by']:
+            edge('statement:' + sid, 'cites', rid)
+        if r['captured']:
+            s = SOURCES[r['captured']]
+            node('source:' + r['captured'], 'source', f'{short_name(s)}: {s.get("title") or r["captured"]}', href=f'sources/{r["captured"]}/index.html', zoom=[{'graph': 'data/graph.json', 'focus': 'source:' + r['captured'], 'label': 'In the story graph: the claims that cite it'}], borrowed=True)
+            edge(rid, 'captured_as', 'source:' + r['captured'])
+        if r['party']:
+            e = ENTITIES[r['party']]
+            node('party:' + r['party'], 'party', e['name'], href=party_href(r['party']), zoom=[{'graph': 'data/graph.json', 'focus': 'party:' + r['party'], 'label': 'In the story graph'}], borrowed=True)
+            edge(rid, 'published_by', 'party:' + r['party'])
+    latest_ids = {s['id'] for s in X['statements']}
+    for r, dlt in zip(w['revs'], w['deltas']):
+        rid = node(f'revision:{r["revid"]}', 'revision', f'{fmt_at(r["timestamp"])}: {r["comment"][:80] or "(no summary)"}', href=base + f'history/index.html#rev-{r["revid"]}', at=r['timestamp'], size=r['size'], reverted='mw-reverted' in r['tags'], added=len(dlt['added']), removed=len(dlt['removed']), changed=len(dlt['changed']))
+        edge(rid, 'revises', A)
+        ed = r['editor']
+        eid = 'editor:' + (re.sub(r'[^a-z0-9]+', '-', ed['name'].lower()) if ed['kind'] == 'registered' else ed['kind'])
+        node(eid, 'editor', ed['name'] if ed['kind'] == 'registered' else f'{ed["kind"]} editors', href=('https://en.wikipedia.org/wiki/User:' + ed['name'].replace(' ', '_')) if ed['kind'] == 'registered' else None)
+        edge(rid, 'made_by', eid)
+        for s in dlt['added'] + [c['to'] for c in dlt['changed']]:
+            if s['id'] in latest_ids: edge(rid, 'adds', 'statement:' + s['id'])
+        for s in dlt['removed'] + [c['from'] for c in dlt['changed']]:
+            if s['id'] in latest_ids: edge(rid, 'removes', 'statement:' + s['id'])
+    if w['wd']:
+        wd = w['wd']; L = wd['labels']
+        props = {f'{L.get(p, p)} ({p})': '; '.join(str(L.get(v['value'], v['value'])) for v in vs) for p, vs in wd['claims'].items()}
+        node('item:' + wd['item'], 'item', f'{wd["item"]}: {wd.get("label") or ""}', href=f'https://www.wikidata.org/wiki/{wd["item"]}', **{k: v for k, v in props.items()})
+        edge(A, 'described_by', 'item:' + wd['item'])
+    ontology = {'kinds': OrderedDict((t['id'], {'label': t['label'], 'plural': t['plural']}) for t in sc['node_types']),
+                'verbs': OrderedDict((v['verb'], {'label': v['verb'].replace('_', ' '), 'inverse': v['inverse'].replace('_', ' ')}) for v in sc['edges'])}
+    ontology['kinds']['cve'] = {'label': 'CVE', 'plural': 'CVEs'}
+    G = {'site': SITE, 'version': VERSION, 'title': f'Wikipedia: {art["title"]}', 'licence': art['licence'], 'latest_revid': art['latest_revid'],
+         'note': "One Wikipedia article as a graph of its own: sections, statements (one per sentence, classed by wording), the references they cite, every revision and its editor, and the Wikidata item. A reference captured in this site's evidence vault is joined to that source, which is where the story graph's claims meet it.",
+         'ontology': ontology, 'nodes': list(nodes.values()), 'edges': list(edges.values())}
+    write(f'data/wikipedia/{slug}/graph.json', json.dumps(G, indent=1, ensure_ascii=False) + '\n')
+    return G
+
+CLASS_WORD = {'quote': 'quote', 'attributed': 'attributed', 'hedged': 'hedged', 'record': 'record', 'stated': 'stated'}
+
+def st_pill(c):
+    cls = {'quote': 'info', 'attributed': 'info', 'hedged': 'warn', 'record': 'ok', 'stated': 'mute'}[c]
+    return f'<span class="st st-{E(c)} pill-{cls}">{E(CLASS_WORD[c])}</span>'
+
+def wiki_statement_row(w, s, depth):
+    up = '../' * depth
+    by_n = {r['n']: r for r in w['X']['references']}
+    refs = ' '.join(f'<a href="../references/index.html#r-{n}" title="{T(by_n[n].get("title") or by_n[n].get("url") or "")}">[{n}]</a>' for n in s['refs'])
+    ev = ''
+    if s['captured']:
+        ev = ' '.join(f'<a class="cap" href="{up}sources/{U(c)}/index.html">{E(short_name(SOURCES[c]))}</a>' for c in s['captured'])
+    elif s['cited']:
+        ev = '<span class="small">cited, not yet captured</span>'
+    else:
+        ev = '<span class="st st-unverified">uncited</span>'
+    cl = ' '.join(f'<a href="{up}facts/{U(c)}/index.html">{E(c)}</a>' for c in s['claims'])
+    return f'<li id="{E(s["id"])}" class="wst wst-{E(s["class"])}">{st_pill(s["class"])} <span class="wtext">{T(s["text"])}</span> <span class="wrefs">{refs}</span><div class="wev"><b>Evidence:</b> {ev}{(" &middot; <b>Our claims on the same source:</b> " + cl) if cl else ""}</div></li>'
+
+def build_wikipedia():
+    slugs = wiki_articles()
+    if not slugs:
+        return
+    cards = []
+    for slug in slugs:
+        w = wiki_load(slug)
+        G = wiki_graph(w)
+        L = wiki_ledger(w)
+        art, X = w['art'], w['X']
+        base = f'wikipedia/{slug}/'
+        # ---- the article page
+        counts = ' '.join(f'<span class="stat"><b>{E(str(n))}</b><span>{E(k)}</span></span>' for k, n in [('statements', L['statements']), ('cited', L['cited']), ('references', L['references']), ('captured here', L['captured']), ('revisions', L['revisions']), ('editors', L['editors']), ('languages', L['languages'] or 0)])
+        classes = table(['Class', 'What it means', 'Statements'], [[st_pill(c), E(ONT['scopes']['wikipedia']['taxonomy'][0]['reads'][c]), E(str(L['classes'].get(c, 0)))] for c in ('record', 'stated', 'attributed', 'quote', 'hedged')])
+        since = w['since_capture']
+        cap_line = (f'<p>This site&#39;s evidence vault captured the article at <code>{E(w["capture"]["captures"][-1]["stamp"])}</code>, when it was at revision <code>{E(str(w["capture_rev"]["revid"]))}</code>. Since then: <b>{len(since["added"])}</b> statements added, <b>{len(since["removed"])}</b> removed, <b>{len(since["changed"])}</b> reworded, <b>{len(since["refs_added"])}</b> references added and <b>{len(since["refs_removed"])}</b> removed, over {sum(1 for r in w["revs"] if r["timestamp"] > w["capture_rev"]["timestamp"])} revisions. <a href="history/index.html">Every edit</a>.</p>'
+                    if since else '<p>This site&#39;s evidence vault has not captured the article yet.</p>')
+        widget = sg_graph(base + 'index.html', src=f'data/wikipedia/{slug}/graph.json', focus='article:' + slug, depth=1,
+                          fallback=f'<p>The interactive graph needs JavaScript. The same nodes are on <a href="statements/index.html">every statement</a>, <a href="references/index.html">every reference</a> and <a href="history/index.html">every edit</a>; the graph is <a href="../../data/wikipedia/{U(slug)}/graph.json">graph.json</a>.</p>')
+        wd = w['wd']
+        wd_t = ''
+        if wd:
+            Lb = wd['labels']
+            rows = [[E(f'{Lb.get(p, p)}'), f'<code>{E(p)}</code>', T('; '.join(str(Lb.get(v["value"], v["value"])) for v in vs))] for p, vs in wd['claims'].items() if p not in ('P18', 'P154', 'P373')]
+            wd_t = f'<p>Wikidata, the structured sister of Wikipedia, holds item <a href="https://www.wikidata.org/wiki/{E(wd["item"])}" rel="noopener"><code>{E(wd["item"])}</code></a>, &ldquo;{T(wd.get("description"))}&rdquo;, with links to the article in {L["languages"]} languages. Its claims, as fetched (DBpedia, the older extraction, is built from periodic dumps and had no entry for the article when this was built):</p>' + table(['Property', 'Id', 'Value'], rows)
+        li = lambda items: '<ul>' + ''.join(items) + '</ul>'
+        uncited = li([f'<li><a href="statements/index.html#{E(s["id"])}">{T(s["text"][:140])}</a></li>' for s in L['uncited']]) if L['uncited'] else '<p class="small">None: every statement carries a reference.</p>'
+        shared = li([f'<li><a href="../../sources/{U(r["captured"])}/index.html">{E(short_name(SOURCES[r["captured"]]))}</a>: cited by {len(r["cited_by"])} statement{"s" if len(r["cited_by"]) != 1 else ""} there and by {", ".join(f"<a href=\"../../facts/{U(c)}/index.html\">{E(c)}</a>" for c in r["claims"])} here</li>' for r in X['references'] if r['claims']]) if L['shared'] else '<p class="small">None yet.</p>'
+        ks = li([f'<li><a href="../../factcheck/index.html#{E(k["id"])}">{E(k["id"])}</a>: {T(k["measure"])} ({E(k["status"])})</li>' for k in L['contradictions']]) if L['contradictions'] else '<p class="small">None.</p>'
+        body = f'''
+<p class="crumb"><a href="../index.html">Wikipedia, as a graph</a> / {E(art["title"])}</p>
+<h1>Wikipedia&#39;s {E(art["title"])} article, as a graph</h1>
+<p class="lead">The English Wikipedia article <a href="{U(art["url"])}" rel="noopener">{E(art["title"])}</a>, read as a fractal semantic graph: {L["statements"]} statements in {len(X["sections"])} sections, {L["references"]} references, {L["revisions"]} revisions by {L["editors"]} named editors since {E(fmt_at(L["first"]))}, and its Wikidata item. {L["captured"]} of its {L["with_url"]} references are captured in this site&#39;s evidence vault, where {L["shared"]} of them are also cited by this site&#39;s claims: that is where the article&#39;s facts and this site&#39;s meet. Latest revision read: <code>{E(str(art["latest_revid"]))}</code>, {E(fmt_at(L["last"]))}.</p>
+<div class="stats">{counts}</div>
+{widget}
+{section("facts", "Facts and the words around them", f'<p>Wikipedia&#39;s own rule is that an article states facts and attributes opinions. Read by wording, never by whether a sentence holds, the {L["statements"]} statements fall into five classes; {L["cited"]} carry a reference and {L["with_evidence"]} rest on a page this site has captured. <a href="statements/index.html">Every statement, with its evidence</a>.</p>' + classes + '<h3>Statements with no reference (' + str(len(L["uncited"])) + ')</h3>' + uncited)}
+{section("meet", "Where the article and this site meet", f'<p>{L["shared"]} references are pages this site&#39;s claims also cite. A statement there and a claim here that rest on the same captured page meet at that page: there is no &ldquo;same as&rdquo; edge, the shared evidence is the join. <a href="references/index.html">Every reference</a>.</p>' + shared + f'<h3>Contradictions this site records on that shared evidence ({len(L["contradictions"])})</h3>' + ks)}
+{section("delta", "What changed since this site captured it", cap_line + f'<p>{L["reverts"]} of the {L["revisions"]} revisions were reverts or were reverted; {L["minor"]} were marked minor; {L["anonymous_edits"]} were anonymous. The article is now {L["size"]:,} bytes.</p>')}
+{section("wikidata", "The Wikidata item", wd_t or '<p class="small">No Wikidata item was fetched.</p>')}
+{section("links", "What links here", f'<p>{L["links_in"]} other articles link to this one, which is how a reader of Wikipedia arrives: from <i>PHP</i>, <i>2026</i>, the lists of security incidents, the pages of the companies named. The list is in <a href="../../data/wikipedia/{U(slug)}/links-in.json">links-in.json</a>.</p>')}
+{section("trust", "Towards a measure of trust", f'<p>The editor&#39;s working view is that Wikipedia is a trusted source, and that this should be shown rather than assumed: by how often its statements are later corrected, against how often other publications are. This page does not compute a score; it keeps the counts a proof would start from, and the fact-check desk grades statements, not pages. For this article: {L["cited"]} of {L["statements"]} statements cited ({100 * L["cited"] // max(1, L["statements"])}%); {L["captured"]} of {L["with_url"]} references captured here, {L["primary"]} of those primary sources; {L["reverts"]} reverts in {L["revisions"]} revisions; {len(L["contradictions"])} of this site&#39;s contradictions touch evidence the article also cites.</p><p class="small">The text is Wikipedia&#39;s, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>, by its contributors; the revision ids are the attribution, and this site&#39;s pages and data that carry it are under the same licence. It is republished so it can be read as a graph, diffed and followed to its evidence; nothing here is Wikipedia&#39;s view, and nothing on Wikipedia is this site&#39;s.</p>')}
+'''
+        page(base + 'index.html', f'Wikipedia&#39;s {art["title"]} article, as a graph', f'The English Wikipedia article on {art["title"]} read as a fractal semantic graph: {L["statements"]} statements classed as facts, attributions and quotes, {L["references"]} references and which are captured here, {L["revisions"]} revisions, and where it meets this site\'s claims.', body, kind='evidence', topics=f'wikipedia {slug} graph')
+        # ---- statements
+        secs = ''
+        for sec in X['sections']:
+            items = ''.join(wiki_statement_row(w, s, 3) for s in X['statements'] if s['section'] == sec['id'])
+            if items: secs += section('s-' + sec['id'], sec['title'], f'<ol class="wstatements">{items}</ol>')
+        legend = ' '.join(st_pill(c) + ' ' + E(ONT['scopes']['wikipedia']['taxonomy'][0]['reads'][c]) for c in ('record', 'stated', 'attributed', 'quote', 'hedged'))
+        body = f'''
+<p class="crumb"><a href="../../index.html">Wikipedia, as a graph</a> / <a href="../index.html">{E(art["title"])}</a> / Every statement</p>
+<h1>Every statement in Wikipedia&#39;s {E(art["title"])} article, with its evidence</h1>
+<p class="lead">One statement per sentence of revision <code>{E(str(art["latest_revid"]))}</code>, in the article&#39;s order, each classed by its wording and followed by its references, the capture this site holds of them, and the claims of this site that rest on the same page. Read by a parser (<code>admin/build/wikitext.py</code>), never by a model.</p>
+<p class="small">{legend}</p>
+{secs}
+<p class="small">The text is Wikipedia&#39;s, CC BY-SA 4.0, by its contributors.</p>
+'''
+        page(base + 'statements/index.html', f'Every statement in Wikipedia&#39;s {art["title"]} article, with its evidence', f'All {L["statements"]} statements of the article, classed as record, stated, attributed, quote or hedged by their wording, with their references, the captures this site holds and the claims that share them.', body, kind='evidence', topics=f'wikipedia {slug} statements')
+        # ---- references
+        rows = []
+        for r in X['references']:
+            pub = f'<a href="../../../{U(party_href(r["party"]))}">{E(ENTITIES[r["party"]]["name"])}</a>' if r['party'] else f'<span class="small">{T(r.get("publisher") or r.get("host") or "?")}</span>'
+            cap = f'<a class="cap" href="../../../sources/{U(r["captured"])}/index.html">captured</a>' if r['captured'] else ('<span class="st st-unverified">not captured</span>' if r.get('url') else '<span class="small">no URL</span>')
+            cl = ', '.join(f'<a href="../../../facts/{U(c)}/index.html">{E(c)}</a>' for c in r['claims'])
+            st = ', '.join(f'<a href="../statements/index.html#{E(s)}">#{E(s[:4])}</a>' for s in r['cited_by']) or ('<span class="small">the infobox</span>' if r.get('where') == 'infobox' else '')
+            link = f'<a href="{U(r["url"])}" rel="noopener">{T(r.get("title") or r["url"])}</a>' if r.get('url') else T(r.get('title') or '(no URL)')
+            rows.append([f'<span id="r-{r["n"]}"></span>{r["n"]}', link + (f'<br><span class="small">{T(r.get("date") or "")}</span>' if r.get('date') else ''), pub, cap, st or '<span class="small">none</span>', cl or '<span class="small">none</span>'])
+        body = f'''
+<p class="crumb"><a href="../../index.html">Wikipedia, as a graph</a> / <a href="../index.html">{E(art["title"])}</a> / Every reference</p>
+<h1>Every reference in Wikipedia&#39;s {E(art["title"])} article</h1>
+<p class="lead">{L["references"]} references at revision <code>{E(str(art["latest_revid"]))}</code>: {L["captured"]} are pages this site&#39;s evidence vault holds, {L["with_url"] - L["captured"]} are not yet captured, and {L["resolved"]} resolve to a party this site knows. A reference this site has captured is evidence this site can cite as its own, with the capture&#39;s hash; a reference it has not is a request to the collectors (board). The publisher is read from the page&#39;s address first, so the Y Combinator forum is not The Hacker News.</p>
+{table(["#", "Reference", "Publisher", "Here", "Cited by", "Our claims on it"], rows)}
+'''
+        page(base + 'references/index.html', f'Every reference in Wikipedia&#39;s {art["title"]} article', f'All {L["references"]} references of the article: which this site has captured, who publishes each, which statements cite it and which of this site\'s claims rest on the same page.', body, kind='evidence', topics=f'wikipedia {slug} references')
+        # ---- history
+        revs, deltas = w['revs'], w['deltas']
+        by_hour = Counter(r['timestamp'][:13] for r in revs)
+        hours = sorted(by_hour)
+        mx = max(by_hour.values())
+        bw = max(4, min(12, 900 // max(1, len(hours))))
+        bars = ''.join(f'<rect x="{10 + i * bw}" y="{120 - 100 * by_hour[h] / mx:.1f}" width="{bw - 1}" height="{100 * by_hour[h] / mx:.1f}"><title>{E(h)}:00 UTC: {by_hour[h]} edits</title></rect>' for i, h in enumerate(hours))
+        chart = f'<figure class="graph"><svg viewBox="0 0 {20 + len(hours) * bw} 130" width="100%" role="img" aria-label="Edits per hour, {E(hours[0])} to {E(hours[-1])}"><g class="bars">{bars}</g><text class="t" x="10" y="12">edits per hour (most: {mx})</text></svg><figcaption>Every hour from {E(fmt_at(revs[0]["timestamp"]))} to {E(fmt_at(revs[-1]["timestamp"]))}, UTC.</figcaption></figure>'
+        items = []
+        prev_size = 0
+        for r, dlt in zip(revs, deltas):
+            ed = r['editor']
+            who = f'<a href="https://en.wikipedia.org/wiki/User:{U(ed["name"].replace(" ", "_"))}" rel="noopener">{E(ed["name"])}</a>' if ed['kind'] == 'registered' else f'<i>{E(ed["kind"])} editor</i>'
+            dsz = r['size'] - prev_size; prev_size = r['size']
+            flags = ' '.join(f'<span class="st st-contradicted">{E(t)}</span>' for t in r['tags'] if t in REVERT_TAGS) + (' <span class="small">minor</span>' if r['minor'] else '')
+            n = len(dlt['added']) + len(dlt['removed']) + len(dlt['changed'])
+            det = ''
+            if n:
+                det = '<details><summary>' + ', '.join(x for x in (f'+{len(dlt["added"])} added' if dlt['added'] else '', f'&minus;{len(dlt["removed"])} removed' if dlt['removed'] else '', f'~{len(dlt["changed"])} reworded' if dlt['changed'] else '') if x) + '</summary><ul class="wdelta">'
+                det += ''.join(f'<li class="dl-ins">{T(s["text"])}</li>' for s in dlt['added']) + ''.join(f'<li class="dl-del">{T(s["text"])}</li>' for s in dlt['removed'])
+                det += ''.join(f'<li class="dl-chg"><del>{T(c["from"]["text"])}</del> <ins>{T(c["to"]["text"])}</ins></li>' for c in dlt['changed']) + '</ul></details>'
+            refs = ''
+            if dlt['refs_added'] or dlt['refs_removed']:
+                refs = '<p class="small">' + ' '.join([f'+ref {T(u[:70])}' for u in dlt['refs_added']] + [f'&minus;ref {T(u[:70])}' for u in dlt['refs_removed']]) + '</p>'
+            items.append(f'<li id="rev-{r["revid"]}"><b>{E(fmt_at(r["timestamp"]))}</b> &middot; {who} &middot; <span class="small">{"+" if dsz >= 0 else ""}{dsz:,} bytes</span> {flags}<br><span class="wcomment">{T(r["comment"]) or "<i>(no edit summary)</i>"}</span>{det}{refs}</li>')
+        body = f'''
+<p class="crumb"><a href="../../index.html">Wikipedia, as a graph</a> / <a href="../index.html">{E(art["title"])}</a> / Every edit</p>
+<h1>Every edit of Wikipedia&#39;s {E(art["title"])} article, as what it changed</h1>
+<p class="lead">{L["revisions"]} revisions from {E(fmt_at(revs[0]["timestamp"]))} to {E(fmt_at(revs[-1]["timestamp"]))}, by {L["editors"]} named editors and {L["anonymous_edits"]} anonymous edits, newest first. Wikipedia shows an edit as a diff of markup; here it is the statements the edit added, removed or reworded, so an edit reads as what it did to the account. {L["reverts"]} revisions were reverts or were reverted. Each entry links to the editor&#39;s public Wikipedia page; anonymous editors are never identified.</p>
+{chart}
+<ol class="whistory" reversed>{"".join(reversed(items))}</ol>
+<p class="small">Edit summaries and text are Wikipedia&#39;s, CC BY-SA 4.0, by its contributors, shown as text.</p>
+'''
+        page(base + 'history/index.html', f'Every edit of Wikipedia&#39;s {art["title"]} article, as what it changed', f'All {L["revisions"]} revisions of the article as the statements each one added, removed or reworded, with the editor, the size and the reverts.', body, kind='evidence', topics=f'wikipedia {slug} history')
+        cards.append((slug, art, L))
+    # ---- the section index
+    rows = [[f'<a href="{U(slug)}/index.html">{E(art["title"])}</a>', E(str(L['statements'])), f'{L["cited"]} ({100 * L["cited"] // max(1, L["statements"])}%)', f'{L["captured"]} of {L["with_url"]}', E(str(L['shared'])), E(str(L['revisions'])), E(str(L['editors'])), E(str(L['reverts'])), E(fmt_at(L['last']))] for slug, art, L in cards]
+    body = f'''
+<h1>Wikipedia, as a graph</h1>
+<p class="lead">Wikipedia is one of the largest bodies of checked fact there is, and one of the hardest to use as one: an article is long, its edits are diffs of markup, its references are a list at the bottom, and nothing tells a reader what they have already seen. This section reads each article this site watches as a fractal semantic graph: one statement per sentence, each classed by its wording (a fact stated, a view attributed, a quote), each joined to the references it cites, and those to the captures this site holds of the same pages, which is where the article&#39;s facts and this site&#39;s claims meet. Every revision is kept, so an edit reads as what it changed. Kept by the ontologist; fetched by <code>admin/wikipedia/fetch.py</code> on the daily pass.</p>
+{table(["Article", "Statements", "Cited", "References captured here", "Shared with our claims", "Revisions", "Editors", "Reverts", "Latest revision"], rows)}
+{section("how", "How it is made", '<ul><li><b>Fetch.</b> Every revision of the article, with its wikitext, time, editor and edit summary; the Wikidata item; the articles that link in. Anonymous editors are recorded as anonymous, never by address.</li><li><b>Parse.</b> A parser (<code>admin/build/wikitext.py</code>, no model) lifts the references out, turns the markup into text, and splits it into sentences. One sentence is one statement; its id is a hash of its words, so the same sentence keeps its id across revisions and an edit is a set difference.</li><li><b>Class.</b> By wording only: a <i>record</i> (a number, a date, an identifier), a plain <i>stated</i> fact, an <i>attributed</i> statement (a named party said, reported or estimated it), a <i>quote</i>, or <i>hedged</i> wording. The class says how the article speaks, not whether it is right.</li><li><b>Join.</b> A reference is matched to this site&#39;s sources by its address and to a party by its host. A statement there and a claim here that cite the same captured page meet at that page.</li><li><b>Keep.</b> The data is <code>data/wikipedia/</code>; the graph of each article is in the ontology&#39;s <code>wikipedia</code> scope (<a href="../data/ontology.json">data/ontology.json</a>), with its own kinds and verbs, joined to the story graph by <code>captured_as</code>.</li></ul>')}
+{section("next", "What this is for", '<p>Three things. A reader who wants the facts of a story, each with its evidence and without the markup, the edit wars and the list at the bottom. A newsroom that can see what Wikipedia says, what it rests on, and what changed since it last looked, in one view. And, in time, a measure: a source&#39;s trust shown by how often its statements are corrected, against other publications&#39;, rather than assumed.</p><p class="small">The text of each article is Wikipedia&#39;s, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>, by its contributors, with the revision id as the attribution; the pages and data of this section that carry it are under the same licence.</p>')}
+'''
+    page('wikipedia/index.html', 'Wikipedia, as a graph', 'Each Wikipedia article this site watches, read as a fractal semantic graph: statements classed as facts, attributions and quotes, references joined to the captures this site holds, and every edit as what it changed.', body, kind='evidence', topics='wikipedia graph')
+
 
 if __name__ == '__main__':
     # Settle: a page that reads a generated file written later in the build (data/items.json, data/sections.json,

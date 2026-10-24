@@ -757,3 +757,21 @@ ul.pev li{margin:.5rem 0}
 .gx-basis{font-size:.7rem;padding:0 .35rem;border-radius:999px;border:1px solid var(--line2);color:var(--dim)}
 .gx-b-inferred{border-style:dashed}.gx-b-confirmed{color:var(--ok-ink);border-color:currentColor}
 table.pulse td.pr-nc{color:var(--dim)}
+
+/* Wikipedia, as a graph (/wikipedia/), ontologist@php.newsroom. Every colour is a token; a class is written out, never
+   colour alone. Long references and edit summaries wrap anywhere, so the history page fits a phone. */
+.wstatements{list-style:none;margin:0;padding:0;counter-reset:wst}
+.wstatements li.wst{position:relative;margin:.5rem 0;padding:.5rem .6rem .5rem 2.4rem;border:1px solid var(--line);border-radius:8px;background:var(--panel);overflow-wrap:anywhere}
+.wstatements li.wst::before{counter-increment:wst;content:counter(wst);position:absolute;left:.6rem;top:.55rem;font-family:var(--mono);font-size:.75rem;color:var(--dim)}
+.wst .st{font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;margin-right:.3rem;vertical-align:middle}
+.wst .pill-ok{background:var(--ok-bg);color:var(--ok-ink)}.wst .pill-info{background:var(--info-bg);color:var(--info-ink)}
+.wst .pill-warn{background:var(--warn-bg);color:var(--warn-ink)}.wst .pill-mute{background:var(--bg);color:var(--dim);border:1px solid var(--line2)}
+.wst .wtext{font-size:1rem}
+.wst .wrefs a{font-family:var(--mono);font-size:.75rem;color:var(--accent);text-decoration:none;margin-left:.15rem}
+.wst .wev{font-size:.82rem;color:var(--dim);margin-top:.3rem}.wst .wev a.cap{color:var(--ok-ink);font-weight:600}
+.wst-hedged{border-left:3px solid var(--warn-ink)}.wst-attributed,.wst-quote{border-left:3px solid var(--info-ink)}.wst-record{border-left:3px solid var(--ok-ink)}
+.whistory{padding-left:1.2rem}.whistory>li{margin:.6rem 0;padding:.4rem 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.whistory .wcomment{font-size:.88rem}.whistory details{margin:.3rem 0}.whistory summary{cursor:pointer;font-size:.85rem;color:var(--accent)}
+.wdelta{list-style:none;margin:.3rem 0;padding:0}.wdelta li{margin:.2rem 0;padding:.2rem .4rem;border-radius:4px;font-size:.88rem;overflow-wrap:anywhere}
+.wdelta li.dl-ins{text-decoration:none}.wdelta li.dl-chg del{margin-right:.3rem}
+.graph .bars rect{fill:var(--accent);opacity:.75}

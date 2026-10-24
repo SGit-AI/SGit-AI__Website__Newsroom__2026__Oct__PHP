@@ -2090,6 +2090,62 @@
    "status": "open",
    "owner": "security",
    "note": "Opened by security@php.newsroom, 24 October 2026."
+  },
+  {
+   "id": "283",
+   "title": "Capture every reference of Wikipedia's PHP2Shell article that the vault does not hold (26 of 42 at revision 1381798757; the list on /wikipedia/php2shell/references/ and in admin/ontologist/pass.py), W3Techs and CSA Singapore first; then add the article's reference list to the source watch so a reference added to the article is captured within the hour",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md)."
+  },
+  {
+   "id": "284",
+   "title": "Follow every link Wikipedia's PHP2Shell article cites and keep following them: each capture turns a quotation Wikipedia makes into one this site can make, with the capture's hash; re-capture the article itself on each pass so the vault holds the revisions the site reads",
+   "status": "open",
+   "owner": "researcher",
+   "note": "From the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md)."
+  },
+  {
+   "id": "285",
+   "title": "Wikipedia's PHP2Shell article: grade its uncited statements (4 of 39) and its attributed ones against the captures of the parties it names; and the Wikidata item's dated claims (discovery August 2026; announcement 20 October 2026) against the timeline (disclosure 21 October; 20 October is the leak)",
+   "status": "open",
+   "owner": "factcheck",
+   "note": "From the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md)."
+  },
+  {
+   "id": "286",
+   "title": "Trust shown, not assumed: the same counts kept for Wikipedia (statements cited, references captured, reverts, contradictions touching its evidence) kept for every publication the site holds, so a correction rate can be compared across them; then a second Wikipedia article (PHP, or the list of security incidents)",
+   "status": "open",
+   "owner": "ontologist",
+   "note": "From the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md)."
+  },
+  {
+   "id": "287",
+   "title": "The gate's em-dash rule exempts the sources page for third-party titles; the Wikipedia section carries third-party text too and writes its em-dashes as entities to pass. Extend the exemption to /wikipedia/ (a change to validate.py, for security review) so the text can be stored as written",
+   "status": "open",
+   "owner": "security@php.newsroom",
+   "note": "From the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md)."
+  },
+  {
+   "id": "288",
+   "title": "Wikipedia's text (CC BY-SA 4.0) is republished in full under /wikipedia/ and data/wikipedia/, with attribution and the same licence on those pages, against the site's rule that no third-party page is reproduced (written for unlicensed pages). Decide whether it stays, and whether README's licence line says so",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md)."
+  },
+  {
+   "id": "289",
+   "title": "data/wikipedia/ grows with every revision (6 MB for 364 revisions of one article): decide, with the researcher, whether old revisions move to the evidence vault and the repository keeps the latest text plus statement-level deltas",
+   "status": "open",
+   "owner": "ontologist",
+   "note": "From the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md)."
+  },
+  {
+   "id": "290",
+   "title": "The ontologist's policy (admin/content/agents/ontologist/policy.json, kept by abp@): add data/wikipedia/**, admin/wikipedia/** and admin/build/wikitext.py to scope.writes and wikipedia/** to scope.pages; until then the gate warns that the Wikipedia pages have no owner",
+   "status": "open",
+   "owner": "abp",
+   "note": "From the brief: Wikipedia as an anchor (25 October)."
   }
  ],
  "evidence_vault": {
