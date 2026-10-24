@@ -2104,6 +2104,13 @@
    "status": "open",
    "owner": "security@php.newsroom",
    "note": "Needs security review and the editor's go (CLAUDE.md). Proposed message: 'your work is uncommitted, as it was: commit it (git add <your source files>; git commit), then git merge origin/dev, resolve (generated files: take dev's and rebuild; source: keep both sides), and run this again'. Also worth checking: the loss of 24 October came right after a push rejected mid-release and a second integrate that stopped; whether that path can leave committed work uncommitted is not established. Raised by the correspondent at the editor's request."
+  },
+  {
+   "id": "285",
+   "title": "The desk's wakes (09:20, 16:20) come before the correspondent's proposed wakes (11:47, 19:07); by the pipeline, the desk, the ontologist and the librarian run after the correspondent",
+   "status": "open",
+   "owner": "desk",
+   "note": "The editor, 24 October: the semantic graphs and the desk's checks only after the correspondent has reviewed the data. Proposal: the desk at about 12:20 and 19:40 London; the ontologist and the librarian after those. Cards: data/schedule/desk.json, ontologist.json, librarian.json; the correspondent's: data/schedule/correspondent.json (proposed)."
   }
  ],
  "evidence_vault": {

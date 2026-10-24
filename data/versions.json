@@ -1,6 +1,15 @@
 {
- "current": "0.15.17",
+ "current": "0.15.18",
  "versions": [
+  {
+   "version": "0.15.18",
+   "date": "2026-10-24",
+   "title": "the correspondent's schedule proposed (11:47 and 19:07 London, Opus, a fresh session each wake), its brief, and a count of what the correspondent catches on /views/desk/",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.17",
    "date": "2026-10-24",

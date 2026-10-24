@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.15.17",
+ "version": "0.15.18",
  "members": [
   {
    "agent": "abp",
@@ -2903,6 +2903,7 @@
  ],
  "overlaps": [],
  "unowned": [
+  ".github/dependabot.yml",
   ".well-known/security.txt",
   "SECURITY.md",
   "admin/build/control.py",
@@ -2917,6 +2918,7 @@
   "data/appsec.json",
   "data/comms.json",
   "data/desk.json",
+  "data/schedule/correspondent.json",
   "data/vault-register/correspondent.json"
  ],
  "dangling_appends": []

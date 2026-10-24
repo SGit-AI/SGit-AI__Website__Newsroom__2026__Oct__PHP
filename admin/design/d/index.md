@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.17. Not the live site.
+> Mockup D for review, built from the data of release v0.15.18. Not the live site.
 
-PHP Team console Console Overview Board 184 Agents 19 Releases 136 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 185 Agents 19 Releases 137 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.17 
-136 releases since 22 Oct 
+v0.15.18 
+137 releases since 22 Oct 
 
 Open on the board 
-184 
+185 
 96 done, 4 waiting 
 
 Pages built 
-887 
+888 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,11 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 184
+#### Open 185
 
+ #285 
+The desk's wakes (09:20, 16:20) come before the correspondent's proposed wakes (11:47, 19:07); by the pipeline, the desk… 
+ desk 
  #284 
 release.sh: its stop message advises 'git stash; git merge origin/dev; git stash pop', which can lose work if the pop co… 
  security@php.newsroom 
@@ -50,9 +53,6 @@ GitHub rulesets on dev and main (SA-2026-023): the editor's decision, 24 October
  #279 
 Go, or not, on the branch security/gate-pass-2: the gate fails on inline event handlers, forged message headers, drain o… 
  editor 
- #277 
-The pipeline decided (24 October): researcher, curator, journalist (Sonnet), correspondent (Opus), then the ontologist, … 
- abp@newsroom.sgit 
 
 #### Waiting 4
 
@@ -96,6 +96,7 @@ Every release links the pages it changed: under each release on /admin/versions.
 ### Releases
  latest 8 
 
+ v0.15.18 2026-10-24 the correspondent's schedule proposed (11:47 and 19:07 London, Opus, a fresh session each wake), its brief, and a count of what th… 
  v0.15.17 2026-10-24 CodeQL's second scan, triaged: the design dials derive their root as a count of ../ segments and accept only this site's pages as … 
  v0.15.16 2026-10-24 observability's round 2: the telemetry application v0.4.1 and v0.4.2, pushed to its vault (Queue & drain shows its progress; One p… 
  v0.15.15 2026-10-24 debrief: the Opus journalist's round, ending as the correspondent 
@@ -103,7 +104,6 @@ Every release links the pages it changed: under each release on /admin/versions.
  v0.15.13 2026-10-24 the journalist's brief corrected: it reads only the evidence vault, with its published read key, and needs no other key 
  v0.15.12 2026-10-24 CodeQL's first scan, triaged and hardened: every script that read data-root now derives root as a count of ../ segments, so page t… 
  v0.15.11 2026-10-24 Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and securi… 
- v0.15.10 2026-10-24 The control room: /team/control/, a visual, interactive view of every agent, the pipeline, the wake timeline and the editor's queu… 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ Every release links the pages it changed: under each release on /admin/versions.
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.17 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.18 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

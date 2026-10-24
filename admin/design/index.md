@@ -2,7 +2,7 @@
 
 The proposed redesign of the site for review: what is wrong now, the two dials (who you are and how much you see), which pages each reader sees, the menu per view, and four mockups built from the live data.
 
-> Mockup notes for review, built from the data of release v0.15.17. Not the live site.
+> Mockup notes for review, built from the data of release v0.15.18. Not the live site.
 
 Admin · design · for review 
 ## The redesign: who you are, and how much you want to see
@@ -94,20 +94,20 @@ signed articles written here · 9 pages
  The evidence 
 every source, the vaults, the pipeline, versions · 447 pages 
  The site and the team 
-method, roles, board, releases, admin · 212 pages 
+method, roles, board, releases, admin · 213 pages 
 
 ### Pages per reader, per view
 
  Reader Focus Standard Everything 
- Alex Curious reader 28 68 887 
- Jordan Board member or executive 28 225 887 
- Quinn CFO 28 225 887 
- Robin CISO 159 225 887 
- Rowan Journalist 532 555 887 
- Sam Security lead 42 111 887 
- Drew PHP or platform engineer 35 111 887 
- Ash Security researcher 486 558 887 
-Counted from the 887 pages this release builds. 
+ Alex Curious reader 28 68 888 
+ Jordan Board member or executive 28 225 888 
+ Quinn CFO 28 225 888 
+ Robin CISO 159 225 888 
+ Rowan Journalist 532 555 888 
+ Sam Security lead 42 111 888 
+ Drew PHP or platform engineer 35 111 888 
+ Ash Security researcher 486 558 888 
+Counted from the 888 pages this release builds. 
 
 #### Who sees the team console
 
@@ -156,7 +156,7 @@ All of it, for power users and the team.
 
 - The admin pages move into console D. 
 
- Mockups built by the design agent from release v0.15.17; the brief is on the briefs page. Board items record each step.
+ Mockups built by the design agent from release v0.15.18; the brief is on the briefs page. Board items record each step.
 
 ---
-site v0.15.17 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html
+site v0.15.18 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html

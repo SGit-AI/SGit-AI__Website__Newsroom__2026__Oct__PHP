@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 284 items, 184 open, 96 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 285 items, 185 open, 96 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -294,9 +294,10 @@ The work, as rows in `data/admin.json`: 284 items, 184 open, 96 done. An item is
 | 282 | Signed messages and cards (SA-2026-024): a design using each agent's pki.sgit.ai key, for the editor and the conductorOpened by security@php.newsroom, 24 October 2026. | open | security |  |
 | 283 | AGENTS.md section 1: three additions to 'take in dev', from 24 OctoberThe editor agreed, in the correspondent's session: (1) at session start, merging origin/dev should be a fast-forward; if it is not, the branch carries others' commits (a new Sonnet session's branch had 60): do not merge them on into dev, check they live on another branch and start clean with git checkout -B  origin/dev; (2) when release.sh stops, git status and git log -3 first; never git checkout -- . or git stash drop while your work is not in a commit (a whole export was lost that way on 24 October and recovered from the reflog); commit, merge origin/dev, resolve, rebuild, release; (3) conflicts: a generated file (outputs.txt), take dev's and rebuild; a source file, keep both sides; two board rows with the same id, keep theirs, renumber yours; build once, it settles itself (board 175). Written into the journalist's brief already (2026-10-24__brief__the-journalist.md). | open | conductor@php.newsroom |  |
 | 284 | release.sh: its stop message advises 'git stash; git merge origin/dev; git stash pop', which can lose work if the pop conflictsNeeds security review and the editor's go (CLAUDE.md). Proposed message: 'your work is uncommitted, as it was: commit it (git add ; git commit), then git merge origin/dev, resolve (generated files: take dev's and rebuild; source: keep both sides), and run this again'. Also worth checking: the loss of 24 October came right after a push rejected mid-release and a second integrate that stopped; whether that path can leave committed work uncommitted is not established. Raised by the correspondent at the editor's request. | open | security@php.newsroom |  |
+| 285 | The desk's wakes (09:20, 16:20) come before the correspondent's proposed wakes (11:47, 19:07); by the pipeline, the desk, the ontologist and the librarian run after the correspondentThe editor, 24 October: the semantic graphs and the desk's checks only after the correspondent has reviewed the data. Proposal: the desk at about 12:20 and 19:40 London; the ontologist and the librarian after those. Cards: data/schedule/desk.json, ontologist.json, librarian.json; the correspondent's: data/schedule/correspondent.json (proposed). | open | desk |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

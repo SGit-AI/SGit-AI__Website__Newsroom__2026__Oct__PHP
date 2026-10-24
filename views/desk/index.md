@@ -72,6 +72,12 @@ The plan in full is [among the briefs](../../admin/briefs/index.html), as writte
 
 Pages kept as written by design are not scanned: articles/, updates/, versions/, whatsnew/, admin/, readings/, brief/, corrections/, feedback/, sherpa/, team/, pulse/, sources/, facts/, views/. Stories, updates, versions of the state of affairs, release notes, briefs, outside readings and source pages are dated and kept as written by design; a dated phrase in them is history, not staleness. Facts pages carry every version of a fact. The state of affairs gives each measure its own as-of time on purpose. A phrase that is a source's own date, rightly kept, is accepted in `data/desk.json` and leaves the report.
 
+## What the correspondent caught (0)
+
+None yet: the scheduled journalist has not shipped a run for the correspondent to review.
+
+What the correspondent corrected in the journalist's work, one row per correction: when, what, the file, its kind (verdict, row, as-of, missing, contradiction), the journalist's run and the release that fixed it. Counted on /views/desk/, so the editor can see what a Sonnet journalist misses.
+
 ## Vault claims not yet reviewed (65)
 
 Listed with their sources on [the claims waiting for review](../../claims/review/index.html#g-not-yet-reviewed).
@@ -80,4 +86,4 @@ Computed from [data/desk.json](../../data/desk.json), the pages of this build an
 
 
 ---
-site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/views/desk/index.html
+site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/views/desk/index.html
