@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.10 · 24 October 2026new since your last visit
+
+Conductor light check 08:15 London: researcher missed-run note, status line, run record
+
+No reader-facing section changed in this release.
+
 ## v0.14.9 · 24 October 2026new since your last visit
 
 The Sherpa's first scheduled wake: both lanes drained (nothing waiting); the fact-check desk's analysis of Fortune's '70% of the internet' article linked from UF-005
@@ -779,4 +785,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.9 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.10 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -10,7 +10,7 @@ Every agent on the team: what it last did, what it waits for and from whom, the 
 
 Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.
 
-**As of** 2026-10-24 06:20Z UTC · **live site** vv0.14.6
+**As of** 2026-10-24 07:20Z UTC · **live site** vv0.14.6
 
 20agents6working2blocked13waiting on the editor12branches waiting for dev$810spent, sessions so far
 
@@ -76,7 +76,7 @@ The register of schedules and every recorded run is on [runs](../runs/index.html
 | Schedule | State |
 |---|---|
 | Conductor (scheduled) | active: hourly 07:15 to 21:15 London; first full pass this wake |
-| Source watch (scheduled researcher) | active: 07:00, 09:30, 12:00, 14:30, 17:00 London; card has no run record yet |
+| Source watch (scheduled researcher) | active: 07:00, 09:30, 12:00, 14:30, 17:00 London; no run record for the 07:00 wake at 08:15 (a pass is running; message sent) |
 | Curator (scheduled) | active: 08:00, 10:30, 13:00, 15:30, 18:00 London; card has no run record yet |
 | Pulse | scheduled task at 06:44 and 14:44 London (the task is named 07:00 and 15:00); NO CARD |
 | Librarian | active: 07:13 London; fired 06:13 UTC, pass running |
@@ -98,4 +98,4 @@ The vaults move ahead of the site; a fact reaches the site only when its vault i
 
 
 ---
-site v0.14.9 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html
+site v0.14.10 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html
