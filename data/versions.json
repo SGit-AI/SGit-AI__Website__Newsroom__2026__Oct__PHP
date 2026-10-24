@@ -1,6 +1,15 @@
 {
- "current": "0.11.6",
+ "current": "0.11.7",
  "versions": [
+  {
+   "version": "0.11.7",
+   "date": "2026-10-24",
+   "title": "the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness report computed at every build; step 1 of the pass",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.11.6",
    "date": "2026-10-24",

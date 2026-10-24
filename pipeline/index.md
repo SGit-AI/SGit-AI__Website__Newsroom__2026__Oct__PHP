@@ -15,7 +15,7 @@ Found295sources the agents found and logged in the vaultSaved280captured as serv
 ## The facts by status, release by release
 
 How many facts the site carried in each release and how far each could be trusted. A fact that moves from reported to confirmed is a second primary source found; one that moves the other way is a correction.
-v0.1.049v0.2.070v0.2.170v0.2.270v0.2.370v0.2.470v0.2.570v0.2.670v0.2.770v0.2.870v0.2.970v0.2.1070v0.2.1170v0.2.1270v0.2.1370v0.2.1470v0.2.1570v0.3.070v0.3.170v0.3.270v0.4.070v0.4.170v0.4.270v0.4.370v0.4.470v0.4.570v0.4.670v0.4.770v0.5.070v0.5.170v0.5.270v0.5.370v0.5.470v0.5.570v0.5.670v0.5.770v0.5.870v0.5.970v0.5.1070v0.6.070v0.7.070v0.8.070v0.8.170v0.8.270v0.8.370v0.8.470v0.9.070v0.9.170v0.9.270v0.9.370v0.10.070v0.10.170v0.10.270v0.10.370v0.10.470v0.10.570v0.10.670v0.10.770v0.10.870v0.10.970v0.10.1070v0.10.1170v0.10.1270v0.10.1370v0.10.1470v0.10.1570v0.10.1670v0.10.1770v0.10.1870v0.10.1970v0.10.2070v0.10.2170v0.10.2270v0.10.2370v0.10.2470v0.11.070v0.11.170v0.11.270v0.11.370v0.11.470v0.11.570v0.11.670- confirmed two or more primary sources agree, or the fact was counted from a captured file
+v0.1.049v0.2.070v0.2.170v0.2.270v0.2.370v0.2.470v0.2.570v0.2.670v0.2.770v0.2.870v0.2.970v0.2.1070v0.2.1170v0.2.1270v0.2.1370v0.2.1470v0.2.1570v0.3.070v0.3.170v0.3.270v0.4.070v0.4.170v0.4.270v0.4.370v0.4.470v0.4.570v0.4.670v0.4.770v0.5.070v0.5.170v0.5.270v0.5.370v0.5.470v0.5.570v0.5.670v0.5.770v0.5.870v0.5.970v0.5.1070v0.6.070v0.7.070v0.8.070v0.8.170v0.8.270v0.8.370v0.8.470v0.9.070v0.9.170v0.9.270v0.9.370v0.10.070v0.10.170v0.10.270v0.10.370v0.10.470v0.10.570v0.10.670v0.10.770v0.10.870v0.10.970v0.10.1070v0.10.1170v0.10.1270v0.10.1370v0.10.1470v0.10.1570v0.10.1670v0.10.1770v0.10.1870v0.10.1970v0.10.2070v0.10.2170v0.10.2270v0.10.2370v0.10.2470v0.11.070v0.11.170v0.11.270v0.11.370v0.11.470v0.11.570v0.11.670v0.11.770- confirmed two or more primary sources agree, or the fact was counted from a captured file
 - reported one party says so, and it has not been contradicted
 - disputed the sources disagree, and both readings are shown
 - contradicted a primary source says otherwise
@@ -36,4 +36,4 @@ Each fact has a page of its own: when each of its sources was published, when it
 
 
 ---
-site v0.11.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/pipeline/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/pipeline/index.html

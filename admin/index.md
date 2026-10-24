@@ -382,6 +382,8 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `/pulse/`: a separate section, not about PHP. The SGit newsroom's Pulse vault (`4klm5qlt`, pulse@newsroom), exported by `admin/build/export_pulse.py` into `data/pulse.json` (ladders, dates, attention counts, short quotes with their capture paths and hashes; no capture, no key), built by its own block at the end of `build.py`, one page per vulnerability (26). The PHP pages do not read it; the front page has one pointer, "What else is going on".
 
+- `/views/desk/`, the journalist's desk (the editor's decision, 24 October 2026: the journalist keeps the site current after every evidence export): the cycle each export goes through, the five steps of the full pass and their status, the pass ledger (one row per hand-kept data file and the vault head it was last checked against) and a staleness report computed at every build from the markdown twins (dated 'as of' phrases older than the latest capture, outside pages kept as written by design), all from `data/desk.json`.
+
 ## The honest column
 
 - **Not measured:** the editor's time and the inference cost behind each agent run.
@@ -398,4 +400,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.11.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

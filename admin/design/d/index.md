@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.11.6. Not the live site.
+> Mockup D for review, built from the data of release v0.11.7. Not the live site.
 
-PHP Team console Console Overview Board 135 Agents 17 Releases 82 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 135 Agents 17 Releases 83 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.11.6 
-82 releases since 22 Oct 
+v0.11.7 
+83 releases since 22 Oct 
 
 Open on the board 
 135 
 58 done, 5 waiting 
 
 Pages built 
-754 
+755 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -99,6 +99,7 @@ From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the
 ### Releases
  latest 8 
 
+ v0.11.7 2026-10-24 the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness repo… 
  v0.11.6 2026-10-24 The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the e… 
  v0.11.5 2026-10-24 The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartogra… 
  v0.11.4 2026-10-24 The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to … 
@@ -106,7 +107,6 @@ From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the
  v0.11.2 2026-10-24 claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit n… 
  v0.11.1 2026-10-24 Security pass 2: the Ask pane renders the model's answer as DOM nodes, so a captured page title can no longer break out of a citat… 
  v0.11.0 2026-10-24 The cartographer joins: the ontology (15 verbs, each with its inverse), one node per party (243, from every publisher spelling), t… 
- v0.10.24 2026-10-24 The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and t… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 5
 
 ---
-site v0.11.6 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.11.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

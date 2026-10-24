@@ -18,6 +18,7 @@ Reads every note in the vault, writes the claims and timeline this site publishe
 - data/claims.json, timeline.json and the other authored data
 - the front page, the facts, the patching and signals pages
 - the coverage vault (dcsmxese) and its review
+- (from 24 October 2026 the refresh of these files after each evidence export is the journalist's, the editor's decision; see /views/desk/)
 
 ## The rules they work by
 - Every status is one of five words and the page says what each means.
@@ -60,4 +61,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
+site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
