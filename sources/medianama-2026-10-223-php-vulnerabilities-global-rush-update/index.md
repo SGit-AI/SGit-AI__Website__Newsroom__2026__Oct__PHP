@@ -54,4 +54,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/medianama-2026-10-223-php-vulnerabilities-global-rush-update/index.html
+site v0.10.21 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/medianama-2026-10-223-php-vulnerabilities-global-rush-update/index.html

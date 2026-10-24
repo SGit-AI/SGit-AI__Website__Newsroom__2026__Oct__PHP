@@ -6,7 +6,23 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.19. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.21. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.21 · 2026-10-24
+
+synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey, the instruments' flags) and a page-by-page index of what all six said about each page of the site; the second run, on v0.10.18, reviewed by all six against their first: most of what they asked for on 22 October is still open; the vault register for the six vaults confirmed, each key sealed to the root
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.20 · 2026-10-24
+
+the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.10.19 · 2026-10-23
 
@@ -570,4 +586,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.21 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
