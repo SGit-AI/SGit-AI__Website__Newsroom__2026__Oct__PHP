@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.4 · 24 October 2026new since your last visit
+
+factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-compromise claim, the Dutch offline row, the front page's fix-complete line), K-004 and K-009 explained, so the correction requests to Wiz, the BBC and CNN no longer wait on the desk; Finding-32 stays open (Cloudflare does link W3Techs); the desk's schedule card, and the brief for its investigations
+
+No reader-facing section changed in this release.
+
 ## v0.14.3 · 24 October 2026new since your last visit
 
 pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gate's first-build determinism failure fixed (design.py read items.json one build late, board 175)
@@ -41,7 +47,11 @@ No reader-facing section changed in this release.
 
 The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the 1.57 million framing, the Dutch offline row, the front page's offline advice, DigiD and fix-complete lines), Corrections we have asked for (/outreach/) with eleven requests and the emails the editor sends, and the desk's briefs, review and schedule
 
+### Briefings that changed
+JJordanBoard member or executive · v9SSamSecurity lead · v8RRowanJournalist · v8AAshSecurity researcher · v8BBlakeAnalyst or advisor · v9RRobinCISO · v9QQuinnCFO · v9JJamieHead of AppSec · v8RRileyMedia and communications team · v8AAlexCurious reader · v7CCaseyWebsite owner · v6TTaylorProject or programme manager · v7MMorganData protection officer · v3
 ### Sections that changed
+- [How disclosure broke](../versions/page-leak/index.html#v6) v6
+- [Every claim](../versions/page-claims/index.html#v8) v8
 - [The agencies](../versions/page-agencies/index.html#v3) v3
 
 ## v0.12.1 · 24 October 2026new since your last visit
@@ -739,4 +749,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -14,9 +14,9 @@ None of the three cites the survey it comes from. A share of websites using PHP 
 
 ## Fact-check
 
-**A2** Reported●●○○○○ measures differently · Count · verdict: **holds in part**
+**A2** Reported●●○○○○ measures differently · Count · verdict: **holds**
 
-Cloudflare, OpenAI and Wiz each state roughly 70%, but they restate one survey (Cloudflare links W3Techs; Tenable and Imperva name W3Techs), so this is an echo of one origin, and the survey's method is not captured, which caps a count at A2. The figure W3Techs publishes is a share of websites whose server-side language is known, a qualifier the claim drops.
+Now carries the population, 'websites whose server-side language is known' (Finding-33 fixed), which is how W3Techs measures it; Cloudflare's page links the figure to W3Techs. Three outlets repeat one survey, so A2 until the survey itself is captured (board 033). Outlets disagree on the value, about 69-70% against about 75% (Finding-103).
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -31,7 +31,7 @@ Cloudflare, OpenAI and Wiz each state roughly 70%, but they restate one survey (
 
 Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Finding-103](../../factcheck/index.html#Finding-103), [Finding-32](../../factcheck/index.html#Finding-32), [Finding-33](../../factcheck/index.html#Finding-33).
 
-Graded in Run-1, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-3, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Cloudflare publishes [Cloudflare deploys protections against php2shell vulnerability](../../sources/cloudflare-blog-php2shell-waf/index.html)
@@ -66,4 +66,4 @@ v2 · site v0.12.1 · 24 October 2026 · reportedPHP is used by almost 70% of we
 
 
 ---
-site v0.14.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html
+site v0.14.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html

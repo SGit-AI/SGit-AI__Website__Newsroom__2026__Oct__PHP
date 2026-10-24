@@ -3,7 +3,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/flaws/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/timeline/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/discovery/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
-<url><loc>https://php.oct.2026.newsroom.sgit.ai/leak/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/leak/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/exploitation/index.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/compromise/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/playbook/index.html</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
@@ -400,6 +400,7 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/curator/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/desk/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/factcheck/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/librarian/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/team/schedule/researcher/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>

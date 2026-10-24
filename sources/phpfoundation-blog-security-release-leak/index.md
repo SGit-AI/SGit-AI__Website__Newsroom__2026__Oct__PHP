@@ -52,7 +52,7 @@ Captured for the researchers/leak beat; the advisory collectors may hold their o
 
 | Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
 |---|---|---|---|---|---|
-| On 20 October at about 15:00 UTC the two CVE IDs began circulating on forums and social media with a wrong release time and a wrong CVSS score; no technical details leakedPrimary party. The Foundation does not say who or where. [fact timeline →](../../facts/leak-cve-ids/index.html) | PHP Foundation | reported | **A2** Reported●●○○○○ disputed | 2/2 | [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [PHP Foundation](../../sources/phpfoundation-blog-security-release-leak/index.html) |
+| On 20 October at about 15:00 UTC the two CVE IDs began circulating on forums and social media with a wrong release time and a wrong CVSS score; no technical details leakedPrimary party. The Foundation does not say who or where. [fact timeline →](../../facts/leak-cve-ids/index.html) | PHP Foundation | reported | **A4** Corroborated●●●●○○ disputed | 2/2 | [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [PHP Foundation](../../sources/phpfoundation-blog-security-release-leak/index.html) |
 | Calif mistakenly published a video around 20:00 UTC on 20 October showing its proof of concept against a number of targets; copies circulated and 'contributed to accelerated development of various PoCs'Calif's own page does not mention a leak or a deleted video; it embeds two demo videos. Whether one of them is the deleted video is unknown. [fact timeline →](../../facts/leak-video/index.html) | PHP Foundation | reported | **A3** Echoed●●●○○○ | 3/4 | [PHP Foundation](../../sources/php-foundation-blog-security-release/index.html) [PHP Foundation](../../sources/phpfoundation-blog-security-release-leak/index.html) [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Calif](../../sources/calif-php2shell/index.html) |
 
 ## Events that cite it
@@ -77,4 +77,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.14.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/phpfoundation-blog-security-release-leak/index.html
+site v0.14.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/phpfoundation-blog-security-release-leak/index.html

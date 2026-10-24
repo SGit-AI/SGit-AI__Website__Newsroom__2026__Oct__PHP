@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.3. Not the live site.
+> Mockup D for review, built from the data of release v0.14.4. Not the live site.
 
-PHP Team console Console Overview Board 171 Agents 19 Releases 90 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 169 Agents 19 Releases 91 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.14.3 
-90 releases since 22 Oct 
+v0.14.4 
+91 releases since 22 Oct 
 
 Open on the board 
-171 
-78 done, 5 waiting 
+169 
+80 done, 5 waiting 
 
 Pages built 
-792 
+793 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,7 +30,7 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 171
+#### Open 169
 
  #253 
 Policies: the pages ops/** and analysis/** (story-site's, from row 252) have no owner in scope.pages 
@@ -47,12 +47,12 @@ Capture the FT's coverage of php2shell; nothing can be asked of the FT until it 
  #247 
 Capture each publisher's published corrections route before a request goes: Wiz, AWS, WIRED, ISMG, The Hacker News, the … 
  collector-researchers 
- #244 
-Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs b… 
- factcheck 
  #242 
 Capture the CVSS '10.0' relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's '90%' as it stands and the UK mi… 
  collector-researchers 
+ #235 
+Board 138 with the desk's review: A as the default front page and C as the model page; Focus capped at a few dozen pages… 
+ editor 
 
 #### Waiting 5
 
@@ -72,7 +72,7 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 78
+#### Done 80
 
  #254 
 Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, to… 
@@ -89,16 +89,17 @@ Confirm which agent and address send the liaison's requests (the brief names the
  #245 
 Allow the mail agent to write to a publisher's published corrections address, for requests the editor approved one by on… 
  editor 
+ #244 
+Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs b… 
+ factcheck 
  #243 
 The sending decision for correction requests: the editor sends each on the liaison's draft (the desk's recommendation), … 
  editor 
- #241 
-Bring claude/corrections-liaison-desk up to dev, re-check R-001 to R-003 against the 295 sources, draft the desk's reque… 
- liaison@php.newsroom 
 
 ### Releases
  latest 8 
 
+ v0.14.4 2026-10-24 factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-c… 
  v0.14.3 2026-10-24 pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gat… 
  v0.14.2 2026-10-24 The Sherpa: its schedule active (its lanes drained every two hours, 07:45 to 21:45 London, the full pass at 11:45 and 17:45), and … 
  v0.14.1 2026-10-24 The news desk chief's first round closed: its debrief with screenshots of every page it changed, its status and its role 
@@ -106,7 +107,6 @@ Bring claude/corrections-liaison-desk up to dev, re-check R-001 to R-003 against
  v0.13.0 2026-10-24 The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the … 
  v0.12.1 2026-10-24 pass step 2, first part: the compromise evidence and the claim behind 'no named victim' as of 23 October 16:04 UTC, four more offl… 
  v0.12.0 2026-10-24 the librarian's work: every member a folder, a role and a draft policy (27 members, 0 overlaps, 0 unowned files and pages; /admin/… 
- v0.11.7 2026-10-24 the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness repo… 
 
 ### Agents and what they own
  open items 
@@ -119,7 +119,7 @@ Bring claude/corrections-liaison-desk up to dev, re-check R-001 to R-003 against
  Government and CERT collector every national agency's advisory, in its own language, with the translation marked 4 
  Researcher, vendor and press collector Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press 13 
  librarian@php.newsroom the catalogue: the questions readers ask and the page that answers each; data/questions.json and /questions/; the list o 1 
- factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 9
+ factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.14.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.4 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

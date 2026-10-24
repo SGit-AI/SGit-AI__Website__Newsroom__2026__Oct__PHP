@@ -1473,6 +1473,8 @@ team/schedule/curator/index.html
 team/schedule/curator/index.md
 team/schedule/desk/index.html
 team/schedule/desk/index.md
+team/schedule/factcheck/index.html
+team/schedule/factcheck/index.md
 team/schedule/index.html
 team/schedule/index.md
 team/schedule/librarian/index.html

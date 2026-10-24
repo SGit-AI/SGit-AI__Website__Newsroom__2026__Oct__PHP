@@ -1,6 +1,15 @@
 {
- "current": "0.14.3",
+ "current": "0.14.4",
  "versions": [
+  {
+   "version": "0.14.4",
+   "date": "2026-10-24",
+   "title": "factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-compromise claim, the Dutch offline row, the front page's fix-complete line), K-004 and K-009 explained, so the correction requests to Wiz, the BBC and CNN no longer wait on the desk; Finding-32 stays open (Cloudflare does link W3Techs); the desk's schedule card, and the brief for its investigations",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.3",
    "date": "2026-10-24",

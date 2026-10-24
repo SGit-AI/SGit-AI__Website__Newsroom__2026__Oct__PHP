@@ -174,7 +174,7 @@
   {
    "id": "K-004",
    "measure": "How many systems are still unpatched?",
-   "status": "open",
+   "status": "explained",
    "claims": [
     "scale-2.6m-hosts"
    ],
@@ -207,7 +207,7 @@
      ]
     }
    ],
-   "reading": "The site's claim reads as 1.57 million unpatched out of about 2.6 million hosts (about 60%). The source says 1.57 million out of the 1.58 million whose version could be read (about 99%, on the day the fix shipped); the 2.58 million is all hosts seen, most of which do not announce a version. The two framings give very different pictures. The BBC's 90% has no named counter or method and is not captured. Open, because the site states one framing as fact.",
+   "reading": "The site's claim reads as 1.57 million unpatched out of about 2.6 million hosts (about 60%). The source says 1.57 million out of the 1.58 million whose version could be read (about 99%, on the day the fix shipped); the 2.58 million is all hosts seen, most of which do not announce a version. The two framings give very different pictures. The BBC's 90% has no named counter or method and is not captured. Open, because the site states one framing as fact. Run 3 (24 October): the site now states both counters and Censys's denominator, so the framing difference is explained on the page; the BBC's 90% stays uncaptured.",
    "settle": "Censys's own post (the vault notes say it was not found), or a later Censys count with the same population.",
    "ticket": "Contradiction-4"
   },
@@ -363,7 +363,7 @@
   {
    "id": "K-009",
    "measure": "Did any technical detail leak on 20 October?",
-   "status": "open",
+   "status": "explained",
    "claims": [
     "leak-cve-ids",
     "leak-hn",
@@ -405,9 +405,27 @@
      "sources": [
       "equixly-php2shell-what-we-know"
      ]
+    },
+    {
+     "who": "The Register, reporting the Foundation",
+     "when": "2026-10-22",
+     "says": "At that point, no technical details leaked.",
+     "measures": "the Foundation's statement, with the time it applies to",
+     "sources": [
+      "theregister-php-blames-chainguard"
+     ]
+    },
+    {
+     "who": "Feross Aboukhadijeh (Socket) on X",
+     "when": "2026-10-21 23:02 UTC",
+     "says": "The CVE IDs leaked the day before, and Calif accidentally posted an exploit video that evening.",
+     "measures": "the order of events on 20 October",
+     "sources": [
+      "x-feross-chainguard"
+     ]
     }
    ],
-   "reading": "Probably different meanings of 'technical detail'. A screenshot of a tool banner and a demonstration video show that an exploit exists, not how it works; the Foundation may mean that no root cause or code leaked. The Hacker News's 'proof-of-concept exploit leaked' is stronger than anything else in the vault carries, and no capture shows a leaked PoC. Open until the Foundation or Daubois says what the Foundation meant.",
+   "reading": "Probably different meanings of 'technical detail'. A screenshot of a tool banner and a demonstration video show that an exploit exists, not how it works; the Foundation may mean that no root cause or code leaked. The Hacker News's 'proof-of-concept exploit leaked' is stronger than anything else in the vault carries, and no capture shows a leaked PoC. Open until the Foundation or Daubois says what the Foundation meant. Run 3 (24 October), a fresh look with 112 more sources in the vault: the difference is time. The Foundation's 'no technical details leaked' describes the CVE IDs circulating from about 15:00 UTC on 20 October; The Register's report of it says 'At that point'. Calif's exploit video went up 'that evening' (Feross; Daubois; Wikipedia), after the pre-announcement. A video and a tool banner show that an exploit exists, not how it works; no capture shows leaked exploit code, so The Hacker News's 'proof-of-concept exploit leaked' most likely means the video. Both statements hold, each at its own time; a page that quotes the Foundation should keep its time.",
    "settle": "A capture of the leaked screenshot or video, or the Foundation saying what 'technical details' covers.",
    "ticket": "Contradiction-9"
   },
