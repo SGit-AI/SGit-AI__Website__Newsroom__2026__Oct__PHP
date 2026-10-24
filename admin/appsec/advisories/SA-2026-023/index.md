@@ -48,4 +48,4 @@ Rulesets: no force-push or deletion; main by pull request only; a path ruleset f
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-023/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-023/index.html

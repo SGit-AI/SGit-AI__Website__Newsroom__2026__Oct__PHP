@@ -189,7 +189,7 @@ def to_markdown(fragment):
     """A small, deterministic HTML to Markdown conversion for the .md twins."""
     s = fragment
     s = re.sub(r'<svg.*?</svg>', '', s, flags=re.S)
-    s = re.sub(r'<script\b.*?</script\s*>', '', s, flags=re.S | re.I)
+    s = re.sub(r'<script\b.*?</script\b[^>]*>', '', s, flags=re.S | re.I)
     s = re.sub(r'<sg-meter[^>]*></sg-meter>', '', s)
     # tables
     def table(m):

@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.16. Not the live site.
+> Mockup D for review, built from the data of release v0.15.17. Not the live site.
 
-PHP Team console Console Overview Board 184 Agents 19 Releases 135 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 184 Agents 19 Releases 136 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.16 
-135 releases since 22 Oct 
+v0.15.17 
+136 releases since 22 Oct 
 
 Open on the board 
 184 
@@ -96,6 +96,7 @@ Every release links the pages it changed: under each release on /admin/versions.
 ### Releases
  latest 8 
 
+ v0.15.17 2026-10-24 CodeQL's second scan, triaged: the design dials derive their root as a count of ../ segments and accept only this site's pages as … 
  v0.15.16 2026-10-24 observability's round 2: the telemetry application v0.4.1 and v0.4.2, pushed to its vault (Queue & drain shows its progress; One p… 
  v0.15.15 2026-10-24 debrief: the Opus journalist's round, ending as the correspondent 
  v0.15.14 2026-10-24 merge rules for taking in dev, in the journalist's brief; board rows for AGENTS.md and for release.sh's stop message 
@@ -103,7 +104,6 @@ Every release links the pages it changed: under each release on /admin/versions.
  v0.15.12 2026-10-24 CodeQL's first scan, triaged and hardened: every script that read data-root now derives root as a count of ../ segments, so page t… 
  v0.15.11 2026-10-24 Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and securi… 
  v0.15.10 2026-10-24 The control room: /team/control/, a visual, interactive view of every agent, the pipeline, the wake timeline and the editor's queu… 
- v0.15.9 2026-10-24 the journalist's and the correspondent's public key fingerprints recorded in their register files 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ Every release links the pages it changed: under each release on /admin/versions.
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.16 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.17 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

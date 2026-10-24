@@ -40,4 +40,4 @@ Revisit when the site moves to a host that sets headers.
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-039/index.html
+site v0.15.17 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-039/index.html

@@ -1,6 +1,15 @@
 {
- "current": "0.15.16",
+ "current": "0.15.17",
  "versions": [
+  {
+   "version": "0.15.17",
+   "date": "2026-10-24",
+   "title": "CodeQL's second scan, triaged: the design dials derive their root as a count of ../ segments and accept only this site's pages as a home; the reader's 'what changed' links take only well-formed item ids; the build's and the CSP's script-tag regexes match any end tag form (</script foo>); and Dependabot, on the editor's go, keeps the workflows' pinned actions current with reviewed pull requests",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.16",
    "date": "2026-10-24",
