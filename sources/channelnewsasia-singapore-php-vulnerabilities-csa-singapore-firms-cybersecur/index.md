@@ -49,9 +49,15 @@ capture 20261023T080331Z · HTTP 200 · https://www.channelnewsasia.com/singapor
 - `rendered.html` 7257b6432a920652edf3485bffc58c39923a1cd8c23dc9053d4e2acf7a4a89d4 1,027,313 bytes
 - `screenshot.jpg` 4663c4fc897f033817bb0c5d9f267ef54a8db7f664e29411a13f13625d069bb8 453,850 bytes
 - `text.txt` 099af28ae4a894d5bbbb7d057c8ae2a5ed96744cf3f55cae8539d03725bbf8c8 6,109 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.channelnewsasia.com/singapore/php-vulnerabilities-csa-singapore-firms-cybersecurity-6482006- `headers.json` 0bb7ad8ef4cbac6b1cdfa833cdf94b852e6d4c3fcfab446c1df16630b23b3104 1,011 bytes
+- `page.html` 3126534b4e5d0523314fc3e36ae96b36e2b0928ebd5cc4fcbbfbec3e181ca990 514,574 bytes
+- `provenance.json` cefab6ab48b8757dc4417242bf77b9f96de5e9ac581830f1338b90510c9fda1d 2,009 bytes
+- `rendered.html` fb6bcac9a4d987a74695588fa4ee5ae0481236402f60f556d170a2aa12b62099 1,001,298 bytes
+- `screenshot.jpg` 7063cfc73094d945916a6694a526b552f8b35dd6b3a7467a7fe65766375bb828 426,765 bytes
+- `text.txt` 3193ae7b5ea47e45be15b3b6c0b6fefdb430a385e00ee042fab553b4c72034e7 5,853 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur/index.html

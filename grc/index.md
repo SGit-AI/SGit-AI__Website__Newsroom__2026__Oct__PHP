@@ -10,7 +10,7 @@
 
 A register of every risk in this story, broken down until each piece has someone who can act on it, and assigned to every stakeholder who carries part of it. The registers are fractal: the PHP project, a hosting provider, a council, a board and a developer each have one, and each is the same register read at a different scale. Every risk is backed by claims already on this site, and joined, edge by edge, to the weakness behind it, the vulnerability, the part of the fix that addresses it, the code that changed, the stories that tell it, the roles that act on it, and the controls in GDPR, NIS2, the Cyber Resilience Act, DORA, the EU AI Act, ISO 27001, NIST and the rest.
 
-34risks10at the top53stakeholders10roles14weaknesses20frameworks95controls mapped1354edges
+34risks10at the top53stakeholders10roles14weaknesses20frameworks95controls mapped1356edges
 
 ## Where the risks sit
 
@@ -81,8 +81,8 @@ No risk on this register is **accepted**. An acceptance is an act by the holder 
 
 ## The data
 
-Authored: [data/grc.json](../data/grc.json) (53 stakeholders, 14 weaknesses, 34 risks) and [data/grc-frameworks.json](../data/grc-frameworks.json) (20 frameworks, 120 controls). Generated on every build: [data/grc-graph.json](../data/grc-graph.json), 724 nodes and 1354 edges. The build refuses a risk that points at a claim, source, story, page, member, code node or control that does not exist, and a risk with no owner. Kept by [the GRC desk](../team/grc/index.html).
+Authored: [data/grc.json](../data/grc.json) (53 stakeholders, 14 weaknesses, 34 risks) and [data/grc-frameworks.json](../data/grc-frameworks.json) (20 frameworks, 120 controls). Generated on every build: [data/grc-graph.json](../data/grc-graph.json), 726 nodes and 1356 edges. The build refuses a risk that points at a claim, source, story, page, member, code node or control that does not exist, and a risk with no owner. Kept by [the GRC desk](../team/grc/index.html).
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/grc/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/grc/index.html

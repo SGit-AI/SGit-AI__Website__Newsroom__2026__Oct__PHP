@@ -31,9 +31,14 @@ capture 20261022T080952Z · HTTP 200 · https://www.cnn.com/2026/10/21/tech/php2
 - `rendered.html` 66701f20de23dd4e5c1a9b4ddc55f38cff8552185314c84015ae9af8feb284ba 5,827,372 bytes
 - `screenshot.png` 2facb080dde6129efd10472048d29104b0b5321b0e43f755895240f244f8e398 144,239 bytes
 - `text.txt` 81bf5a9a7a84ad06077d46e5c782bcd925860cc16ca9e696ebacf90832db3fef 6,595 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai-intl- `headers.json` 7c2747376cb0c0381d9addb9870dba346922465a3626917c238b856a7be70588 2,138 bytes
+- `page.html` 099addc537b8cb5b4bc419ae9f5ee485637e74e1d4dfab1b0e211af4dfa03b95 5,628,991 bytes
+- `provenance.json` 3494486a674e1c999ddd96dd28b26623fca127e4e0f671adbae585566465570f 1,645 bytes
+- `screenshot.jpg` 4320a253df2bf1065952ccd1485b32cd9dc34da3e0f490f53a4b8aaeb8b847f4 115,790 bytes
+- `text.txt` 4933a8479ff293ef0e78e573b1da82e55f0a0c9d684b06ddcfdffb8e5f3aca79 10,376 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/cnn-php2shell-ai/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/cnn-php2shell-ai/index.html

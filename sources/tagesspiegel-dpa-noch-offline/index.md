@@ -31,9 +31,13 @@ capture 20261022T081509Z · HTTP 200 · https://www.tagesspiegel.de/gesellschaft
 - `rendered.html` a85f172a5b4be987ce218fb4e2a01b1db2301e6d9daa9c09735d00f16245c082 395,185 bytes
 - `screenshot.png` 9716d20f18ff56bd31a88188f81e8a38aef651c6e4bedbe0e81f190dfba22755 740,028 bytes
 - `text.txt` 0255857572a7411c4f2c88bf5ff7fd00a0bcb89cfca6f84234f0a55999ff3c79 5,013 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.tagesspiegel.de/gesellschaft/medien/dpa-sicherheitslucke-im-internet-millionen-hacker-versuche-viele-webseiten-wieder-online-16186782.html- `headers.json` dfd49341c2968ad18ba184e17d83f30476f2704e4673342c830633888ace52b3 2,208 bytes
+- `page.html` ca26c4db6077b3188713d4b0fec01f620f4b60fba9a1e37eb245b1f338d69833 433,423 bytes
+- `provenance.json` 533fae58738885c6be06dd2a20b3b751785f9b4074a85b3a4f35de994555f4a7 1,806 bytes
+- `text.txt` 03282d093de71a4ff4f9d4aea3458d633a827a6db3f1902424e55887053e4aa2 6,910 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/tagesspiegel-dpa-noch-offline/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/tagesspiegel-dpa-noch-offline/index.html

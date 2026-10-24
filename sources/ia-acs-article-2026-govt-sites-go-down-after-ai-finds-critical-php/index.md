@@ -49,9 +49,15 @@ capture 20261023T080331Z · HTTP 200 · https://ia.acs.org.au/article/2026/govt-
 - `rendered.html` ff2da2f8b833dd56d03dc9c164f90f8933bf878549b26f126a4119d0572167cd 52,058 bytes
 - `screenshot.jpg` 33e77e17b0f50d77bfb6a433b86dcaa84c12bf65b5146eb7db156b76fb780928 513,879 bytes
 - `text.txt` 640f80b25de71eba27f0e3c27d8ff99a44a1fbfbff094fbba106b66ca99af2c5 6,812 bytes
+capture 20261023T232528Z · HTTP 200 · https://ia.acs.org.au/article/2026/govt-sites-go-down-after-ai-finds--critical--php-vulnerabilities.html- `headers.json` 064c15b6236d2c86d950a588c8de3e704d626469895936dabc24c3be4c5b4995 832 bytes
+- `page.html` 86f824455c0efddf2fc2811d58413e3f8f696aeb12ecddaffd45d618e857a5bd 34,077 bytes
+- `provenance.json` ec2c14f52e7b9427f8a87e82849fb33ec92672d7e81c736581373b732927cd78 1,962 bytes
+- `rendered.html` c98c20a129793b26cce63c9bc9d8fa92fd072eadcc3d70c759dfec778d93468f 62,604 bytes
+- `screenshot.jpg` 6ba539309f5c1427250b5adf86bde8fe3a089c87b037b88db004f3dd6af5591f 515,725 bytes
+- `text.txt` 7676edbd67afa1a79ccd2d73396f65dd895b364ff7bcc60cfd7d1cff3612bff0 6,806 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/ia-acs-article-2026-govt-sites-go-down-after-ai-finds-critical-php/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/ia-acs-article-2026-govt-sites-go-down-after-ai-finds-critical-php/index.html

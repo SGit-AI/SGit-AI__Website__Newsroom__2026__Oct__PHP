@@ -40,9 +40,15 @@ capture 20261022T111839Z · HTTP 200 · chrome-error://chromewebdata/- `headers.
 - `rendered.html` afa2a67a0dee2a2d057885312d74f1277ab47cc85f919220d2421a6d6044265d 183,693 bytes
 - `screenshot.png` cf4d945cb2330cd935081e252fc10d1572223e7a321e3d7f8c1e4e333a7737ee 21,632 bytes
 - `text.txt` 1837b6e2c766cabd6d7c651bca1ee976260ea128783d9173159ed738d75ff2ab 106 bytes
+capture 20261023T232528Z · HTTP 200 · https://watchtowr.com/intelligence/php-remote-code-execution-php2shell/- `headers.json` 9569e2acde13e8a452b23805f6ba7482845cc4544b0eee5ee3dc0e37aa1ab84d 3,172 bytes
+- `page.html` 49880f3a542b39683d2008bdad6af97f5fd98e1aa62a7163cd2bcb35a1c7f7d6 461,495 bytes
+- `provenance.json` 2c8567c9443613c7212763a8699b43fde1826d21f9744b59164606bc69800e5a 1,735 bytes
+- `rendered.html` 77923dc2a9eeb33d82effb69df89fb6e137ce0ea3ff56fe67959498711bfd051 535,286 bytes
+- `screenshot.jpg` 2bfb399a3f975123b73f36d938d2c48e0b57c46f1530edd612255273341bfc27 761,462 bytes
+- `text.txt` e09524178ed5f328df70485889aa78f37e3bf819682db33e22b4d1a875d1199f 12,450 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/watchtowr-php2shell/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/watchtowr-php2shell/index.html

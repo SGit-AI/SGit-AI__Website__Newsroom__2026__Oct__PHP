@@ -35,9 +35,13 @@ capture 20261022T113120Z · HTTP 200 · https://www.sentinelone.com/blog/stoppin
 - `rendered.html` d09c9b7551468ab7f7a69721a397eab5bb3d72b48ef9b756d0427a34c54bc0af 553,092 bytes
 - `screenshot.png` aeaf87bfa3d2dea7b44c00746ea38837ee3dbaf866640044a48d46125967360c 3,003,286 bytes
 - `text.txt` 0e75697fb5149ca627012455a8e06b03535c31e0c70e6ef87501d1beb7d39d69 24,686 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.sentinelone.com/blog/stopping-php2shell-how-sentinelone-protects-customers-from-this-attack-technique/- `headers.json` 863ff56cb29da4c1ade084e29b4a9018ee0a884182ea33b3b7f76b936e9c12f3 6,277 bytes
+- `page.html` c9af48dca9b4a268093289b9330ec9e5b332d8b01cb59fc55cacb27efd4cd6e5 343,960 bytes
+- `provenance.json` b7aae5eea5005c42df5442fdeb6d692d21a99cb0f5989e5644c59e9df02ed9ec 1,722 bytes
+- `text.txt` 6618dbfd02c809cf9a1b2dc95939d0713e202c9fd49f5c7bd895eb26457042f1 24,519 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/sentinelone-php2shell/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/sentinelone-php2shell/index.html

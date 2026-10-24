@@ -35,9 +35,15 @@ capture 20261022T113317Z · HTTP 200 · https://en.wikipedia.org/wiki/Log4Shell-
 - `rendered.html` 6b9cee027909f277350e142b3d325f5a0575732f0b5e2c76f8c35c9361c214e3 553,202 bytes
 - `screenshot.png` a64453cfa8cdf7caa73bdc64dbb02943ed99ea9130ce83fd5c6cdd1cebdb74d5 2,405,972 bytes
 - `text.txt` cd08f6a7082ea6e3cc172d7738243c4eda26331c8af2aded091e27dca5066058 25,890 bytes
+capture 20261023T160435Z · HTTP 200 · https://en.wikipedia.org/wiki/Log4Shell- `headers.json` 93384855ddaba204221406c48283eee52724b53d5dd8de164e4cd63b773d8031 6,588 bytes
+- `page.html` 8a2c0743a4acf7df7119376f8eb7cb787134f185ad08b490a4e857818661da0f 349,414 bytes
+- `provenance.json` cb59c8ab9d2e3bde3537252dd3fb30f9231bf9b8a30a2f202fab2b6426ca33ca 1,647 bytes
+- `rendered.html` f3f241535690f775a0652bce819500eb5e6047e4a2f2c7e4194bacb531c7b636 551,718 bytes
+- `screenshot.jpg` 223465a3fb231521e37e0934dd81cd07ba7f4ccd357236f735e02bbe80db999c 1,137,683 bytes
+- `text.txt` 2ba8f232d639e2bf4ee509ae602ea5ab3c86726d6f393c94d16fc39b686f71f9 25,860 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/wikipedia-log4shell/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/wikipedia-log4shell/index.html

@@ -49,9 +49,15 @@ capture 20261023T080331Z · HTTP 200 · https://in.mashable.com/tech/115245/fbi-
 - `rendered.html` 498c483ee86a3ff90100dbed274edc5c4caf72cb7808dffb8146f9cbb7508965 124,258 bytes
 - `screenshot.jpg` 49b8df288c07b8c45cb979d76f73601d3c7b90ffeee3f2a72320012eab2a2fd7 559,197 bytes
 - `text.txt` 072bc5f150b26f629c58d74b6a3e20e8f6b35a9e8d53fdcc2ce072df0ac34acb 7,013 bytes
+capture 20261023T160435Z · HTTP 200 · https://in.mashable.com/tech/115245/fbi-releases-php2shell-advisory-as-the-internet-explodes-in-hilarious-php-memes-here-are-the-best-on- `headers.json` 53af284293b57eae4f44a32cba2edfa37f9ac9770886a1e0f7365f7030a63b09 798 bytes
+- `page.html` f8403b7bba2c6793b960879bbc601453bd99b836a9cdd1e14266043dfa315db2 117,480 bytes
+- `provenance.json` a30c2b190b6291979b626291b6750b1b9d450353191ad54978086accb2fb4dda 2,061 bytes
+- `rendered.html` 87a6ef5412e4d0c3d8a912f9213bc466630a65a5ff77eb91ecc83cc3b06bae0a 125,549 bytes
+- `screenshot.jpg` e8526f4f62767bbc0809bc5c6dc7223d6eca69aaed1ff19b088a0b53a2251c60 546,771 bytes
+- `text.txt` 9ae6bd023957e0f9fb23dfa13378ea0670a771d701d8ad250640c4ec5a15ec66 6,859 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/in-mashable-tech-115245-fbi-releases-php2shell-advisory-as-the-internet/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/in-mashable-tech-115245-fbi-releases-php2shell-advisory-as-the-internet/index.html

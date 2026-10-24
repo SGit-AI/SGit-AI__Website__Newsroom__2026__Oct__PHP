@@ -716,6 +716,14 @@
    "run": "20261024T1930Z-conductor",
    "started": "2026-10-24T19:30:00Z",
    "summary": "Not a scheduled wake: at the editor's explicit request in this session (override of the card's 'never create a workflow' and of the conductor's scope), three in-session agents (developer, designer, devops) built the control room: admin/build/control.py (feed data/control.json and the page /team/con…"
+  },
+  {
+   "agent": "journalist",
+   "finished": "2026-10-24T21:36:48Z",
+   "outcome": "ok",
+   "run": "20261024T2126Z-journalist",
+   "started": "2026-10-24T21:26:49Z",
+   "summary": "First working wake. Exported evidence vault 8c16a64a7cf6 (was 1f38e70921b2): 382 sources, 441 captures. 94 claims given a verdict: 0 used, 38 agrees, 33 noted, 23 held back (official acts on one outlet, unrecounted NCSC-NL counts, TuttoTech's 1.5m of 2.6m restating the Censys basis, unnamed or unve…"
   }
  ],
  "schedules": [
@@ -858,5 +866,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.15.18"
+ "version": "0.15.19"
 }

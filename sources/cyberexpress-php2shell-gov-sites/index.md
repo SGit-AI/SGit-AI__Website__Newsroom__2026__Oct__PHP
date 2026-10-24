@@ -37,9 +37,15 @@ capture 20261022T112646Z · HTTP 200 · https://thecyberexpress.com/php2shell-cv
 - `rendered.html` ed8d3c7588accfa0810ec2d054a01b00bf1c8783e9100bc6f46557783e623fa5 598,469 bytes
 - `screenshot.png` d80c357eed47fd016ffe1e5a7866573916c9044f011f6e0e3c7b2487c93d296a 18,579,851 bytes
 - `text.txt` f45bc7599367343e65c9a0d202d909990a7a802e526f44362042e0de16cf20a6 14,589 bytes
+capture 20261023T160435Z · HTTP 200 · https://thecyberexpress.com/php2shell-cve-2026-109618-php-flaw/- `headers.json` e2ada00fbdd0d42fbb924df1dfe2167b6d88f3feff9657a2396e6be27449c6d1 1,564 bytes
+- `page.html` e92663a6c78adba74cb4ca9a632159bd091e5570407b27e3d6b1c2865c6b0b70 566,375 bytes
+- `provenance.json` 9fba84683d5840fa5780c5151f4e98e7f5edc33988a964cbc89be215aeecb71b 1,790 bytes
+- `rendered.html` ea5c41ea0cc5c6859e3176190e29af9fbdbbcab4a0a50482ed77579eae1d3cf0 573,204 bytes
+- `screenshot.jpg` 2e75823faf50087d879d1f79ea0820136d1c83552570c7099a7ea02fd2e4fba3 418,655 bytes
+- `text.txt` a638610541cb7ce3d786cb0053e383e2f09cbdf5d6ed8f33fb1899421505ae71 7,494 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/cyberexpress-php2shell-gov-sites/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/cyberexpress-php2shell-gov-sites/index.html

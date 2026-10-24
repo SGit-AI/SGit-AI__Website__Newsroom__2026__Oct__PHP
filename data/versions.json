@@ -1,6 +1,15 @@
 {
- "current": "0.15.18",
+ "current": "0.15.19",
  "versions": [
+  {
+   "version": "0.15.19",
+   "date": "2026-10-24",
+   "title": "Journalist: evidence vault at 8c16a64a7cf6, 94 claims reviewed, compromise rows and as-of lines to 16:05 UTC on 24 October",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.15.18",
    "date": "2026-10-24",

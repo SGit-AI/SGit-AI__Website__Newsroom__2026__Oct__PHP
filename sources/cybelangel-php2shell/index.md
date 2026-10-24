@@ -35,9 +35,13 @@ capture 20261022T112625Z · HTTP 200 · https://cybelangel.com/blog/critical-php
 - `rendered.html` 538f2982edeb0859af905cbcf0dc02f6899dcd997e9a7245917ad53e04faa993 174,398 bytes
 - `screenshot.png` 64c9ca6ef1602bd645b956fe272f9fcb7d3d50ec0f24b4af5b980edfc9e424d5 1,631,217 bytes
 - `text.txt` 4ffc5347bfe22fb45007c6d0d169a6cdff75522822604e9d8e0e421fda4e2f27 12,396 bytes
+capture 20261024T083755Z · HTTP 200 · https://cybelangel.com/blog/critical-php-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/- `headers.json` 1a38444e12276d485a486ff2478223ca35a712bbd70cc396518429325a2c18a8 1,589 bytes
+- `page.html` 539f25deb86fd869eff5280eb233aecdf91aadf766474642003997c12011d500 169,023 bytes
+- `provenance.json` 316491b54670c17c085c97aa9f967c338bee879e696d92b7ebb62e8276da110c 1,646 bytes
+- `text.txt` b335c33cfede719c4c86aed963aaaf343c09a0cedb6aa6b6b169c806909e9222 12,795 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/cybelangel-php2shell/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/cybelangel-php2shell/index.html

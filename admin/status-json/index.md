@@ -19,10 +19,10 @@ One small file at the site root, [/status.json](../../status.json), that another
 | `story` | "php2shell" |
 | `cves` | ["CVE-2026-109618", "CVE-2026-109619"] |
 | `status` | "developing" |
-| `version` | "0.15.18" |
-| `data_as_of` | "2026-10-24T08:37Z" |
-| `vault_commit` | "1f38e70921b2" |
-| `counts` | {"sources": 328, "captures": 323, "claims": 70, "claims_by_status": {"confirmed": 19, "reported": 36, "disputed": 8, "contradicted": 3, "unverified": 4}, "event |
+| `version` | "0.15.19" |
+| `data_as_of` | "2026-10-24T16:05Z" |
+| `vault_commit` | "8c16a64a7cf6" |
+| `counts` | {"sources": 382, "captures": 441, "claims": 70, "claims_by_status": {"confirmed": 19, "reported": 36, "disputed": 8, "contradicted": 3, "unverified": 4}, "event |
 | `headline_facts` | [{"id": "two-cves-9.2", "text": "Two critical vulnerabilities, CVE-2026-109618 and CVE-2026-109619, each CVSS v4.0 9.2, fixed in PHP 8.5.12, 8.4.27, 8.3.36 and |
 | `latest_story` | {"title": "What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list", "url": "https://p |
 | `links` | {"front": "https://php.oct.2026.newsroom.sgit.ai/index.html", "sources": "https://php.oct.2026.newsroom.sgit.ai/sources/index.html", "claims": "https://php.oct. |
@@ -49,12 +49,12 @@ One small file at the site root, [/status.json](../../status.json), that another
   "CVE-2026-109619"
  ],
  "status": "developing",
- "version": "0.15.18",
- "data_as_of": "2026-10-24T08:37Z",
- "vault_commit": "1f38e70921b2",
+ "version": "0.15.19",
+ "data_as_of": "2026-10-24T16:05Z",
+ "vault_commit": "8c16a64a7cf6",
  "counts": {
-  "sources": 328,
-  "captures": 323,
+  "sources": 382,
+  "captures": 441,
   "claims": 70,
   "claims_by_status": {
    "confirmed": 19,
@@ -84,7 +84,7 @@ One small file at the site root, [/status.json](../../status.json), that another
   },
   {
    "id": "no-confirmed-compromise",
-   "text": "As of 08:37 UTC on 24 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing. Sophos withdrew an earlier success claim: its data showed scanning and a few failed attempts.",
+   "text": "As of 16:05 UTC on 24 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing. Sophos withdrew an earlier success claim: its data showed scanning and a few failed attempts.",
    "status": "reported",
    "url": "https://php.oct.2026.newsroom.sgit.ai/claims/index.html#no-confirmed-compromise",
    "sources": [
@@ -107,7 +107,9 @@ One small file at the site root, [/status.json](../../status.json), that another
     "the-verge-php2shell-websites-down",
     "cybersecuritynews-critical-php2shell-exploit-code",
     "americanbanker-news-banks-dodge-early-damage-from-php2s",
-    "the-next-web-php2shell-no-confirmed-breaches"
+    "the-next-web-php2shell-no-confirmed-breaches",
+    "diepresse-41383717-die-php-sicherheitsluecke-ist-a",
+    "voix-business-cards-rainforest-ip-activity-an"
    ]
   },
   {
@@ -142,4 +144,4 @@ One small file at the site root, [/status.json](../../status.json), that another
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html

@@ -32,7 +32,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:19 UTC. The scale is on
 ## This fact over time
 - 2026-10-21Fastly publishes [Fastly’s Proactive Protection for PHP2Shell, Critical PHP RCE CVE-2026-109618 and CVE-2026-109619 | Fastly](../../sources/fastly-blog-php2shell/index.html)
 - 2026-10-21 15:24 UTCoss-security publishes [Re: CVE-2026-109619 thread (21/16, 21/17, 21/23, 22/2)](../../sources/openwall-oss-security-109619-thread/index.html)
-- 2026-10-22 11:19 UTCSaved into the evidence vault: Fastly
+- 2026-10-22 11:19 UTCSaved into the evidence vault: Fastly, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.2.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -57,4 +57,4 @@ Sources: fastly-blog-php2shell, openwall-oss-security-109619-thread
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/more-paths/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/more-paths/index.html

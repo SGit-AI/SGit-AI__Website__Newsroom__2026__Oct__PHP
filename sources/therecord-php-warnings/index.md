@@ -31,9 +31,13 @@ capture 20261022T080854Z · HTTP 200 · https://therecord.media/php-script-vulne
 - `rendered.html` 6b4ce2be2649726e849b9a114c3d0c6c1e9477082e820c0c1561f427cbad00d0 97,133 bytes
 - `screenshot.png` 7b41ac3613b3db9c15c197aef53bcda877ae332bff01b2155e5dbb4e5291927f 1,516,966 bytes
 - `text.txt` 39efe473da414c018f1d06c944097b5fbee7132a7cbc76df44a89656db344443 7,551 bytes
+capture 20261023T160435Z · HTTP 200 · https://therecord.media/php-script-vulnerabilities-warnings- `headers.json` 2796e5f62520fb3f9ba89e4efcffe6c9b2d11bbbdc18cc295d2526830e271c6a 985 bytes
+- `page.html` 81217ad9ce720fb18adb95f74c70c257fbfaf0977c285d60eaf20c2eb1ee1862 93,427 bytes
+- `provenance.json` 3e3ee8cb18e3ca186473fcebf920eba42be6971c1033bafa3b15d2ee3e023e81 1,641 bytes
+- `text.txt` 4ee6aaf030fcd7f6d4fa3d6dd56586dbd78afd39977e4603a2c40dadd53d93a0 7,498 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/therecord-php-warnings/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/therecord-php-warnings/index.html

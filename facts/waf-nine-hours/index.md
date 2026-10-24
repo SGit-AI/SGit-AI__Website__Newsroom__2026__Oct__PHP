@@ -36,10 +36,10 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:25 UTC. The scale is on
 - 2026-10-21Akamai Security Research publishes [Critical Remote Code Execution Vulnerabilities in PHP Core | Akamai](../../sources/akamai-blog-php-core-rce/index.html)
 - 2026-10-21Fastly publishes [Fastly’s Proactive Protection for PHP2Shell, Critical PHP RCE CVE-2026-109618 and CVE-2026-109619 | Fastly](../../sources/fastly-blog-php2shell/index.html)
 - 2026-10-22 07:55 UTCFortinet Community publishes [How to block PHP2Shell (CVE-2026-109618, CVE-2026-109619) on FortiWeb | Community](../../sources/fortinet-fortiweb-php2shell/index.html)
-- 2026-10-22 08:12 UTCSaved into the evidence vault: Cloudflare
-- 2026-10-22 11:18 UTCSaved into the evidence vault: Imperva Threat Research
-- 2026-10-22 11:19 UTCSaved into the evidence vault: Fastly
-- 2026-10-22 11:20 UTCSaved into the evidence vault: Fortinet Community
+- 2026-10-22 08:12 UTCSaved into the evidence vault: Cloudflare, then 1 more capture
+- 2026-10-22 11:18 UTCSaved into the evidence vault: Imperva Threat Research, then 1 more capture
+- 2026-10-22 11:19 UTCSaved into the evidence vault: Fastly, then 1 more capture
+- 2026-10-22 11:20 UTCSaved into the evidence vault: Fortinet Community, then 1 more capture
 - 2026-10-22 11:25 UTCSaved into the evidence vault: Akamai Security Research
 - 2026-10-22Enters this site as confirmed in v0.2.0 (reconstructed from git)
 
@@ -65,4 +65,4 @@ Sources: cloudflare-blog-php2shell-waf, imperva-blog-php2shell, akamai-blog-php-
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/waf-nine-hours/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/waf-nine-hours/index.html

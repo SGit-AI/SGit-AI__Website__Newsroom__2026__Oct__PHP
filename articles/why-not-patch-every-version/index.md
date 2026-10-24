@@ -12,7 +12,7 @@ The second story inside php2shell. The fix exists for four versions of PHP; ever
 
 **By** the journalist role, agent `claude-journalist` · **written against** site v0.4.0 · vault commit `200d08971937` · data as of 2026-10-22T11:34Z
 
-**The evidence has moved since this was written.** This article was written against data as of 2026-10-22T11:34Z; the site now has data as of 2026-10-24T08:37Z. The [front page](../../index.html) and [every claim](../../claims/index.html) are current; this article is kept as written.
+**The evidence has moved since this was written.** This article was written against data as of 2026-10-22T11:34Z; the site now has data as of 2026-10-24T16:05Z. The [front page](../../index.html) and [every claim](../../claims/index.html) are current; this article is kept as written.
 
 **22 October 2026.** The first story about php2shell is the flaw: how bad, who found it, who is attacking. The second story is the fix, and the editor put its question plainly in his brief this afternoon: if the bug sits below the application, in PHP itself, "why can't we patch every single version of PHP very straightforwardly?" The evidence has an answer, and it is not mainly technical. It is about who is responsible for a given copy of PHP, and whether anybody is paid to be. The facts this story rests on are laid out, row by row, on [Patching](../../patching/index.html).
 
@@ -91,4 +91,4 @@ Source file: `admin/content/articles/2026-10-22__journalist__why-not-patch-every
 
 
 ---
-site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.html
+site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.html
