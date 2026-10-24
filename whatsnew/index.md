@@ -12,6 +12,21 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.12.1 · 24 October 2026new since your last visit
+
+pass step 2, first part: the compromise evidence and the claim behind 'no named victim' as of 23 October 16:04 UTC, four more offline reports, the story summary and the front page's dated lines
+
+1 fact reworded or re-sourced: [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html).
+
+### Briefings that changed
+JJordanBoard member or executive · v8SSamSecurity lead · v7DDrewPHP or platform engineer · v8RRowanJournalist · v7AAshSecurity researcher · v7BBlakeAnalyst or advisor · v8RRobinCISO · v8AAveryCTO · v7QQuinnCFO · v8JJamieHead of AppSec · v7LLeeDeveloper · v6RRileyMedia and communications team · v7AAlexCurious reader · v6CCaseyWebsite owner · v5TTaylorProject or programme manager · v6MMorganData protection officer · v2
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v7) v7
+- [Impact: offline vs compromised](../versions/page-impact/index.html#v6) v6
+- [The specialist summary](../versions/page-summary/index.html#v5) v5
+- [Front page: at a glance](../versions/front-glance/index.html#v3) v3
+- [Front page: the core facts](../versions/front-facts/index.html#v3) v3
+
 ## v0.12.0 · 24 October 2026new since your last visit
 
 the librarian's work: every member a folder, a role and a draft policy (27 members, 0 overlaps, 0 unowned files and pages; /admin/agents/roles/, /admin/agents/rounds/, a page per member, data/agents.json; gate check 4h and the Stop hook), the fractal graph from a line of php-src to a stakeholder (/fractal/, now the ontologist's), the end-of-round rule and the vault-key handover in CLAUDE.md, two reader answers corrected, and the librarian's daily pass at 07:13 London; released at the editor's go before security's review of validate.py, CLAUDE.md and .claude/settings.json (board 206)
@@ -309,7 +324,7 @@ JJordanBoard member or executive · v7SSamSecurity lead · v6DDrewPHP or platfor
 factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction
 
 ### Facts whose status changed
-- [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
+- [As of 16:04 UTC on 23 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
 
 ### Briefings that changed
 JJordanBoard member or executive · v6RRobinCISO · v6QQuinnCFO · v6RRileyMedia and communications team · v5AAlexCurious reader · v4TTaylorProject or programme manager · v4
@@ -586,7 +601,7 @@ the code read from php-src, php2shell in context against ten earlier flaws, an i
 - [No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosur](../facts/imperva-none/index.html) reported
 - [No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no pub](../facts/huntress-none/index.html) reported
 - [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../facts/watchtowr-itw/index.html) unverified
-- [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
+- [As of 16:04 UTC on 23 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
 - [None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechani](../facts/pocs-wrong/index.html) reported
 - [Triggering the bug is much easier than turning it into code execution; the CVSS vector say](../facts/ac-high/index.html) confirmed
 - [The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 U](../facts/fix-authored/index.html) confirmed
@@ -686,4 +701,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

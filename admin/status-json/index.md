@@ -19,7 +19,7 @@ One small file at the site root, [/status.json](../../status.json), that another
 | `story` | "php2shell" |
 | `cves` | ["CVE-2026-109618", "CVE-2026-109619"] |
 | `status` | "developing" |
-| `version` | "0.12.0" |
+| `version` | "0.12.1" |
 | `data_as_of` | "2026-10-23T16:04Z" |
 | `vault_commit` | "1845598d9a38" |
 | `counts` | {"sources": 295, "captures": 290, "claims": 70, "claims_by_status": {"confirmed": 21, "reported": 34, "disputed": 8, "contradicted": 3, "unverified": 4}, "event |
@@ -49,7 +49,7 @@ One small file at the site root, [/status.json](../../status.json), that another
   "CVE-2026-109619"
  ],
  "status": "developing",
- "version": "0.12.0",
+ "version": "0.12.1",
  "data_as_of": "2026-10-23T16:04Z",
  "vault_commit": "1845598d9a38",
  "counts": {
@@ -65,7 +65,7 @@ One small file at the site root, [/status.json](../../status.json), that another
   },
   "events": 68,
   "agencies": 16,
-  "offline_reported": 10,
+  "offline_reported": 14,
   "compromises_confirmed": 0
  },
  "headline_facts": [
@@ -84,7 +84,7 @@ One small file at the site root, [/status.json](../../status.json), that another
   },
   {
    "id": "no-confirmed-compromise",
-   "text": "As of 20:50 UTC on 22 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.",
+   "text": "As of 16:04 UTC on 23 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing.",
    "status": "reported",
    "url": "https://php.oct.2026.newsroom.sgit.ai/claims/index.html#no-confirmed-compromise",
    "sources": [
@@ -96,7 +96,15 @@ One small file at the site root, [/status.json](../../status.json), that another
     "securityweek-exploitation-days-before",
     "recordedfuture-php2shell",
     "imperva-blog-php2shell",
-    "weirdgloop-blog-php2shell"
+    "weirdgloop-blog-php2shell",
+    "paperjam-article-php2shell-des-milliers-de-sites",
+    "pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
+    "itsocial-cybersecurite-cybersecurite-articles-php",
+    "lupa-cvut-cyber-attack",
+    "yahoo-jp-gmo-fx-login-leak",
+    "sankei-dmm-service-halt",
+    "impress-watch-valtec",
+    "the-verge-php2shell-websites-down"
    ]
   },
   {
@@ -131,4 +139,4 @@ One small file at the site root, [/status.json](../../status.json), that another
 
 
 ---
-site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html
+site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html

@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.12.0. Not the live site.
+> Mockup D for review, built from the data of release v0.12.1. Not the live site.
 
-PHP Team console Console Overview Board 149 Agents 17 Releases 84 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 150 Agents 17 Releases 85 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,11 +12,11 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.12.0 
-84 releases since 22 Oct 
+v0.12.1 
+85 releases since 22 Oct 
 
 Open on the board 
-149 
+150 
 63 done, 5 waiting 
 
 Pages built 
@@ -30,8 +30,11 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 149
+#### Open 150
 
+ #218 
+Policies: the editor gave the journalist the refresh of the site after every evidence export (24 October); scope.writes … 
+ abp@newsroom.sgit 
  #216 
 The librarian's drafted policies are ready for abp@ (board 157): 27 members in admin/content/agents/*/policy.json, each … 
  abp 
@@ -50,9 +53,6 @@ Claim no-confirmed-compromise says Hadrian and Patchstack 'report successful exp
  #211 
 Point admin/security/REQUIREMENTS.md section 3 at the handover procedure (https://pki.sgit.ai/handover.md, now in CLAUDE… 
  security@php.newsroom 
- #208 
-Move the briefings' selections out of build.py into data/briefings.json, so the briefing writer owns them apart from the… 
- briefing-writer 
 
 #### Waiting 5
 
@@ -99,6 +99,7 @@ The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, o
 ### Releases
  latest 8 
 
+ v0.12.1 2026-10-24 pass step 2, first part: the compromise evidence and the claim behind 'no named victim' as of 23 October 16:04 UTC, four more offl… 
  v0.12.0 2026-10-24 the librarian's work: every member a folder, a role and a draft policy (27 members, 0 overlaps, 0 unowned files and pages; /admin/… 
  v0.11.7 2026-10-24 the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness repo… 
  v0.11.6 2026-10-24 The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the e… 
@@ -106,7 +107,6 @@ The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, o
  v0.11.4 2026-10-24 The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to … 
  v0.11.3 2026-10-24 the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because th… 
  v0.11.2 2026-10-24 claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit n… 
- v0.11.1 2026-10-24 Security pass 2: the Ask pane renders the model's answer as DOM nodes, so a captured page title can no longer break out of a citat… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, o
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 6
 
 ---
-site v0.12.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.12.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

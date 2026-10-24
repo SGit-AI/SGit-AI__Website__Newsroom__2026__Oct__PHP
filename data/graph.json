@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.12.0",
+ "version": "0.12.1",
  "vault_commit": "1845598d9a38",
  "title": "The story graph",
  "note": "A node means what its edges say about it. Every edge is a verb from data/ontology.json with a named inverse; there is no generic association edge. Parties are resolved through data/entities.json and data/attribution.json; relays are derived, so many outlets passing on one statement count as one origin.",
@@ -16362,10 +16362,10 @@
   {
    "id": "claim:no-confirmed-compromise",
    "kind": "claim",
-   "label": "As of 20:50 UTC on 22 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.",
+   "label": "As of 16:04 UTC on 23 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing.",
    "status": "reported",
    "href": "facts/no-confirmed-compromise/index.html",
-   "by": "this site, from every captured source in the evidence vault and the source watch, as of 20:50 UTC on 22 October",
+   "by": "this site, from every captured source in the evidence vault (295 sources, head 1845598d9a38), as of its latest capture at 16:04 UTC on 23 October",
    "origins": 1,
    "relays": 0,
    "echo": false
@@ -22294,6 +22294,46 @@
    "from": "claim:no-confirmed-compromise",
    "verb": "cites",
    "to": "source:weirdgloop-blog-php2shell"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:paperjam-article-php2shell-des-milliers-de-sites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:itsocial-cybersecurite-cybersecurite-articles-php"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:lupa-cvut-cyber-attack"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:yahoo-jp-gmo-fx-login-leak"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:sankei-dmm-service-halt"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:impress-watch-valtec"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:the-verge-php2shell-websites-down"
   },
   {
    "from": "claim:no-confirmed-compromise",

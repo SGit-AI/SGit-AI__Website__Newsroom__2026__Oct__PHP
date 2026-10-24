@@ -1,7 +1,7 @@
 {
  "about": "The fractal graph: one graph from the people affected, through the risks, the story and the evidence, to the flaws, the fix and the changed lines of php-src. A node is just a node; meaning lives in the edges. Every node opens into its own neighbourhood in the navigator.",
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.12.0",
+ "version": "0.12.1",
  "commit": "3584a98bda0f2c0d367255b046798b0d3a221a19",
  "layers": [
   {
@@ -698,8 +698,8 @@
   {
    "id": "claim:no-confirmed-compromise",
    "layer": "claim",
-   "name": "As of 20:50 UTC on 22 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.",
-   "text": "reported, says this site, from every captured source in the evidence vault and the source watch, as of 20:50 UTC on 22 October",
+   "name": "As of 16:04 UTC on 23 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing.",
+   "text": "reported, says this site, from every captured source in the evidence vault (295 sources, head 1845598d9a38), as of its latest capture at 16:04 UTC on 23 October",
    "status": "reported",
    "href": "claims/index.html#no-confirmed-compromise"
   },
@@ -1684,6 +1684,62 @@
    "name": "Weird Gloop",
    "text": "Recent wiki downtime (PHP2Shell mitigation) | Weird Gloop",
    "href": "sources/weirdgloop-blog-php2shell/index.html"
+  },
+  {
+   "id": "source:paperjam-article-php2shell-des-milliers-de-sites",
+   "layer": "source",
+   "name": "Paperjam",
+   "text": "PHP2Shell: des milliers de sites exposés au Luxembourg | Paperjam News",
+   "href": "sources/paperjam-article-php2shell-des-milliers-de-sites/index.html"
+  },
+  {
+   "id": "source:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
+   "layer": "source",
+   "name": "PCMag",
+   "text": "Hackers Already Trying to Exploit Serious PHP Flaw | PCMag",
+   "href": "sources/pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/index.html"
+  },
+  {
+   "id": "source:itsocial-cybersecurite-cybersecurite-articles-php",
+   "layer": "source",
+   "name": "IT Social",
+   "text": "PHP2Shell, la mise à jour ferme la faille, mais oblige à traquer les compromissions possibles - IT SOCIAL",
+   "href": "sources/itsocial-cybersecurite-cybersecurite-articles-php/index.html"
+  },
+  {
+   "id": "source:lupa-cvut-cyber-attack",
+   "layer": "source",
+   "name": "Lupa.cz",
+   "text": "ČVUT čelí kybernetickému útoku, údajně doplatilo na kritickou chybu v PHP - Lupa.cz",
+   "href": "sources/lupa-cvut-cyber-attack/index.html"
+  },
+  {
+   "id": "source:yahoo-jp-gmo-fx-login-leak",
+   "layer": "source",
+   "name": "Yahoo! News Japan",
+   "text": "GMO「悪用確認されず」から一転　FX口座ログイン情報、流出の可能性　不正操作報告も（J-CASTニュース） - Yahoo!ニュース",
+   "href": "sources/yahoo-jp-gmo-fx-login-leak/index.html"
+  },
+  {
+   "id": "source:sankei-dmm-service-halt",
+   "layer": "source",
+   "name": "産経ニュース",
+   "text": "エンタメサイトDMMがサービス停止、外部システムの脆弱性への対応　「情報漏洩は無し」 - 産経ニュース",
+   "href": "sources/sankei-dmm-service-halt/index.html"
+  },
+  {
+   "id": "source:impress-watch-valtec",
+   "layer": "source",
+   "name": "INTERNET Watch",
+   "text": "バルテック、サイバー攻撃によりサービス停止、情報流出の可能性（記事訂正） - INTERNET Watch",
+   "href": "sources/impress-watch-valtec/index.html"
+  },
+  {
+   "id": "source:the-verge-php2shell-websites-down",
+   "layer": "source",
+   "name": "The Verge",
+   "text": "Everything we know so far about the PHP2Shell vulnerability | The Verge",
+   "href": "sources/the-verge-php2shell-websites-down/index.html"
   },
   {
    "id": "source:github-rjmendez-phpup-2026",
@@ -8785,6 +8841,46 @@
    "rel": "cites"
   },
   {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:paperjam-article-php2shell-des-milliers-de-sites",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:itsocial-cybersecurite-cybersecurite-articles-php",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:lupa-cvut-cyber-attack",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:yahoo-jp-gmo-fx-login-leak",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:sankei-dmm-service-halt",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:impress-watch-valtec",
+   "rel": "cites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:the-verge-php2shell-websites-down",
+   "rel": "cites"
+  },
+  {
    "from": "claim:pocs-wrong",
    "to": "source:github-rjmendez-phpup-2026",
    "rel": "cites"
@@ -12956,14 +13052,14 @@
   }
  ],
  "counts": {
-  "nodes": 887,
-  "edges": 1222,
+  "nodes": 895,
+  "edges": 1230,
   "by_layer": {
    "stakeholder": 16,
    "risk": 9,
    "arc": 7,
    "claim": 138,
-   "source": 83,
+   "source": 91,
    "flaw": 2,
    "fix": 7,
    "code": 73,

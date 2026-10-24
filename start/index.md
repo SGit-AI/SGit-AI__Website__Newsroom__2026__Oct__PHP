@@ -130,13 +130,13 @@ The answer in thirty seconds
 A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of the evening of 22 October, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
 
 #### Reading path
-- [Your briefing](../briefings/board/index.html) 3 min
+- [Your briefing](../briefings/board/index.html) 4 min
 - [Explained from the start](../explained/index.html) 6 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [The agencies](../agencies/index.html) 1 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 15 minutes in all. Choose *read as Jordan* and the bar under the menu keeps your place on every page.
+About 16 minutes in all. Choose *read as Jordan* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -206,13 +206,13 @@ The answer in thirty seconds
 The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. As of the evening of 22 October, no named organisation has said it was compromised through this flaw. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
 
 #### Reading path
-- [Your briefing](../briefings/cfo/index.html) 3 min
+- [Your briefing](../briefings/cfo/index.html) 4 min
 - [Explained from the start](../explained/index.html) 6 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [The numbers](../numbers/index.html) 2 min
 - [In context: 2008 to 2026](../context/index.html) 3 min
 
-About 16 minutes in all. Choose *read as Quinn* and the bar under the menu keeps your place on every page.
+About 17 minutes in all. Choose *read as Quinn* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -396,13 +396,13 @@ The answer in thirty seconds
 Safe to say: two critical flaws in PHP were fixed on 21 October; we updated or isolated our systems; we have no evidence of compromise and review continues. Do not say '70% of the Internet', 'the most severe ever' or 'exploited everywhere'. Point people to php.net and your national agency.
 
 #### Reading path
-- [Your briefing](../briefings/comms/index.html) 3 min
+- [Your briefing](../briefings/comms/index.html) 4 min
 - [Explained from the start](../explained/index.html) 6 min
 - [The numbers](../numbers/index.html) 2 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [The agencies](../agencies/index.html) 1 min
 
-About 14 minutes in all. Choose *read as Riley* and the bar under the menu keeps your place on every page.
+About 15 minutes in all. Choose *read as Riley* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -640,4 +640,4 @@ The first version of this site opened with a sentence that was accurate and unre
 
 
 ---
-site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
+site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/start/index.html

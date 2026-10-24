@@ -6,7 +6,7 @@ Two ledgers for php2shell: every system reported taken offline with who said so,
 
 # Impact: what was taken offline, and what was compromised
 
-In plain English Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 22 October).
+In plain English Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 23 October).
 
 Two ledgers, because they measure different things. Taking a system offline is a decision an operator makes and can confirm, and the first table is full. Being compromised is a fact only evidence establishes, and the second table has, as of the latest capture, no confirmed entry. That gap is the most important finding on this site: the reported cost of php2shell so far is the cost of precaution.
 
@@ -26,6 +26,10 @@ Two ledgers. The first is systems taken offline, which is a decision an operator
 | **Metropolitan Police, Office for Budget Responsibility; errors on Bristol, Lambeth and Barnet council sites** UK | Reported unavailable; a minister said there was no breach of Budget security | 2026-10-21 | LBC, Insurance Business, East Anglian Daily Times | reported | [LBC](../sources/lbc-uk-websites-offline/index.html) [Insurance Business](../sources/insurancebusiness-uk-councils-met/index.html) [East Anglian Daily Times](../sources/eadt-minister-budget-no-breach/index.html) |
 | **French government services; the University of Geneva; the BBC; online shops** FR, CH, UK | Listed by the BBC as affected or taken offline | 2026-10-22 | BBC News | reported | [BBC News](../sources/bbc-live-ckgel5xp2xv9t/index.html) |
 | **Government sites in the Netherlands, France, Germany and Belgium** EU | Listed by Reuters' factbox as having taken sites offline | 2026-10-21 | Reuters, via Global Banking and Finance | reported | [Reuters factbox, via Global…](../sources/reuters-factbox-websites-offline/index.html) |
+| **Germany: the City of Mainz's website; the Charité (website and online booking), Vivantes, MHH Hannover and other hospitals; the host Mittwald (all customer websites)** DE | Taken offline on 21 October. The Charité's spokesman: it had "keinerlei Einfluss auf die Arbeit der Charité" (no effect on the Charité's work), and its main site was back that evening. Mittwald: every customer website offline from the afternoon, patches going in from 21:28, first checks with no sign of exploitation. | 2026-10-21 | Bitpage.de's situation report, quoting the organisations | reported | [Bitpage.de](../sources/bitpage-php2shell-php-sicherheitsluecke-webseite/index.html) |
+| **Morocco: the Maghreb Arabe Presse (MAP) and Bank Al-Maghrib websites** MA | MAP's site put into maintenance; Bank Al-Maghrib's unavailable for part of the night | 2026-10-21 | Journal du Canada | reported | [Journal Du Canada](../sources/journalducanada-php2shell-des-serveurs-exposes-a-une-cyb/index.html) |
+| **Romania: the Romanian Police website** RO | Replaced with a maintenance page | 2026-10-21 | Critic Arad | reported | [Critic Arad](../sources/criticarad-php2shell-cve-2026-109618-ghid-patch/index.html) |
+| **Japan: a bank's online services; Prime Minister Takaichi's website** JP | Companies and organisations took precautionary measures; a bank suspended its online service for a time, and the Prime Minister's website was also stopped "for countermeasures" (対策のため) | 2026-10-22 | Jiji Press, as illustrated by Yahoo! News Japan | reported | [Yahoo!ニュース](../sources/news-yahoo-articles-d953e2a13109253ae974bf2a64ebe94/index.html) |
 
 ## Compromised
 
@@ -55,4 +59,4 @@ What a compromise of one system would reach is on [the blast-radius section](../
 
 
 ---
-site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html
+site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html

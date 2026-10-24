@@ -83,7 +83,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Who found php2shell, and what the AI did](../discovery/index.html): Calif, OpenAI and Wiz each claim the discovery of php2shell; their own timelines side by side, the 2024 audit that saw it first, the credits on the advisories, and what the sources do and do not say about the models.
 - [How the coordinated disclosure broke](../leak/index.html): Hour by hour from the first circulation of the CVE IDs on 20 October to the release on 21 October: the pre-announcement, the deleted video, the early WAF rules, the embargo break, the first attempts, and the three accounts that disagree on what leaked.
 - [Exploitation signals, in order](../exploitation/index.html): Every signal of php2shell exploitation in the captured sources, from an Amazon honeypot hit on 17 October to the KEV catalog, with what exploitation would look like on a host.
-- [No named organisation has said it was compromised through php2shell: the evidence](../compromise/index.html): The evidence behind one statement, as of 2026-10-22 20:50 UTC: attempts, vendor reports, statements that no success is known, named organisations, allegations and official lists, each with its source.
+- [No named organisation has said it was compromised through php2shell: the evidence](../compromise/index.html): The evidence behind one statement, as of 2026-10-23 16:04 UTC: attempts, vendor reports, statements that no success is known, named organisations, allegations and official lists, each with its source.
 - [The fix, mapped to the code](../review/index.html): The php2shell fix as layered graphs: the two flaws, the design of the patch, and the php-src files and functions it changed, derived from the diff.
 - [Walk the graph: the fix and the code](../review/ui/index.html): A navigator over the php2shell review graph: the fix, the flaws it closes, and the files and functions it changed, each a link.
 - [Impact: taken offline versus compromised](../impact/index.html): Two ledgers for php2shell: every system reported taken offline with who said so, and every claim of compromise with its basis. As of the latest capture, no named organisation has confirmed a compromise.
@@ -102,7 +102,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [What sixteen agencies actually advise](../agencies/index.html): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
 - [Affected systems: versions, deployments, applications, inventory](../affected/index.html): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
 - [Who says what: every party and its claims](../actors/index.html): 27 parties in the php2shell story, each with the claims this site attributes to it and the sources behind them.
-- [The story as a graph: who states what, who relays it, and what it rests on](../graph/index.html): 1048 nodes and 1516 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
+- [The story as a graph: who states what, who relays it, and what it rests on](../graph/index.html): 1048 nodes and 1524 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
 - [Every party on the story: who states, who relays, who publishes](../graph/parties/index.html): 243 parties resolved from 249 spellings, with the claims each one states and passes on.
 - [From a line of code to a stakeholder: the fractal graph](../fractal/index.html): One graph for php2shell: 359 changed lines of php-src, up through functions, files, the fix and the flaws, the claims and sources, the story arcs and the risks, to the fifteen kinds of reader who face them.
 - [Walk the whole graph: stakeholders to lines of code](../fractal/ui/index.html): A navigator over the php2shell fractal graph: stakeholders, risks, story arcs, claims, sources, the flaws, the fix, files, functions and changed lines, each node a link.
@@ -194,4 +194,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

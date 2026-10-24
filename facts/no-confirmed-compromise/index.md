@@ -1,16 +1,16 @@
-# Fact: As of 20:50 UTC on 22 October, no named organisation has said it was compromised
+# Fact: As of 16:04 UTC on 23 October, no named organisation has said it was compromised
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-As of 20:50 UTC on 22 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim. Who says it, its status (reported), its sources, and its timeline from publication to this site.
+As of 16:04 UTC on 23 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing. Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · impact · reported
 
-# As of 20:50 UTC on 22 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.
+# As of 16:04 UTC on 23 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing.
 
-**Who says it:** this site, from every captured source in the evidence vault and the source watch, as of 20:50 UTC on 22 October · **Sources:** [CISA](../../sources/cisa-kev-json/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html) [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) [SecurityWeek](../../sources/securityweek-first-attempts-sensors/index.html) [SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html) [Recorded Future](../../sources/recordedfuture-php2shell/index.html) [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html) [Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html)
+**Who says it:** this site, from every captured source in the evidence vault (295 sources, head 1845598d9a38), as of its latest capture at 16:04 UTC on 23 October · **Sources:** [CISA](../../sources/cisa-kev-json/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html) [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) [SecurityWeek](../../sources/securityweek-first-attempts-sensors/index.html) [SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html) [Recorded Future](../../sources/recordedfuture-php2shell/index.html) [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html) [Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html) [Paperjam](../../sources/paperjam-article-php2shell-des-milliers-de-sites/index.html) [PCMag](../../sources/pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/index.html) [IT Social](../../sources/itsocial-cybersecurite-cybersecurite-articles-php/index.html) [Lupa.cz](../../sources/lupa-cvut-cyber-attack/index.html) [Yahoo! News Japan](../../sources/yahoo-jp-gmo-fx-login-leak/index.html) [産経ニュース](../../sources/sankei-dmm-service-halt/index.html) [INTERNET Watch](../../sources/impress-watch-valtec/index.html) [The Verge](../../sources/the-verge-php2shell-websites-down/index.html)
 
-A time-bounded absence, not a confirmed fact: it can only be true as of the last check, and it will change. Changed from "confirmed" on 22 October at the editor's request (fact-check run 1 had marked it overstated; Perplexity and ChatGPT, asked by the editor, said the same). Attempts are not compromises: watchTowr says "nobody has been successful to date"; Amazon says it is unclear whether any attempt would have succeeded on real systems; Patchstack's incidents are reports from hosting partners with no victim named. Source watch (vault oq9gflln), pending promotion into the evidence vault: the PHP Foundation's executive director told The Verge and WIRED "to our knowledge, there has been no successful attempt at remote code execution" (raw/us/tech-press/the-verge/php2shell-websites-down/); officials in Germany, the Netherlands and Japan say they have not seen an attack succeed (The Next Web, raw/nl/tech-press/the-next-web/php2shell-no-confirmed-breaches/); GMO confirmed a break-in on 20 October on its FX trading VPS service (26,739 servers, logins possibly taken) without stating the cause (raw/jp/news/yahoo-news-jp/gmo-fx-login-leak/20261022T191523Z/); Czech Technical University says it stopped an active attack that was part of worldwide attempts against PHP sites, success not established (raw/cz/tech-press/lupa/cvut-cyber-attack/20261022T191510Z/); Valtec in Japan blamed php2shell for a break-in, then retracted: its own service's flaw (raw/jp/tech-press/impress-watch/valtec-php-attack/20261022T191433Z/); Fortune reports an anonymous startup owner alleging stolen source code, unnamed and not attributed to the flaw. Edited by researcher@php.newsroom.
+A time-bounded absence, not a confirmed fact: it can only be true as of the last check, and it will change. Changed from "confirmed" on 22 October at the editor's request. Refreshed by the journalist on 24 October against the evidence vault at 1845598d9a38: the named cases (GMO, ČVUT, DMM, Valtec) are now in the vault, and none of them states php2shell as the cause (Valtec retracted). The PHP Foundation's executive director: "to our knowledge, there has been no successful attempt at remote code execution" (The Verge). Luxembourg: no institution has announced an intrusion (Paperjam). Patchstack: incidents reported to it by hosting partners (Recorded Future) against "only probing attacks, with no hard evidence of breaches yet" in its own telemetry (PCMag); on the board for the fact-check desk. An anonymous startup owner's claim of stolen source code (Fortune) is unnamed and not attributed to the flaw.
 
 ## Fact-check
 
@@ -44,9 +44,13 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:28 UTC. The scale is on
 - 2026-10-21Recorded Future publishes [PHP2Shell Exploitation: Two Critical PHP Flaws Explained](../../sources/recordedfuture-php2shell/index.html)
 - 2026-10-21Imperva Threat Research publishes [PHP2Shell: When PHP Runs Out of Memory at the Wrong Moment | Imperva](../../sources/imperva-blog-php2shell/index.html)
 - 2026-10-21Weird Gloop publishes [Recent wiki downtime (PHP2Shell mitigation) | Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html)
+- 2026-10-21PCMag publishes [Hackers Already Trying to Exploit Serious PHP Flaw | PCMag](../../sources/pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/index.html)
 - 2026-10-21 14:04 UTCCISA publishes [CISA Known Exploited Vulnerabilities catalog (JSON feed)](../../sources/cisa-kev-json/index.html)
 - 2026-10-22SecurityWeek publishes [PHP2Shell Exploitation Started Days Before Patches - SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html)
+- 2026-10-22Lupa.cz publishes [ČVUT čelí kybernetickému útoku, údajně doplatilo na kritickou chybu v PHP - Lupa.cz](../../sources/lupa-cvut-cyber-attack/index.html)
+- 2026-10-22INTERNET Watch publishes [バルテック、サイバー攻撃によりサービス停止、情報流出の可能性（記事訂正） - INTERNET Watch](../../sources/impress-watch-valtec/index.html)
 - 2026-10-22 08:13 UTCSaved into the evidence vault: CISA
+- 2026-10-22 11:11 UTC産経ニュース publishes [エンタメサイトDMMがサービス停止、外部システムの脆弱性への対応 「情報漏洩は無し」 - 産経ニュース](../../sources/sankei-dmm-service-halt/index.html)
 - 2026-10-22 11:17 UTCSaved into the evidence vault: Amazon
 - 2026-10-22 11:18 UTCSaved into the evidence vault: Imperva Threat Research
 - 2026-10-22 11:18 UTCSaved into the evidence vault: Weird Gloop
@@ -54,8 +58,19 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:28 UTC. The scale is on
 - 2026-10-22 11:23 UTCSaved into the evidence vault: SecurityWeek, then 1 more capture
 - 2026-10-22 11:28 UTCSaved into the evidence vault: Huntress
 - 2026-10-22 11:30 UTCSaved into the evidence vault: Recorded Future, then 1 more capture
+- 2026-10-22 15:12 UTCThe Verge publishes [Everything we know so far about the PHP2Shell vulnerability | The Verge](../../sources/the-verge-php2shell-websites-down/index.html)
+- 2026-10-22 19:14 UTCSaved into the evidence vault: INTERNET Watch
+- 2026-10-22 19:15 UTCSaved into the evidence vault: Lupa.cz
+- 2026-10-22 19:15 UTCSaved into the evidence vault: Yahoo! News Japan
+- 2026-10-22 19:15 UTCSaved into the evidence vault: 産経ニュース
 - 2026-10-22Enters this site as confirmed in v0.2.0 (reconstructed from git)
 - 2026-10-22Status changes from confirmed to reported in v0.5.8
+- 2026-10-23 01:20 UTCSaved into the evidence vault: The Verge
+- 2026-10-23 07:58 UTCIT Social publishes [PHP2Shell, la mise à jour ferme la faille, mais oblige à traquer les compromissions possibles - IT SOCIAL](../../sources/itsocial-cybersecurite-cybersecurite-articles-php/index.html)
+- 2026-10-23 08:03 UTCSaved into the evidence vault: PCMag
+- 2026-10-23 16:04 UTCSaved into the evidence vault: Paperjam
+- 2026-10-23 16:04 UTCSaved into the evidence vault: IT Social
+- 2026-10-24Reworded or re-sourced in v0.12.1
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
 
@@ -76,8 +91,8 @@ Status: confirmed
 Topic: impact
 Sources: cisa-kev-json, huntress-php2shell-rapid-response, imperva-blog-php2shell, aws-security-blog-madpot, weirdgloop-blog-php2shell
 ```
-v2 · site v0.5.8 · 22 October 2026 · reportedNoAs of 20:50 UTC on 22 October, no named organisation has confirmedsaid ait compromisewas compromised through php2shellphp2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.Who says it: this site, from every captured source in the evidence vault and the source watch, as of 20:50 UTC on 22 OctoberStatus: confirmedreportedTopic: impactSources: cisa-kev-json, cisa-alert-php-20261021, huntress-php2shell-rapid-response, aws-security-blog-madpot, securityweek-first-attempts-sensors, securityweek-exploitation-days-before, recordedfuture-php2shell, imperva-blog-php2shell, aws-security-blog-madpot, weirdgloop-blog-php2shell
+v2 · site v0.5.8 · 22 October 2026 · reportedNoAs of 20:50 UTC on 22 October, no named organisation has confirmedsaid ait compromisewas compromised through php2shellphp2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.Who says it: this site, from every captured source in the evidence vault and the source watch, as of 20:50 UTC on 22 OctoberStatus: confirmedreportedTopic: impactSources: cisa-kev-json, cisa-alert-php-20261021, huntress-php2shell-rapid-response, aws-security-blog-madpot, securityweek-first-attempts-sensors, securityweek-exploitation-days-before, recordedfuture-php2shell, imperva-blog-php2shell, aws-security-blog-madpot, weirdgloop-blog-php2shellv3 · site v0.12.1 · 24 October 2026 · reportedAs of 20:5016:04 UTC on 2223 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, andin two security vendors,millions; Hadrian and Patchstack, report successfulreports exploitation withoutat scale and Patchstack received reports of incidents from hosting partners, neither naming anya victim.victim, and Patchstack's own telemetry showed only probing.Who says it: this site, from every captured source in the evidence vault and(295 thesources, sourcehead watch,1845598d9a38), as of 20:50its latest capture at 16:04 UTC on 2223 OctoberStatus: reportedTopic: impactSources: cisa-kev-json, cisa-alert-php-20261021, huntress-php2shell-rapid-response, aws-security-blog-madpot, securityweek-first-attempts-sensors, securityweek-exploitation-days-before, recordedfuture-php2shell, imperva-blog-php2shell, weirdgloop-blog-php2shellweirdgloop-blog-php2shell, paperjam-article-php2shell-des-milliers-de-sites, pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw, itsocial-cybersecurite-cybersecurite-articles-php, lupa-cvut-cyber-attack, yahoo-jp-gmo-fx-login-leak, sankei-dmm-service-halt, impress-watch-valtec, the-verge-php2shell-websites-down
 
 
 ---
-site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html
+site v0.12.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html
