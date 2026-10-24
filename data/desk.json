@@ -141,7 +141,7 @@
    "path": "data/history.json",
    "kept_by_before": "story-site",
    "checked_against": null,
-   "note": ""
+   "note": "Partly: the php2shell row's KEV and response lines refreshed (24 October); the comparators not re-read."
   },
   {
    "path": "data/defence.json",
@@ -177,7 +177,7 @@
    "path": "data/questions.json",
    "kept_by_before": "librarian",
    "checked_against": null,
-   "note": ""
+   "note": "Partly: 'Has anyone actually been hacked?' refreshed to 23 October 16:04 UTC (24 October); the other answers not yet re-read."
   },
   {
    "path": "data/signals.json",

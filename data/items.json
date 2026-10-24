@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.14.2",
+"site": "0.14.3",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -835,11 +835,11 @@
 "zone": "research",
 "title": "In context: 2008 to 2026",
 "path": "context/index.html",
-"hash": "686c9e3ce8ec",
-"v": 3,
+"hash": "189396ff039a",
+"v": 4,
 "first": "0.2.0",
-"changed": "0.5.8",
-"date": "2026-10-22",
+"changed": "0.14.2",
+"date": "2026-10-24",
 "history": "versions/page-context/index.html"
 },
 "page-actors": {
@@ -5410,11 +5410,11 @@
 "zone": "for-you",
 "title": "Has anyone actually been hacked?",
 "path": "questions/been-hacked/index.html",
-"hash": "bd0223e3643e",
-"v": 3,
+"hash": "8f174fbada9a",
+"v": 4,
 "first": "0.4.1",
-"changed": "0.12.0",
-"date": ""
+"changed": "0.14.2",
+"date": "2026-10-24"
 },
 "q-passwords": {
 "kind": "question",

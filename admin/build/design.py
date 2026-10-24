@@ -201,7 +201,7 @@ def build(ns):
 
     # ======================================================================= mockup B: the security lead, Standard
     sam = PERSONAS['security']
-    items = [x for x in json.load(open(ns['ITEMS_PATH'], encoding='utf-8'))['items'].items()]
+    items = list(ns['all_items']().items())  # this build's items, not the file save_items() writes at the end of it (read from disk, it lagged one build: board 175)
     feed = [(k, v) for k, v in items if v['kind'] in ('fact', 'event', 'question', 'story', 'front')]
     feed.sort(key=lambda kv: (kv[1].get('date') or '', kv[1]['changed'], kv[0]), reverse=True)
     feed = feed[:9]
@@ -626,10 +626,7 @@ def build_tracks(ns):
     D, E, U, PERSONAS, page = ns['D'], ns['E'], ns['U'], ns['PERSONAS'], ns['page']
     SOURCES, short_name, human_time, STORY = ns['SOURCES'], ns['short_name'], ns['human_time'], ns['STORY']
     claims = D['claims']; st = Counter(c['status'] for c in claims); when = human_time(STORY['data_as_of'])
-    try:
-        items = json.load(open(ns['ITEMS_PATH'], encoding='utf-8'))['items']
-    except Exception:
-        items = {}
+    items = ns['all_items']()  # this build's items; data/items.json on disk is the previous build's until save_items() runs (board 175)
     cl = {('fact-' + c['id']): c for c in claims}
     tl_days = Counter(t['at'][:10] for t in D['timeline'] if t['at'][:7] == '2026-10'); days = sorted(tl_days)
 
