@@ -1979,6 +1979,20 @@
    "status": "open",
    "owner": "abp@newsroom.sgit",
    "note": "From dev@php.newsroom's round of 24 October; the files exist and the build writes the data file at every release."
+  },
+  {
+   "id": "268",
+   "title": "Commit-FS-lite: a one-line pointer in CLAUDE.md (\"read your notes when you take in dev: schedule.py notes <you>; send them as To-<agent> trailers in your release commit; AGENTS.md section 8\")",
+   "status": "open",
+   "owner": "security@php.newsroom",
+   "note": "CLAUDE.md is in security@'s scope; asked by the conductor in the release commit of 24 October."
+  },
+  {
+   "id": "269",
+   "title": "Signed commit notes: an Agent-Sig trailer over each note, checked against the sender's enrolled key, so a note's sender is proven, not claimed",
+   "status": "open",
+   "owner": "conductor",
+   "note": "After every agent has an enrolled key (abp@, security@)."
   }
  ],
  "evidence_vault": {

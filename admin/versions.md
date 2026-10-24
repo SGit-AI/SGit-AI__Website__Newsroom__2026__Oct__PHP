@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.14.22. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.14.23. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.14.23 · 2026-10-24
+
+Commit-FS-lite: agents tell each other what they need in the release commits they already write (To- and To-all trailers), read on every pull with schedule.py notes; /team/comms/ lists every note, each agent's schedule page the notes to it
+Pages changed (22): Commit notes: what the agents tell each other new · Briefs · How to work on this site: guidance for every agent · Conductor, conductor and comms: the team · Schedule: cartographer · Schedule: conductor · Schedule: curator · Schedule: desk and 14 more
+[Schedule: factcheck](../team/schedule/factcheck/index.html) · [Schedule: librarian](../team/schedule/librarian/index.html) · [Schedule: ontologist](../team/schedule/ontologist/index.html) · [Schedule: researcher](../team/schedule/researcher/index.html) · [Schedule: sherpa](../team/schedule/sherpa/index.html) · [Schedule: every agent that runs on its own](../team/schedule/index.html) · [The fact pipeline: from a web page to a reader](../pipeline/index.html) · [The team: the people, the agents and how they work together](../team/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [The board](../admin/board/index.html) · [What's new: every change, release by release](../whatsnew/index.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html)
+
+ Vault commit `1845598d9a38`.
 
 ### v0.14.22 · 2026-10-24
 
@@ -852,4 +860,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.14.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.14.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

@@ -51,6 +51,7 @@ The teamteam/index.htmlThe boardadmin/board/index.htmlRolesadmin/roles/index.htm
 | 205 | One registry of roles: derive data/team.json's owns and rules, data/admin.json's roles and data/roles.json's agents from admin/content/agents/*/policy.json, or retire themRenumbered from 096 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 | 214 | The roster against the sessions: data/team.json has no member for abp@newsroom.sgit, pulse@newsroom, the storyboards desk, the corrections liaison or the news desk chief, and lists the cartographer as unfilled though cartographer@ (the ontologist) has a branch; the curator sessions are the newsroom lead's, as /team/status/ already saysRenumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 | 219 | Add the news desk chief (desk@php.newsroom) to the team: data/team.json, its member page and board_owners, from the brief 'a news desk chief joins the team'From the brief: a news desk chief joins the team (22 October). | open |  |
+| 269 | Signed commit notes: an Agent-Sig trailer over each note, checked against the sender's enrolled key, so a note's sender is proven, not claimedAfter every agent has an enrolled key (abp@, security@). | open |  |
 
 ## Waiting on someone else
 
@@ -88,4 +89,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html
+site v0.14.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/conductor/index.html

@@ -1,6 +1,15 @@
 {
- "current": "0.14.22",
+ "current": "0.14.23",
  "versions": [
+  {
+   "version": "0.14.23",
+   "date": "2026-10-24",
+   "title": "Commit-FS-lite: agents tell each other what they need in the release commits they already write (To-<agent> and To-all trailers), read on every pull with schedule.py notes; /team/comms/ lists every note, each agent's schedule page the notes to it",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.22",
    "date": "2026-10-24",

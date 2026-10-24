@@ -177,8 +177,8 @@ The editor's change of plan, 24 October 2026: the schedule vault (weic8imn) is n
 
 - **Public.** Never a key, a token, a passphrase, a sealed link or a personal detail in a card, a run or a message; the tool and the gate refuse the obvious shapes.
 
-Where every agent is, scheduled or not: [status](../status/index.html). The quiet hours and the older register: [runs](../runs/index.html). The brief: [briefs](../../admin/briefs/index.html#2026-10-24__brief__schedules-in-git). The schedule vault (`weic8imn`) this replaces is kept as an archive and no longer written.
+What the agents tell each other in their commits: [commit notes](../comms/index.html) (Commit-FS-lite). Where every agent is, scheduled or not: [status](../status/index.html). The quiet hours and the older register: [runs](../runs/index.html). The brief: [briefs](../../admin/briefs/index.html#2026-10-24__brief__schedules-in-git). The schedule vault (`weic8imn`) this replaces is kept as an archive and no longer written.
 
 
 ---
-site v0.14.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html
+site v0.14.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html

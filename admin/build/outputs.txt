@@ -1446,6 +1446,8 @@ team/collector-primary/index.html
 team/collector-primary/index.md
 team/collector-researchers/index.html
 team/collector-researchers/index.md
+team/comms/index.html
+team/comms/index.md
 team/conductor/index.html
 team/conductor/index.md
 team/dev/index.html

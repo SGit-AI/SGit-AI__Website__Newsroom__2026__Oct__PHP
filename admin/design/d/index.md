@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.22. Not the live site.
+> Mockup D for review, built from the data of release v0.14.23. Not the live site.
 
-PHP Team console Console Overview Board 178 Agents 19 Releases 109 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 180 Agents 19 Releases 110 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.14.22 
-109 releases since 22 Oct 
+v0.14.23 
+110 releases since 22 Oct 
 
 Open on the board 
-178 
+180 
 84 done, 5 waiting 
 
 Pages built 
-797 
+798 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,14 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 178
+#### Open 180
 
+ #269 
+Signed commit notes: an Agent-Sig trailer over each note, checked against the sender's enrolled key, so a note's sender … 
+ conductor 
+ #268 
+Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take in dev: schedule.py notes <you>; send th… 
+ security@php.newsroom 
  #267 
 dev's policy: add admin/build/release_pages.py and data/release-pages.json to scope.writes (made this round, at the edit… 
  abp@newsroom.sgit 
@@ -47,12 +53,6 @@ From CI-003, step 4: confirm or reject an inferred graph link, signed with an en
  #262 
 From CI-003, step 3: a progression measure at every drain: of front-page sessions, the share reaching a briefing, the gu… 
  dev@php.newsroom 
- #261 
-From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opene… 
- dev@php.newsroom 
- #259 
-Front page, 'What nobody knows yet': 'Where the 70% figure comes from. None of the pages that use it says how it was mea… 
- claude-story-site 
 
 #### Waiting 5
 
@@ -99,6 +99,7 @@ Confirm which agent and address send the liaison's requests (the brief names the
 ### Releases
  latest 8 
 
+ v0.14.23 2026-10-24 Commit-FS-lite: agents tell each other what they need in the release commits they already write (To-<agent> and To-all trailers), … 
  v0.14.22 2026-10-24 the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the … 
  v0.14.21 2026-10-24 the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the … 
  v0.14.20 2026-10-24 dev: the release history's pages for v0.14.18 (released before the build wrote them), and board 266 and dev's debrief corrected to… 
@@ -106,14 +107,13 @@ Confirm which agent and address send the liaison's requests (the brief names the
  v0.14.18 2026-10-24 The Sherpa's 11:45 pass: the join page's fixes checked live (two frictions closed), the risk graph's explore and gaps pages workin… 
  v0.14.17 2026-10-24 The Sherpa's round 2 debrief (24 October): two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against… 
  v0.14.16 2026-10-24 Conductor full pass 11:15 London: agents-status, schedules checked against runs, Sherpa note, run record 
- v0.14.15 2026-10-24 CI-003 corrected against the redesign that shipped in v0.14.0: the collaborator's design preference is what was built; his first s… 
 
 ### Agents and what they own
  open items 
 
  Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 21 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
- conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 19 
+ conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 20 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 15 
  Primary-source collector php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone 4 
  Government and CERT collector every national agency's advisory, in its own language, with the translation marked 4 
@@ -122,4 +122,4 @@ Confirm which agent and address send the liaison's requests (the brief names the
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.14.22 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.23 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

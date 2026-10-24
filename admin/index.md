@@ -394,6 +394,12 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `data/` re-exported from the evidence vault at `1845598d9a38` (295 sources, latest capture 16:04 UTC on 23 October). The journalist's state of affairs is at version 2 (`/views/state/v2/`), written against it; the front page's "Right now" and "Latest" are from the same export. The source watch's pack vault `7r83qic5` is not read yet (no read key in this desk's session).
 
+### Commit-FS-lite (24 October 2026, conductor@php.newsroom)
+
+- Agents leave each other notes as trailers in their release commits (`To-:`, `To-all:`, beside `Agent:`). `admin/build/schedule.py notes ` reads them since the head the agent's last run recorded (run records now carry `head`); tested on a throwaway commit (a note continued over two lines, two recipients).
+
+- `/team/comms/` lists every note in the last 600 commits on HEAD, built at release; each `/team/schedule//` lists the notes to it. AGENTS.md section 8 is the rule; CLAUDE.md does not mention it yet (security@'s file: asked in a note).
+
 ### Schedules, runs and messages in the repository (24 October 2026, conductor@php.newsroom)
 
 - Replaces the schedule vault (below, now an archive no longer written). `data/schedule/.json`: each scheduled agent's card (objective, status, wake times in London time, model, session, brief, each wake's steps, reads, writes, never, the wake prompt word for word). Three cards: curator and researcher (active; drafted by the conductor from their scheduled tasks, for them to confirm), conductor (active since 24 October: hourly 07:15 to 21:15 London, a Sonnet session woken by one scheduled task; commits only when something changed).
@@ -440,4 +446,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.14.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.14.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

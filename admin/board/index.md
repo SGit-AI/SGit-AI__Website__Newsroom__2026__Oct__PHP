@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 267 items, 178 open, 84 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 269 items, 180 open, 84 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -277,9 +277,11 @@ The work, as rows in `data/admin.json`: 267 items, 178 open, 84 done. An item is
 | 265 | From CI-003 (story-site): the front page's 'Three ways to read this site' on the first screen and named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home; today it is seventh, 9,218px down on a phone (F035) | open | story-site |  |
 | 266 | Every release links the pages it changed: under each release on /admin/versions.html, the main pages it changed (new first, then by how much their text changed), eight shown and the rest behind a toggle; filled back to v0.2.0, and written at each release's own build from now onDone at the editor's ask of 24 October: admin/build/release_pages.py, data/release-pages.json; guidance in AGENTS.md section 1 (name the main page in the message, check the entry after releasing). | done | dev@php.newsroom | 0.14.19 |
 | 267 | dev's policy: add admin/build/release_pages.py and data/release-pages.json to scope.writes (made this round, at the editor's override), and the release history's styles in assets/site.css to dev's appendsFrom dev@php.newsroom's round of 24 October; the files exist and the build writes the data file at every release. | open | abp@newsroom.sgit |  |
+| 268 | Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take in dev: schedule.py notes ; send them as To- trailers in your release commit; AGENTS.md section 8")CLAUDE.md is in security@'s scope; asked by the conductor in the release commit of 24 October. | open | security@php.newsroom |  |
+| 269 | Signed commit notes: an Agent-Sig trailer over each note, checked against the sender's enrolled key, so a note's sender is proven, not claimedAfter every agent has an enrolled key (abp@, security@). | open | conductor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.14.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.14.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
