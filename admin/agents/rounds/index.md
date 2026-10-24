@@ -20,7 +20,7 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [Conductor](../conductor/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [cyber@php.newsroom](../cyber/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [News desk chief](../desk/index.html) | 2026-10-24 | [The news desk chief joins; the data put right; corrections drafted for the editor to send; the desk on a schedule](../desk/index.html#2026-10-24__first-round) | 3 | 3 | unknown | at the editor's direction: data/claims.json, plain.json, impact.json, questions.json, outreach.json, admin/build/build.py, admin/liaison/, team.json, layers.json, other members' board rows | 4 | 0 |
-| [dev@php.newsroom](../dev/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [dev@php.newsroom](../dev/index.html) | 2026-10-24 | [Every release links the pages it changed; the source watch is 7r83qic5 everywhere live](../dev/index.html#2026-10-24__release-pages-and-the-source-watch) | 2 | 2 | unknown | 17 | 1 | 0 |
 | [Fact-check desk](../factcheck/index.html) | 2026-10-24 | [Run 3 (the desk chief's fixes checked) and the first investigation, how much PHP there is and where '70%' comes from](../factcheck/index.html#2026-10-24__run-3-and-the-first-investigation) | 4 | 3 | unknown | ['admin/build/build.py build_llms(): three lines for llms.txt'] | 0 | 0 |
 | [GRC desk](../grc/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Historian](../historian/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
@@ -43,10 +43,11 @@ At the end of every round of work each agent writes a debrief with screenshots a
 - 2026-10-24 · [librarian@php.newsroom: The first scheduled pass: dev at v0.14.6 mapped, the journalist's full pass raised, one answer corrected](../librarian/index.html#2026-10-24__morning-pass)
 - 2026-10-24 · [librarian@php.newsroom: The librarian's pass of 24 October: dev taken in, 27 members mapped, two answers corrected](../librarian/index.html#2026-10-24__librarian-pass)
 - 2026-10-24 · [Fact-check desk: Run 3 (the desk chief's fixes checked) and the first investigation, how much PHP there is and where '70%' comes from](../factcheck/index.html#2026-10-24__run-3-and-the-first-investigation)
+- 2026-10-24 · [dev@php.newsroom: Every release links the pages it changed; the source watch is 7r83qic5 everywhere live](../dev/index.html#2026-10-24__release-pages-and-the-source-watch)
 - 2026-10-24 · [News desk chief: The news desk chief joins; the data put right; corrections drafted for the editor to send; the desk on a schedule](../desk/index.html#2026-10-24__first-round)
 - 2026-10-22 · [librarian@php.newsroom: How every agent hands a vault key to the editor, in CLAUDE.md](../librarian/index.html#2026-10-22__vault-key-handover)
 - 2026-10-22 · [librarian@php.newsroom: Every member a folder, a policy and a round: 25 roles mapped, no overlaps, and the round system](../librarian/index.html#2026-10-22__agents-and-rounds)
 
 
 ---
-site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
+site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html

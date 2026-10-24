@@ -111,7 +111,7 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 ### researcher@php.newsroom an agent, joined on 22 October 2026
 
-**Owns.** the source watch (vault oq9gflln): which outside pages are watched, how often, what access we have to each; the taxonomy (country, sector, publisher, page); discovery across 52 language editions; the tips the editor relays from other channels; the Researcher, vendor and press collector's beat until that role is filled
+**Owns.** the source watch (vault 7r83qic5, pack mode): which outside pages are watched, how often, what access we have to each; the taxonomy (country, sector, publisher, page); discovery across 52 language editions; the tips the editor relays from other channels; the Researcher, vendor and press collector's beat until that role is filled
 - Watch, don't remember: a page is evidence of what it said at the time of a dated snapshot, and a change is a diff between two snapshots, never a recollection.
 - A page we cannot read stays on the list with the reason (paywalled, bot-challenge, login-wall, down, gone): the gap is counted and published.
 - A tip is unverified until the page it points at is captured; private people in a tip are not named and their numbers never written down.
@@ -154,4 +154,4 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 
 ---
-site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html
+site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html

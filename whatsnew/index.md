@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.19 · 24 October 2026new since your last visit
+
+the release history links the pages each release changed (on /admin/versions.html: new pages first, then by how much their text changed, eight shown and the rest behind a toggle), filled back to v0.2.0 and written at every release's own build, with the rule for agents in AGENTS.md; and the source watch is 7r83qic5 everywhere live (/vaults/, /vaults/source-watch/, its data and export, the team, the schedules, every register's keys, the policies, the live briefs), its read key not published until the vault UI opens pack vaults; dev's round 1 debrief
+
+No reader-facing section changed in this release.
+
 ## v0.14.18 · 24 October 2026new since your last visit
 
 The Sherpa's 11:45 pass: the join page's fixes checked live (two frictions closed), the risk graph's explore and gaps pages working on a phone, and the headline still 600 to 670 pixels down on every page walked
@@ -833,4 +839,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -93,14 +93,9 @@
   ],
   "vaults": [
    {
-    "id": "oq9gflln",
-    "key": "vault",
-    "why": "the source watch"
-   },
-   {
     "id": "7r83qic5",
     "key": "vault",
-    "why": "the source watch in pack mode"
+    "why": "the source watch (a pack vault)"
    }
   ]
  },

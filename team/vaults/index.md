@@ -42,7 +42,6 @@ Kept by the agent itself.
 | Vault ID | Kind of key | From | Since |
 |---|---|---|---|
 | `3ytzxm3g` | read key | the published read key (admin/content/vaults/php-evidence.json) | 2026-10-22 |
-| `oq9gflln` | read key | the published read key (data/source-watch.json) | 2026-10-22 |
 | `4klm5qlt` | vault key | the editor, as message text in the session (23 October 2026); pulse@newsroom's vault, used to read only, never to write | 2026-10-23 |
 
 The journalist's session. It made no vault. It holds the keys below, read only: it never writes to any of these vaults. Clones live outside the repository.
@@ -83,7 +82,6 @@ Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records 
 | Vault ID | Kind of key | From | Since |
 |---|---|---|---|
 | `3ytzxm3g` | vault key | the editor, sealed to this session's key (23 October 2026) | 2026-10-23 |
-| `oq9gflln` | read key | the published read key (the brief's prompt) | 2026-10-23 |
 | `7r83qic5` | vault key | the editor, as message text in the session (23 October 2026); used to read the pack copy of the source watch only, never to write | 2026-10-23 |
 
 The scheduled curator session (Claude Code, Sonnet), set up on 23 October 2026. It made no vault; it holds the keys below, given by the editor as a message sealed to its session key on pki.sgit.ai.
@@ -110,7 +108,6 @@ The scheduled curator session (Claude Code, Sonnet), set up on 23 October 2026. 
 | `84wr8mib` | append token | made it | 2026-10-22 |
 | `wgeiqabu` | append token | made it | 2026-10-22 |
 | `3ytzxm3g` | read key | published on the site | 2026-10-22 |
-| `oq9gflln` | read key | published on the site | 2026-10-22 |
 
 Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing. Confirmed by dev@php.newsroom on 23 October 2026.
 
@@ -118,19 +115,17 @@ Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records 
 
 | Vault ID | What it holds | Created | Key sealed to the root |
 |---|---|---|---|
-| `oq9gflln` | The source watch: every outside source on php2shell, captured on a schedule, a snapshot on every change, raw kept apart from analysis; public read key published. Retired on 23 October 2026: the watch continues in 7r83qic5 | 2026-10-22 | 2026-10-22 |
-| `7r83qic5` | The source watch, in pack mode (sgit 0.24.0): a pack-vault copy of oq9gflln made with sgit pack import on 23 October, first to measure push and clone, and since then the live watch; read key not published until the vault UI opens pack vaults | 2026-10-23 | 2026-10-23 |
+| `oq9gflln` | Retired on 23 October 2026, replaced by 7r83qic5; listed because every vault made stays registered with the date its key was sealed to the root | 2026-10-22 | 2026-10-22 |
+| `7r83qic5` | The source watch, a pack-mode vault (sgit-ai 0.24.0): every outside source on php2shell, captured on a schedule, a snapshot on every change, raw kept apart from analysis; read key not published until the vault UI opens pack vaults | 2026-10-23 | 2026-10-23 |
 
 #### Keys it holds
 
 | Vault ID | Kind of key | From | Since |
 |---|---|---|---|
-| `oq9gflln` | vault key | made it | 2026-10-22 |
-| `oq9gflln` | read key | made it | 2026-10-22 |
 | `3ytzxm3g` | read key | the site (published in data/admin.json) | 2026-10-22 |
 | `7r83qic5` | vault key | made it | 2026-10-23 |
 
-Kept by the agent itself (confirmed by researcher@php.newsroom on 23 October 2026). The two rows for oq9gflln and 7r83qic5 updated by dev@php.newsroom on 24 October 2026 at the editor's word: the pack vault is the one in use.
+Kept by the agent itself (confirmed by researcher@php.newsroom on 23 October 2026). Rows and holds updated by dev@php.newsroom on 24 October 2026 at the editor's word: the pack vault is the source watch, and no session uses the old one.
 
 ### [sherpa@php.newsroom](../sherpa/index.html) 1 vault made
 
@@ -187,4 +182,4 @@ What each vault is for, and the published read keys and write-only lanes, are on
 
 
 ---
-site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html
+site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html

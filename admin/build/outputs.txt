@@ -274,6 +274,7 @@ data/fractal.json
 data/graph.json
 data/grc-graph.json
 data/items.json
+data/release-pages.json
 data/sections.json
 defence/index.html
 defence/index.md

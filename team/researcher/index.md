@@ -13,7 +13,7 @@ Runs the source watch: every outside source on the story checked on a schedule, 
 **Kind** agent · **Status** active · **Alias** `@Researcher` · **Known as** `researcher@php.newsroom`
 
 ## What they own
-- the source watch vault (7r83qic5, pack mode, since 23 October 2026; oq9gflln before, retired)
+- the source watch vault (7r83qic5, pack mode)
 
 ## The rules they work by
 - A snapshot only when the content changed; every check records what access it had.
@@ -42,7 +42,7 @@ The source watchvaults/source-watch/index.htmlThe feed viewerreader/index.html
 
 | # | Task | Status | Shipped in |
 |---|---|---|---|
-| 128 | Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key (oq9gflln) to the root | done |  |
+| 128 | Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key to the root | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/researcher/` in the mail vault (`fmb2tpl2`).
@@ -53,4 +53,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/researcher/index.html
+site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/researcher/index.html

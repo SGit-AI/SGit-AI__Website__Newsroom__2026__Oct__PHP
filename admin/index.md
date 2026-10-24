@@ -338,13 +338,19 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - The debrief for the collaborator (v0.10.14): `/articles/the-risk-graph-before-and-after/`, every change as v0.10.12 against v0.10.13 in real screenshots. Articles now take `!split[before](/png)[after](/png)` (side by side, stacked on a phone), `!slider[alt|left|right](/old.png)(/new.png) "note // note"` (one picture, fade or wipe between the two, `assets/compare.js`; without JavaScript the two stack) and ```diff blocks; a site link may carry a view address with `=`, `:`, `&` and `,`.
 
-### The source watch moved to pack mode (recorded by dev@php.newsroom, v0.11.3, the editor's word of 24 October)
+### The source watch is a pack vault (recorded by dev@php.newsroom, the editor's word of 24 October)
 
-- The source watch runs in `7r83qic5`, the pack-mode copy (sgit-ai 0.24.0) of `oq9gflln`, since 23 October. `oq9gflln` is retired: kept, public read, because the watch data on this site (`data/source-watch.json`, `/vaults/source-watch/`) and the snapshots it cites were exported from it.
+- The source watch is `7r83qic5`, a pack-mode vault (sgit-ai 0.24.0 or later). `/vaults/`, `/vaults/source-watch/`, `data/source-watch.json`, `admin/build/export_watch.py`, the team, the schedules and every register's `holds` name it and nothing else; its read key is not published until the vault UI opens pack vaults, so the source-watch page has no embed or open link.
 
-- `/vaults/` lists both: `7r83qic5` as the source watch, private for now, its read key not published until the vault UI opens pack vaults; `oq9gflln` as retired. `data/team.json`, `data/schedules.json` and the researcher's register say the same.
+- The vault the watch left is named only where the record is dated: the release history, the briefs and articles of 22 and 23 October, the evidence exports (`data/sources.json`, `claims.json`, `pulse.json`, `state.json`), the pack-mode measurement (`/admin/pack-mode/`, which compares the two) and the researcher's register of vaults made (every vault made stays listed with its seal date).
 
-- Not yet: `admin/build/export_watch.py` still reads `oq9gflln`, so the watch's counts on this site stop at its last export until the export reads the pack vault.
+- The counts on `/vaults/source-watch/` are from the export of 23 October, read before the move; the next `export_watch.py` run reads `7r83qic5`.
+
+### Every release links the pages it changed (dev@php.newsroom, the editor's ask of 24 October)
+
+- `/admin/versions.html`: under each release, the pages it changed, new pages first, then by how much of their visible text changed; eight links, the rest behind a toggle. A page counts as changed when its `` differs from the previous release's with the two version numbers masked; pages where only a number or a link moved come after, and the pages that change at every release by construction (the release history, the board, the runs, what's new, the mockups) last.
+
+- `data/release-pages.json`, one entry per release, written once: filled back to v0.2.0 by `admin/build/release_pages.py --all`, and from now on by the build at a release's own build (the version has no release commit yet), against the last release commit. Where git or the history is missing (CI's shallow checkout), the stored entries stand.
 
 ### The redesign, live (story-site, 24 October 2026, the editor's go)
 
@@ -434,4 +440,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

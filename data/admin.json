@@ -170,7 +170,7 @@
    "id": "researcher",
    "name": "researcher@php.newsroom",
    "who": "an agent, joined on 22 October 2026",
-   "owns": "the source watch (vault oq9gflln): which outside pages are watched, how often, what access we have to each; the taxonomy (country, sector, publisher, page); discovery across 52 language editions; the tips the editor relays from other channels; the Researcher, vendor and press collector's beat until that role is filled",
+   "owns": "the source watch (vault 7r83qic5, pack mode): which outside pages are watched, how often, what access we have to each; the taxonomy (country, sector, publisher, page); discovery across 52 language editions; the tips the editor relays from other channels; the Researcher, vendor and press collector's beat until that role is filled",
    "rules": [
     "Watch, don't remember: a page is evidence of what it said at the time of a dated snapshot, and a change is a diff between two snapshots, never a recollection.",
     "A page we cannot read stays on the list with the reason (paywalled, bot-challenge, login-wall, down, gone): the gap is counted and published.",
@@ -453,7 +453,7 @@
   },
   {
    "id": "036",
-   "title": "Publish the source-watch vault (oq9gflln) the way sgit.ai publishes vaults: screenshot, open-in-a-new-tab link, the vault embedded, its main features",
+   "title": "Publish the source-watch vault the way sgit.ai publishes vaults: screenshot, open-in-a-new-tab link, the vault embedded, its main features",
    "status": "done",
    "owner": "dev@php.newsroom",
    "version": "0.2.13"
@@ -1043,7 +1043,7 @@
   },
   {
    "id": "128",
-   "title": "Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key (oq9gflln) to the root",
+   "title": "Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key to the root",
    "status": "done",
    "owner": "researcher@php.newsroom"
   },
@@ -1455,10 +1455,10 @@
   },
   {
    "id": "191",
-   "title": "The source watch's vault of record: 7r83qic5 (pack mode) in use, oq9gflln retired, on /vaults/, the source-watch page, the team, the schedules and the researcher's register; no read key published for the pack vault until the vault UI supports it",
+   "title": "The source watch's vault of record is 7r83qic5 (pack mode), on /vaults/, the source-watch page, the team, the schedules, the registers and the export; no read key published until the vault UI opens pack vaults",
    "status": "done",
    "owner": "dev@php.newsroom",
-   "note": "Done at the editor's word of 24 October. Still open: export_watch.py reads oq9gflln, so the watch's counts on the site stop at its last export.",
+   "note": "Done at the editor's word of 24 October: the source watch is 7r83qic5 everywhere live (vaults, the source-watch page, its data and export, the team, the schedules, the registers' holds, the policies' vault grants, the live briefs). The next export_watch.py run, by a session holding the vault key, refreshes the counts.",
    "version": "0.11.3"
   },
   {
@@ -1962,6 +1962,21 @@
    "title": "From CI-003 (story-site): the front page's 'Three ways to read this site' on the first screen and named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home; today it is seventh, 9,218px down on a phone (F035)",
    "status": "open",
    "owner": "story-site"
+  },
+  {
+   "id": "266",
+   "title": "Every release links the pages it changed: under each release on /admin/versions.html, the main pages it changed (new first, then by how much their text changed), eight shown and the rest behind a toggle; filled back to v0.2.0, and written at each release's own build from now on",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done at the editor's ask of 24 October: admin/build/release_pages.py, data/release-pages.json; guidance in AGENTS.md section 1 (name the main page in the message, check the entry after releasing).",
+   "version": "0.14.18"
+  },
+  {
+   "id": "267",
+   "title": "dev's policy: add admin/build/release_pages.py and data/release-pages.json to scope.writes (made this round, at the editor's override), and the release history's styles in assets/site.css to dev's appends",
+   "status": "open",
+   "owner": "abp@newsroom.sgit",
+   "note": "From dev@php.newsroom's round of 24 October; the files exist and the build writes the data file at every release."
   }
  ],
  "evidence_vault": {

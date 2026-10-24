@@ -87,9 +87,9 @@
   ],
   "vaults": [
    {
-    "id": "oq9gflln",
+    "id": "7r83qic5",
     "key": "read",
-    "why": "the source watch"
+    "why": "the source watch (a pack vault; its read key is not published yet)"
    }
   ]
  },

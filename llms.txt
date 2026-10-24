@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.14.18. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.14.19. Data as of 2026-10-23T16:04Z (the latest capture in the evidence vault, commit 1845598d9a38). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -105,8 +105,7 @@ Site v0.14.18. Data as of 2026-10-23T16:04Z (the latest capture in the evidence 
 - [How the story changed](https://php.oct.2026.newsroom.sgit.ai/versions/index.md): Every section of the site, every reader's briefing and every fact, versioned across every release: what changed, when, and in which release.
 - [Every vault behind this site](https://php.oct.2026.newsroom.sgit.ai/vaults/index.md): Every vault this site is built from: the evidence vault and the source watch, both public with their read keys, and the private telemetry vault with its write-only lane; what each holds, who writes to it and how to open it.
 - [The evidence vault](https://php.oct.2026.newsroom.sgit.ai/admin/vault/index.md): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
-- [The source watch](https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.md): One vault as a normal sgit vault and as a pack vault: a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and why the normal vault has hit a wall.
-- [The source watch, as a normal vault (retired)](https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.md): The public source-watch vault: 913 pages from 597 publishers in 59 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
+- [The source watch](https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.md): The source-watch vault: 913 pages from 597 publishers in 59 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. What is in it, and how it is watched.
 - [The telemetry vault](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [The public telemetry stats](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [The subscriptions vault](https://php.oct.2026.newsroom.sgit.ai/subscribe/index.md): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.
@@ -155,7 +154,7 @@ Site v0.14.18. Data as of 2026-10-23T16:04Z (the latest capture in the evidence 
 - [Your reading account](https://php.oct.2026.newsroom.sgit.ai/account/index.md): The balance, history and receipts of your reading on this site, kept in your browser.
 - [The brief](https://php.oct.2026.newsroom.sgit.ai/brief/index.md): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.
 - [Corrections](https://php.oct.2026.newsroom.sgit.ai/corrections/index.md): Where the brief or a page of this site was wrong, what was found and what was done instead.
-- [Release history](https://php.oct.2026.newsroom.sgit.ai/admin/versions.md): Every release of this site, with what changed, why, and the vault commit it was built from.
+- [Release history](https://php.oct.2026.newsroom.sgit.ai/admin/versions.md): Every release of this site, with what changed, why, the pages it changed and the vault commit it was built from.
 - [Pipeline: what is deploying](https://php.oct.2026.newsroom.sgit.ai/status/index.md): Each newsroom site's deploy runs, read in your browser from GitHub's public API with no credential, beside the version the site serves now: what is live, what is deploying, what was superseded, what failed.
 - [Admin & engineering](https://php.oct.2026.newsroom.sgit.ai/admin/index.md): How this site is built, the checks in its gate, where things are, the reality file and the honest column.
 - [Guidance for agents](https://php.oct.2026.newsroom.sgit.ai/admin/agents/index.md): Push to your own branch early and often and let dev@php.newsroom carry it into dev; quality from coding.sgit.ai, non-functional requirements from nfrs.sgit.ai, and the security requirements.

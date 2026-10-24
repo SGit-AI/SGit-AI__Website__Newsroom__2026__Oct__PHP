@@ -381,7 +381,7 @@
    "path": "data/compromise.json",
    "layer": "authored",
    "by": "researcher@php.newsroom",
-   "from": "the evidence vault and the source-watch vault (oq9gflln): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot",
+   "from": "the evidence vault and the source-watch vault (7r83qic5): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot",
    "used_on": "compromise/index.html"
   },
   {
@@ -628,6 +628,13 @@
    "by": "liaison@php.newsroom, by hand (admin/liaison/README.md)",
    "from": "fact-check records in data/factcheck.json and captures in the evidence vault, each quote named by file and sha256",
    "used_on": "outreach/index.html"
+  },
+  {
+   "path": "data/release-pages.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "admin/build/release_pages.py: for each release, the pages whose main content differs from the release before (version numbers masked), new pages first, then by how much their visible text changed; written once per release, at its own build",
+   "used_on": "admin/versions.html"
   }
  ]
 }

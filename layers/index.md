@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**9** evidence · **31** derived · **14** authored · **32** site
+**9** evidence · **31** derived · **14** authored · **33** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -85,7 +85,7 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 | `admin/content/updates/` | the conductor, and whoever holds the updates beat for it | the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written | [updates/index.html](../updates/index.html) |
 | `admin/content/views/` | claude-journalist | the state of affairs, one immutable file per version, written against the stamped evidence | [views/index.html](../views/index.html) |
 | `admin/content/briefs/` | the editor, and agents writing build briefs and reviews | voice memos and messages; the site itself | [brief/index.html](../brief/index.html) |
-| `data/compromise.json` | researcher@php.newsroom | the evidence vault and the source-watch vault (oq9gflln): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot | [compromise/index.html](../compromise/index.html) |
+| `data/compromise.json` | researcher@php.newsroom | the evidence vault and the source-watch vault (7r83qic5): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot | [compromise/index.html](../compromise/index.html) |
 | `data/pack-mode.json` | researcher@php.newsroom | timed commands and logs in the researcher's session of 23 October 2026: the source watch as a normal vault (oq9gflln) and as a pack vault (7r83qic5) | [admin/pack-mode/index.html](../admin/pack-mode/index.html) |
 | `data/glossary.json` | the design agent | 40 terms in plain English, each linked on first use on every page | [glossary/index.html](../glossary/index.html) |
 | `data/interview.json` | the editor, interviewed by the design agent | the editor's answers in his own words | [interview/index.html](../interview/index.html) |
@@ -129,9 +129,10 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/synthetic-runs/` | admin/synthetic/run.py summarise (synthetic@php.newsroom) | each run in a synthetic reader's vault: the review, the journey, per-page measurements and the instruments' flags; never page bodies or a key | [admin/synthetic/index.html](../admin/synthetic/index.html) |
 | `data/grc-gaps.json` | dev@php.newsroom | the rules the gaps page computes over the risk graph | [grc/gaps/index.html](../grc/gaps/index.html) |
 | `data/desk.json` | claude-journalist | the editor's decision of 24 October 2026 and the journalist's pass over the site after each evidence export | [views/desk/index.html](../views/desk/index.html) |
+| `data/release-pages.json` | dev@php.newsroom | admin/build/release_pages.py: for each release, the pages whose main content differs from the release before (version numbers masked), new pages first, then by how much their visible text changed; written once per release, at its own build | [admin/versions.html](../admin/versions.html) |
 
 The classification is [data/layers.json](../data/layers.json); the gate fails a release if a file in `data/` is missing from it.
 
 
 ---
-site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

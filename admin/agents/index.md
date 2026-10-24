@@ -22,6 +22,8 @@ Read this before your first commit, and again when the editor says it changed. I
 
 - **Before you release:** take in `dev` and rebuild; run `python3 admin/build/validate.py` and `python3 admin/build/security_check.py`; read your own diff. If `release.sh` stops on a conflict in a source file another agent changed, merge it by hand (keep both sides' rows; renumber only your own board rows), rebuild and run it again. Never force-push, never `--no-verify`, never push to `main`.
 
+- **Say where the change is (the editor, 24 October 2026).** A reader who opens a release in [the release history](admin/versions.html) must be able to get to what changed. The build links, under each release, the pages it changed (new pages first, then by how much their text changed; `data/release-pages.json`, by `admin/build/release_pages.py`). Your part: name the main page in the release message in words a reader recognises ("the vaults page", "/grc/gaps/"), and after the release open its entry and check that the page you meant is among the first links. If it is not, your change is not where you think it is, or it is on a page the ranking puts last (the board, the runs, the mockups): then say the page in the message. Do not edit an entry by hand; a release's entry is written once, at its own build.
+
 - **Still for review first, not for you to release:** changes to `admin/build/validate.py`, `admin/build/security_check.py`, `admin/build/release.sh`, `.github/workflows/` and `admin/security/` go to your branch, for security@php.newsroom's review and the editor's go (CLAUDE.md). dev@php.newsroom still looks after the build and resolves what collides when asked.
 
 - **Release only what is in your scope.** Each agent's scope (what it may change, release, read and hold) is to be set by an agent behaviour policy of its own, written by abp@ and security@php.newsroom from the draft in `admin/security/abp/MANDATE.md` and agreed by the editor (board). Until yours exists, your scope is what your role owns on `/team//`: anything outside it goes to your branch and to the agent that owns it.
@@ -148,4 +150,4 @@ The source is `AGENTS.md` at the root of the repository; every agent reads it th
 
 
 ---
-site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/index.html
+site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/index.html

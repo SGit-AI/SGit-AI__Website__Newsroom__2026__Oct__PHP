@@ -21,6 +21,9 @@ def load(name):
         return json.load(f)
 
 VERSION = open(os.path.join(ROOT, 'VERSION'), encoding='utf-8').read().strip()
+_rp = os.path.join(ROOT, 'data', 'release-pages.json')
+RELEASE_PAGES = json.load(open(_rp, encoding='utf-8'))['releases'] if os.path.exists(_rp) else {}  # version -> the pages it changed
+SHOWN_PAGES = 8  # links per release on admin/versions.html; the rest behind a toggle
 D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 'affected', 'exploitation',
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
@@ -395,6 +398,7 @@ def origin_strip(path, kind, origin=None, byline=None):
 def md_path(path):
     return re.sub(r'\.html$', '.md', path)
 
+HTML_OUT = {}  # path -> every page as written, for the pages a release changed (admin/build/release_pages.py)
 OUTPUTS = set()  # every file this build writes; admin/build/outputs.txt, read by release.sh to resolve merges
 
 def write(path, content):
@@ -402,6 +406,8 @@ def write(path, content):
     if not full.startswith(os.path.realpath(ROOT) + os.sep) or any(p.startswith('.') for p in os.path.relpath(full, os.path.realpath(ROOT)).split(os.sep)):
         raise SystemExit(f'build: refusing to write outside the site tree: {path!r}')
     OUTPUTS.add(path)
+    if path.endswith('.html'):
+        HTML_OUT[path] = content.encode('utf-8')
     os.makedirs(os.path.dirname(full) or ROOT, exist_ok=True)
     with open(full, 'w', encoding='utf-8', newline='\n') as f:
         f.write(content)
@@ -962,7 +968,7 @@ def build_compromise():
 {kind_tables}
 {section("change", "What would change the statement", "<ul>" + "".join(f"<li>{E(w)}</li>" for w in C["would_change_it"]) + "</ul><p>The source watch checks the official lists and the named organisations' pages every 30 minutes; this page is rebuilt from data/compromise.json when the evidence changes.</p>")}
 {section("ledger", "The disagreements, recorded", "<p>Where sources disagree, the disagreement is a record of its own in the source watch's contradiction ledger, with both statements and their captures: " + ", ".join(f"<code>contradictions/{E(c)}.json</code>" for c in C["contradictions"]) + ".</p>")}
-{section("how", "How this page is made", '<p>Every row is in <a href="../data/compromise.json">data/compromise.json</a>. Rows with sources cite captures in the evidence vault, which the build checks. Rows marked <i>source watch</i> cite a dated snapshot folder in the source-watch vault (<a href="../vaults/source-watch/index.html">oq9gflln</a>), read with its published key; they move into the evidence vault as the evidence curator promotes them. Statements read in another language carry the reader&rsquo;s English translation beside the verbatim original in the watch&rsquo;s <code>translations/</code> files. The charts are drawn from the same rows when the site is built.</p>')}
+{section("how", "How this page is made", '<p>Every row is in <a href="../data/compromise.json">data/compromise.json</a>. Rows with sources cite captures in the evidence vault, which the build checks. Rows marked <i>source watch</i> cite a dated snapshot folder in the source-watch vault (<a href="../vaults/source-watch/index.html">7r83qic5</a>); they move into the evidence vault as the evidence curator promotes them. Statements read in another language carry the reader&rsquo;s English translation beside the verbatim original in the watch&rsquo;s <code>translations/</code> files. The charts are drawn from the same rows when the site is built.</p>')}
 """
     page('compromise/index.html', 'No named organisation has said it was compromised through php2shell: the evidence', f'The evidence behind one statement, as of {fmt_at(C["as_of"])}: attempts, vendor reports, statements that no success is known, named organisations, allegations and official lists, each with its source.', body, kind='story', topics='php2shell exploitation compromise evidence')
 
@@ -1462,15 +1468,34 @@ def build_corrections():
 '''
     page('corrections/index.html', 'Corrections', 'Where the brief or a page of this site was wrong, what was found and what was done instead.', body, kind='site')
 
-def build_admin():
+def release_links(v):
+    """The pages a release changed, as links: the first few, then the rest behind a toggle (data/release-pages.json)."""
+    r = RELEASE_PAGES.get(v['version'])
+    if not r or not r['pages']:
+        return ''
+    def a(x):
+        t = re.sub(r'\s*[\u2013\u2014]\s*', ': ', x['title'])  # some early titles carried dashes; the site's prose does not
+        t = t if len(t) <= 70 else t[:68].rstrip() + '…'
+        tag = ' <span class="rp-new">new</span>' if x['new'] else ''
+        if not os.path.exists(os.path.join(ROOT, x['path'])):
+            return f'<span class="rp-gone" title="no longer on the site">{E(t)}</span>{tag}'
+        return f'<a href="../{U(x["path"])}">{E(t)}</a>{tag}'
+    ps = r['pages']; top, rest = ps[:SHOWN_PAGES], ps[SHOWN_PAGES:]
+    more = f' <details class="rp-more"><summary>and {len(rest)} more</summary><p>{" &middot; ".join(a(x) for x in rest)}</p></details>' if rest else ''
+    return f'<div class="small rp"><b>Pages changed</b> ({len(ps)}): {" &middot; ".join(a(x) for x in top)}{more}</div>'
+
+def build_release_history():
     vs = D['versions']
-    rows = ''.join(f'<article class="rel" id="v{E(v["version"])}"><h3>v{E(v["version"])} &middot; {E(v["date"])}</h3><p>{E(v["title"])}</p><p class="small">{E(v.get("summary") or "")} Vault commit <code>{E(v.get("vault_commit") or "")}</code>.{" Reconstructed after the fact." if v.get("reconstructed") else ""}</p><p class="small">Files: {", ".join(f"<code>{E(c)}</code>" for c in v.get("changes", []))}</p></article>' for v in vs['versions'])
+    rows = ''.join(f'<article class="rel" id="v{E(v["version"])}"><h3>v{E(v["version"])} &middot; {E(v["date"])}</h3><p>{E(v["title"])}</p>{release_links(v)}<p class="small">{E(v.get("summary") or "")} Vault commit <code>{E(v.get("vault_commit") or "")}</code>.{" Reconstructed after the fact." if v.get("reconstructed") else ""}</p>' + (f'<p class="small">Files: {", ".join(f"<code>{E(c)}</code>" for c in v["changes"])}</p>' if v.get("changes") else '') + '</article>' for v in vs['versions'])
     body = f'''
 <h1>Release history</h1>
-<p class="lead">One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v{E(vs["current"])}. The data is <a href="../data/versions.json">data/versions.json</a>.</p>
+<p class="lead">One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v{E(vs["current"])}. The data is <a href="../data/versions.json">data/versions.json</a>; the pages are <a href="../data/release-pages.json">data/release-pages.json</a>, written at each release's build by <code>admin/build/release_pages.py</code>.</p>
 {rows}
 '''
-    page('admin/versions.html', 'Release history', 'Every release of this site, with what changed, why, and the vault commit it was built from.', body, kind='site')
+    page('admin/versions.html', 'Release history', 'Every release of this site, with what changed, why, the pages it changed and the vault commit it was built from.', body, kind='site')
+
+def build_admin():
+    build_release_history()
     checks = [
         ('Every internal link resolves against the real file tree', 'a link to a page that does not exist'),
         ('Every page is linked from at least one other page', 'a page nothing can find, which is the same as unpublished'),
@@ -1735,6 +1760,9 @@ def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
     build_all()
     build_all()
+    # the pages this release changed, against the last release commit; only at a release's own build (see release_pages.py)
+    RELEASE_PAGES.update(__import__('release_pages').for_build(VERSION, HTML_OUT)['releases']); OUTPUTS.add('data/release-pages.json')
+    build_release_history()
     __import__('design').write_live_css(globals()); write('assets/design/dials.js', __import__('design').DIALS_JS); build_now(); build_llms(); _design_made = __import__('design').build(globals()); open(os.path.join(ROOT, 'llms.txt'), 'a', encoding='utf-8').write(__import__('design').llms_lines(_design_made, BASE_URL)); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); build_stack_catalogue(); save_items()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
@@ -2809,9 +2837,9 @@ def vault_live(read_key, app, depth, lead):
 
 def build_vaults():
     VS = D['vaults']['vaults']; W = D['source-watch']; ev = D['admin']['evidence_vault']; vt = D['vault']; tl = D['telemetry']
-    keys = {'evidence': ev['read_key'], 'source-watch': W['read_key'], 'schedule': load('schedule-vault')['read_key']}
+    keys = {'evidence': ev['read_key'], 'source-watch': W.get('read_key'), 'schedule': load('schedule-vault')['read_key']}
     facts = {'evidence': f'{vt["sources"]} sources, {vt["captures"]} captures, {vt["hashed_files"]} hashed files; head <code>{E(vt["head"]["commit"] or "")}</code>',
-             'source-watch': f'{W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries and {len(W["lang"])} languages; {W["snapshots"]} snapshots, {len(W["runs"])} runs; head <code>{E(W["head"]["commit"])}</code>',
+             'source-watch': f'{W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries and {len(W["lang"])} languages; {W["snapshots"]} snapshots, {len(W["runs"])} runs, as of the export of 23 October 2026',
              'telemetry': f'lane <code>{E(tl["vault_id"])}</code> on <code>{E(tl["endpoint"])}</code>; events encrypted to <code>{E(tl["recipient"]["fingerprint"])}</code>',
              'subscriptions': f'lane <code>{E(D["subscriptions"]["vault_id"])}</code> on <code>{E(D["subscriptions"]["endpoint"])}</code>; requests encrypted to <code>{E(D["subscriptions"]["recipient"]["fingerprint"])}</code>'}
     lanes = {'telemetry': tl['append_token'], 'subscriptions': D['subscriptions']['append_token'], 'collaborators': load('collaborators')['lane']['append_token']}
@@ -2829,7 +2857,7 @@ def build_vaults():
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch as it was until 23 October, and the public face of the telemetry, its curated counts); one, the source watch as it runs now, in sgit's pack mode, is private until the vault UI can open pack vaults; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Two are public and open read-only in your browser with the keys below (the evidence, and the public face of the telemetry, its curated counts); one, the source watch, is a pack-mode vault, private until the vault UI can open pack vaults; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
@@ -2851,21 +2879,21 @@ def build_vaults():
                     ', '.join(f'{E(k)} {n}' for k, n in sorted((r.get('access') or {}).items(), key=lambda kv: -kv[1]))] for r in reversed(W['runs'])])
     tips = ''.join(f"""<article class="rel"><p class="kicker">Tip {E(t["id"])} &middot; received {E(t["received"] or "")} &middot; {pill(t["status"] or "unverified")}</p>
 <p>{E(t["says"] or "")}</p><p class="small"><b>Watched as</b> {", ".join(f"<code>{E(w)}</code>" for w in t["watched_as"])}. <b>To check:</b> {"; ".join(E(c) for c in t["to_check"])}.</p></article>""" for t in W['tips'])
-    PACK = next(x for x in D['vaults']['vaults'] if x['slug'] == 'source-watch-pack')  # where the watch runs now
+    SWV = next(x for x in D['vaults']['vaults'] if x['slug'] == 'source-watch')
     shot = 'assets/vaults/source-watch.png'  # captured from the official UI with the read key; the figure appears once it is in the repository
     hero = (f"""<figure class="shot"><a href="{E(vault_open_url(W["read_key"]))}" rel="noopener" target="_blank"><img src="../../{shot}" alt="The source-watch vault open in the official SG/Vault UI, read-only." width="1280" height="800" loading="eager"></a>
-<figcaption>The vault in the official UI, opened read-only with the published key. <b>Click the image to open the real one &#8599;</b></figcaption></figure>""" if os.path.exists(os.path.join(ROOT, shot)) else '')
+<figcaption>The vault in the official UI, opened read-only with the published key. <b>Click the image to open the real one &#8599;</b></figcaption></figure>""" if W.get('read_key') and os.path.exists(os.path.join(ROOT, shot)) else '')
     body = f"""
 <p class="crumb"><a href="../index.html">Vaults</a> / The source watch</p>
 <h1>The source watch: every outside source on php2shell, watched and snapshotted</h1>
-<p class="lead">A vault that does one thing. It watches every outside source on the story, {W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries, and on each run records what access it had and keeps a new snapshot whenever the content changed: the text, a screenshot, the HTML as served and as rendered, the headers and the sha256 of each, and a graph of what the page says and what changed since the last look. A small, focused Wayback Machine whose diffs are graphs. Run by <b>researcher@php.newsroom</b>; public, read-only.</p>
-<div class="caveat"><p><b>Retired on 23 October 2026.</b> The watch moved to its pack-mode copy, vault <code>{E(PACK["id"])}</code> (<a href="../../admin/pack-mode/index.html">pack mode, measured</a>), and every pass since writes there. {E(PACK["note"])} This page, and every watch snapshot this site cites, is read from this vault, <code>{E(W["vault_id"])}</code>, as last exported.</p></div>
-{hero}
-{vault_note(W["read_key"])}
-{vault_live(W["read_key"], False, 2, f'The vault has no app of its own yet, so it opens in the vault browser. It holds {W["files"]:,} files; the browser decrypts the folder tree before it lists it, so the first open takes minutes. <code>sgit clone</code> is the fast way in.')}
+<p class="lead">A vault that does one thing. It watches every outside source on the story, {W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries, and on each run records what access it had and keeps a new snapshot whenever the content changed: the text, a screenshot, the HTML as served and as rendered, the headers and the sha256 of each, and a graph of what the page says and what changed since the last look. A small, focused Wayback Machine whose diffs are graphs. Run by <b>researcher@php.newsroom</b>.</p>
+<div class="caveat"><p><b>Vault <code>{E(W["vault_id"])}</code>, in pack mode.</b> {E(SWV["note"])} The counts below are from the export of 23 October 2026, read before the watch moved into pack mode; the next export reads this vault. <a href="../../admin/pack-mode/index.html">Pack mode, measured</a>.</p></div>
+{hero if W.get("read_key") else ""}
+{vault_note(W["read_key"]) if W.get("read_key") else ""}
+{"" if not W.get("read_key") else vault_live(W["read_key"], False, 2, f'The vault has no app of its own yet, so it opens in the vault browser. It holds {W["files"]:,} files; the browser decrypts the folder tree before it lists it, so the first open takes minutes. <code>sgit clone</code> is the fast way in.')}
 <h2>What is in it</h2>
 <div class="stats">{stats}</div>
-<p class="small">Counts read from the vault's <code>index/counts.json</code>, <code>runs/</code> and <code>tips/</code> at head <code>{E(W["head"]["commit"])}</code> by <code>admin/build/export_watch.py</code>; no capture is copied to this site. The vault's latest commit: <q>{E(W["head"]["message"])}</q></p>
+<p class="small">Counts read from the watch's <code>index/counts.json</code>, <code>runs/</code> and <code>tips/</code> by <code>admin/build/export_watch.py</code>, in the export of 23 October 2026, before the move into pack mode; no capture is copied to this site. The latest commit read then: <q>{E(W["head"]["message"])}</q></p>
 
 <h2>Raw and analysis are separate trees</h2>
 <div class="wt-row"><div><p>Raw is what was served; analysis is what the watcher made of it, and it can be regenerated from raw plus the vocabularies plus the tools. That rule is how you tell the two apart. A snapshot in <code>raw/</code> is never edited or deleted: a new look at the page makes a new folder, and only when something changed. Every check, changed or not, is still a line in <code>checks/</code> with its status, access and hashes.</p></div>
@@ -2909,7 +2937,7 @@ python3 tools/discover.py promote --limit 30
 python3 tools/watch.py add &lt;url&gt; --cc gb --sector news --publisher bbc</pre>
 <p class="small">The other vaults behind this site are on <a href="../index.html">the vaults</a>. The evidence vault, where the story was assembled by hand on the morning of 22 October, is <a href="../../admin/vault/index.html">opened here</a>.</p>
 """
-    page('vaults/source-watch/index.html', 'The source watch: every outside source on php2shell, watched and snapshotted', f'The public source-watch vault: {W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.', body, kind='evidence', topics='php2shell vault source watch')
+    page('vaults/source-watch/index.html', 'The source watch: every outside source on php2shell, watched and snapshotted', f'The source-watch vault: {W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. What is in it, and how it is watched.', body, kind='evidence', topics='php2shell vault source watch')
 
 # ----------------------------------------------------------------------------- pages added in v0.3: the readers
 

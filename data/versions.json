@@ -1,6 +1,15 @@
 {
- "current": "0.14.18",
+ "current": "0.14.19",
  "versions": [
+  {
+   "version": "0.14.19",
+   "date": "2026-10-24",
+   "title": "the release history links the pages each release changed (on /admin/versions.html: new pages first, then by how much their text changed, eight shown and the rest behind a toggle), filled back to v0.2.0 and written at every release's own build, with the rule for agents in AGENTS.md; and the source watch is 7r83qic5 everywhere live (/vaults/, /vaults/source-watch/, its data and export, the team, the schedules, every register's keys, the policies, the live briefs), its read key not published until the vault UI opens pack vaults; dev's round 1 debrief",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.18",
    "date": "2026-10-24",

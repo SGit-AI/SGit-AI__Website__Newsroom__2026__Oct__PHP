@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.18. Not the live site.
+> Mockup D for review, built from the data of release v0.14.19. Not the live site.
 
-PHP Team console Console Overview Board 178 Agents 19 Releases 105 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 179 Agents 19 Releases 106 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.14.18 
-105 releases since 22 Oct 
+v0.14.19 
+106 releases since 22 Oct 
 
 Open on the board 
-178 
-82 done, 5 waiting 
+179 
+83 done, 5 waiting 
 
 Pages built 
-796 
+797 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,11 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 178
+#### Open 179
 
+ #267 
+dev's policy: add admin/build/release_pages.py and data/release-pages.json to scope.writes (made this round, at the edit… 
+ abp@newsroom.sgit 
  #265 
 From CI-003 (story-site): the front page's 'Three ways to read this site' on the first screen and named by task (Underst… 
  story-site 
@@ -50,9 +53,6 @@ From CI-003, step 2: a graph diff between any two releases: nodes and edges adde
  #260 
 From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sticks as one line or not at all (233px tod… 
  dev@php.newsroom 
- #259 
-Front page, 'What nobody knows yet': 'Where the 70% figure comes from. None of the pages that use it says how it was mea… 
- claude-story-site 
 
 #### Waiting 5
 
@@ -72,8 +72,11 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 82
+#### Done 83
 
+ #266 
+Every release links the pages it changed: under each release on /admin/versions.html, the main pages it changed (new fir… 
+ dev@php.newsroom v0.14.18 
  #255 
 Investigations: a section of the fact-check desk that chases one question down to its measurements; the first, how much … 
  factcheck 
@@ -92,13 +95,11 @@ Confirm which agent and address send the liaison's requests (the brief names the
  #245 
 Allow the mail agent to write to a publisher's published corrections address, for requests the editor approved one by on… 
  editor 
- #244 
-Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs b… 
- factcheck 
 
 ### Releases
  latest 8 
 
+ v0.14.19 2026-10-24 the release history links the pages each release changed (on /admin/versions.html: new pages first, then by how much their text ch… 
  v0.14.18 2026-10-24 The Sherpa's 11:45 pass: the join page's fixes checked live (two frictions closed), the risk graph's explore and gaps pages workin… 
  v0.14.17 2026-10-24 The Sherpa's round 2 debrief (24 October): two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against… 
  v0.14.16 2026-10-24 Conductor full pass 11:15 London: agents-status, schedules checked against runs, Sherpa note, run record 
@@ -106,7 +107,6 @@ Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first 
  v0.14.14 2026-10-24 Ideas from collaborators, CI-003: a power user's review of the new design, the telemetry and the risk graph (complementary views, … 
  v0.14.13 2026-10-24 The desk's morning wake: correction requests updated (AWS reworded its own 'broadly exploited', so R-004 is held and WIRED's reque… 
  v0.14.12 2026-10-24 Conductor light check 09:15 London: curator missed-run note, status lines, run record 
- v0.14.11 2026-10-24 factcheck run 4 (scheduled, 08:52 London): no claim changed; CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 … 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.14.18 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.19 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

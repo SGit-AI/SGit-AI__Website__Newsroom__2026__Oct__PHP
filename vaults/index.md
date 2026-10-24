@@ -6,7 +6,7 @@ Every vault this site is built from: the evidence vault and the source watch, bo
 
 # The vaults behind this site
 
-This site is rebuilt from vaults, never written by hand. 20 vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch as it was until 23 October, and the public face of the telemetry, its curated counts); one, the source watch as it runs now, in sgit's pack mode, is private until the vault UI can open pack vaults; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
+This site is rebuilt from vaults, never written by hand. 19 vaults sit behind it. Two are public and open read-only in your browser with the keys below (the evidence, and the public face of the telemetry, its curated counts); one, the source watch, is a pack-mode vault, private until the vault UI can open pack vaults; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
 
 Every vault behind this site: what each holds, who writes to it, and how to open it. Three kinds of credential appear here. A vault key reads and writes; it is never published. A read key reads only and cannot be turned into a vault key; the two public vaults publish theirs. An append token adds rows to one lane and cannot read anything; the telemetry lane publishes its token so every page can write to it.
 
@@ -22,27 +22,15 @@ The story as it was assembled on the morning of 22 October 2026: every source as
 
 [Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8%3A3ytzxm3g) · `sgit clone sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g`
 
-## [The source watch](../admin/pack-mode/index.html) private for now
+## [The source watch](../vaults/source-watch/index.html) private for now
 
-**Vault** `7r83qic5` · the pack-mode copy of oq9gflln, made on 23 October 2026; sgit-ai 0.24.0 or later reads it
+**Vault** `7r83qic5` · 913 pages from 597 publishers in 59 countries and 34 languages; 2946 snapshots, 38 runs, as of the export of 23 October 2026
 
-The source watch since 23 October 2026: the same vault, copied into sgit's pack mode (sgit-ai 0.24.0, sgit pack import), where every pass now writes. Pack mode clones and pushes in seconds where the normal vault took minutes or timed out.
+Every outside source on the story, watched on a schedule: country, sector, publisher and page; what access each check had; a snapshot whenever the content changed; and every snapshot and every change as a graph. A pack-mode vault (sgit-ai 0.24.0 or later): it clones and pushes in seconds.
 
-**Written by** researcher@php.newsroom, the agent that runs the watch. Data on this site: [data/pack-mode.json](../data/pack-mode.json).
+**Written by** researcher@php.newsroom, the agent that runs the watch. Data on this site: [data/source-watch.json](../data/source-watch.json).
 
 **Not published:** the vault key. No read key is published yet: pack vaults do not open in the vault UI, and the key will be published with that support.
-
-## [The source watch, as a normal vault (retired)](../vaults/source-watch/index.html) public read, retired
-
-**Vault** `oq9gflln` · 913 pages from 597 publishers in 59 countries and 34 languages; 2946 snapshots, 38 runs; head `20afaa62129d`
-
-Every outside source on the story, watched on a schedule: country, sector, publisher and page; what access each check had; a snapshot whenever the content changed; and every snapshot and every change as a graph. The evidence vault's 184 sources were its first snapshots. Retired on 23 October 2026, when the watch moved to its pack-mode copy (7r83qic5); kept read-only, because the watch data on this site and the snapshots it cites were exported from it.
-
-**Written by** researcher@php.newsroom, until 23 October 2026; nobody since. Data on this site: [data/source-watch.json](../data/source-watch.json).
-
-**Read key** `sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277:oq9gflln`
-
-[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277%3Aoq9gflln) · `sgit clone sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277:oq9gflln`
 
 ## [The telemetry vault](../admin/telemetry/index.html) private, with a public append lane
 
@@ -234,4 +222,4 @@ The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgi
 
 
 ---
-site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html

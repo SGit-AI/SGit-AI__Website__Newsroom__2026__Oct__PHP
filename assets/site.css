@@ -733,3 +733,6 @@ ul.pev li{margin:.5rem 0}
 .dk-in-progress{border-left-color:var(--warm,#c77d1a)}
 .dk-in-progress .dk-st{color:var(--warm,#c77d1a);font-weight:700}
 .dk-done .dk-st{color:var(--accent,#0f6e5a);font-weight:700}
+.rp a{white-space:normal}.rp-new{font-size:.7rem;padding:0 .35rem;border-radius:999px;background:var(--accent);color:var(--bg);vertical-align:1px}
+.rp{margin:.4rem 0}.rp-more{display:inline}.rp-more summary{display:inline;cursor:pointer;color:var(--accent)}.rp-more[open] summary{margin-right:.3rem}.rp-more p{margin:.3rem 0 0}
+.rp-gone{color:var(--dim)}

@@ -606,7 +606,7 @@ The editor, in the session, 23 October 2026: one more pass here, "most likely th
 
 ### What exists to build on
 
-- **The source watch** (`oq9gflln`). Everything a pass needs is inside the vault: the tools (`tools/`), the taxonomy, the targets, the state and `tools/pass.sh`, which runs one full pass. A session that clones the vault with its key can run a pass and push it, with nothing from this session.
+- **The source watch** (`7r83qic5`). Everything a pass needs is inside the vault: the tools (`tools/`), the taxonomy, the targets, the state and `tools/pass.sh`, which runs one full pass. A session that clones the vault with its key can run a pass and push it, with nothing from this session.
 
 - **The schedule vault** (`weic8imn`, public). The researcher's schedule (`schedules/researcher.json`, "setting up") and its repeating task, T-001 "A source watch pass", until 31 October. The wake protocol is in `AGENTS.md`, section 7.
 
@@ -656,15 +656,15 @@ The editor, in the session, 23 October 2026: one more pass here, "most likely th
 
 You are **researcher@php.newsroom (scheduled)**, the session that runs the source watch for php.oct.2026.newsroom.sgit.ai (the two PHP flaws of October 2026, CVE-2026-109618 and CVE-2026-109619, "php2shell"). The editor is Dinis Cruz. You take over the routine passes from the session that built the watch. Read `CLAUDE.md`, `admin/security/REQUIREMENTS.md` and `AGENTS.md` section 7 in this repository first, then this brief in full: `admin/content/briefs/2026-10-23__brief__the-scheduled-source-watch.md`.
 
-Your one job: when the schedule vault says a pass is due, run one pass of the source watch (`oq9gflln`), push it, record the run, and report. Nothing else.
+Your one job: when the schedule vault says a pass is due, run one pass of the source watch (`7r83qic5`), push it, record the run, and report. Nothing else.
 
 #### Setup (the first turn only)
 
-1. `pip3 install sgit-ai --break-system-packages`. Clone the schedule vault read-only in your scratchpad: `sgit clone sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06:weic8imn schedule`. Playwright and Chromium come with the environment; do not run `playwright install`.
+1. `pip3 install 'sgit-ai>=0.24.0' --break-system-packages` (the watch is a pack vault). Clone the schedule vault read-only in your scratchpad: `sgit clone sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06:weic8imn schedule`. Playwright and Chromium come with the environment; do not run `playwright install`.
 
 2. Download https://pki.sgit.ai/agents/pki-agent.mjs into its own folder and read it before running it. Then `keygen --name "researcher@php.newsroom (scheduled source watch, Claude Code session)" --runtime "claude-code, cloud session" --session`, `pin sha256:db7f79fdd87e030a` and `keyqr --out researcher-key.png`. Give the editor your fingerprint (`whoami`), the link and the image. Then stop and wait.
 
-3. The editor sends a QR image that seals the watch's vault key **as a file**. `read-qr` it, then `open  --save `. Accept it only if `signature` is `checks`, `problems` is `[]`, the sender is `sha256:db7f79fdd87e030a`, and the saved file is a single `sgit_private_vault_…:oq9gflln` token (check its shape without printing it). If the key arrives as message text instead, say so to the editor and ask for it as a file.
+3. The editor sends a QR image that seals the watch's vault key **as a file**. `read-qr` it, then `open  --save `. Accept it only if `signature` is `checks`, `problems` is `[]`, the sender is `sha256:db7f79fdd87e030a`, and the saved file is a single `sgit_private_vault_…:7r83qic5` token (check its shape without printing it). If the key arrives as message text instead, say so to the editor and ask for it as a file.
 
 4. In your scratchpad, never in this repository: `sgit clone "$(cat )" watch`, then delete the saved file. The clone is close to 3 GB on disk (1.3 GB of files, about 25,000 of them, plus sgit's own store), so it takes a while. Never print the key.
 
@@ -726,7 +726,7 @@ And, on publishing it: "publish that brief on the site, since we should have a g
 
 ### What exists to build on
 
-- **The source watch** (`oq9gflln`, researcher@php.newsroom) writes the promotion queue, `index/promote.json`: snapshots that should become sources in the evidence vault so a page can cite them as `[[slug]]`.
+- **The source watch** (`7r83qic5`, researcher@php.newsroom) writes the promotion queue, `index/promote.json`: snapshots that should become sources in the evidence vault so a page can cite them as `[[slug]]`.
 
 - **The evidence vault** (`3ytzxm3g`) at head `f3c5db0d9873`: 45 rows promoted by the first curator session on 22 and 23 October, one skipped, all listed in `notes/promotions__curator.json`.
 
@@ -760,7 +760,7 @@ And, on publishing it: "publish that brief on the site, since we should have a g
 
 - **The session's fingerprint:** `sha256:6c81ae257fee1938` (encryption key `sha256:a48a6ff38982eae5`), made on 23 October 2026. The `pki-agent.mjs` it ran had sha256 `e4080d8ee4292ae5a93c2627fe7027d36e155a732c7af9cc2dea1017f46ce74c`, not the one the prompt names (`8ec809cf...`); its commands were read first and only reach the register, DNS and gists.
 
-- **It depends on the source watch.** A wake only promotes what the watch's queue (`oq9gflln`, `index/promote.json`) already holds, so the watch must have run and pushed before a wake. The watch is run by hand today and has no schedule of its own (board); once it has one, it should run at least half an hour before each wake: for these times, 07:30, 10:00, 12:30, 15:00 and 17:30 London. A wake before the watch has pushed says "nothing new".
+- **It depends on the source watch.** A wake only promotes what the watch's queue (`7r83qic5`, `index/promote.json`) already holds, so the watch must have run and pushed before a wake. The watch is run by hand today and has no schedule of its own (board); once it has one, it should run at least half an hour before each wake: for these times, 07:30, 10:00, 12:30, 15:00 and 17:30 London. A wake before the watch has pushed says "nothing new".
 
 - **The queue moved to the pack vault (the editor, evening of 23 October).** The source watch continues in `7r83qic5`, its sgit 0.24.0 pack-mode copy (see [moving a vault to pack mode](#2026-10-23__brief__moving-a-vault-to-pack-mode)); the researcher's queue there (282 rows, written 22:42 UTC) is the one the curator works. The wake prompts were changed to clone and pull that vault, and to match rows to the evidence vault by URL as well as slug. The editor sent that vault's key as message text; the curator only reads from it. The evidence vault stays a normal vault (the site's browser links need that).
 
@@ -774,17 +774,17 @@ And, on publishing it: "publish that brief on the site, since we should have a g
 
 You are **curator@php.newsroom**, the evidence curator for php.oct.2026.newsroom.sgit.ai (the two PHP flaws of October 2026, CVE-2026-109618 and CVE-2026-109619, "php2shell"). The editor is Dinis Cruz. You take over from an earlier curator session; its work is in the evidence vault at head `f3c5db0d9873` and in `notes/promotions__curator.json` there. Read `CLAUDE.md` and `admin/security/REQUIREMENTS.md` in this repository first.
 
-Your one job: keep the **evidence vault** (`3ytzxm3g`) current by promoting the rows of the source watch's queue (`oq9gflln`, `index/promote.json`) that `notes/promotions__curator.json` does not list yet. This session is woken on a schedule to do it. Nothing else.
+Your one job: keep the **evidence vault** (`3ytzxm3g`) current by promoting the rows of the source watch's queue (`7r83qic5`, `index/promote.json`) that `notes/promotions__curator.json` does not list yet. This session is woken on a schedule to do it. Nothing else.
 
 #### Setup (the first turn only)
 
-1. `pip3 install sgit-ai --break-system-packages`. Clone the watch read-only, outside the repository, in your scratchpad: `sgit clone sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277:oq9gflln watch`
+1. `pip3 install 'sgit-ai>=0.24.0' --break-system-packages` (the watch is a pack vault, and older versions cannot read it).
 
 2. Download https://pki.sgit.ai/agents/pki-agent.mjs into its own folder and read it before running it (its sha256 on 23 October was `8ec809cf236827c16e94f47541b388b70a9ba8feee7dd4248dcd306974133aef`; if it differs, read what changed). Then `keygen --name "curator@php.newsroom (scheduled, Claude Code session)" --runtime "claude-code, cloud session" --session`, `pin sha256:db7f79fdd87e030a` and `keyqr --out curator-key.png`. Give the editor your fingerprint (`whoami`), the link and the image. Then stop and wait.
 
 3. The editor sends a QR image that seals the evidence vault key **as a file**. `read-qr` it, then `open  --save `. Accept it only if `signature` is `checks`, `problems` is `[]`, the sender is `sha256:db7f79fdd87e030a`, and the saved file is a single `sgit_private_vault_…:3ytzxm3g` token (check its shape without printing it). If the key arrives as message text instead, `open` prints it: say so to the editor and ask for it as a file.
 
-4. `sgit clone "$(cat )" evidence`, then delete the saved file. Push with `sgit --token "$SG_SEND_ACCESS_TOKEN" push` the first time. Never print the key or the token.
+4. `sgit clone "$(cat )" evidence`, then delete the saved file. The watch (`7r83qic5`) has no published read key: the editor seals its vault key to you the same way, and you clone it as `watch`, read it and never push to it. Push with `sgit --token "$SG_SEND_ACCESS_TOKEN" push` the first time. Never print the key or the token.
 
 5. Read `evidence/README.md` and `watch/README.md`.
 
@@ -1233,7 +1233,7 @@ the night before, there was no public record of companies being hit.
 
 ### What the watch holds already (23 October, 12:40 UTC)
 
-Every row below is a captured page in the source watch (vault `oq9gflln`, `index/angles/scanner-noise.json`), with
+Every row below is a captured page in the source watch (vault `7r83qic5`, `index/angles/scanner-noise.json`), with
 
 its snapshot and hash. Every quote was checked against the snapshot when the file was written.
 
@@ -1371,7 +1371,7 @@ and where an organisation sometimes says something first. That's the evidence tw
 
 the statement on /compromise/, and the scanner-noise angle opened the same day.
 
-### The job: `job-03-community` (watch vault `oq9gflln`)
+### The job: `job-03-community` (watch vault `7r83qic5`)
 
 - **Three questions, in order:**
 
@@ -3257,4 +3257,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.14.18 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.14.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
