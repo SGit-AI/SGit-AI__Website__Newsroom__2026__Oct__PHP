@@ -1,6 +1,24 @@
 {
- "current": "0.14.20",
+ "current": "0.14.22",
  "versions": [
+  {
+   "version": "0.14.22",
+   "date": "2026-10-24",
+   "title": "the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.21",
+   "date": "2026-10-24",
+   "title": "the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.20",
    "date": "2026-10-24",

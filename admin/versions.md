@@ -6,7 +6,23 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.14.20. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.14.22. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.14.22 · 2026-10-24
+
+the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page
+Pages changed (9): dev@php.newsroom, build, gate and release: the team · The fact pipeline: from a web page to a reader · The team: the people, the agents and how they work together · Release history · What's new: every change, release by release · Admin and engineering · Runs: what the agents do on their own, and every time they did it · The board and 1 more
+[How the story changed, release by release](../versions/index.html)
+
+ Vault commit `1845598d9a38`.
+
+### v0.14.21 · 2026-10-24
+
+the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page
+Pages changed (9): dev@php.newsroom, build, gate and release: the team · The fact pipeline: from a web page to a reader · The team: the people, the agents and how they work together · Release history · Admin and engineering · The board · What's new: every change, release by release · Runs: what the agents do on their own, and every time they did it and 1 more
+[How the story changed, release by release](../versions/index.html)
+
+ Vault commit `1845598d9a38`.
 
 ### v0.14.20 · 2026-10-24
 
@@ -836,4 +852,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.14.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.14.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

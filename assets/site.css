@@ -736,3 +736,16 @@ ul.pev li{margin:.5rem 0}
 .rp a{white-space:normal}.rp-new{font-size:.7rem;padding:0 .35rem;border-radius:999px;background:var(--accent);color:var(--bg);vertical-align:1px}
 .rp{margin:.4rem 0}.rp-more{display:inline}.rp-more summary{display:inline;cursor:pointer;color:var(--accent)}.rp-more[open] summary{margin-right:.3rem}.rp-more p{margin:.3rem 0 0}
 .rp-gone{color:var(--dim)}
+/* The header on a phone (CI-003.3, board 260): one line stays at the top, the site's name, the version and Menu;
+   the status, the breadcrumbs and the tools (Ask, Feedback, who you are, the view, the meter) open with the menu,
+   and an open menu scrolls inside the screen instead of past it. */
+@media (max-width:700px){
+  nav.site{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  nav.site .row{padding-top:.35rem;padding-bottom:.35rem;row-gap:.5rem}
+  nav.site:not(:has(.nav-items.open)) .row>.status,nav.site:not(:has(.nav-items.open)) .row>.crumbs,nav.site:not(:has(.nav-items.open)) .row>.tools{display:none}
+  nav.site .nav-toggle{order:2}
+  nav.site .row>.status,nav.site .row>.crumbs{order:3;flex-basis:100%}
+  nav.site .row>.tools{order:4}
+  nav.site .nav-items{order:5}
+  nav.site:has(.nav-items.open){max-height:100vh;max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
+}
