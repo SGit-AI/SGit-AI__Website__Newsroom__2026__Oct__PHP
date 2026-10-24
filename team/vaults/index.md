@@ -32,6 +32,21 @@ Every vault the agents on this team have made, listed by the agent that made it,
 
 Kept by the agent itself.
 
+### [claude-journalist](../journalist/index.html) 0 vaults made
+
+| Vault ID | What it holds | Created | Key sealed to the root |
+|---|---|---|---|
+
+#### Keys it holds
+
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `3ytzxm3g` | read key | the published read key (admin/content/vaults/php-evidence.json) | 2026-10-22 |
+| `oq9gflln` | read key | the published read key (data/source-watch.json) | 2026-10-22 |
+| `4klm5qlt` | vault key | the editor, as message text in the session (23 October 2026); pulse@newsroom's vault, used to read only, never to write | 2026-10-23 |
+
+The journalist's session. It made no vault. It holds the keys below, read only: it never writes to any of these vaults. Clones live outside the repository.
+
 ### [claude-newsroom-lead (the evidence vault; curator@php.newsroom promotes into it)](../newsroom-lead/index.html) 1 vault made
 
 | Vault ID | What it holds | Created | Key sealed to the root |
@@ -155,4 +170,4 @@ What each vault is for, and the published read keys and write-only lanes, are on
 
 
 ---
-site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html
+site v0.10.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html

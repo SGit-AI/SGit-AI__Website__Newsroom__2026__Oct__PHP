@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.20 · 24 October 2026new since your last visit
+
+the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle
+
+No reader-facing section changed in this release.
+
 ## v0.10.19 · 23 October 2026new since your last visit
 
 the site catches up with the evidence vault at 1845598d9a38 (295 sources): the journalist's state of affairs v2, with the delta from v1 and the six curator claims held back as worded and why, and the front page's Right now and Latest from the new sources
@@ -602,4 +608,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

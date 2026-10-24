@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Times are UTC unless they say London.
 
-3schedules29runs a night, today116runs recorded45runs with changes and no article
+3schedules29runs a night, today117runs recorded45runs with changes and no article
 
 ## Quiet hours
 
@@ -34,10 +34,11 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 70, researcher@php.newsroom: 38, synthetic@php.newsroom: 6, Fact-check desk: 2.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 71, researcher@php.newsroom: 38, synthetic@php.newsroom: 6, Fact-check desk: 2.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
+| 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.10.20` | the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-23T12:40:24Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261023T124024Z` | 1 pages due, 1 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-23T12:40:18Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261023T124018Z` | 1 pages due, 1 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-23T12:39:02Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261023T123902Z` | 1 pages due, 1 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
@@ -157,4 +158,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.10.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

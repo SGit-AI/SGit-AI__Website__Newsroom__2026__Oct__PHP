@@ -1,6 +1,15 @@
 {
- "current": "0.10.19",
+ "current": "0.10.20",
  "versions": [
+  {
+   "version": "0.10.20",
+   "date": "2026-10-24",
+   "title": "the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.10.19",
    "date": "2026-10-23",

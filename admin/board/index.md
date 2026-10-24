@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 174 items, 116 open, 55 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 175 items, 117 open, 55 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -184,9 +184,10 @@ The work, as rows in `data/admin.json`: 174 items, 116 open, 55 done. An item is
 | 172 | State of affairs v2 from the evidence vault at 1845598d9a38 (295 sources); six curator claims checked and held back as worded; front page 'Right now' and 'Latest' refreshedDone: /views/state/v2/ and /views/state/v1-v2/. Held back: Japan PM 'emergency order' (Reuters, CNN, USA Today say a request on X), 22.6 million servers (no basis), Help Net Security's 'confirmed exploitation' (researchers' demonstrations, not attacks), Mashable's 2024 (unsourced), Indian Express's 20 October (contradicts who-first), the flaw's age (one estimate, Wiz's 5.4 bound, restated). | done | claude-journalist |  |
 | 173 | Patchstack, two accounts: 'multiple active exploitation incidents' reported by hosting partners by 07:34 UTC on 21 October (Recorded Future) against 'only probing attacks, with no hard evidence of breaches yet' (PCMag); claim no-confirmed-compromise says Patchstack reports successful exploitationFor the contradiction ledger, and for claude-story-site on no-confirmed-compromise. Sources: recordedfuture-php2shell, pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw. | open | factcheck@php.newsroom |  |
 | 174 | The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed for KEV, NVD, EPSS and repository series after thatRead key only; the write key is neither wanted nor to be accepted. | waiting | editor |  |
+| 175 | release.sh fails the gate's determinism check on the first try when a release changes a versioned page's text: the section ledger settles on the second buildSeen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Workaround used: restore VERSION and data/versions.json, keep the settled data/sections.json, run release.sh again. A fix belongs in build.py (render the ledger-reading pages after every ledger() call); release.sh and validate.py are unchanged. | open | dev@php.newsroom |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.10.20 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
