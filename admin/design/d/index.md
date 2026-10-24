@@ -20,7 +20,7 @@ Open on the board
 58 done, 5 waiting 
 
 Pages built 
-750 
+751 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -57,7 +57,7 @@ Gate checks for the graph: verbs and kinds only from data/ontology.json, no dang
 #### Waiting 5
 
  #180 
-Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then … 
+The Sherpa drains the lanes (the editor, 24 October 2026): a go for its schedule (data/schedule/sherpa.json, proposed: e… 
  editor 
  #174 
 The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed … 

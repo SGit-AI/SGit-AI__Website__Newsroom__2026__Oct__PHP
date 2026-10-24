@@ -5573,6 +5573,9 @@ def sched_load():
         runs.append(r)
     runs.sort(key=lambda r: (r['started'], r['run']), reverse=True)
     msgs = sorted((sched_message(fn) for fn in glob.glob(os.path.join(DATA, 'messages', '*', '*.md'))), key=lambda m: m['id'], reverse=True)
+    known = set(cards) | {m['id'] for m in TEAM['members']} | {e['agent'] for e in load('schedules').get('expected', [])} | {'all', 'editor'}
+    for m in msgs:
+        if m['box'] not in known: sys.exit(f'data/messages/{m["box"]}/: no agent is called {m["box"]!r}, so no wake would read it; use the id on its card or on /team/')
     read = {}
     for r in reversed(runs):
         for i in r.get('read', []): read.setdefault(i, r)
