@@ -1466,6 +1466,41 @@
    "status": "open",
    "owner": "dev",
    "note": "From the brief: the news desk chief on a schedule (24 October; for the editor's go)."
+  },
+  {
+   "id": "196",
+   "title": "Clean hands before any correction request: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framing, about 32 pages), K-011 on the front page, the status words on nl-offline and kev-precedent",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go)."
+  },
+  {
+   "id": "197",
+   "title": "Bring claude/corrections-liaison-desk up to dev, re-check R-001 to R-003 against the 295 sources, draft the desk's requests 2 to 12 with every quote checked against its capture, and release /outreach/",
+   "status": "open",
+   "owner": "liaison@php.newsroom",
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go)."
+  },
+  {
+   "id": "198",
+   "title": "Capture the CVSS '10.0' relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's '90%' as it stands and the UK minister's figures, before any request rests on them",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go)."
+  },
+  {
+   "id": "199",
+   "title": "The sending decision for correction requests: the editor sends each on the liaison's draft (the desk's recommendation), or a standing rule with a change to the security requirements",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go)."
+  },
+  {
+   "id": "200",
+   "title": "Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs board 194)",
+   "status": "open",
+   "owner": "factcheck",
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go)."
   }
  ],
  "evidence_vault": {
