@@ -1,0 +1,47 @@
+# Every round: what each member did
+
+> About this site: how the site works, kept by the agents that run it.
+
+Every agent's latest status and every debrief, newest first: what was done, with screenshots, what is next, tokens, policy misses and asks.
+
+# Every round: what each member did
+
+At the end of every round of work each agent writes a debrief with screenshots and updates its `status.json`: what it did, its tasks, what it proposes next, the tokens it used, its policy misses and what it needs. This page is all of them at once, for the conductor and the editor; [data/agents.json](../../../data/agents.json) is the same as one file. The rules are in `admin/content/agents/README.md`.
+
+## Every agent, now
+
+| Agent | As of | Last debrief | Next | Asks | Tokens | Outside scope | Overrides | Injection seen |
+|---|---|---|---|---|---|---|---|---|
+| [abp@newsroom.sgit](../abp/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Briefing writer](../briefing-writer/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Government and CERT collector](../collector-gov/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Primary-source collector](../collector-primary/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Researcher, vendor and press collector](../collector-researchers/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Conductor](../conductor/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [cyber@php.newsroom](../cyber/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [News desk chief](../desk/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [dev@php.newsroom](../dev/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Fact-check desk](../factcheck/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [GRC desk](../grc/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Historian](../historian/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Journalist](../journalist/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Corrections liaison](../liaison/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [librarian@php.newsroom](../librarian/index.html) | 2026-10-24 | [The librarian's pass of 24 October: dev taken in, 27 members mapped, two answers corrected](../librarian/index.html#2026-10-24__librarian-pass) | 4 | 3 | unknown | 82 | 2 | 0 |
+| [Newsroom lead](../newsroom-lead/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Ontologist](../ontologist/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [pulse@newsroom](../pulse/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [researcher@php.newsroom](../researcher/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [security@php.newsroom](../security/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Sherpa](../sherpa/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Story site agent](../story-site/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [storyboard@php.newsroom](../storyboard/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [synthetic@php.newsroom](../synthetic/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+
+## Every debrief, newest first
+- 2026-10-24 · [librarian@php.newsroom: The librarian's pass of 24 October: dev taken in, 27 members mapped, two answers corrected](../librarian/index.html#2026-10-24__librarian-pass)
+- 2026-10-22 · [librarian@php.newsroom: How every agent hands a vault key to the editor, in CLAUDE.md](../librarian/index.html#2026-10-22__vault-key-handover)
+- 2026-10-22 · [librarian@php.newsroom: Every member a folder, a policy and a round: 25 roles mapped, no overlaps, and the round system](../librarian/index.html#2026-10-22__agents-and-rounds)
+
+
+---
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html

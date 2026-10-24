@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.11.7",
+"site": "0.12.0",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -5388,11 +5388,11 @@
 "zone": "for-you",
 "title": "Can anything be done to fix it, or do we just have to wait for updates?",
 "path": "questions/fix-or-wait/index.html",
-"hash": "5ca27c640a56",
-"v": 1,
+"hash": "4614fc324dd0",
+"v": 2,
 "first": "0.4.1",
-"changed": "0.4.1",
-"date": "2026-10-22"
+"changed": "0.12.0",
+"date": ""
 },
 "q-most-websites": {
 "kind": "question",
@@ -5410,22 +5410,22 @@
 "zone": "for-you",
 "title": "Has anyone actually been hacked?",
 "path": "questions/been-hacked/index.html",
-"hash": "23acb31d562e",
-"v": 2,
+"hash": "bd0223e3643e",
+"v": 3,
 "first": "0.4.1",
-"changed": "0.5.8",
-"date": "2026-10-22"
+"changed": "0.12.0",
+"date": ""
 },
 "q-passwords": {
 "kind": "question",
 "zone": "for-you",
 "title": "Do I need to change my passwords?",
 "path": "questions/passwords/index.html",
-"hash": "3adbedd9e363",
-"v": 1,
+"hash": "baed68722ec2",
+"v": 2,
 "first": "0.4.1",
-"changed": "0.4.1",
-"date": "2026-10-22"
+"changed": "0.12.0",
+"date": ""
 },
 "q-am-i-affected": {
 "kind": "question",

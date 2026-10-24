@@ -35,6 +35,7 @@ Fact-check: how sure we arefactcheck/index.htmlEvery claimclaims/index.html
 | 087 | Run the desk on a schedule, every four hours: the claims that changed, the open tickets, the weak and the contested, KEV and the moving sources; a full sweep once a dayFrom the brief: a fact-checker joins the team (22 October). | open |  |
 | 103 | Fact-check runs: move the schedule to CRON_TZ=Europe/London 52 8-20/4 * * * once the editor agrees; a run that moves a grade or opens a ticket leaves a dated article with run:  | open |  |
 | 183 | For the fact-check desk: 15 claims marked confirmed rest on one independent origin in the graph (a record from one party, such as the CVE numbers, is fine; a reading from one party may not be); and the graph's echo formula finds wikimedia-precaution (one origin, four outlet relays). Compare with the desk's levels and say where they disagree | open |  |
+| 212 | Claim no-confirmed-compromise says Hadrian and Patchstack 'report successful exploitation'; Security.NL and BleepingComputer's captures describe the same vendors' reports as attempts, not compromises. Grade the vendor half of the claim (found in the librarian's pass of 24 October)Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 
 ## What they have done
 - Run 1, 22 October: all 70 claims graded against vault 31ccc515c29f; 3 high and 56 medium findings, 10 contradictions recorded, 6 pieces of outside evidence; Italy's offline advice found misread
@@ -54,4 +55,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.html
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.html

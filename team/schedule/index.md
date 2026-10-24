@@ -10,7 +10,7 @@ Every scheduled agent on one day, its objective, its instructions, every run and
 
 Each agent that runs on a schedule keeps one card in this site's repository: its objective, when it wakes, and the instructions each wake starts from. Every wake leaves a run record, and agents write to each other in the same repository, so this page shows the whole picture as of the last release: who runs when, what each is told, what each did, and what is waiting for it.
 
-4schedules active1proposed26wakes a day, active4runs recorded7messages unread
+5schedules active1proposed27wakes a day, active4runs recorded7messages unread
 
 ## One day, every wake
 
@@ -25,11 +25,12 @@ Open an agent for its instructions, its runs and its messages.
 | [cartographer](cartographer/index.html)cartographer@php.newsroom | Keep the story graph whole as the evidence grows: every new party, spelling, claim, number and signal resolved into the ontology, the site's graphs joined by declared bridges, and the long tail found by connection handed to the desk that owns it. | endedarchived on 24 October 2026 at the editor's word: the role is the ontologist, whose card is data/schedule/ontologist.json; this card never ran | 14:40every day, Europe/London; 1 a day | Sonnet | ok2026-10-24 00:00 UTC | 1 |
 | [conductor](conductor/index.html)conductor@php.newsroom | Keep every agent and the humans in step: what each is doing and waiting for, what came in on the lanes, what ran and what did not. | activethe editor's go, 24 October 2026; first wake 07:15 London that morning. The lanes are the Sherpa's to drain, not the conductor's | 07:15, 08:15, 09:15, 10:15, 11:15, 12:15, 13:15, 14:15, 15:15, 16:15, 17:15, 18:15, 19:15, 20:15, 21:15every day, Europe/London; 15 a day | Sonnet | ok2026-10-24 00:35 UTC | 1 |
 | [curator](curator/index.html)curator@php.newsroom (scheduled) | Promote what the source watch captured into the evidence vault, a bounded batch a wake, in priority order, each capture read first. | activerunning since 23 October 2026. Card drafted by the conductor from its scheduled tasks; the curator to confirm it and keep it | 08:00, 10:30, 13:00, 15:30, 18:00every day, Europe/London; 5 a day | the session's model | none yet | 2 |
+| [librarian](librarian/index.html)librarian@php.newsroom | Keep everything findable and owned as twenty sessions release on their own: every new file and page mapped to exactly one member, every member's folder in step with the record, every new debrief indexed, and every reader answer re-checked against the claims it rests on. | activethe editor's go in the librarian's session on 24 October 2026 ('yes 07:13 works, set it up'); a scheduled task wakes this session daily. The scheduled task (trig_015dBN3kZZNti6c9BFE2xMj4) was created in the same session at 00:57 UTC on 24 October; its first wake is 07:13 London that day. | 07:13every day, Europe/London; 1 a day | the model of the librarian's own session | none yet | 2 |
 | [ontologist](ontologist/index.html)ontologist@php.newsroom | Keep the site's fractal semantic graphs whole as the evidence grows: every new party, spelling, claim, number and signal resolved into the ontology, the site's graphs joined by declared bridges, and the long tail found by connection handed to the desk that owns it. | activeactive from 24 October 2026 at the editor's go ('can you create that schedule?'): the claude.ai scheduled task 'Ontologist daily pass', daily at 14:40 London, a fresh session each firing; first proposed the same day as the cartographer's card | 14:40every day, Europe/London; 1 a day | Sonnet | none yet | 1 |
 | [researcher](researcher/index.html)researcher@php.newsroom (scheduled source watch) | The source watch: probe every watched source, capture what changed into the watch's pack vault, rebuild the series, and report what moved. | activerunning since 23 October 2026. Card drafted by the conductor from its scheduled tasks; the researcher to confirm it and keep it. Both wake prompts still name the schedule vault, which this replaces: the editor's session to change them | 07:00, 09:30, 12:00, 14:30, 17:00every day, Europe/London; 5 a day | the session's model | none yet | 2 |
 | [sherpa](sherpa/index.html)sherpa@php.newsroom | Keep the readers' side of the site in view: drain what readers and power users send through the collaborators lane, answer it point by point in Feedback from collaborators, walk what changed on the live site as a reader would, and keep the friction log and the brief to the conductor true. | proposeddrafted by the conductor on 24 October 2026 at the editor's word that the Sherpa drains the lanes, and confirmed and extended by the Sherpa the same day at the editor's request ('a couple of times a day'); for the editor's go; no scheduled task exists for it yet | 07:45, 09:45, 11:45, 13:45, 15:45, 17:45, 19:45, 21:45every day, Europe/London; 8 a day | Sonnet | none yet | 2 |
 
-Asked by the editor for a schedule, no card yet: **pulse** (already runs on a schedule; to write its card), **librarian** (asked by the editor on 24 October to propose one).
+Asked by the editor for a schedule, no card yet: **pulse** (already runs on a schedule; to write its card).
 
 ## The latest runs
 
@@ -114,4 +115,4 @@ Where every agent is, scheduled or not: [status](../status/index.html). The quie
 
 
 ---
-site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html

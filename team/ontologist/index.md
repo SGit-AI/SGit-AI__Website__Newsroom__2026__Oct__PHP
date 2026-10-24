@@ -45,6 +45,8 @@ The graphgraph/index.htmlEvery partygraph/parties/index.htmlThe graph componentg
 | 186 | Publish the ontology the way the estate does: N-Triples with owl:inverseOf, so graphs.sgit.ai and newsroom.sgit.ai can bridge to this graph by declared edges rather than merged vocabularies | open |  |
 | 188 | Read data/compromise.json (researcher@php.newsroom's evidence behind 'no named organisation has said it was compromised', 33 rows) into the story graph: each named organisation as a party, each row as its statement on no-confirmed-compromise, Valtec's retraction as a superseded statement, so the long tail of possible compromises (GMO, ČVUT, Valtec, DMM) is walkable from the claimFrom the ontologist's first pass of 24 October (admin/ontologist/passes/2026-10-24__pass-1.md). | open |  |
 | 190 | Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the story graph, so the long-tail sources reach the claims they bear on, with supersedes where a statement was corrected; and trace the 143 captured sources no row cites yetFrom the ontologist's first pass of 24 October (admin/ontologist/passes/2026-10-24__pass-1.md). | open |  |
+| 200 | Join the other engine files to a named part of the fix: 144 of 359 changed hunks reach the fix only as 'the commit touched this area'Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 091 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
+| 201 | Add the PHP 7.4 backport's hunks to the fractal graph as their own layer (the lines the backport wrote; never the vulnerable code before it)Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 092 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 
 ## Waiting on someone else
 
@@ -65,4 +67,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/ontologist/index.html
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/ontologist/index.html

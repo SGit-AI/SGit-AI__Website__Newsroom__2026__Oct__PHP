@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**9** evidence · **28** derived · **14** authored · **31** site
+**9** evidence · **30** derived · **14** authored · **32** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -58,6 +58,8 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/readings.json` | claude-journalist | other models' notes, compared point by point with the claims and captured sources | [readings/index.html](../readings/index.html) |
 | `data/patching.json` | claude-journalist | the PHP project's releases and backport branches, and the NCSC-NL inventory's own rows, named exactly and checked by the gate | [patching/index.html](../patching/index.html) |
 | `data/graph.json` | admin/build/build.py | every claim, number, event, exploitation signal, agency's advice, source, capture and contradiction, joined through data/entities.json and data/attribution.json under the verbs of data/ontology.json; generated at build | [graph/index.html](../graph/index.html) |
+| `data/arcs.json` | the librarian (librarian@php.newsroom) | the claims, timeline phases, personas and review nodes: risks and story arcs, and the joins from stakeholders to risks and from claims to the flaws and the parts of the fix; every row names ids that exist | [fractal/index.html](../fractal/index.html) |
+| `data/fractal.json` | admin/build/build.py | data/arcs.json, claims, timeline, personas, review and review/code/files.json, assembled into one graph from stakeholders to changed lines | [fractal/ui/index.html](../fractal/ui/index.html) |
 | `data/plain.json` | the design agent | the front page's plain-English questions and moments; every fact cites vault slugs | [index.html](../index.html) |
 | `data/factcheck.json` | admin/factcheck/fc.py export (factcheck@php.newsroom) | the desk's assessments, contradiction ledger, Issues-FS tickets and run reports in admin/factcheck/, each grade resting on captures named by sha256 | [factcheck/index.html](../factcheck/index.html) |
 | `data/grc.json` | grc@php.newsroom | the claims, sources, code review graph, stories and team on this site, with ratings and assignments by the GRC desk | [grc/index.html](../grc/index.html) |
@@ -97,6 +99,7 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/roles.json` | claude-story-site | the team, the pipeline and the audiences | [team/index.html](../team/index.html) |
 | `data/admin.json` | dev@php.newsroom | roles, the board, the vaults | [admin/roles/index.html](../admin/roles/index.html) |
 | `data/team.json` | conductor@php.newsroom | the roster of the team, human and agent: role, what each owns, rules, home pages, what each has done; the run and the three coordination vaults | [team/index.html](../team/index.html) |
+| `data/agents.json` | admin/build/build.py (librarian@php.newsroom) | admin/content/agents/*/: every member's policy.json, status.json and debriefs, with the computed delta and the scope checks | [admin/agents/rounds/index.html](../admin/agents/rounds/index.html) |
 | `data/schedules.json` | conductor@php.newsroom | the account's scheduled tasks and this repository's workflows, as observed; the quiet-hours rule and the article rule | [team/runs/index.html](../team/runs/index.html) |
 | `data/schedule-vault.json` | conductor@php.newsroom | the retired schedule vault (weic8imn): its ID and published read key, kept so the archive stays readable; replaced on 24 October 2026 by data/schedule/ | [vaults/index.html](../vaults/index.html) |
 | `data/agents-status.json` | conductor@php.newsroom | each agent's session record, the repository's branches, the scheduled tasks and the data files' dates, read without asking the agents | [team/status/index.html](../team/status/index.html) |
@@ -130,4 +133,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

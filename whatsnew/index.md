@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.12.0 · 24 October 2026new since your last visit
+
+the librarian's work: every member a folder, a role and a draft policy (27 members, 0 overlaps, 0 unowned files and pages; /admin/agents/roles/, /admin/agents/rounds/, a page per member, data/agents.json; gate check 4h and the Stop hook), the fractal graph from a line of php-src to a stakeholder (/fractal/, now the ontologist's), the end-of-round rule and the vault-key handover in CLAUDE.md, two reader answers corrected, and the librarian's daily pass at 07:13 London; released at the editor's go before security's review of validate.py, CLAUDE.md and .claude/settings.json (board 206)
+
+No reader-facing section changed in this release.
+
 ## v0.11.7 · 24 October 2026new since your last visit
 
 the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness report computed at every build; step 1 of the pass
@@ -680,4 +686,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.11.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.12.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
