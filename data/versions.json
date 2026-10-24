@@ -1,6 +1,15 @@
 {
- "current": "0.15.13",
+ "current": "0.15.14",
  "versions": [
+  {
+   "version": "0.15.14",
+   "date": "2026-10-24",
+   "title": "merge rules for taking in dev, in the journalist's brief; board rows for AGENTS.md and for release.sh's stop message",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.13",
    "date": "2026-10-24",

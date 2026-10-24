@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today209runs recorded76runs with changes and no article
+2schedules20runs a night, today210runs recorded76runs with changes and no article
 
 ## Quiet hours
 
@@ -33,7 +33,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 132, researcher@php.newsroom: 38, Conductor: 12, synthetic@php.newsroom: 12, Fact-check desk: 5, Sherpa: 3, factcheck: 3, desk: 2, librarian@php.newsroom: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 133, researcher@php.newsroom: 38, Conductor: 12, synthetic@php.newsroom: 12, Fact-check desk: 5, Sherpa: 3, factcheck: 3, desk: 2, librarian@php.newsroom: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -70,6 +70,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.4` | factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploitation attempts' at 21:25 UTC on 22 October), so the correction request R-004 closes unsent and amazon-honeypot is graded superseded (Finding-126); no-confirmed-compromise still holds at 08:37 UTC on 24 October, with Sophos's withdrawn success claim; the desk's pages pass the new Content-Security-Policy | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.3` | the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's proposed prompt updated, the build no longer stops on an unmapped publisher, and Right now carries the Sophos withdrawal | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.2` | The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and the front page's Right now stamp, newer than its text, on the board for the journalist | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.14` | merge rules for taking in dev, in the journalist's brief; board rows for AGENTS.md and for release.sh's stop message | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.13` | the journalist's brief corrected: it reads only the evidence vault, with its published read key, and needs no other key | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.12` | CodeQL's first scan, triaged and hardened: every script that read data-root now derives root as a count of ../ segments, so page text can never become markup or a link; pipeline.js checks the GitHub API's URLs and commit ids before linking them; review-nav escapes a class name; the build's script-stripping and CSP inline-script regexes accept  forms; the X-source label checks the URL's host, not a substring | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.11` | Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and security updates), so the bug bounty page and security.txt now point reporters at a live channel; board 278 closed | yes | its release note | [output](../../admin/versions.html) |
@@ -249,4 +250,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.15.14 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

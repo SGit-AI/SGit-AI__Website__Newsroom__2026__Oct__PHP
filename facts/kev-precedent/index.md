@@ -60,4 +60,4 @@ v2 · site v0.12.1 · 24 October 2026 · reportedThe last PHP core RCE, CVE-2024
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.html
+site v0.15.14 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/kev-precedent/index.html

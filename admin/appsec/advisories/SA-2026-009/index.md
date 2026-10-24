@@ -53,4 +53,4 @@ REQUIREMENTS.md section 5: untrusted text fenced, no tools or credentials in the
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-009/index.html
+site v0.15.14 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-009/index.html

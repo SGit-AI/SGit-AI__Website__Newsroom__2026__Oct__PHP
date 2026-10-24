@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.13. Not the live site.
+> Mockup D for review, built from the data of release v0.15.14. Not the live site.
 
-PHP Team console Console Overview Board 183 Agents 19 Releases 132 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 185 Agents 19 Releases 133 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,11 +12,11 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.13 
-132 releases since 22 Oct 
+v0.15.14 
+133 releases since 22 Oct 
 
 Open on the board 
-183 
+185 
 95 done, 4 waiting 
 
 Pages built 
@@ -30,8 +30,14 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 183
+#### Open 185
 
+ #284 
+release.sh: its stop message advises 'git stash; git merge origin/dev; git stash pop', which can lose work if the pop co… 
+ security@php.newsroom 
+ #283 
+AGENTS.md section 1: three additions to 'take in dev', from 24 October 
+ conductor@php.newsroom 
  #282 
 Signed messages and cards (SA-2026-024): a design using each agent's pki.sgit.ai key, for the editor and the conductor 
  security 
@@ -47,12 +53,6 @@ Go, or not, on the branch security/gate-pass-2: the gate fails on inline event h
  #277 
 The pipeline decided (24 October): researcher, curator, journalist (Sonnet), correspondent (Opus), then the ontologist, … 
  abp@newsroom.sgit 
- #275 
-The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work o… 
- editor 
- #273 
-An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39416d71cbb, to push the telemetry applica… 
- editor 
 
 #### Waiting 4
 
@@ -96,6 +96,7 @@ From CI-003, step 2: a graph diff between any two releases: nodes and edges adde
 ### Releases
  latest 8 
 
+ v0.15.14 2026-10-24 merge rules for taking in dev, in the journalist's brief; board rows for AGENTS.md and for release.sh's stop message 
  v0.15.13 2026-10-24 the journalist's brief corrected: it reads only the evidence vault, with its published read key, and needs no other key 
  v0.15.12 2026-10-24 CodeQL's first scan, triaged and hardened: every script that read data-root now derives root as a count of ../ segments, so page t… 
  v0.15.11 2026-10-24 Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and securi… 
@@ -103,7 +104,6 @@ From CI-003, step 2: a graph diff between any two releases: nodes and edges adde
  v0.15.9 2026-10-24 the journalist's and the correspondent's public key fingerprints recorded in their register files 
  v0.15.8 2026-10-24 Conductor full pass 19:15 London: agents-status, schedules against runs, run record 
  v0.15.7 2026-10-24 the journalist's brief for its first Sonnet session: the pipeline, the key handshake, every wake in seven steps, what to do when a… 
- v0.15.6 2026-10-24 Security round 1 closed: the telemetry policy, on the editor's decision to keep the location lookups (made by the reader's browser… 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ From CI-003, step 2: a graph diff between any two releases: nodes and edges adde
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.13 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.14 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
