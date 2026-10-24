@@ -1,6 +1,15 @@
 {
- "current": "0.15.20",
+ "current": "0.15.21",
  "versions": [
+  {
+   "version": "0.15.21",
+   "date": "2026-10-24",
+   "title": "Journalist: debrief and status for the first wake",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.15.20",
    "date": "2026-10-24",

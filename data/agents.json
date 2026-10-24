@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.15.20",
+ "version": "0.15.21",
  "members": [
   {
    "agent": "abp",
@@ -1403,19 +1403,62 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "journalist",
-    "as_of": "2026-10-22",
-    "round": null,
-    "state": "no round recorded under this policy yet",
-    "done": [],
+    "as_of": "2026-10-24",
+    "round": 1,
+    "state": "first wake released (v0.15.19); schedule card still proposed, waiting for the editor",
+    "done": [
+     {
+      "what": "Made the pki key sha256:de0decfc882a0235 and sent its QR to the editor",
+      "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     },
+     {
+      "what": "Exported the evidence vault at 8c16a64a7cf6 (382 sources)",
+      "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     },
+     {
+      "what": "Gave 94 claims a verdict: 38 agrees, 33 noted, 23 held back, 0 used",
+      "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     },
+     {
+      "what": "Refreshed compromise.json, no-confirmed-compromise, the as-of lines, plain latest and the pass ledger",
+      "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     },
+     {
+      "what": "Released v0.15.19; live site serves it",
+      "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     }
+    ],
     "tasks": {
      "board": [],
      "note": "the board rows this member owns are in data/admin.json"
     },
-    "next": [],
-    "asks": [],
+    "next": [
+     {
+      "what": "Editor go on the schedule card and the scheduled task",
+      "why": "the schedule card stays proposed until then"
+     },
+     {
+      "what": "Next wake: compare the vault head with 8c16a64a7cf6",
+      "why": "the wake is a no-op when the head has not moved"
+     },
+     {
+      "what": "Re-read in full the partly checked files on /views/desk/",
+      "why": "the pass ledger on /views/desk/ lists them"
+     }
+    ],
+    "asks": [
+     {
+      "what": "Go to make the schedule card active and create the five daily scheduled tasks (or create them yourself)",
+      "from": "the editor"
+     },
+     {
+      "what": "Confirm the journalist key sha256:de0decfc882a0235 (pki-agent submission)",
+      "from": "the editor"
+     }
+    ],
     "tokens": {
      "value": null,
-     "how": "not recorded"
+     "how": "the session does not show a count"
     },
     "policy": {
      "version": "2026-10-22",
@@ -1425,13 +1468,18 @@
      "writes_outside_scope": null,
      "injection_seen": 0
     },
-    "debrief": null
+    "debrief": "debriefs/2026-10-24__first-wake.md"
    },
    "debriefs": [
     {
      "file": "2026-10-24__journalist-to-correspondent.md",
      "date": "2026-10-24",
      "title": "The Opus journalist's last round as journalist: two exports, three states of affairs, the desk, Pulse, and the pipeline that makes it the correspondent"
+    },
+    {
+     "file": "2026-10-24__first-wake.md",
+     "date": "2026-10-24",
+     "title": "First scheduled session and first wake (Sonnet): key made, evidence vault 8c16a64a7cf6 exported and published"
     }
    ]
   },

@@ -8,7 +8,7 @@ The php2shell risk graph compared between any two releases: nodes and edges adde
 
 # What changed in the risk graph, release by release
 
-The graph is rebuilt at every release. This page compares two releases of it: the nodes and edges added and removed, the edges whose basis changed (from inferred to confirmed, say), and the gaps that opened or closed. 95 releases carry a graph; 6 of them changed it. Pick any two below; the default is the latest change.
+The graph is rebuilt at every release. This page compares two releases of it: the nodes and edges added and removed, the edges whose basis changed (from inferred to confirmed, say), and the gaps that opened or closed. 96 releases carry a graph; 6 of them changed it. Pick any two below; the default is the latest change.
 
 ## v0.15.18 → v0.15.19
 
@@ -55,4 +55,4 @@ How it is made: every release commits the graph the build wrote ([data/grc-graph
 
 
 ---
-site v0.15.20 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/grc/changes/index.html
+site v0.15.21 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/grc/changes/index.html

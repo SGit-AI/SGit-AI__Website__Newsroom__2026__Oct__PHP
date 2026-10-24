@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.20. Not the live site.
+> Mockup D for review, built from the data of release v0.15.21. Not the live site.
 
-PHP Team console Console Overview Board 185 Agents 19 Releases 139 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 185 Agents 19 Releases 140 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 16:05 UTC 
 
 Release 
-v0.15.20 
-139 releases since 22 Oct 
+v0.15.21 
+140 releases since 22 Oct 
 
 Open on the board 
 185 
@@ -96,6 +96,7 @@ Every release links the pages it changed: under each release on /admin/versions.
 ### Releases
  latest 8 
 
+ v0.15.21 2026-10-24 Journalist: debrief and status for the first wake 
  v0.15.20 2026-10-24 the correspondent's brief: the first session makes its own key, records its fingerprint and stops 
  v0.15.19 2026-10-24 Journalist: evidence vault at 8c16a64a7cf6, 94 claims reviewed, compromise rows and as-of lines to 16:05 UTC on 24 October 
  v0.15.18 2026-10-24 the correspondent's schedule proposed (11:47 and 19:07 London, Opus, a fresh session each wake), its brief, and a count of what th… 
@@ -103,7 +104,6 @@ Every release links the pages it changed: under each release on /admin/versions.
  v0.15.16 2026-10-24 observability's round 2: the telemetry application v0.4.1 and v0.4.2, pushed to its vault (Queue & drain shows its progress; One p… 
  v0.15.15 2026-10-24 debrief: the Opus journalist's round, ending as the correspondent 
  v0.15.14 2026-10-24 merge rules for taking in dev, in the journalist's brief; board rows for AGENTS.md and for release.sh's stop message 
- v0.15.13 2026-10-24 the journalist's brief corrected: it reads only the evidence vault, with its published read key, and needs no other key 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ Every release links the pages it changed: under each release on /admin/versions.
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.20 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.21 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
