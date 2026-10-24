@@ -1,6 +1,15 @@
 {
- "current": "0.14.26",
+ "current": "0.14.27",
  "versions": [
+  {
+   "version": "0.14.27",
+   "date": "2026-10-24",
+   "title": "Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry report's cities and regions, the invitation check order, the vault app's preset merge, the conductor drain's file names)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.26",
    "date": "2026-10-24",

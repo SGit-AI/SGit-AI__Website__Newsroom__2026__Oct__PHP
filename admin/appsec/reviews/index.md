@@ -41,4 +41,4 @@ Copy one whole block into a fresh session. Each already ends with the rules.
 
 
 ---
-site v0.14.26 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/reviews/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/reviews/index.html

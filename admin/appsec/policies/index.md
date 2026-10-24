@@ -34,4 +34,4 @@ Each member's own draft policy is in `admin/content/agents//policy.json` (the li
 
 
 ---
-site v0.14.26 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/policies/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/policies/index.html

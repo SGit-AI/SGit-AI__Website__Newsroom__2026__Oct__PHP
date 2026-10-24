@@ -18,7 +18,7 @@ Overview · Threat model and data flows · Advisories · Root causes and guidanc
 | **Component** | `vault-app/src/index.html.tpl` |
 | **Found by** | security@php.newsroom (pass 3 review) |
 | **Found** | 2026-10-24 |
-| **Fixed in** | this release |
+| **Fixed in** | v0.14.26 |
 | **Fixed by** | security@php.newsroom |
 
 ## What it is
@@ -52,4 +52,4 @@ Proposed: a CSP for the vault app.
 
 
 ---
-site v0.14.26 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-021/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-021/index.html

@@ -29,11 +29,11 @@ The security advisories of the PHP October 2026 newsroom: every vulnerability fo
 | [SA-2026-015](../advisories/SA-2026-015/index.html) | medium | fixed | Unquoted and unchecked links on the fact-check and signals pages | `admin/build/build.py (fact-check, signals, stat)` | v0.11.1 |
 | [SA-2026-016](../advisories/SA-2026-016/index.html) | medium | fixed | The editor's bootstrap invitation still had two device slots open | `data/contributors.json` | v0.11.6 |
 | [SA-2026-017](../advisories/SA-2026-017/index.html) | low | fixed | Ignore rules silently dropped files that should have been committed (twice) | `.gitignore` | v0.2.2; v0.11.1 |
-| [SA-2026-018](../advisories/SA-2026-018/index.html) | high | fixed | No Content-Security-Policy on a site that holds secrets in the browser | `every page (admin/build/csp.py)` | this release |
-| [SA-2026-019](../advisories/SA-2026-019/index.html) | low | fixed | The public telemetry report published visitors' cities and regions | `data/telemetry-report.json, telemetry_drain.py` | this release |
-| [SA-2026-020](../advisories/SA-2026-020/index.html) | medium | fixed | A refused invitation left a row that a later one could inherit | `admin/build/contributors.py (enrol)` | this release |
-| [SA-2026-021](../advisories/SA-2026-021/index.html) | medium | fixed | The vault app: prototype pollution and javascript: links from vault data | `vault-app/src/index.html.tpl` | this release |
-| [SA-2026-022](../advisories/SA-2026-022/index.html) | low | fixed | The conductor's drain used server-supplied names as file paths | `admin/build/conductor_drain.py` | this release |
+| [SA-2026-018](../advisories/SA-2026-018/index.html) | high | fixed | No Content-Security-Policy on a site that holds secrets in the browser | `every page (admin/build/csp.py)` | v0.14.26 |
+| [SA-2026-019](../advisories/SA-2026-019/index.html) | low | fixed | The public telemetry report published visitors' cities and regions | `data/telemetry-report.json, telemetry_drain.py` | v0.14.26 |
+| [SA-2026-020](../advisories/SA-2026-020/index.html) | medium | fixed | A refused invitation left a row that a later one could inherit | `admin/build/contributors.py (enrol)` | v0.14.26 |
+| [SA-2026-021](../advisories/SA-2026-021/index.html) | medium | fixed | The vault app: prototype pollution and javascript: links from vault data | `vault-app/src/index.html.tpl` | v0.14.26 |
+| [SA-2026-022](../advisories/SA-2026-022/index.html) | low | fixed | The conductor's drain used server-supplied names as file paths | `admin/build/conductor_drain.py` | v0.14.26 |
 | [SA-2026-023](../advisories/SA-2026-023/index.html) | high | open | Nothing on GitHub enforces the release rules | `GitHub: dev, main, Actions` |  |
 | [SA-2026-024](../advisories/SA-2026-024/index.html) | high | open | Agent messages and schedule cards are not authenticated | `data/messages/, data/schedule/, schedule.py` |  |
 | [SA-2026-025](../advisories/SA-2026-025/index.html) | medium | open | Scheduled agents that read the open web may release to the site | `data/schedule/curator.json, researcher.json` |  |
@@ -54,4 +54,4 @@ The security advisories of the PHP October 2026 newsroom: every vulnerability fo
 
 
 ---
-site v0.14.26 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/index.html

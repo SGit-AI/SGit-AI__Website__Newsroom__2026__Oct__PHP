@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.27 · 24 October 2026new since your last visit
+
+Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry report's cities and regions, the invitation check order, the vault app's preset merge, the conductor drain's file names)
+
+No reader-facing section changed in this release.
+
 ## v0.14.26 · 24 October 2026new since your last visit
 
 Application security: /admin/appsec/ with the threat model and five data-flow diagrams, 39 security advisories kept like incidents (root cause, what was not in place, the fix, the guard), the patterns they share, who can do what, what a client-side site does not have to care about, the incident process and six runbooks (taking the site offline, emergency shutdown), a bug bounty paid in kudos with its leaderboard, and prompts for three outside reviewers; a Content-Security-Policy on every page; cities and regions no longer published in the telemetry report; the invitation check order, the vault app's preset merge and the conductor drain's file names fixed
@@ -881,4 +887,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.26 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
