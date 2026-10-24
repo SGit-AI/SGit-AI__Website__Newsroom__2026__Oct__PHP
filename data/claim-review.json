@@ -1,0 +1,222 @@
+{
+ "note": "The journalist's review of the claims in the evidence vault that are not in the site's claim table (data/claims.json). One row per reviewed claim: the verdict (used, agrees, held back), the reason, and the page it was reviewed for. A vault claim with no row here is shown on /claims/review/ as not yet reviewed, so a new export lists new claims without anyone editing a page.",
+ "verdicts": {
+  "used": "used on a page, attributed to its source",
+  "agrees": "agrees with a claim the site already carries; not repeated",
+  "held back": "not stated on the site as worded, for the reason given"
+ },
+ "author": "claude-journalist",
+ "reviews": [
+  {
+   "id": "cur3-jp-pm-emergency-order",
+   "verdict": "held back",
+   "reason": "One Vietnamese outlet. Reuters, CNN and USA Today, in the vault, describe Prime Minister Takaichi urging website operators on X to check for PHP and prepare to patch, and, in CNN's account, saying companies should consider suspending services: a request, not an order.",
+   "sources": [
+    "rte-reuters-websites-go-dark",
+    "cnn-php2shell-websites-shut",
+    "usa-today-php2shell-live"
+   ],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-22m-servers",
+   "verdict": "held back",
+   "reason": "TechTarget Japan gives 22 million (22.6 million in its headline) with no basis. The site's scale figures, each with what it measures, are on the numbers page.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-hns-confirmed-software",
+   "verdict": "held back",
+   "reason": "Help Net Security does not say who confirmed it. What the vault holds is researchers demonstrating code execution against these applications (Calif; Wiz for WordPress and Drupal), which is not attackers succeeding against someone.",
+   "sources": [
+    "calif-php2shell"
+   ],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur2-itw-2024",
+   "verdict": "held back",
+   "reason": "Unsourced. The earliest attempt in the record is Amazon's honeypot on 17 October 2026. A 2024 audit by Quarkslab found the out-of-memory issue without proving it exploitable, which may be where a 2024 date comes from.",
+   "sources": [
+    "cyberpress-php2shell-exploits-predate-patches",
+    "php-foundation-blog-security-release"
+   ],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur2-ie-identified-20-oct",
+   "verdict": "held back",
+   "reason": "Contradicts the confirmed discovery by Calif on 1 August and its report to PHP on 11 August. 20 October is the day of PHP's advance notice and of the leak.",
+   "sources": [
+    "calif-php2shell",
+    "php-foundation-blog-security-release"
+   ],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-openai-funded-audit",
+   "verdict": "held back",
+   "reason": "SiliconANGLE's own description of the August work, which the site records as found by researchers using frontier AI under OpenAI's initiative (claim ai-found). Not used, so that it is not confused with the 2024 Quarkslab audit.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur2-calif-august",
+   "verdict": "agrees",
+   "reason": "Agrees with the site's confirmed claim who-first (discovery 1 August, report to PHP 11 August).",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur2-clarin-14-year-old",
+   "verdict": "held back",
+   "reason": "'14 years' restates Wiz's lower bound, PHP 5.4 and later, as an age; it is one estimate restated, not an independent finding. Nobody in the vault names the commit that introduced the flaw. Which versions are affected is an explained contradiction on the fact-check desk.",
+   "sources": [
+    "wiz-blog-php2shell"
+   ],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-criticarad-since-2012",
+   "verdict": "held back",
+   "reason": "As for '14 years': Wiz's PHP 5.4 bound, restated as a year.",
+   "sources": [
+    "wiz-blog-php2shell"
+   ],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-ism-affected-5-4",
+   "verdict": "agrees",
+   "reason": "Agrees with Wiz's own post ('dating back to PHP 5.4'). The CVE records list only the supported branches; see the site's disputed claim versions-old.",
+   "sources": [
+    "wiz-blog-php2shell"
+   ],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur2-affected-5-4-to-8-5-11",
+   "verdict": "agrees",
+   "reason": "As above: Wiz's bound. Disputed against the CVE records in the site's claim versions-old.",
+   "sources": [
+    "wiz-blog-php2shell"
+   ],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-cloudflare-attempts",
+   "verdict": "used",
+   "reason": "Used in the state of affairs v2. The curator's note says Cloudflare's own figures are not in the vault; they are, in the chief executive's post on X (claim cf-millions).",
+   "sources": [
+    "x-eastdakota-php2shell-stats"
+   ],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-risikomonitor-swiss",
+   "verdict": "used",
+   "reason": "Used in the state of affairs v2, attributed to the outlet that reports it, with its as-of date.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-ahnlab-27-pocs",
+   "verdict": "used",
+   "reason": "Used in the state of affairs v2, attributed to the outlet that reports it, with its as-of date.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-lux-no-breach-announced",
+   "verdict": "used",
+   "reason": "Used in the state of affairs v2, attributed to the outlet that reports it, with its as-of date.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-nl-kamervragen",
+   "verdict": "used",
+   "reason": "Used in the state of affairs v2, attributed to the outlet that reports it, with its as-of date.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-wiz-memory-read",
+   "verdict": "used",
+   "reason": "Used in the state of affairs v2, attributed to the outlet that reports it, with its as-of date.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-peru-cnsd-report",
+   "verdict": "used",
+   "reason": "Used in the state of affairs v2, attributed to the outlet that reports it, with its as-of date.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur2-dgssi-bulletin",
+   "verdict": "used",
+   "reason": "Used in the state of affairs v2, attributed to the outlet that reports it, with its as-of date.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur2-csa-sg-urged",
+   "verdict": "used",
+   "reason": "Used in the state of affairs v2, attributed to the outlet that reports it, with its as-of date.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur3-kisa-cwe-and-alert",
+   "verdict": "used",
+   "reason": "Used in the state of affairs v2, attributed to the outlet that reports it, with its as-of date.",
+   "sources": [],
+   "where": "views/state/v2/index.html",
+   "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  }
+ ]
+}

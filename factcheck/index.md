@@ -118,7 +118,7 @@ Where the reporting disagrees. Each record keeps every statement, who made it an
 
 **What would settle it.** The survey Wiz relied on, captured, with its population and method.
 
-K-001 · ticket Contradiction-1 · claims: scale-70pc-internet, scale-70pc-websites
+K-001 · ticket Contradiction-1 · claims: [scale-70pc-internet](../facts/scale-70pc-internet/index.html), [scale-70pc-websites](../facts/scale-70pc-websites/index.html)
 
 ### Is php2shell being exploited? explained
 - **Amazon Threat Intelligence (CJ Moses, AWS Security Blog)**, 2026-10-21: *we saw them used against our sensors almost immediately. PHP2Shell is now being broadly exploited in the wild.* exploitation attempts against Amazon's MadPot honeypot sensors, from 17 October and in volume from 21 October 02:00 UTC [Amazon](../sources/aws-security-blog-madpot/index.html)
@@ -131,7 +131,7 @@ K-001 · ticket Contradiction-1 · claims: scale-70pc-internet, scale-70pc-websi
 
 **What would settle it.** A KEV entry for either CVE, or a named organisation confirming a compromise.
 
-K-002 · ticket Contradiction-2 · claims: no-exploitation, cisa-none, amazon-honeypot, probing, watchtowr-itw, no-confirmed-compromise
+K-002 · ticket Contradiction-2 · claims: [no-exploitation](../facts/no-exploitation/index.html), [cisa-none](../facts/cisa-none/index.html), [amazon-honeypot](../facts/amazon-honeypot/index.html), [probing](../facts/probing/index.html), [watchtowr-itw](../facts/watchtowr-itw/index.html), [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html)
 
 ### Which PHP versions are affected? explained
 - **Cloudflare**, 2026-10-21: *The vulnerabilities affect all web servers running PHP 5.4 or later* affected versions [Cloudflare](../sources/cloudflare-blog-php2shell-waf/index.html)
@@ -143,7 +143,7 @@ K-002 · ticket Contradiction-2 · claims: no-exploitation, cisa-none, amazon-ho
 
 **What would settle it.** The PHP project stating the earliest affected version.
 
-K-003 · ticket Contradiction-3 · claims: versions-old, two-cves-9.2
+K-003 · ticket Contradiction-3 · claims: [versions-old](../facts/versions-old/index.html), [two-cves-9.2](../facts/two-cves-9.2/index.html)
 
 ### How many systems are still unpatched? open
 - **Censys, via SecurityWeek**, 2026-10-21 (SecurityWeek captured 2026-10-22 11:23 UTC): *Out of 2.58 million internet-facing hosts seen on October 21, roughly 1.58 million were reporting identifiable PHP versions, and approximately 1.57 million were not patched* unpatched hosts among those whose PHP version is visible, on release day [SecurityWeek](../sources/securityweek-exploitation-days-before/index.html)
@@ -154,7 +154,7 @@ K-003 · ticket Contradiction-3 · claims: versions-old, two-cves-9.2
 
 **What would settle it.** Censys's own post (the vault notes say it was not found), or a later Censys count with the same population.
 
-K-004 · ticket Contradiction-4 · claims: scale-2.6m-hosts
+K-004 · ticket Contradiction-4 · claims: [scale-2.6m-hosts](../facts/scale-2.6m-hosts/index.html)
 
 ### How many UK government services went down? open
 - **The BBC live page, reporting a UK minister**, 2026-10-22, after the vault's last capture: *In the UK, a minister said just after midday that 32 government services were unavailable and four partially unavailable because they were being fixed* central government services, at one moment (outside the vault: https://www.bbc.co.uk/news/live/ckgel5xp2xv9t (fetched 2026-10-22 18:30 UTC, sha256 3842343a8de23fc9))
@@ -164,7 +164,7 @@ K-004 · ticket Contradiction-4 · claims: scale-2.6m-hosts
 
 **What would settle it.** The Hansard record of the minister's answer, captured.
 
-K-005 · ticket Contradiction-5 · claims: uk-list
+K-005 · ticket Contradiction-5 · claims: [uk-list](../facts/uk-list/index.html)
 
 ### How many sites were taken offline? explained
 - **This site's impact ledger (data/impact.json)**, vault capture to 2026-10-22 11:34 UTC: *10 operators offline* operators with a captured source in the exported manifest
@@ -175,7 +175,7 @@ K-005 · ticket Contradiction-5 · claims: uk-list
 
 **What would settle it.** Re-run the vault export; capture the tracker's sites.csv into the source watch on a schedule.
 
-K-006 · ticket Contradiction-6 · claims: affected-sites
+K-006 · ticket Contradiction-6 · claims: [affected-sites](../facts/affected-sites/index.html)
 
 ### How severe: CVSS 10.0, 9.2 or 9.8? explained
 - **Social posts relayed during the leak**, 2026-10-20: *a wrong CVSS score of 10.0 (the actual score is 9.2)* a leaked number, corrected by the PHP Foundation [PHP Foundation](../sources/php-foundation-blog-security-release/index.html)
@@ -186,7 +186,7 @@ K-006 · ticket Contradiction-6 · claims: affected-sites
 
 **What would settle it.** Already settled as a reading; the site should carry the 9.8 and say what differs.
 
-K-007 · ticket Contradiction-7 · claims: cvss-10, two-cves-9.2
+K-007 · ticket Contradiction-7 · claims: [cvss-10](../facts/cvss-10/index.html), [two-cves-9.2](../facts/two-cves-9.2/index.html)
 
 ### Which flaw was shown to give code execution on PHP-FPM? open
 - **The PHP Foundation (blog)**, 2026-10-21: *Remote code execution was also confirmed on PHP-FPM through application-level code paths* placed under CVE-2026-109618 in the post [PHP Foundation](../sources/php-foundation-blog-security-release/index.html)
@@ -197,7 +197,7 @@ K-007 · ticket Contradiction-7 · claims: cvss-10, two-cves-9.2
 
 **What would settle it.** A correction to the Foundation's post, or a PHP security team statement.
 
-K-008 · ticket Contradiction-8 · claims: rce-fpm, rce-modphp
+K-008 · ticket Contradiction-8 · claims: [rce-fpm](../facts/rce-fpm/index.html), [rce-modphp](../facts/rce-modphp/index.html)
 
 ### Did any technical detail leak on 20 October? open
 - **The PHP Foundation**, 2026-10-21: *They came with a wrong release time and a wrong CVSS score of 10.0 (the actual score is 9.2). No technical details leaked.* what circulated with the CVE IDs [PHP Foundation](../sources/phpfoundation-blog-security-release-leak/index.html)
@@ -209,7 +209,7 @@ K-008 · ticket Contradiction-8 · claims: rce-fpm, rce-modphp
 
 **What would settle it.** A capture of the leaked screenshot or video, or the Foundation saying what 'technical details' covers.
 
-K-009 · ticket Contradiction-9 · claims: leak-cve-ids, leak-hn, leak-video
+K-009 · ticket Contradiction-9 · claims: [leak-cve-ids](../facts/leak-cve-ids/index.html), [leak-hn](../facts/leak-hn/index.html), [leak-video](../facts/leak-video/index.html)
 
 ### When was the release planned, and when did it ship? open
 - **The PHP Foundation**, 2026-10-21: *It also moved the release from October 22nd, 14:00 UTC, to October 21st, 14:00 UTC.* the planned times [PHP Foundation](../sources/php-foundation-blog-security-release/index.html)
@@ -221,7 +221,7 @@ K-009 · ticket Contradiction-9 · claims: leak-cve-ids, leak-hn, leak-video
 
 **What would settle it.** A PHP project statement of the embargo time, or the pre-announcement's original text.
 
-K-010 · ticket Contradiction-10 · claims: release-moved, release-time
+K-010 · ticket Contradiction-10 · claims: [release-moved](../facts/release-moved/index.html), [release-time](../facts/release-time/index.html)
 
 ### Is the fix in PHP 8.5.12 incomplete? open
 - **Aaron Rainbolt on oss-security, relaying a Fediverse post**, 2026-10-21 15:24 UTC: *the Fediverse is reporting that the fix to at least PHP 8.5.12 may be incomplete* an unconfirmed report from an unnamed person, relayed [oss-security](../sources/openwall-oss-security-109619-thread/index.html)
@@ -232,7 +232,7 @@ K-010 · ticket Contradiction-10 · claims: release-moved, release-time
 
 **What would settle it.** Capture oss-security 2026/10/22/15 into the vault.
 
-K-011 · ticket Contradiction-11 · claims: fix-incomplete, more-paths
+K-011 · ticket Contradiction-11 · claims: [fix-incomplete](../facts/fix-incomplete/index.html), [more-paths](../facts/more-paths/index.html)
 
 ## Findings: things on this site to change (125)
 
@@ -343,4 +343,4 @@ The desk is `factcheck@php.newsroom`. Its role, the full model and the runbook a
 
 
 ---
-site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/factcheck/index.html
+site v0.11.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/factcheck/index.html

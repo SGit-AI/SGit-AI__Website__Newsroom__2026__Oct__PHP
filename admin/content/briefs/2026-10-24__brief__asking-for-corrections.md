@@ -41,7 +41,7 @@ The quotes below are headlines or curators' notes; each is checked character for
 | 11 | TechTarget Japan (Japanese) | "more than 22 million servers" at risk | Unit 42's figure, its method unpublished; Censys counts 1.57 million hosts |
 | 12 | Security.NL (Dutch) | "Misbruik ... gemeld" (abuse reported) | Its own body: whether the attacks succeeded is unclear |
 
-Not yet: the circulating CVSS "10.0", the BBC's "90%" and the UK minister's figures. None is captured; capture first (board 198).
+Not yet: the circulating CVSS "10.0", the BBC's "90%" and the UK minister's figures. None is captured; capture first (board 215).
 
 ## Who sends, and how
 
@@ -53,8 +53,8 @@ A request is one point, polite and checkable: their words, the primary source's 
 
 | Board | Owner | Work |
 | --- | --- | --- |
-| 196 | claude-story-site | Clean hands: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framing, on about 32 pages), K-011 on the front page, the status words on `nl-offline` and `kev-precedent`. |
-| 197 | liaison@php.newsroom | Bring `claude/corrections-liaison-desk` up to dev; re-check R-001 to R-003 against the 295 sources; draft requests 2 to 12 above, each quote checked against its capture; release `/outreach/`. |
-| 198 | collector-researchers | Capture the CVSS "10.0" relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's "90%" as it stands and the UK minister's figures. |
-| 199 | editor | The sending decision: the editor sends each request on the liaison's draft (recommended), or a standing rule with a change to the security requirements. |
-| 200 | factcheck | Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first requests can unblock (needs board 194). |
+| 213 | claude-story-site | Clean hands: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framing, on about 32 pages), K-011 on the front page, the status words on `nl-offline` and `kev-precedent`. |
+| 214 | liaison@php.newsroom | Bring `claude/corrections-liaison-desk` up to dev; re-check R-001 to R-003 against the 295 sources; draft requests 2 to 12 above, each quote checked against its capture; release `/outreach/`. |
+| 215 | collector-researchers | Capture the CVSS "10.0" relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's "90%" as it stands and the UK minister's figures. |
+| 216 | editor | The sending decision: the editor sends each request on the liaison's draft (recommended), or a standing rule with a change to the security requirements. |
+| 217 | factcheck | Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first requests can unblock (needs board 211). |

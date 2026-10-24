@@ -6,7 +6,7 @@
 <atom:link href="https://php.oct.2026.newsroom.sgit.ai/feeds/site.xml" rel="self" type="application/rss+xml"/>
 <description>PHP October 2026: the method, the vaults, the billing model and the site&#x27;s own pages. A new entry when an item is new, and again each time what it says changes.</description>
 <language>en-gb</language>
-<lastBuildDate>Fri, 23 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Sat, 24 Oct 2026 00:00:00 +0000</lastBuildDate>
 <item><title>Page: The method (updated)</title><link>https://php.oct.2026.newsroom.sgit.ai/method/index.html</link><guid isPermaLink="false">page-method@v4</guid><pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate><category>page</category><description>Page. Updated (v4) in site v0.10.3. What changed: https://php.oct.2026.newsroom.sgit.ai/versions/page-method/index.html</description></item>
 <item><title>Page: The method (updated)</title><link>https://php.oct.2026.newsroom.sgit.ai/method/index.html</link><guid isPermaLink="false">page-method@v5</guid><pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate><category>page</category><description>Page. Updated (v5) in site v0.10.19. What changed: https://php.oct.2026.newsroom.sgit.ai/versions/page-method/index.html</description></item>
 <item><title>Front page: How this site knows</title><link>https://php.oct.2026.newsroom.sgit.ai/index.html#evidence</link><guid isPermaLink="false">home-how@v1</guid><pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate><category>front</category><description>Front page. Dated 2026-10-22.</description></item>

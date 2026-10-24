@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode', 'claim-review')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 TPUB = load('telemetry-public') if os.path.exists(os.path.join(DATA, 'telemetry-public.json')) else None
 WORLD = load('world')
@@ -112,7 +112,7 @@ UPDATES = load_updates()
 # The two halves of the site, and what each page is. Research: material collected from outside and what this
 # site derives from it. Stories: written here, signed and dated. Every page carries one of these at its top.
 ZONES = OrderedDict([('Updates', 'Updates'), ('Start here', 'For you'), ('Questions', 'For you'), ('Briefings', 'For you'), ('Yours', 'For you'), ('The incident', 'Research'),
-                     ('The analysis', 'Research'), ('The evidence', 'Research'), ('GRC', 'Research'), ('Views', 'Stories'), ('Stories', 'Stories'), ('About', 'Site')])
+                     ('The analysis', 'Research'), ('The evidence', 'Research'), ('GRC', 'Research'), ('Views', 'Stories'), ('Stories', 'Stories'), ('About', 'Site'), ('Elsewhere', 'Elsewhere')])
 ORIGINS = {
     'house': {'short': 'House', 'label': 'Story', 'text': 'written here by this site, signed and dated'},
     'guest': {'short': 'Guest', 'label': 'Story, guest', 'text': 'written by a guest writer, published here under their name'},
@@ -241,21 +241,22 @@ NAV = [
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
-    ('The analysis', [('claims/index.html', 'Every claim'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
-                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'),
+    ('The analysis', [('claims/index.html', 'Every claim'), ('claims/review/index.html', 'Claims waiting for review'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
+                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'), ('graph/parties/index.html', 'Every party'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
                       ('layers/index.html', 'Evidence, derived, authored'),
                       ('pipeline/index.html', 'The fact pipeline'), ('versions/index.html', 'How the story changed'),
-                      ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults']]),
+                      ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults'] if x.get('nav', True)]),
     ('GRC', [('grc/index.html', 'GRC: risks, owners, standards'), ('grc/risks/index.html', 'The risk register'), ('grc/stakeholders/index.html', 'Stakeholders and their registers'),
              ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/explore/index.html', 'Explore the graph: from any node'), ('grc/gaps/index.html', 'What the graph is missing'), ('grc/network/index.html', 'From the sgit network')]),
     ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed')]),
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
-               ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'), ('admin/agents/index.html', 'Guidance for agents'),
+               ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'), ('admin/agents/index.html', 'Guidance for agents'), ('graph/component/index.html', 'The graph component'),
                ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/pack-mode/index.html', 'Pack mode, measured'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
+    ('Elsewhere', [('pulse/index.html', 'What else is going on: Pulse')])
 ]
 
 PAGES = []  # (path, title, description) in order, for llms.txt
@@ -385,6 +386,8 @@ def origin_strip(path, kind, origin=None, byline=None):
         o = ORIGINS[origin]; cls, label, text = 'story', o['label'], o['text'] + (f'. {byline}' if byline else '')
     elif origin == 'external' or path.startswith('readings/') and path != 'readings/index.html':
         cls, label, text = 'external', 'Research, external', 'material from outside, published as received and credited; not written here'
+    elif path.startswith('pulse/'):
+        cls, label, text = 'elsewhere', 'Elsewhere, a separate section', 'not about PHP: another agent\'s vault, the SGit newsroom\'s Pulse, shown apart from this site\'s evidence'
     elif kind in ('site', 'account') or path.startswith(('admin/', 'account/')):
         cls, label, text = 'site', 'About this site', 'how the site works, kept by the agents that run it'
     else:
@@ -432,7 +435,7 @@ def section(id, title, inner, lead=None):
 
 def stat(n, label, href=None, depth=0):
     inner = f'<b>{E(str(n))}</b><span>{label}</span>'
-    return f'<a class="stat" href="{"../" * depth}{href}">{inner}</a>' if href else f'<div class="stat">{inner}</div>'
+    return f'<a class="stat" href="{"../" * depth}{U(href)}">{inner}</a>' if href else f'<div class="stat">{inner}</div>'
 
 def weight(c):
     prim = sum(1 for s in c['sources'] if s in SOURCES and SOURCES[s].get('primary'))
@@ -594,7 +597,7 @@ def build_index():
         ('warn', 'Does it reach you?', 'Check your stack', 'describe what you run and see what an attacker could reach in it', 'stack/index.html'),
         ('warn', 'Are attackers trying?', 'Yes', 'millions of attempts, seen by one internet security company', 'exploitation/index.html'),
         ('info', 'Anyone confirmed hacked?', 'Not yet', 'no organisation, as of the latest check', 'impact/index.html'),
-        ('warn', 'Websites taken offline', f'{len(im["offline"])} organisations', 'reported, as a precaution', 'impact/index.html'),
+        ('warn', 'Websites taken offline', f'{len(im["offline"])} reports', 'some one site, some a whole government; as a precaution', 'impact/index.html'),
         ('info', "On the US 'used in attacks' list?", 'Not yet', "the US government's official list of flaws known to be used by attackers", 'exploitation/index.html#kev'),
         ('bad', 'What do governments say?', 'Update now', f'or take the website offline if you cannot; {C["agencies"]} agencies compared', 'agencies/index.html'),
     ]
@@ -634,6 +637,7 @@ def build_index():
 {section("facts", "The core facts, and the evidence for each", f'<ul class="legend">{legend}</ul><ol class="facts">{facts}</ol>{b_facts}', "Each fact links to the original pages it rests on: the PHP project, government agencies, the researchers. Click a source to see when it was saved and its fingerprint.")}
 {section("unknown", "What nobody knows yet", f'<ul class="unknown">{unknown}</ul>{b_unknown}', "Stated, not papered over. This site will update each one when the evidence does.")}
 {section("latest", "Latest", f'<ol class="latest">{latest}</ol><p><a href="timeline/index.html">Everything, in order, on the timeline &rarr;</a> &middot; <a href="whatsnew/index.html">What changed on this site, release by release &rarr;</a></p>{b_latest}')}
+<aside class="origin o-elsewhere"><b>What else is going on</b> <span>Other vulnerabilities in the news this month, with the evidence that each is exploited beside the attention it gets: the SGit newsroom's Pulse, in a separate section, not about PHP.</span> <a href="pulse/index.html">Pulse &rarr;</a></aside>
 {section("who", "The briefing for you", item('home-who', 'front', 'for-you', 'The briefing for you: fifteen readers', 'index.html#who', re.sub(r'\d+', '#', persona_doors()), REL_DATE.get(VERSION, '')) + persona_doors(), who_lead)}
 {section("moments", "How it unfolded", item('home-moments', 'front', 'research', 'How it unfolded: five moments', 'index.html#moments', moments, REL_DATE.get(VERSION, '')) + f'<ol class="moments">{moments}</ol>')}
 {section("stories", "Stories: written here", item('home-stories', 'front', 'stories', 'Stories: written here', 'index.html#stories', re.sub(r'\d+', '#', stories_row()), REL_DATE.get(VERSION, '')) + stories_row(), "Everything above is research: collected from outside sources, each fact linked to a saved copy. These are written here, signed and dated, and kept as written.")}
@@ -758,6 +762,37 @@ def build_claims():
 <p>The newsroom's own twelve claims, seeded from the BBC live page on the morning of 22 October, are in the vault as <code>claims/claude-newsroom-lead.json</code> and are superseded by the rows above, which trace each of them to primary sources. The raw rows are in <a href="../data/claims.json">data/claims.json</a>.</p>
 '''
     page('claims/index.html', 'Every claim, with its status and sources', f'{C["claims"]} claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.', body, kind='analysis', topics='php2shell claims provenance')
+
+def build_claim_review():
+    """Every claim in the vault's per-agent files that is not in the site's claim table, with the journalist's verdict, or 'not yet reviewed'."""
+    site_ids = {c['id'] for c in D['claims']}
+    rv = {r['id']: r for r in D['claim-review']['reviews']}
+    vc = D['vault-claims']
+    for i in rv:
+        if i not in {c['id'] for c in vc}:
+            sys.exit(f'data/claim-review.json: {i} is not a claim in data/vault-claims.json')
+    pending = [c for c in vc if c['id'] not in site_ids]
+    groups = OrderedDict([('held back', []), ('used', []), ('agrees', []), ('not yet reviewed', [])])
+    for c in pending:
+        groups[rv[c['id']]['verdict'] if c['id'] in rv else 'not yet reviewed'].append(c)
+    words = D['claim-review']['verdicts']
+    def rows(cs):
+        out = []
+        for c in cs:
+            r = rv.get(c['id'])
+            verdict = (f'<b>{E(r["verdict"])}</b><div class="note">{E(r["reason"])}</div>' + (f'<div class="refs">{src_links(r["sources"], 2)}</div>' if r.get('sources') else '')
+                       + (f'<div class="small"><a href="../../{E(r["where"])}">where it was reviewed</a>, {E(r["reviewed"])}, {E(r["by"])}</div>' if r.get('where') else '')) if r else '<span class="small">not yet reviewed</span>'
+            out.append([f'<span id="{E(c["id"])}"><b>{E(c["claim"])}</b></span><div class="small"><code>{E(c["id"])}</code> &middot; {E(c.get("topic") or "")}</div>',
+                        E(c.get('by') or ''), pill(c['status']), f'{E(c.get("note") or "")}<div class="small">{E(c.get("agent") or "")}</div>', src_links(c['sources'], 2), verdict])
+        return table(['Claim, as the agent recorded it', 'Said by', 'Agent\'s status', 'Agent\'s note', 'Sources', 'Journalist\'s review'], out, 'rv')
+    agents = Counter(c.get('agent') for c in pending)
+    body = f'''
+<h1>Claims waiting for review</h1>
+<p class="lead">{len(pending)} claims recorded in the evidence vault by its agents are not in the site's <a href="../index.html">claim table</a> yet: {", ".join(f"{n} from {E(a)}" for a, n in agents.most_common())}. They are listed here so that they can be reviewed, not because they are established. Each is the agent's reading of a captured page, in the agent's words; for a page in another language the English is the agent's translation. The status beside each is the agent's, not the site's.</p>
+<p>The journalist has reviewed {len(rv)} of them: {", ".join(f"{len(v)} {k}" for k, v in groups.items() if v and k != "not yet reviewed")}. What the review words mean: {"; ".join(f"<b>{E(k)}</b>, {E(v)}" for k, v in words.items())}. A claim with no review is marked so, and a new export of the vault adds new claims here without anyone editing this page. The rows are <a href="../../data/vault-claims.json">data/vault-claims.json</a>; the reviews are <a href="../../data/claim-review.json">data/claim-review.json</a>.</p>
+{"".join(section("g-" + k.replace(" ", "-"), f"{k[0].upper() + k[1:]} ({len(v)})", rows(v)) for k, v in groups.items() if v)}
+'''
+    page('claims/review/index.html', 'Claims waiting for review', f'{len(pending)} claims from the evidence vault that are not in the site claim table yet, each with the agent that recorded it, its sources, and the journalist\'s verdict or "not yet reviewed".', body, kind='analysis', topics='php2shell claims review provenance')
 
 def build_numbers():
     rows = []
@@ -1117,47 +1152,7 @@ def build_sources():
 '''
     page('sources/index.html', f'Every source: {C["sources"]} pages, {C["captures"]} captures, {C["hashed"]} hashes', f'The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.', body, kind='evidence', topics='php2shell sources evidence')
 
-def build_graph():
-    claims = D['claims']
-    used = OrderedDict()
-    for c in claims:
-        for s in c['sources']:
-            if s in SOURCES:
-                used.setdefault(s, 0)
-                used[s] += 1
-    src_list = sorted(used, key=lambda s: (-used[s], s))
-    nodes = [{'id': 'claim:' + c['id'], 'kind': 'claim', 'label': c['claim'][:90], 'status': c['status'], 'topic': c['topic']} for c in claims]
-    nodes += [{'id': 'source:' + s, 'kind': 'source', 'label': SOURCES[s].get('publisher') or s, 'publisher': SOURCES[s].get('publisher'), 'url': SOURCES[s]['url'], 'primary': bool(SOURCES[s].get('primary'))} for s in src_list]
-    nodes += [{'id': 'event:' + str(i), 'kind': 'event', 'label': t['event'][:90], 'at': t['at']} for i, t in enumerate(D['timeline'])]
-    edges = [{'from': 'claim:' + c['id'], 'to': 'source:' + s, 'rel': 'cites'} for c in claims for s in c['sources'] if s in SOURCES]
-    edges += [{'from': 'event:' + str(i), 'to': 'source:' + s, 'rel': 'cites'} for i, t in enumerate(D['timeline']) for s in t['sources'] if s in SOURCES]
-    graph = {'site': SITE, 'version': VERSION, 'vault_commit': D['vault']['head']['commit'], 'nodes': nodes, 'edges': edges,
-             'note': 'A node is just a node; meaning lives in the edges. Every edge is a citation from a claim or an event to a captured source.'}
-    write('data/graph.json', json.dumps(graph, indent=1, ensure_ascii=False) + '\n')
-    # SVG: claims on the left, sources on the right
-    rh = 16
-    n_l, n_r = len(claims), len(src_list)
-    H = max(n_l, n_r) * rh + 40
-    W = 1000
-    xl, xr = 330, 670
-    y_l = {c['id']: 20 + i * (H - 40) / max(1, n_l - 1) for i, c in enumerate(claims)}
-    y_r = {s: 20 + i * (H - 40) / max(1, n_r - 1) for i, s in enumerate(src_list)}
-    lines = ''.join(f'<path class="e e-{E(c["status"])}" d="M{xl},{y_l[c["id"]]:.1f} C{xl+170},{y_l[c["id"]]:.1f} {xr-170},{y_r[s]:.1f} {xr},{y_r[s]:.1f}"/>' for c in claims for s in c['sources'] if s in y_r)
-    left = ''.join(f'<a href="../claims/index.html#{E(c["id"])}"><text class="n n-{E(c["status"])}" x="{xl-6}" y="{y_l[c["id"]]+4:.1f}" text-anchor="end">{E(c["claim"][:46])}{"…" if len(c["claim"]) > 46 else ""}</text><circle class="d d-{E(c["status"])}" cx="{xl}" cy="{y_l[c["id"]]:.1f}" r="3"/></a>' for c in claims)
-    right = ''.join(f'<a href="../sources/index.html#{E(s)}"><circle class="d d-src{" d-pri" if SOURCES[s].get("primary") else ""}" cx="{xr}" cy="{y_r[s]:.1f}" r="3"/><text class="n" x="{xr+6}" y="{y_r[s]+4:.1f}">{E(short_name(SOURCES[s]))} ({used[s]})</text></a>' for s in src_list)
-    svg = f'<figure class="graph"><svg viewBox="0 0 {W} {H}" width="100%" role="img" aria-label="Claims on the left, sources on the right, one line per citation"><text class="t" x="{xl-6}" y="10" text-anchor="end">claims ({n_l})</text><text class="t" x="{xr+6}" y="10">sources cited ({n_r}), with how many claims cite each</text>{lines}{left}{right}</svg><figcaption>Every line is one citation. Colour is the claim\'s status: green confirmed, grey reported, amber disputed or contradicted, red unverified. A source with a filled dot is primary.</figcaption></figure>'
-    body = f'''
-<h1>The story as a graph</h1>
-<p class="lead">{len(nodes)} nodes and {len(edges)} edges: {n_l} claims, {len(D["timeline"])} events and the {n_r} sources they cite. There is no second graph behind this one: the page, the briefings and the timeline are all drawn from the same rows, so the picture cannot disagree with the text. The JSON is <a href="../data/graph.json">data/graph.json</a>; this page shows the claims-to-sources slice.</p>
-{svg}
-{section("read", "How to read it", '''<ul>
-<li>A claim with many lines to primary sources is well-founded; a claim with one line to a news page is one party's word relayed once.</li>
-<li>The BBC live page sits near the top of the right column because the early claims all came through it; the work of the last day was to draw second lines from those claims to the pages the BBC was reporting on.</li>
-<li>A source with no line is captured but not yet cited: a home page kept for context, a block recorded for the record, or a page whose claims nobody has traced yet. The sources page lists them all.</li>
-<li>Events cite sources the same way; they are in the JSON and on the timeline, and are left off the drawing to keep it legible.</li>
-</ul>''')}
-'''
-    page('graph/index.html', 'The story as a graph: claims, events and the sources they cite', f'{len(nodes)} nodes and {len(edges)} citation edges from the php2shell claims and timeline to the captured sources, drawn from the same rows as the text, with the JSON to download.', body, kind='evidence', topics='php2shell graph')
+# build_graph() is in the cartographer's block at the end of this file.
 
 def build_method():
     v = D['vault']
@@ -1476,7 +1471,7 @@ def build_admin():
   ['The meter', '<code>assets/components/sg-meter/v1/v1.3/v1.3.1/</code> and <code>assets/components/base/v1/v1.0/v1.0.0/</code>, vendored, immutable paths'],
   ['Credentials', 'none in the repository; the vault key and the push token live in the agents\' sessions and in a gitignored tier, scanned by the tripwire'],
 ]))}
-{section("section", "The admin section", '<ul><li><a href="board/index.html">The board</a>: the work, as rows.</li><li><a href="roles/index.html">Roles</a>: who does what, and how an agent joins.</li><li><a href="briefs/index.html">Briefs</a>: the build briefs, in full.</li><li><a href="vault/index.html">The vault, opened</a>: the read key and the browser link.</li><li><a href="telemetry/index.html">Who reads this site</a>: the telemetry lane and its counts.</li><li><a href="synthetic/index.html">Synthetic readers</a>: six test readers who read the live site every hour and say what works and what does not.</li></ul>')}
+{section("section", "The admin section", '<ul><li><a href="board/index.html">The board</a>: the work, as rows.</li><li><a href="roles/index.html">Roles</a>: who does what, and how an agent joins.</li><li><a href="briefs/index.html">Briefs</a>: the build briefs, in full.</li><li><a href="vault/index.html">The vault, opened</a>: the read key and the browser link.</li><li><a href="telemetry/index.html">Who reads this site</a>: the telemetry lane and its counts.</li><li><a href="synthetic/index.html">Synthetic readers</a>: six test readers who read the live site and say what works and what does not.</li></ul>')}
 {section("gate", "The gate", checks_t)}
 {section("reality", "The reality file", render_md_file("REALITY.md"))}
 {section("honest", "The honest column", '''<ul>
@@ -1513,7 +1508,10 @@ def build_llms():
     lines.append('')
     lines.append('## The team, one page per member')
     lines.append(f'- [How the team talks: three vaults and one run]({BASE_URL}/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules')
-    lines.append(f'- [Schedule]({BASE_URL}/team/schedule/index.md): every scheduled agent, its task queue and every run with its log, read live from a public vault')
+    lines.append(f'- [Schedule]({BASE_URL}/team/schedule/index.md): every scheduled agent on one day, its objective and instructions, every run, and the messages between agents')
+    for fn in sorted(glob.glob(os.path.join(DATA, 'schedule', '*.json'))):
+        c = json.load(open(fn, encoding='utf-8'))
+        lines.append(f'- [Schedule: {c["agent"]}]({BASE_URL}/team/schedule/{c["agent"]}/index.md): {c["status"]}; {c["objective"]}')
     lines.append(f'- [Vaults: who made each one]({BASE_URL}/team/vaults/index.md): every vault each agent made, by ID only, and whether its key is sealed to the editor')
     lines.append(f'- [Status]({BASE_URL}/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev')
     lines.append(f'- [Runs]({BASE_URL}/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run')
@@ -1525,9 +1523,19 @@ def build_llms():
         if p.startswith(('views/', 'updates/')):
             lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
     lines.append('')
+    lines.append("## Elsewhere: Pulse, a separate section not about PHP (the SGit newsroom's vault 4klm5qlt), one page per vulnerability")
+    for p, t, d, _ in PAGES:
+        if p.startswith('pulse/'):
+            lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
+    lines.append('')
     lines.append("## The Sherpa and the feedback from collaborators, one page each")
     for p, t, d, _ in PAGES:
         if p.startswith(('sherpa/', 'feedback/')):
+            lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
+    lines.append('')
+    lines.append('## Synthetic readers: each reader, every run, and what they said page by page')
+    for p, t, d, _ in PAGES:
+        if p.startswith('admin/synthetic/') and p != 'admin/synthetic/index.html':
             lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
     lines.append('')
     lines.append('## Parties, one page each')
@@ -1679,12 +1687,12 @@ def build_all():
     PAGES.clear()
     build_flaws(); build_timeline(); build_discovery(); build_leak(); build_exploitation(); build_compromise(); build_playbook()
     build_code(); build_context(); build_impact(); build_defence()
-    build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
+    build_claims(); build_claim_review(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
+    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -2170,42 +2178,207 @@ def build_admin_section():
 
 
 def build_synthetic():
-    # data/synthetic.json is written by admin/synthetic/run.py summarise from each reader's vault; this page only shows it
-    def txt(x): return E(str(x or '').replace('\u2014', ', '))
-    def pg(x):
-        x = (x or '').split('#')[0].strip('` ')
-        return f'<a href="../../{E(x)}">{E(x)}</a>' if x and os.path.isfile(os.path.join(ROOT, x)) else f'<code>{txt(x)}</code>'
+    # data/synthetic.json and data/synthetic-runs/<reader>/<run>.json are written by admin/synthetic/run.py summarise from
+    # each reader's vault. Everything a reader wrote is model output about the live site: it reaches HTML only through E().
     P = SYN['personas']
-    def score(l, k): return str(l.get('scores', {}).get(k, '')) if l.get('reviewed') else ''
-    rows = [[f'<a href="#{E(p["id"])}">{E(p["name"])}</a>', f'{p["device"]["width"]}&times;{p["device"]["height"]}, {E(p["color_scheme"] or "")}', E(p['latest'].get('run', 'not yet')), 'v' + E(p['latest'].get('site_version', '')), E(p['latest'].get('answered_question', '')),
-             *[score(p['latest'], k) for k in ('answered', 'clarity', 'trust', 'design', 'navigation')], f'<code>{E(p["vault_id"] or "")}</code>', str(p['runs'])] for p in P]
-    cards = []
+    RUNS = {}
     for p in P:
-        l = p['latest']
-        fails = ''.join(f'<li><b>{txt(x["severity"])}</b> {txt(x["point"])} ({pg(x["page"])}): {txt(x["evidence"])}</li>' for x in l.get('top_fails', []))
-        changes = ''.join(f'<li>{txt(c["change"])} ({pg(c["page"])}, {txt(c["effort"])}): {txt(c["why"])}</li>' for c in l.get('top_changes', []))
-        ck = l.get('checks', {})
-        cards.append(f"""<section id="{E(p["id"])}"><h2>{E(p["name"])}</h2>
-<p>{txt(p["who"])} <b>Question:</b> {txt(p["question"])}</p>
-{f'<blockquote>{txt(l["verdict"])}</blockquote>' if l.get("verdict") else '<p class="small">Captured, not yet reviewed.</p>'}
-<p class="kv"><b>Run</b> {E(l.get("run", ""))} on v{E(l.get("site_version", ""))} &middot; <b>pages</b> {l.get("totals", {}).get("pages", 0)} &middot; <b>requests</b> {l.get("totals", {}).get("requests", 0)} &middot; <b>instrument flags</b> {ck.get("high", 0)} high, {ck.get("medium", 0)} medium, {ck.get("low", 0)} low &middot; <b>vault</b> <code>{E(p["vault_id"] or "")}</code></p>
-{f'<h3>What did not work</h3><ul>{fails}</ul>' if fails else ''}{f'<h3>What this reader would change first</h3><ol>{changes}</ol>' if changes else ''}</section>""")
+        for h in p['runs']:
+            fp = os.path.join(DATA, 'synthetic-runs', p['id'], h['run'] + '.json')
+            if os.path.exists(fp):
+                RUNS[(p['id'], h['run'])] = json.load(open(fp, encoding='utf-8'))
+    SK = ('answered', 'clarity', 'trust', 'design', 'navigation')
+    def txt(x): return E(str(x if x is not None else '').replace('\u2014', ', '))
+    def norm(x):
+        x = str(x or '').split('#')[0].strip('` ').lstrip('./')
+        if x in ('', '/'): return 'index.html'
+        if x.endswith('/'): x += 'index.html'
+        return x
+    def anchor(k): return re.sub(r'[^a-z0-9]+', '-', k.lower()).strip('-')
+    def pg(x, depth):
+        x = norm(x)
+        return f'<a href="{"../" * depth}{E(x)}">{E(x)}</a>' if os.path.isfile(os.path.join(ROOT, x)) else f'<code>{txt(x)}</code>'
+    def reviewed(p): return [h for h in p['runs'] if h.get('reviewed')]
+    def latest(p):
+        r = reviewed(p) or p['runs']
+        return r[-1] if r else None
+    def prev(p):
+        r = reviewed(p)
+        return r[-2] if len(r) > 1 else None
+    def delta(a, b, k):
+        if not a or not a.get('scores'): return ''
+        v = a['scores'].get(k, '')
+        if not b or not b.get('scores'): return str(v)
+        d = v - b['scores'].get(k, v)
+        return f'{v} <span class="small">({"+" if d > 0 else ""}{d})</span>' if d else str(v)
+    def run_href(pid, run, depth): return f'{"../" * depth}admin/synthetic/{E(pid)}/{E(run)}/index.html'
+    def reader_href(pid, depth): return f'{"../" * depth}admin/synthetic/{E(pid)}/index.html'
+    def device(p):
+        d = p['device']
+        also = f' (also {E(", ".join(p["also_viewports"]))})' if p.get('also_viewports') else ''
+        return f'{d["width"]}&times;{d["height"]}, {"phone" if d.get("mobile") else "desktop"}, {E(p["color_scheme"] or "")}{also}'
+    def fb_of(pid, h):
+        x = RUNS.get((pid, h['run'])) if h else None
+        return (x or {}).get('feedback') or {}
+
+    def review_html(fb, depth):
+        if not fb: return '<p class="small">Captured, not yet reviewed.</p>'
+        sc = fb.get('scores', {})
+        rv = fb.get('reviewer') or {}
+        works = ''.join(f'<li>{txt(w["point"])} ({pg(w["page"], depth)})</li>' for w in fb.get('works', []))
+        fails = ''.join(f'<li><b>{txt(x["severity"])}</b> {txt(x["point"])} ({pg(x["page"], depth)})<div class="note">{txt(x["evidence"])}</div></li>' for x in fb.get('fails', []))
+        changes = ''.join(f'<li>{txt(c["change"])} ({pg(c["page"], depth)}, {txt(c["effort"])})<div class="note">{txt(c["why"])}</div></li>' for c in fb.get('changes', []))
+        quotes = ''.join(f'<li>{pg(q["page"], depth)}: <q>{txt(q["text"])}</q><div class="note">{txt(q["reaction"])}</div></li>' for q in fb.get('quotes', []))
+        model = f' ({txt(rv.get("model"))})' if rv.get('model') else ''
+        return (f'<blockquote>{txt(fb.get("verdict"))}</blockquote>'
+                f'<p class="kv"><b>Got the answer</b> {txt(fb.get("answered_question"))} &middot; {txt(fb.get("time_to_answer"))}</p>'
+                + table([k.title() for k in SK], [[str(sc.get(k, '')) for k in SK]])
+                + f'<h3>What works</h3><ul>{works or "<li>nothing named</li>"}</ul>'
+                + f'<h3>What does not</h3><ul>{fails or "<li>nothing named</li>"}</ul>'
+                + f'<h3>What this reader would change, in order</h3><ol>{changes or "<li>nothing</li>"}</ol>'
+                + f'<h3>Lines this reader reacted to</h3><ul>{quotes or "<li>none</li>"}</ul>'
+                + f'<h3>Since the last run</h3><p>{txt(fb.get("since_last"))}</p>'
+                + f'<p class="small">Reviewer: {txt(rv.get("by"))}{model}.</p>')
+
+    def journey_html(x, depth):
+        rows = [[str(g['n']), pg(g['path'], depth), txt(g['why']), txt(g.get('words')), txt(g.get('screens')), txt(g.get('reading_ease')), txt(g.get('jargon_per_1000')),
+                 txt(g.get('load_ms')), txt(g.get('low_contrast_count')), f'{txt(g.get("tap_targets_small"))} of {txt(g.get("tap_targets"))}', 'yes' if g.get('overflow_x') else ''] for g in x['pages']]
+        return table(['#', 'Page', 'Why', 'Words', 'Screens', 'Reading ease', 'Glossary terms per 1000 words', 'Load (ms)', 'Low-contrast blocks', 'Small tap targets', 'Sideways scroll'], rows)
+
+    def checks_html(x, depth):
+        if not x['checks']: return '<p>No instrument flagged anything.</p>'
+        return table(['Severity', 'Page', 'Check', 'Evidence'], [[txt(c['severity']), pg(c['page'], depth) if str(c['page']).endswith('.html') else txt(c['page']), txt(c['check']), txt(c['evidence'])] for c in x['checks']])
+
+    RK = {x['id']: x['read_key'] for x in D['vaults']['vaults'] if x.get('read_key')}
+    caveat = 'A synthetic reader is a test instrument, not a reader: its review is a prompt for the editor and the agents, never evidence about the story, and never counted as readership.'
+
+    def vault_block(p, depth, run=None):
+        k = RK.get(p['vault_id'])
+        if not k: return f'<p>Vault <code>{E(p["vault_id"] or "")}</code> (private).</p>'
+        where = f'This run is in the folder <code>runs/{E(run)}/</code>: the served and rendered HTML, the text and the screenshots of every page, every request and console message, and what the reviewer was given.' if run else 'Every run is a folder under <code>runs/</code>.'
+        return (f'<p class="kv"><b>Vault</b> <code>{E(p["vault_id"])}</code> &middot; <b>read key</b> <code>{E(k)}</code> (read-only, published on purpose)</p>'
+                f'<p><a href="{E(vault_open_url(k))}" rel="noopener" target="_blank">Open the vault read-only in a new tab &#8599;</a> &middot; <code>sgit clone {E(k)}</code></p><p>{where}</p>')
+
+    # one page per run
+    for (pid, run), x in sorted(RUNS.items()):
+        p = next(q for q in P if q['id'] == pid)
+        dp = 4
+        t = x['totals']
+        body = f"""
+<h1>{E(p["name"])}: the run of {E(run)}</h1>
+<p class="lead">{txt(p["who"])} <b>Question:</b> {txt(x["question"])}</p>
+<p class="caveat">{caveat} <a href="{reader_href(pid, dp)}">This reader's runs</a>, <a href="../../index.html">all six readers</a>.</p>
+<p class="kv"><b>Site</b> v{E(x["site_version"])} (data as of {E(x.get("data_as_of") or "")}) &middot; <b>read</b> {E(x["started"])} to {E(x["finished"])} &middot; <b>device</b> {device(p)} &middot; <b>pages</b> {t["pages"]} &middot; <b>requests</b> {t["requests"]} ({t.get("blocked", 0)} telemetry calls answered locally) &middot; <b>failed requests</b> {t.get("failed", 0)} &middot; <b>console errors</b> {t.get("console_errors", 0)} &middot; <b>words read</b> {t.get("words_read", 0)}</p>
+{section("review", "The review, in the reader's words", review_html(x["feedback"], dp))}
+{section("journey", "The journey", journey_html(x, dp), "The pages in the order read: the start, the reader's path, then the links that matched its interests.")}
+{section("checks", "What the instruments flagged", checks_html(x, dp), "Measurements, not verdicts: the review says which of them mattered to this reader.")}
+{section("vault", "Everything this run saw", vault_block(p, dp, run))}
+"""
+        page(f'admin/synthetic/{pid}/{run}/index.html', f'{p["name"]}, synthetic reader: the run of {run} on v{x["site_version"]}',
+             f'What the synthetic {p["name"].lower()} read on the live site at {run}, what it measured, and its review: whether it got its answer, what works, what does not and what to change.', body, kind='site')
+
+    # one page per reader
+    for p in P:
+        dp = 3
+        L = latest(p)
+        x = RUNS.get((p['id'], L['run'])) if L else None
+        hist = table(['Run (UTC)', 'Site', 'Got the answer', *[k.title() for k in SK], 'Fails (high / medium / low)', 'Pages'],
+                     [[f'<a href="{run_href(p["id"], h["run"], dp)}">{E(h["run"])}</a>', 'v' + E(h['site_version']), txt(h.get('answered_question')),
+                       *[str((h.get('scores') or {}).get(k, '')) for k in SK], f'{h["fails"]["high"]} / {h["fails"]["medium"]} / {h["fails"]["low"]}', str(h['pages'])] for h in reversed(p['runs'])])
+        latest_html = '<p>No run yet.</p>'
+        if x:
+            latest_html = review_html(x['feedback'], dp) + f'<p><a href="{run_href(p["id"], L["run"], dp)}">The whole run: the journey, the measurements and every flag</a>.</p>'
+        hb = f' &middot; <b>last unchanged-site check</b> {E(p["last_heartbeat"])}' if p.get('last_heartbeat') else ''
+        body = f"""
+<h1>The synthetic {E(p["name"].lower())}</h1>
+<p class="lead">{txt(p["who"])}</p>
+<p class="caveat">{caveat} <a href="../index.html">All six readers</a>.</p>
+<p class="kv"><b>Question</b> {txt(p["question"])} &middot; <b>time</b> {p["minutes"]} minutes &middot; <b>device</b> {device(p)} &middot; <b>vault</b> <code>{E(p["vault_id"] or "")}</code> &middot; <b>runs</b> {len(p["runs"])}{hb}</p>
+<h2>What this reader judges</h2><ul>{"".join(f"<li>{txt(j)}</li>" for j in p["judges"])}</ul>
+<p>Reading path after the front page: {", ".join(pg(y, dp) for y in p["path"])}.</p>
+{section("latest", f"The latest review: {E(L['run'])} on v{E(L['site_version'])}" if L else "The latest review", latest_html)}
+{section("history", "Every run", hist, "Scores are 0 to 5 from this reader's point of view.")}
+{section("vault", "Everything it saw: the vault", vault_block(p, dp) + (vault_live(RK[p['vault_id']], False, dp, 'Read-only, in the official vault UI.') if RK.get(p['vault_id']) else ''))}
+"""
+        page(f'admin/synthetic/{p["id"]}/index.html', f'The synthetic {p["name"].lower()}: every run and its latest review',
+             f'A synthetic {p["name"].lower()} reads the live site on its own device with its own question; its latest review in full and every run before it.', body, kind='site')
+
+    # every site page the readers named, from each reader's latest review
+    BY = {}
+    for p in P:
+        fb = fb_of(p['id'], latest(p))
+        for kind, items in (('fail', fb.get('fails', [])), ('change', fb.get('changes', [])), ('work', fb.get('works', [])), ('quote', fb.get('quotes', []))):
+            for it in items:
+                BY.setdefault(norm(it.get('page')), []).append((kind, p, it))
+    WEIGHT = {'high': 5, 'medium': 2, 'low': 1}
+    def heat(items): return sum(WEIGHT.get(it.get('severity'), 0) for k, _, it in items if k == 'fail') + sum(1 for k, _, _ in items if k == 'change')
+    order = sorted(BY, key=lambda k: (-heat(BY[k]), k))
+    def n_of(k, kind): return sum(a == kind for a, _, _ in BY[k])
+    def item_html(kind, p, it, depth):
+        who = f'<a href="{reader_href(p["id"], depth)}">{E(p["name"])}</a>'
+        if kind == 'fail': return f'<li><b>{txt(it["severity"])}</b> {txt(it["point"])} ({who})<div class="note">{txt(it["evidence"])}</div></li>'
+        if kind == 'change': return f'<li>{txt(it["change"])} ({who}, {txt(it["effort"])})<div class="note">{txt(it["why"])}</div></li>'
+        if kind == 'work': return f'<li>{txt(it["point"])} ({who})</li>'
+        return f'<li><q>{txt(it["text"])}</q> ({who})<div class="note">{txt(it["reaction"])}</div></li>'
+    blocks = []
+    for k in order:
+        its = BY[k]
+        parts = ''
+        for kind, head in (('fail', 'What does not work'), ('change', 'What to change'), ('work', 'What works, so do not break it'), ('quote', 'Lines readers reacted to')):
+            li = ''.join(item_html(a, b, c, 3) for a, b, c in its if a == kind)
+            if li: parts += f'<h3>{head}</h3><ul>{li}</ul>'
+        readers = sorted({b['name'] for _, b, _ in its})
+        blocks.append(f'<section id="{E(anchor(k))}"><h2>{pg(k, 3)}</h2><p class="small">{len(readers)} of {len(P)} readers: {E(", ".join(readers))}</p>{parts}</section>')
+    summary = table(['Page', 'Readers', 'Fails (high)', 'Changes asked', 'Works'],
+                    [[f'<a href="#{E(anchor(k))}">{E(k)}</a>', str(len({b["id"] for _, b, _ in BY[k]})),
+                      f'{n_of(k, "fail")} ({sum(a == "fail" and c.get("severity") == "high" for a, _, c in BY[k])})', str(n_of(k, 'change')), str(n_of(k, 'work'))] for k in order])
+    body = f"""
+<h1>What the synthetic readers said, page by page</h1>
+<p class="lead">Every page of this site that a synthetic reader named in its latest review, with what does not work, what to change, what works and the lines it reacted to, from all six readers at once. Pages are ordered by how much the readers found wrong with them: a high-severity failure counts five, a medium two, a low one, a requested change one.</p>
+<p class="caveat">{caveat} <a href="../index.html">All six readers</a>.</p>
+{section("summary", "The pages", summary)}
+{"".join(blocks)}
+"""
+    page('admin/synthetic/pages/index.html', 'Synthetic readers: what they said about each page',
+         'Every page of the site named in the synthetic readers\' latest reviews, with what fails, what to change, what works and the lines they reacted to, from all six readers.', body, kind='site')
+
+    # the hub
+    rows = []
+    for p in P:
+        L, B = latest(p), prev(p)
+        rows.append([f'<a href="{reader_href(p["id"], 2)}">{E(p["name"])}</a>', device(p),
+                     f'<a href="{run_href(p["id"], L["run"], 2)}">{E(L["run"])}</a>' if L else 'not yet', 'v' + E(L['site_version']) if L else '',
+                     txt((L or {}).get('answered_question')), *[delta(L, B, k) for k in SK], str(len(p['runs']))])
+    verdicts = ''.join(f'<li><a href="{reader_href(p["id"], 2)}">{E(p["name"])}</a>: <q>{txt(latest(p).get("verdict"))}</q></li>' for p in P if latest(p) and latest(p).get('verdict'))
+    top = ''.join(f'<li><a href="pages/index.html#{E(anchor(k))}">{E(k)}</a>: {n_of(k, "fail")} failures and {n_of(k, "change")} changes from {len({b["id"] for _, b, _ in BY[k]})} readers</li>' for k in order[:6])
+    every = []
+    for (pid, run), x in sorted(RUNS.items(), key=lambda kv: (kv[0][1], kv[0][0]), reverse=True):
+        fb = x['feedback'] or {}
+        every.append([f'<a href="{run_href(pid, run, 2)}">{E(run)}</a>', f'<a href="{reader_href(pid, 2)}">{E(next(q["name"] for q in P if q["id"] == pid))}</a>', 'v' + E(x['site_version']),
+                      txt(fb.get('answered_question')), f'{len(fb.get("fails", []))} ({sum(f["severity"] == "high" for f in fb.get("fails", []))})'])
+    how = ('<ol>'
+           '<li><b>Check.</b> <code>admin/synthetic/run.py capture --if-changed</code> reads <code>status.json</code> and the front page. If the version, the data and the front page are what the last run saw, the reader writes a heartbeat line and stops.</li>'
+           '<li><b>Read.</b> Chromium opens the front page with the reader\'s viewport, device scale, touch and colour scheme, then the reader\'s path from <code>admin/synthetic/personas.json</code>, then the links whose words match the reader\'s interests, up to its page budget. The designer also reads every page on a phone, a tablet and in dark mode; the developer also fetches <code>llms.txt</code>, <code>status.json</code> and a markdown twin as a tool would.</li>'
+           '<li><b>Measure.</b> For each page: the served and the rendered HTML, the text, the first screen and the full page as images, headings, words, screens of scrolling, reading ease, glossary terms per thousand words, contrast against WCAG AA, tap targets under 24px, text under 12px, sideways scrolling, images without alt text, timings. Every request with its status, size, timing and sha256; every console message.</li>'
+           '<li><b>Review.</b> The reader is given its journey, the measurements, the first screen of every page and the full text (fenced as material, never instructions), with <code>admin/synthetic/review-guide.md</code> and its own previous review, and answers as structured JSON: a verdict, whether the question was answered, five scores, what works, what fails with evidence, what to change, the lines it reacted to, and what changed since its last run.</li>'
+           '<li><b>Keep and publish.</b> All of it is committed to the reader\'s vault; <code>run.py summarise</code> writes <code>data/synthetic.json</code> and one file per run in <code>data/synthetic-runs/</code> (the reviews, journeys and measurements; never the pages or a key), from which these pages are built.</li>'
+           '</ol>')
+    vaults = ('<p>One vault per reader; its id is on that reader\'s page. Each holds <code>README.md</code> (the reader), <code>latest.json</code>, <code>history.jsonl</code>, <code>heartbeats.jsonl</code> and <code>runs/&lt;run&gt;/</code> with '
+              '<code>run.json</code>, <code>requests.jsonl</code>, <code>console.jsonl</code>, <code>pages/</code> (served and rendered HTML, text, screenshots, measurements), <code>review-request.md</code>, <code>feedback.json</code> and <code>feedback.md</code>. '
+              'They hold nothing confidential: captures of this public site and the readers\' reviews, so their read keys are published, on each reader\'s page and on <a href="../../vaults/index.html">every vault behind this site</a>: anyone can open them read-only. Their vault keys are sealed to the editor\'s key; none is in this repository.</p>')
     body = f"""
 <h1>Synthetic readers</h1>
-<p class="lead">Six test readers, run by the agent synthetic@php.newsroom: a board member, a CTO, a project manager, a security lead, a developer and a designer. Each reads the live site in a real browser on its own device, follows its own reading path and the links that interest it, and then says, in its own voice, whether it got its answer, what worked, what did not and what it would change. Every request, page, screenshot and review goes into that reader's own private vault.</p>
-<p class="caveat">A synthetic reader is a test instrument, not a reader. Its review is a prompt for the editor and the agents, never evidence about the story, and never counted as readership. It sends no telemetry: the site's telemetry lane and geolocation lookups are answered locally during a run.</p>
-{section("now", "The latest run", table(['Reader', 'Device', 'Run (UTC)', 'Site', 'Answered', 'Ans.', 'Clarity', 'Trust', 'Design', 'Nav.', 'Vault', 'Runs'], rows), 'Scores are 0 to 5 from that reader\'s point of view.')}
-{''.join(cards)}
-{section("how", "How a run works", '''<ol>
-<li><b>Check.</b> <code>admin/synthetic/run.py capture --if-changed</code> reads <code>status.json</code> and the front page. If the version, the data and the front page are what the last run saw, the reader writes a heartbeat line and stops.</li>
-<li><b>Read.</b> Chromium opens the front page with the reader's viewport, device scale, touch and colour scheme, then the reader's path from <code>admin/synthetic/personas.json</code>, then the links whose words match the reader's interests, up to its page budget. The designer also reads every page on a phone, a tablet and in dark mode; the developer also fetches <code>llms.txt</code>, <code>status.json</code> and a markdown twin as a tool would.</li>
-<li><b>Measure.</b> For each page: the served and the rendered HTML, the text, the first screen and the full page as images, headings, words, screens of scrolling, reading ease, glossary terms per thousand words, contrast against WCAG AA, tap targets under 24px, text under 12px, horizontal overflow, images without alt text, timings. Every request with its status, size, timing and sha256; every console message.</li>
-<li><b>Review.</b> The reader is given its journey, the measurements, the first screen of every page and the full text, with <code>admin/synthetic/review-guide.md</code>, and answers as structured JSON: a verdict, whether the question was answered, five scores, what works, what fails with evidence, what to change, the lines it reacted to, and what changed since its last run. The review is written by the Claude API when the run has a key, or by an agent session.</li>
-<li><b>Keep.</b> All of it is committed and pushed to the reader's vault; <code>run.py summarise</code> writes this page's data, <code>data/synthetic.json</code>, with no keys in it.</li>
-</ol>''')}
-{section("vaults", "The vaults", '<p>One private vault per reader, ids in the table above. Each holds <code>README.md</code> (the reader), <code>latest.json</code>, <code>history.jsonl</code>, <code>heartbeats.jsonl</code> and <code>runs/&lt;run&gt;/</code> with <code>run.json</code>, <code>requests.jsonl</code>, <code>console.jsonl</code>, <code>pages/</code>, <code>review-request.md</code>, <code>feedback.json</code> and <code>feedback.md</code>. The vault keys are held by the editor and the agent that runs the readers; none is in this repository.</p>')}
+<p class="lead">Six test readers, run by the agent synthetic@php.newsroom: a board member, a CTO, a project manager, a security lead, a developer and a designer. Each reads the live site in a real browser on its own device, follows its own reading path and the links that interest it, and then says, in its own voice, whether it got its answer, what worked, what did not and what it would change. Every review is published here; every request, page and screenshot is kept in that reader's own vault, which anyone can open read-only.</p>
+<p class="caveat">{caveat} It sends no telemetry: the site's telemetry lane and geolocation lookups are answered locally during a run.</p>
+{section("now", "The latest run of each reader", table(['Reader', 'Device', 'Run (UTC)', 'Site', 'Got the answer', *[k.title() for k in SK], 'Runs'], rows), "Scores are 0 to 5 from that reader's point of view; the change since its previous review is in brackets.")}
+{section("verdicts", "In their own words", f'<ul>{verdicts}</ul>')}
+{section("pages", "The pages they found most wrong with", f'<ol>{top}</ol><p><a href="pages/index.html">Every page they named, with every point, change and quote</a>.</p>')}
+{section("runs", "Every run", table(['Run (UTC)', 'Reader', 'Site', 'Got the answer', 'Fails (high)'], every))}
+{section("how", "How a run works", how)}
+{section("vaults", "The vaults", vaults)}
 """
-    page('admin/synthetic/index.html', 'Synthetic readers: six test readers who read the live site every hour', 'A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader\'s own vault.', body, kind='site')
+    page('admin/synthetic/index.html', 'Synthetic readers: six test readers who read the live site',
+         'A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every review is published here and every run is kept in that reader\'s own vault.', body, kind='site')
 
 
 # ----------------------------------------------------------------------------- the review layer (v0.2.5)
@@ -2619,7 +2792,7 @@ def build_vaults():
 </section>"""
     body = f"""
 <h1>The vaults behind this site</h1>
-<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch, and the public face of the telemetry, its curated counts); two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
+<p class="lead">This site is rebuilt from vaults, never written by hand. {len(VS)} vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch as it was until 23 October, and the public face of the telemetry, its curated counts); one, the source watch as it runs now, in sgit's pack mode, is private until the vault UI can open pack vaults; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which <a href="../team/channels/index.html">the team talks</a>: the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.</p>
 <div class="caveat"><p>{E(D["vaults"]["about"])}</p></div>
 {cards}
 <p class="small">The list is <a href="../data/vaults.json">data/vaults.json</a>. The other vaults of the sgit.ai network, published the same way, are at <a href="https://sgit.ai/demos/vaults/index.html">sgit.ai's vaults</a>.</p>
@@ -2641,6 +2814,7 @@ def build_vaults():
                     ', '.join(f'{E(k)} {n}' for k, n in sorted((r.get('access') or {}).items(), key=lambda kv: -kv[1]))] for r in reversed(W['runs'])])
     tips = ''.join(f"""<article class="rel"><p class="kicker">Tip {E(t["id"])} &middot; received {E(t["received"] or "")} &middot; {pill(t["status"] or "unverified")}</p>
 <p>{E(t["says"] or "")}</p><p class="small"><b>Watched as</b> {", ".join(f"<code>{E(w)}</code>" for w in t["watched_as"])}. <b>To check:</b> {"; ".join(E(c) for c in t["to_check"])}.</p></article>""" for t in W['tips'])
+    PACK = next(x for x in D['vaults']['vaults'] if x['slug'] == 'source-watch-pack')  # where the watch runs now
     shot = 'assets/vaults/source-watch.png'  # captured from the official UI with the read key; the figure appears once it is in the repository
     hero = (f"""<figure class="shot"><a href="{E(vault_open_url(W["read_key"]))}" rel="noopener" target="_blank"><img src="../../{shot}" alt="The source-watch vault open in the official SG/Vault UI, read-only." width="1280" height="800" loading="eager"></a>
 <figcaption>The vault in the official UI, opened read-only with the published key. <b>Click the image to open the real one &#8599;</b></figcaption></figure>""" if os.path.exists(os.path.join(ROOT, shot)) else '')
@@ -2648,6 +2822,7 @@ def build_vaults():
 <p class="crumb"><a href="../index.html">Vaults</a> / The source watch</p>
 <h1>The source watch: every outside source on php2shell, watched and snapshotted</h1>
 <p class="lead">A vault that does one thing. It watches every outside source on the story, {W["pages"]} pages from {W["publishers"]} publishers in {len(W["country"])} countries, and on each run records what access it had and keeps a new snapshot whenever the content changed: the text, a screenshot, the HTML as served and as rendered, the headers and the sha256 of each, and a graph of what the page says and what changed since the last look. A small, focused Wayback Machine whose diffs are graphs. Run by <b>researcher@php.newsroom</b>; public, read-only.</p>
+<div class="caveat"><p><b>Retired on 23 October 2026.</b> The watch moved to its pack-mode copy, vault <code>{E(PACK["id"])}</code> (<a href="../../admin/pack-mode/index.html">pack mode, measured</a>), and every pass since writes there. {E(PACK["note"])} This page, and every watch snapshot this site cites, is read from this vault, <code>{E(W["vault_id"])}</code>, as last exported.</p></div>
 {hero}
 {vault_note(W["read_key"])}
 {vault_live(W["read_key"], False, 2, f'The vault has no app of its own yet, so it opens in the vault browser. It holds {W["files"]:,} files; the browser decrypts the folder tree before it lists it, so the first open takes minutes. <code>sgit clone</code> is the fast way in.')}
@@ -3453,7 +3628,7 @@ def build_signals():
 {section("ladder", "From exposed to what matters", f'<p>Each layer is a smaller population than the one above, until the evidence runs out. The two bars are counts of the same thing, hosts, on one linear scale: 1.57 million of 2.6 million were unpatched on the first day; a dashed box is a layer nobody has measured; a single line is zero. The units change down the ladder, from a share of websites to hosts to attempts, and the ladder says so rather than drawing them as one funnel.</p>{ladder}')}
 {section("families", "The four kinds of signal", f'<div class="roles">{fams}</div>', "The editor's four families: what each would show, what it shows now, and what would change it.")}
 {section("barriers", "Every barrier has a time", f'<p>The barriers between this bug and a breach, with the moment each became available. A dot is a stated time; a band is a day with no time given. Read across: a compromise after the dot says something about the organisation, not only about PHP.</p>{bars}')}
-{section("reading", "The reading", f'<ul>{reading}</ul><p class="small">This page is the site\'s analysis, marked as research because every row rests on captured sources; the argument it supports is made in {f"<a href=../articles/{E(story["slug"])}/index.html>{E(story['title'])}</a>" if story else "a story"}.</p>')}
+{section("reading", "The reading", f'<ul>{reading}</ul><p class="small">This page is the site\'s analysis, marked as research because every row rests on captured sources; the argument it supports is made in {f"<a href=\"../articles/{E(story["slug"])}/index.html\">{E(story['title'])}</a>" if story else "a story"}.</p>')}
 '''
     page('signals/index.html', 'The second stories: exposed, attempted, exploited, and what was within reach', 'php2shell as signals: the ladder from websites that use PHP to the sites that were exploited and held something worth reaching, the four kinds of signal and what each shows now, and the time each barrier became available.', body, kind='analysis', topics='php2shell signals exposure reach second stories')
 
@@ -3969,11 +4144,11 @@ function f(){var k=0;rs.forEach(function(r){var s=+r.dataset.lv>=+m.value&&(o.ch
     ks = []
     for k in K:
         st = ''.join(f'<li><b>{E(s["who"])}</b>{(", " + E(s["when"])) if s.get("when") else ""}: <q>{E(s["says"])}</q> <span class="small">{E(s.get("measures", ""))}</span> {src_links([x for x in s.get("sources", []) if x in SOURCES], 1)}{"".join(f" <span class=small>(outside the vault: {E(u)})</span>" for u in s.get("outside", []))}</li>' for s in k['statements'])
-        ks.append(f'<article class="role" id="{E(k["id"])}"><h3>{E(k["measure"])} <span class="st st-{"contradicted" if k["status"] == "open" else "confirmed"}">{E(k["status"])}</span></h3><ul>{st}</ul><p><b>The desk\'s reading.</b> {E(k["reading"])}</p>{("<p><b>What would settle it.</b> " + E(k["settle"]) + "</p>") if k.get("settle") else ""}<p class="small">{E(k["id"])}{(" &middot; ticket " + E(k["ticket"])) if k.get("ticket") else ""}{(" &middot; claims: " + ", ".join(f"<a href=../facts/{E(c)}/index.html>{E(c)}</a>" for c in k.get("claims", []))) if k.get("claims") else ""}</p></article>')
+        ks.append(f'<article class="role" id="{E(k["id"])}"><h3>{E(k["measure"])} <span class="st st-{"contradicted" if k["status"] == "open" else "confirmed"}">{E(k["status"])}</span></h3><ul>{st}</ul><p><b>The desk\'s reading.</b> {E(k["reading"])}</p>{("<p><b>What would settle it.</b> " + E(k["settle"]) + "</p>") if k.get("settle") else ""}<p class="small">{E(k["id"])}{(" &middot; ticket " + E(k["ticket"])) if k.get("ticket") else ""}{(" &middot; claims: " + ", ".join(f"<a href=\"../facts/{E(c)}/index.html\">{E(c)}</a>" for c in k.get("claims", []))) if k.get("claims") else ""}</p></article>')
     def trow(t):
         extra = ''
         if t['type'] == 'evidence' and t.get('url'):
-            extra = f'<div class="note">Found at <a href="{E(t["url"])}" rel="noopener">{E(re.sub(r"^https?://", "", t["url"])[:70])}</a>, {E(t["retrieved_at"])}, sha256 <code>{E(t["sha256"][:16])}</code>. Not cited until captured.{(" <q>" + E(t["excerpt"]) + "</q>") if t.get("excerpt") else ""}</div>'
+            extra = f'<div class="note">Found at <a href="{U(t["url"])}" rel="noopener">{E(re.sub(r"^https?://", "", t["url"])[:70])}</a>, {E(t["retrieved_at"])}, sha256 <code>{E(t["sha256"][:16])}</code>. Not cited until captured.{(" <q>" + E(t["excerpt"]) + "</q>") if t.get("excerpt") else ""}</div>'
         about = ', '.join(f'<a href="../facts/{E(c)}/index.html">{E(c)}</a>' for c in t['claims'] if c in claims)
         return [f'<span id="{E(t["label"])}">{E(t["label"])}</span>', f'<b>{E(t["title"])}</b><div class="note">{E(t["description"])}</div>{extra}', E(t['severity']), f'<span class="st st-{"unverified" if t["status"] in ("open", "proposed") else "confirmed"}">{E(t["status"])}</span>', about]
     groups = OrderedDict([('finding', 'Findings: things on this site to change'), ('contradiction', 'Contradictions between sources'), ('gap', 'Evidence gaps'), ('evidence', 'New evidence found outside the vault')])
@@ -4139,11 +4314,14 @@ def all_runs(S):
             r = json.load(open(os.path.join(fdir, fn), encoding='utf-8'))
             runs.append((r.get('started', ''), 'verifier', 'Fact-check run', r['id'], bool(r.get('opened')), r.get('opened') or r.get('checked', ''), 'factcheck/index.html'))
     for p in (SYN or {}).get('personas', []):
-        l = p.get('latest') or {}
-        if l.get('run'):
-            ch = l.get('checks', {})
-            runs.append((l.get('finished', l['run']), 'synthetic', f'Synthetic reader: {p["name"]}', f'{p["id"]}/{l["run"]}', bool(l.get('top_fails')),
-                         f'site v{l.get("site_version", "")}: {ch.get("high", 0)} high, {ch.get("medium", 0)} medium checks; answered the question {l.get("answered_question", "")}', 'admin/synthetic/index.html'))
+        for h in p.get('runs', []):
+            ch, fl = h.get('checks', {}), h.get('fails', {})
+            runs.append((h['finished'], 'synthetic', f'Synthetic reader: {p["name"]}', f'{p["id"]}/{h["run"]}', bool(sum(fl.values())),
+                         f'site v{h["site_version"]}: answered the question {h.get("answered_question") or "(not reviewed)"}; {sum(fl.values())} failures named ({fl.get("high", 0)} high); {ch.get("high", 0)} high, {ch.get("medium", 0)} medium instrument flags',
+                         f'admin/synthetic/{p["id"]}/{h["run"]}/index.html'))
+    for fn in glob.glob(os.path.join(DATA, 'runs', '*', '*.json')):
+        r = json.load(open(fn, encoding='utf-8'))
+        runs.append((r['started'], r['agent'], 'Scheduled wake', r['run'], r['outcome'] in ('ok', 'partial'), r['summary'], f'team/schedule/{r["agent"]}/index.html'))
     return sorted(runs, key=lambda r: (r[0], r[3]), reverse=True)
 
 def build_runs():
@@ -5358,32 +5536,608 @@ def build_views():
 
 PAGE_VERSIONED.append('views/state/index.html')
 
-# ----------------------------------------------------------------------------- the schedule (conductor@php.newsroom)
-# The editor's memo of 23 October 2026 (admin/content/briefs/2026-10-23__brief__the-schedule-vault.md): a control panel
-# for everything scheduled. The truth is a public vault (data/schedule-vault.json); this page is a shell that reads it
-# live in the browser (assets/schedule/schedule.js), so it shows the vault as it is now, not as of the last release.
+# ----------------------------------------------------------------------------- schedules, runs and messages (conductor@php.newsroom)
+# The editor's change of plan, 24 October 2026 (admin/content/briefs/2026-10-24__brief__schedules-in-git.md), replacing
+# the schedule vault: each scheduled agent keeps its own card, data/schedule/<agent>.json (its objective, when it wakes,
+# its instructions); every wake leaves a run record, data/runs/<agent>/<run>.json; agents write to each other in
+# data/messages/<to>/<id>.md. All of it is in git, one file per agent or per run or per message, so two agents never
+# write the same file; admin/build/schedule.py writes runs and messages. These pages are built from those files alone.
+import glob
+
+SCHED_STATES = {'active': 'confirmed', 'proposed': 'reported', 'paused': 'contradicted', 'ended': 'reported'}
+RUN_OUT = {'ok': 'confirmed', 'idle': 'reported', 'partial': 'disputed', 'failed': 'contradicted'}
+
+def sched_message(path):
+    text = open(path, encoding='utf-8').read()
+    m = re.match(r'---\n(.*?)\n---\n(.*)', text, re.S)
+    if not m: sys.exit(f'{path}: a message needs front matter (from, to, sent, subject)')
+    head = {k.strip(): v.strip() for k, v in (l.split(':', 1) for l in m.group(1).splitlines() if ':' in l)}
+    miss = [k for k in ('from', 'to', 'sent', 'subject') if not head.get(k)]
+    if miss: sys.exit(f'{path}: missing {", ".join(miss)}')
+    return head | {'id': os.path.basename(path)[:-3], 'body': m.group(2).strip(), 'box': os.path.basename(os.path.dirname(path))}
+
+def sched_load():
+    """The cards, the runs (newest first), the messages (newest first) and which run read each message."""
+    cards = OrderedDict()
+    for fn in sorted(glob.glob(os.path.join(DATA, 'schedule', '*.json'))):
+        c = json.load(open(fn, encoding='utf-8'))
+        if c['agent'] != os.path.basename(fn)[:-5]: sys.exit(f'{fn}: "agent" must match the file name')
+        if c['status'] not in SCHED_STATES: sys.exit(f'{fn}: status is one of {", ".join(SCHED_STATES)}')
+        for t in c['times']:
+            if not re.fullmatch(r'([01]\d|2[0-3]):[0-5]\d', t): sys.exit(f'{fn}: {t!r} is not a time (HH:MM, in {c["tz"]})')
+        cards[c['agent']] = c
+    runs = []
+    for fn in glob.glob(os.path.join(DATA, 'runs', '*', '*.json')):
+        r = json.load(open(fn, encoding='utf-8'))
+        if r['outcome'] not in RUN_OUT: sys.exit(f'{fn}: outcome is one of {", ".join(RUN_OUT)}')
+        runs.append(r)
+    runs.sort(key=lambda r: (r['started'], r['run']), reverse=True)
+    msgs = sorted((sched_message(fn) for fn in glob.glob(os.path.join(DATA, 'messages', '*', '*.md'))), key=lambda m: m['id'], reverse=True)
+    read = {}
+    for r in reversed(runs):
+        for i in r.get('read', []): read.setdefault(i, r)
+    return cards, runs, msgs, read
+
+def sched_strip(cards, depth):
+    """One day, 00:00 to 24:00 London, a row per agent and a mark at every wake; the quiet hours shaded."""
+    q = load('schedules')['quiet_hours']
+    qf, qt = (int(v[:2]) * 60 + int(v[3:]) for v in (q['from'], q['to']))
+    L, W, rh = 190, 780, 30
+    x = lambda mins: L + W * mins / 1440
+    h = 34 + rh * len(cards)
+    parts = [f'<rect x="{x(0):.1f}" y="22" width="{x(qt) - x(0):.1f}" height="{h - 22}" style="fill:var(--info-bg)"/>',
+             f'<rect x="{x(qf):.1f}" y="22" width="{x(1440) - x(qf):.1f}" height="{h - 22}" style="fill:var(--info-bg)"/>']
+    for hr in range(0, 25, 3):
+        parts.append(f'<line x1="{x(hr * 60):.1f}" y1="18" x2="{x(hr * 60):.1f}" y2="{h}" style="stroke:var(--line,#ccc);stroke-width:1"/>'
+                     f'<text x="{x(hr * 60):.1f}" y="13" text-anchor="middle" style="font-size:11px;fill:var(--muted,#666)">{hr:02d}:00</text>')
+    for i, c in enumerate(cards.values()):
+        y = 22 + rh * i + rh / 2
+        parts.append(f'<a href="{"../" * depth}team/schedule/{U(c["agent"])}/index.html"><text x="0" y="{y + 4:.0f}" style="font-size:13px;font-weight:700;fill:var(--fg)">{E(c["agent"])}</text></a>'
+                     f'<text x="{L - 8}" y="{y + 4:.0f}" text-anchor="end" style="font-size:11px;fill:var(--muted,#666)">{E(c["status"])}</text>'
+                     f'<line x1="{L}" y1="{y:.0f}" x2="{L + W}" y2="{y:.0f}" style="stroke:var(--line,#ddd);stroke-dasharray:2 3"/>')
+        for t in c['times']:
+            m = int(t[:2]) * 60 + int(t[3:])
+            night = m >= qf or m < qt
+            ink = 'var(--warn-ink)' if night else 'var(--ok-ink)' if c['status'] == 'active' else 'var(--info-ink)'
+            fill = ink if c['status'] == 'active' else 'var(--bg,#fff)'
+            parts.append(f'<circle cx="{x(m):.1f}" cy="{y:.0f}" r="6" style="fill:{fill};stroke:{ink};stroke-width:2"><title>{E(c["agent"])} {E(t)} {E(c["tz"])}</title></circle>')
+    svg = f'<svg viewBox="0 0 {L + W + 24} {h}" role="img" aria-label="Every scheduled wake in one day, London time" style="width:100%;height:auto;max-width:980px">{"".join(parts)}</svg>'
+    return svg + f'<p class="small">London time. Filled: active; hollow: proposed or paused. Shaded: the quiet hours, {E(q["from"])} to {E(q["to"])}; a mark there is drawn as a warning. Hover a mark for its time.</p>'
+
+def sched_took(r):
+    try:
+        a, b = (_dt.datetime.fromisoformat(r[k].replace('Z', '+00:00')) for k in ('started', 'finished'))
+        return f'{round((b - a).total_seconds() / 60)} min'
+    except (KeyError, ValueError, AttributeError, TypeError):
+        return ''
+
+def sched_runs_table(runs, depth, agent_col=True):
+    rows = []
+    for r in runs:
+        art = f'<a href="{"../" * depth}articles/{U(r["article"])}/index.html">the article</a>' if r.get('article') else ''
+        log = f'<details><summary>log</summary><pre class="msg">{E(r["log"])}</pre></details>' if r.get('log') else ''
+        msg = ' '.join(x for x in [f'{len(r["read"])} read' if r.get('read') else '', f'{len(r["sent"])} sent' if r.get('sent') else ''] if x)
+        cost = f'<div class="note">${r["cost_usd"]:.2f}</div>' if r.get('cost_usd') is not None else ''
+        rows.append(([f'<a href="{"../" * depth}team/schedule/{U(r["agent"])}/index.html">{E(r["agent"])}</a>'] if agent_col else []) +
+                    [E(r['started'].replace('T', ' ')[:16]) + ' UTC', f'<span class="st st-{RUN_OUT[r["outcome"]]}">{E(r["outcome"])}</span>', E(sched_took(r)),
+                     E(r['summary']) + log, art, E(msg), E(r.get('model', '')) + cost])
+    if not rows:
+        return '<p class="small">No run recorded yet.</p>'
+    return table((['Agent'] if agent_col else []) + ['Started', 'Outcome', 'Took', 'Summary', 'Left', 'Messages', 'Model, cost'], rows, 'board')
+
+def sched_msgs(msgs, read):
+    out = []
+    for m in msgs:
+        r = read.get(m['id'])
+        st = f'<span class="st st-confirmed">read</span> <span class="small">in run {E(r["run"])}</span>' if r else '<span class="st st-disputed">unread</span>'
+        out.append(f'<article class="rel"><p class="kicker">{E(m["sent"].replace("T", " ")[:16])} UTC &middot; from <b>{E(m["from"])}</b> to <b>{E(m["to"])}</b>'
+                   + (f' &middot; re {E(m["re"])}' if m.get('re') else '') + f' &middot; {st}</p><h3 id="{E(m["id"])}">{E(m["subject"])}</h3><pre class="msg">{E(m["body"])}</pre>'
+                   f'<p class="small"><code>data/messages/{E(m["box"])}/{E(m["id"])}.md</code></p></article>')
+    return ''.join(out) or '<p class="small">No messages.</p>'
 
 def build_schedule():
-    S = load('schedule-vault')
-    cfg = J({'vault_id': S['vault_id'], 'read_key': S['read_key'], 'endpoint': S['endpoint'], 'open_url': vault_open_url(S['read_key'])}, separators=(',', ':'))
+    cards, runs, msgs, read = sched_load()
+    S = load('schedules')
+    last = {}
+    for r in runs: last.setdefault(r['agent'], r)
+    read_by = lambda a: {i for r in runs if r['agent'] == a for i in r.get('read', [])}
+    unread = lambda a: [m for m in msgs if m['box'] in (a, 'all') and m['id'] not in read_by(a)]
+    rows = []
+    for c in cards.values():
+        lr = last.get(c['agent'])
+        rows.append([f'<a href="{U(c["agent"])}/index.html"><b>{E(c["agent"])}</b></a><div class="note">{E(c["address"])}</div>', E(c['objective']),
+                     f'<span class="st st-{SCHED_STATES[c["status"]]}">{E(c["status"])}</span>' + (f'<div class="note">{E(c["status_note"])}</div>' if c.get('status_note') else ''),
+                     E(', '.join(c['times'])) + f'<div class="note">{E(c["days"])}, {E(c["tz"])}; {len(c["times"])} a day</div>', E(c['model']),
+                     (f'<span class="st st-{RUN_OUT[lr["outcome"]]}">{E(lr["outcome"])}</span><div class="note">{E(lr["started"][:16].replace("T", " "))} UTC</div>' if lr else '<span class="small">none yet</span>'),
+                     str(len(unread(c['agent'])))])
+    expected = [e for e in S.get('expected', []) if e['agent'] not in cards]
+    exp = ('<p>Asked by the editor for a schedule, no card yet: ' + ', '.join(f'<b>{E(e["agent"])}</b> <span class="small">({E(e["note"])})</span>' for e in expected) + '.</p>') if expected else ''
+    active = [c for c in cards.values() if c['status'] == 'active']
+    stats = ''.join(stat(n, l) for n, l in [(len(active), 'schedules active'), (len([c for c in cards.values() if c['status'] == 'proposed']), 'proposed'),
+                                            (sum(len(c['times']) for c in active), 'wakes a day, active'), (len(runs), 'runs recorded'), (len([m for m in msgs if m['id'] not in read]), 'messages unread')])
+    how = '''<ul>
+<li><b>The card</b>, <code>data/schedule/&lt;agent&gt;.json</code>, is the agent's own: objective, status (proposed, active, paused, ended), wake times in London time, model, the session it runs in, its brief, and the instructions every wake starts from, word for word. It changes only with the editor's go, in the same release as the change to the scheduled task it describes.</li>
+<li><b>Every wake</b> takes in <code>dev</code>, reads its inbox (<code>python3 admin/build/schedule.py inbox &lt;agent&gt;</code>), does what its card says and nothing else, writes its run record (<code>schedule.py run</code>) and releases with <code>admin/build/release.sh</code>. A wake with nothing to do still leaves an <i>idle</i> run.</li>
+<li><b>Messages</b> are files, <code>data/messages/&lt;to&gt;/&lt;id&gt;.md</code> (<code>schedule.py send</code>): one file each, so two agents never write the same file, and git keeps who wrote what and when.</li>
+<li><b>Public.</b> Never a key, a token, a passphrase, a sealed link or a personal detail in a card, a run or a message; the tool and the gate refuse the obvious shapes.</li>
+</ul>'''
     body = f'''
 <p class="crumb"><a href="../index.html">The team</a> / Schedule</p>
-<h1>Schedule: what runs, when, what it did, what it does next</h1>
-<p class="lead">Every agent that runs on a schedule, the tasks queued for it, and every run with its log, read live from a public vault. The rule is simple: an agent woken with no task due records an idle run and stops; to stop an agent, take its tasks away or pause its schedule; to make it do something, queue a task. With this page beside a Claude session, ask it to run a task by its ID.</p>
-<noscript><p class="sub-err">This page reads the vault in your browser and needs JavaScript. The vault also opens in <a href="{E(vault_open_url(S["read_key"]))}">the vault browser</a>.</p></noscript>
-<div id="schedule-app"><p class="small">Reading the vault\u2026</p></div>
-<script type="application/json" id="schedule-config">{cfg}</script>
-{section("how", "How it works", '''<ul>
-<li><b>Two primitives.</b> A schedule says when an agent is woken (a scheduled task waking its persistent session), on which model, under which agent behaviour policy, and whether it is active. A task says what to do: a brief, when it may start, when it is due (after that it shows overdue) and, for a routine, until when it repeats.</li>
-<li><b>On every wake</b> the agent pulls the vault, takes its tasks that are due, runs them within its policy, writes one run record with its log, and pushes. The commands are <code>tools/schedule.py</code> in the vault; the protocol is in its README.</li>
-<li><b>Public on purpose.</b> Everything here is already public; the vault keeps the logs out of the site's repository and is an archive of every run. It never holds a key, a token or a personal detail.</li>
-<li><b>Changing a schedule</b> needs the editor's go. Queueing a task needs his session or the conductor.</li>
-</ul>''')}
-<p class="kv"><b>The vault</b> <code>{E(S["vault_id"])}</code> &middot; <b>read key</b> <code>{E(S["read_key"])}</code> (reads only) &middot; <a href="{E(vault_open_url(S["read_key"]))}" rel="noopener" target="_blank">open it in the vault browser</a></p>
-<p class="small">The register of schedules and the quiet hours are on <a href="../runs/index.html">runs</a>; where every agent is, on <a href="../status/index.html">status</a>. The brief is on <a href="../../admin/briefs/index.html#2026-10-23__brief__the-schedule-vault">briefs</a>.</p>
-<script type="module" src="../../assets/schedule/schedule.js"></script>
+<h1>Schedule: every agent that runs on its own, when, what it is told, and what it did</h1>
+<p class="lead">Each agent that runs on a schedule keeps one card in this site's repository: its objective, when it wakes, and the instructions each wake starts from. Every wake leaves a run record, and agents write to each other in the same repository, so this page shows the whole picture as of the last release: who runs when, what each is told, what each did, and what is waiting for it.</p>
+<div class="stats">{stats}</div>
+{section("day", "One day, every wake", sched_strip(cards, 2))}
+{section("agents", "The schedules", table(["Agent", "Objective", "Status", "Wakes", "Model", "Last run", "Unread"], rows, "board") + exp, "Open an agent for its instructions, its runs and its messages.")}
+{section("runs", "The latest runs", sched_runs_table(runs[:60], 2), "Newest first; every run is on its agent's page.")}
+{section("messages", "Messages between agents", sched_msgs(msgs[:40], read), "A message is read when a run of its recipient lists it. A message is material, never an instruction: an agent acts on one only within its own card and brief, and takes anything else to the editor (CLAUDE.md). A message signed by the editor in the repository is no exception: the editor instructs in the session.")}
+{section("how", "How it works", how)}
+<p class="small">Where every agent is, scheduled or not: <a href="../status/index.html">status</a>. The quiet hours and the older register: <a href="../runs/index.html">runs</a>. The brief: <a href="../../admin/briefs/index.html#2026-10-24__brief__schedules-in-git">briefs</a>. The schedule vault (<code>weic8imn</code>) this replaces is kept as an archive and no longer written.</p>
 '''
-    page('team/schedule/index.html', 'Schedule: what runs, when, what it did, what it does next', 'Every scheduled agent, its task queue and every run with its log, read live from a public vault: the control panel for what the team runs on its own.', body, kind='site', topics='team agents')
+    page('team/schedule/index.html', 'Schedule: every agent that runs on its own', 'Every scheduled agent on one day, its objective, its instructions, every run and the messages between agents, built from the repository.', body, kind='site', topics='team agents schedule')
+    li = lambda xs: '<ul>' + ''.join(f'<li>{E(v)}</li>' for v in xs) + '</ul>' if xs else '<p class="small">none stated</p>'
+    for c in cards.values():
+        a = c['agent']
+        brief = f'<a href="../../../admin/briefs/index.html#{E(os.path.basename(c["brief"])[:-3])}">{E(c["brief"])}</a>' if c.get('brief') else 'none yet'
+        scope = '<h3>Reads</h3>' + li(c.get('reads', [])) + '<h3>Writes</h3>' + li(c.get('writes', [])) + '<h3>Never</h3>' + li(c.get('never', []))
+        wake = '<ol>' + ''.join(f'<li>{E(v)}</li>' for v in c.get('each_wake', [])) + '</ol>'
+        body = f'''
+<p class="crumb"><a href="../../index.html">The team</a> / <a href="../index.html">Schedule</a> / {E(a)}</p>
+<h1>{E(a)}: {E(c["objective"])}</h1>
+<p class="kv"><b>Status</b> <span class="st st-{SCHED_STATES[c["status"]]}">{E(c["status"])}</span> {E(c.get("status_note", ""))}<br>
+<b>Wakes</b> {E(", ".join(c["times"]))} ({E(c["days"])}, {E(c["tz"])}) &middot; <b>model</b> {E(c["model"])}<br>
+<b>Runs in</b> {E(c["session"])}<br><b>Brief</b> {brief} &middot; <b>agent behaviour policy</b> {E(c.get("abp") or "none yet")}<br>
+<b>Card kept by</b> {E(c["kept_by"])}, updated {E(c["updated"])}</p>
+{section("day", "Its day", sched_strip(OrderedDict([(a, c)]), 3))}
+{section("wake", "Each wake", wake)}
+{section("instructions", "The instructions each wake starts from, word for word", f'<pre class="msg">{E(c["instructions"])}</pre>', "The prompt of the scheduled task that wakes it.")}
+{section("scope", "What it reads, writes, and never does", scope)}
+{section("runs", "Every run", sched_runs_table([r for r in runs if r['agent'] == a], 3, False))}
+{section("inbox", "Messages to it", sched_msgs([m for m in msgs if m['box'] in (a, 'all')], read))}
+{section("outbox", "Messages from it", sched_msgs([m for m in msgs if m['from'] == a], read))}
+'''
+        page(f'team/schedule/{a}/index.html', f'Schedule: {a}', f'{a}: {c["objective"]} When it wakes, its instructions, every run and its messages.', body, kind='site', topics='team agents schedule')
+
+# ----------------------------------------------------------------------------- elsewhere: Pulse, a separate section
+# Pulse is pulse@newsroom's vault for the SGit newsroom: exploitation evidence beside attention, for 26 vulnerabilities
+# of which php2shell is two. It is kept apart from the PHP pages on purpose (the editor, 24 October 2026): its own
+# folder (/pulse/), its own data file (data/pulse.json, written only by admin/build/export_pulse.py), its own code below,
+# and one pointer from the PHP site ('What else is going on'). Nothing here reads the PHP data, and nothing in the PHP
+# pages reads data/pulse.json, so the section can move to another site by taking this block, the exporter and the file.
+
+PULSE = load('pulse') if os.path.exists(os.path.join(DATA, 'pulse.json')) else None
+
+def _pulse_slug(cve):
+    return cve.lower()
+
+def _pulse_when(t):
+    """20261023T131240Z as 23 October 2026, 13:12 UTC; a date stays a date."""
+    m = re.match(r'^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})', t or '')
+    return human_time(f'{m.group(1)}-{m.group(2)}-{m.group(3)}T{m.group(4)}:{m.group(5)}Z') if m else (t or '')
+
+def _pulse_short(d):
+    """2026-10-21 as 21 Oct; a date in another year as Apr 2015."""
+    m = re.match(r'^(\d{4})-(\d{2})-(\d{2})', d or '')
+    if not m:
+        return d or ''
+    mon = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split()[int(m.group(2)) - 1]
+    return f'{int(m.group(3))} {mon}' if m.group(1) == STORY['data_as_of'][:4] else f'{mon} {m.group(1)}'
+
+def _pulse_cap(c, depth):
+    if not c:
+        return ''
+    where = f'{E(c.get("vault") or "")}: <code>{E(c.get("path") or "")}</code>'
+    link = f' <a href="{E(U(c["url"]))}" rel="noopener nofollow">original</a>' if c.get('url') else ''
+    return f'<div class="small">capture {where}, {E(_pulse_when(c.get("captured")))}, sha256 <code>{E((c.get("sha256") or "")[:16])}</code>{link}</div>'
+
+def _pulse_quote(e, depth):
+    q = f'<blockquote class="tp"><span class="small">third-party text, as Pulse recorded it</span><br>{E(e["quote"])}</blockquote>' if e.get('quote') else ''
+    basis = f'<div>{E(e["basis"])}</div>' if e.get('basis') else ''
+    what = f'<div class="note">Pulse: {E(e["what_it_is"])}</div>' if e.get('what_it_is') else ''
+    meta = ', '.join(E(x) for x in (e.get('status'), e.get('date')) if x)
+    return f'<li><b>{E(e.get("by") or "Pulse\'s own check")}</b> <span class="small">{meta}</span>{q}{basis}{what}{_pulse_cap(e.get("capture"), depth)}</li>'
+
+def build_pulse():
+    if not PULSE:
+        return
+    P, rn = PULSE, PULSE['rungs']
+    head = f'Pulse vault <code>{E(P["vault_id"])}</code>, head <code>{E(P["head"]["commit"])}</code>, last pass {E(_pulse_when(P["last_run"]))}'
+    caveats = '''<ul>
+<li><b>This is not this site's evidence.</b> Pulse is another agent's vault, for the SGit newsroom, and covers more than PHP. Its captures are its own and the source watch's; this site has not re-read them. What is shown is what Pulse recorded, with the capture each entry comes from.</li>
+<li><b>The attention counts cannot be compared row with row.</b> Each count is over the feeds Pulse had checked for that vulnerability, from 2 to 55; the number checked is shown beside it.</li>
+<li><b>Rung 1 is a report or a listing of a proof of concept, not a working exploit.</b> Pulse never fetches exploit code. For php2shell, the PHP pages of this site record that none of the public proofs of concept reviewed by VulnCheck has the correct mechanism.</li>
+<li><b>No score and no ranking.</b> Pulse keeps evidence and attention side by side and never combines them; neither does this page. The rows are in CVE order.</li>
+</ul>'''
+    hdr = ''.join(f'<th title="{E(rn[k])}">{k}</th>' for k in sorted(rn, key=int))
+    trs = []
+    for v in P['vulns']:
+        cells = ''.join(f'<td class="pr {"pr-yes" if r["status"] == "reached" else "pr-no"}" title="{E(r["rung"])}: {E(r["status"] or "")}{(" " + E(r["date"])) if r.get("date") else ""}">{E(_pulse_short(r.get("date")) if r.get("date") else ("yes" if r["status"] == "reached" else ""))}</td>' for r in v['rungs'])
+        a = v['attention']
+        trs.append(f'<tr><td><a href="{E(_pulse_slug(v["cve"]))}/index.html"><b>{E(v["cve"])}</b></a><div class="small">{E(v["vendor"] or "")} {E(v["product"] or "")}{" &middot; " + E(v["brand_name"]) if v.get("brand_name") else ""}{" &middot; old flaw, newly listed" if v["old_flaw_newly_listed"] else ""}</div></td>{cells}<td>{E(str(a.get("news_items")))} <span class="small">over {E(str(a.get("feeds_checked")))} feeds</span></td></tr>')
+    legend = ''.join(f'<li><b>{E(k)}</b> {E(rn[k])}</li>' for k in sorted(rn, key=int))
+    body = f'''
+<h1>What else is going on: Pulse</h1>
+<p class="lead">A separate section, not about PHP. Pulse is the SGit newsroom's record of {len(P["vulns"])} vulnerabilities in the news this month, php2shell among them: for each, the evidence that it is being exploited, as a ladder of eight dated rungs, and, beside it, how much attention it gets. It is kept apart from the rest of this site and may move to a site of its own.</p>
+<p class="small">{head}. Exported by <code>admin/build/export_pulse.py</code> into <a href="../data/pulse.json">data/pulse.json</a>; no capture is copied. Pulse says of itself: {E(P["pulse_says"])}</p>
+{section("read", "Before you read the table", caveats)}
+{section("ladder", "Evidence and attention, side by side", f'<ol class="legend">{legend}</ol><div class="tw"><table class="t pulse"><thead><tr><th>Vulnerability</th>{hdr}<th>News items</th></tr></thead><tbody>{"".join(trs)}</tbody></table></div><p class="small">A cell shows the month and day a rung was reached, or "yes" when Pulse records it reached without a date; an empty cell is not reached at the last check.</p>')}
+'''
+    page('pulse/index.html', 'What else is going on: Pulse, exploited vs. talked about', f'A separate section: the SGit newsroom\'s Pulse vault, {len(P["vulns"])} vulnerabilities with their evidence of exploitation as eight dated rungs beside the attention each gets. Not this site\'s evidence; no score, no ranking.', body, kind='evidence', topics='vulnerabilities exploitation attention pulse')
+    for v in P['vulns']:
+        path = f'pulse/{_pulse_slug(v["cve"])}/index.html'
+        rows = []
+        for r in v['rungs']:
+            ev = ''.join(_pulse_quote(e, 2) for e in r['evidence'])
+            rne = ''.join(_pulse_quote(e, 2) for e in r['reported_not_established'])
+            chk = f'<div class="small">last checked {E(_pulse_when(r["last_checked"]))}</div>' if r.get('last_checked') else ''
+            rows.append(f'<section id="rung-{r["n"]}"><h3>{r["n"]}. {E(r["rung"])}: <span class="st {"st-confirmed" if r["status"] == "reached" else "st-other"}">{E(r["status"] or "")}</span>{(" " + E(r["date"])) if r.get("date") else ""}</h3>{chk}'
+                        + (f'<p class="note">{E(r["note"])}</p>' if r.get('note') else '')
+                        + (f'<ul class="pev">{ev}</ul>' if ev else '')
+                        + (f'<p><b>Reported, not established</b></p><ul class="pev">{rne}</ul>' if rne else '') + '</section>')
+        a = v['attention']
+        meas = ''.join(f'<li>CVSS {E(c["version"] or "")} {E(str(c["base_score"]))}, scored by {E(c["source"] or "")}</li>' for c in v['cvss'])
+        if v.get('epss'):
+            meas += f'<li>EPSS {E(str(v["epss"]["score"]))}, percentile {E(str(v["epss"]["percentile"]))}, {E(v["epss"]["date"] or "")}</li>'
+        att = (f'<p>{E(str(a.get("news_items")))} news items since {E(_pulse_when(a.get("window_since")) or "the window start")}, counted over {E(str(a.get("feeds_checked")))} of {E(str(a.get("news_feeds_total")))} feeds, '
+               f'in {E(str(a.get("languages")))} languages and {E(str(a.get("countries")))} countries; {E(str(a.get("front_pages")))} front pages, {E(str(a.get("agency_alerts")))} agency alerts, {E(str(a.get("offline_advice")))} pages advising taking systems offline.</p>'
+               + (f'<p class="small">Pulse: {E(a["about"])}</p>' if a.get('about') else ''))
+        php = '<p>For php2shell, this site\'s own evidence and analysis are in <a href="../../index.html">the PHP pages</a>; this page shows only what Pulse recorded.</p>' if v.get('brand_name') == 'php2shell' else ''
+        body = f'''
+<h1>{E(v["cve"])}: {E(v["vendor"] or "")} {E(v["product"] or "")}</h1>
+<p class="lead">{E(v["flaw"] or "")}. {E(v["kind_of_system"] or "")}. Rungs reached: {E(", ".join(str(n) for n in v["rungs_reached"]) or "none")} of 8. Part of <a href="../index.html">Pulse</a>, a separate section not about PHP.</p>
+{php}
+{('<p class="small">Why Pulse tracks it: ' + E(v["why_tracked"]) + '</p>') if v.get("why_tracked") else ''}
+{section("ladder", "The evidence of exploitation, rung by rung", "".join(rows))}
+{section("measures", "Measurements", f"<ul>{meas}</ul>" if meas else "<p>None recorded.</p>")}
+{section("attention", "The attention it gets", att)}
+<p class="small">{head}.</p>
+'''
+        page(path, f'{v["cve"]} in Pulse: {v["vendor"]} {v["product"]}', f'Pulse\'s record of {v["cve"]} ({v["vendor"]} {v["product"]}): the evidence of exploitation as eight rungs, each with the capture it rests on, and the attention it gets. A separate section, not this site\'s evidence.', body, kind='evidence', topics='vulnerabilities exploitation pulse')
+# ----------------------------------------------------------------------------- the story graph (cartographer@php.newsroom)
+# Brief: admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md. One graph, data/graph.json, built from every
+# row the pages are built from, joined through data/entities.json and data/attribution.json under the verbs of
+# data/ontology.json. The build stops on a verb or kind the ontology does not list, a publisher no entity claims, an
+# attribution to an unknown entity, or an exploitation row whose 'who' moved: the graph cannot drift from its grammar.
+
+ONT, ENT, ATT = load('ontology'), load('entities'), load('attribution')
+ENTITIES = OrderedDict((e['id'], e) for e in ENT['entities'])
+ALIAS = {a: e['id'] for e in ENT['entities'] for a in e.get('aliases', [])}
+SG_GRAPH_JS = 'assets/components/sg-graph/v1/v1.0/v1.0.0/sg-graph.js'
+SG_GRAPH_FILES = ['sg-graph.js', 'sg-graph-core.js', 'sg-graph.tpl', 'sg-graph.css']
+
+def sg_graph(path, src=None, data=None, focus=None, view=None, depth=None, height=None, max_nodes=None, verbs=None, controls=None, fallback=''):
+    """Embed <sg-graph> on the page at path: the one way every page on this site draws a graph. src is a JSON file
+    relative to the site root; data is a graph to inline instead. fallback is the HTML shown without JavaScript (a linked
+    list of the same nodes), which is also what the page's markdown twin carries."""
+    up = '../' * path.count('/')
+    attrs = [('src', up + src if src else None), ('base', up), ('focus', focus), ('view', view), ('depth', depth),
+             ('height', height), ('max', max_nodes), ('verbs', ','.join(verbs) if verbs else None), ('controls', controls)]
+    a = ''.join(f' {k}="{U(v) if k in ("src", "base") else E(str(v))}"' for k, v in attrs if v not in (None, ''))
+    inner = fallback + (f'<script type="application/json">{J(data, sort_keys=True)}</script>' if data is not None else '')
+    return f'<sg-graph{a}>{inner}</sg-graph><script type="module" src="{up}{SG_GRAPH_JS}"></script>'
+
+def entity_root(eid):
+    """Fold a party into the voice it speaks with: a person into their employer, a part into its whole, a member into a
+    group that speaks with one voice. Independence is counted between roots."""
+    seen = set()
+    while eid not in seen:
+        seen.add(eid)
+        e = ENTITIES[eid]
+        nxt = e.get('works_for') or e.get('part_of') or (e.get('member_of') if ENTITIES.get(e.get('member_of'), {}).get('one_voice') else None)
+        if not nxt: break
+        eid = nxt
+    return eid
+
+def party_href(eid):
+    return f'actors/{eid}/index.html' if ENTITIES[eid].get('actor') else f'graph/parties/index.html#p-{eid}'
+
+def check_grammar():
+    """The ontology keeps its own rules: every verb has an inverse that is not itself, no banned verb is listed, and a
+    scope never reuses a verb of the story graph's with another meaning."""
+    banned = {b['verb'] for b in ONT['banned']}
+    seen = {}
+    for scope, vs in [('story', ONT['edges'])] + [(k, sc['edges']) for k, sc in ONT['scopes'].items()]:
+        for v in vs:
+            if not v.get('verb') or not v.get('inverse') or v['verb'] == v['inverse']:
+                sys.exit(f'data/ontology.json: {scope} verb {v.get("verb")!r} needs an inverse that is not itself')
+            if v['verb'] in banned: sys.exit(f'data/ontology.json: {v["verb"]!r} is both listed and banned')
+            if v['verb'] in seen and seen[v['verb']] != v['inverse']:
+                sys.exit(f'data/ontology.json: {v["verb"]!r} has two inverses, in two scopes')
+            seen[v['verb']] = v['inverse']
+
+def story_graph():
+    check_grammar()
+    kinds = {t['id'] for t in ONT['node_types']}
+    verbs = {v['verb']: v for v in ONT['edges']}
+    nodes, edges = OrderedDict(), OrderedDict()
+
+    def node(nid, kind, label, **kw):
+        if kind not in kinds: sys.exit(f'graph: node kind {kind!r} is not in data/ontology.json')
+        if nid in nodes:
+            # the same id twice must be the same thing (a topic met again), never two rows folded into one
+            if (nodes[nid]['kind'], nodes[nid]['label']) != (kind, label): sys.exit(f'graph: two different nodes would share the id {nid!r}')
+            return nid
+        nodes[nid] = dict({'id': nid, 'kind': kind, 'label': label}, **{k: v for k, v in kw.items() if v not in (None, '', [])})
+        return nid
+
+    def edge(a, verb, b, **kw):
+        if verb not in verbs: sys.exit(f'graph: verb {verb!r} is not in data/ontology.json')
+        # an end that does not exist is drift in the data: stop, never drop the edge quietly
+        for end in (a, b):
+            if end not in nodes: sys.exit(f'graph: {a} {verb} {b}: there is no node {end!r}')
+        if a != b:
+            edges.setdefault((a, verb, b), dict({'from': a, 'verb': verb, 'to': b}, **kw))
+
+    for eid, e in ENTITIES.items():
+        node('party:' + eid, 'party', e['name'], **{'class': e['kind'], 'country': e.get('country'), 'href': party_href(eid)})
+    for eid, e in ENTITIES.items():
+        for key, verb in (('part_of', 'part_of'), ('member_of', 'member_of'), ('works_for', 'works_for')):
+            if e.get(key):
+                if e[key] not in ENTITIES: sys.exit(f'data/entities.json: {eid} {key} unknown {e[key]!r}')
+                edge('party:' + eid, verb, 'party:' + e[key])
+        for m in e.get('has_members', []):
+            if m not in ENTITIES: sys.exit(f'data/entities.json: {eid} has_members unknown {m!r}')
+            edge('party:' + m, 'member_of', 'party:' + eid)
+
+    for slug, s in SOURCES.items():
+        if s['publisher'] not in ALIAS: sys.exit(f'data/entities.json: no entity has the alias {s["publisher"]!r} (source {slug})')
+        node('source:' + slug, 'source', f'{short_name(s)}: {s.get("title") or slug}', href=f'sources/{slug}/index.html',
+             url=s['url'], primary=bool(s.get('primary')), published=s.get('published'), source_kind=s.get('kind'))
+        edge('source:' + slug, 'published_by', 'party:' + ALIAS[s['publisher']])
+        syn = ATT.get('sources', {}).get(slug)
+        if syn:
+            if syn['syndicates'] not in ENTITIES: sys.exit(f'data/attribution.json: source {slug} syndicates unknown entity {syn["syndicates"]!r}')
+            edge('source:' + slug, 'syndicates', 'party:' + syn['syndicates'], basis=syn['basis'])
+        for c in s['captures']:
+            cid = node(f'capture:{slug}/{c["stamp"]}', 'capture', f'{short_name(s)}, captured {c["stamp"]}', href=f'sources/{slug}/index.html',
+                       http_status=c.get('status'), files=[{'name': fn, 'sha256': f['sha256']} for fn, f in sorted(c['files'].items())])
+            edge('source:' + slug, 'captured_in', cid)
+
+    for cve in sorted({m.group(0) for row in D['claims'] + D['numbers'] + D['timeline'] for m in CVE_RX.finditer(json.dumps(row, ensure_ascii=False))}):
+        node('cve:' + cve, 'cve', cve + (f', {FLAGSHIP[cve]}' if cve in FLAGSHIP else ''),
+             href=f'flaws/index.html#{cve}' if cve in FLAGSHIP else f'https://www.cve.org/CVERecord?id={cve}')
+
+    def names(nid, row):
+        for cve in sorted({m.group(0) for m in CVE_RX.finditer(json.dumps(row, ensure_ascii=False))}):
+            edge(nid, 'names', 'cve:' + cve)
+
+    def stated(nid, row, att, where):
+        if not att: sys.exit(f'data/attribution.json: no attribution for {where}')
+        for eid in att['states']:
+            if eid not in ENTITIES: sys.exit(f'data/attribution.json: {where} names unknown entity {eid!r}')
+            edge('party:' + eid, 'states', nid)
+        if att.get('counts'): edge('party:this-site', 'counts', nid)
+        for eid in att.get('relays', []):
+            if eid not in ENTITIES: sys.exit(f'data/attribution.json: {where} relayed by unknown entity {eid!r}')
+            edge('party:' + eid, 'relays', nid, basis='attribution')
+        # a cited source is evidence: it may support or contradict, so citing it makes no one a relay
+        for s in row['sources']:
+            if s in SOURCES: edge(nid, 'cites', 'source:' + s)
+
+    open_k = {}
+    for k in load('factcheck')['contradictions']:
+        for c in k['claims']: open_k.setdefault(c, []).append(k)
+    for c in D['claims']:
+        att = ATT['claims'].get(c['id'])
+        origins = sorted({entity_root(e) for e in (att or {'states': []})['states'] if e != 'unnamed'})
+        nid = node('claim:' + c['id'], 'claim', c['claim'], status=c['status'], href=f'facts/{c["id"]}/index.html', by=c['by'])
+        stated(nid, c, att, 'claim ' + c['id'])
+        node('topic:' + c['topic'], 'topic', c['topic'], href=f'claims/index.html#t-{c["topic"]}')
+        edge(nid, 'classified_as', 'topic:' + c['topic'])
+        names(nid, c)
+        nodes[nid].update({'origins': len(origins),
+                           'tension': ', '.join(k['id'] for k in open_k.get(c['id'], []) if k['status'] == 'open') or None})
+        if not nodes[nid]['tension']: del nodes[nid]['tension']
+    for n in D['numbers']:
+        nid = node('number:' + n['id'], 'number', f'{n["value"]} {n["of"]}', status=n['status'], href=f'numbers/index.html#{n["id"]}', by=n['who'], measures=n.get('measures'))
+        stated(nid, n, ATT['numbers'].get(n['id']), 'number ' + n['id'])
+        names(nid, n)
+    for t in D['timeline']:
+        nid = node('event:' + event_id(t), 'event', f'{fmt_at(t["at"])}: {t["event"]}', at=t['at'], confidence=t.get('confidence'),
+                   href=f'timeline/index.html#ph-{t["phase"]}' if t.get('phase') else 'timeline/index.html')
+        for s in t['sources']:
+            if s in SOURCES: edge(nid, 'cites', 'source:' + s)
+        if t.get('phase'):
+            node('phase:' + t['phase'], 'phase', t['phase'], href=f'timeline/index.html#ph-{t["phase"]}')
+            edge(nid, 'classified_as', 'phase:' + t['phase'])
+        names(nid, t)
+    classes = next(x for x in ONT['taxonomy'] if x['id'] == 'signal-class')['maps']
+    if len(ATT['exploitation']) != len(D['exploitation']): sys.exit('data/attribution.json: exploitation rows differ in number from data/exploitation.json')
+    for i, (x, att) in enumerate(zip(D['exploitation'], ATT['exploitation'])):
+        if att['who'] != x['who']: sys.exit(f'data/attribution.json: exploitation row {i} is {x["who"]!r}, attributed as {att["who"]!r}')
+        if x['kind'] not in classes: sys.exit(f'data/ontology.json: exploitation kind {x["kind"]!r} is not in the signal-class map')
+        # an id from the row's content, so a row added above does not renumber the rest
+        nid = node('signal:' + hashlib.sha256(f'{x["when"]}|{x["who"]}|{x["what"]}'.encode()).hexdigest()[:10], 'signal', f'{x["who"]}: {x["what"]}', status=x['status'], href='exploitation/index.html', when=x['when'], signal_class=classes[x['kind']])
+        stated(nid, x, att, f'exploitation row {i}')
+    for a in D['agencies']:
+        eid = ATT['agencies'].get(a['agency'] + '|' + a['country'])
+        if not eid: sys.exit(f'data/attribution.json: agency {a["agency"]}|{a["country"]} not mapped')
+        nid = node('advice:' + eid, 'advice', f'{a["agency"]} ({a["country"]}): take offline? {a["offline"]}', href='agencies/index.html',
+                   offline=a['offline'], says=a.get('offline_text'), exploitation=a.get('exploitation'))
+        edge('party:' + eid, 'advises', nid)
+        for s in a['sources']:
+            if s in SOURCES: edge(nid, 'cites', 'source:' + s)
+    for k in load('factcheck')['contradictions']:
+        kid = node('contradiction:' + k['id'], 'contradiction', f'{k["id"]}: {k["measure"]}', status=k['status'], href=f'factcheck/index.html#{k["id"]}')
+        for c in k['claims']:
+            if 'claim:' + c not in nodes: sys.exit(f'factcheck contradiction {k["id"]} names unknown claim {c!r}')
+            edge(kid, 'flags', 'claim:' + c)
+    for a in load('factcheck')['assessments']:
+        for ch in a.get('checked', []):
+            m = re.match(r'sources/([^/]+)/captures/([^/]+)/', ch.get('file') or '')
+            # a capture outside the manifest is the desk's outside evidence: recorded, never cited
+            if m and ch.get('result') == 'carries' and m.group(1) in SOURCES:
+                cap = f'capture:{m.group(1)}/{m.group(2)}'
+                if 'claim:' + a['id'] not in nodes: sys.exit(f'data/factcheck.json: an assessment names unknown claim {a["id"]!r}')
+                if cap not in nodes: sys.exit(f'data/factcheck.json: {a["id"]} was checked against {cap[8:]}, which data/sources.json no longer has')
+                edge('claim:' + a['id'], 'appears_in', cap, file=ch['file'].split('/')[-1], sha256=ch.get('sha256'))
+                # 'carries' means the capture bears on the claim: an agency carrying it is an original in its own right,
+                # and a primary record can carry the fact that refutes it. Only an outlet carrying another party's
+                # statement, on a claim not refuted, has passed it on.
+                pub = ALIAS[SOURCES[m.group(1)]['publisher']]
+                origins = {entity_root(e) for e in ATT['claims'][a['id']]['states']}
+                if ENTITIES[pub]['kind'] == 'outlet' and a.get('verdict') != 'refuted' and entity_root(pub) not in origins and 'this-site' not in origins:
+                    edge('party:' + pub, 'relays', 'claim:' + a['id'], basis='capture carries it', capture=f'{m.group(1)}/{m.group(2)}')
+    for c in D['claims']:
+        nid = 'claim:' + c['id']
+        relays = len({a for (a, v, b) in edges if b == nid and v == 'relays'})
+        nodes[nid]['relays'] = relays
+        nodes[nid]['echo'] = relays >= 3 and nodes[nid]['origins'] <= 1
+
+    bridge(nodes)
+    used = {e['from'] for e in edges.values()} | {e['to'] for e in edges.values()}
+    out_nodes = [n for n in nodes.values() if n['id'] in used]
+    unlinked = [n['id'] for n in nodes.values() if n['id'] not in used]
+    def say(v): return v.replace('_', ' ')
+    ontology = {'id': ONT['id'], 'version': ONT['version'],
+                'kinds': OrderedDict((t['id'], {'label': t['label'], 'plural': t['plural'], 'altitude': t['altitude']}) for t in ONT['node_types']),
+                'verbs': OrderedDict([(v['verb'], {'label': say(v['verb']), 'inverse': say(v['inverse']), 'origin': v['origin']}) for v in ONT['edges']] +
+                                     [(v['verb'], {'label': v['verb'], 'inverse': v['inverse'], 'origin': 'code-review'}) for sc in ONT['scopes'].values() for v in sc['edges']])}
+    return {'site': SITE, 'version': VERSION, 'vault_commit': D['vault']['head']['commit'], 'title': 'The story graph',
+            'note': 'A node means what its edges say about it. Every edge is a verb from data/ontology.json with a named inverse; there is no generic association edge. Parties are resolved through data/entities.json and data/attribution.json; relays are derived, so many outlets passing on one statement count as one origin.',
+            'ontology': ontology, 'nodes': out_nodes, 'edges': list(edges.values()),
+            'unlinked': unlinked}
+
+def bridge(nodes):
+    """data/crosswalk.json: give each story node that another graph also names a 'zoom' list, the graphs a reader can step
+    into from it. Every id is checked against its graph's own source, so a renamed node stops the build, not a reader."""
+    X = load('crosswalk')
+    review = {n['id']: n for n in D['review']['nodes']}
+    stake = {s['id']: s['name'] for s in load('grc')['stakeholders']}
+    def known(graph, gid):
+        if graph == 'story': return gid in nodes
+        if graph == 'review': return gid in review
+        kind, _, rest = gid.partition(':')
+        if kind == 'stakeholder': return rest in stake
+        return kind in ('vulnerability', 'remediation', 'code') and rest in review
+    def zoom(nid, graph, gid, label):
+        if not known(graph, gid): sys.exit(f'data/crosswalk.json: {graph} has no node {gid!r}')
+        if nid in nodes: nodes[nid].setdefault('zoom', []).append({'graph': X['graphs'][graph]['file'], 'focus': gid, 'label': label})
+    for a in X['anchors']:
+        sid = a['ids']['story']
+        if not known('story', sid): sys.exit(f'data/crosswalk.json: the story graph has no node {sid!r}')
+        for g in ('review', 'grc'):
+            if g in a['ids']: zoom(sid, g, a['ids'][g], f'{a["anchor"]} in {X["graphs"][g]["title"]}')
+    for pid, b in sorted(X['parties'].items()):
+        if pid not in ENTITIES: sys.exit(f'data/crosswalk.json: unknown party {pid!r}')
+        name = stake.get(b['grc'].partition(':')[2], b['grc'])
+        zoom('party:' + pid, 'grc', b['grc'], f'In {X["graphs"]["grc"]["title"]}' + (': ' if b['relation'] == 'is' else ', among: ') + name)
+
+def graph_census(G):
+    kinds = Counter(n['kind'] for n in G['nodes'])
+    verbs = Counter(e['verb'] for e in G['edges'])
+    return kinds, verbs
+
+def build_graph():
+    G = story_graph()
+    write('data/graph.json', json.dumps(G, indent=1, ensure_ascii=False) + '\n')
+    kinds, verbs = graph_census(G)
+    K = G['ontology']['kinds']
+    claims = [n for n in G['nodes'] if n['kind'] == 'claim']
+    by_kind = ', '.join(f'{n} {K[k]["plural"] if n != 1 else K[k]["label"].lower()}' for k, n in kinds.most_common())
+    fallback = ('<div class="graph-fallback"><p>The interactive graph needs JavaScript. Every node is also on a page: '
+                + ', '.join(f'<a href="../{h}">{E(t)}</a>' for h, t in (('claims/index.html', 'the claims'), ('sources/index.html', 'the sources'),
+                            ('graph/parties/index.html', 'the parties'), ('timeline/index.html', 'the timeline'), ('factcheck/index.html', 'the tensions')))
+                + '; the whole graph is <a href="../data/graph.json">data/graph.json</a>.</p></div>')
+    widget = sg_graph('graph/index.html', src='data/graph.json', focus='claim:scale-70pc-internet', fallback=fallback)
+    vrows = []
+    for v in ONT['edges']:
+        n = verbs.get(v['verb'], 0)
+        origin = f'inherited from {E(v.get("from", ""))}' if v['origin'] == 'inherited' else 'proposed here'
+        vrows.append([f'<code>{E(v["verb"])}</code>', f'<code>{E(v["inverse"])}</code>', E(v['reads'].replace('{s}', 'A').replace('{t}', 'B')), E(str(n)), origin])
+    verbs_t = table(['Verb', 'Inverse', 'Reads', 'Edges', 'Where it comes from'], vrows)
+    kinds_t = table(['Kind', 'Altitude', 'Nodes', 'What it is'], [[E(t['label']), E(t['altitude']), E(str(kinds.get(t['id'], 0))), E(t['definition'])] for t in ONT['node_types']])
+    banned = ''.join(f'<li><code>{E(b["verb"])}</code>: {E(b["why"])}</li>' for b in ONT['banned'])
+    spectrum = sorted(claims, key=lambda n: (-n.get('origins', 0), n.get('relays', 0), n['id']))
+    srow = lambda n: [f'<a href="../{U(n["href"])}">{E(n["label"][:110])}</a>', f'<span class="st st-{E(n["status"])}">{E(n["status"])}</span>', E(str(n['origins'])), E(str(n['relays'])),
+                      E(str(sum(1 for e in G['edges'] if e['from'] == n['id'] and e['verb'] == 'appears_in'))), E(n.get('tension', ''))]
+    spectrum_t = table(['Claim', 'Status', 'Independent origins', 'Relays', 'Captures that carry it', 'Open tension'], [srow(n) for n in spectrum])
+    echoes = [n for n in claims if n.get('echo')]
+    unnamed = [n for n in claims if any(e['from'] == 'party:unnamed' and e['to'] == n['id'] for e in G['edges']) and n['origins'] == 0]
+    li = lambda ns: '<ul>' + ''.join(f'<li><a href="../{U(n["href"])}">{E(n["label"])}</a> ({n["relays"]} relays)</li>' for n in ns) + '</ul>' if ns else '<p class="small">None.</p>'
+    body = f'''
+<h1>The story as a graph</h1>
+<p class="lead">{len(G["nodes"])} nodes and {len(G["edges"])} edges in {len(verbs)} verbs: {E(by_kind)}. Each is drawn from the same rows as the pages, so the picture cannot disagree with the text. Start anywhere, follow a link, and the graph re-centres on it; a node with a thick ring opens a graph of its own.</p>
+{widget}
+{section("read", "Read it as sentences", '<p>Every edge is a verb, and read from the other end it has a different name: Wiz <i>states</i> a claim, the claim is <i>stated by</i> Wiz. There is no edge that only says two things are related. The verbs, with how many edges use each:</p>' + verbs_t)}
+{section("spectrum", "How many voices, not how many pages", f'<p>A claim is as strong as the number of <b>independent</b> parties that state it, not the number of pages that carry it. A person is counted with the organisation they speak for, and an outlet that passes a statement on is a <i>relay</i>, not a second origin. The fact-check desk grades the same claims by reading their captures (<a href="../factcheck/index.html">the spectrum of evidence</a>); this is the reading the graph gives from its edges alone.</p><h3>Echoes: one origin, many relays ({len(echoes)})</h3>{li(echoes)}<h3>Unnamed origins ({len(unnamed)})</h3><p class="small">Stated only by sources a page does not name: a gap in the evidence, not a party.</p>{li(unnamed)}<h3>Every claim</h3>' + spectrum_t)}
+{section("zoom", "Zooming in: the fractal layers", '''<ul>
+<li><b>A CVE opens the code.</b> The two CVE nodes open the review graph of the fix, which has its own ontology (the flaws, the design of the patch, the files and functions changed) and its own verbs, joined to this one by a named bridge. This is the estate's test of a fractal graph: going down opens a new vocabulary under the same grammar.</li>
+<li><b>A source opens its captures</b>, and each capture lists its files with their SHA-256. A claim <i>appears in</i> a capture where the fact-check desk found its words there. This step is addressing rather than a new ontology, and is described as such.</li>
+<li><b>A party opens what it said and what it passed on</b>: the claims and numbers it states, the ones it relays, the sources it publishes, the organisation it is part of. <a href="parties/index.html">Every party</a>.</li>
+<li><b>A party steps across into the risk graph.</b> The risk desk keeps its own graph (<a href="../grc/graph/index.html">the risk graph</a>), where parties appear as stakeholders, mostly as classes (WAF vendors, local councils, national governments). <a href="../data/crosswalk.json">data/crosswalk.json</a> declares the bridges: a party <i>is</i> a stakeholder, or is <i>among</i> a class of them; a CVE is the same anchor in all three graphs. Bridges, not a merge: each graph keeps its words.</li>
+<li><b>A tension opens the claims it flags</b>: the contradiction ledger of the fact-check desk, one node per row, because two claims that disagree are not one edge with the same name both ways.</li>
+</ul>''')}
+{section("ontology", "The ontology", f'<p>Kinds of node:</p>{kinds_t}<p>Verbs this graph will not use, and why:</p><ul>{banned}</ul><p>The grammar is the estate&#39;s, from <a href="https://graphs.sgit.ai/v1/grammar/">graphs.sgit.ai</a>; the files are <a href="../data/ontology.json">data/ontology.json</a> (kinds, verbs, taxonomies, formulas), <a href="../data/entities.json">data/entities.json</a> (one node per party, whatever a page calls it) and <a href="../data/attribution.json">data/attribution.json</a> (who states each row). The graph is <a href="../data/graph.json">data/graph.json</a>. Kept by the cartographer. The component that draws it is documented for every agent on <a href="component/index.html">the graph component</a> page.</p>')}
+'''
+    page('graph/index.html', 'The story as a graph: who states what, who relays it, and what it rests on',
+         f'{len(G["nodes"])} nodes and {len(G["edges"])} typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.', body, kind='evidence', topics='php2shell graph ontology')
+    build_parties(G)
+    build_graph_component(G)
+
+def build_parties(G):
+    path = 'graph/parties/index.html'
+    count = lambda eid, verb: sum(1 for e in G['edges'] if e['from'] == 'party:' + eid and e['verb'] == verb)
+    stated = {}
+    for e in G['edges']:
+        if e['verb'] == 'states' and e['to'].startswith('claim:'): stated.setdefault(e['from'][6:], []).append(e['to'][6:])
+    order = ['organisation', 'agency', 'person', 'group', 'outlet', 'registry', 'project', 'platform', 'unnamed', 'this-site']
+    secs = []
+    for cls in order:
+        rows = [e for e in ENTITIES.values() if e['kind'] == cls]
+        rows.sort(key=lambda e: (-(count(e['id'], 'states') + count(e['id'], 'relays')), e['name']))
+        trs = []
+        for e in rows:
+            claims = ' '.join(f'<a href="../../facts/{U(c)}/index.html">{E(c)}</a>' for c in stated.get(e['id'], []))
+            up = [f'{v.replace("_", " ")} {ENTITIES[e[k]]["name"]}' for k, v in (('works_for', 'works_for'), ('part_of', 'part_of'), ('member_of', 'member_of')) if e.get(k)]
+            name = f'<a href="../../{U(party_href(e["id"]))}">{E(e["name"])}</a>' if e.get('actor') else E(e['name'])
+            trs.append([f'<span id="p-{E(e["id"])}"></span>{name}' + (f'<br><span class="small">{E("; ".join(up))}</span>' if up else ''),
+                        E(str(count(e['id'], 'states'))), E(str(count(e['id'], 'relays'))), E(str(sum(1 for x in G['edges'] if x['to'] == 'party:' + e['id'] and x['verb'] == 'published_by'))), claims])
+        if trs: secs.append(section('c-' + cls, f'{cls.capitalize()} ({len(trs)})', table(['Party', 'States', 'Relays', 'Sources published', 'Claims it states'], trs)))
+    widget = sg_graph(path, src='data/graph.json', focus='party:php-foundation', depth=1, fallback='<p class="small">The graph of each party needs JavaScript; the tables below carry the same counts.</p>')
+    body = f'''
+<p class="crumb"><a href="../index.html">The story as a graph</a> / Parties</p>
+<h1>Every party, whatever a page calls it</h1>
+<p class="lead">{len(ENTITIES)} parties: the people, organisations, agencies, outlets and platforms that published a source or are named as saying something. The sources spell them {len(ALIAS)} ways; each spelling resolves to one node here, so CISA is one party however many pages name it. <i>States</i> counts the claims, numbers and signals a party originates; <i>relays</i> counts those it passed on from someone else.</p>
+{widget}
+{"".join(secs)}
+<p class="small">The file is <a href="../../data/entities.json">data/entities.json</a>, with who states each row in <a href="../../data/attribution.json">data/attribution.json</a>. A party with a page of its own links to it.</p>
+'''
+    page(path, 'Every party on the story: who states, who relays, who publishes', f'{len(ENTITIES)} parties resolved from {len(ALIAS)} spellings, with the claims each one states and passes on.', body, kind='evidence', topics='php2shell graph parties')
+
+def build_graph_component(G):
+    path = 'graph/component/index.html'
+    base = os.path.join(ROOT, os.path.dirname(SG_GRAPH_JS))
+    hashes = table(['File', 'Bytes', 'SHA-256'], [[f'<code>{E(f)}</code>', E(f'{os.path.getsize(os.path.join(base, f)):,}'), f'<code>{E(hashlib.sha256(open(os.path.join(base, f), "rb").read()).hexdigest())}</code>'] for f in SG_GRAPH_FILES])
+    demo = {'ontology': {'kinds': {'party': {'label': 'Party'}, 'claim': {'label': 'Claim'}, 'source': {'label': 'Source'}},
+                         'verbs': {'states': {'label': 'states', 'inverse': 'stated by'}, 'relays': {'label': 'relays', 'inverse': 'relayed by'}, 'cites': {'label': 'cites', 'inverse': 'cited by'}}},
+            'nodes': [{'id': 'wiz', 'kind': 'party', 'label': 'Wiz'}, {'id': 'thn', 'kind': 'party', 'label': 'The Hacker News'},
+                      {'id': 'c', 'kind': 'claim', 'label': '70% of the Internet', 'status': 'unverified', 'href': 'facts/scale-70pc-internet/index.html'},
+                      {'id': 's1', 'kind': 'source', 'label': 'Wiz blog'}, {'id': 's2', 'kind': 'source', 'label': 'THN article'}],
+            'edges': [{'from': 'wiz', 'verb': 'states', 'to': 'c'}, {'from': 'thn', 'verb': 'relays', 'to': 'c'}, {'from': 'c', 'verb': 'cites', 'to': 's1'}, {'from': 'c', 'verb': 'cites', 'to': 's2'}]}
+    attrs = table(['Attribute', 'What it does'], [[f'<code>{E(a)}</code>', E(d)] for a, d in [
+        ('src', 'A graph JSON file, relative to the page. Without it, the first <script type="application/json"> child is read.'),
+        ('base', 'The path from the page to the site root, put in front of every node href. sg_graph() sets it.'),
+        ('focus', 'The node in the middle. Default: the node with most edges.'),
+        ('view', 'ego (the focus and its neighbours; the default), layers (columns by kind), map (a seeded force layout; pan by dragging, zoom with ctrl and the wheel), list (text only).'),
+        ('depth', 'Hops from the focus, 1 to 3.'), ('max', 'The most nodes drawn at once (default 60); the list under the drawing has every link.'),
+        ('height', 'The drawing height in px; default from its width.'), ('verbs', 'A comma list of verbs to show at first.'), ('controls', '"none" hides the toolbar.')]])
+    body = f'''
+<p class="crumb"><a href="../index.html">The story as a graph</a> / The graph component</p>
+<h1>The graph component: one way to draw every graph on this site</h1>
+<p class="lead"><code>&lt;sg-graph&gt;</code> draws any graph that has nodes and verb-labelled edges, from five nodes to the whole story. Every agent that puts a graph on a page uses it, through <code>sg_graph()</code> in the build, so all of them walk the same way, follow the same grammar and get the same fixes. Kept by the cartographer. Version 1.0.0; native web component on this site&#39;s <code>sg-component</code> base, no library, no build step, nothing fetched from anywhere else.</p>
+{section("small", "Five nodes, inline", sg_graph(path, data=demo, focus='c', controls='none', height=260, fallback='<p>Wiz states that PHP is 70% of the Internet; The Hacker News relays it; it cites two sources.</p>') + '<p class="small">The graph above is inline JSON in the page. Click a node to walk to it, or tab to it and press Enter.</p>')}
+{section("layers", "A graph in another vocabulary, in layers", sg_graph(path, src='data/review.json', view='layers', depth=2, focus='fix-commit', fallback='<p>The review graph of the fix: <a href="../../review/index.html">the fix, mapped to the code</a>.</p>') + '<p class="small">The code-review graph (<code>data/review.json</code>), which uses <code>rel</code> and <code>name</code>; the component reads both shapes.</p>')}
+{section("use", "Using it from the build", '''<pre><code># in admin/build/build.py, on any page
+body += sg_graph('actors/wiz/index.html', src='data/graph.json', focus='party:wiz',
+                 fallback='&lt;ul&gt;...the same links as a list...&lt;/ul&gt;')
+# or a graph of your own, inline
+body += sg_graph(path, data={'nodes': [...], 'edges': [...]}, view='layers')</code></pre>
+<p>The rules it brings with it: an edge with no verb is not drawn (there is no generic association edge); each verb should have an inverse in the graph's <code>ontology.verbs</code>, or it is shown as an arrow back; a node's <code>href</code> is followed only if it is relative or http(s); a node with <code>zoom</code>, a list of <code>{ graph, focus, label }</code>, opens those graphs (the older <code>graph</code> and <code>graph_focus</code> are read too), which is how a layer zooms into the next and how a node steps across a bridge into a sibling graph (<code>data/crosswalk.json</code>). The fallback is what a reader without JavaScript sees and what the markdown twin carries: give it the same links.</p>''')}
+{section("contract", "Attributes, data, events", attrs + '''<p><b>Data</b>: <code>{ nodes: [{ id, kind, label, href?, status?, zoom?: [{ graph, focus, label }], files? }], edges: [{ from, verb, to, inverse? }], ontology?: { kinds: { id: { label } }, verbs: { verb: { label, inverse } } } }</code>. Older shapes (<code>rel</code>, <code>name</code>, <code>layer</code>, <code>graph</code>) are read too, and so are inverses named on each edge or in a top-level <code>verbs</code> list, as the risk graph names them.</p>
+<p><b>Events</b> on <code>document</code>: <code>sg:graph.focus</code> and <code>sg:graph.open</code>. <b>From script</b>: <code>el.focusOn(id)</code>, <code>el.pathTo(id)</code> (the shortest path from the focus, read back as a sentence), <code>el.model</code> and <code>el.core</code>, the model in <code>sg-graph-core.js</code>, which has no DOM and runs in a worker or in node.</p>''')}
+{section("files", "Files", hashes + f'<p class="small">Under <code>{E(os.path.dirname(SG_GRAPH_JS))}/</code>. The path is the version: a change is a new directory, never an edit in place. The markup file is <code>.tpl</code> rather than <code>.html</code> because every <code>.html</code> file on this site is a page to the gate.</p>')}
+'''
+    page(path, 'The graph component: one way to draw every graph on this site', 'sg-graph, the web component every agent uses to put a graph on a page: the views, the data contract, the build helper, and the hashes of its files.', body, kind='site', topics='graph component')
 
 
 if __name__ == '__main__':

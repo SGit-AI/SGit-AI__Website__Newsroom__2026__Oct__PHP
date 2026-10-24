@@ -137,8 +137,8 @@
  },
  {
   "id": "scale-70pc-internet",
-  "claim": "Roughly 70% of the Internet is affected",
-  "by": "Wiz (headline, X post); BBC attributing Wiz",
+  "claim": "70% of the Internet is affected",
+  "by": "Wiz (headline, X post); the BBC, which reports it as Wiz's 'roughly 70%'",
   "sources": [
    "wiz-blog-php2shell",
    "x-wiz-io-php2shell",
@@ -151,7 +151,7 @@
  },
  {
   "id": "scale-70pc-websites",
-  "claim": "PHP is used by almost 70% of websites",
+  "claim": "PHP is used by almost 70% of websites whose server-side language is known",
   "by": "Cloudflare; OpenAI ('an estimated 70%'); Wiz body text",
   "sources": [
    "cloudflare-blog-php2shell-waf",
@@ -177,7 +177,7 @@
  },
  {
   "id": "scale-2.6m-hosts",
-  "claim": "PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpatched on 21 October",
+  "claim": "VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 October",
   "by": "VulnCheck and Censys, via The Hacker News and SecurityWeek",
   "sources": [
    "thehackernews-php2shell-4days",
@@ -803,16 +803,16 @@
  },
  {
   "id": "nl-offline",
-  "claim": "The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services",
+  "claim": "The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too",
   "by": "the Dutch government",
   "sources": [
    "rijksoverheid-ncsc-php-news",
-   "dutchitleaders-websites-offline"
+   "tpo-nl-digid-offline"
   ],
-  "status": "confirmed",
+  "status": "reported",
   "topic": "impact",
   "agent": "claude-story-site",
-  "note": "Primary statement."
+  "note": "The government's notice names only NCSC.nl; DigiD and MijnOverheid rest on the press (fact-check desk, run 1: holds in part, overstated)."
  },
  {
   "id": "fi-offline",
@@ -919,9 +919,9 @@
    "cve-cve-2024-4577",
    "akamai-blog-cve-2024-4577-one-day"
   ],
-  "status": "confirmed",
+  "status": "reported",
   "topic": "exploitation",
   "agent": "claude-story-site",
-  "note": "Counted from the captured catalog."
+  "note": "The KEV dates are counted from the captured catalog; 'exploited in the wild one day after disclosure' rests on Akamai alone."
  }
 ]

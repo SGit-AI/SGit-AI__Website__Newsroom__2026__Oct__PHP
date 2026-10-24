@@ -37,7 +37,7 @@
    "answer": [
     {"html": "<b>About 70% of websites</b> is the figure Cloudflare and OpenAI use. It is a share of websites whose server-side language could be identified, so it is reported, not confirmed.", "sources": ["cloudflare-blog-php2shell-waf", "x-openai-php2shell", "wiz-blog-php2shell"]},
     {"html": "<b>'70% of the Internet'</b> is the same number in a Wiz headline and post. The body of Wiz's own post says websites. This site marks the Internet version unverified.", "sources": ["wiz-blog-php2shell", "x-wiz-io-php2shell"]},
-    {"html": "<b>Hosts, not websites:</b> VulnCheck counts about 2.6 million internet-facing hosts running PHP; Censys counted 1.57 million of the 2.58 million it saw with a readable version still unpatched on 21 October. One host can serve thousands of sites.", "sources": ["thehackernews-php2shell-4days", "securityweek-exploitation-days-before"]},
+    {"html": "<b>Hosts, not websites:</b> VulnCheck counts about 2.6 million internet-facing hosts running PHP; Censys saw 2.58 million, could read a version on 1.58 million, and counted 1.57 million of those still unpatched on 21 October. One host can serve thousands of sites.", "sources": ["thehackernews-php2shell-4days", "securityweek-exploitation-days-before"]},
     {"html": "<b>Being built on PHP is not the same as being exploitable.</b> The CVE vector says attack complexity is high, and Fastly says the public exploits need knowledge of the exact PHP build on a 64-bit server.", "sources": ["cve-cve-2026-109618", "fastly-blog-php2shell", "imperva-blog-php2shell"]}
    ],
    "see": ["numbers/index.html", "claims/index.html#scale-70pc-internet", "affected/index.html"]

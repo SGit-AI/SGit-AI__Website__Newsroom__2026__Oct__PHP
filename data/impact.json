@@ -4,13 +4,12 @@
   {
    "who": "NCSC.nl (the Dutch national cyber security centre's own site)",
    "country": "NL",
-   "what": "Taken offline 'uit voorzorg' (as a precaution); DigiD, MijnOverheid and Overheid.nl also offline; no signs of active exploitation of those services at the time",
+   "what": "NCSC.nl taken offline 'uit voorzorg' (as a precaution), with no active misuse seen yet, says the government; DigiD and MijnOverheid also offline, says the Dutch press",
    "when": "2026-10-21",
-   "said_by": "the Dutch government (Rijksoverheid news)",
-   "status": "confirmed",
+   "said_by": "the Dutch government (NCSC.nl); TPO.NL (DigiD, MijnOverheid)",
+   "status": "reported",
    "sources": [
     "rijksoverheid-ncsc-php-news",
-    "dutchitleaders-websites-offline",
     "tpo-nl-digid-offline"
    ]
   },

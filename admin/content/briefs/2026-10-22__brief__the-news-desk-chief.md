@@ -33,4 +33,4 @@ Not "editor": on this site the editor is Dinis Cruz, and `admin/security/REQUIRE
 
 ## Board items opened by this brief
 
-175 (the news desk chief on the team page, for the conductor). The desk chief's first piece of work is the next brief, `2026-10-22__brief__how-many-sites-went-offline.md`.
+192 (the news desk chief on the team page, for the conductor). The desk chief's first piece of work is the next brief, `2026-10-22__brief__how-many-sites-went-offline.md`.

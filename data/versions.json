@@ -1,6 +1,87 @@
 {
- "current": "0.10.19",
+ "current": "0.11.3",
  "versions": [
+  {
+   "version": "0.11.3",
+   "date": "2026-10-24",
+   "title": "the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because the site's watch data was exported from it); /vaults/, the source-watch page, the team, the schedules and the researcher's register say so; the pack vault's read key is not published until the vault UI opens pack vaults",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.2",
+   "date": "2026-10-24",
+   "title": "claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit newsroom's Pulse in a separate section (/pulse/), and the plan for the journalist's full pass",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.1",
+   "date": "2026-10-24",
+   "title": "Security pass 2: the Ask pane renders the model's answer as DOM nodes, so a captured page title can no longer break out of a citation's title attribute and run script (a stored XSS that could reach the /now/ vault key); the collaborators drain drops sender-supplied '_' fields (a forged '_signer: enrolled') and survives malformed rows; schedule.py refuses a message as the editor, a multi-line subject or a repeated header, and prints bodies inside an untrusted fence; two unquoted hrefs quoted and two data URLs through U(); .gitignore no longer hides data/*.json",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.0",
+   "date": "2026-10-24",
+   "title": "The cartographer joins: the ontology (15 verbs, each with its inverse), one node per party (243, from every publisher spelling), the story graph rebuilt with who states and who relays each claim, bridges to the code-review and risk graphs, <sg-graph> for every agent that draws a graph, the first pass over the evidence, and a daily pass proposed for 14:40 London",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.10.24",
+   "date": "2026-10-24",
+   "title": "The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and the rule for every scheduled agent: a wake where nothing happened need not commit, and a conflict is solved by hand and written in the run's log",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.10.23",
+   "date": "2026-10-24",
+   "title": "synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the vault opened read-only in the official UI, and on /vaults/, so every request, page, screenshot and review behind a run can be checked; each run page names its folder; the synthetic readers' GitHub workflow removed (the editor's go), the readers run from an agent session",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.10.22",
+   "date": "2026-10-24",
+   "title": "Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its objective, wake times and wake prompt word for word; a run record for every wake; messages between agents as files; /team/schedule/ shows one day of every wake, the cards, the runs and the messages, with a page per agent; the conductor's own hourly schedule proposed",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.10.21",
+   "date": "2026-10-24",
+   "title": "synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey, the instruments' flags) and a page-by-page index of what all six said about each page of the site; the second run, on v0.10.18, reviewed by all six against their first: most of what they asked for on 22 October is still open; the vault register for the six vaults confirmed, each key sealed to the root",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.10.20",
+   "date": "2026-10-24",
+   "title": "the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.10.19",
    "date": "2026-10-23",

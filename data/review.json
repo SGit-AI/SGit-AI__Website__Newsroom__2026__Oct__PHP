@@ -822,7 +822,7 @@
    "rel": "realised in"
   },
   {
-   "from": "area:Zend",
+   "from": "area:Zend/",
    "to": "file:Zend/zend_alloc.c",
    "rel": "contains"
   },
@@ -832,7 +832,7 @@
    "rel": "realised in"
   },
   {
-   "from": "area:Zend",
+   "from": "area:Zend/",
    "to": "file:Zend/zend_execute_API.c",
    "rel": "contains"
   },
@@ -842,7 +842,7 @@
    "rel": "realised in"
   },
   {
-   "from": "area:Zend",
+   "from": "area:Zend/",
    "to": "file:Zend/zend_hash.c",
    "rel": "contains"
   },
@@ -852,7 +852,7 @@
    "rel": "realised in"
   },
   {
-   "from": "area:Zend",
+   "from": "area:Zend/",
    "to": "file:Zend/zend_string.c",
    "rel": "contains"
   },
@@ -862,7 +862,7 @@
    "rel": "realised in"
   },
   {
-   "from": "area:Zend",
+   "from": "area:Zend/",
    "to": "file:Zend/zend_types.h",
    "rel": "contains"
   },
@@ -882,7 +882,7 @@
    "rel": "realised in"
   },
   {
-   "from": "area:main",
+   "from": "area:main/",
    "to": "file:main/SAPI.c",
    "rel": "contains"
   },
@@ -892,7 +892,7 @@
    "rel": "realised in"
   },
   {
-   "from": "area:main",
+   "from": "area:main/",
    "to": "file:main/main.c",
    "rel": "contains"
   },
@@ -902,7 +902,7 @@
    "rel": "realised in"
   },
   {
-   "from": "area:main",
+   "from": "area:main/",
    "to": "file:main/rfc1867.c",
    "rel": "contains"
   }

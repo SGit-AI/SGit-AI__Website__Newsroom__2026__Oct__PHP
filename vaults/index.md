@@ -6,7 +6,7 @@ Every vault this site is built from: the evidence vault and the source watch, bo
 
 # The vaults behind this site
 
-This site is rebuilt from vaults, never written by hand. 13 vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch, and the public face of the telemetry, its curated counts); two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
+This site is rebuilt from vaults, never written by hand. 20 vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch as it was until 23 October, and the public face of the telemetry, its curated counts); one, the source watch as it runs now, in sgit's pack mode, is private until the vault UI can open pack vaults; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
 
 Every vault behind this site: what each holds, who writes to it, and how to open it. Three kinds of credential appear here. A vault key reads and writes; it is never published. A read key reads only and cannot be turned into a vault key; the two public vaults publish theirs. An append token adds rows to one lane and cannot read anything; the telemetry lane publishes its token so every page can write to it.
 
@@ -22,13 +22,23 @@ The story as it was assembled on the morning of 22 October 2026: every source as
 
 [Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8%3A3ytzxm3g) · `sgit clone sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g`
 
-## [The source watch](../vaults/source-watch/index.html) public read
+## [The source watch](../admin/pack-mode/index.html) private for now
+
+**Vault** `7r83qic5` · the pack-mode copy of oq9gflln, made on 23 October 2026; sgit-ai 0.24.0 or later reads it
+
+The source watch since 23 October 2026: the same vault, copied into sgit's pack mode (sgit-ai 0.24.0, sgit pack import), where every pass now writes. Pack mode clones and pushes in seconds where the normal vault took minutes or timed out.
+
+**Written by** researcher@php.newsroom, the agent that runs the watch. Data on this site: [data/pack-mode.json](../data/pack-mode.json).
+
+**Not published:** the vault key. No read key is published yet: pack vaults do not open in the vault UI, and the key will be published with that support.
+
+## [The source watch, as a normal vault (retired)](../vaults/source-watch/index.html) public read, retired
 
 **Vault** `oq9gflln` · 913 pages from 597 publishers in 59 countries and 34 languages; 2946 snapshots, 38 runs; head `20afaa62129d`
 
-Every outside source on the story, watched on a schedule: country, sector, publisher and page; what access each check had; a snapshot whenever the content changed; and every snapshot and every change as a graph. The evidence vault's 184 sources were its first snapshots.
+Every outside source on the story, watched on a schedule: country, sector, publisher and page; what access each check had; a snapshot whenever the content changed; and every snapshot and every change as a graph. The evidence vault's 184 sources were its first snapshots. Retired on 23 October 2026, when the watch moved to its pack-mode copy (7r83qic5); kept read-only, because the watch data on this site and the snapshots it cites were exported from it.
 
-**Written by** researcher@php.newsroom, the agent that runs the watch. Data on this site: [data/source-watch.json](../data/source-watch.json).
+**Written by** researcher@php.newsroom, until 23 October 2026; nobody since. Data on this site: [data/source-watch.json](../data/source-watch.json).
 
 **Read key** `sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277:oq9gflln`
 
@@ -136,20 +146,92 @@ What the collaborators send from /collaborators/: requests to join (a name, an e
 
 **Not published:** the vault key, the lane's enum key and the key pair's passphrase. **Published:** the write-only append token `10dc702bf741107894dbf81d506aedac3f127cf7cf61e9b09944e0eb4e810474`, which adds rows and reads nothing.
 
-## [The schedule vault](../team/schedule/index.html) public read
+## [The schedule vault (retired)](../team/schedule/index.html) public read
 
 **Vault** `weic8imn` ·
 
-Every scheduled agent's schedule, its queued tasks and every run with its log: the control panel for what the team runs on its own.
+Retired on 24 October 2026, kept as an archive: the first schedules, tasks and runs. Schedules, runs and messages are now kept in the site's repository (/team/schedule/).
 
-**Written by** each scheduled agent, its own runs; the editor's session and the conductor queue tasks. Data on this site: [data/schedule-vault.json](../data/schedule-vault.json).
+**Written by** nobody since 24 October 2026. Data on this site: [data/schedule-vault.json](../data/schedule-vault.json).
 
 **Read key** `sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06:weic8imn`
 
 [Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06%3Aweic8imn) · `sgit clone sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06:weic8imn`
 
+## [The synthetic board member's vault](../admin/synthetic/board/index.html) public read
+
+**Vault** `1zq458zk` ·
+
+Every run of the synthetic board member against this site: for each page it read, the served and the rendered HTML, the text, the first screen and the full page as images and the measurements; every request with its status, size, timing and sha256; every console message; what the reviewer was given and the review it wrote.
+
+**Written by** synthetic@php.newsroom. Data on this site: [data/synthetic.json](../data/synthetic.json).
+
+**Read key** `sgit_public_read_f5578366fad746fe3273c3650bf76df06b1b69b157956ccf5a84e5ddb5ff73fb:1zq458zk`
+
+[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_f5578366fad746fe3273c3650bf76df06b1b69b157956ccf5a84e5ddb5ff73fb%3A1zq458zk) · `sgit clone sgit_public_read_f5578366fad746fe3273c3650bf76df06b1b69b157956ccf5a84e5ddb5ff73fb:1zq458zk`
+
+## [The synthetic cto's vault](../admin/synthetic/cto/index.html) public read
+
+**Vault** `wlhgl8pk` ·
+
+Every run of the synthetic cto against this site: for each page it read, the served and the rendered HTML, the text, the first screen and the full page as images and the measurements; every request with its status, size, timing and sha256; every console message; what the reviewer was given and the review it wrote.
+
+**Written by** synthetic@php.newsroom. Data on this site: [data/synthetic.json](../data/synthetic.json).
+
+**Read key** `sgit_public_read_c20a2e6e91f6aa161ab7f6abb20dc0e27ade846a94ce149d0fd11996daaade3f:wlhgl8pk`
+
+[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_c20a2e6e91f6aa161ab7f6abb20dc0e27ade846a94ce149d0fd11996daaade3f%3Awlhgl8pk) · `sgit clone sgit_public_read_c20a2e6e91f6aa161ab7f6abb20dc0e27ade846a94ce149d0fd11996daaade3f:wlhgl8pk`
+
+## [The synthetic project manager's vault](../admin/synthetic/pm/index.html) public read
+
+**Vault** `9p6jpsd2` ·
+
+Every run of the synthetic project manager against this site: for each page it read, the served and the rendered HTML, the text, the first screen and the full page as images and the measurements; every request with its status, size, timing and sha256; every console message; what the reviewer was given and the review it wrote.
+
+**Written by** synthetic@php.newsroom. Data on this site: [data/synthetic.json](../data/synthetic.json).
+
+**Read key** `sgit_public_read_e4e66e3ad8167c7de4f940f6224a58d2e74039a22092db0fa400484b548187da:9p6jpsd2`
+
+[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_e4e66e3ad8167c7de4f940f6224a58d2e74039a22092db0fa400484b548187da%3A9p6jpsd2) · `sgit clone sgit_public_read_e4e66e3ad8167c7de4f940f6224a58d2e74039a22092db0fa400484b548187da:9p6jpsd2`
+
+## [The synthetic security lead's vault](../admin/synthetic/security/index.html) public read
+
+**Vault** `vjsqjhvp` ·
+
+Every run of the synthetic security lead against this site: for each page it read, the served and the rendered HTML, the text, the first screen and the full page as images and the measurements; every request with its status, size, timing and sha256; every console message; what the reviewer was given and the review it wrote.
+
+**Written by** synthetic@php.newsroom. Data on this site: [data/synthetic.json](../data/synthetic.json).
+
+**Read key** `sgit_public_read_da4d766a9aaa8c06e3caccbd01ae698ca0c685409f1a19f6f5d5136867cfdaf0:vjsqjhvp`
+
+[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_da4d766a9aaa8c06e3caccbd01ae698ca0c685409f1a19f6f5d5136867cfdaf0%3Avjsqjhvp) · `sgit clone sgit_public_read_da4d766a9aaa8c06e3caccbd01ae698ca0c685409f1a19f6f5d5136867cfdaf0:vjsqjhvp`
+
+## [The synthetic developer's vault](../admin/synthetic/developer/index.html) public read
+
+**Vault** `3l7tzwh9` ·
+
+Every run of the synthetic developer against this site: for each page it read, the served and the rendered HTML, the text, the first screen and the full page as images and the measurements; every request with its status, size, timing and sha256; every console message; what the reviewer was given and the review it wrote.
+
+**Written by** synthetic@php.newsroom. Data on this site: [data/synthetic.json](../data/synthetic.json).
+
+**Read key** `sgit_public_read_7208ee9cc71d170283b3a7ec3ec879fcc4a70b4974652d7cc4cd55b8ae43e894:3l7tzwh9`
+
+[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_7208ee9cc71d170283b3a7ec3ec879fcc4a70b4974652d7cc4cd55b8ae43e894%3A3l7tzwh9) · `sgit clone sgit_public_read_7208ee9cc71d170283b3a7ec3ec879fcc4a70b4974652d7cc4cd55b8ae43e894:3l7tzwh9`
+
+## [The synthetic designer's vault](../admin/synthetic/designer/index.html) public read
+
+**Vault** `dpdx3q13` ·
+
+Every run of the synthetic designer against this site: for each page it read, the served and the rendered HTML, the text, the first screen and the full page as images and the measurements; every request with its status, size, timing and sha256; every console message; what the reviewer was given and the review it wrote.
+
+**Written by** synthetic@php.newsroom. Data on this site: [data/synthetic.json](../data/synthetic.json).
+
+**Read key** `sgit_public_read_d38e486c514c3f320e437bf757110c772af8241c595baa6ec0a4504d72069297:dpdx3q13`
+
+[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_d38e486c514c3f320e437bf757110c772af8241c595baa6ec0a4504d72069297%3Adpdx3q13) · `sgit clone sgit_public_read_d38e486c514c3f320e437bf757110c772af8241c595baa6ec0a4504d72069297:dpdx3q13`
+
 The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgit.ai network, published the same way, are at [sgit.ai's vaults](https://sgit.ai/demos/vaults/index.html).
 
 
 ---
-site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.11.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html

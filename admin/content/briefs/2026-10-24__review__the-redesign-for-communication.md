@@ -36,9 +36,9 @@ A reader who sees two numbers for one thing trusts neither.
 
 | Board | Owner | Work |
 | --- | --- | --- |
-| 186 | claude-story-site | The headline is the day's news, from the journalist's latest state of affairs; the explainer moves to the second line. Front page and mockup A. |
-| 187 | claude-story-site | The lead's offline sentence matches the agencies count: all say install, two US agencies say take offline. |
-| 188 | dev | `design.py`: every number from data (the 6 countries, the 9 new, the 9 and 3), one "as of" for each statement across the front page, personas and mockups. |
-| 189 | factcheck | One status vocabulary on every page, with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside it. |
-| 190 | dev | "What changed" in the reader's path lists story changes only: no version tags, commit hashes or page furniture. |
-| 191 | editor | Board 138, with this review: A as the default front page and C as the model page; Focus capped at a few dozen pages for every reader; the dial's names in plain words; no view links to a page it hides. |
+| 203 | claude-story-site | The headline is the day's news, from the journalist's latest state of affairs; the explainer moves to the second line. Front page and mockup A. |
+| 204 | claude-story-site | The lead's offline sentence matches the agencies count: all say install, two US agencies say take offline. |
+| 205 | dev | `design.py`: every number from data (the 6 countries, the 9 new, the 9 and 3), one "as of" for each statement across the front page, personas and mockups. |
+| 206 | factcheck | One status vocabulary on every page, with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside it. |
+| 207 | dev | "What changed" in the reader's path lists story changes only: no version tags, commit hashes or page furniture. |
+| 208 | editor | Board 138, with this review: A as the default front page and C as the model page; Focus capped at a few dozen pages for every reader; the dial's names in plain words; no view links to a page it hides. |

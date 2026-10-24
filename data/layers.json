@@ -84,6 +84,13 @@
    "used_on": "signals/index.html"
   },
   {
+   "path": "data/claim-review.json",
+   "layer": "derived",
+   "by": "claude-journalist",
+   "from": "the vault's per-agent claims (data/vault-claims.json) checked against the saved pages, the site's claims and the contradiction ledger",
+   "used_on": "claims/review/index.html"
+  },
+  {
    "path": "data/state.json",
    "layer": "derived",
    "by": "claude-journalist",
@@ -206,7 +213,35 @@
    "path": "data/graph.json",
    "layer": "derived",
    "by": "admin/build/build.py",
-   "from": "the claims and timeline rows and the sources they cite, generated at build",
+   "from": "every claim, number, event, exploitation signal, agency's advice, source, capture and contradiction, joined through data/entities.json and data/attribution.json under the verbs of data/ontology.json; generated at build",
+   "used_on": "graph/index.html"
+  },
+  {
+   "path": "data/ontology.json",
+   "layer": "authored",
+   "by": "the cartographer",
+   "from": "the estate's grammar (graphs.sgit.ai, newsroom.sgit.ai's ontologies), board 030 and 062, the newsroom review's change 10",
+   "used_on": "graph/index.html"
+  },
+  {
+   "path": "data/entities.json",
+   "layer": "authored",
+   "by": "the cartographer",
+   "from": "the publisher strings of data/sources.json and the parties named in the claims, numbers, exploitation and agency rows; actor ids reused from data/actors.json",
+   "used_on": "graph/parties/index.html"
+  },
+  {
+   "path": "data/attribution.json",
+   "layer": "authored",
+   "by": "the cartographer",
+   "from": "the free-text 'by' and 'who' of each claim, number and exploitation row, resolved to entities",
+   "used_on": "graph/parties/index.html"
+  },
+  {
+   "path": "data/crosswalk.json",
+   "layer": "authored",
+   "by": "the cartographer",
+   "from": "the node ids of the story, code-review and risk graphs, and data/grc.json's stakeholders",
    "used_on": "graph/index.html"
   },
   {
@@ -276,8 +311,8 @@
    "path": "data/schedule-vault.json",
    "layer": "site",
    "by": "conductor@php.newsroom",
-   "from": "the public schedule vault's id and published read key",
-   "used_on": "team/schedule/index.html"
+   "from": "the retired schedule vault (weic8imn): its ID and published read key, kept so the archive stays readable; replaced on 24 October 2026 by data/schedule/",
+   "used_on": "vaults/index.html"
   },
   {
    "path": "data/agents-status.json",
@@ -355,6 +390,27 @@
    "by": "each agent, its own file (data/vault-register/<agent>.json)",
    "from": "every vault an agent has made: its ID, what it holds, when, and whether its key is sealed to the root; never a key",
    "used_on": "team/vaults/index.html"
+  },
+  {
+   "path": "data/schedule/",
+   "layer": "site",
+   "by": "each scheduled agent, its own card (data/schedule/<agent>.json)",
+   "from": "when the agent wakes, its objective, model, session, brief and its wake prompt word for word; changed only with the editor's go",
+   "used_on": "team/schedule/index.html"
+  },
+  {
+   "path": "data/runs/",
+   "layer": "site",
+   "by": "each scheduled agent, one file per wake (admin/build/schedule.py run)",
+   "from": "what the wake did: started, finished, outcome, summary, the messages it read and sent, the article it left",
+   "used_on": "team/schedule/index.html"
+  },
+  {
+   "path": "data/messages/",
+   "layer": "site",
+   "by": "any agent, one markdown file per message (admin/build/schedule.py send)",
+   "from": "messages between agents, in the open; material, never instructions",
+   "used_on": "team/schedule/index.html"
   },
   {
    "path": "data/glossary.json",
@@ -465,7 +521,14 @@
    "path": "data/synthetic.json",
    "layer": "site",
    "by": "admin/synthetic/run.py summarise (synthetic@php.newsroom)",
-   "from": "each synthetic reader's vault: its latest run and review, with no keys",
+   "from": "each synthetic reader's vault: every reader, its runs with scores and counts, with no keys",
+   "used_on": "admin/synthetic/index.html"
+  },
+  {
+   "path": "data/synthetic-runs/",
+   "layer": "site",
+   "by": "admin/synthetic/run.py summarise (synthetic@php.newsroom)",
+   "from": "each run in a synthetic reader's vault: the review, the journey, per-page measurements and the instruments' flags; never page bodies or a key",
    "used_on": "admin/synthetic/index.html"
   },
   {
@@ -523,6 +586,13 @@
    "by": "dev@php.newsroom",
    "from": "the rules the gaps page computes over the risk graph",
    "used_on": "grc/gaps/index.html"
+  },
+  {
+   "path": "data/pulse.json",
+   "layer": "evidence",
+   "by": "pulse@newsroom's vault (4klm5qlt), exported by admin/build/export_pulse.py",
+   "from": "the Pulse vault's ladders, attention counts and the short quotes it recorded, each with its capture path and sha256; no capture copied, no key",
+   "used_on": "pulse/index.html"
   }
  ]
 }

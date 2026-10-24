@@ -72,6 +72,8 @@ This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 Octob
 
 This section v2 written in site [v0.10.19](admin/versions.html#v0.10.19) on 23 October 2026 · [history and changes, 1 earlier](versions/front-latest/index.html)
 
+What else is going on Other vulnerabilities in the news this month, with the evidence that each is exploited beside the attention it gets: the SGit newsroom's Pulse, in a separate section, not about PHP. Pulse →
+
 ## The briefing for you
 
 The same evidence, put in order for 16 kinds of reader. Each starts with a thirty-second answer in plain words. [How the readers are mapped](start/index.html).
@@ -118,4 +120,4 @@ Already know the vocabulary? [The specialist summary](summary/index.html) has th
 
 
 ---
-site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.11.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/index.html
