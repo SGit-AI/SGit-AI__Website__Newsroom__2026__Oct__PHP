@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.16 · 24 October 2026new since your last visit
+
+observability's round 2: the telemetry application v0.4.1 and v0.4.2, pushed to its vault (Queue & drain shows its progress; One page shows everything known about a page beside the page itself), on the member's page /admin/agents/observability/ with its debrief and screenshots
+
+No reader-facing section changed in this release.
+
 ## v0.15.15 · 24 October 2026new since your last visit
 
 debrief: the Opus journalist's round, ending as the correspondent
@@ -1025,4 +1031,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.15 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

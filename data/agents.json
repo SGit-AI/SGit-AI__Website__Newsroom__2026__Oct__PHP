@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.15.15",
+ "version": "0.15.16",
  "members": [
   {
    "agent": "abp",
@@ -1874,12 +1874,14 @@
     "agent": "observability",
     "as_of": "2026-10-24",
     "round": {
-     "n": 1,
+     "n": 2,
      "date": "2026-10-24",
      "branch": "claude/wonderful-allen-vu7tzg",
-     "commits": []
+     "commits": [
+      "v0.14.28 (round 1)"
+     ]
     },
-    "state": "round 1: joined; holds the keys of 84wr8mib and 5wnsr5h8; the telemetry application v0.4.1 committed in 5wnsr5h8, not yet pushed (needs an SG/Send access token)",
+    "state": "round 2: the telemetry application v0.4.2 pushed to 5wnsr5h8 (Queue & drain progress; One page with the page framed); holds the keys of 84wr8mib and 5wnsr5h8",
     "done": [
      {
       "what": "Joined at the editor's request: the member folder (ROLE.md, a draft policy.json, status.json) and an empty vault register",
@@ -1908,12 +1910,19 @@
      {
       "what": "The telemetry application v0.4.1: Queue & drain shows a progress bar while the lane is checked, and while it drains the seven steps with their counts, a bar over the events, each batch's size and time, and a summary; 8 more tests (36 pass over 1,543 real events); checked in a dry-run host against the real lane (first run, a repeat over the same events, a failed publish). Committed in the vault; the push is waiting for an SG/Send access token",
       "evidence": "5wnsr5h8: CHANGELOG.md 0.4.1; debriefs/img/2026-10-24__joining__2 to 5"
+     },
+     {
+      "what": "Pushed the telemetry application v0.4.1 (Queue & drain shows its progress) with the access token the editor gave in the session",
+      "evidence": "5wnsr5h8: VERSION 0.4.1, CHANGELOG.md"
+     },
+     {
+      "what": "The telemetry application v0.4.2: ◎ and ↗ beside every page's name; One page (its numbers, views over time, before and after, paths, who, where from, devices, languages, versions, latest events, and the page itself framed with sandbox=\"\", so it sends no telemetry); siteUrl() keeps untrusted paths on the site's origin; 40 tests pass over 1,653 events",
+      "evidence": "5wnsr5h8: VERSION 0.4.2, CHANGELOG.md; debriefs/2026-10-24__one-page-and-the-drain-live.md"
      }
     ],
     "tasks": {
      "board": [
       "270",
-      "271",
       "272",
       "273"
      ],
@@ -1921,12 +1930,12 @@
     },
     "next": [
      {
-      "what": "Push v0.4.1 to 5wnsr5h8 and check it in App Mode on 84wr8mib with a real drain",
-      "why": "committed locally; the push needs an SG/Send access token (asks)"
+      "what": "A proposed card for a lane check and drain",
+      "why": "the lane refuses at 1,000 waiting; it needs the editor's go"
      },
      {
-      "what": "A card for a scheduled lane check, proposed, if the editor wants one",
-      "why": "the lane refuses at 1,000 waiting (507); it held 407 on the morning of 24 October"
+      "what": "Count the events the cap refuses, with dev",
+      "why": "today a refused event is lost and nobody knows; assets/telemetry.js is dev's"
      }
     ],
     "asks": [
@@ -1935,15 +1944,11 @@
       "from": "the editor"
      },
      {
-      "what": "An SG/Send access token for this session, sealed to sha256:b9ddd39416d71cbb, to push 5wnsr5h8 (and 84wr8mib, for drains from the command line)",
-      "from": "the editor"
-     },
-     {
       "what": "Whether the telemetry files move from dev (board 272)",
       "from": "the editor and abp@"
      },
      {
-      "what": "Whether to rekey 84wr8mib after its private read key appeared in this session's output",
+      "what": "Whether the telemetry vault's app may open outside links without the host's confirm (permissions.externalLinks): it widens the sandbox",
       "from": "the editor"
      }
     ],
@@ -1958,11 +1963,16 @@
      "overrides": 0,
      "writes_outside_scope": 1,
      "injection_seen": 0,
-     "detail": "One write outside scope: admin/content/agents/observability/policy.json, which abp@newsroom.sgit keeps; written as the member's first draft (the librarian's step for a new member), for abp@ to take over and the editor to agree (board 272's note). Appends only otherwise: own board rows in data/admin.json, own message files in data/messages/. The roster (data/team.json) is the conductor's: asked by message, not edited. One exposure, said to the editor at once: sgit clone printed the private read key of 84wr8mib into this session's tool output (the masking pattern missed it). It is in the session transcript only: no file, commit, page or message. Rotation (a rekey of 84wr8mib) is the editor's call."
+     "detail": "One write outside scope: admin/content/agents/observability/policy.json, which abp@newsroom.sgit keeps; written as the member's first draft (the librarian's step for a new member), for abp@ to take over and the editor to agree (board 272's note). Appends only otherwise: own board rows in data/admin.json, own message files in data/messages/. The roster (data/team.json) is the conductor's: asked by message, not edited. One exposure, said to the editor at once: sgit clone printed the private read key of 84wr8mib into this session's tool output (the masking pattern missed it). It is in the session transcript only: no file, commit, page or message. Rotation (a rekey of 84wr8mib) is the editor's call. Round 2: no write outside scope. The editor decided in the session that 84wr8mib needs no rekey."
     },
-    "debrief": "admin/content/agents/observability/debriefs/2026-10-24__joining.md"
+    "debrief": "admin/content/agents/observability/debriefs/2026-10-24__one-page-and-the-drain-live.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-24__one-page-and-the-drain-live.md",
+     "date": "2026-10-24",
+     "title": "The telemetry application v0.4.1 and v0.4.2 pushed: progress on Queue & drain, and One page (a page's numbers and the page itself)"
+    },
     {
      "file": "2026-10-24__joining.md",
      "date": "2026-10-24",

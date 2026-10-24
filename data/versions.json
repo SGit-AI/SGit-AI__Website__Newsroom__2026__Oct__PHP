@@ -1,6 +1,15 @@
 {
- "current": "0.15.15",
+ "current": "0.15.16",
  "versions": [
+  {
+   "version": "0.15.16",
+   "date": "2026-10-24",
+   "title": "observability's round 2: the telemetry application v0.4.1 and v0.4.2, pushed to its vault (Queue & drain shows its progress; One page shows everything known about a page beside the page itself), on the member's page /admin/agents/observability/ with its debrief and screenshots",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.15",
    "date": "2026-10-24",

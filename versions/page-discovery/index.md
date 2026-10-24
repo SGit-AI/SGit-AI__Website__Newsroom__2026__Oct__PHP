@@ -15,4 +15,4 @@ v5 · site v0.4.7 · 22 October 2026 · 12 lines added or changed, 12 removed or
 
 
 ---
-site v0.15.15 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/versions/page-discovery/index.html
+site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/versions/page-discovery/index.html

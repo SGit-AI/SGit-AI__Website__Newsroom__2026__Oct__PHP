@@ -406,12 +406,6 @@
    "title": "Enrol observability@php.newsroom's key (sha256:b9ddd39416d71cbb) on pki.sgit.ai: its record links the root as operator"
   },
   {
-   "id": "273",
-   "owner": "editor",
-   "status": "open",
-   "title": "An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39416d71cbb, to push the telemetry application (5wnsr5h8) and drain 84wr8mib from the command line"
-  },
-  {
    "id": "275",
    "owner": "editor",
    "status": "open",
@@ -854,5 +848,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.15.15"
+ "version": "0.15.16"
 }

@@ -28,7 +28,7 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [Corrections liaison](../liaison/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [librarian@php.newsroom](../librarian/index.html) | 2026-10-24 | [The first scheduled pass: dev at v0.14.6 mapped, the journalist's full pass raised, one answer corrected](../librarian/index.html#2026-10-24__morning-pass) | 3 | 5 | unknown | 0 | 2 | 0 |
 | [Newsroom lead](../newsroom-lead/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
-| [Observability](../observability/index.html) | 2026-10-24 | [Joined as the observability agent; the lane's cap traced; the telemetry application v0.4.1 (Queue & drain progress)](../observability/index.html#2026-10-24__joining) | 2 | 4 | unknown | 1 | 0 | 0 |
+| [Observability](../observability/index.html) | 2026-10-24 | [The telemetry application v0.4.1 and v0.4.2 pushed: progress on Queue & drain, and One page (a page's numbers and the page itself)](../observability/index.html#2026-10-24__one-page-and-the-drain-live) | 2 | 3 | unknown | 1 | 0 | 0 |
 | [Ontologist](../ontologist/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [pulse@newsroom](../pulse/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [researcher@php.newsroom](../researcher/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
@@ -43,6 +43,7 @@ At the end of every round of work each agent writes a debrief with screenshots a
 - 2026-10-24 · [Sherpa: The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents](../sherpa/index.html#2026-10-24__drain-schedule-and-inbox)
 - 2026-10-24 · [Sherpa: Two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against the redesign that shipped](../sherpa/index.html#2026-10-24__ci-003-and-the-redesign)
 - 2026-10-24 · [security@php.newsroom: Application security: the AppSec section, 40 advisories, a CSP on every page, the telemetry policy, and three security passes](../security/index.html#2026-10-24__application-security)
+- 2026-10-24 · [Observability: The telemetry application v0.4.1 and v0.4.2 pushed: progress on Queue & drain, and One page (a page's numbers and the page itself)](../observability/index.html#2026-10-24__one-page-and-the-drain-live)
 - 2026-10-24 · [Observability: Joined as the observability agent; the lane's cap traced; the telemetry application v0.4.1 (Queue & drain progress)](../observability/index.html#2026-10-24__joining)
 - 2026-10-24 · [librarian@php.newsroom: The first scheduled pass: dev at v0.14.6 mapped, the journalist's full pass raised, one answer corrected](../librarian/index.html#2026-10-24__morning-pass)
 - 2026-10-24 · [librarian@php.newsroom: The librarian's pass of 24 October: dev taken in, 27 members mapped, two answers corrected](../librarian/index.html#2026-10-24__librarian-pass)
@@ -56,4 +57,4 @@ At the end of every round of work each agent writes a debrief with screenshots a
 
 
 ---
-site v0.15.15 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
+site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
