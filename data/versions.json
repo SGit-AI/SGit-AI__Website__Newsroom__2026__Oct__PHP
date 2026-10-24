@@ -1,6 +1,15 @@
 {
- "current": "0.15.19",
+ "current": "0.15.20",
  "versions": [
+  {
+   "version": "0.15.20",
+   "date": "2026-10-24",
+   "title": "the correspondent's brief: the first session makes its own key, records its fingerprint and stops",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.15.19",
    "date": "2026-10-24",

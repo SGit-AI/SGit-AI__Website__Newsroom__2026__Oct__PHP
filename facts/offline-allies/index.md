@@ -71,4 +71,4 @@ Sources: bbc-live-ckgel5xp2xv9t, acsc-alert-php, certeu-sa-2026-018, ncsc-nl-php
 
 
 ---
-site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/offline-allies/index.html
+site v0.15.20 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/offline-allies/index.html

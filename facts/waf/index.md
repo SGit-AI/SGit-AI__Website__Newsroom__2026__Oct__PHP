@@ -60,4 +60,4 @@ Sources: cisa-alert-php-20261021, ch-bacs-warnung-php, cloudflare-blog-php2shell
 
 
 ---
-site v0.15.19 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/waf/index.html
+site v0.15.20 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/waf/index.html
