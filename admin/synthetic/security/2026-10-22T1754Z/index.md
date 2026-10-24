@@ -107,4 +107,4 @@ This run is in the folder `runs/2026-10-22T1754Z/`: the served and rendered HTML
 
 
 ---
-site v0.15.4 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/security/2026-10-22T1754Z/index.html
+site v0.15.5 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/security/2026-10-22T1754Z/index.html

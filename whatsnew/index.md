@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.5 · 24 October 2026new since your last visit
+
+The Sherpa's 17:45 pass: the phone header's fix checked live (one 43px line; a friction closed), headlines now on the first screen, the graph's changes page live, and the lens prototype noted as the answer to two open frictions
+
+No reader-facing section changed in this release.
+
 ## v0.15.4 · 24 October 2026new since your last visit
 
 factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploitation attempts' at 21:25 UTC on 22 October), so the correction request R-004 closes unsent and amazon-honeypot is graded superseded (Finding-126); no-confirmed-compromise still holds at 08:37 UTC on 24 October, with Sophos's withdrawn success claim; the desk's pages pass the new Content-Security-Policy
@@ -959,4 +965,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.4 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.5 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
