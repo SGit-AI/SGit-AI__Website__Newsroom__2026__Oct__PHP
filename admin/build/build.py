@@ -6928,7 +6928,7 @@ def comms_notes():
     return [(n['commit'], n['when'], n['from'], n['to'], n['note'], n['subject']) for n in json.load(open(p, encoding='utf-8'))['notes']]
 
 def comms_list(notes, depth):
-    rows = [[E(when[:16].replace('T', ' ')), E(sender or '?'), f'<a href="{"../" * depth}team/schedule/{U(to)}/index.html">{E(to)}</a>' if to != 'all' else '<b>all</b>',
+    rows = [[E(when[:16].replace('T', ' ')), E(sender or '?'), ('<b>all</b>' if to == 'all' else f'<a href="{"../" * depth}team/schedule/{U(to)}/index.html">{E(to)}</a>' if os.path.exists(os.path.join(DATA, 'schedule', to + '.json')) else E(to)),
              E(note), f'<code>{E(sha[:10])}</code><div class="note">{E(subj[:120])}</div>'] for sha, when, sender, to, note, subj in notes]
     return table(['When (UTC)', 'From', 'To', 'Note', 'Commit'], rows, 'board') if rows else '<p class="small">No notes yet.</p>'
 

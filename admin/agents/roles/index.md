@@ -12,7 +12,7 @@
 
 **None.** No file and no page is claimed by two members.
 
-Checked against every tracked source file here, and against every page the build writes by the gate (check 4h) and `admin/build/agents.py overlaps`. Source files nobody owns: **2**: `admin/build/release_pages.py`, `data/desk.json`. Appends to a file nobody owns: **0**.
+Checked against every tracked source file here, and against every page the build writes by the gate (check 4h) and `admin/build/agents.py overlaps`. Source files nobody owns: **3**: `admin/build/release_pages.py`, `data/comms.json`, `data/desk.json`. Appends to a file nobody owns: **0**.
 
 ## The members
 
