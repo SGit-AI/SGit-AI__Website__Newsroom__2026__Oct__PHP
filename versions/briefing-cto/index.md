@@ -15,4 +15,4 @@ v7 · site v0.12.1 · 24 October 2026 · 4 lines added or changed, 4 removed or 
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-cto/index.html
+site v0.17.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-cto/index.html

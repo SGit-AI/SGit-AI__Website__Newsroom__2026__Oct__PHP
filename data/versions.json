@@ -1,6 +1,15 @@
 {
- "current": "0.17.0",
+ "current": "0.17.1",
  "versions": [
+  {
+   "version": "0.17.1",
+   "date": "2026-10-24",
+   "title": "The ontologist's debrief and self-check on the Wikipedia section, after the fact: the seven answers, the screenshots, and the one item for security, that the daily pass reads Wikipedia's API and releases in the same session",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.17.0",
    "date": "2026-10-24",

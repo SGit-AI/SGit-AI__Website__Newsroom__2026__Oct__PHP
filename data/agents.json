@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.17.0",
+ "version": "0.17.1",
  "members": [
   {
    "agent": "abp",
@@ -2150,7 +2150,13 @@
     },
     "debrief": null
    },
-   "debriefs": []
+   "debriefs": [
+    {
+     "file": "2026-10-25__self-check-wikipedia.md",
+     "date": "2026-10-25",
+     "title": "Wikipedia as an anchor, the PHP2Shell article as a fractal semantic graph, and the self-check on it"
+    }
+   ]
   },
   {
    "agent": "pm",
