@@ -147,11 +147,14 @@
    ]
   },
   {
-   "text": "Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 23 October, no named organisation has said it was compromised through php2shell.",
+   "text": "Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of the morning of 24 October, no named organisation has said it was broken into through this flaw. The one security company that had claimed a successful break-in, Sophos, withdrew it; US banks and the large crypto platforms report none.",
    "sources": [
     "x-eastdakota-php2shell-stats",
     "cisa-kev-json",
-    "paperjam-article-php2shell-des-milliers-de-sites"
+    "paperjam-article-php2shell-des-milliers-de-sites",
+    "cybersecuritynews-critical-php2shell-exploit-code",
+    "americanbanker-news-banks-dodge-early-damage-from-php2s",
+    "btc-echo-news-krypto-boersen-akut-bedroht-kritisc"
    ]
   },
   {
