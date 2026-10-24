@@ -116,3 +116,5 @@ says word for word. The branch was released to dev with `release.sh` at the edit
 `validate.py`, `CLAUDE.md` and `.claude/settings.json` that security has not yet reviewed (board 198).
 
 *Note, 24 October 2026, later still: dev at v0.11.5 took row 191, so the librarian's rows moved once more: 191 to 209 became 192 to 210, in order.*
+
+*Note, 24 October 2026: the librarian's board rows were renumbered each time this branch took in dev (090-102, then 172-190, 191-209, 192-210, and 199-217 at v0.11.6). The board shows them by title and owner; the numbers above are as they were on the day.*
