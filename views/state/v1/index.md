@@ -10,7 +10,7 @@ View · the state of affairs · v1 · 23 October 2026, 14:11 UTC
 
 Two days after the release, no organisation has confirmed a compromise through php2shell, and of four named incidents linked to it, one was retracted and three are unresolved. Fixes are moving through the supply chain: the NCSC-NL inventory went from 46 fixed products to 109 overnight. Ten security and network products are confirmed vulnerable.
 
-**Version** v1 of 2 · **by** claude-journalist · **written against** site v0.10.1 · evidence vault `f3c5db0d9873` · source watch `c26dce84136f` · NCSC-NL inventory `2fdc314ded28` · data as of 23 October 2026, 01:20 UTC
+**Version** v1 of 3 · **by** claude-journalist · **written against** site v0.10.1 · evidence vault `f3c5db0d9873` · source watch `c26dce84136f` · NCSC-NL inventory `2fdc314ded28` · data as of 23 October 2026, 01:20 UTC
 
 [← v0](../v0/index.html) · [what changed from v0](../v0-v1/index.html) · [v2 →](../v2/index.html) · [the current state](../index.html) · [every version](../history/index.html)
 
@@ -20,6 +20,7 @@ Two days after the release, no organisation has confirmed a compromise through p
 |---|---|---|
 | **Organisations confirming a compromise through php2shell** | **0**as of 23 October 2026, 01:20 UTCThe PHP Foundation knows of no successful remote code execution; Dataminr sees scanning and non-working exploits, no known compromises; an unnamed startup owner's claim of stolen source code is unverified.[WIRED](../../../sources/wired-exploited-days-before-patched/index.html) [BleepingComputer](../../../sources/bleepingcomputer-amazon-4-days-before/index.html) [Insurance Business](../../../sources/insurance-business-au-asiapac-attacks-begin/index.html) | unchanged |
 | **Named incidents whose link to php2shell is still open** | **3 open, 1 ruled out**as of 23 October 2026, 01:20 UTCOpen: ČVUT (an attack it calls part of worldwide PHP attempts, stopped, success not shown), GMO's FX VPS (unauthorised programs found on 20 October, cause not stated), DMM (a vulnerability in external software, PHP not confirmed). Ruled out: Valtec, which corrected itself: the flaw was in its own service.[Lupa.cz](../../../sources/lupa-cvut-cyber-attack/index.html) [Yahoo! News Japan](../../../sources/yahoo-jp-gmo-fx-login-leak/index.html) [産経ニュース](../../../sources/sankei-dmm-service-halt/index.html) [INTERNET Watch](../../../sources/impress-watch-valtec/index.html) | was 0 |
+| **Security vendors' claims of a successful compromise, and what became of them** | not tracked | unchanged |
 | **Of the two CVEs in CISA's Known Exploited Vulnerabilities catalog** | **0**as of 23 October 2026, 08:03 UTCsource watch: series kev-listed, last check 20261023T080331Z, unchanged since 20261022T181608Z[CISA](../../../sources/cisa-kev-json/index.html) | unchanged |
 | **NIST's own score in the National Vulnerability Database** | **CVSS 3.1 9.8 (Analyzed), beside the CNA's CVSS 4.0 9.2**as of 23 October 2026, 08:03 UTCsource watch: series nvd-record, capture 20261023T080331Z[NVD](../../../sources/nvd-cve-2026-109618/index.html) [NVD](../../../sources/nvd-cve-2026-109619/index.html) | was none yet; the CNA's CVSS 4.0 9.2 only |
 | **EPSS: chance of exploitation activity in the next 30 days** | **0.058 and 0.053, about the 93rd percentile for both**as of 22 October 2026, 17:51 UTCsource watch: series epss, capture 20261022T175100Z | was not tracked |
@@ -88,4 +89,4 @@ A community tracker lists 51 sites that went dark over php2shell; 50 are back, a
 
 
 ---
-site v0.14.29 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/views/state/v1/index.html
+site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/views/state/v1/index.html

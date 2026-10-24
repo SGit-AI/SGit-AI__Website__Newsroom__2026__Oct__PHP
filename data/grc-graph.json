@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.14.29",
+ "version": "0.14.30",
  "kept_by": "grc@php.newsroom",
  "as_of": "2026-10-22",
  "verbs": [
@@ -3340,7 +3340,7 @@
   {
    "id": "claim:no-confirmed-compromise",
    "kind": "claim",
-   "label": "As of 16:04 UTC on 23 October, no named organisation has said it was compromised through p",
+   "label": "As of 08:37 UTC on 24 October, no named organisation has said it was compromised through p",
    "href": "facts/no-confirmed-compromise/index.html"
   },
   {
@@ -3414,6 +3414,24 @@
    "kind": "source",
    "label": "The Verge",
    "href": "sources/the-verge-php2shell-websites-down/index.html"
+  },
+  {
+   "id": "source:cybersecuritynews-critical-php2shell-exploit-code",
+   "kind": "source",
+   "label": "Cyber Security News",
+   "href": "sources/cybersecuritynews-critical-php2shell-exploit-code/index.html"
+  },
+  {
+   "id": "source:americanbanker-news-banks-dodge-early-damage-from-php2s",
+   "kind": "source",
+   "label": "American Banker",
+   "href": "sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html"
+  },
+  {
+   "id": "source:the-next-web-php2shell-no-confirmed-breaches",
+   "kind": "source",
+   "label": "The Next Web",
+   "href": "sources/the-next-web-php2shell-no-confirmed-breaches/index.html"
   },
   {
    "id": "claim:nz-active",
@@ -14089,6 +14107,36 @@
    "basis": {
     "kind": "source",
     "ref": "the-verge-php2shell-websites-down"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:cybersecuritynews-critical-php2shell-exploit-code",
+   "basis": {
+    "kind": "source",
+    "ref": "cybersecuritynews-critical-php2shell-exploit-code"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:americanbanker-news-banks-dodge-early-damage-from-php2s",
+   "basis": {
+    "kind": "source",
+    "ref": "americanbanker-news-banks-dodge-early-damage-from-php2s"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:the-next-web-php2shell-no-confirmed-breaches",
+   "basis": {
+    "kind": "source",
+    "ref": "the-next-web-php2shell-no-confirmed-breaches"
    }
   },
   {

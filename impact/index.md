@@ -6,7 +6,7 @@ Two ledgers for php2shell: every system reported taken offline with who said so,
 
 # Impact: what was taken offline, and what was compromised
 
-In plain English Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 23 October).
+In plain English Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 24 October).
 
 Two ledgers, because they measure different things. Taking a system offline is a decision an operator makes and can confirm, and the first table is full. Being compromised is a fact only evidence establishes, and the second table has, as of the latest capture, no confirmed entry. That gap is the most important finding on this site: the reported cost of php2shell so far is the cost of precaution.
 
@@ -30,6 +30,7 @@ Two ledgers. The first is systems taken offline, which is a decision an operator
 | **Morocco: the Maghreb Arabe Presse (MAP) and Bank Al-Maghrib websites** MA | MAP's site put into maintenance; Bank Al-Maghrib's unavailable for part of the night | 2026-10-21 | Journal du Canada | reported | [Journal Du Canada](../sources/journalducanada-php2shell-des-serveurs-exposes-a-une-cyb/index.html) |
 | **Romania: the Romanian Police website** RO | Replaced with a maintenance page | 2026-10-21 | Critic Arad | reported | [Critic Arad](../sources/criticarad-php2shell-cve-2026-109618-ghid-patch/index.html) |
 | **Japan: a bank's online services; Prime Minister Takaichi's website** JP | Companies and organisations took precautionary measures; a bank suspended its online service for a time, and the Prime Minister's website was also stopped "for countermeasures" (対策のため) | 2026-10-22 | Jiji Press, as illustrated by Yahoo! News Japan | reported | [Yahoo!ニュース](../sources/news-yahoo-articles-d953e2a13109253ae974bf2a64ebe94/index.html) |
+| **Switzerland: the EPFL, the Basel-Stadt administration, the University of Geneva, the insurer La Mobilière** CH | Websites temporarily unavailable from 21 October, 'according to several media'; La Mobilière says it suspended access to its site itself; Basel-Stadt took servers and services offline to patch | 2026-10-21 | 24 Heures | reported | [24 Heures](../sources/24heures-php2shell-qui-est-affecte-par-la-faille/index.html) |
 
 ## Compromised
 
@@ -59,4 +60,4 @@ What a compromise of one system would reach is on [the blast-radius section](../
 
 
 ---
-site v0.14.29 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html
+site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html

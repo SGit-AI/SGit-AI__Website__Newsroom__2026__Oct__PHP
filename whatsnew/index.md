@@ -12,6 +12,26 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.30 · 24 October 2026new since your last visit
+
+the evidence vault at 1f38e70921b2 (328 sources) and the state of affairs v3: a vendor's claim of a break-in withdrawn (Sophos), banks and crypto platforms report none, KEV still without php2shell at 05:53 UTC today; 22 new claims reviewed; the build settles itself (board 175)
+
+1 fact reworded or re-sourced: [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html).
+
+### Briefings that changed
+JJordanBoard member or executive · v10RRobinCISO · v10QQuinnCFO · v10RRileyMedia and communications team · v9AAlexCurious reader · v8TTaylorProject or programme manager · v8MMorganData protection officer · v4
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v9) v9
+- [The numbers](../versions/page-numbers/index.html#v5) v5
+- [The method](../versions/page-method/index.html#v6) v6
+- [Impact: offline vs compromised](../versions/page-impact/index.html#v7) v7
+- [In context: 2008 to 2026](../versions/page-context/index.html#v5) v5
+- [The specialist summary](../versions/page-summary/index.html#v6) v6
+- [Front page: at a glance](../versions/front-glance/index.html#v4) v4
+- [Front page: the core facts](../versions/front-facts/index.html#v4) v4
+- [Front page: latest](../versions/front-latest/index.html#v3) v3
+- [The state of affairs, now](../versions/page-views-state/index.html#v3) v3
+
 ## v0.14.29 · 24 October 2026new since your last visit
 
 Restores v0.14.24, what changed in the risk graph (CI-003, step 2, /grc/changes/), which the conductor's release of the CI fix reverted by mistake (a branch kept in step with merge -s ours after dev had moved); with the conductor's round debrief
@@ -522,7 +542,7 @@ JJordanBoard member or executive · v7SSamSecurity lead · v6DDrewPHP or platfor
 factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction
 
 ### Facts whose status changed
-- [As of 16:04 UTC on 23 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
+- [As of 08:37 UTC on 24 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
 
 ### Briefings that changed
 JJordanBoard member or executive · v6RRobinCISO · v6QQuinnCFO · v6RRileyMedia and communications team · v5AAlexCurious reader · v4TTaylorProject or programme manager · v4
@@ -799,7 +819,7 @@ the code read from php-src, php2shell in context against ten earlier flaws, an i
 - [No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosur](../facts/imperva-none/index.html) reported
 - [No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no pub](../facts/huntress-none/index.html) reported
 - [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../facts/watchtowr-itw/index.html) unverified
-- [As of 16:04 UTC on 23 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
+- [As of 08:37 UTC on 24 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
 - [None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechani](../facts/pocs-wrong/index.html) reported
 - [Triggering the bug is much easier than turning it into code execution; the CVSS vector say](../facts/ac-high/index.html) confirmed
 - [The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 U](../facts/fix-authored/index.html) confirmed
@@ -899,4 +919,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.29 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -8,15 +8,15 @@ The php2shell risk graph compared between any two releases: nodes and edges adde
 
 # What changed in the risk graph, release by release
 
-The graph is rebuilt at every release. This page compares two releases of it: the nodes and edges added and removed, the edges whose basis changed (from inferred to confirmed, say), and the gaps that opened or closed. 72 releases carry a graph; 4 of them changed it. Pick any two below; the default is the latest change.
+The graph is rebuilt at every release. This page compares two releases of it: the nodes and edges added and removed, the edges whose basis changed (from inferred to confirmed, say), and the gaps that opened or closed. 73 releases carry a graph; 5 of them changed it. Pick any two below; the default is the latest change.
 
-## v0.12.1 → v0.13.0
+## v0.14.29 → v0.14.30
 
-| Measure | v0.12.1 | v0.13.0 | Change |
+| Measure | v0.14.29 | v0.14.30 | Change |
 |---|---|---|---|
-| Nodes | 721 | 721 | same |
-| Edges | 1,351 | 1,351 | same |
-| Edges known as source | 249 | 249 | same |
+| Nodes | 721 | 724 | +3 |
+| Edges | 1,351 | 1,354 | +3 |
+| Edges known as source | 249 | 252 | +3 |
 | Edges known as code | 287 | 287 | same |
 | Edges known as inferred | 815 | 815 | same |
 | Gap: Controls joined to no code or test that implements them | 95 | 95 | same |
@@ -28,26 +28,25 @@ The graph is rebuilt at every release. This page compares two releases of it: th
 | Gap: Vulnerabilities no test reaches | 0 | 0 | same |
 | Gap: Edges inferred by an agent, not yet checked | 815 | 815 | same |
 
-### Nodes added: 1
+### Nodes added: 3
 
-1 source
-- [TPO.nl](../../grc/explore/index.html#focus=source:tpo-nl-digid-offline) source
+3 source
+- [American Banker](../../grc/explore/index.html#focus=source:americanbanker-news-banks-dodge-early-damage-from-php2s) source
+- [Cyber Security News](../../grc/explore/index.html#focus=source:cybersecuritynews-critical-php2shell-exploit-code) source
+- [The Next Web](../../grc/explore/index.html#focus=source:the-next-web-php2shell-no-confirmed-breaches) source
 
-### Nodes removed: 1
-- Dutch IT Leaders
+### Edges added: 3
 
-### Edges added: 1
-
-1 *cites*
-- The Dutch government took NCSC.nl offline as a precaution, w *cites* TPO.nl source
-
-### Edges removed: 1
-- The Dutch government took NCSC.nl offline as a precaution, w *cites* Dutch IT Leaders
+3 *cites*
+- As of 08:37 UTC on 24 October, no named organisation has sai *cites* American Banker source
+- As of 08:37 UTC on 24 October, no named organisation has sai *cites* Cyber Security News source
+- As of 08:37 UTC on 24 October, no named organisation has sai *cites* The Next Web source
 
 ## Every release that changed the graph
 
 | Release | Against | Nodes | Edges | Bases | Gaps | Nodes / edges after |
 |---|---|---|---|---|---|---|
+| [v0.14.30](#from=0.14.29&to=0.14.30) 2026-10-24 | v0.14.29 | +3 −0 | +3 −0 | 0 | +0 −0 | 724 / 1,354 |
 | [v0.13.0](#from=0.12.1&to=0.13.0) 2026-10-24 | v0.12.1 | +1 −1 | +1 −1 | 0 | +0 −0 | 721 / 1,351 |
 | [v0.12.1](#from=0.12.0&to=0.12.1) 2026-10-24 | v0.12.0 | +8 −0 | +8 −0 | 0 | +0 −0 | 721 / 1,351 |
 | [v0.10.13](#from=0.10.12&to=0.10.13) 2026-10-23 | v0.10.12 | +271 −0 | +504 −0 | 839 | +0 −9 | 713 / 1,343 |
@@ -57,4 +56,4 @@ How it is made: every release commits the graph the build wrote ([data/grc-graph
 
 
 ---
-site v0.14.29 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/changes/index.html
+site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/grc/changes/index.html

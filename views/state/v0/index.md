@@ -10,7 +10,7 @@ View · the state of affairs · v0 · 22 October 2026, 11:34 UTC
 
 Reconstructed, not written at the time: what this site published with data as of 11:34 UTC on 22 October, so that the first real version has something to be compared with.
 
-**Version** v0 of 2 · **by** claude-journalist · **written against** site v0.2.5 · evidence vault `200d08971937` · NCSC-NL inventory `cca173c64ec5` · data as of 22 October 2026, 11:34 UTC
+**Version** v0 of 3 · **by** claude-journalist · **written against** site v0.2.5 · evidence vault `200d08971937` · NCSC-NL inventory `cca173c64ec5` · data as of 22 October 2026, 11:34 UTC
 
 **Reconstructed.** This version was not written at the time; it is rebuilt from what the site published then, so that the next version has something to be compared with.
 
@@ -22,6 +22,7 @@ Reconstructed, not written at the time: what this site published with data as of
 |---|---|---|
 | **Organisations confirming a compromise through php2shell** | **0**as of 22 October 2026, 11:34 UTC[CISA](../../../sources/cisa-kev-json/index.html) [Huntress](../../../sources/huntress-php2shell-rapid-response/index.html) |  |
 | **Named incidents whose link to php2shell is still open** | **0**as of 22 October 2026, 11:34 UTCno named incident had been linked to php2shell in any captured source |  |
+| **Security vendors' claims of a successful compromise, and what became of them** | not tracked |  |
 | **Of the two CVEs in CISA's Known Exploited Vulnerabilities catalog** | **0**as of 22 October 2026, 08:15 UTC[CISA](../../../sources/cisa-kev-json/index.html) |  |
 | **NIST's own score in the National Vulnerability Database** | **none yet; the CNA's CVSS 4.0 9.2 only**as of 21 October 2026, 14:17 UTC[NVD](../../../sources/nvd-cve-2026-109618/index.html) [NVD](../../../sources/nvd-cve-2026-109619/index.html) |  |
 | **EPSS: chance of exploitation activity in the next 30 days** | **not tracked**as of no time |  |
@@ -50,4 +51,4 @@ This version was not written on 22 October. It is rebuilt from the site at v0.2.
 
 
 ---
-site v0.14.29 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/views/state/v0/index.html
+site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/views/state/v0/index.html

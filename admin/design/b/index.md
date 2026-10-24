@@ -2,7 +2,7 @@
 
 A three-column working view for a security lead: their reading path and the site by task on the left, what changed since the last visit and the next three actions in the middle, and the state of the evidence as charts on the right.
 
-> Mockup B for review, built from the data of release v0.14.29. Not the live site.
+> Mockup B for review, built from the data of release v0.14.30. Not the live site.
 
 S 
  Sam 
@@ -13,7 +13,7 @@ Your reading path
 2 of 5 read · next: Exploitation signals 
  Today 9 new What to do The incident Detection and defence The agencies 16 Every claim 70 Ask 
 
-Since your last visit · 23 October 2026, 16:04 UTC 
+Since your last visit · 24 October 2026, 08:37 UTC 
 
 ## 9 things are new, 3 changed. Two matter for your runbook.
 
@@ -49,17 +49,38 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ✓ 
 
- New story v0.14.24 
-#### The risk graph, before and after: what changed from one reader's five ideas
-
-✓ 
-
- New question v0.14.2 
+ New question v0.14.30 
 #### Has anyone actually been hacked?
 
 ✓ 
 
- New front v0.12.1 
+ New front v0.14.30 
+#### Front page: latest
+
+✓ 
+
+ New front v0.14.30 
+#### Front page: at a glance
+
+✓ 
+
+ Changed front v0.14.30 
+#### Front page: the core facts
+
+✓ 
+
+ Changed fact reported v0.14.30 
+#### As of 08:37 UTC on 24 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploita
+
+ CISA CISA Huntress Amazon 
+✓ 
+
+ Changed story v0.14.24 
+#### The risk graph, before and after: what changed from one reader's five ideas
+
+✓ 
+
+ Changed front v0.12.1 
 #### Front page: what nobody knows yet
 
 ✓ 
@@ -67,28 +88,6 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
  Changed front v0.12.1 
 #### Front page: right now
 
-✓ 
-
- Changed front v0.12.1 
-#### Front page: at a glance
-
-✓ 
-
- Changed front v0.12.1 
-#### Front page: the core facts
-
-✓ 
-
- Changed fact reported v0.12.1 
-#### In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS
-
- Calif Wiz 
-✓ 
-
- Changed fact reported v0.12.1 
-#### PHP is used by almost 70% of websites whose server-side language is known
-
- Cloudflare OpenAI on X Wiz 
 ✓ 
 
 Marked read, an item fades and then leaves this list; it comes back only if what it says changes. 
@@ -124,4 +123,4 @@ Amazon: Proof-of-concept attempts begin, then six hours of attempts from anonymi
 8.1 and older: source backports only.
 
 ---
-site v0.14.29 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html
+site v0.14.30 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html

@@ -8,7 +8,7 @@ View · the state of affairs · what changed
 
 # What changed between v1 and v2
 
-From 23 October 2026, 14:11 UTC to 23 October 2026, 23:55 UTC: 2 of 15 measures changed, and the text gained 26 lines and lost 20.
+From 23 October 2026, 14:11 UTC to 23 October 2026, 23:55 UTC: 2 of 16 measures changed, and the text gained 26 lines and lost 20.
 
 **v1** site v0.10.1 · evidence vault `f3c5db0d9873` · source watch `c26dce84136f` · NCSC-NL inventory `2fdc314ded28` · data as of 23 October 2026, 01:20 UTC **v2** site v0.10.18 · evidence vault `1845598d9a38` · source watch `20afaa62129d` · NCSC-NL inventory `2fdc314ded28` · data as of 23 October 2026, 16:04 UTC
 
@@ -20,6 +20,7 @@ From 23 October 2026, 14:11 UTC to 23 October 2026, 23:55 UTC: 2 of 15 measures 
 |---|---|---|---|
 | **Organisations confirming a compromise through php2shell** | 0 | 0 | unchanged |
 | **Named incidents whose link to php2shell is still open** | 3 open, 1 ruled out | 3 open, 1 ruled out | unchanged |
+| **Security vendors' claims of a successful compromise, and what became of them** | not tracked | not tracked | unchanged |
 | **Of the two CVEs in CISA's Known Exploited Vulnerabilities catalog** | 0 | 0 | unchanged |
 | **NIST's own score in the National Vulnerability Database** | CVSS 3.1 9.8 (Analyzed), beside the CNA's CVSS 4.0 9.2 | CVSS 3.1 9.8 (Analyzed), beside the CNA's CVSS 4.0 9.2 | unchanged |
 | **EPSS: chance of exploitation activity in the next 30 days** | 0.058 and 0.053, about the 93rd percentile for both | 0.058 and 0.053, about the 93rd percentile for both | unchanged |
@@ -41,4 +42,4 @@ Removed lines are struck through, added lines are marked; within an edited line,
 
 
 ---
-site v0.14.29 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/views/state/v1-v2/index.html
+site v0.14.30 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/views/state/v1-v2/index.html
