@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.3. Not the live site.
+> Mockup D for review, built from the data of release v0.15.4. Not the live site.
 
-PHP Team console Console Overview Board 184 Agents 19 Releases 122 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 184 Agents 19 Releases 123 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.3 
-122 releases since 22 Oct 
+v0.15.4 
+123 releases since 22 Oct 
 
 Open on the board 
 184 
@@ -99,6 +99,7 @@ Investigations: a section of the fact-check desk that chases one question down t
 ### Releases
  latest 8 
 
+ v0.15.4 2026-10-24 factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploit… 
  v0.15.3 2026-10-24 the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's p… 
  v0.15.2 2026-10-24 The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and t… 
  v0.15.1 2026-10-24 Conductor full pass 15:15 London: agents-status, schedules against runs, run record 
@@ -106,7 +107,6 @@ Investigations: a section of the fact-check desk that chases one question down t
  v0.14.31 2026-10-24 Conductor light check 14:15 London: observability and security requests recorded for the editor, factcheck run note, run records 
  v0.14.30 2026-10-24 the evidence vault at 1f38e70921b2 (328 sources) and the state of affairs v3: a vendor's claim of a break-in withdrawn (Sophos), b… 
  v0.14.29 2026-10-24 Restores v0.14.24, what changed in the risk graph (CI-003, step 2, /grc/changes/), which the conductor's release of the CI fix rev… 
- v0.14.28 2026-10-24 observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first d… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Investigations: a section of the fact-check desk that chases one question down t
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.4 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

@@ -14,9 +14,9 @@ Primary party. Amazon adds: 'it's unclear if any of these attempts would have su
 
 ## Fact-check
 
-**A2** Reported●●○○○○ disputed · Attribution · verdict: **holds**
+**A2** Reported●●○○○○ superseded · Attribution · verdict: **holds in part**
 
-Amazon's own post (now cited first) carries all three parts and the quoted sentence character for character; The Hacker News is an echo of the same Amazon post, not independent, so the level stays A2. Amazon's 'broadly exploited in the wild' is disputed by CISA's dated negative and by Austin and Huntress, partly because they measure different things (attempts versus successful compromise) at different times.
+The quoted words were Amazon's in its post as captured at 11:17 UTC on 22 October. Amazon revised the sentence at 21:25 UTC that day, without a note, to 'now seeing broad exploitation attempts in the wild'; the vault's 23 October capture carries the new wording. The claim gives the first wording as Amazon's without its date. The rest (17 October honeypot hit, PoC attempts from 02:00 UTC on 21 October) holds as Amazon wrote it; one party, A2.
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -27,10 +27,11 @@ Amazon's own post (now cited first) carries all three parts and the quoted sente
 | [aws-security-blog-madpot](../../sources/aws-security-blog-madpot/index.html) | carries | *PHP2Shell is now being broadly exploited in the wild.* | 94315ded6e1175f2 |
 | [thehackernews-php2shell-4days](../../sources/thehackernews-php2shell-4days/index.html) | carries | *as the flaws come under broad exploitation in the wild following the release of the patches.* | c1cb63141287484c |
 | [securityweek-exploitation-days-before](../../sources/securityweek-exploitation-days-before/index.html) | partial | *The exploits being sprayed indiscriminately either don’t work at all, test for timing-based differences, or crash the target,* | ac663f2d9dbd0197 |
+| [aws-security-blog-madpot](../../sources/aws-security-blog-madpot/index.html) | partial | *PHP2Shell is now seeing broad exploitation attempts in the wild.* | 4108b2850c48a8f2 |
 
-Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-12](../../factcheck/index.html#Evidence-12), [Finding-122](../../factcheck/index.html#Finding-122), [Finding-14](../../factcheck/index.html#Finding-14), [Finding-60](../../factcheck/index.html#Finding-60).
+Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-12](../../factcheck/index.html#Evidence-12), [Finding-122](../../factcheck/index.html#Finding-122), [Finding-126](../../factcheck/index.html#Finding-126), [Finding-14](../../factcheck/index.html#Finding-14), [Finding-60](../../factcheck/index.html#Finding-60).
 
-Graded in Run-1, resting on captures up to 2026-10-22 11:17 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-5, resting on captures up to 2026-10-23 16:04 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Amazon publishes [Amazon Threat Intelligence identifies PHP2Shell exploitation prior to public disclosure in MadPot | AWS Securi](../../sources/aws-security-blog-madpot/index.html)
@@ -63,4 +64,4 @@ v2 · site v0.2.0 · 22 October 2026 · reportedAn exploit attempt hit an Amazon
 
 
 ---
-site v0.15.3 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/amazon-honeypot/index.html
+site v0.15.4 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/amazon-honeypot/index.html

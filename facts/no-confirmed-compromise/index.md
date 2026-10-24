@@ -16,7 +16,7 @@ A time-bounded absence, not a confirmed fact: it can only be true as of the last
 
 **A4** Corroborated●●●●○○ · State · verdict: **holds**
 
-Now dated (16:04 UTC on 23 October) and scoped to the vault (Finding-26 fixed), and 'reported' fits a time-bounded absence. Independent parties carry the negative: the PHP Foundation's director via The Verge, Paperjam for Luxembourg, Patchstack's own telemetry via PCMag. The vendor half (board 212) holds as reworded: Hadrian's 'exploited at scale' and Patchstack's partner reports come through the press (Insurance Business, Recorded Future, Bitpage), not their own posts, so that half is A3. Every quote checked verbatim in its capture.
+Refreshed to 08:37 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim.
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -35,10 +35,13 @@ Now dated (16:04 UTC on 23 October) and scoped to the vault (Finding-26 fixed), 
 | [pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw](../../sources/pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/index.html) | carries | *our telemetry shows only probing attacks, with no hard evidence of breaches yet* | 82ef905cd2201bd4 |
 | [recordedfuture-php2shell](../../sources/recordedfuture-php2shell/index.html) | partial | *Patchstack received reports of multiple active exploitation incidents from hosting partners by 07:34 UTC on October 21* | 39efeb7b8ae8152f |
 | [insurance-business-au-asiapac-attacks-begin](../../sources/insurance-business-au-asiapac-attacks-begin/index.html) | partial | *Hadrian says it is seeing PHP2Shell exploited at scale, mostly through PHP’s session upload progress path.* | 8d88bddde485e36f |
+| [cybersecuritynews-critical-php2shell-exploit-code](../../sources/cybersecuritynews-critical-php2shell-exploit-code/index.html) | carries | *Sophos said its customer data showed scanning and a small number of failed exploit attempts.* | bdf6e94a1a8a118b |
+| [americanbanker-news-banks-dodge-early-damage-from-php2s](../../sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html) | carries | *no U.S. bank or credit union has publicly reported a compromise* | 2b6aa63f39e73b0e |
+| [the-next-web-php2shell-no-confirmed-breaches](../../sources/the-next-web-php2shell-no-confirmed-breaches/index.html) | carries | *Officials in Germany, the Netherlands and Japan say they have not seen one succeed.* | 75d67773b979aa86 |
 
 Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-12](../../factcheck/index.html#Evidence-12), [Evidence-18](../../factcheck/index.html#Evidence-18), [Evidence-3](../../factcheck/index.html#Evidence-3), [Finding-26](../../factcheck/index.html#Finding-26), [Finding-85](../../factcheck/index.html#Finding-85).
 
-Graded in Run-3, resting on captures up to 2026-10-23 16:04 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-5, resting on captures up to 2026-10-24 08:37 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21CISA publishes [Critical Vulnerabilities in PHP Require Immediate Patching](../../sources/cisa-alert-php-20261021/index.html)
@@ -106,4 +109,4 @@ v2 · site v0.5.8 · 22 October 2026 · reportedNoAs of 20:50 UTC on 22 October,
 
 
 ---
-site v0.15.3 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html
+site v0.15.4 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html

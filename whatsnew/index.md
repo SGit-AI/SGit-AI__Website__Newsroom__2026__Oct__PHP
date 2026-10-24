@@ -12,11 +12,20 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.4 · 24 October 2026new since your last visit
+
+factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploitation attempts' at 21:25 UTC on 22 October), so the correction request R-004 closes unsent and amazon-honeypot is graded superseded (Finding-126); no-confirmed-compromise still holds at 08:37 UTC on 24 October, with Sophos's withdrawn success claim; the desk's pages pass the new Content-Security-Policy
+
+No reader-facing section changed in this release.
+
 ## v0.15.3 · 24 October 2026new since your last visit
 
 the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's proposed prompt updated, the build no longer stops on an unmapped publisher, and Right now carries the Sophos withdrawal
 
-No reader-facing section changed in this release.
+### Briefings that changed
+JJordanBoard member or executive · v11SSamSecurity lead · v9BBlakeAnalyst or advisor · v10RRobinCISO · v11QQuinnCFO · v11JJamieHead of AppSec · v9AAlexCurious reader · v9CCaseyWebsite owner · v7MMorganData protection officer · v5
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v10) v10
 
 ## v0.15.2 · 24 October 2026new since your last visit
 
@@ -950,4 +959,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.3 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.4 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

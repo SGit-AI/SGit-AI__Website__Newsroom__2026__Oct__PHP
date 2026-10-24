@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.15.3",
+ "version": "0.15.4",
  "vault_commit": "1f38e70921b2",
  "title": "The story graph",
  "note": "A node means what its edges say about it. Every edge is a verb from data/ontology.json with a named inverse; there is no generic association edge. Parties are resolved through data/entities.json and data/attribution.json; relays are derived, so many outlets passing on one statement count as one origin.",
@@ -27107,6 +27107,27 @@
    "to": "capture:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/20261023T080331Z",
    "file": "text.txt",
    "sha256": "82ef905cd2201bd4507643ba274b135e32b1e440606b1ded976617c782b28166"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "appears_in",
+   "to": "capture:cybersecuritynews-critical-php2shell-exploit-code/20261023T232528Z",
+   "file": "text.txt",
+   "sha256": "bdf6e94a1a8a118b2f1a5546ec71c6eda552a7289fb2b15ed34885ddcbfa89ac"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "appears_in",
+   "to": "capture:americanbanker-news-banks-dodge-early-damage-from-php2s/20261024T083755Z",
+   "file": "text.txt",
+   "sha256": "2b6aa63f39e73b0ee1344ecc0362be26ac765764c3dac7b04da934c8ea3e6b3f"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "appears_in",
+   "to": "capture:the-next-web-php2shell-no-confirmed-breaches/20261024T083755Z",
+   "file": "text.txt",
+   "sha256": "75d67773b979aa86ec9f32e1690fa2d13b8d5905d6cfac239cfcd9331d8c17dc"
   },
   {
    "from": "claim:no-exploitation",

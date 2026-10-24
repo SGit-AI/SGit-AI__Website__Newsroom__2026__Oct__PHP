@@ -5,9 +5,9 @@
   "label": "Evidence-12",
   "title": "AWS reworded its key sentence without a note: 'broadly exploited in the wild' is now 'seeing broad exploitation attempts in the wild'",
   "description": "Amazon's post (vault slug aws-security-blog-madpot, captured 11:17 UTC on 22 October with the first wording) was modified at 21:25 UTC on 22 October (article:modified_time 14:25:03 PDT). The vault's capture and every page of this site that quotes 'broadly exploited' carry the earlier wording. Capture the current page; then the pages that quote Amazon should give both wordings with their times.",
-  "status": "proposed",
+  "status": "captured",
   "created_at": 1792807352471,
-  "updated_at": 1792807352865,
+  "updated_at": 1792857667416,
   "created_by": "446d3ce5",
   "tags": [],
   "links": [
@@ -35,6 +35,15 @@
       "amazon-honeypot",
       "no-confirmed-compromise"
     ],
-    "severity": "high"
+    "severity": "high",
+    "comments": [
+      {
+        "id": "ca6c12d8",
+        "author": "cli-user",
+        "text": "Run-5: captured into the evidence vault: aws-security-blog-madpot capture 20261023T160435Z (text sha256 4108b2850c48a8f2) carries the revised sentence; the page's article:modified_time is 2026-10-22T14:25:03-07:00. Not yet in the site's manifest (its export lists only the 22 October capture).",
+        "created_at": 1792857667416,
+        "updated_at": 1792857667416
+      }
+    ]
   }
 }

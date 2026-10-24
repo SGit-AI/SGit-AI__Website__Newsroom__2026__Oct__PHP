@@ -295,19 +295,19 @@
   {
    "id": "amazon-honeypot",
    "claim_hash": "f893a4f684799232",
-   "run": "Run-1",
+   "run": "Run-5",
    "mode": "vault",
    "kind": "attribution",
    "level": 2,
-   "verdict": "holds",
-   "tension": "disputed",
+   "verdict": "holds-in-part",
+   "tension": "superseded",
    "contradictions": [
     "K-002"
    ],
    "volatile": true,
-   "as_of": "20261022T111755Z",
+   "as_of": "20261023T160435Z",
    "status_fit": "ok",
-   "reason": "Amazon's own post (now cited first) carries all three parts and the quoted sentence character for character; The Hacker News is an echo of the same Amazon post, not independent, so the level stays A2. Amazon's 'broadly exploited in the wild' is disputed by CISA's dated negative and by Austin and Huntress, partly because they measure different things (attempts versus successful compromise) at different times.",
+   "reason": "The quoted words were Amazon's in its post as captured at 11:17 UTC on 22 October. Amazon revised the sentence at 21:25 UTC that day, without a note, to 'now seeing broad exploitation attempts in the wild'; the vault's 23 October capture carries the new wording. The claim gives the first wording as Amazon's without its date. The rest (17 October honeypot hit, PoC attempts from 02:00 UTC on 21 October) holds as Amazon wrote it; one party, A2.",
    "checked": [
     {
      "source": "aws-security-blog-madpot",
@@ -364,6 +364,14 @@
      "result": "partial",
      "excerpt": "The exploits being sprayed indiscriminately either don’t work at all, test for timing-based differences, or crash the target,",
      "outside_citation": true
+    },
+    {
+     "source": "aws-security-blog-madpot",
+     "file": "sources/aws-security-blog-madpot/captures/20261023T160435Z/text.txt",
+     "sha256": "4108b2850c48a8f2141f05996ef7e7ed115a0a0f80ce697b3d237b8d13e7c764",
+     "result": "partial",
+     "excerpt": "PHP2Shell is now seeing broad exploitation attempts in the wild.",
+     "outside_citation": false
     }
    ],
    "quotes_checked": [
@@ -383,7 +391,8 @@
     "Evidence-12",
     "Finding-14",
     "Finding-60",
-    "Finding-122"
+    "Finding-122",
+    "Finding-126"
    ],
    "mode2": "An archived early copy of the AWS post (Wayback) to date the 'broadly exploited' sentence; any Amazon count or named victim behind 'broadly exploited'."
   },
@@ -2055,8 +2064,8 @@
   },
   {
    "id": "no-confirmed-compromise",
-   "claim_hash": "8e3ec69354bd8bdd",
-   "run": "Run-3",
+   "claim_hash": "954e9edc944cb1ca",
+   "run": "Run-5",
    "mode": "vault",
    "kind": "state",
    "level": 4,
@@ -2064,9 +2073,9 @@
    "tension": "none",
    "contradictions": [],
    "volatile": true,
-   "as_of": "20261023T160435Z",
+   "as_of": "20261024T083700Z",
    "status_fit": "ok",
-   "reason": "Now dated (16:04 UTC on 23 October) and scoped to the vault (Finding-26 fixed), and 'reported' fits a time-bounded absence. Independent parties carry the negative: the PHP Foundation's director via The Verge, Paperjam for Luxembourg, Patchstack's own telemetry via PCMag. The vendor half (board 212) holds as reworded: Hadrian's 'exploited at scale' and Patchstack's partner reports come through the press (Insurance Business, Recorded Future, Bitpage), not their own posts, so that half is A3. Every quote checked verbatim in its capture.",
+   "reason": "Refreshed to 08:37 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim.",
    "checked": [
     {
      "source": "cisa-kev-json",
@@ -2186,6 +2195,30 @@
      "sha256": "8d88bddde485e36f27c001a80e9ad0506055b64f3879347345be5ad336a10cad",
      "result": "partial",
      "excerpt": "Hadrian says it is seeing PHP2Shell exploited at scale, mostly through PHP’s session upload progress path.",
+     "outside_citation": false
+    },
+    {
+     "source": "cybersecuritynews-critical-php2shell-exploit-code",
+     "file": "sources/cybersecuritynews-critical-php2shell-exploit-code/captures/20261023T232528Z/text.txt",
+     "sha256": "bdf6e94a1a8a118b2f1a5546ec71c6eda552a7289fb2b15ed34885ddcbfa89ac",
+     "result": "carries",
+     "excerpt": "Sophos said its customer data showed scanning and a small number of failed exploit attempts.",
+     "outside_citation": false
+    },
+    {
+     "source": "americanbanker-news-banks-dodge-early-damage-from-php2s",
+     "file": "sources/americanbanker-news-banks-dodge-early-damage-from-php2s/captures/20261024T083755Z/text.txt",
+     "sha256": "2b6aa63f39e73b0ee1344ecc0362be26ac765764c3dac7b04da934c8ea3e6b3f",
+     "result": "carries",
+     "excerpt": "no U.S. bank or credit union has publicly reported a compromise",
+     "outside_citation": false
+    },
+    {
+     "source": "the-next-web-php2shell-no-confirmed-breaches",
+     "file": "sources/the-next-web-php2shell-no-confirmed-breaches/captures/20261024T083755Z/text.txt",
+     "sha256": "75d67773b979aa86ec9f32e1690fa2d13b8d5905d6cfac239cfcd9331d8c17dc",
+     "result": "carries",
+     "excerpt": "Officials in Germany, the Netherlands and Japan say they have not seen one succeed.",
      "outside_citation": false
     }
    ],

@@ -1,6 +1,15 @@
 {
- "current": "0.15.3",
+ "current": "0.15.4",
  "versions": [
+  {
+   "version": "0.15.4",
+   "date": "2026-10-24",
+   "title": "factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploitation attempts' at 21:25 UTC on 22 October), so the correction request R-004 closes unsent and amazon-honeypot is graded superseded (Finding-126); no-confirmed-compromise still holds at 08:37 UTC on 24 October, with Sophos's withdrawn success claim; the desk's pages pass the new Content-Security-Policy",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.3",
    "date": "2026-10-24",

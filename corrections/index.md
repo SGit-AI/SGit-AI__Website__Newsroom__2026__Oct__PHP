@@ -72,4 +72,4 @@ The second memo asks for the whole semantic fractal graph. What exists is one gr
 
 
 ---
-site v0.15.3 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/corrections/index.html
+site v0.15.4 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/corrections/index.html
