@@ -67,7 +67,6 @@
 - `assets/ask/**`
 - `assets/now/**`
 - `assets/vault/**`
-- `assets/components/**`
 - `assets/vendor/sg-vault/**`
 - `assets/vendor/vault-ui-embed.js`
 - `admin/build/telemetry_classes.py`
@@ -84,6 +83,10 @@
 - `data/grc-basis.json`
 - `data/grc-gaps.json`
 - `data/vault-register/dev.json`
+- `assets/components/base/**`
+- `assets/components/sg-meter/**`
+- `data/schedule/dev.json`
+- `data/runs/dev/**`
 
 **Appends** (shared files it adds to, in its own block, row or file only):
 
@@ -91,6 +94,7 @@
 - BRIEF-CORRECTIONS.md#entry: a correction about its own work, at the top
 - admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief
 - data/layers.json#row: the row for a data file it owns
+- data/messages/: a new message file of its own (admin/build/schedule.py send); never an edit to another's
 
 **Pages it owns on the site:**
 

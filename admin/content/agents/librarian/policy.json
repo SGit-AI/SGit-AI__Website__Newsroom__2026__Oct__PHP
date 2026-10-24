@@ -70,14 +70,17 @@
    "admin/build/agents.py",
    "admin/content/agents/README.md",
    "admin/content/agents/TEMPLATE__debrief.md",
-   "data/vault-register/librarian.json"
+   "data/vault-register/librarian.json",
+   "data/schedule/librarian.json",
+   "data/runs/librarian/**"
   ],
   "appends": [
    "data/admin.json#board: its own rows, added at the end; never another member's row",
    "admin/build/build.py#block: its own block at the end, headed with its name; never another block",
    "REALITY.md#section: its own section, what exists in its area",
    "BRIEF-CORRECTIONS.md#entry: a correction about its own work, at the top",
-   "admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief"
+   "admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief",
+   "data/messages/: a new message file of its own (admin/build/schedule.py send); never an edit to another's"
   ],
   "pages": [
    "questions/**",

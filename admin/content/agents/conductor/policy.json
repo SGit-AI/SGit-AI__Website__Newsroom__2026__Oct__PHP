@@ -84,7 +84,11 @@
    "data/contributors.json",
    "data/schedule-vault.json",
    "data/schedules.json",
-   "data/vault-register/conductor.json"
+   "data/vault-register/conductor.json",
+   "admin/build/schedule.py",
+   "data/messages/**",
+   "data/schedule/conductor.json",
+   "data/runs/conductor/**"
   ],
   "appends": [
    "admin/build/build.py#block: its own block at the end, headed with its name; never another block",

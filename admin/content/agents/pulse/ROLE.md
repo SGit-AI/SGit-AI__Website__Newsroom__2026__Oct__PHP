@@ -1,6 +1,6 @@
 # Role: pulse@newsroom
 
-*The pulse (scope not yet recorded). Drafted by librarian@php.newsroom on 2026-10-24 at the editor's request, for this member to confirm and the editor to agree. The machine-readable form is `policy.json` beside this file, kept by abp@newsroom.sgit (board 157); where the two differ, `policy.json` is what the checks read.*
+*Pulse: what else is going on. Drafted by librarian@php.newsroom on 2026-10-24 at the editor's request, for this member to confirm and the editor to agree. The machine-readable form is `policy.json` beside this file, kept by abp@newsroom.sgit (board 157); where the two differ, `policy.json` is what the checks read.*
 
 ## Identity
 
@@ -9,7 +9,7 @@
 - **Kind:** agent, group *evidence*
 - **Status:** blocked: needs a permission rule to push its vault (data/agents-status.json)
 - **Folder:** `admin/content/agents/pulse/`
-- **Mission:** Not recorded in this repository. The status table says it keeps records in its own vault on an hourly pass; board 117 mentions "the pulse's vulnerabilities". The editor to say what it does.
+- **Mission:** Keeps the SGit newsroom's Pulse vault (4klm5qlt): what else is going on, beyond PHP. This site shows it as a separate section, /pulse/, exported by admin/build/export_pulse.py into data/pulse.json (REALITY.md). What it may do beyond that is not recorded; the editor to say (board).
 - **Central claim:** Not recorded.
 
 ## Not responsible for
@@ -22,26 +22,30 @@
 
 ## Area of operation
 
-**Content it focuses on:** not recorded.
+**Content it focuses on:** what else is going on, outside the PHP story.
 
 **Writes** (exclusive: no other member writes these):
 
 - `admin/content/agents/pulse/ROLE.md`
 - `admin/content/agents/pulse/status.json`
 - `admin/content/agents/pulse/debriefs/**`
-- `data/vault-register/pulse.json`
+- `admin/build/export_pulse.py`
+- `data/pulse.json`
+- `data/schedule/pulse.json`
+- `data/runs/pulse/**`
 
 **Appends** (shared files it adds to, in its own block, row or file only):
 
 - data/admin.json#board: its own rows, added at the end; never another member's row
+- data/messages/: a new message file of its own (admin/build/schedule.py send); never an edit to another's
 
 **Pages it owns on the site:**
 
-- None.
+- `pulse/**`
 
 **Vaults:**
 
-- None.
+- `4klm5qlt` with a vault key: the Pulse vault
 
 ## Agent behaviour policy
 

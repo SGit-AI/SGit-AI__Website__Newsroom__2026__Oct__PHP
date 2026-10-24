@@ -41,6 +41,8 @@
 - `data/keys.json`
 - `assets/keys/**`
 - `data/vault-register/security.json`
+- `data/schedule/security.json`
+- `data/runs/security/**`
 
 **Appends** (shared files it adds to, in its own block, row or file only):
 
@@ -51,6 +53,7 @@
 - admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief
 - data/layers.json#row: the row for a data file it owns
 - assets/briefs/: an image a brief of its own shows
+- data/messages/: a new message file of its own (admin/build/schedule.py send); never an edit to another's
 
 **Pages it owns on the site:**
 

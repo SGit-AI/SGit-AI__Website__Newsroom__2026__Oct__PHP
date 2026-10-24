@@ -35,11 +35,14 @@
 - `admin/content/agents/desk/status.json`
 - `admin/content/agents/desk/debriefs/**`
 - `data/vault-register/desk.json`
+- `data/schedule/desk.json`
+- `data/runs/desk/**`
 
 **Appends** (shared files it adds to, in its own block, row or file only):
 
 - data/admin.json#board: its own rows, added at the end; never another member's row
 - admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief
+- data/messages/: a new message file of its own (admin/build/schedule.py send); never an edit to another's
 
 **Pages it owns on the site:**
 

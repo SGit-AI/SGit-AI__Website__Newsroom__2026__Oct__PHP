@@ -103,3 +103,14 @@ editor accepted "for this once" in its brief; the handover procedure in `CLAUDE.
   reviewed it; what pulse@ does; the 27 policies, through abp@.
 
 *Note, 24 October 2026, later: when this branch took in dev at v0.11.2 the librarian's rows were renumbered again: 172 to 190 became 191 to 209, in order.*
+
+## Later the same day: the schedule and the release
+
+The editor said "yes 07:13 works, set it up and release". The branch took in dev again at v0.11.2 (three conflicts, both
+sides kept; the librarian's rows renumbered 172 to 190 as 191 to 209). The 34 files and pages that had arrived since
+the morning were mapped (schedule cards and run records are each agent's own; messages are the conductor's folder,
+appended to by every agent; the Pulse export and section are pulse@'s; the cartographer's pass tool and crosswalk, the
+journalist's claim review, synthetic's run records): 0 overlaps, 0 unowned. The card `data/schedule/librarian.json` is
+active at 07:13 London, and the scheduled task `trig_015dBN3kZZNti6c9BFE2xMj4` wakes this session, as the card's prompt
+says word for word. The branch was released to dev with `release.sh` at the editor's go, including the changes to
+`validate.py`, `CLAUDE.md` and `.claude/settings.json` that security has not yet reviewed (board 198).

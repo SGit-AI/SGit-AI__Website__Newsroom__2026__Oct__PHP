@@ -64,13 +64,16 @@
    "admin/content/agents/abp/status.json",
    "admin/content/agents/abp/debriefs/**",
    "admin/content/agents/*/policy.json",
-   "data/vault-register/abp.json"
+   "data/vault-register/abp.json",
+   "data/schedule/abp.json",
+   "data/runs/abp/**"
   ],
   "appends": [
    "data/admin.json#board: its own rows, added at the end; never another member's row",
    "REALITY.md#section: its own section, what exists in its area",
    "BRIEF-CORRECTIONS.md#entry: a correction about its own work, at the top",
-   "admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief"
+   "admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief",
+   "data/messages/: a new message file of its own (admin/build/schedule.py send); never an edit to another's"
   ],
   "pages": [],
   "reads": [

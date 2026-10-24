@@ -56,6 +56,10 @@
 - `data/schedule-vault.json`
 - `data/schedules.json`
 - `data/vault-register/conductor.json`
+- `admin/build/schedule.py`
+- `data/messages/**`
+- `data/schedule/conductor.json`
+- `data/runs/conductor/**`
 
 **Appends** (shared files it adds to, in its own block, row or file only):
 

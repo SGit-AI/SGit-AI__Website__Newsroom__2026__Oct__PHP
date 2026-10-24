@@ -3,14 +3,14 @@
  "agent": "librarian",
  "as_of": "2026-10-24",
  "round": {
-  "n": 3,
+  "n": 4,
   "date": "2026-10-24",
   "branch": "claude/sweet-wright-1e5iju",
   "commits": [
-   "the merge of dev at v0.10.18 and this round's commit"
+   "the merge of dev at v0.11.2, and the release"
   ]
  },
- "state": "round 3 closed: dev taken in at v0.10.18; the map redone for 27 members with no overlaps and no unowned file or page; two answers corrected; waiting on the editor (policies, pulse, the daily schedule, the release of this branch)",
+ "state": "round 4: dev taken in at v0.11.2; the map kept whole (0 overlaps, 0 unowned); the daily schedule active at 07:13 London; released to dev at the editor's go",
  "done": [
   {
    "what": "Took in dev at v0.10.18 (63 commits): five source conflicts, each resolved keeping both sides; the librarian's board rows renumbered 090-102 to 191-203",
@@ -35,6 +35,18 @@
   {
    "what": "Opened board 204 to 209 for the fact-check desk, the story site, the conductor, the editor (twice) and abp@",
    "evidence": "data/admin.json"
+  },
+  {
+   "what": "Took in dev at v0.11.2 (three conflicts, both sides kept; the librarian's rows renumbered 172-190 to 191-209) and mapped the 34 files and pages that arrived since the morning: schedule cards and runs are each agent's, messages the conductor's with every agent appending, pulse's export and section pulse@'s; 0 overlaps, 0 unowned",
+   "evidence": "admin/content/agents/; python3 admin/build/agents.py report"
+  },
+  {
+   "what": "The daily pass on a schedule: card data/schedule/librarian.json active at 07:13 London, and the scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 waking this session, both at the editor's go",
+   "evidence": "data/schedule/librarian.json"
+  },
+  {
+   "what": "Released the branch to dev with release.sh at the editor's go, including the changes still waiting on security's review (board 198)",
+   "evidence": "data/versions.json"
   }
  ],
  "tasks": {
@@ -42,14 +54,15 @@
    "194 done (was 093)",
    "201 and 202 done (the ontologist is the cartographer; the cartographer is filled on its branch)",
    "204 to 209 opened for others",
-   "195 to 200 and 203 still open, owned by others"
+   "195 to 200 and 203 still open, owned by others",
+   "209 done (the daily schedule)"
   ],
   "note": "the librarian's own open work is the daily pass (209, waiting on the editor) and the reader questions"
  },
  "next": [
   {
-   "what": "Run the librarian pass daily once the editor agrees a time (proposed 07:13 London): take in dev, map every new file and page, index new debriefs, re-check the reader answers against changed claims",
-   "why": "20 sessions release on their own now; files and pages arrive faster than anyone maps them"
+   "what": "The first scheduled pass, 07:13 London on 24 October: follow the card",
+   "why": "the editor's go"
   },
   {
    "what": "When abp@ is unblocked, hand over the 27 drafted policies and keep the scope map in step with what it agrees",
@@ -66,20 +79,16 @@
  ],
  "asks": [
   {
-   "what": "Go for a daily schedule at 07:13 London (or another time), so the librarian can add it to the schedule vault",
-   "from": "the editor"
-  },
-  {
-   "what": "Go to release this branch: it carries security changes (validate.py check 4h, CLAUDE.md, .claude/settings.json) that wait on security's review (board 198)",
-   "from": "the editor and security@php.newsroom"
-  },
-  {
    "what": "Agree or correct the 27 policies, through abp@",
    "from": "the editor"
   },
   {
    "what": "Say what pulse@newsroom does",
    "from": "the editor"
+  },
+  {
+   "what": "Review gate check 4h, the CLAUDE.md sections and the Stop hook, now on dev by the editor's go before your review (board 198)",
+   "from": "security@php.newsroom"
   }
  ],
  "tokens": {

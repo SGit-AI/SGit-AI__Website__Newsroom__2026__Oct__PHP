@@ -5,7 +5,7 @@
  "name": "pulse@newsroom",
  "kind": "agent",
  "group": "evidence",
- "title": "The pulse (scope not yet recorded)",
+ "title": "Pulse: what else is going on",
  "status": "draft",
  "drafted_by": "librarian@php.newsroom (22 and 24 October 2026), for abp@newsroom.sgit to take over (board 157)",
  "kept_by": "abp@newsroom.sgit",
@@ -57,22 +57,34 @@
  },
  "scope": {
   "content": [
-   "not recorded"
+   "what else is going on, outside the PHP story"
   ],
   "writes": [
    "admin/content/agents/pulse/ROLE.md",
    "admin/content/agents/pulse/status.json",
    "admin/content/agents/pulse/debriefs/**",
-   "data/vault-register/pulse.json"
+   "admin/build/export_pulse.py",
+   "data/pulse.json",
+   "data/schedule/pulse.json",
+   "data/runs/pulse/**"
   ],
   "appends": [
-   "data/admin.json#board: its own rows, added at the end; never another member's row"
+   "data/admin.json#board: its own rows, added at the end; never another member's row",
+   "data/messages/: a new message file of its own (admin/build/schedule.py send); never an edit to another's"
   ],
-  "pages": [],
+  "pages": [
+   "pulse/**"
+  ],
   "reads": [
    "the whole repository"
   ],
-  "vaults": []
+  "vaults": [
+   {
+    "id": "4klm5qlt",
+    "key": "vault",
+    "why": "the Pulse vault"
+   }
+  ]
  },
  "acting_for": [],
  "requires_go": [

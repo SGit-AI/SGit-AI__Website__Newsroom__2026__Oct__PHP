@@ -36,6 +36,8 @@
 - `BRIEF-CORRECTIONS.md`
 - `data/history.json`
 - `data/vault-register/historian.json`
+- `data/schedule/historian.json`
+- `data/runs/historian/**`
 
 **Appends** (shared files it adds to, in its own block, row or file only):
 
@@ -45,6 +47,7 @@
 - admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief
 - data/layers.json#row: the row for a data file it owns
 - admin/content/articles/*__journalist-historian__*.md: its part of a joint article
+- data/messages/: a new message file of its own (admin/build/schedule.py send); never an edit to another's
 
 **Pages it owns on the site:**
 

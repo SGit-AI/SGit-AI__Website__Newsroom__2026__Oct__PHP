@@ -34,6 +34,8 @@
 - `admin/content/agents/abp/debriefs/**`
 - `admin/content/agents/*/policy.json`
 - `data/vault-register/abp.json`
+- `data/schedule/abp.json`
+- `data/runs/abp/**`
 
 **Appends** (shared files it adds to, in its own block, row or file only):
 
@@ -41,6 +43,7 @@
 - REALITY.md#section: its own section, what exists in its area
 - BRIEF-CORRECTIONS.md#entry: a correction about its own work, at the top
 - admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief
+- data/messages/: a new message file of its own (admin/build/schedule.py send); never an edit to another's
 
 **Pages it owns on the site:**
 

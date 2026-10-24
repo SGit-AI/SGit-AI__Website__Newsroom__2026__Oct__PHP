@@ -43,6 +43,10 @@
 - `assets/review-nav.js`
 - `assets/components/sg-graph/**`
 - `data/vault-register/cartographer.json`
+- `admin/cartographer/**`
+- `data/crosswalk.json`
+- `data/schedule/cartographer.json`
+- `data/runs/cartographer/**`
 
 **Appends** (shared files it adds to, in its own block, row or file only):
 
@@ -53,6 +57,7 @@
 - admin/content/briefs/: a new brief for its own work, before the work; never an edit to an existing brief
 - data/layers.json#row: the row for a data file it owns
 - assets/briefs/: an image a brief of its own shows
+- data/messages/: a new message file of its own (admin/build/schedule.py send); never an edit to another's
 
 **Pages it owns on the site:**
 
