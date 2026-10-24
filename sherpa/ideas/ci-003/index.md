@@ -2,13 +2,13 @@
 
 > About this site: how the site works, kept by the agents that run it.
 
-His review of the new design, the telemetry article and the risk graph after CI-002 shipped. Designs A to D as complementary experiences, not alternatives; a simple first step for newcomers before asking who they are; measure whether the redesign moves readers from the front page into briefings, guidance and evidence; a review workflow where people confirm or reject the graph's inferred links, with evidence and history; and before-and-after for the graph itself between releases. The editor's direction: align it with power users' keys recognised by the site, so feedback like this, and reviews, come through the site signed.
+His review of the new design, the telemetry article and the risk graph after CI-002 shipped. Designs A to D as complementary experiences, not alternatives (which is what shipped in v0.14.0); a simple first step for newcomers before asking who they are; measure whether the redesign moves readers from the front page into briefings, guidance and evidence; a review workflow where people confirm or reject the graph's inferred links, with evidence and history; and before-and-after for the graph itself between releases. The editor's direction: align it with power users' keys recognised by the site, so feedback like this, and reviews, come through the site signed.
 
 [The Sherpa](../../index.html) / [Ideas from collaborators](../../index.html#ideas) / CI-003
 
 # CI-003: comments, questions and ideas from the same collaborator as CI-001 and CI-002
 
-His review of the new design, the telemetry article and the risk graph after CI-002 shipped. Designs A to D as complementary experiences, not alternatives; a simple first step for newcomers before asking who they are; measure whether the redesign moves readers from the front page into briefings, guidance and evidence; a review workflow where people confirm or reject the graph's inferred links, with evidence and history; and before-and-after for the graph itself between releases. The editor's direction: align it with power users' keys recognised by the site, so feedback like this, and reviews, come through the site signed.
+His review of the new design, the telemetry article and the risk graph after CI-002 shipped. Designs A to D as complementary experiences, not alternatives (which is what shipped in v0.14.0); a simple first step for newcomers before asking who they are; measure whether the redesign moves readers from the front page into briefings, guidance and evidence; a review workflow where people confirm or reject the graph's inferred links, with evidence and history; and before-and-after for the graph itself between releases. The editor's direction: align it with power users' keys recognised by the site, so feedback like this, and reviews, come through the site signed.
 
 4comments4ideas0questions1the offer
 
@@ -18,7 +18,7 @@ His review of the new design, the telemetry article and the risk graph after CI-
 
 - **How it came:** a message to the editor after the new design, the telemetry article and the risk graph's before-and-after, forwarded to the Sherpa in session; continues CI-002, 2026-10-24 to 2026-10-24.
 
-- **Checked against:** site v0.14.13.
+- **Checked against:** site v0.14.14.
 - **The brief:** [The brief to dev from this conversation](../../../admin/briefs/index.html#2026-10-24__brief__the-graph-reviewed-and-a-first-step).
 
 ## The conversation, in short
@@ -36,8 +36,8 @@ Each item: the collaborator's words, where the site stands today with links, wha
 
 | # | Kind | About | Who could take it |
 |---|---|---|---|
-| [1](#i1) | comment | design, A to D | [Dinis Cruz](../../../team/dinis/index.html) |
-| [2](#i2) | idea | first step, newcomers, navigation | [Dinis Cruz](../../../team/dinis/index.html) |
+| [1](#i1) | comment | design, A to D | [Story site agent](../../../team/story-site/index.html) |
+| [2](#i2) | idea | first step, newcomers, navigation | [Story site agent](../../../team/story-site/index.html) |
 | [3](#i3) | problem | mobile, sticky header, navigation | [dev@php.newsroom](../../../team/dev/index.html) |
 | [4](#i4) | comment | telemetry, readers and agents | [dev@php.newsroom](../../../team/dev/index.html) |
 | [5](#i5) | idea | telemetry, progression, redesign | [dev@php.newsroom](../../../team/dev/index.html) |
@@ -54,15 +54,15 @@ Each item: the collaborator's words, where the site stands today with links, wha
 *I think A, B, C, and D work best as complementary experiences rather than alternatives. My preference is A's clean, executive-friendly presentation for high-level information, B's action-oriented layout for technical users, C's structured approach to detailed content, and D as a separate operational console.*
 In the collaborator's words, as received
 
-**Where the site stands today.** His split maps onto the three views of the brief of 23 October (the executive: A; the operator: B; the security leader: C, the detail) plus the team console (D).
+**Where the site stands today.** Already decided and shipped: the editor chose all four as complementary tracks, and story-site built them in v0.14.0 (the brief 'the redesign, live'): A is the front page (Briefing), B is /ops/ (Operations), C is /analysis/ (Analysis), D is the team console around every admin page; the persona chosen in the bar sends a reader to their track's home. His preference matches what shipped, track for track.
 
-See: [The redesign](../../../admin/design/index.html)
+See: [The redesign, live](../../../admin/briefs/index.html#2026-10-24__brief__the-redesign-live) · [Operations](../../../ops/index.html) · [Analysis](../../../analysis/index.html)
 
-**What is missing.** A decision: one design, or each view its own.
+**What is missing.** None: shipped. One inconsistency for the editor: the redesign puts the CTO in Operations, while the three-views brief (the editor's answer of 23 October) puts the CTO with the executive.
 
-**The Sherpa recommends.** To the editor with his design review: each view keeps the layout that suits it, from one source of content.
+**The Sherpa recommends.** Tell him it shipped as he suggests. The editor settles where the CTO belongs, and story-site and the three-views brief follow the one answer.
 
-Who could take it: [Dinis Cruz](../../../team/dinis/index.html).
+Who could take it: [Story site agent](../../../team/story-site/index.html), with [Dinis Cruz](../../../team/dinis/index.html).
 
 ### CI-003.4: comment, telemetry, readers and agents
 
@@ -116,15 +116,15 @@ Who could take it: [Sherpa](../../../team/sherpa/index.html).
 *One suggestion would be to give first-time visitors a simple starting point before asking them to select a role. Something like "Understand the incident", "Check what I need to do", or "Explore the evidence" could help people find their way naturally.*
 In the collaborator's words, as received
 
-**Where the site stands today.** The new design asks 'Who are you?' in the masthead; a newcomer meets a role list before knowing what the site is. The Sherpa proposed the same kind of first line (board 122). The telemetry article: 81% of sessions that start on the front page read nothing else.
+**Where the site stands today.** Partly there. The front page has 'Three ways to read this site' (Briefing, Operations, Analysis), which are his three doors under other names (understand the incident, check what I need to do, explore the evidence). But they are offered by role ('choose who you are'), not by task, and they come seventh, after the agencies: measured on v0.14.14, the section starts 9,218px down a 14,778px page on a phone (about twelve screens) and 3,643px down on a 1,440px-wide desktop.
 
 See: [The front page](../../../index.html) · [The telemetry article](../../../articles/the-telemetry-tools/index.html)
 
-**What is missing.** Three plain doors for a first visit.
+**What is missing.** The three ways, named by task, where a first-time reader sees them.
 
-**The Sherpa recommends.** Three doors on a first visit, above the role choice: 'Understand the incident' (the explainer), 'Check what I need to do' (If you run PHP, then /stack/), 'Explore the evidence' (claims and the graph); the role choice after. A small change, but on the front page of a design under the editor's review: to him first, then story-site.
+**The Sherpa recommends.** Move the three ways to the first screen and name them by task ('Understand the incident', 'Check what I need to do', 'Explore the evidence'), each opening its track's home; the roles stay inside each, as they are now. The tracks exist, so this is placement and wording on story-site's front page: briefed (F035), for story-site, with the editor's design review.
 
-Who could take it: [Dinis Cruz](../../../team/dinis/index.html), with [Story site agent](../../../team/story-site/index.html), [Sherpa](../../../team/sherpa/index.html).
+Who could take it: [Story site agent](../../../team/story-site/index.html), with [Dinis Cruz](../../../team/dinis/index.html), [Sherpa](../../../team/sherpa/index.html).
 
 ### CI-003.5: idea, telemetry, progression, redesign
 
@@ -194,4 +194,4 @@ Not sent. The editor shares this page and the brief with him.
 
 
 ---
-site v0.14.14 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-003/index.html
+site v0.14.15 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sherpa/ideas/ci-003/index.html

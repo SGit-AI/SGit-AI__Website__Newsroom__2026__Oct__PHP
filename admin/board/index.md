@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 264 items, 177 open, 82 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 265 items, 178 open, 82 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -273,10 +273,11 @@ The work, as rows in `data/admin.json`: 264 items, 177 open, 82 done. An item is
 | 261 | From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed, with the before-and-after blocks | open | dev@php.newsroom |  |
 | 262 | From CI-003, step 3: a progression measure at every drain: of front-page sessions, the share reaching a briefing, the guidance or the evidence, by device and chosen persona, the week before the redesign and each week after | open | dev@php.newsroom |  |
 | 263 | From CI-003, step 4: confirm or reject an inferred graph link, signed with an enrolled key and sent as a 'review' through the collaborators lane; the drain records it in the edge's history (who may review and how many confirmations: the editor's call) | open | dev@php.newsroom |  |
-| 264 | Sherpa: CI-003 to the editor: the design as complementary views (A to D), three doors for a first visit, and a power-user invitation for the collaborator so his feedback and reviews come signed | open | sherpa |  |
+| 264 | Sherpa: CI-003 to the editor: the CTO's place (the redesign puts it in Operations, the three-views brief with the executive); the three ways to read on the first screen, named by task (F035); and a power-user invitation for the collaborator so his feedback and reviews come signed | open | sherpa |  |
+| 265 | From CI-003 (story-site): the front page's 'Three ways to read this site' on the first screen and named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home; today it is seventh, 9,218px down on a phone (F035) | open | story-site |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.14.14 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.14.15 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today167runs recorded65runs with changes and no article
+2schedules20runs a night, today168runs recorded65runs with changes and no article
 
 ## Quiet hours
 
@@ -33,7 +33,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 101, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Conductor: 6, Fact-check desk: 4, factcheck: 2, desk: 1, Sherpa: 1, librarian@php.newsroom: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 102, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Conductor: 6, Fact-check desk: 4, factcheck: 2, desk: 1, Sherpa: 1, librarian@php.newsroom: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -59,6 +59,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.4` | factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-compromise claim, the Dutch offline row, the front page's fix-complete line), K-004 and K-009 explained, so the correction requests to Wiz, the BBC and CNN no longer wait on the desk; Finding-32 stays open (Cloudflare does link W3Techs); the desk's schedule card, and the brief for its investigations | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.3` | pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gate's first-build determinism failure fixed (design.py read items.json one build late, board 175) | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.2` | The Sherpa: its schedule active (its lanes drained every two hours, 07:45 to 21:45 London, the full pass at 11:45 and 17:45), and an inbox for agents outside the newsroom: an append lane (d6zak0o3) where the RiskMandate email agent and the editor send messages and materials, with the tool to send to it | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.15` | CI-003 corrected against the redesign that shipped in v0.14.0: the collaborator's design preference is what was built; his first step for newcomers made precise (the three ways to read are by role and twelve phone screens down the front page); a correction entry for the Sherpa's brief | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.14` | Ideas from collaborators, CI-003: a power user's review of the new design, the telemetry and the risk graph (complementary views, a first step for newcomers, people confirming the graph's inferred links with signed reviews, the graph's changes between releases), the phone header measured at 30% of the screen, and a brief to dev (board 260 to 263) | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.13` | The desk's morning wake: correction requests updated (AWS reworded its own 'broadly exploited', so R-004 is held and WIRED's request stands on its own; CNN needs a fresh capture; The Hacker News's request unblocked by K-009), and the front page's out-of-date 70% unknown on the board | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.12` | Conductor light check 09:15 London: curator missed-run note, status lines, run record | yes | its release note | [output](../../admin/versions.html) |
@@ -207,4 +208,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.14.14 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.14.15 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
