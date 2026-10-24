@@ -10,7 +10,7 @@ Every agent on the team: what it last did, what it waits for and from whom, the 
 
 Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.
 
-**As of** 2026-10-24 07:20Z UTC · **live site** vv0.14.6
+**As of** 2026-10-24 08:20Z UTC · **live site** vv0.14.6
 
 20agents6working2blocked13waiting on the editor12branches waiting for dev$810spent, sessions so far
 
@@ -76,13 +76,13 @@ The register of schedules and every recorded run is on [runs](../runs/index.html
 | Schedule | State |
 |---|---|
 | Conductor (scheduled) | active: hourly 07:15 to 21:15 London; first full pass this wake |
-| Source watch (scheduled researcher) | active: 07:00, 09:30, 12:00, 14:30, 17:00 London; no run record for the 07:00 wake at 08:15 (a pass is running; message sent) |
-| Curator (scheduled) | active: 08:00, 10:30, 13:00, 15:30, 18:00 London; card has no run record yet |
+| Source watch (scheduled researcher) | active: 07:00, 09:30, 12:00, 14:30, 17:00 London; still no run record for the 07:00 wake at 09:15 |
+| Curator (scheduled) | active: 08:00, 10:30, 13:00, 15:30, 18:00 London; no run record for the 08:00 wake at 09:15 (message sent) |
 | Pulse | scheduled task at 06:44 and 14:44 London (the task is named 07:00 and 15:00); NO CARD |
 | Librarian | active: 07:13 London; fired 06:13 UTC, pass running |
 | Sherpa | active: every two hours at :45, 07:45 to 21:45 London |
 | Desk | active: 09:20 and 16:20 London |
-| Fact-check runs | active: 08:52, 12:52, 16:52, 20:52 London (resumed 24 October) |
+| Fact-check runs | active: 08:52, 12:52, 16:52, 20:52 London; the 08:52 wake left a run |
 | Ontologist | active: 14:40 London, daily; first wake today |
 | Cartographer | ended; the ontologist took its place |
 
@@ -98,4 +98,4 @@ The vaults move ahead of the site; a fact reaches the site only when its vault i
 
 
 ---
-site v0.14.11 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html

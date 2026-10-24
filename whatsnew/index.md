@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.12 · 24 October 2026new since your last visit
+
+Conductor light check 09:15 London: curator missed-run note, status lines, run record
+
+No reader-facing section changed in this release.
+
 ## v0.14.11 · 24 October 2026new since your last visit
 
 factcheck run 4 (scheduled, 08:52 London): no claim changed; CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 back to 5.4 (K-003); Siemens and PAN-OS now in the CVE and NVD records; KEV still lists neither CVE; every PHPocalypse site back; AWS's revised sentence still uncaptured
@@ -791,4 +797,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.11 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

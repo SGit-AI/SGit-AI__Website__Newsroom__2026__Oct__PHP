@@ -51,4 +51,4 @@ Run 3 of the fact-check desk checked your clean-hands fixes: Finding-26, 27, 28,
 
 
 ---
-site v0.14.11 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/factcheck/index.html
+site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/factcheck/index.html

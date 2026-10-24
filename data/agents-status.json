@@ -1,7 +1,7 @@
 {
  "about": "Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.",
  "kept_by": "conductor",
- "as_of": "2026-10-24T07:20Z",
+ "as_of": "2026-10-24T08:20Z",
  "live_version": "v0.14.6",
  "agents": [
   {
@@ -286,11 +286,11 @@
   ],
   [
    "Source watch (scheduled researcher)",
-   "active: 07:00, 09:30, 12:00, 14:30, 17:00 London; no run record for the 07:00 wake at 08:15 (a pass is running; message sent)"
+   "active: 07:00, 09:30, 12:00, 14:30, 17:00 London; still no run record for the 07:00 wake at 09:15"
   ],
   [
    "Curator (scheduled)",
-   "active: 08:00, 10:30, 13:00, 15:30, 18:00 London; card has no run record yet"
+   "active: 08:00, 10:30, 13:00, 15:30, 18:00 London; no run record for the 08:00 wake at 09:15 (message sent)"
   ],
   [
    "Pulse",
@@ -310,7 +310,7 @@
   ],
   [
    "Fact-check runs",
-   "active: 08:52, 12:52, 16:52, 20:52 London (resumed 24 October)"
+   "active: 08:52, 12:52, 16:52, 20:52 London; the 08:52 wake left a run"
   ],
   [
    "Ontologist",
