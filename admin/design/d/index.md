@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.2. Not the live site.
+> Mockup D for review, built from the data of release v0.15.3. Not the live site.
 
-PHP Team console Console Overview Board 184 Agents 19 Releases 121 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 184 Agents 19 Releases 122 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.2 
-121 releases since 22 Oct 
+v0.15.3 
+122 releases since 22 Oct 
 
 Open on the board 
 184 
-87 done, 5 waiting 
+88 done, 5 waiting 
 
 Pages built 
 885 
@@ -32,9 +32,9 @@ Sources in the vault
 
 #### Open 184
 
- #276 
-Front page, Right now: the stamp says 'as of 24 October 2026, 08:37 UTC' but the five lines are unchanged since v0.12.1 … 
- journalist 
+ #277 
+The pipeline decided (24 October): researcher, curator, journalist (Sonnet), correspondent (Opus), then the ontologist, … 
+ abp@newsroom.sgit 
  #275 
 The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work o… 
  editor 
@@ -72,8 +72,11 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 87
+#### Done 88
 
+ #276 
+Front page, Right now: the stamp says 'as of 24 October 2026, 08:37 UTC' but the five lines are unchanged since v0.12.1 … 
+ journalist 
  #274 
 Prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have … 
  claude-story-site v0.15.0 
@@ -92,13 +95,11 @@ From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sti
  #255 
 Investigations: a section of the fact-check desk that chases one question down to its measurements; the first, how much … 
  factcheck 
- #254 
-Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, to… 
- sherpa 
 
 ### Releases
  latest 8 
 
+ v0.15.3 2026-10-24 the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's p… 
  v0.15.2 2026-10-24 The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and t… 
  v0.15.1 2026-10-24 Conductor full pass 15:15 London: agents-status, schedules against runs, run record 
  v0.15.0 2026-10-24 prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that… 
@@ -106,7 +107,6 @@ Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append 
  v0.14.30 2026-10-24 the evidence vault at 1f38e70921b2 (328 sources) and the state of affairs v3: a vendor's claim of a break-in withdrawn (Sophos), b… 
  v0.14.29 2026-10-24 Restores v0.14.24, what changed in the risk graph (CI-003, step 2, /grc/changes/), which the conductor's release of the CI fix rev… 
  v0.14.28 2026-10-24 observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first d… 
- v0.14.27 2026-10-24 Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry re… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

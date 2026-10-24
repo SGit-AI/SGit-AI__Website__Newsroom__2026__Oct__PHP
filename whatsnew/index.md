@@ -12,11 +12,18 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.3 · 24 October 2026new since your last visit
+
+the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's proposed prompt updated, the build no longer stops on an unmapped publisher, and Right now carries the Sophos withdrawal
+
+No reader-facing section changed in this release.
+
 ## v0.15.2 · 24 October 2026new since your last visit
 
 The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and the front page's Right now stamp, newer than its text, on the board for the journalist
 
-No reader-facing section changed in this release.
+### Sections that changed
+- [Front page: right now](../versions/front-now/index.html#v5) v5
 
 ## v0.15.1 · 24 October 2026new since your last visit
 
@@ -943,4 +950,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.2 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.3 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

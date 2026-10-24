@@ -15,4 +15,4 @@ v8 · site v0.13.0 · 24 October 2026 · 3 lines added or changed, 3 removed or 
 
 
 ---
-site v0.15.2 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-journalist/index.html
+site v0.15.3 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-journalist/index.html

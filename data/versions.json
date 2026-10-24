@@ -1,6 +1,15 @@
 {
- "current": "0.15.2",
+ "current": "0.15.3",
  "versions": [
+  {
+   "version": "0.15.3",
+   "date": "2026-10-24",
+   "title": "the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's proposed prompt updated, the build no longer stops on an unmapped publisher, and Right now carries the Sophos withdrawal",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.2",
    "date": "2026-10-24",

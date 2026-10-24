@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.15.2. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.15.3. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.15.3 · 2026-10-24
+
+the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's proposed prompt updated, the build no longer stops on an unmapped publisher, and Right now carries the Sophos withdrawal
+Pages changed (19): Briefs · The journalist's desk: keeping the site current · Schedule: journalist · Vaults: who made each one · Journalist, dated state-of-affairs articles: the team · PHP in October 2026: two critical security flaws, tracked as evidence · Schedule: every agent that runs on its own · Every member: who owns what and 11 more
+[Operations: what changed, what to do next, how sure we are](../ops/index.html) · [The fact pipeline: from a web page to a reader](../pipeline/index.html) · [The team: the people, the agents and how they work together](../team/index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [Front page: right now: version history](../versions/front-now/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `1f38e70921b2`.
 
 ### v0.15.2 · 2026-10-24
 
@@ -945,4 +953,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.15.2 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.15.3 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.15.2",
+"site": "0.15.3",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -1255,10 +1255,10 @@
 "zone": "research",
 "title": "Front page: right now",
 "path": "index.html#now",
-"hash": "e390a295e884",
-"v": 4,
+"hash": "76f5a802b1e9",
+"v": 5,
 "first": "0.3.2",
-"changed": "0.12.1",
+"changed": "0.15.2",
 "date": "2026-10-24",
 "history": "versions/front-now/index.html"
 },

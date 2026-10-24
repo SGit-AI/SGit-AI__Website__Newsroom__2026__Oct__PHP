@@ -25,11 +25,11 @@ This section v4 written in site [v0.14.30](admin/versions.html#v0.14.30) on 24 O
 ## Right now
 as of 24 October 2026, 08:37 UTC, the latest page this site saved- A fix has been available since 21 October. Organisations that run websites on PHP are installing it. [php.net](sources/php-net-advisory/index.html)
 - Every government cyber agency says: install the fix now. If you cannot, the US agencies say take the website offline; the UK puts that after temporary mitigations, and several European agencies say cut it off from the public internet first. [CISA](sources/cisa-alert-php-20261021/index.html) [NCSC UK](sources/ncsc-news-php/index.html) [CERT-EU](sources/certeu-sa-2026-018/index.html) [NSA Cyber on X](sources/nsa-x-2112903220209098897/index.html)
-- Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 23 October, no named organisation has said it was compromised through php2shell. [Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [CISA](sources/cisa-kev-json/index.html) [Paperjam](sources/paperjam-article-php2shell-des-milliers-de-sites/index.html)
+- Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of the morning of 24 October, no named organisation has said it was broken into through this flaw. The one security company that had claimed a successful break-in, Sophos, withdrew it; US banks and the large crypto platforms report none. [Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [CISA](sources/cisa-kev-json/index.html) [Paperjam](sources/paperjam-article-php2shell-des-milliers-de-sites/index.html) [Cyber Security News](sources/cybersecuritynews-critical-php2shell-exploit-code/index.html) [American Banker](sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html) [BTC-ECHO](sources/btc-echo-news-krypto-boersen-akut-bedroht-kritisc/index.html)
 - The advice is moving from 'install the fix' to 'and check whether you were already broken into'. Singapore's and Luxembourg's authorities now say so. [CNA](sources/channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur/index.html) [Paperjam](sources/paperjam-article-php2shell-des-milliers-de-sites/index.html)
 - Some organisations took websites offline as a precaution: the Dutch government took its cyber agency's own site offline, and Dutch press reported the DigiD login down too. Almost all of them are back. [Rijksoverheid / NCSC-NL](sources/rijksoverheid-ncsc-php-news/index.html) [TPO.nl](sources/tpo-nl-digid-offline/index.html) [PHPocalypse Tracker](sources/phpocalypse-tracker-sites-csv/index.html) [Security.NL](sources/securitynl-misbruik-gemeld/index.html)
 
-This section v4 written in site [v0.12.1](admin/versions.html#v0.12.1) on 24 October 2026 · [history and changes, 3 earlier](versions/front-now/index.html)
+This section v5 written in site [v0.15.2](admin/versions.html#v0.15.2) on 24 October 2026 · [history and changes, 4 earlier](versions/front-now/index.html)
 
 ## The core facts, and the evidence for each
 - confirmed two or more original sources agree
@@ -138,4 +138,4 @@ Last checked: [the evidence vault](sources/index.html), latest capture 24 Octobe
 
 
 ---
-site v0.15.2 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.15.3 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/index.html

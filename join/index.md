@@ -45,4 +45,4 @@ Keys are in pki.sgit.ai's and sgit's format, so `sgit pki verify` checks every s
 
 
 ---
-site v0.15.2 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/join/index.html
+site v0.15.3 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/join/index.html

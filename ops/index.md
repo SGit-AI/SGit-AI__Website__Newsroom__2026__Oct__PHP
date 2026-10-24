@@ -37,7 +37,9 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ## What changed, newest first
 Release by release
-      questionv0.14.8 · 2026-10-24
+      frontv0.15.2 · 2026-10-24
+### [Front page: right now](../index.html#now)
+questionv0.14.8 · 2026-10-24
 ### [Is PHP really the software behind most websites?](../questions/most-websites/index.html)
 questionv0.14.30 · 2026-10-24
 ### [Has anyone actually been hacked?](../questions/been-hacked/index.html)
@@ -53,8 +55,6 @@ CISACISAHuntressAmazonstoryv0.14.24 · 2026-10-24
 ### [The risk graph, before and after: what changed from one reader's five ideas](../articles/the-risk-graph-before-and-after/index.html)
 frontv0.12.1 · 2026-10-24
 ### [Front page: what nobody knows yet](../index.html#unknown)
-frontv0.12.1 · 2026-10-24
-### [Front page: right now](../index.html#now)
 factreportedv0.12.1 · 2026-10-24
 ### [In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS](../facts/wordpress-drupal/index.html)
 CalifWizfactreportedv0.12.1 · 2026-10-24
@@ -96,4 +96,4 @@ Red: from the leak on 20 October. [The timeline](../timeline/index.html)
 
 
 ---
-site v0.15.2 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/ops/index.html
+site v0.15.3 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/ops/index.html
