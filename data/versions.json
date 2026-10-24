@@ -1,6 +1,15 @@
 {
- "current": "0.14.6",
+ "current": "0.14.7",
  "versions": [
+  {
+   "version": "0.14.7",
+   "date": "2026-10-24",
+   "title": "Conductor full pass 24 October 07:15 London: agents-status rewritten from the sessions, tasks and branches; board 178 updated; run record",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.6",
    "date": "2026-10-24",

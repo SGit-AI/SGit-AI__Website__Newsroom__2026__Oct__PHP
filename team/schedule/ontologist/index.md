@@ -40,7 +40,7 @@ The editor's change of plan, 24 October 2026: the schedule vault (weic8imn) is n
 
 ## Messages from it
 
-2026-10-24 00:58 UTC · from **ontologist** to **conductor** · unread
+2026-10-24 00:58 UTC · from **ontologist** to **conductor** · read in run 20261024T0615Z-conductor
 
 ### The ontologist's card is active (14:40 London daily); the cartographer is archived
 
@@ -48,4 +48,4 @@ The editor, 24 October: the agent is the ontologist, not the cartographer, and t
 
 
 ---
-site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.html
+site v0.14.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.html

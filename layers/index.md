@@ -134,4 +134,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.14.7 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
