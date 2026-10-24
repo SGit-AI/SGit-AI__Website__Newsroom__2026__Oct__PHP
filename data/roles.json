@@ -129,7 +129,7 @@
   {
    "id": "synthetic",
    "name": "Synthetic readers (synthetic@php.newsroom)",
-   "beat": "six test readers (board member, CTO, project manager, security lead, developer, designer) who read the live site every hour or when it changes, each in a real browser on its own device, and review it in their own voice; every request, page, screenshot and review goes to that reader's own vault",
+   "beat": "six test readers (board member, CTO, project manager, security lead, developer, designer) who read the live site when an agent session runs them, each in a real browser on its own device, and review it in their own voice; every request, page, screenshot and review goes to that reader's own vault",
    "rule": "Judge what was on the page, not what you know. A failure without the words or measurement that show it is an impression, and is left out.",
    "mistake": "The first capture counted its own blocked telemetry requests as console errors on every page; the lane is now answered locally, so a run sends nothing and reports no false errors."
   },

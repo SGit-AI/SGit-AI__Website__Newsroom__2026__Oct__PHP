@@ -4,7 +4,7 @@
 
 PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-PHP news · October 2026 · Developing · [last checked 23 October 2026, 12:50 UTC](#checked)
+PHP news · October 2026 · Developing · [last checked 23 October 2026, 16:04 UTC](#checked)
 
 # Two serious security flaws in PHP, the software behind many of the world's websites
 
@@ -14,17 +14,18 @@ PHP is the software that WordPress and millions of other websites run on. A fix 
 
 You may also see this called php2shell, or by its two official reference numbers, CVE-2026-109618 and CVE-2026-109619.
 
-Last checked: [the evidence vault](sources/index.html), latest capture 23 October 2026, 01:20 UTC · [the source watch](vaults/source-watch/index.html), latest run 23 October 2026, 12:40 UTC · [the NCSC-NL inventory](patching/inventory/index.html), latest change read 23 October 2026, 12:50 UTC.
+Last checked: [the evidence vault](sources/index.html), latest capture 23 October 2026, 16:04 UTC · [the source watch](vaults/source-watch/index.html), latest run 23 October 2026, 12:40 UTC · [the NCSC-NL inventory](patching/inventory/index.html), latest change read 23 October 2026, 12:50 UTC.
 
 ## Right now
 
-As of 23 October 2026, 01:20 UTC, the time of the latest page this site saved.
+As of 23 October 2026, 16:04 UTC, the time of the latest page this site saved.
 - A fix has been available since 21 October. Organisations that run websites on PHP are installing it. [php.net](sources/php-net-advisory/index.html)
 - Government cyber agencies in the US, the UK, the EU and elsewhere say: install the fix now, and take a website offline if you cannot. [CISA](sources/cisa-alert-php-20261021/index.html) [NCSC UK](sources/ncsc-news-php/index.html) [CERT-EU](sources/certeu-sa-2026-018/index.html) [NSA Cyber on X](sources/nsa-x-2112903220209098897/index.html)
-- Attackers are trying to use the flaws, in large numbers. As of the evening of 22 October, no named organisation has said it was compromised through php2shell. [Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [CISA](sources/cisa-kev-json/index.html)
-- Some organisations took websites offline as a precaution, among them Dutch government services such as the DigiD login. [Rijksoverheid / NCSC-NL](sources/rijksoverheid-ncsc-php-news/index.html) [BBC News](sources/bbc-live-ckgel5xp2xv9t/index.html)
+- Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 23 October, no named organisation has said it was compromised through php2shell. [Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [CISA](sources/cisa-kev-json/index.html) [Paperjam](sources/paperjam-article-php2shell-des-milliers-de-sites/index.html)
+- The advice is moving from 'install the fix' to 'and check whether you were already broken into'. Singapore's and Luxembourg's authorities now say so. [CNA](sources/channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur/index.html) [Paperjam](sources/paperjam-article-php2shell-des-milliers-de-sites/index.html)
+- Some organisations took websites offline as a precaution, among them Dutch government services such as the DigiD login. Almost all of them are back. [Rijksoverheid / NCSC-NL](sources/rijksoverheid-ncsc-php-news/index.html) [PHPocalypse Tracker](sources/phpocalypse-tracker-sites-csv/index.html) [Security.NL](sources/securitynl-misbruik-gemeld/index.html)
 
-This section v2 written in site [v0.5.8](admin/versions.html#v0.5.8) on 22 October 2026 · [history and changes, 1 earlier](versions/front-now/index.html)
+This section v3 written in site [v0.10.19](admin/versions.html#v0.10.19) on 23 October 2026 · [history and changes, 2 earlier](versions/front-now/index.html)
 
 ## At a glance
 Is there a fix?Yesinstall PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35How serious?Critical9.2 out of 10, both flawsDoes it reach you?Check your stackdescribe what you run and see what an attacker could reach in itAre attackers trying?Yesmillions of attempts, seen by one internet security companyAnyone confirmed hacked?Not yetno organisation, as of the latest checkWebsites taken offline10 organisationsreported, as a precautionOn the US 'used in attacks' list?Not yetthe US government's official list of flaws known to be used by attackersWhat do governments say?Update nowor take the website offline if you cannot; 16 agencies compared
@@ -61,15 +62,17 @@ Stated, not papered over. This site will update each one when the evidence does.
 This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 October 2026 · [history](versions/front-unknown/index.html)
 
 ## Latest
-- 22 Oct, 05:20 UTCJapan's national cyber agency issues its alert. [JPCERT/CC](sources/jpcert-at260033/index.html)
-- 22 Oct, 06:16 UTCBBC News opens a live page: 'Global scramble to fix critical cyber-security flaws as many websites taken offline'. [BBC News](sources/bbc-live-ckgel5xp2xv9t/index.html)
-- 22 Oct, 06:55 UTCThe BBC reports the US NSA's advice: take systems offline if they cannot be updated. [BBC News](sources/bbc-live-ckgel5xp2xv9t/index.html) [NSA Cyber on X](sources/nsa-x-2112903220209098897/index.html)
-- 22 Oct, 07:00 UTCOne of the researchers who found the flaws tells BBC Radio 4 there is no evidence yet of them being used in attacks. [BBC News](sources/bbc-live-ckgel5xp2xv9t/index.html)
-- 22 Oct, 08:40 UTCThe Dutch national cyber agency's list of affected software reaches 674 products. [NCSC-NL](sources/ncsc-nl-php2shell-software-list/index.html)
+- 22 OctKorea's science ministry raises the private-sector cyber crisis alert from 'interest' to 'caution', as reported. [신아일보](sources/shinailbo-news-articleview-html/index.html)
+- 22 OctSingapore's Cyber Security Agency tells organisations to patch now and to check whether they were already compromised. [CNA](sources/channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur/index.html)
+- 22 OctA count in Switzerland finds just over 23,000 of nearly 690,000 servers, about 3.5%, still affected a day after the fix. [ICTjournal](sources/ictjournal-news-2026-10-22-deux-failles-critiques-d/index.html)
+- 22 OctAhnLab, as reported, classes 27 of 100 php2shell repositories on GitHub as proof-of-concept exploits. [合同会社ロケットボーイズ](sources/rocket-boys-security-measures-lab-php2shell-poc-expl/index.html)
+- 23 Oct, 07:58 UTCIT Social: the update closes the flaw, but obliges a hunt for possible compromises; the published figures count attempts, not intrusions. [IT Social](sources/itsocial-cybersecurite-cybersecurite-articles-php/index.html)
 
 [Everything, in order, on the timeline →](timeline/index.html) · [What changed on this site, release by release →](whatsnew/index.html)
 
-This section v1 written in site [v0.3.2](admin/versions.html#v0.3.2) on 22 October 2026 · [history](versions/front-latest/index.html)
+This section v2 written in site [v0.10.19](admin/versions.html#v0.10.19) on 23 October 2026 · [history and changes, 1 earlier](versions/front-latest/index.html)
+
+What else is going on Other vulnerabilities in the news this month, with the evidence that each is exploited beside the attention it gets: the SGit newsroom's Pulse, in a separate section, not about PHP. Pulse →
 
 ## The briefing for you
 
@@ -110,11 +113,11 @@ What changed in a day: no victim yet, four named cases tested, a patch moving th
 [All stories →](articles/index.html)
 
 ## How this site knows
-227web pages saved as evidence, each with the time it was saved70statements checked: 21 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
+295web pages saved as evidence, each with the time it was saved70statements checked: 21 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
 Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read [the PHP project's announcement](https://www.php.net/archive/2026.php#2026-10-21-5) and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; [how it works](method/index.html).
 
 Already know the vocabulary? [The specialist summary](summary/index.html) has the technical version of this page, with every number and the full last 48 hours.
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/index.html

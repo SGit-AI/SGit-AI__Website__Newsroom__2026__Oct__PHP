@@ -101,3 +101,5 @@ editor accepted "for this once" in its brief; the handover procedure in `CLAUDE.
 
 - The editor: a time for the daily pass (proposed 07:13 London); a go to release this branch once security has
   reviewed it; what pulse@ does; the 27 policies, through abp@.
+
+*Note, 24 October 2026, later: when this branch took in dev at v0.11.2 the librarian's rows were renumbered again: 172 to 190 became 191 to 209, in order.*

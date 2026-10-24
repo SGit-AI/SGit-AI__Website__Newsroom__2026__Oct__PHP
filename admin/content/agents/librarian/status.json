@@ -13,7 +13,7 @@
  "state": "round 3 closed: dev taken in at v0.10.18; the map redone for 27 members with no overlaps and no unowned file or page; two answers corrected; waiting on the editor (policies, pulse, the daily schedule, the release of this branch)",
  "done": [
   {
-   "what": "Took in dev at v0.10.18 (63 commits): five source conflicts, each resolved keeping both sides; the librarian's board rows renumbered 090-102 to 172-184",
+   "what": "Took in dev at v0.10.18 (63 commits): five source conflicts, each resolved keeping both sides; the librarian's board rows renumbered 090-102 to 191-203",
    "evidence": "the merge commit; BRIEF-CORRECTIONS.md"
   },
   {
@@ -33,18 +33,18 @@
    "evidence": "data/questions.json"
   },
   {
-   "what": "Opened board 185 to 190 for the fact-check desk, the story site, the conductor, the editor (twice) and abp@",
+   "what": "Opened board 204 to 209 for the fact-check desk, the story site, the conductor, the editor (twice) and abp@",
    "evidence": "data/admin.json"
   }
  ],
  "tasks": {
   "board": [
-   "175 done (was 093)",
-   "182 and 183 done (the ontologist is the cartographer; the cartographer is filled on its branch)",
-   "185 to 190 opened for others",
-   "176 to 181 and 184 still open, owned by others"
+   "194 done (was 093)",
+   "201 and 202 done (the ontologist is the cartographer; the cartographer is filled on its branch)",
+   "204 to 209 opened for others",
+   "195 to 200 and 203 still open, owned by others"
   ],
-  "note": "the librarian's own open work is the daily pass (190, waiting on the editor) and the reader questions"
+  "note": "the librarian's own open work is the daily pass (209, waiting on the editor) and the reader questions"
  },
  "next": [
   {
@@ -53,7 +53,7 @@
   },
   {
    "what": "When abp@ is unblocked, hand over the 27 drafted policies and keep the scope map in step with what it agrees",
-   "why": "board 157 and 189"
+   "why": "board 157 and 208"
   },
   {
    "what": "Check the four branch members' real files (cartographer, desk, liaison, storyboards) against their drafts when they reach dev",
@@ -70,7 +70,7 @@
    "from": "the editor"
   },
   {
-   "what": "Go to release this branch: it carries security changes (validate.py check 4h, CLAUDE.md, .claude/settings.json) that wait on security's review (board 179)",
+   "what": "Go to release this branch: it carries security changes (validate.py check 4h, CLAUDE.md, .claude/settings.json) that wait on security's review (board 198)",
    "from": "the editor and security@php.newsroom"
   },
   {

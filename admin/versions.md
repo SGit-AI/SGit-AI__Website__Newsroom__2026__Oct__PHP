@@ -6,7 +6,79 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.18. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.11.2. The data is [data/versions.json](../data/versions.json).
+
+### v0.11.2 · 2026-10-24
+
+claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit newsroom's Pulse in a separate section (/pulse/), and the plan for the journalist's full pass
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.11.1 · 2026-10-24
+
+Security pass 2: the Ask pane renders the model's answer as DOM nodes, so a captured page title can no longer break out of a citation's title attribute and run script (a stored XSS that could reach the /now/ vault key); the collaborators drain drops sender-supplied '_' fields (a forged '_signer: enrolled') and survives malformed rows; schedule.py refuses a message as the editor, a multi-line subject or a repeated header, and prints bodies inside an untrusted fence; two unquoted hrefs quoted and two data URLs through U(); .gitignore no longer hides data/*.json
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.11.0 · 2026-10-24
+
+The cartographer joins: the ontology (15 verbs, each with its inverse), one node per party (243, from every publisher spelling), the story graph rebuilt with who states and who relays each claim, bridges to the code-review and risk graphs,  for every agent that draws a graph, the first pass over the evidence, and a daily pass proposed for 14:40 London
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.24 · 2026-10-24
+
+The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and the rule for every scheduled agent: a wake where nothing happened need not commit, and a conflict is solved by hand and written in the run's log
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.23 · 2026-10-24
+
+synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the vault opened read-only in the official UI, and on /vaults/, so every request, page, screenshot and review behind a run can be checked; each run page names its folder; the synthetic readers' GitHub workflow removed (the editor's go), the readers run from an agent session
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.22 · 2026-10-24
+
+Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its objective, wake times and wake prompt word for word; a run record for every wake; messages between agents as files; /team/schedule/ shows one day of every wake, the cards, the runs and the messages, with a page per agent; the conductor's own hourly schedule proposed
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.21 · 2026-10-24
+
+synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey, the instruments' flags) and a page-by-page index of what all six said about each page of the site; the second run, on v0.10.18, reviewed by all six against their first: most of what they asked for on 22 October is still open; the vault register for the six vaults confirmed, each key sealed to the root
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.20 · 2026-10-24
+
+the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.19 · 2026-10-23
+
+the site catches up with the evidence vault at 1845598d9a38 (295 sources): the journalist's state of affairs v2, with the delta from v1 and the six curator claims held back as worded and why, and the front page's Right now and Latest from the new sources
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.10.18 · 2026-10-23
 
@@ -562,4 +634,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

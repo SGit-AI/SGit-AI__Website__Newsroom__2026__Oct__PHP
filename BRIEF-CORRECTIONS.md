@@ -8,7 +8,7 @@ The map of 22 October drafted a **design** member and an **ontologist** member. 
 
 ## 2026-10-22: the librarian built the cartographer's graph
 
-The librarian built the fractal graph (`data/arcs.json`, `build_fractal()`, `/fractal/`) and changed the navigator and the stylesheet to show it. Graphs are the cartographer's scope, the navigator is the cartographer's and the stylesheet is design's. There was no map of who owns what when it was built; drawing that map is what showed it. The work stays as it is and is handed to the cartographer (board 173, 174 and 183; numbered 091, 092 and 101 until 23 October); the librarian's own scope is the catalogue (`admin/content/agents/librarian/`).
+The librarian built the fractal graph (`data/arcs.json`, `build_fractal()`, `/fractal/`) and changed the navigator and the stylesheet to show it. Graphs are the cartographer's scope, the navigator is the cartographer's and the stylesheet is design's. There was no map of who owns what when it was built; drawing that map is what showed it. The work stays as it is and is handed to the cartographer (board 192, 193 and 202; numbered 091, 092 and 101 until 23 October, then 173, 174 and 183); the librarian's own scope is the catalogue (`admin/content/agents/librarian/`).
 
 ## 2026-10-22: the fractal graph, and the review navigator that never opened
 

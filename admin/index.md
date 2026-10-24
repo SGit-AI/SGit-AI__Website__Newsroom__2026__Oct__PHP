@@ -28,7 +28,7 @@ How the site is built, what the gate checks, where things are, and what exists a
 - [Briefs](briefs/index.html): the build briefs, in full.
 - [The vault, opened](vault/index.html): the read key and the browser link.
 - [Who reads this site](telemetry/index.html): the telemetry lane and its counts.
-- [Synthetic readers](synthetic/index.html): six test readers who read the live site every hour and say what works and what does not.
+- [Synthetic readers](synthetic/index.html): six test readers who read the live site and say what works and what does not.
 
 ## The gate
 
@@ -158,11 +158,11 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `admin/synthetic/run.py capture` reads the live site in Chromium per reader: front page, reading path, then links matching its interests; logs every request (status, bytes, timing, sha256), console messages, served and rendered HTML, text, first-screen and full-page images and per-page measurements (reading ease, glossary density, WCAG AA contrast, tap targets under 24px, text under 12px, overflow, alt text, timings). The designer also reads on phone, tablet and dark; the developer fetches `llms.txt`, `status.json` and a twin. Telemetry and geolocation are answered locally: a run sends nothing.
 
-- Each reader has its own private sgit vault (board 1zq458zk, cto wlhgl8pk, pm 9p6jpsd2, security vjsqjhvp, developer 3l7tzwh9, designer dpdx3q13) holding every run, `latest.json`, `history.jsonl` and `heartbeats.jsonl`. Keys are not in this repository.
+- Each reader has its own sgit vault (board 1zq458zk, cto wlhgl8pk, pm 9p6jpsd2, security vjsqjhvp, developer 3l7tzwh9, designer dpdx3q13) holding every run, `latest.json`, `history.jsonl` and `heartbeats.jsonl`. Their read keys are published (24 October, the editor's go): on each reader's page, with the vault opened in the official UI, and on `/vaults/` (`data/vaults.json`, kept out of the menu with `nav: false`). Their vault keys are sealed to the root and are not in this repository.
 
-- Reviews: structured JSON against `admin/synthetic/review-guide.md`, by the Claude API (`--review api`, needs ANTHROPIC_API_KEY) or by an agent session; `run.py finish` renders `feedback.md` and pushes. `run.py summarise` writes `data/synthetic.json`; the page is `/admin/synthetic/`.
+- Reviews: structured JSON against `admin/synthetic/review-guide.md`, by the Claude API (`--review api`, needs ANTHROPIC_API_KEY) or by an agent session; `run.py finish` renders `feedback.md` and pushes. `run.py summarise` writes `data/synthetic.json` (every reader and its runs) and `data/synthetic-runs//.json` (each run: review, journey, per-page measurements, flags; never page bodies or a key). Pages: `/admin/synthetic/` (the six, latest scores with the change since the previous review, verdicts, the pages most found wrong, every run), `/admin/synthetic//` (the reader, its latest review in full, every run), `/admin/synthetic///` (one run: review, journey, flags) and `/admin/synthetic/pages/` (every site page the readers named, with every failure, change, works and quote from all six). Runs are also listed on `/team/runs/`.
 
-- `.github/workflows/synthetic.yml`: hourly at :23 and after each deploy, `--if-changed` (an unchanged site gets a heartbeat, not a run). Needs repository secrets SG_SEND_ACCESS_TOKEN and SYNTHETIC_VAULT_KEYS; until they are set it does nothing. It never commits to this repository, so the page is the snapshot at the last release.
+- No schedule: the readers run when an agent session runs `admin/synthetic/run.py capture` (`--if-changed` gives an unchanged site a heartbeat, not a run). The GitHub workflow was removed on the editor's instruction on 22 October.
 
 - Not built: a trend view across runs; readers beyond the six; real-reader testing.
 
@@ -200,11 +200,25 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `admin/build/security_check.py`, run by the gate (credential shapes and secret values, vault-key and decrypted-vault files, hidden characters, text addressed to a model, JSON script blocks, script URLs, slugs, workflow pinning), by `release.sh` on the staged diff, and on the security pass with `--report --history --vault `.
 
-- The build escapes JSON inside `` (`J()`), refuses script URLs from data (`U()`), writes only inside the site tree and renders markdown only from `admin/content/` and the top-level notes. The workflows pin actions to commits; the deploy job alone holds the Pages permissions; the synthetic job gives its secrets only to the step that runs, and no longer caches vault clones. The synthetic review fences page text as untrusted. The subscriptions drain keeps only the fields the form sends, checked against the site's lists, and holds an address with a flood of requests.
+- The build escapes JSON inside `` (`J()`), refuses script URLs from data (`U()`), writes only inside the site tree and renders markdown only from `admin/content/` and the top-level notes. The workflows pin actions to commits; the deploy job alone holds the Pages permissions (the synthetic readers' workflow, hardened here, has since been removed). The synthetic review fences page text as untrusted. The subscriptions drain keeps only the fields the form sends, checked against the site's lists, and holds an address with a flood of requests.
 
 - `/admin/keys/` from `data/keys.json`: the root (the editor's key, pinned from `CLAUDE.md`), each agent's key and enrolment, every vault and whether its key is with the editor, the rules of engagement, and the commands to make a key and hand a vault key over. The gate checks the file holds fingerprints and vault ids only.
 
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
+
+### The graph, its ontology and the component (cartographer@php.newsroom)
+
+- `data/ontology.json` v0.2.0 (12 kinds, 15 verbs with inverses, two taxonomies, four formulas, banned verbs), `data/entities.json` (243 parties, every one of the 249 publisher spellings an alias), `data/attribution.json` (who states and relays each claim, number and exploitation row; which 9 sources carry another party's wire copy), `data/crosswalk.json` (where the story, code-review and risk graphs name the same thing: the two CVEs, and 189 parties as stakeholders, 12 as the same party and the rest as members of a class). Brief: `admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md`; runbook: `admin/cartographer/README.md`.
+
+- `data/graph.json`: 1048 nodes, 1516 edges, 15 verbs; independent origins and relays per claim. The build stops on a verb or kind not in the ontology, an unresolved publisher, an unknown party or a crosswalk id its graph does not have (not yet a gate check: board 184).
+
+- `admin/cartographer/pass.py`: the pass, read only; what would stop the build, and the long tail (pages recorded twice, sources nobody traced, sources the vault's claims cite and the site does not). Passes are recorded in `admin/cartographer/passes/`; the first was on 24 October.
+
+- `` v1.0.0 (`assets/components/sg-graph/v1/v1.0/v1.0.0/`), embedded with `sg_graph()`: four views, search, verb filters, trail, path between two nodes, zoom into another graph a node names (same origin only), reading inverses from an ontology block, a `verbs` list or the edges themselves. Used on /graph/, /graph/parties/ and /graph/component/; tested in Chromium at 1280 and 390, light and dark, and with JavaScript off. The test scripts ran in the cartographer's session and are not in the repository.
+
+- Fractal steps: a CVE opens the code-review graph in its own vocabulary, and the risk graph; a party steps into the risk graph as a stakeholder. Source to capture to file is addressing, and is described as such.
+
+- Not built: sentence-level nodes (008); series and `derives_from`/`supersedes` (062); the researcher's compromise evidence (`data/compromise.json`, 188) and the vault's own claims and the state of affairs (190) in the graph; the other graph drawings moved onto the component (181); a scheduled pass (the card `data/schedule/cartographer.json`, proposed for 14:40 London daily, waiting for the editor; board 185).
 
 ### GRC: fractal risk registers (grc@php.newsroom)
 
@@ -214,9 +228,9 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - `data/grc-graph.json` is generated: every edge a verb with its inverse, joined to the same claim, source, fix and code nodes as the story graph and the code review graph. The build stops on any unknown reference or an ownerless risk.
 
-- Every risk reaches code and a team member; 30 of 34 reach a vulnerability (the four that do not are the newsroom's own agent risks, which reach this repository's code instead) and a role inside an organisation; 26 of 34 reach a story (the reporting-obligation risks and the newsroom's own have none yet, board 093).
+- Every risk reaches code and a team member; 30 of 34 reach a vulnerability (the four that do not are the newsroom's own agent risks, which reach this repository's code instead) and a role inside an organisation; 26 of 34 reach a story (the reporting-obligation risks and the newsroom's own have none yet, board 175).
 
-- Not built: acceptance (no holder has accepted anything; board 092), per-stakeholder ratings (one rating per risk), the network's material captured into a vault (board 095), a graph of ISO 27001, NIST CSF, DORA or SOC 2 anywhere in the network.
+- Not built: acceptance (no holder has accepted anything; board 174), per-stakeholder ratings (one rating per risk), the network's material captured into a vault (board 177), a graph of ISO 27001, NIST CSF, DORA or SOC 2 anywhere in the network.
 
 ### Collaborators (branch conductor/collaborators, conductor@php.newsroom)
 
@@ -228,7 +242,7 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 ### Runs (branch conductor/collaborators, conductor@php.newsroom)
 
-- `/team/runs/` from `data/schedules.json`: the three schedules the team runs (the source watch every 30 minutes, the fact-check desk every four hours, the synthetic readers hourly), each with how many runs fall in the quiet hours, computed from its schedule; and every recorded run, newest first, read from the release history, the source watch, the fact-check runs and the synthetic readers, with the article each run with changes should leave (matched by `run:` in an article's front matter).
+- `/team/runs/` from `data/schedules.json`: the schedules the team runs (the source watch every 30 minutes, the fact-check desk every four hours), each with how many runs fall in the quiet hours, computed from its schedule; and every recorded run, newest first, read from the release history, the source watch, the fact-check runs and the synthetic readers, with the article each run with changes should leave (matched by `run:` in an article's front matter).
 
 - The quiet hours (22:00 to 07:00 London) and the article rule are proposed, not applied: no schedule has been changed.
 
@@ -326,11 +340,21 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - "Last checked" in the header and on the front page is the newest of three times, each shown on the front page: the evidence vault's latest capture (still `data_as_of`, which the claims, articles and status.json are built from), the source watch's latest run (`data/source-watch.json`, re-exported at `20afaa62129d`) and the NCSC-NL inventory's latest change read (`data/inventory-history.json`). Before v0.10.6 it was the evidence vault's alone, which read as stale whenever the vault had not taken a capture for hours while the other two had moved.
 
-### The schedule vault (23 October 2026, conductor@php.newsroom)
+- `data/` re-exported from the evidence vault at `1845598d9a38` (295 sources, latest capture 16:04 UTC on 23 October). The journalist's state of affairs is at version 2 (`/views/state/v2/`), written against it; the front page's "Right now" and "Latest" are from the same export. The source watch's pack vault `7r83qic5` is not read yet (no read key in this desk's session).
+
+### Schedules, runs and messages in the repository (24 October 2026, conductor@php.newsroom)
+
+- Replaces the schedule vault (below, now an archive no longer written). `data/schedule/.json`: each scheduled agent's card (objective, status, wake times in London time, model, session, brief, each wake's steps, reads, writes, never, the wake prompt word for word). Three cards: curator and researcher (active; drafted by the conductor from their scheduled tasks, for them to confirm), conductor (active since 24 October: hourly 07:15 to 21:15 London, a Sonnet session woken by one scheduled task; commits only when something changed).
+
+- `data/runs//.json`, one per wake, and `data/messages//.md`, one per message, both written by `admin/build/schedule.py` (inbox, run, send; refuses key, token and sealed-link shapes). Six messages from the conductor (to all; curator; researcher; pulse; ontologist; librarian) and one run (this change, not a scheduled wake).
+
+- `/team/schedule/` is built from those files at release, no JavaScript: one day of every wake as an SVG (quiet hours shaded), the cards, the latest runs, the messages; a page per agent (`/team/schedule//`) with its instructions, runs, inbox and outbox. `/team/runs/` lists the runs too. `data/schedules.json` keeps the quiet hours, the article rule and who is still to write a card (pulse, ontologist, librarian). AGENTS.md section 7 and CLAUDE.md say so.
+
+### The schedule vault (23 October 2026, conductor@php.newsroom; retired 24 October 2026, kept as an archive)
 
 - A public vault, `weic8imn` (read key on `/vaults/` and `/team/schedule/`): `schedules/.json`, `tasks//queued|done|failed/T-NNN.json` (a brief, `not_before`, `due_by`, `repeat_until`), `runs///.json` (schema `sgit.newsroom.run/1`, with the log), `index.json`, and `tools/schedule.py` (due, start, finish, idle, queue, index; refuses key and token shapes). Seeded with four schedules (curator and researcher setting up, fact-check paused, synthetic readers paused pending removal), the curator's and the researcher's routine tasks (repeating until 31 October) and 42 runs already recorded elsewhere.
 
-- `/team/schedule/` reads the vault live in the browser with its read key (`assets/schedule/schedule.js`): schedules, tasks due and overdue, every run, a run's log on demand, by agent; tested in Chromium against the live vault.
+- Until 24 October, `/team/schedule/` read the vault live in the browser with its read key (`assets/schedule/schedule.js`, since removed): schedules, tasks due and overdue, every run, a run's log on demand, by agent; tested in Chromium against the live vault.
 
 - `AGENTS.md` section 7 and `CLAUDE.md`: every scheduled wake goes through the vault; no task due means one idle run and nothing else.
 
@@ -338,7 +362,13 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 ### Not built
 
+- A second fact-check desk on a different model; a review folder; a second model reading the vault; a Stripe link; tests beyond the gate.
+
 - A second fact-check desk on a different model; a review folder; a second model reading the vault; a fractal graph; a Stripe link; tests beyond the gate.
+
+- `/claims/review/`: every claim in the evidence vault's per-agent files that is not in the site's claim table (86 at `1845598d9a38`, 81 from the curator), each with the journalist's verdict from `data/claim-review.json` (used, agrees, held back, with the reason) or "not yet reviewed". A new export lists new claims there without anyone editing a page.
+
+- `/pulse/`: a separate section, not about PHP. The SGit newsroom's Pulse vault (`4klm5qlt`, pulse@newsroom), exported by `admin/build/export_pulse.py` into `data/pulse.json` (ladders, dates, attention counts, short quotes with their capture paths and hashes; no capture, no key), built by its own block at the end of `build.py`, one page per vulnerability (26). The PHP pages do not read it; the front page has one pointer, "What else is going on".
 
 ## The honest column
 
@@ -356,4 +386,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

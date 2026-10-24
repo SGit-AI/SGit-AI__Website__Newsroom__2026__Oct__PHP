@@ -408,22 +408,62 @@ def cmd_finish(a):
     persona = next(p for p in CFG['personas'] if p['id'] == a.persona[0])
     finish(a, persona, vault_dir(a, persona['id']), a.run, push=a.push)
 
+PAGE_METRICS = ('h1', 'words', 'screens', 'reading_ease', 'min_font_px', 'small_text_blocks', 'low_contrast_count', 'contrast_checked', 'tap_targets', 'tap_targets_small', 'overflow_x', 'images', 'images_no_alt', 'status')
+
+def clean(o):
+    # the site's gate refuses em-dashes in prose; a reviewer may still write one
+    return json.loads(json.dumps(o, ensure_ascii=False).replace('\u2014', ', '))
+
+def export_run(persona, d, run_id):
+    """One run as the site publishes it: the journey, per-page measurements, the checks and the review. No keys, no page bodies."""
+    rdir = os.path.join(d, 'runs', run_id)
+    run = json.load(open(os.path.join(rdir, 'run.json')))
+    pages = []
+    for j in run['journey']:
+        m = {}
+        if j.get('dir') and os.path.exists(os.path.join(rdir, j['dir'], 'metrics.json')):
+            m = json.load(open(os.path.join(rdir, j['dir'], 'metrics.json')))
+        pages.append({'n': j['n'], 'path': j['path'], 'why': j['why'], 'title': j.get('title'), 'error': j.get('error'),
+                      **{k: m.get(k) for k in PAGE_METRICS}, 'load_ms': (m.get('timing') or {}).get('load_ms'),
+                      'jargon_per_1000': (m.get('jargon') or {}).get('per_1000_words'), 'jargon_top': [k for k, _ in (m.get('jargon') or {}).get('top', [])[:5]]})
+    fp = os.path.join(rdir, 'feedback.json')
+    fb = json.load(open(fp)) if os.path.exists(fp) else None
+    return clean({'schema': 'sgit.newsroom.synthetic-run-export/1', 'persona': persona['id'], 'run': run_id, 'started': run['started'], 'finished': run['finished'],
+                  'site_version': run['site_state']['version'], 'data_as_of': run['site_state'].get('data_as_of'), 'device': run['device'], 'question': run['question'],
+                  'pages': pages, 'totals': run['totals'], 'checks': run['checks'], 'extra_viewports': run.get('extra_viewports', []), 'machine_formats': run.get('machine_formats', []),
+                  'feedback': fb})
+
 def cmd_summarise(a):
-    out = {'schema': 'sgit.newsroom.synthetic/1', 'about': CFG['about'], 'site': SITE, 'personas': []}
+    """Write data/synthetic.json (every reader, its latest run and its history) and data/synthetic-runs/<reader>/<run>.json
+    (every run in full), read from the vault clones. Never a key: the vault id is the only identifier written."""
+    out = {'schema': 'sgit.newsroom.synthetic/2', 'about': CFG['about'], 'site': SITE, 'personas': []}
+    rdir_out = os.path.join(os.path.dirname(os.path.abspath(a.out)), 'synthetic-runs')
     for persona in CFG['personas']:
         d = os.path.join(os.path.expanduser(a.vaults), f'synthetic-{persona["id"]}')
-        lp = os.path.join(d, 'latest.json')
-        l = json.load(open(lp)) if os.path.exists(lp) else {}
+        if not os.path.isdir(d): continue
         vid = None
         try: vid = re.search(r'Vault ID:\s+(\S+)', sg(['vault', 'info'], d)).group(1)
         except Exception: pass
-        hist = [json.loads(x) for x in open(os.path.join(d, 'history.jsonl'))] if os.path.exists(os.path.join(d, 'history.jsonl')) else []
-        out['personas'].append({'id': persona['id'], 'name': persona['name'], 'who': persona['who'], 'question': persona['question'], 'device': persona['viewport'], 'color_scheme': persona.get('color_scheme'),
-                                'vault_id': vid, 'runs': len(hist), 'latest': {k: v for k, v in l.items() if k not in ('schema', 'site_state')}})
-    # the site's gate refuses em-dashes in prose; a reviewer may still write one
-    out = json.loads(json.dumps(out, ensure_ascii=False).replace('\u2014', ', '))
-    wjson(a.out, out)
-    print(f'wrote {a.out}')
+        hist = []
+        for run_id in sorted(os.listdir(os.path.join(d, 'runs'))) if os.path.isdir(os.path.join(d, 'runs')) else []:
+            if not os.path.exists(os.path.join(d, 'runs', run_id, 'run.json')): continue
+            x = export_run(persona, d, run_id)
+            wjson(os.path.join(rdir_out, persona['id'], f'{run_id}.json'), x)
+            fb = x['feedback'] or {}
+            hist.append({'run': run_id, 'finished': x['finished'], 'site_version': x['site_version'], 'reviewed': bool(x['feedback']),
+                         'answered_question': fb.get('answered_question'), 'scores': fb.get('scores'), 'verdict': fb.get('verdict'),
+                         'checks': {s: sum(c['severity'] == s for c in x['checks']) for s in ('high', 'medium', 'low')},
+                         'fails': {s: sum(f['severity'] == s for f in fb.get('fails', [])) for s in ('high', 'medium', 'low')},
+                         'pages': len(x['pages'])})
+        hb = os.path.join(d, 'heartbeats.jsonl')
+        beats = [json.loads(l) for l in open(hb)] if os.path.exists(hb) else []
+        out['personas'].append({'id': persona['id'], 'name': persona['name'], 'who': persona['who'], 'question': persona['question'],
+                                'minutes': persona['minutes'], 'depth': persona['depth'], 'device': persona['viewport'], 'color_scheme': persona.get('color_scheme'),
+                                'also_viewports': [v['name'] for v in persona.get('also_viewports', [])] + (['dark'] if persona.get('also_dark') else []),
+                                'path': persona['path'], 'judges': persona['judges'], 'vault_id': vid, 'runs': hist,
+                                'heartbeats': len(beats), 'last_heartbeat': beats[-1]['t'] if beats else None})
+    wjson(a.out, clean(out))
+    print(f'wrote {a.out} and {rdir_out}/')
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)

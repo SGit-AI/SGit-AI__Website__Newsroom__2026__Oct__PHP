@@ -708,3 +708,11 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1
 .ba-note p{margin:.2rem 0 .6rem}
 pre.diff{font:12.5px/1.55 var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.7rem .9rem;overflow-x:auto;white-space:pre}
 pre.diff .d-add{display:block;background:var(--ok-bg);color:var(--ok-ink)}pre.diff .d-del{display:block;background:var(--bad-bg);color:var(--bad-ink)}pre.diff .d-ctx{display:block;color:var(--dim)}
+/* Elsewhere: the separate Pulse section (pulse/), kept apart from the PHP pages */
+.o-elsewhere{border-left:4px solid var(--dim);border-style:dotted solid dotted solid}
+table.pulse td.pr{text-align:center;font-size:.78rem;white-space:nowrap}
+table.pulse td.pr-yes{background:color-mix(in srgb,var(--accent,#0f6e5a) 18%,transparent);font-weight:600}
+table.pulse th{text-align:center}
+blockquote.tp{margin:.35rem 0;padding:.3rem .7rem;border-left:3px dashed var(--line);color:var(--ink,inherit)}
+ul.pev{padding-left:1.1rem}
+ul.pev li{margin:.5rem 0}

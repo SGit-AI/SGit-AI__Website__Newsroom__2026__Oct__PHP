@@ -702,26 +702,48 @@
   {
    "id": "cartographer",
    "name": "Cartographer",
-   "kind": "role",
+   "kind": "agent",
    "group": "writing",
    "alias": "@Cartographer",
    "mail": "cartographer",
-   "role": "The graph",
-   "status": "unfilled",
-   "summary": "Sources, claims, events, actors and the edges between them; the JSON every page is drawn from.",
+   "role": "The graph, its ontology, and the component that draws it",
+   "status": "active",
+   "summary": "cartographer@php.newsroom, the newsroom's ontologist. Keeps the story graph and its grammar: the kinds of node, the verbs with their inverses, the taxonomies, and one node per party whatever a page calls it. Makes regular passes over every data file to connect, prune and resolve, aligned to the estate's grammar on graphs.sgit.ai. Keeps <sg-graph>, the component every agent uses to put a graph on a page.",
    "owns": [
-    "data/graph.json and the graph pages"
+    "data/ontology.json, data/entities.json, data/attribution.json, data/crosswalk.json",
+    "data/graph.json and the graph pages (/graph/, /graph/parties/, /graph/component/)",
+    "assets/components/sg-graph/ and sg_graph() in the build",
+    "admin/cartographer/: the runbook, the pass and its records"
    ],
    "rules": [
-    "A node is just a node. Meaning lives in the edges; an edge without a source is deleted."
+    "A node is just a node. Meaning lives in the edges; an edge without a source is deleted.",
+    "Every edge is a verb with a different, named inverse; no generic association edge, no self-inverse edge.",
+    "Assert only what the data shows: a cited source is evidence, not a relay.",
+    "Weight by independence, not by count.",
+    "Render the result of a query, never the whole graph."
    ],
    "home": [
     [
      "graph/index.html",
      "The graph"
+    ],
+    [
+     "graph/parties/index.html",
+     "Every party"
+    ],
+    [
+     "graph/component/index.html",
+     "The graph component"
+    ],
+    [
+     "team/schedule/cartographer/index.html",
+     "Its schedule"
     ]
    ],
-   "achieved": []
+   "achieved": [
+    "22 October: the ontology (12 kinds, 14 verbs with inverses, two taxonomies, four formulas) aligned to graphs.sgit.ai; 113 parties resolved from every publisher spelling and every free-text attribution; the story graph rebuilt from 209 nodes and one verb to 614 nodes and 1178 edges in 14 verbs, with independent origins and relays per claim; <sg-graph> v1.0.0 with four views, path-finding and fractal zoom into the code-review graph; the review graph's eight broken area edges repaired",
+    "24 October, pass 1: dev taken in twice (v0.10.18, v0.10.22; sources 144 to 295); 143 new publisher spellings resolved (243 parties); syndication as a verb (9 wire copies); the crosswalk to the code-review and risk graphs; the graph at 1048 nodes and 1516 edges in 15 verbs; the component and build fixed from an independent review; the pass as a tool; a daily schedule proposed (data/schedule/cartographer.json); twelve pages recorded twice handed to the collectors (board 187); the next layer, the researcher's compromise evidence and the vault's own claims, on the cartographer's list (188, 190)"
+   ]
   },
   {
    "id": "verifier",
