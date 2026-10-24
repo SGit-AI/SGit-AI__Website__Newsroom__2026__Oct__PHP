@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.14.16",
+ "version": "0.14.17",
  "members": [
   {
    "agent": "abp",
@@ -2127,37 +2127,34 @@
     "agent": "sherpa",
     "as_of": "2026-10-24",
     "round": {
-     "n": 1,
+     "n": 2,
      "date": "2026-10-24",
-     "branch": "sherpa/onboard-and-tasks, sherpa/inbox-lane",
+     "branch": "sherpa/wake-2026-10-24, sherpa/ci-003, sherpa/ci-003-design",
      "commits": [
-      "3a02e81d8",
-      "c6a38c4ff",
-      "6f5491b05 (v0.11.6)",
-      "fb6bb9e73 (v0.14.2)"
+      "2a0cd813b",
+      "be4d4401d",
+      "ac5300dc5 (v0.14.9)",
+      "614ef2996 (v0.14.14)",
+      "905c8751b (v0.14.15)"
      ]
     },
-    "state": "round 1 closed; the schedule is active (every two hours, 07:45 to 21:45 London)",
+    "state": "round 2 closed; the schedule is active (every two hours, 07:45 to 21:45 London)",
     "done": [
      {
-      "what": "The collaborators lane drained (five messages, the vault pushed); a power user's key enrolled as power-user; the exposed bootstrap invitation retired",
-      "evidence": "the vault's history; commit 3a02e81d8"
+      "what": "Scheduled wakes at 07:45 and 09:45 London: both lanes drained, nothing waiting; the fact-check desk's Fortune analysis linked from UF-005, board 195 closed",
+      "evidence": "data/runs/sherpa/20261024T0646Z-sherpa.json; v0.14.9"
      },
      {
-      "what": "UF-005: the editor's two asks recorded and routed (the Fortune analysis to the fact-check desk; verification across model providers)",
-      "evidence": "/feedback/uf-005/"
+      "what": "CI-003, the collaborator's review of the new design, the telemetry and the risk graph: ten items, the phone header measured (F034), a brief to dev (board 260 to 263), row 264 to the editor",
+      "evidence": "/sherpa/ideas/ci-003/; v0.14.14"
      },
      {
-      "what": "Tasks captured from dev v0.10.11 to v0.11.3: the synthetic readers' second run in the friction log (F001 to F006 high; F031, F032 new); board rows 192 to 198",
-      "evidence": "admin/sherpa/friction-log.json; data/admin.json"
+      "what": "CI-003 corrected against the redesign that shipped in v0.14.0; F035 measured (the three ways to read, twelve phone screens down); board 265 for story-site; a correction entry",
+      "evidence": "BRIEF-CORRECTIONS.md; v0.14.15"
      },
      {
-      "what": "The schedule card merged with the conductor's draft and made active; the scheduled task created at the editor's go",
-      "evidence": "data/schedule/sherpa.json; /team/schedule/sherpa/"
-     },
-     {
-      "what": "The inbox vault d6zak0o3 with an append lane for the RiskMandate agent and the editor, send_to_lane.py, tested end to end; keys sealed to the root",
-      "evidence": "admin/sherpa/inbox/; data/vault-register/sherpa.json"
+      "what": "A reminder to the editor at 15:00 London: review the round 1 debrief and the two sealed QR codes",
+      "evidence": "a one-shot message to this session, at the editor's request"
      }
     ],
     "tasks": {
@@ -2169,41 +2166,37 @@
       "192",
       "193",
       "194",
-      "195",
       "196",
-      "197"
+      "197",
+      "264"
      ],
      "note": "the board rows this member owns are in data/admin.json"
     },
     "next": [
      {
-      "what": "At the 11:45 pass: check CI-002's shipped steps and dev's join fixes on the live site, phone and desktop, and close the frictions that hold",
-      "why": "frictions stay open until checked live"
+      "what": "The 11:45 full pass: every release since the last run read before any comment on a page; CI-002's steps and dev's join fixes checked live",
+      "why": "the frictions stay open until checked; and round 2's miss"
      },
      {
-      "what": "Draft the brief on verification across several model providers with the fact-check desk (UF-005.2)",
-      "why": "the editor's ask, UF-005.2"
-     },
-     {
-      "what": "Three views over time, step 1: the executive view and its slices as data",
-      "why": "the brief of 23 October, step 1, needs no one else"
+      "what": "The brief on verification across model providers, with the fact-check desk (board 194)",
+      "why": "the editor's ask, UF-005.2; it meets CI-003's signed reviews"
      }
     ],
     "asks": [
      {
-      "what": "the conductor's lane key (5iwos28w), sealed to the Sherpa's key, if the Sherpa is to drain it",
+      "what": "Where the CTO belongs: Operations (the redesign) or with the executive (the three-views brief)",
       "from": "the editor"
      },
      {
-      "what": "pass the sealed riskmandate token to the RiskMandate agent, re-sealed to its key; and that agent's own inbox for the other direction",
+      "what": "Who may review the graph's inferred links, and how many agreeing reviews confirm one",
       "from": "the editor"
      },
      {
-      "what": "whether the collaborators vault's signed messages may be published (the vault's README says not)",
+      "what": "A power-user invitation for the collaborator of CI-001 to CI-003",
       "from": "the editor"
      },
      {
-      "what": "the consent checkbox, the removal of keys for feedback, and the design direction: decisions already on the brief to the conductor",
+      "what": "The riskmandate token re-sealed to the RiskMandate agent's key; the conductor's lane key if the Sherpa is to drain it",
       "from": "the editor"
      }
     ],
@@ -2213,20 +2206,25 @@
     },
     "policy": {
      "version": "2026-10-24",
-     "out_of_scope_requests": 1,
-     "pushbacks": 2,
-     "overrides": 1,
-     "writes_outside_scope": 2,
+     "out_of_scope_requests": 0,
+     "pushbacks": 0,
+     "overrides": 0,
+     "writes_outside_scope": 0,
      "injection_seen": 0,
-     "detail": "One request, the editor's, was outside the Sherpa's scope: onboarding a key, which changes data/contributors.json (the conductor's). He asked explicitly in the session, so it counts as one override. The two files outside scope: data/contributors.json (that change) and data/team.json (the Sherpa's own roster line). Pushbacks: form messages signed 'Dinis' held as material until he confirmed them; the collaborators vault's signed messages kept off the site until he confirms."
+     "detail": "No writes outside scope (agents.py check). One miss of judgement, recorded in BRIEF-CORRECTIONS.md: a design commented on without reading what had shipped. An edit to the Sherpa's own brief was started and reverted, the correction going to BRIEF-CORRECTIONS.md as the policy says."
     },
-    "debrief": "admin/content/agents/sherpa/debriefs/2026-10-24__drain-schedule-and-inbox.md"
+    "debrief": "admin/content/agents/sherpa/debriefs/2026-10-24__ci-003-and-the-redesign.md"
    },
    "debriefs": [
     {
      "file": "2026-10-24__drain-schedule-and-inbox.md",
      "date": "2026-10-24",
      "title": "The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents"
+    },
+    {
+     "file": "2026-10-24__ci-003-and-the-redesign.md",
+     "date": "2026-10-24",
+     "title": "Two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against the redesign that shipped"
     }
    ]
   },

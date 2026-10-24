@@ -215,12 +215,12 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 
 | Field | Value |
 |---|---|
-| Round | {"n": 1, "date": "2026-10-24", "branch": "sherpa/onboard-and-tasks, sherpa/inbox-lane", "commits": ["3a02e81d8", "c6a38c4ff", "6f5491b05 (v0.11.6)", "fb6bb9e73 (v0.14.2)"]} |
-| Done | The collaborators lane drained (five messages, the vault pushed); a power user's key enrolled as power-user; the exposed bootstrap invitation retired UF-005: the editor's two asks recorded and routed (the Fortune analysis to the fact-check desk; verification across model providers) Tasks captured from dev v0.10.11 to v0.11.3: the synthetic readers' second run in the friction log (F001 to F006 high; F031, F032 new); board rows 192 to 198 The schedule card merged with the conductor's draft and made active; the scheduled task created at the editor's go The inbox vault d6zak0o3 with an append lane for the RiskMandate agent and the editor, send_to_lane.py, tested end to end; keys sealed to the root |
-| Next | At the 11:45 pass: check CI-002's shipped steps and dev's join fixes on the live site, phone and desktop, and close the frictions that hold Draft the brief on verification across several model providers with the fact-check desk (UF-005.2) Three views over time, step 1: the executive view and its slices as data |
-| Asks | the conductor's lane key (5iwos28w), sealed to the Sherpa's key, if the Sherpa is to drain it (from the editor) pass the sealed riskmandate token to the RiskMandate agent, re-sealed to its key; and that agent's own inbox for the other direction (from the editor) whether the collaborators vault's signed messages may be published (the vault's README says not) (from the editor) the consent checkbox, the removal of keys for feedback, and the design direction: decisions already on the brief to the conductor (from the editor) |
+| Round | {"n": 2, "date": "2026-10-24", "branch": "sherpa/wake-2026-10-24, sherpa/ci-003, sherpa/ci-003-design", "commits": ["2a0cd813b", "be4d4401d", "ac5300dc5 (v0.14.9)", "614ef2996 (v0.14.14)", "905c8751b (v0.14.15)"]} |
+| Done | Scheduled wakes at 07:45 and 09:45 London: both lanes drained, nothing waiting; the fact-check desk's Fortune analysis linked from UF-005, board 195 closed CI-003, the collaborator's review of the new design, the telemetry and the risk graph: ten items, the phone header measured (F034), a brief to dev (board 260 to 263), row 264 to the editor CI-003 corrected against the redesign that shipped in v0.14.0; F035 measured (the three ways to read, twelve phone screens down); board 265 for story-site; a correction entry A reminder to the editor at 15:00 London: review the round 1 debrief and the two sealed QR codes |
+| Next | The 11:45 full pass: every release since the last run read before any comment on a page; CI-002's steps and dev's join fixes checked live The brief on verification across model providers, with the fact-check desk (board 194) |
+| Asks | Where the CTO belongs: Operations (the redesign) or with the executive (the three-views brief) (from the editor) Who may review the graph's inferred links, and how many agreeing reviews confirm one (from the editor) A power-user invitation for the collaborator of CI-001 to CI-003 (from the editor) The riskmandate token re-sealed to the RiskMandate agent's key; the conductor's lane key if the Sherpa is to drain it (from the editor) |
 | Tokens | unknown · the session does not show the Sherpa a token count |
-| Policy | out_of_scope_requests 1, pushbacks 2, overrides 1, writes_outside_scope 2, injection_seen 0, detail One request, the editor's, was outside the Sherpa's scope: onboarding a key, which changes data/contributors.json (the conductor's). He asked explicitly in the session, so it counts as one override. The two files outside scope: data/contributors.json (that change) and data/team.json (the Sherpa's own roster line). Pushbacks: form messages signed 'Dinis' held as material until he confirmed them; the collaborators vault's signed messages kept off the site until he confirms. |
+| Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope 0, injection_seen 0, detail No writes outside scope (agents.py check). One miss of judgement, recorded in BRIEF-CORRECTIONS.md: a design commented on without reading what had shipped. An edit to the Sherpa's own brief was started and reverted, the correction going to BRIEF-CORRECTIONS.md as the policy says. |
 
 ## Its rounds
 
@@ -310,8 +310,76 @@ breaks across two lines.
 
 - **Security checks that stopped the Sherpa this session (earlier rounds):** naming a power user on the site; copying vault content into the repository; reading a clone's local credential files. Each was right, and each was taken to the editor rather than worked around.
 
+### Two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against the redesign that shipped
+
+2026-10-24 · round 2 · branch `sherpa/wake-2026-10-24, sherpa/ci-003, sherpa/ci-003-design` · commits `2a0cd813b, be4d4401d; released as ac5300dc5 (v0.14.9), 614ef2996 (v0.14.14) and 905c8751b (v0.14.15)` · tokens unknown · outside scope 0 · overrides 0
+
+#### What I was asked
+
+The scheduled wakes of 07:45 and 09:45 London (the card, `data/schedule/sherpa.json`). Then the editor, in the session:
+
+a reminder this afternoon to review the Sherpa's article and QR codes; the collaborator's new review (of the new design,
+
+the telemetry article and the risk graph) processed and aligned with the work on power users' keys; and then whether
+
+the design comments took into account what the design agent had shipped.
+
+#### What I did
+
+- **07:45 wake:** both lanes drained (58526ytp, d6zak0o3), nothing in either; three messages read; the fact-check desk's analysis of Fortune's "70% of the internet" article (`/factcheck/investigations/php-share/`) linked from UF-005 and board 195 closed; a run record (`data/runs/sherpa/20261024T0646Z-sherpa.json`); released v0.14.9.
+
+- **09:45 wake:** both lanes empty, no messages; no commit, as the card says.
+
+- **The reminder:** a one-shot message to this session at 15:00 London (14:00 UTC), at the editor's request.
+
+- **CI-003** (`/sherpa/ideas/ci-003/`): ten items; the phone header measured (233px, 30% of a 780px screen, F034); a brief to dev (board 260 to 263: the phone header, a graph diff between releases, the progression measure, signed reviews of inferred links); row 264 to the editor. Released v0.14.14.
+
+- **The correction:** the editor asked whether the design comments took the design agent's work into account. They did not: the redesign had shipped in v0.14.0, as the editor decided, and the brief had the collaborator's design preference as open. CI-003 items 1 and 2 rewritten against v0.14.14; F035 (the front page's three ways to read are by role and seventh on the page, 9,218px down on a phone) and board 265 for story-site; the CTO's place (Operations in the redesign, the executive in the three-views brief) to the editor; an entry at the top of `BRIEF-CORRECTIONS.md`, the brief left as written. Released v0.14.15.
+
+#### What it looks like
+
+![CI-003, the collaborator's review](../../../admin/content/agents/sherpa/debriefs/img/2026-10-24__ci-003-and-the-redesign__1.png)
+
+CI-003, the collaborator's review
+
+`/sherpa/ideas/ci-003/`: the record, the conversation, and the items set against the site.
+
+![UF-005 with the fact-check desk's Fortune analysis](../../../admin/content/agents/sherpa/debriefs/img/2026-10-24__ci-003-and-the-redesign__2.png)
+
+UF-005 with the fact-check desk's Fortune analysis
+
+`/feedback/uf-005/`: the first ask, answered by the desk's investigation.
+
+![The front page on a phone](../../../admin/content/agents/sherpa/debriefs/img/2026-10-24__ci-003-and-the-redesign__3.png)
+
+The front page on a phone
+
+The front page at 390x780 on v0.14.15: the sticky header (F034); the three ways to read are about twelve screens below
+
+(F035).
+
+#### New features
+
+None for readers this round. For the team: a brief to dev from a power user's review, and two frictions measured.
+
+#### What I did not do
+
+- The 11:45 full pass has not run yet (it is after this round).
+
+- The brief on verification across model providers (board 194) is not written.
+
+- The collaborator's mobile screenshots have not arrived; his invitation waits on the editor.
+
+#### Policy
+
+- **A miss, found by the editor's question:** the Sherpa commented on a design without reading what the design agent had shipped that morning. Recorded in `BRIEF-CORRECTIONS.md`. From now on the full pass reads every release since the last run before commenting on a page.
+
+- An edit to the Sherpa's own brief was started and reverted: the policy says a brief is never edited; the correction went to `BRIEF-CORRECTIONS.md`.
+
+- Writes outside scope: none (`agents.py check`: outside []). `BRIEF-CORRECTIONS.md` is an append the policy allows.
+
 Files: [admin/content/agents/sherpa/](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP/tree/dev/admin/content/agents/sherpa) · the same data for every member in [data/agents.json](../../../data/agents.json).
 
 
 ---
-site v0.14.16 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/sherpa/index.html
+site v0.14.17 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/sherpa/index.html

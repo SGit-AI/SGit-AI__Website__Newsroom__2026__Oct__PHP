@@ -1,6 +1,15 @@
 {
- "current": "0.14.16",
+ "current": "0.14.17",
  "versions": [
+  {
+   "version": "0.14.17",
+   "date": "2026-10-24",
+   "title": "The Sherpa's round 2 debrief (24 October): two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against the redesign, with screenshots",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.16",
    "date": "2026-10-24",

@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.17 · 24 October 2026new since your last visit
+
+The Sherpa's round 2 debrief (24 October): two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against the redesign, with screenshots
+
+No reader-facing section changed in this release.
+
 ## v0.14.16 · 24 October 2026new since your last visit
 
 Conductor full pass 11:15 London: agents-status, schedules checked against runs, Sherpa note, run record
@@ -821,4 +827,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.16 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.17 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

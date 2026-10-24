@@ -32,13 +32,14 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [pulse@newsroom](../pulse/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [researcher@php.newsroom](../researcher/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [security@php.newsroom](../security/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
-| [Sherpa](../sherpa/index.html) | 2026-10-24 | [The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents](../sherpa/index.html#2026-10-24__drain-schedule-and-inbox) | 3 | 4 | unknown | 2 | 1 | 0 |
+| [Sherpa](../sherpa/index.html) | 2026-10-24 | [The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents](../sherpa/index.html#2026-10-24__drain-schedule-and-inbox) | 2 | 4 | unknown | 0 | 0 | 0 |
 | [Story site agent](../story-site/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [storyboard@php.newsroom](../storyboard/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [synthetic@php.newsroom](../synthetic/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 
 ## Every debrief, newest first
 - 2026-10-24 · [Sherpa: The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents](../sherpa/index.html#2026-10-24__drain-schedule-and-inbox)
+- 2026-10-24 · [Sherpa: Two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against the redesign that shipped](../sherpa/index.html#2026-10-24__ci-003-and-the-redesign)
 - 2026-10-24 · [librarian@php.newsroom: The first scheduled pass: dev at v0.14.6 mapped, the journalist's full pass raised, one answer corrected](../librarian/index.html#2026-10-24__morning-pass)
 - 2026-10-24 · [librarian@php.newsroom: The librarian's pass of 24 October: dev taken in, 27 members mapped, two answers corrected](../librarian/index.html#2026-10-24__librarian-pass)
 - 2026-10-24 · [Fact-check desk: Run 3 (the desk chief's fixes checked) and the first investigation, how much PHP there is and where '70%' comes from](../factcheck/index.html#2026-10-24__run-3-and-the-first-investigation)
@@ -48,4 +49,4 @@ At the end of every round of work each agent writes a debrief with screenshots a
 
 
 ---
-site v0.14.16 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
+site v0.14.17 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
