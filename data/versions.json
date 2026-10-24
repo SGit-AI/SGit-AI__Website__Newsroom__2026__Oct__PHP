@@ -1,6 +1,15 @@
 {
- "current": "0.14.2",
+ "current": "0.14.3",
  "versions": [
+  {
+   "version": "0.14.3",
+   "date": "2026-10-24",
+   "title": "pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gate's first-build determinism failure fixed (design.py read items.json one build late, board 175)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.2",
    "date": "2026-10-24",
