@@ -33,7 +33,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:23 UTC. The scale is on
 - 2026-10-22THN publishes [Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed](../../sources/thehackernews-php2shell-4days/index.html)
 - 2026-10-22SecurityWeek publishes [PHP2Shell Exploitation Started Days Before Patches - SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html)
 - 2026-10-22 08:13 UTCSaved into the evidence vault: THN
-- 2026-10-22 11:23 UTCSaved into the evidence vault: SecurityWeek
+- 2026-10-22 11:23 UTCSaved into the evidence vault: SecurityWeek, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
 - 2026-10-22Reworded or re-sourced in v0.2.0 (reconstructed from git)
 
@@ -60,4 +60,4 @@ v2 · site v0.2.0 · 22 October 2026 · reportedPHP is exposed on 2,608,039about
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-2.6m-hosts/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-2.6m-hosts/index.html

@@ -10,6 +10,8 @@ Because the Dutch, Finnish and Latvian governments restricted or switched off th
 
 Because the Dutch, Finnish and Latvian governments restricted or switched off their own web services as a precaution, citizens lost access to identity, tax and emergency information, resulting in harm to people who needed them that day.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r04-1) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 5 Happening · **Impact** 4 Major · **Kind** Operational · **Acceptance** not recorded
 
 **Basis.** Confirmed in the Netherlands and Latvia; reported in Finland.
@@ -61,4 +63,4 @@ On this site: [Impact: taken offline versus compromised](../../../impact/index.h
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04-1/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04-1/index.html

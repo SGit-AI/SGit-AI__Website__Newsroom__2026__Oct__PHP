@@ -10,6 +10,8 @@ Because code execution on PHP-FPM is disputed between the sources, an operator m
 
 Because code execution on PHP-FPM is disputed between the sources, an operator may deprioritise FPM servers or exhaust itself on them, resulting in either exposure left open or effort misplaced.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r01-2) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 3 Possible · **Impact** 4 Major · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** The claim is disputed; the update is the same either way, so the risk is in the prioritisation.
@@ -58,4 +60,4 @@ On this site: [Affected systems: versions, deployments, applications, inventory]
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-2/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-2/index.html

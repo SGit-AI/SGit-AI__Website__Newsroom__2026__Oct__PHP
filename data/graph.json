@@ -1,7 +1,7 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.8.1",
- "vault_commit": "200d08971937",
+ "version": "0.10.19",
+ "vault_commit": "1845598d9a38",
  "nodes": [
   {
    "id": "claim:two-cves-9.2",

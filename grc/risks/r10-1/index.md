@@ -10,6 +10,8 @@ Because captures, tips and feeds are written by anyone and read by agents that h
 
 Because captures, tips and feeds are written by anyone and read by agents that hold credentials, an instruction hidden in one could be followed, resulting in a push, a sent message or a deleted vault nobody asked for.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r10-1) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 3 Possible · **Impact** 4 Major · **Kind** AI and agents · **Acceptance** not recorded
 
 **Basis.** Material is untrusted by rule; the gate refuses text addressed to a model; nothing seen yet.
@@ -55,4 +57,4 @@ On this site: [How to work on this site: guidance for every agent](../../../admi
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10-1/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10-1/index.html

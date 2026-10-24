@@ -19,7 +19,7 @@ The BBC carries it only as 'Researchers say', unnamed and second hand (A1). The 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
 | [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | carries | *Researchers say the criminals themselves are using AI to 'vibe code' a method of attack.* | c88b8c5f4c6bc07d |
-| therecord-php-warnings (in the vault, not yet on this site) | partial | *observing in-the-wild exploitation of the vulnerabilities with a variety of proof-of-concept tools vibecoded with the help of AI.* | 39efe473da414c01 |
+| [therecord-php-warnings](../../sources/therecord-php-warnings/index.html) | partial | *observing in-the-wild exploitation of the vulnerabilities with a variety of proof-of-concept tools vibecoded with the help of AI.* | 39efe473da414c01 |
 
 Open tickets: [Finding-108](../../factcheck/index.html#Finding-108).
 
@@ -52,4 +52,4 @@ Sources: bbc-live-ckgel5xp2xv9t
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/vibe-code/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/vibe-code/index.html

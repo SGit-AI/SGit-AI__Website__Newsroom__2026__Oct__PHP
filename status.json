@@ -9,12 +9,12 @@
   "CVE-2026-109619"
  ],
  "status": "developing",
- "version": "0.8.1",
- "data_as_of": "2026-10-22T11:34Z",
- "vault_commit": "200d08971937",
+ "version": "0.10.19",
+ "data_as_of": "2026-10-23T16:04Z",
+ "vault_commit": "1845598d9a38",
  "counts": {
-  "sources": 144,
-  "captures": 137,
+  "sources": 295,
+  "captures": 290,
   "claims": 70,
   "claims_by_status": {
    "confirmed": 21,
@@ -72,9 +72,9 @@
   }
  ],
  "latest_story": {
-  "title": "Why can't every version of PHP just be patched?",
-  "url": "https://php.oct.2026.newsroom.sgit.ai/articles/why-not-patch-every-version/index.html",
-  "written": "2026-10-22",
+  "title": "What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list",
+  "url": "https://php.oct.2026.newsroom.sgit.ai/articles/what-changed-in-a-day/index.html",
+  "written": "2026-10-23",
   "origin": "house"
  },
  "links": {

@@ -1,22 +1,24 @@
 {
  "head": {
-  "commit": "200d08971937",
-  "subject": "claude-story-site: 86 sources (AWS, Cloudflare CEO, Imperva, Fastly, Akamai, Huntress, Weird Gloop, Rijksoverheid, Finland, UK councils, detection rule sets, The Register on Chainguard, ten historical CVE records, Wikipedia comparators), the php-src fix commit patches with hashes, rebuilt index  +655 ~8  [blobs:+663 trees:+241]",
-  "commits": 12
+  "commit": "1845598d9a38",
+  "subject": "curator@php.newsroom: promote 18 more sources from the source watch's pack copy (7r83qic5), the last of priority 3 (mechanical selection, each read): Nguoi Quan Sat, Notebookcheck.it, Paperjam, QA Financial, la Repubblica, Security Measures Lab, Security.NL, shattered.io, Shin-A Ilbo, SiliconANGLE, SOCRadar, Everyeye, Techaeris, TechTarget Japan, The420, The Star, Trak.in, ZATAZ; 13 claims, 2 flagged for the ledger (Japan PM order, 22m servers); slugs in notes/promotions__curator.json  +133 ~3  [blobs:+136 trees:+54]",
+  "commits": 21
  },
- "sources": 144,
- "captures": 137,
- "hashed_files": 857,
- "primary": 73,
- "blocked": 10,
+ "sources": 295,
+ "captures": 290,
+ "hashed_files": 1761,
+ "primary": 89,
+ "blocked": 15,
  "agents": [
   "claude-newsroom-lead",
   "claude-story-site",
   "collector-gov",
+  "collector-news",
   "collector-primary",
-  "collector-researchers"
+  "collector-researchers",
+  "curator@php.newsroom"
  ],
  "opened": "2026-10-22T08:03Z",
- "latest_capture": "2026-10-22T11:34Z",
+ "latest_capture": "2026-10-23T16:04Z",
  "note": "The captures are third-party pages kept privately for the record and are not published. Only their hashes are."
 }

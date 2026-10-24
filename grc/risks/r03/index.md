@@ -10,6 +10,8 @@ Because probing began before disclosure and the last PHP core flaw was exploited
 
 Because probing began before disclosure and the last PHP core flaw was exploited in the wild a day after its release, attackers may reach unpatched servers faster than operators can update them, resulting in compromises in the window between release and patch.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r03) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 4 Likely · **Impact** 5 Severe · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Probing confirmed; the 2024 precedent was exploited within a day; KEV has not listed php2shell.
@@ -80,4 +82,4 @@ On this site: [Exploitation signals, in order](../../../exploitation/index.html)
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03/index.html

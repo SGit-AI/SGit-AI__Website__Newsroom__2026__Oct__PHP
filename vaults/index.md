@@ -6,13 +6,13 @@ Every vault this site is built from: the evidence vault and the source watch, bo
 
 # The vaults behind this site
 
-This site is rebuilt from vaults, never written by hand. 11 vaults sit behind it. Two are public and open read-only in your browser with the keys below; two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
+This site is rebuilt from vaults, never written by hand. 13 vaults sit behind it. Three are public and open read-only in your browser with the keys below (the evidence, the source watch, and the public face of the telemetry, its curated counts); two are private and receive through write-only lanes, one the site's anonymous telemetry, one subscription requests; one is private and is an application only, the telemetry app, versioned in its own vault, which the telemetry vault links inside itself and opens as its dashboard (an earlier dashboard vault, linked the other way round, is superseded); one is private and never published, because it holds other people's pages; and three are the team's own, private, through which [the team talks](../team/channels/index.html): the conductor vault, the issues and the mail. Every vault is encrypted in the client; the server that stores it holds ciphertext and nothing else.
 
 Every vault behind this site: what each holds, who writes to it, and how to open it. Three kinds of credential appear here. A vault key reads and writes; it is never published. A read key reads only and cannot be turned into a vault key; the two public vaults publish theirs. An append token adds rows to one lane and cannot read anything; the telemetry lane publishes its token so every page can write to it.
 
 ## [The evidence vault](../admin/vault/index.html) public read
 
-**Vault** `3ytzxm3g` · 144 sources, 137 captures, 857 hashed files; head `200d08971937` · opens in its own app
+**Vault** `3ytzxm3g` · 295 sources, 290 captures, 1761 hashed files; head `1845598d9a38` · opens in its own app
 
 The story as it was assembled on the morning of 22 October 2026: every source as a folder with its capture (text, screenshot, HTML, headers, sha256 of each), the claims and the dated events each agent extracted, the editor's memos and the agents' notes. Its own app explores them.
 
@@ -24,7 +24,7 @@ The story as it was assembled on the morning of 22 October 2026: every source as
 
 ## [The source watch](../vaults/source-watch/index.html) public read
 
-**Vault** `oq9gflln` · 328 pages from 175 publishers in 38 countries and 32 languages; 440 snapshots, 3 runs; head `9ba748ac18aa`
+**Vault** `oq9gflln` · 913 pages from 597 publishers in 59 countries and 34 languages; 2946 snapshots, 38 runs; head `20afaa62129d`
 
 Every outside source on the story, watched on a schedule: country, sector, publisher and page; what access each check had; a snapshot whenever the content changed; and every snapshot and every change as a graph. The evidence vault's 184 sources were its first snapshots.
 
@@ -43,6 +43,18 @@ One anonymous event per page view (page, referrer host, country, region and city
 **Written by** every page of this site, through the write-only lane; dev@php.newsroom drains it. Data on this site: [data/telemetry.json](../data/telemetry.json).
 
 **Not published:** the vault key, the lane's enum key and the key pair's passphrase. **Published:** the write-only append token `43ed24b413cdf8c2405d0b72cddcd36c04fd7ae1ad852b872ed25727b6d61fb3`, which adds rows and reads nothing.
+
+## [The public telemetry stats](../admin/telemetry/index.html) public read
+
+**Vault** `0cfkdcvh` · written by admin/build/telemetry_publish.py from the telemetry vault (84wr8mib) at every drain; its own app · opens in its own app
+
+The curated, public view of the telemetry: page views and sessions per hour and per day for readers, for the editor, team and power users, for synthetic visitors and for crawlers; and, over readers only, countries (with a world map), devices, languages, site versions, pages and referrer hosts. Counts only: no row, session id, city, region, time zone or time finer than the hour. Written at every drain.
+
+**Written by** dev@php.newsroom, at every drain (admin/build/telemetry_flow.sh). Data on this site: [data/telemetry-public.json](../data/telemetry-public.json).
+
+**Read key** `sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800:0cfkdcvh`
+
+[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800%3A0cfkdcvh) · `sgit clone sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800:0cfkdcvh`
 
 ## [The subscriptions vault](../subscribe/index.html) private, with a public append lane
 
@@ -124,8 +136,20 @@ What the collaborators send from /collaborators/: requests to join (a name, an e
 
 **Not published:** the vault key, the lane's enum key and the key pair's passphrase. **Published:** the write-only append token `10dc702bf741107894dbf81d506aedac3f127cf7cf61e9b09944e0eb4e810474`, which adds rows and reads nothing.
 
+## [The schedule vault](../team/schedule/index.html) public read
+
+**Vault** `weic8imn` ·
+
+Every scheduled agent's schedule, its queued tasks and every run with its log: the control panel for what the team runs on its own.
+
+**Written by** each scheduled agent, its own runs; the editor's session and the conductor queue tasks. Data on this site: [data/schedule-vault.json](../data/schedule-vault.json).
+
+**Read key** `sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06:weic8imn`
+
+[Open read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06%3Aweic8imn) · `sgit clone sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06:weic8imn`
+
 The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgit.ai network, published the same way, are at [sgit.ai's vaults](https://sgit.ai/demos/vaults/index.html).
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html

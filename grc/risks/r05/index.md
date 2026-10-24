@@ -10,6 +10,8 @@ Because edge rules went live hours before disclosure and covered most traffic, a
 
 Because edge rules went live hours before disclosure and covered most traffic, an operator may treat the filter as the fix, resulting in an unpatched engine behind a filter that mutated payloads and unrouted traffic get past.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r05) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **16** high · **Likelihood** 4 Likely · **Impact** 4 Major · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Every vendor said a rule is a stopgap; the claim that a WAF protects is disputed.
@@ -62,4 +64,4 @@ On this site: [Detection and defence: what blocks php2shell and what shows it](.
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r05/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r05/index.html

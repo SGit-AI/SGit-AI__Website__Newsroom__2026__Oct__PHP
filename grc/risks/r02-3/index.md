@@ -10,6 +10,8 @@ Because built images containing the fix were published at 07:41 UTC on 21 Octobe
 
 Because built images containing the fix were published at 07:41 UTC on 21 October, before the release, anyone could diff them against the previous images, resulting in the fix itself becoming a map to the flaw.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r02-3) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **16** high · **Likelihood** 4 Likely · **Impact** 4 Major · **Kind** Supply chain · **Acceptance** not recorded
 
 **Basis.** Disputed: the Foundation says Chainguard broke the embargo; Chainguard denies leaking.
@@ -61,4 +63,4 @@ On this site: [How the coordinated disclosure broke](../../../leak/index.html)
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02-3/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02-3/index.html

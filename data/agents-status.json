@@ -1,0 +1,318 @@
+{
+ "about": "Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.",
+ "kept_by": "conductor",
+ "as_of": "2026-10-23T23:30Z",
+ "live_version": "v0.10.17",
+ "agents": [
+  {
+   "agent": "curator@php.newsroom (scheduled)",
+   "member": "newsroom-lead",
+   "state": "waiting",
+   "last": "2026-10-23T23:24Z",
+   "did": "Follows the source watch into its pack-mode copy (7r83qic5): 33 captures promoted today, the evidence vault at 260 sources with 28 new claims (6 disputed); 164 queue rows still to promote, about 18 a wake.",
+   "waiting": "A go to re-export the evidence vault into the site and release it: until then the site shows 227 sources and the journalist cannot cite the 33 new ones. Which rows to promote first, if any.",
+   "on": "editor",
+   "cost": 4.97
+  },
+  {
+   "agent": "researcher@php.newsroom (scheduled)",
+   "member": "researcher",
+   "state": "working",
+   "last": "2026-10-23T23:24Z",
+   "did": "A source watch pass (third attempt, started 23:23 UTC, two-hour limit) after two container restarts lost the first two; the plan for a pass in three phases is on its branch.",
+   "waiting": "The pass to finish and its vault push; the three-phase plan to be released.",
+   "on": "",
+   "cost": 3.53
+  },
+  {
+   "agent": "curator@php.newsroom (first session)",
+   "member": "newsroom-lead",
+   "state": "done",
+   "last": "2026-10-23T23:06Z",
+   "did": "Measured the evidence vault against the source watch: about a tenth of the size, its object listing answers in 3.3 s. Advised against moving it to pack mode yet: a pack vault does not open in the browser, and the vault app and /admin/vault/ need that.",
+   "waiting": "nothing: the scheduled session took over",
+   "on": "",
+   "cost": 20.78
+  },
+  {
+   "agent": "researcher@php.newsroom (first session)",
+   "member": "researcher",
+   "state": "review",
+   "last": "2026-10-23T22:57Z",
+   "did": "Pack mode measured and written up (v0.10.15 to 0.10.16); reviewed the schedule vault: it works, nothing secret in it, and should stay a normal vault.",
+   "waiting": "The schedule vault entries corrected before the two schedules adopt it (which vault holds the queue; the researcher's wake times).",
+   "on": "editor",
+   "cost": 103.19
+  },
+  {
+   "agent": "dev@php.newsroom",
+   "member": "dev",
+   "state": "review",
+   "last": "2026-10-23T22:06Z",
+   "did": "The risk graph as a tool (CI-002) and its before-and-after article for the collaborator (v0.10.11 to 0.10.14).",
+   "waiting": "Three editorial calls: the design direction, the persona views, the user stories; the collaborator's next comments become CI-003.",
+   "on": "editor",
+   "cost": 181.97
+  },
+  {
+   "agent": "sherpa@php.newsroom",
+   "member": "sherpa",
+   "state": "waiting",
+   "last": "2026-10-23T21:51Z",
+   "did": "Read two new feedback messages from the site's public form (on a source page and on /views/state/), and leaves them unprocessed until their sender is confirmed; three views of the team on its branch.",
+   "waiting": "The editor to confirm the two messages are his (the public form takes any name), and whether a pending device enrolment under the editor's invitation is his.",
+   "on": "editor",
+   "cost": 29.52
+  },
+  {
+   "agent": "journalist and historian",
+   "member": "journalist",
+   "state": "done",
+   "last": "2026-10-23T15:37Z",
+   "did": "Fixed the misleading \"last checked\" label (v0.10.6) and re-exported the source watch.",
+   "waiting": "nothing",
+   "on": "",
+   "cost": 54.92
+  },
+  {
+   "agent": "designer@php.newsroom",
+   "member": "story-site",
+   "state": "waiting",
+   "last": "2026-10-23T13:47Z",
+   "did": "The redesign for review at /admin/design/ (v0.10.0): four mockups, the Focus / Standard / Everything dial; no reader page changed.",
+   "waiting": "The editor's picks on board 138: which mockups, whether the dial is right, whether the console replaces the admin menu entries.",
+   "on": "editor",
+   "cost": 33.87
+  },
+  {
+   "agent": "pulse@newsroom",
+   "member": "",
+   "state": "blocked",
+   "last": "2026-10-23T13:29Z",
+   "did": "Four records committed in its vault, not pushed.",
+   "waiting": "A permission rule for its vault push (the session's auto mode blocks it); then it pushes and starts its hourly pass.",
+   "on": "editor",
+   "cost": 10.06
+  },
+  {
+   "agent": "desk@php.newsroom",
+   "member": "",
+   "state": "waiting",
+   "last": "2026-10-23T09:52Z",
+   "did": "The offline ledger: seven page problems on day two, on its branch.",
+   "waiting": "Board 128: since overtaken, as the source watch and the curator run again; the branch still waits to be released.",
+   "on": "editor",
+   "cost": 3.04
+  },
+  {
+   "agent": "synthetic@php.newsroom",
+   "member": "synthetic",
+   "state": "waiting",
+   "last": "2026-10-22T22:48Z",
+   "did": "Removed the synthetic readers' workflow on its branch; the gate passes.",
+   "waiting": "Security review and the editor's go (a change under .github/workflows/); meanwhile the workflow still runs on each release and reviews nothing.",
+   "on": "editor",
+   "cost": 15.9
+  },
+  {
+   "agent": "grc@php.newsroom",
+   "member": "grc",
+   "state": "done",
+   "last": "2026-10-22T21:45Z",
+   "did": "The GRC section and the data protection officer's briefing (v0.6.0).",
+   "waiting": "Board 092 (the editor: accept, fund or fix the newsroom's own risks), 093 (journalist), 094 (story-site).",
+   "on": "editor",
+   "cost": 17.52
+  },
+  {
+   "agent": "factcheck@php.newsroom",
+   "member": "verifier",
+   "state": "paused",
+   "last": "2026-10-22T20:59Z",
+   "did": "Run 2 (v0.5.8): the PHP security team answered the incomplete-fix report; 7 tickets opened, 0 closed.",
+   "waiting": "Its schedule was paused on 22 October; the front page still lists the PHP project's reply as unknown (K-011).",
+   "on": "editor",
+   "cost": 37.31
+  },
+  {
+   "agent": "librarian@php.newsroom",
+   "member": "librarian",
+   "state": "review",
+   "last": "2026-10-22T20:20Z",
+   "did": "Handover steps for vault keys in CLAUDE.md, on its branch.",
+   "waiting": "Security review (board 097) and security@'s update of the requirements (102).",
+   "on": "security",
+   "cost": 18.61
+  },
+  {
+   "agent": "abp@newsroom.sgit",
+   "member": "",
+   "state": "blocked",
+   "last": "2026-10-22T19:58Z",
+   "did": "Agent behaviour policies, uncommitted: its own guard hook blocks every tool call.",
+   "waiting": "The editor to turn the repository's hooks off in that session so it can commit and push its branch; the work exists only in its container.",
+   "on": "editor",
+   "cost": 5.27
+  },
+  {
+   "agent": "storyboards@php.newsroom",
+   "member": "",
+   "state": "waiting",
+   "last": "2026-10-22T19:57Z",
+   "did": "The deck as HTML slides with a PDF (16 pages), on its branch.",
+   "waiting": "A model key for four images; it must arrive sealed (pki.sgit.ai), not pasted.",
+   "on": "editor",
+   "cost": 15.21
+  },
+  {
+   "agent": "ontologist@php.newsroom (cartographer)",
+   "member": "cartographer",
+   "state": "done",
+   "last": "2026-10-22T19:49Z",
+   "did": "The ontology and the graph, on its branch.",
+   "waiting": "Release of the branch.",
+   "on": "",
+   "cost": 15.81
+  },
+  {
+   "agent": "liaison@php.newsroom (outreach)",
+   "member": "",
+   "state": "waiting",
+   "last": "2026-10-22T19:27Z",
+   "did": "\"Corrections we have asked for\" at /outreach/, on its branch; nothing sent to any outlet.",
+   "waiting": "Which sender, approval per message or a standing rule; a change to the security requirements; a key pair of its own.",
+   "on": "editor",
+   "cost": 2.21
+  },
+  {
+   "agent": "security@php.newsroom",
+   "member": "",
+   "state": "waiting",
+   "last": "2026-10-22T18:53Z",
+   "did": "The keys page /admin/keys/ on its branch.",
+   "waiting": "Four calls: open the two sealed keys of 22 October before they expire, an inbox lane in the editor's register record, a vault keeper, a go to release; and permission for pki-agent so it makes its own key.",
+   "on": "editor",
+   "cost": 14.02
+  },
+  {
+   "agent": "conductor@php.newsroom",
+   "member": "conductor",
+   "state": "working",
+   "last": "2026-10-23T23:30Z",
+   "did": "This snapshot; the schedule vault (weic8imn) and /team/schedule/.",
+   "waiting": "The vault type for the two schedules, before they adopt the schedule vault.",
+   "on": "editor",
+   "cost": 0
+  }
+ ],
+ "branches": [
+  [
+   "claude/vibrant-gauss-s70yod",
+   "researcher@",
+   1,
+   "the source watch pass in three phases (proposal)"
+  ],
+  [
+   "sherpa/three-views",
+   "sherpa@",
+   4,
+   "three views of the team"
+  ],
+  [
+   "narrator/offline-ledger",
+   "desk@",
+   4,
+   "the front page on day two, the offline ledger"
+  ],
+  [
+   "synthetic/remove-workflow",
+   "synthetic@",
+   1,
+   "removes the synthetic readers' workflow: security review"
+  ],
+  [
+   "claude/sweet-wright-1e5iju",
+   "librarian@",
+   3,
+   "vault key handover in CLAUDE.md: security review"
+  ],
+  [
+   "claude/gallant-dijkstra-uucoop",
+   "storyboards@",
+   2,
+   "the deck"
+  ],
+  [
+   "cartographer/ontology-and-sg-graph",
+   "ontologist@",
+   1,
+   "the ontology and the graph"
+  ],
+  [
+   "claude/corrections-liaison-desk",
+   "liaison@",
+   1,
+   "/outreach/"
+  ],
+  [
+   "conductor/pause-synthetic",
+   "conductor@",
+   1,
+   "superseded: can be deleted"
+  ],
+  [
+   "synthetic/pause-schedule",
+   "synthetic@",
+   1,
+   "superseded: can be deleted"
+  ]
+ ],
+ "schedules": [
+  [
+   "Curator (scheduled)",
+   "active: 08:00, 10:30, 13:00, 15:30, 18:00 London; not yet on the schedule vault"
+  ],
+  [
+   "Source watch (scheduled researcher)",
+   "active: 07:00, 09:30, 12:00, 14:30, 17:00 London; not yet on the schedule vault"
+  ],
+  [
+   "Fact-check runs",
+   "paused since 22 October"
+  ],
+  [
+   "Synthetic readers (GitHub Actions)",
+   "runs after each release (last 23:01 UTC) and reviews nothing; its removal waits on a branch"
+  ]
+ ],
+ "freshness": [
+  [
+   "Evidence vault, as exported to this site",
+   "2026-10-23T01:20Z",
+   "227 sources; the vault holds 260, waiting on a re-export"
+  ],
+  [
+   "Source watch, as exported to this site",
+   "2026-10-23T12:40Z",
+   "38 runs; a pass is running now"
+  ],
+  [
+   "Synthetic readers' last review",
+   "2026-10-22T17:56Z",
+   "the runs since review nothing"
+  ],
+  [
+   "Telemetry report",
+   "2026-10-23",
+   "1,093 events"
+  ]
+ ],
+ "decisions": [
+  "A go to the scheduled curator to re-export the evidence vault (227 to 260 sources) and release it.",
+  "Which vault type the two schedules use, then their schedules and tasks corrected in the schedule vault.",
+  "Design picks (board 138), dev's three calls, desk's board 128 (now overtaken), GRC 092.",
+  "Unblock pulse (a push rule) and abp (hooks off in its session: its work is uncommitted).",
+  "Security review of synthetic/remove-workflow and the librarian's CLAUDE.md branch; open the two sealed keys of 22 October before they expire.",
+  "Confirm the two public-form feedback messages sherpa holds, and the pending device enrolment."
+ ]
+}

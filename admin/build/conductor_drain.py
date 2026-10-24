@@ -11,6 +11,7 @@ what arrived from whom. Commit and push the vault afterwards; nothing here is co
 import argparse, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from telemetry_drain import post, decrypt
+from postmaster import open_postmaster, post_retry, configure
 
 def main():
     ap = argparse.ArgumentParser()
@@ -18,8 +19,11 @@ def main():
     ap.add_argument('--keep-pending', action='store_true')
     a = ap.parse_args()
     V = os.path.abspath(a.vault)
-    lanes = json.load(open(os.path.join(V, '.sg_vault', 'local', 'lanes.json')))
-    passphrase = open(os.path.join(V, '.sg_vault', 'local', 'pki-passphrase')).read().strip()
+    if os.path.exists(os.path.join(V, '.vault', 'postmaster', 'lane.json')):      # the vault key alone (admin/build/postmaster.py)
+        lanes, passphrase, home = open_postmaster(V); os.environ['HOME'] = home    # sgit pki decrypt reads this keystore
+    else:                                                                           # before the vault adopted it: this session's files
+        lanes = json.load(open(os.path.join(V, '.sg_vault', 'local', 'lanes.json')))
+        passphrase = open(os.path.join(V, '.sg_vault', 'local', 'pki-passphrase')).read().strip()
     H = {'x-sgraph-vault-enum-key': lanes['enum_key']}
     base = f"{lanes['endpoint']}/api/vault/append"
     by_token = {t: m for m, t in lanes['tokens'].items()}
@@ -28,7 +32,7 @@ def main():
     while True:
         body = {'include_content': False}
         if after: body['after_file_id'] = after
-        r = post(f"{base}/list/{lanes['vault_id']}", body, H)
+        r = post_retry(post, f"{base}/list/{lanes['vault_id']}", body, H, heal=(lambda: configure(V, lanes)) if 'tokens' in lanes else None)
         entries = r.get('entries', [])
         got += entries
         if not r.get('truncated') or not entries: break

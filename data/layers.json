@@ -84,6 +84,13 @@
    "used_on": "signals/index.html"
   },
   {
+   "path": "data/state.json",
+   "layer": "derived",
+   "by": "claude-journalist",
+   "from": "the evidence vault, the source watch's dated series and the NCSC-NL inventory's history: the measures of the state of affairs, one row per version, each with its as-of time and basis",
+   "used_on": "views/state/index.html"
+  },
+  {
    "path": "data/claims.json",
    "layer": "derived",
    "by": "claude-story-site",
@@ -217,6 +224,20 @@
    "used_on": "readings/index.html"
   },
   {
+   "path": "admin/content/updates/",
+   "layer": "authored",
+   "by": "the conductor, and whoever holds the updates beat for it",
+   "from": "the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written",
+   "used_on": "updates/index.html"
+  },
+  {
+   "path": "admin/content/views/",
+   "layer": "authored",
+   "by": "claude-journalist",
+   "from": "the state of affairs, one immutable file per version, written against the stamped evidence",
+   "used_on": "views/index.html"
+  },
+  {
    "path": "admin/content/briefs/",
    "layer": "authored",
    "by": "the editor, and agents writing build briefs and reviews",
@@ -250,6 +271,20 @@
    "by": "conductor@php.newsroom",
    "from": "the account's scheduled tasks and this repository's workflows, as observed; the quiet-hours rule and the article rule",
    "used_on": "team/runs/index.html"
+  },
+  {
+   "path": "data/schedule-vault.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "the public schedule vault's id and published read key",
+   "used_on": "team/schedule/index.html"
+  },
+  {
+   "path": "data/agents-status.json",
+   "layer": "site",
+   "by": "conductor@php.newsroom",
+   "from": "each agent's session record, the repository's branches, the scheduled tasks and the data files' dates, read without asking the agents",
+   "used_on": "team/status/index.html"
   },
   {
    "path": "data/collaborators.json",
@@ -294,6 +329,13 @@
    "used_on": "compromise/index.html"
   },
   {
+   "path": "data/pack-mode.json",
+   "layer": "authored",
+   "by": "researcher@php.newsroom",
+   "from": "timed commands and logs in the researcher's session of 23 October 2026: the source watch as a normal vault (oq9gflln) and as a pack vault (7r83qic5)",
+   "used_on": "admin/pack-mode/index.html"
+  },
+  {
    "path": "data/source-watch.json",
    "layer": "evidence",
    "by": "admin/build/export_watch.py",
@@ -306,6 +348,13 @@
    "by": "dev@php.newsroom",
    "from": "the vaults behind this site and how each is opened",
    "used_on": "vaults/index.html"
+  },
+  {
+   "path": "data/vault-register/",
+   "layer": "site",
+   "by": "each agent, its own file (data/vault-register/<agent>.json)",
+   "from": "every vault an agent has made: its ID, what it holds, when, and whether its key is sealed to the root; never a key",
+   "used_on": "team/vaults/index.html"
   },
   {
    "path": "data/glossary.json",
@@ -392,6 +441,20 @@
    "used_on": "admin/telemetry/index.html"
   },
   {
+   "path": "data/telemetry-public.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "admin/build/telemetry_publish.py at every drain: the curated counts by group, per hour and per day, and over readers by country, device, language, version, page and referrer host; the same file as the public stats vault",
+   "used_on": "admin/telemetry/index.html"
+  },
+  {
+   "path": "data/world.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "Natural Earth admin-0 countries 1:50m v5.1.2 (public domain), projected to Equal Earth and simplified by a script; the map on admin/telemetry/ and in the public stats vault",
+   "used_on": "admin/telemetry/index.html"
+  },
+  {
    "path": "data/layers.json",
    "layer": "site",
    "by": "claude-journalist",
@@ -439,6 +502,27 @@
    "by": "admin/build/build.py",
    "from": "data/grc.json, data/grc-frameworks.json, data/review.json, data/claims.json and the articles, on every build",
    "used_on": "grc/graph/index.html"
+  },
+  {
+   "path": "data/grc-tests.json",
+   "layer": "derived",
+   "by": "dev@php.newsroom",
+   "from": "the fix commit's test files, from its file list in the evidence vault, and the name rules joining each to a remediation",
+   "used_on": "grc/explore/index.html"
+  },
+  {
+   "path": "data/grc-basis.json",
+   "layer": "derived",
+   "by": "dev@php.newsroom",
+   "from": "confirmations of risk-graph edges: who checked an edge and how",
+   "used_on": "grc/explore/index.html"
+  },
+  {
+   "path": "data/grc-gaps.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "the rules the gaps page computes over the risk graph",
+   "used_on": "grc/gaps/index.html"
   }
  ]
 }

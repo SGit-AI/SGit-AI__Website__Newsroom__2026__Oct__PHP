@@ -10,6 +10,8 @@ Because the Act's reporting duty has applied since 11 September 2026, a manufact
 
 Because the Act's reporting duty has applied since 11 September 2026, a manufacturer whose product embeds PHP must report an actively exploited vulnerability within 24 hours, and whether php2shell is 'actively exploited' is exactly what the evidence cannot yet settle, resulting in manufacturers deciding alone when the clock starts.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r06-3) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 3 Possible · **Impact** 4 Major · **Kind** Compliance · **Acceptance** not recorded
 
 **Basis.** The legal test turns on exploitation, which is disputed; the inventory shows hundreds of products.
@@ -63,4 +65,4 @@ On this site: [The NCSC-NL inventory: 674 products](../../../affected/software.h
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-3/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-3/index.html

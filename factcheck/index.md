@@ -343,4 +343,4 @@ The desk is `factcheck@php.newsroom`. Its role, the full model and the runbook a
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/factcheck/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/factcheck/index.html

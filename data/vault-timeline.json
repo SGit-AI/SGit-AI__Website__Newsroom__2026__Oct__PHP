@@ -716,5 +716,221 @@
   "confidence": "stated",
   "phase": "aftermath",
   "agent": "claude-story-site"
+ },
+ {
+  "at": "2026-10-20",
+  "event": "GMO Internet finds unauthorised programs installed by a third party on some servers of its FX automated-trading VPS (お名前.com デスクトップクラウド); cause not stated",
+  "sources": [
+   "yahoo-jp-gmo-fx-login-leak"
+  ],
+  "confidence": "stated",
+  "phase": "compromise",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-21T05:21Z",
+  "event": "Palo Alto Networks releases Threat ID 543004 (10:21 PM PT on 20 October), advance coverage for Frontier Virtual Patching customers on PAN-OS 12.2.4 and later",
+  "sources": [
+   "paloalto-psirt-cve-2026-109618"
+  ],
+  "confidence": "stated",
+  "phase": "response",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-21",
+  "event": "NÚKIB warns of php2shell: update to PHP 8.2.35, 8.3.36, 8.4.27 or 8.5.12 immediately; exploitation information is public",
+  "sources": [
+   "nukib-aktuality-2470"
+  ],
+  "confidence": "stated",
+  "phase": "response",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-21",
+  "event": "GMO suspends all plans of the FX VPS service and says no misuse of viewed information has been confirmed",
+  "sources": [
+   "yahoo-jp-gmo-fx-login-leak"
+  ],
+  "confidence": "stated",
+  "phase": "compromise",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-21T13:00Z",
+  "event": "DMM begins halting services in turn (from 22:00 JST) for maintenance against a vulnerability in external software; some still down at 10:00 on 22 October",
+  "sources": [
+   "sankei-dmm-service-halt"
+  ],
+  "confidence": "stated",
+  "phase": "impact",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-22",
+  "event": "GMO says trading-account logins on up to 26,739 VPS servers may have been taken and misused; unauthorised trading operations reported",
+  "sources": [
+   "yahoo-jp-gmo-fx-login-leak"
+  ],
+  "confidence": "stated",
+  "phase": "compromise",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-22",
+  "event": "Valtec announces a service halt and possible data leak blaming a cyberattack on the PHP vulnerability, then corrects it: a flaw in its own service was exploited",
+  "sources": [
+   "impress-watch-valtec"
+  ],
+  "confidence": "stated",
+  "phase": "compromise",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-22",
+  "event": "QNAP publishes QSA-26-18 (multiple products affected, fixes pending) and a statement that its PSIRT saw scanning and exploitation attempts in the wild and blocked attacks on its website, store and cloud services",
+  "sources": [
+   "qnap-qsa-26-18",
+   "qnap-statement-php2shell"
+  ],
+  "confidence": "stated",
+  "phase": "response",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-22",
+  "event": "Cisco (v1.2) and Fortinet update their PHP advisories: products under investigation, none yet confirmed affected",
+  "sources": [
+   "cisco-sa-php-october26",
+   "fortinet-fg-ir-26-186"
+  ],
+  "confidence": "stated",
+  "phase": "response",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-22",
+  "event": "ČVUT says it is dealing with a cyber attack, part of worldwide attempts against PHP sites; the active attack was stopped and some systems taken offline",
+  "sources": [
+   "lupa-cvut-cyber-attack"
+  ],
+  "confidence": "stated",
+  "phase": "compromise",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-22",
+  "event": "DigiD, Overheid.nl, MijnOverheid and other Dutch government sites are back online after precautionary shutdowns",
+  "sources": [
+   "securitynl-misbruik-gemeld"
+  ],
+  "confidence": "stated",
+  "phase": "recovery",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-22T18:36Z",
+  "event": "NCSC-NL's inventory, now 27 per-letter files, lists 724 products: 216 vulnerable, 61 fixed, 440 under investigation per CVE",
+  "sources": [
+   "ncsc-nl-php2shell-software-list-letters"
+  ],
+  "confidence": "stated",
+  "phase": "scale",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-22T18:36Z",
+  "event": "The PHPocalypse Tracker lists 50 sites that went dark, 48 back up and 2 still dark",
+  "sources": [
+   "phpocalypse-tracker-sites-csv"
+  ],
+  "confidence": "stated",
+  "phase": "impact",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-16",
+  "event": "Chainguard learns a PHP disclosure is coming and, by its CEO's account, independently finds the vulnerability that night with an in-house AI harness",
+  "sources": [
+   "techtarget-disclosure-unravels"
+  ],
+  "confidence": "stated",
+  "phase": "disclosure",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-17",
+  "event": "Amazon's MadPot honeypots record an attempt to exploit PHP2Shell from a commercial anonymisation network, four days before the patches; Chainguard joins the coordination channel",
+  "sources": [
+   "wired-exploited-days-before-patched",
+   "bleepingcomputer-amazon-4-days-before",
+   "the-register-hackers-pile-on-php2shell",
+   "techtarget-disclosure-unravels"
+  ],
+  "confidence": "stated",
+  "phase": "exploitation",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-21T07:34Z",
+  "event": "Patchstack reports receiving notifications of multiple active exploitation incidents from hosting partners, hours before the release",
+  "sources": [
+   "recordedfuture-php2shell"
+  ],
+  "confidence": "stated",
+  "phase": "exploitation",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-21",
+  "event": "AWS publishes its research (evening): attempts since 17 October, PHP2Shell 'now being broadly exploited', success of the attempts unclear",
+  "sources": [
+   "wired-exploited-days-before-patched",
+   "bleepingcomputer-amazon-4-days-before"
+  ],
+  "confidence": "stated",
+  "phase": "exploitation",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-22",
+  "event": "Dataminr TRACE: activity remains scanning, fingerprinting and non-working exploits, no known compromises",
+  "sources": [
+   "bleepingcomputer-amazon-4-days-before"
+  ],
+  "confidence": "stated",
+  "phase": "exploitation",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-20",
+  "event": "PHP maintainers publish advance notice of two patches, both rated 9.2 out of 10, after purported exploit details leak",
+  "sources": [
+   "arstechnica-security-2026-10-php-maintainers-tell-web-devs-to-prepare-th"
+  ],
+  "confidence": "stated",
+  "phase": "disclosure",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-17",
+  "event": "Earliest exploitation attempt against CVE-2026-109618 and CVE-2026-109619 in Amazon's MadPot honeypot telemetry",
+  "sources": [
+   "cyberpress-php2shell-exploits-predate-patches"
+  ],
+  "confidence": "stated",
+  "phase": "exploitation",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-21T02:00Z",
+  "event": "First proof-of-concept exploits seen by Amazon, about 12 hours before the scheduled 14:00 UTC release",
+  "sources": [
+   "cyberpress-php2shell-exploits-predate-patches"
+  ],
+  "confidence": "stated",
+  "phase": "exploitation",
+  "agent": "curator@php.newsroom"
  }
 ]

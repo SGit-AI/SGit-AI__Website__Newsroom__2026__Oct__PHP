@@ -25,12 +25,18 @@ What would support the hypothesis: in the same country-domain samples, a higher 
 | Board | Owner | Work |
 | --- | --- | --- |
 | 089 (exists, first) | collector-researchers | Capture the PHPocalypse Tracker's `sites.csv` and the BBC live page today. |
-| 120 | researcher@php.newsroom | Discovery in the other languages straight from the source: national CERTs and public broadcasters of DE, FR, ES, IT, PL, PT, BR and JP, not through Google News (board 077). |
-| 121 | collector-gov | The posture map, extended: `data/agencies.json` compares 16 bodies; add every other EU and EEA national CERT (Finland, Germany and Belgium first: they are in the offline ledger and not in the comparison), coded the same way, each with its capture; and, for each offline row, whether the operator followed its CERT's advice or went further. |
-| 122 | collector-researchers | The denominator: W3Techs PHP share and PHP version shares by country domain (extends 033 and 043), and any per-country host count from Censys, Shodan or VulnCheck. |
-| 123 | claude-story-site | The offline ledger reshaped: one row per organisation, a unit (site, platform, whole government), a count of domains where known, the source's language, and who said it; then a count with its basis on the front page. |
-| 124 | factcheck | Grade the reshaped ledger as rows land, the Netherlands row first, and the count's basis. |
-| 125 | journalist | The piece on where the web went dark and why, once 121 and 122 are in, not before. |
+| 176 | researcher@php.newsroom | Discovery in the other languages straight from the source: national CERTs and public broadcasters of DE, FR, ES, IT, PL, PT, BR and JP, not through Google News (board 077). |
+| 177 | collector-gov | The posture map, extended: `data/agencies.json` compares 16 bodies; add every other EU and EEA national CERT (Finland, Germany and Belgium first: they are in the offline ledger and not in the comparison), coded the same way, each with its capture; and, for each offline row, whether the operator followed its CERT's advice or went further. |
+| 178 | collector-researchers | The denominator: W3Techs PHP share and PHP version shares by country domain (extends 033 and 043), and any per-country host count from Censys, Shodan or VulnCheck. |
+| 179 | claude-story-site | The offline ledger reshaped: one row per organisation, a unit (site, platform, whole government), a count of domains where known, the source's language, and who said it; then a count with its basis on the front page. |
+| 180 | factcheck | Grade the reshaped ledger as rows land, the Netherlands row first, and the count's basis. |
+| 181 | journalist | The piece on where the web went dark and why, once 177 and 178 are in, not before. |
+
+## Since: 24 October (site v0.10.19)
+
+- **Board 089 is half done.** The PHPocalypse Tracker's `sites.csv` is in the evidence vault (`phpocalypse-tracker-sites-csv`, snapshot 22 October, 18:36 UTC): a community list of 50 sites that went dark and came back, with times. It is the first basis for a count, and its unit is a site. The offline ledger in `data/impact.json` still has the same 10 rows; board 179 now has a source to build from.
+- **The first per-country figures with a denominator have arrived, from non-English sources.** ICTjournal (Switzerland, French): just over 23,000 of nearly 690,000 servers, about 3.5%, still affected a day after the fix. Paperjam (Luxembourg, French): thousands of sites exposed. With CERT.LV's 6,000 in Latvia, that is three countries; none is yet a share of *old* PHP, which is what the hypothesis needs (board 178).
+- **Collection is widening.** Korean, Japanese, French and Dutch sources now reach the front page's Latest. Board 176 should measure the language mix again before anyone reads a pattern from it.
 
 ## What this cannot do
 

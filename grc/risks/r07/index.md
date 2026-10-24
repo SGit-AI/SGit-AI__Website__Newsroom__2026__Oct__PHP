@@ -10,6 +10,8 @@ Because '70% of the Internet', 'CVSS 10' and '30 million websites' were repeated
 
 Because '70% of the Internet', 'CVSS 10' and '30 million websites' were repeated without their source, boards and readers sized the risk on figures that are unverified, contradicted or measure a different thing, resulting in priorities set by headline rather than by exposure.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r07) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 4 Likely · **Impact** 3 Significant · **Kind** Governance · **Acceptance** not recorded
 
 **Basis.** The claims are graded unverified, contradicted or reported on this site; they led the coverage most readers saw.
@@ -65,4 +67,4 @@ On this site: [The numbers: 70%, 30 million, 2.6 million, 6,000, 674](../../../n
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r07/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r07/index.html

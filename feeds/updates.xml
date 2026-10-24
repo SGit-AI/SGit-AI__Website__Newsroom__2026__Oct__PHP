@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>PHP October 2026: updates</title>
+<link>https://php.oct.2026.newsroom.sgit.ai/updates/index.html</link>
+<atom:link href="https://php.oct.2026.newsroom.sgit.ai/feeds/updates.xml" rel="self" type="application/rss+xml"/>
+<description>PHP October 2026: what changed on the site, in the story and across the team, hourly, daily and flash.</description>
+<language>en-gb</language>
+<lastBuildDate>Thu, 22 Oct 2026 20:03:00 +0000</lastBuildDate>
+<item><title>Daily: The first day: 34 releases, a fact-check that corrected the site, still no confirmed compromise, and nine decisions waiting on the editor</title><link>https://php.oct.2026.newsroom.sgit.ai/updates/2026-10-22T2003Z/index.html</link><guid isPermaLink="false">update-2026-10-22T2003Z</guid><pubDate>Thu, 22 Oct 2026 20:03:00 +0000</pubDate><category>daily</category><description>The site went from nothing to 391 pages in about ten hours, and its own fact-check desk found that 11 of its 70 claims say more than their evidence. In the story, php2shell is still not on CISA&#x27;s exploited list and no organisation has confirmed a compromise; the evidence on the site has not been refreshed since 11:34 UTC.</description></item>
+</channel>
+</rss>

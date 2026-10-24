@@ -37,9 +37,15 @@ capture 20261022T113014Z · HTTP 200 · https://www.recordedfuture.com/blog/php2
 - `rendered.html` ca1457d1d590d21807ebf2cd64d30304ff3607b8171472c2d205a8fd4365a37c 178,844 bytes
 - `screenshot.png` cd745753c1ec28fcaf45c4b291d01045bdf86c88cbd0184e664e196bdd0f8ddc 2,871,582 bytes
 - `text.txt` f9cb130d64545fe46a477766dce91126405f12d99e8051aff2c05e084a904fe9 18,444 bytes
+capture 20261023T012042Z · HTTP 200 · https://www.recordedfuture.com/blog/php2shell-vulnerability-exploitation- `headers.json` df92af5f1f15a9b85ac768da0a431d3d7aeadec8e8e1068f4d7d57e76f9b56b1 1,305 bytes
+- `page.html` cd54cc52e04832d03115211f9aca789fb9d4861a8460a25a4e6ccc45f2d11f9b 27,860 bytes
+- `provenance.json` 9c026e4540e485d466a7ebfb9befe5fe2ea5a26a87647d09af9bbb5d950e3209 1,706 bytes
+- `rendered.html` e4e4f2824c8737f38089591489f1357b6b278f491cc344717f0a01d6de090dee 91,816 bytes
+- `screenshot.jpg` 68cd85ed3f9dc7d419ee012d3ab12f44d57604bffc4dad62486f71cd98e5a098 899,644 bytes
+- `text.txt` 39efeb7b8ae8152f98ccf53437e4070f12339a7e718570de9f01ac96d23b0622 17,215 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/recordedfuture-php2shell/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/recordedfuture-php2shell/index.html

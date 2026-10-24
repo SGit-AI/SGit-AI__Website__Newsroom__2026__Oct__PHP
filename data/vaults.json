@@ -37,6 +37,19 @@
    "note": "It opens as its own dashboard: the application is not in it but in a vault of its own, versioned there, which this vault links inside itself and loads on open. The key that decrypts the events sits in it sealed under a passphrase (identity/drain-key.json); the passphrase is typed by whoever drains."
   },
   {
+   "slug": "telemetry-public",
+   "id": "0cfkdcvh",
+   "name": "The public telemetry stats",
+   "access": "public read",
+   "app": true,
+   "holds": "The curated, public view of the telemetry: page views and sessions per hour and per day for readers, for the editor, team and power users, for synthetic visitors and for crawlers; and, over readers only, countries (with a world map), devices, languages, site versions, pages and referrer hosts. Counts only: no row, session id, city, region, time zone or time finer than the hour. Written at every drain.",
+   "facts": "written by admin/build/telemetry_publish.py from the telemetry vault (84wr8mib) at every drain; its own app",
+   "read_key": "sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800:0cfkdcvh",
+   "writers": "dev@php.newsroom, at every drain (admin/build/telemetry_flow.sh)",
+   "page": "admin/telemetry/index.html",
+   "data": "data/telemetry-public.json"
+  },
+  {
    "slug": "subscriptions",
    "id": "wgeiqabu",
    "name": "The subscriptions vault",
@@ -133,6 +146,17 @@
    "note": "Its key, the lane's enum key and the key pair's passphrase are never published.",
    "page": "collaborators/index.html",
    "data": "data/collaborators.json"
+  },
+  {
+   "slug": "schedule",
+   "id": "weic8imn",
+   "name": "The schedule vault",
+   "access": "public read",
+   "app": false,
+   "holds": "Every scheduled agent's schedule, its queued tasks and every run with its log: the control panel for what the team runs on its own.",
+   "writers": "each scheduled agent, its own runs; the editor's session and the conductor queue tasks",
+   "page": "team/schedule/index.html",
+   "data": "data/schedule-vault.json"
   }
  ]
 }

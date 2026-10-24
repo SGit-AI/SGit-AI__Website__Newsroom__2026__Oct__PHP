@@ -6,7 +6,223 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.8.1. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.19. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.19 · 2026-10-23
+
+the site catches up with the evidence vault at 1845598d9a38 (295 sources): the journalist's state of affairs v2, with the delta from v1 and the six curator claims held back as worded and why, and the front page's Right now and Latest from the new sources
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.18 · 2026-10-23
+
+/team/status/ at 23:30 UTC: all twenty sessions read; the scheduled curator and source watch running, the evidence vault at 260 sources waiting on a re-export, ten branches ahead of dev, and the decisions waiting on the editor
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.17 · 2026-10-23
+
+the scheduled curator follows the source watch into its pack-mode copy (7r83qic5): the brief records the move, the 15 + 18 captures promoted so far (evidence vault 260 sources, head 51debd0e98f0) and the pace; the curator's register row lists the pack vault key as held, never the key
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.16 · 2026-10-23
+
+pack mode, measured: the pack vault in use by two writers, a pull of the scheduled session's commit in 176 s and a one-file correction pushed in 77 s
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.15 · 2026-10-23
+
+pack mode, measured on the source watch (/admin/pack-mode/): the same vault as a normal and a pack vault, a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and the normal vault's object listing now timing out on the server; with the brief for moving a heavy vault to pack mode, and the scheduled source watch's brief
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.14 · 2026-10-23
+
+the risk graph, before and after: a debrief for the collaborator whose ideas became v0.10.13, every change shown as the old page against the new, side by side or as one picture with a slider that fades or wipes between them, with diffs where the change is data; articles can now carry split, slider and diff blocks
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.13 · 2026-10-23
+
+the risk graph as a tool (CI-002, steps 1 to 5): every edge says how it is known (read from a capture, from the fix commit, or inferred by an agent; inferred drawn dashed and hideable); the fix commit's 270 tests as nodes; explore the graph from any node, one step at a time, or climb from a file or a test to the risks, controls and stakeholders above it; and a gaps page computed at every build: no control is joined to code or a test, no code has an owner, 14 risks have no story
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.12 · 2026-10-23
+
+a story from the dev desk, with screenshots: who reads this site and what works on it, the telemetry tools built in a day and a half (groups, the public vault, a dashboard where every chart is a filter, journeys, what works) and what they say on day two: the front page leaks; articles can now carry screenshots, and markdown twins keep images
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.11 · 2026-10-23
+
+Ideas from collaborators, CI-002: the collaborator's ideas for turning the risk graph into a tool (start from one node, a basis on every link, tests and impact from code, a computed list of what is missing), each set against the graph as it is, and a brief to dev for the five steps that need no editorial call (board 166 to 170)
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.10 · 2026-10-23
+
+the telemetry app v0.4.0: new events checked on focus, every chart and cell a filter (click to keep, shift-click to exclude), colour by any breakdown, journeys as a Sankey and a page network, and what works page by page; dev's vault register confirmed, with the keys it holds
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.9 · 2026-10-23
+
+the vault key is the master key: the telemetry and subscriptions vaults keep their drain keys inside, so whoever opens the telemetry vault drains it from the browser with no passphrase (206 events drained that way); the counts updated: 215 reader page views in 154 sessions
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.8 · 2026-10-23
+
+the scheduled curator is running: five wakes a day in UK daytime (08:00, 10:30, 13:00, 15:30, 18:00), no key rotation, its session fingerprint, its dependence on the source watch, and its held keys on /team/vaults/ (never the keys)
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.7 · 2026-10-23
+
+schedule (/team/schedule/): every scheduled agent, its task queue and every run with its log, read live from a public vault (weic8imn); an agent woken with no task due records an idle run and stops; the wake protocol every scheduled agent follows (AGENTS.md section 7)
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.6 · 2026-10-23
+
+the stamp says when the site last checked: 'last checked' is now the newest of the evidence vault's latest capture, the source watch's latest run and the NCSC-NL inventory's latest change read, each shown with its time on the front page; source watch re-exported at 20afaa62129d
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.5 · 2026-10-23
+
+guidance for every agent: release your own finished work to dev with release.sh once the gate passes, rather than leaving it on a branch (the editor's rule, 23 October); release only what is in your scope, which each agent's behaviour policy will set (abp@ and security@, on the board)
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.4 · 2026-10-23
+
+the site catches up with its two vaults (evidence vault re-exported at f3c5db0d9873: 144 sources to 227, data as of 01:20 UTC on 23 October; the NCSC-NL inventory read to 12:50 UTC on 23 October, 109 of 751 products fixed), Views with the journalist's versioned state of affairs (v0 of 22 October and v1 of 23 October, a page per version and a page for what changed between them), the story 'What changed in a day', and the Updates section with its feed and the first daily update
+
+ Vault commit `f3c5db0d9873`.
+
+Files:
+
+### v0.10.3 · 2026-10-23
+
+Feedback from collaborators: the editor's internal test messages recorded as tests (UF-004), dev's fixes to the join page marked in the friction log, the editor's decisions in the brief to the conductor (a 'this may be published' checkbox, no keys for feedback, one form), and the Sherpa's held key on /team/vaults/
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.10.2 · 2026-10-23
+
+the scheduled curator's brief on /admin/briefs/: a Sonnet session, woken on a schedule after one PKI key handshake, keeps the evidence vault current from the source watch's queue; proposed, waiting for the editor's go on the schedule
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.10.1 · 2026-10-23
+
+three briefs on /admin/briefs/: scanner noise, a research angle on how php2shell scanners and detection rules decide and what they get wrong (12 captured rows, with Jeremiah Grossman's post); Perplexity reading the community spaces (job 03, its prompt in full); and the external collectors brief with ChatGPT's first run; briefs now render quotes and pictures
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.10.0 · 2026-10-23
+
+the redesign, for review (/admin/design/): two dials, who you are and how much of the site you see (Focus, Standard, Everything); which pages each reader sees; the menu per view; four mockups built from the live data: a board member's front page, a security lead's three-column front page, the agencies as answer, picture and cards, and a team console with its own menu
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.3 · 2026-10-23
+
+Feedback from collaborators (/feedback/): every piece of feedback kept whole beside the Sherpa's comments, with readers' own highlights and notes, the numbers, and the briefs it became (to the conductor, and to pki.sgit.ai); UF-003, the first power user through the whole invitation, imported with her screenshots; and the brief for three views over time, the executive first, with the knowledge gap as a view of its own
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.2 · 2026-10-23
+
+the vault key is the whole boundary: whoever holds a vault's key can drain its lane (the enum key and the key pair's passphrase derived from the vault key, the key pair inside the vault), and the keys each agent holds listed on /team/vaults/; the editor's first key enrolled; his feedback on /join/ answered: where this device's key stands, one wording for Feedback, up to three screenshots
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.1 · 2026-10-23
+
+vaults (/team/vaults/): every vault each agent made, listed by agent and by ID only, with whether its key is sealed to the editor; and guidance every agent reads (AGENTS.md section 6, CLAUDE.md): add a vault's ID when you make it, seal its key to the root with pki-agent, and when asked for a key send the sealed link and its QR code, never the key
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.9.0 · 2026-10-23
+
+The Sherpa joins (/sherpa/): the agent that walks with the reader; readers' feedback recorded and answered point by point (UF-001 from a power user, UF-002 from an agent testing the invitation link), with both interface bugs reproduced; ideas from collaborators set against what the site has today (CI-001); the friction log of what gets in readers' way, with who can fix each; and the Sherpa on the team
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.8.4 · 2026-10-23
+
+who reads this site, by group: every session a reader, the editor, a power user or team member, synthetic (agents and tests) or a crawler, declared by the browser from now on (automation by class, the role of a /join/ key or of this browser's setting) and inferred before; the groups, an hourly chart and a world map of readers on /admin/telemetry/; and a public stats vault (0cfkdcvh, read key published) with its own app, updated at every drain by admin/build/telemetry_flow.sh
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.8.3 · 2026-10-23
+
+your stack linked from the front page (a Check your stack button and a Does it reach you? tile, the tiles now two rows of four) and from step 0 of If you run PHP; the telemetry lane drained on the morning of 23 October: 483 events overnight, 758 in all
+
+ Vault commit `200d08971937`.
+
+Files:
+
+### v0.8.2 · 2026-10-23
+
+status (/team/status/): where every agent is on the morning of 23 October, what each last did and waits for and from whom, the eleven branches waiting for dev, what ran on a schedule overnight, how fresh the site's data is against its vaults; and the brief for day two, situation awareness
+
+ Vault commit `200d08971937`.
+
+Files:
 
 ### v0.8.1 · 2026-10-23
 
@@ -354,4 +570,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

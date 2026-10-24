@@ -10,6 +10,8 @@ Because the CVE IDs circulated from an anonymous post and a proof-of-concept vid
 
 Because the CVE IDs circulated from an anonymous post and a proof-of-concept video was published by mistake, attackers knew the target and saw it work before any fix existed, resulting in scanning that began ahead of the release.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r02-1) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 5 Happening · **Impact** 4 Major · **Kind** Disclosure process · **Acceptance** not recorded
 
 **Basis.** Reported by the PHP Foundation and the security team's own account.
@@ -61,4 +63,4 @@ On this site: [How the coordinated disclosure broke](../../../leak/index.html)
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02-1/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02-1/index.html

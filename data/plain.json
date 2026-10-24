@@ -147,17 +147,26 @@
    ]
   },
   {
-   "text": "Attackers are trying to use the flaws, in large numbers. As of the evening of 22 October, no named organisation has said it was compromised through php2shell.",
+   "text": "Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 23 October, no named organisation has said it was compromised through php2shell.",
    "sources": [
     "x-eastdakota-php2shell-stats",
-    "cisa-kev-json"
+    "cisa-kev-json",
+    "paperjam-article-php2shell-des-milliers-de-sites"
    ]
   },
   {
-   "text": "Some organisations took websites offline as a precaution, among them Dutch government services such as the DigiD login.",
+   "text": "The advice is moving from 'install the fix' to 'and check whether you were already broken into'. Singapore's and Luxembourg's authorities now say so.",
+   "sources": [
+    "channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur",
+    "paperjam-article-php2shell-des-milliers-de-sites"
+   ]
+  },
+  {
+   "text": "Some organisations took websites offline as a precaution, among them Dutch government services such as the DigiD login. Almost all of them are back.",
    "sources": [
     "rijksoverheid-ncsc-php-news",
-    "bbc-live-ckgel5xp2xv9t"
+    "phpocalypse-tracker-sites-csv",
+    "securitynl-misbruik-gemeld"
    ]
   }
  ],
@@ -274,39 +283,38 @@
  ],
  "latest": [
   {
-   "when": "22 Oct, 05:20 UTC",
-   "text": "Japan's national cyber agency issues its alert.",
+   "when": "22 Oct",
+   "text": "Korea's science ministry raises the private-sector cyber crisis alert from 'interest' to 'caution', as reported.",
    "sources": [
-    "jpcert-at260033"
+    "shinailbo-news-articleview-html"
    ]
   },
   {
-   "when": "22 Oct, 06:16 UTC",
-   "text": "BBC News opens a live page: 'Global scramble to fix critical cyber-security flaws as many websites taken offline'.",
+   "when": "22 Oct",
+   "text": "Singapore's Cyber Security Agency tells organisations to patch now and to check whether they were already compromised.",
    "sources": [
-    "bbc-live-ckgel5xp2xv9t"
+    "channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur"
    ]
   },
   {
-   "when": "22 Oct, 06:55 UTC",
-   "text": "The BBC reports the US NSA's advice: take systems offline if they cannot be updated.",
+   "when": "22 Oct",
+   "text": "A count in Switzerland finds just over 23,000 of nearly 690,000 servers, about 3.5%, still affected a day after the fix.",
    "sources": [
-    "bbc-live-ckgel5xp2xv9t",
-    "nsa-x-2112903220209098897"
+    "ictjournal-news-2026-10-22-deux-failles-critiques-d"
    ]
   },
   {
-   "when": "22 Oct, 07:00 UTC",
-   "text": "One of the researchers who found the flaws tells BBC Radio 4 there is no evidence yet of them being used in attacks.",
+   "when": "22 Oct",
+   "text": "AhnLab, as reported, classes 27 of 100 php2shell repositories on GitHub as proof-of-concept exploits.",
    "sources": [
-    "bbc-live-ckgel5xp2xv9t"
+    "rocket-boys-security-measures-lab-php2shell-poc-expl"
    ]
   },
   {
-   "when": "22 Oct, 08:40 UTC",
-   "text": "The Dutch national cyber agency's list of affected software reaches 674 products.",
+   "when": "23 Oct, 07:58 UTC",
+   "text": "IT Social: the update closes the flaw, but obliges a hunt for possible compromises; the published figures count attempts, not intrusions.",
    "sources": [
-    "ncsc-nl-php2shell-software-list"
+    "itsocial-cybersecurite-cybersecurite-articles-php"
    ]
   }
  ]

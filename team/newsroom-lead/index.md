@@ -28,7 +28,10 @@ The evidence vaultadmin/vault/index.htmlEvery sourcesources/index.html
 
 ## Open tasks
 
-None.
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 131 | Confirm data/vault-register/newsroom-lead.json and seal the evidence vault's key (3ytzxm3g) to the root; pulse@ and curator@ add their own files for any vault they made | open |  |
+| 160 | Run every scheduled wake through the schedule vault: pull, schedule.py due curator, start/finish with the log, index, push; your routine is task T-001, repeating until 31 October | open |  |
 
 ## What they have done
 - Replaced the shared manifest with one source.json per source and a generated index.
@@ -42,4 +45,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/newsroom-lead/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/newsroom-lead/index.html

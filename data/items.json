@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.8.1",
+"site": "0.10.19",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -67,11 +67,11 @@
 "zone": "research",
 "title": "If you run PHP",
 "path": "playbook/index.html",
-"hash": "04ed7f7ccac3",
-"v": 2,
+"hash": "74d423474096",
+"v": 3,
 "first": "0.1.0",
-"changed": "0.3.0",
-"date": "2026-10-22",
+"changed": "0.8.2",
+"date": "2026-10-23",
 "history": "versions/page-playbook/index.html"
 },
 "page-claims": {
@@ -127,11 +127,11 @@
 "zone": "site",
 "title": "The method",
 "path": "method/index.html",
-"hash": "ac26ddfb1867",
-"v": 3,
+"hash": "3e6086d11a34",
+"v": 5,
 "first": "0.1.0",
-"changed": "0.3.0",
-"date": "2026-10-22",
+"changed": "0.10.19",
+"date": "2026-10-23",
 "history": "versions/page-method/index.html"
 },
 "briefing-board": {
@@ -1243,11 +1243,11 @@
 "zone": "research",
 "title": "The specialist summary",
 "path": "summary/index.html",
-"hash": "16bef71df9a1",
-"v": 2,
+"hash": "152b448915d3",
+"v": 4,
 "first": "0.3.1",
-"changed": "0.5.8",
-"date": "2026-10-22",
+"changed": "0.10.19",
+"date": "2026-10-23",
 "history": "versions/page-summary/index.html"
 },
 "front-now": {
@@ -1255,11 +1255,11 @@
 "zone": "research",
 "title": "Front page: right now",
 "path": "index.html#now",
-"hash": "1b314644618d",
-"v": 2,
+"hash": "2c79fb273440",
+"v": 3,
 "first": "0.3.2",
-"changed": "0.5.8",
-"date": "2026-10-22",
+"changed": "0.10.19",
+"date": "2026-10-23",
 "history": "versions/front-now/index.html"
 },
 "front-glance": {
@@ -1267,11 +1267,11 @@
 "zone": "research",
 "title": "Front page: at a glance",
 "path": "index.html#glance",
-"hash": "8ff454557e0a",
-"v": 1,
+"hash": "2ca51355b39b",
+"v": 2,
 "first": "0.3.2",
-"changed": "0.3.2",
-"date": "2026-10-22",
+"changed": "0.8.2",
+"date": "2026-10-23",
 "history": "versions/front-glance/index.html"
 },
 "front-facts": {
@@ -1303,11 +1303,11 @@
 "zone": "research",
 "title": "Front page: latest",
 "path": "index.html#latest",
-"hash": "8b53dad095d4",
-"v": 1,
+"hash": "237163adb24d",
+"v": 2,
 "first": "0.3.2",
-"changed": "0.3.2",
-"date": "2026-10-22",
+"changed": "0.10.19",
+"date": "2026-10-23",
 "history": "versions/front-latest/index.html"
 },
 "page-interview": {
@@ -1333,6 +1333,18 @@
 "changed": "0.5.9",
 "date": "2026-10-22",
 "history": "versions/briefing-dpo/index.html"
+},
+"page-views-state": {
+"kind": "page",
+"zone": "stories",
+"title": "The state of affairs, now",
+"path": "views/state/index.html",
+"hash": "6e0a82a9e682",
+"v": 2,
+"first": "0.10.3",
+"changed": "0.10.19",
+"date": "2026-10-23",
+"history": "versions/page-views-state/index.html"
 },
 "ev-2024-15793a": {
 "kind": "event",
@@ -2082,6 +2094,72 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:03Z"
 },
+"src-01net-actualites-failles-php-pourquoi-cest-vra": {
+"kind": "source",
+"zone": "research",
+"title": "01net: Failles PHP : pourquoi c'est un vrai casse-tête pour l'Internet mondial",
+"path": "sources/01net-actualites-failles-php-pourquoi-cest-vra/index.html",
+"hash": "9aeafbb3ffe2",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-20-minuten-20min-fr-suisse-romande": {
+"kind": "source",
+"zone": "research",
+"title": "20 minutes / 20 Minuten: Faille de sécurité: Panne mondiale: la Suisse romande fortement impactée - 20 minutes",
+"path": "sources/20-minuten-20min-fr-suisse-romande/index.html",
+"hash": "ff1c87a0b846",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-20min-fr-suisse-romande": {
+"kind": "source",
+"zone": "research",
+"title": "20min.ch: Faille de sécurité: Panne mondiale des sites web: la Suisse romande touchée - 20 minutes",
+"path": "sources/20min-fr-suisse-romande/index.html",
+"hash": "2800704be2ed",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:14Z"
+},
+"src-20minutos-tecnologia-ciberseguridad-por-que-gobiernos-hospit": {
+"kind": "source",
+"zone": "research",
+"title": "20Minutos: Alerta de PHP: por qué gobiernos, hospitales y colegios desconectan sus webs",
+"path": "sources/20minutos-tecnologia-ciberseguridad-por-que-gobiernos-hospit/index.html",
+"hash": "e1cb942582a7",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-abc-au-gov-sites-exposed": {
+"kind": "source",
+"zone": "research",
+"title": "abc.net.au: Australian government sites among those exposed to 'critical' PHP software flaw - ABC News",
+"path": "sources/abc-au-gov-sites-exposed/index.html",
+"hash": "b6eecf2970f3",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:15Z"
+},
+"src-abc-au-politics-live": {
+"kind": "source",
+"zone": "research",
+"title": "abc.net.au: Federal politics: No government websites hacked after global security flaw found — as it happened - ABC News",
+"path": "sources/abc-au-politics-live/index.html",
+"hash": "f93eeb623f54",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:15Z"
+},
 "src-acn-it-php2shell": {
 "kind": "source",
 "zone": "research",
@@ -2115,6 +2193,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:16Z"
 },
+"src-actu17-prefectures": {
+"kind": "source",
+"zone": "research",
+"title": "actu17.fr: Failles critiques dans PHP : des sites coupés en urgence dans le monde entier, dont ceux des préfectures en France",
+"path": "sources/actu17-prefectures/index.html",
+"hash": "4c10ba224d99",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:14Z"
+},
 "src-actuia-anssi-sites-offline": {
 "kind": "source",
 "zone": "research",
@@ -2125,6 +2214,28 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:24Z"
+},
+"src-agconnect-maatschappij-security-welke-nederlandse-websites-w": {
+"kind": "source",
+"zone": "research",
+"title": "AG Connect: Offline door PHP kwetsbaarheden: Welke Nederlandse websites waren uit de lucht?",
+"path": "sources/agconnect-maatschappij-security-welke-nederlandse-websites-w/index.html",
+"hash": "8cbb59c575e3",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-ai4business-intelligenza-artificiale-php2shell-lai-s": {
+"kind": "source",
+"zone": "research",
+"title": "AI4Business: PHP2Shell: l’AI scopre falle critiche in PHP, attacchi già iniziati - AI4Business",
+"path": "sources/ai4business-intelligenza-artificiale-php2shell-lai-s/index.html",
+"hash": "2b4cac35cfed",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
 },
 "src-akamai-blog-cve-2024-4577-one-day": {
 "kind": "source",
@@ -2148,6 +2259,28 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:25Z"
 },
+"src-analyticsinsight-news-changpeng-zhao-warns-crypto-users-a": {
+"kind": "source",
+"zone": "research",
+"title": "Analytics Insight: Changpeng Zhao Warns Crypto Users Amid New PHP2Shell Threats",
+"path": "sources/analyticsinsight-news-changpeng-zhao-warns-crypto-users-a/index.html",
+"hash": "1624b4062cd1",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-andina-agencia-noticia-peru-y-otros-paises-advi": {
+"kind": "source",
+"zone": "research",
+"title": "Agencia Andina: Perú y otros países advierten de vulnerabilidad en PHP: estos son los riesgos de seguridad | Agencia Andina",
+"path": "sources/andina-agencia-noticia-peru-y-otros-paises-advi/index.html",
+"hash": "408336d23dee",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-arcticwolf-php2shell-exposure": {
 "kind": "source",
 "zone": "research",
@@ -2170,6 +2303,28 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:25Z"
 },
+"src-arstechnica-security-2026-10-php-maintainers-tell-web-devs-to-prepare-th": {
+"kind": "source",
+"zone": "research",
+"title": "Ars Technica: PHP warns it plans to release 2 emergency patches imminently - Ars Technica",
+"path": "sources/arstechnica-security-2026-10-php-maintainers-tell-web-devs-to-prepare-th/index.html",
+"hash": "cd1bc06f5f52",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-asiaone-singapore-php-vulnerability-singapore-cy": {
+"kind": "source",
+"zone": "research",
+"title": "AsiaOne.com: Singapore firms urged to act urgently over critical PHP vulnerabilities, Singapore News - AsiaOne",
+"path": "sources/asiaone-singapore-php-vulnerability-singapore-cy/index.html",
+"hash": "a895154a6b43",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-aws-security-blog-madpot": {
 "kind": "source",
 "zone": "research",
@@ -2180,6 +2335,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:17Z"
+},
+"src-bankinfosecurity-attackers-exploit-leaked-zero-day-flaws-in-widely-used-php-a": {
+"kind": "source",
+"zone": "research",
+"title": "BankInfoSecurity: Attackers Exploit Leaked Zero-Day Flaws in Widely Used PHP",
+"path": "sources/bankinfosecurity-attackers-exploit-leaked-zero-day-flaws-in-widely-used-php-a/index.html",
+"hash": "a62bf4fad319",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
 },
 "src-bbc-live-ckgel5xp2xv9t": {
 "kind": "source",
@@ -2192,6 +2358,50 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:05Z"
 },
+"src-bitpage-php2shell-php-sicherheitsluecke-webseite": {
+"kind": "source",
+"zone": "research",
+"title": "Bitpage.de: PHP2Shell: Wer offline ist, wer gepatcht hat und was zu tun ist - Bitpage.de",
+"path": "sources/bitpage-php2shell-php-sicherheitsluecke-webseite/index.html",
+"hash": "c7bbb74e0b0d",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-bleepingcomputer-amazon-4-days-before": {
+"kind": "source",
+"zone": "research",
+"title": "BleepingComputer: Amazon says PHP2Shell exploitation began 4 days before patches",
+"path": "sources/bleepingcomputer-amazon-4-days-before/index.html",
+"hash": "330c02f2d9fc",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-23T01:20Z"
+},
+"src-bleepingcomputer-php2shell": {
+"kind": "source",
+"zone": "research",
+"title": "bleepingcomputer.com: PHP ships emergency patches for critical PHP2Shell flaws",
+"path": "sources/bleepingcomputer-php2shell/index.html",
+"hash": "45bb1f43f8a7",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:10Z"
+},
+"src-blogdumoderateur-failles-critiques-php-versions-mettre-a": {
+"kind": "source",
+"zone": "research",
+"title": "BDM: Failles critiques dans PHP : quelles versions mettre à jour et comment protéger ses serveurs",
+"path": "sources/blogdumoderateur-failles-critiques-php-versions-mettre-a/index.html",
+"hash": "4d2a4fa1432c",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-bloomberg-governments-offline": {
 "kind": "source",
 "zone": "research",
@@ -2202,6 +2412,28 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:26Z"
+},
+"src-borncity-blog-2026-10-21-php2shell-php-schwachste": {
+"kind": "source",
+"zone": "research",
+"title": "BornCity: php2shell: PHP-Schwachstellen CVE-2026-109618 und CVE-2026-109619Borns IT- und Windows-Blog",
+"path": "sources/borncity-blog-2026-10-21-php2shell-php-schwachste/index.html",
+"hash": "3c289d3a252d",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-boursorama-reuters-sites-gouv": {
+"kind": "source",
+"zone": "research",
+"title": "boursorama.com: Des sites gouvernementaux hors service sur fond de failles dans PHP, un correctif critique attendu - 21/10/2026 à 16:44 - Bo",
+"path": "sources/boursorama-reuters-sites-gouv/index.html",
+"hash": "eda63c8d4caa",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:15Z"
 },
 "src-broadcom-security-php2shell": {
 "kind": "source",
@@ -2214,6 +2446,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:26Z"
 },
+"src-bursahakimiyet-teknoloji-php-deki-kritik-guvenlik-acigi-alar": {
+"kind": "source",
+"zone": "research",
+"title": "Bursa Hakimiyet: PHP’deki kritik güvenlik açığı alarmı! Dünya genelinde çok sayıda site erişime kapatıldı - Bursa Hakimiyet",
+"path": "sources/bursahakimiyet-teknoloji-php-deki-kritik-guvenlik-acigi-alar/index.html",
+"hash": "da717ec18af8",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
 "src-calif-php2shell": {
 "kind": "source",
 "zone": "research",
@@ -2224,6 +2467,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T08:10Z"
+},
+"src-canaltech-seguranca-falhas-no-php-chegam-ao-brasil-e-fazem-a": {
+"kind": "source",
+"zone": "research",
+"title": "Canaltech: Falhas no PHP chegam ao Brasil e fazem Anatel e tribunais suspenderem sistemas - Canaltech",
+"path": "sources/canaltech-seguranca-falhas-no-php-chegam-ao-brasil-e-fazem-a/index.html",
+"hash": "7be826906272",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
 },
 "src-cccs-al26-026": {
 "kind": "source",
@@ -2313,6 +2567,28 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:16Z"
 },
+"src-ch-unige-down": {
+"kind": "source",
+"zone": "research",
+"title": "unige.ch: Error 503",
+"path": "sources/ch-unige-down/index.html",
+"hash": "fc93598422c4",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur": {
+"kind": "source",
+"zone": "research",
+"title": "CNA (Channel NewsAsia): Singapore organisations urged to patch critical PHP flaws immediately amid cyberattack threat - CNA",
+"path": "sources/channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur/index.html",
+"hash": "2494b962c535",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
 "src-cisa-alert-log4j-2021": {
 "kind": "source",
 "zone": "research",
@@ -2379,6 +2655,39 @@
 "changed": "0.4.1",
 "date": "2026-10-22"
 },
+"src-cisco-sa-php-october26": {
+"kind": "source",
+"zone": "research",
+"title": "Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026",
+"path": "sources/cisco-sa-php-october26/index.html",
+"hash": "5ddc9338cd1d",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:17Z"
+},
+"src-clarin-us-news-php-security-vulnerabilities-how-ai-uncovered-massiv": {
+"kind": "source",
+"zone": "research",
+"title": "Clarin (English edition): PHP security vulnerabilities: How AI uncovered a massive 14-year-old flaw threatening 70% of the internet",
+"path": "sources/clarin-us-news-php-security-vulnerabilities-how-ai-uncovered-massiv/index.html",
+"hash": "cd459ef572be",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-clickx-fr-actualites-200877-des-failles-php-critiques-menace": {
+"kind": "source",
+"zone": "research",
+"title": "www.clickx.be: Des failles PHP critiques menacent les sites web du monde entier : DPG Media et les pouvoirs publics mettent leurs sites hors",
+"path": "sources/clickx-fr-actualites-200877-des-failles-php-critiques-menace/index.html",
+"hash": "072736da09e1",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
 "src-cloudflare-blog-php2shell-waf": {
 "kind": "source",
 "zone": "research",
@@ -2401,6 +2710,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:13Z"
 },
+"src-cnn-php2shell-ai": {
+"kind": "source",
+"zone": "research",
+"title": "cnn.com: PHP2Shell: AI helped find a critical security flaw affecting 70% of the internet | CNN Business",
+"path": "sources/cnn-php2shell-ai/index.html",
+"hash": "27b0b053ac2a",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:09Z"
+},
 "src-cnn-php2shell-websites-shut": {
 "kind": "source",
 "zone": "research",
@@ -2411,6 +2731,94 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:26Z"
+},
+"src-cnnportugal-php": {
+"kind": "source",
+"zone": "research",
+"title": "cnnportugal.iol.pt: \"Um dos incidentes mais impactantes da memória recente\": o que se está a passar na Internet? - CNN Portugal",
+"path": "sources/cnnportugal-php/index.html",
+"hash": "d897834bb2ab",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:15Z"
+},
+"src-coingape-crypto-firms-say-they-dont-use-php-after": {
+"kind": "source",
+"zone": "research",
+"title": "Coingape: Crypto Firms Say They Don't Use PHP After Critical PHP2Shell Flaw",
+"path": "sources/coingape-crypto-firms-say-they-dont-use-php-after/index.html",
+"hash": "e34102231ed1",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-cointelegraph-news-php-foundation-admits-structural-failure": {
+"kind": "source",
+"zone": "research",
+"title": "Cointelegraph Brasil: Fundação PHP admite que “falha estrutural” atrasou correção de segurança",
+"path": "sources/cointelegraph-news-php-foundation-admits-structural-failure/index.html",
+"hash": "a750f6024cca",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-computable-2026-10-21-kritiek-php-lek-zet-miljoenen-20261023": {
+"kind": "source",
+"zone": "research",
+"title": "Computable.nl: Kritiek PHP-lek zet miljoenen websites onder druk - Computable.nl",
+"path": "sources/computable-2026-10-21-kritiek-php-lek-zet-miljoenen-20261023/index.html",
+"hash": "51fc3bd2c6e1",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-computerweekly-news-366652674-botched-php2shell-disclos": {
+"kind": "source",
+"zone": "research",
+"title": "Computer Weekly: Botched PHP2Shell disclosure revealed as panic continues | Computer Weekly",
+"path": "sources/computerweekly-news-366652674-botched-php2shell-disclos/index.html",
+"hash": "d03329f0e495",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-computerworld-article-4238887-dos-fallos-criticos-de-p": {
+"kind": "source",
+"zone": "research",
+"title": "COMPUTERWORLD ESPAÑA: Dos fallos críticos de PHP ponen en alerta a Internet | Computerworld.es",
+"path": "sources/computerworld-article-4238887-dos-fallos-criticos-de-p/index.html",
+"hash": "ad93a336e49a",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-criticarad-php2shell-cve-2026-109618-ghid-patch": {
+"kind": "source",
+"zone": "research",
+"title": "Critic Arad: PHP2Shell | Panică mondială și ghidul complet de patch",
+"path": "sources/criticarad-php2shell-cve-2026-109618-ghid-patch/index.html",
+"hash": "c9c8e56672da",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-crn-news-security-2026-5-things-to-know-about-critical-php-vulne": {
+"kind": "source",
+"zone": "research",
+"title": "CRN: 5 Things To Know About ‘Critical’ PHP Vulnerabilities Exploitation",
+"path": "sources/crn-news-security-2026-5-things-to-know-about-critical-php-vulne/index.html",
+"hash": "733ac9d56a31",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
 },
 "src-cve-cve-2008-1447": {
 "kind": "source",
@@ -2555,6 +2963,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:26Z"
 },
+"src-cyber-gov-au-site": {
+"kind": "source",
+"zone": "research",
+"title": "cyber.gov.au: cyber-gov-au-site",
+"path": "sources/cyber-gov-au-site/index.html",
+"hash": "1ae134b216e7",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
 "src-cyberexpress-php2shell-gov-sites": {
 "kind": "source",
 "zone": "research",
@@ -2566,6 +2985,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:26Z"
 },
+"src-cyberkendra-2026-10-php2shell-cve-2026-109618-cve-20": {
+"kind": "source",
+"zone": "research",
+"title": "cyberkendra.com: PHP2Shell: Critical PHP Flaws Allow Remote Code Execution - Cyber Kendra",
+"path": "sources/cyberkendra-2026-10-php2shell-cve-2026-109618-cve-20/index.html",
+"hash": "ec3120cf5c4b",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
 "src-cybernews-php2shell-millions": {
 "kind": "source",
 "zone": "research",
@@ -2576,6 +3006,28 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:27Z"
+},
+"src-cyberpress-php2shell-exploits-predate-patches": {
+"kind": "source",
+"zone": "research",
+"title": "Cyber Press: Attackers Were Already Testing PHP2Shell Exploits Before Security Patches Arrived",
+"path": "sources/cyberpress-php2shell-exploits-predate-patches/index.html",
+"hash": "94f49fdeba91",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-cyberscoop-php-emergency-patches-php2shell-vulnerab": {
+"kind": "source",
+"zone": "research",
+"title": "CyberScoop: PHP releases emergency fixes for 2 critical vulnerabilities | CyberScoop",
+"path": "sources/cyberscoop-php-emergency-patches-php2shell-vulnerab/index.html",
+"hash": "d1b82ba43d97",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
 },
 "src-darkreading-php2shell-red-alert": {
 "kind": "source",
@@ -2599,6 +3051,28 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:12Z"
 },
+"src-delfi-bizness-44467736-tehnologijas-120139480-certlv-novero": {
+"kind": "source",
+"zone": "research",
+"title": "DELFI: \"Cert.lv\" novēro mēģinājumus izmantot PHP ievainojamības kiberuzbrukumos; pagaidām uzbrukumi nesekmīgi",
+"path": "sources/delfi-bizness-44467736-tehnologijas-120139480-certlv-novero/index.html",
+"hash": "369d503fa4c8",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-diariobitcoin-tecnologia-aws-detecto-un-intento-de-exp": {
+"kind": "source",
+"zone": "research",
+"title": "DiarioBitcoin: AWS detectó un intento de explotar PHP2Shell cuatro días antes de su divulgación - DiarioBitcoin",
+"path": "sources/diariobitcoin-tecnologia-aws-detecto-un-intento-de-exp/index.html",
+"hash": "6dd942de72fa",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-dutchitleaders-websites-offline": {
 "kind": "source",
 "zone": "research",
@@ -2621,6 +3095,39 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:27Z"
 },
+"src-economictimes-indiatimes-tech-technology-what-is-the-php-security": {
+"kind": "source",
+"zone": "research",
+"title": "The Economic Times: What is the PHP security vulnerability: The AI-found bug that made governments take websites offline - The Economic Time",
+"path": "sources/economictimes-indiatimes-tech-technology-what-is-the-php-security/index.html",
+"hash": "0bb3235a47a7",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-edinburgh-council-site": {
+"kind": "source",
+"zone": "research",
+"title": "edinburgh.gov.uk: Home – The City of Edinburgh Council",
+"path": "sources/edinburgh-council-site/index.html",
+"hash": "78bd89200ffa",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-edinburghnews-council-offline": {
+"kind": "source",
+"zone": "research",
+"title": "edinburghnews.scotsman.com: Edinburgh council website offline as operators race to patch critical vulnerability",
+"path": "sources/edinburghnews-council-offline/index.html",
+"hash": "10d3623f5305",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:11Z"
+},
 "src-enisa-cnw-2026-04-php": {
 "kind": "source",
 "zone": "research",
@@ -2631,6 +3138,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T08:13Z"
+},
+"src-epfl-site": {
+"kind": "source",
+"zone": "research",
+"title": "epfl.ch: EPFL",
+"path": "sources/epfl-site/index.html",
+"hash": "845950e6454d",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
 },
 "src-equixly-php2shell-what-we-know": {
 "kind": "source",
@@ -2654,6 +3172,39 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:19Z"
 },
+"src-fi-valtori": {
+"kind": "source",
+"zone": "research",
+"title": "valtori.fi: fi-valtori",
+"path": "sources/fi-valtori/index.html",
+"hash": "664b9e33a4eb",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-forest-watch-impress-docs-news-2150167-html": {
+"kind": "source",
+"zone": "research",
+"title": "窓の杜: 「PHP」の“致命的”な脆弱性2件が修正、ただちにアップデートを - 窓の杜",
+"path": "sources/forest-watch-impress-docs-news-2150167-html/index.html",
+"hash": "100215b95355",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-fortinet-fg-ir-26-186": {
+"kind": "source",
+"zone": "research",
+"title": "Fortinet: PSIRT | FortiGuard Labs",
+"path": "sources/fortinet-fg-ir-26-186/index.html",
+"hash": "3e0419cda2a6",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:17Z"
+},
 "src-fortinet-fortiweb-php2shell": {
 "kind": "source",
 "zone": "research",
@@ -2664,6 +3215,83 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:20Z"
+},
+"src-fortune-ai-tools-php-vulnerability": {
+"kind": "source",
+"zone": "research",
+"title": "Fortune: AI helped discover the PHP vulnerability that could take down 70% of the internet | Fortune",
+"path": "sources/fortune-ai-tools-php-vulnerability/index.html",
+"hash": "3971554c0059",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-23T01:20Z"
+},
+"src-fr-ants-down": {
+"kind": "source",
+"zone": "research",
+"title": "ants.gouv.fr: Accueil - France Titres (ANTS)",
+"path": "sources/fr-ants-down/index.html",
+"hash": "b2b152c33696",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-fr-interieur-down": {
+"kind": "source",
+"zone": "research",
+"title": "interieur.gouv.fr: fr-interieur-down",
+"path": "sources/fr-interieur-down/index.html",
+"hash": "6ae3ca95437b",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-fr-ppolice-down": {
+"kind": "source",
+"zone": "research",
+"title": "prefecturedepolice.interieur.gouv.fr: fr-ppolice-down",
+"path": "sources/fr-ppolice-down/index.html",
+"hash": "54535d828625",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-fr-prefecture-nord-down": {
+"kind": "source",
+"zone": "research",
+"title": "nord.gouv.fr: Site en maintenance | Les Services de l'État",
+"path": "sources/fr-prefecture-nord-down/index.html",
+"hash": "8ed03a8dd189",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-fr-prefecture-rhone-down": {
+"kind": "source",
+"zone": "research",
+"title": "rhone.gouv.fr: Site en maintenance | Les Services de l'État",
+"path": "sources/fr-prefecture-rhone-down/index.html",
+"hash": "352fefebe876",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-ginjfo-actualites-politique-et-economie-failles": {
+"kind": "source",
+"zone": "research",
+"title": "GinjFo: Failles critiques de PHP, des millions de tentatives d’exploitation ont eu lieu - GinjFo",
+"path": "sources/ginjfo-actualites-politique-et-economie-failles/index.html",
+"hash": "44afcd95ee13",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
 },
 "src-gist-blevene-detection-guide": {
 "kind": "source",
@@ -2786,6 +3414,39 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:20Z"
 },
+"src-globalnews-ottawa-sites": {
+"kind": "source",
+"zone": "research",
+"title": "globalnews.ca: Ottawa taking down some federal websites over critical global vulnerability - National | Globalnews.ca",
+"path": "sources/globalnews-ottawa-sites/index.html",
+"hash": "45e1a6125722",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:16Z"
+},
+"src-hardwarecooking-failles-php-critiques-php2shell-correcti": {
+"kind": "source",
+"zone": "research",
+"title": "HardwareCooking: Failles PHP critiques (PHP2Shell) : les correctifs sont sortis, mettez à jour maintenant",
+"path": "sources/hardwarecooking-failles-php-critiques-php2shell-correcti/index.html",
+"hash": "bbae4c116c03",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-helpnetsecurity-2026-10-22-php2shell-scanner-tool": {
+"kind": "source",
+"zone": "research",
+"title": "Help Net Security: New PHP2Shell scanner checks your hosts for CVE-2026-109618 and CVE-2026-109619 - Help Net Security",
+"path": "sources/helpnetsecurity-2026-10-22-php2shell-scanner-tool/index.html",
+"hash": "ad2b63cee88d",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-helsinkitimes-finland-shutdown": {
 "kind": "source",
 "zone": "research",
@@ -2796,6 +3457,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:28Z"
+},
+"src-howtogeek-sites-down": {
+"kind": "source",
+"zone": "research",
+"title": "howtogeek.com: Your favorite websites are down due to an internet-breaking PHP security flaw",
+"path": "sources/howtogeek-sites-down/index.html",
+"hash": "cd501f18b6cf",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:18Z"
 },
 "src-huntress-php2shell-rapid-response": {
 "kind": "source",
@@ -2808,6 +3480,39 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:28Z"
 },
+"src-ia-acs-article-2026-govt-sites-go-down-after-ai-finds-critical-php": {
+"kind": "source",
+"zone": "research",
+"title": "Information Age (ACS): Govt sites go down after AI finds 'critical' PHP vulnerabilities | Information Age | ACS",
+"path": "sources/ia-acs-article-2026-govt-sites-go-down-after-ai-finds-critical-php/index.html",
+"hash": "f3428603ec98",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-ictjournal-news-2026-10-22-deux-failles-critiques-d": {
+"kind": "source",
+"zone": "research",
+"title": "ICTjournal: PHP2Shell: des milliers de serveurs vulnérables, des attaques déjà tentées (update) | ICTjournal",
+"path": "sources/ictjournal-news-2026-10-22-deux-failles-critiques-d/index.html",
+"hash": "538e09fbd378",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-idxchannel-playlists-jutaan-situs-terancam-usai-ai": {
+"kind": "source",
+"zone": "research",
+"title": "IDX Channel: Jutaan Situs Terancam usai AI Temukan Celah pada Bahasa Pemrograman PHP",
+"path": "sources/idxchannel-playlists-jutaan-situs-terancam-usai-ai/index.html",
+"hash": "0c62973a2cfd",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-imperva-blog-php2shell": {
 "kind": "source",
 "zone": "research",
@@ -2818,6 +3523,105 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:18Z"
+},
+"src-impress-watch-valtec": {
+"kind": "source",
+"zone": "research",
+"title": "INTERNET Watch (Impress): バルテック、サイバー攻撃によりサービス停止、情報流出の可能性（記事訂正） - INTERNET Watch",
+"path": "sources/impress-watch-valtec/index.html",
+"hash": "079ac064736e",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:14Z"
+},
+"src-in-mashable-tech-115245-fbi-releases-php2shell-advisory-as-the-internet": {
+"kind": "source",
+"zone": "research",
+"title": "Mashable India: FBI Releases PHP2Shell Advisory As The Internet Explodes In Hilarious PHP Memes; Here Are The Best Ones",
+"path": "sources/in-mashable-tech-115245-fbi-releases-php2shell-advisory-as-the-internet/index.html",
+"hash": "3425e1bc745d",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-indianexpress-article-technology-cert-in-php-vulnerability-alert-india-cyb": {
+"kind": "source",
+"zone": "research",
+"title": "The Indian Express: PHP security alert: What US and Indian government warnings mean for websites | Technology News - The Indian Express",
+"path": "sources/indianexpress-article-technology-cert-in-php-vulnerability-alert-india-cyb/index.html",
+"hash": "16bff5faa8fa",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-indiatvnews-technology-news-us-nsa-issues-urgent-php2shell-warning-advis": {
+"kind": "source",
+"zone": "research",
+"title": "India TV News: US NSA warns of PHP security flaw that could let hackers take over servers: How to stay safe - India TV News",
+"path": "sources/indiatvnews-technology-news-us-nsa-issues-urgent-php2shell-warning-advis/index.html",
+"hash": "b4bd753d83a1",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-infopoint-security-php2shell-chaos-ein-tag-der-die-sicherhe": {
+"kind": "source",
+"zone": "research",
+"title": "Infopoint Security: PHP2Shell-Chaos: Ein Tag der Security-Teams in Alarmbereitschaft versetzte",
+"path": "sources/infopoint-security-php2shell-chaos-ein-tag-der-die-sicherhe/index.html",
+"hash": "cc6b500cc7d1",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-infosecurity-magazine-news-php2shell-exploitation-attempt": {
+"kind": "source",
+"zone": "research",
+"title": "Infosecurity Magazine: PHP2Shell Exploitation Attempt Detected Four Days Before Disclosure - Infosecurity Magazine",
+"path": "sources/infosecurity-magazine-news-php2shell-exploitation-attempt/index.html",
+"hash": "7d291ff1257c",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-insiderpaper-archive-wikipedia": {
+"kind": "source",
+"zone": "research",
+"title": "insiderpaper.com: Internet Archive down, Wikipedia hit by outages amid PHP issues - Insider Paper",
+"path": "sources/insiderpaper-archive-wikipedia/index.html",
+"hash": "8719fc1d165b",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:13Z"
+},
+"src-insurance-business-au-asiapac-attacks-begin": {
+"kind": "source",
+"zone": "research",
+"title": "Insurance Business: Critical global website flaw sparks alerts across Asia-Pac as attacks begin | Insurance Business",
+"path": "sources/insurance-business-au-asiapac-attacks-begin/index.html",
+"hash": "c1f53ef51496",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-23T01:20Z"
+},
+"src-insurancebusiness-uk-councils": {
+"kind": "source",
+"zone": "research",
+"title": "insurancebusinessmag.com: UK councils and Met Police among sites pulled offline after NCSC alert | Insurance Business",
+"path": "sources/insurancebusiness-uk-councils/index.html",
+"hash": "f753028e91e2",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:12Z"
 },
 "src-insurancebusiness-uk-councils-met": {
 "kind": "source",
@@ -2841,6 +3645,50 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:21Z"
 },
+"src-itsocial-cybersecurite-cybersecurite-articles-php": {
+"kind": "source",
+"zone": "research",
+"title": "IT Social: PHP2Shell, la mise à jour ferme la faille, mais oblige à traquer les compromissions possibles - IT SOCIAL",
+"path": "sources/itsocial-cybersecurite-cybersecurite-articles-php/index.html",
+"hash": "4d168a27afd2",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-jn-pt-sites-desligados": {
+"kind": "source",
+"zone": "research",
+"title": "jn.pt: Erro crítico em PHP obriga desligação de vários sites",
+"path": "sources/jn-pt-sites-desligados/index.html",
+"hash": "2f15c80b8a7f",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:16Z"
+},
+"src-journalducanada-php2shell-des-serveurs-exposes-a-une-cyb": {
+"kind": "source",
+"zone": "research",
+"title": "Journal Du Canada: PHP2Shell : des serveurs exposés à une cybermenace mondiale",
+"path": "sources/journalducanada-php2shell-des-serveurs-exposes-a-une-cyb/index.html",
+"hash": "71d364fc82e1",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-journalducoin-technologies-php2shell-prefectures-impots-berc": {
+"kind": "source",
+"zone": "research",
+"title": "Journal Du Coin: PHP2Shell : préfectures, impôts, Bercy et Météo-France coupés sur demande de l'ANSSI - Journal du Coin",
+"path": "sources/journalducoin-technologies-php2shell-prefectures-impots-berc/index.html",
+"hash": "c24042661a67",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T17:15Z"
+},
 "src-jpcert-at260033": {
 "kind": "source",
 "zone": "research",
@@ -2863,6 +3711,28 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:16Z"
 },
+"src-koran-jakarta-2026-10-22-upaya-global-perbaiki-celah-keamana": {
+"kind": "source",
+"zone": "research",
+"title": "Koran Jakarta ®: Upaya Global Perbaiki Celah Keamanan Siber PHP, dari Amazon hingga Kementerian Jepang",
+"path": "sources/koran-jakarta-2026-10-22-upaya-global-perbaiki-celah-keamana/index.html",
+"hash": "88a511564e5b",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-lalibre-economie-digital-2026-10-21-une-faille-critique-mena": {
+"kind": "source",
+"zone": "research",
+"title": "La Libre.be: Une faille critique menace des milliers de sites internet : plusieurs plateformes belges concernées, un correctif publié - La L",
+"path": "sources/lalibre-economie-digital-2026-10-21-une-faille-critique-mena/index.html",
+"hash": "06fd68fe96bd",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
 "src-lbc-uk-websites-offline": {
 "kind": "source",
 "zone": "research",
@@ -2874,6 +3744,72 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:29Z"
 },
+"src-lebigdata-php2shell-des-millions-dattaques-frappen": {
+"kind": "source",
+"zone": "research",
+"title": "LEBIGDATA.FR: PHP2Shell : comment protéger votre site des attaques PHP",
+"path": "sources/lebigdata-php2shell-des-millions-dattaques-frappen/index.html",
+"hash": "ec639c4907f5",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-lemondeinformatique-actualites-lire-deux-failles-critiques-d": {
+"kind": "source",
+"zone": "research",
+"title": "Le Monde Informatique: Deux failles critiques dans PHP : les entreprises sous pression - Le Monde Informatique",
+"path": "sources/lemondeinformatique-actualites-lire-deux-failles-critiques-d/index.html",
+"hash": "270545d27c57",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-lesaffaires-opinions-php2shell-ce-quil-faut-en-reten": {
+"kind": "source",
+"zone": "research",
+"title": "Les Affaires: PHP2Shell: ce qu’il faut retenir des failles révélées cette semaine - Les Affaires",
+"path": "sources/lesaffaires-opinions-php2shell-ce-quil-faut-en-reten/index.html",
+"hash": "6984d3dfe080",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-lessentiel-fr-story-mondeluxembourg-une-faille-de-s": {
+"kind": "source",
+"zone": "research",
+"title": "L'essentiel: Faille PHP «PHP2Shell»: des millions de sites web menacés dans le monde - L'essentiel",
+"path": "sources/lessentiel-fr-story-mondeluxembourg-une-faille-de-s/index.html",
+"hash": "3970ac72d065",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-letemps-php-sites-debranches": {
+"kind": "source",
+"zone": "research",
+"title": "letemps.ch: Alerte sur le Web: des millions de sites sont débranchés en urgence à cause de failles majeures au cœur de PHP - Le Temps",
+"path": "sources/letemps-php-sites-debranches/index.html",
+"hash": "b58591ded4c7",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:14Z"
+},
+"src-linternaute-hightech-internet-11310057-panne-interne": {
+"kind": "source",
+"zone": "research",
+"title": "Linternaute.com: Failles PHP : c'est quoi ? On vous explique la panique mondiale sur internet, l'IA au coeur du problème",
+"path": "sources/linternaute-hightech-internet-11310057-panne-interne/index.html",
+"hash": "7561176ea734",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-lorikeet-php2shell": {
 "kind": "source",
 "zone": "research",
@@ -2884,6 +3820,61 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:24Z"
+},
+"src-lupa-cvut-cyber-attack": {
+"kind": "source",
+"zone": "research",
+"title": "Lupa.cz: ČVUT čelí kybernetickému útoku, údajně doplatilo na kritickou chybu v PHP - Lupa.cz",
+"path": "sources/lupa-cvut-cyber-attack/index.html",
+"hash": "7d98b46285df",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:15Z"
+},
+"src-lv-latvija-gov": {
+"kind": "source",
+"zone": "research",
+"title": "latvija.gov.lv: lv-latvija-gov",
+"path": "sources/lv-latvija-gov/index.html",
+"hash": "8217db750569",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-marketing4ecommerce-crisis-seguridad-php": {
+"kind": "source",
+"zone": "research",
+"title": "Marketing4eCommerce: La crisis de seguridad en PHP, explicada para dummies",
+"path": "sources/marketing4ecommerce-crisis-seguridad-php/index.html",
+"hash": "269820454e94",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-medianama-2026-10-223-php-vulnerabilities-global-rush-update": {
+"kind": "source",
+"zone": "research",
+"title": "MediaNama: What are the two PHP vulnerabilities behind a global rush to update",
+"path": "sources/medianama-2026-10-223-php-vulnerabilities-global-rush-update/index.html",
+"hash": "4e10fe081888",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-moroccoworldnews-2026-10-343335-moroccos-dgssi-warns-of-critical-php2shell-vu": {
+"kind": "source",
+"zone": "research",
+"title": "Morocco World News: Morocco’s DGSSI Warns of Critical ‘PHP2Shell’ Vulnerabilities",
+"path": "sources/moroccoworldnews-2026-10-343335-moroccos-dgssi-warns-of-critical-php2shell-vu/index.html",
+"hash": "db59ded96da3",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
 },
 "src-ncsc-news-php": {
 "kind": "source",
@@ -2929,6 +3920,28 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:48Z"
 },
+"src-ncsc-nl-php2shell-software-list-letters": {
+"kind": "source",
+"zone": "research",
+"title": "NCSC-NL: NCSC-NL php2shell software inventory, all 27 per-letter files (snapshot 18:36 UTC, 22 October 2026)",
+"path": "sources/ncsc-nl-php2shell-software-list-letters/index.html",
+"hash": "2fbd8614dc2d",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:36Z"
+},
+"src-ncsc-nl-site": {
+"kind": "source",
+"zone": "research",
+"title": "ncsc.nl: Home | NCSC",
+"path": "sources/ncsc-nl-site/index.html",
+"hash": "bf452cf67d56",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
 "src-ncsc-nz-alert-php": {
 "kind": "source",
 "zone": "research",
@@ -2951,6 +3964,39 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:16Z"
 },
+"src-news-yahoo-articles-d953e2a13109253ae974bf2a64ebe94": {
+"kind": "source",
+"zone": "research",
+"title": "Yahoo!ニュース: 【図解】重大な脆弱性が見つかった「PHP」とは？（Yahoo!ニュース オリジナル THE PAGE）",
+"path": "sources/news-yahoo-articles-d953e2a13109253ae974bf2a64ebe94/index.html",
+"hash": "55aa029e307b",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-news9live-technology-tech-news-what-is-php2shell-c": {
+"kind": "source",
+"zone": "research",
+"title": "News9Live: What is PHP2Shell? Critical PHP flaws put millions of websites on emergency patch alert",
+"path": "sources/news9live-technology-tech-news-what-is-php2shell-c/index.html",
+"hash": "53465443c103",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-newsweek-php2shell-list": {
+"kind": "source",
+"zone": "research",
+"title": "newsweek.com: PHP Vulnerability: List of Websites Powered by PHP as Hacker Threat Prompts Scramble - Newsweek",
+"path": "sources/newsweek-php2shell-list/index.html",
+"hash": "c0acf5e7e081",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:13Z"
+},
 "src-newsweek-php2shell-websites": {
 "kind": "source",
 "zone": "research",
@@ -2961,6 +4007,28 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:22Z"
+},
+"src-nguoiquansat-lo-hong-php2shell-de-doa-70-website-toan": {
+"kind": "source",
+"zone": "research",
+"title": "nguoiquansat.vn: Lỗ hổng php2shell đe dọa 70% website toàn cầu: Thủ tướng Nhật Bản thức trắng đêm phát lệnh báo động đỏ",
+"path": "sources/nguoiquansat-lo-hong-php2shell-de-doa-70-website-toan/index.html",
+"hash": "2883e012217c",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-notebookcheck-php2shell-le-falle-critiche-di-php-colpi": {
+"kind": "source",
+"zone": "research",
+"title": "Notebookcheck.it: PHP2Shell: le falle critiche di PHP colpiscono soprattutto i server mod_php - NotebookCheck.it News",
+"path": "sources/notebookcheck-php2shell-le-falle-critiche-di-php-colpi/index.html",
+"hash": "77b1f02ce421",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
 },
 "src-nsa-press-php-4630238": {
 "kind": "source",
@@ -3016,6 +4084,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T08:09Z"
+},
+"src-nukib-aktuality-2470": {
+"kind": "source",
+"zone": "research",
+"title": "NÚKIB: Národní úřad pro kybernetickou a informační bezpečnost - NÚKIB upozorňuje na kritické zranitelnosti v PHP - jediným řešením je aktual",
+"path": "sources/nukib-aktuality-2470/index.html",
+"hash": "a3b171356660",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:14Z"
 },
 "src-nvd-cve-2026-109618": {
 "kind": "source",
@@ -3116,6 +4195,28 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:14Z"
 },
+"src-orf-stories-3445806": {
+"kind": "source",
+"zone": "research",
+"title": "ORF: PHP-Lücke: Millionen Angriffsversuche im Netz - news.ORF.at",
+"path": "sources/orf-stories-3445806/index.html",
+"hash": "adf31fe302e1",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-overheid-nl-site": {
+"kind": "source",
+"zone": "research",
+"title": "overheid.nl: Homepage | Overheid.nl",
+"path": "sources/overheid-nl-site/index.html",
+"hash": "d95a85f70b53",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
 "src-oxfordchronicle-councils-offline": {
 "kind": "source",
 "zone": "research",
@@ -3127,6 +4228,28 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:29Z"
 },
+"src-paloalto-psirt-cve-2026-109618": {
+"kind": "source",
+"zone": "research",
+"title": "Palo Alto Networks: CVE-2026-109618 Impact of Critical Vulnerabilities in PHP (CVE-2026-109618, CVE-2026-109619) on Palo Alto Networks Produ",
+"path": "sources/paloalto-psirt-cve-2026-109618/index.html",
+"hash": "19a08f99c69d",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:17Z"
+},
+"src-paperjam-article-php2shell-des-milliers-de-sites": {
+"kind": "source",
+"zone": "research",
+"title": "Paperjam: PHP2Shell: des milliers de sites exposés au Luxembourg | Paperjam News",
+"path": "sources/paperjam-article-php2shell-des-milliers-de-sites/index.html",
+"hash": "4f992c93e76c",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-patchtheplanet-org": {
 "kind": "source",
 "zone": "research",
@@ -3137,6 +4260,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T08:16Z"
+},
+"src-pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw": {
+"kind": "source",
+"zone": "research",
+"title": "PCMag: Hackers Already Trying to Exploit Serious PHP Flaw | PCMag",
+"path": "sources/pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/index.html",
+"hash": "12caa1799fbe",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
 },
 "src-php-foundation-blog-security-release": {
 "kind": "source",
@@ -3204,6 +4338,39 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:12Z"
 },
+"src-phpocalypse-tracker-sites-csv": {
+"kind": "source",
+"zone": "research",
+"title": "PHPocalypse Tracker (allixsenos): PHPocalypse Tracker (allixsenos)",
+"path": "sources/phpocalypse-tracker-sites-csv/index.html",
+"hash": "2097c0b0efd2",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:36Z"
+},
+"src-polinews-news-articleview-html": {
+"kind": "source",
+"zone": "research",
+"title": "폴리뉴스 Polinews: [종합] 靑, PHP 사이버 보안비상에 민관군 긴급회의…국내 취약 자산 11만건 추정 < 이슈기획 < 오피니언·이슈 < 기사본문 - 폴리뉴스 Polinews",
+"path": "sources/polinews-news-articleview-html/index.html",
+"hash": "890440f06541",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-prefecture-police-site": {
+"kind": "source",
+"zone": "research",
+"title": "prefecturedepolice.interieur.gouv.fr: Page accueil | Préfecture de Police",
+"path": "sources/prefecture-police-site/index.html",
+"hash": "020b6cf7cfce",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
 "src-prophetsecurity-php2shell-detect": {
 "kind": "source",
 "zone": "research",
@@ -3214,6 +4381,39 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:29Z"
+},
+"src-qa-financial-php-security-crisis-raises-testing-stake": {
+"kind": "source",
+"zone": "research",
+"title": "QA Financial: PHP security crisis raises testing stakes for banks - QA Financial",
+"path": "sources/qa-financial-php-security-crisis-raises-testing-stake/index.html",
+"hash": "11888894e19b",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-qnap-qsa-26-18": {
+"kind": "source",
+"zone": "research",
+"title": "QNAP: Vulnerabilities in PHP (PHP2Shell) Affecting Multiple QNAP Products - Security Advisory | QNAP",
+"path": "sources/qnap-qsa-26-18/index.html",
+"hash": "6ad9f0d0e209",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:17Z"
+},
+"src-qnap-statement-php2shell": {
+"kind": "source",
+"zone": "research",
+"title": "QNAP: QNAP Statement on Critical PHP Vulnerabilities (PHP2Shell): Assessment and Mitigation Guidance | QNAP",
+"path": "sources/qnap-statement-php2shell/index.html",
+"hash": "15dbf7eb0f51",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:17Z"
 },
 "src-qualys-blog-php-preannounce": {
 "kind": "source",
@@ -3242,11 +4442,33 @@
 "zone": "research",
 "title": "Recorded Future: PHP2Shell Exploitation: Two Critical PHP Flaws Explained",
 "path": "sources/recordedfuture-php2shell/index.html",
-"hash": "a96928093e61",
-"v": 1,
+"hash": "363653f0077b",
+"v": 2,
 "first": "0.4.1",
-"changed": "0.4.1",
-"date": "2026-10-22T11:30Z"
+"changed": "0.10.3",
+"date": "2026-10-23"
+},
+"src-repubblica-tecnologia-2026-10-21-news-php2shell-ia": {
+"kind": "source",
+"zone": "research",
+"title": "la Repubblica: PHP2Shell, l’IA svela due falle critiche nel web - la Repubblica",
+"path": "sources/repubblica-tecnologia-2026-10-21-news-php2shell-ia/index.html",
+"hash": "ddf86b1f66cb",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-reuters-factbox-gbaf": {
+"kind": "source",
+"zone": "research",
+"title": "globalbankingandfinance.com: Major European Websites Offline Amid Critical PHP Security Flaws",
+"path": "sources/reuters-factbox-gbaf/index.html",
+"hash": "82a51bde887a",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:10Z"
 },
 "src-reuters-factbox-websites-offline": {
 "kind": "source",
@@ -3270,6 +4492,50 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:30Z"
 },
+"src-rocket-boys-security-measures-lab-php2shell-poc-expl": {
+"kind": "source",
+"zone": "research",
+"title": "合同会社ロケットボーイズ: PHP2Shell(CVE-2026-109618／CVE-2026-109619)のPoCがGitHubで急増、27件を確認 Amazonは公表4日前からサイバー攻撃の試行を観測|セキュリティとITのニュース-セキュリティ対策Lab",
+"path": "sources/rocket-boys-security-measures-lab-php2shell-poc-expl/index.html",
+"hash": "36f0712314e0",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-rte-reuters-websites-go-dark": {
+"kind": "source",
+"zone": "research",
+"title": "rte.ie: Websites go dark as AI exposes critical security flaws",
+"path": "sources/rte-reuters-websites-go-dark/index.html",
+"hash": "3b34b468ba83",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:10Z"
+},
+"src-rtl-leben-digitales-php-luecke-bsi-warnt-vor-cyber-gefahr-fi": {
+"kind": "source",
+"zone": "research",
+"title": "RTL.de: PHP-Lücke: BSI warnt vor Cyber-Gefahr – Firmen oft unwissend",
+"path": "sources/rtl-leben-digitales-php-luecke-bsi-warnt-vor-cyber-gefahr-fi/index.html",
+"hash": "bd794105c317",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-rtve-noticias-20261022-fallos-criticos-php2shell-vulnerabili": {
+"kind": "source",
+"zone": "research",
+"title": "RTVE.es: Alerta por fallos críticos en PHP: riesgo en servidores web",
+"path": "sources/rtve-noticias-20261022-fallos-criticos-php2shell-vulnerabili/index.html",
+"hash": "640a49c10e4b",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
 "src-safeguard-how-hard-to-exploit": {
 "kind": "source",
 "zone": "research",
@@ -3292,6 +4558,28 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:19Z"
 },
+"src-salzburg24-news-oesterreich-massive-sache-folgen-der-php-sic": {
+"kind": "source",
+"zone": "research",
+"title": "salzburg24: \"Massive Sache\": Folgen der PHP-Sicherheitslücke für heimische Wirtschaft noch unklar - Salzburg24.at",
+"path": "sources/salzburg24-news-oesterreich-massive-sache-folgen-der-php-sic/index.html",
+"hash": "7b64c9f8f9e3",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-sankei-dmm-service-halt": {
+"kind": "source",
+"zone": "research",
+"title": "産経ニュース: エンタメサイトDMMがサービス停止、外部システムの脆弱性への対応　「情報漏洩は無し」 - 産経ニュース",
+"path": "sources/sankei-dmm-service-halt/index.html",
+"hash": "3bdae7c707b1",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:15Z"
+},
 "src-sansec-research-php2shell": {
 "kind": "source",
 "zone": "research",
@@ -3302,6 +4590,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:31Z"
+},
+"src-scotsman-edinburgh-council": {
+"kind": "source",
+"zone": "research",
+"title": "scotsman.com: Edinburgh council website offline amid global cyber security alert",
+"path": "sources/scotsman-edinburgh-council/index.html",
+"hash": "e2c36ead86de",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:10Z"
 },
 "src-scotsman-edinburgh-council-offline": {
 "kind": "source",
@@ -3314,16 +4613,38 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:21Z"
 },
+"src-security-nl-kamervragen": {
+"kind": "source",
+"zone": "research",
+"title": "Security.NL: Kamervragen over offline halen van overheidswebsites wegens PHP2Shell - Security.NL",
+"path": "sources/security-nl-kamervragen/index.html",
+"hash": "1e3e045213f6",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-securitynl-misbruik-gemeld": {
+"kind": "source",
+"zone": "research",
+"title": "Security.NL: Misbruik van PHP2Shell-lek gemeld, DigiD en andere sites weer online - Security.NL",
+"path": "sources/securitynl-misbruik-gemeld/index.html",
+"hash": "9ba0d27da4be",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:14Z"
+},
 "src-securityweek-exploitation-days-before": {
 "kind": "source",
 "zone": "research",
 "title": "SecurityWeek: PHP2Shell Exploitation Started Days Before Patches - SecurityWeek",
 "path": "sources/securityweek-exploitation-days-before/index.html",
-"hash": "adf60098b193",
-"v": 1,
+"hash": "ea5869482302",
+"v": 2,
 "first": "0.4.1",
-"changed": "0.4.1",
-"date": "2026-10-22T11:23Z"
+"changed": "0.10.3",
+"date": "2026-10-23"
 },
 "src-securityweek-first-attempts-sensors": {
 "kind": "source",
@@ -3358,6 +4679,50 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:31Z"
 },
+"src-seroundtable-google-php2shell-42353-html": {
+"kind": "source",
+"zone": "research",
+"title": "Search Engine Roundtable: Google Advice On Taking Sites Down When Fixing PHP2Shell - The PHP Exploit",
+"path": "sources/seroundtable-google-php2shell-42353-html/index.html",
+"hash": "c60a46d15647",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
+"src-shattered-php2shell-attacks-began-4-days-before-di": {
+"kind": "source",
+"zone": "research",
+"title": "shattered.io: PHP2Shell Exploited 4 Days Before Disclosure [2026]",
+"path": "sources/shattered-php2shell-attacks-began-4-days-before-di/index.html",
+"hash": "511c8613a63f",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-shinailbo-news-articleview-html": {
+"kind": "source",
+"zone": "research",
+"title": "신아일보: PHP 취약점 발견, 전세계 해킹 '비상'…사이버위기 '주의'로 상향 < 정책 < 산업 < 기사본문 - 신아일보",
+"path": "sources/shinailbo-news-articleview-html/index.html",
+"hash": "0cbebbc1fabe",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-siliconangle-2026-10-22-php2shell-attacks-began-four": {
+"kind": "source",
+"zone": "research",
+"title": "SiliconANGLE: PHP2Shell attacks began four days before patches, Amazon says, as attempts hit millions - SiliconANGLE",
+"path": "sources/siliconangle-2026-10-22-php2shell-attacks-began-four/index.html",
+"hash": "cd82fbee4064",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-socket-blog-embargo-dispute": {
 "kind": "source",
 "zone": "research",
@@ -3368,6 +4733,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:20Z"
+},
+"src-socradar-blog-php2shell": {
+"kind": "source",
+"zone": "research",
+"title": "SOCRadar: PHP2Shell CVE-2026-109618 & 109619: Affected Versions & Fix",
+"path": "sources/socradar-blog-php2shell/index.html",
+"hash": "d8827c124432",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
 },
 "src-substack-lopezkurtz-patch-is-the-exploit": {
 "kind": "source",
@@ -3380,6 +4756,72 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:31Z"
 },
+"src-tagesspiegel-dpa-noch-offline": {
+"kind": "source",
+"zone": "research",
+"title": "tagesspiegel.de: Sicherheitslücke: „Millionen“ Hacker-Versuche: Viele Webseiten noch offline",
+"path": "sources/tagesspiegel-dpa-noch-offline/index.html",
+"hash": "646b025e38bb",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:15Z"
+},
+"src-tchina-kyodonews-articles-15266": {
+"kind": "source",
+"zone": "research",
+"title": "共同網: 日本政府全力應對「PHP」漏洞 通過SNS廣泛提醒注意",
+"path": "sources/tchina-kyodonews-articles-15266/index.html",
+"hash": "ced5600b7a7e",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-tech-everyeye-notizie-vulnerabilita-php-70-siti-mondo": {
+"kind": "source",
+"zone": "research",
+"title": "Everyeye Tech: Vulnerabilità PHP: il 70% dei siti al mondo è stato a rischio per più di 10 anni!",
+"path": "sources/tech-everyeye-notizie-vulnerabilita-php-70-siti-mondo/index.html",
+"hash": "521827b7dcf1",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-techaeris-2026-10-21-php2shell-the-emergency-php-p": {
+"kind": "source",
+"zone": "research",
+"title": "Techaeris: PHP2Shell: The Emergency PHP Patch Is Out",
+"path": "sources/techaeris-2026-10-21-php2shell-the-emergency-php-p/index.html",
+"hash": "b98004d187e4",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-techtarget-disclosure-unravels": {
+"kind": "source",
+"zone": "research",
+"title": "TechTarget: PHP2Shell disclosure unravels after leaks forced early patch drop | TechTarget",
+"path": "sources/techtarget-disclosure-unravels/index.html",
+"hash": "74113e5b5604",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-23T01:20Z"
+},
+"src-techtarget-itmedia-tt-article-2610-23-2000002526": {
+"kind": "source",
+"zone": "research",
+"title": "TechTargetジャパン: PHP脆弱性「PHP2Shell」で2260万件に影響　情シスの緊急チェックリスト：OpenAIモデルが暴いた脆弱性 - TechTargetジャパン",
+"path": "sources/techtarget-itmedia-tt-article-2610-23-2000002526/index.html",
+"hash": "fb0159fe3a81",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-techzine-php-chainguard": {
 "kind": "source",
 "zone": "research",
@@ -3391,6 +4833,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:21Z"
 },
+"src-tek-sapo-opiniao-artigos-exposicao-de-portugal-ao-php2shell": {
+"kind": "source",
+"zone": "research",
+"title": "SAPO Tek: Exposição de Portugal ao PHP2SHELL: Em trinta segundos - Tek Notícias",
+"path": "sources/tek-sapo-opiniao-artigos-exposicao-de-portugal-ao-php2shell/index.html",
+"hash": "589e6d2e1487",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
 "src-tenable-php2shell-faq": {
 "kind": "source",
 "zone": "research",
@@ -3401,6 +4854,39 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:23Z"
+},
+"src-the-register-hackers-pile-on-php2shell": {
+"kind": "source",
+"zone": "research",
+"title": "The Register: Hackers pile on PHP2Shell as AWS reveals attacks began before disclosure",
+"path": "sources/the-register-hackers-pile-on-php2shell/index.html",
+"hash": "cb29ad56c65f",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-23T01:20Z"
+},
+"src-the-verge-php2shell-websites-down": {
+"kind": "source",
+"zone": "research",
+"title": "The Verge: Everything we know so far about the PHP2Shell vulnerability | The Verge",
+"path": "sources/the-verge-php2shell-websites-down/index.html",
+"hash": "284bbd34139f",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-23T01:20Z"
+},
+"src-the420-php2shell-critical-vulnerabilities-cve-2": {
+"kind": "source",
+"zone": "research",
+"title": "The420.in: PHP2Shell Alert: Two Critical 9.2-Rated Flaws Put PHP Servers on High Alert - The420.in",
+"path": "sources/the420-php2shell-critical-vulnerabilities-cve-2/index.html",
+"hash": "f1da431d6d00",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
 },
 "src-thehackernews-php2shell-4days": {
 "kind": "source",
@@ -3435,6 +4921,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:31Z"
 },
+"src-themandarin-322640-asd-rushes-out-critical-alert-on-unpatched-php-vulner": {
+"kind": "source",
+"zone": "research",
+"title": "The Mandarin: ASD rushes out ‘critical’ alert on unpatched PHP vulnerability",
+"path": "sources/themandarin-322640-asd-rushes-out-critical-alert-on-unpatched-php-vulner/index.html",
+"hash": "ebf520766613",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T08:03Z"
+},
 "src-therecord-php-foundation-statement": {
 "kind": "source",
 "zone": "research",
@@ -3445,6 +4942,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:31Z"
+},
+"src-therecord-php-warnings": {
+"kind": "source",
+"zone": "research",
+"title": "therecord.media: Hundreds of websites taken offline as concern grows over two PHP vulnerabilities | The Record from Recorded Future News",
+"path": "sources/therecord-php-warnings/index.html",
+"hash": "469e4fc86ad2",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:08Z"
 },
 "src-theregister-php-blames-chainguard": {
 "kind": "source",
@@ -3457,6 +4965,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:32Z"
 },
+"src-thestar-aseanplus-aseanplus-news-2026-10-22-seri": {
+"kind": "source",
+"zone": "research",
+"title": "The Star: Serious language programme PHP's security flaw leaves internet websites at major risk, reports dpa | The Star",
+"path": "sources/thestar-aseanplus-aseanplus-news-2026-10-22-seri/index.html",
+"hash": "7c06ec824951",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
 "src-tpo-nl-digid-offline": {
 "kind": "source",
 "zone": "research",
@@ -3467,6 +4986,83 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:32Z"
+},
+"src-tpo-tpo-nl-digid-offline": {
+"kind": "source",
+"zone": "research",
+"title": "TPO: PHP-lek legt DigiD, MijnOverheid en Tweede Kamer plat | TPO.NL",
+"path": "sources/tpo-tpo-nl-digid-offline/index.html",
+"hash": "436ab4619235",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T17:15Z"
+},
+"src-trak-stories-70-websites-at-security-risk-due": {
+"kind": "source",
+"zone": "research",
+"title": "Trak.in: 70% Websites At Security Risk Due To Critical PhP Vulnerability: PHP2Shell - Trak.in - Indian Business of Tech, Mobile & Startups",
+"path": "sources/trak-stories-70-websites-at-security-risk-due/index.html",
+"hash": "481b1144a508",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
+},
+"src-tugatech-t93092-milhoes-de-servidores-php-expostos-ao-risco": {
+"kind": "source",
+"zone": "research",
+"title": "TugaTech: Milhões de servidores PHP expostos ao risco da falha PHP2Shell | TugaTech",
+"path": "sources/tugatech-t93092-milhoes-de-servidores-php-expostos-ao-risco/index.html",
+"hash": "9e60b6c0251d",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-tuttotech-news-2026-10-22-vulnerabilita-php-html": {
+"kind": "source",
+"zone": "research",
+"title": "TuttoTech.net: Due gravi falle in PHP mandano offline i siti web governativi",
+"path": "sources/tuttotech-news-2026-10-22-vulnerabilita-php-html/index.html",
+"hash": "9dbe87d7429c",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
+"src-uk-edinburgh-council": {
+"kind": "source",
+"zone": "research",
+"title": "edinburgh.gov.uk: Home – The City of Edinburgh Council",
+"path": "sources/uk-edinburgh-council/index.html",
+"hash": "5a509bd3fcbc",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-unige-site": {
+"kind": "source",
+"zone": "research",
+"title": "unige.ch: Error 503",
+"path": "sources/unige-site/index.html",
+"hash": "223a6a6fd61f",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:19Z"
+},
+"src-usa-today-php2shell-live": {
+"kind": "source",
+"zone": "research",
+"title": "USA Today: Latest on PHP vulnerability as patch gets released, NSA issues warning",
+"path": "sources/usa-today-php2shell-live/index.html",
+"hash": "d6ab4a1c5c28",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-23T01:20Z"
 },
 "src-watchtowr-php2shell": {
 "kind": "source",
@@ -3490,6 +5086,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:18Z"
 },
+"src-watson-wirtschaft-schweiz-322033892-php2shell-laut-bund-kein": {
+"kind": "source",
+"zone": "research",
+"title": "Watson: PHP2Shell: Laut Bund keine Hackerangriffe in der Schweiz bekannt",
+"path": "sources/watson-wirtschaft-schweiz-322033892-php2shell-laut-bund-kein/index.html",
+"hash": "3bcdb2164b11",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T18:16Z"
+},
 "src-weirdgloop-blog-php2shell": {
 "kind": "source",
 "zone": "research",
@@ -3501,6 +5108,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:18Z"
 },
+"src-wikimediastatus-page": {
+"kind": "source",
+"zone": "research",
+"title": "wikimediastatus.net: Wikimedia Status",
+"path": "sources/wikimediastatus-page/index.html",
+"hash": "3ee340988f44",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:18Z"
+},
 "src-wikipedia-dan-kaminsky": {
 "kind": "source",
 "zone": "research",
@@ -3511,6 +5129,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:33Z"
+},
+"src-wikipedia-en-mainpage": {
+"kind": "source",
+"zone": "research",
+"title": "en.wikipedia.org: Wikipedia, the free encyclopedia",
+"path": "sources/wikipedia-en-mainpage/index.html",
+"hash": "cfff60a52f53",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:18Z"
 },
 "src-wikipedia-equifax-breach": {
 "kind": "source",
@@ -3589,6 +5218,17 @@
 "changed": "0.4.1",
 "date": "2026-10-22T11:33Z"
 },
+"src-wired-exploited-days-before-patched": {
+"kind": "source",
+"zone": "research",
+"title": "WIRED: Hackers Exploited the PHP Vulnerabilities Days Before They Were Patched | WIRED",
+"path": "sources/wired-exploited-days-before-patched/index.html",
+"hash": "aa0d05736261",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-23T01:20Z"
+},
 "src-wiz-blog-php2shell": {
 "kind": "source",
 "zone": "research",
@@ -3655,6 +5295,28 @@
 "changed": "0.4.1",
 "date": "2026-10-22T08:16Z"
 },
+"src-yahoo-jp-gmo-fx-login-leak": {
+"kind": "source",
+"zone": "research",
+"title": "Yahoo! News Japan (J-CAST): GMO「悪用確認されず」から一転　FX口座ログイン情報、流出の可能性　不正操作報告も（J-CASTニュース） - Yahoo!ニュース",
+"path": "sources/yahoo-jp-gmo-fx-login-leak/index.html",
+"hash": "598716e1c21b",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T19:15Z"
+},
+"src-yahoo-mashable-affected-list": {
+"kind": "source",
+"zone": "research",
+"title": "tech.yahoo.com: PHP vulnerability: Which websites and services are affected?",
+"path": "sources/yahoo-mashable-affected-list/index.html",
+"hash": "6b3a2e503930",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-22T08:13Z"
+},
 "src-yle-finland-government-sites-shut": {
 "kind": "source",
 "zone": "research",
@@ -3665,6 +5327,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22T11:32Z"
+},
+"src-zataz-php2shell-deux-failles-critiques-menacen": {
+"kind": "source",
+"zone": "research",
+"title": "ZATAZ: PHP2Shell : deux failles critiques menacent les serveurs web – ZATAZ.COM",
+"path": "sources/zataz-php2shell-deux-failles-critiques-menacen/index.html",
+"hash": "eb918a1ff27a",
+"v": 1,
+"first": "0.10.19",
+"changed": "0.10.19",
+"date": "2026-10-23T16:04Z"
 },
 "home-who": {
 "kind": "front",
@@ -3693,11 +5366,11 @@
 "zone": "stories",
 "title": "Stories: written here",
 "path": "index.html#stories",
-"hash": "ccff38fbe420",
-"v": 2,
+"hash": "589f1185b057",
+"v": 5,
 "first": "0.4.1",
-"changed": "0.4.3",
-"date": "2026-10-22"
+"changed": "0.10.13",
+"date": "2026-10-23"
 },
 "home-how": {
 "kind": "front",
@@ -3819,6 +5492,39 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22"
+},
+"story-what-changed-in-a-day": {
+"kind": "story",
+"zone": "stories",
+"title": "What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list",
+"path": "articles/what-changed-in-a-day/index.html",
+"hash": "d575ea9626e1",
+"v": 1,
+"first": "0.10.3",
+"changed": "0.10.3",
+"date": "2026-10-23"
+},
+"story-the-telemetry-tools": {
+"kind": "story",
+"zone": "stories",
+"title": "Who reads this site, and what works on it: the tools we built to find out, and what they say on day two",
+"path": "articles/the-telemetry-tools/index.html",
+"hash": "df43f14a86e4",
+"v": 1,
+"first": "0.10.11",
+"changed": "0.10.11",
+"date": "2026-10-23"
+},
+"story-the-risk-graph-before-and-after": {
+"kind": "story",
+"zone": "stories",
+"title": "The risk graph, before and after: what changed from one reader's five ideas",
+"path": "articles/the-risk-graph-before-and-after/index.html",
+"hash": "b503c4ce683f",
+"v": 1,
+"first": "0.10.13",
+"changed": "0.10.13",
+"date": "2026-10-23"
 },
 "story-why-not-patch-every-version": {
 "kind": "story",

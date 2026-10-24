@@ -10,6 +10,8 @@ Because two flaws in the PHP engine let an unauthenticated request execute code 
 
 Because two flaws in the PHP engine let an unauthenticated request execute code on a default Apache mod_php setup, an attacker who reaches an unpatched server can take it over, resulting in data theft, defacement or a foothold in the network behind it.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r01) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **15** high · **Likelihood** 3 Possible · **Impact** 5 Severe · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Impact: unauthenticated code execution, confirmed on mod_php. Likelihood: probing confirmed, attempts reported, no confirmed compromise; attack complexity high.
@@ -84,4 +86,4 @@ On this site: [The two flaws: CVE-2026-109618 and CVE-2026-109619](../../../flaw
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01/index.html

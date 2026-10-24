@@ -33,6 +33,11 @@ An article a reader has seen is listed here until a collector captures it into t
 
 ## The catalogue: every page, and what it answers
 
+### Updates
+- [Every update, newest first](../updates/index.html):
+- [Daily: 22 Oct 20:03 UTC](../updates/2026-10-22T2003Z/index.html):
+- [How an update is written](../updates/readme/index.html):
+
 ### Start here
 - [Who is reading? The readers of this site, mapped](../start/index.html): 16 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
 - [The PHP security flaws, explained from the start](../explained/index.html): No technical background assumed: what PHP is, what went wrong, why it is called php2shell, what the CVE numbers mean, why websites went offline, whether anyone was hacked, and what to do now.
@@ -59,6 +64,7 @@ An article a reader has seen is listed here until a collector captures it into t
 ### Yours
 - [Power users: start here](../collaborators/index.html): Where a power user of PHP October 2026 starts: the first fifteen minutes, the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
 - [Join: a key for this device, in one tap](../join/index.html): Open the invitation the editor sent you and this page makes a key on your device, so the feedback you send from any page is signed as yours; the enrolled keys, as handles and fingerprints.
+- [Feedback from collaborators](../feedback/index.html):
 - [Invite someone: a link and a QR code, signed on this device](../join/invite/index.html): For the editor: make an invitation to give signed feedback on this site, as a QR code, a link and a share button, signed in the browser with an enrolled key.
 - [Now: the phone app](../now/index.html):
 - [Your desk: what is new to you, and what changed](../you/index.html): What is new to you on this site and what changed since you read it, by part of the site; what you put aside; your notes; all kept in your browser, exportable.
@@ -100,7 +106,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Perplexity's notes, in full](../readings/perplexity-2026-10-22/index.html):
 
 ### The evidence
-- [Every source: 144 pages, 137 captures, 857 hashes](../sources/index.html): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
+- [Every source: 295 pages, 290 captures, 1761 hashes](../sources/index.html): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
 - [The NCSC-NL inventory: 674 products](../affected/software.html): Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, with its status per CVE.
 - [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
 - [Evidence, derived, authored](../layers/index.html):
@@ -108,7 +114,8 @@ An article a reader has seen is listed here until a collector captures it into t
 - [How the story changed, release by release](../versions/index.html): Every section of the site, every reader's briefing and every fact, versioned across every release: what changed, when, and in which release.
 - [The vaults behind this site](../vaults/index.html): Every vault this site is built from: the evidence vault and the source watch, both public with their read keys, and the private telemetry vault with its write-only lane; what each holds, who writes to it and how to open it.
 - [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
-- [The source watch: every outside source on php2shell, watched and snapshotted](../vaults/source-watch/index.html): The public source-watch vault: 328 pages from 175 publishers in 38 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
+- [The source watch: every outside source on php2shell, watched and snapshotted](../vaults/source-watch/index.html): The public source-watch vault: 913 pages from 597 publishers in 59 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
+- [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Subscribe: what changed, sent to you](../subscribe/index.html): Follow the PHP flaws story by email: everything or one part of the site, as it changes or as a digest; the address encrypted in your browser and confirmed before anything is sent.
 - [The vaults behind this site](../vaults/index.html#coverage):
@@ -118,6 +125,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Power users: start here](../collaborators/index.html): Where a power user of PHP October 2026 starts: the first fifteen minutes, the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
+- [Schedule: what runs, when, what it did, what it does next](../team/schedule/index.html): Every scheduled agent, its task queue and every run with its log, read live from a public vault: the control panel for what the team runs on its own.
 
 ### GRC
 - [GRC: risks, owners, standards](../grc/index.html):
@@ -125,10 +133,20 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Stakeholders and their registers](../grc/stakeholders/index.html):
 - [Frameworks: GDPR, NIS2, CRA, ISO, NIST](../grc/frameworks/index.html):
 - [The risk graph](../grc/graph/index.html):
+- [Explore the graph: from any node](../grc/explore/index.html):
+- [What the graph is missing](../grc/gaps/index.html):
 - [From the sgit network](../grc/network/index.html):
+
+### Views
+- [Views: the journalist's reading](../views/index.html):
+- [The state of affairs, now](../views/state/index.html):
+- [Every version, and what changed](../views/state/history/index.html):
 
 ### Stories
 - [All stories, written here](../articles/index.html):
+- [House · Journalist: What changed in a day](../articles/what-changed-in-a-day/index.html):
+- [House · Dev desk: Who reads this site, and what works on it](../articles/the-telemetry-tools/index.html):
+- [House · Dev desk: The risk graph, before and after](../articles/the-risk-graph-before-and-after/index.html):
 - [House · Journalist: Why can't every version of PHP just be patched](../articles/why-not-patch-every-version/index.html):
 - [House · Journalist: Where php2shell stands](../articles/where-php2shell-stands/index.html):
 - [House · Journalist and historian: Exposed is not exploited](../articles/exposed-is-not-exploited/index.html):
@@ -138,7 +156,8 @@ An article a reader has seen is listed here until a collector captures it into t
 
 ### About
 - [The method: capture, hash, claim, build, gate](../method/index.html): How this site keeps evidence: the private vault and its protocol, the five status words, the deterministic build, the gate, and how an agent adds a source or replicates the whole thing for the next incident.
-- [The team: the people, the agents and how they work together](../team/index.html): Every member of the team that runs this site, 2 people and 16 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 16 audiences.
+- [Design: the redesign, in mockups](../admin/design/index.html):
+- [The team: the people, the agents and how they work together](../team/index.html): Every member of the team that runs this site, 2 people and 17 agents and roles, with a page each: role, what they own, their tasks and what they shipped; how a run works, the pipeline and the 16 audiences.
 - [The billing model: what runs and what is designed](../billing/index.html): How this site is paid for: the reading meter that runs (pence per page, kept in your browser, never blocking), the provenance pricing that is designed (per claim, with a share for the fact creator), and a counted model of what the story cost to assemble.
 - [Your reading account](../account/index.html): The balance, history and receipts of your reading on this site, kept in your browser.
 - [The brief: a written request and two voice memos](../brief/index.html): The brief this site was built from, published in full: the editor's written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.
@@ -151,6 +170,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [The board](../admin/board/index.html): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles and responsibilities](../admin/roles/index.html): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
 - [Briefs](../admin/briefs/index.html): The build briefs for this site, published in full before the work, newest first.
+- [Pack mode, measured on the source watch](../admin/pack-mode/index.html): One vault as a normal sgit vault and as a pack vault: a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and why the normal vault has hit a wall.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Synthetic readers: six test readers who read the live site every hour](../admin/synthetic/index.html): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader's own vault.
 
@@ -162,4 +182,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

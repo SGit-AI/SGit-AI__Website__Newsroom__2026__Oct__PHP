@@ -10,6 +10,8 @@ Because the bailout mechanism is a class of bug and the 8.5.12 fix may be incomp
 
 Because the bailout mechanism is a class of bug and the 8.5.12 fix may be incomplete, a patched server may still be reachable by another path, resulting in a second emergency on systems already declared done.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r01-4) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **15** high · **Likelihood** 3 Possible · **Impact** 5 Severe · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Reported by Fastly and in the oss-security thread; unverified as to a specific third bug.
@@ -65,4 +67,4 @@ On this site: [The fix, mapped to the code](../../../review/index.html) · [The 
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-4/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-4/index.html

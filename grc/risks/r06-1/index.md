@@ -10,6 +10,8 @@ Because PHP applications hold accounts, orders and records, code execution on on
 
 Because PHP applications hold accounts, orders and records, code execution on one gives the attacker its database, resulting in a personal data breach the controller must assess within 72 hours.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r06-1) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **15** high · **Likelihood** 3 Possible · **Impact** 5 Severe · **Kind** Compliance · **Acceptance** not recorded
 
 **Basis.** Follows from code execution; no named organisation has reported a breach through php2shell.
@@ -61,4 +63,4 @@ On this site: [Briefing for a data protection officer: Was personal data exposed
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-1/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-1/index.html

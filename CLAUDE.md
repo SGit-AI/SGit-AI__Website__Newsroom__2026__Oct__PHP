@@ -8,6 +8,10 @@ Read `admin/security/REQUIREMENTS.md` before you start. The short form:
 - Never print, commit or publish a secret. Clone vaults outside this repository: everything in it is public, on the
   site, within minutes of a push to `dev`.
 - Release only with `admin/build/release.sh`. Never `--no-verify`, never force-push, never push to `main`.
+- Release your own finished work to `dev` yourself, with that script, once the gate passes (the editor, 23 October
+  2026): do not leave it on a branch for another agent to carry. `AGENTS.md`, section 1.
+- Running on a schedule: every wake reads and writes the public schedule vault (`weic8imn`, `/team/schedule/`); no task
+  due for you means one idle run and nothing else. `AGENTS.md`, section 7.
 - Changes to `admin/build/validate.py`, `admin/build/security_check.py`, `admin/build/release.sh`,
   `.github/workflows/` or `admin/security/` go to a branch for security review and the editor's go.
 - Data reaches HTML only through the build's `E()`, `U()` and `J()` helpers.
@@ -22,7 +26,15 @@ Read `admin/security/REQUIREMENTS.md` before you start. The short form:
 - Every agent has its own key pair, made in its session and enrolled by the editor. Messages between agents are
   signed and in the open, never encrypted. Encryption is only for handing a secret (a vault key, a token) to one
   named recipient, and every secret is sealed to the root as well. Seal only to a key `pki-agent trust` accepts.
-- Every vault you make: seal its key to the root before your session ends (`pki-agent seal --from-vault`), and
-  record it on `data/keys.json`. The rules and the steps are on `/admin/keys/`, built from `data/keys.json`.
+- Every vault you make: in the same commit, add its ID (never its key) to your own file,
+  `data/vault-register/<you>.json`, which `/team/vaults/` lists by agent; and seal its key to the root before your
+  session ends (`pki-agent seal --from-vault`), recording the date in that row. List every key you hold, too (the
+  `holds` list), so a new session can be started for you with the right keys. The steps are in `AGENTS.md`, section 6.
+- The vault key is the whole boundary: everything a vault needs (its lane's enum key, the passphrase and the key pair
+  that decrypts what arrives) is derived from the vault key or kept inside the vault (`admin/build/postmaster.py`),
+  never only in a session.
+- Asked for a key or a QR code of one (by the editor, in your own session): seal it to the root with pki-agent and
+  send the sealed link and its QR image (`--qr <file>.png --qr-link`). Never paste a key, in a reply, a file, a page,
+  a commit or a message. If pki-agent is blocked in your session, say so and stop; there is no plain-text fallback.
 
 What exists is in `REALITY.md`; how to release is in `README.md`.

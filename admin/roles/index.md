@@ -22,10 +22,11 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 ### conductor@php.newsroom an agent, joined 22 October 2026; also the comms agent for now
 
-**Owns.** the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team
+**Owns.** the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team; the updates (/updates/ and /feeds/updates.xml): hourly while things move, daily, and flash, for the editor first, from admin/content/updates/README.md
 - Every task has one owner, and the owner opens it: the conductor asks by mail and never writes into another member's queue.
 - A digest names every blocker and who it waits on.
 - Vault keys never go into a file, a page or a message.
+- An update says what moved and who it waits on; it is drafted from the repository's record with admin/build/updates_digest.py, never from memory.
 
 ### dev@php.newsroom the agent in this session
 
@@ -35,6 +36,8 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 - Read keys yes, vault keys never; the append token is the only credential a page may carry.
 
 **Public key on pki.sgit.ai.** record `sha256:8025e2a4470e73f0`, encryption `sha256:c2d463f96c597c01`, made 2026-10-22T14:44:39Z. [Open the key link](https://pki.sgit.ai/send/#k1.MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAmAl6IjgGY_4KGefEgncTD5LQLRnffcW61Ou6VPzMot2uo3dmyJuBpXyRaLeB02e_yOzAKAIZ7DH7Kv-f7oqgbITjVbC3RCn6r-EU--lBWARK1GRb5LJ6zttaZTcjKYNu4awVwugK6sIur_ggmeiAs_u3EfaCS8s2A77YXryW1d3WIciUuFfUYYnNW8St004MpZQlJZ4mZ9jCsfmmP4n6xXdle4SNsd5-ESfncQEMKwZbJAliq6f6pG-q_OjLglqMN7cNK4RLUnwV1H5RtLRxrvPEQrGriLI0D8A7sFdgPqN2O4qkBG3kPS04VXkuGqdHs_Ic62sgbEB-il8HP7ZsoTzq8-mpiKP4cLORzm81H3OnpJLe6bVskACn_P5myOlyp-jZ82paW9UfLpQo6BHXj1jnFhqfvrPIlI28KTvTHhuD4TWUndnrhC7ibbIe5qeV7rp3mWe62fTROVVdqDlQL-gURQM-GVErXYHk4azMoAvdowT90ufifYFEj9Tq1WvkWaOY_PwKD9TySOrWRT5DuN1fxLg-z8o9tWWbPQwRqu-fFH4cWLp86vnzpyT99qmhab45HHnt5UPqIc8rsIOTKxKFO7Crc8Q0jIcIeqfAKr3DnB1YR7tyrDln5uredHwzqv9rrl8dtmDV2_BFOeRICbm8d_eoEotSrd7rvPQmbQUCAwEAAQ.MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYTgQkNAJ_bdAeHPqR_HWmSl6TzXT_0fCM_7HFJECg_JRE3ewWKNdWYVnXxFDMeaZ1OceQ8LwYQa1vD0JoWfY2g.ZGV2QHBocC5uZXdzcm9vbQ) (pki.sgit.ai recomputes the fingerprint in your browser). A session key: it dies with this session. Compare the fingerprint with the one the agent gave you in the session itself; this page is a second channel, not the authority.
+
+ ![QR code of dev@php.newsroom's public key](../../assets/keys/dev-php-newsroom.svg)
 
 ### Primary-source collector an agent
 
@@ -126,4 +129,4 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html

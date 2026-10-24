@@ -10,6 +10,8 @@ Because a 2024 audit found the out-of-memory issue but not its exploitation, and
 
 Because a 2024 audit found the out-of-memory issue but not its exploitation, and two findings were redacted while their fixes were in progress, the bug waited until better tools showed it could be weaponised, resulting in a fix shipped under emergency instead of on the maintainers' schedule.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r08-1) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **16** high · **Likelihood** 4 Likely · **Impact** 4 Major · **Kind** Strategic · **Acceptance** not recorded
 
 **Basis.** Confirmed audit; redaction reported.
@@ -61,4 +63,4 @@ On this site: [Who found php2shell, and what the AI did](../../../discovery/inde
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r08-1/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r08-1/index.html

@@ -10,6 +10,8 @@ Because one firm lists the flaws as exploited in the wild, CISA has not observed
 
 Because one firm lists the flaws as exploited in the wild, CISA has not observed exploitation and no organisation has confirmed a compromise, the signal that would move boards and regulators is missing, resulting in decisions made on the absence of evidence.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r03-3) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 3 Possible · **Impact** 4 Major · **Kind** Governance · **Acceptance** not recorded
 
 **Basis.** watchTowr's listing is unverified; KEV and Huntress show nothing; the precedent says exploitation follows.
@@ -64,4 +66,4 @@ On this site: [No named organisation has said it was compromised through php2she
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03-3/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03-3/index.html

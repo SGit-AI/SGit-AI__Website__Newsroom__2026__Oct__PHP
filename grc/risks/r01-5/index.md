@@ -10,6 +10,8 @@ Because pre-authentication code execution was reported against WordPress, Drupal
 
 Because pre-authentication code execution was reported against WordPress, Drupal, Joomla, MediaWiki, Magento, Nextcloud and other applications, their users are exposed whatever the application's own security, resulting in the largest share of affected sites.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r01-5) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **15** high · **Likelihood** 3 Possible · **Impact** 5 Severe · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Reported by the finders; the applications inherit the flaw from the engine.
@@ -60,4 +62,4 @@ On this site: [Affected systems: versions, deployments, applications, inventory]
 
 
 ---
-site v0.8.1 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-5/index.html
+site v0.10.19 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-5/index.html
