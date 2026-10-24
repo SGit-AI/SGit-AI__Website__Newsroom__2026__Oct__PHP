@@ -41,7 +41,7 @@ def sibling_sites():
     except (OSError, ValueError, KeyError, AttributeError):
         return []
 
-INLINE = re.compile(r'<script\b(?![^>]*\bsrc=)([^>]*)>(.*?)</script\s*>', re.S | re.I)
+INLINE = re.compile(r'<script\b(?![^>]*\bsrc=)([^>]*)>(.*?)</script\b[^>]*>', re.S | re.I)
 DATA_TYPES = re.compile(r'\btype\s*=\s*["\']?(application/(ld\+)?json|text/template|text/plain)', re.I)
 
 

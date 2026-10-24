@@ -12,6 +12,18 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.18 · 24 October 2026new since your last visit
+
+the correspondent's schedule proposed (11:47 and 19:07 London, Opus, a fresh session each wake), its brief, and a count of what the correspondent catches on /views/desk/
+
+No reader-facing section changed in this release.
+
+## v0.15.17 · 24 October 2026new since your last visit
+
+CodeQL's second scan, triaged: the design dials derive their root as a count of ../ segments and accept only this site's pages as a home; the reader's 'what changed' links take only well-formed item ids; the build's and the CSP's script-tag regexes match any end tag form (); and Dependabot, on the editor's go, keeps the workflows' pinned actions current with reviewed pull requests
+
+No reader-facing section changed in this release.
+
 ## v0.15.16 · 24 October 2026new since your last visit
 
 observability's round 2: the telemetry application v0.4.1 and v0.4.2, pushed to its vault (Queue & drain shows its progress; One page shows everything known about a page beside the page itself), on the member's page /admin/agents/observability/ with its debrief and screenshots
@@ -1031,4 +1043,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

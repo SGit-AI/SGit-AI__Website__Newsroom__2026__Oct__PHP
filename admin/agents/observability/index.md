@@ -290,4 +290,4 @@ Files: [admin/content/agents/observability/](https://github.com/SGit-AI/SGit-AI_
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/observability/index.html
+site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/observability/index.html

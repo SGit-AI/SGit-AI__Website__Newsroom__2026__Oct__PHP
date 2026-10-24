@@ -86,7 +86,7 @@
 
   // ------------------------------------------------------------------ the page
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
-  function historyFor(id) { return /^(fact|page|briefing|front)-/.test(id) ? root + 'versions/' + id + '/index.html' : null; }
+  function historyFor(id) { return /^(fact|page|briefing|front)-[a-z0-9._-]+$/i.test(id) ? root + 'versions/' + id + '/index.html' : null; }
   var marks = Array.prototype.slice.call(document.querySelectorAll('.it[data-item]'));
   var pageMark = marks.filter(function (m) { return m.getAttribute('data-scope') === 'page'; })[0] || null;
   var blocks = [];

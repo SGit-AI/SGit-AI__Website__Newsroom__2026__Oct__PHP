@@ -142,4 +142,4 @@ Commit-FS-lite: the To-conductor and To-all trailers in the release commits; all
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.html
+site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.html

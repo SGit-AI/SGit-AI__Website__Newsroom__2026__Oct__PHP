@@ -21,4 +21,4 @@ The labels for sharing under embargo: the mitigation advice given early to criti
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/tlp/index.html
+site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/tlp/index.html

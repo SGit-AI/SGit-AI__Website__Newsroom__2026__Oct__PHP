@@ -1659,6 +1659,8 @@ team/schedule/cartographer/index.html
 team/schedule/cartographer/index.md
 team/schedule/conductor/index.html
 team/schedule/conductor/index.md
+team/schedule/correspondent/index.html
+team/schedule/correspondent/index.md
 team/schedule/curator/index.html
 team/schedule/curator/index.md
 team/schedule/desk/index.html

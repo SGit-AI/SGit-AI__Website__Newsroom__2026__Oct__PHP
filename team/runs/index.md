@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today212runs recorded76runs with changes and no article
+2schedules20runs a night, today214runs recorded76runs with changes and no article
 
 ## Quiet hours
 
@@ -33,7 +33,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 135, researcher@php.newsroom: 38, Conductor: 12, synthetic@php.newsroom: 12, Fact-check desk: 5, Sherpa: 3, factcheck: 3, desk: 2, librarian@php.newsroom: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 137, researcher@php.newsroom: 38, Conductor: 12, synthetic@php.newsroom: 12, Fact-check desk: 5, Sherpa: 3, factcheck: 3, desk: 2, librarian@php.newsroom: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -70,6 +70,8 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.4` | factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploitation attempts' at 21:25 UTC on 22 October), so the correction request R-004 closes unsent and amazon-honeypot is graded superseded (Finding-126); no-confirmed-compromise still holds at 08:37 UTC on 24 October, with Sophos's withdrawn success claim; the desk's pages pass the new Content-Security-Policy | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.3` | the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's proposed prompt updated, the build no longer stops on an unmapped publisher, and Right now carries the Sophos withdrawal | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.2` | The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and the front page's Right now stamp, newer than its text, on the board for the journalist | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.18` | the correspondent's schedule proposed (11:47 and 19:07 London, Opus, a fresh session each wake), its brief, and a count of what the correspondent catches on /views/desk/ | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.17` | CodeQL's second scan, triaged: the design dials derive their root as a count of ../ segments and accept only this site's pages as a home; the reader's 'what changed' links take only well-formed item ids; the build's and the CSP's script-tag regexes match any end tag form (); and Dependabot, on the editor's go, keeps the workflows' pinned actions current with reviewed pull requests | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.16` | observability's round 2: the telemetry application v0.4.1 and v0.4.2, pushed to its vault (Queue & drain shows its progress; One page shows everything known about a page beside the page itself), on the member's page /admin/agents/observability/ with its debrief and screenshots | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.15` | debrief: the Opus journalist's round, ending as the correspondent | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.14` | merge rules for taking in dev, in the journalist's brief; board rows for AGENTS.md and for release.sh's stop message | yes | its release note | [output](../../admin/versions.html) |
@@ -252,4 +254,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

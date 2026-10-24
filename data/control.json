@@ -752,6 +752,16 @@
    ]
   },
   {
+   "agent": "correspondent",
+   "model": "Opus",
+   "objective": "Review what the journalist published since the last run against its captures, correct it in the open and count the catches, write the state of affairs when the measures move, keep the readers' prose and the journalist's rules; then tell the ontologist, the librarian and the desk the data is reviewed.",
+   "status": "proposed",
+   "times": [
+    "11:47",
+    "19:07"
+   ]
+  },
+  {
    "agent": "curator",
    "model": "the session's model",
    "objective": "Promote what the source watch captured into the evidence vault, a bounded batch a wake, in priority order, each capture read first.",
@@ -848,5 +858,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.15.16"
+ "version": "0.15.18"
 }

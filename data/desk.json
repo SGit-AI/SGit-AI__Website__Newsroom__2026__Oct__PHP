@@ -210,5 +210,7 @@
    "phrase": "as of 20:30 UTC on 21 October",
    "why": "Huntress's own time for its statement that it had seen no exploitation on its partners' systems (claim huntress-none): a source's date, kept wherever the claim is quoted."
   }
- ]
+ ],
+ "catches": [],
+ "catches_about": "What the correspondent corrected in the journalist's work, one row per correction: when, what, the file, its kind (verdict, row, as-of, missing, contradiction), the journalist's run and the release that fixed it. Counted on /views/desk/, so the editor can see what a Sonnet journalist misses."
 }

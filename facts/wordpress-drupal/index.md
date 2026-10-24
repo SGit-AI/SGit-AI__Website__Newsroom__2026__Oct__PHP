@@ -59,4 +59,4 @@ v2 · site v0.12.1 · 24 October 2026 · reportedPre-authenticationIn researcher
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/wordpress-drupal/index.html
+site v0.15.18 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/wordpress-drupal/index.html

@@ -76,4 +76,4 @@ Your card is `data/schedule/journalist.json`: 20 minutes after each curator wake
 
 ## Your measure
 
-A wake is good when the site serves the new head within the hour of the curator's wake, every new claim has a verdict, and the correspondent's next pass finds nothing to correct. What it corrects will be counted on `/views/desk/` (the correspondent adds that record with its first review); read it, and do not repeat it.
+A wake is good when the site serves the new head within the hour of the curator's wake, every new claim has a verdict, and the correspondent's next pass finds nothing to correct. What it corrects is counted on `/views/desk/`, under "What the correspondent caught"; read it, and do not repeat it.
