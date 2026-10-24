@@ -92,26 +92,26 @@
   {
    "path": "data/story.json",
    "kept_by_before": "story-site",
-   "checked_against": null,
-   "note": ""
+   "checked_against": "1845598d9a38",
+   "note": "What is known on exploitation rewritten; the turn to looking for break-ins and the Swiss count added; three open questions updated."
   },
   {
    "path": "data/claims.json",
    "kept_by_before": "story-site",
    "checked_against": null,
-   "note": ""
+   "note": "Partly: no-confirmed-compromise refreshed (24 October); the other 69 claims not yet re-read."
   },
   {
    "path": "data/impact.json",
    "kept_by_before": "story-site",
-   "checked_against": null,
-   "note": ""
+   "checked_against": "1845598d9a38",
+   "note": "Four reports added: Germany's hospitals and hosts, Morocco, Romania, Japan, each with its source."
   },
   {
    "path": "data/compromise.json",
    "kept_by_before": "story-site",
-   "checked_against": null,
-   "note": ""
+   "checked_against": "1845598d9a38",
+   "note": "11 rows now cite the promoted copies in the evidence vault; ACSC, Patchstack (PCMag) and Luxembourg added; KEV row at the watch's 08:03 check; as of the latest capture."
   },
   {
    "path": "data/exploitation.json",
@@ -165,7 +165,7 @@
    "path": "data/plain.json",
    "kept_by_before": "story-site",
    "checked_against": "1845598d9a38",
-   "note": "Right now and Latest rewritten for the state of affairs v2; the rest of the file not yet re-read."
+   "note": "Right now, Latest and the three 'as of' lines rewritten for 23 October; the rest re-read."
   },
   {
    "path": "data/personas.json",
@@ -201,7 +201,6 @@
  "kept_as_written": [
   "articles/",
   "updates/",
-  "views/state/v",
   "versions/",
   "whatsnew/",
   "admin/",
@@ -213,10 +212,10 @@
   "team/",
   "pulse/",
   "sources/",
-  "views/desk/",
-  "facts/"
+  "facts/",
+  "views/"
  ],
- "kept_as_written_why": "Stories, updates, versions of the state of affairs, release notes, briefs, outside readings and source pages are dated and kept as written by design; a dated phrase in them is history, not staleness. Facts pages carry every version of a fact.",
+ "kept_as_written_why": "Stories, updates, versions of the state of affairs, release notes, briefs, outside readings and source pages are dated and kept as written by design; a dated phrase in them is history, not staleness. Facts pages carry every version of a fact. The state of affairs gives each measure its own as-of time on purpose.",
  "accepted": [
   {
    "page": "*",
