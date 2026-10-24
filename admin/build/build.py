@@ -7287,5 +7287,32 @@ def appsec_llms_lines():
         out.append(f'- [{a["id"]}: {a["title"]}]({BASE_URL}/admin/appsec/advisories/{a["id"]}/index.md): {a["severity"]}, {a["status"]}')
     return out + ['']
 
+def _state_hashes():
+    """The generated data files a build reads back at its start (the ledger, the items, the release pages, the risk
+    graph's history ...), by hash: every data/*.json the last build listed as its own output."""
+    import hashlib
+    try:
+        names = [l.strip() for l in open(os.path.join(ROOT, 'admin', 'build', 'outputs.txt'), encoding='utf-8') if l.startswith('data/') and l.strip().endswith('.json')]
+    except FileNotFoundError:
+        names = []
+    out = {}
+    for n in names:
+        try:
+            out[n] = hashlib.sha256(open(os.path.join(ROOT, n), 'rb').read()).hexdigest()
+        except FileNotFoundError:
+            out[n] = None
+    return out
+
 if __name__ == '__main__':
+    # Settle: a page that reads a generated file written later in the build (data/items.json, data/sections.json,
+    # data/release-pages.json, data/grc-history.json ...) lags one build, so the gate's rebuild differed from the first
+    # build of every release that changed content (board 175). When this build changed any of those files, build once
+    # more, at most twice, so the first build already writes what a second would.
+    _before = _state_hashes()
     main()
+    _round = int(os.environ.get('BUILD_SETTLE_ROUND', '0'))
+    if _state_hashes() != _before and _round < 2:
+        print(f'build: generated state changed; building again to settle it (round {_round + 1})')
+        os.environ['BUILD_SETTLE_ROUND'] = str(_round + 1)
+        sys.stdout.flush()
+        os.execv(sys.executable, [sys.executable] + sys.argv)
