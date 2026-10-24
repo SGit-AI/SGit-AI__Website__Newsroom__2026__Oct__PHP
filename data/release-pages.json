@@ -1,6 +1,191 @@
 {
  "about": "A page counts as changed when the content of its <main> differs from the previous release's, with the two site version numbers masked: the header, the footer and the version stamp change on every page at every release and say nothing about what the release did. Pages are compared as built and committed, so the list is what a reader would have seen change. Stored in data/release-pages.json, one entry per release, written once and never recomputed:",
  "releases": {
+  "0.14.25": {
+   "against": "0.14.24",
+   "pages": [
+    {
+     "path": "team/schedule/journalist/index.html",
+     "title": "Schedule: journalist",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "corrections/index.html",
+     "title": "Corrections",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "articles/the-risk-graph-before-and-after/index.html",
+     "title": "The risk graph, before and after: what changed from one reader's five ideas",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "layers/index.html",
+     "title": "Evidence, derived, authored: what each file is",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/dev/index.html",
+     "title": "dev@php.newsroom, build, gate and release: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "ops/index.html",
+     "title": "Operations: what changed, what to do next, how sure we are",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/conductor/index.html",
+     "title": "Schedule: conductor",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/comms/index.html",
+     "title": "Commit notes: what the agents tell each other",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/roles/index.html",
+     "title": "Every member: who owns what",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "questions/index.html",
+     "title": "Questions readers ask about php2shell",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/gaps/index.html",
+     "title": "What the risk graph is missing: controls without tests, code without owners, risks without stories",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/graph/index.html",
+     "title": "The risk graph: php2shell stakeholders, risks, weaknesses, vulnerabilities and code",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/index.html",
+     "title": "GRC: the risks of php2shell, who carries them, and the standards that govern them",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/explore/index.html",
+     "title": "Explore the risk graph: start from one thing and follow it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/frameworks/index.html",
+     "title": "Frameworks: php2shell risks mapped to GDPR, NIS2, CRA, DORA, the EU AI Act, ISO 27001 and NIST",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/network/index.html",
+     "title": "From the network: sgit risk models, vaults and standards graphs mapped to php2shell",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/risks/index.html",
+     "title": "The risk register: every php2shell risk, as a tree",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/stakeholders/index.html",
+     "title": "Stakeholders: a php2shell risk register for each, at every scale",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "billing/index.html",
+     "title": "The billing model: what runs and what is designed",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "articles/index.html",
+     "title": "Stories: written here, signed and dated",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
   "0.14.23": {
    "against": "0.14.22",
    "pages": [

@@ -1486,6 +1486,8 @@ team/schedule/factcheck/index.html
 team/schedule/factcheck/index.md
 team/schedule/index.html
 team/schedule/index.md
+team/schedule/journalist/index.html
+team/schedule/journalist/index.md
 team/schedule/librarian/index.html
 team/schedule/librarian/index.md
 team/schedule/ontologist/index.html

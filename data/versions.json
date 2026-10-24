@@ -1,6 +1,15 @@
 {
- "current": "0.14.24",
+ "current": "0.14.25",
  "versions": [
+  {
+   "version": "0.14.25",
+   "date": "2026-10-24",
+   "title": "the scheduled journalist proposed: a Sonnet journalist that takes each curator batch through to the site, and an Opus chief correspondent that reviews it; brief, wake prompt and schedule card (status proposed)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.24",
    "date": "2026-10-24",

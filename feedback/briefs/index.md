@@ -60,4 +60,4 @@ The brief to the conductor from every open friction, by owner and severity, and 
 
 
 ---
-site v0.14.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/feedback/briefs/index.html
+site v0.14.25 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/feedback/briefs/index.html

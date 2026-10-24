@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.25 · 24 October 2026new since your last visit
+
+the scheduled journalist proposed: a Sonnet journalist that takes each curator batch through to the site, and an Opus chief correspondent that reviews it; brief, wake prompt and schedule card (status proposed)
+
+No reader-facing section changed in this release.
+
 ## v0.14.24 · 24 October 2026new since your last visit
 
 Fix for dev's red CI since v0.14.23: /team/comms/ is built from data/comms.json, which the conductor's wakes export from the commit history, instead of from the history itself, which the shallow CI clone lacks; tested by running the gate in a depth-1 clone
@@ -869,4 +875,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.25 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

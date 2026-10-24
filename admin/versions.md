@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.14.24. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.14.25. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.14.25 · 2026-10-24
+
+the scheduled journalist proposed: a Sonnet journalist that takes each curator batch through to the site, and an Opus chief correspondent that reviews it; brief, wake prompt and schedule card (status proposed)
+Pages changed (30): Schedule: journalist new · Briefs · Corrections · Schedule: every agent that runs on its own · The risk graph, before and after: what changed from one reader's fiv… · Evidence, derived, authored: what each file is · dev@php.newsroom, build, gate and release: the team · Operations: what changed, what to do next, how sure we are and 22 more
+[Schedule: conductor](../team/schedule/conductor/index.html) · [Commit notes: what the agents tell each other](../team/comms/index.html) · [Every member: who owns what](../admin/agents/roles/index.html) · [Questions readers ask about php2shell](../questions/index.html) · [The fact pipeline: from a web page to a reader](../pipeline/index.html) · [What the risk graph is missing: controls without tests, code without…](../grc/gaps/index.html) · [The risk graph: php2shell stakeholders, risks, weaknesses, vulnerabi…](../grc/graph/index.html) · [GRC: the risks of php2shell, who carries them, and the standards tha…](../grc/index.html) · [Explore the risk graph: start from one thing and follow it](../grc/explore/index.html) · [Frameworks: php2shell risks mapped to GDPR, NIS2, CRA, DORA, the EU…](../grc/frameworks/index.html) · [From the network: sgit risk models, vaults and standards graphs mapp…](../grc/network/index.html) · [The risk register: every php2shell risk, as a tree](../grc/risks/index.html) · [Stakeholders: a php2shell risk register for each, at every scale](../grc/stakeholders/index.html) · [The team: the people, the agents and how they work together](../team/index.html) · [The billing model: what runs and what is designed](../billing/index.html) · [Stories: written here, signed and dated](../articles/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [What's new: every change, release by release](../whatsnew/index.html) · [Admin and engineering](../admin/index.html) · [The board](../admin/board/index.html) · [How the story changed, release by release](../versions/index.html)
+
+ Vault commit `1845598d9a38`.
 
 ### v0.14.24 · 2026-10-24
 
@@ -866,4 +874,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.14.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.14.25 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
