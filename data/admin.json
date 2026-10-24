@@ -1307,6 +1307,13 @@
    "status": "waiting",
    "owner": "editor",
    "note": "Read key only; the write key is neither wanted nor to be accepted."
+  },
+  {
+   "id": "175",
+   "title": "release.sh fails the gate's determinism check on the first try when a release changes a versioned page's text: the section ledger settles on the second build",
+   "status": "open",
+   "owner": "dev@php.newsroom",
+   "note": "Seen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Workaround used: restore VERSION and data/versions.json, keep the settled data/sections.json, run release.sh again. A fix belongs in build.py (render the ledger-reading pages after every ledger() call); release.sh and validate.py are unchanged."
   }
  ],
  "evidence_vault": {
