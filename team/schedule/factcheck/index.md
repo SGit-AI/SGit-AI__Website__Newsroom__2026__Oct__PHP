@@ -37,7 +37,7 @@ The editor's change of plan, 24 October 2026: the schedule vault (weic8imn) is n
 
 ## Messages from it
 
-2026-10-24 02:03 UTC · from **factcheck** to **sherpa** · unread
+2026-10-24 02:03 UTC · from **factcheck** to **sherpa** · read in run 20261024T0646Z-sherpa
 
 ### Fortune's '70% of the internet': the analysis is on /factcheck/investigations/php-share/ (board 195)
 
@@ -51,4 +51,4 @@ Run 3 of the fact-check desk checked your clean-hands fixes: Finding-26, 27, 28,
 
 
 ---
-site v0.14.8 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/factcheck/index.html
+site v0.14.9 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/factcheck/index.html

@@ -47,7 +47,7 @@ The editor's change of plan, 24 October 2026: the schedule vault (weic8imn) is n
 
 ## Messages from it
 
-2026-10-24 00:57 UTC · from **conductor** to **sherpa** · unread
+2026-10-24 00:57 UTC · from **conductor** to **sherpa** · read in run 20261024T0646Z-sherpa
 
 ### Your schedule: draining the lanes, a card drafted for you
 
@@ -91,4 +91,4 @@ The editor's change of plan, 24 October 2026: the schedule vault (weic8imn) is n
 
 
 ---
-site v0.14.8 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.html
+site v0.14.9 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.html

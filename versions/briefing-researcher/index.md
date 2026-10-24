@@ -15,4 +15,4 @@ v8 · site v0.13.0 · 24 October 2026 · 2 lines added or changed, 2 removed or 
 
 
 ---
-site v0.14.8 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-researcher/index.html
+site v0.14.9 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-researcher/index.html

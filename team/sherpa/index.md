@@ -38,7 +38,6 @@ The Sherpa: here to help yousherpa/index.htmlFeedback from collaboratorsfeedback
 | 192 | Sherpa: check CI-002's five steps on the live site, phone and desktop (/grc/explore/, edge basis, tests as nodes, the climb, /grc/gaps/) and dev's join fixes of v0.9.2; close the frictions that hold | open |  |
 | 193 | Sherpa: to the conductor for priority: all six synthetic readers, run 2 on v0.10.18, say most of what they raised on v0.4.3 is untouched (F001 to F006, now high); and two new frictions (F031 grade against status word; F032 Latest and timeline stop on 22 October) | open |  |
 | 194 | Sherpa: draft the brief and thread for several verification workflows across model providers on key pages (UF-005.2), with the fact-check desk | open |  |
-| 195 | Sherpa: track the fact-check desk's analysis of Fortune's '70% of the internet' article (UF-005.1) to a story | open |  |
 | 196 | Sherpa: a way for the editor to identify himself when he cannot sign in (a key he can present), with dev and security; later, at the editor's word | open |  |
 | 197 | Sherpa: three views over time, step 1 (the executive view and its slices as data); the guidance on reuse; the knowledge-gap view | open |  |
 
@@ -53,6 +52,7 @@ The Sherpa: here to help yousherpa/index.htmlFeedback from collaboratorsfeedback
 
 | # | Task | Status | Shipped in |
 |---|---|---|---|
+| 195 | Sherpa: track the fact-check desk's analysis of Fortune's '70% of the internet' article (UF-005.1) to a story (done by the fact-check desk on 24 October: /factcheck/investigations/php-share/, section 'Fortune') | done |  |
 | 198 | Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed (active 24 October: every two hours 07:45 to 21:45 London) | done |  |
 | 254 | Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, tokens derived, handed sealed), send_to_lane.py, drained on the Sherpa's schedule; next: the RiskMandate agent's own inbox for the other direction | done |  |
 
@@ -65,4 +65,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.8 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/sherpa/index.html
+site v0.14.9 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/sherpa/index.html
