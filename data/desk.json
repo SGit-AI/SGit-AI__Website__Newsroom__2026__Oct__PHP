@@ -1,0 +1,227 @@
+{
+ "note": "The journalist's desk: the cycle every evidence export goes through, the full pass and where it stands, and the pass ledger, one row per hand-kept data file with the evidence vault head it was last checked against. Kept by claude-journalist. The staleness report on /views/desk/ is computed from this file, the built pages and the vault's claims at every build.",
+ "author": "claude-journalist",
+ "decided": {
+  "by": "Dinis Cruz, editor",
+  "on": "2026-10-24",
+  "says": "the journalist does the full pass and maintains the site after each export as part of its workflow, released in turn rather than in one large push"
+ },
+ "cycle": [
+  {
+   "id": "watch",
+   "who": "researcher@php.newsroom",
+   "label": "Watch",
+   "what": "The source watch re-reads every outside page on a schedule and keeps a dated snapshot when one changes."
+  },
+  {
+   "id": "curate",
+   "who": "curator@php.newsroom",
+   "label": "Curate",
+   "what": "Five times a day the curator promotes about 18 snapshots into the evidence vault, reads each, and records its claims and timeline rows."
+  },
+  {
+   "id": "export",
+   "who": "claude-journalist",
+   "label": "Export",
+   "what": "The journalist pulls the evidence vault read-only and re-exports it into data/: sources, counts, claims, timeline, the latest capture."
+  },
+  {
+   "id": "review",
+   "who": "claude-journalist",
+   "label": "Review",
+   "what": "Every new vault claim appears on /claims/review/ as not yet reviewed; each gets a verdict (used, agrees, held back) checked against the saved page and the ledger."
+  },
+  {
+   "id": "refresh",
+   "who": "claude-journalist",
+   "label": "Refresh",
+   "what": "The hand-kept data files the new evidence touches are updated, each row citing a capture, and the pass ledger below records the head each was checked against."
+  },
+  {
+   "id": "state",
+   "who": "claude-journalist",
+   "label": "State",
+   "what": "When the evidence moves enough to change what a reader should know, a new version of the state of affairs is written; its delta is on /views/."
+  },
+  {
+   "id": "release",
+   "who": "claude-journalist",
+   "label": "Release",
+   "what": "Build, gate, security check, release.sh to dev, check live. One step of the pass per release, not one large push."
+  },
+  {
+   "id": "settled",
+   "who": "the build",
+   "label": "Settled",
+   "what": "The staleness report on this page is empty: no 'as of' older than the latest capture, every file checked against the current head, every vault claim reviewed."
+  }
+ ],
+ "pass": [
+  {
+   "n": 1,
+   "title": "The desk, the plan and the staleness report",
+   "status": "done",
+   "what": "This page: the cycle, the pass, the pass ledger and the report that says what is still stale."
+  },
+  {
+   "n": 2,
+   "title": "Refresh the hand-kept data from the new evidence",
+   "status": "in progress",
+   "what": "Story, the compromise line, the offline ledger, agencies, numbers, the timeline, the KEV snapshot and the software inventory, each checked against the current head."
+  },
+  {
+   "n": 3,
+   "title": "Move the facts typed into the build into data",
+   "status": "pending",
+   "what": "Front-page tiles, KEV, playbook, the Explained page, chart windows and counts read from data, so the next export changes them without code."
+  },
+  {
+   "n": 4,
+   "title": "The persona pass",
+   "status": "pending",
+   "what": "The sixteen readers' answers, introductions and asks move into personas.json, with their 'as of' generated, and are re-read against the state of affairs."
+  },
+  {
+   "n": 5,
+   "title": "Review the rest of the curator's claims",
+   "status": "pending",
+   "what": "Every claim on /claims/review/ gets a verdict; the used ones go into the site's claim table with their sources."
+  }
+ ],
+ "files": [
+  {
+   "path": "data/story.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/claims.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/impact.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/compromise.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/exploitation.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/numbers.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/agencies.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/timeline.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/history.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/defence.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/affected.json",
+   "kept_by_before": "story-site",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/software.json",
+   "kept_by_before": "the vault export (collector-gov's capture)",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/plain.json",
+   "kept_by_before": "story-site",
+   "checked_against": "1845598d9a38",
+   "note": "Right now and Latest rewritten for the state of affairs v2; the rest of the file not yet re-read."
+  },
+  {
+   "path": "data/personas.json",
+   "kept_by_before": "briefing writer",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/questions.json",
+   "kept_by_before": "librarian",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/signals.json",
+   "kept_by_before": "journalist and historian",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/patching.json",
+   "kept_by_before": "journalist",
+   "checked_against": null,
+   "note": ""
+  },
+  {
+   "path": "data/state.json",
+   "kept_by_before": "journalist",
+   "checked_against": "1845598d9a38",
+   "note": "State of affairs v2."
+  }
+ ],
+ "kept_as_written": [
+  "articles/",
+  "updates/",
+  "views/state/v",
+  "versions/",
+  "whatsnew/",
+  "admin/",
+  "readings/",
+  "brief/",
+  "corrections/",
+  "feedback/",
+  "sherpa/",
+  "team/",
+  "pulse/",
+  "sources/",
+  "views/desk/",
+  "facts/"
+ ],
+ "kept_as_written_why": "Stories, updates, versions of the state of affairs, release notes, briefs, outside readings and source pages are dated and kept as written by design; a dated phrase in them is history, not staleness. Facts pages carry every version of a fact.",
+ "accepted": [
+  {
+   "page": "*",
+   "phrase": "as of 20:30 UTC on 21 October",
+   "why": "Huntress's own time for its statement that it had seen no exploitation on its partners' systems (claim huntress-none): a source's date, kept wherever the claim is quoted."
+  }
+ ]
+}

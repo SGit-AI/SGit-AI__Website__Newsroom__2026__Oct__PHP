@@ -593,6 +593,13 @@
    "by": "pulse@newsroom's vault (4klm5qlt), exported by admin/build/export_pulse.py",
    "from": "the Pulse vault's ladders, attention counts and the short quotes it recorded, each with its capture path and sha256; no capture copied, no key",
    "used_on": "pulse/index.html"
+  },
+  {
+   "path": "data/desk.json",
+   "layer": "site",
+   "by": "claude-journalist",
+   "from": "the editor's decision of 24 October 2026 and the journalist's pass over the site after each evidence export",
+   "used_on": "views/desk/index.html"
   }
  ]
 }

@@ -715,3 +715,20 @@ table.pulse th{text-align:center}
 blockquote.tp{margin:.35rem 0;padding:.3rem .7rem;border-left:3px dashed var(--line);color:var(--ink,inherit)}
 ul.pev{padding-left:1.1rem}
 ul.pev li{margin:.5rem 0}
+/* The journalist's desk (/views/desk/): the cycle and the pass as numbered cards */
+.dk-fig{margin:1rem 0}
+.dk-fig figcaption{font-size:.8rem;color:var(--dim);margin-top:.5rem}
+.dk-cycle,.dk-seq{list-style:none;padding:0;margin:0;display:grid;gap:.6rem;counter-reset:dk}
+.dk-cycle{grid-template-columns:repeat(auto-fit,minmax(11.5rem,1fr))}
+.dk-step{counter-increment:dk;position:relative;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:.6rem .75rem .65rem 2.3rem;display:flex;flex-direction:column;gap:.2rem;font-size:.86rem}
+.dk-step::before{content:counter(dk);position:absolute;left:.6rem;top:.55rem;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--accent,#0f6e5a);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.dk-step:last-child{border-style:dashed}
+.dk-who{overflow-wrap:anywhere}
+.dk-who,.dk-st{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+.dk-pass{display:grid;grid-template-columns:2rem 1fr;column-gap:.6rem;row-gap:.15rem;border-left:4px solid var(--line);padding:.45rem .7rem;background:var(--panel);border-radius:0 8px 8px 0;font-size:.88rem}
+.dk-pass>*:not(.dk-n){grid-column:2}
+.dk-n{grid-row:1/span 3;font-size:1.3rem;font-weight:700;color:var(--dim)}
+.dk-done{border-left-color:var(--accent,#0f6e5a)}
+.dk-in-progress{border-left-color:var(--warm,#c77d1a)}
+.dk-in-progress .dk-st{color:var(--warm,#c77d1a);font-weight:700}
+.dk-done .dk-st{color:var(--accent,#0f6e5a);font-weight:700}

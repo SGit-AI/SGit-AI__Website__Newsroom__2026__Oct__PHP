@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode', 'claim-review')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode', 'claim-review', 'desk')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 TPUB = load('telemetry-public') if os.path.exists(os.path.join(DATA, 'telemetry-public.json')) else None
 WORLD = load('world')
@@ -250,7 +250,7 @@ NAV = [
                       ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults'] if x.get('nav', True)]),
     ('GRC', [('grc/index.html', 'GRC: risks, owners, standards'), ('grc/risks/index.html', 'The risk register'), ('grc/stakeholders/index.html', 'Stakeholders and their registers'),
              ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/explore/index.html', 'Explore the graph: from any node'), ('grc/gaps/index.html', 'What the graph is missing'), ('grc/network/index.html', 'From the sgit network')]),
-    ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed')]),
+    ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed'), ('views/desk/index.html', "The journalist's desk: what is still stale")]),
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
@@ -1692,7 +1692,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
+    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_grc(); build_sherpa(); build_desk()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -5699,6 +5699,75 @@ def build_schedule():
 {section("outbox", "Messages from it", sched_msgs([m for m in msgs if m['from'] == a], read))}
 '''
         page(f'team/schedule/{a}/index.html', f'Schedule: {a}', f'{a}: {c["objective"]} When it wakes, its instructions, every run and its messages.', body, kind='site', topics='team agents schedule')
+
+# ----------------------------------------------------------------------------- the journalist's desk (/views/desk/)
+# The cycle every evidence export goes through, the full pass and where it stands, the pass ledger (data/desk.json),
+# and a staleness report computed from the pages this build has just written: every dated 'as of' older than the
+# latest capture, every hand-kept file not checked against the current vault head, every vault claim not reviewed.
+
+_MONTHS = {m: i + 1 for i, m in enumerate(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])}
+_ASOF = re.compile(r'\b[Aa]s of (?:the (?:morning|afternoon|evening|end) of )?(?:(\d{1,2}):(\d{2}) UTC on )?(\d{1,2}) (October|November)(?: 2026)?(?:, (\d{1,2}):(\d{2}) UTC)?'
+                   r'|\b[Aa]s of (2026)-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2}))?')
+
+def _asof_key(m):
+    """A matched 'as of' phrase as a sortable (month, day, minutes or None)."""
+    if m.group(3):
+        hh, mm = (m.group(1), m.group(2)) if m.group(1) else (m.group(5), m.group(6))
+        return (_MONTHS[m.group(4)], int(m.group(3)), int(hh) * 60 + int(mm) if hh else None)
+    return (int(m.group(8)), int(m.group(9)), int(m.group(10)) * 60 + int(m.group(11)) if m.group(10) else None)
+
+def staleness():
+    """What is older than the latest capture, from the markdown twins this build wrote. Deterministic: pages, then phrases, in order."""
+    dk = D['desk']
+    a = STORY['data_as_of']
+    latest = (int(a[5:7]), int(a[8:10]), int(a[11:13]) * 60 + int(a[14:16]))
+    accepted = {(x['page'], x['phrase']) for x in dk['accepted']}
+    pages = []
+    for p, t, _, _ in PAGES:
+        if p.startswith(tuple(dk['kept_as_written'])) or not os.path.exists(os.path.join(ROOT, md_path(p))):
+            continue
+        md = open(os.path.join(ROOT, md_path(p)), encoding='utf-8').read().split('\n\n---\nsite v')[0]
+        hits = []
+        for m in _ASOF.finditer(md):
+            k = _asof_key(m)
+            old = (k[0], k[1]) < latest[:2] or (k[:2] == latest[:2] and k[2] is not None and k[2] < latest[2])
+            if old and (p, m.group(0)) not in accepted and ('*', m.group(0)) not in accepted and m.group(0) not in hits:
+                hits.append(m.group(0))
+        if hits:
+            pages.append((p, t, hits))
+    head = D['vault']['head']['commit']
+    files = [f for f in dk['files'] if f.get('checked_against') != head]
+    site_ids = {c['id'] for c in D['claims']}
+    reviewed = {r['id'] for r in D['claim-review']['reviews']}
+    unreviewed = [c for c in D['vault-claims'] if c['id'] not in site_ids and c['id'] not in reviewed]
+    return pages, files, unreviewed
+
+def build_desk():
+    dk = D['desk']
+    path = 'views/desk/index.html'
+    head = D['vault']['head']['commit']
+    pages, files, unreviewed = staleness()
+    n_phr = sum(len(h) for _, _, h in pages)
+    settled = not (pages or files or unreviewed)
+    cyc = ''.join(f'<li class="dk-step"><b>{E(c["label"])}</b><span class="dk-who">{E(c["who"])}</span><span>{E(c["what"])}</span></li>' for c in dk['cycle'])
+    cycle_fig = f'<figure class="dk-fig"><ol class="dk-cycle">{cyc}</ol><figcaption>Each export, in order. The last step is reached when the report at the foot of this page is empty; the next curator wake starts the cycle again.</figcaption></figure>'
+    pas = ''.join(f'<li class="dk-pass dk-{E(s["status"].replace(" ", "-"))}"><span class="dk-n">{s["n"]}</span><b>{E(s["title"])}</b><span class="dk-st">{E(s["status"])}{(", v" + E(s["release"])) if s.get("release") else ""}</span><span>{E(s["what"])}</span></li>' for s in dk['pass'])
+    pass_fig = f'<figure class="dk-fig"><ol class="dk-seq">{pas}</ol><figcaption>One step per release, in this order, so that no release carries the whole pass.</figcaption></figure>'
+    frows = [[f'<code>{E(f["path"])}</code>', E(f['kept_by_before']), (f'<code>{E(f["checked_against"])}</code>' + (' <span class="st st-confirmed">current</span>' if f['checked_against'] == head else ' <span class="st st-disputed">older head</span>')) if f.get('checked_against') else '<span class="st st-unverified">not yet</span>', E(f.get('note') or '')] for f in dk['files']]
+    prows = [[f'<a href="../../{E(p)}">{E(t)}</a><div class="small"><code>{E(p)}</code></div>', '<br>'.join(f'<q>{E(h)}</q>' for h in hs)] for p, t, hs in pages]
+    report = (f'<p class="lead">{"<b>Settled.</b> Nothing on the site is older than the latest capture." if settled else f"<b>Not settled yet.</b> {len(pages)} pages carry {n_phr} dated phrases older than the latest capture ({E(human_time(STORY['data_as_of']))}); {len(files)} of {len(dk['files'])} hand-kept files have not been checked against the current head <code>{E(head)}</code>; {len(unreviewed)} vault claims are not yet reviewed."}</p>'
+              + section('r-files', f'The pass ledger: hand-kept files ({len(dk["files"]) - len(files)} of {len(dk["files"])} checked against the current head)', table(['File', 'Kept before 24 October by', 'Last checked against', 'Note'], frows, 'dk-t'))
+              + section('r-pages', f'Dated phrases older than the latest capture ({n_phr} on {len(pages)} pages)', (table(['Page', 'Phrases'], prows, 'dk-t') if prows else '<p>None.</p>') + f'<p class="small">Pages kept as written by design are not scanned: {E(", ".join(dk["kept_as_written"]))}. {E(dk["kept_as_written_why"])} A phrase that is a source\'s own date, rightly kept, is accepted in <code>data/desk.json</code> and leaves the report.</p>')
+              + section('r-claims', f'Vault claims not yet reviewed ({len(unreviewed)})', f'<p>Listed with their sources on <a href="../../claims/review/index.html#g-not-yet-reviewed">the claims waiting for review</a>.</p>'))
+    body = f'''
+<h1>The journalist's desk: keeping the site current</h1>
+<p class="lead">After every export of the evidence vault, the journalist goes through the site so that it says what the evidence now says. This page is that work in the open: the cycle each export goes through, the full pass and where it stands, and a report, computed at every build, of what is still older than the evidence. The editor's decision ({E(dk["decided"]["on"])}): {E(dk["decided"]["says"])}.</p>
+{section("cycle", "The cycle, after every export", cycle_fig)}
+{section("pass", "The full pass, step by step", pass_fig + '<p>The plan in full is <a href="../../admin/briefs/index.html">among the briefs</a>, as written on 24 October.</p>')}
+{section("report", "What is still stale", report)}
+<p class="small">Computed from <a href="../../data/desk.json">data/desk.json</a>, the pages of this build and the vault's claims, at vault head <code>{E(head)}</code>.</p>
+'''
+    page(path, "The journalist's desk: keeping the site current", f'The cycle every evidence export goes through, the journalist\'s full pass over the site and where it stands, and what is still older than the latest capture: {"settled" if settled else f"{n_phr} dated phrases on {len(pages)} pages, {len(files)} files, {len(unreviewed)} claims"}.', body, kind='site', topics='php2shell method freshness')
 
 # ----------------------------------------------------------------------------- elsewhere: Pulse, a separate section
 # Pulse is pulse@newsroom's vault for the SGit newsroom: exploitation evidence beside attention, for 26 vulnerabilities
