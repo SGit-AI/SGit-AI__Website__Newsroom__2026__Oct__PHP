@@ -102,7 +102,7 @@ All say install the fix. They split on what to do if you cannot.
 
  See every agency → 
 
- Focus view shows 28 of 798 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
+ Focus view shows 28 of 799 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
 
 ---
 site v0.14.23 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html

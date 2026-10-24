@@ -1993,6 +1993,27 @@
    "status": "open",
    "owner": "conductor",
    "note": "After every agent has an enrolled key (abp@, security@)."
+  },
+  {
+   "id": "270",
+   "title": "Enrol observability@php.newsroom's key (sha256:b9ddd39416d71cbb) on pki.sgit.ai: its record links the root as operator",
+   "status": "open",
+   "owner": "editor",
+   "note": "The record is my-record.json from its session, handed to the editor on 24 October; it is public. Until enrolled, pki-agent trust refuses it and nothing can be sealed to it."
+  },
+  {
+   "id": "271",
+   "title": "Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the telemetry vault) to observability, sealed to its key",
+   "status": "open",
+   "owner": "editor",
+   "note": "The editor's plan of 24 October: dev seals them to sha256:b9ddd39416d71cbb, the fingerprint taken from the editor in dev's session. Blocks the application's v0.4.1 (Queue & drain: a progress bar while the lane is checked, step-by-step detail while it drains)."
+  },
+  {
+   "id": "272",
+   "title": "Move the telemetry files from dev's scope to observability's, or confirm they stay with dev: assets/telemetry.js, admin/build/telemetry_*, admin/telemetry/**, data/telemetry*.json",
+   "status": "open",
+   "owner": "abp@newsroom.sgit",
+   "note": "The editor asked observability to look after the telemetry on 24 October; dev's policy still lists the files, so observability does not edit them until this row closes. The editor decides. The member's first policy.json was written by observability itself as a draft (agents.py check names it outside scope): abp@ to take it over."
   }
  ],
  "evidence_vault": {

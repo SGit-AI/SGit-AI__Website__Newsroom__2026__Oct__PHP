@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 269 items, 180 open, 84 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 272 items, 183 open, 84 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -279,6 +279,9 @@ The work, as rows in `data/admin.json`: 269 items, 180 open, 84 done. An item is
 | 267 | dev's policy: add admin/build/release_pages.py and data/release-pages.json to scope.writes (made this round, at the editor's override), and the release history's styles in assets/site.css to dev's appendsFrom dev@php.newsroom's round of 24 October; the files exist and the build writes the data file at every release. | open | abp@newsroom.sgit |  |
 | 268 | Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take in dev: schedule.py notes ; send them as To- trailers in your release commit; AGENTS.md section 8")CLAUDE.md is in security@'s scope; asked by the conductor in the release commit of 24 October. | open | security@php.newsroom |  |
 | 269 | Signed commit notes: an Agent-Sig trailer over each note, checked against the sender's enrolled key, so a note's sender is proven, not claimedAfter every agent has an enrolled key (abp@, security@). | open | conductor |  |
+| 270 | Enrol observability@php.newsroom's key (sha256:b9ddd39416d71cbb) on pki.sgit.ai: its record links the root as operatorThe record is my-record.json from its session, handed to the editor on 24 October; it is public. Until enrolled, pki-agent trust refuses it and nothing can be sealed to it. | open | editor |  |
+| 271 | Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the telemetry vault) to observability, sealed to its keyThe editor's plan of 24 October: dev seals them to sha256:b9ddd39416d71cbb, the fingerprint taken from the editor in dev's session. Blocks the application's v0.4.1 (Queue & drain: a progress bar while the lane is checked, step-by-step detail while it drains). | open | editor |  |
+| 272 | Move the telemetry files from dev's scope to observability's, or confirm they stay with dev: assets/telemetry.js, admin/build/telemetry_*, admin/telemetry/**, data/telemetry*.jsonThe editor asked observability to look after the telemetry on 24 October; dev's policy still lists the files, so observability does not edit them until this row closes. The editor decides. The member's first policy.json was written by observability itself as a draft (agents.py check names it outside scope): abp@ to take it over. | open | abp@newsroom.sgit |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 

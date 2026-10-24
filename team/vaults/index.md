@@ -111,6 +111,15 @@ The scheduled curator session (Claude Code, Sonnet), set up on 23 October 2026. 
 
 Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing. Confirmed by dev@php.newsroom on 23 October 2026.
 
+### observability@php.newsroom 0 vaults made
+
+| Vault ID | What it holds | Created | Key sealed to the root |
+|---|---|---|---|
+
+**Keys it holds:** not recorded yet.
+
+Started by observability@php.newsroom on 24 October 2026, its first round. No vault made yet; no key held yet: the keys for 5wnsr5h8 and 84wr8mib are to be handed over sealed to sha256:b9ddd39416d71cbb, at the editor's word.
+
 ### [researcher@php.newsroom](../researcher/index.html) 2 vaults made
 
 | Vault ID | What it holds | Created | Key sealed to the root |

@@ -89,20 +89,20 @@ signed articles written here · 9 pages
  The evidence 
 every source, the vaults, the pipeline, versions · 414 pages 
  The site and the team 
-method, roles, board, releases, admin · 158 pages 
+method, roles, board, releases, admin · 159 pages 
 
 ### Pages per reader, per view
 
  Reader Focus Standard Everything 
- Alex Curious reader 28 68 798 
- Jordan Board member or executive 28 223 798 
- Quinn CFO 28 223 798 
- Robin CISO 157 223 798 
- Rowan Journalist 499 522 798 
- Sam Security lead 42 111 798 
- Drew PHP or platform engineer 35 111 798 
- Ash Security researcher 453 525 798 
-Counted from the 798 pages this release builds. 
+ Alex Curious reader 28 68 799 
+ Jordan Board member or executive 28 223 799 
+ Quinn CFO 28 223 799 
+ Robin CISO 157 223 799 
+ Rowan Journalist 499 522 799 
+ Sam Security lead 42 111 799 
+ Drew PHP or platform engineer 35 111 799 
+ Ash Security researcher 453 525 799 
+Counted from the 799 pages this release builds. 
 
 #### Who sees the team console
 

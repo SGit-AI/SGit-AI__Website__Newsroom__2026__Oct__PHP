@@ -4,7 +4,7 @@ The admin section as a console with its own menu and layout: a dark sidebar by a
 
 > Mockup D for review, built from the data of release v0.14.23. Not the live site.
 
-PHP Team console Console Overview Board 180 Agents 19 Releases 110 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 183 Agents 19 Releases 110 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -16,11 +16,11 @@ v0.14.23
 110 releases since 22 Oct 
 
 Open on the board 
-180 
+183 
 84 done, 5 waiting 
 
 Pages built 
-798 
+799 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,17 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 180
+#### Open 183
 
+ #272 
+Move the telemetry files from dev's scope to observability's, or confirm they stay with dev: assets/telemetry.js, admin/… 
+ abp@newsroom.sgit 
+ #271 
+Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the telemetry vault) to observability, sealed … 
+ editor 
+ #270 
+Enrol observability@php.newsroom's key (sha256:b9ddd39416d71cbb) on pki.sgit.ai: its record links the root as operator 
+ editor 
  #269 
 Signed commit notes: an Agent-Sig trailer over each note, checked against the sender's enrolled key, so a note's sender … 
  conductor 
@@ -44,15 +53,6 @@ dev's policy: add admin/build/release_pages.py and data/release-pages.json to sc
  #265 
 From CI-003 (story-site): the front page's 'Three ways to read this site' on the first screen and named by task (Underst… 
  story-site 
- #264 
-Sherpa: CI-003 to the editor: the CTO's place (the redesign puts it in Operations, the three-views brief with the execut… 
- sherpa 
- #263 
-From CI-003, step 4: confirm or reject an inferred graph link, signed with an enrolled key and sent as a 'review' throug… 
- dev@php.newsroom 
- #262 
-From CI-003, step 3: a progression measure at every drain: of front-page sessions, the share reaching a briefing, the gu… 
- dev@php.newsroom 
 
 #### Waiting 5
 
@@ -111,7 +111,7 @@ Confirm which agent and address send the liaison's requests (the brief names the
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 21 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 23 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
  conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 20 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 15 
