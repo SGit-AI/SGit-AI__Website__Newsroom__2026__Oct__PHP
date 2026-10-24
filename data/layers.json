@@ -84,6 +84,13 @@
    "used_on": "signals/index.html"
   },
   {
+   "path": "data/claim-review.json",
+   "layer": "derived",
+   "by": "claude-journalist",
+   "from": "the vault's per-agent claims (data/vault-claims.json) checked against the saved pages, the site's claims and the contradiction ledger",
+   "used_on": "claims/review/index.html"
+  },
+  {
    "path": "data/state.json",
    "layer": "derived",
    "by": "claude-journalist",
@@ -551,6 +558,13 @@
    "by": "dev@php.newsroom",
    "from": "the rules the gaps page computes over the risk graph",
    "used_on": "grc/gaps/index.html"
+  },
+  {
+   "path": "data/pulse.json",
+   "layer": "evidence",
+   "by": "pulse@newsroom's vault (4klm5qlt), exported by admin/build/export_pulse.py",
+   "from": "the Pulse vault's ladders, attention counts and the short quotes it recorded, each with its capture path and sha256; no capture copied, no key",
+   "used_on": "pulse/index.html"
   }
  ]
 }

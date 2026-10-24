@@ -25,7 +25,7 @@ D = {k: load(k) for k in ('story', 'claims', 'timeline', 'numbers', 'agencies', 
                           'actors', 'roles', 'versions', 'billing', 'sources', 'vault', 'software',
                           'vault-claims', 'vault-timeline', 'code', 'history', 'impact', 'defence',
                           'personas', 'glossary', 'plain', 'interview', 'seo',
-                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode')}
+                          'admin', 'telemetry', 'review', 'layers', 'questions', 'readings', 'patching', 'pipeline', 'vaults', 'source-watch', 'feed-sources', 'inventory-history', 'signals', 'subscriptions', 'compromise', 'stack', 'state', 'pack-mode', 'claim-review')}
 TREP = load('telemetry-report') if os.path.exists(os.path.join(DATA, 'telemetry-report.json')) else None
 TPUB = load('telemetry-public') if os.path.exists(os.path.join(DATA, 'telemetry-public.json')) else None
 WORLD = load('world')
@@ -112,7 +112,7 @@ UPDATES = load_updates()
 # The two halves of the site, and what each page is. Research: material collected from outside and what this
 # site derives from it. Stories: written here, signed and dated. Every page carries one of these at its top.
 ZONES = OrderedDict([('Updates', 'Updates'), ('Start here', 'For you'), ('Questions', 'For you'), ('Briefings', 'For you'), ('Yours', 'For you'), ('The incident', 'Research'),
-                     ('The analysis', 'Research'), ('The evidence', 'Research'), ('GRC', 'Research'), ('Views', 'Stories'), ('Stories', 'Stories'), ('About', 'Site')])
+                     ('The analysis', 'Research'), ('The evidence', 'Research'), ('GRC', 'Research'), ('Views', 'Stories'), ('Stories', 'Stories'), ('About', 'Site'), ('Elsewhere', 'Elsewhere')])
 ORIGINS = {
     'house': {'short': 'House', 'label': 'Story', 'text': 'written here by this site, signed and dated'},
     'guest': {'short': 'Guest', 'label': 'Story, guest', 'text': 'written by a guest writer, published here under their name'},
@@ -241,7 +241,7 @@ NAV = [
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
-    ('The analysis', [('claims/index.html', 'Every claim'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
+    ('The analysis', [('claims/index.html', 'Every claim'), ('claims/review/index.html', 'Claims waiting for review'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
                       ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
@@ -256,6 +256,7 @@ NAV = [
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
                ('corrections/index.html', 'Corrections'), ('admin/versions.html', 'Release history'), ('status/index.html', 'Pipeline: what is deploying'), ('admin/index.html', 'Admin & engineering'), ('admin/agents/index.html', 'Guidance for agents'),
                ('admin/status-json/index.html', 'status.json: the feed for other sites'), ('admin/board/index.html', 'The board'), ('admin/roles/index.html', 'Roles'),] + ([('admin/keys/index.html', 'Keys and secrets')] if os.path.exists(os.path.join(DATA, 'keys.json')) else []) + [ ('admin/briefs/index.html', 'Briefs'), ('admin/pack-mode/index.html', 'Pack mode, measured'), ('admin/telemetry/index.html', 'Who reads this site'), ('admin/synthetic/index.html', 'Synthetic readers')]),
+    ('Elsewhere', [('pulse/index.html', 'What else is going on: Pulse')])
 ]
 
 PAGES = []  # (path, title, description) in order, for llms.txt
@@ -385,6 +386,8 @@ def origin_strip(path, kind, origin=None, byline=None):
         o = ORIGINS[origin]; cls, label, text = 'story', o['label'], o['text'] + (f'. {byline}' if byline else '')
     elif origin == 'external' or path.startswith('readings/') and path != 'readings/index.html':
         cls, label, text = 'external', 'Research, external', 'material from outside, published as received and credited; not written here'
+    elif path.startswith('pulse/'):
+        cls, label, text = 'elsewhere', 'Elsewhere, a separate section', 'not about PHP: another agent\'s vault, the SGit newsroom\'s Pulse, shown apart from this site\'s evidence'
     elif kind in ('site', 'account') or path.startswith(('admin/', 'account/')):
         cls, label, text = 'site', 'About this site', 'how the site works, kept by the agents that run it'
     else:
@@ -634,6 +637,7 @@ def build_index():
 {section("facts", "The core facts, and the evidence for each", f'<ul class="legend">{legend}</ul><ol class="facts">{facts}</ol>{b_facts}', "Each fact links to the original pages it rests on: the PHP project, government agencies, the researchers. Click a source to see when it was saved and its fingerprint.")}
 {section("unknown", "What nobody knows yet", f'<ul class="unknown">{unknown}</ul>{b_unknown}', "Stated, not papered over. This site will update each one when the evidence does.")}
 {section("latest", "Latest", f'<ol class="latest">{latest}</ol><p><a href="timeline/index.html">Everything, in order, on the timeline &rarr;</a> &middot; <a href="whatsnew/index.html">What changed on this site, release by release &rarr;</a></p>{b_latest}')}
+<aside class="origin o-elsewhere"><b>What else is going on</b> <span>Other vulnerabilities in the news this month, with the evidence that each is exploited beside the attention it gets: the SGit newsroom's Pulse, in a separate section, not about PHP.</span> <a href="pulse/index.html">Pulse &rarr;</a></aside>
 {section("who", "The briefing for you", item('home-who', 'front', 'for-you', 'The briefing for you: fifteen readers', 'index.html#who', re.sub(r'\d+', '#', persona_doors()), REL_DATE.get(VERSION, '')) + persona_doors(), who_lead)}
 {section("moments", "How it unfolded", item('home-moments', 'front', 'research', 'How it unfolded: five moments', 'index.html#moments', moments, REL_DATE.get(VERSION, '')) + f'<ol class="moments">{moments}</ol>')}
 {section("stories", "Stories: written here", item('home-stories', 'front', 'stories', 'Stories: written here', 'index.html#stories', re.sub(r'\d+', '#', stories_row()), REL_DATE.get(VERSION, '')) + stories_row(), "Everything above is research: collected from outside sources, each fact linked to a saved copy. These are written here, signed and dated, and kept as written.")}
@@ -758,6 +762,37 @@ def build_claims():
 <p>The newsroom's own twelve claims, seeded from the BBC live page on the morning of 22 October, are in the vault as <code>claims/claude-newsroom-lead.json</code> and are superseded by the rows above, which trace each of them to primary sources. The raw rows are in <a href="../data/claims.json">data/claims.json</a>.</p>
 '''
     page('claims/index.html', 'Every claim, with its status and sources', f'{C["claims"]} claims about php2shell, each with who makes it, a status (confirmed, reported, disputed, contradicted or unverified) and the captured sources behind it.', body, kind='analysis', topics='php2shell claims provenance')
+
+def build_claim_review():
+    """Every claim in the vault's per-agent files that is not in the site's claim table, with the journalist's verdict, or 'not yet reviewed'."""
+    site_ids = {c['id'] for c in D['claims']}
+    rv = {r['id']: r for r in D['claim-review']['reviews']}
+    vc = D['vault-claims']
+    for i in rv:
+        if i not in {c['id'] for c in vc}:
+            sys.exit(f'data/claim-review.json: {i} is not a claim in data/vault-claims.json')
+    pending = [c for c in vc if c['id'] not in site_ids]
+    groups = OrderedDict([('held back', []), ('used', []), ('agrees', []), ('not yet reviewed', [])])
+    for c in pending:
+        groups[rv[c['id']]['verdict'] if c['id'] in rv else 'not yet reviewed'].append(c)
+    words = D['claim-review']['verdicts']
+    def rows(cs):
+        out = []
+        for c in cs:
+            r = rv.get(c['id'])
+            verdict = (f'<b>{E(r["verdict"])}</b><div class="note">{E(r["reason"])}</div>' + (f'<div class="refs">{src_links(r["sources"], 2)}</div>' if r.get('sources') else '')
+                       + (f'<div class="small"><a href="../../{E(r["where"])}">where it was reviewed</a>, {E(r["reviewed"])}, {E(r["by"])}</div>' if r.get('where') else '')) if r else '<span class="small">not yet reviewed</span>'
+            out.append([f'<span id="{E(c["id"])}"><b>{E(c["claim"])}</b></span><div class="small"><code>{E(c["id"])}</code> &middot; {E(c.get("topic") or "")}</div>',
+                        E(c.get('by') or ''), pill(c['status']), f'{E(c.get("note") or "")}<div class="small">{E(c.get("agent") or "")}</div>', src_links(c['sources'], 2), verdict])
+        return table(['Claim, as the agent recorded it', 'Said by', 'Agent\'s status', 'Agent\'s note', 'Sources', 'Journalist\'s review'], out, 'rv')
+    agents = Counter(c.get('agent') for c in pending)
+    body = f'''
+<h1>Claims waiting for review</h1>
+<p class="lead">{len(pending)} claims recorded in the evidence vault by its agents are not in the site's <a href="../index.html">claim table</a> yet: {", ".join(f"{n} from {E(a)}" for a, n in agents.most_common())}. They are listed here so that they can be reviewed, not because they are established. Each is the agent's reading of a captured page, in the agent's words; for a page in another language the English is the agent's translation. The status beside each is the agent's, not the site's.</p>
+<p>The journalist has reviewed {len(rv)} of them: {", ".join(f"{len(v)} {k}" for k, v in groups.items() if v and k != "not yet reviewed")}. What the review words mean: {"; ".join(f"<b>{E(k)}</b>, {E(v)}" for k, v in words.items())}. A claim with no review is marked so, and a new export of the vault adds new claims here without anyone editing this page. The rows are <a href="../../data/vault-claims.json">data/vault-claims.json</a>; the reviews are <a href="../../data/claim-review.json">data/claim-review.json</a>.</p>
+{"".join(section("g-" + k.replace(" ", "-"), f"{k[0].upper() + k[1:]} ({len(v)})", rows(v)) for k, v in groups.items() if v)}
+'''
+    page('claims/review/index.html', 'Claims waiting for review', f'{len(pending)} claims from the evidence vault that are not in the site claim table yet, each with the agent that recorded it, its sources, and the journalist\'s verdict or "not yet reviewed".', body, kind='analysis', topics='php2shell claims review provenance')
 
 def build_numbers():
     rows = []
@@ -1528,6 +1563,11 @@ def build_llms():
         if p.startswith(('views/', 'updates/')):
             lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
     lines.append('')
+    lines.append("## Elsewhere: Pulse, a separate section not about PHP (the SGit newsroom's vault 4klm5qlt), one page per vulnerability")
+    for p, t, d, _ in PAGES:
+        if p.startswith('pulse/'):
+            lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
+    lines.append('')
     lines.append("## The Sherpa and the feedback from collaborators, one page each")
     for p, t, d, _ in PAGES:
         if p.startswith(('sherpa/', 'feedback/')):
@@ -1687,12 +1727,12 @@ def build_all():
     PAGES.clear()
     build_flaws(); build_timeline(); build_discovery(); build_leak(); build_exploitation(); build_compromise(); build_playbook()
     build_code(); build_context(); build_impact(); build_defence()
-    build_claims(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
+    build_claims(); build_claim_review(); build_numbers(); build_agencies(); build_affected(); build_sources(); build_graph()
     build_source_pages(); build_actors()
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
+    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -5684,6 +5724,102 @@ def build_schedule():
 {section("outbox", "Messages from it", sched_msgs([m for m in msgs if m['from'] == a], read))}
 '''
         page(f'team/schedule/{a}/index.html', f'Schedule: {a}', f'{a}: {c["objective"]} When it wakes, its instructions, every run and its messages.', body, kind='site', topics='team agents schedule')
+
+# ----------------------------------------------------------------------------- elsewhere: Pulse, a separate section
+# Pulse is pulse@newsroom's vault for the SGit newsroom: exploitation evidence beside attention, for 26 vulnerabilities
+# of which php2shell is two. It is kept apart from the PHP pages on purpose (the editor, 24 October 2026): its own
+# folder (/pulse/), its own data file (data/pulse.json, written only by admin/build/export_pulse.py), its own code below,
+# and one pointer from the PHP site ('What else is going on'). Nothing here reads the PHP data, and nothing in the PHP
+# pages reads data/pulse.json, so the section can move to another site by taking this block, the exporter and the file.
+
+PULSE = load('pulse') if os.path.exists(os.path.join(DATA, 'pulse.json')) else None
+
+def _pulse_slug(cve):
+    return cve.lower()
+
+def _pulse_when(t):
+    """20261023T131240Z as 23 October 2026, 13:12 UTC; a date stays a date."""
+    m = re.match(r'^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})', t or '')
+    return human_time(f'{m.group(1)}-{m.group(2)}-{m.group(3)}T{m.group(4)}:{m.group(5)}Z') if m else (t or '')
+
+def _pulse_short(d):
+    """2026-10-21 as 21 Oct; a date in another year as Apr 2015."""
+    m = re.match(r'^(\d{4})-(\d{2})-(\d{2})', d or '')
+    if not m:
+        return d or ''
+    mon = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split()[int(m.group(2)) - 1]
+    return f'{int(m.group(3))} {mon}' if m.group(1) == STORY['data_as_of'][:4] else f'{mon} {m.group(1)}'
+
+def _pulse_cap(c, depth):
+    if not c:
+        return ''
+    where = f'{E(c.get("vault") or "")}: <code>{E(c.get("path") or "")}</code>'
+    link = f' <a href="{E(U(c["url"]))}" rel="noopener nofollow">original</a>' if c.get('url') else ''
+    return f'<div class="small">capture {where}, {E(_pulse_when(c.get("captured")))}, sha256 <code>{E((c.get("sha256") or "")[:16])}</code>{link}</div>'
+
+def _pulse_quote(e, depth):
+    q = f'<blockquote class="tp"><span class="small">third-party text, as Pulse recorded it</span><br>{E(e["quote"])}</blockquote>' if e.get('quote') else ''
+    basis = f'<div>{E(e["basis"])}</div>' if e.get('basis') else ''
+    what = f'<div class="note">Pulse: {E(e["what_it_is"])}</div>' if e.get('what_it_is') else ''
+    meta = ', '.join(E(x) for x in (e.get('status'), e.get('date')) if x)
+    return f'<li><b>{E(e.get("by") or "Pulse\'s own check")}</b> <span class="small">{meta}</span>{q}{basis}{what}{_pulse_cap(e.get("capture"), depth)}</li>'
+
+def build_pulse():
+    if not PULSE:
+        return
+    P, rn = PULSE, PULSE['rungs']
+    head = f'Pulse vault <code>{E(P["vault_id"])}</code>, head <code>{E(P["head"]["commit"])}</code>, last pass {E(_pulse_when(P["last_run"]))}'
+    caveats = '''<ul>
+<li><b>This is not this site's evidence.</b> Pulse is another agent's vault, for the SGit newsroom, and covers more than PHP. Its captures are its own and the source watch's; this site has not re-read them. What is shown is what Pulse recorded, with the capture each entry comes from.</li>
+<li><b>The attention counts cannot be compared row with row.</b> Each count is over the feeds Pulse had checked for that vulnerability, from 2 to 55; the number checked is shown beside it.</li>
+<li><b>Rung 1 is a report or a listing of a proof of concept, not a working exploit.</b> Pulse never fetches exploit code. For php2shell, the PHP pages of this site record that none of the public proofs of concept reviewed by VulnCheck has the correct mechanism.</li>
+<li><b>No score and no ranking.</b> Pulse keeps evidence and attention side by side and never combines them; neither does this page. The rows are in CVE order.</li>
+</ul>'''
+    hdr = ''.join(f'<th title="{E(rn[k])}">{k}</th>' for k in sorted(rn, key=int))
+    trs = []
+    for v in P['vulns']:
+        cells = ''.join(f'<td class="pr {"pr-yes" if r["status"] == "reached" else "pr-no"}" title="{E(r["rung"])}: {E(r["status"] or "")}{(" " + E(r["date"])) if r.get("date") else ""}">{E(_pulse_short(r.get("date")) if r.get("date") else ("yes" if r["status"] == "reached" else ""))}</td>' for r in v['rungs'])
+        a = v['attention']
+        trs.append(f'<tr><td><a href="{E(_pulse_slug(v["cve"]))}/index.html"><b>{E(v["cve"])}</b></a><div class="small">{E(v["vendor"] or "")} {E(v["product"] or "")}{" &middot; " + E(v["brand_name"]) if v.get("brand_name") else ""}{" &middot; old flaw, newly listed" if v["old_flaw_newly_listed"] else ""}</div></td>{cells}<td>{E(str(a.get("news_items")))} <span class="small">over {E(str(a.get("feeds_checked")))} feeds</span></td></tr>')
+    legend = ''.join(f'<li><b>{E(k)}</b> {E(rn[k])}</li>' for k in sorted(rn, key=int))
+    body = f'''
+<h1>What else is going on: Pulse</h1>
+<p class="lead">A separate section, not about PHP. Pulse is the SGit newsroom's record of {len(P["vulns"])} vulnerabilities in the news this month, php2shell among them: for each, the evidence that it is being exploited, as a ladder of eight dated rungs, and, beside it, how much attention it gets. It is kept apart from the rest of this site and may move to a site of its own.</p>
+<p class="small">{head}. Exported by <code>admin/build/export_pulse.py</code> into <a href="../data/pulse.json">data/pulse.json</a>; no capture is copied. Pulse says of itself: {E(P["pulse_says"])}</p>
+{section("read", "Before you read the table", caveats)}
+{section("ladder", "Evidence and attention, side by side", f'<ol class="legend">{legend}</ol><div class="tw"><table class="t pulse"><thead><tr><th>Vulnerability</th>{hdr}<th>News items</th></tr></thead><tbody>{"".join(trs)}</tbody></table></div><p class="small">A cell shows the month and day a rung was reached, or "yes" when Pulse records it reached without a date; an empty cell is not reached at the last check.</p>')}
+'''
+    page('pulse/index.html', 'What else is going on: Pulse, exploited vs. talked about', f'A separate section: the SGit newsroom\'s Pulse vault, {len(P["vulns"])} vulnerabilities with their evidence of exploitation as eight dated rungs beside the attention each gets. Not this site\'s evidence; no score, no ranking.', body, kind='evidence', topics='vulnerabilities exploitation attention pulse')
+    for v in P['vulns']:
+        path = f'pulse/{_pulse_slug(v["cve"])}/index.html'
+        rows = []
+        for r in v['rungs']:
+            ev = ''.join(_pulse_quote(e, 2) for e in r['evidence'])
+            rne = ''.join(_pulse_quote(e, 2) for e in r['reported_not_established'])
+            chk = f'<div class="small">last checked {E(_pulse_when(r["last_checked"]))}</div>' if r.get('last_checked') else ''
+            rows.append(f'<section id="rung-{r["n"]}"><h3>{r["n"]}. {E(r["rung"])}: <span class="st {"st-confirmed" if r["status"] == "reached" else "st-other"}">{E(r["status"] or "")}</span>{(" " + E(r["date"])) if r.get("date") else ""}</h3>{chk}'
+                        + (f'<p class="note">{E(r["note"])}</p>' if r.get('note') else '')
+                        + (f'<ul class="pev">{ev}</ul>' if ev else '')
+                        + (f'<p><b>Reported, not established</b></p><ul class="pev">{rne}</ul>' if rne else '') + '</section>')
+        a = v['attention']
+        meas = ''.join(f'<li>CVSS {E(c["version"] or "")} {E(str(c["base_score"]))}, scored by {E(c["source"] or "")}</li>' for c in v['cvss'])
+        if v.get('epss'):
+            meas += f'<li>EPSS {E(str(v["epss"]["score"]))}, percentile {E(str(v["epss"]["percentile"]))}, {E(v["epss"]["date"] or "")}</li>'
+        att = (f'<p>{E(str(a.get("news_items")))} news items since {E(_pulse_when(a.get("window_since")) or "the window start")}, counted over {E(str(a.get("feeds_checked")))} of {E(str(a.get("news_feeds_total")))} feeds, '
+               f'in {E(str(a.get("languages")))} languages and {E(str(a.get("countries")))} countries; {E(str(a.get("front_pages")))} front pages, {E(str(a.get("agency_alerts")))} agency alerts, {E(str(a.get("offline_advice")))} pages advising taking systems offline.</p>'
+               + (f'<p class="small">Pulse: {E(a["about"])}</p>' if a.get('about') else ''))
+        php = '<p>For php2shell, this site\'s own evidence and analysis are in <a href="../../index.html">the PHP pages</a>; this page shows only what Pulse recorded.</p>' if v.get('brand_name') == 'php2shell' else ''
+        body = f'''
+<h1>{E(v["cve"])}: {E(v["vendor"] or "")} {E(v["product"] or "")}</h1>
+<p class="lead">{E(v["flaw"] or "")}. {E(v["kind_of_system"] or "")}. Rungs reached: {E(", ".join(str(n) for n in v["rungs_reached"]) or "none")} of 8. Part of <a href="../index.html">Pulse</a>, a separate section not about PHP.</p>
+{php}
+{('<p class="small">Why Pulse tracks it: ' + E(v["why_tracked"]) + '</p>') if v.get("why_tracked") else ''}
+{section("ladder", "The evidence of exploitation, rung by rung", "".join(rows))}
+{section("measures", "Measurements", f"<ul>{meas}</ul>" if meas else "<p>None recorded.</p>")}
+{section("attention", "The attention it gets", att)}
+<p class="small">{head}.</p>
+'''
+        page(path, f'{v["cve"]} in Pulse: {v["vendor"]} {v["product"]}', f'Pulse\'s record of {v["cve"]} ({v["vendor"]} {v["product"]}): the evidence of exploitation as eight rungs, each with the capture it rests on, and the attention it gets. A separate section, not this site\'s evidence.', body, kind='evidence', topics='vulnerabilities exploitation pulse')
 
 if __name__ == '__main__':
     main()
