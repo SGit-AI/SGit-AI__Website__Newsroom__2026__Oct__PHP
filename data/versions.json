@@ -1,6 +1,15 @@
 {
- "current": "0.15.12",
+ "current": "0.15.13",
  "versions": [
+  {
+   "version": "0.15.13",
+   "date": "2026-10-24",
+   "title": "the journalist's brief corrected: it reads only the evidence vault, with its published read key, and needs no other key",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.12",
    "date": "2026-10-24",

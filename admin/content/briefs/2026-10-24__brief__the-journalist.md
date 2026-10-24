@@ -28,7 +28,7 @@ After the correspondent, and only then, the ontologist, the librarian and the de
 5. `node pki-agent.mjs keyqr --out <scratch>/journalist-key.png`
 6. Tell the editor the image's path and your fingerprint (`whoami`), and stop. Do nothing else in the first session.
 
-You need no secret to start: the evidence vault is read with its published read key (`data/admin.json`, `evidence_vault.read_key`). Later the editor, or the curator who holds it, will seal to you a **read** key for the source watch's pack vault `7r83qic5`; open it with `pki-agent open` straight into that clone. Never ask for, accept or use a write key.
+You need no secret: you read only the evidence vault (`3ytzxm3g`), with its published read key (`data/admin.json`, `evidence_vault.read_key`), and everything you write goes to git. You never read the researcher's vaults; the curator does. Never ask for, accept or use any other vault's key, and never a write key. (Corrected on 24 October, the editor: an earlier draft said a read key for the source watch's pack vault would be sealed to you; it will not.)
 
 ## Every wake
 

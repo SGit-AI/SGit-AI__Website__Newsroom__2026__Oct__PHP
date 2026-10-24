@@ -358,12 +358,6 @@
    "title": "The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:00 London), on Sonnet; then they move from 'setting up' to 'active' in the schedule vault"
   },
   {
-   "id": "174",
-   "owner": "editor",
-   "status": "waiting",
-   "title": "The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed for KEV, NVD, EPSS and repository series after that"
-  },
-  {
    "id": "177",
    "owner": "editor",
    "status": "open",
@@ -860,5 +854,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.15.12"
+ "version": "0.15.13"
 }

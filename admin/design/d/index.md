@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.12. Not the live site.
+> Mockup D for review, built from the data of release v0.15.13. Not the live site.
 
-PHP Team console Console Overview Board 183 Agents 19 Releases 131 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 183 Agents 19 Releases 132 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.12 
-131 releases since 22 Oct 
+v0.15.13 
+132 releases since 22 Oct 
 
 Open on the board 
 183 
-94 done, 5 waiting 
+95 done, 4 waiting 
 
 Pages built 
 887 
@@ -54,13 +54,10 @@ The lens: go or not for the live site (replacing the two dials), the words of it
 An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39416d71cbb, to push the telemetry applica… 
  editor 
 
-#### Waiting 5
+#### Waiting 4
 
  #180 
 The Sherpa drains the lanes (the editor, 24 October 2026): a go for its schedule (data/schedule/sherpa.json, proposed: e… 
- editor 
- #174 
-The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed … 
  editor 
  #099 
 Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, key-pair passphrases) to the root: the se… 
@@ -72,7 +69,7 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 94
+#### Done 95
 
  #278 
 Enable private vulnerability reporting on this repository (Settings, Code security, Private vulnerability reporting): se… 
@@ -99,6 +96,7 @@ From CI-003, step 2: a graph diff between any two releases: nodes and edges adde
 ### Releases
  latest 8 
 
+ v0.15.13 2026-10-24 the journalist's brief corrected: it reads only the evidence vault, with its published read key, and needs no other key 
  v0.15.12 2026-10-24 CodeQL's first scan, triaged and hardened: every script that read data-root now derives root as a count of ../ segments, so page t… 
  v0.15.11 2026-10-24 Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and securi… 
  v0.15.10 2026-10-24 The control room: /team/control/, a visual, interactive view of every agent, the pipeline, the wake timeline and the editor's queu… 
@@ -106,7 +104,6 @@ From CI-003, step 2: a graph diff between any two releases: nodes and edges adde
  v0.15.8 2026-10-24 Conductor full pass 19:15 London: agents-status, schedules against runs, run record 
  v0.15.7 2026-10-24 the journalist's brief for its first Sonnet session: the pipeline, the key handshake, every wake in seven steps, what to do when a… 
  v0.15.6 2026-10-24 Security round 1 closed: the telemetry policy, on the editor's decision to keep the location lookups (made by the reader's browser… 
- v0.15.5 2026-10-24 The Sherpa's 17:45 pass: the phone header's fix checked live (one 43px line; a friction closed), headlines now on the first screen… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +119,4 @@ From CI-003, step 2: a graph diff between any two releases: nodes and edges adde
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.12 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.13 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

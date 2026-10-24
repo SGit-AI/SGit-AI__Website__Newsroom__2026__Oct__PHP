@@ -61,7 +61,6 @@ Decisions and work only a person can supply. Each is a card in this member's que
 
 | # | Task | Status | Shipped in |
 |---|---|---|---|
-| 174 | The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed for KEV, NVD, EPSS and repository series after thatRead key only; the write key is neither wanted nor to be accepted. | waiting |  |
 | 180 | The Sherpa drains the lanes (the editor, 24 October 2026): a go for its schedule (data/schedule/sherpa.json, proposed: every two hours at :45, 07:45 to 21:45 London), and the conductor's lane key (5iwos28w) handed to it sealed; it already holds the collaborators' lane key (58526ytp)Until then the conductor's editor session drains the lanes. | waiting |  |
 
 ## What they have done
@@ -74,6 +73,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 098 | Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp groupThe editor confirmed the LinkedIn link on 22 October 2026. | done |  |
+| 174 | The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed for KEV, NVD, EPSS and repository series after thatRead key only; the write key is neither wanted nor to be accepted. Closed 24 October: the editor, the journalist reads only the evidence vault (3ytzxm3g, published read key) and needs no key for the source watch; KEV and the other series come into the site through the curator's promotions (and, for the state of affairs, the Pulse vault). | done |  |
 | 176 | The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session with the two lanes' vault keys handed over sealed (data/schedule/conductor.json, proposed): a go, and the scheduled tasks to createThe editor's go, 24 October 2026: a Sonnet session, conductor@php.newsroom (scheduled), and one scheduled task, hourly at :15 from 07:15 to 21:15 London. A wake commits only when something changed. | done |  |
 | 209 | Confirm where the ontologist works: nothing of it is in this repository; its folder proposes data/ontology.json and /ontology/Renumbered from 100 on 23 October when the librarian's branch took in dev. Answered by the record: the ontologist is cartographer@php.newsroom, which joined "as the newsroom's ontologist" on its branch cartographer/ontology-and-sg-graph (data/ontology.json, entities, attribution, ). The two drafted roles are merged into one. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | done |  |
 | 210 | Fill the cartographer: the fractal graph, the review graph and the citation graph wait for an ownerRenumbered from 101 on 23 October when the librarian's branch took in dev. Filled by cartographer@php.newsroom on its branch cartographer/ontology-and-sg-graph, not yet in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | done |  |
@@ -96,4 +96,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.15.12 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
