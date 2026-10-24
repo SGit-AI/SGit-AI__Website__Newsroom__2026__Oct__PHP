@@ -756,3 +756,4 @@ ul.pev li{margin:.5rem 0}
 .gc-list{columns:2 22rem;column-gap:1.5rem;padding-left:1.1rem;font-size:.88rem}.gc-list li{break-inside:avoid;margin:.15rem 0}
 .gx-basis{font-size:.7rem;padding:0 .35rem;border-radius:999px;border:1px solid var(--line2);color:var(--dim)}
 .gx-b-inferred{border-style:dashed}.gx-b-confirmed{color:var(--ok-ink);border-color:currentColor}
+table.pulse td.pr-nc{color:var(--dim)}

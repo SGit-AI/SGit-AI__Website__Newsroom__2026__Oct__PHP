@@ -3,7 +3,8 @@
  "verdicts": {
   "used": "used on a page, attributed to its source",
   "agrees": "agrees with a claim the site already carries; not repeated",
-  "held back": "not stated on the site as worded, for the reason given"
+  "held back": "not stated on the site as worded, for the reason given",
+  "noted": "recorded and checked against its page, not used on a page yet; nothing on the site contradicts it"
  },
  "author": "claude-journalist",
  "reviews": [
@@ -22,11 +23,14 @@
   },
   {
    "id": "cur3-22m-servers",
-   "verdict": "held back",
-   "reason": "TechTarget Japan gives 22 million (22.6 million in its headline) with no basis. The site's scale figures, each with what it measures, are on the numbers page.",
-   "sources": [],
-   "where": "views/state/v2/index.html",
-   "reviewed": "2026-10-23",
+   "verdict": "agrees",
+   "reason": "Revised on 24 October: held back on 23 October because TechTarget Japan gives no basis. TechTarget's English report (cur5-pan-22-6m-exposed) attributes the figure to Palo Alto Networks: \"more than 22.6 million exposed instances potentially vulnerable\". The site already carried it, from Palo Alto via Insurance Business (numbers page, n-22.6m). It counts exposed instances from scanning, not compromised servers.",
+   "sources": [
+    "techtarget-cybersecurity-news-366652444-php2shell-2",
+    "insurancebusiness-uk-councils-met"
+   ],
+   "where": "numbers/index.html",
+   "reviewed": "2026-10-24",
    "by": "claude-journalist"
   },
   {
@@ -216,6 +220,222 @@
    "sources": [],
    "where": "views/state/v2/index.html",
    "reviewed": "2026-10-23",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-pan-22-6m-exposed",
+   "verdict": "used",
+   "reason": "Checked against TechTarget's page. Added as a second source for the site's figure n-22.6m on the numbers page: exposed instances from Palo Alto's scanning.",
+   "sources": [
+    "techtarget-cybersecurity-news-366652444-php2shell-2"
+   ],
+   "where": "numbers/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-mirai-variant-attempt",
+   "verdict": "used",
+   "reason": "Checked against the page: the observer is Sophos, which also withdrew an earlier success claim in a correction at 21:21 UTC on 22 October; its customer data showed scanning and a small number of failed attempts, the Mirai-derived payload (Potassium) blocked. Added to the compromise evidence as an attempt and as a party seeing no success.",
+   "sources": [
+    "cybersecuritynews-critical-php2shell-exploit-code"
+   ],
+   "where": "compromise/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-us-banks-no-compromise",
+   "verdict": "used",
+   "reason": "Checked: \"no U.S. bank or credit union has publicly reported a compromise\". Added to the compromise evidence as an absence of reports at one time.",
+   "sources": [
+    "americanbanker-news-banks-dodge-early-damage-from-php2s"
+   ],
+   "where": "compromise/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-crypto-no-evidence",
+   "verdict": "used",
+   "reason": "Checked: no evidence that large exchanges or payment providers were compromised, as of 22 October. Added to the compromise evidence as an absence of reports.",
+   "sources": [
+    "btc-echo-news-krypto-boersen-akut-bedroht-kritisc"
+   ],
+   "where": "compromise/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-de-nl-jp-no-success",
+   "verdict": "used",
+   "reason": "Checked: the compromise evidence already carried this row from the source watch; it now cites the promoted copy.",
+   "sources": [
+    "the-next-web-php2shell-no-confirmed-breaches"
+   ],
+   "where": "compromise/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-swiss-institutions",
+   "verdict": "used",
+   "reason": "Checked: 24 Heures names the EPFL among Swiss institutions affected. Added to the offline list as reported; the institutions' own statements are not in the vault.",
+   "sources": [
+    "24heures-php2shell-qui-est-affecte-par-la-faille"
+   ],
+   "where": "impact/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-cloudflare-prince-ladder",
+   "verdict": "agrees",
+   "reason": "Agrees with the site's claim cf-millions, from the chief executive's own post.",
+   "sources": [
+    "x-eastdakota-php2shell-stats"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-ncsc-nl-mod-php-risk",
+   "verdict": "agrees",
+   "reason": "Agrees with the site's confirmed claim rce-modphp.",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-first-signs-2024",
+   "verdict": "agrees",
+   "reason": "Agrees with the site's confirmed claim quarkslab-2024 (a 2024 audit found the issue, no exploitation path, not fixed). The added detail that a 2020 bug report flagged the behaviour is Zitec's account of Calif and is not checked against Calif's own post.",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-bbc-2024-potential-flaw",
+   "verdict": "agrees",
+   "reason": "Agrees with quarkslab-2024.",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-checkpoint-10pct",
+   "verdict": "held back",
+   "reason": "A vendor statistic relayed by a commentary site: 'impacted' is not defined and Check Point's own report is not in the vault. Not stated until its basis is.",
+   "sources": [
+    "areacucuta-php2shell-log4shell-a-la-velocidad-de-la"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-calif-gpt56-wiz-independent",
+   "verdict": "held back",
+   "reason": "Chinaz says Calif used GPT-5.6 Sol. On the site, Calif names no model and it is Wiz that names GPT-5.6 Sol among others (story, open questions). One Chinese summary is not enough to settle which model Calif used.",
+   "sources": [
+    "chinaz-ainews-31789-shtml"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-jp-company-patch-0239",
+   "verdict": "noted",
+   "reason": "One company's press release: an example of operator response, not a measurement.",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-synology-psirt",
+   "verdict": "noted",
+   "reason": "Agrees in substance with the NCSC-NL inventory, where Synology's packages are marked fixed; relayed by a distributor.",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-openai-checker",
+   "verdict": "noted",
+   "reason": "A tool: the site does not link or run tools from captured pages.",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-kr-pipc-guidance",
+   "verdict": "noted",
+   "reason": "Korea's data protection guidance, as reported; for the agencies refresh (pass step 2).",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-tr-cyber-directorate",
+   "verdict": "noted",
+   "reason": "Turkey's notice and national scans, as reported; for the agencies refresh (pass step 2).",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-kisa-advisory-21-oct",
+   "verdict": "noted",
+   "reason": "KISA's advisory of 21 October, as reported; the alert-level rise is already in the state of affairs v2.",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur4-bsi-alarm",
+   "verdict": "noted",
+   "reason": "The BSI's warning, as reported; the BSI is already among the agencies.",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-astra-free-tools",
+   "verdict": "noted",
+   "reason": "Vendor marketing for tools; not linked or run.",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-nsa-advisory-21-oct",
+   "verdict": "noted",
+   "reason": "Agrees with the NSA's advice already on the site (offline-nsa).",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
+   "by": "claude-journalist"
+  },
+  {
+   "id": "cur5-qnap-opnsense-status",
+   "verdict": "noted",
+   "reason": "Point-in-time vendor status; the inventory carries the current state.",
+   "sources": [],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-24",
    "by": "claude-journalist"
   }
  ]

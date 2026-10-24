@@ -1,16 +1,16 @@
 {
  "about": "The evidence behind one statement, row by row. Authored by researcher@php.newsroom on 22 October 2026 at the editor's request. Each row says who said what, when, in their words, and where the capture is: 'sources' are evidence-vault slugs the gate checks; 'watch' is a dated snapshot folder in the source-watch vault (7r83qic5), held there until the evidence curator promotes it. This file maps evidence; it makes no assessment of risk.",
  "statement": "No named organisation has said it was compromised through php2shell.",
- "as_of": "2026-10-23T16:04Z",
+ "as_of": "2026-10-24T08:37Z",
  "claim": "no-confirmed-compromise",
  "status": "reported",
  "status_note": "A time-bounded absence, not a confirmed fact. It is true only as of the last check, and one statement from one organisation would end it.",
  "searched": [
   {
    "what": "The evidence vault",
-   "count": 295,
+   "count": 328,
    "unit": "sources",
-   "detail": "head 1845598d9a38; the site is built from all of it"
+   "detail": "head 1f38e70921b2; the site is built from all of it"
   },
   {
    "what": "The source watch",
@@ -235,7 +235,9 @@
    "when": "2026-10-22",
    "who": "Germany's BSI, the Dutch NCSC, Japan's Chief Cabinet Secretary (via The Next Web, Politico)",
    "says": "Germany has seen attacks but no successful use; the Netherlands has no indication of active misuse; Japan says no attacks exploiting the flaws have been confirmed.",
-   "sources": [],
+   "sources": [
+    "the-next-web-php2shell-no-confirmed-breaches"
+   ],
    "watch": "raw/nl/tech-press/the-next-web/php2shell-no-confirmed-breaches/"
   },
   {
@@ -414,6 +416,45 @@
    "reading": "An absence of announcements, not a finding",
    "sources": [
     "paperjam-article-php2shell-des-milliers-de-sites"
+   ]
+  },
+  {
+   "kind": "attempts",
+   "when": "2026-10-22",
+   "who": "Sophos (via Cyber Security News)",
+   "says": "An exploitation attempt tried to deploy Potassium, a likely Mirai botnet variant; security controls blocked it and the malware was not delivered.",
+   "sources": [
+    "cybersecuritynews-critical-php2shell-exploit-code"
+   ]
+  },
+  {
+   "kind": "no-success-known",
+   "when": "2026-10-22T21:21Z",
+   "who": "Sophos (via Cyber Security News)",
+   "says": "In a correction issued at 21:21 UTC on 22 October, Sophos said its customer data showed scanning and a small number of failed exploit attempts, and no evidence of a successful compromise; an earlier success claim was withdrawn.",
+   "reading": "A vendor's success claim, made and withdrawn",
+   "sources": [
+    "cybersecuritynews-critical-php2shell-exploit-code"
+   ]
+  },
+  {
+   "kind": "no-success-known",
+   "when": "2026-10-23",
+   "who": "US banks and credit unions (via American Banker)",
+   "says": "\"Attackers have fired millions of attempts at the PHP2Shell flaws, but no U.S. bank or credit union has publicly reported a compromise.\"",
+   "reading": "An absence of public reports, not a finding",
+   "sources": [
+    "americanbanker-news-banks-dodge-early-damage-from-php2s"
+   ]
+  },
+  {
+   "kind": "no-success-known",
+   "when": "2026-10-22",
+   "who": "Crypto exchanges and payment providers (via BTC-ECHO)",
+   "says": "No evidence so far that large crypto trading platforms or payment providers were compromised through php2shell.",
+   "reading": "An absence of evidence, reported by a trade outlet",
+   "sources": [
+    "btc-echo-news-krypto-boersen-akut-bedroht-kritisc"
    ]
   }
  ],

@@ -88,7 +88,9 @@ def compare(old, new, versions):
             continue
         (wa, na), (wb, nb) = words(a), words(b)
         rows.append({'path': p, 'title': title(h), 'new': False, 'words': sum(((wa - wb) + (wb - wa)).values()), 'numbers': sum(((na - nb) + (nb - na)).values())})
-    rows.sort(key=lambda r: (bool(ALWAYS.match(r['path'])), not r['new'], r['words'] == 0, -r['words'], -r['numbers'], r['path']))
+    # the always-changing hubs go last, by path only: their word counts include this store as read at the start of the
+    # build (admin/versions.html shows it), so ranking them by words made the first and second build differ (board 175)
+    rows.sort(key=lambda r: (1, False, False, 0, 0, r['path']) if ALWAYS.match(r['path']) else (0, not r['new'], r['words'] == 0, -r['words'], -r['numbers'], r['path']))
     return [{'path': r['path'], 'title': r['title'], 'new': r['new'], 'minor': not r['new'] and r['words'] == 0} for r in rows]
 
 

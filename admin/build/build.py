@@ -800,7 +800,7 @@ def build_claim_review():
         if i not in {c['id'] for c in vc}:
             sys.exit(f'data/claim-review.json: {i} is not a claim in data/vault-claims.json')
     pending = [c for c in vc if c['id'] not in site_ids]
-    groups = OrderedDict([('held back', []), ('used', []), ('agrees', []), ('not yet reviewed', [])])
+    groups = OrderedDict([('held back', [])] + [(k, []) for k in D['claim-review']['verdicts'] if k != 'held back'] + [('not yet reviewed', [])])
     for c in pending:
         groups[rv[c['id']]['verdict'] if c['id'] in rv else 'not yet reviewed'].append(c)
     words = D['claim-review']['verdicts']
@@ -6297,7 +6297,7 @@ def build_pulse():
     hdr = ''.join(f'<th title="{E(rn[k])}">{k}</th>' for k in sorted(rn, key=int))
     trs = []
     for v in P['vulns']:
-        cells = ''.join(f'<td class="pr {"pr-yes" if r["status"] == "reached" else "pr-no"}" title="{E(r["rung"])}: {E(r["status"] or "")}{(" " + E(r["date"])) if r.get("date") else ""}">{E(_pulse_short(r.get("date")) if r.get("date") else ("yes" if r["status"] == "reached" else ""))}</td>' for r in v['rungs'])
+        cells = ''.join(f'<td class="pr {"pr-yes" if r["status"] == "reached" else ("pr-nc" if r["status"] == "not checked" else "pr-no")}" title="{E(r["rung"])}: {E(r["status"] or "")}{(" " + E(r["date"])) if r.get("date") else ""}">{E(_pulse_short(r.get("date")) if r.get("date") else ("yes" if r["status"] == "reached" else ("?" if r["status"] == "not checked" else "")))}</td>' for r in v['rungs'])
         a = v['attention']
         trs.append(f'<tr><td><a href="{E(_pulse_slug(v["cve"]))}/index.html"><b>{E(v["cve"])}</b></a><div class="small">{E(v["vendor"] or "")} {E(v["product"] or "")}{" &middot; " + E(v["brand_name"]) if v.get("brand_name") else ""}{" &middot; old flaw, newly listed" if v["old_flaw_newly_listed"] else ""}</div></td>{cells}<td>{E(str(a.get("news_items")))} <span class="small">over {E(str(a.get("feeds_checked")))} feeds</span></td></tr>')
     legend = ''.join(f'<li><b>{E(k)}</b> {E(rn[k])}</li>' for k in sorted(rn, key=int))
@@ -6306,7 +6306,7 @@ def build_pulse():
 <p class="lead">A separate section, not about PHP. Pulse is the SGit newsroom's record of {len(P["vulns"])} vulnerabilities in the news this month, php2shell among them: for each, the evidence that it is being exploited, as a ladder of eight dated rungs, and, beside it, how much attention it gets. It is kept apart from the rest of this site and may move to a site of its own.</p>
 <p class="small">{head}. Exported by <code>admin/build/export_pulse.py</code> into <a href="../data/pulse.json">data/pulse.json</a>; no capture is copied. Pulse says of itself: {E(P["pulse_says"])}</p>
 {section("read", "Before you read the table", caveats)}
-{section("ladder", "Evidence and attention, side by side", f'<ol class="legend">{legend}</ol><div class="tw"><table class="t pulse"><thead><tr><th>Vulnerability</th>{hdr}<th>News items</th></tr></thead><tbody>{"".join(trs)}</tbody></table></div><p class="small">A cell shows the month and day a rung was reached, or "yes" when Pulse records it reached without a date; an empty cell is not reached at the last check.</p>')}
+{section("ladder", "Evidence and attention, side by side", f'<ol class="legend">{legend}</ol><div class="tw"><table class="t pulse"><thead><tr><th>Vulnerability</th>{hdr}<th>News items</th></tr></thead><tbody>{"".join(trs)}</tbody></table></div><p class="small">A cell shows the day a rung was reached, or "yes" when Pulse records it reached without a date; "?" is a rung Pulse has not been able to check (no open capture shows it either way); an empty cell is not reached at the last check.</p>')}
 '''
     page('pulse/index.html', 'What else is going on: Pulse, exploited vs. talked about', f'A separate section: the SGit newsroom\'s Pulse vault, {len(P["vulns"])} vulnerabilities with their evidence of exploitation as eight dated rungs beside the attention each gets. Not this site\'s evidence; no score, no ranking.', body, kind='evidence', topics='vulnerabilities exploitation attention pulse')
     for v in P['vulns']:

@@ -160,6 +160,17 @@
    "sources": [
     "news-yahoo-articles-d953e2a13109253ae974bf2a64ebe94"
    ]
+  },
+  {
+   "who": "Switzerland: the EPFL, the Basel-Stadt administration, the University of Geneva, the insurer La Mobilière",
+   "country": "CH",
+   "what": "Websites temporarily unavailable from 21 October, 'according to several media'; La Mobilière says it suspended access to its site itself; Basel-Stadt took servers and services offline to patch",
+   "when": "2026-10-21",
+   "said_by": "24 Heures",
+   "status": "reported",
+   "sources": [
+    "24heures-php2shell-qui-est-affecte-par-la-faille"
+   ]
   }
  ],
  "compromised": [
