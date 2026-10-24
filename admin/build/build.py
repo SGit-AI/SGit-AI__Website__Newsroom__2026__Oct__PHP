@@ -1530,6 +1530,11 @@ def build_llms():
         if p.startswith(('sherpa/', 'feedback/')):
             lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
     lines.append('')
+    lines.append('## Synthetic readers: each reader, every run, and what they said page by page')
+    for p, t, d, _ in PAGES:
+        if p.startswith('admin/synthetic/') and p != 'admin/synthetic/index.html':
+            lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
+    lines.append('')
     lines.append('## Parties, one page each')
     for a in D['actors']:
         lines.append(f'- [{a["name"]}]({BASE_URL}/actors/{a["id"]}/index.md): {a["role"]}')
@@ -2170,42 +2175,197 @@ def build_admin_section():
 
 
 def build_synthetic():
-    # data/synthetic.json is written by admin/synthetic/run.py summarise from each reader's vault; this page only shows it
-    def txt(x): return E(str(x or '').replace('\u2014', ', '))
-    def pg(x):
-        x = (x or '').split('#')[0].strip('` ')
-        return f'<a href="../../{E(x)}">{E(x)}</a>' if x and os.path.isfile(os.path.join(ROOT, x)) else f'<code>{txt(x)}</code>'
+    # data/synthetic.json and data/synthetic-runs/<reader>/<run>.json are written by admin/synthetic/run.py summarise from
+    # each reader's vault. Everything a reader wrote is model output about the live site: it reaches HTML only through E().
     P = SYN['personas']
-    def score(l, k): return str(l.get('scores', {}).get(k, '')) if l.get('reviewed') else ''
-    rows = [[f'<a href="#{E(p["id"])}">{E(p["name"])}</a>', f'{p["device"]["width"]}&times;{p["device"]["height"]}, {E(p["color_scheme"] or "")}', E(p['latest'].get('run', 'not yet')), 'v' + E(p['latest'].get('site_version', '')), E(p['latest'].get('answered_question', '')),
-             *[score(p['latest'], k) for k in ('answered', 'clarity', 'trust', 'design', 'navigation')], f'<code>{E(p["vault_id"] or "")}</code>', str(p['runs'])] for p in P]
-    cards = []
+    RUNS = {}
     for p in P:
-        l = p['latest']
-        fails = ''.join(f'<li><b>{txt(x["severity"])}</b> {txt(x["point"])} ({pg(x["page"])}): {txt(x["evidence"])}</li>' for x in l.get('top_fails', []))
-        changes = ''.join(f'<li>{txt(c["change"])} ({pg(c["page"])}, {txt(c["effort"])}): {txt(c["why"])}</li>' for c in l.get('top_changes', []))
-        ck = l.get('checks', {})
-        cards.append(f"""<section id="{E(p["id"])}"><h2>{E(p["name"])}</h2>
-<p>{txt(p["who"])} <b>Question:</b> {txt(p["question"])}</p>
-{f'<blockquote>{txt(l["verdict"])}</blockquote>' if l.get("verdict") else '<p class="small">Captured, not yet reviewed.</p>'}
-<p class="kv"><b>Run</b> {E(l.get("run", ""))} on v{E(l.get("site_version", ""))} &middot; <b>pages</b> {l.get("totals", {}).get("pages", 0)} &middot; <b>requests</b> {l.get("totals", {}).get("requests", 0)} &middot; <b>instrument flags</b> {ck.get("high", 0)} high, {ck.get("medium", 0)} medium, {ck.get("low", 0)} low &middot; <b>vault</b> <code>{E(p["vault_id"] or "")}</code></p>
-{f'<h3>What did not work</h3><ul>{fails}</ul>' if fails else ''}{f'<h3>What this reader would change first</h3><ol>{changes}</ol>' if changes else ''}</section>""")
+        for h in p['runs']:
+            fp = os.path.join(DATA, 'synthetic-runs', p['id'], h['run'] + '.json')
+            if os.path.exists(fp):
+                RUNS[(p['id'], h['run'])] = json.load(open(fp, encoding='utf-8'))
+    SK = ('answered', 'clarity', 'trust', 'design', 'navigation')
+    def txt(x): return E(str(x if x is not None else '').replace('—', ', '))
+    def norm(x):
+        x = str(x or '').split('#')[0].strip('` ').lstrip('./')
+        if x in ('', '/'): return 'index.html'
+        if x.endswith('/'): x += 'index.html'
+        return x
+    def anchor(k): return re.sub(r'[^a-z0-9]+', '-', k.lower()).strip('-')
+    def pg(x, depth):
+        x = norm(x)
+        return f'<a href="{"../" * depth}{E(x)}">{E(x)}</a>' if os.path.isfile(os.path.join(ROOT, x)) else f'<code>{txt(x)}</code>'
+    def reviewed(p): return [h for h in p['runs'] if h.get('reviewed')]
+    def latest(p):
+        r = reviewed(p) or p['runs']
+        return r[-1] if r else None
+    def prev(p):
+        r = reviewed(p)
+        return r[-2] if len(r) > 1 else None
+    def delta(a, b, k):
+        if not a or not a.get('scores'): return ''
+        v = a['scores'].get(k, '')
+        if not b or not b.get('scores'): return str(v)
+        d = v - b['scores'].get(k, v)
+        return f'{v} <span class="small">({"+" if d > 0 else ""}{d})</span>' if d else str(v)
+    def run_href(pid, run, depth): return f'{"../" * depth}admin/synthetic/{E(pid)}/{E(run)}/index.html'
+    def reader_href(pid, depth): return f'{"../" * depth}admin/synthetic/{E(pid)}/index.html'
+    def device(p):
+        d = p['device']
+        also = f' (also {E(", ".join(p["also_viewports"]))})' if p.get('also_viewports') else ''
+        return f'{d["width"]}&times;{d["height"]}, {"phone" if d.get("mobile") else "desktop"}, {E(p["color_scheme"] or "")}{also}'
+    def fb_of(pid, h):
+        x = RUNS.get((pid, h['run'])) if h else None
+        return (x or {}).get('feedback') or {}
+
+    def review_html(fb, depth):
+        if not fb: return '<p class="small">Captured, not yet reviewed.</p>'
+        sc = fb.get('scores', {})
+        rv = fb.get('reviewer') or {}
+        works = ''.join(f'<li>{txt(w["point"])} ({pg(w["page"], depth)})</li>' for w in fb.get('works', []))
+        fails = ''.join(f'<li><b>{txt(x["severity"])}</b> {txt(x["point"])} ({pg(x["page"], depth)})<div class="note">{txt(x["evidence"])}</div></li>' for x in fb.get('fails', []))
+        changes = ''.join(f'<li>{txt(c["change"])} ({pg(c["page"], depth)}, {txt(c["effort"])})<div class="note">{txt(c["why"])}</div></li>' for c in fb.get('changes', []))
+        quotes = ''.join(f'<li>{pg(q["page"], depth)}: <q>{txt(q["text"])}</q><div class="note">{txt(q["reaction"])}</div></li>' for q in fb.get('quotes', []))
+        model = f' ({txt(rv.get("model"))})' if rv.get('model') else ''
+        return (f'<blockquote>{txt(fb.get("verdict"))}</blockquote>'
+                f'<p class="kv"><b>Got the answer</b> {txt(fb.get("answered_question"))} &middot; {txt(fb.get("time_to_answer"))}</p>'
+                + table([k.title() for k in SK], [[str(sc.get(k, '')) for k in SK]])
+                + f'<h3>What works</h3><ul>{works or "<li>nothing named</li>"}</ul>'
+                + f'<h3>What does not</h3><ul>{fails or "<li>nothing named</li>"}</ul>'
+                + f'<h3>What this reader would change, in order</h3><ol>{changes or "<li>nothing</li>"}</ol>'
+                + f'<h3>Lines this reader reacted to</h3><ul>{quotes or "<li>none</li>"}</ul>'
+                + f'<h3>Since the last run</h3><p>{txt(fb.get("since_last"))}</p>'
+                + f'<p class="small">Reviewer: {txt(rv.get("by"))}{model}.</p>')
+
+    def journey_html(x, depth):
+        rows = [[str(g['n']), pg(g['path'], depth), txt(g['why']), txt(g.get('words')), txt(g.get('screens')), txt(g.get('reading_ease')), txt(g.get('jargon_per_1000')),
+                 txt(g.get('load_ms')), txt(g.get('low_contrast_count')), f'{txt(g.get("tap_targets_small"))} of {txt(g.get("tap_targets"))}', 'yes' if g.get('overflow_x') else ''] for g in x['pages']]
+        return table(['#', 'Page', 'Why', 'Words', 'Screens', 'Reading ease', 'Glossary terms per 1000 words', 'Load (ms)', 'Low-contrast blocks', 'Small tap targets', 'Sideways scroll'], rows)
+
+    def checks_html(x, depth):
+        if not x['checks']: return '<p>No instrument flagged anything.</p>'
+        return table(['Severity', 'Page', 'Check', 'Evidence'], [[txt(c['severity']), pg(c['page'], depth) if str(c['page']).endswith('.html') else txt(c['page']), txt(c['check']), txt(c['evidence'])] for c in x['checks']])
+
+    caveat = 'A synthetic reader is a test instrument, not a reader: its review is a prompt for the editor and the agents, never evidence about the story, and never counted as readership.'
+
+    # one page per run
+    for (pid, run), x in sorted(RUNS.items()):
+        p = next(q for q in P if q['id'] == pid)
+        dp = 4
+        t = x['totals']
+        body = f"""
+<h1>{E(p["name"])}: the run of {E(run)}</h1>
+<p class="lead">{txt(p["who"])} <b>Question:</b> {txt(x["question"])}</p>
+<p class="caveat">{caveat} <a href="{reader_href(pid, dp)}">This reader's runs</a>, <a href="../../index.html">all six readers</a>.</p>
+<p class="kv"><b>Site</b> v{E(x["site_version"])} (data as of {E(x.get("data_as_of") or "")}) &middot; <b>read</b> {E(x["started"])} to {E(x["finished"])} &middot; <b>device</b> {device(p)} &middot; <b>pages</b> {t["pages"]} &middot; <b>requests</b> {t["requests"]} ({t.get("blocked", 0)} telemetry calls answered locally) &middot; <b>failed requests</b> {t.get("failed", 0)} &middot; <b>console errors</b> {t.get("console_errors", 0)} &middot; <b>words read</b> {t.get("words_read", 0)}</p>
+{section("review", "The review, in the reader's words", review_html(x["feedback"], dp))}
+{section("journey", "The journey", journey_html(x, dp), "The pages in the order read: the start, the reader's path, then the links that matched its interests.")}
+{section("checks", "What the instruments flagged", checks_html(x, dp), "Measurements, not verdicts: the review says which of them mattered to this reader.")}
+"""
+        page(f'admin/synthetic/{pid}/{run}/index.html', f'{p["name"]}, synthetic reader: the run of {run} on v{x["site_version"]}',
+             f'What the synthetic {p["name"].lower()} read on the live site at {run}, what it measured, and its review: whether it got its answer, what works, what does not and what to change.', body, kind='site')
+
+    # one page per reader
+    for p in P:
+        dp = 3
+        L = latest(p)
+        x = RUNS.get((p['id'], L['run'])) if L else None
+        hist = table(['Run (UTC)', 'Site', 'Got the answer', *[k.title() for k in SK], 'Fails (high / medium / low)', 'Pages'],
+                     [[f'<a href="{run_href(p["id"], h["run"], dp)}">{E(h["run"])}</a>', 'v' + E(h['site_version']), txt(h.get('answered_question')),
+                       *[str((h.get('scores') or {}).get(k, '')) for k in SK], f'{h["fails"]["high"]} / {h["fails"]["medium"]} / {h["fails"]["low"]}', str(h['pages'])] for h in reversed(p['runs'])])
+        latest_html = '<p>No run yet.</p>'
+        if x:
+            latest_html = review_html(x['feedback'], dp) + f'<p><a href="{run_href(p["id"], L["run"], dp)}">The whole run: the journey, the measurements and every flag</a>.</p>'
+        hb = f' &middot; <b>last unchanged-site check</b> {E(p["last_heartbeat"])}' if p.get('last_heartbeat') else ''
+        body = f"""
+<h1>The synthetic {E(p["name"].lower())}</h1>
+<p class="lead">{txt(p["who"])}</p>
+<p class="caveat">{caveat} <a href="../index.html">All six readers</a>.</p>
+<p class="kv"><b>Question</b> {txt(p["question"])} &middot; <b>time</b> {p["minutes"]} minutes &middot; <b>device</b> {device(p)} &middot; <b>vault</b> <code>{E(p["vault_id"] or "")}</code> &middot; <b>runs</b> {len(p["runs"])}{hb}</p>
+<h2>What this reader judges</h2><ul>{"".join(f"<li>{txt(j)}</li>" for j in p["judges"])}</ul>
+<p>Reading path after the front page: {", ".join(pg(y, dp) for y in p["path"])}.</p>
+{section("latest", f"The latest review: {E(L['run'])} on v{E(L['site_version'])}" if L else "The latest review", latest_html)}
+{section("history", "Every run", hist, "Scores are 0 to 5 from this reader's point of view.")}
+"""
+        page(f'admin/synthetic/{p["id"]}/index.html', f'The synthetic {p["name"].lower()}: every run and its latest review',
+             f'A synthetic {p["name"].lower()} reads the live site on its own device with its own question; its latest review in full and every run before it.', body, kind='site')
+
+    # every site page the readers named, from each reader's latest review
+    BY = {}
+    for p in P:
+        fb = fb_of(p['id'], latest(p))
+        for kind, items in (('fail', fb.get('fails', [])), ('change', fb.get('changes', [])), ('work', fb.get('works', [])), ('quote', fb.get('quotes', []))):
+            for it in items:
+                BY.setdefault(norm(it.get('page')), []).append((kind, p, it))
+    WEIGHT = {'high': 5, 'medium': 2, 'low': 1}
+    def heat(items): return sum(WEIGHT.get(it.get('severity'), 0) for k, _, it in items if k == 'fail') + sum(1 for k, _, _ in items if k == 'change')
+    order = sorted(BY, key=lambda k: (-heat(BY[k]), k))
+    def n_of(k, kind): return sum(a == kind for a, _, _ in BY[k])
+    def item_html(kind, p, it, depth):
+        who = f'<a href="{reader_href(p["id"], depth)}">{E(p["name"])}</a>'
+        if kind == 'fail': return f'<li><b>{txt(it["severity"])}</b> {txt(it["point"])} ({who})<div class="note">{txt(it["evidence"])}</div></li>'
+        if kind == 'change': return f'<li>{txt(it["change"])} ({who}, {txt(it["effort"])})<div class="note">{txt(it["why"])}</div></li>'
+        if kind == 'work': return f'<li>{txt(it["point"])} ({who})</li>'
+        return f'<li><q>{txt(it["text"])}</q> ({who})<div class="note">{txt(it["reaction"])}</div></li>'
+    blocks = []
+    for k in order:
+        its = BY[k]
+        parts = ''
+        for kind, head in (('fail', 'What does not work'), ('change', 'What to change'), ('work', 'What works, so do not break it'), ('quote', 'Lines readers reacted to')):
+            li = ''.join(item_html(a, b, c, 3) for a, b, c in its if a == kind)
+            if li: parts += f'<h3>{head}</h3><ul>{li}</ul>'
+        readers = sorted({b['name'] for _, b, _ in its})
+        blocks.append(f'<section id="{E(anchor(k))}"><h2>{pg(k, 3)}</h2><p class="small">{len(readers)} of {len(P)} readers: {E(", ".join(readers))}</p>{parts}</section>')
+    summary = table(['Page', 'Readers', 'Fails (high)', 'Changes asked', 'Works'],
+                    [[f'<a href="#{E(anchor(k))}">{E(k)}</a>', str(len({b["id"] for _, b, _ in BY[k]})),
+                      f'{n_of(k, "fail")} ({sum(a == "fail" and c.get("severity") == "high" for a, _, c in BY[k])})', str(n_of(k, 'change')), str(n_of(k, 'work'))] for k in order])
+    body = f"""
+<h1>What the synthetic readers said, page by page</h1>
+<p class="lead">Every page of this site that a synthetic reader named in its latest review, with what does not work, what to change, what works and the lines it reacted to, from all six readers at once. Pages are ordered by how much the readers found wrong with them: a high-severity failure counts five, a medium two, a low one, a requested change one.</p>
+<p class="caveat">{caveat} <a href="../index.html">All six readers</a>.</p>
+{section("summary", "The pages", summary)}
+{"".join(blocks)}
+"""
+    page('admin/synthetic/pages/index.html', 'Synthetic readers: what they said about each page',
+         'Every page of the site named in the synthetic readers\' latest reviews, with what fails, what to change, what works and the lines they reacted to, from all six readers.', body, kind='site')
+
+    # the hub
+    rows = []
+    for p in P:
+        L, B = latest(p), prev(p)
+        rows.append([f'<a href="{reader_href(p["id"], 2)}">{E(p["name"])}</a>', device(p),
+                     f'<a href="{run_href(p["id"], L["run"], 2)}">{E(L["run"])}</a>' if L else 'not yet', 'v' + E(L['site_version']) if L else '',
+                     txt((L or {}).get('answered_question')), *[delta(L, B, k) for k in SK], str(len(p['runs']))])
+    verdicts = ''.join(f'<li><a href="{reader_href(p["id"], 2)}">{E(p["name"])}</a>: <q>{txt(latest(p).get("verdict"))}</q></li>' for p in P if latest(p) and latest(p).get('verdict'))
+    top = ''.join(f'<li><a href="pages/index.html#{E(anchor(k))}">{E(k)}</a>: {n_of(k, "fail")} failures and {n_of(k, "change")} changes from {len({b["id"] for _, b, _ in BY[k]})} readers</li>' for k in order[:6])
+    every = []
+    for (pid, run), x in sorted(RUNS.items(), key=lambda kv: (kv[0][1], kv[0][0]), reverse=True):
+        fb = x['feedback'] or {}
+        every.append([f'<a href="{run_href(pid, run, 2)}">{E(run)}</a>', f'<a href="{reader_href(pid, 2)}">{E(next(q["name"] for q in P if q["id"] == pid))}</a>', 'v' + E(x['site_version']),
+                      txt(fb.get('answered_question')), f'{len(fb.get("fails", []))} ({sum(f["severity"] == "high" for f in fb.get("fails", []))})'])
+    how = ('<ol>'
+           '<li><b>Check.</b> <code>admin/synthetic/run.py capture --if-changed</code> reads <code>status.json</code> and the front page. If the version, the data and the front page are what the last run saw, the reader writes a heartbeat line and stops.</li>'
+           '<li><b>Read.</b> Chromium opens the front page with the reader\'s viewport, device scale, touch and colour scheme, then the reader\'s path from <code>admin/synthetic/personas.json</code>, then the links whose words match the reader\'s interests, up to its page budget. The designer also reads every page on a phone, a tablet and in dark mode; the developer also fetches <code>llms.txt</code>, <code>status.json</code> and a markdown twin as a tool would.</li>'
+           '<li><b>Measure.</b> For each page: the served and the rendered HTML, the text, the first screen and the full page as images, headings, words, screens of scrolling, reading ease, glossary terms per thousand words, contrast against WCAG AA, tap targets under 24px, text under 12px, sideways scrolling, images without alt text, timings. Every request with its status, size, timing and sha256; every console message.</li>'
+           '<li><b>Review.</b> The reader is given its journey, the measurements, the first screen of every page and the full text (fenced as material, never instructions), with <code>admin/synthetic/review-guide.md</code> and its own previous review, and answers as structured JSON: a verdict, whether the question was answered, five scores, what works, what fails with evidence, what to change, the lines it reacted to, and what changed since its last run.</li>'
+           '<li><b>Keep and publish.</b> All of it is committed to the reader\'s vault; <code>run.py summarise</code> writes <code>data/synthetic.json</code> and one file per run in <code>data/synthetic-runs/</code> (the reviews, journeys and measurements; never the pages or a key), from which these pages are built.</li>'
+           '</ol>')
+    vaults = ('<p>One vault per reader; its id is on that reader\'s page. Each holds <code>README.md</code> (the reader), <code>latest.json</code>, <code>history.jsonl</code>, <code>heartbeats.jsonl</code> and <code>runs/&lt;run&gt;/</code> with '
+              '<code>run.json</code>, <code>requests.jsonl</code>, <code>console.jsonl</code>, <code>pages/</code> (served and rendered HTML, text, screenshots, measurements), <code>review-request.md</code>, <code>feedback.json</code> and <code>feedback.md</code>. '
+              'They hold nothing confidential: captures of this public site and the readers\' reviews. Their keys are sealed to the editor\'s key; none is in this repository.</p>')
     body = f"""
 <h1>Synthetic readers</h1>
-<p class="lead">Six test readers, run by the agent synthetic@php.newsroom: a board member, a CTO, a project manager, a security lead, a developer and a designer. Each reads the live site in a real browser on its own device, follows its own reading path and the links that interest it, and then says, in its own voice, whether it got its answer, what worked, what did not and what it would change. Every request, page, screenshot and review goes into that reader's own private vault.</p>
-<p class="caveat">A synthetic reader is a test instrument, not a reader. Its review is a prompt for the editor and the agents, never evidence about the story, and never counted as readership. It sends no telemetry: the site's telemetry lane and geolocation lookups are answered locally during a run.</p>
-{section("now", "The latest run", table(['Reader', 'Device', 'Run (UTC)', 'Site', 'Answered', 'Ans.', 'Clarity', 'Trust', 'Design', 'Nav.', 'Vault', 'Runs'], rows), 'Scores are 0 to 5 from that reader\'s point of view.')}
-{''.join(cards)}
-{section("how", "How a run works", '''<ol>
-<li><b>Check.</b> <code>admin/synthetic/run.py capture --if-changed</code> reads <code>status.json</code> and the front page. If the version, the data and the front page are what the last run saw, the reader writes a heartbeat line and stops.</li>
-<li><b>Read.</b> Chromium opens the front page with the reader's viewport, device scale, touch and colour scheme, then the reader's path from <code>admin/synthetic/personas.json</code>, then the links whose words match the reader's interests, up to its page budget. The designer also reads every page on a phone, a tablet and in dark mode; the developer also fetches <code>llms.txt</code>, <code>status.json</code> and a markdown twin as a tool would.</li>
-<li><b>Measure.</b> For each page: the served and the rendered HTML, the text, the first screen and the full page as images, headings, words, screens of scrolling, reading ease, glossary terms per thousand words, contrast against WCAG AA, tap targets under 24px, text under 12px, horizontal overflow, images without alt text, timings. Every request with its status, size, timing and sha256; every console message.</li>
-<li><b>Review.</b> The reader is given its journey, the measurements, the first screen of every page and the full text, with <code>admin/synthetic/review-guide.md</code>, and answers as structured JSON: a verdict, whether the question was answered, five scores, what works, what fails with evidence, what to change, the lines it reacted to, and what changed since its last run. The review is written by the Claude API when the run has a key, or by an agent session.</li>
-<li><b>Keep.</b> All of it is committed and pushed to the reader's vault; <code>run.py summarise</code> writes this page's data, <code>data/synthetic.json</code>, with no keys in it.</li>
-</ol>''')}
-{section("vaults", "The vaults", '<p>One private vault per reader, ids in the table above. Each holds <code>README.md</code> (the reader), <code>latest.json</code>, <code>history.jsonl</code>, <code>heartbeats.jsonl</code> and <code>runs/&lt;run&gt;/</code> with <code>run.json</code>, <code>requests.jsonl</code>, <code>console.jsonl</code>, <code>pages/</code>, <code>review-request.md</code>, <code>feedback.json</code> and <code>feedback.md</code>. The vault keys are held by the editor and the agent that runs the readers; none is in this repository.</p>')}
+<p class="lead">Six test readers, run by the agent synthetic@php.newsroom: a board member, a CTO, a project manager, a security lead, a developer and a designer. Each reads the live site in a real browser on its own device, follows its own reading path and the links that interest it, and then says, in its own voice, whether it got its answer, what worked, what did not and what it would change. Every review is published here; every request, page and screenshot is kept in that reader's own vault.</p>
+<p class="caveat">{caveat} It sends no telemetry: the site's telemetry lane and geolocation lookups are answered locally during a run.</p>
+{section("now", "The latest run of each reader", table(['Reader', 'Device', 'Run (UTC)', 'Site', 'Got the answer', *[k.title() for k in SK], 'Runs'], rows), "Scores are 0 to 5 from that reader's point of view; the change since its previous review is in brackets.")}
+{section("verdicts", "In their own words", f'<ul>{verdicts}</ul>')}
+{section("pages", "The pages they found most wrong with", f'<ol>{top}</ol><p><a href="pages/index.html">Every page they named, with every point, change and quote</a>.</p>')}
+{section("runs", "Every run", table(['Run (UTC)', 'Reader', 'Site', 'Got the answer', 'Fails (high)'], every))}
+{section("how", "How a run works", how)}
+{section("vaults", "The vaults", vaults)}
 """
-    page('admin/synthetic/index.html', 'Synthetic readers: six test readers who read the live site every hour', 'A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader\'s own vault.', body, kind='site')
+    page('admin/synthetic/index.html', 'Synthetic readers: six test readers who read the live site',
+         'A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every review is published here and every run is kept in that reader\'s own vault.', body, kind='site')
 
 
 # ----------------------------------------------------------------------------- the review layer (v0.2.5)
@@ -4139,11 +4299,11 @@ def all_runs(S):
             r = json.load(open(os.path.join(fdir, fn), encoding='utf-8'))
             runs.append((r.get('started', ''), 'verifier', 'Fact-check run', r['id'], bool(r.get('opened')), r.get('opened') or r.get('checked', ''), 'factcheck/index.html'))
     for p in (SYN or {}).get('personas', []):
-        l = p.get('latest') or {}
-        if l.get('run'):
-            ch = l.get('checks', {})
-            runs.append((l.get('finished', l['run']), 'synthetic', f'Synthetic reader: {p["name"]}', f'{p["id"]}/{l["run"]}', bool(l.get('top_fails')),
-                         f'site v{l.get("site_version", "")}: {ch.get("high", 0)} high, {ch.get("medium", 0)} medium checks; answered the question {l.get("answered_question", "")}', 'admin/synthetic/index.html'))
+        for h in p.get('runs', []):
+            ch, fl = h.get('checks', {}), h.get('fails', {})
+            runs.append((h['finished'], 'synthetic', f'Synthetic reader: {p["name"]}', f'{p["id"]}/{h["run"]}', bool(sum(fl.values())),
+                         f'site v{h["site_version"]}: answered the question {h.get("answered_question") or "(not reviewed)"}; {sum(fl.values())} failures named ({fl.get("high", 0)} high); {ch.get("high", 0)} high, {ch.get("medium", 0)} medium instrument flags',
+                         f'admin/synthetic/{p["id"]}/{h["run"]}/index.html'))
     return sorted(runs, key=lambda r: (r[0], r[3]), reverse=True)
 
 def build_runs():

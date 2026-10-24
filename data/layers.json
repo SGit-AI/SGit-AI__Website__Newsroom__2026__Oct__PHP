@@ -465,7 +465,14 @@
    "path": "data/synthetic.json",
    "layer": "site",
    "by": "admin/synthetic/run.py summarise (synthetic@php.newsroom)",
-   "from": "each synthetic reader's vault: its latest run and review, with no keys",
+   "from": "each synthetic reader's vault: every reader, its runs with scores and counts, with no keys",
+   "used_on": "admin/synthetic/index.html"
+  },
+  {
+   "path": "data/synthetic-runs/",
+   "layer": "site",
+   "by": "admin/synthetic/run.py summarise (synthetic@php.newsroom)",
+   "from": "each run in a synthetic reader's vault: the review, the journey, per-page measurements and the instruments' flags; never page bodies or a key",
    "used_on": "admin/synthetic/index.html"
   },
   {

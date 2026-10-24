@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **27** derived · **10** authored · **26** site
+**8** evidence · **27** derived · **10** authored · **27** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -112,7 +112,8 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/telemetry-public.json` | dev@php.newsroom | admin/build/telemetry_publish.py at every drain: the curated counts by group, per hour and per day, and over readers by country, device, language, version, page and referrer host; the same file as the public stats vault | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/world.json` | dev@php.newsroom | Natural Earth admin-0 countries 1:50m v5.1.2 (public domain), projected to Equal Earth and simplified by a script; the map on admin/telemetry/ and in the public stats vault | [admin/telemetry/index.html](../admin/telemetry/index.html) |
 | `data/layers.json` | claude-journalist | this classification | [layers/index.html](../layers/index.html) |
-| `data/synthetic.json` | admin/synthetic/run.py summarise (synthetic@php.newsroom) | each synthetic reader's vault: its latest run and review, with no keys | [admin/synthetic/index.html](../admin/synthetic/index.html) |
+| `data/synthetic.json` | admin/synthetic/run.py summarise (synthetic@php.newsroom) | each synthetic reader's vault: every reader, its runs with scores and counts, with no keys | [admin/synthetic/index.html](../admin/synthetic/index.html) |
+| `data/synthetic-runs/` | admin/synthetic/run.py summarise (synthetic@php.newsroom) | each run in a synthetic reader's vault: the review, the journey, per-page measurements and the instruments' flags; never page bodies or a key | [admin/synthetic/index.html](../admin/synthetic/index.html) |
 | `data/grc-gaps.json` | dev@php.newsroom | the rules the gaps page computes over the risk graph | [grc/gaps/index.html](../grc/gaps/index.html) |
 
 The classification is [data/layers.json](../data/layers.json); the gate fails a release if a file in `data/` is missing from it.
