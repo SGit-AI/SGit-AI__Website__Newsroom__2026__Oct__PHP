@@ -7,7 +7,7 @@
   "description": "Breadth of collection, and an export lag. The site requires a captured source per row; the tracker accepts aggregator reports and says so per row. Part of the gap is not collection at all: the vault already holds captures of more offline operators than the site shows, because the site's export stopped at 144 sources.",
   "status": "explained",
   "created_at": 1792694602795,
-  "updated_at": 1792702578733,
+  "updated_at": 1792828703126,
   "created_by": "e9ebd531",
   "tags": [],
   "links": [
@@ -31,6 +31,13 @@
       "target_id": "ee9d1227",
       "target_label": "Evidence-11",
       "created_at": 1792702578733
+    },
+    {
+      "link_type_id": "66312e5e",
+      "verb": "supported-by",
+      "target_id": "de36bda3",
+      "target_label": "Evidence-18",
+      "created_at": 1792828703126
     }
   ],
   "properties": {

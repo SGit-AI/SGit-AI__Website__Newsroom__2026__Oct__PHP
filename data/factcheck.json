@@ -244,6 +244,7 @@
    "tickets": [
     "Contradiction-6",
     "Evidence-11",
+    "Evidence-18",
     "Evidence-3",
     "Evidence-4",
     "Finding-22",
@@ -642,6 +643,7 @@
     "Contradiction-2",
     "Evidence-1",
     "Evidence-10",
+    "Evidence-18",
     "Evidence-6",
     "Finding-13",
     "Finding-63"
@@ -2346,6 +2348,7 @@
     "Evidence-1",
     "Evidence-10",
     "Evidence-12",
+    "Evidence-18",
     "Evidence-3",
     "Finding-26",
     "Finding-85"
@@ -4007,6 +4010,7 @@
     "Contradiction-3",
     "Contradiction-7",
     "Evidence-10",
+    "Evidence-17",
     "Evidence-6"
    ],
    "mode2": "",
@@ -4176,6 +4180,7 @@
    ],
    "tickets": [
     "Contradiction-3",
+    "Evidence-16",
     "Evidence-9",
     "Finding-107",
     "Finding-50"
@@ -4934,9 +4939,18 @@
       "nvd-cve-2026-109618",
       "nvd-cve-2026-109619"
      ]
+    },
+    {
+     "who": "CrowdStrike (blog), relayed to oss-security by Greenbone",
+     "when": "fetched 2026-10-24 07:57 UTC",
+     "says": "The specific HashTable ordering behind CVE-2026-109618 was introduced by a performance optimization in October 2017 and first shipped in PHP 7.3.0 (December 2018).",
+     "measures": "when each flaw's code path entered PHP: CVE-2026-109618 from 7.3.0; CVE-2026-109619's paths from 7.1 (serialization) and 5.4 (session)",
+     "outside": [
+      "https://www.crowdstrike.com/en-us/blog/crowdstrike-protects-customers-from-php-rce-zero-days/ (sha256 e46a2935d6002eed)"
+     ]
     }
    ],
-   "reading": "Affected, supported and patched are three different lists. The CVE record lists only the supported branches the PHP project fixed; the backports reach down to 7.4; Cloudflare and NVD describe what is vulnerable, which goes back further. They are compatible, but read as a contradiction unless the site says so where it shows the version table.",
+   "reading": "Affected, supported and patched are three different lists. The CVE record lists only the supported branches the PHP project fixed; the backports reach down to 7.4; Cloudflare and NVD describe what is vulnerable, which goes back further. They are compatible, but read as a contradiction unless the site says so where it shows the version table. Run 4 (24 October): CrowdStrike gives each flaw its own start: CVE-2026-109618 from PHP 7.3.0, CVE-2026-109619 back to 5.4 through the session path. If it holds, 'every version since 5.4' is true only of the second flaw. CrowdStrike's own page also says both are in 'every PHP release from the 7.x and 8.x series', which its next sentence contradicts for 7.0 to 7.2. Not captured; the PHP project has not said.",
    "settle": "The PHP project stating the earliest affected version.",
    "ticket": "Contradiction-3"
   },
@@ -5421,6 +5435,10 @@
     },
     {
      "verb": "supported-by",
+     "to": "Evidence-18"
+    },
+    {
+     "verb": "supported-by",
      "to": "Evidence-3"
     },
     {
@@ -5455,6 +5473,10 @@
    "excerpt": "",
    "run": "Run-1",
    "links": [
+    {
+     "verb": "supported-by",
+     "to": "Evidence-16"
+    },
     {
      "verb": "supported-by",
      "to": "Evidence-9"
@@ -5532,6 +5554,10 @@
     {
      "verb": "supported-by",
      "to": "Evidence-11"
+    },
+    {
+     "verb": "supported-by",
+     "to": "Evidence-18"
     },
     {
      "verb": "supported-by",
@@ -5781,7 +5807,7 @@
   {
    "label": "Evidence-4",
    "type": "evidence",
-   "status": "proposed",
+   "status": "captured",
    "title": "PHPocalypse Tracker sites.csv: 50 sites, 2 with no back-up time, each with dark and back times and a source",
    "description": "Fetched by the desk at 18:27 UTC. Row-level provenance, and recovery times this site does not record. Its own header warns that aggregator reports are not confirmed at the original source, so each row is a lead, not a fact. Capture the CSV on a schedule (board 057).",
    "severity": "medium",
@@ -5948,7 +5974,7 @@
   {
    "label": "Evidence-11",
    "type": "evidence",
-   "status": "proposed",
+   "status": "rejected",
    "title": "PHPocalypse Tracker, 20:53 UTC: the Dutch data protection authority back at 19:25 UTC; one site still dark (French prefecture websites)",
    "description": "Was 2 still dark at 18:27 UTC. Of 50 rows, 49 now have a back-up time.",
    "severity": "low",
@@ -6064,6 +6090,79 @@
     {
      "verb": "supports",
      "to": "Contradiction-1"
+    }
+   ]
+  },
+  {
+   "label": "Evidence-16",
+   "type": "evidence",
+   "status": "proposed",
+   "title": "CrowdStrike dates each flaw's code: CVE-2026-109618 from PHP 7.3.0 (2018), CVE-2026-109619 back to 5.4 (session path) and 7.1 (serialization)",
+   "description": "Found through Greenbone's posts on oss-security (2026/10/23/4 and /5, now references in both CVE records). The first claim that splits the two flaws by version. If it holds, 'all versions from 5.4' is true only of CVE-2026-109619. The page contradicts itself ('present in every PHP release from the 7.x and 8.x series'). Capture it; then versions-old and the version table on /patching/ should be re-graded.",
+   "severity": "medium",
+   "claims": [
+    "versions-old"
+   ],
+   "sources": [],
+   "pages": [],
+   "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-protects-customers-from-php-rce-zero-days/",
+   "retrieved_at": "2026-10-24T07:57Z",
+   "sha256": "e46a2935d6002eed6d9082e3729ae7dd8cbd91e1d79bc830a5671f5cf4999a10",
+   "excerpt": "The specific HashTable ordering behind CVE-2026-109618 was introduced by a performance optimization in October 2017 and first shipped in PHP 7.3.0",
+   "run": "Run-4",
+   "links": [
+    {
+     "verb": "supports",
+     "to": "Contradiction-3"
+    }
+   ]
+  },
+  {
+   "label": "Evidence-17",
+   "type": "evidence",
+   "status": "proposed",
+   "title": "Siemens joins the CVE records as an affected supplier (RUGGEDCOM APE1808, SSA-566512); NVD now lists Palo Alto PAN-OS and the Siemens device among 306 vulnerable configurations",
+   "description": "Both CVE records gained a Siemens supplier container on 23 October (14:07 UTC); NVD's configurations grew from four PHP ranges to 306 matches, including hundreds of PAN-OS versions (Palo Alto's own advisory is already in the vault, paloalto-psirt-cve-2026-109618). The first appliance vendors in the primary record. Capture Siemens SSA-566512; the inventory and affected pages are the owners'.",
+   "severity": "medium",
+   "claims": [
+    "two-cves-9.2"
+   ],
+   "sources": [],
+   "pages": [],
+   "url": "https://cveawg.mitre.org/api/cve/CVE-2026-109618",
+   "retrieved_at": "2026-10-24T07:57Z",
+   "sha256": "e90dc1df042aca8ba35d87d9748e2347a865ed285ca49e62e353e909d71547b8",
+   "excerpt": "RUGGEDCOM APE1808",
+   "run": "Run-4",
+   "links": []
+  },
+  {
+   "label": "Evidence-18",
+   "type": "evidence",
+   "status": "proposed",
+   "title": "Primary feeds at 07:57 UTC on 24 October: KEV (catalog 2026.10.23, 1,756 entries) still lists neither CVE; CISA SSVC still 'Exploitation: none'; no PHP release after 21 October; the PHPocalypse Tracker has 51 rows and none dark; W3Techs still 69.3_",
+   "description": "KEV has been updated twice since the release (2026.10.21, 2026.10.23) without either CVE. The NCSC-NL repository head moved from 94b4b16db9e5 to 2fdc314ded28 (the inventory's owners). Amazon's post still carries its revised sentence (Evidence-12).",
+   "severity": "low",
+   "claims": [
+    "cisa-none",
+    "no-confirmed-compromise",
+    "affected-sites"
+   ],
+   "sources": [],
+   "pages": [],
+   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "retrieved_at": "2026-10-24T07:57Z",
+   "sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70",
+   "excerpt": "",
+   "run": "Run-4",
+   "links": [
+    {
+     "verb": "supports",
+     "to": "Contradiction-2"
+    },
+    {
+     "verb": "supports",
+     "to": "Contradiction-6"
     }
    ]
   },
@@ -8874,6 +8973,18 @@
    "opened": "5 tickets (Evidence-12 high: AWS reworded its key sentence; Evidence-13 CNN; Evidence-14 Wikipedia; Evidence-15 the measurement; Contradiction-12 explained); closed 9: Finding-26, 27, 28, 33, 34, 102, 124 and 125 fixed, K-004 and K-009 explained",
    "audit": "fc.py check: 0 failures; the new excerpts (The Verge, PCMag, Recorded Future, Insurance Business, TPO) re-found verbatim in their captures. The investigation: 29 of 29 measures, 127 of 127 statements and 81 of 81 live excerpts re-found in the bytes whose sha256 they record, by a check independent of the researchers' own.",
    "summary": "The editor asked for a pass on 24 October; the scheduled task had not fired since 22 October 20:52 UTC. Seven claims changed: the desk chief's fixes carry the evidence now, so eight findings close and two contradictions are explained (K-004 by the restated counters; K-009 by time: the Foundation describes the IDs at about 15:00 UTC on 20 October, the exploit video came that evening). Finding-32 stays open: the claim note, numbers.json and the front page still say no page names the survey, and Cloudflare links W3Techs. The correction requests R-001 to R-003 no longer wait on the desk. K-011 waits on the capture of PHP's 09:11 UTC reply (board 250). Then the first investigation, at the editor's request: PHP is on 69.3% of the websites whose server-side language W3Techs can identify (80.6% in 2015), on about half of every site the HTTP Archive crawls (48.3%), and WordPress alone on 39.6% of all sites; scanners count about 2 to 3 million internet-facing hosts. '70% of the Internet' starts in Wiz's own X post and blog headline, whose body says 'websites'. Of 73 pages re-checked, none corrected the figure; CNN reworded it twice. AWS quietly narrowed 'broadly exploited' to 'broad exploitation attempts', which this site still quotes (Evidence-12, high)."
+  },
+  {
+   "id": "Run-4",
+   "site_version": "0.14.10",
+   "vault_commit": "b995a28fe67a",
+   "site_export_commit": "1845598d9a38",
+   "started": "2026-10-24T07:52Z",
+   "finished": "2026-10-24T08:05Z",
+   "checked": "fc.py changed (no claim changed); fc.py check (0 failures); the vault's new captures against the open tickets; mode 2: KEV, the CVE and NVD records and their new references, php.net releases, the NCSC-NL head, the PHPocalypse Tracker, W3Techs, Amazon's post, CrowdStrike",
+   "opened": "3 evidence (Evidence-16 CrowdStrike's version origins, Evidence-17 Siemens and PAN-OS in the record, Evidence-18 the primary feeds); Evidence-4 marked captured (byte-identical), Evidence-11 superseded",
+   "audit": "fc.py check: 0 failures.",
+   "summary": "No claim changed and no fix landed. The world moved a little: CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 back to 5.4 (bears on K-003, 'every version since 5.4'); Siemens and Palo Alto PAN-OS are now in the primary record; KEV (2026.10.23) still lists neither CVE and CISA's SSVC still says no exploitation; every PHPocalypse site is back. Amazon's revised sentence is still not captured (Evidence-12, high). The vault moved to b995a28fe67a; the site's export is still at 1845598d9a38."
   }
  ],
  "investigations": [
@@ -9425,7 +9536,16 @@
         "value": 69.3
        }
       ],
-      "notes": "Denominator is sites with a KNOWN server-side language, not all websites. W3Techs' free pages do not publish what fraction of sites have a known language (no 'unknown/none' row for this category, unlike CMS). Multiple languages per site allowed. Same page dated 24 Oct 2026 on overview/programming_language/all."
+      "notes": "Denominator is sites with a KNOWN server-side language, not all websites. W3Techs' free pages do not publish what fraction of sites have a known language (no 'unknown/none' row for this category, unlike CMS). Multiple languages per site allowed. Same page dated 24 Oct 2026 on overview/programming_language/all.",
+      "rechecks": [
+       {
+        "retrieved_at": "2026-10-24T07:57Z",
+        "value": 69.3,
+        "sha256": "ca7ba9d1ce117cc1e4061e8509072182bda77ace4b7c40481d5de7ee4aa51c63",
+        "run": "Run-4",
+        "excerpt": "PHP is used by 69.3% of all the websites whose server-side programming language we know"
+       }
+      ]
      },
      {
       "id": "w3techs-php-share-known-monthly",

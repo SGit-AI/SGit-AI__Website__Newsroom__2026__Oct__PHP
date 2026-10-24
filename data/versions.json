@@ -1,6 +1,15 @@
 {
- "current": "0.14.10",
+ "current": "0.14.11",
  "versions": [
+  {
+   "version": "0.14.11",
+   "date": "2026-10-24",
+   "title": "factcheck run 4 (scheduled, 08:52 London): no claim changed; CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 back to 5.4 (K-003); Siemens and PAN-OS now in the CVE and NVD records; KEV still lists neither CVE; every PHPocalypse site back; AWS's revised sentence still uncaptured",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.10",
    "date": "2026-10-24",

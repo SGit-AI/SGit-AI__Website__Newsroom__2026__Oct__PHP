@@ -443,7 +443,16 @@
      "value": 69.3
     }
    ],
-   "notes": "Denominator is sites with a KNOWN server-side language, not all websites. W3Techs' free pages do not publish what fraction of sites have a known language (no 'unknown/none' row for this category, unlike CMS). Multiple languages per site allowed. Same page dated 24 Oct 2026 on overview/programming_language/all."
+   "notes": "Denominator is sites with a KNOWN server-side language, not all websites. W3Techs' free pages do not publish what fraction of sites have a known language (no 'unknown/none' row for this category, unlike CMS). Multiple languages per site allowed. Same page dated 24 Oct 2026 on overview/programming_language/all.",
+   "rechecks": [
+    {
+     "retrieved_at": "2026-10-24T07:57Z",
+     "value": 69.3,
+     "sha256": "ca7ba9d1ce117cc1e4061e8509072182bda77ace4b7c40481d5de7ee4aa51c63",
+     "run": "Run-4",
+     "excerpt": "PHP is used by 69.3% of all the websites whose server-side programming language we know"
+    }
+   ]
   },
   {
    "id": "w3techs-php-share-known-monthly",

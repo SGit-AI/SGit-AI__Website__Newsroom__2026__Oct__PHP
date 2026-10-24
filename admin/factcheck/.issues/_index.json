@@ -1,6 +1,6 @@
 {
-  "total_nodes": 158,
-  "last_updated": 1792807354394,
+  "total_nodes": 162,
+  "last_updated": 1792828702572,
   "type_counts": [
     {
       "count": 125,
@@ -15,11 +15,11 @@
       "node_type": "gap"
     },
     {
-      "count": 15,
+      "count": 18,
       "node_type": "evidence"
     },
     {
-      "count": 3,
+      "count": 4,
       "node_type": "run"
     }
   ]

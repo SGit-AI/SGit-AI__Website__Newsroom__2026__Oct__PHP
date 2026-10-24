@@ -170,6 +170,7 @@
    "tickets": [
     "Evidence-3",
     "Evidence-4",
+    "Evidence-18",
     "Finding-22",
     "Finding-23",
     "Finding-57",
@@ -553,6 +554,7 @@
    "tickets": [
     "Evidence-1",
     "Evidence-6",
+    "Evidence-18",
     "Finding-13",
     "Finding-63"
    ],
@@ -2198,6 +2200,7 @@
     "Evidence-1",
     "Evidence-3",
     "Evidence-12",
+    "Evidence-18",
     "Finding-26",
     "Finding-85"
    ],
@@ -3799,7 +3802,8 @@
    ],
    "quotes_checked": [],
    "tickets": [
-    "Evidence-6"
+    "Evidence-6",
+    "Evidence-17"
    ],
    "mode2": ""
   },
@@ -3963,6 +3967,7 @@
    ],
    "tickets": [
     "Contradiction-3",
+    "Evidence-16",
     "Finding-50",
     "Finding-107"
    ],

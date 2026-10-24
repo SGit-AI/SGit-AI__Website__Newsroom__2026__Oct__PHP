@@ -7,7 +7,7 @@
   "description": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises.",
   "status": "explained",
   "created_at": 1792694600449,
-  "updated_at": 1792807352865,
+  "updated_at": 1792828702945,
   "created_by": "31526de4",
   "tags": [],
   "links": [
@@ -59,6 +59,13 @@
       "target_id": "33ecc95e",
       "target_label": "Evidence-12",
       "created_at": 1792807352865
+    },
+    {
+      "link_type_id": "66312e5e",
+      "verb": "supported-by",
+      "target_id": "de36bda3",
+      "target_label": "Evidence-18",
+      "created_at": 1792828702945
     }
   ],
   "properties": {

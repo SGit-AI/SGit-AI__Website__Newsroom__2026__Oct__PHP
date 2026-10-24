@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.10. Not the live site.
+> Mockup D for review, built from the data of release v0.14.11. Not the live site.
 
-PHP Team console Console Overview Board 171 Agents 19 Releases 97 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 171 Agents 19 Releases 98 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.14.10 
-97 releases since 22 Oct 
+v0.14.11 
+98 releases since 22 Oct 
 
 Open on the board 
 171 
@@ -99,6 +99,7 @@ Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first 
 ### Releases
  latest 8 
 
+ v0.14.11 2026-10-24 factcheck run 4 (scheduled, 08:52 London): no claim changed; CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 … 
  v0.14.10 2026-10-24 Conductor light check 08:15 London: researcher missed-run note, status line, run record 
  v0.14.9 2026-10-24 The Sherpa's first scheduled wake: both lanes drained (nothing waiting); the fact-check desk's analysis of Fortune's '70% of the i… 
  v0.14.8 2026-10-24 the librarian's first scheduled pass (07:13 London): dev mapped at v0.14.6 (0 overlaps; data/desk.json, /analysis/ and /ops/ sent … 
@@ -106,7 +107,6 @@ Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first 
  v0.14.6 2026-10-24 factcheck: Investigations, a new section, and the first: how much PHP there is and where '70%' comes from. PHP is on 69.3% of the … 
  v0.14.5 2026-10-24 The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the… 
  v0.14.4 2026-10-24 factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-c… 
- v0.14.3 2026-10-24 pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gat… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.14.10 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.11 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

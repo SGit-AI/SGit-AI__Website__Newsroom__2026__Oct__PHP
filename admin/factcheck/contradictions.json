@@ -174,9 +174,18 @@
       "nvd-cve-2026-109618",
       "nvd-cve-2026-109619"
      ]
+    },
+    {
+     "who": "CrowdStrike (blog), relayed to oss-security by Greenbone",
+     "when": "fetched 2026-10-24 07:57 UTC",
+     "says": "The specific HashTable ordering behind CVE-2026-109618 was introduced by a performance optimization in October 2017 and first shipped in PHP 7.3.0 (December 2018).",
+     "measures": "when each flaw's code path entered PHP: CVE-2026-109618 from 7.3.0; CVE-2026-109619's paths from 7.1 (serialization) and 5.4 (session)",
+     "outside": [
+      "https://www.crowdstrike.com/en-us/blog/crowdstrike-protects-customers-from-php-rce-zero-days/ (sha256 e46a2935d6002eed)"
+     ]
     }
    ],
-   "reading": "Affected, supported and patched are three different lists. The CVE record lists only the supported branches the PHP project fixed; the backports reach down to 7.4; Cloudflare and NVD describe what is vulnerable, which goes back further. They are compatible, but read as a contradiction unless the site says so where it shows the version table.",
+   "reading": "Affected, supported and patched are three different lists. The CVE record lists only the supported branches the PHP project fixed; the backports reach down to 7.4; Cloudflare and NVD describe what is vulnerable, which goes back further. They are compatible, but read as a contradiction unless the site says so where it shows the version table. Run 4 (24 October): CrowdStrike gives each flaw its own start: CVE-2026-109618 from PHP 7.3.0, CVE-2026-109619 back to 5.4 through the session path. If it holds, 'every version since 5.4' is true only of the second flaw. CrowdStrike's own page also says both are in 'every PHP release from the 7.x and 8.x series', which its next sentence contradicts for 7.0 to 7.2. Not captured; the PHP project has not said.",
    "settle": "The PHP project stating the earliest affected version.",
    "ticket": "Contradiction-3"
   },
