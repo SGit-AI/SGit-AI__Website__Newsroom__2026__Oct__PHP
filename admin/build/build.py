@@ -241,7 +241,7 @@ NAV = [
                    ('discovery/index.html', 'Who found it'), ('leak/index.html', 'How disclosure broke'),
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
-    ('The analysis', [('claims/index.html', 'Every claim'), ('claims/review/index.html', 'Claims waiting for review'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
+    ('The analysis', [('claims/index.html', 'Every claim'), ('claims/review/index.html', 'Claims waiting for review'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('outreach/index.html', 'Corrections we have asked for'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
                       ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'), ('graph/parties/index.html', 'Every party'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
@@ -1692,7 +1692,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); build_vault_register(); build_schedule(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline()
-    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_grc(); build_sherpa()
+    build_review(); build_admin_section(); build_pack_mode(); build_keys(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -4166,6 +4166,84 @@ function f(){var k=0;rs.forEach(function(r){var s=+r.dataset.lv>=+m.value&&(o.ch
 {section("how", "How the desk works", '<p>The desk is <code>factcheck@php.newsroom</code>. Its role, the full model and the runbook a scheduled run follows are in <a href="' + REPO_URL + '/blob/dev/admin/factcheck/README.md">admin/factcheck/README.md</a>; its tickets are an <a href="https://issues-fs.sgit.ai/">Issues-FS</a> graph in <code>admin/factcheck/.issues/</code>, typed nodes and typed edges in plain JSON files; its grades are <a href="../data/factcheck.json">data/factcheck.json</a>. Mode one checks every claim against the evidence vault. Mode two goes outside for the weak and the contested, and records what it finds as a request to capture, never as a citation.</p>')}
 '''
     page('factcheck/index.html', 'Fact-check: how sure can you be of each claim', f'Every claim on the PHP flaws site graded independently by the fact-check desk on a spectrum of evidence from A0 to A6, with a filter for only what can be relied on, the contradiction ledger, and the open tickets.', body, kind='analysis', topics='php2shell fact-check assurance')
+
+# ----------------------------------------------------------------------------- the corrections liaison (liaison@php.newsroom)
+# Brief: admin/content/briefs/2026-10-22__brief__the-corrections-liaison.md; desk: admin/liaison/README.md.
+
+OUT = load('outreach') if os.path.exists(os.path.join(DATA, 'outreach.json')) else None
+OUT_ST = {'drafted': 'unverified', 'blocked': 'disputed', 'approved': 'reported', 'sent': 'reported', 'acknowledged': 'reported', 'corrected': 'confirmed', 'declined': 'contradicted', 'no-reply': 'unverified'}
+
+def out_blocker(b, ids, fc_t):
+    if b in ids:
+        return f'<a href="#{E(b)}">{E(b)}</a>'
+    t = fc_t.get(b)
+    if t:
+        return f'<a href="../factcheck/index.html#{E(b)}">{E(b)}</a> <span class="small">({E(t["status"])}: {E(t["title"])})</span>'
+    return E(b)
+
+MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+def out_message(r, by_id):
+    """The email the editor sends for one request (desk@php.newsroom, 24 October): plain text, the template in
+    admin/liaison/README.md. Only the publisher's own quoted words come from outside; everything else is ours."""
+    first = r['said'][0]; row = SOURCES.get(first['source'], {})
+    words = first['words'] if len(first['words']) <= 70 else first['words'][:67].rsplit(' ', 1)[0] + '...'
+    iso = (row.get('published') or '')[:10]
+    when = r.get('date') or (f'{int(iso[8:10])} {MONTHS[int(iso[5:7]) - 1]} {iso[:4]}' if re.fullmatch(r'\d{4}-\d{2}-\d{2}', iso) else '')
+    origin = by_id.get(r.get('origin', ''))
+    echo = (f'\nThe wording starts with {origin["publisher"]}, which we have asked separately: {BASE_URL}/outreach/index.html#{origin["id"]}\n' if origin else '')
+    return (f'Subject: A suggested correction: "{words}"\n\nHello,\n\n'
+            f'{("On " + when + " you") if when else "You"} published: "{first["words"]}"\n({row.get("url", "")})\n\n'
+            f'We think this says more than the evidence shows: {r["point"]}\n{echo}\n'
+            f'The evidence, with the saved copies we checked and their hashes, is here:\n{BASE_URL}/outreach/index.html#{r["id"]}\n\n'
+            f'A wording that would keep your piece accurate:\n"{r["suggested"]}"\n\n'
+            f'The data is CC BY 4.0; use any of it with a credit to php.oct.2026.newsroom.sgit.ai. If we have this wrong, tell us and we will correct our page.\n\n'
+            f'{OUT.get("sender", "")}')
+
+def out_card(r, ids, fc_t, by_id=None):
+    said = ''.join(f'<li><span class="small">{E(x["where"])}, third-party words:</span> <q>{E(x["words"])}</q> {src_links([x["source"]], 1)}'
+                   f'<div class="note">Checked in <code>{E(x["file"])}</code>, sha256 <code>{E(x["sha256"][:16])}</code>{"" if x.get("quote_checked") else ": <b>not yet checked character for character</b>"}.</div></li>' for x in r['said'])
+    f = r.get('factcheck', {})
+    fcl = ', '.join(f'<a href="../factcheck/index.html#{E(t)}">{E(t)}</a>' for t in ([f['contradiction']] if f.get('contradiction') else []) + f.get('tickets', []))
+    cl = ', '.join(f'<a href="../facts/{E(c)}/index.html">{E(c)}</a>' for c in f.get('claims', []))
+    bl = ''.join(f'<li>{out_blocker(b, ids, fc_t)}</li>' for b in r.get('blocked_by', []))
+    log = ''.join(f'<li><b>{E(l["at"])}</b> {E(l["event"])}</li>' for l in r.get('log', []))
+    ch = r.get('channel', {})
+    return (f'<article class="role" id="{E(r["id"])}"><h3>{E(r["id"])}: {E(r["publisher"])} <span class="st st-{OUT_ST.get(r["status"], "other")}">{E(r["status"])}</span> <span class="small">{E(r["role"])}</span></h3>'
+            f'<p><b>The point.</b> {E(r["point"])}</p><p><b>What they published.</b></p><ul>{said}</ul>'
+            f'<p><b>What the evidence shows.</b> {E(r["evidence"])}</p><p><b>A wording we suggest.</b> <q>{E(r["suggested"])}</q></p>'
+            f'<p class="small">Fact-check: {fcl or "none"}{("; claims " + cl) if cl else ""}. Channel: {E(ch.get("kind", ""))}{(", " + E(ch["note"])) if ch.get("note") else ""}.</p>'
+            + (f'<p><b>Waiting on.</b></p><ul>{bl}</ul>' if bl else '')
+            + (f'<details><summary><b>The email to send</b> (the editor sends it, from the editor\'s own address, to the channel above)</summary><pre class="memo" style="white-space:pre-wrap">{E(out_message(r, by_id))}</pre></details>' if by_id is not None and r['status'] in ('drafted', 'approved') else '')
+            + f'<p><b>Log.</b></p><ul>{log}</ul></article>')
+
+def build_outreach():
+    if not OUT:
+        return
+    R = OUT['requests']
+    fc_t = {t['label']: t for t in FC['tickets']} if FC else {}
+    ids = {r['id'] for r in R}; by_id = {r['id']: r for r in R}
+    st = Counter(r['status'] for r in R)
+    na = OUT.get('not_asked', [])
+    not_asked = table(['Publisher', 'Their words', 'Why we are not asking'], [[E(x['publisher']), f'<q>{E(x["words"])}</q> {src_links([x["source"]], 1)}', E(x['why'])] for x in na]) if na else '<p>None.</p>'
+    states = table(['Status', 'Means', 'Requests'], [[f'<span class="st st-{OUT_ST.get(x["id"], "other")}">{E(x["id"])}</span>', E(x['means']), str(st.get(x['id'], 0))] for x in OUT['statuses']])
+    q = OUT['quotes']
+    quotes = (table(['Who', 'Quoted', 'Capture'], [[E(x['who']), f'<q>{E(x["words"])}</q>', src_links([x['source']], 1)] for x in q['items']]) if q['items'] else '<p>None yet.</p>') + f'<p class="small">{E(q["about"])}</p>'
+    sent = sum(st.get(k, 0) for k in ('sent', 'acknowledged', 'corrected', 'declined', 'no-reply'))
+    how = ('<p>The desk is <code>liaison@php.newsroom</code>; its rules, the runbook and the message it prepares are in <a href="' + REPO_URL + '/blob/dev/admin/liaison/README.md">admin/liaison/README.md</a>, its data is <a href="../data/outreach.json">data/outreach.json</a>. '
+           'It opens a request only from a <a href="../factcheck/index.html">fact-check</a> record, asks a publisher only through its own published corrections route, sends one follow-up at most, and records every answer, including no answer. '
+           'Corrections to this site itself are on <a href="../corrections/index.html">the corrections page</a>.</p>')
+    body = f'''
+<h1>Corrections we have asked for</h1>
+<p class="lead">When the fact-check desk finds that another publisher's words say more than the evidence shows, this site asks them, politely and with the evidence, to correct the wording. Each request is published here before any message is sent: what they said, quoted from a dated capture with its hash; what the evidence shows; a wording they can use; and where the request stands. The data is CC BY 4.0 and theirs to use. If we are the ones who are wrong, our page is corrected first.</p>
+<p><b>{len(R)}</b> requests, <b>{st.get("drafted", 0)}</b> ready for the editor, <b>{st.get("blocked", 0)}</b> waiting, <b>{sent}</b> sent, <b>{st.get("corrected", 0)}</b> corrected. The editor reads and sends each request personally; the email is under each ready request. No agent writes to a publisher.</p>
+{section("requests", "The requests", "".join(out_card(r, ids, fc_t, by_id) for r in R), "One point to one publisher each. The origin of an error is asked first; the outlets that repeated it are told what the origin said. A request that waits on this site fixing the same error first says so.")}
+{section("not-asked", "Considered, and not asked", not_asked, "Coverage the desk read and decided not to ask about, and why: a publisher who quotes its source accurately is not the one to ask.")}
+{section("statuses", "What the statuses mean", states)}
+{section("quotes", "Where this site is quoted", quotes)}
+{section("how", "How the liaison works", how)}
+'''
+    page('outreach/index.html', 'Corrections we have asked for', "The corrections this site has asked other publishers to make about the PHP flaws, each with the publisher's words from a dated capture, the fact-check evidence, a suggested wording and where the request stands.", body, kind='analysis', topics='php2shell corrections fact-check')
 
 
 # ----------------------------------------------------------------------------- guidance for every agent (v0.5.3)

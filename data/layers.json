@@ -593,6 +593,13 @@
    "by": "pulse@newsroom's vault (4klm5qlt), exported by admin/build/export_pulse.py",
    "from": "the Pulse vault's ladders, attention counts and the short quotes it recorded, each with its capture path and sha256; no capture copied, no key",
    "used_on": "pulse/index.html"
+  },
+  {
+   "path": "data/outreach.json",
+   "layer": "derived",
+   "by": "liaison@php.newsroom, by hand (admin/liaison/README.md)",
+   "from": "fact-check records in data/factcheck.json and captures in the evidence vault, each quote named by file and sha256",
+   "used_on": "outreach/index.html"
   }
  ]
 }

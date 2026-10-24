@@ -124,7 +124,7 @@
  },
  {
   "id": "wordpress-drupal",
-  "claim": "Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS",
+  "claim": "In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS",
   "by": "Calif; Wiz for WordPress and Drupal",
   "sources": [
    "calif-php2shell",

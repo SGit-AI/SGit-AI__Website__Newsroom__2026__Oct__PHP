@@ -15830,7 +15830,7 @@
   {
    "id": "claim:wordpress-drupal",
    "kind": "claim",
-   "label": "Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS",
+   "label": "In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS",
    "status": "reported",
    "href": "facts/wordpress-drupal/index.html",
    "by": "Calif; Wiz for WordPress and Drupal",
@@ -15841,10 +15841,10 @@
   {
    "id": "claim:scale-70pc-internet",
    "kind": "claim",
-   "label": "Roughly 70% of the Internet is affected",
+   "label": "70% of the Internet is affected",
    "status": "unverified",
    "href": "facts/scale-70pc-internet/index.html",
-   "by": "Wiz (headline, X post); BBC attributing Wiz",
+   "by": "Wiz (headline, X post); the BBC, which reports it as Wiz's 'roughly 70%'",
    "origins": 1,
    "relays": 1,
    "echo": false
@@ -15858,7 +15858,7 @@
   {
    "id": "claim:scale-70pc-websites",
    "kind": "claim",
-   "label": "PHP is used by almost 70% of websites",
+   "label": "PHP is used by almost 70% of websites whose server-side language is known",
    "status": "reported",
    "href": "facts/scale-70pc-websites/index.html",
    "by": "Cloudflare; OpenAI ('an estimated 70%'); Wiz body text",
@@ -15880,7 +15880,7 @@
   {
    "id": "claim:scale-2.6m-hosts",
    "kind": "claim",
-   "label": "PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpatched on 21 October",
+   "label": "VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 October",
    "status": "reported",
    "href": "facts/scale-2.6m-hosts/index.html",
    "by": "VulnCheck and Censys, via The Hacker News and SecurityWeek",
@@ -16440,8 +16440,8 @@
   {
    "id": "claim:nl-offline",
    "kind": "claim",
-   "label": "The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services",
-   "status": "confirmed",
+   "label": "The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too",
+   "status": "reported",
    "href": "facts/nl-offline/index.html",
    "by": "the Dutch government",
    "origins": 1,
@@ -16541,7 +16541,7 @@
    "id": "claim:kev-precedent",
    "kind": "claim",
    "label": "The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one day",
-   "status": "confirmed",
+   "status": "reported",
    "href": "facts/kev-precedent/index.html",
    "by": "CISA KEV catalog; Akamai (2024)",
    "origins": 2,
@@ -22508,7 +22508,7 @@
   {
    "from": "claim:nl-offline",
    "verb": "cites",
-   "to": "source:dutchitleaders-websites-offline"
+   "to": "source:tpo-nl-digid-offline"
   },
   {
    "from": "claim:nl-offline",

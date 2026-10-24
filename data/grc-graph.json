@@ -2782,7 +2782,7 @@
   {
    "id": "claim:wordpress-drupal",
    "kind": "claim",
-   "label": "Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcu",
+   "label": "In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal,",
    "href": "facts/wordpress-drupal/index.html"
   },
   {
@@ -3460,7 +3460,7 @@
   {
    "id": "claim:nl-offline",
    "kind": "claim",
-   "label": "The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and O",
+   "label": "The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet;",
    "href": "facts/nl-offline/index.html"
   },
   {
@@ -3470,10 +3470,10 @@
    "href": "sources/rijksoverheid-ncsc-php-news/index.html"
   },
   {
-   "id": "source:dutchitleaders-websites-offline",
+   "id": "source:tpo-nl-digid-offline",
    "kind": "source",
-   "label": "Dutch IT Leaders",
-   "href": "sources/dutchitleaders-websites-offline/index.html"
+   "label": "TPO.nl",
+   "href": "sources/tpo-nl-digid-offline/index.html"
   },
   {
    "id": "claim:fi-offline",
@@ -3952,13 +3952,13 @@
   {
    "id": "claim:scale-70pc-internet",
    "kind": "claim",
-   "label": "Roughly 70% of the Internet is affected",
+   "label": "70% of the Internet is affected",
    "href": "facts/scale-70pc-internet/index.html"
   },
   {
    "id": "claim:scale-70pc-websites",
    "kind": "claim",
-   "label": "PHP is used by almost 70% of websites",
+   "label": "PHP is used by almost 70% of websites whose server-side language is known",
    "href": "facts/scale-70pc-websites/index.html"
   },
   {
@@ -4204,7 +4204,7 @@
   {
    "id": "claim:scale-2.6m-hosts",
    "kind": "claim",
-   "label": "PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 mi",
+   "label": "VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58",
    "href": "facts/scale-2.6m-hosts/index.html"
   },
   {
@@ -14647,10 +14647,10 @@
    "from": "claim:nl-offline",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:dutchitleaders-websites-offline",
+   "to": "source:tpo-nl-digid-offline",
    "basis": {
     "kind": "source",
-    "ref": "dutchitleaders-websites-offline"
+    "ref": "tpo-nl-digid-offline"
    }
   },
   {
@@ -14957,10 +14957,10 @@
    "from": "claim:nl-offline",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:dutchitleaders-websites-offline",
+   "to": "source:tpo-nl-digid-offline",
    "basis": {
     "kind": "source",
-    "ref": "dutchitleaders-websites-offline"
+    "ref": "tpo-nl-digid-offline"
    }
   },
   {
@@ -16557,10 +16557,10 @@
    "from": "claim:nl-offline",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:dutchitleaders-websites-offline",
+   "to": "source:tpo-nl-digid-offline",
    "basis": {
     "kind": "source",
-    "ref": "dutchitleaders-websites-offline"
+    "ref": "tpo-nl-digid-offline"
    }
   },
   {
