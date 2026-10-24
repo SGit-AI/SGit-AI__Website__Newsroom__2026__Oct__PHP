@@ -1,6 +1,339 @@
 {
- "current": "0.11.1",
+ "current": "0.14.27",
  "versions": [
+  {
+   "version": "0.14.27",
+   "date": "2026-10-24",
+   "title": "Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry report's cities and regions, the invitation check order, the vault app's preset merge, the conductor drain's file names)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.26",
+   "date": "2026-10-24",
+   "title": "Application security: /admin/appsec/ with the threat model and five data-flow diagrams, 39 security advisories kept like incidents (root cause, what was not in place, the fix, the guard), the patterns they share, who can do what, what a client-side site does not have to care about, the incident process and six runbooks (taking the site offline, emergency shutdown), a bug bounty paid in kudos with its leaderboard, and prompts for three outside reviewers; a Content-Security-Policy on every page; cities and regions no longer published in the telemetry report; the invitation check order, the vault app's preset merge and the conductor drain's file names fixed",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.25",
+   "date": "2026-10-24",
+   "title": "the scheduled journalist proposed: a Sonnet journalist that takes each curator batch through to the site, and an Opus chief correspondent that reviews it; brief, wake prompt and schedule card (status proposed)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.24",
+   "date": "2026-10-24",
+   "title": "Fix for dev's red CI since v0.14.23: /team/comms/ is built from data/comms.json, which the conductor's wakes export from the commit history, instead of from the history itself, which the shallow CI clone lacks; tested by running the gate in a depth-1 clone",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.23",
+   "date": "2026-10-24",
+   "title": "Commit-FS-lite: agents tell each other what they need in the release commits they already write (To-<agent> and To-all trailers), read on every pull with schedule.py notes; /team/comms/ lists every note, each agent's schedule page the notes to it",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.22",
+   "date": "2026-10-24",
+   "title": "the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.21",
+   "date": "2026-10-24",
+   "title": "the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.20",
+   "date": "2026-10-24",
+   "title": "dev: the release history's pages for v0.14.18 (released before the build wrote them), and board 266 and dev's debrief corrected to v0.14.19, the release that shipped the page links",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.19",
+   "date": "2026-10-24",
+   "title": "the release history links the pages each release changed (on /admin/versions.html: new pages first, then by how much their text changed, eight shown and the rest behind a toggle), filled back to v0.2.0 and written at every release's own build, with the rule for agents in AGENTS.md; and the source watch is 7r83qic5 everywhere live (/vaults/, /vaults/source-watch/, its data and export, the team, the schedules, every register's keys, the policies, the live briefs), its read key not published until the vault UI opens pack vaults; dev's round 1 debrief",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.18",
+   "date": "2026-10-24",
+   "title": "The Sherpa's 11:45 pass: the join page's fixes checked live (two frictions closed), the risk graph's explore and gaps pages working on a phone, and the headline still 600 to 670 pixels down on every page walked",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.17",
+   "date": "2026-10-24",
+   "title": "The Sherpa's round 2 debrief (24 October): two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against the redesign, with screenshots",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.16",
+   "date": "2026-10-24",
+   "title": "Conductor full pass 11:15 London: agents-status, schedules checked against runs, Sherpa note, run record",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.15",
+   "date": "2026-10-24",
+   "title": "CI-003 corrected against the redesign that shipped in v0.14.0: the collaborator's design preference is what was built; his first step for newcomers made precise (the three ways to read are by role and twelve phone screens down the front page); a correction entry for the Sherpa's brief",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.14",
+   "date": "2026-10-24",
+   "title": "Ideas from collaborators, CI-003: a power user's review of the new design, the telemetry and the risk graph (complementary views, a first step for newcomers, people confirming the graph's inferred links with signed reviews, the graph's changes between releases), the phone header measured at 30% of the screen, and a brief to dev (board 260 to 263)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.13",
+   "date": "2026-10-24",
+   "title": "The desk's morning wake: correction requests updated (AWS reworded its own 'broadly exploited', so R-004 is held and WIRED's request stands on its own; CNN needs a fresh capture; The Hacker News's request unblocked by K-009), and the front page's out-of-date 70% unknown on the board",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.12",
+   "date": "2026-10-24",
+   "title": "Conductor light check 09:15 London: curator missed-run note, status lines, run record",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.11",
+   "date": "2026-10-24",
+   "title": "factcheck run 4 (scheduled, 08:52 London): no claim changed; CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 back to 5.4 (K-003); Siemens and PAN-OS now in the CVE and NVD records; KEV still lists neither CVE; every PHPocalypse site back; AWS's revised sentence still uncaptured",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.10",
+   "date": "2026-10-24",
+   "title": "Conductor light check 08:15 London: researcher missed-run note, status line, run record",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.9",
+   "date": "2026-10-24",
+   "title": "The Sherpa's first scheduled wake: both lanes drained (nothing waiting); the fact-check desk's analysis of Fortune's '70% of the internet' article linked from UF-005",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.8",
+   "date": "2026-10-24",
+   "title": "the librarian's first scheduled pass (07:13 London): dev mapped at v0.14.6 (0 overlaps; data/desk.json, /analysis/ and /ops/ sent to abp@ for owners); the journalist's full pass across six desks raised to the editor; 'Is PHP really most websites?' corrected against the claims and the fact-check desk's investigation; the scope check ignores the release's own version files",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.7",
+   "date": "2026-10-24",
+   "title": "Conductor full pass 24 October 07:15 London: agents-status rewritten from the sessions, tasks and branches; board 178 updated; run record",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.6",
+   "date": "2026-10-24",
+   "title": "factcheck: Investigations, a new section, and the first: how much PHP there is and where '70%' comes from. PHP is on 69.3% of the websites whose server-side language W3Techs can identify (80.6% in 2015), about half of every site the HTTP Archive crawls, and WordPress alone on 39.6% of all sites; 127 statements of the share traced to Wiz's own post, a timeline, the lineage as a graph, 73 pages re-checked (none corrected; CNN reworded twice), Fortune analysed (UF-005.1); AWS quietly narrowed 'broadly exploited' to 'broad exploitation attempts' (Evidence-12, high)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.5",
+   "date": "2026-10-24",
+   "title": "The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents, with screenshots; and a friction on /team/vaults/",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.4",
+   "date": "2026-10-24",
+   "title": "factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-compromise claim, the Dutch offline row, the front page's fix-complete line), K-004 and K-009 explained, so the correction requests to Wiz, the BBC and CNN no longer wait on the desk; Finding-32 stays open (Cloudflare does link W3Techs); the desk's schedule card, and the brief for its investigations",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.3",
+   "date": "2026-10-24",
+   "title": "pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gate's first-build determinism failure fixed (design.py read items.json one build late, board 175)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.2",
+   "date": "2026-10-24",
+   "title": "The Sherpa: its schedule active (its lanes drained every two hours, 07:45 to 21:45 London, the full pass at 11:45 and 17:45), and an inbox for agents outside the newsroom: an append lane (d6zak0o3) where the RiskMandate email agent and the editor send messages and materials, with the tool to send to it",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.1",
+   "date": "2026-10-24",
+   "title": "The news desk chief's first round closed: its debrief with screenshots of every page it changed, its status and its role",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.14.0",
+   "date": "2026-10-24",
+   "title": "the redesign, live: three reader homes (Briefing on the front page, Operations at /ops/, Analysis at /analysis/), the menu by task with two dials (who you are; Focus, Standard, Everything), the wide layout, and every admin page in the team console",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.13.0",
+   "date": "2026-10-24",
+   "title": "The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the 1.57 million framing, the Dutch offline row, the front page's offline advice, DigiD and fix-complete lines), Corrections we have asked for (/outreach/) with eleven requests and the emails the editor sends, and the desk's briefs, review and schedule",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.12.1",
+   "date": "2026-10-24",
+   "title": "pass step 2, first part: the compromise evidence and the claim behind 'no named victim' as of 23 October 16:04 UTC, four more offline reports, the story summary and the front page's dated lines",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.12.0",
+   "date": "2026-10-24",
+   "title": "the librarian's work: every member a folder, a role and a draft policy (27 members, 0 overlaps, 0 unowned files and pages; /admin/agents/roles/, /admin/agents/rounds/, a page per member, data/agents.json; gate check 4h and the Stop hook), the fractal graph from a line of php-src to a stakeholder (/fractal/, now the ontologist's), the end-of-round rule and the vault-key handover in CLAUDE.md, two reader answers corrected, and the librarian's daily pass at 07:13 London; released at the editor's go before security's review of validate.py, CLAUDE.md and .claude/settings.json (board 206)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.7",
+   "date": "2026-10-24",
+   "title": "the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness report computed at every build; step 1 of the pass",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.6",
+   "date": "2026-10-24",
+   "title": "The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the editor's two asks recorded (UF-005: an analysis of Fortune's '70% of the internet' article; verification across several model providers), the synthetic readers' second run in the friction log (most of what they raised on 22 October still open), the Sherpa's tasks on the board, and its schedule card, the conductor's draft and the Sherpa's combined: drain every two hours, the full pass at 11:45 and 17:45, proposed",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.5",
+   "date": "2026-10-24",
+   "title": "The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartographer is archived; its daily pass is active, a fresh session at 14:40 London every day",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.4",
+   "date": "2026-10-24",
+   "title": "The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to 21:45 London; the conductor's card no longer drains them; a message to an agent no wake reads now stops the build",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.3",
+   "date": "2026-10-24",
+   "title": "the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because the site's watch data was exported from it); /vaults/, the source-watch page, the team, the schedules and the researcher's register say so; the pack vault's read key is not published until the vault UI opens pack vaults",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
+  {
+   "version": "0.11.2",
+   "date": "2026-10-24",
+   "title": "claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit newsroom's Pulse in a separate section (/pulse/), and the plan for the journalist's full pass",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.11.1",
    "date": "2026-10-24",

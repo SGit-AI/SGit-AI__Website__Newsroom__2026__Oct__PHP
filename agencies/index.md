@@ -8,6 +8,115 @@ The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zeal
 
 In plain English What sixteen government cyber agencies told organisations to do. All say update; they disagree on whether to take systems offline.
 
+In one line
+
+All 16 say install the fix. They split on what to do with a system you cannot patch today: the US says take it offline, the UK makes that the fourth step, Europe says isolate, and Australia, Japan and the Netherlands say nothing about it.
+
+## The spectrum
+every agency, by what it says to do with a system you cannot patch6 No offline adviceEU ENISA CSIRTs NetworkAU ASD's ACSCNZ NCSCNL NCSC-NLIT ACN / CSIRT ItaliaJP JPCERT/CC2 Consider it, or after other stepsUK NCSCCH BACS1 Restrict accessLV CERT.LV3 Isolate from the internetEU CERT-EUFR CERT-FRCA CCCS2 Take it offlineUS NSA CybersecurityUS CISA
+Not readable from this capture environment: CCN-CERT, CNCS.
+
+## Agency by agency
+each in its own words, with its saved sources
+### NSA Cybersecurity
+US
+Take offline
+If an immediate update is not feasible, it is recommend[ed] that organizations take the system offline until it can be fully mitigated.
+NSA Cyber on XNSANSA Cyber on X
+### CISA
+US
+Take offline
+Organizations that cannot update immediately, or that continue to use PHP 8.1 or earlier unsupported versions, should take PHP-based systems offline until they can be patched or updated.
+CISACISACISA
+### NCSC
+UK
+After mitigations
+If you are unable to apply the temporary mitigations, or applying them would take too long, you should consider taking the system offline until it can be fully mitigated.
+NCSC UK
+### CERT-EU
+EU institutions
+Isolate
+Where that is not feasible, organisations should consider isolating internet-facing applications from public networks until a fix is applied and verified.
+CERT-EU
+### ENISA CSIRTs Network
+EU
+No offline advice
+
+An index of about 30 national advisories, work in progress: a truncated CVE in the heading and a Dutch 'en'.
+
+ENISA CNW
+### CERT-FR (ANSSI)
+FR
+Isolate first
+Le CERT-FR recommande d'isoler les équipements affectés puis de procéder à la migration vers une version maintenue...
+CERT-FR
+### CCCS
+CA
+Isolate
+Where immediate remediation is not feasible, organisations should consider isolating internet-facing applications from public networks until a fix can be applied.
+CCCSCCCS
+### ASD's ACSC
+AU
+No offline advice
+
+No take-offline or isolation advice. The BBC's 'Australian counterparts' framing is not supported by the page. Parts of the body are still pre-patch text.
+
+ACSCACSC
+### NCSC
+NZ
+No offline advice
+
+The only agency to say active exploitation is reported. It does not say whose reports. Time converted from NZDT by this site.
+
+NCSC New ZealandNCSC New Zealand
+### NCSC-NL
+NL
+No offline advice
+
+Runs the public php2shell GitHub repository with the software inventory the UK NCSC cites, cPanel detection and mitigation scripts, and an SPDX/VEX source list.
+
+NCSC-NLNCSC-NLNCSC-NL
+### ACN / CSIRT Italia
+IT
+No offline advice
+
+Update only. Lists the four fixed branches and no end-of-life branches.
+
+ACN / CSIRT Italia
+### BACS (NCSC)
+CH
+Consider
+Check, particularly for critical applications, whether a temporary disconnection from the internet or taking the system offline is necessary.
+BACSSwiss BACS
+### CERT.LV
+LV
+Restrict from abroad
+Systems that cannot be updated must have internet access restricted, with no public availability until the risk is removed.
+CERT.LV
+### JPCERT/CC
+JP
+No offline advice
+
+Translations are this site's.
+
+JPCERT/CCJPCERT/CC
+### CCN-CERT
+ES
+Could not be read
+
+The title ('actualización inmediata') points to immediate-update advice. The block is recorded in the vault.
+
+CCN-CERT
+### CNCS
+PT
+Could not be read
+
+The block is recorded in the vault.
+
+CNCS
+
+## The evidence table
+
 16 national and supranational bodies, each read from its own page. The question that divides them is not whether to patch (all say patch) but what to do with a system that cannot be patched now. Of 16: 6 say *none*, 2 say *yes*, 2 say *isolate*, 2 say *unknown*, 1 say *after mitigations*, 1 say *isolate first*, 1 say *consider*, 1 say *restrict from abroad*. Two could not be read because their sites block automated browsers; the block is recorded.
 
 The BBC's morning framing, *the UK's NCSC, the NSA and their counterparts in the EU and Australia advise taking systems offline*, holds for the NSA and CISA, is a simplification of the NCSC's fourth of six steps, and is not supported by the Australian page at all. The sentence the BBC quotes from the NCSC is not on the NCSC page as captured; its opening matches the Canadian text.
@@ -35,4 +144,4 @@ Each agency's full text is in its capture; the sentences here are the ones the c
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/agencies/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/agencies/index.html

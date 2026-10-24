@@ -2,32 +2,21 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-The public source-watch vault: 913 pages from 597 publishers in 59 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. Its read key, the vault embedded, and what is in it.
+The source-watch vault: 913 pages from 597 publishers in 59 countries, re-read on a schedule, a snapshot kept on every change and every snapshot a graph. What is in it, and how it is watched.
 
 [Vaults](../index.html) / The source watch
 
 # The source watch: every outside source on php2shell, watched and snapshotted
 
-A vault that does one thing. It watches every outside source on the story, 913 pages from 597 publishers in 59 countries, and on each run records what access it had and keeps a new snapshot whenever the content changed: the text, a screenshot, the HTML as served and as rendered, the headers and the sha256 of each, and a graph of what the page says and what changed since the last look. A small, focused Wayback Machine whose diffs are graphs. Run by **researcher@php.newsroom**; public, read-only.
+A vault that does one thing. It watches every outside source on the story, 913 pages from 597 publishers in 59 countries, and on each run records what access it had and keeps a new snapshot whenever the content changed: the text, a screenshot, the HTML as served and as rendered, the headers and the sha256 of each, and a graph of what the page says and what changed since the last look. A small, focused Wayback Machine whose diffs are graphs. Run by **researcher@php.newsroom**.
 
-![The source-watch vault open in the official SG/Vault UI, read-only.](../../assets/vaults/source-watch.png)
-
-The vault in the official UI, opened read-only with the published key. **Click the image to open the real one ↗**
-
-Open it yourself. The read key is the whole credential, and it is published on purpose.
-Read key: sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277:oq9gflln
-In the official UI: open it read-only in a new tab ↗ · From the command line: sgit clone sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277:oq9gflln
-A read key decrypts and cannot write; it is derived one way from the vault key, which is not published and never will be.
-
-## See it live, here
-
-[Open the vault in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277%3Aoq9gflln) The vault has no app of its own yet, so it opens in the vault browser. It holds 24,865 files; the browser decrypts the folder tree before it lists it, so the first open takes minutes. `sgit clone` is the fast way in.
+**Vault `7r83qic5`, in pack mode.** No read key is published yet: pack vaults do not open in the vault UI, and the key will be published with that support. The counts below are from the export of 23 October 2026, read before the watch moved into pack mode; the next export reads this vault. [Pack mode, measured](../../admin/pack-mode/index.html).
 
 ## What is in it
 
 913pages watched597publishers59countries34languages2946snapshots kept2946graphs38runs24865files in the vault
 
-Counts read from the vault's `index/counts.json`, `runs/` and `tips/` at head `20afaa62129d` by `admin/build/export_watch.py`; no capture is copied to this site. The vault's latest commit: *researcher@php.newsroom: scanner-noise angle (index/angles/scanner-noise.json, 7 new pages), job-03-community for Perplexity with its prompt, three new kinds, login-wall fix for Bluesky and LinkedIn search*
+Counts read from the watch's `index/counts.json`, `runs/` and `tips/` by `admin/build/export_watch.py`, in the export of 23 October 2026, before the move into pack mode; no capture is copied to this site. The latest commit read then: *researcher@php.newsroom: scanner-noise angle (index/angles/scanner-noise.json, 7 new pages), job-03-community for Perplexity with its prompt, three new kinds, login-wall fix for Bluesky and LinkedIn search*
 
 ## Raw and analysis are separate trees
 
@@ -167,4 +156,4 @@ python3 tools/watch.py run [--all] [--only ] [--limit N] [--commit] [--push] pyt
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html

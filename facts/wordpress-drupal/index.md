@@ -1,12 +1,12 @@
-# Fact: Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWik
+# Fact: In researchers' own tests, pre-authentication RCE was confirmed against WordPres
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS Who says it, its status (reported), its sources, and its timeline from publication to this site.
+In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · technical · reported
 
-# Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS
+# In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS
 
 **Who says it:** Calif; Wiz for WordPress and Drupal · **Sources:** [Calif](../../sources/calif-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html)
 
@@ -16,7 +16,7 @@ Two researcher parties, no third-party reproduction in the vault. The demo video
 
 **A2** Reported●●○○○○ · State · verdict: **holds**
 
-Calif's own post lists all eleven applications as confirmed pre-auth RCE; Wiz independently confirms WordPress, Drupal and Joomla. The full list rests on one named party (A2); WordPress/Drupal/Joomla alone would be A4. No third-party reproduction in the vault (Huntress says it did not reproduce), so 'reported' fits.
+Now framed as the researchers' own tests, which is what the captures carry: Wiz and Calif say they achieved pre-authentication RCE against these applications. Eight of the eleven rest on Calif's list alone, and Calif's demonstration video is not captured, so it stays at A2 (Finding-116).
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -26,7 +26,7 @@ Calif's own post lists all eleven applications as confirmed pre-auth RCE; Wiz in
 
 Open tickets: [Finding-116](../../factcheck/index.html#Finding-116).
 
-Graded in Run-1, resting on captures up to 2026-10-22 08:10 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-3, resting on captures up to 2026-10-22 08:10 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Calif publishes [php2shell by Calif Research — A tale of two PHP remote vulnerabilities](../../sources/calif-php2shell/index.html)
@@ -34,6 +34,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 08:10 UTC. The scale is on
 - 2026-10-22 08:10 UTCSaved into the evidence vault: Calif
 - 2026-10-22 08:10 UTCSaved into the evidence vault: Wiz
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
+- 2026-10-24Reworded or re-sourced in v0.12.1
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
 
@@ -54,7 +55,8 @@ Status: reported
 Topic: technical
 Sources: calif-php2shell, wiz-blog-php2shell
 ```
+v2 · site v0.12.1 · 24 October 2026 · reportedPre-authenticationIn researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCSWho says it: Calif; Wiz for WordPress and Drupal2 unchanged linesSources: calif-php2shell, wiz-blog-php2shell
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/wordpress-drupal/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/wordpress-drupal/index.html

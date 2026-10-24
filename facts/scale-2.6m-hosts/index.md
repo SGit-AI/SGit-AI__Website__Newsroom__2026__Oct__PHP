@@ -1,12 +1,12 @@
-# Fact: PHP is exposed on about 2.6 million internet-facing hosts, of which Censys count
+# Fact: VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, o
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpatched on 21 October Who says it, its status (reported), its sources, and its timeline from publication to this site.
+VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 October Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · scale · reported
 
-# PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpatched on 21 October
+# VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 October
 
 **Who says it:** VulnCheck and Censys, via The Hacker News and SecurityWeek · **Sources:** [THN](../../sources/thehackernews-php2shell-4days/index.html) [SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html)
 
@@ -14,9 +14,9 @@ Censys: 2.58 million hosts seen, 1.58 million reporting a version, 1.57 million 
 
 ## Fact-check
 
-**A2** Reported●●○○○○ measures differently · Count · verdict: **holds in part**
+**A2** Reported●●○○○○ · Count · verdict: **holds**
 
-Both figures are carried, but only second hand: VulnCheck's 2,608,039 hosts via The Hacker News and SecurityWeek (one origin), and Censys's 2.58 million seen, 1.57 million unpatched via SecurityWeek alone; no scanner's own page or method is captured, so A2. 'Of which' wrongly makes Censys's 1.57 million a subset of VulnCheck's 2.6 million; it is a subset of Censys's own 2.58 million.
+Rewritten to keep the counters apart: VulnCheck's 2.6 million hosts, and Censys's 1.57 million unpatched of the 1.58 million whose version it could read, of 2.58 million seen (Finding-34 fixed; K-004 now explained). Both reach the vault only through news outlets (Finding-100), so A2.
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -27,7 +27,7 @@ Both figures are carried, but only second hand: VulnCheck's 2,608,039 hosts via 
 
 Open tickets: [Contradiction-4](../../factcheck/index.html#Contradiction-4), [Finding-100](../../factcheck/index.html#Finding-100), [Finding-34](../../factcheck/index.html#Finding-34).
 
-Graded in Run-1, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-3, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-22THN publishes [Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed](../../sources/thehackernews-php2shell-4days/index.html)
@@ -36,6 +36,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:23 UTC. The scale is on
 - 2026-10-22 11:23 UTCSaved into the evidence vault: SecurityWeek, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
 - 2026-10-22Reworded or re-sourced in v0.2.0 (reconstructed from git)
+- 2026-10-24Reworded or re-sourced in v0.12.1
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
 
@@ -56,8 +57,8 @@ Status: reported
 Topic: scale
 Sources: thehackernews-php2shell-4days
 ```
-v2 · site v0.2.0 · 22 October 2026 · reportedPHP is exposed on 2,608,039about 2.6 million internet-facing hostshosts, of which Censys counted 1.57 million unpatched on 21 OctoberWho says it: VulnCheck,VulnCheck and Censys, via The Hacker News and SecurityWeekStatus: reportedTopic: scaleSources: thehackernews-php2shell-4daysthehackernews-php2shell-4days, securityweek-exploitation-days-before
+v2 · site v0.2.0 · 22 October 2026 · reportedPHP is exposed on 2,608,039about 2.6 million internet-facing hostshosts, of which Censys counted 1.57 million unpatched on 21 OctoberWho says it: VulnCheck,VulnCheck and Censys, via The Hacker News and SecurityWeekStatus: reportedTopic: scaleSources: thehackernews-php2shell-4daysthehackernews-php2shell-4days, securityweek-exploitation-days-beforev3 · site v0.12.1 · 24 October 2026 · reportedPHPVulnCheck is exposed oncounts about 2.6 million internet-facing hosts,hosts exposing PHP; Censys, of whichthe Censys2.58 countedmillion hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 OctoberWho says it: VulnCheck and Censys, via The Hacker News and SecurityWeek2 unchanged linesSources: thehackernews-php2shell-4days, securityweek-exploitation-days-before
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-2.6m-hosts/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-2.6m-hosts/index.html

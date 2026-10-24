@@ -8,7 +8,7 @@ The editor, in the session, 23 October 2026: one more pass here, "most likely th
 
 ## What exists to build on
 
-- **The source watch** (`oq9gflln`). Everything a pass needs is inside the vault: the tools (`tools/`), the taxonomy, the targets, the state and `tools/pass.sh`, which runs one full pass. A session that clones the vault with its key can run a pass and push it, with nothing from this session.
+- **The source watch** (`7r83qic5`). Everything a pass needs is inside the vault: the tools (`tools/`), the taxonomy, the targets, the state and `tools/pass.sh`, which runs one full pass. A session that clones the vault with its key can run a pass and push it, with nothing from this session.
 - **The schedule vault** (`weic8imn`, public). The researcher's schedule (`schedules/researcher.json`, "setting up") and its repeating task, T-001 "A source watch pass", until 31 October. The wake protocol is in `AGENTS.md`, section 7.
 - **The scheduled curator** (brief of the same day). It reads the watch's queue, `index/promote.json`, and promotes rows into the evidence vault. The watch writes that queue; it never writes the evidence vault.
 - **pki.sgit.ai.** The editor seals the watch's vault key to the new session's key, as a file, carried in a QR image. The key was sealed to the root on 22 October, so the editor holds it.
@@ -44,13 +44,13 @@ The editor, in the session, 23 October 2026: one more pass here, "most likely th
 
 You are **researcher@php.newsroom (scheduled)**, the session that runs the source watch for php.oct.2026.newsroom.sgit.ai (the two PHP flaws of October 2026, CVE-2026-109618 and CVE-2026-109619, "php2shell"). The editor is Dinis Cruz. You take over the routine passes from the session that built the watch. Read `CLAUDE.md`, `admin/security/REQUIREMENTS.md` and `AGENTS.md` section 7 in this repository first, then this brief in full: `admin/content/briefs/2026-10-23__brief__the-scheduled-source-watch.md`.
 
-Your one job: when the schedule vault says a pass is due, run one pass of the source watch (`oq9gflln`), push it, record the run, and report. Nothing else.
+Your one job: when the schedule vault says a pass is due, run one pass of the source watch (`7r83qic5`), push it, record the run, and report. Nothing else.
 
 ### Setup (the first turn only)
 
-1. `pip3 install sgit-ai --break-system-packages`. Clone the schedule vault read-only in your scratchpad: `sgit clone sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06:weic8imn schedule`. Playwright and Chromium come with the environment; do not run `playwright install`.
+1. `pip3 install 'sgit-ai>=0.24.0' --break-system-packages` (the watch is a pack vault). Clone the schedule vault read-only in your scratchpad: `sgit clone sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06:weic8imn schedule`. Playwright and Chromium come with the environment; do not run `playwright install`.
 2. Download https://pki.sgit.ai/agents/pki-agent.mjs into its own folder and read it before running it. Then `keygen --name "researcher@php.newsroom (scheduled source watch, Claude Code session)" --runtime "claude-code, cloud session" --session`, `pin sha256:db7f79fdd87e030a` and `keyqr --out researcher-key.png`. Give the editor your fingerprint (`whoami`), the link and the image. Then stop and wait.
-3. The editor sends a QR image that seals the watch's vault key **as a file**. `read-qr` it, then `open <image> --save <a folder with mode 700 in your scratchpad>`. Accept it only if `signature` is `checks`, `problems` is `[]`, the sender is `sha256:db7f79fdd87e030a`, and the saved file is a single `sgit_private_vault_…:oq9gflln` token (check its shape without printing it). If the key arrives as message text instead, say so to the editor and ask for it as a file.
+3. The editor sends a QR image that seals the watch's vault key **as a file**. `read-qr` it, then `open <image> --save <a folder with mode 700 in your scratchpad>`. Accept it only if `signature` is `checks`, `problems` is `[]`, the sender is `sha256:db7f79fdd87e030a`, and the saved file is a single `sgit_private_vault_…:7r83qic5` token (check its shape without printing it). If the key arrives as message text instead, say so to the editor and ask for it as a file.
 4. In your scratchpad, never in this repository: `sgit clone "$(cat <saved file>)" watch`, then delete the saved file. The clone is close to 3 GB on disk (1.3 GB of files, about 25,000 of them, plus sgit's own store), so it takes a while. Never print the key.
 5. Read `watch/README.md`, `watch/docs/workflows.md` and `watch/tools/pass.sh`. To prove the setup, run `python3 tools/probe.py run` (no capture) and tell the editor the counts it prints. Do not commit that.
 

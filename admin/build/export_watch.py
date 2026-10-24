@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Export the source-watch vault's public shape into data/source-watch.json, for /vaults/source-watch/.
 
-Usage: admin/build/export_watch.py --from <clone of the source-watch vault>
+Usage: admin/build/export_watch.py --from <clone of the source-watch vault, 7r83qic5>
 
-The vault is public (its read key is published), but this site copies none of its captures: no text, no
+The vault is a pack vault, cloned with sgit-ai 0.24.0 or later by a session that holds its key; its read key is not
+published until the vault UI opens pack vaults. This site copies none of its captures: no text, no
 screenshot, no HTML. It writes counts, the vocabularies, the runs and the tips' headlines, each read from the
 vault's own index and taxonomy files, with the vault head they were read at. Deterministic: the same vault head
 gives the same file, byte for byte.
@@ -43,9 +44,8 @@ def main():
     verbs = load(v, 'taxonomy/verbs.json')
     world = load(v, 'index/world.json')
     out = {
-        'about': 'The public shape of the source-watch vault, exported by admin/build/export_watch.py. Counts and vocabularies only: no capture is copied.',
-        'vault_id': 'oq9gflln',
-        'read_key': 'sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277:oq9gflln',
+        'about': 'The public shape of the source watch, exported by admin/build/export_watch.py. Counts and vocabularies only: no capture is copied.',
+        'vault_id': '7r83qic5',  # a pack vault (sgit-ai 0.24.0 or later); its read key is not published yet
         'head': {'commit': commits[0][0], 'message': commits[0][1]},
         'commits': [{'commit': c, 'message': m} for c, m in commits],
         'pages': counts['pages'], 'publishers': counts['publishers'],

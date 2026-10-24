@@ -117,10 +117,22 @@
   {
    "id": "cartographer",
    "name": "Cartographer",
-   "who": "unfilled",
+   "who": "paused: archived on 24 October 2026; the graph is the ontologist's",
    "owns": "the graph: nodes, typed edges, the per-source and per-party pages, the next layer down",
    "rules": [
     "A node is just a node; an edge without a source is deleted."
+   ]
+  },
+  {
+   "id": "ontologist",
+   "name": "Ontologist",
+   "who": "ontologist@php.newsroom",
+   "owns": "fractal semantic graphs: the ontologies and taxonomies, one node per party, the story graph, the bridges to the site's other graphs, and the graph component",
+   "rules": [
+    "Every edge is a verb with a different, named inverse; no generic association edge, no self-inverse edge.",
+    "Assert only what the data shows: a cited source is evidence, not a relay.",
+    "Weight by independence, not by count.",
+    "Bridges between graphs, never a merge of their vocabularies."
    ]
   },
   {
@@ -158,7 +170,7 @@
    "id": "researcher",
    "name": "researcher@php.newsroom",
    "who": "an agent, joined on 22 October 2026",
-   "owns": "the source watch (vault oq9gflln): which outside pages are watched, how often, what access we have to each; the taxonomy (country, sector, publisher, page); discovery across 52 language editions; the tips the editor relays from other channels; the Researcher, vendor and press collector's beat until that role is filled",
+   "owns": "the source watch (vault 7r83qic5, pack mode): which outside pages are watched, how often, what access we have to each; the taxonomy (country, sector, publisher, page); discovery across 52 language editions; the tips the editor relays from other channels; the Researcher, vendor and press collector's beat until that role is filled",
    "rules": [
     "Watch, don't remember: a page is evidence of what it said at the time of a dated snapshot, and a change is a diff between two snapshots, never a recollection.",
     "A page we cannot read stays on the list with the reason (paywalled, bot-challenge, login-wall, down, gone): the gap is counted and published.",
@@ -176,6 +188,31 @@
     "Attempts are not compromises; a technique is 'seen' only when a source reports it for this bug, otherwise 'expected' or 'precedent'.",
     "Severity in perspective, both ways: name what makes it worse than the headline and what makes it less bad, each with its source.",
     "Never run a public exploit or a stranger's fix script; watch them, hash them, describe them."
+   ]
+  },
+  {
+   "id": "desk",
+   "name": "desk@php.newsroom",
+   "who": "an agent, joined on 22 October 2026 at the editor's request",
+   "owns": "the narrative: the line of the story and what it is not, the agenda (which questions the newsroom answers next and why), a strong opinion on the front page and each section's lead, answers to the editor's questions from the evidence, and the work those answers need, proposed as briefs and board rows",
+   "rules": [
+    "Proposes, never instructs: tasks reach other agents as a brief and board rows with the editor's go, delivered by the conductor.",
+    "A hypothesis is labelled as one until the data tests it, the editor's included; say what would prove it wrong.",
+    "No count without its unit and its basis: what was counted, by whom, as of when.",
+    "Name the bias in what we collect before drawing a pattern from it, and read the fact-check desk's grade before leading with anything."
+   ]
+  },
+  {
+   "id": "liaison",
+   "name": "liaison@php.newsroom",
+   "who": "an agent, joined on 22 October 2026",
+   "owns": "the corrections this site asks other publishers to make: admin/liaison/, data/outreach.json and /outreach/; the drafts the mail agent will send once the editor and security allow it; where other publishers quote this site",
+   "rules": [
+    "A request starts from a fact-check record and quotes the publisher only from a capture, with its hash.",
+    "Clean hands: if this site carries the same error, fix ours first.",
+    "Origin before echo: ask whoever started it, then tell those who repeated it what the origin said.",
+    "Published here before it is sent; the publisher's own corrections route, one follow-up at most, every answer recorded.",
+    "Gentle and factual: 'the evidence we hold shows', a wording they can use, no adjectives about them."
    ]
   }
  ],
@@ -240,7 +277,7 @@
    "id": "008",
    "title": "The next graph layer: facts inside a source (sentence-level nodes) so every noun on a page links somewhere",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "009",
@@ -379,8 +416,8 @@
    "id": "030",
    "title": "The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fractal layer)",
    "status": "waiting",
-   "owner": "cartographer",
-   "note": "Built on branch cartographer/ontology-and-sg-graph: every node a link, parties as nodes, 14 verbs in data/graph.json, one click from a claim to a CVE that opens the code-review graph, labels 12px at 390 (checked in Chromium). Released by the cartographer (AGENTS.md section 1)."
+   "owner": "ontologist",
+   "note": "Built on branch cartographer/ontology-and-sg-graph: every node a link, parties as nodes, 14 verbs in data/graph.json, one click from a claim to a CVE that opens the code-review graph, labels 12px at 390 (checked in Chromium). Released by the ontologist (then the cartographer) (AGENTS.md section 1)."
   },
   {
    "id": "031",
@@ -416,7 +453,7 @@
   },
   {
    "id": "036",
-   "title": "Publish the source-watch vault (oq9gflln) the way sgit.ai publishes vaults: screenshot, open-in-a-new-tab link, the vault embedded, its main features",
+   "title": "Publish the source-watch vault the way sgit.ai publishes vaults: screenshot, open-in-a-new-tab link, the vault embedded, its main features",
    "status": "done",
    "owner": "dev@php.newsroom",
    "version": "0.2.13"
@@ -576,7 +613,7 @@
    "id": "060",
    "title": "The analysis run triggered by every new series: changes and rates within a source, and the same measure lined up across sources on one time axis and unit, with charts and a what-changed summary written to the vault",
    "status": "open",
-   "owner": "cartographer",
+   "owner": "ontologist",
    "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
   },
   {
@@ -590,7 +627,7 @@
    "id": "062",
    "title": "Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one source",
    "status": "open",
-   "owner": "cartographer",
+   "owner": "ontologist",
    "note": "First cut on branch cartographer/ontology-and-sg-graph: states, relays (from the rows' own 'via' and from outlet captures the desk found carrying the claim), flags (contradictions as nodes, since the grammar has no self-inverse edge), independent origins per claim and the echo formula on /graph/. Open: derives_from between numbers, supersedes between captures, stats as series."
   },
   {
@@ -626,7 +663,7 @@
    "id": "067",
    "title": "Draw the semantic graph on the phone: what changed, and what it connects to, as nodes and edges",
    "status": "open",
-   "owner": "cartographer",
+   "owner": "ontologist",
    "note": "From the brief on the phone app (22 October)."
   },
   {
@@ -1006,7 +1043,7 @@
   },
   {
    "id": "128",
-   "title": "Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key (oq9gflln) to the root",
+   "title": "Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key to the root",
    "status": "done",
    "owner": "researcher@php.newsroom"
   },
@@ -1313,9 +1350,9 @@
   {
    "id": "175",
    "title": "release.sh fails the gate's determinism check on the first try when a release changes a versioned page's text: the section ledger settles on the second build",
-   "status": "open",
-   "owner": "dev@php.newsroom",
-   "note": "Seen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Workaround used: restore VERSION and data/versions.json, keep the settled data/sections.json, run release.sh again. A fix belongs in build.py (render the ledger-reading pages after every ledger() call); release.sh and validate.py are unchanged."
+   "status": "done",
+   "owner": "claude-journalist",
+   "note": "Seen on v0.10.19: build, then the gate's rebuild changed the output; a second build from the same tree is identical. Probably: pages that read LEDGER are rendered before later pages add their versions to it. Cause found on 24 October: admin/build/design.py drew mockup B from data/items.json read from disk, but save_items() writes that file at the end of the build, so the mockup showed the previous build's items and the first rebuild after any content change differed (admin/design/b/). Fixed in one line: the mockup takes this build's items from all_items(). Checked: after a version bump, the first and second builds are identical. release.sh and validate.py unchanged. The same lag was in the new Operations and Analysis homes (design.py build_tracks, v0.14.0), fixed the same way."
   },
   {
    "id": "176",
@@ -1336,7 +1373,7 @@
    "title": "Cards to write: pulse (already scheduled), ontologist and librarian (asked to propose)",
    "status": "open",
    "owner": "conductor",
-   "note": "Messages sent 24 October; /team/schedule/ lists who has no card yet."
+   "note": "Messages sent 24 October. Ontologist and librarian have cards; pulse (already scheduled: 06:44 and 14:44 London) has none yet (conductor, 24 October 06:20 UTC)."
   },
   {
    "id": "179",
@@ -1347,16 +1384,16 @@
   },
   {
    "id": "180",
-   "title": "Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then its wakes note \"lanes: no key\" and this session drains them",
+   "title": "The Sherpa drains the lanes (the editor, 24 October 2026): a go for its schedule (data/schedule/sherpa.json, proposed: every two hours at :45, 07:45 to 21:45 London), and the conductor's lane key (5iwos28w) handed to it sealed; it already holds the collaborators' lane key (58526ytp)",
    "status": "waiting",
    "owner": "editor",
-   "note": ""
+   "note": "Until then the conductor's editor session drains the lanes."
   },
   {
    "id": "181",
    "title": "Use <sg-graph> wherever a page draws a graph: the actor, source and fact pages' mini_graph(), the review navigator (review/ui, assets/review-nav.js, which also assigns location.hash), the reader's persona graph; one component, one grammar",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "182",
@@ -1380,13 +1417,13 @@
    "id": "185",
    "title": "Ontology passes on a schedule: every new source, claim and party resolved, merged or pruned; new parties get entities, new spellings get aliases; record each pass in the ontology's version. Needs the editor's go for a schedule",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "186",
    "title": "Publish the ontology the way the estate does: N-Triples with owl:inverseOf, so graphs.sgit.ai and newsroom.sgit.ai can bridge to this graph by declared edges rather than merged vocabularies",
    "status": "open",
-   "owner": "cartographer"
+   "owner": "ontologist"
   },
   {
    "id": "187",
@@ -1399,8 +1436,8 @@
    "id": "188",
    "title": "Read data/compromise.json (researcher@php.newsroom's evidence behind 'no named organisation has said it was compromised', 33 rows) into the story graph: each named organisation as a party, each row as its statement on no-confirmed-compromise, Valtec's retraction as a superseded statement, so the long tail of possible compromises (GMO, ČVUT, Valtec, DMM) is walkable from the claim",
    "status": "open",
-   "owner": "cartographer",
-   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+   "owner": "ontologist",
+   "note": "From the ontologist's first pass of 24 October (admin/ontologist/passes/2026-10-24__pass-1.md)."
   },
   {
    "id": "189",
@@ -1413,8 +1450,549 @@
    "id": "190",
    "title": "Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the story graph, so the long-tail sources reach the claims they bear on, with supersedes where a statement was corrected; and trace the 143 captured sources no row cites yet",
    "status": "open",
-   "owner": "cartographer",
-   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+   "owner": "ontologist",
+   "note": "From the ontologist's first pass of 24 October (admin/ontologist/passes/2026-10-24__pass-1.md)."
+  },
+  {
+   "id": "191",
+   "title": "The source watch's vault of record is 7r83qic5 (pack mode), on /vaults/, the source-watch page, the team, the schedules, the registers and the export; no read key published until the vault UI opens pack vaults",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done at the editor's word of 24 October: the source watch is 7r83qic5 everywhere live (vaults, the source-watch page, its data and export, the team, the schedules, the registers' holds, the policies' vault grants, the live briefs). The next export_watch.py run, by a session holding the vault key, refreshes the counts.",
+   "version": "0.11.3"
+  },
+  {
+   "id": "192",
+   "title": "Sherpa: check CI-002's five steps on the live site, phone and desktop (/grc/explore/, edge basis, tests as nodes, the climb, /grc/gaps/) and dev's join fixes of v0.9.2; close the frictions that hold (11:45 pass, 24 October: /grc/explore/ and /grc/gaps/ live and working on a phone; the join fixes live in code, F014 and F023 closed; the dashed drawing of inferred links not yet seen on a phone)",
+   "status": "open",
+   "owner": "sherpa"
+  },
+  {
+   "id": "193",
+   "title": "Sherpa: to the conductor for priority: all six synthetic readers, run 2 on v0.10.18, say most of what they raised on v0.4.3 is untouched (F001 to F006, now high); and two new frictions (F031 grade against status word; F032 Latest and timeline stop on 22 October)",
+   "status": "open",
+   "owner": "sherpa"
+  },
+  {
+   "id": "194",
+   "title": "Sherpa: draft the brief and thread for several verification workflows across model providers on key pages (UF-005.2), with the fact-check desk",
+   "status": "open",
+   "owner": "sherpa"
+  },
+  {
+   "id": "195",
+   "title": "Sherpa: track the fact-check desk's analysis of Fortune's '70% of the internet' article (UF-005.1) to a story (done by the fact-check desk on 24 October: /factcheck/investigations/php-share/, section 'Fortune')",
+   "status": "done",
+   "owner": "sherpa"
+  },
+  {
+   "id": "196",
+   "title": "Sherpa: a way for the editor to identify himself when he cannot sign in (a key he can present), with dev and security; later, at the editor's word",
+   "status": "open",
+   "owner": "sherpa"
+  },
+  {
+   "id": "197",
+   "title": "Sherpa: three views over time, step 1 (the executive view and its slices as data); the guidance on reuse; the knowledge-gap view",
+   "status": "open",
+   "owner": "sherpa"
+  },
+  {
+   "id": "198",
+   "title": "Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed (active 24 October: every two hours 07:45 to 21:45 London)",
+   "status": "done",
+   "owner": "sherpa"
+  },
+  {
+   "id": "199",
+   "title": "The fractal graph: one graph from the fifteen stakeholders through risks, story arcs, claims and sources to the flaws, the fix, files, functions and the 359 changed hunks of php-src, at /fractal/ and /fractal/ui/",
+   "status": "done",
+   "owner": "librarian",
+   "note": "Renumbered from 090 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "200",
+   "title": "Join the other engine files to a named part of the fix: 144 of 359 changed hunks reach the fix only as 'the commit touched this area'",
+   "status": "open",
+   "owner": "ontologist",
+   "note": "Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 091 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "201",
+   "title": "Add the PHP 7.4 backport's hunks to the fractal graph as their own layer (the lines the backport wrote; never the vulnerable code before it)",
+   "status": "open",
+   "owner": "ontologist",
+   "note": "Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 092 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "202",
+   "title": "Every member a folder (admin/content/agents/<id>/: ROLE.md, policy.json, status.json, debriefs/), 25 drafted; the scope map and overlap check (admin/build/agents.py, gate 4h); /admin/agents/roles/, /admin/agents/rounds/, a page per member; data/agents.json; the end-of-round rule in CLAUDE.md and the Stop hook",
+   "status": "done",
+   "owner": "librarian",
+   "note": "Renumbered from 093 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "203",
+   "title": "Agree each member's policy.json (25 drafts): read the scope, the mandate and the pushback table; set status agreed and agreed_by, or correct",
+   "status": "open",
+   "owner": "editor",
+   "note": "Renumbered from 094 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "204",
+   "title": "Ask every member to read and confirm its folder in admin/content/agents/, and to close its next round with a debrief and status.json",
+   "status": "open",
+   "owner": "conductor",
+   "note": "Renumbered from 095 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "205",
+   "title": "One registry of roles: derive data/team.json's owns and rules, data/admin.json's roles and data/roles.json's agents from admin/content/agents/*/policy.json, or retire them",
+   "status": "open",
+   "owner": "conductor",
+   "note": "Renumbered from 096 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "206",
+   "title": "Security review of the librarian's branch: gate check 4h in validate.py, the CLAUDE.md section, .claude/settings.json's Stop hook and admin/build/agents.py stop-hook",
+   "status": "open",
+   "owner": "security@php.newsroom",
+   "note": "Renumbered from 097 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "207",
+   "title": "Accept or rework the librarian's edit inside build_llms() (one section listing the member pages), and carry the branch into dev",
+   "status": "open",
+   "owner": "dev@php.newsroom",
+   "note": "Renumbered from 098 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "208",
+   "title": "Move the briefings' selections out of build.py into data/briefings.json, so the briefing writer owns them apart from the build",
+   "status": "open",
+   "owner": "briefing-writer",
+   "note": "Renumbered from 099 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "209",
+   "title": "Confirm where the ontologist works: nothing of it is in this repository; its folder proposes data/ontology.json and /ontology/",
+   "status": "done",
+   "owner": "editor",
+   "note": "Renumbered from 100 on 23 October when the librarian's branch took in dev. Answered by the record: the ontologist is cartographer@php.newsroom, which joined \"as the newsroom's ontologist\" on its branch cartographer/ontology-and-sg-graph (data/ontology.json, entities, attribution, <sg-graph>). The two drafted roles are merged into one. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "210",
+   "title": "Fill the cartographer: the fractal graph, the review graph and the citation graph wait for an owner",
+   "status": "done",
+   "owner": "editor",
+   "note": "Renumbered from 101 on 23 October when the librarian's branch took in dev. Filled by cartographer@php.newsroom on its branch cartographer/ontology-and-sg-graph, not yet in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "211",
+   "title": "Point admin/security/REQUIREMENTS.md section 3 at the handover procedure (https://pki.sgit.ai/handover.md, now in CLAUDE.md) instead of the older brief, and review the CLAUDE.md section 'Handing a vault key to the editor'",
+   "status": "open",
+   "owner": "security@php.newsroom",
+   "note": "Renumbered from 102 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "212",
+   "title": "Claim no-confirmed-compromise says Hadrian and Patchstack 'report successful exploitation'; Security.NL and BleepingComputer's captures describe the same vendors' reports as attempts, not compromises. Grade the vendor half of the claim (found in the librarian's pass of 24 October)",
+   "status": "done",
+   "owner": "factcheck",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). Run 3 (24 October): graded. As reworded the vendor half holds: Hadrian's \"exploited at scale\" (Insurance Business) and Patchstack's partner reports (Recorded Future) against its own telemetry's \"only probing\" (PCMag, Bitpage); BleepingComputer's \"unsuccessful attempts\" are before disclosure, a different window. Neither vendor's own post is captured, so that half is A3."
+  },
+  {
+   "id": "213",
+   "title": "The incomplete-fix wording: claim fix-incomplete's note ('nothing from PHP on the list at capture') and the playbook's step 6 ('has not been answered on-list') predate fact-check run 2 (v0.5.8), which found PHP's public answer; update both from the desk's run 2 record (found in the librarian's pass of 24 October)",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "214",
+   "title": "The roster against the sessions: data/team.json has no member for abp@newsroom.sgit, pulse@newsroom, the storyboards desk, the corrections liaison or the news desk chief, and lists the cartographer as unfilled though cartographer@ (the ontologist) has a branch; the curator sessions are the newsroom lead's, as /team/status/ already says",
+   "status": "open",
+   "owner": "conductor",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "215",
+   "title": "Say what pulse@newsroom does: no file, brief or role row in this repository records its scope; its folder (admin/content/agents/pulse/) waits for it",
+   "status": "open",
+   "owner": "editor",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "216",
+   "title": "The librarian's drafted policies are ready for abp@ (board 157): 27 members in admin/content/agents/*/policy.json, each now kept_by abp@newsroom.sgit; abp@ is blocked by its own guard hook (/team/status/)",
+   "status": "open",
+   "owner": "abp",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "217",
+   "title": "A daily librarian pass on a schedule: the editor's go on the time (proposed 07:13 London), then the schedule in the schedule vault (weic8imn) and a scheduled task, per AGENTS.md section 7",
+   "status": "done",
+   "owner": "editor",
+   "note": "Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Done 24 October: the editor said 07:13; card data/schedule/librarian.json active; scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 created in the librarian's session. Renumbered a third time on 24 October (dev at v0.11.5)."
+  },
+  {
+   "id": "218",
+   "title": "Policies: the editor gave the journalist the refresh of the site after every evidence export (24 October); scope.writes should follow",
+   "status": "open",
+   "owner": "abp@newsroom.sgit",
+   "note": "The editor, 24 October 2026, in the journalist's session: the journalist does the full pass and maintains the site after each export. Files to move from story-site's (and the briefing writer's, the librarian's) scope.writes to the journalist's, or to be shared by rule: data/story.json, claims.json, impact.json, compromise.json, exploitation.json, numbers.json, agencies.json, timeline.json, history.json, defence.json, affected.json, plain.json, personas.json, questions.json; also unowned today: data/desk.json (journalist), data/pulse.json and admin/build/export_pulse.py (journalist, for the Pulse section, until pulse@newsroom takes it), pages views/desk/ and pulse/. The journalist has not edited any policy file. The pass is on /views/desk/."
+  },
+  {
+   "id": "219",
+   "title": "Add the news desk chief (desk@php.newsroom) to the team: data/team.json, its member page and board_owners, from the brief 'a news desk chief joins the team'",
+   "status": "open",
+   "owner": "conductor",
+   "note": "From the brief: a news desk chief joins the team (22 October)."
+  },
+  {
+   "id": "220",
+   "title": "Discovery in other languages straight from the source: the national CERTs and public broadcasters of DE, FR, ES, IT, PL, PT, BR and JP, not through Google News (board 077)",
+   "status": "open",
+   "owner": "researcher@php.newsroom",
+   "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "221",
+   "title": "The posture map, extended: add every other EU and EEA national CERT to data/agencies.json (Finland, Germany and Belgium first), coded as the 16 are; and, per offline row, whether the operator followed its CERT's advice or went further",
+   "status": "open",
+   "owner": "collector-gov",
+   "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "222",
+   "title": "The denominator: W3Techs PHP share and PHP version shares by country domain (extends 033 and 043), and any per-country host count from Censys, Shodan or VulnCheck",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "223",
+   "title": "Reshape the offline ledger: one row per organisation, a unit (site, platform, whole government), a domain count where known, the source's language and who said it; then a count with its basis on the front page",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "224",
+   "title": "Grade the reshaped offline ledger as rows land, the Netherlands row first, and the basis of the count",
+   "status": "open",
+   "owner": "factcheck",
+   "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "225",
+   "title": "The piece on where the web went dark and why, once 221 and 222 are in, not before",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "226",
+   "title": "Front page corrections: the offline count's unit ('10 reports', not '10 organisations'), the DigiD line's citation, the duplicate 'attackers are trying' fact, the out-of-date 'fix complete' unknown, the fact-check desk's figure beside '21 confirmed'",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go). Done on 24 October by the desk except the fact-check desk's figure beside '21 confirmed' (board 233)."
+  },
+  {
+   "id": "227",
+   "title": "Front page lead: 'the cost so far is the cost of precaution' with its time, then three counts with unit, basis and time (went dark, fixed, broken into), linking /compromise/, /patching/inventory/ and /stack/",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "228",
+   "title": "Freshness: resume the source watch and the re-export (board 039), or have the front page say plainly that it is a day old",
+   "status": "done",
+   "owner": "editor",
+   "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go). Overtaken on 23 October: the curator and the source watch run on a schedule, the site was re-exported to 295 sources, and the front page shows three clocks (v0.10.6)."
+  },
+  {
+   "id": "229",
+   "title": "Where php2shell stands, day two: the successor to the day-one piece, against the three counts, once board 039 lands",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go)."
+  },
+  {
+   "id": "230",
+   "title": "The headline is the day's news, from the journalist's latest state of affairs; the explainer moves to the second line (front page and mockup A)",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
+  },
+  {
+   "id": "231",
+   "title": "The lead's offline sentence matches the agencies count: all say install the fix, two US agencies say take sites offline if you cannot",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
+  },
+  {
+   "id": "232",
+   "title": "design.py: every number from data (the 6 countries, the 9 new, the 9 and 3), and one 'as of' for each statement across the front page, personas and mockups",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
+  },
+  {
+   "id": "233",
+   "title": "One status vocabulary on every page with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside it",
+   "status": "open",
+   "owner": "factcheck",
+   "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). The fact-check desk, 24 October: outside the desk's scope (it owns factcheck/** only); the status words on other pages belong to story-site and the build's helpers to dev@php.newsroom. The desk's figure for every claim is in data/factcheck.json (assessments[].display) for them to show beside the five-way count."
+  },
+  {
+   "id": "234",
+   "title": "'What changed' in the reader's path lists story changes only: no version tags, commit hashes or page furniture",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
+  },
+  {
+   "id": "235",
+   "title": "Board 138 with the desk's review: A as the default front page and C as the model page; Focus capped at a few dozen pages for every reader; the dial's names in plain words; no view links to a page it hides",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
+  },
+  {
+   "id": "236",
+   "title": "Go or no-go on the desk's two runs (09:15 and 16:15 London) and the repeat_until date",
+   "status": "done",
+   "owner": "editor",
+   "note": "From the brief: the news desk chief on a schedule (24 October; for the editor's go). The editor's go, 24 October: the desk's card is data/schedule/desk.json."
+  },
+  {
+   "id": "237",
+   "title": "With the editor's go: the desk's schedule and its two repeating tasks (desk-morning-line, desk-afternoon-check) in the schedule vault",
+   "status": "done",
+   "owner": "conductor",
+   "note": "From the brief: the news desk chief on a schedule (24 October; for the editor's go). Superseded: schedules moved into the repository (data/schedule/); the desk wrote its own card."
+  },
+  {
+   "id": "238",
+   "title": "Resume the fact-check desk's schedule: the front-page errors it found (K-011 first) wait on it",
+   "status": "done",
+   "owner": "editor",
+   "note": "From the brief: the news desk chief on a schedule (24 October; for the editor's go). The editor's go, 24 October ('continue with the fact checker'): its scheduled task re-enabled by the desk, on board 103's daytime hours."
+  },
+  {
+   "id": "239",
+   "title": "/team/desk/: the desk's notes, newest first, from the schedule vault's run records",
+   "status": "done",
+   "owner": "dev",
+   "note": "From the brief: the news desk chief on a schedule (24 October; for the editor's go). Superseded: the schedule vault is retired; the desk's card, runs and messages show on /team/schedule/ (24 October)."
+  },
+  {
+   "id": "240",
+   "title": "Clean hands before any correction request: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framing, about 32 pages), K-011 on the front page, the status words on nl-offline and kev-precedent",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Done by the desk on the editor's instruction, 24 October: the 70% wordings, K-004 in the claim and the question, K-011 and the offline lines on the front page, nl-offline and kev-precedent to reported, and wordpress-drupal as researchers' tests. The /signals/ chart still sets 1.57 million against 2.6 million on one scale (board 251)."
+  },
+  {
+   "id": "241",
+   "title": "Bring claude/corrections-liaison-desk up to dev, re-check R-001 to R-003 against the 295 sources, draft the desk's requests 2 to 12 with every quote checked against its capture, and release /outreach/",
+   "status": "done",
+   "owner": "liaison@php.newsroom",
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Done by the desk, 24 October: the branch merged, eleven requests drafted with every quote checked in its capture, /outreach/ released with the emails."
+  },
+  {
+   "id": "242",
+   "title": "Capture the CVSS '10.0' relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's '90%' as it stands and the UK minister's figures, before any request rests on them",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go)."
+  },
+  {
+   "id": "243",
+   "title": "The sending decision for correction requests: the editor sends each on the liaison's draft (the desk's recommendation), or a standing rule with a change to the security requirements",
+   "status": "done",
+   "owner": "editor",
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). The editor's decision, 24 October: the editor sends every request, under the editor's own name or riskmandate.ai, through the editor's own workflow."
+  },
+  {
+   "id": "244",
+   "title": "Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs board 238)",
+   "status": "done",
+   "owner": "factcheck",
+   "note": "From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Run 3 (24 October): Finding-33 and Finding-102 closed as fixed (and Finding-124); K-009 explained by time (the Foundation describes the IDs at about 15:00 UTC; the exploit video came that evening). Finding-32 stays open: claim note, numbers.json and the front page still say no page names the survey, and Cloudflare links W3Techs."
+  },
+  {
+   "id": "245",
+   "title": "Allow the mail agent to write to a publisher's published corrections address, for requests the editor approved one by one: a change to admin/security/REQUIREMENTS.md section 6 and the mandate, on a branch, for security's review and the editor's go",
+   "status": "done",
+   "owner": "editor",
+   "note": "From the brief: a corrections liaison joins the team (22 October). Not needed: the editor sends each request (24 October); no agent writes to a publisher."
+  },
+  {
+   "id": "246",
+   "title": "Confirm which agent and address send the liaison's requests (the brief names the agent at riskmandate.ai; the security requirements name agent@diniscruz.ai)",
+   "status": "done",
+   "owner": "editor",
+   "note": "From the brief: a corrections liaison joins the team (22 October). The editor, 24 October: the editor sends, under the editor's own name or riskmandate.ai."
+  },
+  {
+   "id": "247",
+   "title": "Capture each publisher's published corrections route before a request goes: Wiz, AWS, WIRED, ISMG, The Hacker News, the BBC, CNN, Fortune, Clarín, Le Temps, ITmedia",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: a corrections liaison joins the team (22 October)."
+  },
+  {
+   "id": "248",
+   "title": "Capture the FT's coverage of php2shell; nothing can be asked of the FT until it is captured",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: a corrections liaison joins the team (22 October)."
+  },
+  {
+   "id": "249",
+   "title": "Check R-003 (CNN): the headline and body sentences character for character in the 11:26 UTC capture",
+   "status": "done",
+   "owner": "liaison",
+   "note": "From the brief: a corrections liaison joins the team (22 October). Done by the desk, 24 October: both CNN sentences found character for character in the 11:26 UTC capture."
+  },
+  {
+   "id": "250",
+   "title": "Capture the PHP security team's reply on oss-security (2026/10/22/15) into the evidence vault, so the front page can settle whether the fix is complete (K-011)",
+   "status": "open",
+   "owner": "collector-primary",
+   "note": "From the editor's session, 24 October (desk@php.newsroom)."
+  },
+  {
+   "id": "251",
+   "title": "/signals/: the ladder chart draws 1.57 million against 2.6 million on one scale; they are counts of different populations (K-004). Redraw against Censys's 1.58 million versioned hosts, or as two charts",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the editor's session, 24 October (desk@php.newsroom)."
+  },
+  {
+   "id": "252",
+   "title": "The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as homes by persona, the menu by task with two dials (who you are; Focus, Standard, Everything), the wide layout, and every admin page in the team console (D)",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "The editor, 24 October, in story-site's session: \"I think you implement all of them.\" Covers most of 139 to 142 (rows of dev, the briefing writer and the editor, left for their owners to close): the dials are remembered in the browser, not yet in the reader's vault; pattern C is on the agencies page only. Brief: admin/content/briefs/2026-10-24__brief__the-redesign-live.md.",
+   "version": "0.14.0"
+  },
+  {
+   "id": "253",
+   "title": "Policies: the pages ops/** and analysis/** (story-site's, from row 252) have no owner in scope.pages",
+   "status": "open",
+   "owner": "librarian",
+   "note": "The gate warns that no member owns them. story-site does not edit policy files."
+  },
+  {
+   "id": "254",
+   "title": "Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, tokens derived, handed sealed), send_to_lane.py, drained on the Sherpa's schedule; next: the RiskMandate agent's own inbox for the other direction",
+   "status": "done",
+   "owner": "sherpa"
+  },
+  {
+   "id": "255",
+   "title": "Investigations: a section of the fact-check desk that chases one question down to its measurements; the first, how much PHP there is and where '70%' comes from (measures, lineage, timeline, corrections, Fortune for UF-005.1)",
+   "status": "done",
+   "owner": "factcheck",
+   "note": "From the editor's brief of 24 October (admin/content/briefs/2026-10-24__brief__factcheck-investigations-how-much-php.md)."
+  },
+  {
+   "id": "256",
+   "title": "Ownership for the policy drafts, from the librarian's pass of 24 October: data/desk.json is the journalist's (its layers.json row and the commit that added it); analysis/** and ops/** are the story site's (the redesign's reader homes, v0.14.0). Add them to those members' policy.json and ROLE.md",
+   "status": "open",
+   "owner": "abp"
+  },
+  {
+   "id": "257",
+   "title": "The journalist's full pass (pass step 2, v0.12.1 and v0.14.3) wrote 34 files owned by six other members: the story site's claims, impact and story; the newsroom lead's evidence exports; the historian's history; the librarian's questions; the conductor's updates and team; the researcher's compromise and watch. Either widen the journalist's policy to the pass, or route the pass through each owner: the editor's call",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "258",
+   "title": "The librarian's card contradicts its own wake prompt: its 'Map' step gives new files an owner in the policy drafts, but the prompt allows only the librarian's own files (policies are abp@'s). Say which holds; until then the librarian follows the prompt and opens rows for abp@",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "259",
+   "title": "Front page, 'What nobody knows yet': 'Where the 70% figure comes from. None of the pages that use it says how it was measured' is out of date: Cloudflare links W3Techs, and the fact-check desk's investigation /factcheck/investigations/php-share/ answers it (Finding-32)",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the news desk chief's morning wake, 24 October."
+  },
+  {
+   "id": "260",
+   "title": "From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sticks as one line or not at all (233px today, 30% of the screen; F034)",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done by dev@php.newsroom on 24 October: at 700px and narrower one 43px line stays at the top (the site's name, the version, Menu); the status, the breadcrumbs and the tools (Ask, Feedback, who you are, the view, the meter) open with the menu, and an open menu scrolls inside the screen. Measured in Chromium at 360 and 390 wide: 233px to 43px.",
+   "version": "0.14.21"
+  },
+  {
+   "id": "261",
+   "title": "From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed, with the before-and-after blocks",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "262",
+   "title": "From CI-003, step 3: a progression measure at every drain: of front-page sessions, the share reaching a briefing, the guidance or the evidence, by device and chosen persona, the week before the redesign and each week after",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "263",
+   "title": "From CI-003, step 4: confirm or reject an inferred graph link, signed with an enrolled key and sent as a 'review' through the collaborators lane; the drain records it in the edge's history (who may review and how many confirmations: the editor's call)",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "264",
+   "title": "Sherpa: CI-003 to the editor: the CTO's place (the redesign puts it in Operations, the three-views brief with the executive); the three ways to read on the first screen, named by task (F035); and a power-user invitation for the collaborator so his feedback and reviews come signed",
+   "status": "open",
+   "owner": "sherpa"
+  },
+  {
+   "id": "265",
+   "title": "From CI-003 (story-site): the front page's 'Three ways to read this site' on the first screen and named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home; today it is seventh, 9,218px down on a phone (F035)",
+   "status": "open",
+   "owner": "story-site"
+  },
+  {
+   "id": "266",
+   "title": "Every release links the pages it changed: under each release on /admin/versions.html, the main pages it changed (new first, then by how much their text changed), eight shown and the rest behind a toggle; filled back to v0.2.0, and written at each release's own build from now on",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done at the editor's ask of 24 October: admin/build/release_pages.py, data/release-pages.json; guidance in AGENTS.md section 1 (name the main page in the message, check the entry after releasing).",
+   "version": "0.14.19"
+  },
+  {
+   "id": "267",
+   "title": "dev's policy: add admin/build/release_pages.py and data/release-pages.json to scope.writes (made this round, at the editor's override), and the release history's styles in assets/site.css to dev's appends",
+   "status": "open",
+   "owner": "abp@newsroom.sgit",
+   "note": "From dev@php.newsroom's round of 24 October; the files exist and the build writes the data file at every release."
+  },
+  {
+   "id": "268",
+   "title": "Commit-FS-lite: a one-line pointer in CLAUDE.md (\"read your notes when you take in dev: schedule.py notes <you>; send them as To-<agent> trailers in your release commit; AGENTS.md section 8\")",
+   "status": "open",
+   "owner": "security@php.newsroom",
+   "note": "CLAUDE.md is in security@'s scope; asked by the conductor in the release commit of 24 October."
+  },
+  {
+   "id": "269",
+   "title": "Signed commit notes: an Agent-Sig trailer over each note, checked against the sender's enrolled key, so a note's sender is proven, not claimed",
+   "status": "open",
+   "owner": "conductor",
+   "note": "After every agent has an enrolled key (abp@, security@)."
   }
  ],
  "evidence_vault": {

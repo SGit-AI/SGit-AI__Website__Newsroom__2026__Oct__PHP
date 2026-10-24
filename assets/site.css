@@ -155,6 +155,7 @@ table.ctx td:nth-child(6),table.ctx td:nth-child(7){min-width:14rem}
 .rgraph .nd text{font-size:9px;fill:var(--dim)}
 .rgraph .nd circle{fill:var(--panel);stroke:var(--dim);stroke-width:1.5;cursor:pointer}
 .rgraph .nd.l-vulnerability circle{stroke:var(--red,var(--warm))}.rgraph .nd.l-remediation circle{stroke:var(--accent);fill:var(--accent)}.rgraph .nd.l-code circle{stroke:var(--dim)}
+.rgraph .nd.l-stakeholder circle{stroke:var(--accent);fill:var(--accent)}.rgraph .nd.l-risk circle,.rgraph .nd.l-flaw circle{stroke:var(--red,var(--warm))}.rgraph .nd.l-arc circle{stroke:var(--warm)}.rgraph .nd.l-fix circle{stroke:var(--accent);fill:var(--accent)}.rgraph .nd.l-function circle,.rgraph .nd.l-line circle{stroke:var(--dim);fill:var(--dim)}
 .rgraph .nd.here circle{fill:var(--accent);stroke:var(--accent)}.rgraph .nd.here text{fill:var(--head);font-weight:700}
 .rgraph .nd:focus{outline:none}.rgraph .nd:focus circle{stroke:var(--accent);stroke-width:2.5}
 .rnode{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0}
@@ -707,3 +708,44 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1
 .ba-note p{margin:.2rem 0 .6rem}
 pre.diff{font:12.5px/1.55 var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.7rem .9rem;overflow-x:auto;white-space:pre}
 pre.diff .d-add{display:block;background:var(--ok-bg);color:var(--ok-ink)}pre.diff .d-del{display:block;background:var(--bad-bg);color:var(--bad-ink)}pre.diff .d-ctx{display:block;color:var(--dim)}
+/* Elsewhere: the separate Pulse section (pulse/), kept apart from the PHP pages */
+.o-elsewhere{border-left:4px solid var(--dim);border-style:dotted solid dotted solid}
+table.pulse td.pr{text-align:center;font-size:.78rem;white-space:nowrap}
+table.pulse td.pr-yes{background:color-mix(in srgb,var(--accent,#0f6e5a) 18%,transparent);font-weight:600}
+table.pulse th{text-align:center}
+blockquote.tp{margin:.35rem 0;padding:.3rem .7rem;border-left:3px dashed var(--line);color:var(--ink,inherit)}
+ul.pev{padding-left:1.1rem}
+ul.pev li{margin:.5rem 0}
+/* The journalist's desk (/views/desk/): the cycle and the pass as numbered cards */
+.dk-fig{margin:1rem 0}
+.dk-fig figcaption{font-size:.8rem;color:var(--dim);margin-top:.5rem}
+.dk-cycle,.dk-seq{list-style:none;padding:0;margin:0;display:grid;gap:.6rem;counter-reset:dk}
+.dk-cycle{grid-template-columns:repeat(auto-fit,minmax(11.5rem,1fr))}
+.dk-step{counter-increment:dk;position:relative;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:.6rem .75rem .65rem 2.3rem;display:flex;flex-direction:column;gap:.2rem;font-size:.86rem}
+.dk-step::before{content:counter(dk);position:absolute;left:.6rem;top:.55rem;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--accent,#0f6e5a);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.dk-step:last-child{border-style:dashed}
+.dk-who{overflow-wrap:anywhere}
+.dk-who,.dk-st{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+.dk-pass{display:grid;grid-template-columns:2rem 1fr;column-gap:.6rem;row-gap:.15rem;border-left:4px solid var(--line);padding:.45rem .7rem;background:var(--panel);border-radius:0 8px 8px 0;font-size:.88rem}
+.dk-pass>*:not(.dk-n){grid-column:2}
+.dk-n{grid-row:1/span 3;font-size:1.3rem;font-weight:700;color:var(--dim)}
+.dk-done{border-left-color:var(--accent,#0f6e5a)}
+.dk-in-progress{border-left-color:var(--warm,#c77d1a)}
+.dk-in-progress .dk-st{color:var(--warm,#c77d1a);font-weight:700}
+.dk-done .dk-st{color:var(--accent,#0f6e5a);font-weight:700}
+.rp a{white-space:normal}.rp-new{font-size:.7rem;padding:0 .35rem;border-radius:999px;background:var(--accent);color:var(--bg);vertical-align:1px}
+.rp{margin:.4rem 0}.rp-more{display:inline}.rp-more summary{display:inline;cursor:pointer;color:var(--accent)}.rp-more[open] summary{margin-right:.3rem}.rp-more p{margin:.3rem 0 0}
+.rp-gone{color:var(--dim)}
+/* The header on a phone (CI-003.3, board 260): one line stays at the top, the site's name, the version and Menu;
+   the status, the breadcrumbs and the tools (Ask, Feedback, who you are, the view, the meter) open with the menu,
+   and an open menu scrolls inside the screen instead of past it. */
+@media (max-width:700px){
+  nav.site{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  nav.site .row{padding-top:.35rem;padding-bottom:.35rem;row-gap:.5rem}
+  nav.site:not(:has(.nav-items.open)) .row>.status,nav.site:not(:has(.nav-items.open)) .row>.crumbs,nav.site:not(:has(.nav-items.open)) .row>.tools{display:none}
+  nav.site .nav-toggle{order:2}
+  nav.site .row>.status,nav.site .row>.crumbs{order:3;flex-basis:100%}
+  nav.site .row>.tools{order:4}
+  nav.site .nav-items{order:5}
+  nav.site:has(.nav-items.open){max-height:100vh;max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
+}

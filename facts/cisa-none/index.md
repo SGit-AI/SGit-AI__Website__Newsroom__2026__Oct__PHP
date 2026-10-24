@@ -25,7 +25,7 @@ The CISA alert itself carries the dated negative and the captured KEV JSON (cata
 | [cve-cve-2026-109618](../../sources/cve-cve-2026-109618/index.html) | carries | *nothing that carries it* | f856138e139c216e |
 | [cve-cve-2026-109618](../../sources/cve-cve-2026-109618/index.html) | absent | *nothing that carries it* | f8705d8e0aa2a248 |
 
-Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-6](../../factcheck/index.html#Evidence-6), [Finding-13](../../factcheck/index.html#Finding-13), [Finding-63](../../factcheck/index.html#Finding-63).
+Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-18](../../factcheck/index.html#Evidence-18), [Evidence-6](../../factcheck/index.html#Evidence-6), [Finding-13](../../factcheck/index.html#Finding-13), [Finding-63](../../factcheck/index.html#Finding-63).
 
 Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -59,4 +59,4 @@ Sources: cisa-alert-php-20261021, cisa-kev-json, cve-cve-2026-109618
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/cisa-none/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/cisa-none/index.html

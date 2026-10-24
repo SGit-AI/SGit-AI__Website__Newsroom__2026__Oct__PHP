@@ -33,7 +33,7 @@ the night before, there was no public record of companies being hit.
 
 ## What the watch holds already (23 October, 12:40 UTC)
 
-Every row below is a captured page in the source watch (vault `oq9gflln`, `index/angles/scanner-noise.json`), with
+Every row below is a captured page in the source watch (vault `7r83qic5`, `index/angles/scanner-noise.json`), with
 its snapshot and hash. Every quote was checked against the snapshot when the file was written.
 
 | Kind | Who, where | What it shows |

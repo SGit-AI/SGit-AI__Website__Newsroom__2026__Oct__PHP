@@ -28,8 +28,9 @@
    "handle": "editor",
    "role": "editor",
    "made": "2026-10-22",
-   "expires": "2026-11-05",
-   "used": 1
+   "expires": "2026-10-23",
+   "used": 2,
+   "note": "Retired on 24 October by the Sherpa: its code appeared in drained enrolment rows, and power users get their own invitations (or none, once feedback needs no key)."
   }
  ],
  "keys": [
@@ -49,6 +50,24 @@
     "fingerprint": "sha256:f23632fdd841783b",
     "signing_fingerprint": "sha256:89984d97af4d2deb"
    }
+  },
+  {
+   "handle": "power-user-1",
+   "role": "power-user",
+   "signing_fingerprint": "sha256:fe0518960fcebb22",
+   "fingerprint": "sha256:15c862419ffaafc1",
+   "device": "desktop",
+   "enrolled": "2026-10-24",
+   "invited_by": "conductor",
+   "bundle": {
+    "v": 1,
+    "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAznNz3R50fQVY1+t1wR+F\nec7C8BFD3ajB6r25za4lUp5Wmk53dQTVZAUOlp0RSsHIjBVycXe26eYxVA6OmqcD\nC8ESZKQAIPJwmj02lG5p2m2MZVcPocF/23Ew+dYrEfFbDuletn+63xpHLn23g3qx\nytZil9otCvPvRQQ7Bv3wgosRmfSmPSqu26t30fxMFnnZP+q81Wxtn1eTMaFcffUL\nBofTZi4OQf75z3YW8mqqIXiqsaCCutNjF8otsC/MgoN1bC3/A5BCq/OLGtrMW1nf\nrVsxW0Rrwq3N4Ov+zCPp9UqEAzjb8qtersSjukQfVvw0xsLPI7FQEZ6cHtV0xSCV\nqTPgwpdQgTsG1MYVfzQgBZSqKwu5YgNElG2mvxEj7+jaXlo24A0HUY74rl8CpGr4\ndUTcZq4YYG6/7TMqdyhFYl7sojLM65Fzt12YoH3YNNQ59zGEH/vnmIauj+wwBhYf\nV6DxZmsmMevZtAqFsEoq5eSlt0wxT4LJlrxCah4MPHZzFMELzNqAk1gK7EGHwoUH\ncfNNOkoAq0uuimvoHG54UekRw/YIEQZgQFptYHiHwVV/LnAb2ou9WDSmgK6/NUza\njHqNNuHS2SC7Wc9v6d4LAXUArEHaG2LLqL5U0vMaw6F/Aub9xk+Z4kDb+V7OzSS/\nMIgVxlJLDqsA/ghJWIs/pRkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+    "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/zbg9ILHXkoQGSGbglpZ/GE/5JVh\nr8BLSKx3a7e8DlLSd25yYH0KfUa88YvSr9phaV9qrff+6yDlo/eAP7DdbA==\n-----END PUBLIC KEY-----\n",
+    "label": "editor",
+    "fingerprint": "sha256:15c862419ffaafc1",
+    "signing_fingerprint": "sha256:fe0518960fcebb22"
+   },
+   "note": "Enrolled from the editor's bootstrap invitation on 24 October; its role set to power-user and its handle given on the editor's instruction in session (the invitation carried the editor's role)."
   }
  ]
 }

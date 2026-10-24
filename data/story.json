@@ -71,13 +71,26 @@
    ]
   },
   {
-   "html": "Exploitation attempts are reported from several directions, but no agency has confirmed a successful compromise. Amazon says a honeypot was hit on 17 October, four days before disclosure. Cloudflare saw attack traffic after the leak. Latvia saw automated attempts, none successful. CISA has not listed either CVE as known-exploited. New Zealand's NCSC alone says it is <q>aware of reports of active exploitation</q>.",
+   "html": "Exploitation attempts are reported from several directions, in millions by Cloudflare's count, but no organisation has said it was compromised through php2shell, as of the evidence vault's latest capture (16:04 UTC on 23 October). Amazon says a honeypot was hit on 17 October, four days before disclosure. Four named cases have been tested: Valtec retracted, and ČVUT, GMO and DMM state no php2shell cause. Neither CVE is in CISA's Known Exploited Vulnerabilities catalog at the source watch's last check (08:03 UTC on 23 October). The US, Australia, Germany, Switzerland and Japan say they know of no successful exploitation; New Zealand's NCSC alone says it is <q>aware of reports of active exploitation</q>.",
    "sources": [
-    "thehackernews-php2shell-4days",
-    "cloudflare-blog-php2shell-waf",
-    "certlv-php-preventive",
+    "x-eastdakota-php2shell-stats",
+    "aws-security-blog-madpot",
+    "impress-watch-valtec",
+    "lupa-cvut-cyber-attack",
+    "yahoo-jp-gmo-fx-login-leak",
+    "sankei-dmm-service-halt",
     "cisa-kev-json",
+    "cisa-alert-php-20261021",
+    "acsc-alert-php",
     "ncsc-nz-alert-php"
+   ]
+  },
+  {
+   "html": "The advice is turning from patching to looking for break-ins. Singapore's Cyber Security Agency tells organisations to patch internet-facing systems first and to check whether they were already compromised; Luxembourg's authorities ask operators to search back for traces and keep the evidence. The first national count of what is left after the fix is Swiss: just over 23,000 of nearly 690,000 servers, about 3.5%, still affected on 22 October (Risikomonitor, via ICTjournal).",
+   "sources": [
+    "channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur",
+    "paperjam-article-php2shell-des-milliers-de-sites",
+    "ictjournal-news-2026-10-22-deux-failles-critiques-d"
    ]
   },
   {
@@ -99,16 +112,16 @@
  ],
  "open": [
   {
-   "html": "Who first leaked the CVE IDs on 20 October, and where. The PHP Foundation does not say; a PHP security team member points to an anonymous Hacker News post. No copy of that post is in the vault."
+   "html": "Who first leaked the CVE IDs on 20 October, and where. The PHP Foundation does not say; a PHP security team member points to an anonymous Hacker News post, and Notebookcheck and Nguoi Quan Sat repeat that account. No copy of the post is in the vault."
   },
   {
    "html": "Whether the deleted Calif video is the one now embedded on Calif's own write-up. Calif's page does not mention the leak."
   },
   {
-   "html": "Whether any site was actually compromised before it was patched or taken offline. Every claim of exploitation so far is of attempts, probes or honeypot hits."
+   "html": "Whether any site was actually compromised before it was patched or taken offline. Every claim of exploitation so far is of attempts, probes or honeypot hits, and the named cases do not state php2shell as the cause. Authorities in Singapore and Luxembourg now ask operators to look for traces; the answer will come from those searches, if it comes."
   },
   {
-   "html": "Which sites were really taken offline, and why. The BBC's list (parts of Wikipedia, Edinburgh council, French government services, the University of Geneva, the BBC itself) has not been captured from any of those organisations. Latvia's geo-blocking is the one documented case, from the agency itself."
+   "html": "Which sites were really taken offline, and why. The list now draws on more captured reports (Germany's hospitals and hosts, Morocco, Romania, Japan), but most are press accounts; few come from the organisations themselves (the Dutch government, Latvia's agency, Weird Gloop, the Charité's spokesman as quoted). A community tracker counts 51 listed and 50 back."
   },
   {
    "html": "Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet."

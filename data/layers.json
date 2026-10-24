@@ -84,6 +84,13 @@
    "used_on": "signals/index.html"
   },
   {
+   "path": "data/claim-review.json",
+   "layer": "derived",
+   "by": "claude-journalist",
+   "from": "the vault's per-agent claims (data/vault-claims.json) checked against the saved pages, the site's claims and the contradiction ledger",
+   "used_on": "claims/review/index.html"
+  },
+  {
    "path": "data/state.json",
    "layer": "derived",
    "by": "claude-journalist",
@@ -212,30 +219,44 @@
   {
    "path": "data/ontology.json",
    "layer": "authored",
-   "by": "the cartographer",
+   "by": "the ontologist",
    "from": "the estate's grammar (graphs.sgit.ai, newsroom.sgit.ai's ontologies), board 030 and 062, the newsroom review's change 10",
    "used_on": "graph/index.html"
   },
   {
    "path": "data/entities.json",
    "layer": "authored",
-   "by": "the cartographer",
+   "by": "the ontologist",
    "from": "the publisher strings of data/sources.json and the parties named in the claims, numbers, exploitation and agency rows; actor ids reused from data/actors.json",
    "used_on": "graph/parties/index.html"
   },
   {
    "path": "data/attribution.json",
    "layer": "authored",
-   "by": "the cartographer",
+   "by": "the ontologist",
    "from": "the free-text 'by' and 'who' of each claim, number and exploitation row, resolved to entities",
    "used_on": "graph/parties/index.html"
   },
   {
    "path": "data/crosswalk.json",
    "layer": "authored",
-   "by": "the cartographer",
+   "by": "the ontologist",
    "from": "the node ids of the story, code-review and risk graphs, and data/grc.json's stakeholders",
    "used_on": "graph/index.html"
+  },
+  {
+   "path": "data/arcs.json",
+   "layer": "derived",
+   "by": "the librarian (librarian@php.newsroom)",
+   "from": "the claims, timeline phases, personas and review nodes: risks and story arcs, and the joins from stakeholders to risks and from claims to the flaws and the parts of the fix; every row names ids that exist",
+   "used_on": "fractal/index.html"
+  },
+  {
+   "path": "data/fractal.json",
+   "layer": "derived",
+   "by": "admin/build/build.py",
+   "from": "data/arcs.json, claims, timeline, personas, review and review/code/files.json, assembled into one graph from stakeholders to changed lines",
+   "used_on": "fractal/ui/index.html"
   },
   {
    "path": "admin/content/articles/",
@@ -280,6 +301,20 @@
    "used_on": "team/index.html"
   },
   {
+   "path": "data/advisories.json",
+   "layer": "site",
+   "by": "security@php.newsroom",
+   "from": "the security passes and outside reports: every vulnerability, its root cause and its fix",
+   "used_on": "admin/appsec/advisories/index.html"
+  },
+  {
+   "path": "data/appsec.json",
+   "layer": "site",
+   "by": "security@php.newsroom",
+   "from": "the threat model, data flows, policies, runbooks, bounty rules and reviewer prompts",
+   "used_on": "admin/appsec/index.html"
+  },
+  {
    "path": "data/admin.json",
    "layer": "site",
    "by": "dev@php.newsroom",
@@ -292,6 +327,13 @@
    "by": "conductor@php.newsroom",
    "from": "the roster of the team, human and agent: role, what each owns, rules, home pages, what each has done; the run and the three coordination vaults",
    "used_on": "team/index.html"
+  },
+  {
+   "path": "data/agents.json",
+   "layer": "site",
+   "by": "admin/build/build.py (librarian@php.newsroom)",
+   "from": "admin/content/agents/*/: every member's policy.json, status.json and debriefs, with the computed delta and the scope checks",
+   "used_on": "admin/agents/rounds/index.html"
   },
   {
    "path": "data/schedules.json",
@@ -353,7 +395,7 @@
    "path": "data/compromise.json",
    "layer": "authored",
    "by": "researcher@php.newsroom",
-   "from": "the evidence vault and the source-watch vault (oq9gflln): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot",
+   "from": "the evidence vault and the source-watch vault (7r83qic5): every statement about attacks on, or compromises of, real systems, with its source or its dated watch snapshot",
    "used_on": "compromise/index.html"
   },
   {
@@ -404,6 +446,13 @@
    "by": "any agent, one markdown file per message (admin/build/schedule.py send)",
    "from": "messages between agents, in the open; material, never instructions",
    "used_on": "team/schedule/index.html"
+  },
+  {
+   "path": "data/comms.json",
+   "layer": "site",
+   "by": "conductor, admin/build/schedule.py export-notes on its wakes",
+   "from": "the Commit-FS-lite notes (To-<agent>, To-all trailers) in the last 600 commits on dev",
+   "used_on": "team/comms/index.html"
   },
   {
    "path": "data/glossary.json",
@@ -579,6 +628,34 @@
    "by": "dev@php.newsroom",
    "from": "the rules the gaps page computes over the risk graph",
    "used_on": "grc/gaps/index.html"
+  },
+  {
+   "path": "data/pulse.json",
+   "layer": "evidence",
+   "by": "pulse@newsroom's vault (4klm5qlt), exported by admin/build/export_pulse.py",
+   "from": "the Pulse vault's ladders, attention counts and the short quotes it recorded, each with its capture path and sha256; no capture copied, no key",
+   "used_on": "pulse/index.html"
+  },
+  {
+   "path": "data/desk.json",
+   "layer": "site",
+   "by": "claude-journalist",
+   "from": "the editor's decision of 24 October 2026 and the journalist's pass over the site after each evidence export",
+   "used_on": "views/desk/index.html"
+  },
+  {
+   "path": "data/outreach.json",
+   "layer": "derived",
+   "by": "liaison@php.newsroom, by hand (admin/liaison/README.md)",
+   "from": "fact-check records in data/factcheck.json and captures in the evidence vault, each quote named by file and sha256",
+   "used_on": "outreach/index.html"
+  },
+  {
+   "path": "data/release-pages.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "admin/build/release_pages.py: for each release, the pages whose main content differs from the release before (version numbers masked), new pages first, then by how much their visible text changed; written once per release, at its own build",
+   "used_on": "admin/versions.html"
   }
  ]
 }

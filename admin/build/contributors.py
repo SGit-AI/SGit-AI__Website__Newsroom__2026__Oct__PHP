@@ -8,7 +8,7 @@ names, that `from` is that fingerprint, and that the signature over canon(messag
 which key wrote it. Whether that key belongs to a contributor is data/contributors.json's question (status()).
 Standard library and the sgit CLI only.
 """
-import base64, datetime, hashlib, json, os, subprocess, tempfile
+import base64, datetime, hashlib, json, os, re, subprocess, tempfile
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
@@ -74,12 +74,18 @@ def enrol(m, data, today=None):
         if not signer or signer['role'] not in rules.get('may_invite', ['editor']): return False, f'{fp}: the invitation is not from a key that may invite'
         ok, why = verify(inv, signer['bundle'])
         if not ok: return False, f'{fp}: the invitation\'s signature does not verify ({why})'
+        # Everything the invitation claims is checked before any row is kept: a refused invitation leaves nothing
+        # behind that a later one with the same nonce could inherit (security advisory SA-2026-020).
+        if inv.get('role') not in {r for r, _ in data['roles']} or inv.get('role') == 'editor': return False, f'{fp}: an invitation cannot give the role {inv.get("role")}'
+        if not re.fullmatch(r'[a-z0-9][a-z0-9._-]{0,30}', str(inv.get('handle', ''))) or inv.get('handle') == 'editor': return False, f'{fp}: the invitation\'s handle is not one an invitation may give'
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', str(inv.get('exp', ''))) or inv['exp'] > (datetime.date.fromisoformat(today) + datetime.timedelta(days=31)).isoformat():
+            return False, f'{fp}: the invitation\'s expiry is not a date within a month'
         h = hashlib.sha256(('invite|' + str(inv.get('nonce'))).encode()).hexdigest()
         row = next((i for i in data['invitations'] if i['hash'] == h), None)
+        if row and (row['role'] != inv['role'] or row['handle'] != inv['handle']): return False, f'{fp}: the invitation does not match the one first seen with its nonce'
         if not row:
             row = {'hash': h, 'handle': inv['handle'], 'role': inv['role'], 'made': '', 'expires': inv['exp'], 'used': 0, 'by': signer['handle']}
             data['invitations'].append(row)
-        if inv['role'] not in {r for r, _ in data['roles']} or inv['role'] == 'editor': return False, f'{fp}: an invitation cannot give the role {inv["role"]}'
     else:
         row = next((i for i in data['invitations'] if i['hash'] == hashlib.sha256(str(m.get('code', '')).encode()).hexdigest()), None)
         if not row: return False, f'{fp}: its code is not an invitation'

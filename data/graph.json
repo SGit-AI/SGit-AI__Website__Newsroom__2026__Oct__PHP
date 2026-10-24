@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.11.1",
+ "version": "0.14.27",
  "vault_commit": "1845598d9a38",
  "title": "The story graph",
  "note": "A node means what its edges say about it. Every edge is a verb from data/ontology.json with a named inverse; there is no generic association edge. Parties are resolved through data/entities.json and data/attribution.json; relays are derived, so many outlets passing on one statement count as one origin.",
@@ -15830,7 +15830,7 @@
   {
    "id": "claim:wordpress-drupal",
    "kind": "claim",
-   "label": "Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS",
+   "label": "In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS",
    "status": "reported",
    "href": "facts/wordpress-drupal/index.html",
    "by": "Calif; Wiz for WordPress and Drupal",
@@ -15841,10 +15841,10 @@
   {
    "id": "claim:scale-70pc-internet",
    "kind": "claim",
-   "label": "Roughly 70% of the Internet is affected",
+   "label": "70% of the Internet is affected",
    "status": "unverified",
    "href": "facts/scale-70pc-internet/index.html",
-   "by": "Wiz (headline, X post); BBC attributing Wiz",
+   "by": "Wiz (headline, X post); the BBC, which reports it as Wiz's 'roughly 70%'",
    "origins": 1,
    "relays": 1,
    "echo": false
@@ -15858,7 +15858,7 @@
   {
    "id": "claim:scale-70pc-websites",
    "kind": "claim",
-   "label": "PHP is used by almost 70% of websites",
+   "label": "PHP is used by almost 70% of websites whose server-side language is known",
    "status": "reported",
    "href": "facts/scale-70pc-websites/index.html",
    "by": "Cloudflare; OpenAI ('an estimated 70%'); Wiz body text",
@@ -15880,12 +15880,11 @@
   {
    "id": "claim:scale-2.6m-hosts",
    "kind": "claim",
-   "label": "PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpatched on 21 October",
+   "label": "VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 October",
    "status": "reported",
    "href": "facts/scale-2.6m-hosts/index.html",
    "by": "VulnCheck and Censys, via The Hacker News and SecurityWeek",
    "origins": 2,
-   "tension": "K-004",
    "relays": 3,
    "echo": false
   },
@@ -16013,7 +16012,6 @@
    "href": "facts/leak-cve-ids/index.html",
    "by": "PHP Foundation",
    "origins": 1,
-   "tension": "K-009",
    "relays": 0,
    "echo": false
   },
@@ -16031,7 +16029,6 @@
    "href": "facts/leak-hn/index.html",
    "by": "Alexandre Daubois (PHP security team, personal blog)",
    "origins": 1,
-   "tension": "K-009",
    "relays": 0,
    "echo": false
   },
@@ -16054,7 +16051,6 @@
    "href": "facts/leak-video/index.html",
    "by": "PHP Foundation",
    "origins": 1,
-   "tension": "K-009",
    "relays": 0,
    "echo": false
   },
@@ -16362,10 +16358,10 @@
   {
    "id": "claim:no-confirmed-compromise",
    "kind": "claim",
-   "label": "As of 20:50 UTC on 22 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.",
+   "label": "As of 16:04 UTC on 23 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing.",
    "status": "reported",
    "href": "facts/no-confirmed-compromise/index.html",
-   "by": "this site, from every captured source in the evidence vault and the source watch, as of 20:50 UTC on 22 October",
+   "by": "this site, from every captured source in the evidence vault (295 sources, head 1845598d9a38), as of its latest capture at 16:04 UTC on 23 October",
    "origins": 1,
    "relays": 0,
    "echo": false
@@ -16440,8 +16436,8 @@
   {
    "id": "claim:nl-offline",
    "kind": "claim",
-   "label": "The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services",
-   "status": "confirmed",
+   "label": "The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too",
+   "status": "reported",
    "href": "facts/nl-offline/index.html",
    "by": "the Dutch government",
    "origins": 1,
@@ -16541,7 +16537,7 @@
    "id": "claim:kev-precedent",
    "kind": "claim",
    "label": "The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one day",
-   "status": "confirmed",
+   "status": "reported",
    "href": "facts/kev-precedent/index.html",
    "by": "CISA KEV catalog; Akamai (2024)",
    "origins": 2,
@@ -17642,7 +17638,7 @@
    "id": "contradiction:K-004",
    "kind": "contradiction",
    "label": "K-004: How many systems are still unpatched?",
-   "status": "open",
+   "status": "explained",
    "href": "factcheck/index.html#K-004"
   },
   {
@@ -17677,7 +17673,7 @@
    "id": "contradiction:K-009",
    "kind": "contradiction",
    "label": "K-009: Did any technical detail leak on 20 October?",
-   "status": "open",
+   "status": "explained",
    "href": "factcheck/index.html#K-009"
   },
   {
@@ -17693,6 +17689,13 @@
    "label": "K-011: Is the fix in PHP 8.5.12 incomplete?",
    "status": "open",
    "href": "factcheck/index.html#K-011"
+  },
+  {
+   "id": "contradiction:K-012",
+   "kind": "contradiction",
+   "label": "K-012: What does W3Techs say: 69.3% or 75%?",
+   "status": "explained",
+   "href": "factcheck/index.html#K-012"
   }
  ],
  "edges": [
@@ -22297,6 +22300,46 @@
   },
   {
    "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:paperjam-article-php2shell-des-milliers-de-sites"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:itsocial-cybersecurite-cybersecurite-articles-php"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:lupa-cvut-cyber-attack"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:yahoo-jp-gmo-fx-login-leak"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:sankei-dmm-service-halt"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:impress-watch-valtec"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "cites",
+   "to": "source:the-verge-php2shell-websites-down"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
    "verb": "classified_as",
    "to": "topic:impact"
   },
@@ -22508,7 +22551,7 @@
   {
    "from": "claim:nl-offline",
    "verb": "cites",
-   "to": "source:dutchitleaders-websites-offline"
+   "to": "source:tpo-nl-digid-offline"
   },
   {
    "from": "claim:nl-offline",
@@ -24585,6 +24628,11 @@
    "to": "claim:more-paths"
   },
   {
+   "from": "contradiction:K-012",
+   "verb": "flags",
+   "to": "claim:scale-70pc-websites"
+  },
+  {
    "from": "claim:ac-high",
    "verb": "appears_in",
    "to": "capture:imperva-blog-php2shell/20261022T111855Z",
@@ -25052,6 +25100,20 @@
    "to": "capture:abc-au-politics-live/20261022T081530Z",
    "file": "text.txt",
    "sha256": "a86331d9b7a21f78af1750d3daf6ebbb696253e1216649e973e34262313040b1"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "appears_in",
+   "to": "capture:the-verge-php2shell-websites-down/20261023T012042Z",
+   "file": "text.txt",
+   "sha256": "1a9a20537e477cc84bdd688c3d13f165e980a7bae0aa54bd2f88011d32d3b3d3"
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "appears_in",
+   "to": "capture:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/20261023T080331Z",
+   "file": "text.txt",
+   "sha256": "82ef905cd2201bd4507643ba274b135e32b1e440606b1ded976617c782b28166"
   },
   {
    "from": "claim:no-exploitation",

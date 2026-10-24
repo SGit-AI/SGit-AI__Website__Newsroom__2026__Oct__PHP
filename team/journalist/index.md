@@ -17,6 +17,7 @@ What is settled, where the alarm and the evidence part company, and what would c
 ## What they own
 - admin/content/articles/*__journalist__*.md
 - the review of the front page and navigation
+- the site's refresh after every evidence export (the editor, 24 October 2026): the hand-kept data files on /views/desk/, the claims review and the state of affairs
 
 ## The rules they work by
 - An article names the site version, vault commit and capture time it was written against, and is not revised afterwards.
@@ -37,6 +38,8 @@ Storiesarticles/index.html
 | 063 | Carry every stat as its series: each number on the site drawn as a line whose points link to their captures, starting with sites offline, products fixed, attempts and unpatched hostsFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
 | 093 | A story on the reporting clocks php2shell can start (GDPR 72 hours, NIS2 24 hours, the Cyber Resilience Act's 24-hour report since 11 September 2026, DORA): R06 and the risks beneath it have no story yet (/grc/)From the brief: a GRC desk joins the team (22 October). | open |  |
 | 154 | Write the next version of the state of affairs when the evidence moves: a KEV listing, a named victim, GMO's cause, or the inventory's investigation pile resolving | open |  |
+| 225 | The piece on where the web went dark and why, once 221 and 222 are in, not beforeFrom the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go). | open |  |
+| 229 | Where php2shell stands, day two: the successor to the day-one piece, against the three counts, once board 039 landsFrom the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go). | open |  |
 
 ## What they have done
 - The first house stories, and the review of the front page and navigation.
@@ -65,4 +68,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html

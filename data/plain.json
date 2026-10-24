@@ -1,7 +1,7 @@
 {
  "note": "The plain-English layer: the front page's headline, the five questions everyone asks, the story in five moments, and a one-line plain summary for every page. Every factual sentence cites the vault slugs it rests on; the gate refuses an unknown slug.",
  "headline": "Two serious security flaws in PHP, the software behind many of the world's websites",
- "deck": "PHP is the software that WordPress and millions of other websites run on. A fix came out on 21 October 2026. Government cyber agencies have told organisations to install it now, or to take websites offline if they cannot. Phones and personal computers are not affected.",
+ "deck": "PHP is the software that WordPress and millions of other websites run on. A fix came out on 21 October 2026. Government cyber agencies have told organisations to install it now; the two US agencies add: take websites offline if you cannot. Phones and personal computers are not affected.",
  "cards": [
   {
    "q": "What happened?",
@@ -24,7 +24,7 @@
   },
   {
    "q": "Has anyone been hacked?",
-   "a": "Attackers have been trying: Cloudflare reports millions of attempts and Amazon a honeypot hit four days before disclosure. But as of the evening of 22 October no named organisation has said it was broken into through this flaw, and CISA has not listed either flaw as exploited. One company in Japan is investigating a break-in without saying how it happened, and a Czech university says it stopped an attack.",
+   "a": "Attackers have been trying: Cloudflare reports millions of attempts and Amazon a honeypot hit four days before disclosure. But as of 23 October no named organisation has said it was broken into through this flaw, and CISA has not listed either flaw as exploited. One company in Japan is investigating a break-in without saying how it happened, and a Czech university says it stopped an attack.",
    "href": "impact/index.html",
    "sources": [
     "x-eastdakota-php2shell-stats",
@@ -112,7 +112,7 @@
   "discovery/index.html": "Who found the flaws (three research teams, all using AI help) and what the AI actually did, as far as anyone has said.",
   "leak/index.html": "The plan was to publish the fix and the details together on 22 October. The secret leaked on the 20th; this page is the hour-by-hour account.",
   "exploitation/index.html": "Every sign of attackers trying to use the flaws, in order. Lots of attempts; no confirmed break-in of a named organisation yet.",
-  "impact/index.html": "Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 22 October).",
+  "impact/index.html": "Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 23 October).",
   "defence/index.html": "Can these attacks be blocked or spotted? Yes at the edge and on the server, mostly; no from ordinary web logs alone.",
   "context/index.html": "How php2shell compares with famous past flaws such as Heartbleed and Log4Shell, using the official record of which ones were exploited.",
   "playbook/index.html": "What an organisation that runs PHP should do, step by step, merged from every agency's advice.",
@@ -138,7 +138,7 @@
    ]
   },
   {
-   "text": "Government cyber agencies in the US, the UK, the EU and elsewhere say: install the fix now, and take a website offline if you cannot.",
+   "text": "Every government cyber agency says: install the fix now. If you cannot, the US agencies say take the website offline; the UK puts that after temporary mitigations, and several European agencies say cut it off from the public internet first.",
    "sources": [
     "cisa-alert-php-20261021",
     "ncsc-news-php",
@@ -162,9 +162,10 @@
    ]
   },
   {
-   "text": "Some organisations took websites offline as a precaution, among them Dutch government services such as the DigiD login. Almost all of them are back.",
+   "text": "Some organisations took websites offline as a precaution: the Dutch government took its cyber agency's own site offline, and Dutch press reported the DigiD login down too. Almost all of them are back.",
    "sources": [
     "rijksoverheid-ncsc-php-news",
+    "tpo-nl-digid-offline",
     "phpocalypse-tracker-sites-csv",
     "securitynl-misbruik-gemeld"
    ]
@@ -220,22 +221,16 @@
    "href": "leak/index.html"
   },
   {
-   "text": "Attackers are trying. One internet security company reports millions of attempts; Amazon reports a decoy server was hit four days before the announcement.",
+   "text": "Attackers are trying, in large numbers: one internet security company reports millions of attempts, and Amazon reports a decoy server hit four days before the announcement. No named organisation has said it was broken into through these flaws, as of 23 October, and the US government's official list of flaws known to be used in attacks did not include them when last checked.",
    "status": "reported",
    "sources": [
     "x-eastdakota-php2shell-stats",
-    "thehackernews-php2shell-4days"
-   ],
-   "href": "exploitation/index.html"
-  },
-  {
-   "text": "Attackers are trying, in large numbers. No organisation has said it was broken into through this flaw, as of the evening of 22 October, and the US government's official list of flaws known to be used in attacks did not include these two when last checked.",
-   "status": "confirmed",
-   "sources": [
+    "thehackernews-php2shell-4days",
+    "paperjam-article-php2shell-des-milliers-de-sites",
     "cisa-kev-json",
     "cisa-kev-catalog"
    ],
-   "href": "impact/index.html"
+   "href": "exploitation/index.html"
   },
   {
    "text": "Every agency says install the fix. They disagree on what to do if you cannot: the US says take the website offline, the UK lists that as a last resort, several European agencies say cut it off from the public internet, and some say nothing about it.",
@@ -249,7 +244,7 @@
    "href": "agencies/index.html"
   },
   {
-   "text": "The headline '70% of the Internet' is not what it sounds like. It is roughly the share of websites built with PHP, which is what the same company's own article says; nobody has measured how many are actually at risk.",
+   "text": "The headline '70% of the Internet' is not what it sounds like. It is roughly the share of websites whose server-side language is known that use PHP, which is what the same company's own article says; nobody has measured how many are actually at risk.",
    "status": "confirmed",
    "sources": [
     "wiz-blog-php2shell",
@@ -265,7 +260,7 @@
    "href": "impact/index.html"
   },
   {
-   "text": "Whether the fix is complete. A report on 21 October suggested it may not be; the PHP project has not answered it publicly yet.",
+   "text": "Whether the fix is complete. A report on 21 October suggested it may not be; the PHP security team replied on the mailing list on 22 October, and this site will settle the question once that reply is saved here.",
    "href": "code/index.html"
   },
   {
@@ -273,7 +268,7 @@
    "href": "leak/index.html"
   },
   {
-   "text": "Exactly which websites went offline, and why. Most of the list comes from one news live page and has not been confirmed by the organisations named.",
+   "text": "How many websites went offline, and why. The reports this site holds range from a single site to a whole government's platform; a community tracker lists about fifty sites that went dark and came back. Nobody has counted them all.",
    "href": "impact/index.html"
   },
   {

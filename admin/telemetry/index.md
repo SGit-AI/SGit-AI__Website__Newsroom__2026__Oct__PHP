@@ -90,7 +90,7 @@ A read key decrypts and cannot write; it is derived one way from the vault key, 
 
 The drainer's own report, over every event: readers, the editor and power users, agents and crawlers together.
 
-Report as of **2026-10-23**: **1093** events from **366** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.
+Report as of **2026-10-23**: **1093** events from **366** sessions (1 test or undecryptable rows excluded). Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault. Cities and regions are kept in the private telemetry vault and are not published here.
 
 | Country | Events |
 |---|---|
@@ -114,34 +114,6 @@ Report as of **2026-10-23**: **1093** events from **366** sessions (1 test or un
 | IT | 1 |
 | UZ | 1 |
 | EG | 1 |
-
-| Region | Events |
-|---|---|
-| California | 367 |
-| (none) | 346 |
-| England | 133 |
-| Lisbon | 85 |
-| Virginia | 32 |
-| Madrid | 23 |
-| Florida | 11 |
-| Oslo | 8 |
-| Iowa | 7 |
-| Leinster | 6 |
-| Akershus | 6 |
-| New York | 5 |
-| New South Wales | 4 |
-| Hessen | 4 |
-| Vestland | 4 |
-| Washington | 3 |
-| Arizona | 3 |
-| Pennsylvania | 3 |
-| British Columbia | 3 |
-| Ile-de-France | 3 |
-| Istanbul | 3 |
-| Leiria | 2 |
-| North Brabant | 2 |
-| New Jersey | 2 |
-| Nouvelle-Aquitaine | 2 |
 
 | Referrer host | Events |
 |---|---|
@@ -226,4 +198,4 @@ Mechanics: `assets/telemetry.js` sends; `admin/build/telemetry_drain.py`, run by
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.html

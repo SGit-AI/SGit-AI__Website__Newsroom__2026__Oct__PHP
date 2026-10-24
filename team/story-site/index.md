@@ -18,6 +18,7 @@ Reads every note in the vault, writes the claims and timeline this site publishe
 - data/claims.json, timeline.json and the other authored data
 - the front page, the facts, the patching and signals pages
 - the coverage vault (dcsmxese) and its review
+- (from 24 October 2026 the refresh of these files after each evidence export is the journalist's, the editor's decision; see /views/desk/)
 
 ## The rules they work by
 - Every status is one of five words and the page says what each means.
@@ -44,12 +45,27 @@ The front pageindex.htmlEvery claimclaims/index.htmlThe timelinetimeline/index.h
 | 155 | Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement | open |  |
 | 182 | data/review.json: the parser wrote 'area:Zend' and 'area:main' on eight contains edges where the nodes are 'area:Zend/' and 'area:main/', so the area-to-file layer was silently lost; repaired in the data by the cartographer, but the parser is not in the repository and a regeneration brings it back. Fix the parser or check ends in the gate | open |  |
 | 189 | One spelling for a verb across the site's graphs: data/review.json writes 'realised in', 'fixed by' with spaces, the risk graph writes realised_in and fixed_by, the estate's grammar writes snake_case. Rename in the review graph's parser (with board 182), so a reader stepping between the graphs reads the same wordFrom the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md). | open |  |
+| 213 | The incomplete-fix wording: claim fix-incomplete's note ('nothing from PHP on the list at capture') and the playbook's step 6 ('has not been answered on-list') predate fact-check run 2 (v0.5.8), which found PHP's public answer; update both from the desk's run 2 record (found in the librarian's pass of 24 October)Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
+| 223 | Reshape the offline ledger: one row per organisation, a unit (site, platform, whole government), a domain count where known, the source's language and who said it; then a count with its basis on the front pageFrom the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go). | open |  |
+| 226 | Front page corrections: the offline count's unit ('10 reports', not '10 organisations'), the DigiD line's citation, the duplicate 'attackers are trying' fact, the out-of-date 'fix complete' unknown, the fact-check desk's figure beside '21 confirmed'From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go). Done on 24 October by the desk except the fact-check desk's figure beside '21 confirmed' (board 233). | open |  |
+| 227 | Front page lead: 'the cost so far is the cost of precaution' with its time, then three counts with unit, basis and time (went dark, fixed, broken into), linking /compromise/, /patching/inventory/ and /stack/From the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go). | open |  |
+| 230 | The headline is the day's news, from the journalist's latest state of affairs; the explainer moves to the second line (front page and mockup A)From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
+| 231 | The lead's offline sentence matches the agencies count: all say install the fix, two US agencies say take sites offline if you cannotFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
+| 251 | /signals/: the ladder chart draws 1.57 million against 2.6 million on one scale; they are counts of different populations (K-004). Redraw against Censys's 1.58 million versioned hosts, or as two chartsFrom the editor's session, 24 October (desk@php.newsroom). | open |  |
+| 259 | Front page, 'What nobody knows yet': 'Where the 70% figure comes from. None of the pages that use it says how it was measured' is out of date: Cloudflare links W3Techs, and the fact-check desk's investigation /factcheck/investigations/php-share/ answers it (Finding-32)From the news desk chief's morning wake, 24 October. | open |  |
 
 ## What they have done
 - The first release: every claim with a status and its sources (v0.1.0).
 - Readers, the glossary and a jargon-free front page (v0.3.0, v0.3.1).
 - Every section versioned with history and diffs (v0.3.2).
 - The coverage vault and the review of 24 outlets (v0.4.5).
+
+### Closed on the board
+
+| # | Task | Status | Shipped in |
+|---|---|---|---|
+| 240 | Clean hands before any correction request: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framing, about 32 pages), K-011 on the front page, the status words on nl-offline and kev-precedentFrom the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Done by the desk on the editor's instruction, 24 October: the 70% wordings, K-004 in the claim and the question, K-011 and the offline lines on the front page, nl-offline and kev-precedent to reported, and wordpress-drupal as researchers' tests. The /signals/ chart still sets 1.57 million against 2.6 million on one scale (board 251). | done |  |
+| 252 | The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as homes by persona, the menu by task with two dials (who you are; Focus, Standard, Everything), the wide layout, and every admin page in the team console (D)The editor, 24 October, in story-site's session: "I think you implement all of them." Covers most of 139 to 142 (rows of dev, the briefing writer and the editor, left for their owners to close): the dials are remembered in the browser, not yet in the reader's vault; pattern C is on the agencies page only. Brief: admin/content/briefs/2026-10-24__brief__the-redesign-live.md. | done | 0.14.0 |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/story-site/` in the mail vault (`fmb2tpl2`).
@@ -60,4 +76,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html

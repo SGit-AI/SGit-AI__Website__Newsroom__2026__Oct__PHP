@@ -5,9 +5,9 @@
   "label": "Finding-124",
   "title": "The BBC's 'roughly 70_' is not Wiz's wording",
   "description": "The BBC live page (bbc-live-ckgel5xp2xv9t, 08:05 UTC capture) puts 'roughly 70%' in quotation marks as Wiz's estimate. Wiz's blog and X post say '70% of all websites' and '70% of the Internet'; neither says 'roughly'. Anything on the site that quotes the BBC's phrase as Wiz's would be a quote of a quote.",
-  "status": "open",
+  "status": "fixed",
   "created_at": 1792694669153,
-  "updated_at": 1792694669629,
+  "updated_at": 1792805571043,
   "created_by": "76829cde",
   "tags": [],
   "links": [
@@ -34,6 +34,15 @@
       "bbc-live-ckgel5xp2xv9t",
       "wiz-blog-php2shell"
     ],
-    "severity": "low"
+    "severity": "low",
+    "comments": [
+      {
+        "id": "52a3aa9a",
+        "author": "cli-user",
+        "text": "Run-3: Fixed in v0.13.0: the claim's 'by' now says the BBC reports it as Wiz's 'roughly 70_'.",
+        "created_at": 1792805571043,
+        "updated_at": 1792805571043
+      }
+    ]
   }
 }

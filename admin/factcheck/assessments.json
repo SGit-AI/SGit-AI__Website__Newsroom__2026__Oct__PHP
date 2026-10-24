@@ -170,6 +170,7 @@
    "tickets": [
     "Evidence-3",
     "Evidence-4",
+    "Evidence-18",
     "Finding-22",
     "Finding-23",
     "Finding-57",
@@ -379,6 +380,7 @@
    ],
    "tickets": [
     "Contradiction-2",
+    "Evidence-12",
     "Finding-14",
     "Finding-60",
     "Finding-122"
@@ -552,6 +554,7 @@
    "tickets": [
     "Evidence-1",
     "Evidence-6",
+    "Evidence-18",
     "Finding-13",
     "Finding-63"
    ],
@@ -1332,8 +1335,8 @@
   },
   {
    "id": "kev-precedent",
-   "claim_hash": "8ee68af567e4c285",
-   "run": "Run-1",
+   "claim_hash": "dd3f297886cc5fd3",
+   "run": "Run-3",
    "mode": "vault",
    "kind": "record",
    "level": 2,
@@ -1342,8 +1345,8 @@
    "contradictions": [],
    "volatile": true,
    "as_of": "20261022T112501Z",
-   "status_fit": "overstated",
-   "reason": "The KEV JSON (dateAdded 2024-06-12) and the CVE record (datePublished 2024-06-09T19:42Z) give three days (A6), and the php2shell KEV absence is A6 at 08:16Z on 22 Oct. 'Exploited in the wild one day after' rests on Akamai alone (A2), and it describes honeypot exploit attempts; 'the last PHP core RCE' is not shown (CVE-2024-4577 is a PHP-CGI argument injection on Windows).",
+   "status_fit": "ok",
+   "reason": "'Reported' now fits, and the note says the one-day exploitation rests on Akamai alone. The claim text still calls CVE-2024-4577 'the last PHP core RCE', which the CVE record does not carry (a PHP-CGI argument injection on Windows); and 'not in KEV after one day' should name the catalog version checked. Finding-20 partly fixed; Finding-21 open.",
    "checked": [
     {
      "source": "cisa-kev-json",
@@ -1950,18 +1953,18 @@
   },
   {
    "id": "nl-offline",
-   "claim_hash": "f42e1366cc38eb79",
-   "run": "Run-1",
+   "claim_hash": "835bc30ef1a0a16c",
+   "run": "Run-3",
    "mode": "vault",
    "kind": "event",
-   "level": 3,
-   "verdict": "holds-in-part",
+   "level": 4,
+   "verdict": "holds",
    "tension": "none",
    "contradictions": [],
    "volatile": false,
    "as_of": "20261022T113213Z",
-   "status_fit": "overstated",
-   "reason": "The cited primary (Rijksoverheid, 21 Oct 13:59) carries only NCSC.NL taken offline \"uit voorzorg\" and a general \"no active misuse seen yet\"; it does not name DigiD, MijnOverheid or Overheid.nl, and the second cited source is a blocked Cloudflare page. DigiD and MijnOverheid are carried by TPO and Insurance Business, Overheid.nl only by Reuters copy (one origin), so A3 for the claim as worded, and \"of those services\" is the site's own narrowing.",
+   "status_fit": "ok",
+   "reason": "Rewritten as the evidence carries it: the government's notice names only NCSC.nl, as a precaution (Finding-27 fixed), and the other services are attributed to the Dutch press, which the TPO capture carries (DigiD, MijnOverheid, the Tweede Kamer). The 'no signs of exploitation of those services' overreach is gone (Finding-28 fixed).",
    "checked": [
     {
      "source": "rijksoverheid-ncsc-php-news",
@@ -2052,8 +2055,8 @@
   },
   {
    "id": "no-confirmed-compromise",
-   "claim_hash": "3739c906c344c801",
-   "run": "Run-1",
+   "claim_hash": "8e3ec69354bd8bdd",
+   "run": "Run-3",
    "mode": "vault",
    "kind": "state",
    "level": 4,
@@ -2061,9 +2064,9 @@
    "tension": "none",
    "contradictions": [],
    "volatile": true,
-   "as_of": "20261022T112853Z",
-   "status_fit": "overstated",
-   "reason": "A search of every vault capture (manifest and unexported) finds no named organisation confirming a php2shell compromise, and several independent parties say none known (Huntress, Imperva, CERT.LV, the German digital ministry via Reuters, the Australian industry minister). A universal negative from a finite, time-bound capture set cannot exceed A4, and it is volatile; \"confirmed\" without an as-of in the claim text is overstated.",
+   "as_of": "20261023T160435Z",
+   "status_fit": "ok",
+   "reason": "Now dated (16:04 UTC on 23 October) and scoped to the vault (Finding-26 fixed), and 'reported' fits a time-bounded absence. Independent parties carry the negative: the PHP Foundation's director via The Verge, Paperjam for Luxembourg, Patchstack's own telemetry via PCMag. The vendor half (board 212) holds as reworded: Hadrian's 'exploited at scale' and Patchstack's partner reports come through the press (Insurance Business, Recorded Future, Bitpage), not their own posts, so that half is A3. Every quote checked verbatim in its capture.",
    "checked": [
     {
      "source": "cisa-kev-json",
@@ -2152,6 +2155,38 @@
      "result": "carries",
      "excerpt": "Industry and Innovation Minister Tim Ayres says there has been no breach of Australian government websites",
      "outside_citation": true
+    },
+    {
+     "source": "the-verge-php2shell-websites-down",
+     "file": "sources/the-verge-php2shell-websites-down/captures/20261023T012042Z/text.txt",
+     "sha256": "1a9a20537e477cc84bdd688c3d13f165e980a7bae0aa54bd2f88011d32d3b3d3",
+     "result": "carries",
+     "excerpt": "to our knowledge, there has been no successful attempt at remote code execution",
+     "outside_citation": false
+    },
+    {
+     "source": "pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
+     "file": "sources/pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/captures/20261023T080331Z/text.txt",
+     "sha256": "82ef905cd2201bd4507643ba274b135e32b1e440606b1ded976617c782b28166",
+     "result": "carries",
+     "excerpt": "our telemetry shows only probing attacks, with no hard evidence of breaches yet",
+     "outside_citation": false
+    },
+    {
+     "source": "recordedfuture-php2shell",
+     "file": "sources/recordedfuture-php2shell/captures/20261023T012042Z/text.txt",
+     "sha256": "39efeb7b8ae8152f98ccf53437e4070f12339a7e718570de9f01ac96d23b0622",
+     "result": "partial",
+     "excerpt": "Patchstack received reports of multiple active exploitation incidents from hosting partners by 07:34 UTC on October 21",
+     "outside_citation": false
+    },
+    {
+     "source": "insurance-business-au-asiapac-attacks-begin",
+     "file": "sources/insurance-business-au-asiapac-attacks-begin/captures/20261023T012042Z/text.txt",
+     "sha256": "8d88bddde485e36f27c001a80e9ad0506055b64f3879347345be5ad336a10cad",
+     "result": "partial",
+     "excerpt": "Hadrian says it is seeing PHP2Shell exploited at scale, mostly through PHP’s session upload progress path.",
+     "outside_citation": false
     }
    ],
    "quotes_checked": [
@@ -2164,6 +2199,8 @@
    "tickets": [
     "Evidence-1",
     "Evidence-3",
+    "Evidence-12",
+    "Evidence-18",
     "Finding-26",
     "Finding-85"
    ],
@@ -3325,20 +3362,20 @@
   },
   {
    "id": "scale-2.6m-hosts",
-   "claim_hash": "b7e087105a530a21",
-   "run": "Run-1",
+   "claim_hash": "8f7b6b24a8e18b7b",
+   "run": "Run-3",
    "mode": "vault",
    "kind": "count",
    "level": 2,
-   "verdict": "holds-in-part",
-   "tension": "measures-differently",
+   "verdict": "holds",
+   "tension": "none",
    "contradictions": [
     "K-004"
    ],
    "volatile": true,
    "as_of": "20261022T112314Z",
    "status_fit": "ok",
-   "reason": "Both figures are carried, but only second hand: VulnCheck's 2,608,039 hosts via The Hacker News and SecurityWeek (one origin), and Censys's 2.58 million seen, 1.57 million unpatched via SecurityWeek alone; no scanner's own page or method is captured, so A2. 'Of which' wrongly makes Censys's 1.57 million a subset of VulnCheck's 2.6 million; it is a subset of Censys's own 2.58 million.",
+   "reason": "Rewritten to keep the counters apart: VulnCheck's 2.6 million hosts, and Censys's 1.57 million unpatched of the 1.58 million whose version it could read, of 2.58 million seen (Finding-34 fixed; K-004 now explained). Both reach the vault only through news outlets (Finding-100), so A2.",
    "checked": [
     {
      "source": "thehackernews-php2shell-4days",
@@ -3424,12 +3461,12 @@
   },
   {
    "id": "scale-70pc-internet",
-   "claim_hash": "43c3c01390316dd5",
-   "run": "Run-1",
+   "claim_hash": "596a681da508c090",
+   "run": "Run-3",
    "mode": "vault",
    "kind": "count",
    "level": 1,
-   "verdict": "holds-in-part",
+   "verdict": "not-shown",
    "tension": "measures-differently",
    "contradictions": [
     "K-001"
@@ -3437,7 +3474,7 @@
    "volatile": true,
    "as_of": "20261022T081624Z",
    "status_fit": "ok",
-   "reason": "Wiz's own headline and X post carry '70% of the Internet', but the body of the same post gives the basis as PHP powering '70% of all websites', a share of websites using PHP with no measurement of what is affected. A count with no population, method or counter for 'affected' stays weak; the status 'unverified' fits.",
+   "reason": "Reworded to Wiz's own words, with the BBC's 'roughly' attributed to the BBC (Finding-102 and Finding-124 fixed). As a statement of fact it is not shown: no capture measures a share of 'the Internet'; it is Wiz's headline restating a share of websites (K-001). 'Unverified' fits.",
    "checked": [
     {
      "source": "wiz-blog-php2shell",
@@ -3485,6 +3522,9 @@
     }
    ],
    "tickets": [
+    "Evidence-13",
+    "Evidence-14",
+    "Evidence-15",
     "Finding-102",
     "Finding-124"
    ],
@@ -3492,12 +3532,12 @@
   },
   {
    "id": "scale-70pc-websites",
-   "claim_hash": "8da5ec0df4412c53",
-   "run": "Run-1",
+   "claim_hash": "528cd61dc5f56938",
+   "run": "Run-3",
    "mode": "vault",
    "kind": "count",
    "level": 2,
-   "verdict": "holds-in-part",
+   "verdict": "holds",
    "tension": "measures-differently",
    "contradictions": [
     "K-001"
@@ -3505,7 +3545,7 @@
    "volatile": true,
    "as_of": "20261022T112331Z",
    "status_fit": "ok",
-   "reason": "Cloudflare, OpenAI and Wiz each state roughly 70%, but they restate one survey (Cloudflare links W3Techs; Tenable and Imperva name W3Techs), so this is an echo of one origin, and the survey's method is not captured, which caps a count at A2. The figure W3Techs publishes is a share of websites whose server-side language is known, a qualifier the claim drops.",
+   "reason": "Now carries the population, 'websites whose server-side language is known' (Finding-33 fixed), which is how W3Techs measures it; Cloudflare's page links the figure to W3Techs. Three outlets repeat one survey, so A2 until the survey itself is captured (board 033). Outlets disagree on the value, about 69-70% against about 75% (Finding-103).",
    "checked": [
     {
      "source": "cloudflare-blog-php2shell-waf",
@@ -3580,6 +3620,8 @@
     }
    ],
    "tickets": [
+    "Contradiction-12",
+    "Evidence-15",
     "Finding-32",
     "Finding-33",
     "Finding-103"
@@ -3760,7 +3802,8 @@
    ],
    "quotes_checked": [],
    "tickets": [
-    "Evidence-6"
+    "Evidence-6",
+    "Evidence-17"
    ],
    "mode2": ""
   },
@@ -3924,6 +3967,7 @@
    ],
    "tickets": [
     "Contradiction-3",
+    "Evidence-16",
     "Finding-50",
     "Finding-107"
    ],
@@ -4440,8 +4484,8 @@
   },
   {
    "id": "wordpress-drupal",
-   "claim_hash": "9c68de69deab7a08",
-   "run": "Run-1",
+   "claim_hash": "5559da58f5b1dd44",
+   "run": "Run-3",
    "mode": "vault",
    "kind": "state",
    "level": 2,
@@ -4451,7 +4495,7 @@
    "volatile": false,
    "as_of": "20261022T081047Z",
    "status_fit": "ok",
-   "reason": "Calif's own post lists all eleven applications as confirmed pre-auth RCE; Wiz independently confirms WordPress, Drupal and Joomla. The full list rests on one named party (A2); WordPress/Drupal/Joomla alone would be A4. No third-party reproduction in the vault (Huntress says it did not reproduce), so 'reported' fits.",
+   "reason": "Now framed as the researchers' own tests, which is what the captures carry: Wiz and Calif say they achieved pre-authentication RCE against these applications. Eight of the eleven rest on Calif's list alone, and Calif's demonstration video is not captured, so it stays at A2 (Finding-116).",
    "checked": [
     {
      "source": "calif-php2shell",

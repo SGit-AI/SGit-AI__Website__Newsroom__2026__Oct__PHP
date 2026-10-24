@@ -528,6 +528,280 @@
           "owner": "dinis"
         }
       ],
+      "reply": "Shared by the editor. Steps 1 to 5 of the brief to dev shipped in v0.10.13 (every edge's basis, the fix commit's 270 tests as nodes, explore from any node, climb from a file or test, a gaps page) and v0.10.14 is a before-and-after debrief for him; the Sherpa is to check each on the live site."
+    },
+    {
+      "id": "CI-003",
+      "handle": "the same collaborator as CI-001 and CI-002",
+      "name_on_site": null,
+      "name_note": "Not named here until he agrees; the editor sets name_on_site when he has.",
+      "channel": "a message to the editor after the new design, the telemetry article and the risk graph's before-and-after, forwarded to the Sherpa in session; continues CI-002",
+      "from": "2026-10-24",
+      "to": "2026-10-24",
+      "site_version": "0.14.14",
+      "brief": [
+        "admin/briefs/index.html#2026-10-24__brief__the-graph-reviewed-and-a-first-step",
+        "The brief to dev from this conversation"
+      ],
+      "summary": "His review of the new design, the telemetry article and the risk graph after CI-002 shipped. Designs A to D as complementary experiences, not alternatives (which is what shipped in v0.14.0); a simple first step for newcomers before asking who they are; measure whether the redesign moves readers from the front page into briefings, guidance and evidence; a review workflow where people confirm or reject the graph's inferred links, with evidence and history; and before-and-after for the graph itself between releases. The editor's direction: align it with power users' keys recognised by the site, so feedback like this, and reviews, come through the site signed.",
+      "exchange": [
+        [
+          "2026-10-24",
+          "editor",
+          "Shares the new design (mockups A to D), the telemetry article and the risk graph's before-and-after."
+        ],
+        [
+          "2026-10-24",
+          "collaborator",
+          "The review below; he will send his mobile observations through the Feedback button."
+        ]
+      ],
+      "items": [
+        {
+          "n": 1,
+          "kind": "comment",
+          "tags": [
+            "design",
+            "A to D"
+          ],
+          "words": "I think A, B, C, and D work best as complementary experiences rather than alternatives. My preference is A's clean, executive-friendly presentation for high-level information, B's action-oriented layout for technical users, C's structured approach to detailed content, and D as a separate operational console.",
+          "today": "Already decided and shipped: the editor chose all four as complementary tracks, and story-site built them in v0.14.0 (the brief 'the redesign, live'): A is the front page (Briefing), B is /ops/ (Operations), C is /analysis/ (Analysis), D is the team console around every admin page; the persona chosen in the bar sends a reader to their track's home. His preference matches what shipped, track for track.",
+          "links": [
+            [
+              "admin/briefs/index.html#2026-10-24__brief__the-redesign-live",
+              "The redesign, live"
+            ],
+            [
+              "ops/index.html",
+              "Operations"
+            ],
+            [
+              "analysis/index.html",
+              "Analysis"
+            ]
+          ],
+          "gap": "None: shipped. One inconsistency for the editor: the redesign puts the CTO in Operations, while the three-views brief (the editor's answer of 23 October) puts the CTO with the executive.",
+          "recommendation": "Tell him it shipped as he suggests. The editor settles where the CTO belongs, and story-site and the three-views brief follow the one answer.",
+          "owner": "story-site",
+          "also": [
+            "dinis"
+          ]
+        },
+        {
+          "n": 2,
+          "kind": "idea",
+          "tags": [
+            "first step",
+            "newcomers",
+            "navigation"
+          ],
+          "words": "One suggestion would be to give first-time visitors a simple starting point before asking them to select a role. Something like \"Understand the incident\", \"Check what I need to do\", or \"Explore the evidence\" could help people find their way naturally.",
+          "today": "Partly there. The front page has 'Three ways to read this site' (Briefing, Operations, Analysis), which are his three doors under other names (understand the incident, check what I need to do, explore the evidence). But they are offered by role ('choose who you are'), not by task, and they come seventh, after the agencies: measured on v0.14.14, the section starts 9,218px down a 14,778px page on a phone (about twelve screens) and 3,643px down on a 1,440px-wide desktop.",
+          "links": [
+            [
+              "index.html",
+              "The front page"
+            ],
+            [
+              "articles/the-telemetry-tools/index.html",
+              "The telemetry article"
+            ]
+          ],
+          "gap": "The three ways, named by task, where a first-time reader sees them.",
+          "recommendation": "Move the three ways to the first screen and name them by task ('Understand the incident', 'Check what I need to do', 'Explore the evidence'), each opening its track's home; the roles stay inside each, as they are now. The tracks exist, so this is placement and wording on story-site's front page: briefed (F035), for story-site, with the editor's design review.",
+          "owner": "story-site",
+          "also": [
+            "dinis",
+            "sherpa"
+          ]
+        },
+        {
+          "n": 3,
+          "kind": "problem",
+          "tags": [
+            "mobile",
+            "sticky header",
+            "navigation"
+          ],
+          "words": "The oversized sticky header, wrapping navigation, and content responsiveness are worth addressing, particularly on smaller screens.",
+          "today": "Reproduced on v0.14.13 in Chromium: on a phone the sticky header is 233px tall, 30% of a 780px screen, and stays at that height when scrolling; the front page's headline starts at 642px (390 wide) and 691px (360 wide). No horizontal overflow. His screenshots, when they arrive, are added here.",
+          "links": [
+            [
+              "index.html",
+              "The front page"
+            ]
+          ],
+          "gap": "A header that leaves the page room on a phone.",
+          "recommendation": "On phones, the header sticks as one line (the site's name and a menu button) or not at all; the menu groups wrap into the menu, not into the header. Briefed to dev (F034).",
+          "owner": "dev",
+          "also": [
+            "story-site"
+          ]
+        },
+        {
+          "n": 4,
+          "kind": "comment",
+          "tags": [
+            "telemetry",
+            "readers and agents"
+          ],
+          "words": "I really like the separation between actual readers, crawlers, and automated agents. That's important because otherwise automated traffic can distort how we interpret engagement.",
+          "today": "Since v0.8.4 every session is a reader, the editor, a power user or team member, synthetic or a crawler.",
+          "links": [
+            [
+              "admin/telemetry/index.html",
+              "Telemetry"
+            ]
+          ],
+          "gap": "None for the point itself.",
+          "recommendation": "Kept.",
+          "owner": "dev"
+        },
+        {
+          "n": 5,
+          "kind": "idea",
+          "tags": [
+            "telemetry",
+            "progression",
+            "redesign"
+          ],
+          "words": "It could be useful to measure whether the redesign improves progression from the front page into relevant briefings, security guidance, and evidence, segmented by device and reader persona.",
+          "today": "The telemetry records journeys (a Sankey since v0.10.10), devices and the reader group; it does not yet split journeys by the persona a reader chose, or compare before and after a release. The Sherpa asked for the persona in the page event on 23 October (F007, board 121).",
+          "links": [
+            [
+              "admin/telemetry/index.html",
+              "Telemetry"
+            ]
+          ],
+          "gap": "Progression, by device and persona, before and after the redesign.",
+          "recommendation": "One measure, reported at every drain: of sessions starting on the front page, the share that reach a briefing, the guidance (If you run PHP, /stack/) or the evidence (claims, graph), by device and by chosen persona, for the week before the redesign and every week after. Briefed to dev.",
+          "owner": "dev",
+          "also": [
+            "sherpa"
+          ]
+        },
+        {
+          "n": 6,
+          "kind": "comment",
+          "tags": [
+            "risk graph",
+            "explainable"
+          ],
+          "words": "Seeing the graph grow from 442 nodes and 914 relationships to 713 nodes and 1,418 relationships is interesting, but the more important improvement is that those relationships are becoming explainable and actionable.",
+          "today": "On v0.14.13: 721 nodes and 1,442 edges; every edge has a basis: 340 from a source, 287 from code, 815 inferred.",
+          "links": [
+            [
+              "grc/explore/index.html",
+              "Explore the graph"
+            ],
+            [
+              "grc/gaps/index.html",
+              "Gaps"
+            ]
+          ],
+          "gap": "None for the point itself.",
+          "recommendation": "Kept.",
+          "owner": "grc"
+        },
+        {
+          "n": 7,
+          "kind": "idea",
+          "tags": [
+            "verification",
+            "review workflow",
+            "inferred links",
+            "keys"
+          ],
+          "words": "One suggestion for the next iteration would be to add a verification workflow where reviewers can confirm or reject inferred relationships, with the supporting evidence and review history recorded. That could make the graph increasingly trustworthy as the agents continue expanding it.",
+          "today": "815 of 1,442 links are inferred and nobody can confirm one yet. The pieces exist: the Feedback pane signs with a power user's enrolled key, and the collaborators drain already knows a 'review' kind; the fact-check desk keeps a contradiction ledger.",
+          "links": [
+            [
+              "grc/gaps/index.html",
+              "Gaps"
+            ],
+            [
+              "join/index.html",
+              "Join"
+            ]
+          ],
+          "gap": "Confirm or reject an inferred link, signed, with the evidence and a history.",
+          "recommendation": "On every inferred link in /grc/explore/: 'Confirm' or 'Reject', with the evidence (a capture, a commit, a line of code) and a note, signed with the reviewer's enrolled key and sent through the collaborators lane as a 'review'. The drain checks the signature; the edge's basis becomes 'confirmed' (who, when, on what evidence) once enough reviews agree, and every review stays in its history. This is the editor's key work, made useful: power users' keys recognised by the site. Who may review, and how many confirmations a link needs, is the editor's call; the rest is briefed to dev.",
+          "owner": "dev",
+          "also": [
+            "verifier",
+            "grc",
+            "dinis"
+          ]
+        },
+        {
+          "n": 8,
+          "kind": "idea",
+          "tags": [
+            "graph changes",
+            "releases",
+            "before and after"
+          ],
+          "words": "I'd also love to see the before-and-after comparison approach extended to graph changes between releases, so we can visualize not just UI improvements but also newly discovered risks, relationships, and coverage gaps.",
+          "today": "The site keeps every release's data in git; v0.10.14 built split, slider and diff blocks for articles. Nothing compares two releases of the graph.",
+          "links": [
+            [
+              "grc/graph/index.html",
+              "The risk graph"
+            ]
+          ],
+          "gap": "A graph diff between any two releases.",
+          "recommendation": "A 'what changed in the graph' view: pick two releases; the nodes and edges added and removed, the bases that changed (inferred to confirmed), the gaps opened and closed; drawn with the existing before-and-after blocks. Built from git at release time. Briefed to dev.",
+          "owner": "dev",
+          "also": [
+            "cartographer"
+          ]
+        },
+        {
+          "n": 9,
+          "kind": "comment",
+          "tags": [
+            "direction"
+          ],
+          "words": "It's moving beyond a security information website toward something much more useful: an evidence-driven platform for understanding and acting on security risks.",
+          "today": "Agreed.",
+          "links": [
+            [
+              "grc/graph/index.html",
+              "The risk graph"
+            ]
+          ],
+          "gap": "None.",
+          "recommendation": "Kept.",
+          "owner": "sherpa"
+        },
+        {
+          "n": 10,
+          "kind": "offer",
+          "tags": [
+            "feedback",
+            "keys",
+            "power users"
+          ],
+          "words": "I'll also send the mobile layout observations and screenshots through the Feedback feature, as requested. ... Looking forward to seeing the next iterations and contributing more ideas.",
+          "today": "The Feedback button signs with a key from an invitation; he has none yet. The editor's own bootstrap invitation is retired (its code appeared in drained rows), so he needs one of his own.",
+          "links": [
+            [
+              "join/invite/index.html",
+              "Invite someone"
+            ],
+            [
+              "join/index.html",
+              "Join"
+            ]
+          ],
+          "gap": "An invitation for him, with the power-user role.",
+          "recommendation": "The editor makes him a power-user invitation on /join/invite/ and sends it; his key is enrolled at the Sherpa's next drain; his feedback and his reviews (item 7) then arrive signed, are drained every two hours and answered here. With his agreement, he becomes the first named power user.",
+          "owner": "dinis",
+          "also": [
+            "sherpa"
+          ]
+        }
+      ],
       "reply": "Not sent. The editor shares this page and the brief with him."
     }
   ]

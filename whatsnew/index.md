@@ -12,6 +12,249 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.27 · 24 October 2026new since your last visit
+
+Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry report's cities and regions, the invitation check order, the vault app's preset merge, the conductor drain's file names)
+
+No reader-facing section changed in this release.
+
+## v0.14.26 · 24 October 2026new since your last visit
+
+Application security: /admin/appsec/ with the threat model and five data-flow diagrams, 39 security advisories kept like incidents (root cause, what was not in place, the fix, the guard), the patterns they share, who can do what, what a client-side site does not have to care about, the incident process and six runbooks (taking the site offline, emergency shutdown), a bug bounty paid in kudos with its leaderboard, and prompts for three outside reviewers; a Content-Security-Policy on every page; cities and regions no longer published in the telemetry report; the invitation check order, the vault app's preset merge and the conductor drain's file names fixed
+
+No reader-facing section changed in this release.
+
+## v0.14.25 · 24 October 2026new since your last visit
+
+the scheduled journalist proposed: a Sonnet journalist that takes each curator batch through to the site, and an Opus chief correspondent that reviews it; brief, wake prompt and schedule card (status proposed)
+
+No reader-facing section changed in this release.
+
+## v0.14.24 · 24 October 2026new since your last visit
+
+Fix for dev's red CI since v0.14.23: /team/comms/ is built from data/comms.json, which the conductor's wakes export from the commit history, instead of from the history itself, which the shallow CI clone lacks; tested by running the gate in a depth-1 clone
+
+No reader-facing section changed in this release.
+
+## v0.14.23 · 24 October 2026new since your last visit
+
+Commit-FS-lite: agents tell each other what they need in the release commits they already write (To- and To-all trailers), read on every pull with schedule.py notes; /team/comms/ lists every note, each agent's schedule page the notes to it
+
+No reader-facing section changed in this release.
+
+## v0.14.22 · 24 October 2026new since your last visit
+
+the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page
+
+No reader-facing section changed in this release.
+
+## v0.14.21 · 24 October 2026new since your last visit
+
+the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the status, the breadcrumbs, Ask, Feedback and the dials open with the menu, which scrolls inside the screen; every page
+
+No reader-facing section changed in this release.
+
+## v0.14.20 · 24 October 2026new since your last visit
+
+dev: the release history's pages for v0.14.18 (released before the build wrote them), and board 266 and dev's debrief corrected to v0.14.19, the release that shipped the page links
+
+No reader-facing section changed in this release.
+
+## v0.14.19 · 24 October 2026new since your last visit
+
+the release history links the pages each release changed (on /admin/versions.html: new pages first, then by how much their text changed, eight shown and the rest behind a toggle), filled back to v0.2.0 and written at every release's own build, with the rule for agents in AGENTS.md; and the source watch is 7r83qic5 everywhere live (/vaults/, /vaults/source-watch/, its data and export, the team, the schedules, every register's keys, the policies, the live briefs), its read key not published until the vault UI opens pack vaults; dev's round 1 debrief
+
+No reader-facing section changed in this release.
+
+## v0.14.18 · 24 October 2026new since your last visit
+
+The Sherpa's 11:45 pass: the join page's fixes checked live (two frictions closed), the risk graph's explore and gaps pages working on a phone, and the headline still 600 to 670 pixels down on every page walked
+
+No reader-facing section changed in this release.
+
+## v0.14.17 · 24 October 2026new since your last visit
+
+The Sherpa's round 2 debrief (24 October): two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against the redesign, with screenshots
+
+No reader-facing section changed in this release.
+
+## v0.14.16 · 24 October 2026new since your last visit
+
+Conductor full pass 11:15 London: agents-status, schedules checked against runs, Sherpa note, run record
+
+No reader-facing section changed in this release.
+
+## v0.14.15 · 24 October 2026new since your last visit
+
+CI-003 corrected against the redesign that shipped in v0.14.0: the collaborator's design preference is what was built; his first step for newcomers made precise (the three ways to read are by role and twelve phone screens down the front page); a correction entry for the Sherpa's brief
+
+No reader-facing section changed in this release.
+
+## v0.14.14 · 24 October 2026new since your last visit
+
+Ideas from collaborators, CI-003: a power user's review of the new design, the telemetry and the risk graph (complementary views, a first step for newcomers, people confirming the graph's inferred links with signed reviews, the graph's changes between releases), the phone header measured at 30% of the screen, and a brief to dev (board 260 to 263)
+
+No reader-facing section changed in this release.
+
+## v0.14.13 · 24 October 2026new since your last visit
+
+The desk's morning wake: correction requests updated (AWS reworded its own 'broadly exploited', so R-004 is held and WIRED's request stands on its own; CNN needs a fresh capture; The Hacker News's request unblocked by K-009), and the front page's out-of-date 70% unknown on the board
+
+No reader-facing section changed in this release.
+
+## v0.14.12 · 24 October 2026new since your last visit
+
+Conductor light check 09:15 London: curator missed-run note, status lines, run record
+
+No reader-facing section changed in this release.
+
+## v0.14.11 · 24 October 2026new since your last visit
+
+factcheck run 4 (scheduled, 08:52 London): no claim changed; CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 back to 5.4 (K-003); Siemens and PAN-OS now in the CVE and NVD records; KEV still lists neither CVE; every PHPocalypse site back; AWS's revised sentence still uncaptured
+
+No reader-facing section changed in this release.
+
+## v0.14.10 · 24 October 2026new since your last visit
+
+Conductor light check 08:15 London: researcher missed-run note, status line, run record
+
+No reader-facing section changed in this release.
+
+## v0.14.9 · 24 October 2026new since your last visit
+
+The Sherpa's first scheduled wake: both lanes drained (nothing waiting); the fact-check desk's analysis of Fortune's '70% of the internet' article linked from UF-005
+
+No reader-facing section changed in this release.
+
+## v0.14.8 · 24 October 2026new since your last visit
+
+the librarian's first scheduled pass (07:13 London): dev mapped at v0.14.6 (0 overlaps; data/desk.json, /analysis/ and /ops/ sent to abp@ for owners); the journalist's full pass across six desks raised to the editor; 'Is PHP really most websites?' corrected against the claims and the fact-check desk's investigation; the scope check ignores the release's own version files
+
+No reader-facing section changed in this release.
+
+## v0.14.7 · 24 October 2026new since your last visit
+
+Conductor full pass 24 October 07:15 London: agents-status rewritten from the sessions, tasks and branches; board 178 updated; run record
+
+No reader-facing section changed in this release.
+
+## v0.14.6 · 24 October 2026new since your last visit
+
+factcheck: Investigations, a new section, and the first: how much PHP there is and where '70%' comes from. PHP is on 69.3% of the websites whose server-side language W3Techs can identify (80.6% in 2015), about half of every site the HTTP Archive crawls, and WordPress alone on 39.6% of all sites; 127 statements of the share traced to Wiz's own post, a timeline, the lineage as a graph, 73 pages re-checked (none corrected; CNN reworded twice), Fortune analysed (UF-005.1); AWS quietly narrowed 'broadly exploited' to 'broad exploitation attempts' (Evidence-12, high)
+
+No reader-facing section changed in this release.
+
+## v0.14.5 · 24 October 2026new since your last visit
+
+The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents, with screenshots; and a friction on /team/vaults/
+
+No reader-facing section changed in this release.
+
+## v0.14.4 · 24 October 2026new since your last visit
+
+factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-compromise claim, the Dutch offline row, the front page's fix-complete line), K-004 and K-009 explained, so the correction requests to Wiz, the BBC and CNN no longer wait on the desk; Finding-32 stays open (Cloudflare does link W3Techs); the desk's schedule card, and the brief for its investigations
+
+No reader-facing section changed in this release.
+
+## v0.14.3 · 24 October 2026new since your last visit
+
+pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gate's first-build determinism failure fixed (design.py read items.json one build late, board 175)
+
+No reader-facing section changed in this release.
+
+## v0.14.2 · 24 October 2026new since your last visit
+
+The Sherpa: its schedule active (its lanes drained every two hours, 07:45 to 21:45 London, the full pass at 11:45 and 17:45), and an inbox for agents outside the newsroom: an append lane (d6zak0o3) where the RiskMandate email agent and the editor send messages and materials, with the tool to send to it
+
+### Sections that changed
+- [In context: 2008 to 2026](../versions/page-context/index.html#v4) v4
+
+## v0.14.1 · 24 October 2026new since your last visit
+
+The news desk chief's first round closed: its debrief with screenshots of every page it changed, its status and its role
+
+No reader-facing section changed in this release.
+
+## v0.14.0 · 24 October 2026new since your last visit
+
+the redesign, live: three reader homes (Briefing on the front page, Operations at /ops/, Analysis at /analysis/), the menu by task with two dials (who you are; Focus, Standard, Everything), the wide layout, and every admin page in the team console
+
+No reader-facing section changed in this release.
+
+## v0.13.0 · 24 October 2026new since your last visit
+
+The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the 1.57 million framing, the Dutch offline row, the front page's offline advice, DigiD and fix-complete lines), Corrections we have asked for (/outreach/) with eleven requests and the emails the editor sends, and the desk's briefs, review and schedule
+
+### Briefings that changed
+JJordanBoard member or executive · v9SSamSecurity lead · v8RRowanJournalist · v8AAshSecurity researcher · v8BBlakeAnalyst or advisor · v9RRobinCISO · v9QQuinnCFO · v9JJamieHead of AppSec · v8RRileyMedia and communications team · v8AAlexCurious reader · v7CCaseyWebsite owner · v6TTaylorProject or programme manager · v7MMorganData protection officer · v3
+### Sections that changed
+- [How disclosure broke](../versions/page-leak/index.html#v6) v6
+- [Every claim](../versions/page-claims/index.html#v8) v8
+- [The agencies](../versions/page-agencies/index.html#v3) v3
+
+## v0.12.1 · 24 October 2026new since your last visit
+
+pass step 2, first part: the compromise evidence and the claim behind 'no named victim' as of 23 October 16:04 UTC, four more offline reports, the story summary and the front page's dated lines
+
+### Facts whose status changed
+- [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet;](../facts/nl-offline/index.html): confirmed → reported
+- [The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure a](../facts/kev-precedent/index.html): confirmed → reported
+
+5 facts reworded or re-sourced: [wordpress-drupal](../facts/wordpress-drupal/index.html), [scale-70pc-internet](../facts/scale-70pc-internet/index.html), [scale-70pc-websites](../facts/scale-70pc-websites/index.html), [scale-2.6m-hosts](../facts/scale-2.6m-hosts/index.html), [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html).
+
+### Briefings that changed
+JJordanBoard member or executive · v8SSamSecurity lead · v7DDrewPHP or platform engineer · v8RRowanJournalist · v7AAshSecurity researcher · v7BBlakeAnalyst or advisor · v8RRobinCISO · v8AAveryCTO · v7QQuinnCFO · v8JJamieHead of AppSec · v7LLeeDeveloper · v6RRileyMedia and communications team · v7AAlexCurious reader · v6CCaseyWebsite owner · v5TTaylorProject or programme manager · v6MMorganData protection officer · v2
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v7) v7
+- [Impact: offline vs compromised](../versions/page-impact/index.html#v6) v6
+- [The specialist summary](../versions/page-summary/index.html#v5) v5
+- [Front page: right now](../versions/front-now/index.html#v4) v4
+- [Front page: at a glance](../versions/front-glance/index.html#v3) v3
+- [Front page: the core facts](../versions/front-facts/index.html#v3) v3
+- [Front page: what nobody knows yet](../versions/front-unknown/index.html#v2) v2
+
+## v0.12.0 · 24 October 2026new since your last visit
+
+the librarian's work: every member a folder, a role and a draft policy (27 members, 0 overlaps, 0 unowned files and pages; /admin/agents/roles/, /admin/agents/rounds/, a page per member, data/agents.json; gate check 4h and the Stop hook), the fractal graph from a line of php-src to a stakeholder (/fractal/, now the ontologist's), the end-of-round rule and the vault-key handover in CLAUDE.md, two reader answers corrected, and the librarian's daily pass at 07:13 London; released at the editor's go before security's review of validate.py, CLAUDE.md and .claude/settings.json (board 206)
+
+No reader-facing section changed in this release.
+
+## v0.11.7 · 24 October 2026new since your last visit
+
+the journalist's desk (/views/desk/): the cycle after every evidence export, the five steps of the full pass, and a staleness report computed at every build; step 1 of the pass
+
+No reader-facing section changed in this release.
+
+## v0.11.6 · 24 October 2026new since your last visit
+
+The Sherpa: the collaborators lane drained (a power user onboarded as power-user, the exposed bootstrap invitation retired), the editor's two asks recorded (UF-005: an analysis of Fortune's '70% of the internet' article; verification across several model providers), the synthetic readers' second run in the friction log (most of what they raised on 22 October still open), the Sherpa's tasks on the board, and its schedule card, the conductor's draft and the Sherpa's combined: drain every two hours, the full pass at 11:45 and 17:45, proposed
+
+No reader-facing section changed in this release.
+
+## v0.11.5 · 24 October 2026new since your last visit
+
+The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartographer is archived; its daily pass is active, a fresh session at 14:40 London every day
+
+No reader-facing section changed in this release.
+
+## v0.11.4 · 24 October 2026new since your last visit
+
+The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to 21:45 London; the conductor's card no longer drains them; a message to an agent no wake reads now stops the build
+
+No reader-facing section changed in this release.
+
+## v0.11.3 · 24 October 2026new since your last visit
+
+the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because the site's watch data was exported from it); /vaults/, the source-watch page, the team, the schedules and the researcher's register say so; the pack vault's read key is not published until the vault UI opens pack vaults
+
+No reader-facing section changed in this release.
+
+## v0.11.2 · 24 October 2026new since your last visit
+
+claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit newsroom's Pulse in a separate section (/pulse/), and the plan for the journalist's full pass
+
+No reader-facing section changed in this release.
+
 ## v0.11.1 · 24 October 2026new since your last visit
 
 Security pass 2: the Ask pane renders the model's answer as DOM nodes, so a captured page title can no longer break out of a citation's title attribute and run script (a stored XSS that could reach the /now/ vault key); the collaborators drain drops sender-supplied '_' fields (a forged '_signer: enrolled') and survives malformed rows; schedule.py refuses a message as the editor, a multi-line subject or a repeated header, and prints bodies inside an untrusted fence; two unquoted hrefs quoted and two data URLs through U(); .gitignore no longer hides data/*.json
@@ -267,7 +510,7 @@ JJordanBoard member or executive · v7SSamSecurity lead · v6DDrewPHP or platfor
 factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction
 
 ### Facts whose status changed
-- [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
+- [As of 16:04 UTC on 23 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
 
 ### Briefings that changed
 JJordanBoard member or executive · v6RRobinCISO · v6QQuinnCFO · v6RRileyMedia and communications team · v5AAlexCurious reader · v4TTaylorProject or programme manager · v4
@@ -544,14 +787,14 @@ the code read from php-src, php2shell in context against ten earlier flaws, an i
 - [No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosur](../facts/imperva-none/index.html) reported
 - [No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no pub](../facts/huntress-none/index.html) reported
 - [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../facts/watchtowr-itw/index.html) unverified
-- [As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
+- [As of 16:04 UTC on 23 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
 - [None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechani](../facts/pocs-wrong/index.html) reported
 - [Triggering the bug is much easier than turning it into code execution; the CVSS vector say](../facts/ac-high/index.html) confirmed
 - [The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 U](../facts/fix-authored/index.html) confirmed
 - [Both bugs are in the C engine, not in PHP code: the allocator's longjmp-based bailout on o](../facts/fix-engine/index.html) confirmed
 - [Patching the demonstrated paths does not make the bailout mechanism safe; more paths shoul](../facts/more-paths/index.html) reported
 - [Edge protections went live hours before disclosure: Cloudflare at 03:02 UTC; Imperva, Akam](../facts/waf-nine-hours/index.html) confirmed
-- [The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and O](../facts/nl-offline/index.html) confirmed
+- [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet;](../facts/nl-offline/index.html) confirmed
 - [Finland's state IT provider Valtori restricted public traffic to government web services f](../facts/fi-offline/index.html) reported
 - [The Wikimedia Foundation took down a number of systems 'as a precautionary measure until t](../facts/wikimedia-precaution/index.html) reported
 - [Weird Gloop turned off its wiki web servers for 13 hours and still served about 94% of pag](../facts/weirdgloop-13h/index.html) confirmed
@@ -594,11 +837,11 @@ The site exists: a story front, the two flaws, the timeline, every claim with a 
 - [All PHP versions from 5 onwards are affected by at least one of the flaws](../facts/versions-old/index.html) disputed
 - [Updating is the only complete mitigation; the configuration measures reduce exposure to sp](../facts/only-update/index.html) confirmed
 - [A web application firewall may provide some protection until systems are patched](../facts/waf/index.html) disputed
-- [Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcu](../facts/wordpress-drupal/index.html) reported
-- [Roughly 70% of the Internet is affected](../facts/scale-70pc-internet/index.html) unverified
-- [PHP is used by almost 70% of websites](../facts/scale-70pc-websites/index.html) reported
+- [In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal,](../facts/wordpress-drupal/index.html) reported
+- [70% of the Internet is affected](../facts/scale-70pc-internet/index.html) unverified
+- [PHP is used by almost 70% of websites whose server-side language is known](../facts/scale-70pc-websites/index.html) reported
 - [Something like 30 million websites could be affected](../facts/scale-30m/index.html) reported
-- [PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 mi](../facts/scale-2.6m-hosts/index.html) reported
+- [VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58](../facts/scale-2.6m-hosts/index.html) reported
 - [About 6,000 potentially affected resources in Latvia, a few hundred in the public sector](../facts/scale-latvia/index.html) reported
 - [674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, ](../facts/scale-ncsc-nl/index.html) confirmed
 - [The flaws were found by researchers using frontier AI under OpenAI's Patch the Planet init](../facts/ai-found/index.html) reported
@@ -644,4 +887,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

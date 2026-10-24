@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.11.1",
+ "version": "0.14.27",
  "kept_by": "grc@php.newsroom",
  "as_of": "2026-10-22",
  "verbs": [
@@ -2782,7 +2782,7 @@
   {
    "id": "claim:wordpress-drupal",
    "kind": "claim",
-   "label": "Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcu",
+   "label": "In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal,",
    "href": "facts/wordpress-drupal/index.html"
   },
   {
@@ -3340,7 +3340,7 @@
   {
    "id": "claim:no-confirmed-compromise",
    "kind": "claim",
-   "label": "As of 20:50 UTC on 22 October, no named organisation has said it was compromised through p",
+   "label": "As of 16:04 UTC on 23 October, no named organisation has said it was compromised through p",
    "href": "facts/no-confirmed-compromise/index.html"
   },
   {
@@ -3366,6 +3366,54 @@
    "kind": "source",
    "label": "Weird Gloop (cookmeplox)",
    "href": "sources/weirdgloop-blog-php2shell/index.html"
+  },
+  {
+   "id": "source:paperjam-article-php2shell-des-milliers-de-sites",
+   "kind": "source",
+   "label": "Paperjam",
+   "href": "sources/paperjam-article-php2shell-des-milliers-de-sites/index.html"
+  },
+  {
+   "id": "source:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
+   "kind": "source",
+   "label": "PCMag",
+   "href": "sources/pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/index.html"
+  },
+  {
+   "id": "source:itsocial-cybersecurite-cybersecurite-articles-php",
+   "kind": "source",
+   "label": "IT Social",
+   "href": "sources/itsocial-cybersecurite-cybersecurite-articles-php/index.html"
+  },
+  {
+   "id": "source:lupa-cvut-cyber-attack",
+   "kind": "source",
+   "label": "Lupa.cz",
+   "href": "sources/lupa-cvut-cyber-attack/index.html"
+  },
+  {
+   "id": "source:yahoo-jp-gmo-fx-login-leak",
+   "kind": "source",
+   "label": "Yahoo! News Japan (J-CAST)",
+   "href": "sources/yahoo-jp-gmo-fx-login-leak/index.html"
+  },
+  {
+   "id": "source:sankei-dmm-service-halt",
+   "kind": "source",
+   "label": "産経ニュース",
+   "href": "sources/sankei-dmm-service-halt/index.html"
+  },
+  {
+   "id": "source:impress-watch-valtec",
+   "kind": "source",
+   "label": "INTERNET Watch (Impress)",
+   "href": "sources/impress-watch-valtec/index.html"
+  },
+  {
+   "id": "source:the-verge-php2shell-websites-down",
+   "kind": "source",
+   "label": "The Verge",
+   "href": "sources/the-verge-php2shell-websites-down/index.html"
   },
   {
    "id": "claim:nz-active",
@@ -3460,7 +3508,7 @@
   {
    "id": "claim:nl-offline",
    "kind": "claim",
-   "label": "The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and O",
+   "label": "The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet;",
    "href": "facts/nl-offline/index.html"
   },
   {
@@ -3470,10 +3518,10 @@
    "href": "sources/rijksoverheid-ncsc-php-news/index.html"
   },
   {
-   "id": "source:dutchitleaders-websites-offline",
+   "id": "source:tpo-nl-digid-offline",
    "kind": "source",
-   "label": "Dutch IT Leaders",
-   "href": "sources/dutchitleaders-websites-offline/index.html"
+   "label": "TPO.nl",
+   "href": "sources/tpo-nl-digid-offline/index.html"
   },
   {
    "id": "claim:fi-offline",
@@ -3952,13 +4000,13 @@
   {
    "id": "claim:scale-70pc-internet",
    "kind": "claim",
-   "label": "Roughly 70% of the Internet is affected",
+   "label": "70% of the Internet is affected",
    "href": "facts/scale-70pc-internet/index.html"
   },
   {
    "id": "claim:scale-70pc-websites",
    "kind": "claim",
-   "label": "PHP is used by almost 70% of websites",
+   "label": "PHP is used by almost 70% of websites whose server-side language is known",
    "href": "facts/scale-70pc-websites/index.html"
   },
   {
@@ -4204,7 +4252,7 @@
   {
    "id": "claim:scale-2.6m-hosts",
    "kind": "claim",
-   "label": "PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 mi",
+   "label": "VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58",
    "href": "facts/scale-2.6m-hosts/index.html"
   },
   {
@@ -14214,6 +14262,86 @@
    }
   },
   {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:paperjam-article-php2shell-des-milliers-de-sites",
+   "basis": {
+    "kind": "source",
+    "ref": "paperjam-article-php2shell-des-milliers-de-sites"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
+   "basis": {
+    "kind": "source",
+    "ref": "pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:itsocial-cybersecurite-cybersecurite-articles-php",
+   "basis": {
+    "kind": "source",
+    "ref": "itsocial-cybersecurite-cybersecurite-articles-php"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:lupa-cvut-cyber-attack",
+   "basis": {
+    "kind": "source",
+    "ref": "lupa-cvut-cyber-attack"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:yahoo-jp-gmo-fx-login-leak",
+   "basis": {
+    "kind": "source",
+    "ref": "yahoo-jp-gmo-fx-login-leak"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:sankei-dmm-service-halt",
+   "basis": {
+    "kind": "source",
+    "ref": "sankei-dmm-service-halt"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:impress-watch-valtec",
+   "basis": {
+    "kind": "source",
+    "ref": "impress-watch-valtec"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:the-verge-php2shell-websites-down",
+   "basis": {
+    "kind": "source",
+    "ref": "the-verge-php2shell-websites-down"
+   }
+  },
+  {
    "from": "risk:r03-3",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -14647,10 +14775,10 @@
    "from": "claim:nl-offline",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:dutchitleaders-websites-offline",
+   "to": "source:tpo-nl-digid-offline",
    "basis": {
     "kind": "source",
-    "ref": "dutchitleaders-websites-offline"
+    "ref": "tpo-nl-digid-offline"
    }
   },
   {
@@ -14957,10 +15085,10 @@
    "from": "claim:nl-offline",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:dutchitleaders-websites-offline",
+   "to": "source:tpo-nl-digid-offline",
    "basis": {
     "kind": "source",
-    "ref": "dutchitleaders-websites-offline"
+    "ref": "tpo-nl-digid-offline"
    }
   },
   {
@@ -16024,6 +16152,86 @@
    }
   },
   {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:paperjam-article-php2shell-des-milliers-de-sites",
+   "basis": {
+    "kind": "source",
+    "ref": "paperjam-article-php2shell-des-milliers-de-sites"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
+   "basis": {
+    "kind": "source",
+    "ref": "pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:itsocial-cybersecurite-cybersecurite-articles-php",
+   "basis": {
+    "kind": "source",
+    "ref": "itsocial-cybersecurite-cybersecurite-articles-php"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:lupa-cvut-cyber-attack",
+   "basis": {
+    "kind": "source",
+    "ref": "lupa-cvut-cyber-attack"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:yahoo-jp-gmo-fx-login-leak",
+   "basis": {
+    "kind": "source",
+    "ref": "yahoo-jp-gmo-fx-login-leak"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:sankei-dmm-service-halt",
+   "basis": {
+    "kind": "source",
+    "ref": "sankei-dmm-service-halt"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:impress-watch-valtec",
+   "basis": {
+    "kind": "source",
+    "ref": "impress-watch-valtec"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:the-verge-php2shell-websites-down",
+   "basis": {
+    "kind": "source",
+    "ref": "the-verge-php2shell-websites-down"
+   }
+  },
+  {
    "from": "risk:r06",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -16534,6 +16742,86 @@
    }
   },
   {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:paperjam-article-php2shell-des-milliers-de-sites",
+   "basis": {
+    "kind": "source",
+    "ref": "paperjam-article-php2shell-des-milliers-de-sites"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
+   "basis": {
+    "kind": "source",
+    "ref": "pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:itsocial-cybersecurite-cybersecurite-articles-php",
+   "basis": {
+    "kind": "source",
+    "ref": "itsocial-cybersecurite-cybersecurite-articles-php"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:lupa-cvut-cyber-attack",
+   "basis": {
+    "kind": "source",
+    "ref": "lupa-cvut-cyber-attack"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:yahoo-jp-gmo-fx-login-leak",
+   "basis": {
+    "kind": "source",
+    "ref": "yahoo-jp-gmo-fx-login-leak"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:sankei-dmm-service-halt",
+   "basis": {
+    "kind": "source",
+    "ref": "sankei-dmm-service-halt"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:impress-watch-valtec",
+   "basis": {
+    "kind": "source",
+    "ref": "impress-watch-valtec"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:the-verge-php2shell-websites-down",
+   "basis": {
+    "kind": "source",
+    "ref": "the-verge-php2shell-websites-down"
+   }
+  },
+  {
    "from": "risk:r06-2",
    "rel": "backed_by",
    "inverse": "evidences",
@@ -16557,10 +16845,10 @@
    "from": "claim:nl-offline",
    "rel": "cites",
    "inverse": "cited_by",
-   "to": "source:dutchitleaders-websites-offline",
+   "to": "source:tpo-nl-digid-offline",
    "basis": {
     "kind": "source",
-    "ref": "dutchitleaders-websites-offline"
+    "ref": "tpo-nl-digid-offline"
    }
   },
   {

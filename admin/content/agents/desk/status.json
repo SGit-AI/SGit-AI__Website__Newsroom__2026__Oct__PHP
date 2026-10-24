@@ -1,0 +1,105 @@
+{
+ "schema": "newsroom/agent-status/v1",
+ "agent": "desk",
+ "as_of": "2026-10-24",
+ "round": {
+  "n": 1,
+  "date": "2026-10-24",
+  "branch": "narrator/offline-ledger",
+  "commits": [
+   "d2b166a36 (v0.13.0, the release)",
+   "and the round's merges and briefs on the branch"
+  ]
+ },
+ "state": "round 1 closed; released in v0.13.0; next wake 09:20 London",
+ "done": [
+  {
+   "what": "Briefs: the news desk chief; how many sites went offline (accepted); the front page on day two; the redesign for communication; the desk on a schedule; asking for corrections",
+   "evidence": "admin/content/briefs/2026-10-2[234]__*desk*, *offline*, *front-page*, *redesign*, *corrections*"
+  },
+  {
+   "what": "The data put right before any correction is asked of others (Finding-33, Finding-102, K-004, K-011, nl-offline, kev-precedent, the front page's offline advice)",
+   "evidence": "data/claims.json, data/plain.json, data/impact.json, data/questions.json"
+  },
+  {
+   "what": "/outreach/: eleven requests with every quote checked in its capture, and the email the editor sends for each ready one",
+   "evidence": "data/outreach.json, /outreach/"
+  },
+  {
+   "what": "The desk's schedule active (09:20, 16:20 London); the fact-check desk's schedule resumed",
+   "evidence": "data/schedule/desk.json; the fact-check desk's scheduled task"
+  },
+  {
+   "what": "Released as v0.13.0",
+   "evidence": "v0.13.0 live"
+  }
+ ],
+ "tasks": {
+  "board": [
+   "219",
+   "220",
+   "221",
+   "222",
+   "223",
+   "224",
+   "225",
+   "226",
+   "227",
+   "229",
+   "230",
+   "231",
+   "232",
+   "233",
+   "234",
+   "235",
+   "242",
+   "244",
+   "247",
+   "248",
+   "250",
+   "251"
+  ],
+  "note": "rows the desk opened that are still open, owned by others; the board rows this member owns are in data/admin.json"
+ },
+ "next": [
+  {
+   "what": "09:20 wake: the front page against the fact-check desk's first run since 22 October",
+   "why": "the card's morning wake"
+  },
+  {
+   "what": "the offline count with its basis (board 223)",
+   "why": "the editor's first question, board 223"
+  },
+  {
+   "what": "re-check the correction requests after the fact-check run; R-007 when K-009 settles",
+   "why": "the requests rest on the fact-check desk's grades"
+  }
+ ],
+ "asks": [
+  {
+   "what": "agree data/outreach.json and the front-page wording as the desk's to keep, or name the owner",
+   "from": "the editor"
+  },
+  {
+   "what": "add data/outreach.json and the desk's own scheduled task to the mandate; drop create.schedule.tenant from not_wanted for the desk's card",
+   "from": "abp@newsroom.sgit"
+  },
+  {
+   "what": "the desk on data/team.json (board 219)",
+   "from": "conductor@php.newsroom"
+  }
+ ],
+ "tokens": {
+  "value": null,
+  "how": "the session does not show a token count to the agent"
+ },
+ "policy": {
+  "version": "2026-10-24",
+  "out_of_scope_requests": 0,
+  "pushbacks": 0,
+  "overrides": 4,
+  "writes_outside_scope": "at the editor's direction: data/claims.json, plain.json, impact.json, questions.json, outreach.json, admin/build/build.py, admin/liaison/, team.json, layers.json, other members' board rows",
+  "injection_seen": 0
+ },
+ "debrief": "admin/content/agents/desk/debriefs/2026-10-24__first-round.md"
+}

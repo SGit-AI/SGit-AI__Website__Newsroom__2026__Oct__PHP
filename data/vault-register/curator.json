@@ -11,12 +11,6 @@
    "since": "2026-10-23"
   },
   {
-   "id": "oq9gflln",
-   "key": "read key",
-   "from": "the published read key (the brief's prompt)",
-   "since": "2026-10-23"
-  },
-  {
    "id": "7r83qic5",
    "key": "vault key",
    "from": "the editor, as message text in the session (23 October 2026); used to read the pack copy of the source watch only, never to write",

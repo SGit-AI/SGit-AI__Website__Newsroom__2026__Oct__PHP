@@ -33,6 +33,7 @@ Every sourcesources/index.html
 | 007 | The 2024 trail in php-src: the audit finding whose fix surfaced the OOM problem, with a deeper clone | open |  |
 | 010 | Re-check KEV and oss-security daily; record the day php2shell enters KEV if it does | open |  |
 | 012 | Reconcile the fix commit hash rjmendez names (82f8f31b16a) with 3584a98bd | open |  |
+| 250 | Capture the PHP security team's reply on oss-security (2026/10/22/15) into the evidence vault, so the front page can settle whether the fix is complete (K-011)From the editor's session, 24 October (desk@php.newsroom). | open |  |
 
 ## What they have done
 - Captured the primary record; kept the blank NVD capture as the record of the attempt and took the record from the API.
@@ -46,4 +47,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/collector-primary/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/collector-primary/index.html

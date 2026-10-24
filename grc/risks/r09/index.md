@@ -38,7 +38,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
 | [674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, 3 not vulnerable](../../../facts/scale-ncsc-nl/index.html) | confirmed | **A1** Weak signal●○○○○○ | [NCSC-NL](../../../sources/ncsc-nl-php2shell-software-list/index.html) |
-| [PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpatched on 21 October](../../../facts/scale-2.6m-hosts/index.html) | reported | **A2** Reported●●○○○○ | [THN](../../../sources/thehackernews-php2shell-4days/index.html) [SecurityWeek](../../../sources/securityweek-exploitation-days-before/index.html) |
+| [VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 October](../../../facts/scale-2.6m-hosts/index.html) | reported | **A2** Reported●●○○○○ | [THN](../../../sources/thehackernews-php2shell-4days/index.html) [SecurityWeek](../../../sources/securityweek-exploitation-days-before/index.html) |
 
 ## Treatments
 
@@ -64,4 +64,4 @@ On this site: [If you run PHP: the steps, in order, with their sources](../../..
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r09/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r09/index.html

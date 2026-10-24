@@ -63,7 +63,7 @@ About 14 minutes in all. Choose *read as Alex* and the bar under the menu keeps 
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Primary source](../glossary/index.html#primary)[Exploit, exploitation](../glossary/index.html#exploit)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)[Patch](../glossary/index.html#patch)[CVE](../glossary/index.html#cve)
+[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[Exploit, exploitation](../glossary/index.html#exploit)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)[NCSC](../glossary/index.html#ncsc)[Patch](../glossary/index.html#patch)[CVE](../glossary/index.html#cve)
 
 [Read as Alex →](../briefings/everyone/index.html)
 
@@ -130,17 +130,17 @@ The answer in thirty seconds
 A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of the evening of 22 October, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
 
 #### Reading path
-- [Your briefing](../briefings/board/index.html) 3 min
+- [Your briefing](../briefings/board/index.html) 4 min
 - [Explained from the start](../explained/index.html) 6 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 15 minutes in all. Choose *read as Jordan* and the bar under the menu keeps your place on every page.
+About 18 minutes in all. Choose *read as Jordan* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[Patch](../glossary/index.html#patch)[Exploit, exploitation](../glossary/index.html#exploit)[SAPI](../glossary/index.html#sapi)[Primary source](../glossary/index.html#primary)[CVE](../glossary/index.html#cve)[KEV](../glossary/index.html#kev)[CISA](../glossary/index.html#cisa)[php2shell](../glossary/index.html#php2shell)[Remote code execution (RCE)](../glossary/index.html#rce)
+[PHP](../glossary/index.html#php)[Patch](../glossary/index.html#patch)[Exploit, exploitation](../glossary/index.html#exploit)[SAPI](../glossary/index.html#sapi)[Primary source](../glossary/index.html#primary)[CVE](../glossary/index.html#cve)[KEV](../glossary/index.html#kev)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[php2shell](../glossary/index.html#php2shell)
 
 [Read as Jordan →](../briefings/board/index.html)
 
@@ -179,7 +179,7 @@ About 16 minutes in all. Choose *read as Taylor* and the bar under the menu keep
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[NSA](../glossary/index.html#nsa)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[Exploit, exploitation](../glossary/index.html#exploit)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Remote code execution (RCE)](../glossary/index.html#rce)
+[PHP](../glossary/index.html#php)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[NSA](../glossary/index.html#nsa)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Exploit, exploitation](../glossary/index.html#exploit)[Remote code execution (RCE)](../glossary/index.html#rce)
 
 [Read as Taylor →](../briefings/pm/index.html)
 
@@ -206,17 +206,17 @@ The answer in thirty seconds
 The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. As of the evening of 22 October, no named organisation has said it was compromised through this flaw. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
 
 #### Reading path
-- [Your briefing](../briefings/cfo/index.html) 3 min
+- [Your briefing](../briefings/cfo/index.html) 4 min
 - [Explained from the start](../explained/index.html) 6 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [The numbers](../numbers/index.html) 2 min
 - [In context: 2008 to 2026](../context/index.html) 3 min
 
-About 16 minutes in all. Choose *read as Quinn* and the bar under the menu keeps your place on every page.
+About 17 minutes in all. Choose *read as Quinn* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
-[Patch](../glossary/index.html#patch)[Unauthenticated](../glossary/index.html#unauthenticated)[Primary source](../glossary/index.html#primary)[Exploit, exploitation](../glossary/index.html#exploit)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[PHP](../glossary/index.html#php)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)
+[Patch](../glossary/index.html#patch)[Unauthenticated](../glossary/index.html#unauthenticated)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Exploit, exploitation](../glossary/index.html#exploit)[PHP](../glossary/index.html#php)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)[NCSC](../glossary/index.html#ncsc)
 
 [Read as Quinn →](../briefings/cfo/index.html)
 
@@ -255,7 +255,7 @@ About 15 minutes in all. Choose *read as Morgan* and the bar under the menu keep
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Vulnerability](../glossary/index.html#vulnerability)[Exploit, exploitation](../glossary/index.html#exploit)[Shell](../glossary/index.html#shell)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[Remote code execution (RCE)](../glossary/index.html#rce)
+[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Vulnerability](../glossary/index.html#vulnerability)[Exploit, exploitation](../glossary/index.html#exploit)[Shell](../glossary/index.html#shell)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)
 
 [Read as Morgan →](../briefings/dpo/index.html)
 
@@ -286,10 +286,10 @@ The flaw is in the PHP runtime, so exposure is every internet-facing system runn
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [Exploitation signals](../exploitation/index.html) 2 min
 - [Detection and defence](../defence/index.html) 3 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 14 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
+About 16 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -362,9 +362,9 @@ The 70% figure is a share of websites that use PHP, restated as a share of the I
 - [Every claim](../claims/index.html) 1 min
 - [Who found it](../discovery/index.html) 2 min
 - [How disclosure broke](../leak/index.html) 1 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 
-About 10 minutes in all. Choose *read as Rowan* and the bar under the menu keeps your place on every page.
+About 12 minutes in all. Choose *read as Rowan* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -396,17 +396,17 @@ The answer in thirty seconds
 Safe to say: two critical flaws in PHP were fixed on 21 October; we updated or isolated our systems; we have no evidence of compromise and review continues. Do not say '70% of the Internet', 'the most severe ever' or 'exploited everywhere'. Point people to php.net and your national agency.
 
 #### Reading path
-- [Your briefing](../briefings/comms/index.html) 3 min
+- [Your briefing](../briefings/comms/index.html) 4 min
 - [Explained from the start](../explained/index.html) 6 min
 - [The numbers](../numbers/index.html) 2 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 
-About 14 minutes in all. Choose *read as Riley* and the bar under the menu keeps your place on every page.
+About 17 minutes in all. Choose *read as Riley* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[Exploit, exploitation](../glossary/index.html#exploit)[Patch](../glossary/index.html#patch)[CDN](../glossary/index.html#cdn)[Honeypot](../glossary/index.html#honeypot)[Primary source](../glossary/index.html#primary)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Remote code execution (RCE)](../glossary/index.html#rce)
+[PHP](../glossary/index.html#php)[Exploit, exploitation](../glossary/index.html#exploit)[Patch](../glossary/index.html#patch)[CDN](../glossary/index.html#cdn)[Honeypot](../glossary/index.html#honeypot)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)
 
 [Read as Riley →](../briefings/comms/index.html)
 
@@ -437,9 +437,9 @@ Internet-facing mod_php first, then FPM, then everything else. Where patching sl
 - [If you run PHP](../playbook/index.html) 3 min
 - [Exploitation signals](../exploitation/index.html) 2 min
 - [Detection and defence](../defence/index.html) 3 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 
-About 12 minutes in all. Choose *read as Sam* and the bar under the menu keeps your place on every page.
+About 14 minutes in all. Choose *read as Sam* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -623,10 +623,10 @@ A bug class seen and shelved in 2024 was turned into working exploits by three A
 - [Who found it](../discovery/index.html) 2 min
 - [How disclosure broke](../leak/index.html) 1 min
 - [In context: 2008 to 2026](../context/index.html) 3 min
-- [The agencies](../agencies/index.html) 1 min
+- [The agencies](../agencies/index.html) 3 min
 - [The numbers](../numbers/index.html) 2 min
 
-About 12 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
+About 14 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -640,4 +640,4 @@ The first version of this site opened with a sentence that was accurate and unre
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/start/index.html

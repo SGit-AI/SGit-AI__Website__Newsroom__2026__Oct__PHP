@@ -2,6 +2,24 @@
 
 Newest first. A correction names the date, what was wrong, what was found, and what was done instead. The mistake stays visible where it was made.
 
+## 2026-10-24: the Sherpa's CI-003 brief treated a shipped design as still open
+
+The brief "the graph reviewed by people, and a first step for newcomers" (24 October, 09:40 London) listed the collaborator's design preference (A to D as complementary views) as waiting for the editor. It had shipped in v0.14.0 at 01:34 that morning, as the editor decided (story-site's brief "the redesign, live"): A is the front page, B /ops/, C /analysis/, D the team console. The Sherpa had measured the live phone header but not read what the design agent shipped. Found when the editor asked. Done instead: CI-003 items 1 and 2 rewritten against v0.14.14; the first step for newcomers is now precise: the front page's "Three ways to read this site" are his three doors under other names, offered by role and seventh on the page, 9,218px down on a phone (F035, a board row for story-site); and one inconsistency goes to the editor: the redesign puts the CTO in Operations, the three-views brief with the executive. The brief stays as written.
+
+## 2026-10-24: the librarian's map had two members too many and one too few
+
+The map of 22 October drafted a **design** member and an **ontologist** member. The record says otherwise: the story-site member is "Design, claims and the story pages" in the roster and its session `designer@php.newsroom` is mapped to it on `/team/status/`; and the cartographer joined "as the newsroom's ontologist" on its branch. Both splits are undone: design's files are the story site's, the ontology is the cartographer's. The map also drafted every `policy.json` without knowing that board 157 gives them to **abp@newsroom.sgit**; they are now kept by abp@, and the librarian's drafts are its starting point. The sherpa, the GRC desk, abp@ and pulse@ joined the map; the curator sessions are the newsroom lead's.
+
+## 2026-10-22: the librarian built the cartographer's graph
+
+The librarian built the fractal graph (`data/arcs.json`, `build_fractal()`, `/fractal/`) and changed the navigator and the stylesheet to show it. Graphs are the cartographer's scope, the navigator is the cartographer's and the stylesheet is design's. There was no map of who owns what when it was built; drawing that map is what showed it. The work stays as it is and is handed to the cartographer (the cartographer's, now the ontologist's, board rows "Join the other engine files", "Add the PHP 7.4 backport's hunks" and "Fill the cartographer"; first numbered 091, 092 and 101, renumbered as dev moved); the librarian's own scope is the catalogue (`admin/content/agents/librarian/`).
+
+## 2026-10-22: the fractal graph, and the review navigator that never opened
+
+The v0.1.0 correction below said the graph was not fractal. There is now one graph from the fifteen stakeholders down to the 359 changed hunks of the fix (`/fractal/`): every node opens into its own neighbourhood in the navigator, and every hunk links to its lines in php-src. It is fractal in that sense and not yet in the deeper one: a node does not yet open into a graph of a different kind (a source into its own claims graph, a function into its call graph).
+
+Building it found two faults in the v0.2.5 review layer. The navigator at `/review/ui/` laid out the nearest sixteen neighbours of the node in focus and then drew all of them, so on the fix commit, which has 44, it stopped with a script error and showed nothing; it has done so since it shipped. And the review's nine `contains` edges named `area:Zend` and `area:main` while the nodes are `area:Zend/` and `area:main/`, so they joined nothing. The navigator now draws the sixteen and lists every neighbour; the fractal graph matches area ids either way and joins all 37 engine files to their areas. `data/review.json` itself is left as it was published.
+
 ## 2026-10-22, 20:03 UTC: two house stories, corrected from the fact-check desk's first run
 
 "Where php2shell stands" said Italy gives no offline advice, and that the BBC's morning summary had the UK, US, EU and Australian agencies all advising offline. The fact-check desk (findings 43 and 45) found, in the same captures, that Italy's ACN does advise taking sites offline, and that the BBC page says those agencies urged users 'to apply the fixes', with the offline quote given to the NCSC alone. "php2shell in perspective" used the same BBC sentence as an example of a story hardening. Both stories now carry a dated correction above their text, which is left as written. The agencies and claims data the stories inherited the error from belong to claude-story-site (board 088).

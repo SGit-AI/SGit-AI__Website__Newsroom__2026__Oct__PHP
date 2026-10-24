@@ -1,12 +1,12 @@
-# Fact: PHP is used by almost 70% of websites
+# Fact: PHP is used by almost 70% of websites whose server-side language is known
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-PHP is used by almost 70% of websites Who says it, its status (reported), its sources, and its timeline from publication to this site.
+PHP is used by almost 70% of websites whose server-side language is known Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
 Fact · scale · reported
 
-# PHP is used by almost 70% of websites
+# PHP is used by almost 70% of websites whose server-side language is known
 
 **Who says it:** Cloudflare; OpenAI ('an estimated 70%'); Wiz body text · **Sources:** [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [OpenAI on X](../../sources/x-openai-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html)
 
@@ -14,9 +14,9 @@ None of the three cites the survey it comes from. A share of websites using PHP 
 
 ## Fact-check
 
-**A2** Reported●●○○○○ measures differently · Count · verdict: **holds in part**
+**A2** Reported●●○○○○ measures differently · Count · verdict: **holds**
 
-Cloudflare, OpenAI and Wiz each state roughly 70%, but they restate one survey (Cloudflare links W3Techs; Tenable and Imperva name W3Techs), so this is an echo of one origin, and the survey's method is not captured, which caps a count at A2. The figure W3Techs publishes is a share of websites whose server-side language is known, a qualifier the claim drops.
+Now carries the population, 'websites whose server-side language is known' (Finding-33 fixed), which is how W3Techs measures it; Cloudflare's page links the figure to W3Techs. Three outlets repeat one survey, so A2 until the survey itself is captured (board 033). Outlets disagree on the value, about 69-70% against about 75% (Finding-103).
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -29,9 +29,9 @@ Cloudflare, OpenAI and Wiz each state roughly 70%, but they restate one survey (
 | [rte-reuters-websites-go-dark](../../sources/rte-reuters-websites-go-dark/index.html) | partial | *PHP runs roughly 75% of websites whose programming language can be identified, according to web technology tracker W3Techs* | 99bb92662561bd29 |
 | [abc-au-gov-sites-exposed](../../sources/abc-au-gov-sites-exposed/index.html) | partial | *PHP runs about 75 per cent of websites whose programming language can be identified, according to web technology tracker W3Techs.* | 84937c7c5b87e7c9 |
 
-Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Finding-103](../../factcheck/index.html#Finding-103), [Finding-32](../../factcheck/index.html#Finding-32), [Finding-33](../../factcheck/index.html#Finding-33).
+Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Contradiction-12](../../factcheck/index.html#Contradiction-12), [Evidence-15](../../factcheck/index.html#Evidence-15), [Finding-103](../../factcheck/index.html#Finding-103), [Finding-32](../../factcheck/index.html#Finding-32), [Finding-33](../../factcheck/index.html#Finding-33).
 
-Graded in Run-1, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-3, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Cloudflare publishes [Cloudflare deploys protections against php2shell vulnerability](../../sources/cloudflare-blog-php2shell-waf/index.html)
@@ -41,6 +41,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:23 UTC. The scale is on
 - 2026-10-22 08:12 UTCSaved into the evidence vault: Cloudflare
 - 2026-10-22 08:16 UTCSaved into the evidence vault: OpenAI on X
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
+- 2026-10-24Reworded or re-sourced in v0.12.1
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
 
@@ -61,7 +62,8 @@ Status: reported
 Topic: scale
 Sources: cloudflare-blog-php2shell-waf, x-openai-php2shell, wiz-blog-php2shell
 ```
+v2 · site v0.12.1 · 24 October 2026 · reportedPHP is used by almost 70% of websites whose server-side language is knownWho says it: Cloudflare; OpenAI ('an estimated 70%'); Wiz body text2 unchanged linesSources: cloudflare-blog-php2shell-waf, x-openai-php2shell, wiz-blog-php2shell
 
 
 ---
-site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html
+site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html
