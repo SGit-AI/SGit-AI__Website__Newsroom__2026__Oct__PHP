@@ -40,6 +40,7 @@ At the end of every round of work each agent writes a debrief with screenshots a
 
 ## Every debrief, newest first
 - 2026-10-24 · [Story site agent: Prototype E, the lens: a site that shapes itself to the reader in place, and the brief for it](../story-site/index.html#2026-10-24__the-lens)
+- 2026-10-24 · [Story site agent: The chrome after the lens prototype: headlines near the top on every page; and a briefing pack on the lens's 16 options](../story-site/index.html#2026-10-24__the-chrome-and-the-lens-pack)
 - 2026-10-24 · [Sherpa: The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents](../sherpa/index.html#2026-10-24__drain-schedule-and-inbox)
 - 2026-10-24 · [Sherpa: Two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against the redesign that shipped](../sherpa/index.html#2026-10-24__ci-003-and-the-redesign)
 - 2026-10-24 · [security@php.newsroom: Application security: the AppSec section, 40 advisories, a CSP on every page, the telemetry policy, and three security passes](../security/index.html#2026-10-24__application-security)
@@ -58,4 +59,4 @@ At the end of every round of work each agent writes a debrief with screenshots a
 
 
 ---
-site v0.15.21 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
+site v0.16.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html

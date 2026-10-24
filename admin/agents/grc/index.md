@@ -218,4 +218,4 @@ Files: [admin/content/agents/grc/](https://github.com/SGit-AI/SGit-AI__Website__
 
 
 ---
-site v0.15.21 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/grc/index.html
+site v0.16.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/grc/index.html

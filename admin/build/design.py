@@ -268,7 +268,7 @@ def build(ns):
 {f"<q>{E(a['offline_text'][:170])}</q>" if a.get("offline_text") and a["offline"] not in ("none", "unknown") else f"<p class=small style='margin:0'>{E((a.get('note') or '')[:150])}</p>"}
 <div class="chips">{"".join(f"<span class=chip>{E(short_name(SOURCES[s]))}</span>" for s in a["sources"][:2] if s in SOURCES)}</div></article>''' for a in D['agencies'])
     body = f'''
-<section class="band"><div class="shell hero" style="grid-template-columns:minmax(0,1.3fr) minmax(300px,1fr)">
+<section class="band"><div class="shell hero">
   <div><p class="eyebrow">The analysis &middot; government advice</p><h1 class="display">{len(D["agencies"])} agencies. All say update. They split on offline.</h1>
   <p class="lede">The question that divides them is not whether to patch but what to do with a system you cannot patch today. Read left to right: from no offline advice to take it offline.</p></div>
   <div class="ans"><p class="eyebrow" style="margin:0 0 .4rem">In one line</p><p style="font-size:1.15rem">The US says take it offline. The UK says that is the fourth step. Europe says isolate. Australia, Japan and the Netherlands say nothing about it.</p></div>
@@ -344,7 +344,7 @@ def build(ns):
         ('c', 'C. A content page: the agencies', 'Answer in one line, every agency on one spectrum, a card each, the evidence table one click away.'),
         ('d', 'D. The team console', 'Its own menu and layout: board as lanes, releases, agents and what they own.')])
     body = f'''
-<section class="band"><div class="shell hero" style="grid-template-columns:minmax(0,1.4fr) minmax(300px,1fr)">
+<section class="band"><div class="shell hero">
   <div><p class="eyebrow">Admin &middot; design &middot; for review</p><h1 class="display">The redesign: who you are, and how much you want to see</h1>
   <p class="lede">The editor's review of 23 October: the site is right in substance and wrong in form. Too geeky, too much text, a menu that is a site map, and half the screen unused. Four mockups, built from the live data, and the model behind them.</p></div>
   <div class="ans"><p class="eyebrow" style="margin:0 0 .4rem">The model, in one line</p><p style="font-size:1.12rem">Two dials. <b>Who you are</b> sets the layout and the order. <b>How much you want</b> (Focus, Standard, Everything) sets which pages exist for you at all. What you have read gets out of the way.</p></div>
@@ -452,6 +452,31 @@ nav.site .tools{flex-wrap:wrap;max-width:100%;min-width:0}
 .console-live > .side{position:sticky;top:5rem;height:auto;max-height:calc(100vh - 6rem);border-radius:14px}
 .console-live > .cmain{min-width:0}
 @media (max-width:900px){.console-live{grid-template-columns:1fr}.console-live > .side{position:static;max-height:none}}
+/* the chrome, after the lens prototype (24 October): the headline near the top of every page. The bar is one line on
+   a laptop; the newcomer line, the reading strip and the page's kind are one slim line each; the rail of a track's
+   home comes after its content on a phone. */
+@media (min-width:1100px){
+  nav.site .row>.brand,nav.site .row>.crumbs{white-space:nowrap}
+  nav.site .row>.nav-items{flex:1 0 100%;order:9}
+  nav.site .row>.status{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:0 1 auto}
+  nav.site .row>.crumbs{white-space:nowrap}
+  nav.site .tools{flex-wrap:nowrap;margin-left:auto;flex:none}
+  .dials-live{flex-wrap:nowrap}
+  .dials-live select{max-width:11rem}
+}
+@media (min-width:1100px) and (max-width:1499px){nav.site .row>.status{display:none}}
+.pbar .row{padding-top:.2rem;padding-bottom:.2rem}
+.rs-strip{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .9rem;padding:.3rem .7rem;margin:.5rem 0 .5rem;font-size:.82rem}
+.rs-strip p{margin:0}
+.origin{display:inline-flex;max-width:100%;margin:0 0 .5rem;padding:.2rem .6rem}
+.origin span{flex:0 1 auto}
+@media (max-width:760px){
+  .origin span{display:none}
+  .rs-strip{font-size:.78rem}
+  .pbar{font-size:.78rem}
+  .v2 .app>div{order:1}
+  .v2 .app>.rail{order:2}
+}
 """
 
 def write_live_css(ns):
@@ -693,7 +718,7 @@ def build_tracks(ns):
     contested = [c for c in claims if c['status'] in ('disputed', 'contradicted', 'unverified')]
     cont = ''.join(f'<li><span class="pill {"alert" if c["status"] == "unverified" else "warn"}">{E(c["status"])}</span> <a href="../facts/{U(c["id"])}/index.html" style="color:inherit">{E(c["claim"][:170])}</a><div class="small">who says it: {E(c["by"][:90])}</div></li>' for c in contested[:10])
     body = f'''<div class="v2">
-<section class="band"><div class="shell hero" style="grid-template-columns:minmax(0,1.3fr) minmax(320px,1fr)">
+<section class="band"><div class="shell hero">
   <div><p class="eyebrow">Analysis &middot; data as of {E(when)}</p><h1 class="display">{len(claims)} facts. {st["confirmed"]} confirmed. {st["disputed"] + st["contradicted"] + st["unverified"]} still contested.</h1>
   <p class="lede">Every fact on this site carries one of five words for how far it can be trusted, and links to the saved pages it rests on. This is the view for weighing them: the numbers and what each measures, where governments disagree, and what is contested.</p></div>
   <div class="ans" data-answer-for="journalist"><div class="who-line"><span class="av communicate" data-a-av>R</span><div><b>Your answer in thirty seconds</b><div class="small" style="color:var(--band-muted)" data-a-who>for {E(PERSONAS["journalist"]["person"])}, journalist</div></div></div><p data-a-text>{E(PERSONAS["journalist"]["answer"])}</p></div>
