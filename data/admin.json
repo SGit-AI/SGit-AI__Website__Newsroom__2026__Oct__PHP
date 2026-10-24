@@ -1415,6 +1415,14 @@
    "status": "open",
    "owner": "cartographer",
    "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+  },
+  {
+   "id": "191",
+   "title": "The source watch's vault of record: 7r83qic5 (pack mode) in use, oq9gflln retired, on /vaults/, the source-watch page, the team, the schedules and the researcher's register; no read key published for the pack vault until the vault UI supports it",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done at the editor's word of 24 October. Still open: export_watch.py reads oq9gflln, so the watch's counts on the site stop at its last export.",
+   "version": "0.11.3"
   }
  ],
  "evidence_vault": {

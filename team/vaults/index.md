@@ -112,8 +112,8 @@ Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records 
 
 | Vault ID | What it holds | Created | Key sealed to the root |
 |---|---|---|---|
-| `oq9gflln` | The source watch: every outside source on php2shell, captured on a schedule, a snapshot on every change, raw kept apart from analysis; public read key published | 2026-10-22 | 2026-10-22 |
-| `7r83qic5` | Pack-mode experiment (sgit 0.24.0): a pack-vault copy of the source watch, made with sgit pack import from a full clone of oq9gflln on 23 October to measure push and clone; not the live watch, which stays oq9gflln | 2026-10-23 | 2026-10-23 |
+| `oq9gflln` | The source watch: every outside source on php2shell, captured on a schedule, a snapshot on every change, raw kept apart from analysis; public read key published. Retired on 23 October 2026: the watch continues in 7r83qic5 | 2026-10-22 | 2026-10-22 |
+| `7r83qic5` | The source watch, in pack mode (sgit 0.24.0): a pack-vault copy of oq9gflln made with sgit pack import on 23 October, first to measure push and clone, and since then the live watch; read key not published until the vault UI opens pack vaults | 2026-10-23 | 2026-10-23 |
 
 #### Keys it holds
 
@@ -124,7 +124,7 @@ Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records 
 | `3ytzxm3g` | read key | the site (published in data/admin.json) | 2026-10-22 |
 | `7r83qic5` | vault key | made it | 2026-10-23 |
 
-Kept by the agent itself (confirmed by researcher@php.newsroom on 23 October 2026).
+Kept by the agent itself (confirmed by researcher@php.newsroom on 23 October 2026). The two rows for oq9gflln and 7r83qic5 updated by dev@php.newsroom on 24 October 2026 at the editor's word: the pack vault is the one in use.
 
 ### [sherpa@php.newsroom](../sherpa/index.html) 0 vaults made
 
@@ -179,4 +179,4 @@ What each vault is for, and the published read keys and write-only lanes, are on
 
 
 ---
-site v0.11.2 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html
+site v0.11.3 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html

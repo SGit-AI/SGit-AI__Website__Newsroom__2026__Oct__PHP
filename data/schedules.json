@@ -21,7 +21,7 @@
    "every_minutes": 30,
    "cadence": "every 30 minutes, each pass scheduling the next",
    "does": "Probes every watched source, captures what changed into the source watch vault, rebuilds the series and the analysis, pushes the vault, and reports moves (sites dark, KEV, EPSS, the NCSC-NL inventory, Metasploit and nuclei counts).",
-   "writes": "the source watch vault (oq9gflln); nothing in this repository",
+   "writes": "the source watch vault (oq9gflln until 23 October 2026; since then its pack-mode copy, 7r83qic5); nothing in this repository",
    "status": "paused by the editor at 21:36 UTC on 22 October until he has reviewed it; the pass booked for 21:40 is disabled. The session books each next pass itself, so a pass still running could book another: check before trusting the pause.",
    "since": "2026-10-22T20:33Z",
    "proposed": "Before scheduling the next pass, check London time: between 22:00 and 07:00, schedule it for 07:04 instead. Breaking-news nights only when the editor says so."

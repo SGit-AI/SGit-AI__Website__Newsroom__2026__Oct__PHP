@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.11.2. Not the live site.
+> Mockup D for review, built from the data of release v0.11.3. Not the live site.
 
-PHP Team console Console Overview Board 128 Agents 16 Releases 78 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 128 Agents 16 Releases 79 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.11.2 
-78 releases since 22 Oct 
+v0.11.3 
+79 releases since 22 Oct 
 
 Open on the board 
 128 
-57 done, 5 waiting 
+58 done, 5 waiting 
 
 Pages built 
 750 
@@ -72,8 +72,11 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 57
+#### Done 58
 
+ #191 
+The source watch's vault of record: 7r83qic5 (pack mode) in use, oq9gflln retired, on /vaults/, the source-watch page, t… 
+ dev@php.newsroom v0.11.3 
  #176 
 The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session wi… 
  editor 
@@ -92,13 +95,11 @@ From CI-002, step 4: an impact view: pick a function or file, climb the graph to
  #168 
 From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the remediation and code they exercise 
  dev@php.newsroom v0.10.13 
- #167 
-From CI-002, step 2: a basis on every graph edge (source, code, inferred, confirmed, with its support), checked in build… 
- dev@php.newsroom v0.10.13 
 
 ### Releases
  latest 8 
 
+ v0.11.3 2026-10-24 the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because th… 
  v0.11.2 2026-10-24 claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit n… 
  v0.11.1 2026-10-24 Security pass 2: the Ask pane renders the model's answer as DOM nodes, so a captured page title can no longer break out of a citat… 
  v0.11.0 2026-10-24 The cartographer joins: the ontology (15 verbs, each with its inverse), one node per party (243, from every publisher spelling), t… 
@@ -106,7 +107,6 @@ From CI-002, step 2: a basis on every graph edge (source, code, inferred, confir
  v0.10.23 2026-10-24 synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the v… 
  v0.10.22 2026-10-24 Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its obje… 
  v0.10.21 2026-10-24 synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey… 
- v0.10.20 2026-10-24 the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ From CI-002, step 2: a basis on every graph edge (source, code, inferred, confir
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 5
 
 ---
-site v0.11.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.11.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

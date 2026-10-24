@@ -2,7 +2,7 @@
 
 The proposed redesign of the site for review: what is wrong now, the two dials (who you are and how much you see), which pages each reader sees, the menu per view, and four mockups built from the live data.
 
-> Mockup notes for review, built from the data of release v0.11.2. Not the live site.
+> Mockup notes for review, built from the data of release v0.11.3. Not the live site.
 
 Admin · design · for review 
 ## The redesign: who you are, and how much you want to see
@@ -40,7 +40,7 @@ Pages stop at 1,080 pixels; on a laptop half the screen is empty. The proposal r
 
 #### The menu is the site map
 
-Eleven groups and 134 entries, ordered by how the site was built, not by what a reader wants to do. The proposal: four to eight entries, chosen by who you are and how much you want. 
+Eleven groups and 135 entries, ordered by how the site was built, not by what a reader wants to do. The proposal: four to eight entries, chosen by who you are and how much you want. 
 
 #### Everyone sees everything
 
@@ -109,7 +109,7 @@ Counted from the 750 pages this release builds.
 Everything view only. It stays public, because how the site is run is part of the story; it just stops being in a reader's way. 
 
 ### The menu, per view
- today: 11 groups, 134 entries, the same for everyone 
+ today: 11 groups, 135 entries, the same for everyone 
 
 Focus 
 Four places. For a board member, a CFO, a website owner. 
@@ -151,7 +151,7 @@ All of it, for power users and the team.
 
 - The admin pages move into console D. 
 
- Mockups built by the design agent from release v0.11.2; the brief is on the briefs page. Board items record each step.
+ Mockups built by the design agent from release v0.11.3; the brief is on the briefs page. Board items record each step.
 
 ---
-site v0.11.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html
+site v0.11.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html
