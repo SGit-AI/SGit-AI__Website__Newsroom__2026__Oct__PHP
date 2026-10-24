@@ -7,7 +7,7 @@
 - **Name:** News desk chief
 - **Address:** `desk@php.newsroom`
 - **Kind:** agent, group *coordination*
-- **Status:** on branch narrator/offline-ledger, not yet in dev
+- **Status:** in dev since v0.13.0 (24 October 2026); scheduled at 09:20 and 16:20 London
 - **Folder:** `admin/content/agents/desk/`
 - **Mission:** Holds the line of the story under the editor: what it is today, what it is not, and which question the newsroom answers next.
 - **Central claim:** Any two pages that tell different stories are either reconciled or the difference is named as the story.

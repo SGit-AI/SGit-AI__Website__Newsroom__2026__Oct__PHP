@@ -15,4 +15,4 @@ v7 · site v0.12.1 · 24 October 2026 · 8 lines added or changed, 8 removed or 
 
 
 ---
-site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-security/index.html
+site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/versions/briefing-security/index.html

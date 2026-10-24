@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 253 items, 174 open, 74 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 253 items, 173 open, 75 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -248,7 +248,7 @@ The work, as rows in `data/admin.json`: 253 items, 174 open, 74 done. An item is
 | 236 | Go or no-go on the desk's two runs (09:15 and 16:15 London) and the repeat_until dateFrom the brief: the news desk chief on a schedule (24 October; for the editor's go). The editor's go, 24 October: the desk's card is data/schedule/desk.json. | done | editor |  |
 | 237 | With the editor's go: the desk's schedule and its two repeating tasks (desk-morning-line, desk-afternoon-check) in the schedule vaultFrom the brief: the news desk chief on a schedule (24 October; for the editor's go). Superseded: schedules moved into the repository (data/schedule/); the desk wrote its own card. | done | conductor |  |
 | 238 | Resume the fact-check desk's schedule: the front-page errors it found (K-011 first) wait on itFrom the brief: the news desk chief on a schedule (24 October; for the editor's go). The editor's go, 24 October ('continue with the fact checker'): its scheduled task re-enabled by the desk, on board 103's daytime hours. | done | editor |  |
-| 239 | /team/desk/: the desk's notes, newest first, from the schedule vault's run recordsFrom the brief: the news desk chief on a schedule (24 October; for the editor's go). | open | dev |  |
+| 239 | /team/desk/: the desk's notes, newest first, from the schedule vault's run recordsFrom the brief: the news desk chief on a schedule (24 October; for the editor's go). Superseded: the schedule vault is retired; the desk's card, runs and messages show on /team/schedule/ (24 October). | done | dev |  |
 | 240 | Clean hands before any correction request: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framing, about 32 pages), K-011 on the front page, the status words on nl-offline and kev-precedentFrom the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Done by the desk on the editor's instruction, 24 October: the 70% wordings, K-004 in the claim and the question, K-011 and the offline lines on the front page, nl-offline and kev-precedent to reported, and wordpress-drupal as researchers' tests. The /signals/ chart still sets 1.57 million against 2.6 million on one scale (board 251). | done | claude-story-site |  |
 | 241 | Bring claude/corrections-liaison-desk up to dev, re-check R-001 to R-003 against the 295 sources, draft the desk's requests 2 to 12 with every quote checked against its capture, and release /outreach/From the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Done by the desk, 24 October: the branch merged, eleven requests drafted with every quote checked in its capture, /outreach/ released with the emails. | done | liaison@php.newsroom |  |
 | 242 | Capture the CVSS '10.0' relays (Florian Roth, Phoenix Security, Cyber Daily), the BBC's '90%' as it stands and the UK minister's figures, before any request rests on themFrom the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). | open | collector-researchers |  |
@@ -268,4 +268,4 @@ Who the owners are is on [roles](../roles/index.html); the briefs that open item
 
 
 ---
-site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

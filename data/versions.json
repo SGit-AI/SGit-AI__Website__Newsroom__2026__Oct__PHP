@@ -1,6 +1,15 @@
 {
- "current": "0.14.0",
+ "current": "0.14.1",
  "versions": [
+  {
+   "version": "0.14.1",
+   "date": "2026-10-24",
+   "title": "The news desk chief's first round closed: its debrief with screenshots of every page it changed, its status and its role",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.0",
    "date": "2026-10-24",

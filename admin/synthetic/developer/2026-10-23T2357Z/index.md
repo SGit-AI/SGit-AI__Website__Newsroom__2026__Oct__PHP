@@ -80,4 +80,4 @@ This run is in the folder `runs/2026-10-23T2357Z/`: the served and rendered HTML
 
 
 ---
-site v0.14.0 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/developer/2026-10-23T2357Z/index.html
+site v0.14.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/developer/2026-10-23T2357Z/index.html
