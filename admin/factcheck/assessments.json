@@ -379,6 +379,7 @@
    ],
    "tickets": [
     "Contradiction-2",
+    "Evidence-12",
     "Finding-14",
     "Finding-60",
     "Finding-122"
@@ -2196,6 +2197,7 @@
    "tickets": [
     "Evidence-1",
     "Evidence-3",
+    "Evidence-12",
     "Finding-26",
     "Finding-85"
    ],
@@ -3517,6 +3519,9 @@
     }
    ],
    "tickets": [
+    "Evidence-13",
+    "Evidence-14",
+    "Evidence-15",
     "Finding-102",
     "Finding-124"
    ],
@@ -3612,6 +3617,8 @@
     }
    ],
    "tickets": [
+    "Contradiction-12",
+    "Evidence-15",
     "Finding-32",
     "Finding-33",
     "Finding-103"

@@ -25,7 +25,7 @@ Reworded to Wiz's own words, with the BBC's 'roughly' attributed to the BBC (Fin
 | [x-wiz-io-php2shell](../../sources/x-wiz-io-php2shell/index.html) | partial | *a decade-old PHP Core vulnerability reaching CVSS 9.2 severity impacting 70% of the Internet.* | 6c17977662815b0c |
 | [bbc-live-ckgel5xp2xv9t](../../sources/bbc-live-ckgel5xp2xv9t/index.html) | partial | *with cyber-security firm Wiz estimating that "roughly 70%" of the internet is affected, though the BBC is unable to independently verify that figure.* | c88b8c5f4c6bc07d |
 
-Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Finding-102](../../factcheck/index.html#Finding-102), [Finding-124](../../factcheck/index.html#Finding-124).
+Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Evidence-13](../../factcheck/index.html#Evidence-13), [Evidence-14](../../factcheck/index.html#Evidence-14), [Evidence-15](../../factcheck/index.html#Evidence-15), [Finding-102](../../factcheck/index.html#Finding-102), [Finding-124](../../factcheck/index.html#Finding-124).
 
 Graded in Run-3, resting on captures up to 2026-10-22 08:16 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -62,4 +62,4 @@ v2 · site v0.12.1 · 24 October 2026 · unverifiedRoughly 70% of the Internet i
 
 
 ---
-site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.html
+site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-internet/index.html

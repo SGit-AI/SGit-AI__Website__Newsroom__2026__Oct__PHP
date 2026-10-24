@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.5. Not the live site.
+> Mockup D for review, built from the data of release v0.14.6. Not the live site.
 
-PHP Team console Console Overview Board 169 Agents 19 Releases 92 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 169 Agents 19 Releases 93 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.14.5 
-92 releases since 22 Oct 
+v0.14.6 
+93 releases since 22 Oct 
 
 Open on the board 
 169 
-80 done, 5 waiting 
+81 done, 5 waiting 
 
 Pages built 
-793 
+795 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -72,8 +72,11 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 80
+#### Done 81
 
+ #255 
+Investigations: a section of the fact-check desk that chases one question down to its measurements; the first, how much … 
+ factcheck 
  #254 
 Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, to… 
  sherpa 
@@ -92,13 +95,11 @@ Allow the mail agent to write to a publisher's published corrections address, fo
  #244 
 Close or keep Finding-33, Finding-102 and K-009 with a fresh look, so the first correction requests can unblock (needs b… 
  factcheck 
- #243 
-The sending decision for correction requests: the editor sends each on the liaison's draft (the desk's recommendation), … 
- editor 
 
 ### Releases
  latest 8 
 
+ v0.14.6 2026-10-24 factcheck: Investigations, a new section, and the first: how much PHP there is and where '70%' comes from. PHP is on 69.3% of the … 
  v0.14.5 2026-10-24 The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the… 
  v0.14.4 2026-10-24 factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-c… 
  v0.14.3 2026-10-24 pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gat… 
@@ -106,7 +107,6 @@ The sending decision for correction requests: the editor sends each on the liais
  v0.14.1 2026-10-24 The news desk chief's first round closed: its debrief with screenshots of every page it changed, its status and its role 
  v0.14.0 2026-10-24 the redesign, live: three reader homes (Briefing on the front page, Operations at /ops/, Analysis at /analysis/), the menu by task… 
  v0.13.0 2026-10-24 The news desk chief joins (desk@php.newsroom): the data put right before any correction is asked of others (the 70% wordings, the … 
- v0.12.1 2026-10-24 pass step 2, first part: the compromise evidence and the claim behind 'no named victim' as of 23 October 16:04 UTC, four more offl… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ The sending decision for correction requests: the editor sends each on the liais
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.14.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.6 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

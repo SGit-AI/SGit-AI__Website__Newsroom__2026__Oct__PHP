@@ -2,13 +2,13 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-1048 nodes and 1526 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
+1049 nodes and 1527 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
 
 # The story as a graph
 
 In plain English Who said each thing first, who passed it on, and which saved pages it rests on. Click anything to walk from it to what it is connected to.
 
-1048 nodes and 1526 edges in 15 verbs: 295 sources, 290 captures, 242 parties, 70 claims, 68 events, 20 exploitation signals, 17 numbers, 16 advice, 11 tensions, 8 topics, 8 phases, 3 CVEs. Each is drawn from the same rows as the pages, so the picture cannot disagree with the text. Start anywhere, follow a link, and the graph re-centres on it; a node with a thick ring opens a graph of its own.
+1049 nodes and 1527 edges in 15 verbs: 295 sources, 290 captures, 242 parties, 70 claims, 68 events, 20 exploitation signals, 17 numbers, 16 advice, 12 tensions, 8 topics, 8 phases, 3 CVEs. Each is drawn from the same rows as the pages, so the picture cannot disagree with the text. Start anywhere, follow a link, and the graph re-centres on it; a node with a thick ring opens a graph of its own.
 
 The interactive graph needs JavaScript. Every node is also on a page: [the claims](../claims/index.html), [the sources](../sources/index.html), [the parties](../graph/parties/index.html), [the timeline](../timeline/index.html), [the tensions](../factcheck/index.html); the whole graph is [data/graph.json](../data/graph.json).
 
@@ -26,7 +26,7 @@ Every edge is a verb, and read from the other end it has a different name: Wiz *
 | `syndicates` | `syndicated_in` | A syndicates B | 9 | proposed here |
 | `captured_in` | `captures` | A is captured in B | 290 | inherited from portugal-ontology |
 | `appears_in` | `carries` | A appears in B | 131 | inherited from altitudes.json (Concept to Unit) |
-| `flags` | `flagged_by` | A flags B | 24 | inherited from altitudes.json edge_registry |
+| `flags` | `flagged_by` | A flags B | 25 | inherited from altitudes.json edge_registry |
 | `advises` | `advised_by` | A advises B | 16 | proposed here |
 | `classified_as` | `classifies` | A is classified as B | 138 | proposed here |
 | `names` | `named_in` | A names B | 14 | proposed here |
@@ -149,7 +149,7 @@ Kinds of node:
 | Event | story | 68 | A dated moment on the timeline (data/timeline.json). |
 | Exploitation signal | story | 20 | One party's report of exploitation, attempts or none seen (data/exploitation.json). |
 | Advice | story | 16 | What one agency told operators to do, chiefly whether to take systems offline (data/agencies.json). |
-| Tension | story | 11 | A row of the fact-check desk's contradiction ledger: claims that measure differently, dispute or contradict each other. A node, because the grammar has no self-inverse edge. |
+| Tension | story | 12 | A row of the fact-check desk's contradiction ledger: claims that measure differently, dispute or contradict each other. A node, because the grammar has no self-inverse edge. |
 | Topic | story | 8 | A class in the topic taxonomy of claims. |
 | Phase | story | 8 | A class in the phase taxonomy of the timeline. |
 | Party | world | 242 | A person, organisation, agency, outlet, group, registry, platform or project (data/entities.json); its class is in 'class'. |
@@ -169,4 +169,4 @@ The grammar is the estate's, from [graphs.sgit.ai](https://graphs.sgit.ai/v1/gra
 
 
 ---
-site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html
+site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html

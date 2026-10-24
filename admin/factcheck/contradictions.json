@@ -48,7 +48,7 @@
      ]
     }
    ],
-   "reading": "One origin, Wiz, restated: a share of websites using PHP became a share of 'the Internet' affected, inside Wiz's own post. Every outlet in the vault that carries the figure traces to Wiz, so it is one source, not several (restates, not corroborates). None of them says how the 70% was measured; it matches the usual web-technology survey figure for sites whose server-side language is known, which is a share of websites, not of hosts, traffic or 'the Internet', and not a count of vulnerable installations. The BBC's 'roughly 70%' puts a word in Wiz's mouth that its post does not use.",
+   "reading": "One origin, Wiz, restated: a share of websites using PHP became a share of 'the Internet' affected, inside Wiz's own post. Every outlet in the vault that carries the figure traces to Wiz, so it is one source, not several (restates, not corroborates). None of them says how the 70% was measured; it matches the usual web-technology survey figure for sites whose server-side language is known, which is a share of websites, not of hosts, traffic or 'the Internet', and not a count of vulnerable installations. The BBC's 'roughly 70%' puts a word in Wiz's mouth that its post does not use. Run 3 (24 October): the investigation php-share traces 127 statements of the share in the vault to their origin and measures them against W3Techs, the HTTP Archive, BuiltWith and the scanners; it is on /factcheck/investigations/php-share/.",
    "settle": "The survey Wiz relied on, captured, with its population and method.",
    "ticket": "Contradiction-1"
   },
@@ -113,9 +113,18 @@
      "outside": [
       "https://thenextweb.com/news/php2shell-millions-exploit-attempts-no-confirmed-breaches"
      ]
+    },
+    {
+     "who": "Amazon (the same AWS Security Blog post, as revised)",
+     "when": "modified 2026-10-22 21:25 UTC",
+     "says": "PHP2Shell is now seeing broad exploitation attempts in the wild.",
+     "measures": "Amazon's own revision of 'is now being broadly exploited in the wild', with no note",
+     "outside": [
+      "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/ (fetched 2026-10-24 01:32 UTC, sha256 1889fa097c907352)"
+     ]
     }
    ],
-   "reading": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises.",
+   "reading": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises. Run 3 (24 October): Amazon itself has since narrowed its sentence from 'broadly exploited' to 'broad exploitation attempts', without a note: the strongest word on the exploitation side now agrees with the officials' reading.",
    "settle": "A KEV entry for either CVE, or a named organisation confirming a compromise.",
    "ticket": "Contradiction-2"
   },
@@ -519,6 +528,48 @@
    "reading": "The report and the answer are about different things: the Fediverse post describes some flaw in 8.5.12; the PHP security team says it is a separate crash bug of minimal impact, not a way around the RCE fix. The answer came at 09:11 UTC on 22 October, after the vault's copy of the thread (which stops at 22/2), so the site still says PHP has not answered. Open only until the reply is captured; then it should be marked explained and the claim re-graded.",
    "settle": "Capture oss-security 2026/10/22/15 into the vault.",
    "ticket": "Contradiction-11"
+  },
+  {
+   "id": "K-012",
+   "measure": "What does W3Techs say: 69.3% or 75%?",
+   "status": "explained",
+   "claims": [
+    "scale-70pc-websites"
+   ],
+   "statements": [
+    {
+     "who": "Reuters (via RTE, ABC Australia)",
+     "when": "2026-10-21",
+     "says": "PHP runs roughly 75% of websites whose programming language can be identified, according to web technology tracker W3Techs",
+     "measures": "W3Techs' share, credited to W3Techs",
+     "sources": [
+      "rte-reuters-websites-go-dark",
+      "abc-au-gov-sites-exposed",
+      "tuttotech-news-2026-10-22-vulnerabilita-php-html"
+     ]
+    },
+    {
+     "who": "Tenable, and every other outlet that names W3Techs",
+     "when": "2026-10-21 and 22",
+     "says": "69.3% of websites whose server-side language is known",
+     "measures": "W3Techs' share on the day",
+     "sources": [
+      "tenable-php2shell-faq"
+     ]
+    },
+    {
+     "who": "W3Techs' yearly table, fetched by the desk",
+     "when": "2026-10-24 01:31 UTC",
+     "says": "75.2% on 1 January 2025; 72.4% on 1 January 2026; 69.3% on 23 October 2026",
+     "measures": "the same measure over time",
+     "outside": [
+      "https://w3techs.com/technologies/history_overview/programming_language/ms/y"
+     ]
+    }
+   ],
+   "reading": "The same measurer at different dates. Reuters' 75% matches W3Techs' figure for January 2025, not the 69.3% W3Techs showed when Reuters wrote; the attribution is right and the number is out of date. Investigation php-share.",
+   "settle": "Capture W3Techs' yearly table into the vault (board 033).",
+   "ticket": "Contradiction-12"
   }
  ]
 }

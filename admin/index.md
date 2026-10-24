@@ -192,7 +192,9 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Run 1 (22 October, 18:14 to 18:55 UTC, vault head 31ccc515c29f): all 70 claims graded; 10 can be relied on without reservation, 11 carry a status word stronger than their evidence, 6 a weaker one, 2 are refuted as worded; 3 high, 56 medium and 65 low findings, 3 gaps, 10 contradictions, 6 pieces of new evidence; every excerpt re-found verbatim in its capture by `fc.py check`.
 
-- Runs on a schedule bound to the editor's session, every four hours. Not built: grading of numbers, timeline, agencies and impact rows beyond the claims they share; a check of the gate's em-dash exemptions.
+- Investigations (from 24 October): `/factcheck/investigations/`, one question chased down to its measurements, from `admin/factcheck/investigations//` (case.json, the desk's grades and findings; measures.json, lineage.json and live.json, each value or wording with the sha256 of the bytes it was read from). The first, `php-share`: how much PHP there is (29 measures: W3Techs, the HTTP Archive, BuiltWith, Wappalyzer, the scanners, Packagist, surveys) and where "70%" comes from (127 statements in the vault, 13 wording families, a timeline, the lineage through ``, and 73 pages re-checked live for corrections). The measurers' pages were fetched by the desk and are not captured into a vault; the fetched bytes are not kept in the repository. Not built: the Internet Archive's history of the pages (unreachable from the desk's session); a scheduled re-fetch of the measures.
+
+- Runs on a schedule bound to the editor's session, every four hours in London daytime (08:52 to 20:52), from the card `data/schedule/factcheck.json`. Not built: grading of numbers, timeline, agencies and impact rows beyond the claims they share; a check of the gate's em-dash exemptions.
 
 ### Security (security@php.newsroom)
 
@@ -432,4 +434,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

@@ -29,7 +29,7 @@ Now carries the population, 'websites whose server-side language is known' (Find
 | [rte-reuters-websites-go-dark](../../sources/rte-reuters-websites-go-dark/index.html) | partial | *PHP runs roughly 75% of websites whose programming language can be identified, according to web technology tracker W3Techs* | 99bb92662561bd29 |
 | [abc-au-gov-sites-exposed](../../sources/abc-au-gov-sites-exposed/index.html) | partial | *PHP runs about 75 per cent of websites whose programming language can be identified, according to web technology tracker W3Techs.* | 84937c7c5b87e7c9 |
 
-Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Finding-103](../../factcheck/index.html#Finding-103), [Finding-32](../../factcheck/index.html#Finding-32), [Finding-33](../../factcheck/index.html#Finding-33).
+Open tickets: [Contradiction-1](../../factcheck/index.html#Contradiction-1), [Contradiction-12](../../factcheck/index.html#Contradiction-12), [Evidence-15](../../factcheck/index.html#Evidence-15), [Finding-103](../../factcheck/index.html#Finding-103), [Finding-32](../../factcheck/index.html#Finding-32), [Finding-33](../../factcheck/index.html#Finding-33).
 
 Graded in Run-3, resting on captures up to 2026-10-22 11:23 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -66,4 +66,4 @@ v2 · site v0.12.1 · 24 October 2026 · reportedPHP is used by almost 70% of we
 
 
 ---
-site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html
+site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/scale-70pc-websites/index.html

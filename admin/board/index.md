@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 254 items, 169 open, 80 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 255 items, 169 open, 81 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -242,7 +242,7 @@ The work, as rows in `data/admin.json`: 254 items, 169 open, 80 done. An item is
 | 230 | The headline is the day's news, from the journalist's latest state of affairs; the explainer moves to the second line (front page and mockup A)From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open | claude-story-site |  |
 | 231 | The lead's offline sentence matches the agencies count: all say install the fix, two US agencies say take sites offline if you cannotFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open | claude-story-site |  |
 | 232 | design.py: every number from data (the 6 countries, the 9 new, the 9 and 3), and one 'as of' for each statement across the front page, personas and mockupsFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open | dev |  |
-| 233 | One status vocabulary on every page with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside itFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open | factcheck |  |
+| 233 | One status vocabulary on every page with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside itFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). The fact-check desk, 24 October: outside the desk's scope (it owns factcheck/** only); the status words on other pages belong to story-site and the build's helpers to dev@php.newsroom. The desk's figure for every claim is in data/factcheck.json (assessments[].display) for them to show beside the five-way count. | open | factcheck |  |
 | 234 | 'What changed' in the reader's path lists story changes only: no version tags, commit hashes or page furnitureFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open | dev |  |
 | 235 | Board 138 with the desk's review: A as the default front page and C as the model page; Focus capped at a few dozen pages for every reader; the dial's names in plain words; no view links to a page it hidesFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open | editor |  |
 | 236 | Go or no-go on the desk's two runs (09:15 and 16:15 London) and the repeat_until dateFrom the brief: the news desk chief on a schedule (24 October; for the editor's go). The editor's go, 24 October: the desk's card is data/schedule/desk.json. | done | editor |  |
@@ -264,9 +264,10 @@ The work, as rows in `data/admin.json`: 254 items, 169 open, 80 done. An item is
 | 252 | The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as homes by persona, the menu by task with two dials (who you are; Focus, Standard, Everything), the wide layout, and every admin page in the team console (D)The editor, 24 October, in story-site's session: "I think you implement all of them." Covers most of 139 to 142 (rows of dev, the briefing writer and the editor, left for their owners to close): the dials are remembered in the browser, not yet in the reader's vault; pattern C is on the agencies page only. Brief: admin/content/briefs/2026-10-24__brief__the-redesign-live.md. | done | claude-story-site | 0.14.0 |
 | 253 | Policies: the pages ops/** and analysis/** (story-site's, from row 252) have no owner in scope.pagesThe gate warns that no member owns them. story-site does not edit policy files. | open | librarian |  |
 | 254 | Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, tokens derived, handed sealed), send_to_lane.py, drained on the Sherpa's schedule; next: the RiskMandate agent's own inbox for the other direction | done | sherpa |  |
+| 255 | Investigations: a section of the fact-check desk that chases one question down to its measurements; the first, how much PHP there is and where '70%' comes from (measures, lineage, timeline, corrections, Fortune for UF-005.1)From the editor's brief of 24 October (admin/content/briefs/2026-10-24__brief__factcheck-investigations-how-much-php.md). | done | factcheck |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

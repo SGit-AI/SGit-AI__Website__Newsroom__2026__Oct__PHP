@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.14.5",
+ "version": "0.14.6",
  "vault_commit": "1845598d9a38",
  "title": "The story graph",
  "note": "A node means what its edges say about it. Every edge is a verb from data/ontology.json with a named inverse; there is no generic association edge. Parties are resolved through data/entities.json and data/attribution.json; relays are derived, so many outlets passing on one statement count as one origin.",
@@ -17689,6 +17689,13 @@
    "label": "K-011: Is the fix in PHP 8.5.12 incomplete?",
    "status": "open",
    "href": "factcheck/index.html#K-011"
+  },
+  {
+   "id": "contradiction:K-012",
+   "kind": "contradiction",
+   "label": "K-012: What does W3Techs say: 69.3% or 75%?",
+   "status": "explained",
+   "href": "factcheck/index.html#K-012"
   }
  ],
  "edges": [
@@ -24619,6 +24626,11 @@
    "from": "contradiction:K-011",
    "verb": "flags",
    "to": "claim:more-paths"
+  },
+  {
+   "from": "contradiction:K-012",
+   "verb": "flags",
+   "to": "claim:scale-70pc-websites"
   },
   {
    "from": "claim:ac-high",

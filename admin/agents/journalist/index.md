@@ -264,4 +264,4 @@ Files: [admin/content/agents/journalist/](https://github.com/SGit-AI/SGit-AI__We
 
 
 ---
-site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/journalist/index.html
+site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/journalist/index.html

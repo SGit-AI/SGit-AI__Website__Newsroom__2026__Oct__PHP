@@ -36,7 +36,7 @@ Now dated (16:04 UTC on 23 October) and scoped to the vault (Finding-26 fixed), 
 | [recordedfuture-php2shell](../../sources/recordedfuture-php2shell/index.html) | partial | *Patchstack received reports of multiple active exploitation incidents from hosting partners by 07:34 UTC on October 21* | 39efeb7b8ae8152f |
 | [insurance-business-au-asiapac-attacks-begin](../../sources/insurance-business-au-asiapac-attacks-begin/index.html) | partial | *Hadrian says it is seeing PHP2Shell exploited at scale, mostly through PHP’s session upload progress path.* | 8d88bddde485e36f |
 
-Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-3](../../factcheck/index.html#Evidence-3), [Finding-26](../../factcheck/index.html#Finding-26), [Finding-85](../../factcheck/index.html#Finding-85).
+Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-12](../../factcheck/index.html#Evidence-12), [Evidence-3](../../factcheck/index.html#Evidence-3), [Finding-26](../../factcheck/index.html#Finding-26), [Finding-85](../../factcheck/index.html#Finding-85).
 
 Graded in Run-3, resting on captures up to 2026-10-23 16:04 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -99,4 +99,4 @@ v2 · site v0.5.8 · 22 October 2026 · reportedNoAs of 20:50 UTC on 22 October,
 
 
 ---
-site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html
+site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html

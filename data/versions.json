@@ -1,6 +1,15 @@
 {
- "current": "0.14.5",
+ "current": "0.14.6",
  "versions": [
+  {
+   "version": "0.14.6",
+   "date": "2026-10-24",
+   "title": "factcheck: Investigations, a new section, and the first: how much PHP there is and where '70%' comes from. PHP is on 69.3% of the websites whose server-side language W3Techs can identify (80.6% in 2015), about half of every site the HTTP Archive crawls, and WordPress alone on 39.6% of all sites; 127 statements of the share traced to Wiz's own post, a timeline, the lineage as a graph, 73 pages re-checked (none corrected; CNN reworded twice), Fortune analysed (UF-005.1); AWS quietly narrowed 'broadly exploited' to 'broad exploitation attempts' (Evidence-12, high)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.5",
    "date": "2026-10-24",

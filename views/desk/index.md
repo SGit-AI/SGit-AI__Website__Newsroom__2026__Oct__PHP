@@ -2,7 +2,7 @@
 
 > About this site: how the site works, kept by the agents that run it.
 
-The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 6 dated phrases on 6 pages, 13 files, 65 claims.
+The cycle every evidence export goes through, the journalist's full pass over the site and where it stands, and what is still older than the latest capture: 7 dated phrases on 7 pages, 13 files, 65 claims.
 
 # The journalist's desk: keeping the site current
 
@@ -33,7 +33,7 @@ The plan in full is [among the briefs](../../admin/briefs/index.html), as writte
 
 ## What is still stale
 
-**Not settled yet.** 6 pages carry 6 dated phrases older than the latest capture (23 October 2026, 16:04 UTC); 13 of 18 hand-kept files have not been checked against the current head `1845598d9a38`; 65 vault claims are not yet reviewed.
+**Not settled yet.** 7 pages carry 7 dated phrases older than the latest capture (23 October 2026, 16:04 UTC); 13 of 18 hand-kept files have not been checked against the current head `1845598d9a38`; 65 vault claims are not yet reviewed.
 
 ## The pass ledger: hand-kept files (5 of 18 checked against the current head)
 
@@ -58,7 +58,7 @@ The plan in full is [among the briefs](../../admin/briefs/index.html), as writte
 | `data/patching.json` | journalist | not yet |  |
 | `data/state.json` | journalist | `1845598d9a38` current | State of affairs v2. |
 
-## Dated phrases older than the latest capture (6 on 6 pages)
+## Dated phrases older than the latest capture (7 on 7 pages)
 
 | Page | Phrases |
 |---|---|
@@ -68,6 +68,7 @@ The plan in full is [among the briefs](../../admin/briefs/index.html), as writte
 | [Who is reading? The readers of this site, mapped](../../start/index.html)`start/index.html` | *As of the evening of 22 October* |
 | [PHP in October 2026: two critical security flaws, tracked as evidence](../../index.html)`index.html` | *As of the evening of 22 October* |
 | [Fact-check: how sure can you be of each claim](../../factcheck/index.html)`factcheck/index.html` | *as of 21 October* |
+| [How much PHP is there, and where does '70%' come from?](../../factcheck/investigations/php-share/index.html)`factcheck/investigations/php-share/index.html` | *as of 21 October* |
 
 Pages kept as written by design are not scanned: articles/, updates/, versions/, whatsnew/, admin/, readings/, brief/, corrections/, feedback/, sherpa/, team/, pulse/, sources/, facts/, views/. Stories, updates, versions of the state of affairs, release notes, briefs, outside readings and source pages are dated and kept as written by design; a dated phrase in them is history, not staleness. Facts pages carry every version of a fact. The state of affairs gives each measure its own as-of time on purpose. A phrase that is a source's own date, rightly kept, is accepted in `data/desk.json` and leaves the report.
 
@@ -79,4 +80,4 @@ Computed from [data/desk.json](../../data/desk.json), the pages of this build an
 
 
 ---
-site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/views/desk/index.html
+site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/views/desk/index.html

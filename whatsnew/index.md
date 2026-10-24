@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.6 · 24 October 2026new since your last visit
+
+factcheck: Investigations, a new section, and the first: how much PHP there is and where '70%' comes from. PHP is on 69.3% of the websites whose server-side language W3Techs can identify (80.6% in 2015), about half of every site the HTTP Archive crawls, and WordPress alone on 39.6% of all sites; 127 statements of the share traced to Wiz's own post, a timeline, the lineage as a graph, 73 pages re-checked (none corrected; CNN reworded twice), Fortune analysed (UF-005.1); AWS quietly narrowed 'broadly exploited' to 'broad exploitation attempts' (Evidence-12, high)
+
+No reader-facing section changed in this release.
+
 ## v0.14.5 · 24 October 2026new since your last visit
 
 The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents, with screenshots; and a friction on /team/vaults/
@@ -755,4 +761,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

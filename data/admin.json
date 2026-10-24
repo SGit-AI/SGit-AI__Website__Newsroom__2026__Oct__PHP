@@ -1746,7 +1746,7 @@
    "title": "One status vocabulary on every page with the same five-way count (confirmed, reported, disputed, contradicted, unverified), and the desk's own figure beside it",
    "status": "open",
    "owner": "factcheck",
-   "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138)."
+   "note": "From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). The fact-check desk, 24 October: outside the desk's scope (it owns factcheck/** only); the status words on other pages belong to story-site and the build's helpers to dev@php.newsroom. The desk's figure for every claim is in data/factcheck.json (assessments[].display) for them to show beside the five-way count."
   },
   {
    "id": "234",
@@ -1894,6 +1894,13 @@
    "title": "Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, tokens derived, handed sealed), send_to_lane.py, drained on the Sherpa's schedule; next: the RiskMandate agent's own inbox for the other direction",
    "status": "done",
    "owner": "sherpa"
+  },
+  {
+   "id": "255",
+   "title": "Investigations: a section of the fact-check desk that chases one question down to its measurements; the first, how much PHP there is and where '70%' comes from (measures, lineage, timeline, corrections, Fortune for UF-005.1)",
+   "status": "done",
+   "owner": "factcheck",
+   "note": "From the editor's brief of 24 October (admin/content/briefs/2026-10-24__brief__factcheck-investigations-how-much-php.md)."
   }
  ],
  "evidence_vault": {

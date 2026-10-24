@@ -634,6 +634,8 @@
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/pulse/cve-2026-96951/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/factcheck/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/factcheck/investigations/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
+<url><loc>https://php.oct.2026.newsroom.sgit.ai/factcheck/investigations/php-share/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/outreach/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/grc/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
 <url><loc>https://php.oct.2026.newsroom.sgit.ai/grc/risks/index.html</loc><lastmod>2026-10-24</lastmod><priority>0.5</priority></url>

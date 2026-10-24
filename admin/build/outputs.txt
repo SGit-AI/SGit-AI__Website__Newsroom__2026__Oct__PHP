@@ -285,6 +285,10 @@ exploitation/index.html
 exploitation/index.md
 factcheck/index.html
 factcheck/index.md
+factcheck/investigations/index.html
+factcheck/investigations/index.md
+factcheck/investigations/php-share/index.html
+factcheck/investigations/php-share/index.md
 facts/ac-high/index.html
 facts/ac-high/index.md
 facts/affected-sites/index.html
