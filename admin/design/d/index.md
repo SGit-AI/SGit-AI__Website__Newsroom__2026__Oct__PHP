@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.23. Not the live site.
+> Mockup D for review, built from the data of release v0.10.24. Not the live site.
 
-PHP Team console Console Overview Board 119 Agents 16 Releases 74 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 119 Agents 16 Releases 75 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.10.23 
-74 releases since 22 Oct 
+v0.10.24 
+75 releases since 22 Oct 
 
 Open on the board 
 119 
-56 done, 4 waiting 
+57 done, 4 waiting 
 
 Pages built 
 719 
@@ -56,8 +56,8 @@ The schedules of the curator and the researcher: how often, in which hours (the 
 
 #### Waiting 4
 
- #176 
-The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session wi… 
+ #180 
+Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then … 
  editor 
  #174 
 The journalist reads the source watch only up to 08:30 UTC on 23 October: the read key of pack vault 7r83qic5 is needed … 
@@ -69,8 +69,11 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 56
+#### Done 57
 
+ #176 
+The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session wi… 
+ editor 
  #172 
 State of affairs v2 from the evidence vault at 1845598d9a38 (295 sources); six curator claims checked and held back as w… 
  claude-journalist 
@@ -89,13 +92,11 @@ From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the
  #167 
 From CI-002, step 2: a basis on every graph edge (source, code, inferred, confirmed, with its support), checked in build… 
  dev@php.newsroom v0.10.13 
- #166 
-From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1: a focus view of the risk graph: open a… 
- dev@php.newsroom v0.10.13 
 
 ### Releases
  latest 8 
 
+ v0.10.24 2026-10-24 The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and t… 
  v0.10.23 2026-10-24 synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the v… 
  v0.10.22 2026-10-24 Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its obje… 
  v0.10.21 2026-10-24 synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey… 
@@ -103,7 +104,6 @@ From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1
  v0.10.19 2026-10-23 the site catches up with the evidence vault at 1845598d9a38 (295 sources): the journalist's state of affairs v2, with the delta fr… 
  v0.10.18 2026-10-23 /team/status/ at 23:30 UTC: all twenty sessions read; the scheduled curator and source watch running, the evidence vault at 260 so… 
  v0.10.17 2026-10-23 the scheduled curator follows the source watch into its pack-mode copy (7r83qic5): the brief records the move, the 15 + 18 capture… 
- v0.10.16 2026-10-23 pack mode, measured: the pack vault in use by two writers, a pull of the scheduled session's commit in 176 s and a one-file correc… 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.23 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.24 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

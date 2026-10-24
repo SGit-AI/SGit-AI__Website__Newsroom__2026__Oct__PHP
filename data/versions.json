@@ -1,6 +1,15 @@
 {
- "current": "0.10.23",
+ "current": "0.10.24",
  "versions": [
+  {
+   "version": "0.10.24",
+   "date": "2026-10-24",
+   "title": "The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and the rule for every scheduled agent: a wake where nothing happened need not commit, and a conflict is solved by hand and written in the run's log",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.10.23",
    "date": "2026-10-24",

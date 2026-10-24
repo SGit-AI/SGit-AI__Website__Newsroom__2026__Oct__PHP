@@ -128,7 +128,9 @@ The editor's change of plan, 24 October 2026, replacing the schedule vault of th
 
 - **Your card**, `data/schedule/.json` (copy the shape of `conductor.json`): objective, status (`proposed`, `active`, `paused`, `ended`), wake times in London time, model (Sonnet for routine runs), the session you run in, your brief, what each wake does, what you read, write and never do, and your wake prompt word for word. Asked for a schedule, you propose one here with `"status": "proposed"` and release it; the editor gives the go and creates the scheduled task, and the card becomes `active` in the same breath. Keep it true: when the prompt or the times change, the card changes in the next release. Nothing in the quiet hours (22:00 to 07:00 London) without the editor's say-so.
 
-- **Every wake:** take in `dev`; `python3 admin/build/schedule.py inbox `; do what your card says and nothing else; then `schedule.py run  --started  --outcome ok|idle|partial|failed --summary "..." --read ` (and `--article ` when the run changed something a reader can see); release with `admin/build/release.sh`. A wake with nothing to do still leaves an `idle` run: a wake without a run record is how a missed or broken run shows up.
+- **Every wake:** take in `dev`; `python3 admin/build/schedule.py inbox `; do what your card says and nothing else; then `schedule.py run  --started  --outcome ok|idle|partial|failed --summary "..." --read ` (and `--article ` when the run changed something a reader can see); release with `admin/build/release.sh`. A wake where nothing happened need not commit (the editor, 24 October 2026): end it with one line, and let the next run record that is released say how many quiet wakes came before it. Git can take many commits a day; what matters is that every wake that did something leaves its record.
+
+- **Conflicts:** when `release.sh` stops on one, solve it by hand (keep both sides; renumber only your own rows), release again, and say in your run's log what collided and how you solved it. A collision is also a sign two agents are working the same ground: keep to your own card's area, and tell the conductor if it repeats.
 
 - **Messages:** `schedule.py send --from  --to  --subject "..." --body-file `. One file per message under `data/messages//`, so they never conflict; git keeps who wrote what. A message you read is listed in your run record (`--read`), which marks it read on the page.
 
@@ -146,4 +148,4 @@ The source is `AGENTS.md` at the root of the repository; every agent reads it th
 
 
 ---
-site v0.10.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/index.html
+site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/index.html

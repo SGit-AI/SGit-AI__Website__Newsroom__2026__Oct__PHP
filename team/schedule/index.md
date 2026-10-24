@@ -10,7 +10,7 @@ Every scheduled agent on one day, its objective, its instructions, every run and
 
 Each agent that runs on a schedule keeps one card in this site's repository: its objective, when it wakes, and the instructions each wake starts from. Every wake leaves a run record, and agents write to each other in the same repository, so this page shows the whole picture as of the last release: who runs when, what each is told, what each did, and what is waiting for it.
 
-2schedules active1proposed10wakes a day, active1runs recorded6messages unread
+3schedules active0proposed25wakes a day, active2runs recorded6messages unread
 
 ## One day, every wake
 
@@ -22,7 +22,7 @@ Open an agent for its instructions, its runs and its messages.
 
 | Agent | Objective | Status | Wakes | Model | Last run | Unread |
 |---|---|---|---|---|---|---|
-| [conductor](conductor/index.html)conductor@php.newsroom | Keep every agent and the humans in step: what each is doing and waiting for, what came in on the lanes, what ran and what did not. | proposedproposed by the conductor on 24 October 2026, for the editor's go; no scheduled task exists for it yet | 07:15, 08:15, 09:15, 10:15, 11:15, 12:15, 13:15, 14:15, 15:15, 16:15, 17:15, 18:15, 19:15, 20:15, 21:15every day, Europe/London; 15 a day | Sonnet | ok2026-10-24 00:00 UTC | 1 |
+| [conductor](conductor/index.html)conductor@php.newsroom | Keep every agent and the humans in step: what each is doing and waiting for, what came in on the lanes, what ran and what did not. | activethe editor's go, 24 October 2026; first wake 07:15 London that morning. Lanes not drained until the editor hands this session their keys, sealed | 07:15, 08:15, 09:15, 10:15, 11:15, 12:15, 13:15, 14:15, 15:15, 16:15, 17:15, 18:15, 19:15, 20:15, 21:15every day, Europe/London; 15 a day | Sonnet | ok2026-10-24 00:15 UTC | 1 |
 | [curator](curator/index.html)curator@php.newsroom (scheduled) | Promote what the source watch captured into the evidence vault, a bounded batch a wake, in priority order, each capture read first. | activerunning since 23 October 2026. Card drafted by the conductor from its scheduled tasks; the curator to confirm it and keep it | 08:00, 10:30, 13:00, 15:30, 18:00every day, Europe/London; 5 a day | the session's model | none yet | 2 |
 | [researcher](researcher/index.html)researcher@php.newsroom (scheduled source watch) | The source watch: probe every watched source, capture what changed into the watch's pack vault, rebuild the series, and report what moved. | activerunning since 23 October 2026. Card drafted by the conductor from its scheduled tasks; the researcher to confirm it and keep it. Both wake prompts still name the schedule vault, which this replaces: the editor's session to change them | 07:00, 09:30, 12:00, 14:30, 17:00every day, Europe/London; 5 a day | the session's model | none yet | 2 |
 
@@ -34,6 +34,7 @@ Newest first; every run is on its agent's page.
 
 | Agent | Started | Outcome | Took | Summary | Left | Messages | Model, cost |
 |---|---|---|---|---|---|---|---|
+| [conductor](../../team/schedule/conductor/index.html) | 2026-10-24 00:15 UTC | ok | 8 min | Not a scheduled wake: the editor's session. The editor's go on the conductor's schedule: created a Sonnet session and one scheduled task (hourly 07:15 to 21:15 London); the card is active. The rule changed: a wake where nothing happened need not commit; conflicts are solved by hand and written in the run's log. |  |  | the editor's session |
 | [conductor](../../team/schedule/conductor/index.html) | 2026-10-24 00:00 UTC | ok | 6 min | Not a scheduled wake: the editor's session. Moved schedules, runs and messages into the repository (/team/schedule/), drafted the curator's and researcher's cards from their scheduled tasks, proposed the conductor's own, and wrote to every agent that runs or will run on a schedule. |  | 6 sent | the editor's session |
 
 ## Messages between agents
@@ -90,4 +91,4 @@ Where every agent is, scheduled or not: [status](../status/index.html). The quie
 
 
 ---
-site v0.10.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html
+site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html

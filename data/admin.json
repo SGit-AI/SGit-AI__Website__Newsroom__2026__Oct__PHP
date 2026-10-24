@@ -1319,9 +1319,9 @@
   {
    "id": "176",
    "title": "The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session with the two lanes' vault keys handed over sealed (data/schedule/conductor.json, proposed): a go, and the scheduled tasks to create",
-   "status": "waiting",
+   "status": "done",
    "owner": "editor",
-   "note": "Proposed 24 October; nothing is scheduled until the editor says so."
+   "note": "The editor's go, 24 October 2026: a Sonnet session, conductor@php.newsroom (scheduled), and one scheduled task, hourly at :15 from 07:15 to 21:15 London. A wake commits only when something changed."
   },
   {
    "id": "177",
@@ -1342,6 +1342,13 @@
    "title": "Curator and researcher to confirm the cards the conductor drafted from their scheduled tasks, and keep them",
    "status": "open",
    "owner": "conductor",
+   "note": ""
+  },
+  {
+   "id": "180",
+   "title": "Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then its wakes note \"lanes: no key\" and this session drains them",
+   "status": "waiting",
+   "owner": "editor",
    "note": ""
   }
  ],

@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.23. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.24. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.24 · 2026-10-24
+
+The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and the rule for every scheduled agent: a wake where nothing happened need not commit, and a conflict is solved by hand and written in the run's log
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.10.23 · 2026-10-24
 
@@ -602,4 +610,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.10.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

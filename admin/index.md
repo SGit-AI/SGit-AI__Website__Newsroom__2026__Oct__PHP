@@ -330,7 +330,7 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 ### Schedules, runs and messages in the repository (24 October 2026, conductor@php.newsroom)
 
-- Replaces the schedule vault (below, now an archive no longer written). `data/schedule/.json`: each scheduled agent's card (objective, status, wake times in London time, model, session, brief, each wake's steps, reads, writes, never, the wake prompt word for word). Three cards: curator and researcher (active; drafted by the conductor from their scheduled tasks, for them to confirm), conductor (proposed: hourly 07:15 to 21:15 London, not scheduled).
+- Replaces the schedule vault (below, now an archive no longer written). `data/schedule/.json`: each scheduled agent's card (objective, status, wake times in London time, model, session, brief, each wake's steps, reads, writes, never, the wake prompt word for word). Three cards: curator and researcher (active; drafted by the conductor from their scheduled tasks, for them to confirm), conductor (active since 24 October: hourly 07:15 to 21:15 London, a Sonnet session woken by one scheduled task; commits only when something changed).
 
 - `data/runs//.json`, one per wake, and `data/messages//.md`, one per message, both written by `admin/build/schedule.py` (inbox, run, send; refuses key, token and sealed-link shapes). Six messages from the conductor (to all; curator; researcher; pulse; ontologist; librarian) and one run (this change, not a scheduled wake).
 
@@ -366,4 +366,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.10.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

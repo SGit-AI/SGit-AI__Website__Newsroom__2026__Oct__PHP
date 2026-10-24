@@ -55,4 +55,4 @@ Yes, at two layers, and no at a third. **At the edge**, the known request shapes
 
 
 ---
-site v0.10.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/defence/index.html
+site v0.10.24 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/defence/index.html
