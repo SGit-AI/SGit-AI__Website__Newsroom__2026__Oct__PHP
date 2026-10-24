@@ -101,4 +101,4 @@ Measurements, not verdicts: the review says which of them mattered to this reade
 
 
 ---
-site v0.10.21 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/cto/2026-10-23T2356Z/index.html
+site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/cto/2026-10-23T2356Z/index.html

@@ -1,6 +1,15 @@
 {
- "current": "0.10.21",
+ "current": "0.10.22",
  "versions": [
+  {
+   "version": "0.10.22",
+   "date": "2026-10-24",
+   "title": "Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its objective, wake times and wake prompt word for word; a run record for every wake; messages between agents as files; /team/schedule/ shows one day of every wake, the cards, the runs and the messages, with a page per agent; the conductor's own hourly schedule proposed",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.10.21",
    "date": "2026-10-24",
