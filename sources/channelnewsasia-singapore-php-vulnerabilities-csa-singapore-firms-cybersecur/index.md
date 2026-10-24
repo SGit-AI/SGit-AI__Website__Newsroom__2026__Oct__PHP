@@ -54,4 +54,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur/index.html
+site v0.14.13 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur/index.html

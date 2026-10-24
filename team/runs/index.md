@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today164runs recorded64runs with changes and no article
+2schedules20runs a night, today166runs recorded65runs with changes and no article
 
 ## Quiet hours
 
@@ -33,10 +33,11 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 99, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Conductor: 6, Fact-check desk: 4, factcheck: 2, Sherpa: 1, librarian@php.newsroom: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 100, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Conductor: 6, Fact-check desk: 4, factcheck: 2, desk: 1, Sherpa: 1, librarian@php.newsroom: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
+| 2026-10-24T08:20:18Z | desk | Scheduled wake | `20261024T0820Z-desk` | Morning line: the cost so far is precaution; the front page 16 hours old and its headline day one's; the 70% unknown out of date (board 259); outreach R-004 held (AWS reworded itself), R-005 and R-007 ready, R-003 needs a fresh capture; the editor's queue ranked | yes | missing | [output](../../team/schedule/desk/index.html) |
 | 2026-10-24T08:15:45Z | [Conductor](../conductor/index.html) | Scheduled wake | `20261024T0815Z-conductor` | Light check (09:15 London). Dev taken in; inbox empty; lanes: no key. Runs seen: sherpa 07:45, factcheck 08:52. Curator's 08:00 wake has no run record: status line and a message. Researcher's 07:00 wake still has none (messaged at 08:15). Pulse still has no card. | yes | missing | [output](../../team/schedule/conductor/index.html) |
 | 2026-10-24T07:52Z | [Fact-check desk](../verifier/index.html) | Fact-check run | `Run-4` | 3 evidence (Evidence-16 CrowdStrike's version origins, Evidence-17 Siemens and PAN-OS in the record, Evidence-18 the primary feeds); Evidence-4 marked captured (byte-identical), Evidence-11 superseded | yes | missing | [output](../../factcheck/index.html) |
 | 2026-10-24T07:52:00Z | factcheck | Scheduled wake | `20261024T0752Z-factcheck` | Scheduled wake 08:52 London: no claim changed, audit 0 failures. CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 back to 5.4 (K-003); Siemens and PAN-OS now in the CVE and NVD records; KEV still lists neither CVE; every PHPocalypse site back. Evidence-12 (AWS's revised sentence) still waits on a capture. Page: /factcheck/ | yes | missing | [output](../../team/schedule/factcheck/index.html) |
@@ -58,6 +59,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.4` | factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-compromise claim, the Dutch offline row, the front page's fix-complete line), K-004 and K-009 explained, so the correction requests to Wiz, the BBC and CNN no longer wait on the desk; Finding-32 stays open (Cloudflare does link W3Techs); the desk's schedule card, and the brief for its investigations | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.3` | pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gate's first-build determinism failure fixed (design.py read items.json one build late, board 175) | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.2` | The Sherpa: its schedule active (its lanes drained every two hours, 07:45 to 21:45 London, the full pass at 11:45 and 17:45), and an inbox for agents outside the newsroom: an append lane (d6zak0o3) where the RiskMandate email agent and the editor send messages and materials, with the tool to send to it | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.13` | The desk's morning wake: correction requests updated (AWS reworded its own 'broadly exploited', so R-004 is held and WIRED's request stands on its own; CNN needs a fresh capture; The Hacker News's request unblocked by K-009), and the front page's out-of-date 70% unknown on the board | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.12` | Conductor light check 09:15 London: curator missed-run note, status lines, run record | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.11` | factcheck run 4 (scheduled, 08:52 London): no claim changed; CrowdStrike dates CVE-2026-109618 from PHP 7.3.0 and CVE-2026-109619 back to 5.4 (K-003); Siemens and PAN-OS now in the CVE and NVD records; KEV still lists neither CVE; every PHPocalypse site back; AWS's revised sentence still uncaptured | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.10` | Conductor light check 08:15 London: researcher missed-run note, status line, run record | yes | its release note | [output](../../admin/versions.html) |
@@ -204,4 +206,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.14.13 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

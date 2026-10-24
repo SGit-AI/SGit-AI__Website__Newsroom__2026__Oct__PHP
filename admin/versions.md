@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.14.12. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.14.13. The data is [data/versions.json](../data/versions.json).
+
+### v0.14.13 · 2026-10-24
+
+The desk's morning wake: correction requests updated (AWS reworded its own 'broadly exploited', so R-004 is held and WIRED's request stands on its own; CNN needs a fresh capture; The Hacker News's request unblocked by K-009), and the front page's out-of-date 70% unknown on the board
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.14.12 · 2026-10-24
 
@@ -802,4 +810,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.14.13 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

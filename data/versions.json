@@ -1,6 +1,15 @@
 {
- "current": "0.14.12",
+ "current": "0.14.13",
  "versions": [
+  {
+   "version": "0.14.13",
+   "date": "2026-10-24",
+   "title": "The desk's morning wake: correction requests updated (AWS reworded its own 'broadly exploited', so R-004 is held and WIRED's request stands on its own; CNN needs a fresh capture; The Hacker News's request unblocked by K-009), and the front page's out-of-date 70% unknown on the board",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.12",
    "date": "2026-10-24",

@@ -69,12 +69,14 @@ Fact-check: [K-001](../factcheck/index.html#K-001), [Contradiction-1](../factche
 
 **Waiting on.**
 - [R-001](#R-001)
+- Evidence-13: a fresh capture of CNN's page before sending
 The email to send (the editor sends it, from the editor's own address, to the channel above)
 Subject: A suggested correction: "Websites shut down globally after AI finds a critical flaw..." Hello, On 21 October 2026 you published: "Websites shut down globally after AI finds a critical flaw affecting 70% of the internet" (https://www.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai-intl) We think this says more than the evidence shows: The headline says the flaw affects 70% of the internet; the article's own body gives the figure as the share of websites PHP powers. The wording starts with Wiz (Wiz Research), which we have asked separately: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-001 The evidence, with the saved copies we checked and their hashes, is here: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-003 A wording that would keep your piece accurate: "Websites shut down globally after AI finds a critical flaw in PHP, the language behind about 70% of websites" The data is CC BY 4.0; use any of it with a credit to php.oct.2026.newsroom.sgit.ai. If we have this wrong, tell us and we will correct our page. Dinis Cruz Editor, PHP October 2026 (php.oct.2026.newsroom.sgit.ai)**Log.**
 - **2026-10-22** drafted from contradiction K-001; the headline and body still to be checked in the 11:26 UTC capture
 - **2026-10-24** headline and body checked character for character in the 11:26 UTC capture by desk@php.newsroom; ready, to send after R-001
+- **2026-10-24** the fact-check desk's outside check (Evidence-13) finds CNN reworded its 70% lines twice without a note (18:26 UTC, 22 October); the headline still says 'internet'. Re-capture and re-check both quotes before this goes.
 
-### R-004: Amazon Web Services (AWS Security Blog) drafted origin
+### R-004: Amazon Web Services (AWS Security Blog) blocked origin
 
 **The point.** The post says PHP2Shell "is now being broadly exploited in the wild"; the same post says it is unclear whether any of the attempts it saw would have succeeded. Readers, and WIRED's headline, take "exploited" to mean successful attacks.
 
@@ -87,29 +89,31 @@ Subject: A suggested correction: "Websites shut down globally after AI finds a c
 **A wording we suggest.** *PHP2Shell exploitation attempts are now widespread in the wild; whether any have succeeded against real systems is not yet known.*
 
 Fact-check: [K-002](../factcheck/index.html#K-002); claims [amazon-honeypot](../facts/amazon-honeypot/index.html), [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html). Channel: to find, the AWS Security Blog's published contact, captured before use.
-The email to send (the editor sends it, from the editor's own address, to the channel above)
-Subject: A suggested correction: "PHP2Shell is now being broadly exploited in the wild." Hello, On 21 October 2026 you published: "PHP2Shell is now being broadly exploited in the wild." (https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/) We think this says more than the evidence shows: The post says PHP2Shell "is now being broadly exploited in the wild"; the same post says it is unclear whether any of the attempts it saw would have succeeded. Readers, and WIRED's headline, take "exploited" to mean successful attacks. The evidence, with the saved copies we checked and their hashes, is here: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-004 A wording that would keep your piece accurate: "PHP2Shell exploitation attempts are now widespread in the wild; whether any have succeeded against real systems is not yet known." The data is CC BY 4.0; use any of it with a credit to php.oct.2026.newsroom.sgit.ai. If we have this wrong, tell us and we will correct our page. Dinis Cruz Editor, PHP October 2026 (php.oct.2026.newsroom.sgit.ai)**Log.**
+
+**Waiting on.**
+- Evidence-12: a capture of the AWS post as it now reads
+
+**Log.**
 - **2026-10-24** drafted by desk@php.newsroom: the word 'exploited' in WIRED's headline is AWS's, so AWS is asked first
+- **2026-10-24** not to be sent: the fact-check desk's outside check (Evidence-12) finds AWS reworded the sentence on 22 October at 21:25 UTC, without a note, to 'now seeing broad exploitation attempts in the wild'. Once a capture shows it, this request closes as corrected without being asked, and pages quoting AWS carry both wordings with their times.
 
 ### R-005: WIRED drafted echo
 
-**The point.** The headline says hackers exploited the flaws; the article's own sources (AWS, the PHP Foundation) describe attempts and know of no successful attack.
+**The point.** The headline says hackers exploited the flaws; the article's own sources describe attempts and know of no successful attack.
 
 **What they published.**
 - headline, third-party words: *Hackers Exploited the PHP Vulnerabilities Days Before They Were Patched* [WIRED](../sources/wired-exploited-days-before-patched/index.html)Checked in `sources/wired-exploited-days-before-patched/captures/20261023T012042Z/text.txt`, sha256 `d43b99af65d563dd`.
 - body, quoting the PHP Foundation, third-party words: *to our knowledge, there has been no successful attempt at remote code execution.* [WIRED](../sources/wired-exploited-days-before-patched/index.html)Checked in `sources/wired-exploited-days-before-patched/captures/20261023T012042Z/text.txt`, sha256 `d43b99af65d563dd`.
 
-**What the evidence shows.** The body is careful: AWS 'logged attempts', and the PHP Foundation knows of 'no successful attempt at remote code execution'. Only the headline says exploited, following AWS's own wording (R-004).
+**What the evidence shows.** The body is careful: AWS 'logged attempts', and the PHP Foundation knows of 'no successful attempt at remote code execution'. Only the headline says exploited, a word that came from AWS's post at the time.
 
 **A wording we suggest.** *Hackers Tried to Exploit the PHP Vulnerabilities Days Before They Were Patched*
 
 Fact-check: [K-002](../factcheck/index.html#K-002); claims [amazon-honeypot](../facts/amazon-honeypot/index.html), [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html). Channel: to find, WIRED's published corrections address, captured before use.
-
-**Waiting on.**
-- [R-004](#R-004)
 The email to send (the editor sends it, from the editor's own address, to the channel above)
-Subject: A suggested correction: "Hackers Exploited the PHP Vulnerabilities Days Before They Were..." Hello, On 21 October 2026 you published: "Hackers Exploited the PHP Vulnerabilities Days Before They Were Patched" (https://www.wired.com/story/hackers-exploited-the-php-vulnerabilities-days-before-they-were-patched/) We think this says more than the evidence shows: The headline says hackers exploited the flaws; the article's own sources (AWS, the PHP Foundation) describe attempts and know of no successful attack. The wording starts with Amazon Web Services (AWS Security Blog), which we have asked separately: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-004 The evidence, with the saved copies we checked and their hashes, is here: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-005 A wording that would keep your piece accurate: "Hackers Tried to Exploit the PHP Vulnerabilities Days Before They Were Patched" The data is CC BY 4.0; use any of it with a credit to php.oct.2026.newsroom.sgit.ai. If we have this wrong, tell us and we will correct our page. Dinis Cruz Editor, PHP October 2026 (php.oct.2026.newsroom.sgit.ai)**Log.**
+Subject: A suggested correction: "Hackers Exploited the PHP Vulnerabilities Days Before They Were..." Hello, On 21 October 2026 you published: "Hackers Exploited the PHP Vulnerabilities Days Before They Were Patched" (https://www.wired.com/story/hackers-exploited-the-php-vulnerabilities-days-before-they-were-patched/) We think this says more than the evidence shows: The headline says hackers exploited the flaws; the article's own sources describe attempts and know of no successful attack. The evidence, with the saved copies we checked and their hashes, is here: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-005 A wording that would keep your piece accurate: "Hackers Tried to Exploit the PHP Vulnerabilities Days Before They Were Patched" The data is CC BY 4.0; use any of it with a credit to php.oct.2026.newsroom.sgit.ai. If we have this wrong, tell us and we will correct our page. Dinis Cruz Editor, PHP October 2026 (php.oct.2026.newsroom.sgit.ai)**Log.**
 - **2026-10-24** drafted by desk@php.newsroom, quotes checked; to send after R-004
+- **2026-10-24** no longer waits on R-004: AWS has since reworded its own sentence (fact-check Evidence-12), so the request rests on WIRED's own body alone; ready to send
 
 ### R-006: BankInfoSecurity (ISMG) drafted origin
 
@@ -127,24 +131,22 @@ The email to send (the editor sends it, from the editor's own address, to the ch
 Subject: A suggested correction: "Attackers Exploit Leaked Zero-Day Flaws in Widely Used PHP" Hello, On 21 October 2026 you published: "Attackers Exploit Leaked Zero-Day Flaws in Widely Used PHP" (https://www.bankinfosecurity.com/attackers-exploit-leaked-zero-day-flaws-in-widely-used-php-a-33161) We think this says more than the evidence shows: The headline says attackers exploit the flaws and that systems are under attack; on 21 October no source had shown a successful attack, and none has since. The evidence, with the saved copies we checked and their hashes, is here: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-006 A wording that would keep your piece accurate: "Attackers Target Leaked Zero-Day Flaws in Widely Used PHP" The data is CC BY 4.0; use any of it with a credit to php.oct.2026.newsroom.sgit.ai. If we have this wrong, tell us and we will correct our page. Dinis Cruz Editor, PHP October 2026 (php.oct.2026.newsroom.sgit.ai)**Log.**
 - **2026-10-24** drafted by desk@php.newsroom, quote checked
 
-### R-007: The Hacker News blocked origin
+### R-007: The Hacker News drafted origin
 
-**The point.** The article says a proof-of-concept exploit leaked ahead of the release; the PHP Foundation says no technical details leaked.
+**The point.** The article says a proof-of-concept exploit leaked ahead of time; what circulated before the release was a screenshot of an exploit tool and a short demonstration video, and no saved source shows exploit code.
 
 **What they published.**
 - body, third-party words: *details about the CVE identifiers and a proof-of-concept (PoC) exploit leaked ahead of time* [THN](../sources/thehackernews-php2shell-4days/index.html)Checked in `sources/thehackernews-php2shell-4days/captures/20261022T081320Z/text.txt`, sha256 `c1cb63141287484c`.
 
-**What the evidence shows.** The PHP Foundation's post says no technical details leaked; no saved copy shows a leaked exploit. The fact-check desk holds this as an open contradiction (K-009), so the request waits until the desk settles it.
+**What the evidence shows.** The fact-check desk settled this by time (K-009, run 3): the PHP Foundation's 'no technical details leaked' describes the CVE identifiers circulating from about 15:00 UTC on 20 October; Calif's demonstration video went up that evening, and a screenshot of the tool's banner circulated (Daubois, Sansec via Equixly). A video and a banner show that an exploit exists, not how it works.
 
-**A wording we suggest.** *details about the CVE identifiers leaked ahead of time*
+**A wording we suggest.** *details about the CVE identifiers leaked ahead of time, and a video demonstrating an exploit circulated*
 
 Fact-check: [K-009](../factcheck/index.html#K-009). Channel: to find, The Hacker News's published contact, captured before use.
-
-**Waiting on.**
-- K-009
-
-**Log.**
+The email to send (the editor sends it, from the editor's own address, to the channel above)
+Subject: A suggested correction: "details about the CVE identifiers and a proof-of-concept (PoC)..." Hello, On 22 October 2026 you published: "details about the CVE identifiers and a proof-of-concept (PoC) exploit leaked ahead of time" (https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html) We think this says more than the evidence shows: The article says a proof-of-concept exploit leaked ahead of time; what circulated before the release was a screenshot of an exploit tool and a short demonstration video, and no saved source shows exploit code. The evidence, with the saved copies we checked and their hashes, is here: https://php.oct.2026.newsroom.sgit.ai/outreach/index.html#R-007 A wording that would keep your piece accurate: "details about the CVE identifiers leaked ahead of time, and a video demonstrating an exploit circulated" The data is CC BY 4.0; use any of it with a credit to php.oct.2026.newsroom.sgit.ai. If we have this wrong, tell us and we will correct our page. Dinis Cruz Editor, PHP October 2026 (php.oct.2026.newsroom.sgit.ai)**Log.**
 - **2026-10-24** drafted by desk@php.newsroom; blocked while K-009 is open
+- **2026-10-24** unblocked: K-009 explained by the fact-check desk's run 3; the point and suggestion reworded to match its reading; ready to send
 
 ### R-008: Fortune drafted echo
 
@@ -251,4 +253,4 @@ The desk is `liaison@php.newsroom`; its rules, the runbook and the message it pr
 
 
 ---
-site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/outreach/index.html
+site v0.14.13 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/outreach/index.html

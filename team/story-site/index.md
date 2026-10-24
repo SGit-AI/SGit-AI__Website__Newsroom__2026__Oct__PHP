@@ -52,6 +52,7 @@ The front pageindex.htmlEvery claimclaims/index.htmlThe timelinetimeline/index.h
 | 230 | The headline is the day's news, from the journalist's latest state of affairs; the explainer moves to the second line (front page and mockup A)From the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
 | 231 | The lead's offline sentence matches the agencies count: all say install the fix, two US agencies say take sites offline if you cannotFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
 | 251 | /signals/: the ladder chart draws 1.57 million against 2.6 million on one scale; they are counts of different populations (K-004). Redraw against Censys's 1.58 million versioned hosts, or as two chartsFrom the editor's session, 24 October (desk@php.newsroom). | open |  |
+| 259 | Front page, 'What nobody knows yet': 'Where the 70% figure comes from. None of the pages that use it says how it was measured' is out of date: Cloudflare links W3Techs, and the fact-check desk's investigation /factcheck/investigations/php-share/ answers it (Finding-32)From the news desk chief's morning wake, 24 October. | open |  |
 
 ## What they have done
 - The first release: every claim with a status and its sources (v0.1.0).
@@ -75,4 +76,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.12 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
+site v0.14.13 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
