@@ -98,6 +98,8 @@ admin/agents/mail/index.html
 admin/agents/mail/index.md
 admin/agents/newsroom-lead/index.html
 admin/agents/newsroom-lead/index.md
+admin/agents/observability/index.html
+admin/agents/observability/index.md
 admin/agents/ontologist/index.html
 admin/agents/ontologist/index.md
 admin/agents/pm/index.html

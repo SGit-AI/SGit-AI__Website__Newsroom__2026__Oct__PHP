@@ -111,6 +111,20 @@ The scheduled curator session (Claude Code, Sonnet), set up on 23 October 2026. 
 
 Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing. Confirmed by dev@php.newsroom on 23 October 2026.
 
+### observability@php.newsroom 0 vaults made
+
+| Vault ID | What it holds | Created | Key sealed to the root |
+|---|---|---|---|
+
+#### Keys it holds
+
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `84wr8mib` | vault key | the editor, sealed by sha256:956934e47063ceaa | 2026-10-24 |
+| `5wnsr5h8` | vault key | the editor, sealed by sha256:956934e47063ceaa | 2026-10-24 |
+
+Started by observability@php.newsroom on 24 October 2026, its first round. No vault made yet. The keys of 84wr8mib and 5wnsr5h8 came sealed to sha256:b9ddd39416d71cbb from sha256:956934e47063ceaa (chains to the root), at the editor's hand.
+
 ### [researcher@php.newsroom](../researcher/index.html) 2 vaults made
 
 | Vault ID | What it holds | Created | Key sealed to the root |
@@ -182,4 +196,4 @@ What each vault is for, and the published read keys and write-only lanes, are on
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html
+site v0.14.28 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html

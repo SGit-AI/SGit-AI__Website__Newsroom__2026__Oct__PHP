@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.14.27. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.14.28. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.14.28 · 2026-10-24
+
+observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first debrief; a brief on the telemetry lane's 1,000-event cap (where it comes from, what happens to event 1,001, lanes in parallel); the keys it holds; board 270 to 273
+Pages changed (16): Observability: role, policy and rounds new · Briefs · Schedule: every agent that runs on its own · Dinis Cruz, Editor: the team · Schedule: conductor · Vaults: who made each one · Every member: who owns what · Every round: what each member did and 8 more
+[The fact pipeline: from a web page to a reader](../pipeline/index.html) · [The team: the people, the agents and how they work together](../team/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [What's new: every change, release by release](../whatsnew/index.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html)
+
+ Vault commit `1845598d9a38`.
 
 ### v0.14.27 · 2026-10-24
 
@@ -890,4 +898,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.14.28 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

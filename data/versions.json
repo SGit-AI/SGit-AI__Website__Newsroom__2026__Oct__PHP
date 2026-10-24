@@ -1,6 +1,15 @@
 {
- "current": "0.14.27",
+ "current": "0.14.28",
  "versions": [
+  {
+   "version": "0.14.28",
+   "date": "2026-10-24",
+   "title": "observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first debrief; a brief on the telemetry lane's 1,000-event cap (where it comes from, what happens to event 1,001, lanes in parallel); the keys it holds; board 270 to 273",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.27",
    "date": "2026-10-24",

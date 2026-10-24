@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.28 · 24 October 2026new since your last visit
+
+observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first debrief; a brief on the telemetry lane's 1,000-event cap (where it comes from, what happens to event 1,001, lanes in parallel); the keys it holds; board 270 to 273
+
+No reader-facing section changed in this release.
+
 ## v0.14.27 · 24 October 2026new since your last visit
 
 Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry report's cities and regions, the invitation check order, the vault app's preset merge, the conductor drain's file names)
@@ -887,4 +893,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.28 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

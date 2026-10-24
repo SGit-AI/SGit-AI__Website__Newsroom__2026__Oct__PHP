@@ -51,6 +51,8 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 235 | Board 138 with the desk's review: A as the default front page and C as the model page; Focus capped at a few dozen pages for every reader; the dial's names in plain words; no view links to a page it hidesFrom the review: the redesign, read for what it communicates (24 October; the news desk chief, for the editor's picks on board 138). | open |  |
 | 257 | The journalist's full pass (pass step 2, v0.12.1 and v0.14.3) wrote 34 files owned by six other members: the story site's claims, impact and story; the newsroom lead's evidence exports; the historian's history; the librarian's questions; the conductor's updates and team; the researcher's compromise and watch. Either widen the journalist's policy to the pass, or route the pass through each owner: the editor's call | open |  |
 | 258 | The librarian's card contradicts its own wake prompt: its 'Map' step gives new files an owner in the policy drafts, but the prompt allows only the librarian's own files (policies are abp@'s). Say which holds; until then the librarian follows the prompt and opens rows for abp@ | open |  |
+| 270 | Enrol observability@php.newsroom's key (sha256:b9ddd39416d71cbb) on pki.sgit.ai: its record links the root as operatorThe record is my-record.json from its session, handed to the editor on 24 October; it is public. Until enrolled, pki-agent trust refuses it and nothing can be sealed to it. | open |  |
+| 273 | An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39416d71cbb, to push the telemetry application (5wnsr5h8) and drain 84wr8mib from the command lineThe telemetry application v0.4.1 (Queue & drain shows its progress) is committed in 5wnsr5h8 and waits for this to be pushed: a vault key reads and commits, the server takes a push only with an access token. | open |  |
 
 ## Waiting on someone else
 
@@ -79,6 +81,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 243 | The sending decision for correction requests: the editor sends each on the liaison's draft (the desk's recommendation), or a standing rule with a change to the security requirementsFrom the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). The editor's decision, 24 October: the editor sends every request, under the editor's own name or riskmandate.ai, through the editor's own workflow. | done |  |
 | 245 | Allow the mail agent to write to a publisher's published corrections address, for requests the editor approved one by one: a change to admin/security/REQUIREMENTS.md section 6 and the mandate, on a branch, for security's review and the editor's goFrom the brief: a corrections liaison joins the team (22 October). Not needed: the editor sends each request (24 October); no agent writes to a publisher. | done |  |
 | 246 | Confirm which agent and address send the liaison's requests (the brief names the agent at riskmandate.ai; the security requirements name agent@diniscruz.ai)From the brief: a corrections liaison joins the team (22 October). The editor, 24 October: the editor sends, under the editor's own name or riskmandate.ai. | done |  |
+| 271 | Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the telemetry vault) to observability, sealed to its keyThe editor's plan of 24 October: dev seals them to sha256:b9ddd39416d71cbb, the fingerprint taken from the editor in dev's session. Blocks the application's v0.4.1 (Queue & drain: a progress bar while the lane is checked, step-by-step detail while it drains). Done 24 October: both keys sealed to sha256:b9ddd39416d71cbb by sha256:956934e47063ceaa and carried by the editor; opened, checked and held (data/vault-register/observability.json). | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/dinis.human/` in the mail vault (`fmb2tpl2`).
@@ -89,4 +92,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.14.28 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

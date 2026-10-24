@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today182runs recorded67runs with changes and no article
+2schedules20runs a night, today183runs recorded67runs with changes and no article
 
 ## Quiet hours
 
@@ -33,7 +33,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 114, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Conductor: 7, Fact-check desk: 4, Sherpa: 2, factcheck: 2, desk: 1, librarian@php.newsroom: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 115, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Conductor: 7, Fact-check desk: 4, Sherpa: 2, factcheck: 2, desk: 1, librarian@php.newsroom: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -60,6 +60,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.5` | The Sherpa's round 1 debrief (24 October): the collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents, with screenshots; and a friction on /team/vaults/ | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.4` | factcheck run 3: the desk chief's fixes checked: eight findings closed (the 70% wordings, the 1.57 million framing, the dated no-compromise claim, the Dutch offline row, the front page's fix-complete line), K-004 and K-009 explained, so the correction requests to Wiz, the BBC and CNN no longer wait on the desk; Finding-32 stays open (Cloudflare does link W3Techs); the desk's schedule card, and the brief for its investigations | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.3` | pass step 2, second part: the 'has anyone been hacked?' answer and the php2shell context row as of the latest capture; and the gate's first-build determinism failure fixed (design.py read items.json one build late, board 175) | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.28` | observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first debrief; a brief on the telemetry lane's 1,000-event cap (where it comes from, what happens to event 1,001, lanes in parallel); the keys it holds; board 270 to 273 | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.27` | Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry report's cities and regions, the invitation check order, the vault app's preset merge, the conductor drain's file names) | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.26` | Application security: /admin/appsec/ with the threat model and five data-flow diagrams, 39 security advisories kept like incidents (root cause, what was not in place, the fix, the guard), the patterns they share, who can do what, what a client-side site does not have to care about, the incident process and six runbooks (taking the site offline, emergency shutdown), a bug bounty paid in kudos with its leaderboard, and prompts for three outside reviewers; a Content-Security-Policy on every page; cities and regions no longer published in the telemetry report; the invitation check order, the vault app's preset merge and the conductor drain's file names fixed | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.14.25` | the scheduled journalist proposed: a Sonnet journalist that takes each curator batch through to the site, and an Opus chief correspondent that reviews it; brief, wake prompt and schedule card (status proposed) | yes | its release note | [output](../../admin/versions.html) |
@@ -222,4 +223,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.14.27 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.14.28 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
