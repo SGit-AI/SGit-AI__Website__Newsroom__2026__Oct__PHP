@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.15.9. Data as of 2026-10-24T08:37Z (the latest capture in the evidence vault, commit 1f38e70921b2). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.15.10. Data as of 2026-10-24T08:37Z (the latest capture in the evidence vault, commit 1f38e70921b2). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -687,6 +687,7 @@ Site v0.15.9. Data as of 2026-10-24T08:37Z (the latest capture in the evidence v
 - [Schedule: sherpa](https://php.oct.2026.newsroom.sgit.ai/team/schedule/sherpa/index.md): active; Keep the readers' side of the site in view: drain what readers and power users send through the collaborators lane, answer it point by point in Feedback from collaborators, walk what changed on the live site as a reader would, and keep the friction log and the brief to the conductor true.
 - [Vaults: who made each one](https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.md): every vault each agent made, by ID only, and whether its key is sealed to the editor
 - [Status](https://php.oct.2026.newsroom.sgit.ai/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev
+- [Control room](https://php.oct.2026.newsroom.sgit.ai/team/control/index.md): every agent, its schedule and runs, drawn from the same data as status
 - [Runs](https://php.oct.2026.newsroom.sgit.ai/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run
 - [Dinis Cruz](https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.md): Editor; Sets direction by voice memo, points agents at sources, reads what they wrote and says go.
 - [Vicky](https://php.oct.2026.newsroom.sgit.ai/team/vicky/index.md): Project manager; Runs the project side: what is planned, who has it, what is late and what the editor needs to decide.

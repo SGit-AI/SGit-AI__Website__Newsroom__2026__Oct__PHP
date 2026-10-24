@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**9** evidence · **31** derived · **14** authored · **37** site
+**9** evidence · **31** derived · **14** authored · **38** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -106,6 +106,7 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/schedules.json` | conductor@php.newsroom | the account's scheduled tasks and this repository's workflows, as observed; the quiet-hours rule and the article rule | [team/runs/index.html](../team/runs/index.html) |
 | `data/schedule-vault.json` | conductor@php.newsroom | the retired schedule vault (weic8imn): its ID and published read key, kept so the archive stays readable; replaced on 24 October 2026 by data/schedule/ | [vaults/index.html](../vaults/index.html) |
 | `data/agents-status.json` | conductor@php.newsroom | each agent's session record, the repository's branches, the scheduled tasks and the data files' dates, read without asking the agents | [team/status/index.html](../team/status/index.html) |
+| `data/control.json` | dev@php.newsroom | built by admin/build/control.py from data/agents-status.json, data/schedule/, data/runs/ and the editor's board rows; third-party text, shown as text only | [team/control/index.html](../team/control/index.html) |
 | `data/collaborators.json` | conductor@php.newsroom | the asks to the collaborators (what is new, what to do, the questions) and the collaborators lane's public descriptor | [collaborators/index.html](../collaborators/index.html) |
 | `data/contributors.json` | conductor@php.newsroom | admin/build/invite.py: the open invitations (hashes only) and the enrolled keys (handle, role, fingerprints) | [join/index.html](../join/index.html) |
 | `data/versions.json` | admin/build/release.sh | every release | [admin/versions.html](../admin/versions.html) |
@@ -139,4 +140,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.15.9 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.15.10 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

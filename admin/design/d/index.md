@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.9. Not the live site.
+> Mockup D for review, built from the data of release v0.15.10. Not the live site.
 
-PHP Team console Console Overview Board 184 Agents 19 Releases 128 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 184 Agents 19 Releases 129 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.9 
-128 releases since 22 Oct 
+v0.15.10 
+129 releases since 22 Oct 
 
 Open on the board 
 184 
 93 done, 5 waiting 
 
 Pages built 
-886 
+887 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -99,6 +99,7 @@ From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sti
 ### Releases
  latest 8 
 
+ v0.15.10 2026-10-24 The control room: /team/control/, a visual, interactive view of every agent, the pipeline, the wake timeline and the editor's queu… 
  v0.15.9 2026-10-24 the journalist's and the correspondent's public key fingerprints recorded in their register files 
  v0.15.8 2026-10-24 Conductor full pass 19:15 London: agents-status, schedules against runs, run record 
  v0.15.7 2026-10-24 the journalist's brief for its first Sonnet session: the pipeline, the key handshake, every wake in seven steps, what to do when a… 
@@ -106,7 +107,6 @@ From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sti
  v0.15.5 2026-10-24 The Sherpa's 17:45 pass: the phone header's fix checked live (one 43px line; a friction closed), headlines now on the first screen… 
  v0.15.4 2026-10-24 factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploit… 
  v0.15.3 2026-10-24 the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's p… 
- v0.15.2 2026-10-24 The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and t… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sti
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.9 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.10 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

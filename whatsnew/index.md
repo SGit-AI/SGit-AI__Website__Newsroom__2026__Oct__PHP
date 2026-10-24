@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.10 · 24 October 2026new since your last visit
+
+The control room: /team/control/, a visual, interactive view of every agent, the pipeline, the wake timeline and the editor's queue, drawn from data/control.json (built by admin/build/control.py); a wall mode for a big screen
+
+No reader-facing section changed in this release.
+
 ## v0.15.9 · 24 October 2026new since your last visit
 
 the journalist's and the correspondent's public key fingerprints recorded in their register files
@@ -989,4 +995,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.9 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.10 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

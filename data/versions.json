@@ -1,6 +1,15 @@
 {
- "current": "0.15.9",
+ "current": "0.15.10",
  "versions": [
+  {
+   "version": "0.15.10",
+   "date": "2026-10-24",
+   "title": "The control room: /team/control/, a visual, interactive view of every agent, the pipeline, the wake timeline and the editor's queue, drawn from data/control.json (built by admin/build/control.py); a wall mode for a big screen",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.9",
    "date": "2026-10-24",

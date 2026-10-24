@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.15.9",
+ "version": "0.15.10",
  "members": [
   {
    "agent": "abp",
@@ -2888,10 +2888,13 @@
  "overlaps": [],
  "unowned": [
   ".well-known/security.txt",
+  "admin/build/control.py",
   "admin/build/csp.py",
   "admin/build/diagram.py",
   "admin/build/grc_history.py",
   "admin/build/release_pages.py",
+  "assets/control.css",
+  "assets/control.js",
   "assets/grc-changes.js",
   "data/advisories.json",
   "data/appsec.json",

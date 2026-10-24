@@ -379,6 +379,7 @@ context/index.md
 corrections/index.html
 corrections/index.md
 data/agents.json
+data/control.json
 data/fractal.json
 data/graph.json
 data/grc-graph.json
@@ -1628,6 +1629,8 @@ team/comms/index.html
 team/comms/index.md
 team/conductor/index.html
 team/conductor/index.md
+team/control/index.html
+team/control/index.md
 team/dev/index.html
 team/dev/index.md
 team/dinis/index.html
