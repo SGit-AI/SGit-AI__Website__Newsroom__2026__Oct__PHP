@@ -14,37 +14,43 @@ A synthetic reader is a test instrument, not a reader: its review is a prompt fo
 
 Scores are 0 to 5 from that reader's point of view; the change since its previous review is in brackets.
 
-| Reader | Device | Run (UTC) | Site | Answered | Answered | Clarity | Trust | Design | Navigation | Runs |
+| Reader | Device | Run (UTC) | Site | Got the answer | Answered | Clarity | Trust | Design | Navigation | Runs |
 |---|---|---|---|---|---|---|---|---|---|---|
-| [Board member](../../admin/synthetic/board/index.html) | 390×844, phone, light | [2026-10-22T1753Z](../../admin/synthetic/board/2026-10-22T1753Z/index.html) | v0.4.3 | partly | 4 | 4 | 4 | 2 | 3 | 1 |
-| [CTO](../../admin/synthetic/cto/index.html) | 1440×900, desktop, dark | [2026-10-22T1753Z](../../admin/synthetic/cto/2026-10-22T1753Z/index.html) | v0.4.3 | partly | 4 | 4 | 5 | 3 | 3 | 1 |
-| [Project manager](../../admin/synthetic/pm/index.html) | 1280×800, desktop, light | [2026-10-22T1754Z](../../admin/synthetic/pm/2026-10-22T1754Z/index.html) | v0.4.3 | partly | 3 | 3 | 4 | 3 | 3 | 1 |
-| [Security lead](../../admin/synthetic/security/index.html) | 1680×1050, desktop, dark | [2026-10-22T1754Z](../../admin/synthetic/security/2026-10-22T1754Z/index.html) | v0.4.3 | yes | 4 | 4 | 3 | 4 | 4 | 1 |
-| [Developer](../../admin/synthetic/developer/index.html) | 1440×900, desktop, dark | [2026-10-22T1755Z](../../admin/synthetic/developer/2026-10-22T1755Z/index.html) | v0.4.3 | partly | 4 | 4 | 4 | 3 | 4 | 1 |
-| [Designer](../../admin/synthetic/designer/index.html) | 1440×900, desktop, light (also phone, tablet, dark) | [2026-10-22T1755Z](../../admin/synthetic/designer/2026-10-22T1755Z/index.html) | v0.4.3 | partly | 3 | 3 | 4 | 3 | 3 | 1 |
+| [Board member](../../admin/synthetic/board/index.html) | 390×844, phone, light | [2026-10-23T2355Z](../../admin/synthetic/board/2026-10-23T2355Z/index.html) | v0.10.18 | partly | 4 | 4 | 4 | 2 | 3 | 2 |
+| [CTO](../../admin/synthetic/cto/index.html) | 1440×900, desktop, dark | [2026-10-23T2356Z](../../admin/synthetic/cto/2026-10-23T2356Z/index.html) | v0.10.18 | partly | 4 | 3 (-1) | 4 (-1) | 3 | 3 | 2 |
+| [Project manager](../../admin/synthetic/pm/index.html) | 1280×800, desktop, light | [2026-10-23T2356Z](../../admin/synthetic/pm/2026-10-23T2356Z/index.html) | v0.10.18 | partly | 3 | 3 | 3 (-1) | 3 | 3 | 2 |
+| [Security lead](../../admin/synthetic/security/index.html) | 1680×1050, desktop, dark | [2026-10-23T2357Z](../../admin/synthetic/security/2026-10-23T2357Z/index.html) | v0.10.18 | yes | 4 | 3 (-1) | 3 | 4 | 4 | 2 |
+| [Developer](../../admin/synthetic/developer/index.html) | 1440×900, desktop, dark | [2026-10-23T2357Z](../../admin/synthetic/developer/2026-10-23T2357Z/index.html) | v0.10.18 | partly | 3 (-1) | 4 | 3 (-1) | 3 | 4 | 2 |
+| [Designer](../../admin/synthetic/designer/index.html) | 1440×900, desktop, light (also phone, tablet, dark) | [2026-10-23T2358Z](../../admin/synthetic/designer/2026-10-23T2358Z/index.html) | v0.10.18 | partly | 3 | 3 | 4 | 3 | 3 | 2 |
 
 ## In their own words
-- [Board member](../../admin/synthetic/board/index.html): *The board briefing gives me five sharp questions to put to management and a clear sense that nobody has been confirmed hacked, but on my phone I had to scroll past two screens of reading-tracker and research boxes before I saw it, and nothing told me what a retailer with an online shop should specifically worry about.*
-- [CTO](../../admin/synthetic/cto/index.html): *I got the severity, the fix, the side effects and the speed I need inside the first two pages, and with evidence I can check, but nothing gives me a paragraph I can put in front of my board, and the CTO briefing alone is a 20-minute read for an 8-minute question.*
-- [Project manager](../../admin/synthetic/pm/index.html): *The PM briefing and the playbook give me the order of work (inventory, patch internet-facing first, regression test, agree who pulls the plug, migrate 8.1 and older) and I can build a plan from them, but nothing gives me a deadline to plan against, a status template to report with, or a way to see what changed since my last visit.*
-- [Security lead](../../admin/synthetic/security/index.html): *This is the most useful single place I have seen for php2shell: attempts are kept apart from compromises, the detection guidance is specific enough to turn into alerts today, and the agency table is something I can put in front of the CISO, but the status labels are not applied consistently, and that stops me citing the grading as it stands.*
-- [Developer](../../admin/synthetic/developer/index.html): *The technical core is the best I have read on php2shell (verbatim CVE text, a SAPI table, the fix commit with real hunks and the behaviour change after patching), but the one thing I came to do, prove my Docker images are patched, gets a single line saying run php -v, which does not even work for the distro backports the site lists.*
-- [Designer](../../admin/synthetic/designer/index.html): *The type, colour and evidence styling feel calm and trustworthy, and the front page does point a newcomer somewhere sensible, but two stacked utility boxes sit above every headline, an unlabelled pound figure ticks down as I move around, and the page labels do not agree with each other, so the site looks more finished than it guides.*
+- [Board member](../../admin/synthetic/board/index.html): *The board briefing still hands me five good questions for management and a calm 'nobody confirmed hacked' answer, but it is the same briefing I read yesterday word for word, still buried under two screens of reading controls on my phone, and it still never tells a retailer with an online shop what we stand to lose or what this is costing anyone.*
+- [CTO](../../admin/synthetic/cto/index.html): *I still get severity, fix, side effects and urgency inside two pages, with evidence I can check, but a day on there is still no paragraph I can take to my board, the CTO path is still 20 minutes for my 8, and the claims table now carries a second grading badge that sometimes argues with the status beside it.*
+- [Project manager](../../admin/synthetic/pm/index.html): *The PM briefing and the playbook still give me a sound order of work I can turn into a plan, but a day and six site versions later there is still no date to plan against, no way to report progress, and the 'Latest' and timeline sections stop on 22 October, so I cannot see what moved since yesterday.*
+- [Security lead](../../admin/synthetic/security/index.html): *Still the best single place to brief the CISO on php2shell, and the detection and agency pages are as strong as yesterday, but the pages on my path have not moved since 22 October: every grading fault I raised is still there, the new fact-check column now argues with the status column on the same row, and vendor reports of successful exploitation sit only in a footnote on the claims page.*
+- [Developer](../../admin/synthetic/developer/index.html): *The technical core is still the best write-up of php2shell I have read, but fifteen releases on, the one thing I came to do, prove my Docker images are patched, still gets a single php -v line, and the pages I read now lag the site's own newer data.*
+- [Designer](../../admin/synthetic/designer/index.html): *The site still looks calm, sourced and trustworthy, and the claims page is clearer than it was, but almost none of my structural complaints from v0.4.3 were touched: the unlabelled pound pill still ticks down, two utility boxes (now three, with the new newcomer strip) still sit above every headline, and the section labels still disagree with each other.*
 
 ## The pages they found most wrong with
-- [index.html](pages/index.html#index-html): 10 failures and 9 changes from 5 readers
-- [patching/index.html](pages/index.html#patching-index-html): 7 failures and 5 changes from 3 readers
-- [briefings/board/index.html](pages/index.html#briefings-board-index-html): 5 failures and 5 changes from 1 readers
-- [briefings/cto/index.html](pages/index.html#briefings-cto-index-html): 5 failures and 5 changes from 1 readers
-- [briefings/pm/index.html](pages/index.html#briefings-pm-index-html): 3 failures and 3 changes from 1 readers
-- [claims/index.html](pages/index.html#claims-index-html): 3 failures and 2 changes from 2 readers
+- [index.html](pages/index.html#index-html): 14 failures and 9 changes from 6 readers
+- [patching/index.html](pages/index.html#patching-index-html): 11 failures and 5 changes from 3 readers
+- [briefings/board/index.html](pages/index.html#briefings-board-index-html): 7 failures and 6 changes from 1 readers
+- [claims/index.html](pages/index.html#claims-index-html): 5 failures and 4 changes from 2 readers
+- [briefings/cto/index.html](pages/index.html#briefings-cto-index-html): 5 failures and 6 changes from 1 readers
+- [briefings/pm/index.html](pages/index.html#briefings-pm-index-html): 5 failures and 4 changes from 1 readers
 
 [Every page they named, with every point, change and quote](pages/index.html).
 
 ## Every run
 
-| Run (UTC) | Reader | Site | Answered | Fails (high) |
+| Run (UTC) | Reader | Site | Got the answer | Fails (high) |
 |---|---|---|---|---|
+| [2026-10-23T2358Z](../../admin/synthetic/designer/2026-10-23T2358Z/index.html) | [Designer](../../admin/synthetic/designer/index.html) | v0.10.18 | partly | 14 (2) |
+| [2026-10-23T2357Z](../../admin/synthetic/security/2026-10-23T2357Z/index.html) | [Security lead](../../admin/synthetic/security/index.html) | v0.10.18 | yes | 13 (4) |
+| [2026-10-23T2357Z](../../admin/synthetic/developer/2026-10-23T2357Z/index.html) | [Developer](../../admin/synthetic/developer/index.html) | v0.10.18 | partly | 13 (3) |
+| [2026-10-23T2356Z](../../admin/synthetic/pm/2026-10-23T2356Z/index.html) | [Project manager](../../admin/synthetic/pm/index.html) | v0.10.18 | partly | 11 (3) |
+| [2026-10-23T2356Z](../../admin/synthetic/cto/2026-10-23T2356Z/index.html) | [CTO](../../admin/synthetic/cto/index.html) | v0.10.18 | partly | 11 (1) |
+| [2026-10-23T2355Z](../../admin/synthetic/board/2026-10-23T2355Z/index.html) | [Board member](../../admin/synthetic/board/index.html) | v0.10.18 | partly | 11 (2) |
 | [2026-10-22T1755Z](../../admin/synthetic/developer/2026-10-22T1755Z/index.html) | [Developer](../../admin/synthetic/developer/index.html) | v0.4.3 | partly | 12 (3) |
 | [2026-10-22T1755Z](../../admin/synthetic/designer/2026-10-22T1755Z/index.html) | [Designer](../../admin/synthetic/designer/index.html) | v0.4.3 | partly | 9 (2) |
 | [2026-10-22T1754Z](../../admin/synthetic/security/2026-10-22T1754Z/index.html) | [Security lead](../../admin/synthetic/security/index.html) | v0.4.3 | yes | 10 (2) |

@@ -8,7 +8,7 @@ Every vault the team's agents have made, listed by agent, by ID only, with wheth
 
 # Vaults: who made each one, and who holds which keys
 
-Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. 20 vaults; for 8 of them, the sealing is not recorded yet.
+Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. 20 vaults; for 2 of them, the sealing is not recorded yet.
 
 ### [conductor@php.newsroom](../conductor/index.html) 5 vaults made
 
@@ -128,16 +128,25 @@ Kept by the agent itself. The Sherpa has made no vaults; it holds one key, given
 
 | Vault ID | What it holds | Created | Key sealed to the root |
 |---|---|---|---|
-| `1zq458zk` | A synthetic reader’s vault (board member): every run, page, screenshot and review | 2026-10-22 | not recorded |
-| `wlhgl8pk` | A synthetic reader’s vault (CTO): every run, page, screenshot and review | 2026-10-22 | not recorded |
-| `9p6jpsd2` | A synthetic reader’s vault (project manager): every run, page, screenshot and review | 2026-10-22 | not recorded |
-| `vjsqjhvp` | A synthetic reader’s vault (security lead): every run, page, screenshot and review | 2026-10-22 | not recorded |
-| `3l7tzwh9` | A synthetic reader’s vault (developer): every run, page, screenshot and review | 2026-10-22 | not recorded |
-| `dpdx3q13` | A synthetic reader’s vault (designer): every run, page, screenshot and review | 2026-10-22 | not recorded |
+| `1zq458zk` | A synthetic reader's vault (board member): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
+| `wlhgl8pk` | A synthetic reader's vault (CTO): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
+| `9p6jpsd2` | A synthetic reader's vault (project manager): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
+| `vjsqjhvp` | A synthetic reader's vault (security lead): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
+| `3l7tzwh9` | A synthetic reader's vault (developer): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
+| `dpdx3q13` | A synthetic reader's vault (designer): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
 
-**Keys it holds:** not recorded yet.
+#### Keys it holds
 
-Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `1zq458zk` | vault key | made it | 2026-10-22 |
+| `wlhgl8pk` | vault key | made it | 2026-10-22 |
+| `9p6jpsd2` | vault key | made it | 2026-10-22 |
+| `vjsqjhvp` | vault key | made it | 2026-10-22 |
+| `3l7tzwh9` | vault key | made it | 2026-10-22 |
+| `dpdx3q13` | vault key | made it | 2026-10-22 |
+
+Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing. Confirmed by synthetic@php.newsroom on 24 October 2026.
 
 ## The rules
 

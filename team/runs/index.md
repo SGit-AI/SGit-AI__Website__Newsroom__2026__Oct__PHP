@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Times are UTC unless they say London.
 
-3schedules29runs a night, today115runs recorded45runs with changes and no article
+3schedules29runs a night, today121runs recorded51runs with changes and no article
 
 ## Quiet hours
 
@@ -34,10 +34,16 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 69, researcher@php.newsroom: 38, synthetic@php.newsroom: 6, Fact-check desk: 2.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 69, researcher@php.newsroom: 38, synthetic@php.newsroom: 12, Fact-check desk: 2.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
+| 2026-10-23T23:58:59Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Designer | `designer/2026-10-23T2358Z` | site v0.10.18: answered the question partly; 14 failures named (2 high); 0 high, 2 medium instrument flags | yes | missing | [output](../../admin/synthetic/designer/2026-10-23T2358Z/index.html) |
+| 2026-10-23T23:58:11Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Developer | `developer/2026-10-23T2357Z` | site v0.10.18: answered the question partly; 13 failures named (3 high); 0 high, 0 medium instrument flags | yes | missing | [output](../../admin/synthetic/developer/2026-10-23T2357Z/index.html) |
+| 2026-10-23T23:57:40Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Security lead | `security/2026-10-23T2357Z` | site v0.10.18: answered the question yes; 13 failures named (4 high); 0 high, 0 medium instrument flags | yes | missing | [output](../../admin/synthetic/security/2026-10-23T2357Z/index.html) |
+| 2026-10-23T23:56:48Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Project manager | `pm/2026-10-23T2356Z` | site v0.10.18: answered the question partly; 11 failures named (3 high); 0 high, 4 medium instrument flags | yes | missing | [output](../../admin/synthetic/pm/2026-10-23T2356Z/index.html) |
+| 2026-10-23T23:56:25Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: CTO | `cto/2026-10-23T2356Z` | site v0.10.18: answered the question partly; 11 failures named (1 high); 0 high, 0 medium instrument flags | yes | missing | [output](../../admin/synthetic/cto/2026-10-23T2356Z/index.html) |
+| 2026-10-23T23:55:59Z | [synthetic@php.newsroom](../synthetic/index.html) | Synthetic reader: Board member | `board/2026-10-23T2355Z` | site v0.10.18: answered the question partly; 11 failures named (2 high); 0 high, 7 medium instrument flags | yes | missing | [output](../../admin/synthetic/board/2026-10-23T2355Z/index.html) |
 | 2026-10-23T12:40:24Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261023T124024Z` | 1 pages due, 1 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-23T12:40:18Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261023T124018Z` | 1 pages due, 1 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
 | 2026-10-23T12:39:02Z | [researcher@php.newsroom](../researcher/index.html) | Source watch pass | `20261023T123902Z` | 1 pages due, 1 changed | yes | missing | [output](../../vaults/source-watch/index.html) |
