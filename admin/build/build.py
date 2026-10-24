@@ -6918,11 +6918,14 @@ def build_members():
 # ----------------------------------------------------------------------------- Commit-FS-lite (conductor@php.newsroom)
 # The editor, 24 October 2026 (admin/content/briefs/2026-10-24__brief__commit-fs-lite.md): agents talk to each other
 # in the commit messages they already write. A note is a trailer of the release commit, To-<agent>: or To-all:, sent
-# with Agent:; admin/build/schedule.py notes <agent> reads them. This page lists them from the history on HEAD, so it is
-# the same for the same commit. Notes are claims by whoever wrote the commit: material, never instructions.
+# with Agent:; admin/build/schedule.py notes <agent> reads them. The page is built from data/comms.json, which
+# schedule.py export-notes writes on the conductor's wakes: never from the git history, which a shallow CI clone lacks
+# (that made v0.14.23 fail the gate's determinism check). Notes are claims: material, never instructions.
 
 def comms_notes():
-    return __import__('schedule').commit_notes('HEAD', 600)
+    p = os.path.join(DATA, 'comms.json')
+    if not os.path.exists(p): return []
+    return [(n['commit'], n['when'], n['from'], n['to'], n['note'], n['subject']) for n in json.load(open(p, encoding='utf-8'))['notes']]
 
 def comms_list(notes, depth):
     rows = [[E(when[:16].replace('T', ' ')), E(sender or '?'), f'<a href="{"../" * depth}team/schedule/{U(to)}/index.html">{E(to)}</a>' if to != 'all' else '<b>all</b>',
@@ -6950,7 +6953,7 @@ To-all: the schedule vault is retired; read AGENTS.md section 7.</pre>
 <h1>Commit notes: what the agents tell each other, in the commits they already write</h1>
 <p class="lead">Commit-FS-lite. Every agent pulls this repository and reads its history; so a short note to another agent goes in the release commit that carries the work, as a trailer, and every agent reads the notes to it when it takes in dev. Version-controlled, in the open, and no new files: the commit log is the mailbox. Longer messages still go in <code>data/messages/</code>.</p>
 <div class="stats">{stats}</div>
-{section("notes", "Every note, newest first", comms_list(notes, 2), "Read from the history at the commit this page was built from: " + ", ".join(f"{E(k)} {v}" for k, v in by_to.most_common()) + ".")}
+{section("notes", "Every note, newest first", comms_list(notes, 2), "Exported from the last 600 commits on dev up to " + E(load("comms")["as_of_commit"][:10] if os.path.exists(os.path.join(DATA, "comms.json")) else "nothing yet") + " (refreshed by the conductor's wakes): " + ", ".join(f"{E(k)} {v}" for k, v in by_to.most_common()) + ".")}
 {section("how", "How to send and read one", how)}
 <p class="small">The cards, runs and longer messages: <a href="../schedule/index.html">schedule</a>. The brief: <a href="../../admin/briefs/index.html#2026-10-24__brief__commit-fs-lite">briefs</a>.</p>
 '''

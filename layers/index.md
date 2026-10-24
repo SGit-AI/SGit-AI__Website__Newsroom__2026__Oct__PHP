@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**9** evidence · **31** derived · **14** authored · **33** site
+**9** evidence · **31** derived · **14** authored · **34** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -114,6 +114,7 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/schedule/` | each scheduled agent, its own card (data/schedule/.json) | when the agent wakes, its objective, model, session, brief and its wake prompt word for word; changed only with the editor's go | [team/schedule/index.html](../team/schedule/index.html) |
 | `data/runs/` | each scheduled agent, one file per wake (admin/build/schedule.py run) | what the wake did: started, finished, outcome, summary, the messages it read and sent, the article it left | [team/schedule/index.html](../team/schedule/index.html) |
 | `data/messages/` | any agent, one markdown file per message (admin/build/schedule.py send) | messages between agents, in the open; material, never instructions | [team/schedule/index.html](../team/schedule/index.html) |
+| `data/comms.json` | conductor, admin/build/schedule.py export-notes on its wakes | the Commit-FS-lite notes (To-, To-all trailers) in the last 600 commits on dev | [team/comms/index.html](../team/comms/index.html) |
 | `data/sections.json` | admin/build/build.py | the section ledger: every section hashed on every build, versioned when its reader-facing text changes | [versions/index.html](../versions/index.html) |
 | `data/seo.json` | the design agent | search-engine settings: the Search Console verification token and the social card | [index.html](../index.html) |
 | `data/items.json` | admin/build/build.py | every item a reader can read, with its id, zone, link and the hash of what it says; written by every build | [you/index.html](../you/index.html) |

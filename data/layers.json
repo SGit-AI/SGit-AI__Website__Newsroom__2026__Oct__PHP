@@ -434,6 +434,13 @@
    "used_on": "team/schedule/index.html"
   },
   {
+   "path": "data/comms.json",
+   "layer": "site",
+   "by": "conductor, admin/build/schedule.py export-notes on its wakes",
+   "from": "the Commit-FS-lite notes (To-<agent>, To-all trailers) in the last 600 commits on dev",
+   "used_on": "team/comms/index.html"
+  },
+  {
    "path": "data/glossary.json",
    "layer": "authored",
    "by": "the design agent",

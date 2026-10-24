@@ -12,6 +12,8 @@ refuses the obvious shapes; the gate refuses more).
                                       write this wake's run record, data/runs/<agent>/<run id>.json
   send --from A --to B --subject "..." --body-file FILE [--re ID]
                                       write a message, data/messages/<B>/<id>.md (B may be "all"), for a long one
+  export-notes                        write data/comms.json, the notes in the last 600 commits on origin/dev, which
+                                      /team/comms/ is built from (the build never reads git history: CI clones shallow)
   notes <agent> [--since REF]         Commit-FS-lite: the notes to <agent> (To-<agent>:) and to all (To-all:) in the
                                       commits on origin/dev since REF (default: the head your last run recorded)
 Then release with admin/build/release.sh, as for any other change; a short note to another agent rides in the release
@@ -102,6 +104,16 @@ def cmd_notes(a):
               + note.replace('</note', '<\\/note') + '\n  </note>\n')
     print(f'{len(notes)} notes since {since[:10] if since else "the last 300 commits"}; record this head in your run: {git("rev-parse", "origin/dev").strip()[:12]}')
 
+def cmd_export_notes(a):
+    git('fetch', '-q', 'origin', 'dev')
+    head = git('rev-parse', 'origin/dev').strip()
+    notes = [{'commit': sha, 'when': when, 'from': sender, 'to': to, 'note': note, 'subject': subj} for sha, when, sender, to, note, subj in commit_notes('origin/dev', 600)]
+    d = {'about': 'Commit-FS-lite: the notes agents leave each other as To-<agent> and To-all trailers in their release commits, read from the last 600 commits on dev. Written by admin/build/schedule.py export-notes (the conductor\'s wakes); the build reads this file, never the git history.',
+         'kept_by': 'conductor', 'as_of_commit': head, 'notes': notes}
+    p = os.path.join(DATA, 'comms.json')
+    open(p, 'w', encoding='utf-8').write(checked(json.dumps(d, indent=1, ensure_ascii=False), p) + '\n')
+    print(f'{len(notes)} notes up to {head[:12]}')
+
 def cmd_run(a):
     if a.outcome not in OUTCOMES: sys.exit(f'outcome is one of {", ".join(OUTCOMES)}')
     rid = f'{stamp(a.started)}-{name(a.agent)}'
@@ -136,7 +148,8 @@ def main():
     p = s.add_parser('send'); p.add_argument('--from', required=True); p.add_argument('--to', required=True); p.add_argument('--subject', required=True)
     p.add_argument('--body-file', required=True); p.add_argument('--re')
     p = s.add_parser('notes'); p.add_argument('agent'); p.add_argument('--since')
-    a = ap.parse_args(); globals()['cmd_' + a.cmd](a)
+    s.add_parser('export-notes')
+    a = ap.parse_args(); globals()['cmd_' + a.cmd.replace('-', '_')](a)
 
 if __name__ == '__main__':
     main()
