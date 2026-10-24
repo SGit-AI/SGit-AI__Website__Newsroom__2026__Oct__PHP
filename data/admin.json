@@ -24,11 +24,12 @@
    "id": "conductor",
    "name": "conductor@php.newsroom",
    "who": "an agent, joined 22 October 2026; also the comms agent for now",
-   "owns": "the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team",
+   "owns": "the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json and the team pages; the run, opened with a plan and closed with a digest; broadcasts to the team; the updates (/updates/ and /feeds/updates.xml): hourly while things move, daily, and flash, for the editor first, from admin/content/updates/README.md",
    "rules": [
     "Every task has one owner, and the owner opens it: the conductor asks by mail and never writes into another member's queue.",
     "A digest names every blocker and who it waits on.",
-    "Vault keys never go into a file, a page or a message."
+    "Vault keys never go into a file, a page or a message.",
+    "An update says what moved and who it waits on; it is drafted from the repository's record with admin/build/updates_digest.py, never from memory."
    ]
   },
   {
@@ -379,7 +380,7 @@
    "title": "The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fractal layer)",
    "status": "waiting",
    "owner": "cartographer",
-   "note": "Built on branch cartographer/ontology-and-sg-graph: every node a link, parties as nodes, 14 verbs in data/graph.json, one click from a claim to a CVE that opens the code-review graph, labels 12px at 390 (checked in Chromium). Waits for dev@php.newsroom to carry it into a release."
+   "note": "Built on branch cartographer/ontology-and-sg-graph: every node a link, parties as nodes, 14 verbs in data/graph.json, one click from a claim to a CVE that opens the code-review graph, labels 12px at 390 (checked in Chromium). Released by the cartographer (AGENTS.md section 1)."
   },
   {
    "id": "031",
@@ -437,7 +438,8 @@
    "id": "039",
    "title": "Re-export from the vault head: 184 sources in the vault against 144 here, and the newsroom's tracker check 3",
    "status": "open",
-   "owner": "dev"
+   "owner": "dev",
+   "note": "Done on the journalist's branch on 23 October: re-exported from the evidence vault at f3c5db0d9873 (227 sources, data as of 01:20 UTC on 23 October), for dev@php.newsroom to carry in and close."
   },
   {
    "id": "040",
@@ -763,39 +765,592 @@
   },
   {
    "id": "090",
+   "title": "The telemetry dashboard: a new private vault (i4diy82d) with a vault app over the telemetry vault, linked inside it read-only (vault-in-vault); its key sealed to the editor",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.5.7"
+  },
+  {
+   "id": "091",
+   "title": "The telemetry vault-in-vault turned around: the application moves to a versioned vault of its own (5wnsr5h8, v0.1.1, eight pages); the telemetry vault imports it and drains its own lane from the browser (Queue & drain: the count waiting, the passphrase-sealed key, push before mark-processed); the dashboard vault i4diy82d superseded",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.5.10"
+  },
+  {
+   "id": "092",
+   "title": "Record the holders' acceptance of the newsroom's own risks (R10 and beneath it): accept for an interval, fund or fix; nobody can accept them for the editor",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief: a GRC desk joins the team (22 October)."
+  },
+  {
+   "id": "093",
+   "title": "A story on the reporting clocks php2shell can start (GDPR 72 hours, NIS2 24 hours, the Cyber Resilience Act's 24-hour report since 11 September 2026, DORA): R06 and the risks beneath it have no story yet (/grc/)",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the brief: a GRC desk joins the team (22 October)."
+  },
+  {
+   "id": "094",
+   "title": "Fix the cycle in assets/themes/site-tokens.css line 8: --warn-bg, --warn-ink, --info-bg and --info-ink are defined as themselves, so they are invalid and every amber and blue pill and graph edge that reads them renders without colour",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the brief: a GRC desk joins the team (22 October)."
+  },
+  {
+   "id": "095",
+   "title": "Capture into the vault what the GRC section cites from the sgit network (risks.sgit.ai, the riskmandate.ai model, the newsroom's risk articles) so the network page can cite captures, not live pages",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the brief: a GRC desk joins the team (22 October)."
+  },
+  {
+   "id": "096",
+   "title": "GRC run 2: re-rate every risk against the next vault capture (a KEV listing or a confirmed compromise moves R03 and R06), add the stakeholders the next captures name, and map the remaining controls each holder will be asked about",
+   "status": "open",
+   "owner": "grc",
+   "note": "From the brief: a GRC desk joins the team (22 October)."
+  },
+  {
+   "id": "097",
+   "title": "Collaborators: /collaborators/ with this week's ask, the WhatsApp and email messages per ask, a join form and a feedback form encrypted to the new collaborators vault (58526ytp); its drain; brief admin/content/briefs/2026-10-22__brief__collaborators.md",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "098",
+   "title": "Confirm the LinkedIn link on /collaborators/ and the contact for readers without JavaScript; then send ask 001 to the email list and the WhatsApp group",
+   "status": "done",
+   "owner": "editor",
+   "note": "The editor confirmed the LinkedIn link on 22 October 2026."
+  },
+  {
+   "id": "099",
+   "title": "Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, key-pair passphrases) to the root: the session's permission check stopped it; the four vault keys are sealed",
+   "status": "waiting",
+   "owner": "conductor"
+  },
+  {
+   "id": "100",
+   "title": "Write ask 002 after the next release worth looking at, and drain the collaborators lane into the board at every close",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "101",
+   "title": "Quiet hours: decide the window (proposed 22:00 to 07:00 London) and whether the source watch may run through the night while the story is breaking; then the three schedules on /team/runs/ are changed to match",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "102",
+   "title": "Source watch: before scheduling the next pass, check London time and move a pass in the quiet hours to 07:04; a pass that changes something leaves a dated article with run: <run id>",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "103",
+   "title": "Fact-check runs: move the schedule to CRON_TZ=Europe/London 52 8-20/4 * * * once the editor agrees; a run that moves a grade or opens a ticket leaves a dated article with run: <run id>",
+   "status": "open",
+   "owner": "factcheck"
+  },
+  {
+   "id": "104",
+   "title": "Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run: <run id>",
+   "status": "open",
+   "owner": "synthetic"
+  },
+  {
+   "id": "105",
+   "title": "Runs: /team/runs/, the register of every schedule (who, where, how often, how many runs fall in the quiet hours) and every recorded run with the article it should leave (data/schedules.json)",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "106",
+   "title": "Feedback from any page, signed: a Feedback button beside Ask opens the pane's Feedback tab (kind, words, a screenshot from a file or captured), signed with the device's key and encrypted to the collaborators lane; /join/ makes the key from an invitation's QR code in one tap; admin/build/invite.py makes invitations and enrols keys; the drain verifies every signature with sgit pki verify",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "107",
+   "title": "The editor's review queue, /review/: every page or section new or changed since he last looked, one at a time on an iPad (Next, Good, Needs work, a comment), each decision signed feedback of kind review (brief: 2026-10-22__brief__feedback-keys-and-review.md, phase 2)",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "108",
+   "title": "Invitations for the editor's own devices (role editor) and for Vicky (role team); then the power users, one invitation each, sent by the editor",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "109",
+   "title": "A feedback desk: who reads the drained feedback every day, turns it into board items and answers the sender; the conductor until an agent takes it",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "110",
+   "title": "Security review of the feedback keys (assets/feedback/identity.js, join.js, pane.js; admin/build/contributors.py, invite.py): non-extractable keys in IndexedDB, the invitation code in the link's fragment, signatures checked with sgit",
+   "status": "open",
+   "owner": "security"
+  },
+  {
+   "id": "111",
+   "title": "The run record, sgit.newsroom.run/1: one JSON object per agent run (trigger, model, objectives, raw, JSON and programmatic reads, writes, commits, network calls, tokens, cost, article, handovers), read by /team/runs/ (the digital twin brief, step 1)",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "112",
+   "title": "The organisation as a digital twin: data/twin.json (roles, artefacts, typed edges: produces, consumes, hands over to, triggers, escalates to) and /team/twin/, the state machine drawn, with the schedules on a 24-hour clock and the escalation lanes",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "113",
+   "title": "The accountant: tokens and cost per agent, artefact and day against a budget; runs that read raw where JSON exists; messages nobody acted on; loops between agents; a daily ledger and the cuts it proposes",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "114",
+   "title": "A bulletin board for agents (one append-only notice file per agent per day, each naming who must act) before any mail between agents",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "115",
+   "title": "The twin's open questions: the budget, the escalation ladder at night, which outside agents join (ChatGPT, Perplexity) and how, and which ABP site's per-session review the run record should match",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "116",
+   "title": "Your stack, the blast radius (/stack/): describe what you run (internet, edge, apps, platforms, PHP runtimes, data, secrets, services) and see each runtime against both CVEs, the blast radius as a graph, what to do first and what on the site is about your stack; in the browser and the reader's vault",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.1"
+  },
+  {
+   "id": "117",
+   "title": "Stack, next: the pulse's vulnerabilities as rows in data/stack.json (rules beyond PHP: product and version ranges), news from the feeds matched to a saved stack, a test of the vault sync with a real reader vault, deletions that carry across devices",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "118",
+   "title": "Design: --warn-* and --info-* tokens were mapped to themselves in assets/themes/site-tokens.css (cyclic, so invalid) since v0.2.4: every warning and info pill rendered with no colour. Fixed in v0.8.1; checked in all five themes (computed tokens and a pill on /claims/)",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.1"
+  },
+  {
+   "id": "119",
+   "title": "Who is who in the telemetry: every session a reader, the editor, a power user or team member, synthetic (agents, tests, headless browsers) or a crawler; declared by the browser since v0.8.4 (agent: automation by class; who: the role of its /join/ key or this browser's setting on /admin/telemetry/), inferred before (time zone, place, language, first page); admin/build/telemetry_classes.py, the same rules in the telemetry app v0.2.1",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.4"
+  },
+  {
+   "id": "120",
+   "title": "The public telemetry stats vault (0cfkdcvh, read key published): its own app with the hourly chart by group, a world map of readers, what readers read; curated counts only, written at every drain by admin/build/telemetry_flow.sh (drain, classify, publish, push both vaults); the same counts and map on /admin/telemetry/",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.8.4"
+  },
+  {
+   "id": "121",
+   "title": "Telemetry, next: the editor confirms the inferred rule for his browsers (Europe/Lisbon, English) or sets them on /admin/telemetry/; enrolled /join/ keys start declaring roles once data/contributors.json lists them; the in-browser drain cannot write the public vault (an app cannot write another vault), so public stats follow the next run of telemetry_flow.sh; a schedule for that run needs the editor's go",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "122",
+   "title": "Phone first screen (F001): the headline starts 550 to 650px down an 844px screen on every page; proposed to story-site and dev: collapse 'Your reading' and the origin band into one line under the standfirst, the 'New to this story?' banner on the front page only; target h1 in the top 250px. Tracked by the Sherpa until measured on a release",
+   "status": "open",
+   "owner": "sherpa"
+  },
+  {
+   "id": "123",
+   "title": "Synthetic readers' findings to owners (F002 to F006): 'What to tell the board' in the CTO briefing, deadlines and a status template in the PM briefing, Docker image tags and a backport-safe check, grades applied by the published rule, the masthead pound figure. Raised with briefing-writer, story-site, verifier and dev; tracked until each lands",
+   "status": "open",
+   "owner": "sherpa"
+  },
+  {
+   "id": "124",
+   "title": "Trails (F007 to F009): proposed to dev, for the editor's go: persona and furthest-scroll in the page event, next-page paths, opens of Ask, Feedback and the reading tools, unknown paths counted apart; synthetic readers after every release. Telemetry lists six paths this site does not serve: for security to look at",
+   "status": "open",
+   "owner": "sherpa"
+  },
+  {
+   "id": "125",
+   "title": "The Sherpa on the site: replace the 'New to this story?' banner with one line from the Sherpa linking to /start/, a 'Where next' block at the foot of every page from the reader's persona path, a one-screen guide to the site's own tools; drafts by the Sherpa, placement by story-site",
+   "status": "open",
+   "owner": "sherpa"
+  },
+  {
+   "id": "126",
+   "title": "Vaults: /team/vaults/ lists every vault each agent made, by ID only, from one file per agent (data/vault-register/); AGENTS.md section 6 and CLAUDE.md: add the ID when you make a vault, seal the key to the root, and when asked for a key send the sealed link and its QR code, never the key",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "127",
+   "title": "Confirm your rows in data/vault-register/dev.json (seeded by the conductor) and seal the keys of 0cfkdcvh, i4diy82d and 5wnsr5h8 to the root (AGENTS.md section 6)",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "128",
+   "title": "Confirm data/vault-register/researcher.json (seeded by the conductor) and seal the source watch's key (oq9gflln) to the root",
+   "status": "done",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "129",
+   "title": "Confirm data/vault-register/synthetic.json (seeded by the conductor) and seal the six readers' vault keys to the root",
+   "status": "open",
+   "owner": "synthetic"
+  },
+  {
+   "id": "130",
+   "title": "Confirm data/vault-register/story-site.json and seal the coverage vault's key (dcsmxese) to the root",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "131",
+   "title": "Confirm data/vault-register/newsroom-lead.json and seal the evidence vault's key (3ytzxm3g) to the root; pulse@ and curator@ add their own files for any vault they made",
+   "status": "open",
+   "owner": "claude-newsroom-lead"
+  },
+  {
+   "id": "132",
+   "title": "Fold data/keys.json and /admin/keys/ (the rules of engagement) together with data/vault-register/ and /team/vaults/, so there is one register of vaults and keys",
+   "status": "open",
+   "owner": "security"
+  },
+  {
+   "id": "133",
+   "title": "The editor's feedback of 23 October on /join/, all five signed by his enrolled key: the page now says where this device's key stands (enrolled, or waiting for the next run); one wording for where Feedback is (next to Ask, on every page); up to three screenshots per feedback",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "134",
+   "title": "The vault key is the whole boundary: the collaborators (58526ytp) and conductor (5iwos28w) vaults moved onto sgit.ai's postmaster convention (admin/build/postmaster.py): the enum key and the key pair's passphrase derived from the write key, the key pair encrypted inside the vault, the lane in .vault/postmaster/lane.json; drained from a fresh clone with the vault key alone",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "135",
+   "title": "Keys each agent holds: the holds list in every data/vault-register/<agent>.json (vault ID, the kind of key, who gave it, since), shown on /team/vaults/; AGENTS.md section 6 and CLAUDE.md say so",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "136",
+   "title": "Record in your data/vault-register file every key you hold (the holds list), and move any vault you made with a lane onto the postmaster convention (AGENTS.md section 6)",
+   "status": "open",
+   "owner": "dev"
+  },
+  {
+   "id": "137",
+   "title": "Redesign mockups for review at /admin/design/: the two dials (who you are, how much you see), the visibility matrix, the menu per view, mockups A to D from live data",
+   "status": "done",
+   "owner": "dev",
+   "note": "From the brief on the redesign (23 October).",
+   "version": "0.10.0"
+  },
+  {
+   "id": "138",
+   "title": "Editor review of the four mockups: pick, mark up, decide the Focus/Standard/Everything split per reader",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief on the redesign (23 October)."
+  },
+  {
+   "id": "139",
+   "title": "Move the design tokens and the wide grid (to 1,680px, two or three columns, readable text columns) into the live stylesheet",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on the redesign (23 October)."
+  },
+  {
+   "id": "140",
+   "title": "Replace the menu with the top bar and the two dials; the view decides which entries exist; remembered in the browser and the reader's vault",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on the redesign (23 October)."
+  },
+  {
+   "id": "141",
+   "title": "Front page and briefings to layouts A and B by persona group; content pages to pattern C, starting with agencies, numbers and impact",
+   "status": "open",
+   "owner": "briefing-writer",
+   "note": "From the brief on the redesign (23 October)."
+  },
+  {
+   "id": "142",
+   "title": "Move the admin pages into the team console (layout D), with its own menu; out of the reader menu, still public",
+   "status": "open",
+   "owner": "dev",
+   "note": "From the brief on the redesign (23 October)."
+  },
+  {
+   "id": "143",
+   "title": "Scanner noise, a research angle (editor, 23 October, after a public post by Jeremiah Grossman): how php2shell scanners and detection rules decide, their false positives and false negatives, and the noise they make; 12 captured rows in the source watch (index/angles/scanner-noise.json), counts tracked hourly; brief on /admin/briefs/",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "144",
+   "title": "Perplexity reads the community spaces (job-03-community): Reddit, Hacker News, X, Bluesky, Mastodon and GitHub issues, for scanner false positives and negatives, first-hand accounts and named statements; phase 1 prompt on /admin/briefs/, waiting on its first reply",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "145",
+   "title": "Scanner test in a lab (editor, 23 October: a task for later, not now): run the public php2shell scanners and check scripts against a distribution-patched PHP (e.g. Ubuntu 8.5.4-0ubuntu1.5) and an unpatched one in an isolated lab, and record which ones get each right; tests the tools, never anyone's systems; starts only on the editor's go",
+   "status": "open",
+   "owner": "cyber@php.newsroom"
+  },
+  {
+   "id": "146",
+   "title": "The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/README.md), the digest tool (admin/build/updates_digest.py) and the first daily update, for the conductor's beat; carries board 075's page",
+   "status": "done",
+   "owner": "journalist"
+  },
+  {
+   "id": "147",
+   "title": "Take the updates beat: read the brief and admin/content/updates/README.md, confirm on your branch, and write the next update when something moves",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "148",
+   "title": "Go for scheduled updates: an hourly run (only when something moved) and a daily one, with the run's cadence in board 071",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "149",
+   "title": "Every commit names its agent: 40 of the first day's 46 commits carry no Agent: line, so updates cannot say who did what; remind every member through the conductor's broadcast",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "150",
+   "title": "Act on the fact-check's corrections to the journalist's and the historian's stories: done for 'Where php2shell stands' and 'php2shell in perspective'; the agencies and claims data they inherited are board 088",
+   "status": "done",
+   "owner": "journalist"
+  },
+  {
+   "id": "151",
+   "title": "Views: the journalist's state of affairs as a versioned page (/views/state/), its own version numbers, a page per version, a delta page per pair (measures and text), data in data/state.json; v0 (22 Oct, reconstructed) and v1 (23 Oct 14:11 UTC); the story 'What changed in a day'",
+   "status": "done",
+   "owner": "journalist"
+  },
+  {
+   "id": "152",
+   "title": "Take the curator's 36 claims and 18 timeline rows (claims/curator@php.newsroom.json, now in data/vault-claims.json) into the claims table the front page uses",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "153",
+   "title": "Show a rewritten line in diffs as removed then added, not word-diffed, when the two lines share little (diff_html): the state of affairs' delta interleaves rewritten paragraphs",
+   "status": "open",
+   "owner": "dev@php.newsroom"
+  },
+  {
+   "id": "154",
+   "title": "Write the next version of the state of affairs when the evidence moves: a KEV listing, a named victim, GMO's cause, or the inventory's investigation pile resolving",
+   "status": "open",
+   "owner": "journalist"
+  },
+  {
+   "id": "155",
+   "title": "Explain on the flaws page why NVD's 9.8 (CVSS 3.1) and the CNA's 9.2 (CVSS 4.0) are different scales, not a disagreement",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "156",
+   "title": "Every agent releases its own finished work to dev with release.sh (the editor, 23 October): AGENTS.md section 1, CLAUDE.md and README.md say so",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "157",
+   "title": "One agent behaviour policy per agent that sets its scope: what it may change and release, which vaults and keys it may hold, what it may read and send; from the draft in admin/security/abp/MANDATE.md, for the editor to agree (the editor, 23 October: 'solid ABPs that define the scope of each agent')",
+   "status": "open",
+   "owner": "abp"
+  },
+  {
+   "id": "158",
+   "title": "Check the agent behaviour policies against what each agent actually did (its releases, its vaults and keys on /team/vaults/, its runs on /team/runs/), and make the gate or release.sh refuse a release outside an agent's scope where that can be checked",
+   "status": "open",
+   "owner": "security"
+  },
+  {
+   "id": "159",
+   "title": "The schedule vault (weic8imn, public) and /team/schedule/, read live in the browser: every schedule, task queue and run with its log; tools/schedule.py and the wake protocol (AGENTS.md section 7, CLAUDE.md)",
+   "status": "done",
+   "owner": "conductor"
+  },
+  {
+   "id": "160",
+   "title": "Run every scheduled wake through the schedule vault: pull, schedule.py due curator, start/finish with the log, index, push; your routine is task T-001, repeating until 31 October",
+   "status": "open",
+   "owner": "curator"
+  },
+  {
+   "id": "161",
+   "title": "Run every scheduled wake through the schedule vault (researcher's T-001, the source watch pass), and say your real cadence and model in schedules/researcher.json",
+   "status": "open",
+   "owner": "researcher@php.newsroom"
+  },
+  {
+   "id": "162",
+   "title": "The schedules of the curator and the researcher: how often, in which hours (the quiet hours are proposed as 22:00 to 07:00 London), on Sonnet; then they move from 'setting up' to 'active' in the schedule vault",
+   "status": "open",
+   "owner": "editor"
+  },
+  {
+   "id": "163",
+   "title": "Queue tasks from the page: a signed request from an enrolled key (the editor's) on /team/schedule/, drained into the schedule vault, so a task can be queued without a Claude session",
+   "status": "open",
+   "owner": "conductor"
+  },
+  {
+   "id": "164",
+   "title": "The vault key is the master key: the telemetry (84wr8mib) and subscriptions (wgeiqabu) vaults each hold their drain key in identity/private/drain-key.pkcs8.json, protected by the vault's encryption, and their lanes in identity/lanes.json; the telemetry app v0.3.0 drains with the vault key alone (206 events drained that way); managing lanes from the site is next",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.10.9"
+  },
+  {
+   "id": "165",
+   "title": "The telemetry app v0.4.0 (UX vault 5wnsr5h8): new events on focus (at most once a minute); every mark a filter, Kibana-style (click to keep, shift-click to exclude, drag the timeline for a window); colour by who, section, device, country, source or version; Journeys (a Sankey step by step, the network of pages, paths, sessions side by side); What works (front doors that hold and leak, connectors, dead ends, every page and section in numbers, what each source brings); in modules with tests over real data",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "version": "0.10.10"
+  },
+  {
+   "id": "166",
+   "title": "From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1: a focus view of the risk graph: open at any node, its neighbours by verb, expand on click, the path back always shown, the focus in the address; in the browser from data/grc-graph.json",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: /grc/explore/, start from any node, neighbours by verb, open one step at a time with the path back shown; the address carries the view.",
+   "version": "0.10.13"
+  },
+  {
+   "id": "167",
+   "title": "From CI-002, step 2: a basis on every graph edge (source, code, inferred, confirmed, with its support), checked in build_grc; inferred edges dashed with a switch to hide them",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: every one of the 1,418 edges carries a basis (316 source, 287 code, 815 inferred); the build stops on an edge without a valid one; data/grc-basis.json records confirmations; inferred edges dashed in the explorer, with a switch to hide them.",
+   "version": "0.10.13"
+  },
+  {
+   "id": "168",
+   "title": "From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the remediation and code they exercise",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: the 270 test files of the fix commit, from its file list in the evidence vault, joined to the commit (code) and, by name rules in data/grc-tests.json, to the remediation each exercises (inferred).",
+   "version": "0.10.13"
+  },
+  {
+   "id": "169",
+   "title": "From CI-002, step 4: an impact view: pick a function or file, climb the graph to remediations, vulnerabilities, weaknesses, risks, controls and stakeholders, each with its path",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: What it puts at stake, in the explorer: from code, a test or a fix, the remediations, flaws, weaknesses, risks, controls, stakeholders, treatments and stories above it, each with its path.",
+   "version": "0.10.13"
+  },
+  {
+   "id": "170",
+   "title": "From CI-002, step 5: a gaps page computed at every build from written rules (control with no path to a test, code with no owner, risk with no story, treatment or holder, edge with no basis)",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: /grc/gaps/, eight rules as data (data/grc-gaps.json), computed at every build: all 95 controls joined to no code or test; 16 of 16 code nodes with no owner; 9 of 16 code nodes no test reaches (main/SAPI.c and main/main.c among them); 14 of 34 risks no story tells; 815 edges inferred and unchecked.",
+   "version": "0.10.13"
+  },
+  {
+   "id": "171",
+   "title": "From CI-002: a debrief for the collaborator, before and after: each change as the old page against the new, side by side or with a slider, and diffs where the change is data",
+   "status": "done",
+   "owner": "dev@php.newsroom",
+   "note": "Done: /articles/the-risk-graph-before-and-after/, 14 screenshots of v0.10.12 and v0.10.13; split, slider and diff blocks for every article.",
+   "version": "0.10.14"
+  },
+  {
+   "id": "172",
    "title": "Use <sg-graph> wherever a page draws a graph: the actor, source and fact pages' mini_graph(), the review navigator (review/ui, assets/review-nav.js, which also assigns location.hash), the reader's persona graph; one component, one grammar",
    "status": "open",
    "owner": "cartographer"
   },
   {
-   "id": "091",
+   "id": "173",
    "title": "data/review.json: the parser wrote 'area:Zend' and 'area:main' on eight contains edges where the nodes are 'area:Zend/' and 'area:main/', so the area-to-file layer was silently lost; repaired in the data by the cartographer, but the parser is not in the repository and a regeneration brings it back. Fix the parser or check ends in the gate",
    "status": "open",
    "owner": "claude-story-site"
   },
   {
-   "id": "092",
+   "id": "174",
    "title": "For the fact-check desk: 15 claims marked confirmed rest on one independent origin in the graph (a record from one party, such as the CVE numbers, is fine; a reading from one party may not be); and the graph's echo formula finds wikimedia-precaution (one origin, four outlet relays). Compare with the desk's levels and say where they disagree",
    "status": "open",
    "owner": "factcheck"
   },
   {
-   "id": "093",
+   "id": "175",
    "title": "Gate checks for the graph: verbs and kinds only from data/ontology.json, no dangling edge, every publisher resolved in data/entities.json (the build stops on these today; the gate is a security change and goes to security@ for review)",
    "status": "open",
    "owner": "security@php.newsroom"
   },
   {
-   "id": "094",
+   "id": "176",
    "title": "Ontology passes on a schedule: every new source, claim and party resolved, merged or pruned; new parties get entities, new spellings get aliases; record each pass in the ontology's version. Needs the editor's go for a schedule",
    "status": "open",
    "owner": "cartographer"
   },
   {
-   "id": "095",
+   "id": "177",
    "title": "Publish the ontology the way the estate does: N-Triples with owl:inverseOf, so graphs.sgit.ai and newsroom.sgit.ai can bridge to this graph by declared edges rather than merged vocabularies",
    "status": "open",
    "owner": "cartographer"
+  },
+  {
+   "id": "178",
+   "title": "Twelve pages are recorded twice in data/sources.json under different slugs (for example tpo-nl-digid-offline and tpo-tpo-nl-digid-offline, cisa-kev-catalog and cisa-kev-json, ch-unige-down and unige-site); and unige.ch and epfl.ch, two universities, are classed 'government'. Merge or mark each pair as a later capture of the same page (supersedes), and fix the class. The list: python3 admin/cartographer/pass.py",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+  },
+  {
+   "id": "179",
+   "title": "Read data/compromise.json (researcher@php.newsroom's evidence behind 'no named organisation has said it was compromised', 33 rows) into the story graph: each named organisation as a party, each row as its statement on no-confirmed-compromise, Valtec's retraction as a superseded statement, so the long tail of possible compromises (GMO, ČVUT, Valtec, DMM) is walkable from the claim",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+  },
+  {
+   "id": "180",
+   "title": "One spelling for a verb across the site's graphs: data/review.json writes 'realised in', 'fixed by' with spaces, the risk graph writes realised_in and fixed_by, the estate's grammar writes snake_case. Rename in the review graph's parser (with board 173), so a reader stepping between the graphs reads the same word",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+  },
+  {
+   "id": "181",
+   "title": "Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the story graph, so the long-tail sources reach the claims they bear on, with supersedes where a statement was corrected; and trace the 143 captured sources no row cites yet",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
   }
  ],
  "evidence_vault": {

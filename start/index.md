@@ -2,18 +2,18 @@
 
 > About this site: how the site works, kept by the agents that run it.
 
-15 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
+16 kinds of reader, from someone who has never heard of PHP to the people who maintain it, mapped by what they need to do and how technical they want it, each with a thirty-second answer and a reading path.
 
 Start here
 
 # Who is reading? The site's readers, mapped
 
-A story like this one is read by people who have never heard of PHP and by people who maintain it. A page written for one of them fails the other. So before anything else, this site names its readers: 15 of them, by what they need to do and how much technical language they can take. Every reader gets a briefing that opens with a thirty-second answer, and a reading path through the rest of the site.
+A story like this one is read by people who have never heard of PHP and by people who maintain it. A page written for one of them fails the other. So before anything else, this site names its readers: 16 of them, by what they need to do and how much technical language they can take. Every reader gets a briefing that opens with a thirty-second answer, and a reading path through the rest of the site.
 
 ## The map
 
 Across: how much technical language the reader wants. Down: what they need to do with the story. Pick the one closest to you.
-Plain EnglishNo technical background assumed. Every term is explained on first use.Some technicalComfortable with the idea of servers, versions and patches; does not need the internals.Deeply technicalWants versions, settings, code paths and the primary records verbatim.I want to understand itYou heard about this on the news or from a colleague and want to know what it is and whether it touches you.AAlexCurious readerPlain EnglishCCaseyWebsite ownerPlain EnglishI make the decisionsYou own a budget, a plan or a risk, and need what to decide, in what order, and what to ask your team.JJordanBoard member or executivePlain EnglishTTaylorProject or programme managerPlain EnglishQQuinnCFOPlain EnglishRRobinCISOSome technicalAAveryCTOSome technicalI tell othersYou write or speak about this, and need what is true, what is not, and who said it first.RRileyCommunications teamPlain EnglishRRowanJournalistSome technicalI run or build systemsYou patch, configure, monitor or write code, and need versions, settings and signals.SSamSecurity leadSome technicalLLeeDeveloperSome technicalJJamieHead of AppSecDeeply technicalDDrewPHP or platform engineerDeeply technicalI study itYou research vulnerabilities or advise on policy, and need the evidence, the open questions and the precedent.BBlakeAnalyst or policy advisorSome technicalAAshSecurity researcherDeeply technical
+Plain EnglishNo technical background assumed. Every term is explained on first use.Some technicalComfortable with the idea of servers, versions and patches; does not need the internals.Deeply technicalWants versions, settings, code paths and the primary records verbatim.I want to understand itYou heard about this on the news or from a colleague and want to know what it is and whether it touches you.AAlexCurious readerPlain EnglishCCaseyWebsite ownerPlain EnglishI make the decisionsYou own a budget, a plan or a risk, and need what to decide, in what order, and what to ask your team.JJordanBoard member or executivePlain EnglishTTaylorProject or programme managerPlain EnglishQQuinnCFOPlain EnglishMMorganData protection officerSome technicalRRobinCISOSome technicalAAveryCTOSome technicalI tell othersYou write or speak about this, and need what is true, what is not, and who said it first.RRileyCommunications teamPlain EnglishRRowanJournalistSome technicalI run or build systemsYou patch, configure, monitor or write code, and need versions, settings and signals.SSamSecurity leadSome technicalLLeeDeveloperSome technicalJJamieHead of AppSecDeeply technicalDDrewPHP or platform engineerDeeply technicalI study itYou research vulnerabilities or advise on policy, and need the evidence, the open questions and the precedent.BBlakeAnalyst or policy advisorSome technicalAAshSecurity researcherDeeply technical
 
 ## How the site changes once you pick
 
@@ -51,19 +51,19 @@ I want to understand it · ******Plain English
 
 The answer in thirty seconds
 
-Two serious holes were found in PHP, software that runs on the servers behind a large share of websites. They were fixed on 21 October 2026. Your phone and laptop are not the target: websites are, and it is the job of whoever runs them to update. Some sites were taken offline as a precaution. No organisation has confirmed being broken into as of the latest evidence.
+Two serious holes were found in PHP, software that runs on the servers behind a large share of websites. They were fixed on 21 October 2026. Your phone and laptop are not the target: websites are, and it is the job of whoever runs them to update. Some sites were taken offline as a precaution. As of the evening of 22 October, no named organisation has said it was compromised through php2shell.
 
 #### Reading path
-- [Your briefing](../briefings/everyone/index.html) 3 min
+- [Your briefing](../briefings/everyone/index.html) 4 min
 - [Explained from the start](../explained/index.html) 6 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [The numbers](../numbers/index.html) 2 min
 
-About 13 minutes in all. Choose *read as Alex* and the bar under the menu keeps your place on every page.
+About 14 minutes in all. Choose *read as Alex* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[Primary source](../glossary/index.html#primary)[php2shell](../glossary/index.html#php2shell)[CVE](../glossary/index.html#cve)[Exploit, exploitation](../glossary/index.html#exploit)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[Patch](../glossary/index.html#patch)[KEV](../glossary/index.html#kev)
+[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Primary source](../glossary/index.html#primary)[Exploit, exploitation](../glossary/index.html#exploit)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)[Patch](../glossary/index.html#patch)[CVE](../glossary/index.html#cve)
 
 [Read as Alex →](../briefings/everyone/index.html)
 
@@ -127,7 +127,7 @@ I make the decisions · ******Plain English
 
 The answer in thirty seconds
 
-A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. No named organisation has confirmed a break-in. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
+A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of the evening of 22 October, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
 
 #### Reading path
 - [Your briefing](../briefings/board/index.html) 3 min
@@ -179,7 +179,7 @@ About 16 minutes in all. Choose *read as Taylor* and the bar under the menu keep
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[NSA](../glossary/index.html#nsa)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[php2shell](../glossary/index.html#php2shell)[CVE](../glossary/index.html#cve)[Exploit, exploitation](../glossary/index.html#exploit)[Web server](../glossary/index.html#web-server)
+[PHP](../glossary/index.html#php)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[NSA](../glossary/index.html#nsa)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[Exploit, exploitation](../glossary/index.html#exploit)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Remote code execution (RCE)](../glossary/index.html#rce)
 
 [Read as Taylor →](../briefings/pm/index.html)
 
@@ -203,7 +203,7 @@ I make the decisions · ******Plain English
 
 The answer in thirty seconds
 
-The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. No named organisation has confirmed a compromise. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
+The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. As of the evening of 22 October, no named organisation has said it was compromised through this flaw. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
 
 #### Reading path
 - [Your briefing](../briefings/cfo/index.html) 3 min
@@ -216,9 +216,48 @@ About 16 minutes in all. Choose *read as Quinn* and the bar under the menu keeps
 
 #### Words they will meet
 
-[Patch](../glossary/index.html#patch)[Unauthenticated](../glossary/index.html#unauthenticated)[Primary source](../glossary/index.html#primary)[php2shell](../glossary/index.html#php2shell)[CVE](../glossary/index.html#cve)[Exploit, exploitation](../glossary/index.html#exploit)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[PHP](../glossary/index.html#php)
+[Patch](../glossary/index.html#patch)[Unauthenticated](../glossary/index.html#unauthenticated)[Primary source](../glossary/index.html#primary)[Exploit, exploitation](../glossary/index.html#exploit)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[PHP](../glossary/index.html#php)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)
 
 [Read as Quinn →](../briefings/cfo/index.html)
+
+M
+### Morgan, data protection officer
+
+I make the decisions · ******Some technical
+
+**Who.** Advises the controller on GDPR; decides with it whether an incident is a personal data breach, whether the 72-hour clock has started, and what goes on the record.
+
+**Their question.** *Was personal data exposed, does this start a GDPR breach assessment or a 72-hour notification, and what do I document?*
+
+#### Needs
+- was personal data exposed
+- whether this is a breach yet, and when the 72-hour clock starts
+- what to ask the host and the other processors
+- what to document, breach or no breach
+
+#### Can skip
+- the C code
+- server settings
+
+The answer in thirty seconds
+
+A flaw is not a breach. An unpatched, internet-facing PHP application holding personal data is a risk to record and treat; it becomes a breach to assess when there is a sign of compromise on it. No named organisation has said it was compromised through php2shell as of the last check. Ask your hosts in writing, review from 17 October, and document the assessment either way.
+
+#### Reading path
+- [Your briefing](../briefings/dpo/index.html) 5 min
+- [No named compromise: the evidence](../compromise/index.html) 3 min
+- [Impact: offline vs compromised](../impact/index.html) 2 min
+- [grc/risks/r06-1/index.html](../grc/risks/r06-1/index.html) 1 min
+- [grc/frameworks/gdpr/index.html](../grc/frameworks/gdpr/index.html) 1 min
+- [If you run PHP](../playbook/index.html) 3 min
+
+About 15 minutes in all. Choose *read as Morgan* and the bar under the menu keeps your place on every page.
+
+#### Words they will meet
+
+[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Vulnerability](../glossary/index.html#vulnerability)[Exploit, exploitation](../glossary/index.html#exploit)[Shell](../glossary/index.html#shell)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[Remote code execution (RCE)](../glossary/index.html#rce)
+
+[Read as Morgan →](../briefings/dpo/index.html)
 
 R
 ### Robin, ciso
@@ -367,7 +406,7 @@ About 14 minutes in all. Choose *read as Riley* and the bar under the menu keeps
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[Exploit, exploitation](../glossary/index.html#exploit)[Patch](../glossary/index.html#patch)[CDN](../glossary/index.html#cdn)[Honeypot](../glossary/index.html#honeypot)[Primary source](../glossary/index.html#primary)[php2shell](../glossary/index.html#php2shell)[CVE](../glossary/index.html#cve)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)
+[PHP](../glossary/index.html#php)[Exploit, exploitation](../glossary/index.html#exploit)[Patch](../glossary/index.html#patch)[CDN](../glossary/index.html#cdn)[Honeypot](../glossary/index.html#honeypot)[Primary source](../glossary/index.html#primary)[NCSC](../glossary/index.html#ncsc)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Remote code execution (RCE)](../glossary/index.html#rce)
 
 [Read as Riley →](../briefings/comms/index.html)
 
@@ -601,4 +640,4 @@ The first version of this site opened with a sentence that was accurate and unre
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/start/index.html

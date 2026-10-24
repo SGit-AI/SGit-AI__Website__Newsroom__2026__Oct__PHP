@@ -28,11 +28,26 @@
    "id": "84wr8mib",
    "name": "The telemetry vault",
    "access": "private, with a public append lane",
-   "app": false,
+   "app": true,
    "holds": "One anonymous event per page view (page, referrer host, country, region and city; no IP address, no cookie), each encrypted in the reader's browser to a key held by the drainer, and the counts drained from them.",
    "writers": "every page of this site, through the write-only lane; dev@php.newsroom drains it",
    "page": "admin/telemetry/index.html",
-   "data": "data/telemetry.json"
+   "data": "data/telemetry.json",
+   "facts": "imports the telemetry application (5wnsr5h8) at telemetry-ux/, read-only; opened with its vault key and the server access token, its Queue & drain page drains the lane in the browser",
+   "note": "It opens as its own dashboard: the application is not in it but in a vault of its own, versioned there, which this vault links inside itself and loads on open. The key that decrypts the events sits in it sealed under a passphrase (identity/drain-key.json); the passphrase is typed by whoever drains."
+  },
+  {
+   "slug": "telemetry-public",
+   "id": "0cfkdcvh",
+   "name": "The public telemetry stats",
+   "access": "public read",
+   "app": true,
+   "holds": "The curated, public view of the telemetry: page views and sessions per hour and per day for readers, for the editor, team and power users, for synthetic visitors and for crawlers; and, over readers only, countries (with a world map), devices, languages, site versions, pages and referrer hosts. Counts only: no row, session id, city, region, time zone or time finer than the hour. Written at every drain.",
+   "facts": "written by admin/build/telemetry_publish.py from the telemetry vault (84wr8mib) at every drain; its own app",
+   "read_key": "sgit_public_read_687c9515f681c96912aa1f711df647c7b0e5337c2c06bff219514d0c947fc800:0cfkdcvh",
+   "writers": "dev@php.newsroom, at every drain (admin/build/telemetry_flow.sh)",
+   "page": "admin/telemetry/index.html",
+   "data": "data/telemetry-public.json"
   },
   {
    "slug": "subscriptions",
@@ -93,6 +108,55 @@
    "note": "Its key goes to members privately.",
    "page": "team/channels/index.html#mail",
    "data": "data/team.json"
+  },
+  {
+   "slug": "telemetry-app",
+   "id": "5wnsr5h8",
+   "name": "The telemetry application",
+   "access": "private",
+   "app": true,
+   "holds": "The application that reads the telemetry, and nothing else: eight pages (overview, audience, content, journeys, sources and devices, every event, the lane's queue and its drain, about), versioned in the vault itself: a VERSION file, a changelog and one commit per release. It holds no data; the telemetry vault links it read-only and runs its latest version over its own events.",
+   "facts": "linked read-only inside the telemetry vault (84wr8mib) at telemetry-ux/; v0.1.1",
+   "note": "It is held by the editor, sealed to the editor's key on pki.sgit.ai. Nothing in it is secret.",
+   "writers": "dev@php.newsroom",
+   "page": "admin/telemetry/index.html",
+   "data": "data/telemetry.json"
+  },
+  {
+   "slug": "telemetry-dashboard",
+   "id": "i4diy82d",
+   "name": "The telemetry dashboard (superseded)",
+   "access": "private",
+   "app": true,
+   "holds": "A vault app that draws the telemetry: page views by hour, pages, countries, regions and cities, devices, referrers, languages, versions, pages per session and the latest events, each a filter. It holds no telemetry itself: the telemetry vault is linked inside it read-only (vault-in-vault), so the app always reads the latest drain.",
+   "facts": "links the telemetry vault (84wr8mib) at telemetry/, read-only",
+   "note": "Superseded on 22 October by the telemetry application (5wnsr5h8), which the telemetry vault now imports: the data vault opens the app, not the other way round. It is held by the editor, sealed to the editor's key on pki.sgit.ai. Its owner record carries the telemetry vault's read key only, never its write key.",
+   "writers": "dev@php.newsroom",
+   "page": "admin/telemetry/index.html",
+   "data": "data/telemetry.json"
+  },
+  {
+   "slug": "collaborators",
+   "id": "58526ytp",
+   "name": "The collaborators vault",
+   "access": "private, with a public append lane",
+   "app": false,
+   "holds": "What the collaborators send from /collaborators/: requests to join (a name, an email address, the reader closest to them) and feedback on each ask, each encrypted in the sender's browser to a key held by the conductor and the editor.",
+   "writers": "collaborators and anyone else, through the write-only lane on /collaborators/; conductor@php.newsroom drains it; the editor reads it",
+   "note": "Its key, the lane's enum key and the key pair's passphrase are never published.",
+   "page": "collaborators/index.html",
+   "data": "data/collaborators.json"
+  },
+  {
+   "slug": "schedule",
+   "id": "weic8imn",
+   "name": "The schedule vault",
+   "access": "public read",
+   "app": false,
+   "holds": "Every scheduled agent's schedule, its queued tasks and every run with its log: the control panel for what the team runs on its own.",
+   "writers": "each scheduled agent, its own runs; the editor's session and the conductor queue tasks",
+   "page": "team/schedule/index.html",
+   "data": "data/schedule-vault.json"
   }
  ]
 }

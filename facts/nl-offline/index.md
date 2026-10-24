@@ -26,9 +26,9 @@ The cited primary (Rijksoverheid, 21 Oct 13:59) carries only NCSC.NL taken offli
 | [tpo-nl-digid-offline](../../sources/tpo-nl-digid-offline/index.html) | carries | *DigiD, MijnOverheid, de website van de Tweede Kamer en zelfs die van het Nationaal Cyber Security Centrum (NCSC) gingen uit voorzorg offline.* | 2ddfd8817abf25b6 |
 | [insurancebusiness-uk-councils-met](../../sources/insurancebusiness-uk-councils-met/index.html) | partial | *The Dutch National Cyber Security Centre took its own site offline as a precaution, as did the following:* | 89357150e0bc8363 |
 | [reuters-factbox-websites-offline](../../sources/reuters-factbox-websites-offline/index.html) | carries | *They included the Port of Rotterdam, government site Overheid.nl, the national football association KNVB* | d562e28995b00a19 |
-| rte-reuters-websites-go-dark (in the vault, not yet on this site) | carries | *including the Port of Rotterdam, government portal Overheid.nl, the national soccer association KNVB* | 99bb92662561bd29 |
-| ncsc-nl-site (in the vault, not yet on this site) | absent | *Ernstige kwetsbaarheden in PHP: update nu* | 4cff0c7ba341429e |
-| overheid-nl-site (in the vault, not yet on this site) | absent | *nothing that carries it* | 93278f942198c318 |
+| [rte-reuters-websites-go-dark](../../sources/rte-reuters-websites-go-dark/index.html) | carries | *including the Port of Rotterdam, government portal Overheid.nl, the national soccer association KNVB* | 99bb92662561bd29 |
+| [ncsc-nl-site](../../sources/ncsc-nl-site/index.html) | absent | *Ernstige kwetsbaarheden in PHP: update nu* | 4cff0c7ba341429e |
+| [overheid-nl-site](../../sources/overheid-nl-site/index.html) | absent | *nothing that carries it* | 93278f942198c318 |
 
 Open tickets: [Finding-27](../../factcheck/index.html#Finding-27), [Finding-28](../../factcheck/index.html#Finding-28), [Finding-84](../../factcheck/index.html#Finding-84).
 
@@ -48,7 +48,7 @@ Published: when the source says it was published. Saved: the first capture into 
 ## Where this fact appears
 
 In the briefings for:
-AAlexCurious readerTTaylorProject or programme managerJJordanBoard member or executiveRRobinCISOQQuinnCFORRileyCommunications team
+AAlexCurious readerTTaylorProject or programme managerJJordanBoard member or executiveRRobinCISOQQuinnCFOMMorganData protection officerRRileyCommunications team
 And on [every claim](../../claims/index.html#nl-offline).
 
 ## Every version of this fact
@@ -63,4 +63,4 @@ Sources: rijksoverheid-ncsc-php-news, dutchitleaders-websites-offline
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html

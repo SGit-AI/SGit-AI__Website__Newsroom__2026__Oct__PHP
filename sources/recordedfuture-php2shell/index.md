@@ -22,7 +22,9 @@ Captured by claude-story-site. Status: captured. Vendor explainer.
 
 ## Claims that cite it
 
-No claim cites this source yet.
+| Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
+|---|---|---|---|---|---|
+| As of 20:50 UTC on 22 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.A time-bounded absence, not a confirmed fact: it can only be true as of the last check, and it will change. Changed from "confirmed" on 22 October at the editor's request (fact-check run 1 had marked it overstated; Perplexity and ChatGPT, asked by the editor, said the same). Attempts are not compromises: watchTowr says "nobody has been successful to date"; Amazon says it is unclear whether any attempt would have succeeded on real systems; Patchstack's incidents are reports from hosting partners with no victim named. Source watch (vault oq9gflln), pending promotion into the evidence vault: the PHP Foundation's executive director told The Verge and WIRED "to our knowledge, there has been no successful attempt at remote code execution" (raw/us/tech-press/the-verge/php2shell-websites-down/); officials in Germany, the Netherlands and Japan say they have not seen an attack succeed (The Next Web, raw/nl/tech-press/the-next-web/php2shell-no-confirmed-breaches/); GMO confirmed a break-in on 20 October on its FX trading VPS service (26,739 servers, logins possibly taken) without stating the cause (raw/jp/news/yahoo-news-jp/gmo-fx-login-leak/20261022T191523Z/); Czech Technical University says it stopped an active attack that was part of worldwide attempts against PHP sites, success not established (raw/cz/tech-press/lupa/cvut-cyber-attack/20261022T191510Z/); Valtec in Japan blamed php2shell for a break-in, then retracted: its own service's flaw (raw/jp/tech-press/impress-watch/valtec-php-attack/20261022T191433Z/); Fortune reports an anonymous startup owner alleging stolen source code, unnamed and not attributed to the flaw. Edited by researcher@php.newsroom. [fact timeline →](../../facts/no-confirmed-compromise/index.html) | this site, from every captured source in the evidence vault and the source watch, as of 20:50 UTC on 22 October | reported | **A4** Corroborated●●●●○○ status overstated | 6/9 | [CISA](../../sources/cisa-kev-json/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html) [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) [SecurityWeek](../../sources/securityweek-first-attempts-sensors/index.html) [SecurityWeek](../../sources/securityweek-exploitation-days-before/index.html) [Recorded Future](../../sources/recordedfuture-php2shell/index.html) [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html) [Weird Gloop](../../sources/weirdgloop-blog-php2shell/index.html) |
 
 ## Events that cite it
 
@@ -35,9 +37,15 @@ capture 20261022T113014Z · HTTP 200 · https://www.recordedfuture.com/blog/php2
 - `rendered.html` ca1457d1d590d21807ebf2cd64d30304ff3607b8171472c2d205a8fd4365a37c 178,844 bytes
 - `screenshot.png` cd745753c1ec28fcaf45c4b291d01045bdf86c88cbd0184e664e196bdd0f8ddc 2,871,582 bytes
 - `text.txt` f9cb130d64545fe46a477766dce91126405f12d99e8051aff2c05e084a904fe9 18,444 bytes
+capture 20261023T012042Z · HTTP 200 · https://www.recordedfuture.com/blog/php2shell-vulnerability-exploitation- `headers.json` df92af5f1f15a9b85ac768da0a431d3d7aeadec8e8e1068f4d7d57e76f9b56b1 1,305 bytes
+- `page.html` cd54cc52e04832d03115211f9aca789fb9d4861a8460a25a4e6ccc45f2d11f9b 27,860 bytes
+- `provenance.json` 9c026e4540e485d466a7ebfb9befe5fe2ea5a26a87647d09af9bbb5d950e3209 1,706 bytes
+- `rendered.html` e4e4f2824c8737f38089591489f1357b6b278f491cc344717f0a01d6de090dee 91,816 bytes
+- `screenshot.jpg` 68cd85ed3f9dc7d419ee012d3ab12f44d57604bffc4dad62486f71cd98e5a098 899,644 bytes
+- `text.txt` 39efeb7b8ae8152f98ccf53437e4070f12339a7e718570de9f01ac96d23b0622 17,215 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/sources/recordedfuture-php2shell/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sources/recordedfuture-php2shell/index.html

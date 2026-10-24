@@ -5,8 +5,8 @@
   --ok-bg:var(--tint-solid); --ok-ink:var(--accent-dk);
   --bad-bg:var(--danger-bg); --bad-ink:var(--danger-ink);
   --mute-ink:var(--text);
-  --warn-bg:var(--warn-bg); --warn-ink:var(--warn-ink);
-  --info-bg:var(--info-bg); --info-ink:var(--info-ink);
+  /* --warn-bg, --warn-ink, --info-bg and --info-ink are the themes' own names: used as they are. Mapping them to
+     themselves here (--warn-bg:var(--warn-bg)) made them cyclic, so invalid, on every page since v0.2.4. */
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --serif:Georgia,"Times New Roman",serif;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;

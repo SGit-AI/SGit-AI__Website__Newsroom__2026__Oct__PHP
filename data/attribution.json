@@ -707,5 +707,39 @@
   "JPCERT/CC|JP": "jpcert",
   "CCN-CERT|ES": "ccn-cert",
   "CNCS|PT": "cncs"
+ },
+ "sources": {
+  "boursorama-reuters-sites-gouv": {
+   "syndicates": "reuters",
+   "basis": "the collector's slug; Boursorama carries Reuters copy"
+  },
+  "eadt-minister-budget-no-breach": {
+   "syndicates": "pa-media",
+   "basis": "the publisher string: '(PA)'"
+  },
+  "reuters-factbox-gbaf": {
+   "syndicates": "reuters",
+   "basis": "a Reuters factbox, on Global Banking and Finance"
+  },
+  "reuters-factbox-websites-offline": {
+   "syndicates": "reuters",
+   "basis": "a Reuters factbox, on Global Banking and Finance"
+  },
+  "rte-reuters-websites-go-dark": {
+   "syndicates": "reuters",
+   "basis": "the collector's slug; RTÉ carries Reuters copy"
+  },
+  "tagesspiegel-dpa-noch-offline": {
+   "syndicates": "dpa",
+   "basis": "the collector's slug; Der Tagesspiegel carries dpa copy"
+  },
+  "yahoo-jp-gmo-fx-login-leak": {
+   "syndicates": "j-cast",
+   "basis": "the publisher string and the title: J-CAST News on Yahoo! News Japan"
+  },
+  "yahoo-mashable-affected-list": {
+   "syndicates": "mashable",
+   "basis": "the collector's slug; Yahoo carries Mashable's article"
+  }
  }
 }

@@ -25,7 +25,7 @@ Both cited watchTowr captures are HTTP 403 (A1 as cited), but four independent o
 | [securityweek-first-attempts-sensors](../../sources/securityweek-first-attempts-sensors/index.html) | carries | *it has seen the first in-the-wild exploitation attempts hitting its sensors around the same time the patches landed, but has not observed successful attempts.* | b63772dddccf9cee |
 | [securityweek-exploitation-days-before](../../sources/securityweek-exploitation-days-before/index.html) | carries | *WatchTowr Intel is seeing broad exploitation attempts and sloppy proof-of-concept exploit code tweeted and thrown onto GitHub.* | ac663f2d9dbd0197 |
 | [darkreading-php2shell-red-alert](../../sources/darkreading-php2shell-red-alert/index.html) | carries | *WatchTowr reported it has observed exploitation attempts of both flaws in the wild.* | 6db30e279f5f3877 |
-| therecord-php-warnings (in the vault, not yet on this site) | carries | *the cybersecurity company is also observing in-the-wild exploitation of the vulnerabilities* | 39efe473da414c01 |
+| [therecord-php-warnings](../../sources/therecord-php-warnings/index.html) | carries | *the cybersecurity company is also observing in-the-wild exploitation of the vulnerabilities* | 39efe473da414c01 |
 | [tenable-php2shell-faq](../../sources/tenable-php2shell-faq/index.html) | carries | *watchTowr says it has reproduced both vulnerabilities and is observing exploitation attempts against both.* | 10d98694b9c0243e |
 | [equixly-php2shell-what-we-know](../../sources/equixly-php2shell-what-we-know/index.html) | absent | *watchTowr lists no reported exploitation, and neither CVE appears in CISA’s Known Exploited Vulnerabilities catalog.* | 34bf72d02f14deb9 |
 | [securityweek-mass-exploitation-looms](../../sources/securityweek-mass-exploitation-looms/index.html) | absent | *WatchTowr and Huntress say they have not seen either of the vulnerabilities being exploited in the wild.* | 693aa4300139d2af |
@@ -46,7 +46,7 @@ Published: when the source says it was published. Saved: the first capture into 
 ## Where this fact appears
 
 In the briefings for:
-AAlexCurious readerCCaseyWebsite ownerJJordanBoard member or executiveSSamSecurity leadBBlakeAnalyst or policy advisorRRobinCISOQQuinnCFOJJamieHead of AppSec
+AAlexCurious readerCCaseyWebsite ownerJJordanBoard member or executiveSSamSecurity leadBBlakeAnalyst or policy advisorRRobinCISOQQuinnCFOMMorganData protection officerJJamieHead of AppSec
 And on [every claim](../../claims/index.html#watchtowr-itw).
 
 ## Every version of this fact
@@ -61,4 +61,4 @@ Sources: watchtowr-php2shell, watchtowr-php2shell-faq
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/watchtowr-itw/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/watchtowr-itw/index.html

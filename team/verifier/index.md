@@ -33,6 +33,7 @@ Fact-check: how sure we arefactcheck/index.htmlEvery claimclaims/index.html
 | 004 | Run the verifier over every claim: check each quote against its capture textThe BBC's NCSC sentence is the first case. | open |  |
 | 061 | The contradiction ledger: a first-class record per disagreement (the statements, who, when, captures, what each measures, the reading, status), seeded with the seven from the 22 October coverage review, and a page that shows itFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
 | 087 | Run the desk on a schedule, every four hours: the claims that changed, the open tickets, the weak and the contested, KEV and the moving sources; a full sweep once a dayFrom the brief: a fact-checker joins the team (22 October). | open |  |
+| 103 | Fact-check runs: move the schedule to CRON_TZ=Europe/London 52 8-20/4 * * * once the editor agrees; a run that moves a grade or opens a ticket leaves a dated article with run:  | open |  |
 
 ## What they have done
 - Run 1, 22 October: all 70 claims graded against vault 31ccc515c29f; 3 high and 56 medium findings, 10 contradictions recorded, 6 pieces of outside evidence; Italy's offline advice found misread
@@ -52,4 +53,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/verifier/index.html

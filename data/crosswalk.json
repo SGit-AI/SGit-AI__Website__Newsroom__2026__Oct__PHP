@@ -1,0 +1,549 @@
+{
+ "about": "Where the site's graphs meet. Kept by the cartographer. The story graph (data/graph.json), the code-review graph (data/review.json) and the risk graph (data/grc-graph.json) each keep their own vocabulary; this file declares which of their nodes denote the same anchor, or a party and the class of stakeholder it belongs to, so a reader can step from one graph into the next. Bridges, not a merge (graphs.sgit.ai rule 7). The build refuses an id here that its graph does not have.",
+ "kept_by": "cartographer",
+ "graphs": {
+  "story": {
+   "file": "data/graph.json",
+   "title": "the story graph"
+  },
+  "review": {
+   "file": "data/review.json",
+   "title": "the code-review graph"
+  },
+  "grc": {
+   "file": "data/grc-graph.json",
+   "title": "the risk graph"
+  }
+ },
+ "relations": {
+  "same_anchor": "the same thing, named in each graph",
+  "is": "the party is this stakeholder",
+  "among": "the party is one of this class of stakeholder"
+ },
+ "anchors": [
+  {
+   "anchor": "CVE-2026-109618",
+   "relation": "same_anchor",
+   "ids": {
+    "story": "cve:CVE-2026-109618",
+    "review": "cve-109618",
+    "grc": "vulnerability:cve-109618"
+   }
+  },
+  {
+   "anchor": "CVE-2026-109619",
+   "relation": "same_anchor",
+   "ids": {
+    "story": "cve:CVE-2026-109619",
+    "review": "cve-109619",
+    "grc": "vulnerability:cve-109619"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "from": "review",
+   "to": "grc",
+   "relation": "same_anchor",
+   "rule": "the risk graph names a review node '<kind>:<review id>', where kind is vulnerability, remediation or code (build_grc() in admin/build/build.py)"
+  }
+ ],
+ "parties": {
+  "php-group": {
+   "grc": "stakeholder:php-project",
+   "relation": "is"
+  },
+  "php-security-team": {
+   "grc": "stakeholder:php-security-team",
+   "relation": "is"
+  },
+  "leblanc": {
+   "grc": "stakeholder:php-fix-authors",
+   "relation": "is"
+  },
+  "php-foundation": {
+   "grc": "stakeholder:php-foundation",
+   "relation": "is"
+  },
+  "calif": {
+   "grc": "stakeholder:calif",
+   "relation": "is"
+  },
+  "openai": {
+   "grc": "stakeholder:openai",
+   "relation": "is"
+  },
+  "wiz": {
+   "grc": "stakeholder:wiz",
+   "relation": "is"
+  },
+  "quarkslab": {
+   "grc": "stakeholder:quarkslab",
+   "relation": "is"
+  },
+  "chainguard": {
+   "grc": "stakeholder:chainguard",
+   "relation": "is"
+  },
+  "agencies": {
+   "grc": "stakeholder:agencies",
+   "relation": "is"
+  },
+  "ncsc-uk": {
+   "grc": "stakeholder:uk-ncsc",
+   "relation": "is"
+  },
+  "this-site": {
+   "grc": "stakeholder:newsroom",
+   "relation": "is"
+  },
+  "cisa": {
+   "grc": "stakeholder:us-agencies",
+   "relation": "among"
+  },
+  "nsa": {
+   "grc": "stakeholder:us-agencies",
+   "relation": "among"
+  },
+  "cert-eu": {
+   "grc": "stakeholder:eu-agencies",
+   "relation": "among"
+  },
+  "enisa-csirts": {
+   "grc": "stakeholder:eu-agencies",
+   "relation": "among"
+  },
+  "cert-fr": {
+   "grc": "stakeholder:eu-agencies",
+   "relation": "among"
+  },
+  "ncsc-nl": {
+   "grc": "stakeholder:eu-agencies",
+   "relation": "among"
+  },
+  "acn": {
+   "grc": "stakeholder:eu-agencies",
+   "relation": "among"
+  },
+  "cert-lv": {
+   "grc": "stakeholder:eu-agencies",
+   "relation": "among"
+  },
+  "ccn-cert": {
+   "grc": "stakeholder:eu-agencies",
+   "relation": "among"
+  },
+  "cncs": {
+   "grc": "stakeholder:eu-agencies",
+   "relation": "among"
+  },
+  "nukib": {
+   "grc": "stakeholder:eu-agencies",
+   "relation": "among"
+  },
+  "cloudflare": {
+   "grc": "stakeholder:waf-vendors",
+   "relation": "among"
+  },
+  "imperva": {
+   "grc": "stakeholder:waf-vendors",
+   "relation": "among"
+  },
+  "akamai": {
+   "grc": "stakeholder:waf-vendors",
+   "relation": "among"
+  },
+  "fastly": {
+   "grc": "stakeholder:waf-vendors",
+   "relation": "among"
+  },
+  "fortinet": {
+   "grc": "stakeholder:waf-vendors",
+   "relation": "among"
+  },
+  "huntress": {
+   "grc": "stakeholder:threat-intel",
+   "relation": "among"
+  },
+  "vulncheck": {
+   "grc": "stakeholder:threat-intel",
+   "relation": "among"
+  },
+  "censys": {
+   "grc": "stakeholder:threat-intel",
+   "relation": "among"
+  },
+  "ellio": {
+   "grc": "stakeholder:threat-intel",
+   "relation": "among"
+  },
+  "unit42": {
+   "grc": "stakeholder:threat-intel",
+   "relation": "among"
+  },
+  "watchtowr": {
+   "grc": "stakeholder:threat-intel",
+   "relation": "among"
+  },
+  "amazon": {
+   "grc": "stakeholder:hosting",
+   "relation": "among"
+  },
+  "edinburgh-council": {
+   "grc": "stakeholder:councils",
+   "relation": "among"
+  },
+  "oxford-council": {
+   "grc": "stakeholder:councils",
+   "relation": "among"
+  },
+  "rijksoverheid": {
+   "grc": "stakeholder:national-gov",
+   "relation": "among"
+  },
+  "fr-interieur": {
+   "grc": "stakeholder:national-gov",
+   "relation": "among"
+  },
+  "latvia-gov": {
+   "grc": "stakeholder:national-gov",
+   "relation": "among"
+  },
+  "valtori": {
+   "grc": "stakeholder:national-gov",
+   "relation": "among"
+  },
+  "wikimedia": {
+   "grc": "stakeholder:non-profits",
+   "relation": "among"
+  },
+  "weirdgloop": {
+   "grc": "stakeholder:non-profits",
+   "relation": "among"
+  },
+  "unige": {
+   "grc": "stakeholder:non-profits",
+   "relation": "among"
+  },
+  "epfl": {
+   "grc": "stakeholder:non-profits",
+   "relation": "among"
+  },
+  "qnap": {
+   "grc": "stakeholder:app-vendors",
+   "relation": "among"
+  },
+  "cisco": {
+   "grc": "stakeholder:app-vendors",
+   "relation": "among"
+  },
+  "paloalto": {
+   "grc": "stakeholder:app-vendors",
+   "relation": "among"
+  },
+  "20-minuten": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "20minutos": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "abc-au": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "actu17": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "actuia": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "agconnect": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "bbc": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "bleepingcomputer": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "bloomberg": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "boursorama": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "bursa-hakimiyet": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "canaltech": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "clickx": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cnn": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cnn-portugal": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cointelegraph-br": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cyber-express": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cybernews": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "dark-reading": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "delfi-lv": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "dpa": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "dutch-it-leaders": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "eadt": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "edinburgh-news": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "fortune": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "gbaf": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "global-news": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "helsinki-times": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "howtogeek": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "impress-watch": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "insiderpaper": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "insurance-business": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "itdaily": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "j-cast": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "jn-pt": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "journal-du-coin": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "koran-jakarta": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "kyodo": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "lalibre": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "lbc": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "letemps": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "lupa-cz": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "mashable": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "newsweek": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "orf": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "oxford-chronicle": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "pa-media": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "php-architect": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "polinews": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "reuters": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "rte": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "rtl-de": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "rtve": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "salzburg24": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "sankei": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "sapo-tek": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "scotsman": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "security-nl": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "securityweek": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "tagesspiegel": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "techtarget": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "techzine": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "the-record": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "the-register": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "the-verge": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "thn": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "tpo-nl": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "tugatech": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "tuttotech": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "usa-today": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "watson-ch": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "wikipedia": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "wired": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "yahoo": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "yahoo-japan": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "yle": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  }
+ }
+}

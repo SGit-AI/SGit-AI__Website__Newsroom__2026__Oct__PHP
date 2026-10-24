@@ -42,20 +42,39 @@ export function load(data) {
     const out = new Map(), inn = new Map()
     for (const n of nodes) { out.set(n.id, []); inn.set(n.id, []) }
     for (const e of edges) { out.get(e.from).push(e); inn.get(e.to).push(e) }
-    const ontology = (data && data.ontology) || { kinds: {}, verbs: {} }
+    const given = (data && data.ontology) || {}
+    const ontology = { ...given, kinds: { ...(given.kinds || {}) }, verbs: { ...(given.verbs || {}) } }
+    // a graph without an ontology block may still name its inverses: in a 'verbs' list, or on each edge (the risk graph)
+    for (const v of (data && Array.isArray(data.verbs) ? data.verbs : [])) {
+        if (v && v.verb && !ontology.verbs[v.verb]) ontology.verbs[v.verb] = { label: say(v.verb), inverse: say(v.inverse || '') || undefined }
+    }
+    for (const e of edges) {
+        if (e.inverse && !ontology.verbs[e.verb]) ontology.verbs[e.verb] = { label: say(e.verb), inverse: say(e.inverse) }
+    }
+    for (const n of nodes) n.zoom = zooms(n)
     return { nodes, edges, byId, out, inn, ontology, dropped, meta: data || {} }
+}
+
+/** The graphs a node opens into: its 'zoom' list, or the older single 'graph' and 'graph_focus'. */
+function zooms(n) {
+    if (Array.isArray(n.zoom)) return n.zoom.filter(z => z && typeof z.graph === 'string')
+    return typeof n.graph === 'string' ? [{ graph: n.graph, focus: n.graph_focus, label: 'Open the graph inside it' }] : []
+}
+
+function say(v) { return String(v || '').replace(/_/g, ' ')
 }
 
 /** The phrase for an edge read from one end: "cites" from its tail, "cited by" from its head. */
 export function phrase(G, edge, fromId) {
     const v = (G.ontology.verbs || {})[edge.verb] || {}
-    if (edge.from === fromId) return v.label || edge.verb
-    return v.inverse || `← ${edge.verb}`
+    if (edge.from === fromId) return v.label || say(edge.verb)
+    return v.inverse || (edge.inverse && say(edge.inverse)) || `← ${say(edge.verb)}`
 }
 
-/** A filter is { kinds: Set|null, verbs: Set|null }; null means everything passes. */
+/** A filter is { kinds: Set|null, verbs: Set|null, hide: Set|null }: kinds and verbs keep only what they list, hide drops what it lists; null passes everything. */
 export function passes(G, filter, edge) {
     if (!filter) return true
+    if (filter.hide && filter.hide.has(edge.verb)) return false
     if (filter.verbs && !filter.verbs.has(edge.verb)) return false
     if (filter.kinds) {
         const a = G.byId.get(edge.from).kind, b = G.byId.get(edge.to).kind
@@ -95,9 +114,9 @@ export function ego(G, focus, depth = 1, filter = null, limit = 400) {
     return { nodes: [...ids].map(id => G.byId.get(id)), edges, hop, truncated }
 }
 
-/** The shortest path between a and b, ignoring direction: { nodes, edges } or null. Connecting the dots. */
+/** The shortest path between a and b, ignoring direction: { nodes, edges }, or null when there is none or a is b. Connecting the dots. */
 export function path(G, a, b, filter = null) {
-    if (!G.byId.has(a) || !G.byId.has(b)) return null
+    if (!G.byId.has(a) || !G.byId.has(b) || a === b) return null
     const prev = new Map([[a, null]])
     const queue = [a]
     while (queue.length) {

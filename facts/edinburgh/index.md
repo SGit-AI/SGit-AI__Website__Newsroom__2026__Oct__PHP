@@ -20,9 +20,9 @@ The Scotsman carries the outage, the council's "essential maintenance" and that 
 |---|---|---|---|
 | [scotsman-edinburgh-council-offline](../../sources/scotsman-edinburgh-council-offline/index.html) | carries | *A council spokesperson said the website was down for “essential maintenance”, however they are yet to confirm whether it is linked* | fcdbc39d82bfd477 |
 | [scotsman-edinburgh-council-offline](../../sources/scotsman-edinburgh-council-offline/index.html) | carries | *The website went down late on Wednesday afternoon* | fcdbc39d82bfd477 |
-| edinburghnews-council-offline (in the vault, not yet on this site) | carries | *A council spokesperson said the website was down for “essential maintenance” however they did not confirm whether it was connected to the recently discovered vulnerabilities.* | ec7b1d470016d4f6 |
+| [edinburghnews-council-offline](../../sources/edinburghnews-council-offline/index.html) | carries | *A council spokesperson said the website was down for “essential maintenance” however they did not confirm whether it was connected to the recently discovered vulnerabilities.* | ec7b1d470016d4f6 |
 | [lbc-uk-websites-offline](../../sources/lbc-uk-websites-offline/index.html) | partial | *Edinburgh and Oxford Council as well as the online home for The Traitors were taken down as was The Met Police website.* | 125176f10b5494a6 |
-| uk-edinburgh-council (in the vault, not yet on this site) | absent | *nothing that carries it* | eef60737c49dfded |
+| [uk-edinburgh-council](../../sources/uk-edinburgh-council/index.html) | absent | *nothing that carries it* | eef60737c49dfded |
 
 Open tickets: [Finding-67](../../factcheck/index.html#Finding-67).
 
@@ -40,7 +40,7 @@ Published: when the source says it was published. Saved: the first capture into 
 ## Where this fact appears
 
 In the briefings for:
-AAlexCurious readerTTaylorProject or programme managerJJordanBoard member or executiveRRobinCISOQQuinnCFORRileyCommunications team
+AAlexCurious readerTTaylorProject or programme managerJJordanBoard member or executiveRRobinCISOQQuinnCFOMMorganData protection officerRRileyCommunications team
 And on [every claim](../../claims/index.html#edinburgh).
 
 ## Every version of this fact
@@ -55,4 +55,4 @@ Sources: scotsman-edinburgh-council-offline
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/facts/edinburgh/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/edinburgh/index.html

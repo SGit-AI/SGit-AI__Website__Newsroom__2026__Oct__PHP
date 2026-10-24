@@ -91,5 +91,13 @@
       import(new URL(root + 'assets/ask/ask.js', location.href).href).then(function (m) { m.open(); }).catch(function (e) { alert('The chat pane could not load: ' + e.message); }).then(function () { b.disabled = false; });
     });
     bar.insertBefore(b, bar.firstChild);
+    // Feedback, beside Ask (conductor@php.newsroom): the same pane, opened on its Feedback tab.
+    var f = document.createElement('button'); f.type = 'button'; f.id = 'feedback-open'; f.className = 'ask-open'; f.textContent = 'Feedback';
+    f.title = 'Feedback on this page: what is wrong, unclear, missing or good, with a screenshot, signed with your key';
+    f.addEventListener('click', function () {
+      f.disabled = true;
+      import(new URL(root + 'assets/ask/ask.js', location.href).href).then(function (m) { m.openFeedback(); }).catch(function (e) { alert('The feedback pane could not load: ' + e.message); }).then(function () { f.disabled = false; });
+    });
+    bar.insertBefore(f, b.nextSibling);
   }
 })();

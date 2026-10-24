@@ -2,122 +2,1541 @@
  "about": "The authority file for parties: one node per person, organisation, agency, outlet, channel or platform, whatever string a source or a row uses for it. Kept by the cartographer (cartographer@php.newsroom). An id from data/actors.json is reused unchanged, so the actor pages and this file name the same node. 'aliases' are the exact publisher strings in data/sources.json; the build refuses a publisher that resolves to no entity. Kinds and verbs are defined in data/ontology.json.",
  "kept_by": "cartographer",
  "entities": [
-  {"id": "php-group", "name": "The PHP Group / php.net", "kind": "organisation", "actor": true, "aliases": ["PHP Group (php.net)"]},
-  {"id": "php-security-team", "name": "The PHP security team", "kind": "group", "part_of": "php-group", "one_voice": true},
-  {"id": "php-src", "name": "php/php-src", "kind": "project", "part_of": "php-group", "aliases": ["php/php-src on GitHub", "php/php-src (git), read from a clone"]},
-  {"id": "adoy", "name": "adoy, PHP release manager", "kind": "person", "member_of": "php-group", "aliases": ["php/php-src on GitHub (release by adoy)"]},
-  {"id": "php-foundation", "name": "The PHP Foundation", "kind": "organisation", "actor": true, "aliases": ["The PHP Foundation"]},
-  {"id": "zelenka", "name": "Jakub Zelenka (bukka), PHP security team", "kind": "person", "actor": true, "member_of": "php-security-team", "aliases": ["PHP (php/php-src GitHub security advisory, published by bukka)", "oss-security list (Jakub Zelenka, PHP security team)"]},
-  {"id": "daubois", "name": "Alexandre Daubois, PHP security team", "kind": "person", "actor": true, "member_of": "php-security-team", "aliases": ["Alexandre Daubois (PHP security team / PHP Foundation)"]},
-  {"id": "leblanc", "name": "Arnaud Le Blanc and the PHP fix authors", "kind": "group", "actor": true, "member_of": "php-security-team"},
-  {"id": "calif", "name": "Calif", "kind": "organisation", "actor": true, "aliases": ["Calif (Calif Research)"]},
-  {"id": "austin", "name": "Ryan Austin, Calif", "kind": "person", "works_for": "calif", "aliases": ["Ryan Austin (@lcfr_hax), Calif"]},
-  {"id": "openai", "name": "OpenAI", "kind": "organisation", "actor": true, "aliases": ["OpenAI", "OpenAI (@OpenAI)", "OpenAI (Patch the Planet / Daybreak)"]},
-  {"id": "php2shell-site", "name": "php2shell.com, the joint microsite of OpenAI, Wiz and Calif", "kind": "project", "aliases": ["OpenAI / Wiz / Calif joint microsite (php2shell.com)"], "by": ["openai", "wiz", "calif"]},
-  {"id": "wiz", "name": "Wiz Research", "kind": "organisation", "actor": true, "aliases": ["Wiz (Wiz Research)", "Wiz (@wiz_io)"]},
-  {"id": "quarkslab", "name": "Quarkslab, OSTIF", "kind": "organisation", "actor": true, "aliases": ["Quarkslab"]},
-  {"id": "cloudflare", "name": "Cloudflare", "kind": "organisation", "actor": true, "aliases": ["Cloudflare"]},
-  {"id": "prince", "name": "Matthew Prince, Cloudflare CEO", "kind": "person", "actor": true, "works_for": "cloudflare", "aliases": ["Matthew Prince (@eastdakota), Cloudflare CEO"]},
-  {"id": "amazon", "name": "Amazon (CJ Moses)", "kind": "organisation", "actor": true, "aliases": ["Amazon (CJ Moses, AWS Security Blog)"]},
-  {"id": "chainguard", "name": "Chainguard", "kind": "organisation", "actor": true},
-  {"id": "chainguard-lorenc", "name": "Dan Lorenc, Chainguard", "kind": "person", "actor": true, "works_for": "chainguard"},
-  {"id": "watchtowr", "name": "watchTowr", "kind": "organisation", "actor": true, "aliases": ["watchTowr"]},
-  {"id": "imperva", "name": "Imperva Threat Research", "kind": "organisation", "actor": true, "aliases": ["Imperva Threat Research (Nadav Avital, Bar Menachem)"]},
-  {"id": "fastly", "name": "Fastly", "kind": "organisation", "actor": true, "aliases": ["Fastly"]},
-  {"id": "akamai", "name": "Akamai", "kind": "organisation", "actor": true, "aliases": ["Akamai Security Research"]},
-  {"id": "huntress", "name": "Huntress", "kind": "organisation", "actor": true, "aliases": ["Huntress"]},
-  {"id": "fortinet", "name": "Fortinet", "kind": "organisation", "aliases": ["Fortinet Community (FortiWeb knowledge base)"]},
-  {"id": "weirdgloop", "name": "Weird Gloop (cookmeplox)", "kind": "organisation", "actor": true, "aliases": ["Weird Gloop (cookmeplox)"]},
-  {"id": "wikimedia", "name": "The Wikimedia Foundation", "kind": "organisation"},
-  {"id": "edinburgh-council", "name": "The City of Edinburgh Council", "kind": "organisation"},
-  {"id": "oxford-council", "name": "Oxford City Council", "kind": "organisation"},
-  {"id": "vulncheck", "name": "VulnCheck", "kind": "organisation"},
-  {"id": "censys", "name": "Censys", "kind": "organisation"},
-  {"id": "ellio", "name": "ELLIO", "kind": "organisation"},
-  {"id": "unit42", "name": "Palo Alto Networks Unit 42", "kind": "organisation"},
-  {"id": "detectors", "name": "Community detection authors", "kind": "group", "actor": true},
-  {"id": "darkfibr", "name": "darkfibr (Mike Haddock)", "kind": "person", "member_of": "detectors", "aliases": ["darkfibr (Mike Haddock), GitHub"]},
-  {"id": "rjmendez", "name": "rjmendez", "kind": "person", "member_of": "detectors", "aliases": ["rjmendez, GitHub"]},
-  {"id": "lexsah", "name": "Lexsah", "kind": "person", "member_of": "detectors", "aliases": ["Lexsah, GitHub"]},
-  {"id": "blevene", "name": "Blevene", "kind": "person", "member_of": "detectors", "aliases": ["Blevene (GitHub gist)"]},
-  {"id": "silas-cutler", "name": "Silas Cutler", "kind": "person", "aliases": ["Silas Cutler (GitHub gist)"]},
-  {"id": "feross", "name": "Feross Aboukhadijeh", "kind": "person", "aliases": ["Feross Aboukhadijeh (@feross) on X"]},
-  {"id": "lopez-kurtz", "name": "David Lopez-Kurtz", "kind": "person", "aliases": ["David Lopez-Kurtz (Substack)"]},
-  {"id": "woodward", "name": "Alan Woodward, Surrey Centre for Cyber Security", "kind": "person", "actor": true},
-  {"id": "rainbolt", "name": "Aaron Rainbolt", "kind": "person"},
-  {"id": "perez", "name": "Yves-Alexis Perez, Debian", "kind": "person"},
-  {"id": "fischer", "name": "Christian Fischer, Greenbone", "kind": "person"},
-  {"id": "oss-security-replies", "name": "Replies on oss-security: Aaron Rainbolt, Yves-Alexis Perez, Christian Fischer", "kind": "group", "has_members": ["rainbolt", "perez", "fischer"], "aliases": ["oss-security list (replies: Aaron Rainbolt, Yves-Alexis Perez/Debian, Christian Fischer/Greenbone)"]},
-  {"id": "coopersmith", "name": "Alan Coopersmith, Oracle", "kind": "person", "aliases": ["oss-security list (Alan Coopersmith, Oracle)"]},
-  {"id": "openai-community-sps", "name": "'sps', OpenAI Developer Community", "kind": "person", "aliases": ["OpenAI Developer Community (user 'sps', Leader)"]},
-
-  {"id": "agencies", "name": "National agencies", "kind": "group", "actor": true},
-  {"id": "nsa", "name": "NSA Cybersecurity", "kind": "agency", "country": "US", "member_of": "agencies", "aliases": ["NSA Cybersecurity (@NSACyber)", "US National Security Agency (NSA)"]},
-  {"id": "cisa", "name": "CISA", "kind": "agency", "country": "US", "member_of": "agencies", "aliases": ["CISA", "US Cybersecurity and Infrastructure Security Agency (CISA)"]},
-  {"id": "ncsc-uk", "name": "UK NCSC", "kind": "agency", "country": "UK", "member_of": "agencies", "aliases": ["UK National Cyber Security Centre (NCSC)"]},
-  {"id": "cert-eu", "name": "CERT-EU", "kind": "agency", "country": "EU institutions", "member_of": "agencies", "aliases": ["CERT-EU"]},
-  {"id": "enisa-csirts", "name": "ENISA CSIRTs Network", "kind": "agency", "country": "EU", "member_of": "agencies", "aliases": ["ENISA / EU CSIRTs Network (CNW)"]},
-  {"id": "cert-fr", "name": "CERT-FR (ANSSI)", "kind": "agency", "country": "FR", "member_of": "agencies", "aliases": ["CERT-FR (ANSSI)"]},
-  {"id": "cccs", "name": "Canadian Centre for Cyber Security (CCCS)", "kind": "agency", "country": "CA", "member_of": "agencies", "aliases": ["CCCS", "Canadian Centre for Cyber Security (CCCS)"]},
-  {"id": "acsc", "name": "ASD's ACSC", "kind": "agency", "country": "AU", "member_of": "agencies", "aliases": ["ASD's ACSC", "ASD's ACSC (Australia)"]},
-  {"id": "ncsc-nz", "name": "NCSC New Zealand", "kind": "agency", "country": "NZ", "member_of": "agencies", "aliases": ["NCSC New Zealand"]},
-  {"id": "rijksoverheid", "name": "The Dutch government", "kind": "organisation", "country": "NL", "actor": true, "aliases": ["Rijksoverheid (Dutch government) / NCSC-NL"]},
-  {"id": "ncsc-nl", "name": "NCSC-NL", "kind": "agency", "country": "NL", "member_of": "agencies", "part_of": "rijksoverheid", "aliases": ["NCSC-NL", "NCSC-NL (Netherlands National Cyber Security Centre)"]},
-  {"id": "acn", "name": "ACN / CSIRT Italia", "kind": "agency", "country": "IT", "member_of": "agencies", "aliases": ["ACN / CSIRT Italia"]},
-  {"id": "bacs", "name": "Swiss BACS (NCSC)", "kind": "agency", "country": "CH", "member_of": "agencies", "aliases": ["Swiss BACS", "Swiss Federal Office for Cyber Security (BACS / NCSC)"]},
-  {"id": "cert-lv", "name": "CERT.LV", "kind": "agency", "country": "LV", "member_of": "agencies", "aliases": ["CERT.LV (Latvia)"]},
-  {"id": "jpcert", "name": "JPCERT/CC", "kind": "agency", "country": "JP", "member_of": "agencies", "aliases": ["JPCERT/CC", "JPCERT/CC (Japan)"]},
-  {"id": "ccn-cert", "name": "CCN-CERT", "kind": "agency", "country": "ES", "member_of": "agencies", "aliases": ["CCN-CERT (Spain)"]},
-  {"id": "cncs", "name": "CNCS", "kind": "agency", "country": "PT", "member_of": "agencies", "aliases": ["CNCS (Portugal)"]},
-  {"id": "valtori", "name": "Valtori and NCSC-FI", "kind": "organisation", "country": "FI", "actor": true},
-  {"id": "cve-program", "name": "The CVE Program", "kind": "registry", "aliases": ["CVE Program (CNA: PHP Group)", "CVE Program (cveawg API)"]},
-  {"id": "nvd", "name": "NIST National Vulnerability Database", "kind": "registry", "aliases": ["NIST National Vulnerability Database"]},
-
-  {"id": "bbc", "name": "BBC News", "kind": "outlet", "actor": true, "aliases": ["BBC News"]},
-  {"id": "thn", "name": "The Hacker News", "kind": "outlet", "actor": true, "aliases": ["The Hacker News", "The Hacker News (Ravie Lakshmanan)"]},
-  {"id": "the-register", "name": "The Register", "kind": "outlet", "aliases": ["The Register"]},
-  {"id": "securityweek", "name": "SecurityWeek", "kind": "outlet", "aliases": ["SecurityWeek"]},
-  {"id": "cnn", "name": "CNN", "kind": "outlet", "aliases": ["CNN"]},
-  {"id": "cyber-express", "name": "The Cyber Express", "kind": "outlet", "aliases": ["The Cyber Express"]},
-  {"id": "yle", "name": "Yle", "kind": "outlet", "country": "FI", "aliases": ["Yle (Finnish public broadcaster)"]},
-  {"id": "helsinki-times", "name": "Helsinki Times", "kind": "outlet", "country": "FI", "aliases": ["Helsinki Times"]},
-  {"id": "scotsman", "name": "The Scotsman", "kind": "outlet", "country": "UK", "aliases": ["The Scotsman (Jack Davies)"]},
-  {"id": "oxford-chronicle", "name": "Oxford Chronicle", "kind": "outlet", "country": "UK", "aliases": ["Oxford Chronicle"]},
-  {"id": "lbc", "name": "LBC", "kind": "outlet", "country": "UK", "aliases": ["LBC"]},
-  {"id": "insurance-business", "name": "Insurance Business", "kind": "outlet", "aliases": ["Insurance Business (Matthew Sellers)"]},
-  {"id": "eadt", "name": "East Anglian Daily Times (PA)", "kind": "outlet", "country": "UK", "aliases": ["East Anglian Daily Times (PA)"]},
-  {"id": "reuters", "name": "Reuters", "kind": "outlet", "aliases": ["Reuters factbox, via Global Banking and Finance"]},
-  {"id": "bloomberg", "name": "Bloomberg", "kind": "outlet", "aliases": ["Bloomberg"]},
-  {"id": "newsweek", "name": "Newsweek", "kind": "outlet", "aliases": ["Newsweek"]},
-  {"id": "dark-reading", "name": "Dark Reading", "kind": "outlet", "aliases": ["Dark Reading"]},
-  {"id": "cybernews", "name": "Cybernews", "kind": "outlet", "aliases": ["Cybernews"]},
-  {"id": "recorded-future", "name": "Recorded Future", "kind": "organisation", "aliases": ["Recorded Future"]},
-  {"id": "the-record", "name": "The Record", "kind": "outlet", "part_of": "recorded-future", "aliases": ["The Record (Recorded Future News)"]},
-  {"id": "techzine", "name": "Techzine Global", "kind": "outlet", "aliases": ["Techzine Global"]},
-  {"id": "itdaily", "name": "ITdaily", "kind": "outlet", "aliases": ["ITdaily (Jens Jonkers)"]},
-  {"id": "tpo-nl", "name": "TPO.nl", "kind": "outlet", "country": "NL", "aliases": ["TPO.nl"]},
-  {"id": "dutch-it-leaders", "name": "Dutch IT Leaders", "kind": "outlet", "country": "NL", "aliases": ["Dutch IT Leaders"]},
-  {"id": "actuia", "name": "ActuIA", "kind": "outlet", "country": "FR", "aliases": ["ActuIA"]},
-  {"id": "php-architect", "name": "php[architect]", "kind": "outlet", "aliases": ["php[architect]"]},
-  {"id": "wikipedia", "name": "Wikipedia (English)", "kind": "outlet", "aliases": ["Wikipedia (English)"]},
-
-  {"id": "arctic-wolf", "name": "Arctic Wolf Labs", "kind": "organisation", "aliases": ["Arctic Wolf Labs"]},
-  {"id": "armis", "name": "Armis", "kind": "organisation", "aliases": ["Armis"]},
-  {"id": "symantec", "name": "Broadcom (Symantec)", "kind": "organisation", "aliases": ["Broadcom (Symantec) Security"]},
-  {"id": "cybelangel", "name": "CybelAngel", "kind": "organisation", "aliases": ["CybelAngel"]},
-  {"id": "equixly", "name": "Equixly", "kind": "organisation", "aliases": ["Equixly"]},
-  {"id": "lorikeet", "name": "Lorikeet Security", "kind": "organisation", "aliases": ["Lorikeet Security"]},
-  {"id": "prophet", "name": "Prophet Security", "kind": "organisation", "aliases": ["Prophet Security"]},
-  {"id": "qualys", "name": "Qualys", "kind": "organisation", "aliases": ["Qualys"]},
-  {"id": "safeguard", "name": "Safeguard", "kind": "organisation", "aliases": ["Safeguard (vendor blog)"]},
-  {"id": "sansec", "name": "Sansec", "kind": "organisation", "aliases": ["Sansec"]},
-  {"id": "sentinelone", "name": "SentinelOne", "kind": "organisation", "aliases": ["SentinelOne"]},
-  {"id": "socket", "name": "Socket", "kind": "organisation", "aliases": ["Socket"]},
-  {"id": "tenable", "name": "Tenable", "kind": "organisation", "aliases": ["Tenable"]},
-
-  {"id": "nitter", "name": "nitter.net, an X mirror", "kind": "platform", "aliases": ["nitter.net"]},
-  {"id": "x", "name": "X (Twitter)", "kind": "platform"},
-  {"id": "unnamed", "name": "Unnamed sources", "kind": "unnamed", "note": "Social posts, 'researchers' and others a source does not name. One node on purpose: an unnamed origin is a gap, not a party."},
-  {"id": "this-site", "name": "This site (php.oct.2026.newsroom.sgit.ai)", "kind": "this-site", "note": "Counted from a captured file or a clone; the count is the site's own and says so."}
+  {
+   "id": "php-group",
+   "name": "The PHP Group / php.net",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "PHP Group (php.net)"
+   ]
+  },
+  {
+   "id": "php-security-team",
+   "name": "The PHP security team",
+   "kind": "group",
+   "part_of": "php-group",
+   "one_voice": true
+  },
+  {
+   "id": "php-src",
+   "name": "php/php-src",
+   "kind": "project",
+   "part_of": "php-group",
+   "aliases": [
+    "php/php-src on GitHub",
+    "php/php-src (git), read from a clone"
+   ]
+  },
+  {
+   "id": "adoy",
+   "name": "adoy, PHP release manager",
+   "kind": "person",
+   "member_of": "php-group",
+   "aliases": [
+    "php/php-src on GitHub (release by adoy)"
+   ]
+  },
+  {
+   "id": "php-foundation",
+   "name": "The PHP Foundation",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "The PHP Foundation"
+   ]
+  },
+  {
+   "id": "zelenka",
+   "name": "Jakub Zelenka (bukka), PHP security team",
+   "kind": "person",
+   "actor": true,
+   "member_of": "php-security-team",
+   "aliases": [
+    "PHP (php/php-src GitHub security advisory, published by bukka)",
+    "oss-security list (Jakub Zelenka, PHP security team)"
+   ]
+  },
+  {
+   "id": "daubois",
+   "name": "Alexandre Daubois, PHP security team",
+   "kind": "person",
+   "actor": true,
+   "member_of": "php-security-team",
+   "aliases": [
+    "Alexandre Daubois (PHP security team / PHP Foundation)"
+   ]
+  },
+  {
+   "id": "leblanc",
+   "name": "Arnaud Le Blanc and the PHP fix authors",
+   "kind": "group",
+   "actor": true,
+   "member_of": "php-security-team"
+  },
+  {
+   "id": "calif",
+   "name": "Calif",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "Calif (Calif Research)"
+   ]
+  },
+  {
+   "id": "austin",
+   "name": "Ryan Austin, Calif",
+   "kind": "person",
+   "works_for": "calif",
+   "aliases": [
+    "Ryan Austin (@lcfr_hax), Calif"
+   ]
+  },
+  {
+   "id": "openai",
+   "name": "OpenAI",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "OpenAI",
+    "OpenAI (@OpenAI)",
+    "OpenAI (Patch the Planet / Daybreak)"
+   ]
+  },
+  {
+   "id": "php2shell-site",
+   "name": "php2shell.com, the joint microsite of OpenAI, Wiz and Calif",
+   "kind": "project",
+   "aliases": [
+    "OpenAI / Wiz / Calif joint microsite (php2shell.com)"
+   ],
+   "by": [
+    "openai",
+    "wiz",
+    "calif"
+   ]
+  },
+  {
+   "id": "wiz",
+   "name": "Wiz Research",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "Wiz (Wiz Research)",
+    "Wiz (@wiz_io)"
+   ]
+  },
+  {
+   "id": "quarkslab",
+   "name": "Quarkslab, OSTIF",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "Quarkslab"
+   ]
+  },
+  {
+   "id": "cloudflare",
+   "name": "Cloudflare",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "Cloudflare"
+   ]
+  },
+  {
+   "id": "prince",
+   "name": "Matthew Prince, Cloudflare CEO",
+   "kind": "person",
+   "actor": true,
+   "works_for": "cloudflare",
+   "aliases": [
+    "Matthew Prince (@eastdakota), Cloudflare CEO"
+   ]
+  },
+  {
+   "id": "amazon",
+   "name": "Amazon (CJ Moses)",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "Amazon (CJ Moses, AWS Security Blog)"
+   ]
+  },
+  {
+   "id": "chainguard",
+   "name": "Chainguard",
+   "kind": "organisation",
+   "actor": true
+  },
+  {
+   "id": "chainguard-lorenc",
+   "name": "Dan Lorenc, Chainguard",
+   "kind": "person",
+   "actor": true,
+   "works_for": "chainguard"
+  },
+  {
+   "id": "watchtowr",
+   "name": "watchTowr",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "watchTowr"
+   ]
+  },
+  {
+   "id": "imperva",
+   "name": "Imperva Threat Research",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "Imperva Threat Research (Nadav Avital, Bar Menachem)"
+   ]
+  },
+  {
+   "id": "fastly",
+   "name": "Fastly",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "Fastly"
+   ]
+  },
+  {
+   "id": "akamai",
+   "name": "Akamai",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "Akamai Security Research"
+   ]
+  },
+  {
+   "id": "huntress",
+   "name": "Huntress",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "Huntress"
+   ]
+  },
+  {
+   "id": "fortinet",
+   "name": "Fortinet",
+   "kind": "organisation",
+   "aliases": [
+    "Fortinet Community (FortiWeb knowledge base)",
+    "Fortinet"
+   ]
+  },
+  {
+   "id": "weirdgloop",
+   "name": "Weird Gloop (cookmeplox)",
+   "kind": "organisation",
+   "actor": true,
+   "aliases": [
+    "Weird Gloop (cookmeplox)"
+   ]
+  },
+  {
+   "id": "wikimedia",
+   "name": "The Wikimedia Foundation",
+   "kind": "organisation",
+   "aliases": [
+    "wikimediastatus.net"
+   ]
+  },
+  {
+   "id": "edinburgh-council",
+   "name": "The City of Edinburgh Council",
+   "kind": "organisation",
+   "aliases": [
+    "edinburgh.gov.uk"
+   ]
+  },
+  {
+   "id": "oxford-council",
+   "name": "Oxford City Council",
+   "kind": "organisation"
+  },
+  {
+   "id": "vulncheck",
+   "name": "VulnCheck",
+   "kind": "organisation"
+  },
+  {
+   "id": "censys",
+   "name": "Censys",
+   "kind": "organisation"
+  },
+  {
+   "id": "ellio",
+   "name": "ELLIO",
+   "kind": "organisation"
+  },
+  {
+   "id": "unit42",
+   "name": "Palo Alto Networks Unit 42",
+   "kind": "organisation",
+   "part_of": "paloalto"
+  },
+  {
+   "id": "detectors",
+   "name": "Community detection authors",
+   "kind": "group",
+   "actor": true
+  },
+  {
+   "id": "darkfibr",
+   "name": "darkfibr (Mike Haddock)",
+   "kind": "person",
+   "member_of": "detectors",
+   "aliases": [
+    "darkfibr (Mike Haddock), GitHub"
+   ]
+  },
+  {
+   "id": "rjmendez",
+   "name": "rjmendez",
+   "kind": "person",
+   "member_of": "detectors",
+   "aliases": [
+    "rjmendez, GitHub"
+   ]
+  },
+  {
+   "id": "lexsah",
+   "name": "Lexsah",
+   "kind": "person",
+   "member_of": "detectors",
+   "aliases": [
+    "Lexsah, GitHub"
+   ]
+  },
+  {
+   "id": "blevene",
+   "name": "Blevene",
+   "kind": "person",
+   "member_of": "detectors",
+   "aliases": [
+    "Blevene (GitHub gist)"
+   ]
+  },
+  {
+   "id": "silas-cutler",
+   "name": "Silas Cutler",
+   "kind": "person",
+   "aliases": [
+    "Silas Cutler (GitHub gist)"
+   ]
+  },
+  {
+   "id": "feross",
+   "name": "Feross Aboukhadijeh",
+   "kind": "person",
+   "aliases": [
+    "Feross Aboukhadijeh (@feross) on X"
+   ]
+  },
+  {
+   "id": "lopez-kurtz",
+   "name": "David Lopez-Kurtz",
+   "kind": "person",
+   "aliases": [
+    "David Lopez-Kurtz (Substack)"
+   ]
+  },
+  {
+   "id": "woodward",
+   "name": "Alan Woodward, Surrey Centre for Cyber Security",
+   "kind": "person",
+   "actor": true
+  },
+  {
+   "id": "rainbolt",
+   "name": "Aaron Rainbolt",
+   "kind": "person"
+  },
+  {
+   "id": "perez",
+   "name": "Yves-Alexis Perez, Debian",
+   "kind": "person"
+  },
+  {
+   "id": "fischer",
+   "name": "Christian Fischer, Greenbone",
+   "kind": "person"
+  },
+  {
+   "id": "oss-security-replies",
+   "name": "Replies on oss-security: Aaron Rainbolt, Yves-Alexis Perez, Christian Fischer",
+   "kind": "group",
+   "has_members": [
+    "rainbolt",
+    "perez",
+    "fischer"
+   ],
+   "aliases": [
+    "oss-security list (replies: Aaron Rainbolt, Yves-Alexis Perez/Debian, Christian Fischer/Greenbone)"
+   ]
+  },
+  {
+   "id": "coopersmith",
+   "name": "Alan Coopersmith, Oracle",
+   "kind": "person",
+   "aliases": [
+    "oss-security list (Alan Coopersmith, Oracle)"
+   ]
+  },
+  {
+   "id": "openai-community-sps",
+   "name": "'sps', OpenAI Developer Community",
+   "kind": "person",
+   "aliases": [
+    "OpenAI Developer Community (user 'sps', Leader)"
+   ]
+  },
+  {
+   "id": "agencies",
+   "name": "National agencies",
+   "kind": "group",
+   "actor": true
+  },
+  {
+   "id": "nsa",
+   "name": "NSA Cybersecurity",
+   "kind": "agency",
+   "country": "US",
+   "member_of": "agencies",
+   "aliases": [
+    "NSA Cybersecurity (@NSACyber)",
+    "US National Security Agency (NSA)"
+   ]
+  },
+  {
+   "id": "cisa",
+   "name": "CISA",
+   "kind": "agency",
+   "country": "US",
+   "member_of": "agencies",
+   "aliases": [
+    "CISA",
+    "US Cybersecurity and Infrastructure Security Agency (CISA)"
+   ]
+  },
+  {
+   "id": "ncsc-uk",
+   "name": "UK NCSC",
+   "kind": "agency",
+   "country": "UK",
+   "member_of": "agencies",
+   "aliases": [
+    "UK National Cyber Security Centre (NCSC)"
+   ]
+  },
+  {
+   "id": "cert-eu",
+   "name": "CERT-EU",
+   "kind": "agency",
+   "country": "EU institutions",
+   "member_of": "agencies",
+   "aliases": [
+    "CERT-EU"
+   ]
+  },
+  {
+   "id": "enisa-csirts",
+   "name": "ENISA CSIRTs Network",
+   "kind": "agency",
+   "country": "EU",
+   "member_of": "agencies",
+   "aliases": [
+    "ENISA / EU CSIRTs Network (CNW)"
+   ]
+  },
+  {
+   "id": "cert-fr",
+   "name": "CERT-FR (ANSSI)",
+   "kind": "agency",
+   "country": "FR",
+   "member_of": "agencies",
+   "aliases": [
+    "CERT-FR (ANSSI)"
+   ]
+  },
+  {
+   "id": "cccs",
+   "name": "Canadian Centre for Cyber Security (CCCS)",
+   "kind": "agency",
+   "country": "CA",
+   "member_of": "agencies",
+   "aliases": [
+    "CCCS",
+    "Canadian Centre for Cyber Security (CCCS)"
+   ]
+  },
+  {
+   "id": "acsc",
+   "name": "ASD's ACSC",
+   "kind": "agency",
+   "country": "AU",
+   "member_of": "agencies",
+   "aliases": [
+    "ASD's ACSC",
+    "ASD's ACSC (Australia)",
+    "cyber.gov.au"
+   ]
+  },
+  {
+   "id": "ncsc-nz",
+   "name": "NCSC New Zealand",
+   "kind": "agency",
+   "country": "NZ",
+   "member_of": "agencies",
+   "aliases": [
+    "NCSC New Zealand"
+   ]
+  },
+  {
+   "id": "rijksoverheid",
+   "name": "The Dutch government",
+   "kind": "organisation",
+   "country": "NL",
+   "actor": true,
+   "aliases": [
+    "Rijksoverheid (Dutch government) / NCSC-NL",
+    "overheid.nl"
+   ]
+  },
+  {
+   "id": "ncsc-nl",
+   "name": "NCSC-NL",
+   "kind": "agency",
+   "country": "NL",
+   "member_of": "agencies",
+   "part_of": "rijksoverheid",
+   "aliases": [
+    "NCSC-NL",
+    "NCSC-NL (Netherlands National Cyber Security Centre)",
+    "ncsc.nl"
+   ]
+  },
+  {
+   "id": "acn",
+   "name": "ACN / CSIRT Italia",
+   "kind": "agency",
+   "country": "IT",
+   "member_of": "agencies",
+   "aliases": [
+    "ACN / CSIRT Italia"
+   ]
+  },
+  {
+   "id": "bacs",
+   "name": "Swiss BACS (NCSC)",
+   "kind": "agency",
+   "country": "CH",
+   "member_of": "agencies",
+   "aliases": [
+    "Swiss BACS",
+    "Swiss Federal Office for Cyber Security (BACS / NCSC)"
+   ]
+  },
+  {
+   "id": "cert-lv",
+   "name": "CERT.LV",
+   "kind": "agency",
+   "country": "LV",
+   "member_of": "agencies",
+   "aliases": [
+    "CERT.LV (Latvia)"
+   ]
+  },
+  {
+   "id": "jpcert",
+   "name": "JPCERT/CC",
+   "kind": "agency",
+   "country": "JP",
+   "member_of": "agencies",
+   "aliases": [
+    "JPCERT/CC",
+    "JPCERT/CC (Japan)"
+   ]
+  },
+  {
+   "id": "ccn-cert",
+   "name": "CCN-CERT",
+   "kind": "agency",
+   "country": "ES",
+   "member_of": "agencies",
+   "aliases": [
+    "CCN-CERT (Spain)"
+   ]
+  },
+  {
+   "id": "cncs",
+   "name": "CNCS",
+   "kind": "agency",
+   "country": "PT",
+   "member_of": "agencies",
+   "aliases": [
+    "CNCS (Portugal)"
+   ]
+  },
+  {
+   "id": "valtori",
+   "name": "Valtori and NCSC-FI",
+   "kind": "organisation",
+   "country": "FI",
+   "actor": true,
+   "aliases": [
+    "valtori.fi"
+   ]
+  },
+  {
+   "id": "cve-program",
+   "name": "The CVE Program",
+   "kind": "registry",
+   "aliases": [
+    "CVE Program (CNA: PHP Group)",
+    "CVE Program (cveawg API)"
+   ]
+  },
+  {
+   "id": "nvd",
+   "name": "NIST National Vulnerability Database",
+   "kind": "registry",
+   "aliases": [
+    "NIST National Vulnerability Database"
+   ]
+  },
+  {
+   "id": "bbc",
+   "name": "BBC News",
+   "kind": "outlet",
+   "actor": true,
+   "aliases": [
+    "BBC News"
+   ]
+  },
+  {
+   "id": "thn",
+   "name": "The Hacker News",
+   "kind": "outlet",
+   "actor": true,
+   "aliases": [
+    "The Hacker News",
+    "The Hacker News (Ravie Lakshmanan)"
+   ]
+  },
+  {
+   "id": "the-register",
+   "name": "The Register",
+   "kind": "outlet",
+   "aliases": [
+    "The Register"
+   ]
+  },
+  {
+   "id": "securityweek",
+   "name": "SecurityWeek",
+   "kind": "outlet",
+   "aliases": [
+    "SecurityWeek"
+   ]
+  },
+  {
+   "id": "cnn",
+   "name": "CNN",
+   "kind": "outlet",
+   "aliases": [
+    "CNN",
+    "cnn.com"
+   ]
+  },
+  {
+   "id": "cyber-express",
+   "name": "The Cyber Express",
+   "kind": "outlet",
+   "aliases": [
+    "The Cyber Express"
+   ]
+  },
+  {
+   "id": "yle",
+   "name": "Yle",
+   "kind": "outlet",
+   "country": "FI",
+   "aliases": [
+    "Yle (Finnish public broadcaster)"
+   ]
+  },
+  {
+   "id": "helsinki-times",
+   "name": "Helsinki Times",
+   "kind": "outlet",
+   "country": "FI",
+   "aliases": [
+    "Helsinki Times"
+   ]
+  },
+  {
+   "id": "scotsman",
+   "name": "The Scotsman",
+   "kind": "outlet",
+   "country": "UK",
+   "aliases": [
+    "The Scotsman (Jack Davies)",
+    "scotsman.com"
+   ]
+  },
+  {
+   "id": "oxford-chronicle",
+   "name": "Oxford Chronicle",
+   "kind": "outlet",
+   "country": "UK",
+   "aliases": [
+    "Oxford Chronicle"
+   ]
+  },
+  {
+   "id": "lbc",
+   "name": "LBC",
+   "kind": "outlet",
+   "country": "UK",
+   "aliases": [
+    "LBC"
+   ]
+  },
+  {
+   "id": "insurance-business",
+   "name": "Insurance Business",
+   "kind": "outlet",
+   "aliases": [
+    "Insurance Business (Matthew Sellers)",
+    "Insurance Business",
+    "insurancebusinessmag.com"
+   ]
+  },
+  {
+   "id": "eadt",
+   "name": "East Anglian Daily Times (PA)",
+   "kind": "outlet",
+   "country": "UK",
+   "aliases": [
+    "East Anglian Daily Times (PA)"
+   ]
+  },
+  {
+   "id": "reuters",
+   "name": "Reuters",
+   "kind": "outlet",
+   "aliases": []
+  },
+  {
+   "id": "bloomberg",
+   "name": "Bloomberg",
+   "kind": "outlet",
+   "aliases": [
+    "Bloomberg"
+   ]
+  },
+  {
+   "id": "newsweek",
+   "name": "Newsweek",
+   "kind": "outlet",
+   "aliases": [
+    "Newsweek",
+    "newsweek.com"
+   ]
+  },
+  {
+   "id": "dark-reading",
+   "name": "Dark Reading",
+   "kind": "outlet",
+   "aliases": [
+    "Dark Reading"
+   ]
+  },
+  {
+   "id": "cybernews",
+   "name": "Cybernews",
+   "kind": "outlet",
+   "aliases": [
+    "Cybernews"
+   ]
+  },
+  {
+   "id": "recorded-future",
+   "name": "Recorded Future",
+   "kind": "organisation",
+   "aliases": [
+    "Recorded Future"
+   ]
+  },
+  {
+   "id": "the-record",
+   "name": "The Record",
+   "kind": "outlet",
+   "part_of": "recorded-future",
+   "aliases": [
+    "The Record (Recorded Future News)",
+    "therecord.media"
+   ]
+  },
+  {
+   "id": "techzine",
+   "name": "Techzine Global",
+   "kind": "outlet",
+   "aliases": [
+    "Techzine Global"
+   ]
+  },
+  {
+   "id": "itdaily",
+   "name": "ITdaily",
+   "kind": "outlet",
+   "aliases": [
+    "ITdaily (Jens Jonkers)"
+   ]
+  },
+  {
+   "id": "tpo-nl",
+   "name": "TPO.nl",
+   "kind": "outlet",
+   "country": "NL",
+   "aliases": [
+    "TPO.nl",
+    "TPO"
+   ]
+  },
+  {
+   "id": "dutch-it-leaders",
+   "name": "Dutch IT Leaders",
+   "kind": "outlet",
+   "country": "NL",
+   "aliases": [
+    "Dutch IT Leaders"
+   ]
+  },
+  {
+   "id": "actuia",
+   "name": "ActuIA",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "ActuIA"
+   ]
+  },
+  {
+   "id": "php-architect",
+   "name": "php[architect]",
+   "kind": "outlet",
+   "aliases": [
+    "php[architect]"
+   ]
+  },
+  {
+   "id": "wikipedia",
+   "name": "Wikipedia (English)",
+   "kind": "outlet",
+   "aliases": [
+    "Wikipedia (English)",
+    "en.wikipedia.org"
+   ],
+   "part_of": "wikimedia"
+  },
+  {
+   "id": "arctic-wolf",
+   "name": "Arctic Wolf Labs",
+   "kind": "organisation",
+   "aliases": [
+    "Arctic Wolf Labs"
+   ]
+  },
+  {
+   "id": "armis",
+   "name": "Armis",
+   "kind": "organisation",
+   "aliases": [
+    "Armis"
+   ]
+  },
+  {
+   "id": "symantec",
+   "name": "Broadcom (Symantec)",
+   "kind": "organisation",
+   "aliases": [
+    "Broadcom (Symantec) Security"
+   ]
+  },
+  {
+   "id": "cybelangel",
+   "name": "CybelAngel",
+   "kind": "organisation",
+   "aliases": [
+    "CybelAngel"
+   ]
+  },
+  {
+   "id": "equixly",
+   "name": "Equixly",
+   "kind": "organisation",
+   "aliases": [
+    "Equixly"
+   ]
+  },
+  {
+   "id": "lorikeet",
+   "name": "Lorikeet Security",
+   "kind": "organisation",
+   "aliases": [
+    "Lorikeet Security"
+   ]
+  },
+  {
+   "id": "prophet",
+   "name": "Prophet Security",
+   "kind": "organisation",
+   "aliases": [
+    "Prophet Security"
+   ]
+  },
+  {
+   "id": "qualys",
+   "name": "Qualys",
+   "kind": "organisation",
+   "aliases": [
+    "Qualys"
+   ]
+  },
+  {
+   "id": "safeguard",
+   "name": "Safeguard",
+   "kind": "organisation",
+   "aliases": [
+    "Safeguard (vendor blog)"
+   ]
+  },
+  {
+   "id": "sansec",
+   "name": "Sansec",
+   "kind": "organisation",
+   "aliases": [
+    "Sansec"
+   ]
+  },
+  {
+   "id": "sentinelone",
+   "name": "SentinelOne",
+   "kind": "organisation",
+   "aliases": [
+    "SentinelOne"
+   ]
+  },
+  {
+   "id": "socket",
+   "name": "Socket",
+   "kind": "organisation",
+   "aliases": [
+    "Socket"
+   ]
+  },
+  {
+   "id": "tenable",
+   "name": "Tenable",
+   "kind": "organisation",
+   "aliases": [
+    "Tenable"
+   ]
+  },
+  {
+   "id": "nitter",
+   "name": "nitter.net, an X mirror",
+   "kind": "platform",
+   "aliases": [
+    "nitter.net"
+   ]
+  },
+  {
+   "id": "x",
+   "name": "X (Twitter)",
+   "kind": "platform"
+  },
+  {
+   "id": "unnamed",
+   "name": "Unnamed sources",
+   "kind": "unnamed",
+   "note": "Social posts, 'researchers' and others a source does not name. One node on purpose: an unnamed origin is a gap, not a party."
+  },
+  {
+   "id": "this-site",
+   "name": "This site (php.oct.2026.newsroom.sgit.ai)",
+   "kind": "this-site",
+   "note": "Counted from a captured file or a clone; the count is the site's own and says so."
+  },
+  {
+   "id": "gbaf",
+   "name": "Global Banking and Finance Review",
+   "kind": "outlet",
+   "aliases": [
+    "Reuters factbox, via Global Banking and Finance",
+    "globalbankingandfinance.com"
+   ]
+  },
+  {
+   "id": "nukib",
+   "name": "NÚKIB",
+   "kind": "agency",
+   "country": "CZ",
+   "member_of": "agencies",
+   "aliases": [
+    "NÚKIB"
+   ]
+  },
+  {
+   "id": "cisco",
+   "name": "Cisco",
+   "kind": "organisation",
+   "aliases": [
+    "Cisco"
+   ]
+  },
+  {
+   "id": "paloalto",
+   "name": "Palo Alto Networks",
+   "kind": "organisation",
+   "aliases": [
+    "Palo Alto Networks"
+   ]
+  },
+  {
+   "id": "qnap",
+   "name": "QNAP",
+   "kind": "organisation",
+   "aliases": [
+    "QNAP"
+   ]
+  },
+  {
+   "id": "allixsenos",
+   "name": "allixsenos",
+   "kind": "person"
+  },
+  {
+   "id": "phpocalypse-tracker",
+   "name": "PHPocalypse Tracker",
+   "kind": "project",
+   "by": [
+    "allixsenos"
+   ],
+   "aliases": [
+    "PHPocalypse Tracker (allixsenos)"
+   ]
+  },
+  {
+   "id": "unige",
+   "name": "Université de Genève",
+   "kind": "organisation",
+   "country": "CH",
+   "note": "A university; data/sources.json classes its capture as government.",
+   "aliases": [
+    "unige.ch"
+   ]
+  },
+  {
+   "id": "epfl",
+   "name": "EPFL",
+   "kind": "organisation",
+   "country": "CH",
+   "note": "A university; data/sources.json classes its capture as government.",
+   "aliases": [
+    "epfl.ch"
+   ]
+  },
+  {
+   "id": "fr-interieur",
+   "name": "French Ministry of the Interior",
+   "kind": "organisation",
+   "country": "FR",
+   "aliases": [
+    "interieur.gouv.fr"
+   ]
+  },
+  {
+   "id": "prefecture-police",
+   "name": "Préfecture de police (Paris)",
+   "kind": "organisation",
+   "country": "FR",
+   "part_of": "fr-interieur",
+   "aliases": [
+    "prefecturedepolice.interieur.gouv.fr"
+   ]
+  },
+  {
+   "id": "prefecture-nord",
+   "name": "Préfecture du Nord",
+   "kind": "organisation",
+   "country": "FR",
+   "part_of": "fr-interieur",
+   "aliases": [
+    "nord.gouv.fr"
+   ]
+  },
+  {
+   "id": "prefecture-rhone",
+   "name": "Préfecture du Rhône",
+   "kind": "organisation",
+   "country": "FR",
+   "part_of": "fr-interieur",
+   "aliases": [
+    "rhone.gouv.fr"
+   ]
+  },
+  {
+   "id": "ants",
+   "name": "ANTS (France Titres)",
+   "kind": "organisation",
+   "country": "FR",
+   "part_of": "fr-interieur",
+   "aliases": [
+    "ants.gouv.fr"
+   ]
+  },
+  {
+   "id": "latvia-gov",
+   "name": "latvija.gov.lv, the Latvian state portal",
+   "kind": "organisation",
+   "country": "LV",
+   "aliases": [
+    "latvija.gov.lv"
+   ]
+  },
+  {
+   "id": "dpa",
+   "name": "dpa (Deutsche Presse-Agentur)",
+   "kind": "outlet",
+   "country": "DE"
+  },
+  {
+   "id": "mashable",
+   "name": "Mashable",
+   "kind": "outlet"
+  },
+  {
+   "id": "j-cast",
+   "name": "J-CAST News",
+   "kind": "outlet",
+   "country": "JP"
+  },
+  {
+   "id": "yahoo",
+   "name": "Yahoo",
+   "kind": "outlet",
+   "aliases": [
+    "tech.yahoo.com"
+   ]
+  },
+  {
+   "id": "yahoo-japan",
+   "name": "Yahoo! News Japan",
+   "kind": "outlet",
+   "country": "JP",
+   "aliases": [
+    "Yahoo! News Japan (J-CAST)"
+   ]
+  },
+  {
+   "id": "20-minuten",
+   "name": "20 Minuten",
+   "kind": "outlet",
+   "country": "CH",
+   "aliases": [
+    "20 minutes / 20 Minuten",
+    "20min.ch"
+   ]
+  },
+  {
+   "id": "20minutos",
+   "name": "20minutos",
+   "kind": "outlet",
+   "country": "ES",
+   "note": "Spanish; not 20 Minuten (Switzerland).",
+   "aliases": [
+    "20Minutos"
+   ]
+  },
+  {
+   "id": "abc-au",
+   "name": "ABC News (Australia)",
+   "kind": "outlet",
+   "country": "AU",
+   "aliases": [
+    "abc.net.au"
+   ]
+  },
+  {
+   "id": "actu17",
+   "name": "Actu17",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "actu17.fr"
+   ]
+  },
+  {
+   "id": "agconnect",
+   "name": "AG Connect",
+   "kind": "outlet",
+   "country": "NL",
+   "aliases": [
+    "AG Connect"
+   ]
+  },
+  {
+   "id": "bleepingcomputer",
+   "name": "BleepingComputer",
+   "kind": "outlet",
+   "aliases": [
+    "BleepingComputer",
+    "bleepingcomputer.com"
+   ]
+  },
+  {
+   "id": "boursorama",
+   "name": "Boursorama",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "boursorama.com"
+   ]
+  },
+  {
+   "id": "bursa-hakimiyet",
+   "name": "Bursa Hakimiyet",
+   "kind": "outlet",
+   "country": "TR",
+   "aliases": [
+    "Bursa Hakimiyet"
+   ]
+  },
+  {
+   "id": "canaltech",
+   "name": "Canaltech",
+   "kind": "outlet",
+   "country": "BR",
+   "aliases": [
+    "Canaltech"
+   ]
+  },
+  {
+   "id": "clickx",
+   "name": "Clickx",
+   "kind": "outlet",
+   "country": "BE",
+   "aliases": [
+    "www.clickx.be"
+   ]
+  },
+  {
+   "id": "cnn-portugal",
+   "name": "CNN Portugal",
+   "kind": "outlet",
+   "country": "PT",
+   "note": "A brand licensed to TVI (Media Capital); not part of CNN.",
+   "aliases": [
+    "cnnportugal.iol.pt"
+   ]
+  },
+  {
+   "id": "cointelegraph-br",
+   "name": "Cointelegraph Brasil",
+   "kind": "outlet",
+   "country": "BR",
+   "aliases": [
+    "Cointelegraph Brasil"
+   ]
+  },
+  {
+   "id": "delfi-lv",
+   "name": "DELFI",
+   "kind": "outlet",
+   "country": "LV",
+   "aliases": [
+    "DELFI"
+   ]
+  },
+  {
+   "id": "edinburgh-news",
+   "name": "Edinburgh Evening News",
+   "kind": "outlet",
+   "country": "UK",
+   "note": "A separate title on The Scotsman's domain.",
+   "aliases": [
+    "edinburghnews.scotsman.com"
+   ]
+  },
+  {
+   "id": "fortune",
+   "name": "Fortune",
+   "kind": "outlet",
+   "aliases": [
+    "Fortune"
+   ]
+  },
+  {
+   "id": "global-news",
+   "name": "Global News",
+   "kind": "outlet",
+   "country": "CA",
+   "aliases": [
+    "globalnews.ca"
+   ]
+  },
+  {
+   "id": "howtogeek",
+   "name": "How-To Geek",
+   "kind": "outlet",
+   "aliases": [
+    "howtogeek.com"
+   ]
+  },
+  {
+   "id": "impress-watch",
+   "name": "INTERNET Watch (Impress)",
+   "kind": "outlet",
+   "country": "JP",
+   "aliases": [
+    "INTERNET Watch (Impress)"
+   ]
+  },
+  {
+   "id": "insiderpaper",
+   "name": "Insider Paper",
+   "kind": "outlet",
+   "aliases": [
+    "insiderpaper.com"
+   ]
+  },
+  {
+   "id": "jn-pt",
+   "name": "Jornal de Notícias",
+   "kind": "outlet",
+   "country": "PT",
+   "aliases": [
+    "jn.pt"
+   ]
+  },
+  {
+   "id": "journal-du-coin",
+   "name": "Journal du Coin",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "Journal Du Coin"
+   ]
+  },
+  {
+   "id": "koran-jakarta",
+   "name": "Koran Jakarta",
+   "kind": "outlet",
+   "country": "ID",
+   "aliases": [
+    "Koran Jakarta ®"
+   ]
+  },
+  {
+   "id": "kyodo",
+   "name": "Kyodo News",
+   "kind": "outlet",
+   "country": "JP",
+   "aliases": [
+    "共同網"
+   ]
+  },
+  {
+   "id": "lalibre",
+   "name": "La Libre Belgique",
+   "kind": "outlet",
+   "country": "BE",
+   "aliases": [
+    "La Libre.be"
+   ]
+  },
+  {
+   "id": "letemps",
+   "name": "Le Temps",
+   "kind": "outlet",
+   "country": "CH",
+   "aliases": [
+    "letemps.ch"
+   ]
+  },
+  {
+   "id": "lupa-cz",
+   "name": "Lupa.cz",
+   "kind": "outlet",
+   "country": "CZ",
+   "aliases": [
+    "Lupa.cz"
+   ]
+  },
+  {
+   "id": "orf",
+   "name": "ORF",
+   "kind": "outlet",
+   "country": "AT",
+   "aliases": [
+    "ORF"
+   ]
+  },
+  {
+   "id": "polinews",
+   "name": "Polinews",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "폴리뉴스 Polinews"
+   ]
+  },
+  {
+   "id": "rte",
+   "name": "RTÉ",
+   "kind": "outlet",
+   "country": "IE",
+   "aliases": [
+    "rte.ie"
+   ]
+  },
+  {
+   "id": "rtl-de",
+   "name": "RTL.de",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "RTL.de"
+   ]
+  },
+  {
+   "id": "rtve",
+   "name": "RTVE",
+   "kind": "outlet",
+   "country": "ES",
+   "aliases": [
+    "RTVE.es"
+   ]
+  },
+  {
+   "id": "salzburg24",
+   "name": "Salzburg24",
+   "kind": "outlet",
+   "country": "AT",
+   "aliases": [
+    "salzburg24"
+   ]
+  },
+  {
+   "id": "sankei",
+   "name": "Sankei Shimbun",
+   "kind": "outlet",
+   "country": "JP",
+   "aliases": [
+    "産経ニュース"
+   ]
+  },
+  {
+   "id": "sapo-tek",
+   "name": "SAPO Tek",
+   "kind": "outlet",
+   "country": "PT",
+   "aliases": [
+    "SAPO Tek"
+   ]
+  },
+  {
+   "id": "security-nl",
+   "name": "Security.NL",
+   "kind": "outlet",
+   "country": "NL",
+   "aliases": [
+    "Security.NL"
+   ]
+  },
+  {
+   "id": "tagesspiegel",
+   "name": "Der Tagesspiegel",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "tagesspiegel.de"
+   ]
+  },
+  {
+   "id": "techtarget",
+   "name": "TechTarget",
+   "kind": "outlet",
+   "aliases": [
+    "TechTarget"
+   ]
+  },
+  {
+   "id": "the-verge",
+   "name": "The Verge",
+   "kind": "outlet",
+   "aliases": [
+    "The Verge"
+   ]
+  },
+  {
+   "id": "tugatech",
+   "name": "TugaTech",
+   "kind": "outlet",
+   "country": "PT",
+   "aliases": [
+    "TugaTech"
+   ]
+  },
+  {
+   "id": "tuttotech",
+   "name": "TuttoTech",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "TuttoTech.net"
+   ]
+  },
+  {
+   "id": "usa-today",
+   "name": "USA Today",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "USA Today"
+   ]
+  },
+  {
+   "id": "watson-ch",
+   "name": "watson",
+   "kind": "outlet",
+   "country": "CH",
+   "aliases": [
+    "Watson"
+   ]
+  },
+  {
+   "id": "wired",
+   "name": "WIRED",
+   "kind": "outlet",
+   "aliases": [
+    "WIRED"
+   ]
+  },
+  {
+   "id": "pa-media",
+   "name": "PA Media (the Press Association)",
+   "kind": "outlet",
+   "country": "UK"
+  }
  ]
 }

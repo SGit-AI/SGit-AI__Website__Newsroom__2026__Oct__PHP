@@ -1,152 +1,232 @@
 {
- "as_of": "2026-10-22",
- "drained_now": 116,
- "events": 120,
+ "as_of": "2026-10-23",
+ "drained_now": 107,
+ "events": 1093,
  "test_or_undecryptable": 1,
- "sessions": 74,
+ "sessions": 366,
  "by_day": [
   [
    "2026-10-22",
-   120
+   416
+  ],
+  [
+   "2026-10-23",
+   677
   ]
  ],
  "by_path": [
   [
    "/",
-   36
+   154
   ],
   [
    "/index.html",
-   13
+   36
   ],
   [
    "/claims/index.html",
-   9
+   19
+  ],
+  [
+   "/sources/calif-php2shell/index.html",
+   19
+  ],
+  [
+   "/now/index.html",
+   15
   ],
   [
    "/briefings/board/index.html",
-   9
+   13
+  ],
+  [
+   "/join/",
+   13
   ],
   [
    "/sources/index.html",
-   7
-  ],
-  [
-   "/articles/where-php2shell-stands/index.html",
-   5
-  ],
-  [
-   "/questions/fix-or-wait/index.html",
-   5
+   12
   ],
   [
    "/method/index.html",
-   5
+   12
   ],
   [
-   "/exploitation/index.html",
-   5
+   "/explained/index.html",
+   12
   ],
   [
-   "/billing/index.html",
-   3
+   "/team/index.html",
+   11
   ],
   [
-   "/readings/index.html",
-   3
-  ],
-  [
-   "/questions/index.html",
-   2
+   "/start/index.html",
+   11
   ],
   [
    "/account/index.html",
-   2
-  ],
-  [
-   "/admin/telemetry/index.html",
-   1
-  ],
-  [
-   "/admin/vault/index.html",
-   1
-  ],
-  [
-   "/admin/board/index.html",
-   1
-  ],
-  [
-   "/briefings/developer/index.html",
-   1
-  ],
-  [
-   "/review/index.html",
-   1
-  ],
-  [
-   "/review/ui/index.html",
-   1
-  ],
-  [
-   "/numbers/index.html",
-   1
-  ],
-  [
-   "/timeline/index.html",
-   1
-  ],
-  [
-   "/articles/php2shell-in-perspective/index.html",
-   1
-  ],
-  [
-   "/admin/versions.html",
-   1
-  ],
-  [
-   "/articles/index.html",
-   1
-  ],
-  [
-   "/briefings/journalist/index.html",
-   1
-  ],
-  [
-   "/briefings/ciso/index.html",
-   1
-  ],
-  [
-   "/briefings/comms/index.html",
-   1
+   9
   ],
   [
    "/affected/software.html",
-   1
+   9
   ],
   [
-   "/briefings/security/index.html",
-   1
+   "/factcheck/index.html",
+   9
+  ],
+  [
+   "/graph/index.html",
+   8
+  ],
+  [
+   "/collaborators/index.html",
+   8
+  ],
+  [
+   "/collaborators/",
+   8
+  ],
+  [
+   "/articles/where-php2shell-stands/index.html",
+   7
+  ],
+  [
+   "/admin/versions.html",
+   7
+  ],
+  [
+   "/exploitation/index.html",
+   7
+  ],
+  [
+   "/flaws/index.html",
+   7
+  ],
+  [
+   "/grc/graph/index.html",
+   7
+  ],
+  [
+   "/impact/index.html",
+   7
+  ],
+  [
+   "/compromise/index.html",
+   7
+  ],
+  [
+   "/briefings/pm/index.html",
+   7
+  ],
+  [
+   "/review/index.html",
+   6
+  ],
+  [
+   "/review/ui/index.html",
+   6
+  ],
+  [
+   "/questions/fix-or-wait/index.html",
+   6
+  ],
+  [
+   "/questions/index.html",
+   5
+  ],
+  [
+   "/briefings/ciso/index.html",
+   5
+  ],
+  [
+   "/readings/perplexity-2026-10-22/index.html",
+   5
+  ],
+  [
+   "/team/vicky/index.html",
+   5
+  ],
+  [
+   "/storyboards/briefing-2026-10-22/index.html",
+   5
+  ],
+  [
+   "/briefings/everyone/index.html",
+   5
+  ],
+  [
+   "/playbook/index.html",
+   5
+  ],
+  [
+   "/glossary/index.html",
+   5
+  ],
+  [
+   "/sources/certeu-sa-2026-018/index.html",
+   5
+  ],
+  [
+   "/admin/telemetry/index.html",
+   4
+  ],
+  [
+   "/admin/vault/index.html",
+   4
   ]
  ],
  "by_country": [
   [
    "US",
-   78
+   436
+  ],
+  [
+   "(none)",
+   345
   ],
   [
    "GB",
-   22
+   136
   ],
   [
    "PT",
-   8
+   87
+  ],
+  [
+   "NO",
+   24
+  ],
+  [
+   "ES",
+   23
+  ],
+  [
+   "NL",
+   6
+  ],
+  [
+   "IE",
+   6
+  ],
+  [
+   "FR",
+   5
+  ],
+  [
+   "DE",
+   5
   ],
   [
    "AU",
    4
   ],
   [
-   "NL",
+   "CA",
+   3
+  ],
+  [
+   "TR",
    3
   ],
   [
@@ -154,33 +234,77 @@
    2
   ],
   [
-   "(none)",
+   "AT",
    2
   ],
   [
-   "IE",
+   "BE",
+   2
+  ],
+  [
+   "PK",
+   1
+  ],
+  [
+   "IT",
+   1
+  ],
+  [
+   "UZ",
+   1
+  ],
+  [
+   "EG",
    1
   ]
  ],
  "by_region": [
   [
    "California",
-   61
+   367
+  ],
+  [
+   "(none)",
+   346
   ],
   [
    "England",
-   22
-  ],
-  [
-   "Virginia",
-   10
+   133
   ],
   [
    "Lisbon",
-   6
+   85
+  ],
+  [
+   "Virginia",
+   32
+  ],
+  [
+   "Madrid",
+   23
   ],
   [
    "Florida",
+   11
+  ],
+  [
+   "Oslo",
+   8
+  ],
+  [
+   "Iowa",
+   7
+  ],
+  [
+   "Leinster",
+   6
+  ],
+  [
+   "Akershus",
+   6
+  ],
+  [
+   "New York",
    5
   ],
   [
@@ -188,7 +312,35 @@
    4
   ],
   [
-   "(none)",
+   "Hessen",
+   4
+  ],
+  [
+   "Vestland",
+   4
+  ],
+  [
+   "Washington",
+   3
+  ],
+  [
+   "Arizona",
+   3
+  ],
+  [
+   "Pennsylvania",
+   3
+  ],
+  [
+   "British Columbia",
+   3
+  ],
+  [
+   "Ile-de-France",
+   3
+  ],
+  [
+   "Istanbul",
    3
   ],
   [
@@ -196,42 +348,82 @@
    2
   ],
   [
-   "Washington",
-   2
-  ],
-  [
    "North Brabant",
    2
   ],
   [
-   "Central Singapore",
-   1
+   "New Jersey",
+   2
   ],
   [
-   "Groningen",
-   1
-  ],
-  [
-   "Leinster",
-   1
+   "Nouvelle-Aquitaine",
+   2
   ]
  ],
  "by_city": [
   [
+   "(none)",
+   345
+  ],
+  [
+   "Mountain View",
+   214
+  ],
+  [
    "San Francisco",
-   56
-  ],
-  [
-   "London",
-   17
-  ],
-  [
-   "Ashburn",
-   6
+   140
   ],
   [
    "Lisbon",
+   85
+  ],
+  [
+   "London",
+   70
+  ],
+  [
+   "Madrid",
+   23
+  ],
+  [
+   "Bridgwater",
+   15
+  ],
+  [
+   "Ashburn",
+   14
+  ],
+  [
+   "Boydton",
+   10
+  ],
+  [
+   "Manchester",
+   10
+  ],
+  [
+   "Sunbury-on-Thames",
+   8
+  ],
+  [
+   "Oslo",
+   8
+  ],
+  [
+   "San Jose",
    6
+  ],
+  [
+   "Pembroke Pines",
+   5
+  ],
+  [
+   "Northampton",
+   5
+  ],
+  [
+   "Nesoddtangen",
+   5
   ],
   [
    "Dulles",
@@ -242,114 +434,166 @@
    4
   ],
   [
-   "Pembroke Pines",
+   "Cricklewood",
    4
   ],
   [
-   "Nazare",
-   2
+   "Frankfurt am Main",
+   4
   ],
   [
-   "San Jose",
-   2
+   "Council Bluffs",
+   4
   ],
   [
-   "Singapore",
-   2
-  ],
-  [
-   "Seattle",
-   2
-  ],
-  [
-   "Oosterhout",
-   2
-  ],
-  [
-   "(none)",
-   2
-  ],
-  [
-   "Cricklewood",
-   2
-  ],
-  [
-   "Palm Springs",
-   1
-  ],
-  [
-   "Groningen",
-   1
-  ],
-  [
-   "St Agnes",
-   1
-  ],
-  [
-   "Yuba City",
-   1
+   "Oak Hill",
+   4
   ],
   [
    "Hayes",
-   1
+   3
   ],
   [
    "Dublin",
-   1
+   3
   ],
   [
-   "Sunnyvale",
-   1
-  ],
-  [
-   "Margate",
-   1
-  ],
-  [
-   "Cambridge",
-   1
+   "Des Moines",
+   3
   ]
  ],
  "by_referrer": [
   [
    "(none)",
-   100
+   892
   ],
   [
    "php.oct.2026.newsroom.sgit.ai",
-   19
+   155
+  ],
+  [
+   "www.linkedin.com",
+   14
+  ],
+  [
+   "www.kode24.no",
+   14
   ],
   [
    "newsroom.sgit.ai",
+   6
+  ],
+  [
+   "www.google.com",
+   6
+  ],
+  [
+   "com.linkedin.android",
+   2
+  ],
+  [
+   "oct.2026.newsroom.sgit.ai",
+   2
+  ],
+  [
+   "teams.public.onecdn.static.microsoft",
+   1
+  ],
+  [
+   "com.google.android.gm",
    1
   ]
  ],
  "by_screen": [
   [
-   "desktop",
-   80
+   "phone",
+   572
   ],
   [
-   "phone",
-   40
+   "desktop",
+   501
+  ],
+  [
+   "tablet",
+   20
   ]
  ],
  "by_version": [
+  [
+   "v0.8.1",
+   301
+  ],
+  [
+   "v0.7.0",
+   89
+  ],
+  [
+   "v0.10.11",
+   82
+  ],
+  [
+   "v0.8.4",
+   58
+  ],
+  [
+   "v0.5.5",
+   52
+  ],
+  [
+   "v0.8.2",
+   41
+  ],
+  [
+   "v0.9.1",
+   35
+  ],
+  [
+   "v0.8.0",
+   33
+  ],
   [
    "v0.2.8",
    32
   ],
   [
+   "v0.5.9",
+   29
+  ],
+  [
    "v0.2.11",
-   21
+   22
+  ],
+  [
+   "v0.10.10",
+   22
+  ],
+  [
+   "v0.6.0",
+   19
+  ],
+  [
+   "v0.10.3",
+   19
   ],
   [
    "v0.2.12",
-   14
+   18
   ],
   [
    "v0.2.14",
-   13
+   18
+  ],
+  [
+   "v0.10.6",
+   17
+  ],
+  [
+   "(none)",
+   15
+  ],
+  [
+   "v0.10.5",
+   14
   ],
   [
    "v0.2.9",
@@ -360,28 +604,20 @@
    11
   ],
   [
-   "v0.2.4",
-   5
+   "v0.9.3",
+   11
   ],
   [
-   "v0.2.2",
-   4
+   "v0.10.2",
+   11
   ],
   [
-   "v0.2.6",
-   3
+   "v0.10.7",
+   11
   ],
   [
-   "v0.2.10",
-   2
-  ],
-  [
-   "v0.2.13",
-   2
-  ],
-  [
-   "v0.2.3",
-   1
+   "v0.10.9",
+   11
   ]
  ],
  "note": "Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault."

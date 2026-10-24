@@ -61,14 +61,14 @@ A model of what this story cost to assemble, in units counted from the vault and
 
 | Unit | Count | Assumed price | £ | Why that unit |
 |---|---|---|---|---|
-| sources captured | 144 | 5p | 7.20 | one headless-browser capture with six files and their hashes |
-| captures (dated page states) | 137 | 5p | 6.85 | the same page captured again is a new unit, because the series is the record |
-| source notes written | 143 | 20p | 28.60 | an agent reading a page and writing what it says, who says it and what is odd |
+| sources captured | 227 | 5p | 11.35 | one headless-browser capture with six files and their hashes |
+| captures (dated page states) | 222 | 5p | 11.10 | the same page captured again is a new unit, because the series is the record |
+| source notes written | 186 | 20p | 37.20 | an agent reading a page and writing what it says, who says it and what is odd |
 | claims traced | 70 | 10p | 7.00 | one claim, its status and its sources |
 | timeline events dated | 68 | 5p | 3.40 | one event, its time, its source and whether the time was stated or converted |
-| pages built | 101 | 0p | 0.00 | the build is deterministic and costs nothing to run again |
+| pages built | 132 | 0p | 0.00 | the build is deterministic and costs nothing to run again |
 
-Total at those assumptions: **£53.05**. The counts are from the data files named; the prices are the site's assumptions and a reader is invited to substitute their own. What the model leaves out is the editor's time and the model inference behind each agent run, neither of which is counted anywhere yet; the honest column on this is *not measured*.
+Total at those assumptions: **£70.05**. The counts are from the data files named; the prices are the site's assumptions and a reader is invited to substitute their own. What the model leaves out is the editor's time and the model inference behind each agent run, neither of which is counted anywhere yet; the honest column on this is *not measured*.
 
 ## The prices, as data
 
@@ -76,4 +76,4 @@ Total at those assumptions: **£53.05**. The counts are from the data files name
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/billing/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/billing/index.html

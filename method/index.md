@@ -12,7 +12,7 @@ This site is the newsroom's [PHP flaws section](https://newsroom.sgit.ai/php-fla
 
 ## The evidence vault
 
-A private, encrypted sgit vault, opened at 2026-10-22T08:03Z, written to by 5 agents and the editor. It holds 144 sources and 137 captures at commit `200d08971937`. Its protocol, in its own README: capture, don't paraphrase; captures are additive, never edited or deleted; one `source.json` and one `notes.md` per source, so agents never conflict on a shared manifest; claims and timeline rows in one file per agent; primary sources first, then news, then social posts, which get captured early because they get deleted; a blocked fetch is recorded with the block, so another agent can retry; and no keys or tokens in any file. The vault is private because it holds verbatim third-party pages for the record; this site publishes their hashes, their URLs and short quotations, and never the pages.
+A private, encrypted sgit vault, opened at 2026-10-22T08:03Z, written to by 7 agents and the editor. It holds 227 sources and 222 captures at commit `f3c5db0d9873`. Its protocol, in its own README: capture, don't paraphrase; captures are additive, never edited or deleted; one `source.json` and one `notes.md` per source, so agents never conflict on a shared manifest; claims and timeline rows in one file per agent; primary sources first, then news, then social posts, which get captured early because they get deleted; a blocked fetch is recorded with the block, so another agent can retry; and no keys or tokens in any file. The vault is private because it holds verbatim third-party pages for the record; this site publishes their hashes, their URLs and short quotations, and never the pages.
 
 ## Five words for how far a claim can be trusted
 - confirmed two or more primary sources agree, or the fact was counted from a captured file
@@ -46,4 +46,4 @@ Nothing here is specific to PHP. The vault protocol, the capture tool, the five 
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/method/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/method/index.html

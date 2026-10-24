@@ -7,8 +7,11 @@ Read this before your first commit, and again when the editor says it changed. I
 - Work on a branch of your own: `claude/<what>-<session>` (the estate's convention, coding.sgit.ai process rules) or `<role>/<topic>` (for example `factcheck/desk`). One branch per piece of work.
 - **Push after every step that builds**, and at least every 30 minutes while you work. Work in progress is welcome: say so in the commit message ("not a release; run 1 in progress"). A branch nobody can see cannot be merged, reviewed or built on.
 - **Take in dev often**: `git fetch origin dev && git merge origin/dev`, then rebuild (`python3 admin/build/build.py`). Never hand-merge a generated page; resolve the source and rebuild. Never rewrite history on a branch you have pushed.
-- **Do not push to `dev`.** dev@php.newsroom carries branches into dev, resolves what collides, runs the gate and releases (`admin/build/release.sh`). The exception is an explicit instruction from the editor. This is coding.sgit.ai's rule too: agents never push to dev directly.
-- Say what is for dev in the commit: `Not a release: for dev@php.newsroom to carry into the next release.` and an `Agent: <your name>` line.
+- **Release your own work to `dev`.** The editor's rule of 23 October 2026, replacing the one before it: "you should push to dev". When a piece of work is finished and the gate passes on your branch, release it yourself with `admin/build/release.sh "<what changed and why>"`, the only way anything reaches `dev`. It takes in what other agents released first, rebuilds, runs the gate and the security check, pushes, and confirms the live site serves the new version. Do not leave finished work on a branch waiting for someone else to carry it: a branch that waited eighteen hours is why the rule changed.
+- **Before you release:** take in `dev` and rebuild; run `python3 admin/build/validate.py` and `python3 admin/build/security_check.py`; read your own diff. If `release.sh` stops on a conflict in a source file another agent changed, merge it by hand (keep both sides' rows; renumber only your own board rows), rebuild and run it again. Never force-push, never `--no-verify`, never push to `main`.
+- **Still for review first, not for you to release:** changes to `admin/build/validate.py`, `admin/build/security_check.py`, `admin/build/release.sh`, `.github/workflows/` and `admin/security/` go to your branch, for security@php.newsroom's review and the editor's go (CLAUDE.md). dev@php.newsroom still looks after the build and resolves what collides when asked.
+- **Release only what is in your scope.** Each agent's scope (what it may change, release, read and hold) is to be set by an agent behaviour policy of its own, written by abp@ and security@php.newsroom from the draft in `admin/security/abp/MANDATE.md` and agreed by the editor (board). Until yours exists, your scope is what your role owns on `/team/<you>/`: anything outside it goes to your branch and to the agent that owns it.
+- Every release commit carries an `Agent: <your name>` line (`RELEASE_TRAILER`). Work in progress on your branch says so: `Not a release: work in progress.`
 
 ## 2. What a good commit contains
 
@@ -49,6 +52,55 @@ From sgit.ai/security and this site's own rules; the gate and `release.sh` check
 - **A model is given data, not instructions**: page text handed to a model is quoted as material; the reader's own key is used from the reader's browser and kept in their vault, never in this repository or in telemetry.
 - **No exploit or trigger-path content**: the code analysis stays on the fix, the versions and the defence.
 
-## 6. Where to look first
+## 6. Vaults and keys: every vault listed, every key sealed
+
+Added by conductor@php.newsroom at the editor's request, 23 October 2026: "a page on the website that lists the agent name and the vaults they created, just the vault ID, which is public anyway; it's the vault key that we can't share"; and "when I say send me a vault key or a QR code, every agent does it with the instructions on pki.sgit.ai".
+
+**When you make a vault**
+
+1. In the same commit, add a row to your own file, `data/vault-register/<you>.json` (make it if it is new: copy the shape of `conductor.json`): `id` (the eight-character vault ID), `what` (one line), `created` (the date), `key_sealed_to_root`. `/team/vaults/` lists every agent's vaults from these files. The build refuses anything in `id` that is not a bare vault ID. Never write a key, a read key you were not told to publish, an enum key, a token or a passphrase in it.
+2. Before your session ends, seal the vault key to the root:
+
+```
+curl -sO https://pki.sgit.ai/agents/pki-agent.mjs          # into your scratchpad, not the repository
+node pki-agent.mjs pin sha256:db7f79fdd87e030a             # the root, from CLAUDE.md, once per session
+node pki-agent.mjs seal --from-vault <your clone> --name "<vault id> vault key" --expires 14 \
+     --qr <scratchpad>/<vault id>.png --qr-link
+```
+
+   `seal --from-vault` reads the key straight from sgit and never prints it. It prints a `https://pki.sgit.ai/m/#m1.…` link that only the root's passkey opens. Put the date in `key_sealed_to_root` and tell the editor the link and when it expires.
+
+**Record the keys you hold, not only the vaults you made**
+
+In the same file, the `holds` list: one row for every key you were given or made, `{"id": "<vault id>", "key": "vault key" | "read key" | "append token", "from": "<who gave it, or 'made it'>", "since": "<date>"}`. Never the key itself: the build refuses anything in `key` but those three words. This is what lets the editor start a new session for you, or for an agent that takes over your work, with exactly the keys it needs. When a key is taken back or rotated, remove the row.
+
+**The vault key is the whole boundary**
+
+Whoever holds a vault's key must be able to do everything that vault is for, including draining its lane and decrypting what arrives: a vault app, the editor or another agent with the key, without anything from your session. That is sgit.ai's convention, "the vault key is the only secret" (sgit.ai/docs/append-lane-messaging.md, section 7.1), and `admin/build/postmaster.py` implements it here:
+
+- the lane's enum key and the key pair's passphrase are derived from the vault's write key (HMAC-SHA256 with the labels in that file), never stored and never random;
+- the key pair that decrypts what arrives lives inside the vault, at `.vault/postmaster/front-door-keypair/`, its private halves encrypted under that derived passphrase;
+- `.vault/postmaster/lane.json` says which lane, which recipient key, and each sender's token (published, or derived from the vault key).
+
+So: when you make a vault with a lane, set it up that way from the start. Never leave an enum key, a passphrase or a private key only in your session or your scratchpad: when your session ends, the vault would be undrainable. If your session's permissions stop you writing the key pair into the vault, say so and stop.
+
+**When the editor asks you for a key, or a QR code of one**
+
+- Seal it as above and send him two things: the sealed link, and the QR image (`--qr <file>.png --qr-link` makes one a phone's camera opens; send the file, do not describe it). Say which vault, and when the link expires.
+- Any other secret (an enum key, a lane token, a passphrase) goes the same way: `seal --file <a file in your scratchpad> --name "…"`, then delete the file.
+- Never the key itself: not in your reply, not in a file in the repository, not on a page, not in a commit message, not in a message to another agent. A vault ID is fine anywhere.
+- If your session's permissions stop pki-agent, say so to the editor and stop. There is no plain-text fallback.
+
+## 7. Running on a schedule: the schedule vault
+
+The editor's rule of 23 October 2026 (the brief: `admin/content/briefs/2026-10-23__brief__the-schedule-vault.md`). Everything an agent does on a schedule is driven and recorded by the public schedule vault, `weic8imn`, which `/team/schedule/` shows live.
+
+- **Your schedule** is `schedules/<you>.json` in that vault: when you are woken, on which model (Sonnet for routine runs), under which agent behaviour policy, active or paused. It is created or changed only with the editor's go.
+- **On every wake:** `sgit pull` the vault; `python3 tools/schedule.py due <you>`. Nothing due: `tools/schedule.py idle <you>`, `index`, commit, push, and stop, saying so in one line. Otherwise `start` the due tasks, do what each brief says and nothing else, `finish` with the outcome, a summary and your log (`--log`), `index`, commit, push. A run that changes something a reader can see also leaves an article on the site, named with `--article`.
+- **No task, no work.** If your schedule wakes you and nothing is queued for you, you do nothing. Never queue work for yourself to keep a schedule busy; the editor's session or the conductor queues tasks.
+- **It is public.** Never a key, a token, a passphrase, a sealed link or a personal detail in a task, a summary or a log; the tool refuses the obvious shapes, you are responsible for the rest.
+- **Never create a scheduled task, a session or a workflow yourself** without the editor's go (CLAUDE.md). When he gives it, add or update your schedule in the vault in the same breath, so the page shows it.
+
+## 8. Where to look first
 
 `README.md` (how the site is built and released), `REALITY.md` (what exists), `/admin/board/` (what is open and whose), `/team/` (who is who), `/admin/roles/` (the rules each role enforces), this file.

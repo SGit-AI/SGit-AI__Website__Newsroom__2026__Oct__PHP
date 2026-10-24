@@ -10,6 +10,8 @@ In plain English What an organisation that runs PHP should do, step by step, mer
 
 Every agency's advice, merged into one ordered list, with the sentence each step comes from. This is a guide to what the sources say, assembled by agents and not reviewed by your security team; the php.net advisory is the authority and your national agency is the one that applies to you. Taking a system offline is the last step on every list, and the one list where it comes earlier is the one that says *isolate, then migrate*.
 
+To do step 0 and see what steps 1 to 4 mean for your own systems, describe them in [your stack](../stack/index.html): it checks each PHP runtime against both flaws and shows what an attacker who reaches one could touch.
+
 - 0 ### Know what you run Inventory every system with PHP serving web requests, including the ones you did not build: appliances, vendor products, hosting panels, the thing marketing bought. Do not limit discovery to old versions. Note the SAPI (mod_php, FPM, cgi, FrankenPHP, LiteSpeed) and the PHP branch.[NCSC UK](../sources/ncsc-news-php/index.html) [CISA](../sources/cisa-alert-php-20261021/index.html) [NSA](../sources/nsa-press-php-4630238/index.html) [NCSC-NL](../sources/ncsc-nl-php2shell-software-list/index.html)
 - 1 ### Patch, internet-facing first Update to 8.5.12, 8.4.27, 8.3.36 or 8.2.35, or your distribution's backported package. Restart every worker; rebuild containers. For 7.4, 8.0 and 8.1 there is a source backport branch and no release: plan the migration now. Some third-party repositories (remirepo) had no packages on release day.[php.net](../sources/php-net-advisory/index.html) [BACS](../sources/ch-bacs-warnung-php/index.html) [php-src](../sources/github-php-src-branch-7.4-backport/index.html) [CERT-EU](../sources/certeu-sa-2026-018/index.html)
 - 2 ### If you cannot patch today, apply the temporary mitigations memory_limit=-1 where applications cannot override it; low post_max_size with proxy-level request limits; a cgroup memory limit instead of RLIMIT; session.upload_progress.enabled=0 then restart every worker; on 8.5 fatal_error_backtraces=0; pm.max_requests=1 on FPM. Each blocks a known path and none makes the installation safe.[php.net](../sources/php-net-advisory/index.html) [PHP](../sources/github-ghsa-6wmf-4rv5-p3rp/index.html) [NCSC-NL](../sources/ncsc-nl-php2shell/index.html)
@@ -26,4 +28,4 @@ The technical detail behind each step is on [the two flaws](../flaws/index.html)
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/playbook/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/playbook/index.html

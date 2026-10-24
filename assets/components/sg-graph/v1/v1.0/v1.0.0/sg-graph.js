@@ -18,8 +18,8 @@
  *   controls "none" hides the toolbar, for a small fixed figure
  *
  * Every node is a control: click, Enter or Space puts it in focus. A node with an href has a link to its page;
- * a node with a `graph` opens that graph (the fractal step: a new ontology joined by a named edge), and the trail
- * leads back out. The page's URL is never changed, so it works the same inside a vault host.
+ * a node with a `zoom` list ([{ graph, focus, label }], or the older `graph` and `graph_focus`) opens those graphs
+ * (the fractal step: a new ontology joined by a named edge, or a bridge to a sibling graph), and the trail leads back out. The page's URL is never changed, so it works the same inside a vault host.
  *
  * Without JavaScript the element's own children show: put a linked list there (the build's sg_graph() helper does).
  * Data from the graph is only ever set as text, and an href only if it is http(s) or relative.
@@ -82,15 +82,14 @@ export class SgGraph extends SgComponent {
         if (this.getAttribute('controls') === 'none') this.$('[data-role="bar"]').hidden = true
         const data = await this._read(this.getAttribute('src'))
         this._open(data, this.getAttribute('src') || '', 'the graph')
-        const verbs = (this.getAttribute('verbs') || '').split(',').map(v => v.trim()).filter(Boolean)
-        this._filter = { kinds: null, verbs: verbs.length ? new Set(verbs) : null }
+        const keep = (this.getAttribute('verbs') || '').split(',').map(v => v.trim()).filter(Boolean)
+        if (keep.length) this._filter.hide = new Set(this._G.edges.map(e => e.verb).filter(v => !keep.includes(v)))
         this._wire()
+        if (this._pending) { const id = this._pending; this._pending = null; this.focusOn(id, { trail: false }) }
         this._ro = new ResizeObserver(() => this._resized())
         this._ro.observe(this.$('[data-role="stage"]'))
         this._render()
     }
-
-    disconnectedCallback() { if (this._ro) this._ro.disconnect() }
 
     attributeChangedCallback(name, old, value) {
         if (!this._G || old === value) return
@@ -101,6 +100,7 @@ export class SgGraph extends SgComponent {
     // ------------------------------------------------------------------------------------ public
 
     focusOn(id, { trail = true } = {}) {
+        if (!this._G) { this._pending = id; return false }
         if (!this._G.byId.has(id)) return false
         if (trail && this._focus && this._focus !== id) this._trail.push(this._focus)
         if (this._trail.length > 12) this._trail.shift()
@@ -113,6 +113,7 @@ export class SgGraph extends SgComponent {
     }
 
     pathTo(id) {
+        if (!this._G) return null
         this._target = this._G.byId.has(id) ? id : null
         this._render()
         return this._target ? core.path(this._G, this._focus, id, this._filter) : null
@@ -133,8 +134,13 @@ export class SgGraph extends SgComponent {
 
     _open(data, src, label) {
         const G = core.load(data)
-        if (!data.ontology && this._G) G.ontology = this._G.ontology
+        // an inner graph keeps its own words and borrows the outer graph's only for what it does not name
+        if (this._G) {
+            G.ontology.kinds = { ...this._G.ontology.kinds, ...G.ontology.kinds }
+            G.ontology.verbs = { ...this._G.ontology.verbs, ...G.ontology.verbs }
+        }
         this._G = G
+        this._filter = { kinds: null, verbs: null, hide: new Set() }
         this._src = src
         this._graphLabel = (data && data.title) || label
         const want = this._stack.length ? this._zoomFocus : this.getAttribute('focus')
@@ -148,24 +154,31 @@ export class SgGraph extends SgComponent {
         return best
     }
 
-    async _zoom(node) {
+    async _zoom(node, z = node.zoom[0]) {
+        if (this._zooming || !z) return
+        this._zooming = true
         try {
-            const url = new URL(this._href(node.graph, true), document.baseURI).href
+            const u = new URL(this._href(z.graph, true), document.baseURI)
+            // a zoom comes from the graph's data: only this site's own files are opened, never another site's
+            if (u.origin !== location.origin) throw new Error(`${u.origin} is not this site`)
+            const url = u.href
             const data = await this._read(url)
-            this._stack.push({ G: this._G, focus: this._focus, trail: this._trail, label: this._graphLabel, src: this._src })
-            this._zoomFocus = node.graph_focus
-            this._open(data, url, node.label)
-            this.emit('sg:graph.open', { id: node.id, graph: node.graph })
+            this._stack.push({ G: this._G, focus: this._focus, trail: this._trail, label: this._graphLabel, src: this._src, filter: this._filter })
+            this._zoomFocus = z.focus
+            this._open(data, url, z.label || node.label)
+            this.emit('sg:graph.open', { id: node.id, graph: z.graph, focus: z.focus })
             this._render()
         } catch (err) {
             this._say(`Could not open the inner graph: ${err.message}`)
+        } finally {
+            this._zooming = false
         }
     }
 
     _unzoom(to) {
         while (this._stack.length > to) {
             const back = this._stack.pop()
-            Object.assign(this, { _G: back.G, _focus: back.focus, _trail: back.trail, _graphLabel: back.label, _src: back.src })
+            Object.assign(this, { _G: back.G, _focus: back.focus, _trail: back.trail, _graphLabel: back.label, _src: back.src, _filter: back.filter })
         }
         this._render()
     }
@@ -183,7 +196,7 @@ export class SgGraph extends SgComponent {
         find.addEventListener('input', () => this._hits(find.value))
         find.addEventListener('keydown', ev => {
             if (ev.key === 'Enter') { const first = this.$('[data-role="hits"] button'); if (first) first.click() }
-            if (ev.key === 'Escape') { find.value = ''; this._hits('') }
+            if (ev.key === 'Escape') { find.value = ''; this._picking = false; find.placeholder = 'Find a node'; this._hits('') }
         })
         for (const b of this.$$('[data-view]')) b.addEventListener('click', () => { this.setAttribute('view', b.dataset.view) })
         const depth = this.$('[data-role="depth"]')
@@ -200,6 +213,7 @@ export class SgGraph extends SgComponent {
             box.append(h('button', { type: 'button', on: { click: () => {
                 if (this._picking) { this._picking = false; this.pathTo(n.id) } else this.focusOn(n.id)
                 this.$('[data-role="find"]').value = ''
+                this.$('[data-role="find"]').placeholder = 'Find a node'
                 box.hidden = true
             } } }, h('span', { class: 'k', text: this._kindLabel(n.kind) }), ' ', clip(n.label, 90)))
         }
@@ -225,11 +239,20 @@ export class SgGraph extends SgComponent {
 
     _render() {
         if (!this._G) return
+        const had = this.shadowRoot.activeElement
+        const keep = had && (had.dataset.id ? `[data-id="${CSS.escape(had.dataset.id)}"]` : had.dataset.verb ? `[data-verb="${CSS.escape(had.dataset.verb)}"]` : null)
+        this._paint()
+        // the node walked to is where the keyboard goes next; a chip toggled keeps it
+        const back = keep && (had.dataset.id ? this.$(`.n.focus`) || this.$(keep) : this.$(keep))
+        if (back) back.focus({ preventScroll: true })
+    }
+
+    _paint() {
         const view = this._view()
         for (const b of this.$$('[data-view]')) b.setAttribute('aria-pressed', String(b.dataset.view === view))
         this._root.dataset.view = view
         this._renderTrail()
-        const sub = view === 'map' && this._G.nodes.length <= 400 && !this._filter.verbs
+        const sub = view === 'map' && this._G.nodes.length <= 400 && !this._filter.hide.size
             ? { nodes: this._G.nodes, edges: this._G.edges, hop: new Map(), truncated: false }
             : core.ego(this._G, this._focus, this._depth(), this._filter, this._max())
         const path = this._target ? core.path(this._G, this._focus, this._target, this._filter) : null
@@ -241,7 +264,7 @@ export class SgGraph extends SgComponent {
         this._renderList()
         const c = core.census(this._G)
         this._say(`${this._G.nodes.length} nodes, ${this._G.edges.length} edges, ${c.verbs.length} verbs` +
-            (sub.truncated ? `; ${sub.nodes.length} drawn, the rest are in the list` : '') +
+            (sub.truncated ? `; ${sub.nodes.length} drawn, the most this view draws: step to a node or lower the depth to see the rest` : '') +
             (this._G.dropped ? `; ${this._G.dropped} edges without a verb or an end were left out` : ''))
     }
 
@@ -263,14 +286,11 @@ export class SgGraph extends SgComponent {
         box.replaceChildren()
         const here = new Map()
         for (const r of core.neighbours(this._G, this._focus, null)) here.set(r.edge.verb, (here.get(r.edge.verb) || 0) + 1)
-        if (here.size < 2 && !this._filter.verbs) return
+        if (here.size < 2 && !this._filter.hide.size) return
         for (const [verb, n] of [...here].sort((a, b) => core.cmp(a[0], b[0]))) {
-            const on = !this._filter.verbs || this._filter.verbs.has(verb)
-            box.append(h('button', { type: 'button', class: 'chip', 'aria-pressed': String(on), on: { click: () => {
-                const all = new Set(here.keys())
-                const cur = this._filter.verbs ? new Set(this._filter.verbs) : all
-                cur.has(verb) ? cur.delete(verb) : cur.add(verb)
-                this._filter.verbs = cur.size === 0 || [...all].every(v => cur.has(v)) ? null : cur
+            const on = !this._filter.hide.has(verb)
+            box.append(h('button', { type: 'button', class: 'chip', 'data-verb': verb, 'aria-pressed': String(on), on: { click: () => {
+                on ? this._filter.hide.add(verb) : this._filter.hide.delete(verb)
                 this._render()
             } } }, ((this._G.ontology.verbs || {})[verb] || {}).label || verb, h('span', { class: 'n', text: ` ${n}` })))
         }
@@ -294,7 +314,11 @@ export class SgGraph extends SgComponent {
             pos = new Map([...L.pos].map(([id, p]) => [id, { x: p.x, y: p.y + 24 }]))
             columns = L.columns
         } else if (view === 'map') {
-            pos = core.force(this._G, sub, w, H)
+            // the force layout is the costly one: the same nodes at the same size are laid out once
+            const key = `${w}x${H}|${sub.nodes.map(n => n.id).join('|')}`
+            this._layouts = this._layouts || new Map()
+            if (!this._layouts.has(key)) { if (this._layouts.size > 8) this._layouts.clear(); this._layouts.set(key, core.force(this._G, sub, w, H)) }
+            pos = this._layouts.get(key)
         } else {
             pos = core.radial(this._G, sub, this._focus, w, H)
         }
@@ -324,10 +348,10 @@ export class SgGraph extends SgComponent {
             const p = pos.get(n.id)
             if (!p) continue
             const focus = n.id === this._focus
-            const g = s('g', { class: `n k-${slug(n.kind)}${n.status && STATUS.includes(n.status) ? ' s-' + n.status : ''}${focus ? ' focus' : ''}${pathNodes.has(n.id) ? ' on-path' : ''}${n.graph ? ' has-graph' : ''}`,
+            const g = s('g', { 'data-id': n.id, class: `n k-${slug(n.kind)}${n.status && STATUS.includes(n.status) ? ' s-' + n.status : ''}${focus ? ' focus' : ''}${pathNodes.has(n.id) ? ' on-path' : ''}${n.zoom.length ? ' has-graph' : ''}`,
                 transform: `translate(${p.x.toFixed(1)},${p.y.toFixed(1)})`, tabindex: '0', role: 'button',
                 'aria-label': `${this._kindLabel(n.kind)}: ${n.label}${focus ? ' (in focus)' : ''}` })
-            g.append(s('circle', { r: focus ? 9 : n.graph ? 7 : 5.5 }))
+            g.append(s('circle', { r: focus ? 9 : n.zoom.length ? 7 : 5.5 }))
             const title = s('title')
             title.textContent = `${this._kindLabel(n.kind)}: ${n.label}`
             g.append(title)
@@ -339,20 +363,18 @@ export class SgGraph extends SgComponent {
                 t.textContent = clip(n.label, under ? Math.floor(w / 7.5) : focus ? 48 : narrow ? 22 : view === 'layers' ? Math.max(14, Math.floor(w / Math.max(1, (columns || []).length) / 7.2) - 3) : 34)
                 g.append(t)
             }
-            const go = () => focus && n.graph ? this._zoom(n) : this.focusOn(n.id)
-            g.addEventListener('click', () => { this._kbd = false; go() })
-            g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); this._kbd = true; go() } })
+            const go = () => focus && n.zoom.length ? this._zoom(n) : this.focusOn(n.id)
+            g.addEventListener('click', go)
+            g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); go() } })
             zoom.append(g)
         }
         if (view === 'map') panZoom(svg, zoom)
         stage.append(svg)
-        // a keyboard walk keeps its place: the node now in focus takes the keyboard focus
-        if (this._kbd) { const el = this.$('.n.focus'); if (el) el.focus() }
     }
 
     _labelled(view, sub, narrow, pathNodes) {
         const ids = new Set([this._focus, ...pathNodes])
-        if (view === 'layers') { for (const n of sub.nodes) ids.add(n.id); return ids }
+        if (view === 'layers') { if (!narrow) for (const n of sub.nodes) ids.add(n.id); return ids }
         const budget = narrow ? 10 : view === 'map' ? 24 : 36
         const ranked = [...sub.nodes].sort((a, b) => (sub.hop.get(a.id) || 9) - (sub.hop.get(b.id) || 9) || core.degree(this._G, b.id) - core.degree(this._G, a.id) || core.cmp(a.id, b.id))
         for (const n of ranked) { if (ids.size >= budget) break; ids.add(n.id) }
@@ -369,17 +391,18 @@ export class SgGraph extends SgComponent {
         const acts = h('p', { class: 'acts' })
         const href = n.href && this._href(n.href)
         if (href) acts.append(h('a', { href, text: 'Open its page' }))
-        if (n.graph) acts.append(h('button', { type: 'button', class: 'zoomin', on: { click: () => this._zoom(n) } }, 'Open the graph inside it ↓'))
+        for (const z of n.zoom) acts.append(h('button', { type: 'button', class: 'zoomin', on: { click: () => this._zoom(n, z) } }, `${z.label || 'Open the graph inside it'} ↓`))
         acts.append(h('button', { type: 'button', on: { click: () => { this._picking = true; const f = this.$('[data-role="find"]'); f.placeholder = 'Connect to… (type a name)'; f.focus() } } }, 'How is this connected to…'))
         box.append(acts)
-        const props = Object.entries(n).filter(([k, v]) => !['id', 'kind', 'label', 'href', 'graph', 'graph_focus', 'status'].includes(k) && v !== null && v !== '' && typeof v !== 'object')
+        const props = Object.entries(n).filter(([k, v]) => !['id', 'kind', 'label', 'href', 'graph', 'graph_focus', 'zoom', 'status'].includes(k) && v !== null && v !== '' && typeof v !== 'object')
         if (props.length) box.append(h('dl', {}, props.slice(0, 10).map(([k, v]) => [h('dt', { text: k.replace(/_/g, ' ') }), h('dd', { text: clip(String(v), 240) })])))
         if (Array.isArray(n.files) && n.files.length) {
             box.append(h('p', { class: 'small', text: 'Files and their sha256:' }), h('ul', { class: 'files' }, n.files.map(f => h('li', {}, h('code', { text: String(f.name) }), ' ', h('code', { class: 'hash', text: String(f.sha256 || '').slice(0, 16) + '…', title: String(f.sha256 || '') })))))
         }
         if (this._target) {
             const t = this._G.byId.get(this._target)
-            if (!path) box.append(h('p', { class: 'path', text: `No path from here to ${t.label} with the verbs shown.` }))
+            if (this._target === this._focus) box.append(h('p', { class: 'path', text: 'That is the node in focus.' }))
+            else if (!path) box.append(h('p', { class: 'path', text: `No path from here to ${t.label} with the verbs shown.` }))
             else {
                 const ol = h('ol', { class: 'path', 'aria-label': `How ${n.label} is connected to ${t.label}` })
                 path.edges.forEach((e, i) => {
@@ -398,6 +421,7 @@ export class SgGraph extends SgComponent {
         const groups = new Map()
         for (const r of rows) { if (!groups.has(r.phrase)) groups.set(r.phrase, []); groups.get(r.phrase).push(r) }
         const f = this._G.byId.get(this._focus)
+        if (!f) { box.append(h('p', { class: 'small', text: 'This graph has no nodes.' })); return }
         box.append(h('p', { class: 'small', text: `${rows.length} link${rows.length === 1 ? '' : 's'} from ${clip(f.label, 60)}:` }))
         for (const [phrase, list] of groups) {
             const seen = new Set()
@@ -407,7 +431,7 @@ export class SgGraph extends SgComponent {
                 h('ul', {}, items.map(r => {
                     const href = r.other.href && this._href(r.other.href)
                     return h('li', {},
-                        h('button', { type: 'button', class: 'to', on: { click: () => this.focusOn(r.other.id) } }, h('span', { class: 'k', text: this._kindLabel(r.other.kind) }), ' ', clip(r.other.label, 110)),
+                        h('button', { type: 'button', class: 'to', 'data-id': r.other.id, on: { click: () => this.focusOn(r.other.id) } }, h('span', { class: 'k', text: this._kindLabel(r.other.kind) }), ' ', clip(r.other.label, 110)),
                         href ? h('a', { href, class: 'page', 'aria-label': `Open the page for ${r.other.label}`, text: '↗' }) : null)
                 }))))
         }
@@ -436,6 +460,7 @@ function panZoom(svg, g) {
     svg.addEventListener('pointerdown', ev => { if (ev.target === svg) { drag = { x: ev.clientX - tx, y: ev.clientY - ty }; svg.setPointerCapture(ev.pointerId) } })
     svg.addEventListener('pointermove', ev => { if (drag) { tx = ev.clientX - drag.x; ty = ev.clientY - drag.y; apply() } })
     svg.addEventListener('pointerup', () => { drag = null })
+    svg.addEventListener('pointercancel', () => { drag = null })
 }
 
 customElements.define('sg-graph', SgGraph)

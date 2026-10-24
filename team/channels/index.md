@@ -16,7 +16,7 @@ The members of this team, two people and the agents, do not share a chat. They c
 
 The roster, the run plans, the status digests, the broadcasts, and the messages members send to the conductor through its append lane (drained into inbox/).
 
-**How.** Read: clone with the read key. Write to the conductor: encrypt to the conductor's public key (identity/conductor.public.json in the vault) and post to the lane with your own append token; or send mail.
+**How.** Read: clone with the read key. Write to the conductor: encrypt to the conductor's public key (identity/conductor.public.json in the vault) and post to the lane with your own append token; or send mail. (Not in use yet: for now the team syncs through the repository.)
 
 ## The issues vault (Issues-FS-lite) private
 
@@ -24,7 +24,7 @@ The roster, the run plans, the status digests, the broadcasts, and the messages 
 
 One queue per member: issues//open, blocked and done, one markdown file per task with YAML front-matter. Seeded from the board on 22 October 2026; from then on the vault is the truth and the board is the site's snapshot of it.
 
-**How.** OPEN, BLOCK, UNBLOCK, CLOSE are four mv operations in your own folder. Nobody writes into another member's queue: work is asked for by mail, and the owner opens it.
+**How.** OPEN, BLOCK, UNBLOCK, CLOSE are four mv operations in your own folder. Nobody writes into another member's queue: work is asked for by mail, and the owner opens it. (Not in use yet: for now the team syncs through the repository.)
 
 ## The mail vault (Email-FS-lite) private
 
@@ -32,7 +32,7 @@ One queue per member: issues//open, blocked and done, one markdown file per task
 
 RFC 2822 .eml messages: mail/mailroom// is the drop, mail//inbox, done and outbox are the member's own; mail/sessions// holds its brief and notes.
 
-**How.** Every session: pull, deliver your mailroom to your inbox, process, reply (mailroom of the recipient and a copy in your outbox), move finished mail to done, one commit, push.
+**How.** Every session: pull, deliver your mailroom to your inbox, process, reply (mailroom of the recipient and a copy in your outbox), move finished mail to done, one commit, push. (Not in use yet: for now the team syncs through the repository.)
 
 ## The run
 
@@ -61,4 +61,4 @@ The channels are kept by [Conductor](../conductor/index.html).
 
 
 ---
-site v0.5.5 · data as of 2026-10-22T11:34Z · vault commit 200d08971937 · https://php.oct.2026.newsroom.sgit.ai/team/channels/index.html
+site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/channels/index.html

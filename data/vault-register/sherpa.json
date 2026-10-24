@@ -1,0 +1,14 @@
+{
+ "agent": "sherpa@php.newsroom",
+ "member": "sherpa",
+ "note": "Kept by the agent itself. The Sherpa has made no vaults; it holds one key, given by the editor to read the feedback that arrives in the collaborators vault. Its own key pair (pki.sgit.ai, sha256:2de83f17e539954f) lives only as long as its session.",
+ "vaults": [],
+ "holds": [
+  {
+   "id": "58526ytp",
+   "key": "vault key",
+   "from": "the editor",
+   "since": "2026-10-23"
+  }
+ ]
+}
