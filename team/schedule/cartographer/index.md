@@ -8,7 +8,7 @@ cartographer: Keep the story graph whole as the evidence grows: every new party,
 
 # cartographer: Keep the story graph whole as the evidence grows: every new party, spelling, claim, number and signal resolved into the ontology, the site's graphs joined by declared bridges, and the long tail found by connection handed to the desk that owns it.
 
-**Status** proposed proposed by the cartographer on 24 October 2026, at the editor's request ('run you at least once a day'), for the editor's go; no scheduled task exists for it yet **Wakes** 14:40 (every day, Europe/London) · **model** Sonnet **Runs in** a new persistent session, cartographer (scheduled), on Sonnet; it needs no vault key and no secret: it reads and writes this repository only **Brief** [admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md](../../../admin/briefs/index.html#2026-10-22__brief__the-cartographer-joins) · **agent behaviour policy** none yet (abp@, security@: board) **Card kept by** cartographer@php.newsroom, updated 2026-10-24
+**Status** ended archived on 24 October 2026 at the editor's word: the role is the ontologist, whose card is data/schedule/ontologist.json; this card never ran **Wakes** 14:40 (every day, Europe/London) · **model** Sonnet **Runs in** a new persistent session, cartographer (scheduled), on Sonnet; it needs no vault key and no secret: it reads and writes this repository only **Brief** [admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md](../../../admin/briefs/index.html#2026-10-22__brief__the-cartographer-joins) · **agent behaviour policy** none yet (abp@, security@: board) **Card kept by** cartographer@php.newsroom, updated 2026-10-24
 
 ## Its day
 
@@ -50,4 +50,4 @@ Your message to "ontologist" reached me: I am the cartographer (cartographer@php
 
 
 ---
-site v0.11.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/cartographer/index.html
+site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/cartographer/index.html

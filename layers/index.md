@@ -73,10 +73,10 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 
 | File | Made by | From | Shown on |
 |---|---|---|---|
-| `data/ontology.json` | the cartographer | the estate's grammar (graphs.sgit.ai, newsroom.sgit.ai's ontologies), board 030 and 062, the newsroom review's change 10 | [graph/index.html](../graph/index.html) |
-| `data/entities.json` | the cartographer | the publisher strings of data/sources.json and the parties named in the claims, numbers, exploitation and agency rows; actor ids reused from data/actors.json | [graph/parties/index.html](../graph/parties/index.html) |
-| `data/attribution.json` | the cartographer | the free-text 'by' and 'who' of each claim, number and exploitation row, resolved to entities | [graph/parties/index.html](../graph/parties/index.html) |
-| `data/crosswalk.json` | the cartographer | the node ids of the story, code-review and risk graphs, and data/grc.json's stakeholders | [graph/index.html](../graph/index.html) |
+| `data/ontology.json` | the ontologist | the estate's grammar (graphs.sgit.ai, newsroom.sgit.ai's ontologies), board 030 and 062, the newsroom review's change 10 | [graph/index.html](../graph/index.html) |
+| `data/entities.json` | the ontologist | the publisher strings of data/sources.json and the parties named in the claims, numbers, exploitation and agency rows; actor ids reused from data/actors.json | [graph/parties/index.html](../graph/parties/index.html) |
+| `data/attribution.json` | the ontologist | the free-text 'by' and 'who' of each claim, number and exploitation row, resolved to entities | [graph/parties/index.html](../graph/parties/index.html) |
+| `data/crosswalk.json` | the ontologist | the node ids of the story, code-review and risk graphs, and data/grc.json's stakeholders | [graph/index.html](../graph/index.html) |
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
 | `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
 | `admin/content/updates/` | the conductor, and whoever holds the updates beat for it | the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written | [updates/index.html](../updates/index.html) |
@@ -129,4 +129,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.11.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

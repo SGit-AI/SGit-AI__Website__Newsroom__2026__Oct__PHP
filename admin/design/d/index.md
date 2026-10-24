@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.11.4. Not the live site.
+> Mockup D for review, built from the data of release v0.11.5. Not the live site.
 
-PHP Team console Console Overview Board 128 Agents 16 Releases 80 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 128 Agents 17 Releases 81 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 20 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.11.4 
-80 releases since 22 Oct 
+v0.11.5 
+81 releases since 22 Oct 
 
 Open on the board 
 128 
 58 done, 5 waiting 
 
 Pages built 
-751 
+753 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -34,22 +34,22 @@ Sources in the vault
 
  #190 
 Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the s… 
- cartographer 
+ ontologist 
  #189 
 One spelling for a verb across the site's graphs: data/review.json writes 'realised in', 'fixed by' with spaces, the ris… 
  claude-story-site 
  #188 
 Read data/compromise.json (researcher@php.newsroom's evidence behind 'no named organisation has said it was compromised'… 
- cartographer 
+ ontologist 
  #187 
 Twelve pages are recorded twice in data/sources.json under different slugs (for example tpo-nl-digid-offline and tpo-tpo… 
  collector-researchers 
  #186 
 Publish the ontology the way the estate does: N-Triples with owl:inverseOf, so graphs.sgit.ai and newsroom.sgit.ai can b… 
- cartographer 
+ ontologist 
  #185 
 Ontology passes on a schedule: every new source, claim and party resolved, merged or pruned; new parties get entities, n… 
- cartographer 
+ ontologist 
  #184 
 Gate checks for the graph: verbs and kinds only from data/ontology.json, no dangling edge, every publisher resolved in d… 
  security@php.newsroom 
@@ -67,7 +67,7 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
  conductor 
  #030 
 The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fract… 
- cartographer 
+ ontologist 
  #013 
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
@@ -99,6 +99,7 @@ From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the
 ### Releases
  latest 8 
 
+ v0.11.5 2026-10-24 The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartogra… 
  v0.11.4 2026-10-24 The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to … 
  v0.11.3 2026-10-24 the source watch's vault of record: it runs in 7r83qic5, its pack-mode copy, and oq9gflln is retired (kept public read, because th… 
  v0.11.2 2026-10-24 claims waiting for review (/claims/review/: 86 vault claims, each with the journalist's verdict or 'not yet reviewed'), the SGit n… 
@@ -106,7 +107,6 @@ From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the
  v0.11.0 2026-10-24 The cartographer joins: the ontology (15 verbs, each with its inverse), one node per party (243, from every publisher spelling), t… 
  v0.10.24 2026-10-24 The conductor's schedule, active at the editor's go: a Sonnet session woken hourly at a quarter past, 07:15 to 21:15 London; and t… 
  v0.10.23 2026-10-24 synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the v… 
- v0.10.22 2026-10-24 Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its obje… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ From CI-002, step 3: the fix commit's tests as nodes in the graph, joined to the
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 5
 
 ---
-site v0.11.4 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.11.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

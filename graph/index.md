@@ -165,8 +165,8 @@ Verbs this graph will not use, and why:
 - `measures_differently`: self-inverse; recorded as a contradiction node with tension 'measures-differently'
 - `agrees_with`: self-inverse, and agreement is read from independent states edges, not asserted
 
-The grammar is the estate's, from [graphs.sgit.ai](https://graphs.sgit.ai/v1/grammar/); the files are [data/ontology.json](../data/ontology.json) (kinds, verbs, taxonomies, formulas), [data/entities.json](../data/entities.json) (one node per party, whatever a page calls it) and [data/attribution.json](../data/attribution.json) (who states each row). The graph is [data/graph.json](../data/graph.json). Kept by the cartographer. The component that draws it is documented for every agent on [the graph component](component/index.html) page.
+The grammar is the estate's, from [graphs.sgit.ai](https://graphs.sgit.ai/v1/grammar/); the files are [data/ontology.json](../data/ontology.json) (kinds, verbs, taxonomies, formulas), [data/entities.json](../data/entities.json) (one node per party, whatever a page calls it) and [data/attribution.json](../data/attribution.json) (who states each row). The graph is [data/graph.json](../data/graph.json). Kept by the ontologist. The component that draws it is documented for every agent on [the graph component](component/index.html) page.
 
 
 ---
-site v0.11.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html
+site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/graph/index.html

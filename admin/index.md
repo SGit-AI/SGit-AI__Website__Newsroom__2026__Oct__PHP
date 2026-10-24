@@ -206,19 +206,21 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Not built: branch protection or rulesets (the editor's to set); a content security policy; a security pass on a schedule; keys for the agents (one exists in the register besides the editor's); an inbox on the editor's record.
 
-### The graph, its ontology and the component (cartographer@php.newsroom)
+### Fractal semantic graphs: the ontology, the graph and the component (ontologist@php.newsroom)
 
-- `data/ontology.json` v0.2.0 (12 kinds, 15 verbs with inverses, two taxonomies, four formulas, banned verbs), `data/entities.json` (243 parties, every one of the 249 publisher spellings an alias), `data/attribution.json` (who states and relays each claim, number and exploitation row; which 9 sources carry another party's wire copy), `data/crosswalk.json` (where the story, code-review and risk graphs name the same thing: the two CVEs, and 189 parties as stakeholders, 12 as the same party and the rest as members of a class). Brief: `admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md`; runbook: `admin/cartographer/README.md`.
+- `data/ontology.json` v0.2.0 (12 kinds, 15 verbs with inverses, two taxonomies, four formulas, banned verbs), `data/entities.json` (243 parties, every one of the 249 publisher spellings an alias), `data/attribution.json` (who states and relays each claim, number and exploitation row; which 9 sources carry another party's wire copy), `data/crosswalk.json` (where the story, code-review and risk graphs name the same thing: the two CVEs, and 189 parties as stakeholders, 12 as the same party and the rest as members of a class). Briefs: `admin/content/briefs/2026-10-24__brief__the-ontologist.md` (and the first, `2026-10-22__brief__the-cartographer-joins.md`); runbook: `admin/ontologist/README.md`. The role was the cartographer until 24 October; the cartographer is archived, paused.
 
 - `data/graph.json`: 1048 nodes, 1516 edges, 15 verbs; independent origins and relays per claim. The build stops on a verb or kind not in the ontology, an unresolved publisher, an unknown party or a crosswalk id its graph does not have (not yet a gate check: board 184).
 
-- `admin/cartographer/pass.py`: the pass, read only; what would stop the build, and the long tail (pages recorded twice, sources nobody traced, sources the vault's claims cite and the site does not). Passes are recorded in `admin/cartographer/passes/`; the first was on 24 October.
+- `admin/ontologist/pass.py`: the pass, read only; what would stop the build, and the long tail (pages recorded twice, sources nobody traced, sources the vault's claims cite and the site does not). Passes are recorded in `admin/ontologist/passes/`; the first was on 24 October.
 
-- `` v1.0.0 (`assets/components/sg-graph/v1/v1.0/v1.0.0/`), embedded with `sg_graph()`: four views, search, verb filters, trail, path between two nodes, zoom into another graph a node names (same origin only), reading inverses from an ontology block, a `verbs` list or the edges themselves. Used on /graph/, /graph/parties/ and /graph/component/; tested in Chromium at 1280 and 390, light and dark, and with JavaScript off. The test scripts ran in the cartographer's session and are not in the repository.
+- `` v1.0.0 (`assets/components/sg-graph/v1/v1.0/v1.0.0/`), embedded with `sg_graph()`: four views, search, verb filters, trail, path between two nodes, zoom into another graph a node names (same origin only), reading inverses from an ontology block, a `verbs` list or the edges themselves. Used on /graph/, /graph/parties/ and /graph/component/; tested in Chromium at 1280 and 390, light and dark, and with JavaScript off. The test scripts ran in the ontologist's session and are not in the repository.
 
 - Fractal steps: a CVE opens the code-review graph in its own vocabulary, and the risk graph; a party steps into the risk graph as a stakeholder. Source to capture to file is addressing, and is described as such.
 
-- Not built: sentence-level nodes (008); series and `derives_from`/`supersedes` (062); the researcher's compromise evidence (`data/compromise.json`, 188) and the vault's own claims and the state of affairs (190) in the graph; the other graph drawings moved onto the component (181); a scheduled pass (the card `data/schedule/cartographer.json`, proposed for 14:40 London daily, waiting for the editor; board 185).
+- Not built: sentence-level nodes (008); series and `derives_from`/`supersedes` (062); the researcher's compromise evidence (`data/compromise.json`, 188) and the vault's own claims and the state of affairs (190) in the graph; the other graph drawings moved onto the component (181).
+
+- The daily pass: `data/schedule/ontologist.json`, active from 24 October 2026 at the editor's go, 14:40 London, a fresh Sonnet session each day from a claude.ai scheduled task; it holds no key.
 
 ### GRC: fractal risk registers (grc@php.newsroom)
 
@@ -394,4 +396,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.11.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

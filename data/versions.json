@@ -1,6 +1,15 @@
 {
- "current": "0.11.4",
+ "current": "0.11.5",
  "versions": [
+  {
+   "version": "0.11.5",
+   "date": "2026-10-24",
+   "title": "The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartographer is archived; its daily pass is active, a fresh session at 14:40 London every day",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.11.4",
    "date": "2026-10-24",

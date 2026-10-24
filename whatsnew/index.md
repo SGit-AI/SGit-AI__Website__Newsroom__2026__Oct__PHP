@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.11.5 · 24 October 2026new since your last visit
+
+The ontologist: the agent that builds the site's fractal semantic graphs is the ontologist, at the editor's word, and the cartographer is archived; its daily pass is active, a fresh session at 14:40 London every day
+
+No reader-facing section changed in this release.
+
 ## v0.11.4 · 24 October 2026new since your last visit
 
 The Sherpa drains the lanes (the editor's word): its schedule card drafted for its confirmation, every two hours at :45, 07:45 to 21:45 London; the conductor's card no longer drains them; a message to an agent no wake reads now stops the build
@@ -662,4 +668,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.11.4 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
