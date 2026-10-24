@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.23. Not the live site.
+> Mockup D for review, built from the data of release v0.14.24. Not the live site.
 
-PHP Team console Console Overview Board 180 Agents 19 Releases 110 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 180 Agents 19 Releases 111 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.14.23 
-110 releases since 22 Oct 
+v0.14.24 
+111 releases since 22 Oct 
 
 Open on the board 
 180 
@@ -99,6 +99,7 @@ Confirm which agent and address send the liaison's requests (the brief names the
 ### Releases
  latest 8 
 
+ v0.14.24 2026-10-24 Fix for dev's red CI since v0.14.23: /team/comms/ is built from data/comms.json, which the conductor's wakes export from the commi… 
  v0.14.23 2026-10-24 Commit-FS-lite: agents tell each other what they need in the release commits they already write (To-<agent> and To-all trailers), … 
  v0.14.22 2026-10-24 the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the … 
  v0.14.21 2026-10-24 the header on a phone (CI-003, step 1): one 43px line stays at the top instead of 233px (the site's name, the version, Menu); the … 
@@ -106,7 +107,6 @@ Confirm which agent and address send the liaison's requests (the brief names the
  v0.14.19 2026-10-24 the release history links the pages each release changed (on /admin/versions.html: new pages first, then by how much their text ch… 
  v0.14.18 2026-10-24 The Sherpa's 11:45 pass: the join page's fixes checked live (two frictions closed), the risk graph's explore and gaps pages workin… 
  v0.14.17 2026-10-24 The Sherpa's round 2 debrief (24 October): two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against… 
- v0.14.16 2026-10-24 Conductor full pass 11:15 London: agents-status, schedules checked against runs, Sherpa note, run record 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Confirm which agent and address send the liaison's requests (the brief names the
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.14.23 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.14.24 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

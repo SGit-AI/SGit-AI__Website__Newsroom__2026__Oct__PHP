@@ -1,6 +1,15 @@
 {
- "current": "0.14.23",
+ "current": "0.14.24",
  "versions": [
+  {
+   "version": "0.14.24",
+   "date": "2026-10-24",
+   "title": "Fix for dev's red CI since v0.14.23: /team/comms/ is built from data/comms.json, which the conductor's wakes export from the commit history, instead of from the history itself, which the shallow CI clone lacks; tested by running the gate in a depth-1 clone",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.14.23",
    "date": "2026-10-24",
