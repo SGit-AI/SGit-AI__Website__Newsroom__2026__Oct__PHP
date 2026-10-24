@@ -5,20 +5,44 @@
  "round": 1,
  "state": "first wake released (v0.15.19); schedule card still proposed, waiting for the editor",
  "done": [
-  "Made the pki key sha256:de0decfc882a0235 and sent its QR to the editor",
-  "Exported the evidence vault at 8c16a64a7cf6 (382 sources)",
-  "Gave 94 claims a verdict: 38 agrees, 33 noted, 23 held back, 0 used",
-  "Refreshed compromise.json, no-confirmed-compromise, the as-of lines, plain latest and the pass ledger",
-  "Released v0.15.19; live site serves it"
+  {
+   "what": "Made the pki key sha256:de0decfc882a0235 and sent its QR to the editor",
+   "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+  },
+  {
+   "what": "Exported the evidence vault at 8c16a64a7cf6 (382 sources)",
+   "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+  },
+  {
+   "what": "Gave 94 claims a verdict: 38 agrees, 33 noted, 23 held back, 0 used",
+   "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+  },
+  {
+   "what": "Refreshed compromise.json, no-confirmed-compromise, the as-of lines, plain latest and the pass ledger",
+   "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+  },
+  {
+   "what": "Released v0.15.19; live site serves it",
+   "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+  }
  ],
  "tasks": {
   "board": [],
   "note": "the board rows this member owns are in data/admin.json"
  },
  "next": [
-  "Editor go on the schedule card and the scheduled task",
-  "Next wake: compare the vault head with 8c16a64a7cf6",
-  "Re-read in full the partly checked files on /views/desk/"
+  {
+   "what": "Editor go on the schedule card and the scheduled task",
+   "why": "the schedule card stays proposed until then"
+  },
+  {
+   "what": "Next wake: compare the vault head with 8c16a64a7cf6",
+   "why": "the wake is a no-op when the head has not moved"
+  },
+  {
+   "what": "Re-read in full the partly checked files on /views/desk/",
+   "why": "the pass ledger on /views/desk/ lists them"
+  }
  ],
  "asks": [
   {
