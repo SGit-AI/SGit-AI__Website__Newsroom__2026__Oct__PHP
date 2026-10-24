@@ -43,9 +43,15 @@ capture 20261022T113204Z · HTTP 200 · https://www.theregister.com/security/202
 - `rendered.html` 3729f08f3b948bc4af5a39a2b7351e38db6eeafbbcb982556755e5929dabb56d 197,763 bytes
 - `screenshot.png` d7c98b6141ded745143bbb5bc018fb02e07f795ab320a20434e063f150a3b875 1,745,666 bytes
 - `text.txt` b355691c9b584c533c626787860d8f2f329c17e1618422ab1088cfcdb71530ca 13,215 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.theregister.com/security/2026/10/22/php-blames-supply-chain-security-biz-chainguard-for-putting-huge-chunks-of-the-web-at-risk/5304611- `headers.json` a1978393d061c66f63509e1c1c1a981a94391c640732adda0650aff46e5136d2 681 bytes
+- `page.html` 2ae362bc7596728abff7d47881889ac36ea6b0f56b399d1764f98a7032de6dec 183,254 bytes
+- `provenance.json` 84d6fb599d488aaf94357843ef4ed03d95f6b1c458afccacf0ceb42f0e84a701 1,985 bytes
+- `rendered.html` b138f7fef816c5180a11c1d2fc70655a5669b0af56c0c9eb19c663c72191ca2c 199,783 bytes
+- `screenshot.jpg` 1451218d7d84aec414a1764685d312ecefea6858a4a230fda6c9991961e4f3cc 964,556 bytes
+- `text.txt` ca382cdb9b4ecdf3e8ef86975c0671cea61b842d9de3ca1b06b1f60c98febe6d 12,962 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/theregister-php-blames-chainguard/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/theregister-php-blames-chainguard/index.html

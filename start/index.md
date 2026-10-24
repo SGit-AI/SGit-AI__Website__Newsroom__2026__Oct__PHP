@@ -63,7 +63,7 @@ About 14 minutes in all. Choose *read as Alex* and the bar under the menu keeps 
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[Exploit, exploitation](../glossary/index.html#exploit)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)[NCSC](../glossary/index.html#ncsc)[Patch](../glossary/index.html#patch)[CVE](../glossary/index.html#cve)
+[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[Exploit, exploitation](../glossary/index.html#exploit)[Remote code execution (RCE)](../glossary/index.html#rce)[Honeypot](../glossary/index.html#honeypot)[Evidence vault](../glossary/index.html#vault)[NCSC](../glossary/index.html#ncsc)[Patch](../glossary/index.html#patch)
 
 [Read as Alex →](../briefings/everyone/index.html)
 
@@ -216,7 +216,7 @@ About 17 minutes in all. Choose *read as Quinn* and the bar under the menu keeps
 
 #### Words they will meet
 
-[Patch](../glossary/index.html#patch)[Unauthenticated](../glossary/index.html#unauthenticated)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Exploit, exploitation](../glossary/index.html#exploit)[PHP](../glossary/index.html#php)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)[NCSC](../glossary/index.html#ncsc)
+[Patch](../glossary/index.html#patch)[Unauthenticated](../glossary/index.html#unauthenticated)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Exploit, exploitation](../glossary/index.html#exploit)[PHP](../glossary/index.html#php)[Remote code execution (RCE)](../glossary/index.html#rce)[Honeypot](../glossary/index.html#honeypot)[Evidence vault](../glossary/index.html#vault)
 
 [Read as Quinn →](../briefings/cfo/index.html)
 
@@ -255,7 +255,7 @@ About 15 minutes in all. Choose *read as Morgan* and the bar under the menu keep
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Vulnerability](../glossary/index.html#vulnerability)[Exploit, exploitation](../glossary/index.html#exploit)[Shell](../glossary/index.html#shell)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)
+[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Vulnerability](../glossary/index.html#vulnerability)[Exploit, exploitation](../glossary/index.html#exploit)[Shell](../glossary/index.html#shell)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[Remote code execution (RCE)](../glossary/index.html#rce)[Honeypot](../glossary/index.html#honeypot)
 
 [Read as Morgan →](../briefings/dpo/index.html)
 
@@ -640,4 +640,4 @@ The first version of this site opened with a sentence that was accurate and unre
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/start/index.html

@@ -28,7 +28,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:32 UTC. The scale is on
 
 ## This fact over time
 - 2026-10-22The Register publishes [PHP blames supply chain security biz Chainguard for putting huge chunks of the web at risk](../../sources/theregister-php-blames-chainguard/index.html)
-- 2026-10-22 11:32 UTCSaved into the evidence vault: The Register
+- 2026-10-22 11:32 UTCSaved into the evidence vault: The Register, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.2.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -53,4 +53,4 @@ Sources: theregister-php-blames-chainguard
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/lorenc-ai-found/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/lorenc-ai-found/index.html

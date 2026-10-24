@@ -35,8 +35,8 @@ Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Fi
 Graded in Run-1, resting on captures up to 2026-10-22 11:31 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
-- 2026-10-22 11:18 UTCSaved into the evidence vault: watchTowr
-- 2026-10-22 11:18 UTCSaved into the evidence vault: watchTowr
+- 2026-10-22 11:18 UTCSaved into the evidence vault: watchTowr, then 1 more capture
+- 2026-10-22 11:18 UTCSaved into the evidence vault: watchTowr, then 1 more capture
 - 2026-10-22Enters this site as unverified in v0.2.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -61,4 +61,4 @@ Sources: watchtowr-php2shell, watchtowr-php2shell-faq
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/watchtowr-itw/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/watchtowr-itw/index.html

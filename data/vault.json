@@ -1,12 +1,12 @@
 {
  "head": {
-  "commit": "1f38e70921b2",
-  "subject": "curator@php.newsroom: promote 15 sources from the source watch's pack copy (7r83qic5), priority 2 (queue of 24 Oct 09:29 UTC), scheduled wake of 24 Oct 10:30 (mechanical selection, each read): AI Weekly, American Banker, Cyber Security News, Economedia, Estrella Digital, TechRadar FR, ITWeb, Astra Security release syndicated on four local sites, ClearanceJobs, Notebookcheck, TechTarget, The Next Web; 11 claims  +118 ~3  [blobs:+121 trees:+45]",
-  "commits": 23
+  "commit": "8c16a64a7cf6",
+  "subject": "curator@php.newsroom: promote 18 sources from the source watch's pack copy (7r83qic5), the 3 priority-2 rows of the 24 Oct 16:52 UTC queue and 15 priority 4, scheduled wake of 24 Oct 18:00 (mechanical selection, each read): Inc42, iTWire, VOIX, Al-Ghad, Europa Press, FAZ, Feuerwehr-Magazin, Sina, Yahoo Finance, Financiarul, Financial News, Forbes Turkiye, Fortune Italia, Gamemeca, Gazzetta del Sud, Generation NT, GIGAZINE, Green Bay Press-Gazette; 12 claims and 2 timeline rows (disclosure chain per iTWire, a pseudonymous first discoverer per Calif via Inc42, EU joint advisory); vendor check-your-site pages not used  +140 ~4  [blobs:+144 trees:+54]",
+  "commits": 27
  },
- "sources": 328,
- "captures": 323,
- "hashed_files": 1951,
+ "sources": 382,
+ "captures": 441,
+ "hashed_files": 2595,
  "primary": 89,
  "blocked": 15,
  "agents": [
@@ -19,6 +19,6 @@
   "curator@php.newsroom"
  ],
  "opened": "2026-10-22T08:03Z",
- "latest_capture": "2026-10-24T08:37Z",
+ "latest_capture": "2026-10-24T16:05Z",
  "note": "The captures are third-party pages kept privately for the record and are not published. Only their hashes are."
 }

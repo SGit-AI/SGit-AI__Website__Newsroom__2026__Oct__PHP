@@ -81,25 +81,25 @@
    "path": "data/story.json",
    "kept_by_before": "story-site",
    "checked_against": "1f38e70921b2",
-   "note": "Exploitation paragraph as of 08:37 UTC on 24 October, with the Sophos withdrawal."
+   "note": "exploitation paragraph: 'as of' moved to 16:05 UTC on 24 October (journalist, vault 8c16a64a7cf6); not re-read in full."
   },
   {
    "path": "data/claims.json",
    "kept_by_before": "story-site",
    "checked_against": null,
-   "note": "Partly: no-confirmed-compromise refreshed to 08:37 UTC on 24 October; the other 69 claims not yet re-read."
+   "note": "Partly: no-confirmed-compromise refreshed to 16:05 UTC on 24 October (vault 8c16a64a7cf6, 382 sources; Die Presse and VOIX added); the other 69 claims not yet re-read."
   },
   {
    "path": "data/impact.json",
    "kept_by_before": "story-site",
    "checked_against": "1f38e70921b2",
-   "note": "Switzerland added (the EPFL, Basel-Stadt, the University of Geneva, La Mobilière)."
+   "note": "Vault 8c16a64a7cf6: no new organisation taking a site offline was added (World Quest, the iTWire list and Uruguay held back for want of a primary source); not re-read in full."
   },
   {
    "path": "data/compromise.json",
    "kept_by_before": "story-site",
-   "checked_against": "1f38e70921b2",
-   "note": "Sophos (attempt; the withdrawn success claim), American Banker and BTC-ECHO added; The Next Web row linked; as of 08:37 UTC on 24 October."
+   "checked_against": "8c16a64a7cf6",
+   "note": "Re-read in full against 8c16a64a7cf6: Die Presse (Austria, no successful attack known) and RainForest/VOIX (honeypot attempts) added; as of 16:05 UTC on 24 October; searched count 382."
   },
   {
    "path": "data/exploitation.json",
@@ -153,7 +153,7 @@
    "path": "data/plain.json",
    "kept_by_before": "story-site",
    "checked_against": "1f38e70921b2",
-   "note": "'As of' lines to 24 October; Latest with the Sophos withdrawal and American Banker."
+   "note": "'As of' lines to 16:05 UTC on 24 October; Latest now Die Presse, RainForest, IT Social, American Banker, Sophos. Not re-read in full."
   },
   {
    "path": "data/personas.json",
@@ -165,7 +165,7 @@
    "path": "data/questions.json",
    "kept_by_before": "librarian",
    "checked_against": null,
-   "note": "Partly: 'Has anyone actually been hacked?' as of 08:37 UTC on 24 October; the other answers not yet re-read."
+   "note": "Partly: 'Has anyone actually been hacked?' as of 16:05 UTC on 24 October; the other answers not yet re-read."
   },
   {
    "path": "data/signals.json",
@@ -210,5 +210,7 @@
    "phrase": "as of 20:30 UTC on 21 October",
    "why": "Huntress's own time for its statement that it had seen no exploitation on its partners' systems (claim huntress-none): a source's date, kept wherever the claim is quoted."
   }
- ]
+ ],
+ "catches": [],
+ "catches_about": "What the correspondent corrected in the journalist's work, one row per correction: when, what, the file, its kind (verdict, row, as-of, missing, contradiction), the journalist's run and the release that fixed it. Counted on /views/desk/, so the editor can see what a Sonnet journalist misses."
 }

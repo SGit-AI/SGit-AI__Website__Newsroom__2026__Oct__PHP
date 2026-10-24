@@ -8,7 +8,7 @@ The read key to the evidence vault behind this site, the link that opens it in t
 
 [Vaults](../../vaults/index.html) / The evidence vault
 
-The vault behind every claim on this site, 328 sources and 323 captures at commit `1f38e70921b2`, opens read-only in the browser with the key below, the way every published vault on sgit.ai and the newsroom does. The key is a read key: derived one way from the vault key, it decrypts and cannot write, and there is no privilege inside it to escalate. It is published on purpose, so treat it as you would the content.
+The vault behind every claim on this site, 382 sources and 441 captures at commit `8c16a64a7cf6`, opens read-only in the browser with the key below, the way every published vault on sgit.ai and the newsroom does. The key is a read key: derived one way from the vault key, it decrypts and cannot write, and there is no privilege inside it to escalate. It is published on purpose, so treat it as you would the content.
 
 **Read key** `sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g`
 
@@ -32,4 +32,4 @@ The manifest this site is built from, with every hash, is [data/sources.json](..
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/vault/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/vault/index.html

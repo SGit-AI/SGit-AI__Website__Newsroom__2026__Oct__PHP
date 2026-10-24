@@ -35,9 +35,13 @@ capture 20261022T112342Z · HTTP 200 · https://arcticwolf.com/resources/blog/ar
 - `rendered.html` 1f059cea13ae6b9fa434e23a67c3e8ec05c47fa9af94ac9c5a476013862adb78 1,342,610 bytes
 - `screenshot.png` 0f1c79ead2d73038424318bb8efbe497717653cc82a2b3763f24ce7a95386336 1,555,808 bytes
 - `text.txt` ef2210c0fd1c35032d70283c91ab44c01c091342c21c9ac55571b12b45f8f75b 10,879 bytes
+capture 20261023T160435Z · HTTP 200 · https://arcticwolf.com/resources/blog/arctic-wolf-labs-finding-prioritizing-and-patching-php2shell-exposure/- `headers.json` 440350905beb9a972cf206015579a9460d7122dec3ca256f53e2239cc0586df0 1,123 bytes
+- `page.html` 19a9957b4d8769c87fa61b221753ea52107ae4c94e8dd82d4ef5872a37ed9081 352,468 bytes
+- `provenance.json` 135feb75d38e7b71b6f62d88fb1596ae37e5f3fc99be68d008edf434a803f58d 1,726 bytes
+- `text.txt` 1f0d3416e0d6ed95dc5aa64628a10b3319e6dde70da44b12c6251b5a3f626c24 11,183 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/arcticwolf-php2shell-exposure/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/arcticwolf-php2shell-exposure/index.html

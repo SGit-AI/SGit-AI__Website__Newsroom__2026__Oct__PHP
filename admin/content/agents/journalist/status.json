@@ -1,19 +1,62 @@
 {
  "schema": "newsroom/agent-status/v1",
  "agent": "journalist",
- "as_of": "2026-10-22",
- "round": null,
- "state": "no round recorded under this policy yet",
- "done": [],
+ "as_of": "2026-10-24",
+ "round": 1,
+ "state": "first wake released (v0.15.19); schedule card still proposed, waiting for the editor",
+ "done": [
+  {
+   "what": "Made the pki key sha256:de0decfc882a0235 and sent its QR to the editor",
+   "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+  },
+  {
+   "what": "Exported the evidence vault at 8c16a64a7cf6 (382 sources)",
+   "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+  },
+  {
+   "what": "Gave 94 claims a verdict: 38 agrees, 33 noted, 23 held back, 0 used",
+   "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+  },
+  {
+   "what": "Refreshed compromise.json, no-confirmed-compromise, the as-of lines, plain latest and the pass ledger",
+   "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+  },
+  {
+   "what": "Released v0.15.19; live site serves it",
+   "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+  }
+ ],
  "tasks": {
   "board": [],
   "note": "the board rows this member owns are in data/admin.json"
  },
- "next": [],
- "asks": [],
+ "next": [
+  {
+   "what": "Editor go on the schedule card and the scheduled task",
+   "why": "the schedule card stays proposed until then"
+  },
+  {
+   "what": "Next wake: compare the vault head with 8c16a64a7cf6",
+   "why": "the wake is a no-op when the head has not moved"
+  },
+  {
+   "what": "Re-read in full the partly checked files on /views/desk/",
+   "why": "the pass ledger on /views/desk/ lists them"
+  }
+ ],
+ "asks": [
+  {
+   "what": "Go to make the schedule card active and create the five daily scheduled tasks (or create them yourself)",
+   "from": "the editor"
+  },
+  {
+   "what": "Confirm the journalist key sha256:de0decfc882a0235 (pki-agent submission)",
+   "from": "the editor"
+  }
+ ],
  "tokens": {
   "value": null,
-  "how": "not recorded"
+  "how": "the session does not show a count"
  },
  "policy": {
   "version": "2026-10-22",
@@ -23,5 +66,5 @@
   "writes_outside_scope": null,
   "injection_seen": 0
  },
- "debrief": null
+ "debrief": "debriefs/2026-10-24__first-wake.md"
 }

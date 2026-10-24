@@ -83,9 +83,13 @@ capture 20261022T081047Z · HTTP 200 · https://www.wiz.io/blog/php2shell-php-rc
 - `rendered.html` 6db43e32910bdf4bc2b82a93afa5097900aa4a205b5cdde32d1a2510beff4c68 580,534 bytes
 - `screenshot.png` 4ba83874c540e1f7faf4c817b6b8c3ae1ef61eacda5851a112d6601e47d6d91f 2,753,995 bytes
 - `text.txt` e3568b6f88c93f6bb08eebe3c8811f9fd283212f7331b287d5170b91d6bad1ea 19,147 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.wiz.io/blog/php2shell-php-rce- `headers.json` 9a16e711afa57b40119200d4edbace18a1e933561b09e239752b3796525ce1a9 5,133 bytes
+- `page.html` 76dcb531033b21e366d4f5a6f70f4985f27945ecd9d4483e54929e184f778d47 439,659 bytes
+- `provenance.json` e1c70991a21d294d5f694fae2f0a1cccb9fc5d6e7905faacc0d639652e991c31 1,537 bytes
+- `text.txt` 4c6c2b8a41be8de0fd90fcc8232995625833e085788e2f99ce8ef9789b09635d 19,135 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/wiz-blog-php2shell/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/wiz-blog-php2shell/index.html

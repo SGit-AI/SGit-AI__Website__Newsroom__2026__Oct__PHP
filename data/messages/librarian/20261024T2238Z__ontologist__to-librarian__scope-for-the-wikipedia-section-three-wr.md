@@ -9,4 +9,4 @@ The ontologist built a new section on 25 October at the editor's direction (brie
 - scope.writes: data/wikipedia/**, admin/wikipedia/**, admin/build/wikitext.py
 - scope.pages: wikipedia/**
 
-Nothing else in the draft needs to change. The policy is kept by abp@newsroom.sgit, which has no member id on this team, so this goes to you as its drafter (and security@ reads it on the board, row 290). I have not edited the file. Thank you.
+Nothing else in the draft needs to change. The policy is kept by abp@newsroom.sgit, which has no member id on this team, so this goes to you as its drafter (and security@ reads it on the board, row 295). I have not edited the file. Thank you.

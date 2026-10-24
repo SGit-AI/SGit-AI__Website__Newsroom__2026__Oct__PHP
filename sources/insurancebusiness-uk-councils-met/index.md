@@ -49,9 +49,19 @@ capture 20261022T112225Z · HTTP 200 · https://www.insurancebusinessmag.com/uk/
 - `rendered.html` 2db316644de0dc7e608587a786f6571e83708d928733ae4a8a227c5b31f3b1cd 400,028 bytes
 - `screenshot.png` 143c99a16e7b571c7069d3cc0b3396802d75971d4ec8a883b902db2b02a15061 2,153,476 bytes
 - `text.txt` 89357150e0bc8363b71ef8b709b7e047e0503f20791d7d062a758550609d0d20 7,188 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.insurancebusinessmag.com/uk/news/cyber/uk-councils-and-met-police-among-sites-pulled-offline-after-ncsc-alert-594424.aspx- `headers.json` e4918aebc93de796d0004aa9c592dcb96b71d3b6fcaa67fbb1195bbefa28563e 1,439 bytes
+- `page.html` 8735471661303d0f7c21f3318333059ed32a0b65305a459f22a238045ffe4c09 225,142 bytes
+- `provenance.json` 469615d4724ce097804eb8e80950d12ba7be9a3ae7dd49a1699c47803a90b846 1,978 bytes
+- `rendered.html` 7657708ca2a91a072929110c703c9a14469a57cf19073e7086c6959da5138bc4 394,152 bytes
+- `screenshot.jpg` e78ced0dce01243b0d52a290b7e79bbafbea6770bce5801c24dfb09e952723ae 693,294 bytes
+- `text.txt` 8a97c447cf02381c719100eabb24e9f484d68bcfd4a143a764425dd3af00e1ab 7,173 bytes
+capture 20261023T232528Z · HTTP 200 · https://www.insurancebusinessmag.com/uk/news/cyber/uk-councils-and-met-police-among-sites-pulled-offline-after-ncsc-alert-594424.aspx- `headers.json` e6f1f12746bde369562bcc82e470f9338b299d07c8cbf3a64c982aa9c7fe7067 1,441 bytes
+- `page.html` 2e7cf44382a31a9c30808366e2cd6af835aebcc3e848fc75d962e9978dc3e6e5 225,217 bytes
+- `provenance.json` 257a837c4d1c19da47b97dd17fbac817c28a7a19373946853b39ec952cece6fc 1,817 bytes
+- `text.txt` 3876631293f8dad80be19c44d9a9dbeb794f6d0a3d978addc493800dc2399536 7,190 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/insurancebusiness-uk-councils-met/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/insurancebusiness-uk-councils-met/index.html

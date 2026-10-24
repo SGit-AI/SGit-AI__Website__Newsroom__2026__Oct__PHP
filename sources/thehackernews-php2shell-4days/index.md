@@ -67,9 +67,15 @@ capture 20261022T081320Z · HTTP 200 · https://thehackernews.com/2026/10/someon
 - `rendered.html` a7caeb00fddc406d6dcfeb68c7fdce453fdb39446eb83daa364cb3f2986a7834 176,478 bytes
 - `screenshot.png` 71b28408de124895b1534822f79eff33a445be5296c09203d51f152ef67d089c 2,255,956 bytes
 - `text.txt` c1cb63141287484c7b96b6f842f983bb978a108b3b82eebb95ebe78c4ed608f4 12,295 bytes
+capture 20261023T160435Z · HTTP 200 · https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html- `headers.json` 421a40b8b01bedb96dc2f965ab732985b9acdfe566cb1046ac4522f6b5ce82a7 854 bytes
+- `page.html` ef230d20b5059df376ebaca22a0031d7d1cb8b1bde9736da35073b93c319a3d7 186,319 bytes
+- `provenance.json` 30680a19ac8a0b6c34a81631234187928f82c134b8a42f79dc7534efcd056463 1,839 bytes
+- `rendered.html` 1426a64bb1181ef901405314bec3c221608a0d215a92c84dedf3b88febfc4896 183,052 bytes
+- `screenshot.jpg` 139266d86df524fb02573a64129c85fa1e62866024c1aad8ffae1af2f86ae158 742,596 bytes
+- `text.txt` 0c31fcebda310760b15f83418566d5bd2e63ebaffa0b93669443fb6f970efe31 12,859 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/thehackernews-php2shell-4days/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/thehackernews-php2shell-4days/index.html

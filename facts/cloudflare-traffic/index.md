@@ -30,7 +30,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 08:12 UTC. The scale is on
 
 ## This fact over time
 - 2026-10-21Cloudflare publishes [Cloudflare deploys protections against php2shell vulnerability](../../sources/cloudflare-blog-php2shell-waf/index.html)
-- 2026-10-22 08:12 UTCSaved into the evidence vault: Cloudflare
+- 2026-10-22 08:12 UTCSaved into the evidence vault: Cloudflare, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -55,4 +55,4 @@ Sources: cloudflare-blog-php2shell-waf
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/cloudflare-traffic/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/cloudflare-traffic/index.html

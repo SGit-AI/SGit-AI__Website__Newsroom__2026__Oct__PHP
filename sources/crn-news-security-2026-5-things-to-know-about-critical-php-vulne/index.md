@@ -49,9 +49,15 @@ capture 20261023T080331Z · HTTP 200 · https://www.crn.com/news/security/2026/5
 - `rendered.html` 5b69e1301cecea73f059f3de8618d54f5e7fcca27a7438e9c1c9a765284d83b2 26,203 bytes
 - `screenshot.jpg` 61d34da7242d0dae910cd0147dc16e695fd4f1abdc2085a46ec853e8fa42e899 7,597 bytes
 - `text.txt` 7e2214693dddacf72cedf3f64ad2898acb80fbee6504be4f8122dd7ddb481ee5 5,761 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.crn.com/news/security/2026/5-things-to-know-about-critical-php-vulnerabilities-exploitation- `headers.json` a52c4edd6cf2301348db4cec9672a9b0fb7bcb13c6d3a31b78314f609b326633 1,129 bytes
+- `page.html` 528bbf0ef5ce75006bd5e94b913b45700df4ae77705a3963609eeaaf1998563d 20,508 bytes
+- `provenance.json` a6d540748f65978d282b3e5320861b93d81a22559603d58214dcadca71371924 1,931 bytes
+- `rendered.html` bffe87329149352f6d910c41920965c0541d4519da14fbf53d6a4c676adcb3d1 27,757 bytes
+- `screenshot.jpg` 61d34da7242d0dae910cd0147dc16e695fd4f1abdc2085a46ec853e8fa42e899 7,597 bytes
+- `text.txt` 683aa11bc32c6b1012132894fc892d5321c56d9bb0fa24fef1ea74435e105a2b 5,888 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/crn-news-security-2026-5-things-to-know-about-critical-php-vulne/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/crn-news-security-2026-5-things-to-know-about-critical-php-vulne/index.html

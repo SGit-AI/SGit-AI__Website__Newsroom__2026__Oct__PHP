@@ -12,7 +12,7 @@ Every vault behind this site: what each holds, who writes to it, and how to open
 
 ## [The evidence vault](../admin/vault/index.html) public read
 
-**Vault** `3ytzxm3g` · 328 sources, 323 captures, 1951 hashed files; head `1f38e70921b2` · opens in its own app
+**Vault** `3ytzxm3g` · 382 sources, 441 captures, 2595 hashed files; head `8c16a64a7cf6` · opens in its own app
 
 The story as it was assembled on the morning of 22 October 2026: every source as a folder with its capture (text, screenshot, HTML, headers, sha256 of each), the claims and the dated events each agent extracted, the editor's memos and the agents' notes. Its own app explores them.
 
@@ -222,4 +222,4 @@ The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgi
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html

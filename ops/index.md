@@ -15,7 +15,7 @@ Your reading path
 
     If you run PHPstepsCheck your stackPatching: who gets a fixThe two flawsExploitation signalsDetection and defenceThe agencies16Every claim70The code
 
-Operations · data as of 24 October 2026, 08:37 UTC
+Operations · data as of 24 October 2026, 16:05 UTC
 
 # What changed, what to do next, and how sure we are
 
@@ -37,21 +37,21 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ## What changed, newest first
 Release by release
-      frontv0.15.2 · 2026-10-24
-### [Front page: right now](../index.html#now)
-questionv0.14.8 · 2026-10-24
-### [Is PHP really the software behind most websites?](../questions/most-websites/index.html)
-questionv0.14.30 · 2026-10-24
+      questionv0.15.19 · 2026-10-24
 ### [Has anyone actually been hacked?](../questions/been-hacked/index.html)
-frontv0.14.30 · 2026-10-24
+frontv0.15.19 · 2026-10-24
+### [Front page: right now](../index.html#now)
+frontv0.15.19 · 2026-10-24
 ### [Front page: latest](../index.html#latest)
+frontv0.15.19 · 2026-10-24
+### [Front page: the core facts](../index.html#facts)
+factreportedv0.15.19 · 2026-10-24
+### [As of 16:05 UTC on 24 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Pa](../facts/no-confirmed-compromise/index.html)
+CISACISAHuntressAmazonquestionv0.14.8 · 2026-10-24
+### [Is PHP really the software behind most websites?](../questions/most-websites/index.html)
 frontv0.14.30 · 2026-10-24
 ### [Front page: at a glance](../index.html#glance)
-frontv0.14.30 · 2026-10-24
-### [Front page: the core facts](../index.html#facts)
-factreportedv0.14.30 · 2026-10-24
-### [As of 08:37 UTC on 24 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Pa](../facts/no-confirmed-compromise/index.html)
-CISACISAHuntressAmazonstoryv0.14.24 · 2026-10-24
+storyv0.14.24 · 2026-10-24
 ### [The risk graph, before and after: what changed from one reader's five ideas](../articles/the-risk-graph-before-and-after/index.html)
 frontv0.12.1 · 2026-10-24
 ### [Front page: what nobody knows yet](../index.html#unknown)
@@ -96,4 +96,4 @@ Red: from the leak on 20 October. [The timeline](../timeline/index.html)
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/ops/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/ops/index.html

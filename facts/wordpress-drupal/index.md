@@ -31,8 +31,8 @@ Graded in Run-3, resting on captures up to 2026-10-22 08:10 UTC. The scale is on
 ## This fact over time
 - 2026-10-21Calif publishes [php2shell by Calif Research — A tale of two PHP remote vulnerabilities](../../sources/calif-php2shell/index.html)
 - 2026-10-21Wiz publishes [PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet](../../sources/wiz-blog-php2shell/index.html)
-- 2026-10-22 08:10 UTCSaved into the evidence vault: Calif
-- 2026-10-22 08:10 UTCSaved into the evidence vault: Wiz
+- 2026-10-22 08:10 UTCSaved into the evidence vault: Calif, then 1 more capture
+- 2026-10-22 08:10 UTCSaved into the evidence vault: Wiz, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
 - 2026-10-24Reworded or re-sourced in v0.12.1
 
@@ -59,4 +59,4 @@ v2 · site v0.12.1 · 24 October 2026 · reportedPre-authenticationIn researcher
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/wordpress-drupal/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/wordpress-drupal/index.html

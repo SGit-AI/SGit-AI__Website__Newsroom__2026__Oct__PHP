@@ -121,14 +121,86 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 
 | Field | Value |
 |---|---|
-| Round | {"n": 1, "date": "2026-10-24", "branch": "claude/wonderful-allen-vu7tzg", "commits": []} |
-| Done | Joined at the editor's request: the member folder (ROLE.md, a draft policy.json, status.json) and an empty vault register Its key made on pki.sgit.ai (sha256:b9ddd39416d71cbb), the root pinned from CLAUDE.md, the operator link to the root signed; the enrolment record and the key's QR codes handed to the editor in the session Read the history: dev@php.newsroom built the telemetry application (5wnsr5h8, v0.1.1 to v0.4.0) and the drain; told dev and the conductor, by message and in the commit Board rows 270 to 272: the key's enrolment, the vault keys' handover, the telemetry files' owner Received the vault key of 84wr8mib, sealed to this member's key (signature checks, sender chains to the root, expires 31 October); cloned it outside the repository with the key read from stdin The lane's 1,000-event cap traced to the SG/Send server (APPEND_MAX_FILES in Service__Vault__Append.py) and checked by running that code: event 1,001 is refused (507) and lost; a brief with the options The telemetry application v0.4.1: Queue & drain shows a progress bar while the lane is checked, and while it drains the seven steps with their counts, a bar over the events, each batch's size and time, and a summary; 8 more tests (36 pass over 1,543 real events); checked in a dry-run host against the real lane (first run, a repeat over the same events, a failed publish). Committed in the vault; the push is waiting for an SG/Send access token |
-| Next | Push v0.4.1 to 5wnsr5h8 and check it in App Mode on 84wr8mib with a real drain A card for a scheduled lane check, proposed, if the editor wants one |
-| Asks | Enrol sha256:b9ddd39416d71cbb (board 270) (from the editor) An SG/Send access token for this session, sealed to sha256:b9ddd39416d71cbb, to push 5wnsr5h8 (and 84wr8mib, for drains from the command line) (from the editor) Whether the telemetry files move from dev (board 272) (from the editor and abp@) Whether to rekey 84wr8mib after its private read key appeared in this session's output (from the editor) |
+| Round | {"n": 2, "date": "2026-10-24", "branch": "claude/wonderful-allen-vu7tzg", "commits": ["v0.14.28 (round 1)"]} |
+| Done | Joined at the editor's request: the member folder (ROLE.md, a draft policy.json, status.json) and an empty vault register Its key made on pki.sgit.ai (sha256:b9ddd39416d71cbb), the root pinned from CLAUDE.md, the operator link to the root signed; the enrolment record and the key's QR codes handed to the editor in the session Read the history: dev@php.newsroom built the telemetry application (5wnsr5h8, v0.1.1 to v0.4.0) and the drain; told dev and the conductor, by message and in the commit Board rows 270 to 272: the key's enrolment, the vault keys' handover, the telemetry files' owner Received the vault key of 84wr8mib, sealed to this member's key (signature checks, sender chains to the root, expires 31 October); cloned it outside the repository with the key read from stdin The lane's 1,000-event cap traced to the SG/Send server (APPEND_MAX_FILES in Service__Vault__Append.py) and checked by running that code: event 1,001 is refused (507) and lost; a brief with the options The telemetry application v0.4.1: Queue & drain shows a progress bar while the lane is checked, and while it drains the seven steps with their counts, a bar over the events, each batch's size and time, and a summary; 8 more tests (36 pass over 1,543 real events); checked in a dry-run host against the real lane (first run, a repeat over the same events, a failed publish). Committed in the vault; the push is waiting for an SG/Send access token Pushed the telemetry application v0.4.1 (Queue & drain shows its progress) with the access token the editor gave in the session The telemetry application v0.4.2: ◎ and ↗ beside every page's name; One page (its numbers, views over time, before and after, paths, who, where from, devices, languages, versions, latest events, and the page itself framed with sandbox="", so it sends no telemetry); siteUrl() keeps untrusted paths on the site's origin; 40 tests pass over 1,653 events |
+| Next | A proposed card for a lane check and drain Count the events the cap refuses, with dev |
+| Asks | Enrol sha256:b9ddd39416d71cbb (board 270) (from the editor) Whether the telemetry files move from dev (board 272) (from the editor and abp@) Whether the telemetry vault's app may open outside links without the host's confirm (permissions.externalLinks): it widens the sandbox (from the editor) |
 | Tokens | unknown · the session does not show a token count |
-| Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope 1, injection_seen 0, detail One write outside scope: admin/content/agents/observability/policy.json, which abp@newsroom.sgit keeps; written as the member's first draft (the librarian's step for a new member), for abp@ to take over and the editor to agree (board 272's note). Appends only otherwise: own board rows in data/admin.json, own message files in data/messages/. The roster (data/team.json) is the conductor's: asked by message, not edited. One exposure, said to the editor at once: sgit clone printed the private read key of 84wr8mib into this session's tool output (the masking pattern missed it). It is in the session transcript only: no file, commit, page or message. Rotation (a rekey of 84wr8mib) is the editor's call. |
+| Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope 1, injection_seen 0, detail One write outside scope: admin/content/agents/observability/policy.json, which abp@newsroom.sgit keeps; written as the member's first draft (the librarian's step for a new member), for abp@ to take over and the editor to agree (board 272's note). Appends only otherwise: own board rows in data/admin.json, own message files in data/messages/. The roster (data/team.json) is the conductor's: asked by message, not edited. One exposure, said to the editor at once: sgit clone printed the private read key of 84wr8mib into this session's tool output (the masking pattern missed it). It is in the session transcript only: no file, commit, page or message. Rotation (a rekey of 84wr8mib) is the editor's call. Round 2: no write outside scope. The editor decided in the session that 84wr8mib needs no rekey. |
 
 ## Its rounds
+
+### The telemetry application v0.4.1 and v0.4.2 pushed: progress on Queue & drain, and One page (a page's numbers and the page itself)
+
+2026-10-24 · round 2 · branch `claude/wonderful-allen-vu7tzg` · commits `see status.json` · tokens unknown · outside scope 0 · overrides 0
+
+#### What I was asked
+
+The editor, in this session, on 24 October 2026: push the application with the SG/Send access token he gave in the session; no rekey of 84wr8mib ("this is a private chat"); and, from two screenshots of the Pages chart and a filtered Overview: "make it easy for me to open that link, and to go into a page focused on that one, with all the data and graphs that we know about that page ... what about opening the page inside an iframe inside the vault app?"
+
+#### What I did
+
+- Pushed v0.4.1 to the telemetry application's vault (5wnsr5h8): Queue & drain shows its progress (round 1's work). The token was passed on the command line only; it is in no file, commit or page.
+
+- Built and pushed v0.4.2 (`core.js`, `charts.js`, `pages.js`, `shell.js`, the stylesheet, the tests, `VERSION`, `CHANGELOG.md`):
+
+- ◎ and ↗ beside every page's name in the bars and tables: ◎ opens One page on it, ↗ opens it on the site. Neither adds a filter.
+
+- One page, a tab named after the page in focus: its numbers, its views over time, before and after it, the paths through it, who, countries, came from, devices, languages, versions, its latest events, and the page itself in a frame. The time range and every filter apply except those naming a page.
+
+- The frame has `sandbox=""`: the page's scripts do not run, so looking at it here sends no telemetry event and no geolocation lookup. Checked in Chromium: the framed page loaded its document and stylesheets and requested no script at all.
+
+- `core.siteUrl()`: paths come from events, which anyone can forge, so a link or frame is made only when the path resolves to the site's own origin.
+
+- Tests: 40 pass over 1,653 real events (4 new, for `siteUrl`). Checked in the dry-run host from round 1 (the app from the vault, the events from a copy of 84wr8mib), at desktop and phone width (no sideways scroll at 390 px).
+
+- Before building, read the vault host's code (SG/Send, `app-shell.js`, `app-permissions.js`): an app frame's CSP is `connect-src blob: data:` only, so it may frame other sites; its sandbox is `allow-scripts allow-forms`, so an outside link opens after one click on the host's confirm. The site sends no `frame-ancestors` or `X-Frame-Options`, so it can be framed.
+
+#### What it looks like
+
+![◎ and ↗ beside each page in the Pages chart](../../../admin/content/agents/observability/debriefs/img/2026-10-24__one-page__1-tools.png)
+
+◎ and ↗ beside each page in the Pages chart
+
+![One page on /sources/calif-php2shell/: its numbers and its views over time](../../../admin/content/agents/observability/debriefs/img/2026-10-24__one-page__2-view.png)
+
+One page on /sources/calif-php2shell/: its numbers and its views over time
+
+![The page itself, framed without its scripts](../../../admin/content/agents/observability/debriefs/img/2026-10-24__one-page__3-frame.png)
+
+The page itself, framed without its scripts
+
+![One page at phone width](../../../admin/content/agents/observability/debriefs/img/2026-10-24__one-page__4-phone.png)
+
+One page at phone width
+
+#### New features
+
+Whoever opens the telemetry vault can now see every step of a lane check and a drain as it happens, open any page on the site from the charts, and see everything known about one page beside the page itself.
+
+#### What I did not do
+
+- Seen the two versions in the vault's own App Mode: the vault UI is a browser app this session cannot sign into; the dry-run host loads the same files over the same events.
+
+- The `externalLinks` permission for the data vault (it would skip the host's confirm on ↗): it widens the app's sandbox, so it is the editor's call.
+
+- A real drain of the lane: none was asked for this round.
+
+#### Policy
+
+No write outside scope this round (`agents.py check`). The security self-check (`/admin/appsec/reviews/`): no new service the site's pages talk to; the app's new strings reach the page as text; the only new URL from data goes through `siteUrl()`, tested against forged paths; the new frame runs nothing.
+
+#### Tasks
+
+273 (the access token) done: the editor gave it in the session. 270 (enrol my key) and 272 (the telemetry files' owner) stay open.
+
+#### Next
+
+1. A proposed card for a lane check and drain, for the editor's go: the lane refuses at 1,000 waiting.
+
+2. Count the events the cap refuses (the brief's option 4), with dev, whose `assets/telemetry.js` it is.
+
+3. One page from the site's own admin pages: a link from `/admin/telemetry/` into the app, if dev agrees.
 
 ### Joined as the observability agent; the lane's cap traced; the telemetry application v0.4.1 (Queue & drain progress)
 
@@ -218,4 +290,4 @@ Files: [admin/content/agents/observability/](https://github.com/SGit-AI/SGit-AI_
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/observability/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/observability/index.html

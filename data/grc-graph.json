@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.15.13",
+ "version": "0.16.1",
  "kept_by": "grc@php.newsroom",
  "as_of": "2026-10-22",
  "verbs": [
@@ -3340,7 +3340,7 @@
   {
    "id": "claim:no-confirmed-compromise",
    "kind": "claim",
-   "label": "As of 08:37 UTC on 24 October, no named organisation has said it was compromised through p",
+   "label": "As of 16:05 UTC on 24 October, no named organisation has said it was compromised through p",
    "href": "facts/no-confirmed-compromise/index.html"
   },
   {
@@ -3432,6 +3432,18 @@
    "kind": "source",
    "label": "The Next Web",
    "href": "sources/the-next-web-php2shell-no-confirmed-breaches/index.html"
+  },
+  {
+   "id": "source:diepresse-41383717-die-php-sicherheitsluecke-ist-a",
+   "kind": "source",
+   "label": "Die Presse",
+   "href": "sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/index.html"
+  },
+  {
+   "id": "source:voix-business-cards-rainforest-ip-activity-an",
+   "kind": "source",
+   "label": "voix",
+   "href": "sources/voix-business-cards-rainforest-ip-activity-an/index.html"
   },
   {
    "id": "claim:nz-active",
@@ -14137,6 +14149,26 @@
    "basis": {
     "kind": "source",
     "ref": "the-next-web-php2shell-no-confirmed-breaches"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:diepresse-41383717-die-php-sicherheitsluecke-ist-a",
+   "basis": {
+    "kind": "source",
+    "ref": "diepresse-41383717-die-php-sicherheitsluecke-ist-a"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:voix-business-cards-rainforest-ip-activity-an",
+   "basis": {
+    "kind": "source",
+    "ref": "voix-business-cards-rainforest-ip-activity-an"
    }
   },
   {

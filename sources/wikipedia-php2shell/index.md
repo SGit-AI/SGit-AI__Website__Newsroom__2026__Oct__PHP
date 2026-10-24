@@ -35,9 +35,15 @@ capture 20261022T112309Z · HTTP 200 · https://en.wikipedia.org/wiki/PHP2Shell-
 - `rendered.html` f51281e6ee013358343fd07568c8ef63acc38f4340841c824d6c3941004b14e3 408,195 bytes
 - `screenshot.png` ae58953f05c3bd41c5e57931462c15c8213fb7843a0c45d0b9b045b00f4ce8c5 1,586,902 bytes
 - `text.txt` bbb51bbd069506b09282b45086984565ae875b5d974d121584c8e2b3c912222f 16,230 bytes
+capture 20261023T160435Z · HTTP 200 · https://en.wikipedia.org/wiki/PHP2Shell- `headers.json` e2254fb49fc7a7329531a655adc103548d954d74cf59cc4781d1c86e9f61020c 6,585 bytes
+- `page.html` a310d7d84e2748ce729107fcef3642e5c4e9c12996a184bb0c9f5cf3590b4681 273,715 bytes
+- `provenance.json` 3d3536d66a4944740ef6d94c5dced200c2c89313558af830457eee534742f7ca 1,646 bytes
+- `rendered.html` ce058df595b4dfbd8f8229172fe343fbd5ddd91cbace3b7671f44af3212ec2f8 464,711 bytes
+- `screenshot.jpg` 409ba4f4b1053d44542ff9aaf6e33e4e3d5afe13669ce1ea05b3a80a3be8c603 765,132 bytes
+- `text.txt` 8123fb7cd4cfbb45571a8e05537e0c5d29133a05e1488ed96f323069848ddacc 15,524 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/wikipedia-php2shell/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/wikipedia-php2shell/index.html

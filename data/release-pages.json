@@ -1,6 +1,1940 @@
 {
  "about": "A page counts as changed when the content of its <main> differs from the previous release's, with the two site version numbers masked: the header, the footer and the version stamp change on every page at every release and say nothing about what the release did. Pages are compared as built and committed, so the list is what a reader would have seen change. Stored in data/release-pages.json, one entry per release, written once and never recomputed:",
  "releases": {
+  "0.16.1": {
+   "against": "0.16.0",
+   "pages": [
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.16.0": {
+   "against": "0.15.21",
+   "pages": [
+    {
+     "path": "admin/agents/story-site/index.html",
+     "title": "Story site agent: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/story-site/index.html",
+     "title": "Story site agent, design, claims and the story pages: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/dev/index.html",
+     "title": "dev@php.newsroom, build, gate and release: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "analysis/index.html",
+     "title": "Analysis: how sure we are, and where the sources disagree",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.15.21": {
+   "against": "0.15.20",
+   "pages": [
+    {
+     "path": "admin/agents/journalist/index.html",
+     "title": "Journalist: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.15.20": {
+   "against": "0.15.19",
+   "pages": [
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.15.19": {
+   "against": "0.15.18",
+   "pages": [
+    {
+     "path": "sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/index.html",
+     "title": "Source: Die PHP-Sicherheitslücke ist alt, die KI hat sie wieder ausgegraben, was sie genau ist und was noch kommt – DiePresse.com",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/voix-business-cards-rainforest-ip-activity-an/index.html",
+     "title": "Source: RainForestが明らかにしたPHP2Shell脆弱性に関連する3つのIPアドレスの活動履歴 - VOIX",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/computerhoy-20minutos-ciberseguridad-que-es-php-php2shell-cual/index.html",
+     "title": "Source: Qué es PHP y PHP2Shell, cuál es el papel de la IA en todo esto y cuánto tiempo tardará en solucionarse una de las mayores crisis de seguridad en la historia de internet",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/itwire-business-it-news-security-php2shell-the/index.html",
+     "title": "Source: PHP2Shell: the 14-year-old bugs that pulled cyber.gov.au and government sites worldwide offline | iTWire",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/alghad-section-225-d8-aa-d9-83-d9-86-d9-88-d9-8/index.html",
+     "title": "Source: ثغرة في PHP تفتح الباب أمام موجة هجمات سيبرانية...",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/cumhuriyet-bilim-teknoloji-php-kaynakli-kritik-guve/index.html",
+     "title": "Source: PHP kaynaklı kritik güvenlik açığı: Avrupa'da devlet, okul ve hastanelerin internet siteleri erişime kapatıldı - Son Dakika Bilim Teknoloji Haberleri | Cumhuriyet",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/gazzettadelsud-articoli-cronaca-2026-10-22-allarme-php2/index.html",
+     "title": "Source: Allarme PHP2Shell, vulnerabilità gravissime: cosa rischiano i siti web - Gazzetta del Sud",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/es-wired-articulos-hackers-aprovecharon-las-vulne/index.html",
+     "title": "Source: Hackers aprovecharon las vulnerabilidades de PHP días antes de que se corrigieran | WIRED",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/eldebate-tecnologia-20261022-php2shell-vulnerabil/index.html",
+     "title": "Source: PHP2Shell: la vulnerabilidad masiva descubierta por IA que amenaza al 70 % de las páginas web del mundo",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/dantri-cong-nghe-doanh-nghiep-can-lam-gi-de-bao/index.html",
+     "title": "Source: Doanh nghiệp cần làm gì để bảo vệ trang web trước lỗ hổng PHP? | Báo Dân trí",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/fortuneita-2026-10-22-php2shell-il-bug-che-poteva-m/index.html",
+     "title": "Source: PHP2Shell, il bug che poteva mandare in tilt il 70% dei siti mondiali. Ecco cosa è successo - Fortune Italia",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/cryptoast-failles-critiques-php-php2shell-france-f/index.html",
+     "title": "Source: Faille php : 60% des sites impactés et la France en première ligne, que faire et faut-il s’inquiéter ?",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/generation-nt-actualites-php-faille-securite-php2shell/index.html",
+     "title": "Source: PHP2Shell : l'IA est à l'origine de la découverte de la faille qui ébranle le Web",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/europapress-portaltic-ciberseguridad-noticia-amazon/index.html",
+     "title": "Source: Amazon detectó intentos de explotación de PHP2Shell días antes de que se divulgaran las vulnerabilidades y su parche",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/elmundo-economia-2026-10-21-6ad92780fc6c83a57e8b/index.html",
+     "title": "Source: Así es PHP2Shell, el fallo que amenaza a siete de cada diez webs | Actualidad Económica",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/cnbcindonesia-tech-20261022094711-37-778474-patch-php2/index.html",
+     "title": "Source: Patch PHP2Shell Sudah Terbit, Ini Versi Aman dan Cara Update",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/donanimhaber-php-acigindan-etkilenen-ulkeler-ve-sitel/index.html",
+     "title": "Source: PHP açığından etkilenen ülkeler ve siteler açıklandı: İşte liste | DonanımHaber",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/elobservador-ciencia-y-tecnologia-sitios-del-estado-c/index.html",
+     "title": "Source: Sitios del Estado caídos y miles de servidores expuestos: el impacto en Uruguay de la falla de PHP",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/coinpedia-crypto-live-news-php-flags-third-unpatch/index.html",
+     "title": "Source: PHP Flags Third Unpatched Flaw As Attacks On PHP2Shell Bugs Reach Millions",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/ebn-news-articleview-html/index.html",
+     "title": "Source: PHP 취약점 악용한 대규모 사이버 공격 정황...北 라자루스 연계 가능성 < 정치/사회 < 기사본문 - 이비엔(EBN)뉴스센터",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/freepressjournal-bhopal-mp-government-websites-vulnerable/index.html",
+     "title": "Source: MP Government Websites Vulnerable To 'PHP2Shell' Cyber Threat; NIC Issues Critical Security Advisory, MP CERT Reports No Damage So Far",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/note-masaland-n-n1bda3e5bc53f/index.html",
+     "title": "Source: [October 2026] What is PHP2Shell? How Generative AI is Shortening the 'Time' of Security｜Masaland",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/clubic-actualite-635179-deux-failles-critiques/index.html",
+     "title": "Source: Deux failles critiques menacent des millions de sites PHP, une mise à jour d’urgence arrive ce mercredi après-midi",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/coinacademy-actu-php-php2shell-frailles-critiques-ur/index.html",
+     "title": "Source: PHP2Shell : deux failles critiques PHP corrigées en urgence",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/financiarul-tehnologie-vulnerabilitatea-php-este-viz/index.html",
+     "title": "Source: Vulnerabilitatea PHP este vizată de milioane de accesări. Autorități europene au oprit preventiv site-uri",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/gamemeca-view-php/index.html",
+     "title": "Source: PHP 취약점에 게임사들도 비상, 점검에 서비스 종료까지",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/computable-2026-10-21-kritiek-php-lek-zet-miljoenen/index.html",
+     "title": "Source: Kritiek PHP-lek zet miljoenen websites onder druk - Computable.be",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/cybersecurity360-nuove-minacce-php2shell-due-vulnerabilit/index.html",
+     "title": "Source: PHP2Shell: due vulnerabilità critiche in PHP, cosa fare",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/inc42-features-php2shell-who-is-at-risk-and-ho/index.html",
+     "title": "Source: PHP2Shell: Who Is At Risk And How Can Businesses Stay Safe?",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/cryptoid-ciberseguranca-seguranca-da-informacao-i/index.html",
+     "title": "Source: Imperva Threat Research analisa falhas críticas do PHP2Shell",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/finance-sina-tech-roll-2026-10-22-doc-iniwcaff5189430/index.html",
+     "title": "Source: OpenAI 发现 PHP「世纪漏洞」，全球 70% 网站都危险了_新浪科技_新浪网",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/cnbctv18-technology-india-ranks-11th-among-18-cou/index.html",
+     "title": "Source: India ranks 11th among 18 countries most affected by PHP2Shell attacks: Check Point Research - CNBC TV18",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/expresscomputer-guest-blogs-understanding-php2shell-vuln/index.html",
+     "title": "Source: Understanding PHP2Shell vulnerabilities and reducing risk while you patch - Express Computer",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/ototekno-harianjogja-r-1276080-php2shell-bisa-curi-data-websi/index.html",
+     "title": "Source: PHP2Shell Bisa Curi Data Website, Kenali Tanda Server Diretas",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/detik-tag-php2shell/index.html",
+     "title": "Source: Berita dan Informasi Php2shell Terkini dan Terbaru Hari ini - detikcom",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/cyberdaily-security-14335-php2shell-do-you-know-whe/index.html",
+     "title": "Source: PHP2Shell: Do you know where all your servers are? - Cyber Daily",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/latintimes-php2shell-ai-found-bug-hiding-70-web-mil/index.html",
+     "title": "Source: PHP2Shell: AI Found the Bug Hiding in 70% of the Web. Millions Attacked. Patch Now",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/openaccessgovernment-ncsc-issues-warning-over-critical-php-re/index.html",
+     "title": "Source: NCSC issues warning over critical PHP remote code execution vulnerabilities",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/forbes-teknoloji-yapay-zekayla-kesfedildi-php-g/index.html",
+     "title": "Source: Yapay zekayla keşfedildi: PHP güvenlik açığı neden önemli? - Forbes Türkiye",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/finance-yahoo-technology-articles-php-patches-critical/index.html",
+     "title": "Source: PHP patches critical flaw hitting 70% of websites; Cloudflare, others surge",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/estadao-tecmundo-ciberseguranca-brecha-no-php-ja/index.html",
+     "title": "Source: Brecha no PHP já gerou milhões de tentativas de exploração, diz CEO da Cloudflare - Estadão",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/aimatters-news-report-56697/index.html",
+     "title": "Source: 'PHP2Shell' 취약점에 \"딥시크가 원격 패치\" 주장 확산…근거는 확인 안 돼 - AI매터스",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/faz-aktuell-wirtschaft-mehr-wirtschaft-php-s/index.html",
+     "title": "Source: PHP-Sicherheitslücken: Die wichtigsten Fragen und Antworten | FAZ",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/donews-news-detail-8-6750596-html/index.html",
+     "title": "Source: PHP曝出代号PHP2Shell高危漏洞- DoNews快讯",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/greenbaypressgazette-press-release-story-197263-cyber-securit/index.html",
+     "title": "Source: Cyber Security Services Launches Free PHP2Shell Check for Website Owners - Green Bay Press-Gazette",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/digitaltoday-cn-view-118322-stealien-launches-free-ph/index.html",
+     "title": "Source: Stealien推出“PHP2Shell”免费在线检测服务",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/dailysecu-news-articleview-html/index.html",
+     "title": "Source: [긴급] PHP2Shell 취약점에 웹서버 보안 비상…긴급 설정 점검과 업데이트 필수 < 긴급속보 < 이슈 < 기사본문 - 데일리시큐",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/bluewin-de-digital-php-sicherheitsluecke-ondrej/index.html",
+     "title": "Source: PHP2Shell: Wie Ondřej Surý das Internet rettete",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/feuerwehrmagazin-nachrichten-dfv-warnt-vor-kritischen-php/index.html",
+     "title": "Source: PHP2Shell: DFV warnt Feuerwehren vor kritischen PHP-Sicherheitslücken",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/defesaemfoco-php2shell-falhas-gravidade-92-ameacam-se/index.html",
+     "title": "Source: PHP2Shell: falhas de gravidade 9,2 ameaçam servidores na internet",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/addustour-articles-1598648/index.html",
+     "title": "Source: «الأمـن السيــبـرانــي» يدعو إلى تحديث «PHP» لمعالجة ثغرتين أمنيتين",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/gigazine-news-20261023-cloudflare-stats-php2shell/index.html",
+     "title": "Source: 「PHP2Shell」脆弱性公表後に悪用試行が数百万件単位に増加したとCloudflareが報告、顧客向けには新ファイアウォールを開発して有効化 - GIGAZINE",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/fnnews-news-202610230856366360/index.html",
+     "title": "Source: \"우리 홈페이지도 위험할까\"…파이오링크, PHP 취약점 점검 페이지 공개 - 파이낸셜뉴스",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/emarketerz-faille-majeure-dans-php-que-revele-la-vu/index.html",
+     "title": "Source: Faille majeure dans PHP : Que révèle la vulnérabilité PHP2Shell ?",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "sources/index.html",
+     "title": "Every source: 382 pages, 441 captures, 2595 hashes",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "claims/review/index.html",
+     "title": "Claims waiting for review",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/no-confirmed-compromise/index.html",
+     "title": "Fact: As of 16:05 UTC on 24 October, no named organisation has said it was compromised",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/reuters-factbox-websites-offline/index.html",
+     "title": "Source: Global Websites Offline Amid PHP Security Flaws: Finance Sector Impact",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/insurancebusiness-uk-councils-met/index.html",
+     "title": "Source: UK councils and Met Police among sites pulled offline after NCSC alert | Insurance Business",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/aws-security-blog-madpot/index.html",
+     "title": "Source: Amazon Threat Intelligence identifies PHP2Shell exploitation prior to public disclosure in MadPot | AWS Security Blog",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/securityweek-first-attempts-sensors/index.html",
+     "title": "Source: PHP2Shell Patches Land as First Exploitation Attempts Hit Sensors - SecurityWeek",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "views/desk/index.html",
+     "title": "The journalist's desk: keeping the site current",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/recordedfuture-php2shell/index.html",
+     "title": "Source: PHP2Shell Exploitation: Two Critical PHP Flaws Explained",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/newsweek-php2shell-websites/index.html",
+     "title": "Source: PHP Vulnerability: List of Websites Powered by PHP as Hacker Threat Prompts Scramble - Newsweek",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/journalist/index.html",
+     "title": "Schedule: journalist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/clarin-us-news-php-security-vulnerabilities-how-ai-uncovered-massiv/index.html",
+     "title": "Source: PHP security vulnerabilities: How AI uncovered a massive 14-year-old flaw threatening 70% of the internet",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/actu17-prefectures/index.html",
+     "title": "Source: Failles critiques dans PHP : des sites coupés en urgence dans le monde entier, dont ceux des préfectures en France",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/index.html",
+     "title": "Source: Hackers Already Trying to Exploit Serious PHP Flaw | PCMag",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/securityweek-mass-exploitation-looms/index.html",
+     "title": "Source: PHP2Shell: Mass Exploitation Looms for Leaked Critical PHP Flaws - SecurityWeek",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/theregister-php-blames-chainguard/index.html",
+     "title": "Source: PHP blames supply chain security biz Chainguard for putting huge chunks of the web at risk",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/in-mashable-tech-115245-fbi-releases-php2shell-advisory-as-the-internet/index.html",
+     "title": "Source: FBI Releases PHP2Shell Advisory As The Internet Explodes In Hilarious PHP Memes; Here Are The Best Ones",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/thehackernews-php2shell-unpatched-alert/index.html",
+     "title": "Source: PHP2Shell: Two Unpatched Critical PHP RCE Flaws (CVSS 9.2) Trigger Emergency Security Alert",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/safeguard-how-hard-to-exploit/index.html",
+     "title": "Source: PHP2Shell: How Hard Is It to Exploit, and What PHP Is Changing | Safeguard Blog",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/arstechnica-security-2026-10-php-maintainers-tell-web-devs-to-prepare-th/index.html",
+     "title": "Source: PHP warns it plans to release 2 emergency patches imminently - Ars Technica",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/eadt-minister-budget-no-breach/index.html",
+     "title": "Source: No breach of Budget security after critical flaw found in PHP, minister says | East Anglian Daily Times",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/ia-acs-article-2026-govt-sites-go-down-after-ai-finds-critical-php/index.html",
+     "title": "Source: Govt sites go down after AI finds 'critical' PHP vulnerabilities | Information Age | ACS",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/securityweek-exploitation-days-before/index.html",
+     "title": "Source: PHP2Shell Exploitation Started Days Before Patches - SecurityWeek",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/tenable-php2shell-faq/index.html",
+     "title": "Source: php2shell (CVE-2026-109618, CVE-2026-109619): Critical PHP RCE FAQ | Tenable®",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/imperva-blog-php2shell/index.html",
+     "title": "Source: PHP2Shell: When PHP Runs Out of Memory at the Wrong Moment | Imperva",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/cloudflare-blog-php2shell-waf/index.html",
+     "title": "Source: Cloudflare deploys protections against php2shell vulnerability",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/safeguard-waf-rules-limits/index.html",
+     "title": "Source: PHP2Shell WAF rules: what they block and where they fall short | Safeguard Blog",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/itdaily-php-clumsy-announcement/index.html",
+     "title": "Source: PHP Foundation angered by ‘clumsy’ disclosure of vulnerabilities - ITdaily",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/socket-blog-embargo-dispute/index.html",
+     "title": "Source: Just a moment...",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur/index.html",
+     "title": "Source: Singapore organisations urged to patch critical PHP flaws immediately amid cyberattack threat - CNA",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/weirdgloop-blog-php2shell/index.html",
+     "title": "Source: Recent wiki downtime (PHP2Shell mitigation) | Weird Gloop",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/armis-php2shell-find-patch/index.html",
+     "title": "Source: Just a moment...",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/cyberexpress-php2shell-gov-sites/index.html",
+     "title": "Source: PHP2Shell CVE-2026-109618 PHP Flaw Hits Gov Sites",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/wikipedia-log4shell/index.html",
+     "title": "Source: Log4Shell - Wikipedia",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/watchtowr-php2shell-faq/index.html",
+     "title": "Source: watchtowr.com",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/daubois-blog-php2shell-rumors/index.html",
+     "title": "Source: What the PHP2Shell rumors got wrong, from inside the PHP security team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/watchtowr-php2shell/index.html",
+     "title": "Source: watchtowr.com",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/wikipedia-moveit-breach/index.html",
+     "title": "Source: 2023 MOVEit data breach - Wikipedia",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/therecord-php-foundation-statement/index.html",
+     "title": "Source: PHP says AI review of critical bugs first sparked alarm in August, but signs surfaced in 2024 | The Record from Recorded Future News",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/indianexpress-article-technology-cert-in-php-vulnerability-alert-india-cyb/index.html",
+     "title": "Source: PHP security alert: What US and Indian government warnings mean for websites | Technology News - The Indian Express",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/actuia-anssi-sites-offline/index.html",
+     "title": "Source: PHP flaws: France's ANSSI orders sites offline",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/thehackernews-what-protects-you/index.html",
+     "title": "Source: PHP2Shell: What Actually Protects You Before the 14:00 UTC PHP RCE Patch, and What Doesn't",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/wikipedia-php2shell/index.html",
+     "title": "Source: PHP2Shell - Wikipedia",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/crn-news-security-2026-5-things-to-know-about-critical-php-vulne/index.html",
+     "title": "Source: 5 Things To Know About ‘Critical’ PHP Vulnerabilities Exploitation",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/patchtheplanet-org/index.html",
+     "title": "Source: Patch the Planet — OpenAI",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/cybernews-php2shell-millions/index.html",
+     "title": "Source: PHP2Shell exploit attempts hit millions, Amazon and Cloudflare warn | Cybernews",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/darkreading-php2shell-red-alert/index.html",
+     "title": "Source: 'PHP2Shell' Bugs Signal Red Alert for Security Industry",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/thehackernews-php2shell-4days/index.html",
+     "title": "Source: Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/cnn-php2shell-websites-shut/index.html",
+     "title": "Source: Websites shut down globally after AI finds a critical flaw affecting 70% of the internet | CNN Business",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/cnn-php2shell-ai/index.html",
+     "title": "Source: PHP2Shell: AI helped find a critical security flaw affecting 70% of the internet | CNN Business",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/sentinelone-php2shell/index.html",
+     "title": "Source: Stopping PHP2SHELL: How SentinelOne Protects Customers From This Attack Technique",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/bleepingcomputer-php2shell/index.html",
+     "title": "Source: PHP ships emergency patches for critical PHP2Shell flaws",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/tagesspiegel-dpa-noch-offline/index.html",
+     "title": "Source: Sicherheitslücke: „Millionen“ Hacker-Versuche: Viele Webseiten noch offline",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/arcticwolf-php2shell-exposure/index.html",
+     "title": "Source: Finding, Prioritizing, and Patching PHP2Shell Exposure | Arctic Wolf",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/bankinfosecurity-attackers-exploit-leaked-zero-day-flaws-in-widely-used-php-a/index.html",
+     "title": "Source: Attackers Exploit Leaked Zero-Day Flaws in Widely Used PHP",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/howtogeek-sites-down/index.html",
+     "title": "Source: Your favorite websites are down due to an internet-breaking PHP security flaw",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/fastly-blog-php2shell/index.html",
+     "title": "Source: Fastly’s Proactive Protection for PHP2Shell, Critical PHP RCE CVE-2026-109618 and CVE-2026-109619 | Fastly",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/moroccoworldnews-2026-10-343335-moroccos-dgssi-warns-of-critical-php2shell-vu/index.html",
+     "title": "Source: Morocco’s DGSSI Warns of Critical ‘PHP2Shell’ Vulnerabilities",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/sansec-research-php2shell/index.html",
+     "title": "Source: PHP2Shell: Critical PHP RCE (CVE-2026-109618, CVE-2026-109619) | Sansec",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/calif-php2shell/index.html",
+     "title": "Source: php2shell by Calif Research — A tale of two PHP remote vulnerabilities",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/fortinet-fortiweb-php2shell/index.html",
+     "title": "Source: How to block PHP2Shell (CVE-2026-109618, CVE-2026-109619) on FortiWeb | Community",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/wiz-blog-php2shell/index.html",
+     "title": "Source: PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/php2shell-com/index.html",
+     "title": "Source: PHP2Shell — AI uncovers critical vulnerabilities in the backbone of the web",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/therecord-php-warnings/index.html",
+     "title": "Source: Hundreds of websites taken offline as concern grows over two PHP vulnerabilities | The Record from Recorded Future News",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/cybelangel-php2shell/index.html",
+     "title": "Source: What We Know About php2shell [Critical update]",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/prophetsecurity-php2shell-detect/index.html",
+     "title": "Source: php2shell: Detecting and Investigating CVE-2026-109618 and CVE-2026-109619 | Prophet Security",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "compromise/index.html",
+     "title": "No named organisation has said it was compromised through php2shell: the evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/cfo/index.html",
+     "title": "Briefing for a CFO: What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/dpo/index.html",
+     "title": "Briefing for a data protection officer: Was personal data exposed, does this start a GDPR breach assessment or a 72-hour notification, and what do I document?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/board/index.html",
+     "title": "Briefing for a board member or executive: Are we exposed, what is it costing us, and who owns the decision to pull a system?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/ciso/index.html",
+     "title": "Briefing for a CISO: What is our exposure, what is our evidence we were not hit, and what do I tell the board?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "claims/index.html",
+     "title": "Every claim, with its status and sources",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/comms/index.html",
+     "title": "Briefing for a media and communications team: What can we say that is true, what should we not say, and what will we be asked?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/everyone/index.html",
+     "title": "Briefing for a curious reader: What happened, does it affect me, and should I worry?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/pm/index.html",
+     "title": "Briefing for a project or programme manager: What unplanned work does this create, who do I chase, and what do I tell stakeholders?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html",
+     "title": "Source: Banks dodge early damage from PHP2Shell flaws | American Banker",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/cisa-alert-php-20261021/index.html",
+     "title": "Source: Critical Vulnerabilities in PHP Require Immediate Patching",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/cisa-kev-json/index.html",
+     "title": "Source: CISA Known Exploited Vulnerabilities catalog (JSON feed)",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/cybersecuritynews-critical-php2shell-exploit-code/index.html",
+     "title": "Source: Critical PHP2Shell Exploit Code Goes Public as Hackers Attempt to Deploy Botnet Malware",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/huntress-php2shell-rapid-response/index.html",
+     "title": "Source: Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619) | Huntress",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/impress-watch-valtec/index.html",
+     "title": "Source: バルテック、サイバー攻撃によりサービス停止、情報流出の可能性（記事訂正） - INTERNET Watch",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/itsocial-cybersecurite-cybersecurite-articles-php/index.html",
+     "title": "Source: PHP2Shell, la mise à jour ferme la faille, mais oblige à traquer les compromissions possibles - IT SOCIAL",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/lupa-cvut-cyber-attack/index.html",
+     "title": "Source: ČVUT čelí kybernetickému útoku, údajně doplatilo na kritickou chybu v PHP - Lupa.cz",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/paperjam-article-php2shell-des-milliers-de-sites/index.html",
+     "title": "Source: PHP2Shell: des milliers de sites exposés au Luxembourg | Paperjam News",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/sankei-dmm-service-halt/index.html",
+     "title": "Source: エンタメサイトDMMがサービス停止、外部システムの脆弱性への対応 「情報漏洩は無し」 - 産経ニュース",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/the-next-web-php2shell-no-confirmed-breaches/index.html",
+     "title": "Source: Millions of PHP2Shell attempts so far, but officials see no break-in",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/the-verge-php2shell-websites-down/index.html",
+     "title": "Source: Everything we know so far about the PHP2Shell vulnerability | The Verge",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/yahoo-jp-gmo-fx-login-leak/index.html",
+     "title": "Source: GMO「悪用確認されず」から一転 FX口座ログイン情報、流出の可能性 不正操作報告も（J-CASTニュース） - Yahoo!ニュース",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/status-json/index.html",
+     "title": "status.json: the feed for other sites",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/waf-nine-hours/index.html",
+     "title": "Fact: Edge protections went live hours before disclosure: Cloudflare at 03:02 UTC; Imp",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "ops/index.html",
+     "title": "Operations: what changed, what to do next, how sure we are",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "method/index.html",
+     "title": "The method: capture, hash, claim, build, gate",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "vaults/index.html",
+     "title": "The vaults behind this site",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/vault/index.html",
+     "title": "The evidence vault, opened",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/desk/index.html",
+     "title": "Schedule: desk",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "start/index.html",
+     "title": "Who is reading? The readers of this site, mapped",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/ac-high/index.html",
+     "title": "Fact: Triggering the bug is much easier than turning it into code execution; the CVSS",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/ai-found/index.html",
+     "title": "Fact: The flaws were found by researchers using frontier AI under OpenAI's Patch the P",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/amazon-honeypot/index.html",
+     "title": "Fact: An exploit attempt hit an Amazon honeypot on 17 October from an anonymisation ne",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/probing/index.html",
+     "title": "Fact: Amazon and Cloudflare saw sites being probed for the flaw",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/scale-70pc-websites/index.html",
+     "title": "Fact: PHP is used by almost 70% of websites whose server-side language is known",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/watchtowr-itw/index.html",
+     "title": "Fact: watchTowr sees active exploitation attempts and lists the flaws as exploited in",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/wikimedia-precaution/index.html",
+     "title": "Fact: The Wikimedia Foundation took down a number of systems 'as a precautionary measu",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/wordpress-drupal/index.html",
+     "title": "Fact: In researchers' own tests, pre-authentication RCE was confirmed against WordPres",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "impact/index.html",
+     "title": "Impact: taken offline versus compromised",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/risks/r03-3/index.html",
+     "title": "R03-3: Exploited in the wild without anyone being able to show it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/risks/r06-2/index.html",
+     "title": "R06-2: Essential and financial entities miss their reporting clocks",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/risks/r06/index.html",
+     "title": "R06: A compromise becomes a reportable breach",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/ahead-of-attackers/index.html",
+     "title": "Fact: Frontier AI found the flaw ahead of attackers, giving defenders time to prepare",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/chainguard/index.html",
+     "title": "Fact: Chainguard unilaterally broke the embargo on 21 October at 07:41 UTC by publishi",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/cloudflare-traffic/index.html",
+     "title": "Fact: Cloudflare observed attack traffic targeting its customers after the leak, with",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/cvss-10/index.html",
+     "title": "Fact: The flaws are CVSS 10.0",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/four-reporters/index.html",
+     "title": "Fact: The GitHub advisories credit four reporters: lcfr-hax (Calif), sagitzadik-wiz (W",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/imperva-none/index.html",
+     "title": "Fact: No traffic matching the php2shell exploit patterns was seen during Imperva's pre",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/leak-hn/index.html",
+     "title": "Fact: The leak started with an anonymous Hacker News post citing a reliable source, wh",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/leak-video/index.html",
+     "title": "Fact: Calif mistakenly published a video around 20:00 UTC on 20 October showing its pr",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/leak-watchtowr/index.html",
+     "title": "Fact: watchTowr confirmed in public that the bugs were real and posted both CVE number",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/lorenc-ai-found/index.html",
+     "title": "Fact: Chainguard's team found the same bugs independently with an AI harness and a fro",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/more-paths/index.html",
+     "title": "Fact: Patching the demonstrated paths does not make the bailout mechanism safe; more p",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/most-severe/index.html",
+     "title": "Fact: The most severe flaws ever detected by AI",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/quarkslab-2024/index.html",
+     "title": "Fact: The out-of-memory issue was found in a 2024 audit by Quarkslab (funded through O",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/release-time/index.html",
+     "title": "Fact: The fixes were released at 14:00 UTC on 21 October",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/scale-2.6m-hosts/index.html",
+     "title": "Fact: VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, o",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/scale-70pc-internet/index.html",
+     "title": "Fact: 70% of the Internet is affected",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/uk-list/index.html",
+     "title": "Fact: Edinburgh and Oxford councils, the Met Police and the Office for Budget Responsi",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/waf/index.html",
+     "title": "Fact: A web application firewall may provide some protection until systems are patched",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/weirdgloop-13h/index.html",
+     "title": "Fact: Weird Gloop turned off its wiki web servers for 13 hours and still served about",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/who-first/index.html",
+     "title": "Fact: Calif found the flaws first: discovery 1 August, hash commitment 5 August, repor",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/wiz-independent/index.html",
+     "title": "Fact: Wiz Research independently discovered the first flaw on 19 August and reported o",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "summary/index.html",
+     "title": "The specialist summary: CVE-2026-109618 and CVE-2026-109619",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "billing/index.html",
+     "title": "The billing model: what runs and what is designed",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "graph/index.html",
+     "title": "The story as a graph: who states what, who relays it, and what it rests on",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/index.html",
+     "title": "Questions readers ask about php2shell",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/graph/index.html",
+     "title": "The risk graph: php2shell stakeholders, risks, weaknesses, vulnerabilities and code",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "fractal/index.html",
+     "title": "From a line of code to a stakeholder: the fractal graph",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/gaps/index.html",
+     "title": "What the risk graph is missing: controls without tests, code without owners, risks without stories",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/been-hacked/index.html",
+     "title": "Has anyone actually been hacked?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "analysis/index.html",
+     "title": "Analysis: how sure we are, and where the sources disagree",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/explore/index.html",
+     "title": "Explore the risk graph: start from one thing and follow it",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/index.html",
+     "title": "GRC: the risks of php2shell, who carries them, and the standards that govern them",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "articles/exposed-is-not-exploited/index.html",
+     "title": "Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "articles/patch-at-the-speed-of-metasploit/index.html",
+     "title": "Patch at the speed of Metasploit: where php2shell sits on the weaponisation ladder, and the attacks that come second and third",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "articles/php2shell-in-perspective/index.html",
+     "title": "php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proof",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "articles/the-risk-graph-before-and-after/index.html",
+     "title": "The risk graph, before and after: what changed from one reader's five ideas",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "articles/the-telemetry-tools/index.html",
+     "title": "Who reads this site, and what works on it: the tools we built to find out, and what they say on day two",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "articles/what-changed-in-a-day/index.html",
+     "title": "What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "articles/where-php2shell-stands/index.html",
+     "title": "Where php2shell stands: many sites dark, millions of attempts, no confirmed breach",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "articles/why-not-patch-every-version/index.html",
+     "title": "Why can't every version of PHP just be patched?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "factcheck/index.html",
+     "title": "Fact-check: how sure can you be of each claim",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-board/index.html",
+     "title": "Briefing: Board member or executive: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-cfo/index.html",
+     "title": "Briefing: CFO: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-ciso/index.html",
+     "title": "Briefing: CISO: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-comms/index.html",
+     "title": "Briefing: Media and communications team: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-dpo/index.html",
+     "title": "Briefing: Data protection officer: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-everyone/index.html",
+     "title": "Briefing: Curious reader: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-pm/index.html",
+     "title": "Briefing: Project or programme manager: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/front-facts/index.html",
+     "title": "Front page: the core facts: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/front-latest/index.html",
+     "title": "Front page: latest: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/front-now/index.html",
+     "title": "Front page: right now: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/page-claims/index.html",
+     "title": "Every claim: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/page-impact/index.html",
+     "title": "Impact: offline vs compromised: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/page-method/index.html",
+     "title": "The method: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/page-summary/index.html",
+     "title": "The specialist summary: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.15.18": {
+   "against": "0.15.17",
+   "pages": [
+    {
+     "path": "team/schedule/correspondent/index.html",
+     "title": "Schedule: correspondent",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "views/desk/index.html",
+     "title": "The journalist's desk: keeping the site current",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/roles/index.html",
+     "title": "Every member: who owns what",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.15.17": {
+   "against": "0.15.16",
+   "pages": [
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.15.16": {
+   "against": "0.15.15",
+   "pages": [
+    {
+     "path": "admin/agents/observability/index.html",
+     "title": "Observability: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/dinis/index.html",
+     "title": "Dinis Cruz, Editor: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.15.15": {
+   "against": "0.15.14",
+   "pages": [
+    {
+     "path": "admin/agents/journalist/index.html",
+     "title": "Journalist: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.15.14": {
+   "against": "0.15.13",
+   "pages": [
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
   "0.15.13": {
    "against": "0.15.12",
    "pages": [

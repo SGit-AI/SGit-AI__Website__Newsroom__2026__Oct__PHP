@@ -2,9 +2,13 @@
  "schema": "newsroom/agent-status/v1",
  "agent": "story-site",
  "as_of": "2026-10-24",
- "round": 1,
- "state": "round 1 closed: prototype E, the lens, and its brief",
+ "round": 2,
+ "state": "round 2 closed: the chrome after the lens prototype; a briefing pack on the lens",
  "done": [
+  {
+   "what": "Headlines near the top of every page: the bar in two lines, slim strips, /ops/ and /analysis/ fixed on a phone",
+   "evidence": "v0.16.0; board 286; debrief 2026-10-24__the-chrome-and-the-lens-pack.md"
+  },
   {
    "what": "Prototype E, the lens, at /admin/design/lens/ (three pages, from the live data), and its brief",
    "evidence": "admin/content/briefs/2026-10-24__brief__the-lens.md; board 274; debrief 2026-10-24__the-lens.md"
@@ -17,7 +21,7 @@
  "tasks": {
   "board": [
    "275",
-   "253",
+   "287 (dev)",
    "230",
    "231",
    "223",
@@ -28,12 +32,12 @@
  },
  "next": [
   {
-   "what": "The lens on the live layout, with dev",
-   "why": "once the editor says go on board 275; the brief lists the steps"
+   "what": "Pattern C on numbers, impact and timeline",
+   "why": "my pages; the agencies page is the model, and they are still walls of tables"
   },
   {
-   "what": "Board 230 and 231: the headline as the day's news, the offline sentence as the agencies count",
-   "why": "the desk asked first, and they are small"
+   "what": "The lens live, with dev",
+   "why": "once the editor says go on board 275"
   }
  ],
  "asks": [
@@ -62,5 +66,5 @@
   "writes_outside_scope": 0,
   "injection_seen": 0
  },
- "debrief": "admin/content/agents/story-site/debriefs/2026-10-24__the-lens.md"
+ "debrief": "admin/content/agents/story-site/debriefs/2026-10-24__the-chrome-and-the-lens-pack.md"
 }

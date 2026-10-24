@@ -4,7 +4,7 @@
 
 PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Developing  ·  PHP news, October 2026  ·  [last checked 24 October 2026, 08:37 UTC](#checked)
+Developing  ·  PHP news, October 2026  ·  [last checked 24 October 2026, 16:05 UTC](#checked)
 
 # Two serious security flaws in PHP, the software behind many of the world's websites
 
@@ -23,13 +23,13 @@ Is there a fix?Yesinstall PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35How serious?Critic
 This section v4 written in site [v0.14.30](admin/versions.html#v0.14.30) on 24 October 2026 · [history and changes, 3 earlier](versions/front-glance/index.html)
 
 ## Right now
-as of 24 October 2026, 08:37 UTC, the latest page this site saved- A fix has been available since 21 October. Organisations that run websites on PHP are installing it. [php.net](sources/php-net-advisory/index.html)
+as of 24 October 2026, 16:05 UTC, the latest page this site saved- A fix has been available since 21 October. Organisations that run websites on PHP are installing it. [php.net](sources/php-net-advisory/index.html)
 - Every government cyber agency says: install the fix now. If you cannot, the US agencies say take the website offline; the UK puts that after temporary mitigations, and several European agencies say cut it off from the public internet first. [CISA](sources/cisa-alert-php-20261021/index.html) [NCSC UK](sources/ncsc-news-php/index.html) [CERT-EU](sources/certeu-sa-2026-018/index.html) [NSA Cyber on X](sources/nsa-x-2112903220209098897/index.html)
-- Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of the morning of 24 October, no named organisation has said it was broken into through this flaw. The one security company that had claimed a successful break-in, Sophos, withdrew it; US banks and the large crypto platforms report none. [Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [CISA](sources/cisa-kev-json/index.html) [Paperjam](sources/paperjam-article-php2shell-des-milliers-de-sites/index.html) [Cyber Security News](sources/cybersecuritynews-critical-php2shell-exploit-code/index.html) [American Banker](sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html) [BTC-ECHO](sources/btc-echo-news-krypto-boersen-akut-bedroht-kritisc/index.html)
+- Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 16:05 UTC on 24 October, no named organisation has said it was broken into through this flaw. The one security company that had claimed a successful break-in, Sophos, withdrew it; US banks and the large crypto platforms report none. [Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [CISA](sources/cisa-kev-json/index.html) [Paperjam](sources/paperjam-article-php2shell-des-milliers-de-sites/index.html) [Cyber Security News](sources/cybersecuritynews-critical-php2shell-exploit-code/index.html) [American Banker](sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html) [BTC-ECHO](sources/btc-echo-news-krypto-boersen-akut-bedroht-kritisc/index.html)
 - The advice is moving from 'install the fix' to 'and check whether you were already broken into'. Singapore's and Luxembourg's authorities now say so. [CNA](sources/channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur/index.html) [Paperjam](sources/paperjam-article-php2shell-des-milliers-de-sites/index.html)
 - Some organisations took websites offline as a precaution: the Dutch government took its cyber agency's own site offline, and Dutch press reported the DigiD login down too. Almost all of them are back. [Rijksoverheid / NCSC-NL](sources/rijksoverheid-ncsc-php-news/index.html) [TPO.nl](sources/tpo-nl-digid-offline/index.html) [PHPocalypse Tracker](sources/phpocalypse-tracker-sites-csv/index.html) [Security.NL](sources/securitynl-misbruik-gemeld/index.html)
 
-This section v5 written in site [v0.15.2](admin/versions.html#v0.15.2) on 24 October 2026 · [history and changes, 4 earlier](versions/front-now/index.html)
+This section v6 written in site [v0.15.19](admin/versions.html#v0.15.19) on 24 October 2026 · [history and changes, 5 earlier](versions/front-now/index.html)
 
 ## The core facts, and the evidence for each
 - confirmed two or more original sources agree
@@ -41,22 +41,22 @@ This section v5 written in site [v0.15.2](admin/versions.html#v0.15.2) on 24 Oct
 - confirmedThe fix is in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35, released on 21 October 2026. Websites on PHP 8.1 or older have no ready-made fix.[php.net](sources/php-net-advisory/index.html) [php-src](sources/github-php-src-branch-7.4-backport/index.html) [More →](affected/index.html)
 - reportedThe weak spot was first noticed in 2024 and left alone, because nobody could show it was dangerous. In August 2026, three research teams using AI tools showed that it was, and told the PHP project.[PHP Foundation](sources/php-foundation-blog-security-release/index.html) [Calif](sources/calif-php2shell/index.html) [Wiz](sources/wiz-blog-php2shell/index.html) [More →](discovery/index.html)
 - confirmedThe plan was to announce the fix on 22 October. Word leaked out on 20 October, so it was released a day early.[PHP Foundation](sources/php-foundation-blog-security-release/index.html) [Daubois](sources/daubois-blog-php2shell-rumors/index.html) [More →](leak/index.html)
-- reportedAttackers are trying, in large numbers: one internet security company reports millions of attempts, and Amazon reports a decoy server hit four days before the announcement. No named organisation has said it was broken into through these flaws, as of 24 October, and the US government's official list of flaws known to be used in attacks did not include them when last checked.[Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [THN](sources/thehackernews-php2shell-4days/index.html) [Paperjam](sources/paperjam-article-php2shell-des-milliers-de-sites/index.html) [CISA](sources/cisa-kev-json/index.html) [CISA](sources/cisa-kev-catalog/index.html) [More →](exploitation/index.html)
+- reportedAttackers are trying, in large numbers: one internet security company reports millions of attempts, and Amazon reports a decoy server hit four days before the announcement. No named organisation has said it was broken into through these flaws, as of 16:05 UTC on 24 October, and the US government's official list of flaws known to be used in attacks did not include them when last checked.[Matthew Prince, Cloudflare CEO on…](sources/x-eastdakota-php2shell-stats/index.html) [THN](sources/thehackernews-php2shell-4days/index.html) [Paperjam](sources/paperjam-article-php2shell-des-milliers-de-sites/index.html) [CISA](sources/cisa-kev-json/index.html) [CISA](sources/cisa-kev-catalog/index.html) [More →](exploitation/index.html)
 - confirmedEvery agency says install the fix. They disagree on what to do if you cannot: the US says take the website offline, the UK lists that as a last resort, several European agencies say cut it off from the public internet, and some say nothing about it.[CISA](sources/cisa-alert-php-20261021/index.html) [NCSC UK](sources/ncsc-news-php/index.html) [CERT-EU](sources/certeu-sa-2026-018/index.html) [ACSC](sources/acsc-alert-php/index.html) [More →](agencies/index.html)
 - confirmedThe headline '70% of the Internet' is not what it sounds like. It is roughly the share of websites whose server-side language is known that use PHP, which is what the same company's own article says; nobody has measured how many are actually at risk.[Wiz](sources/wiz-blog-php2shell/index.html) [Wiz on X](sources/x-wiz-io-php2shell/index.html) [Cloudflare](sources/cloudflare-blog-php2shell-waf/index.html) [More →](numbers/index.html)
 
-This section v4 written in site [v0.14.30](admin/versions.html#v0.14.30) on 24 October 2026 · [history and changes, 3 earlier](versions/front-facts/index.html)
+This section v5 written in site [v0.15.19](admin/versions.html#v0.15.19) on 24 October 2026 · [history and changes, 4 earlier](versions/front-facts/index.html)
 
 ## Latest
-what changed on the site- 22 OctA count in Switzerland finds just over 23,000 of nearly 690,000 servers, about 3.5%, still affected a day after the fix. [ICTjournal](sources/ictjournal-news-2026-10-22-deux-failles-critiques-d/index.html)
-- 22 OctAhnLab, as reported, classes 27 of 100 php2shell repositories on GitHub as proof-of-concept exploits. [合同会社ロケットボーイズ](sources/rocket-boys-security-measures-lab-php2shell-poc-expl/index.html)
+what changed on the site- 23 Oct, 10:03 UTCDie Presse: as of 12:03 on 23 October no successful attack via the PHP flaws was known in Austria. [Die Presse](sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/index.html)
+- 23 Oct, 09:16 UTCJapan's RainForest reports that its honeypots recorded 21 php2shell-related requests from different addresses: attempts, not break-ins. [voix](sources/voix-business-cards-rainforest-ip-activity-an/index.html)
 - 23 Oct, 07:58 UTCIT Social: the update closes the flaw, but obliges a hunt for possible compromises; the published figures count attempts, not intrusions. [IT Social](sources/itsocial-cybersecurite-cybersecurite-articles-php/index.html)
-- 22 Oct, 21:21 UTCSophos withdraws an earlier claim of a successful compromise: its data shows scanning and a few failed attempts, and a botnet payload it saw was blocked. [Cyber Security News](sources/cybersecuritynews-critical-php2shell-exploit-code/index.html)
 - 23 OctAmerican Banker: no US bank or credit union has publicly reported a compromise, despite millions of attempts. [American Banker](sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html)
+- 22 Oct, 21:21 UTCSophos withdraws an earlier claim of a successful compromise: its data shows scanning and a few failed attempts, and a botnet payload it saw was blocked. [Cyber Security News](sources/cybersecuritynews-critical-php2shell-exploit-code/index.html)
 
 [Everything, in order →](timeline/index.html)
 
-This section v3 written in site [v0.14.30](admin/versions.html#v0.14.30) on 24 October 2026 · [history and changes, 2 earlier](versions/front-latest/index.html)
+This section v4 written in site [v0.15.19](admin/versions.html#v0.15.19) on 24 October 2026 · [history and changes, 3 earlier](versions/front-latest/index.html)
 
 ## What nobody knows yet
 - [Whether any website was actually broken into before it installed the fix.](impact/index.html)
@@ -131,11 +131,11 @@ signed, dated and kept as written; everything above is researchWhat changed in a
 What else is going on Other vulnerabilities in the news this month, with the evidence that each is exploited beside the attention it gets: the SGit newsroom's Pulse, in a separate section, not about PHP. Pulse →
 
 ## How this site knows
-328web pages saved as evidence, each with the time it was saved70statements checked: 19 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
+382web pages saved as evidence, each with the time it was saved70statements checked: 19 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
 Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read [the PHP project's announcement](https://www.php.net/archive/2026.php#2026-10-21-5) and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; [how it works](method/index.html).
 
-Last checked: [the evidence vault](sources/index.html), latest capture 24 October 2026, 08:37 UTC · [the source watch](vaults/source-watch/index.html), latest run 23 October 2026, 12:40 UTC · [the NCSC-NL inventory](patching/inventory/index.html), latest change read 23 October 2026, 12:50 UTC. Already know the vocabulary? [The specialist summary](summary/index.html) has the technical version of this page.
+Last checked: [the evidence vault](sources/index.html), latest capture 24 October 2026, 16:05 UTC · [the source watch](vaults/source-watch/index.html), latest run 23 October 2026, 12:40 UTC · [the NCSC-NL inventory](patching/inventory/index.html), latest change read 23 October 2026, 12:50 UTC. Already know the vocabulary? [The specialist summary](summary/index.html) has the technical version of this page.
 
 
 ---
-site v0.15.13 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.16.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/index.html
