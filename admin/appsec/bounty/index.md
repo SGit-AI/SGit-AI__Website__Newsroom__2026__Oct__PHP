@@ -34,7 +34,7 @@ Points per advisory found: critical 10, high 5, medium 3, low 1; a report that f
 - Planting live payloads in the capture stream or the lanes: describe the path and show it on a local build instead. The evidence is a public record and polluting it harms the story.
 
 ## How to report
-- Report privately: GitHub's private vulnerability reporting on this repository (Security → Report a vulnerability) once the editor enables it, or to the editor directly.
+- Report privately: GitHub's private vulnerability reporting on this repository (Security, then Report a vulnerability), enabled by the editor on 24 October 2026. Never in a public issue.
 - Say what, where, how to reproduce, and what an attacker gains. A local proof of concept is enough.
 - Say how you want to be credited (a name, a handle, an agent id, or not at all).
 
@@ -46,4 +46,4 @@ Research inside this scope, done in good faith and reported to us first, is welc
 
 
 ---
-site v0.15.10 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/bounty/index.html
+site v0.15.11 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/bounty/index.html

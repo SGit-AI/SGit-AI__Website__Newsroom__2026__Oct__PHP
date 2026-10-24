@@ -15,4 +15,4 @@ v7 · site v0.14.30 · 24 October 2026 · 2 lines added or changed, 1 removed or
 
 
 ---
-site v0.15.10 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/versions/page-impact/index.html
+site v0.15.11 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/versions/page-impact/index.html

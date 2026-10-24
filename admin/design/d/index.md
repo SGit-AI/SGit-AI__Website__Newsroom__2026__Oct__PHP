@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.10. Not the live site.
+> Mockup D for review, built from the data of release v0.15.11. Not the live site.
 
-PHP Team console Console Overview Board 184 Agents 19 Releases 129 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 183 Agents 19 Releases 130 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.10 
-129 releases since 22 Oct 
+v0.15.11 
+130 releases since 22 Oct 
 
 Open on the board 
-184 
-93 done, 5 waiting 
+183 
+94 done, 5 waiting 
 
 Pages built 
 887 
@@ -30,7 +30,7 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 184
+#### Open 183
 
  #282 
 Signed messages and cards (SA-2026-024): a design using each agent's pki.sgit.ai key, for the editor and the conductor 
@@ -44,14 +44,14 @@ GitHub rulesets on dev and main (SA-2026-023): the editor's decision, 24 October
  #279 
 Go, or not, on the branch security/gate-pass-2: the gate fails on inline event handlers, forged message headers, drain o… 
  editor 
- #278 
-Enable private vulnerability reporting on this repository (Settings, Code security, Private vulnerability reporting): se… 
- editor 
  #277 
 The pipeline decided (24 October): researcher, curator, journalist (Sonnet), correspondent (Opus), then the ontologist, … 
  abp@newsroom.sgit 
  #275 
 The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work o… 
+ editor 
+ #273 
+An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39416d71cbb, to push the telemetry applica… 
  editor 
 
 #### Waiting 5
@@ -72,8 +72,11 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 93
+#### Done 94
 
+ #278 
+Enable private vulnerability reporting on this repository (Settings, Code security, Private vulnerability reporting): se… 
+ editor 
  #276 
 Front page, Right now: the stamp says 'as of 24 October 2026, 08:37 UTC' but the five lines are unchanged since v0.12.1 … 
  journalist 
@@ -92,13 +95,11 @@ Every release links the pages it changed: under each release on /admin/versions.
  #261 
 From CI-003, step 2: a graph diff between any two releases: nodes and edges added and removed, bases changed, gaps opene… 
  dev@php.newsroom v0.14.24 
- #260 
-From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sticks as one line or not at all (233px tod… 
- dev@php.newsroom v0.14.22 
 
 ### Releases
  latest 8 
 
+ v0.15.11 2026-10-24 Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and securi… 
  v0.15.10 2026-10-24 The control room: /team/control/, a visual, interactive view of every agent, the pipeline, the wake timeline and the editor's queu… 
  v0.15.9 2026-10-24 the journalist's and the correspondent's public key fingerprints recorded in their register files 
  v0.15.8 2026-10-24 Conductor full pass 19:15 London: agents-status, schedules against runs, run record 
@@ -106,12 +107,11 @@ From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sti
  v0.15.6 2026-10-24 Security round 1 closed: the telemetry policy, on the editor's decision to keep the location lookups (made by the reader's browser… 
  v0.15.5 2026-10-24 The Sherpa's 17:45 pass: the phone header's fix checked live (one 43px line; a friction closed), headlines now on the first screen… 
  v0.15.4 2026-10-24 factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploit… 
- v0.15.3 2026-10-24 the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's p… 
 
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 27 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 26 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
  conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 20 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 15 
@@ -122,4 +122,4 @@ From CI-003 (the Sherpa's brief of 24 October), step 1: on phones the header sti
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.10 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.11 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

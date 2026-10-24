@@ -40,4 +40,4 @@ Show captures as text or in a sandboxed, opaque-origin frame; confirm the vault 
 
 
 ---
-site v0.15.10 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-036/index.html
+site v0.15.11 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-036/index.html

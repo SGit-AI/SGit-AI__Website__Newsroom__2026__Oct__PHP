@@ -1,6 +1,15 @@
 {
- "current": "0.15.10",
+ "current": "0.15.11",
  "versions": [
+  {
+   "version": "0.15.11",
+   "date": "2026-10-24",
+   "title": "Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and security updates), so the bug bounty page and security.txt now point reporters at a live channel; board 278 closed",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.10",
    "date": "2026-10-24",

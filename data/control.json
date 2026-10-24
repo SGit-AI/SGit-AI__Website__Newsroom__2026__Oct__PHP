@@ -424,12 +424,6 @@
    "title": "The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work on this site' is a reader"
   },
   {
-   "id": "278",
-   "owner": "editor",
-   "status": "open",
-   "title": "Enable private vulnerability reporting on this repository (Settings, Code security, Private vulnerability reporting): security.txt and the bug bounty page point reporters there; the session's proxy cannot change repository settings"
-  },
-  {
    "id": "279",
    "owner": "editor",
    "status": "open",
@@ -866,5 +860,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.15.10"
+ "version": "0.15.11"
 }

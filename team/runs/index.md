@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today206runs recorded76runs with changes and no article
+2schedules20runs a night, today207runs recorded76runs with changes and no article
 
 ## Quiet hours
 
@@ -33,7 +33,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 129, researcher@php.newsroom: 38, Conductor: 12, synthetic@php.newsroom: 12, Fact-check desk: 5, Sherpa: 3, factcheck: 3, desk: 2, librarian@php.newsroom: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 130, researcher@php.newsroom: 38, Conductor: 12, synthetic@php.newsroom: 12, Fact-check desk: 5, Sherpa: 3, factcheck: 3, desk: 2, librarian@php.newsroom: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -70,6 +70,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.4` | factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploitation attempts' at 21:25 UTC on 22 October), so the correction request R-004 closes unsent and amazon-honeypot is graded superseded (Finding-126); no-confirmed-compromise still holds at 08:37 UTC on 24 October, with Sophos's withdrawn success claim; the desk's pages pass the new Content-Security-Policy | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.3` | the pipeline decided: researcher, curator, journalist (Sonnet), correspondent (Opus), then the semantic graphs; the journalist's proposed prompt updated, the build no longer stops on an unmapped publisher, and Right now carries the Sophos withdrawal | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.2` | The desk's afternoon wake: TechTarget's English original added to the correction requests ahead of its Japanese translation, and the front page's Right now stamp, newer than its text, on the board for the journalist | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.11` | Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and security updates), so the bug bounty page and security.txt now point reporters at a live channel; board 278 closed | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.10` | The control room: /team/control/, a visual, interactive view of every agent, the pipeline, the wake timeline and the editor's queue, drawn from data/control.json (built by admin/build/control.py); a wall mode for a big screen | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.1` | Conductor full pass 15:15 London: agents-status, schedules against runs, run record | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24 | [dev@php.newsroom](../dev/index.html) | Release | `v0.15.0` | prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that re-shapes the page in place with no reload and no flash, on three pages at /admin/design/lens/ built from the live data; its brief; story-site's first round closed | yes | its release note | [output](../../admin/versions.html) |
@@ -246,4 +247,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.15.10 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.15.11 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
