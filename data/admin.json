@@ -147,7 +147,7 @@
    "id": "synthetic",
    "name": "synthetic@php.newsroom",
    "who": "an agent",
-   "owns": "the six synthetic readers (admin/synthetic/), their vaults, their hourly runs and their reviews; data/synthetic.json and the synthetic readers page",
+   "owns": "the six synthetic readers (admin/synthetic/), their vaults, their runs (by hand, in a session; no schedule) and their reviews; data/synthetic.json and the synthetic readers page",
    "rules": [
     "A synthetic reader is a test instrument: its review is a prompt for the editor, never evidence about the story and never readership.",
     "Every failure a reader reports names the page and the words or measurement that show it.",
@@ -378,8 +378,9 @@
   {
    "id": "030",
    "title": "The story graph: every node a link, parties as nodes, typed edges (newsroom review, change 10; board 008 holds the fractal layer)",
-   "status": "open",
-   "owner": "cartographer"
+   "status": "waiting",
+   "owner": "cartographer",
+   "note": "Built on branch cartographer/ontology-and-sg-graph: every node a link, parties as nodes, 14 verbs in data/graph.json, one click from a claim to a CVE that opens the code-review graph, labels 12px at 390 (checked in Chromium). Released by the cartographer (AGENTS.md section 1)."
   },
   {
    "id": "031",
@@ -590,7 +591,7 @@
    "title": "Meaning through connectivity: typed edges (cites, restates, measures differently, contradicts, supersedes, derives from) and each fact and stat placed on a spectrum of evidence read from its edges, so ten outlets restating one headline count as one source",
    "status": "open",
    "owner": "cartographer",
-   "note": "From the brief on scheduled capture, JSON and analysis (22 October, critical)."
+   "note": "First cut on branch cartographer/ontology-and-sg-graph: states, relays (from the rows' own 'via' and from outlet captures the desk found carrying the claim), flags (contradictions as nodes, since the grammar has no self-inverse edge), independent origins per claim and the echo formula on /graph/. Open: derives_from between numbers, supersedes between captures, stats as series."
   },
   {
    "id": "063",
@@ -857,8 +858,9 @@
   {
    "id": "104",
    "title": "Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run: <run id>",
-   "status": "open",
-   "owner": "synthetic"
+   "status": "done",
+   "owner": "synthetic",
+   "note": "The editor asked for the workflow to be removed (22 October): .github/workflows/synthetic.yml is deleted; the readers run only when an agent session runs admin/synthetic/run.py."
   },
   {
    "id": "105",
@@ -1318,9 +1320,9 @@
   {
    "id": "176",
    "title": "The conductor's own schedule: hourly at a quarter past, 07:15 to 21:15 London, on Sonnet, in a new persistent session with the two lanes' vault keys handed over sealed (data/schedule/conductor.json, proposed): a go, and the scheduled tasks to create",
-   "status": "waiting",
+   "status": "done",
    "owner": "editor",
-   "note": "Proposed 24 October; nothing is scheduled until the editor says so."
+   "note": "The editor's go, 24 October 2026: a Sonnet session, conductor@php.newsroom (scheduled), and one scheduled task, hourly at :15 from 07:15 to 21:15 London. A wake commits only when something changed."
   },
   {
    "id": "177",
@@ -1342,6 +1344,77 @@
    "status": "open",
    "owner": "conductor",
    "note": ""
+  },
+  {
+   "id": "180",
+   "title": "Hand the scheduled conductor session the vault keys of the two lanes it drains (58526ytp, 5iwos28w), sealed; until then its wakes note \"lanes: no key\" and this session drains them",
+   "status": "waiting",
+   "owner": "editor",
+   "note": ""
+  },
+  {
+   "id": "181",
+   "title": "Use <sg-graph> wherever a page draws a graph: the actor, source and fact pages' mini_graph(), the review navigator (review/ui, assets/review-nav.js, which also assigns location.hash), the reader's persona graph; one component, one grammar",
+   "status": "open",
+   "owner": "cartographer"
+  },
+  {
+   "id": "182",
+   "title": "data/review.json: the parser wrote 'area:Zend' and 'area:main' on eight contains edges where the nodes are 'area:Zend/' and 'area:main/', so the area-to-file layer was silently lost; repaired in the data by the cartographer, but the parser is not in the repository and a regeneration brings it back. Fix the parser or check ends in the gate",
+   "status": "open",
+   "owner": "claude-story-site"
+  },
+  {
+   "id": "183",
+   "title": "For the fact-check desk: 15 claims marked confirmed rest on one independent origin in the graph (a record from one party, such as the CVE numbers, is fine; a reading from one party may not be); and the graph's echo formula finds wikimedia-precaution (one origin, four outlet relays). Compare with the desk's levels and say where they disagree",
+   "status": "open",
+   "owner": "factcheck"
+  },
+  {
+   "id": "184",
+   "title": "Gate checks for the graph: verbs and kinds only from data/ontology.json, no dangling edge, every publisher resolved in data/entities.json (the build stops on these today; the gate is a security change and goes to security@ for review)",
+   "status": "open",
+   "owner": "security@php.newsroom"
+  },
+  {
+   "id": "185",
+   "title": "Ontology passes on a schedule: every new source, claim and party resolved, merged or pruned; new parties get entities, new spellings get aliases; record each pass in the ontology's version. Needs the editor's go for a schedule",
+   "status": "open",
+   "owner": "cartographer"
+  },
+  {
+   "id": "186",
+   "title": "Publish the ontology the way the estate does: N-Triples with owl:inverseOf, so graphs.sgit.ai and newsroom.sgit.ai can bridge to this graph by declared edges rather than merged vocabularies",
+   "status": "open",
+   "owner": "cartographer"
+  },
+  {
+   "id": "187",
+   "title": "Twelve pages are recorded twice in data/sources.json under different slugs (for example tpo-nl-digid-offline and tpo-tpo-nl-digid-offline, cisa-kev-catalog and cisa-kev-json, ch-unige-down and unige-site); and unige.ch and epfl.ch, two universities, are classed 'government'. Merge or mark each pair as a later capture of the same page (supersedes), and fix the class. The list: python3 admin/cartographer/pass.py",
+   "status": "open",
+   "owner": "collector-researchers",
+   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+  },
+  {
+   "id": "188",
+   "title": "Read data/compromise.json (researcher@php.newsroom's evidence behind 'no named organisation has said it was compromised', 33 rows) into the story graph: each named organisation as a party, each row as its statement on no-confirmed-compromise, Valtec's retraction as a superseded statement, so the long tail of possible compromises (GMO, ČVUT, Valtec, DMM) is walkable from the claim",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+  },
+  {
+   "id": "189",
+   "title": "One spelling for a verb across the site's graphs: data/review.json writes 'realised in', 'fixed by' with spaces, the risk graph writes realised_in and fixed_by, the estate's grammar writes snake_case. Rename in the review graph's parser (with board 182), so a reader stepping between the graphs reads the same word",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
+  },
+  {
+   "id": "190",
+   "title": "Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the story graph, so the long-tail sources reach the claims they bear on, with supersedes where a statement was corrected; and trace the 143 captured sources no row cites yet",
+   "status": "open",
+   "owner": "cartographer",
+   "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
   }
  ],
  "evidence_vault": {

@@ -97,6 +97,14 @@ Measurements, not verdicts: the review says which of them mattered to this reade
 | low | [sources/cisa-alert-log4j-2021/index.html](../../../../sources/cisa-alert-log4j-2021/index.html) | text at least 12px | smallest 11.84px, 7 blocks below 12px |
 | low | [glossary/index.html](../../../../glossary/index.html) | text at least 12px | smallest 11.84px, 1 blocks below 12px |
 
+## Everything this run saw
+
+**Vault** `vjsqjhvp` · **read key** `sgit_public_read_da4d766a9aaa8c06e3caccbd01ae698ca0c685409f1a19f6f5d5136867cfdaf0:vjsqjhvp` (read-only, published on purpose)
+
+[Open the vault read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_da4d766a9aaa8c06e3caccbd01ae698ca0c685409f1a19f6f5d5136867cfdaf0%3Avjsqjhvp) · `sgit clone sgit_public_read_da4d766a9aaa8c06e3caccbd01ae698ca0c685409f1a19f6f5d5136867cfdaf0:vjsqjhvp`
+
+This run is in the folder `runs/2026-10-22T1754Z/`: the served and rendered HTML, the text and the screenshots of every page, every request and console message, and what the reviewer was given.
+
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/security/2026-10-22T1754Z/index.html
+site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/security/2026-10-22T1754Z/index.html

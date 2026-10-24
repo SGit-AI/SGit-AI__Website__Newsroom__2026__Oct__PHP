@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**8** evidence · **27** derived · **10** authored · **30** site
+**8** evidence · **27** derived · **14** authored · **30** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -55,7 +55,7 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/questions.json` | librarian@php.newsroom | the questions readers ask, each short answer re-traced to claims and captured sources | [questions/index.html](../questions/index.html) |
 | `data/readings.json` | claude-journalist | other models' notes, compared point by point with the claims and captured sources | [readings/index.html](../readings/index.html) |
 | `data/patching.json` | claude-journalist | the PHP project's releases and backport branches, and the NCSC-NL inventory's own rows, named exactly and checked by the gate | [patching/index.html](../patching/index.html) |
-| `data/graph.json` | admin/build/build.py | the claims and timeline rows and the sources they cite, generated at build | [graph/index.html](../graph/index.html) |
+| `data/graph.json` | admin/build/build.py | every claim, number, event, exploitation signal, agency's advice, source, capture and contradiction, joined through data/entities.json and data/attribution.json under the verbs of data/ontology.json; generated at build | [graph/index.html](../graph/index.html) |
 | `data/plain.json` | the design agent | the front page's plain-English questions and moments; every fact cites vault slugs | [index.html](../index.html) |
 | `data/factcheck.json` | admin/factcheck/fc.py export (factcheck@php.newsroom) | the desk's assessments, contradiction ledger, Issues-FS tickets and run reports in admin/factcheck/, each grade resting on captures named by sha256 | [factcheck/index.html](../factcheck/index.html) |
 | `data/grc.json` | grc@php.newsroom | the claims, sources, code review graph, stories and team on this site, with ratings and assignments by the GRC desk | [grc/index.html](../grc/index.html) |
@@ -71,6 +71,10 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 
 | File | Made by | From | Shown on |
 |---|---|---|---|
+| `data/ontology.json` | the cartographer | the estate's grammar (graphs.sgit.ai, newsroom.sgit.ai's ontologies), board 030 and 062, the newsroom review's change 10 | [graph/index.html](../graph/index.html) |
+| `data/entities.json` | the cartographer | the publisher strings of data/sources.json and the parties named in the claims, numbers, exploitation and agency rows; actor ids reused from data/actors.json | [graph/parties/index.html](../graph/parties/index.html) |
+| `data/attribution.json` | the cartographer | the free-text 'by' and 'who' of each claim, number and exploitation row, resolved to entities | [graph/parties/index.html](../graph/parties/index.html) |
+| `data/crosswalk.json` | the cartographer | the node ids of the story, code-review and risk graphs, and data/grc.json's stakeholders | [graph/index.html](../graph/index.html) |
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
 | `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
 | `admin/content/updates/` | the conductor, and whoever holds the updates beat for it | the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written | [updates/index.html](../updates/index.html) |
@@ -123,4 +127,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

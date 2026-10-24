@@ -99,6 +99,14 @@ Measurements, not verdicts: the review says which of them mattered to this reade
 | low | [questions/old-php/index.html](../../../../questions/old-php/index.html) | text at least 12px | smallest 11.84px, 1 blocks below 12px |
 | medium | [questions/old-php/index.html](../../../../questions/old-php/index.html) | little jargon for a non-specialist | 33.7 glossary terms per 1,000 words: CVE, CISA, Patch, Backport |
 
+## Everything this run saw
+
+**Vault** `9p6jpsd2` · **read key** `sgit_public_read_e4e66e3ad8167c7de4f940f6224a58d2e74039a22092db0fa400484b548187da:9p6jpsd2` (read-only, published on purpose)
+
+[Open the vault read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_e4e66e3ad8167c7de4f940f6224a58d2e74039a22092db0fa400484b548187da%3A9p6jpsd2) · `sgit clone sgit_public_read_e4e66e3ad8167c7de4f940f6224a58d2e74039a22092db0fa400484b548187da:9p6jpsd2`
+
+This run is in the folder `runs/2026-10-22T1754Z/`: the served and rendered HTML, the text and the screenshots of every page, every request and console message, and what the reviewer was given.
+
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/pm/2026-10-22T1754Z/index.html
+site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/pm/2026-10-22T1754Z/index.html

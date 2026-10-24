@@ -213,7 +213,35 @@
    "path": "data/graph.json",
    "layer": "derived",
    "by": "admin/build/build.py",
-   "from": "the claims and timeline rows and the sources they cite, generated at build",
+   "from": "every claim, number, event, exploitation signal, agency's advice, source, capture and contradiction, joined through data/entities.json and data/attribution.json under the verbs of data/ontology.json; generated at build",
+   "used_on": "graph/index.html"
+  },
+  {
+   "path": "data/ontology.json",
+   "layer": "authored",
+   "by": "the cartographer",
+   "from": "the estate's grammar (graphs.sgit.ai, newsroom.sgit.ai's ontologies), board 030 and 062, the newsroom review's change 10",
+   "used_on": "graph/index.html"
+  },
+  {
+   "path": "data/entities.json",
+   "layer": "authored",
+   "by": "the cartographer",
+   "from": "the publisher strings of data/sources.json and the parties named in the claims, numbers, exploitation and agency rows; actor ids reused from data/actors.json",
+   "used_on": "graph/parties/index.html"
+  },
+  {
+   "path": "data/attribution.json",
+   "layer": "authored",
+   "by": "the cartographer",
+   "from": "the free-text 'by' and 'who' of each claim, number and exploitation row, resolved to entities",
+   "used_on": "graph/parties/index.html"
+  },
+  {
+   "path": "data/crosswalk.json",
+   "layer": "authored",
+   "by": "the cartographer",
+   "from": "the node ids of the story, code-review and risk graphs, and data/grc.json's stakeholders",
    "used_on": "graph/index.html"
   },
   {

@@ -86,8 +86,8 @@ The barriers between this bug and a breach, with the moment each became availabl
 - Code execution as the web worker is reach, not yet a breach. Whether it becomes one depends on what that worker can open: the newsroom's question about any secret, 'can the attacker reach the system it opens?', asked of a whole server.
 - Every barrier has a time. A compromise after a barrier was available says something about the organisation, not only about the bug: after 03:02 UTC on 21 October, that there was no edge protection in front; after 14:00, that there was no pipeline to patch; and at any time, if the attacker reached anything that mattered, that there was nothing behind the worker.
 
-This page is the site's analysis, marked as research because every row rests on captured sources; the argument it supports is made in Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit.
+This page is the site's analysis, marked as research because every row rests on captured sources; the argument it supports is made in [Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit](../articles/exposed-is-not-exploited/index.html).
 
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/signals/index.html
+site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/signals/index.html

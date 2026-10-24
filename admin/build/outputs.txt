@@ -384,8 +384,12 @@ flaws/index.html
 flaws/index.md
 glossary/index.html
 glossary/index.md
+graph/component/index.html
+graph/component/index.md
 graph/index.html
 graph/index.md
+graph/parties/index.html
+graph/parties/index.md
 grc/explore/index.html
 grc/explore/index.md
 grc/frameworks/attack/index.html
@@ -1327,6 +1331,8 @@ team/researcher/index.html
 team/researcher/index.md
 team/runs/index.html
 team/runs/index.md
+team/schedule/cartographer/index.html
+team/schedule/cartographer/index.md
 team/schedule/conductor/index.html
 team/schedule/conductor/index.md
 team/schedule/curator/index.html

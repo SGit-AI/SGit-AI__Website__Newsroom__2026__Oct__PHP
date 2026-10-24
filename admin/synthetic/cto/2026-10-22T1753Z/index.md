@@ -94,6 +94,14 @@ Measurements, not verdicts: the review says which of them mattered to this reade
 | low | [articles/why-not-patch-every-version/index.html](../../../../articles/why-not-patch-every-version/index.html) | text at least 12px | smallest 11.84px, 1 blocks below 12px |
 | low | [glossary/index.html](../../../../glossary/index.html) | text at least 12px | smallest 11.84px, 1 blocks below 12px |
 
+## Everything this run saw
+
+**Vault** `wlhgl8pk` · **read key** `sgit_public_read_c20a2e6e91f6aa161ab7f6abb20dc0e27ade846a94ce149d0fd11996daaade3f:wlhgl8pk` (read-only, published on purpose)
+
+[Open the vault read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_c20a2e6e91f6aa161ab7f6abb20dc0e27ade846a94ce149d0fd11996daaade3f%3Awlhgl8pk) · `sgit clone sgit_public_read_c20a2e6e91f6aa161ab7f6abb20dc0e27ade846a94ce149d0fd11996daaade3f:wlhgl8pk`
+
+This run is in the folder `runs/2026-10-22T1753Z/`: the served and rendered HTML, the text and the screenshots of every page, every request and console message, and what the reviewer was given.
+
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/cto/2026-10-22T1753Z/index.html
+site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/cto/2026-10-22T1753Z/index.html

@@ -47,19 +47,40 @@ const T = () => window.__tools
 const stamp = () => new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19)
 function deviceId() { return V.nv ? V.nv.deviceBranch() : 'this-browser' }
 
-// The model's words, safely: everything is escaped first; then **bold**, `code`, line breaks, http(s) links, and
-// [item-id] citations turned into links to the item (a question mark when the id is not one the site has).
+// The model's words: **bold**, `code`, line breaks, http(s) links, and [item-id] citations turned into links to the
+// item (a question mark when the id is not one the site has).
 let IDS = null
 function known() { return IDS || (IDS = fetch(ROOT + 'now/now.json', { credentials: 'omit' }).then(r => r.json()).then(j => { const m = {}; (j.items || []).forEach(it => { m[it.id] = it }); return m }).catch(() => ({}))) }
+// The model's answer as DOM nodes, never as an HTML string: its text, and the titles of the items it cites (often
+// third-party page titles), only ever become text nodes and attribute values set with setAttribute.
+const TOKEN = /\*\*([^*\n]+)\*\*|`([^`\n]+)`|\[([a-z][a-z0-9.\-]*(?:\s*,\s*[a-z][a-z0-9.\-]*)*)\]|(https?:\/\/[^\s<>")\]]+)/g
+function inline(line, ids, into) {
+  let last = 0, m
+  TOKEN.lastIndex = 0
+  while ((m = TOKEN.exec(line))) {
+    if (m.index > last) into.append(line.slice(last, m.index))
+    if (m[1] != null) into.append(h('b', null, m[1]))
+    else if (m[2] != null) into.append(h('code', null, m[2]))
+    else if (m[3] != null) m[3].split(/\s*,\s*/).forEach((id, n) => {
+      const it = ids && ids[id]
+      if (n) into.append(' ')
+      into.append(it && /^[A-Za-z0-9/._#-]+$/.test(String(it.path))
+        ? h('a', { class: 'ask-cite', href: ROOT + it.path, title: String(it.title || '') }, id)
+        : h('span', { class: 'ask-cite ask-unknown', title: 'Not an item on this site' }, id + '?'))
+    })
+    else into.append(h('a', { href: m[4], rel: 'noopener noreferrer nofollow', target: '_blank' }, m[4]))
+    last = TOKEN.lastIndex
+  }
+  if (last < line.length) into.append(line.slice(last))
+}
 function render(text, ids) {
-  const esc = String(text || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
-  let s = esc.replace(/\*\*([^*\n]+)\*\*/g, '<b>$1</b>').replace(/`([^`\n]+)`/g, '<code>$1</code>')
-  s = s.replace(/\[([a-z][a-z0-9.\-]*(?:\s*,\s*[a-z][a-z0-9.\-]*)*)\]/g, (m, list) => list.split(/\s*,\s*/).map(id => {
-    const it = ids && ids[id]
-    return it ? `<a class="ask-cite" href="${ROOT}${it.path}" title="${it.title.replace(/"/g, '&quot;')}">${id}</a>` : `<span class="ask-cite ask-unknown" title="Not an item on this site">${id}?</span>`
-  }).join(' '))
-  s = s.replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g, (m, pre, u) => `${pre}<a href="${u}" rel="noopener noreferrer nofollow" target="_blank">${u}</a>`)
-  return s.split(/\n{2,}/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('')
+  const out = document.createDocumentFragment()
+  for (const para of String(text || '').split(/\n{2,}/)) {
+    const p = h('p')
+    para.split('\n').forEach((line, n) => { if (n) p.append(h('br')); inline(line, ids, p) })
+    out.append(p)
+  }
+  return out
 }
 
 // ------------------------------------------------------------------ the vault (the phone app's, the same key slot)
@@ -244,7 +265,7 @@ async function ask(q, log) {
       }
       CHAT.messages.push({ role: 'assistant', content: m.content || '' })
       const u = j.usage || {}
-      const a = h('div', { class: 'ask-a' }); a.innerHTML = render(m.content, ids); log.append(a)
+      const a = h('div', { class: 'ask-a' }); a.append(render(m.content, ids)); log.append(a)
       log.append(h('p', { class: 'ask-meta' }, `${j.model || V.model || DEFAULT_MODEL}` + (u.total_tokens ? ` · ${u.total_tokens} tokens` : '') + (u.cost ? ` · $${Number(u.cost).toFixed(4)}` : '') + ' · written by a model, not checked by a person'))
       break
     }

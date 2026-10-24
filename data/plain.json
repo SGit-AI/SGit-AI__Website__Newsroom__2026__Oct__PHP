@@ -123,7 +123,7 @@
   "affected/software.html": "The Dutch government's list of software products and whether each is affected. A reference table.",
   "sources/index.html": "Every web page this site relied on, with the time it was saved and a fingerprint proving it has not been altered since.",
   "actors/index.html": "Every organisation and person quoted, and what each one says.",
-  "graph/index.html": "A picture of which statements rest on which sources. Thick bundles mean well supported.",
+  "graph/index.html": "Who said each thing first, who passed it on, and which saved pages it rests on. Click anything to walk from it to what it is connected to.",
   "method/index.html": "How this site works: save every source, fingerprint it, attach every statement to its evidence, and rebuild the site from that.",
   "explained/index.html": "",
   "glossary/index.html": "",

@@ -103,6 +103,14 @@ Measurements, not verdicts: the review says which of them mattered to this reade
 | medium | [questions/index.html](../../../../questions/index.html) | tap targets at least 24px | 28 of 200, e.g. v0.4.3, newsroom, 2026, October |
 | low | [questions/index.html](../../../../questions/index.html) | length fits the reader | 18.6 screens long on this device |
 
+## Everything this run saw
+
+**Vault** `1zq458zk` · **read key** `sgit_public_read_f5578366fad746fe3273c3650bf76df06b1b69b157956ccf5a84e5ddb5ff73fb:1zq458zk` (read-only, published on purpose)
+
+[Open the vault read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_f5578366fad746fe3273c3650bf76df06b1b69b157956ccf5a84e5ddb5ff73fb%3A1zq458zk) · `sgit clone sgit_public_read_f5578366fad746fe3273c3650bf76df06b1b69b157956ccf5a84e5ddb5ff73fb:1zq458zk`
+
+This run is in the folder `runs/2026-10-22T1753Z/`: the served and rendered HTML, the text and the screenshots of every page, every request and console message, and what the reviewer was given.
+
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/board/2026-10-22T1753Z/index.html
+site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/board/2026-10-22T1753Z/index.html

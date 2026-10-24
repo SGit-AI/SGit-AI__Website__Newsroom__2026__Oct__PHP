@@ -19,7 +19,7 @@ One small file at the site root, [/status.json](../../status.json), that another
 | `story` | "php2shell" |
 | `cves` | ["CVE-2026-109618", "CVE-2026-109619"] |
 | `status` | "developing" |
-| `version` | "0.10.22" |
+| `version` | "0.11.1" |
 | `data_as_of` | "2026-10-23T16:04Z" |
 | `vault_commit` | "1845598d9a38" |
 | `counts` | {"sources": 295, "captures": 290, "claims": 70, "claims_by_status": {"confirmed": 21, "reported": 34, "disputed": 8, "contradicted": 3, "unverified": 4}, "event |
@@ -49,7 +49,7 @@ One small file at the site root, [/status.json](../../status.json), that another
   "CVE-2026-109619"
  ],
  "status": "developing",
- "version": "0.10.22",
+ "version": "0.11.1",
  "data_as_of": "2026-10-23T16:04Z",
  "vault_commit": "1845598d9a38",
  "counts": {
@@ -131,4 +131,4 @@ One small file at the site root, [/status.json](../../status.json), that another
 
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html
+site v0.11.1 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html
