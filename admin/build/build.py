@@ -1473,7 +1473,10 @@ def build_llms():
     lines.append('')
     lines.append('## The team, one page per member')
     lines.append(f'- [How the team talks: three vaults and one run]({BASE_URL}/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules')
-    lines.append(f'- [Schedule]({BASE_URL}/team/schedule/index.md): every scheduled agent, its task queue and every run with its log, read live from a public vault')
+    lines.append(f'- [Schedule]({BASE_URL}/team/schedule/index.md): every scheduled agent on one day, its objective and instructions, every run, and the messages between agents')
+    for fn in sorted(glob.glob(os.path.join(DATA, 'schedule', '*.json'))):
+        c = json.load(open(fn, encoding='utf-8'))
+        lines.append(f'- [Schedule: {c["agent"]}]({BASE_URL}/team/schedule/{c["agent"]}/index.md): {c["status"]}; {c["objective"]}')
     lines.append(f'- [Vaults: who made each one]({BASE_URL}/team/vaults/index.md): every vault each agent made, by ID only, and whether its key is sealed to the editor')
     lines.append(f'- [Status]({BASE_URL}/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev')
     lines.append(f'- [Runs]({BASE_URL}/team/runs/index.md): what the agents run on their own, the quiet hours, and every recorded run')
@@ -1488,6 +1491,11 @@ def build_llms():
     lines.append("## The Sherpa and the feedback from collaborators, one page each")
     for p, t, d, _ in PAGES:
         if p.startswith(('sherpa/', 'feedback/')):
+            lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
+    lines.append('')
+    lines.append('## Synthetic readers: each reader, every run, and what they said page by page')
+    for p, t, d, _ in PAGES:
+        if p.startswith('admin/synthetic/') and p != 'admin/synthetic/index.html':
             lines.append(f'- [{t}]({BASE_URL}/{md_path(p)}): {d}')
     lines.append('')
     lines.append('## Parties, one page each')
@@ -2130,42 +2138,197 @@ def build_admin_section():
 
 
 def build_synthetic():
-    # data/synthetic.json is written by admin/synthetic/run.py summarise from each reader's vault; this page only shows it
-    def txt(x): return E(str(x or '').replace('\u2014', ', '))
-    def pg(x):
-        x = (x or '').split('#')[0].strip('` ')
-        return f'<a href="../../{E(x)}">{E(x)}</a>' if x and os.path.isfile(os.path.join(ROOT, x)) else f'<code>{txt(x)}</code>'
+    # data/synthetic.json and data/synthetic-runs/<reader>/<run>.json are written by admin/synthetic/run.py summarise from
+    # each reader's vault. Everything a reader wrote is model output about the live site: it reaches HTML only through E().
     P = SYN['personas']
-    def score(l, k): return str(l.get('scores', {}).get(k, '')) if l.get('reviewed') else ''
-    rows = [[f'<a href="#{E(p["id"])}">{E(p["name"])}</a>', f'{p["device"]["width"]}&times;{p["device"]["height"]}, {E(p["color_scheme"] or "")}', E(p['latest'].get('run', 'not yet')), 'v' + E(p['latest'].get('site_version', '')), E(p['latest'].get('answered_question', '')),
-             *[score(p['latest'], k) for k in ('answered', 'clarity', 'trust', 'design', 'navigation')], f'<code>{E(p["vault_id"] or "")}</code>', str(p['runs'])] for p in P]
-    cards = []
+    RUNS = {}
     for p in P:
-        l = p['latest']
-        fails = ''.join(f'<li><b>{txt(x["severity"])}</b> {txt(x["point"])} ({pg(x["page"])}): {txt(x["evidence"])}</li>' for x in l.get('top_fails', []))
-        changes = ''.join(f'<li>{txt(c["change"])} ({pg(c["page"])}, {txt(c["effort"])}): {txt(c["why"])}</li>' for c in l.get('top_changes', []))
-        ck = l.get('checks', {})
-        cards.append(f"""<section id="{E(p["id"])}"><h2>{E(p["name"])}</h2>
-<p>{txt(p["who"])} <b>Question:</b> {txt(p["question"])}</p>
-{f'<blockquote>{txt(l["verdict"])}</blockquote>' if l.get("verdict") else '<p class="small">Captured, not yet reviewed.</p>'}
-<p class="kv"><b>Run</b> {E(l.get("run", ""))} on v{E(l.get("site_version", ""))} &middot; <b>pages</b> {l.get("totals", {}).get("pages", 0)} &middot; <b>requests</b> {l.get("totals", {}).get("requests", 0)} &middot; <b>instrument flags</b> {ck.get("high", 0)} high, {ck.get("medium", 0)} medium, {ck.get("low", 0)} low &middot; <b>vault</b> <code>{E(p["vault_id"] or "")}</code></p>
-{f'<h3>What did not work</h3><ul>{fails}</ul>' if fails else ''}{f'<h3>What this reader would change first</h3><ol>{changes}</ol>' if changes else ''}</section>""")
+        for h in p['runs']:
+            fp = os.path.join(DATA, 'synthetic-runs', p['id'], h['run'] + '.json')
+            if os.path.exists(fp):
+                RUNS[(p['id'], h['run'])] = json.load(open(fp, encoding='utf-8'))
+    SK = ('answered', 'clarity', 'trust', 'design', 'navigation')
+    def txt(x): return E(str(x if x is not None else '').replace('—', ', '))
+    def norm(x):
+        x = str(x or '').split('#')[0].strip('` ').lstrip('./')
+        if x in ('', '/'): return 'index.html'
+        if x.endswith('/'): x += 'index.html'
+        return x
+    def anchor(k): return re.sub(r'[^a-z0-9]+', '-', k.lower()).strip('-')
+    def pg(x, depth):
+        x = norm(x)
+        return f'<a href="{"../" * depth}{E(x)}">{E(x)}</a>' if os.path.isfile(os.path.join(ROOT, x)) else f'<code>{txt(x)}</code>'
+    def reviewed(p): return [h for h in p['runs'] if h.get('reviewed')]
+    def latest(p):
+        r = reviewed(p) or p['runs']
+        return r[-1] if r else None
+    def prev(p):
+        r = reviewed(p)
+        return r[-2] if len(r) > 1 else None
+    def delta(a, b, k):
+        if not a or not a.get('scores'): return ''
+        v = a['scores'].get(k, '')
+        if not b or not b.get('scores'): return str(v)
+        d = v - b['scores'].get(k, v)
+        return f'{v} <span class="small">({"+" if d > 0 else ""}{d})</span>' if d else str(v)
+    def run_href(pid, run, depth): return f'{"../" * depth}admin/synthetic/{E(pid)}/{E(run)}/index.html'
+    def reader_href(pid, depth): return f'{"../" * depth}admin/synthetic/{E(pid)}/index.html'
+    def device(p):
+        d = p['device']
+        also = f' (also {E(", ".join(p["also_viewports"]))})' if p.get('also_viewports') else ''
+        return f'{d["width"]}&times;{d["height"]}, {"phone" if d.get("mobile") else "desktop"}, {E(p["color_scheme"] or "")}{also}'
+    def fb_of(pid, h):
+        x = RUNS.get((pid, h['run'])) if h else None
+        return (x or {}).get('feedback') or {}
+
+    def review_html(fb, depth):
+        if not fb: return '<p class="small">Captured, not yet reviewed.</p>'
+        sc = fb.get('scores', {})
+        rv = fb.get('reviewer') or {}
+        works = ''.join(f'<li>{txt(w["point"])} ({pg(w["page"], depth)})</li>' for w in fb.get('works', []))
+        fails = ''.join(f'<li><b>{txt(x["severity"])}</b> {txt(x["point"])} ({pg(x["page"], depth)})<div class="note">{txt(x["evidence"])}</div></li>' for x in fb.get('fails', []))
+        changes = ''.join(f'<li>{txt(c["change"])} ({pg(c["page"], depth)}, {txt(c["effort"])})<div class="note">{txt(c["why"])}</div></li>' for c in fb.get('changes', []))
+        quotes = ''.join(f'<li>{pg(q["page"], depth)}: <q>{txt(q["text"])}</q><div class="note">{txt(q["reaction"])}</div></li>' for q in fb.get('quotes', []))
+        model = f' ({txt(rv.get("model"))})' if rv.get('model') else ''
+        return (f'<blockquote>{txt(fb.get("verdict"))}</blockquote>'
+                f'<p class="kv"><b>Got the answer</b> {txt(fb.get("answered_question"))} &middot; {txt(fb.get("time_to_answer"))}</p>'
+                + table([k.title() for k in SK], [[str(sc.get(k, '')) for k in SK]])
+                + f'<h3>What works</h3><ul>{works or "<li>nothing named</li>"}</ul>'
+                + f'<h3>What does not</h3><ul>{fails or "<li>nothing named</li>"}</ul>'
+                + f'<h3>What this reader would change, in order</h3><ol>{changes or "<li>nothing</li>"}</ol>'
+                + f'<h3>Lines this reader reacted to</h3><ul>{quotes or "<li>none</li>"}</ul>'
+                + f'<h3>Since the last run</h3><p>{txt(fb.get("since_last"))}</p>'
+                + f'<p class="small">Reviewer: {txt(rv.get("by"))}{model}.</p>')
+
+    def journey_html(x, depth):
+        rows = [[str(g['n']), pg(g['path'], depth), txt(g['why']), txt(g.get('words')), txt(g.get('screens')), txt(g.get('reading_ease')), txt(g.get('jargon_per_1000')),
+                 txt(g.get('load_ms')), txt(g.get('low_contrast_count')), f'{txt(g.get("tap_targets_small"))} of {txt(g.get("tap_targets"))}', 'yes' if g.get('overflow_x') else ''] for g in x['pages']]
+        return table(['#', 'Page', 'Why', 'Words', 'Screens', 'Reading ease', 'Glossary terms per 1000 words', 'Load (ms)', 'Low-contrast blocks', 'Small tap targets', 'Sideways scroll'], rows)
+
+    def checks_html(x, depth):
+        if not x['checks']: return '<p>No instrument flagged anything.</p>'
+        return table(['Severity', 'Page', 'Check', 'Evidence'], [[txt(c['severity']), pg(c['page'], depth) if str(c['page']).endswith('.html') else txt(c['page']), txt(c['check']), txt(c['evidence'])] for c in x['checks']])
+
+    caveat = 'A synthetic reader is a test instrument, not a reader: its review is a prompt for the editor and the agents, never evidence about the story, and never counted as readership.'
+
+    # one page per run
+    for (pid, run), x in sorted(RUNS.items()):
+        p = next(q for q in P if q['id'] == pid)
+        dp = 4
+        t = x['totals']
+        body = f"""
+<h1>{E(p["name"])}: the run of {E(run)}</h1>
+<p class="lead">{txt(p["who"])} <b>Question:</b> {txt(x["question"])}</p>
+<p class="caveat">{caveat} <a href="{reader_href(pid, dp)}">This reader's runs</a>, <a href="../../index.html">all six readers</a>.</p>
+<p class="kv"><b>Site</b> v{E(x["site_version"])} (data as of {E(x.get("data_as_of") or "")}) &middot; <b>read</b> {E(x["started"])} to {E(x["finished"])} &middot; <b>device</b> {device(p)} &middot; <b>pages</b> {t["pages"]} &middot; <b>requests</b> {t["requests"]} ({t.get("blocked", 0)} telemetry calls answered locally) &middot; <b>failed requests</b> {t.get("failed", 0)} &middot; <b>console errors</b> {t.get("console_errors", 0)} &middot; <b>words read</b> {t.get("words_read", 0)}</p>
+{section("review", "The review, in the reader's words", review_html(x["feedback"], dp))}
+{section("journey", "The journey", journey_html(x, dp), "The pages in the order read: the start, the reader's path, then the links that matched its interests.")}
+{section("checks", "What the instruments flagged", checks_html(x, dp), "Measurements, not verdicts: the review says which of them mattered to this reader.")}
+"""
+        page(f'admin/synthetic/{pid}/{run}/index.html', f'{p["name"]}, synthetic reader: the run of {run} on v{x["site_version"]}',
+             f'What the synthetic {p["name"].lower()} read on the live site at {run}, what it measured, and its review: whether it got its answer, what works, what does not and what to change.', body, kind='site')
+
+    # one page per reader
+    for p in P:
+        dp = 3
+        L = latest(p)
+        x = RUNS.get((p['id'], L['run'])) if L else None
+        hist = table(['Run (UTC)', 'Site', 'Got the answer', *[k.title() for k in SK], 'Fails (high / medium / low)', 'Pages'],
+                     [[f'<a href="{run_href(p["id"], h["run"], dp)}">{E(h["run"])}</a>', 'v' + E(h['site_version']), txt(h.get('answered_question')),
+                       *[str((h.get('scores') or {}).get(k, '')) for k in SK], f'{h["fails"]["high"]} / {h["fails"]["medium"]} / {h["fails"]["low"]}', str(h['pages'])] for h in reversed(p['runs'])])
+        latest_html = '<p>No run yet.</p>'
+        if x:
+            latest_html = review_html(x['feedback'], dp) + f'<p><a href="{run_href(p["id"], L["run"], dp)}">The whole run: the journey, the measurements and every flag</a>.</p>'
+        hb = f' &middot; <b>last unchanged-site check</b> {E(p["last_heartbeat"])}' if p.get('last_heartbeat') else ''
+        body = f"""
+<h1>The synthetic {E(p["name"].lower())}</h1>
+<p class="lead">{txt(p["who"])}</p>
+<p class="caveat">{caveat} <a href="../index.html">All six readers</a>.</p>
+<p class="kv"><b>Question</b> {txt(p["question"])} &middot; <b>time</b> {p["minutes"]} minutes &middot; <b>device</b> {device(p)} &middot; <b>vault</b> <code>{E(p["vault_id"] or "")}</code> &middot; <b>runs</b> {len(p["runs"])}{hb}</p>
+<h2>What this reader judges</h2><ul>{"".join(f"<li>{txt(j)}</li>" for j in p["judges"])}</ul>
+<p>Reading path after the front page: {", ".join(pg(y, dp) for y in p["path"])}.</p>
+{section("latest", f"The latest review: {E(L['run'])} on v{E(L['site_version'])}" if L else "The latest review", latest_html)}
+{section("history", "Every run", hist, "Scores are 0 to 5 from this reader's point of view.")}
+"""
+        page(f'admin/synthetic/{p["id"]}/index.html', f'The synthetic {p["name"].lower()}: every run and its latest review',
+             f'A synthetic {p["name"].lower()} reads the live site on its own device with its own question; its latest review in full and every run before it.', body, kind='site')
+
+    # every site page the readers named, from each reader's latest review
+    BY = {}
+    for p in P:
+        fb = fb_of(p['id'], latest(p))
+        for kind, items in (('fail', fb.get('fails', [])), ('change', fb.get('changes', [])), ('work', fb.get('works', [])), ('quote', fb.get('quotes', []))):
+            for it in items:
+                BY.setdefault(norm(it.get('page')), []).append((kind, p, it))
+    WEIGHT = {'high': 5, 'medium': 2, 'low': 1}
+    def heat(items): return sum(WEIGHT.get(it.get('severity'), 0) for k, _, it in items if k == 'fail') + sum(1 for k, _, _ in items if k == 'change')
+    order = sorted(BY, key=lambda k: (-heat(BY[k]), k))
+    def n_of(k, kind): return sum(a == kind for a, _, _ in BY[k])
+    def item_html(kind, p, it, depth):
+        who = f'<a href="{reader_href(p["id"], depth)}">{E(p["name"])}</a>'
+        if kind == 'fail': return f'<li><b>{txt(it["severity"])}</b> {txt(it["point"])} ({who})<div class="note">{txt(it["evidence"])}</div></li>'
+        if kind == 'change': return f'<li>{txt(it["change"])} ({who}, {txt(it["effort"])})<div class="note">{txt(it["why"])}</div></li>'
+        if kind == 'work': return f'<li>{txt(it["point"])} ({who})</li>'
+        return f'<li><q>{txt(it["text"])}</q> ({who})<div class="note">{txt(it["reaction"])}</div></li>'
+    blocks = []
+    for k in order:
+        its = BY[k]
+        parts = ''
+        for kind, head in (('fail', 'What does not work'), ('change', 'What to change'), ('work', 'What works, so do not break it'), ('quote', 'Lines readers reacted to')):
+            li = ''.join(item_html(a, b, c, 3) for a, b, c in its if a == kind)
+            if li: parts += f'<h3>{head}</h3><ul>{li}</ul>'
+        readers = sorted({b['name'] for _, b, _ in its})
+        blocks.append(f'<section id="{E(anchor(k))}"><h2>{pg(k, 3)}</h2><p class="small">{len(readers)} of {len(P)} readers: {E(", ".join(readers))}</p>{parts}</section>')
+    summary = table(['Page', 'Readers', 'Fails (high)', 'Changes asked', 'Works'],
+                    [[f'<a href="#{E(anchor(k))}">{E(k)}</a>', str(len({b["id"] for _, b, _ in BY[k]})),
+                      f'{n_of(k, "fail")} ({sum(a == "fail" and c.get("severity") == "high" for a, _, c in BY[k])})', str(n_of(k, 'change')), str(n_of(k, 'work'))] for k in order])
+    body = f"""
+<h1>What the synthetic readers said, page by page</h1>
+<p class="lead">Every page of this site that a synthetic reader named in its latest review, with what does not work, what to change, what works and the lines it reacted to, from all six readers at once. Pages are ordered by how much the readers found wrong with them: a high-severity failure counts five, a medium two, a low one, a requested change one.</p>
+<p class="caveat">{caveat} <a href="../index.html">All six readers</a>.</p>
+{section("summary", "The pages", summary)}
+{"".join(blocks)}
+"""
+    page('admin/synthetic/pages/index.html', 'Synthetic readers: what they said about each page',
+         'Every page of the site named in the synthetic readers\' latest reviews, with what fails, what to change, what works and the lines they reacted to, from all six readers.', body, kind='site')
+
+    # the hub
+    rows = []
+    for p in P:
+        L, B = latest(p), prev(p)
+        rows.append([f'<a href="{reader_href(p["id"], 2)}">{E(p["name"])}</a>', device(p),
+                     f'<a href="{run_href(p["id"], L["run"], 2)}">{E(L["run"])}</a>' if L else 'not yet', 'v' + E(L['site_version']) if L else '',
+                     txt((L or {}).get('answered_question')), *[delta(L, B, k) for k in SK], str(len(p['runs']))])
+    verdicts = ''.join(f'<li><a href="{reader_href(p["id"], 2)}">{E(p["name"])}</a>: <q>{txt(latest(p).get("verdict"))}</q></li>' for p in P if latest(p) and latest(p).get('verdict'))
+    top = ''.join(f'<li><a href="pages/index.html#{E(anchor(k))}">{E(k)}</a>: {n_of(k, "fail")} failures and {n_of(k, "change")} changes from {len({b["id"] for _, b, _ in BY[k]})} readers</li>' for k in order[:6])
+    every = []
+    for (pid, run), x in sorted(RUNS.items(), key=lambda kv: (kv[0][1], kv[0][0]), reverse=True):
+        fb = x['feedback'] or {}
+        every.append([f'<a href="{run_href(pid, run, 2)}">{E(run)}</a>', f'<a href="{reader_href(pid, 2)}">{E(next(q["name"] for q in P if q["id"] == pid))}</a>', 'v' + E(x['site_version']),
+                      txt(fb.get('answered_question')), f'{len(fb.get("fails", []))} ({sum(f["severity"] == "high" for f in fb.get("fails", []))})'])
+    how = ('<ol>'
+           '<li><b>Check.</b> <code>admin/synthetic/run.py capture --if-changed</code> reads <code>status.json</code> and the front page. If the version, the data and the front page are what the last run saw, the reader writes a heartbeat line and stops.</li>'
+           '<li><b>Read.</b> Chromium opens the front page with the reader\'s viewport, device scale, touch and colour scheme, then the reader\'s path from <code>admin/synthetic/personas.json</code>, then the links whose words match the reader\'s interests, up to its page budget. The designer also reads every page on a phone, a tablet and in dark mode; the developer also fetches <code>llms.txt</code>, <code>status.json</code> and a markdown twin as a tool would.</li>'
+           '<li><b>Measure.</b> For each page: the served and the rendered HTML, the text, the first screen and the full page as images, headings, words, screens of scrolling, reading ease, glossary terms per thousand words, contrast against WCAG AA, tap targets under 24px, text under 12px, sideways scrolling, images without alt text, timings. Every request with its status, size, timing and sha256; every console message.</li>'
+           '<li><b>Review.</b> The reader is given its journey, the measurements, the first screen of every page and the full text (fenced as material, never instructions), with <code>admin/synthetic/review-guide.md</code> and its own previous review, and answers as structured JSON: a verdict, whether the question was answered, five scores, what works, what fails with evidence, what to change, the lines it reacted to, and what changed since its last run.</li>'
+           '<li><b>Keep and publish.</b> All of it is committed to the reader\'s vault; <code>run.py summarise</code> writes <code>data/synthetic.json</code> and one file per run in <code>data/synthetic-runs/</code> (the reviews, journeys and measurements; never the pages or a key), from which these pages are built.</li>'
+           '</ol>')
+    vaults = ('<p>One vault per reader; its id is on that reader\'s page. Each holds <code>README.md</code> (the reader), <code>latest.json</code>, <code>history.jsonl</code>, <code>heartbeats.jsonl</code> and <code>runs/&lt;run&gt;/</code> with '
+              '<code>run.json</code>, <code>requests.jsonl</code>, <code>console.jsonl</code>, <code>pages/</code> (served and rendered HTML, text, screenshots, measurements), <code>review-request.md</code>, <code>feedback.json</code> and <code>feedback.md</code>. '
+              'They hold nothing confidential: captures of this public site and the readers\' reviews. Their keys are sealed to the editor\'s key; none is in this repository.</p>')
     body = f"""
 <h1>Synthetic readers</h1>
-<p class="lead">Six test readers, run by the agent synthetic@php.newsroom: a board member, a CTO, a project manager, a security lead, a developer and a designer. Each reads the live site in a real browser on its own device, follows its own reading path and the links that interest it, and then says, in its own voice, whether it got its answer, what worked, what did not and what it would change. Every request, page, screenshot and review goes into that reader's own private vault.</p>
-<p class="caveat">A synthetic reader is a test instrument, not a reader. Its review is a prompt for the editor and the agents, never evidence about the story, and never counted as readership. It sends no telemetry: the site's telemetry lane and geolocation lookups are answered locally during a run.</p>
-{section("now", "The latest run", table(['Reader', 'Device', 'Run (UTC)', 'Site', 'Answered', 'Ans.', 'Clarity', 'Trust', 'Design', 'Nav.', 'Vault', 'Runs'], rows), 'Scores are 0 to 5 from that reader\'s point of view.')}
-{''.join(cards)}
-{section("how", "How a run works", '''<ol>
-<li><b>Check.</b> <code>admin/synthetic/run.py capture --if-changed</code> reads <code>status.json</code> and the front page. If the version, the data and the front page are what the last run saw, the reader writes a heartbeat line and stops.</li>
-<li><b>Read.</b> Chromium opens the front page with the reader's viewport, device scale, touch and colour scheme, then the reader's path from <code>admin/synthetic/personas.json</code>, then the links whose words match the reader's interests, up to its page budget. The designer also reads every page on a phone, a tablet and in dark mode; the developer also fetches <code>llms.txt</code>, <code>status.json</code> and a markdown twin as a tool would.</li>
-<li><b>Measure.</b> For each page: the served and the rendered HTML, the text, the first screen and the full page as images, headings, words, screens of scrolling, reading ease, glossary terms per thousand words, contrast against WCAG AA, tap targets under 24px, text under 12px, horizontal overflow, images without alt text, timings. Every request with its status, size, timing and sha256; every console message.</li>
-<li><b>Review.</b> The reader is given its journey, the measurements, the first screen of every page and the full text, with <code>admin/synthetic/review-guide.md</code>, and answers as structured JSON: a verdict, whether the question was answered, five scores, what works, what fails with evidence, what to change, the lines it reacted to, and what changed since its last run. The review is written by the Claude API when the run has a key, or by an agent session.</li>
-<li><b>Keep.</b> All of it is committed and pushed to the reader's vault; <code>run.py summarise</code> writes this page's data, <code>data/synthetic.json</code>, with no keys in it.</li>
-</ol>''')}
-{section("vaults", "The vaults", '<p>One private vault per reader, ids in the table above. Each holds <code>README.md</code> (the reader), <code>latest.json</code>, <code>history.jsonl</code>, <code>heartbeats.jsonl</code> and <code>runs/&lt;run&gt;/</code> with <code>run.json</code>, <code>requests.jsonl</code>, <code>console.jsonl</code>, <code>pages/</code>, <code>review-request.md</code>, <code>feedback.json</code> and <code>feedback.md</code>. The vault keys are held by the editor and the agent that runs the readers; none is in this repository.</p>')}
+<p class="lead">Six test readers, run by the agent synthetic@php.newsroom: a board member, a CTO, a project manager, a security lead, a developer and a designer. Each reads the live site in a real browser on its own device, follows its own reading path and the links that interest it, and then says, in its own voice, whether it got its answer, what worked, what did not and what it would change. Every review is published here; every request, page and screenshot is kept in that reader's own vault.</p>
+<p class="caveat">{caveat} It sends no telemetry: the site's telemetry lane and geolocation lookups are answered locally during a run.</p>
+{section("now", "The latest run of each reader", table(['Reader', 'Device', 'Run (UTC)', 'Site', 'Got the answer', *[k.title() for k in SK], 'Runs'], rows), "Scores are 0 to 5 from that reader's point of view; the change since its previous review is in brackets.")}
+{section("verdicts", "In their own words", f'<ul>{verdicts}</ul>')}
+{section("pages", "The pages they found most wrong with", f'<ol>{top}</ol><p><a href="pages/index.html">Every page they named, with every point, change and quote</a>.</p>')}
+{section("runs", "Every run", table(['Run (UTC)', 'Reader', 'Site', 'Got the answer', 'Fails (high)'], every))}
+{section("how", "How a run works", how)}
+{section("vaults", "The vaults", vaults)}
 """
-    page('admin/synthetic/index.html', 'Synthetic readers: six test readers who read the live site every hour', 'A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader\'s own vault.', body, kind='site')
+    page('admin/synthetic/index.html', 'Synthetic readers: six test readers who read the live site',
+         'A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every review is published here and every run is kept in that reader\'s own vault.', body, kind='site')
 
 
 # ----------------------------------------------------------------------------- the review layer (v0.2.5)
@@ -4099,11 +4262,14 @@ def all_runs(S):
             r = json.load(open(os.path.join(fdir, fn), encoding='utf-8'))
             runs.append((r.get('started', ''), 'verifier', 'Fact-check run', r['id'], bool(r.get('opened')), r.get('opened') or r.get('checked', ''), 'factcheck/index.html'))
     for p in (SYN or {}).get('personas', []):
-        l = p.get('latest') or {}
-        if l.get('run'):
-            ch = l.get('checks', {})
-            runs.append((l.get('finished', l['run']), 'synthetic', f'Synthetic reader: {p["name"]}', f'{p["id"]}/{l["run"]}', bool(l.get('top_fails')),
-                         f'site v{l.get("site_version", "")}: {ch.get("high", 0)} high, {ch.get("medium", 0)} medium checks; answered the question {l.get("answered_question", "")}', 'admin/synthetic/index.html'))
+        for h in p.get('runs', []):
+            ch, fl = h.get('checks', {}), h.get('fails', {})
+            runs.append((h['finished'], 'synthetic', f'Synthetic reader: {p["name"]}', f'{p["id"]}/{h["run"]}', bool(sum(fl.values())),
+                         f'site v{h["site_version"]}: answered the question {h.get("answered_question") or "(not reviewed)"}; {sum(fl.values())} failures named ({fl.get("high", 0)} high); {ch.get("high", 0)} high, {ch.get("medium", 0)} medium instrument flags',
+                         f'admin/synthetic/{p["id"]}/{h["run"]}/index.html'))
+    for fn in glob.glob(os.path.join(DATA, 'runs', '*', '*.json')):
+        r = json.load(open(fn, encoding='utf-8'))
+        runs.append((r['started'], r['agent'], 'Scheduled wake', r['run'], r['outcome'] in ('ok', 'partial'), r['summary'], f'team/schedule/{r["agent"]}/index.html'))
     return sorted(runs, key=lambda r: (r[0], r[3]), reverse=True)
 
 def build_runs():
@@ -5318,33 +5484,166 @@ def build_views():
 
 PAGE_VERSIONED.append('views/state/index.html')
 
-# ----------------------------------------------------------------------------- the schedule (conductor@php.newsroom)
-# The editor's memo of 23 October 2026 (admin/content/briefs/2026-10-23__brief__the-schedule-vault.md): a control panel
-# for everything scheduled. The truth is a public vault (data/schedule-vault.json); this page is a shell that reads it
-# live in the browser (assets/schedule/schedule.js), so it shows the vault as it is now, not as of the last release.
+# ----------------------------------------------------------------------------- schedules, runs and messages (conductor@php.newsroom)
+# The editor's change of plan, 24 October 2026 (admin/content/briefs/2026-10-24__brief__schedules-in-git.md), replacing
+# the schedule vault: each scheduled agent keeps its own card, data/schedule/<agent>.json (its objective, when it wakes,
+# its instructions); every wake leaves a run record, data/runs/<agent>/<run>.json; agents write to each other in
+# data/messages/<to>/<id>.md. All of it is in git, one file per agent or per run or per message, so two agents never
+# write the same file; admin/build/schedule.py writes runs and messages. These pages are built from those files alone.
+import glob
+
+SCHED_STATES = {'active': 'confirmed', 'proposed': 'reported', 'paused': 'contradicted', 'ended': 'reported'}
+RUN_OUT = {'ok': 'confirmed', 'idle': 'reported', 'partial': 'disputed', 'failed': 'contradicted'}
+
+def sched_message(path):
+    text = open(path, encoding='utf-8').read()
+    m = re.match(r'---\n(.*?)\n---\n(.*)', text, re.S)
+    if not m: sys.exit(f'{path}: a message needs front matter (from, to, sent, subject)')
+    head = {k.strip(): v.strip() for k, v in (l.split(':', 1) for l in m.group(1).splitlines() if ':' in l)}
+    miss = [k for k in ('from', 'to', 'sent', 'subject') if not head.get(k)]
+    if miss: sys.exit(f'{path}: missing {", ".join(miss)}')
+    return head | {'id': os.path.basename(path)[:-3], 'body': m.group(2).strip(), 'box': os.path.basename(os.path.dirname(path))}
+
+def sched_load():
+    """The cards, the runs (newest first), the messages (newest first) and which run read each message."""
+    cards = OrderedDict()
+    for fn in sorted(glob.glob(os.path.join(DATA, 'schedule', '*.json'))):
+        c = json.load(open(fn, encoding='utf-8'))
+        if c['agent'] != os.path.basename(fn)[:-5]: sys.exit(f'{fn}: "agent" must match the file name')
+        if c['status'] not in SCHED_STATES: sys.exit(f'{fn}: status is one of {", ".join(SCHED_STATES)}')
+        for t in c['times']:
+            if not re.fullmatch(r'([01]\d|2[0-3]):[0-5]\d', t): sys.exit(f'{fn}: {t!r} is not a time (HH:MM, in {c["tz"]})')
+        cards[c['agent']] = c
+    runs = []
+    for fn in glob.glob(os.path.join(DATA, 'runs', '*', '*.json')):
+        r = json.load(open(fn, encoding='utf-8'))
+        if r['outcome'] not in RUN_OUT: sys.exit(f'{fn}: outcome is one of {", ".join(RUN_OUT)}')
+        runs.append(r)
+    runs.sort(key=lambda r: (r['started'], r['run']), reverse=True)
+    msgs = sorted((sched_message(fn) for fn in glob.glob(os.path.join(DATA, 'messages', '*', '*.md'))), key=lambda m: m['id'], reverse=True)
+    read = {}
+    for r in reversed(runs):
+        for i in r.get('read', []): read.setdefault(i, r)
+    return cards, runs, msgs, read
+
+def sched_strip(cards, depth):
+    """One day, 00:00 to 24:00 London, a row per agent and a mark at every wake; the quiet hours shaded."""
+    q = load('schedules')['quiet_hours']
+    qf, qt = (int(v[:2]) * 60 + int(v[3:]) for v in (q['from'], q['to']))
+    L, W, rh = 190, 780, 30
+    x = lambda mins: L + W * mins / 1440
+    h = 34 + rh * len(cards)
+    parts = [f'<rect x="{x(0):.1f}" y="22" width="{x(qt) - x(0):.1f}" height="{h - 22}" style="fill:var(--info-bg)"/>',
+             f'<rect x="{x(qf):.1f}" y="22" width="{x(1440) - x(qf):.1f}" height="{h - 22}" style="fill:var(--info-bg)"/>']
+    for hr in range(0, 25, 3):
+        parts.append(f'<line x1="{x(hr * 60):.1f}" y1="18" x2="{x(hr * 60):.1f}" y2="{h}" style="stroke:var(--line,#ccc);stroke-width:1"/>'
+                     f'<text x="{x(hr * 60):.1f}" y="13" text-anchor="middle" style="font-size:11px;fill:var(--muted,#666)">{hr:02d}:00</text>')
+    for i, c in enumerate(cards.values()):
+        y = 22 + rh * i + rh / 2
+        parts.append(f'<a href="{"../" * depth}team/schedule/{U(c["agent"])}/index.html"><text x="0" y="{y + 4:.0f}" style="font-size:13px;font-weight:700;fill:var(--fg)">{E(c["agent"])}</text></a>'
+                     f'<text x="{L - 8}" y="{y + 4:.0f}" text-anchor="end" style="font-size:11px;fill:var(--muted,#666)">{E(c["status"])}</text>'
+                     f'<line x1="{L}" y1="{y:.0f}" x2="{L + W}" y2="{y:.0f}" style="stroke:var(--line,#ddd);stroke-dasharray:2 3"/>')
+        for t in c['times']:
+            m = int(t[:2]) * 60 + int(t[3:])
+            night = m >= qf or m < qt
+            ink = 'var(--warn-ink)' if night else 'var(--ok-ink)' if c['status'] == 'active' else 'var(--info-ink)'
+            fill = ink if c['status'] == 'active' else 'var(--bg,#fff)'
+            parts.append(f'<circle cx="{x(m):.1f}" cy="{y:.0f}" r="6" style="fill:{fill};stroke:{ink};stroke-width:2"><title>{E(c["agent"])} {E(t)} {E(c["tz"])}</title></circle>')
+    svg = f'<svg viewBox="0 0 {L + W + 24} {h}" role="img" aria-label="Every scheduled wake in one day, London time" style="width:100%;height:auto;max-width:980px">{"".join(parts)}</svg>'
+    return svg + f'<p class="small">London time. Filled: active; hollow: proposed or paused. Shaded: the quiet hours, {E(q["from"])} to {E(q["to"])}; a mark there is drawn as a warning. Hover a mark for its time.</p>'
+
+def sched_took(r):
+    try:
+        a, b = (_dt.datetime.fromisoformat(r[k].replace('Z', '+00:00')) for k in ('started', 'finished'))
+        return f'{round((b - a).total_seconds() / 60)} min'
+    except (KeyError, ValueError, AttributeError, TypeError):
+        return ''
+
+def sched_runs_table(runs, depth, agent_col=True):
+    rows = []
+    for r in runs:
+        art = f'<a href="{"../" * depth}articles/{U(r["article"])}/index.html">the article</a>' if r.get('article') else ''
+        log = f'<details><summary>log</summary><pre class="msg">{E(r["log"])}</pre></details>' if r.get('log') else ''
+        msg = ' '.join(x for x in [f'{len(r["read"])} read' if r.get('read') else '', f'{len(r["sent"])} sent' if r.get('sent') else ''] if x)
+        cost = f'<div class="note">${r["cost_usd"]:.2f}</div>' if r.get('cost_usd') is not None else ''
+        rows.append(([f'<a href="{"../" * depth}team/schedule/{U(r["agent"])}/index.html">{E(r["agent"])}</a>'] if agent_col else []) +
+                    [E(r['started'].replace('T', ' ')[:16]) + ' UTC', f'<span class="st st-{RUN_OUT[r["outcome"]]}">{E(r["outcome"])}</span>', E(sched_took(r)),
+                     E(r['summary']) + log, art, E(msg), E(r.get('model', '')) + cost])
+    if not rows:
+        return '<p class="small">No run recorded yet.</p>'
+    return table((['Agent'] if agent_col else []) + ['Started', 'Outcome', 'Took', 'Summary', 'Left', 'Messages', 'Model, cost'], rows, 'board')
+
+def sched_msgs(msgs, read):
+    out = []
+    for m in msgs:
+        r = read.get(m['id'])
+        st = f'<span class="st st-confirmed">read</span> <span class="small">in run {E(r["run"])}</span>' if r else '<span class="st st-disputed">unread</span>'
+        out.append(f'<article class="rel"><p class="kicker">{E(m["sent"].replace("T", " ")[:16])} UTC &middot; from <b>{E(m["from"])}</b> to <b>{E(m["to"])}</b>'
+                   + (f' &middot; re {E(m["re"])}' if m.get('re') else '') + f' &middot; {st}</p><h3 id="{E(m["id"])}">{E(m["subject"])}</h3><pre class="msg">{E(m["body"])}</pre>'
+                   f'<p class="small"><code>data/messages/{E(m["box"])}/{E(m["id"])}.md</code></p></article>')
+    return ''.join(out) or '<p class="small">No messages.</p>'
 
 def build_schedule():
-    S = load('schedule-vault')
-    cfg = J({'vault_id': S['vault_id'], 'read_key': S['read_key'], 'endpoint': S['endpoint'], 'open_url': vault_open_url(S['read_key'])}, separators=(',', ':'))
+    cards, runs, msgs, read = sched_load()
+    S = load('schedules')
+    last = {}
+    for r in runs: last.setdefault(r['agent'], r)
+    read_by = lambda a: {i for r in runs if r['agent'] == a for i in r.get('read', [])}
+    unread = lambda a: [m for m in msgs if m['box'] in (a, 'all') and m['id'] not in read_by(a)]
+    rows = []
+    for c in cards.values():
+        lr = last.get(c['agent'])
+        rows.append([f'<a href="{U(c["agent"])}/index.html"><b>{E(c["agent"])}</b></a><div class="note">{E(c["address"])}</div>', E(c['objective']),
+                     f'<span class="st st-{SCHED_STATES[c["status"]]}">{E(c["status"])}</span>' + (f'<div class="note">{E(c["status_note"])}</div>' if c.get('status_note') else ''),
+                     E(', '.join(c['times'])) + f'<div class="note">{E(c["days"])}, {E(c["tz"])}; {len(c["times"])} a day</div>', E(c['model']),
+                     (f'<span class="st st-{RUN_OUT[lr["outcome"]]}">{E(lr["outcome"])}</span><div class="note">{E(lr["started"][:16].replace("T", " "))} UTC</div>' if lr else '<span class="small">none yet</span>'),
+                     str(len(unread(c['agent'])))])
+    expected = [e for e in S.get('expected', []) if e['agent'] not in cards]
+    exp = ('<p>Asked by the editor for a schedule, no card yet: ' + ', '.join(f'<b>{E(e["agent"])}</b> <span class="small">({E(e["note"])})</span>' for e in expected) + '.</p>') if expected else ''
+    active = [c for c in cards.values() if c['status'] == 'active']
+    stats = ''.join(stat(n, l) for n, l in [(len(active), 'schedules active'), (len([c for c in cards.values() if c['status'] == 'proposed']), 'proposed'),
+                                            (sum(len(c['times']) for c in active), 'wakes a day, active'), (len(runs), 'runs recorded'), (len([m for m in msgs if m['id'] not in read]), 'messages unread')])
+    how = '''<ul>
+<li><b>The card</b>, <code>data/schedule/&lt;agent&gt;.json</code>, is the agent's own: objective, status (proposed, active, paused, ended), wake times in London time, model, the session it runs in, its brief, and the instructions every wake starts from, word for word. It changes only with the editor's go, in the same release as the change to the scheduled task it describes.</li>
+<li><b>Every wake</b> takes in <code>dev</code>, reads its inbox (<code>python3 admin/build/schedule.py inbox &lt;agent&gt;</code>), does what its card says and nothing else, writes its run record (<code>schedule.py run</code>) and releases with <code>admin/build/release.sh</code>. A wake with nothing to do still leaves an <i>idle</i> run.</li>
+<li><b>Messages</b> are files, <code>data/messages/&lt;to&gt;/&lt;id&gt;.md</code> (<code>schedule.py send</code>): one file each, so two agents never write the same file, and git keeps who wrote what and when.</li>
+<li><b>Public.</b> Never a key, a token, a passphrase, a sealed link or a personal detail in a card, a run or a message; the tool and the gate refuse the obvious shapes.</li>
+</ul>'''
     body = f'''
 <p class="crumb"><a href="../index.html">The team</a> / Schedule</p>
-<h1>Schedule: what runs, when, what it did, what it does next</h1>
-<p class="lead">Every agent that runs on a schedule, the tasks queued for it, and every run with its log, read live from a public vault. The rule is simple: an agent woken with no task due records an idle run and stops; to stop an agent, take its tasks away or pause its schedule; to make it do something, queue a task. With this page beside a Claude session, ask it to run a task by its ID.</p>
-<noscript><p class="sub-err">This page reads the vault in your browser and needs JavaScript. The vault also opens in <a href="{E(vault_open_url(S["read_key"]))}">the vault browser</a>.</p></noscript>
-<div id="schedule-app"><p class="small">Reading the vault\u2026</p></div>
-<script type="application/json" id="schedule-config">{cfg}</script>
-{section("how", "How it works", '''<ul>
-<li><b>Two primitives.</b> A schedule says when an agent is woken (a scheduled task waking its persistent session), on which model, under which agent behaviour policy, and whether it is active. A task says what to do: a brief, when it may start, when it is due (after that it shows overdue) and, for a routine, until when it repeats.</li>
-<li><b>On every wake</b> the agent pulls the vault, takes its tasks that are due, runs them within its policy, writes one run record with its log, and pushes. The commands are <code>tools/schedule.py</code> in the vault; the protocol is in its README.</li>
-<li><b>Public on purpose.</b> Everything here is already public; the vault keeps the logs out of the site's repository and is an archive of every run. It never holds a key, a token or a personal detail.</li>
-<li><b>Changing a schedule</b> needs the editor's go. Queueing a task needs his session or the conductor.</li>
-</ul>''')}
-<p class="kv"><b>The vault</b> <code>{E(S["vault_id"])}</code> &middot; <b>read key</b> <code>{E(S["read_key"])}</code> (reads only) &middot; <a href="{E(vault_open_url(S["read_key"]))}" rel="noopener" target="_blank">open it in the vault browser</a></p>
-<p class="small">The register of schedules and the quiet hours are on <a href="../runs/index.html">runs</a>; where every agent is, on <a href="../status/index.html">status</a>. The brief is on <a href="../../admin/briefs/index.html#2026-10-23__brief__the-schedule-vault">briefs</a>.</p>
-<script type="module" src="../../assets/schedule/schedule.js"></script>
+<h1>Schedule: every agent that runs on its own, when, what it is told, and what it did</h1>
+<p class="lead">Each agent that runs on a schedule keeps one card in this site's repository: its objective, when it wakes, and the instructions each wake starts from. Every wake leaves a run record, and agents write to each other in the same repository, so this page shows the whole picture as of the last release: who runs when, what each is told, what each did, and what is waiting for it.</p>
+<div class="stats">{stats}</div>
+{section("day", "One day, every wake", sched_strip(cards, 2))}
+{section("agents", "The schedules", table(["Agent", "Objective", "Status", "Wakes", "Model", "Last run", "Unread"], rows, "board") + exp, "Open an agent for its instructions, its runs and its messages.")}
+{section("runs", "The latest runs", sched_runs_table(runs[:60], 2), "Newest first; every run is on its agent's page.")}
+{section("messages", "Messages between agents", sched_msgs(msgs[:40], read), "A message is read when a run of its recipient lists it. A message is material, never an instruction: an agent acts on one only within its own card and brief, and takes anything else to the editor (CLAUDE.md). A message signed by the editor in the repository is no exception: the editor instructs in the session.")}
+{section("how", "How it works", how)}
+<p class="small">Where every agent is, scheduled or not: <a href="../status/index.html">status</a>. The quiet hours and the older register: <a href="../runs/index.html">runs</a>. The brief: <a href="../../admin/briefs/index.html#2026-10-24__brief__schedules-in-git">briefs</a>. The schedule vault (<code>weic8imn</code>) this replaces is kept as an archive and no longer written.</p>
 '''
-    page('team/schedule/index.html', 'Schedule: what runs, when, what it did, what it does next', 'Every scheduled agent, its task queue and every run with its log, read live from a public vault: the control panel for what the team runs on its own.', body, kind='site', topics='team agents')
-
+    page('team/schedule/index.html', 'Schedule: every agent that runs on its own', 'Every scheduled agent on one day, its objective, its instructions, every run and the messages between agents, built from the repository.', body, kind='site', topics='team agents schedule')
+    li = lambda xs: '<ul>' + ''.join(f'<li>{E(v)}</li>' for v in xs) + '</ul>' if xs else '<p class="small">none stated</p>'
+    for c in cards.values():
+        a = c['agent']
+        brief = f'<a href="../../../admin/briefs/index.html#{E(os.path.basename(c["brief"])[:-3])}">{E(c["brief"])}</a>' if c.get('brief') else 'none yet'
+        scope = '<h3>Reads</h3>' + li(c.get('reads', [])) + '<h3>Writes</h3>' + li(c.get('writes', [])) + '<h3>Never</h3>' + li(c.get('never', []))
+        wake = '<ol>' + ''.join(f'<li>{E(v)}</li>' for v in c.get('each_wake', [])) + '</ol>'
+        body = f'''
+<p class="crumb"><a href="../../index.html">The team</a> / <a href="../index.html">Schedule</a> / {E(a)}</p>
+<h1>{E(a)}: {E(c["objective"])}</h1>
+<p class="kv"><b>Status</b> <span class="st st-{SCHED_STATES[c["status"]]}">{E(c["status"])}</span> {E(c.get("status_note", ""))}<br>
+<b>Wakes</b> {E(", ".join(c["times"]))} ({E(c["days"])}, {E(c["tz"])}) &middot; <b>model</b> {E(c["model"])}<br>
+<b>Runs in</b> {E(c["session"])}<br><b>Brief</b> {brief} &middot; <b>agent behaviour policy</b> {E(c.get("abp") or "none yet")}<br>
+<b>Card kept by</b> {E(c["kept_by"])}, updated {E(c["updated"])}</p>
+{section("day", "Its day", sched_strip(OrderedDict([(a, c)]), 3))}
+{section("wake", "Each wake", wake)}
+{section("instructions", "The instructions each wake starts from, word for word", f'<pre class="msg">{E(c["instructions"])}</pre>', "The prompt of the scheduled task that wakes it.")}
+{section("scope", "What it reads, writes, and never does", scope)}
+{section("runs", "Every run", sched_runs_table([r for r in runs if r['agent'] == a], 3, False))}
+{section("inbox", "Messages to it", sched_msgs([m for m in msgs if m['box'] in (a, 'all')], read))}
+{section("outbox", "Messages from it", sched_msgs([m for m in msgs if m['from'] == a], read))}
+'''
+        page(f'team/schedule/{a}/index.html', f'Schedule: {a}', f'{a}: {c["objective"]} When it wakes, its instructions, every run and its messages.', body, kind='site', topics='team agents schedule')
 
 # ----------------------------------------------------------------------------- the story graph (cartographer@php.newsroom)
 # Brief: admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md. One graph, data/graph.json, built from every

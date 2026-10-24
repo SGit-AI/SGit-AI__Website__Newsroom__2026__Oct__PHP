@@ -160,7 +160,7 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - Each reader has its own private sgit vault (board 1zq458zk, cto wlhgl8pk, pm 9p6jpsd2, security vjsqjhvp, developer 3l7tzwh9, designer dpdx3q13) holding every run, `latest.json`, `history.jsonl` and `heartbeats.jsonl`. Keys are not in this repository.
 
-- Reviews: structured JSON against `admin/synthetic/review-guide.md`, by the Claude API (`--review api`, needs ANTHROPIC_API_KEY) or by an agent session; `run.py finish` renders `feedback.md` and pushes. `run.py summarise` writes `data/synthetic.json`; the page is `/admin/synthetic/`.
+- Reviews: structured JSON against `admin/synthetic/review-guide.md`, by the Claude API (`--review api`, needs ANTHROPIC_API_KEY) or by an agent session; `run.py finish` renders `feedback.md` and pushes. `run.py summarise` writes `data/synthetic.json` (every reader and its runs) and `data/synthetic-runs//.json` (each run: review, journey, per-page measurements, flags; never page bodies or a key). Pages: `/admin/synthetic/` (the six, latest scores with the change since the previous review, verdicts, the pages most found wrong, every run), `/admin/synthetic//` (the reader, its latest review in full, every run), `/admin/synthetic///` (one run: review, journey, flags) and `/admin/synthetic/pages/` (every site page the readers named, with every failure, change, works and quote from all six). Runs are also listed on `/team/runs/`.
 
 - `.github/workflows/synthetic.yml`: hourly at :23 and after each deploy, `--if-changed` (an unchanged site gets a heartbeat, not a run). Needs repository secrets SG_SEND_ACCESS_TOKEN and SYNTHETIC_VAULT_KEYS; until they are set it does nothing. It never commits to this repository, so the page is the snapshot at the last release.
 
@@ -326,11 +326,21 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - "Last checked" in the header and on the front page is the newest of three times, each shown on the front page: the evidence vault's latest capture (still `data_as_of`, which the claims, articles and status.json are built from), the source watch's latest run (`data/source-watch.json`, re-exported at `20afaa62129d`) and the NCSC-NL inventory's latest change read (`data/inventory-history.json`). Before v0.10.6 it was the evidence vault's alone, which read as stale whenever the vault had not taken a capture for hours while the other two had moved.
 
-### The schedule vault (23 October 2026, conductor@php.newsroom)
+- `data/` re-exported from the evidence vault at `1845598d9a38` (295 sources, latest capture 16:04 UTC on 23 October). The journalist's state of affairs is at version 2 (`/views/state/v2/`), written against it; the front page's "Right now" and "Latest" are from the same export. The source watch's pack vault `7r83qic5` is not read yet (no read key in this desk's session).
+
+### Schedules, runs and messages in the repository (24 October 2026, conductor@php.newsroom)
+
+- Replaces the schedule vault (below, now an archive no longer written). `data/schedule/.json`: each scheduled agent's card (objective, status, wake times in London time, model, session, brief, each wake's steps, reads, writes, never, the wake prompt word for word). Three cards: curator and researcher (active; drafted by the conductor from their scheduled tasks, for them to confirm), conductor (proposed: hourly 07:15 to 21:15 London, not scheduled).
+
+- `data/runs//.json`, one per wake, and `data/messages//.md`, one per message, both written by `admin/build/schedule.py` (inbox, run, send; refuses key, token and sealed-link shapes). Six messages from the conductor (to all; curator; researcher; pulse; ontologist; librarian) and one run (this change, not a scheduled wake).
+
+- `/team/schedule/` is built from those files at release, no JavaScript: one day of every wake as an SVG (quiet hours shaded), the cards, the latest runs, the messages; a page per agent (`/team/schedule//`) with its instructions, runs, inbox and outbox. `/team/runs/` lists the runs too. `data/schedules.json` keeps the quiet hours, the article rule and who is still to write a card (pulse, ontologist, librarian). AGENTS.md section 7 and CLAUDE.md say so.
+
+### The schedule vault (23 October 2026, conductor@php.newsroom; retired 24 October 2026, kept as an archive)
 
 - A public vault, `weic8imn` (read key on `/vaults/` and `/team/schedule/`): `schedules/.json`, `tasks//queued|done|failed/T-NNN.json` (a brief, `not_before`, `due_by`, `repeat_until`), `runs///.json` (schema `sgit.newsroom.run/1`, with the log), `index.json`, and `tools/schedule.py` (due, start, finish, idle, queue, index; refuses key and token shapes). Seeded with four schedules (curator and researcher setting up, fact-check paused, synthetic readers paused pending removal), the curator's and the researcher's routine tasks (repeating until 31 October) and 42 runs already recorded elsewhere.
 
-- `/team/schedule/` reads the vault live in the browser with its read key (`assets/schedule/schedule.js`): schedules, tasks due and overdue, every run, a run's log on demand, by agent; tested in Chromium against the live vault.
+- Until 24 October, `/team/schedule/` read the vault live in the browser with its read key (`assets/schedule/schedule.js`, since removed): schedules, tasks due and overdue, every run, a run's log on demand, by agent; tested in Chromium against the live vault.
 
 - `AGENTS.md` section 7 and `CLAUDE.md`: every scheduled wake goes through the vault; no task due means one idle run and nothing else.
 
@@ -356,4 +366,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

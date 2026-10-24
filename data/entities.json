@@ -1144,7 +1144,8 @@
    "kind": "outlet",
    "country": "JP",
    "aliases": [
-    "Yahoo! News Japan (J-CAST)"
+    "Yahoo! News Japan (J-CAST)",
+    "Yahoo!ニュース"
    ]
   },
   {
@@ -1537,6 +1538,589 @@
    "name": "PA Media (the Press Association)",
    "kind": "outlet",
    "country": "UK"
+  },
+  {
+   "id": "01net",
+   "name": "01net",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "01net"
+   ]
+  },
+  {
+   "id": "ai4business",
+   "name": "AI4Business",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "AI4Business"
+   ]
+  },
+  {
+   "id": "andina",
+   "name": "Agencia Andina",
+   "kind": "outlet",
+   "country": "PE",
+   "aliases": [
+    "Agencia Andina"
+   ]
+  },
+  {
+   "id": "analytics-insight",
+   "name": "Analytics Insight",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "Analytics Insight"
+   ]
+  },
+  {
+   "id": "ars-technica",
+   "name": "Ars Technica",
+   "kind": "outlet",
+   "aliases": [
+    "Ars Technica"
+   ]
+  },
+  {
+   "id": "asiaone",
+   "name": "AsiaOne",
+   "kind": "outlet",
+   "country": "SG",
+   "aliases": [
+    "AsiaOne.com"
+   ]
+  },
+  {
+   "id": "bdm",
+   "name": "Blog du Modérateur (BDM)",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "BDM"
+   ]
+  },
+  {
+   "id": "bankinfosecurity",
+   "name": "BankInfoSecurity",
+   "kind": "outlet",
+   "aliases": [
+    "BankInfoSecurity"
+   ]
+  },
+  {
+   "id": "bitpage",
+   "name": "Bitpage.de",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "Bitpage.de"
+   ]
+  },
+  {
+   "id": "borncity",
+   "name": "BornCity",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "BornCity"
+   ]
+  },
+  {
+   "id": "cna-sg",
+   "name": "CNA (Channel NewsAsia)",
+   "kind": "outlet",
+   "country": "SG",
+   "aliases": [
+    "CNA (Channel NewsAsia)"
+   ]
+  },
+  {
+   "id": "computerworld-es",
+   "name": "Computerworld España",
+   "kind": "outlet",
+   "country": "ES",
+   "aliases": [
+    "COMPUTERWORLD ESPAÑA"
+   ]
+  },
+  {
+   "id": "crn",
+   "name": "CRN",
+   "kind": "outlet",
+   "aliases": [
+    "CRN"
+   ]
+  },
+  {
+   "id": "clarin",
+   "name": "Clarín (English edition)",
+   "kind": "outlet",
+   "country": "AR",
+   "aliases": [
+    "Clarin (English edition)"
+   ]
+  },
+  {
+   "id": "coingape",
+   "name": "Coingape",
+   "kind": "outlet",
+   "aliases": [
+    "Coingape"
+   ]
+  },
+  {
+   "id": "computable",
+   "name": "Computable.nl",
+   "kind": "outlet",
+   "country": "NL",
+   "aliases": [
+    "Computable.nl"
+   ]
+  },
+  {
+   "id": "computer-weekly",
+   "name": "Computer Weekly",
+   "kind": "outlet",
+   "country": "UK",
+   "aliases": [
+    "Computer Weekly"
+   ]
+  },
+  {
+   "id": "critic-arad",
+   "name": "Critic Arad",
+   "kind": "outlet",
+   "country": "RO",
+   "aliases": [
+    "Critic Arad"
+   ]
+  },
+  {
+   "id": "cyber-press",
+   "name": "Cyber Press",
+   "kind": "outlet",
+   "aliases": [
+    "Cyber Press"
+   ]
+  },
+  {
+   "id": "cyberscoop",
+   "name": "CyberScoop",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "CyberScoop"
+   ]
+  },
+  {
+   "id": "diariobitcoin",
+   "name": "DiarioBitcoin",
+   "kind": "outlet",
+   "aliases": [
+    "DiarioBitcoin"
+   ]
+  },
+  {
+   "id": "everyeye",
+   "name": "Everyeye Tech",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "Everyeye Tech"
+   ]
+  },
+  {
+   "id": "ginjfo",
+   "name": "GinjFo",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "GinjFo"
+   ]
+  },
+  {
+   "id": "hardwarecooking",
+   "name": "HardwareCooking",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "HardwareCooking"
+   ]
+  },
+  {
+   "id": "help-net-security",
+   "name": "Help Net Security",
+   "kind": "outlet",
+   "aliases": [
+    "Help Net Security"
+   ]
+  },
+  {
+   "id": "ictjournal",
+   "name": "ICTjournal",
+   "kind": "outlet",
+   "country": "CH",
+   "aliases": [
+    "ICTjournal"
+   ]
+  },
+  {
+   "id": "idx-channel",
+   "name": "IDX Channel",
+   "kind": "outlet",
+   "country": "ID",
+   "aliases": [
+    "IDX Channel"
+   ]
+  },
+  {
+   "id": "it-social",
+   "name": "IT Social",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "IT Social"
+   ]
+  },
+  {
+   "id": "india-tv",
+   "name": "India TV News",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "India TV News"
+   ]
+  },
+  {
+   "id": "infopoint-security",
+   "name": "Infopoint Security",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "Infopoint Security"
+   ]
+  },
+  {
+   "id": "information-age",
+   "name": "Information Age (ACS)",
+   "kind": "outlet",
+   "country": "AU",
+   "aliases": [
+    "Information Age (ACS)"
+   ]
+  },
+  {
+   "id": "infosecurity-magazine",
+   "name": "Infosecurity Magazine",
+   "kind": "outlet",
+   "country": "UK",
+   "aliases": [
+    "Infosecurity Magazine"
+   ]
+  },
+  {
+   "id": "journal-du-canada",
+   "name": "Journal du Canada",
+   "kind": "outlet",
+   "country": "CA",
+   "aliases": [
+    "Journal Du Canada"
+   ]
+  },
+  {
+   "id": "lessentiel",
+   "name": "L'essentiel",
+   "kind": "outlet",
+   "country": "LU",
+   "aliases": [
+    "L'essentiel"
+   ]
+  },
+  {
+   "id": "lebigdata",
+   "name": "LeBigData.fr",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "LEBIGDATA.FR"
+   ]
+  },
+  {
+   "id": "le-monde-informatique",
+   "name": "Le Monde Informatique",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "Le Monde Informatique"
+   ]
+  },
+  {
+   "id": "les-affaires",
+   "name": "Les Affaires",
+   "kind": "outlet",
+   "country": "CA",
+   "aliases": [
+    "Les Affaires"
+   ]
+  },
+  {
+   "id": "linternaute",
+   "name": "Linternaute",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "Linternaute.com"
+   ]
+  },
+  {
+   "id": "marketing4ecommerce",
+   "name": "Marketing4eCommerce",
+   "kind": "outlet",
+   "country": "ES",
+   "aliases": [
+    "Marketing4eCommerce"
+   ]
+  },
+  {
+   "id": "medianama",
+   "name": "MediaNama",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "MediaNama"
+   ]
+  },
+  {
+   "id": "morocco-world-news",
+   "name": "Morocco World News",
+   "kind": "outlet",
+   "country": "MA",
+   "aliases": [
+    "Morocco World News"
+   ]
+  },
+  {
+   "id": "news9live",
+   "name": "News9Live",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "News9Live"
+   ]
+  },
+  {
+   "id": "notebookcheck-it",
+   "name": "Notebookcheck.it",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "Notebookcheck.it"
+   ]
+  },
+  {
+   "id": "pcmag",
+   "name": "PCMag",
+   "kind": "outlet",
+   "aliases": [
+    "PCMag"
+   ]
+  },
+  {
+   "id": "paperjam",
+   "name": "Paperjam",
+   "kind": "outlet",
+   "country": "LU",
+   "aliases": [
+    "Paperjam"
+   ]
+  },
+  {
+   "id": "qa-financial",
+   "name": "QA Financial",
+   "kind": "outlet",
+   "aliases": [
+    "QA Financial"
+   ]
+  },
+  {
+   "id": "seroundtable",
+   "name": "Search Engine Roundtable",
+   "kind": "outlet",
+   "aliases": [
+    "Search Engine Roundtable"
+   ]
+  },
+  {
+   "id": "siliconangle",
+   "name": "SiliconANGLE",
+   "kind": "outlet",
+   "aliases": [
+    "SiliconANGLE"
+   ]
+  },
+  {
+   "id": "techaeris",
+   "name": "Techaeris",
+   "kind": "outlet",
+   "aliases": [
+    "Techaeris"
+   ]
+  },
+  {
+   "id": "economic-times",
+   "name": "The Economic Times",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "The Economic Times"
+   ]
+  },
+  {
+   "id": "indian-express",
+   "name": "The Indian Express",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "The Indian Express"
+   ]
+  },
+  {
+   "id": "the-mandarin",
+   "name": "The Mandarin",
+   "kind": "outlet",
+   "country": "AU",
+   "aliases": [
+    "The Mandarin"
+   ]
+  },
+  {
+   "id": "the-star-my",
+   "name": "The Star",
+   "kind": "outlet",
+   "country": "MY",
+   "aliases": [
+    "The Star"
+   ]
+  },
+  {
+   "id": "the420",
+   "name": "The420.in",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "The420.in"
+   ]
+  },
+  {
+   "id": "trak-in",
+   "name": "Trak.in",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "Trak.in"
+   ]
+  },
+  {
+   "id": "zataz",
+   "name": "ZATAZ",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "ZATAZ"
+   ]
+  },
+  {
+   "id": "cyberkendra",
+   "name": "Cyber Kendra",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "cyberkendra.com"
+   ]
+  },
+  {
+   "id": "repubblica",
+   "name": "la Repubblica",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "la Repubblica"
+   ]
+  },
+  {
+   "id": "nguoiquansat",
+   "name": "Người Quan Sát",
+   "kind": "outlet",
+   "country": "VN",
+   "aliases": [
+    "nguoiquansat.vn"
+   ]
+  },
+  {
+   "id": "shattered",
+   "name": "shattered.io",
+   "kind": "outlet",
+   "aliases": [
+    "shattered.io"
+   ]
+  },
+  {
+   "id": "madonomori",
+   "name": "Mado no Mori (窓の杜)",
+   "kind": "outlet",
+   "country": "JP",
+   "aliases": [
+    "窓の杜"
+   ],
+   "note": "An Impress title, like INTERNET Watch."
+  },
+  {
+   "id": "shinailbo",
+   "name": "Shinailbo (신아일보)",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "신아일보"
+   ]
+  },
+  {
+   "id": "mashable-india",
+   "name": "Mashable India",
+   "kind": "outlet",
+   "country": "IN",
+   "note": "A licensed edition; not part of Mashable.",
+   "aliases": [
+    "Mashable India"
+   ]
+  },
+  {
+   "id": "techtarget-japan",
+   "name": "TechTarget Japan",
+   "kind": "outlet",
+   "country": "JP",
+   "note": "Run by ITmedia under licence; not part of TechTarget.",
+   "aliases": [
+    "TechTargetジャパン"
+   ]
+  },
+  {
+   "id": "socradar",
+   "name": "SOCRadar",
+   "kind": "organisation",
+   "aliases": [
+    "SOCRadar"
+   ]
+  },
+  {
+   "id": "rocket-boys",
+   "name": "Rocket Boys LLC (合同会社ロケットボーイズ)",
+   "kind": "organisation",
+   "country": "JP",
+   "aliases": [
+    "合同会社ロケットボーイズ"
+   ]
   }
  ]
 }

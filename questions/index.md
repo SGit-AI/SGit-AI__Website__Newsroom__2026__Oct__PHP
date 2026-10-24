@@ -106,7 +106,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Perplexity's notes, in full](../readings/perplexity-2026-10-22/index.html):
 
 ### The evidence
-- [Every source: 227 pages, 222 captures, 1386 hashes](../sources/index.html): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
+- [Every source: 295 pages, 290 captures, 1761 hashes](../sources/index.html): The manifest of the php2shell evidence vault: every captured source with its publisher, kind, publication time, capture times, HTTP status and the SHA-256 of every captured file.
 - [The NCSC-NL inventory: 674 products](../affected/software.html): Every row of the NCSC-NL php2shell software inventory at commit cca173c64ec5, with its status per CVE.
 - [The evidence vault, opened](../admin/vault/index.html): The read key to the evidence vault behind this site, the link that opens it in the browser, and what is in it.
 - [Evidence, derived, authored](../layers/index.html):
@@ -125,7 +125,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Power users: start here](../collaborators/index.html): Where a power user of PHP October 2026 starts: the first fifteen minutes, the latest ask (what is new, what to do, the questions), the messages for the email list and the WhatsApp group, a form to join and a form for feedback, both encrypted in your browser.
-- [Schedule: what runs, when, what it did, what it does next](../team/schedule/index.html): Every scheduled agent, its task queue and every run with its log, read live from a public vault: the control panel for what the team runs on its own.
+- [Schedule: every agent that runs on its own](../team/schedule/index.html): Every scheduled agent on one day, its objective, its instructions, every run and the messages between agents, built from the repository.
 
 ### GRC
 - [GRC: risks, owners, standards](../grc/index.html):
@@ -172,7 +172,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [Briefs](../admin/briefs/index.html): The build briefs for this site, published in full before the work, newest first.
 - [Pack mode, measured on the source watch](../admin/pack-mode/index.html): One vault as a normal sgit vault and as a pack vault: a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and why the normal vault has hit a wall.
 - [Who reads this site: anonymous telemetry over an append lane](../admin/telemetry/index.html): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
-- [Synthetic readers: six test readers who read the live site every hour](../admin/synthetic/index.html): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every run is kept in that reader's own vault.
+- [Synthetic readers: six test readers who read the live site](../admin/synthetic/index.html): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every review is published here and every run is kept in that reader's own vault.
 
 Every page also has a markdown twin, listed in [llms.txt](../llms.txt); the questions themselves are [data/questions.json](../data/questions.json).
 
@@ -182,4 +182,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

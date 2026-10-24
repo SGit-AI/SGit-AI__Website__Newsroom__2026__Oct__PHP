@@ -1,0 +1,59 @@
+# Source: PHP2Shell, la mise à jour ferme la faille, mais oblige à traquer les compromissions possibles - IT SOCIAL
+
+> Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
+
+IT Social: what it says, the claims and events that cite it, and the hashes of every captured file.
+
+Source · news · secondary · captured
+
+# PHP2Shell, la mise à jour ferme la faille, mais oblige à traquer les compromissions possibles - IT SOCIAL
+
+**IT Social** · [https://itsocial.fr/cybersecurite/cybersecurite-articles/php2shell-la-mise-a-jour-ferme-la-faille-mais-oblige-a-traquer-les-compromissions-possibles/](https://itsocial.fr/cybersecurite/cybersecurite-articles/php2shell-la-mise-a-jour-ferme-la-faille-mais-oblige-a-traquer-les-compromissions-possibles/) · published 2026-10-23T07:58:01+00:00 · added by `curator@php.newsroom` · slug `itsocial-cybersecurite-cybersecurite-articles-php`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 3 (mechanical selection by researcher@php.newsroom, read by the curator). IT Social (French), 23 October: the first exploitation attempts came four days before the coordinated disclosure, which shifts a company's response fr...
+
+## What it says, as the collector read it
+
+#### PHP2Shell, la mise à jour ferme la faille, mais oblige à traquer les compromissions possibles - IT SOCIAL
+
+Promoted by curator@php.newsroom from the source watch (vault `oq9gflln`, read from its pack copy `7r83qic5`), page `fr/news/itsocial/cybersecurite-cybersecurite-articles-php2shell-la-mise-a-jou`, snapshot `20261023T160435Z`. Copied byte for byte; every file's sha256 is in `captures/20261023T160435Z/provenance.json` and was re-checked against the watch's own hashes.
+
+#### What the page says
+
+_Curator's reading of the capture._
+
+IT Social (French), 23 October: the first exploitation attempts came four days before the coordinated disclosure, which shifts a company's response from patching to investigating. Applying the 21 October update closes the door without saying whether someone got in meanwhile, so hunting for traces becomes the next step. It lists the fixed versions 8.5.12, 8.4.27, 8.3.36 and 8.2.35.
+
+> Appliquer la mise à jour du 21 octobre ferme la porte sans dire si quelqu’un est entré entre-temps
+
+_Curator's translation:_ "Applying the 21 October update closes the door without saying whether someone has come in in the meantime"
+
+#### Why it is here
+
+From the promotion queue (`index/promote.json`, priority 3): Mentions CVE-2026-109618/109619 or php2shell: "PHP2Shell, la mise à jour ferme la faille, mais oblige à traquer les compromissions possibles - IT SOCIAL". Selected mechanically, not read by a person. Text also matches compromise/breach terms: check for a named organisation or cause.
+
+#### Capture notes
+
+Language `fr-FR`. Nothing in the page addresses an AI or hides text from a reader.
+
+## Claims that cite it
+
+No claim cites this source yet.
+
+## Events that cite it
+
+No timeline event cites this source yet.
+
+## The bytes
+capture 20261023T160435Z · HTTP 200 · https://itsocial.fr/cybersecurite/cybersecurite-articles/php2shell-la-mise-a-jour-ferme-la-faille-mais-oblige-a-traquer-les-compromissions-possibles/- `headers.json` dc4fcd9e93f05f21e466beaf11c106f736bd1683dd6027ea697b4cd9f556c476 880 bytes
+- `page.html` 7b87fccd00ca774f5357da48c1c26180992bb5f584e6a1b257f38340474fa313 360,599 bytes
+- `provenance.json` 1475378758653e01c69ddd63ad965d6d1bb1da125c39740623868dc787fa6b81 1,919 bytes
+- `rendered.html` b798e757871bfc8f6f9028b0f7a4df92dfbb6fcb1fbf4422745e6d569ce00c15 359,599 bytes
+- `screenshot.jpg` ca7d82ca3ed331cf943625541100023f459ff78ed579076fe731751016a73a28 908,893 bytes
+- `text.txt` 192f86a7b6081dfb7c2813799068d074cef0b3c931f3957262fe715c09001b70 13,533 bytes
+
+The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
+
+
+---
+site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/sources/itsocial-cybersecurite-cybersecurite-articles-php/index.html

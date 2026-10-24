@@ -733,6 +733,10 @@
    "syndicates": "dpa",
    "basis": "the collector's slug; Der Tagesspiegel carries dpa copy"
   },
+  "thestar-aseanplus-aseanplus-news-2026-10-22-seri": {
+   "syndicates": "dpa",
+   "basis": "the page's own address ends 'reports-dpa'"
+  },
   "yahoo-jp-gmo-fx-login-leak": {
    "syndicates": "j-cast",
    "basis": "the publisher string and the title: J-CAST News on Yahoo! News Japan"

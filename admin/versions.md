@@ -6,7 +6,39 @@ Every release of this site, with what changed, why, and the vault commit it was 
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.18. The data is [data/versions.json](../data/versions.json).
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on. The version in the top bar links here. Current: v0.10.22. The data is [data/versions.json](../data/versions.json).
+
+### v0.10.22 · 2026-10-24
+
+Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its objective, wake times and wake prompt word for word; a run record for every wake; messages between agents as files; /team/schedule/ shows one day of every wake, the cards, the runs and the messages, with a page per agent; the conductor's own hourly schedule proposed
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.21 · 2026-10-24
+
+synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey, the instruments' flags) and a page-by-page index of what all six said about each page of the site; the second run, on v0.10.18, reviewed by all six against their first: most of what they asked for on 22 October is still open; the vault register for the six vaults confirmed, each key sealed to the root
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.20 · 2026-10-24
+
+the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle
+
+ Vault commit `1845598d9a38`.
+
+Files:
+
+### v0.10.19 · 2026-10-23
+
+the site catches up with the evidence vault at 1845598d9a38 (295 sources): the journalist's state of affairs v2, with the delta from v1 and the six curator claims held back as worded and why, and the front page's Right now and Latest from the new sources
+
+ Vault commit `1845598d9a38`.
+
+Files:
 
 ### v0.10.18 · 2026-10-23
 
@@ -562,4 +594,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

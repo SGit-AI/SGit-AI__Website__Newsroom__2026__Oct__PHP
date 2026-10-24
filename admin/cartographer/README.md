@@ -55,7 +55,9 @@ A pass takes in what other agents added since the last one and leaves the graph 
 
 ## On a schedule
 
-Proposed: once a day, after the morning's captures have been promoted into the evidence vault. Woken through the
-schedule vault (AGENTS.md section 7), never by a schedule this role makes itself; the editor's go decides when and
-whether. A scheduled pass follows the runbook above and stops at step 7: anything that needs a judgement about
-another desk's data, or the editor's, is left as a board row, never done.
+The card is `data/schedule/cartographer.json` (AGENTS.md section 7): proposed on 24 October 2026 for once a day at
+14:40 London, after the curator's 13:00 promotion and the fact-check desk's midday run, before the conductor's 15:15
+full pass. It becomes `active` only with the editor's go, when he creates the scheduled task; this role never creates
+one. A scheduled pass follows the runbook above and the card's `each_wake`, and stops at step 7: anything that needs a
+judgement about another desk's data, or the editor's, is left as a board row, never done. It never changes the
+component, which is session work tested in Chromium.

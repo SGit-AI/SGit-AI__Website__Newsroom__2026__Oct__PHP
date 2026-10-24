@@ -2,9 +2,9 @@
 
 The front page for a board member who wants only what their role needs: the situation, five numbers, three questions for the team, what is new, and one picture each of how it unfolded and what governments advise.
 
-> Mockup A for review, built from the data of release v0.10.18. Not the live site.
+> Mockup A for review, built from the data of release v0.10.22. Not the live site.
 
-Developing  ·  last checked 23 October 2026, 01:20 UTC 
+Developing  ·  last checked 23 October 2026, 16:04 UTC 
 
 ## Two serious security flaws in PHP, the software behind many of the world's websites
 
@@ -59,12 +59,12 @@ Every agency puts offline last, but you need to be able to do it in minutes. Nam
 
 ### Since you last looked
  3 new 
-- New 22 Oct, 06:55 UTC 
-The BBC reports the US NSA's advice: take systems offline if they cannot be updated. 
-- New 22 Oct, 07:00 UTC 
-One of the researchers who found the flaws tells BBC Radio 4 there is no evidence yet of them being used in attacks. 
-- New 22 Oct, 08:40 UTC 
-The Dutch national cyber agency's list of affected software reaches 674 products. 
+- New 22 Oct 
+A count in Switzerland finds just over 23,000 of nearly 690,000 servers, about 3.5%, still affected a day after the fix. 
+- New 22 Oct 
+AhnLab, as reported, classes 27 of 100 php2shell repositories on GitHub as proof-of-concept exploits. 
+- New 23 Oct, 07:58 UTC 
+IT Social: the update closes the flaw, but obliges a hunt for possible compromises; the published figures count attempts, not intrusions. 
 Read items disappear from this list. Everything new → 
 
 #### Ask about it
@@ -102,7 +102,7 @@ All say install the fix. They split on what to do if you cannot.
 
  See every agency → 
 
- Focus view shows 27 of 627 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
+ Focus view shows 27 of 719 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
 
 ---
-site v0.10.18 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html
+site v0.10.22 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html

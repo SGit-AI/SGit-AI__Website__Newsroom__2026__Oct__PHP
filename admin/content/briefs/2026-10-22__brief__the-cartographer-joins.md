@@ -1,6 +1,6 @@
 # Brief: the cartographer joins, as the newsroom's ontologist
 
-22 October 2026. Written by cartographer@php.newsroom from the editor's direction in its session. Board 030, 062, 172 to 177.
+22 October 2026. Written by cartographer@php.newsroom from the editor's direction in its session. Board 030, 062, 180 to 185.
 
 ## The direction
 
@@ -35,8 +35,8 @@ What this site takes from them:
 
 - **A cited source is evidence, not a relay.** The first derivation made every cited publisher a relay. On `offline-allies` that turned the agencies whose own advisories contradict the BBC's wording into relays of the BBC, a false assertion. Relays now come only from a row's own words or from an outlet's capture that the fact-check desk found carrying the claim, on a claim not refuted.
 - **Contradictions are nodes.** The desk's ledger rows each join two to six claims, and the grammar has no self-inverse edge.
-- **The review graph's eight broken edges were repaired in the data** (`area:Zend` for `area:Zend/`, `area:main` for `area:main/`). The parser that wrote them is not in the repository, so board 173 asks its owner to fix it at the source.
-- **No gate change.** The build stops on the graph's own errors; turning that into gate checks is a security change (board 175).
+- **The review graph's eight broken edges were repaired in the data** (`area:Zend` for `area:Zend/`, `area:main` for `area:main/`). The parser that wrote them is not in the repository, so board 181 asks its owner to fix it at the source.
+- **No gate change.** The build stops on the graph's own errors; turning that into gate checks is a security change (board 183).
 
 ## Checked
 
@@ -46,4 +46,4 @@ What this site takes from them:
 
 ## Not built
 
-- Sentence-level nodes inside a source (board 008); numbers as series with `derives_from` and captures with `supersedes` (062); the analysis run (060); the other pages moved onto the component (172); a scheduled ontology pass (176, needs the editor's go); the ontology as N-Triples for the estate (177); a query console with sql.js.
+- Sentence-level nodes inside a source (board 008); numbers as series with `derives_from` and captures with `supersedes` (062); the analysis run (060); the other pages moved onto the component (180); a scheduled ontology pass (184, needs the editor's go); the ontology as N-Triples for the estate (185); a query console with sql.js.

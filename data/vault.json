@@ -1,12 +1,12 @@
 {
  "head": {
-  "commit": "f3c5db0d9873",
-  "subject": "curator@php.newsroom: promote 45 sources from the source watch (35 from the 22 Oct queue incl. ncsc-nl-php2shell-software-list-letters, 10 break-in reports; 2 as new captures of recordedfuture-php2shell and securityweek-exploitation-days-before; facebook-cvut-statement skipped; every slug in notes/promotions__curator.json)  +404 ~1  [blobs:+405 trees:+131]",
-  "commits": 17
+  "commit": "1845598d9a38",
+  "subject": "curator@php.newsroom: promote 18 more sources from the source watch's pack copy (7r83qic5), the last of priority 3 (mechanical selection, each read): Nguoi Quan Sat, Notebookcheck.it, Paperjam, QA Financial, la Repubblica, Security Measures Lab, Security.NL, shattered.io, Shin-A Ilbo, SiliconANGLE, SOCRadar, Everyeye, Techaeris, TechTarget Japan, The420, The Star, Trak.in, ZATAZ; 13 claims, 2 flagged for the ledger (Japan PM order, 22m servers); slugs in notes/promotions__curator.json  +133 ~3  [blobs:+136 trees:+54]",
+  "commits": 21
  },
- "sources": 227,
- "captures": 222,
- "hashed_files": 1386,
+ "sources": 295,
+ "captures": 290,
+ "hashed_files": 1761,
  "primary": 89,
  "blocked": 15,
  "agents": [
@@ -19,6 +19,6 @@
   "curator@php.newsroom"
  ],
  "opened": "2026-10-22T08:03Z",
- "latest_capture": "2026-10-23T01:20Z",
+ "latest_capture": "2026-10-23T16:04Z",
  "note": "The captures are third-party pages kept privately for the record and are not published. Only their hashes are."
 }

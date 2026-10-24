@@ -12,7 +12,7 @@ Every vault behind this site: what each holds, who writes to it, and how to open
 
 ## [The evidence vault](../admin/vault/index.html) public read
 
-**Vault** `3ytzxm3g` · 227 sources, 222 captures, 1386 hashed files; head `f3c5db0d9873` · opens in its own app
+**Vault** `3ytzxm3g` · 295 sources, 290 captures, 1761 hashed files; head `1845598d9a38` · opens in its own app
 
 The story as it was assembled on the morning of 22 October 2026: every source as a folder with its capture (text, screenshot, HTML, headers, sha256 of each), the claims and the dated events each agent extracted, the editor's memos and the agents' notes. Its own app explores them.
 
@@ -136,13 +136,13 @@ What the collaborators send from /collaborators/: requests to join (a name, an e
 
 **Not published:** the vault key, the lane's enum key and the key pair's passphrase. **Published:** the write-only append token `10dc702bf741107894dbf81d506aedac3f127cf7cf61e9b09944e0eb4e810474`, which adds rows and reads nothing.
 
-## [The schedule vault](../team/schedule/index.html) public read
+## [The schedule vault (retired)](../team/schedule/index.html) public read
 
 **Vault** `weic8imn` ·
 
-Every scheduled agent's schedule, its queued tasks and every run with its log: the control panel for what the team runs on its own.
+Retired on 24 October 2026, kept as an archive: the first schedules, tasks and runs. Schedules, runs and messages are now kept in the site's repository (/team/schedule/).
 
-**Written by** each scheduled agent, its own runs; the editor's session and the conductor queue tasks. Data on this site: [data/schedule-vault.json](../data/schedule-vault.json).
+**Written by** nobody since 24 October 2026. Data on this site: [data/schedule-vault.json](../data/schedule-vault.json).
 
 **Read key** `sgit_public_read_95c3be658efcb7aa068a762756aa5affb7d7451829cb728b044a7da8803e4d06:weic8imn`
 
@@ -152,4 +152,4 @@ The list is [data/vaults.json](../data/vaults.json). The other vaults of the sgi
 
 
 ---
-site v0.10.18 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
+site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/vaults/index.html
