@@ -25,14 +25,14 @@ Exposure, evidence of non-compromise, and the board message. Three facts carry t
 - Expect a follow-up release: a report that the first fix is incomplete reached the security list within two hours.
 
 ## Your reading path
-- [Your briefing](../../briefings/ciso/index.html) 3 min
+- [Your briefing](../../briefings/ciso/index.html) 4 min
 - [Impact: offline vs compromised](../../impact/index.html) 2 min
 - [Exploitation signals](../../exploitation/index.html) 2 min
 - [Detection and defence](../../defence/index.html) 3 min
 - [The agencies](../../agencies/index.html) 3 min
 - [If you run PHP](../../playbook/index.html) 3 min
 
-About 16 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
+About 17 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
 
 ### What this briefing covers
 - exposure as a list
@@ -114,10 +114,10 @@ Each is underlined where it first appears; hover or tap for a one-line definitio
 - Whether the deleted Calif video is the one now embedded on Calif's own write-up. Calif's page does not mention the leak.
 - Whether any site was actually compromised before it was patched or taken offline. Every claim of exploitation so far is of attempts, probes or honeypot hits, and the named cases do not state php2shell as the cause. Authorities in Singapore and Luxembourg now ask operators to look for traces; the answer will come from those searches, if it comes.
 - Which sites were really taken offline, and why. The list now draws on more captured reports (Germany's hospitals and hosts, Morocco, Romania, Japan), but most are press accounts; few come from the organisations themselves (the Dutch government, Latvia's agency, Weird Gloop, the Charité's spokesman as quoted). A community tracker counts 51 listed and 50 back.
-- Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
+- Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. On 23 October PHP published an informational advisory for a separate flaw, CVE-2026-115560, in the session upload progress feature, reported by Cloudflare, SOCRadar and The Hacker News: it affects fully patched releases including 8.5.12, needs a rare session setting, will be fixed in the next regular release, and has session.upload_progress.enabled=0 as the mitigation; SOCRadar reports no exploitation and no severity score. PHP's advisory is not in the evidence vault, and whether this is the bug the Fediverse report described is not stated.
 
 The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Data protection officer](../dpo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.17.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/ciso/index.html
+site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/ciso/index.html

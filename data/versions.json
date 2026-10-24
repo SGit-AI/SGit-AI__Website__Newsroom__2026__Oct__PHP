@@ -1,6 +1,15 @@
 {
- "current": "0.17.1",
+ "current": "0.17.2",
  "versions": [
+  {
+   "version": "0.17.2",
+   "date": "2026-10-24",
+   "title": "The correspondent's first review: nine corrections to the journalist's 94 verdicts and rows (/views/desk/, /claims/review/), PHP's third flaw CVE-2026-115560 on the summary page",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.17.1",
    "date": "2026-10-24",

@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.17.2 · 24 October 2026new since your last visit
+
+The correspondent's first review: nine corrections to the journalist's 94 verdicts and rows (/views/desk/, /claims/review/), PHP's third flaw CVE-2026-115560 on the summary page
+
+No reader-facing section changed in this release.
+
 ## v0.17.1 · 24 October 2026new since your last visit
 
 The ontologist's debrief and self-check on the Wikipedia section, after the fact: the seven answers, the screenshots, and the one item for security, that the daily pass reads Wikipedia's API and releases in the same session
@@ -22,7 +28,12 @@ No reader-facing section changed in this release.
 
 Wikipedia as an anchor: the PHP2Shell article read as a fractal semantic graph, one statement per sentence classed as fact, attribution or quote, each joined to its references and to the captures this site holds of them, every one of its 364 revisions kept as what it changed, its Wikidata item, and the daily pass now fetching it; with a brief for the researcher to follow every reference
 
-No reader-facing section changed in this release.
+### Briefings that changed
+JJordanBoard member or executive · v13SSamSecurity lead · v10DDrewPHP or platform engineer · v9RRowanJournalist · v9AAshSecurity researcher · v9BBlakeAnalyst or advisor · v11RRobinCISO · v13AAveryCTO · v8QQuinnCFO · v13JJamieHead of AppSec · v10LLeeDeveloper · v7RRileyMedia and communications team · v11AAlexCurious reader · v11CCaseyWebsite owner · v8TTaylorProject or programme manager · v10MMorganData protection officer · v7
+### Sections that changed
+- [The specialist summary](../versions/page-summary/index.html#v8) v8
+- [Front page: what nobody knows yet](../versions/front-unknown/index.html#v3) v3
+- [Front page: latest](../versions/front-latest/index.html#v5) v5
 
 ## v0.16.1 · 24 October 2026new since your last visit
 
@@ -1096,4 +1107,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.17.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

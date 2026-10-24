@@ -738,6 +738,14 @@
    "run": "20261024T2150Z-ontologist",
    "started": "2026-10-24T21:50Z",
    "summary": "Wikipedia as an anchor (brief 2026-10-25), released as v0.17.0: admin/wikipedia/fetch.py fetched all 364 revisions of the PHP2Shell article, its Wikidata item Q141801185 and the 198 articles linking in; admin/build/wikitext.py reads a revision as one statement per sentence, classed by wording, with…"
+  },
+  {
+   "agent": "correspondent",
+   "finished": "2026-10-24T23:21:46Z",
+   "outcome": "ok",
+   "run": "20261024T2250Z-correspondent",
+   "started": "2026-10-24T22:50:00Z",
+   "summary": "First review wake, at the editor's go in the session. Read the journalist's run of 24 Oct 21:26 UTC (evidence vault 8c16a64a7cf6, 94 verdicts, 2 compromise rows) against the vault's captures (read-only clone). Caught 9: CVE-2026-115560 (PHP's third flaw, 23 Oct) wrongly held back and missing from t…"
   }
  ],
  "schedules": [
@@ -880,5 +888,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.17.1"
+ "version": "0.17.2"
 }

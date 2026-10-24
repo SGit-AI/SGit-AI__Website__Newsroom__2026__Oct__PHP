@@ -73,9 +73,19 @@ The plan in full is [among the briefs](../../admin/briefs/index.html), as writte
 
 Pages kept as written by design are not scanned: articles/, updates/, versions/, whatsnew/, admin/, readings/, brief/, corrections/, feedback/, sherpa/, team/, pulse/, sources/, facts/, views/. Stories, updates, versions of the state of affairs, release notes, briefs, outside readings and source pages are dated and kept as written by design; a dated phrase in them is history, not staleness. Facts pages carry every version of a fact. The state of affairs gives each measure its own as-of time on purpose. A phrase that is a source's own date, rightly kept, is accepted in `data/desk.json` and leaves the report.
 
-## What the correspondent caught (0)
+## What the correspondent caught (9)
 
-None yet: the scheduled journalist has not shipped a run for the correspondent to review.
+| When | What | File | Kind | Journalist run | Fixed in |
+|---|---|---|---|---|---|
+| 2026-10-24 | claim cur6-third-flaw-115560 held back as 'CVE not in the PHP advisory in the vault' although Cloudflare, SOCRadar and The Hacker News carry it; the story still said 'Nothing from PHP on the list yet'. Verdict now used; story and the front page's open question updated. | `data/claim-review.json, data/story.json, data/plain.json` | verdict | 20261024T2126Z-journalist | the correspondent's release after v0.16.1 |
+| 2026-10-24 | The CVE-2026-115560 advisory of 23 October (a third PHP flaw, unpatched until the next regular release) was on no page of the site. | `data/story.json` | missing | 20261024T2126Z-journalist | the correspondent's release after v0.16.1 |
+| 2026-10-24 | claim cur8-sansec-memory-leak: reason said Sansec's own post is not in the vault; it is (sansec-research-php2shell). | `data/claim-review.json` | verdict | 20261024T2126Z-journalist | the correspondent's release after v0.16.1 |
+| 2026-10-24 | Sansec's two captures differ: the Heartbleed comparison and 'default configurations are vulnerable' of 22 October are gone on 23 October. The journalist compared neither. | `data/claim-review.json` | contradiction | 20261024T2126Z-journalist | the correspondent's release after v0.16.1 |
+| 2026-10-24 | claim cur2-certin-high: MediaNama says CERT-In rated it 'high', Indian Express and a CERT-In post say 'critical-severity'. Held back, now for the contradiction. | `data/claim-review.json` | contradiction | 20261024T2126Z-journalist | the correspondent's release after v0.16.1 |
+| 2026-10-24 | claim cur8-eu-joint-advisory held back as 'one Italian outlet'; four more outlets in the vault report the joint statement. Now noted with all five. | `data/claim-review.json` | verdict | 20261024T2126Z-journalist | the correspondent's release after v0.16.1 |
+| 2026-10-24 | claims cur6-at-no-successful-attacks and cur8-rainforest-honeypot marked 'noted' (not used) while the journalist's own compromise.json rows and the front page use them. Now used. | `data/claim-review.json` | verdict | 20261024T2126Z-journalist | the correspondent's release after v0.16.1 |
+| 2026-10-24 | claim cur8-cloudflare-waf-rule: reason said Cloudflare's post is not in the vault; it is (cloudflare-blog-php2shell-waf). | `data/claim-review.json` | verdict | 20261024T2126Z-journalist | the correspondent's release after v0.16.1 |
+| 2026-10-24 | Die Presse row: 'as of 12:03' next to '10:03 UTC' read as two different times (12:03 is Vienna time); RainForest row left out that the 21 requests came from 14 source IPs. | `data/compromise.json, data/plain.json` | row | 20261024T2126Z-journalist | the correspondent's release after v0.16.1 |
 
 What the correspondent corrected in the journalist's work, one row per correction: when, what, the file, its kind (verdict, row, as-of, missing, contradiction), the journalist's run and the release that fixed it. Counted on /views/desk/, so the editor can see what a Sonnet journalist misses.
 
@@ -87,4 +97,4 @@ Computed from [data/desk.json](../../data/desk.json), the pages of this build an
 
 
 ---
-site v0.17.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/views/desk/index.html
+site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/views/desk/index.html

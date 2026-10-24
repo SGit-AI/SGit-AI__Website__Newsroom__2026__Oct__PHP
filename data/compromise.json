@@ -461,7 +461,7 @@
    "kind": "no-success-known",
    "when": "2026-10-23T10:03Z",
    "who": "Austria (via Die Presse)",
-   "says": "As of 12:03 on 23 October 2026 no successful attacks via PHP2Shell were known in Austria.",
+   "says": "As of 12:03 Vienna time (10:03 UTC) on 23 October 2026 no successful attacks via PHP2Shell were known in Austria.",
    "reading": "A point-in-time absence, reported by a newspaper",
    "sources": [
     "diepresse-41383717-die-php-sicherheitsluecke-ist-a"
@@ -471,7 +471,7 @@
    "kind": "attempts",
    "when": "2026-10-23",
    "who": "RainForest (via VOIX, Japan)",
-   "says": "RainForest's honeypot network matched 3 of 11 public IP addresses from VulnCheck and Amazon threat information and recorded 21 PHP2Shell-related HTTP POST requests from different source IPs.",
+   "says": "RainForest's honeypot network matched 3 of 11 public IP addresses from VulnCheck and Amazon threat information and recorded 21 PHP2Shell-related HTTP POST requests, from 14 different source IPs.",
    "reading": "A small honeypot sample: attempts, not intrusions",
    "sources": [
     "voix-business-cards-rainforest-ip-activity-an"

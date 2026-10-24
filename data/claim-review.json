@@ -1013,9 +1013,10 @@
   {
    "id": "cur2-certin-high",
    "verdict": "held back",
-   "reason": "CERT-In's rating rests on MediaNama (and Indian Express) alone; CERT-In's own notice is not in the vault.",
+   "reason": "Revised by the correspondent on 24 October 2026: two sources in the vault give CERT-In's rating differently: MediaNama says 'high risk', Indian Express says 'critical-severity advisory on October 21' and embeds CERT-In's own post of that date (the post is not captured as text). A contradiction on the rating, so neither word is used until CERT-In's notice is captured. (journalist's first reason: CERT-In's rating rests on MediaNama (and Indian Express) alone; CERT-In's own notice is not in the vault.)",
    "sources": [
-    "medianama-2026-10-223-php-vulnerabilities-global-rush-update"
+    "medianama-2026-10-223-php-vulnerabilities-global-rush-update",
+    "indianexpress-article-technology-cert-in-php-vulnerability-alert-india-cyb"
    ],
    "where": "claims/review/index.html",
    "reviewed": "2026-10-24",
@@ -1177,12 +1178,15 @@
   },
   {
    "id": "cur6-third-flaw-115560",
-   "verdict": "held back",
-   "reason": "One crypto outlet; CVE-2026-115560 is not in the PHP advisory in the vault (searched), so the CVE is not stated on the site.",
+   "verdict": "used",
+   "reason": "Revised by the correspondent on 24 October 2026: the CVE is in the vault from three more pages than Coinpedia: Cloudflare's post (update of 23 October: the PHP project published an informational advisory for CVE-2026-115560, in the session upload progress feature, affecting fully patched releases including 8.5.12, fixed in the next regular release), SOCRadar (a separate session-handling flaw, needing a rare session.serialize_handler switch; no exploitation reported; mitigation session.upload_progress.enabled=0) and The Hacker News. PHP's own advisory is not in the vault. Used on /summary/ as an attributed open question; no severity score was published when SOCRadar wrote. (journalist's first reason: One crypto outlet; CVE-2026-115560 is not in the PHP advisory in the vault (searched), so the CVE is not stated on the site.)",
    "sources": [
-    "coinpedia-crypto-live-news-php-flags-third-unpatch"
+    "coinpedia-crypto-live-news-php-flags-third-unpatch",
+    "cloudflare-blog-php2shell-waf",
+    "socradar-blog-php2shell",
+    "thehackernews-php2shell-4days"
    ],
-   "where": "claims/review/index.html",
+   "where": "summary/index.html",
    "reviewed": "2026-10-24",
    "by": "journalist@php.newsroom"
   },
@@ -1243,12 +1247,12 @@
   },
   {
    "id": "cur6-at-no-successful-attacks",
-   "verdict": "noted",
-   "reason": "Die Presse, 12:03 on 23 October: no successful attacks known in Austria. Point in time.",
+   "verdict": "used",
+   "reason": "Revised by the correspondent on 24 October 2026: it is on the site: data/compromise.json (Austria, as of 12:03 Vienna time) and the front page's latest events, so the verdict is 'used', not 'noted' (journalist's first reason: Die Presse, 12:03 on 23 October: no successful attacks known in Austria. Point in time.)",
    "sources": [
     "diepresse-41383717-die-php-sicherheitsluecke-ist-a"
    ],
-   "where": "claims/review/index.html",
+   "where": "compromise/index.html",
    "reviewed": "2026-10-24",
    "by": "journalist@php.newsroom"
   },
@@ -1397,12 +1401,12 @@
   },
   {
    "id": "cur8-rainforest-honeypot",
-   "verdict": "noted",
-   "reason": "RainForest via VOIX: a small honeypot sample, 21 POST requests. Attempts, not intrusions.",
+   "verdict": "used",
+   "reason": "Revised by the correspondent on 24 October 2026: it is on the site: data/compromise.json and the front page's latest events, so the verdict is 'used', not 'noted' (journalist's first reason: RainForest via VOIX: a small honeypot sample, 21 POST requests. Attempts, not intrusions.)",
    "sources": [
     "voix-business-cards-rainforest-ip-activity-an"
    ],
-   "where": "claims/review/index.html",
+   "where": "compromise/index.html",
    "reviewed": "2026-10-24",
    "by": "journalist@php.newsroom"
   },
@@ -1420,8 +1424,9 @@
   {
    "id": "cur8-sansec-memory-leak",
    "verdict": "held back",
-   "reason": "Sansec's own post is not in the vault; the Heartbleed-style memory leak is stated by Yahoo Finance second-hand. The site does not state it.",
+   "reason": "Revised by the correspondent on 24 October 2026: Sansec's own post IS in the vault (sansec-research-php2shell) and its two captures differ: on 22 October (11:31 UTC) it says CVE-2026-109618 'also leaks memory on its own, similar to Heartbleed' and 'default configurations are vulnerable'; on 23 October (16:04 UTC) the Heartbleed comparison is gone ('also discloses server memory on its own') and it adds 'an attack also needs specific conditions on the target server'. A vendor claim that its author has since reworded, and no other source in the vault measures; not stated on the site. (journalist's first reason: Sansec's own post is not in the vault; the Heartbleed-style memory leak is stated by Yahoo Finance second-hand. The site does not state it.)",
    "sources": [
+    "sansec-research-php2shell",
     "finance-yahoo-technology-articles-php-patches-critical"
    ],
    "where": "claims/review/index.html",
@@ -1463,10 +1468,14 @@
   },
   {
    "id": "cur8-eu-joint-advisory",
-   "verdict": "held back",
-   "reason": "One Italian outlet for an official act; searched CERT-EU (certeu-sa-2026-018) and ENISA pages in the vault for the joint advisory and did not find it.",
+   "verdict": "noted",
+   "reason": "Revised by the correspondent on 24 October 2026: the joint statement is reported by five outlets in the vault, not one: Gazzetta del Sud, 20minutos, Le Big Data, LeMondeInformatique and Criticarad, all naming the Commission, ENISA, CERT-EU and Europol (Criticarad: dated 21 October, 'does not claim active exploitation'; 20minutos: advises considering disconnecting exposed applications). None quotes it and the statement itself is not in the vault, so it is not stated on a page as a quoted official act; it belongs on the agencies page when the full pass reaches it. (journalist's first reason: One Italian outlet for an official act; searched CERT-EU (certeu-sa-2026-018) and ENISA pages in the vault for the joint advisory and did not find it.)",
    "sources": [
-    "gazzettadelsud-articoli-cronaca-2026-10-22-allarme-php2"
+    "gazzettadelsud-articoli-cronaca-2026-10-22-allarme-php2",
+    "20minutos-tecnologia-ciberseguridad-por-que-gobiernos-hospit",
+    "lebigdata-php2shell-des-millions-dattaques-frappen",
+    "lemondeinformatique-actualites-lire-deux-failles-critiques-d",
+    "criticarad-php2shell-cve-2026-109618-ghid-patch"
    ],
    "where": "claims/review/index.html",
    "reviewed": "2026-10-24",
@@ -1475,9 +1484,10 @@
   {
    "id": "cur8-cloudflare-waf-rule",
    "verdict": "agrees",
-   "reason": "Agrees with waf-nine-hours (Cloudflare's edge protection); Cloudflare's own post is not in the vault.",
+   "reason": "Revised by the correspondent on 24 October 2026: Cloudflare's own post IS in the vault (cloudflare-blog-php2shell-waf, captured 22 and 23 October): it agrees with waf-nine-hours. (journalist's first reason said it was not in the vault.)",
    "sources": [
-    "gigazine-news-20261023-cloudflare-stats-php2shell"
+    "gigazine-news-20261023-cloudflare-stats-php2shell",
+    "cloudflare-blog-php2shell-waf"
    ],
    "where": "claims/review/index.html",
    "reviewed": "2026-10-24",

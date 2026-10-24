@@ -282,14 +282,14 @@ The answer in thirty seconds
 The flaw is in the PHP runtime, so exposure is every internet-facing system running PHP, including vendor appliances. Review logs from 17 October (the earliest reported attempt), not from the fix. Attempts are reported at scale; no named victim is confirmed. Patch first, isolate where you cannot.
 
 #### Reading path
-- [Your briefing](../briefings/ciso/index.html) 3 min
+- [Your briefing](../briefings/ciso/index.html) 4 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [Exploitation signals](../exploitation/index.html) 2 min
 - [Detection and defence](../defence/index.html) 3 min
 - [The agencies](../agencies/index.html) 3 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 16 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
+About 17 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -320,13 +320,13 @@ The answer in thirty seconds
 Patch internet-facing mod_php first, then FPM, then the rest; restart every worker and rebuild every image. The fix changes how PHP behaves when memory runs out, so test under load. 7.4 to 8.1 have no release. Afterwards, invest in an inventory that answers 'where is PHP' in minutes.
 
 #### Reading path
-- [Your briefing](../briefings/cto/index.html) 3 min
+- [Your briefing](../briefings/cto/index.html) 4 min
 - [The two flaws](../flaws/index.html) 4 min
 - [The code](../code/index.html) 7 min
 - [If you run PHP](../playbook/index.html) 3 min
 - [Detection and defence](../defence/index.html) 3 min
 
-About 20 minutes in all. Choose *read as Avery* and the bar under the menu keeps your place on every page.
+About 21 minutes in all. Choose *read as Avery* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -357,14 +357,14 @@ The answer in thirty seconds
 The 70% figure is a share of websites that use PHP, restated as a share of the Internet. The release was 21 October, not 22. Three parties claim the discovery; their dates do not conflict, their framing does. No agency has confirmed a successful compromise, and CISA has not listed either flaw as exploited.
 
 #### Reading path
-- [Your briefing](../briefings/journalist/index.html) 3 min
+- [Your briefing](../briefings/journalist/index.html) 4 min
 - [The numbers](../numbers/index.html) 2 min
 - [Every claim](../claims/index.html) 1 min
 - [Who found it](../discovery/index.html) 2 min
 - [How disclosure broke](../leak/index.html) 1 min
 - [The agencies](../agencies/index.html) 3 min
 
-About 12 minutes in all. Choose *read as Rowan* and the bar under the menu keeps your place on every page.
+About 13 minutes in all. Choose *read as Rowan* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -470,13 +470,13 @@ The answer in thirty seconds
 Every application on an affected runtime is in scope, including ones with no uploads or sessions: the demonstrated paths run before application code. Add the running PHP version to the SBOM and fail the pipeline on an unfixed one. Detection belongs at the edge and on the host, not in the app.
 
 #### Reading path
-- [Your briefing](../briefings/appsec/index.html) 3 min
+- [Your briefing](../briefings/appsec/index.html) 4 min
 - [The two flaws](../flaws/index.html) 4 min
 - [Affected systems](../affected/index.html) 1 min
 - [Detection and defence](../defence/index.html) 3 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 14 minutes in all. Choose *read as Jamie* and the bar under the menu keeps your place on every page.
+About 15 minutes in all. Choose *read as Jamie* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -545,12 +545,12 @@ The answer in thirty seconds
 Your code is not the problem and cannot be the fix: the flaw is in the engine beneath it. ini_set, .user.ini and auto_prepend_file all run too late. Check the running version where the code runs, after the restart, and tell the platform owner today if your target is 8.1 or older.
 
 #### Reading path
-- [Your briefing](../briefings/developer/index.html) 3 min
+- [Your briefing](../briefings/developer/index.html) 4 min
 - [The two flaws](../flaws/index.html) 4 min
 - [The code](../code/index.html) 7 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 17 minutes in all. Choose *read as Lee* and the bar under the menu keeps your place on every page.
+About 18 minutes in all. Choose *read as Lee* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -619,14 +619,14 @@ The answer in thirty seconds
 A bug class seen and shelved in 2024 was turned into working exploits by three AI-assisted teams within three weeks in August 2026. The disclosure leaked 22.5 hours early. Agencies split on the hardest question, offline or not, along lines that look institutional rather than technical.
 
 #### Reading path
-- [Your briefing](../briefings/analyst/index.html) 3 min
+- [Your briefing](../briefings/analyst/index.html) 4 min
 - [Who found it](../discovery/index.html) 2 min
 - [How disclosure broke](../leak/index.html) 1 min
 - [In context: 2008 to 2026](../context/index.html) 3 min
 - [The agencies](../agencies/index.html) 3 min
 - [The numbers](../numbers/index.html) 2 min
 
-About 14 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
+About 15 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -640,4 +640,4 @@ The first version of this site opened with a sentence that was accurate and unre
 
 
 ---
-site v0.17.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
+site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/start/index.html

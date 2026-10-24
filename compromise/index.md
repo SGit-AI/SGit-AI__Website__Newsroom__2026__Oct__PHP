@@ -39,7 +39,7 @@ This kind of statement can show that someone tried. It cannot show that anyone s
 | 2026-10-22 | **QNAP PSIRT** | Observed scanning activity and attack attempts using the PHP2Shell flaws. | [QNAP](../sources/qnap-statement-php2shell/index.html) source watch: `raw/tw/security-vendor/qnap/statement-php2shell/20261022T191720Z/` |
 | 2026-10-22 | **A Tencent News analyst, with ThreatBook sensors (China)** | Captured scanning requests with the User-Agent php2shell-scan/1.0; no evidence of successful code execution. | source watch: `translations/hk/news/news-qq/rain-a-20261021a0eq4p00.json` |
 | 2026-10-22 | **Sophos (via Cyber Security News)** | An exploitation attempt tried to deploy Potassium, a likely Mirai botnet variant; security controls blocked it and the malware was not delivered. | [Cyber Security News](../sources/cybersecuritynews-critical-php2shell-exploit-code/index.html) |
-| 2026-10-23 | **RainForest (via VOIX, Japan)** | RainForest's honeypot network matched 3 of 11 public IP addresses from VulnCheck and Amazon threat information and recorded 21 PHP2Shell-related HTTP POST requests from different source IPs. | [voix](../sources/voix-business-cards-rainforest-ip-activity-an/index.html) |
+| 2026-10-23 | **RainForest (via VOIX, Japan)** | RainForest's honeypot network matched 3 of 11 public IP addresses from VulnCheck and Amazon threat information and recorded 21 PHP2Shell-related HTTP POST requests, from 14 different source IPs. | [voix](../sources/voix-business-cards-rainforest-ip-activity-an/index.html) |
 
 ## Exploitation reported, no victim named (4)
 
@@ -73,7 +73,7 @@ This kind of statement can show what a party with visibility has not seen. It ca
 | 2026-10-22 21:21 UTC | **Sophos (via Cyber Security News)** | In a correction issued at 21:21 UTC on 22 October, Sophos said its customer data showed scanning and a small number of failed exploit attempts, and no evidence of a successful compromise; an earlier success claim was withdrawn. | [Cyber Security News](../sources/cybersecuritynews-critical-php2shell-exploit-code/index.html) |
 | 2026-10-23 | **Luxembourg (via Paperjam)** | No Luxembourg financial institution, public service or operator had announced it had actually been infiltrated through php2shell; the state announced no confirmed compromise, and the authorities asked operators to search back for traces of compromise and to keep the evidence. | [Paperjam](../sources/paperjam-article-php2shell-des-milliers-de-sites/index.html) |
 | 2026-10-23 | **US banks and credit unions (via American Banker)** | "Attackers have fired millions of attempts at the PHP2Shell flaws, but no U.S. bank or credit union has publicly reported a compromise." | [American Banker](../sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html) |
-| 2026-10-23 10:03 UTC | **Austria (via Die Presse)** | As of 12:03 on 23 October 2026 no successful attacks via PHP2Shell were known in Austria. | [Die Presse](../sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/index.html) |
+| 2026-10-23 10:03 UTC | **Austria (via Die Presse)** | As of 12:03 Vienna time (10:03 UTC) on 23 October 2026 no successful attacks via PHP2Shell were known in Austria. | [Die Presse](../sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/index.html) |
 
 ## Named organisations (7)
 
@@ -126,4 +126,4 @@ Every row is in [data/compromise.json](../data/compromise.json). Rows with sourc
 
 
 ---
-site v0.17.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/compromise/index.html
+site v0.17.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/compromise/index.html

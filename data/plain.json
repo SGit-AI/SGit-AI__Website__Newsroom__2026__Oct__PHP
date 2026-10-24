@@ -263,7 +263,7 @@
    "href": "impact/index.html"
   },
   {
-   "text": "Whether the fix is complete. A report on 21 October suggested it may not be; the PHP security team replied on the mailing list on 22 October, and this site will settle the question once that reply is saved here.",
+   "text": "Whether the fix is complete. A report on 21 October suggested it may not be; the PHP security team replied on the mailing list on 22 October, and this site will settle the question once that reply is saved here. Separately, on 23 October PHP published an advisory for another flaw, CVE-2026-115560, which affects fully patched releases and needs a rare session setting (reported by Cloudflare, SOCRadar and The Hacker News).",
    "href": "code/index.html"
   },
   {
@@ -282,14 +282,14 @@
  "latest": [
   {
    "when": "23 Oct, 10:03 UTC",
-   "text": "Die Presse: as of 12:03 on 23 October no successful attack via the PHP flaws was known in Austria.",
+   "text": "Die Presse: as of 12:03 Vienna time (10:03 UTC) on 23 October no successful attack via the PHP flaws was known in Austria.",
    "sources": [
     "diepresse-41383717-die-php-sicherheitsluecke-ist-a"
    ]
   },
   {
    "when": "23 Oct, 09:16 UTC",
-   "text": "Japan's RainForest reports that its honeypots recorded 21 php2shell-related requests from different addresses: attempts, not break-ins.",
+   "text": "Japan's RainForest reports that its honeypots recorded 21 php2shell-related requests from 14 different addresses: attempts, not break-ins.",
    "sources": [
     "voix-business-cards-rainforest-ip-activity-an"
    ]
