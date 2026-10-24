@@ -2,7 +2,7 @@
 
 The proposed redesign of the site for review: what is wrong now, the two dials (who you are and how much you see), which pages each reader sees, the menu per view, and four mockups built from the live data.
 
-> Mockup notes for review, built from the data of release v0.14.31. Not the live site.
+> Mockup notes for review, built from the data of release v0.15.0. Not the live site.
 
 Admin · design · for review 
 ## The redesign: who you are, and how much you want to see
@@ -11,6 +11,11 @@ The editor's review of 23 October: the site is right in substance and wrong in f
 
 The model, in one line 
 Two dials. Who you are sets the layout and the order. How much you want (Focus, Standard, Everything) sets which pages exist for you at all. What you have read gets out of the way. 
+
+New, 24 October · a working prototype 
+### E. The lens: the site shapes itself to you, in front of you
+
+Four settings at the top right (how long you have, who you are, what you want to do, what you have seen). Every page is built whole; a change re-lays the page in the same frame, with no reload and no flash, and the next page arrives already shaped. Three pages: the front page, a content page that answers to two of the settings, and a page for the team only. The brief: the lens. 
 
 ### The four mockups
  each is a real page, at full width; resize it to see it stack 
@@ -151,7 +156,7 @@ All of it, for power users and the team.
 
 - The admin pages move into console D. 
 
- Mockups built by the design agent from release v0.14.31; the brief is on the briefs page. Board items record each step.
+ Mockups built by the design agent from release v0.15.0; the brief is on the briefs page. Board items record each step.
 
 ---
-site v0.14.31 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html
+site v0.15.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html

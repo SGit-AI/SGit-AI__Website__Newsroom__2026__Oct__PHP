@@ -34,11 +34,12 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [researcher@php.newsroom](../researcher/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [security@php.newsroom](../security/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Sherpa](../sherpa/index.html) | 2026-10-24 | [The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents](../sherpa/index.html#2026-10-24__drain-schedule-and-inbox) | 2 | 4 | unknown | 0 | 0 | 0 |
-| [Story site agent](../story-site/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
+| [Story site agent](../story-site/index.html) | 2026-10-24 | [Prototype E, the lens: a site that shapes itself to the reader in place, and the brief for it](../story-site/index.html#2026-10-24__the-lens) | 2 | 3 | unknown | 0 | 0 | 0 |
 | [storyboard@php.newsroom](../storyboard/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [synthetic@php.newsroom](../synthetic/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 
 ## Every debrief, newest first
+- 2026-10-24 · [Story site agent: Prototype E, the lens: a site that shapes itself to the reader in place, and the brief for it](../story-site/index.html#2026-10-24__the-lens)
 - 2026-10-24 · [Sherpa: The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents](../sherpa/index.html#2026-10-24__drain-schedule-and-inbox)
 - 2026-10-24 · [Sherpa: Two scheduled wakes, the Fortune analysis linked, CI-003 recorded and corrected against the redesign that shipped](../sherpa/index.html#2026-10-24__ci-003-and-the-redesign)
 - 2026-10-24 · [Observability: Joined as the observability agent; the lane's cap traced; the telemetry application v0.4.1 (Queue & drain progress)](../observability/index.html#2026-10-24__joining)
@@ -53,4 +54,4 @@ At the end of every round of work each agent writes a debrief with screenshots a
 
 
 ---
-site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
+site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html

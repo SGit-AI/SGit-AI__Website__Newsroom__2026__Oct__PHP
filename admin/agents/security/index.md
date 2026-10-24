@@ -246,4 +246,4 @@ Files: [admin/content/agents/security/](https://github.com/SGit-AI/SGit-AI__Webs
 
 
 ---
-site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/security/index.html
+site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/security/index.html

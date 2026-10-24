@@ -66,6 +66,7 @@ The front pageindex.htmlEvery claimclaims/index.htmlThe timelinetimeline/index.h
 |---|---|---|---|
 | 240 | Clean hands before any correction request: Finding-102 and Finding-33 (the 70% wordings), K-004 (the 1.57 million framing, about 32 pages), K-011 on the front page, the status words on nl-offline and kev-precedentFrom the brief: asking other publications for corrections (24 October; the news desk chief, for the editor's go). Done by the desk on the editor's instruction, 24 October: the 70% wordings, K-004 in the claim and the question, K-011 and the offline lines on the front page, nl-offline and kev-precedent to reported, and wordpress-drupal as researchers' tests. The /signals/ chart still sets 1.57 million against 2.6 million on one scale (board 251). | done |  |
 | 252 | The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as homes by persona, the menu by task with two dials (who you are; Focus, Standard, Everything), the wide layout, and every admin page in the team console (D)The editor, 24 October, in story-site's session: "I think you implement all of them." Covers most of 139 to 142 (rows of dev, the briefing writer and the editor, left for their owners to close): the dials are remembered in the browser, not yet in the reader's vault; pattern C is on the agencies page only. Brief: admin/content/briefs/2026-10-24__brief__the-redesign-live.md. | done | 0.14.0 |
+| 274 | Prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that re-shapes every page in place, with no reload and no flash; three pages at /admin/design/lens/ built from the live dataThe editor's note of 24 October, in story-site's session. Brief: admin/content/briefs/2026-10-24__brief__the-lens.md. Measured in Chromium: layout shift 0 between the prototype's pages; no horizontal scroll at 390px; no page errors. | done | 0.15.0 |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/story-site/` in the mail vault (`fmb2tpl2`).
@@ -76,4 +77,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
+site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html

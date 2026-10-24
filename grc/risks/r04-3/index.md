@@ -64,4 +64,4 @@ On this site: [What sixteen agencies actually advise](../../../agencies/index.ht
 
 
 ---
-site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04-3/index.html
+site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04-3/index.html

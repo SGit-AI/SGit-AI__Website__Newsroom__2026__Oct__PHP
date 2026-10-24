@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.14.31. Not the live site.
+> Mockup D for review, built from the data of release v0.15.0. Not the live site.
 
-PHP Team console Console Overview Board 182 Agents 19 Releases 118 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 183 Agents 19 Releases 119 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.14.31 
-118 releases since 22 Oct 
+v0.15.0 
+119 releases since 22 Oct 
 
 Open on the board 
-182 
-86 done, 5 waiting 
+183 
+87 done, 5 waiting 
 
 Pages built 
 885 
@@ -30,8 +30,11 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 182
+#### Open 183
 
+ #275 
+The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work o… 
+ editor 
  #273 
 An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39416d71cbb, to push the telemetry applica… 
  editor 
@@ -50,9 +53,6 @@ Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take 
  #267 
 dev's policy: add admin/build/release_pages.py and data/release-pages.json to scope.writes (made this round, at the edit… 
  abp@newsroom.sgit 
- #265 
-From CI-003 (story-site): the front page's 'Three ways to read this site' on the first screen and named by task (Underst… 
- story-site 
 
 #### Waiting 5
 
@@ -72,8 +72,11 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 86
+#### Done 87
 
+ #274 
+Prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have … 
+ claude-story-site v0.15.0 
  #271 
 Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the telemetry vault) to observability, sealed … 
  editor 
@@ -92,13 +95,11 @@ Investigations: a section of the fact-check desk that chases one question down t
  #254 
 Sherpa: an inbox for agents outside the newsroom: vault d6zak0o3 with an append lane (senders riskmandate and editor, to… 
  sherpa 
- #252 
-The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as homes by persona, the menu by task with … 
- claude-story-site v0.14.0 
 
 ### Releases
  latest 8 
 
+ v0.15.0 2026-10-24 prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that… 
  v0.14.31 2026-10-24 Conductor light check 14:15 London: observability and security requests recorded for the editor, factcheck run note, run records 
  v0.14.30 2026-10-24 the evidence vault at 1f38e70921b2 (328 sources) and the state of affairs v3: a vendor's claim of a break-in withdrawn (Sophos), b… 
  v0.14.29 2026-10-24 Restores v0.14.24, what changed in the risk graph (CI-003, step 2, /grc/changes/), which the conductor's release of the CI fix rev… 
@@ -106,12 +107,11 @@ The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as 
  v0.14.27 2026-10-24 Security advisories SA-2026-018 to 022 record the release that fixed them, v0.14.26 (the Content-Security-Policy, the telemetry re… 
  v0.14.26 2026-10-24 Application security: /admin/appsec/ with the threat model and five data-flow diagrams, 39 security advisories kept like incidents… 
  v0.14.25 2026-10-24 the scheduled journalist proposed: a Sonnet journalist that takes each curator batch through to the site, and an Opus chief corres… 
- v0.14.24 2026-10-24 what changed in the risk graph (CI-003, step 2): /grc/changes/ compares any two releases, the nodes and edges added and removed, t… 
 
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 23 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 24 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
  conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 20 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 15 
@@ -122,4 +122,4 @@ The redesign, live: the front page on layout A, /ops/ (B) and /analysis/ (C) as 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.14.31 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

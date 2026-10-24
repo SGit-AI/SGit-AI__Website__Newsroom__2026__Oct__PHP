@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.0 · 24 October 2026new since your last visit
+
+prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that re-shapes the page in place with no reload and no flash, on three pages at /admin/design/lens/ built from the live data; its brief; story-site's first round closed
+
+No reader-facing section changed in this release.
+
 ## v0.14.31 · 24 October 2026new since your last visit
 
 Conductor light check 14:15 London: observability and security requests recorded for the editor, factcheck run note, run records
@@ -925,4 +931,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

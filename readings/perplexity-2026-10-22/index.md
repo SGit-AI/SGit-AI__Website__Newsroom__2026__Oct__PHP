@@ -188,4 +188,4 @@ The evidence collected supports a widely reported, potentially serious PHP core 
 
 
 ---
-site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/readings/perplexity-2026-10-22/index.html
+site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/readings/perplexity-2026-10-22/index.html

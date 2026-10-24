@@ -1,6 +1,15 @@
 {
- "current": "0.14.31",
+ "current": "0.15.0",
  "versions": [
+  {
+   "version": "0.15.0",
+   "date": "2026-10-24",
+   "title": "prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that re-shapes the page in place with no reload and no flash, on three pages at /admin/design/lens/ built from the live data; its brief; story-site's first round closed",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.14.31",
    "date": "2026-10-24",

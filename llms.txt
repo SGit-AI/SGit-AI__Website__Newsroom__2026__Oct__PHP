@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.14.31. Data as of 2026-10-24T08:37Z (the latest capture in the evidence vault, commit 1f38e70921b2). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.15.0. Data as of 2026-10-24T08:37Z (the latest capture in the evidence vault, commit 1f38e70921b2). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -998,3 +998,6 @@ Licence: content CC BY 4.0, code Apache-2.0.
 - [Mockup C: a content page, what sixteen agencies advise](https://php.oct.2026.newsroom.sgit.ai/admin/design/c/index.md): The agencies page redesigned: the answer in one line, every agency placed on one spectrum from no offline advice to take it offline, a card per agency, and the evidence table one click away.
 - [Mockup D: the team console](https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.md): The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 - [Design: the redesign, in four mockups](https://php.oct.2026.newsroom.sgit.ai/admin/design/index.md): The proposed redesign of the site for review: what is wrong now, the two dials (who you are and how much you see), which pages each reader sees, the menu per view, and four mockups built from the live data.
+- [Prototype E: the lens, the front page](https://php.oct.2026.newsroom.sgit.ai/admin/design/lens/index.md): A working prototype of a site that shapes itself to the reader in front of them: how long they have, who they are, what they want to do, and what they have seen; set once at the top right, applied on every page with no reload and no flash.
+- [Prototype E: the lens, a content page](https://php.oct.2026.newsroom.sgit.ai/admin/design/lens/agencies/index.md): A content page that answers to two of the four settings: its length follows your time and its one line follows who you are; it reads the same whatever your aim, and the control says so.
+- [Prototype E: the lens, a page for the team](https://php.oct.2026.newsroom.sgit.ai/admin/design/lens/console/index.md): A page written for one kind of reader: anyone else is told who it is for and can read it anyway; the time and aim settings do not apply, and the control says so.

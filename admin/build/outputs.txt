@@ -233,6 +233,12 @@ admin/design/d/index.html
 admin/design/d/index.md
 admin/design/index.html
 admin/design/index.md
+admin/design/lens/agencies/index.html
+admin/design/lens/agencies/index.md
+admin/design/lens/console/index.html
+admin/design/lens/console/index.md
+admin/design/lens/index.html
+admin/design/lens/index.md
 admin/index.html
 admin/index.md
 admin/pack-mode/index.html
@@ -314,6 +320,9 @@ articles/where-php2shell-stands/index.md
 articles/why-not-patch-every-version/index.html
 articles/why-not-patch-every-version/index.md
 assets/design/dials.js
+assets/design/lens-boot.js
+assets/design/lens.css
+assets/design/lens.js
 assets/design/v2-live.css
 assets/personas.js
 assets/site.js

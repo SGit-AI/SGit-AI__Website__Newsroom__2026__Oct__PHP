@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 273 items, 182 open, 86 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 275 items, 183 open, 87 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -283,9 +283,11 @@ The work, as rows in `data/admin.json`: 273 items, 182 open, 86 done. An item is
 | 271 | Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the telemetry vault) to observability, sealed to its keyThe editor's plan of 24 October: dev seals them to sha256:b9ddd39416d71cbb, the fingerprint taken from the editor in dev's session. Blocks the application's v0.4.1 (Queue & drain: a progress bar while the lane is checked, step-by-step detail while it drains). Done 24 October: both keys sealed to sha256:b9ddd39416d71cbb by sha256:956934e47063ceaa and carried by the editor; opened, checked and held (data/vault-register/observability.json). | done | editor |  |
 | 272 | Move the telemetry files from dev's scope to observability's, or confirm they stay with dev: assets/telemetry.js, admin/build/telemetry_*, admin/telemetry/**, data/telemetry*.jsonThe editor asked observability to look after the telemetry on 24 October; dev's policy still lists the files, so observability does not edit them until this row closes. The editor decides. The member's first policy.json was written by observability itself as a draft (agents.py check names it outside scope): abp@ to take it over. | open | abp@newsroom.sgit |  |
 | 273 | An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39416d71cbb, to push the telemetry application (5wnsr5h8) and drain 84wr8mib from the command lineThe telemetry application v0.4.1 (Queue & drain shows its progress) is committed in 5wnsr5h8 and waits for this to be pushed: a vault key reads and commits, the server takes a push only with an access token. | open | editor |  |
+| 274 | Prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that re-shapes every page in place, with no reload and no flash; three pages at /admin/design/lens/ built from the live dataThe editor's note of 24 October, in story-site's session. Brief: admin/content/briefs/2026-10-24__brief__the-lens.md. Measured in Chromium: layout shift 0 between the prototype's pages; no horizontal scroll at 390px; no page errors. | done | claude-story-site | 0.15.0 |
+| 275 | The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work on this site' is a readerFrom the brief on the lens (24 October). With a go, the steps in the brief's 'What it means for the site' go to dev: the boot script and stylesheet on every page, a part() helper in the build, the fallback for untagged pages, menus by the same rules, the settings in the reader's vault (board 140). Overlaps 140 and 235. | open | editor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.14.31 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.15.0 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

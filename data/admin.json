@@ -2023,6 +2023,21 @@
    "status": "open",
    "owner": "editor",
    "note": "The telemetry application v0.4.1 (Queue & drain shows its progress) is committed in 5wnsr5h8 and waits for this to be pushed: a vault key reads and commits, the server takes a push only with an access token."
+  },
+  {
+   "id": "274",
+   "title": "Prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have seen) that re-shapes every page in place, with no reload and no flash; three pages at /admin/design/lens/ built from the live data",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "The editor's note of 24 October, in story-site's session. Brief: admin/content/briefs/2026-10-24__brief__the-lens.md. Measured in Chromium: layout shift 0 between the prototype's pages; no horizontal scroll at 390px; no page errors.",
+   "version": "0.15.0"
+  },
+  {
+   "id": "275",
+   "title": "The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work on this site' is a reader",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the brief on the lens (24 October). With a go, the steps in the brief's 'What it means for the site' go to dev: the boot script and stylesheet on every page, a part() helper in the build, the fallback for untagged pages, menus by the same rules, the settings in the reader's vault (board 140). Overlaps 140 and 235."
   }
  ],
  "evidence_vault": {
