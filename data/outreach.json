@@ -185,7 +185,8 @@
     "note": "CNN's published corrections route; captured before use"
    },
    "blocked_by": [
-    "R-001"
+    "R-001",
+    "Evidence-13: a fresh capture of CNN's page before sending"
    ],
    "status": "drafted",
    "log": [
@@ -196,6 +197,10 @@
     {
      "at": "2026-10-24",
      "event": "headline and body checked character for character in the 11:26 UTC capture by desk@php.newsroom; ready, to send after R-001"
+    },
+    {
+     "at": "2026-10-24",
+     "event": "the fact-check desk's outside check (Evidence-13) finds CNN reworded its 70% lines twice without a note (18:26 UTC, 22 October); the headline still says 'internet'. Re-capture and re-check both quotes before this goes."
     }
    ],
    "origin": "R-001"
@@ -238,12 +243,18 @@
     "kind": "to find",
     "note": "the AWS Security Blog's published contact, captured before use"
    },
-   "blocked_by": [],
-   "status": "drafted",
+   "blocked_by": [
+    "Evidence-12: a capture of the AWS post as it now reads"
+   ],
+   "status": "blocked",
    "log": [
     {
      "at": "2026-10-24",
      "event": "drafted by desk@php.newsroom: the word 'exploited' in WIRED's headline is AWS's, so AWS is asked first"
+    },
+    {
+     "at": "2026-10-24",
+     "event": "not to be sent: the fact-check desk's outside check (Evidence-12) finds AWS reworded the sentence on 22 October at 21:25 UTC, without a note, to 'now seeing broad exploitation attempts in the wild'. Once a capture shows it, this request closes as corrected without being asked, and pages quoting AWS carry both wordings with their times."
     }
    ]
   },
@@ -252,8 +263,7 @@
    "publisher": "WIRED",
    "actor": null,
    "role": "echo",
-   "origin": "R-004",
-   "point": "The headline says hackers exploited the flaws; the article's own sources (AWS, the PHP Foundation) describe attempts and know of no successful attack.",
+   "point": "The headline says hackers exploited the flaws; the article's own sources describe attempts and know of no successful attack.",
    "said": [
     {
      "source": "wired-exploited-days-before-patched",
@@ -272,7 +282,7 @@
      "quote_checked": true
     }
    ],
-   "evidence": "The body is careful: AWS 'logged attempts', and the PHP Foundation knows of 'no successful attempt at remote code execution'. Only the headline says exploited, following AWS's own wording (R-004).",
+   "evidence": "The body is careful: AWS 'logged attempts', and the PHP Foundation knows of 'no successful attempt at remote code execution'. Only the headline says exploited, a word that came from AWS's post at the time.",
    "suggested": "Hackers Tried to Exploit the PHP Vulnerabilities Days Before They Were Patched",
    "factcheck": {
     "contradiction": "K-002",
@@ -286,14 +296,16 @@
     "kind": "to find",
     "note": "WIRED's published corrections address, captured before use"
    },
-   "blocked_by": [
-    "R-004"
-   ],
+   "blocked_by": [],
    "status": "drafted",
    "log": [
     {
      "at": "2026-10-24",
      "event": "drafted by desk@php.newsroom, quotes checked; to send after R-004"
+    },
+    {
+     "at": "2026-10-24",
+     "event": "no longer waits on R-004: AWS has since reworded its own sentence (fact-check Evidence-12), so the request rests on WIRED's own body alone; ready to send"
     }
    ],
    "date": "21 October 2026"
@@ -342,7 +354,7 @@
    "publisher": "The Hacker News",
    "actor": null,
    "role": "origin",
-   "point": "The article says a proof-of-concept exploit leaked ahead of the release; the PHP Foundation says no technical details leaked.",
+   "point": "The article says a proof-of-concept exploit leaked ahead of time; what circulated before the release was a screenshot of an exploit tool and a short demonstration video, and no saved source shows exploit code.",
    "said": [
     {
      "source": "thehackernews-php2shell-4days",
@@ -353,8 +365,8 @@
      "quote_checked": true
     }
    ],
-   "evidence": "The PHP Foundation's post says no technical details leaked; no saved copy shows a leaked exploit. The fact-check desk holds this as an open contradiction (K-009), so the request waits until the desk settles it.",
-   "suggested": "details about the CVE identifiers leaked ahead of time",
+   "evidence": "The fact-check desk settled this by time (K-009, run 3): the PHP Foundation's 'no technical details leaked' describes the CVE identifiers circulating from about 15:00 UTC on 20 October; Calif's demonstration video went up that evening, and a screenshot of the tool's banner circulated (Daubois, Sansec via Equixly). A video and a banner show that an exploit exists, not how it works.",
+   "suggested": "details about the CVE identifiers leaked ahead of time, and a video demonstrating an exploit circulated",
    "factcheck": {
     "contradiction": "K-009",
     "claims": [],
@@ -364,14 +376,16 @@
     "kind": "to find",
     "note": "The Hacker News's published contact, captured before use"
    },
-   "blocked_by": [
-    "K-009"
-   ],
-   "status": "blocked",
+   "blocked_by": [],
+   "status": "drafted",
    "log": [
     {
      "at": "2026-10-24",
      "event": "drafted by desk@php.newsroom; blocked while K-009 is open"
+    },
+    {
+     "at": "2026-10-24",
+     "event": "unblocked: K-009 explained by the fact-check desk's run 3; the point and suggestion reworded to match its reading; ready to send"
     }
    ]
   },

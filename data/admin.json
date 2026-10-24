@@ -1919,6 +1919,13 @@
    "title": "The librarian's card contradicts its own wake prompt: its 'Map' step gives new files an owner in the policy drafts, but the prompt allows only the librarian's own files (policies are abp@'s). Say which holds; until then the librarian follows the prompt and opens rows for abp@",
    "status": "open",
    "owner": "editor"
+  },
+  {
+   "id": "259",
+   "title": "Front page, 'What nobody knows yet': 'Where the 70% figure comes from. None of the pages that use it says how it was measured' is out of date: Cloudflare links W3Techs, and the fact-check desk's investigation /factcheck/investigations/php-share/ answers it (Finding-32)",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "From the news desk chief's morning wake, 24 October."
   }
  ],
  "evidence_vault": {
