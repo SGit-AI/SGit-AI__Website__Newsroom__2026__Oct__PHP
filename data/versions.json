@@ -1,6 +1,15 @@
 {
- "current": "0.15.11",
+ "current": "0.15.12",
  "versions": [
+  {
+   "version": "0.15.12",
+   "date": "2026-10-24",
+   "title": "CodeQL's first scan, triaged and hardened: every script that read data-root now derives root as a count of ../ segments, so page text can never become markup or a link; pipeline.js checks the GitHub API's URLs and commit ids before linking them; review-nav escapes a class name; the build's script-stripping and CSP inline-script regexes accept </script > forms; the X-source label checks the URL's host, not a substring",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1f38e70921b2",
+   "reconstructed": false
+  },
   {
    "version": "0.15.11",
    "date": "2026-10-24",

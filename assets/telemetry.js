@@ -12,7 +12,7 @@
   try {
     if (!window.crypto || !crypto.subtle || !window.fetch) return
     if (navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true) return
-    const root = document.documentElement.getAttribute('data-root') || ''
+    const root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length)
     const cfg = await (await fetch(root + 'data/telemetry.json', { cache: 'no-store' })).json()
     if (!cfg || !cfg.append_token || !cfg.recipient || !cfg.recipient.encrypt || cfg.enabled === false) return
     const key = 'php-newsroom.telemetry.session'

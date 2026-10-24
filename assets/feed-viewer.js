@@ -15,7 +15,7 @@
   'use strict';
   var R = window.P2SReader, box = document.getElementById('viewer'), cfgEl = document.getElementById('viewer-config');
   if (!box || !cfgEl) return;
-  var CFG = JSON.parse(cfgEl.textContent), root = document.documentElement.getAttribute('data-root') || '';
+  var CFG = JSON.parse(cfgEl.textContent), root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length);
   var FKEY = 'p2s.feeds.v1', MAX = 2e6, MAX_JSON = 5e6, TIMEOUT = 15000;
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function fnv(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); }

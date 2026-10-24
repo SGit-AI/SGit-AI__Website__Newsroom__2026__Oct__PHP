@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.15.11. Not the live site.
+> Mockup D for review, built from the data of release v0.15.12. Not the live site.
 
-PHP Team console Console Overview Board 183 Agents 19 Releases 130 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 183 Agents 19 Releases 131 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 08:37 UTC 
 
 Release 
-v0.15.11 
-130 releases since 22 Oct 
+v0.15.12 
+131 releases since 22 Oct 
 
 Open on the board 
 183 
@@ -99,6 +99,7 @@ From CI-003, step 2: a graph diff between any two releases: nodes and edges adde
 ### Releases
  latest 8 
 
+ v0.15.12 2026-10-24 CodeQL's first scan, triaged and hardened: every script that read data-root now derives root as a count of ../ segments, so page t… 
  v0.15.11 2026-10-24 Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and securi… 
  v0.15.10 2026-10-24 The control room: /team/control/, a visual, interactive view of every agent, the pipeline, the wake timeline and the editor's queu… 
  v0.15.9 2026-10-24 the journalist's and the correspondent's public key fingerprints recorded in their register files 
@@ -106,7 +107,6 @@ From CI-003, step 2: a graph diff between any two releases: nodes and edges adde
  v0.15.7 2026-10-24 the journalist's brief for its first Sonnet session: the pipeline, the key handshake, every wake in seven steps, what to do when a… 
  v0.15.6 2026-10-24 Security round 1 closed: the telemetry policy, on the editor's decision to keep the location lookups (made by the reader's browser… 
  v0.15.5 2026-10-24 The Sherpa's 17:45 pass: the phone header's fix checked live (one 43px line; a friction closed), headlines now on the first screen… 
- v0.15.4 2026-10-24 factcheck run 5 (scheduled, 16:52 London): Amazon's quiet rewording is now in the vault ('broadly exploited' became 'broad exploit… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ From CI-003, step 2: a graph diff between any two releases: nodes and edges adde
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 7
 
 ---
-site v0.15.11 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.15.12 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

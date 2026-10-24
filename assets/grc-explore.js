@@ -14,7 +14,7 @@
   'use strict';
   var box = document.getElementById('explore');
   if (!box) return;
-  var root = document.documentElement.getAttribute('data-root') || '';
+  var root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length);   // only ever '../' repeated: the depth, never page text
   var G = null, N = {}, OUT = {}, IN = {};
   var FAMILY = { stakeholder: 1, role: 1, member: 1, briefing: 1, risk: 2, treatment: 2, weakness: 3, vulnerability: 3, remediation: 4, code: 4, test: 4, control: 5, claim: 6, source: 6, story: 6, page: 6 };
   var FAMILY_NAME = { 1: 'people and roles', 2: 'risks and treatments', 3: 'weaknesses and flaws', 4: 'fixes, code and tests', 5: 'controls', 6: 'evidence and stories' };

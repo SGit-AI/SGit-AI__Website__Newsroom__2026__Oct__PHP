@@ -65,4 +65,4 @@ v2 · site v0.12.1 · 24 October 2026 · reportedThe Dutch NCSCgovernment took i
 
 
 ---
-site v0.15.11 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html
+site v0.15.12 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html

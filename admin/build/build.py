@@ -166,7 +166,7 @@ def short_name(row):
     pub = pub.replace('NSA Cybersecurity', 'NSA Cyber').replace("ASD's ACSC", 'ACSC')
     pub = pub.replace('Alexandre Daubois', 'Daubois').replace('The Hacker News', 'THN').replace('Techzine Global', 'Techzine')
     kind = row.get('kind')
-    if kind == 'social' and 'x.com' in (row.get('url') or ''):
+    if kind == 'social' and re.match(r'https?://(www\.)?(x|twitter)\.com/', row.get('url') or ''):
         pub += ' on X'
     pub = re.sub(r'\s+,', ',', pub)
     return pub if len(pub) <= 34 else pub[:34].rsplit(' ', 1)[0].rstrip(',') + '…'
@@ -189,7 +189,7 @@ def to_markdown(fragment):
     """A small, deterministic HTML to Markdown conversion for the .md twins."""
     s = fragment
     s = re.sub(r'<svg.*?</svg>', '', s, flags=re.S)
-    s = re.sub(r'<script.*?</script>', '', s, flags=re.S)
+    s = re.sub(r'<script\b.*?</script\s*>', '', s, flags=re.S | re.I)
     s = re.sub(r'<sg-meter[^>]*></sg-meter>', '', s)
     # tables
     def table(m):
@@ -1645,7 +1645,7 @@ def build_sitejs():
     });
   }
 
-  var html = document.documentElement, root = html.getAttribute('data-root') || '', here = html.getAttribute('data-path') || '';
+  var html = document.documentElement, root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length), here = html.getAttribute('data-path') || '';
   function get(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v) { try { if (v === null) window.localStorage.removeItem(k); else window.localStorage.setItem(k, v); } catch (e) {} }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -1735,7 +1735,7 @@ def build_sitejs():
 
 // A note in the bar when this page is older than the release the site now serves (one same-origin read of /VERSION).
 (function () {
-  var v = document.querySelector('nav.site .ver'), root = document.documentElement.getAttribute('data-root') || '';
+  var v = document.querySelector('nav.site .ver'), root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length);
   if (v && window.fetch) fetch(root + 'VERSION?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
     var live = (t || '').trim(), mine = v.textContent.replace(/^v/, '');
     if (!/^\d+\.\d+\.\d+$/.test(live)) return;

@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.15.12 · 24 October 2026new since your last visit
+
+CodeQL's first scan, triaged and hardened: every script that read data-root now derives root as a count of ../ segments, so page text can never become markup or a link; pipeline.js checks the GitHub API's URLs and commit ids before linking them; review-nav escapes a class name; the build's script-stripping and CSP inline-script regexes accept  forms; the X-source label checks the URL's host, not a substring
+
+No reader-facing section changed in this release.
+
 ## v0.15.11 · 24 October 2026new since your last visit
 
 Private vulnerability reporting is on: the editor enabled it on this repository (with Dependabot alerts, malware alerts and security updates), so the bug bounty page and security.txt now point reporters at a live channel; board 278 closed
@@ -1001,4 +1007,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.11 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.15.12 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
