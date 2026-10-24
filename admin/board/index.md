@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 179 items, 120 open, 55 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 179 items, 119 open, 56 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -113,7 +113,7 @@ The work, as rows in `data/admin.json`: 179 items, 120 open, 55 done. An item is
 | 101 | Quiet hours: decide the window (proposed 22:00 to 07:00 London) and whether the source watch may run through the night while the story is breaking; then the three schedules on /team/runs/ are changed to match | open | editor |  |
 | 102 | Source watch: before scheduling the next pass, check London time and move a pass in the quiet hours to 07:04; a pass that changes something leaves a dated article with run:  | open | researcher@php.newsroom |  |
 | 103 | Fact-check runs: move the schedule to CRON_TZ=Europe/London 52 8-20/4 * * * once the editor agrees; a run that moves a grade or opens a ticket leaves a dated article with run:  | open | factcheck |  |
-| 104 | Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run:  | open | synthetic |  |
+| 104 | Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run: The editor asked for the workflow to be removed (22 October): .github/workflows/synthetic.yml is deleted; the readers run only when an agent session runs admin/synthetic/run.py. | done | synthetic |  |
 | 105 | Runs: /team/runs/, the register of every schedule (who, where, how often, how many runs fall in the quiet hours) and every recorded run with the article it should leave (data/schedules.json) | done | conductor |  |
 | 106 | Feedback from any page, signed: a Feedback button beside Ask opens the pane's Feedback tab (kind, words, a screenshot from a file or captured), signed with the device's key and encrypted to the collaborators lane; /join/ makes the key from an invitation's QR code in one tap; admin/build/invite.py makes invitations and enrols keys; the drain verifies every signature with sgit pki verify | done | conductor |  |
 | 107 | The editor's review queue, /review/: every page or section new or changed since he last looked, one at a time on an iPad (Next, Good, Needs work, a comment), each decision signed feedback of kind review (brief: 2026-10-22__brief__feedback-keys-and-review.md, phase 2) | open | conductor |  |
@@ -194,4 +194,4 @@ Who the owners are is on [roles](../roles/index.html); the briefs that open item
 
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.10.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

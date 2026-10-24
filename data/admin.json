@@ -147,7 +147,7 @@
    "id": "synthetic",
    "name": "synthetic@php.newsroom",
    "who": "an agent",
-   "owns": "the six synthetic readers (admin/synthetic/), their vaults, their hourly runs and their reviews; data/synthetic.json and the synthetic readers page",
+   "owns": "the six synthetic readers (admin/synthetic/), their vaults, their runs (by hand, in a session; no schedule) and their reviews; data/synthetic.json and the synthetic readers page",
    "rules": [
     "A synthetic reader is a test instrument: its review is a prompt for the editor, never evidence about the story and never readership.",
     "Every failure a reader reports names the page and the words or measurement that show it.",
@@ -857,8 +857,9 @@
   {
    "id": "104",
    "title": "Synthetic readers: limit synthetic.yml's schedule to daytime (branch for security review, then the editor's go); a run with failures leaves a dated article with run: <run id>",
-   "status": "open",
-   "owner": "synthetic"
+   "status": "done",
+   "owner": "synthetic",
+   "note": "The editor asked for the workflow to be removed (22 October): .github/workflows/synthetic.yml is deleted; the readers run only when an agent session runs admin/synthetic/run.py."
   },
   {
    "id": "105",

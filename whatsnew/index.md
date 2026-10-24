@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.10.23 · 24 October 2026new since your last visit
+
+synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the vault opened read-only in the official UI, and on /vaults/, so every request, page, screenshot and review behind a run can be checked; each run page names its folder; the synthetic readers' GitHub workflow removed (the editor's go), the readers run from an agent session
+
+No reader-facing section changed in this release.
+
 ## v0.10.22 · 24 October 2026new since your last visit
 
 Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its objective, wake times and wake prompt word for word; a run record for every wake; messages between agents as files; /team/schedule/ shows one day of every wake, the cards, the runs and the messages, with a page per agent; the conductor's own hourly schedule proposed
@@ -620,4 +626,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.10.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

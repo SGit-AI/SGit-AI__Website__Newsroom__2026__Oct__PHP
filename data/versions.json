@@ -1,6 +1,15 @@
 {
- "current": "0.10.22",
+ "current": "0.10.23",
  "versions": [
+  {
+   "version": "0.10.23",
+   "date": "2026-10-24",
+   "title": "synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the vault opened read-only in the official UI, and on /vaults/, so every request, page, screenshot and review behind a run can be checked; each run page names its folder; the synthetic readers' GitHub workflow removed (the editor's go), the readers run from an agent session",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "1845598d9a38",
+   "reconstructed": false
+  },
   {
    "version": "0.10.22",
    "date": "2026-10-24",

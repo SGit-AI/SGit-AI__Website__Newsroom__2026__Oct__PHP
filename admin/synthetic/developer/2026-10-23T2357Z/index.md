@@ -70,6 +70,14 @@ Measurements, not verdicts: the review says which of them mattered to this reade
 | low | [briefings/developer/index.html](../../../../briefings/developer/index.html) | text at least 12px | smallest 11.84px, 2 blocks below 12px |
 | low | [review/index.html](../../../../review/index.html) | text at least 12px | smallest 11.84px, 9 blocks below 12px |
 
+## Everything this run saw
+
+**Vault** `3l7tzwh9` · **read key** `sgit_public_read_7208ee9cc71d170283b3a7ec3ec879fcc4a70b4974652d7cc4cd55b8ae43e894:3l7tzwh9` (read-only, published on purpose)
+
+[Open the vault read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_7208ee9cc71d170283b3a7ec3ec879fcc4a70b4974652d7cc4cd55b8ae43e894%3A3l7tzwh9) · `sgit clone sgit_public_read_7208ee9cc71d170283b3a7ec3ec879fcc4a70b4974652d7cc4cd55b8ae43e894:3l7tzwh9`
+
+This run is in the folder `runs/2026-10-23T2357Z/`: the served and rendered HTML, the text and the screenshots of every page, every request and console message, and what the reviewer was given.
+
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/developer/2026-10-23T2357Z/index.html
+site v0.10.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/developer/2026-10-23T2357Z/index.html

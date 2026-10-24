@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.10.22. Not the live site.
+> Mockup D for review, built from the data of release v0.10.23. Not the live site.
 
-PHP Team console Console Overview Board 120 Agents 16 Releases 73 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 13 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 119 Agents 16 Releases 74 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 23 October 2026, 16:04 UTC 
 
 Release 
-v0.10.22 
-73 releases since 22 Oct 
+v0.10.23 
+74 releases since 22 Oct 
 
 Open on the board 
-120 
-55 done, 4 waiting 
+119 
+56 done, 4 waiting 
 
 Pages built 
 719 
@@ -30,7 +30,7 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 120
+#### Open 119
 
  #179 
 Curator and researcher to confirm the cards the conductor drafted from their scheduled tasks, and keep them 
@@ -69,7 +69,7 @@ Seal the conductor and collaborators lanes' secrets (enum keys, member tokens, k
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 55
+#### Done 56
 
  #172 
 State of affairs v2 from the evidence vault at 1845598d9a38 (295 sources); six curator claims checked and held back as w… 
@@ -96,6 +96,7 @@ From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1
 ### Releases
  latest 8 
 
+ v0.10.23 2026-10-24 synthetic readers' vaults made public on the editor's go: each of the six read keys is published on that reader's page, with the v… 
  v0.10.22 2026-10-24 Schedules in the repository, replacing the schedule vault (the editor's change of plan): each scheduled agent's card with its obje… 
  v0.10.21 2026-10-24 synthetic readers, published in full: a page per reader (its latest review and every run), a page per run (the review, the journey… 
  v0.10.20 2026-10-24 the journalist's key register (three vaults read, IDs and key kinds only) and a board row for the release's two-pass ledger settle 
@@ -103,7 +104,6 @@ From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1
  v0.10.18 2026-10-23 /team/status/ at 23:30 UTC: all twenty sessions read; the scheduled curator and source watch running, the evidence vault at 260 so… 
  v0.10.17 2026-10-23 the scheduled curator follows the source watch into its pack-mode copy (7r83qic5): the brief records the move, the 15 + 18 capture… 
  v0.10.16 2026-10-23 pack mode, measured: the pack vault in use by two writers, a pull of the scheduled session's commit in 176 s and a one-file correc… 
- v0.10.15 2026-10-23 pack mode, measured on the source watch (/admin/pack-mode/): the same vault as a normal and a pack vault, a fresh clone in 95 s ag… 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ From CI-002 (the Sherpa's brief of 23 October, the risk graph as a tool), step 1
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 4
 
 ---
-site v0.10.22 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.10.23 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

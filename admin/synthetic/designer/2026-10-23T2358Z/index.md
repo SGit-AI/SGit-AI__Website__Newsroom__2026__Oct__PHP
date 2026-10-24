@@ -117,6 +117,14 @@ Measurements, not verdicts: the review says which of them mattered to this reade
 | low | [articles/index.html](../../../../articles/index.html) | tap targets at least 24px (tablet) | 28 small targets |
 | low | [explained/index.html](../../../../explained/index.html) | tap targets at least 24px (tablet) | 7 small targets |
 
+## Everything this run saw
+
+**Vault** `dpdx3q13` · **read key** `sgit_public_read_d38e486c514c3f320e437bf757110c772af8241c595baa6ec0a4504d72069297:dpdx3q13` (read-only, published on purpose)
+
+[Open the vault read-only in a new tab ↗](https://dev.vault.sgraph.ai/en-gb/#sgit_public_read_d38e486c514c3f320e437bf757110c772af8241c595baa6ec0a4504d72069297%3Adpdx3q13) · `sgit clone sgit_public_read_d38e486c514c3f320e437bf757110c772af8241c595baa6ec0a4504d72069297:dpdx3q13`
+
+This run is in the folder `runs/2026-10-23T2358Z/`: the served and rendered HTML, the text and the screenshots of every page, every request and console message, and what the reviewer was given.
+
 
 ---
-site v0.10.22 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/designer/2026-10-23T2358Z/index.html
+site v0.10.23 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/designer/2026-10-23T2358Z/index.html
