@@ -2,7 +2,7 @@
 
 A three-column working view for a security lead: their reading path and the site by task on the left, what changed since the last visit and the next three actions in the middle, and the state of the evidence as charts on the right.
 
-> Mockup B for review, built from the data of release v0.14.28. Not the live site.
+> Mockup B for review, built from the data of release v0.14.29. Not the live site.
 
 S 
  Sam 
@@ -49,6 +49,11 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ✓ 
 
+ New story v0.14.24 
+#### The risk graph, before and after: what changed from one reader's five ideas
+
+✓ 
+
  New question v0.14.2 
 #### Has anyone actually been hacked?
 
@@ -59,7 +64,7 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ✓ 
 
- New front v0.12.1 
+ Changed front v0.12.1 
 #### Front page: right now
 
 ✓ 
@@ -84,12 +89,6 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 #### PHP is used by almost 70% of websites whose server-side language is known
 
  Cloudflare OpenAI on X Wiz 
-✓ 
-
- Changed fact unverified v0.12.1 
-#### 70% of the Internet is affected
-
- Wiz Wiz on X BBC News 
 ✓ 
 
 Marked read, an item fades and then leaves this list; it comes back only if what it says changes. 
@@ -125,4 +124,4 @@ Amazon: Proof-of-concept attempts begin, then six hours of attempts from anonymi
 8.1 and older: source backports only.
 
 ---
-site v0.14.28 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html
+site v0.14.29 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html

@@ -4,13 +4,13 @@
 
 Gaps in the php2shell risk graph, computed at every release from rules written as data: controls no test reaches, code with no owner, risks with no story or treatment, edges an agent inferred and nobody checked; each with its count, its list and who could close it.
 
-[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [Explore](../../grc/explore/index.html) · [Gaps](../../grc/gaps/index.html) · [From the network](../../grc/network/index.html)
+[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [Explore](../../grc/explore/index.html) · [Gaps](../../grc/gaps/index.html) · [Changes](../../grc/changes/index.html) · [From the network](../../grc/network/index.html)
 
 # What the risk graph is missing
 
-The graph shows what is joined; this page shows what is not. Each gap below is a rule, written as data in [data/grc-gaps.json](../../data/grc-gaps.json), computed over the 721 nodes and 1442 edges at every release: a control no test reaches, code nobody owns, a risk no story tells, a join an agent inferred that nobody has checked. Each names who could close it; each item opens in [the explorer](../explore/index.html).
+The graph shows what is joined; this page shows what is not. Each gap below is a rule, written as data in [data/grc-gaps.json](../../data/grc-gaps.json), computed over the 721 nodes and 1351 edges at every release: a control no test reaches, code nobody owns, a risk no story tells, a join an agent inferred that nobody has checked. Each names who could close it; each item opens in [the explorer](../explore/index.html).
 
-95controls joined to no code or test that implements them (of 95)16code with no owner one step away (of 16)9code no test reaches (of 16)14risks no story tells (of 34)0risks with no treatment (of 34)0risks with no owner (of 34)0vulnerabilities no test reaches (of 2)815edges inferred by an agent, not yet checked (of 1442)
+95controls joined to no code or test that implements them (of 95)16code with no owner one step away (of 16)9code no test reaches (of 16)14risks no story tells (of 34)0risks with no treatment (of 34)0risks with no owner (of 34)0vulnerabilities no test reaches (of 2)815edges inferred by an agent, not yet checked (of 1351)
 
 ## Controls joined to no code or test that implements them: 95 of 95
 
@@ -180,7 +180,7 @@ A flaw whose fix nobody can show is tested. Looks at every **vulnerability** for
 
 None: every one reaches it.
 
-## Edges inferred by an agent, not yet checked: 815 of 1442
+## Edges inferred by an agent, not yet checked: 815 of 1351
 
 A join an agent made that nobody has checked against a source, the code or a person. Who could close it: [GRC desk](../../team/grc/index.html).
 
@@ -208,4 +208,4 @@ A rule is a kind of node, what it should reach, within how many steps and throug
 
 
 ---
-site v0.14.28 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/gaps/index.html
+site v0.14.29 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/gaps/index.html

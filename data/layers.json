@@ -656,6 +656,13 @@
    "by": "dev@php.newsroom",
    "from": "admin/build/release_pages.py: for each release, the pages whose main content differs from the release before (version numbers masked), new pages first, then by how much their visible text changed; written once per release, at its own build",
    "used_on": "admin/versions.html"
+  },
+  {
+   "path": "data/grc-history.json",
+   "layer": "site",
+   "by": "dev@php.newsroom",
+   "from": "admin/build/grc_history.py: for every release whose risk graph changed, the nodes and edges added and removed, the bases changed and the gaps opened and closed against the release before, from the graph each release committed; written once per release, at its own build",
+   "used_on": "grc/changes/index.html"
   }
  ]
 }

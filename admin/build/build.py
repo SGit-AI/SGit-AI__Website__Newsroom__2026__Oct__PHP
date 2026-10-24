@@ -252,7 +252,7 @@ NAV = [
                       ('pipeline/index.html', 'The fact pipeline'), ('versions/index.html', 'How the story changed'),
                       ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults'] if x.get('nav', True)]),
     ('GRC', [('grc/index.html', 'GRC: risks, owners, standards'), ('grc/risks/index.html', 'The risk register'), ('grc/stakeholders/index.html', 'Stakeholders and their registers'),
-             ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/explore/index.html', 'Explore the graph: from any node'), ('grc/gaps/index.html', 'What the graph is missing'), ('grc/network/index.html', 'From the sgit network')]),
+             ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/explore/index.html', 'Explore the graph: from any node'), ('grc/gaps/index.html', 'What the graph is missing'), ('grc/changes/index.html', 'What changed in the graph'), ('grc/network/index.html', 'From the sgit network')]),
     ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed'), ('views/desk/index.html', "The journalist's desk: what is still stale")]),
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
@@ -1766,6 +1766,9 @@ def main():
     # the pages this release changed, against the last release commit; only at a release's own build (see release_pages.py)
     RELEASE_PAGES.update(__import__('release_pages').for_build(VERSION, HTML_OUT)['releases']); OUTPUTS.add('data/release-pages.json')
     build_release_history()
+    # and what this release changed in the risk graph (grc_history.py), for /grc/changes/
+    GRC_HISTORY.update(__import__('grc_history').for_build(VERSION, json.load(open(os.path.join(DATA, 'grc-graph.json'), encoding='utf-8')))); OUTPUTS.add('data/grc-history.json')
+    build_grc_changes()
     __import__('design').write_live_css(globals()); write('assets/design/dials.js', __import__('design').DIALS_JS); build_now(); build_llms(); _design_made = __import__('design').build(globals()); open(os.path.join(ROOT, 'llms.txt'), 'a', encoding='utf-8').write(__import__('design').llms_lines(_design_made, BASE_URL)); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); build_stack_catalogue(); save_items()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
@@ -4835,6 +4838,8 @@ def grc_path(G, rid):
 GRC_TESTS = load('grc-tests') if os.path.exists(os.path.join(DATA, 'grc-tests.json')) else None
 GRC_BASIS = load('grc-basis') if os.path.exists(os.path.join(DATA, 'grc-basis.json')) else {'confirmed': []}
 GRC_GAPS = load('grc-gaps') if os.path.exists(os.path.join(DATA, 'grc-gaps.json')) else None
+GRC_HISTORY = load('grc-history') if os.path.exists(os.path.join(DATA, 'grc-history.json')) else {'releases': [], 'unchanged': [], 'labels': {}}
+GRC_NAV = [None]  # the GRC section's crumb line, kept by build_grc for /grc/changes/, which is drawn again once this release's change is known
 # How an edge is known (CI-002.5, the brief of 23 October): read from a capture, read from the commit, inferred by an
 # agent, or confirmed by a person; with what supports it.
 GRC_BASES = OrderedDict([('source', 'read from a capture'), ('code', 'read from the fix commit'), ('inferred', 'inferred by an agent, not yet checked'), ('confirmed', 'checked by a person')])
@@ -4848,7 +4853,13 @@ def grc_graph(G):
     def node(i, kind, label, href):
         if i not in seen:
             seen.add(i); nodes.append({'id': i, 'kind': kind, 'label': label, 'href': href})
+    joined = set()
     def edge(a, verb, b, kind, ref, note=None):
+        # one edge per (from, verb, to): a claim that backs several risks cites its sources once, not once per risk
+        # (until v0.14.24 it was added again for every risk, 91 repeats in 1,442)
+        if (a, verb, b) in joined:
+            return
+        joined.add((a, verb, b))
         basis = {'kind': kind, 'ref': ref}
         if note: basis['note'] = note
         edges.append({'from': a, 'rel': verb, 'inverse': GRC_VERBS[verb], 'to': b, 'basis': basis})
@@ -5063,7 +5074,7 @@ def build_grc():
     used_ctl = Counter(c for r in R.values() for c in r['frameworks'])
     kinds = Counter(n['kind'] for n in nodes)
     acc = '<p>No risk on this register is <b>accepted</b>. An acceptance is an act by the holder of a risk, for a stated interval, and nobody can accept on anyone else\'s behalf; this desk records risks and their holders, it does not accept for them. Until a holder accepts, funds or fixes, each risk stands as it is rated here.</p>'
-    nav = '<p class="crumb"><a href="{u}grc/index.html">GRC</a> &middot; <a href="{u}grc/risks/index.html">Risks</a> &middot; <a href="{u}grc/stakeholders/index.html">Stakeholders</a> &middot; <a href="{u}grc/frameworks/index.html">Frameworks</a> &middot; <a href="{u}grc/graph/index.html">The graph</a> &middot; <a href="{u}grc/explore/index.html">Explore</a> &middot; <a href="{u}grc/gaps/index.html">Gaps</a> &middot; <a href="{u}grc/network/index.html">From the network</a></p>'
+    nav = '<p class="crumb"><a href="{u}grc/index.html">GRC</a> &middot; <a href="{u}grc/risks/index.html">Risks</a> &middot; <a href="{u}grc/stakeholders/index.html">Stakeholders</a> &middot; <a href="{u}grc/frameworks/index.html">Frameworks</a> &middot; <a href="{u}grc/graph/index.html">The graph</a> &middot; <a href="{u}grc/explore/index.html">Explore</a> &middot; <a href="{u}grc/gaps/index.html">Gaps</a> &middot; <a href="{u}grc/changes/index.html">Changes</a> &middot; <a href="{u}grc/network/index.html">From the network</a></p>'
     # --- the front page of the section
     stats = ''.join(stat(n, l) for n, l in [(len(R), 'risks'), (len(top), 'at the top'), (len(S), 'stakeholders'), (sum(1 for s in S.values() if s['kind'] == 'role'), 'roles'),
                                            (len(W), 'weaknesses'), (len(FW), 'frameworks'), (len(used_ctl), 'controls mapped'), (len(edges), 'edges')])
@@ -5267,6 +5278,7 @@ def build_grc():
     page('grc/graph/index.html', 'The risk graph: php2shell stakeholders, risks, weaknesses, vulnerabilities and code', f'{len(nodes)} nodes and {len(edges)} typed edges joining every php2shell risk to its stakeholders, weaknesses, vulnerabilities, fixes, code, claims, stories, roles and controls.', body, kind='analysis', topics='php2shell grc graph')
     build_grc_explore(nodes, edges, nav)
     build_grc_gaps(nodes, edges, nav)
+    GRC_NAV[0] = nav; build_grc_changes()
     build_grc_network(G, nav)
 
 # ----------------------------------------------------------------------------- the risk graph as a tool (CI-002, the brief of 23 October)
@@ -5305,6 +5317,103 @@ def grc_reach(adj, start, kinds, verbs, within):
                 seen.add(y); nxt.append(y)
         frontier = nxt
     return None
+
+def grc_vkey(v):
+    return [int(x) for x in v.split('.')]
+
+def grc_change_html(ch, depth):
+    """One comparison of the risk graph, old against new: the measures side by side, then what was added, removed,
+    re-based and which gaps opened or closed. The same structure assets/grc-changes.js draws for any two releases."""
+    L, up = GRC_HISTORY['labels'], '../' * depth
+    rules = {r['id']: r for r in (GRC_GAPS or {}).get('rules', [])}
+    def lab(i):
+        k, t = L.get(i, ['', i])
+        return f'<a href="{up}grc/explore/index.html#focus={E(i)}">{E(t)}</a> <span class="small">{E(k)}</span>'
+    def edge_txt(k):
+        a, v, b = k.split(' ', 2)
+        return f'{E(L.get(a, ["", a])[1][:60])} <i>{E(v.replace("_", " "))}</i> {E(L.get(b, ["", b])[1][:60])}'
+    def listing(items, fmt, cap=60):
+        more = f'<li class="small">and {len(items) - cap} more</li>' if len(items) > cap else ''
+        return '<ul class="gc-list">' + ''.join(f'<li>{fmt(x)}</li>' for x in items[:cap]) + more + '</ul>'
+    b0, b1 = ch['before'], ch['after']
+    rows = [['Nodes', b0['nodes'], b1['nodes']], ['Edges', b0['edges'], b1['edges']]]
+    for kind in ('source', 'code', 'inferred', 'confirmed', 'unrecorded'):
+        x, y = b0['basis'].get(kind, 0), b1['basis'].get(kind, 0)
+        if x or y:
+            rows.append([f'Edges {"with no basis recorded" if kind == "unrecorded" else "known as " + kind}', x, y])
+    for rid, r in rules.items():
+        rows.append([f'Gap: {r["title"]}', b0['gaps'].get(rid, 0), b1['gaps'].get(rid, 0)])
+    def delta(x, y):
+        d = y - x
+        return f'<span class="gc-{"up" if d > 0 else "down"}">{"+" if d > 0 else ""}{d:,}</span>' if d else '<span class="small">same</span>'
+    out = [f'<div class="tw"><table class="t gc-measures"><thead><tr><th>Measure</th><th>v{E(ch["from"] or "none")}</th><th>v{E(ch["to"])}</th><th>Change</th></tr></thead><tbody>'
+           + ''.join(f'<tr><td>{E(m)}</td><td>{x:,}</td><td>{y:,}</td><td>{delta(x, y)}</td></tr>' for m, x, y in rows) + '</tbody></table></div>']
+    def by_kind(ids):
+        k = Counter(L.get(i, ['?'])[0] for i in ids)
+        return ', '.join(f'{n} {E(kind)}' for kind, n in k.most_common())
+    if ch['nodes_added']:
+        out.append(f'<h3>Nodes added: {len(ch["nodes_added"])}</h3><p class="small">{by_kind(ch["nodes_added"])}</p>' + listing(ch['nodes_added'], lab))
+    if ch['nodes_removed']:
+        out.append(f'<h3>Nodes removed: {len(ch["nodes_removed"])}</h3>' + listing(ch['nodes_removed'], lambda i: E(L.get(i, ["", i])[1])))
+    if ch['edges_added']:
+        verbs = Counter(k.split(' ')[1] for k, _ in ch['edges_added'])
+        out.append(f'<h3>Edges added: {len(ch["edges_added"])}</h3><p class="small">' + ', '.join(f'{n} <i>{E(v.replace("_", " "))}</i>' for v, n in verbs.most_common()) + '</p>'
+                   + listing(ch['edges_added'], lambda kb: f'{edge_txt(kb[0])} <span class="gx-basis gx-b-{E(kb[1])}">{E(kb[1])}</span>', 40))
+    if ch['edges_removed']:
+        out.append(f'<h3>Edges removed: {len(ch["edges_removed"])}</h3>' + listing(ch['edges_removed'], edge_txt, 40))
+    if ch['basis_changed']:
+        out.append(f'<h3>How an edge is known, changed: {len(ch["basis_changed"])}</h3>' + listing(ch['basis_changed'], lambda x: f'{edge_txt(x[0])}: {E(x[1])} &rarr; <b>{E(x[2])}</b>'))
+    if ch['basis_recorded']:
+        k = Counter(b for _, b in ch['basis_recorded'])
+        out.append(f'<h3>Basis recorded for the first time: {len(ch["basis_recorded"])} edges</h3><p class="small">Before, edges carried no basis. Now: ' + ', '.join(f'{n} {E(b)}' for b, n in k.most_common()) + '.</p>')
+    for word, key in (('opened', 'gaps_opened'), ('closed', 'gaps_closed')):
+        for rid, ids in ch[key].items():
+            title = rules.get(rid, {}).get('title', rid)
+            out.append(f'<h3>Gap {word}: {E(title)} ({len(ids)})</h3>' + listing(ids, lab))
+    if len(out) == 1:
+        out.append('<p>Nothing in the graph changed between these two releases.</p>')
+    return ''.join(out)
+
+def grc_releases():
+    """Every release with a graph, oldest first, each with its totals (those of the last change at or before it)."""
+    ch = {r['version']: r for r in GRC_HISTORY['releases']}
+    vs = sorted(set(ch) | set(GRC_HISTORY.get('unchanged', [])), key=grc_vkey)
+    out, last = [], {'nodes': 0, 'edges': 0, 'basis': {}, 'gaps': {}}
+    for v in vs:
+        if v in ch:
+            last = ch[v]['totals']
+        out.append((v, ch.get(v), last))
+    return out
+
+def build_grc_changes():
+    """/grc/changes/: what changed in the risk graph between releases (CI-003.8), from data/grc-history.json."""
+    nav = GRC_NAV[0]
+    if nav is None or not GRC_HISTORY['releases']:
+        return
+    rels = grc_releases()
+    tot = {v: t for v, _, t in rels}
+    dates = {x['version']: x['date'] for x in D['versions']['versions']}
+    changed = [(v, c) for v, c, _ in rels if c]
+    def pair(c):
+        before = tot.get(c['against']) if c['against'] else {'nodes': 0, 'edges': 0, 'basis': {}, 'gaps': {}}
+        return dict(c, **{'from': c['against'], 'to': c['version'], 'before': before, 'after': c['totals']})
+    lv, lc = changed[-1]
+    rows = ''.join(f'<tr><td><a href="#from={E(c["against"] or "")}&amp;to={E(v)}">v{E(v)}</a> <span class="small">{E(dates.get(v, ""))}</span></td><td>{"v" + E(c["against"]) if c["against"] else "the first graph"}</td>'
+                   f'<td>+{len(c["nodes_added"])} &minus;{len(c["nodes_removed"])}</td><td>+{len(c["edges_added"])} &minus;{len(c["edges_removed"])}</td>'
+                   f'<td>{len(c["basis_changed"]) + len(c["basis_recorded"])}</td><td>+{sum(map(len, c["gaps_opened"].values()))} &minus;{sum(map(len, c["gaps_closed"].values()))}</td>'
+                   f'<td>{c["totals"]["nodes"]:,} / {c["totals"]["edges"]:,}</td></tr>' for v, c in reversed(changed))
+    body = f"""
+{nav.format(u="../../")}
+<h1>What changed in the risk graph, release by release</h1>
+<p class="lead">The graph is rebuilt at every release. This page compares two releases of it: the nodes and edges added and removed, the edges whose basis changed (from inferred to confirmed, say), and the gaps that opened or closed. {len(rels)} releases carry a graph; {len(changed)} of them changed it. Pick any two below; the default is the latest change.</p>
+<div class="gc-pick" id="gc-pick" data-releases="{E(" ".join(v for v, _, _ in rels))}"></div>
+<section id="gc-pair"><h2>v{E(lc["against"] or "none")} &rarr; v{E(lv)}</h2>{grc_change_html(pair(lc), 2)}</section>
+<h2 id="releases">Every release that changed the graph</h2>
+{'<div class="tw"><table class="t"><thead><tr><th>Release</th><th>Against</th><th>Nodes</th><th>Edges</th><th>Bases</th><th>Gaps</th><th>Nodes / edges after</th></tr></thead><tbody>' + rows + '</tbody></table></div>'}
+<p class="small">How it is made: every release commits the graph the build wrote (<a href="../../data/grc-graph.json">data/grc-graph.json</a>). <code>admin/build/grc_history.py</code> compares each release's graph with the one before and keeps what changed in <a href="../../data/grc-history.json">data/grc-history.json</a>, written once per release, at its own build. The gaps are counted with today's rules (<a href="../../data/grc-gaps.json">data/grc-gaps.json</a>) over each release's graph, so every pair is measured the same way. An edge is the same edge when its start, verb and end are the same. Graphs before v0.10.13 recorded no basis on an edge. Comparing two releases that are not next to each other replays the changes between them in your browser.</p>
+<script src="../../assets/grc-changes.js" defer></script>
+"""
+    page('grc/changes/index.html', 'What changed in the risk graph, release by release', 'The php2shell risk graph compared between any two releases: nodes and edges added and removed, bases changed, gaps opened and closed; computed from git at every release.', body, kind='analysis', topics='php2shell grc graph changes releases')
 
 def build_grc_gaps(nodes, edges, nav):
     """/grc/gaps/: what the graph is missing, computed at every build from the rules in data/grc-gaps.json."""
@@ -6929,8 +7038,18 @@ def comms_notes():
     if not os.path.exists(p): return []
     return [(n['commit'], n['when'], n['from'], n['to'], n['note'], n['subject']) for n in json.load(open(p, encoding='utf-8'))['notes']]
 
+def comms_to(to, depth):
+    # the recipient's schedule page when it has a card, else its team page, else its name: a note can be addressed to
+    # a member that does not run on a schedule (To-security), and a link to a page that is not built breaks the gate
+    if to == 'all':
+        return '<b>all</b>'
+    for path, src in ((f'team/schedule/{to}/index.html', os.path.join(DATA, 'schedule', f'{to}.json')), (f'team/{to}/index.html', os.path.join(ROOT, 'team', to, 'index.html'))):
+        if os.path.exists(src):
+            return f'<a href="{"../" * depth}{U(path)}">{E(to)}</a>'
+    return E(to)
+
 def comms_list(notes, depth):
-    rows = [[E(when[:16].replace('T', ' ')), E(sender or '?'), ('<b>all</b>' if to == 'all' else f'<a href="{"../" * depth}team/schedule/{U(to)}/index.html">{E(to)}</a>' if os.path.exists(os.path.join(DATA, 'schedule', to + '.json')) else E(to)),
+    rows = [[E(when[:16].replace('T', ' ')), E(sender or '?'), comms_to(to, depth),
              E(note), f'<code>{E(sha[:10])}</code><div class="note">{E(subj[:120])}</div>'] for sha, when, sender, to, note, subj in notes]
     return table(['When (UTC)', 'From', 'To', 'Note', 'Commit'], rows, 'board') if rows else '<p class="small">No notes yet.</p>'
 

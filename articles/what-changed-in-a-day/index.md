@@ -67,4 +67,4 @@ Source file: `admin/content/articles/2026-10-23__journalist__what-changed-in-a-d
 
 
 ---
-site v0.14.28 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/articles/what-changed-in-a-day/index.html
+site v0.14.29 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/articles/what-changed-in-a-day/index.html

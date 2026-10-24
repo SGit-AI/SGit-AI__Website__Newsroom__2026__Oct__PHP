@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.14.29 · 24 October 2026new since your last visit
+
+Restores v0.14.24, what changed in the risk graph (CI-003, step 2, /grc/changes/), which the conductor's release of the CI fix reverted by mistake (a branch kept in step with merge -s ours after dev had moved); with the conductor's round debrief
+
+No reader-facing section changed in this release.
+
 ## v0.14.28 · 24 October 2026new since your last visit
 
 observability@php.newsroom joins (the editor's ask): its page /admin/agents/observability/ with its role, draft policy and first debrief; a brief on the telemetry lane's 1,000-event cap (where it comes from, what happens to event 1,001, lanes in parallel); the keys it holds; board 270 to 273
@@ -38,7 +44,7 @@ No reader-facing section changed in this release.
 
 ## v0.14.24 · 24 October 2026new since your last visit
 
-Fix for dev's red CI since v0.14.23: /team/comms/ is built from data/comms.json, which the conductor's wakes export from the commit history, instead of from the history itself, which the shallow CI clone lacks; tested by running the gate in a depth-1 clone
+what changed in the risk graph (CI-003, step 2): /grc/changes/ compares any two releases, the nodes and edges added and removed, the bases changed and the gaps opened and closed, measured side by side, from a history filled back to v0.6.0 and written at every release; found on the way: 91 repeated edges in the graph, now counted once (1,351 edges), with a correction; and the team's notes page no longer links a recipient with no page (the gate failed on To-security)
 
 No reader-facing section changed in this release.
 
@@ -893,4 +899,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.14.28 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.14.29 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

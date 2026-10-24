@@ -4,11 +4,11 @@
 
 Start from a CVE, a risk, a stakeholder, a file, a test or a control and see only what touches it, grouped by verb, one step at a time; or climb from code to the risks, controls and stakeholders above it. Every edge says how it is known.
 
-[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [Explore](../../grc/explore/index.html) · [Gaps](../../grc/gaps/index.html) · [From the network](../../grc/network/index.html)
+[GRC](../../grc/index.html) · [Risks](../../grc/risks/index.html) · [Stakeholders](../../grc/stakeholders/index.html) · [Frameworks](../../grc/frameworks/index.html) · [The graph](../../grc/graph/index.html) · [Explore](../../grc/explore/index.html) · [Gaps](../../grc/gaps/index.html) · [Changes](../../grc/changes/index.html) · [From the network](../../grc/network/index.html)
 
 # Explore the risk graph: start from one thing and follow it
 
-The whole graph is 721 nodes and 1442 edges, too much to read at once. Start from one thing you care about (a CVE, a risk, the people who run PHP, a file of the fix, a test, a control) and see only what touches it, grouped by how; open any of those to go one step further, with the way back always shown. Or start from code or a test and climb: the fixes it realises, the flaws they fix, the risks above them, and the controls, stakeholders and stories of each risk.
+The whole graph is 721 nodes and 1351 edges, too much to read at once. Start from one thing you care about (a CVE, a risk, the people who run PHP, a file of the fix, a test, a control) and see only what touches it, grouped by how; open any of those to go one step further, with the way back always shown. Or start from code or a test and climb: the fixes it realises, the flaws they fix, the risks above them, and the controls, stakeholders and stories of each risk.
 
 The explorer needs JavaScript; it reads [data/grc-graph.json](../../data/grc-graph.json) in your browser and sends nothing anywhere.
 
@@ -24,4 +24,4 @@ In the graph: 270 test, 95 control, 79 source, 62 claim, 43 stakeholder, 41 trea
 
 
 ---
-site v0.14.28 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/explore/index.html
+site v0.14.29 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/grc/explore/index.html
