@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 191 items, 128 open, 58 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 198 items, 135 open, 58 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -201,9 +201,16 @@ The work, as rows in `data/admin.json`: 191 items, 128 open, 58 done. An item is
 | 189 | One spelling for a verb across the site's graphs: data/review.json writes 'realised in', 'fixed by' with spaces, the risk graph writes realised_in and fixed_by, the estate's grammar writes snake_case. Rename in the review graph's parser (with board 182), so a reader stepping between the graphs reads the same wordFrom the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md). | open | claude-story-site |  |
 | 190 | Bring the vault's own claims (data/vault-claims.json) and the journalist's state of affairs (data/state.json) into the story graph, so the long-tail sources reach the claims they bear on, with supersedes where a statement was corrected; and trace the 143 captured sources no row cites yetFrom the ontologist's first pass of 24 October (admin/ontologist/passes/2026-10-24__pass-1.md). | open | ontologist |  |
 | 191 | The source watch's vault of record: 7r83qic5 (pack mode) in use, oq9gflln retired, on /vaults/, the source-watch page, the team, the schedules and the researcher's register; no read key published for the pack vault until the vault UI supports itDone at the editor's word of 24 October. Still open: export_watch.py reads oq9gflln, so the watch's counts on the site stop at its last export. | done | dev@php.newsroom | 0.11.3 |
+| 192 | Sherpa: check CI-002's five steps on the live site, phone and desktop (/grc/explore/, edge basis, tests as nodes, the climb, /grc/gaps/) and dev's join fixes of v0.9.2; close the frictions that hold | open | sherpa |  |
+| 193 | Sherpa: to the conductor for priority: all six synthetic readers, run 2 on v0.10.18, say most of what they raised on v0.4.3 is untouched (F001 to F006, now high); and two new frictions (F031 grade against status word; F032 Latest and timeline stop on 22 October) | open | sherpa |  |
+| 194 | Sherpa: draft the brief and thread for several verification workflows across model providers on key pages (UF-005.2), with the fact-check desk | open | sherpa |  |
+| 195 | Sherpa: track the fact-check desk's analysis of Fortune's '70% of the internet' article (UF-005.1) to a story | open | sherpa |  |
+| 196 | Sherpa: a way for the editor to identify himself when he cannot sign in (a key he can present), with dev and security; later, at the editor's word | open | sherpa |  |
+| 197 | Sherpa: three views over time, step 1 (the executive view and its slices as data); the guidance on reuse; the knowledge-gap view | open | sherpa |  |
+| 198 | Sherpa: drain the collaborators lane on a schedule (card proposed, data/schedule/sherpa.json), once the editor gives the go and hands the scheduled session the vault key, sealed | open | sherpa |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.11.5 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.11.6 · data as of 2026-10-23T16:04Z · vault commit 1845598d9a38 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

@@ -5198,7 +5198,7 @@ def sherpa_card(r, p, d):
 def sherpa_nav(FB, CI, cur, up):
     def item(href, label, sub, on):
         return f'<a href="{href}"{" aria-current=page" if on else ""}><b>{E(label)}</b><span>{E(sub)}</span></a>'
-    groups = [("From readers and power users", [r for r in FB if not r.get('tester')]), ("Tests by agents", [r for r in FB if r.get('tester') == 'agent']), ("Internal tests", [r for r in FB if r.get('tester') == 'internal'])]
+    groups = [("From readers and power users", [r for r in FB if not r.get('tester')]), ("Tests by agents", [r for r in FB if r.get('tester') == 'agent']), ("From the editor", [r for r in FB if r.get('tester') == 'editor']), ("Internal tests", [r for r in FB if r.get('tester') == 'internal'])]
     out = item(f'{up}feedback/index.html', 'All feedback', 'the section, with its numbers', cur == 'home')
     for name, rs in groups:
         out += f'<p class="fv-g">{E(name)}</p>' + ''.join(item(f'{up}feedback/{E(r["id"].lower())}/index.html', r['id'], (r.get('who') or r['reader'].split(',')[0])[:60], cur == r['id']) for r in rs)
@@ -5241,7 +5241,7 @@ def sherpa_viewer(r, FB, CI, d):
 def build_sherpa_feedback(r, FB, CI):
     d = 2; up = '../' * d
     pages_read = ', '.join(f'<a href="{up}{U(pth)}">{E(pth)}</a>{(" (" + E(how) + ")") if how else ""}' for pth, how in r['pages_read'])
-    who = {"agent": "A test by an agent, not a person: its findings are prompts to re-check, not evidence about readers.", "internal": "An internal test, not reader feedback, and not counted as such."}.get(r.get("tester"), "Readers are never named here.")
+    who = {"agent": "A test by an agent, not a person: its findings are prompts to re-check, not evidence about readers.", "internal": "An internal test, not reader feedback, and not counted as such.", "editor": "The editor's own feedback, through the site's form."}.get(r.get("tester"), "Readers are never named here.")
     facts = ''.join(f'<dt>{k}</dt><dd>{v}</dd>' for k, v in [('From', f'{E(r["reader"])}. {who}'), ('How it came', E(r['channel']) + ((', about ask ' + E(r['ask'])) if r.get('ask') else '')),
         ('Received', E(r['received'])), ('Site version', f'v{E(r["site_version"])}. {E(r["site_version_note"])}'), ('Progress', E(r['progress'])), ('Pages read', pages_read)])
     nr = ''.join(f'<li>{E(x)}</li>' for x in r.get('not_reproduced', []))
@@ -5268,7 +5268,7 @@ def build_feedback_section(FB, CI, FL):
     pts = [p for r in FB if r.get('tester') != 'internal' for p in r['points']]
     stats = ''.join(stat(n, l) for n, l in [(sum(r.get('tester') != 'internal' for r in FB), 'pieces of feedback'), (len(pts), 'points answered'), (sum(p['replicated'] == 'yes' for p in pts), 'reproduced by the Sherpa'),
         (len(opn), 'frictions open'), (ST['power_users_joined'], 'power users joined'), (ST['signed_messages'], 'signed messages received'), (len(CI), 'conversations of ideas')])
-    rows = [[f'<a href="{E(r["id"].lower())}/index.html">{E(r["id"])}</a>', E(r['received']), 'v' + E(r['site_version']), E(r.get('who') or r['reader'][:70]), {'agent': 'agent test', 'internal': 'internal test'}.get(r.get('tester'), 'person'),
+    rows = [[f'<a href="{E(r["id"].lower())}/index.html">{E(r["id"])}</a>', E(r['received']), 'v' + E(r['site_version']), E(r.get('who') or r['reader'][:70]), {'agent': 'agent test', 'internal': 'internal test', 'editor': 'the editor'}.get(r.get('tester'), 'person'),
              str(len(r['points'])), E(r['summary'])] for r in FB]
     body = f'''
 <link rel="stylesheet" href="{up}assets/sherpa/viewer.css">

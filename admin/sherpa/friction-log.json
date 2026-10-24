@@ -2,7 +2,7 @@
   "schema": "sgit.newsroom.friction-log/1",
   "about": "Every friction a reader meets on this site, structured: who, where, what they tried, what happened, what they expected, the evidence, who can fix it and whether it landed. Kept by sherpa@php.newsroom; see admin/sherpa/README.md. Synthetic readers are test instruments, not people: their findings are prompts, and each is re-checked on the current version before it is logged.",
   "kept_by": "sherpa",
-  "as_of_version": "0.9.3",
+  "as_of_version": "0.11.3",
   "stages": [
     "arrive",
     "first-screen",
@@ -28,7 +28,8 @@
         "telemetry to v0.5.9: 107 of 275 events (39%) from phones",
         "UF-001 point 5: a real reader finds pages dense with icons and links (see F011)",
         "UF-002 point 6",
-        "UF-003 point 3: a fourth reader"
+        "UF-003 point 3: a fourth reader",
+        "synthetic board and designer, run 2 on v0.10.18: still two screens of controls before the briefing on a phone; the designer counts three boxes now"
       ],
       "severity": "high",
       "affects": "every page, every phone reader",
@@ -38,7 +39,7 @@
         "dev"
       ],
       "first_seen": "0.4.3",
-      "last_seen": "0.9.0",
+      "last_seen": "0.10.18",
       "status": "open",
       "trend": "worse: the Ask and Feedback row of v0.8.0 added about 60px above the fold"
     },
@@ -52,13 +53,14 @@
       "expected": "A 'What to tell the board' box of four or five sentences under the thirty-second answer",
       "evidence": [
         "synthetic cto run 2026-10-22T1753Z on v0.4.3 (top fail, high)",
-        "sherpa check on v0.8.1: no briefing contains 'what to tell the board'"
+        "sherpa check on v0.8.1: no briefing contains 'what to tell the board'",
+        "synthetic CTO, run 2 on v0.10.18: 'a day on there is still no paragraph I can take to my board'"
       ],
       "severity": "high",
       "proposal": "Add a 'What to tell the board' box to the CTO and CISO briefings, generated from the same claims as the board briefing so it cannot drift.",
       "owner": "briefing-writer",
       "first_seen": "0.4.3",
-      "last_seen": "0.8.1",
+      "last_seen": "0.10.18",
       "status": "open"
     },
     {
@@ -71,13 +73,14 @@
       "expected": "A 'Deadlines' line (who set one, who did not, CISA KEV status) and a copyable status table with a two-line stakeholder update",
       "evidence": [
         "synthetic pm run 2026-10-22T1754Z on v0.4.3 (two top fails, high)",
-        "sherpa check on v0.8.1: 'deadline' does not appear in briefings/pm/"
+        "sherpa check on v0.8.1: 'deadline' does not appear in briefings/pm/",
+        "synthetic PM, run 2 on v0.10.18: 'still no date to plan against, no way to report progress'"
       ],
       "severity": "high",
       "proposal": "As the reader proposed. The status table could be a download from /stack/ once it holds a reader's systems.",
       "owner": "briefing-writer",
       "first_seen": "0.4.3",
-      "last_seen": "0.8.1",
+      "last_seen": "0.10.18",
       "status": "open"
     },
     {
@@ -91,7 +94,8 @@
       "evidence": [
         "synthetic developer run 2026-10-22T1753Z on v0.4.3 (three top fails, high)",
         "synthetic cto run on v0.4.3 (top change)",
-        "sherpa check on v0.8.1: the Docker row is still 'Docker Official Image: php' with no tag; /stack/ now explains that a backport keeps its old version number, which answers half of it"
+        "sherpa check on v0.8.1: the Docker row is still 'Docker Official Image: php' with no tag; /stack/ now explains that a backport keeps its old version number, which answers half of it",
+        "synthetic developer, run 2 on v0.10.18: 'fifteen releases on ... still a single php -v line'"
       ],
       "severity": "high",
       "proposal": "Capture the Docker Official Images rebuild into the vault, add the tags to the row, and link the developer briefing to /stack/ for the backport check.",
@@ -101,7 +105,7 @@
         "briefing-writer"
       ],
       "first_seen": "0.4.3",
-      "last_seen": "0.8.1",
+      "last_seen": "0.10.18",
       "status": "partly addressed"
     },
     {
@@ -114,7 +118,8 @@
       "expected": "One grade per claim, applied by the published rule",
       "evidence": [
         "synthetic security run 2026-10-22T1753Z on v0.4.3 (top fail, high)",
-        "fact-check run 1 (22 October): 11 of 70 claims carry a status word stronger than their evidence"
+        "fact-check run 1 (22 October): 11 of 70 claims carry a status word stronger than their evidence",
+        "synthetic security lead, run 2 on v0.10.18: every grading fault still there"
       ],
       "severity": "high",
       "proposal": "The fact-check desk already found the same thing; the reader-facing fix is to show the desk's grade beside the status word wherever a claim appears, until the status words are corrected.",
@@ -123,7 +128,7 @@
         "story-site"
       ],
       "first_seen": "0.4.3",
-      "last_seen": "0.4.3",
+      "last_seen": "0.10.18",
       "status": "open, to re-check on 0.8.1"
     },
     {
@@ -138,12 +143,13 @@
         "synthetic designer run 2026-10-22T1753Z on v0.4.3 (top fail, high)",
         "sherpa walk on v0.8.1 with the meter loading (desktop, 1280px): the masthead shows an unlabelled '£5.00' pill beside the theme switch",
         "UF-002 point 6: the pound pill moved from £5.00 to £4.99 while reading, unexplained",
-        "UF-003 point 11: a fourth reader"
+        "UF-003 point 11: a fourth reader",
+        "synthetic designer, run 2 on v0.10.18: 'the unlabelled pound pill still ticks down'"
       ],
-      "severity": "medium",
+      "severity": "high",
       "owner": "dev",
       "first_seen": "0.4.3",
-      "last_seen": "0.9.0",
+      "last_seen": "0.10.18",
       "status": "open"
     },
     {
@@ -616,6 +622,46 @@
       "last_seen": "0.9.3",
       "status": "open",
       "source": "UF-004"
+    },
+    {
+      "id": "F031",
+      "reader": "synthetic CTO and security lead",
+      "page": "claims/index.html",
+      "stage": "get-the-answer",
+      "actual": "The fact-check desk's grade now sits beside the status word on the same row, and sometimes disagrees with it, with nothing saying which to trust.",
+      "severity": "high",
+      "proposal": "Where the grade and the status word disagree, say so on the row ('the desk grades this lower: A2'), and settle each in the contradiction ledger; the status word follows the desk's grade once settled.",
+      "owner": "verifier",
+      "also": [
+        "story-site"
+      ],
+      "evidence": [
+        "synthetic CTO and security lead, run 2 on v0.10.18"
+      ],
+      "first_seen": "0.10.18",
+      "last_seen": "0.10.18",
+      "status": "open",
+      "source": "synthetic readers, run 2"
+    },
+    {
+      "id": "F032",
+      "reader": "synthetic project manager",
+      "page": "index.html (Latest) and timeline/index.html",
+      "stage": "come-back",
+      "actual": "'Latest' and the timeline stop on 22 October, so a returning reader cannot see what moved since yesterday.",
+      "severity": "medium",
+      "proposal": "Feed 'Latest' and the timeline from the evidence vault at each export (the state of affairs v2 has the delta already).",
+      "owner": "story-site",
+      "also": [
+        "journalist"
+      ],
+      "evidence": [
+        "synthetic PM, run 2 on v0.10.18"
+      ],
+      "first_seen": "0.10.18",
+      "last_seen": "0.10.18",
+      "status": "open",
+      "source": "synthetic readers, run 2"
     }
   ]
 }
