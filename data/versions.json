@@ -1,6 +1,15 @@
 {
- "current": "0.22.3",
+ "current": "0.22.4",
  "versions": [
+  {
+   "version": "0.22.4",
+   "date": "2026-10-25",
+   "title": "the control room loads under a view address (/team/control/as/executive/ fetched team/control/data/control.json): control.js resolves its data against the page as loaded, and assets/route.js routes a URL object as it does a string, so on the split sites it reaches the data API",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.22.3",
    "date": "2026-10-25",
