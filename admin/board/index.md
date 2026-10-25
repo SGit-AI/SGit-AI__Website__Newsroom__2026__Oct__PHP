@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 295 items, 194 open, 97 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 299 items, 197 open, 98 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -305,9 +305,13 @@ The work, as rows in `data/admin.json`: 295 items, 194 open, 97 done. An item is
 | 293 | Wikipedia's text (CC BY-SA 4.0) is republished in full under /wikipedia/ and data/wikipedia/, with attribution and the same licence on those pages, against the site's rule that no third-party page is reproduced (written for unlicensed pages). Decide whether it stays, and whether README's licence line says soFrom the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md). | open | editor |  |
 | 294 | data/wikipedia/ grows with every revision (6 MB for 364 revisions of one article): decide, with the researcher, whether old revisions move to the evidence vault and the repository keeps the latest text plus statement-level deltasFrom the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md). | open | ontologist |  |
 | 295 | The ontologist's policy (admin/content/agents/ontologist/policy.json, kept by abp@): add data/wikipedia/**, admin/wikipedia/** and admin/build/wikitext.py to scope.writes and wikipedia/** to scope.pages; until then the gate warns that the Wikipedia pages have no ownerFrom the brief: Wikipedia as an anchor (25 October). | open | abp |  |
+| 296 | Prototype F, the line: the editor's design of 25 October built on the site, at /admin/design/line/ (six pages from the live data, the pack's engine and words vendored, the numbers filled from the vault)The editor handed story-site the briefing pack 'the line' in its session of 25 October and asked for it to be implemented. Brief: admin/content/briefs/2026-10-25__brief__the-line.md. The engine's 19 tests pass against the vendored copy (node --test assets/design/line/engine.test.mjs). Rules 1 to 7, the eleven moments, the seven roles, depth, seen and folding, shared links and the past view all work in Chromium; no page errors. | done | claude-story-site | 0.17.0 |
+| 297 | The line on the live site: the rollout in the brief's order, starting with the line and the boot script on every page (rule 7 and the fallback line), replacing the lens's two dialsWaiting on the editor's go, as prototype E was (board 275, which this supersedes). Steps 2 to 7 of the brief's rollout follow: roles and depth on the live front page and the content pages, the first visit and the guesses, seen and the return moments, shared links and the past view, a page line for every page (the desk approves the words), then the reader's vault (board 140) and telemetry (board 262). | open | editor |  |
+| 298 | The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x depth cells, the thresholds, and who writes the page linesSection 14 of the brief. The prototype ships the pack's answers to all five; they are cheap to change (assets/design/line/roles.json, copy.src.json and moments.json are read by the build). | open | editor |  |
+| 299 | A page line for every page, and the change log from the build's own diff between releasesPrototype F writes lines for the front page, the agencies, the numbers and the playbook; every other page falls back to the page-title line. The change log is read from data/timeline.json, tagged by phase; the live one should come from the diff between releases, as the brief's section 10.5 asks. | open | claude-story-site |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.17.7 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.18.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

@@ -6,7 +6,7 @@ mess; the reader's persona, and how much of the site they want to see, should ch
 what a reader has seen gets out of the way; the team gets an admin console with its own menu and layout.
 The brief is admin/content/briefs/2026-10-23__brief__the-redesign.md.
 """
-import json, re
+import hashlib, json, re
 from collections import Counter, OrderedDict
 
 # --------------------------------------------------------------------------- the two dials
@@ -350,6 +350,7 @@ def build(ns):
   <div class="ans"><p class="eyebrow" style="margin:0 0 .4rem">The model, in one line</p><p style="font-size:1.12rem">Two dials. <b>Who you are</b> sets the layout and the order. <b>How much you want</b> (Focus, Standard, Everything) sets which pages exist for you at all. What you have read gets out of the way.</p></div>
 </div></section>
 <main class="shell">
+  <section class="block"><a class="card" href="line/index.html" style="display:block;text-decoration:none;color:inherit;border:2px solid var(--brand)"><p class="eyebrow" style="margin:0">New, 25 October &middot; the editor&rsquo;s design, built</p><h2 class="h2" style="margin:.3rem 0">F. The line: the site talks to you, as the reader you are, at the moment you are in</h2><p class="small" style="margin:0;color:var(--ink-2)">One band under the masthead on every page, never closed, that says one thing: who we think you are and why, what has changed since you were last here, that this page is not written for you, or simply this page&rsquo;s sentence for your role. Seven roles, three depths, eleven visit moments. Six pages, and a catalogue of every line the rules produce. The brief: the line.</p></a></section>
   <section class="block"><a class="card" href="lens/index.html" style="display:block;text-decoration:none;color:inherit;border:2px solid var(--brand)"><p class="eyebrow" style="margin:0">New, 24 October &middot; a working prototype</p><h2 class="h2" style="margin:.3rem 0">E. The lens: the site shapes itself to you, in front of you</h2><p class="small" style="margin:0;color:var(--ink-2)">Four settings at the top right (how long you have, who you are, what you want to do, what you have seen). Every page is built whole; a change re-lays the page in the same frame, with no reload and no flash, and the next page arrives already shaped. Three pages: the front page, a content page that answers to two of the settings, and a page for the team only. The brief: the lens.</p></a></section>
   <section class="block"><div class="block-head"><h2 class="h2">The four mockups</h2><span class="small">each is a real page, at full width; resize it to see it stack</span></div><div class="thumbs">{thumbs}</div></section>
   <section class="block"><div class="block-head"><h2 class="h2">What is wrong now</h2></div><div class="tiles" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">{prob}</div></section>
@@ -381,6 +382,7 @@ def build(ns):
     shell('admin/design/index.html', 'Design: the redesign, in four mockups', 'The proposed redesign of the site for review: what is wrong now, the two dials (who you are and how much you see), which pages each reader sees, the menu per view, and four mockups built from the live data.', body, 'notes', 'board', 'everything',
           [('Today', 0), ('What to do', 0), ('The incident', 0), ('The evidence', 0), ('Team console', 0)])
     made += build_lens(ns)
+    made += build_line(ns)
     return made
 
 def llms_lines(made, BASE_URL):
@@ -1151,4 +1153,378 @@ def build_lens(ns):
           block('c-own', f'<h2 class="h2">Open work, by owner</h2><div class="tw"><table class="tbl"><tbody>{rows}</tbody></table></div>', '1', None, None, 12, (1, 1, 1))]
     body = f'<main class="shell" style="padding-top:1.2rem">{gate}<h1 class="display" style="font-size:clamp(1.8rem,3vw,3rem)">Team console</h1><p class="lz-status" data-lz-status></p><div class="lz-flow">{"".join(BC)}</div></main>'
     page('admin/design/lens/console/index.html', 'Prototype E: the lens, a page for the team', 'A page written for one kind of reader: anyone else is told who it is for and can read it anyway; the time and aim settings do not apply, and the control says so.', 'seen', body, for_='team', tab=2)
+    return made
+
+
+# =========================================================================== the line (prototype F, 25 October 2026)
+# The editor's briefing pack of 25 October: every page carries one band under the masthead that says one thing, to the
+# persona in front of it, at this moment of their visits; the page under it is shaped for that role and depth, what has
+# changed since they were last here is marked, and what they have read folds away.
+# The words, the roles, the moments and the engine are the pack's, vendored under assets/design/line/; this builds the
+# pages from the evidence vault and fills every number the words leave as a placeholder.
+# Brief: admin/content/briefs/2026-10-25__brief__the-line.md
+
+LINE_DIR = 'assets/design/line'
+LINE_PAGES = [('index.html', 'front', 'Front page'), ('agencies/index.html', 'agencies', 'The agencies'),
+              ('numbers/index.html', 'numbers', 'The numbers'), ('playbook/index.html', 'playbook', 'The playbook'),
+              ('console/index.html', 'console', 'Team console'), ('catalogue/index.html', 'catalogue', 'Every line')]
+
+
+def line_spec(ns, name):
+    import json as _j
+    return _j.load(open(ns['os'].path.join(ns['ROOT'], LINE_DIR, name), encoding='utf-8'))
+
+
+def line_numbers(ns):
+    """Every number the pack's words leave as a placeholder, from the evidence vault."""
+    D = ns['D']
+    claims = D['claims']; st = Counter(c['status'] for c in claims)
+    def bucket(o):
+        return ('yes' if o == 'yes' else 'isolate' if o.startswith('isolate') else 'restrict' if o == 'restrict from abroad'
+                else 'consider' if o in ('after mitigations', 'consider') else 'none' if o == 'none' else None)
+    b = Counter(bucket(a['offline']) for a in D['agencies'])
+    words = {1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six'}
+    seg_ag = [[b['none'], '#d4cfc3'], [b['consider'], '#f3d9a8'], [b['restrict'], '#eab676'], [b['isolate'], '#c9742c'], [b['yes'], '#8a3b12']]
+    seg_n = [[st['confirmed'], '#15803d'], [st['reported'], '#7aa7d9'], [st['disputed'], '#e0a14a'],
+             [st['contradicted'], '#b3261e'], [st['unverified'], '#a39d8f']]
+    fx = D['affected']['fixed']
+    return {'fixed': (', '.join(fx[:-1]) + ' or ' + fx[-1]) if len(fx) > 1 else fx[0], 'nAgencies': len(D['agencies']),
+            'nOffline': b['yes'], 'nOfflineWord': words.get(b['yes'], str(b['yes'])), 'nIsolate': b['isolate'],
+            'nRestrict': b['restrict'], 'nConsider': b['consider'], 'nNone': b['none'],
+            'nFacts': len(claims), 'nConfirmed': st['confirmed'], 'nReported': st['reported'], 'nDisputed': st['disputed'],
+            'nContradicted': st['contradicted'], 'nUnverified': st['unverified'],
+            'segAgencies': [s for s in seg_ag if s[0]], 'segNumbers': [s for s in seg_n if s[0]]}
+
+
+def line_copy(ns):
+    """assets/design/line/copy.json: the pack's words with this release's numbers in them."""
+    import json as _j
+    src = line_spec(ns, 'copy.src.json'); N = line_numbers(ns)
+    def walk(x):
+        if isinstance(x, str):
+            if x.startswith('{seg') and x.endswith('}'):
+                return N[x[1:-1]]
+            for k, v in N.items():
+                if isinstance(v, (int, str)) and '{' + k + '}' in x:
+                    x = x.replace('{' + k + '}', str(v))
+            return x
+        if isinstance(x, list):
+            return [walk(i) for i in x]
+        if isinstance(x, dict):
+            return OrderedDict((k, walk(v)) for k, v in x.items())
+        return x
+    out = walk(src)
+    out['_note'] = ('Generated by admin/build/design.py from assets/design/line/copy.src.json and the evidence vault at '
+                    'release v' + ns['VERSION'] + '. Edit copy.src.json, never this file.')
+    return _j.dumps(out, indent=1, ensure_ascii=False) + '\n'
+
+
+def line_shape_css(ns):
+    """The shaping: which parts a role sees, and in what order. Generated from roles.json."""
+    R = line_spec(ns, 'roles.json')
+    out = ['/* Generated by admin/build/design.py from assets/design/line/roles.json: the page under the line, per role.\n'
+           '   A part says which roles it is for (data-for) and where it sits for each of them (--o-<role>); the hero\n'
+           '   carries one answer per role and shows the reader theirs. */\n',
+           '.lnp .lp{order:50}\n.lnp .lp-more{order:999}\n',
+           '.ln-answer{display:none}\n.ln-answer[data-role-text~="exec"]{display:revert}\n']
+    for role in R['order']:
+        out.append('html[data-role="%s"] .ln-answer{display:none}\n' % role)
+        out.append('html[data-role="%s"] .ln-answer[data-role-text~="%s"]{display:revert}\n' % (role, role))
+    for role in R['order']:
+        out.append('html[data-role="%s"] .lnp .lp{order:var(--o-%s,50)}\n' % (role, role))
+        out.append('html[data-role="%s"] .lnp .lp[data-for]:not([data-for~="%s"]):not([data-for~="*"]){display:none}\n' % (role, role))
+        out.append('html[data-role="%s"] .ln-mast nav a[data-menu]:not([data-menu~="%s"]):not([data-menu~="*"]){display:none}\n' % (role, role))
+    return ''.join(out)
+
+
+def line_changes(ns):
+    """What has changed lately, for whom: from the story's own timeline, tagged by topic.
+    In the live build this is the diff between releases (brief, section 10.5); here it is the dated record the site
+    already keeps, which is the same material a diff would carry."""
+    D = ns['D']
+    # data/timeline.json carries a phase per event; the roles each phase is news for, and the part it lands in
+    PHASE = {'response': (['exec', 'security', 'engineer', 'general', 'everything'], 'now+unknown'),
+             'aftermath': (['exec', 'general', 'journalist', 'security', 'everything'], 'now+unknown'),
+             'release': (['security', 'engineer', 'exec', 'everything'], 'settings'),
+             'coordination': (['journalist', 'researcher', 'everything'], 'timeline'),
+             'leak': (['journalist', 'researcher', 'everything'], 'timeline'),
+             'discovery': (['journalist', 'researcher', 'everything'], 'timeline'),
+             'method': (['researcher', 'journalist', 'everything'], 'timeline'),
+             'origin': (['researcher', 'everything'], 'timeline')}
+    out = []
+    for t in sorted(D['timeline'], key=lambda x: x.get('at', ''), reverse=True)[:40]:
+        at = (t.get('at') or '').strip()
+        text = (t.get('event') or t.get('what') or t.get('text') or '').strip()
+        if not at or not text:
+            continue
+        if len(at) == 10:
+            at += 'T00:00:00Z'
+        elif len(at) == 16 and at.endswith('Z') is False:
+            at += ':00Z'
+        roles, part = PHASE.get(t.get('phase') or '', (['*'], ''))
+        out.append(OrderedDict([('at', at), ('tag', 'New'), ('text', text[:160]), ('roles', roles), ('key', part)]))
+    return out[:24]
+
+
+def line_part(ns, key, title, body, roles_for, orders, fold=True, cls='card'):
+    E = ns['E']
+    h = hashlib.sha256(body.encode('utf-8')).hexdigest()[:12]
+    style = ';'.join('--o-%s:%d' % (r, i) for r, i in sorted(orders.items()))
+    return ('<section class="lp %s" data-k="%s" data-title="%s" data-hash="%s"%s%s style="%s;view-transition-name:lp-%s">%s</section>'
+            % (cls, E(key), E(title), h, (' data-for="%s"' % E(' '.join(roles_for))) if roles_for else '',
+               ' data-fold="1"' if fold else '', style, E(key), body))
+
+
+def build_line(ns):
+    """Prototype F: the line, six pages under admin/design/line/, built from the live data."""
+    import json as _j
+    D, E, U, J, VERSION, PERSONAS = ns['D'], ns['E'], ns['U'], ns['J'], ns['VERSION'], ns['PERSONAS']
+    write, PAGES, STORY, BASE_URL, SITE_NAME = ns['write'], ns['PAGES'], ns['STORY'], ns['BASE_URL'], ns['SITE_NAME']
+    human_time, SOURCES, short_name = ns['human_time'], ns['SOURCES'], ns['short_name']
+    R = line_spec(ns, 'roles.json'); N = line_numbers(ns)
+    pl, claims = D['plain'], D['claims']; st = Counter(c['status'] for c in claims)
+    when = human_time(STORY['data_as_of'])
+    write(LINE_DIR + '/copy.json', line_copy(ns))
+    write(LINE_DIR + '/shape.css', line_shape_css(ns))
+    write(LINE_DIR + '/config.js',
+          '/* Generated by admin/build/design.py: the roles, the words and the moments the line runs on. */\n'
+          'window.LINE = ' + _j.dumps({'roles': R, 'copy': _j.loads(line_copy(ns)), 'moments': line_spec(ns, 'moments.json')},
+                                      ensure_ascii=False, separators=(',', ':')) + ';\n')
+    changes = line_changes(ns)
+    made = []
+
+    # ------------------------------------------------------------------ the parts of the front page, per role
+    FP = {r: R['roles'][r]['frontParts'] for r in R['order']}
+    def who(key):
+        return [r for r in R['order'] if key in FP[r]]
+    def order(key):
+        return {r: FP[r].index(key) + 1 for r in R['order'] if key in FP[r]}
+
+    def depth_p(plain, technical, deep, cls='lede'):
+        return (f'<p class="{cls} lv" data-depth="plain">{E(plain)}</p>'
+                f'<p class="{cls} lv" data-depth="technical">{E(technical)}</p>'
+                f'<p class="{cls} lv" data-depth="deep">{E(deep)}</p>')
+
+    fx = D['affected']['fixed']
+    fix_line = (f'A fix came out on 21 October. Whoever runs a website needs to install it, and restart it.',
+                f'Fixed in PHP {", ".join(fx)}. An update only counts once the service restarts.',
+                f'Target {", ".join(fx[:-1])} or {fx[-1]}; restart every worker, rebuild images, verify with php -v inside the running container.')
+    first_reader = {r: (R['roles'][r]['readers'] or [None])[0] for r in R['order']}
+    answers = ''.join(
+        f'<p class="ln-answer lv2" data-role-text="{E(r)}">{E(PERSONAS[first_reader[r]]["answer"] if first_reader[r] in PERSONAS else "The whole site, unfiltered: every part of the page, in the usual order.")}</p>'
+        for r in R['order'])
+    hero = (f'<div class="band lnp-hero"><div class="shell hero">'
+            f'<div><p class="eyebrow">{E(STORY["status"])} &middot; data as of {E(when)}</p>'
+            f'<h1 class="display">{E(pl["headline"])}</h1>{depth_p(*fix_line)}</div>'
+            f'<aside class="ans"><p class="eyebrow" style="margin:0 0 .3rem">Your answer</p>{answers}</aside></div></div>')
+
+    tiles = ('<div class="tiles">' + ''.join(
+        f'<div class="card kpi {c}"><div class="k">{E(k)}</div><div class="v">{E(v)}</div><div class="d">{E(d)}</div></div>'
+        for c, k, v, d in [('good', 'Is there a fix?', 'Yes', 'since 21 October'),
+                           ('alert', 'How serious?', 'Critical', 'both flaws, 9.2 of 10'),
+                           ('info', 'Anyone broken into?', 'None named', 'millions of attempts'),
+                           ('warn', 'Government advice', 'Update', f'all {N["nAgencies"]} agencies agree')]) + '</div>')
+
+    def steps(title, items, href=None):
+        return (f'<div class="block-head"><h2 class="h2">{E(title)}</h2>'
+                + (f'<a class="small" href="{href}">More</a>' if href else '') + '</div><div class="actions">'
+                + ''.join(f'<div class="card action" style="box-shadow:none"><div class="n">{i+1}</div><div><h3>{E(a)}</h3><p>{E(b)}</p></div></div>'
+                          for i, (a, b) in enumerate(items)) + '</div>')
+
+    def two(a_title, a_items, b_title, b_items):
+        col = lambda t, xs: (f'<div class="card"><div class="block-head"><h2 class="h2">{E(t)}</h2></div>'
+                             + ''.join(f'<p class="small" style="color:var(--ink-2)">{x}</p>' for x in xs) + '</div>')
+        return '<div class="grid cols-12" style="gap:1rem">' + f'<div class="span-6">{col(a_title, a_items)}</div><div class="span-6">{col(b_title, b_items)}</div>' + '</div>'
+
+    spectrum, agency_cards = agency_parts(ns, '../../../')
+    contested = [c for c in claims if c['status'] in ('contradicted', 'disputed', 'unverified')]
+    def claim_rows(items, n=3):
+        return ''.join(f'<li><span class="pill {"alert" if c["status"] == "unverified" else "warn"}">{E(c["status"])}</span> '
+                       f'{E(c["claim"][:150])}<div class="small">who says it: {E(c["by"][:80])}</div></li>' for c in items[:n])
+
+    status_bar = ('<div class="block-head"><h2 class="h2">How sure are we?</h2>'
+                  f'<span class="small">{N["nFacts"]} facts</span></div>'
+                  '<div style="display:flex;height:16px;border-radius:5px;overflow:hidden;background:var(--surface-2)">'
+                  + ''.join(f'<i style="flex:{n};background:{c}" title="{E(k)}"></i>'
+                            for k, c, n in [('confirmed', 'var(--good)', st['confirmed']), ('reported', 'var(--info)', st['reported']),
+                                            ('disputed', 'var(--warn)', st['disputed']), ('contradicted', '#b3261e', st['contradicted']),
+                                            ('unverified', 'var(--muted)', st['unverified'])] if n)
+                  + '</div><ul class="legend">' + ''.join(f'<li><b>{n}</b> {E(k)}</li>' for k, n in
+                        [('confirmed', st['confirmed']), ('reported', st['reported']), ('disputed', st['disputed']),
+                         ('contradicted', st['contradicted']), ('unverified', st['unverified'])] if n) + '</ul>')
+
+    mit = D['affected'].get('mitigations', [])[:4]
+    settings_rows = ''.join(f'<div class="crow"><code>{E((m.get("what") or "")[:46])}</code><span class="small">{E((m.get("caveat") or m.get("for") or "")[:110])}</span></div>' for m in mit)
+    expl = D['exploitation'][:3]
+    numbers_rows = ''.join(
+        f'<div class="trow"><b class="serif">{E(n["value"])}</b><span class="small">{E((n.get("measures") or n.get("of") or "")[:150])}</span>'
+        f'<span class="pill {"good" if n["status"] == "confirmed" else "alert" if n["status"] == "unverified" else "warn" if n["status"] in ("disputed", "contradicted") else "info"}">{E(n["status"])}</span></div>'
+        for n in D['numbers'][:6])
+    sapis = D['affected'].get('sapis', [])[:3]
+    code = D.get('code', {})
+
+    PARTS = OrderedDict([
+        ('hero', ('The situation', hero, False, 'plain')),
+        ('tiles', ('The four questions', tiles, True, 'plain')),
+        ('questions', ('Three questions for your team', steps('Three questions for your team', [
+            ('Do we know every system that runs PHP?', 'Websites, internal tools, suppliers, and the images we build from.'),
+            ('Is each one updated, and restarted?', f'Fixed in PHP {", ".join(fx)}. An update only counts once the service restarts.'),
+            ('Who can take a system offline, and how fast?', f'{N["nOfflineWord"]} US agencies say take it offline if it cannot be updated. Decide now who makes that call.')]), True, 'card')),
+        ('touch+todo', ('Does it touch you?', two('Does it touch you?', [E(c['a'][:200]) for c in pl['cards'][:2]],
+                                                  'What to do', [E(x['text'][:200]) for x in pl['now'][:3]]), True, 'plain')),
+        ('actions', ('Your next three actions', steps('Your next three actions', [
+            ('Patch internet-facing first.', 'mod_php, then FPM, then the rest. Restart every worker; rebuild every image.'),
+            ('Bound the known paths.', 'session.upload_progress off, low post_max_size, pm.max_requests on FPM. Each blocks a path; none is a fix.'),
+            ('Watch the process tree.', 'Alert on a PHP worker spawning a shell or a downloader. A clean access log proves nothing about the host.')]), True, 'card')),
+        ('now+unknown', ('Right now, and what nobody knows', two('Right now', [E(x['text'][:200]) for x in pl['now'][:3]],
+                                                                 'What nobody knows yet', [E(x['text'][:200]) for x in pl['unknown'][:3]]), True, 'plain')),
+        ('signals+advice', ('Attack signals, and the advice now', two(
+            'Attack signals', [f'<b>{E(x["when"])}</b> {E(x["what"][:150])}' for x in expl],
+            'The advice, now', [E(x['text'][:180]) for x in pl['now'][1:3]]), True, 'plain')),
+        ('spectrum', ('What governments advise', spectrum, True, 'plain')),
+        ('status', ('How sure are we?', status_bar, True, 'card')),
+        ('settings', ('Fixed versions, and the settings until you are there', (
+            f'<div class="block-head"><h2 class="h2">Fixed versions, and the settings until you are there</h2></div>'
+            f'<div class="crow"><code>Fixed in</code><span class="small">{E(" · ".join(fx))}</span></div>{settings_rows}'), True, 'card')),
+        ('exposure+code', ('Which setups are exposed', two(
+            'Which setups are exposed', [f'<b>{E(s["sapi"])}</b> {E(s["text"][:150])}' for s in sapis],
+            'Where the fix is', [E(str(code.get('fix', ''))[:200]), E(str(code.get('where', ''))[:200])]), True, 'plain')),
+        ('before-you-write', ('Before you write', (
+            '<div class="block-head"><h2 class="h2">Before you write: three things often got wrong</h2></div>'
+            f'<ul class="delta">{claim_rows(contested, 3)}</ul>'), True, 'card')),
+        ('numbers', ('The numbers, and how far each holds', (
+            '<div class="block-head"><h2 class="h2">The numbers in the news, and how far each holds</h2></div>' + numbers_rows), True, 'card')),
+        ('timeline', ('How it unfolded', (
+            '<div class="block-head"><h2 class="h2">How it unfolded</h2></div><div class="journey">'
+            + ''.join(f'<div class="jst"><b>{E(m["when"])}</b><span>{E(m["what"][:120])}</span></div>' for m in pl['moments'][:5]) + '</div>'), True, 'plain')),
+        ('contested', ('Also contested', (
+            f'<div class="block-head"><h2 class="h2">Also contested</h2><span class="small">{len(contested)} facts</span></div>'
+            f'<ul class="delta">{claim_rows(contested[3:], 3)}</ul>'), True, 'card')),
+        ('open-questions', ('The open questions', steps('The open questions', [
+            (E(x['text'][:90]), E(x['text'][90:220]) if len(x['text']) > 90 else '') for x in pl['unknown'][:3]]), True, 'card')),
+        ('bug-classes+shown', ('The two bug classes', two(
+            'The two bug classes', [E(str(code.get('mechanism', ''))[:220])],
+            'What was shown', [f'<b>{E(s["sapi"])}</b> {E(s["text"][:140])}' for s in sapis[:2]]), True, 'plain')),
+    ])
+
+    front_body = ''.join(line_part(ns, k, title, body, who(k), order(k), fold, cls)
+                         for k, (title, body, fold, cls) in PARTS.items() if who(k))
+
+    # ------------------------------------------------------------------ the other pages
+    def plain_part(key, title, body, cls='card', fold=True):
+        return line_part(ns, key, title, body, [], {}, fold, cls)
+
+    head = lambda eyebrow, h1, sub: (f'<div class="lnp-head"><p class="eyebrow">{E(eyebrow)}</p>'
+                                     f'<h1 class="display" style="font-size:clamp(1.7rem,2.8vw,2.8rem)">{E(h1)}</h1>'
+                                     f'<p class="lede">{E(sub)}</p></div>')
+    agencies_body = (plain_part('head', 'The agencies', head('The agencies',
+                        f'{N["nAgencies"]} agencies. All say update. They split on offline.',
+                        'Every government cyber agency this site holds, placed by what it says to do with a system you cannot patch, in its own words.'), 'plain', False)
+                     + plain_part('spectrum', 'The spectrum', spectrum, 'plain')
+                     + plain_part('cards', 'Agency by agency', f'<div class="block-head"><h2 class="h2">Agency by agency</h2></div>{agency_cards}', 'plain'))
+    numbers_body = (plain_part('head', 'The numbers', head('The numbers', 'The numbers in the news, and how far each holds',
+                        'Every figure that has been repeated about this story, with where it comes from and whether it holds up.'), 'plain', False)
+                    + plain_part('status', 'How sure are we?', status_bar)
+                    + plain_part('table', 'The numbers', '<div class="block-head"><h2 class="h2">Every number</h2></div>' + numbers_rows)
+                    + plain_part('contested', 'Contested', '<div class="block-head"><h2 class="h2">Contested</h2></div>' + f'<ul class="delta">{claim_rows(contested, 5)}</ul>'))
+    playbook_body = (plain_part('head', 'The playbook', head('The playbook', 'The response, step by step', fix_line[1]), 'plain', False)
+                     + plain_part('steps', 'In order', steps('In order', [
+                         ('Find every system that runs PHP.', 'Websites, internal tools, suppliers, vendor appliances and the images you build from.'),
+                         ('Patch internet-facing first.', 'mod_php, then FPM, then the rest. Restart every worker; rebuild every image.'),
+                         ('Bound the known paths.', 'Each temporary setting blocks a path; none is a fix.'),
+                         ('Watch the process tree.', 'Alert on a PHP worker spawning a shell or a downloader.'),
+                         ('Decide who calls isolate or offline, and when.', f'{N["nOfflineWord"]} US agencies say take it offline if it cannot be updated.')]))
+                     + plain_part('settings', 'The settings', PARTS['settings'][1]))
+    A = D['admin']; bstat = Counter(b['status'] for b in A['board'])
+    console_body = (plain_part('head', 'Team console', head('Team console', 'The board, the releases, the agents',
+                        'Public, as everything here is; written for the team that runs the site.'), 'plain', False)
+                    + plain_part('kpis', 'The release', '<div class="tiles">' + ''.join(
+                        f'<div class="card kpi {c}"><div class="k">{E(k)}</div><div class="v">{E(v)}</div><div class="d">{E(d)}</div></div>'
+                        for c, k, v, d in [('info', 'Release', 'v' + VERSION, f'{len(D["versions"]["versions"])} releases'),
+                                           ('warn', 'Open on the board', str(bstat['open']), f'{bstat["done"]} done'),
+                                           ('good', 'Members', str(len(A['roles'])), 'each with a role and a policy')]) + '</div>'))
+
+    # ------------------------------------------------------------------ the pages
+    def page(path, page_id, title, desc, body, for_=None, menu_role=None):
+        full = 'admin/design/line/' + path
+        up = '../' * full.count('/')
+        tabs = ''.join(
+            f'<a href="{up}admin/design/line/{U(p)}"{" aria-current=page" if p == path else ""}>{E(t)}</a>'
+            for p, _pid, t in LINE_PAGES)
+        readers = ','.join(f'{rid}:{r["role"]}' for rid, r in R['readers'].items())
+        depths = ' '.join(f'data-line-depth-{r}="{R["roles"][r]["depth"]}"' for r in R['order'])
+        island = {'page': page_id, 'pageTitle': title, 'root': up, 'version': VERSION,
+                  'frontPath': 'admin/design/line/index.html', 'statusUrl': up + 'status.json',
+                  'pageFor': ['team'] if for_ else None}
+        banner = (f'<div class="mock-banner"><div class="shell"><span><b>Prototype F</b>, the line: the editor\'s design of '
+                  f'25 October, built from the live data of release v{E(VERSION)}. Not the live site.</span>'
+                  f'<a href="{up}admin/design/index.html">The design notes &rarr;</a></div></div>')
+        menu = ''.join(f'<a href="{up}admin/design/line/{U(LINE_PAGES[0][0])}" data-menu="{E(" ".join(rs))}">{E(lab)}</a>'
+                       for lab, rs in menu_role or [])
+        html = f'''<!doctype html>
+<html lang="en" data-root="{up}" data-path="{full}" data-ver="{VERSION}" data-line-readers="{E(readers)}" {depths}{f' data-line-for="{E(for_)}"' if for_ else ''}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{E(title)} &middot; {SITE_NAME}</title>
+<meta name="description" content="{E(desc)}">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{BASE_URL}/{full}">
+<link rel="icon" href="data:,">
+<link rel="alternate" type="text/markdown" href="{up}{full[:-5]}.md">
+<script src="{up}{LINE_DIR}/boot.js"></script>
+<link rel="stylesheet" href="{up}assets/design/v2.css">
+<link rel="stylesheet" href="{up}{LINE_DIR}/line.css">
+<link rel="stylesheet" href="{up}{LINE_DIR}/shape.css">
+<script src="{up}{LINE_DIR}/config.js" defer></script>
+<script src="{up}{LINE_DIR}/engine.js" defer></script>
+<script src="{up}{LINE_DIR}/line.js" defer></script>
+</head>
+<body class="v2">
+{banner}
+<header class="ln-mast"><a class="lg" href="{up}admin/design/line/index.html"><b>PHP</b>October 2026</a>
+<nav aria-label="Prototype pages">{tabs}</nav><span class="menu-for">the menu follows your role on the live site</span></header>
+<div class="ln" data-size="line" data-tone="calm" aria-live="polite" aria-label="How this page is written for you"><div class="ln-row"><span class="ln-msg"></span></div></div>
+<main class="shell lnp">{body}
+<div class="lp-more"><p class="small" style="margin:0 0 .5rem">That is the page for you.</p><button type="button" data-line-more>Show everything on it</button></div>
+</main>
+<script type="application/json" id="line-page">{J(island)}</script>
+<script type="application/json" id="line-changes">{J(changes)}</script>
+</body>
+</html>
+'''
+        PAGES.append((full, title, desc, 'site'))
+        write(full, html)
+        txt = re.sub(r'<(script|style|svg|button).*?</\1>', '', body, flags=re.S)
+        txt = re.sub(r'<(h1|h2|h3)[^>]*>(.*?)</\1>', lambda m: '\n' + '#' * (int(m.group(1)[1]) + 1) + ' ' + re.sub(r'<[^>]+>', '', m.group(2)) + '\n', txt, flags=re.S)
+        txt = re.sub(r'<li[^>]*>', '\n- ', txt); txt = re.sub(r'<(p|div|section|article|tr)[^>]*>', '\n', txt); txt = re.sub(r'<[^>]+>', ' ', txt)
+        txt = re.sub(r'[ \t]+', ' ', txt); txt = re.sub(r'\n\s*\n+', '\n\n', txt)
+        import html as _H
+        write(full[:-5] + '.md', f'# {title}\n\n{desc}\n\n> Prototype F for review, built from the data of release v{VERSION}. '
+              f'Not the live site. Every part of the page is listed here; a reader sees the parts written for their role.\n\n'
+              + _H.unescape(txt).strip() + f'\n\n---\nsite v{VERSION} · {BASE_URL}/{full}\n')
+        made.append((full, title, desc))
+
+    page('index.html', 'front', 'Prototype F: the line, the front page',
+         'The front page of the line prototype: one band under the masthead that says one thing to the persona in front of it, '
+         'and the page under it ordered for that role, at the depth they asked for.', front_body)
+    page('agencies/index.html', 'agencies', 'Prototype F: the line, the agencies',
+         'A content page under the line: the same page for every reader, with its own sentence per role in the line and the '
+         'spectrum of government advice as the line\'s picture.', agencies_body)
+    page('numbers/index.html', 'numbers', 'Prototype F: the line, the numbers',
+         'A content page under the line: the numbers in the news, with the facts by status as the line\'s picture.', numbers_body)
+    page('playbook/index.html', 'playbook', 'Prototype F: the line, the playbook',
+         'A content page under the line: the response step by step, with a line written for each role.', playbook_body)
+    page('console/index.html', 'console', 'Prototype F: the line, a page for the team',
+         'A page written for the team: the line carries the gate, the page is dimmed rather than hidden, and anyone can read it anyway.',
+         console_body, for_='team')
+
+    # the catalogue: every line the rules produce, drawn by the engine in the browser
+    cat = ('<div class="lnp-head"><p class="eyebrow">Prototype F &middot; the catalogue</p>'
+           '<h1 class="display" style="font-size:clamp(1.7rem,2.8vw,2.8rem)">Every line, by moment, role and page</h1>'
+           '<p class="lede">Every sentence the rules can produce at this release, drawn by the same engine the pages use '
+           '(assets/design/line/engine.js). Nothing here is stored; it is a reading of the rules.</p></div>'
+           '<div id="ln-cat"></div>')
+    page('catalogue/index.html', 'catalogue', 'Prototype F: every line the rules produce',
+         'Every line the rules produce, by visit moment, by role and by page, drawn by the engine at this release.', cat)
     return made

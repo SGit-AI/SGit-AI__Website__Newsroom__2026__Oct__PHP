@@ -2182,6 +2182,35 @@
    "status": "open",
    "owner": "abp",
    "note": "From the brief: Wikipedia as an anchor (25 October)."
+  },
+  {
+   "id": "296",
+   "title": "Prototype F, the line: the editor's design of 25 October built on the site, at /admin/design/line/ (six pages from the live data, the pack's engine and words vendored, the numbers filled from the vault)",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "The editor handed story-site the briefing pack 'the line' in its session of 25 October and asked for it to be implemented. Brief: admin/content/briefs/2026-10-25__brief__the-line.md. The engine's 19 tests pass against the vendored copy (node --test assets/design/line/engine.test.mjs). Rules 1 to 7, the eleven moments, the seven roles, depth, seen and folding, shared links and the past view all work in Chromium; no page errors.",
+   "version": "0.17.0"
+  },
+  {
+   "id": "297",
+   "title": "The line on the live site: the rollout in the brief's order, starting with the line and the boot script on every page (rule 7 and the fallback line), replacing the lens's two dials",
+   "status": "open",
+   "owner": "editor",
+   "note": "Waiting on the editor's go, as prototype E was (board 275, which this supersedes). Steps 2 to 7 of the brief's rollout follow: roles and depth on the live front page and the content pages, the first visit and the guesses, seen and the return moments, shared links and the past view, a page line for every page (the desk approves the words), then the reader's vault (board 140) and telemetry (board 262)."
+  },
+  {
+   "id": "298",
+   "title": "The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x depth cells, the thresholds, and who writes the page lines",
+   "status": "open",
+   "owner": "editor",
+   "note": "Section 14 of the brief. The prototype ships the pack's answers to all five; they are cheap to change (assets/design/line/roles.json, copy.src.json and moments.json are read by the build)."
+  },
+  {
+   "id": "299",
+   "title": "A page line for every page, and the change log from the build's own diff between releases",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "Prototype F writes lines for the front page, the agencies, the numbers and the playbook; every other page falls back to the page-title line. The change log is read from data/timeline.json, tagged by phase; the live one should come from the diff between releases, as the brief's section 10.5 asks."
   }
  ],
  "evidence_vault": {

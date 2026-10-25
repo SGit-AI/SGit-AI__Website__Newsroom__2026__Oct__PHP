@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.17.7. Data as of 2026-10-24T16:05Z (the latest capture in the evidence vault, commit 8c16a64a7cf6). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.18.0. Data as of 2026-10-24T16:05Z (the latest capture in the evidence vault, commit 8c16a64a7cf6). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -1065,3 +1065,9 @@ Licence: content CC BY 4.0, code Apache-2.0.
 - [Prototype E: the lens, the front page](https://php.oct.2026.newsroom.sgit.ai/admin/design/lens/index.md): A working prototype of a site that shapes itself to the reader in front of them: how long they have, who they are, what they want to do, and what they have seen; set once at the top right, applied on every page with no reload and no flash.
 - [Prototype E: the lens, a content page](https://php.oct.2026.newsroom.sgit.ai/admin/design/lens/agencies/index.md): A content page that answers to two of the four settings: its length follows your time and its one line follows who you are; it reads the same whatever your aim, and the control says so.
 - [Prototype E: the lens, a page for the team](https://php.oct.2026.newsroom.sgit.ai/admin/design/lens/console/index.md): A page written for one kind of reader: anyone else is told who it is for and can read it anyway; the time and aim settings do not apply, and the control says so.
+- [Prototype F: the line, the front page](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/index.md): The front page of the line prototype: one band under the masthead that says one thing to the persona in front of it, and the page under it ordered for that role, at the depth they asked for.
+- [Prototype F: the line, the agencies](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/agencies/index.md): A content page under the line: the same page for every reader, with its own sentence per role in the line and the spectrum of government advice as the line's picture.
+- [Prototype F: the line, the numbers](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/numbers/index.md): A content page under the line: the numbers in the news, with the facts by status as the line's picture.
+- [Prototype F: the line, the playbook](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/playbook/index.md): A content page under the line: the response step by step, with a line written for each role.
+- [Prototype F: the line, a page for the team](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/console/index.md): A page written for the team: the line carries the gate, the page is dimmed rather than hidden, and anyone can read it anyway.
+- [Prototype F: every line the rules produce](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/catalogue/index.md): Every line the rules produce, by visit moment, by role and by page, drawn by the engine at this release.

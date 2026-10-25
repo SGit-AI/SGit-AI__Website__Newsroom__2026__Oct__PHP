@@ -428,6 +428,18 @@
    "owner": "editor",
    "status": "open",
    "title": "Wikipedia's text (CC BY-SA 4.0) is republished in full under /wikipedia/ and data/wikipedia/, with attribution and the same licence on those pages, against the site's rule that no third-party page is reproduced (written for unlicensed pages). Decide whether it stays, and whether README's licence line says so"
+  },
+  {
+   "id": "297",
+   "owner": "editor",
+   "status": "open",
+   "title": "The line on the live site: the rollout in the brief's order, starting with the line and the boot script on every page (rule 7 and the fallback line), replacing the lens's two dials"
+  },
+  {
+   "id": "298",
+   "owner": "editor",
+   "status": "open",
+   "title": "The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x depth cells, the thresholds, and who writes the page lines"
   }
  ],
  "branches": [
@@ -891,5 +903,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.17.7"
+ "version": "0.18.0"
 }

@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.17.7. Not the live site.
+> Mockup D for review, built from the data of release v0.18.0. Not the live site.
 
-PHP Team console Console Overview Board 194 Agents 19 Releases 150 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 197 Agents 19 Releases 151 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 24 October 2026, 16:05 UTC 
 
 Release 
-v0.17.7 
-150 releases since 22 Oct 
+v0.18.0 
+151 releases since 22 Oct 
 
 Open on the board 
-194 
-97 done, 4 waiting 
+197 
+98 done, 4 waiting 
 
 Pages built 
 948 
@@ -30,8 +30,17 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 194
+#### Open 197
 
+ #299 
+A page line for every page, and the change log from the build's own diff between releases 
+ claude-story-site 
+ #298 
+The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x … 
+ editor 
+ #297 
+The line on the live site: the rollout in the brief's order, starting with the line and the boot script on every page (r… 
+ editor 
  #295 
 The ontologist's policy (admin/content/agents/ontologist/policy.json, kept by abp@): add data/wikipedia/**, admin/wikipe… 
  abp 
@@ -44,15 +53,6 @@ Wikipedia's text (CC BY-SA 4.0) is republished in full under /wikipedia/ and dat
  #292 
 The gate's em-dash rule exempts the sources page for third-party titles; the Wikipedia section carries third-party text … 
  security@php.newsroom 
- #291 
-Trust shown, not assumed: the same counts kept for Wikipedia (statements cited, references captured, reverts, contradict… 
- ontologist 
- #290 
-Wikipedia's PHP2Shell article: grade its uncited statements (4 of 39) and its attributed ones against the captures of th… 
- factcheck 
- #289 
-Follow every link Wikipedia's PHP2Shell article cites and keep following them: each capture turns a quotation Wikipedia … 
- researcher 
 
 #### Waiting 4
 
@@ -69,8 +69,11 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 97
+#### Done 98
 
+ #296 
+Prototype F, the line: the editor's design of 25 October built on the site, at /admin/design/line/ (six pages from the l… 
+ claude-story-site v0.17.0 
  #286 
 The chrome after the lens prototype: the bar in two lines on a laptop (132px to 91px), the reading strip and the page's … 
  claude-story-site v0.16.0 
@@ -89,13 +92,11 @@ An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39
  #271 
 Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the telemetry vault) to observability, sealed … 
  editor 
- #268 
-Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take in dev: schedule.py notes <you>; send th… 
- security@php.newsroom 
 
 ### Releases
  latest 8 
 
+ v0.18.0 2026-10-25 the line, built: the editor's design of 25 October as prototype F at /admin/design/line/ (six pages from the evidence vault, the p… 
  v0.17.7 2026-10-25 Board row 285 (the board): the journalist's and the correspondent's schedules are active, and the desk's wakes still come before t… 
  v0.17.6 2026-10-25 The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): jou… 
  v0.17.5 2026-10-25 The journalist and the correspondent now run on a schedule (the schedules page, /views/loops/): the correspondent 45 minutes after… 
@@ -103,12 +104,11 @@ Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take 
  v0.17.3 2026-10-24 The readers' answers on the home page, the start page and three briefings brought to 16:05 UTC on 24 October, and the engineer's a… 
  v0.17.2 2026-10-24 The correspondent's first review: nine corrections to the journalist's 94 verdicts and rows (/views/desk/, /claims/review/), PHP's… 
  v0.17.1 2026-10-24 The ontologist's debrief and self-check on the Wikipedia section, after the fact: the seven answers, the screenshots, and the one … 
- v0.17.0 2026-10-24 Wikipedia as an anchor: the PHP2Shell article read as a fractal semantic graph, one statement per sentence classed as fact, attrib… 
 
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 26 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 28 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
  conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 20 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 16 
@@ -119,4 +119,4 @@ Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.17.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.18.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

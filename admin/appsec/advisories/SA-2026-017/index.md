@@ -53,4 +53,4 @@ Proposed: the gate fails if a file under data/ or admin/build/ exists locally bu
 
 
 ---
-site v0.17.7 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-017/index.html
+site v0.18.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-017/index.html

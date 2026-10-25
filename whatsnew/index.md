@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.18.0 · 25 October 2026new since your last visit
+
+the line, built: the editor's design of 25 October as prototype F at /admin/design/line/ (six pages from the evidence vault, the pack's engine and words vendored with its 19 tests, the numbers filled from data); story-site's round 3
+
+No reader-facing section changed in this release.
+
 ## v0.17.7 · 25 October 2026new since your last visit
 
 Board row 285 (the board): the journalist's and the correspondent's schedules are active, and the desk's wakes still come before the correspondent's review
@@ -1140,4 +1146,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.17.7 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.18.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
