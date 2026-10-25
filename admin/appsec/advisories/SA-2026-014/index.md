@@ -49,8 +49,8 @@ The editor's names are refused as senders; subjects are one plain line; a repeat
 
 ## What prevents it now
 
-The gate check for message headers is on the security branch; signed messages are [SA-2026-024](../../advisories/SA-2026-024/index.html).
+The gate fails on a message whose sender disagrees with its file name, repeats a header, or claims to be the editor (security_check.py, 25 October); signed messages are [SA-2026-024](../../advisories/SA-2026-024/index.html).
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-014/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-014/index.html

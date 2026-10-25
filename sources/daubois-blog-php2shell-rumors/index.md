@@ -54,9 +54,15 @@ capture 20261022T081256Z · HTTP 200 · https://daubois.dev/blog/cve-2026-109618
 - `rendered.html` 8bc8f77f0b030a431c17cfb6048a516fae5d743bcf9af1d571e1a377dbe77fbd 21,926 bytes
 - `screenshot.png` c86032b5d2ce179ae664684fe600ba45c0b3ff7003c835716b5cce042a13e514 817,325 bytes
 - `text.txt` 5ef17f9886aa93f7f15ab1f6657ef6991a8ec008e5e309bdde5b5e51d961c4d8 8,821 bytes
+capture 20261023T160435Z · HTTP 200 · https://daubois.dev/blog/cve-2026-109618-php2shell-rumors/- `headers.json` 623adbf1988184eb649cce8858aced007c5165ba6b98c43fcac0f6f8a553ecf2 1,113 bytes
+- `page.html` cc22de0d3ddaa04114949ea038bb07fa1d246179a302856380c2588aaec8db33 22,135 bytes
+- `provenance.json` 407a98c95ce52c1483f3569b75eb4c2e34948836cc0da42e26d58572bf9d913d 1,776 bytes
+- `rendered.html` d1b60675fb382f85b3e100bba166f6ddcd6f6227bb577920e6ace8e38e0c86d4 21,926 bytes
+- `screenshot.jpg` b6d33a9fcad21d4a5e0492ffaff604c34cb5abed436db0c682cea86e24546adb 585,832 bytes
+- `text.txt` 530fd6cb980feec08028f50c58a1631f903305d34a3319fe86c46f0f1d71588a 8,821 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/daubois-blog-php2shell-rumors/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/daubois-blog-php2shell-rumors/index.html

@@ -30,7 +30,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on
 ## This fact over time
 - 2026-10-21 14:04 UTCOpenAI on X publishes [OpenAI on X: OpenAI models helped researchers ... discover critical security flaws in PHP](../../sources/x-openai-php2shell/index.html)
 - 2026-10-22THN publishes [Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed](../../sources/thehackernews-php2shell-4days/index.html)
-- 2026-10-22 08:13 UTCSaved into the evidence vault: THN
+- 2026-10-22 08:13 UTCSaved into the evidence vault: THN, then 1 more capture
 - 2026-10-22 08:16 UTCSaved into the evidence vault: OpenAI on X
 - 2026-10-22Enters this site as disputed in v0.1.0 (reconstructed from git)
 
@@ -56,4 +56,4 @@ Sources: x-openai-php2shell, thehackernews-php2shell-4days
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/ahead-of-attackers/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/ahead-of-attackers/index.html

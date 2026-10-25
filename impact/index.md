@@ -6,7 +6,7 @@ Two ledgers for php2shell: every system reported taken offline with who said so,
 
 # Impact: what was taken offline, and what was compromised
 
-In plain English Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 24 October).
+In plain English Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 09:35 UTC on 25 October).
 
 Two ledgers, because they measure different things. Taking a system offline is a decision an operator makes and can confirm, and the first table is full. Being compromised is a fact only evidence establishes, and the second table has, as of the latest capture, no confirmed entry. That gap is the most important finding on this site: the reported cost of php2shell so far is the cost of precaution.
 
@@ -31,6 +31,8 @@ Two ledgers. The first is systems taken offline, which is a decision an operator
 | **Romania: the Romanian Police website** RO | Replaced with a maintenance page | 2026-10-21 | Critic Arad | reported | [Critic Arad](../sources/criticarad-php2shell-cve-2026-109618-ghid-patch/index.html) |
 | **Japan: a bank's online services; Prime Minister Takaichi's website** JP | Companies and organisations took precautionary measures; a bank suspended its online service for a time, and the Prime Minister's website was also stopped "for countermeasures" (対策のため) | 2026-10-22 | Jiji Press, as illustrated by Yahoo! News Japan | reported | [Yahoo!ニュース](../sources/news-yahoo-articles-d953e2a13109253ae974bf2a64ebe94/index.html) |
 | **Switzerland: the EPFL, the Basel-Stadt administration, the University of Geneva, the insurer La Mobilière** CH | Websites temporarily unavailable from 21 October, 'according to several media'; La Mobilière says it suspended access to its site itself; Basel-Stadt took servers and services offline to patch | 2026-10-21 | 24 Heures | reported | [24 Heures](../sources/24heures-php2shell-qui-est-affecte-par-la-faille/index.html) |
+| **Japan: Shizuoka Bank (website and banking app)** JP | Announced a precautionary, temporary shutdown of its website and banking app over the PHP flaws; a precaution, not a compromise | 2026-10-22 | IT Finanzmagazin; The Next Web, citing Bloomberg | reported | [IT Finanzmagazin](../sources/it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we/index.html) [The Next Web](../sources/the-next-web-php2shell-no-confirmed-breaches/index.html) |
+| **Nepal: government portals, the Nepal Rastra Bank's website and web services, the Department of Revenue Investigation's freight-tracking system** NP | Taken offline or suspended as a precaution over the PHP flaws; the Department said it suspended its service because of the risk of exploitation; restoration in stages after patching and testing. The page's headline says 'thousands' of websites but gives no count | 2026-10-25 | The Kathmandu Post | reported | [The Kathmandu Post](../sources/kathmandupost-science-technology-2026-10-25-php2shell/index.html) |
 
 ## Compromised
 
@@ -60,4 +62,4 @@ What a compromise of one system would reach is on [the blast-radius section](../
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/impact/index.html

@@ -39,9 +39,15 @@ capture 20261022T081652Z · HTTP 200 · https://patchtheplanet.org/- `headers.js
 - `rendered.html` d347cfa4c1e9dc2c990b725259875a732e38470560bfc51b6bb21da3419d2662 7,680 bytes
 - `screenshot.png` 0872d96463aabdeccdeb873b9cb455601fe9cdea8cb6b15f45c65a9e85f1bb75 285,779 bytes
 - `text.txt` 3e32706fb7c0ed83bb988da8372dbca5e70dbdfebc6135060f3f777805f852ae 1,053 bytes
+capture 20261023T232528Z · HTTP 200 · https://patchtheplanet.org/- `headers.json` bef5ad2305cc911064e3220ea40101ea93808644720426b1ba89f104134316b7 622 bytes
+- `page.html` a98d556b82b60f2f0bbe54986d03c73d64af0ca025e64785f43cba2fc5ab07ee 2,325 bytes
+- `provenance.json` f37266b025b2e6402f394ebc1fc8c6ec7f9bf1838fd23a90eb3ff1c75f0c272f 1,629 bytes
+- `rendered.html` 6c1494423baff5a3e35188574e221186ede298bb90b42c2964ddcb5e3bbf631b 8,032 bytes
+- `screenshot.jpg` ffd3e34781095497e36d6aa4ef318de85c038de8ffc12d6bf9e9140bc36fbaf3 146,354 bytes
+- `text.txt` 63821bd00a0a9f37db0eb0068d039bbfe8fb7d27dce1623dc0c66386b394ad5f 1,218 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/patchtheplanet-org/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/patchtheplanet-org/index.html

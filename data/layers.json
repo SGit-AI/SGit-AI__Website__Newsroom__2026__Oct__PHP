@@ -245,6 +245,27 @@
    "used_on": "graph/index.html"
   },
   {
+   "path": "data/wikidata-links.json",
+   "layer": "authored",
+   "by": "the ontologist, from the candidates admin/wikipedia/wikidata_links.py finds on Wikidata",
+   "from": "each party's name searched on Wikidata; a proposal is the tool's, a confirmed item is the ontologist's, and the build reads only confirmed ones",
+   "used_on": "graph/parties/index.html"
+  },
+  {
+   "path": "data/wikipedia/",
+   "layer": "evidence",
+   "by": "admin/wikipedia/fetch.py, run by the ontologist",
+   "from": "the English Wikipedia's API: every revision of each watched article with its wikitext (CC BY-SA 4.0, by its contributors), its Wikidata item and the articles that link in; the text is third-party material",
+   "used_on": "wikipedia/index.html"
+  },
+  {
+   "path": "data/wikipedia/<article>/graph.json",
+   "layer": "derived",
+   "by": "admin/build/build.py (the ontologist's block) with admin/build/wikitext.py",
+   "from": "the article's latest revision parsed into sections, statements and references; the references matched to data/sources.json by address and to data/entities.json by host; every revision's delta",
+   "used_on": "wikipedia/index.html"
+  },
+  {
    "path": "data/arcs.json",
    "layer": "derived",
    "by": "the librarian (librarian@php.newsroom)",
@@ -438,6 +459,13 @@
    "layer": "site",
    "by": "each scheduled agent, its own card (data/schedule/<agent>.json)",
    "from": "when the agent wakes, its objective, model, session, brief and its wake prompt word for word; changed only with the editor's go",
+   "used_on": "team/schedule/index.html"
+  },
+  {
+   "path": "data/scheduled-tasks.json",
+   "layer": "site",
+   "by": "conductor, admin/build/schedule.py tasks on its full passes",
+   "from": "the account's scheduled tasks for this newsroom, as the scheduled-task service lists them (name, times, session, model, last fired, prompt); never a key",
    "used_on": "team/schedule/index.html"
   },
   {
@@ -670,6 +698,20 @@
    "by": "dev@php.newsroom",
    "from": "admin/build/grc_history.py: for every release whose risk graph changed, the nodes and edges added and removed, the bases changed and the gaps opened and closed against the release before, from the graph each release committed; written once per release, at its own build",
    "used_on": "grc/changes/index.html"
+  },
+  {
+   "path": "data/loops.json",
+   "layer": "derived",
+   "by": "admin/build/export_loops.py (correspondent@php.newsroom, at each wake)",
+   "from": "the evidence vault's commit log, the releases on origin/dev with the vault head each served, the repository's size and the schedule cards' next wakes",
+   "used_on": "views/loops/index.html"
+  },
+  {
+   "path": "data/briefs-published.json",
+   "layer": "site",
+   "by": "claude-story-site, for the editor",
+   "from": "admin/build/build.py (build_briefs): the UTC minute each brief in admin/content/briefs/ was first published; seeded once from git on 25 October 2026, then each new brief stamped by the first build that includes it; an entry is never changed",
+   "used_on": "admin/briefs/index.html"
   }
  ]
 }

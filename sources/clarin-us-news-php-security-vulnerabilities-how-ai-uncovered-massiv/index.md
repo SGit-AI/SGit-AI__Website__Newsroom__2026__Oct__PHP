@@ -48,9 +48,15 @@ capture 20261023T080331Z · HTTP 200 · https://www.clarin.com/us-news/php-secur
 - `provenance.json` 104cea664352abd14c008254d3d2eb0966a9edaaa0d656deda3fdea6c301b9a6 1,846 bytes
 - `rendered.html` 42fab97cc7a7b08095ba8b783499fd89abc555bf82a764902d03235d313801f1 322,974 bytes
 - `text.txt` c11dd717273bac9546aaf433f103637af20d579a0fb1ba06943929d81a70e82d 11,484 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.clarin.com/us-news/php-security-vulnerabilities-how-ai-uncovered-massive-14-year-old-flaw-threatening-70-of-the-internet_0_BPPGgn8KC7.html- `headers.json` 1ed2c706aa0cf8e540f252ccb062a8c22ac0c29bc27cabbe51567449b510361d 1,004 bytes
+- `page.html` fb183bc9518a6532811c98a4a5e5fea0df058fd92b4cdfed88bbb7712ccf7ef3 310,116 bytes
+- `provenance.json` 17c4c74191d706a3f7a113c99cb4c3f6ed8e99ac8a6276af6f81bd55351b7a4a 2,073 bytes
+- `rendered.html` 9e45a8a7d379a8d9bea687b64466511b0845402a297bbc0959b59f44f8407e27 322,371 bytes
+- `screenshot.jpg` 4ab9356d8a1fa03b9cbb4e08ffdd9bc7c7b5e42538fecc08a226fe67e6ad57f3 930,810 bytes
+- `text.txt` 1afdd74e14120ea72e68bb67d88654c35a42cb69f4700c4015260d0f61ea2c1c 11,512 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/clarin-us-news-php-security-vulnerabilities-how-ai-uncovered-massiv/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/clarin-us-news-php-security-vulnerabilities-how-ai-uncovered-massiv/index.html

@@ -37,9 +37,15 @@ capture 20261022T113158Z · HTTP 200 · https://therecord.media/php-foundation-s
 - `rendered.html` 387866a008c5068d55372962daa2904c6bee30821494b4c30a467aaa1c775383 96,511 bytes
 - `screenshot.png` 31f0aeaac3e78e1ab3c579a6217361b9148b439f02245b029c43c19d4f7f759a 1,498,927 bytes
 - `text.txt` 28c72344e03a5a79b2ee018193bbd930283c78444f9cffcea3dc7a422c49051e 7,717 bytes
+capture 20261023T160435Z · HTTP 200 · https://therecord.media/php-foundation-statement-critical-vulnerabilities- `headers.json` 2556552de87e0fb836287316ada33cfbf38a8854dd71c77a7c51a32cad3bcf28 987 bytes
+- `page.html` 174ced4d86e17882246f66b238020390f7025ebd7540bf47cea84b3941e0d830 92,236 bytes
+- `provenance.json` 91d4623dd66eb56ccd65fead43d62255897d8e5e92a595fe9d40eaa890448210 1,878 bytes
+- `rendered.html` 14c928a86548e2e96efa8ef7d725ac5a832fb58d993c74436e44ee03818a690c 96,434 bytes
+- `screenshot.jpg` a6805b7be8e65d53c948e0f3548693b0d97ac4f4448f96cdf1deb60f47bacedf 538,706 bytes
+- `text.txt` be05daefbd9bf0d2d1f784c5c8e34c73955e15d6b420dc4f75ecd35701a92ddb 7,730 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/therecord-php-foundation-statement/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/therecord-php-foundation-statement/index.html

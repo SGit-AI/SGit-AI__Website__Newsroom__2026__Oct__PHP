@@ -80,7 +80,7 @@
    ],
    "missing_control": "Escaping matched to the output context, and link targets restricted to a safe character set.",
    "fix": "Link targets are quoted, escaped and restricted to [A-Za-z0-9/._#-]; https links exclude quotes and spaces.",
-   "prevention": "The gate fails on inline event-handler attributes in generated HTML (the check is on the security branch).",
+   "prevention": "The gate fails on any inline event-handler attribute in generated HTML (security_check.py, since the editor's go on 25 October).",
    "refs": []
   },
   {
@@ -348,7 +348,7 @@
    ],
    "missing_control": "Authentication of the sender.",
    "fix": "The editor's names are refused as senders; subjects are one plain line; a repeated header or a sender that disagrees with the file name marks the message forged; bodies print inside an untrusted fence.",
-   "prevention": "The gate check for message headers is on the security branch; signed messages are SA-2026-024.",
+   "prevention": "The gate fails on a message whose sender disagrees with its file name, repeats a header, or claims to be the editor (security_check.py, 25 October); signed messages are SA-2026-024.",
    "refs": []
   },
   {
@@ -372,7 +372,7 @@
    ],
    "missing_control": "A check that catches the class, not the instance.",
    "fix": "All quoted and passed through E() or U().",
-   "prevention": "The gate check for inline event handlers (security branch); the CSP.",
+   "prevention": "The gate fails on inline event-handler attributes in generated HTML (25 October); the CSP.",
    "refs": []
   },
   {
@@ -421,7 +421,7 @@
    ],
    "missing_control": "A check that every file the build reads is tracked.",
    "fix": "The rule was narrowed (!data/*.json); the scripts were un-ignored.",
-   "prevention": "Proposed: the gate fails if a file under data/ or admin/build/ exists locally but is ignored.",
+   "prevention": "The gate fails on any file under data/, admin/build/, admin/content/ or assets/ that .gitignore hides (security_check.py, 25 October).",
    "refs": []
   },
   {
@@ -445,7 +445,7 @@
    ],
    "missing_control": "A second wall behind escaping.",
    "fix": "Every page carries a CSP meta tag: scripts only from the site and hashed inline scripts; connections only to the services the pages use; no objects, no base, forms to self.",
-   "prevention": "Crawled all 802 pages with zero violations; injected handlers, javascript: URLs and scripts are refused. frame-ancestors needs a header (SA-2026-039).",
+   "prevention": "Crawled all 802 pages with zero violations; injected handlers, javascript: URLs and scripts are refused. frame-ancestors needs a header (SA-2026-039). The gate fails on a page with no CSP, or one that lets inline or eval'd script run (25 October).",
    "refs": []
   },
   {
@@ -821,7 +821,7 @@
    "contributing": [],
    "missing_control": "",
    "fix": "",
-   "prevention": "Pin the branch, read the generated list from HEAD, stage explicit paths (security branch).",
+   "prevention": "Proposed: pin the branch, read the generated list from HEAD, stage explicit paths.",
    "refs": []
   },
   {
@@ -960,6 +960,32 @@
    "refs": [
     ".claude/settings.json",
     "admin/build/agents.py stop_hook()"
+   ]
+  },
+  {
+   "id": "SA-2026-041",
+   "title": "The security check printed part of every secret it found",
+   "severity": "medium",
+   "status": "fixed",
+   "disclosure": "full",
+   "cwe": "CWE-532",
+   "component": "admin/build/security_check.py",
+   "found_by": "CodeQL (GitHub code scanning, alerts 4 to 6)",
+   "found": "2026-10-24",
+   "fixed_in": "pending",
+   "fixed_by": "security@php.newsroom",
+   "summary": "When the gate, the release tripwire or the history scan found a credential, its message quoted the first ten characters of what it found, and those messages go to the terminal and to the CI log.",
+   "impact": "Part of an AWS access key id, a token or a key in a log anyone with access to the run can read; the more of a secret is known, the less is left to guess.",
+   "attack_path": "Commit a secret by mistake; the gate refuses it and prints its first ten characters in the public Actions log.",
+   "root_cause": "The finding was written to help a person locate the secret, and repeated part of it to do so.",
+   "contributing": [
+    "The security tooling was written by the security agent and reviewed by nobody else until code scanning was switched on."
+   ],
+   "missing_control": "An independent scanner over our own security code.",
+   "fix": "Each secret pattern has a name; a finding says which kind it found (\"credential shape: an Anthropic key\") and never repeats a character of it.",
+   "prevention": "GitHub code scanning (CodeQL) now runs on every push, and push protection blocks supported secrets before they reach the repository.",
+   "refs": [
+    "admin/build/security_check.py kind_of()"
    ]
   }
  ]

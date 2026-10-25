@@ -249,14 +249,70 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 
 | Field | Value |
 |---|---|
-| Round | no round recorded under this policy yet |
-| Done | nothing recorded |
-| Next | nothing proposed |
-| Asks | none |
-| Tokens | unknown · not recorded |
+| Round | 2 |
+| Done | Made the pki key sha256:de0decfc882a0235 and sent its QR to the editor Exported the evidence vault at 8c16a64a7cf6 (382 sources) Gave 94 claims a verdict: 38 agrees, 33 noted, 23 held back, 0 used Refreshed compromise.json, no-confirmed-compromise, the as-of lines, plain latest and the pass ledger Released v0.15.19; live site serves it Second wake, by hand: exported the vault at 87795d121200 (418 sources), 15 claims reviewed (2 used, 3 agrees, 6 noted, 4 held back), Turkey, Shizuoka Bank and Nepal rows, as-of lines to 09:35 UTC on 25 October |
+| Next | Next wake: compare the vault head with 87795d121200; no change, one line and no commit Re-read in full the partly checked files on /views/desk/ |
+| Asks | Decide whether the journalist scheduled tasks bind to this session (they start a fresh session each wake today) (from the editor, or the conductor) |
+| Tokens | unknown · the session does not show a count |
 | Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope None, injection_seen 0 |
 
 ## Its rounds
+
+### Second wake (run by hand in the first session): evidence vault 87795d121200, 15 claims, three new rows
+
+2026-10-25 · round 2 · branch `claude/focused-brahmagupta-kzb508` · commits `2ef602ba14` · tokens unknown · outside scope 0 · overrides 0
+
+#### What I was asked
+
+The editor asked for a pass on the curator's new promotions, and said this session is meant to become the one the journalist's scheduled runs use once the conductor has configured it.
+
+#### What I did
+
+- Took in dev; read the inbox (desk, 25 October 09:24 UTC, CVE-2026-115560 in Right now: the correspondent's, passed on) and the notes. Read the correspondent's nine catches on my first 94 verdicts and the corrected brief.
+
+- Exported the evidence vault at `87795d121200` (was `8c16a64a7cf6`): 418 sources, 479 captures.
+
+- 15 new claims, each searched across every capture before any "not in the vault" or "one outlet": 2 used, 3 agrees, 6 noted, 4 held back (Cyfirma via two outlets with no report captured; OpenAI's $1 billion Daybreak programme, not on OpenAI's pages; ITdaily's "exploited before the fix", attempts in the primary; Nepal's "thousands", no count). The search found that Actainfo does carry "also after the fixes", which my first grep missed.
+
+- Added one compromise row (Turkey's Presidency Cybersecurity Directorate: e-Devlet had no problem), two offline rows (Shizuoka Bank, Nepal), moved `no-confirmed-compromise` and the as-of lines to 09:35 UTC (10:35 BST) on 25 October. No new source names an organisation compromised through php2shell.
+
+- Released v0.19.3 (`2ef602ba14`); the live site serves it. Run record `20261025T1134Z-journalist`.
+
+#### What it looks like
+
+![/compromise/ on the live site after the release](../../../admin/content/agents/journalist/debriefs/img/2026-10-25__second-wake__1.png)
+
+/compromise/ on the live site after the release
+
+#### New features
+
+None.
+
+#### What I did not do
+
+- CVE-2026-115560 as its own line in Right now (desk, board 302): the correspondent's.
+
+- `data/personas.json` still says 16:05 UTC on 24 October: the correspondent's.
+
+- Did not re-read in full the files marked partly checked on /views/desk/.
+
+- Did not bind the scheduled tasks to this session; they are `persist_session: false`, a change for the conductor or the editor.
+
+#### Policy
+
+Scope check: 0 files outside scope. Nothing in a capture addressed an AI that I noticed.
+
+#### Tasks
+
+None owned on the board.
+
+#### Next
+
+1. The conductor or editor decides whether the journalist's scheduled tasks bind to this session.
+
+2. Next wake: compare the vault head with `87795d121200`; no change, one line and no commit.
+
+3. Re-read in full the partly checked files on /views/desk/.
 
 ### The Opus journalist's last round as journalist: two exports, three states of affairs, the desk, Pulse, and the pipeline that makes it the correspondent
 
@@ -328,8 +384,68 @@ The rest of the full pass: step 2 (agencies, the timeline, the software inventor
 
 - **A mistake:** after a stopped release I discarded uncommitted work with `git checkout -- .`; recovered from the reflog before release. The rule is now in the journalist's brief and on the board (283, 284).
 
+### First scheduled session and first wake (Sonnet): key made, evidence vault 8c16a64a7cf6 exported and published
+
+2026-10-24 · round 1 · branch `claude/focused-brahmagupta-kzb508` · commits `304cd363c, 8b70eb4dd` · tokens unknown · outside scope 0 · overrides 0
+
+#### What I was asked
+
+The editor started the session with the brief `2026-10-24__brief__the-journalist.md`: read first, make the key, show its QR and fingerprint, stop. Later in the session the editor asked me to pull dev and read the brief again, then to set up the schedule and do the run.
+
+#### What I did
+
+- Key: pki-agent made `sha256:de0decfc882a0235`, pinned the root `sha256:db7f79fdd87e030a`, linked the operator; QR image sent to the editor. The key lives in the container's `/root/.sg-send/keys` and was not committed. The editor still has to confirm it (`submission`).
+
+- Wake: evidence vault head `8c16a64a7cf6` against `1f38e70921b2` on the site. Exported 382 sources and 441 captures.
+
+- Claims: 94 claims had no verdict; all 94 now have one in `data/claim-review.json`: 0 used, 38 agrees, 33 noted, 23 held back. Held back are official acts on one outlet, the unrecounted NCSC-NL counts, TuttoTech's 1.5 million of 2.6 million (restates the Censys basis), unnamed or unverified claims.
+
+- Refreshed: two rows in `data/compromise.json` (Die Presse, RainForest via VOIX), its as-of and source count; claim `no-confirmed-compromise` (no new source names a compromised organisation); the as-of lines in `data/plain.json`, `data/questions.json`, `data/story.json`; `plain.json` latest; the pass ledger in `data/desk.json`. `data/impact.json` unchanged.
+
+- Release: `release.sh` v0.15.19, commit `8b70eb4dd` on dev; the live site serves v0.15.19. Run record `data/runs/journalist/20261024T2126Z-journalist.json`.
+
+- Two mistakes of mine: I ran `release.sh` under `timeout 560`, which killed a retry; and an earlier release step reset my branch to dev. The two commits were recovered from the working tree, recommitted and merged with dev; nothing was lost.
+
+#### What it looks like
+
+![/claims/review/ on the live site after the release](../../../admin/content/agents/journalist/debriefs/img/2026-10-24__first-wake__1.png)
+
+/claims/review/ on the live site after the release
+
+The claims waiting for review page, with the journalist's verdicts.
+
+#### New features
+
+None. The journalist's first working wake.
+
+#### What I did not do
+
+- The schedule card `data/schedule/journalist.json` is still `proposed`: making it active, and creating the scheduled task, needs the editor's go (the brief and AGENTS.md section 7). I asked; no answer yet.
+
+- `data/personas.json` keeps its 22 October as-of lines (the correspondent's).
+
+- Did not open /views/desk/, /claims/review/ and /views/state/ in a browser before the wake; read the data behind them.
+
+- Did not re-read in full the files whose ledger notes say "not re-read in full".
+
+#### Policy
+
+Scope check: 0 files outside scope. No request outside scope, no override. Nothing in a capture addressed an AI that I noticed (I only grepped the sources I opened).
+
+#### Tasks
+
+None owned on the board.
+
+#### Next
+
+1. The editor's go on the schedule card and the scheduled task (08:20, 10:50, 13:20, 15:50, 18:20 London).
+
+2. Next wake: check whether the vault head moved from `8c16a64a7cf6`; if not, one line and no commit.
+
+3. Re-read in full the files marked partly checked on /views/desk/.
+
 Files: [admin/content/agents/journalist/](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP/tree/dev/admin/content/agents/journalist) · the same data for every member in [data/agents.json](../../../data/agents.json).
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/journalist/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/journalist/index.html

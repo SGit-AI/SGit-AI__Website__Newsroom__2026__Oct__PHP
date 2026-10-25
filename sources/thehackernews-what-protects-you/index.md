@@ -35,9 +35,15 @@ capture 20261022T113151Z · HTTP 200 · https://thehackernews.com/2026/10/php2sh
 - `rendered.html` 64ef5d20df0ea8dfc700220c350757cc455bcfc017751142819841c35e11ff9c 179,165 bytes
 - `screenshot.png` e0e1a25547dc8d319ff4071cceff2950d36aa030ec7f2ab1625d04018d2e39cc 3,022,943 bytes
 - `text.txt` 2301d254784fd6612f36f844e16a706e2e7ca5f8d8f942f7f36544c59d78d82c 13,774 bytes
+capture 20261023T160435Z · HTTP 200 · https://thehackernews.com/2026/10/php2shell-what-actually-protects-you.html- `headers.json` 6fe8d9a594d87cf3b4e9bff6ba69087b72b6caae8189f7c963459900dbfc9457 854 bytes
+- `page.html` ac78fa7d842fd9a45c9ce0e37f6d967597b33523f67008ec1a947a71d1d32453 180,622 bytes
+- `provenance.json` 6331f3ea1bddda7045300126dcf0e02e399cc9f23e0ac6a8473ecacb20cd0104 1,845 bytes
+- `rendered.html` 77fb59d32cd5b8d132a7f9909e2798408b7410faee4448752b405a9138704474 182,039 bytes
+- `screenshot.jpg` ea9238fdc90aa3a11701eb1c2d3bd19ccc41d5917ff3a02836b83f7c17345990 737,255 bytes
+- `text.txt` 0a3177145305ec7cb2ab8689aea2d0b8a71f695571ed483cf9374df75c18f191 13,743 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/thehackernews-what-protects-you/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/thehackernews-what-protects-you/index.html

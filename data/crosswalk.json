@@ -77,6 +77,14 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "addustour": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "afr": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "agconnect": {
    "grc": "stakeholder:media",
    "relation": "among"
@@ -85,12 +93,20 @@
    "grc": "stakeholder:agencies",
    "relation": "is"
   },
+  "ai-matters": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "ai4business": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
   "akamai": {
    "grc": "stakeholder:waf-vendors",
+   "relation": "among"
+  },
+  "alghad": {
+   "grc": "stakeholder:media",
    "relation": "among"
   },
   "amazon": {
@@ -137,11 +153,19 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "blue-news": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "borncity": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
   "boursorama": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "brussels-times": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -201,7 +225,27 @@
    "grc": "stakeholder:waf-vendors",
    "relation": "among"
   },
+  "cloudlinux": {
+   "grc": "stakeholder:panels",
+   "relation": "among"
+  },
+  "clubic": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "cna-sg": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cnbc": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cnbc-indonesia": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cnbctv18": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -217,7 +261,15 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "coin-academy": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "coingape": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "coinpedia": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -229,7 +281,15 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "computable-be": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "computer-weekly": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "computerhoy": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -237,11 +297,35 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "cp24": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cpanel": {
+   "grc": "stakeholder:panels",
+   "relation": "among"
+  },
   "critic-arad": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
   "crn": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "crypto-id": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cryptoast": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cumhuriyet": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "cyber-daily": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -265,7 +349,23 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "cybersecurity360": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "dailysecu": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "dan-tri": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "dark-reading": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "defesa-em-foco": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -273,7 +373,31 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "detik": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "dfir-blog": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "diariobitcoin": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "die-presse": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "digitaltoday": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "donanimhaber": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "donews": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -289,6 +413,10 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "ebn": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "economic-times": {
    "grc": "stakeholder:media",
    "relation": "among"
@@ -301,8 +429,24 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "el-debate": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "el-mundo": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "el-observador": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "ellio": {
    "grc": "stakeholder:threat-intel",
+   "relation": "among"
+  },
+  "emarketerz": {
+   "grc": "stakeholder:media",
    "relation": "among"
   },
   "enisa-csirts": {
@@ -313,12 +457,44 @@
    "grc": "stakeholder:non-profits",
    "relation": "among"
   },
+  "estadao": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "europa-press": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "everyeye": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "express-computer": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
   "fastly": {
    "grc": "stakeholder:waf-vendors",
+   "relation": "among"
+  },
+  "faz": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "feuerwehr-magazin": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "financiarul": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "fnnews": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "forbes-tr": {
+   "grc": "stakeholder:media",
    "relation": "among"
   },
   "fortinet": {
@@ -329,11 +505,35 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "fortune-italia": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "fr-interieur": {
    "grc": "stakeholder:national-gov",
    "relation": "among"
   },
+  "free-press-journal": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "gamemeca": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "gazzetta-del-sud": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "gbaf": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "generation-nt": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "gigazine": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -345,7 +545,19 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "green-bay-press-gazette": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "guardian": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "hardwarecooking": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "harian-jogja": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -378,6 +590,10 @@
    "relation": "among"
   },
   "impress-watch": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "inc42": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -417,6 +633,14 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "itmedia": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "itwire": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "j-cast": {
    "grc": "stakeholder:media",
    "relation": "among"
@@ -442,6 +666,10 @@
    "relation": "among"
   },
   "lalibre": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "latin-times": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -509,6 +737,10 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "nbc-news": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "ncsc-nl": {
    "grc": "stakeholder:eu-agencies",
    "relation": "among"
@@ -541,6 +773,14 @@
    "grc": "stakeholder:eu-agencies",
    "relation": "among"
   },
+  "nyt": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "open-access-government": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "openai": {
    "grc": "stakeholder:openai",
    "relation": "is"
@@ -566,6 +806,10 @@
    "relation": "among"
   },
   "paperjam": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "pc-gamer": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -669,6 +913,10 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "sina-finance": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "socradar": {
    "grc": "stakeholder:threat-intel",
    "relation": "among"
@@ -693,6 +941,10 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "the-atlantic": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "the-mandarin": {
    "grc": "stakeholder:media",
    "relation": "among"
@@ -714,6 +966,10 @@
    "relation": "among"
   },
   "the420": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "thenextweb": {
    "grc": "stakeholder:media",
    "relation": "among"
   },
@@ -761,6 +1017,10 @@
    "grc": "stakeholder:threat-intel",
    "relation": "among"
   },
+  "washington-post": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "watchtowr": {
    "grc": "stakeholder:threat-intel",
    "relation": "among"
@@ -785,11 +1045,23 @@
    "grc": "stakeholder:media",
    "relation": "among"
   },
+  "wired-es": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "wiz": {
    "grc": "stakeholder:wiz",
    "relation": "is"
   },
+  "wsj": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
   "yahoo": {
+   "grc": "stakeholder:media",
+   "relation": "among"
+  },
+  "yahoo-finance": {
    "grc": "stakeholder:media",
    "relation": "among"
   },

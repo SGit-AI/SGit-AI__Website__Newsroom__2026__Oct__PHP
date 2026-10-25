@@ -32,7 +32,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:28 UTC. The scale is on
 
 ## This fact over time
 - 2026-10-21Daubois publishes [What the PHP2Shell rumors got wrong, from inside the PHP security team](../../sources/daubois-blog-php2shell-rumors/index.html)
-- 2026-10-22 08:12 UTCSaved into the evidence vault: Daubois
+- 2026-10-22 08:12 UTCSaved into the evidence vault: Daubois, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -57,4 +57,4 @@ Sources: daubois-blog-php2shell-rumors
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/leak-hn/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/leak-hn/index.html

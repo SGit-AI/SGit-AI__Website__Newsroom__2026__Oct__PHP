@@ -318,14 +318,247 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 
 | Field | Value |
 |---|---|
-| Round | 1 |
-| Done | Prototype E, the lens, at /admin/design/lens/ (three pages, from the live data), and its brief The redesign live: tracks A, B, C, the team console, the task menu and two dials, the wide layout |
-| Next | The lens on the live layout, with dev Board 230 and 231: the headline as the day's news, the offline sentence as the agencies count |
-| Asks | Go or not for the lens on the live site; the words of its three questions; whether the team is a reader (board 275) (from the editor) Enrol story-site's key, sha256:f15dbb872e108ec7 (from the editor) Owners for /ops/ and /analysis/ in scope.pages (board 253) (from the librarian) |
+| Round | 4 |
+| Done | The line on every page in place of the dials; the router, the view in the address bar and 28 cards The briefs page as a list of titles with a page per brief, and the admin pages using the whole width The line on a phone no longer holds the top of the screen, and the article on URL paths, personas in the address and a single-page site Prototype F, the line, at /admin/design/line/: six pages on the editor's briefing pack, the pack's engine and words vendored with its 19 tests, every number filled from the evidence vault Headlines near the top of every page: the bar in two lines, slim strips, /ops/ and /analysis/ fixed on a phone Prototype E, the lens, at /admin/design/lens/ (three pages, from the live data), and its brief The redesign live: tracks A, B, C, the team console, the task menu and two dials, the wide layout |
+| Next | The reading path back into the line, and page lines for more pages The decks, on the same addresses |
+| Asks | The go for the line on the live site (297), its five decisions (298), and the URL shape and router decisions in the article (302) (from the editor) Enrol story-site's key, sha256:f15dbb872e108ec7 (from the editor) |
 | Tokens | unknown · the session does not show a token count to the agent |
-| Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope 0, injection_seen 0 |
+| Policy | out_of_scope_requests 0, pushbacks 0, overrides 2, writes_outside_scope dev's ask.js, site-tools.js, telemetry.js, sg-meter.js and sg-meter-core.js, layout() in build.py and /404.html: the editor's explicit go in this session, 25 October, injection_seen 0 |
 
 ## Its rounds
+
+### The line, built: the editor's design of 25 October as prototype F, from the evidence vault
+
+2026-10-25 · round 3 · branch `claude/determined-hopper-mly6db` · commits `released as v0.17.0 by admin/build/release.sh (the release commit carries this debrief)` · tokens unknown · outside scope 0 · overrides 0
+
+#### What I was asked
+
+The editor, in this session, 25 October 2026, with a briefing pack attached (`the-line-pack.zip`): "can you implement this design?" The pack is the design session's output: a brief, the seven roles, every word the line can say, the eleven visit moments, a storage schema, a reference engine with 19 tests, a standalone prototype and the journey screenshots. Its own starting prompt asks for prototype F first, built from the live data, for the editor's go, then the rollout on the live pages in the brief's order.
+
+#### What I did
+
+Built prototype F at `/admin/design/line/`: six pages, every word and number from the evidence vault of the release they were built in.
+
+- **The pack, vendored unchanged** under `assets/design/line/`: `engine.js` (the pack's pure, tested engine), `engine.test.mjs`, `roles.json`, `moments.json`, `storage.schema.json`, and `copy.src.json` (the pack's words, with the story's numbers turned into placeholders).
+
+- **The site's own runtime**, written here: `boot.js` (blocking, in ``: reads the record, the session, the URL and the referrer, works out the role, the depth and the moment, writes them on `` before the first paint), `line.js` (gives the engine the state, draws the line, keeps the record, the control, seen and folding, shared links, the past view, the live-update poll, and the catalogue), `line.css`.
+
+- **The build** (`admin/build/design.py`, `build_line`): generates `copy.json` (the pack's words with this release's numbers), `config.js`, `shape.css` (which parts each role sees and in what order, from `roles.json`), the six pages and their markdown twins, and the change log, read from `data/timeline.json` and tagged by phase.
+
+- **The pages**: the front page with sixteen parts, shown and ordered per role; the agencies, the numbers and the playbook, each with a line per role; a page for the team behind the gate; and a catalogue of all 34 lines the rules produce, drawn by the engine in the browser.
+
+- The brief is in the repository (`admin/content/briefs/2026-10-25__brief__the-line.md`) with a note on what was built against it; the design hub links prototype F above the earlier mockups; REALITY.md has a section; board 296 to 299.
+
+**Checked.** The pack's 19 tests pass against the vendored copy (`node --test assets/design/line/engine.test.mjs`), including "no placeholder is ever left in braces, for every role, moment and page", which is also the check that every number came through from the vault. In Chromium: the first visit panel, the seven roles, the three depths, all eleven moments (first, reading, hour, sameday, second, week, long, live, switched, shared, past), the gate, folding, Undo, "Make it mine" and "Forget me". No page errors; nothing moves above the fold, because the line's row is reserved before the first paint.
+
+#### What it looks like
+
+![A first visit: the panel says who we think you are, why, and offers the six others](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__the-line__first-visit.png)
+
+A first visit: the panel says who we think you are, why, and offers the six others
+
+![An Executive reading on: one row, the chip, and this page's sentence for them](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__the-line__executive-reading.png)
+
+An Executive reading on: one row, the chip, and this page's sentence for them
+
+![Behind the chip: the seven roles, the readers inside the role, and how technical](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__the-line__the-control.png)
+
+Behind the chip: the seven roles, the readers inside the role, and how technical
+
+![Switching to Security: the page re-lays in place, the line says what moved, Undo is offered](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__the-line__switched-to-security.png)
+
+Switching to Security: the page re-lays in place, the line says what moved, Undo is offered
+
+![Back within a week: what changed for an Executive, with the changed part marked in the page](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__the-line__since-you-were-here.png)
+
+Back within a week: what changed for an Executive, with the changed part marked in the page
+
+![A page written for the team: the gate in the line, the page dimmed rather than hidden](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__the-line__the-gate.png)
+
+A page written for the team: the gate in the line, the page dimmed rather than hidden
+
+![Back within the hour: parts already read fold to one row until they change](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__the-line__read-parts-folded.png)
+
+Back within the hour: parts already read fold to one row until they change
+
+![The catalogue: every line the rules produce, by moment, role and page](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__the-line__every-line.png)
+
+The catalogue: every line the rules produce, by moment, role and page
+
+![On a phone: the line keeps its chip and its sentence](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__the-line__phone.png)
+
+On a phone: the line keeps its chip and its sentence
+
+#### New features
+
+A reviewer can read the same page as any of the seven roles at any of three depths, watch it re-lay in place, come back later and see what changed for that role and what folded away, open a shared view without losing their own, look at a date in the past, meet the gate on a team page, and read every line the rules can produce on one page. Nothing on the live reader pages changed.
+
+#### What I did not do
+
+- **The live site**: it still carries the two dials of v0.14.0. The rollout waits for the editor's go (board 297, which supersedes 275).
+
+- **A page line for every page**: four pages have their own; everything else would fall back to the page-title line (board 299).
+
+- **The change log from the build's diff between releases** (brief 10.5): prototype F reads the story's own dated timeline and tags it by phase. Honest material, but not the same thing.
+
+- **The reader's vault and telemetry** (boards 140 and 262): the record is kept in the browser only.
+
+- `boot.js` is 3.4 KB, not the brief's "under 2 KB"; it duplicates the ladder so it can run before the engine loads. `line.js` re-derives with the engine after first paint, so the engine stays the one source of truth.
+
+#### Policy
+
+`python3 admin/build/agents.py check --agent story-site`: nothing outside scope. Files: `admin/build/design.py`, `assets/design/**` (scope.writes); a new brief, board rows of my own, my section of REALITY.md (scope.appends); this debrief and `status.json`.
+
+Security self-check, the seven questions: every string the new scripts put on the page goes through `textContent` or `createElement`, never `innerHTML`; the only values read from a URL (`?as=`, `?depth=`, `?asof=`) are resolved against `roles.json` or parsed as a date and written back as words, so a script-shaped date renders as text (checked). No new outside source of text, no secret, no new service (the release poll is same-origin, `connect-src 'self'`), no inline script (the two islands are `application/json`), no new right for any agent. Nothing I read asked me to do anything.
+
+#### Tasks
+
+Closed: 296. Opened: 297 and 298 (the editor), 299 (mine). Board 275 (the lens's go) is superseded by 297; I left the row for the editor to close. Still mine and open: 230, 231, 223, 226, 227, 287 is dev's.
+
+#### Next
+
+1. With the go on 297: step 1 of the rollout, the line and the boot script on every live page with rule 7 and the fallback line, replacing the dials.
+
+2. Board 299: a page line per page, for the desk to approve, and the change log from the release diff.
+
+3. Boards 230 and 231, still waiting from the desk's review.
+
+#### After the release: the phone, and the article (same day, v0.19.0)
+
+The editor, on an iPhone: the line must not hold the top of the screen, because a locked band costs too much of a
+
+small screen. On a phone the line is no longer sticky; it scrolls away with the page and its sentence runs full
+
+width. Measured at 390x844: the resting line 125px, the first-visit panel 253px, both scrolling away, the headline
+
+394px down. `assets/design/line/line.css` only. Board 304.
+
+He also asked, before any of it is built, for an article on moving the site to URL paths and a single page, with a
+
+link that can name its persona. It is
+
+`admin/content/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site.md`, published at `/admin/briefs/` and
+
+linked from the design hub: the rule that the URL carries what can be shared and the browser carries what is the
+
+reader's, `/agencies/as/security/` as the shape (the page keeps its own path, the persona is a suffix), what that
+
+needs from search engines, fragments and a router rather than a framework, the trap in rendering a page in two
+
+languages, five steps that each ship on their own, and five decisions for the editor. Boards 305 and 306. Nothing of
+
+it is built.
+
+#### The briefs page, and the width of the console (same day, v0.20.0)
+
+The editor, with two screenshots: the briefs page is one wall of 57 briefs rendered end to end, and the console sits
+
+in a narrow column on a wide screen.
+
+- **Briefs**: `/admin/briefs/` is now a list of titles, newest first, each with its date, who wrote it and its first sentence, linking to its own page at `/admin/briefs//`. 57 new pages, each with a markdown twin, in `llms.txt`, with older and newer links at the foot. Every link already published to `admin/briefs/index.html#` still lands on that brief's row: the five in `build.py` were checked one by one. A brief that embeds an image needed its relative links deepened by one directory, which is `deepen_links()`.
+
+- **Width**: under `admin/` and `team/` the main column has no maximum width; the reader pages stay at 1,440px. Prose keeps its 82ch measure, so only the tables, lanes and cards take the extra room.
+
+**Policy.** `admin/briefs/**` is the editor's own page in `admin/content/agents/editor/policy.json`, and the briefs
+
+block lives in `build.py`, so this is a write outside story-site's scope. The editor asked for it explicitly in this
+
+session, which is the one override the rules allow; it is counted in `status.json` (`policy.overrides`: 1) and named
+
+here. Boards 309 and 310.
+
+### The line and the router, live on every page
+
+2026-10-25 · round 4 · branch `claude/determined-hopper-mly6db` · commits `released as v0.22.0 by admin/build/release.sh (the release commit carries this debrief)` · tokens unknown · outside scope 5 · overrides 1
+
+#### What I was asked
+
+The editor, 25 October, having read the router notes: "it's spot on ... I approve all this": previews as cards for the pages
+
+likely to be linked; the front page stays the Executive's, with the address rewritten so the reader sees "as executive";
+
+the reserved words; and not to wait. Asked two questions, he chose that story-site changes dev's scripts itself, and that the
+
+line goes live with the router.
+
+#### What I did
+
+- **The line on every page**, in place of the two dials: the band under the bar, its boot script before the first paint, `config.js` carrying the change log so a page needs no island, the front page's answer card following the reader, and `p2s.persona` kept as a real persona id so the rest of the site keeps working. The older "Reading as" bar and the newcomer bar are hidden where the line runs: one message at a time.
+
+- **The router**: `/404.html`, self-contained (its script inline, hashed by the site's policy, every link absolute), reads an address at its first reserved word, hands the view to the line for this visit, and opens the real page. Reloading a view address comes back to the same view. A missing page says so.
+
+- **The address follows the reader**: every page rewrites the bar to `/
+/as//` (`/as/executive/` on the front page). Moving the address deeper would break every relative link, so every link is made absolute against the real page first (and every link added later, by a mutation observer), and every script resolves its requests against `window.P2S_BASE`, the real page, through a fetch shim in `boot.js`; `` is ruled out by `base-uri 'none'`. - **Cards**: 28 real files, the front page, the agencies, the numbers and the playbook for each of the seven readers, with their own preview title and description and a canonical link to the page; a "Read this page as" row at the foot of those pages links them (a tap switches in place where the line runs). - **Dev's scripts**, under the editor's go: `ask.js` and `site-tools.js` build the Ask and Feedback module URLs from the real page; `telemetry.js` counts the real page; `sg-meter` (v1.3.1, in place) keys what a reader has paid for by the real page, so a view is never charged twice. - **The build** refuses a real page whose path uses a reserved word as a directory. **Checked**: 27 journeys in Chromium against a local stand-in for GitHub Pages (404.html served with status 404):
+
+first visit, following links, reload of a view, switching role, the read-as row, a shared link with a saved view
+
+(borrowed, "Switch to mine"), a view with no card, a dated address, a missing page, a fresh visitor from a link, the
+
+cards' preview tags, the phone. No failed request and no page error. Headline at 256px on a laptop, 335px on a phone.
+
+#### What it looks like
+
+![A first visit: Executive, the line's question, the address already /as/executive/](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__line-live__front-first-visit.png)
+
+A first visit: Executive, the line's question, the address already /as/executive/
+
+![The agencies for an Executive: the line's sentence and the spectrum as its picture](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__line-live__agencies-executive.png)
+
+The agencies for an Executive: the line's sentence and the spectrum as its picture
+
+![A shared link opened by someone with their own view: borrowed, theirs kept](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__line-live__shared-link-borrowed.png)
+
+A shared link opened by someone with their own view: borrowed, theirs kept
+
+![An address that is not a page](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__line-live__not-found.png)
+
+An address that is not a page
+
+![On a phone: one bar, the line under it, scrolling away](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__line-live__phone.png)
+
+On a phone: one bar, the line under it, scrolling away
+
+![The control in the night theme](../../../admin/content/agents/story-site/debriefs/img/2026-10-25__line-live__dark-control.png)
+
+The control in the night theme
+
+#### New features
+
+A link can name its reader: `/agencies/as/security/`, `/as/cfo/`, `/playbook/as/engineer/`. Every page shows the reader's
+
+view in the address bar, so copying it shares it. A pasted card link unfurls with who it is for.
+
+#### What I did not do
+
+- Dated views (`on`, `vs`, `since`) are read and not applied: the site does not keep each release's pages yet.
+
+- The reading path the older bar carried ("Next: your briefing") is not yet one of the line's actions.
+
+- The gate still wants 404.html and the cards in the sitemap and llms.txt; the proposal to exempt them is security's.
+
+#### Policy
+
+`agents.py check`: five files outside scope, all dev's (`ask.js`, `site-tools.js`, `telemetry.js`, `sg-meter.js`,
+
+`sg-meter-core.js`), changed under the editor's explicit go in this session; counted as one override. Also under that
+
+go: `layout()` in `build.py` and `/404.html`. Security self-check: the new inline script (404.html) is hashed by the
+
+site's own policy builder; the fetch shim only turns relative URLs into absolute same-origin ones; the router matches
+
+the address only against the known reader words, and nothing from an address reaches the page as markup; no new
+
+service, secret or right. Nothing I read asked me to act.
+
+#### Tasks
+
+Closed: 324. Opened: 325 (security), 326 (dev), 327 (mine). Boards 297 and 311 are the editor's to close.
+
+#### Next
+
+1. The reading path back into the line; page lines for more pages.
+
+2. The decks (board 314), on the same addresses: `/decks/as//`.
 
 ### Prototype E, the lens: a site that shapes itself to the reader in place, and the brief for it
 
@@ -403,8 +636,82 @@ Closed: 274. Opened: 275 (editor). Still mine and open: 230, 231 (the desk's fro
 
 2. Board 230 and 231: the front page's headline as the day's news, and the offline sentence matching the agencies count; small, and the desk asked first.
 
+### The chrome after the lens prototype: headlines near the top on every page; and a briefing pack on the lens's 16 options
+
+2026-10-24 · round 2 · branch `claude/determined-hopper-mly6db` · commits `released as v0.16.0 by admin/build/release.sh (the release commit carries this debrief)` · tokens unknown · outside scope 0 · overrides 0
+
+#### What I was asked
+
+The editor, in this session, 24 October 2026: a briefing pack (a zip) on the lens for a separate conversation, focused on its 16 options; then, "since your new design(s) looks much better and cleaner than what we have now, so with that lens features, can you see the areas you can improve and fix?"
+
+#### What I did
+
+- **The pack**, outside the repository (sent to the editor in the session): a README with the 16 options (4 times, 6 readers, 3 aims, 3 seen), one screenshot per option against one baseline, the parts × options matrix, the 16 personas, the briefs, the lens code and a runnable copy of the three prototype pages. Its README lists six open questions the capture raised, the first being that a part written for one reader ("Your next three actions", "Before you write") is hidden by the default aim.
+
+- **A review of twelve live pages** at 1440px and 390px against the prototype. The measure: how far down the headline starts. Before: 321px to 433px on a laptop, 338px to 1,184px on a phone.
+
+- **Fixes**, CSS only, in the live layer (`admin/build/design.py`, `LIVE_CSS`, written to `assets/design/v2-live.css`):
+
+- The bar in two lines on a laptop (brand and tools, then the menu): 132px to 91px. Between 1,100px and 1,499px the status text gives way (it is on every page's own heading).
+
+- The reading strip, the newcomer line and the page's kind slimmed; on a phone the kind is one line.
+
+- /ops/ on a phone: the rail (reading path and links) after the content, not before: headline at 366px instead of 1,184px.
+
+- /analysis/, the design hub and mockup B on a phone: an inline grid kept a 320px second column, so the hero's text ran one word per line. The inline styles are gone; the stylesheet's own phone rule applies.
+
+- After: 224px to 312px on a laptop, 250px to 379px on a phone. No horizontal scroll, no page errors.
+
+#### What it looks like
+
+![Before: a content page on a laptop, headline at 349px](../../../admin/content/agents/story-site/debriefs/img/2026-10-24__chrome__before-desktop.png)
+
+Before: a content page on a laptop, headline at 349px
+
+![After: the same page, headline at 234px](../../../admin/content/agents/story-site/debriefs/img/2026-10-24__chrome__after-desktop.png)
+
+After: the same page, headline at 234px
+
+![Before: /ops/ on a phone, the rail first](../../../admin/content/agents/story-site/debriefs/img/2026-10-24__chrome__before-phone-ops.png)
+
+Before: /ops/ on a phone, the rail first
+
+![After: /ops/ on a phone, the headline first](../../../admin/content/agents/story-site/debriefs/img/2026-10-24__chrome__after-phone-ops.png)
+
+After: /ops/ on a phone, the headline first
+
+![After: /analysis/ on a phone, the hero readable](../../../admin/content/agents/story-site/debriefs/img/2026-10-24__chrome__after-phone-analysis.png)
+
+After: /analysis/ on a phone, the hero readable
+
+#### New features
+
+None; every page is easier to start reading.
+
+#### What I did not do
+
+- The reading strip and the newcomer line still take six lines on a phone: their scripts are dev's (board 287).
+
+- The lens on the live site: waiting for the editor's go (board 275). It would replace the tools row with one chip, and the newcomer line with its first question.
+
+- Pattern C (answer, picture, cards) on numbers, impact and timeline, which are mine: next round.
+
+#### Policy
+
+`agents.py check --agent story-site`: nothing outside scope. Security self-check: CSS only; no new data path, script, service, secret or right; nothing read asked me to act.
+
+#### Tasks
+
+Closed: 286. Opened: 287 (dev). Open and mine: 275 waits on the editor; 230, 231, 223, 226, 227.
+
+#### Next
+
+1. Pattern C on numbers, impact and timeline (my pages), from the agencies page's model.
+
+2. With the go on 275, the lens live.
+
 Files: [admin/content/agents/story-site/](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP/tree/dev/admin/content/agents/story-site) · the same data for every member in [data/agents.json](../../../data/agents.json).
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/story-site/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/story-site/index.html

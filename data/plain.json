@@ -24,7 +24,7 @@
   },
   {
    "q": "Has anyone been hacked?",
-   "a": "Attackers have been trying: Cloudflare reports millions of attempts and Amazon a honeypot hit four days before disclosure. But as of 24 October no named organisation has said it was broken into through this flaw, and CISA has not listed either flaw as exploited. One company in Japan is investigating a break-in without saying how it happened, and a Czech university says it stopped an attack.",
+   "a": "Attackers have been trying: Cloudflare reports millions of attempts and Amazon a honeypot hit four days before disclosure. But as of 09:35 UTC on 25 October no named organisation has said it was broken into through this flaw, and CISA has not listed either flaw as exploited. One company in Japan is investigating a break-in without saying how it happened, and a Czech university says it stopped an attack.",
    "href": "impact/index.html",
    "sources": [
     "x-eastdakota-php2shell-stats",
@@ -112,7 +112,7 @@
   "discovery/index.html": "Who found the flaws (three research teams, all using AI help) and what the AI actually did, as far as anyone has said.",
   "leak/index.html": "The plan was to publish the fix and the details together on 22 October. The secret leaked on the 20th; this page is the hour-by-hour account.",
   "exploitation/index.html": "Every sign of attackers trying to use the flaws, in order. Lots of attempts; no confirmed break-in of a named organisation yet.",
-  "impact/index.html": "Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 24 October).",
+  "impact/index.html": "Two lists: who took websites offline (many, as a precaution), and who was actually broken into (no named organisation through this flaw, as of 09:35 UTC on 25 October).",
   "defence/index.html": "Can these attacks be blocked or spotted? Yes at the edge and on the server, mostly; no from ordinary web logs alone.",
   "context/index.html": "How php2shell compares with famous past flaws such as Heartbleed and Log4Shell, using the official record of which ones were exploited.",
   "playbook/index.html": "What an organisation that runs PHP should do, step by step, merged from every agency's advice.",
@@ -147,7 +147,7 @@
    ]
   },
   {
-   "text": "Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of the morning of 24 October, no named organisation has said it was broken into through this flaw. The one security company that had claimed a successful break-in, Sophos, withdrew it; US banks and the large crypto platforms report none.",
+   "text": "Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 09:35 UTC on 25 October, no named organisation has said it was broken into through this flaw. The one security company that had claimed a successful break-in, Sophos, withdrew it; US banks and the large crypto platforms report none.",
    "sources": [
     "x-eastdakota-php2shell-stats",
     "cisa-kev-json",
@@ -224,7 +224,7 @@
    "href": "leak/index.html"
   },
   {
-   "text": "Attackers are trying, in large numbers: one internet security company reports millions of attempts, and Amazon reports a decoy server hit four days before the announcement. No named organisation has said it was broken into through these flaws, as of 24 October, and the US government's official list of flaws known to be used in attacks did not include them when last checked.",
+   "text": "Attackers are trying, in large numbers: one internet security company reports millions of attempts, and Amazon reports a decoy server hit four days before the announcement. No named organisation has said it was broken into through these flaws, as of 09:35 UTC on 25 October, and the US government's official list of flaws known to be used in attacks did not include them when last checked.",
    "status": "reported",
    "sources": [
     "x-eastdakota-php2shell-stats",
@@ -263,7 +263,7 @@
    "href": "impact/index.html"
   },
   {
-   "text": "Whether the fix is complete. A report on 21 October suggested it may not be; the PHP security team replied on the mailing list on 22 October, and this site will settle the question once that reply is saved here.",
+   "text": "Whether the fix is complete. A report on 21 October suggested it may not be; the PHP security team replied on the mailing list on 22 October, and this site will settle the question once that reply is saved here. Separately, on 23 October PHP published an advisory for another flaw, CVE-2026-115560, which affects fully patched releases and needs a rare session setting (reported by Cloudflare, SOCRadar and The Hacker News).",
    "href": "code/index.html"
   },
   {
@@ -281,17 +281,17 @@
  ],
  "latest": [
   {
-   "when": "22 Oct",
-   "text": "A count in Switzerland finds just over 23,000 of nearly 690,000 servers, about 3.5%, still affected a day after the fix.",
+   "when": "23 Oct, 10:03 UTC",
+   "text": "Die Presse: as of 12:03 Vienna time (10:03 UTC) on 23 October no successful attack via the PHP flaws was known in Austria.",
    "sources": [
-    "ictjournal-news-2026-10-22-deux-failles-critiques-d"
+    "diepresse-41383717-die-php-sicherheitsluecke-ist-a"
    ]
   },
   {
-   "when": "22 Oct",
-   "text": "AhnLab, as reported, classes 27 of 100 php2shell repositories on GitHub as proof-of-concept exploits.",
+   "when": "23 Oct, 09:16 UTC",
+   "text": "Japan's RainForest reports that its honeypots recorded 21 php2shell-related requests from 14 different addresses: attempts, not break-ins.",
    "sources": [
-    "rocket-boys-security-measures-lab-php2shell-poc-expl"
+    "voix-business-cards-rainforest-ip-activity-an"
    ]
   },
   {
@@ -302,17 +302,17 @@
    ]
   },
   {
-   "when": "22 Oct, 21:21 UTC",
-   "text": "Sophos withdraws an earlier claim of a successful compromise: its data shows scanning and a few failed attempts, and a botnet payload it saw was blocked.",
-   "sources": [
-    "cybersecuritynews-critical-php2shell-exploit-code"
-   ]
-  },
-  {
    "when": "23 Oct",
    "text": "American Banker: no US bank or credit union has publicly reported a compromise, despite millions of attempts.",
    "sources": [
     "americanbanker-news-banks-dodge-early-damage-from-php2s"
+   ]
+  },
+  {
+   "when": "22 Oct, 21:21 UTC",
+   "text": "Sophos withdraws an earlier claim of a successful compromise: its data shows scanning and a few failed attempts, and a botnet payload it saw was blocked.",
+   "sources": [
+    "cybersecuritynews-critical-php2shell-exploit-code"
    ]
   }
  ]

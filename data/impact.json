@@ -171,6 +171,29 @@
    "sources": [
     "24heures-php2shell-qui-est-affecte-par-la-faille"
    ]
+  },
+  {
+   "who": "Japan: Shizuoka Bank (website and banking app)",
+   "country": "JP",
+   "what": "Announced a precautionary, temporary shutdown of its website and banking app over the PHP flaws; a precaution, not a compromise",
+   "when": "2026-10-22",
+   "said_by": "IT Finanzmagazin; The Next Web, citing Bloomberg",
+   "status": "reported",
+   "sources": [
+    "it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we",
+    "the-next-web-php2shell-no-confirmed-breaches"
+   ]
+  },
+  {
+   "who": "Nepal: government portals, the Nepal Rastra Bank's website and web services, the Department of Revenue Investigation's freight-tracking system",
+   "country": "NP",
+   "what": "Taken offline or suspended as a precaution over the PHP flaws; the Department said it suspended its service because of the risk of exploitation; restoration in stages after patching and testing. The page's headline says 'thousands' of websites but gives no count",
+   "when": "2026-10-25",
+   "said_by": "The Kathmandu Post",
+   "status": "reported",
+   "sources": [
+    "kathmandupost-science-technology-2026-10-25-php2shell"
+   ]
   }
  ],
  "compromised": [

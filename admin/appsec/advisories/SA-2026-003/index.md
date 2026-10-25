@@ -48,8 +48,8 @@ Link targets are quoted, escaped and restricted to [A-Za-z0-9/._#-]; https links
 
 ## What prevents it now
 
-The gate fails on inline event-handler attributes in generated HTML (the check is on the security branch).
+The gate fails on any inline event-handler attribute in generated HTML (security_check.py, since the editor's go on 25 October).
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-003/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-003/index.html

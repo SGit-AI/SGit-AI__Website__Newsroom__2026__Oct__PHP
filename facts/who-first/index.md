@@ -34,7 +34,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on
 - 2026-10-21Calif publishes [php2shell by Calif Research — A tale of two PHP remote vulnerabilities](../../sources/calif-php2shell/index.html)
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)
 - 2026-10-22 08:09 UTCSaved into the evidence vault: PHP Foundation
-- 2026-10-22 08:10 UTCSaved into the evidence vault: Calif
+- 2026-10-22 08:10 UTCSaved into the evidence vault: Calif, then 1 more capture
 - 2026-10-22 08:16 UTCSaved into the evidence vault: Ryan Austin, Calif on X
 - 2026-10-22Enters this site as confirmed in v0.1.0 (reconstructed from git)
 
@@ -60,4 +60,4 @@ Sources: calif-php2shell, x-lcfr-hax-hash-tweet, php-foundation-blog-security-re
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/who-first/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/who-first/index.html

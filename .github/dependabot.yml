@@ -1,0 +1,16 @@
+# Dependabot keeps the actions our workflows pin to a commit SHA current (the editor's go, 24 October 2026).
+# Each update is a pull request against dev that a person reviews before it merges: a new action version is code that
+# runs with the workflow's permissions, so it is never merged unread. Kept by security@php.newsroom.
+# Only GitHub Actions are watched: the site's Python is standard library only and its JavaScript is vendored by hand,
+# with its source and hash, so neither has a package manifest for Dependabot to read.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "dev"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "actions"

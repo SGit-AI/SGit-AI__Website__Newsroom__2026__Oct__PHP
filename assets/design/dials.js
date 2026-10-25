@@ -3,7 +3,8 @@
 (function () {
   'use strict';
   var cfgEl = document.getElementById('p2s-dials'); if (!cfgEl) return;
-  var C = JSON.parse(cfgEl.textContent), html = document.documentElement, up = html.getAttribute('data-root') || '', here = html.getAttribute('data-path') || '';
+  var C = JSON.parse(cfgEl.textContent), html = document.documentElement, up = '../'.repeat(((html.getAttribute('data-root') || '').match(/\.\.\//g) || []).length), here = html.getAttribute('data-path') || '';
+  function rel(h) { return /^[a-z0-9][a-z0-9\/._-]*$/i.test(String(h || '')) ? String(h) : null; }   // a home is a page of this site, never a scheme
   function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
   function persona() { var id = get('p2s.persona'); return id && C.personas[id] ? id : null; }
@@ -22,7 +23,7 @@
     document.querySelectorAll('.ni[data-gs]').forEach(function (ni) { ni.classList.toggle('dl-hide', !ni.querySelector('[data-g]:not(.dl-hide)')); });
     document.querySelectorAll('.dl-who').forEach(function (s) { s.value = pid || ''; });
     document.querySelectorAll('.dl-view button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-v') === v); });
-    var home = pid ? C.homes[C.personas[pid].track] : null;
+    var home = pid ? rel(C.homes[C.personas[pid].track]) : null;
     document.querySelectorAll('.dl-home').forEach(function (a) { if (home && home !== here) { a.hidden = false; a.href = up + home; a.textContent = (C.tracks[C.personas[pid].track] || 'Your') + ' home'; } else a.hidden = true; });
     var P = pid ? C.personas[pid] : null;
     document.querySelectorAll('[data-answer-for]').forEach(function (box) {
@@ -34,14 +35,14 @@
   // the front page sends a reader who said who they are to their track's home, once per visit; ?home stays here
   (function () {
     var pid = persona(); if (!pid || here !== 'index.html' || /[?&]home\b/.test(location.search)) return;
-    var t = C.personas[pid].track, home = C.homes[t];
+    var t = C.personas[pid].track, home = rel(C.homes[t]);
     var seen = null; try { seen = sessionStorage.getItem('p2s.routed'); } catch (e) {}
     if (t !== 'a' && home && !seen) { try { sessionStorage.setItem('p2s.routed', '1'); } catch (e) {} location.replace(up + home); }
   })();
   document.addEventListener('change', function (e) {
     if (e.target && e.target.classList && e.target.classList.contains('dl-who')) {
       var id = e.target.value || null; set('p2s.persona', id); set('p2s.view', null); apply();
-      var home = id ? C.homes[C.personas[id].track] : null;
+      var home = id ? rel(C.homes[C.personas[id].track]) : null;
       if (home && (here === 'index.html' || here === 'ops/index.html' || here === 'analysis/index.html') && home !== here) location.href = up + home + (home === 'index.html' ? '?home' : '');
     }
   });

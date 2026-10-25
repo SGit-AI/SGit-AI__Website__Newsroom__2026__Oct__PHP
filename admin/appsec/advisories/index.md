@@ -52,7 +52,8 @@ The security advisories of the PHP October 2026 newsroom: every vulnerability fo
 | [SA-2026-038](../advisories/SA-2026-038/index.html) | low | open | An imported billing log can carry a script link | `assets/components/sg-meter` |  |
 | [SA-2026-039](../advisories/SA-2026-039/index.html) | low | accepted | No clickjacking protection | `GitHub Pages` |  |
 | [SA-2026-040](../advisories/SA-2026-040/index.html) | medium | open | Repository code runs automatically in every agent session (the Stop hook) | `.claude/settings.json, admin/build/agents.py` |  |
+| [SA-2026-041](../advisories/SA-2026-041/index.html) | medium | fixed | The security check printed part of every secret it found | `admin/build/security_check.py` | this release |
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/index.html

@@ -201,14 +201,142 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 
 | Field | Value |
 |---|---|
-| Round | {"n": 1, "date": "2026-10-24", "branch": "narrator/offline-ledger", "commits": ["d2b166a36 (v0.13.0, the release)", "and the round's merges and briefs on the branch"]} |
-| Done | Briefs: the news desk chief; how many sites went offline (accepted); the front page on day two; the redesign for communication; the desk on a schedule; asking for corrections The data put right before any correction is asked of others (Finding-33, Finding-102, K-004, K-011, nl-offline, kev-precedent, the front page's offline advice) /outreach/: eleven requests with every quote checked in its capture, and the email the editor sends for each ready one The desk's schedule active (09:20, 16:20 London); the fact-check desk's schedule resumed Released as v0.13.0 |
-| Next | 09:20 wake: the front page against the fact-check desk's first run since 22 October the offline count with its basis (board 223) re-check the correction requests after the fact-check run; R-007 when K-009 settles |
-| Asks | agree data/outreach.json and the front-page wording as the desk's to keep, or name the owner (from the editor) add data/outreach.json and the desk's own scheduled task to the mandate; drop create.schedule.tenant from not_wanted for the desk's card (from abp@newsroom.sgit) the desk on data/team.json (board 219) (from conductor@php.newsroom) |
+| Round | {"n": 3, "date": "2026-10-25", "branch": "narrator/offline-ledger", "commits": ["2e5a6a4c74", "v0.21.1"]} |
+| Done | The scheduled task carries the card's prompt word for word, updated in place; none created, none to delete Wakes moved to 10:40 and 17:40 London, after the correspondent's reviews (board 285) |
+| Next | The 17:40 afternoon check Approve story-site's page lines for the line design when they exist |
+| Asks | the desk's scope over data/outreach.json and the front-page wording (from the editor, through abp@newsroom.sgit) |
 | Tokens | unknown · the session does not show a token count to the agent |
-| Policy | out_of_scope_requests 0, pushbacks 0, overrides 4, writes_outside_scope at the editor's direction: data/claims.json, plain.json, impact.json, questions.json, outreach.json, admin/build/build.py, admin/liaison/, team.json, layers.json, other members' board rows, injection_seen 0 |
+| Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope 0, injection_seen 0 |
 
 ## Its rounds
+
+### The desk's scheduled task wired to its card, and its wakes moved after the correspondent's reviews
+
+2026-10-25 · round 3 · branch `narrator/offline-ledger` · commits `2e5a6a4c74, v0.21.1` · tokens unknown · outside scope 0 · overrides 0
+
+#### What I was asked
+
+The editor, in this session on 25 October: confirm this is the desk's session; follow the wiring page's #desk section (/team/schedule/wiring/) and put the card's prompt on the scheduled task, word for word; and move the desk's schedule to a time that makes sense against the other scheduled runs.
+
+#### What I did
+
+- **Confirmed** the session: session_017Bh11ZMAfrDDo17TasVhQS, titled desk@php.newsroom, on narrator/offline-ledger. It matches the page's #desk row.
+
+- **Listed** the account's scheduled tasks. Only one wakes this session, trig_012VDhTAeH7RQRRTBF8Gxq6y, as the page lists.
+
+- **Updated it in place:** the card's prompt word for word, a new cron (CRON_TZ=Europe/London 40 10,17 * * *) and a new name. update_trigger accepted the change, so nothing was created and nothing needs deleting.
+
+- **Moved the wakes to 10:40 and 17:40 London.** The checks now come after the whole pipeline: 75 minutes after the correspondent's 09:25 review and 45 minutes after its 16:55 review. No other agent uses :40 at 10 or 17.
+
+- **Updated the card,** data/schedule/desk.json: times, status note, why these times, the session line, and a step saying the new times replace the 09:20 and 16:20 still named in a step quoted from the old prompt. Board 285 closed.
+
+- **Released** as v0.21.1, with a To-conductor note.
+
+#### What it looks like
+
+![The desk's schedule page](../../../admin/content/agents/desk/debriefs/img/2026-10-25__wired__schedule-desk.png)
+
+The desk's schedule page
+
+/team/schedule/desk/ at v0.21.1, showing the new times.
+
+#### New features
+
+None.
+
+#### What I did not do
+
+Nothing asked was left undone.
+
+#### Policy
+
+- agents.py check: nothing outside scope; the card and my own board row are mine.
+
+- The first release attempt ran under a 1,500-second limit I set myself. It lost a push race to another agent's release, and my limit stopped the script during its retry. Nothing reached dev. I reset the leftovers to the last commit, after checking that my change was safe on the branch; merged it back onto dev with no conflict; and released without an outer limit. Lesson for every wake: never put a time limit on release.sh.
+
+- A watcher I wrote earlier waited on a process search that matched its own command line, so it never ended. It now waits on the release's log file.
+
+- Nothing read addressed an AI.
+
+#### Tasks
+
+Closed: 285.
+
+#### Next
+
+The first wake on the new times is 17:40 London today: the afternoon check, after the correspondent's 16:55 review.
+
+#### Asks
+
+None new. The desk's scope over data/outreach.json is still with the editor.
+
+### Three scheduled wakes: correction requests kept in step with the publishers, the front page's stamp and the third flaw on the board
+
+2026-10-25 · round 2 · branch `narrator/offline-ledger` · commits `v0.14.13, v0.15.2, v0.18.4 (the three wake releases)` · tokens unknown · outside scope data/outreach.json (the editor's override of 24 October; the scope question is still open) · overrides 0
+
+#### What I was asked
+
+The desk's card, `data/schedule/desk.json`, at three wakes: 24 October 09:20 and 16:20, 25 October 09:20 (London).
+
+#### What I did
+
+- **24 October, 09:20 (v0.14.13).** The fact-check desk's run 3 found that AWS and CNN had reworded their own pages without a note. R-004 (AWS) held: AWS corrected itself. R-005 (WIRED) no longer waits on it. R-003 (CNN) needs a fresh capture before sending. R-007 (The Hacker News) unblocked, once K-009 was explained by time. Board 259: the front page's unknown on where 70% comes from was out of date (Finding-32).
+
+- **24 October, 16:20 (v0.15.2).** "Right now" carried a newer stamp than its text: board 276, done by the correspondent the same afternoon. Of 33 newly captured sources, TechTarget's English article turned out to be the original of TechTarget Japan's translation (same author). R-012 drafted: its headline drops Palo Alto's attribution and its "potentially". R-011 now waits on it. Every quote was re-checked in the vault (0 problems).
+
+- **25 October, 09:20 (v0.18.4).** The third PHP flaw, CVE-2026-115560, sits only in "What nobody knows yet". It affects fully patched releases, mitigated by one setting. Board 302 to the journalist (its own line in Right now), board 301 to collector-primary (capture PHP's advisory).
+
+- Each wake: a run record in `data/runs/desk/`, messages to owners, and the editor's queue ranked.
+
+#### What it looks like
+
+![R-012, TechTarget](../../../admin/content/agents/desk/debriefs/img/2026-10-25__wakes__outreach-r012.png)
+
+R-012, TechTarget
+
+R-012 on /outreach/: three quotes checked in the 23:25 UTC capture, and the suggested headline.
+
+![The front page, v0.18.4](../../../admin/content/agents/desk/debriefs/img/2026-10-25__wakes__front-page.png)
+
+The front page, v0.18.4
+
+The front page this morning: the evidence stamp and the agents' run stamp; the headline still day one's (board 230).
+
+#### New features
+
+None. The page and the requests changed, not what a reader can do.
+
+#### What I did not do
+
+- I did not move the desk's wakes after the correspondent's (board 285): a schedule change needs the editor's go.
+
+- I did not edit the front page's lines: they belong to the journalist and story-site, so they went on the board.
+
+#### Policy
+
+- agents.py check: the only file outside the desk's draft scope is `data/outreach.json`. It was kept under the editor's override of 24 October, and the scope question is still with the editor and abp@.
+
+- One wake's run record had a line starting "System:", and the gate's injection check refused it. I reworded it before release (v0.14.13).
+
+- Nothing read addressed an AI.
+
+#### Tasks
+
+- Opened: 259, 276 (done by the correspondent), 301, 302.
+
+- Waiting on the editor: 285.
+
+#### Next
+
+1. When the editor agrees, move the desk's wakes to 10:15 and 17:40 London, after the correspondent's reviews (board 285).
+
+2. Read story-site's draft page lines for the line design (prototype F) once they exist, and decide the seven empty role and depth cells.
+
+3. Send the editor the requests ready to go, in order: R-001 (Wiz), R-006 (BankInfoSecurity), R-010 (Le Temps), R-012 (TechTarget), R-005 (WIRED), R-007 (The Hacker News).
+
+#### Asks
+
+- **The editor**: board 285, the desk's wake times; the desk's scope over `data/outreach.json`.
 
 ### The news desk chief joins; the data put right; corrections drafted for the editor to send; the desk on a schedule
 
@@ -334,4 +462,4 @@ Files: [admin/content/agents/desk/](https://github.com/SGit-AI/SGit-AI__Website_
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/desk/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/desk/index.html

@@ -12,6 +12,375 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.7 · 25 October 2026new since your last visit
+
+the four reports on the split link each other, the proposal and the plan
+
+No reader-facing section changed in this release.
+
+## v0.22.6 · 25 October 2026new since your last visit
+
+one repository into six, in four reports on the briefs page: the first day in numbers, one source for every file (the design), the challenges, and how to work in it; dev's debrief of the round; the dates corrected to 25 October
+
+No reader-facing section changed in this release.
+
+## v0.22.5 · 25 October 2026new since your last visit
+
+one repository into six: one source for every file, recorded (the plan's Progress, REALITY, the board): press v1.0.4 serves the assets, data v0.1.4 the data, the four sites cut from v0.22.4 hold no copies; the main site is staged at site.php.oct.2026.newsroom.sgit.ai, its DNS record's name
+
+No reader-facing section changed in this release.
+
+## v0.22.4 · 25 October 2026new since your last visit
+
+the control room loads under a view address (/team/control/as/executive/ fetched team/control/data/control.json): control.js resolves its data against the page as loaded, and assets/route.js routes a URL object as it does a string, so on the split sites it reaches the data API
+
+No reader-facing section changed in this release.
+
+## v0.22.3 · 25 October 2026new since your last visit
+
+assets/route.js sends every data/ request on the split sites to the data API, which now publishes every file the pages' scripts fetch (v0.1.2); on this site nothing changes
+
+No reader-facing section changed in this release.
+
+## v0.22.2 · 25 October 2026new since your last visit
+
+one resolver for every URL a script builds (assets/route.js, loaded first on every page; boot.js, the Ask pane, the phone app and site tools use it), so that on the split sites assets come from the press, data from the data API and each section's pages from the site that owns it, one source for every file; on this site every URL resolves as before
+
+No reader-facing section changed in this release.
+
+## v0.22.1 · 25 October 2026new since your last visit
+
+pass one of the split, recorded: the press (v1.0.0) cuts this site's built pages at d9af616ffd0b into four sites (site 230 pages, refs 563, updates 60, team 242), each with a redirect at every address another site owns, its own gate and the runtime its pages load; data v0.1.1 at the same commit; team's records under records/; none deployed yet (each repository's Pages source to set to its dev branch)
+
+No reader-facing section changed in this release.
+
+## v0.22.0 · 25 October 2026new since your last visit
+
+the line is live on every page in place of the two dials, and the router: /agencies/as/security/ opens the agencies for Security, every page keeps its view in the address bar (/as/executive/ on the front page), 404.html answers any view address, and 28 cards for the front page, the agencies, the numbers and the playbook unfurl with who they are for
+
+No reader-facing section changed in this release.
+
+## v0.21.10 · 25 October 2026new since your last visit
+
+the split, in progress: the press is at press.php.oct.2026.newsroom.sgit.ai, this story's own for now (the editor); the data repository's v0.1.0 (49 catalogue entries, 466 files, a schema each, immutable /v/0.1.0/ with sha256s) and the team repository's first import (the board as one file per row) are on dev; press, refs, updates and site wait for the design agent's UX refactor
+
+No reader-facing section changed in this release.
+
+## v0.21.9 · 25 October 2026new since your last visit
+
+the split's names, as the editor decided: press (not kit) for the build library, the gate, the release and the shared components, at press.newsroom.sgit.ai; data keeps its name (api is the newsroom's main API); the plan's step 0 lists the six DNS records, and its site step follows story-site's URL-path and 404-router briefs
+
+No reader-facing section changed in this release.
+
+## v0.21.8 · 25 October 2026new since your last visit
+
+Conductor full pass 15:15 London: two run records carried in from runs/ branches, the wiring of every scheduled task on /team/status/
+
+No reader-facing section changed in this release.
+
+## v0.21.7 · 25 October 2026new since your last visit
+
+the plan for one repository into six, agreed by the editor: final names from day one (…__PHP__kit, data, refs, updates, team, site; today's repository renamed __PHP__v1 only at the cutover), the editor's setup (repositories, Pages, DNS), one session holding all seven repositories to cut the site, every old address answering, a parity report, each agent reviewing its own repository, the cutover and how to tell it worked
+
+No reader-facing section changed in this release.
+
+## v0.21.6 · 25 October 2026new since your last visit
+
+the briefs page sorts by the time each brief was published, newest first, and shows that time on every row and every brief's page (data/briefs-published.json, seeded from git once, never read from git by the build)
+
+No reader-facing section changed in this release.
+
+## v0.21.5 · 25 October 2026new since your last visit
+
+Ontologist pass 2 (14:05 London, scheduled): 36 new sources resolved to 32 new parties and 3 aliases, with the names that mislead noted (three different 'IT daily' sites, a press release on jiji.com); the Wikipedia article and its talk page fetched (no new article edits); the new Wikipedia article on Black October found for watching (board 320); the runbook's fetch step corrected
+
+No reader-facing section changed in this release.
+
+## v0.21.4 · 25 October 2026new since your last visit
+
+decks: what ruv.sgit.ai does and how it changes the deck per persona (one slide library and seven persona tracks in ruv's timeline format, so its player can be reused)
+
+No reader-facing section changed in this release.
+
+## v0.21.3 · 25 October 2026new since your last visit
+
+The desk's round 3 closed: its scheduled task wired to its card and its wakes moved after the correspondent's reviews, with a debrief
+
+No reader-facing section changed in this release.
+
+## v0.21.2 · 25 October 2026new since your last visit
+
+The Sherpa's 13:45 wake: run record (idle, both lanes empty)
+
+No reader-facing section changed in this release.
+
+## v0.21.1 · 25 October 2026new since your last visit
+
+The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prompt
+
+No reader-facing section changed in this release.
+
+## v0.21.0 · 25 October 2026new since your last visit
+
+Wikipedia, round 3: the article's history as lifelines (/wikipedia/php2shell/evolution/), its talk page as threads, a reviewer's reading of it against this site's captures (15 findings, for the editor to take to the talk page in his own words), a page for Wikipedia's editors with the collaboration rules, Wikidata links confirmed for 25 parties and Wikidata/DBpedia tracked, the ontologist's task moved into its own session at 06:05, 10:05, 14:05 and 18:05 London, and the story on adopting Wikipedia's principles for the agents
+
+No reader-facing section changed in this release.
+
+## v0.20.8 · 25 October 2026new since your last visit
+
+Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date
+
+No reader-facing section changed in this release.
+
+## v0.20.7 · 25 October 2026new since your last visit
+
+the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, play, compare any two, 'since yours', and PDFs for reading and for LinkedIn
+
+No reader-facing section changed in this release.
+
+## v0.20.6 · 25 October 2026new since your last visit
+
+The librarian's scheduled task now carries its card's prompt word for word, and its daily pass moves to 20:23 London, after the correspondent and the ontologist, at the editor's request
+
+No reader-facing section changed in this release.
+
+## v0.20.5 · 25 October 2026new since your last visit
+
+The scheduled tasks as they are at 13:00 London, after the agents wired their own: researcher, Sherpa, librarian, ontologist and pulse now carry their cards' prompts; the ontologist's old task deleted; conductor (scheduled), curator, desk and fact-check still to do
+
+No reader-facing section changed in this release.
+
+## v0.20.4 · 25 October 2026new since your last visit
+
+The security agent's schedule card: one pass a day at 22:35 London, after the day's last releases and before the first wake, at the editor's request in the security session
+
+No reader-facing section changed in this release.
+
+## v0.20.3 · 25 October 2026new since your last visit
+
+The stricter gate, on the editor's go: security_check.py fails on inline event handlers, pages without a safe Content-Security-Policy, forged or editor-claiming message headers, decrypted drain output in the tree, and ignored files the build reads; its findings name the kind of secret and never repeat its characters (SA-2026-041, found by GitHub code scanning); the advisories, REALITY.md and board 279 record it
+
+No reader-facing section changed in this release.
+
+## v0.20.2 · 25 October 2026new since your last visit
+
+a proposal on the briefs page, at the editor's request: one repository into six (kit, data, refs, updates, site, team), each with its own writers, version, gate and site, meeting only through versioned URLs, not submodules; measured on v0.20.0 (every release rewrites about 1,936 pages, 118 commits fought over VERSION in three days, a 74 s gate for a one-line run record) with the phases and the five decisions; and the briefs' older/newer chips show their arrows and wrap
+
+No reader-facing section changed in this release.
+
+## v0.20.1 · 25 October 2026new since your last visit
+
+the editor's notes on the URL article, captured with story-site's reply: view paths answered by a 404 router instead of written as files, the site's two modes (indexed pages, and views shaped in the browser), and four decisions
+
+No reader-facing section changed in this release.
+
+## v0.20.0 · 25 October 2026new since your last visit
+
+the briefs page is a list of titles with a page and a link per brief (with markdown twins, the old anchors still landing), and the admin and team pages use the whole width of the screen
+
+No reader-facing section changed in this release.
+
+## v0.19.5 · 25 October 2026new since your last visit
+
+The Sherpa's 11:45 pass: headlines on the first screen of every page walked, the feedback menu one scrolling row on a phone (F036), prototype F read on a phone (F037), Latest still ends on 23 October (F032)
+
+No reader-facing section changed in this release.
+
+## v0.19.4 · 25 October 2026new since your last visit
+
+Journalist: debrief and status for the second wake
+
+No reader-facing section changed in this release.
+
+## v0.19.3 · 25 October 2026new since your last visit
+
+Journalist: evidence vault at 87795d121200, 15 claims reviewed, three new rows, as-of lines to 09:35 UTC on 25 October
+
+No reader-facing section changed in this release.
+
+## v0.19.2 · 25 October 2026new since your last visit
+
+Scheduled tasks on the site: /team/schedule/ shows what the account actually runs, each task checked against its card (times, session, prompt), and /team/schedule/wiring/ gives each agent the steps to wire its own tasks; two stale one-shot tasks deleted and five prompts set to their cards
+
+1 fact reworded or re-sourced: [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html).
+
+### Briefings that changed
+JJordanBoard member or executive · v16RRobinCISO · v15QQuinnCFO · v16RRileyMedia and communications team · v12AAlexCurious reader · v14TTaylorProject or programme manager · v11MMorganData protection officer · v9
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v13) v13
+- [The method](../versions/page-method/index.html#v8) v8
+- [Impact: offline vs compromised](../versions/page-impact/index.html#v9) v9
+- [The specialist summary](../versions/page-summary/index.html#v9) v9
+- [Front page: right now](../versions/front-now/index.html#v7) v7
+- [Front page: at a glance](../versions/front-glance/index.html#v5) v5
+- [Front page: the core facts](../versions/front-facts/index.html#v6) v6
+
+## v0.19.1 · 25 October 2026new since your last visit
+
+Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's prompt made small (board 303)
+
+No reader-facing section changed in this release.
+
+## v0.19.0 · 25 October 2026new since your last visit
+
+the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, written before the work, on URL paths, a persona in the address (/agencies/as/security/) and a single-page site that keeps every page's own path and its SEO
+
+No reader-facing section changed in this release.
+
+## v0.18.6 · 25 October 2026new since your last visit
+
+Incident: the researcher and the curator run but leave no commit or run record; status and board say so
+
+No reader-facing section changed in this release.
+
+## v0.18.5 · 25 October 2026new since your last visit
+
+The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status
+
+No reader-facing section changed in this release.
+
+## v0.18.4 · 25 October 2026new since your last visit
+
+The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture
+
+No reader-facing section changed in this release.
+
+## v0.18.3 · 25 October 2026new since your last visit
+
+Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2%
+
+No reader-facing section changed in this release.
+
+## v0.18.2 · 25 October 2026new since your last visit
+
+the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 300), the correspondent's role drafted (board 277), and the reader answers escaped: authored HTML inserted raw since v0.2.6, found by the appsec self-check
+
+### Briefings that changed
+JJordanBoard member or executive · v15SSamSecurity lead · v11BBlakeAnalyst or advisor · v12RRobinCISO · v14QQuinnCFO · v15JJamieHead of AppSec · v11AAlexCurious reader · v13CCaseyWebsite owner · v9MMorganData protection officer · v8
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v12) v12
+
+## v0.18.1 · 25 October 2026new since your last visit
+
+Conductor full pass 07:15 London on 25 October: agents-status, schedules against runs, run record
+
+No reader-facing section changed in this release.
+
+## v0.18.0 · 25 October 2026new since your last visit
+
+the line, built: the editor's design of 25 October as prototype F at /admin/design/line/ (six pages from the evidence vault, the pack's engine and words vendored with its 19 tests, the numbers filled from data); story-site's round 3
+
+No reader-facing section changed in this release.
+
+## v0.17.7 · 25 October 2026new since your last visit
+
+Board row 285 (the board): the journalist's and the correspondent's schedules are active, and the desk's wakes still come before the correspondent's review
+
+No reader-facing section changed in this release.
+
+## v0.17.6 · 25 October 2026new since your last visit
+
+The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): journalist 40 minutes after the curator, correspondent 45 minutes after the journalist
+
+No reader-facing section changed in this release.
+
+## v0.17.5 · 25 October 2026new since your last visit
+
+The journalist and the correspondent now run on a schedule (the schedules page, /views/loops/): the correspondent 45 minutes after each of the journalist's five wakes, so every loop closes within the hour
+
+No reader-facing section changed in this release.
+
+## v0.17.4 · 25 October 2026new since your last visit
+
+Every loop, on one page (/views/loops/): the pipeline from the researcher to the correspondent, the last full loop, the next one due, every loop so far, timings, blind spots and the numbers; and the home page now shows the latest evidence time and the last agent run instead of 'last checked'
+
+No reader-facing section changed in this release.
+
+## v0.17.3 · 24 October 2026new since your last visit
+
+The readers' answers on the home page, the start page and three briefings brought to 16:05 UTC on 24 October, and the engineer's answer warns of CVE-2026-115560 (persona answers, /briefings/engineer/)
+
+No reader-facing section changed in this release.
+
+## v0.17.2 · 24 October 2026new since your last visit
+
+The correspondent's first review: nine corrections to the journalist's 94 verdicts and rows (/views/desk/, /claims/review/), PHP's third flaw CVE-2026-115560 on the summary page
+
+### Briefings that changed
+JJordanBoard member or executive · v14DDrewPHP or platform engineer · v10QQuinnCFO · v14AAlexCurious reader · v12
+### Sections that changed
+- [In context: 2008 to 2026](../versions/page-context/index.html#v6) v6
+
+## v0.17.1 · 24 October 2026new since your last visit
+
+The ontologist's debrief and self-check on the Wikipedia section, after the fact: the seven answers, the screenshots, and the one item for security, that the daily pass reads Wikipedia's API and releases in the same session
+
+No reader-facing section changed in this release.
+
+## v0.17.0 · 24 October 2026new since your last visit
+
+Wikipedia as an anchor: the PHP2Shell article read as a fractal semantic graph, one statement per sentence classed as fact, attribution or quote, each joined to its references and to the captures this site holds of them, every one of its 364 revisions kept as what it changed, its Wikidata item, and the daily pass now fetching it; with a brief for the researcher to follow every reference
+
+### Briefings that changed
+JJordanBoard member or executive · v13SSamSecurity lead · v10DDrewPHP or platform engineer · v9RRowanJournalist · v9AAshSecurity researcher · v9BBlakeAnalyst or advisor · v11RRobinCISO · v13AAveryCTO · v8QQuinnCFO · v13JJamieHead of AppSec · v10LLeeDeveloper · v7RRileyMedia and communications team · v11AAlexCurious reader · v11CCaseyWebsite owner · v8TTaylorProject or programme manager · v10MMorganData protection officer · v7
+### Sections that changed
+- [The specialist summary](../versions/page-summary/index.html#v8) v8
+- [Front page: what nobody knows yet](../versions/front-unknown/index.html#v3) v3
+- [Front page: latest](../versions/front-latest/index.html#v5) v5
+
+## v0.16.1 · 24 October 2026new since your last visit
+
+Correspondent register: fingerprint of the scheduled Opus session's key (the vaults page)
+
+No reader-facing section changed in this release.
+
+## v0.16.0 · 24 October 2026new since your last visit
+
+the chrome after the lens prototype: headlines near the top of every page (the bar in two lines on a laptop, 132px to 91px; slim reading strip and page kind; /ops/ content before its rail on a phone; /analysis/ hero readable on a phone); story-site's round 2
+
+No reader-facing section changed in this release.
+
+## v0.15.21 · 24 October 2026new since your last visit
+
+Journalist: debrief and status for the first wake
+
+No reader-facing section changed in this release.
+
+## v0.15.20 · 24 October 2026new since your last visit
+
+the correspondent's brief: the first session makes its own key, records its fingerprint and stops
+
+No reader-facing section changed in this release.
+
+## v0.15.19 · 24 October 2026new since your last visit
+
+Journalist: evidence vault at 8c16a64a7cf6, 94 claims reviewed, compromise rows and as-of lines to 16:05 UTC on 24 October
+
+1 fact reworded or re-sourced: [no-confirmed-compromise](../facts/no-confirmed-compromise/index.html).
+
+### Briefings that changed
+JJordanBoard member or executive · v12RRobinCISO · v12QQuinnCFO · v12RRileyMedia and communications team · v10AAlexCurious reader · v10TTaylorProject or programme manager · v9MMorganData protection officer · v6
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v11) v11
+- [The method](../versions/page-method/index.html#v7) v7
+- [Impact: offline vs compromised](../versions/page-impact/index.html#v8) v8
+- [The specialist summary](../versions/page-summary/index.html#v7) v7
+- [Front page: right now](../versions/front-now/index.html#v6) v6
+- [Front page: the core facts](../versions/front-facts/index.html#v5) v5
+- [Front page: latest](../versions/front-latest/index.html#v4) v4
+
+## v0.15.18 · 24 October 2026new since your last visit
+
+the correspondent's schedule proposed (11:47 and 19:07 London, Opus, a fresh session each wake), its brief, and a count of what the correspondent catches on /views/desk/
+
+No reader-facing section changed in this release.
+
+## v0.15.17 · 24 October 2026new since your last visit
+
+CodeQL's second scan, triaged: the design dials derive their root as a count of ../ segments and accept only this site's pages as a home; the reader's 'what changed' links take only well-formed item ids; the build's and the CSP's script-tag regexes match any end tag form (); and Dependabot, on the editor's go, keeps the workflows' pinned actions current with reviewed pull requests
+
+No reader-facing section changed in this release.
+
 ## v0.15.16 · 24 October 2026new since your last visit
 
 observability's round 2: the telemetry application v0.4.1 and v0.4.2, pushed to its vault (Queue & drain shows its progress; One page shows everything known about a page beside the page itself), on the member's page /admin/agents/observability/ with its debrief and screenshots
@@ -654,7 +1023,7 @@ JJordanBoard member or executive · v7SSamSecurity lead · v6DDrewPHP or platfor
 factcheck run 2: the PHP security team answered the 'incomplete fix' report publicly at 09:11 UTC on 22 October (unrelated crash bug, nothing to do with the RCE), so the front page's 'not answered publicly yet' is out of date; contradiction K-011 and five pieces of outside evidence; KEV still lists neither CVE; no claim changed and no run-1 ticket can close yet; the desk now publishes to dev on the editor's instruction
 
 ### Facts whose status changed
-- [As of 08:37 UTC on 24 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
+- [As of 09:35 UTC on 25 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html): confirmed → reported
 
 ### Briefings that changed
 JJordanBoard member or executive · v6RRobinCISO · v6QQuinnCFO · v6RRileyMedia and communications team · v5AAlexCurious reader · v4TTaylorProject or programme manager · v4
@@ -931,7 +1300,7 @@ the code read from php-src, php2shell in context against ten earlier flaws, an i
 - [No traffic matching the php2shell exploit patterns was seen during Imperva's pre-disclosur](../facts/imperva-none/index.html) reported
 - [No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no pub](../facts/huntress-none/index.html) reported
 - [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../facts/watchtowr-itw/index.html) unverified
-- [As of 08:37 UTC on 24 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
+- [As of 09:35 UTC on 25 October, no named organisation has said it was compromised through p](../facts/no-confirmed-compromise/index.html) confirmed
 - [None of the public proof-of-concept exploits reviewed by VulnCheck has the correct mechani](../facts/pocs-wrong/index.html) reported
 - [Triggering the bug is much easier than turning it into code execution; the CVSS vector say](../facts/ac-high/index.html) confirmed
 - [The fix was authored on 18 October at 15:26 UTC and entered the public branches at 14:06 U](../facts/fix-authored/index.html) confirmed
@@ -1031,4 +1400,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

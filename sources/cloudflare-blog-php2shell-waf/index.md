@@ -66,9 +66,15 @@ capture 20261022T081216Z · HTTP 200 · https://blog.cloudflare.com/php-vulnerab
 - `rendered.html` a0d3c37cde7c1721a08b028748a412672817c45958d05cc7fedaede582b5537b 373,881 bytes
 - `screenshot.png` 1784904e6fdda092941881d0e5c85d73801054f216295ca43b17f76e7f5cd34b 989,488 bytes
 - `text.txt` 302408765abf45e3ae84473d9050c1c65b35c2858e5b53be4fee29dda4de2823 10,205 bytes
+capture 20261023T160435Z · HTTP 200 · https://blog.cloudflare.com/php-vulnerabilities-waf-protection/- `headers.json` c8d1046d5e15ec072fa3f8200f1b2e9345d25f2fa5c1ce0a5d50de4bc57c2434 7,335 bytes
+- `page.html` 172e5df835d69af6d6694fe84442639f792a58b8925a1408e8d68921824a7d97 306,061 bytes
+- `provenance.json` b55c9fe97424debdba98dc1c1dca272d72f5ad2ff601542c5dfaa934de7ce34e 1,798 bytes
+- `rendered.html` 9375a77287688e3c1d8718c25ce857c25caf62db2c3630e19d21da1c5bf24c48 373,128 bytes
+- `screenshot.jpg` 16e9126356ed130c33ba0896333af9953971a4c4a4b31ad6f4823d6590d4d895 639,665 bytes
+- `text.txt` 94476de6ec0b31e035ef97a1dbf9607bc81e7ddbb479c2d5217b8e8b0207ec02 11,328 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/cloudflare-blog-php2shell-waf/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/cloudflare-blog-php2shell-waf/index.html

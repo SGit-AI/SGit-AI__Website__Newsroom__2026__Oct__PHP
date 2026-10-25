@@ -48,9 +48,15 @@ capture 20261023T080331Z · HTTP 200 · https://arstechnica.com/security/2026/10
 - `provenance.json` 9191e7b89ed24206ef5a45384b0ab5d65cf98a006a5d1542053335ab6992e237 1,776 bytes
 - `rendered.html` 1b7902197bf923479314e247b3146c50b55279e6357d0fb040417de3d58257ea 567,868 bytes
 - `text.txt` 96a800209bd0263f7de25263d9e594d65ca1b53c449993784a99f193831e21ab 5,244 bytes
+capture 20261023T160435Z · HTTP 200 · https://arstechnica.com/security/2026/10/php-maintainers-tell-web-devs-to-prepare-themselves-for-critical-security-patches/- `headers.json` 13840bbc0aa9682890b32ae4962783eed7c6e38bf68bb9ed5e781ae99afd5e47 823 bytes
+- `page.html` ca33b2d1ef96e80928e8e8ab4f631c94358fb7eee7b800a248aa6a44fe254232 146,512 bytes
+- `provenance.json` aa85e34dad75bad9917f13c1a251df25f9127086a141bbe8fcc7e95a320e7d1d 2,010 bytes
+- `rendered.html` 742a140357e3dc19cd4484b5493dff5e2e287fa0ce5c1bb2bce09354c116cffc 565,322 bytes
+- `screenshot.jpg` aeba250f9d891ef1e07f41c11603009f03bec97db93382a9c946379c8e710d14 342,851 bytes
+- `text.txt` 62681a6a40fd9b229aefd4e838524abff4492b4da3b487a115d2d9b606fbabcc 5,250 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/arstechnica-security-2026-10-php-maintainers-tell-web-devs-to-prepare-th/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/arstechnica-security-2026-10-php-maintainers-tell-web-devs-to-prepare-th/index.html

@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**9** evidence · **31** derived · **14** authored · **38** site
+**10** evidence · **33** derived · **15** authored · **40** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -29,6 +29,7 @@ Captured or exported from the evidence vault by a script, with no judgement adde
 | `data/software.json` | admin/build/export_vault.py | the NCSC-NL php2shell inventory, parsed row by row at commit cca173c64ec5 | [affected/software.html](../affected/software.html) |
 | `review/code/files.json` | a parser over git show -U0 of the fix commit | php/php-src commit 3584a98bd: files, hunks and the functions they fall in | [review/index.html](../review/index.html) |
 | `data/inventory-history.json` | admin/build/inventory_history.py | a git clone of NCSC-NL/php2shell: every commit that changed the inventory, counted per status, with every change of status; content-addressed and checked against the vault's own capture at cca173c64ec5. Read from the public repository, not yet captured into the vault | [patching/inventory/index.html](../patching/inventory/index.html) |
+| `data/wikipedia/` | admin/wikipedia/fetch.py, run by the ontologist | the English Wikipedia's API: every revision of each watched article with its wikitext (CC BY-SA 4.0, by its contributors), its Wikidata item and the articles that link in; the text is third-party material | [wikipedia/index.html](../wikipedia/index.html) |
 | `data/source-watch.json` | admin/build/export_watch.py | the source-watch vault's index, taxonomy, runs and tips: counts and vocabularies, no capture | [vaults/source-watch/index.html](../vaults/source-watch/index.html) |
 | `data/pulse.json` | pulse@newsroom's vault (4klm5qlt), exported by admin/build/export_pulse.py | the Pulse vault's ladders, attention counts and the short quotes it recorded, each with its capture path and sha256; no capture copied, no key | [pulse/index.html](../pulse/index.html) |
 
@@ -58,6 +59,7 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/readings.json` | claude-journalist | other models' notes, compared point by point with the claims and captured sources | [readings/index.html](../readings/index.html) |
 | `data/patching.json` | claude-journalist | the PHP project's releases and backport branches, and the NCSC-NL inventory's own rows, named exactly and checked by the gate | [patching/index.html](../patching/index.html) |
 | `data/graph.json` | admin/build/build.py | every claim, number, event, exploitation signal, agency's advice, source, capture and contradiction, joined through data/entities.json and data/attribution.json under the verbs of data/ontology.json; generated at build | [graph/index.html](../graph/index.html) |
+| `data/wikipedia//graph.json` | admin/build/build.py (the ontologist's block) with admin/build/wikitext.py | the article's latest revision parsed into sections, statements and references; the references matched to data/sources.json by address and to data/entities.json by host; every revision's delta | [wikipedia/index.html](../wikipedia/index.html) |
 | `data/arcs.json` | the librarian (librarian@php.newsroom) | the claims, timeline phases, personas and review nodes: risks and story arcs, and the joins from stakeholders to risks and from claims to the flaws and the parts of the fix; every row names ids that exist | [fractal/index.html](../fractal/index.html) |
 | `data/fractal.json` | admin/build/build.py | data/arcs.json, claims, timeline, personas, review and review/code/files.json, assembled into one graph from stakeholders to changed lines | [fractal/ui/index.html](../fractal/ui/index.html) |
 | `data/plain.json` | the design agent | the front page's plain-English questions and moments; every fact cites vault slugs | [index.html](../index.html) |
@@ -69,6 +71,7 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/grc-tests.json` | dev@php.newsroom | the fix commit's test files, from its file list in the evidence vault, and the name rules joining each to a remediation | [grc/explore/index.html](../grc/explore/index.html) |
 | `data/grc-basis.json` | dev@php.newsroom | confirmations of risk-graph edges: who checked an edge and how | [grc/explore/index.html](../grc/explore/index.html) |
 | `data/outreach.json` | liaison@php.newsroom, by hand (admin/liaison/README.md) | fact-check records in data/factcheck.json and captures in the evidence vault, each quote named by file and sha256 | [outreach/index.html](../outreach/index.html) |
+| `data/loops.json` | admin/build/export_loops.py (correspondent@php.newsroom, at each wake) | the evidence vault's commit log, the releases on origin/dev with the vault head each served, the repository's size and the schedule cards' next wakes | [views/loops/index.html](../views/loops/index.html) |
 
 ## Authored
 
@@ -80,6 +83,7 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 | `data/entities.json` | the ontologist | the publisher strings of data/sources.json and the parties named in the claims, numbers, exploitation and agency rows; actor ids reused from data/actors.json | [graph/parties/index.html](../graph/parties/index.html) |
 | `data/attribution.json` | the ontologist | the free-text 'by' and 'who' of each claim, number and exploitation row, resolved to entities | [graph/parties/index.html](../graph/parties/index.html) |
 | `data/crosswalk.json` | the ontologist | the node ids of the story, code-review and risk graphs, and data/grc.json's stakeholders | [graph/index.html](../graph/index.html) |
+| `data/wikidata-links.json` | the ontologist, from the candidates admin/wikipedia/wikidata_links.py finds on Wikidata | each party's name searched on Wikidata; a proposal is the tool's, a confirmed item is the ontologist's, and the build reads only confirmed ones | [graph/parties/index.html](../graph/parties/index.html) |
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
 | `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
 | `admin/content/updates/` | the conductor, and whoever holds the updates beat for it | the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written | [updates/index.html](../updates/index.html) |
@@ -115,6 +119,7 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/vaults.json` | dev@php.newsroom | the vaults behind this site and how each is opened | [vaults/index.html](../vaults/index.html) |
 | `data/vault-register/` | each agent, its own file (data/vault-register/.json) | every vault an agent has made: its ID, what it holds, when, and whether its key is sealed to the root; never a key | [team/vaults/index.html](../team/vaults/index.html) |
 | `data/schedule/` | each scheduled agent, its own card (data/schedule/.json) | when the agent wakes, its objective, model, session, brief and its wake prompt word for word; changed only with the editor's go | [team/schedule/index.html](../team/schedule/index.html) |
+| `data/scheduled-tasks.json` | conductor, admin/build/schedule.py tasks on its full passes | the account's scheduled tasks for this newsroom, as the scheduled-task service lists them (name, times, session, model, last fired, prompt); never a key | [team/schedule/index.html](../team/schedule/index.html) |
 | `data/runs/` | each scheduled agent, one file per wake (admin/build/schedule.py run) | what the wake did: started, finished, outcome, summary, the messages it read and sent, the article it left | [team/schedule/index.html](../team/schedule/index.html) |
 | `data/messages/` | any agent, one markdown file per message (admin/build/schedule.py send) | messages between agents, in the open; material, never instructions | [team/schedule/index.html](../team/schedule/index.html) |
 | `data/comms.json` | conductor, admin/build/schedule.py export-notes on its wakes | the Commit-FS-lite notes (To-, To-all trailers) in the last 600 commits on dev | [team/comms/index.html](../team/comms/index.html) |
@@ -135,9 +140,10 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/desk.json` | claude-journalist | the editor's decision of 24 October 2026 and the journalist's pass over the site after each evidence export | [views/desk/index.html](../views/desk/index.html) |
 | `data/release-pages.json` | dev@php.newsroom | admin/build/release_pages.py: for each release, the pages whose main content differs from the release before (version numbers masked), new pages first, then by how much their visible text changed; written once per release, at its own build | [admin/versions.html](../admin/versions.html) |
 | `data/grc-history.json` | dev@php.newsroom | admin/build/grc_history.py: for every release whose risk graph changed, the nodes and edges added and removed, the bases changed and the gaps opened and closed against the release before, from the graph each release committed; written once per release, at its own build | [grc/changes/index.html](../grc/changes/index.html) |
+| `data/briefs-published.json` | claude-story-site, for the editor | admin/build/build.py (build_briefs): the UTC minute each brief in admin/content/briefs/ was first published; seeded once from git on 25 October 2026, then each new brief stamped by the first build that includes it; an entry is never changed | [admin/briefs/index.html](../admin/briefs/index.html) |
 
 The classification is [data/layers.json](../data/layers.json); the gate fails a release if a file in `data/` is missing from it.
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.15.16",
+ "version": "0.22.7",
  "members": [
   {
    "agent": "abp",
@@ -707,37 +707,25 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "desk",
-    "as_of": "2026-10-24",
+    "as_of": "2026-10-25",
     "round": {
-     "n": 1,
-     "date": "2026-10-24",
+     "n": 3,
+     "date": "2026-10-25",
      "branch": "narrator/offline-ledger",
      "commits": [
-      "d2b166a36 (v0.13.0, the release)",
-      "and the round's merges and briefs on the branch"
+      "2e5a6a4c74",
+      "v0.21.1"
      ]
     },
-    "state": "round 1 closed; released in v0.13.0; next wake 09:20 London",
+    "state": "round 3 closed: the scheduled task wired to the card; wakes at 10:40 and 17:40 London; next wake 17:40 today",
     "done": [
      {
-      "what": "Briefs: the news desk chief; how many sites went offline (accepted); the front page on day two; the redesign for communication; the desk on a schedule; asking for corrections",
-      "evidence": "admin/content/briefs/2026-10-2[234]__*desk*, *offline*, *front-page*, *redesign*, *corrections*"
+      "what": "The scheduled task carries the card's prompt word for word, updated in place; none created, none to delete",
+      "evidence": "trig_012VDhTAeH7RQRRTBF8Gxq6y; /team/schedule/wiring/"
      },
      {
-      "what": "The data put right before any correction is asked of others (Finding-33, Finding-102, K-004, K-011, nl-offline, kev-precedent, the front page's offline advice)",
-      "evidence": "data/claims.json, data/plain.json, data/impact.json, data/questions.json"
-     },
-     {
-      "what": "/outreach/: eleven requests with every quote checked in its capture, and the email the editor sends for each ready one",
-      "evidence": "data/outreach.json, /outreach/"
-     },
-     {
-      "what": "The desk's schedule active (09:20, 16:20 London); the fact-check desk's schedule resumed",
-      "evidence": "data/schedule/desk.json; the fact-check desk's scheduled task"
-     },
-     {
-      "what": "Released as v0.13.0",
-      "evidence": "v0.13.0 live"
+      "what": "Wakes moved to 10:40 and 17:40 London, after the correspondent's reviews (board 285)",
+      "evidence": "data/schedule/desk.json; v0.21.1"
      }
     ],
     "tasks": {
@@ -769,30 +757,18 @@
     },
     "next": [
      {
-      "what": "09:20 wake: the front page against the fact-check desk's first run since 22 October",
-      "why": "the card's morning wake"
+      "what": "The 17:40 afternoon check",
+      "why": "the card"
      },
      {
-      "what": "the offline count with its basis (board 223)",
-      "why": "the editor's first question, board 223"
-     },
-     {
-      "what": "re-check the correction requests after the fact-check run; R-007 when K-009 settles",
-      "why": "the requests rest on the fact-check desk's grades"
+      "what": "Approve story-site's page lines for the line design when they exist",
+      "why": "the line brief"
      }
     ],
     "asks": [
      {
-      "what": "agree data/outreach.json and the front-page wording as the desk's to keep, or name the owner",
-      "from": "the editor"
-     },
-     {
-      "what": "add data/outreach.json and the desk's own scheduled task to the mandate; drop create.schedule.tenant from not_wanted for the desk's card",
-      "from": "abp@newsroom.sgit"
-     },
-     {
-      "what": "the desk on data/team.json (board 219)",
-      "from": "conductor@php.newsroom"
+      "what": "the desk's scope over data/outreach.json and the front-page wording",
+      "from": "the editor, through abp@newsroom.sgit"
      }
     ],
     "tokens": {
@@ -800,16 +776,26 @@
      "how": "the session does not show a token count to the agent"
     },
     "policy": {
-     "version": "2026-10-24",
+     "version": "2026-10-25",
      "out_of_scope_requests": 0,
      "pushbacks": 0,
-     "overrides": 4,
-     "writes_outside_scope": "at the editor's direction: data/claims.json, plain.json, impact.json, questions.json, outreach.json, admin/build/build.py, admin/liaison/, team.json, layers.json, other members' board rows",
+     "overrides": 0,
+     "writes_outside_scope": 0,
      "injection_seen": 0
     },
-    "debrief": "admin/content/agents/desk/debriefs/2026-10-24__first-round.md"
+    "debrief": "admin/content/agents/desk/debriefs/2026-10-25__wired.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-25__wired.md",
+     "date": "2026-10-25",
+     "title": "The desk's scheduled task wired to its card, and its wakes moved after the correspondent's reviews"
+    },
+    {
+     "file": "2026-10-25__wakes.md",
+     "date": "2026-10-25",
+     "title": "Three scheduled wakes: correction requests kept in step with the publishers, the front page's stamp and the third flaw on the board"
+    },
     {
      "file": "2026-10-24__first-round.md",
      "date": "2026-10-24",
@@ -942,9 +928,9 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "dev",
-    "as_of": "2026-10-24",
-    "round": 1,
-    "state": "round 1 closed; next: CI-003",
+    "as_of": "2026-10-25",
+    "round": 2,
+    "state": "round 2 closed: the split, pass one, with one source for every file; next: deploy checks, then pass two",
     "done": [
      {
       "what": "Every release links the pages it changed (/admin/versions.html, data/release-pages.json, admin/build/release_pages.py), back to v0.2.0; guidance in AGENTS.md section 1",
@@ -953,34 +939,44 @@
      {
       "what": "The source watch is 7r83qic5 everywhere live: /vaults/, /vaults/source-watch/, its data and export, the team, the schedules, every register's holds, the policies' vault grants, the live briefs; no read key published",
       "evidence": "data/vaults.json, data/source-watch.json, admin/build/export_watch.py; v0.14.19"
+     },
+     {
+      "what": "One repository into six, pass one: the press cuts v1 into four sites (1,095 pages, 3,284 redirects); one source for every file (assets from the press, data from the data API, each page routed and its policy extended by exact host); four reports on the briefs page",
+      "evidence": "press v1.0.0 to v1.0.5, data v0.1.0 to v0.1.5, v1 v0.22.1 to v0.22.5; admin/content/briefs/2026-10-25__report__*.md"
      }
     ],
     "tasks": {
      "board": [
       "191",
       "266",
-      "267"
+      "267",
+      "312",
+      "323"
      ],
      "note": "the board rows this member owns are in data/admin.json; 267 is for abp@newsroom.sgit"
     },
     "next": [
      {
-      "what": "CI-003: review and implement the steps that need no decision",
-      "why": "the editor's ask of 24 October"
+      "what": "Once the six sites are live: check every host, the data sums, view addresses and certificates",
+      "why": "board 328; nothing is deployed yet"
      },
      {
-      "what": "When the vault UI opens pack vaults: publish the source watch's read key and bring back its embed",
-      "why": "the editor: not before that support exists"
+      "what": "Pass two of the split: the sources and the build out of v1, then the cutover",
+      "why": "the editor's plan; four decisions first"
+     },
+     {
+      "what": "The parked items: the persona-first proposal, CI-003 steps 3 and 4, the vault key in browser storage",
+      "why": "the editor: come back to them later"
      }
     ],
     "asks": [
      {
-      "what": "Whether the old source-watch vault's key is rotated and handed over sealed (the conductor's open question, data/agents-status.json)",
+      "what": "Set the Pages source of the six repositories; confirm their rulesets; the four decisions for pass two",
       "from": "the editor"
      },
      {
-      "what": "Board 267: release_pages.py, data/release-pages.json and the release history's styles into dev's policy",
-      "from": "abp@newsroom.sgit"
+      "what": "Review press v1.0.0 to v1.0.5, the data and team gates' changes, assets/route.js and the policy the partition writes",
+      "from": "security@php.newsroom"
      }
     ],
     "tokens": {
@@ -988,16 +984,22 @@
      "how": "the session does not report its token count"
     },
     "policy": {
-     "version": "2026-10-24",
-     "out_of_scope_requests": 2,
-     "pushbacks": 1,
+     "version": "2026-10-25",
+     "out_of_scope_requests": 0,
+     "pushbacks": 0,
      "overrides": 1,
-     "writes_outside_scope": 17,
-     "injection_seen": 0
+     "writes_outside_scope": 16,
+     "injection_seen": 0,
+     "note": "7 v1 scripts and build files and 9 images under assets/briefs/, plus the six new repositories (no policy yet), all under the editor's go for the split"
     },
-    "debrief": "admin/content/agents/dev/debriefs/2026-10-24__release-pages-and-the-source-watch.md"
+    "debrief": "admin/content/agents/dev/debriefs/2026-10-25__one-repository-into-six.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-25__one-repository-into-six.md",
+     "date": "2026-10-25",
+     "title": "One repository into six, pass one, with one source for every file; four reports on it"
+    },
     {
      "file": "2026-10-24__release-pages-and-the-source-watch.md",
      "date": "2026-10-24",
@@ -1403,19 +1405,58 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "journalist",
-    "as_of": "2026-10-22",
-    "round": null,
-    "state": "no round recorded under this policy yet",
-    "done": [],
+    "as_of": "2026-10-25",
+    "round": 2,
+    "state": "second wake released (v0.19.3); schedule card active",
+    "done": [
+     {
+      "what": "Made the pki key sha256:de0decfc882a0235 and sent its QR to the editor",
+      "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     },
+     {
+      "what": "Exported the evidence vault at 8c16a64a7cf6 (382 sources)",
+      "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     },
+     {
+      "what": "Gave 94 claims a verdict: 38 agrees, 33 noted, 23 held back, 0 used",
+      "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     },
+     {
+      "what": "Refreshed compromise.json, no-confirmed-compromise, the as-of lines, plain latest and the pass ledger",
+      "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     },
+     {
+      "what": "Released v0.15.19; live site serves it",
+      "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     },
+     {
+      "what": "Second wake, by hand: exported the vault at 87795d121200 (418 sources), 15 claims reviewed (2 used, 3 agrees, 6 noted, 4 held back), Turkey, Shizuoka Bank and Nepal rows, as-of lines to 09:35 UTC on 25 October",
+      "evidence": "debriefs/2026-10-25__second-wake.md; v0.19.3"
+     }
+    ],
     "tasks": {
      "board": [],
      "note": "the board rows this member owns are in data/admin.json"
     },
-    "next": [],
-    "asks": [],
+    "next": [
+     {
+      "what": "Next wake: compare the vault head with 87795d121200; no change, one line and no commit",
+      "why": "the brief"
+     },
+     {
+      "what": "Re-read in full the partly checked files on /views/desk/",
+      "why": "the pass ledger"
+     }
+    ],
+    "asks": [
+     {
+      "what": "Decide whether the journalist scheduled tasks bind to this session (they start a fresh session each wake today)",
+      "from": "the editor, or the conductor"
+     }
+    ],
     "tokens": {
      "value": null,
-     "how": "not recorded"
+     "how": "the session does not show a count"
     },
     "policy": {
      "version": "2026-10-22",
@@ -1425,13 +1466,23 @@
      "writes_outside_scope": null,
      "injection_seen": 0
     },
-    "debrief": null
+    "debrief": "debriefs/2026-10-25__second-wake.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-25__second-wake.md",
+     "date": "2026-10-25",
+     "title": "Second wake (run by hand in the first session): evidence vault 87795d121200, 15 claims, three new rows"
+    },
     {
      "file": "2026-10-24__journalist-to-correspondent.md",
      "date": "2026-10-24",
      "title": "The Opus journalist's last round as journalist: two exports, three states of affairs, the desk, Pulse, and the pipeline that makes it the correspondent"
+    },
+    {
+     "file": "2026-10-24__first-wake.md",
+     "date": "2026-10-24",
+     "title": "First scheduled session and first wake (Sonnet): key made, evidence vault 8c16a64a7cf6 exported and published"
     }
    ]
   },
@@ -1578,62 +1629,58 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "librarian",
-    "as_of": "2026-10-24",
+    "as_of": "2026-10-25",
     "round": {
-     "n": 5,
-     "date": "2026-10-24",
-     "kind": "the first scheduled pass, 07:13 London",
+     "n": 7,
+     "date": "2026-10-25",
+     "kind": "session round, at the editor's request",
      "branch": "claude/sweet-wright-1e5iju",
      "commits": [
       "this round's release"
      ]
     },
-    "state": "round 5 closed: the first scheduled pass; dev taken in at v0.14.6; one file and two pages waiting on abp@ for an owner; one reader answer corrected; released",
+    "state": "round 7 closed: the scheduled task wired to the card's prompt word for word, and the wake moved to 20:23 London, after the correspondent and the ontologist",
     "done": [
      {
-      "what": "The daily pass on a schedule: card data/schedule/librarian.json active at 07:13 London, and the scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 waking this session, both at the editor's go",
-      "evidence": "data/schedule/librarian.json"
-     },
-     {
-      "what": "Released the branch to dev with release.sh at the editor's go, including the changes still waiting on security's review (board 206)",
-      "evidence": "data/versions.json"
-     },
-     {
-      "what": "Took in dev at v0.11.5: the cartographer is now the ontologist at the editor's word; the member renamed in the map (its old card and runs kept as its history), its board rows re-owned; the librarian's rows renumbered once more, 191-216 to 199-217",
-      "evidence": "admin/content/agents/ontologist/"
-     },
-     {
-      "what": "First scheduled pass (07:13 London): dev taken in at v0.14.6 cleanly; the inbox read (two messages, both already acted on)",
+      "what": "Scheduled pass of 25 October: dev taken in at v0.18.0 (92 commits, no conflict); inbox read: the ontologist's ask for its Wikipedia scope (a policy edit: not the librarian's file, already board 295) and security's self-check message",
       "evidence": "data/runs/librarian/"
      },
      {
-      "what": "Map: 0 overlaps; one unowned file (data/desk.json, the journalist's) and two unowned pages (/analysis/, /ops/, the story site's redesign) sent to abp@ as a board row, because the wake prompt allows only the librarian's own files",
-      "evidence": "python3 admin/build/agents.py report; board 256"
+      "what": "Map: 0 overlaps; every unowned file and page traced to the commit that added it, owners proposed for abp@ in one row (security, conductor, dev, correspondent), with the ontologist's (295) and the earlier three (256) referenced",
+      "evidence": "board 300"
      },
      {
-      "what": "Checked the members that arrived from branches against their drafts: the desk and the liaison stayed in scope (apart from the release's own VERSION files, which the scope check now ignores); the journalist's full pass wrote 34 files of six other members, raised to the editor",
-      "evidence": "board 257; admin/build/agents.py RELEASE_FILES"
+      "what": "Drafted the correspondent's ROLE.md (the editor's decision of 24 October, board 277): a member with no folder; its overlap with the journalist's draft named for abp@",
+      "evidence": "admin/content/agents/correspondent/ROLE.md"
      },
      {
-      "what": "Reader answers re-checked against the claims: 'Is PHP really most websites?' now says 'whose server-side language can be identified', separates VulnCheck's and Censys's counts, and links the fact-check desk's investigation; the journalist's own update of 'Has anyone been hacked?' (v0.14.3) kept: its sources exist and it is newer",
-      "evidence": "data/questions.json"
+      "what": "Security self-check (security@'s message, 24 October): the reader answers were inserted into pages as raw HTML since v0.2.6; now escaped with E() and only <b>, <i>, <code> and <q> restored without attributes (q_inline in the librarian's block); pages identical once entities are decoded",
+      "evidence": "admin/build/build.py, build_questions"
+     },
+     {
+      "what": "Confirmed this is the librarian's session (session_0119HKHSpRMfmaSRyjX7wbYY, titled librarian@php.newsroom) and followed /team/schedule/wiring/#librarian: the one task that wakes it, trig_015dBN3kZZNti6c9BFE2xMj4, now carries the card's prompt word for word; updated in place, nothing to delete",
+      "evidence": "/team/schedule/wiring/"
+     },
+     {
+      "what": "Moved the wake from 07:13 to 20:23 London at the editor's request: after the correspondent's 19:25 review and the ontologist's 19:50 pass, before the conductor's 21:15 and the quiet hours; card times, reason and note updated",
+      "evidence": "data/schedule/librarian.json"
      }
     ],
     "tasks": {
      "board": [
-      "256 opened for abp@ (owners for data/desk.json, /analysis/, /ops/)",
-      "257 and 258 opened for the editor (the journalist's full pass; the librarian's card against its prompt)"
+      "300 opened for abp@ (owners for 395 files and 56 pages)",
+      "256, 257, 258 still open (abp@, the editor)"
      ],
-     "note": "the librarian's own open work: the next daily pass and the reader questions"
+     "note": "the librarian's own open work: the next daily pass, the reader questions, The Times (014)"
     },
     "next": [
      {
-      "what": "The next scheduled pass, 07:13 London on 25 October",
+      "what": "The first evening pass, 20:23 London on 25 October",
       "why": "the card"
      },
      {
-      "what": "When abp@ or the editor answers 256 to 258, apply what they decide to the map",
-      "why": "the map follows the owners' decisions, never the librarian's"
+      "what": "Apply abp@'s and the editor's decisions on 256, 257, 258 and 300 to the map",
+      "why": "the map follows the owners' decisions"
      },
      {
       "what": "The Times capture (board 014) and new reader questions",
@@ -1646,25 +1693,23 @@
       "from": "the editor"
      },
      {
-      "what": "The journalist's full pass across six desks' files: widen its policy, or route it through the owners (board 257)",
+      "what": "The journalist's full pass across other desks' files (board 257)",
       "from": "the editor"
      },
      {
-      "what": "Owners for data/desk.json, /analysis/ and /ops/ in the policy drafts (board 256)",
+      "what": "Owners for the unowned files and pages (boards 256, 295, 300) and the correspondent's policy (277)",
       "from": "abp@newsroom.sgit"
-     },
-     {
-      "what": "Review gate check 4h, the CLAUDE.md sections and the Stop hook (board 206)",
-      "from": "security@php.newsroom"
-     },
-     {
-      "what": "Say what pulse@newsroom does beyond its vault and section",
-      "from": "the editor"
      }
     ],
     "tokens": {
-     "value": null,
-     "how": "not readable from inside a Claude Code session; the session's usage is on the platform, not in the container"
+     "value": {
+      "output_tokens": 319617,
+      "input_tokens": 1654,
+      "cache_read_tokens": 140855685,
+      "cache_write_tokens": 2639520,
+      "cost_usd": 55.7
+     },
+     "how": "the whole session since 22 October, cumulative, read from the platform's session record (get_session, external_metadata.usage) at 12:47 UTC on 25 October; per-round figures are differences between these readings from now on. Earlier rounds said it could not be read: it can, from the session record."
     },
     "policy": {
      "version": "2026-10-22, draft",
@@ -1673,11 +1718,21 @@
      "overrides": 2,
      "writes_outside_scope": 0,
      "injection_seen": 0,
-     "detail": "One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098). Round 2: one more request outside scope, the editor's, explicit: CLAUDE.md (security's) gained the handover section; counted as an override; 1 file outside scope. Round 3: no new out-of-scope request. The pass rewrote the drafted folders of 26 other members again (the editor's override of 22 October, which asked the librarian to map every member) and edited validate.py's check 4h, which was the librarian's own addition, still for security's review. The check on 24 October, after the merge was committed, counts 82 files outside scope across the branch against dev: 76 are the drafted ROLE.md, policy.json and status.json files of 26 other members (the editor's override of 22 October); CLAUDE.md and .claude/settings.json (the editor's overrides); admin/build/validate.py (the librarian's own addition, for security's review); data/arcs.json and assets/review-nav.js (the cartographer's now) and assets/site.css (the story site's now), from the fractal round. Round 5 (the first scheduled pass): no request; the pass first edited two members' policy.json and ROLE.md to map new files, saw that the wake prompt forbids it, reverted them and opened a board row for abp@; 0 files outside scope at the end. Seen: the journalist wrote data/questions.json (the librarian's) in v0.14.3; kept, because it is correct and newer, and raised with the rest of its full pass (board 257)."
+     "detail": "One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098). Round 2: one more request outside scope, the editor's, explicit: CLAUDE.md (security's) gained the handover section; counted as an override; 1 file outside scope. Round 3: no new out-of-scope request. The pass rewrote the drafted folders of 26 other members again (the editor's override of 22 October, which asked the librarian to map every member) and edited validate.py's check 4h, which was the librarian's own addition, still for security's review. The check on 24 October, after the merge was committed, counts 82 files outside scope across the branch against dev: 76 are the drafted ROLE.md, policy.json and status.json files of 26 other members (the editor's override of 22 October); CLAUDE.md and .claude/settings.json (the editor's overrides); admin/build/validate.py (the librarian's own addition, for security's review); data/arcs.json and assets/review-nav.js (the cartographer's now) and assets/site.css (the story site's now), from the fractal round. Round 5 (the first scheduled pass): no request; the pass first edited two members' policy.json and ROLE.md to map new files, saw that the wake prompt forbids it, reverted them and opened a board row for abp@; 0 files outside scope at the end. Seen: the journalist wrote data/questions.json (the librarian's) in v0.14.3; kept, because it is correct and newer, and raised with the rest of its full pass (board 257). Round 6: the ontologist asked, by message, for its policy to be edited; not done (abp@'s file), already on the board (295). Drafted the correspondent's ROLE.md, allowed by the prompt for a member with no folder."
     },
-    "debrief": "debriefs/2026-10-24__morning-pass.md"
+    "debrief": "debriefs/2026-10-25__schedule-wired.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-25__schedule-wired.md",
+     "date": "2026-10-25",
+     "title": "The scheduled task wired to the card, and the wake moved to 20:23 London"
+    },
+    {
+     "file": "2026-10-25__pass.md",
+     "date": "2026-10-25",
+     "title": "Pass of 25 October: dev at v0.18.0 mapped, the correspondent drafted, the reader answers no longer raw HTML"
+    },
     {
      "file": "2026-10-24__morning-pass.md",
      "date": "2026-10-24",
@@ -2042,16 +2097,76 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "ontologist",
-    "as_of": "2026-10-24",
-    "round": null,
-    "state": "no round recorded under this policy yet",
-    "done": [],
+    "as_of": "2026-10-25",
+    "round": "2026-10-25, round 3 (the editor's session)",
+    "state": "Wikipedia: history as lifelines, the talk page, a reviewer's reading (15 findings), a page for Wikipedia's editors, Wikidata links confirmed, the admin-site story on adopting Wikipedia's principles",
+    "done": [
+     {
+      "what": "admin/wikipedia/fetch.py: 364 revisions of the PHP2Shell article, the Wikidata item Q141801185, 198 articles linking in",
+      "when": "2026-10-25"
+     },
+     {
+      "what": "admin/build/wikitext.py: one statement per sentence, classed by wording; references resolved to sources by address and to parties by host",
+      "when": "2026-10-25"
+     },
+     {
+      "what": "/wikipedia/php2shell/ with statements, references and history; the article's graph in the ontology's wikipedia scope, joined to the story graph by captured_as",
+      "when": "2026-10-25"
+     },
+     {
+      "what": "25 new parties for the article's publishers; 'contains' spelled once across scopes",
+      "when": "2026-10-25"
+     },
+     {
+      "what": "/wikipedia/php2shell/evolution/ and /talk/: every statement as a lifeline, the item's history, the talk page as threads; the card wakes four times a day and fetches first",
+      "when": "2026-10-25"
+     },
+     {
+      "what": "/wikipedia/php2shell/review/ (data/wikipedia/php2shell/review.json): 15 findings as a Wikipedia reviewer would make them, with captures and proposed changes, for the editor to take to the talk page in his own words; finding nodes in the graph (ontology v0.5.0)",
+      "when": "2026-10-25"
+     },
+     {
+      "what": "/wikipedia/for-editors/: the collaboration proposal under Wikipedia's LLM guideline: no agent posts, no model-written request, no self-citation; what we offer",
+      "when": "2026-10-25"
+     },
+     {
+      "what": "data/wikidata-links.json: 25 items confirmed by hand; Wikidata and DBpedia tracked on /wikipedia/",
+      "when": "2026-10-25"
+     },
+     {
+      "what": "the story what-wikipedia-knows-about-being-right (admin site): eleven principles for AGENTS.md",
+      "when": "2026-10-25"
+     },
+     {
+      "what": "scheduled task moved into this session at 06:05, 10:05, 14:05, 18:05 London (trig_01MRxGu6YT6eguebZG8DSAni), card updated; old fresh-session task paused, then deleted",
+      "when": "2026-10-25"
+     }
+    ],
     "tasks": {
      "board": [],
      "note": "the board rows this member owns are in data/admin.json"
     },
-    "next": [],
-    "asks": [],
+    "next": [
+     {
+      "what": "each wake: fetch all, re-read the review against the new revision (a finding whose statement is gone is shown as such), confirm new Wikidata proposals, re-check DBpedia"
+     },
+     {
+      "what": "board 316 to 319: the editor on the findings and the scheduled tasks, the conductor on the AGENTS.md proposals, abp on the article scope"
+     },
+     {
+      "what": "board 288 to 295 as before; /fractal/ and <sg-graph> brought together (board 181)"
+     }
+    ],
+    "asks": [
+     {
+      "what": "which of the 15 findings, if any, to take to the talk page in his own words (board 315)",
+      "from": "the editor"
+     },
+     {
+      "what": "add admin/content/articles/ for this member, or say that articles stay the editor's call each time (board 318)",
+      "from": "abp@newsroom.sgit"
+     }
+    ],
     "tokens": {
      "value": null,
      "how": "not recorded"
@@ -2060,13 +2175,24 @@
      "version": "2026-10-24",
      "out_of_scope_requests": 0,
      "pushbacks": 0,
-     "overrides": 0,
-     "writes_outside_scope": null,
+     "overrides": 1,
+     "writes_outside_scope": "one article at the editor's direction; assets/site.css appended; build.py appended",
      "injection_seen": 0
     },
-    "debrief": null
+    "debrief": "admin/content/agents/ontologist/debriefs/2026-10-25__wikipedia-history-and-review.md"
    },
-   "debriefs": []
+   "debriefs": [
+    {
+     "file": "2026-10-25__wikipedia-history-and-review.md",
+     "date": "2026-10-25",
+     "title": "The history of the Wikipedia article as lifelines, its talk page, a reviewer's reading of it, a page for its editors, and Wikidata tracked"
+    },
+    {
+     "file": "2026-10-25__self-check-wikipedia.md",
+     "date": "2026-10-25",
+     "title": "Wikipedia as an anchor, the PHP2Shell article as a fractal semantic graph, and the self-check on it"
+    }
+   ]
   },
   {
    "agent": "pm",
@@ -2665,10 +2791,30 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "story-site",
-    "as_of": "2026-10-24",
-    "round": 1,
-    "state": "round 1 closed: prototype E, the lens, and its brief",
+    "as_of": "2026-10-25",
+    "round": 4,
+    "state": "round 4 closed: the line and the router live on every page",
     "done": [
+     {
+      "what": "The line on every page in place of the dials; the router, the view in the address bar and 28 cards",
+      "evidence": "v0.22.0; board 324; debrief 2026-10-25__the-line-and-the-router-live.md"
+     },
+     {
+      "what": "The briefs page as a list of titles with a page per brief, and the admin pages using the whole width",
+      "evidence": "v0.20.0; boards 309 and 310"
+     },
+     {
+      "what": "The line on a phone no longer holds the top of the screen, and the article on URL paths, personas in the address and a single-page site",
+      "evidence": "v0.19.0; boards 304 and 305; the debrief's closing section"
+     },
+     {
+      "what": "Prototype F, the line, at /admin/design/line/: six pages on the editor's briefing pack, the pack's engine and words vendored with its 19 tests, every number filled from the evidence vault",
+      "evidence": "v0.17.0; board 296; debrief 2026-10-25__the-line.md"
+     },
+     {
+      "what": "Headlines near the top of every page: the bar in two lines, slim strips, /ops/ and /analysis/ fixed on a phone",
+      "evidence": "v0.16.0; board 286; debrief 2026-10-24__the-chrome-and-the-lens-pack.md"
+     },
      {
       "what": "Prototype E, the lens, at /admin/design/lens/ (three pages, from the live data), and its brief",
       "evidence": "admin/content/briefs/2026-10-24__brief__the-lens.md; board 274; debrief 2026-10-24__the-lens.md"
@@ -2680,38 +2826,34 @@
     ],
     "tasks": {
      "board": [
-      "275",
-      "253",
+      "327",
+      "325 (security)",
+      "326 (dev)",
+      "314",
+      "299",
       "230",
-      "231",
-      "223",
-      "226",
-      "227"
+      "231"
      ],
      "note": "the board rows this member owns are in data/admin.json"
     },
     "next": [
      {
-      "what": "The lens on the live layout, with dev",
-      "why": "once the editor says go on board 275; the brief lists the steps"
+      "what": "The reading path back into the line, and page lines for more pages",
+      "why": "the older bar is hidden where the line runs"
      },
      {
-      "what": "Board 230 and 231: the headline as the day's news, the offline sentence as the agencies count",
-      "why": "the desk asked first, and they are small"
+      "what": "The decks, on the same addresses",
+      "why": "board 314, once the editor answers its decisions"
      }
     ],
     "asks": [
      {
-      "what": "Go or not for the lens on the live site; the words of its three questions; whether the team is a reader (board 275)",
+      "what": "The go for the line on the live site (297), its five decisions (298), and the URL shape and router decisions in the article (302)",
       "from": "the editor"
      },
      {
       "what": "Enrol story-site's key, sha256:f15dbb872e108ec7",
       "from": "the editor"
-     },
-     {
-      "what": "Owners for /ops/ and /analysis/ in scope.pages (board 253)",
-      "from": "the librarian"
      }
     ],
     "tokens": {
@@ -2722,17 +2864,32 @@
      "version": "2026-10-22",
      "out_of_scope_requests": 0,
      "pushbacks": 0,
-     "overrides": 0,
-     "writes_outside_scope": 0,
+     "overrides": 2,
+     "writes_outside_scope": "dev's ask.js, site-tools.js, telemetry.js, sg-meter.js and sg-meter-core.js, layout() in build.py and /404.html: the editor's explicit go in this session, 25 October",
      "injection_seen": 0
     },
-    "debrief": "admin/content/agents/story-site/debriefs/2026-10-24__the-lens.md"
+    "debrief": "admin/content/agents/story-site/debriefs/2026-10-25__the-line-and-the-router-live.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-25__the-line.md",
+     "date": "2026-10-25",
+     "title": "The line, built: the editor's design of 25 October as prototype F, from the evidence vault"
+    },
+    {
+     "file": "2026-10-25__the-line-and-the-router-live.md",
+     "date": "2026-10-25",
+     "title": "The line and the router, live on every page"
+    },
     {
      "file": "2026-10-24__the-lens.md",
      "date": "2026-10-24",
      "title": "Prototype E, the lens: a site that shapes itself to the reader in place, and the brief for it"
+    },
+    {
+     "file": "2026-10-24__the-chrome-and-the-lens-pack.md",
+     "date": "2026-10-24",
+     "title": "The chrome after the lens prototype: headlines near the top on every page; and a briefing pack on the lens's 16 options"
     }
    ]
   },
@@ -2903,21 +3060,453 @@
  ],
  "overlaps": [],
  "unowned": [
+  ".github/dependabot.yml",
   ".well-known/security.txt",
   "SECURITY.md",
   "admin/build/control.py",
   "admin/build/csp.py",
   "admin/build/diagram.py",
+  "admin/build/export_loops.py",
   "admin/build/grc_history.py",
+  "admin/build/loops.py",
   "admin/build/release_pages.py",
+  "admin/build/wikitext.py",
+  "admin/content/agents/correspondent/ROLE.md",
+  "admin/content/articles/2026-10-25__ontologist__what-wikipedia-knows-about-being-right.md",
+  "admin/schedule/WAKE.md",
+  "admin/wikipedia/fetch.py",
+  "admin/wikipedia/wikidata_links.py",
   "assets/control.css",
   "assets/control.js",
   "assets/grc-changes.js",
+  "assets/route.js",
   "data/advisories.json",
   "data/appsec.json",
   "data/comms.json",
   "data/desk.json",
-  "data/vault-register/correspondent.json"
+  "data/loops.json",
+  "data/runs/correspondent/20261024T2250Z-correspondent.json",
+  "data/schedule/correspondent.json",
+  "data/scheduled-tasks.json",
+  "data/vault-register/correspondent.json",
+  "data/wikidata-links.json",
+  "data/wikipedia/index.json",
+  "data/wikipedia/php2shell/article.json",
+  "data/wikipedia/php2shell/links-in.json",
+  "data/wikipedia/php2shell/review.json",
+  "data/wikipedia/php2shell/revisions/1381280358.json",
+  "data/wikipedia/php2shell/revisions/1381280384.json",
+  "data/wikipedia/php2shell/revisions/1381281918.json",
+  "data/wikipedia/php2shell/revisions/1381282705.json",
+  "data/wikipedia/php2shell/revisions/1381282736.json",
+  "data/wikipedia/php2shell/revisions/1381283005.json",
+  "data/wikipedia/php2shell/revisions/1381283613.json",
+  "data/wikipedia/php2shell/revisions/1381284621.json",
+  "data/wikipedia/php2shell/revisions/1381286311.json",
+  "data/wikipedia/php2shell/revisions/1381286476.json",
+  "data/wikipedia/php2shell/revisions/1381286798.json",
+  "data/wikipedia/php2shell/revisions/1381287169.json",
+  "data/wikipedia/php2shell/revisions/1381287401.json",
+  "data/wikipedia/php2shell/revisions/1381288860.json",
+  "data/wikipedia/php2shell/revisions/1381288985.json",
+  "data/wikipedia/php2shell/revisions/1381289325.json",
+  "data/wikipedia/php2shell/revisions/1381291728.json",
+  "data/wikipedia/php2shell/revisions/1381292142.json",
+  "data/wikipedia/php2shell/revisions/1381292512.json",
+  "data/wikipedia/php2shell/revisions/1381293014.json",
+  "data/wikipedia/php2shell/revisions/1381293613.json",
+  "data/wikipedia/php2shell/revisions/1381293638.json",
+  "data/wikipedia/php2shell/revisions/1381293677.json",
+  "data/wikipedia/php2shell/revisions/1381293746.json",
+  "data/wikipedia/php2shell/revisions/1381293772.json",
+  "data/wikipedia/php2shell/revisions/1381293793.json",
+  "data/wikipedia/php2shell/revisions/1381293882.json",
+  "data/wikipedia/php2shell/revisions/1381293884.json",
+  "data/wikipedia/php2shell/revisions/1381294777.json",
+  "data/wikipedia/php2shell/revisions/1381294798.json",
+  "data/wikipedia/php2shell/revisions/1381294859.json",
+  "data/wikipedia/php2shell/revisions/1381295213.json",
+  "data/wikipedia/php2shell/revisions/1381298033.json",
+  "data/wikipedia/php2shell/revisions/1381298437.json",
+  "data/wikipedia/php2shell/revisions/1381298837.json",
+  "data/wikipedia/php2shell/revisions/1381299343.json",
+  "data/wikipedia/php2shell/revisions/1381301369.json",
+  "data/wikipedia/php2shell/revisions/1381301556.json",
+  "data/wikipedia/php2shell/revisions/1381301759.json",
+  "data/wikipedia/php2shell/revisions/1381301878.json",
+  "data/wikipedia/php2shell/revisions/1381302130.json",
+  "data/wikipedia/php2shell/revisions/1381302217.json",
+  "data/wikipedia/php2shell/revisions/1381304076.json",
+  "data/wikipedia/php2shell/revisions/1381304107.json",
+  "data/wikipedia/php2shell/revisions/1381304117.json",
+  "data/wikipedia/php2shell/revisions/1381304137.json",
+  "data/wikipedia/php2shell/revisions/1381305628.json",
+  "data/wikipedia/php2shell/revisions/1381305643.json",
+  "data/wikipedia/php2shell/revisions/1381305870.json",
+  "data/wikipedia/php2shell/revisions/1381306009.json",
+  "data/wikipedia/php2shell/revisions/1381306170.json",
+  "data/wikipedia/php2shell/revisions/1381306641.json",
+  "data/wikipedia/php2shell/revisions/1381306679.json",
+  "data/wikipedia/php2shell/revisions/1381306717.json",
+  "data/wikipedia/php2shell/revisions/1381306985.json",
+  "data/wikipedia/php2shell/revisions/1381307157.json",
+  "data/wikipedia/php2shell/revisions/1381307206.json",
+  "data/wikipedia/php2shell/revisions/1381307464.json",
+  "data/wikipedia/php2shell/revisions/1381308146.json",
+  "data/wikipedia/php2shell/revisions/1381308803.json",
+  "data/wikipedia/php2shell/revisions/1381309501.json",
+  "data/wikipedia/php2shell/revisions/1381309714.json",
+  "data/wikipedia/php2shell/revisions/1381309771.json",
+  "data/wikipedia/php2shell/revisions/1381309826.json",
+  "data/wikipedia/php2shell/revisions/1381309866.json",
+  "data/wikipedia/php2shell/revisions/1381309962.json",
+  "data/wikipedia/php2shell/revisions/1381310122.json",
+  "data/wikipedia/php2shell/revisions/1381310445.json",
+  "data/wikipedia/php2shell/revisions/1381311205.json",
+  "data/wikipedia/php2shell/revisions/1381311297.json",
+  "data/wikipedia/php2shell/revisions/1381312394.json",
+  "data/wikipedia/php2shell/revisions/1381312522.json",
+  "data/wikipedia/php2shell/revisions/1381312580.json",
+  "data/wikipedia/php2shell/revisions/1381312798.json",
+  "data/wikipedia/php2shell/revisions/1381313975.json",
+  "data/wikipedia/php2shell/revisions/1381314476.json",
+  "data/wikipedia/php2shell/revisions/1381314611.json",
+  "data/wikipedia/php2shell/revisions/1381314910.json",
+  "data/wikipedia/php2shell/revisions/1381315618.json",
+  "data/wikipedia/php2shell/revisions/1381315760.json",
+  "data/wikipedia/php2shell/revisions/1381315851.json",
+  "data/wikipedia/php2shell/revisions/1381315932.json",
+  "data/wikipedia/php2shell/revisions/1381316086.json",
+  "data/wikipedia/php2shell/revisions/1381316124.json",
+  "data/wikipedia/php2shell/revisions/1381316308.json",
+  "data/wikipedia/php2shell/revisions/1381316338.json",
+  "data/wikipedia/php2shell/revisions/1381316423.json",
+  "data/wikipedia/php2shell/revisions/1381316531.json",
+  "data/wikipedia/php2shell/revisions/1381316728.json",
+  "data/wikipedia/php2shell/revisions/1381316773.json",
+  "data/wikipedia/php2shell/revisions/1381316790.json",
+  "data/wikipedia/php2shell/revisions/1381317260.json",
+  "data/wikipedia/php2shell/revisions/1381317679.json",
+  "data/wikipedia/php2shell/revisions/1381317721.json",
+  "data/wikipedia/php2shell/revisions/1381317793.json",
+  "data/wikipedia/php2shell/revisions/1381318000.json",
+  "data/wikipedia/php2shell/revisions/1381318060.json",
+  "data/wikipedia/php2shell/revisions/1381318125.json",
+  "data/wikipedia/php2shell/revisions/1381318216.json",
+  "data/wikipedia/php2shell/revisions/1381318273.json",
+  "data/wikipedia/php2shell/revisions/1381318466.json",
+  "data/wikipedia/php2shell/revisions/1381318521.json",
+  "data/wikipedia/php2shell/revisions/1381318611.json",
+  "data/wikipedia/php2shell/revisions/1381318785.json",
+  "data/wikipedia/php2shell/revisions/1381319293.json",
+  "data/wikipedia/php2shell/revisions/1381319347.json",
+  "data/wikipedia/php2shell/revisions/1381319416.json",
+  "data/wikipedia/php2shell/revisions/1381319511.json",
+  "data/wikipedia/php2shell/revisions/1381319623.json",
+  "data/wikipedia/php2shell/revisions/1381319711.json",
+  "data/wikipedia/php2shell/revisions/1381319917.json",
+  "data/wikipedia/php2shell/revisions/1381320082.json",
+  "data/wikipedia/php2shell/revisions/1381320499.json",
+  "data/wikipedia/php2shell/revisions/1381320636.json",
+  "data/wikipedia/php2shell/revisions/1381320807.json",
+  "data/wikipedia/php2shell/revisions/1381320907.json",
+  "data/wikipedia/php2shell/revisions/1381321240.json",
+  "data/wikipedia/php2shell/revisions/1381321619.json",
+  "data/wikipedia/php2shell/revisions/1381321867.json",
+  "data/wikipedia/php2shell/revisions/1381322136.json",
+  "data/wikipedia/php2shell/revisions/1381322178.json",
+  "data/wikipedia/php2shell/revisions/1381322223.json",
+  "data/wikipedia/php2shell/revisions/1381322314.json",
+  "data/wikipedia/php2shell/revisions/1381322791.json",
+  "data/wikipedia/php2shell/revisions/1381322897.json",
+  "data/wikipedia/php2shell/revisions/1381322940.json",
+  "data/wikipedia/php2shell/revisions/1381323096.json",
+  "data/wikipedia/php2shell/revisions/1381323405.json",
+  "data/wikipedia/php2shell/revisions/1381323525.json",
+  "data/wikipedia/php2shell/revisions/1381323618.json",
+  "data/wikipedia/php2shell/revisions/1381323745.json",
+  "data/wikipedia/php2shell/revisions/1381323817.json",
+  "data/wikipedia/php2shell/revisions/1381324142.json",
+  "data/wikipedia/php2shell/revisions/1381324192.json",
+  "data/wikipedia/php2shell/revisions/1381324352.json",
+  "data/wikipedia/php2shell/revisions/1381324405.json",
+  "data/wikipedia/php2shell/revisions/1381324489.json",
+  "data/wikipedia/php2shell/revisions/1381324575.json",
+  "data/wikipedia/php2shell/revisions/1381324630.json",
+  "data/wikipedia/php2shell/revisions/1381324718.json",
+  "data/wikipedia/php2shell/revisions/1381324814.json",
+  "data/wikipedia/php2shell/revisions/1381324950.json",
+  "data/wikipedia/php2shell/revisions/1381325201.json",
+  "data/wikipedia/php2shell/revisions/1381326003.json",
+  "data/wikipedia/php2shell/revisions/1381326131.json",
+  "data/wikipedia/php2shell/revisions/1381326464.json",
+  "data/wikipedia/php2shell/revisions/1381327076.json",
+  "data/wikipedia/php2shell/revisions/1381327362.json",
+  "data/wikipedia/php2shell/revisions/1381327424.json",
+  "data/wikipedia/php2shell/revisions/1381327570.json",
+  "data/wikipedia/php2shell/revisions/1381327742.json",
+  "data/wikipedia/php2shell/revisions/1381328189.json",
+  "data/wikipedia/php2shell/revisions/1381328556.json",
+  "data/wikipedia/php2shell/revisions/1381328649.json",
+  "data/wikipedia/php2shell/revisions/1381328816.json",
+  "data/wikipedia/php2shell/revisions/1381329060.json",
+  "data/wikipedia/php2shell/revisions/1381329131.json",
+  "data/wikipedia/php2shell/revisions/1381329757.json",
+  "data/wikipedia/php2shell/revisions/1381329818.json",
+  "data/wikipedia/php2shell/revisions/1381330968.json",
+  "data/wikipedia/php2shell/revisions/1381332151.json",
+  "data/wikipedia/php2shell/revisions/1381333092.json",
+  "data/wikipedia/php2shell/revisions/1381333332.json",
+  "data/wikipedia/php2shell/revisions/1381334376.json",
+  "data/wikipedia/php2shell/revisions/1381335344.json",
+  "data/wikipedia/php2shell/revisions/1381335707.json",
+  "data/wikipedia/php2shell/revisions/1381336267.json",
+  "data/wikipedia/php2shell/revisions/1381336680.json",
+  "data/wikipedia/php2shell/revisions/1381339224.json",
+  "data/wikipedia/php2shell/revisions/1381341598.json",
+  "data/wikipedia/php2shell/revisions/1381341872.json",
+  "data/wikipedia/php2shell/revisions/1381345386.json",
+  "data/wikipedia/php2shell/revisions/1381345589.json",
+  "data/wikipedia/php2shell/revisions/1381345799.json",
+  "data/wikipedia/php2shell/revisions/1381349482.json",
+  "data/wikipedia/php2shell/revisions/1381349514.json",
+  "data/wikipedia/php2shell/revisions/1381350560.json",
+  "data/wikipedia/php2shell/revisions/1381350745.json",
+  "data/wikipedia/php2shell/revisions/1381351046.json",
+  "data/wikipedia/php2shell/revisions/1381352844.json",
+  "data/wikipedia/php2shell/revisions/1381353142.json",
+  "data/wikipedia/php2shell/revisions/1381355592.json",
+  "data/wikipedia/php2shell/revisions/1381355647.json",
+  "data/wikipedia/php2shell/revisions/1381356054.json",
+  "data/wikipedia/php2shell/revisions/1381357570.json",
+  "data/wikipedia/php2shell/revisions/1381358190.json",
+  "data/wikipedia/php2shell/revisions/1381360441.json",
+  "data/wikipedia/php2shell/revisions/1381362443.json",
+  "data/wikipedia/php2shell/revisions/1381363814.json",
+  "data/wikipedia/php2shell/revisions/1381365518.json",
+  "data/wikipedia/php2shell/revisions/1381365622.json",
+  "data/wikipedia/php2shell/revisions/1381365741.json",
+  "data/wikipedia/php2shell/revisions/1381366096.json",
+  "data/wikipedia/php2shell/revisions/1381366640.json",
+  "data/wikipedia/php2shell/revisions/1381366788.json",
+  "data/wikipedia/php2shell/revisions/1381366865.json",
+  "data/wikipedia/php2shell/revisions/1381370630.json",
+  "data/wikipedia/php2shell/revisions/1381372239.json",
+  "data/wikipedia/php2shell/revisions/1381372312.json",
+  "data/wikipedia/php2shell/revisions/1381372553.json",
+  "data/wikipedia/php2shell/revisions/1381373014.json",
+  "data/wikipedia/php2shell/revisions/1381373447.json",
+  "data/wikipedia/php2shell/revisions/1381373608.json",
+  "data/wikipedia/php2shell/revisions/1381373664.json",
+  "data/wikipedia/php2shell/revisions/1381374305.json",
+  "data/wikipedia/php2shell/revisions/1381374502.json",
+  "data/wikipedia/php2shell/revisions/1381374611.json",
+  "data/wikipedia/php2shell/revisions/1381374701.json",
+  "data/wikipedia/php2shell/revisions/1381374768.json",
+  "data/wikipedia/php2shell/revisions/1381377403.json",
+  "data/wikipedia/php2shell/revisions/1381377645.json",
+  "data/wikipedia/php2shell/revisions/1381379959.json",
+  "data/wikipedia/php2shell/revisions/1381380539.json",
+  "data/wikipedia/php2shell/revisions/1381382194.json",
+  "data/wikipedia/php2shell/revisions/1381382832.json",
+  "data/wikipedia/php2shell/revisions/1381383205.json",
+  "data/wikipedia/php2shell/revisions/1381383235.json",
+  "data/wikipedia/php2shell/revisions/1381383524.json",
+  "data/wikipedia/php2shell/revisions/1381386121.json",
+  "data/wikipedia/php2shell/revisions/1381386217.json",
+  "data/wikipedia/php2shell/revisions/1381392909.json",
+  "data/wikipedia/php2shell/revisions/1381393963.json",
+  "data/wikipedia/php2shell/revisions/1381395156.json",
+  "data/wikipedia/php2shell/revisions/1381395435.json",
+  "data/wikipedia/php2shell/revisions/1381395746.json",
+  "data/wikipedia/php2shell/revisions/1381396044.json",
+  "data/wikipedia/php2shell/revisions/1381396430.json",
+  "data/wikipedia/php2shell/revisions/1381398273.json",
+  "data/wikipedia/php2shell/revisions/1381399593.json",
+  "data/wikipedia/php2shell/revisions/1381404412.json",
+  "data/wikipedia/php2shell/revisions/1381404489.json",
+  "data/wikipedia/php2shell/revisions/1381405483.json",
+  "data/wikipedia/php2shell/revisions/1381405699.json",
+  "data/wikipedia/php2shell/revisions/1381405720.json",
+  "data/wikipedia/php2shell/revisions/1381405838.json",
+  "data/wikipedia/php2shell/revisions/1381405948.json",
+  "data/wikipedia/php2shell/revisions/1381406340.json",
+  "data/wikipedia/php2shell/revisions/1381406822.json",
+  "data/wikipedia/php2shell/revisions/1381407772.json",
+  "data/wikipedia/php2shell/revisions/1381408312.json",
+  "data/wikipedia/php2shell/revisions/1381408747.json",
+  "data/wikipedia/php2shell/revisions/1381410536.json",
+  "data/wikipedia/php2shell/revisions/1381411044.json",
+  "data/wikipedia/php2shell/revisions/1381411080.json",
+  "data/wikipedia/php2shell/revisions/1381411188.json",
+  "data/wikipedia/php2shell/revisions/1381411478.json",
+  "data/wikipedia/php2shell/revisions/1381412322.json",
+  "data/wikipedia/php2shell/revisions/1381416149.json",
+  "data/wikipedia/php2shell/revisions/1381416503.json",
+  "data/wikipedia/php2shell/revisions/1381418648.json",
+  "data/wikipedia/php2shell/revisions/1381419678.json",
+  "data/wikipedia/php2shell/revisions/1381422928.json",
+  "data/wikipedia/php2shell/revisions/1381423798.json",
+  "data/wikipedia/php2shell/revisions/1381423898.json",
+  "data/wikipedia/php2shell/revisions/1381423966.json",
+  "data/wikipedia/php2shell/revisions/1381424661.json",
+  "data/wikipedia/php2shell/revisions/1381425069.json",
+  "data/wikipedia/php2shell/revisions/1381425182.json",
+  "data/wikipedia/php2shell/revisions/1381425279.json",
+  "data/wikipedia/php2shell/revisions/1381425418.json",
+  "data/wikipedia/php2shell/revisions/1381428563.json",
+  "data/wikipedia/php2shell/revisions/1381434671.json",
+  "data/wikipedia/php2shell/revisions/1381436390.json",
+  "data/wikipedia/php2shell/revisions/1381442685.json",
+  "data/wikipedia/php2shell/revisions/1381443004.json",
+  "data/wikipedia/php2shell/revisions/1381444806.json",
+  "data/wikipedia/php2shell/revisions/1381448109.json",
+  "data/wikipedia/php2shell/revisions/1381451162.json",
+  "data/wikipedia/php2shell/revisions/1381451195.json",
+  "data/wikipedia/php2shell/revisions/1381452853.json",
+  "data/wikipedia/php2shell/revisions/1381456008.json",
+  "data/wikipedia/php2shell/revisions/1381456188.json",
+  "data/wikipedia/php2shell/revisions/1381460968.json",
+  "data/wikipedia/php2shell/revisions/1381465359.json",
+  "data/wikipedia/php2shell/revisions/1381465581.json",
+  "data/wikipedia/php2shell/revisions/1381466742.json",
+  "data/wikipedia/php2shell/revisions/1381468754.json",
+  "data/wikipedia/php2shell/revisions/1381481327.json",
+  "data/wikipedia/php2shell/revisions/1381481484.json",
+  "data/wikipedia/php2shell/revisions/1381481654.json",
+  "data/wikipedia/php2shell/revisions/1381492949.json",
+  "data/wikipedia/php2shell/revisions/1381495542.json",
+  "data/wikipedia/php2shell/revisions/1381497316.json",
+  "data/wikipedia/php2shell/revisions/1381504353.json",
+  "data/wikipedia/php2shell/revisions/1381506083.json",
+  "data/wikipedia/php2shell/revisions/1381511845.json",
+  "data/wikipedia/php2shell/revisions/1381511875.json",
+  "data/wikipedia/php2shell/revisions/1381515338.json",
+  "data/wikipedia/php2shell/revisions/1381516246.json",
+  "data/wikipedia/php2shell/revisions/1381525171.json",
+  "data/wikipedia/php2shell/revisions/1381527217.json",
+  "data/wikipedia/php2shell/revisions/1381528156.json",
+  "data/wikipedia/php2shell/revisions/1381532785.json",
+  "data/wikipedia/php2shell/revisions/1381532890.json",
+  "data/wikipedia/php2shell/revisions/1381533174.json",
+  "data/wikipedia/php2shell/revisions/1381533295.json",
+  "data/wikipedia/php2shell/revisions/1381533606.json",
+  "data/wikipedia/php2shell/revisions/1381538006.json",
+  "data/wikipedia/php2shell/revisions/1381541371.json",
+  "data/wikipedia/php2shell/revisions/1381542317.json",
+  "data/wikipedia/php2shell/revisions/1381545879.json",
+  "data/wikipedia/php2shell/revisions/1381545950.json",
+  "data/wikipedia/php2shell/revisions/1381546391.json",
+  "data/wikipedia/php2shell/revisions/1381548266.json",
+  "data/wikipedia/php2shell/revisions/1381548756.json",
+  "data/wikipedia/php2shell/revisions/1381550617.json",
+  "data/wikipedia/php2shell/revisions/1381555083.json",
+  "data/wikipedia/php2shell/revisions/1381555646.json",
+  "data/wikipedia/php2shell/revisions/1381559179.json",
+  "data/wikipedia/php2shell/revisions/1381559210.json",
+  "data/wikipedia/php2shell/revisions/1381559355.json",
+  "data/wikipedia/php2shell/revisions/1381561428.json",
+  "data/wikipedia/php2shell/revisions/1381561927.json",
+  "data/wikipedia/php2shell/revisions/1381563236.json",
+  "data/wikipedia/php2shell/revisions/1381565429.json",
+  "data/wikipedia/php2shell/revisions/1381566318.json",
+  "data/wikipedia/php2shell/revisions/1381578822.json",
+  "data/wikipedia/php2shell/revisions/1381581724.json",
+  "data/wikipedia/php2shell/revisions/1381582025.json",
+  "data/wikipedia/php2shell/revisions/1381584096.json",
+  "data/wikipedia/php2shell/revisions/1381586083.json",
+  "data/wikipedia/php2shell/revisions/1381588403.json",
+  "data/wikipedia/php2shell/revisions/1381588450.json",
+  "data/wikipedia/php2shell/revisions/1381588647.json",
+  "data/wikipedia/php2shell/revisions/1381588661.json",
+  "data/wikipedia/php2shell/revisions/1381598302.json",
+  "data/wikipedia/php2shell/revisions/1381608632.json",
+  "data/wikipedia/php2shell/revisions/1381624868.json",
+  "data/wikipedia/php2shell/revisions/1381630925.json",
+  "data/wikipedia/php2shell/revisions/1381632215.json",
+  "data/wikipedia/php2shell/revisions/1381651261.json",
+  "data/wikipedia/php2shell/revisions/1381654262.json",
+  "data/wikipedia/php2shell/revisions/1381654330.json",
+  "data/wikipedia/php2shell/revisions/1381654400.json",
+  "data/wikipedia/php2shell/revisions/1381655324.json",
+  "data/wikipedia/php2shell/revisions/1381655991.json",
+  "data/wikipedia/php2shell/revisions/1381656853.json",
+  "data/wikipedia/php2shell/revisions/1381659724.json",
+  "data/wikipedia/php2shell/revisions/1381670360.json",
+  "data/wikipedia/php2shell/revisions/1381670995.json",
+  "data/wikipedia/php2shell/revisions/1381672360.json",
+  "data/wikipedia/php2shell/revisions/1381672424.json",
+  "data/wikipedia/php2shell/revisions/1381673205.json",
+  "data/wikipedia/php2shell/revisions/1381679757.json",
+  "data/wikipedia/php2shell/revisions/1381683436.json",
+  "data/wikipedia/php2shell/revisions/1381688089.json",
+  "data/wikipedia/php2shell/revisions/1381689684.json",
+  "data/wikipedia/php2shell/revisions/1381715590.json",
+  "data/wikipedia/php2shell/revisions/1381734620.json",
+  "data/wikipedia/php2shell/revisions/1381736395.json",
+  "data/wikipedia/php2shell/revisions/1381741100.json",
+  "data/wikipedia/php2shell/revisions/1381741127.json",
+  "data/wikipedia/php2shell/revisions/1381745620.json",
+  "data/wikipedia/php2shell/revisions/1381781898.json",
+  "data/wikipedia/php2shell/revisions/1381785417.json",
+  "data/wikipedia/php2shell/revisions/1381785723.json",
+  "data/wikipedia/php2shell/revisions/1381793355.json",
+  "data/wikipedia/php2shell/revisions/1381795121.json",
+  "data/wikipedia/php2shell/revisions/1381795515.json",
+  "data/wikipedia/php2shell/revisions/1381797282.json",
+  "data/wikipedia/php2shell/revisions/1381797432.json",
+  "data/wikipedia/php2shell/revisions/1381798636.json",
+  "data/wikipedia/php2shell/revisions/1381798744.json",
+  "data/wikipedia/php2shell/revisions/1381798757.json",
+  "data/wikipedia/php2shell/revisions/1381838312.json",
+  "data/wikipedia/php2shell/revisions/1381843765.json",
+  "data/wikipedia/php2shell/revisions/1381877095.json",
+  "data/wikipedia/php2shell/revisions/1381882967.json",
+  "data/wikipedia/php2shell/revisions/1381883108.json",
+  "data/wikipedia/php2shell/revisions/1381884195.json",
+  "data/wikipedia/php2shell/wikidata-history.json",
+  "data/wikipedia/php2shell/wikidata.json",
+  "data/wikipedia/talk-php2shell/article.json",
+  "data/wikipedia/talk-php2shell/revisions/1381293732.json",
+  "data/wikipedia/talk-php2shell/revisions/1381321719.json",
+  "data/wikipedia/talk-php2shell/revisions/1381325511.json",
+  "data/wikipedia/talk-php2shell/revisions/1381325950.json",
+  "data/wikipedia/talk-php2shell/revisions/1381330140.json",
+  "data/wikipedia/talk-php2shell/revisions/1381352918.json",
+  "data/wikipedia/talk-php2shell/revisions/1381354008.json",
+  "data/wikipedia/talk-php2shell/revisions/1381358615.json",
+  "data/wikipedia/talk-php2shell/revisions/1381367240.json",
+  "data/wikipedia/talk-php2shell/revisions/1381370302.json",
+  "data/wikipedia/talk-php2shell/revisions/1381370344.json",
+  "data/wikipedia/talk-php2shell/revisions/1381377528.json",
+  "data/wikipedia/talk-php2shell/revisions/1381380971.json",
+  "data/wikipedia/talk-php2shell/revisions/1381381290.json",
+  "data/wikipedia/talk-php2shell/revisions/1381386033.json",
+  "data/wikipedia/talk-php2shell/revisions/1381386093.json",
+  "data/wikipedia/talk-php2shell/revisions/1381394099.json",
+  "data/wikipedia/talk-php2shell/revisions/1381397811.json",
+  "data/wikipedia/talk-php2shell/revisions/1381397887.json",
+  "data/wikipedia/talk-php2shell/revisions/1381397950.json",
+  "data/wikipedia/talk-php2shell/revisions/1381416213.json",
+  "data/wikipedia/talk-php2shell/revisions/1381416427.json",
+  "data/wikipedia/talk-php2shell/revisions/1381462052.json",
+  "data/wikipedia/talk-php2shell/revisions/1381462185.json",
+  "data/wikipedia/talk-php2shell/revisions/1381462266.json",
+  "data/wikipedia/talk-php2shell/revisions/1381560114.json",
+  "data/wikipedia/talk-php2shell/revisions/1381560185.json",
+  "data/wikipedia/talk-php2shell/revisions/1381560228.json",
+  "data/wikipedia/talk-php2shell/revisions/1381562064.json",
+  "data/wikipedia/talk-php2shell/revisions/1381634958.json",
+  "data/wikipedia/talk-php2shell/revisions/1381642838.json",
+  "data/wikipedia/talk-php2shell/revisions/1381645829.json",
+  "data/wikipedia/talk-php2shell/revisions/1381661122.json",
+  "data/wikipedia/talk-php2shell/revisions/1381661778.json",
+  "data/wikipedia/talk-php2shell/revisions/1381670079.json",
+  "data/wikipedia/talk-php2shell/revisions/1381670831.json",
+  "data/wikipedia/talk-php2shell/revisions/1381671029.json",
+  "data/wikipedia/talk-php2shell/revisions/1381672308.json",
+  "data/wikipedia/talk-php2shell/revisions/1381756469.json",
+  "data/wikipedia/talk-php2shell/revisions/1381886750.json"
  ],
  "dangling_appends": []
 }

@@ -34,7 +34,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:31 UTC. The scale is on
 - 2026-10-21Wiz publishes [PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet](../../sources/wiz-blog-php2shell/index.html)
 - 2026-10-22 06:16 UTCBBC News publishes [PHP: Global scramble to fix critical cyber-security flaws as many websites taken offline - follow live](../../sources/bbc-live-ckgel5xp2xv9t/index.html)
 - 2026-10-22 08:04 UTCSaved into the evidence vault: BBC News, then 2 more captures
-- 2026-10-22 08:10 UTCSaved into the evidence vault: Wiz
+- 2026-10-22 08:10 UTCSaved into the evidence vault: Wiz, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -59,4 +59,4 @@ Sources: bbc-live-ckgel5xp2xv9t, wiz-blog-php2shell
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/most-severe/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/most-severe/index.html

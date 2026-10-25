@@ -132,6 +132,16 @@
      "sources": [
       "cybersecuritynews-critical-php2shell-exploit-code"
      ]
+    },
+    {
+     "who": "watchTowr (its own intel page and FAQ)",
+     "when": "captured 2026-10-23",
+     "says": "watchTowr has observed exploitation in the wild through its Attacker Eye honeypot network.",
+     "measures": "honeypot traffic, listed by watchTowr as 'EXPLOITED IN THE WILD: Yes'",
+     "sources": [
+      "watchtowr-php2shell-faq",
+      "watchtowr-php2shell"
+     ]
     }
    ],
    "reading": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises. Run 3 (24 October): Amazon itself has since narrowed its sentence from 'broadly exploited' to 'broad exploitation attempts', without a note: the strongest word on the exploitation side now agrees with the officials' reading. Run 5 (24 October): Sophos withdrew its earlier success claim at 21:21 UTC on 22 October, the same evening Amazon narrowed its wording: both strongest 'exploited' statements were walked back to attempts.",
@@ -501,9 +511,18 @@
      "sources": [
       "php-net-changelog-8"
      ]
+    },
+    {
+     "who": "Lorikeet Security (vendor blog)",
+     "when": "2026-10-21",
+     "says": "candidate pull requests under a private security branch scheduled for public disclosure on October 24.",
+     "measures": "a third planned date, 24 October, given with no source; no other statement in the vault gives it",
+     "sources": [
+      "lorikeet-php2shell"
+     ]
     }
    ],
-   "reading": "The original embargo time has two values, 14:00 UTC (the Foundation, echoed by The Hacker News) and 11:00 ET, which is 15:00 UTC (watchTowr, echoed by CybelAngel and others). The release itself is stamped 13:34 UTC on the GitHub advisories, ahead of the announced 14:00. The ChangeLog still carries the original date. The site should say 'about 14:00 UTC, advisories at 13:34' and give both original times.",
+   "reading": "The original embargo time has two values, 14:00 UTC (the Foundation, echoed by The Hacker News) and 11:00 ET, which is 15:00 UTC (watchTowr, echoed by CybelAngel and others). The release itself is stamped 13:34 UTC on the GitHub advisories, ahead of the announced 14:00. The ChangeLog still carries the original date. The site should say 'about 14:00 UTC, advisories at 13:34' and give both original times. Run 7: Lorikeet's blog gives a third planned date, 24 October, unsourced and alone in the vault (in its captures of 22 and 25 October); it does not change the reading.",
    "settle": "A PHP project statement of the embargo time, or the pre-announcement's original text.",
    "ticket": "Contradiction-10"
   },

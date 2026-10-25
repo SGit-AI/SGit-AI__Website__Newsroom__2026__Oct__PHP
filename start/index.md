@@ -51,7 +51,7 @@ I want to understand it · ******Plain English
 
 The answer in thirty seconds
 
-Two serious holes were found in PHP, software that runs on the servers behind a large share of websites. They were fixed on 21 October 2026. Your phone and laptop are not the target: websites are, and it is the job of whoever runs them to update. Some sites were taken offline as a precaution. As of the evening of 22 October, no named organisation has said it was compromised through php2shell.
+Two serious holes were found in PHP, software that runs on the servers behind a large share of websites. They were fixed on 21 October 2026. Your phone and laptop are not the target: websites are, and it is the job of whoever runs them to update. Some sites were taken offline as a precaution. As of 16:05 UTC on 24 October, the latest capture in the evidence vault, no named organisation has said it was compromised through php2shell.
 
 #### Reading path
 - [Your briefing](../briefings/everyone/index.html) 4 min
@@ -63,7 +63,7 @@ About 14 minutes in all. Choose *read as Alex* and the bar under the menu keeps 
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[Exploit, exploitation](../glossary/index.html#exploit)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)[NCSC](../glossary/index.html#ncsc)[Patch](../glossary/index.html#patch)[CVE](../glossary/index.html#cve)
+[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Evidence vault](../glossary/index.html#vault)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[Exploit, exploitation](../glossary/index.html#exploit)[Remote code execution (RCE)](../glossary/index.html#rce)[Honeypot](../glossary/index.html#honeypot)[NCSC](../glossary/index.html#ncsc)[Patch](../glossary/index.html#patch)
 
 [Read as Alex →](../briefings/everyone/index.html)
 
@@ -127,7 +127,7 @@ I make the decisions · ******Plain English
 
 The answer in thirty seconds
 
-A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of the evening of 22 October, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
+A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of 16:05 UTC on 24 October, the latest capture in the evidence vault, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
 
 #### Reading path
 - [Your briefing](../briefings/board/index.html) 4 min
@@ -140,7 +140,7 @@ About 18 minutes in all. Choose *read as Jordan* and the bar under the menu keep
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[Patch](../glossary/index.html#patch)[Exploit, exploitation](../glossary/index.html#exploit)[SAPI](../glossary/index.html#sapi)[Primary source](../glossary/index.html#primary)[CVE](../glossary/index.html#cve)[KEV](../glossary/index.html#kev)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)[php2shell](../glossary/index.html#php2shell)
+[PHP](../glossary/index.html#php)[Evidence vault](../glossary/index.html#vault)[Patch](../glossary/index.html#patch)[Exploit, exploitation](../glossary/index.html#exploit)[SAPI](../glossary/index.html#sapi)[Primary source](../glossary/index.html#primary)[CVE](../glossary/index.html#cve)[KEV](../glossary/index.html#kev)[CISA](../glossary/index.html#cisa)[NCSC](../glossary/index.html#ncsc)
 
 [Read as Jordan →](../briefings/board/index.html)
 
@@ -203,7 +203,7 @@ I make the decisions · ******Plain English
 
 The answer in thirty seconds
 
-The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. As of the evening of 22 October, no named organisation has said it was compromised through this flaw. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
+The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. As of 16:05 UTC on 24 October, the latest capture in the evidence vault, no named organisation has said it was compromised through this flaw. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
 
 #### Reading path
 - [Your briefing](../briefings/cfo/index.html) 4 min
@@ -216,7 +216,7 @@ About 17 minutes in all. Choose *read as Quinn* and the bar under the menu keeps
 
 #### Words they will meet
 
-[Patch](../glossary/index.html#patch)[Unauthenticated](../glossary/index.html#unauthenticated)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Exploit, exploitation](../glossary/index.html#exploit)[PHP](../glossary/index.html#php)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)[NCSC](../glossary/index.html#ncsc)
+[Evidence vault](../glossary/index.html#vault)[Patch](../glossary/index.html#patch)[Unauthenticated](../glossary/index.html#unauthenticated)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[php2shell](../glossary/index.html#php2shell)[Exploit, exploitation](../glossary/index.html#exploit)[PHP](../glossary/index.html#php)[Remote code execution (RCE)](../glossary/index.html#rce)[Honeypot](../glossary/index.html#honeypot)
 
 [Read as Quinn →](../briefings/cfo/index.html)
 
@@ -255,7 +255,7 @@ About 15 minutes in all. Choose *read as Morgan* and the bar under the menu keep
 
 #### Words they will meet
 
-[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Vulnerability](../glossary/index.html#vulnerability)[Exploit, exploitation](../glossary/index.html#exploit)[Shell](../glossary/index.html#shell)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[Remote code execution (RCE)](../glossary/index.html#rce)[Evidence vault](../glossary/index.html#vault)
+[PHP](../glossary/index.html#php)[php2shell](../glossary/index.html#php2shell)[Vulnerability](../glossary/index.html#vulnerability)[Exploit, exploitation](../glossary/index.html#exploit)[Shell](../glossary/index.html#shell)[Patch](../glossary/index.html#patch)[Primary source](../glossary/index.html#primary)[Web server](../glossary/index.html#web-server)[Remote code execution (RCE)](../glossary/index.html#rce)[Honeypot](../glossary/index.html#honeypot)
 
 [Read as Morgan →](../briefings/dpo/index.html)
 
@@ -282,14 +282,14 @@ The answer in thirty seconds
 The flaw is in the PHP runtime, so exposure is every internet-facing system running PHP, including vendor appliances. Review logs from 17 October (the earliest reported attempt), not from the fix. Attempts are reported at scale; no named victim is confirmed. Patch first, isolate where you cannot.
 
 #### Reading path
-- [Your briefing](../briefings/ciso/index.html) 3 min
+- [Your briefing](../briefings/ciso/index.html) 4 min
 - [Impact: offline vs compromised](../impact/index.html) 2 min
 - [Exploitation signals](../exploitation/index.html) 2 min
 - [Detection and defence](../defence/index.html) 3 min
 - [The agencies](../agencies/index.html) 3 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 16 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
+About 17 minutes in all. Choose *read as Robin* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -320,13 +320,13 @@ The answer in thirty seconds
 Patch internet-facing mod_php first, then FPM, then the rest; restart every worker and rebuild every image. The fix changes how PHP behaves when memory runs out, so test under load. 7.4 to 8.1 have no release. Afterwards, invest in an inventory that answers 'where is PHP' in minutes.
 
 #### Reading path
-- [Your briefing](../briefings/cto/index.html) 3 min
+- [Your briefing](../briefings/cto/index.html) 4 min
 - [The two flaws](../flaws/index.html) 4 min
 - [The code](../code/index.html) 7 min
 - [If you run PHP](../playbook/index.html) 3 min
 - [Detection and defence](../defence/index.html) 3 min
 
-About 20 minutes in all. Choose *read as Avery* and the bar under the menu keeps your place on every page.
+About 21 minutes in all. Choose *read as Avery* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -357,14 +357,14 @@ The answer in thirty seconds
 The 70% figure is a share of websites that use PHP, restated as a share of the Internet. The release was 21 October, not 22. Three parties claim the discovery; their dates do not conflict, their framing does. No agency has confirmed a successful compromise, and CISA has not listed either flaw as exploited.
 
 #### Reading path
-- [Your briefing](../briefings/journalist/index.html) 3 min
+- [Your briefing](../briefings/journalist/index.html) 4 min
 - [The numbers](../numbers/index.html) 2 min
 - [Every claim](../claims/index.html) 1 min
 - [Who found it](../discovery/index.html) 2 min
 - [How disclosure broke](../leak/index.html) 1 min
 - [The agencies](../agencies/index.html) 3 min
 
-About 12 minutes in all. Choose *read as Rowan* and the bar under the menu keeps your place on every page.
+About 13 minutes in all. Choose *read as Rowan* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -470,13 +470,13 @@ The answer in thirty seconds
 Every application on an affected runtime is in scope, including ones with no uploads or sessions: the demonstrated paths run before application code. Add the running PHP version to the SBOM and fail the pipeline on an unfixed one. Detection belongs at the edge and on the host, not in the app.
 
 #### Reading path
-- [Your briefing](../briefings/appsec/index.html) 3 min
+- [Your briefing](../briefings/appsec/index.html) 4 min
 - [The two flaws](../flaws/index.html) 4 min
 - [Affected systems](../affected/index.html) 1 min
 - [Detection and defence](../defence/index.html) 3 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 14 minutes in all. Choose *read as Jamie* and the bar under the menu keeps your place on every page.
+About 15 minutes in all. Choose *read as Jamie* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -505,7 +505,7 @@ I run or build systems · ******Deeply technical
 
 The answer in thirty seconds
 
-Target 8.5.12, 8.4.27, 8.3.36 or 8.2.35; restart every worker and rebuild images. Until then: session.upload_progress.enabled=0 in php.ini or the pool, low post_max_size, fatal_error_backtraces=0 on 8.5, pm.max_requests=1 on FPM. Verify with php -v inside the running container.
+Target 8.5.12, 8.4.27, 8.3.36 or 8.2.35; restart every worker and rebuild images. Until then: session.upload_progress.enabled=0 in php.ini or the pool, low post_max_size, fatal_error_backtraces=0 on 8.5, pm.max_requests=1 on FPM. Verify with php -v inside the running container. Keep session.upload_progress.enabled=0 after the update as well: CVE-2026-115560, published by PHP on 23 October (as Cloudflare and SOCRadar report), affects the fixed releases under a rare session setting and is fixed only in the next regular release.
 
 #### Reading path
 - [Your briefing](../briefings/engineer/index.html) 3 min
@@ -518,7 +518,7 @@ About 18 minutes in all. Choose *read as Drew* and the bar under the menu keeps 
 
 #### Words they will meet
 
-[PHP-FPM](../glossary/index.html#fpm)[SAPI](../glossary/index.html#sapi)[CVE](../glossary/index.html#cve)[Backport](../glossary/index.html#backport)[Primary source](../glossary/index.html#primary)[PHP](../glossary/index.html#php)[CVSS](../glossary/index.html#cvss)[Vulnerability](../glossary/index.html#vulnerability)[GitHub advisory (GHSA)](../glossary/index.html#ghsa)[Remote code execution (RCE)](../glossary/index.html#rce)
+[PHP](../glossary/index.html#php)[PHP-FPM](../glossary/index.html#fpm)[SAPI](../glossary/index.html#sapi)[CVE](../glossary/index.html#cve)[Backport](../glossary/index.html#backport)[Primary source](../glossary/index.html#primary)[CVSS](../glossary/index.html#cvss)[Vulnerability](../glossary/index.html#vulnerability)[GitHub advisory (GHSA)](../glossary/index.html#ghsa)[Remote code execution (RCE)](../glossary/index.html#rce)
 
 [Read as Drew →](../briefings/engineer/index.html)
 
@@ -545,12 +545,12 @@ The answer in thirty seconds
 Your code is not the problem and cannot be the fix: the flaw is in the engine beneath it. ini_set, .user.ini and auto_prepend_file all run too late. Check the running version where the code runs, after the restart, and tell the platform owner today if your target is 8.1 or older.
 
 #### Reading path
-- [Your briefing](../briefings/developer/index.html) 3 min
+- [Your briefing](../briefings/developer/index.html) 4 min
 - [The two flaws](../flaws/index.html) 4 min
 - [The code](../code/index.html) 7 min
 - [If you run PHP](../playbook/index.html) 3 min
 
-About 17 minutes in all. Choose *read as Lee* and the bar under the menu keeps your place on every page.
+About 18 minutes in all. Choose *read as Lee* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -619,14 +619,14 @@ The answer in thirty seconds
 A bug class seen and shelved in 2024 was turned into working exploits by three AI-assisted teams within three weeks in August 2026. The disclosure leaked 22.5 hours early. Agencies split on the hardest question, offline or not, along lines that look institutional rather than technical.
 
 #### Reading path
-- [Your briefing](../briefings/analyst/index.html) 3 min
+- [Your briefing](../briefings/analyst/index.html) 4 min
 - [Who found it](../discovery/index.html) 2 min
 - [How disclosure broke](../leak/index.html) 1 min
 - [In context: 2008 to 2026](../context/index.html) 3 min
 - [The agencies](../agencies/index.html) 3 min
 - [The numbers](../numbers/index.html) 2 min
 
-About 14 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
+About 15 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
 
 #### Words they will meet
 
@@ -640,4 +640,4 @@ The first version of this site opened with a sentence that was accurate and unre
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/start/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/start/index.html

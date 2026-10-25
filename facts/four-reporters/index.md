@@ -36,7 +36,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 08:12 UTC. The scale is on
 - 2026-10-21 13:34 UTCPHP publishes [RCE via stale global state (CVE-2026-109619)](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html)
 - 2026-10-22 08:09 UTCSaved into the evidence vault: PHP
 - 2026-10-22 08:09 UTCSaved into the evidence vault: PHP
-- 2026-10-22 08:12 UTCSaved into the evidence vault: Daubois
+- 2026-10-22 08:12 UTCSaved into the evidence vault: Daubois, then 1 more capture
 - 2026-10-22Enters this site as confirmed in v0.1.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -61,4 +61,4 @@ Sources: github-ghsa-w8hw-w9fx-j79w, github-ghsa-6wmf-4rv5-p3rp, daubois-blog-ph
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/facts/four-reporters/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/four-reporters/index.html

@@ -2211,8 +2211,8 @@
   },
   {
    "id": "no-confirmed-compromise",
-   "claim_hash": "954e9edc944cb1ca",
-   "run": "Run-5",
+   "claim_hash": "a6a0832ed7fa98c7",
+   "run": "Run-7",
    "mode": "vault",
    "kind": "state",
    "level": 4,
@@ -2220,9 +2220,9 @@
    "tension": "none",
    "contradictions": [],
    "volatile": true,
-   "as_of": "20261024T083700Z",
+   "as_of": "20261025T093507Z",
    "status_fit": "ok",
-   "reason": "Refreshed to 08:37 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim.",
+   "reason": "Refreshed to 16:05 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim. Run 6 adds Die Presse ('In Österreich sind bisher keine erfolgreichen Angriffe bekannt') and RainForest's honeypot (21 PHP2Shell POST requests, attempts), both checked in their captures. Run 7 (as of 09:35 UTC on 25 October): the Turkish Presidency's Cyber Security Directorate, via Haber, says e-Devlet is safe and its services continue, naming no compromise; teleSUR, captured at 09:35 UTC on 25 October, says no massive successful intrusion had been publicly confirmed and that most activity was scanning and failed attempts. Of the 20 captures made since 16:05 UTC on 24 October, none names a compromised organisation.",
    "checked": [
     {
      "source": "cisa-kev-json",
@@ -2366,6 +2366,38 @@
      "sha256": "75d67773b979aa86ec9f32e1690fa2d13b8d5905d6cfac239cfcd9331d8c17dc",
      "result": "carries",
      "excerpt": "Officials in Germany, the Netherlands and Japan say they have not seen one succeed.",
+     "outside_citation": false
+    },
+    {
+     "source": "diepresse-41383717-die-php-sicherheitsluecke-ist-a",
+     "file": "sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/captures/20261023T160435Z/text.txt",
+     "sha256": "f6998ff009f030cc5aa035c7032038aa708ec871633b5604e0ba0b8f2bf46220",
+     "result": "carries",
+     "excerpt": "In Österreich sind bisher keine erfolgreichen Angriffe bekannt.",
+     "outside_citation": false
+    },
+    {
+     "source": "voix-business-cards-rainforest-ip-activity-an",
+     "file": "sources/voix-business-cards-rainforest-ip-activity-an/captures/20261024T160544Z/text.txt",
+     "sha256": "3e5e879383dd76ceedde10291eb662d52a451e20b573d86c3b1c0ef1ace3b61a",
+     "result": "partial",
+     "excerpt": "PHP2Shell関連のHTTP POST通信が21件観測され",
+     "outside_citation": false
+    },
+    {
+     "source": "haber-teknoloji-siber-guvenlik-baskanligi-ndan",
+     "file": "sources/haber-teknoloji-siber-guvenlik-baskanligi-ndan/captures/20261023T160435Z/text.txt",
+     "sha256": "2825ea23dc0ee99dad084b327460a78610b626aa1f93bcd95017881a08fbcea9",
+     "result": "supports",
+     "excerpt": "e-Devlet Kapısı Güvende, Hizmetler Kesintisiz Sürüyor",
+     "outside_citation": false
+    },
+    {
+     "source": "telesurenglish-php2shell-vulnerabilities",
+     "file": "sources/telesurenglish-php2shell-vulnerabilities/captures/20261025T093507Z/text.txt",
+     "sha256": "6efd752b24f540730043417e4f8e1837289ad08b2351a62e22a4bc2bdc3e8ad6",
+     "result": "supports",
+     "excerpt": "no massive successful intrusion had been publicly confirmed as of Thursday",
      "outside_citation": false
     }
    ],
@@ -3147,7 +3179,7 @@
    "volatile": false,
    "as_of": "20261022T113008Z",
    "status_fit": "overstated",
-   "reason": "Calif says Quarkslab's audit 'rediscovered the same OOM issue' and 'exploitation was not proven, hence the bug was not fixed', but Calif says it confirmed this 'from PHP', so it is not independent of the Foundation. The Foundation says something different: a PHP core developer found the OOM signs while fixing a Quarkslab finding, and the fix stalled over trade-offs and resources, not only unproven exploitation. Quarkslab's own summary describes no OOM finding.",
+   "reason": "Calif says Quarkslab's audit 'rediscovered the same OOM issue' and 'exploitation was not proven, hence the bug was not fixed', but Calif says it confirmed this 'from PHP', so it is not independent of the Foundation. The Foundation says something different: a PHP core developer found the OOM signs while fixing a Quarkslab finding, and the fix stalled over trade-offs and resources, not only unproven exploitation. Quarkslab's own summary describes no OOM finding. Run 6: Cloudflare's post was edited on 23 October ('Today,' became 'October 21,'); Quarkslab is still named, so the grade stands.",
    "checked": [
     {
      "source": "php-foundation-blog-security-release",
@@ -3187,6 +3219,14 @@
      "sha256": "302408765abf45e3ae84473d9050c1c65b35c2858e5b53be4fee29dda4de2823",
      "result": "partial",
      "excerpt": "Today, Calif.io, Wiz, OpenAI and Quarkslab disclosed two",
+     "outside_citation": false
+    },
+    {
+     "source": "cloudflare-blog-php2shell-waf",
+     "file": "sources/cloudflare-blog-php2shell-waf/captures/20261023T160435Z/text.txt",
+     "sha256": "94476de6ec0b31e035ef97a1dbf9607bc81e7ddbb479c2d5217b8e8b0207ec02",
+     "result": "carries",
+     "excerpt": "October 21, Calif.io, Wiz, OpenAI and Quarkslab disclosed two vulnerabilities in PHP",
      "outside_citation": false
     }
    ],
@@ -4400,19 +4440,19 @@
   {
    "id": "watchtowr-itw",
    "claim_hash": "ce7243b7fb249b85",
-   "run": "Run-1",
+   "run": "Run-6",
    "mode": "vault",
    "kind": "attribution",
-   "level": 4,
-   "verdict": "holds-in-part",
-   "tension": "superseded",
+   "level": 6,
+   "verdict": "holds",
+   "tension": "none",
    "contradictions": [
     "K-002"
    ],
    "volatile": true,
-   "as_of": "20261022T113111Z",
+   "as_of": "20261023T232528Z",
    "status_fit": "understated",
-   "reason": "Both cited watchTowr captures are HTTP 403 (A1 as cited), but four independent outlets in the vault quote watchTowr's Jake Knott directly saying it sees in-the-wild exploitation attempts against its sensors, so the first half is A4. 'Lists the flaws as exploited in the wild' is not carried by any capture; Equixly (written before the PHP advisory) says watchTowr 'lists no reported exploitation', an earlier state since overtaken.",
+   "reason": "watchTowr's own pages are now captured (23 October): its intel page lists both CVEs as 'EXPLOITED IN THE WILD: Yes', and its FAQ says it 'has observed exploitation in the wild through its Attacker Eye honeypot network'. The claim is an attribution, and watchTowr's own page is the primary record of what watchTowr says: A6, and the site's 'unverified' understates it. What watchTowr measures is honeypot traffic, the same kind of evidence as Amazon's (K-002); its own words elsewhere say none of the sprayed exploits succeeded (Finding on the missing qualifier stays open).",
    "checked": [
     {
      "source": "watchtowr-php2shell",
@@ -4485,17 +4525,34 @@
      "result": "absent",
      "excerpt": "WatchTowr and Huntress say they have not seen either of the vulnerabilities being exploited in the wild.",
      "outside_citation": true
+    },
+    {
+     "source": "watchtowr-php2shell",
+     "file": "sources/watchtowr-php2shell/captures/20261023T232528Z/text.txt",
+     "sha256": "e09524178ed5f328df70485889aa78f37e3bf819682db33e22b4d1a875d1199f",
+     "result": "carries",
+     "excerpt": "EXPLOITED IN THE WILD: Yes , reported by watchTowr",
+     "outside_citation": false
+    },
+    {
+     "source": "watchtowr-php2shell-faq",
+     "file": "sources/watchtowr-php2shell-faq/captures/20261023T160435Z/text.txt",
+     "sha256": "3c561d0c08e9343f817d78c30427c55eb4a491ccd2a59babcb879a65da8def37",
+     "result": "carries",
+     "excerpt": "watchTowr has observed exploitation in the wild through its Attacker Eye honeypot network.",
+     "outside_citation": false
     }
    ],
    "quotes_checked": [],
    "tickets": [
     "Contradiction-2",
     "Finding-111",
+    "Finding-127",
     "Finding-18",
     "Finding-19"
    ],
    "mode2": "watchTowr's intelligence pages captured from a non-blocked client (or archive.org), to settle the 'lists as exploited' wording and its date.",
-   "display": 4,
+   "display": 6,
    "stale": false
   },
   {
@@ -4930,6 +4987,16 @@
      "sources": [
       "cybersecuritynews-critical-php2shell-exploit-code"
      ]
+    },
+    {
+     "who": "watchTowr (its own intel page and FAQ)",
+     "when": "captured 2026-10-23",
+     "says": "watchTowr has observed exploitation in the wild through its Attacker Eye honeypot network.",
+     "measures": "honeypot traffic, listed by watchTowr as 'EXPLOITED IN THE WILD: Yes'",
+     "sources": [
+      "watchtowr-php2shell-faq",
+      "watchtowr-php2shell"
+     ]
     }
    ],
    "reading": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises. Run 3 (24 October): Amazon itself has since narrowed its sentence from 'broadly exploited' to 'broad exploitation attempts', without a note: the strongest word on the exploitation side now agrees with the officials' reading. Run 5 (24 October): Sophos withdrew its earlier success claim at 21:21 UTC on 22 October, the same evening Amazon narrowed its wording: both strongest 'exploited' statements were walked back to attempts.",
@@ -5299,9 +5366,18 @@
      "sources": [
       "php-net-changelog-8"
      ]
+    },
+    {
+     "who": "Lorikeet Security (vendor blog)",
+     "when": "2026-10-21",
+     "says": "candidate pull requests under a private security branch scheduled for public disclosure on October 24.",
+     "measures": "a third planned date, 24 October, given with no source; no other statement in the vault gives it",
+     "sources": [
+      "lorikeet-php2shell"
+     ]
     }
    ],
-   "reading": "The original embargo time has two values, 14:00 UTC (the Foundation, echoed by The Hacker News) and 11:00 ET, which is 15:00 UTC (watchTowr, echoed by CybelAngel and others). The release itself is stamped 13:34 UTC on the GitHub advisories, ahead of the announced 14:00. The ChangeLog still carries the original date. The site should say 'about 14:00 UTC, advisories at 13:34' and give both original times.",
+   "reading": "The original embargo time has two values, 14:00 UTC (the Foundation, echoed by The Hacker News) and 11:00 ET, which is 15:00 UTC (watchTowr, echoed by CybelAngel and others). The release itself is stamped 13:34 UTC on the GitHub advisories, ahead of the announced 14:00. The ChangeLog still carries the original date. The site should say 'about 14:00 UTC, advisories at 13:34' and give both original times. Run 7: Lorikeet's blog gives a third planned date, 24 October, unsourced and alone in the vault (in its captures of 22 and 25 October); it does not change the reading.",
    "settle": "A PHP project statement of the embargo time, or the pre-announcement's original text.",
    "ticket": "Contradiction-10"
   },
@@ -8935,6 +9011,27 @@
    "links": []
   },
   {
+   "label": "Finding-127",
+   "type": "finding",
+   "status": "open",
+   "title": "watchtowr-itw: watchTowr's own pages are now captured and carry the claim; the note still says watchtowr.com returns 403",
+   "description": "The vault re-captured watchtowr-php2shell (20261023T232528Z) and watchtowr-php2shell-faq (20261023T160435Z) with content: 'EXPLOITED IN THE WILD: Yes, reported by watchTowr' and 'watchTowr has observed exploitation in the wild through its Attacker Eye honeypot network'. The claim's note ('returns HTTP 403 to this site's capture tool; known only from search summaries') is out of date and its status 'unverified' understates a primary statement. Say also what it rests on: honeypot observations, like Amazon's.",
+   "severity": "medium",
+   "claims": [
+    "watchtowr-itw"
+   ],
+   "sources": [],
+   "pages": [
+    "facts/watchtowr-itw/index.html"
+   ],
+   "url": "",
+   "retrieved_at": "",
+   "sha256": "",
+   "excerpt": "",
+   "run": "Run-6",
+   "links": []
+  },
+  {
    "label": "Gap-1",
    "type": "gap",
    "status": "open",
@@ -9063,6 +9160,32 @@
    "audit": "fc.py check: 0 failures; Sophos (Cyber Security News), American Banker, The Next Web and Amazon's revised sentence re-found verbatim in their captures.",
    "quiet_wakes_before": 1,
    "summary": "Amazon's revised sentence is now captured (aws-security-blog-madpot, 23 October): 'broadly exploited in the wild' became 'seeing broad exploitation attempts in the wild' at 21:25 UTC on 22 October, so correction request R-004 can close as corrected without being sent, and amazon-honeypot is graded superseded until it gives both wordings (Finding-126). no-confirmed-compromise refreshed to 08:37 UTC on 24 October and still holds, now with Sophos's withdrawn success claim. KEV still lists neither CVE; no PHP release after 21 October. The 12:52 wake before this one was quiet."
+  },
+  {
+   "id": "Run-6",
+   "site_version": "0.18.2",
+   "vault_commit": "176e2dc212e1",
+   "site_export_commit": "8c16a64a7cf6",
+   "started": "2026-10-25T08:52Z",
+   "finished": "2026-10-25T09:05Z",
+   "quiet_wakes_before": 1,
+   "checked": "fc.py changed (no-confirmed-compromise refreshed to 16:05 UTC on 24 October); fc.py check (0 failures); the first daily drift check (fc.py drift: every excerpt a grade rests on, against the newest capture of its source); the measures re-fetched (W3Techs, the HTTP Archive); KEV",
+   "opened": "1 finding (Finding-127: watchtowr-itw is now carried by watchTowr's own pages)",
+   "audit": "fc.py check: 0 failures. fc.py drift: 6 excerpts gone from re-captured sources, all explained: Amazon's revision (3, Finding-126), Cloudflare's 'Today' dated to 'October 21' (Quarkslab still named), watchTowr no longer blocking captures (2).",
+   "summary": "The daily sweep, with a new tool: fc.py drift checks every excerpt a grade rests on against the newest capture of its source. Of about 30 claims whose sources were re-captured on 23 and 24 October, six excerpts had gone, all explained. watchTowr's own pages are now captured and say 'EXPLOITED IN THE WILD: Yes' from its honeypot network: watchtowr-itw is A6 and its 'unverified' understates it (Finding-127). no-confirmed-compromise still holds at 16:05 UTC on 24 October (Die Presse for Austria; RainForest's honeypot, attempts only). W3Techs now says 69.2%, the first move in the measure's series. KEV still lists neither CVE. The 20:52 wake of 24 October was quiet."
+  },
+  {
+   "id": "Run-7",
+   "site_version": "0.20.3",
+   "vault_commit": "87795d121200",
+   "site_export_commit": "87795d121200",
+   "started": "2026-10-25T12:53Z",
+   "finished": "2026-10-25T13:20Z",
+   "quiet_wakes_before": 0,
+   "checked": "fc.py changed (no-confirmed-compromise refreshed to 09:35 UTC on 25 October, one new source); fc.py check (0 failures); fc.py drift (the same six excerpts as run 6, all explained); the 20 captures made since 16:05 UTC on 24 October, read for a named compromise; KEV; php.net releases",
+   "opened": "none",
+   "audit": "fc.py check: 0 failures. fc.py drift: 6, unchanged since run 6 and explained.",
+   "summary": "no-confirmed-compromise still holds at 09:35 UTC on 25 October (A4): the Turkish Presidency's Cyber Security Directorate says e-Devlet is safe, and teleSUR says no massive successful intrusion has been publicly confirmed; none of the 20 new captures names a compromised organisation. Lorikeet Security's blog gives a third planned disclosure date, 24 October, with no source; added to K-010. KEV (2026.10.23) still lists neither CVE; php.net's latest releases are still those of 21 October."
   }
  ],
  "investigations": [
@@ -9612,6 +9735,10 @@
        {
         "date": "2026-10-23",
         "value": 69.3
+       },
+       {
+        "date": "2026-10-25",
+        "value": 69.2
        }
       ],
       "notes": "Denominator is sites with a KNOWN server-side language, not all websites. W3Techs' free pages do not publish what fraction of sites have a known language (no 'unknown/none' row for this category, unlike CMS). Multiple languages per site allowed. Same page dated 24 Oct 2026 on overview/programming_language/all.",
@@ -9622,6 +9749,13 @@
         "sha256": "ca7ba9d1ce117cc1e4061e8509072182bda77ace4b7c40481d5de7ee4aa51c63",
         "run": "Run-4",
         "excerpt": "PHP is used by 69.3% of all the websites whose server-side programming language we know"
+       },
+       {
+        "retrieved_at": "2026-10-25T08:59Z",
+        "value": 69.2,
+        "sha256": "918957998f37697d1b1339a20f4b86ccb1ddb90744547325703ffaa2694eeb36",
+        "run": "Run-6",
+        "excerpt": "PHP is used by 69.2% of all the websites whose server-side programming language we know."
        }
       ]
      },

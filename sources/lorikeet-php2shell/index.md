@@ -35,9 +35,13 @@ capture 20261022T112438Z · HTTP 200 · https://lorikeetsecurity.com/blog/php2sh
 - `rendered.html` 38608a412a2fb2a979d5821ccb1a9764037d3d2bbad075a509f0d25884973ae5 904,734 bytes
 - `screenshot.png` 281038d16371213c89c2ce9df773de5a82e6eac69bdfe5c855e3975b02ac6387 8,419,643 bytes
 - `text.txt` db7958824da2628a693fcca386ac3ea9994977209f017b245fab2d3e894cb349 37,837 bytes
+capture 20261025T070559Z · HTTP 200 · https://lorikeetsecurity.com/blog/php2shell-leaked-critical-php-vulnerabilities- `headers.json` 82feef81471d7a64e77b264ed3eb78fe370fdda1a8288764e82829db34e928e2 1,801 bytes
+- `page.html` cda45109ff195af2678c38806de8c847cf5b6189c9cdf92963d0bfeb789bfc33 342,196 bytes
+- `provenance.json` 81947b8457c3011818e533361765f04e4d2c051642f123947dcf76c2c69de4ac 1,688 bytes
+- `text.txt` f3b4827ebfeb5db8d6a63dec4b198e257ec210434bca837c1c8f55444d86989b 36,965 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/lorikeet-php2shell/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/lorikeet-php2shell/index.html

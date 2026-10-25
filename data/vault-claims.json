@@ -1651,7 +1651,7 @@
   ],
   "status": "reported",
   "topic": "agencies",
-  "note": "Only this outlet in the vault; the Japanese pages promoted so far describe precautionary suspensions by companies and a bank, not a prime-ministerial order. Needs a Japanese government or wire source.",
+  "note": "Only this outlet in the vault; the Japanese pages promoted so far describe precautionary suspensions by companies and a bank, not a prime-ministerial order. Needs a Japanese government or wire source. Update 24 Oct 2026: Masaland (note-masaland-n-n1bda3e5bc53f) says the Prime Minister used her X account to urge preparations to apply the patch immediately, which is milder than an emergency order; still no Japanese government or wire source.",
   "agent": "curator@php.newsroom"
  },
  {
@@ -1771,7 +1771,7 @@
   ],
   "status": "reported",
   "topic": "impact",
-  "note": "A vendor statistic relayed by a vendor-commentary piece; 'impacted' is not defined and the primary Check Point source is not in the vault.",
+  "note": "A vendor statistic relayed by a vendor-commentary piece; 'impacted' is not defined and the primary Check Point source is not in the vault. Corrected on 24 Oct 2026: CNBC TV18 (cnbctv18-technology-india-ranks-11th-among-18-cou) gives 14% as India's rate and 10% as the global average, with Hungary 38%, Denmark 32% and Austria 28%; the '14% in Europe' above looks mislabelled.",
   "agent": "curator@php.newsroom"
  },
  {
@@ -2012,6 +2012,534 @@
   "status": "reported",
   "topic": "compromise",
   "note": "Point in time, and a statement by officials of what they had seen.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur6-checkpoint-country-rates",
+  "claim": "Check Point Research says that since disclosure about 10% of organisations worldwide have been affected by PHP2Shell attacks; by country Hungary 38%, Denmark 32%, Austria 28%, India 14% (11th of 18); by sector telecommunications 20%, education 18%, media and entertainment and associations and non-profits 16%",
+  "by": "Check Point Research, via CNBC TV18",
+  "sources": [
+   "cnbctv18-technology-india-ranks-11th-among-18-cou"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "A vendor statistic; 'impact' is not defined in the text and the Check Point report is not in the vault. It also shows that '14%' is India's rate: areacucuta.com's '14% in Europe' (cur4-checkpoint-10pct) looks mislabelled.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur6-third-flaw-115560",
+  "claim": "PHP disclosed a further vulnerability, CVE-2026-115560, two days after the emergency patches; it can allow server takeover only with a rare combination of PHP session settings, no attacks were detected, it will be fixed in the next scheduled update, and the workaround is to switch off the session upload progress feature",
+  "by": "Coinpedia",
+  "sources": [
+   "coinpedia-crypto-live-news-php-flags-third-unpatch"
+  ],
+  "status": "reported",
+  "topic": "patching",
+  "note": "A NEW CVE, separate from CVE-2026-109618 and CVE-2026-109619. PHP's own advisory is not yet in the vault: the researcher should capture it before any page states this as fact.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur6-france-60pct-freebox",
+  "claim": "An early report that put France first with 60% of detected PHP services worldwide was largely inflated by an error concerning Freebox devices",
+  "by": "Cryptoast",
+  "sources": [
+   "cryptoast-failles-critiques-php-php2shell-france-f"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "Correction of an early exposure figure by a secondary outlet; the original report and the correction's source are not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur6-watchtowr-itw-vibecoded",
+  "claim": "watchTowr Intel said on 21 October 2026 that it was already observing in-the-wild exploitation of the PHP flaws, with 'vibecoded' proofs of concept hitting its sensors with php2shell user agents",
+  "by": "watchTowr's head of threat intelligence, via Cyber Daily",
+  "sources": [
+   "cyberdaily-security-14335-php2shell-do-you-know-whe"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "In-the-wild means attempts seen by watchTowr's sensors, not confirmed compromises. The 'vibecoded' wording is watchTowr's.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur6-cisa-urges-patch",
+  "claim": "CISA strongly urged organisations to immediately patch CVE-2026-109618 and CVE-2026-109619, saying they allow unauthenticated remote code execution and affect all PHP installations serving web requests",
+  "by": "CISA, via Cyber Daily",
+  "sources": [
+   "cyberdaily-security-14335-php2shell-do-you-know-whe"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "Check against CISA's own statement in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur6-vn-nca-patches",
+  "claim": "Vietnam's Cyber Security Department and the National Cyber Security Association (NCA) said the two PHP flaws have official patches",
+  "by": "Dan Tri",
+  "sources": [
+   "dantri-cong-nghe-doanh-nghiep-can-lam-gi-de-bao"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "The agencies' own notice is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur6-detik-20-years",
+  "claim": "The PHP2Shell flaws are 20 years old",
+  "by": "detikcom headline",
+  "sources": [
+   "detik-tag-php2shell"
+  ],
+  "status": "disputed",
+  "topic": "impact",
+  "note": "One more age figure: Clarin says 14 years, Critic Arad since 2012, Ars Technica every version since PHP 5 (2004), MediaNama PHP 5.4 onward, Zitec more than ten years. Not checked against the vault's ledger.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur6-at-no-successful-attacks",
+  "claim": "As of 12:03 on 23 October 2026 no successful attacks via PHP2Shell were known in Austria",
+  "by": "Die Presse",
+  "sources": [
+   "diepresse-41383717-die-php-sicherheitsluecke-ist-a"
+  ],
+  "status": "reported",
+  "topic": "compromise",
+  "note": "Point in time. Check Point's country table (cur6-checkpoint-country-rates) puts Austria third with 28% of organisations 'affected'; the two are not the same measure.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur7-in-mp-nic-advisory",
+  "claim": "India's National Informatics Centre issued a critical security advisory on PHP2Shell for Madhya Pradesh government websites, and MP CERT reported no damage as of 23 October 2026",
+  "by": "Free Press Journal",
+  "sources": [
+   "freepressjournal-bhopal-mp-government-websites-vulnerable"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "Point in time; the advisory itself is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur7-jp-pm-x-post",
+  "claim": "Japan's Prime Minister used her X account to urge preparations to apply the PHP patch immediately",
+  "by": "Masaland",
+  "sources": [
+   "note-masaland-n-n1bda3e5bc53f"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "This is milder than Nguoi Quan Sat's 'emergency order' (cur3-jp-pm-emergency-order); still no Japanese government or wire source in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur7-no-intrusion-23-oct",
+  "claim": "As of 23 October 2026 there were no confirmed or reported cases of intrusion via PHP2Shell, despite millions of attempts",
+  "by": "Masaland",
+  "sources": [
+   "note-masaland-n-n1bda3e5bc53f"
+  ],
+  "status": "reported",
+  "topic": "compromise",
+  "note": "A blog's summary at one point in time; compare cur6-at-no-successful-attacks and cur5-us-banks-no-compromise.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur7-uk-ncsc-advisory",
+  "claim": "The UK NCSC issued an urgent advisory urging all UK organisations to act immediately on CVE-2026-109618 (Partial Request Initialisation) and CVE-2026-109619 (Stale State Reuse)",
+  "by": "UK NCSC, via Open Access Government",
+  "sources": [
+   "openaccessgovernment-ncsc-issues-warning-over-critical-php-re"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "Check against the NCSC's own advisory in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur7-deepseek-remote-patch",
+  "claim": "A claim spread on X on 22 October 2026 that someone is running DeepSeek-based AI agents to remotely patch unpatched PHP servers",
+  "by": "An X user, as reported by AI Matters",
+  "sources": [
+   "aimatters-news-report-56697"
+  ],
+  "status": "unverified",
+  "topic": "exploitation",
+  "note": "Unconfirmed by any security firm or by DeepSeek per AI Matters. If true it would be unauthorised modification of other people's servers; do not state it as fact.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur7-precursors-2004",
+  "claim": "Precursors of the PHP2Shell bug had been known since 2004 but were never fixed",
+  "by": "blue News",
+  "sources": [
+   "bluewin-de-digital-php-sicherheitsluecke-ondrej"
+  ],
+  "status": "reported",
+  "topic": "disclosure",
+  "note": "Fits Ars Technica's 'every version since PHP 5' and the Zitec 2020 and 2024 accounts; not the 14-year figure.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur7-cyfirma-lazarus",
+  "claim": "Cyfirma reported attack-preparation activity against PHP2Shell, discussed in Korean and named the 'June 2026 Minjun' campaign, and raised a possible link to North Korea's Lazarus group at moderate confidence",
+  "by": "Cyfirma, via EBN",
+  "sources": [
+   "ebn-news-articleview-html"
+  ],
+  "status": "unverified",
+  "topic": "actors",
+  "note": "An attribution at moderate confidence by one vendor; EBN says direct evidence of a North Korean link is not confirmed. Cyfirma's own report is not in the vault. Do not name an actor on a page without a primary source and the vendor's confidence stated.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur7-unrelated-outages",
+  "claim": "Outages at Node.js, GitLab and Railway on 21 to 22 October 2026 were not linked by those companies to PHP2Shell",
+  "by": "El Debate",
+  "sources": [
+   "eldebate-tecnologia-20261022-php2shell-vulnerabil"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "A caution against attributing unrelated outages to the PHP flaws.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur7-uy-state-sites-down",
+  "claim": "Uruguayan state websites were down because of the PHP flaw and thousands of servers there were exposed",
+  "by": "El Observador",
+  "sources": [
+   "elobservador-ciencia-y-tecnologia-sitios-del-estado-c"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "Headline-level claim; the Uruguayan agency's own statement is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-lcfr-first-discovery",
+  "claim": "Calif credited a pseudonymous researcher, LCFR, with first discovering PHP2Shell and developing a working exploit",
+  "by": "Calif, via Inc42",
+  "sources": [
+   "inc42-features-php2shell-who-is-at-risk-and-ho"
+  ],
+  "status": "reported",
+  "topic": "disclosure",
+  "note": "One more account of who found it and when, besides Calif and an LLM in August (cur2-calif-august), Chainguard on 16 October, and Wiz independently; the Calif post is not in the vault under this claim. Do not state who found it first without the primary sources.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-offline-list-itwire",
+  "claim": "Australia's cyber security agency website, government sites in France, Finland, Denmark and the Netherlands, Wikipedia systems, 4chan, Something Awful and the Port of Rotterdam went offline over PHP2Shell during the week of 21 October 2026",
+  "by": "iTWire",
+  "sources": [
+   "itwire-business-it-news-security-php2shell-the"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "One outlet's list; several of these names are not yet in the vault from a primary source.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-chainguard-early-images",
+  "claim": "Chainguard published patched PHP container images at 07:41 UTC on 21 October 2026, more than six hours before the planned release; the PHP Foundation said it 'unilaterally broke the embargo' and Chainguard's CEO said he made the call when exploits hit in the wild",
+  "by": "iTWire, quoting the PHP Foundation and Chainguard's CEO",
+  "sources": [
+   "itwire-business-it-news-security-php2shell-the"
+  ],
+  "status": "disputed",
+  "topic": "disclosure",
+  "note": "Two sides of the disclosure dispute, both quoted; compare chainguard-lorenc-account (techtarget-disclosure-unravels) and the PHP Foundation's own post in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-calif-video-leak",
+  "claim": "Calif accidentally published a video of its exploits working against several targets on the evening of 20 October 2026; it was deleted but copies spread",
+  "by": "iTWire",
+  "sources": [
+   "itwire-business-it-news-security-php2shell-the"
+  ],
+  "status": "reported",
+  "topic": "disclosure",
+  "note": "Ars Technica describes a video of the exploit tool in use; the date and the 'accidental' wording are iTWire's. Calif's own statement is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-rainforest-honeypot",
+  "claim": "RainForest's honeypot network matched 3 of 11 public IP addresses from VulnCheck and Amazon threat information and observed 21 PHP2Shell-related HTTP POST requests from different source IPs",
+  "by": "RainForest, via VOIX",
+  "sources": [
+   "voix-business-cards-rainforest-ip-activity-an"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "A small honeypot sample; attempts, not intrusions. RainForest's own write-up is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-dfv-warning",
+  "claim": "The German Fire Brigade Association (DFV) warned fire brigades about the PHP2Shell flaws on 21 October 2026",
+  "by": "Feuerwehr-Magazin",
+  "sources": [
+   "feuerwehrmagazin-nachrichten-dfv-warnt-vor-kritischen-php"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "A sector body's warning, as an example of how far the alerts spread.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-sansec-memory-leak",
+  "claim": "Per sansec.io, CVE-2026-109618 also carries a Heartbleed-style memory leak able to expose passwords, session tokens, API keys and TLS private keys from other server requests",
+  "by": "Sansec, via Yahoo Finance",
+  "sources": [
+   "finance-yahoo-technology-articles-php-patches-critical"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "Matches Wiz's warning that process memory could be read (cur3-wiz-memory-read). Check against Sansec's and Wiz's own posts.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-wiz-most-serious",
+  "claim": "Wiz's researchers wrote that the findings are among the most serious vulnerabilities discovered in PHP and probably among the most serious in software history",
+  "by": "Wiz, via Forbes Turkiye",
+  "sources": [
+   "forbes-teknoloji-yapay-zekayla-kesfedildi-php-g"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "Wiz's own characterisation; check against the Wiz post in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-august-working-group",
+  "claim": "After the August discovery an informal working group of security researchers and software engineers was set up, with software distributors and cybersecurity firms, to prepare fixes",
+  "by": "The Wall Street Journal, via Fortune Italia",
+  "sources": [
+   "fortuneita-2026-10-22-php2shell-il-bug-che-poteva-m"
+  ],
+  "status": "reported",
+  "topic": "disclosure",
+  "note": "Relayed from the WSJ; the WSJ piece is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-world-quest-shutdown",
+  "claim": "A game, World Quest, chose to end its service because it could not respond to the PHP vulnerability",
+  "by": "Gamemeca (photo caption)",
+  "sources": [
+   "gamemeca-view-php"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "Rests on one photo caption in a trade article; the operator's own notice is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-eu-joint-advisory",
+  "claim": "On 21 October 2026 the European Commission, ENISA, CERT-EU, Europol EC3 and the network of national CSIRTs issued a joint advisory on CVE-2026-109618 and CVE-2026-109619",
+  "by": "Gazzetta del Sud",
+  "sources": [
+   "gazzettadelsud-articoli-cronaca-2026-10-22-allarme-php2"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "Check against the CERT-EU and ENISA publications in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur8-cloudflare-waf-rule",
+  "claim": "Cloudflare developed and enabled a new firewall (WAF) protection for its customers against the PHP2Shell flaws",
+  "by": "Cloudflare, via GIGAZINE",
+  "sources": [
+   "gigazine-news-20261023-cloudflare-stats-php2shell"
+  ],
+  "status": "reported",
+  "topic": "vendors",
+  "note": "Cloudflare's own blog post is not in the vault; WAF rules reduce, but do not replace, patching.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-tr-edevlet-no-problem",
+  "claim": "Turkey's Presidency Cybersecurity Directorate said on 22 October 2026 that the e-Devlet Kapisi government portal (69 million users) had no security problem from PHP2Shell and that services continued uninterrupted",
+  "by": "Turkey's Presidency Cybersecurity Directorate, via Haber.com",
+  "sources": [
+   "haber-teknoloji-siber-guvenlik-baskanligi-ndan"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "The Directorate's own statement is not in the vault; see also cur4-tr-cyber-directorate.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-cyfirma-i2p-channel",
+  "claim": "Cyfirma reported seeing Korean-speaking members planning PHP2Shell attacks in a private channel on the anonymous I2P network, with a possible North Korea link and no direct proof",
+  "by": "Cyfirma, via Korea Economic Daily",
+  "sources": [
+   "hankyung-article-2026102423207"
+  ],
+  "status": "unverified",
+  "topic": "actors",
+  "note": "Same single vendor report as cur7-cyfirma-lazarus (ebn-news-articleview-html): two outlets, one source. Cyfirma's report is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-report-dates-aug",
+  "claim": "Calif, working with OpenAI, reported the first PHP flaw on 11 August 2026 and Wiz reported the second on 24 August 2026",
+  "by": "Hurriyet",
+  "sources": [
+   "hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci"
+  ],
+  "status": "reported",
+  "topic": "disclosure",
+  "note": "Gives dates for the 'discovered in August' accounts (cur2-calif-august, cur3-openai-funded-audit). The reporting dates are the only specific dates in the vault so far; the PHP Foundation's own timeline is the primary source to check.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-wiz-llm-adapts-exploits",
+  "claim": "Wiz warned that with AI the complexity of exploiting these PHP flaws is no longer an obstacle, because LLMs can help adapt an exploit to different PHP versions, configurations and memory layouts",
+  "by": "Wiz, via Hardware Upgrade",
+  "sources": [
+   "hwupgrade-news-sicurezza-software-falle-php-gia-so"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "Wiz's own wording as relayed; no exploit detail is recorded here.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-jp-pm-warning-detik",
+  "claim": "Japan's Prime Minister Sanae Takaichi publicly posted a warning on her social media account urging system administrators and the public to watch for the PHP2Shell risk",
+  "by": "detikInet",
+  "sources": [
+   "inet-detik-security-d-8718436-saking-bahayanya-php2"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "A second outlet for cur7-jp-pm-x-post (Masaland); still not a Japanese government or wire source, and it is a social-media warning, not the 'emergency order' of cur3-jp-pm-emergency-order.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-fbi-nsa-cisa-disconnect",
+  "claim": "The FBI, NSA and CISA agreed that US organisations unable to apply the PHP fix immediately should take their systems off the internet until it is resolved; the FBI's alert of 21 October asked organisations to update at once or disconnect",
+  "by": "CBS News, via Infobae",
+  "sources": [
+   "infobae-estados-unidos-2026-10-23-php2shell-como"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "The page's summary says the FBI 'ordered'; the body says 'asked'. Check against the FBI, NSA and CISA statements in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-shizuoka-bank",
+  "claim": "Japan's Shizuoka Bank announced a precautionary temporary shutdown of its website and banking app over the PHP flaws",
+  "by": "IT Finanzmagazin",
+  "sources": [
+   "it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "The shutdown is not evidence of a compromise, as the article itself stresses; the bank's own notice is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-amazon-attempts-after-fix",
+  "claim": "Amazon Threat Intelligence observed further PHP2Shell attempts on 21 October 2026, including after the fixes were released",
+  "by": "Amazon Threat Intelligence, via Actainfo",
+  "sources": [
+   "actainfo-news-php2shell-vulnerabilita-php-allerta"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "Secondary report; compare cur2-madpot-17-oct.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-eight-tls-certs",
+  "claim": "Eight TLS certificates were compromised in the same week as PHP2Shell, a separate incident",
+  "by": "Malwarebytes, with Zitec (economedia-zitec-vulnerabilitatile-in-php-sunt-ampl) reporting private keys of eight certificates compromised between 17 and 20 October",
+  "sources": [
+   "malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "Not part of PHP2Shell; recorded so pages do not conflate the two. No primary source in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-openai-blog-coalition",
+  "claim": "OpenAI says it led for two months a coalition of PHP maintainers, researchers and vendors; Calif found a key flaw in August 2026 with GPT-5.6 Sol in the 'Patch the Planet' audit programme; Wiz independently found and reported both flaws, verifying them with Wiz Atlas, Gemini 4 Argon and GPT-5.6 Sol",
+  "by": "OpenAI's blog, as summarised by Ijiwei",
+  "sources": [
+   "ijiwei-n-1122779"
+  ],
+  "status": "reported",
+  "topic": "disclosure",
+  "note": "A secondary Chinese summary of OpenAI's blog; the blog itself is the primary to capture. Gives the discovery chain behind cur2-calif-august, cur3-openai-funded-audit, cur4-calif-gpt56-wiz-independent and cur9-report-dates-aug.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-openai-daybreak",
+  "claim": "OpenAI announced a 'Daybreak' subscription programme with $1 billion of subsidy for organisations protecting critical infrastructure, offering a PHP version-detection tool and a Codex skill",
+  "by": "OpenAI, as summarised by Ijiwei",
+  "sources": [
+   "ijiwei-n-1122779"
+  ],
+  "status": "reported",
+  "topic": "vendors",
+  "note": "Probably the php2shell-checker described by BlockTempo (cur4-openai-checker). The curator did not fetch the tool.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-planned-22-oct-leak-20-oct",
+  "claim": "PHP planned to disclose on 22 October 2026; on 20 October details and a proof-of-concept tool named PHP2Shell leaked online and watchTowr confirmed it and reproduced both flaws",
+  "by": "Ijiwei, citing watchTowr and heise",
+  "sources": [
+   "ijiwei-n-1122779"
+  ],
+  "status": "reported",
+  "topic": "disclosure",
+  "note": "Agrees with iTWire (cur8-chainguard-early-images context): CVE numbers leaked on 20 October and the release was brought forward a day.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-kaltim-tightens",
+  "claim": "East Kalimantan's provincial government (Indonesia) tightened the security of its digital systems after PHP2Shell",
+  "by": "IniBalikpapan.com",
+  "sources": [
+   "inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "A regional government's response, as an example of how far the response spread.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-active-exploitation-before-patch",
+  "claim": "Active exploitation of the PHP flaws began before the fix was available",
+  "by": "ITdaily",
+  "sources": [
+   "itdaily-blogs-logiciel-php2shell-bug-php"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "Consistent with Amazon's 17 October attempt and watchTowr's reports; 'actively exploited' means attempts seen, not confirmed compromises.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-nepal-sites-offline",
+  "claim": "Thousands of Nepali websites were taken offline over PHP2Shell and restoration took from hours to a week for some systems",
+  "by": "The Kathmandu Post",
+  "sources": [
+   "kathmandupost-science-technology-2026-10-25-php2shell"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "The headline gives 'thousands'; the figure's basis is not given in the part read. An official quoted by the page is not named here.",
   "agent": "curator@php.newsroom"
  }
 ]

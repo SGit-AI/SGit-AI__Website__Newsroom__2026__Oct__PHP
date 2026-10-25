@@ -90,9 +90,13 @@ capture 20261022T081033Z · HTTP 200 · https://calif.io/php2shell/- `headers.js
 - `rendered.html` 24e345e4514f5240f94df7537536a5ed14ba6e440cffffae74f8c38c7c8e5644 68,280 bytes
 - `screenshot.png` 38990c6ce9af5828a86614d9dff808d621097986d5288e8136bda70412b3ac63 20,097,747 bytes
 - `text.txt` 23afef81971778f954d3cefb62c4901814afddd6ae0948c941af3edead40ced4 23,876 bytes
+capture 20261024T133450Z · HTTP 200 · https://calif.io/php2shell/- `headers.json` 4a8ab067dd4e49688e657fdfd0c51aec0e51a8a6aebf16f0dd8bcf9b6e2d0dc1 738 bytes
+- `page.html` 2b77deb5169ba2a3872ea2045454735893bcc915a4f2f4eb2132ec415b62f7cb 69,595 bytes
+- `provenance.json` a3e7faae2faf08834fc17c711b74edc2c6b6ef4983321a0e8fdbc7f161e5a095 1,438 bytes
+- `text.txt` effb0fa357b68ea97d847a69a42809262dd6c84accfe18cfc4113ec58e5c849b 23,899 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/sources/calif-php2shell/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/calif-php2shell/index.html

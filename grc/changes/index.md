@@ -8,15 +8,15 @@ The php2shell risk graph compared between any two releases: nodes and edges adde
 
 # What changed in the risk graph, release by release
 
-The graph is rebuilt at every release. This page compares two releases of it: the nodes and edges added and removed, the edges whose basis changed (from inferred to confirmed, say), and the gaps that opened or closed. 91 releases carry a graph; 5 of them changed it. Pick any two below; the default is the latest change.
+The graph is rebuilt at every release. This page compares two releases of it: the nodes and edges added and removed, the edges whose basis changed (from inferred to confirmed, say), and the gaps that opened or closed. 147 releases carry a graph; 7 of them changed it. Pick any two below; the default is the latest change.
 
-## v0.14.29 → v0.14.30
+## v0.19.2 → v0.19.3
 
-| Measure | v0.14.29 | v0.14.30 | Change |
+| Measure | v0.19.2 | v0.19.3 | Change |
 |---|---|---|---|
-| Nodes | 721 | 724 | +3 |
-| Edges | 1,351 | 1,354 | +3 |
-| Edges known as source | 249 | 252 | +3 |
+| Nodes | 726 | 727 | +1 |
+| Edges | 1,356 | 1,357 | +1 |
+| Edges known as source | 254 | 255 | +1 |
 | Edges known as code | 287 | 287 | same |
 | Edges known as inferred | 815 | 815 | same |
 | Gap: Controls joined to no code or test that implements them | 95 | 95 | same |
@@ -28,24 +28,22 @@ The graph is rebuilt at every release. This page compares two releases of it: th
 | Gap: Vulnerabilities no test reaches | 0 | 0 | same |
 | Gap: Edges inferred by an agent, not yet checked | 815 | 815 | same |
 
-### Nodes added: 3
+### Nodes added: 1
 
-3 source
-- [American Banker](../../grc/explore/index.html#focus=source:americanbanker-news-banks-dodge-early-damage-from-php2s) source
-- [Cyber Security News](../../grc/explore/index.html#focus=source:cybersecuritynews-critical-php2shell-exploit-code) source
-- [The Next Web](../../grc/explore/index.html#focus=source:the-next-web-php2shell-no-confirmed-breaches) source
+1 source
+- [Haber.com](../../grc/explore/index.html#focus=source:haber-teknoloji-siber-guvenlik-baskanligi-ndan) source
 
-### Edges added: 3
+### Edges added: 1
 
-3 *cites*
-- As of 08:37 UTC on 24 October, no named organisation has sai *cites* American Banker source
-- As of 08:37 UTC on 24 October, no named organisation has sai *cites* Cyber Security News source
-- As of 08:37 UTC on 24 October, no named organisation has sai *cites* The Next Web source
+1 *cites*
+- As of 09:35 UTC on 25 October, no named organisation has sai *cites* Haber.com source
 
 ## Every release that changed the graph
 
 | Release | Against | Nodes | Edges | Bases | Gaps | Nodes / edges after |
 |---|---|---|---|---|---|---|
+| [v0.19.3](#from=0.19.2&to=0.19.3) 2026-10-25 | v0.19.2 | +1 −0 | +1 −0 | 0 | +0 −0 | 727 / 1,357 |
+| [v0.15.19](#from=0.15.18&to=0.15.19) 2026-10-24 | v0.15.18 | +2 −0 | +2 −0 | 0 | +0 −0 | 726 / 1,356 |
 | [v0.14.30](#from=0.14.29&to=0.14.30) 2026-10-24 | v0.14.29 | +3 −0 | +3 −0 | 0 | +0 −0 | 724 / 1,354 |
 | [v0.13.0](#from=0.12.1&to=0.13.0) 2026-10-24 | v0.12.1 | +1 −1 | +1 −1 | 0 | +0 −0 | 721 / 1,351 |
 | [v0.12.1](#from=0.12.0&to=0.12.1) 2026-10-24 | v0.12.0 | +8 −0 | +8 −0 | 0 | +0 −0 | 721 / 1,351 |
@@ -56,4 +54,4 @@ How it is made: every release commits the graph the build wrote ([data/grc-graph
 
 
 ---
-site v0.15.16 · data as of 2026-10-24T08:37Z · vault commit 1f38e70921b2 · https://php.oct.2026.newsroom.sgit.ai/grc/changes/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/changes/index.html
