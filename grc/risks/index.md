@@ -67,4 +67,4 @@ No risk on this register is **accepted**. An acceptance is an act by the holder 
 
 
 ---
-site v0.21.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/index.html
+site v0.21.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/index.html

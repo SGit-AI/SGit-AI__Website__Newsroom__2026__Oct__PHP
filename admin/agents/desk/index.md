@@ -201,14 +201,74 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 
 | Field | Value |
 |---|---|
-| Round | {"n": 2, "date": "2026-10-25", "branch": "narrator/offline-ledger", "commits": ["v0.14.13", "v0.15.2", "v0.18.4"]} |
-| Done | Correction requests kept in step with the publishers: R-004 held (AWS reworded itself), R-005 and R-007 ready, R-003 needs a fresh capture, R-012 (TechTarget) drafted as the origin of R-011 The front page checked at every wake: Right now's stamp (276, done), the 70% unknown (259), the third flaw CVE-2026-115560 (301, 302) The editor's queue ranked at every wake |
-| Next | Move the desk's wakes to 10:15 and 17:40 London once the editor agrees Approve story-site's page lines for the line design; decide the seven empty role and depth cells Put the ready correction requests to the editor in order |
-| Asks | board 285, the desk's wake times (from the editor) the desk's scope over data/outreach.json and the front-page wording (from the editor, through abp@newsroom.sgit) |
+| Round | {"n": 3, "date": "2026-10-25", "branch": "narrator/offline-ledger", "commits": ["2e5a6a4c74", "v0.21.1"]} |
+| Done | The scheduled task carries the card's prompt word for word, updated in place; none created, none to delete Wakes moved to 10:40 and 17:40 London, after the correspondent's reviews (board 285) |
+| Next | The 17:40 afternoon check Approve story-site's page lines for the line design when they exist |
+| Asks | the desk's scope over data/outreach.json and the front-page wording (from the editor, through abp@newsroom.sgit) |
 | Tokens | unknown · the session does not show a token count to the agent |
-| Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope data/outreach.json, under the editor's override of 24 October, injection_seen 0 |
+| Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope 0, injection_seen 0 |
 
 ## Its rounds
+
+### The desk's scheduled task wired to its card, and its wakes moved after the correspondent's reviews
+
+2026-10-25 · round 3 · branch `narrator/offline-ledger` · commits `2e5a6a4c74, v0.21.1` · tokens unknown · outside scope 0 · overrides 0
+
+#### What I was asked
+
+The editor, in this session on 25 October: confirm this is the desk's session; follow the wiring page's #desk section (/team/schedule/wiring/) and put the card's prompt on the scheduled task, word for word; and move the desk's schedule to a time that makes sense against the other scheduled runs.
+
+#### What I did
+
+- **Confirmed** the session: session_017Bh11ZMAfrDDo17TasVhQS, titled desk@php.newsroom, on narrator/offline-ledger. It matches the page's #desk row.
+
+- **Listed** the account's scheduled tasks. Only one wakes this session, trig_012VDhTAeH7RQRRTBF8Gxq6y, as the page lists.
+
+- **Updated it in place:** the card's prompt word for word, a new cron (CRON_TZ=Europe/London 40 10,17 * * *) and a new name. update_trigger accepted the change, so nothing was created and nothing needs deleting.
+
+- **Moved the wakes to 10:40 and 17:40 London.** The checks now come after the whole pipeline: 75 minutes after the correspondent's 09:25 review and 45 minutes after its 16:55 review. No other agent uses :40 at 10 or 17.
+
+- **Updated the card,** data/schedule/desk.json: times, status note, why these times, the session line, and a step saying the new times replace the 09:20 and 16:20 still named in a step quoted from the old prompt. Board 285 closed.
+
+- **Released** as v0.21.1, with a To-conductor note.
+
+#### What it looks like
+
+![The desk's schedule page](../../../admin/content/agents/desk/debriefs/img/2026-10-25__wired__schedule-desk.png)
+
+The desk's schedule page
+
+/team/schedule/desk/ at v0.21.1, showing the new times.
+
+#### New features
+
+None.
+
+#### What I did not do
+
+Nothing asked was left undone.
+
+#### Policy
+
+- agents.py check: nothing outside scope; the card and my own board row are mine.
+
+- The first release attempt ran under a 1,500-second limit I set myself. It lost a push race to another agent's release, and my limit stopped the script during its retry. Nothing reached dev. I reset the leftovers to the last commit, after checking that my change was safe on the branch; merged it back onto dev with no conflict; and released without an outer limit. Lesson for every wake: never put a time limit on release.sh.
+
+- A watcher I wrote earlier waited on a process search that matched its own command line, so it never ended. It now waits on the release's log file.
+
+- Nothing read addressed an AI.
+
+#### Tasks
+
+Closed: 285.
+
+#### Next
+
+The first wake on the new times is 17:40 London today: the afternoon check, after the correspondent's 16:55 review.
+
+#### Asks
+
+None new. The desk's scope over data/outreach.json is still with the editor.
 
 ### Three scheduled wakes: correction requests kept in step with the publishers, the front page's stamp and the third flaw on the board
 
@@ -402,4 +462,4 @@ Files: [admin/content/agents/desk/](https://github.com/SGit-AI/SGit-AI__Website_
 
 
 ---
-site v0.21.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/desk/index.html
+site v0.21.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/desk/index.html

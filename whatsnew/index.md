@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.21.3 · 25 October 2026new since your last visit
+
+The desk's round 3 closed: its scheduled task wired to its card and its wakes moved after the correspondent's reviews, with a debrief
+
+No reader-facing section changed in this release.
+
 ## v0.21.2 · 25 October 2026new since your last visit
 
 The Sherpa's 13:45 wake: run record (idle, both lanes empty)
@@ -1304,4 +1310,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.21.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.21.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

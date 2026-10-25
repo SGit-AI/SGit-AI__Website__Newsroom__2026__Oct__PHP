@@ -1,6 +1,15 @@
 {
- "current": "0.21.2",
+ "current": "0.21.3",
  "versions": [
+  {
+   "version": "0.21.3",
+   "date": "2026-10-25",
+   "title": "The desk's round 3 closed: its scheduled task wired to its card and its wakes moved after the correspondent's reviews, with a debrief",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.21.2",
    "date": "2026-10-25",
