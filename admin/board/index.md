@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 313 items, 206 open, 102 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 313 items, 205 open, 103 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -288,7 +288,7 @@ The work, as rows in `data/admin.json`: 313 items, 206 open, 102 done. An item i
 | 276 | Front page, Right now: the stamp says 'as of 24 October 2026, 08:37 UTC' but the five lines are unchanged since v0.12.1 and still say 'as of 23 October'; the day's news (Sophos withdrew the only vendor claim of a compromise; banks and crypto platforms report none) is in the state of affairs v3 and not on the front pageFrom the news desk chief's afternoon wake, 24 October. Done by the correspondent the same afternoon: the third line of Right now is as of the morning of 24 October and carries the Sophos withdrawal and the banks and crypto platforms; the line had been missed because it began with a capital 'As of'. | done | journalist |  |
 | 277 | The pipeline decided (24 October): researcher, curator, journalist (Sonnet), correspondent (Opus), then the ontologist, the librarian and the desk; folders and policies to followThe editor, in the journalist's Opus session: the Opus role is named correspondent@php.newsroom; the Sonnet journalist keeps journalist@. Asks: a folder and policy for correspondent (the views, the state of affairs, the plan and /views/desk/, the review of the journalist's releases, persona and briefing prose until generated); the journalist's policy to cover the refresh files of board 218 and data/schedule/journalist.json; the ontologist's graph work placed after the correspondent's run (the build no longer stops on an unmapped publisher: data/graph.json lists them in unmapped_publishers). Brief: admin/content/briefs/2026-10-24__brief__the-pipeline-researcher-to-correspondent.md. The correspondent's key: sha256:3dd464ff62b83ad0, operator linked to the root, waiting for the editor's enrolment. | open | abp@newsroom.sgit |  |
 | 278 | Enable private vulnerability reporting on this repository (Settings, Code security, Private vulnerability reporting): security.txt and the bug bounty page point reporters there; the session's proxy cannot change repository settingsOpened by security@php.newsroom, 24 October 2026. Done 24 October: the editor enabled private vulnerability reporting, with Dependabot alerts, malware alerts and security updates; security@ confirmed it reads as enabled through the API. | done | editor |  |
-| 279 | Go, or not, on the branch security/gate-pass-2: the gate fails on inline event handlers, forged message headers, drain output in the tree, a page with no or an unsafe Content-Security-Policy, and files the build reads that git ignoresOpened by security@php.newsroom, 24 October 2026. | open | editor |  |
+| 279 | Go, or not, on the branch security/gate-pass-2: the gate fails on inline event handlers, forged message headers, drain output in the tree, a page with no or an unsafe Content-Security-Policy, and files the build reads that git ignoresOpened by security@php.newsroom, 24 October 2026. Done 25 October: the editor said go; released with the CodeQL alert 4 to 6 fix (SA-2026-041). | done | editor |  |
 | 280 | GitHub rulesets on dev and main (SA-2026-023): the editor's decision, 24 October, is to revisit when the site gets user loginsOpened by security@php.newsroom, 24 October 2026. | open | editor |  |
 | 281 | A Content-Security-Policy for the vault app (vault-app/src/index.html.tpl), which runs outside this site's policy (SA-2026-021)Opened by security@php.newsroom, 24 October 2026. | open | security |  |
 | 282 | Signed messages and cards (SA-2026-024): a design using each agent's pki.sgit.ai key, for the editor and the conductorOpened by security@php.newsroom, 24 October 2026. | open | security |  |
@@ -324,4 +324,4 @@ The work, as rows in `data/admin.json`: 313 items, 206 open, 102 done. An item i
 
 
 ---
-site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

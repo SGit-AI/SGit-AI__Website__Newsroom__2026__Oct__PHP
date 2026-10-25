@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.20.2. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.20.3. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.20.3 · 2026-10-25
+
+The stricter gate, on the editor's go: security_check.py fails on inline event handlers, pages without a safe Content-Security-Policy, forged or editor-claiming message headers, decrypted drain output in the tree, and ignored files the build reads; its findings name the kind of secret and never repeat its characters (SA-2026-041, found by GitHub code scanning); the advisories, REALITY.md and board 279 record it
+Pages changed (21): SA-2026-041: The security check printed part of every secret it found new · Root causes and guidance · SA-2026-014: An agent could write a message signed as the editor · Security advisories · SA-2026-017: Ignore rules silently dropped files that should have be… · SA-2026-018: No Content-Security-Policy on a site that holds secrets… · Dinis Cruz, Editor: the team · SA-2026-015: Unquoted and unchecked links on the fact-check and sign… and 13 more
+[SA-2026-003: Article links could inject attributes](../admin/appsec/advisories/SA-2026-003/index.html) · [SA-2026-034: release.sh can be bent](../admin/appsec/advisories/SA-2026-034/index.html) · [Bug bounty and leaderboard](../admin/appsec/bounty/index.html) · [The fact pipeline: from a web page to a reader](../pipeline/index.html) · [The team: the people, the agents and how they work together](../team/index.html) · [Application security](../admin/appsec/index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
 
 ### v0.20.2 · 2026-10-25
 
@@ -1292,4 +1300,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

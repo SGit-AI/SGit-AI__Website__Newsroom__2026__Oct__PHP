@@ -48,8 +48,8 @@ All quoted and passed through E() or U().
 
 ## What prevents it now
 
-The gate check for inline event handlers (security branch); the CSP.
+The gate fails on inline event-handler attributes in generated HTML (25 October); the CSP.
 
 
 ---
-site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-015/index.html
+site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-015/index.html

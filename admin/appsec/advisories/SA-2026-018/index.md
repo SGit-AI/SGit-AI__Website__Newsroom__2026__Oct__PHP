@@ -48,8 +48,8 @@ Every page carries a CSP meta tag: scripts only from the site and hashed inline 
 
 ## What prevents it now
 
-Crawled all 802 pages with zero violations; injected handlers, javascript: URLs and scripts are refused. frame-ancestors needs a header ([SA-2026-039](../../advisories/SA-2026-039/index.html)).
+Crawled all 802 pages with zero violations; injected handlers, javascript: URLs and scripts are refused. frame-ancestors needs a header ([SA-2026-039](../../advisories/SA-2026-039/index.html)). The gate fails on a page with no CSP, or one that lets inline or eval'd script run (25 October).
 
 
 ---
-site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-018/index.html
+site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-018/index.html

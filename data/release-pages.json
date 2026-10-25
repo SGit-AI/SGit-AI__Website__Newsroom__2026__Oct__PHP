@@ -1,6 +1,137 @@
 {
  "about": "A page counts as changed when the content of its <main> differs from the previous release's, with the two site version numbers masked: the header, the footer and the version stamp change on every page at every release and say nothing about what the release did. Pages are compared as built and committed, so the list is what a reader would have seen change. Stored in data/release-pages.json, one entry per release, written once and never recomputed:",
  "releases": {
+  "0.20.3": {
+   "against": "0.20.2",
+   "pages": [
+    {
+     "path": "admin/appsec/advisories/SA-2026-041/index.html",
+     "title": "SA-2026-041: The security check printed part of every secret it found",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/post-mortems/index.html",
+     "title": "Root causes and guidance",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-014/index.html",
+     "title": "SA-2026-014: An agent could write a message signed as the editor",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/index.html",
+     "title": "Security advisories",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-017/index.html",
+     "title": "SA-2026-017: Ignore rules silently dropped files that should have been committed (twice)",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-018/index.html",
+     "title": "SA-2026-018: No Content-Security-Policy on a site that holds secrets in the browser",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/dinis/index.html",
+     "title": "Dinis Cruz, Editor: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-015/index.html",
+     "title": "SA-2026-015: Unquoted and unchecked links on the fact-check and signals pages",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-003/index.html",
+     "title": "SA-2026-003: Article links could inject attributes",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/advisories/SA-2026-034/index.html",
+     "title": "SA-2026-034: release.sh can be bent",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/appsec/bounty/index.html",
+     "title": "Bug bounty and leaderboard",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/appsec/index.html",
+     "title": "Application security",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
   "0.20.2": {
    "against": "0.20.1",
    "pages": [

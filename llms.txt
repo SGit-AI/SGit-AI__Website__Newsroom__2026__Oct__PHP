@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.20.2. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.20.3. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -230,6 +230,7 @@ Site v0.20.2. Data as of 2026-10-25T09:35Z (the latest capture in the evidence v
 - [SA-2026-038: An imported billing log can carry a script link](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-038/index.md): low, open
 - [SA-2026-039: No clickjacking protection](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-039/index.md): low, accepted
 - [SA-2026-040: Repository code runs automatically in every agent session (the Stop hook)](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-040/index.md): medium, open
+- [SA-2026-041: The security check printed part of every secret it found](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-041/index.md): medium, fixed
 
 ## Sources, one page each
 - [Failles PHP : pourquoi c'est un vrai casse-tête pour l'Internet mondial](https://php.oct.2026.newsroom.sgit.ai/sources/01net-actualites-failles-php-pourquoi-cest-vra/index.md): 01net

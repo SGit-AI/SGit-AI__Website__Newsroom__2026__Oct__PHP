@@ -424,12 +424,6 @@
    "title": "The lens: go or not for the live site (replacing the two dials), the words of its three questions, and whether 'I work on this site' is a reader"
   },
   {
-   "id": "279",
-   "owner": "editor",
-   "status": "open",
-   "title": "Go, or not, on the branch security/gate-pass-2: the gate fails on inline event handlers, forged message headers, drain output in the tree, a page with no or an unsafe Content-Security-Policy, and files the build reads that git ignores"
-  },
-  {
    "id": "280",
    "owner": "editor",
    "status": "open",
@@ -1034,5 +1028,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.20.2"
+ "version": "0.20.3"
 }

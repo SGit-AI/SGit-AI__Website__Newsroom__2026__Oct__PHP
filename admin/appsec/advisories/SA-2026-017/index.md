@@ -49,8 +49,8 @@ The rule was narrowed (!data/*.json); the scripts were un-ignored.
 
 ## What prevents it now
 
-Proposed: the gate fails if a file under data/ or admin/build/ exists locally but is ignored.
+The gate fails on any file under data/, admin/build/, admin/content/ or assets/ that .gitignore hides (security_check.py, 25 October).
 
 
 ---
-site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-017/index.html
+site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-017/index.html

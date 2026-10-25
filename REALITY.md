@@ -99,7 +99,8 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - `/admin/appsec/` (v0.14.x, security pass 3): the threat model and five data-flow diagrams (inline SVG drawn by `admin/build/diagram.py`, Mermaid source in each twin), 39 advisories `SA-2026-001` to `039` from `data/advisories.json` with a page each (root cause, what contributed, what was not in place, fix, prevention), seven root-cause patterns, who can do what, the client-side analysis, the incident process and six runbooks, the bug bounty (kudos) and its leaderboard, and three outside reviewers' prompts with every agent's self-check, from `data/appsec.json`. `/.well-known/security.txt`.
 - Every page carries a Content-Security-Policy meta tag from `admin/build/csp.py` (scripts from the site and hashed inline scripts only; connections to the services the pages use). Crawled in Chromium: no violations; injected handlers and scripts refused.
 - The public telemetry report no longer carries cities or regions; they stay in the private vault's reports.
-- Not built: the gate's checks for inline handlers, forged message headers and drain outputs (branch `security/gate-pass-2`, waiting for the editor's go); a CSP for the vault app; GitHub rulesets.
+- The gate (security_check.py, the editor's go on 25 October) also fails on inline event handlers, forged message headers, decrypted drain output in the tree, a page without a safe CSP, files the build reads that git ignores; its findings name the kind of secret, never its characters. GitHub code scanning (CodeQL), Dependabot alerts and updates for the pinned actions (`.github/dependabot.yml`), secret scanning with push protection, and private vulnerability reporting are on (the editor, 24 October).
+- Not built: a CSP for the vault app; GitHub rulesets (deferred to user logins).
 
 
 ## Every member: a folder, a policy and a round (librarian)

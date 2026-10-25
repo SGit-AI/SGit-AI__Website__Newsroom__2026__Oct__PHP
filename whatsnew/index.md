@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.20.3 · 25 October 2026new since your last visit
+
+The stricter gate, on the editor's go: security_check.py fails on inline event handlers, pages without a safe Content-Security-Policy, forged or editor-claiming message headers, decrypted drain output in the tree, and ignored files the build reads; its findings name the kind of secret and never repeat its characters (SA-2026-041, found by GitHub code scanning); the advisories, REALITY.md and board 279 record it
+
+No reader-facing section changed in this release.
+
 ## v0.20.2 · 25 October 2026new since your last visit
 
 a proposal on the briefs page, at the editor's request: one repository into six (kit, data, refs, updates, site, team), each with its own writers, version, gate and site, meeting only through versioned URLs, not submodules; measured on v0.20.0 (every release rewrites about 1,936 pages, 118 commits fought over VERSION in three days, a 74 s gate for a one-line run record) with the phases and the five decisions; and the briefs' older/newer chips show their arrows and wrap
@@ -1250,4 +1256,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

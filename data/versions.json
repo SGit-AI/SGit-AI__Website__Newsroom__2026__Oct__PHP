@@ -1,6 +1,15 @@
 {
- "current": "0.20.2",
+ "current": "0.20.3",
  "versions": [
+  {
+   "version": "0.20.3",
+   "date": "2026-10-25",
+   "title": "The stricter gate, on the editor's go: security_check.py fails on inline event handlers, pages without a safe Content-Security-Policy, forged or editor-claiming message headers, decrypted drain output in the tree, and ignored files the build reads; its findings name the kind of secret and never repeat its characters (SA-2026-041, found by GitHub code scanning); the advisories, REALITY.md and board 279 record it",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.20.2",
    "date": "2026-10-25",

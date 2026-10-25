@@ -214,7 +214,9 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 - The public telemetry report no longer carries cities or regions; they stay in the private vault's reports.
 
-- Not built: the gate's checks for inline handlers, forged message headers and drain outputs (branch `security/gate-pass-2`, waiting for the editor's go); a CSP for the vault app; GitHub rulesets.
+- The gate (security_check.py, the editor's go on 25 October) also fails on inline event handlers, forged message headers, decrypted drain output in the tree, a page without a safe CSP, files the build reads that git ignores; its findings name the kind of secret, never its characters. GitHub code scanning (CodeQL), Dependabot alerts and updates for the pinned actions (`.github/dependabot.yml`), secret scanning with push protection, and private vulnerability reporting are on (the editor, 24 October).
+
+- Not built: a CSP for the vault app; GitHub rulesets (deferred to user logins).
 
 ### Every member: a folder, a policy and a round (librarian)
 
@@ -409,4 +411,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

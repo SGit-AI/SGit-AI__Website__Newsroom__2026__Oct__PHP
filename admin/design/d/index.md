@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.20.2. Not the live site.
+> Mockup D for review, built from the data of release v0.20.3. Not the live site.
 
-PHP Team console Console Overview Board 206 Agents 19 Releases 166 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 205 Agents 19 Releases 167 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.20.2 
-166 releases since 22 Oct 
+v0.20.3 
+167 releases since 22 Oct 
 
 Open on the board 
-206 
-102 done, 5 waiting 
+205 
+103 done, 5 waiting 
 
 Pages built 
-1045 
+1046 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,7 +30,7 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 206
+#### Open 205
 
  #313 
 On a phone every brief page scrolls sideways (the briefs index by 186px, most briefs by 40 to 130px): the admin layout o… 
@@ -72,7 +72,7 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 102
+#### Done 103
 
  #310 
 The admin and team pages use the whole width of the screen; the reader pages stay at 1,440px 
@@ -92,13 +92,14 @@ Prototype F, the line: the editor's design of 25 October built on the site, at /
  #286 
 The chrome after the lens prototype: the bar in two lines on a laptop (132px to 91px), the reading strip and the page's … 
  claude-story-site v0.16.0 
- #278 
-Enable private vulnerability reporting on this repository (Settings, Code security, Private vulnerability reporting): se… 
+ #279 
+Go, or not, on the branch security/gate-pass-2: the gate fails on inline event handlers, forged message headers, drain o… 
  editor 
 
 ### Releases
  latest 8 
 
+ v0.20.3 2026-10-25 The stricter gate, on the editor's go: security_check.py fails on inline event handlers, pages without a safe Content-Security-Pol… 
  v0.20.2 2026-10-25 a proposal on the briefs page, at the editor's request: one repository into six (kit, data, refs, updates, site, team), each with … 
  v0.20.1 2026-10-25 the editor's notes on the URL article, captured with story-site's reply: view paths answered by a 404 router instead of written as… 
  v0.20.0 2026-10-25 the briefs page is a list of titles with a page and a link per brief (with markdown twins, the old anchors still landing), and the… 
@@ -106,12 +107,11 @@ Enable private vulnerability reporting on this repository (Settings, Code securi
  v0.19.4 2026-10-25 Journalist: debrief and status for the second wake 
  v0.19.3 2026-10-25 Journalist: evidence vault at 87795d121200, 15 claims reviewed, three new rows, as-of lines to 09:35 UTC on 25 October 
  v0.19.2 2026-10-25 Scheduled tasks on the site: /team/schedule/ shows what the account actually runs, each task checked against its card (times, sess… 
- v0.19.1 2026-10-25 Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's … 
 
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 32 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 31 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
  conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 20 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 16 
@@ -122,4 +122,4 @@ Enable private vulnerability reporting on this repository (Settings, Code securi
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.20.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.20.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
