@@ -6,7 +6,7 @@
 <atom:link href="https://php.oct.2026.newsroom.sgit.ai/feeds/for-you.xml" rel="self" type="application/rss+xml"/>
 <description>PHP October 2026: the questions readers ask, the briefings, and the start-here pages. A new entry when an item is new, and again each time what it says changes.</description>
 <language>en-gb</language>
-<lastBuildDate>Sat, 24 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Sun, 25 Oct 2026 00:00:00 +0000</lastBuildDate>
 <item><title>Briefing: Briefing: Curious reader (updated)</title><link>https://php.oct.2026.newsroom.sgit.ai/briefings/everyone/index.html</link><guid isPermaLink="false">briefing-everyone@v12</guid><pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate><category>briefing</category><description>Briefing. Updated (v12) in site v0.17.2. What changed: https://php.oct.2026.newsroom.sgit.ai/versions/briefing-everyone/index.html</description></item>
 <item><title>Briefing: Briefing: PHP or platform engineer (updated)</title><link>https://php.oct.2026.newsroom.sgit.ai/briefings/engineer/index.html</link><guid isPermaLink="false">briefing-engineer@v10</guid><pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate><category>briefing</category><description>Briefing. Updated (v10) in site v0.17.2. What changed: https://php.oct.2026.newsroom.sgit.ai/versions/briefing-engineer/index.html</description></item>
 <item><title>Briefing: Briefing: CFO (updated)</title><link>https://php.oct.2026.newsroom.sgit.ai/briefings/cfo/index.html</link><guid isPermaLink="false">briefing-cfo@v14</guid><pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate><category>briefing</category><description>Briefing. Updated (v14) in site v0.17.2. What changed: https://php.oct.2026.newsroom.sgit.ai/versions/briefing-cfo/index.html</description></item>

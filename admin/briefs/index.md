@@ -809,7 +809,7 @@ You need no secret: you read the evidence vault with its published read key (`da
 
 8. **The plan.** With what time is left, the next step of the full pass on `/views/desk/`, one release at a time.
 
-9. **Release.** Build, gate, security check, the security self-check (`/admin/appsec/reviews/`); `schedule.py run correspondent ...`; `release.sh` with `To-ontologist:`, `To-librarian:` and `To-desk:` notes saying the correspondent's run is done and the data is reviewed up to .
+9. **Release.** Re-export the loops (`python3 admin/build/export_loops.py --vault  --sgit `; added 25 October at the editor's request, it feeds `/views/loops/`), then build, gate, security check, the security self-check (`/admin/appsec/reviews/`); `schedule.py run correspondent ...`; `release.sh` with `To-ontologist:`, `To-librarian:` and `To-desk:` notes saying the correspondent's run is done and the data is reviewed up to .
 
 ### Never
 
@@ -3876,4 +3876,4 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 
 ---
-site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.17.4 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

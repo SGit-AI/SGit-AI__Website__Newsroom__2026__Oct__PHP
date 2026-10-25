@@ -46,4 +46,4 @@ Nothing here is specific to PHP. The vault protocol, the capture tool, the five 
 
 
 ---
-site v0.17.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/method/index.html
+site v0.17.4 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/method/index.html

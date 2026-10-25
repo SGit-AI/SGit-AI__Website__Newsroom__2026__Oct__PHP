@@ -1,6 +1,15 @@
 {
- "current": "0.17.3",
+ "current": "0.17.4",
  "versions": [
+  {
+   "version": "0.17.4",
+   "date": "2026-10-25",
+   "title": "Every loop, on one page (/views/loops/): the pipeline from the researcher to the correspondent, the last full loop, the next one due, every loop so far, timings, blind spots and the numbers; and the home page now shows the latest evidence time and the last agent run instead of 'last checked'",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.17.3",
    "date": "2026-10-24",
