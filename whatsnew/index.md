@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.21.7 · 25 October 2026new since your last visit
+
+the plan for one repository into six, agreed by the editor: final names from day one (…__PHP__kit, data, refs, updates, team, site; today's repository renamed __PHP__v1 only at the cutover), the editor's setup (repositories, Pages, DNS), one session holding all seven repositories to cut the site, every old address answering, a parity report, each agent reviewing its own repository, the cutover and how to tell it worked
+
+No reader-facing section changed in this release.
+
 ## v0.21.6 · 25 October 2026new since your last visit
 
 the briefs page sorts by the time each brief was published, newest first, and shows that time on every row and every brief's page (data/briefs-published.json, seeded from git once, never read from git by the build)
@@ -1328,4 +1334,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.21.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

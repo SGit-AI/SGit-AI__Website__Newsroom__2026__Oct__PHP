@@ -472,16 +472,16 @@
    "title": "The 404 router: view paths (/agencies/as/security/, /on/<date>/, /vs/<date>/) answered by 404.html, never written as files; the editor's notes on the URL article and story-site's reply"
   },
   {
-   "id": "312",
-   "owner": "editor",
-   "status": "open",
-   "title": "Proposal: one repository into six (kit, data, refs, updates, site, team), meeting through versions by URL, not submodules; the five decisions for the editor"
-  },
-  {
    "id": "315",
    "owner": "editor",
    "status": "open",
    "title": "Wikipedia's PHP2Shell article: /wikipedia/php2shell/review/ has 15 findings against Wikipedia's own policies with the captures (2 where the article should change: the uncited 'nearly 70% of websites' in the lead against W3Techs' measure, and 'two parties' against the four reporters the advisories credit; 6 to attribute or qualify). Wikipedia's March 2026 guideline accepts no edit request written by a model, so any of these reaches the talk page only as the editor's own words, disclosed, in the {{edit COI}} form, citing the independent sources named there and never this site. The editor decides which, if any, to take."
+  },
+  {
+   "id": "322",
+   "owner": "editor",
+   "status": "open",
+   "title": "One repository into six, step 0: create the six repositories (…__PHP__kit, __data, __refs, __updates, __team, __site), Pages with Actions and a custom domain each, DNS CNAMEs to sgit-ai.github.io (and next.php.oct.2026.newsroom.sgit.ai for staging), the Claude app and today's rulesets; then one session with all seven attached"
   }
  ],
  "branches": [
@@ -1078,5 +1078,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.21.6"
+ "version": "0.21.7"
 }

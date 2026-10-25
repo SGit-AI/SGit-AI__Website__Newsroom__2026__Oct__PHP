@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.21.6. Not the live site.
+> Mockup D for review, built from the data of release v0.21.7. Not the live site.
 
-PHP Team console Console Overview Board 210 Agents 19 Releases 179 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 211 Agents 19 Releases 180 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.21.6 
-179 releases since 22 Oct 
+v0.21.7 
+180 releases since 22 Oct 
 
 Open on the board 
-210 
-106 done, 5 waiting 
+211 
+107 done, 5 waiting 
 
 Pages built 
-1054 
+1055 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,14 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 210
+#### Open 211
 
+ #323 
+One repository into six, step 1: the one big session (kit, data, team, refs, updates, site; every old address answering;… 
+ dev@php.newsroom 
+ #322 
+One repository into six, step 0: create the six repositories (…__PHP__kit, __data, __refs, __updates, __team, __site), P… 
+ editor 
  #320 
 Watch a second Wikipedia article: 'Black October (information security)' (en.wikipedia.org, Wikidata Q141842194), starte… 
  ontologist 
@@ -47,12 +53,6 @@ Eleven of Wikipedia's principles proposed for AGENTS.md in the ontologist's stor
  #315 
 Wikipedia's PHP2Shell article: /wikipedia/php2shell/review/ has 15 findings against Wikipedia's own policies with the ca… 
  editor 
- #314 
-A deck per persona: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, pla… 
- claude-story-site 
- #313 
-On a phone every brief page scrolls sideways (the briefs index by 186px, most briefs by 40 to 130px): the admin layout o… 
- story-site 
 
 #### Waiting 5
 
@@ -72,13 +72,16 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 106
+#### Done 107
 
  #321 
 The briefs page sorts by the time each brief was published, newest first, and shows the time (UTC) on every row and on e… 
  claude-story-site v0.21.6 
  #316 
 Scheduled tasks that start a fresh session can start with no repository: the ontologist's old task (trig_01BqfsPKp2Rj5Fs… 
+ editor 
+ #312 
+Proposal: one repository into six (kit, data, refs, updates, site, team), meeting through versions by URL, not submodule… 
  editor 
  #310 
 The admin and team pages use the whole width of the screen; the reader pages stay at 1,440px 
@@ -92,13 +95,11 @@ Article: URL paths, personas in the address, and a single-page site, written bef
  #304 
 The line on a phone: it no longer holds the top of the screen (the editor, on an iPhone: a locked top band costs too muc… 
  claude-story-site v0.19.0 
- #296 
-Prototype F, the line: the editor's design of 25 October built on the site, at /admin/design/line/ (six pages from the l… 
- claude-story-site v0.17.0 
 
 ### Releases
  latest 8 
 
+ v0.21.7 2026-10-25 the plan for one repository into six, agreed by the editor: final names from day one (…__PHP__kit, data, refs, updates, team, site… 
  v0.21.6 2026-10-25 the briefs page sorts by the time each brief was published, newest first, and shows that time on every row and every brief's page … 
  v0.21.5 2026-10-25 Ontologist pass 2 (14:05 London, scheduled): 36 new sources resolved to 32 new parties and 3 aliases, with the names that mislead … 
  v0.21.4 2026-10-25 decks: what ruv.sgit.ai does and how it changes the deck per persona (one slide library and seven persona tracks in ruv's timeline… 
@@ -106,7 +107,6 @@ Prototype F, the line: the editor's design of 25 October built on the site, at /
  v0.21.2 2026-10-25 The Sherpa's 13:45 wake: run record (idle, both lanes empty) 
  v0.21.1 2026-10-25 The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prom… 
  v0.21.0 2026-10-25 Wikipedia, round 3: the article's history as lifelines (/wikipedia/php2shell/evolution/), its talk page as threads, a reviewer's r… 
- v0.20.8 2026-10-25 Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Prototype F, the line: the editor's design of 25 October built on the site, at /
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.21.6 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.21.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

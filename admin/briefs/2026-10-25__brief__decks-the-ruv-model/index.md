@@ -80,8 +80,8 @@ It is a talk, "Autonomy with a mandate and a memory" (Dinis Cruz, Agentic Engine
 
 This brief is the file `admin/content/briefs/2026-10-25__brief__decks-the-ruv-model.md` in the repository, published as written.
 
-← older: A deck per persona: the debrief, cut daily, with its histo
+← older: A deck per persona: the debrief, cut daily, with its histonewer: → Plan: one repository into six, the implementation
 
 
 ---
-site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__decks-the-ruv-model/index.html
+site v0.21.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__decks-the-ruv-model/index.html

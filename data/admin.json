@@ -2302,9 +2302,9 @@
   {
    "id": "312",
    "title": "Proposal: one repository into six (kit, data, refs, updates, site, team), meeting through versions by URL, not submodules; the five decisions for the editor",
-   "status": "open",
+   "status": "done",
    "owner": "editor",
-   "note": "dev@php.newsroom's proposal of 25 October, at the editor's request: /admin/briefs/2026-10-25__proposal__one-repository-into-six/. Phase 1 (inside today's repository) to be agreed with the refactor session."
+   "note": "dev@php.newsroom's proposal of 25 October, at the editor's request: /admin/briefs/2026-10-25__proposal__one-repository-into-six/. Phase 1 (inside today's repository) to be agreed with the refactor session. Agreed by the editor on 25 October ('I think that's the way to do it'); the plan is the brief 'Plan: one repository into six, the implementation'."
   },
   {
    "id": "313",
@@ -2369,6 +2369,20 @@
    "owner": "claude-story-site",
    "note": "The editor, 25 October: the briefs at the top were not the most recently published, because the list sorted by file name. data/briefs-published.json now records the minute each was first published: seeded once from git (the first commit adding each file; two that arrived through a merge take the merge's time), then stamped by the first build that includes a new brief, and never changed. The build still never reads git, so a shallow CI clone builds the same pages. Same override as board 309.",
    "version": "0.21.6"
+  },
+  {
+   "id": "322",
+   "title": "One repository into six, step 0: create the six repositories (…__PHP__kit, __data, __refs, __updates, __team, __site), Pages with Actions and a custom domain each, DNS CNAMEs to sgit-ai.github.io (and next.php.oct.2026.newsroom.sgit.ai for staging), the Claude app and today's rulesets; then one session with all seven attached",
+   "status": "open",
+   "owner": "editor",
+   "note": "The plan of 25 October, step 0."
+  },
+  {
+   "id": "323",
+   "title": "One repository into six, step 1: the one big session (kit, data, team, refs, updates, site; every old address answering; the parity report; the replay), then each agent reviews its own repository",
+   "status": "open",
+   "owner": "dev@php.newsroom",
+   "note": "After step 0. The kit goes to security for review before v1.0.0."
   }
  ],
  "evidence_vault": {

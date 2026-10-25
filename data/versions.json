@@ -1,6 +1,15 @@
 {
- "current": "0.21.6",
+ "current": "0.21.7",
  "versions": [
+  {
+   "version": "0.21.7",
+   "date": "2026-10-25",
+   "title": "the plan for one repository into six, agreed by the editor: final names from day one (…__PHP__kit, data, refs, updates, team, site; today's repository renamed __PHP__v1 only at the cutover), the editor's setup (repositories, Pages, DNS), one session holding all seven repositories to cut the site, every old address answering, a parity report, each agent reviewing its own repository, the cutover and how to tell it worked",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.21.6",
    "date": "2026-10-25",

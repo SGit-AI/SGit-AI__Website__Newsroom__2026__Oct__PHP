@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.21.6. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.21.7. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -175,7 +175,7 @@ Site v0.21.6. Data as of 2026-10-25T09:35Z (the latest capture in the evidence v
 - [The board](https://php.oct.2026.newsroom.sgit.ai/admin/board/index.md): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles](https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.md): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
 - [Application security](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/index.md): The newsroom's application security: its threat model and data flows, every vulnerability found and fixed as an advisory with its root cause, who can do what, the incident runbooks, the bug bounty and the outside reviews.
-- [Briefs](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.md): Every build brief for this site, 61 of them, published in full before the work: the title, the date and who wrote it, each on its own page.
+- [Briefs](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.md): Every build brief for this site, 62 of them, published in full before the work: the title, the date and who wrote it, each on its own page.
 - [Pack mode, measured](https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.md): One vault as a normal sgit vault and as a pack vault: a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and why the normal vault has hit a wall.
 - [Who reads this site](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Synthetic readers](https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/index.md): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every review is published here and every run is kept in that reader's own vault.
@@ -1118,6 +1118,7 @@ Licence: content CC BY 4.0, code Apache-2.0.
 - [Prototype F: every line the rules produce](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/catalogue/index.md): Every line the rules produce, by visit moment, by role and by page, drawn by the engine at this release.
 
 ## Briefs, one page each (admin/content/briefs/)
+- [Plan: one repository into six, the implementation](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/index.md): published 2026-10-25T15:09Z, the plan for the proposal the editor agreed on 25 October 2026 ("I think that's the way to do it"), written by dev@php
 - [Decks: what ruv.sgit.ai does, and how it changes the deck per persona](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__decks-the-ruv-model/index.md): published 2026-10-25T14:19Z, story-site (claude-story-site), 25 October 2026
 - [A deck per persona: the debrief, cut daily, with its history and its deltas](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__a-deck-per-persona/index.md): published 2026-10-25T13:19Z, story-site (claude-story-site)
 - [Proposal: one repository into six, so that tens of agents can work without waiting on each other](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.md): published 2026-10-25T12:33Z, dev@php
@@ -1179,6 +1180,7 @@ Licence: content CC BY 4.0, code Apache-2.0.
 - [Review: the front page and the navigation, at v0.2.5](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__review__front-page-and-navigation/index.md): published 2026-10-22T14:05Z
 - [Who reads this site: anonymous telemetry over an append lane](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__telemetry-over-an-append-lane/index.md): published 2026-10-22T13:44Z, accepted and being built
 - [The brief, as written by the editor on 22 October 2026](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief/index.md): published 2026-10-22T09:27Z, Dinis Cruz
+- [Plan: one repository into six, the implementation](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/index.md): published 2026-10-25T15:09Z, the plan for the proposal the editor agreed on 25 October 2026 ("I think that's the way to do it"), written by dev@php
 - [Decks: what ruv.sgit.ai does, and how it changes the deck per persona](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__decks-the-ruv-model/index.md): published 2026-10-25T14:19Z, story-site (claude-story-site), 25 October 2026
 - [A deck per persona: the debrief, cut daily, with its history and its deltas](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__a-deck-per-persona/index.md): published 2026-10-25T13:19Z, story-site (claude-story-site)
 - [Proposal: one repository into six, so that tens of agents can work without waiting on each other](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.md): published 2026-10-25T12:33Z, dev@php
