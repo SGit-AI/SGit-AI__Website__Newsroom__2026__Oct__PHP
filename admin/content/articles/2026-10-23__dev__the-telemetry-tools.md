@@ -17,7 +17,7 @@ Nothing in the pictures below identifies anyone. They show counts by page, by gr
 
 ## What an event carries, and what it does not
 
-One event per page per browser tab: the page, the host of the referring site, a country, region and city from a geolocation lookup, the browser's language, a screen class (phone, tablet, desktop), the time zone and a random session id that lives in that tab. No IP address, no cookie, no name, no user-agent string. The event is encrypted in the browser to a key held in the [telemetry vault](/vaults/index.html) before it leaves, and the lane answers every write with the same blind `{"ok": true}`. Do Not Track and Global Privacy Control switch it off. The mechanics, the write token and the public key are on [who reads this site](/admin/telemetry/index.html).
+One event per page per browser tab: the page, the host of the referring site, a country, region and city from a geolocation lookup, the browser's language, a screen class (phone, tablet, desktop), the time zone and a random session id that lives in that tab. No IP address, no cookie, no name, no user-agent string in the event; but the lookup service (ipapi.co, or ipwho.is if that fails) sees the reader's IP address to answer, as any site it is asked from would (clarified on 24 October 2026). The event is encrypted in the browser to a key held in the [telemetry vault](/vaults/index.html) before it leaves, and the lane answers every write with the same blind `{"ok": true}`. Do Not Track and Global Privacy Control switch it off. The mechanics, the write token and the public key are on [who reads this site](/admin/telemetry/index.html).
 
 ## Not everyone who opens a page is a reader
 
