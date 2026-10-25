@@ -1904,6 +1904,8 @@ views/desk/index.html
 views/desk/index.md
 views/index.html
 views/index.md
+views/loops/index.html
+views/loops/index.md
 views/state/history/index.html
 views/state/history/index.md
 views/state/index.html

@@ -155,6 +155,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [The state of affairs, now](../views/state/index.html):
 - [Every version, and what changed](../views/state/history/index.html):
 - [The journalist's desk: what is still stale](../views/desk/index.html):
+- [Every loop: researcher to correspondent](../views/loops/index.html):
 
 ### Stories
 - [All stories, written here](../articles/index.html):

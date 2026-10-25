@@ -37,7 +37,7 @@ You need no secret: you read the evidence vault with its published read key (`da
 6. **The readers' prose.** Re-read the persona answers and briefing introductions that carry a date or a measure (`data/personas.json`, the briefings) against the latest state of affairs, until those pages are generated from data (the plan, steps 3 and 4).
 7. **The rules.** When the same miss appears twice, change the journalist's brief (`admin/content/briefs/2026-10-24__brief__the-journalist.md`, a dated "Corrected on" line) and send a `To-journalist:` note.
 8. **The plan.** With what time is left, the next step of the full pass on `/views/desk/`, one release at a time.
-9. **Release.** Build, gate, security check, the security self-check (`/admin/appsec/reviews/`); `schedule.py run correspondent ...`; `release.sh` with `To-ontologist:`, `To-librarian:` and `To-desk:` notes saying the correspondent's run is done and the data is reviewed up to <head>.
+9. **Release.** Re-export the loops (`python3 admin/build/export_loops.py --vault <your evidence clone> --sgit <sgit>`; added 25 October at the editor's request, it feeds `/views/loops/`), then build, gate, security check, the security self-check (`/admin/appsec/reviews/`); `schedule.py run correspondent ...`; `release.sh` with `To-ontologist:`, `To-librarian:` and `To-desk:` notes saying the correspondent's run is done and the data is reviewed up to <head>.
 
 ## Never
 
