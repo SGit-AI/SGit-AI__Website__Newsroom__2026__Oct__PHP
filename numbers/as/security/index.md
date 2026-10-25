@@ -5,4 +5,4 @@
 A view of [The numbers](https://php.oct.2026.newsroom.sgit.ai/numbers/index.html), written for Security. The page itself, and its markdown twin, are at that address.
 
 ---
-site v0.22.5 · https://php.oct.2026.newsroom.sgit.ai/numbers/as/security/index.html
+site v0.22.6 · https://php.oct.2026.newsroom.sgit.ai/numbers/as/security/index.html

@@ -350,6 +350,14 @@ admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/index.html
 admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/index.md
 admin/briefs/2026-10-25__proposal__one-repository-into-six/index.html
 admin/briefs/2026-10-25__proposal__one-repository-into-six/index.md
+admin/briefs/2026-10-25__report__one-repository-into-six-how-to-work-in-it/index.html
+admin/briefs/2026-10-25__report__one-repository-into-six-how-to-work-in-it/index.md
+admin/briefs/2026-10-25__report__one-repository-into-six-the-challenges/index.html
+admin/briefs/2026-10-25__report__one-repository-into-six-the-challenges/index.md
+admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/index.html
+admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/index.md
+admin/briefs/2026-10-25__report__one-source-for-every-file/index.html
+admin/briefs/2026-10-25__report__one-source-for-every-file/index.md
 admin/briefs/index.html
 admin/briefs/index.md
 admin/build/outputs.txt

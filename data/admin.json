@@ -2382,7 +2382,7 @@
    "title": "One repository into six, step 1: the one big session (press, data, team, refs, updates, site; every old address answering; the parity report; the replay), then each agent reviews its own repository",
    "status": "open",
    "owner": "dev@php.newsroom",
-   "note": "Pass one done on 25 October; one source for every file on 26 October: press v1.0.4 serves the assets, data v0.1.4 the data, and the four sites, cut from v0.22.4 (ec5d411eeb70), hold no copies (each page's route and Content-Security-Policy name the hosts). Pass two moves the sources and the build. The press goes to security for review."
+   "note": "Pass one done on 25 October; one source for every file the same day: press v1.0.4 serves the assets, data v0.1.4 the data, and the four sites, cut from v0.22.4 (ec5d411eeb70), hold no copies (each page's route and Content-Security-Policy name the hosts). Pass two moves the sources and the build. The press goes to security for review."
   },
   {
    "id": "324",
@@ -2418,7 +2418,7 @@
    "title": "The six new repositories have not deployed: set each one's Pages source to 'Deploy from a branch: dev, / (root)' (or a deploy workflow, through security), then dev checks every site live",
    "status": "open",
    "owner": "editor",
-   "note": "No Pages build has run in any of them (26 October: each host answers 'Site not found'; the main site's staging name is site.php.oct.2026.newsroom.sgit.ai, as its DNS record has it). Their content is on dev. The press and the data API must serve before the sites work, since every page loads its scripts from the press."
+   "note": "No Pages build has run in any of them (25 October, evening: each host answers 'Site not found'; the main site's staging name is site.php.oct.2026.newsroom.sgit.ai, as its DNS record has it). Their content is on dev. The press and the data API must serve before the sites work, since every page loads its scripts from the press."
   },
   {
    "id": "329",
