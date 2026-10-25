@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.18.0. Not the live site.
+> Mockup D for review, built from the data of release v0.18.1. Not the live site.
 
-PHP Team console Console Overview Board 197 Agents 19 Releases 151 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 197 Agents 19 Releases 152 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 16:05 UTC 
 
 Release 
-v0.18.0 
-151 releases since 22 Oct 
+v0.18.1 
+152 releases since 22 Oct 
 
 Open on the board 
 197 
@@ -96,6 +96,7 @@ Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the te
 ### Releases
  latest 8 
 
+ v0.18.1 2026-10-25 Conductor full pass 07:15 London on 25 October: agents-status, schedules against runs, run record 
  v0.18.0 2026-10-25 the line, built: the editor's design of 25 October as prototype F at /admin/design/line/ (six pages from the evidence vault, the p… 
  v0.17.7 2026-10-25 Board row 285 (the board): the journalist's and the correspondent's schedules are active, and the desk's wakes still come before t… 
  v0.17.6 2026-10-25 The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): jou… 
@@ -103,7 +104,6 @@ Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the te
  v0.17.4 2026-10-25 Every loop, on one page (/views/loops/): the pipeline from the researcher to the correspondent, the last full loop, the next one d… 
  v0.17.3 2026-10-24 The readers' answers on the home page, the start page and three briefings brought to 16:05 UTC on 24 October, and the engineer's a… 
  v0.17.2 2026-10-24 The correspondent's first review: nine corrections to the journalist's 94 verdicts and rows (/views/desk/, /claims/review/), PHP's… 
- v0.17.1 2026-10-24 The ontologist's debrief and self-check on the Wikipedia section, after the fact: the seven answers, the screenshots, and the one … 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the te
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.18.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.18.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

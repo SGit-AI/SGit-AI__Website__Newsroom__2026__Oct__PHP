@@ -1,6 +1,15 @@
 {
- "current": "0.18.0",
+ "current": "0.18.1",
  "versions": [
+  {
+   "version": "0.18.1",
+   "date": "2026-10-25",
+   "title": "Conductor full pass 07:15 London on 25 October: agents-status, schedules against runs, run record",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.18.0",
    "date": "2026-10-25",

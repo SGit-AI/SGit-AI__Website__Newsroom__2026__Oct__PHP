@@ -1,27 +1,27 @@
 {
  "agents": [
   {
-   "cost": 18,
-   "did": "The evidence vault holds 382 sources and 132 claims. Woken at 08:00, 10:30, 13:00, 15:30 and 18:00; no run records. Next wake Sunday 08:00 London.",
+   "cost": 22,
+   "did": "Paused deleting the old source vault oq9gflln; its wakes of the day left no run record.",
    "id": "curator-scheduled",
-   "last": "2026-10-24T17:19Z",
+   "last": "2026-10-24T22:17Z",
    "member": "newsroom-lead",
    "name": "curator@php.newsroom (scheduled)",
-   "on": "",
+   "on": "editor",
    "stage": "curator",
    "state": "waiting",
-   "waiting": "Run records."
+   "waiting": "Your go on the site export; whether a public normal-vault copy stays; confirm the researcher wrote nothing to oq9gflln after the move."
   },
   {
-   "cost": 11,
-   "did": "The 17:00 pass pushed: 1 commit, 10,342 objects, no conflicts. Still no run records for any of its wakes.",
+   "cost": 14,
+   "did": "The 07:00 wake started a pass (running now); still no run records.",
    "id": "researcher-scheduled",
-   "last": "2026-10-24T16:59Z",
+   "last": "2026-10-25T07:16Z",
    "member": "researcher",
    "name": "researcher@php.newsroom (scheduled)",
    "on": "",
    "stage": "researcher",
-   "state": "waiting",
+   "state": "working",
    "waiting": "Run records."
   },
   {
@@ -61,28 +61,16 @@
    "waiting": "Approve or deny the Bash call in its session; desk lists 6 decisions waiting on you."
   },
   {
-   "cost": 79,
-   "did": "The 17:45 pass done, v0.15.5 released.",
+   "cost": 91,
+   "did": "Wakes on schedule; both lanes empty; next 07:45.",
    "id": "sherpa",
-   "last": "2026-10-24T16:55Z",
+   "last": "2026-10-24T20:47Z",
    "member": "sherpa",
    "name": "sherpa@php.newsroom",
    "on": "editor",
    "stage": "",
    "state": "waiting",
-   "waiting": "Your go for dev to seal the subscriptions lane key (wgeiqabu) to the Sherpa; optionally the conductor's lane key (5iwos28w)."
-  },
-  {
-   "cost": 99,
-   "did": "A session is running now (the scheduled journalist proposal; the correspondent role). Still no schedule task for it.",
-   "id": "journalist-and-historian",
-   "last": "2026-10-24T18:11Z",
-   "member": "journalist",
-   "name": "journalist and historian",
-   "on": "editor",
-   "stage": "journalist",
-   "state": "working",
-   "waiting": "Its names confirmed, its Sonnet schedule card approved, a read key for 7r83qic5."
+   "waiting": "The conductor's lane key (5iwos28w) and the subscriptions key (wgeiqabu) handed over sealed."
   },
   {
    "cost": 54,
@@ -97,16 +85,16 @@
    "waiting": "Its agent key enrolled; the picks on board 138."
   },
   {
-   "cost": 21,
-   "did": "The 14:44 pass was clean, nothing new; next pass 06:44 London. No card.",
+   "cost": 28,
+   "did": "The 06:44 pass pushed. It wants to switch its source from the watch to the site, add two KEV entries (CVE-2026-110447, CVE-2026-114625), move its morning pass to 07:14 and release its schedule card.",
    "id": "pulse",
-   "last": "2026-10-24T14:00Z",
+   "last": "2026-10-25T07:03Z",
    "member": "",
    "name": "pulse@newsroom",
    "on": "editor",
    "stage": "",
    "state": "waiting",
-   "waiting": "A card; the 2 items awaiting your go."
+   "waiting": "Your go on those four; its card is not released yet."
   },
   {
    "cost": 20,
@@ -145,10 +133,10 @@
    "waiting": "Board 092 (the editor: accept, fund or fix the newsroom's own risks), 093 (journalist), 094 (story-site)."
   },
   {
-   "cost": 89,
-   "did": "Run 5 released as v0.15.4: the Amazon rewording is now in the vault. Next 20:52 London.",
+   "cost": 96,
+   "did": "The 20:52 wake was quiet: no release, audit 0 failures.",
    "id": "factcheck",
-   "last": "2026-10-24T16:09Z",
+   "last": "2026-10-24T19:58Z",
    "member": "verifier",
    "name": "factcheck@php.newsroom",
    "on": "",
@@ -158,14 +146,14 @@
   },
   {
    "cost": 47,
-   "did": "Released v0.14.8 after its 07:13 pass.",
+   "did": "Its 07:13 pass is running now.",
    "id": "librarian",
-   "last": "2026-10-24T06:26Z",
+   "last": "2026-10-25T07:13Z",
    "member": "librarian",
    "name": "librarian@php.newsroom",
    "on": "editor",
    "stage": "librarian",
-   "state": "waiting",
+   "state": "working",
    "waiting": "Two board decisions; security review of its CLAUDE.md branch."
   },
   {
@@ -193,16 +181,16 @@
    "waiting": "A model key for four images; it must arrive sealed (pki.sgit.ai), not pasted."
   },
   {
-   "cost": 35.38,
-   "did": "Renamed to the ontologist (the cartographer is archived); pushed the missing commit. Card active: daily 14:40 London, a fresh Sonnet session per firing.",
+   "cost": 66,
+   "did": "Its first pass (14:40, run record 21:50 UTC): the Wikipedia php2shell article graph is live (v0.17.1).",
    "id": "ontologist-cartographer",
-   "last": "2026-10-24T01:04Z",
+   "last": "2026-10-24T23:24Z",
    "member": "cartographer",
    "name": "ontologist@php.newsroom (cartographer)",
    "on": "",
    "stage": "ontologist",
-   "state": "waiting",
-   "waiting": "The first wake today at 14:40 London."
+   "state": "done",
+   "waiting": "nothing"
   },
   {
    "cost": 2.21,
@@ -217,16 +205,16 @@
    "waiting": "Which sender, approval per message or a standing rule; a change to the security requirements; a key pair of its own."
   },
   {
-   "cost": 56,
-   "did": "Round 1 closed (v0.15.6); the privacy policy updated.",
+   "cost": 70,
+   "did": "CodeQL fixes done (first scan triaged and hardened, v0.15.12); gate-pass-2 now 5 commits ahead of dev.",
    "id": "security",
-   "last": "2026-10-24T17:06Z",
+   "last": "2026-10-24T22:05Z",
    "member": "",
    "name": "security@php.newsroom",
    "on": "editor",
    "stage": "",
    "state": "waiting",
-   "waiting": "Reply go to ship security/gate-pass-2 (board 279); the rulesets at user logins (board 280); private vulnerability reporting (board 278)."
+   "waiting": "Reply go to release security/gate-pass-2 (it carries the #4-6 fix); dismiss CodeQL alerts #3 and #22 yourself."
   },
   {
    "cost": 2,
@@ -263,9 +251,33 @@
    "stage": "",
    "state": "done",
    "waiting": "nothing"
+  },
+  {
+   "cost": 114,
+   "did": "Pipeline owner after the journalist; site pages updated to v0.17.7. Active from 00:40 London: Opus, 09:25, 11:55, 14:25, 16:55, 19:25 (45 minutes after each journalist wake).",
+   "id": "correspondent-scheduled",
+   "last": "2026-10-25T01:44Z",
+   "member": "correspondent",
+   "name": "correspondent@php.newsroom (scheduled)",
+   "on": "editor",
+   "stage": "correspondent",
+   "state": "waiting",
+   "waiting": "Your call on board 285: move the desk's checks to about 10:15 and 17:40 (its wakes clash with the correspondent's)."
+  },
+  {
+   "cost": 4,
+   "did": "Branch matches dev; nothing to push. Active from 00:40 London: Sonnet, 08:40, 11:10, 13:40, 16:10, 18:40; a fresh session each wake.",
+   "id": "journalist-scheduled",
+   "last": "2026-10-24T23:09Z",
+   "member": "journalist",
+   "name": "journalist@php.newsroom (scheduled)",
+   "on": "",
+   "stage": "journalist",
+   "state": "waiting",
+   "waiting": "Its first wake at 08:40."
   }
  ],
- "as_of": "2026-10-24T18:25Z",
+ "as_of": "2026-10-25T07:30Z",
  "board": [
   {
    "id": "009",
@@ -470,7 +482,7 @@
   [
    "security/gate-pass-2",
    "security@",
-   3,
+   5,
    "security pass 2: waits for the editor's go"
   ],
   [
@@ -520,33 +532,47 @@
    "sherpa@",
    2,
    "round 2"
+  ],
+  [
+   "claude/focused-brahmagupta-kzb508",
+   "unknown",
+   4,
+   "last commit 24 October 23:09 UTC"
+  ],
+  [
+   "code-coverage-agent/setup-code-coverage-reporting",
+   "coverage agent",
+   1,
+   "code coverage reporting"
+  ],
+  [
+   "dependabot/github_actions/dev/*",
+   "dependabot",
+   4,
+   "four workflow action bumps (.github/workflows: security review)"
   ]
  ],
  "decisions": [
-  "A go for security/gate-pass-2 (board 279); the rulesets at user logins (280); private vulnerability reporting (278).",
-  "dev@ is blocked on a Bash permission prompt since 11:52 UTC; the desk lists 6 decisions waiting on you, starting there.",
-  "Hand the Sherpa the subscriptions vault key (wgeiqabu) and the conductor's lane key (5iwos28w); hand this session both lane keys: until then the lanes are not drained here.",
-  "The new pipeline (researcher, curator, journalist, correspondent, then ontologist, librarian, desk): the journalist's and correspondent's cards and schedule tasks, their names, a read key for 7r83qic5. My notes on the brief are in the session.",
-  "Security asked the conductor for a self-check paragraph in AGENTS.md and a step in every card; observability asked for a roster row in data/team.json. Neither file is on the conductor's card: say who edits.",
-  "observability: the SG/Send access token (board 273), the re-keying of 84wr8mib, its key enrolled.",
-  "Run records: most scheduled prompts leave none on a quiet wake; AGENTS.md section 7 asks for one. Say which rule stands (the researcher, curator, ontologist and pulse show as gaps).",
-  "Pulse has no card; desk's scope; the designer's key; the abp session's hooks; the two public-form messages."
+  "security/gate-pass-2 (5 commits ahead): a go; dismiss CodeQL alerts #3 and #22 yourself; rulesets at user logins; private vulnerability reporting.",
+  "The curator: a go on the site export (the site shows 328 sources), whether a public normal-vault copy of the old vault stays, and that the researcher wrote nothing to oq9gflln after the move.",
+  "Pulse: a go on four things (switch its source to the site, two KEV entries, morning pass to 07:14, release its schedule card).",
+  "The desk's wakes clash with the correspondent's: board 285 proposes moving the desk's checks to about 10:15 and 17:40.",
+  "dev@ was blocked on a Bash permission prompt (last seen 16:45 UTC).",
+  "Lane keys: the Sherpa needs 5iwos28w and wgeiqabu; this session still has no lane keys, so the lanes are not drained here.",
+  "Run records: most scheduled prompts leave none on a quiet wake; AGENTS.md section 7 asks for one. The control room shows these as red dots. Say which rule stands.",
+  "Owner for admin/build/control.py, assets/control.css and assets/control.js; roster row for observability (data/team.json); security's self-check paragraph and card step.",
+  "Board 283: three additions to AGENTS.md section 1 on taking in dev (the correspondent says you agreed them)."
  ],
  "freshness": [
   [
    "Evidence vault, as exported to this site",
    "2026-10-24T12:34Z",
-   "328 sources on the site (v0.14.30)"
-  ],
-  [
-   "Source watch, as exported to this site",
-   "2026-10-23T12:40Z",
-   "the 09:30 pass is pushed to the vault; a pass is running now; not yet exported"
+   "328 sources on the site; the vault holds more"
   ],
   [
    "Site build",
-   "2026-10-24",
-   "live version v0.15.0"
+   "2026-10-25",
+   "live version v0.18.0"
   ]
  ],
  "pipeline": [
@@ -758,6 +784,14 @@
    "run": "20261024T2250Z-correspondent",
    "started": "2026-10-24T22:50:00Z",
    "summary": "First review wake, at the editor's go in the session. Read the journalist's run of 24 Oct 21:26 UTC (evidence vault 8c16a64a7cf6, 94 verdicts, 2 compromise rows) against the vault's captures (read-only clone). Caught 9: CVE-2026-115560 (PHP's third flaw, 23 Oct) wrongly held back and missing from t…"
+  },
+  {
+   "agent": "conductor",
+   "finished": "2026-10-25T07:17:31Z",
+   "outcome": "ok",
+   "run": "20261025T0716Z-conductor",
+   "started": "2026-10-25T07:16:04Z",
+   "summary": "Full pass (07:15 London; clocks went back to GMT overnight, the task fires at 07:15 London). Dev head 8bcebd32 area at v0.18.0 taken in; inbox empty; 3 notes read (CodeQL hardening: derive data-root as a count; the correspondent's board 283 and debrief). Lanes: no key. New cards: journalist (Sonnet…"
   }
  ],
  "schedules": [
@@ -903,5 +937,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.18.0"
+ "version": "0.18.1"
 }
