@@ -2217,6 +2217,20 @@
    "title": "Owners for the policy drafts, from the librarian's pass of 25 October (the gate warns on each; the commit that added each file carries its Agent line unless marked inferred): security: .github/dependabot.yml, .well-known/security.txt, SECURITY.md (inferred, created on GitHub), admin/build/csp.py, admin/build/diagram.py, data/advisories.json, data/appsec.json, pages admin/appsec/**; conductor: admin/build/grc_history.py, assets/grc-changes.js, data/comms.json, and (inferred from /team/control/) admin/build/control.py, assets/control.css, assets/control.js; dev: admin/build/release_pages.py (inferred, the release history); correspondent (no policy yet, board 277; its ROLE.md drafted by the librarian): admin/build/loops.py, admin/build/export_loops.py, data/loops.json, data/schedule/correspondent.json, data/runs/correspondent/**, data/vault-register/correspondent.json, admin/content/agents/correspondent/**. The ontologist's Wikipedia files are its own request, board 295; data/desk.json, /analysis/ and /ops/ are board 256.",
    "status": "open",
    "owner": "abp"
+  },
+  {
+   "id": "301",
+   "title": "Capture PHP's own advisory for CVE-2026-115560 (published 23 October; session upload progress, affects fully patched releases including 8.5.12) into the evidence vault: the site carries it only through Cloudflare, SOCRadar and The Hacker News",
+   "status": "open",
+   "owner": "collector-primary",
+   "note": "From the news desk chief's morning wake, 25 October."
+  },
+  {
+   "id": "302",
+   "title": "Right now: CVE-2026-115560 is a line of its own, not a clause in 'What nobody knows yet': a third PHP flaw, affecting fully patched releases, fixed in the next regular release; it needs a rare session setting, has no severity score and no reported exploitation; the mitigation is session.upload_progress.enabled=0. Keep it separate from php2shell's two CVEs, and keep the unknown about whether it is the Fediverse report's bug",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the news desk chief's morning wake, 25 October."
   }
  ],
  "evidence_vault": {
