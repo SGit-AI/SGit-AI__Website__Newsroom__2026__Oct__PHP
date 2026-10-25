@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.19.0. Not the live site.
+> Mockup D for review, built from the data of release v0.19.1. Not the live site.
 
-PHP Team console Console Overview Board 202 Agents 19 Releases 158 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 202 Agents 19 Releases 159 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 24 October 2026, 16:05 UTC 
 
 Release 
-v0.19.0 
-158 releases since 22 Oct 
+v0.19.1 
+159 releases since 22 Oct 
 
 Open on the board 
 202 
 100 done, 4 waiting 
 
 Pages built 
-948 
+949 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -96,6 +96,7 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
 ### Releases
  latest 8 
 
+ v0.19.1 2026-10-25 Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's … 
  v0.19.0 2026-10-25 the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, wr… 
  v0.18.6 2026-10-25 Incident: the researcher and the curator run but leave no commit or run record; status and board say so 
  v0.18.5 2026-10-25 The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status 
@@ -103,7 +104,6 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
  v0.18.3 2026-10-25 Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2% 
  v0.18.2 2026-10-25 the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 3… 
  v0.18.1 2026-10-25 Conductor full pass 07:15 London on 25 October: agents-status, schedules against runs, run record 
- v0.18.0 2026-10-25 the line, built: the editor's design of 25 October as prototype F at /admin/design/line/ (six pages from the evidence vault, the p… 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.19.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.19.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

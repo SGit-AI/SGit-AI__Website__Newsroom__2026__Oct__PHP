@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.19.0",
+ "version": "0.19.1",
  "members": [
   {
    "agent": "abp",
@@ -3024,6 +3024,7 @@
   "admin/build/release_pages.py",
   "admin/build/wikitext.py",
   "admin/content/agents/correspondent/ROLE.md",
+  "admin/schedule/WAKE.md",
   "admin/wikipedia/fetch.py",
   "assets/control.css",
   "assets/control.js",

@@ -837,6 +837,14 @@
    "run": "20261025T1015Z-conductor",
    "started": "2026-10-25T10:15:36Z",
    "summary": "Light check (11:15 London) turned incident at the editor's word: the researcher and the curator DO run (curator 08:00: 18 sources promoted, vault 400 sources; researcher passes pushed at 07:03 and running at 11:11) but leave no commit or run record. Status lines and decision rewritten to say so; bo…"
+  },
+  {
+   "agent": "conductor",
+   "finished": "2026-10-25T10:38:12Z",
+   "outcome": "ok",
+   "run": "20261025T1024Z-conductor",
+   "started": "2026-10-25T10:24:00Z",
+   "summary": "At the editor's go (25 Oct, in this session): every scheduled wake prompt made small. New admin/schedule/WAKE.md (pull dev, schedule.py wake <you> to see what changed, read card and brief, a run record every wake whatever happened, report). schedule.py: new 'wake' (commits since your last run, whic…"
   }
  ],
  "schedules": [
@@ -952,6 +960,16 @@
    ]
   },
   {
+   "agent": "pulse",
+   "model": "",
+   "objective": "Track every php2shell-related CVE up the ladder (KEV, ransomware flag, Metasploit module, national CERT report, named victim) from the source watch, twice a day.",
+   "status": "active",
+   "times": [
+    "06:44",
+    "14:44"
+   ]
+  },
+  {
    "agent": "researcher",
    "model": "the session's model",
    "objective": "The source watch: probe every watched source, capture what changed into the watch's pack vault, rebuild the series, and report what moved.",
@@ -982,5 +1000,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.19.0"
+ "version": "0.19.1"
 }

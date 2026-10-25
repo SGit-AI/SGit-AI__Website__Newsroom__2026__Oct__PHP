@@ -1799,6 +1799,8 @@ team/schedule/librarian/index.html
 team/schedule/librarian/index.md
 team/schedule/ontologist/index.html
 team/schedule/ontologist/index.md
+team/schedule/pulse/index.html
+team/schedule/pulse/index.md
 team/schedule/researcher/index.html
 team/schedule/researcher/index.md
 team/schedule/sherpa/index.html
