@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today279runs recorded95runs with changes and no article
+2schedules20runs a night, today280runs recorded95runs with changes and no article
 
 ## Quiet hours
 
@@ -33,7 +33,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 182, researcher@php.newsroom: 38, Conductor: 16, synthetic@php.newsroom: 12, Fact-check desk: 7, Sherpa: 5, factcheck: 5, Ontologist: 3, desk: 3, Journalist: 2, librarian@php.newsroom: 2, pulse: 1, curator: 1, correspondent: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 183, researcher@php.newsroom: 38, Conductor: 16, synthetic@php.newsroom: 12, Fact-check desk: 7, Sherpa: 5, factcheck: 5, Ontologist: 3, desk: 3, Journalist: 2, librarian@php.newsroom: 2, pulse: 1, curator: 1, correspondent: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -62,6 +62,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.21.4` | decks: what ruv.sgit.ai does and how it changes the deck per persona (one slide library and seven persona tracks in ruv's timeline format, so its player can be reused) | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.21.3` | The desk's round 3 closed: its scheduled task wired to its card and its wakes moved after the correspondent's reviews, with a debrief | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.21.2` | The Sherpa's 13:45 wake: run record (idle, both lanes empty) | yes | its release note | [output](../../admin/versions.html) |
+| 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.21.10` | the split, in progress: the press is at press.php.oct.2026.newsroom.sgit.ai, this story's own for now (the editor); the data repository's v0.1.0 (49 catalogue entries, 466 files, a schema each, immutable /v/0.1.0/ with sha256s) and the team repository's first import (the board as one file per row) are on dev; press, refs, updates and site wait for the design agent's UX refactor | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.21.1` | The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prompt | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.21.0` | Wikipedia, round 3: the article's history as lifelines (/wikipedia/php2shell/evolution/), its talk page as threads, a reviewer's reading of it against this site's captures (15 findings, for the editor to take to the talk page in his own words), a page for Wikipedia's editors with the collaboration rules, Wikidata links confirmed for 25 parties and Wikidata/DBpedia tracked, the ontologist's task moved into its own session at 06:05, 10:05, 14:05 and 18:05 London, and the story on adopting Wikipedia's principles for the agents | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.20.8` | Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date | yes | its release note | [output](../../admin/versions.html) |
@@ -319,4 +320,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.21.9 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.21.10 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

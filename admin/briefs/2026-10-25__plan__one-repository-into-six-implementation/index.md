@@ -32,7 +32,7 @@ The new repositories get their final names from the start. Only today's reposito
 
 | Repository | Site | Live from |
 |---|---|---|
-| `…__PHP__press` | press.newsroom.sgit.ai | day one (it can serve the other story sites too) |
+| `…__PHP__press` | press.php.oct.2026.newsroom.sgit.ai | day one (this story's own for now, like its name; the editor, 25 October) |
 | `…__PHP__data` | data.php.oct.2026.newsroom.sgit.ai | day one |
 | `…__PHP__refs` | refs.php.oct.2026.newsroom.sgit.ai | day one |
 | `…__PHP__updates` | updates.php.oct.2026.newsroom.sgit.ai | day one |
@@ -50,13 +50,23 @@ Why not build in a "php-v2" repository and rename it to the main name later:
 
 - **Nothing else depends on the name.** Renaming the old repository keeps its clones and pushes redirecting. A Pages custom domain belongs to a repository's settings, not its name.
 
+### Progress
+
+- **25 October:** the editor created the six repositories, with `dev` as their default branch, Pages and DNS, and attached all seven to dev's session.
+
+- **data:** v0.1.0 is on `dev`: 49 catalogue entries (466 files) imported from v1, a schema for every top-level file, immutable `/v/0.1.0/` with a manifest of sha256s, `/latest/`, `versions.json` and a front page. Its gate takes under a second.
+
+- **team:** its first import is on `dev`. The board is split into one file per row (323 rows; the two rows that both took 013 are kept and named). It also holds the 13 schedule cards, the runs and messages, 29 members' folders, the registers, the briefs, the Sherpa's material and `WAKE.md`. Its gate takes a tenth of a second.
+
+- **Waiting on the design agent's UX refactor:** press, refs, updates and site. They carry the layout it is reworking, so they move after it, and with less code.
+
 ### Step 0: the editor's setup (before the session)
 
 1. Create the six repositories in the SGit-AI organisation, each with a `dev` branch as default, empty but for a README.
 
 2. For each, turn Pages on with "GitHub Actions" as the source, and add its custom domain. In DNS, the same record as today's site (a CNAME to `sgit-ai.github.io.`, TTL 300):
 
- press.newsroom.sgit.ai CNAME sgit-ai.github.io. data.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. refs.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. updates.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. team.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. next.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. php.oct.2026.newsroom.sgit.ai needs no new record: at the cutover only its Pages setting moves. Verify `sgit.ai` in the organisation's Pages settings, so no other account can claim a subdomain before its repository serves it, and turn on HTTPS for each once its certificate is issued.
+ press.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. data.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. refs.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. updates.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. team.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. next.php.oct.2026.newsroom.sgit.ai CNAME sgit-ai.github.io. php.oct.2026.newsroom.sgit.ai needs no new record: at the cutover only its Pages setting moves. Verify `sgit.ai` in the organisation's Pages settings, so no other account can claim a subdomain before its repository serves it, and turn on HTTPS for each once its certificate is issued.
 
 3. Give the Claude GitHub app access to the six, and the same rulesets as today's repository: no force-push, no deleting `dev`, `main` protected.
 
@@ -78,7 +88,7 @@ The session works in all seven at once. Agents keep releasing into today's repos
 
 - the shared components (graph, dials, Ask, telemetry, the reader's vault, compare).
 
- Publish v1.0.0 at press.newsroom.sgit.ai/v/1.0.0/ with a sha256 for every file. Each consumer keeps a vendored copy in `press/`, fetched by `press sync 1.0.0` and checked against those sums, so a build never needs the network. Security reviews the press before v1.0.0 is published (it holds the gate and the release script).
+ Publish v1.0.0 at press.php.oct.2026.newsroom.sgit.ai/v/1.0.0/ with a sha256 for every file. Each consumer keeps a vendored copy in `press/`, fetched by `press sync 1.0.0` and checked against those sums, so a build never needs the network. Security reviews the press before v1.0.0 is published (it holds the gate and the release script).
 
 2. **data.** Move `data/*.json` that are evidence or derived, and their exporters:
 
@@ -176,4 +186,4 @@ This brief is the file `admin/content/briefs/2026-10-25__plan__one-repository-in
 
 
 ---
-site v0.21.9 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/index.html
+site v0.21.10 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/index.html

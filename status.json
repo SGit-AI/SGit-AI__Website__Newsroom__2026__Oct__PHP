@@ -9,7 +9,7 @@
   "CVE-2026-109619"
  ],
  "status": "developing",
- "version": "0.21.9",
+ "version": "0.21.10",
  "data_as_of": "2026-10-25T09:35Z",
  "vault_commit": "87795d121200",
  "counts": {

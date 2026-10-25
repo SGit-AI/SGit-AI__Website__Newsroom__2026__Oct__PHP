@@ -112,4 +112,4 @@ Source file: `admin/content/articles/2026-10-23__dev__the-telemetry-tools.md`, i
 
 
 ---
-site v0.21.9 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/articles/the-telemetry-tools/index.html
+site v0.21.10 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/articles/the-telemetry-tools/index.html

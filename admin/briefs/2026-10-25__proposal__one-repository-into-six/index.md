@@ -40,7 +40,7 @@ Split along who writes and how often, not along technology. Each repository has 
 
 | Repository | Site | What it holds | Who writes it | Cadence | Its gate |
 |---|---|---|---|---|---|
-| **press** (the scaffolding) | press.newsroom.sgit.ai/v/1.4.0/ | the build library (`page()`, `E()`, `U()`, `J()`, the layout, markdown), the gate, `release.sh`, `security_check.py`, the shared components (the graph, the dials, Ask, telemetry, the reader's vault, compare) | dev, with security reviewing every change | weekly, or on a fix | its tests, the security review, and a canary build of every consumer at the new version before it is published |
+| **press** (the scaffolding) | press.php.oct.2026.newsroom.sgit.ai/v/1.4.0/ | the build library (`page()`, `E()`, `U()`, `J()`, the layout, markdown), the gate, `release.sh`, `security_check.py`, the shared components (the graph, the dials, Ask, telemetry, the reader's vault, compare) | dev, with security reviewing every change | weekly, or on a fix | its tests, the security review, and a canary build of every consumer at the new version before it is published |
 | **data** (the API) | data.php.oct.2026.newsroom.sgit.ai/v/0.21.3/ | the exports from the vaults, the claims, the timeline, the state of affairs, the risk graph and its history, the fact-check, the ontology; a JSON schema per file; a manifest with every file's sha256 | the journalist, the correspondent, the fact-check desk, the ontologist, the GRC desk, pulse | at every loop | schemas, provenance (every source a claim cites exists), determinism; no HTML. Seconds |
 | **refs** (the references) | refs.php.oct.2026.newsroom.sgit.ai | a page per source and capture (about 840 files today), the claims as evidence, what each source says | built from data; no agent writes it by hand | when the evidence changes | render and links over its own pages only |
 | **updates** (the regular updates) | updates.php.oct.2026.newsroom.sgit.ai | the state of affairs, the desk, what is new, the line, the feeds | the journalist, the correspondent, the desk | five times a day | a few dozen pages; under 20 s |
@@ -152,4 +152,4 @@ This brief is the file `admin/content/briefs/2026-10-25__proposal__one-repositor
 
 
 ---
-site v0.21.9 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.html
+site v0.21.10 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.html
