@@ -1,6 +1,15 @@
 {
- "current": "0.20.8",
+ "current": "0.21.0",
  "versions": [
+  {
+   "version": "0.21.0",
+   "date": "2026-10-25",
+   "title": "Wikipedia, round 3: the article's history as lifelines (/wikipedia/php2shell/evolution/), its talk page as threads, a reviewer's reading of it against this site's captures (15 findings, for the editor to take to the talk page in his own words), a page for Wikipedia's editors with the collaboration rules, Wikidata links confirmed for 25 parties and Wikidata/DBpedia tracked, the ontologist's task moved into its own session at 06:05, 10:05, 14:05 and 18:05 London, and the story on adopting Wikipedia's principles for the agents",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.20.8",
    "date": "2026-10-25",

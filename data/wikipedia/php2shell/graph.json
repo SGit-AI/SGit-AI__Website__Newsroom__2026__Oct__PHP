@@ -1,9 +1,9 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.20.8",
+ "version": "0.21.0",
  "title": "Wikipedia: PHP2Shell",
  "licence": "CC BY-SA 4.0, by the contributors to the English Wikipedia; each revision id is the attribution",
- "latest_revid": 1381798757,
+ "latest_revid": 1381884195,
  "note": "One Wikipedia article as a graph of its own: sections, statements (one per sentence, classed by wording), the references they cite, every revision and its editor, and the Wikidata item. A reference captured in this site's evidence vault is joined to that source, which is where the story graph's claims meet it.",
  "ontology": {
   "kinds": {
@@ -46,6 +46,18 @@
    "cve": {
     "label": "CVE",
     "plural": "CVEs"
+   },
+   "thread": {
+    "label": "Talk thread",
+    "plural": "talk threads"
+   },
+   "post": {
+    "label": "Talk post",
+    "plural": "talk posts"
+   },
+   "finding": {
+    "label": "Finding",
+    "plural": "findings"
    }
   },
   "verbs": {
@@ -92,6 +104,38 @@
    "names": {
     "label": "names",
     "inverse": "named in"
+   },
+   "follows": {
+    "label": "follows",
+    "inverse": "followed by"
+   },
+   "discussed_in": {
+    "label": "discussed in",
+    "inverse": "discusses"
+   },
+   "has_post": {
+    "label": "has post",
+    "inverse": "post of"
+   },
+   "replies_to": {
+    "label": "replies to",
+    "inverse": "answered by"
+   },
+   "posted_by": {
+    "label": "posted by",
+    "inverse": "posted"
+   },
+   "questions": {
+    "label": "questions",
+    "inverse": "questioned by"
+   },
+   "rests_on": {
+    "label": "rests on",
+    "inverse": "supports"
+   },
+   "answers": {
+    "label": "answers",
+    "inverse": "answered in"
    }
   }
  },
@@ -102,8 +146,8 @@
    "label": "PHP2Shell",
    "href": "wikipedia/php2shell/index.html",
    "url": "https://en.wikipedia.org/wiki/PHP2Shell",
-   "revisions": 364,
-   "latest_revid": 1381798757
+   "revisions": 370,
+   "latest_revid": 1381884195
   },
   {
    "id": "section:lead",
@@ -234,6 +278,15 @@
    "section": "discovery"
   },
   {
+   "id": "statement:6f0837416d",
+   "kind": "statement",
+   "label": "Wiz coined the name \"PHP2Shell\" indicating that PHP exploits would enable execution of shell commands on affected servers.",
+   "href": "wikipedia/php2shell/statements/index.html#6f0837416d",
+   "status": "stated",
+   "cited": true,
+   "section": "discovery"
+  },
+  {
    "id": "statement:76b5643253",
    "kind": "statement",
    "label": "PHP versions as early as 5.4 (released in 2012) were affected by these vulnerabilities, and while concerns around memory safety bugs had been raised decades before, no action was taken at the time because it was not thought that developing a working exploit could be feasible.",
@@ -302,7 +355,7 @@
    "label": "Volunteer maintainer Ondřej Surý, who was given advance access to the fixes by the PHP project, prepared installable packages for old versions from the patched source code so that server administrators could automate deployments without compiling PHP themselves.",
    "href": "wikipedia/php2shell/statements/index.html#c425f5c84f",
    "status": "hedged",
-   "cited": false,
+   "cited": true,
    "section": "patches"
   },
   {
@@ -646,7 +699,8 @@
      "label": "In the story graph"
     }
    ],
-   "borrowed": true
+   "borrowed": true,
+   "wikidata": "Q99273543"
   },
   {
    "id": "reference:5",
@@ -685,17 +739,55 @@
   {
    "id": "reference:7",
    "kind": "reference",
-   "label": "[7] PHP: Releases",
+   "label": "[7] PHP2Shell Exploitation: Two Critical PHP Flaws Explained",
    "href": "wikipedia/php2shell/references/index.html#r-7",
+   "url": "https://www.recordedfuture.com/blog/php2shell-vulnerability-exploitation",
+   "publisher": "www.recordedfuture.com",
+   "where": "statement"
+  },
+  {
+   "id": "source:recordedfuture-php2shell",
+   "kind": "source",
+   "label": "Recorded Future: PHP2Shell Exploitation: Two Critical PHP Flaws Explained",
+   "href": "sources/recordedfuture-php2shell/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:recordedfuture-php2shell",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "party:recorded-future",
+   "kind": "party",
+   "label": "Recorded Future",
+   "href": "graph/parties/index.html#p-recorded-future",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "party:recorded-future",
+     "label": "In the story graph"
+    }
+   ],
+   "borrowed": true,
+   "wikidata": "Q7302875"
+  },
+  {
+   "id": "reference:8",
+   "kind": "reference",
+   "label": "[8] PHP: Releases",
+   "href": "wikipedia/php2shell/references/index.html#r-8",
    "url": "https://www.php.net/releases/index.php",
    "publisher": "PHP",
    "where": "statement"
   },
   {
-   "id": "reference:8",
+   "id": "reference:9",
    "kind": "reference",
-   "label": "[8] Exclusive AI Just Found a Bug That Puts up to 70% of the World's Websites at Risk",
-   "href": "wikipedia/php2shell/references/index.html#r-8",
+   "label": "[9] Exclusive AI Just Found a Bug That Puts up to 70% of the World's Websites at Risk",
+   "href": "wikipedia/php2shell/references/index.html#r-9",
    "url": "https://www.wsj.com/tech/cybersecurity/ai-just-found-a-bug-that-puts-up-to-70-of-the-worlds-websites-at-risk-fd0902ea",
    "publisher": "The Wall Street Journal",
    "date": "21 October 2026",
@@ -716,10 +808,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:9",
+   "id": "reference:10",
    "kind": "reference",
-   "label": "[9] PHP knew about one of the flaws in 2024 but could not agree a fix",
-   "href": "wikipedia/php2shell/references/index.html#r-9",
+   "label": "[10] PHP knew about one of the flaws in 2024 but could not agree a fix",
+   "href": "wikipedia/php2shell/references/index.html#r-10",
    "url": "https://thenextweb.com/news/php-foundation-structural-failure-2024-flaw-leak",
    "publisher": "The Next Web",
    "date": "21 October 2026",
@@ -740,10 +832,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:10",
+   "id": "reference:11",
    "kind": "reference",
-   "label": "[10] Today's PHP Security Release, and How We're Strengthening PHP Security",
-   "href": "wikipedia/php2shell/references/index.html#r-10",
+   "label": "[11] Today's PHP Security Release, and How We're Strengthening PHP Security",
+   "href": "wikipedia/php2shell/references/index.html#r-11",
    "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
    "publisher": "The PHP Foundation",
    "where": "statement"
@@ -777,19 +869,19 @@
    "borrowed": true
   },
   {
-   "id": "reference:11",
+   "id": "reference:12",
    "kind": "reference",
-   "label": "[11] php.announce: [ANNOUNCE] Upcoming Critical PHP Security Release",
-   "href": "wikipedia/php2shell/references/index.html#r-11",
+   "label": "[12] php.announce: [ANNOUNCE] Upcoming Critical PHP Security Release",
+   "href": "wikipedia/php2shell/references/index.html#r-12",
    "url": "https://news-web.php.net/php.announce/509",
    "publisher": "PHP Lists",
    "where": "statement"
   },
   {
-   "id": "reference:12",
+   "id": "reference:13",
    "kind": "reference",
-   "label": "[12] PHP warns admins of two critical flaws, emergency patches coming tomorrow",
-   "href": "wikipedia/php2shell/references/index.html#r-12",
+   "label": "[13] PHP warns admins of two critical flaws, emergency patches coming tomorrow",
+   "href": "wikipedia/php2shell/references/index.html#r-13",
    "url": "https://www.bleepingcomputer.com/news/security/php-warns-admins-of-two-critical-flaws-emergency-patches-coming-tomorrow/",
    "publisher": "Bleeping Computer",
    "where": "statement"
@@ -809,10 +901,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:13",
+   "id": "reference:14",
    "kind": "reference",
-   "label": "[13] RCE via OOM corruption",
-   "href": "wikipedia/php2shell/references/index.html#r-13",
+   "label": "[14] RCE via OOM corruption",
+   "href": "wikipedia/php2shell/references/index.html#r-14",
    "url": "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w",
    "date": "21 October 2026",
    "where": "statement"
@@ -846,10 +938,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:14",
+   "id": "reference:15",
    "kind": "reference",
-   "label": "[14] RCE via stale global state",
-   "href": "wikipedia/php2shell/references/index.html#r-14",
+   "label": "[15] RCE via stale global state",
+   "href": "wikipedia/php2shell/references/index.html#r-15",
    "url": "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp",
    "date": "21 October 2026",
    "where": "statement"
@@ -869,10 +961,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:15",
+   "id": "reference:16",
    "kind": "reference",
-   "label": "[15] Blog: PHP2Shell: a Timeline",
-   "href": "wikipedia/php2shell/references/index.html#r-15",
+   "label": "[16] Blog: PHP2Shell: a Timeline",
+   "href": "wikipedia/php2shell/references/index.html#r-16",
    "url": "https://scherzer.dev/Blog/20261022-php2shell-timeline",
    "publisher": "scherzer.dev",
    "date": "22 October 2026",
@@ -893,10 +985,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:16",
+   "id": "reference:17",
    "kind": "reference",
-   "label": "[16] Critical PHP Security Release - CVE-2026-109618 and CVE-2026-109619",
-   "href": "wikipedia/php2shell/references/index.html#r-16",
+   "label": "[17] Critical PHP Security Release - CVE-2026-109618 and CVE-2026-109619",
+   "href": "wikipedia/php2shell/references/index.html#r-17",
    "url": "https://support.cpanel.net/hc/en-us/articles/44397389677335-Critical-PHP-Security-Release-CVE-2026-109618-and-CVE-2026-109619",
    "publisher": "cPanel",
    "date": "22 October 2026",
@@ -917,10 +1009,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:17",
+   "id": "reference:18",
    "kind": "reference",
-   "label": "[17] PHP CVE-2026-109618 and CVE-2026-109619: CloudLinux Package Status and Imunify360 Protection",
-   "href": "wikipedia/php2shell/references/index.html#r-17",
+   "label": "[18] PHP CVE-2026-109618 and CVE-2026-109619: CloudLinux Package Status and Imunify360 Protection",
+   "href": "wikipedia/php2shell/references/index.html#r-18",
    "url": "https://blog.cloudlinux.com/php-cve-2026-109618-and-cve-2026-109619/",
    "publisher": "CloudLinux",
    "date": "21 October 2026",
@@ -941,10 +1033,34 @@
    "borrowed": true
   },
   {
-   "id": "reference:18",
+   "id": "reference:19",
    "kind": "reference",
-   "label": "[18] Tell HN: 2x PHP RCE CVEs with CVSS 10.0 Incoming",
-   "href": "wikipedia/php2shell/references/index.html#r-18",
+   "label": "[19] The PHP developer who became the unsung hero of the internet",
+   "href": "wikipedia/php2shell/references/index.html#r-19",
+   "url": "https://www.bbc.co.uk/news/articles/cw30ejqljl43o",
+   "publisher": "BBC News",
+   "date": "24 October 2026",
+   "where": "statement"
+  },
+  {
+   "id": "party:bbc",
+   "kind": "party",
+   "label": "BBC News",
+   "href": "actors/bbc/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "party:bbc",
+     "label": "In the story graph"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "reference:20",
+   "kind": "reference",
+   "label": "[20] Tell HN: 2x PHP RCE CVEs with CVSS 10.0 Incoming",
+   "href": "wikipedia/php2shell/references/index.html#r-20",
    "url": "https://news.ycombinator.com/item?id=50167754",
    "publisher": "Hacker News",
    "where": "statement"
@@ -964,10 +1080,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:19",
+   "id": "reference:21",
    "kind": "reference",
-   "label": "[19] PHP warns it plans to release 2 emergency patches imminently",
-   "href": "wikipedia/php2shell/references/index.html#r-19",
+   "label": "[21] PHP warns it plans to release 2 emergency patches imminently",
+   "href": "wikipedia/php2shell/references/index.html#r-21",
    "url": "https://arstechnica.com/security/2026/10/php-maintainers-tell-web-devs-to-prepare-themselves-for-critical-security-patches/",
    "publisher": "Ars Technica",
    "date": "20 October 2026",
@@ -1002,10 +1118,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:20",
+   "id": "reference:22",
    "kind": "reference",
-   "label": "[20] Amazon Threat Intelligence identifies PHP2Shell exploitation prior to public disclosure in MadPot AWS Security Blog",
-   "href": "wikipedia/php2shell/references/index.html#r-20",
+   "label": "[22] Amazon Threat Intelligence identifies PHP2Shell exploitation prior to public disclosure in MadPot AWS Security Blog",
+   "href": "wikipedia/php2shell/references/index.html#r-22",
    "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/",
    "publisher": "Amazon AWS",
    "date": "21 October 2026",
@@ -1037,13 +1153,14 @@
      "label": "In the story graph"
     }
    ],
-   "borrowed": true
+   "borrowed": true,
+   "wikidata": "Q3884"
   },
   {
-   "id": "reference:21",
+   "id": "reference:23",
    "kind": "reference",
-   "label": "[21] PHP ships emergency patches for critical PHP2Shell flaws",
-   "href": "wikipedia/php2shell/references/index.html#r-21",
+   "label": "[23] PHP ships emergency patches for critical PHP2Shell flaws",
+   "href": "wikipedia/php2shell/references/index.html#r-23",
    "url": "https://www.bleepingcomputer.com/news/security/php-ships-emergency-patches-for-critical-php2shell-flaws/",
    "publisher": "Bleeping Computer",
    "date": "21 October 2026",
@@ -1064,10 +1181,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:22",
+   "id": "reference:24",
    "kind": "reference",
-   "label": "[22] Hold on to your butts: Web admins braced for emergency PHP updates to plug leaked exploits",
-   "href": "wikipedia/php2shell/references/index.html#r-22",
+   "label": "[24] Hold on to your butts: Web admins braced for emergency PHP updates to plug leaked exploits",
+   "href": "wikipedia/php2shell/references/index.html#r-24",
    "url": "https://www.pcgamer.com/software/security/we-expect-mass-attacks-to-start-within-15-minutes-of-the-release-web-admins-braced-for-emergency-php-updates-to-plug-leaked-high-severity-holes/",
    "publisher": "PC Gamer",
    "date": "21 October 2026",
@@ -1088,10 +1205,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:23",
+   "id": "reference:25",
    "kind": "reference",
-   "label": "[23] PHP sites behind Cloudflare already have an initial set of WAF rules deployed for the known exploit vectors in these vulnerabilities. The rules are available to all customers, including free. [...]",
-   "href": "wikipedia/php2shell/references/index.html#r-23",
+   "label": "[25] PHP sites behind Cloudflare already have an initial set of WAF rules deployed for the known exploit vectors in these vulnerabilities. The rules are available to all customers, including free. [...]",
+   "href": "wikipedia/php2shell/references/index.html#r-25",
    "url": "https://x.com/dok2001/status/2112811965735202970",
    "date": "21 October 2026",
    "where": "statement"
@@ -1111,10 +1228,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:24",
+   "id": "reference:26",
    "kind": "reference",
-   "label": "[24] PHP RCE FAQ: PHP2Shell CVE-2026-109618 & CVE-2026-109619",
-   "href": "wikipedia/php2shell/references/index.html#r-24",
+   "label": "[26] PHP RCE FAQ: PHP2Shell CVE-2026-109618 & CVE-2026-109619",
+   "href": "wikipedia/php2shell/references/index.html#r-26",
    "url": "https://watchtowr.com/intelligence/php-cve-2026-109618-faq/",
    "publisher": "watchTowr",
    "date": "20 October 2026",
@@ -1149,34 +1266,20 @@
    "borrowed": true
   },
   {
-   "id": "reference:25",
+   "id": "reference:27",
    "kind": "reference",
-   "label": "[25] Websites taken down worldwide as critical PHP cyber-security update issued",
-   "href": "wikipedia/php2shell/references/index.html#r-25",
+   "label": "[27] Websites taken down worldwide as critical PHP cyber-security update issued",
+   "href": "wikipedia/php2shell/references/index.html#r-27",
    "url": "https://www.bbc.com/news/articles/cmly0lg3w5x2o",
    "publisher": "BBC News",
    "date": "21 October 2026",
    "where": "statement"
   },
   {
-   "id": "party:bbc",
-   "kind": "party",
-   "label": "BBC News",
-   "href": "actors/bbc/index.html",
-   "zoom": [
-    {
-     "graph": "data/graph.json",
-     "focus": "party:bbc",
-     "label": "In the story graph"
-    }
-   ],
-   "borrowed": true
-  },
-  {
-   "id": "reference:26",
+   "id": "reference:28",
    "kind": "reference",
-   "label": "[26] Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619)",
-   "href": "wikipedia/php2shell/references/index.html#r-26",
+   "label": "[28] Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619)",
+   "href": "wikipedia/php2shell/references/index.html#r-28",
    "url": "https://www.huntress.com/blog/php2shell-leaked-critical-php-vulnerabilities",
    "publisher": "Huntress",
    "date": "21 October 2026",
@@ -1211,10 +1314,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:27",
+   "id": "reference:29",
    "kind": "reference",
-   "label": "[27] Government websites go dark after AI-discovered flaw sparks security scramble",
-   "href": "wikipedia/php2shell/references/index.html#r-27",
+   "label": "[29] Government websites go dark after AI-discovered flaw sparks security scramble",
+   "href": "wikipedia/php2shell/references/index.html#r-29",
    "url": "https://www.reuters.com/world/asia-pacific/eu-agency-warns-websites-may-need-be-taken-offline-php-prepares-patches-2026-10-21/",
    "publisher": "Reuters",
    "date": "21 October 2026",
@@ -1232,13 +1335,14 @@
      "label": "In the story graph"
     }
    ],
-   "borrowed": true
+   "borrowed": true,
+   "wikidata": "Q130879"
   },
   {
-   "id": "reference:28",
+   "id": "reference:30",
    "kind": "reference",
-   "label": "[28] Major websites go offline as critical PHP vulnerability triggers security fears",
-   "href": "wikipedia/php2shell/references/index.html#r-28",
+   "label": "[30] Major websites go offline as critical PHP vulnerability triggers security fears",
+   "href": "wikipedia/php2shell/references/index.html#r-30",
    "url": "https://www.brusselstimes.com/belgium/2371464/major-websites-go-offline-as-critical-php-vulnerability-triggers-security-fears",
    "publisher": "The Brussels Times",
    "date": "21 October 2026",
@@ -1259,10 +1363,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:29",
+   "id": "reference:31",
    "kind": "reference",
-   "label": "[29] Critical security issue affecting PHP",
-   "href": "wikipedia/php2shell/references/index.html#r-29",
+   "label": "[31] Critical security issue affecting PHP",
+   "href": "wikipedia/php2shell/references/index.html#r-31",
    "url": "https://www.ncsc.gov.uk/news/critical-security-issue-affecting-php",
    "publisher": "National Cyber Security Centre",
    "date": "21 October 2026",
@@ -1297,10 +1401,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:30",
+   "id": "reference:32",
    "kind": "reference",
-   "label": "[30] Canadian apps and government websites go offline to ward off online danger",
-   "href": "wikipedia/php2shell/references/index.html#r-30",
+   "label": "[32] Canadian apps and government websites go offline to ward off online danger",
+   "href": "wikipedia/php2shell/references/index.html#r-32",
    "url": "https://www.cp24.com/news/canada/2026/10/21/canadian-apps-and-government-websites-go-offline-to-ward-off-online-danger/",
    "publisher": "CP24",
    "date": "22 October 2026",
@@ -1321,10 +1425,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:31",
+   "id": "reference:33",
    "kind": "reference",
-   "label": "[31] This Flaw Is So Serious Websites Should Consider Going Offline, NSA Says",
-   "href": "wikipedia/php2shell/references/index.html#r-31",
+   "label": "[33] This Flaw Is So Serious Websites Should Consider Going Offline, NSA Says",
+   "href": "wikipedia/php2shell/references/index.html#r-33",
    "url": "https://www.pcmag.com/news/php-flaw-is-so-serious-websites-should-consider-going-offline-nsa-says",
    "publisher": "PCMag",
    "date": "21 October 2026",
@@ -1345,10 +1449,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:32",
+   "id": "reference:34",
    "kind": "reference",
-   "label": "[32] NSA Advisory: PHP Updates",
-   "href": "wikipedia/php2shell/references/index.html#r-32",
+   "label": "[34] NSA Advisory: PHP Updates",
+   "href": "wikipedia/php2shell/references/index.html#r-34",
    "url": "https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4630238/nsa-advisory-php-updates/",
    "publisher": "NSA Press Room",
    "date": "21 October 2026",
@@ -1369,10 +1473,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:33",
+   "id": "reference:35",
    "kind": "reference",
-   "label": "[33] Flaw in PHP computer language leads to shutdown of websites around world",
-   "href": "wikipedia/php2shell/references/index.html#r-33",
+   "label": "[35] Flaw in PHP computer language leads to shutdown of websites around world",
+   "href": "wikipedia/php2shell/references/index.html#r-35",
    "url": "https://www.theguardian.com/technology/2026/oct/21/flaw-in-php-computer-language-leads-to-shutdown-of-websites-around-world",
    "publisher": "The Guardian",
    "date": "21 October 2026",
@@ -1393,10 +1497,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:34",
+   "id": "reference:36",
    "kind": "reference",
-   "label": "[34] Singapore organisations urged to patch critical PHP flaws immediately amid cyberattack threat",
-   "href": "wikipedia/php2shell/references/index.html#r-34",
+   "label": "[36] Singapore organisations urged to patch critical PHP flaws immediately amid cyberattack threat",
+   "href": "wikipedia/php2shell/references/index.html#r-36",
    "url": "https://www.channelnewsasia.com/singapore/php-vulnerabilities-csa-singapore-firms-cybersecurity-6482006",
    "publisher": "CNA",
    "date": "22 October 2026",
@@ -1431,10 +1535,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:35",
+   "id": "reference:37",
    "kind": "reference",
-   "label": "[35] Critical Vulnerabilities in PHP (PHP2Shell)",
-   "href": "wikipedia/php2shell/references/index.html#r-35",
+   "label": "[37] Critical Vulnerabilities in PHP (PHP2Shell)",
+   "href": "wikipedia/php2shell/references/index.html#r-37",
    "url": "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-151/",
    "publisher": "Cyber Security Agency of Singapore",
    "date": "21 October 2026",
@@ -1455,10 +1559,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:36",
+   "id": "reference:38",
    "kind": "reference",
-   "label": "[36] PHP vulnerability: Which websites and services are affected?",
-   "href": "wikipedia/php2shell/references/index.html#r-36",
+   "label": "[38] PHP vulnerability: Which websites and services are affected?",
+   "href": "wikipedia/php2shell/references/index.html#r-38",
    "url": "https://mashable.com/tech/php-vulnerability-websites-offline-affected-services",
    "publisher": "Mashable",
    "date": "21 October 2026",
@@ -1479,10 +1583,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:37",
+   "id": "reference:39",
    "kind": "reference",
-   "label": "[37] https://www.itmedia.co.jp/news/article/2610/21/2000002472/",
-   "href": "wikipedia/php2shell/references/index.html#r-37",
+   "label": "[39] https://www.itmedia.co.jp/news/article/2610/21/2000002472/",
+   "href": "wikipedia/php2shell/references/index.html#r-39",
    "url": "https://www.itmedia.co.jp/news/article/2610/21/2000002472/",
    "publisher": "ITmedia",
    "date": "21 October 2026",
@@ -1503,10 +1607,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:38",
+   "id": "reference:40",
    "kind": "reference",
-   "label": "[38] AI just discovered a bug putting 70pc of world's websites at risk",
-   "href": "wikipedia/php2shell/references/index.html#r-38",
+   "label": "[40] AI just discovered a bug putting 70pc of world's websites at risk",
+   "href": "wikipedia/php2shell/references/index.html#r-40",
    "url": "https://www.afr.com/world/north-america/websites-go-dark-as-ai-discovered-bug-sparks-global-security-scramble-20261022-p617nf",
    "publisher": "Australian Financial Review",
    "date": "21 October 2026",
@@ -1527,10 +1631,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:39",
+   "id": "reference:41",
    "kind": "reference",
-   "label": "[39] Global websites shut down after AI found a critical flaw affecting 70% of the internet CNN Business",
-   "href": "wikipedia/php2shell/references/index.html#r-39",
+   "label": "[41] Global websites shut down after AI found a critical flaw affecting 70% of the internet CNN Business",
+   "href": "wikipedia/php2shell/references/index.html#r-41",
    "url": "https://edition.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai",
    "publisher": "CNN",
    "date": "21 October 2026",
@@ -1562,33 +1666,34 @@
      "label": "In the story graph"
     }
    ],
-   "borrowed": true
+   "borrowed": true,
+   "wikidata": "Q48340"
   },
   {
-   "id": "reference:40",
+   "id": "reference:42",
    "kind": "reference",
-   "label": "[40] What is PHP, and how bad is the computer language flaw causing website shutdowns globally?",
-   "href": "wikipedia/php2shell/references/index.html#r-40",
+   "label": "[42] What is PHP, and how bad is the computer language flaw causing website shutdowns globally?",
+   "href": "wikipedia/php2shell/references/index.html#r-42",
    "url": "https://www.theguardian.com/technology/2026/oct/22/what-is-php-computer-language-flaw-causing-global-website-shutdowns",
    "publisher": "The Guardian",
    "date": "22 October 2026",
    "where": "statement"
   },
   {
-   "id": "reference:41",
+   "id": "reference:43",
    "kind": "reference",
-   "label": "[41] What Is PHP? Why Are Government and Business Websites Going Offline?",
-   "href": "wikipedia/php2shell/references/index.html#r-41",
+   "label": "[43] What Is PHP? Why Are Government and Business Websites Going Offline?",
+   "href": "wikipedia/php2shell/references/index.html#r-43",
    "url": "https://www.nytimes.com/2026/10/22/technology/what-is-php-vulnerability-risks.html",
    "publisher": "The New York Times",
    "date": "22 October 2026",
    "where": "statement"
   },
   {
-   "id": "reference:42",
+   "id": "reference:44",
    "kind": "reference",
-   "label": "[42] 'If Anything Happens to This Guy ... Everyone Is Screwed'",
-   "href": "wikipedia/php2shell/references/index.html#r-42",
+   "label": "[44] 'If Anything Happens to This Guy ... Everyone Is Screwed'",
+   "href": "wikipedia/php2shell/references/index.html#r-44",
    "url": "https://www.theatlantic.com/technology/2026/10/man-who-saved-internet-php-vulnerability/689123/?gift=nwn-guseqS6cY1kVeEKZAV4eM30ZQanhnWOnf22yy-c",
    "publisher": "The Atlantic",
    "date": "22 October 2026",
@@ -1609,10 +1714,10 @@
    "borrowed": true
   },
   {
-   "id": "reference:43",
+   "id": "reference:45",
    "kind": "reference",
-   "label": "[43] untitled",
-   "href": "wikipedia/php2shell/references/index.html#r-43",
+   "label": "[45] untitled",
+   "href": "wikipedia/php2shell/references/index.html#r-45",
    "where": "statement"
   },
   {
@@ -7021,6 +7126,859 @@
    "href": "https://en.wikipedia.org/wiki/User:Cicada1010"
   },
   {
+   "id": "revision:1381838312",
+   "kind": "revision",
+   "label": "2026-10-25 03:00:52 UTC: Auto-removing {{current}} - no edits in 5hrs+. The event may still be current, b",
+   "href": "wikipedia/php2shell/history/index.html#rev-1381838312",
+   "at": "2026-10-25T03:00:52Z",
+   "size": 29766,
+   "reverted": false,
+   "added": 0,
+   "removed": 0,
+   "changed": 0
+  },
+  {
+   "id": "editor:yapperbot",
+   "kind": "editor",
+   "label": "Yapperbot",
+   "href": "https://en.wikipedia.org/wiki/User:Yapperbot"
+  },
+  {
+   "id": "revision:1381843765",
+   "kind": "revision",
+   "label": "2026-10-25 04:00:16 UTC: /* Impact */ wl",
+   "href": "wikipedia/php2shell/history/index.html#rev-1381843765",
+   "at": "2026-10-25T04:00:16Z",
+   "size": 29768,
+   "reverted": false,
+   "added": 0,
+   "removed": 0,
+   "changed": 0
+  },
+  {
+   "id": "editor:miminity",
+   "kind": "editor",
+   "label": "Miminity",
+   "href": "https://en.wikipedia.org/wiki/User:Miminity"
+  },
+  {
+   "id": "revision:1381877095",
+   "kind": "revision",
+   "label": "2026-10-25 10:09:43 UTC: /* See also */",
+   "href": "wikipedia/php2shell/history/index.html#rev-1381877095",
+   "at": "2026-10-25T10:09:43Z",
+   "size": 29754,
+   "reverted": false,
+   "added": 0,
+   "removed": 0,
+   "changed": 0
+  },
+  {
+   "id": "editor:-2026-56552-46",
+   "kind": "editor",
+   "label": "~2026-56552-46",
+   "href": "https://en.wikipedia.org/wiki/User:~2026-56552-46"
+  },
+  {
+   "id": "revision:1381882967",
+   "kind": "revision",
+   "label": "2026-10-25 11:22:47 UTC: /* Patches */ second ref",
+   "href": "wikipedia/php2shell/history/index.html#rev-1381882967",
+   "at": "2026-10-25T11:22:47Z",
+   "size": 29969,
+   "reverted": false,
+   "added": 0,
+   "removed": 0,
+   "changed": 0
+  },
+  {
+   "id": "editor:ghostinthemachine",
+   "kind": "editor",
+   "label": "GhostInTheMachine",
+   "href": "https://en.wikipedia.org/wiki/User:GhostInTheMachine"
+  },
+  {
+   "id": "revision:1381883108",
+   "kind": "revision",
+   "label": "2026-10-25 11:24:10 UTC: /* Patches */ hmmm... move BBC ref",
+   "href": "wikipedia/php2shell/history/index.html#rev-1381883108",
+   "at": "2026-10-25T11:24:10Z",
+   "size": 29969,
+   "reverted": false,
+   "added": 0,
+   "removed": 0,
+   "changed": 0
+  },
+  {
+   "id": "revision:1381884195",
+   "kind": "revision",
+   "label": "2026-10-25 11:39:32 UTC: /* Discovery */ naming",
+   "href": "wikipedia/php2shell/history/index.html#rev-1381884195",
+   "at": "2026-10-25T11:39:32Z",
+   "size": 30364,
+   "reverted": false,
+   "added": 1,
+   "removed": 0,
+   "changed": 0
+  },
+  {
+   "id": "editor:andrew-davidson",
+   "kind": "editor",
+   "label": "Andrew Davidson",
+   "href": "https://en.wikipedia.org/wiki/User:Andrew_Davidson"
+  },
+  {
+   "id": "thread:the-man-on-the-clapham-omnibus",
+   "kind": "thread",
+   "label": "The Man on the Clapham Omnibus",
+   "href": "wikipedia/php2shell/talk/index.html#the-man-on-the-clapham-omnibus",
+   "posts": 3,
+   "request_edit": false,
+   "answered": false,
+   "started": "2026-10-21T20:59Z"
+  },
+  {
+   "id": "post:the-man-on-the-clapham-omnibus:0",
+   "kind": "post",
+   "label": "Could there be a section explaining how this affects your average Joe who doesn't have a c",
+   "href": "wikipedia/php2shell/talk/index.html#the-man-on-the-clapham-omnibus-0",
+   "when": "2026-10-21T20:59Z",
+   "request_edit": false
+  },
+  {
+   "id": "editor:ericoides",
+   "kind": "editor",
+   "label": "Ericoides",
+   "href": "https://en.wikipedia.org/wiki/User:Ericoides"
+  },
+  {
+   "id": "post:the-man-on-the-clapham-omnibus:1",
+   "kind": "post",
+   "label": "From what I know, would making the layout similar to Log4Shell be helpful? I don't know wh",
+   "href": "wikipedia/php2shell/talk/index.html#the-man-on-the-clapham-omnibus-1",
+   "when": "2026-10-21T21:11Z",
+   "request_edit": false
+  },
+  {
+   "id": "editor:kevstuff",
+   "kind": "editor",
+   "label": "Kevstuff",
+   "href": "https://en.wikipedia.org/wiki/User:Kevstuff"
+  },
+  {
+   "id": "post:the-man-on-the-clapham-omnibus:2",
+   "kind": "post",
+   "label": "Yes, that looks suitable.",
+   "href": "wikipedia/php2shell/talk/index.html#the-man-on-the-clapham-omnibus-2",
+   "when": "2026-10-22T04:21Z",
+   "request_edit": false
+  },
+  {
+   "id": "thread:external-link-suggestion-conflict-of-interest-disclosed",
+   "kind": "thread",
+   "label": "External link suggestion (conflict of interest disclosed)",
+   "href": "wikipedia/php2shell/talk/index.html#external-link-suggestion-conflict-of-interest-disclosed",
+   "posts": 2,
+   "request_edit": true,
+   "answered": true,
+   "started": "2026-10-21T21:54Z"
+  },
+  {
+   "id": "post:external-link-suggestion-conflict-of-interest-disclosed:0",
+   "kind": "post",
+   "label": "Disclosure: I built the tools below, so I am not adding anything to the article myself and",
+   "href": "wikipedia/php2shell/talk/index.html#external-link-suggestion-conflict-of-interest-disclosed-0",
+   "when": "2026-10-21T21:54Z",
+   "request_edit": true
+  },
+  {
+   "id": "editor:simgen321",
+   "kind": "editor",
+   "label": "Simgen321",
+   "href": "https://en.wikipedia.org/wiki/User:Simgen321"
+  },
+  {
+   "id": "post:external-link-suggestion-conflict-of-interest-disclosed:1",
+   "kind": "post",
+   "label": "Do you have any reliable sources talking about this?",
+   "href": "wikipedia/php2shell/talk/index.html#external-link-suggestion-conflict-of-interest-disclosed-1",
+   "when": "2026-10-22T05:02Z",
+   "request_edit": false
+  },
+  {
+   "id": "thread:suggested-source-for-detection-and-response-coi-disclosure",
+   "kind": "thread",
+   "label": "Suggested source for detection and response (COI disclosure)",
+   "href": "wikipedia/php2shell/talk/index.html#suggested-source-for-detection-and-response-coi-disclosure",
+   "posts": 7,
+   "request_edit": false,
+   "answered": false,
+   "started": "2026-10-21T23:16Z"
+  },
+  {
+   "id": "post:suggested-source-for-detection-and-response-coi-disclosure:0",
+   "kind": "post",
+   "label": "(unsigned)",
+   "href": "wikipedia/php2shell/talk/index.html#suggested-source-for-detection-and-response-coi-disclosure-0",
+   "when": "2026-10-22T17:48Z",
+   "request_edit": false
+  },
+  {
+   "id": "post:suggested-source-for-detection-and-response-coi-disclosure:1",
+   "kind": "post",
+   "label": "I'm the author of the post below, so I'm disclosing a conflict of interest and not adding ",
+   "href": "wikipedia/php2shell/talk/index.html#suggested-source-for-detection-and-response-coi-disclosure-1",
+   "when": "2026-10-21T23:16Z",
+   "request_edit": false
+  },
+  {
+   "id": "editor:~2026-56359-71",
+   "kind": "editor",
+   "label": "~2026-56359-71 (temporary account)",
+   "href": "https://en.wikipedia.org/wiki/User:~2026-56359-71"
+  },
+  {
+   "id": "post:suggested-source-for-detection-and-response-coi-disclosure:2",
+   "kind": "post",
+   "label": "Proposed addition to Impact: “Security researchers advised organizations to preserve logs,",
+   "href": "wikipedia/php2shell/talk/index.html#suggested-source-for-detection-and-response-coi-disclosure-2",
+   "when": "2026-10-21T23:46Z",
+   "request_edit": false
+  },
+  {
+   "id": "editor:acez1q",
+   "kind": "editor",
+   "label": "AceZ1q",
+   "href": "https://en.wikipedia.org/wiki/User:AceZ1q"
+  },
+  {
+   "id": "post:suggested-source-for-detection-and-response-coi-disclosure:3",
+   "kind": "post",
+   "label": "would you mind taking a look when you have a moment?",
+   "href": "wikipedia/php2shell/talk/index.html#suggested-source-for-detection-and-response-coi-disclosure-3",
+   "when": "2026-10-21T23:46Z",
+   "request_edit": false
+  },
+  {
+   "id": "post:suggested-source-for-detection-and-response-coi-disclosure:4",
+   "kind": "post",
+   "label": "That article appears to have been written by an LLM, not a human author. See WP:RSPLLM.",
+   "href": "wikipedia/php2shell/talk/index.html#suggested-source-for-detection-and-response-coi-disclosure-4",
+   "when": "2026-10-22T01:08Z",
+   "request_edit": false
+  },
+  {
+   "id": "editor:fubar-obfusco",
+   "kind": "editor",
+   "label": "Fubar Obfusco",
+   "href": "https://en.wikipedia.org/wiki/User:Fubar_Obfusco"
+  },
+  {
+   "id": "post:suggested-source-for-detection-and-response-coi-disclosure:5",
+   "kind": "post",
+   "label": "Thanks for taking a look. Understood, I'll withdraw the request.",
+   "href": "wikipedia/php2shell/talk/index.html#suggested-source-for-detection-and-response-coi-disclosure-5",
+   "when": "2026-10-22T02:54Z",
+   "request_edit": false
+  },
+  {
+   "id": "post:suggested-source-for-detection-and-response-coi-disclosure:6",
+   "kind": "post",
+   "label": "(unsigned)",
+   "href": "wikipedia/php2shell/talk/index.html#suggested-source-for-detection-and-response-coi-disclosure-6",
+   "request_edit": false
+  },
+  {
+   "id": "thread:clarification-on-affected-versions-is-php-5-3-affected-or-excluded",
+   "kind": "thread",
+   "label": "Clarification on affected versions: Is PHP 5.3 affected or excluded?",
+   "href": "wikipedia/php2shell/talk/index.html#clarification-on-affected-versions-is-php-5-3-affected-or-excluded",
+   "posts": 1,
+   "request_edit": false,
+   "answered": false,
+   "started": "2026-10-22T01:53Z"
+  },
+  {
+   "id": "post:clarification-on-affected-versions-is-php-5-3-affected-or-excluded:0",
+   "kind": "post",
+   "label": "Hello,\n\nThe article currently lists the affected versions as \"PHP versions 5.4–8.5\" and st",
+   "href": "wikipedia/php2shell/talk/index.html#clarification-on-affected-versions-is-php-5-3-affected-or-excluded-0",
+   "when": "2026-10-22T01:53Z",
+   "request_edit": false
+  },
+  {
+   "id": "editor:~2026-56289-78",
+   "kind": "editor",
+   "label": "~2026-56289-78 (temporary account)",
+   "href": "https://en.wikipedia.org/wiki/User:~2026-56289-78"
+  },
+  {
+   "id": "thread:is-the-attack-still-ongoing",
+   "kind": "thread",
+   "label": "Is the attack still ongoing?",
+   "href": "wikipedia/php2shell/talk/index.html#is-the-attack-still-ongoing",
+   "posts": 5,
+   "request_edit": false,
+   "answered": false,
+   "started": "2026-10-23T09:32Z"
+  },
+  {
+   "id": "post:is-the-attack-still-ongoing:0",
+   "kind": "post",
+   "label": "(unsigned)",
+   "href": "wikipedia/php2shell/talk/index.html#is-the-attack-still-ongoing-0",
+   "when": "2026-10-23T09:55Z",
+   "request_edit": false
+  },
+  {
+   "id": "post:is-the-attack-still-ongoing:1",
+   "kind": "post",
+   "label": "Does this security issue—which has now persisted for 48 hours—still exist? As of October 2",
+   "href": "wikipedia/php2shell/talk/index.html#is-the-attack-still-ongoing-1",
+   "when": "2026-10-23T09:32Z",
+   "request_edit": false
+  },
+  {
+   "id": "post:is-the-attack-still-ongoing:2",
+   "kind": "post",
+   "label": "Wikimedia Toolforge is still down. Please be patient",
+   "href": "wikipedia/php2shell/talk/index.html#is-the-attack-still-ongoing-2",
+   "when": "2026-10-23T09:33Z",
+   "request_edit": false
+  },
+  {
+   "id": "post:is-the-attack-still-ongoing:3",
+   "kind": "post",
+   "label": "Okay. Thank you.",
+   "href": "wikipedia/php2shell/talk/index.html#is-the-attack-still-ongoing-3",
+   "when": "2026-10-23T09:34Z",
+   "request_edit": false
+  },
+  {
+   "id": "post:is-the-attack-still-ongoing:4",
+   "kind": "post",
+   "label": "(unsigned)",
+   "href": "wikipedia/php2shell/talk/index.html#is-the-attack-still-ongoing-4",
+   "request_edit": false
+  },
+  {
+   "id": "thread:ai",
+   "kind": "thread",
+   "label": "AI",
+   "href": "wikipedia/php2shell/talk/index.html#ai",
+   "posts": 1,
+   "request_edit": false,
+   "answered": false,
+   "started": "2026-10-23T20:13Z"
+  },
+  {
+   "id": "post:ai:0",
+   "kind": "post",
+   "label": "Many news sources emphasize that the vulnerabilities were discovered by AI. Shouldn't the ",
+   "href": "wikipedia/php2shell/talk/index.html#ai-0",
+   "when": "2026-10-23T20:13Z",
+   "request_edit": false
+  },
+  {
+   "id": "editor:joe-vom-titan",
+   "kind": "editor",
+   "label": "Joe vom Titan",
+   "href": "https://en.wikipedia.org/wiki/User:Joe_vom_Titan"
+  },
+  {
+   "id": "thread:black-october",
+   "kind": "thread",
+   "label": "Black October",
+   "href": "wikipedia/php2shell/talk/index.html#black-october",
+   "posts": 3,
+   "request_edit": false,
+   "answered": false,
+   "started": "2026-10-23T21:13Z"
+  },
+  {
+   "id": "post:black-october:0",
+   "kind": "post",
+   "label": "The event is now frequently being referred to as AI's \"Black October\" in the media. Should",
+   "href": "wikipedia/php2shell/talk/index.html#black-october-0",
+   "when": "2026-10-23T21:13Z",
+   "request_edit": false
+  },
+  {
+   "id": "editor:carolineovo",
+   "kind": "editor",
+   "label": "Carolineovo",
+   "href": "https://en.wikipedia.org/wiki/User:Carolineovo"
+  },
+  {
+   "id": "post:black-october:1",
+   "kind": "post",
+   "label": "Only if it were widely covered by the media. [[User:Vitorperrut555|VitorFriboquen :] ]]",
+   "href": "wikipedia/php2shell/talk/index.html#black-october-1",
+   "when": "2026-10-24T01:15Z",
+   "request_edit": false
+  },
+  {
+   "id": "post:black-october:2",
+   "kind": "post",
+   "label": "It does seem to have at least 3 sources talking about it in depth.<ref></ref><ref></ref><r",
+   "href": "wikipedia/php2shell/talk/index.html#black-october-2",
+   "when": "2026-10-24T01:36Z",
+   "request_edit": false
+  },
+  {
+   "id": "thread:diagram-explaining-the-attack",
+   "kind": "thread",
+   "label": "Diagram explaining the attack",
+   "href": "wikipedia/php2shell/talk/index.html#diagram-explaining-the-attack",
+   "posts": 1,
+   "request_edit": false,
+   "answered": false,
+   "started": "2026-10-24T01:22Z"
+  },
+  {
+   "id": "post:diagram-explaining-the-attack:0",
+   "kind": "post",
+   "label": "Would https://www.akamai.com/blog/security-research/understanding-php2shell-everything-you",
+   "href": "wikipedia/php2shell/talk/index.html#diagram-explaining-the-attack-0",
+   "when": "2026-10-24T01:22Z",
+   "request_edit": false
+  },
+  {
+   "id": "editor:cmglee",
+   "kind": "editor",
+   "label": "cmglee",
+   "href": "https://en.wikipedia.org/wiki/User:cmglee"
+  },
+  {
+   "id": "finding:R-01",
+   "kind": "finding",
+   "label": "R-01: correction, high",
+   "href": "wikipedia/php2shell/review/index.html#R-01",
+   "kind_of": "correction",
+   "strength": "high",
+   "policy": "WP:V, WP:BURDEN, MOS:WEASEL, WP:NPOV"
+  },
+  {
+   "id": "source:x-wiz-io-php2shell",
+   "kind": "source",
+   "label": "Wiz on X: Wiz on X: BREAKING ... #PHP2SHELL ... impacting 70% of the Internet",
+   "href": "sources/x-wiz-io-php2shell/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:x-wiz-io-php2shell",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "source:cloudflare-blog-php2shell-waf",
+   "kind": "source",
+   "label": "Cloudflare: Cloudflare deploys protections against php2shell vulnerability",
+   "href": "sources/cloudflare-blog-php2shell-waf/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:cloudflare-blog-php2shell-waf",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "source:x-openai-php2shell",
+   "kind": "source",
+   "label": "OpenAI on X: OpenAI on X: OpenAI models helped researchers ... discover critical security flaws in PHP",
+   "href": "sources/x-openai-php2shell/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:x-openai-php2shell",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "finding:R-02",
+   "kind": "finding",
+   "label": "R-02: correction, high",
+   "href": "wikipedia/php2shell/review/index.html#R-02",
+   "kind_of": "correction",
+   "strength": "high",
+   "policy": "WP:V, WP:PRIMARY, WP:DUE"
+  },
+  {
+   "id": "source:php-foundation-blog-security-release",
+   "kind": "source",
+   "label": "PHP Foundation: Today's PHP Security Release, and How We're Strengthening PHP Security",
+   "href": "sources/php-foundation-blog-security-release/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:php-foundation-blog-security-release",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "source:theregister-php-blames-chainguard",
+   "kind": "source",
+   "label": "The Register: PHP blames supply chain security biz Chainguard for putting huge chunks of the web at risk",
+   "href": "sources/theregister-php-blames-chainguard/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:theregister-php-blames-chainguard",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "finding:R-03",
+   "kind": "finding",
+   "label": "R-03: correction, medium",
+   "href": "wikipedia/php2shell/review/index.html#R-03",
+   "kind_of": "correction",
+   "strength": "medium",
+   "policy": "WP:V, WP:SOURCESDIFFER"
+  },
+  {
+   "id": "source:quarkslab-blog-php-src-audit",
+   "kind": "source",
+   "label": "Quarkslab: Security audit of PHP-SRC - Quarkslab's blog",
+   "href": "sources/quarkslab-blog-php-src-audit/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:quarkslab-blog-php-src-audit",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "finding:R-04",
+   "kind": "finding",
+   "label": "R-04: correction, medium",
+   "href": "wikipedia/php2shell/review/index.html#R-04",
+   "kind_of": "correction",
+   "strength": "medium",
+   "policy": "WP:V, WP:DUE, WP:RSBREAKING"
+  },
+  {
+   "id": "source:nvd-cve-2026-109618",
+   "kind": "source",
+   "label": "NVD: NVD - CVE-2026-109618",
+   "href": "sources/nvd-cve-2026-109618/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:nvd-cve-2026-109618",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "source:daubois-blog-php2shell-rumors",
+   "kind": "source",
+   "label": "Daubois: What the PHP2Shell rumors got wrong, from inside the PHP security team",
+   "href": "sources/daubois-blog-php2shell-rumors/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:daubois-blog-php2shell-rumors",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "finding:R-05",
+   "kind": "finding",
+   "label": "R-05: attribution, medium",
+   "href": "wikipedia/php2shell/review/index.html#R-05",
+   "kind_of": "attribution",
+   "strength": "medium",
+   "policy": "WP:SOURCESDIFFER, WP:V"
+  },
+  {
+   "id": "source:certfr-2026-ale-014",
+   "kind": "source",
+   "label": "CERT-FR: [Màj] Multiples vulnérabilités dans PHP (CERTFR-2026-ALE-014)",
+   "href": "sources/certfr-2026-ale-014/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:certfr-2026-ale-014",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "source:ncsc-nl-php2shell",
+   "kind": "source",
+   "label": "NCSC-NL: NCSC-NL/php2shell: Operational information regarding the 2026 php2shell vulnerabilities",
+   "href": "sources/ncsc-nl-php2shell/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:ncsc-nl-php2shell",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "finding:R-06",
+   "kind": "finding",
+   "label": "R-06: attribution, medium",
+   "href": "wikipedia/php2shell/review/index.html#R-06",
+   "kind_of": "attribution",
+   "strength": "medium",
+   "policy": "WP:NPOV, WP:SYNTH, WP:SOURCESDIFFER"
+  },
+  {
+   "id": "source:x-feross-chainguard",
+   "kind": "source",
+   "label": "Feross Aboukhadijeh on X on X: Feross on X: \"Chainguard received PHP’s fix for two critical RCEs under embargo, like every other distributor. On October 21 at 07:41 UTC, more than six hours before the coordinated release, it published built images containing that fix. The PHP Foundation’s postmortem says Chainguard unilaterally… / X",
+   "href": "sources/x-feross-chainguard/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:x-feross-chainguard",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "finding:R-07",
+   "kind": "finding",
+   "label": "R-07: missing, medium",
+   "href": "wikipedia/php2shell/review/index.html#R-07",
+   "kind_of": "missing",
+   "strength": "medium",
+   "policy": "WP:DUE, WP:V"
+  },
+  {
+   "id": "source:openwall-oss-security-2026-10-20-34",
+   "kind": "source",
+   "label": "oss-security: Upcoming Critical PHP Security Release",
+   "href": "sources/openwall-oss-security-2026-10-20-34/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:openwall-oss-security-2026-10-20-34",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "finding:R-08",
+   "kind": "finding",
+   "label": "R-08: attribution, medium",
+   "href": "wikipedia/php2shell/review/index.html#R-08",
+   "kind_of": "attribution",
+   "strength": "medium",
+   "policy": "WP:SOURCESDIFFER, WP:INTEGRITY"
+  },
+  {
+   "id": "source:certeu-sa-2026-018",
+   "kind": "source",
+   "label": "CERT-EU: Security Advisory 2026-018: Critical Vulnerabilities in PHP",
+   "href": "sources/certeu-sa-2026-018/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:certeu-sa-2026-018",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "source:nsa-press-php-4630238",
+   "kind": "source",
+   "label": "NSA: NSA Advisory: Critical Patches Recommended for PHP Vulnerabilities",
+   "href": "sources/nsa-press-php-4630238/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:nsa-press-php-4630238",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "source:cisa-alert-php-20261021",
+   "kind": "source",
+   "label": "CISA: Critical Vulnerabilities in PHP Require Immediate Patching",
+   "href": "sources/cisa-alert-php-20261021/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:cisa-alert-php-20261021",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "source:fi-valtori",
+   "kind": "source",
+   "label": "valtori.fi: fi-valtori",
+   "href": "sources/fi-valtori/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:fi-valtori",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "finding:R-09",
+   "kind": "finding",
+   "label": "R-09: check, low",
+   "href": "wikipedia/php2shell/review/index.html#R-09",
+   "kind_of": "check",
+   "strength": "low",
+   "policy": "WP:RSBREAKING, WP:V"
+  },
+  {
+   "id": "finding:R-10",
+   "kind": "finding",
+   "label": "R-10: style, low",
+   "href": "wikipedia/php2shell/review/index.html#R-10",
+   "kind_of": "style",
+   "strength": "low",
+   "policy": "WP:BURDEN, MOS:WEASEL"
+  },
+  {
+   "id": "finding:R-11",
+   "kind": "finding",
+   "label": "R-11: style, low",
+   "href": "wikipedia/php2shell/review/index.html#R-11",
+   "kind_of": "style",
+   "strength": "low",
+   "policy": "MOS:WEASEL"
+  },
+  {
+   "id": "finding:R-12",
+   "kind": "finding",
+   "label": "R-12: style, low",
+   "href": "wikipedia/php2shell/review/index.html#R-12",
+   "kind_of": "style",
+   "strength": "low",
+   "policy": "WP:BURDEN"
+  },
+  {
+   "id": "finding:R-13",
+   "kind": "finding",
+   "label": "R-13: confirmation, confirmed",
+   "href": "wikipedia/php2shell/review/index.html#R-13",
+   "kind_of": "confirmation",
+   "strength": "confirmed",
+   "policy": "WP:V"
+  },
+  {
+   "id": "source:github-php-src-tags",
+   "kind": "source",
+   "label": "php-src: Tags · php/php-src",
+   "href": "sources/github-php-src-tags/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:github-php-src-tags",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "finding:R-14",
+   "kind": "finding",
+   "label": "R-14: confirmation, confirmed",
+   "href": "wikipedia/php2shell/review/index.html#R-14",
+   "kind_of": "confirmation",
+   "strength": "confirmed",
+   "policy": "WP:NPOV, WP:SOURCESDIFFER"
+  },
+  {
+   "id": "finding:R-15",
+   "kind": "finding",
+   "label": "R-15: confirmation, confirmed",
+   "href": "wikipedia/php2shell/review/index.html#R-15",
+   "kind_of": "confirmation",
+   "strength": "confirmed",
+   "policy": "WP:V"
+  },
+  {
+   "id": "finding:talk-1",
+   "kind": "finding",
+   "label": "Answer: Is the attack still ongoing?",
+   "href": "wikipedia/php2shell/review/index.html#talk-1",
+   "kind_of": "answer"
+  },
+  {
+   "id": "source:cisa-kev-json",
+   "kind": "source",
+   "label": "CISA: CISA Known Exploited Vulnerabilities catalog (JSON feed)",
+   "href": "sources/cisa-kev-json/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:cisa-kev-json",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "source:certlv-php-preventive",
+   "kind": "source",
+   "label": "CERT.LV: Saistībā ar globāli atklātām PHP ievainojamībām Latvijā ievieš preventīvus pasākumus",
+   "href": "sources/certlv-php-preventive/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:certlv-php-preventive",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
+   "id": "finding:talk-2",
+   "kind": "finding",
+   "label": "Answer: A diagram explaining the attack",
+   "href": "wikipedia/php2shell/review/index.html#talk-2",
+   "kind_of": "answer"
+  },
+  {
+   "id": "source:github-php-src-fix-commit-3584a98bd",
+   "kind": "source",
+   "label": "php/php-src, read from a clone: Commit 3584a98bd: Avoid state corruption via bailout (the php2shell fix) and the PHP-7.4 backport 712e60f9e",
+   "href": "sources/github-php-src-fix-commit-3584a98bd/index.html",
+   "zoom": [
+    {
+     "graph": "data/graph.json",
+     "focus": "source:github-php-src-fix-commit-3584a98bd",
+     "label": "In the story graph: the claims that cite it"
+    }
+   ],
+   "borrowed": true
+  },
+  {
    "id": "item:Q141801185",
    "kind": "item",
    "label": "Q141801185: PHP2Shell",
@@ -7117,6 +8075,11 @@
    "from": "section:discovery",
    "verb": "contains",
    "to": "statement:16c7e1f9b1"
+  },
+  {
+   "from": "section:discovery",
+   "verb": "contains",
+   "to": "statement:6f0837416d"
   },
   {
    "from": "section:discovery",
@@ -7379,42 +8342,42 @@
    "to": "party:nyt"
   },
   {
-   "from": "statement:76b5643253",
+   "from": "statement:6f0837416d",
    "verb": "cites",
    "to": "reference:7"
   },
   {
    "from": "reference:7",
+   "verb": "captured_as",
+   "to": "source:recordedfuture-php2shell"
+  },
+  {
+   "from": "reference:7",
    "verb": "published_by",
-   "to": "party:php-group"
-  },
-  {
-   "from": "statement:0c37f722e9",
-   "verb": "cites",
-   "to": "reference:8"
-  },
-  {
-   "from": "statement:dbceab31be",
-   "verb": "cites",
-   "to": "reference:8"
+   "to": "party:recorded-future"
   },
   {
    "from": "statement:76b5643253",
-   "verb": "cites",
-   "to": "reference:8"
-  },
-  {
-   "from": "statement:c9448b9736",
    "verb": "cites",
    "to": "reference:8"
   },
   {
    "from": "reference:8",
    "verb": "published_by",
-   "to": "party:wsj"
+   "to": "party:php-group"
   },
   {
-   "from": "statement:372a6c6d4d",
+   "from": "statement:0c37f722e9",
+   "verb": "cites",
+   "to": "reference:9"
+  },
+  {
+   "from": "statement:dbceab31be",
+   "verb": "cites",
+   "to": "reference:9"
+  },
+  {
+   "from": "statement:76b5643253",
    "verb": "cites",
    "to": "reference:9"
   },
@@ -7424,14 +8387,9 @@
    "to": "reference:9"
   },
   {
-   "from": "statement:c56cee404e",
-   "verb": "cites",
-   "to": "reference:9"
-  },
-  {
    "from": "reference:9",
    "verb": "published_by",
-   "to": "party:thenextweb"
+   "to": "party:wsj"
   },
   {
    "from": "statement:372a6c6d4d",
@@ -7439,54 +8397,59 @@
    "to": "reference:10"
   },
   {
+   "from": "statement:c9448b9736",
+   "verb": "cites",
+   "to": "reference:10"
+  },
+  {
+   "from": "statement:c56cee404e",
+   "verb": "cites",
+   "to": "reference:10"
+  },
+  {
    "from": "reference:10",
+   "verb": "published_by",
+   "to": "party:thenextweb"
+  },
+  {
+   "from": "statement:372a6c6d4d",
+   "verb": "cites",
+   "to": "reference:11"
+  },
+  {
+   "from": "reference:11",
    "verb": "captured_as",
    "to": "source:phpfoundation-blog-security-release-leak"
   },
   {
-   "from": "reference:10",
+   "from": "reference:11",
    "verb": "published_by",
    "to": "party:php-foundation"
   },
   {
    "from": "statement:cf776b2323",
    "verb": "cites",
-   "to": "reference:11"
+   "to": "reference:12"
   },
   {
-   "from": "reference:11",
+   "from": "reference:12",
    "verb": "published_by",
    "to": "party:php-group"
   },
   {
    "from": "statement:cf776b2323",
    "verb": "cites",
-   "to": "reference:12"
+   "to": "reference:13"
   },
   {
    "from": "statement:c56cee404e",
-   "verb": "cites",
-   "to": "reference:12"
-  },
-  {
-   "from": "reference:12",
-   "verb": "published_by",
-   "to": "party:bleepingcomputer"
-  },
-  {
-   "from": "statement:78444f5354",
    "verb": "cites",
    "to": "reference:13"
   },
   {
    "from": "reference:13",
-   "verb": "captured_as",
-   "to": "source:github-ghsa-w8hw-w9fx-j79w"
-  },
-  {
-   "from": "reference:13",
    "verb": "published_by",
-   "to": "party:github"
+   "to": "party:bleepingcomputer"
   },
   {
    "from": "statement:78444f5354",
@@ -7496,7 +8459,7 @@
   {
    "from": "reference:14",
    "verb": "captured_as",
-   "to": "source:github-ghsa-6wmf-4rv5-p3rp"
+   "to": "source:github-ghsa-w8hw-w9fx-j79w"
   },
   {
    "from": "reference:14",
@@ -7510,8 +8473,13 @@
   },
   {
    "from": "reference:15",
+   "verb": "captured_as",
+   "to": "source:github-ghsa-6wmf-4rv5-p3rp"
+  },
+  {
+   "from": "reference:15",
    "verb": "published_by",
-   "to": "party:scherzer"
+   "to": "party:github"
   },
   {
    "from": "statement:78444f5354",
@@ -7521,7 +8489,7 @@
   {
    "from": "reference:16",
    "verb": "published_by",
-   "to": "party:cpanel"
+   "to": "party:scherzer"
   },
   {
    "from": "statement:78444f5354",
@@ -7531,72 +8499,67 @@
   {
    "from": "reference:17",
    "verb": "published_by",
-   "to": "party:cloudlinux"
+   "to": "party:cpanel"
   },
   {
-   "from": "statement:c9448b9736",
+   "from": "statement:78444f5354",
    "verb": "cites",
    "to": "reference:18"
   },
   {
    "from": "reference:18",
    "verb": "published_by",
-   "to": "party:ycombinator-hn"
+   "to": "party:cloudlinux"
   },
   {
-   "from": "statement:eb6b69df3d",
+   "from": "statement:c425f5c84f",
    "verb": "cites",
    "to": "reference:19"
   },
   {
    "from": "reference:19",
-   "verb": "captured_as",
-   "to": "source:arstechnica-security-2026-10-php-maintainers-tell-web-devs-to-prepare-th"
-  },
-  {
-   "from": "reference:19",
    "verb": "published_by",
-   "to": "party:ars-technica"
+   "to": "party:bbc"
   },
   {
-   "from": "statement:b8cd7ec580",
+   "from": "statement:c9448b9736",
    "verb": "cites",
    "to": "reference:20"
   },
   {
    "from": "reference:20",
-   "verb": "captured_as",
-   "to": "source:aws-security-blog-madpot"
-  },
-  {
-   "from": "reference:20",
    "verb": "published_by",
-   "to": "party:amazon"
+   "to": "party:ycombinator-hn"
   },
   {
-   "from": "statement:2f40ea4686",
+   "from": "statement:eb6b69df3d",
    "verb": "cites",
    "to": "reference:21"
   },
   {
    "from": "reference:21",
    "verb": "captured_as",
-   "to": "source:bleepingcomputer-php2shell"
+   "to": "source:arstechnica-security-2026-10-php-maintainers-tell-web-devs-to-prepare-th"
   },
   {
    "from": "reference:21",
    "verb": "published_by",
-   "to": "party:bleepingcomputer"
+   "to": "party:ars-technica"
   },
   {
-   "from": "statement:2f40ea4686",
+   "from": "statement:b8cd7ec580",
    "verb": "cites",
    "to": "reference:22"
   },
   {
    "from": "reference:22",
+   "verb": "captured_as",
+   "to": "source:aws-security-blog-madpot"
+  },
+  {
+   "from": "reference:22",
    "verb": "published_by",
-   "to": "party:pc-gamer"
+   "to": "party:amazon"
   },
   {
    "from": "statement:2f40ea4686",
@@ -7605,56 +8568,51 @@
   },
   {
    "from": "reference:23",
-   "verb": "published_by",
-   "to": "party:x"
+   "verb": "captured_as",
+   "to": "source:bleepingcomputer-php2shell"
   },
   {
-   "from": "statement:fb16c2a8cd",
+   "from": "reference:23",
+   "verb": "published_by",
+   "to": "party:bleepingcomputer"
+  },
+  {
+   "from": "statement:2f40ea4686",
    "verb": "cites",
    "to": "reference:24"
   },
   {
    "from": "reference:24",
-   "verb": "captured_as",
-   "to": "source:watchtowr-php2shell-faq"
-  },
-  {
-   "from": "reference:24",
    "verb": "published_by",
-   "to": "party:watchtowr"
+   "to": "party:pc-gamer"
   },
   {
-   "from": "statement:4cd4f33a65",
-   "verb": "cites",
-   "to": "reference:25"
-  },
-  {
-   "from": "statement:5505d316af",
+   "from": "statement:2f40ea4686",
    "verb": "cites",
    "to": "reference:25"
   },
   {
    "from": "reference:25",
    "verb": "published_by",
-   "to": "party:bbc"
+   "to": "party:x"
   },
   {
-   "from": "statement:4cd4f33a65",
+   "from": "statement:fb16c2a8cd",
    "verb": "cites",
    "to": "reference:26"
   },
   {
    "from": "reference:26",
    "verb": "captured_as",
-   "to": "source:huntress-php2shell-rapid-response"
+   "to": "source:watchtowr-php2shell-faq"
   },
   {
    "from": "reference:26",
    "verb": "published_by",
-   "to": "party:huntress"
+   "to": "party:watchtowr"
   },
   {
-   "from": "statement:16c7e1f9b1",
+   "from": "statement:4cd4f33a65",
    "verb": "cites",
    "to": "reference:27"
   },
@@ -7666,17 +8624,27 @@
   {
    "from": "reference:27",
    "verb": "published_by",
-   "to": "party:reuters"
+   "to": "party:bbc"
   },
   {
-   "from": "statement:5505d316af",
+   "from": "statement:4cd4f33a65",
    "verb": "cites",
    "to": "reference:28"
   },
   {
    "from": "reference:28",
+   "verb": "captured_as",
+   "to": "source:huntress-php2shell-rapid-response"
+  },
+  {
+   "from": "reference:28",
    "verb": "published_by",
-   "to": "party:brussels-times"
+   "to": "party:huntress"
+  },
+  {
+   "from": "statement:16c7e1f9b1",
+   "verb": "cites",
+   "to": "reference:29"
   },
   {
    "from": "statement:5505d316af",
@@ -7685,188 +8653,208 @@
   },
   {
    "from": "reference:29",
-   "verb": "captured_as",
-   "to": "source:ncsc-news-php"
-  },
-  {
-   "from": "reference:29",
    "verb": "published_by",
-   "to": "party:ncsc-uk"
+   "to": "party:reuters"
   },
   {
-   "from": "statement:e4c5b04daa",
+   "from": "statement:5505d316af",
    "verb": "cites",
    "to": "reference:30"
   },
   {
    "from": "reference:30",
    "verb": "published_by",
-   "to": "party:cp24"
+   "to": "party:brussels-times"
   },
   {
-   "from": "statement:76b5643253",
-   "verb": "cites",
-   "to": "reference:31"
-  },
-  {
-   "from": "statement:2c7a14586e",
-   "verb": "cites",
-   "to": "reference:31"
-  },
-  {
-   "from": "statement:4324f7631b",
+   "from": "statement:5505d316af",
    "verb": "cites",
    "to": "reference:31"
   },
   {
    "from": "reference:31",
-   "verb": "published_by",
-   "to": "party:pcmag"
+   "verb": "captured_as",
+   "to": "source:ncsc-news-php"
   },
   {
-   "from": "statement:2c7a14586e",
+   "from": "reference:31",
+   "verb": "published_by",
+   "to": "party:ncsc-uk"
+  },
+  {
+   "from": "statement:e4c5b04daa",
    "verb": "cites",
    "to": "reference:32"
   },
   {
    "from": "reference:32",
    "verb": "published_by",
-   "to": "party:nsa"
+   "to": "party:cp24"
   },
   {
-   "from": "statement:a19a5dd331",
+   "from": "statement:76b5643253",
+   "verb": "cites",
+   "to": "reference:33"
+  },
+  {
+   "from": "statement:2c7a14586e",
+   "verb": "cites",
+   "to": "reference:33"
+  },
+  {
+   "from": "statement:4324f7631b",
    "verb": "cites",
    "to": "reference:33"
   },
   {
    "from": "reference:33",
    "verb": "published_by",
-   "to": "party:guardian"
+   "to": "party:pcmag"
   },
   {
-   "from": "statement:7a3641004e",
+   "from": "statement:2c7a14586e",
    "verb": "cites",
    "to": "reference:34"
   },
   {
    "from": "reference:34",
-   "verb": "captured_as",
-   "to": "source:channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur"
-  },
-  {
-   "from": "reference:34",
    "verb": "published_by",
-   "to": "party:cna-sg"
+   "to": "party:nsa"
   },
   {
-   "from": "statement:7a3641004e",
+   "from": "statement:a19a5dd331",
    "verb": "cites",
    "to": "reference:35"
   },
   {
    "from": "reference:35",
    "verb": "published_by",
-   "to": "party:csa-sg"
+   "to": "party:guardian"
   },
   {
-   "from": "statement:4324f7631b",
-   "verb": "cites",
-   "to": "reference:36"
-  },
-  {
-   "from": "statement:5b2a5b2f27",
+   "from": "statement:7a3641004e",
    "verb": "cites",
    "to": "reference:36"
   },
   {
    "from": "reference:36",
+   "verb": "captured_as",
+   "to": "source:channelnewsasia-singapore-php-vulnerabilities-csa-singapore-firms-cybersecur"
+  },
+  {
+   "from": "reference:36",
    "verb": "published_by",
-   "to": "party:mashable"
+   "to": "party:cna-sg"
   },
   {
-   "from": "statement:f76f3e6f58",
-   "verb": "cites",
-   "to": "reference:37"
-  },
-  {
-   "from": "statement:5b2a5b2f27",
+   "from": "statement:7a3641004e",
    "verb": "cites",
    "to": "reference:37"
   },
   {
    "from": "reference:37",
    "verb": "published_by",
-   "to": "party:itmedia"
+   "to": "party:csa-sg"
   },
   {
-   "from": "statement:d02e88d560",
+   "from": "statement:4324f7631b",
+   "verb": "cites",
+   "to": "reference:38"
+  },
+  {
+   "from": "statement:5b2a5b2f27",
    "verb": "cites",
    "to": "reference:38"
   },
   {
    "from": "reference:38",
    "verb": "published_by",
-   "to": "party:afr"
+   "to": "party:mashable"
   },
   {
-   "from": "statement:490feb9e37",
+   "from": "statement:f76f3e6f58",
+   "verb": "cites",
+   "to": "reference:39"
+  },
+  {
+   "from": "statement:5b2a5b2f27",
    "verb": "cites",
    "to": "reference:39"
   },
   {
    "from": "reference:39",
-   "verb": "captured_as",
-   "to": "source:cnn-php2shell-ai"
-  },
-  {
-   "from": "reference:39",
    "verb": "published_by",
-   "to": "party:cnn"
+   "to": "party:itmedia"
   },
   {
-   "from": "statement:1f46a5634c",
+   "from": "statement:d02e88d560",
    "verb": "cites",
    "to": "reference:40"
   },
   {
    "from": "reference:40",
    "verb": "published_by",
-   "to": "party:guardian"
+   "to": "party:afr"
   },
   {
-   "from": "statement:a730144756",
+   "from": "statement:490feb9e37",
    "verb": "cites",
    "to": "reference:41"
   },
   {
    "from": "reference:41",
+   "verb": "captured_as",
+   "to": "source:cnn-php2shell-ai"
+  },
+  {
+   "from": "reference:41",
    "verb": "published_by",
-   "to": "party:nyt"
+   "to": "party:cnn"
   },
   {
-   "from": "statement:eaa89f37a9",
-   "verb": "cites",
-   "to": "reference:42"
-  },
-  {
-   "from": "statement:f0c7d98a4c",
+   "from": "statement:1f46a5634c",
    "verb": "cites",
    "to": "reference:42"
   },
   {
    "from": "reference:42",
    "verb": "published_by",
+   "to": "party:guardian"
+  },
+  {
+   "from": "statement:a730144756",
+   "verb": "cites",
+   "to": "reference:43"
+  },
+  {
+   "from": "reference:43",
+   "verb": "published_by",
+   "to": "party:nyt"
+  },
+  {
+   "from": "statement:eaa89f37a9",
+   "verb": "cites",
+   "to": "reference:44"
+  },
+  {
+   "from": "statement:f0c7d98a4c",
+   "verb": "cites",
+   "to": "reference:44"
+  },
+  {
+   "from": "reference:44",
+   "verb": "published_by",
    "to": "party:the-atlantic"
   },
   {
    "from": "statement:fb16c2a8cd",
    "verb": "cites",
-   "to": "reference:43"
+   "to": "reference:45"
   },
   {
    "from": "statement:4324f7631b",
    "verb": "cites",
-   "to": "reference:43"
+   "to": "reference:45"
   },
   {
    "from": "revision:1381280358",
@@ -7882,6 +8870,11 @@
    "from": "revision:1381280384",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381280384",
+   "verb": "follows",
+   "to": "revision:1381280358"
   },
   {
    "from": "revision:1381280384",
@@ -7892,6 +8885,11 @@
    "from": "revision:1381281918",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381281918",
+   "verb": "follows",
+   "to": "revision:1381280384"
   },
   {
    "from": "revision:1381281918",
@@ -7905,6 +8903,11 @@
   },
   {
    "from": "revision:1381282705",
+   "verb": "follows",
+   "to": "revision:1381281918"
+  },
+  {
+   "from": "revision:1381282705",
    "verb": "made_by",
    "to": "editor:ljcool2006"
   },
@@ -7912,6 +8915,11 @@
    "from": "revision:1381282736",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381282736",
+   "verb": "follows",
+   "to": "revision:1381282705"
   },
   {
    "from": "revision:1381282736",
@@ -7922,6 +8930,11 @@
    "from": "revision:1381283005",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381283005",
+   "verb": "follows",
+   "to": "revision:1381282736"
   },
   {
    "from": "revision:1381283005",
@@ -7940,6 +8953,11 @@
   },
   {
    "from": "revision:1381283613",
+   "verb": "follows",
+   "to": "revision:1381283005"
+  },
+  {
+   "from": "revision:1381283613",
    "verb": "made_by",
    "to": "editor:ltbdl"
   },
@@ -7947,6 +8965,11 @@
    "from": "revision:1381284621",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381284621",
+   "verb": "follows",
+   "to": "revision:1381283613"
   },
   {
    "from": "revision:1381284621",
@@ -7960,6 +8983,11 @@
   },
   {
    "from": "revision:1381286311",
+   "verb": "follows",
+   "to": "revision:1381284621"
+  },
+  {
+   "from": "revision:1381286311",
    "verb": "made_by",
    "to": "editor:novem-linguae"
   },
@@ -7970,6 +8998,11 @@
   },
   {
    "from": "revision:1381286476",
+   "verb": "follows",
+   "to": "revision:1381286311"
+  },
+  {
+   "from": "revision:1381286476",
    "verb": "made_by",
    "to": "editor:lordseriouspig"
   },
@@ -7977,6 +9010,11 @@
    "from": "revision:1381286798",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381286798",
+   "verb": "follows",
+   "to": "revision:1381286476"
   },
   {
    "from": "revision:1381286798",
@@ -7987,6 +9025,11 @@
    "from": "revision:1381287169",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381287169",
+   "verb": "follows",
+   "to": "revision:1381286798"
   },
   {
    "from": "revision:1381287169",
@@ -7997,6 +9040,11 @@
    "from": "revision:1381287401",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381287401",
+   "verb": "follows",
+   "to": "revision:1381287169"
   },
   {
    "from": "revision:1381287401",
@@ -8007,6 +9055,11 @@
    "from": "revision:1381288860",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381288860",
+   "verb": "follows",
+   "to": "revision:1381287401"
   },
   {
    "from": "revision:1381288860",
@@ -8020,6 +9073,11 @@
   },
   {
    "from": "revision:1381288985",
+   "verb": "follows",
+   "to": "revision:1381288860"
+  },
+  {
+   "from": "revision:1381288985",
    "verb": "made_by",
    "to": "editor:padgriffin"
   },
@@ -8027,6 +9085,11 @@
    "from": "revision:1381289325",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381289325",
+   "verb": "follows",
+   "to": "revision:1381288985"
   },
   {
    "from": "revision:1381289325",
@@ -8040,6 +9103,11 @@
   },
   {
    "from": "revision:1381291728",
+   "verb": "follows",
+   "to": "revision:1381289325"
+  },
+  {
+   "from": "revision:1381291728",
    "verb": "made_by",
    "to": "editor:largely-legible-layman"
   },
@@ -8047,6 +9115,11 @@
    "from": "revision:1381292142",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381292142",
+   "verb": "follows",
+   "to": "revision:1381291728"
   },
   {
    "from": "revision:1381292142",
@@ -8065,6 +9138,11 @@
   },
   {
    "from": "revision:1381292512",
+   "verb": "follows",
+   "to": "revision:1381292142"
+  },
+  {
+   "from": "revision:1381292512",
    "verb": "made_by",
    "to": "editor:-2026-56352-28"
   },
@@ -8075,6 +9153,11 @@
   },
   {
    "from": "revision:1381293014",
+   "verb": "follows",
+   "to": "revision:1381292512"
+  },
+  {
+   "from": "revision:1381293014",
    "verb": "made_by",
    "to": "editor:photographyedits"
   },
@@ -8082,6 +9165,11 @@
    "from": "revision:1381293613",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381293613",
+   "verb": "follows",
+   "to": "revision:1381293014"
   },
   {
    "from": "revision:1381293613",
@@ -8095,6 +9183,11 @@
   },
   {
    "from": "revision:1381293638",
+   "verb": "follows",
+   "to": "revision:1381293613"
+  },
+  {
+   "from": "revision:1381293638",
    "verb": "made_by",
    "to": "editor:ca"
   },
@@ -8102,6 +9195,11 @@
    "from": "revision:1381293677",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381293677",
+   "verb": "follows",
+   "to": "revision:1381293638"
   },
   {
    "from": "revision:1381293677",
@@ -8112,6 +9210,11 @@
    "from": "revision:1381293746",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381293746",
+   "verb": "follows",
+   "to": "revision:1381293677"
   },
   {
    "from": "revision:1381293746",
@@ -8122,6 +9225,11 @@
    "from": "revision:1381293772",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381293772",
+   "verb": "follows",
+   "to": "revision:1381293746"
   },
   {
    "from": "revision:1381293772",
@@ -8135,6 +9243,11 @@
   },
   {
    "from": "revision:1381293793",
+   "verb": "follows",
+   "to": "revision:1381293772"
+  },
+  {
+   "from": "revision:1381293793",
    "verb": "made_by",
    "to": "editor:ca"
   },
@@ -8142,6 +9255,11 @@
    "from": "revision:1381293882",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381293882",
+   "verb": "follows",
+   "to": "revision:1381293793"
   },
   {
    "from": "revision:1381293882",
@@ -8155,6 +9273,11 @@
   },
   {
    "from": "revision:1381293884",
+   "verb": "follows",
+   "to": "revision:1381293882"
+  },
+  {
+   "from": "revision:1381293884",
    "verb": "made_by",
    "to": "editor:padgriffin"
   },
@@ -8165,6 +9288,11 @@
   },
   {
    "from": "revision:1381294777",
+   "verb": "follows",
+   "to": "revision:1381293884"
+  },
+  {
+   "from": "revision:1381294777",
    "verb": "made_by",
    "to": "editor:novem-linguae"
   },
@@ -8172,6 +9300,11 @@
    "from": "revision:1381294798",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381294798",
+   "verb": "follows",
+   "to": "revision:1381294777"
   },
   {
    "from": "revision:1381294798",
@@ -8182,6 +9315,11 @@
    "from": "revision:1381294859",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381294859",
+   "verb": "follows",
+   "to": "revision:1381294798"
   },
   {
    "from": "revision:1381294859",
@@ -8192,6 +9330,11 @@
    "from": "revision:1381295213",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381295213",
+   "verb": "follows",
+   "to": "revision:1381294859"
   },
   {
    "from": "revision:1381295213",
@@ -8205,6 +9348,11 @@
   },
   {
    "from": "revision:1381298033",
+   "verb": "follows",
+   "to": "revision:1381295213"
+  },
+  {
+   "from": "revision:1381298033",
    "verb": "made_by",
    "to": "editor:ca"
   },
@@ -8212,6 +9360,11 @@
    "from": "revision:1381298437",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381298437",
+   "verb": "follows",
+   "to": "revision:1381298033"
   },
   {
    "from": "revision:1381298437",
@@ -8225,6 +9378,11 @@
   },
   {
    "from": "revision:1381298837",
+   "verb": "follows",
+   "to": "revision:1381298437"
+  },
+  {
+   "from": "revision:1381298837",
    "verb": "made_by",
    "to": "editor:lightnightlights"
   },
@@ -8232,6 +9390,11 @@
    "from": "revision:1381299343",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381299343",
+   "verb": "follows",
+   "to": "revision:1381298837"
   },
   {
    "from": "revision:1381299343",
@@ -8245,6 +9408,11 @@
   },
   {
    "from": "revision:1381301369",
+   "verb": "follows",
+   "to": "revision:1381299343"
+  },
+  {
+   "from": "revision:1381301369",
    "verb": "made_by",
    "to": "editor:lightnightlights"
   },
@@ -8252,6 +9420,11 @@
    "from": "revision:1381301556",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381301556",
+   "verb": "follows",
+   "to": "revision:1381301369"
   },
   {
    "from": "revision:1381301556",
@@ -8270,6 +9443,11 @@
   },
   {
    "from": "revision:1381301759",
+   "verb": "follows",
+   "to": "revision:1381301556"
+  },
+  {
+   "from": "revision:1381301759",
    "verb": "made_by",
    "to": "editor:photographyedits"
   },
@@ -8277,6 +9455,11 @@
    "from": "revision:1381301878",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381301878",
+   "verb": "follows",
+   "to": "revision:1381301759"
   },
   {
    "from": "revision:1381301878",
@@ -8287,6 +9470,11 @@
    "from": "revision:1381302130",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381302130",
+   "verb": "follows",
+   "to": "revision:1381301878"
   },
   {
    "from": "revision:1381302130",
@@ -8300,6 +9488,11 @@
   },
   {
    "from": "revision:1381302217",
+   "verb": "follows",
+   "to": "revision:1381302130"
+  },
+  {
+   "from": "revision:1381302217",
    "verb": "made_by",
    "to": "editor:ms7821"
   },
@@ -8310,6 +9503,11 @@
   },
   {
    "from": "revision:1381304076",
+   "verb": "follows",
+   "to": "revision:1381302217"
+  },
+  {
+   "from": "revision:1381304076",
    "verb": "made_by",
    "to": "editor:-2026-56282-91"
   },
@@ -8317,6 +9515,11 @@
    "from": "revision:1381304107",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381304107",
+   "verb": "follows",
+   "to": "revision:1381304076"
   },
   {
    "from": "revision:1381304107",
@@ -8330,6 +9533,11 @@
   },
   {
    "from": "revision:1381304117",
+   "verb": "follows",
+   "to": "revision:1381304107"
+  },
+  {
+   "from": "revision:1381304117",
    "verb": "made_by",
    "to": "editor:-2026-56282-91"
   },
@@ -8337,6 +9545,11 @@
    "from": "revision:1381304137",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381304137",
+   "verb": "follows",
+   "to": "revision:1381304117"
   },
   {
    "from": "revision:1381304137",
@@ -8347,6 +9560,11 @@
    "from": "revision:1381305628",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381305628",
+   "verb": "follows",
+   "to": "revision:1381304137"
   },
   {
    "from": "revision:1381305628",
@@ -8357,6 +9575,11 @@
    "from": "revision:1381305643",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381305643",
+   "verb": "follows",
+   "to": "revision:1381305628"
   },
   {
    "from": "revision:1381305643",
@@ -8367,6 +9590,11 @@
    "from": "revision:1381305870",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381305870",
+   "verb": "follows",
+   "to": "revision:1381305643"
   },
   {
    "from": "revision:1381305870",
@@ -8377,6 +9605,11 @@
    "from": "revision:1381306009",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381306009",
+   "verb": "follows",
+   "to": "revision:1381305870"
   },
   {
    "from": "revision:1381306009",
@@ -8395,6 +9628,11 @@
   },
   {
    "from": "revision:1381306170",
+   "verb": "follows",
+   "to": "revision:1381306009"
+  },
+  {
+   "from": "revision:1381306170",
    "verb": "made_by",
    "to": "editor:ca"
   },
@@ -8405,6 +9643,11 @@
   },
   {
    "from": "revision:1381306641",
+   "verb": "follows",
+   "to": "revision:1381306170"
+  },
+  {
+   "from": "revision:1381306641",
    "verb": "made_by",
    "to": "editor:warp03"
   },
@@ -8412,6 +9655,11 @@
    "from": "revision:1381306679",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381306679",
+   "verb": "follows",
+   "to": "revision:1381306641"
   },
   {
    "from": "revision:1381306679",
@@ -8422,6 +9670,11 @@
    "from": "revision:1381306717",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381306717",
+   "verb": "follows",
+   "to": "revision:1381306679"
   },
   {
    "from": "revision:1381306717",
@@ -8432,6 +9685,11 @@
    "from": "revision:1381306985",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381306985",
+   "verb": "follows",
+   "to": "revision:1381306717"
   },
   {
    "from": "revision:1381306985",
@@ -8442,6 +9700,11 @@
    "from": "revision:1381307157",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381307157",
+   "verb": "follows",
+   "to": "revision:1381306985"
   },
   {
    "from": "revision:1381307157",
@@ -8455,6 +9718,11 @@
   },
   {
    "from": "revision:1381307206",
+   "verb": "follows",
+   "to": "revision:1381307157"
+  },
+  {
+   "from": "revision:1381307206",
    "verb": "made_by",
    "to": "editor:ca"
   },
@@ -8465,6 +9733,11 @@
   },
   {
    "from": "revision:1381307464",
+   "verb": "follows",
+   "to": "revision:1381307206"
+  },
+  {
+   "from": "revision:1381307464",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -8472,6 +9745,11 @@
    "from": "revision:1381308146",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381308146",
+   "verb": "follows",
+   "to": "revision:1381307464"
   },
   {
    "from": "revision:1381308146",
@@ -8485,6 +9763,11 @@
   },
   {
    "from": "revision:1381308803",
+   "verb": "follows",
+   "to": "revision:1381308146"
+  },
+  {
+   "from": "revision:1381308803",
    "verb": "made_by",
    "to": "editor:photographyedits"
   },
@@ -8492,6 +9775,11 @@
    "from": "revision:1381309501",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381309501",
+   "verb": "follows",
+   "to": "revision:1381308803"
   },
   {
    "from": "revision:1381309501",
@@ -8505,6 +9793,11 @@
   },
   {
    "from": "revision:1381309714",
+   "verb": "follows",
+   "to": "revision:1381309501"
+  },
+  {
+   "from": "revision:1381309714",
    "verb": "made_by",
    "to": "editor:-2026-56204-88"
   },
@@ -8512,6 +9805,11 @@
    "from": "revision:1381309771",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381309771",
+   "verb": "follows",
+   "to": "revision:1381309714"
   },
   {
    "from": "revision:1381309771",
@@ -8525,6 +9823,11 @@
   },
   {
    "from": "revision:1381309826",
+   "verb": "follows",
+   "to": "revision:1381309771"
+  },
+  {
+   "from": "revision:1381309826",
    "verb": "made_by",
    "to": "editor:nemoralis"
   },
@@ -8532,6 +9835,11 @@
    "from": "revision:1381309866",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381309866",
+   "verb": "follows",
+   "to": "revision:1381309826"
   },
   {
    "from": "revision:1381309866",
@@ -8545,6 +9853,11 @@
   },
   {
    "from": "revision:1381309962",
+   "verb": "follows",
+   "to": "revision:1381309866"
+  },
+  {
+   "from": "revision:1381309962",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -8552,6 +9865,11 @@
    "from": "revision:1381310122",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381310122",
+   "verb": "follows",
+   "to": "revision:1381309962"
   },
   {
    "from": "revision:1381310122",
@@ -8565,6 +9883,11 @@
   },
   {
    "from": "revision:1381310445",
+   "verb": "follows",
+   "to": "revision:1381310122"
+  },
+  {
+   "from": "revision:1381310445",
    "verb": "made_by",
    "to": "editor:photographyedits"
   },
@@ -8575,6 +9898,11 @@
   },
   {
    "from": "revision:1381311205",
+   "verb": "follows",
+   "to": "revision:1381310445"
+  },
+  {
+   "from": "revision:1381311205",
    "verb": "made_by",
    "to": "editor:nemoralis"
   },
@@ -8582,6 +9910,11 @@
    "from": "revision:1381311297",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381311297",
+   "verb": "follows",
+   "to": "revision:1381311205"
   },
   {
    "from": "revision:1381311297",
@@ -8600,6 +9933,11 @@
   },
   {
    "from": "revision:1381312394",
+   "verb": "follows",
+   "to": "revision:1381311297"
+  },
+  {
+   "from": "revision:1381312394",
    "verb": "made_by",
    "to": "editor:rchard2scout"
   },
@@ -8610,6 +9948,11 @@
   },
   {
    "from": "revision:1381312522",
+   "verb": "follows",
+   "to": "revision:1381312394"
+  },
+  {
+   "from": "revision:1381312522",
    "verb": "made_by",
    "to": "editor:ashmoo"
   },
@@ -8617,6 +9960,11 @@
    "from": "revision:1381312580",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381312580",
+   "verb": "follows",
+   "to": "revision:1381312522"
   },
   {
    "from": "revision:1381312580",
@@ -8635,6 +9983,11 @@
   },
   {
    "from": "revision:1381312798",
+   "verb": "follows",
+   "to": "revision:1381312580"
+  },
+  {
+   "from": "revision:1381312798",
    "verb": "made_by",
    "to": "editor:ashmoo"
   },
@@ -8642,6 +9995,11 @@
    "from": "revision:1381313975",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381313975",
+   "verb": "follows",
+   "to": "revision:1381312798"
   },
   {
    "from": "revision:1381313975",
@@ -8655,6 +10013,11 @@
   },
   {
    "from": "revision:1381314476",
+   "verb": "follows",
+   "to": "revision:1381313975"
+  },
+  {
+   "from": "revision:1381314476",
    "verb": "made_by",
    "to": "editor:ashmoo"
   },
@@ -8662,6 +10025,11 @@
    "from": "revision:1381314611",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381314611",
+   "verb": "follows",
+   "to": "revision:1381314476"
   },
   {
    "from": "revision:1381314611",
@@ -8672,6 +10040,11 @@
    "from": "revision:1381314910",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381314910",
+   "verb": "follows",
+   "to": "revision:1381314611"
   },
   {
    "from": "revision:1381314910",
@@ -8682,6 +10055,11 @@
    "from": "revision:1381315618",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381315618",
+   "verb": "follows",
+   "to": "revision:1381314910"
   },
   {
    "from": "revision:1381315618",
@@ -8695,6 +10073,11 @@
   },
   {
    "from": "revision:1381315760",
+   "verb": "follows",
+   "to": "revision:1381315618"
+  },
+  {
+   "from": "revision:1381315760",
    "verb": "made_by",
    "to": "editor:padgriffin"
   },
@@ -8702,6 +10085,11 @@
    "from": "revision:1381315851",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381315851",
+   "verb": "follows",
+   "to": "revision:1381315760"
   },
   {
    "from": "revision:1381315851",
@@ -8715,6 +10103,11 @@
   },
   {
    "from": "revision:1381315932",
+   "verb": "follows",
+   "to": "revision:1381315851"
+  },
+  {
+   "from": "revision:1381315932",
    "verb": "made_by",
    "to": "editor:lightnightlights"
   },
@@ -8722,6 +10115,11 @@
    "from": "revision:1381316086",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381316086",
+   "verb": "follows",
+   "to": "revision:1381315932"
   },
   {
    "from": "revision:1381316086",
@@ -8740,6 +10138,11 @@
   },
   {
    "from": "revision:1381316124",
+   "verb": "follows",
+   "to": "revision:1381316086"
+  },
+  {
+   "from": "revision:1381316124",
    "verb": "made_by",
    "to": "editor:zenphia1"
   },
@@ -8747,6 +10150,11 @@
    "from": "revision:1381316308",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381316308",
+   "verb": "follows",
+   "to": "revision:1381316124"
   },
   {
    "from": "revision:1381316308",
@@ -8760,6 +10168,11 @@
   },
   {
    "from": "revision:1381316338",
+   "verb": "follows",
+   "to": "revision:1381316308"
+  },
+  {
+   "from": "revision:1381316338",
    "verb": "made_by",
    "to": "editor:greenrunner0"
   },
@@ -8770,6 +10183,11 @@
   },
   {
    "from": "revision:1381316423",
+   "verb": "follows",
+   "to": "revision:1381316338"
+  },
+  {
+   "from": "revision:1381316423",
    "verb": "made_by",
    "to": "editor:graham87"
   },
@@ -8777,6 +10195,11 @@
    "from": "revision:1381316531",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381316531",
+   "verb": "follows",
+   "to": "revision:1381316423"
   },
   {
    "from": "revision:1381316531",
@@ -8787,6 +10210,11 @@
    "from": "revision:1381316728",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381316728",
+   "verb": "follows",
+   "to": "revision:1381316531"
   },
   {
    "from": "revision:1381316728",
@@ -8797,6 +10225,11 @@
    "from": "revision:1381316773",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381316773",
+   "verb": "follows",
+   "to": "revision:1381316728"
   },
   {
    "from": "revision:1381316773",
@@ -8807,6 +10240,11 @@
    "from": "revision:1381316790",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381316790",
+   "verb": "follows",
+   "to": "revision:1381316773"
   },
   {
    "from": "revision:1381316790",
@@ -8817,6 +10255,11 @@
    "from": "revision:1381317260",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381317260",
+   "verb": "follows",
+   "to": "revision:1381316790"
   },
   {
    "from": "revision:1381317260",
@@ -8827,6 +10270,11 @@
    "from": "revision:1381317679",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381317679",
+   "verb": "follows",
+   "to": "revision:1381317260"
   },
   {
    "from": "revision:1381317679",
@@ -8837,6 +10285,11 @@
    "from": "revision:1381317721",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381317721",
+   "verb": "follows",
+   "to": "revision:1381317679"
   },
   {
    "from": "revision:1381317721",
@@ -8850,6 +10303,11 @@
   },
   {
    "from": "revision:1381317793",
+   "verb": "follows",
+   "to": "revision:1381317721"
+  },
+  {
+   "from": "revision:1381317793",
    "verb": "made_by",
    "to": "editor:greenrunner0"
   },
@@ -8857,6 +10315,11 @@
    "from": "revision:1381318000",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381318000",
+   "verb": "follows",
+   "to": "revision:1381317793"
   },
   {
    "from": "revision:1381318000",
@@ -8870,6 +10333,11 @@
   },
   {
    "from": "revision:1381318060",
+   "verb": "follows",
+   "to": "revision:1381318000"
+  },
+  {
+   "from": "revision:1381318060",
    "verb": "made_by",
    "to": "editor:greenrunner0"
   },
@@ -8877,6 +10345,11 @@
    "from": "revision:1381318125",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381318125",
+   "verb": "follows",
+   "to": "revision:1381318060"
   },
   {
    "from": "revision:1381318125",
@@ -8887,6 +10360,11 @@
    "from": "revision:1381318216",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381318216",
+   "verb": "follows",
+   "to": "revision:1381318125"
   },
   {
    "from": "revision:1381318216",
@@ -8900,6 +10378,11 @@
   },
   {
    "from": "revision:1381318273",
+   "verb": "follows",
+   "to": "revision:1381318216"
+  },
+  {
+   "from": "revision:1381318273",
    "verb": "made_by",
    "to": "editor:xymph"
   },
@@ -8907,6 +10390,11 @@
    "from": "revision:1381318466",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381318466",
+   "verb": "follows",
+   "to": "revision:1381318273"
   },
   {
    "from": "revision:1381318466",
@@ -8920,6 +10408,11 @@
   },
   {
    "from": "revision:1381318521",
+   "verb": "follows",
+   "to": "revision:1381318466"
+  },
+  {
+   "from": "revision:1381318521",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -8927,6 +10420,11 @@
    "from": "revision:1381318611",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381318611",
+   "verb": "follows",
+   "to": "revision:1381318521"
   },
   {
    "from": "revision:1381318611",
@@ -8945,6 +10443,11 @@
   },
   {
    "from": "revision:1381318785",
+   "verb": "follows",
+   "to": "revision:1381318611"
+  },
+  {
+   "from": "revision:1381318785",
    "verb": "made_by",
    "to": "editor:4seasons4"
   },
@@ -8955,6 +10458,11 @@
   },
   {
    "from": "revision:1381319293",
+   "verb": "follows",
+   "to": "revision:1381318785"
+  },
+  {
+   "from": "revision:1381319293",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -8962,6 +10470,11 @@
    "from": "revision:1381319347",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381319347",
+   "verb": "follows",
+   "to": "revision:1381319293"
   },
   {
    "from": "revision:1381319347",
@@ -8972,6 +10485,11 @@
    "from": "revision:1381319416",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381319416",
+   "verb": "follows",
+   "to": "revision:1381319347"
   },
   {
    "from": "revision:1381319416",
@@ -8982,6 +10500,11 @@
    "from": "revision:1381319511",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381319511",
+   "verb": "follows",
+   "to": "revision:1381319416"
   },
   {
    "from": "revision:1381319511",
@@ -8992,6 +10515,11 @@
    "from": "revision:1381319623",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381319623",
+   "verb": "follows",
+   "to": "revision:1381319511"
   },
   {
    "from": "revision:1381319623",
@@ -9005,6 +10533,11 @@
   },
   {
    "from": "revision:1381319711",
+   "verb": "follows",
+   "to": "revision:1381319623"
+  },
+  {
+   "from": "revision:1381319711",
    "verb": "made_by",
    "to": "editor:thexug"
   },
@@ -9015,6 +10548,11 @@
   },
   {
    "from": "revision:1381319917",
+   "verb": "follows",
+   "to": "revision:1381319711"
+  },
+  {
+   "from": "revision:1381319917",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -9022,6 +10560,11 @@
    "from": "revision:1381320082",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381320082",
+   "verb": "follows",
+   "to": "revision:1381319917"
   },
   {
    "from": "revision:1381320082",
@@ -9035,6 +10578,11 @@
   },
   {
    "from": "revision:1381320499",
+   "verb": "follows",
+   "to": "revision:1381320082"
+  },
+  {
+   "from": "revision:1381320499",
    "verb": "made_by",
    "to": "editor:4seasons4"
   },
@@ -9042,6 +10590,11 @@
    "from": "revision:1381320636",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381320636",
+   "verb": "follows",
+   "to": "revision:1381320499"
   },
   {
    "from": "revision:1381320636",
@@ -9052,6 +10605,11 @@
    "from": "revision:1381320807",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381320807",
+   "verb": "follows",
+   "to": "revision:1381320636"
   },
   {
    "from": "revision:1381320807",
@@ -9065,6 +10623,11 @@
   },
   {
    "from": "revision:1381320907",
+   "verb": "follows",
+   "to": "revision:1381320807"
+  },
+  {
+   "from": "revision:1381320907",
    "verb": "made_by",
    "to": "editor:padgriffin"
   },
@@ -9072,6 +10635,11 @@
    "from": "revision:1381321240",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381321240",
+   "verb": "follows",
+   "to": "revision:1381320907"
   },
   {
    "from": "revision:1381321240",
@@ -9085,6 +10653,11 @@
   },
   {
    "from": "revision:1381321619",
+   "verb": "follows",
+   "to": "revision:1381321240"
+  },
+  {
+   "from": "revision:1381321619",
    "verb": "made_by",
    "to": "editor:-2026-56304-51"
   },
@@ -9092,6 +10665,11 @@
    "from": "revision:1381321867",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381321867",
+   "verb": "follows",
+   "to": "revision:1381321619"
   },
   {
    "from": "revision:1381321867",
@@ -9105,6 +10683,11 @@
   },
   {
    "from": "revision:1381322136",
+   "verb": "follows",
+   "to": "revision:1381321867"
+  },
+  {
+   "from": "revision:1381322136",
    "verb": "made_by",
    "to": "editor:padgriffin"
   },
@@ -9112,6 +10695,11 @@
    "from": "revision:1381322178",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381322178",
+   "verb": "follows",
+   "to": "revision:1381322136"
   },
   {
    "from": "revision:1381322178",
@@ -9125,6 +10713,11 @@
   },
   {
    "from": "revision:1381322223",
+   "verb": "follows",
+   "to": "revision:1381322178"
+  },
+  {
+   "from": "revision:1381322223",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -9132,6 +10725,11 @@
    "from": "revision:1381322314",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381322314",
+   "verb": "follows",
+   "to": "revision:1381322223"
   },
   {
    "from": "revision:1381322314",
@@ -9142,6 +10740,11 @@
    "from": "revision:1381322791",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381322791",
+   "verb": "follows",
+   "to": "revision:1381322314"
   },
   {
    "from": "revision:1381322791",
@@ -9155,6 +10758,11 @@
   },
   {
    "from": "revision:1381322897",
+   "verb": "follows",
+   "to": "revision:1381322791"
+  },
+  {
+   "from": "revision:1381322897",
    "verb": "made_by",
    "to": "editor:padgriffin"
   },
@@ -9165,6 +10773,11 @@
   },
   {
    "from": "revision:1381322940",
+   "verb": "follows",
+   "to": "revision:1381322897"
+  },
+  {
+   "from": "revision:1381322940",
    "verb": "made_by",
    "to": "editor:4seasons4"
   },
@@ -9172,6 +10785,11 @@
    "from": "revision:1381323096",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381323096",
+   "verb": "follows",
+   "to": "revision:1381322940"
   },
   {
    "from": "revision:1381323096",
@@ -9182,6 +10800,11 @@
    "from": "revision:1381323405",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381323405",
+   "verb": "follows",
+   "to": "revision:1381323096"
   },
   {
    "from": "revision:1381323405",
@@ -9192,6 +10815,11 @@
    "from": "revision:1381323525",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381323525",
+   "verb": "follows",
+   "to": "revision:1381323405"
   },
   {
    "from": "revision:1381323525",
@@ -9205,6 +10833,11 @@
   },
   {
    "from": "revision:1381323618",
+   "verb": "follows",
+   "to": "revision:1381323525"
+  },
+  {
+   "from": "revision:1381323618",
    "verb": "made_by",
    "to": "editor:quillquasar"
   },
@@ -9212,6 +10845,11 @@
    "from": "revision:1381323745",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381323745",
+   "verb": "follows",
+   "to": "revision:1381323618"
   },
   {
    "from": "revision:1381323745",
@@ -9235,6 +10873,11 @@
   },
   {
    "from": "revision:1381323817",
+   "verb": "follows",
+   "to": "revision:1381323745"
+  },
+  {
+   "from": "revision:1381323817",
    "verb": "made_by",
    "to": "editor:4seasons4"
   },
@@ -9242,6 +10885,11 @@
    "from": "revision:1381324142",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381324142",
+   "verb": "follows",
+   "to": "revision:1381323817"
   },
   {
    "from": "revision:1381324142",
@@ -9255,6 +10903,11 @@
   },
   {
    "from": "revision:1381324192",
+   "verb": "follows",
+   "to": "revision:1381324142"
+  },
+  {
+   "from": "revision:1381324192",
    "verb": "made_by",
    "to": "editor:4seasons4"
   },
@@ -9265,6 +10918,11 @@
   },
   {
    "from": "revision:1381324352",
+   "verb": "follows",
+   "to": "revision:1381324192"
+  },
+  {
+   "from": "revision:1381324352",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -9272,6 +10930,11 @@
    "from": "revision:1381324405",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381324405",
+   "verb": "follows",
+   "to": "revision:1381324352"
   },
   {
    "from": "revision:1381324405",
@@ -9282,6 +10945,11 @@
    "from": "revision:1381324489",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381324489",
+   "verb": "follows",
+   "to": "revision:1381324405"
   },
   {
    "from": "revision:1381324489",
@@ -9292,6 +10960,11 @@
    "from": "revision:1381324575",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381324575",
+   "verb": "follows",
+   "to": "revision:1381324489"
   },
   {
    "from": "revision:1381324575",
@@ -9302,6 +10975,11 @@
    "from": "revision:1381324630",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381324630",
+   "verb": "follows",
+   "to": "revision:1381324575"
   },
   {
    "from": "revision:1381324630",
@@ -9312,6 +10990,11 @@
    "from": "revision:1381324718",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381324718",
+   "verb": "follows",
+   "to": "revision:1381324630"
   },
   {
    "from": "revision:1381324718",
@@ -9322,6 +11005,11 @@
    "from": "revision:1381324814",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381324814",
+   "verb": "follows",
+   "to": "revision:1381324718"
   },
   {
    "from": "revision:1381324814",
@@ -9332,6 +11020,11 @@
    "from": "revision:1381324950",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381324950",
+   "verb": "follows",
+   "to": "revision:1381324814"
   },
   {
    "from": "revision:1381324950",
@@ -9342,6 +11035,11 @@
    "from": "revision:1381325201",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381325201",
+   "verb": "follows",
+   "to": "revision:1381324950"
   },
   {
    "from": "revision:1381325201",
@@ -9352,6 +11050,11 @@
    "from": "revision:1381326003",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381326003",
+   "verb": "follows",
+   "to": "revision:1381325201"
   },
   {
    "from": "revision:1381326003",
@@ -9362,6 +11065,11 @@
    "from": "revision:1381326131",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381326131",
+   "verb": "follows",
+   "to": "revision:1381326003"
   },
   {
    "from": "revision:1381326131",
@@ -9375,6 +11083,11 @@
   },
   {
    "from": "revision:1381326464",
+   "verb": "follows",
+   "to": "revision:1381326131"
+  },
+  {
+   "from": "revision:1381326464",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -9385,6 +11098,11 @@
   },
   {
    "from": "revision:1381327076",
+   "verb": "follows",
+   "to": "revision:1381326464"
+  },
+  {
+   "from": "revision:1381327076",
    "verb": "made_by",
    "to": "editor:lightnightlights"
   },
@@ -9392,6 +11110,11 @@
    "from": "revision:1381327362",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381327362",
+   "verb": "follows",
+   "to": "revision:1381327076"
   },
   {
    "from": "revision:1381327362",
@@ -9402,6 +11125,11 @@
    "from": "revision:1381327424",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381327424",
+   "verb": "follows",
+   "to": "revision:1381327362"
   },
   {
    "from": "revision:1381327424",
@@ -9412,6 +11140,11 @@
    "from": "revision:1381327570",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381327570",
+   "verb": "follows",
+   "to": "revision:1381327424"
   },
   {
    "from": "revision:1381327570",
@@ -9425,6 +11158,11 @@
   },
   {
    "from": "revision:1381327742",
+   "verb": "follows",
+   "to": "revision:1381327570"
+  },
+  {
+   "from": "revision:1381327742",
    "verb": "made_by",
    "to": "editor:-2026-56305-56"
   },
@@ -9435,6 +11173,11 @@
   },
   {
    "from": "revision:1381328189",
+   "verb": "follows",
+   "to": "revision:1381327742"
+  },
+  {
+   "from": "revision:1381328189",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -9442,6 +11185,11 @@
    "from": "revision:1381328556",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381328556",
+   "verb": "follows",
+   "to": "revision:1381328189"
   },
   {
    "from": "revision:1381328556",
@@ -9455,6 +11203,11 @@
   },
   {
    "from": "revision:1381328649",
+   "verb": "follows",
+   "to": "revision:1381328556"
+  },
+  {
+   "from": "revision:1381328649",
    "verb": "made_by",
    "to": "editor:red-director"
   },
@@ -9465,6 +11218,11 @@
   },
   {
    "from": "revision:1381328816",
+   "verb": "follows",
+   "to": "revision:1381328649"
+  },
+  {
+   "from": "revision:1381328816",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -9472,6 +11230,11 @@
    "from": "revision:1381329060",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381329060",
+   "verb": "follows",
+   "to": "revision:1381328816"
   },
   {
    "from": "revision:1381329060",
@@ -9482,6 +11245,11 @@
    "from": "revision:1381329131",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381329131",
+   "verb": "follows",
+   "to": "revision:1381329060"
   },
   {
    "from": "revision:1381329131",
@@ -9495,6 +11263,11 @@
   },
   {
    "from": "revision:1381329757",
+   "verb": "follows",
+   "to": "revision:1381329131"
+  },
+  {
+   "from": "revision:1381329757",
    "verb": "made_by",
    "to": "editor:-2026-56411-51"
   },
@@ -9505,6 +11278,11 @@
   },
   {
    "from": "revision:1381329818",
+   "verb": "follows",
+   "to": "revision:1381329757"
+  },
+  {
+   "from": "revision:1381329818",
    "verb": "made_by",
    "to": "editor:rtrb"
   },
@@ -9512,6 +11290,11 @@
    "from": "revision:1381330968",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381330968",
+   "verb": "follows",
+   "to": "revision:1381329818"
   },
   {
    "from": "revision:1381330968",
@@ -9522,6 +11305,11 @@
    "from": "revision:1381332151",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381332151",
+   "verb": "follows",
+   "to": "revision:1381330968"
   },
   {
    "from": "revision:1381332151",
@@ -9540,6 +11328,11 @@
   },
   {
    "from": "revision:1381333092",
+   "verb": "follows",
+   "to": "revision:1381332151"
+  },
+  {
+   "from": "revision:1381333092",
    "verb": "made_by",
    "to": "editor:xthebedrockx"
   },
@@ -9550,6 +11343,11 @@
   },
   {
    "from": "revision:1381333332",
+   "verb": "follows",
+   "to": "revision:1381333092"
+  },
+  {
+   "from": "revision:1381333332",
    "verb": "made_by",
    "to": "editor:lightnightlights"
   },
@@ -9557,6 +11355,11 @@
    "from": "revision:1381334376",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381334376",
+   "verb": "follows",
+   "to": "revision:1381333332"
   },
   {
    "from": "revision:1381334376",
@@ -9570,6 +11373,11 @@
   },
   {
    "from": "revision:1381335344",
+   "verb": "follows",
+   "to": "revision:1381334376"
+  },
+  {
+   "from": "revision:1381335344",
    "verb": "made_by",
    "to": "editor:rtrb"
   },
@@ -9577,6 +11385,11 @@
    "from": "revision:1381335707",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381335707",
+   "verb": "follows",
+   "to": "revision:1381335344"
   },
   {
    "from": "revision:1381335707",
@@ -9590,6 +11403,11 @@
   },
   {
    "from": "revision:1381336267",
+   "verb": "follows",
+   "to": "revision:1381335707"
+  },
+  {
+   "from": "revision:1381336267",
    "verb": "made_by",
    "to": "editor:lightnightlights"
   },
@@ -9597,6 +11415,11 @@
    "from": "revision:1381336680",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381336680",
+   "verb": "follows",
+   "to": "revision:1381336267"
   },
   {
    "from": "revision:1381336680",
@@ -9610,6 +11433,11 @@
   },
   {
    "from": "revision:1381339224",
+   "verb": "follows",
+   "to": "revision:1381336680"
+  },
+  {
+   "from": "revision:1381339224",
    "verb": "made_by",
    "to": "editor:anonymous"
   },
@@ -9620,6 +11448,11 @@
   },
   {
    "from": "revision:1381341598",
+   "verb": "follows",
+   "to": "revision:1381339224"
+  },
+  {
+   "from": "revision:1381341598",
    "verb": "made_by",
    "to": "editor:novixoxoxo"
   },
@@ -9627,6 +11460,11 @@
    "from": "revision:1381341872",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381341872",
+   "verb": "follows",
+   "to": "revision:1381341598"
   },
   {
    "from": "revision:1381341872",
@@ -9645,6 +11483,11 @@
   },
   {
    "from": "revision:1381345386",
+   "verb": "follows",
+   "to": "revision:1381341872"
+  },
+  {
+   "from": "revision:1381345386",
    "verb": "made_by",
    "to": "editor:agnuse13"
   },
@@ -9652,6 +11495,11 @@
    "from": "revision:1381345589",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381345589",
+   "verb": "follows",
+   "to": "revision:1381345386"
   },
   {
    "from": "revision:1381345589",
@@ -9662,6 +11510,11 @@
    "from": "revision:1381345799",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381345799",
+   "verb": "follows",
+   "to": "revision:1381345589"
   },
   {
    "from": "revision:1381345799",
@@ -9672,6 +11525,11 @@
    "from": "revision:1381349482",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381349482",
+   "verb": "follows",
+   "to": "revision:1381345799"
   },
   {
    "from": "revision:1381349482",
@@ -9685,6 +11543,11 @@
   },
   {
    "from": "revision:1381349514",
+   "verb": "follows",
+   "to": "revision:1381349482"
+  },
+  {
+   "from": "revision:1381349514",
    "verb": "made_by",
    "to": "editor:-2026-56491-19"
   },
@@ -9695,6 +11558,11 @@
   },
   {
    "from": "revision:1381350560",
+   "verb": "follows",
+   "to": "revision:1381349514"
+  },
+  {
+   "from": "revision:1381350560",
    "verb": "made_by",
    "to": "editor:2kbfloppadisk"
   },
@@ -9702,6 +11570,11 @@
    "from": "revision:1381350745",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381350745",
+   "verb": "follows",
+   "to": "revision:1381350560"
   },
   {
    "from": "revision:1381350745",
@@ -9712,6 +11585,11 @@
    "from": "revision:1381351046",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381351046",
+   "verb": "follows",
+   "to": "revision:1381350745"
   },
   {
    "from": "revision:1381351046",
@@ -9725,6 +11603,11 @@
   },
   {
    "from": "revision:1381352844",
+   "verb": "follows",
+   "to": "revision:1381351046"
+  },
+  {
+   "from": "revision:1381352844",
    "verb": "made_by",
    "to": "editor:suntooooth"
   },
@@ -9732,6 +11615,11 @@
    "from": "revision:1381353142",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381353142",
+   "verb": "follows",
+   "to": "revision:1381352844"
   },
   {
    "from": "revision:1381353142",
@@ -9745,6 +11633,11 @@
   },
   {
    "from": "revision:1381355592",
+   "verb": "follows",
+   "to": "revision:1381353142"
+  },
+  {
+   "from": "revision:1381355592",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -9752,6 +11645,11 @@
    "from": "revision:1381355647",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381355647",
+   "verb": "follows",
+   "to": "revision:1381355592"
   },
   {
    "from": "revision:1381355647",
@@ -9762,6 +11660,11 @@
    "from": "revision:1381356054",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381356054",
+   "verb": "follows",
+   "to": "revision:1381355647"
   },
   {
    "from": "revision:1381356054",
@@ -9772,6 +11675,11 @@
    "from": "revision:1381357570",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381357570",
+   "verb": "follows",
+   "to": "revision:1381356054"
   },
   {
    "from": "revision:1381357570",
@@ -9785,6 +11693,11 @@
   },
   {
    "from": "revision:1381358190",
+   "verb": "follows",
+   "to": "revision:1381357570"
+  },
+  {
+   "from": "revision:1381358190",
    "verb": "made_by",
    "to": "editor:padgriffin"
   },
@@ -9792,6 +11705,11 @@
    "from": "revision:1381360441",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381360441",
+   "verb": "follows",
+   "to": "revision:1381358190"
   },
   {
    "from": "revision:1381360441",
@@ -9805,6 +11723,11 @@
   },
   {
    "from": "revision:1381362443",
+   "verb": "follows",
+   "to": "revision:1381360441"
+  },
+  {
+   "from": "revision:1381362443",
    "verb": "made_by",
    "to": "editor:-2026-56182-50"
   },
@@ -9812,6 +11735,11 @@
    "from": "revision:1381363814",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381363814",
+   "verb": "follows",
+   "to": "revision:1381362443"
   },
   {
    "from": "revision:1381363814",
@@ -9825,6 +11753,11 @@
   },
   {
    "from": "revision:1381365518",
+   "verb": "follows",
+   "to": "revision:1381363814"
+  },
+  {
+   "from": "revision:1381365518",
    "verb": "made_by",
    "to": "editor:novem-linguae"
   },
@@ -9832,6 +11765,11 @@
    "from": "revision:1381365622",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381365622",
+   "verb": "follows",
+   "to": "revision:1381365518"
   },
   {
    "from": "revision:1381365622",
@@ -9842,6 +11780,11 @@
    "from": "revision:1381365741",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381365741",
+   "verb": "follows",
+   "to": "revision:1381365622"
   },
   {
    "from": "revision:1381365741",
@@ -9852,6 +11795,11 @@
    "from": "revision:1381366096",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381366096",
+   "verb": "follows",
+   "to": "revision:1381365741"
   },
   {
    "from": "revision:1381366096",
@@ -9865,6 +11813,11 @@
   },
   {
    "from": "revision:1381366640",
+   "verb": "follows",
+   "to": "revision:1381366096"
+  },
+  {
+   "from": "revision:1381366640",
    "verb": "made_by",
    "to": "editor:-2026-55697-37"
   },
@@ -9872,6 +11825,11 @@
    "from": "revision:1381366788",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381366788",
+   "verb": "follows",
+   "to": "revision:1381366640"
   },
   {
    "from": "revision:1381366788",
@@ -9882,6 +11840,11 @@
    "from": "revision:1381366865",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381366865",
+   "verb": "follows",
+   "to": "revision:1381366788"
   },
   {
    "from": "revision:1381366865",
@@ -9892,6 +11855,11 @@
    "from": "revision:1381370630",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381370630",
+   "verb": "follows",
+   "to": "revision:1381366865"
   },
   {
    "from": "revision:1381370630",
@@ -9905,6 +11873,11 @@
   },
   {
    "from": "revision:1381372239",
+   "verb": "follows",
+   "to": "revision:1381370630"
+  },
+  {
+   "from": "revision:1381372239",
    "verb": "made_by",
    "to": "editor:dare2leap"
   },
@@ -9912,6 +11885,11 @@
    "from": "revision:1381372312",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381372312",
+   "verb": "follows",
+   "to": "revision:1381372239"
   },
   {
    "from": "revision:1381372312",
@@ -9922,6 +11900,11 @@
    "from": "revision:1381372553",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381372553",
+   "verb": "follows",
+   "to": "revision:1381372312"
   },
   {
    "from": "revision:1381372553",
@@ -9932,6 +11915,11 @@
    "from": "revision:1381373014",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381373014",
+   "verb": "follows",
+   "to": "revision:1381372553"
   },
   {
    "from": "revision:1381373014",
@@ -9942,6 +11930,11 @@
    "from": "revision:1381373447",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381373447",
+   "verb": "follows",
+   "to": "revision:1381373014"
   },
   {
    "from": "revision:1381373447",
@@ -9960,6 +11953,11 @@
   },
   {
    "from": "revision:1381373608",
+   "verb": "follows",
+   "to": "revision:1381373447"
+  },
+  {
+   "from": "revision:1381373608",
    "verb": "made_by",
    "to": "editor:panamitsu"
   },
@@ -9967,6 +11965,11 @@
    "from": "revision:1381373664",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381373664",
+   "verb": "follows",
+   "to": "revision:1381373608"
   },
   {
    "from": "revision:1381373664",
@@ -9977,6 +11980,11 @@
    "from": "revision:1381374305",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381374305",
+   "verb": "follows",
+   "to": "revision:1381373664"
   },
   {
    "from": "revision:1381374305",
@@ -9990,6 +11998,11 @@
   },
   {
    "from": "revision:1381374502",
+   "verb": "follows",
+   "to": "revision:1381374305"
+  },
+  {
+   "from": "revision:1381374502",
    "verb": "made_by",
    "to": "editor:fgnievinski"
   },
@@ -10000,6 +12013,11 @@
   },
   {
    "from": "revision:1381374611",
+   "verb": "follows",
+   "to": "revision:1381374502"
+  },
+  {
+   "from": "revision:1381374611",
    "verb": "made_by",
    "to": "editor:dare2leap"
   },
@@ -10007,6 +12025,11 @@
    "from": "revision:1381374701",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381374701",
+   "verb": "follows",
+   "to": "revision:1381374611"
   },
   {
    "from": "revision:1381374701",
@@ -10017,6 +12040,11 @@
    "from": "revision:1381374768",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381374768",
+   "verb": "follows",
+   "to": "revision:1381374701"
   },
   {
    "from": "revision:1381374768",
@@ -10027,6 +12055,11 @@
    "from": "revision:1381377403",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381377403",
+   "verb": "follows",
+   "to": "revision:1381374768"
   },
   {
    "from": "revision:1381377403",
@@ -10037,6 +12070,11 @@
    "from": "revision:1381377645",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381377645",
+   "verb": "follows",
+   "to": "revision:1381377403"
   },
   {
    "from": "revision:1381377645",
@@ -10047,6 +12085,11 @@
    "from": "revision:1381379959",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381379959",
+   "verb": "follows",
+   "to": "revision:1381377645"
   },
   {
    "from": "revision:1381379959",
@@ -10060,6 +12103,11 @@
   },
   {
    "from": "revision:1381380539",
+   "verb": "follows",
+   "to": "revision:1381379959"
+  },
+  {
+   "from": "revision:1381380539",
    "verb": "made_by",
    "to": "editor:thuyhung2112"
   },
@@ -10070,6 +12118,11 @@
   },
   {
    "from": "revision:1381382194",
+   "verb": "follows",
+   "to": "revision:1381380539"
+  },
+  {
+   "from": "revision:1381382194",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -10077,6 +12130,11 @@
    "from": "revision:1381382832",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381382832",
+   "verb": "follows",
+   "to": "revision:1381382194"
   },
   {
    "from": "revision:1381382832",
@@ -10090,6 +12148,11 @@
   },
   {
    "from": "revision:1381383205",
+   "verb": "follows",
+   "to": "revision:1381382832"
+  },
+  {
+   "from": "revision:1381383205",
    "verb": "made_by",
    "to": "editor:ca"
   },
@@ -10097,6 +12160,11 @@
    "from": "revision:1381383235",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381383235",
+   "verb": "follows",
+   "to": "revision:1381383205"
   },
   {
    "from": "revision:1381383235",
@@ -10110,6 +12178,11 @@
   },
   {
    "from": "revision:1381383524",
+   "verb": "follows",
+   "to": "revision:1381383235"
+  },
+  {
+   "from": "revision:1381383524",
    "verb": "made_by",
    "to": "editor:-2026-56527-79"
   },
@@ -10120,6 +12193,11 @@
   },
   {
    "from": "revision:1381386121",
+   "verb": "follows",
+   "to": "revision:1381383524"
+  },
+  {
+   "from": "revision:1381386121",
    "verb": "made_by",
    "to": "editor:kencf0618"
   },
@@ -10127,6 +12205,11 @@
    "from": "revision:1381386217",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381386217",
+   "verb": "follows",
+   "to": "revision:1381386121"
   },
   {
    "from": "revision:1381386217",
@@ -10137,6 +12220,11 @@
    "from": "revision:1381392909",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381392909",
+   "verb": "follows",
+   "to": "revision:1381386217"
   },
   {
    "from": "revision:1381392909",
@@ -10155,6 +12243,11 @@
   },
   {
    "from": "revision:1381393963",
+   "verb": "follows",
+   "to": "revision:1381392909"
+  },
+  {
+   "from": "revision:1381393963",
    "verb": "made_by",
    "to": "editor:merlin04"
   },
@@ -10170,6 +12263,11 @@
   },
   {
    "from": "revision:1381395156",
+   "verb": "follows",
+   "to": "revision:1381393963"
+  },
+  {
+   "from": "revision:1381395156",
    "verb": "made_by",
    "to": "editor:takahashi-shuuji"
   },
@@ -10177,6 +12275,11 @@
    "from": "revision:1381395435",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381395435",
+   "verb": "follows",
+   "to": "revision:1381395156"
   },
   {
    "from": "revision:1381395435",
@@ -10195,6 +12298,11 @@
   },
   {
    "from": "revision:1381395746",
+   "verb": "follows",
+   "to": "revision:1381395435"
+  },
+  {
+   "from": "revision:1381395746",
    "verb": "made_by",
    "to": "editor:merlin04"
   },
@@ -10205,6 +12313,11 @@
   },
   {
    "from": "revision:1381396044",
+   "verb": "follows",
+   "to": "revision:1381395746"
+  },
+  {
+   "from": "revision:1381396044",
    "verb": "made_by",
    "to": "editor:takahashi-shuuji"
   },
@@ -10212,6 +12325,11 @@
    "from": "revision:1381396430",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381396430",
+   "verb": "follows",
+   "to": "revision:1381396044"
   },
   {
    "from": "revision:1381396430",
@@ -10222,6 +12340,11 @@
    "from": "revision:1381398273",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381398273",
+   "verb": "follows",
+   "to": "revision:1381396430"
   },
   {
    "from": "revision:1381398273",
@@ -10235,6 +12358,11 @@
   },
   {
    "from": "revision:1381399593",
+   "verb": "follows",
+   "to": "revision:1381398273"
+  },
+  {
+   "from": "revision:1381399593",
    "verb": "made_by",
    "to": "editor:yedaman54"
   },
@@ -10245,6 +12373,11 @@
   },
   {
    "from": "revision:1381404412",
+   "verb": "follows",
+   "to": "revision:1381399593"
+  },
+  {
+   "from": "revision:1381404412",
    "verb": "made_by",
    "to": "editor:-2026-56496-69"
   },
@@ -10252,6 +12385,11 @@
    "from": "revision:1381404489",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381404489",
+   "verb": "follows",
+   "to": "revision:1381404412"
   },
   {
    "from": "revision:1381404489",
@@ -10262,6 +12400,11 @@
    "from": "revision:1381405483",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381405483",
+   "verb": "follows",
+   "to": "revision:1381404489"
   },
   {
    "from": "revision:1381405483",
@@ -10275,6 +12418,11 @@
   },
   {
    "from": "revision:1381405699",
+   "verb": "follows",
+   "to": "revision:1381405483"
+  },
+  {
+   "from": "revision:1381405699",
    "verb": "made_by",
    "to": "editor:novem-linguae"
   },
@@ -10282,6 +12430,11 @@
    "from": "revision:1381405720",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381405720",
+   "verb": "follows",
+   "to": "revision:1381405699"
   },
   {
    "from": "revision:1381405720",
@@ -10292,6 +12445,11 @@
    "from": "revision:1381405838",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381405838",
+   "verb": "follows",
+   "to": "revision:1381405720"
   },
   {
    "from": "revision:1381405838",
@@ -10302,6 +12460,11 @@
    "from": "revision:1381405948",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381405948",
+   "verb": "follows",
+   "to": "revision:1381405838"
   },
   {
    "from": "revision:1381405948",
@@ -10312,6 +12475,11 @@
    "from": "revision:1381406340",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381406340",
+   "verb": "follows",
+   "to": "revision:1381405948"
   },
   {
    "from": "revision:1381406340",
@@ -10322,6 +12490,11 @@
    "from": "revision:1381406822",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381406822",
+   "verb": "follows",
+   "to": "revision:1381406340"
   },
   {
    "from": "revision:1381406822",
@@ -10332,6 +12505,11 @@
    "from": "revision:1381407772",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381407772",
+   "verb": "follows",
+   "to": "revision:1381406822"
   },
   {
    "from": "revision:1381407772",
@@ -10342,6 +12520,11 @@
    "from": "revision:1381408312",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381408312",
+   "verb": "follows",
+   "to": "revision:1381407772"
   },
   {
    "from": "revision:1381408312",
@@ -10352,6 +12535,11 @@
    "from": "revision:1381408747",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381408747",
+   "verb": "follows",
+   "to": "revision:1381408312"
   },
   {
    "from": "revision:1381408747",
@@ -10370,6 +12558,11 @@
   },
   {
    "from": "revision:1381410536",
+   "verb": "follows",
+   "to": "revision:1381408747"
+  },
+  {
+   "from": "revision:1381410536",
    "verb": "made_by",
    "to": "editor:-2026-56733-82"
   },
@@ -10380,6 +12573,11 @@
   },
   {
    "from": "revision:1381411044",
+   "verb": "follows",
+   "to": "revision:1381410536"
+  },
+  {
+   "from": "revision:1381411044",
    "verb": "made_by",
    "to": "editor:-2026-56496-69"
   },
@@ -10387,6 +12585,11 @@
    "from": "revision:1381411080",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381411080",
+   "verb": "follows",
+   "to": "revision:1381411044"
   },
   {
    "from": "revision:1381411080",
@@ -10397,6 +12600,11 @@
    "from": "revision:1381411188",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381411188",
+   "verb": "follows",
+   "to": "revision:1381411080"
   },
   {
    "from": "revision:1381411188",
@@ -10407,6 +12615,11 @@
    "from": "revision:1381411478",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381411478",
+   "verb": "follows",
+   "to": "revision:1381411188"
   },
   {
    "from": "revision:1381411478",
@@ -10417,6 +12630,11 @@
    "from": "revision:1381412322",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381412322",
+   "verb": "follows",
+   "to": "revision:1381411478"
   },
   {
    "from": "revision:1381412322",
@@ -10430,6 +12648,11 @@
   },
   {
    "from": "revision:1381416149",
+   "verb": "follows",
+   "to": "revision:1381412322"
+  },
+  {
+   "from": "revision:1381416149",
    "verb": "made_by",
    "to": "editor:osarius"
   },
@@ -10437,6 +12660,11 @@
    "from": "revision:1381416503",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381416503",
+   "verb": "follows",
+   "to": "revision:1381416149"
   },
   {
    "from": "revision:1381416503",
@@ -10455,6 +12683,11 @@
   },
   {
    "from": "revision:1381418648",
+   "verb": "follows",
+   "to": "revision:1381416503"
+  },
+  {
+   "from": "revision:1381418648",
    "verb": "made_by",
    "to": "editor:-2026-56578-19"
   },
@@ -10462,6 +12695,11 @@
    "from": "revision:1381419678",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381419678",
+   "verb": "follows",
+   "to": "revision:1381418648"
   },
   {
    "from": "revision:1381419678",
@@ -10475,6 +12713,11 @@
   },
   {
    "from": "revision:1381422928",
+   "verb": "follows",
+   "to": "revision:1381419678"
+  },
+  {
+   "from": "revision:1381422928",
    "verb": "made_by",
    "to": "editor:awtistik-dev"
   },
@@ -10485,6 +12728,11 @@
   },
   {
    "from": "revision:1381423798",
+   "verb": "follows",
+   "to": "revision:1381422928"
+  },
+  {
+   "from": "revision:1381423798",
    "verb": "made_by",
    "to": "editor:rich-smith"
   },
@@ -10492,6 +12740,11 @@
    "from": "revision:1381423898",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381423898",
+   "verb": "follows",
+   "to": "revision:1381423798"
   },
   {
    "from": "revision:1381423898",
@@ -10505,6 +12758,11 @@
   },
   {
    "from": "revision:1381423966",
+   "verb": "follows",
+   "to": "revision:1381423898"
+  },
+  {
+   "from": "revision:1381423966",
    "verb": "made_by",
    "to": "editor:rich-smith"
   },
@@ -10512,6 +12770,11 @@
    "from": "revision:1381424661",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381424661",
+   "verb": "follows",
+   "to": "revision:1381423966"
   },
   {
    "from": "revision:1381424661",
@@ -10525,6 +12788,11 @@
   },
   {
    "from": "revision:1381425069",
+   "verb": "follows",
+   "to": "revision:1381424661"
+  },
+  {
+   "from": "revision:1381425069",
    "verb": "made_by",
    "to": "editor:soyuneditorrandom"
   },
@@ -10532,6 +12800,11 @@
    "from": "revision:1381425182",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381425182",
+   "verb": "follows",
+   "to": "revision:1381425069"
   },
   {
    "from": "revision:1381425182",
@@ -10545,6 +12818,11 @@
   },
   {
    "from": "revision:1381425279",
+   "verb": "follows",
+   "to": "revision:1381425182"
+  },
+  {
+   "from": "revision:1381425279",
    "verb": "made_by",
    "to": "editor:-2026-56473-52"
   },
@@ -10552,6 +12830,11 @@
    "from": "revision:1381425418",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381425418",
+   "verb": "follows",
+   "to": "revision:1381425279"
   },
   {
    "from": "revision:1381425418",
@@ -10565,6 +12848,11 @@
   },
   {
    "from": "revision:1381428563",
+   "verb": "follows",
+   "to": "revision:1381425418"
+  },
+  {
+   "from": "revision:1381428563",
    "verb": "made_by",
    "to": "editor:bwdraco"
   },
@@ -10572,6 +12860,11 @@
    "from": "revision:1381434671",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381434671",
+   "verb": "follows",
+   "to": "revision:1381428563"
   },
   {
    "from": "revision:1381434671",
@@ -10585,6 +12878,11 @@
   },
   {
    "from": "revision:1381436390",
+   "verb": "follows",
+   "to": "revision:1381434671"
+  },
+  {
+   "from": "revision:1381436390",
    "verb": "made_by",
    "to": "editor:-2026-56519-53"
   },
@@ -10592,6 +12890,11 @@
    "from": "revision:1381442685",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381442685",
+   "verb": "follows",
+   "to": "revision:1381436390"
   },
   {
    "from": "revision:1381442685",
@@ -10605,6 +12908,11 @@
   },
   {
    "from": "revision:1381443004",
+   "verb": "follows",
+   "to": "revision:1381442685"
+  },
+  {
+   "from": "revision:1381443004",
    "verb": "made_by",
    "to": "editor:marnanel"
   },
@@ -10612,6 +12920,11 @@
    "from": "revision:1381444806",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381444806",
+   "verb": "follows",
+   "to": "revision:1381443004"
   },
   {
    "from": "revision:1381444806",
@@ -10625,6 +12938,11 @@
   },
   {
    "from": "revision:1381448109",
+   "verb": "follows",
+   "to": "revision:1381444806"
+  },
+  {
+   "from": "revision:1381448109",
    "verb": "made_by",
    "to": "editor:phoenix"
   },
@@ -10635,6 +12953,11 @@
   },
   {
    "from": "revision:1381451162",
+   "verb": "follows",
+   "to": "revision:1381448109"
+  },
+  {
+   "from": "revision:1381451162",
    "verb": "made_by",
    "to": "editor:maxeto0910"
   },
@@ -10642,6 +12965,11 @@
    "from": "revision:1381451195",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381451195",
+   "verb": "follows",
+   "to": "revision:1381451162"
   },
   {
    "from": "revision:1381451195",
@@ -10652,6 +12980,11 @@
    "from": "revision:1381452853",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381452853",
+   "verb": "follows",
+   "to": "revision:1381451195"
   },
   {
    "from": "revision:1381452853",
@@ -10662,6 +12995,11 @@
    "from": "revision:1381456008",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381456008",
+   "verb": "follows",
+   "to": "revision:1381452853"
   },
   {
    "from": "revision:1381456008",
@@ -10680,6 +13018,11 @@
   },
   {
    "from": "revision:1381456188",
+   "verb": "follows",
+   "to": "revision:1381456008"
+  },
+  {
+   "from": "revision:1381456188",
    "verb": "made_by",
    "to": "editor:saratoga18"
   },
@@ -10687,6 +13030,11 @@
    "from": "revision:1381460968",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381460968",
+   "verb": "follows",
+   "to": "revision:1381456188"
   },
   {
    "from": "revision:1381460968",
@@ -10700,6 +13048,11 @@
   },
   {
    "from": "revision:1381465359",
+   "verb": "follows",
+   "to": "revision:1381460968"
+  },
+  {
+   "from": "revision:1381465359",
    "verb": "made_by",
    "to": "editor:ahecht"
   },
@@ -10707,6 +13060,11 @@
    "from": "revision:1381465581",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381465581",
+   "verb": "follows",
+   "to": "revision:1381465359"
   },
   {
    "from": "revision:1381465581",
@@ -10717,6 +13075,11 @@
    "from": "revision:1381466742",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381466742",
+   "verb": "follows",
+   "to": "revision:1381465581"
   },
   {
    "from": "revision:1381466742",
@@ -10727,6 +13090,11 @@
    "from": "revision:1381468754",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381468754",
+   "verb": "follows",
+   "to": "revision:1381466742"
   },
   {
    "from": "revision:1381468754",
@@ -10737,6 +13105,11 @@
    "from": "revision:1381481327",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381481327",
+   "verb": "follows",
+   "to": "revision:1381468754"
   },
   {
    "from": "revision:1381481327",
@@ -10755,6 +13128,11 @@
   },
   {
    "from": "revision:1381481484",
+   "verb": "follows",
+   "to": "revision:1381481327"
+  },
+  {
+   "from": "revision:1381481484",
    "verb": "made_by",
    "to": "editor:grimes2"
   },
@@ -10762,6 +13140,11 @@
    "from": "revision:1381481654",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381481654",
+   "verb": "follows",
+   "to": "revision:1381481484"
   },
   {
    "from": "revision:1381481654",
@@ -10775,6 +13158,11 @@
   },
   {
    "from": "revision:1381492949",
+   "verb": "follows",
+   "to": "revision:1381481654"
+  },
+  {
+   "from": "revision:1381492949",
    "verb": "made_by",
    "to": "editor:paprikaiser"
   },
@@ -10782,6 +13170,11 @@
    "from": "revision:1381495542",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381495542",
+   "verb": "follows",
+   "to": "revision:1381492949"
   },
   {
    "from": "revision:1381495542",
@@ -10795,6 +13188,11 @@
   },
   {
    "from": "revision:1381497316",
+   "verb": "follows",
+   "to": "revision:1381495542"
+  },
+  {
+   "from": "revision:1381497316",
    "verb": "made_by",
    "to": "editor:-2026-56634-11"
   },
@@ -10802,6 +13200,11 @@
    "from": "revision:1381504353",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381504353",
+   "verb": "follows",
+   "to": "revision:1381497316"
   },
   {
    "from": "revision:1381504353",
@@ -10815,6 +13218,11 @@
   },
   {
    "from": "revision:1381506083",
+   "verb": "follows",
+   "to": "revision:1381504353"
+  },
+  {
+   "from": "revision:1381506083",
    "verb": "made_by",
    "to": "editor:astrohare"
   },
@@ -10825,6 +13233,11 @@
   },
   {
    "from": "revision:1381511845",
+   "verb": "follows",
+   "to": "revision:1381506083"
+  },
+  {
+   "from": "revision:1381511845",
    "verb": "made_by",
    "to": "editor:darth-stabro"
   },
@@ -10832,6 +13245,11 @@
    "from": "revision:1381511875",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381511875",
+   "verb": "follows",
+   "to": "revision:1381511845"
   },
   {
    "from": "revision:1381511875",
@@ -10842,6 +13260,11 @@
    "from": "revision:1381515338",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381515338",
+   "verb": "follows",
+   "to": "revision:1381511875"
   },
   {
    "from": "revision:1381515338",
@@ -10855,6 +13278,11 @@
   },
   {
    "from": "revision:1381516246",
+   "verb": "follows",
+   "to": "revision:1381515338"
+  },
+  {
+   "from": "revision:1381516246",
    "verb": "made_by",
    "to": "editor:2k7x"
   },
@@ -10862,6 +13290,11 @@
    "from": "revision:1381525171",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381525171",
+   "verb": "follows",
+   "to": "revision:1381516246"
   },
   {
    "from": "revision:1381525171",
@@ -10875,6 +13308,11 @@
   },
   {
    "from": "revision:1381527217",
+   "verb": "follows",
+   "to": "revision:1381525171"
+  },
+  {
+   "from": "revision:1381527217",
    "verb": "made_by",
    "to": "editor:johnson524"
   },
@@ -10882,6 +13320,11 @@
    "from": "revision:1381528156",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381528156",
+   "verb": "follows",
+   "to": "revision:1381527217"
   },
   {
    "from": "revision:1381528156",
@@ -10895,6 +13338,11 @@
   },
   {
    "from": "revision:1381532785",
+   "verb": "follows",
+   "to": "revision:1381528156"
+  },
+  {
+   "from": "revision:1381532785",
    "verb": "made_by",
    "to": "editor:zkang123"
   },
@@ -10902,6 +13350,11 @@
    "from": "revision:1381532890",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381532890",
+   "verb": "follows",
+   "to": "revision:1381532785"
   },
   {
    "from": "revision:1381532890",
@@ -10912,6 +13365,11 @@
    "from": "revision:1381533174",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381533174",
+   "verb": "follows",
+   "to": "revision:1381532890"
   },
   {
    "from": "revision:1381533174",
@@ -10922,6 +13380,11 @@
    "from": "revision:1381533295",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381533295",
+   "verb": "follows",
+   "to": "revision:1381533174"
   },
   {
    "from": "revision:1381533295",
@@ -10932,6 +13395,11 @@
    "from": "revision:1381533606",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381533606",
+   "verb": "follows",
+   "to": "revision:1381533295"
   },
   {
    "from": "revision:1381533606",
@@ -10950,6 +13418,11 @@
   },
   {
    "from": "revision:1381538006",
+   "verb": "follows",
+   "to": "revision:1381533606"
+  },
+  {
+   "from": "revision:1381538006",
    "verb": "made_by",
    "to": "editor:drwiki1102"
   },
@@ -10957,6 +13430,11 @@
    "from": "revision:1381541371",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381541371",
+   "verb": "follows",
+   "to": "revision:1381538006"
   },
   {
    "from": "revision:1381541371",
@@ -10975,6 +13453,11 @@
   },
   {
    "from": "revision:1381542317",
+   "verb": "follows",
+   "to": "revision:1381541371"
+  },
+  {
+   "from": "revision:1381542317",
    "verb": "made_by",
    "to": "editor:milk-n-thyme"
   },
@@ -10982,6 +13465,11 @@
    "from": "revision:1381545879",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381545879",
+   "verb": "follows",
+   "to": "revision:1381542317"
   },
   {
    "from": "revision:1381545879",
@@ -11005,6 +13493,11 @@
   },
   {
    "from": "revision:1381545950",
+   "verb": "follows",
+   "to": "revision:1381545879"
+  },
+  {
+   "from": "revision:1381545950",
    "verb": "made_by",
    "to": "editor:daddynnoob"
   },
@@ -11020,6 +13513,11 @@
   },
   {
    "from": "revision:1381546391",
+   "verb": "follows",
+   "to": "revision:1381545950"
+  },
+  {
+   "from": "revision:1381546391",
    "verb": "made_by",
    "to": "editor:-2026-56643-37"
   },
@@ -11027,6 +13525,11 @@
    "from": "revision:1381548266",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381548266",
+   "verb": "follows",
+   "to": "revision:1381546391"
   },
   {
    "from": "revision:1381548266",
@@ -11040,6 +13543,11 @@
   },
   {
    "from": "revision:1381548756",
+   "verb": "follows",
+   "to": "revision:1381548266"
+  },
+  {
+   "from": "revision:1381548756",
    "verb": "made_by",
    "to": "editor:-2026-56562-46"
   },
@@ -11047,6 +13555,11 @@
    "from": "revision:1381550617",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381550617",
+   "verb": "follows",
+   "to": "revision:1381548756"
   },
   {
    "from": "revision:1381550617",
@@ -11060,6 +13573,11 @@
   },
   {
    "from": "revision:1381555083",
+   "verb": "follows",
+   "to": "revision:1381550617"
+  },
+  {
+   "from": "revision:1381555083",
    "verb": "made_by",
    "to": "editor:jcuhfehl"
   },
@@ -11067,6 +13585,11 @@
    "from": "revision:1381555646",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381555646",
+   "verb": "follows",
+   "to": "revision:1381555083"
   },
   {
    "from": "revision:1381555646",
@@ -11077,6 +13600,11 @@
    "from": "revision:1381559179",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381559179",
+   "verb": "follows",
+   "to": "revision:1381555646"
   },
   {
    "from": "revision:1381559179",
@@ -11087,6 +13615,11 @@
    "from": "revision:1381559210",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381559210",
+   "verb": "follows",
+   "to": "revision:1381559179"
   },
   {
    "from": "revision:1381559210",
@@ -11105,6 +13638,11 @@
   },
   {
    "from": "revision:1381559355",
+   "verb": "follows",
+   "to": "revision:1381559210"
+  },
+  {
+   "from": "revision:1381559355",
    "verb": "made_by",
    "to": "editor:salmon-of-ignorance"
   },
@@ -11112,6 +13650,11 @@
    "from": "revision:1381561428",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381561428",
+   "verb": "follows",
+   "to": "revision:1381559355"
   },
   {
    "from": "revision:1381561428",
@@ -11125,6 +13668,11 @@
   },
   {
    "from": "revision:1381561927",
+   "verb": "follows",
+   "to": "revision:1381561428"
+  },
+  {
+   "from": "revision:1381561927",
    "verb": "made_by",
    "to": "editor:guninvalid"
   },
@@ -11135,6 +13683,11 @@
   },
   {
    "from": "revision:1381563236",
+   "verb": "follows",
+   "to": "revision:1381561927"
+  },
+  {
+   "from": "revision:1381563236",
    "verb": "made_by",
    "to": "editor:brandmeister"
   },
@@ -11142,6 +13695,11 @@
    "from": "revision:1381565429",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381565429",
+   "verb": "follows",
+   "to": "revision:1381563236"
   },
   {
    "from": "revision:1381565429",
@@ -11155,6 +13713,11 @@
   },
   {
    "from": "revision:1381566318",
+   "verb": "follows",
+   "to": "revision:1381565429"
+  },
+  {
+   "from": "revision:1381566318",
    "verb": "made_by",
    "to": "editor:brandmeister"
   },
@@ -11162,6 +13725,11 @@
    "from": "revision:1381578822",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381578822",
+   "verb": "follows",
+   "to": "revision:1381566318"
   },
   {
    "from": "revision:1381578822",
@@ -11185,6 +13753,11 @@
   },
   {
    "from": "revision:1381581724",
+   "verb": "follows",
+   "to": "revision:1381578822"
+  },
+  {
+   "from": "revision:1381581724",
    "verb": "made_by",
    "to": "editor:masem"
   },
@@ -11197,6 +13770,11 @@
    "from": "revision:1381582025",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381582025",
+   "verb": "follows",
+   "to": "revision:1381581724"
   },
   {
    "from": "revision:1381582025",
@@ -11215,6 +13793,11 @@
   },
   {
    "from": "revision:1381584096",
+   "verb": "follows",
+   "to": "revision:1381582025"
+  },
+  {
+   "from": "revision:1381584096",
    "verb": "made_by",
    "to": "editor:thatsmemira"
   },
@@ -11227,6 +13810,11 @@
    "from": "revision:1381586083",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381586083",
+   "verb": "follows",
+   "to": "revision:1381584096"
   },
   {
    "from": "revision:1381586083",
@@ -11245,6 +13833,11 @@
   },
   {
    "from": "revision:1381588403",
+   "verb": "follows",
+   "to": "revision:1381586083"
+  },
+  {
+   "from": "revision:1381588403",
    "verb": "made_by",
    "to": "editor:-2026-56713-33"
   },
@@ -11252,6 +13845,11 @@
    "from": "revision:1381588450",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381588450",
+   "verb": "follows",
+   "to": "revision:1381588403"
   },
   {
    "from": "revision:1381588450",
@@ -11265,6 +13863,11 @@
   },
   {
    "from": "revision:1381588647",
+   "verb": "follows",
+   "to": "revision:1381588450"
+  },
+  {
+   "from": "revision:1381588647",
    "verb": "made_by",
    "to": "editor:-2026-56713-33"
   },
@@ -11272,6 +13875,11 @@
    "from": "revision:1381588661",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381588661",
+   "verb": "follows",
+   "to": "revision:1381588647"
   },
   {
    "from": "revision:1381588661",
@@ -11285,6 +13893,11 @@
   },
   {
    "from": "revision:1381598302",
+   "verb": "follows",
+   "to": "revision:1381588661"
+  },
+  {
+   "from": "revision:1381598302",
    "verb": "made_by",
    "to": "editor:achmad-rachmani"
   },
@@ -11295,6 +13908,11 @@
   },
   {
    "from": "revision:1381608632",
+   "verb": "follows",
+   "to": "revision:1381598302"
+  },
+  {
+   "from": "revision:1381608632",
    "verb": "made_by",
    "to": "editor:dasupremo"
   },
@@ -11302,6 +13920,11 @@
    "from": "revision:1381624868",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381624868",
+   "verb": "follows",
+   "to": "revision:1381608632"
   },
   {
    "from": "revision:1381624868",
@@ -11325,6 +13948,11 @@
   },
   {
    "from": "revision:1381630925",
+   "verb": "follows",
+   "to": "revision:1381624868"
+  },
+  {
+   "from": "revision:1381630925",
    "verb": "made_by",
    "to": "editor:-2026-55979-03"
   },
@@ -11332,6 +13960,11 @@
    "from": "revision:1381632215",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381632215",
+   "verb": "follows",
+   "to": "revision:1381630925"
   },
   {
    "from": "revision:1381632215",
@@ -11345,6 +13978,11 @@
   },
   {
    "from": "revision:1381651261",
+   "verb": "follows",
+   "to": "revision:1381632215"
+  },
+  {
+   "from": "revision:1381651261",
    "verb": "made_by",
    "to": "editor:orbitalvoid49"
   },
@@ -11355,6 +13993,11 @@
   },
   {
    "from": "revision:1381654262",
+   "verb": "follows",
+   "to": "revision:1381651261"
+  },
+  {
+   "from": "revision:1381654262",
    "verb": "made_by",
    "to": "editor:-2026-56065-30"
   },
@@ -11362,6 +14005,11 @@
    "from": "revision:1381654330",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381654330",
+   "verb": "follows",
+   "to": "revision:1381654262"
   },
   {
    "from": "revision:1381654330",
@@ -11372,6 +14020,11 @@
    "from": "revision:1381654400",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381654400",
+   "verb": "follows",
+   "to": "revision:1381654330"
   },
   {
    "from": "revision:1381654400",
@@ -11382,6 +14035,11 @@
    "from": "revision:1381655324",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381655324",
+   "verb": "follows",
+   "to": "revision:1381654400"
   },
   {
    "from": "revision:1381655324",
@@ -11392,6 +14050,11 @@
    "from": "revision:1381655991",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381655991",
+   "verb": "follows",
+   "to": "revision:1381655324"
   },
   {
    "from": "revision:1381655991",
@@ -11410,6 +14073,11 @@
   },
   {
    "from": "revision:1381656853",
+   "verb": "follows",
+   "to": "revision:1381655991"
+  },
+  {
+   "from": "revision:1381656853",
    "verb": "made_by",
    "to": "editor:vitorperrut555"
   },
@@ -11417,6 +14085,11 @@
    "from": "revision:1381659724",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381659724",
+   "verb": "follows",
+   "to": "revision:1381656853"
   },
   {
    "from": "revision:1381659724",
@@ -11430,6 +14103,11 @@
   },
   {
    "from": "revision:1381670360",
+   "verb": "follows",
+   "to": "revision:1381659724"
+  },
+  {
+   "from": "revision:1381670360",
    "verb": "made_by",
    "to": "editor:thomasfan1916"
   },
@@ -11437,6 +14115,11 @@
    "from": "revision:1381670995",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381670995",
+   "verb": "follows",
+   "to": "revision:1381670360"
   },
   {
    "from": "revision:1381670995",
@@ -11450,6 +14133,11 @@
   },
   {
    "from": "revision:1381672360",
+   "verb": "follows",
+   "to": "revision:1381670995"
+  },
+  {
+   "from": "revision:1381672360",
    "verb": "made_by",
    "to": "editor:northern-moonlight"
   },
@@ -11457,6 +14145,11 @@
    "from": "revision:1381672424",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381672424",
+   "verb": "follows",
+   "to": "revision:1381672360"
   },
   {
    "from": "revision:1381672424",
@@ -11475,6 +14168,11 @@
   },
   {
    "from": "revision:1381673205",
+   "verb": "follows",
+   "to": "revision:1381672424"
+  },
+  {
+   "from": "revision:1381673205",
    "verb": "made_by",
    "to": "editor:phagerules1"
   },
@@ -11482,6 +14180,11 @@
    "from": "revision:1381679757",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381679757",
+   "verb": "follows",
+   "to": "revision:1381673205"
   },
   {
    "from": "revision:1381679757",
@@ -11495,6 +14198,11 @@
   },
   {
    "from": "revision:1381683436",
+   "verb": "follows",
+   "to": "revision:1381679757"
+  },
+  {
+   "from": "revision:1381683436",
    "verb": "made_by",
    "to": "editor:doc-james"
   },
@@ -11502,6 +14210,11 @@
    "from": "revision:1381688089",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381688089",
+   "verb": "follows",
+   "to": "revision:1381683436"
   },
   {
    "from": "revision:1381688089",
@@ -11515,6 +14228,11 @@
   },
   {
    "from": "revision:1381689684",
+   "verb": "follows",
+   "to": "revision:1381688089"
+  },
+  {
+   "from": "revision:1381689684",
    "verb": "made_by",
    "to": "editor:harizotoh9"
   },
@@ -11522,6 +14240,11 @@
    "from": "revision:1381715590",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381715590",
+   "verb": "follows",
+   "to": "revision:1381689684"
   },
   {
    "from": "revision:1381715590",
@@ -11535,6 +14258,11 @@
   },
   {
    "from": "revision:1381734620",
+   "verb": "follows",
+   "to": "revision:1381715590"
+  },
+  {
+   "from": "revision:1381734620",
    "verb": "made_by",
    "to": "editor:surtsicna"
   },
@@ -11542,6 +14270,11 @@
    "from": "revision:1381736395",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381736395",
+   "verb": "follows",
+   "to": "revision:1381734620"
   },
   {
    "from": "revision:1381736395",
@@ -11555,6 +14288,11 @@
   },
   {
    "from": "revision:1381741100",
+   "verb": "follows",
+   "to": "revision:1381736395"
+  },
+  {
+   "from": "revision:1381741100",
    "verb": "made_by",
    "to": "editor:photographyedits"
   },
@@ -11562,6 +14300,11 @@
    "from": "revision:1381741127",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381741127",
+   "verb": "follows",
+   "to": "revision:1381741100"
   },
   {
    "from": "revision:1381741127",
@@ -11572,6 +14315,11 @@
    "from": "revision:1381745620",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381745620",
+   "verb": "follows",
+   "to": "revision:1381741127"
   },
   {
    "from": "revision:1381745620",
@@ -11582,6 +14330,11 @@
    "from": "revision:1381781898",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381781898",
+   "verb": "follows",
+   "to": "revision:1381745620"
   },
   {
    "from": "revision:1381781898",
@@ -11605,6 +14358,11 @@
   },
   {
    "from": "revision:1381785417",
+   "verb": "follows",
+   "to": "revision:1381781898"
+  },
+  {
+   "from": "revision:1381785417",
    "verb": "made_by",
    "to": "editor:-2026-56896-64"
   },
@@ -11617,6 +14375,11 @@
    "from": "revision:1381785723",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381785723",
+   "verb": "follows",
+   "to": "revision:1381785417"
   },
   {
    "from": "revision:1381785723",
@@ -11640,6 +14403,11 @@
   },
   {
    "from": "revision:1381793355",
+   "verb": "follows",
+   "to": "revision:1381785723"
+  },
+  {
+   "from": "revision:1381793355",
    "verb": "made_by",
    "to": "editor:rtrb"
   },
@@ -11647,6 +14415,11 @@
    "from": "revision:1381795121",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381795121",
+   "verb": "follows",
+   "to": "revision:1381793355"
   },
   {
    "from": "revision:1381795121",
@@ -11660,6 +14433,11 @@
   },
   {
    "from": "revision:1381795515",
+   "verb": "follows",
+   "to": "revision:1381795121"
+  },
+  {
+   "from": "revision:1381795515",
    "verb": "made_by",
    "to": "editor:rtrb"
   },
@@ -11667,6 +14445,11 @@
    "from": "revision:1381797282",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381797282",
+   "verb": "follows",
+   "to": "revision:1381795515"
   },
   {
    "from": "revision:1381797282",
@@ -11875,6 +14658,11 @@
   },
   {
    "from": "revision:1381797432",
+   "verb": "follows",
+   "to": "revision:1381797282"
+  },
+  {
+   "from": "revision:1381797432",
    "verb": "made_by",
    "to": "editor:tenshi-hinanawi"
   },
@@ -12080,6 +14868,11 @@
   },
   {
    "from": "revision:1381798636",
+   "verb": "follows",
+   "to": "revision:1381797432"
+  },
+  {
+   "from": "revision:1381798636",
    "verb": "made_by",
    "to": "editor:-2026-56919-99"
   },
@@ -12105,6 +14898,11 @@
   },
   {
    "from": "revision:1381798744",
+   "verb": "follows",
+   "to": "revision:1381798636"
+  },
+  {
+   "from": "revision:1381798744",
    "verb": "made_by",
    "to": "editor:-2026-56919-99"
   },
@@ -12112,6 +14910,11 @@
    "from": "revision:1381798757",
    "verb": "revises",
    "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381798757",
+   "verb": "follows",
+   "to": "revision:1381798744"
   },
   {
    "from": "revision:1381798757",
@@ -12132,6 +14935,701 @@
    "from": "revision:1381798757",
    "verb": "adds",
    "to": "statement:76b5643253"
+  },
+  {
+   "from": "revision:1381838312",
+   "verb": "revises",
+   "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381838312",
+   "verb": "follows",
+   "to": "revision:1381798757"
+  },
+  {
+   "from": "revision:1381838312",
+   "verb": "made_by",
+   "to": "editor:yapperbot"
+  },
+  {
+   "from": "revision:1381843765",
+   "verb": "revises",
+   "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381843765",
+   "verb": "follows",
+   "to": "revision:1381838312"
+  },
+  {
+   "from": "revision:1381843765",
+   "verb": "made_by",
+   "to": "editor:miminity"
+  },
+  {
+   "from": "revision:1381877095",
+   "verb": "revises",
+   "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381877095",
+   "verb": "follows",
+   "to": "revision:1381843765"
+  },
+  {
+   "from": "revision:1381877095",
+   "verb": "made_by",
+   "to": "editor:-2026-56552-46"
+  },
+  {
+   "from": "revision:1381882967",
+   "verb": "revises",
+   "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381882967",
+   "verb": "follows",
+   "to": "revision:1381877095"
+  },
+  {
+   "from": "revision:1381882967",
+   "verb": "made_by",
+   "to": "editor:ghostinthemachine"
+  },
+  {
+   "from": "revision:1381883108",
+   "verb": "revises",
+   "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381883108",
+   "verb": "follows",
+   "to": "revision:1381882967"
+  },
+  {
+   "from": "revision:1381883108",
+   "verb": "made_by",
+   "to": "editor:ghostinthemachine"
+  },
+  {
+   "from": "revision:1381884195",
+   "verb": "revises",
+   "to": "article:php2shell"
+  },
+  {
+   "from": "revision:1381884195",
+   "verb": "follows",
+   "to": "revision:1381883108"
+  },
+  {
+   "from": "revision:1381884195",
+   "verb": "made_by",
+   "to": "editor:andrew-davidson"
+  },
+  {
+   "from": "revision:1381884195",
+   "verb": "adds",
+   "to": "statement:6f0837416d"
+  },
+  {
+   "from": "article:php2shell",
+   "verb": "discussed_in",
+   "to": "thread:the-man-on-the-clapham-omnibus"
+  },
+  {
+   "from": "thread:the-man-on-the-clapham-omnibus",
+   "verb": "has_post",
+   "to": "post:the-man-on-the-clapham-omnibus:0"
+  },
+  {
+   "from": "post:the-man-on-the-clapham-omnibus:0",
+   "verb": "posted_by",
+   "to": "editor:ericoides"
+  },
+  {
+   "from": "thread:the-man-on-the-clapham-omnibus",
+   "verb": "has_post",
+   "to": "post:the-man-on-the-clapham-omnibus:1"
+  },
+  {
+   "from": "post:the-man-on-the-clapham-omnibus:1",
+   "verb": "replies_to",
+   "to": "post:the-man-on-the-clapham-omnibus:0"
+  },
+  {
+   "from": "post:the-man-on-the-clapham-omnibus:1",
+   "verb": "posted_by",
+   "to": "editor:kevstuff"
+  },
+  {
+   "from": "thread:the-man-on-the-clapham-omnibus",
+   "verb": "has_post",
+   "to": "post:the-man-on-the-clapham-omnibus:2"
+  },
+  {
+   "from": "post:the-man-on-the-clapham-omnibus:2",
+   "verb": "replies_to",
+   "to": "post:the-man-on-the-clapham-omnibus:1"
+  },
+  {
+   "from": "post:the-man-on-the-clapham-omnibus:2",
+   "verb": "posted_by",
+   "to": "editor:ericoides"
+  },
+  {
+   "from": "article:php2shell",
+   "verb": "discussed_in",
+   "to": "thread:external-link-suggestion-conflict-of-interest-disclosed"
+  },
+  {
+   "from": "thread:external-link-suggestion-conflict-of-interest-disclosed",
+   "verb": "has_post",
+   "to": "post:external-link-suggestion-conflict-of-interest-disclosed:0"
+  },
+  {
+   "from": "post:external-link-suggestion-conflict-of-interest-disclosed:0",
+   "verb": "posted_by",
+   "to": "editor:simgen321"
+  },
+  {
+   "from": "thread:external-link-suggestion-conflict-of-interest-disclosed",
+   "verb": "has_post",
+   "to": "post:external-link-suggestion-conflict-of-interest-disclosed:1"
+  },
+  {
+   "from": "post:external-link-suggestion-conflict-of-interest-disclosed:1",
+   "verb": "replies_to",
+   "to": "post:external-link-suggestion-conflict-of-interest-disclosed:0"
+  },
+  {
+   "from": "post:external-link-suggestion-conflict-of-interest-disclosed:1",
+   "verb": "posted_by",
+   "to": "editor:guninvalid"
+  },
+  {
+   "from": "article:php2shell",
+   "verb": "discussed_in",
+   "to": "thread:suggested-source-for-detection-and-response-coi-disclosure"
+  },
+  {
+   "from": "thread:suggested-source-for-detection-and-response-coi-disclosure",
+   "verb": "has_post",
+   "to": "post:suggested-source-for-detection-and-response-coi-disclosure:0"
+  },
+  {
+   "from": "post:suggested-source-for-detection-and-response-coi-disclosure:0",
+   "verb": "posted_by",
+   "to": "editor:guninvalid"
+  },
+  {
+   "from": "thread:suggested-source-for-detection-and-response-coi-disclosure",
+   "verb": "has_post",
+   "to": "post:suggested-source-for-detection-and-response-coi-disclosure:1"
+  },
+  {
+   "from": "post:suggested-source-for-detection-and-response-coi-disclosure:1",
+   "verb": "posted_by",
+   "to": "editor:~2026-56359-71"
+  },
+  {
+   "from": "thread:suggested-source-for-detection-and-response-coi-disclosure",
+   "verb": "has_post",
+   "to": "post:suggested-source-for-detection-and-response-coi-disclosure:2"
+  },
+  {
+   "from": "post:suggested-source-for-detection-and-response-coi-disclosure:2",
+   "verb": "replies_to",
+   "to": "post:suggested-source-for-detection-and-response-coi-disclosure:1"
+  },
+  {
+   "from": "post:suggested-source-for-detection-and-response-coi-disclosure:2",
+   "verb": "posted_by",
+   "to": "editor:acez1q"
+  },
+  {
+   "from": "thread:suggested-source-for-detection-and-response-coi-disclosure",
+   "verb": "has_post",
+   "to": "post:suggested-source-for-detection-and-response-coi-disclosure:3"
+  },
+  {
+   "from": "post:suggested-source-for-detection-and-response-coi-disclosure:3",
+   "verb": "replies_to",
+   "to": "post:suggested-source-for-detection-and-response-coi-disclosure:2"
+  },
+  {
+   "from": "post:suggested-source-for-detection-and-response-coi-disclosure:3",
+   "verb": "posted_by",
+   "to": "editor:acez1q"
+  },
+  {
+   "from": "thread:suggested-source-for-detection-and-response-coi-disclosure",
+   "verb": "has_post",
+   "to": "post:suggested-source-for-detection-and-response-coi-disclosure:4"
+  },
+  {
+   "from": "post:suggested-source-for-detection-and-response-coi-disclosure:4",
+   "verb": "posted_by",
+   "to": "editor:fubar-obfusco"
+  },
+  {
+   "from": "thread:suggested-source-for-detection-and-response-coi-disclosure",
+   "verb": "has_post",
+   "to": "post:suggested-source-for-detection-and-response-coi-disclosure:5"
+  },
+  {
+   "from": "post:suggested-source-for-detection-and-response-coi-disclosure:5",
+   "verb": "replies_to",
+   "to": "post:suggested-source-for-detection-and-response-coi-disclosure:4"
+  },
+  {
+   "from": "post:suggested-source-for-detection-and-response-coi-disclosure:5",
+   "verb": "posted_by",
+   "to": "editor:acez1q"
+  },
+  {
+   "from": "thread:suggested-source-for-detection-and-response-coi-disclosure",
+   "verb": "has_post",
+   "to": "post:suggested-source-for-detection-and-response-coi-disclosure:6"
+  },
+  {
+   "from": "article:php2shell",
+   "verb": "discussed_in",
+   "to": "thread:clarification-on-affected-versions-is-php-5-3-affected-or-excluded"
+  },
+  {
+   "from": "thread:clarification-on-affected-versions-is-php-5-3-affected-or-excluded",
+   "verb": "has_post",
+   "to": "post:clarification-on-affected-versions-is-php-5-3-affected-or-excluded:0"
+  },
+  {
+   "from": "post:clarification-on-affected-versions-is-php-5-3-affected-or-excluded:0",
+   "verb": "posted_by",
+   "to": "editor:~2026-56289-78"
+  },
+  {
+   "from": "article:php2shell",
+   "verb": "discussed_in",
+   "to": "thread:is-the-attack-still-ongoing"
+  },
+  {
+   "from": "thread:is-the-attack-still-ongoing",
+   "verb": "has_post",
+   "to": "post:is-the-attack-still-ongoing:0"
+  },
+  {
+   "from": "post:is-the-attack-still-ongoing:0",
+   "verb": "posted_by",
+   "to": "editor:guninvalid"
+  },
+  {
+   "from": "thread:is-the-attack-still-ongoing",
+   "verb": "has_post",
+   "to": "post:is-the-attack-still-ongoing:1"
+  },
+  {
+   "from": "post:is-the-attack-still-ongoing:1",
+   "verb": "posted_by",
+   "to": "editor:soyuneditorrandom"
+  },
+  {
+   "from": "thread:is-the-attack-still-ongoing",
+   "verb": "has_post",
+   "to": "post:is-the-attack-still-ongoing:2"
+  },
+  {
+   "from": "post:is-the-attack-still-ongoing:2",
+   "verb": "replies_to",
+   "to": "post:is-the-attack-still-ongoing:1"
+  },
+  {
+   "from": "post:is-the-attack-still-ongoing:2",
+   "verb": "posted_by",
+   "to": "editor:strongshorts"
+  },
+  {
+   "from": "thread:is-the-attack-still-ongoing",
+   "verb": "has_post",
+   "to": "post:is-the-attack-still-ongoing:3"
+  },
+  {
+   "from": "post:is-the-attack-still-ongoing:3",
+   "verb": "replies_to",
+   "to": "post:is-the-attack-still-ongoing:2"
+  },
+  {
+   "from": "post:is-the-attack-still-ongoing:3",
+   "verb": "posted_by",
+   "to": "editor:soyuneditorrandom"
+  },
+  {
+   "from": "thread:is-the-attack-still-ongoing",
+   "verb": "has_post",
+   "to": "post:is-the-attack-still-ongoing:4"
+  },
+  {
+   "from": "article:php2shell",
+   "verb": "discussed_in",
+   "to": "thread:ai"
+  },
+  {
+   "from": "thread:ai",
+   "verb": "has_post",
+   "to": "post:ai:0"
+  },
+  {
+   "from": "post:ai:0",
+   "verb": "posted_by",
+   "to": "editor:joe-vom-titan"
+  },
+  {
+   "from": "article:php2shell",
+   "verb": "discussed_in",
+   "to": "thread:black-october"
+  },
+  {
+   "from": "thread:black-october",
+   "verb": "has_post",
+   "to": "post:black-october:0"
+  },
+  {
+   "from": "post:black-october:0",
+   "verb": "posted_by",
+   "to": "editor:carolineovo"
+  },
+  {
+   "from": "thread:black-october",
+   "verb": "has_post",
+   "to": "post:black-october:1"
+  },
+  {
+   "from": "post:black-october:1",
+   "verb": "replies_to",
+   "to": "post:black-october:0"
+  },
+  {
+   "from": "post:black-october:1",
+   "verb": "posted_by",
+   "to": "editor:vitorperrut555"
+  },
+  {
+   "from": "thread:black-october",
+   "verb": "has_post",
+   "to": "post:black-october:2"
+  },
+  {
+   "from": "post:black-october:2",
+   "verb": "replies_to",
+   "to": "post:black-october:1"
+  },
+  {
+   "from": "post:black-october:2",
+   "verb": "posted_by",
+   "to": "editor:guninvalid"
+  },
+  {
+   "from": "article:php2shell",
+   "verb": "discussed_in",
+   "to": "thread:diagram-explaining-the-attack"
+  },
+  {
+   "from": "thread:diagram-explaining-the-attack",
+   "verb": "has_post",
+   "to": "post:diagram-explaining-the-attack:0"
+  },
+  {
+   "from": "post:diagram-explaining-the-attack:0",
+   "verb": "posted_by",
+   "to": "editor:cmglee"
+  },
+  {
+   "from": "finding:R-01",
+   "verb": "questions",
+   "to": "statement:ba1abad6d6"
+  },
+  {
+   "from": "finding:R-01",
+   "verb": "rests_on",
+   "to": "source:wiz-blog-php2shell"
+  },
+  {
+   "from": "finding:R-01",
+   "verb": "rests_on",
+   "to": "source:x-wiz-io-php2shell"
+  },
+  {
+   "from": "finding:R-01",
+   "verb": "rests_on",
+   "to": "source:cloudflare-blog-php2shell-waf"
+  },
+  {
+   "from": "finding:R-01",
+   "verb": "rests_on",
+   "to": "source:x-openai-php2shell"
+  },
+  {
+   "from": "finding:R-02",
+   "verb": "questions",
+   "to": "statement:0c37f722e9"
+  },
+  {
+   "from": "finding:R-02",
+   "verb": "rests_on",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w"
+  },
+  {
+   "from": "finding:R-02",
+   "verb": "rests_on",
+   "to": "source:github-ghsa-6wmf-4rv5-p3rp"
+  },
+  {
+   "from": "finding:R-02",
+   "verb": "rests_on",
+   "to": "source:php-foundation-blog-security-release"
+  },
+  {
+   "from": "finding:R-02",
+   "verb": "rests_on",
+   "to": "source:theregister-php-blames-chainguard"
+  },
+  {
+   "from": "finding:R-03",
+   "verb": "questions",
+   "to": "statement:372a6c6d4d"
+  },
+  {
+   "from": "finding:R-03",
+   "verb": "rests_on",
+   "to": "source:php-foundation-blog-security-release"
+  },
+  {
+   "from": "finding:R-03",
+   "verb": "rests_on",
+   "to": "source:quarkslab-blog-php-src-audit"
+  },
+  {
+   "from": "finding:R-04",
+   "verb": "questions",
+   "to": "statement:cf776b2323"
+  },
+  {
+   "from": "finding:R-04",
+   "verb": "rests_on",
+   "to": "source:cve-cve-2026-109618"
+  },
+  {
+   "from": "finding:R-04",
+   "verb": "rests_on",
+   "to": "source:cve-cve-2026-109619"
+  },
+  {
+   "from": "finding:R-04",
+   "verb": "rests_on",
+   "to": "source:nvd-cve-2026-109618"
+  },
+  {
+   "from": "finding:R-04",
+   "verb": "rests_on",
+   "to": "source:daubois-blog-php2shell-rumors"
+  },
+  {
+   "from": "finding:R-05",
+   "verb": "questions",
+   "to": "statement:68f5ead478"
+  },
+  {
+   "from": "finding:R-05",
+   "verb": "rests_on",
+   "to": "source:cve-cve-2026-109618"
+  },
+  {
+   "from": "finding:R-05",
+   "verb": "rests_on",
+   "to": "source:certfr-2026-ale-014"
+  },
+  {
+   "from": "finding:R-05",
+   "verb": "rests_on",
+   "to": "source:php-net-advisory"
+  },
+  {
+   "from": "finding:R-05",
+   "verb": "rests_on",
+   "to": "source:cloudflare-blog-php2shell-waf"
+  },
+  {
+   "from": "finding:R-05",
+   "verb": "rests_on",
+   "to": "source:ncsc-nl-php2shell"
+  },
+  {
+   "from": "finding:R-06",
+   "verb": "questions",
+   "to": "statement:c56cee404e"
+  },
+  {
+   "from": "finding:R-06",
+   "verb": "rests_on",
+   "to": "source:php-foundation-blog-security-release"
+  },
+  {
+   "from": "finding:R-06",
+   "verb": "rests_on",
+   "to": "source:x-feross-chainguard"
+  },
+  {
+   "from": "finding:R-06",
+   "verb": "rests_on",
+   "to": "source:theregister-php-blames-chainguard"
+  },
+  {
+   "from": "finding:R-07",
+   "verb": "questions",
+   "to": "statement:c9448b9736"
+  },
+  {
+   "from": "finding:R-07",
+   "verb": "rests_on",
+   "to": "source:php-foundation-blog-security-release"
+  },
+  {
+   "from": "finding:R-07",
+   "verb": "rests_on",
+   "to": "source:php-net-advisory"
+  },
+  {
+   "from": "finding:R-07",
+   "verb": "rests_on",
+   "to": "source:openwall-oss-security-2026-10-20-34"
+  },
+  {
+   "from": "finding:R-08",
+   "verb": "questions",
+   "to": "statement:5505d316af"
+  },
+  {
+   "from": "finding:R-08",
+   "verb": "rests_on",
+   "to": "source:ncsc-news-php"
+  },
+  {
+   "from": "finding:R-08",
+   "verb": "rests_on",
+   "to": "source:certeu-sa-2026-018"
+  },
+  {
+   "from": "finding:R-08",
+   "verb": "rests_on",
+   "to": "source:nsa-press-php-4630238"
+  },
+  {
+   "from": "finding:R-08",
+   "verb": "rests_on",
+   "to": "source:cisa-alert-php-20261021"
+  },
+  {
+   "from": "finding:R-08",
+   "verb": "rests_on",
+   "to": "source:fi-valtori"
+  },
+  {
+   "from": "finding:R-09",
+   "verb": "questions",
+   "to": "statement:b8cd7ec580"
+  },
+  {
+   "from": "finding:R-09",
+   "verb": "rests_on",
+   "to": "source:aws-security-blog-madpot"
+  },
+  {
+   "from": "finding:R-10",
+   "verb": "questions",
+   "to": "statement:d05e02d372"
+  },
+  {
+   "from": "finding:R-11",
+   "verb": "questions",
+   "to": "statement:f0c7d98a4c"
+  },
+  {
+   "from": "finding:R-12",
+   "verb": "questions",
+   "to": "statement:530960f0f7"
+  },
+  {
+   "from": "finding:R-13",
+   "verb": "questions",
+   "to": "statement:78444f5354"
+  },
+  {
+   "from": "finding:R-13",
+   "verb": "rests_on",
+   "to": "source:github-ghsa-w8hw-w9fx-j79w"
+  },
+  {
+   "from": "finding:R-13",
+   "verb": "rests_on",
+   "to": "source:github-ghsa-6wmf-4rv5-p3rp"
+  },
+  {
+   "from": "finding:R-13",
+   "verb": "rests_on",
+   "to": "source:github-php-src-tags"
+  },
+  {
+   "from": "finding:R-14",
+   "verb": "questions",
+   "to": "statement:fb16c2a8cd"
+  },
+  {
+   "from": "finding:R-14",
+   "verb": "rests_on",
+   "to": "source:watchtowr-php2shell-faq"
+  },
+  {
+   "from": "finding:R-14",
+   "verb": "rests_on",
+   "to": "source:cisa-alert-php-20261021"
+  },
+  {
+   "from": "finding:R-15",
+   "verb": "questions",
+   "to": "statement:4cd4f33a65"
+  },
+  {
+   "from": "finding:talk-1",
+   "verb": "answers",
+   "to": "thread:is-the-attack-still-ongoing"
+  },
+  {
+   "from": "finding:talk-1",
+   "verb": "rests_on",
+   "to": "source:cloudflare-blog-php2shell-waf"
+  },
+  {
+   "from": "finding:talk-1",
+   "verb": "rests_on",
+   "to": "source:aws-security-blog-madpot"
+  },
+  {
+   "from": "finding:talk-1",
+   "verb": "rests_on",
+   "to": "source:cisa-kev-json"
+  },
+  {
+   "from": "finding:talk-1",
+   "verb": "rests_on",
+   "to": "source:certlv-php-preventive"
+  },
+  {
+   "from": "finding:talk-2",
+   "verb": "answers",
+   "to": "thread:diagram-explaining-the-attack"
+  },
+  {
+   "from": "finding:talk-2",
+   "verb": "rests_on",
+   "to": "source:github-php-src-fix-commit-3584a98bd"
   },
   {
    "from": "article:php2shell",

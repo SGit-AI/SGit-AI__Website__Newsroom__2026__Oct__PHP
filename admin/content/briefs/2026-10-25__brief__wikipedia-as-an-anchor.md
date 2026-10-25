@@ -82,6 +82,32 @@ it, with the revision id as attribution; the pages and data of the section that 
 and say so. The site's rule that no third-party page is reproduced was written for pages that are not licensed for
 reuse; this is the one place it is set aside, at the editor's direction, and the editor decides whether it stays.
 
+## Added the same day: history, the talk page, a reviewer's reading, and a page for Wikipedia's editors
+
+The editor's direction, later on 25 October: capture the page's history often ("hourly or every 4 hours"), draw its
+evolution, read the talk page "since those wikipedia authors are very good", find a way to collaborate with them
+without this site editing the article, review the article as a Wikipedia reviewer would against our data, track
+Wikidata and DBpedia, and write an admin-site story on adopting their principles. Built:
+
+- The card wakes four times a day (06:05, 10:05, 14:05, 18:05 London, into its own session) and fetches every page in
+  `data/wikipedia/index.json` first; the delta is every revision, kept.
+- `/wikipedia/php2shell/evolution/`: every statement as a lifeline; size, references, statements over time; the
+  Wikidata item's own history. `/wikipedia/php2shell/talk/`: the talk page as threads, posts, edit requests.
+- `/wikipedia/php2shell/review/` from `data/wikipedia/php2shell/review.json`: 15 findings, each a statement, the
+  policy, the captures, the desk's grade and a proposed change in the edit-request shape; three talk-page questions
+  answered from the captures. In the graph as `finding` nodes (`questions`, `rests_on`, `answers`).
+- `/wikipedia/for-editors/`: the collaboration proposal. The rule that decides its shape is Wikipedia's guideline on
+  large language models (March 2026): no article text, talk-page comment or edit request written by a model is
+  accepted, and `{{edit COI}}` requests found to be model-written are declined. So: no agent edits or posts; the
+  human editor may post, in his own words, disclosed, in the edit-request form, citing independent sources only; this
+  site asks for no citation or link (WP:SPS, WP:ADV); captures are for checking, the Wayback Machine is the archive
+  to cite; what we take we attribute (the REUSE wording is on each page); corrections here first.
+- `data/wikidata-links.json`: every party looked up on Wikidata, 25 confirmed by hand; the index page's
+  "Wikidata and DBpedia" section tracks the item, its history and DBpedia's status.
+- The story `what-wikipedia-knows-about-being-right` on the admin site: eleven principles (BURDEN, directly supports,
+  SAYWHEREYOUREADIT, RSBREAKING, the ten-year test, words to watch, NPOV and DUE, edit summaries, BRD and 3RR, the
+  disclosed edit request, the GA checklist), each as it would read in AGENTS.md; and what not to adopt.
+
 ## Not built
 
 A second article (candidates: PHP, the list of security incidents, the pages of the parties named); the comparison

@@ -3,7 +3,15 @@
  "articles": [
   {
    "slug": "php2shell",
-   "title": "PHP2Shell"
+   "title": "PHP2Shell",
+   "kind": "article",
+   "of": null
+  },
+  {
+   "slug": "talk-php2shell",
+   "title": "Talk:PHP2Shell",
+   "kind": "talk",
+   "of": "php2shell"
   }
  ]
 }

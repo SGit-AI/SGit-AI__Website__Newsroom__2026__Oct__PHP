@@ -1,6 +1,6 @@
 {
  "id": "php-newsroom-story-ontology",
- "version": "0.3.0",
+ "version": "0.5.0",
  "updated": "2026-10-25",
  "kept_by": "ontologist",
  "about": "The ontology of this site's story graph (data/graph.json), in the shape the estate's newsroom ontologies use (portugal-ontology, governance-beat-ontology on newsroom.sgit.ai). The grammar is the estate's (graphs.sgit.ai/v1/grammar/): every edge is a verb with a different, named inverse; no generic association edge; no self-inverse edge, so a tension between claims is a node that flags them; supersede, never delete; weight by independence, not by count. Each verb says whether it is inherited from an estate ontology or proposed here. The build refuses an edge whose verb is not listed, and a node whose kind is not listed.",
@@ -467,6 +467,24 @@
      "label": "CVE",
      "plural": "CVEs",
      "definition": "An anchor node (the story graph's), borrowed: a CVE identifier a statement names, where the article joins the story and code-review graphs."
+    },
+    {
+     "id": "thread",
+     "label": "Talk thread",
+     "plural": "talk threads",
+     "definition": "One discussion on the article's talk page: a heading and the posts under it."
+    },
+    {
+     "id": "post",
+     "label": "Talk post",
+     "plural": "talk posts",
+     "definition": "One signed contribution to a thread: who, when, in reply to which post, and whether it asks for an edit ({{request edit}})."
+    },
+    {
+     "id": "finding",
+     "label": "Finding",
+     "plural": "findings",
+     "definition": "One finding of this site's review of the article, done as a Wikipedia reviewer would: the statement it questions, the policy it rests on, the captured sources that bear on it, and the change proposed for a human to put to the talk page. Nothing is posted by an agent."
     }
    ],
    "taxonomy": [
@@ -629,6 +647,105 @@
      "reads": "{s} names {t}",
      "origin": "inherited",
      "from": "the story graph"
+    },
+    {
+     "verb": "follows",
+     "inverse": "followed_by",
+     "domain": [
+      "revision"
+     ],
+     "range": [
+      "revision"
+     ],
+     "reads": "{s} follows {t}",
+     "origin": "proposed",
+     "note": "The chain of revisions, so a history can be walked one edit at a time."
+    },
+    {
+     "verb": "discussed_in",
+     "inverse": "discusses",
+     "domain": [
+      "article"
+     ],
+     "range": [
+      "thread"
+     ],
+     "reads": "{s} is discussed in {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "has_post",
+     "inverse": "post_of",
+     "domain": [
+      "thread"
+     ],
+     "range": [
+      "post"
+     ],
+     "reads": "{s} has post {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "replies_to",
+     "inverse": "answered_by",
+     "domain": [
+      "post"
+     ],
+     "range": [
+      "post"
+     ],
+     "reads": "{s} replies to {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "posted_by",
+     "inverse": "posted",
+     "domain": [
+      "post"
+     ],
+     "range": [
+      "editor"
+     ],
+     "reads": "{s} was posted by {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "questions",
+     "inverse": "questioned_by",
+     "domain": [
+      "finding"
+     ],
+     "range": [
+      "statement"
+     ],
+     "reads": "{s} questions {t}",
+     "origin": "proposed"
+    },
+    {
+     "verb": "rests_on",
+     "inverse": "supports",
+     "domain": [
+      "finding"
+     ],
+     "range": [
+      "source"
+     ],
+     "reads": "{s} rests on {t}",
+     "origin": "proposed",
+     "note": "The captured page in this site's evidence vault that the finding is read from; the same join as captured_as, from the other side."
+    },
+    {
+     "verb": "answers",
+     "inverse": "answered_in",
+     "domain": [
+      "finding"
+     ],
+     "range": [
+      "thread"
+     ],
+     "reads": "{s} answers {t}",
+     "origin": "proposed",
+     "note": "A finding that answers a question asked on the talk page."
     }
    ]
   }

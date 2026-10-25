@@ -245,6 +245,13 @@
    "used_on": "graph/index.html"
   },
   {
+   "path": "data/wikidata-links.json",
+   "layer": "authored",
+   "by": "the ontologist, from the candidates admin/wikipedia/wikidata_links.py finds on Wikidata",
+   "from": "each party's name searched on Wikidata; a proposal is the tool's, a confirmed item is the ontologist's, and the build reads only confirmed ones",
+   "used_on": "graph/parties/index.html"
+  },
+  {
    "path": "data/wikipedia/",
    "layer": "evidence",
    "by": "admin/wikipedia/fetch.py, run by the ontologist",

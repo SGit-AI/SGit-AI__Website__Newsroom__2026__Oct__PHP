@@ -105,13 +105,17 @@ An article a reader has seen is listed here until a collector captures it into t
 - [What sixteen agencies actually advise](../agencies/index.html): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
 - [Affected systems: versions, deployments, applications, inventory](../affected/index.html): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
 - [Who says what: every party and its claims](../actors/index.html): 27 parties in the php2shell story, each with the claims this site attributes to it and the sources behind them.
-- [The story as a graph: who states what, who relays it, and what it rests on](../graph/index.html): 1396 nodes and 1766 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
-- [Every party on the story: who states, who relays, who publishes](../graph/parties/index.html): 295 parties resolved from 339 spellings, with the claims each one states and passes on.
+- [The story as a graph: who states what, who relays it, and what it rests on](../graph/index.html): 1450 nodes and 1821 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
+- [Every party on the story: who states, who relays, who publishes](../graph/parties/index.html): 352 parties resolved from 456 spellings, with the claims each one states and passes on.
 - [Wikipedia, as a graph](../wikipedia/index.html): Each Wikipedia article this site watches, read as a fractal semantic graph: statements classed as facts, attributions and quotes, references joined to the captures this site holds, and every edit as what it changed.
-- [Wikipedia's PHP2Shell article, as a graph](../wikipedia/php2shell/index.html): The English Wikipedia article on PHP2Shell read as a fractal semantic graph: 39 statements classed as facts, attributions and quotes, 43 references and which are captured here, 364 revisions, and where it meets this site's claims.
-- [Every statement in Wikipedia's PHP2Shell article, with its evidence](../wikipedia/php2shell/statements/index.html): All 39 statements of the article, classed as record, stated, attributed, quote or hedged by their wording, with their references, the captures this site holds and the claims that share them.
-- [Every reference in Wikipedia's PHP2Shell article](../wikipedia/php2shell/references/index.html): All 43 references of the article: which this site has captured, who publishes each, which statements cite it and which of this site's claims rest on the same page.
-- [Every edit of Wikipedia's PHP2Shell article, as what it changed](../wikipedia/php2shell/history/index.html): All 364 revisions of the article as the statements each one added, removed or reworded, with the editor, the size and the reverts.
+- [Wikipedia's PHP2Shell article, as a graph](../wikipedia/php2shell/index.html): The English Wikipedia article on PHP2Shell read as a fractal semantic graph: 40 statements classed as facts, attributions and quotes, 45 references and which are captured here, 370 revisions, and where it meets this site's claims.
+- [Every statement in Wikipedia's PHP2Shell article, with its evidence](../wikipedia/php2shell/statements/index.html): All 40 statements of the article, classed as record, stated, attributed, quote or hedged by their wording, with their references, the captures this site holds and the claims that share them.
+- [Every reference in Wikipedia's PHP2Shell article](../wikipedia/php2shell/references/index.html): All 45 references of the article: which this site has captured, who publishes each, which statements cite it and which of this site's claims rest on the same page.
+- [Every edit of Wikipedia's PHP2Shell article, as what it changed](../wikipedia/php2shell/history/index.html): All 370 revisions of the article as the statements each one added, removed or reworded, with the editor, the size and the reverts.
+- [The evolution of Wikipedia's PHP2Shell article](../wikipedia/php2shell/evolution/index.html): Every statement ever written into the article as a lifeline from the edit that added it to the edit that removed it, with the size, references and statements over all 370 revisions, and the Wikidata item's own history.
+- [What Wikipedia's editors discuss about the PHP2Shell article](../wikipedia/php2shell/talk/index.html): The talk page of the article as threads: 8 discussions and 23 posts, including the edit requests outside parties made with a disclosed conflict of interest.
+- [Wikipedia's PHP2Shell article, read as one of its reviewers would](../wikipedia/php2shell/review/index.html): 15 findings on the article against this site's captured evidence, each with the Wikipedia policy it rests on and a change proposed for a human to put to the talk page; nothing is posted by an agent.
+- [For the editors of Wikipedia's articles on this story](../wikipedia/for-editors/index.html): What this site is in Wikipedia's terms, what it offers the article's editors (dated, hashed captures of the cited pages, a reviewer's reading, answers from the captures), and the rules it holds itself to: no agent edits Wikipedia, nothing written by a model is posted, no request to be cited.
 - [From a line of code to a stakeholder: the fractal graph](../fractal/index.html): One graph for php2shell: 359 changed lines of php-src, up through functions, files, the fix and the flaws, the claims and sources, the story arcs and the risks, to the fifteen kinds of reader who face them.
 - [Walk the whole graph: stakeholders to lines of code](../fractal/ui/index.html): A navigator over the php2shell fractal graph: stakeholders, risks, story arcs, claims, sources, the flaws, the fix, files, functions and changed lines, each node a link.
 - [From outside: other models and sites](../readings/index.html):
@@ -159,6 +163,7 @@ An article a reader has seen is listed here until a collector captures it into t
 
 ### Stories
 - [All stories, written here](../articles/index.html):
+- [House · ontologist: What Wikipedia knows about being right](../articles/what-wikipedia-knows-about-being-right/index.html):
 - [House · Journalist: What changed in a day](../articles/what-changed-in-a-day/index.html):
 - [House · Dev desk: Who reads this site, and what works on it](../articles/the-telemetry-tools/index.html):
 - [House · Dev desk: The risk graph, before and after](../articles/the-risk-graph-before-and-after/index.html):
@@ -204,4 +209,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.20.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.21.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.20.8",
+"site": "0.21.0",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -6719,11 +6719,11 @@
 "zone": "stories",
 "title": "Stories: written here",
 "path": "index.html#stories",
-"hash": "589f1185b057",
-"v": 5,
+"hash": "6ee87e267334",
+"v": 6,
 "first": "0.4.1",
-"changed": "0.10.13",
-"date": "2026-10-23"
+"changed": "0.21.0",
+"date": "2026-10-25"
 },
 "home-how": {
 "kind": "front",
@@ -6845,6 +6845,17 @@
 "first": "0.4.1",
 "changed": "0.4.1",
 "date": "2026-10-22"
+},
+"story-what-wikipedia-knows-about-being-right": {
+"kind": "story",
+"zone": "stories",
+"title": "What Wikipedia knows about being right: the principles, workflows and review habits this newsroom's agents should adopt",
+"path": "articles/what-wikipedia-knows-about-being-right/index.html",
+"hash": "3deb6198a3cf",
+"v": 1,
+"first": "0.21.0",
+"changed": "0.21.0",
+"date": "2026-10-25"
 },
 "story-what-changed-in-a-day": {
 "kind": "story",

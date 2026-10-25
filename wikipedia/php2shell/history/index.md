@@ -2,16 +2,24 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-All 364 revisions of the article as the statements each one added, removed or reworded, with the editor, the size and the reverts.
+All 370 revisions of the article as the statements each one added, removed or reworded, with the editor, the size and the reverts.
 
 [Wikipedia, as a graph](../../index.html) / [PHP2Shell](../index.html) / Every edit
 
 # Every edit of Wikipedia's PHP2Shell article, as what it changed
 
-364 revisions from 2026-10-21 07:50:01 UTC to 2026-10-24 21:41:44 UTC, by 173 named editors and 1 anonymous edits, newest first. Wikipedia shows an edit as a diff of markup; here it is the statements the edit added, removed or reworded, so an edit reads as what it did to the account. 41 revisions were reverts or were reverted. Each entry links to the editor's public Wikipedia page; anonymous editors are never identified.
+370 revisions from 2026-10-21 07:50:01 UTC to 2026-10-25 11:39:32 UTC, by 178 named editors and 1 anonymous edits, newest first. Wikipedia shows an edit as a diff of markup; here it is the statements the edit added, removed or reworded, so an edit reads as what it did to the account. 41 revisions were reverts or were reverted. Each entry links to the editor's public Wikipedia page; anonymous editors are never identified.
 
-Every hour from 2026-10-21 07:50:01 UTC to 2026-10-24 21:41:44 UTC, UTC.
+Every hour from 2026-10-21 07:50:01 UTC to 2026-10-25 11:39:32 UTC, UTC.
 
+- **2026-10-25 11:39:32 UTC** · [Andrew Davidson](https://en.wikipedia.org/wiki/User:Andrew_Davidson) · +395 bytes /* Discovery */ naming+1 addedWiz coined the name "PHP2Shell" indicating that PHP exploits would enable execution of shell commands on affected servers.
+
++ref https://www.recordedfuture.com/blog/php2shell-vulnerability-exploitati
+- **2026-10-25 11:24:10 UTC** · [GhostInTheMachine](https://en.wikipedia.org/wiki/User:GhostInTheMachine) · +0 bytes /* Patches */ hmmm... move BBC ref
+- **2026-10-25 11:22:47 UTC** · [GhostInTheMachine](https://en.wikipedia.org/wiki/User:GhostInTheMachine) · +215 bytes /* Patches */ second ref+ref https://www.bbc.co.uk/news/articles/cw30ejqljl43o
+- **2026-10-25 10:09:43 UTC** · [~2026-56552-46](https://en.wikipedia.org/wiki/User:~2026-56552-46) · -14 bytes /* See also */
+- **2026-10-25 04:00:16 UTC** · [Miminity](https://en.wikipedia.org/wiki/User:Miminity) · +2 bytes /* Impact */ wl
+- **2026-10-25 03:00:52 UTC** · [Yapperbot](https://en.wikipedia.org/wiki/User:Yapperbot) · -64 bytes Auto-removing {{current}} - no edits in 5hrs+. The event may still be current, but [[Template:Current|the {{current}} template is designed only for articles which many editors are editing, and is usually up for less than a day]].
 - **2026-10-24 21:41:44 UTC** · [Cicada1010](https://en.wikipedia.org/wiki/User:Cicada1010) · -16 bytes mw-rollback minor [[WP:CVPI|Interceptor]]: Reverting non-constructive edits by [[Special:Contributions/~2026-56919-99|~2026-56919-99]]~3 rewordedPeeonHP2Shell is a pair of high-impact computer vulnerabilities (CVE-2026-109618 and CVE-2026-109619) concerning memory safety flaws in PHP versions 5.4–8.5 that allow remote code execution (RCE) by a potential malicious user to gain remote control of the website host. PHP2Shell is a pair of high-impact computer vulnerabilities (CVE-2026-109618 and CVE-2026-109619) concerning memory safety flaws in PHP versions 5.4–8.5 that allow remote code execution (RCE) by a potential malicious user to gain remote control of the website host.
 - PeeonHP is a popular programming language that many website and web application codebases are built upon. PHP is a popular programming language that many website and web application codebases are built upon.
 - PeeonHP versions as early as 5.4 (released in 2012) were affected by these vulnerabilities, and while concerns around memory safety bugs had been raised decades before, no action was taken at the time because it was not thought that developing a working exploit could be feasible. PHP versions as early as 5.4 (released in 2012) were affected by these vulnerabilities, and while concerns around memory safety bugs had been raised decades before, no action was taken at the time because it was not thought that developing a working exploit could be feasible.
@@ -627,4 +635,4 @@ Edit summaries and text are Wikipedia's, CC BY-SA 4.0, by its contributors, show
 
 
 ---
-site v0.20.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/history/index.html
+site v0.21.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/history/index.html

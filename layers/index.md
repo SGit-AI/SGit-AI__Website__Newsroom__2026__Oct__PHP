@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**10** evidence · **33** derived · **14** authored · **39** site
+**10** evidence · **33** derived · **15** authored · **39** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -83,6 +83,7 @@ Signed writing: the editor's brief and memos, and articles by the journalist, hi
 | `data/entities.json` | the ontologist | the publisher strings of data/sources.json and the parties named in the claims, numbers, exploitation and agency rows; actor ids reused from data/actors.json | [graph/parties/index.html](../graph/parties/index.html) |
 | `data/attribution.json` | the ontologist | the free-text 'by' and 'who' of each claim, number and exploitation row, resolved to entities | [graph/parties/index.html](../graph/parties/index.html) |
 | `data/crosswalk.json` | the ontologist | the node ids of the story, code-review and risk graphs, and data/grc.json's stakeholders | [graph/index.html](../graph/index.html) |
+| `data/wikidata-links.json` | the ontologist, from the candidates admin/wikipedia/wikidata_links.py finds on Wikidata | each party's name searched on Wikidata; a proposal is the tool's, a confirmed item is the ontologist's, and the build reads only confirmed ones | [graph/parties/index.html](../graph/parties/index.html) |
 | `admin/content/articles/` | the journalist, historian and other agent roles, one file per article | the evidence and derived layers at a stated site version and vault commit | [articles/index.html](../articles/index.html) |
 | `admin/content/external/` | other models, credited by name (Perplexity, 22 October 2026) | their own research, given to this site by the editor; published in full, never cited until captured | [readings/index.html](../readings/index.html) |
 | `admin/content/updates/` | the conductor, and whoever holds the updates beat for it | the repository's record (admin/build/updates_digest.py) and the captured evidence; dated, kept as written | [updates/index.html](../updates/index.html) |
@@ -144,4 +145,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.20.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.21.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

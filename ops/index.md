@@ -37,7 +37,11 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 ## What changed, newest first
 Release by release
-      questionv0.19.2 · 2026-10-25
+      storyv0.21.0 · 2026-10-25
+### [What Wikipedia knows about being right: the principles, workflows and review habits this newsroom's agents should adopt](../articles/what-wikipedia-knows-about-being-right/index.html)
+frontv0.21.0 · 2026-10-25
+### [Stories: written here](../index.html#stories)
+questionv0.19.2 · 2026-10-25
 ### [Has anyone actually been hacked?](../questions/been-hacked/index.html)
 frontv0.19.2 · 2026-10-25
 ### [Front page: right now](../index.html#now)
@@ -61,11 +65,7 @@ CalifWizfactreportedv0.12.1 · 2026-10-24
 ### [PHP is used by almost 70% of websites whose server-side language is known](../facts/scale-70pc-websites/index.html)
 CloudflareOpenAI on XWizfactunverifiedv0.12.1 · 2026-10-24
 ### [70% of the Internet is affected](../facts/scale-70pc-internet/index.html)
-WizWiz on XBBC Newsfactreportedv0.12.1 · 2026-10-24
-### [VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 Oc](../facts/scale-2.6m-hosts/index.html)
-THNSecurityWeekfactreportedv0.12.1 · 2026-10-24
-### [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too](../facts/nl-offline/index.html)
-Rijksoverheid / NCSC-NLTPO.nl
+WizWiz on XBBC News
 
 Mark an item read with its circle: it fades, and leaves when you choose to hide read items. It comes back only if what it says changes.
 
@@ -96,4 +96,4 @@ Red: from the leak on 20 October. [The timeline](../timeline/index.html)
 
 
 ---
-site v0.20.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/ops/index.html
+site v0.21.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/ops/index.html

@@ -125,7 +125,7 @@ You research vulnerabilities or advise on policy, and need the evidence, the ope
 ASecurity researcherAsh · Deeply technicalWhat are the bug classes, what was demonstrated, and what is still open?5 reads · about 19 min Start →BAnalyst or policy advisorBlake · Some technicalHow did coordinated disclosure fail, and what does AI-assisted discovery change?6 reads · about 15 min Start →
 
 ## Stories: written here
-signed, dated and kept as written; everything above is researchWhat changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the listHouse story · Journalist · 2026-10-23Who reads this site, and what works on it: the tools we built to find out, and what they say on day twoHouse story · Dev desk · 2026-10-23The risk graph, before and after: what changed from one reader's five ideasHouse story · Dev desk · 2026-10-23The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
+signed, dated and kept as written; everything above is researchWhat Wikipedia knows about being right: the principles, workflows and review habits this newsroom's agents should adoptHouse story · ontologist · 2026-10-25What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the listHouse story · Journalist · 2026-10-23Who reads this site, and what works on it: the tools we built to find out, and what they say on day twoHouse story · Dev desk · 2026-10-23The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
 [All stories →](articles/index.html)
 
 What else is going on Other vulnerabilities in the news this month, with the evidence that each is exploited beside the attention it gets: the SGit newsroom's Pulse, in a separate section, not about PHP. Pulse →
@@ -138,4 +138,4 @@ Latest evidence: [the evidence vault](sources/index.html), latest capture 25 Oct
 
 
 ---
-site v0.20.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.21.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/index.html

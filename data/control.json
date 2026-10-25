@@ -476,6 +476,12 @@
    "owner": "editor",
    "status": "open",
    "title": "Proposal: one repository into six (kit, data, refs, updates, site, team), meeting through versions by URL, not submodules; the five decisions for the editor"
+  },
+  {
+   "id": "315",
+   "owner": "editor",
+   "status": "open",
+   "title": "Wikipedia's PHP2Shell article: /wikipedia/php2shell/review/ has 15 findings against Wikipedia's own policies with the captures (2 where the article should change: the uncited 'nearly 70% of websites' in the lead against W3Techs' measure, and 'two parties' against the four reporters the advisories credit; 6 to attribute or qualify). Wikipedia's March 2026 guideline accepts no edit request written by a model, so any of these reaches the talk page only as the editor's own words, disclosed, in the {{edit COI}} form, citing the independent sources named there and never this site. The editor decides which, if any, to take."
   }
  ],
  "branches": [
@@ -875,6 +881,14 @@
    "summary": "Full pass (11:45 London). Quiet wakes since 17:45 yesterday: 19:45, 21:45, 07:45, 09:45, both lanes empty each time, no run record left (the card's old rule; admin/schedule/WAKE.md, v0.19.1, now asks for one every wake, and the Sherpa follows it from now). Lanes drained: 58526ytp and d6zak0o3, noth…"
   },
   {
+   "agent": "ontologist",
+   "finished": "2026-10-25T12:41:57Z",
+   "outcome": "ok",
+   "run": "20261025T1210Z-ontologist",
+   "started": "2026-10-25T12:10Z",
+   "summary": "Wikipedia, round 3, at the editor's direction: the card wakes four times a day and fetches every watched page first (370 revisions kept); /wikipedia/php2shell/evolution/ draws every statement ever written as a lifeline and the Wikidata item's history; /wikipedia/php2shell/talk/ reads the talk page…"
+  },
+  {
    "agent": "factcheck",
    "finished": "2026-10-25T13:01:08Z",
    "outcome": "ok",
@@ -988,11 +1002,14 @@
   },
   {
    "agent": "ontologist",
-   "model": "Sonnet",
+   "model": "the session's model",
    "objective": "Keep the site's fractal semantic graphs whole as the evidence grows: every new party, spelling, claim, number and signal resolved into the ontology, the site's graphs joined by declared bridges, and the long tail found by connection handed to the desk that owns it.",
    "status": "active",
    "times": [
-    "14:40"
+    "06:05",
+    "10:05",
+    "14:05",
+    "18:05"
    ]
   },
   {
@@ -1045,5 +1062,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.20.8"
+ "version": "0.21.0"
 }

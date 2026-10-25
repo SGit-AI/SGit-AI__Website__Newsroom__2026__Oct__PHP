@@ -247,7 +247,7 @@ NAV = [
                    ('exploitation/index.html', 'Exploitation signals'), ('compromise/index.html', 'No named compromise: the evidence'), ('review/index.html', 'The fix, mapped to the code'), ('review/ui/index.html', 'Walk the graph'), ('impact/index.html', 'Impact: offline vs compromised'),
                    ('defence/index.html', 'Detection and defence'), ('context/index.html', 'In context: 2008 to 2026'), ('playbook/index.html', 'If you run PHP'), ('patching/index.html', 'Patching: who gets a fix'), ('patching/inventory/index.html', 'The inventory, hour by hour'), ('signals/index.html', 'The second stories: signals')]),
     ('The analysis', [('claims/index.html', 'Every claim'), ('claims/review/index.html', 'Claims waiting for review'), ('factcheck/index.html', 'Fact-check: how sure we are'), ('outreach/index.html', 'Corrections we have asked for'), ('numbers/index.html', 'The numbers'), ('agencies/index.html', 'The agencies'),
-                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'), ('graph/parties/index.html', 'Every party'), ('wikipedia/index.html', 'Wikipedia, as a graph'), ('wikipedia/php2shell/index.html', 'Wikipedia: the PHP2Shell article'), ('wikipedia/php2shell/statements/index.html', 'Wikipedia: every statement'), ('wikipedia/php2shell/references/index.html', 'Wikipedia: every reference'), ('wikipedia/php2shell/history/index.html', 'Wikipedia: every edit'), ('fractal/index.html', 'From a line of code to a stakeholder'), ('fractal/ui/index.html', 'Walk the whole graph'),
+                      ('affected/index.html', 'Affected systems'), ('actors/index.html', 'Who says what'), ('graph/index.html', 'As a graph'), ('graph/parties/index.html', 'Every party'), ('wikipedia/index.html', 'Wikipedia, as a graph'), ('wikipedia/php2shell/index.html', 'Wikipedia: the PHP2Shell article'), ('wikipedia/php2shell/statements/index.html', 'Wikipedia: every statement'), ('wikipedia/php2shell/references/index.html', 'Wikipedia: every reference'), ('wikipedia/php2shell/history/index.html', 'Wikipedia: every edit'), ('wikipedia/php2shell/evolution/index.html', 'Wikipedia: the evolution'), ('wikipedia/php2shell/talk/index.html', 'Wikipedia: the talk page'), ('wikipedia/php2shell/review/index.html', 'Wikipedia: a reviewer\'s reading'), ('wikipedia/for-editors/index.html', 'Wikipedia: for its editors'), ('fractal/index.html', 'From a line of code to a stakeholder'), ('fractal/ui/index.html', 'Walk the whole graph'),
                       ('readings/index.html', 'From outside: other models and sites')] + [(f'readings/{r["id"]}/index.html', f'{r["model"]}\'s notes, in full') for r in D['readings']['readings']]),
     ('The evidence', [('sources/index.html', 'Every source'), ('affected/software.html', 'Software inventory'), ('admin/vault/index.html', 'The vault, opened'),
                       ('layers/index.html', 'Evidence, derived, authored'),
@@ -7506,6 +7506,7 @@ def _state_hashes():
 # Wikipedia's (CC BY-SA 4.0, by its contributors; the revision id is the attribution) and reaches a page only as text.
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import datetime
 import wikitext as WT
 
 WIKI_DIR = os.path.join(DATA, 'wikipedia')
@@ -7603,9 +7604,82 @@ def wiki_load(slug):
     WIKI_CACHE[slug] = out
     return out
 
-def wiki_articles():
+def wiki_index():
     idx = os.path.join(WIKI_DIR, 'index.json')
-    return [a['slug'] for a in json.load(open(idx, encoding='utf-8'))['articles']] if os.path.exists(idx) else []
+    return json.load(open(idx, encoding='utf-8'))['articles'] if os.path.exists(idx) else []
+
+def wiki_articles():
+    return [a['slug'] for a in wiki_index() if a.get('kind', 'article') == 'article']
+
+def wiki_talk(slug):
+    """The talk page of an article, as threads, with its revisions; None when none is fetched."""
+    t = next((a for a in wiki_index() if a.get('kind') == 'talk' and a.get('of') == slug), None)
+    if not t:
+        return None
+    d = os.path.join(WIKI_DIR, t['slug'])
+    art = json.load(open(os.path.join(d, 'article.json'), encoding='utf-8'))
+    revs = sorted((json.load(open(os.path.join(d, 'revisions', fn), encoding='utf-8')) for fn in os.listdir(os.path.join(d, 'revisions')) if fn.endswith('.json')), key=lambda r: (r['timestamp'], r['revid']))
+    return {'slug': t['slug'], 'art': art, 'revs': revs, 'threads': WT.talk(revs[-1]['wikitext'])}
+
+def wiki_review(slug):
+    """This site's review of one article, done as a Wikipedia reviewer would (data/wikipedia/<slug>/review.json, authored
+    by the ontologist); None when there is none. Every source, claim and contradiction it names must exist."""
+    f = os.path.join(ROOT, 'data', 'wikipedia', slug, 'review.json')
+    if not os.path.exists(f):
+        return None
+    R = json.load(open(f, encoding='utf-8'))
+    cl = {c['id'] for c in D['claims']}
+    ks = {k['id'] for k in load('factcheck')['contradictions']}
+    for fnd in R['findings']:
+        ev = fnd.get('evidence', {})
+        for x in ev.get('sources', []):
+            if x not in SOURCES: sys.exit(f'wikipedia review {slug}: {fnd["id"]} names unknown source {x!r}')
+        for x in ev.get('claims', []):
+            if x not in cl: sys.exit(f'wikipedia review {slug}: {fnd["id"]} names unknown claim {x!r}')
+        for x in ev.get('contradictions', []):
+            if x not in ks: sys.exit(f'wikipedia review {slug}: {fnd["id"]} names unknown contradiction {x!r}')
+    for t in R.get('talk', []):
+        for x in t.get('sources', []):
+            if x not in SOURCES: sys.exit(f'wikipedia review {slug}: talk answer names unknown source {x!r}')
+    for x in R.get('missing_from_the_article', []):
+        if x not in cl: sys.exit(f'wikipedia review {slug}: missing_from_the_article names unknown claim {x!r}')
+    return R
+
+def wiki_finding_statement(w, fnd):
+    """The statement a finding questions: the one whose text starts with the finding's opening words, at the latest revision."""
+    start = fnd['starts'].lower()
+    for st in w['X']['statements']:
+        if st['text'].lower().startswith(start):
+            return st
+    return None
+
+def wiki_item_history(slug):
+    p = os.path.join(WIKI_DIR, slug, 'wikidata-history.json')
+    return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else None
+
+WD_LINKS = None
+def wikidata_link(eid):
+    """The Wikidata item a party is confirmed to be, from data/wikidata-links.json; proposals are not links."""
+    global WD_LINKS
+    if WD_LINKS is None:
+        p = os.path.join(DATA, 'wikidata-links.json')
+        WD_LINKS = json.load(open(p, encoding='utf-8'))['parties'] if os.path.exists(p) else {}
+    l = WD_LINKS.get(eid)
+    return l['item'] if l and l.get('confirmed') and l.get('item') else None
+
+def wiki_lifelines(w):
+    """For every statement that ever existed: the revision that first added it and the one that removed it (or None)."""
+    life = OrderedDict()
+    for r, dlt in zip(w['revs'], w['deltas']):
+        for s in dlt['added'] + [c['to'] for c in dlt['changed']]:
+            if s['id'] not in life:
+                life[s['id']] = {'text': s['text'], 'class': s['class'], 'section': s['section'], 'born': r['revid'], 'born_at': r['timestamp'], 'died': None, 'died_at': None}
+            elif life[s['id']]['died']:
+                life[s['id']].update({'died': None, 'died_at': None, 'reborn': r['revid']})
+        for s in dlt['removed'] + [c['from'] for c in dlt['changed']]:
+            if s['id'] in life and not life[s['id']]['died']:
+                life[s['id']].update({'died': r['revid'], 'died_at': r['timestamp']})
+    return life
 
 def wiki_ledger(w):
     """The counts a proof of trust would start from. Not a score: the fact-check desk grades statements, this page counts."""
@@ -7664,12 +7738,14 @@ def wiki_graph(w):
             edge(rid, 'captured_as', 'source:' + r['captured'])
         if r['party']:
             e = ENTITIES[r['party']]
-            node('party:' + r['party'], 'party', e['name'], href=party_href(r['party']), zoom=[{'graph': 'data/graph.json', 'focus': 'party:' + r['party'], 'label': 'In the story graph'}], borrowed=True)
+            node('party:' + r['party'], 'party', e['name'], href=party_href(r['party']), zoom=[{'graph': 'data/graph.json', 'focus': 'party:' + r['party'], 'label': 'In the story graph'}], borrowed=True, wikidata=wikidata_link(r['party']))
             edge(rid, 'published_by', 'party:' + r['party'])
     latest_ids = {s['id'] for s in X['statements']}
     for r, dlt in zip(w['revs'], w['deltas']):
         rid = node(f'revision:{r["revid"]}', 'revision', f'{fmt_at(r["timestamp"])}: {r["comment"][:80] or "(no summary)"}', href=base + f'history/index.html#rev-{r["revid"]}', at=r['timestamp'], size=r['size'], reverted='mw-reverted' in r['tags'], added=len(dlt['added']), removed=len(dlt['removed']), changed=len(dlt['changed']))
         edge(rid, 'revises', A)
+        if r.get('parentid') and f'revision:{r["parentid"]}' in nodes:
+            edge(rid, 'follows', f'revision:{r["parentid"]}')
         ed = r['editor']
         eid = 'editor:' + (re.sub(r'[^a-z0-9]+', '-', ed['name'].lower()) if ed['kind'] == 'registered' else ed['kind'])
         node(eid, 'editor', ed['name'] if ed['kind'] == 'registered' else f'{ed["kind"]} editors', href=('https://en.wikipedia.org/wiki/User:' + ed['name'].replace(' ', '_')) if ed['kind'] == 'registered' else None)
@@ -7678,6 +7754,40 @@ def wiki_graph(w):
             if s['id'] in latest_ids: edge(rid, 'adds', 'statement:' + s['id'])
         for s in dlt['removed'] + [c['from'] for c in dlt['changed']]:
             if s['id'] in latest_ids: edge(rid, 'removes', 'statement:' + s['id'])
+    talk = wiki_talk(slug)
+    if talk:
+        for t in talk['threads']:
+            tid = node('thread:' + t['id'], 'thread', t['title'], href=base + 'talk/index.html#' + t['id'], posts=len(t['posts']), request_edit=t['request_edit'], answered=t['answered'], started=t['started'])
+            edge(A, 'discussed_in', tid)
+            for i, p_ in enumerate(t['posts']):
+                pid = node(f'post:{t["id"]}:{i}', 'post', (p_['text'][:90] or '(unsigned)'), href=base + f'talk/index.html#{t["id"]}-{i}', when=p_['when'], request_edit=p_['request_edit'])
+                edge(tid, 'has_post', pid)
+                if p_['reply_to'] is not None:
+                    edge(pid, 'replies_to', f'post:{t["id"]}:{p_["reply_to"]}')
+                if p_['who']:
+                    eid = 'editor:' + re.sub(r'[^a-z0-9~]+', '-', p_['who'].lower())
+                    node(eid, 'editor', p_['who'] + (' (temporary account)' if p_['who'].startswith('~') else ''), href='https://en.wikipedia.org/wiki/User:' + p_['who'].replace(' ', '_'))
+                    edge(pid, 'posted_by', eid)
+    R = wiki_review(slug)
+    if R:
+        for fnd in R['findings']:
+            fid = node('finding:' + fnd['id'], 'finding', f'{fnd["id"]}: {fnd["kind"]}, {fnd["strength"]}', href=base + 'review/index.html#' + fnd['id'], kind_of=fnd['kind'], strength=fnd['strength'], policy=', '.join(fnd['policy']))
+            st = wiki_finding_statement(w, fnd)
+            if st: edge(fid, 'questions', 'statement:' + st['id'])
+            for src in fnd.get('evidence', {}).get('sources', []):
+                s_ = SOURCES[src]
+                node('source:' + src, 'source', f'{short_name(s_)}: {s_.get("title") or src}', href=f'sources/{src}/index.html', zoom=[{'graph': 'data/graph.json', 'focus': 'source:' + src, 'label': 'In the story graph: the claims that cite it'}], borrowed=True)
+                edge(fid, 'rests_on', 'source:' + src)
+        if talk:
+            tids = {t['id'] for t in talk['threads']}
+            for i, ta in enumerate(R.get('talk', [])):
+                if ta['thread'] in tids:
+                    fid = node(f'finding:talk-{i}', 'finding', f'Answer: {ta["question"]}', href=base + f'review/index.html#talk-{i}', kind_of='answer')
+                    edge(fid, 'answers', 'thread:' + ta['thread'])
+                    for src in ta.get('sources', []):
+                        s_ = SOURCES[src]
+                        node('source:' + src, 'source', f'{short_name(s_)}: {s_.get("title") or src}', href=f'sources/{src}/index.html', zoom=[{'graph': 'data/graph.json', 'focus': 'source:' + src, 'label': 'In the story graph: the claims that cite it'}], borrowed=True)
+                        edge(fid, 'rests_on', 'source:' + src)
     if w['wd']:
         wd = w['wd']; L = wd['labels']
         props = {f'{L.get(p, p)} ({p})': '; '.join(str(L.get(v['value'], v['value'])) for v in vs) for p, vs in wd['claims'].items()}
@@ -7711,6 +7821,226 @@ def wiki_statement_row(w, s, depth):
         ev = '<span class="st st-unverified">uncited</span>'
     cl = ' '.join(f'<a href="{up}facts/{U(c)}/index.html">{E(c)}</a>' for c in s['claims'])
     return f'<li id="{E(s["id"])}" class="wst wst-{E(s["class"])}">{st_pill(s["class"])} <span class="wtext">{T(s["text"])}</span> <span class="wrefs">{refs}</span><div class="wev"><b>Evidence:</b> {ev}{(" &middot; <b>Our claims on the same source:</b> " + cl) if cl else ""}</div></li>'
+
+def wiki_evolution_svg(w, depth):
+    """Every statement that ever existed as a lifeline: born at the revision that added it, ended at the one that removed it.
+    Time runs left to right; the rows are in the order statements first appeared; colour is the class, written in the title."""
+    life = wiki_lifelines(w)
+    revs = w['revs']
+    t0, t1 = revs[0]['timestamp'], revs[-1]['timestamp']
+    def T(ts):
+        return (datetime.datetime.strptime(ts[:19], '%Y-%m-%dT%H:%M:%S') - datetime.datetime.strptime(t0[:19], '%Y-%m-%dT%H:%M:%S')).total_seconds()
+    span = max(1.0, T(t1))
+    W, left, right, rh = 1000, 10, 990, 5
+    rows = list(life.items())
+    H = 30 + rh * len(rows) + 30
+    x = lambda ts: left + (right - left) * T(ts) / span
+    out = []
+    # a day grid
+    day = datetime.datetime.strptime(t0[:10], '%Y-%m-%d')
+    while day.strftime('%Y-%m-%dT%H:%M:%SZ') <= t1:
+        ts = day.strftime('%Y-%m-%dT%H:%M:%SZ')
+        if ts >= t0:
+            out.append(f'<line class="grid" x1="{x(ts):.1f}" y1="20" x2="{x(ts):.1f}" y2="{H - 25}"/><text class="t" x="{x(ts) + 3:.1f}" y="14">{E(day.strftime("%d %b"))}</text>')
+        day += datetime.timedelta(days=1)
+    alive = sum(1 for _, l in rows if not l['died'])
+    for i, (sid, l) in enumerate(rows):
+        y = 28 + i * rh
+        x0 = x(l['born_at']); x1 = x(l['died_at']) if l['died_at'] else right
+        cls = f'life c-{E(l["class"])}{" dead" if l["died"] else ""}'
+        title = f'{l["class"]}, {"removed " + fmt_at(l["died_at"]) if l["died_at"] else "still in the article"}, added {fmt_at(l["born_at"])}: {l["text"][:140]}'
+        href = f'../statements/index.html#{E(sid)}' if not l['died'] else f'../history/index.html#rev-{l["died"]}'
+        out.append(f'<a href="{U(href)}"><rect class="{cls}" x="{x0:.1f}" y="{y}" width="{max(1.5, x1 - x0):.1f}" height="{rh - 1}"><title>{T_(title)}</title></rect></a>')
+    marks = ''.join(f'<rect class="rev{" rv" if set(r["tags"]) & REVERT_TAGS else ""}" x="{x(r["timestamp"]) - 0.5:.1f}" y="{H - 22}" width="1" height="12"><title>{E(fmt_at(r["timestamp"]))}: {T_(r["comment"][:80])}</title></rect>' for r in revs)
+    svg = f'<figure class="graph wevo"><svg viewBox="0 0 {W} {H}" width="100%" role="img" aria-label="{len(rows)} statements over {len(revs)} revisions: a bar from the revision that added each one to the one that removed it"><g>{"".join(out)}</g><g>{marks}</g></svg><figcaption>{len(rows)} statements ever written, one row each in the order they first appeared, from {E(fmt_at(t0))} to {E(fmt_at(t1))}: a bar runs from the edit that added a statement to the edit that removed it; {alive} are still in the article. Colour is the class (record, stated, attributed, quote, hedged), named in each bar&#39;s title. The ticks along the foot are the {len(revs)} revisions; a red tick was reverted. Hover or focus a bar to read it; click it to open the statement, or the edit that removed it.</figcaption></figure>'
+    return svg, life
+
+def T_(x):
+    return T(x)
+
+def wiki_counts_svg(w):
+    """Size, references and statements over the revisions, as three lines on one time axis."""
+    revs, parsed = w['revs'], w['parsed']
+    t0, t1 = revs[0]['timestamp'], revs[-1]['timestamp']
+    def T(ts):
+        return (datetime.datetime.strptime(ts[:19], '%Y-%m-%dT%H:%M:%S') - datetime.datetime.strptime(t0[:19], '%Y-%m-%dT%H:%M:%S')).total_seconds()
+    span = max(1.0, T(t1)); W, H, left, right, top, bot = 1000, 180, 10, 990, 14, 160
+    x = lambda ts: left + (right - left) * T(ts) / span
+    series = [('bytes', [r['size'] or 0 for r in revs]), ('references', [len(parsed[r['revid']]['references']) for r in revs]), ('statements', [len(parsed[r['revid']]['statements']) for r in revs])]
+    paths = ''
+    for name, vals in series:
+        mx = max(vals) or 1
+        pts = ' '.join(f'{x(r["timestamp"]):.1f},{bot - (bot - top) * v / mx:.1f}' for r, v in zip(revs, vals))
+        paths += f'<polyline class="ser s-{name}" points="{pts}"><title>{E(name)}: {vals[0]} to {vals[-1]} (most {mx})</title></polyline>'
+    legend = ' &middot; '.join(f'{name}: {vals[-1]:,}' for name, vals in series)
+    return f'<figure class="graph wcounts"><svg viewBox="0 0 {W} {H}" width="100%" role="img" aria-label="Bytes, references and statements over every revision">{paths}</svg><figcaption>Each line is scaled to its own peak: the article&#39;s bytes, its references and its statements over the {len(revs)} revisions. Now: {legend}.</figcaption></figure>'
+
+def wiki_item_section(w):
+    """The Wikidata item's own history: who changed which property, when, from the edit summaries."""
+    h = wiki_item_history(w['slug'])
+    if not h:
+        return ''
+    revs = h['revisions']
+    prop = re.compile(r'\[\[Property:(P\d+)\]\]')
+    L = (w['wd'] or {}).get('labels', {})
+    kinds = Counter()
+    rows = []
+    for r in revs:
+        m = re.match(r'/\* ([a-z-]+):', r['comment'])
+        act = m.group(1) if m else 'edit'
+        kinds[act] += 1
+        props = ', '.join(f'{E(L.get(p, p))} ({E(p)})' for p in dict.fromkeys(prop.findall(r['comment'])))
+        who = r['editor']['name'] if r['editor']['kind'] == 'registered' else r['editor']['kind']
+        rows.append([E(fmt_at(r['timestamp'])), E(who), E(act), props or T(re.sub(r'/\*.*?\*/', '', r['comment']).strip()[:100])])
+    by_day = Counter(r['timestamp'][:10] for r in revs)
+    return (f'<p>The item has {len(revs)} revisions, from {E(fmt_at(revs[0]["timestamp"]))} (created from the Finnish Wikipedia&#39;s side, two hours after the English article) to {E(fmt_at(revs[-1]["timestamp"]))}, by {len({r["editor"]["name"] for r in revs if r["editor"]["kind"] == "registered"})} named editors; by day: ' + ', '.join(f'{d} ({n})' for d, n in sorted(by_day.items())) + '. Kinds of edit: ' + ', '.join(f'{k} ({n})' for k, n in kinds.most_common()) + '.</p>'
+            + '<details><summary>Every edit of the item</summary>' + table(['When', 'Editor', 'Edit', 'Property or summary'], list(reversed(rows))) + '</details>')
+
+def build_wikipedia_more(slug, w, L):
+    """The evolution and talk pages of one article, built after the article's own pages."""
+    art, base = w['art'], f'wikipedia/{slug}/'
+    svg, life = wiki_evolution_svg(w, 2)
+    counts = wiki_counts_svg(w)
+    by_class = Counter(l['class'] for l in life.values())
+    dead = sum(1 for l in life.values() if l['died'])
+    longest = sorted(((l['born_at'], l) for l in life.values() if not l['died']), key=lambda x: x[0])[:5]
+    shortest = sorted((l for l in life.values() if l['died_at']), key=lambda l: (datetime.datetime.strptime(l['died_at'][:19], '%Y-%m-%dT%H:%M:%S') - datetime.datetime.strptime(l['born_at'][:19], '%Y-%m-%dT%H:%M:%S')).total_seconds())[:8]
+    li = lambda items: '<ul>' + ''.join(items) + '</ul>'
+    body = f'''
+<p class="crumb"><a href="../../index.html">Wikipedia, as a graph</a> / <a href="../index.html">{E(art["title"])}</a> / Evolution</p>
+<h1>The evolution of Wikipedia&#39;s {E(art["title"])} article</h1>
+<p class="lead">{len(life)} statements have been written into the article since {E(fmt_at(w["revs"][0]["timestamp"]))}; {len(life) - dead} are in it now and {dead} were removed or reworded on the way. Every edit is a point in time, every statement a bar from the edit that added it to the edit that took it out, so the picture shows what the article was at any moment, what has survived, and what the editors did not keep. The data is every revision, read by the same parser as the rest of this section.</p>
+{svg}
+{section("counts", "Size, references and statements", counts)}
+{section("survivors", "What has survived longest", '<p>The statements that have been in the article longest, unchanged in wording:</p>' + li([f'<li>{E(fmt_at(b))}: <a href="../statements/index.html#{E([k for k, v in life.items() if v is l][0])}">{T(l["text"][:160])}</a></li>' for b, l in longest]))}
+{section("brief", "What lasted least", '<p>The statements removed soonest after they were written, with the edit that removed them: where the article&#39;s editors disagreed with a contributor, or a contributor with themselves.</p>' + li([f'<li>{T(l["text"][:160])} <span class="small">(added {E(fmt_at(l["born_at"]))}, removed {E(fmt_at(l["died_at"]))}: <a href="../history/index.html#rev-{E(str(l["died"]))}">the edit</a>)</span></li>' for l in shortest]))}
+{section("classes", "By class, over the whole history", table(["Class", "Ever written", "In the article now"], [[st_pill(c), E(str(by_class.get(c, 0))), E(str(sum(1 for l in life.values() if l["class"] == c and not l["died"])))] for c in ("record", "stated", "attributed", "quote", "hedged")]))}
+{section("item", "The Wikidata item, over time", wiki_item_section(w) or '<p class="small">No item history fetched.</p>')}
+<p class="small">The text is Wikipedia&#39;s, CC BY-SA 4.0, by its contributors.</p>
+'''
+    page(base + 'evolution/index.html', f'The evolution of Wikipedia&#39;s {art["title"]} article', f'Every statement ever written into the article as a lifeline from the edit that added it to the edit that removed it, with the size, references and statements over all {len(w["revs"])} revisions, and the Wikidata item\'s own history.', body, kind='evidence', topics=f'wikipedia {slug} evolution')
+    talk = wiki_talk(slug)
+    if not talk:
+        return
+    threads = talk['threads']
+    posts = sum(len(t['posts']) for t in threads)
+    secs = ''
+    for t in threads:
+        items = ''
+        for i, p_ in enumerate(t['posts']):
+            who = (f'<a href="https://en.wikipedia.org/wiki/User:{U(p_["who"].replace(" ", "_"))}" rel="noopener">{E(p_["who"])}</a>' + (' <span class="small">(temporary account)</span>' if p_['who'].startswith('~') else '')) if p_['who'] else '<i>unsigned</i>'
+            flags = (' <span class="st st-stated">request edit</span>' if p_['request_edit'] else '') + (' <span class="st st-confirmed">answered</span>' if p_['answered'] else '')
+            items += f'<li id="{E(t["id"])}-{i}" class="wpost d{min(p_["depth"], 6)}"><b>{who}</b> <span class="small">{E(fmt_at(p_["when"])) if p_["when"] else ""}</span>{flags}<br>{T(p_["text"])}</li>'
+        head = f'{E(t["title"])} <span class="small">({len(t["posts"])} post{"s" if len(t["posts"]) != 1 else ""}{", " + E(fmt_at(t["started"])) if t["started"] else ""})</span>' + (' <span class="st st-stated">request edit</span>' if t['request_edit'] else '')
+        secs += section(t['id'], head, f'<ol class="wthread">{items}</ol>')
+    req = [t for t in threads if t['request_edit']]
+    body = f'''
+<p class="crumb"><a href="../../index.html">Wikipedia, as a graph</a> / <a href="../index.html">{E(art["title"])}</a> / The talk page</p>
+<h1>What Wikipedia&#39;s editors discuss about the {E(art["title"])} article</h1>
+<p class="lead">The article&#39;s <a href="{U(talk["art"]["url"])}" rel="noopener">talk page</a>, as threads: {len(threads)} discussions, {posts} signed posts, {talk["art"]["revisions"]} revisions of the page since {E(fmt_at(talk["revs"][0]["timestamp"]))}. This is where corrections are argued, where outside parties ask for changes without editing the article ({len(req)} thread{"s" if len(req) != 1 else ""} use the edit-request process, with a disclosed conflict of interest), and where readers say what the article does not yet explain. Every post links to its author&#39;s public Wikipedia page; a temporary account is Wikipedia&#39;s own pseudonym for a logged-out editor.</p>
+{secs}
+<p class="small">The posts are their authors&#39;, CC BY-SA 4.0, shown as text.</p>
+'''
+    page(base + 'talk/index.html', f'What Wikipedia&#39;s editors discuss about the {art["title"]} article', f'The talk page of the article as threads: {len(threads)} discussions and {posts} posts, including the edit requests outside parties made with a disclosed conflict of interest.', body, kind='evidence', topics=f'wikipedia {slug} talk')
+
+STRENGTH_WORD = {'high': ('The article should change', 'contradicted'), 'medium': ('The article should attribute or qualify', 'disputed'), 'low': ('Housekeeping', 'unverified'), 'confirmed': ('Holds against this site\'s evidence', 'confirmed')}
+
+def build_wikipedia_review(slug, w, L):
+    """This site's review of the article, done as a Wikipedia reviewer would, from data/wikipedia/<slug>/review.json."""
+    R = wiki_review(slug)
+    if not R:
+        return 0
+    art, base = w['art'], f'wikipedia/{slug}/'
+    cl = {c['id']: c for c in D['claims']}
+    ks = {k['id']: k for k in load('factcheck')['contradictions']}
+    talk = wiki_talk(slug)
+    threads = {t['id']: t for t in talk['threads']} if talk else {}
+    li = lambda items: '<ul>' + ''.join(items) + '</ul>'
+    def ev_block(ev):
+        out = ''
+        if ev.get('claims'):
+            out += '<p class="small"><b>This site&#39;s claims:</b> ' + ', '.join(f'<a href="../../../facts/{U(c)}/index.html">{E(c)}</a> <span class="st st-{E(cl[c]["status"])}">{E(cl[c]["status"])}</span>' for c in ev['claims']) + '</p>'
+        if ev.get('contradictions'):
+            out += '<p class="small"><b>Contradictions:</b> ' + ', '.join(f'<a href="../../../factcheck/index.html#{E(k)}">{E(k)}</a>: {T(ks[k]["measure"])} ({E(ks[k]["status"])})' for k in ev['contradictions']) + '</p>'
+        if ev.get('sources'):
+            out += '<p class="small"><b>Captured pages:</b> ' + ' '.join(f'<a class="cap" href="../../../sources/{U(x)}/index.html">{E(short_name(SOURCES[x]))}</a>' for x in ev['sources']) + '</p>'
+        if ev.get('desk'):
+            out += f'<p class="small"><b>The fact-check desk:</b> {E(ev["desk"])}</p>'
+        return out
+    order = ['high', 'medium', 'low', 'confirmed']
+    secs = ''
+    for strength in order:
+        fs = [f for f in R['findings'] if f['strength'] == strength]
+        if not fs: continue
+        items = ''
+        for f in fs:
+            st = wiki_finding_statement(w, f)
+            quoted = f'<a href="../statements/index.html#{E(st["id"])}">{T(st["text"])}</a> {st_pill(st["class"])}' if st else f'<i>{T(f["starts"])}</i> <span class="st st-unverified">no longer in the article as worded</span>'
+            pol = ' '.join(f'<a href="https://en.wikipedia.org/wiki/{U(p_.replace(":", ":"))}" rel="noopener" title="{E(R["policies"].get(p_, ""))}"><code>{E(p_)}</code></a>' for p_ in f['policy'])
+            items += f"""<li id="{E(f["id"])}" class="wfinding"><p><b>{E(f["id"])}</b> &middot; {E(f["section"])} &middot; {E(f["kind"])} &middot; {pol}</p>
+<blockquote>{quoted}</blockquote>
+<p>{T(f["finding"])}</p>{ev_block(f.get("evidence", {}))}
+<p class="wchange"><b>Change proposed:</b> {T(f["change"])}</p></li>"""
+        word, cls = STRENGTH_WORD[strength]
+        secs += section(strength, f'{word} ({len(fs)})', f'<ol class="wfindings">{items}</ol>')
+    talk_items = ''
+    for i, ta in enumerate(R.get('talk', [])):
+        t = threads.get(ta['thread'])
+        head = f'<a href="../talk/index.html#{E(ta["thread"])}">{E(t["title"])}</a>' if t else E(ta['question'])
+        talk_items += f'<li id="talk-{i}"><p><b>{head}</b></p><p>{T(ta["what_this_site_holds"])}</p><p class="small"><b>Captured pages:</b> ' + ' '.join(f'<a class="cap" href="../../../sources/{U(x)}/index.html">{E(short_name(SOURCES[x]))}</a>' for x in ta.get('sources', [])) + '</p></li>'
+    missing = li([f'<li><a href="../../../facts/{U(c)}/index.html">{E(c)}</a>: {T(cl[c]["claim"][:200])} <span class="st st-{E(cl[c]["status"])}">{E(cl[c]["status"])}</span></li>' for c in R.get('missing_from_the_article', [])])
+    pol_rows = [[f'<a href="https://en.wikipedia.org/wiki/{U(k)}" rel="noopener"><code>{E(k)}</code></a>', E(v)] for k, v in R['policies'].items()]
+    n = Counter(f['strength'] for f in R['findings'])
+    body = f'''
+<p class="crumb"><a href="../../index.html">Wikipedia, as a graph</a> / <a href="../index.html">{E(art["title"])}</a> / A reviewer&#39;s reading</p>
+<h1>Wikipedia&#39;s {E(art["title"])} article, read as one of its reviewers would</h1>
+<p class="lead">{len(R["findings"])} findings on revision <code>{E(str(R["revision"]))}</code>, reviewed {E(R["reviewed"])}: {n.get("high", 0)} where this site&#39;s evidence says the article should change, {n.get("medium", 0)} where it should attribute or qualify, {n.get("low", 0)} of housekeeping, and {n.get("confirmed", 0)} where the article holds exactly against the captures. Each finding names the statement, the Wikipedia policy or guideline it rests on, the captured pages in this site&#39;s evidence vault that bear on it, and a change in the shape Wikipedia asks for: specific, uncontroversial, necessary and sensible. {len(R.get("talk", []))} questions asked on the article&#39;s <a href="../talk/index.html">talk page</a> are answered from the same captures.</p>
+<p class="disc">&#9888; Nothing on this page is posted to Wikipedia, and no agent of this site will post it. Wikipedia&#39;s guideline on large language models (March 2026) does not accept article text, talk-page comments or edit requests written by a model, and this page was written by one. It is for a person to read, check against the captures, and, where they agree, put to the talk page in their own words, with their connection to this site disclosed and the independent sources named. This site is self-published and is not a source Wikipedia can cite; none of the changes proposed here cites it. <a href="../../for-editors/index.html">For Wikipedia&#39;s editors</a> says how this site means to work with the article&#39;s editors.</p>
+<p class="small">{T(R["method"])}</p>
+{secs}
+{section("talk", f"Questions on the talk page, answered from the captures ({len(R.get('talk', []))})", f'<ol class="wfindings">{talk_items}</ol>' if talk_items else '<p class="small">None.</p>')}
+{section("missing", f"What this site holds that the article does not say ({len(R.get('missing_from_the_article', []))})", '<p>Claims of this site, each with its own captures and the fact-check desk&#39;s status, on matters the article does not cover. Whether any belongs in the article is for its editors: Wikipedia weighs what reliable secondary sources have covered, not what a primary capture shows.</p>' + missing)}
+{section("policies", "The policies and guidelines named", '<p>Each in Wikipedia&#39;s own words, shortened; the links go to the policy pages.</p>' + table(["Policy", "What it asks"], pol_rows))}
+{section("limits", "What this review cannot see", f'<p>{T(R["not_held_here"])} The review is of one revision; the article changes several times a day, and a finding is matched to its statement by its opening words, so a finding whose statement has since been reworded is marked as such above rather than dropped. The next pass of this site&#39;s ontologist re-reads the article against the same findings.</p>')}
+<p class="small">The text quoted is Wikipedia&#39;s, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>, by its contributors; the findings are this site&#39;s, CC BY 4.0. The data is <a href="../../../data/wikipedia/{U(slug)}/review.json">review.json</a>.</p>
+'''
+    page(base + 'review/index.html', f'Wikipedia&#39;s {art["title"]} article, read as one of its reviewers would', f'{len(R["findings"])} findings on the article against this site\'s captured evidence, each with the Wikipedia policy it rests on and a change proposed for a human to put to the talk page; nothing is posted by an agent.', body, kind='evidence', topics=f'wikipedia {slug} review')
+    return len(R['findings'])
+
+def build_wikipedia_editors(cards):
+    """The page for Wikipedia's editors: what this site is, what it offers, and the rules it holds itself to."""
+    rows = []
+    for slug, art, L in cards:
+        rows.append([f'<a href="../{U(slug)}/index.html">{E(art["title"])}</a>', f'<a href="../{U(slug)}/references/index.html">{L["captured"]} of {L["with_url"]}</a>', f'<a href="../{U(slug)}/review/index.html">{wiki_review(slug) and len(wiki_review(slug)["findings"]) or 0}</a>', f'<a href="../{U(slug)}/talk/index.html">{E(str(L["revisions"]))} revisions read</a>'])
+    body = f'''
+<p class="crumb"><a href="../index.html">Wikipedia, as a graph</a> / For Wikipedia&#39;s editors</p>
+<h1>For the editors of Wikipedia&#39;s articles on this story</h1>
+<p class="lead">This site is a newsroom of software agents and one human editor, Dinis Cruz, publishing on one story: the PHP2Shell vulnerabilities of October 2026. It reads your article every four hours, keeps every revision, and holds dated, hashed captures of many of the pages your article cites. This page says what it is, what it can offer the article&#39;s editors, and the rules it holds itself to, so that the two can work together without this site ever editing the article.</p>
+{section("what", "What this site is, in Wikipedia&#39;s terms", '<p>A self-published source (<code>WP:SPS</code>), written largely by language models (<code>WP:RSML</code>): not a reliable source for an article, and it does not ask to be cited or linked. Its value to an editor is different: it keeps the primary record. Every page it cites is captured into an evidence vault with a time and a hash, so a page that has since been edited or removed can be read as it was when the article&#39;s reference was written; every number has a date; every disagreement between sources is a row in a <a href="../../factcheck/index.html">contradiction ledger</a> with both sides quoted; its own errors are corrected on a <a href="../../corrections/index.html">corrections page</a>, never silently.</p>')}
+{section("offer", "What it offers", '<ul><li><b>Captures of the pages the article cites.</b> <a href="../php2shell/references/index.html">Every reference</a> of the article is matched to a capture where this site holds one; each capture has a UTC time and a SHA-256 hash, and the text as fetched. Where a cited page has changed since the citation was written, the capture shows the wording the citing editor saw. (The archive an article should link is the Wayback Machine, not this site; the captures are for checking, not citing.)</li><li><b>A reading of the article against the evidence.</b> <a href="../php2shell/review/index.html">A reviewer&#39;s reading</a>: findings against the article&#39;s own policies, with the captures, and a proposed change in the shape an edit request takes. Written by a model, so by Wikipedia&#39;s rule it is material for a person to check and put in their own words, never pasted.</li><li><b>Answers to questions asked on the talk page</b>, from the same captures, on the same page.</li><li><b>A timeline in UTC</b> of the disclosure, the leak, the release and the responses, with each time&#39;s source: <a href="../../timeline/index.html">the timeline</a>.</li><li><b>Drawings built by code from the published diff</b> of the fix, under CC BY 4.0, for the diagram the talk page asks for; any upload is a human contributor&#39;s, under Wikipedia&#39;s own rules on images.</li></ul>')}
+{section("rules", "The rules this site holds itself to", '<ol><li><b>No agent of this site edits Wikipedia</b>, any article, any talk page, any item on Wikidata. Its software reads; it never writes.</li><li><b>No edit request, comment or text written by a model is posted</b>, by anyone, on this site&#39;s behalf. Where the human editor of this site posts on a talk page, it is in his own words, signed, with his connection to this site disclosed (<code>WP:COI</code>, <code>WP:DISCLOSE</code>), in the edit-request form (<code>WP:EDITREQ</code>), citing independent sources only.</li><li><b>No request to cite or link this site.</b> This site is not a reliable source for Wikipedia and does not ask to be one (<code>WP:SPS</code>, <code>WP:ADV</code>). If an editor finds a capture useful, the thing to cite is the captured page, with the Wayback Machine as its archive.</li><li><b>What it takes, it attributes.</b> The article&#39;s text is republished here under CC BY-SA 4.0, with the revision id as the attribution; the pages and data that carry it are under the same licence, and what was changed (parsed into sentences, classed by wording) is stated on each page.</li><li><b>Corrections first.</b> Where the article shows this site to be wrong, this site&#39;s page is corrected first, and the correction is dated and kept.</li><li><b>It reads the talk page.</b> Every four hours. A question asked there about the facts of the story is answered on this site&#39;s review page from the captures, where a person can read it; it is not answered on the talk page by an agent.</li></ol>')}
+{section("together", "How the two could work together", '<p>Wikipedia&#39;s strength is review by many people against written policy; this site&#39;s is a dated, hashed record of the primary pages and every change in them. The join is the evidence. An editor who wants to check a citation can read the capture; a reviewer who wants to know whether a figure was ever stated by its source can read the <a href="../../factcheck/index.html">fact-check desk&#39;s</a> grade and the excerpt it rests on; a contributor who wants the sequence of a day in UTC can take it from the timeline, with its sources. Nothing of this needs the article to mention this site. The one thing this site asks is that an editor who finds an error here say so, on the talk page or by the means on its <a href="../../feedback/index.html">feedback page</a>, so it can be corrected.</p>')}
+{section("articles", "The articles read", table(["Article", "References captured here", "Findings", "History"], rows))}
+<p class="small">The attribution Wikipedia asks of reusers, as this site gives it on each page of this section: <i>This page uses material from the Wikipedia article &ldquo;PHP2Shell&rdquo;, which is released under the Creative Commons Attribution-Share-Alike License 4.0.</i> The text here that is this site&#39;s own is CC BY 4.0.</p>
+'''
+    page('wikipedia/for-editors/index.html', 'For the editors of Wikipedia&#39;s articles on this story', 'What this site is in Wikipedia\'s terms, what it offers the article\'s editors (dated, hashed captures of the cited pages, a reviewer\'s reading, answers from the captures), and the rules it holds itself to: no agent edits Wikipedia, nothing written by a model is posted, no request to be cited.', body, kind='evidence', topics='wikipedia editors collaboration')
+
+def wiki_sister_section(cards):
+    """Wikidata and DBpedia: what each holds for the articles read, and what has changed in them."""
+    rows = []
+    for slug, art, L in cards:
+        w = wiki_load(slug)
+        wd = w['wd']
+        h = wiki_item_history(slug)
+        dbp = json.load(open(os.path.join(ROOT, 'data', 'wikipedia', slug, 'article.json'), encoding='utf-8')).get('dbpedia')
+        item = f'<a href="https://www.wikidata.org/wiki/{E(wd["item"])}" rel="noopener"><code>{E(wd["item"])}</code></a>' if wd else 'none'
+        hist = f'{len(h["revisions"])} revisions, last {E(fmt_at(h["revisions"][-1]["timestamp"]))}' if h else 'not fetched'
+        rows.append([f'<a href="{U(slug)}/index.html">{E(art["title"])}</a>', item, E(str(len(wd['claims']))) + ' claims' if wd else '', hist, (f'HTTP {E(str(dbp.get("status")))}' + (', not yet extracted' if dbp.get('status') == 404 else '')) if dbp else 'not checked'])
+    links = json.load(open(os.path.join(ROOT, 'data', 'wikidata-links.json'), encoding='utf-8'))['parties'] if os.path.exists(os.path.join(ROOT, 'data', 'wikidata-links.json')) else {}
+    n_conf = sum(1 for v in links.values() if v.get('confirmed')); n_prop = sum(1 for v in links.values() if v.get('proposed') and not v.get('confirmed'))
+    return (f'<p>Wikidata is the structured sister of Wikipedia: one item per thing, with typed claims, edited in the open with the same history as an article. DBpedia is the older extraction of the same facts from Wikipedia&#39;s infoboxes, built from periodic dumps. This site reads both for the articles it watches, keeps the item&#39;s own history (on each article&#39;s <a href="php2shell/evolution/index.html#item">evolution page</a>), and looks the parties of its own graph up on Wikidata so that a party here can carry the item that is already there, rather than a new identifier: {len(links)} parties looked up, {n_conf} items confirmed by hand, {n_prop} proposed and waiting. The lookups are in <a href="../data/wikidata-links.json">wikidata-links.json</a>; the build shows only confirmed items.</p>'
+            + table(["Article", "Wikidata item", "Claims", "Item history", "DBpedia"], rows)
+            + '<p class="small">Learned from them so far: an item is created by whichever language edition gets there first (this one from the Finnish Wikipedia, two hours after the English article); its claims are typed and sourced one by one, which is the shape this site&#39;s own attribution rows take; and an identifier that exists already is the one to use.</p>')
 
 def build_wikipedia():
     slugs = wiki_articles()
@@ -7751,8 +8081,9 @@ def build_wikipedia():
 {section("meet", "Where the article and this site meet", f'<p>{L["shared"]} references are pages this site&#39;s claims also cite. A statement there and a claim here that rest on the same captured page meet at that page: there is no &ldquo;same as&rdquo; edge, the shared evidence is the join. <a href="references/index.html">Every reference</a>.</p>' + shared + f'<h3>Contradictions this site records on that shared evidence ({len(L["contradictions"])})</h3>' + ks)}
 {section("delta", "What changed since this site captured it", cap_line + f'<p>{L["reverts"]} of the {L["revisions"]} revisions were reverts or were reverted; {L["minor"]} were marked minor; {L["anonymous_edits"]} were anonymous. The article is now {L["size"]:,} bytes.</p>')}
 {section("wikidata", "The Wikidata item", wd_t or '<p class="small">No Wikidata item was fetched.</p>')}
+{section("more", "The article over time, and its talk page", '<p><a href="evolution/index.html">The evolution</a>: every statement ever written as a bar from the edit that added it to the edit that removed it, the size and references over time, and the Wikidata item&#39;s own history. <a href="talk/index.html">The talk page</a>: what the editors discuss, including the edit requests outside parties made with a disclosed conflict of interest. <a href="review/index.html">A reviewer&#39;s reading</a>: the article against this site&#39;s captures, finding by finding, for a person to take to the talk page.</p>')}
 {section("links", "What links here", f'<p>{L["links_in"]} other articles link to this one, which is how a reader of Wikipedia arrives: from <i>PHP</i>, <i>2026</i>, the lists of security incidents, the pages of the companies named. The list is in <a href="../../data/wikipedia/{U(slug)}/links-in.json">links-in.json</a>.</p>')}
-{section("trust", "Towards a measure of trust", f'<p>The editor&#39;s working view is that Wikipedia is a trusted source, and that this should be shown rather than assumed: by how often its statements are later corrected, against how often other publications are. This page does not compute a score; it keeps the counts a proof would start from, and the fact-check desk grades statements, not pages. For this article: {L["cited"]} of {L["statements"]} statements cited ({100 * L["cited"] // max(1, L["statements"])}%); {L["captured"]} of {L["with_url"]} references captured here, {L["primary"]} of those primary sources; {L["reverts"]} reverts in {L["revisions"]} revisions; {len(L["contradictions"])} of this site&#39;s contradictions touch evidence the article also cites.</p><p class="small">The text is Wikipedia&#39;s, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>, by its contributors; the revision ids are the attribution, and this site&#39;s pages and data that carry it are under the same licence. It is republished so it can be read as a graph, diffed and followed to its evidence; nothing here is Wikipedia&#39;s view, and nothing on Wikipedia is this site&#39;s.</p>')}
+{section("trust", "Towards a measure of trust", f'<p>The editor&#39;s working view is that Wikipedia is a trusted source, and that this should be shown rather than assumed: by how often its statements are later corrected, against how often other publications are. This page does not compute a score; it keeps the counts a proof would start from, and the fact-check desk grades statements, not pages. For this article: {L["cited"]} of {L["statements"]} statements cited ({100 * L["cited"] // max(1, L["statements"])}%); {L["captured"]} of {L["with_url"]} references captured here, {L["primary"]} of those primary sources; {L["reverts"]} reverts in {L["revisions"]} revisions; {len(L["contradictions"])} of this site&#39;s contradictions touch evidence the article also cites.</p><p class="small">The text is Wikipedia&#39;s, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>, by its contributors; the revision ids are the attribution, and this site&#39;s pages and data that carry it are under the same licence: this page uses material from the Wikipedia article &ldquo;{E(art["title"])}&rdquo; (<a href="{U(art["url"])}" rel="noopener">link</a>), released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">Creative Commons Attribution-Share-Alike License 4.0</a>. It is republished so it can be read as a graph, diffed and followed to its evidence; nothing here is Wikipedia&#39;s view, and nothing on Wikipedia is this site&#39;s.</p>')}
 '''
         page(base + 'index.html', f'Wikipedia&#39;s {art["title"]} article, as a graph', f'The English Wikipedia article on {art["title"]} read as a fractal semantic graph: {L["statements"]} statements classed as facts, attributions and quotes, {L["references"]} references and which are captured here, {L["revisions"]} revisions, and where it meets this site\'s claims.', body, kind='evidence', topics=f'wikipedia {slug} graph')
         # ---- statements
@@ -7820,6 +8151,8 @@ def build_wikipedia():
 <p class="small">Edit summaries and text are Wikipedia&#39;s, CC BY-SA 4.0, by its contributors, shown as text.</p>
 '''
         page(base + 'history/index.html', f'Every edit of Wikipedia&#39;s {art["title"]} article, as what it changed', f'All {L["revisions"]} revisions of the article as the statements each one added, removed or reworded, with the editor, the size and the reverts.', body, kind='evidence', topics=f'wikipedia {slug} history')
+        build_wikipedia_more(slug, w, L)
+        build_wikipedia_review(slug, w, L)
         cards.append((slug, art, L))
     # ---- the section index
     rows = [[f'<a href="{U(slug)}/index.html">{E(art["title"])}</a>', E(str(L['statements'])), f'{L["cited"]} ({100 * L["cited"] // max(1, L["statements"])}%)', f'{L["captured"]} of {L["with_url"]}', E(str(L['shared'])), E(str(L['revisions'])), E(str(L['editors'])), E(str(L['reverts'])), E(fmt_at(L['last']))] for slug, art, L in cards]
@@ -7828,8 +8161,11 @@ def build_wikipedia():
 <p class="lead">Wikipedia is one of the largest bodies of checked fact there is, and one of the hardest to use as one: an article is long, its edits are diffs of markup, its references are a list at the bottom, and nothing tells a reader what they have already seen. This section reads each article this site watches as a fractal semantic graph: one statement per sentence, each classed by its wording (a fact stated, a view attributed, a quote), each joined to the references it cites, and those to the captures this site holds of the same pages, which is where the article&#39;s facts and this site&#39;s claims meet. Every revision is kept, so an edit reads as what it changed. Kept by the ontologist; fetched by <code>admin/wikipedia/fetch.py</code> on the daily pass.</p>
 {table(["Article", "Statements", "Cited", "References captured here", "Shared with our claims", "Revisions", "Editors", "Reverts", "Latest revision"], rows)}
 {section("how", "How it is made", '<ul><li><b>Fetch.</b> Every revision of the article, with its wikitext, time, editor and edit summary; the Wikidata item; the articles that link in. Anonymous editors are recorded as anonymous, never by address.</li><li><b>Parse.</b> A parser (<code>admin/build/wikitext.py</code>, no model) lifts the references out, turns the markup into text, and splits it into sentences. One sentence is one statement; its id is a hash of its words, so the same sentence keeps its id across revisions and an edit is a set difference.</li><li><b>Class.</b> By wording only: a <i>record</i> (a number, a date, an identifier), a plain <i>stated</i> fact, an <i>attributed</i> statement (a named party said, reported or estimated it), a <i>quote</i>, or <i>hedged</i> wording. The class says how the article speaks, not whether it is right.</li><li><b>Join.</b> A reference is matched to this site&#39;s sources by its address and to a party by its host. A statement there and a claim here that cite the same captured page meet at that page.</li><li><b>Keep.</b> The data is <code>data/wikipedia/</code>; the graph of each article is in the ontology&#39;s <code>wikipedia</code> scope (<a href="../data/ontology.json">data/ontology.json</a>), with its own kinds and verbs, joined to the story graph by <code>captured_as</code>.</li></ul>')}
+{section("sisters", "Wikidata and DBpedia", wiki_sister_section(cards))}
+{section("editors", "For Wikipedia&#39;s editors", '<p>This site does not edit Wikipedia and does not ask to be cited by it. What it offers the article&#39;s editors, and the rules it holds itself to, are on <a href="for-editors/index.html">one page</a>; its reading of the article as a reviewer would read it, finding by finding against the captures, is on each article&#39;s <a href="php2shell/review/index.html">review page</a>.</p>')}
 {section("next", "What this is for", '<p>Three things. A reader who wants the facts of a story, each with its evidence and without the markup, the edit wars and the list at the bottom. A newsroom that can see what Wikipedia says, what it rests on, and what changed since it last looked, in one view. And, in time, a measure: a source&#39;s trust shown by how often its statements are corrected, against other publications&#39;, rather than assumed.</p><p class="small">The text of each article is Wikipedia&#39;s, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>, by its contributors, with the revision id as the attribution; the pages and data of this section that carry it are under the same licence.</p>')}
 '''
+    build_wikipedia_editors(cards)
     page('wikipedia/index.html', 'Wikipedia, as a graph', 'Each Wikipedia article this site watches, read as a fractal semantic graph: statements classed as facts, attributions and quotes, references joined to the captures this site holds, and every edit as what it changed.', body, kind='evidence', topics='wikipedia graph')
 
 

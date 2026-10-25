@@ -49,6 +49,7 @@ The graphgraph/index.htmlEvery partygraph/parties/index.htmlThe graph componentg
 | 201 | Add the PHP 7.4 backport's hunks to the fractal graph as their own layer (the lines the backport wrote; never the vulnerable code before it)Handed over by the librarian on 22 October: the graphs are the cartographer's scope (admin/content/agents/cartographer/). Renumbered from 092 on 23 October when the librarian's branch took in dev. Renumbered again on 24 October when the librarian's branch took in dev at v0.11.2. Renumbered a third time on 24 October (dev at v0.11.5). | open |  |
 | 291 | Trust shown, not assumed: the same counts kept for Wikipedia (statements cited, references captured, reverts, contradictions touching its evidence) kept for every publication the site holds, so a correction rate can be compared across them; then a second Wikipedia article (PHP, or the list of security incidents)From the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md). | open |  |
 | 294 | data/wikipedia/ grows with every revision (6 MB for 364 revisions of one article): decide, with the researcher, whether old revisions move to the evidence vault and the repository keeps the latest text plus statement-level deltasFrom the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md). | open |  |
+| 319 | Wikidata and DBpedia, tracked: data/wikidata-links.json holds every party's lookup (25 items confirmed by hand on 25 October, the rest to confirm as the lookup completes); the item's history is on the evolution page; DBpedia returns 404 for PHP2Shell until its next extraction, recorded in article.json. Each wake re-fetches the item history and re-checks DBpedia; when DBpedia has the entry, read its triples beside Wikidata's claims and show where they differ.The ontologist, 25 October; the editor's direction: learn from them and use the identifiers that are already there. | open |  |
 
 ## Waiting on someone else
 
@@ -69,4 +70,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.20.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/ontologist/index.html
+site v0.21.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/ontologist/index.html
