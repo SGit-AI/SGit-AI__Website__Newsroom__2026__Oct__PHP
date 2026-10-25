@@ -1,37 +1,30 @@
 {
  "schema": "newsroom/agent-status/v1",
  "agent": "desk",
- "as_of": "2026-10-24",
+ "as_of": "2026-10-25",
  "round": {
-  "n": 1,
-  "date": "2026-10-24",
+  "n": 2,
+  "date": "2026-10-25",
   "branch": "narrator/offline-ledger",
   "commits": [
-   "d2b166a36 (v0.13.0, the release)",
-   "and the round's merges and briefs on the branch"
+   "v0.14.13",
+   "v0.15.2",
+   "v0.18.4"
   ]
  },
- "state": "round 1 closed; released in v0.13.0; next wake 09:20 London",
+ "state": "round 2 closed: three scheduled wakes (24 October 09:20 and 16:20, 25 October 09:20); next wake 16:20 London",
  "done": [
   {
-   "what": "Briefs: the news desk chief; how many sites went offline (accepted); the front page on day two; the redesign for communication; the desk on a schedule; asking for corrections",
-   "evidence": "admin/content/briefs/2026-10-2[234]__*desk*, *offline*, *front-page*, *redesign*, *corrections*"
-  },
-  {
-   "what": "The data put right before any correction is asked of others (Finding-33, Finding-102, K-004, K-011, nl-offline, kev-precedent, the front page's offline advice)",
-   "evidence": "data/claims.json, data/plain.json, data/impact.json, data/questions.json"
-  },
-  {
-   "what": "/outreach/: eleven requests with every quote checked in its capture, and the email the editor sends for each ready one",
+   "what": "Correction requests kept in step with the publishers: R-004 held (AWS reworded itself), R-005 and R-007 ready, R-003 needs a fresh capture, R-012 (TechTarget) drafted as the origin of R-011",
    "evidence": "data/outreach.json, /outreach/"
   },
   {
-   "what": "The desk's schedule active (09:20, 16:20 London); the fact-check desk's schedule resumed",
-   "evidence": "data/schedule/desk.json; the fact-check desk's scheduled task"
+   "what": "The front page checked at every wake: Right now's stamp (276, done), the 70% unknown (259), the third flaw CVE-2026-115560 (301, 302)",
+   "evidence": "data/admin.json, data/runs/desk/"
   },
   {
-   "what": "Released as v0.13.0",
-   "evidence": "v0.13.0 live"
+   "what": "The editor's queue ranked at every wake",
+   "evidence": "data/runs/desk/"
   }
  ],
  "tasks": {
@@ -63,30 +56,26 @@
  },
  "next": [
   {
-   "what": "09:20 wake: the front page against the fact-check desk's first run since 22 October",
-   "why": "the card's morning wake"
+   "what": "Move the desk's wakes to 10:15 and 17:40 London once the editor agrees",
+   "why": "board 285: the correspondent's reviews come first"
   },
   {
-   "what": "the offline count with its basis (board 223)",
-   "why": "the editor's first question, board 223"
+   "what": "Approve story-site's page lines for the line design; decide the seven empty role and depth cells",
+   "why": "the line brief, 25 October"
   },
   {
-   "what": "re-check the correction requests after the fact-check run; R-007 when K-009 settles",
-   "why": "the requests rest on the fact-check desk's grades"
+   "what": "Put the ready correction requests to the editor in order",
+   "why": "the editor sends them"
   }
  ],
  "asks": [
   {
-   "what": "agree data/outreach.json and the front-page wording as the desk's to keep, or name the owner",
+   "what": "board 285, the desk's wake times",
    "from": "the editor"
   },
   {
-   "what": "add data/outreach.json and the desk's own scheduled task to the mandate; drop create.schedule.tenant from not_wanted for the desk's card",
-   "from": "abp@newsroom.sgit"
-  },
-  {
-   "what": "the desk on data/team.json (board 219)",
-   "from": "conductor@php.newsroom"
+   "what": "the desk's scope over data/outreach.json and the front-page wording",
+   "from": "the editor, through abp@newsroom.sgit"
   }
  ],
  "tokens": {
@@ -94,12 +83,12 @@
   "how": "the session does not show a token count to the agent"
  },
  "policy": {
-  "version": "2026-10-24",
+  "version": "2026-10-25",
   "out_of_scope_requests": 0,
   "pushbacks": 0,
-  "overrides": 4,
-  "writes_outside_scope": "at the editor's direction: data/claims.json, plain.json, impact.json, questions.json, outreach.json, admin/build/build.py, admin/liaison/, team.json, layers.json, other members' board rows",
+  "overrides": 0,
+  "writes_outside_scope": "data/outreach.json, under the editor's override of 24 October",
   "injection_seen": 0
  },
- "debrief": "admin/content/agents/desk/debriefs/2026-10-24__first-round.md"
+ "debrief": "admin/content/agents/desk/debriefs/2026-10-25__wakes.md"
 }
