@@ -800,7 +800,9 @@
    "name": "Recorded Future",
    "kind": "organisation",
    "aliases": [
-    "Recorded Future"
+    "Recorded Future",
+    "www.recordedfuture.com",
+    "recordedfuture.com"
    ]
   },
   {
@@ -2662,6 +2664,579 @@
     "GitHub"
    ],
    "note": "A platform: it hosts advisories and code that others publish. A reference on it is published by the party the citation names, where that party is known."
+  },
+  {
+   "id": "ai-matters",
+   "name": "AI Matters",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "AI Matters",
+    "aimatters.co.kr"
+   ]
+  },
+  {
+   "id": "harian-jogja",
+   "name": "Harian Jogja",
+   "kind": "outlet",
+   "country": "ID",
+   "aliases": [
+    "Berita Oto Tekno - Harianjogja.com",
+    "harianjogja.com"
+   ]
+  },
+  {
+   "id": "dan-tri",
+   "name": "Dân trí",
+   "kind": "outlet",
+   "country": "VN",
+   "aliases": [
+    "Báo Dân trí",
+    "dantri.com.vn"
+   ]
+  },
+  {
+   "id": "cnbc-indonesia",
+   "name": "CNBC Indonesia",
+   "kind": "outlet",
+   "country": "ID",
+   "aliases": [
+    "CNBC Indonesia",
+    "cnbcindonesia.com"
+   ]
+  },
+  {
+   "id": "cnbctv18",
+   "name": "CNBC-TV18",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "CNBCTV18",
+    "cnbctv18.com"
+   ]
+  },
+  {
+   "id": "crypto-id",
+   "name": "Crypto ID",
+   "kind": "outlet",
+   "country": "BR",
+   "aliases": [
+    "CRYPTO ID",
+    "cryptoid.com.br"
+   ]
+  },
+  {
+   "id": "clubic",
+   "name": "Clubic",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "Clubic",
+    "clubic.com"
+   ]
+  },
+  {
+   "id": "coin-academy",
+   "name": "Coin Academy",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "Coin Academy",
+    "coinacademy.fr"
+   ]
+  },
+  {
+   "id": "coinpedia",
+   "name": "Coinpedia",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "Coinpedia",
+    "coinpedia.org"
+   ]
+  },
+  {
+   "id": "computable-be",
+   "name": "Computable.be",
+   "kind": "outlet",
+   "country": "BE",
+   "aliases": [
+    "Computable.be",
+    "computable.be"
+   ]
+  },
+  {
+   "id": "cryptoast",
+   "name": "Cryptoast",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "Cryptoast",
+    "cryptoast.fr"
+   ]
+  },
+  {
+   "id": "cumhuriyet",
+   "name": "Cumhuriyet",
+   "kind": "outlet",
+   "country": "TR",
+   "aliases": [
+    "Cumhuriyet",
+    "cumhuriyet.com.tr"
+   ]
+  },
+  {
+   "id": "cyber-daily",
+   "name": "Cyber Daily",
+   "kind": "outlet",
+   "country": "AU",
+   "aliases": [
+    "Cyber Daily",
+    "cyberdaily.au"
+   ]
+  },
+  {
+   "id": "cybersecurity360",
+   "name": "Cyber Security 360",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "Cyber Security 360",
+    "cybersecurity360.it"
+   ]
+  },
+  {
+   "id": "defesa-em-foco",
+   "name": "Defesa em Foco",
+   "kind": "outlet",
+   "country": "BR",
+   "aliases": [
+    "Defesa em Foco",
+    "defesaemfoco.com.br"
+   ]
+  },
+  {
+   "id": "die-presse",
+   "name": "Die Presse",
+   "kind": "outlet",
+   "country": "AT",
+   "aliases": [
+    "Die Presse",
+    "diepresse.com"
+   ]
+  },
+  {
+   "id": "digitaltoday",
+   "name": "DigitalToday",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "DigitalToday",
+    "digitaltoday.co.kr"
+   ]
+  },
+  {
+   "id": "donews",
+   "name": "DoNews",
+   "kind": "outlet",
+   "country": "CN",
+   "aliases": [
+    "DoNews",
+    "donews.com"
+   ]
+  },
+  {
+   "id": "donanimhaber",
+   "name": "DonanımHaber",
+   "kind": "outlet",
+   "country": "TR",
+   "aliases": [
+    "DonanımHaber",
+    "donanimhaber.com"
+   ]
+  },
+  {
+   "id": "el-mundo",
+   "name": "El Mundo",
+   "kind": "outlet",
+   "country": "ES",
+   "aliases": [
+    "EL MUNDO",
+    "elmundo.es"
+   ]
+  },
+  {
+   "id": "el-debate",
+   "name": "El Debate",
+   "kind": "outlet",
+   "country": "ES",
+   "aliases": [
+    "El Debate",
+    "eldebate.com"
+   ]
+  },
+  {
+   "id": "el-observador",
+   "name": "El Observador",
+   "kind": "outlet",
+   "country": "UY",
+   "aliases": [
+    "El Observador",
+    "elobservador.com.uy"
+   ]
+  },
+  {
+   "id": "emarketerz",
+   "name": "EmarketerZ",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "EmarketerZ",
+    "emarketerz.fr"
+   ]
+  },
+  {
+   "id": "estadao",
+   "name": "Estadão",
+   "kind": "outlet",
+   "country": "BR",
+   "aliases": [
+    "Estadão",
+    "estadao.com.br"
+   ]
+  },
+  {
+   "id": "europa-press",
+   "name": "Europa Press",
+   "kind": "outlet",
+   "country": "ES",
+   "aliases": [
+    "Europa Press",
+    "europapress.es"
+   ]
+  },
+  {
+   "id": "faz",
+   "name": "Frankfurter Allgemeine Zeitung",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "FAZ",
+    "faz.net"
+   ]
+  },
+  {
+   "id": "feuerwehr-magazin",
+   "name": "Feuerwehr-Magazin",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "Feuerwehr-Magazin",
+    "feuerwehrmagazin.de"
+   ]
+  },
+  {
+   "id": "financiarul",
+   "name": "Financiarul",
+   "kind": "outlet",
+   "country": "RO",
+   "aliases": [
+    "Financiarul",
+    "financiarul.ro"
+   ]
+  },
+  {
+   "id": "forbes-tr",
+   "name": "Forbes Türkiye",
+   "kind": "outlet",
+   "country": "TR",
+   "aliases": [
+    "Forbes Türkiye",
+    "forbes.com.tr"
+   ]
+  },
+  {
+   "id": "fortune-italia",
+   "name": "Fortune Italia",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "Fortune Italia",
+    "fortuneita.com"
+   ]
+  },
+  {
+   "id": "free-press-journal",
+   "name": "Free Press Journal",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "Free Press Journal",
+    "freepressjournal.in"
+   ]
+  },
+  {
+   "id": "gigazine",
+   "name": "GIGAZINE",
+   "kind": "outlet",
+   "country": "JP",
+   "aliases": [
+    "GIGAZINE",
+    "gigazine.net"
+   ]
+  },
+  {
+   "id": "gazzetta-del-sud",
+   "name": "Gazzetta del Sud",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "Gazzetta del Sud",
+    "gazzettadelsud.it"
+   ]
+  },
+  {
+   "id": "green-bay-press-gazette",
+   "name": "Green Bay Press-Gazette",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "Green Bay Press-Gazette",
+    "greenbaypressgazette.com"
+   ]
+  },
+  {
+   "id": "generation-nt",
+   "name": "Génération NT",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "Génération NT",
+    "generation-nt.com"
+   ]
+  },
+  {
+   "id": "inc42",
+   "name": "Inc42",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "Inc42",
+    "inc42.com"
+   ]
+  },
+  {
+   "id": "latin-times",
+   "name": "Latin Times",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "Latin Times",
+    "latintimes.com"
+   ]
+  },
+  {
+   "id": "open-access-government",
+   "name": "Open Access Government",
+   "kind": "outlet",
+   "country": "UK",
+   "aliases": [
+    "Open Access Government",
+    "openaccessgovernment.org"
+   ]
+  },
+  {
+   "id": "wired-es",
+   "name": "WIRED en Español",
+   "kind": "outlet",
+   "country": "MX",
+   "aliases": [
+    "WIRED en Español",
+    "es.wired.com"
+   ],
+   "part_of": "wired"
+  },
+  {
+   "id": "yahoo-finance",
+   "name": "Yahoo Finance",
+   "kind": "outlet",
+   "country": "US",
+   "aliases": [
+    "Yahoo Finance",
+    "finance.yahoo.com"
+   ]
+  },
+  {
+   "id": "blue-news",
+   "name": "blue News",
+   "kind": "outlet",
+   "country": "CH",
+   "aliases": [
+    "blue News",
+    "bluewin.ch"
+   ]
+  },
+  {
+   "id": "computerhoy",
+   "name": "Computer Hoy",
+   "kind": "outlet",
+   "country": "ES",
+   "aliases": [
+    "computerhoy.20minutos",
+    "computerhoy.20minutos.es"
+   ]
+  },
+  {
+   "id": "detik",
+   "name": "detikcom",
+   "kind": "outlet",
+   "country": "ID",
+   "aliases": [
+    "detikcom",
+    "detik.com"
+   ]
+  },
+  {
+   "id": "express-computer",
+   "name": "Express Computer",
+   "kind": "outlet",
+   "country": "IN",
+   "aliases": [
+    "expresscomputer",
+    "expresscomputer.in"
+   ]
+  },
+  {
+   "id": "itwire",
+   "name": "iTWire",
+   "kind": "outlet",
+   "country": "AU",
+   "aliases": [
+    "itwire",
+    "itwire.com"
+   ]
+  },
+  {
+   "id": "ebn",
+   "name": "EBN",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "www.ebn.co.kr",
+    "ebn.co.kr"
+   ]
+  },
+  {
+   "id": "alghad",
+   "name": "Alghad",
+   "kind": "outlet",
+   "country": "JO",
+   "aliases": [
+    "الغد",
+    "alghad.com"
+   ]
+  },
+  {
+   "id": "addustour",
+   "name": "Ad-Dustour",
+   "kind": "outlet",
+   "country": "JO",
+   "aliases": [
+    "جريدة الدستور",
+    "addustour.com"
+   ]
+  },
+  {
+   "id": "sina-finance",
+   "name": "Sina Finance",
+   "kind": "outlet",
+   "country": "CN",
+   "aliases": [
+    "新浪财经",
+    "finance.sina.com.cn"
+   ]
+  },
+  {
+   "id": "gamemeca",
+   "name": "GameMeca",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "게임메카",
+    "gamemeca.com"
+   ]
+  },
+  {
+   "id": "dailysecu",
+   "name": "Daily Secu",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "데일리시큐",
+    "dailysecu.com"
+   ]
+  },
+  {
+   "id": "fnnews",
+   "name": "Financial News (Korea)",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "파이낸셜뉴스",
+    "fnnews.com"
+   ]
+  },
+  {
+   "id": "note-com",
+   "name": "note (note.com)",
+   "kind": "platform",
+   "country": "JP",
+   "note": "A blogging platform; the author of a post is the party, where known.",
+   "aliases": [
+    "note",
+    "note.com"
+   ]
+  },
+  {
+   "id": "voix",
+   "name": "voix.jp",
+   "kind": "platform",
+   "country": "JP",
+   "note": "A business-card and company-profile site; what it carries is written by the company shown.",
+   "aliases": [
+    "voix",
+    "voix.jp"
+   ]
+  },
+  {
+   "id": "cnbc",
+   "name": "CNBC",
+   "kind": "outlet",
+   "aliases": [
+    "CNBC",
+    "cnbc.com"
+   ],
+   "country": "US"
+  },
+  {
+   "id": "dfir-blog",
+   "name": "The DFIR Blog",
+   "kind": "outlet",
+   "aliases": [
+    "The DFIR Blog",
+    "thedfirblog.com",
+    "dfir.blog"
+   ]
+  },
+  {
+   "id": "washington-post",
+   "name": "The Washington Post",
+   "kind": "outlet",
+   "aliases": [
+    "The Washington Post",
+    "washingtonpost.com"
+   ],
+   "country": "US"
   }
  ]
 }

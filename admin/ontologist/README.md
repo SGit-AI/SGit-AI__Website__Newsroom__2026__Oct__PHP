@@ -60,10 +60,13 @@ A pass takes in what other agents added since the last one and leaves the graph 
 
 ## On a schedule
 
-The card is `data/schedule/ontologist.json` (AGENTS.md section 7), active since 24 October 2026 at the editor's go:
-once a day at 14:40 London, after the curator's 13:00 promotion and the fact-check desk's midday run, before the
-conductor's 15:15 full pass. The claude.ai scheduled task "Ontologist daily pass" starts a fresh Sonnet session each
-day with the card's wake prompt, word for word; it holds no key. A scheduled pass follows the runbook above and the
+The card is `data/schedule/ontologist.json` (AGENTS.md section 7), active since 24 October 2026 at the editor's go,
+four times a day since 25 October at his direction: 06:05, 10:05, 14:05 and 18:05 London, so that the Wikipedia
+articles are fetched every four hours (`admin/wikipedia/fetch.py --all` is the first step of every wake) and each wake
+maps what the desks before it added (the curator's promotions, the fact-check desk's runs) before the conductor's next
+full pass at :15. The scheduled task "Ontologist pass: 06:05, 10:05, 14:05, 18:05 London" wakes the ontologist's own
+session (not a fresh one: fresh sessions started with no repository) with the card's wake prompt, word for word; it
+holds no key. A scheduled pass follows the runbook above and the
 card's `each_wake`, and stops at step 8: anything that needs a judgement about another desk's data, or the editor's,
 is left as a board row, never done. It never changes the component, which is session work tested in Chromium. A
 change to the times or the prompt changes the card and the scheduled task together, with the editor's go.

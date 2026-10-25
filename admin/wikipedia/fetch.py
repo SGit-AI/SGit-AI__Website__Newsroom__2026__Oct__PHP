@@ -7,11 +7,13 @@ the editors' names are stored as text and reach a page only through the build's 
 
     python3 admin/wikipedia/fetch.py PHP2Shell            # new revisions since the last run, the item, the backlinks
     python3 admin/wikipedia/fetch.py PHP2Shell --all      # every revision again (after a change to what is stored)
+    python3 admin/wikipedia/fetch.py Talk:PHP2Shell       # the talk page, the same way (kind 'talk', of the article)
 
 What it writes, under data/wikipedia/<slug>/:
     article.json              the page, its Wikidata item, the latest revision seen, every fetch (time, bytes, sha256)
     revisions/<revid>.json    one file per revision: ids, time, editor, size, Wikipedia's sha1, the wikitext and its sha256
     wikidata.json             the item's claims with their property labels, as fetched
+    wikidata-history.json     every revision of the item: when, who, which property the summary names
     links-in.json             the articles that link to this one
 and data/wikipedia/index.json, the list of articles watched.
 
@@ -123,6 +125,35 @@ def wikidata(item):
             'modified': ent.get('modified'), 'sitelinks': sorted(ent.get('sitelinks', {})), 'claims': claims, 'labels': labels, 'fetched_at': now()}
 
 
+def item_history(item):
+    """Every revision of the Wikidata item: who changed which claim, when; the summaries name the property changed."""
+    if not item:
+        return None
+    revs, cont = [], {}
+    while True:
+        q = get(WD_API, dict(action='query', prop='revisions', titles=item, rvlimit=500, rvdir='newer', rvprop='ids|timestamp|user|userid|size|comment|parentid|tags|flags', format='json', formatversion=2, **cont))
+        page = q['query']['pages'][0]
+        revs += [{'revid': r['revid'], 'parentid': r.get('parentid'), 'timestamp': r['timestamp'], 'editor': editor_of(r), 'size': r.get('size'), 'comment': HIDDEN.sub('', r.get('comment', '')), 'tags': r.get('tags', [])} for r in page.get('revisions', [])]
+        if 'continue' not in q:
+            return {'item': item, 'fetched_at': now(), 'revisions': revs}
+        cont = {'rvcontinue': q['continue']['rvcontinue']}
+
+
+def dbpedia(title):
+    """Whether DBpedia, built from periodic dumps, has a resource for the title yet: a status, never the page."""
+    url = 'https://dbpedia.org/resource/' + urllib.parse.quote(title.replace(' ', '_'))
+    req = urllib.request.Request(url, method='HEAD', headers={'User-Agent': UA, 'Accept': 'text/html'})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            status = r.status
+    except urllib.error.HTTPError as e:
+        status = e.code
+    except Exception as e:
+        status = str(e)[:60]
+    time.sleep(2.0)
+    return {'url': url, 'status': status, 'checked_at': now()}
+
+
 def backlinks(title):
     links, cont = [], {}
     while True:
@@ -162,15 +193,19 @@ def main():
                'hidden_chars_removed': n, 'sha256': hashlib.sha256(text.encode('utf-8')).hexdigest(), 'wikitext': text}
         json.dump(rec, open(os.path.join(d, 'revisions', f'{r["revid"]}.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
 
+    kind = 'talk' if title.startswith('Talk:') else 'article'
     props = get(API, dict(action='query', prop='pageprops|info', titles=title, format='json', formatversion=2))['query']['pages'][0]
-    item = props.get('pageprops', {}).get('wikibase_item')
+    item = props.get('pageprops', {}).get('wikibase_item') if kind == 'article' else None
     wd = wikidata(item)
     if wd:
         json.dump(wd, open(os.path.join(d, 'wikidata.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
-    links = backlinks(title)
-    json.dump({'title': title, 'fetched_at': now(), 'articles': links}, open(os.path.join(d, 'links-in.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+        json.dump(item_history(item), open(os.path.join(d, 'wikidata-history.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    links = backlinks(title) if kind == 'article' else []
+    if kind == 'article':
+        json.dump({'title': title, 'fetched_at': now(), 'articles': links}, open(os.path.join(d, 'links-in.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+        art['dbpedia'] = dbpedia(title)
 
-    art.update({'title': title, 'pageid': page.get('pageid'), 'url': 'https://en.wikipedia.org/wiki/' + urllib.parse.quote(title.replace(' ', '_')),
+    art.update({'title': title, 'kind': kind, 'of': slug_of(title.split(':', 1)[1]) if kind == 'talk' else None, 'pageid': page.get('pageid'), 'url': 'https://en.wikipedia.org/wiki/' + urllib.parse.quote(title.replace(' ', '_')),
                 'wikidata_item': item, 'licence': 'CC BY-SA 4.0, by the contributors to the English Wikipedia; each revision id is the attribution',
                 'latest_revid': revs[-1]['revid'], 'revisions': len(revs), 'first_revision': revs[0]['timestamp'], 'latest_revision': revs[-1]['timestamp'],
                 'editors': len({json.dumps(editor_of(r), sort_keys=True) for r in revs}), 'links_in': len(links)})
@@ -178,7 +213,7 @@ def main():
     json.dump(art, open(art_p, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
     idx_p = os.path.join(OUT, 'index.json')
     idx = json.load(open(idx_p, encoding='utf-8')) if os.path.exists(idx_p) else {'about': 'The Wikipedia articles this site watches, fetched by admin/wikipedia/fetch.py; the build reads them from here.', 'articles': []}
-    idx['articles'] = sorted({a['slug']: a for a in idx['articles'] + [{'slug': slug, 'title': title}]}.values(), key=lambda a: a['slug'])
+    idx['articles'] = sorted({a['slug']: a for a in idx['articles'] + [{'slug': slug, 'title': title, 'kind': kind, 'of': art['of']}]}.values(), key=lambda a: a['slug'])
     json.dump(idx, open(idx_p, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
     print(f'{title}: {len(revs)} revisions ({len(want)} new), item {item}, {len(links)} articles link in, {len(LOG)} requests, {stripped} hidden characters removed')
 

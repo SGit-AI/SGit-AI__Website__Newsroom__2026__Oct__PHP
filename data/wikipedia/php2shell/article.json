@@ -85,6 +85,55 @@
      "sha256": "17f937d9c574d6f778b8daf8a3e1afcdcfa895dd952ea6f84e051a77c03ee020"
     }
    ]
+  },
+  {
+   "at": "2026-10-25T11:55:19Z",
+   "new_revisions": 6,
+   "hidden_chars_removed": 0,
+   "requests": [
+    {
+     "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=PHP2Shell&rvlimit=500&rvdir=newer&rvprop=ids%7Ctimestamp%7Cuser%7Cuserid%7Csize%7Csha1%7Ccomment%7Cparentid%7Ctags%7Cflags&format=json&formatversion=2",
+     "at": "2026-10-25T11:53:01Z",
+     "bytes": 103986,
+     "sha256": "4713b9810dc64fc862ad0716ac70a0a9c8172effba35830076e3144768f2dd58"
+    },
+    {
+     "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&revids=1381838312%7C1381843765%7C1381877095%7C1381882967%7C1381883108%7C1381884195&rvprop=ids%7Ccontent&rvslots=main&format=json&formatversion=2",
+     "at": "2026-10-25T11:53:03Z",
+     "bytes": 181447,
+     "sha256": "f05d13b405bc55fd4973584ff0ff0fd9ffc018ef309c8c69d2d5f783e3e3ec78"
+    },
+    {
+     "url": "https://en.wikipedia.org/w/api.php?action=query&prop=pageprops%7Cinfo&titles=PHP2Shell&format=json&formatversion=2",
+     "at": "2026-10-25T11:54:01Z",
+     "bytes": 417,
+     "sha256": "6b654c6be49b7b13c100861023bb99b79f85ad58e10d07263098006eed083692"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Special:EntityData/Q141801185.json",
+     "at": "2026-10-25T11:54:03Z",
+     "bytes": 31339,
+     "sha256": "e7dd96e67d372b58c8d2c4c7b50856926cb561f5a670cc7bd39f97be4fc18c1f"
+    },
+    {
+     "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=P1269%7CP154%7CP1542%7CP18%7CP2283%7CP31%7CP3587%7CP366%7CP373%7CP575%7CP61%7CP6949%7CP793%7CP856%7CP973%7CQ108871753%7CQ125498109%7CQ133698926%7CQ141803449%7CQ21708200%7CQ2299491%7CQ3510521%7CQ59&props=labels&languages=en&format=json",
+     "at": "2026-10-25T11:54:05Z",
+     "bytes": 2682,
+     "sha256": "3977b53a8d9522d317fc1f7e60771da51bdf3ba6238a654aa12d0886b90a10aa"
+    },
+    {
+     "url": "https://www.wikidata.org/w/api.php?action=query&prop=revisions&titles=Q141801185&rvlimit=500&rvdir=newer&rvprop=ids%7Ctimestamp%7Cuser%7Cuserid%7Csize%7Ccomment%7Cparentid%7Ctags%7Cflags&format=json&formatversion=2",
+     "at": "2026-10-25T11:55:00Z",
+     "bytes": 28055,
+     "sha256": "f8a1ab557cc4169213f320d0ecc1b0b573f5f8667737fd7cc28c42795b9118a1"
+    },
+    {
+     "url": "https://en.wikipedia.org/w/api.php?action=query&list=backlinks&bltitle=PHP2Shell&bllimit=500&blnamespace=0&format=json&formatversion=2",
+     "at": "2026-10-25T11:55:02Z",
+     "bytes": 11440,
+     "sha256": "17f937d9c574d6f778b8daf8a3e1afcdcfa895dd952ea6f84e051a77c03ee020"
+    }
+   ]
   }
  ],
  "title": "PHP2Shell",
@@ -92,10 +141,17 @@
  "url": "https://en.wikipedia.org/wiki/PHP2Shell",
  "wikidata_item": "Q141801185",
  "licence": "CC BY-SA 4.0, by the contributors to the English Wikipedia; each revision id is the attribution",
- "latest_revid": 1381798757,
- "revisions": 364,
+ "latest_revid": 1381884195,
+ "revisions": 370,
  "first_revision": "2026-10-21T07:50:01Z",
- "latest_revision": "2026-10-24T21:41:44Z",
- "editors": 174,
- "links_in": 198
+ "latest_revision": "2026-10-25T11:39:32Z",
+ "editors": 179,
+ "links_in": 198,
+ "dbpedia": {
+  "url": "https://dbpedia.org/resource/PHP2Shell",
+  "status": 404,
+  "checked_at": "2026-10-25T11:55:19Z"
+ },
+ "kind": "article",
+ "of": null
 }
