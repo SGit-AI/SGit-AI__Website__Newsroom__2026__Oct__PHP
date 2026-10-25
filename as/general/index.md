@@ -5,4 +5,4 @@ Your phone and laptop are not the target: websites are.
 A view of [The front page](https://php.oct.2026.newsroom.sgit.ai/index.html), written for a general reader. The page itself, and its markdown twin, are at that address.
 
 ---
-site v0.22.2 · https://php.oct.2026.newsroom.sgit.ai/as/general/index.html
+site v0.22.3 · https://php.oct.2026.newsroom.sgit.ai/as/general/index.html

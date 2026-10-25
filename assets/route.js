@@ -24,7 +24,7 @@
     if (!route || url.origin !== location.origin) return url.href;
     var path = url.pathname.replace(/^\//, ''), seg = path.split('/')[0], tail = url.search + url.hash;
     if (seg === 'assets' && route.assets) return route.assets + path.slice('assets/'.length) + tail;
-    if (seg === 'data' && route.data && route.files && route.files.indexOf(path.slice('data/'.length)) >= 0) return route.data + path.slice('data/'.length) + tail;
+    if (seg === 'data' && route.data) return route.data + path.slice('data/'.length) + tail;   // every file a script fetches is in the API
     var home = (route.sections && route.sections[seg]) || route.rest;
     return home && home !== route.self ? home + '/' + path + tail : url.href;
   };

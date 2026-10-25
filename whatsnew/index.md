@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.3 · 25 October 2026new since your last visit
+
+assets/route.js sends every data/ request on the split sites to the data API, which now publishes every file the pages' scripts fetch (v0.1.2); on this site nothing changes
+
+No reader-facing section changed in this release.
+
 ## v0.22.2 · 25 October 2026new since your last visit
 
 one resolver for every URL a script builds (assets/route.js, loaded first on every page; boot.js, the Ask pane, the phone app and site tools use it), so that on the split sites assets come from the press, data from the data API and each section's pages from the site that owns it, one source for every file; on this site every URL resolves as before
@@ -1370,4 +1376,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.22.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

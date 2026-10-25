@@ -1,6 +1,15 @@
 {
- "current": "0.22.2",
+ "current": "0.22.3",
  "versions": [
+  {
+   "version": "0.22.3",
+   "date": "2026-10-25",
+   "title": "assets/route.js sends every data/ request on the split sites to the data API, which now publishes every file the pages' scripts fetch (v0.1.2); on this site nothing changes",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.22.2",
    "date": "2026-10-25",

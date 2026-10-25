@@ -56,4 +56,4 @@ Sources: x-eastdakota-php2shell-stats
 
 
 ---
-site v0.22.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/cf-millions/index.html
+site v0.22.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/cf-millions/index.html
