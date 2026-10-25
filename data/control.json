@@ -851,6 +851,14 @@
    "run": "20261025T1024Z-conductor",
    "started": "2026-10-25T10:24:00Z",
    "summary": "At the editor's go (25 Oct, in this session): every scheduled wake prompt made small. New admin/schedule/WAKE.md (pull dev, schedule.py wake <you> to see what changed, read card and brief, a run record every wake whatever happened, report). schedule.py: new 'wake' (commits since your last run, whic…"
+  },
+  {
+   "agent": "journalist",
+   "finished": "2026-10-25T11:41:10Z",
+   "outcome": "ok",
+   "run": "20261025T1134Z-journalist",
+   "started": "2026-10-25T11:34:05Z",
+   "summary": "Second wake, run by hand in the first session at the editor's request. Exported evidence vault 87795d121200 (was 8c16a64a7cf6): 418 sources, 479 captures; two curator wakes of 25 October. 15 new claims, each searched across every capture before any 'not in the vault' or 'one outlet' (the correspond…"
   }
  ],
  "schedules": [
@@ -1006,5 +1014,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.19.2"
+ "version": "0.19.3"
 }

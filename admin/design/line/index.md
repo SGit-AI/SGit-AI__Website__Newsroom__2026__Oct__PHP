@@ -2,9 +2,9 @@
 
 The front page of the line prototype: one band under the masthead that says one thing to the persona in front of it, and the page under it ordered for that role, at the depth they asked for.
 
-> Prototype F for review, built from the data of release v0.19.2. Not the live site. Every part of the page is listed here; a reader sees the parts written for their role.
+> Prototype F for review, built from the data of release v0.19.3. Not the live site. Every part of the page is listed here; a reader sees the parts written for their role.
 
-Developing · data as of 24 October 2026, 16:05 UTC 
+Developing · data as of 25 October 2026, 09:35 UTC 
 ## Two serious security flaws in PHP, the software behind many of the world's websites
 
 A fix came out on 21 October. Whoever runs a website needs to install it, and restart it. 
@@ -64,7 +64,7 @@ Not your phone or laptop: the flaw is on web servers. It affects organisations t
 
 A fix has been available since 21 October. Organisations that run websites on PHP are installing it. 
 Every government cyber agency says: install the fix now. If you cannot, the US agencies say take the website offline; the UK puts that after temporary mitigations, and several European agencies say cu 
-Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 16:05 UTC on 24 October, no named organisation has said it was broken into 
+Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 09:35 UTC on 25 October, no named organisation has said it was broken into 
 
 ### Your next three actions
 
@@ -90,7 +90,7 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
 A fix has been available since 21 October. Organisations that run websites on PHP are installing it. 
 Every government cyber agency says: install the fix now. If you cannot, the US agencies say take the website offline; the UK puts that after temporary mitigations, and several European agencies say cu 
-Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 16:05 UTC on 24 October, no named organisation has said it was broken into 
+Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 09:35 UTC on 25 October, no named organisation has said it was broken into 
 
 ### What nobody knows yet
 
@@ -107,7 +107,7 @@ Who leaked the news on 20 October, and where.
 ### The advice, now
 
 Every government cyber agency says: install the fix now. If you cannot, the US agencies say take the website offline; the UK puts that after temporary mitigations, and several Euro 
-Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 16:05 UTC on 24 October, no named organisation has sai 
+Attackers are trying to use the flaws, in large numbers: millions of attempts by one internet security company's count. As of 09:35 UTC on 25 October, no named organisation has sai 
 
 ### The spectrum
  every agency, by what it says to do with a system you cannot patch 
@@ -217,4 +217,4 @@ ity team replied on the mailing list on 22 October, and this site will settle th
  PHP-FPM For CVE-2026-109618 the GitHub advisory says no complete FPM exploit has been demonstrated; the PHP Foundation blog says RCE was confirmed o
 
 ---
-site v0.19.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/line/index.html
+site v0.19.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/line/index.html

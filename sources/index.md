@@ -1,4 +1,4 @@
-# Every source: 382 pages, 441 captures, 2595 hashes
+# Every source: 418 pages, 479 captures, 2814 hashes
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
@@ -8,11 +8,11 @@ The manifest of the php2shell evidence vault: every captured source with its pub
 
 In plain English Every web page this site relied on, with the time it was saved and a fingerprint proving it has not been altered since.
 
-382 sources, 89 of them primary, 441 dated captures and 2595 hashed files, from the evidence vault at commit `8c16a64a7cf6`. 15 sources could not be read because the site blocked an automated browser; the block, with the challenge page's hash, is the record. The captures are third-party pages held privately and are not republished; this page links to the originals and lists the SHA-256 of every captured file, so that anyone the vault is later opened to can check that the bytes are the ones the agents saw, at the minute they saw them.
+418 sources, 89 of them primary, 479 dated captures and 2814 hashed files, from the evidence vault at commit `87795d121200`. 15 sources could not be read because the site blocked an automated browser; the block, with the challenge page's hash, is the record. The captures are third-party pages held privately and are not republished; this page links to the originals and lists the SHA-256 of every captured file, so that anyone the vault is later opened to can check that the bytes are the ones the agents saw, at the minute they saw them.
 
 | Kind | Sources |
 |---|---|
-| news | 241 |
+| news | 277 |
 | government | 31 |
 | vendor | 27 |
 | advisory | 25 |
@@ -180,6 +180,19 @@ capture 20261022T081604Z · HTTP 200 · https://www.cyber.gov.au/- `headers.json
 - `rendered.html` e22b8af8cb588bdf894c62c53337db8940108a269e2f517f1d6ffa1886d8d904 1,889,870 bytes
 - `screenshot.png` 3f7acad6a96208dca53692a35f83a89e3b21e8266fcd183892673c6e4b3b39b0 723,009 bytes
 - `text.txt` b7198501ad800f9312359edf414e81c46b1b35f7d0fae787ff629a8f029ad0b9 13,389 bytes
+
+### [PHP2Shell: allerta NSA, aggiornamenti urgenti siti web - Actainfo](actainfo-news-php2shell-vulnerabilita-php-allerta/index.html) [original ↗](https://www.actainfo.it/news/php2shell-vulnerabilita-php-allerta-nsa/)
+
+**actainfo** · news · secondary · captured · published 2026-10-23T10:57:22+00:00 · added by `curator@php.newsroom` · `actainfo-news-php2shell-vulnerabilita-php-allerta`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 2 (mechanical selection by researcher@php.newsroom, read by the curator). Actainfo (Italian), 23 October: PHP2Shell, NSA alert, urgent website updates. On 21 October 2026 the US NSA published an advisory on the vulnerabiliti...
+
+capture 20261025T093507Z · HTTP 200 · https://www.actainfo.it/news/php2shell-vulnerabilita-php-allerta-nsa/- `headers.json` bf9d8f1d4ac4796532e432c43178eddd691035edb91eef84a7d89fa084e5118a 576 bytes
+- `page.html` 598e104bba47d62cf9411ebfc901fe9e7b9940e1c6f5c25f0d644447a96e570d 175,943 bytes
+- `provenance.json` 2f654ebd1e1a7f4fcf42dfed4eeff8141911545165f0e9cd368b39371830d08f 1,685 bytes
+- `rendered.html` 932ef002b633cca784937cc0acf982daba804202c59224b3a03e1e245f85d6ac 180,594 bytes
+- `screenshot.jpg` 660674662717a7db269d4d4cf2340f14735134b31f0debe03e502f547eb91777 803,875 bytes
+- `text.txt` 0dc76adb26d5b438f7b78faa9e2ad069dbcca30c663ead7950b7527c93412f3d 8,952 bytes
 
 ### [Failles critiques dans PHP : des sites coupés en urgence dans le monde entier, dont ceux des préfectures en France](actu17-prefectures/index.html) [original ↗](https://actu17.fr/societe/failles-critiques-dans-php-des-sites-coupes-en-urgence-dans-le-monde-entier-dont-ceux-des-prefectures-en-france.html)
 
@@ -1662,6 +1675,32 @@ capture 20261023T232528Z · HTTP 200 · https://www.darkreading.com/application-
 - `screenshot.jpg` e03787b20402534a181cf1f864b5f2064f95e65856a3e1ecbffe574cc51eb679 660,285 bytes
 - `text.txt` 9071d13624a159a9f371e546317ed92c7815d9423f092bd8c7defc2f8b0ef694 10,195 bytes
 
+### [PHPの重大な脆弱性「PHP2Shell」とは何か～誰でもわかる解説と、これから起こりうること（前）｜NetIB-News](data-max-article-87622/index.html) [original ↗](https://www.data-max.co.jp/article/87622)
+
+**データ・マックス** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `data-max-article-87622`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). NetIB-News / Data Max (Japanese), part one of an explainer: what the serious PHP vulnerability PHP2Shell is, in terms anyone can follow, and what may...
+
+capture 20261025T093507Z · HTTP 200 · https://www.data-max.co.jp/article/87622- `headers.json` 8df4fbe37278f6743b0a102d5dfc781000d076efb21b2edf5e767bc993ec6c86 481 bytes
+- `page.html` a7530533f16fb33e58f71f79538ec1f2f401bb6fd421afbadfa0c062a9df3684 75,084 bytes
+- `provenance.json` ebdbf9616e6023bd5a40fd808759096ff5dc0a107da6c87f4ddbfa3a80b294ff 1,612 bytes
+- `rendered.html` 66c6bc747270cdab603672bfb6383b9dcef2b20273dd0e4a573b3a362408abf9 121,987 bytes
+- `screenshot.jpg` e230aca7695d8112ecffdeb0c85686e6220f59bad8ed05b6067419a76c0a4dd2 869,515 bytes
+- `text.txt` d7145bababb0f5db514157ec8cc247cac9399a81962ee78d639a643a2e177d72 15,510 bytes
+
+### [php2shell: Informationen zu PHP-Lücken vor Patch-Veröffentlichung offengelegt | datensicherheit.de](datensicherheit-php2shell-informationen-patch-veroeffent/index.html) [original ↗](https://www.datensicherheit.de/php2shell-informationen-patch-veroeffentlichung/)
+
+**datensicherheit.de** · news · secondary · captured · published 2026-10-24T14:15:11+02:00 · added by `curator@php.newsroom` · `datensicherheit-php2shell-informationen-patch-veroeffent`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). datensicherheit.de (German), 24 October: information on the PHP flaws was disclosed before the patches. The critical flaws allowed, under certain cond...
+
+capture 20261025T093507Z · HTTP 200 · https://www.datensicherheit.de/php2shell-informationen-patch-veroeffentlichung/- `headers.json` 3bcca66d677eedcc50341a1a4b481235bb8511cbd055c750a951f48c0e62a1a2 493 bytes
+- `page.html` 95e5345f18176619727b7b65522553cf6b7c97b7362720abef536c8a928c27ec 98,464 bytes
+- `provenance.json` 909b1a17470a38f615d4d5c2f71b3c0b8e2f45f5d0596f34220b01fb5dba1732 1,767 bytes
+- `rendered.html` 07e7ad19fbeba7fca2b7cc824e7d3f96888a80857a8ffd3801c1252e47c4c0d1 105,206 bytes
+- `screenshot.jpg` 3e2f592c2dbd8508d3a83437d1fdb5476ad8d9d51b218f2417d0e55ffa12a0f4 588,165 bytes
+- `text.txt` a15a70b65cb1b388203f50fa3a318935871af53654f047b1bc417709d3612ade 6,556 bytes
+
 ### [What the PHP2Shell rumors got wrong, from inside the PHP security team](daubois-blog-php2shell-rumors/index.html) [original ↗](https://daubois.dev/blog/cve-2026-109618-php2shell-rumors/)
 
 **Alexandre Daubois (PHP security team / PHP Foundation)** · researcher · secondary · captured · published 2026-10-21 · added by `collector-researchers` · `daubois-blog-php2shell-rumors`
@@ -1717,6 +1756,19 @@ capture 20261023T160435Z · HTTP 200 · https://www.detik.com/tag/php2shell- `he
 - `page.html` 4746a87341cd6240b4a2b668b3af5953b2fa61bb1ed5c05f94be58af4dcb98e8 65,500 bytes
 - `provenance.json` 48351941d45a4839b2f628c1621f0056f75a9e87ada92f8750a13ffd6bc0a430 1,376 bytes
 - `text.txt` b2a0e44281bdb0135391f7a7f9c7b3d710951a0079dc5e801b64f7485cafc302 4,235 bytes
+
+### [PHP2Shell: How Security Teams Should Assess and Contain the Reported PHP RCEs - DeXpose](dexpose-php2shell-php-rce-exposure-response/index.html) [original ↗](https://www.dexpose.io/php2shell-php-rce-exposure-response/)
+
+**dexpose.io** · news · secondary · captured · published 2026-10-21T04:03:07+00:00 · added by `curator@php.newsroom` · `dexpose-php2shell-php-rce-exposure-response`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T070559Z, queue priority 2 (mechanical selection by researcher@php.newsroom, read by the curator). DeXpose, 21 October: how security teams should assess and contain the reported PHP2Shell RCEs. Both flaws are scored 9.2 under CVSS v4.0; the piece is...
+
+capture 20261025T070559Z · HTTP 200 · https://www.dexpose.io/php2shell-php-rce-exposure-response/- `headers.json` e191a10ed1f29afd2b4e54e2e7080bc92c2389d9f01cbca4461f8af687c6277a 842 bytes
+- `page.html` f3ce966817b3e63ec5e8b35a357eaf1e2a587b15897518af249841d733f54491 43,736 bytes
+- `provenance.json` 39fadaada557bd72e8d91093291df131442a0cf6ab3cf29d1a12ab661bf55b8f 1,661 bytes
+- `rendered.html` bba4ccd75e49e1fdb7e1ba567d6a674c3fb0c9dd75450fc46c6a122d6362ee9b 44,163 bytes
+- `screenshot.jpg` 4c12bf4f7d4c11ab3c5a7b18433e4944ee96c072b870880aeffd730f2600acb1 758,754 bytes
+- `text.txt` d3c0199934656a96323b491a53c5d16deb2d6b8c26a9111e88eb4e1720e85c9f 14,867 bytes
 
 ### [AWS detectó un intento de explotar PHP2Shell cuatro días antes de su divulgación - DiarioBitcoin](diariobitcoin-tecnologia-aws-detecto-un-intento-de-exp/index.html) [original ↗](https://www.diariobitcoin.com/tecnologia/aws-detecto-un-intento-de-explotar-php2shell-cuatro-dias-antes-de-su-divulgacion/)
 
@@ -1912,6 +1964,19 @@ capture 20261023T232528Z · HTTP 200 · https://www.elobservador.com.uy/ciencia-
 - `rendered.html` 22b50b1d6502d24522d604b07faa6d4af3322eebc4f4a2f50582b524c2a242b2 228,769 bytes
 - `screenshot.jpg` 50e46684df96042430e30bdfb2be36226f9ac2f1900400d53be28f8158a7c3f8 901,080 bytes
 - `text.txt` 9aabf8b5b3239ac521c62e6814ec222c391c0f9b36f61f7d43bc1f5643d65f12 19,805 bytes
+
+### [Dos vulnerabilidades críticas en PHP afectan al 70 % de Internet](elotrolado-noticias-internet-php2shell-seguridad-cv/index.html) [original ↗](https://www.elotrolado.net/noticias/internet/php2shell-seguridad-cve)
+
+**ElOtroLado.net** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `elotrolado-noticias-internet-php2shell-seguridad-cv`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 2 (mechanical selection by researcher@php.newsroom, read by the curator). ElOtroLado.net (Spanish): two critical vulnerabilities in PHP affect 70% of the Internet. PHP2Shell is the name of two critical flaws in PHP's core, C...
+
+capture 20261025T093507Z · HTTP 200 · https://www.elotrolado.net/noticias/internet/php2shell-seguridad-cve- `headers.json` 04b017d6841f2f14b03b04d768be367e380f16178f14b7625eed156cf9b056ea 498 bytes
+- `page.html` 92a6af8997170384d50bd567fadeddde0d25bf9559960901fda5fc99334e7f5a 37,656 bytes
+- `provenance.json` 3d5e3644104a9977b671db8483d4352301cb8cc36bec22fd5dfbe68f36c5b3e2 1,683 bytes
+- `rendered.html` 7b121d8b5cb647805efeecf7b2c5f7536c7947cd1c03b15b1b1de35d2b8763d3 105,015 bytes
+- `screenshot.jpg` 956a757f9126ae2ab0ade68e4ab3cfbe8060fb9e92980ec8dcf7d7139dc90858 516,330 bytes
+- `text.txt` b6266f29e4a535fbeff017325a0ad5baa486e21ae801ac5579d897686ba8475a 9,308 bytes
 
 ### [Faille majeure dans PHP : Que révèle la vulnérabilité PHP2Shell ?](emarketerz-faille-majeure-dans-php-que-revele-la-vu/index.html) [original ↗](https://www.emarketerz.fr/faille-majeure-dans-php-que-revele-la-vulnerabilite-php2shell/)
 
@@ -2524,6 +2589,45 @@ capture 20261024T083755Z · HTTP 200 · https://www.greenbaypressgazette.com/pre
 - `screenshot.jpg` c1d596edbc9da2646e4ed6d85107a71c1897875f589f862451a83e7958779f7a 355,875 bytes
 - `text.txt` 700ae7ce50163c9ad762a6411dca4389e83ef09725c2686ceaa80844a5d0c9d3 5,319 bytes
 
+### [Siber Güvenlik Başkanlığı’ndan 'PHP2Shell' Açıklaması: e-Devlet Kapısı Güvende, Hizmetler Kesintisiz Sürüyor | Haber.com](haber-teknoloji-siber-guvenlik-baskanligi-ndan/index.html) [original ↗](https://www.haber.com/teknoloji/siber-guvenlik-baskanligi-ndan-php2shell-aciklamasi-e-devlet-kapisi-guvende-hizmetler-kesintisiz-suruyor-29322)
+
+**Haber.com** · news · secondary · captured · published 2026-10-22T09:40:54.300Z · added by `curator@php.newsroom` · `haber-teknoloji-siber-guvenlik-baskanligi-ndan`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Haber.com (Turkish), 22 October: the Presidency's Cybersecurity Directorate says nationwide preventive measures against the PHP2Shell risks were put i...
+
+capture 20261023T160435Z · HTTP 200 · https://www.haber.com/teknoloji/siber-guvenlik-baskanligi-ndan-php2shell-aciklamasi-e-devlet-kapisi-guvende-hizmetler-kesintisiz-suruyor-29322- `headers.json` 1abc5d38558f9c38852a8f79ccb5e80f7fdba10b2f57d703842a4e7eef8a6a8d 2,605 bytes
+- `page.html` 68c81fad10eabeea9fd14eb051f14ea08ce3bc53c2480200b7dcd3e84a40359c 181,974 bytes
+- `provenance.json` 98afb98a78ea0bbedf960ca4e620dbb66511a19177a372ed0fa732bf9d176d8e 1,926 bytes
+- `rendered.html` 65672f53fd75c7e1d187995bfab8ed2ada2ddf5bdf9153d9eb4fa723d61103f2 353,789 bytes
+- `screenshot.jpg` c536ff88079d18729488673a8f62e1c91bd21aed0249909276ee3eb1a972abbc 677,102 bytes
+- `text.txt` 2825ea23dc0ee99dad084b327460a78610b626aa1f93bcd95017881a08fbcea9 12,513 bytes
+
+### [PHP güvenlik açığı interneti tehdit ediyor: e-Devlet ve bankalar riskte mi? - Haber 7 TEKNOLOJİ](haber7-teknoloji-haber-3670492-php-guvenlik-aci/index.html) [original ↗](https://www.haber7.com/teknoloji/haber/3670492-php-guvenlik-acigi-interneti-tehdit-ediyor-e-devlet-ve-bankalar-riskte-mi)
+
+**Haber 7** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `haber7-teknoloji-haber-3670492-php-guvenlik-aci`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Haber 7 (Turkish): the PHP vulnerability threatens the internet, are e-Devlet and banks at risk? PHP2Shell alarms with a 9.2 risk score; the Cybersecu...
+
+capture 20261023T160435Z · HTTP 200 · https://www.haber7.com/teknoloji/haber/3670492-php-guvenlik-acigi-interneti-tehdit-ediyor-e-devlet-ve-bankalar-riskte-mi- `headers.json` 2ba1ddeea8f86b7f1eba34db6cc93b05d75f6a624af4959a209f88cef49d0a4d 522 bytes
+- `page.html` b6e706b362e803625b876680bd6853f710caa9faeff1c66a4e1d9ebda4c3f51a 95,810 bytes
+- `provenance.json` 6cc979e1ee167ab97d297067e61368589a69a05c4731ac3fe3517f8f676962bd 1,848 bytes
+- `rendered.html` c5317e309093c1030ba22faab1d45e421a3eba56e8e642a91d75af6da88ffdce 102,513 bytes
+- `screenshot.jpg` e076ecf23b3b3f7574d7286487976d170e6c38a68c83c9c63baf6475afc1fadd 338,627 bytes
+- `text.txt` e844eed779d6ace717bbe34e3cedbfcad31d51416cca0858119bfdcff899caba 4,053 bytes
+
+### [北 연계 의심 해킹조직, PHP 취약점 공격 준비 정황…정부·금융 타깃 | 한국경제](hankyung-article-2026102423207/index.html) [original ↗](https://www.hankyung.com/article/2026102423207)
+
+**한국경제** · news · secondary · captured · published 2026-10-24T11:02:46+09:00 · added by `curator@php.newsroom` · `hankyung-article-2026102423207`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261024T133450Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Korea Economic Daily (Korean), 24 October: reconnaissance activity exploiting PHP2Shell spotted in a closed network. It reports that the Singapore thr...
+
+capture 20261024T133450Z · HTTP 200 · https://www.hankyung.com/article/2026102423207- `headers.json` 4f66c884c3592b6701c47dd1d8a9bdb30e409bca8fab57f9887915f899546052 471 bytes
+- `page.html` e4bffbd69eead0a1a760d581a330a26e6bc1ff7f711725841ad5dd6da448ed43 99,338 bytes
+- `provenance.json` bc1e3d4cdfc8562700fcac9e8f1ff65156ab4e2e574ffd1927b83ee8eabfc316 1,615 bytes
+- `rendered.html` e7a1561f51a0a6709558a29b4fff05e6e58015b8a5426cbf5cb0af359dc51c2b 218,173 bytes
+- `screenshot.jpg` bd1b4f549a4fdb7b177506b0ac650d0df994ef7f5b458d3366996d0f487e82ec 322,131 bytes
+- `text.txt` 45e966bc2d1e536c2425f5330889db94abff79d1612b22589b95648277284a1c 7,407 bytes
+
 ### [Failles PHP critiques (PHP2Shell) : les correctifs sont sortis, mettez à jour maintenant](hardwarecooking-failles-php-critiques-php2shell-correcti/index.html) [original ↗](https://www.hardwarecooking.fr/failles-php-critiques-php2shell-correctifs-publies/)
 
 **HardwareCooking** · news · secondary · captured · published 2026-10-21T20:13:55+00:00 · added by `curator@php.newsroom` · `hardwarecooking-failles-php-critiques-php2shell-correcti`
@@ -2536,6 +2640,19 @@ capture 20261023T160435Z · HTTP 200 · https://www.hardwarecooking.fr/failles-p
 - `rendered.html` ec8a965a17a6e1397c99696f1e601c027759943bf0ea24741a9df691b8841f03 496,204 bytes
 - `screenshot.jpg` 1d132361237178b45fe2b95bbbf1db2e931834bc331c209dd6f8a114ed66c0b9 589,171 bytes
 - `text.txt` 59df94f7bc6f0ab08f18933a41783a119fa2be0bf702dd62f4df164d7ed2bdc0 8,728 bytes
+
+### [에버스핀, PHP 치명적 취약점 공격 차단 규칙 적용…“공식 패치 전 대응”](hellot-mobile-article-html/index.html) [original ↗](https://www.hellot.net/mobile/article.html?no=115738)
+
+**헬로티** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `hellot-mobile-article-html`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T232528Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). HelloT (Korean): the Korean vendor Eversafe (Everspin) says it applied a blocking rule for CVE-2026-109618 and CVE-2026-109619 to its web-security Saa...
+
+capture 20261023T232528Z · HTTP 200 · https://www.hellot.net/mobile/article.html?no=115738- `headers.json` 8f27567eebb8bd527620ba121c3ec4c1c421c1b76d91870f396e25656ebf6510 898 bytes
+- `page.html` a9cd6fe2b739c3e610de66a8944e405b2ed509c434b8c098453975572f6f6736 60,722 bytes
+- `provenance.json` 65b44057cf3c28e1d83343480a21c7fadfab02c9f5c27d12551c18b6b6e4c2ad 1,607 bytes
+- `rendered.html` b668310d0341a4cc301cca6f403626f02bba4fa364350d6d62eeec83ddfc3bcc 70,511 bytes
+- `screenshot.jpg` e99732f9ac0a29b0795e879d982e0bb22ebc21a761ab59d6b4824224fbf05616 403,367 bytes
+- `text.txt` ba8cd797bd851f3f42a88107c5be3afd9e5d3d6538e3e2d0f9a0ea46bf9c38a4 6,226 bytes
 
 ### [New PHP2Shell scanner checks your hosts for CVE-2026-109618 and CVE-2026-109619 - Help Net Security](helpnetsecurity-2026-10-22-php2shell-scanner-tool/index.html) [original ↗](https://www.helpnetsecurity.com/2026/10/22/php2shell-scanner-tool/)
 
@@ -2560,6 +2677,19 @@ capture 20261022T112845Z · HTTP 200 · https://www.helsinkitimes.fi/finland/fin
 - `rendered.html` 86c43a2ba4b2b595bc14316aefdf8f5d08736e778a980690075033168a6258ec 155,636 bytes
 - `screenshot.png` 9c23d876698ad3081c6ac7846ed601a071d01e5b57de834755b1ef846cc2d26a 701,429 bytes
 - `text.txt` 524315badf6e56339623c59b54db482dffa48d62583a026e7134dae4bb30d118 6,660 bytes
+
+### [Kritikus PHP-sebezhetőségek távoli kódfuttatást tesznek lehetővé, sürgősségi javítások érkeztek](hirstart-hk-20261023-php2shell-teendok-nas-okon-t/index.html) [original ↗](https://www.hirstart.hu/hk/20261023_php2shell_teendok_nas-okon_tuzfalakon_es_kontenerekben)
+
+**Hírstart** · news · secondary · captured · published 2026-10-23T11:13:04Z · added by `curator@php.newsroom` · `hirstart-hk-20261023-php2shell-teendok-nas-okon-t`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261024T160544Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Hirstart (Hungarian), 23 October: critical PHP vulnerabilities allow remote code execution and emergency fixes have arrived. The two flaws known as PH...
+
+capture 20261024T160544Z · HTTP 200 · https://www.hirstart.hu/hk/20261023_php2shell_teendok_nas-okon_tuzfalakon_es_kontenerekben- `headers.json` 2db7370fdab40bc9a9a4acdae3c2c5b230c6e95413991805d84e27fd31d57978 465 bytes
+- `page.html` 1006cf7188a8ab3d687f180726d550bf2874a5272fa182a3041fc21735221d09 59,671 bytes
+- `provenance.json` d151f3c553342126780dbdc75d6aa359c820dddc2dcd4d14f6336af02b31e682 1,802 bytes
+- `rendered.html` c48ec79c64dae358f4aa21af151a988954dab1f40f721bc7242ba0ccd9166274 101,084 bytes
+- `screenshot.jpg` c41822fdf6b30319321b96b661bf4516286cdf9c834a48e9106708cda3613729 138,042 bytes
+- `text.txt` ab29456ac75278c1be923d0c72c710d4c6cf502363c548d622d8e48ce7a69fc2 1,858 bytes
 
 ### [Your favorite websites are down due to an internet-breaking PHP security flaw](howtogeek-sites-down/index.html) [original ↗](https://www.howtogeek.com/your-favorite-websites-are-down-due-to-an-internet-breaking-security-failure/)
 
@@ -2590,6 +2720,45 @@ capture 20261022T112853Z · HTTP 200 · https://www.huntress.com/blog/php2shell-
 - `rendered.html` 41e5af59038a7155953c6809d743ca579e2eeb7cdc503f13f6e3550ea920d970 1,115,188 bytes
 - `screenshot.png` a4d89c5787921c4fe23ea13f25dc2d0104756a669450c44aad83ad220d9bc3a7 1,862,920 bytes
 - `text.txt` a83d744768109a61f623c0d4de5df589cde5c1e0da114b25d62a7321f159455c 17,843 bytes
+
+### [PHP-säkerhetshålen 2026 – Så skyddar du din webbplats](hurbra-php-sakerhetshal-2026-guide/index.html) [original ↗](https://hurbra.se/php-sakerhetshal-2026-guide/)
+
+**hurbra** · news · secondary · captured · published 2026-10-22T14:53:25+00:00 · added by `curator@php.newsroom` · `hurbra-php-sakerhetshal-2026-guide`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261024T160544Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Hurbra (Swedish), 22 October: how to protect your website against PHP2Shell. Two serious PHP flaws have triggered millions of attack attempts against...
+
+capture 20261024T160544Z · HTTP 200 · https://hurbra.se/php-sakerhetshal-2026-guide/- `headers.json` 19067a6975a705a791b1fdc795ad42c5e391f548820bd8d19c56a6b5f28ed2f9 494 bytes
+- `page.html` 3cdffff33179169fcb9d522eed72db209f6dc6050b659e01192d6f24c271d6a5 360,072 bytes
+- `provenance.json` 33de32f890517cdb9149f3d377d173538fde38cd9bfc44262d82b3368a9925f2 1,584 bytes
+- `rendered.html` 3bcb2d77a52c7c1dd746d0f5dd1351be2dcf979fc08069ceb404e68317679583 370,547 bytes
+- `screenshot.jpg` 42360f32ea42ee4deb279570af1021ada5a1d2b729f84e518441713b72bc3c99 40,200 bytes
+- `text.txt` 99d0f54ec7049dd27c291e6ed2455327ac9172d5f5b0ec6510db7d007fbccf39 22,447 bytes
+
+### [Dünya genelinde siber güvenlik açığı: PHP programlama dilinde sorunlar tespit edildi! Küresel çapta devlet siteleri geçici olarak kapatıldı - Hürriyet Son Dakika Güncel Haberler](hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci/index.html) [original ↗](https://www.hurriyet.com.tr/dunya/dunya-genelinde-siber-guvenlik-acigi-php-programlama-dilinde-sorunlar-tespit-edildi-kuresel-capta-devlet-siteleri-gecici-olarak-kapatildi-43350466)
+
+**Hürriyet** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Hürriyet (Turkish): worldwide security hole in PHP; government sites were temporarily closed globally. It says security experts found the two flaws wi...
+
+capture 20261023T160435Z · HTTP 200 · https://www.hurriyet.com.tr/dunya/dunya-genelinde-siber-guvenlik-acigi-php-programlama-dilinde-sorunlar-tespit-edildi-kuresel-capta-devlet-siteleri-gecici-olarak-kapatildi-43350466- `headers.json` ed96f9d37b883eb52a7e8344e42b5ef245fcde11662b2d4ef95011f9a432fbff 1,036 bytes
+- `page.html` 169d81bb84fd1ca1097d4f9721416ebecaf0b51f5b68fd80ff5e816400c621a3 133,196 bytes
+- `provenance.json` 022d559710a8dd7a2fed83696a57857e8b414972dae2be106ffea566c1280bf7 2,065 bytes
+- `rendered.html` 2336c6ca3be5d2171d640690eb6aa2d9eb0e54de376b400cee9e0334d500d5bf 169,215 bytes
+- `screenshot.jpg` 59171c4cafd691562e89c6911c34fdb2e3d03aa2c81a2841ff478e7e8bce8cbf 636,810 bytes
+- `text.txt` b84776ce009e3dc2a206e9ad3ef22832948d4cd2d03b762e9069ec10e9d60934 13,994 bytes
+
+### [Falle PHP già sotto attacco: l'IA le ha scoperte e ora scrive gli exploit | Hardware Upgrade](hwupgrade-news-sicurezza-software-falle-php-gia-so/index.html) [original ↗](https://www.hwupgrade.it/news/sicurezza-software/falle-php-gia-sotto-attacco-l-ia-le-ha-scoperte-e-ora-scrive-gli-exploit_160925.html)
+
+**Hardware Upgrade** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `hwupgrade-news-sicurezza-software-falle-php-gia-so`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Hardware Upgrade (Italian): PHP flaws already under attack, AI found them and now writes the exploits. The PHP security team released PHP 8.5.12, 8.4....
+
+capture 20261023T160435Z · HTTP 200 · https://www.hwupgrade.it/news/sicurezza-software/falle-php-gia-sotto-attacco-l-ia-le-ha-scoperte-e-ora-scrive-gli-exploit_160925.html- `headers.json` 27e8635a3e062bdd27358070689843db524f6742546ff66110cabf769d50667d 1,154 bytes
+- `page.html` a83c6ca35f60eb8c579a47f4ce2479f26e7a197129fca967a67242e2b2b61203 138,870 bytes
+- `provenance.json` 1d229c6ea14e186906db362f81b0e615c58e40909e36ce8f854ef108c3962200 1,876 bytes
+- `rendered.html` 9c09ebadee15f7a80e25a06b7455d90de115b5542e8c08281bf8fe4f86ab831f 223,740 bytes
+- `screenshot.jpg` 4c9548af895dae917cbf16f232bf30ff0847417c73af0bf845e1256e194a5e0a 569,652 bytes
+- `text.txt` 27fe642106500ed29791f821c9e7932d5f7db99fe1be5df459fd977eb7db5114 13,085 bytes
 
 ### [Govt sites go down after AI finds 'critical' PHP vulnerabilities | Information Age | ACS](ia-acs-article-2026-govt-sites-go-down-after-ai-finds-critical-php/index.html) [original ↗](https://ia.acs.org.au/article/2026/govt-sites-go-down-after-ai-finds--critical--php-vulnerabilities.html)
 
@@ -2635,6 +2804,30 @@ capture 20261023T160435Z · HTTP 200 · https://www.idxchannel.com/playlists/jut
 - `rendered.html` da7a3707c79abd48f1faea87270a41a4f68e24fa6a52c80002d406cec8f491a3 1,416,412 bytes
 - `screenshot.jpg` 6f84791300ec03b3a4a653127a59366390b78abec5aa8e2040e290ecac1c2506 166,461 bytes
 - `text.txt` 966c68b8c58b4f3dfa0e79e9dfba7f119ee6330f55948c065fc7b9d1a807cc85 31,925 bytes
+
+### [全球互联网“今夜惊雷”：AI发现的PHP高危漏洞“PHP2Shell”引发多国政企网站紧急关站](ijiwei-n-1122779/index.html) [original ↗](https://www.ijiwei.com/n/1122779)
+
+**ijiwei** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `ijiwei-n-1122779`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Ijiwei (Chinese): 'tonight's thunderclap' for the global internet: the AI-found PHP flaw PHP2Shell forced emergency site closures at government and co...
+
+capture 20261025T093507Z · HTTP 200 · https://www.ijiwei.com/n/1122779- `headers.json` 5ec30cc89903a98a18ce31d694e214f7557d14ee3a125ffa489c7f986bc6d027 900 bytes
+- `page.html` 046759baedb82af3710da90268e93e0acd32baeabff10e48a49119a69cdd7c81 61,676 bytes
+- `provenance.json` 77ef7f748cf8427119071cf49933d2cd667c654a61c5ddd538303cad878b5995 1,552 bytes
+- `rendered.html` b3e02665079d0f7252efa4a5eff1a1b0bf54b892054d68dc7f3698d581b22861 60,937 bytes
+- `screenshot.jpg` 4cc32df55be0c48a7ac54a1f61139756ebe69eb28558584d298189df7b883753 945,195 bytes
+- `text.txt` 0f6f2bf8436c2b42a5258fe1041aa70afc7a0a8d8421ab76d174467df65b0d0f 17,220 bytes
+
+### [PHP2Shell, quando una vulnerabilità del software diventa un’emergenza mondiale - Il Sole 24 ORE](ilsole24ore-art-php2shell-quando-vulnerabilita-softw/index.html) [original ↗](https://www.ilsole24ore.com/art/php2shell-quando-vulnerabilita-software-diventa-un-emergenza-mondiale-AJIlhFrB)
+
+**Il Sole 24 Ore** · news · secondary · captured · published 2026-10-22T10:14:00.000Z · added by `curator@php.newsroom` · `ilsole24ore-art-php2shell-quando-vulnerabilita-softw`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Il Sole 24 Ore (Italian), 22 October: when a software vulnerability becomes a world emergency. A question-led explainer of why PHP2Shell is such a bro...
+
+capture 20261023T160435Z · HTTP 200 · https://www.ilsole24ore.com/art/php2shell-quando-vulnerabilita-software-diventa-un-emergenza-mondiale-AJIlhFrB- `headers.json` f751dc7aa146a9af481664da2a4c17d7dedeb8e6f7384f80775fde771569cae2 1,138 bytes
+- `page.html` fd39496d01df1be37efdf34afab8d0669ca99edbd6e80b3d2c691a1dfd413120 984,211 bytes
+- `provenance.json` 72e00b0c0ae59cf1ac83888e9efbe531d37de753c86233cc5ee904f7ffd2ea81 1,693 bytes
+- `text.txt` 34e2f51bedae17519e0584f1cfae76f1f1b7f9dea752397141d8040ad2f49c89 14,089 bytes
 
 ### [PHP2Shell: When PHP Runs Out of Memory at the Wrong Moment | Imperva](imperva-blog-php2shell/index.html) [original ↗](https://www.imperva.com/blog/php2shell-vulnerability-updates/)
 
@@ -2730,6 +2923,56 @@ capture 20261023T080331Z · HTTP 200 · https://www.indiatvnews.com/technology/n
 - `screenshot.jpg` 08b95827e5b2f4513fb8ea6921110b3dd51c238910171e895500cbc3ba189061 540,427 bytes
 - `text.txt` 5890d993ee5bdcb670bd405641ec3e763a82c5c3e1a78695e174b4ea4362430f 6,646 bytes
 
+### [PHP güvenlik açığı (PHP2Shell): Ne oldu, ne yapmalı? Adım adım rehber](indigodergisi-2026-10-php-guvenlik-acigi-php2shell/index.html) [original ↗](https://indigodergisi.com/2026/10/php-guvenlik-acigi-php2shell/)
+
+**İndigo Dergisi** · news · secondary · captured · published 2026-10-21T21:45:07+00:00 · added by `curator@php.newsroom` · `indigodergisi-2026-10-php-guvenlik-acigi-php2shell`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Indigo Dergisi (Turkish), 21 October: what happened and what to do, a step-by-step guide. PHP2Shell is two critical flaws in the language behind about...
+
+capture 20261023T160435Z · HTTP 200 · https://indigodergisi.com/2026/10/php-guvenlik-acigi-php2shell/- `headers.json` c409b2bc890f7dd4473de64a24a662c722a35a99229f521645d293c78a0653e0 1,245 bytes
+- `page.html` 9285154c3176f5b64a1f5c8aefd446a8e56cfa2139122c0c85cb961804abd85a 278,088 bytes
+- `provenance.json` 367d9a52a3671a03c070aa8d6211e027f8e9981c461536f3fd82cbdf82b3e869 1,533 bytes
+- `text.txt` c8c3d3e1225d10240ee19544a6a5ea7348bb2b494766b93b515df926c687f53f 25,357 bytes
+
+### [Saking Bahayanya PHP2Shell, Kepala Negara Sampai Turun Tangan](inet-detik-security-d-8718436-saking-bahayanya-php2/index.html) [original ↗](https://inet.detik.com/security/d-8718436/saking-bahayanya-php2shell-kepala-negara-sampai-turun-tangan)
+
+**detikInet** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `inet-detik-security-d-8718436-saking-bahayanya-php2`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). detikInet (Indonesian), 22 October: because of how dangerous PHP2Shell is, heads of state had to step in. It says the sudden vulnerability of digital...
+
+capture 20261023T160435Z · HTTP 200 · https://inet.detik.com/security/d-8718436/saking-bahayanya-php2shell-kepala-negara-sampai-turun-tangan- `headers.json` 23a7512169ea272c06d6268c84531c130bace8b486de937a8ab671cfd58ed443 1,050 bytes
+- `page.html` 926417bcfa4613473196d08b2df54fc63e9f54df5b8172ccc1866e48361550bd 319,310 bytes
+- `provenance.json` 2b4e64fcb5c2195ab8df32108c9b4adf9a5d553076966684a65ba3b560d405e8 1,784 bytes
+- `rendered.html` dd10feb5862c7ed64b5794e8ceb5baa6d297ad27c7dfb41fd3ee23cdd1ca937e 349,384 bytes
+- `screenshot.jpg` 5ce6cabb906c802b23be82668166488026ffd30416b82030f29008b06355c4c3 471,268 bytes
+- `text.txt` 356402f97052a4c24981e92e04e1b206d98eb08502e29da334023fa23ba49475 7,014 bytes
+
+### [PHP2Shell: cómo actuar ante la alerta del FBI que pide desconectar sitios web vulnerables en Estados Unidos - Infobae](infobae-estados-unidos-2026-10-23-php2shell-como/index.html) [original ↗](https://www.infobae.com/estados-unidos/2026/10/23/php2shell-como-actuar-ante-la-alerta-del-fbi-que-pide-desconectar-sitios-web-vulnerables-en-estados-unidos/)
+
+**Infobae** · news · secondary · captured · published 2026-10-23T00:21:13.551Z · added by `curator@php.newsroom` · `infobae-estados-unidos-2026-10-23-php2shell-como`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Infobae (Spanish, US edition), 22 to 23 October: how to act on the FBI alert asking people to disconnect vulnerable websites in the United States. It...
+
+capture 20261023T160435Z · HTTP 200 · https://www.infobae.com/estados-unidos/2026/10/23/php2shell-como-actuar-ante-la-alerta-del-fbi-que-pide-desconectar-sitios-web-vulnerables-en-estados-unidos/- `headers.json` a77240a075c52a46b20f5c59abb1e4dd06e81fe61c4831c11edd5e48ff1b9b44 1,535 bytes
+- `page.html` eec41642b23d1bf466fb71d3c3ec3fa9712fddb6194d1a84d1aeebdce9838500 229,867 bytes
+- `provenance.json` 2d70ca3cc93cb9a2dd7c962ec4d3871d8a11e3f161238501b02bf9fda4547ad0 1,945 bytes
+- `rendered.html` 95e2a910fba32dbd567f200af32318fc3f2dc2cfa7ba8a98783cdc3768153901 288,481 bytes
+- `screenshot.jpg` 57e65b45f75c1fbe6b5eca7c4aedadf242c606cdc141ed727670d0dd53a66664 740,965 bytes
+- `text.txt` 4c4d254cffdbe8820bc107264abe10c11bf472693915876bab0ed70d0af7ba68 12,780 bytes
+
+### [PHP: falha em uma linguagem de programação ameaça tirar sites do ar; entenda](infomoney-mundo-php-falha-ameaca-tirar-sites-ar/index.html) [original ↗](https://www.infomoney.com.br/mundo/php-falha-ameaca-tirar-sites-ar/)
+
+**InfoMoney** · news · secondary · captured · published 2026-10-21T15:20:00+00:00 · added by `curator@php.newsroom` · `infomoney-mundo-php-falha-ameaca-tirar-sites-ar`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). InfoMoney (Portuguese, Brazil), 21 October: a flaw in a programming language threatens to take sites offline. It describes CVE-2026-109618 as memory-e...
+
+capture 20261023T160435Z · HTTP 200 · https://www.infomoney.com.br/mundo/php-falha-ameaca-tirar-sites-ar/- `headers.json` 40d358ae2c0532a329b8874c7ee11f2db9fcb41fa43cadf001cec99cdb34be00 8,329 bytes
+- `page.html` 51c34491478f8de90e0236f8ac0a90921b6d6a606810c4693613a2b4cbd3cc91 347,997 bytes
+- `provenance.json` 896cfe23d05a86e99707febd55e76bdc770006fd21adc462508442e7234388b7 1,683 bytes
+- `rendered.html` e7b98ed56850b4e7d553e7c388e6b79c2ff3d7ca4b21f406ea1f87b3909f9c6d 426,745 bytes
+- `screenshot.jpg` 5759c290398a1a15d06c43282ec9b8b47eacb1d5c7a9abdb847b3fc135e1a19d 449,582 bytes
+- `text.txt` 8f9667fa92ab7592adf69c52549d9447680c8bf106d0576ca6ae86057d060b60 7,101 bytes
+
 ### [PHP2Shell-Chaos: Ein Tag der Security-Teams in Alarmbereitschaft versetzte](infopoint-security-php2shell-chaos-ein-tag-der-die-sicherhe/index.html) [original ↗](https://www.infopoint-security.de/php2shell-chaos-ein-tag-der-die-sicherheitswelt-in-alarmbereitschaft-versetzte/a46856/)
 
 **Infopoint Security** · news · secondary · captured · published 2026-10-22 08:29:53 · added by `curator@php.newsroom` · `infopoint-security-php2shell-chaos-ein-tag-der-die-sicherhe`
@@ -2755,6 +2998,19 @@ capture 20261023T160435Z · HTTP 200 · https://www.infosecurity-magazine.com/ne
 - `rendered.html` 2c72a43d49ed4fe485eaa6ab7e6f291809b7634ec9f69cc59eb7bb8de3ae7f90 118,692 bytes
 - `screenshot.jpg` b9c095ec113af118bf53544c99f06298253e49dfa5924012d8fb9779e540ebfc 489,006 bytes
 - `text.txt` 723f0a0bfb538e435f2f44a92033c7e84a12742ff11daff23cba69a7ddf1df8d 7,569 bytes
+
+### [Pemprov Kaltim Waspadai PHP2Shell, Celah Siber Kritis Ancam Server Pemerintahan - IniBalikpapan.Com](inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah/index.html) [original ↗](https://www.inibalikpapan.com/pemprov-kaltim-waspadai-php2shell-celah-siber-kritis-ancam-server-pemerintahan/)
+
+**IniBalikpapan.Com** · news · secondary · captured · published 2026-10-24T20:30:00+00:00 · added by `curator@php.newsroom` · `inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). IniBalikpapan.com (Indonesian), 24 October: East Kalimantan's provincial government is on guard against PHP2Shell. It tightened the security of its di...
+
+capture 20261025T093507Z · HTTP 200 · https://www.inibalikpapan.com/pemprov-kaltim-waspadai-php2shell-celah-siber-kritis-ancam-server-pemerintahan/- `headers.json` 5081a5cc5a97296279ee0e2c330fbe2db992bd1566e53aa99f0ddb188aff943b 1,029 bytes
+- `page.html` 892fb9bef9b62b109a7b90b1bd99f78f88abacc868c2ab177570dbf2dbd7583c 133,282 bytes
+- `provenance.json` a992aaaa44b0abd6fa613161f14738b4ab1c7e115c23aad555fe4ffcc3f46a12 1,845 bytes
+- `rendered.html` dab5b1d01ac4b1fd6a9f2f0cd95da311b20c84793192480fe1f8948b7de643d1 149,471 bytes
+- `screenshot.jpg` b78e6c1fcd969f51dc97b16c93652056b0698ff8ab26742495c1eceddd841ae4 500,949 bytes
+- `text.txt` 308b7d4ed87e6bacd051e9d7cb31466cce51d92f630a99a0138d15cc5f466069 8,114 bytes
 
 ### [Internet Archive down, Wikipedia hit by outages amid PHP issues - Insider Paper](insiderpaper-archive-wikipedia/index.html) [original ↗](https://insiderpaper.com/internet-archive-wikipedia-down-php/)
 
@@ -2818,6 +3074,89 @@ capture 20261023T232528Z · HTTP 200 · https://www.insurancebusinessmag.com/uk/
 - `provenance.json` 257a837c4d1c19da47b97dd17fbac817c28a7a19373946853b39ec952cece6fc 1,817 bytes
 - `text.txt` 3876631293f8dad80be19c44d9a9dbeb794f6d0a3d978addc493800dc2399536 7,190 bytes
 
+### [Faille PHP 5 à 8.5 : tout savoir sur la situation d'urgence - iPhoneSoft](iphonesoft-2026-10-22-faille-php-5-8-5-savoir-situa/index.html) [original ↗](https://iphonesoft.fr/2026/10/22/faille-php-5-8-5-savoir-situation-urgence)
+
+**iPhoneSoft** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `iphonesoft-2026-10-22-faille-php-5-8-5-savoir-situa`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). iPhoneSoft (French), 22 October: PHP flaw from 5 to 8.5, everything about the emergency. Two critical PHP vulnerabilities caused the preventive shutdo...
+
+capture 20261023T160435Z · HTTP 200 · https://iphonesoft.fr/2026/10/22/faille-php-5-8-5-savoir-situation-urgence- `headers.json` 47c98ddd98aa796db0d7c8c8bfabe389f54733d5cb9f0628dcc180f144bae1a6 863 bytes
+- `page.html` 8beab37b32c4ee9d00bc07098ab56d121b1970a21e9d5264dd0ca6b4c12bef13 44,602 bytes
+- `provenance.json` 40ed8f1941510f17330002040ba72a4d6ee57c7be1345ce437a09f3951169111 1,726 bytes
+- `rendered.html` d7fbb000a9ef96a79a5091efd4008f78c5bd568dfd25b8a00c3dd45130c17c8c 818,728 bytes
+- `screenshot.jpg` 605f912976b484e490fa7787be3929a4f0c39a6f72fbf8c4d1ae2f9754833ad2 529,737 bytes
+- `text.txt` fe00635f4b0e1b6878a5b861b9c51451ce7a8ecbb379bc4f56a2cd576902769e 6,398 bytes
+
+### [PHP2Shell: Die aktuelle Lage nach dem Patch](it-daily-shortnews-php2shell-die-aktuelle-lage/index.html) [original ↗](https://www.it-daily.net/shortnews/php2shell-die-aktuelle-lage)
+
+**it-daily.net** · news · secondary · captured · published 2026-10-22T15:15:59+02:00 · added by `curator@php.newsroom` · `it-daily-shortnews-php2shell-die-aktuelle-lage`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). it-daily.net (German), 22 October: PHP2Shell, the current situation after the patch. According to Cloudflare's chief executive, criminal actors began...
+
+capture 20261023T160435Z · HTTP 200 · https://www.it-daily.net/shortnews/php2shell-die-aktuelle-lage- `headers.json` 9695e41002663a335827fe97a13367472f6f5d5fbf6128ac40c78df5da90e84a 789 bytes
+- `page.html` 338bd29498bcff507575707c84fa37e15021afcef73df8b236cdcc92f5c1eae4 281,033 bytes
+- `provenance.json` cacb79068f8c5c16802c4064721916bb9a4e3cfaa15367f1c6b67212c8ec9c00 1,637 bytes
+- `rendered.html` 64a48e283828bd2220d218801eefab5572919479833a0280971d85c1105d05c6 352,665 bytes
+- `screenshot.jpg` acc9df37231bcffd2200f1a4b79143d8394539ca34b082567d5a717ae6df9498 555,457 bytes
+- `text.txt` 540025f0b24a94f3b5314f48cc78559c29526be1eae033198e15eb38c72efa6a 8,207 bytes
+
+### [Avviso per gli exchange di crypto: una grave vulnerabilità PHP mette a rischio i siti di pagamento](it-finance-yahoo-notizie-avviso-per-gli-exchange-di-22423/index.html) [original ↗](https://it.finance.yahoo.com/notizie/avviso-per-gli-exchange-di-224238845.html)
+
+**Yahoo Finanza** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `it-finance-yahoo-notizie-avviso-per-gli-exchange-di-22423`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Yahoo Finanza (Italian), a notice for crypto exchanges: a serious PHP vulnerability puts payment sites at risk. On Wednesday 21 October the PHP develo...
+
+capture 20261023T160435Z · HTTP 200 · https://it.finance.yahoo.com/notizie/avviso-per-gli-exchange-di-224238845.html- `headers.json` 14b530caf70b8055757198eed4edac7690c7aa2ab491e7e8687687bf1a1d5f8a 31,973 bytes
+- `page.html` 8d4fdce54a79d0278bce072fd149868819c27fba111211d83f0878f2ca31493e 358,322 bytes
+- `provenance.json` cae9669db6a1998cee4738ab882a555767e3b79a45818e2d512863857dbc0984 1,773 bytes
+- `rendered.html` 4daec8f5f4250e80489c770ce967ea917c187f814840da3dd4bd19e62d47dec1 426,581 bytes
+- `screenshot.jpg` 44a38b539889ea4a8d4cd4905314c8ed3ffb686fe1a749e4937159c7ff6934ee 327,943 bytes
+- `text.txt` e51ded94e469d4867f3136a2efadb8261a9e7849aa31e73bb75fca0b05243c07 4,330 bytes
+
+### [PHP2Shell-Sicherheitslücken bedrohen auch Banken und Finanzdienstleister](it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we/index.html) [original ↗](https://www.it-finanzmagazin.de/php2shell-sicherheitsluecken-bedrohen-weiterhin-auch-banken-und-finanzdienstleister-252814/)
+
+**IT Finanzmagazin** · news · secondary · captured · published 2026-10-23T05:30:07+00:00 · added by `curator@php.newsroom` · `it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). IT Finanzmagazin (German), 23 October: the PHP2Shell vulnerabilities also threaten banks and financial service providers. They let attackers run malic...
+
+capture 20261023T160435Z · HTTP 200 · https://www.it-finanzmagazin.de/php2shell-sicherheitsluecken-bedrohen-weiterhin-auch-banken-und-finanzdienstleister-252814/- `headers.json` 151e327491bd02691fbac079064d65a43f92aba097351319275c4c83184c3bf0 796 bytes
+- `page.html` 1dcb38424cbf19d0e581165c98d5edbbfca5c5e3630a051e774ab8d84566d5c7 322,282 bytes
+- `provenance.json` 4963156ab7e6c51dceb4b591341db04ce2f3e6266eaf2444ce20787f1096dff6 1,855 bytes
+- `rendered.html` 5e573606a9c82794efc2db5e9285b27d565fb9b2864c4f127c2e78680923e56a 329,897 bytes
+- `screenshot.jpg` 12180c5b1670a95f056382e7d90e71bb1fb2510718042919a59e37105b4c9154 859,107 bytes
+- `text.txt` 9c370ea0d223e2c82ed93afc8e2f860d4089df88fcb3cf3fc0e9904cc1ef516b 11,625 bytes
+
+### [PHP2Shell : une faille majeure dans PHP activement exploitée avant la disponibilité du correctif - ITdaily](itdaily-blogs-logiciel-php2shell-bug-php/index.html) [original ↗](https://itdaily.fr/blogs/logiciel/php2shell-bug-php/)
+
+**ITdaily** · news · secondary · captured · published 2026-10-21T13:55:56+02:00 · added by `curator@php.newsroom` · `itdaily-blogs-logiciel-php2shell-bug-php`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). ITdaily (French edition), 21 October, updated 16:38: a major PHP flaw actively exploited before the fix was available. PHP shared the patches slightly...
+
+capture 20261023T160435Z · HTTP 200 · https://itdaily.fr/blogs/logiciel/php2shell-bug-php/- `headers.json` fc4bc78b399501edb3e7dd3f60cfb24d8be4d1959cf9a4020fb9070fed077262 643 bytes
+- `page.html` f2a5fe735d6b54ca798a1765dd09f96268a6c756ad9d2aa4e15d35810f599e8e 114,364 bytes
+- `provenance.json` 3ad577b312b0a9b49db5d0b776e849ec361aaf334e878e3d8bf2977880d7ac29 1,661 bytes
+- `rendered.html` 6cb2162cb57181e8d106383d80e3e5e38d93ca7960293df9e8140b28c9be6bb6 116,843 bytes
+- `screenshot.jpg` a2f5c873be763d078f711b06703760c141a7b90d3470c610f546aa4f9e14a0b1 641,339 bytes
+- `text.txt` 6f61aceea38ee7638b3c7ebf0e1e0a2c4b868cfb0b7bb53ad9e6319e8603a45b 11,129 bytes
+
+### [PHP2Shell: groot lek in PHP actief misbruikt, nog voor beschikbaarheid patch - ITdaily](itdaily-blogs-software-php2shell-bug-php/index.html) [original ↗](https://itdaily.be/blogs/software/php2shell-bug-php/)
+
+**ITdaily** · news · secondary · captured · published 2026-10-21T13:55:56+02:00 · added by `curator@php.newsroom` · `itdaily-blogs-software-php2shell-bug-php`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). ITdaily (Dutch edition), 21 October: the Dutch-language version of the same article as the French ITdaily capture, headlined that a big PHP leak was a...
+
+capture 20261023T160435Z · HTTP 200 · https://itdaily.be/blogs/software/php2shell-bug-php/- `headers.json` 704b2c806f55d1fd2bad5be2e33261b1f464d6714dab72bec03f9c7cf30ff94a 643 bytes
+- `page.html` 4f3981bd2831a7022c6766d3e93b1774bcad5574ddd2a9a282cf5eaf3aadb3fd 111,628 bytes
+- `provenance.json` c0028f3e2add5656f16a1eb46a2dbbcee099d2b281f004a6aff327db8a45c06a 1,489 bytes
+- `text.txt` 7ffb5c6722658267e9f24f45b8bd5951573aeae5d425577b334f1eefff67fda7 9,511 bytes
+
+### [스틸리언, ‘PHP2Shell’ 취약점 무료 점검 서비스 공개 capture 20261023T160435Z · HTTP 200 · https://www.itdaily.kr/news/articleView.html?idxno=242392- `headers.json` 6f23ede504ae1bb70503ca0091b132b288ba0def8c9e3a1be5ccb05e11ab0032 343 bytes
+- `page.html` 1f9f3df5c5af583a85f178cb4e29038ec750a3992ac29167bf406cef59d06521 144,635 bytes
+- `provenance.json` 91f0193e71862029bc93fd3e96550b5f8a8dbfb6371092953ccf0c097811f2f1 1,652 bytes
+- `rendered.html` d5afcf8928b89f59268d20f9f649f4f06880e8157e2ee008803207b621319fcf 165,212 bytes
+- `screenshot.jpg` 06109396873508333882174a66c794042e43c9d292563e5efd6ebc16352ff0c6 434,636 bytes
+- `text.txt` 4cc6406a7d9f2fdcdfb6f5d76eda72dfff7f3131cc812850a2ff8bcdcae06023 9,542 bytes
+
 ### [PHP Foundation angered by ‘clumsy’ disclosure of vulnerabilities - ITdaily](itdaily-php-clumsy-announcement/index.html) [original ↗](https://itdaily.com/blogs/software/php-angry-clumsy-announcement/)
 
 **ITdaily (Jens Jonkers)** · news · secondary · captured · published 2026-10-22T09:36 (local, Belgium) · added by `claude-story-site` · `itdaily-php-clumsy-announcement`
@@ -2836,6 +3175,19 @@ capture 20261023T160435Z · HTTP 200 · https://itdaily.com/blogs/software/php-a
 - `rendered.html` 566da57232a6d2f8319c1043ddd06a4b84edf4f952cdce055268dae2e94f39f9 111,971 bytes
 - `screenshot.jpg` b21044eab2552799adf4388bb39fc8cced84bfc7cf12d8b58a7939e71ad5a0f9 443,657 bytes
 - `text.txt` 53476db4c95635cba0849f88b3273310ef0809efbe986864a7b56a0054183a72 7,031 bytes
+
+### [360安全云发布PHP2Shell应急防护方案，助力政企网站抢修窗口期 - IT之家](ithome-1-016-980-htm/index.html) [original ↗](https://www.ithome.com/1/016/980.htm)
+
+**IT之家** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `ithome-1-016-980-htm`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). IT Home (Chinese): 360 Security Cloud released an emergency protection plan for PHP2Shell to help government and enterprise websites during the repair...
+
+capture 20261023T160435Z · HTTP 200 · https://www.ithome.com/1/016/980.htm- `headers.json` 96ed96501f87024261ed73feb08307622b1f1ea3c56bbc826a57c5973be4318d 480 bytes
+- `page.html` 3ca5e75716670afe7395fcfade59df2b0d4d01c682cc6357dda71faad213b432 29,303 bytes
+- `provenance.json` 2aa57d913ce0b073757f96d79a187c2e73edcd42c0e91b376ed67ba8d4cf83bb 1,551 bytes
+- `rendered.html` 848001c36ed2ed66193e920a03d05b0414acff8038b6350ba9634bd74a5992e5 49,645 bytes
+- `screenshot.jpg` ae9dcb375cfcce508de56f6cdc85d7496871a45c10575cea3376e01f2a10afda 540,044 bytes
+- `text.txt` 6031329574e60ccca2f5ef8b6105c001e11d921e2e88bbd476ef56902c1220d0 11,251 bytes
 
 ### [PHP2Shell, la mise à jour ferme la faille, mais oblige à traquer les compromissions possibles - IT SOCIAL](itsocial-cybersecurite-cybersecurite-articles-php/index.html) [original ↗](https://itsocial.fr/cybersecurite/cybersecurite-articles/php2shell-la-mise-a-jour-ferme-la-faille-mais-oblige-a-traquer-les-compromissions-possibles/)
 
@@ -2875,6 +3227,44 @@ capture 20261024T160544Z · HTTP 200 · https://itwire.com/business-it-news/secu
 - `rendered.html` 198722ddb7d84ddfe5e51fefd454516beb90ca1132faa997707ca6427a8443b2 95,215 bytes
 - `screenshot.jpg` e2ef147959aea6261471e4b18289ad8609f1b0da7037b8161e495fb16d727674 1,012,633 bytes
 - `text.txt` 172a5231d5923072febae5278aaf4bda3a02684c33054b2bd6f6fe8989f480c0 19,030 bytes
+
+### [Celah PHP2Shell Ancam Server, Peretas Bisa Ambil Alih Sistem Tanpa Login](jawapos-teknologi-2610230446-celah-php2shell-anc/index.html) [original ↗](https://www.jawapos.com/teknologi/2610230446/celah-php2shell-ancam-server-peretas-bisa-ambil-alih-sistem-tanpa-login)
+
+**Jawa Pos** · news · secondary · captured · published 2026-10-23T19:33:41+07:00 · added by `curator@php.newsroom` · `jawapos-teknologi-2610230446-celah-php2shell-anc`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261024T133450Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Jawa Pos (Indonesian), 23 October: the PHP2Shell flaw threatens servers; hackers can take over a system without logging in. It is a serious threat to...
+
+capture 20261024T133450Z · HTTP 200 · https://www.jawapos.com/teknologi/2610230446/celah-php2shell-ancam-server-peretas-bisa-ambil-alih-sistem-tanpa-login- `headers.json` 346c2a44446ea359003944df14704ec17e051fc1b445bddf3d04230fc0fa8aa3 671 bytes
+- `page.html` b7eadea750ad30bf6412311c3de384f05674389ce50ad0bf28d2e3a0e76f7dca 246,465 bytes
+- `provenance.json` f46fd0b1e18c9e308aef0df49b5a877072c2add435b273232523a85aeb22f9ca 1,815 bytes
+- `rendered.html` f5cf7e4cbe73de23bf5b5031ecf851f369e459815ef0511fb24c36c1831f128a 290,351 bytes
+- `screenshot.jpg` 10c41738af26768a836605d7b9828eed0fe940cd7d2898bf02294107b171a9cb 352,162 bytes
+- `text.txt` 2754c8748f2b7f9f29581bbb88cb2c6a26211bcaeb2e2b32d67600fc4407d983 4,615 bytes
+
+### [Une faille critique dans PHP fait trembler la moitié du web mondial - JVTECH by jeuxvideo.com](jeuxvideo-news-2110338-une-faille-critique-dans-ph/index.html) [original ↗](https://www.jeuxvideo.com/news/2110338/une-faille-critique-dans-php-fait-trembler-la-moitie-du-web-mondial.htm)
+
+**JeuxVideo.com** · news · secondary · captured · published 2026-10-23T12:40:08+02:00 · added by `curator@php.newsroom` · `jeuxvideo-news-2110338-une-faille-critique-dans-ph`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T232528Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). JVTech by jeuxvideo.com (French), 23 October: a critical PHP flaw makes half the world's web tremble. It says the origin of the serial outages is now...
+
+capture 20261023T232528Z · HTTP 200 · https://www.jeuxvideo.com/news/2110338/une-faille-critique-dans-php-fait-trembler-la-moitie-du-web-mondial.htm- `headers.json` 151883387ea3cc14358929da7810f392e4db7cd139bb8bcae34f44856e022549 1,599 bytes
+- `page.html` 9d40e3b2537a7197163e770f3de2e35d7fe22890bec3aa38e247a2d41a988162 77,947 bytes
+- `provenance.json` 0c95f5670ed3a65458dbc6453e6e113e648dbbd068962b1eb4b0f7b7f61c7585 1,831 bytes
+- `rendered.html` 43ca263f7f48a6ded278d1cc501025f3af8a69aa0c241d643fb6a72394079f48 328,753 bytes
+- `screenshot.jpg` 5fa218edab424b7aa204e4235b3d28195372611b5d329b2a0ffe1ccd21eb5aea 724,539 bytes
+- `text.txt` c2857e0dbbfe71aa57d9922accfe7900e893fb300499d35f2abfd523ed3fc5e6 14,973 bytes
+
+### [PHPに深刻度9.2の緊急脆弱性「php2shell」発覚、WordPressサイト運営企業向けの対策チェックリストをTorchUpが無料公開：時事ドットコム](jiji-jc-article/index.html) [original ↗](https://www.jiji.com/jc/article?k=000000015.000171490&g=prt)
+
+**時事ドットコム** · news · secondary · captured · published 2026-10-22T14:46:00+09:00 · added by `curator@php.newsroom` · `jiji-jc-article`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261023T160435Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). Jiji.com (Japanese), a press release of 22 October: the Japanese firm TorchUp made a free white paper available, a checklist for companies that run Wo...
+
+capture 20261023T160435Z · HTTP 200 · https://www.jiji.com/jc/article?k=000000015.000171490&g=prt- `headers.json` 3a7c26173c44dadb0ce4f73843adab98336b95bd86166a76b56626852f711df7 359 bytes
+- `page.html` 7cfc83a3ba8ba4cb99a51eba1a5ab1551fe215306f52ba4b498c4da39d7a1f73 77,436 bytes
+- `provenance.json` 632c22765aa964517dcdfef7a14a7941a16b884454c94cadb02ea099448c599c 1,579 bytes
+- `rendered.html` 4c9088c25ac07d98fa0795f07702225b46ba14c50179343dcc7b31bf8e9bb1d4 89,743 bytes
+- `text.txt` 5c39d0948e9da32377635406b5acb52c9c6e82dcbe210a724ebf5dd3daafeaab 14,731 bytes
 
 ### [Erro crítico em PHP obriga desligação de vários sites](jn-pt-sites-desligados/index.html) [original ↗](https://www.jn.pt/inovacao/artigo/internet-em-alarme-com-erro-detetado-que-obrigou-a-desligar-varios-sites/18139512)
 
@@ -2940,6 +3330,19 @@ capture 20261022T081606Z · HTTP 200 · https://www.jpcert.or.jp/- `headers.json
 - `rendered.html` b41d0ff975f9a0815c4626b027f239c76e939b2070f0e7221fdeef67c9615d21 32,010 bytes
 - `screenshot.png` 0870f642b705aeed4116685bb2897f814fff8eb758a665a969b80be60f36dc81 1,483,609 bytes
 - `text.txt` 0e3188607f06a768281c4dd19a88acecbe0e7fe6b5c20a312e9095a2a498dfba 6,293 bytes
+
+### [PHP2Shell security flaw forces thousands of Nepali websites offline](kathmandupost-science-technology-2026-10-25-php2shell/index.html) [original ↗](https://kathmandupost.com/science-technology/2026/10/25/php2shell-security-flaw-forces-thousands-of-nepali-websites-offline)
+
+**The Kathmandu Post** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `kathmandupost-science-technology-2026-10-25-php2shell`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 4 (mechanical selection by researcher@php.newsroom, read by the curator). The Kathmandu Post, 25 October: PHP2Shell forced thousands of Nepali websites offline. The PHP Foundation disclosed the two flaws on the evening of 21...
+
+capture 20261025T093507Z · HTTP 200 · https://kathmandupost.com/science-technology/2026/10/25/php2shell-security-flaw-forces-thousands-of-nepali-websites-offline- `headers.json` 7506560d25e320827ba16b5cb46e7a32de2f0f41f0f052334d4cb9cea459599d 1,191 bytes
+- `page.html` d9b63ae1d3d45f780d5599d10ce1beef57c3d4ee2e1892de3dd13ae31d1a8614 72,783 bytes
+- `provenance.json` 2e7a756110d5e11b8e5843ecc284ae16dffd50495643b9d41164a693ba90e419 1,841 bytes
+- `rendered.html` 1819d744256c53be3890eca8589b436bfa9cba48dd3d17d62882ff0283495b98 248,007 bytes
+- `screenshot.jpg` 5dcd532e293ed5b16bdd764c43f6dba745e32891a2b53fce0db79079f643ef44 684,896 bytes
+- `text.txt` b8a541ead3bd8295625877c330bbc21a09e8eb6f77fd70c94881d1c06b38e32e 12,495 bytes
 
 ### [Upaya Global Perbaiki Celah Keamanan Siber PHP, dari Amazon hingga Kementerian Jepang](koran-jakarta-2026-10-22-upaya-global-perbaiki-celah-keamana/index.html) [original ↗](https://koran-jakarta.com/2026-10-22/upaya-global-perbaiki-celah-keamanan-siber-php-dari-amazon-hingga-kementerian-jepang)
 
@@ -3081,6 +3484,10 @@ capture 20261022T112438Z · HTTP 200 · https://lorikeetsecurity.com/blog/php2sh
 - `rendered.html` 38608a412a2fb2a979d5821ccb1a9764037d3d2bbad075a509f0d25884973ae5 904,734 bytes
 - `screenshot.png` 281038d16371213c89c2ce9df773de5a82e6eac69bdfe5c855e3975b02ac6387 8,419,643 bytes
 - `text.txt` db7958824da2628a693fcca386ac3ea9994977209f017b245fab2d3e894cb349 37,837 bytes
+capture 20261025T070559Z · HTTP 200 · https://lorikeetsecurity.com/blog/php2shell-leaked-critical-php-vulnerabilities- `headers.json` 82feef81471d7a64e77b264ed3eb78fe370fdda1a8288764e82829db34e928e2 1,801 bytes
+- `page.html` cda45109ff195af2678c38806de8c847cf5b6189c9cdf92963d0bfeb789bfc33 342,196 bytes
+- `provenance.json` 81947b8457c3011818e533361765f04e4d2c051642f123947dcf76c2c69de4ac 1,688 bytes
+- `text.txt` f3b4827ebfeb5db8d6a63dec4b198e257ec210434bca837c1c8f55444d86989b 36,965 bytes
 
 ### [ČVUT čelí kybernetickému útoku, údajně doplatilo na kritickou chybu v PHP - Lupa.cz](lupa-cvut-cyber-attack/index.html) [original ↗](https://www.lupa.cz/aktuality/cvut-celi-kybernetickemu-utoku-doplatilo-na-kritickou-chybu-v-php)
 
@@ -3102,6 +3509,19 @@ capture 20261022T191510Z · HTTP 200 · https://www.lupa.cz/aktuality/cvut-celi-
 A capture of the site itself on 22 October (HTTP None, page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://www.latvija.gov.lv/), taken to record whether it was up. Row written by claude-newsroom-lead from provenance.json: the collector-gov agent stopped before committing.
 
 capture 20261022T081939Z · HTTP None ·  error: page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://www.latvija.gov.lv/- `provenance.json` c46e7265217bfc48f378b0011538b59f3e51a97263219d7ca72ed0fd55a3cfb5 465 bytes
+
+### [PHP2Shell: Waarom veel websites offline moesten gaan | Malwarebytes](malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi/index.html) [original ↗](https://www.malwarebytes.com/nl/blog/bugs/2026/10/php2shell-why-websites-are-going-offline-for-emergency-security-updates)
+
+**malwarebytes** · news · secondary · captured · published 2026-10-21T16:14:18+00:00 · added by `curator@php.newsroom` · `malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 2 (mechanical selection by researcher@php.newsroom, read by the curator). Malwarebytes (Dutch edition), 21 October: why many websites had to go offline. The flaws, known as PHP2Shell, are CVE-2026-109618 and CVE-2026-109619,...
+
+capture 20261025T093507Z · HTTP 200 · https://www.malwarebytes.com/nl/blog/bugs/2026/10/php2shell-why-websites-are-going-offline-for-emergency-security-updates- `headers.json` c127e590c1c1662737cb2831dc61804a86978d46cbf4dc01bb46e059b1f4bf1c 997 bytes
+- `page.html` 8c66de54dda6b304ce8e0b514223a7c0a4a991f685a1bbf91cfd7328ca0137b3 393,530 bytes
+- `provenance.json` 1856aed02753cb762932f941386efc095ea4573c26904168e3a90ae84aaeee1e 1,835 bytes
+- `rendered.html` e7fb7ef452a667caeb3517d6e835732d4b42deef8e494c97bd76e6d89e2e3e23 404,565 bytes
+- `screenshot.jpg` 37f8cdd60f58e859a7325c208335e452daeb6345a3ef7aa783f5ccdf2bd07ee1 699,867 bytes
+- `text.txt` d3098f85c2acf8ef34f5002519916d5f4c17364c6ebf48d06334c9a012984b65 9,514 bytes
 
 ### [La crisis de seguridad en PHP, explicada para dummies](marketing4ecommerce-crisis-seguridad-php/index.html) [original ↗](https://marketing4ecommerce.net/crisis-seguridad-php/)
 
@@ -4248,6 +4668,19 @@ capture 20261023T160435Z · HTTP 200 · https://www.security.nl/posting/958558/K
 - `screenshot.jpg` 1786f1bdd2b07ed1b6dbc345c5ca95b0f937c90726a069b0871ac879c19bd641 929,859 bytes
 - `text.txt` d18184822cdd69f9eb08811366a5bda90e62a1ee40360b9392836db3b92c43e7 60,715 bytes
 
+### [Pierluigi Paganini answers questions about the PHP2Shell flaws](securityaffairs-201662-hacking-pierluigi-paganini-answer/index.html) [original ↗](https://securityaffairs.com/201662/hacking/pierluigi-paganini-answers-questions-about-the-php2shell-flaws.html)
+
+**Security Affairs** · news · secondary · captured · published 2026-10-24T18:58:38+00:00 · added by `curator@php.newsroom` · `securityaffairs-201662-hacking-pierluigi-paganini-answer`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 2 (mechanical selection by researcher@php.newsroom, read by the curator). Security Affairs, 24 October: Pierluigi Paganini answers questions about the PHP2Shell vulnerability, early exploitation, AI-assisted attacks and the...
+
+capture 20261025T093507Z · HTTP 200 · https://securityaffairs.com/201662/hacking/pierluigi-paganini-answers-questions-about-the-php2shell-flaws.html- `headers.json` 0972fb957930d8bc89841ab7dfd5cdb707e82f6915df1c628325e547af45cb88 1,271 bytes
+- `page.html` bc6a336b46da76735321b216c1ee1d4420ed78fbedfecd3766daa9248710f280 118,112 bytes
+- `provenance.json` 9883a90a228e8dd72d00ae82f9a49d12148ba4ded84af834284981fd03c0256d 1,817 bytes
+- `rendered.html` 6147b596bfa7cf408aa117d01f97c896be15c439d7b5d529729afa0b3c3bdea9 119,912 bytes
+- `screenshot.jpg` ea10f7c681e0d1c3e47de4b915ed3dc9c7d61a7bf8d81e3b880be44b765cf113 125,354 bytes
+- `text.txt` f9efb87ab0fdf675c849f17b9818a935cc473331439fd53942ec7854cd6ca6ad 9,786 bytes
+
 ### [Misbruik van PHP2Shell-lek gemeld, DigiD en andere sites weer online - Security.NL](securitynl-misbruik-gemeld/index.html) [original ↗](https://www.security.nl/posting/958424/Misbruik+van+PHP2Shell-lek+gemeld%2C+DigiD+en+andere+sites+weer+online)
 
 **Security.NL** · news · secondary · captured · published not stated · added by `curator@php.newsroom` · `securitynl-misbruik-gemeld`
@@ -4425,6 +4858,12 @@ capture 20261022T113134Z · HTTP 200 · https://davidlopezkurtz.substack.com/p/t
 - `rendered.html` 5a9958401f0de8caa87154eb38d082ae37fe969fe4928862d4e557f4bac4ba1e 263,845 bytes
 - `screenshot.png` 4f94dc2329c6fd545b1a600cccfc7b2ce2db41deb2b8288403a9eec27e63dd56 3,979,940 bytes
 - `text.txt` cb3714dc12f96c969959784164a40f12aa923b46cf56df83aa950a9ea2573330 33,564 bytes
+capture 20261025T070559Z · HTTP 200 · https://davidlopezkurtz.substack.com/p/the-patch-is-the-exploit- `headers.json` 291a03786f22e9ef3f0fbfcf09b0a35dcb8e7c85a0b9810e8f656c73de87d5e5 3,505 bytes
+- `page.html` 36e4a823e30df237f0260fda544fb6e93b88ad7e498b73fec5981bf313269661 226,138 bytes
+- `provenance.json` 2ae8be0697b36b3c625f6d55cf48465f7b16d2774caf6f062dd9050f7a7d7f7e 1,798 bytes
+- `rendered.html` bab69619a3ab52770596118198b3dd28a8dc00ef00cb13bb268e604859efd40d 263,962 bytes
+- `screenshot.jpg` a72392a29cacaabbb3774c72bcb58fec9b366695dbfe21c9296515f2fbbb3f9a 931,783 bytes
+- `text.txt` ed681f55311835a718a1de42b7d825e0e266eacdea83474879bd56f7d5d27483 33,564 bytes
 
 ### [Astra Security launches free tools to help organisations identify PHP2Shell vulnerabilities](sunderlandecho-must-read-astra-security-launches-free-t/index.html) [original ↗](https://www.sunderlandecho.com/must-read/astra-security-launches-free-tools-to-help-organisations-identify-php2shell-vulnerabilities-9306867)
 
@@ -4576,6 +5015,19 @@ capture 20261022T181608Z · HTTP 200 · https://tek.sapo.pt/opiniao/artigos/expo
 - `rendered.html` 72eded33521a415c81fd37e27d2afe80e2d4e2c4c14c08faad6584dbb4c0a2fc 373,282 bytes
 - `screenshot.jpg` 83bdcf2750a1108c7ef489988c10baeed1011c19c18e79b17e3a7e86acf6e14d 902,271 bytes
 - `text.txt` 7203d6e735dd3989c864ca946af9c9743d051148d4c016d9fc4c0af587b4023a 18,453 bytes
+
+### [PHP2Shell Crisis: 2 Critical Flaws Put 70% of Websites at Risk - teleSUR English](telesurenglish-php2shell-vulnerabilities/index.html) [original ↗](https://www.telesurenglish.net/php2shell-vulnerabilities/)
+
+**teleSUR English** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `telesurenglish-php2shell-vulnerabilities`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 2 (mechanical selection by researcher@php.newsroom, read by the curator). teleSUR English: PHP2Shell crisis, two critical flaws put 70% of websites at risk. The PHP Foundation released emergency patches after technical detai...
+
+capture 20261025T093507Z · HTTP 200 · https://www.telesurenglish.net/php2shell-vulnerabilities/- `headers.json` b5bf418e8f7a4753c95a7dff0c621d50fefa528d2c448c86d4b43a724f1f2079 1,227 bytes
+- `page.html` fe0ddb6162ea441d8bf8609df7299ee43107fb5547abbf44fa8f4d35f209fdd4 266,548 bytes
+- `provenance.json` 8ca9e8a35a23c6de03bc7d7b441ecd379f1c8426a215bab2ee0b2039341966a6 1,641 bytes
+- `rendered.html` 6532d8704935b744e94a431c096d257cf9da6d09d578f250dcd5bfae0024b894 533,492 bytes
+- `screenshot.jpg` 0c5395be653ab916048e1c2878f0e8f0480025192a61beff28e1f5fd3b9a6412 910,018 bytes
+- `text.txt` 6efd752b24f540730043417e4f8e1837289ad08b2351a62e22a4bc2bdc3e8ad6 13,719 bytes
 
 ### [php2shell (CVE-2026-109618, CVE-2026-109619): Critical PHP RCE FAQ | Tenable®](tenable-php2shell-faq/index.html) [original ↗](https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote)
 
@@ -4899,6 +5351,19 @@ capture 20261024T160544Z · HTTP 200 · https://voix.jp/business-cards/rainfores
 - `rendered.html` 873b42ec13cb5d4d5962a2c457a884f2884eb91b9166cef439a0b74c011045bb 112,883 bytes
 - `screenshot.jpg` 6258f273644324fd5b5031139cac3d2bc9b7a35b991880decb0c8be3076de4d3 585,936 bytes
 - `text.txt` 3e5e879383dd76ceedde10291eb662d52a451e20b573d86c3b1c0ef1ace3b61a 11,610 bytes
+
+### [IMPORTANT Vulnerabilitatea PHP2Shell: ce recomandă experții în tehnologie și unde e expunerea cea mai mare](wall-street-articol-it-and-c-important-vulnerabilita/index.html) [original ↗](https://www.wall-street.ro/articol/it-and-c/important-vulnerabilitatea-php2shell-ce-recomanda-expertii-in-tehnologie.html)
+
+**Wall-Street.ro** · news · secondary · captured · published not stated in the capture · added by `curator@php.newsroom` · `wall-street-articol-it-and-c-important-vulnerabilita`
+
+Promoted from the source watch (pack copy 7r83qic5), snapshot 20261025T093507Z, queue priority 2 (mechanical selection by researcher@php.newsroom, read by the curator). Wall-Street.ro (Romanian): important, the PHP2Shell vulnerability, what technology experts recommend and where exposure is highest. The same Zitec tex...
+
+capture 20261025T093507Z · HTTP 200 · https://www.wall-street.ro/articol/it-and-c/important-vulnerabilitatea-php2shell-ce-recomanda-expertii-in-tehnologie.html- `headers.json` 575efb2794e26eefc288a844f31621c90353ed62cee86e658d368b67a889c4d1 1,817 bytes
+- `page.html` 3ba1ef988552f2c5c6f8e5e6dfc66644a5f662edb0ecb3a45e1079cad65791c8 183,067 bytes
+- `provenance.json` 9e41fea08822a6b1432ed7c273ef502cec7d05d38f69c0911952d150f43c7658 1,875 bytes
+- `rendered.html` ae5825099ba301faa875a0b8218c5efac8bb93628d588b3bcc950559810d915b 158,846 bytes
+- `screenshot.jpg` 9cd885983134935381a7ada14d0f10846eec9f89c43218e2b9b35f3019331831 896,304 bytes
+- `text.txt` c7b3997e8853ddbaf2dbbedd5d43f3647ed05da0223a4f4e6dbd648be234e0e0 16,060 bytes
 
 ### [watchtowr.com](watchtowr-php2shell/index.html) [original ↗](https://watchtowr.com/intelligence/php-remote-code-execution-php2shell/)
 
@@ -5265,4 +5730,4 @@ capture 20261023T160435Z · HTTP 200 · https://www.zataz.com/php2shell-deux-fai
 
 
 ---
-site v0.19.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/index.html
+site v0.19.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/index.html

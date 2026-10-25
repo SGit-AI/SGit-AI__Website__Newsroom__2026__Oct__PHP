@@ -952,5 +952,15 @@
   "confidence": "stated",
   "phase": "disclosure",
   "agent": "curator@php.newsroom"
+ },
+ {
+  "at": "2026-10-20",
+  "event": "Details of the two PHP flaws and a proof-of-concept tool named PHP2Shell leaked online; watchTowr publicly confirmed the leak was genuine and reproduced both flaws",
+  "sources": [
+   "ijiwei-n-1122779"
+  ],
+  "confidence": "stated",
+  "phase": "disclosure",
+  "agent": "curator@php.newsroom"
  }
 ]

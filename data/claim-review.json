@@ -1492,6 +1492,171 @@
    "where": "claims/review/index.html",
    "reviewed": "2026-10-24",
    "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur9-tr-edevlet-no-problem",
+   "verdict": "used",
+   "reason": "On data/compromise.json (no-success-known, 22 October). Searched the text of every capture for 'Siber Güvenlik Başkanlığı' and 'e-Devlet': four Turkish news pages carry the statement (Haber, Haber7, DonanımHaber, İndigo Dergisi); the Directorate's own post is not among the captures. An organisation's statement about its own portal, as relayed.",
+   "sources": [
+    "haber-teknoloji-siber-guvenlik-baskanligi-ndan"
+   ],
+   "where": "compromise/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur9-cyfirma-i2p-channel",
+   "verdict": "held back",
+   "reason": "One vendor report, relayed by two outlets (Korea Economic Daily, and EBN in cur7-cyfirma-lazarus). Searched the text of every capture for 'Cyfirma' and the Korean spelling 사이퍼마, and data/sources.json for the publisher: only those two news pages; Cyfirma's own report is not captured. The page itself says no direct proof of a North Korea link.",
+   "sources": [
+    "hankyung-article-2026102423207"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur9-report-dates-aug",
+   "verdict": "agrees",
+   "reason": "The site carries both dates: Calif's report on 11 August (who-first), OpenAI's the same day (openai-same-day) and Wiz's on 24 August (wiz-independent). Hurriyet gives the same dates.",
+   "sources": [
+    "hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur9-wiz-llm-adapts-exploits",
+   "verdict": "noted",
+   "reason": "Wiz's own post is in the vault (wiz-blog-php2shell) and says it: 'LLMs can help adapt an exploit to different PHP versions, configurations and memory layouts.' Checked against it; not used on a page.",
+   "sources": [
+    "hwupgrade-news-sicurezza-software-falle-php-gia-so"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur9-jp-pm-warning-detik",
+   "verdict": "noted",
+   "reason": "A second outlet for cur7-jp-pm-x-post. CNN (cnn-php2shell-websites-shut) is in the vault and quotes Prime Minister Takaichi's request to check for PHP and prepare to apply the patch, and that companies should consider suspending services: a request on social media, not an order.",
+   "sources": [
+    "inet-detik-security-d-8718436-saking-bahayanya-php2"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur9-fbi-nsa-cisa-disconnect",
+   "verdict": "noted",
+   "reason": "NSA (nsa-press-php-4630238) and CISA (cisa-alert-php-20261021) pages are in the vault and carry the offline advice in their own words (offline-nsa, offline-cisa on the site). Searched data/sources.json for an FBI page: none; the FBI's alert is known only from press (Mashable, CBS via Infobae), so the FBI part is not stated. Infobae's summary says 'ordered' where its body says 'asked'.",
+   "sources": [
+    "infobae-estados-unidos-2026-10-23-php2shell-como"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur9-shizuoka-bank",
+   "verdict": "used",
+   "reason": "On data/impact.json (offline ledger, reported, 22 October). Two pages in the vault name it: IT Finanzmagazin and The Next Web citing Bloomberg ('Shizuoka Bank suspended its website and app'). A precaution; neither says it was compromised. The bank's own notice is not among the captures (searched the text of every capture for 'Shizuoka').",
+   "sources": [
+    "it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we"
+   ],
+   "where": "impact/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur10-amazon-attempts-after-fix",
+   "verdict": "agrees",
+   "reason": "Agrees with the Amazon rows on data/compromise.json. Amazon's own post (aws-security-blog-madpot, both captures) says: after the embargo lifted at 14:00 UTC on 21 October and the patch was released, further proofs of concept 'appeared within hours' and were used against its sensors; Actainfo repeats it. Attempts against sensors, not confirmed compromises.",
+   "sources": [
+    "actainfo-news-php2shell-vulnerabilita-php-allerta"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur10-eight-tls-certs",
+   "verdict": "noted",
+   "reason": "A separate incident, not PHP2Shell. Economedia (economedia-zitec-vulnerabilitatile-in-php-sunt-ampl) says the private keys of eight certificates were compromised between 17 and 20 October; Malwarebytes NL is the other page. Kept so nothing conflates the two; not used.",
+   "sources": [
+    "malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur10-openai-blog-coalition",
+   "verdict": "noted",
+   "reason": "OpenAI's Patch the Planet launch page and patchtheplanet.org are in the vault (openai-patch-the-planet-launch, patchtheplanet-org) and list the php2shell disclosure with Trail of Bits, Calif and HackerOne. They do not carry the two-month coalition wording, the GPT-5.6 audit or Wiz's verification; those rest on Ijiwei's summary. Consistent with ai-found and who-first; not used.",
+   "sources": [
+    "ijiwei-n-1122779"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur10-openai-daybreak",
+   "verdict": "held back",
+   "reason": "The $1 billion subsidy rests on Ijiwei's summary alone. Searched OpenAI's launch page (openai-patch-the-planet-launch, 22 June) and patchtheplanet.org for 'billion', 'subsid', '$' and 'Daybreak': Daybreak is named as OpenAI's initiative, but the subscription programme, the figure and the PHP detection tool are not there.",
+   "sources": [
+    "ijiwei-n-1122779"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur10-planned-22-oct-leak-20-oct",
+   "verdict": "agrees",
+   "reason": "Agrees with release-moved, leak-cve-ids and leak-watchtowr on the site (disclosure planned for 22 October, details leaked on 20 October, watchTowr confirmed).",
+   "sources": [
+    "ijiwei-n-1122779"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur10-kaltim-tightens",
+   "verdict": "noted",
+   "reason": "A regional government's response (East Kalimantan, Indonesia), one local outlet; an example of how far the response spread, not a measurement. Not used.",
+   "sources": [
+    "inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur10-active-exploitation-before-patch",
+   "verdict": "held back",
+   "reason": "ITdaily's headline says 'activement exploitée' before the fix. Searched its text for 'tentative', 'Amazon', 'honeypot' and 'succès': none; no victim and no source is named. The primary, Amazon's post, says an attempt on 17 October and 'unclear if any of these attempts would have succeeded'. The site says attempts (amazon-honeypot), not exploited.",
+   "sources": [
+    "itdaily-blogs-logiciel-php2shell-bug-php"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
+  },
+  {
+   "id": "cur10-nepal-sites-offline",
+   "verdict": "held back",
+   "reason": "The 'thousands' figure is the Kathmandu Post's headline and lead and gives no count; searched the text of every capture for 'Nepal': this page alone (ACSC pages only list it). The named organisations are on data/impact.json (reported, 25 October) without the number; the 'hours to a week' wording is not on the page.",
+   "sources": [
+    "kathmandupost-science-technology-2026-10-25-php2shell"
+   ],
+   "where": "claims/review/index.html",
+   "reviewed": "2026-10-25",
+   "by": "journalist@php.newsroom"
   }
  ]
 }

@@ -2,7 +2,7 @@
 
 A three-column working view for a security lead: their reading path and the site by task on the left, what changed since the last visit and the next three actions in the middle, and the state of the evidence as charts on the right.
 
-> Mockup B for review, built from the data of release v0.19.2. Not the live site.
+> Mockup B for review, built from the data of release v0.19.3. Not the live site.
 
 S 
  Sam 
@@ -13,7 +13,7 @@ Your reading path
 2 of 5 read · next: Exploitation signals 
  Today 9 new What to do The incident Detection and defence The agencies 16 Every claim 70 Ask 
 
-Since your last visit · 24 October 2026, 16:05 UTC 
+Since your last visit · 25 October 2026, 09:35 UTC 
 
 ## 9 things are new, 3 changed. Two matter for your runbook.
 
@@ -44,44 +44,44 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
  All Facts Timeline Questions Stories 
 
- New front v0.17.0 
-#### Front page: what nobody knows yet
-
-✓ 
-
- New front v0.17.0 
-#### Front page: latest
-
-✓ 
-
- New question v0.15.19 
+ New question v0.19.2 
 #### Has anyone actually been hacked?
 
 ✓ 
 
- New front v0.15.19 
+ New front v0.19.2 
 #### Front page: right now
 
 ✓ 
 
- Changed front v0.15.19 
+ New front v0.19.2 
+#### Front page: at a glance
+
+✓ 
+
+ New front v0.19.2 
 #### Front page: the core facts
 
 ✓ 
 
- Changed fact reported v0.15.19 
-#### As of 16:05 UTC on 24 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploita
+ Changed fact reported v0.19.2 
+#### As of 09:35 UTC on 25 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploita
 
  CISA CISA Huntress Amazon 
 ✓ 
 
- Changed question v0.14.8 
-#### Is PHP really the software behind most websites?
+ Changed front v0.17.0 
+#### Front page: what nobody knows yet
 
 ✓ 
 
- Changed front v0.14.30 
-#### Front page: at a glance
+ Changed front v0.17.0 
+#### Front page: latest
+
+✓ 
+
+ Changed question v0.14.8 
+#### Is PHP really the software behind most websites?
 
 ✓ 
 
@@ -123,4 +123,4 @@ Amazon: Proof-of-concept attempts begin, then six hours of attempts from anonymi
 8.1 and older: source backports only.
 
 ---
-site v0.19.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html
+site v0.19.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html

@@ -2361,5 +2361,185 @@
   "topic": "vendors",
   "note": "Cloudflare's own blog post is not in the vault; WAF rules reduce, but do not replace, patching.",
   "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-tr-edevlet-no-problem",
+  "claim": "Turkey's Presidency Cybersecurity Directorate said on 22 October 2026 that the e-Devlet Kapisi government portal (69 million users) had no security problem from PHP2Shell and that services continued uninterrupted",
+  "by": "Turkey's Presidency Cybersecurity Directorate, via Haber.com",
+  "sources": [
+   "haber-teknoloji-siber-guvenlik-baskanligi-ndan"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "The Directorate's own statement is not in the vault; see also cur4-tr-cyber-directorate.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-cyfirma-i2p-channel",
+  "claim": "Cyfirma reported seeing Korean-speaking members planning PHP2Shell attacks in a private channel on the anonymous I2P network, with a possible North Korea link and no direct proof",
+  "by": "Cyfirma, via Korea Economic Daily",
+  "sources": [
+   "hankyung-article-2026102423207"
+  ],
+  "status": "unverified",
+  "topic": "actors",
+  "note": "Same single vendor report as cur7-cyfirma-lazarus (ebn-news-articleview-html): two outlets, one source. Cyfirma's report is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-report-dates-aug",
+  "claim": "Calif, working with OpenAI, reported the first PHP flaw on 11 August 2026 and Wiz reported the second on 24 August 2026",
+  "by": "Hurriyet",
+  "sources": [
+   "hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci"
+  ],
+  "status": "reported",
+  "topic": "disclosure",
+  "note": "Gives dates for the 'discovered in August' accounts (cur2-calif-august, cur3-openai-funded-audit). The reporting dates are the only specific dates in the vault so far; the PHP Foundation's own timeline is the primary source to check.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-wiz-llm-adapts-exploits",
+  "claim": "Wiz warned that with AI the complexity of exploiting these PHP flaws is no longer an obstacle, because LLMs can help adapt an exploit to different PHP versions, configurations and memory layouts",
+  "by": "Wiz, via Hardware Upgrade",
+  "sources": [
+   "hwupgrade-news-sicurezza-software-falle-php-gia-so"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "Wiz's own wording as relayed; no exploit detail is recorded here.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-jp-pm-warning-detik",
+  "claim": "Japan's Prime Minister Sanae Takaichi publicly posted a warning on her social media account urging system administrators and the public to watch for the PHP2Shell risk",
+  "by": "detikInet",
+  "sources": [
+   "inet-detik-security-d-8718436-saking-bahayanya-php2"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "A second outlet for cur7-jp-pm-x-post (Masaland); still not a Japanese government or wire source, and it is a social-media warning, not the 'emergency order' of cur3-jp-pm-emergency-order.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-fbi-nsa-cisa-disconnect",
+  "claim": "The FBI, NSA and CISA agreed that US organisations unable to apply the PHP fix immediately should take their systems off the internet until it is resolved; the FBI's alert of 21 October asked organisations to update at once or disconnect",
+  "by": "CBS News, via Infobae",
+  "sources": [
+   "infobae-estados-unidos-2026-10-23-php2shell-como"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "The page's summary says the FBI 'ordered'; the body says 'asked'. Check against the FBI, NSA and CISA statements in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur9-shizuoka-bank",
+  "claim": "Japan's Shizuoka Bank announced a precautionary temporary shutdown of its website and banking app over the PHP flaws",
+  "by": "IT Finanzmagazin",
+  "sources": [
+   "it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "The shutdown is not evidence of a compromise, as the article itself stresses; the bank's own notice is not in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-amazon-attempts-after-fix",
+  "claim": "Amazon Threat Intelligence observed further PHP2Shell attempts on 21 October 2026, including after the fixes were released",
+  "by": "Amazon Threat Intelligence, via Actainfo",
+  "sources": [
+   "actainfo-news-php2shell-vulnerabilita-php-allerta"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "Secondary report; compare cur2-madpot-17-oct.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-eight-tls-certs",
+  "claim": "Eight TLS certificates were compromised in the same week as PHP2Shell, a separate incident",
+  "by": "Malwarebytes, with Zitec (economedia-zitec-vulnerabilitatile-in-php-sunt-ampl) reporting private keys of eight certificates compromised between 17 and 20 October",
+  "sources": [
+   "malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "Not part of PHP2Shell; recorded so pages do not conflate the two. No primary source in the vault.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-openai-blog-coalition",
+  "claim": "OpenAI says it led for two months a coalition of PHP maintainers, researchers and vendors; Calif found a key flaw in August 2026 with GPT-5.6 Sol in the 'Patch the Planet' audit programme; Wiz independently found and reported both flaws, verifying them with Wiz Atlas, Gemini 4 Argon and GPT-5.6 Sol",
+  "by": "OpenAI's blog, as summarised by Ijiwei",
+  "sources": [
+   "ijiwei-n-1122779"
+  ],
+  "status": "reported",
+  "topic": "disclosure",
+  "note": "A secondary Chinese summary of OpenAI's blog; the blog itself is the primary to capture. Gives the discovery chain behind cur2-calif-august, cur3-openai-funded-audit, cur4-calif-gpt56-wiz-independent and cur9-report-dates-aug.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-openai-daybreak",
+  "claim": "OpenAI announced a 'Daybreak' subscription programme with $1 billion of subsidy for organisations protecting critical infrastructure, offering a PHP version-detection tool and a Codex skill",
+  "by": "OpenAI, as summarised by Ijiwei",
+  "sources": [
+   "ijiwei-n-1122779"
+  ],
+  "status": "reported",
+  "topic": "vendors",
+  "note": "Probably the php2shell-checker described by BlockTempo (cur4-openai-checker). The curator did not fetch the tool.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-planned-22-oct-leak-20-oct",
+  "claim": "PHP planned to disclose on 22 October 2026; on 20 October details and a proof-of-concept tool named PHP2Shell leaked online and watchTowr confirmed it and reproduced both flaws",
+  "by": "Ijiwei, citing watchTowr and heise",
+  "sources": [
+   "ijiwei-n-1122779"
+  ],
+  "status": "reported",
+  "topic": "disclosure",
+  "note": "Agrees with iTWire (cur8-chainguard-early-images context): CVE numbers leaked on 20 October and the release was brought forward a day.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-kaltim-tightens",
+  "claim": "East Kalimantan's provincial government (Indonesia) tightened the security of its digital systems after PHP2Shell",
+  "by": "IniBalikpapan.com",
+  "sources": [
+   "inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah"
+  ],
+  "status": "reported",
+  "topic": "agencies",
+  "note": "A regional government's response, as an example of how far the response spread.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-active-exploitation-before-patch",
+  "claim": "Active exploitation of the PHP flaws began before the fix was available",
+  "by": "ITdaily",
+  "sources": [
+   "itdaily-blogs-logiciel-php2shell-bug-php"
+  ],
+  "status": "reported",
+  "topic": "exploitation",
+  "note": "Consistent with Amazon's 17 October attempt and watchTowr's reports; 'actively exploited' means attempts seen, not confirmed compromises.",
+  "agent": "curator@php.newsroom"
+ },
+ {
+  "id": "cur10-nepal-sites-offline",
+  "claim": "Thousands of Nepali websites were taken offline over PHP2Shell and restoration took from hours to a week for some systems",
+  "by": "The Kathmandu Post",
+  "sources": [
+   "kathmandupost-science-technology-2026-10-25-php2shell"
+  ],
+  "status": "reported",
+  "topic": "impact",
+  "note": "The headline gives 'thousands'; the figure's basis is not given in the part read. An official quoted by the page is not named here.",
+  "agent": "curator@php.newsroom"
  }
 ]

@@ -2,30 +2,30 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.19.2. Not the live site.
+> Mockup D for review, built from the data of release v0.19.3. Not the live site.
 
-PHP Team console Console Overview Board 203 Agents 19 Releases 160 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 203 Agents 19 Releases 161 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
 ## Overview
- built 24 October 2026, 16:05 UTC 
+ built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.19.2 
-160 releases since 22 Oct 
+v0.19.3 
+161 releases since 22 Oct 
 
 Open on the board 
 203 
 100 done, 5 waiting 
 
 Pages built 
-950 
+986 
 every one with a markdown twin 
 
 Sources in the vault 
-382 
-367 captured 
+418 
+403 captured 
 
 ### The board
  newest first in each lane 
@@ -99,6 +99,7 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
 ### Releases
  latest 8 
 
+ v0.19.3 2026-10-25 Journalist: evidence vault at 87795d121200, 15 claims reviewed, three new rows, as-of lines to 09:35 UTC on 25 October 
  v0.19.2 2026-10-25 Scheduled tasks on the site: /team/schedule/ shows what the account actually runs, each task checked against its card (times, sess… 
  v0.19.1 2026-10-25 Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's … 
  v0.19.0 2026-10-25 the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, wr… 
@@ -106,7 +107,6 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
  v0.18.5 2026-10-25 The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status 
  v0.18.4 2026-10-25 The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture 
  v0.18.3 2026-10-25 Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2% 
- v0.18.2 2026-10-25 the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 3… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.19.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.19.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.19.2",
+ "version": "0.19.3",
  "kept_by": "grc@php.newsroom",
  "as_of": "2026-10-22",
  "verbs": [
@@ -3340,7 +3340,7 @@
   {
    "id": "claim:no-confirmed-compromise",
    "kind": "claim",
-   "label": "As of 16:05 UTC on 24 October, no named organisation has said it was compromised through p",
+   "label": "As of 09:35 UTC on 25 October, no named organisation has said it was compromised through p",
    "href": "facts/no-confirmed-compromise/index.html"
   },
   {
@@ -3444,6 +3444,12 @@
    "kind": "source",
    "label": "voix",
    "href": "sources/voix-business-cards-rainforest-ip-activity-an/index.html"
+  },
+  {
+   "id": "source:haber-teknoloji-siber-guvenlik-baskanligi-ndan",
+   "kind": "source",
+   "label": "Haber.com",
+   "href": "sources/haber-teknoloji-siber-guvenlik-baskanligi-ndan/index.html"
   },
   {
    "id": "claim:nz-active",
@@ -14169,6 +14175,16 @@
    "basis": {
     "kind": "source",
     "ref": "voix-business-cards-rainforest-ip-activity-an"
+   }
+  },
+  {
+   "from": "claim:no-confirmed-compromise",
+   "rel": "cites",
+   "inverse": "cited_by",
+   "to": "source:haber-teknoloji-siber-guvenlik-baskanligi-ndan",
+   "basis": {
+    "kind": "source",
+    "ref": "haber-teknoloji-siber-guvenlik-baskanligi-ndan"
    }
   },
   {

@@ -2,16 +2,16 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-The evidence behind one statement, as of 2026-10-24 16:05 UTC: attempts, vendor reports, statements that no success is known, named organisations, allegations and official lists, each with its source.
+The evidence behind one statement, as of 2026-10-25 09:35 UTC: attempts, vendor reports, statements that no success is known, named organisations, allegations and official lists, each with its source.
 
 # No named organisation has said it was compromised through php2shell.
 
-This page holds the evidence behind one statement, as of **2026-10-24 16:05 UTC**: every statement found about attacks on, or compromises of, real systems through php2shell, sorted by what kind of evidence it is, with the words of the party that made it and where its capture is held. It makes no assessment of risk. The statement's status is **reported**: A time-bounded absence, not a confirmed fact. It is true only as of the last check, and one statement from one organisation would end it. It is [claim no-confirmed-compromise](../claims/index.html#no-confirmed-compromise).
+This page holds the evidence behind one statement, as of **2026-10-25 09:35 UTC**: every statement found about attacks on, or compromises of, real systems through php2shell, sorted by what kind of evidence it is, with the words of the party that made it and where its capture is held. It makes no assessment of risk. The statement's status is **reported**: A time-bounded absence, not a confirmed fact. It is true only as of the last check, and one statement from one organisation would end it. It is [claim no-confirmed-compromise](../claims/index.html#no-confirmed-compromise).
 
 ## What was searched
 
 Where the statement was checked. A statement that something does not exist is only as good as the search behind it.
-382The evidence vault: sourceshead 8c16a64a7cf6; the site is built from all of it913The source watch: pages watched597 publishers, head 20afaa62129d (the old watch, oq9gflln; the watch continues in pack vault 7r83qic5)339Read in their own language: non-English pages28 languages; 568 new items with verbatim quotes; as counted on 22 October3,444Discovery feeds: news items scannedGoogle News and Bing News, 85 editions, from 1,621 publishers; as counted on 22 October295Named sites probed: sitesevery site somebody named as taken offline, probed every 30 minutes; as counted on 22 October
+418The evidence vault: sourceshead 87795d121200; the site is built from all of it913The source watch: pages watched597 publishers, head 20afaa62129d (the old watch, oq9gflln; the watch continues in pack vault 7r83qic5)339Read in their own language: non-English pages28 languages; 568 new items with verbatim quotes; as counted on 22 October3,444Discovery feeds: news items scannedGoogle News and Bing News, 85 editions, from 1,621 publishers; as counted on 22 October295Named sites probed: sitesevery site somebody named as taken offline, probed every 30 minutes; as counted on 22 October
 
 ## From attempts to a named compromise
 
@@ -19,7 +19,7 @@ Not to scale. Each layer is a different kind of statement, and a statement in on
 
 ## The evidence, by kind
 
-42 statements on this page, by what kind of evidence they are. A count of statements, not of events: one party can report millions of attempts in one statement.
+43 statements on this page, by what kind of evidence they are. A count of statements, not of events: one party can report millions of attempts in one statement.
 
 Each dot is one statement on this page, placed at the time the source gives (noon where it gives only a date). Hover a dot for who said it.
 
@@ -52,7 +52,7 @@ This kind of statement can show that a party says exploitation happened. It cann
 | 2026-10-21 07:34 UTC | **Patchstack (via Recorded Future)** | "Received reports of multiple active exploitation incidents from hosting partners." No victim named. | [Recorded Future](../sources/recordedfuture-php2shell/index.html) |
 | 2026-10-21 20:15 UTC | **NCSC New Zealand** | "The NCSC is aware of reports of active exploitation." Whose reports is not said. | [NCSC New Zealand](../sources/ncsc-nz-alert-php/index.html) |
 
-## No successful exploitation known (16)
+## No successful exploitation known (17)
 
 This kind of statement can show what a party with visibility has not seen. It cannot show that nothing happened outside its view.
 
@@ -70,6 +70,7 @@ This kind of statement can show what a party with visibility has not seen. It ca
 | 2026-10-22 | **Austria's Interior Ministry** | No concrete reports of successful attacks so far (via Salzburg24, read in German). | [salzburg24](../sources/salzburg24-news-oesterreich-massive-sache-folgen-der-php-sic/index.html) source watch: `translations/at/news/salzburg24/news-oesterreich-massive-sache-folgen-der-php-sicherheitslue.json` |
 | 2026-10-22 | **Cloudflare (to USA Today)** | Its observations "describe attack attempts; they do not, by themselves, establish successful compromises." | [USA Today](../sources/usa-today-php2shell-live/index.html) source watch: `raw/us/news/usa-today/php2shell-live/` |
 | 2026-10-22 | **Crypto exchanges and payment providers (via BTC-ECHO)** | No evidence so far that large crypto trading platforms or payment providers were compromised through php2shell. | [BTC-ECHO](../sources/btc-echo-news-krypto-boersen-akut-bedroht-kritisc/index.html) |
+| 2026-10-22 | **Turkey's Presidency Cybersecurity Directorate (via Haber and three other Turkish outlets)** | Said the e-Devlet Kapisi government portal, with more than 69 million users, had no security problem from PHP2Shell and that services continued uninterrupted. | [Haber.com](../sources/haber-teknoloji-siber-guvenlik-baskanligi-ndan/index.html) [Haber 7](../sources/haber7-teknoloji-haber-3670492-php-guvenlik-aci/index.html) [DonanımHaber](../sources/donanimhaber-php-acigindan-etkilenen-ulkeler-ve-sitel/index.html) [İndigo Dergisi](../sources/indigodergisi-2026-10-php-guvenlik-acigi-php2shell/index.html) |
 | 2026-10-22 21:21 UTC | **Sophos (via Cyber Security News)** | In a correction issued at 21:21 UTC on 22 October, Sophos said its customer data showed scanning and a small number of failed exploit attempts, and no evidence of a successful compromise; an earlier success claim was withdrawn. | [Cyber Security News](../sources/cybersecuritynews-critical-php2shell-exploit-code/index.html) |
 | 2026-10-23 | **Luxembourg (via Paperjam)** | No Luxembourg financial institution, public service or operator had announced it had actually been infiltrated through php2shell; the state announced no confirmed compromise, and the authorities asked operators to search back for traces of compromise and to keep the evidence. | [Paperjam](../sources/paperjam-article-php2shell-des-milliers-de-sites/index.html) |
 | 2026-10-23 | **US banks and credit unions (via American Banker)** | "Attackers have fired millions of attempts at the PHP2Shell flaws, but no U.S. bank or credit union has publicly reported a compromise." | [American Banker](../sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html) |
@@ -126,4 +127,4 @@ Every row is in [data/compromise.json](../data/compromise.json). Rows with sourc
 
 
 ---
-site v0.19.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/compromise/index.html
+site v0.19.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/compromise/index.html

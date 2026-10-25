@@ -1,12 +1,12 @@
 {
  "head": {
-  "commit": "8c16a64a7cf6",
-  "subject": "curator@php.newsroom: promote 18 sources from the source watch's pack copy (7r83qic5), the 3 priority-2 rows of the 24 Oct 16:52 UTC queue and 15 priority 4, scheduled wake of 24 Oct 18:00 (mechanical selection, each read): Inc42, iTWire, VOIX, Al-Ghad, Europa Press, FAZ, Feuerwehr-Magazin, Sina, Yahoo Finance, Financiarul, Financial News, Forbes Turkiye, Fortune Italia, Gamemeca, Gazzetta del Sud, Generation NT, GIGAZINE, Green Bay Press-Gazette; 12 claims and 2 timeline rows (disclosure chain per iTWire, a pseudonymous first discoverer per Calif via Inc42, EU joint advisory); vendor check-your-site pages not used  +140 ~4  [blobs:+144 trees:+54]",
-  "commits": 27
+  "commit": "87795d121200",
+  "subject": "curator@php.newsroom: promote 18 sources from the source watch's pack copy (7r83qic5), scheduled wake of 25 Oct 10:30 (mechanical selection, each read): Actainfo, ElOtroLado, Malwarebytes NL, Security Affairs, teleSUR English, Wall-Street.ro, Data Max, datensicherheit.de, Ijiwei, IniBalikpapan, ITdaily FR and NL, IT Daily KR, IT Home, Jawa Pos, JVTech, Jiji, Kathmandu Post; 8 new claims and 1 timeline row (OpenAI's account of the discovery chain and the 20 Oct PoC leak via Ijiwei, 8 compromised TLS certificates are a separate incident, Nepal and East Kalimantan impact); vendor check pages not used  +141 ~4  [blobs:+145 trees:+54]",
+  "commits": 29
  },
- "sources": 382,
- "captures": 441,
- "hashed_files": 2595,
+ "sources": 418,
+ "captures": 479,
+ "hashed_files": 2814,
  "primary": 89,
  "blocked": 15,
  "agents": [
@@ -19,6 +19,6 @@
   "curator@php.newsroom"
  ],
  "opened": "2026-10-22T08:03Z",
- "latest_capture": "2026-10-24T16:05Z",
+ "latest_capture": "2026-10-25T09:35Z",
  "note": "The captures are third-party pages kept privately for the record and are not published. Only their hashes are."
 }

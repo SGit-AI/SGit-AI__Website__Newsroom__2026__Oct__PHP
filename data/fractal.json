@@ -1,7 +1,7 @@
 {
  "about": "The fractal graph: one graph from the people affected, through the risks, the story and the evidence, to the flaws, the fix and the changed lines of php-src. A node is just a node; meaning lives in the edges. Every node opens into its own neighbourhood in the navigator.",
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.19.2",
+ "version": "0.19.3",
  "commit": "3584a98bda0f2c0d367255b046798b0d3a221a19",
  "layers": [
   {
@@ -698,8 +698,8 @@
   {
    "id": "claim:no-confirmed-compromise",
    "layer": "claim",
-   "name": "As of 16:05 UTC on 24 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing. Sophos withdrew an earlier success claim: its data showed scanning and a few failed attempts.",
-   "text": "reported, says this site, from every captured source in the evidence vault (382 sources, head 8c16a64a7cf6), as of its latest capture at 16:05 UTC on 24 October",
+   "name": "As of 09:35 UTC on 25 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing. Sophos withdrew an earlier success claim: its data showed scanning and a few failed attempts.",
+   "text": "reported, says this site, from every captured source in the evidence vault (418 sources, head 87795d121200), as of its latest capture at 09:35 UTC on 25 October",
    "status": "reported",
    "href": "claims/index.html#no-confirmed-compromise"
   },
@@ -1775,6 +1775,13 @@
    "name": "voix",
    "text": "RainForestが明らかにしたPHP2Shell脆弱性に関連する3つのIPアドレスの活動履歴 - VOIX",
    "href": "sources/voix-business-cards-rainforest-ip-activity-an/index.html"
+  },
+  {
+   "id": "source:haber-teknoloji-siber-guvenlik-baskanligi-ndan",
+   "layer": "source",
+   "name": "Haber.com",
+   "text": "Siber Güvenlik Başkanlığı’ndan 'PHP2Shell' Açıklaması: e-Devlet Kapısı Güvende, Hizmetler Kesintisiz Sürüyor | Haber.com",
+   "href": "sources/haber-teknoloji-siber-guvenlik-baskanligi-ndan/index.html"
   },
   {
    "id": "source:github-rjmendez-phpup-2026",
@@ -8941,6 +8948,11 @@
    "rel": "cites"
   },
   {
+   "from": "claim:no-confirmed-compromise",
+   "to": "source:haber-teknoloji-siber-guvenlik-baskanligi-ndan",
+   "rel": "cites"
+  },
+  {
    "from": "claim:pocs-wrong",
    "to": "source:github-rjmendez-phpup-2026",
    "rel": "cites"
@@ -13112,14 +13124,14 @@
   }
  ],
  "counts": {
-  "nodes": 900,
-  "edges": 1235,
+  "nodes": 901,
+  "edges": 1236,
   "by_layer": {
    "stakeholder": 16,
    "risk": 9,
    "arc": 7,
    "claim": 138,
-   "source": 96,
+   "source": 97,
    "flaw": 2,
    "fix": 7,
    "code": 73,

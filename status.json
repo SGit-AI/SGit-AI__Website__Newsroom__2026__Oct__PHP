@@ -9,12 +9,12 @@
   "CVE-2026-109619"
  ],
  "status": "developing",
- "version": "0.19.2",
- "data_as_of": "2026-10-24T16:05Z",
- "vault_commit": "8c16a64a7cf6",
+ "version": "0.19.3",
+ "data_as_of": "2026-10-25T09:35Z",
+ "vault_commit": "87795d121200",
  "counts": {
-  "sources": 382,
-  "captures": 441,
+  "sources": 418,
+  "captures": 479,
   "claims": 70,
   "claims_by_status": {
    "confirmed": 19,
@@ -25,7 +25,7 @@
   },
   "events": 68,
   "agencies": 16,
-  "offline_reported": 15,
+  "offline_reported": 17,
   "compromises_confirmed": 0
  },
  "headline_facts": [
@@ -44,7 +44,7 @@
   },
   {
    "id": "no-confirmed-compromise",
-   "text": "As of 16:05 UTC on 24 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing. Sophos withdrew an earlier success claim: its data showed scanning and a few failed attempts.",
+   "text": "As of 09:35 UTC on 25 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing. Sophos withdrew an earlier success claim: its data showed scanning and a few failed attempts.",
    "status": "reported",
    "url": "https://php.oct.2026.newsroom.sgit.ai/claims/index.html#no-confirmed-compromise",
    "sources": [
@@ -69,7 +69,8 @@
     "americanbanker-news-banks-dodge-early-damage-from-php2s",
     "the-next-web-php2shell-no-confirmed-breaches",
     "diepresse-41383717-die-php-sicherheitsluecke-ist-a",
-    "voix-business-cards-rainforest-ip-activity-an"
+    "voix-business-cards-rainforest-ip-activity-an",
+    "haber-teknoloji-siber-guvenlik-baskanligi-ndan"
    ]
   },
   {
