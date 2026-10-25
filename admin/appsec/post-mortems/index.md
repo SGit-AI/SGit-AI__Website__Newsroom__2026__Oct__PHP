@@ -30,4 +30,4 @@ Every finding was handled as an incident: what went wrong, why, what was not in 
 
 
 ---
-site v0.18.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/post-mortems/index.html
+site v0.18.4 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/post-mortems/index.html

@@ -1,6 +1,15 @@
 {
- "current": "0.18.3",
+ "current": "0.18.4",
  "versions": [
+  {
+   "version": "0.18.4",
+   "date": "2026-10-25",
+   "title": "The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.18.3",
    "date": "2026-10-25",

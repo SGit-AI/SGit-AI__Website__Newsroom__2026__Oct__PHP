@@ -52,4 +52,4 @@ Proposed: one shared drain library.
 
 
 ---
-site v0.18.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-022/index.html
+site v0.18.4 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/SA-2026-022/index.html

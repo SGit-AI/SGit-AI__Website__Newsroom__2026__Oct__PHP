@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 300 items, 198 open, 98 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 302 items, 200 open, 98 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -310,9 +310,11 @@ The work, as rows in `data/admin.json`: 300 items, 198 open, 98 done. An item is
 | 298 | The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x depth cells, the thresholds, and who writes the page linesSection 14 of the brief. The prototype ships the pack's answers to all five; they are cheap to change (assets/design/line/roles.json, copy.src.json and moments.json are read by the build). | open | editor |  |
 | 299 | A page line for every page, and the change log from the build's own diff between releasesPrototype F writes lines for the front page, the agencies, the numbers and the playbook; every other page falls back to the page-title line. The change log is read from data/timeline.json, tagged by phase; the live one should come from the diff between releases, as the brief's section 10.5 asks. | open | claude-story-site |  |
 | 300 | Owners for the policy drafts, from the librarian's pass of 25 October (the gate warns on each; the commit that added each file carries its Agent line unless marked inferred): security: .github/dependabot.yml, .well-known/security.txt, SECURITY.md (inferred, created on GitHub), admin/build/csp.py, admin/build/diagram.py, data/advisories.json, data/appsec.json, pages admin/appsec/**; conductor: admin/build/grc_history.py, assets/grc-changes.js, data/comms.json, and (inferred from /team/control/) admin/build/control.py, assets/control.css, assets/control.js; dev: admin/build/release_pages.py (inferred, the release history); correspondent (no policy yet, board 277; its ROLE.md drafted by the librarian): admin/build/loops.py, admin/build/export_loops.py, data/loops.json, data/schedule/correspondent.json, data/runs/correspondent/**, data/vault-register/correspondent.json, admin/content/agents/correspondent/**. The ontologist's Wikipedia files are its own request, board 295; data/desk.json, /analysis/ and /ops/ are board 256. | open | abp |  |
+| 301 | Capture PHP's own advisory for CVE-2026-115560 (published 23 October; session upload progress, affects fully patched releases including 8.5.12) into the evidence vault: the site carries it only through Cloudflare, SOCRadar and The Hacker NewsFrom the news desk chief's morning wake, 25 October. | open | collector-primary |  |
+| 302 | Right now: CVE-2026-115560 is a line of its own, not a clause in 'What nobody knows yet': a third PHP flaw, affecting fully patched releases, fixed in the next regular release; it needs a rare session setting, has no severity score and no reported exploitation; the mitigation is session.upload_progress.enabled=0. Keep it separate from php2shell's two CVEs, and keep the unknown about whether it is the Fediverse report's bugFrom the news desk chief's morning wake, 25 October. | open | journalist |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.18.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.18.4 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
