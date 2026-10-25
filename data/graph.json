@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.21.4",
+ "version": "0.21.5",
  "vault_commit": "87795d121200",
  "title": "The story graph",
  "note": "A node means what its edges say about it. Every edge is a verb from data/ontology.json with a named inverse; there is no generic association edge. Parties are resolved through data/entities.json and data/attribution.json; relays are derived, so many outlets passing on one statement count as one origin.",
@@ -4479,6 +4479,261 @@
    "class": "platform",
    "country": "JP",
    "href": "graph/parties/index.html#p-voix"
+  },
+  {
+   "id": "party:elotrolado",
+   "kind": "party",
+   "label": "ElOtroLado.net",
+   "class": "outlet",
+   "country": "ES",
+   "href": "graph/parties/index.html#p-elotrolado"
+  },
+  {
+   "id": "party:haber7",
+   "kind": "party",
+   "label": "Haber 7",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-haber7"
+  },
+  {
+   "id": "party:haber-com",
+   "kind": "party",
+   "label": "Haber.com",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-haber-com"
+  },
+  {
+   "id": "party:hwupgrade",
+   "kind": "party",
+   "label": "Hardware Upgrade",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-hwupgrade"
+  },
+  {
+   "id": "party:hirstart",
+   "kind": "party",
+   "label": "Hírstart",
+   "class": "outlet",
+   "country": "HU",
+   "href": "graph/parties/index.html#p-hirstart"
+  },
+  {
+   "id": "party:hurriyet",
+   "kind": "party",
+   "label": "Hürriyet",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-hurriyet"
+  },
+  {
+   "id": "party:it-finanzmagazin",
+   "kind": "party",
+   "label": "IT Finanzmagazin",
+   "class": "outlet",
+   "country": "DE",
+   "href": "graph/parties/index.html#p-it-finanzmagazin"
+  },
+  {
+   "id": "party:ithome-cn",
+   "kind": "party",
+   "label": "IT之家",
+   "class": "outlet",
+   "country": "CN",
+   "href": "graph/parties/index.html#p-ithome-cn"
+  },
+  {
+   "id": "party:ilsole24ore",
+   "kind": "party",
+   "label": "Il Sole 24 Ore",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-ilsole24ore"
+  },
+  {
+   "id": "party:infomoney",
+   "kind": "party",
+   "label": "InfoMoney",
+   "class": "outlet",
+   "country": "BR",
+   "href": "graph/parties/index.html#p-infomoney"
+  },
+  {
+   "id": "party:infobae",
+   "kind": "party",
+   "label": "Infobae",
+   "class": "outlet",
+   "country": "AR",
+   "href": "graph/parties/index.html#p-infobae"
+  },
+  {
+   "id": "party:inibalikpapan",
+   "kind": "party",
+   "label": "IniBalikpapan.Com",
+   "class": "outlet",
+   "country": "ID",
+   "href": "graph/parties/index.html#p-inibalikpapan"
+  },
+  {
+   "id": "party:jawapos",
+   "kind": "party",
+   "label": "Jawa Pos",
+   "class": "outlet",
+   "country": "ID",
+   "href": "graph/parties/index.html#p-jawapos"
+  },
+  {
+   "id": "party:jeuxvideo",
+   "kind": "party",
+   "label": "JeuxVideo.com",
+   "class": "outlet",
+   "country": "FR",
+   "href": "graph/parties/index.html#p-jeuxvideo"
+  },
+  {
+   "id": "party:securityaffairs",
+   "kind": "party",
+   "label": "Security Affairs",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-securityaffairs"
+  },
+  {
+   "id": "party:kathmandu-post",
+   "kind": "party",
+   "label": "The Kathmandu Post",
+   "class": "outlet",
+   "country": "NP",
+   "href": "graph/parties/index.html#p-kathmandu-post"
+  },
+  {
+   "id": "party:wall-street-ro",
+   "kind": "party",
+   "label": "Wall-Street.ro",
+   "class": "outlet",
+   "country": "RO",
+   "href": "graph/parties/index.html#p-wall-street-ro"
+  },
+  {
+   "id": "party:actainfo",
+   "kind": "party",
+   "label": "actainfo",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-actainfo"
+  },
+  {
+   "id": "party:datensicherheit",
+   "kind": "party",
+   "label": "datensicherheit.de",
+   "class": "outlet",
+   "country": "DE",
+   "href": "graph/parties/index.html#p-datensicherheit"
+  },
+  {
+   "id": "party:dexpose",
+   "kind": "party",
+   "label": "dexpose.io",
+   "class": "organisation",
+   "href": "graph/parties/index.html#p-dexpose"
+  },
+  {
+   "id": "party:hurbra",
+   "kind": "party",
+   "label": "hurbra",
+   "class": "outlet",
+   "country": "SE",
+   "href": "graph/parties/index.html#p-hurbra"
+  },
+  {
+   "id": "party:iphonesoft",
+   "kind": "party",
+   "label": "iPhoneSoft",
+   "class": "outlet",
+   "country": "FR",
+   "href": "graph/parties/index.html#p-iphonesoft"
+  },
+  {
+   "id": "party:ijiwei",
+   "kind": "party",
+   "label": "ijiwei",
+   "class": "outlet",
+   "country": "CN",
+   "href": "graph/parties/index.html#p-ijiwei"
+  },
+  {
+   "id": "party:it-daily-net",
+   "kind": "party",
+   "label": "it-daily.net",
+   "class": "outlet",
+   "country": "DE",
+   "href": "graph/parties/index.html#p-it-daily-net"
+  },
+  {
+   "id": "party:malwarebytes",
+   "kind": "party",
+   "label": "Malwarebytes",
+   "class": "organisation",
+   "country": "US",
+   "href": "graph/parties/index.html#p-malwarebytes"
+  },
+  {
+   "id": "party:telesur-english",
+   "kind": "party",
+   "label": "teleSUR English",
+   "class": "outlet",
+   "country": "VE",
+   "href": "graph/parties/index.html#p-telesur-english"
+  },
+  {
+   "id": "party:indigo-dergisi",
+   "kind": "party",
+   "label": "İndigo Dergisi",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-indigo-dergisi"
+  },
+  {
+   "id": "party:data-max",
+   "kind": "party",
+   "label": "データ・マックス",
+   "class": "outlet",
+   "country": "JP",
+   "href": "graph/parties/index.html#p-data-max"
+  },
+  {
+   "id": "party:jiji",
+   "kind": "party",
+   "label": "時事ドットコム",
+   "class": "outlet",
+   "country": "JP",
+   "href": "graph/parties/index.html#p-jiji"
+  },
+  {
+   "id": "party:itdaily-kr",
+   "kind": "party",
+   "label": "아이티데일리",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-itdaily-kr"
+  },
+  {
+   "id": "party:hankyung",
+   "kind": "party",
+   "label": "한국경제",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-hankyung"
+  },
+  {
+   "id": "party:hellot",
+   "kind": "party",
+   "label": "헬로티",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-hellot"
   },
   {
    "id": "source:01net-actualites-failles-php-pourquoi-cest-vra",
@@ -26470,6 +26725,11 @@
   },
   {
    "from": "source:actainfo-news-php2shell-vulnerabilita-php-allerta",
+   "verb": "published_by",
+   "to": "party:actainfo"
+  },
+  {
+   "from": "source:actainfo-news-php2shell-vulnerabilita-php-allerta",
    "verb": "captured_in",
    "to": "capture:actainfo-news-php2shell-vulnerabilita-php-allerta/20261025T093507Z"
   },
@@ -27656,8 +27916,18 @@
   },
   {
    "from": "source:data-max-article-87622",
+   "verb": "published_by",
+   "to": "party:data-max"
+  },
+  {
+   "from": "source:data-max-article-87622",
    "verb": "captured_in",
    "to": "capture:data-max-article-87622/20261025T093507Z"
+  },
+  {
+   "from": "source:datensicherheit-php2shell-informationen-patch-veroeffent",
+   "verb": "published_by",
+   "to": "party:datensicherheit"
   },
   {
    "from": "source:datensicherheit-php2shell-informationen-patch-veroeffent",
@@ -27708,6 +27978,11 @@
    "from": "source:detik-tag-php2shell",
    "verb": "captured_in",
    "to": "capture:detik-tag-php2shell/20261023T160435Z"
+  },
+  {
+   "from": "source:dexpose-php2shell-php-rce-exposure-response",
+   "verb": "published_by",
+   "to": "party:dexpose"
   },
   {
    "from": "source:dexpose-php2shell-php-rce-exposure-response",
@@ -27874,6 +28149,11 @@
    "from": "source:elobservador-ciencia-y-tecnologia-sitios-del-estado-c",
    "verb": "captured_in",
    "to": "capture:elobservador-ciencia-y-tecnologia-sitios-del-estado-c/20261023T232528Z"
+  },
+  {
+   "from": "source:elotrolado-noticias-internet-php2shell-seguridad-cv",
+   "verb": "published_by",
+   "to": "party:elotrolado"
   },
   {
    "from": "source:elotrolado-noticias-internet-php2shell-seguridad-cv",
@@ -28367,13 +28647,28 @@
   },
   {
    "from": "source:haber-teknoloji-siber-guvenlik-baskanligi-ndan",
+   "verb": "published_by",
+   "to": "party:haber-com"
+  },
+  {
+   "from": "source:haber-teknoloji-siber-guvenlik-baskanligi-ndan",
    "verb": "captured_in",
    "to": "capture:haber-teknoloji-siber-guvenlik-baskanligi-ndan/20261023T160435Z"
   },
   {
    "from": "source:haber7-teknoloji-haber-3670492-php-guvenlik-aci",
+   "verb": "published_by",
+   "to": "party:haber7"
+  },
+  {
+   "from": "source:haber7-teknoloji-haber-3670492-php-guvenlik-aci",
    "verb": "captured_in",
    "to": "capture:haber7-teknoloji-haber-3670492-php-guvenlik-aci/20261023T160435Z"
+  },
+  {
+   "from": "source:hankyung-article-2026102423207",
+   "verb": "published_by",
+   "to": "party:hankyung"
   },
   {
    "from": "source:hankyung-article-2026102423207",
@@ -28389,6 +28684,11 @@
    "from": "source:hardwarecooking-failles-php-critiques-php2shell-correcti",
    "verb": "captured_in",
    "to": "capture:hardwarecooking-failles-php-critiques-php2shell-correcti/20261023T160435Z"
+  },
+  {
+   "from": "source:hellot-mobile-article-html",
+   "verb": "published_by",
+   "to": "party:hellot"
   },
   {
    "from": "source:hellot-mobile-article-html",
@@ -28414,6 +28714,11 @@
    "from": "source:helsinkitimes-finland-shutdown",
    "verb": "captured_in",
    "to": "capture:helsinkitimes-finland-shutdown/20261022T112845Z"
+  },
+  {
+   "from": "source:hirstart-hk-20261023-php2shell-teendok-nas-okon-t",
+   "verb": "published_by",
+   "to": "party:hirstart"
   },
   {
    "from": "source:hirstart-hk-20261023-php2shell-teendok-nas-okon-t",
@@ -28447,13 +28752,28 @@
   },
   {
    "from": "source:hurbra-php-sakerhetshal-2026-guide",
+   "verb": "published_by",
+   "to": "party:hurbra"
+  },
+  {
+   "from": "source:hurbra-php-sakerhetshal-2026-guide",
    "verb": "captured_in",
    "to": "capture:hurbra-php-sakerhetshal-2026-guide/20261024T160544Z"
   },
   {
    "from": "source:hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci",
+   "verb": "published_by",
+   "to": "party:hurriyet"
+  },
+  {
+   "from": "source:hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci",
    "verb": "captured_in",
    "to": "capture:hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci/20261023T160435Z"
+  },
+  {
+   "from": "source:hwupgrade-news-sicurezza-software-falle-php-gia-so",
+   "verb": "published_by",
+   "to": "party:hwupgrade"
   },
   {
    "from": "source:hwupgrade-news-sicurezza-software-falle-php-gia-so",
@@ -28497,8 +28817,18 @@
   },
   {
    "from": "source:ijiwei-n-1122779",
+   "verb": "published_by",
+   "to": "party:ijiwei"
+  },
+  {
+   "from": "source:ijiwei-n-1122779",
    "verb": "captured_in",
    "to": "capture:ijiwei-n-1122779/20261025T093507Z"
+  },
+  {
+   "from": "source:ilsole24ore-art-php2shell-quando-vulnerabilita-softw",
+   "verb": "published_by",
+   "to": "party:ilsole24ore"
   },
   {
    "from": "source:ilsole24ore-art-php2shell-quando-vulnerabilita-softw",
@@ -28582,8 +28912,18 @@
   },
   {
    "from": "source:indigodergisi-2026-10-php-guvenlik-acigi-php2shell",
+   "verb": "published_by",
+   "to": "party:indigo-dergisi"
+  },
+  {
+   "from": "source:indigodergisi-2026-10-php-guvenlik-acigi-php2shell",
    "verb": "captured_in",
    "to": "capture:indigodergisi-2026-10-php-guvenlik-acigi-php2shell/20261023T160435Z"
+  },
+  {
+   "from": "source:inet-detik-security-d-8718436-saking-bahayanya-php2",
+   "verb": "published_by",
+   "to": "party:detik"
   },
   {
    "from": "source:inet-detik-security-d-8718436-saking-bahayanya-php2",
@@ -28592,8 +28932,18 @@
   },
   {
    "from": "source:infobae-estados-unidos-2026-10-23-php2shell-como",
+   "verb": "published_by",
+   "to": "party:infobae"
+  },
+  {
+   "from": "source:infobae-estados-unidos-2026-10-23-php2shell-como",
    "verb": "captured_in",
    "to": "capture:infobae-estados-unidos-2026-10-23-php2shell-como/20261023T160435Z"
+  },
+  {
+   "from": "source:infomoney-mundo-php-falha-ameaca-tirar-sites-ar",
+   "verb": "published_by",
+   "to": "party:infomoney"
   },
   {
    "from": "source:infomoney-mundo-php-falha-ameaca-tirar-sites-ar",
@@ -28619,6 +28969,11 @@
    "from": "source:infosecurity-magazine-news-php2shell-exploitation-attempt",
    "verb": "captured_in",
    "to": "capture:infosecurity-magazine-news-php2shell-exploitation-attempt/20261023T160435Z"
+  },
+  {
+   "from": "source:inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah",
+   "verb": "published_by",
+   "to": "party:inibalikpapan"
   },
   {
    "from": "source:inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah",
@@ -28677,8 +29032,18 @@
   },
   {
    "from": "source:iphonesoft-2026-10-22-faille-php-5-8-5-savoir-situa",
+   "verb": "published_by",
+   "to": "party:iphonesoft"
+  },
+  {
+   "from": "source:iphonesoft-2026-10-22-faille-php-5-8-5-savoir-situa",
    "verb": "captured_in",
    "to": "capture:iphonesoft-2026-10-22-faille-php-5-8-5-savoir-situa/20261023T160435Z"
+  },
+  {
+   "from": "source:it-daily-shortnews-php2shell-die-aktuelle-lage",
+   "verb": "published_by",
+   "to": "party:it-daily-net"
   },
   {
    "from": "source:it-daily-shortnews-php2shell-die-aktuelle-lage",
@@ -28687,8 +29052,18 @@
   },
   {
    "from": "source:it-finance-yahoo-notizie-avviso-per-gli-exchange-di-22423",
+   "verb": "published_by",
+   "to": "party:yahoo-finance"
+  },
+  {
+   "from": "source:it-finance-yahoo-notizie-avviso-per-gli-exchange-di-22423",
    "verb": "captured_in",
    "to": "capture:it-finance-yahoo-notizie-avviso-per-gli-exchange-di-22423/20261023T160435Z"
+  },
+  {
+   "from": "source:it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we",
+   "verb": "published_by",
+   "to": "party:it-finanzmagazin"
   },
   {
    "from": "source:it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we",
@@ -28697,13 +29072,28 @@
   },
   {
    "from": "source:itdaily-blogs-logiciel-php2shell-bug-php",
+   "verb": "published_by",
+   "to": "party:itdaily"
+  },
+  {
+   "from": "source:itdaily-blogs-logiciel-php2shell-bug-php",
    "verb": "captured_in",
    "to": "capture:itdaily-blogs-logiciel-php2shell-bug-php/20261023T160435Z"
   },
   {
    "from": "source:itdaily-blogs-software-php2shell-bug-php",
+   "verb": "published_by",
+   "to": "party:itdaily"
+  },
+  {
+   "from": "source:itdaily-blogs-software-php2shell-bug-php",
    "verb": "captured_in",
    "to": "capture:itdaily-blogs-software-php2shell-bug-php/20261023T160435Z"
+  },
+  {
+   "from": "source:itdaily-news-articleview-html",
+   "verb": "published_by",
+   "to": "party:itdaily-kr"
   },
   {
    "from": "source:itdaily-news-articleview-html",
@@ -28724,6 +29114,11 @@
    "from": "source:itdaily-php-clumsy-announcement",
    "verb": "captured_in",
    "to": "capture:itdaily-php-clumsy-announcement/20261023T160435Z"
+  },
+  {
+   "from": "source:ithome-1-016-980-htm",
+   "verb": "published_by",
+   "to": "party:ithome-cn"
   },
   {
    "from": "source:ithome-1-016-980-htm",
@@ -28762,13 +29157,28 @@
   },
   {
    "from": "source:jawapos-teknologi-2610230446-celah-php2shell-anc",
+   "verb": "published_by",
+   "to": "party:jawapos"
+  },
+  {
+   "from": "source:jawapos-teknologi-2610230446-celah-php2shell-anc",
    "verb": "captured_in",
    "to": "capture:jawapos-teknologi-2610230446-celah-php2shell-anc/20261024T133450Z"
   },
   {
    "from": "source:jeuxvideo-news-2110338-une-faille-critique-dans-ph",
+   "verb": "published_by",
+   "to": "party:jeuxvideo"
+  },
+  {
+   "from": "source:jeuxvideo-news-2110338-une-faille-critique-dans-ph",
    "verb": "captured_in",
    "to": "capture:jeuxvideo-news-2110338-une-faille-critique-dans-ph/20261023T232528Z"
+  },
+  {
+   "from": "source:jiji-jc-article",
+   "verb": "published_by",
+   "to": "party:jiji"
   },
   {
    "from": "source:jiji-jc-article",
@@ -28824,6 +29234,11 @@
    "from": "source:jpcert-home",
    "verb": "captured_in",
    "to": "capture:jpcert-home/20261022T081606Z"
+  },
+  {
+   "from": "source:kathmandupost-science-technology-2026-10-25-php2shell",
+   "verb": "published_by",
+   "to": "party:kathmandu-post"
   },
   {
    "from": "source:kathmandupost-science-technology-2026-10-25-php2shell",
@@ -28964,6 +29379,11 @@
    "from": "source:lv-latvija-gov",
    "verb": "captured_in",
    "to": "capture:lv-latvija-gov/20261022T081939Z"
+  },
+  {
+   "from": "source:malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi",
+   "verb": "published_by",
+   "to": "party:malwarebytes"
   },
   {
    "from": "source:malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi",
@@ -29855,6 +30275,11 @@
   },
   {
    "from": "source:securityaffairs-201662-hacking-pierluigi-paganini-answer",
+   "verb": "published_by",
+   "to": "party:securityaffairs"
+  },
+  {
+   "from": "source:securityaffairs-201662-hacking-pierluigi-paganini-answer",
    "verb": "captured_in",
    "to": "capture:securityaffairs-201662-hacking-pierluigi-paganini-answer/20261025T093507Z"
   },
@@ -30141,6 +30566,11 @@
   },
   {
    "from": "source:telesurenglish-php2shell-vulnerabilities",
+   "verb": "published_by",
+   "to": "party:telesur-english"
+  },
+  {
+   "from": "source:telesurenglish-php2shell-vulnerabilities",
    "verb": "captured_in",
    "to": "capture:telesurenglish-php2shell-vulnerabilities/20261025T093507Z"
   },
@@ -30404,6 +30834,11 @@
    "from": "source:voix-business-cards-rainforest-ip-activity-an",
    "verb": "captured_in",
    "to": "capture:voix-business-cards-rainforest-ip-activity-an/20261024T160544Z"
+  },
+  {
+   "from": "source:wall-street-articol-it-and-c-important-vulnerabilita",
+   "verb": "published_by",
+   "to": "party:wall-street-ro"
   },
   {
    "from": "source:wall-street-articol-it-and-c-important-vulnerabilita",
@@ -35600,112 +36035,5 @@
   "party:dfir-blog",
   "party:washington-post"
  ],
- "unmapped_publishers": {
-  "ElOtroLado.net": [
-   "elotrolado-noticias-internet-php2shell-seguridad-cv"
-  ],
-  "Haber 7": [
-   "haber7-teknoloji-haber-3670492-php-guvenlik-aci"
-  ],
-  "Haber.com": [
-   "haber-teknoloji-siber-guvenlik-baskanligi-ndan"
-  ],
-  "Hardware Upgrade": [
-   "hwupgrade-news-sicurezza-software-falle-php-gia-so"
-  ],
-  "Hírstart": [
-   "hirstart-hk-20261023-php2shell-teendok-nas-okon-t"
-  ],
-  "Hürriyet": [
-   "hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci"
-  ],
-  "IT Finanzmagazin": [
-   "it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we"
-  ],
-  "ITdaily": [
-   "itdaily-blogs-logiciel-php2shell-bug-php",
-   "itdaily-blogs-software-php2shell-bug-php"
-  ],
-  "IT之家": [
-   "ithome-1-016-980-htm"
-  ],
-  "Il Sole 24 Ore": [
-   "ilsole24ore-art-php2shell-quando-vulnerabilita-softw"
-  ],
-  "InfoMoney": [
-   "infomoney-mundo-php-falha-ameaca-tirar-sites-ar"
-  ],
-  "Infobae": [
-   "infobae-estados-unidos-2026-10-23-php2shell-como"
-  ],
-  "IniBalikpapan.Com": [
-   "inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah"
-  ],
-  "Jawa Pos": [
-   "jawapos-teknologi-2610230446-celah-php2shell-anc"
-  ],
-  "JeuxVideo.com": [
-   "jeuxvideo-news-2110338-une-faille-critique-dans-ph"
-  ],
-  "Security Affairs": [
-   "securityaffairs-201662-hacking-pierluigi-paganini-answer"
-  ],
-  "The Kathmandu Post": [
-   "kathmandupost-science-technology-2026-10-25-php2shell"
-  ],
-  "Wall-Street.ro": [
-   "wall-street-articol-it-and-c-important-vulnerabilita"
-  ],
-  "Yahoo Finanza": [
-   "it-finance-yahoo-notizie-avviso-per-gli-exchange-di-22423"
-  ],
-  "actainfo": [
-   "actainfo-news-php2shell-vulnerabilita-php-allerta"
-  ],
-  "datensicherheit.de": [
-   "datensicherheit-php2shell-informationen-patch-veroeffent"
-  ],
-  "detikInet": [
-   "inet-detik-security-d-8718436-saking-bahayanya-php2"
-  ],
-  "dexpose.io": [
-   "dexpose-php2shell-php-rce-exposure-response"
-  ],
-  "hurbra": [
-   "hurbra-php-sakerhetshal-2026-guide"
-  ],
-  "iPhoneSoft": [
-   "iphonesoft-2026-10-22-faille-php-5-8-5-savoir-situa"
-  ],
-  "ijiwei": [
-   "ijiwei-n-1122779"
-  ],
-  "it-daily.net": [
-   "it-daily-shortnews-php2shell-die-aktuelle-lage"
-  ],
-  "malwarebytes": [
-   "malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi"
-  ],
-  "teleSUR English": [
-   "telesurenglish-php2shell-vulnerabilities"
-  ],
-  "İndigo Dergisi": [
-   "indigodergisi-2026-10-php-guvenlik-acigi-php2shell"
-  ],
-  "データ・マックス": [
-   "data-max-article-87622"
-  ],
-  "時事ドットコム": [
-   "jiji-jc-article"
-  ],
-  "아이티데일리": [
-   "itdaily-news-articleview-html"
-  ],
-  "한국경제": [
-   "hankyung-article-2026102423207"
-  ],
-  "헬로티": [
-   "hellot-mobile-article-html"
-  ]
- }
+ "unmapped_publishers": {}
 }

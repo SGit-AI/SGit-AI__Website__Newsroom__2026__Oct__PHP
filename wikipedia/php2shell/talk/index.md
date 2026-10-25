@@ -8,7 +8,7 @@ The talk page of the article as threads: 8 discussions and 23 posts, including t
 
 # What Wikipedia's editors discuss about the PHP2Shell article
 
-The article's [talk page](https://en.wikipedia.org/wiki/Talk%3APHP2Shell), as threads: 8 discussions, 23 signed posts, 39 revisions of the page since 2026-10-21 11:22:20 UTC. This is where corrections are argued, where outside parties ask for changes without editing the article (1 thread use the edit-request process, with a disclosed conflict of interest), and where readers say what the article does not yet explain. Every post links to its author's public Wikipedia page; a temporary account is Wikipedia's own pseudonym for a logged-out editor.
+The article's [talk page](https://en.wikipedia.org/wiki/Talk%3APHP2Shell), as threads: 8 discussions, 23 signed posts, 40 revisions of the page since 2026-10-21 11:22:20 UTC. This is where corrections are argued, where outside parties ask for changes without editing the article (1 thread use the edit-request process, with a disclosed conflict of interest), and where readers say what the article does not yet explain. Every post links to its author's public Wikipedia page; a temporary account is Wikipedia's own pseudonym for a logged-out editor.
 
 ## The Man on the Clapham Omnibus (3 posts, 2026-10-21 20:59 UTC)
 - **[Ericoides](https://en.wikipedia.org/wiki/User:Ericoides)** 2026-10-21 20:59 UTC Could there be a section explaining how this affects your average Joe who doesn't have a clue what most/all of the article means, e.g. are their home systems vulnerable?
@@ -53,4 +53,4 @@ The posts are their authors', CC BY-SA 4.0, shown as text.
 
 
 ---
-site v0.21.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/talk/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/talk/index.html

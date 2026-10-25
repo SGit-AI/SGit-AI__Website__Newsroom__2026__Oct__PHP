@@ -828,7 +828,10 @@
    "name": "ITdaily",
    "kind": "outlet",
    "aliases": [
-    "ITdaily (Jens Jonkers)"
+    "ITdaily (Jens Jonkers)",
+    "ITdaily",
+    "itdaily.be",
+    "itdaily.fr"
    ]
   },
   {
@@ -3063,7 +3066,8 @@
    "country": "US",
    "aliases": [
     "Yahoo Finance",
-    "finance.yahoo.com"
+    "finance.yahoo.com",
+    "Yahoo Finanza"
    ]
   },
   {
@@ -3093,7 +3097,8 @@
    "country": "ID",
    "aliases": [
     "detikcom",
-    "detik.com"
+    "detik.com",
+    "detikInet"
    ]
   },
   {
@@ -3224,9 +3229,9 @@
    "kind": "outlet",
    "aliases": [
     "The DFIR Blog",
-    "thedfirblog.com",
-    "dfir.blog"
-   ]
+    "thedigitalforensics.com"
+   ],
+   "note": "The talk page's citation names it 'The DFIR Blog' at thedigitalforensics.com; the hosts first recorded (thedfirblog.com, dfir.blog) were guesses and are removed (pass of 25 October, 14:05)."
   },
   {
    "id": "washington-post",
@@ -3237,6 +3242,342 @@
     "washingtonpost.com"
    ],
    "country": "US"
+  },
+  {
+   "id": "elotrolado",
+   "name": "ElOtroLado.net",
+   "kind": "outlet",
+   "country": "ES",
+   "aliases": [
+    "ElOtroLado.net",
+    "elotrolado.net"
+   ]
+  },
+  {
+   "id": "haber7",
+   "name": "Haber 7",
+   "kind": "outlet",
+   "country": "TR",
+   "aliases": [
+    "Haber 7",
+    "haber7.com"
+   ]
+  },
+  {
+   "id": "haber-com",
+   "name": "Haber.com",
+   "kind": "outlet",
+   "country": "TR",
+   "aliases": [
+    "Haber.com",
+    "haber.com"
+   ],
+   "note": "Not DonanımHaber or Haber 7: a third Turkish site with 'haber' (news) in its name."
+  },
+  {
+   "id": "hwupgrade",
+   "name": "Hardware Upgrade",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "Hardware Upgrade",
+    "hwupgrade.it"
+   ]
+  },
+  {
+   "id": "hirstart",
+   "name": "Hírstart",
+   "kind": "outlet",
+   "country": "HU",
+   "aliases": [
+    "Hírstart",
+    "hirstart.hu"
+   ],
+   "note": "A Hungarian news aggregator: its pages relay other outlets."
+  },
+  {
+   "id": "hurriyet",
+   "name": "Hürriyet",
+   "kind": "outlet",
+   "country": "TR",
+   "aliases": [
+    "Hürriyet",
+    "hurriyet.com.tr"
+   ]
+  },
+  {
+   "id": "it-finanzmagazin",
+   "name": "IT Finanzmagazin",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "IT Finanzmagazin",
+    "it-finanzmagazin.de"
+   ]
+  },
+  {
+   "id": "ithome-cn",
+   "name": "IT之家",
+   "kind": "outlet",
+   "country": "CN",
+   "aliases": [
+    "IT之家",
+    "ithome.com",
+    "IT Home"
+   ],
+   "note": "IT Home (Ruanmei), China; not the Taiwanese iThome (ithome.com.tw)."
+  },
+  {
+   "id": "ilsole24ore",
+   "name": "Il Sole 24 Ore",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "Il Sole 24 Ore",
+    "ilsole24ore.com"
+   ]
+  },
+  {
+   "id": "infomoney",
+   "name": "InfoMoney",
+   "kind": "outlet",
+   "country": "BR",
+   "aliases": [
+    "InfoMoney",
+    "infomoney.com.br"
+   ]
+  },
+  {
+   "id": "infobae",
+   "name": "Infobae",
+   "kind": "outlet",
+   "country": "AR",
+   "aliases": [
+    "Infobae",
+    "infobae.com"
+   ]
+  },
+  {
+   "id": "inibalikpapan",
+   "name": "IniBalikpapan.Com",
+   "kind": "outlet",
+   "country": "ID",
+   "aliases": [
+    "IniBalikpapan.Com",
+    "inibalikpapan.com"
+   ]
+  },
+  {
+   "id": "jawapos",
+   "name": "Jawa Pos",
+   "kind": "outlet",
+   "country": "ID",
+   "aliases": [
+    "Jawa Pos",
+    "jawapos.com"
+   ]
+  },
+  {
+   "id": "jeuxvideo",
+   "name": "JeuxVideo.com",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "JeuxVideo.com",
+    "jeuxvideo.com"
+   ]
+  },
+  {
+   "id": "securityaffairs",
+   "name": "Security Affairs",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "Security Affairs",
+    "securityaffairs.com"
+   ],
+   "note": "Pierluigi Paganini's security blog, written in English."
+  },
+  {
+   "id": "kathmandu-post",
+   "name": "The Kathmandu Post",
+   "kind": "outlet",
+   "country": "NP",
+   "aliases": [
+    "The Kathmandu Post",
+    "kathmandupost.com"
+   ]
+  },
+  {
+   "id": "wall-street-ro",
+   "name": "Wall-Street.ro",
+   "kind": "outlet",
+   "country": "RO",
+   "aliases": [
+    "Wall-Street.ro",
+    "wall-street.ro"
+   ]
+  },
+  {
+   "id": "actainfo",
+   "name": "actainfo",
+   "kind": "outlet",
+   "country": "IT",
+   "aliases": [
+    "actainfo",
+    "actainfo.it"
+   ]
+  },
+  {
+   "id": "datensicherheit",
+   "name": "datensicherheit.de",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "datensicherheit.de",
+    "datensicherheit.de"
+   ]
+  },
+  {
+   "id": "dexpose",
+   "name": "dexpose.io",
+   "kind": "organisation",
+   "aliases": [
+    "dexpose.io",
+    "dexpose.io"
+   ],
+   "note": "A threat-exposure vendor writing about its own product area: a vendor, not an outlet."
+  },
+  {
+   "id": "hurbra",
+   "name": "hurbra",
+   "kind": "outlet",
+   "country": "SE",
+   "aliases": [
+    "hurbra",
+    "hurbra.se"
+   ]
+  },
+  {
+   "id": "iphonesoft",
+   "name": "iPhoneSoft",
+   "kind": "outlet",
+   "country": "FR",
+   "aliases": [
+    "iPhoneSoft",
+    "iphonesoft.fr"
+   ]
+  },
+  {
+   "id": "ijiwei",
+   "name": "ijiwei",
+   "kind": "outlet",
+   "country": "CN",
+   "aliases": [
+    "ijiwei",
+    "ijiwei.com",
+    "爱集微"
+   ]
+  },
+  {
+   "id": "it-daily-net",
+   "name": "it-daily.net",
+   "kind": "outlet",
+   "country": "DE",
+   "aliases": [
+    "it-daily.net",
+    "it-daily.net"
+   ],
+   "note": "German IT-Daily; not the Belgian ITdaily (itdaily) or the Korean 아이티데일리 (itdaily-kr)."
+  },
+  {
+   "id": "malwarebytes",
+   "name": "Malwarebytes",
+   "kind": "organisation",
+   "country": "US",
+   "aliases": [
+    "Malwarebytes",
+    "malwarebytes",
+    "malwarebytes.com"
+   ],
+   "note": "A security vendor; its blog is the vendor speaking."
+  },
+  {
+   "id": "telesur-english",
+   "name": "teleSUR English",
+   "kind": "outlet",
+   "country": "VE",
+   "aliases": [
+    "teleSUR English",
+    "telesurenglish.net"
+   ]
+  },
+  {
+   "id": "indigo-dergisi",
+   "name": "İndigo Dergisi",
+   "kind": "outlet",
+   "country": "TR",
+   "aliases": [
+    "İndigo Dergisi",
+    "indigodergisi.com"
+   ]
+  },
+  {
+   "id": "data-max",
+   "name": "データ・マックス",
+   "kind": "outlet",
+   "country": "JP",
+   "aliases": [
+    "データ・マックス",
+    "data-max.co.jp",
+    "Data Max"
+   ]
+  },
+  {
+   "id": "jiji",
+   "name": "時事ドットコム",
+   "kind": "outlet",
+   "country": "JP",
+   "aliases": [
+    "時事ドットコム",
+    "jiji.com",
+    "Jiji.com"
+   ],
+   "note": "The page cited is a press release (PR TIMES) carried on jiji.com: jiji relays it, the issuing company states it."
+  },
+  {
+   "id": "itdaily-kr",
+   "name": "아이티데일리",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "아이티데일리",
+    "itdaily.kr",
+    "IT Daily (Korea)"
+   ],
+   "note": "Korean; not the Belgian ITdaily (itdaily) or the German it-daily.net."
+  },
+  {
+   "id": "hankyung",
+   "name": "한국경제",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "한국경제",
+    "hankyung.com",
+    "The Korea Economic Daily"
+   ]
+  },
+  {
+   "id": "hellot",
+   "name": "헬로티",
+   "kind": "outlet",
+   "country": "KR",
+   "aliases": [
+    "헬로티",
+    "hellot.net",
+    "HelloT"
+   ]
   }
  ]
 }

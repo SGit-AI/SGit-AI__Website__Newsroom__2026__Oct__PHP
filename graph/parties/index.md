@@ -2,17 +2,17 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-352 parties resolved from 456 spellings, with the claims each one states and passes on.
+384 parties resolved from 529 spellings, with the claims each one states and passes on.
 
 [The story as a graph](../index.html) / Parties
 
 # Every party, whatever a page calls it
 
-352 parties: the people, organisations, agencies, outlets and platforms that published a source or are named as saying something. The sources spell them 456 ways; each spelling resolves to one node here, so CISA is one party however many pages name it. *States* counts the claims, numbers and signals a party originates; *relays* counts those it passed on from someone else.
+384 parties: the people, organisations, agencies, outlets and platforms that published a source or are named as saying something. The sources spell them 529 ways; each spelling resolves to one node here, so CISA is one party however many pages name it. *States* counts the claims, numbers and signals a party originates; *relays* counts those it passed on from someone else.
 
 The graph of each party needs JavaScript; the tables below carry the same counts.
 
-## Organisation (58)
+## Organisation (60)
 
 | Party | States | Relays | Sources published | Claims it states |
 |---|---|---|---|---|
@@ -54,6 +54,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | French Ministry of the Interior | 0 | 0 | 1 |  |
 | Lorikeet Security | 0 | 0 | 1 |  |
 | MITRE | 0 | 0 | 0 |  |
+| Malwarebytes | 0 | 0 | 1 |  |
 | Palo Alto Networks | 0 | 0 | 1 |  |
 | Prophet Security | 0 | 0 | 1 |  |
 | Préfecture de police (Paris) part of French Ministry of the Interior | 0 | 0 | 2 |  |
@@ -73,6 +74,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | Université de Genève | 0 | 0 | 2 |  |
 | W3Techs | 0 | 0 | 0 |  |
 | cPanel | 0 | 0 | 0 |  |
+| dexpose.io | 0 | 0 | 1 |  |
 | latvija.gov.lv, the Latvian state portal | 0 | 0 | 1 |  |
 
 ## Agency (18)
@@ -134,7 +136,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | [Community detection authors](../../actors/detectors/index.html) | 0 | 0 | 0 |  |
 | [National agencies](../../actors/agencies/index.html) | 0 | 0 | 0 |  |
 
-## Outlet (237)
+## Outlet (267)
 
 | Party | States | Relays | Sources published | Claims it states |
 |---|---|---|---|---|
@@ -248,6 +250,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | El Debate | 0 | 0 | 1 |  |
 | El Mundo | 0 | 0 | 1 |  |
 | El Observador | 0 | 0 | 1 |  |
+| ElOtroLado.net | 0 | 0 | 1 |  |
 | EmarketerZ | 0 | 0 | 1 |  |
 | Estadão | 0 | 0 | 1 |  |
 | Estrella Digital | 0 | 0 | 1 |  |
@@ -269,24 +272,37 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | Global News | 0 | 0 | 1 |  |
 | Green Bay Press-Gazette | 0 | 0 | 1 |  |
 | Génération NT | 0 | 0 | 1 |  |
+| Haber 7 | 0 | 0 | 1 |  |
+| Haber.com | 0 | 0 | 1 |  |
+| Hardware Upgrade | 0 | 0 | 1 |  |
 | HardwareCooking | 0 | 0 | 1 |  |
 | Harian Jogja | 0 | 0 | 1 |  |
 | Help Net Security | 0 | 0 | 1 |  |
 | How-To Geek | 0 | 0 | 1 |  |
+| Hírstart | 0 | 0 | 1 |  |
+| Hürriyet | 0 | 0 | 1 |  |
 | ICTjournal | 0 | 0 | 1 |  |
 | IDX Channel | 0 | 0 | 1 |  |
 | INTERNET Watch (Impress) | 0 | 0 | 1 |  |
+| IT Finanzmagazin | 0 | 0 | 1 |  |
 | IT Social | 0 | 0 | 1 |  |
 | ITWeb | 0 | 0 | 1 |  |
-| ITdaily | 0 | 0 | 1 |  |
+| ITdaily | 0 | 0 | 3 |  |
 | ITmedia | 0 | 0 | 0 |  |
+| IT之家 | 0 | 0 | 1 |  |
+| Il Sole 24 Ore | 0 | 0 | 1 |  |
 | Inc42 | 0 | 0 | 1 |  |
 | India TV News | 0 | 0 | 1 |  |
+| InfoMoney | 0 | 0 | 1 |  |
+| Infobae | 0 | 0 | 1 |  |
 | Infopoint Security | 0 | 0 | 1 |  |
 | Information Age (ACS) | 0 | 0 | 1 |  |
 | Infosecurity Magazine | 0 | 0 | 1 |  |
+| IniBalikpapan.Com | 0 | 0 | 1 |  |
 | Insider Paper | 0 | 0 | 1 |  |
 | J-CAST News | 0 | 0 | 0 |  |
+| Jawa Pos | 0 | 0 | 1 |  |
+| JeuxVideo.com | 0 | 0 | 1 |  |
 | Jornal de Notícias | 0 | 0 | 1 |  |
 | Journal du Canada | 0 | 0 | 1 |  |
 | Journal du Coin | 0 | 0 | 1 |  |
@@ -329,6 +345,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | Salzburg24 | 0 | 0 | 1 |  |
 | Sankei Shimbun | 0 | 0 | 1 |  |
 | Search Engine Roundtable | 0 | 0 | 1 |  |
+| Security Affairs | 0 | 0 | 1 |  |
 | Security.NL | 0 | 0 | 2 |  |
 | Shinailbo (신아일보) | 0 | 0 | 1 |  |
 | SiliconANGLE | 0 | 0 | 1 |  |
@@ -346,6 +363,7 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | The Economic Times | 0 | 0 | 1 |  |
 | The Guardian | 0 | 0 | 0 |  |
 | The Indian Express | 0 | 0 | 1 |  |
+| The Kathmandu Post | 0 | 0 | 1 |  |
 | The Mandarin | 0 | 0 | 1 |  |
 | The New York Times | 0 | 0 | 0 |  |
 | The Next Web | 0 | 0 | 1 |  |
@@ -361,20 +379,34 @@ The graph of each party needs JavaScript; the tables below carry the same counts
 | USA Today | 0 | 0 | 1 |  |
 | WIRED | 0 | 0 | 1 |  |
 | WIRED en Español part of WIRED | 0 | 0 | 1 |  |
+| Wall-Street.ro | 0 | 0 | 1 |  |
 | Wikipedia (English) part of The Wikimedia Foundation | 0 | 0 | 9 |  |
 | Yahoo | 0 | 0 | 1 |  |
-| Yahoo Finance | 0 | 0 | 1 |  |
+| Yahoo Finance | 0 | 0 | 2 |  |
 | Yahoo! News Japan | 0 | 0 | 2 |  |
 | ZATAZ | 0 | 0 | 1 |  |
+| actainfo | 0 | 0 | 1 |  |
 | blue News | 0 | 0 | 1 |  |
-| detikcom | 0 | 0 | 1 |  |
+| datensicherheit.de | 0 | 0 | 1 |  |
+| detikcom | 0 | 0 | 2 |  |
 | dpa (Deutsche Presse-Agentur) | 0 | 0 | 0 |  |
+| hurbra | 0 | 0 | 1 |  |
+| iPhoneSoft | 0 | 0 | 1 |  |
 | iTWire | 0 | 0 | 1 |  |
+| ijiwei | 0 | 0 | 1 |  |
+| it-daily.net | 0 | 0 | 1 |  |
 | la Repubblica | 0 | 0 | 1 |  |
 | php[architect] | 0 | 0 | 1 |  |
 | shattered.io | 0 | 0 | 1 |  |
+| teleSUR English | 0 | 0 | 1 |  |
 | watson | 0 | 0 | 1 |  |
 | Área Cúcuta | 0 | 0 | 1 |  |
+| İndigo Dergisi | 0 | 0 | 1 |  |
+| データ・マックス | 0 | 0 | 1 |  |
+| 時事ドットコム | 0 | 0 | 1 |  |
+| 아이티데일리 | 0 | 0 | 1 |  |
+| 한국경제 | 0 | 0 | 1 |  |
+| 헬로티 | 0 | 0 | 1 |  |
 
 ## Registry (2)
 
@@ -418,4 +450,4 @@ The file is [data/entities.json](../../data/entities.json), with who states each
 
 
 ---
-site v0.21.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/graph/parties/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/graph/parties/index.html

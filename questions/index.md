@@ -105,8 +105,8 @@ An article a reader has seen is listed here until a collector captures it into t
 - [What sixteen agencies actually advise](../agencies/index.html): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
 - [Affected systems: versions, deployments, applications, inventory](../affected/index.html): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
 - [Who says what: every party and its claims](../actors/index.html): 27 parties in the php2shell story, each with the claims this site attributes to it and the sources behind them.
-- [The story as a graph: who states what, who relays it, and what it rests on](../graph/index.html): 1450 nodes and 1821 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
-- [Every party on the story: who states, who relays, who publishes](../graph/parties/index.html): 352 parties resolved from 456 spellings, with the claims each one states and passes on.
+- [The story as a graph: who states what, who relays it, and what it rests on](../graph/index.html): 1482 nodes and 1857 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
+- [Every party on the story: who states, who relays, who publishes](../graph/parties/index.html): 384 parties resolved from 529 spellings, with the claims each one states and passes on.
 - [Wikipedia, as a graph](../wikipedia/index.html): Each Wikipedia article this site watches, read as a fractal semantic graph: statements classed as facts, attributions and quotes, references joined to the captures this site holds, and every edit as what it changed.
 - [Wikipedia's PHP2Shell article, as a graph](../wikipedia/php2shell/index.html): The English Wikipedia article on PHP2Shell read as a fractal semantic graph: 40 statements classed as facts, attributions and quotes, 45 references and which are captured here, 370 revisions, and where it meets this site's claims.
 - [Every statement in Wikipedia's PHP2Shell article, with its evidence](../wikipedia/php2shell/statements/index.html): All 40 statements of the article, classed as record, stated, attributed, quote or hedged by their wording, with their references, the captures this site holds and the claims that share them.
@@ -209,4 +209,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.21.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

@@ -62,7 +62,7 @@ A pass takes in what other agents added since the last one and leaves the graph 
 
 The card is `data/schedule/ontologist.json` (AGENTS.md section 7), active since 24 October 2026 at the editor's go,
 four times a day since 25 October at his direction: 06:05, 10:05, 14:05 and 18:05 London, so that the Wikipedia
-articles are fetched every four hours (`admin/wikipedia/fetch.py --all` is the first step of every wake) and each wake
+articles are fetched every four hours (`admin/wikipedia/fetch.py <Title>` for each page in `data/wikipedia/index.json` is the first step of every wake; `--all` re-fetches every revision and is not for a wake) and each wake
 maps what the desks before it added (the curator's promotions, the fact-check desk's runs) before the conductor's next
 full pass at :15. The scheduled task "Ontologist pass: 06:05, 10:05, 14:05, 18:05 London" wakes the ontologist's own
 session (not a fresh one: fresh sessions started with no repository) with the card's wake prompt, word for word; it
