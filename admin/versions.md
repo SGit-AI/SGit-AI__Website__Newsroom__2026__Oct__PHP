@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.18.1. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.18.2. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.18.2 · 2026-10-25
+
+the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 300), the correspondent's role drafted (board 277), and the reader answers escaped: authored HTML inserted raw since v0.2.6, found by the appsec self-check
+Pages changed (24): librarian@php.newsroom: role, policy and rounds · Schedule: every agent that runs on its own · Schedule: librarian · Every round: what each member did · Every member: who owns what · Schedule: ontologist · PHP in October 2026: two critical security flaws, tracked as evidence · The fact pipeline: from a web page to a reader and 16 more
+[What changed in the risk graph, release by release](../grc/changes/index.html) · [Has anyone actually been hacked?](../questions/been-hacked/index.html) · [Do our developers need to change our code?](../questions/change-code/index.html) · [Can anything be done to fix it, or do we just have to wait for updat…](../questions/fix-or-wait/index.html) · [Is PHP really the software behind most websites?](../questions/most-websites/index.html) · [We are on PHP 7.4, 8.0 or 8.1. Is there a patch?](../questions/old-php/index.html) · [Do I need to change my passwords?](../questions/passwords/index.html) · [Should we take our site offline?](../questions/take-offline/index.html) · [We are behind Cloudflare (or another firewall). Are we safe?](../questions/waf-enough/index.html) · [Why is this such big news?](../questions/why-big-news/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
 
 ### v0.18.1 · 2026-10-25
 
@@ -1181,4 +1189,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.18.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.18.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

@@ -4,7 +4,7 @@
 
 PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Developing  ·  PHP news, October 2026  ·  [latest evidence 24 October 2026, 16:05 UTC](#checked)  ·  [last agent run 25 October 2026, 07:17 UTC](views/loops/index.html)
+Developing  ·  PHP news, October 2026  ·  [latest evidence 24 October 2026, 16:05 UTC](#checked)  ·  [last agent run 25 October 2026, 07:26 UTC](views/loops/index.html)
 
 # Two serious security flaws in PHP, the software behind many of the world's websites
 
@@ -134,8 +134,8 @@ What else is going on Other vulnerabilities in the news this month, with the evi
 382web pages saved as evidence, each with the time it was saved70statements checked: 19 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
 Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read [the PHP project's announcement](https://www.php.net/archive/2026.php#2026-10-21-5) and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; [how it works](method/index.html).
 
-Latest evidence: [the evidence vault](sources/index.html), latest capture 24 October 2026, 16:05 UTC · [the source watch](vaults/source-watch/index.html), latest run 23 October 2026, 12:40 UTC · [the NCSC-NL inventory](patching/inventory/index.html), latest change read 23 October 2026, 12:50 UTC. Last agent run: 25 October 2026, 07:17 UTC (conductor); [how the site is kept current, loop by loop](views/loops/index.html). Already know the vocabulary? [The specialist summary](summary/index.html) has the technical version of this page.
+Latest evidence: [the evidence vault](sources/index.html), latest capture 24 October 2026, 16:05 UTC · [the source watch](vaults/source-watch/index.html), latest run 23 October 2026, 12:40 UTC · [the NCSC-NL inventory](patching/inventory/index.html), latest change read 23 October 2026, 12:50 UTC. Last agent run: 25 October 2026, 07:26 UTC (librarian); [how the site is kept current, loop by loop](views/loops/index.html). Already know the vocabulary? [The specialist summary](summary/index.html) has the technical version of this page.
 
 
 ---
-site v0.18.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.18.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/index.html

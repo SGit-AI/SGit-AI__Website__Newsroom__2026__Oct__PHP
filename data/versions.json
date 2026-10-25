@@ -1,6 +1,15 @@
 {
- "current": "0.18.1",
+ "current": "0.18.2",
  "versions": [
+  {
+   "version": "0.18.2",
+   "date": "2026-10-25",
+   "title": "the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 300), the correspondent's role drafted (board 277), and the reader answers escaped: authored HTML inserted raw since v0.2.6, found by the appsec self-check",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.18.1",
    "date": "2026-10-25",

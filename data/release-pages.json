@@ -1,6 +1,155 @@
 {
  "about": "A page counts as changed when the content of its <main> differs from the previous release's, with the two site version numbers masked: the header, the footer and the version stamp change on every page at every release and say nothing about what the release did. Pages are compared as built and committed, so the list is what a reader would have seen change. Stored in data/release-pages.json, one entry per release, written once and never recomputed:",
  "releases": {
+  "0.18.2": {
+   "against": "0.18.1",
+   "pages": [
+    {
+     "path": "admin/agents/librarian/index.html",
+     "title": "librarian@php.newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/librarian/index.html",
+     "title": "Schedule: librarian",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/roles/index.html",
+     "title": "Every member: who owns what",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/ontologist/index.html",
+     "title": "Schedule: ontologist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/been-hacked/index.html",
+     "title": "Has anyone actually been hacked?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/change-code/index.html",
+     "title": "Do our developers need to change our code?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/fix-or-wait/index.html",
+     "title": "Can anything be done to fix it, or do we just have to wait for updates?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/most-websites/index.html",
+     "title": "Is PHP really the software behind most websites?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/old-php/index.html",
+     "title": "We are on PHP 7.4, 8.0 or 8.1. Is there a patch?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/passwords/index.html",
+     "title": "Do I need to change my passwords?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/take-offline/index.html",
+     "title": "Should we take our site offline?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/waf-enough/index.html",
+     "title": "We are behind Cloudflare (or another firewall). Are we safe?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/why-big-news/index.html",
+     "title": "Why is this such big news?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
   "0.18.1": {
    "against": "0.18.0",
    "pages": [

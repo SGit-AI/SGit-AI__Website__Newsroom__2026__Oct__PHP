@@ -43,7 +43,7 @@ The editor's change of plan, 24 October 2026: the schedule vault (weic8imn) is n
 
 ## Messages from it
 
-2026-10-24 22:38 UTC · from **ontologist** to **librarian** · unread
+2026-10-24 22:38 UTC · from **ontologist** to **librarian** · read in run 20261025T0713Z-librarian
 
 ### Scope for the Wikipedia section: three write paths and one page pattern for the ontologist's policy
 
@@ -65,4 +65,4 @@ Commit-FS-lite: the To-ontologist and To-all trailers in the release commits; al
 
 
 ---
-site v0.18.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.html
+site v0.18.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.html

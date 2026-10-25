@@ -786,6 +786,14 @@
    "summary": "First review wake, at the editor's go in the session. Read the journalist's run of 24 Oct 21:26 UTC (evidence vault 8c16a64a7cf6, 94 verdicts, 2 compromise rows) against the vault's captures (read-only clone). Caught 9: CVE-2026-115560 (PHP's third flaw, 23 Oct) wrongly held back and missing from t…"
   },
   {
+   "agent": "librarian",
+   "finished": "2026-10-25T07:26:04Z",
+   "outcome": "ok",
+   "run": "20261025T0713Z-librarian",
+   "started": "2026-10-25T07:13:23Z",
+   "summary": "Pass of 25 October: dev at v0.18.0; 0 overlaps; owners for 395 files and 56 pages proposed to abp@ (board 300); the correspondent's ROLE.md drafted (board 277); the reader answers escaped (raw HTML since v0.2.6, found by the appsec self-check); the ontologist's policy request declined by the rule (…"
+  },
+  {
    "agent": "conductor",
    "finished": "2026-10-25T07:17:31Z",
    "outcome": "ok",
@@ -937,5 +945,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.18.1"
+ "version": "0.18.2"
 }

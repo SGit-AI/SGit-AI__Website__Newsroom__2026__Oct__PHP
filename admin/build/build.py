@@ -2712,13 +2712,18 @@ def q_link(path, depth):
     title = next((t for p, t, _, _ in PAGES if p == bare), None) or next((t for _, items in NAV for p, t in items if p == bare), bare)
     return f'<a href="{"../" * depth}{E(path)}">{E(title)}</a>'
 
+def q_inline(text):
+    """An answer's authored text: everything escaped with E(), then only <b>, <i>, <code> and <q> restored, with no
+    attributes. Until 25 October the answers were inserted raw (found by the librarian's appsec self-check)."""
+    return re.sub(r'&lt;(/?)(b|i|code|q)&gt;', r'<\1\2>', E(text))
+
 def build_questions():
     Q = D['questions']
     qs = Q['questions']
     lib = Q['librarian']
     for i, q in enumerate(qs):
-        paras = ''.join(f'<p>{a["html"]} <span class="refs">{src_links(a["sources"], 2)}</span></p>' for a in q['answer'])
-        who = table(['If', 'Then'], [[E(w['if']), w['then']] for w in q['who']]) if q.get('who') else ''
+        paras = ''.join(f'<p>{q_inline(a["html"])} <span class="refs">{src_links(a["sources"], 2)}</span></p>' for a in q['answer'])
+        who = table(['If', 'Then'], [[E(w['if']), q_inline(w['then'])] for w in q['who']]) if q.get('who') else ''
         see = ''.join(f'<li>{q_link(p, 2)}</li>' for p in q['see'])
         nxt = qs[(i + 1) % len(qs)]
         url = f'{BASE_URL}/questions/{q["id"]}/index.html'

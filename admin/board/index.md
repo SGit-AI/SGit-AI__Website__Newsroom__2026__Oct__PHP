@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 299 items, 197 open, 98 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 300 items, 198 open, 98 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -309,9 +309,10 @@ The work, as rows in `data/admin.json`: 299 items, 197 open, 98 done. An item is
 | 297 | The line on the live site: the rollout in the brief's order, starting with the line and the boot script on every page (rule 7 and the fallback line), replacing the lens's two dialsWaiting on the editor's go, as prototype E was (board 275, which this supersedes). Steps 2 to 7 of the brief's rollout follow: roles and depth on the live front page and the content pages, the first visit and the guesses, seen and the return moments, shared links and the past view, a page line for every page (the desk approves the words), then the reader's vault (board 140) and telemetry (board 262). | open | editor |  |
 | 298 | The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x depth cells, the thresholds, and who writes the page linesSection 14 of the brief. The prototype ships the pack's answers to all five; they are cheap to change (assets/design/line/roles.json, copy.src.json and moments.json are read by the build). | open | editor |  |
 | 299 | A page line for every page, and the change log from the build's own diff between releasesPrototype F writes lines for the front page, the agencies, the numbers and the playbook; every other page falls back to the page-title line. The change log is read from data/timeline.json, tagged by phase; the live one should come from the diff between releases, as the brief's section 10.5 asks. | open | claude-story-site |  |
+| 300 | Owners for the policy drafts, from the librarian's pass of 25 October (the gate warns on each; the commit that added each file carries its Agent line unless marked inferred): security: .github/dependabot.yml, .well-known/security.txt, SECURITY.md (inferred, created on GitHub), admin/build/csp.py, admin/build/diagram.py, data/advisories.json, data/appsec.json, pages admin/appsec/**; conductor: admin/build/grc_history.py, assets/grc-changes.js, data/comms.json, and (inferred from /team/control/) admin/build/control.py, assets/control.css, assets/control.js; dev: admin/build/release_pages.py (inferred, the release history); correspondent (no policy yet, board 277; its ROLE.md drafted by the librarian): admin/build/loops.py, admin/build/export_loops.py, data/loops.json, data/schedule/correspondent.json, data/runs/correspondent/**, data/vault-register/correspondent.json, admin/content/agents/correspondent/**. The ontologist's Wikipedia files are its own request, board 295; data/desk.json, /analysis/ and /ops/ are board 256. | open | abp |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.18.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.18.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
