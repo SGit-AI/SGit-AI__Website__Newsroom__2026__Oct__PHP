@@ -10,6 +10,8 @@ Because Calif, OpenAI, Wiz and a fourth reporter reached the same small security
 
 Because Calif, OpenAI, Wiz and a fourth reporter reached the same small security team within weeks, each report costs the same few people triage time, resulting in a coordination load that grows with every AI-assisted finder.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r08-2) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 4 Likely · **Impact** 3 Significant · **Kind** Operational · **Acceptance** not recorded
 
 **Basis.** Four credited reporters; dates confirmed.
@@ -61,4 +63,4 @@ On this site: [Who found php2shell, and what the AI did](../../../discovery/inde
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r08-2/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r08-2/index.html

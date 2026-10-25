@@ -10,6 +10,8 @@ Because the agent that writes a claim also chooses its status word, a claim can 
 
 Because the agent that writes a claim also chooses its status word, a claim can read as confirmed on less than confirmation, resulting in readers and their models repeating it as fact.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r10-3) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 4 Likely · **Impact** 3 Significant · **Kind** AI and agents · **Acceptance** not recorded
 
 **Basis.** The fact-check desk found eleven overstated status words in run 1.
@@ -55,4 +57,4 @@ On this site: [Fact-check: how sure can you be of each claim](../../../factcheck
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10-3/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10-3/index.html

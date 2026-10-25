@@ -2,16 +2,16 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-The evidence behind one statement, as of 2026-10-22 20:50 UTC: attempts, vendor reports, statements that no success is known, named organisations, allegations and official lists, each with its source.
+The evidence behind one statement, as of 2026-10-25 09:35 UTC: attempts, vendor reports, statements that no success is known, named organisations, allegations and official lists, each with its source.
 
 # No named organisation has said it was compromised through php2shell.
 
-This page holds the evidence behind one statement, as of **2026-10-22 20:50 UTC**: every statement found about attacks on, or compromises of, real systems through php2shell, sorted by what kind of evidence it is, with the words of the party that made it and where its capture is held. It makes no assessment of risk. The statement's status is **reported**: A time-bounded absence, not a confirmed fact. It is true only as of the last check, and one statement from one organisation would end it. It is [claim no-confirmed-compromise](../claims/index.html#no-confirmed-compromise).
+This page holds the evidence behind one statement, as of **2026-10-25 09:35 UTC**: every statement found about attacks on, or compromises of, real systems through php2shell, sorted by what kind of evidence it is, with the words of the party that made it and where its capture is held. It makes no assessment of risk. The statement's status is **reported**: A time-bounded absence, not a confirmed fact. It is true only as of the last check, and one statement from one organisation would end it. It is [claim no-confirmed-compromise](../claims/index.html#no-confirmed-compromise).
 
 ## What was searched
 
 Where the statement was checked. A statement that something does not exist is only as good as the search behind it.
-184The evidence vault: sourceshead 31ccc515c29f; the site is built from its manifest of 144773The source watch: pages watched474 publishers in 57 countries and 34 languages, checked hourly339Read in their own language: non-English pages28 languages; 568 new items with verbatim quotes3,444Discovery feeds: news items scannedGoogle News and Bing News, 85 editions, from 1,621 publishers295Named sites probed: sitesevery site somebody named as taken offline, probed every 30 minutes
+418The evidence vault: sourceshead 87795d121200; the site is built from all of it913The source watch: pages watched597 publishers, head 20afaa62129d (the old watch, oq9gflln; the watch continues in pack vault 7r83qic5)339Read in their own language: non-English pages28 languages; 568 new items with verbatim quotes; as counted on 22 October3,444Discovery feeds: news items scannedGoogle News and Bing News, 85 editions, from 1,621 publishers; as counted on 22 October295Named sites probed: sitesevery site somebody named as taken offline, probed every 30 minutes; as counted on 22 October
 
 ## From attempts to a named compromise
 
@@ -19,11 +19,11 @@ Not to scale. Each layer is a different kind of statement, and a statement in on
 
 ## The evidence, by kind
 
-33 statements on this page, by what kind of evidence they are. A count of statements, not of events: one party can report millions of attempts in one statement.
+43 statements on this page, by what kind of evidence they are. A count of statements, not of events: one party can report millions of attempts in one statement.
 
 Each dot is one statement on this page, placed at the time the source gives (noon where it gives only a date). Hover a dot for who said it.
 
-## Attempts seen (9)
+## Attempts seen (11)
 
 This kind of statement can show that someone tried. It cannot show that anyone succeeded.
 
@@ -36,8 +36,10 @@ This kind of statement can show that someone tried. It cannot show that anyone s
 | 2026-10-21 20:00 UTC | **CERT.LV (Latvia)** | Automated exploitation attempts seen in Latvia; no successful attacks reported. | [CERT.LV](../sources/certlv-php-preventive/index.html) |
 | 2026-10-22 | **Cloudflare's CEO, Matthew Prince** | "thousands in the 45 minutes post announcement, hundreds of thousands within 2 hours, and millions now." | [Matthew Prince, Cloudflare CEO on…](../sources/x-eastdakota-php2shell-stats/index.html) |
 | 2026-10-22 | **VulnCheck (via SecurityWeek)** | "At least one Chinese IP address unsuccessfully attempted to exploit PHP2Shell to deploy a webshell." | [SecurityWeek](../sources/securityweek-exploitation-days-before/index.html) |
-| 2026-10-22 | **QNAP PSIRT** | Observed scanning activity and attack attempts using the PHP2Shell flaws. | source watch: `raw/tw/security-vendor/qnap/statement-php2shell/20261022T191720Z/` |
+| 2026-10-22 | **QNAP PSIRT** | Observed scanning activity and attack attempts using the PHP2Shell flaws. | [QNAP](../sources/qnap-statement-php2shell/index.html) source watch: `raw/tw/security-vendor/qnap/statement-php2shell/20261022T191720Z/` |
 | 2026-10-22 | **A Tencent News analyst, with ThreatBook sensors (China)** | Captured scanning requests with the User-Agent php2shell-scan/1.0; no evidence of successful code execution. | source watch: `translations/hk/news/news-qq/rain-a-20261021a0eq4p00.json` |
+| 2026-10-22 | **Sophos (via Cyber Security News)** | An exploitation attempt tried to deploy Potassium, a likely Mirai botnet variant; security controls blocked it and the malware was not delivered. | [Cyber Security News](../sources/cybersecuritynews-critical-php2shell-exploit-code/index.html) |
+| 2026-10-23 | **RainForest (via VOIX, Japan)** | RainForest's honeypot network matched 3 of 11 public IP addresses from VulnCheck and Amazon threat information and recorded 21 PHP2Shell-related HTTP POST requests, from 14 different source IPs. | [voix](../sources/voix-business-cards-rainforest-ip-activity-an/index.html) |
 
 ## Exploitation reported, no victim named (4)
 
@@ -50,7 +52,7 @@ This kind of statement can show that a party says exploitation happened. It cann
 | 2026-10-21 07:34 UTC | **Patchstack (via Recorded Future)** | "Received reports of multiple active exploitation incidents from hosting partners." No victim named. | [Recorded Future](../sources/recordedfuture-php2shell/index.html) |
 | 2026-10-21 20:15 UTC | **NCSC New Zealand** | "The NCSC is aware of reports of active exploitation." Whose reports is not said. | [NCSC New Zealand](../sources/ncsc-nz-alert-php/index.html) |
 
-## No successful exploitation known (9)
+## No successful exploitation known (17)
 
 This kind of statement can show what a party with visibility has not seen. It cannot show that nothing happened outside its view.
 
@@ -58,13 +60,21 @@ This kind of statement can show what a party with visibility has not seen. It ca
 |---|---|---|---|
 | 2026-10-21 | **CISA** | "CISA has not observed exploitation of these vulnerabilities as of the time of publication." | [CISA](../sources/cisa-alert-php-20261021/index.html) |
 | 2026-10-21 | **The PHP Foundation** | The security team "did not identify any functional exploits at the time of release/public disclosure." | [PHP Foundation](../sources/php-foundation-blog-security-release/index.html) |
+| 2026-10-21 | **Australia's ACSC (via Information Age)** | In its critical alert, ASD's ACSC said it was "not aware of active exploitation related to these vulnerabilities". | [Information Age](../sources/ia-acs-article-2026-govt-sites-go-down-after-ai-finds-critical-php/index.html) |
+| 2026-10-21 | **Patchstack (via PCMag)** | "Shortly after PHP's update, our telemetry shows only probing attacks, with no hard evidence of breaches yet." Recorded Future reports the same company receiving reports of exploitation incidents from hosting partners that morning; the two accounts are not reconciled. | [PCMag](../sources/pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw/index.html) [Recorded Future](../sources/recordedfuture-php2shell/index.html) |
 | 2026-10-21 20:30 UTC | **Huntress** | "As of October 21 at 4:30pm ET, Huntress has not observed in-the-wild exploitation on partner systems." | [Huntress](../sources/huntress-php2shell-rapid-response/index.html) |
-| 2026-10-22 | **The PHP Foundation's executive director (to The Verge and WIRED)** | "To our knowledge, there has been no successful attempt at remote code execution." | source watch: `raw/us/tech-press/the-verge/php2shell-websites-down/` |
-| 2026-10-22 | **Germany's BSI, the Dutch NCSC, Japan's Chief Cabinet Secretary (via The Next Web, Politico)** | Germany has seen attacks but no successful use; the Netherlands has no indication of active misuse; Japan says no attacks exploiting the flaws have been confirmed. | source watch: `raw/nl/tech-press/the-next-web/php2shell-no-confirmed-breaches/` |
+| 2026-10-22 | **The PHP Foundation's executive director (to The Verge and WIRED)** | "To our knowledge, there has been no successful attempt at remote code execution." | [The Verge](../sources/the-verge-php2shell-websites-down/index.html) source watch: `raw/us/tech-press/the-verge/php2shell-websites-down/` |
+| 2026-10-22 | **Germany's BSI, the Dutch NCSC, Japan's Chief Cabinet Secretary (via The Next Web, Politico)** | Germany has seen attacks but no successful use; the Netherlands has no indication of active misuse; Japan says no attacks exploiting the flaws have been confirmed. | [The Next Web](../sources/the-next-web-php2shell-no-confirmed-breaches/index.html) source watch: `raw/nl/tech-press/the-next-web/php2shell-no-confirmed-breaches/` |
 | 2026-10-22 | **Switzerland's BACS** | Knows of no attacks in Switzerland attributable to the flaws (via SRF, read in German). | source watch: `translations/ch/news/srf/news-schweiz-cyber-schwachstelle-bei-php-erste-schadensbilan.json` |
-| 2026-10-22 | **Belgium's CCB** | Has recorded no attacks on Belgian websites (via RTVE, read in Spanish; and Clickx, in French). | source watch: `translations/es/news/rtve/noticias-20261022-fallos-criticos-php2shell-vulnerabilidades.json` |
-| 2026-10-22 | **Austria's Interior Ministry** | No concrete reports of successful attacks so far (via Salzburg24, read in German). | source watch: `translations/at/news/salzburg24/news-oesterreich-massive-sache-folgen-der-php-sicherheitslue.json` |
-| 2026-10-22 | **Cloudflare (to USA Today)** | Its observations "describe attack attempts; they do not, by themselves, establish successful compromises." | source watch: `raw/us/news/usa-today/php2shell-live/` |
+| 2026-10-22 | **Belgium's CCB** | Has recorded no attacks on Belgian websites (via RTVE, read in Spanish; and Clickx, in French). | [RTVE.es](../sources/rtve-noticias-20261022-fallos-criticos-php2shell-vulnerabili/index.html) source watch: `translations/es/news/rtve/noticias-20261022-fallos-criticos-php2shell-vulnerabilidades.json` |
+| 2026-10-22 | **Austria's Interior Ministry** | No concrete reports of successful attacks so far (via Salzburg24, read in German). | [salzburg24](../sources/salzburg24-news-oesterreich-massive-sache-folgen-der-php-sic/index.html) source watch: `translations/at/news/salzburg24/news-oesterreich-massive-sache-folgen-der-php-sicherheitslue.json` |
+| 2026-10-22 | **Cloudflare (to USA Today)** | Its observations "describe attack attempts; they do not, by themselves, establish successful compromises." | [USA Today](../sources/usa-today-php2shell-live/index.html) source watch: `raw/us/news/usa-today/php2shell-live/` |
+| 2026-10-22 | **Crypto exchanges and payment providers (via BTC-ECHO)** | No evidence so far that large crypto trading platforms or payment providers were compromised through php2shell. | [BTC-ECHO](../sources/btc-echo-news-krypto-boersen-akut-bedroht-kritisc/index.html) |
+| 2026-10-22 | **Turkey's Presidency Cybersecurity Directorate (via Haber and three other Turkish outlets)** | Said the e-Devlet Kapisi government portal, with more than 69 million users, had no security problem from PHP2Shell and that services continued uninterrupted. | [Haber.com](../sources/haber-teknoloji-siber-guvenlik-baskanligi-ndan/index.html) [Haber 7](../sources/haber7-teknoloji-haber-3670492-php-guvenlik-aci/index.html) [DonanımHaber](../sources/donanimhaber-php-acigindan-etkilenen-ulkeler-ve-sitel/index.html) [İndigo Dergisi](../sources/indigodergisi-2026-10-php-guvenlik-acigi-php2shell/index.html) |
+| 2026-10-22 21:21 UTC | **Sophos (via Cyber Security News)** | In a correction issued at 21:21 UTC on 22 October, Sophos said its customer data showed scanning and a small number of failed exploit attempts, and no evidence of a successful compromise; an earlier success claim was withdrawn. | [Cyber Security News](../sources/cybersecuritynews-critical-php2shell-exploit-code/index.html) |
+| 2026-10-23 | **Luxembourg (via Paperjam)** | No Luxembourg financial institution, public service or operator had announced it had actually been infiltrated through php2shell; the state announced no confirmed compromise, and the authorities asked operators to search back for traces of compromise and to keep the evidence. | [Paperjam](../sources/paperjam-article-php2shell-des-milliers-de-sites/index.html) |
+| 2026-10-23 | **US banks and credit unions (via American Banker)** | "Attackers have fired millions of attempts at the PHP2Shell flaws, but no U.S. bank or credit union has publicly reported a compromise." | [American Banker](../sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html) |
+| 2026-10-23 10:03 UTC | **Austria (via Die Presse)** | As of 12:03 Vienna time (10:03 UTC) on 23 October 2026 no successful attacks via PHP2Shell were known in Austria. | [Die Presse](../sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/index.html) |
 
 ## Named organisations (7)
 
@@ -72,12 +82,12 @@ This kind of statement can show what the organisation itself said. It cannot sho
 
 | When | Who | What they said | Reading | Where it is held |
 |---|---|---|---|---|
-| 2026-10-21 | **DMM (Japan)** | Halted services to respond to "a vulnerability in external software"; no data leaked; would not say whether it was PHP. | Precaution; cause not stated | source watch: `raw/jp/news/sankei/dmm-service-halt/20261022T191536Z/` |
-| 2026-10-22 | **GMO Internet Group (Japan)** | Malicious programs were found on 20 October on servers of its FX trading VPS service; 26,739 servers possibly affected; account logins may have been taken; fraudulent operations reported. The cause is not stated. | A confirmed break-in, cause not stated | source watch: `raw/jp/news/yahoo-news-jp/gmo-fx-login-leak/20261022T191523Z/` |
-| 2026-10-22 | **Czech Technical University (ČVUT)** | Facing "a cyber attack on its IT infrastructure… part of worldwide attempts to hit PHP sites"; "the active attack was stopped"; some systems taken offline. | An attack reported and stopped; success not stated | source watch: `raw/cz/tech-press/lupa/cvut-cyber-attack/20261022T191510Z/` |
-| 2026-10-22 | **Valtec (Japan)** | First blamed a "cyberattack targeting the PHP vulnerability", then corrected: the attackers used a flaw in its own service. | Attribution to php2shell retracted | source watch: `raw/jp/tech-press/impress-watch/valtec-php-attack/20261022T191433Z/` |
+| 2026-10-21 | **DMM (Japan)** | Halted services to respond to "a vulnerability in external software"; no data leaked; would not say whether it was PHP. | Precaution; cause not stated | [産経ニュース](../sources/sankei-dmm-service-halt/index.html) source watch: `raw/jp/news/sankei/dmm-service-halt/20261022T191536Z/` |
+| 2026-10-22 | **GMO Internet Group (Japan)** | Malicious programs were found on 20 October on servers of its FX trading VPS service; 26,739 servers possibly affected; account logins may have been taken; fraudulent operations reported. The cause is not stated. | A confirmed break-in, cause not stated | [Yahoo! News Japan](../sources/yahoo-jp-gmo-fx-login-leak/index.html) source watch: `raw/jp/news/yahoo-news-jp/gmo-fx-login-leak/20261022T191523Z/` |
+| 2026-10-22 | **Czech Technical University (ČVUT)** | Facing "a cyber attack on its IT infrastructure… part of worldwide attempts to hit PHP sites"; "the active attack was stopped"; some systems taken offline. | An attack reported and stopped; success not stated | [Lupa.cz](../sources/lupa-cvut-cyber-attack/index.html) source watch: `raw/cz/tech-press/lupa/cvut-cyber-attack/20261022T191510Z/` |
+| 2026-10-22 | **Valtec (Japan)** | First blamed a "cyberattack targeting the PHP vulnerability", then corrected: the attackers used a flaw in its own service. | Attribution to php2shell retracted | [INTERNET Watch](../sources/impress-watch-valtec/index.html) source watch: `raw/jp/tech-press/impress-watch/valtec-php-attack/20261022T191433Z/` |
 | 2026-10-22 | **Germany's Interior Ministry (to Bild)** | Its site "was not hacked", only taken down "for a repair". | Precaution, stated not compromised | source watch: `translations/de/news/bild/leben-wissen-digital-php-sicherheitsluecken-behoerden-nehmen.json` |
-| 2026-10-22 | **Anexia (Austria)** | Confirmed attack attempts on websites it operates; bank data not affected (via ORF). | Attempts, stated not compromised | source watch: `translations/at/news/orf/stories-3445806.json` |
+| 2026-10-22 | **Anexia (Austria)** | Confirmed attack attempts on websites it operates; bank data not affected (via ORF). | Attempts, stated not compromised | [ORF](../sources/orf-stories-3445806/index.html) source watch: `translations/at/news/orf/stories-3445806.json` |
 | 2026-10-22 | **Ahold Delhaize** | No reason to believe its recent cyberattack is linked to the PHP flaws (via Accountant.nl). | A separate incident, link denied | source watch: `translations/nl/news/accountant/nieuws-2026-10-europese-cybersecuritydienst-waarschuwt-voor.json` |
 
 ## Unnamed allegations (1)
@@ -86,7 +96,7 @@ This kind of statement can show that a claim was made. It cannot show who, or th
 
 | When | Who | What they said | Where it is held |
 |---|---|---|---|
-| 2026-10-21 | **An anonymous startup owner (via Fortune)** | Alleges hackers stole source code, exposed cookie data and leaked legal documents. Unnamed; not attributed to php2shell; not verified. | source watch: `raw/us/news/fortune/ai-tools-php-vulnerability/` |
+| 2026-10-21 | **An anonymous startup owner (via Fortune)** | Alleges hackers stole source code, exposed cookie data and leaked legal documents. Unnamed; not attributed to php2shell; not verified. | [Fortune](../sources/fortune-ai-tools-php-vulnerability/index.html) source watch: `raw/us/news/fortune/ai-tools-php-vulnerability/` |
 
 ## Official exploited signals (3)
 
@@ -96,7 +106,7 @@ This kind of statement can show what the official lists record. It cannot show a
 |---|---|---|---|
 | 2026-10-21 14:34 UTC | **CISA's assessment on the CVE records (SSVC)** | Exploitation: none. Automatable: no. Technical impact: total. | [CVE record](../sources/cve-cve-2026-109618/index.html) [CVE record](../sources/cve-cve-2026-109619/index.html) |
 | 2026-10-22 17:51 UTC | **EPSS (FIRST)** | 0.053 and 0.058: the modelled probability of exploitation activity in the next 30 days. | source watch: `series/epss/` |
-| 2026-10-22 18:16 UTC | **CISA Known Exploited Vulnerabilities catalog** | Version 2026.10.21, 1,754 entries; neither CVE listed. | [CISA](../sources/cisa-kev-json/index.html) source watch: `series/kev-listed/` |
+| 2026-10-23 08:03 UTC | **CISA Known Exploited Vulnerabilities catalog** | Version 2026.10.21, 1,754 entries; neither CVE listed. The source watch re-read it at 08:03 UTC on 23 October, unchanged since its capture at 18:16 UTC on 22 October. | [CISA](../sources/cisa-kev-json/index.html) source watch: `series/kev-listed/` |
 
 ## What would change the statement
 - A named organisation saying it was compromised through php2shell, in its own notice, filing or statement.
@@ -113,8 +123,8 @@ Where sources disagree, the disagreement is a record of its own in the source wa
 
 ## How this page is made
 
-Every row is in [data/compromise.json](../data/compromise.json). Rows with sources cite captures in the evidence vault, which the build checks. Rows marked *source watch* cite a dated snapshot folder in the source-watch vault ([oq9gflln](../vaults/source-watch/index.html)), read with its published key; they move into the evidence vault as the evidence curator promotes them. Statements read in another language carry the reader’s English translation beside the verbatim original in the watch’s `translations/` files. The charts are drawn from the same rows when the site is built.
+Every row is in [data/compromise.json](../data/compromise.json). Rows with sources cite captures in the evidence vault, which the build checks. Rows marked *source watch* cite a dated snapshot folder in the source-watch vault ([7r83qic5](../vaults/source-watch/index.html)); they move into the evidence vault as the evidence curator promotes them. Statements read in another language carry the reader’s English translation beside the verbatim original in the watch’s `translations/` files. The charts are drawn from the same rows when the site is built.
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/compromise/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/compromise/index.html

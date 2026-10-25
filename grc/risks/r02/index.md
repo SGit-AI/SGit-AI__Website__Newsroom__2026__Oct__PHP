@@ -10,6 +10,8 @@ Because the secret was held by four finders, a coalition, critical-infrastructur
 
 Because the secret was held by four finders, a coalition, critical-infrastructure providers and image builders at once, it leaked a day early, resulting in a release moved forward by 24 hours and defenders starting the race with attackers already told where to look.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r02) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 5 Happening · **Impact** 4 Major · **Kind** Disclosure process · **Acceptance** not recorded
 
 **Basis.** It happened: the release moved from 22 to 21 October because of the leak.
@@ -46,7 +48,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
 | [The release moved forward from 22 October 14:00 UTC to 21 October 14:00 UTC because of the leak](../../../facts/release-moved/index.html) | confirmed | **A4** Corroborated●●●●○○ | [PHP Foundation](../../../sources/php-foundation-blog-security-release/index.html) [oss-security](../../../sources/openwall-oss-security-2026-10-20-34/index.html) [Wiz on X](../../../sources/x-wiz-io-php2shell/index.html) [php.net](../../../sources/php-net-changelog-8/index.html) |
-| [On 20 October at about 15:00 UTC the two CVE IDs began circulating on forums and social media with a wrong release time and a wrong CVSS score; no technical details leaked](../../../facts/leak-cve-ids/index.html) | reported | **A2** Reported●●○○○○ | [PHP Foundation](../../../sources/php-foundation-blog-security-release/index.html) [PHP Foundation](../../../sources/phpfoundation-blog-security-release-leak/index.html) |
+| [On 20 October at about 15:00 UTC the two CVE IDs began circulating on forums and social media with a wrong release time and a wrong CVSS score; no technical details leaked](../../../facts/leak-cve-ids/index.html) | reported | **A4** Corroborated●●●●○○ | [PHP Foundation](../../../sources/php-foundation-blog-security-release/index.html) [PHP Foundation](../../../sources/phpfoundation-blog-security-release-leak/index.html) |
 | [Calif mistakenly published a video around 20:00 UTC on 20 October showing its proof of concept against a number of targets; copies circulated and 'contributed to accelerated development of various PoCs'](../../../facts/leak-video/index.html) | reported | **A3** Echoed●●●○○○ | [PHP Foundation](../../../sources/php-foundation-blog-security-release/index.html) [PHP Foundation](../../../sources/phpfoundation-blog-security-release-leak/index.html) [BBC News](../../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Calif](../../../sources/calif-php2shell/index.html) |
 | [Chainguard unilaterally broke the embargo on 21 October at 07:41 UTC by publishing built images containing the fix](../../../facts/chainguard/index.html) | disputed | **A2** Reported●●○○○○ | [PHP Foundation](../../../sources/php-foundation-blog-security-release/index.html) [The Register](../../../sources/theregister-php-blames-chainguard/index.html) [Feross Aboukhadijeh on X on X](../../../sources/x-feross-chainguard/index.html) |
 | [Mitigation advice given to a few critical-infrastructure providers from about 23:00 UTC on 20 October may have leaked](../../../facts/leak-mitigations/index.html) | reported | **A2** Reported●●○○○○ | [PHP Foundation](../../../sources/php-foundation-blog-security-release/index.html) |
@@ -74,4 +76,4 @@ On this site: [How the coordinated disclosure broke](../../../leak/index.html) �
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02/index.html

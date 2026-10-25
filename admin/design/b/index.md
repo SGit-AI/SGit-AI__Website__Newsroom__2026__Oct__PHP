@@ -2,7 +2,7 @@
 
 A three-column working view for a security lead: their reading path and the site by task on the left, what changed since the last visit and the next three actions in the middle, and the state of the evidence as charts on the right.
 
-> Mockup B for review, built from the data of release v0.10.7. Not the live site.
+> Mockup B for review, built from the data of release v0.21.5. Not the live site.
 
 S 
  Sam 
@@ -13,7 +13,7 @@ Your reading path
 2 of 5 read · next: Exploitation signals 
  Today 9 new What to do The incident Detection and defence The agencies 16 Every claim 70 Ask 
 
-Since your last visit · 23 October 2026, 01:20 UTC 
+Since your last visit · 25 October 2026, 09:35 UTC 
 
 ## 9 things are new, 3 changed. Two matter for your runbook.
 
@@ -44,48 +44,49 @@ Alert on a PHP worker spawning a shell or a downloader. A clean access log prove
 
  All Facts Timeline Questions Stories 
 
- New front v0.8.2 
-#### Front page: at a glance
+ New story v0.21.0 
+#### What Wikipedia knows about being right: the principles, workflows and review habits this newsroom's agents should adopt
 
 ✓ 
 
- New story v0.10.3 
-#### What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list
-
-✓ 
-
- New front v0.10.3 
+ New front v0.21.0 
 #### Stories: written here
 
 ✓ 
 
- New event v0.4.1 
-#### NCSC-NL merges pull request 10; the inventory has 674 entries at commit cca173c64ec5.
+ New question v0.19.2 
+#### Has anyone actually been hacked?
 
 ✓ 
 
- Changed event v0.4.1 
-#### The evidence vault behind this site is opened; the first capture of the BBC live page is at 08:04:53Z.
+ New front v0.19.2 
+#### Front page: right now
 
 ✓ 
 
- Changed event v0.4.1 
-#### The UK NCSC page is modified (HTTP last-modified).
+ Changed front v0.19.2 
+#### Front page: at a glance
 
 ✓ 
 
- Changed event v0.4.1 
-#### Ryan Austin on BBC Radio 4: no evidence of exploitation yet.
+ Changed front v0.19.2 
+#### Front page: the core facts
 
 ✓ 
 
- Changed event v0.4.1 
-#### The BBC reports the NSA's X post.
+ Changed fact reported v0.19.2 
+#### As of 09:35 UTC on 25 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploita
+
+ CISA CISA Huntress Amazon 
+✓ 
+
+ Changed front v0.17.0 
+#### Front page: what nobody knows yet
 
 ✓ 
 
- Changed event v0.4.1 
-#### Greenbone on oss-security: the backports imply versions down to 7.4 are affected, whatever the subject line says.
+ Changed front v0.17.0 
+#### Front page: latest
 
 ✓ 
 
@@ -93,8 +94,8 @@ Marked read, an item fades and then leaves this list; it comes back only if what
 
 #### How sure are we?
 
-- 21 confirmed 
-- 34 reported 
+- 19 confirmed 
+- 36 reported 
 - 8 disputed 
 - 3 contradicted 
 - 4 unverified 
@@ -122,4 +123,4 @@ Amazon: Proof-of-concept attempts begin, then six hours of attempts from anonymi
 8.1 and older: source backports only.
 
 ---
-site v0.10.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html
+site v0.21.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/b/index.html

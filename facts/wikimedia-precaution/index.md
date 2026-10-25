@@ -34,8 +34,8 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:30 UTC. The scale is on
 ## This fact over time
 - 2026-10-21CNN publishes [Websites shut down globally after AI finds a critical flaw affecting 70% of the internet | CNN Business](../../sources/cnn-php2shell-websites-shut/index.html)
 - 2026-10-21The Cyber Express publishes [PHP2Shell CVE-2026-109618 PHP Flaw Hits Gov Sites](../../sources/cyberexpress-php2shell-gov-sites/index.html)
-- 2026-10-22 11:26 UTCSaved into the evidence vault: CNN
-- 2026-10-22 11:26 UTCSaved into the evidence vault: The Cyber Express
+- 2026-10-22 11:26 UTCSaved into the evidence vault: CNN, then 1 more capture
+- 2026-10-22 11:26 UTCSaved into the evidence vault: The Cyber Express, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.2.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -60,4 +60,4 @@ Sources: cnn-php2shell-websites-shut, cyberexpress-php2shell-gov-sites
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/wikimedia-precaution/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/wikimedia-precaution/index.html

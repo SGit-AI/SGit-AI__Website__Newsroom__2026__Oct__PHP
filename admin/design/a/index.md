@@ -2,19 +2,19 @@
 
 The front page for a board member who wants only what their role needs: the situation, five numbers, three questions for the team, what is new, and one picture each of how it unfolded and what governments advise.
 
-> Mockup A for review, built from the data of release v0.10.7. Not the live site.
+> Mockup A for review, built from the data of release v0.21.5. Not the live site.
 
-Developing  ·  last checked 23 October 2026, 01:20 UTC 
+Developing  ·  last checked 25 October 2026, 09:35 UTC 
 
 ## Two serious security flaws in PHP, the software behind many of the world's websites
 
-PHP is the software that WordPress and millions of other websites run on. A fix came out on 21 October 2026. Government cyber agencies have told organisations to install it now, or to take websites offline if they cannot. Phones and personal computers are not affected. 
+PHP is the software that WordPress and millions of other websites run on. A fix came out on 21 October 2026. Government cyber agencies have told organisations to install it now; the two US agencies add: take websites offline if you cannot. Phones and personal computers are not affected. 
 
  J 
  Your answer in thirty seconds 
 for Jordan, board member or executive 
 
-A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of the evening of 22 October, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast. 
+A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of 16:05 UTC on 24 October, the latest capture in the evidence vault, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast. 
 
 A fix 
 Available 
@@ -29,7 +29,7 @@ None
 no named organisation, as of the latest capture 
 
 Taken offline 
-10 organisations 
+17 organisations 
 as a precaution, across 6 countries 
 
 Agencies compared 
@@ -59,12 +59,12 @@ Every agency puts offline last, but you need to be able to do it in minutes. Nam
 
 ### Since you last looked
  3 new 
-- New 22 Oct, 06:55 UTC 
-The BBC reports the US NSA's advice: take systems offline if they cannot be updated. 
-- New 22 Oct, 07:00 UTC 
-One of the researchers who found the flaws tells BBC Radio 4 there is no evidence yet of them being used in attacks. 
-- New 22 Oct, 08:40 UTC 
-The Dutch national cyber agency's list of affected software reaches 674 products. 
+- New 23 Oct, 07:58 UTC 
+IT Social: the update closes the flaw, but obliges a hunt for possible compromises; the published figures count attempts, not intrusions. 
+- New 23 Oct 
+American Banker: no US bank or credit union has publicly reported a compromise, despite millions of attempts. 
+- New 22 Oct, 21:21 UTC 
+Sophos withdraws an earlier claim of a successful compromise: its data shows scanning and a few failed attempts, and a botnet payload it saw was blocked. 
 Read items disappear from this list. Everything new → 
 
 #### Ask about it
@@ -102,7 +102,7 @@ All say install the fix. They split on what to do if you cannot.
 
  See every agency → 
 
- Focus view shows 26 of 621 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
+ Focus view shows 28 of 1054 pages for this reader. Switch to Standard for the story and the evidence, or Everything for the whole site. Every number here links to its saved source on the live site.
 
 ---
-site v0.10.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html
+site v0.21.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/a/index.html

@@ -10,6 +10,8 @@ Because PHP is embedded in products whose suppliers must each ship their own fix
 
 Because PHP is embedded in products whose suppliers must each ship their own fix, and most of the 674 products in the NCSC-NL inventory were vulnerable or under investigation, customers of those products cannot patch on their own, resulting in exposure that lasts as long as the slowest supplier.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r01-6) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **16** high · **Likelihood** 4 Likely · **Impact** 4 Major · **Kind** Supply chain · **Acceptance** not recorded
 
 **Basis.** Counted from the inventory: 206 vulnerable and 418 under investigation against 46 fixed at the vault's capture.
@@ -66,4 +68,4 @@ On this site: [The NCSC-NL inventory: 674 products](../../../affected/software.h
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-6/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-6/index.html

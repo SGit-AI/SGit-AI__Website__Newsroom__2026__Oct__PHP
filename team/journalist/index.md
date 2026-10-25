@@ -17,6 +17,7 @@ What is settled, where the alarm and the evidence part company, and what would c
 ## What they own
 - admin/content/articles/*__journalist__*.md
 - the review of the front page and navigation
+- the site's refresh after every evidence export (the editor, 24 October 2026): the hand-kept data files on /views/desk/, the claims review and the state of affairs
 
 ## The rules they work by
 - An article names the site version, vault commit and capture time it was written against, and is not revised afterwards.
@@ -37,6 +38,9 @@ Storiesarticles/index.html
 | 063 | Carry every stat as its series: each number on the site drawn as a line whose points link to their captures, starting with sites offline, products fixed, attempts and unpatched hostsFrom the brief on scheduled capture, JSON and analysis (22 October, critical). | open |  |
 | 093 | A story on the reporting clocks php2shell can start (GDPR 72 hours, NIS2 24 hours, the Cyber Resilience Act's 24-hour report since 11 September 2026, DORA): R06 and the risks beneath it have no story yet (/grc/)From the brief: a GRC desk joins the team (22 October). | open |  |
 | 154 | Write the next version of the state of affairs when the evidence moves: a KEV listing, a named victim, GMO's cause, or the inventory's investigation pile resolving | open |  |
+| 225 | The piece on where the web went dark and why, once 221 and 222 are in, not beforeFrom the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go). | open |  |
+| 229 | Where php2shell stands, day two: the successor to the day-one piece, against the three counts, once board 039 landsFrom the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go). | open |  |
+| 302 | Right now: CVE-2026-115560 is a line of its own, not a clause in 'What nobody knows yet': a third PHP flaw, affecting fully patched releases, fixed in the next regular release; it needs a rare session setting, has no severity score and no reported exploitation; the mitigation is session.upload_progress.enabled=0. Keep it separate from php2shell's two CVEs, and keep the unknown about whether it is the Fediverse report's bugFrom the news desk chief's morning wake, 25 October. | open |  |
 
 ## What they have done
 - The first house stories, and the review of the front page and navigation.
@@ -55,6 +59,7 @@ Storiesarticles/index.html
 | 146 | The updates: /updates/, /feeds/updates.xml, the guide (admin/content/updates/README.md), the digest tool (admin/build/updates_digest.py) and the first daily update, for the conductor's beat; carries board 075's page | done |  |
 | 150 | Act on the fact-check's corrections to the journalist's and the historian's stories: done for 'Where php2shell stands' and 'php2shell in perspective'; the agencies and claims data they inherited are board 088 | done |  |
 | 151 | Views: the journalist's state of affairs as a versioned page (/views/state/), its own version numbers, a page per version, a delta page per pair (measures and text), data in data/state.json; v0 (22 Oct, reconstructed) and v1 (23 Oct 14:11 UTC); the story 'What changed in a day' | done |  |
+| 276 | Front page, Right now: the stamp says 'as of 24 October 2026, 08:37 UTC' but the five lines are unchanged since v0.12.1 and still say 'as of 23 October'; the day's news (Sophos withdrew the only vendor claim of a compromise; banks and crypto platforms report none) is in the state of affairs v3 and not on the front pageFrom the news desk chief's afternoon wake, 24 October. Done by the correspondent the same afternoon: the third line of Right now is as of the morning of 24 October and carries the Sophos withdrawal and the banks and crypto platforms; the line had been missed because it began with a capital 'As of'. | done |  |
 
 ## How to reach them
 - **Mail**: an `.eml` in `mail/mailroom/journalist/` in the mail vault (`fmb2tpl2`).
@@ -65,4 +70,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html

@@ -5,9 +5,9 @@
   "label": "Evidence-11",
   "title": "PHPocalypse Tracker, 20:53 UTC: the Dutch data protection authority back at 19:25 UTC; one site still dark (French prefecture websites)",
   "description": "Was 2 still dark at 18:27 UTC. Of 50 rows, 49 now have a back-up time.",
-  "status": "proposed",
+  "status": "rejected",
   "created_at": 1792702578322,
-  "updated_at": 1792702578733,
+  "updated_at": 1792828703559,
   "created_by": "02a7f5f1",
   "tags": [],
   "links": [
@@ -33,6 +33,15 @@
     "claims": [
       "affected-sites"
     ],
-    "severity": "low"
+    "severity": "low",
+    "comments": [
+      {
+        "id": "d441ea4a",
+        "author": "cli-user",
+        "text": "Run-4: superseded: the tracker now has 51 rows and none dark (Evidence-18); the 22 October capture holds the 2-dark state.",
+        "created_at": 1792828703559,
+        "updated_at": 1792828703559
+      }
+    ]
   }
 }

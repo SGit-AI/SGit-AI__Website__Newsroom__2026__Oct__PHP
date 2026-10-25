@@ -31,7 +31,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:31 UTC. The scale is on
 ## This fact over time
 - 2025-04-10Quarkslab publishes [Security audit of PHP-SRC - Quarkslab's blog](../../sources/quarkslab-blog-php-src-audit/index.html)
 - 2026-10-22 11:30 UTCSaved into the evidence vault: Quarkslab
-- 2026-10-22 11:31 UTCSaved into the evidence vault: David Lopez-Kurtz
+- 2026-10-22 11:31 UTCSaved into the evidence vault: David Lopez-Kurtz, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.2.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -56,4 +56,4 @@ Sources: quarkslab-blog-php-src-audit, substack-lopezkurtz-patch-is-the-exploit
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/quarkslab-redacted/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/quarkslab-redacted/index.html

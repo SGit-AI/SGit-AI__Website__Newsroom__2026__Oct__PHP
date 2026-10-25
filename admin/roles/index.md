@@ -6,7 +6,7 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 # Roles and responsibilities
 
-16 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
+19 roles, each a row in `data/admin.json`: who fills it today, what it owns, and the rules it enforces. Several agents and one editor work on this site and on the evidence vault at once; the rule that keeps that from colliding is one file per agent per concern, in the vault and in the repository. A new agent reads this page, picks or is given a role, and begins; the pipeline it joins is on [the team page](../../team/index.html).
 
 ### Editor Dinis Cruz
 
@@ -36,6 +36,8 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 - Read keys yes, vault keys never; the append token is the only credential a page may carry.
 
 **Public key on pki.sgit.ai.** record `sha256:8025e2a4470e73f0`, encryption `sha256:c2d463f96c597c01`, made 2026-10-22T14:44:39Z. [Open the key link](https://pki.sgit.ai/send/#k1.MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAmAl6IjgGY_4KGefEgncTD5LQLRnffcW61Ou6VPzMot2uo3dmyJuBpXyRaLeB02e_yOzAKAIZ7DH7Kv-f7oqgbITjVbC3RCn6r-EU--lBWARK1GRb5LJ6zttaZTcjKYNu4awVwugK6sIur_ggmeiAs_u3EfaCS8s2A77YXryW1d3WIciUuFfUYYnNW8St004MpZQlJZ4mZ9jCsfmmP4n6xXdle4SNsd5-ESfncQEMKwZbJAliq6f6pG-q_OjLglqMN7cNK4RLUnwV1H5RtLRxrvPEQrGriLI0D8A7sFdgPqN2O4qkBG3kPS04VXkuGqdHs_Ic62sgbEB-il8HP7ZsoTzq8-mpiKP4cLORzm81H3OnpJLe6bVskACn_P5myOlyp-jZ82paW9UfLpQo6BHXj1jnFhqfvrPIlI28KTvTHhuD4TWUndnrhC7ibbIe5qeV7rp3mWe62fTROVVdqDlQL-gURQM-GVErXYHk4azMoAvdowT90ufifYFEj9Tq1WvkWaOY_PwKD9TySOrWRT5DuN1fxLg-z8o9tWWbPQwRqu-fFH4cWLp86vnzpyT99qmhab45HHnt5UPqIc8rsIOTKxKFO7Crc8Q0jIcIeqfAKr3DnB1YR7tyrDln5uredHwzqv9rrl8dtmDV2_BFOeRICbm8d_eoEotSrd7rvPQmbQUCAwEAAQ.MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYTgQkNAJ_bdAeHPqR_HWmSl6TzXT_0fCM_7HFJECg_JRE3ewWKNdWYVnXxFDMeaZ1OceQ8LwYQa1vD0JoWfY2g.ZGV2QHBocC5uZXdzcm9vbQ) (pki.sgit.ai recomputes the fingerprint in your browser). A session key: it dies with this session. Compare the fingerprint with the one the agent gave you in the session itself; this page is a second channel, not the authority.
+
+ ![QR code of dev@php.newsroom's public key](../../assets/keys/dev-php-newsroom.svg)
 
 ### Primary-source collector an agent
 
@@ -75,10 +77,18 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 **Owns.** one page per audience from the same claims
 - A briefing adds no claim.
 
-### Cartographer unfilled
+### Cartographer paused: archived on 24 October 2026; the graph is the ontologist's
 
 **Owns.** the graph: nodes, typed edges, the per-source and per-party pages, the next layer down
 - A node is just a node; an edge without a source is deleted.
+
+### Ontologist ontologist@php.newsroom
+
+**Owns.** fractal semantic graphs: the ontologies and taxonomies, one node per party, the story graph, the bridges to the site's other graphs, and the graph component
+- Every edge is a verb with a different, named inverse; no generic association edge, no self-inverse edge.
+- Assert only what the data shows: a cited source is evidence, not a relay.
+- Weight by independence, not by count.
+- Bridges between graphs, never a merge of their vocabularies.
 
 ### Journalist claude-journalist
 
@@ -94,14 +104,14 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 ### synthetic@php.newsroom an agent
 
-**Owns.** the six synthetic readers (admin/synthetic/), their vaults, their hourly runs and their reviews; data/synthetic.json and the synthetic readers page
+**Owns.** the six synthetic readers (admin/synthetic/), their vaults, their runs (by hand, in a session; no schedule) and their reviews; data/synthetic.json and the synthetic readers page
 - A synthetic reader is a test instrument: its review is a prompt for the editor, never evidence about the story and never readership.
 - Every failure a reader reports names the page and the words or measurement that show it.
 - A synthetic reader sends no telemetry; the lane is answered locally during a run.
 
 ### researcher@php.newsroom an agent, joined on 22 October 2026
 
-**Owns.** the source watch (vault oq9gflln): which outside pages are watched, how often, what access we have to each; the taxonomy (country, sector, publisher, page); discovery across 52 language editions; the tips the editor relays from other channels; the Researcher, vendor and press collector's beat until that role is filled
+**Owns.** the source watch (vault 7r83qic5, pack mode): which outside pages are watched, how often, what access we have to each; the taxonomy (country, sector, publisher, page); discovery across 52 language editions; the tips the editor relays from other channels; the Researcher, vendor and press collector's beat until that role is filled
 - Watch, don't remember: a page is evidence of what it said at the time of a dated snapshot, and a change is a diff between two snapshots, never a recollection.
 - A page we cannot read stays on the list with the reason (paywalled, bot-challenge, login-wall, down, gone): the gap is counted and published.
 - A tip is unverified until the page it points at is captured; private people in a tip are not named and their numbers never written down.
@@ -115,6 +125,23 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 - Severity in perspective, both ways: name what makes it worse than the headline and what makes it less bad, each with its source.
 - Never run a public exploit or a stranger's fix script; watch them, hash them, describe them.
 
+### desk@php.newsroom an agent, joined on 22 October 2026 at the editor's request
+
+**Owns.** the narrative: the line of the story and what it is not, the agenda (which questions the newsroom answers next and why), a strong opinion on the front page and each section's lead, answers to the editor's questions from the evidence, and the work those answers need, proposed as briefs and board rows
+- Proposes, never instructs: tasks reach other agents as a brief and board rows with the editor's go, delivered by the conductor.
+- A hypothesis is labelled as one until the data tests it, the editor's included; say what would prove it wrong.
+- No count without its unit and its basis: what was counted, by whom, as of when.
+- Name the bias in what we collect before drawing a pattern from it, and read the fact-check desk's grade before leading with anything.
+
+### liaison@php.newsroom an agent, joined on 22 October 2026
+
+**Owns.** the corrections this site asks other publishers to make: admin/liaison/, data/outreach.json and /outreach/; the drafts the mail agent will send once the editor and security allow it; where other publishers quote this site
+- A request starts from a fact-check record and quotes the publisher only from a capture, with its hash.
+- Clean hands: if this site carries the same error, fix ours first.
+- Origin before echo: ask whoever started it, then tell those who repeated it what the origin said.
+- Published here before it is sent; the publisher's own corrections route, one follow-up at most, every answer recorded.
+- Gentle and factual: 'the evidence we hold shows', a wording they can use, no adjectives about them.
+
 ## How to join
 
 - Clone the evidence vault with its read key to look, or ask the editor for the vault key to write. Read its `README.md`: the protocol is there.
@@ -127,4 +154,4 @@ The roles on this site and its vault, who fills each, what it owns and the rules
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.html

@@ -163,6 +163,61 @@ for p in pages:
 if 'Sitemap:' not in (open(os.path.join(ROOT, 'robots.txt')).read() if os.path.exists(os.path.join(ROOT, 'robots.txt')) else ''): fails.append('robots.txt missing or has no Sitemap line')
 for f in ('feed.xml', 'assets/og-card.png', 'data/sections.json'):
     if not os.path.exists(os.path.join(ROOT, f)): fails.append(f'missing {f}')
+arcs = load('arcs') or {}
+claim_ids = {c['id'] for c in (load('claims') or [])}
+review_ids = {n['id'] for n in (load('review') or {}).get('nodes', [])}
+risk_ids = {r['id'] for r in arcs.get('risks', [])}
+persona_ids = {p['id'] for p in (load('personas') or {}).get('personas', [])}
+for r in arcs.get('risks', []):
+    for c in r.get('claims', []):
+        if c not in claim_ids: fails.append(f'data/arcs.json: risk {r["id"]} rests on unknown claim {c}')
+for a in arcs.get('arcs', []):
+    for r in a.get('risks', []):
+        if r not in risk_ids: fails.append(f'data/arcs.json: arc {a["id"]} carries unknown risk {r}')
+    for c in a.get('claims', []):
+        if c not in claim_ids: fails.append(f'data/arcs.json: arc {a["id"]} rests on unknown claim {c}')
+    if not os.path.exists(os.path.join(ROOT, a.get('page', ''))): fails.append(f'data/arcs.json: arc {a["id"]} points at missing page {a.get("page")}')
+for pid, rs in arcs.get('faces', {}).items():
+    if pid not in persona_ids: fails.append(f'data/arcs.json: unknown stakeholder {pid}')
+    for r in rs:
+        if r not in risk_ids: fails.append(f'data/arcs.json: {pid} faces unknown risk {r}')
+for key in ('claim_to_flaw', 'claim_to_fix'):
+    for c, ts in arcs.get(key, {}).items():
+        if c not in claim_ids: fails.append(f'data/arcs.json: {key} names unknown claim {c}')
+        for t in ts:
+            if t not in review_ids: fails.append(f'data/arcs.json: {key} {c} names unknown review node {t}')
+fr = load('fractal') or {}
+fr_ids = {n['id'] for n in fr.get('nodes', [])}
+for e in fr.get('edges', []):
+    if e['from'] not in fr_ids or e['to'] not in fr_ids: fails.append(f'data/fractal.json: edge {e["from"]} -> {e["to"]} has a missing end')
+# 4h. every member's policy (admin/content/agents/*/policy.json, librarian@php.newsroom): well formed, no two members
+# claim the same file or page (fails), every source file and page has an owner (warns: the librarian's daily pass maps
+# new files, so an agent's release is never blocked by a file its policy does not list yet)
+try:
+    sys.path.insert(0, os.path.join(ROOT, 'admin', 'build'))
+    import agents as _agt
+    _P = _agt.load_policies()
+    for _a, _p in _P.items():
+        for _k in ('schema', 'agent', 'address', 'kind', 'status', 'mandate', 'scope'):
+            if _k not in _p: fails.append(f'admin/content/agents/{_a}/policy.json: no {_k}')
+        if _p.get('agent') != _a: fails.append(f'admin/content/agents/{_a}/policy.json: agent is {_p.get("agent")!r}, folder is {_a!r}')
+        if _p.get('status') not in ('draft', 'agreed'): fails.append(f'admin/content/agents/{_a}/policy.json: status {_p.get("status")!r}')
+        if _p.get('status') == 'agreed' and not _p.get('agreed_by'): fails.append(f'admin/content/agents/{_a}/policy.json: agreed with no agreed_by')
+        _G = {r['capability'] for r in _agt.grant_rows()}
+        for _w in _p.get('mandate', {}).get('wanted', []):
+            if _p.get('grant') and _w['capability'] not in _G: fails.append(f'admin/content/agents/{_a}/policy.json: wants {_w["capability"]}, which is not in the grant')
+    for _o in _agt.overlaps(_P):
+        fails.append(f'admin/content/agents: {_o["a"]} and {_o["b"]} both claim {_o["kind"]} {_o["files"][0]} ({_o["pattern_a"]} / {_o["pattern_b"]})')
+    for _u in _agt.unowned(_P):
+        warns.append(f'{_u}: no member owns this file yet (admin/content/agents/*/policy.json scope.writes)')
+    for _x in _agt.dangling_appends(_P):
+        fails.append(f'admin/content/agents/{_x["agent"]}/policy.json: appends to {_x["target"]}, which no member writes')
+    _pages = [os.path.relpath(p_, ROOT) for p_ in pages]
+    for _pg in _pages:
+        if not any(_agt.match(_w, _pg) for _q in _P.values() for _w in _q['scope']['pages']):
+            warns.append(f'{_pg}: no member owns this page yet (scope.pages)')
+except Exception as _e:
+    fails.append(f'admin/build/agents.py: {_e}')
 # 5. determinism: rebuild into a temp copy and compare hashes
 def tree_hash():
     h = hashlib.sha256()

@@ -10,6 +10,8 @@ Because probing began before disclosure and the last PHP core flaw was exploited
 
 Because probing began before disclosure and the last PHP core flaw was exploited in the wild a day after its release, attackers may reach unpatched servers faster than operators can update them, resulting in compromises in the window between release and patch.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r03) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 4 Likely · **Impact** 5 Severe · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Probing confirmed; the 2024 precedent was exploited within a day; KEV has not listed php2shell.
@@ -48,7 +50,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 |---|---|---|---|
 | [Amazon and Cloudflare saw sites being probed for the flaw](../../../facts/probing/index.html) | confirmed | **A5** Confirmed●●●●●○ | [BBC News](../../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Cloudflare](../../../sources/cloudflare-blog-php2shell-waf/index.html) [Amazon](../../../sources/aws-security-blog-madpot/index.html) |
 | [An exploit attempt hit an Amazon honeypot on 17 October from an anonymisation network; proof-of-concept attempts began about 02:00 UTC on 21 October from multiple actors; after release 'PHP2Shell is now being broadly exploited in the wild'](../../../facts/amazon-honeypot/index.html) | reported | **A2** Reported●●○○○○ | [Amazon](../../../sources/aws-security-blog-madpot/index.html) [THN](../../../sources/thehackernews-php2shell-4days/index.html) |
-| [The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one day](../../../facts/kev-precedent/index.html) | confirmed | **A2** Reported●●○○○○ | [CISA](../../../sources/cisa-kev-json/index.html) [CVE record](../../../sources/cve-cve-2024-4577/index.html) [Akamai Security Research](../../../sources/akamai-blog-cve-2024-4577-one-day/index.html) |
+| [The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one day](../../../facts/kev-precedent/index.html) | reported | **A2** Reported●●○○○○ | [CISA](../../../sources/cisa-kev-json/index.html) [CVE record](../../../sources/cve-cve-2024-4577/index.html) [Akamai Security Research](../../../sources/akamai-blog-cve-2024-4577-one-day/index.html) |
 | [CISA has not observed exploitation; neither CVE is in the Known Exploited Vulnerabilities catalog](../../../facts/cisa-none/index.html) | confirmed | **A6** Established●●●●●● | [CISA](../../../sources/cisa-alert-php-20261021/index.html) [CISA](../../../sources/cisa-kev-json/index.html) [CVE record](../../../sources/cve-cve-2026-109618/index.html) |
 | [Cloudflare observed attack traffic targeting its customers after the leak, with attackers mutating payloads](../../../facts/cloudflare-traffic/index.html) | reported | **A2** Reported●●○○○○ | [Cloudflare](../../../sources/cloudflare-blog-php2shell-waf/index.html) |
 
@@ -80,4 +82,4 @@ On this site: [Exploitation signals, in order](../../../exploitation/index.html)
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03/index.html

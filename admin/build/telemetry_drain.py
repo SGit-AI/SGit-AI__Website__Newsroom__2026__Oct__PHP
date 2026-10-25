@@ -10,6 +10,9 @@ Copies reports/latest.json to --site/data/telemetry-report.json when --site is g
 """
 import argparse, base64, collections, datetime, json, os, subprocess, sys, tempfile, urllib.request
 
+
+PRIVATE_ONLY = ('by_region', 'by_city')   # kept in the private vault's reports, never copied to the public site
+
 def post(url, body, headers):
     req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={'Content-Type': 'application/json', **headers}, method='POST')
     with urllib.request.urlopen(req, timeout=60) as r:
@@ -90,7 +93,10 @@ def main():
            'note': 'Counts over events received in the lane. Every event is an untrusted claim: the token and the public key are published, so rows can be forged or flooded. Visitors with blockers do not appear. No row leaves the vault.'}
     json.dump(rep, open(os.path.join(V, 'reports', f'{today}.json'), 'w'), indent=1); json.dump(rep, open(os.path.join(V, 'reports', 'latest.json'), 'w'), indent=1)
     if a.site:
-        json.dump(rep, open(os.path.join(a.site, 'data', 'telemetry-report.json'), 'w'), indent=1); open(os.path.join(a.site, 'data', 'telemetry-report.json'), 'a').write('\n')
+        # The site's copy is public: the city and the region stay in the private vault's reports/ (the editor's), never
+        # here, where a town with a handful of visitors can name a person (admin/build/telemetry_publish.py's rule too).
+        public = {k: v for k, v in rep.items() if k not in PRIVATE_ONLY}
+        json.dump(public, open(os.path.join(a.site, 'data', 'telemetry-report.json'), 'w'), indent=1); open(os.path.join(a.site, 'data', 'telemetry-report.json'), 'a').write('\n')
     print(f'events total: {len(real)}; report written for {today}')
 
 if __name__ == '__main__':

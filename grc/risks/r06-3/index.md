@@ -10,6 +10,8 @@ Because the Act's reporting duty has applied since 11 September 2026, a manufact
 
 Because the Act's reporting duty has applied since 11 September 2026, a manufacturer whose product embeds PHP must report an actively exploited vulnerability within 24 hours, and whether php2shell is 'actively exploited' is exactly what the evidence cannot yet settle, resulting in manufacturers deciding alone when the clock starts.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r06-3) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 3 Possible · **Impact** 4 Major · **Kind** Compliance · **Acceptance** not recorded
 
 **Basis.** The legal test turns on exploitation, which is disputed; the inventory shows hundreds of products.
@@ -38,7 +40,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
 | [674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, 3 not vulnerable](../../../facts/scale-ncsc-nl/index.html) | confirmed | **A1** Weak signal●○○○○○ | [NCSC-NL](../../../sources/ncsc-nl-php2shell-software-list/index.html) |
-| [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../../../facts/watchtowr-itw/index.html) | unverified | **A4** Corroborated●●●●○○ | [watchTowr](../../../sources/watchtowr-php2shell/index.html) [watchTowr](../../../sources/watchtowr-php2shell-faq/index.html) |
+| [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../../../facts/watchtowr-itw/index.html) | unverified | **A6** Established●●●●●● | [watchTowr](../../../sources/watchtowr-php2shell/index.html) [watchTowr](../../../sources/watchtowr-php2shell-faq/index.html) |
 | [CISA has not observed exploitation; neither CVE is in the Known Exploited Vulnerabilities catalog](../../../facts/cisa-none/index.html) | confirmed | **A6** Established●●●●●● | [CISA](../../../sources/cisa-alert-php-20261021/index.html) [CISA](../../../sources/cisa-kev-json/index.html) [CVE record](../../../sources/cve-cve-2026-109618/index.html) |
 
 ## Treatments
@@ -63,4 +65,4 @@ On this site: [The NCSC-NL inventory: 674 products](../../../affected/software.h
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-3/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-3/index.html

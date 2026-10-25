@@ -35,7 +35,7 @@ Dated OCTOBER 21, 2026. Says the vulnerability 'was leaked before the official r
 | Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
 |---|---|---|---|---|---|
 | A web application firewall may provide some protection until systems are patchedSwiss BACS: 'Even a web application firewall alone is not sufficient.' Cloudflare says its rules blocked the traffic it saw and that attackers mutated payloads to get past them. [fact timeline →](../../facts/waf/index.html) | CISA | disputed | **A6** Established●●●●●● | 3/3 | [CISA](../../sources/cisa-alert-php-20261021/index.html) [BACS](../../sources/ch-bacs-warnung-php/index.html) [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) |
-| PHP is used by almost 70% of websitesNone of the three cites the survey it comes from. A share of websites using PHP is an upper bound on exposure, not a count of vulnerable systems. [fact timeline →](../../facts/scale-70pc-websites/index.html) | Cloudflare; OpenAI ('an estimated 70%'); Wiz body text | reported | **A2** Reported●●○○○○ measures differently | 3/3 | [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [OpenAI on X](../../sources/x-openai-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html) |
+| PHP is used by almost 70% of websites whose server-side language is knownNone of the three cites the survey it comes from. A share of websites using PHP is an upper bound on exposure, not a count of vulnerable systems. [fact timeline →](../../facts/scale-70pc-websites/index.html) | Cloudflare; OpenAI ('an estimated 70%'); Wiz body text | reported | **A2** Reported●●○○○○ measures differently | 3/3 | [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [OpenAI on X](../../sources/x-openai-php2shell/index.html) [Wiz](../../sources/wiz-blog-php2shell/index.html) |
 | Cloudflare observed attack traffic targeting its customers after the leak, with attackers mutating payloadsPrimary party, no volumes. [fact timeline →](../../facts/cloudflare-traffic/index.html) | Cloudflare | reported | **A2** Reported●●○○○○ | 1/1 | [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) |
 | Amazon and Cloudflare saw sites being probed for the flawBoth companies have since said so themselves. [fact timeline →](../../facts/probing/index.html) | Alan Woodward, via the BBC; confirmed by both companies' own posts | confirmed | **A5** Confirmed●●●●●○ | 2/3 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [Amazon](../../sources/aws-security-blog-madpot/index.html) |
 | Edge protections went live hours before disclosure: Cloudflare at 03:02 UTC; Imperva, Akamai and Fastly on 21 October; Fortinet signatures by 22 OctoberEvery vendor says the same two things: it is a stopgap, and patch anyway. [fact timeline →](../../facts/waf-nine-hours/index.html) | the vendors | confirmed | **A2** Reported●●○○○○ status overstated | 5/5 | [Cloudflare](../../sources/cloudflare-blog-php2shell-waf/index.html) [Imperva Threat Research](../../sources/imperva-blog-php2shell/index.html) [Akamai Security Research](../../sources/akamai-blog-php-core-rce/index.html) [Fastly](../../sources/fastly-blog-php2shell/index.html) [Fortinet Community](../../sources/fortinet-fortiweb-php2shell/index.html) |
@@ -66,9 +66,15 @@ capture 20261022T081216Z · HTTP 200 · https://blog.cloudflare.com/php-vulnerab
 - `rendered.html` a0d3c37cde7c1721a08b028748a412672817c45958d05cc7fedaede582b5537b 373,881 bytes
 - `screenshot.png` 1784904e6fdda092941881d0e5c85d73801054f216295ca43b17f76e7f5cd34b 989,488 bytes
 - `text.txt` 302408765abf45e3ae84473d9050c1c65b35c2858e5b53be4fee29dda4de2823 10,205 bytes
+capture 20261023T160435Z · HTTP 200 · https://blog.cloudflare.com/php-vulnerabilities-waf-protection/- `headers.json` c8d1046d5e15ec072fa3f8200f1b2e9345d25f2fa5c1ce0a5d50de4bc57c2434 7,335 bytes
+- `page.html` 172e5df835d69af6d6694fe84442639f792a58b8925a1408e8d68921824a7d97 306,061 bytes
+- `provenance.json` b55c9fe97424debdba98dc1c1dca272d72f5ad2ff601542c5dfaa934de7ce34e 1,798 bytes
+- `rendered.html` 9375a77287688e3c1d8718c25ce857c25caf62db2c3630e19d21da1c5bf24c48 373,128 bytes
+- `screenshot.jpg` 16e9126356ed130c33ba0896333af9953971a4c4a4b31ad6f4823d6590d4d895 639,665 bytes
+- `text.txt` 94476de6ec0b31e035ef97a1dbf9607bc81e7ddbb479c2d5217b8e8b0207ec02 11,328 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sources/cloudflare-blog-php2shell-waf/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/cloudflare-blog-php2shell-waf/index.html

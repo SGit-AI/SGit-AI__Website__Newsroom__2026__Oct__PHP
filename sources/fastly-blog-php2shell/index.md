@@ -51,9 +51,13 @@ capture 20261022T111906Z · HTTP 200 · https://www.fastly.com/blog/fastlys-proa
 - `rendered.html` beb13bda9a79b867d0b11deda470a987cd8f76186e6af59cb63333eb6d426839 327,821 bytes
 - `screenshot.png` 259708a035d74a2d833a8fe3a555097ecee5678d854a5e5357b94bf20566b7e4 2,470,515 bytes
 - `text.txt` bacf27615fe1180a00a1b2085b55ead30ce7e828eca5a4aa47c46d0c5808913f 20,043 bytes
+capture 20261024T133450Z · HTTP 200 · https://www.fastly.com/blog/fastlys-proactive-protection-critical-php-rce-cve-2026-109618- `headers.json` 2de448031ae90cd0f06fd44b637b55bdbfc8c26a1a2366b49d74ec3335313457 1,084 bytes
+- `page.html` 38708b00ce5a632e41ce45d1af875df5dbfc9f080568ccd906fe81b7bfb20c86 164,855 bytes
+- `provenance.json` bb7539f14a97855d49b935b340e081d578ccc64f505a194cb1f30a4280d5772f 1,684 bytes
+- `text.txt` bacf27615fe1180a00a1b2085b55ead30ce7e828eca5a4aa47c46d0c5808913f 20,043 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sources/fastly-blog-php2shell/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/fastly-blog-php2shell/index.html

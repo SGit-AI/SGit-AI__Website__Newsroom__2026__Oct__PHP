@@ -44,7 +44,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 08:15 UTC. The scale is on
 - 2026-10-21 15:20 UTCCERT-EU publishes [Security Advisory 2026-018: Critical Vulnerabilities in PHP](../../sources/certeu-sa-2026-018/index.html)
 - 2026-10-22 08:09 UTCSaved into the evidence vault: PHP
 - 2026-10-22 08:09 UTCSaved into the evidence vault: php.net
-- 2026-10-22 08:12 UTCSaved into the evidence vault: Daubois
+- 2026-10-22 08:12 UTCSaved into the evidence vault: Daubois, then 1 more capture
 - 2026-10-22 08:13 UTCSaved into the evidence vault: CERT-FR
 - 2026-10-22 08:13 UTCSaved into the evidence vault: CERT-EU
 - 2026-10-22 08:14 UTCSaved into the evidence vault: oss-security
@@ -74,4 +74,4 @@ Sources: openwall-oss-security-2026-10-20-34, daubois-blog-php2shell-rumors, cer
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/release-time/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/release-time/index.html

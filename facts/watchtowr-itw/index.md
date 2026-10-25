@@ -14,9 +14,9 @@ watchtowr.com returns HTTP 403 to this site's capture tool; known only from sear
 
 ## Fact-check
 
-**A4** Corroborated●●●●○○ superseded · Attribution · verdict: **holds in part** · the status word understates the evidence
+**A6** Established●●●●●● · Attribution · verdict: **holds** · the status word understates the evidence
 
-Both cited watchTowr captures are HTTP 403 (A1 as cited), but four independent outlets in the vault quote watchTowr's Jake Knott directly saying it sees in-the-wild exploitation attempts against its sensors, so the first half is A4. 'Lists the flaws as exploited in the wild' is not carried by any capture; Equixly (written before the PHP advisory) says watchTowr 'lists no reported exploitation', an earlier state since overtaken.
+watchTowr's own pages are now captured (23 October): its intel page lists both CVEs as 'EXPLOITED IN THE WILD: Yes', and its FAQ says it 'has observed exploitation in the wild through its Attacker Eye honeypot network'. The claim is an attribution, and watchTowr's own page is the primary record of what watchTowr says: A6, and the site's 'unverified' understates it. What watchTowr measures is honeypot traffic, the same kind of evidence as Amazon's (K-002); its own words elsewhere say none of the sprayed exploits succeeded (Finding on the missing qualifier stays open).
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -29,14 +29,16 @@ Both cited watchTowr captures are HTTP 403 (A1 as cited), but four independent o
 | [tenable-php2shell-faq](../../sources/tenable-php2shell-faq/index.html) | carries | *watchTowr says it has reproduced both vulnerabilities and is observing exploitation attempts against both.* | 10d98694b9c0243e |
 | [equixly-php2shell-what-we-know](../../sources/equixly-php2shell-what-we-know/index.html) | absent | *watchTowr lists no reported exploitation, and neither CVE appears in CISA’s Known Exploited Vulnerabilities catalog.* | 34bf72d02f14deb9 |
 | [securityweek-mass-exploitation-looms](../../sources/securityweek-mass-exploitation-looms/index.html) | absent | *WatchTowr and Huntress say they have not seen either of the vulnerabilities being exploited in the wild.* | 693aa4300139d2af |
+| [watchtowr-php2shell](../../sources/watchtowr-php2shell/index.html) | carries | *EXPLOITED IN THE WILD: Yes , reported by watchTowr* | e09524178ed5f328 |
+| [watchtowr-php2shell-faq](../../sources/watchtowr-php2shell-faq/index.html) | carries | *watchTowr has observed exploitation in the wild through its Attacker Eye honeypot network.* | 3c561d0c08e9343f |
 
-Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Finding-111](../../factcheck/index.html#Finding-111), [Finding-18](../../factcheck/index.html#Finding-18), [Finding-19](../../factcheck/index.html#Finding-19).
+Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Finding-111](../../factcheck/index.html#Finding-111), [Finding-127](../../factcheck/index.html#Finding-127), [Finding-18](../../factcheck/index.html#Finding-18), [Finding-19](../../factcheck/index.html#Finding-19).
 
-Graded in Run-1, resting on captures up to 2026-10-22 11:31 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-6, resting on captures up to 2026-10-23 23:25 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
-- 2026-10-22 11:18 UTCSaved into the evidence vault: watchTowr
-- 2026-10-22 11:18 UTCSaved into the evidence vault: watchTowr
+- 2026-10-22 11:18 UTCSaved into the evidence vault: watchTowr, then 1 more capture
+- 2026-10-22 11:18 UTCSaved into the evidence vault: watchTowr, then 1 more capture
 - 2026-10-22Enters this site as unverified in v0.2.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -61,4 +63,4 @@ Sources: watchtowr-php2shell, watchtowr-php2shell-faq
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/watchtowr-itw/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/watchtowr-itw/index.html

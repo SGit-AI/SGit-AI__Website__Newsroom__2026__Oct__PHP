@@ -148,9 +148,9 @@
    "name": "php2shell",
    "component": "PHP engine (Zend allocator, request lifecycle)",
    "published": "2026-10-21",
-   "kev": "not in KEV as of 2026-10-22T08:15Z",
+   "kev": "not in KEV at the vault's capture (2026-10-22T08:15Z) nor at the source watch's last check (2026-10-23T08:03Z)",
    "ransomware": "",
-   "response": "Leaked two days early; patched a day early; five agencies say take systems offline or isolate; governments and councils pulled sites; millions of attempts seen at one CDN; no named organisation saying it was compromised through php2shell in any captured source as of 20:50 UTC on 22 October.",
+   "response": "Leaked two days early; patched a day early; five agencies say take systems offline or isolate; governments and councils pulled sites; millions of attempts seen at one CDN; no named organisation saying it was compromised through php2shell in any captured source as of 16:05 UTC on 24 October.",
    "source": "cisa-kev-json",
    "note": "The row this site exists for. What it shares with Log4Shell is shape; what it has not yet shown is Log4Shell's exploitation."
   }

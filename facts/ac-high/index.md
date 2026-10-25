@@ -34,8 +34,8 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:19 UTC. The scale is on
 - 2026-10-21Fastly publishes [Fastly’s Proactive Protection for PHP2Shell, Critical PHP RCE CVE-2026-109618 and CVE-2026-109619 | Fastly](../../sources/fastly-blog-php2shell/index.html)
 - 2026-10-21 13:48 UTCCVE record publishes [CVE-2026-109618: RCE via OOM corruption](../../sources/cve-cve-2026-109618/index.html)
 - 2026-10-22 08:12 UTCSaved into the evidence vault: CVE record
-- 2026-10-22 11:18 UTCSaved into the evidence vault: Imperva Threat Research
-- 2026-10-22 11:19 UTCSaved into the evidence vault: Fastly
+- 2026-10-22 11:18 UTCSaved into the evidence vault: Imperva Threat Research, then 1 more capture
+- 2026-10-22 11:19 UTCSaved into the evidence vault: Fastly, then 1 more capture
 - 2026-10-22Enters this site as confirmed in v0.2.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -60,4 +60,4 @@ Sources: imperva-blog-php2shell, fastly-blog-php2shell, cve-cve-2026-109618
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/ac-high/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/ac-high/index.html

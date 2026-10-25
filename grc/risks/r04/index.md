@@ -10,6 +10,8 @@ Because agencies advised taking systems offline where an update was not possible
 
 Because agencies advised taking systems offline where an update was not possible, governments, councils and companies switched off services people rely on, resulting in an outage caused by the defence rather than by an attack.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r04) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 5 Happening · **Impact** 4 Major · **Kind** Operational · **Acceptance** not recorded
 
 **Basis.** It happened: the Netherlands, Finland, Latvia, UK councils and the Wikimedia Foundation took services offline.
@@ -48,7 +50,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 |---|---|---|---|
 | [If an immediate update is not feasible, take the system offline until it can be fully mitigated](../../../facts/offline-nsa/index.html) | confirmed | **A6** Established●●●●●● | [NSA Cyber on X](../../../sources/nsa-x-2112903220209098897/index.html) [NSA](../../../sources/nsa-press-php-4630238/index.html) |
 | [Organisations that cannot update immediately, or that run PHP 8.1 or older, should take PHP-based systems offline](../../../facts/offline-cisa/index.html) | confirmed | **A6** Established●●●●●● | [CISA](../../../sources/cisa-alert-php-20261021/index.html) |
-| [The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services](../../../facts/nl-offline/index.html) | confirmed | **A3** Echoed●●●○○○ | [Rijksoverheid / NCSC-NL](../../../sources/rijksoverheid-ncsc-php-news/index.html) [Dutch IT Leaders](../../../sources/dutchitleaders-websites-offline/index.html) |
+| [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too](../../../facts/nl-offline/index.html) | reported | **A4** Corroborated●●●●○○ | [Rijksoverheid / NCSC-NL](../../../sources/rijksoverheid-ncsc-php-news/index.html) [TPO.nl](../../../sources/tpo-nl-digid-offline/index.html) |
 | [Finland's state IT provider Valtori restricted public traffic to government web services from 12:45 local time on 21 October as a precaution](../../../facts/fi-offline/index.html) | reported | **A2** Reported●●○○○○ | [Yle](../../../sources/yle-finland-government-sites-shut/index.html) [Helsinki Times](../../../sources/helsinkitimes-finland-shutdown/index.html) |
 | [Latvia restricted access from abroad to several state digital resources, possibly until 26 October; lsm.lv and 112.lv were restored by 20:00 UTC](../../../facts/latvia-offline/index.html) | confirmed | **A6** Established●●●●●● | [CERT.LV](../../../sources/certlv-php-preventive/index.html) |
 | [Parts of Wikipedia, Edinburgh council, French government sites, the University of Geneva, online shops and the BBC were affected or taken offline](../../../facts/affected-sites/index.html) | reported | **A2** Reported●●○○○○ | [BBC News](../../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
@@ -80,4 +82,4 @@ On this site: [Impact: taken offline versus compromised](../../../impact/index.h
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04/index.html

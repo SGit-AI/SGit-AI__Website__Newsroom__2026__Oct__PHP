@@ -31,7 +31,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:29 UTC. The scale is on
 ## This fact over time
 - 2026-10-21LBC publishes [Websites taken offline as ‘critical’ security flaw hits Met Police, Traitors and government sites | LBC](../../sources/lbc-uk-websites-offline/index.html)
 - 2026-10-21Insurance Business publishes [UK councils and Met Police among sites pulled offline after NCSC alert | Insurance Business](../../sources/insurancebusiness-uk-councils-met/index.html)
-- 2026-10-22 11:22 UTCSaved into the evidence vault: Insurance Business
+- 2026-10-22 11:22 UTCSaved into the evidence vault: Insurance Business, then 2 more captures
 - 2026-10-22 11:29 UTCSaved into the evidence vault: LBC
 - 2026-10-22Enters this site as reported in v0.2.0 (reconstructed from git)
 
@@ -57,4 +57,4 @@ Sources: lbc-uk-websites-offline, insurancebusiness-uk-councils-met
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/uk-list/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/uk-list/index.html

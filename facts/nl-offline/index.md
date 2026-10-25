@@ -1,22 +1,22 @@
-# Fact: The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOver
+# Fact: The Dutch government took NCSC.nl offline as a precaution, with no active misuse
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services Who says it, its status (confirmed), its sources, and its timeline from publication to this site.
+The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too Who says it, its status (reported), its sources, and its timeline from publication to this site.
 
-Fact · impact · confirmed
+Fact · impact · reported
 
-# The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services
+# The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too
 
-**Who says it:** the Dutch government · **Sources:** [Rijksoverheid / NCSC-NL](../../sources/rijksoverheid-ncsc-php-news/index.html) [Dutch IT Leaders](../../sources/dutchitleaders-websites-offline/index.html)
+**Who says it:** the Dutch government · **Sources:** [Rijksoverheid / NCSC-NL](../../sources/rijksoverheid-ncsc-php-news/index.html) [TPO.nl](../../sources/tpo-nl-digid-offline/index.html)
 
-Primary statement.
+The government's notice names only NCSC.nl; DigiD and MijnOverheid rest on the press (fact-check desk, run 1: holds in part, overstated).
 
 ## Fact-check
 
-**A3** Echoed●●●○○○ status overstated · Event · verdict: **holds in part** · the status word overstates the evidence
+**A4** Corroborated●●●●○○ · Event · verdict: **holds**
 
-The cited primary (Rijksoverheid, 21 Oct 13:59) carries only NCSC.NL taken offline "uit voorzorg" and a general "no active misuse seen yet"; it does not name DigiD, MijnOverheid or Overheid.nl, and the second cited source is a blocked Cloudflare page. DigiD and MijnOverheid are carried by TPO and Insurance Business, Overheid.nl only by Reuters copy (one origin), so A3 for the claim as worded, and "of those services" is the site's own narrowing.
+Rewritten as the evidence carries it: the government's notice names only NCSC.nl, as a precaution (Finding-27 fixed), and the other services are attributed to the Dutch press, which the TPO capture carries (DigiD, MijnOverheid, the Tweede Kamer). The 'no signs of exploitation of those services' overreach is gone (Finding-28 fixed).
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -32,14 +32,15 @@ The cited primary (Rijksoverheid, 21 Oct 13:59) carries only NCSC.NL taken offli
 
 Open tickets: [Finding-27](../../factcheck/index.html#Finding-27), [Finding-28](../../factcheck/index.html#Finding-28), [Finding-84](../../factcheck/index.html#Finding-84).
 
-Graded in Run-1, resting on captures up to 2026-10-22 11:32 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-3, resting on captures up to 2026-10-22 11:32 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21Rijksoverheid / NCSC-NL publishes [NCSC: Ernstige kwetsbaarheden in PHP | Rijksoverheid.nl](../../sources/rijksoverheid-ncsc-php-news/index.html)
-- 2026-10-21Dutch IT Leaders publishes [Just a moment...](../../sources/dutchitleaders-websites-offline/index.html)
-- 2026-10-22 11:27 UTCSaved into the evidence vault: Dutch IT Leaders
+- 2026-10-21TPO.nl publishes [PHP-lek legt DigiD, MijnOverheid en Tweede Kamer plat | TPO.NL](../../sources/tpo-nl-digid-offline/index.html)
 - 2026-10-22 11:30 UTCSaved into the evidence vault: Rijksoverheid / NCSC-NL
+- 2026-10-22 11:32 UTCSaved into the evidence vault: TPO.nl
 - 2026-10-22Enters this site as confirmed in v0.2.0 (reconstructed from git)
+- 2026-10-24Status changes from confirmed to reported in v0.12.1
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
 
@@ -60,7 +61,8 @@ Status: confirmed
 Topic: impact
 Sources: rijksoverheid-ncsc-php-news, dutchitleaders-websites-offline
 ```
+v2 · site v0.12.1 · 24 October 2026 · reportedThe Dutch NCSCgovernment took its own siteNCSC.nl offline as a precaution, aswith didno active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl,Overheid.nl withoffline no signs of active exploitation of those servicestooWho says it: the Dutch governmentStatus: confirmedreportedTopic: impactSources: rijksoverheid-ncsc-php-news, dutchitleaders-websites-offlinetpo-nl-digid-offline
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/nl-offline/index.html

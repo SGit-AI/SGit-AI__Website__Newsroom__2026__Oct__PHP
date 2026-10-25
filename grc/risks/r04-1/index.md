@@ -10,6 +10,8 @@ Because the Dutch, Finnish and Latvian governments restricted or switched off th
 
 Because the Dutch, Finnish and Latvian governments restricted or switched off their own web services as a precaution, citizens lost access to identity, tax and emergency information, resulting in harm to people who needed them that day.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r04-1) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 5 Happening · **Impact** 4 Major · **Kind** Operational · **Acceptance** not recorded
 
 **Basis.** Confirmed in the Netherlands and Latvia; reported in Finland.
@@ -35,7 +37,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
-| [The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services](../../../facts/nl-offline/index.html) | confirmed | **A3** Echoed●●●○○○ | [Rijksoverheid / NCSC-NL](../../../sources/rijksoverheid-ncsc-php-news/index.html) [Dutch IT Leaders](../../../sources/dutchitleaders-websites-offline/index.html) |
+| [The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too](../../../facts/nl-offline/index.html) | reported | **A4** Corroborated●●●●○○ | [Rijksoverheid / NCSC-NL](../../../sources/rijksoverheid-ncsc-php-news/index.html) [TPO.nl](../../../sources/tpo-nl-digid-offline/index.html) |
 | [Finland's state IT provider Valtori restricted public traffic to government web services from 12:45 local time on 21 October as a precaution](../../../facts/fi-offline/index.html) | reported | **A2** Reported●●○○○○ | [Yle](../../../sources/yle-finland-government-sites-shut/index.html) [Helsinki Times](../../../sources/helsinkitimes-finland-shutdown/index.html) |
 | [Latvia restricted access from abroad to several state digital resources, possibly until 26 October; lsm.lv and 112.lv were restored by 20:00 UTC](../../../facts/latvia-offline/index.html) | confirmed | **A6** Established●●●●●● | [CERT.LV](../../../sources/certlv-php-preventive/index.html) |
 
@@ -61,4 +63,4 @@ On this site: [Impact: taken offline versus compromised](../../../impact/index.h
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04-1/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r04-1/index.html

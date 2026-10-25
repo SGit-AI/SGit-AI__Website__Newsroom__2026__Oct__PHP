@@ -8,7 +8,7 @@ View · the state of affairs · what changed
 
 # What changed between v0 and v1
 
-From 22 October 2026, 11:34 UTC to 23 October 2026, 14:11 UTC: 12 of 14 measures changed, and the text gained 37 lines and lost 3.
+From 22 October 2026, 11:34 UTC to 23 October 2026, 14:11 UTC: 12 of 16 measures changed, and the text gained 37 lines and lost 3.
 
 **v0** site v0.2.5 · evidence vault `200d08971937` · NCSC-NL inventory `cca173c64ec5` · data as of 22 October 2026, 11:34 UTC **v1** site v0.10.1 · evidence vault `f3c5db0d9873` · source watch `c26dce84136f` · NCSC-NL inventory `2fdc314ded28` · data as of 23 October 2026, 01:20 UTC
 
@@ -20,6 +20,7 @@ From 22 October 2026, 11:34 UTC to 23 October 2026, 14:11 UTC: 12 of 14 measures
 |---|---|---|---|
 | **Organisations confirming a compromise through php2shell** | 0 | 0 | unchanged |
 | **Named incidents whose link to php2shell is still open** | 0 | 3 open, 1 ruled out | **changed** |
+| **Security vendors' claims of a successful compromise, and what became of them** | not tracked | not tracked | unchanged |
 | **Of the two CVEs in CISA's Known Exploited Vulnerabilities catalog** | 0 | 0 | unchanged |
 | **NIST's own score in the National Vulnerability Database** | none yet; the CNA's CVSS 4.0 9.2 only | CVSS 3.1 9.8 (Analyzed), beside the CNA's CVSS 4.0 9.2 | **changed** |
 | **EPSS: chance of exploitation activity in the next 30 days** | not tracked | 0.058 and 0.053, about the 93rd percentile for both | **changed** |
@@ -29,6 +30,7 @@ From 22 October 2026, 11:34 UTC to 23 October 2026, 14:11 UTC: 12 of 14 measures
 | **NCSC-NL inventory: products still under investigation** | 418 | 389 | **changed** |
 | **Security and network vendors' products confirmed vulnerable** | not counted | 10 vulnerable, 26 not, 16 under investigation | **changed** |
 | **PHP servers that disclose their version running an end-of-life branch** | not known | about 758,000 of 1.1 million | **changed** |
+| **A national count of servers still affected after the fix** | not tracked | not tracked | unchanged |
 | **Sites that went dark over php2shell, and how many are still dark** | 10 operators reported offline | 51 listed, 50 back, 1 still dark (French prefecture websites) | **changed** |
 | **National authorities saying they know of no successful exploitation in their country** | 2 (CISA for the US, ACSC for Australia) | 5 (adding Germany's BSI, Switzerland's BACS and Japan's government) | **changed** |
 | **Sources in the evidence vault, and the latest capture** | 144, latest capture 22 Oct 11:34 UTC | 227, latest capture 23 Oct 01:20 UTC | **changed** |
@@ -40,4 +42,4 @@ Removed lines are struck through, added lines are marked; within an edited line,
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/views/state/v0-v1/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/views/state/v0-v1/index.html

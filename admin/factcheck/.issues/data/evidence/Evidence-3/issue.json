@@ -5,9 +5,9 @@
   "label": "Evidence-3",
   "title": "The Next Web: 'Officials in Germany, the Netherlands and Japan say they have not seen one succeed'; Mizuho and Shizuoka Bank halted services",
   "description": "Fetched by the desk; not in the vault. Bears on no-confirmed-compromise (a dated negative from three governments) and on impact (Japanese banks, via Bloomberg). Capture it, then chase the officials' own statements.",
-  "status": "proposed",
+  "status": "captured",
   "created_at": 1792694671594,
-  "updated_at": 1792694672045,
+  "updated_at": 1792857508481,
   "created_by": "176c34fb",
   "tags": [],
   "links": [
@@ -35,6 +35,15 @@
       "no-confirmed-compromise",
       "affected-sites"
     ],
-    "severity": "medium"
+    "severity": "medium",
+    "comments": [
+      {
+        "id": "8c3c02f2",
+        "author": "cli-user",
+        "text": "Run-5: captured into the vault as the-next-web-php2shell-no-confirmed-breaches; the officials' sentence re-found verbatim.",
+        "created_at": 1792857508481,
+        "updated_at": 1792857508481
+      }
+    ]
   }
 }

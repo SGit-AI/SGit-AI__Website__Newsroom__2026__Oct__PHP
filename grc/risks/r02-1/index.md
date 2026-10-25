@@ -10,6 +10,8 @@ Because the CVE IDs circulated from an anonymous post and a proof-of-concept vid
 
 Because the CVE IDs circulated from an anonymous post and a proof-of-concept video was published by mistake, attackers knew the target and saw it work before any fix existed, resulting in scanning that began ahead of the release.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r02-1) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 5 Happening · **Impact** 4 Major · **Kind** Disclosure process · **Acceptance** not recorded
 
 **Basis.** Reported by the PHP Foundation and the security team's own account.
@@ -35,8 +37,8 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
-| [On 20 October at about 15:00 UTC the two CVE IDs began circulating on forums and social media with a wrong release time and a wrong CVSS score; no technical details leaked](../../../facts/leak-cve-ids/index.html) | reported | **A2** Reported●●○○○○ | [PHP Foundation](../../../sources/php-foundation-blog-security-release/index.html) [PHP Foundation](../../../sources/phpfoundation-blog-security-release-leak/index.html) |
-| [The leak started with an anonymous Hacker News post citing a reliable source, which came down after screenshots spread; a screenshot of the 'PHP2Shell tool' credited to Calif.io and a short exploitation video also went up and came down](../../../facts/leak-hn/index.html) | reported | **A2** Reported●●○○○○ | [Daubois](../../../sources/daubois-blog-php2shell-rumors/index.html) |
+| [On 20 October at about 15:00 UTC the two CVE IDs began circulating on forums and social media with a wrong release time and a wrong CVSS score; no technical details leaked](../../../facts/leak-cve-ids/index.html) | reported | **A4** Corroborated●●●●○○ | [PHP Foundation](../../../sources/php-foundation-blog-security-release/index.html) [PHP Foundation](../../../sources/phpfoundation-blog-security-release-leak/index.html) |
+| [The leak started with an anonymous Hacker News post citing a reliable source, which came down after screenshots spread; a screenshot of the 'PHP2Shell tool' credited to Calif.io and a short exploitation video also went up and came down](../../../facts/leak-hn/index.html) | reported | **A4** Corroborated●●●●○○ | [Daubois](../../../sources/daubois-blog-php2shell-rumors/index.html) |
 | [watchTowr confirmed in public that the bugs were real and posted both CVE numbers before the release](../../../facts/leak-watchtowr/index.html) | reported | **A4** Corroborated●●●●○○ | [Daubois](../../../sources/daubois-blog-php2shell-rumors/index.html) [CERT-EU](../../../sources/certeu-sa-2026-018/index.html) |
 | [Calif mistakenly published a video around 20:00 UTC on 20 October showing its proof of concept against a number of targets; copies circulated and 'contributed to accelerated development of various PoCs'](../../../facts/leak-video/index.html) | reported | **A3** Echoed●●●○○○ | [PHP Foundation](../../../sources/php-foundation-blog-security-release/index.html) [PHP Foundation](../../../sources/phpfoundation-blog-security-release-leak/index.html) [BBC News](../../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Calif](../../../sources/calif-php2shell/index.html) |
 
@@ -61,4 +63,4 @@ On this site: [How the coordinated disclosure broke](../../../leak/index.html)
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02-1/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02-1/index.html

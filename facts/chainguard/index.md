@@ -35,7 +35,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 11:32 UTC. The scale is on
 - 2026-10-22Feross Aboukhadijeh on X on X publishes [Feross on X: "Chainguard received PHP’s fix for two critical RCEs under embargo, like every other distributor.](../../sources/x-feross-chainguard/index.html)
 - 2026-10-22 08:09 UTCSaved into the evidence vault: PHP Foundation
 - 2026-10-22 11:21 UTCSaved into the evidence vault: Feross Aboukhadijeh on X on X
-- 2026-10-22 11:32 UTCSaved into the evidence vault: The Register
+- 2026-10-22 11:32 UTCSaved into the evidence vault: The Register, then 1 more capture
 - 2026-10-22Enters this site as disputed in v0.1.0 (reconstructed from git)
 - 2026-10-22Reworded or re-sourced in v0.2.0 (reconstructed from git)
 
@@ -62,4 +62,4 @@ v2 · site v0.2.0 · 22 October 2026 · disputedChainguard unilaterally broke th
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/chainguard/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/chainguard/index.html

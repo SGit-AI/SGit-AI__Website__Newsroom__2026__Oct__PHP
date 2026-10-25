@@ -3,6 +3,7 @@
 
   fc.py check [--vault DIR]      scripted checks over data/ and the desk's files; with a vault clone, verify every cited capture's text by sha256
   fc.py changed                  claims whose text, sources or status changed since their assessment
+  fc.py drift --vault DIR        excerpts a grade rests on that are no longer in the newest capture of their source
   fc.py extract CLAIM --vault DIR  print the captured text of every source a claim cites, with paths and hashes (for mode 1)
   fc.py ticket create TYPE TITLE [--claims a,b] [--sources s] [--pages p] [--run Run-N] [--desc TEXT] [--severity S] [--prop k=v ...]
   fc.py ticket set LABEL [--status S] [--comment TEXT] [--prop k=v ...]
@@ -180,7 +181,8 @@ def capture_text(vault, slug, src):
 
 def norm(s):
     s = s.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').replace(' ', ' ')
-    return re.sub(r'\s+', ' ', s).strip().lower()
+    s = re.sub(r'\s+', ' ', s).strip().lower()
+    return re.sub(r' ([,.;:!?)])', r'\1', s)  # a tag stripped before punctuation leaves a space the page never had
 
 
 def capture_any(path):
@@ -273,6 +275,36 @@ def cmd_check(argv):
     sys.exit(1 if fails else 0)
 
 
+def newest_capture_text(vault, slug):
+    """The newest capture's text file of a source in a vault clone, whatever the manifest says."""
+    d = os.path.join(vault, 'sources', slug, 'captures')
+    for st in sorted(os.listdir(d), reverse=True) if os.path.isdir(d) else []:
+        p = os.path.join(d, st, 'text.txt')
+        if os.path.exists(p):
+            return st, p
+    return None, None
+
+
+def cmd_drift(argv):
+    """For every excerpt a grade rests on, is it still in the newest capture of its source? Words that survive a
+    re-capture leave the grade standing; words that are gone mean the source changed, and the grade needs a look."""
+    o, _ = opts(argv)
+    A = desk('assessments.json', {'assessments': []})['assessments']
+    gone = 0
+    for a in A:
+        for ch in a.get('checked', []):
+            ex = ch.get('excerpt')
+            if not ex or not ch.get('file') or not ch['file'].endswith('text.txt'):
+                continue
+            st, p = newest_capture_text(o['vault'], ch['source'])
+            if not p or p.endswith(ch['file']):
+                continue
+            if norm(ex) not in norm(open(p, encoding='utf-8', errors='replace').read()):
+                gone += 1
+                print(f'{a["id"]}\t{ch["source"]}\t{st}\tgone: "{ex[:70]}"')
+    print(f'drift: {gone} excerpt(s) no longer in the newest capture of their source')
+
+
 def cmd_changed(argv):
     claims = data('claims')
     A = {a['id']: a for a in desk('assessments.json', {'assessments': []})['assessments']}
@@ -307,6 +339,21 @@ def cmd_extract(argv):
 
 
 # ----------------------------------------------------------------------------- export
+
+def investigations():
+    """Each investigation's case file and its data sets, from admin/factcheck/investigations/<id>/."""
+    base = os.path.join(HERE, 'investigations')
+    out = []
+    for d in sorted(os.listdir(base)) if os.path.isdir(base) else []:
+        p = os.path.join(base, d)
+        if os.path.exists(os.path.join(p, 'case.json')):
+            inv = load(os.path.join(p, 'case.json'))
+            for part in ('measures', 'lineage', 'live'):
+                if os.path.exists(os.path.join(p, part + '.json')):
+                    inv[part] = load(os.path.join(p, part + '.json'))
+            out.append(inv)
+    return out
+
 
 def cmd_export(argv):
     claims = {c['id']: c for c in data('claims')}
@@ -353,6 +400,7 @@ def cmd_export(argv):
         'contradictions': K,
         'tickets': sorted(tix, key=lambda t: (t['type'], int(t['label'].rsplit('-', 1)[1]))),
         'runs': runs,
+        'investigations': investigations(),
     }
     with open(os.path.join(ROOT, 'data', 'factcheck.json'), 'w', encoding='utf-8') as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
@@ -364,4 +412,4 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     cmd = sys.argv[1]
-    {'check': cmd_check, 'changed': cmd_changed, 'extract': cmd_extract, 'ticket': cmd_ticket, 'export': cmd_export}[cmd](sys.argv[2:])
+    {'check': cmd_check, 'drift': cmd_drift, 'changed': cmd_changed, 'extract': cmd_extract, 'ticket': cmd_ticket, 'export': cmd_export}[cmd](sys.argv[2:])

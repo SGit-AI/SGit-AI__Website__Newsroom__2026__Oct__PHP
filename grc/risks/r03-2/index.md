@@ -10,6 +10,8 @@ Because tens of thousands of attempts followed the announcement and attackers mu
 
 Because tens of thousands of attempts followed the announcement and attackers mutated payloads, every internet-facing PHP server was tested within hours, resulting in exposure measured in hours, not weeks.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r03-2) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 5 Happening · **Impact** 4 Major · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Reported by Cloudflare's CEO and confirmed as probing by Amazon and Cloudflare.
@@ -61,4 +63,4 @@ On this site: [Exploitation signals, in order](../../../exploitation/index.html)
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03-2/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03-2/index.html

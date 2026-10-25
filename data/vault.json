@@ -1,12 +1,12 @@
 {
  "head": {
-  "commit": "f3c5db0d9873",
-  "subject": "curator@php.newsroom: promote 45 sources from the source watch (35 from the 22 Oct queue incl. ncsc-nl-php2shell-software-list-letters, 10 break-in reports; 2 as new captures of recordedfuture-php2shell and securityweek-exploitation-days-before; facebook-cvut-statement skipped; every slug in notes/promotions__curator.json)  +404 ~1  [blobs:+405 trees:+131]",
-  "commits": 17
+  "commit": "87795d121200",
+  "subject": "curator@php.newsroom: promote 18 sources from the source watch's pack copy (7r83qic5), scheduled wake of 25 Oct 10:30 (mechanical selection, each read): Actainfo, ElOtroLado, Malwarebytes NL, Security Affairs, teleSUR English, Wall-Street.ro, Data Max, datensicherheit.de, Ijiwei, IniBalikpapan, ITdaily FR and NL, IT Daily KR, IT Home, Jawa Pos, JVTech, Jiji, Kathmandu Post; 8 new claims and 1 timeline row (OpenAI's account of the discovery chain and the 20 Oct PoC leak via Ijiwei, 8 compromised TLS certificates are a separate incident, Nepal and East Kalimantan impact); vendor check pages not used  +141 ~4  [blobs:+145 trees:+54]",
+  "commits": 29
  },
- "sources": 227,
- "captures": 222,
- "hashed_files": 1386,
+ "sources": 418,
+ "captures": 479,
+ "hashed_files": 2814,
  "primary": 89,
  "blocked": 15,
  "agents": [
@@ -19,6 +19,6 @@
   "curator@php.newsroom"
  ],
  "opened": "2026-10-22T08:03Z",
- "latest_capture": "2026-10-23T01:20Z",
+ "latest_capture": "2026-10-25T09:35Z",
  "note": "The captures are third-party pages kept privately for the record and are not published. Only their hashes are."
 }

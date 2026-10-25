@@ -124,7 +124,7 @@
  },
  {
   "id": "wordpress-drupal",
-  "claim": "Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS",
+  "claim": "In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS",
   "by": "Calif; Wiz for WordPress and Drupal",
   "sources": [
    "calif-php2shell",
@@ -137,8 +137,8 @@
  },
  {
   "id": "scale-70pc-internet",
-  "claim": "Roughly 70% of the Internet is affected",
-  "by": "Wiz (headline, X post); BBC attributing Wiz",
+  "claim": "70% of the Internet is affected",
+  "by": "Wiz (headline, X post); the BBC, which reports it as Wiz's 'roughly 70%'",
   "sources": [
    "wiz-blog-php2shell",
    "x-wiz-io-php2shell",
@@ -151,7 +151,7 @@
  },
  {
   "id": "scale-70pc-websites",
-  "claim": "PHP is used by almost 70% of websites",
+  "claim": "PHP is used by almost 70% of websites whose server-side language is known",
   "by": "Cloudflare; OpenAI ('an estimated 70%'); Wiz body text",
   "sources": [
    "cloudflare-blog-php2shell-waf",
@@ -177,7 +177,7 @@
  },
  {
   "id": "scale-2.6m-hosts",
-  "claim": "PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpatched on 21 October",
+  "claim": "VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 October",
   "by": "VulnCheck and Censys, via The Hacker News and SecurityWeek",
   "sources": [
    "thehackernews-php2shell-4days",
@@ -700,8 +700,8 @@
  },
  {
   "id": "no-confirmed-compromise",
-  "claim": "As of 20:50 UTC on 22 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, and two security vendors, Hadrian and Patchstack, report successful exploitation without naming any victim.",
-  "by": "this site, from every captured source in the evidence vault and the source watch, as of 20:50 UTC on 22 October",
+  "claim": "As of 09:35 UTC on 25 October, no named organisation has said it was compromised through php2shell. Exploitation attempts are widely reported, in millions; Hadrian reports exploitation at scale and Patchstack received reports of incidents from hosting partners, neither naming a victim, and Patchstack's own telemetry showed only probing. Sophos withdrew an earlier success claim: its data showed scanning and a few failed attempts.",
+  "by": "this site, from every captured source in the evidence vault (418 sources, head 87795d121200), as of its latest capture at 09:35 UTC on 25 October",
   "sources": [
    "cisa-kev-json",
    "cisa-alert-php-20261021",
@@ -711,12 +711,26 @@
    "securityweek-exploitation-days-before",
    "recordedfuture-php2shell",
    "imperva-blog-php2shell",
-   "weirdgloop-blog-php2shell"
+   "weirdgloop-blog-php2shell",
+   "paperjam-article-php2shell-des-milliers-de-sites",
+   "pcmag-news-hackers-already-trying-to-exploit-serious-php-flaw",
+   "itsocial-cybersecurite-cybersecurite-articles-php",
+   "lupa-cvut-cyber-attack",
+   "yahoo-jp-gmo-fx-login-leak",
+   "sankei-dmm-service-halt",
+   "impress-watch-valtec",
+   "the-verge-php2shell-websites-down",
+   "cybersecuritynews-critical-php2shell-exploit-code",
+   "americanbanker-news-banks-dodge-early-damage-from-php2s",
+   "the-next-web-php2shell-no-confirmed-breaches",
+   "diepresse-41383717-die-php-sicherheitsluecke-ist-a",
+   "voix-business-cards-rainforest-ip-activity-an",
+   "haber-teknoloji-siber-guvenlik-baskanligi-ndan"
   ],
   "status": "reported",
   "topic": "impact",
-  "agent": "claude-story-site",
-  "note": "A time-bounded absence, not a confirmed fact: it can only be true as of the last check, and it will change. Changed from \"confirmed\" on 22 October at the editor's request (fact-check run 1 had marked it overstated; Perplexity and ChatGPT, asked by the editor, said the same). Attempts are not compromises: watchTowr says \"nobody has been successful to date\"; Amazon says it is unclear whether any attempt would have succeeded on real systems; Patchstack's incidents are reports from hosting partners with no victim named. Source watch (vault oq9gflln), pending promotion into the evidence vault: the PHP Foundation's executive director told The Verge and WIRED \"to our knowledge, there has been no successful attempt at remote code execution\" (raw/us/tech-press/the-verge/php2shell-websites-down/); officials in Germany, the Netherlands and Japan say they have not seen an attack succeed (The Next Web, raw/nl/tech-press/the-next-web/php2shell-no-confirmed-breaches/); GMO confirmed a break-in on 20 October on its FX trading VPS service (26,739 servers, logins possibly taken) without stating the cause (raw/jp/news/yahoo-news-jp/gmo-fx-login-leak/20261022T191523Z/); Czech Technical University says it stopped an active attack that was part of worldwide attempts against PHP sites, success not established (raw/cz/tech-press/lupa/cvut-cyber-attack/20261022T191510Z/); Valtec in Japan blamed php2shell for a break-in, then retracted: its own service's flaw (raw/jp/tech-press/impress-watch/valtec-php-attack/20261022T191433Z/); Fortune reports an anonymous startup owner alleging stolen source code, unnamed and not attributed to the flaw. Edited by researcher@php.newsroom."
+  "agent": "claude-journalist",
+  "note": "A time-bounded absence, not a confirmed fact: it can only be true as of the last check, and it will change. Changed from \"confirmed\" on 22 October at the editor's request. Refreshed by the journalist on 24 October against the evidence vault at 1f38e70921b2: the named cases (GMO, ČVUT, DMM, Valtec) are now in the vault, and none of them states php2shell as the cause (Valtec retracted). The PHP Foundation's executive director: \"to our knowledge, there has been no successful attempt at remote code execution\" (The Verge). Luxembourg: no institution has announced an intrusion (Paperjam). Patchstack: incidents reported to it by hosting partners (Recorded Future) against \"only probing attacks, with no hard evidence of breaches yet\" in its own telemetry (PCMag); on the board for the fact-check desk. An anonymous startup owner's claim of stolen source code (Fortune) is unnamed and not attributed to the flaw. Sophos, via Cyber Security News: a correction at 21:21 UTC on 22 October withdrew an earlier success claim; scanning and a small number of failed attempts, a Mirai-derived payload blocked. American Banker, 23 October: no US bank or credit union has publicly reported a compromise. Refreshed on 24 October at 16:05 UTC against the vault at 8c16a64a7cf6 (382 sources): no new source names an organisation compromised through php2shell; Die Presse (12:03 on 23 October) knows of no successful attack in Austria, and RainForest's honeypot (VOIX) records attempts only. Refreshed again on 25 October at 09:35 UTC (10:35 BST) against the vault at 87795d121200 (418 sources): still no new source names an organisation compromised through php2shell; Turkey's Presidency Cybersecurity Directorate says the e-Devlet portal had no problem."
  },
  {
   "id": "pocs-wrong",
@@ -803,16 +817,16 @@
  },
  {
   "id": "nl-offline",
-  "claim": "The Dutch NCSC took its own site offline as a precaution, as did DigiD, MijnOverheid and Overheid.nl, with no signs of active exploitation of those services",
+  "claim": "The Dutch government took NCSC.nl offline as a precaution, with no active misuse seen yet; Dutch press reported DigiD, MijnOverheid and Overheid.nl offline too",
   "by": "the Dutch government",
   "sources": [
    "rijksoverheid-ncsc-php-news",
-   "dutchitleaders-websites-offline"
+   "tpo-nl-digid-offline"
   ],
-  "status": "confirmed",
+  "status": "reported",
   "topic": "impact",
   "agent": "claude-story-site",
-  "note": "Primary statement."
+  "note": "The government's notice names only NCSC.nl; DigiD and MijnOverheid rest on the press (fact-check desk, run 1: holds in part, overstated)."
  },
  {
   "id": "fi-offline",
@@ -919,9 +933,9 @@
    "cve-cve-2024-4577",
    "akamai-blog-cve-2024-4577-one-day"
   ],
-  "status": "confirmed",
+  "status": "reported",
   "topic": "exploitation",
   "agent": "claude-story-site",
-  "note": "Counted from the captured catalog."
+  "note": "The KEV dates are counted from the captured catalog; 'exploited in the wild one day after disclosure' rests on Akamai alone."
  }
 ]

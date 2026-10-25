@@ -10,9 +10,9 @@ Two things, kept apart. **The state of affairs** is one living page: what is kno
 
 ## The state of affairs, now
 
-[v1: The state of affairs on 23 October: still no named victim, three open cases, a patch that is reaching servers, and firewalls in the blast radius23 October 2026, 14:11 UTC · Two days after the release, no organisation has confirmed a compromise through php2shell, and of four named incidents linked to it, one was retracted and three are unresolved. Fixes are moving through the supply chain: the NCSC-NL inventory went from 46 fixed products to 109 overnight. Ten security and network products are confirmed vulnerable.](state/index.html)
+[v3: The state of affairs on 24 October: a vendor withdraws the first claim of a break-in, banks report none, and the exploited list still does not have it24 October 2026, 12:30 UTC · Three days after the release, still no organisation has said it was compromised through php2shell. The one security vendor that had claimed a successful compromise, Sophos, withdrew it: its data showed scanning and a few failed attempts. US banks and the large crypto platforms report none, the Netherlands joins the authorities that have seen no attack succeed, and neither CVE was in CISA's exploited list at 05:53 UTC today.](state/index.html)
 
-[Every version](state/history/index.html) · [what changed in the latest](state/v0-v1/index.html)
+[Every version](state/history/index.html) · [what changed in the latest](state/v2-v3/index.html)
 
 ## The analyses
 - [What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list](../articles/what-changed-in-a-day/index.html) 2026-10-23
@@ -22,4 +22,4 @@ Two things, kept apart. **The state of affairs** is one living page: what is kno
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/views/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/views/index.html

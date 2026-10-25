@@ -10,6 +10,8 @@ Because PHP 8.1 and older receive no upstream fix and the flaws may reach back t
 
 Because PHP 8.1 and older receive no upstream fix and the flaws may reach back to PHP 5, installations on retired versions depend on a distribution backport, paid support or an upgrade, resulting in a long tail that stays exposed for months.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r01-3) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **20** critical · **Likelihood** 4 Likely · **Impact** 5 Severe · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Retired versions are common on shared hosting and appliances; upstream will not fix them; CISA singles out 8.1 and older.
@@ -66,4 +68,4 @@ On this site: [Patching: which versions get a fix, and from whom](../../../patch
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-3/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-3/index.html

@@ -10,6 +10,8 @@ Because pre-authentication code execution was reported against WordPress, Drupal
 
 Because pre-authentication code execution was reported against WordPress, Drupal, Joomla, MediaWiki, Magento, Nextcloud and other applications, their users are exposed whatever the application's own security, resulting in the largest share of affected sites.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r01-5) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **15** high · **Likelihood** 3 Possible · **Impact** 5 Severe · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Reported by the finders; the applications inherit the flaw from the engine.
@@ -36,7 +38,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
-| [Pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS](../../../facts/wordpress-drupal/index.html) | reported | **A2** Reported●●○○○○ | [Calif](../../../sources/calif-php2shell/index.html) [Wiz](../../../sources/wiz-blog-php2shell/index.html) |
+| [In researchers' own tests, pre-authentication RCE was confirmed against WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony and WHMCS](../../../facts/wordpress-drupal/index.html) | reported | **A2** Reported●●○○○○ | [Calif](../../../sources/calif-php2shell/index.html) [Wiz](../../../sources/wiz-blog-php2shell/index.html) |
 
 ## Treatments
 
@@ -60,4 +62,4 @@ On this site: [Affected systems: versions, deployments, applications, inventory]
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-5/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-5/index.html

@@ -10,6 +10,8 @@ Because this newsroom's agents read captured pages, feeds and other models' outp
 
 Because this newsroom's agents read captured pages, feeds and other models' output while holding vault credentials and the right to publish, text written by a stranger could steer one, a secret could be published, or a wrong status word could ship, resulting in harm to readers and to the people named on the site.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r10) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 3 Possible · **Impact** 4 Major · **Kind** AI and agents · **Acceptance** not recorded
 
 **Basis.** Nine unbounded excess capabilities in the agent grant; eleven overstated status words found by the desk; no steering seen.
@@ -68,4 +70,4 @@ On this site: [How to work on this site: guidance for every agent](../../../admi
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10/index.html

@@ -17,7 +17,7 @@
 (function () {
   'use strict';
   var KEY = 'p2s.reader.v1', NOTES = 'sgit.notes.v1', EVENT = 'p2s-reader';
-  var html = document.documentElement, root = html.getAttribute('data-root') || '', here = html.getAttribute('data-path') || location.pathname;
+  var html = document.documentElement, root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length), here = html.getAttribute('data-path') || location.pathname;
   var KINDS = [
     ['done', 'Done', 'read it, done with it'], ['read-later', 'Read later', 'come back to this'], ['follow-up', 'Follow up', 'act on this'],
     ['not-for-me', 'Not for me', 'this did not need to reach me'], ['more-like-this', 'More like this', 'more of this, please'],
@@ -86,7 +86,7 @@
 
   // ------------------------------------------------------------------ the page
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
-  function historyFor(id) { return /^(fact|page|briefing|front)-/.test(id) ? root + 'versions/' + id + '/index.html' : null; }
+  function historyFor(id) { return /^(fact|page|briefing|front)-[a-z0-9._-]+$/i.test(id) ? root + 'versions/' + id + '/index.html' : null; }
   var marks = Array.prototype.slice.call(document.querySelectorAll('.it[data-item]'));
   var pageMark = marks.filter(function (m) { return m.getAttribute('data-scope') === 'page'; })[0] || null;
   var blocks = [];

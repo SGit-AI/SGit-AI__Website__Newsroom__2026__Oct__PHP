@@ -10,6 +10,8 @@ Because every file in the repository is public within minutes of a push to dev, 
 
 Because every file in the repository is public within minutes of a push to dev, a vault key, access token or passphrase written into the tree would be published, resulting in the evidence or readers' data opened to anyone.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r10-2) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **10** medium · **Likelihood** 2 Unlikely · **Impact** 5 Severe · **Kind** AI and agents · **Acceptance** not recorded
 
 **Basis.** Credential shapes and vault files refused by the gate and the release tripwire.
@@ -56,4 +58,4 @@ On this site: [The vaults behind this site](../../../vaults/index.html)
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10-2/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r10-2/index.html

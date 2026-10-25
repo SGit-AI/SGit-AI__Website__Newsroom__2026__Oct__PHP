@@ -10,6 +10,8 @@ Because PHP sits in appliances, images, plugins and forgotten sites, an organisa
 
 Because PHP sits in appliances, images, plugins and forgotten sites, an organisation cannot patch what it has not listed, resulting in an update programme that reports done while vulnerable runtimes remain.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r09) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **16** high · **Likelihood** 4 Likely · **Impact** 4 Major · **Kind** Operational · **Acceptance** not recorded
 
 **Basis.** 418 inventory rows under investigation; the precedent of every component flaw since Log4Shell.
@@ -36,7 +38,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
 | [674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, 3 not vulnerable](../../../facts/scale-ncsc-nl/index.html) | confirmed | **A1** Weak signal●○○○○○ | [NCSC-NL](../../../sources/ncsc-nl-php2shell-software-list/index.html) |
-| [PHP is exposed on about 2.6 million internet-facing hosts, of which Censys counted 1.57 million unpatched on 21 October](../../../facts/scale-2.6m-hosts/index.html) | reported | **A2** Reported●●○○○○ | [THN](../../../sources/thehackernews-php2shell-4days/index.html) [SecurityWeek](../../../sources/securityweek-exploitation-days-before/index.html) |
+| [VulnCheck counts about 2.6 million internet-facing hosts exposing PHP; Censys, of the 2.58 million hosts it saw, could read a version on 1.58 million, and 1.57 million of those were unpatched on 21 October](../../../facts/scale-2.6m-hosts/index.html) | reported | **A2** Reported●●○○○○ | [THN](../../../sources/thehackernews-php2shell-4days/index.html) [SecurityWeek](../../../sources/securityweek-exploitation-days-before/index.html) |
 
 ## Treatments
 
@@ -62,4 +64,4 @@ On this site: [If you run PHP: the steps, in order, with their sources](../../..
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r09/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r09/index.html

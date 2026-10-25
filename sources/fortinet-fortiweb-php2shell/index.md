@@ -39,9 +39,13 @@ capture 20261022T112039Z · HTTP 200 · https://community.fortinet.com/fortiweb-
 - `rendered.html` 2d8aabfc30d2116425651b788f2c8e4d58122738b69721391022332ab628815b 1,208,805 bytes
 - `screenshot.png` 03a275af997e6093c4700503437ee405b77df000307b546eda109ddb0f40acff 826,331 bytes
 - `text.txt` 66beb7cb9c50e017b68c7c28ce5f985fd12b156c4060ecd82205cea19185d2a4 6,244 bytes
+capture 20261023T160435Z · HTTP 200 · https://community.fortinet.com/fortiweb-40/how-to-block-php2shell-cve-2026-109618-cve-2026-109619-on-fortiweb-230750- `headers.json` 53b226bb38f7e8750ac404fad4841b7110fc68e61e7677c40f634b572be20150 894 bytes
+- `page.html` 04063f9a65d03481164eeb0bf0ae0b4ea584df94bd87f1e919128fdcc8ff56b9 825,162 bytes
+- `provenance.json` dda6106dcb7d23ff42bf247988986832049169226171ecf8f0e4dfcaf6a40a76 1,742 bytes
+- `text.txt` d5dfb171e3d0266dfc385d0fe93d6547af86f2b0024bef8ba6e6a165247697a7 6,392 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sources/fortinet-fortiweb-php2shell/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/fortinet-fortiweb-php2shell/index.html

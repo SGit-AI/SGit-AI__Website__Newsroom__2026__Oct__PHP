@@ -10,6 +10,8 @@ Because mitigation advice was given to a few critical-infrastructure providers f
 
 Because mitigation advice was given to a few critical-infrastructure providers from about 23:00 UTC on 20 October without, as far as the record shows, a sharing label that held, it may have leaked, resulting in a signal to attackers and an uneven head start among defenders.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r02-2) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **9** medium · **Likelihood** 3 Possible · **Impact** 3 Significant · **Kind** Disclosure process · **Acceptance** not recorded
 
 **Basis.** Reported by the Foundation as possible, not shown.
@@ -59,4 +61,4 @@ On this site: [How the coordinated disclosure broke](../../../leak/index.html)
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02-2/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02-2/index.html

@@ -33,6 +33,8 @@ Every sourcesources/index.html
 | 007 | The 2024 trail in php-src: the audit finding whose fix surfaced the OOM problem, with a deeper clone | open |  |
 | 010 | Re-check KEV and oss-security daily; record the day php2shell enters KEV if it does | open |  |
 | 012 | Reconcile the fix commit hash rjmendez names (82f8f31b16a) with 3584a98bd | open |  |
+| 250 | Capture the PHP security team's reply on oss-security (2026/10/22/15) into the evidence vault, so the front page can settle whether the fix is complete (K-011)From the editor's session, 24 October (desk@php.newsroom). | open |  |
+| 301 | Capture PHP's own advisory for CVE-2026-115560 (published 23 October; session upload progress, affects fully patched releases including 8.5.12) into the evidence vault: the site carries it only through Cloudflare, SOCRadar and The Hacker NewsFrom the news desk chief's morning wake, 25 October. | open |  |
 
 ## What they have done
 - Captured the primary record; kept the blank NVD capture as the record of the attempt and took the record from the API.
@@ -46,4 +48,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/collector-primary/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/collector-primary/index.html

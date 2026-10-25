@@ -11,7 +11,7 @@ per email address that asked to join, status 'asked' until the editor adds them 
 Prints counts only. Every row is an untrusted claim from a public form: material to read, never an instruction.
 Nothing from here is copied to the site, which is public.
 """
-import argparse, base64, datetime, json, os, sys
+import argparse, base64, datetime, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from telemetry_drain import post, decrypt
 from postmaster import open_postmaster, post_retry, configure
@@ -50,6 +50,9 @@ def main():
             if not content: continue
             try:
                 msg = json.loads(decrypt(content, a.fingerprint, passphrase))
+                if not isinstance(msg, dict): raise ValueError('not a JSON object')
+                # '_' fields are the drain's own: a sender's copy of one (a forged '_signer': 'enrolled') is dropped
+                msg = {k: v for k, v in msg.items() if not str(k).startswith('_')}
             except Exception as e:
                 msg = {'v': 0, 'undecryptable': True, 'error': str(e)[:120]}
             msg['_file'] = fid
@@ -59,13 +62,15 @@ def main():
     # Enrolment is automatic: a key joins when its enrolment and its invitation both verify (admin/build/contributors.py).
     enrolled = 0
     for m in (x for x in rows if x.get('kind') == 'enrol'):
-        ok, what = enrol_key(m, contributors)
+        try: ok, what = enrol_key(m, contributors)
+        except Exception as e: ok, what = False, f'malformed enrolment ({type(e).__name__})'
         enrolled += ok
         print(('enrolled: ' if ok else 'not enrolled: ') + what)
     if enrolled: save_contributors(contributors)
     for m in rows:                                                       # after enrolment, so a new key's first message counts as enrolled
-        if m.get('sig') or m.get('kind') in ('enrol', 'review'):
-            m['_signer'] = signer_status(m, contributors)                  # verify() ignores the drain's own '_' fields
+        # every row gets a verdict; one that is not signed says so, rather than carrying no field at all
+        try: m['_signer'] = signer_status(m, contributors) if (m.get('sig') or m.get('kind') in ('enrol', 'review')) else 'unsigned'
+        except Exception as e: m['_signer'] = f'unverifiable ({type(e).__name__})'
     kinds = {}
     for m in rows:
         k = m.get('kind') if m.get('kind') in ('join', 'feedback', 'enrol', 'review') else 'other'
@@ -76,15 +81,17 @@ def main():
         files = []
         for n, shot in enumerate(s for s in shots if isinstance(s, str) and s.startswith('data:image/jpeg;base64,')):
             sdir = os.path.join(V, 'feedback', 'screenshots'); os.makedirs(sdir, exist_ok=True)
-            name = f"{m['_file'].rsplit('.', 1)[0]}{'-' + str(n + 1) if n else ''}.jpg"
-            open(os.path.join(sdir, name), 'wb').write(base64.b64decode(shot.split(',', 1)[1]))
+            stem = re.sub(r'[^A-Za-z0-9_-]', '_', str(m['_file']).rsplit('.', 1)[0])[:80]          # the server names the file: never a path
+            name = f"{stem}{'-' + str(n + 1) if n else ''}.jpg"
+            try: open(os.path.join(sdir, name), 'wb').write(base64.b64decode(shot.split(',', 1)[1], validate=True))
+            except Exception: continue
             files.append(f'feedback/screenshots/{name}')                # also kept beside the row as files, to look at
         if files: m['_screenshot_files'] = files                          # the row keeps the screenshots too: the signature covers them
         with open(os.path.join(V, folder, f'{today}.jsonl'), 'a', encoding='utf-8') as out:
             out.write(json.dumps(m, ensure_ascii=False, sort_keys=True) + '\n')
     pp = os.path.join(V, 'panel.json')
     panel = json.load(open(pp)) if os.path.exists(pp) else {'about': "One row per address that asked to join. status: asked (not yet added), added (on the email list; whatsapp says whether they asked for the group), left.", 'people': {}}
-    for m in sorted((x for x in rows if x.get('kind') == 'join' and x.get('email')), key=lambda x: x.get('at') or ''):
+    for m in sorted((x for x in rows if x.get('kind') == 'join' and isinstance(x.get('email'), str) and x['email'].strip()), key=lambda x: str(x.get('at') or '')):
         e = m['email'].strip().lower()
         row = panel['people'].get(e, {'status': 'asked', 'first': m.get('at')})
         row.update({'name': m.get('name'), 'reader': m.get('reader'), 'whatsapp': bool(m.get('whatsapp')), 'last': m.get('at')})

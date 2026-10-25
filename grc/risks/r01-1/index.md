@@ -10,6 +10,8 @@ Because the flaw is reached over HTTP before any application code runs, every mo
 
 Because the flaw is reached over HTTP before any application code runs, every mod_php site is exposed whatever application it serves, resulting in compromise without any application weakness.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r01-1) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **15** high · **Likelihood** 3 Possible · **Impact** 5 Severe · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Confirmed mechanism on the most common shared-hosting setup; no confirmed compromise yet.
@@ -62,4 +64,4 @@ On this site: [Affected systems: versions, deployments, applications, inventory]
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-1/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-1/index.html

@@ -2,7 +2,7 @@
 
 The proposed redesign of the site for review: what is wrong now, the two dials (who you are and how much you see), which pages each reader sees, the menu per view, and four mockups built from the live data.
 
-> Mockup notes for review, built from the data of release v0.10.7. Not the live site.
+> Mockup notes for review, built from the data of release v0.21.5. Not the live site.
 
 Admin · design · for review 
 ## The redesign: who you are, and how much you want to see
@@ -11,6 +11,21 @@ The editor's review of 23 October: the site is right in substance and wrong in f
 
 The model, in one line 
 Two dials. Who you are sets the layout and the order. How much you want (Focus, Standard, Everything) sets which pages exist for you at all. What you have read gets out of the way. 
+
+New, 25 October · the editor’s design, built 
+### F. The line: the site talks to you, as the reader you are, at the moment you are in
+
+One band under the masthead on every page, never closed, that says one thing: who we think you are and why, what has changed since you were last here, that this page is not written for you, or simply this page’s sentence for your role. Seven roles, three depths, eleven visit moments. Six pages, and a catalogue of every line the rules produce. The brief: the line. 
+
+Written, 25 October · before the work 
+### Where the reader’s persona should live: in the address, not in a query
+
+The article on URL paths and a single-page site: a link that names its persona ( /agencies/as/security/ ), every page keeping its own path, what that needs from SEO, and how the site stops repainting the whole screen on every click. On the briefs page. 
+
+New, 24 October · a working prototype 
+### E. The lens: the site shapes itself to you, in front of you
+
+Four settings at the top right (how long you have, who you are, what you want to do, what you have seen). Every page is built whole; a change re-lays the page in the same frame, with no reload and no flash, and the next page arrives already shaped. Three pages: the front page, a content page that answers to two of the settings, and a page for the team only. The brief: the lens. 
 
 ### The four mockups
  each is a real page, at full width; resize it to see it stack 
@@ -40,7 +55,7 @@ Pages stop at 1,080 pixels; on a laptop half the screen is empty. The proposal r
 
 #### The menu is the site map
 
-Eleven groups and 125 entries, ordered by how the site was built, not by what a reader wants to do. The proposal: four to eight entries, chosen by who you are and how much you want. 
+Eleven groups and 155 entries, ordered by how the site was built, not by what a reader wants to do. The proposal: four to eight entries, chosen by who you are and how much you want. 
 
 #### Everyone sees everything
 
@@ -71,7 +86,7 @@ front page, what is new, the phone app · 8 pages
  Your briefing 
 the briefing written for your role · 17 pages 
  Ask 
-questions readers ask, the Sherpa · 14 pages 
+questions readers ask, the Sherpa · 16 pages 
  Explained 
 plain-English explainer, glossary · 2 pages 
  What to do 
@@ -79,37 +94,37 @@ playbook, patching, affected systems, check your stack · 6 pages
  The incident 
 the flaws, timeline, discovery, leak, exploitation, impact, defence · 10 pages 
  The analysis 
-claims, fact-check, numbers, agencies, who says what · 35 pages 
+claims, fact-check, numbers, agencies, who says what · 40 pages 
  Risk and compliance 
-risk register, frameworks, stakeholders · 113 pages 
+risk register, frameworks, stakeholders · 117 pages 
  The code 
 the fix in php-src, the review graph · 3 pages 
  Stories 
-signed articles written here · 7 pages 
+signed articles written here · 10 pages 
  The evidence 
-every source, the vaults, the pipeline, versions · 346 pages 
+every source, the vaults, the pipeline, versions · 537 pages 
  The site and the team 
-method, roles, board, releases, admin · 60 pages 
+method, roles, board, releases, admin · 288 pages 
 
 ### Pages per reader, per view
 
  Reader Focus Standard Everything 
- Alex Curious reader 26 64 621 
- Jordan Board member or executive 26 212 621 
- Quinn CFO 26 212 621 
- Robin CISO 153 212 621 
- Rowan Journalist 422 445 621 
- Sam Security lead 40 102 621 
- Drew PHP or platform engineer 33 102 621 
- Ash Security researcher 383 448 621 
-Counted from the 621 pages this release builds. 
+ Alex Curious reader 28 69 1054 
+ Jordan Board member or executive 28 226 1054 
+ Quinn CFO 28 226 1054 
+ Robin CISO 159 226 1054 
+ Rowan Journalist 623 646 1054 
+ Sam Security lead 42 112 1054 
+ Drew PHP or platform engineer 35 112 1054 
+ Ash Security researcher 576 649 1054 
+Counted from the 1054 pages this release builds. 
 
 #### Who sees the team console
 
 Everything view only. It stays public, because how the site is run is part of the story; it just stops being in a reader's way. 
 
 ### The menu, per view
- today: 11 groups, 125 entries, the same for everyone 
+ today: 11 groups, 155 entries, the same for everyone 
 
 Focus 
 Four places. For a board member, a CFO, a website owner. 
@@ -151,7 +166,7 @@ All of it, for power users and the team.
 
 - The admin pages move into console D. 
 
- Mockups built by the design agent from release v0.10.7; the brief is on the briefs page. Board items record each step.
+ Mockups built by the design agent from release v0.21.5; the brief is on the briefs page. Board items record each step.
 
 ---
-site v0.10.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html
+site v0.21.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html

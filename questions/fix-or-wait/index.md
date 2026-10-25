@@ -37,7 +37,7 @@ To paste back where it was asked: the paragraph above and `https://php.oct.2026.
 
 **If none of that can be done in time**, the NSA, CISA and the UK NCSC say take the system offline until it is fixed. That is the last step on every agency's list, not the first. [NSA Cyber on X](../../sources/nsa-x-2112903220209098897/index.html) [CISA](../../sources/cisa-alert-php-20261021/index.html) [NCSC UK](../../sources/ncsc-news-php/index.html)
 
-**Two exceptions.** PHP 8.1 and older get no release: the project published source backports for 7.4, 8.0 and 8.1, so for those the answer is a migration plan, or a vendor that backports. And a report that the 8.5.12 fix may be incomplete appeared on the oss-security list within hours and has not been answered there, so keep watching for a follow-up release. [php.net](../../sources/php-net-advisory/index.html) [php-src](../../sources/github-php-src-branch-7.4-backport/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html)
+**Two exceptions.** PHP 8.1 and older get no release: the project published source backports for 7.4, 8.0 and 8.1, so for those the answer is a migration plan, or a vendor that backports. And a report that the 8.5.12 fix may be incomplete reached the oss-security list within hours; it is unverified, carried second-hand, and PHP is reported second-hand to have called it unrelated. Keep watching php.net for a follow-up release anyway. [php.net](../../sources/php-net-advisory/index.html) [php-src](../../sources/github-php-src-branch-7.4-backport/index.html) [oss-security](../../sources/openwall-oss-security-109619-thread/index.html)
 
 ## The pages that carry it
 - [If you run PHP: the steps, in order, with their sources](../../playbook/index.html)
@@ -50,4 +50,4 @@ Next question: [Is PHP really the software behind most websites?](../most-websit
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/questions/fix-or-wait/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/questions/fix-or-wait/index.html

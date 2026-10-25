@@ -8,7 +8,7 @@ Every vault the team's agents have made, listed by agent, by ID only, with wheth
 
 # Vaults: who made each one, and who holds which keys
 
-Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. 19 vaults; for 12 of them, the sealing is not recorded yet.
+Every vault the agents on this team have made, listed by the agent that made it, and the keys each agent holds. A vault ID is public: it names the vault and opens nothing. A vault key is never published, here or anywhere; it is sealed to the editor's key on pki.sgit.ai before the agent's session ends, so it is never lost with the session. 22 vaults; for 1 of them, the sealing is not recorded yet.
 
 ### [conductor@php.newsroom](../conductor/index.html) 5 vaults made
 
@@ -42,41 +42,23 @@ Kept by the agent itself.
 
 Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.
 
-### [claude-story-site](../story-site/index.html) 1 vault made
+### [claude-story-site](../story-site/index.html) 2 vaults made
 
 | Vault ID | What it holds | Created | Key sealed to the root |
 |---|---|---|---|
-| `dcsmxese` | The coverage vault: 24 pages from other outlets, for the record | 2026-10-22 | not recorded |
+| `dcsmxese` | The coverage vault: 24 pages from other outlets, for the record | 2026-10-22 | 2026-10-24 (pki-agent seal --from-vault; the link expires 2026-11-07) |
+| `w5ie1crc` | Test vault for the phone app (/now/): made to check open, write, publish and read-back; holds a fake OpenRouter key and test briefings only | 2026-10-22 | 2026-10-24 (pki-agent seal --from-vault; the link expires 2026-11-07) |
 
-**Keys it holds:** not recorded yet.
+#### Keys it holds
 
-Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.
-
-### [dev@php.newsroom](../dev/index.html) 5 vaults made
-
-| Vault ID | What it holds | Created | Key sealed to the root |
+| Vault ID | Kind of key | From | Since |
 |---|---|---|---|
-| `84wr8mib` | The telemetry vault: anonymous page events through a write-only lane | 2026-10-22 | sealed to the editor on 22 October (board 013) |
-| `wgeiqabu` | The subscriptions vault: subscription requests through a write-only lane | 2026-10-22 | sealed to the editor on 22 October (board 013) |
-| `0cfkdcvh` | The public telemetry vault: counts published at every drain | 2026-10-22 | not recorded |
-| `i4diy82d` | The telemetry dashboard: a vault app over the telemetry vault | 2026-10-22 | not recorded |
-| `5wnsr5h8` | The telemetry application, versioned in a vault of its own | 2026-10-22 | not recorded |
+| `dcsmxese` | vault key | made it | 2026-10-22 |
+| `w5ie1crc` | vault key | made it | 2026-10-22 |
 
-**Keys it holds:** not recorded yet.
+Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing. Confirmed and completed by claude-story-site on 24 October 2026; its agent key is sha256:f15dbb872e108ec7, made in its session, awaiting the editor's enrolment.
 
-Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.
-
-### [researcher@php.newsroom](../researcher/index.html) 1 vault made
-
-| Vault ID | What it holds | Created | Key sealed to the root |
-|---|---|---|---|
-| `oq9gflln` | The source watch: every outside source, checked on a schedule, a snapshot on every change | 2026-10-22 | not recorded |
-
-**Keys it holds:** not recorded yet.
-
-Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.
-
-### [sherpa@php.newsroom](../sherpa/index.html) 0 vaults made
+### correspondent@php.newsroom 0 vaults made
 
 | Vault ID | What it holds | Created | Key sealed to the root |
 |---|---|---|---|
@@ -85,24 +67,127 @@ Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records 
 
 | Vault ID | Kind of key | From | Since |
 |---|---|---|---|
-| `58526ytp` | vault key | the editor | 2026-10-23 |
+| `3ytzxm3g` | read key | the published read key (admin/content/vaults/php-evidence.json) | 2026-10-22 |
+| `4klm5qlt` | vault key | the editor, as message text in the session (23 October 2026); pulse@newsroom's vault, used to read only, never to write | 2026-10-23 |
 
-Kept by the agent itself. The Sherpa has made no vaults; it holds one key, given by the editor to read the feedback that arrives in the collaborators vault. Its own key pair (pki.sgit.ai, sha256:2de83f17e539954f) lives only as long as its session.
+The correspondent's session (Opus; until 24 October named the journalist, claude-journalist). It made no vault. It holds the keys below, read only: it never writes to any of these vaults. Clones live outside the repository.
+
+### curator@php.newsroom 0 vaults made
+
+| Vault ID | What it holds | Created | Key sealed to the root |
+|---|---|---|---|
+
+#### Keys it holds
+
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `3ytzxm3g` | vault key | the editor, sealed to this session's key (23 October 2026) | 2026-10-23 |
+| `7r83qic5` | vault key | the editor, as message text in the session (23 October 2026); used to read the pack copy of the source watch only, never to write | 2026-10-23 |
+
+The scheduled curator session (Claude Code, Sonnet), set up on 23 October 2026. It made no vault; it holds the keys below, given by the editor as a message sealed to its session key on pki.sgit.ai.
+
+### [dev@php.newsroom](../dev/index.html) 5 vaults made
+
+| Vault ID | What it holds | Created | Key sealed to the root |
+|---|---|---|---|
+| `84wr8mib` | The telemetry vault: anonymous page events through a write-only lane | 2026-10-22 | sealed to the editor on 22 October (board 013) |
+| `wgeiqabu` | The subscriptions vault: subscription requests through a write-only lane | 2026-10-22 | sealed to the editor on 22 October (board 013) |
+| `0cfkdcvh` | The public telemetry stats: curated counts and a world map, its read key published, written at every drain | 2026-10-23 | sealed to the root on 23 October (pki-agent seal --from-vault) |
+| `i4diy82d` | The telemetry dashboard: a vault app over the telemetry vault (superseded by 5wnsr5h8) | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault) |
+| `5wnsr5h8` | The telemetry application (v0.4.0), versioned in a vault of its own; the telemetry vault links it | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault) |
+
+#### Keys it holds
+
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `84wr8mib` | vault key | made it | 2026-10-22 |
+| `wgeiqabu` | vault key | made it | 2026-10-22 |
+| `i4diy82d` | vault key | made it | 2026-10-22 |
+| `5wnsr5h8` | vault key | made it | 2026-10-22 |
+| `0cfkdcvh` | vault key | made it | 2026-10-23 |
+| `84wr8mib` | append token | made it | 2026-10-22 |
+| `wgeiqabu` | append token | made it | 2026-10-22 |
+| `3ytzxm3g` | read key | published on the site | 2026-10-22 |
+
+Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing. Confirmed by dev@php.newsroom on 23 October 2026.
+
+### [journalist@php.newsroom](../journalist/index.html) 0 vaults made
+
+| Vault ID | What it holds | Created | Key sealed to the root |
+|---|---|---|---|
+
+**Keys it holds:** not recorded yet.
+
+The scheduled journalist (Sonnet), proposed on 24 October 2026; not yet running. It will read the evidence vault with its published read key; a read key for the source-watch pack vault (7r83qic5) will be sealed to it after the handshake.
+
+### observability@php.newsroom 0 vaults made
+
+| Vault ID | What it holds | Created | Key sealed to the root |
+|---|---|---|---|
+
+#### Keys it holds
+
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `84wr8mib` | vault key | the editor, sealed by sha256:956934e47063ceaa | 2026-10-24 |
+| `5wnsr5h8` | vault key | the editor, sealed by sha256:956934e47063ceaa | 2026-10-24 |
+
+Started by observability@php.newsroom on 24 October 2026, its first round. No vault made yet. The keys of 84wr8mib and 5wnsr5h8 came sealed to sha256:b9ddd39416d71cbb from sha256:956934e47063ceaa (chains to the root), at the editor's hand.
+
+### [researcher@php.newsroom](../researcher/index.html) 2 vaults made
+
+| Vault ID | What it holds | Created | Key sealed to the root |
+|---|---|---|---|
+| `oq9gflln` | Retired on 23 October 2026, replaced by 7r83qic5; listed because every vault made stays registered with the date its key was sealed to the root | 2026-10-22 | 2026-10-22 |
+| `7r83qic5` | The source watch, a pack-mode vault (sgit-ai 0.24.0): every outside source on php2shell, captured on a schedule, a snapshot on every change, raw kept apart from analysis; read key not published until the vault UI opens pack vaults | 2026-10-23 | 2026-10-23 |
+
+#### Keys it holds
+
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `3ytzxm3g` | read key | the site (published in data/admin.json) | 2026-10-22 |
+| `7r83qic5` | vault key | made it | 2026-10-23 |
+
+Kept by the agent itself (confirmed by researcher@php.newsroom on 23 October 2026). Rows and holds updated by dev@php.newsroom on 24 October 2026 at the editor's word: the pack vault is the source watch, and no session uses the old one.
+
+### [sherpa@php.newsroom](../sherpa/index.html) 1 vault made
+
+| Vault ID | What it holds | Created | Key sealed to the root |
+|---|---|---|---|
+| `d6zak0o3` | The Sherpa's inbox: an append lane for agents outside the newsroom (the RiskMandate email agent) and the editor, one derived token per sender | 2026-10-24 | 2026-10-24 |
+
+#### Keys it holds
+
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `58526ytp` | vault key | the editor | 2026-10-23 |
+| `d6zak0o3` | vault key | made it | 2026-10-24 |
+
+Kept by the agent itself. The Sherpa's own key pair (pki.sgit.ai, sha256:2de83f17e539954f) lives only as long as its session.
 
 ### [synthetic@php.newsroom](../synthetic/index.html) 6 vaults made
 
 | Vault ID | What it holds | Created | Key sealed to the root |
 |---|---|---|---|
-| `1zq458zk` | A synthetic reader’s vault (board member): every run, page, screenshot and review | 2026-10-22 | not recorded |
-| `wlhgl8pk` | A synthetic reader’s vault (CTO): every run, page, screenshot and review | 2026-10-22 | not recorded |
-| `9p6jpsd2` | A synthetic reader’s vault (project manager): every run, page, screenshot and review | 2026-10-22 | not recorded |
-| `vjsqjhvp` | A synthetic reader’s vault (security lead): every run, page, screenshot and review | 2026-10-22 | not recorded |
-| `3l7tzwh9` | A synthetic reader’s vault (developer): every run, page, screenshot and review | 2026-10-22 | not recorded |
-| `dpdx3q13` | A synthetic reader’s vault (designer): every run, page, screenshot and review | 2026-10-22 | not recorded |
+| `1zq458zk` | A synthetic reader's vault (board member): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
+| `wlhgl8pk` | A synthetic reader's vault (CTO): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
+| `9p6jpsd2` | A synthetic reader's vault (project manager): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
+| `vjsqjhvp` | A synthetic reader's vault (security lead): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
+| `3l7tzwh9` | A synthetic reader's vault (developer): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
+| `dpdx3q13` | A synthetic reader's vault (designer): every run, page, screenshot and review | 2026-10-22 | sealed to the root on 22 October (pki-agent seal --from-vault, by the session key sha256:67716a47b5c83f08), QR codes handed to the editor |
 
-**Keys it holds:** not recorded yet.
+#### Keys it holds
 
-Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing.
+| Vault ID | Kind of key | From | Since |
+|---|---|---|---|
+| `1zq458zk` | vault key | made it | 2026-10-22 |
+| `wlhgl8pk` | vault key | made it | 2026-10-22 |
+| `9p6jpsd2` | vault key | made it | 2026-10-22 |
+| `vjsqjhvp` | vault key | made it | 2026-10-22 |
+| `3l7tzwh9` | vault key | made it | 2026-10-22 |
+| `dpdx3q13` | vault key | made it | 2026-10-22 |
+
+Seeded by conductor@php.newsroom on 23 October 2026 from the site's own records (data/vaults.json, REALITY.md). The agent named here owns this file from now on: confirm or correct each row, and add the vaults it made that are missing. Confirmed by synthetic@php.newsroom on 24 October 2026.
 
 ## The rules
 
@@ -120,4 +205,4 @@ What each vault is for, and the published read keys and write-only lanes, are on
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.html

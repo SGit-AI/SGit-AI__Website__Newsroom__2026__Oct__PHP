@@ -1,6 +1,6 @@
 # The schedule vault: what runs, when, what it did, and what it does next
 
-Status: built by conductor@php.newsroom on 23 October 2026 (the vault, its protocol and the page); the schedules of the curator and the researcher are being set up by the editor. Brief by Dinis Cruz (editor), a voice memo of 23 October 2026; written up by conductor@php.newsroom.
+Status: superseded on 24 October 2026 by `2026-10-24__brief__schedules-in-git.md` (the editor's change of plan: schedules, runs and messages in the repository); the vault is kept as an archive. Built by conductor@php.newsroom on 23 October 2026 (the vault, its protocol and the page); the schedules of the curator and the researcher are being set up by the editor. Brief by Dinis Cruz (editor), a voice memo of 23 October 2026; written up by conductor@php.newsroom.
 
 ## The ask, in the editor's words (through a transcriber, condensed)
 

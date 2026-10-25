@@ -117,10 +117,10 @@
     var tb = el('tbody');
     runs.forEach(function (r) {
       var row = el('tr'), v = versionOf(r), st = stateOf(r, runs);
-      var a = el('a', null, '#' + r.run_number); a.href = r.html_url; a.target = '_blank'; a.rel = 'noopener';
+      var a = el('a', null, '#' + r.run_number); a.href = /^https:\/\/github\.com\//.test(String(r.html_url)) ? r.html_url : '#'; a.target = '_blank'; a.rel = 'noopener';
       var c1 = el('td'); c1.appendChild(a); row.appendChild(c1);
       var c2 = el('td'), ca = el('a', null, v ? 'v' + v : r.head_sha.slice(0, 7));
-      ca.href = 'https://github.com/' + site.repo + '/commit/' + r.head_sha; ca.target = '_blank'; ca.rel = 'noopener';
+      ca.href = /^[\w.-]+\/[\w.-]+$/.test(site.repo) && /^[0-9a-f]{7,40}$/.test(String(r.head_sha)) ? 'https://github.com/' + site.repo + '/commit/' + r.head_sha : '#'; ca.target = '_blank'; ca.rel = 'noopener';
       ca.title = ((r.head_commit && r.head_commit.message) || '').split('\n')[0];
       c2.appendChild(ca);
       if (v && s.live === v) c2.appendChild(el('span', 'small', ' ◀ live'));

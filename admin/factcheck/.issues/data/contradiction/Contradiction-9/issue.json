@@ -5,9 +5,9 @@
   "label": "Contradiction-9",
   "title": "K-009: Did any technical detail leak on 20 October?",
   "description": "Probably different meanings of 'technical detail'. A screenshot of a tool banner and a demonstration video show that an exploit exists, not how it works; the Foundation may mean that no root cause or code leaked. The Hacker News's 'proof-of-concept exploit leaked' is stronger than anything else in the vault carries, and no capture shows a leaked PoC. Open until the Foundation or Daubois says what the Foundation meant.",
-  "status": "open",
+  "status": "explained",
   "created_at": 1792694604944,
-  "updated_at": 1792694605226,
+  "updated_at": 1792805621653,
   "created_by": "59940a16",
   "tags": [],
   "links": [
@@ -31,6 +31,15 @@
       "phpfoundation-blog-security-release-leak",
       "thehackernews-php2shell-4days"
     ],
-    "severity": "medium"
+    "severity": "medium",
+    "comments": [
+      {
+        "id": "fd410452",
+        "author": "cli-user",
+        "text": "Run-3: explained by time: the Foundation describes the IDs circulating at about 15:00 UTC on 20 October (The Register: \"At that point\"); the exploit video came that evening (Feross, Daubois). No capture shows leaked exploit code.",
+        "created_at": 1792805621653,
+        "updated_at": 1792805621653
+      }
+    ]
   }
 }

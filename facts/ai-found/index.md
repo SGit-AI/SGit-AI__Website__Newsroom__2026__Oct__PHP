@@ -36,8 +36,8 @@ Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on
 - 2026-10-21 14:04 UTCOpenAI on X publishes [OpenAI on X: OpenAI models helped researchers ... discover critical security flaws in PHP](../../sources/x-openai-php2shell/index.html)
 - 2026-10-22 06:16 UTCBBC News publishes [PHP: Global scramble to fix critical cyber-security flaws as many websites taken offline - follow live](../../sources/bbc-live-ckgel5xp2xv9t/index.html)
 - 2026-10-22 08:04 UTCSaved into the evidence vault: BBC News, then 2 more captures
-- 2026-10-22 08:10 UTCSaved into the evidence vault: Calif
-- 2026-10-22 08:10 UTCSaved into the evidence vault: Wiz
+- 2026-10-22 08:10 UTCSaved into the evidence vault: Calif, then 1 more capture
+- 2026-10-22 08:10 UTCSaved into the evidence vault: Wiz, then 1 more capture
 - 2026-10-22 08:16 UTCSaved into the evidence vault: OpenAI on X
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
 
@@ -63,4 +63,4 @@ Sources: bbc-live-ckgel5xp2xv9t, x-openai-php2shell, calif-php2shell, wiz-blog-p
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/ai-found/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/ai-found/index.html

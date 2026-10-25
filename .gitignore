@@ -226,6 +226,7 @@ __marimo__/
 lane.json
 pki-passphrase
 keys*.json
+!data/*.json
 subscribers.json
 requests/*.jsonl
 drain/*.jsonl

@@ -32,7 +32,7 @@ Every element is carried by the BBC live page, but Edinburgh council, online sto
 | [wikimediastatus-page](../../sources/wikimediastatus-page/index.html) | absent | *All Systems Operational* | 13e068d2c2b3665d |
 | [cyberexpress-php2shell-gov-sites](../../sources/cyberexpress-php2shell-gov-sites/index.html) | partial | *Edinburgh council’s website and pages for BBC programmes, including Doctor Who and The Traitors, also went dark, though neither has confirmed a PHP link.* | f45bc7599367343e |
 
-Open tickets: [Contradiction-6](../../factcheck/index.html#Contradiction-6), [Evidence-11](../../factcheck/index.html#Evidence-11), [Evidence-3](../../factcheck/index.html#Evidence-3), [Evidence-4](../../factcheck/index.html#Evidence-4), [Finding-22](../../factcheck/index.html#Finding-22), [Finding-23](../../factcheck/index.html#Finding-23), [Finding-57](../../factcheck/index.html#Finding-57), [Gap-1](../../factcheck/index.html#Gap-1).
+Open tickets: [Contradiction-6](../../factcheck/index.html#Contradiction-6), [Evidence-11](../../factcheck/index.html#Evidence-11), [Evidence-18](../../factcheck/index.html#Evidence-18), [Evidence-3](../../factcheck/index.html#Evidence-3), [Evidence-4](../../factcheck/index.html#Evidence-4), [Finding-22](../../factcheck/index.html#Finding-22), [Finding-23](../../factcheck/index.html#Finding-23), [Finding-57](../../factcheck/index.html#Finding-57), [Gap-1](../../factcheck/index.html#Gap-1).
 
 Graded in Run-1, resting on captures up to 2026-10-22 08:05 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
@@ -63,4 +63,4 @@ Sources: bbc-live-ckgel5xp2xv9t
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/affected-sites/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/affected-sites/index.html

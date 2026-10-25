@@ -31,9 +31,13 @@ capture 20261022T081803Z · HTTP 200 · https://www.howtogeek.com/your-favorite-
 - `rendered.html` 7285bee583a2028e859815011ff311cdc7cd58e833cd2db577fbf150f92e4889 291,892 bytes
 - `screenshot.png` c74fddd0b93069d97b4424669c834a62d22e29d7a49e65463c24cfcce3689f02 1,518,193 bytes
 - `text.txt` fc428f513db5fdc848312aa42f77bb2464902cdfa826e007e7d23427a88a6a2b 5,511 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.howtogeek.com/your-favorite-websites-are-down-due-to-an-internet-breaking-security-failure/- `headers.json` 0b01abadd3f45a837d2687e0401b89e9ea8af1aa7fbd80e1f9962f2cd34e86d0 3,627 bytes
+- `page.html` 458c67d8cda9735bce0d28b6cefe194768f0ecb7f2d9174bea5b36f41d151836 282,202 bytes
+- `provenance.json` 6684042b125695ae4c9d676c5bceca540bb049802844f586d6073305bdad49cb 1,676 bytes
+- `text.txt` 7e375f5c40040efb08b9809c1a0362d976bfa6e0930146a8920d79d1e06e3e66 5,565 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sources/howtogeek-sites-down/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/howtogeek-sites-down/index.html

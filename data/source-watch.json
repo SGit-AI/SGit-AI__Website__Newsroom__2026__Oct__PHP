@@ -1,7 +1,6 @@
 {
- "about": "The public shape of the source-watch vault, exported by admin/build/export_watch.py. Counts and vocabularies only: no capture is copied.",
- "vault_id": "oq9gflln",
- "read_key": "sgit_public_read_d0dc218a9bd0a85fc1737129c590a1d7bfafe82d444707f438810140ebaab277:oq9gflln",
+ "about": "The public shape of the source watch, exported by admin/build/export_watch.py. Counts and vocabularies only: no capture is copied. This export was read on 23 October 2026, before the watch moved into pack mode, and its commit ids are from that read; the next export reads 7r83qic5.",
+ "vault_id": "7r83qic5",
  "head": {
   "commit": "20afaa62129d",
   "message": "researcher@php.newsroom: scanner-noise angle (index/angles/scanner-noise.json, 7 new pages), job-03-community for Perplexity with its prompt, three new kinds, login-wall fix for Bluesky and LinkedIn search"

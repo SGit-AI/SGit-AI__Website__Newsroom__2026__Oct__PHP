@@ -41,9 +41,13 @@ capture 20261022T111831Z · HTTP 200 · https://www.php2shell.com/- `headers.jso
 - `rendered.html` e5958b710931a3753baaa7475dea5c3be9f08677412269976d9e50100e3f9022 506,683 bytes
 - `screenshot.png` 77a8c0a27f91ee02eab5575847f4611e6605f030f286c20c51eb4de3cf0f496a 2,152,724 bytes
 - `text.txt` b1e83b4f0feb87d5abb59bfb76015b154a7b678a51c0e965e06929f1e6b17f48 9,251 bytes
+capture 20261023T160435Z · HTTP 200 · https://www.php2shell.com/- `headers.json` 97b231d6043caaa850edf7ddf8cb4b37e0d828dbaa2f34af25642f1b32af18d6 1,567 bytes
+- `page.html` 3cd8d65ea92fff67fe8ba33a859adf17d23ec992b51a919ea16ace361b803805 288,798 bytes
+- `provenance.json` b81bb4aec0049450718b2a7e5f7d1b38aff54270a4eca66f8a201a04025819fd 1,502 bytes
+- `text.txt` 1a5b93f5d3550ef4fbcedbbb1d54e790c6c63205ff114093e88174b27f79dd4c 9,276 bytes
 
 The captured files are held privately in the evidence vault and are not republished; the hashes above are what the vault recorded at capture time. [Every source →](../index.html)
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/sources/php2shell-com/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/sources/php2shell-com/index.html

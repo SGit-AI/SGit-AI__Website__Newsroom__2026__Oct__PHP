@@ -16,29 +16,35 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 
 # Credential shapes. The published keys (sgit_public_read_*, the two lanes' append tokens) are public on purpose and
 # are not matched; a vault key is sgit_private_vault_<secret>:<vault id>.
-SECRET = re.compile('|'.join([
-    r'sgit_private_[a-z]+_[0-9A-Za-z]{12,}',               # sgit vault and private read keys
-    r'-----BEGIN [A-Z ]*PRIVATE KEY-----',
-    r'\b(AKIA|ASIA)[0-9A-Z]{16}\b',                         # AWS access key ids
-    r'\bsk-ant-[A-Za-z0-9_-]{20,}',                         # Anthropic
-    r'\bsk-(proj-|or-v1-)?[A-Za-z0-9_-]{32,}',              # OpenAI, OpenRouter
-    r'\b(ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{30,}',            # GitHub tokens
-    r'\bgithub_pat_[A-Za-z0-9_]{40,}',
-    r'\bxox[baprs]-[0-9A-Za-z-]{10,}',                      # Slack
-    r'hooks\.slack\.com/services/[A-Za-z0-9/]{20,}',
-    r'\bAIza[0-9A-Za-z_-]{35}\b',                           # Google API keys
-    r'\beyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}',  # JWTs
-    r'\bsg-send_[A-Za-z0-9]{6,}',                           # SG/Send access tokens
-]))
+SECRET_KINDS = [
+    ('an sgit private key', r'sgit_private_[a-z]+_[0-9A-Za-z]{12,}'),            # sgit vault and private read keys
+    ('a PEM private key', r'-----BEGIN [A-Z ]*PRIVATE KEY-----'),
+    ('an AWS access key id', r'\b(?:AKIA|ASIA)[0-9A-Z]{16}\b'),
+    ('an Anthropic key', r'\bsk-ant-[A-Za-z0-9_-]{20,}'),
+    ('an OpenAI or OpenRouter key', r'\bsk-(?:proj-|or-v1-)?[A-Za-z0-9_-]{32,}'),
+    ('a GitHub token', r'\b(?:ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{30,}'),
+    ('a GitHub fine-grained token', r'\bgithub_pat_[A-Za-z0-9_]{40,}'),
+    ('a Slack token', r'\bxox[baprs]-[0-9A-Za-z-]{10,}'),
+    ('a Slack webhook', r'hooks\.slack\.com/services/[A-Za-z0-9/]{20,}'),
+    ('a Google API key', r'\bAIza[0-9A-Za-z_-]{35}\b'),
+    ('a JWT', r'\beyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}'),
+    ('an SG/Send access token', r'\bsg-send_[A-Za-z0-9]{6,}'),
+]
+SECRET = re.compile('|'.join(f'(?P<k{i}>{rx})' for i, (_, rx) in enumerate(SECRET_KINDS)))
+
+
+def kind_of(m):
+    """What a match is, by name: a finding never repeats any character of the secret it found (CodeQL py/clear-text-logging)."""
+    return SECRET_KINDS[int(m.lastgroup[1:])][0]
 # Environment variables whose values must never appear in the tree, whatever their shape.
 SECRET_ENV = ('SG_SEND_ACCESS_TOKEN', 'SYNTHETIC_VAULT_KEYS', 'ANTHROPIC_API_KEY', 'OPENROUTER_API_KEY', 'GITHUB_TOKEN', 'GH_TOKEN')
 # Paths that hold decrypted vault content or keys and must never be committed (the site publishes the whole tree).
-SENSITIVE_PATH = re.compile(r'(^|/)(\.sg_vault|\.sg-send)(/|$)|(^|/)(lane\.json|pki-passphrase|subscribers\.json|keys?[-_.][^/]*\.json)$|(^|/)(requests|drain)/[^/]*\.jsonl$|\.(pem|key)$')
+SENSITIVE_PATH = re.compile(r'(^|/)(\.sg_vault|\.sg-send)(/|$)|(^|/)(lane\.json|pki-passphrase|subscribers\.json|panel\.json|keys?[-_.][^/]*\.json)$|(^|/)(requests|drain|feedback|enrolments)/[^/]*\.jsonl$|(^|/)inbox/[^/]*\.eml$|\.(pem|key)$')
 
 # Invisible characters that hide text from a person but not from a model: Unicode tags and bidi controls always,
 # zero-width characters in prose and data.
-TAGS_BIDI = re.compile('[\U000E0000-\U000E007F‪-‮⁦-⁩]')
-ZERO_WIDTH = re.compile('[​-‍⁠-⁤]')
+TAGS_BIDI = re.compile('[\U000E0000-\U000E007F\u202A-\u202E\u2066-\u2069]')
+ZERO_WIDTH = re.compile('[\u200B-\u200F\u2060-\u2064]')
 # Text addressed to a model. Kept narrow on purpose: a hit stops the release until a person allows it in
 # admin/security/injection-allowlist.json (for example a story that quotes a headline about prompt injection).
 INJECTION = re.compile(r'(ignore|disregard|forget) (all |any |the )?(previous|prior|above|earlier) (instructions|prompts?|context)'
@@ -49,6 +55,7 @@ TEXT_EXT = ('.html', '.md', '.txt', '.json', '.xml', '.jsonl', '.csv', '.webmani
 SKIP_DIRS = {'.git', '.sg_vault', 'node_modules', '__pycache__'}
 SLUG = re.compile(r'[a-z0-9][a-z0-9._-]*')
 JSON_SCRIPT = re.compile(r'<script type="application/(?:ld\+)?json"[^>]*>(.*?)</script>', re.S)
+INLINE_HANDLER = re.compile(r'<[a-zA-Z][^<>]*\son[a-z]+\s*=', re.I)    # the site never writes one; data that does is an injection
 BAD_SCHEME = re.compile(r'\b(href|src|action|formaction)\s*=\s*["\']?\s*(javascript|vbscript|data:text/html)', re.I)
 
 
@@ -107,7 +114,7 @@ def tree_fails(root=ROOT):
             continue
         m = SECRET.search(t)
         if m:
-            fails.append(f'{rp}:{line_of(t, m.start())}: credential shape ({m.group(0)[:10]}...)')
+            fails.append(f'{rp}:{line_of(t, m.start())}: credential shape: {kind_of(m)}')
         for k, v in envs:
             if v in t:
                 fails.append(f'{rp}: holds the value of {k}')
@@ -137,6 +144,15 @@ def tree_fails(root=ROOT):
                     ok = False
                 if not ok:
                     fails.append(f'{rp}:{line_of(t, m.start())}: a JSON script block that does not parse or holds "<" (closed early by its data?)')
+            # every page carries its Content-Security-Policy (admin/build/csp.py), and it never lets inline or eval'd script run
+            cm = re.search(r'<meta http-equiv="Content-Security-Policy" content="([^"]*)"', t)
+            if not cm:
+                fails.append(f'{rp}: no Content-Security-Policy (admin/build/csp.py writes one into every page)')
+            elif re.search(r"script-src[^;]*'unsafe-(inline|eval)'", cm.group(1)):
+                fails.append(f'{rp}: its Content-Security-Policy lets inline or eval\'d script run')
+            m = INLINE_HANDLER.search(JSON_SCRIPT.sub('', t))
+            if m:
+                fails.append(f'{rp}: an inline event-handler attribute ({m.group(0)[-40:]!r}): the build never writes one, so data did')
             m = BAD_SCHEME.search(t)
             if m:
                 fails.append(f'{rp}:{line_of(t, m.start())}: {m.group(2)}: URL in {m.group(1)}')
@@ -176,6 +192,34 @@ def tree_fails(root=ROOT):
             walk_keys(K)
         except (ValueError, KeyError, TypeError) as e:
             fails.append(f'data/keys.json: does not parse as the key register ({e})')
+    # Messages between agents (data/messages/<to>/<id>.md): the sender in the front matter is the one in the file name,
+    # no field is given twice, and nobody writes as the editor, who speaks to agents only in their own sessions.
+    for p in sorted(__import__('glob').glob(os.path.join(root, 'data', 'messages', '*', '*.md'))):
+        rp = os.path.relpath(p, root).replace(os.sep, '/')
+        t = read_text(p) or ''
+        m = re.match(r'---\n(.*?)\n---\n', t, re.S)
+        if not m:
+            fails.append(f'{rp}: a message with no front matter'); continue
+        keys = [l.split(':', 1)[0].strip() for l in m.group(1).splitlines() if ':' in l]
+        head = dict((k.strip(), v.strip()) for k, v in (l.split(':', 1) for l in m.group(1).splitlines() if ':' in l))
+        dup = sorted({k for k in keys if keys.count(k) > 1})
+        if dup:
+            fails.append(f'{rp}: front matter gives {", ".join(dup)} more than once (a forged header)')
+        parts = os.path.basename(p)[:-3].split('__')
+        if len(parts) < 3 or head.get('from') != parts[1]:
+            fails.append(f'{rp}: "from: {head.get("from")}" is not the sender in the file name')
+        if head.get('from') in ('editor', 'dinis', 'dinis-cruz', 'root'):
+            fails.append(f'{rp}: a message signed as "{head.get("from")}": the editor never writes to agents through this repository')
+    # Nothing the build reads may be silently ignored by git: twice an ignore rule kept a file the site needed out of the
+    # repository while it looked committed (SA-2026-017).
+    try:
+        ign = subprocess.run(['git', 'ls-files', '--others', '--ignored', '--exclude-standard', '--', 'data', 'admin/build', 'admin/content', 'assets'],
+                             cwd=root, capture_output=True, text=True).stdout.split()
+        for f in ign:
+            if '__pycache__' not in f and not f.endswith('.pyc'):
+                fails.append(f'{f}: ignored by .gitignore, but it is where the build reads from: commit it, or move it out of the tree')
+    except OSError:
+        pass
     # Workflows: every action pinned to a commit, never a tag a third party can move.
     wf = os.path.join(root, '.github', 'workflows')
     for f in sorted(os.listdir(wf)) if os.path.isdir(wf) else []:
@@ -203,7 +247,7 @@ def staged_fails(root=ROOT):
         elif line.startswith('+') and not line.startswith('+++') and cur != 'admin/build/security_check.py':
             m = SECRET.search(line)
             if m:
-                fails.append(f'{cur}: credential shape in an added line ({m.group(0)[:10]}...)')
+                fails.append(f'{cur}: credential shape in an added line: {kind_of(m)}')
             for k, v in envs:
                 if v in line:
                     fails.append(f'{cur}: an added line holds the value of {k}')
@@ -231,7 +275,7 @@ def history_fails(root=ROOT):
         elif line.startswith('+') and cur != 'admin/build/security_check.py':
             m = SECRET.search(line)
             if m:
-                fails.append(f'history {commit} {cur}: credential shape ({m.group(0)[:10]}...)')
+                fails.append(f'history {commit} {cur}: credential shape: {kind_of(m)}')
             for k, v in envs:
                 if v in line:
                     fails.append(f'history {commit} {cur}: holds the value of {k}')

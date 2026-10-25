@@ -10,6 +10,8 @@ Because none of the public proof-of-concept exploits reviewed had the correct me
 
 Because none of the public proof-of-concept exploits reviewed had the correct mechanism, rules and scans built from them may pass a vulnerable server or miss a real attack, resulting in false assurance.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r03-4) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 3 Possible · **Impact** 4 Major · **Kind** Security · **Acceptance** not recorded
 
 **Basis.** Reported by VulnCheck and Huntress; community authors corrected the leaked PoC's preconditions.
@@ -60,4 +62,4 @@ On this site: [Detection and defence: what blocks php2shell and what shows it](.
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03-4/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r03-4/index.html

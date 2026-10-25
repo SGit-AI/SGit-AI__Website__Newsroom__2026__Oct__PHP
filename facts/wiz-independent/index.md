@@ -32,7 +32,7 @@ Graded in Run-1, resting on captures up to 2026-10-22 08:16 UTC. The scale is on
 - 2026-10-21Wiz publishes [PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet](../../sources/wiz-blog-php2shell/index.html)
 - 2026-10-21PHP Foundation publishes [Today's PHP Security Release, and How We're Strengthening PHP Security](../../sources/php-foundation-blog-security-release/index.html)
 - 2026-10-22 08:09 UTCSaved into the evidence vault: PHP Foundation
-- 2026-10-22 08:10 UTCSaved into the evidence vault: Wiz
+- 2026-10-22 08:10 UTCSaved into the evidence vault: Wiz, then 1 more capture
 - 2026-10-22Enters this site as reported in v0.1.0 (reconstructed from git)
 
 Published: when the source says it was published. Saved: the first capture into the evidence vault. The rest are this site: the release in which the fact first appeared and every release that changed its wording, sources or status.
@@ -57,4 +57,4 @@ Sources: wiz-blog-php2shell, php-foundation-blog-security-release
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/facts/wiz-independent/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/wiz-independent/index.html

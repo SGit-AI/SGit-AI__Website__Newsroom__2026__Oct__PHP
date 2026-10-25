@@ -14,7 +14,7 @@
     });
   }
 
-  var html = document.documentElement, root = html.getAttribute('data-root') || '', here = html.getAttribute('data-path') || '';
+  var html = document.documentElement, root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length), here = html.getAttribute('data-path') || '';
   function get(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v) { try { if (v === null) window.localStorage.removeItem(k); else window.localStorage.setItem(k, v); } catch (e) {} }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -104,7 +104,7 @@
 
 // A note in the bar when this page is older than the release the site now serves (one same-origin read of /VERSION).
 (function () {
-  var v = document.querySelector('nav.site .ver'), root = document.documentElement.getAttribute('data-root') || '';
+  var v = document.querySelector('nav.site .ver'), root = '../'.repeat(((document.documentElement.getAttribute('data-root') || '').match(/\.\.\//g) || []).length);
   if (v && window.fetch) fetch(root + 'VERSION?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
     var live = (t || '').trim(), mine = v.textContent.replace(/^v/, '');
     if (!/^\d+\.\d+\.\d+$/.test(live)) return;

@@ -8,7 +8,7 @@ so each lane is one sender: the drain lists and fetches lane by lane, decrypts e
 writes it to inbox/<member>/<file id>.eml (or .txt when it carries no header block), marks it processed, and prints
 what arrived from whom. Commit and push the vault afterwards; nothing here is copied to the site.
 """
-import argparse, json, os, sys
+import argparse, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from telemetry_drain import post, decrypt
 from postmaster import open_postmaster, post_retry, configure
@@ -54,9 +54,11 @@ def main():
                 except Exception as ex:
                     text = f'undecryptable: {str(ex)[:120]}\n'
                 ext = '.eml' if text.lstrip().lower().startswith(('from:', 'to:', 'date:', 'subject:')) else '.txt'
-                d = os.path.join(V, 'inbox', member)
+                # the server names the member and the file: neither is ever allowed to be a path (SA-2026-022)
+                d = os.path.join(V, 'inbox', re.sub(r'[^A-Za-z0-9_-]', '_', str(member))[:40])
                 os.makedirs(d, exist_ok=True)
-                open(os.path.join(d, fid.rsplit('.', 1)[0] + ext), 'w', encoding='utf-8').write(text)
+                stem = re.sub(r'[^A-Za-z0-9_-]', '_', str(fid).rsplit('.', 1)[0])[:80]
+                open(os.path.join(d, stem + ext), 'w', encoding='utf-8').write(text)
                 counts[member] = counts.get(member, 0) + 1
             if not a.keep_pending and files:
                 post(f"{base}/mark-processed/{lanes['vault_id']}", {'inbox': token, 'file_ids': [x.get('file_id') or x.get('id') for x in files]}, H)

@@ -10,6 +10,8 @@ Because '70% of the Internet', 'CVSS 10' and '30 million websites' were repeated
 
 Because '70% of the Internet', 'CVSS 10' and '30 million websites' were repeated without their source, boards and readers sized the risk on figures that are unverified, contradicted or measure a different thing, resulting in priorities set by headline rather than by exposure.
 
+[Explore the graph from this risk](../../explore/index.html#focus=risk:r07) · [What the graph is missing](../../gaps/index.html)
+
 **Rating** **12** high · **Likelihood** 4 Likely · **Impact** 3 Significant · **Kind** Governance · **Acceptance** not recorded
 
 **Basis.** The claims are graded unverified, contradicted or reported on this site; they led the coverage most readers saw.
@@ -36,8 +38,8 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
-| [Roughly 70% of the Internet is affected](../../../facts/scale-70pc-internet/index.html) | unverified | **A1** Weak signal●○○○○○ | [Wiz](../../../sources/wiz-blog-php2shell/index.html) [Wiz on X](../../../sources/x-wiz-io-php2shell/index.html) [BBC News](../../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
-| [PHP is used by almost 70% of websites](../../../facts/scale-70pc-websites/index.html) | reported | **A2** Reported●●○○○○ | [Cloudflare](../../../sources/cloudflare-blog-php2shell-waf/index.html) [OpenAI on X](../../../sources/x-openai-php2shell/index.html) [Wiz](../../../sources/wiz-blog-php2shell/index.html) |
+| [70% of the Internet is affected](../../../facts/scale-70pc-internet/index.html) | unverified | **A1** Weak signal●○○○○○ | [Wiz](../../../sources/wiz-blog-php2shell/index.html) [Wiz on X](../../../sources/x-wiz-io-php2shell/index.html) [BBC News](../../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
+| [PHP is used by almost 70% of websites whose server-side language is known](../../../facts/scale-70pc-websites/index.html) | reported | **A2** Reported●●○○○○ | [Cloudflare](../../../sources/cloudflare-blog-php2shell-waf/index.html) [OpenAI on X](../../../sources/x-openai-php2shell/index.html) [Wiz](../../../sources/wiz-blog-php2shell/index.html) |
 | [The flaws are CVSS 10.0](../../../facts/cvss-10/index.html) | contradicted | refuted | [PHP Foundation](../../../sources/php-foundation-blog-security-release/index.html) [Daubois](../../../sources/daubois-blog-php2shell-rumors/index.html) |
 | [Something like 30 million websites could be affected](../../../facts/scale-30m/index.html) | reported | **A2** Reported●●○○○○ | [BBC News](../../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
 | [The most severe flaws ever detected by AI](../../../facts/most-severe/index.html) | reported | **A2** Reported●●○○○○ | [BBC News](../../../sources/bbc-live-ckgel5xp2xv9t/index.html) [Wiz](../../../sources/wiz-blog-php2shell/index.html) |
@@ -65,4 +67,4 @@ On this site: [The numbers: 70%, 30 million, 2.6 million, 6,000, 674](../../../n
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r07/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r07/index.html

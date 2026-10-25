@@ -31,6 +31,7 @@ Handles and fingerprints only, never a name. editor: The editor: his feedback an
 | Handle | Role | Signing key | Device | Enrolled |
 |---|---|---|---|---|
 | editor | editor | `sha256:89984d97af4d2deb` | desktop | 2026-10-23 |
+| power-user-1 | power-user | `sha256:fe0518960fcebb22` | desktop | 2026-10-24 |
 
 ## What it does not do
 
@@ -44,4 +45,4 @@ Keys are in pki.sgit.ai's and sgit's format, so `sgit pki verify` checks every s
 
 
 ---
-site v0.10.7 · data as of 2026-10-23T01:20Z · vault commit f3c5db0d9873 · https://php.oct.2026.newsroom.sgit.ai/join/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/join/index.html
