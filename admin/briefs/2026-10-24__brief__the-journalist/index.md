@@ -6,7 +6,7 @@ You are journalist@php.newsroom, the journalist of php.oct.2026.newsroom.sgit.ai
 
 # Brief: the journalist (Sonnet), from its first session
 
-2026-10-24 · `2026-10-24__brief__the-journalist.md` · [all briefs](../index.html)
+Published 2026-10-24 18:15 UTC · `2026-10-24__brief__the-journalist.md` · [all briefs](../index.html)
 
 ## Brief: the journalist (Sonnet), from its first session
 
@@ -126,8 +126,8 @@ A wake is good when the site serves the new head within the hour of the curator'
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-journalist.md` in the repository, published as written.
 
-← older: Brief: the graph reviewed by people, and a first step for newer: → The telemetry lane's 1,000-event cap, and lanes in paralle
+← older: Brief: the pipeline, from the researcher to the correspondnewer: → Brief: the correspondent (Opus), on a schedule
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-journalist/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-journalist/index.html

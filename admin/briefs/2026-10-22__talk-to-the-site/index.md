@@ -6,7 +6,7 @@ Add the ability to talk to the content. Readers provide their own OpenRouter key
 
 # Talk to the site: a chat pane with tools, your OpenRouter key and your data in your vault
 
-2026-10-22 · `2026-10-22__talk-to-the-site.md` · [all briefs](../index.html)
+Published 2026-10-22 18:57 UTC · `2026-10-22__talk-to-the-site.md` · [all briefs](../index.html)
 
 ## Talk to the site: a chat pane with tools, your OpenRouter key and your data in your vault
 
@@ -54,8 +54,8 @@ Add the ability to talk to the content. Readers provide their own OpenRouter key
 
 This brief is the file `admin/content/briefs/2026-10-22__talk-to-the-site.md` in the repository, published as written.
 
-← older: Review: the front page and the navigation, at v0.2.5newer: → Who reads this site: anonymous telemetry over an append la
+← older: Brief: a fact-checker joins the teamnewer: → Brief: a corrections liaison joins the team
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__talk-to-the-site/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__talk-to-the-site/index.html

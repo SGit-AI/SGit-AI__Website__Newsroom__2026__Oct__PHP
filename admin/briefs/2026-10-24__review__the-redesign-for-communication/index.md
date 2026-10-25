@@ -6,7 +6,7 @@ The redesign's structure is right and its words are not yet.
 
 # Review: the redesign, read for what it communicates
 
-2026-10-24 · `2026-10-24__review__the-redesign-for-communication.md` · [all briefs](../index.html)
+Published 2026-10-24 00:07 UTC · `2026-10-24__review__the-redesign-for-communication.md` · [all briefs](../index.html)
 
 ## Review: the redesign, read for what it communicates
 
@@ -65,8 +65,8 @@ A reader who sees two numbers for one thing trusts neither.
 
 This brief is the file `admin/content/briefs/2026-10-24__review__the-redesign-for-communication.md` in the repository, published as written.
 
-← older: Plan: the journalist's full pass, so the site settles aftenewer: → A deck per persona: the debrief, cut daily, with its histo
+← older: Brief: the news desk chief on a schedule, and the health onewer: → Brief: asking other publications for corrections
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__review__the-redesign-for-communication/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__review__the-redesign-for-communication/index.html

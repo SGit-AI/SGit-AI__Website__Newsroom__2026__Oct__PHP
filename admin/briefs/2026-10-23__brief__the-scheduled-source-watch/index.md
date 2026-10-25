@@ -6,7 +6,7 @@ The editor, in the session, 23 October 2026: one more pass here, "most likely th
 
 # Brief: the scheduled source watch, a Sonnet session that runs the watch's passes on a schedule
 
-2026-10-23 · `2026-10-23__brief__the-scheduled-source-watch.md` · [all briefs](../index.html)
+Published 2026-10-23 22:24 UTC · `2026-10-23__brief__the-scheduled-source-watch.md` · [all briefs](../index.html)
 
 ## Brief: the scheduled source watch, a Sonnet session that runs the watch's passes on a schedule
 
@@ -124,8 +124,8 @@ Your one job: when the schedule vault says a pass is due, run one pass of the so
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-scheduled-source-watch.md` in the repository, published as written.
 
-← older: Brief: the scheduled curator, a Sonnet session that keeps newer: → Brief: three views, over time; the C-level executive first
+← older: Brief: moving a heavy vault to pack mode (sgit 0.24.0), stnewer: → Brief: the journalist unblocked, from the curator
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-scheduled-source-watch/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-scheduled-source-watch/index.html

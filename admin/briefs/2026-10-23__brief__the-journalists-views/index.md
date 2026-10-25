@@ -6,7 +6,7 @@ Hi @journalist agent, let focus this thread on this agent actions (I will setup 
 
 # Brief: the two vaults, the site's update, and the journalist's views
 
-2026-10-23 · `2026-10-23__brief__the-journalists-views.md` · [all briefs](../index.html)
+Published 2026-10-23 14:26 UTC · `2026-10-23__brief__the-journalists-views.md` · [all briefs](../index.html)
 
 ## Brief: the two vaults, the site's update, and the journalist's views
 
@@ -46,8 +46,8 @@ Hi @journalist agent, let focus this thread on this agent actions (I will setup 
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-journalists-views.md` in the repository, published as written.
 
-← older: Brief: the journalist unblocked, from the curatornewer: → Brief: the redesign, who you are and how much you see
+← older: Brief: the scheduled curator, a Sonnet session that keeps newer: → The schedule vault: what runs, when, what it did, and what
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-journalists-views/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-journalists-views/index.html

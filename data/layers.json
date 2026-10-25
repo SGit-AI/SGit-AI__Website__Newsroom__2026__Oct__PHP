@@ -705,6 +705,13 @@
    "by": "admin/build/export_loops.py (correspondent@php.newsroom, at each wake)",
    "from": "the evidence vault's commit log, the releases on origin/dev with the vault head each served, the repository's size and the schedule cards' next wakes",
    "used_on": "views/loops/index.html"
+  },
+  {
+   "path": "data/briefs-published.json",
+   "layer": "site",
+   "by": "claude-story-site, for the editor",
+   "from": "admin/build/build.py (build_briefs): the UTC minute each brief in admin/content/briefs/ was first published; seeded once from git on 25 October 2026, then each new brief stamped by the first build that includes it; an entry is never changed",
+   "used_on": "admin/briefs/index.html"
   }
  ]
 }

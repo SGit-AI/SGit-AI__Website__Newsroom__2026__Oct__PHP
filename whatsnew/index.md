@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.21.6 · 25 October 2026new since your last visit
+
+the briefs page sorts by the time each brief was published, newest first, and shows that time on every row and every brief's page (data/briefs-published.json, seeded from git once, never read from git by the build)
+
+No reader-facing section changed in this release.
+
 ## v0.21.5 · 25 October 2026new since your last visit
 
 Ontologist pass 2 (14:05 London, scheduled): 36 new sources resolved to 32 new parties and 3 aliases, with the names that mislead noted (three different 'IT daily' sites, a press release on jiji.com); the Wikipedia article and its talk page fetched (no new article edits); the new Wikipedia article on Black October found for watching (board 320); the runbook's fetch step corrected
@@ -1322,4 +1328,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -6,7 +6,7 @@
 
 # Brief: Wikipedia as an anchor, read as a fractal semantic graph
 
-2026-10-25 · `2026-10-25__brief__wikipedia-as-an-anchor.md` · [all briefs](../index.html)
+Published 2026-10-24 22:48 UTC · `2026-10-25__brief__wikipedia-as-an-anchor.md` · [all briefs](../index.html)
 
 ## Brief: Wikipedia as an anchor, read as a fractal semantic graph
 
@@ -198,8 +198,8 @@ languages; the `/fractal/` navigator and `` brought together (board 181).
 
 This brief is the file `admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md` in the repository, published as written.
 
-← older: Refactoring the site to URL paths and a single page: how anewer: → Proposal: one repository into six, so that tens of agents
+← older: Brief: the correspondent (Opus), on a schedulenewer: → Brief: the line, and a site that is persona first
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__wikipedia-as-an-anchor/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__wikipedia-as-an-anchor/index.html

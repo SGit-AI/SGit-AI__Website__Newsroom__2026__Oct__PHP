@@ -6,7 +6,7 @@
 
 # Collaborators: the people who use the site as it is built
 
-2026-10-22 · `2026-10-22__brief__collaborators.md` · [all briefs](../index.html)
+Published 2026-10-22 19:56 UTC · `2026-10-22__brief__collaborators.md` · [all briefs](../index.html)
 
 ## Collaborators: the people who use the site as it is built
 
@@ -46,8 +46,8 @@ And on coordination: for now the team synchronises through this repository and t
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__collaborators.md` in the repository, published as written.
 
-← older: The brief, as written by the editor on 22 October 2026newer: → Brief: every agent a folder, a policy and a round
+← older: Brief: the cartographer joins, as the newsroom's ontologisnewer: → Brief: the conductor takes the updates, and the site gets
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__collaborators/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__collaborators/index.html

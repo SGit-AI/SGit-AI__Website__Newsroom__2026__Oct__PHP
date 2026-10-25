@@ -6,7 +6,7 @@ The editor, in the session, 23 October 2026 (a voice message, through a transcri
 
 # Brief: the scheduled curator, a Sonnet session that keeps the evidence vault current on a schedule
 
-2026-10-23 · `2026-10-23__brief__the-scheduled-curator.md` · [all briefs](../index.html)
+Published 2026-10-23 13:54 UTC · `2026-10-23__brief__the-scheduled-curator.md` · [all briefs](../index.html)
 
 ## Brief: the scheduled curator, a Sonnet session that keeps the evidence vault current on a schedule
 
@@ -120,8 +120,8 @@ Your one job: keep the **evidence vault** (`3ytzxm3g`) current by promoting the 
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-scheduled-curator.md` in the repository, published as written.
 
-← older: The schedule vault: what runs, when, what it did, and whatnewer: → Brief: the scheduled source watch, a Sonnet session that r
+← older: Brief: the redesign, who you are and how much you seenewer: → Brief: the two vaults, the site's update, and the journali
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-scheduled-curator/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-scheduled-curator/index.html

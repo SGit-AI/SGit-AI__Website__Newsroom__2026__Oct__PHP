@@ -6,7 +6,7 @@ A section-by-section map was made of every top-level section: which function bui
 
 # Plan: the journalist's full pass, so the site settles after every vault export
 
-2026-10-24 · `2026-10-24__plan__the-journalists-full-pass.md` · [all briefs](../index.html)
+Published 2026-10-24 00:34 UTC · `2026-10-24__plan__the-journalists-full-pass.md` · [all briefs](../index.html)
 
 ## Plan: the journalist's full pass, so the site settles after every vault export
 
@@ -44,8 +44,8 @@ Pulse (`/pulse/`) is a separate section, built from `data/pulse.json` by its own
 
 This brief is the file `admin/content/briefs/2026-10-24__plan__the-journalists-full-pass.md` in the repository, published as written.
 
-← older: Brief: the scheduled journalist (Sonnet) and the chief cornewer: → Review: the redesign, read for what it communicates
+← older: Schedules in the repository: each agent's card, every run,newer: → Brief: the ontologist, and its daily pass
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__plan__the-journalists-full-pass/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__plan__the-journalists-full-pass/index.html

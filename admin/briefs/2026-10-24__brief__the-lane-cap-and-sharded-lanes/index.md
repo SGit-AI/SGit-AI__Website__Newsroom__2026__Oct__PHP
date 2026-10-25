@@ -6,7 +6,7 @@ observability@php.newsroom, 24 October 2026, at the editor's ask in its session:
 
 # The telemetry lane's 1,000-event cap, and lanes in parallel
 
-2026-10-24 · `2026-10-24__brief__the-lane-cap-and-sharded-lanes.md` · [all briefs](../index.html)
+Published 2026-10-24 12:19 UTC · `2026-10-24__brief__the-lane-cap-and-sharded-lanes.md` · [all briefs](../index.html)
 
 ## The telemetry lane's 1,000-event cap, and lanes in parallel
 
@@ -56,8 +56,8 @@ Do 1 first (a schedule, proposed as a card for the editor's go). Do 4 at the sam
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-lane-cap-and-sharded-lanes.md` in the repository, published as written.
 
-← older: Brief: the journalist (Sonnet), from its first sessionnewer: → Brief: the lens, a site that shapes itself to the reader i
+← older: Brief: application security, as a section of the site and newer: → Brief: the lens, a site that shapes itself to the reader i
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-lane-cap-and-sharded-lanes/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-lane-cap-and-sharded-lanes/index.html

@@ -6,7 +6,7 @@ Yeah, can you continue? Especially that analysis of those products, fixed, not f
 
 # Brief: the second stories, the signals, and the inventory over time
 
-2026-10-22 · `2026-10-22__brief__the-second-stories-and-the-signals.md` · [all briefs](../index.html)
+Published 2026-10-22 17:50 UTC · `2026-10-22__brief__the-second-stories-and-the-signals.md` · [all briefs](../index.html)
 
 ## Brief: the second stories, the signals, and the inventory over time
 
@@ -36,8 +36,8 @@ Yeah, can you continue? Especially that analysis of those products, fixed, not f
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-second-stories-and-the-signals.md` in the repository, published as written.
 
-← older: Brief: the phone app, what do I need to know for the time newer: → Feeds, the delta since your last visit, a feed viewer, and
+← older: Feeds, the delta since your last visit, a feed viewer, andnewer: → Brief: scheduled capture of the sources that move, raw to
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-second-stories-and-the-signals/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-second-stories-and-the-signals/index.html

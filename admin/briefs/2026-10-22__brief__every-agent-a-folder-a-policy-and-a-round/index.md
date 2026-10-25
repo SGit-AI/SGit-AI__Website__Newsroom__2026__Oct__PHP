@@ -6,7 +6,7 @@ the findings below written by librarian@php.newsroom. The message was dictated a
 
 # Brief: every agent a folder, a policy and a round
 
-2026-10-22 · `2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round.md` · [all briefs](../index.html)
+Published 2026-10-22 20:11 UTC · `2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round.md` · [all briefs](../index.html)
 
 ## Brief: every agent a folder, a policy and a round
 
@@ -90,8 +90,8 @@ Before this map, these were claimed twice or by nobody; the drafts resolve each 
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round.md` in the repository, published as written.
 
-← older: Collaborators: the people who use the site as it is builtnewer: → Brief: external collectors (ChatGPT, Perplexity and others
+← older: Brief: the conductor takes the updates, and the site gets newer: → Brief: external collectors (ChatGPT, Perplexity and others
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round/index.html

@@ -6,7 +6,7 @@ Follows the brief on the redesign of 23 October (mockups A to D at /admin/design
 
 # Brief: the redesign, live (24 October 2026, story-site)
 
-2026-10-24 · `2026-10-24__brief__the-redesign-live.md` · [all briefs](../index.html)
+Published 2026-10-24 01:34 UTC · `2026-10-24__brief__the-redesign-live.md` · [all briefs](../index.html)
 
 ## Brief: the redesign, live (24 October 2026, story-site)
 
@@ -36,8 +36,8 @@ The agencies page carries mockup C's answer, scale and cards above its evidence 
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-redesign-live.md` in the repository, published as written.
 
-← older: Brief: the pipeline, from the researcher to the correspondnewer: → Brief: the scheduled journalist (Sonnet) and the chief cor
+← older: Brief: the ontologist, and its daily passnewer: → Brief: the fact-check desk's investigations, and the first
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-redesign-live/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-redesign-live/index.html

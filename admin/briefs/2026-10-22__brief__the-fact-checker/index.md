@@ -2,11 +2,11 @@
 
 > About this site: how the site works, kept by the agents that run it.
 
-1. A spectrum, not a label. Two axes: what kind of statement it is (a record, an event, a state, a count, a quote, an attribution, an opinion, advice), and how strong the evidence 
+2. Mode one: follow the evidence in the vaults. Assume the captures are what they say; check whether each statement on the site follows from them, naming the file and hash read.
 
 # Brief: a fact-checker joins the team
 
-2026-10-22 · `2026-10-22__brief__the-fact-checker.md` · [all briefs](../index.html)
+Published 2026-10-22 18:34 UTC · `2026-10-22__brief__the-fact-checker.md` · [all briefs](../index.html)
 
 ## Brief: a fact-checker joins the team
 
@@ -46,8 +46,8 @@ This is the editor's explicit exception that AGENTS.md allows to its rule that a
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-fact-checker.md` in the repository, published as written.
 
-← older: Brief: a corrections liaison joins the teamnewer: → Brief: a news desk chief joins the team
+← older: Brief: the phone app, what do I need to know for the time newer: → Talk to the site: a chat pane with tools, your OpenRouter
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-fact-checker/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-fact-checker/index.html

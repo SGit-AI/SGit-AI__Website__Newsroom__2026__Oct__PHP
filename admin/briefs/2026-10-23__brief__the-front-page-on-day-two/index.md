@@ -6,7 +6,7 @@ The story has moved from the alarm to the reckoning.
 
 # Brief: the front page on day two
 
-2026-10-23 · `2026-10-23__brief__the-front-page-on-day-two.md` · [all briefs](../index.html)
+Published 2026-10-23 09:52 UTC · `2026-10-23__brief__the-front-page-on-day-two.md` · [all briefs](../index.html)
 
 ## Brief: the front page on day two
 
@@ -79,8 +79,8 @@ The lead has moved the right way: "Right now" now says the advice is shifting fr
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-front-page-on-day-two.md` in the repository, published as written.
 
-← older: Brief: scanner noise, how good the php2shell scanners and newer: → Brief: the journalist unblocked, from the curator
+← older: The organisation as a digital twin: a state machine of rolnewer: → Day two: from what happened to what is happening; and wher
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-front-page-on-day-two/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-front-page-on-day-two/index.html

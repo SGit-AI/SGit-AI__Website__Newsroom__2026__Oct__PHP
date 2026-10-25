@@ -1471,6 +1471,25 @@ def build_brief():
 # Every link already published to admin/briefs/index.html#<file stem> still lands on that brief's row in the index.
 
 BRIEF_PAGES = []  # filled by build_briefs, listed in llms.txt by briefs_llms_lines
+BRIEFS_LEDGER = os.path.join(DATA, 'briefs-published.json')
+
+
+def briefs_published(stems):
+    """When each brief was first published (UTC, to the minute), from data/briefs-published.json. A brief not in it
+    yet is stamped now, by this build, and the stamp is kept; nothing already there is ever changed."""
+    import time as _t
+    led = json.load(open(BRIEFS_LEDGER, encoding='utf-8')) if os.path.exists(BRIEFS_LEDGER) else {'published': {}}
+    pub = led.setdefault('published', {})
+    missing = [x for x in stems if x not in pub]
+    if missing:
+        now = _t.strftime('%Y-%m-%dT%H:%MZ', _t.gmtime())
+        for x in missing:
+            pub[x] = now
+        led['published'] = dict(sorted(pub.items()))
+        with open(BRIEFS_LEDGER, 'w', encoding='utf-8') as f:
+            f.write(json.dumps(led, indent=1, ensure_ascii=False) + '\n')
+    OUTPUTS.add('data/briefs-published.json')
+    return pub
 
 
 def brief_meta(fn):
@@ -1480,7 +1499,8 @@ def brief_meta(fn):
     title = next((x[2:].strip() for x in lines if x.startswith('# ')), fn[:-3])
     body = [x.strip() for x in lines if x.strip() and not x.startswith('#')]
     status = next((x for x in body if x.lower().startswith('status:')), '')
-    first = next((x for x in body if not x.lower().startswith('status:') and not x.startswith('>')), '')
+    first = next((x for x in body if not x.lower().startswith('status:')
+                  and not x.startswith(('>', '|', '```', '- ', '* ', '<', '1.'))), '')   # a sentence, not a table or a list
     who = ''
     m = re.search(r'Author:\s*([^.;]+)', status)
     if m:
@@ -1504,18 +1524,22 @@ def build_briefs():
     """The index: every brief as a row with its title; and one page per brief."""
     bdir = os.path.join(ROOT, 'admin', 'content', 'briefs')
     names = sorted([x for x in os.listdir(bdir) if x.endswith('.md')], reverse=True)
+    pub = briefs_published([fn[:-3] for fn in names])
     metas = [brief_meta(fn) for fn in names]
+    for m in metas:
+        m['published'] = pub[m['slug']]
+    metas.sort(key=lambda m: (m['published'], m['slug']), reverse=True)
 
     rows, by_month = '', OrderedDict()
     for m in metas:
-        by_month.setdefault(m['date'][:7], []).append(m)
+        by_month.setdefault(m['published'][:7], []).append(m)
     MONTHS = {'10': 'October', '11': 'November', '12': 'December'}
     for month, group in by_month.items():
         label = f"{MONTHS.get(month[5:7], month[5:7])} {month[:4]}"
         rows += f'<h2 class="brief-month">{E(label)}<span>{len(group)} brief{"s" if len(group) != 1 else ""}</span></h2><ol class="brief-list">'
         for m in group:
             rows += (f'<li id="{E(m["slug"])}"><a class="brief-row" href="{U(m["slug"])}/index.html">'
-                     f'<span class="d">{E(m["date"][8:])} {E(MONTHS.get(m["date"][5:7], m["date"][5:7]))[:3]}</span>'
+                     f'<span class="d"><time datetime="{E(m["published"])}">{E(m["published"][8:10])} {E(MONTHS.get(m["published"][5:7], m["published"][5:7])[:3])}<b>{E(m["published"][11:16])}</b></time></span>'
                      f'<span class="t"><b>{E(m["title"])}</b>'
                      + (f'<span class="w">{E(m["who"][:110])}</span>' if m['who'] else '')
                      + (f'<span class="l">{E(m["lead"][:190])}</span>' if m['lead'] else '')
@@ -1525,7 +1549,7 @@ def build_briefs():
     body = f"""
 <h1>Briefs</h1>
 <p class="lead">A brief is written before the work and published as written: what was asked, in whose words, what exists to build on, the design, what it cannot do, the deliverables and the open questions. The newsroom and the sgit.ai sites keep theirs the same way. The file is the record; every brief below is one file in <code>admin/content/briefs/</code> and has its own page and link. The written request and the two voice memos that started the site are on <a href="../../brief/index.html">the brief</a>.</p>
-<p class="small">{len(metas)} briefs, newest first. Each opens on its own page; the markdown twin of every page is one click from it.</p>
+<p class="small">{len(metas)} briefs, the most recently published first, with the time each was published (UTC). Each opens on its own page; the markdown twin of every page is one click from it. The times are kept in <a href="../../data/briefs-published.json">data/briefs-published.json</a>.</p>
 {rows}
 """
     page('admin/briefs/index.html', 'Briefs', f'Every build brief for this site, {len(metas)} of them, published in full before the work: the title, the date and who wrote it, each on its own page.', body, kind='site')
@@ -1539,7 +1563,7 @@ def build_briefs():
                       for x, lab in ((prv, '&larr; older:'), (nxt, 'newer: &rarr;')) if x)
         body = f"""
 <h1>{E(m['title'])}</h1>
-<p class="kicker">{E(m['date'])} &middot; <code>{E(m['file'])}</code> &middot; <a href="../index.html">all briefs</a></p>
+<p class="kicker">Published <time datetime="{E(m['published'])}">{E(m['published'][:10])} {E(m['published'][11:16])} UTC</time> &middot; <code>{E(m['file'])}</code> &middot; <a href="../index.html">all briefs</a></p>
 <article class="brief-full">{deepen_links(render_md_file('admin/content/briefs/' + m['file']))}</article>
 <p class="small">This brief is the file <code>admin/content/briefs/{E(m['file'])}</code> in the repository, published as written.</p>
 <nav class="chips brief-nav">{nav}</nav>
@@ -1551,7 +1575,7 @@ def build_briefs():
 
 def briefs_llms_lines():
     out = ['', '## Briefs, one page each (admin/content/briefs/)']
-    out += [f'- [{m["title"]}]({BASE_URL}/admin/briefs/{m["slug"]}/index.md): {m["date"]}'
+    out += [f'- [{m["title"]}]({BASE_URL}/admin/briefs/{m["slug"]}/index.md): published {m["published"]}'
             + (f', {m["who"]}' if m['who'] else '') for m in BRIEF_PAGES]
     return '\n'.join(out) + '\n'
 

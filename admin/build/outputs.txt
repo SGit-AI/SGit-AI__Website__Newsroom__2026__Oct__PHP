@@ -520,6 +520,7 @@ context/index.md
 corrections/index.html
 corrections/index.md
 data/agents.json
+data/briefs-published.json
 data/control.json
 data/fractal.json
 data/graph.json

@@ -6,7 +6,7 @@
 
 # Brief: the ontologist, and its daily pass
 
-2026-10-24 · `2026-10-24__brief__the-ontologist.md` · [all briefs](../index.html)
+Published 2026-10-24 01:00 UTC · `2026-10-24__brief__the-ontologist.md` · [all briefs](../index.html)
 
 ## Brief: the ontologist, and its daily pass
 
@@ -60,8 +60,8 @@ wake prompt word for word; the runbook is `admin/ontologist/README.md`.
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-ontologist.md` in the repository, published as written.
 
-← older: Brief: the lens, a site that shapes itself to the reader inewer: → Brief: the pipeline, from the researcher to the correspond
+← older: Plan: the journalist's full pass, so the site settles aftenewer: → Brief: the redesign, live (24 October 2026, story-site)
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-ontologist/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-ontologist/index.html

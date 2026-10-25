@@ -6,7 +6,7 @@ The editor asked, in his own words, for "a nice big security push":
 
 # Brief: application security, as a section of the site and a duty of every agent
 
-2026-10-24 · `2026-10-24__brief__application-security.md` · [all briefs](../index.html)
+Published 2026-10-24 12:06 UTC · `2026-10-24__brief__application-security.md` · [all briefs](../index.html)
 
 ## Brief: application security, as a section of the site and a duty of every agent
 
@@ -62,8 +62,8 @@ The conductor is asked, in the release commit and in a message, to carry this in
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__application-security.md` in the repository, published as written.
 
-← older: Brief: three views, over time; the C-level executive firstnewer: → Brief: asking other publications for corrections
+← older: Brief: the scheduled journalist (Sonnet) and the chief cornewer: → The telemetry lane's 1,000-event cap, and lanes in paralle
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__application-security/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__application-security/index.html

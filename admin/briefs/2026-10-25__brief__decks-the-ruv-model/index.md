@@ -6,7 +6,7 @@ It is a talk, "Autonomy with a mandate and a memory" (Dinis Cruz, Agentic Engine
 
 # Decks: what ruv.sgit.ai does, and how it changes the deck per persona
 
-2026-10-25 · `2026-10-25__brief__decks-the-ruv-model.md` · [all briefs](../index.html)
+Published 2026-10-25 14:19 UTC · `2026-10-25__brief__decks-the-ruv-model.md` · [all briefs](../index.html)
 
 ## Decks: what ruv.sgit.ai does, and how it changes the deck per persona
 
@@ -80,8 +80,8 @@ It is a talk, "Autonomy with a mandate and a memory" (Dinis Cruz, Agentic Engine
 
 This brief is the file `admin/content/briefs/2026-10-25__brief__decks-the-ruv-model.md` in the repository, published as written.
 
-← older: A deck per persona: the debrief, cut daily, with its histonewer: → The 404 router, and a site with two modes: notes on the UR
+← older: A deck per persona: the debrief, cut daily, with its histo
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__decks-the-ruv-model/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__decks-the-ruv-model/index.html

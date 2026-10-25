@@ -6,7 +6,7 @@ Not "editor": on this site the editor is Dinis Cruz, and admin/security/REQUIREM
 
 # Brief: a news desk chief joins the team
 
-2026-10-22 · `2026-10-22__brief__the-news-desk-chief.md` · [all briefs](../index.html)
+Published 2026-10-22 19:34 UTC · `2026-10-22__brief__the-news-desk-chief.md` · [all briefs](../index.html)
 
 ## Brief: a news desk chief joins the team
 
@@ -56,8 +56,8 @@ Not "editor": on this site the editor is Dinis Cruz, and `admin/security/REQUIRE
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-news-desk-chief.md` in the repository, published as written.
 
-← older: Brief: a fact-checker joins the teamnewer: → The organisation as a digital twin: a state machine of rol
+← older: Brief: how many sites went offline, and wherenewer: → Brief: a GRC desk joins the team, and a GRC section
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-news-desk-chief/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-news-desk-chief/index.html

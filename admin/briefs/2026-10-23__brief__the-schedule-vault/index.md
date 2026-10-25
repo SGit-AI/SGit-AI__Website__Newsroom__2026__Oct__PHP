@@ -6,7 +6,7 @@
 
 # The schedule vault: what runs, when, what it did, and what it does next
 
-2026-10-23 · `2026-10-23__brief__the-schedule-vault.md` · [all briefs](../index.html)
+Published 2026-10-23 15:48 UTC · `2026-10-23__brief__the-schedule-vault.md` · [all briefs](../index.html)
 
 ## The schedule vault: what runs, when, what it did, and what it does next
 
@@ -40,8 +40,8 @@ With a Claude session on the left and this on the right, I can say: can you see 
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-schedule-vault.md` in the repository, published as written.
 
-← older: Brief: the risk graph as a tool (to dev, from a collaboratnewer: → Brief: the scheduled curator, a Sonnet session that keeps
+← older: Brief: the two vaults, the site's update, and the journalinewer: → Brief: the risk graph as a tool (to dev, from a collaborat
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-schedule-vault/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-schedule-vault/index.html

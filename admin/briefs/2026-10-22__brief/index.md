@@ -6,7 +6,7 @@ Hi based on the guidance on sgit.ai for these type of .sgit.ai websites and what
 
 # The brief, as written by the editor on 22 October 2026
 
-2026-10-22 · `2026-10-22__brief.md` · [all briefs](../index.html)
+Published 2026-10-22 09:27 UTC · `2026-10-22__brief.md` · [all briefs](../index.html)
 
 ## The brief, as written by the editor on 22 October 2026
 
@@ -30,8 +30,8 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 This brief is the file `admin/content/briefs/2026-10-22__brief.md` in the repository, published as written.
 
-newer: → Collaborators: the people who use the site as it is built
+newer: → Who reads this site: anonymous telemetry over an append la
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief/index.html

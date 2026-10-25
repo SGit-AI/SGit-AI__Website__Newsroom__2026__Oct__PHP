@@ -6,7 +6,7 @@ Now (/now/): one page built for a phone, which can be added to the home screen.
 
 # Brief: the phone app, what do I need to know for the time I have, in two modes, with my vault
 
-2026-10-22 · `2026-10-22__brief__the-phone-app.md` · [all briefs](../index.html)
+Published 2026-10-22 18:20 UTC · `2026-10-22__brief__the-phone-app.md` · [all briefs](../index.html)
 
 ## Brief: the phone app, what do I need to know for the time I have, in two modes, with my vault
 
@@ -84,8 +84,8 @@ Okay, so this is to add to the website the website on the PHP vulnerability. We 
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-phone-app.md` in the repository, published as written.
 
-← older: The organisation as a digital twin: a state machine of rolnewer: → Brief: the second stories, the signals, and the inventory
+← older: Brief: scheduled capture of the sources that move, raw to newer: → Brief: a fact-checker joins the team
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-phone-app/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-phone-app/index.html

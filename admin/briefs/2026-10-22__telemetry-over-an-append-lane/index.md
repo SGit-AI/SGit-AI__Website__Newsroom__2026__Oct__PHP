@@ -6,7 +6,7 @@ Add logging using an append lane. Capture who is visiting the website, which pag
 
 # Who reads this site: anonymous telemetry over an append lane
 
-2026-10-22 · `2026-10-22__telemetry-over-an-append-lane.md` · [all briefs](../index.html)
+Published 2026-10-22 13:44 UTC · `2026-10-22__telemetry-over-an-append-lane.md` · [all briefs](../index.html)
 
 ## Who reads this site: anonymous telemetry over an append lane
 
@@ -70,8 +70,8 @@ Add logging using an append lane. Capture who is visiting the website, which pag
 
 This brief is the file `admin/content/briefs/2026-10-22__telemetry-over-an-append-lane.md` in the repository, published as written.
 
-← older: Talk to the site: a chat pane with tools, your OpenRouter newer: → Triage: the newsroom's review of this site, checked agains
+← older: The brief, as written by the editor on 22 October 2026newer: → Review: the front page and the navigation, at v0.2.5
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__telemetry-over-an-append-lane/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__telemetry-over-an-append-lane/index.html

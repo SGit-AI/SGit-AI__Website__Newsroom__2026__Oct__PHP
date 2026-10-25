@@ -464,11 +464,13 @@ html[data-path^="admin/"] .console-live{grid-template-columns:260px minmax(0,1fr
   padding-bottom:.3rem;border-bottom:2px solid var(--fg,#1b1b1a);font-size:1.05rem}
 .brief-month span{font-size:.78rem;font-weight:400;color:var(--dim,#6b6b66)}
 .brief-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.4rem}
-.brief-row{display:grid;grid-template-columns:4.4rem minmax(0,1fr) 1.4rem;gap:.9rem;align-items:baseline;
+.brief-row{display:grid;grid-template-columns:4.8rem minmax(0,1fr) 1.4rem;gap:.9rem;align-items:baseline;
   padding:.7rem .9rem;border:1px solid var(--line,#e5e1d8);border-radius:10px;background:var(--panel,#fff);
   text-decoration:none;color:inherit}
 .brief-row:hover{border-color:var(--accent,#0f766e);box-shadow:0 2px 10px rgba(15,27,45,.07)}
 .brief-row .d{font-family:var(--mono);font-size:.76rem;color:var(--dim,#6b6b66);white-space:nowrap}
+.brief-row .d time{display:flex;flex-direction:column;line-height:1.35}
+.brief-row .d b{font-weight:600;color:var(--fg,#1b1b1a)}
 .brief-row .t{display:flex;flex-direction:column;gap:.15rem;min-width:0}
 .brief-row .t b{font-size:1.02rem;line-height:1.3}
 .brief-row .w{font-size:.78rem;color:var(--dim,#6b6b66)}

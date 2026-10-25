@@ -6,7 +6,7 @@ What the memo asks for, in the order the Sherpa will work it.
 
 # Brief: three views, over time; the C-level executive first
 
-2026-10-23 · `2026-10-23__brief__three-views-over-time.md` · [all briefs](../index.html)
+Published 2026-10-23 13:35 UTC · `2026-10-23__brief__three-views-over-time.md` · [all briefs](../index.html)
 
 ## Brief: three views, over time; the C-level executive first
 
@@ -168,8 +168,8 @@ The slices of the three views are frozen once written (a slice is what was publi
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__three-views-over-time.md` in the repository, published as written.
 
-← older: Brief: the scheduled source watch, a Sonnet session that rnewer: → Brief: application security, as a section of the site and
+← older: Brief: scanner noise, how good the php2shell scanners and newer: → Brief: the redesign, who you are and how much you see
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__three-views-over-time/index.html
+site v0.21.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__three-views-over-time/index.html
