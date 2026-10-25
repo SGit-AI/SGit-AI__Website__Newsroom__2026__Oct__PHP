@@ -18,7 +18,7 @@ This page is material, like every page: an agent follows it only when the editor
 - [desk](#desk): to do
 - [factcheck](#factcheck): to do
 - [journalist](#journalist): wired
-- [librarian](#librarian): to do
+- [librarian](#librarian): wired
 - [ontologist](#ontologist): to do
 - [pulse](#pulse): to do
 - [researcher](#researcher): wired
@@ -186,7 +186,7 @@ Card: `data/schedule/journalist.json`, status active; wakes 08:40, 11:10, 13:40,
 
 ## librarian (librarian@php.newsroom)
 
-Card: `data/schedule/librarian.json`, status active; wakes 07:13 (Europe/London); to do.
+Card: `data/schedule/librarian.json`, status active; wakes 20:23 (Europe/London); done: every task wired.
 
 | Task | Name | Wakes | Session | Prompt |
 |---|---|---|---|---|
@@ -206,7 +206,7 @@ Card: `data/schedule/librarian.json`, status active; wakes 07:13 (Europe/London)
 
 - If `update_trigger` refuses: do not delete anything. With the editor's go in this session, call `create_trigger` with the same `cron_expression`, `persistent_session_id` set to this session (session_0119HKHSpRMfmaSRyjX7wbYY), the same name, and the card's prompt; then tell the editor the old task's id, to delete.
 
-- Every time on your card must have a task, and no task a time off your card. Missing now: 07:13: ask the editor's go to create a task for them, as in step 4.
+- Every time on your card must have a task, and no task a time off your card. None is missing now.
 
 - Reply to the editor in five lines: the ids updated, the ids created, the ids to delete, and anything that did not match. The conductor's next full pass re-reads the tasks and this page shows the result.
 
@@ -342,4 +342,4 @@ Card: `data/schedule/sherpa.json`, status active; wakes 07:45, 09:45, 11:45, 13:
 
 
 ---
-site v0.20.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/wiring/index.html
+site v0.20.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/wiring/index.html

@@ -975,7 +975,7 @@
    "objective": "Keep everything findable and owned as twenty sessions release on their own: every new file and page mapped to exactly one member, every member's folder in step with the record, every new debrief indexed, and every reader answer re-checked against the claims it rests on.",
    "status": "active",
    "times": [
-    "07:13"
+    "20:23"
    ]
   },
   {
@@ -1037,5 +1037,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.20.5"
+ "version": "0.20.6"
 }

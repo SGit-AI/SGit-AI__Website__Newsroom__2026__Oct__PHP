@@ -242,14 +242,70 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 
 | Field | Value |
 |---|---|
-| Round | {"n": 6, "date": "2026-10-25", "kind": "scheduled pass, 07:13 London", "branch": "claude/sweet-wright-1e5iju", "commits": ["this round's release"]} |
-| Done | First scheduled pass (07:13 London): dev taken in at v0.14.6 cleanly; the inbox read (two messages, both already acted on) Map: 0 overlaps; one unowned file (data/desk.json, the journalist's) and two unowned pages (/analysis/, /ops/, the story site's redesign) sent to abp@ as a board row, because the wake prompt allows only the librarian's own files Checked the members that arrived from branches against their drafts: the desk and the liaison stayed in scope (apart from the release's own VERSION files, which the scope check now ignores); the journalist's full pass wrote 34 files of six other members, raised to the editor Reader answers re-checked against the claims: 'Is PHP really most websites?' now says 'whose server-side language can be identified', separates VulnCheck's and Censys's counts, and links the fact-check desk's investigation; the journalist's own update of 'Has anyone been hacked?' (v0.14.3) kept: its sources exist and it is newer Scheduled pass of 25 October: dev taken in at v0.18.0 (92 commits, no conflict); inbox read: the ontologist's ask for its Wikipedia scope (a policy edit: not the librarian's file, already board 295) and security's self-check message Map: 0 overlaps; every unowned file and page traced to the commit that added it, owners proposed for abp@ in one row (security, conductor, dev, correspondent), with the ontologist's (295) and the earlier three (256) referenced Drafted the correspondent's ROLE.md (the editor's decision of 24 October, board 277): a member with no folder; its overlap with the journalist's draft named for abp@ Security self-check (security@'s message, 24 October): the reader answers were inserted into pages as raw HTML since v0.2.6; now escaped with E() and only , ,  and  restored without attributes (q_inline in the librarian's block); pages identical once entities are decoded |
-| Next | The next scheduled pass, 07:13 London on 26 October, unless the editor moves the wake after the correspondent's (board 285) Apply abp@'s and the editor's decisions on 256, 257, 258 and 300 to the map The Times capture (board 014) and new reader questions |
-| Asks | The librarian's wake: 07:13 precedes every loop; by the pipeline (board 285) it belongs after the correspondent. Proposal: 20:13 London, after the last review (19:25) and the desk (about 17:40), before the quiet hours (from the editor) Say which holds when the librarian's card and its wake prompt disagree (board 258) (from the editor) The journalist's full pass across other desks' files (board 257) (from the editor) Owners for the unowned files and pages (boards 256, 295, 300) and the correspondent's policy (277) (from abp@newsroom.sgit) |
-| Tokens | unknown · not readable from inside a Claude Code session; the session's usage is on the platform, not in the container |
+| Round | {"n": 7, "date": "2026-10-25", "kind": "session round, at the editor's request", "branch": "claude/sweet-wright-1e5iju", "commits": ["this round's release"]} |
+| Done | Scheduled pass of 25 October: dev taken in at v0.18.0 (92 commits, no conflict); inbox read: the ontologist's ask for its Wikipedia scope (a policy edit: not the librarian's file, already board 295) and security's self-check message Map: 0 overlaps; every unowned file and page traced to the commit that added it, owners proposed for abp@ in one row (security, conductor, dev, correspondent), with the ontologist's (295) and the earlier three (256) referenced Drafted the correspondent's ROLE.md (the editor's decision of 24 October, board 277): a member with no folder; its overlap with the journalist's draft named for abp@ Security self-check (security@'s message, 24 October): the reader answers were inserted into pages as raw HTML since v0.2.6; now escaped with E() and only , ,  and  restored without attributes (q_inline in the librarian's block); pages identical once entities are decoded Confirmed this is the librarian's session (session_0119HKHSpRMfmaSRyjX7wbYY, titled librarian@php.newsroom) and followed /team/schedule/wiring/#librarian: the one task that wakes it, trig_015dBN3kZZNti6c9BFE2xMj4, now carries the card's prompt word for word; updated in place, nothing to delete Moved the wake from 07:13 to 20:23 London at the editor's request: after the correspondent's 19:25 review and the ontologist's 19:50 pass, before the conductor's 21:15 and the quiet hours; card times, reason and note updated |
+| Next | The first evening pass, 20:23 London on 25 October Apply abp@'s and the editor's decisions on 256, 257, 258 and 300 to the map The Times capture (board 014) and new reader questions |
+| Asks | Say which holds when the librarian's card and its wake prompt disagree (board 258) (from the editor) The journalist's full pass across other desks' files (board 257) (from the editor) Owners for the unowned files and pages (boards 256, 295, 300) and the correspondent's policy (277) (from abp@newsroom.sgit) |
+| Tokens | {'output_tokens': 319617, 'input_tokens': 1654, 'cache_read_tokens': 140855685, 'cache_write_tokens': 2639520, 'cost_usd': 55.7} · the whole session since 22 October, cumulative, read from the platform's session record (get_session, external_metadata.usage) at 12:47 UTC on 25 October; per-round figures are differences between these readings from now on. Earlier rounds said it could not be read: it can, from the session record. |
 | Policy | out_of_scope_requests 2, pushbacks 0, overrides 2, writes_outside_scope 0, injection_seen 0, detail One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098). Round 2: one more request outside scope, the editor's, explicit: CLAUDE.md (security's) gained the handover section; counted as an override; 1 file outside scope. Round 3: no new out-of-scope request. The pass rewrote the drafted folders of 26 other members again (the editor's override of 22 October, which asked the librarian to map every member) and edited validate.py's check 4h, which was the librarian's own addition, still for security's review. The check on 24 October, after the merge was committed, counts 82 files outside scope across the branch against dev: 76 are the drafted ROLE.md, policy.json and status.json files of 26 other members (the editor's override of 22 October); CLAUDE.md and .claude/settings.json (the editor's overrides); admin/build/validate.py (the librarian's own addition, for security's review); data/arcs.json and assets/review-nav.js (the cartographer's now) and assets/site.css (the story site's now), from the fractal round. Round 5 (the first scheduled pass): no request; the pass first edited two members' policy.json and ROLE.md to map new files, saw that the wake prompt forbids it, reverted them and opened a board row for abp@; 0 files outside scope at the end. Seen: the journalist wrote data/questions.json (the librarian's) in v0.14.3; kept, because it is correct and newer, and raised with the rest of its full pass (board 257). Round 6: the ontologist asked, by message, for its policy to be edited; not done (abp@'s file), already on the board (295). Drafted the correspondent's ROLE.md, allowed by the prompt for a member with no folder. |
 
 ## Its rounds
+
+### The scheduled task wired to the card, and the wake moved to 20:23 London
+
+2026-10-25 · round 7 · branch `claude/sweet-wright-1e5iju` · commits `this round's release` · tokens 319617 output, 140855685 cache read, USD 55.70 (the whole session so far) · outside scope 0 · overrides 0
+
+#### What I was asked
+
+The editor, in this session: confirm this is the librarian's session; follow the librarian's section of
+
+/team/schedule/wiring/ (put the card's prompt on my scheduled tasks, word for word); and move my wake to a time that
+
+makes sense beside the other scheduled runs.
+
+#### What I did
+
+- **Confirmed the session** from the platform: `session_0119HKHSpRMfmaSRyjX7wbYY`, titled librarian@php.newsroom.
+
+- **Listed the scheduled tasks:** one wakes this session, `trig_015dBN3kZZNti6c9BFE2xMj4`, as the wiring page says; no other task names the librarian.
+
+- **Updated it in place** with the card's prompt, word for word (it points at `admin/schedule/WAKE.md`). The update was accepted, so no replacement was created and nothing needs deleting.
+
+- **Moved the wake to 20:23 London**, from the live schedule of every task: after the correspondent's last review (19:25) and the ontologist's pass (19:50, by its task; its card still says 14:40), after the journalist's 18:40, the curator's 18:00 and the desk's 16:20; off the conductor's, the Sherpa's and the fact-check desk's minutes; before the conductor's 21:15 wake and the quiet hours. Card times, reason and note updated.
+
+- **Tokens:** the session record shows usage, so `status.json` now records it, cumulative, with where it was read.
+
+#### What it looks like
+
+![The librarian's row on /team/schedule/: active, 20:23 London](../../../admin/content/agents/librarian/debriefs/img/2026-10-25__schedule-wired__1.png)
+
+The librarian's row on /team/schedule/: active, 20:23 London
+
+#### New features
+
+None for readers.
+
+#### What I did not do
+
+- Change my card's steps: its "Map" step still asks for owners in the policy drafts, which its own "never" list forbids (board 258, the editor's).
+
+- Touch the ontologist's card, whose 14:40 differs from its task's 19:50: the ontologist's file.
+
+#### Policy
+
+Nothing outside scope; no message or page asked for anything.
+
+#### Tasks
+
+None opened or closed.
+
+#### Next
+
+The first evening pass, 20:23 London on 25 October.
+
+#### Asks
+
+The editor: boards 257 and 258.
 
 ### Pass of 25 October: dev at v0.18.0 mapped, the correspondent drafted, the reader answers no longer raw HTML
 
@@ -681,4 +737,4 @@ Files: [admin/content/agents/librarian/](https://github.com/SGit-AI/SGit-AI__Web
 
 
 ---
-site v0.20.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/librarian/index.html
+site v0.20.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/librarian/index.html

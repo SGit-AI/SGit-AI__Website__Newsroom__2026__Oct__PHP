@@ -1,6 +1,15 @@
 {
- "current": "0.20.5",
+ "current": "0.20.6",
  "versions": [
+  {
+   "version": "0.20.6",
+   "date": "2026-10-25",
+   "title": "The librarian's scheduled task now carries its card's prompt word for word, and its daily pass moves to 20:23 London, after the correspondent and the ontologist, at the editor's request",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.20.5",
    "date": "2026-10-25",
