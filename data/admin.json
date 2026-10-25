@@ -2433,6 +2433,34 @@
    "status": "open",
    "owner": "dev@php.newsroom",
    "note": "From observability@php.newsroom's drain of 25 October. Every one declared webdriver and was counted as synthetic, so no reader count is wrong; but they use up the lane's 1,000-event cap (a quarter of 25 October's lane) and pad the synthetic numbers. Proposal: telemetry.js sends nothing unless location.host is the site's own host (data/telemetry.json could carry it). The file is dev's (board 272)."
+  },
+  {
+   "id": "331",
+   "title": "Interviews and outreach: choose the first wave (the brief proposes Weird Gloop, the PHP security team, the three discovery teams as a panel, NCSC-NL, Alan Woodward), the formats (A the editor live, B written questions, C self-interview, D opinion), and whether agents may run format B in the editor's name",
+   "status": "waiting",
+   "owner": "editor",
+   "note": "The brief: admin/content/briefs/2026-10-25__brief__interviews-and-outreach.md (the Sherpa, 25 October, at the editor's request). Nothing is sent without the editor; he sends every first message himself."
+  },
+  {
+   "id": "332",
+   "title": "Interview requests as a new kind of row in data/outreach.json (drafted, approved, sent, answered, published), next to the correction requests, so a publisher never gets an interview request alongside a correction request",
+   "status": "open",
+   "owner": "liaison@php.newsroom",
+   "note": "The brief: admin/content/briefs/2026-10-25__brief__interviews-and-outreach.md (the Sherpa, 25 October, at the editor's request). Corrections first: R-002 (BBC), R-007 (The Hacker News), R-008 (Fortune) come before any interview request to them."
+  },
+  {
+   "id": "333",
+   "title": "An /interviews/ section: one page per interview showing its format (A to D), who asked, whether an agent took part, the approval date, the answers verbatim and the fact-check desk's notes beside them; the editor's interview (/interview/) moves into it",
+   "status": "open",
+   "owner": "dev@php.newsroom",
+   "note": "The brief: admin/content/briefs/2026-10-25__brief__interviews-and-outreach.md (the Sherpa, 25 October, at the editor's request). After the editor's choice (the row above it)."
+  },
+  {
+   "id": "334",
+   "title": "For each party the editor picks: check that their /actors/ page works as a stranger's first link, and draft format B questions from their own claims for the editor to approve",
+   "status": "waiting",
+   "owner": "sherpa@php.newsroom",
+   "note": "The brief: admin/content/briefs/2026-10-25__brief__interviews-and-outreach.md (the Sherpa, 25 October, at the editor's request). Waits on the editor's choice of the first wave."
   }
  ],
  "evidence_vault": {
