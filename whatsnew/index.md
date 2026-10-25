@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.20.4 · 25 October 2026new since your last visit
+
+The security agent's schedule card: one pass a day at 22:35 London, after the day's last releases and before the first wake, at the editor's request in the security session
+
+No reader-facing section changed in this release.
+
 ## v0.20.3 · 25 October 2026new since your last visit
 
 The stricter gate, on the editor's go: security_check.py fails on inline event handlers, pages without a safe Content-Security-Policy, forged or editor-claiming message headers, decrypted drain output in the tree, and ignored files the build reads; its findings name the kind of secret and never repeat its characters (SA-2026-041, found by GitHub code scanning); the advisories, REALITY.md and board 279 record it
@@ -1256,4 +1262,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.20.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

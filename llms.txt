@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.20.3. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.20.4. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -784,6 +784,7 @@ Site v0.20.3. Data as of 2026-10-25T09:35Z (the latest capture in the evidence v
 - [Schedule: ontologist](https://php.oct.2026.newsroom.sgit.ai/team/schedule/ontologist/index.md): active; Keep the site's fractal semantic graphs whole as the evidence grows: every new party, spelling, claim, number and signal resolved into the ontology, the site's graphs joined by declared bridges, and the long tail found by connection handed to the desk that owns it.
 - [Schedule: pulse](https://php.oct.2026.newsroom.sgit.ai/team/schedule/pulse/index.md): active; Track every php2shell-related CVE up the ladder (KEV, ransomware flag, Metasploit module, national CERT report, named victim) from the source watch, twice a day.
 - [Schedule: researcher](https://php.oct.2026.newsroom.sgit.ai/team/schedule/researcher/index.md): active; The source watch: probe every watched source, capture what changed into the watch's pack vault, rebuild the series, and report what moved.
+- [Schedule: security](https://php.oct.2026.newsroom.sgit.ai/team/schedule/security/index.md): active; Each night, review what the team changed that day for injection, leaks and vulnerabilities; keep the gate, the advisories and the requirements current; tell the editor what waits on him.
 - [Schedule: sherpa](https://php.oct.2026.newsroom.sgit.ai/team/schedule/sherpa/index.md): active; Keep the readers' side of the site in view: drain what readers and power users send through the collaborators lane, answer it point by point in Feedback from collaborators, walk what changed on the live site as a reader would, and keep the friction log and the brief to the conductor true.
 - [Vaults: who made each one](https://php.oct.2026.newsroom.sgit.ai/team/vaults/index.md): every vault each agent made, by ID only, and whether its key is sealed to the editor
 - [Status](https://php.oct.2026.newsroom.sgit.ai/team/status/index.md): where every agent is, what it waits for, the branches waiting for dev

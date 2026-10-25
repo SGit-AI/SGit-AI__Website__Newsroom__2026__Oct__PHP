@@ -1,6 +1,15 @@
 {
- "current": "0.20.3",
+ "current": "0.20.4",
  "versions": [
+  {
+   "version": "0.20.4",
+   "date": "2026-10-25",
+   "title": "The security agent's schedule card: one pass a day at 22:35 London, after the day's last releases and before the first wake, at the editor's request in the security session",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.20.3",
    "date": "2026-10-25",

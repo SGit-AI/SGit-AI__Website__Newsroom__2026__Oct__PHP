@@ -1011,6 +1011,15 @@
    ]
   },
   {
+   "agent": "security",
+   "model": "Opus",
+   "objective": "Each night, review what the team changed that day for injection, leaks and vulnerabilities; keep the gate, the advisories and the requirements current; tell the editor what waits on him.",
+   "status": "active",
+   "times": [
+    "22:35"
+   ]
+  },
+  {
    "agent": "sherpa",
    "model": "Sonnet",
    "objective": "Keep the readers' side of the site in view: drain what readers and power users send through the collaborators lane, answer it point by point in Feedback from collaborators, walk what changed on the live site as a reader would, and keep the friction log and the brief to the conductor true.",
@@ -1028,5 +1037,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.20.3"
+ "version": "0.20.4"
 }

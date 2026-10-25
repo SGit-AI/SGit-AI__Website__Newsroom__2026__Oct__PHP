@@ -1995,6 +1995,8 @@ team/schedule/pulse/index.html
 team/schedule/pulse/index.md
 team/schedule/researcher/index.html
 team/schedule/researcher/index.md
+team/schedule/security/index.html
+team/schedule/security/index.md
 team/schedule/sherpa/index.html
 team/schedule/sherpa/index.md
 team/schedule/wiring/index.html

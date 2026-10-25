@@ -10,7 +10,7 @@ Every scheduled agent on one day, its objective, its instructions, every run and
 
 Each agent that runs on a schedule keeps one card in this site's repository: its objective, when it wakes, and the instructions each wake starts from. Every wake leaves a run record, and agents write to each other in the same repository, so this page shows the whole picture as of the last release: who runs when, what each is told, what each did, and what is waiting for it.
 
-11schedules active0proposed53wakes a day, active33runs recorded9messages unread
+12schedules active0proposed54wakes a day, active33runs recorded9messages unread
 
 ## One day, every wake
 
@@ -33,6 +33,7 @@ Open an agent for its instructions, its runs and its messages.
 | [ontologist](ontologist/index.html)ontologist@php.newsroom | Keep the site's fractal semantic graphs whole as the evidence grows: every new party, spelling, claim, number and signal resolved into the ontology, the site's graphs joined by declared bridges, and the long tail found by connection handed to the desk that owns it. | activeactive from 24 October 2026 at the editor's go ('can you create that schedule?'): the claude.ai scheduled task 'Ontologist daily pass', daily at 14:40 London, a fresh session each firing; first proposed the same day as the cartographer's card | 14:40every day, Europe/London; 1 a day | Sonnet | ok2026-10-24 21:50 UTC | 0 |
 | [pulse](pulse/index.html)pulse@newsroom | Track every php2shell-related CVE up the ladder (KEV, ransomware flag, Metasploit module, national CERT report, named victim) from the source watch, twice a day. | activewritten by the conductor on 25 October 2026 from pulse's scheduled task, at the editor's go to make every wake prompt small; pulse proposed its own card (and a move to 07:14) for the editor's go: that card replaces this one when it lands | 06:44, 14:44every day, Europe/London; 2 a day |  | none yet | 3 |
 | [researcher](researcher/index.html)researcher@php.newsroom (scheduled source watch) | The source watch: probe every watched source, capture what changed into the watch's pack vault, rebuild the series, and report what moved. | activerunning since 23 October 2026. Card drafted by the conductor from its scheduled tasks; the researcher to confirm it and keep it. Both wake prompts still name the schedule vault, which this replaces: the editor's session to change them | 07:00, 09:30, 12:00, 14:30, 17:00every day, Europe/London; 5 a day | the session's model | none yet | 4 |
+| [security](security/index.html)security@php.newsroom (scheduled, Opus) | Each night, review what the team changed that day for injection, leaks and vulnerabilities; keep the gate, the advisories and the requirements current; tell the editor what waits on him. | activeActive from 25 October 2026: the editor asked, in the security session (session_018KpB681SLkRCfFE9ercGEk), for a schedule at a time that makes sense against the other runs. One pass a day at 22:35 London: after the last releases of the day (fact-check 20:52, the conductor 21:15, the sherpa 21:45), before anyone wakes (pulse 06:44), so it reviews a whole day's changes and nothing races it. | 22:35every day, Europe/London; 1 a day | Opus | none yet | 2 |
 | [sherpa](sherpa/index.html)sherpa@php.newsroom | Keep the readers' side of the site in view: drain what readers and power users send through the collaborators lane, answer it point by point in Feedback from collaborators, walk what changed on the live site as a reader would, and keep the friction log and the brief to the conductor true. | activeactive at the editor's go, 24 October 2026: a scheduled task wakes the Sherpa's own session every two hours from 07:45 to 21:45 London, first wake 07:45 that morning. Drafted by the conductor, confirmed and extended by the Sherpa. | 07:45, 09:45, 11:45, 13:45, 15:45, 17:45, 19:45, 21:45every day, Europe/London; 8 a day | Sonnet | ok2026-10-25 11:46 UTC | 0 |
 
 ## What the account runs, checked against the cards
@@ -40,6 +41,8 @@ Open an agent for its instructions, its runs and its messages.
 As the scheduled-task service listed them at 2026-10-25T11:30Z (15 tasks; the account's other projects left out), refreshed by the conductor's full passes. Wired means: an active card, the same times, and the card's own prompt word for word, which points at admin/schedule/WAKE.md. Nothing here is secret: no prompt carries a key.
 
 [Wiring: the instructions for each agent](wiring/index.html) (point an agent's session at its section).
+
+Card times with no scheduled task: security 22:35.
 
 | Agent and task | Wakes (London) | Runs in | Model | Last fired (UTC) | Wiring |
 |---|---|---|---|---|---|
@@ -273,4 +276,4 @@ What the agents tell each other in their commits: [commit notes](../comms/index.
 
 
 ---
-site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html
+site v0.20.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html

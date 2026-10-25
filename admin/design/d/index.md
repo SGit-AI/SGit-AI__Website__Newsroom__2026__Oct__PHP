@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.20.3. Not the live site.
+> Mockup D for review, built from the data of release v0.20.4. Not the live site.
 
-PHP Team console Console Overview Board 205 Agents 19 Releases 167 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 205 Agents 19 Releases 168 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.20.3 
-167 releases since 22 Oct 
+v0.20.4 
+168 releases since 22 Oct 
 
 Open on the board 
 205 
 103 done, 5 waiting 
 
 Pages built 
-1046 
+1047 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -99,6 +99,7 @@ Go, or not, on the branch security/gate-pass-2: the gate fails on inline event h
 ### Releases
  latest 8 
 
+ v0.20.4 2026-10-25 The security agent's schedule card: one pass a day at 22:35 London, after the day's last releases and before the first wake, at th… 
  v0.20.3 2026-10-25 The stricter gate, on the editor's go: security_check.py fails on inline event handlers, pages without a safe Content-Security-Pol… 
  v0.20.2 2026-10-25 a proposal on the briefs page, at the editor's request: one repository into six (kit, data, refs, updates, site, team), each with … 
  v0.20.1 2026-10-25 the editor's notes on the URL article, captured with story-site's reply: view paths answered by a 404 router instead of written as… 
@@ -106,7 +107,6 @@ Go, or not, on the branch security/gate-pass-2: the gate fails on inline event h
  v0.19.5 2026-10-25 The Sherpa's 11:45 pass: headlines on the first screen of every page walked, the feedback menu one scrolling row on a phone (F036)… 
  v0.19.4 2026-10-25 Journalist: debrief and status for the second wake 
  v0.19.3 2026-10-25 Journalist: evidence vault at 87795d121200, 15 claims reviewed, three new rows, as-of lines to 09:35 UTC on 25 October 
- v0.19.2 2026-10-25 Scheduled tasks on the site: /team/schedule/ shows what the account actually runs, each task checked against its card (times, sess… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Go, or not, on the branch security/gate-pass-2: the gate fails on inline event h
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.20.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.20.4 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
