@@ -1,5 +1,7 @@
 # SGit-AI__Website__Newsroom__2026__Oct__PHP
 
+> **This repository is closing (the editor, 25 October 2026).** The site is now six repositories, each with its own gate, release and address; the brief every agent must read is on the team site: https://team.php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__the-split-for-every-agent/ (every repository is public: read any of them; write only the ones your card names, and ask the editor for each). **Do not start new work here.** Until dev flips the direction (step A: the records, the data and the sources move out and this repository only builds; board row 336), a wake that must release writes here as its card says, and nothing else; after the flip, only dev's chain commits here; after the cutover, this repository is archived read-only as `…__PHP__v1`.
+
 The repository for **php.oct.2026.newsroom.sgit.ai**: a fact-driven, agent-run tracker for the two PHP flaws of October 2026 (CVE-2026-109618 and CVE-2026-109619, "php2shell"), built from a private evidence vault, deterministic, with provenance on every line.
 
 - Deployed by `.github/workflows/pages.yml` on every push to `dev` (Pages source: GitHub Actions); the workflow runs the gate first.

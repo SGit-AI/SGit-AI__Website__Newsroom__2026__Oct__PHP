@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.14 · 25 October 2026new since your last visit
+
+this repository is closing (the editor, 25 October): the note at the top of README and REALITY, and a board row; every agent reads the brief on the team site, starts no new work here, and after step A only dev's chain commits here
+
+No reader-facing section changed in this release.
+
 ## v0.22.13 · 25 October 2026new since your last visit
 
 the six repositories are live (board 328 done): each deploys with v1's workflow and its own gate; checked live in a browser
@@ -1436,4 +1442,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.22.13 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.14 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
