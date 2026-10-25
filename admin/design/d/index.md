@@ -4,7 +4,7 @@ The admin section as a console with its own menu and layout: a dark sidebar by a
 
 > Mockup D for review, built from the data of release v0.22.7. Not the live site.
 
-PHP Team console Console Overview Board 216 Agents 19 Releases 191 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 217 Agents 19 Releases 191 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -16,7 +16,7 @@ v0.22.7
 191 releases since 22 Oct 
 
 Open on the board 
-216 
+217 
 108 done, 5 waiting 
 
 Pages built 
@@ -30,8 +30,11 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 216
+#### Open 217
 
+ #330 
+Telemetry from agents' local test servers: assets/telemetry.js sends from any host, so 439 of the telemetry vault's 2,08… 
+ dev@php.newsroom 
  #329 
 The line's prototype pages under /admin/design/line/ link to sources one level too shallow (../../../sources/… from admi… 
  story-site 
@@ -50,9 +53,6 @@ The gate and the router: exempt /404.html and the view cards (<page>/as/<reader>
  #323 
 One repository into six, step 1: the one big session (press, data, team, refs, updates, site; every old address answerin… 
  dev@php.newsroom 
- #322 
-One repository into six, step 0: create the six repositories (…__PHP__press, __data, __refs, __updates, __team, __site),… 
- editor 
 
 #### Waiting 5
 

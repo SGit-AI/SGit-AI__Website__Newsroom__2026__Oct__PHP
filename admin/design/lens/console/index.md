@@ -14,7 +14,7 @@ v0.22.7
 191 releases 
 
 Open on the board 
-216 
+217 
 108 done 
 
 Members 
@@ -30,7 +30,7 @@ each with a role and a policy
  dev 18 
  ontologist 16 
  collector-researchers 14 
- dev@php.newsroom 10 
+ dev@php.newsroom 11 
  sherpa 10 
  journalist 9 
  researcher@php.newsroom 9
