@@ -65,4 +65,4 @@ The text is Wikipedia's, CC BY-SA 4.0, by its contributors.
 
 
 ---
-site v0.20.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/statements/index.html
+site v0.20.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/statements/index.html

@@ -1,6 +1,15 @@
 {
- "current": "0.20.7",
+ "current": "0.20.8",
  "versions": [
+  {
+   "version": "0.20.8",
+   "date": "2026-10-25",
+   "title": "Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.20.7",
    "date": "2026-10-25",

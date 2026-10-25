@@ -60,4 +60,4 @@ Sources: cnn-php2shell-websites-shut, cyberexpress-php2shell-gov-sites
 
 
 ---
-site v0.20.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/wikimedia-precaution/index.html
+site v0.20.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/wikimedia-precaution/index.html

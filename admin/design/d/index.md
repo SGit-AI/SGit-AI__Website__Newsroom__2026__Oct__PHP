@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.20.7. Not the live site.
+> Mockup D for review, built from the data of release v0.20.8. Not the live site.
 
-PHP Team console Console Overview Board 206 Agents 19 Releases 171 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 206 Agents 19 Releases 172 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.20.7 
-171 releases since 22 Oct 
+v0.20.8 
+172 releases since 22 Oct 
 
 Open on the board 
 206 
@@ -99,6 +99,7 @@ Go, or not, on the branch security/gate-pass-2: the gate fails on inline event h
 ### Releases
  latest 8 
 
+ v0.20.8 2026-10-25 Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date 
  v0.20.7 2026-10-25 the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with… 
  v0.20.6 2026-10-25 The librarian's scheduled task now carries its card's prompt word for word, and its daily pass moves to 20:23 London, after the co… 
  v0.20.5 2026-10-25 The scheduled tasks as they are at 13:00 London, after the agents wired their own: researcher, Sherpa, librarian, ontologist and p… 
@@ -106,7 +107,6 @@ Go, or not, on the branch security/gate-pass-2: the gate fails on inline event h
  v0.20.3 2026-10-25 The stricter gate, on the editor's go: security_check.py fails on inline event handlers, pages without a safe Content-Security-Pol… 
  v0.20.2 2026-10-25 a proposal on the briefs page, at the editor's request: one repository into six (kit, data, refs, updates, site, team), each with … 
  v0.20.1 2026-10-25 the editor's notes on the URL article, captured with story-site's reply: view paths answered by a 404 router instead of written as… 
- v0.20.0 2026-10-25 the briefs page is a list of titles with a page and a link per brief (with markdown twins, the old anchors still landing), and the… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Go, or not, on the branch security/gate-pass-2: the gate fails on inline event h
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.20.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.20.8 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

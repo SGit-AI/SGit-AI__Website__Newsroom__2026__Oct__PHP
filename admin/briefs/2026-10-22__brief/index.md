@@ -34,4 +34,4 @@ newer: → Collaborators: the people who use the site as it is built
 
 
 ---
-site v0.20.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief/index.html
+site v0.20.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief/index.html

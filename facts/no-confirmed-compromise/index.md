@@ -16,7 +16,7 @@ A time-bounded absence, not a confirmed fact: it can only be true as of the last
 
 **A4** Corroborated●●●●○○ · State · verdict: **holds**
 
-Refreshed to 16:05 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim. Run 6 adds Die Presse ('In Österreich sind bisher keine erfolgreichen Angriffe bekannt') and RainForest's honeypot (21 PHP2Shell POST requests, attempts), both checked in their captures.
+Refreshed to 16:05 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim. Run 6 adds Die Presse ('In Österreich sind bisher keine erfolgreichen Angriffe bekannt') and RainForest's honeypot (21 PHP2Shell POST requests, attempts), both checked in their captures. Run 7 (as of 09:35 UTC on 25 October): the Turkish Presidency's Cyber Security Directorate, via Haber, says e-Devlet is safe and its services continue, naming no compromise; teleSUR, captured at 09:35 UTC on 25 October, says no massive successful intrusion had been publicly confirmed and that most activity was scanning and failed attempts. Of the 20 captures made since 16:05 UTC on 24 October, none names a compromised organisation.
 
 | Capture checked | Result | What it says | sha256 of the text read |
 |---|---|---|---|
@@ -40,10 +40,12 @@ Refreshed to 16:05 UTC on 24 October, still time-bounded and 'reported', which f
 | [the-next-web-php2shell-no-confirmed-breaches](../../sources/the-next-web-php2shell-no-confirmed-breaches/index.html) | carries | *Officials in Germany, the Netherlands and Japan say they have not seen one succeed.* | 75d67773b979aa86 |
 | [diepresse-41383717-die-php-sicherheitsluecke-ist-a](../../sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/index.html) | carries | *In Österreich sind bisher keine erfolgreichen Angriffe bekannt.* | f6998ff009f030cc |
 | [voix-business-cards-rainforest-ip-activity-an](../../sources/voix-business-cards-rainforest-ip-activity-an/index.html) | partial | *PHP2Shell関連のHTTP POST通信が21件観測され* | 3e5e879383dd76ce |
+| [haber-teknoloji-siber-guvenlik-baskanligi-ndan](../../sources/haber-teknoloji-siber-guvenlik-baskanligi-ndan/index.html) | supports | *e-Devlet Kapısı Güvende, Hizmetler Kesintisiz Sürüyor* | 2825ea23dc0ee99d |
+| [telesurenglish-php2shell-vulnerabilities](../../sources/telesurenglish-php2shell-vulnerabilities/index.html) | supports | *no massive successful intrusion had been publicly confirmed as of Thursday* | 6efd752b24f54073 |
 
 Open tickets: [Contradiction-2](../../factcheck/index.html#Contradiction-2), [Evidence-1](../../factcheck/index.html#Evidence-1), [Evidence-10](../../factcheck/index.html#Evidence-10), [Evidence-12](../../factcheck/index.html#Evidence-12), [Evidence-18](../../factcheck/index.html#Evidence-18), [Evidence-3](../../factcheck/index.html#Evidence-3), [Finding-26](../../factcheck/index.html#Finding-26), [Finding-85](../../factcheck/index.html#Finding-85).
 
-Graded in Run-6, resting on captures up to 2026-10-24 16:05 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
+Graded in Run-7, resting on captures up to 2026-10-25 09:35 UTC. The scale is on [the fact-check page](../../factcheck/index.html#ladder).
 
 ## This fact over time
 - 2026-10-21CISA publishes [Critical Vulnerabilities in PHP Require Immediate Patching](../../sources/cisa-alert-php-20261021/index.html)
@@ -118,4 +120,4 @@ v2 · site v0.5.8 · 22 October 2026 · reportedNoAs of 20:50 UTC on 22 October,
 
 
 ---
-site v0.20.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html
+site v0.20.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/no-confirmed-compromise/index.html
