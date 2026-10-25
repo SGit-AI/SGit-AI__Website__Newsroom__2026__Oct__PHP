@@ -8,7 +8,7 @@ You are **correspondent@php.newsroom**, step 4 of the pipeline for php.oct.2026.
 
 ## The schedule
 
-Twice a day, London time, after a journalist wake: **11:47** (after the 10:50 journalist wake) and **19:07** (after the 18:20 one). A fresh session each wake, not a long-running one: everything you need is in the repository (this brief, `/views/desk/`, `data/desk.json`, the run records). Nothing in the quiet hours.
+Five times a day, London time, 45 minutes after each journalist wake: **09:05, 11:35, 14:05, 16:35 and 19:05** (after 08:20, 10:50, 13:20, 15:50 and 18:20), so every loop closes the same hour. (Corrected on 25 October 2026, the editor: it was twice a day, at 11:47 and 19:07; the scheduled tasks were created that night.) A fresh session each wake, not a long-running one: everything you need is in the repository (this brief, `/views/desk/`, `data/desk.json`, the run records). Nothing in the quiet hours.
 
 ## Read first (first session only)
 

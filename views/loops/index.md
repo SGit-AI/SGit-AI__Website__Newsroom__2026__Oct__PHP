@@ -42,7 +42,7 @@ nothing waiting: the evidence vault head is live and reviewed
 
 Vault read
 
-25 Oct 00:06 UTC
+25 Oct 00:43 UTC
 
 The next loop, if every role wakes on its card
 
@@ -56,11 +56,11 @@ Curator
 
 Journalist
 
-25 Oct 08:20 UTC (proposed)
+25 Oct 08:20 UTC (active)
 
 Correspondent
 
-25 Oct 11:47 UTC (proposed)
+25 Oct 09:05 UTC (active)
 
 ## Who does what
 
@@ -74,7 +74,7 @@ Filled: what happened (the researcher's queue times as the curator names them, t
 
 | # | Evidence head | Researcher (queue) | Curator | Journalist (live) | Correspondent (review) | Took | Status |
 |---|---|---|---|---|---|---|---|
-| 4 | `8c16a64a7cf6`capture to 24 Oct 16:05 UTC; 382 sources | 24 Oct 14:21 UTC, 24 Oct 16:52 UTC | 4 commits (curator@php.newsroom)+54 sources, +64 snapshots, 30 claims; head 24 Oct 17:18 UTC | v0.15.19, 24 Oct 22:08 UTCjournalist@php.newsroom; 9 releases at this head (later ones are other work) | 24 Oct 23:21 UTCcorrespondent@php.newsroom | 9 h 00 min | full loop |
+| 4 | `8c16a64a7cf6`capture to 24 Oct 16:05 UTC; 382 sources | 24 Oct 14:21 UTC, 24 Oct 16:52 UTC | 4 commits (curator@php.newsroom)+54 sources, +64 snapshots, 30 claims; head 24 Oct 17:18 UTC | v0.15.19, 24 Oct 22:08 UTCjournalist@php.newsroom; 10 releases at this head (later ones are other work) | 24 Oct 23:21 UTCcorrespondent@php.newsroom | 9 h 00 min | full loop |
 | 3 | `1f38e70921b2`capture to 24 Oct 08:37 UTC; 328 sources | – | 2 commits (curator@php.newsroom)+33 sources, +0 snapshots, 23 claims; head 24 Oct 09:50 UTC | v0.14.30, 24 Oct 12:55 UTCclaude-journalist; 21 releases at this head (later ones are other work) | 24 Oct 12:55 UTCthe Opus journalist, in the same release | 5 h 43 min | one session |
 | 2 | `1845598d9a38`capture to 23 Oct 16:04 UTC; 295 sources | – | 4 commits (curator@php.newsroom)+68 sources, +0 snapshots, 49 claims; head 23 Oct 23:31 UTC | v0.10.19, 24 Oct 00:00 UTCclaude-journalist; 47 releases at this head (later ones are other work) | 24 Oct 00:00 UTCthe Opus journalist, in the same release | 6 h 19 min | one session |
 | 1 | `f3c5db0d9873`capture to 23 Oct 01:20 UTC; 227 sources | – | 17 commits (claude-newsroom-lead, claude-vault-app, collector-gov, curator@php.newsroom, first commit, merge, newsroom.dev)+45 sources, +0 snapshots, 0 claims; head 23 Oct 11:01 UTC | v0.10.4, 23 Oct 14:52 UTCclaude-journalist; 15 releases at this head (later ones are other work) | 23 Oct 14:52 UTCthe Opus journalist, in the same release | 3 h 51 min | one session |
@@ -91,15 +91,13 @@ Minutes from the source-watch queue the curator names to the curated head, to th
 |---|---|---|---|---|---|---|
 | Researcher | active | the session's model | 07:00, 09:30, 12:00, 14:30, 17:00 | 0 | – | 25 Oct 07:00 UTC, 25 Oct 09:30 UTC, 25 Oct 12:00 UTC |
 | Curator | active | the session's model | 08:00, 10:30, 13:00, 15:30, 18:00 | 0 | – | 25 Oct 08:00 UTC, 25 Oct 10:30 UTC, 25 Oct 13:00 UTC |
-| Journalist | proposed | Sonnet | 08:20, 10:50, 13:20, 15:50, 18:20 | 1 | 24 Oct 21:26 UTC, ok | 25 Oct 08:20 UTC, 25 Oct 10:50 UTC, 25 Oct 13:20 UTC |
-| Correspondent | proposed | Opus | 11:47, 19:07 | 1 | 24 Oct 22:50 UTC, ok | 25 Oct 11:47 UTC, 25 Oct 19:07 UTC, 26 Oct 11:47 UTC |
+| Journalist | active | Sonnet | 08:20, 10:50, 13:20, 15:50, 18:20 | 1 | 24 Oct 21:26 UTC, ok | 25 Oct 08:20 UTC, 25 Oct 10:50 UTC, 25 Oct 13:20 UTC |
+| Correspondent | active | Opus | 09:05, 11:35, 14:05, 16:35, 19:05 | 1 | 24 Oct 22:50 UTC, ok | 25 Oct 09:05 UTC, 25 Oct 11:35 UTC, 25 Oct 14:05 UTC |
 
 ## What this record cannot see
 - The researcher writes no run record to this repository (data/runs/researcher/ is empty): its wakes are seen only through the queue times the curator names in its vault commits.
 - The curator writes no run record to this repository (data/runs/curator/ is empty): its wakes are seen only through the evidence vault's commits, read at each correspondent wake.
 - The source watch's own export (data/source-watch.json) was last read 23 Oct 12:40 UTC; its pack vault's read key is not published, so its pages and snapshots here are that day's.
-- The journalist's card is "proposed": no scheduled task runs it yet, so a loop closes only when a session is started by hand.
-- The correspondent's card is "proposed": no scheduled task runs it yet, so a loop closes only when a session is started by hand.
 - 7 curator commits never went live on their own: each was folded into a later export (normal, but a head reviewed is not every commit read).
 - Times of the researcher are the queue times the curator writes, not the researcher's own clock; a wake that found nothing to queue leaves no trace here.
 - Run records say when a wake started and finished; a wake that did nothing need not commit (AGENTS.md, section 7), so quiet wakes are invisible.
@@ -113,9 +111,9 @@ Sources the site served, release by release.
 ### Review
 193claims in the evidence vault137verdicts: 46 agrees, 30 held back, 42 noted, 19 used9corrections by the correspondent (catches)2run records of the four roles
 ### The site and its repository
-148releases to dev299commits on dev953HTML pages871markdown twins92 MBin 3077 tracked files17.9 MBof data, 509 JSON files7678lines in build.py
+149releases to dev301commits on dev954HTML pages872markdown twins93 MBin 3082 tracked files17.9 MBof data, 510 JSON files7680lines in build.py
 
-Built from [data/loops.json](../../data/loops.json) (exported 25 Oct 00:06 UTC by `admin/build/export_loops.py`; the evidence vault read 25 Oct 00:06 UTC), `data/runs/` and `data/schedule/`. The correspondent re-exports it at every wake. See also [the desk](../desk/index.html) (what is still stale) and [every schedule](../../team/schedule/index.html).
+Built from [data/loops.json](../../data/loops.json) (exported 25 Oct 00:43 UTC by `admin/build/export_loops.py`; the evidence vault read 25 Oct 00:43 UTC), `data/runs/` and `data/schedule/`. The correspondent re-exports it at every wake. See also [the desk](../desk/index.html) (what is still stale) and [every schedule](../../team/schedule/index.html).
 
 
 ---
