@@ -7,9 +7,16 @@
   'use strict';
   var L = window.LensLine, C = window.LINE;
   if (!L || !C) return;
-  (function () {                                            // what this page is, from its own island
-    var el = document.getElementById('line-page'); if (!el) return;
-    try { var p = JSON.parse(el.textContent); for (var k in p) C[k] = p[k]; } catch (e) {}
+  (function () {                                            // what this page is: its island, or <html> on a live page
+    var el = document.getElementById('line-page');
+    if (el) { try { var p = JSON.parse(el.textContent); for (var k in p) C[k] = p[k]; } catch (e) {} return; }
+    var path = document.documentElement.getAttribute('data-path') || 'index.html';
+    var PAGES = { 'index.html': 'front', 'agencies/index.html': 'agencies', 'numbers/index.html': 'numbers', 'playbook/index.html': 'playbook' };
+    C.page = PAGES[path] || 'other';
+    C.pageTitle = (document.title || '').split(' \u00b7 ')[0];
+    C.root = '../'.repeat((path.match(/\//g) || []).length);   // a count, never page text (as the site's other scripts)
+    C.version = document.documentElement.getAttribute('data-ver') || '';
+    C.frontPath = 'index.html'; C.statusUrl = C.root + 'status.json'; C.pageFor = null; C.live = true;
   })();
   var ROLES = C.roles, COPY = C.copy, T = C.moments.thresholds, h = document.documentElement;
   var box = document.querySelector('.ln'); if (!box) return;
@@ -22,9 +29,10 @@
   function now() { return new Date(); }
   function rec() { var r = read('p2s.lens'); return r && r.v === 2 ? r : null; }
   function ses() { return read('p2s.lens.session', true) || {}; }
+  function personaOf(role, reader) { return reader || (ROLES.roles[role].readers || [])[0] || null; }
   function save(r) {
     put('p2s.lens', r);
-    try { localStorage.setItem('p2s.persona', r.reader || r.role); } catch (e) {}
+    try { var p = personaOf(r.role, r.reader); if (p) localStorage.setItem('p2s.persona', p); else localStorage.removeItem('p2s.persona'); } catch (e) {}
   }
   function fresh(start, t) {
     return { v: 2, role: start.role, reader: start.reader || null, depth: L.chooseDepth(start.role, start.reader, null, ROLES),
@@ -33,7 +41,7 @@
   }
 
   /* ---------------------------------------------------------------- what has changed, for this role */
-  var LOG = (function () { var el = document.getElementById('line-changes'); try { return el ? JSON.parse(el.textContent) : []; } catch (e) { return []; } })();
+  var LOG = (function () { var el = document.getElementById('line-changes'); try { return el ? JSON.parse(el.textContent) : (C.changes || []); } catch (e) { return C.changes || []; } })();
   function changesFor(role, since) {
     if (!since) return [];
     return LOG.filter(function (c) { return c.at > since && (!c.roles || c.roles.indexOf(role) >= 0 || c.roles.indexOf('*') >= 0); });
@@ -66,6 +74,9 @@
 
   function state() {
     var r = rec(), s = fromUrl(ses()), t = now(), shared = s.shared || null, asOf = s.asOf || null;
+    if (r && shared && shared.role === r.role && (shared.reader || null) === (r.reader || null)) {
+      s.asDone = shared.reader || shared.role; delete s.shared; put('p2s.lens.session', s, true); shared = null;
+    }
     if (!r) {
       var start = L.startingRole({ stored: null, asParam: shared ? (shared.reader || shared.role) : null, referrer: document.referrer }, ROLES);
       r = fresh(start, t.toISOString()); save(r);
@@ -158,6 +169,7 @@
       save(st.r);
     }
     shapePage(st, line);
+    if (C.live) { answerCards(st); rewriteAddress(st); }
     if (line.key === 'switched') setTimeout(function () { var s2 = ses(); delete s2.switchedAt; put('p2s.lens.session', s2, true); render(); }, T.switchedToastSeconds * 1000);
     return line;
   }
@@ -193,6 +205,60 @@
   }
 
   function render() { var st = state(); return draw(st); }
+
+  /* ---------------------------------------------------------------- live pages: the answer card for this reader */
+  function answerCards(st) {
+    var src = document.getElementById('p2s-answers'); if (!src) return;
+    var A; try { A = JSON.parse(src.textContent); } catch (e) { return; }
+    var pid = personaOf(st.role, st.reader);
+    document.querySelectorAll('[data-answer-for]').forEach(function (b) {
+      var a = A[pid] || A[b.getAttribute('data-answer-for')]; if (!a) return;
+      var w = b.querySelector('[data-a-who]'), t = b.querySelector('[data-a-text]'), av = b.querySelector('[data-a-av]');
+      if (w) w.textContent = 'for ' + a.person + ', ' + a.label.toLowerCase();
+      if (t) t.textContent = a.answer;
+      if (av) { av.textContent = a.person.charAt(0); av.className = 'av ' + a.group; }
+    });
+  }
+
+  /* ---------------------------------------------------------------- live pages: the view in the address bar
+     The page is a real file at its real path; the address shows the view, /agencies/as/security/, so copying it
+     shares the view. Moving the address deeper would make every relative link resolve against the wrong
+     directory, so first every link on the page is made absolute against the real page, and so is every link
+     added later. Scripts resolve their own requests against window.P2S_BASE, set before any of them ran. */
+  var REAL = window.P2S_BASE || location.href, fixed = false;
+  function word(role, reader) {
+    if (reader && reader !== (ROLES.roles[role].readers || [])[0]) return reader;
+    return role === 'exec' ? 'executive' : role;
+  }
+  function absolutize(rootNode) {
+    var nodes = rootNode.querySelectorAll ? rootNode.querySelectorAll('a[href],area[href],img[src],form[action],link[href]') : [];
+    var list = (rootNode.matches && rootNode.matches('a[href],area[href],img[src],form[action]')) ? [rootNode] : [];
+    Array.prototype.forEach.call(nodes, function (n) { list.push(n); });
+    list.forEach(function (n) {
+      var attr = n.hasAttribute('href') ? 'href' : n.hasAttribute('src') ? 'src' : 'action', v = n.getAttribute(attr);
+      if (!v || /^([a-z][a-z0-9+.-]*:|\/\/|#)/i.test(v)) return;           // absolute, protocol-relative, or an anchor
+      try { n.setAttribute(attr, new URL(v, REAL).href); } catch (e) {}
+    });
+  }
+  function fixLinks() {
+    if (fixed) return; fixed = true;
+    absolutize(document);
+    if (window.MutationObserver) new MutationObserver(function (ms) {
+      ms.forEach(function (m) {
+        if (m.type === 'attributes') absolutize(m.target);
+        else m.addedNodes.forEach(function (n) { if (n.nodeType === 1) absolutize(n); });
+      });
+    }).observe(document.documentElement, { subtree: true, childList: true, attributes: true, attributeFilter: ['href', 'src', 'action'] });
+  }
+  function rewriteAddress(st) {
+    if (!history.replaceState) return;
+    var real = new URL(REAL), dir = real.pathname.replace(/index\.html$/, '');
+    var view = dir + 'as/' + word(st.role, st.reader) + '/';
+    if (st.depth && st.r.depthSet && st.depth !== L.chooseDepth(st.role, st.reader, null, ROLES)) view += st.depth + '/';
+    if (location.pathname === view) return;
+    fixLinks();
+    try { history.replaceState(history.state, '', view + real.search + location.hash); } catch (e) {}
+  }
 
   /* ---------------------------------------------------------------- the control */
   var sheet;
@@ -266,6 +332,8 @@
     if (t.closest('.ln-chip')) { e.preventDefault(); openSheet(sheet && sheet.hidden); return; }
     var fold = t.closest('.lp-fold button[data-open]');
     if (fold) { fold.closest('.lp').classList.remove('is-folded'); return; }
+    var asLink = t.closest('a[data-as]');                     // "Read this page as": switch in place, no navigation
+    if (asLink && ROLES.roles[asLink.getAttribute('data-as')]) { e.preventDefault(); setView({ role: asLink.getAttribute('data-as') }); return; }
     var more = t.closest('[data-line-more]');
     if (more) { e.preventDefault(); setView({ role: 'everything' }); return; }
     var roleBtn = t.closest('[data-role]');
@@ -279,7 +347,8 @@
       e.preventDefault();
       var r0 = rec(), st0 = state();
       if (tool.dataset.tool === 'share') {
-        var url = location.origin + location.pathname + '?as=' + (r0.reader || r0.role) + '&depth=' + (st0.depth || L.chooseDepth(st0.role, st0.reader, null, ROLES));
+        var url = C.live ? location.href.split('#')[0]       // a live page's address already is its view
+          : location.origin + location.pathname + '?as=' + (r0.reader || r0.role) + '&depth=' + (st0.depth || L.chooseDepth(st0.role, st0.reader, null, ROLES));
         if (navigator.clipboard) navigator.clipboard.writeText(url);
         toast('linkCopied', { as: ROLES.roles[st0.role].as, depthLower: ROLES.depths[st0.depth || L.chooseDepth(st0.role, st0.reader, null, ROLES)].label.toLowerCase() });
       } else if (tool.dataset.tool === 'forget') {
@@ -306,7 +375,7 @@
     if (a === 'Make it mine') { var sh = s.shared || {}; s.asDone = sh.reader || sh.role; delete s.shared; put('p2s.lens.session', s, true); setView({ role: sh.role, reader: sh.reader || null, depth: sh.depth }, 'shared'); toast('keptShared', { as: ROLES.roles[sh.role || r.role].as }); return; }
     if (a === 'Back to today') { delete s.asOf; put('p2s.lens.session', s, true); toast('backToToday'); go(); return; }
     if (a === 'Read it anyway') { s.gates = (s.gates || []).concat([location.pathname]); put('p2s.lens.session', s, true); toast('gatePassed'); go(); return; }
-    if (a === 'Back to your front page') { location.href = root + C.frontPath; return; }
+    if (a === 'Back to your front page') { location.href = new URL(root + C.frontPath, REAL).href; return; }
     save(r); go();
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') openSheet(false); });

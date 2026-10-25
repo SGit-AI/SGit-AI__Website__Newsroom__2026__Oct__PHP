@@ -327,6 +327,22 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
  `admin/content/briefs/2026-10-25__brief__the-line.md`.
 
+### The line and the router, live (story-site, 25 October 2026, the editor's go)
+
+- Every page carries the line under the bar (`assets/design/line/`), in place of the two dials of v0.14.0: it says one thing
+
+ to the reader, as the role they are (Executive by default), and keeps their record in this browser (`p2s.lens`).
+
+- Every page shows its view in the address bar: `/agencies/as/security/`. `/404.html` answers any address past a reserved
+
+ word (as, on, vs, since) by opening the page before it with that view; 28 cards (`/as//`) for the front
+
+ page, the agencies, the numbers and the playbook unfurl in a chat with who they are for. Dated views are read, not applied.
+
+- Scripts resolve their requests against the real page (`window.P2S_BASE`, and a fetch shim in `boot.js`), because the
+
+ security policy rules out ``.
+
 ### Recorded, not started
 
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
@@ -411,4 +427,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.21.10 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.22.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

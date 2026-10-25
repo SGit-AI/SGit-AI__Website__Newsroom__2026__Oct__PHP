@@ -22,12 +22,12 @@
     const seenKey = key + '.seen'
     let seen = []
     try { seen = JSON.parse(sessionStorage.getItem(seenKey) || '[]') } catch (e) {}
-    if (seen.includes(location.pathname)) return                       // one event per page per session
+    if (seen.includes((window.P2S_REAL_PATH || location.pathname))) return                       // one event per page per session
     const ref = (() => { try { return document.referrer ? new URL(document.referrer).host : '' } catch (e) { return '' } })()
     if (ref === location.host) { /* internal navigation: keep, it is a journey */ }
     const w = window.innerWidth || 0
     const ev = { v: 1, site: location.host, ver: (document.querySelector('nav .ver') || {}).textContent || '', ts: new Date().toISOString().slice(0, 16) + 'Z',
-                 sid, path: location.pathname, ref, country: '', region: '', city: '', lang: navigator.language || '',
+                 sid, path: (window.P2S_REAL_PATH || location.pathname), ref, country: '', region: '', city: '', lang: navigator.language || '',
                  screen: w < 600 ? 'phone' : w < 1000 ? 'tablet' : 'desktop', tz: (Intl.DateTimeFormat().resolvedOptions().timeZone || '') }
     const agent = automation(); if (agent) ev.agent = agent
     const who = await role(root); if (who) ev.who = who
@@ -35,7 +35,7 @@
     if (geo) { ev.country = geo.country || ''; ev.region = geo.region || ''; ev.city = geo.city || '' }
     const payload = await envelope(cfg.recipient.encrypt, JSON.stringify(ev))
     const r = await fetch(`${cfg.endpoint}/api/vault/append/write/${cfg.vault_id}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ append_token: cfg.append_token, payload }), keepalive: true })
-    if (r.ok) { seen.push(location.pathname); try { sessionStorage.setItem(seenKey, JSON.stringify(seen.slice(-50))) } catch (e) {} }
+    if (r.ok) { seen.push((window.P2S_REAL_PATH || location.pathname)); try { sessionStorage.setItem(seenKey, JSON.stringify(seen.slice(-50))) } catch (e) {} }
   } catch (e) { /* telemetry never surfaces */ }
 
   function automation() {

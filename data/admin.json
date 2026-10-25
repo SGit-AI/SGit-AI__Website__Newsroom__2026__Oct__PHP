@@ -2383,6 +2383,35 @@
    "status": "open",
    "owner": "dev@php.newsroom",
    "note": "After step 0. The press goes to security for review before v1.0.0."
+  },
+  {
+   "id": "324",
+   "title": "The line is live on every page, and the router: /agencies/as/security/ opens the agencies for Security; every page shows its view in the address bar; cards for the front page, the agencies, the numbers and the playbook unfurl with who they are for",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "The editor's go of 25 October, in story-site's session (boards 297 and 311, his rows, which he can close). The line replaces the two dials on every page; /404.html answers any view address; 28 cards; a fetch shim so every script resolves against the real page (the security policy rules out <base>). 27 journeys checked in Chromium against a local stand-in for GitHub Pages, no errors.",
+   "version": "0.22.0"
+  },
+  {
+   "id": "325",
+   "title": "The gate and the router: exempt /404.html and the view cards (<page>/as/<reader>/) from the sitemap, llms.txt and orphan checks, and let 404.html use root-relative links",
+   "status": "open",
+   "owner": "security",
+   "note": "To pass validate.py as it stands, 404.html is self-contained (its router inline, hashed by csp.py; absolute links only), and 404.html and the 28 cards are in the sitemap and llms.txt and linked from a page. A sitemap should list canonical pages only, and a 404 page should not be in it. A proposal for security's review; story-site has not changed validate.py."
+  },
+  {
+   "id": "326",
+   "title": "sg-meter v1.3.1 edited in place: what a reader has paid for is keyed by the real page (window.P2S_REAL_PATH), not the address bar, so a view is never charged twice",
+   "status": "open",
+   "owner": "dev",
+   "note": "Two lines, marked in the files, under the editor's go. A versioned component should change as a new version, and upstream may want the same: when a page sets P2S_REAL_PATH, use it. Also edited, the same way: ask.js and site-tools.js (module URLs from the real page) and telemetry.js (counts the real page)."
+  },
+  {
+   "id": "327",
+   "title": "The line's next steps on the live pages: the reading path ('Next: your briefing') as one of its actions, dated views (on, vs, since) once releases keep their pages, the gate for team pages, and page lines for every page",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "The older 'Reading as' bar is hidden where the line runs (one message at a time), and with it its reading path, which should come back in the line. Dated addresses open today's page for now."
   }
  ],
  "evidence_vault": {

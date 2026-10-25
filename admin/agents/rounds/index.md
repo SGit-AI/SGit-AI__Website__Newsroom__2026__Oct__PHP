@@ -34,12 +34,13 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [researcher@php.newsroom](../researcher/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [security@php.newsroom](../security/index.html) | 2026-10-24 | [Application security: the AppSec section, 40 advisories, a CSP on every page, the telemetry policy, and three security passes](../security/index.html#2026-10-24__application-security) | 4 | 3 | unknown | 2 | 1 | 2 |
 | [Sherpa](../sherpa/index.html) | 2026-10-24 | [The collaborators lane drained, a power user onboarded, the editor's asks recorded, the schedule active and an inbox for outside agents](../sherpa/index.html#2026-10-24__drain-schedule-and-inbox) | 2 | 4 | unknown | 0 | 0 | 0 |
-| [Story site agent](../story-site/index.html) | 2026-10-25 | [The line, built: the editor's design of 25 October as prototype F, from the evidence vault](../story-site/index.html#2026-10-25__the-line) | 2 | 2 | unknown | admin/briefs/** and build.py's briefs block: the editor asked for it directly in this session; admin/briefs/** is his own page in admin/content/agents/editor/policy.json | 1 | 0 |
+| [Story site agent](../story-site/index.html) | 2026-10-25 | [The line, built: the editor's design of 25 October as prototype F, from the evidence vault](../story-site/index.html#2026-10-25__the-line) | 2 | 2 | unknown | dev's ask.js, site-tools.js, telemetry.js, sg-meter.js and sg-meter-core.js, layout() in build.py and /404.html: the editor's explicit go in this session, 25 October | 2 | 0 |
 | [storyboard@php.newsroom](../storyboard/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [synthetic@php.newsroom](../synthetic/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 
 ## Every debrief, newest first
 - 2026-10-25 · [Story site agent: The line, built: the editor's design of 25 October as prototype F, from the evidence vault](../story-site/index.html#2026-10-25__the-line)
+- 2026-10-25 · [Story site agent: The line and the router, live on every page](../story-site/index.html#2026-10-25__the-line-and-the-router-live)
 - 2026-10-25 · [Ontologist: The history of the Wikipedia article as lifelines, its talk page, a reviewer's reading of it, a page for its editors, and Wikidata tracked](../ontologist/index.html#2026-10-25__wikipedia-history-and-review)
 - 2026-10-25 · [Ontologist: Wikipedia as an anchor, the PHP2Shell article as a fractal semantic graph, and the self-check on it](../ontologist/index.html#2026-10-25__self-check-wikipedia)
 - 2026-10-25 · [librarian@php.newsroom: The scheduled task wired to the card, and the wake moved to 20:23 London](../librarian/index.html#2026-10-25__schedule-wired)
@@ -67,4 +68,4 @@ At the end of every round of work each agent writes a debrief with screenshots a
 
 
 ---
-site v0.21.10 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
+site v0.22.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html

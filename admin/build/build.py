@@ -315,7 +315,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
     if path == 'index.html':
         ld.append({'@context': 'https://schema.org', '@type': 'WebSite', 'name': SITE_NAME, 'url': BASE_URL + '/', 'description': STORY['description'], 'inLanguage': 'en'})
     return f'''<!doctype html>
-<html lang="en" data-root="{up}" data-path="{path}" data-ver="{VERSION}"{' data-track-home' if path in ('index.html', 'ops/index.html', 'analysis/index.html') else ''}>
+<html lang="en" data-root="{up}" data-path="{path}" data-ver="{VERSION}"{' data-track-home' if path in ('index.html', 'ops/index.html', 'analysis/index.html') else ''}{__import__('design').line_html_attrs(globals())}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -343,7 +343,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
 <link rel="stylesheet" href="{up}assets/themes/themes.css">
 <link rel="stylesheet" href="{up}assets/themes/site-tokens.css">
 <link rel="stylesheet" href="{up}assets/design/v2-live.css">
-<script type="application/ld+json">{J(ld, ensure_ascii=False)}</script>
+{__import__('design').line_head(up)}<script type="application/ld+json">{J(ld, ensure_ascii=False)}</script>
 <script type="application/json" id="sg-meter-config">{meter_json}</script>
 <script type="module" src="{up}assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"></script>
 <script src="{up}assets/personas.js" defer></script>
@@ -351,7 +351,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
 <script src="{up}assets/reader-state.js" defer></script>
 <script src="{up}assets/site-tools.js" defer></script>
 <script src="{up}assets/telemetry.js" defer></script>
-<script src="{up}assets/design/dials.js" defer></script>
+{__import__('design').line_scripts(up)}
 </head>
 <body>
 <nav class="site"><div class="row">
@@ -360,13 +360,15 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
   <a class="ver" href="{up}admin/versions.html#v{E(VERSION)}" title="Site release history: what v{E(VERSION)} changed">v{E(VERSION)}</a>
   <span class="status" title="{E(checks_title())}">{E(STORY["status"])} &middot; evidence to {E(human_time(STORY["checked_at"]))} &middot; <a href="{up}views/loops/index.html" style="color:inherit">last agent run {E(human_time(LAST_RUN[0]))}</a></span>
   <span class="crumbs"><a href="https://newsroom.sgit.ai/">newsroom</a> / <a href="https://2026.newsroom.sgit.ai/">2026</a> / <a href="https://oct.2026.newsroom.sgit.ai/">October</a> / <b>PHP</b></span>
-  <div class="tools">{__import__('design').dials_html(globals(), up)}<div class="theme-pick"></div><sg-meter view="balance"></sg-meter></div>
+  <div class="tools"><div class="theme-pick"></div><sg-meter view="balance"></sg-meter></div>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-items" aria-label="Menu">Menu</button>
   <div class="nav-items" id="nav-items">{''.join(nav_items)}</div>
 </div></nav>
+{__import__('design').LINE_BAND}
 <main>
 {origin_strip(path, kind, origin, byline)[0]}
 {body}
+{__import__('design').views_row(globals(), path, up)}
 {page_meter}
 </main>
 <footer class="site">

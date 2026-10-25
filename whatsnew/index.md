@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.0 · 25 October 2026new since your last visit
+
+the line is live on every page in place of the two dials, and the router: /agencies/as/security/ opens the agencies for Security, every page keeps its view in the address bar (/as/executive/ on the front page), 404.html answers any view address, and 28 cards for the front page, the agencies, the numbers and the playbook unfurl with who they are for
+
+No reader-facing section changed in this release.
+
 ## v0.21.10 · 25 October 2026new since your last visit
 
 the split, in progress: the press is at press.php.oct.2026.newsroom.sgit.ai, this story's own for now (the editor); the data repository's v0.1.0 (49 catalogue entries, 466 files, a schema each, immutable /v/0.1.0/ with sha256s) and the team repository's first import (the board as one file per row) are on dev; press, refs, updates and site wait for the design agent's UX refactor
@@ -1352,4 +1358,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.21.10 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

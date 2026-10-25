@@ -1,6 +1,15 @@
 {
- "current": "0.21.10",
+ "current": "0.22.0",
  "versions": [
+  {
+   "version": "0.22.0",
+   "date": "2026-10-25",
+   "title": "the line is live on every page in place of the two dials, and the router: /agencies/as/security/ opens the agencies for Security, every page keeps its view in the address bar (/as/executive/ on the front page), 404.html answers any view address, and 28 cards for the front page, the agencies, the numbers and the playbook unfurl with who they are for",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.21.10",
    "date": "2026-10-25",

@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.21.10. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.22.0. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -1116,6 +1116,37 @@ Licence: content CC BY 4.0, code Apache-2.0.
 - [Prototype F: the line, the playbook](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/playbook/index.md): A content page under the line: the response step by step, with a line written for each role.
 - [Prototype F: the line, a page for the team](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/console/index.md): A page written for the team: the line carries the gate, the page is dimmed rather than hidden, and anyone can read it anyway.
 - [Prototype F: every line the rules produce](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/catalogue/index.md): Every line the rules produce, by visit moment, by role and by page, drawn by the engine at this release.
+
+## Views: a page written for one reader (the router, and the cards that unfurl in a chat)
+- [The router (404.html)](https://php.oct.2026.newsroom.sgit.ai/404.md): The page that answers any address that is not a file: it opens the page a view address names, written for the reader it names.
+- [The front page, for an Executive](https://php.oct.2026.newsroom.sgit.ai/as/executive/index.md): No organisation has said it was broken into. Your three questions for the team are below.
+- [The front page, for a general reader](https://php.oct.2026.newsroom.sgit.ai/as/general/index.md): Your phone and laptop are not the target: websites are.
+- [The front page, for Security](https://php.oct.2026.newsroom.sgit.ai/as/security/index.md): Patch internet-facing mod_php first, then FPM. Alert on workers spawning shells.
+- [The front page, for an Engineer](https://php.oct.2026.newsroom.sgit.ai/as/engineer/index.md): Target 8.5.12, 8.4.27, 8.3.36 or 8.2.35; restart every worker.
+- [The front page, for a Journalist](https://php.oct.2026.newsroom.sgit.ai/as/journalist/index.md): 70% is a share of websites, not of the Internet. Released 21 October, not 22.
+- [The front page, for a Researcher](https://php.oct.2026.newsroom.sgit.ai/as/researcher/index.md): Two bug classes; FPM exploitation disputed; an incomplete-fix report is open.
+- [The front page, for everyone, unfiltered](https://php.oct.2026.newsroom.sgit.ai/as/everything/index.md): Every part, in the usual order. About 9 minutes.
+- [The agencies, for an Executive](https://php.oct.2026.newsroom.sgit.ai/agencies/as/executive/index.md): All 16 say update. Two, both US, say take it offline if you can’t: decide who makes that call.
+- [The agencies, for a general reader](https://php.oct.2026.newsroom.sgit.ai/agencies/as/general/index.md): Every government agency says the same first thing: install the fix.
+- [The agencies, for Security](https://php.oct.2026.newsroom.sgit.ai/agencies/as/security/index.md): If you can’t patch: 2 say take offline, 3 isolate, 1 restrict, 2 consider, 6 say nothing.
+- [The agencies, for an Engineer](https://php.oct.2026.newsroom.sgit.ai/agencies/as/engineer/index.md): 16 agencies. All say update. They split on what to do if you can’t.
+- [The agencies, for a Journalist](https://php.oct.2026.newsroom.sgit.ai/agencies/as/journalist/index.md): Only 2 of 16 say take sites offline, both American. Don’t write “agencies say take sites offline”.
+- [The agencies, for a Researcher](https://php.oct.2026.newsroom.sgit.ai/agencies/as/researcher/index.md): 16 agencies. All say update. They split on what to do if you can’t.
+- [The agencies, for everyone, unfiltered](https://php.oct.2026.newsroom.sgit.ai/agencies/as/everything/index.md): 16 agencies. All say update. They split on what to do if you can’t.
+- [The numbers, for an Executive](https://php.oct.2026.newsroom.sgit.ai/numbers/as/executive/index.md): Don't repeat “70% of the Internet”. The 9.2 severity holds.
+- [The numbers, for a general reader](https://php.oct.2026.newsroom.sgit.ai/numbers/as/general/index.md): 70 facts: 19 confirmed, 36 reported, 8 disputed, 3 contradicted, 4 unverified.
+- [The numbers, for Security](https://php.oct.2026.newsroom.sgit.ai/numbers/as/security/index.md): 70 facts: 19 confirmed, 36 reported, 8 disputed, 3 contradicted, 4 unverified.
+- [The numbers, for an Engineer](https://php.oct.2026.newsroom.sgit.ai/numbers/as/engineer/index.md): 70 facts: 19 confirmed, 36 reported, 8 disputed, 3 contradicted, 4 unverified.
+- [The numbers, for a Journalist](https://php.oct.2026.newsroom.sgit.ai/numbers/as/journalist/index.md): 9.2 holds. 70% doesn't. “Millions” are attempts, not intrusions.
+- [The numbers, for a Researcher](https://php.oct.2026.newsroom.sgit.ai/numbers/as/researcher/index.md): 70 facts: 19 confirmed, 36 reported, 8 disputed, 3 contradicted, 4 unverified.
+- [The numbers, for everyone, unfiltered](https://php.oct.2026.newsroom.sgit.ai/numbers/as/everything/index.md): 70 facts: 19 confirmed, 36 reported, 8 disputed, 3 contradicted, 4 unverified.
+- [The playbook, for an Executive](https://php.oct.2026.newsroom.sgit.ai/playbook/as/executive/index.md): Your team's checklist. The three questions on your front page come from it.
+- [The playbook, for a general reader](https://php.oct.2026.newsroom.sgit.ai/playbook/as/general/index.md): If someone hosts your site, ask them in writing whether PHP is updated and restarted.
+- [The playbook, for Security](https://php.oct.2026.newsroom.sgit.ai/playbook/as/security/index.md): Step one: internet-facing mod_php first, then FPM, then the rest.
+- [The playbook, for an Engineer](https://php.oct.2026.newsroom.sgit.ai/playbook/as/engineer/index.md): Targets 8.5.12, 8.4.27, 8.3.36 or 8.2.35. An update only counts after a restart.
+- [The playbook, for a Journalist](https://php.oct.2026.newsroom.sgit.ai/playbook/as/journalist/index.md): The response, step by step.
+- [The playbook, for a Researcher](https://php.oct.2026.newsroom.sgit.ai/playbook/as/researcher/index.md): The response, step by step.
+- [The playbook, for everyone, unfiltered](https://php.oct.2026.newsroom.sgit.ai/playbook/as/everything/index.md): The response, step by step.
 
 ## Briefs, one page each (admin/content/briefs/)
 - [Plan: one repository into six, the implementation](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/index.md): published 2026-10-25T15:09Z, the plan for the proposal the editor agreed on 25 October 2026 ("I think that's the way to do it"), written by dev@php

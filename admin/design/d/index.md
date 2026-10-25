@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.21.10. Not the live site.
+> Mockup D for review, built from the data of release v0.22.0. Not the live site.
 
-PHP Team console Console Overview Board 211 Agents 19 Releases 183 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 214 Agents 19 Releases 184 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.21.10 
-183 releases since 22 Oct 
+v0.22.0 
+184 releases since 22 Oct 
 
 Open on the board 
-211 
-107 done, 5 waiting 
+214 
+108 done, 5 waiting 
 
 Pages built 
 1055 
@@ -30,8 +30,17 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 211
+#### Open 214
 
+ #327 
+The line's next steps on the live pages: the reading path ('Next: your briefing') as one of its actions, dated views (on… 
+ claude-story-site 
+ #326 
+sg-meter v1.3.1 edited in place: what a reader has paid for is keyed by the real page (window.P2S_REAL_PATH), not the ad… 
+ dev 
+ #325 
+The gate and the router: exempt /404.html and the view cards (<page>/as/<reader>/) from the sitemap, llms.txt and orphan… 
+ security 
  #323 
 One repository into six, step 1: the one big session (press, data, team, refs, updates, site; every old address answerin… 
  dev@php.newsroom 
@@ -44,15 +53,6 @@ Watch a second Wikipedia article: 'Black October (information security)' (en.wik
  #319 
 Wikidata and DBpedia, tracked: data/wikidata-links.json holds every party's lookup (25 items confirmed by hand on 25 Oct… 
  ontologist 
- #318 
-The ontologist's story on the admin site (admin/content/articles/2026-10-25__ontologist__what-wikipedia-knows-about-bein… 
- abp 
- #317 
-Eleven of Wikipedia's principles proposed for AGENTS.md in the ontologist's story 'What Wikipedia knows about being righ… 
- conductor 
- #315 
-Wikipedia's PHP2Shell article: /wikipedia/php2shell/review/ has 15 findings against Wikipedia's own policies with the ca… 
- editor 
 
 #### Waiting 5
 
@@ -72,8 +72,11 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 107
+#### Done 108
 
+ #324 
+The line is live on every page, and the router: /agencies/as/security/ opens the agencies for Security; every page shows… 
+ claude-story-site v0.22.0 
  #321 
 The briefs page sorts by the time each brief was published, newest first, and shows the time (UTC) on every row and on e… 
  claude-story-site v0.21.6 
@@ -92,13 +95,11 @@ The briefs page is a list of titles, newest first, and every brief has its own p
  #305 
 Article: URL paths, personas in the address, and a single-page site, written before the work (a link that names its pers… 
  claude-story-site v0.19.0 
- #304 
-The line on a phone: it no longer holds the top of the screen (the editor, on an iPhone: a locked top band costs too muc… 
- claude-story-site v0.19.0 
 
 ### Releases
  latest 8 
 
+ v0.22.0 2026-10-25 the line is live on every page in place of the two dials, and the router: /agencies/as/security/ opens the agencies for Security, … 
  v0.21.10 2026-10-25 the split, in progress: the press is at press.php.oct.2026.newsroom.sgit.ai, this story's own for now (the editor); the data repos… 
  v0.21.9 2026-10-25 the split's names, as the editor decided: press (not kit) for the build library, the gate, the release and the shared components, … 
  v0.21.8 2026-10-25 Conductor full pass 15:15 London: two run records carried in from runs/ branches, the wiring of every scheduled task on /team/stat… 
@@ -106,7 +107,6 @@ The line on a phone: it no longer holds the top of the screen (the editor, on an
  v0.21.6 2026-10-25 the briefs page sorts by the time each brief was published, newest first, and shows that time on every row and every brief's page … 
  v0.21.5 2026-10-25 Ontologist pass 2 (14:05 London, scheduled): 36 new sources resolved to 32 new parties and 3 aliases, with the names that mislead … 
  v0.21.4 2026-10-25 decks: what ruv.sgit.ai does and how it changes the deck per persona (one slide library and seven persona tracks in ruv's timeline… 
- v0.21.3 2026-10-25 The desk's round 3 closed: its scheduled task wired to its card and its wakes moved after the correspondent's reviews, with a debr… 
 
 ### Agents and what they own
  open items 
@@ -114,7 +114,7 @@ The line on a phone: it no longer holds the top of the screen (the editor, on an
  Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 32 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
  conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 21 
- dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 16 
+ dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 17 
  Primary-source collector php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone 5 
  Government and CERT collector every national agency's advisory, in its own language, with the translation marked 4 
  Researcher, vendor and press collector Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press 14 
@@ -122,4 +122,4 @@ The line on a phone: it no longer holds the top of the screen (the editor, on an
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.21.10 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.22.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

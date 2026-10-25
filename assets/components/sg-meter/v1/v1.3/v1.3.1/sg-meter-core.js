@@ -183,7 +183,7 @@ class Meter {
         this.price = this.priceOf(meta)
         if (this.price === 0)    { this.status = 'free'; return }
         if (this.state.paused)   { this.status = 'paused'; return }
-        const path = location.pathname.replace(/index\.html$/, '') || '/'
+        const path = (window.P2S_REAL_PATH || location.pathname).replace(/index\.html$/, '') || '/'   // the real page, not a view path (php.oct.2026, 26 Oct)
         const seen = this._seen()
         const prev = seen[path] && this.state.log.find(e => e.id === seen[path])
         if (prev) {

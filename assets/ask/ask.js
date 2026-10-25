@@ -19,7 +19,7 @@
 // Nothing here is sent anywhere except to the vault server (ciphertext) and to OpenRouter (the conversation).
 
 const html = document.documentElement
-const ROOT = new URL(html.getAttribute('data-root') || './', location.href).href
+const ROOT = new URL(html.getAttribute('data-root') || './', window.P2S_BASE || location.href).href   // the real page, not the view in the address bar
 const KEY_S = 'p2s.now.vault'
 const OR = 'https://openrouter.ai/api/v1/chat/completions'
 const LIB = ['sg-send/sg-send-crypto.js', 'sg-send/sg-send.js', 'sg-vault/sg-vault-crypto.js', 'sg-vault/sg-vault-object-store.js', 'sg-vault/sg-vault-ref-manager.js',
