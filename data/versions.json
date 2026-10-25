@@ -1,6 +1,15 @@
 {
- "current": "0.20.4",
+ "current": "0.20.5",
  "versions": [
+  {
+   "version": "0.20.5",
+   "date": "2026-10-25",
+   "title": "The scheduled tasks as they are at 13:00 London, after the agents wired their own: researcher, Sherpa, librarian, ontologist and pulse now carry their cards' prompts; the ontologist's old task deleted; conductor (scheduled), curator, desk and fact-check still to do",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.20.4",
    "date": "2026-10-25",

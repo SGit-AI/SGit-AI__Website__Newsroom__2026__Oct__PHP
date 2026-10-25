@@ -94,4 +94,4 @@ Every one of those statements links to the pages it comes from, and every one of
 
 
 ---
-site v0.20.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/explained/index.html
+site v0.20.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/explained/index.html
