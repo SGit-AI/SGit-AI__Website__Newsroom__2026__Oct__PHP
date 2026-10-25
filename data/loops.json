@@ -1,6 +1,6 @@
 {
  "about": "The pipeline's own record, exported by admin/build/export_loops.py (correspondent@php.newsroom) at each correspondent wake: the evidence vault's commits, every release, the repository's size and the next scheduled wakes. /views/loops/ is built from it, with data/runs/ and data/schedule/.",
- "exported_at": "2026-10-25T00:43Z",
+ "exported_at": "2026-10-25T01:14Z",
  "vault": [
   {
    "id": "4153dec1838e",
@@ -348,7 +348,7 @@
    "wake_at": "2026-10-24T17:00Z"
   }
  ],
- "vault_read_at": "2026-10-25T00:43Z",
+ "vault_read_at": "2026-10-25T01:14Z",
  "releases": [
   {
    "version": "0.1.0",
@@ -1690,16 +1690,25 @@
    "vault_head": "8c16a64a7cf6",
    "latest_capture": "2026-10-24T16:05Z",
    "sources": 382
+  },
+  {
+   "version": "0.17.5",
+   "at": "2026-10-25T00:52Z",
+   "agent": "correspondent@php.newsroom",
+   "commit": "02b820eac",
+   "vault_head": "8c16a64a7cf6",
+   "latest_capture": "2026-10-24T16:05Z",
+   "sources": 382
   }
  ],
  "repo": {
-  "commits": 301,
+  "commits": 303,
   "files": 3082,
-  "bytes": 92878164,
+  "bytes": 92894848,
   "pages": 954,
   "twins": 872,
   "data_files": 510,
-  "data_bytes": 17925884,
+  "data_bytes": 17928777,
   "build_lines": 7680
  },
  "next": {
@@ -1745,38 +1754,38 @@
    "status": "active",
    "model": "Sonnet",
    "times_london": [
-    "08:20",
-    "10:50",
-    "13:20",
-    "15:50",
-    "18:20"
+    "08:40",
+    "11:10",
+    "13:40",
+    "16:10",
+    "18:40"
    ],
    "next": [
-    "2026-10-25T08:20Z",
-    "2026-10-25T10:50Z",
-    "2026-10-25T13:20Z",
-    "2026-10-25T15:50Z",
-    "2026-10-25T18:20Z",
-    "2026-10-26T08:20Z"
+    "2026-10-25T08:40Z",
+    "2026-10-25T11:10Z",
+    "2026-10-25T13:40Z",
+    "2026-10-25T16:10Z",
+    "2026-10-25T18:40Z",
+    "2026-10-26T08:40Z"
    ]
   },
   "correspondent": {
    "status": "active",
    "model": "Opus",
    "times_london": [
-    "09:05",
-    "11:35",
-    "14:05",
-    "16:35",
-    "19:05"
+    "09:25",
+    "11:55",
+    "14:25",
+    "16:55",
+    "19:25"
    ],
    "next": [
-    "2026-10-25T09:05Z",
-    "2026-10-25T11:35Z",
-    "2026-10-25T14:05Z",
-    "2026-10-25T16:35Z",
-    "2026-10-25T19:05Z",
-    "2026-10-26T09:05Z"
+    "2026-10-25T09:25Z",
+    "2026-10-25T11:55Z",
+    "2026-10-25T14:25Z",
+    "2026-10-25T16:55Z",
+    "2026-10-25T19:25Z",
+    "2026-10-26T09:25Z"
    ]
   }
  }
