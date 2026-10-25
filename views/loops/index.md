@@ -117,4 +117,4 @@ Built from [data/loops.json](../../data/loops.json) (exported 25 Oct 00:43 UTC b
 
 
 ---
-site v0.17.4 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/views/loops/index.html
+site v0.17.5 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/views/loops/index.html
