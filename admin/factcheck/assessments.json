@@ -2064,8 +2064,8 @@
   },
   {
    "id": "no-confirmed-compromise",
-   "claim_hash": "90e50d0dfff34955",
-   "run": "Run-6",
+   "claim_hash": "a6a0832ed7fa98c7",
+   "run": "Run-7",
    "mode": "vault",
    "kind": "state",
    "level": 4,
@@ -2073,9 +2073,9 @@
    "tension": "none",
    "contradictions": [],
    "volatile": true,
-   "as_of": "20261024T160544Z",
+   "as_of": "20261025T093507Z",
    "status_fit": "ok",
-   "reason": "Refreshed to 16:05 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim. Run 6 adds Die Presse ('In Österreich sind bisher keine erfolgreichen Angriffe bekannt') and RainForest's honeypot (21 PHP2Shell POST requests, attempts), both checked in their captures.",
+   "reason": "Refreshed to 16:05 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim. Run 6 adds Die Presse ('In Österreich sind bisher keine erfolgreichen Angriffe bekannt') and RainForest's honeypot (21 PHP2Shell POST requests, attempts), both checked in their captures. Run 7 (as of 09:35 UTC on 25 October): the Turkish Presidency's Cyber Security Directorate, via Haber, says e-Devlet is safe and its services continue, naming no compromise; teleSUR, captured at 09:35 UTC on 25 October, says no massive successful intrusion had been publicly confirmed and that most activity was scanning and failed attempts. Of the 20 captures made since 16:05 UTC on 24 October, none names a compromised organisation.",
    "checked": [
     {
      "source": "cisa-kev-json",
@@ -2235,6 +2235,22 @@
      "sha256": "3e5e879383dd76ceedde10291eb662d52a451e20b573d86c3b1c0ef1ace3b61a",
      "result": "partial",
      "excerpt": "PHP2Shell関連のHTTP POST通信が21件観測され",
+     "outside_citation": false
+    },
+    {
+     "source": "haber-teknoloji-siber-guvenlik-baskanligi-ndan",
+     "file": "sources/haber-teknoloji-siber-guvenlik-baskanligi-ndan/captures/20261023T160435Z/text.txt",
+     "sha256": "2825ea23dc0ee99dad084b327460a78610b626aa1f93bcd95017881a08fbcea9",
+     "result": "supports",
+     "excerpt": "e-Devlet Kapısı Güvende, Hizmetler Kesintisiz Sürüyor",
+     "outside_citation": false
+    },
+    {
+     "source": "telesurenglish-php2shell-vulnerabilities",
+     "file": "sources/telesurenglish-php2shell-vulnerabilities/captures/20261025T093507Z/text.txt",
+     "sha256": "6efd752b24f540730043417e4f8e1837289ad08b2351a62e22a4bc2bdc3e8ad6",
+     "result": "supports",
+     "excerpt": "no massive successful intrusion had been publicly confirmed as of Thursday",
      "outside_citation": false
     }
    ],

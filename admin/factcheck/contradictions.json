@@ -511,9 +511,18 @@
      "sources": [
       "php-net-changelog-8"
      ]
+    },
+    {
+     "who": "Lorikeet Security (vendor blog)",
+     "when": "2026-10-21",
+     "says": "candidate pull requests under a private security branch scheduled for public disclosure on October 24.",
+     "measures": "a third planned date, 24 October, given with no source; no other statement in the vault gives it",
+     "sources": [
+      "lorikeet-php2shell"
+     ]
     }
    ],
-   "reading": "The original embargo time has two values, 14:00 UTC (the Foundation, echoed by The Hacker News) and 11:00 ET, which is 15:00 UTC (watchTowr, echoed by CybelAngel and others). The release itself is stamped 13:34 UTC on the GitHub advisories, ahead of the announced 14:00. The ChangeLog still carries the original date. The site should say 'about 14:00 UTC, advisories at 13:34' and give both original times.",
+   "reading": "The original embargo time has two values, 14:00 UTC (the Foundation, echoed by The Hacker News) and 11:00 ET, which is 15:00 UTC (watchTowr, echoed by CybelAngel and others). The release itself is stamped 13:34 UTC on the GitHub advisories, ahead of the announced 14:00. The ChangeLog still carries the original date. The site should say 'about 14:00 UTC, advisories at 13:34' and give both original times. Run 7: Lorikeet's blog gives a third planned date, 24 October, unsourced and alone in the vault (in its captures of 22 and 25 October); it does not change the reading.",
    "settle": "A PHP project statement of the embargo time, or the pre-announcement's original text.",
    "ticket": "Contradiction-10"
   },

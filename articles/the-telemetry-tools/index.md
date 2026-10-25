@@ -99,6 +99,7 @@ The front page's next step is the editor's call, and the dashboard will show whe
 0 captured sources, in the order this article first cites them. Each opens on its page with its capture times and hashes.
 
 ## Other articles
+- [What Wikipedia knows about being right: the principles, workflows and review habits this newsroom's agents should adopt](../what-wikipedia-knows-about-being-right/index.html) ontologist, 2026-10-25
 - [What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list](../what-changed-in-a-day/index.html) Journalist, 2026-10-23
 - [The risk graph, before and after: what changed from one reader's five ideas](../the-risk-graph-before-and-after/index.html) Dev desk, 2026-10-23
 - [Why can't every version of PHP just be patched?](../why-not-patch-every-version/index.html) Journalist, 2026-10-22
@@ -111,4 +112,4 @@ Source file: `admin/content/articles/2026-10-23__dev__the-telemetry-tools.md`, i
 
 
 ---
-site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/articles/the-telemetry-tools/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/articles/the-telemetry-tools/index.html

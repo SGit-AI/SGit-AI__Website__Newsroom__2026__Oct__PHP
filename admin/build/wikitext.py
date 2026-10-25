@@ -278,3 +278,56 @@ def delta(a, b):
     added = [x for x in added if x['id'] not in used]
     ra = {r['url'] for r in a['references'] if r.get('url')}; rb = {r['url'] for r in b['references'] if r.get('url')}
     return {'added': added, 'removed': removed, 'changed': changed, 'refs_added': sorted(rb - ra), 'refs_removed': sorted(ra - rb)}
+
+
+# ------------------------------------------------------------------------------------------------ talk pages
+
+SIG = re.compile(r'\[\[User(?: talk)?:([^|\]]+)(?:\|[^\]]*)?\]\](?:[^\n]*?)(\d{1,2}:\d{2}, \d{1,2} \w+ \d{4}) \(UTC\)')
+MONTHS = {m: i for i, m in enumerate(('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), 1)}
+
+
+def sig_time(t):
+    """'20:59, 21 October 2026' to '2026-10-21T20:59Z'."""
+    m = re.match(r'(\d{1,2}):(\d{2}), (\d{1,2}) (\w+) (\d{4})', t)
+    return f'{m.group(5)}-{MONTHS[m.group(4)]:02d}-{int(m.group(3)):02d}T{int(m.group(1)):02d}:{m.group(2)}Z' if m and m.group(4) in MONTHS else t
+
+
+def talk(wikitext):
+    """A talk page as threads of signed posts. A post is a run of lines up to a signature; its depth is the count of
+    leading colons, and it replies to the nearest earlier post with a smaller depth. Templates on a post (request
+    edit, and whether it was answered) are kept by name."""
+    text = re.sub(r'<!--.*?-->', '', wikitext, flags=re.S)
+    threads, cur = [], None
+    for level, title, body in sections(text):
+        if not title:
+            continue
+        posts, buf, depth = [], [], 0
+        def flush(buf, depth):
+            raw = '\n'.join(buf).strip()
+            if not raw:
+                return
+            m = SIG.search(raw)
+            who, when = (m.group(1).strip(), sig_time(m.group(2))) if m else (None, None)
+            tpl = [t.strip().lower() for t in re.findall(r'\{\{\s*([^|}]+)', raw)]
+            body_text = plain(re.sub(r'\{\{[^{}]*\}\}', '', SIG.sub('', raw))).strip()
+            body_text = re.sub(r'^[:*#]+', '', body_text, flags=re.M).strip()
+            posts.append({'who': who, 'when': when, 'depth': depth, 'text': body_text, 'templates': tpl,
+                          'request_edit': any(t.startswith('request edit') for t in tpl) or 'edit request' in raw.lower(),
+                          'answered': bool(re.search(r'request edit\s*\|\s*answered\s*=\s*yes', raw, re.I))})
+        for line in body.split('\n'):
+            d = len(line) - len(line.lstrip(':'))
+            if buf and (d != depth) and line.strip():
+                flush(buf, depth); buf = []
+            if line.strip():
+                depth = d
+            buf.append(line)
+            if SIG.search(line):
+                flush(buf, depth); buf = []
+        flush(buf, depth)
+        for i, p_ in enumerate(posts):
+            p_['reply_to'] = next((j for j in range(i - 1, -1, -1) if posts[j]['depth'] < p_['depth']), None)
+        tid = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
+        threads.append({'id': tid, 'title': title, 'level': level, 'posts': posts,
+                        'request_edit': any(p_['request_edit'] for p_ in posts), 'answered': any(p_['answered'] for p_ in posts),
+                        'started': min((p_['when'] for p_ in posts if p_['when']), default=None), 'last': max((p_['when'] for p_ in posts if p_['when']), default=None)})
+    return threads

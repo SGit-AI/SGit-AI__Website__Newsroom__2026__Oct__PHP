@@ -1430,7 +1430,7 @@
   },
   {
    "id": "187",
-   "title": "Twelve pages are recorded twice in data/sources.json under different slugs (for example tpo-nl-digid-offline and tpo-tpo-nl-digid-offline, cisa-kev-catalog and cisa-kev-json, ch-unige-down and unige-site); and unige.ch and epfl.ch, two universities, are classed 'government'. Merge or mark each pair as a later capture of the same page (supersedes), and fix the class. The list: python3 admin/cartographer/pass.py",
+   "title": "Twelve pages are recorded twice in data/sources.json under different slugs (for example tpo-nl-digid-offline and tpo-tpo-nl-digid-offline, cisa-kev-catalog and cisa-kev-json, ch-unige-down and unige-site); and unige.ch and epfl.ch, two universities, are classed 'government'. Merge or mark each pair as a later capture of the same page (supersedes), and fix the class. The list: python3 admin/ontologist/pass.py (the cartographer is now the ontologist)",
    "status": "open",
    "owner": "collector-researchers",
    "note": "From the cartographer's pass of 24 October (admin/cartographer/passes/2026-10-24__pass-1.md)."
@@ -2108,9 +2108,9 @@
   {
    "id": "285",
    "title": "The desk's wakes (09:20, 16:20) come before the correspondent's (09:25, 11:55, 14:25, 16:55, 19:25 London, active since 25 October); by the pipeline, the desk, the ontologist and the librarian run after the correspondent",
-   "status": "open",
+   "status": "done",
    "owner": "desk",
-   "note": "The editor, 24 October: the semantic graphs and the desk's checks only after the correspondent has reviewed the data. Proposal: the desk at about 12:20 and 19:40 London; the ontologist and the librarian after those. Cards: data/schedule/desk.json, ontologist.json, librarian.json; the correspondent's: data/schedule/correspondent.json (proposed). Updated by the correspondent on 25 October: the journalist's and the correspondent's scheduled tasks now exist (journalist 08:40, 11:10, 13:40, 16:10, 18:40; correspondent 09:25, 11:55, 14:25, 16:55, 19:25, both cards active). The desk's 09:20 still runs five minutes before the first review and its 16:20 before the 16:55 one; proposal now: the desk at about 10:15 and 17:40 London, after a review has had time to release; the ontologist's 14:40 already follows the 14:25 review, the librarian's 07:13 precedes every loop."
+   "note": "The editor, 24 October: the semantic graphs and the desk's checks only after the correspondent has reviewed the data. Proposal: the desk at about 12:20 and 19:40 London; the ontologist and the librarian after those. Cards: data/schedule/desk.json, ontologist.json, librarian.json; the correspondent's: data/schedule/correspondent.json (proposed). Updated by the correspondent on 25 October: the journalist's and the correspondent's scheduled tasks now exist (journalist 08:40, 11:10, 13:40, 16:10, 18:40; correspondent 09:25, 11:55, 14:25, 16:55, 19:25, both cards active). The desk's 09:20 still runs five minutes before the first review and its 16:20 before the 16:55 one; proposal now: the desk at about 10:15 and 17:40 London, after a review has had time to release; the ontologist's 14:40 already follows the 14:25 review, the librarian's 07:13 precedes every loop. Done 25 October on the editor's word: the desk wakes at 10:40 and 17:40 London, after the correspondent's 09:25 and 16:55 reviews; its scheduled task carries the card's prompt word for word (the wiring page)."
   },
   {
    "id": "286",
@@ -2312,6 +2312,55 @@
    "status": "open",
    "owner": "story-site",
    "note": "Measured by dev@php.newsroom in Chromium at 390x844 on 25 October; tables scroll in their own box, the overflow comes from the page layout."
+  },
+  {
+   "id": "314",
+   "title": "A deck per persona: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, play, compare any two, 'since yours', and PDFs at 16:9 and LinkedIn's 4:5",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "The editor's requirement of 25 October, in story-site's session: admin/content/briefs/2026-10-25__brief__a-deck-per-persona.md. Modelled on the Black Hat EU 2025 deck vault on sgit.ai (one JSON deck, a separate renderer, a PDF per version). Waits on the editor for five decisions, first among them which site he meant by 'Roof' on sgit.ai: none of the 27 sibling sites has that name. Update, 25 October: the site was ruv.sgit.ai (the editor). Its model, one deck told three ways, changes the design to one slide library and seven persona tracks in ruv's own timeline format, so its player can be reused: admin/content/briefs/2026-10-25__brief__decks-the-ruv-model.md. Live slides need frame-src 'self' in the security policy, which is security's to review."
+  },
+  {
+   "id": "315",
+   "title": "Wikipedia's PHP2Shell article: /wikipedia/php2shell/review/ has 15 findings against Wikipedia's own policies with the captures (2 where the article should change: the uncited 'nearly 70% of websites' in the lead against W3Techs' measure, and 'two parties' against the four reporters the advisories credit; 6 to attribute or qualify). Wikipedia's March 2026 guideline accepts no edit request written by a model, so any of these reaches the talk page only as the editor's own words, disclosed, in the {{edit COI}} form, citing the independent sources named there and never this site. The editor decides which, if any, to take.",
+   "status": "open",
+   "owner": "editor",
+   "note": "The ontologist, 25 October; the collaboration rules are on /wikipedia/for-editors/."
+  },
+  {
+   "id": "316",
+   "title": "Scheduled tasks that start a fresh session can start with no repository: the ontologist's old task (trig_01BqfsPKp2Rj5Fs4eAVhjTv9) fired on 24 October at 13:41 UTC and stopped in 14 seconds. Done for the ontologist on 25 October at the editor's go: a new task (trig_01MRxGu6YT6eguebZG8DSAni) wakes its own session at 06:05, 10:05, 14:05 and 18:05 London with the card's prompt; the old task was paused, then deleted (dev v0.20.5).",
+   "status": "done",
+   "owner": "editor",
+   "note": "The ontologist, 25 October; /team/schedule/wiring/, ontologist section."
+  },
+  {
+   "id": "317",
+   "title": "Eleven of Wikipedia's principles proposed for AGENTS.md in the ontologist's story 'What Wikipedia knows about being right' (/articles/what-wikipedia-knows-about-being-right/): the burden on the one who adds, one claim one assertion, say where you read it, breaking news as primary, the ten-year test, words to watch as a gate warning, contradictions on both claims' pages, edit summaries that name the source, one revert then the board, the edit-request shape for cross-scope asks, a six-point page review. Two are build rules the ontologist would write (2, 6); the rest are AGENTS.md paragraphs or desk work. For the conductor and the editor to take or leave.",
+   "status": "open",
+   "owner": "conductor",
+   "note": "The ontologist, 25 October."
+  },
+  {
+   "id": "318",
+   "title": "The ontologist's story on the admin site (admin/content/articles/2026-10-25__ontologist__what-wikipedia-knows-about-being-right.md) is outside the draft policy's appends (articles are not listed for this member); written at the editor's explicit direction in his session ('write a new article on the admin site'), counted as an override in status.json. AUTHOR_ROLES in build.py has no 'ontologist' entry and falls back to the role id; the policy's keeper to add articles to the scope if the editor wants more.",
+   "status": "open",
+   "owner": "abp",
+   "note": "The ontologist, 25 October."
+  },
+  {
+   "id": "319",
+   "title": "Wikidata and DBpedia, tracked: data/wikidata-links.json holds every party's lookup (25 items confirmed by hand on 25 October, the rest to confirm as the lookup completes); the item's history is on the evolution page; DBpedia returns 404 for PHP2Shell until its next extraction, recorded in article.json. Each wake re-fetches the item history and re-checks DBpedia; when DBpedia has the entry, read its triples beside Wikidata's claims and show where they differ.",
+   "status": "open",
+   "owner": "ontologist",
+   "note": "The ontologist, 25 October; the editor's direction: learn from them and use the identifiers that are already there."
+  },
+  {
+   "id": "320",
+   "title": "Watch a second Wikipedia article: 'Black October (information security)' (en.wikipedia.org, Wikidata Q141842194), started on 24 October from a thread on PHP2Shell's talk page, covers PHP2Shell beside other incidents of the month. Add it to data/wikipedia/index.json, give its pages a place in the navigation, and join it to the PHP2Shell article's graph by the article that links to it; session work (pages and Chromium tests), not a scheduled pass.",
+   "status": "open",
+   "owner": "ontologist",
+   "note": "The ontologist, scheduled pass of 25 October 14:05 London; the talk page thread is on /wikipedia/php2shell/talk/."
   }
  ],
  "evidence_vault": {

@@ -3,28 +3,23 @@
  "agent": "desk",
  "as_of": "2026-10-25",
  "round": {
-  "n": 2,
+  "n": 3,
   "date": "2026-10-25",
   "branch": "narrator/offline-ledger",
   "commits": [
-   "v0.14.13",
-   "v0.15.2",
-   "v0.18.4"
+   "2e5a6a4c74",
+   "v0.21.1"
   ]
  },
- "state": "round 2 closed: three scheduled wakes (24 October 09:20 and 16:20, 25 October 09:20); next wake 16:20 London",
+ "state": "round 3 closed: the scheduled task wired to the card; wakes at 10:40 and 17:40 London; next wake 17:40 today",
  "done": [
   {
-   "what": "Correction requests kept in step with the publishers: R-004 held (AWS reworded itself), R-005 and R-007 ready, R-003 needs a fresh capture, R-012 (TechTarget) drafted as the origin of R-011",
-   "evidence": "data/outreach.json, /outreach/"
+   "what": "The scheduled task carries the card's prompt word for word, updated in place; none created, none to delete",
+   "evidence": "trig_012VDhTAeH7RQRRTBF8Gxq6y; /team/schedule/wiring/"
   },
   {
-   "what": "The front page checked at every wake: Right now's stamp (276, done), the 70% unknown (259), the third flaw CVE-2026-115560 (301, 302)",
-   "evidence": "data/admin.json, data/runs/desk/"
-  },
-  {
-   "what": "The editor's queue ranked at every wake",
-   "evidence": "data/runs/desk/"
+   "what": "Wakes moved to 10:40 and 17:40 London, after the correspondent's reviews (board 285)",
+   "evidence": "data/schedule/desk.json; v0.21.1"
   }
  ],
  "tasks": {
@@ -56,23 +51,15 @@
  },
  "next": [
   {
-   "what": "Move the desk's wakes to 10:15 and 17:40 London once the editor agrees",
-   "why": "board 285: the correspondent's reviews come first"
+   "what": "The 17:40 afternoon check",
+   "why": "the card"
   },
   {
-   "what": "Approve story-site's page lines for the line design; decide the seven empty role and depth cells",
-   "why": "the line brief, 25 October"
-  },
-  {
-   "what": "Put the ready correction requests to the editor in order",
-   "why": "the editor sends them"
+   "what": "Approve story-site's page lines for the line design when they exist",
+   "why": "the line brief"
   }
  ],
  "asks": [
-  {
-   "what": "board 285, the desk's wake times",
-   "from": "the editor"
-  },
   {
    "what": "the desk's scope over data/outreach.json and the front-page wording",
    "from": "the editor, through abp@newsroom.sgit"
@@ -87,8 +74,8 @@
   "out_of_scope_requests": 0,
   "pushbacks": 0,
   "overrides": 0,
-  "writes_outside_scope": "data/outreach.json, under the editor's override of 24 October",
+  "writes_outside_scope": 0,
   "injection_seen": 0
  },
- "debrief": "admin/content/agents/desk/debriefs/2026-10-25__wakes.md"
+ "debrief": "admin/content/agents/desk/debriefs/2026-10-25__wired.md"
 }

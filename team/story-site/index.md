@@ -54,6 +54,7 @@ The front pageindex.htmlEvery claimclaims/index.htmlThe timelinetimeline/index.h
 | 251 | /signals/: the ladder chart draws 1.57 million against 2.6 million on one scale; they are counts of different populations (K-004). Redraw against Censys's 1.58 million versioned hosts, or as two chartsFrom the editor's session, 24 October (desk@php.newsroom). | open |  |
 | 259 | Front page, 'What nobody knows yet': 'Where the 70% figure comes from. None of the pages that use it says how it was measured' is out of date: Cloudflare links W3Techs, and the fact-check desk's investigation /factcheck/investigations/php-share/ answers it (Finding-32)From the news desk chief's morning wake, 24 October. | open |  |
 | 299 | A page line for every page, and the change log from the build's own diff between releasesPrototype F writes lines for the front page, the agencies, the numbers and the playbook; every other page falls back to the page-title line. The change log is read from data/timeline.json, tagged by phase; the live one should come from the diff between releases, as the brief's section 10.5 asks. | open |  |
+| 314 | A deck per persona: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, play, compare any two, 'since yours', and PDFs at 16:9 and LinkedIn's 4:5The editor's requirement of 25 October, in story-site's session: admin/content/briefs/2026-10-25__brief__a-deck-per-persona.md. Modelled on the Black Hat EU 2025 deck vault on sgit.ai (one JSON deck, a separate renderer, a PDF per version). Waits on the editor for five decisions, first among them which site he meant by 'Roof' on sgit.ai: none of the 27 sibling sites has that name. Update, 25 October: the site was ruv.sgit.ai (the editor). Its model, one deck told three ways, changes the design to one slide library and seven persona tracks in ruv's own timeline format, so its player can be reused: admin/content/briefs/2026-10-25__brief__decks-the-ruv-model.md. Live slides need frame-src 'self' in the security policy, which is security's to review. | open |  |
 
 ## What they have done
 - The first release: every claim with a status and its sources (v0.1.0).
@@ -84,4 +85,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/story-site/index.html

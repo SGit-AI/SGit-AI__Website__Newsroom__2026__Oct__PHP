@@ -1,12 +1,12 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.20.3",
+ "version": "0.21.5",
  "vault_commit": "87795d121200",
  "title": "The story graph",
  "note": "A node means what its edges say about it. Every edge is a verb from data/ontology.json with a named inverse; there is no generic association edge. Parties are resolved through data/entities.json and data/attribution.json; relays are derived, so many outlets passing on one statement count as one origin.",
  "ontology": {
   "id": "php-newsroom-story-ontology",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "kinds": {
    "claim": {
     "label": "Claim",
@@ -208,6 +208,46 @@
    "described_by": {
     "label": "described by",
     "inverse": "describes",
+    "origin": "wikipedia"
+   },
+   "follows": {
+    "label": "follows",
+    "inverse": "followed by",
+    "origin": "wikipedia"
+   },
+   "discussed_in": {
+    "label": "discussed in",
+    "inverse": "discusses",
+    "origin": "wikipedia"
+   },
+   "has_post": {
+    "label": "has post",
+    "inverse": "post of",
+    "origin": "wikipedia"
+   },
+   "replies_to": {
+    "label": "replies to",
+    "inverse": "answered by",
+    "origin": "wikipedia"
+   },
+   "posted_by": {
+    "label": "posted by",
+    "inverse": "posted",
+    "origin": "wikipedia"
+   },
+   "questions": {
+    "label": "questions",
+    "inverse": "questioned by",
+    "origin": "wikipedia"
+   },
+   "rests_on": {
+    "label": "rests on",
+    "inverse": "supports",
+    "origin": "wikipedia"
+   },
+   "answers": {
+    "label": "answers",
+    "inverse": "answered in",
     "origin": "wikipedia"
    }
   }
@@ -3645,6 +3685,1057 @@
    "href": "graph/parties/index.html#p-csa-sg"
   },
   {
+   "id": "party:ai-matters",
+   "kind": "party",
+   "label": "AI Matters",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-ai-matters",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:harian-jogja",
+   "kind": "party",
+   "label": "Harian Jogja",
+   "class": "outlet",
+   "country": "ID",
+   "href": "graph/parties/index.html#p-harian-jogja",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:dan-tri",
+   "kind": "party",
+   "label": "Dân trí",
+   "class": "outlet",
+   "country": "VN",
+   "href": "graph/parties/index.html#p-dan-tri",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:cnbc-indonesia",
+   "kind": "party",
+   "label": "CNBC Indonesia",
+   "class": "outlet",
+   "country": "ID",
+   "href": "graph/parties/index.html#p-cnbc-indonesia",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:cnbctv18",
+   "kind": "party",
+   "label": "CNBC-TV18",
+   "class": "outlet",
+   "country": "IN",
+   "href": "graph/parties/index.html#p-cnbctv18",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:crypto-id",
+   "kind": "party",
+   "label": "Crypto ID",
+   "class": "outlet",
+   "country": "BR",
+   "href": "graph/parties/index.html#p-crypto-id",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:clubic",
+   "kind": "party",
+   "label": "Clubic",
+   "class": "outlet",
+   "country": "FR",
+   "href": "graph/parties/index.html#p-clubic",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:coin-academy",
+   "kind": "party",
+   "label": "Coin Academy",
+   "class": "outlet",
+   "country": "FR",
+   "href": "graph/parties/index.html#p-coin-academy",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:coinpedia",
+   "kind": "party",
+   "label": "Coinpedia",
+   "class": "outlet",
+   "country": "IN",
+   "href": "graph/parties/index.html#p-coinpedia",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:computable-be",
+   "kind": "party",
+   "label": "Computable.be",
+   "class": "outlet",
+   "country": "BE",
+   "href": "graph/parties/index.html#p-computable-be",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:cryptoast",
+   "kind": "party",
+   "label": "Cryptoast",
+   "class": "outlet",
+   "country": "FR",
+   "href": "graph/parties/index.html#p-cryptoast",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:cumhuriyet",
+   "kind": "party",
+   "label": "Cumhuriyet",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-cumhuriyet",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:cyber-daily",
+   "kind": "party",
+   "label": "Cyber Daily",
+   "class": "outlet",
+   "country": "AU",
+   "href": "graph/parties/index.html#p-cyber-daily",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:cybersecurity360",
+   "kind": "party",
+   "label": "Cyber Security 360",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-cybersecurity360",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:defesa-em-foco",
+   "kind": "party",
+   "label": "Defesa em Foco",
+   "class": "outlet",
+   "country": "BR",
+   "href": "graph/parties/index.html#p-defesa-em-foco",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:die-presse",
+   "kind": "party",
+   "label": "Die Presse",
+   "class": "outlet",
+   "country": "AT",
+   "href": "graph/parties/index.html#p-die-presse",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:digitaltoday",
+   "kind": "party",
+   "label": "DigitalToday",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-digitaltoday",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:donews",
+   "kind": "party",
+   "label": "DoNews",
+   "class": "outlet",
+   "country": "CN",
+   "href": "graph/parties/index.html#p-donews",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:donanimhaber",
+   "kind": "party",
+   "label": "DonanımHaber",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-donanimhaber",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:el-mundo",
+   "kind": "party",
+   "label": "El Mundo",
+   "class": "outlet",
+   "country": "ES",
+   "href": "graph/parties/index.html#p-el-mundo",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:el-debate",
+   "kind": "party",
+   "label": "El Debate",
+   "class": "outlet",
+   "country": "ES",
+   "href": "graph/parties/index.html#p-el-debate",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:el-observador",
+   "kind": "party",
+   "label": "El Observador",
+   "class": "outlet",
+   "country": "UY",
+   "href": "graph/parties/index.html#p-el-observador",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:emarketerz",
+   "kind": "party",
+   "label": "EmarketerZ",
+   "class": "outlet",
+   "country": "FR",
+   "href": "graph/parties/index.html#p-emarketerz",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:estadao",
+   "kind": "party",
+   "label": "Estadão",
+   "class": "outlet",
+   "country": "BR",
+   "href": "graph/parties/index.html#p-estadao",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:europa-press",
+   "kind": "party",
+   "label": "Europa Press",
+   "class": "outlet",
+   "country": "ES",
+   "href": "graph/parties/index.html#p-europa-press",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:faz",
+   "kind": "party",
+   "label": "Frankfurter Allgemeine Zeitung",
+   "class": "outlet",
+   "country": "DE",
+   "href": "graph/parties/index.html#p-faz",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:feuerwehr-magazin",
+   "kind": "party",
+   "label": "Feuerwehr-Magazin",
+   "class": "outlet",
+   "country": "DE",
+   "href": "graph/parties/index.html#p-feuerwehr-magazin",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:financiarul",
+   "kind": "party",
+   "label": "Financiarul",
+   "class": "outlet",
+   "country": "RO",
+   "href": "graph/parties/index.html#p-financiarul",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:forbes-tr",
+   "kind": "party",
+   "label": "Forbes Türkiye",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-forbes-tr",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:fortune-italia",
+   "kind": "party",
+   "label": "Fortune Italia",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-fortune-italia",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:free-press-journal",
+   "kind": "party",
+   "label": "Free Press Journal",
+   "class": "outlet",
+   "country": "IN",
+   "href": "graph/parties/index.html#p-free-press-journal",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:gigazine",
+   "kind": "party",
+   "label": "GIGAZINE",
+   "class": "outlet",
+   "country": "JP",
+   "href": "graph/parties/index.html#p-gigazine",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:gazzetta-del-sud",
+   "kind": "party",
+   "label": "Gazzetta del Sud",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-gazzetta-del-sud",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:green-bay-press-gazette",
+   "kind": "party",
+   "label": "Green Bay Press-Gazette",
+   "class": "outlet",
+   "country": "US",
+   "href": "graph/parties/index.html#p-green-bay-press-gazette",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:generation-nt",
+   "kind": "party",
+   "label": "Génération NT",
+   "class": "outlet",
+   "country": "FR",
+   "href": "graph/parties/index.html#p-generation-nt",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:inc42",
+   "kind": "party",
+   "label": "Inc42",
+   "class": "outlet",
+   "country": "IN",
+   "href": "graph/parties/index.html#p-inc42",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:latin-times",
+   "kind": "party",
+   "label": "Latin Times",
+   "class": "outlet",
+   "country": "US",
+   "href": "graph/parties/index.html#p-latin-times",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:open-access-government",
+   "kind": "party",
+   "label": "Open Access Government",
+   "class": "outlet",
+   "country": "UK",
+   "href": "graph/parties/index.html#p-open-access-government",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:wired-es",
+   "kind": "party",
+   "label": "WIRED en Español",
+   "class": "outlet",
+   "country": "MX",
+   "href": "graph/parties/index.html#p-wired-es",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:yahoo-finance",
+   "kind": "party",
+   "label": "Yahoo Finance",
+   "class": "outlet",
+   "country": "US",
+   "href": "graph/parties/index.html#p-yahoo-finance",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:blue-news",
+   "kind": "party",
+   "label": "blue News",
+   "class": "outlet",
+   "country": "CH",
+   "href": "graph/parties/index.html#p-blue-news",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:computerhoy",
+   "kind": "party",
+   "label": "Computer Hoy",
+   "class": "outlet",
+   "country": "ES",
+   "href": "graph/parties/index.html#p-computerhoy",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:detik",
+   "kind": "party",
+   "label": "detikcom",
+   "class": "outlet",
+   "country": "ID",
+   "href": "graph/parties/index.html#p-detik",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:express-computer",
+   "kind": "party",
+   "label": "Express Computer",
+   "class": "outlet",
+   "country": "IN",
+   "href": "graph/parties/index.html#p-express-computer",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:itwire",
+   "kind": "party",
+   "label": "iTWire",
+   "class": "outlet",
+   "country": "AU",
+   "href": "graph/parties/index.html#p-itwire",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:ebn",
+   "kind": "party",
+   "label": "EBN",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-ebn",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:alghad",
+   "kind": "party",
+   "label": "Alghad",
+   "class": "outlet",
+   "country": "JO",
+   "href": "graph/parties/index.html#p-alghad",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:addustour",
+   "kind": "party",
+   "label": "Ad-Dustour",
+   "class": "outlet",
+   "country": "JO",
+   "href": "graph/parties/index.html#p-addustour",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:sina-finance",
+   "kind": "party",
+   "label": "Sina Finance",
+   "class": "outlet",
+   "country": "CN",
+   "href": "graph/parties/index.html#p-sina-finance",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:gamemeca",
+   "kind": "party",
+   "label": "GameMeca",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-gamemeca",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:dailysecu",
+   "kind": "party",
+   "label": "Daily Secu",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-dailysecu",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:fnnews",
+   "kind": "party",
+   "label": "Financial News (Korea)",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-fnnews",
+   "zoom": [
+    {
+     "graph": "data/grc-graph.json",
+     "focus": "stakeholder:media",
+     "label": "In the risk graph, among: The press"
+    }
+   ]
+  },
+  {
+   "id": "party:note-com",
+   "kind": "party",
+   "label": "note (note.com)",
+   "class": "platform",
+   "country": "JP",
+   "href": "graph/parties/index.html#p-note-com"
+  },
+  {
+   "id": "party:voix",
+   "kind": "party",
+   "label": "voix.jp",
+   "class": "platform",
+   "country": "JP",
+   "href": "graph/parties/index.html#p-voix"
+  },
+  {
+   "id": "party:elotrolado",
+   "kind": "party",
+   "label": "ElOtroLado.net",
+   "class": "outlet",
+   "country": "ES",
+   "href": "graph/parties/index.html#p-elotrolado"
+  },
+  {
+   "id": "party:haber7",
+   "kind": "party",
+   "label": "Haber 7",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-haber7"
+  },
+  {
+   "id": "party:haber-com",
+   "kind": "party",
+   "label": "Haber.com",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-haber-com"
+  },
+  {
+   "id": "party:hwupgrade",
+   "kind": "party",
+   "label": "Hardware Upgrade",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-hwupgrade"
+  },
+  {
+   "id": "party:hirstart",
+   "kind": "party",
+   "label": "Hírstart",
+   "class": "outlet",
+   "country": "HU",
+   "href": "graph/parties/index.html#p-hirstart"
+  },
+  {
+   "id": "party:hurriyet",
+   "kind": "party",
+   "label": "Hürriyet",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-hurriyet"
+  },
+  {
+   "id": "party:it-finanzmagazin",
+   "kind": "party",
+   "label": "IT Finanzmagazin",
+   "class": "outlet",
+   "country": "DE",
+   "href": "graph/parties/index.html#p-it-finanzmagazin"
+  },
+  {
+   "id": "party:ithome-cn",
+   "kind": "party",
+   "label": "IT之家",
+   "class": "outlet",
+   "country": "CN",
+   "href": "graph/parties/index.html#p-ithome-cn"
+  },
+  {
+   "id": "party:ilsole24ore",
+   "kind": "party",
+   "label": "Il Sole 24 Ore",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-ilsole24ore"
+  },
+  {
+   "id": "party:infomoney",
+   "kind": "party",
+   "label": "InfoMoney",
+   "class": "outlet",
+   "country": "BR",
+   "href": "graph/parties/index.html#p-infomoney"
+  },
+  {
+   "id": "party:infobae",
+   "kind": "party",
+   "label": "Infobae",
+   "class": "outlet",
+   "country": "AR",
+   "href": "graph/parties/index.html#p-infobae"
+  },
+  {
+   "id": "party:inibalikpapan",
+   "kind": "party",
+   "label": "IniBalikpapan.Com",
+   "class": "outlet",
+   "country": "ID",
+   "href": "graph/parties/index.html#p-inibalikpapan"
+  },
+  {
+   "id": "party:jawapos",
+   "kind": "party",
+   "label": "Jawa Pos",
+   "class": "outlet",
+   "country": "ID",
+   "href": "graph/parties/index.html#p-jawapos"
+  },
+  {
+   "id": "party:jeuxvideo",
+   "kind": "party",
+   "label": "JeuxVideo.com",
+   "class": "outlet",
+   "country": "FR",
+   "href": "graph/parties/index.html#p-jeuxvideo"
+  },
+  {
+   "id": "party:securityaffairs",
+   "kind": "party",
+   "label": "Security Affairs",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-securityaffairs"
+  },
+  {
+   "id": "party:kathmandu-post",
+   "kind": "party",
+   "label": "The Kathmandu Post",
+   "class": "outlet",
+   "country": "NP",
+   "href": "graph/parties/index.html#p-kathmandu-post"
+  },
+  {
+   "id": "party:wall-street-ro",
+   "kind": "party",
+   "label": "Wall-Street.ro",
+   "class": "outlet",
+   "country": "RO",
+   "href": "graph/parties/index.html#p-wall-street-ro"
+  },
+  {
+   "id": "party:actainfo",
+   "kind": "party",
+   "label": "actainfo",
+   "class": "outlet",
+   "country": "IT",
+   "href": "graph/parties/index.html#p-actainfo"
+  },
+  {
+   "id": "party:datensicherheit",
+   "kind": "party",
+   "label": "datensicherheit.de",
+   "class": "outlet",
+   "country": "DE",
+   "href": "graph/parties/index.html#p-datensicherheit"
+  },
+  {
+   "id": "party:dexpose",
+   "kind": "party",
+   "label": "dexpose.io",
+   "class": "organisation",
+   "href": "graph/parties/index.html#p-dexpose"
+  },
+  {
+   "id": "party:hurbra",
+   "kind": "party",
+   "label": "hurbra",
+   "class": "outlet",
+   "country": "SE",
+   "href": "graph/parties/index.html#p-hurbra"
+  },
+  {
+   "id": "party:iphonesoft",
+   "kind": "party",
+   "label": "iPhoneSoft",
+   "class": "outlet",
+   "country": "FR",
+   "href": "graph/parties/index.html#p-iphonesoft"
+  },
+  {
+   "id": "party:ijiwei",
+   "kind": "party",
+   "label": "ijiwei",
+   "class": "outlet",
+   "country": "CN",
+   "href": "graph/parties/index.html#p-ijiwei"
+  },
+  {
+   "id": "party:it-daily-net",
+   "kind": "party",
+   "label": "it-daily.net",
+   "class": "outlet",
+   "country": "DE",
+   "href": "graph/parties/index.html#p-it-daily-net"
+  },
+  {
+   "id": "party:malwarebytes",
+   "kind": "party",
+   "label": "Malwarebytes",
+   "class": "organisation",
+   "country": "US",
+   "href": "graph/parties/index.html#p-malwarebytes"
+  },
+  {
+   "id": "party:telesur-english",
+   "kind": "party",
+   "label": "teleSUR English",
+   "class": "outlet",
+   "country": "VE",
+   "href": "graph/parties/index.html#p-telesur-english"
+  },
+  {
+   "id": "party:indigo-dergisi",
+   "kind": "party",
+   "label": "İndigo Dergisi",
+   "class": "outlet",
+   "country": "TR",
+   "href": "graph/parties/index.html#p-indigo-dergisi"
+  },
+  {
+   "id": "party:data-max",
+   "kind": "party",
+   "label": "データ・マックス",
+   "class": "outlet",
+   "country": "JP",
+   "href": "graph/parties/index.html#p-data-max"
+  },
+  {
+   "id": "party:jiji",
+   "kind": "party",
+   "label": "時事ドットコム",
+   "class": "outlet",
+   "country": "JP",
+   "href": "graph/parties/index.html#p-jiji"
+  },
+  {
+   "id": "party:itdaily-kr",
+   "kind": "party",
+   "label": "아이티데일리",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-itdaily-kr"
+  },
+  {
+   "id": "party:hankyung",
+   "kind": "party",
+   "label": "한국경제",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-hankyung"
+  },
+  {
+   "id": "party:hellot",
+   "kind": "party",
+   "label": "헬로티",
+   "class": "outlet",
+   "country": "KR",
+   "href": "graph/parties/index.html#p-hellot"
+  },
+  {
    "id": "source:01net-actualites-failles-php-pourquoi-cest-vra",
    "kind": "source",
    "label": "01net: Failles PHP : pourquoi c'est un vrai casse-tête pour l'Internet mondial",
@@ -5045,7 +6136,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:19",
+     "focus": "reference:21",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -5253,7 +6344,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:20",
+     "focus": "reference:22",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -5667,7 +6758,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:21",
+     "focus": "reference:23",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -6757,7 +7848,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:34",
+     "focus": "reference:36",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -7547,7 +8638,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:39",
+     "focus": "reference:41",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -11786,7 +12877,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:14",
+     "focus": "reference:15",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -11836,7 +12927,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:13",
+     "focus": "reference:14",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -12641,7 +13732,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:26",
+     "focus": "reference:28",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -15643,7 +16734,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:29",
+     "focus": "reference:31",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -18077,7 +19168,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:10",
+     "focus": "reference:11",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -18513,7 +19604,14 @@
    "url": "https://www.recordedfuture.com/blog/php2shell-vulnerability-exploitation",
    "primary": false,
    "published": "2026-10-21",
-   "source_kind": "vendor"
+   "source_kind": "vendor",
+   "zoom": [
+    {
+     "graph": "data/wikipedia/php2shell/graph.json",
+     "focus": "reference:7",
+     "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
+    }
+   ]
   },
   {
    "id": "capture:recordedfuture-php2shell/20261022T113014Z",
@@ -22048,7 +23146,7 @@
    "zoom": [
     {
      "graph": "data/wikipedia/php2shell/graph.json",
-     "focus": "reference:24",
+     "focus": "reference:26",
      "label": "In Wikipedia's PHP2Shell article: cited by 1 statement"
     }
    ]
@@ -25501,6 +26599,11 @@
    "to": "party:agencies"
   },
   {
+   "from": "party:wired-es",
+   "verb": "part_of",
+   "to": "party:wired"
+  },
+  {
    "from": "source:01net-actualites-failles-php-pourquoi-cest-vra",
    "verb": "published_by",
    "to": "party:01net"
@@ -25622,6 +26725,11 @@
   },
   {
    "from": "source:actainfo-news-php2shell-vulnerabilita-php-allerta",
+   "verb": "published_by",
+   "to": "party:actainfo"
+  },
+  {
+   "from": "source:actainfo-news-php2shell-vulnerabilita-php-allerta",
    "verb": "captured_in",
    "to": "capture:actainfo-news-php2shell-vulnerabilita-php-allerta/20261025T093507Z"
   },
@@ -25657,6 +26765,11 @@
   },
   {
    "from": "source:addustour-articles-1598648",
+   "verb": "published_by",
+   "to": "party:addustour"
+  },
+  {
+   "from": "source:addustour-articles-1598648",
    "verb": "captured_in",
    "to": "capture:addustour-articles-1598648/20261023T232528Z"
   },
@@ -25679,6 +26792,11 @@
    "from": "source:ai4business-intelligenza-artificiale-php2shell-lai-s",
    "verb": "captured_in",
    "to": "capture:ai4business-intelligenza-artificiale-php2shell-lai-s/20261023T160435Z"
+  },
+  {
+   "from": "source:aimatters-news-report-56697",
+   "verb": "published_by",
+   "to": "party:ai-matters"
   },
   {
    "from": "source:aimatters-news-report-56697",
@@ -25724,6 +26842,11 @@
    "from": "source:akamai-blog-php-core-rce",
    "verb": "captured_in",
    "to": "capture:akamai-blog-php-core-rce/20261022T112525Z"
+  },
+  {
+   "from": "source:alghad-section-225-d8-aa-d9-83-d9-86-d9-88-d9-8",
+   "verb": "published_by",
+   "to": "party:alghad"
   },
   {
    "from": "source:alghad-section-225-d8-aa-d9-83-d9-86-d9-88-d9-8",
@@ -25979,6 +27102,11 @@
    "from": "source:bloomberg-governments-offline",
    "verb": "captured_in",
    "to": "capture:bloomberg-governments-offline/20261022T112602Z"
+  },
+  {
+   "from": "source:bluewin-de-digital-php-sicherheitsluecke-ondrej",
+   "verb": "published_by",
+   "to": "party:blue-news"
   },
   {
    "from": "source:bluewin-de-digital-php-sicherheitsluecke-ondrej",
@@ -26343,13 +27471,28 @@
   },
   {
    "from": "source:clubic-actualite-635179-deux-failles-critiques",
+   "verb": "published_by",
+   "to": "party:clubic"
+  },
+  {
+   "from": "source:clubic-actualite-635179-deux-failles-critiques",
    "verb": "captured_in",
    "to": "capture:clubic-actualite-635179-deux-failles-critiques/20261024T083755Z"
   },
   {
    "from": "source:cnbcindonesia-tech-20261022094711-37-778474-patch-php2",
+   "verb": "published_by",
+   "to": "party:cnbc-indonesia"
+  },
+  {
+   "from": "source:cnbcindonesia-tech-20261022094711-37-778474-patch-php2",
    "verb": "captured_in",
    "to": "capture:cnbcindonesia-tech-20261022094711-37-778474-patch-php2/20261023T160435Z"
+  },
+  {
+   "from": "source:cnbctv18-technology-india-ranks-11th-among-18-cou",
+   "verb": "published_by",
+   "to": "party:cnbctv18"
   },
   {
    "from": "source:cnbctv18-technology-india-ranks-11th-among-18-cou",
@@ -26408,6 +27551,11 @@
   },
   {
    "from": "source:coinacademy-actu-php-php2shell-frailles-critiques-ur",
+   "verb": "published_by",
+   "to": "party:coin-academy"
+  },
+  {
+   "from": "source:coinacademy-actu-php-php2shell-frailles-critiques-ur",
    "verb": "captured_in",
    "to": "capture:coinacademy-actu-php-php2shell-frailles-critiques-ur/20261023T160435Z"
   },
@@ -26420,6 +27568,11 @@
    "from": "source:coingape-crypto-firms-say-they-dont-use-php-after",
    "verb": "captured_in",
    "to": "capture:coingape-crypto-firms-say-they-dont-use-php-after/20261023T160435Z"
+  },
+  {
+   "from": "source:coinpedia-crypto-live-news-php-flags-third-unpatch",
+   "verb": "published_by",
+   "to": "party:coinpedia"
   },
   {
    "from": "source:coinpedia-crypto-live-news-php-flags-third-unpatch",
@@ -26438,6 +27591,11 @@
   },
   {
    "from": "source:computable-2026-10-21-kritiek-php-lek-zet-miljoenen",
+   "verb": "published_by",
+   "to": "party:computable-be"
+  },
+  {
+   "from": "source:computable-2026-10-21-kritiek-php-lek-zet-miljoenen",
    "verb": "captured_in",
    "to": "capture:computable-2026-10-21-kritiek-php-lek-zet-miljoenen/20261023T160435Z"
   },
@@ -26450,6 +27608,11 @@
    "from": "source:computable-2026-10-21-kritiek-php-lek-zet-miljoenen-20261023",
    "verb": "captured_in",
    "to": "capture:computable-2026-10-21-kritiek-php-lek-zet-miljoenen-20261023/20261023T160435Z"
+  },
+  {
+   "from": "source:computerhoy-20minutos-ciberseguridad-que-es-php-php2shell-cual",
+   "verb": "published_by",
+   "to": "party:computerhoy"
   },
   {
    "from": "source:computerhoy-20minutos-ciberseguridad-que-es-php-php2shell-cual",
@@ -26503,13 +27666,28 @@
   },
   {
    "from": "source:cryptoast-failles-critiques-php-php2shell-france-f",
+   "verb": "published_by",
+   "to": "party:cryptoast"
+  },
+  {
+   "from": "source:cryptoast-failles-critiques-php-php2shell-france-f",
    "verb": "captured_in",
    "to": "capture:cryptoast-failles-critiques-php-php2shell-france-f/20261023T160435Z"
   },
   {
    "from": "source:cryptoid-ciberseguranca-seguranca-da-informacao-i",
+   "verb": "published_by",
+   "to": "party:crypto-id"
+  },
+  {
+   "from": "source:cryptoid-ciberseguranca-seguranca-da-informacao-i",
    "verb": "captured_in",
    "to": "capture:cryptoid-ciberseguranca-seguranca-da-informacao-i/20261023T160435Z"
+  },
+  {
+   "from": "source:cumhuriyet-bilim-teknoloji-php-kaynakli-kritik-guve",
+   "verb": "published_by",
+   "to": "party:cumhuriyet"
   },
   {
    "from": "source:cumhuriyet-bilim-teknoloji-php-kaynakli-kritik-guve",
@@ -26613,6 +27791,11 @@
   },
   {
    "from": "source:cyberdaily-security-14335-php2shell-do-you-know-whe",
+   "verb": "published_by",
+   "to": "party:cyber-daily"
+  },
+  {
+   "from": "source:cyberdaily-security-14335-php2shell-do-you-know-whe",
    "verb": "captured_in",
    "to": "capture:cyberdaily-security-14335-php2shell-do-you-know-whe/20261023T080331Z"
   },
@@ -26678,6 +27861,11 @@
   },
   {
    "from": "source:cybersecurity360-nuove-minacce-php2shell-due-vulnerabilit",
+   "verb": "published_by",
+   "to": "party:cybersecurity360"
+  },
+  {
+   "from": "source:cybersecurity360-nuove-minacce-php2shell-due-vulnerabilit",
    "verb": "captured_in",
    "to": "capture:cybersecurity360-nuove-minacce-php2shell-due-vulnerabilit/20261023T160435Z"
   },
@@ -26693,8 +27881,18 @@
   },
   {
    "from": "source:dailysecu-news-articleview-html",
+   "verb": "published_by",
+   "to": "party:dailysecu"
+  },
+  {
+   "from": "source:dailysecu-news-articleview-html",
    "verb": "captured_in",
    "to": "capture:dailysecu-news-articleview-html/20261023T160435Z"
+  },
+  {
+   "from": "source:dantri-cong-nghe-doanh-nghiep-can-lam-gi-de-bao",
+   "verb": "published_by",
+   "to": "party:dan-tri"
   },
   {
    "from": "source:dantri-cong-nghe-doanh-nghiep-can-lam-gi-de-bao",
@@ -26718,8 +27916,18 @@
   },
   {
    "from": "source:data-max-article-87622",
+   "verb": "published_by",
+   "to": "party:data-max"
+  },
+  {
+   "from": "source:data-max-article-87622",
    "verb": "captured_in",
    "to": "capture:data-max-article-87622/20261025T093507Z"
+  },
+  {
+   "from": "source:datensicherheit-php2shell-informationen-patch-veroeffent",
+   "verb": "published_by",
+   "to": "party:datensicherheit"
   },
   {
    "from": "source:datensicherheit-php2shell-informationen-patch-veroeffent",
@@ -26743,6 +27951,11 @@
   },
   {
    "from": "source:defesaemfoco-php2shell-falhas-gravidade-92-ameacam-se",
+   "verb": "published_by",
+   "to": "party:defesa-em-foco"
+  },
+  {
+   "from": "source:defesaemfoco-php2shell-falhas-gravidade-92-ameacam-se",
    "verb": "captured_in",
    "to": "capture:defesaemfoco-php2shell-falhas-gravidade-92-ameacam-se/20261024T083755Z"
   },
@@ -26758,8 +27971,18 @@
   },
   {
    "from": "source:detik-tag-php2shell",
+   "verb": "published_by",
+   "to": "party:detik"
+  },
+  {
+   "from": "source:detik-tag-php2shell",
    "verb": "captured_in",
    "to": "capture:detik-tag-php2shell/20261023T160435Z"
+  },
+  {
+   "from": "source:dexpose-php2shell-php-rce-exposure-response",
+   "verb": "published_by",
+   "to": "party:dexpose"
   },
   {
    "from": "source:dexpose-php2shell-php-rce-exposure-response",
@@ -26778,8 +28001,18 @@
   },
   {
    "from": "source:diepresse-41383717-die-php-sicherheitsluecke-ist-a",
+   "verb": "published_by",
+   "to": "party:die-presse"
+  },
+  {
+   "from": "source:diepresse-41383717-die-php-sicherheitsluecke-ist-a",
    "verb": "captured_in",
    "to": "capture:diepresse-41383717-die-php-sicherheitsluecke-ist-a/20261023T160435Z"
+  },
+  {
+   "from": "source:digitaltoday-cn-view-118322-stealien-launches-free-ph",
+   "verb": "published_by",
+   "to": "party:digitaltoday"
   },
   {
    "from": "source:digitaltoday-cn-view-118322-stealien-launches-free-ph",
@@ -26788,8 +28021,18 @@
   },
   {
    "from": "source:donanimhaber-php-acigindan-etkilenen-ulkeler-ve-sitel",
+   "verb": "published_by",
+   "to": "party:donanimhaber"
+  },
+  {
+   "from": "source:donanimhaber-php-acigindan-etkilenen-ulkeler-ve-sitel",
    "verb": "captured_in",
    "to": "capture:donanimhaber-php-acigindan-etkilenen-ulkeler-ve-sitel/20261023T160435Z"
+  },
+  {
+   "from": "source:donews-news-detail-8-6750596-html",
+   "verb": "published_by",
+   "to": "party:donews"
   },
   {
    "from": "source:donews-news-detail-8-6750596-html",
@@ -26826,6 +28069,11 @@
    "from": "source:eadt-minister-budget-no-breach",
    "verb": "captured_in",
    "to": "capture:eadt-minister-budget-no-breach/20261023T160435Z"
+  },
+  {
+   "from": "source:ebn-news-articleview-html",
+   "verb": "published_by",
+   "to": "party:ebn"
   },
   {
    "from": "source:ebn-news-articleview-html",
@@ -26874,8 +28122,18 @@
   },
   {
    "from": "source:eldebate-tecnologia-20261022-php2shell-vulnerabil",
+   "verb": "published_by",
+   "to": "party:el-debate"
+  },
+  {
+   "from": "source:eldebate-tecnologia-20261022-php2shell-vulnerabil",
    "verb": "captured_in",
    "to": "capture:eldebate-tecnologia-20261022-php2shell-vulnerabil/20261023T160435Z"
+  },
+  {
+   "from": "source:elmundo-economia-2026-10-21-6ad92780fc6c83a57e8b",
+   "verb": "published_by",
+   "to": "party:el-mundo"
   },
   {
    "from": "source:elmundo-economia-2026-10-21-6ad92780fc6c83a57e8b",
@@ -26884,13 +28142,28 @@
   },
   {
    "from": "source:elobservador-ciencia-y-tecnologia-sitios-del-estado-c",
+   "verb": "published_by",
+   "to": "party:el-observador"
+  },
+  {
+   "from": "source:elobservador-ciencia-y-tecnologia-sitios-del-estado-c",
    "verb": "captured_in",
    "to": "capture:elobservador-ciencia-y-tecnologia-sitios-del-estado-c/20261023T232528Z"
   },
   {
    "from": "source:elotrolado-noticias-internet-php2shell-seguridad-cv",
+   "verb": "published_by",
+   "to": "party:elotrolado"
+  },
+  {
+   "from": "source:elotrolado-noticias-internet-php2shell-seguridad-cv",
    "verb": "captured_in",
    "to": "capture:elotrolado-noticias-internet-php2shell-seguridad-cv/20261025T093507Z"
+  },
+  {
+   "from": "source:emarketerz-faille-majeure-dans-php-que-revele-la-vu",
+   "verb": "published_by",
+   "to": "party:emarketerz"
   },
   {
    "from": "source:emarketerz-faille-majeure-dans-php-que-revele-la-vu",
@@ -26929,8 +28202,18 @@
   },
   {
    "from": "source:es-wired-articulos-hackers-aprovecharon-las-vulne",
+   "verb": "published_by",
+   "to": "party:wired-es"
+  },
+  {
+   "from": "source:es-wired-articulos-hackers-aprovecharon-las-vulne",
    "verb": "captured_in",
    "to": "capture:es-wired-articulos-hackers-aprovecharon-las-vulne/20261024T133450Z"
+  },
+  {
+   "from": "source:estadao-tecmundo-ciberseguranca-brecha-no-php-ja",
+   "verb": "published_by",
+   "to": "party:estadao"
   },
   {
    "from": "source:estadao-tecmundo-ciberseguranca-brecha-no-php-ja",
@@ -26949,8 +28232,18 @@
   },
   {
    "from": "source:europapress-portaltic-ciberseguridad-noticia-amazon",
+   "verb": "published_by",
+   "to": "party:europa-press"
+  },
+  {
+   "from": "source:europapress-portaltic-ciberseguridad-noticia-amazon",
    "verb": "captured_in",
    "to": "capture:europapress-portaltic-ciberseguridad-noticia-amazon/20261023T232528Z"
+  },
+  {
+   "from": "source:expresscomputer-guest-blogs-understanding-php2shell-vuln",
+   "verb": "published_by",
+   "to": "party:express-computer"
   },
   {
    "from": "source:expresscomputer-guest-blogs-understanding-php2shell-vuln",
@@ -26974,8 +28267,18 @@
   },
   {
    "from": "source:faz-aktuell-wirtschaft-mehr-wirtschaft-php-s",
+   "verb": "published_by",
+   "to": "party:faz"
+  },
+  {
+   "from": "source:faz-aktuell-wirtschaft-mehr-wirtschaft-php-s",
    "verb": "captured_in",
    "to": "capture:faz-aktuell-wirtschaft-mehr-wirtschaft-php-s/20261023T232528Z"
+  },
+  {
+   "from": "source:feuerwehrmagazin-nachrichten-dfv-warnt-vor-kritischen-php",
+   "verb": "published_by",
+   "to": "party:feuerwehr-magazin"
   },
   {
    "from": "source:feuerwehrmagazin-nachrichten-dfv-warnt-vor-kritischen-php",
@@ -26994,8 +28297,18 @@
   },
   {
    "from": "source:finance-sina-tech-roll-2026-10-22-doc-iniwcaff5189430",
+   "verb": "published_by",
+   "to": "party:sina-finance"
+  },
+  {
+   "from": "source:finance-sina-tech-roll-2026-10-22-doc-iniwcaff5189430",
    "verb": "captured_in",
    "to": "capture:finance-sina-tech-roll-2026-10-22-doc-iniwcaff5189430/20261023T160435Z"
+  },
+  {
+   "from": "source:finance-yahoo-technology-articles-php-patches-critical",
+   "verb": "published_by",
+   "to": "party:yahoo-finance"
   },
   {
    "from": "source:finance-yahoo-technology-articles-php-patches-critical",
@@ -27004,13 +28317,28 @@
   },
   {
    "from": "source:financiarul-tehnologie-vulnerabilitatea-php-este-viz",
+   "verb": "published_by",
+   "to": "party:financiarul"
+  },
+  {
+   "from": "source:financiarul-tehnologie-vulnerabilitatea-php-este-viz",
    "verb": "captured_in",
    "to": "capture:financiarul-tehnologie-vulnerabilitatea-php-este-viz/20261023T160435Z"
   },
   {
    "from": "source:fnnews-news-202610230856366360",
+   "verb": "published_by",
+   "to": "party:fnnews"
+  },
+  {
+   "from": "source:fnnews-news-202610230856366360",
    "verb": "captured_in",
    "to": "capture:fnnews-news-202610230856366360/20261023T232528Z"
+  },
+  {
+   "from": "source:forbes-teknoloji-yapay-zekayla-kesfedildi-php-g",
+   "verb": "published_by",
+   "to": "party:forbes-tr"
   },
   {
    "from": "source:forbes-teknoloji-yapay-zekayla-kesfedildi-php-g",
@@ -27061,6 +28389,11 @@
    "from": "source:fortune-ai-tools-php-vulnerability",
    "verb": "captured_in",
    "to": "capture:fortune-ai-tools-php-vulnerability/20261023T012042Z"
+  },
+  {
+   "from": "source:fortuneita-2026-10-22-php2shell-il-bug-che-poteva-m",
+   "verb": "published_by",
+   "to": "party:fortune-italia"
   },
   {
    "from": "source:fortuneita-2026-10-22-php2shell-il-bug-che-poteva-m",
@@ -27119,8 +28452,18 @@
   },
   {
    "from": "source:freepressjournal-bhopal-mp-government-websites-vulnerable",
+   "verb": "published_by",
+   "to": "party:free-press-journal"
+  },
+  {
+   "from": "source:freepressjournal-bhopal-mp-government-websites-vulnerable",
    "verb": "captured_in",
    "to": "capture:freepressjournal-bhopal-mp-government-websites-vulnerable/20261024T133450Z"
+  },
+  {
+   "from": "source:gamemeca-view-php",
+   "verb": "published_by",
+   "to": "party:gamemeca"
   },
   {
    "from": "source:gamemeca-view-php",
@@ -27129,13 +28472,28 @@
   },
   {
    "from": "source:gazzettadelsud-articoli-cronaca-2026-10-22-allarme-php2",
+   "verb": "published_by",
+   "to": "party:gazzetta-del-sud"
+  },
+  {
+   "from": "source:gazzettadelsud-articoli-cronaca-2026-10-22-allarme-php2",
    "verb": "captured_in",
    "to": "capture:gazzettadelsud-articoli-cronaca-2026-10-22-allarme-php2/20261023T160435Z"
   },
   {
    "from": "source:generation-nt-actualites-php-faille-securite-php2shell",
+   "verb": "published_by",
+   "to": "party:generation-nt"
+  },
+  {
+   "from": "source:generation-nt-actualites-php-faille-securite-php2shell",
    "verb": "captured_in",
    "to": "capture:generation-nt-actualites-php-faille-securite-php2shell/20261023T160435Z"
+  },
+  {
+   "from": "source:gigazine-news-20261023-cloudflare-stats-php2shell",
+   "verb": "published_by",
+   "to": "party:gigazine"
   },
   {
    "from": "source:gigazine-news-20261023-cloudflare-stats-php2shell",
@@ -27279,8 +28637,18 @@
   },
   {
    "from": "source:greenbaypressgazette-press-release-story-197263-cyber-securit",
+   "verb": "published_by",
+   "to": "party:green-bay-press-gazette"
+  },
+  {
+   "from": "source:greenbaypressgazette-press-release-story-197263-cyber-securit",
    "verb": "captured_in",
    "to": "capture:greenbaypressgazette-press-release-story-197263-cyber-securit/20261024T083755Z"
+  },
+  {
+   "from": "source:haber-teknoloji-siber-guvenlik-baskanligi-ndan",
+   "verb": "published_by",
+   "to": "party:haber-com"
   },
   {
    "from": "source:haber-teknoloji-siber-guvenlik-baskanligi-ndan",
@@ -27289,8 +28657,18 @@
   },
   {
    "from": "source:haber7-teknoloji-haber-3670492-php-guvenlik-aci",
+   "verb": "published_by",
+   "to": "party:haber7"
+  },
+  {
+   "from": "source:haber7-teknoloji-haber-3670492-php-guvenlik-aci",
    "verb": "captured_in",
    "to": "capture:haber7-teknoloji-haber-3670492-php-guvenlik-aci/20261023T160435Z"
+  },
+  {
+   "from": "source:hankyung-article-2026102423207",
+   "verb": "published_by",
+   "to": "party:hankyung"
   },
   {
    "from": "source:hankyung-article-2026102423207",
@@ -27306,6 +28684,11 @@
    "from": "source:hardwarecooking-failles-php-critiques-php2shell-correcti",
    "verb": "captured_in",
    "to": "capture:hardwarecooking-failles-php-critiques-php2shell-correcti/20261023T160435Z"
+  },
+  {
+   "from": "source:hellot-mobile-article-html",
+   "verb": "published_by",
+   "to": "party:hellot"
   },
   {
    "from": "source:hellot-mobile-article-html",
@@ -27331,6 +28714,11 @@
    "from": "source:helsinkitimes-finland-shutdown",
    "verb": "captured_in",
    "to": "capture:helsinkitimes-finland-shutdown/20261022T112845Z"
+  },
+  {
+   "from": "source:hirstart-hk-20261023-php2shell-teendok-nas-okon-t",
+   "verb": "published_by",
+   "to": "party:hirstart"
   },
   {
    "from": "source:hirstart-hk-20261023-php2shell-teendok-nas-okon-t",
@@ -27364,13 +28752,28 @@
   },
   {
    "from": "source:hurbra-php-sakerhetshal-2026-guide",
+   "verb": "published_by",
+   "to": "party:hurbra"
+  },
+  {
+   "from": "source:hurbra-php-sakerhetshal-2026-guide",
    "verb": "captured_in",
    "to": "capture:hurbra-php-sakerhetshal-2026-guide/20261024T160544Z"
   },
   {
    "from": "source:hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci",
+   "verb": "published_by",
+   "to": "party:hurriyet"
+  },
+  {
+   "from": "source:hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci",
    "verb": "captured_in",
    "to": "capture:hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci/20261023T160435Z"
+  },
+  {
+   "from": "source:hwupgrade-news-sicurezza-software-falle-php-gia-so",
+   "verb": "published_by",
+   "to": "party:hwupgrade"
   },
   {
    "from": "source:hwupgrade-news-sicurezza-software-falle-php-gia-so",
@@ -27414,8 +28817,18 @@
   },
   {
    "from": "source:ijiwei-n-1122779",
+   "verb": "published_by",
+   "to": "party:ijiwei"
+  },
+  {
+   "from": "source:ijiwei-n-1122779",
    "verb": "captured_in",
    "to": "capture:ijiwei-n-1122779/20261025T093507Z"
+  },
+  {
+   "from": "source:ilsole24ore-art-php2shell-quando-vulnerabilita-softw",
+   "verb": "published_by",
+   "to": "party:ilsole24ore"
   },
   {
    "from": "source:ilsole24ore-art-php2shell-quando-vulnerabilita-softw",
@@ -27464,6 +28877,11 @@
   },
   {
    "from": "source:inc42-features-php2shell-who-is-at-risk-and-ho",
+   "verb": "published_by",
+   "to": "party:inc42"
+  },
+  {
+   "from": "source:inc42-features-php2shell-who-is-at-risk-and-ho",
    "verb": "captured_in",
    "to": "capture:inc42-features-php2shell-who-is-at-risk-and-ho/20261024T160544Z"
   },
@@ -27494,8 +28912,18 @@
   },
   {
    "from": "source:indigodergisi-2026-10-php-guvenlik-acigi-php2shell",
+   "verb": "published_by",
+   "to": "party:indigo-dergisi"
+  },
+  {
+   "from": "source:indigodergisi-2026-10-php-guvenlik-acigi-php2shell",
    "verb": "captured_in",
    "to": "capture:indigodergisi-2026-10-php-guvenlik-acigi-php2shell/20261023T160435Z"
+  },
+  {
+   "from": "source:inet-detik-security-d-8718436-saking-bahayanya-php2",
+   "verb": "published_by",
+   "to": "party:detik"
   },
   {
    "from": "source:inet-detik-security-d-8718436-saking-bahayanya-php2",
@@ -27504,8 +28932,18 @@
   },
   {
    "from": "source:infobae-estados-unidos-2026-10-23-php2shell-como",
+   "verb": "published_by",
+   "to": "party:infobae"
+  },
+  {
+   "from": "source:infobae-estados-unidos-2026-10-23-php2shell-como",
    "verb": "captured_in",
    "to": "capture:infobae-estados-unidos-2026-10-23-php2shell-como/20261023T160435Z"
+  },
+  {
+   "from": "source:infomoney-mundo-php-falha-ameaca-tirar-sites-ar",
+   "verb": "published_by",
+   "to": "party:infomoney"
   },
   {
    "from": "source:infomoney-mundo-php-falha-ameaca-tirar-sites-ar",
@@ -27531,6 +28969,11 @@
    "from": "source:infosecurity-magazine-news-php2shell-exploitation-attempt",
    "verb": "captured_in",
    "to": "capture:infosecurity-magazine-news-php2shell-exploitation-attempt/20261023T160435Z"
+  },
+  {
+   "from": "source:inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah",
+   "verb": "published_by",
+   "to": "party:inibalikpapan"
   },
   {
    "from": "source:inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah",
@@ -27589,8 +29032,18 @@
   },
   {
    "from": "source:iphonesoft-2026-10-22-faille-php-5-8-5-savoir-situa",
+   "verb": "published_by",
+   "to": "party:iphonesoft"
+  },
+  {
+   "from": "source:iphonesoft-2026-10-22-faille-php-5-8-5-savoir-situa",
    "verb": "captured_in",
    "to": "capture:iphonesoft-2026-10-22-faille-php-5-8-5-savoir-situa/20261023T160435Z"
+  },
+  {
+   "from": "source:it-daily-shortnews-php2shell-die-aktuelle-lage",
+   "verb": "published_by",
+   "to": "party:it-daily-net"
   },
   {
    "from": "source:it-daily-shortnews-php2shell-die-aktuelle-lage",
@@ -27599,8 +29052,18 @@
   },
   {
    "from": "source:it-finance-yahoo-notizie-avviso-per-gli-exchange-di-22423",
+   "verb": "published_by",
+   "to": "party:yahoo-finance"
+  },
+  {
+   "from": "source:it-finance-yahoo-notizie-avviso-per-gli-exchange-di-22423",
    "verb": "captured_in",
    "to": "capture:it-finance-yahoo-notizie-avviso-per-gli-exchange-di-22423/20261023T160435Z"
+  },
+  {
+   "from": "source:it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we",
+   "verb": "published_by",
+   "to": "party:it-finanzmagazin"
   },
   {
    "from": "source:it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we",
@@ -27609,13 +29072,28 @@
   },
   {
    "from": "source:itdaily-blogs-logiciel-php2shell-bug-php",
+   "verb": "published_by",
+   "to": "party:itdaily"
+  },
+  {
+   "from": "source:itdaily-blogs-logiciel-php2shell-bug-php",
    "verb": "captured_in",
    "to": "capture:itdaily-blogs-logiciel-php2shell-bug-php/20261023T160435Z"
   },
   {
    "from": "source:itdaily-blogs-software-php2shell-bug-php",
+   "verb": "published_by",
+   "to": "party:itdaily"
+  },
+  {
+   "from": "source:itdaily-blogs-software-php2shell-bug-php",
    "verb": "captured_in",
    "to": "capture:itdaily-blogs-software-php2shell-bug-php/20261023T160435Z"
+  },
+  {
+   "from": "source:itdaily-news-articleview-html",
+   "verb": "published_by",
+   "to": "party:itdaily-kr"
   },
   {
    "from": "source:itdaily-news-articleview-html",
@@ -27636,6 +29114,11 @@
    "from": "source:itdaily-php-clumsy-announcement",
    "verb": "captured_in",
    "to": "capture:itdaily-php-clumsy-announcement/20261023T160435Z"
+  },
+  {
+   "from": "source:ithome-1-016-980-htm",
+   "verb": "published_by",
+   "to": "party:ithome-cn"
   },
   {
    "from": "source:ithome-1-016-980-htm",
@@ -27664,8 +29147,18 @@
   },
   {
    "from": "source:itwire-business-it-news-security-php2shell-the",
+   "verb": "published_by",
+   "to": "party:itwire"
+  },
+  {
+   "from": "source:itwire-business-it-news-security-php2shell-the",
    "verb": "captured_in",
    "to": "capture:itwire-business-it-news-security-php2shell-the/20261024T160544Z"
+  },
+  {
+   "from": "source:jawapos-teknologi-2610230446-celah-php2shell-anc",
+   "verb": "published_by",
+   "to": "party:jawapos"
   },
   {
    "from": "source:jawapos-teknologi-2610230446-celah-php2shell-anc",
@@ -27674,8 +29167,18 @@
   },
   {
    "from": "source:jeuxvideo-news-2110338-une-faille-critique-dans-ph",
+   "verb": "published_by",
+   "to": "party:jeuxvideo"
+  },
+  {
+   "from": "source:jeuxvideo-news-2110338-une-faille-critique-dans-ph",
    "verb": "captured_in",
    "to": "capture:jeuxvideo-news-2110338-une-faille-critique-dans-ph/20261023T232528Z"
+  },
+  {
+   "from": "source:jiji-jc-article",
+   "verb": "published_by",
+   "to": "party:jiji"
   },
   {
    "from": "source:jiji-jc-article",
@@ -27734,6 +29237,11 @@
   },
   {
    "from": "source:kathmandupost-science-technology-2026-10-25-php2shell",
+   "verb": "published_by",
+   "to": "party:kathmandu-post"
+  },
+  {
+   "from": "source:kathmandupost-science-technology-2026-10-25-php2shell",
    "verb": "captured_in",
    "to": "capture:kathmandupost-science-technology-2026-10-25-php2shell/20261025T093507Z"
   },
@@ -27756,6 +29264,11 @@
    "from": "source:lalibre-economie-digital-2026-10-21-une-faille-critique-mena",
    "verb": "captured_in",
    "to": "capture:lalibre-economie-digital-2026-10-21-une-faille-critique-mena/20261022T181608Z"
+  },
+  {
+   "from": "source:latintimes-php2shell-ai-found-bug-hiding-70-web-mil",
+   "verb": "published_by",
+   "to": "party:latin-times"
   },
   {
    "from": "source:latintimes-php2shell-ai-found-bug-hiding-70-web-mil",
@@ -27866,6 +29379,11 @@
    "from": "source:lv-latvija-gov",
    "verb": "captured_in",
    "to": "capture:lv-latvija-gov/20261022T081939Z"
+  },
+  {
+   "from": "source:malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi",
+   "verb": "published_by",
+   "to": "party:malwarebytes"
   },
   {
    "from": "source:malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi",
@@ -28074,6 +29592,11 @@
   },
   {
    "from": "source:note-masaland-n-n1bda3e5bc53f",
+   "verb": "published_by",
+   "to": "party:note-com"
+  },
+  {
+   "from": "source:note-masaland-n-n1bda3e5bc53f",
    "verb": "captured_in",
    "to": "capture:note-masaland-n-n1bda3e5bc53f/20261024T133450Z"
   },
@@ -28184,6 +29707,11 @@
   },
   {
    "from": "source:openaccessgovernment-ncsc-issues-warning-over-critical-php-re",
+   "verb": "published_by",
+   "to": "party:open-access-government"
+  },
+  {
+   "from": "source:openaccessgovernment-ncsc-issues-warning-over-critical-php-re",
    "verb": "captured_in",
    "to": "capture:openaccessgovernment-ncsc-issues-warning-over-critical-php-re/20261024T110459Z"
   },
@@ -28271,6 +29799,11 @@
    "from": "source:orf-stories-3445806",
    "verb": "captured_in",
    "to": "capture:orf-stories-3445806/20261022T181608Z"
+  },
+  {
+   "from": "source:ototekno-harianjogja-r-1276080-php2shell-bisa-curi-data-websi",
+   "verb": "published_by",
+   "to": "party:harian-jogja"
   },
   {
    "from": "source:ototekno-harianjogja-r-1276080-php2shell-bisa-curi-data-websi",
@@ -28742,6 +30275,11 @@
   },
   {
    "from": "source:securityaffairs-201662-hacking-pierluigi-paganini-answer",
+   "verb": "published_by",
+   "to": "party:securityaffairs"
+  },
+  {
+   "from": "source:securityaffairs-201662-hacking-pierluigi-paganini-answer",
    "verb": "captured_in",
    "to": "capture:securityaffairs-201662-hacking-pierluigi-paganini-answer/20261025T093507Z"
   },
@@ -29028,6 +30566,11 @@
   },
   {
    "from": "source:telesurenglish-php2shell-vulnerabilities",
+   "verb": "published_by",
+   "to": "party:telesur-english"
+  },
+  {
+   "from": "source:telesurenglish-php2shell-vulnerabilities",
    "verb": "captured_in",
    "to": "capture:telesurenglish-php2shell-vulnerabilities/20261025T093507Z"
   },
@@ -29284,8 +30827,18 @@
   },
   {
    "from": "source:voix-business-cards-rainforest-ip-activity-an",
+   "verb": "published_by",
+   "to": "party:voix"
+  },
+  {
+   "from": "source:voix-business-cards-rainforest-ip-activity-an",
    "verb": "captured_in",
    "to": "capture:voix-business-cards-rainforest-ip-activity-an/20261024T160544Z"
+  },
+  {
+   "from": "source:wall-street-articol-it-and-c-important-vulnerabilita",
+   "verb": "published_by",
+   "to": "party:wall-street-ro"
   },
   {
    "from": "source:wall-street-articol-it-and-c-important-vulnerabilita",
@@ -34477,276 +36030,10 @@
   "party:w3techs",
   "party:thenextweb",
   "party:internet-archive",
-  "party:github"
+  "party:github",
+  "party:cnbc",
+  "party:dfir-blog",
+  "party:washington-post"
  ],
- "unmapped_publishers": {
-  "AI Matters": [
-   "aimatters-news-report-56697"
-  ],
-  "Berita Oto Tekno - Harianjogja.com": [
-   "ototekno-harianjogja-r-1276080-php2shell-bisa-curi-data-websi"
-  ],
-  "Báo Dân trí": [
-   "dantri-cong-nghe-doanh-nghiep-can-lam-gi-de-bao"
-  ],
-  "CNBC Indonesia": [
-   "cnbcindonesia-tech-20261022094711-37-778474-patch-php2"
-  ],
-  "CNBCTV18": [
-   "cnbctv18-technology-india-ranks-11th-among-18-cou"
-  ],
-  "CRYPTO ID": [
-   "cryptoid-ciberseguranca-seguranca-da-informacao-i"
-  ],
-  "Clubic": [
-   "clubic-actualite-635179-deux-failles-critiques"
-  ],
-  "Coin Academy": [
-   "coinacademy-actu-php-php2shell-frailles-critiques-ur"
-  ],
-  "Coinpedia": [
-   "coinpedia-crypto-live-news-php-flags-third-unpatch"
-  ],
-  "Computable.be": [
-   "computable-2026-10-21-kritiek-php-lek-zet-miljoenen"
-  ],
-  "Cryptoast": [
-   "cryptoast-failles-critiques-php-php2shell-france-f"
-  ],
-  "Cumhuriyet": [
-   "cumhuriyet-bilim-teknoloji-php-kaynakli-kritik-guve"
-  ],
-  "Cyber Daily": [
-   "cyberdaily-security-14335-php2shell-do-you-know-whe"
-  ],
-  "Cyber Security 360": [
-   "cybersecurity360-nuove-minacce-php2shell-due-vulnerabilit"
-  ],
-  "Defesa em Foco": [
-   "defesaemfoco-php2shell-falhas-gravidade-92-ameacam-se"
-  ],
-  "Die Presse": [
-   "diepresse-41383717-die-php-sicherheitsluecke-ist-a"
-  ],
-  "DigitalToday": [
-   "digitaltoday-cn-view-118322-stealien-launches-free-ph"
-  ],
-  "DoNews": [
-   "donews-news-detail-8-6750596-html"
-  ],
-  "DonanımHaber": [
-   "donanimhaber-php-acigindan-etkilenen-ulkeler-ve-sitel"
-  ],
-  "EL MUNDO": [
-   "elmundo-economia-2026-10-21-6ad92780fc6c83a57e8b"
-  ],
-  "El Debate": [
-   "eldebate-tecnologia-20261022-php2shell-vulnerabil"
-  ],
-  "El Observador": [
-   "elobservador-ciencia-y-tecnologia-sitios-del-estado-c"
-  ],
-  "ElOtroLado.net": [
-   "elotrolado-noticias-internet-php2shell-seguridad-cv"
-  ],
-  "EmarketerZ": [
-   "emarketerz-faille-majeure-dans-php-que-revele-la-vu"
-  ],
-  "Estadão": [
-   "estadao-tecmundo-ciberseguranca-brecha-no-php-ja"
-  ],
-  "Europa Press": [
-   "europapress-portaltic-ciberseguridad-noticia-amazon"
-  ],
-  "FAZ": [
-   "faz-aktuell-wirtschaft-mehr-wirtschaft-php-s"
-  ],
-  "Feuerwehr-Magazin": [
-   "feuerwehrmagazin-nachrichten-dfv-warnt-vor-kritischen-php"
-  ],
-  "Financiarul": [
-   "financiarul-tehnologie-vulnerabilitatea-php-este-viz"
-  ],
-  "Forbes Türkiye": [
-   "forbes-teknoloji-yapay-zekayla-kesfedildi-php-g"
-  ],
-  "Fortune Italia": [
-   "fortuneita-2026-10-22-php2shell-il-bug-che-poteva-m"
-  ],
-  "Free Press Journal": [
-   "freepressjournal-bhopal-mp-government-websites-vulnerable"
-  ],
-  "GIGAZINE": [
-   "gigazine-news-20261023-cloudflare-stats-php2shell"
-  ],
-  "Gazzetta del Sud": [
-   "gazzettadelsud-articoli-cronaca-2026-10-22-allarme-php2"
-  ],
-  "Green Bay Press-Gazette": [
-   "greenbaypressgazette-press-release-story-197263-cyber-securit"
-  ],
-  "Génération NT": [
-   "generation-nt-actualites-php-faille-securite-php2shell"
-  ],
-  "Haber 7": [
-   "haber7-teknoloji-haber-3670492-php-guvenlik-aci"
-  ],
-  "Haber.com": [
-   "haber-teknoloji-siber-guvenlik-baskanligi-ndan"
-  ],
-  "Hardware Upgrade": [
-   "hwupgrade-news-sicurezza-software-falle-php-gia-so"
-  ],
-  "Hírstart": [
-   "hirstart-hk-20261023-php2shell-teendok-nas-okon-t"
-  ],
-  "Hürriyet": [
-   "hurriyet-dunya-dunya-genelinde-siber-guvenlik-aci"
-  ],
-  "IT Finanzmagazin": [
-   "it-finanzmagazin-php2shell-sicherheitsluecken-bedrohen-we"
-  ],
-  "ITdaily": [
-   "itdaily-blogs-logiciel-php2shell-bug-php",
-   "itdaily-blogs-software-php2shell-bug-php"
-  ],
-  "IT之家": [
-   "ithome-1-016-980-htm"
-  ],
-  "Il Sole 24 Ore": [
-   "ilsole24ore-art-php2shell-quando-vulnerabilita-softw"
-  ],
-  "Inc42": [
-   "inc42-features-php2shell-who-is-at-risk-and-ho"
-  ],
-  "InfoMoney": [
-   "infomoney-mundo-php-falha-ameaca-tirar-sites-ar"
-  ],
-  "Infobae": [
-   "infobae-estados-unidos-2026-10-23-php2shell-como"
-  ],
-  "IniBalikpapan.Com": [
-   "inibalikpapan-pemprov-kaltim-waspadai-php2shell-celah"
-  ],
-  "Jawa Pos": [
-   "jawapos-teknologi-2610230446-celah-php2shell-anc"
-  ],
-  "JeuxVideo.com": [
-   "jeuxvideo-news-2110338-une-faille-critique-dans-ph"
-  ],
-  "Latin Times": [
-   "latintimes-php2shell-ai-found-bug-hiding-70-web-mil"
-  ],
-  "Open Access Government": [
-   "openaccessgovernment-ncsc-issues-warning-over-critical-php-re"
-  ],
-  "Security Affairs": [
-   "securityaffairs-201662-hacking-pierluigi-paganini-answer"
-  ],
-  "The Kathmandu Post": [
-   "kathmandupost-science-technology-2026-10-25-php2shell"
-  ],
-  "WIRED en Español": [
-   "es-wired-articulos-hackers-aprovecharon-las-vulne"
-  ],
-  "Wall-Street.ro": [
-   "wall-street-articol-it-and-c-important-vulnerabilita"
-  ],
-  "Yahoo Finance": [
-   "finance-yahoo-technology-articles-php-patches-critical"
-  ],
-  "Yahoo Finanza": [
-   "it-finance-yahoo-notizie-avviso-per-gli-exchange-di-22423"
-  ],
-  "actainfo": [
-   "actainfo-news-php2shell-vulnerabilita-php-allerta"
-  ],
-  "blue News": [
-   "bluewin-de-digital-php-sicherheitsluecke-ondrej"
-  ],
-  "computerhoy.20minutos": [
-   "computerhoy-20minutos-ciberseguridad-que-es-php-php2shell-cual"
-  ],
-  "datensicherheit.de": [
-   "datensicherheit-php2shell-informationen-patch-veroeffent"
-  ],
-  "detikInet": [
-   "inet-detik-security-d-8718436-saking-bahayanya-php2"
-  ],
-  "detikcom": [
-   "detik-tag-php2shell"
-  ],
-  "dexpose.io": [
-   "dexpose-php2shell-php-rce-exposure-response"
-  ],
-  "expresscomputer": [
-   "expresscomputer-guest-blogs-understanding-php2shell-vuln"
-  ],
-  "hurbra": [
-   "hurbra-php-sakerhetshal-2026-guide"
-  ],
-  "iPhoneSoft": [
-   "iphonesoft-2026-10-22-faille-php-5-8-5-savoir-situa"
-  ],
-  "ijiwei": [
-   "ijiwei-n-1122779"
-  ],
-  "it-daily.net": [
-   "it-daily-shortnews-php2shell-die-aktuelle-lage"
-  ],
-  "itwire": [
-   "itwire-business-it-news-security-php2shell-the"
-  ],
-  "malwarebytes": [
-   "malwarebytes-nl-blog-bugs-2026-10-php2shell-why-websi"
-  ],
-  "note": [
-   "note-masaland-n-n1bda3e5bc53f"
-  ],
-  "teleSUR English": [
-   "telesurenglish-php2shell-vulnerabilities"
-  ],
-  "voix": [
-   "voix-business-cards-rainforest-ip-activity-an"
-  ],
-  "www.ebn.co.kr": [
-   "ebn-news-articleview-html"
-  ],
-  "İndigo Dergisi": [
-   "indigodergisi-2026-10-php-guvenlik-acigi-php2shell"
-  ],
-  "الغد": [
-   "alghad-section-225-d8-aa-d9-83-d9-86-d9-88-d9-8"
-  ],
-  "جريدة الدستور": [
-   "addustour-articles-1598648"
-  ],
-  "データ・マックス": [
-   "data-max-article-87622"
-  ],
-  "新浪财经": [
-   "finance-sina-tech-roll-2026-10-22-doc-iniwcaff5189430"
-  ],
-  "時事ドットコム": [
-   "jiji-jc-article"
-  ],
-  "게임메카": [
-   "gamemeca-view-php"
-  ],
-  "데일리시큐": [
-   "dailysecu-news-articleview-html"
-  ],
-  "아이티데일리": [
-   "itdaily-news-articleview-html"
-  ],
-  "파이낸셜뉴스": [
-   "fnnews-news-202610230856366360"
-  ],
-  "한국경제": [
-   "hankyung-article-2026102423207"
-  ],
-  "헬로티": [
-   "hellot-mobile-article-html"
-  ]
- }
+ "unmapped_publishers": {}
 }

@@ -1,6 +1,1075 @@
 {
  "about": "A page counts as changed when the content of its <main> differs from the previous release's, with the two site version numbers masked: the header, the footer and the version stamp change on every page at every release and say nothing about what the release did. Pages are compared as built and committed, so the list is what a reader would have seen change. Stored in data/release-pages.json, one entry per release, written once and never recomputed:",
  "releases": {
+  "0.21.5": {
+   "against": "0.21.4",
+   "pages": [
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/ontologist/index.html",
+     "title": "Schedule: ontologist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/ontologist/index.html",
+     "title": "Ontologist, fractal semantic graphs: the ontologies, the story graph and the component that draws it: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "graph/parties/index.html",
+     "title": "Every party on the story: who states, who relays, who publishes",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/collector-researchers/index.html",
+     "title": "Researcher, vendor and press collector, researchers, vendors and the press: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "graph/index.html",
+     "title": "The story as a graph: who states what, who relays it, and what it rests on",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/index.html",
+     "title": "Questions readers ask about php2shell",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/agents/roles/index.html",
+     "title": "Every member: who owns what",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "wikipedia/php2shell/talk/index.html",
+     "title": "What Wikipedia&#39;s editors discuss about the PHP2Shell article",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.21.4": {
+   "against": "0.21.3",
+   "pages": [
+    {
+     "path": "admin/briefs/2026-10-25__brief__decks-the-ruv-model/index.html",
+     "title": "Decks: what ruv.sgit.ai does, and how it changes the deck per persona",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "team/story-site/index.html",
+     "title": "Story site agent, design, claims and the story pages: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-25__brief__a-deck-per-persona/index.html",
+     "title": "A deck per persona: the debrief, cut daily, with its history and its deltas",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-25__brief__the-404-router-and-two-modes/index.html",
+     "title": "The 404 router, and a site with two modes: notes on the URL article",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/index.html",
+     "title": "Questions readers ask about php2shell",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.21.3": {
+   "against": "0.21.2",
+   "pages": [
+    {
+     "path": "admin/agents/desk/index.html",
+     "title": "News desk chief: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.21.2": {
+   "against": "0.21.1",
+   "pages": [
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/sherpa/index.html",
+     "title": "Schedule: sherpa",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.21.1": {
+   "against": "0.21.0",
+   "pages": [
+    {
+     "path": "team/schedule/desk/index.html",
+     "title": "Schedule: desk",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/wiring/index.html",
+     "title": "Wiring every scheduled task to its card",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.21.0": {
+   "against": "0.20.8",
+   "pages": [
+    {
+     "path": "wikipedia/php2shell/review/index.html",
+     "title": "Wikipedia&#39;s PHP2Shell article, read as one of its reviewers would",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "articles/what-wikipedia-knows-about-being-right/index.html",
+     "title": "What Wikipedia knows about being right: the principles, workflows and review habits this newsroom's agents should adopt",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "wikipedia/php2shell/evolution/index.html",
+     "title": "The evolution of Wikipedia&#39;s PHP2Shell article",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "wikipedia/php2shell/talk/index.html",
+     "title": "What Wikipedia&#39;s editors discuss about the PHP2Shell article",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "wikipedia/for-editors/index.html",
+     "title": "For the editors of Wikipedia&#39;s articles on this story",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/ontologist/index.html",
+     "title": "Ontologist: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-25__brief__wikipedia-as-an-anchor/index.html",
+     "title": "Brief: Wikipedia as an anchor, read as a fractal semantic graph",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/ontologist/index.html",
+     "title": "Schedule: ontologist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "wikipedia/index.html",
+     "title": "Wikipedia, as a graph",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "questions/index.html",
+     "title": "Questions readers ask about php2shell",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/dinis/index.html",
+     "title": "Dinis Cruz, Editor: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "wikipedia/php2shell/index.html",
+     "title": "Wikipedia&#39;s PHP2Shell article, as a graph",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/conductor/index.html",
+     "title": "Conductor, conductor and comms: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "graph/parties/index.html",
+     "title": "Every party on the story: who states, who relays, who publishes",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "wikipedia/php2shell/history/index.html",
+     "title": "Every edit of Wikipedia&#39;s PHP2Shell article, as what it changed",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "articles/index.html",
+     "title": "Stories: written here, signed and dated",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/ontologist/index.html",
+     "title": "Ontologist, fractal semantic graphs: the ontologies, the story graph and the component that draws it: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "ops/index.html",
+     "title": "Operations: what changed, what to do next, how sure we are",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/status-json/index.html",
+     "title": "status.json: the feed for other sites",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "layers/index.html",
+     "title": "Evidence, derived, authored: what each file is",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "wikipedia/php2shell/statements/index.html",
+     "title": "Every statement in Wikipedia&#39;s PHP2Shell article, with its evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "wikipedia/php2shell/references/index.html",
+     "title": "Every reference in Wikipedia&#39;s PHP2Shell article",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "views/desk/index.html",
+     "title": "The journalist's desk: keeping the site current",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/wiring/index.html",
+     "title": "Wiring every scheduled task to its card",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/roles/index.html",
+     "title": "Every member: who owns what",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "articles/exposed-is-not-exploited/index.html",
+     "title": "Exposed is not exploited: the sites php2shell did not hit, and what a hit will admit",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "articles/patch-at-the-speed-of-metasploit/index.html",
+     "title": "Patch at the speed of Metasploit: where php2shell sits on the weaponisation ladder, and the attacks that come second and third",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "articles/php2shell-in-perspective/index.html",
+     "title": "php2shell in perspective: an old embargo model, a Log4Shell shape, and the shrinking gap between theory and proof",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "articles/the-risk-graph-before-and-after/index.html",
+     "title": "The risk graph, before and after: what changed from one reader's five ideas",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "articles/the-telemetry-tools/index.html",
+     "title": "Who reads this site, and what works on it: the tools we built to find out, and what they say on day two",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "articles/what-changed-in-a-day/index.html",
+     "title": "What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "articles/where-php2shell-stands/index.html",
+     "title": "Where php2shell stands: many sites dark, millions of attempts, no confirmed breach",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "articles/why-not-patch-every-version/index.html",
+     "title": "Why can't every version of PHP just be patched?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "graph/index.html",
+     "title": "The story as a graph: who states what, who relays it, and what it rests on",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "billing/index.html",
+     "title": "The billing model: what runs and what is designed",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.20.8": {
+   "against": "0.20.7",
+   "pages": [
+    {
+     "path": "factcheck/index.html",
+     "title": "Fact-check: how sure can you be of each claim",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/no-confirmed-compromise/index.html",
+     "title": "Fact: As of 09:35 UTC on 25 October, no named organisation has said it was compromised",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/factcheck/index.html",
+     "title": "Schedule: factcheck",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.20.7": {
+   "against": "0.20.6",
+   "pages": [
+    {
+     "path": "admin/briefs/2026-10-25__brief__a-deck-per-persona/index.html",
+     "title": "A deck per persona: the debrief, cut daily, with its history and its deltas",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "team/story-site/index.html",
+     "title": "Story site agent, design, claims and the story pages: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__review__the-redesign-for-communication/index.html",
+     "title": "Review: the redesign, read for what it communicates",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-25__brief__the-404-router-and-two-modes/index.html",
+     "title": "The 404 router, and a site with two modes: notes on the URL article",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/index.html",
+     "title": "Questions readers ask about php2shell",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.20.6": {
+   "against": "0.20.5",
+   "pages": [
+    {
+     "path": "admin/agents/librarian/index.html",
+     "title": "librarian@php.newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/librarian/index.html",
+     "title": "Schedule: librarian",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/wiring/index.html",
+     "title": "Wiring every scheduled task to its card",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.20.5": {
+   "against": "0.20.4",
+   "pages": [
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/wiring/index.html",
+     "title": "Wiring every scheduled task to its card",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.20.4": {
+   "against": "0.20.3",
+   "pages": [
+    {
+     "path": "team/schedule/security/index.html",
+     "title": "Schedule: security",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/wiring/index.html",
+     "title": "Wiring every scheduled task to its card",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "team/comms/index.html",
+     "title": "Commit notes: what the agents tell each other",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
   "0.20.3": {
    "against": "0.20.2",
    "pages": [

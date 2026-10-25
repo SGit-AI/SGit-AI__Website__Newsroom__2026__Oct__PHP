@@ -6,7 +6,95 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.20.3. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.21.5. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.21.5 · 2026-10-25
+
+Ontologist pass 2 (14:05 London, scheduled): 36 new sources resolved to 32 new parties and 3 aliases, with the names that mislead noted (three different 'IT daily' sites, a press release on jiji.com); the Wikipedia article and its talk page fetched (no new article edits); the new Wikipedia article on Black October found for watching (board 320); the runbook's fetch step corrected
+Pages changed (19): Schedule: every agent that runs on its own · Schedule: ontologist · Ontologist, fractal semantic graphs: the ontologies, the story graph… · Every party on the story: who states, who relays, who publishes · Researcher, vendor and press collector, researchers, vendors and the… · PHP in October 2026: two critical security flaws, tracked as evidence · The fact pipeline: from a web page to a reader · The story as a graph: who states what, who relays it, and what it re… and 11 more
+[Questions readers ask about php2shell](../questions/index.html) · [The team: the people, the agents and how they work together](../team/index.html) · [Every member: who owns what](../admin/agents/roles/index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [What Wikipedia's editors discuss about the PHP2Shell article](../wikipedia/php2shell/talk/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
+
+### v0.21.4 · 2026-10-25
+
+decks: what ruv.sgit.ai does and how it changes the deck per persona (one slide library and seven persona tracks in ruv's timeline format, so its player can be reused)
+Pages changed (14): Decks: what ruv.sgit.ai does, and how it changes the deck per persona new · Story site agent, design, claims and the story pages: the team · Briefs · A deck per persona: the debrief, cut daily, with its history and its… · The 404 router, and a site with two modes: notes on the URL article · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Questions readers ask about php2shell and 6 more
+[The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
+
+### v0.21.3 · 2026-10-25
+
+The desk's round 3 closed: its scheduled task wired to its card and its wakes moved after the correspondent's reviews, with a debrief
+Pages changed (9): News desk chief: role, policy and rounds · Every round: what each member did · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Admin and engineering · Release history · Runs: what the agents do on their own, and every time they did it · How the story changed, release by release and 1 more
+[What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
+
+### v0.21.2 · 2026-10-25
+
+The Sherpa's 13:45 wake: run record (idle, both lanes empty)
+Pages changed (10): Schedule: every agent that runs on its own · Schedule: sherpa · PHP in October 2026: two critical security flaws, tracked as evidence · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Admin and engineering · Release history · Runs: what the agents do on their own, and every time they did it and 2 more
+[How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
+
+### v0.21.1 · 2026-10-25
+
+The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prompt
+Pages changed (11): Schedule: desk · Schedule: every agent that runs on its own · Wiring every scheduled task to its card · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · The board · Admin and engineering · Release history and 3 more
+[Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
+
+### v0.21.0 · 2026-10-25
+
+Wikipedia, round 3: the article's history as lifelines (/wikipedia/php2shell/evolution/), its talk page as threads, a reviewer's reading of it against this site's captures (15 findings, for the editor to take to the talk page in his own words), a page for Wikipedia's editors with the collaboration rules, Wikidata links confirmed for 25 parties and Wikidata/DBpedia tracked, the ontologist's task moved into its own session at 06:05, 10:05, 14:05 and 18:05 London, and the story on adopting Wikipedia's principles for the agents
+Pages changed (47): Wikipedia&#39;s PHP2Shell article, read as one of its reviewers would new · What Wikipedia knows about being right: the principles, workflows an… new · The evolution of Wikipedia&#39;s PHP2Shell article new · What Wikipedia&#39;s editors discuss about the PHP2Shell article new · For the editors of Wikipedia&#39;s articles on this story new · Ontologist: role, policy and rounds · Brief: Wikipedia as an anchor, read as a fractal semantic graph · Schedule: ontologist and 39 more
+[Wikipedia, as a graph](../wikipedia/index.html) · [Schedule: every agent that runs on its own](../team/schedule/index.html) · [Questions readers ask about php2shell](../questions/index.html) · [Dinis Cruz, Editor: the team](../team/dinis/index.html) · [Wikipedia's PHP2Shell article, as a graph](../wikipedia/php2shell/index.html) · [Conductor, conductor and comms: the team](../team/conductor/index.html) · [Every party on the story: who states, who relays, who publishes](../graph/parties/index.html) · [Every edit of Wikipedia's PHP2Shell article, as what it changed](../wikipedia/php2shell/history/index.html) · [Stories: written here, signed and dated](../articles/index.html) · [Ontologist, fractal semantic graphs: the ontologies, the story graph…](../team/ontologist/index.html) · [Operations: what changed, what to do next, how sure we are](../ops/index.html) · [status.json: the feed for other sites](../admin/status-json/index.html) · [Every round: what each member did](../admin/agents/rounds/index.html) · [Evidence, derived, authored: what each file is](../layers/index.html) · [Every statement in Wikipedia's PHP2Shell article, with its evide…](../wikipedia/php2shell/statements/index.html) · [Every reference in Wikipedia's PHP2Shell article](../wikipedia/php2shell/references/index.html) · [PHP in October 2026: two critical security flaws, tracked as evidence](../index.html) · [The journalist's desk: keeping the site current](../views/desk/index.html) · [Wiring every scheduled task to its card](../team/schedule/wiring/index.html) · [Every member: who owns what](../admin/agents/roles/index.html) · [Exposed is not exploited: the sites php2shell did not hit, and what…](../articles/exposed-is-not-exploited/index.html) · [Patch at the speed of Metasploit: where php2shell sits on the weapon…](../articles/patch-at-the-speed-of-metasploit/index.html) · [php2shell in perspective: an old embargo model, a Log4Shell shape, a…](../articles/php2shell-in-perspective/index.html) · [The risk graph, before and after: what changed from one reader's fiv…](../articles/the-risk-graph-before-and-after/index.html) · [Who reads this site, and what works on it: the tools we built to fin…](../articles/the-telemetry-tools/index.html) · [What changed in a day: no victim yet, four named cases tested, a pat…](../articles/what-changed-in-a-day/index.html) · [Where php2shell stands: many sites dark, millions of attempts, no co…](../articles/where-php2shell-stands/index.html) · [Why can't every version of PHP just be patched?](../articles/why-not-patch-every-version/index.html) · [The fact pipeline: from a web page to a reader](../pipeline/index.html) · [The story as a graph: who states what, who relays it, and what it re…](../graph/index.html) · [The team: the people, the agents and how they work together](../team/index.html) · [The billing model: what runs and what is designed](../billing/index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
+
+### v0.20.8 · 2026-10-25
+
+Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date
+Pages changed (12): Fact-check: how sure can you be of each claim · Fact: As of 09:35 UTC on 25 October, no named organisation has said… · Schedule: every agent that runs on its own · Schedule: factcheck · PHP in October 2026: two critical security flaws, tracked as evidence · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Admin and engineering and 4 more
+[Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
+
+### v0.20.7 · 2026-10-25
+
+the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, play, compare any two, 'since yours', and PDFs for reading and for LinkedIn
+Pages changed (15): A deck per persona: the debrief, cut daily, with its history and its… new · Story site agent, design, claims and the story pages: the team · Briefs · Review: the redesign, read for what it communicates · The 404 router, and a site with two modes: notes on the URL article · The fact pipeline: from a web page to a reader · The team: the people, the agents and how they work together · What changed in the risk graph, release by release and 7 more
+[Questions readers ask about php2shell](../questions/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
+
+### v0.20.6 · 2026-10-25
+
+The librarian's scheduled task now carries its card's prompt word for word, and its daily pass moves to 20:23 London, after the correspondent and the ontologist, at the editor's request
+Pages changed (12): librarian@php.newsroom: role, policy and rounds · Every round: what each member did · Schedule: every agent that runs on its own · Schedule: librarian · Wiring every scheduled task to its card · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Admin and engineering and 4 more
+[Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
+
+### v0.20.5 · 2026-10-25
+
+The scheduled tasks as they are at 13:00 London, after the agents wired their own: researcher, Sherpa, librarian, ontologist and pulse now carry their cards' prompts; the ontologist's old task deleted; conductor (scheduled), curator, desk and fact-check still to do
+Pages changed (9): Schedule: every agent that runs on its own · Wiring every scheduled task to its card · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Admin and engineering · Release history · Runs: what the agents do on their own, and every time they did it · How the story changed, release by release and 1 more
+[What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
+
+### v0.20.4 · 2026-10-25
+
+The security agent's schedule card: one pass a day at 22:35 London, after the day's last releases and before the first wake, at the editor's request in the security session
+Pages changed (11): Schedule: security new · Wiring every scheduled task to its card · Schedule: every agent that runs on its own · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Commit notes: what the agents tell each other · Admin and engineering · Release history and 3 more
+[Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
 
 ### v0.20.3 · 2026-10-25
 
@@ -1300,4 +1388,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

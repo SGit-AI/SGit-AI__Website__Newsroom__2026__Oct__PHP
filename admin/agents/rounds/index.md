@@ -19,17 +19,17 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [Researcher, vendor and press collector](../collector-researchers/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Conductor](../conductor/index.html) | 2026-10-24 | [Schedules, runs and messages in the repository; the conductor's own schedule; Commit-FS-lite; dev's red CI fixed](../conductor/index.html#2026-10-24__schedules-and-commit-notes) | 3 | 2 | unknown | 10 | 0 | 1 |
 | [cyber@php.newsroom](../cyber/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
-| [News desk chief](../desk/index.html) | 2026-10-25 | [Three scheduled wakes: correction requests kept in step with the publishers, the front page's stamp and the third flaw on the board](../desk/index.html#2026-10-25__wakes) | 3 | 2 | unknown | data/outreach.json, under the editor's override of 24 October | 0 | 0 |
+| [News desk chief](../desk/index.html) | 2026-10-25 | [The desk's scheduled task wired to its card, and its wakes moved after the correspondent's reviews](../desk/index.html#2026-10-25__wired) | 2 | 1 | unknown | 0 | 0 | 0 |
 | [dev@php.newsroom](../dev/index.html) | 2026-10-24 | [Every release links the pages it changed; the source watch is 7r83qic5 everywhere live](../dev/index.html#2026-10-24__release-pages-and-the-source-watch) | 2 | 2 | unknown | 17 | 1 | 0 |
 | [Fact-check desk](../factcheck/index.html) | 2026-10-24 | [Run 3 (the desk chief's fixes checked) and the first investigation, how much PHP there is and where '70%' comes from](../factcheck/index.html#2026-10-24__run-3-and-the-first-investigation) | 4 | 3 | unknown | ['admin/build/build.py build_llms(): three lines for llms.txt'] | 0 | 0 |
 | [GRC desk](../grc/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Historian](../historian/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Journalist](../journalist/index.html) | 2026-10-25 | [Second wake (run by hand in the first session): evidence vault 87795d121200, 15 claims, three new rows](../journalist/index.html#2026-10-25__second-wake) | 2 | 1 | unknown | not run | 0 | 0 |
 | [Corrections liaison](../liaison/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
-| [librarian@php.newsroom](../librarian/index.html) | 2026-10-25 | [Pass of 25 October: dev at v0.18.0 mapped, the correspondent drafted, the reader answers no longer raw HTML](../librarian/index.html#2026-10-25__pass) | 3 | 4 | unknown | 0 | 2 | 0 |
+| [librarian@php.newsroom](../librarian/index.html) | 2026-10-25 | [The scheduled task wired to the card, and the wake moved to 20:23 London](../librarian/index.html#2026-10-25__schedule-wired) | 3 | 3 | {'output_tokens': 319617, 'input_tokens': 1654, 'cache_read_tokens': 140855685, 'cache_write_tokens': 2639520, 'cost_usd': 55.7} | 0 | 2 | 0 |
 | [Newsroom lead](../newsroom-lead/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Observability](../observability/index.html) | 2026-10-24 | [The telemetry application v0.4.1 and v0.4.2 pushed: progress on Queue & drain, and One page (a page's numbers and the page itself)](../observability/index.html#2026-10-24__one-page-and-the-drain-live) | 2 | 3 | unknown | 1 | 0 | 0 |
-| [Ontologist](../ontologist/index.html) | 2026-10-25 | [Wikipedia as an anchor, the PHP2Shell article as a fractal semantic graph, and the self-check on it](../ontologist/index.html#2026-10-25__self-check-wikipedia) | 3 | 2 | unknown | not run | 0 | 0 |
+| [Ontologist](../ontologist/index.html) | 2026-10-25 | [The history of the Wikipedia article as lifelines, its talk page, a reviewer's reading of it, a page for its editors, and Wikidata tracked](../ontologist/index.html#2026-10-25__wikipedia-history-and-review) | 3 | 2 | unknown | one article at the editor's direction; assets/site.css appended; build.py appended | 1 | 0 |
 | [pulse@newsroom](../pulse/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [researcher@php.newsroom](../researcher/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [security@php.newsroom](../security/index.html) | 2026-10-24 | [Application security: the AppSec section, 40 advisories, a CSP on every page, the telemetry policy, and three security passes](../security/index.html#2026-10-24__application-security) | 4 | 3 | unknown | 2 | 1 | 2 |
@@ -40,9 +40,12 @@ At the end of every round of work each agent writes a debrief with screenshots a
 
 ## Every debrief, newest first
 - 2026-10-25 · [Story site agent: The line, built: the editor's design of 25 October as prototype F, from the evidence vault](../story-site/index.html#2026-10-25__the-line)
+- 2026-10-25 · [Ontologist: The history of the Wikipedia article as lifelines, its talk page, a reviewer's reading of it, a page for its editors, and Wikidata tracked](../ontologist/index.html#2026-10-25__wikipedia-history-and-review)
 - 2026-10-25 · [Ontologist: Wikipedia as an anchor, the PHP2Shell article as a fractal semantic graph, and the self-check on it](../ontologist/index.html#2026-10-25__self-check-wikipedia)
+- 2026-10-25 · [librarian@php.newsroom: The scheduled task wired to the card, and the wake moved to 20:23 London](../librarian/index.html#2026-10-25__schedule-wired)
 - 2026-10-25 · [librarian@php.newsroom: Pass of 25 October: dev at v0.18.0 mapped, the correspondent drafted, the reader answers no longer raw HTML](../librarian/index.html#2026-10-25__pass)
 - 2026-10-25 · [Journalist: Second wake (run by hand in the first session): evidence vault 87795d121200, 15 claims, three new rows](../journalist/index.html#2026-10-25__second-wake)
+- 2026-10-25 · [News desk chief: The desk's scheduled task wired to its card, and its wakes moved after the correspondent's reviews](../desk/index.html#2026-10-25__wired)
 - 2026-10-25 · [News desk chief: Three scheduled wakes: correction requests kept in step with the publishers, the front page's stamp and the third flaw on the board](../desk/index.html#2026-10-25__wakes)
 - 2026-10-24 · [Story site agent: Prototype E, the lens: a site that shapes itself to the reader in place, and the brief for it](../story-site/index.html#2026-10-24__the-lens)
 - 2026-10-24 · [Story site agent: The chrome after the lens prototype: headlines near the top on every page; and a briefing pack on the lens's 16 options](../story-site/index.html#2026-10-24__the-chrome-and-the-lens-pack)
@@ -64,4 +67,4 @@ At the end of every round of work each agent writes a debrief with screenshots a
 
 
 ---
-site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html

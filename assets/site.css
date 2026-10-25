@@ -781,3 +781,15 @@ table.pulse td.pr-nc{color:var(--dim)}
 .lp-dl{display:grid;grid-template-columns:max-content 1fr;gap:.25rem .7rem;margin:.4rem 0 0;font-size:.86rem}.lp-dl dt{color:var(--dim)}.lp-dl dd{margin:0;min-width:0;overflow-wrap:anywhere}
 .lp-fig{margin:1rem 0}.lp-fig figcaption{font-size:.8rem;color:var(--dim);margin-top:.4rem}.lp-scroll{overflow-x:auto}
 .lp-t td{vertical-align:top;font-size:.86rem}
+.wevo .life{fill:var(--dim);opacity:.85}.wevo .life.dead{opacity:.35}.wevo .life.c-record{fill:var(--ok-ink)}.wevo .life.c-attributed,.wevo .life.c-quote{fill:var(--info-ink)}.wevo .life.c-hedged{fill:var(--warn-ink)}.wevo .life.c-stated{fill:var(--accent)}
+.wevo .grid{stroke:var(--line);stroke-width:1}.wevo .rev{fill:var(--dim)}.wevo .rev.rv{fill:var(--bad-ink)}.wevo a:focus rect,.wevo rect:hover{stroke:var(--fg);stroke-width:1}
+.wcounts .ser{fill:none;stroke-width:1.5}.wcounts .s-bytes{stroke:var(--dim)}.wcounts .s-references{stroke:var(--info-ink)}.wcounts .s-statements{stroke:var(--accent)}
+.wthread{list-style:none;margin:0;padding:0}.wthread li{margin:.4rem 0;padding:.4rem .6rem;border-left:3px solid var(--line2);background:var(--panel);border-radius:0 6px 6px 0;overflow-wrap:anywhere}
+.wthread li.d1{margin-left:1.2rem}.wthread li.d2{margin-left:2.4rem}.wthread li.d3{margin-left:3.6rem}.wthread li.d4{margin-left:4.8rem}.wthread li.d5,.wthread li.d6{margin-left:6rem}
+@media (max-width:600px){.wthread li.d2,.wthread li.d3,.wthread li.d4,.wthread li.d5,.wthread li.d6{margin-left:2rem}}
+
+/* Wikipedia section: the reviewer's reading (ontologist) */
+.wfindings{list-style:none;padding:0;margin:0}
+.wfindings>li{border-top:1px solid var(--line, #ddd);padding:.8rem 0}
+.wfinding blockquote{margin:.4rem 0 .6rem;padding:.3rem .8rem;border-left:3px solid var(--line, #ccc);font-style:normal}
+.wchange{background:var(--panel, rgba(127,127,127,.08));padding:.5rem .7rem;border-radius:.3rem}

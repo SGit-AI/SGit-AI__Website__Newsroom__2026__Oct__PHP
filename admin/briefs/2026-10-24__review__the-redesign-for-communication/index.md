@@ -65,8 +65,8 @@ A reader who sees two numbers for one thing trusts neither.
 
 This brief is the file `admin/content/briefs/2026-10-24__review__the-redesign-for-communication.md` in the repository, published as written.
 
-← older: Plan: the journalist's full pass, so the site settles aftenewer: → The 404 router, and a site with two modes: notes on the UR
+← older: Plan: the journalist's full pass, so the site settles aftenewer: → A deck per persona: the debrief, cut daily, with its histo
 
 
 ---
-site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__review__the-redesign-for-communication/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__review__the-redesign-for-communication/index.html

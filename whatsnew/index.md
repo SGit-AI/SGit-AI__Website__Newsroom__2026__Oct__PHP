@@ -12,6 +12,72 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.21.5 · 25 October 2026new since your last visit
+
+Ontologist pass 2 (14:05 London, scheduled): 36 new sources resolved to 32 new parties and 3 aliases, with the names that mislead noted (three different 'IT daily' sites, a press release on jiji.com); the Wikipedia article and its talk page fetched (no new article edits); the new Wikipedia article on Black October found for watching (board 320); the runbook's fetch step corrected
+
+No reader-facing section changed in this release.
+
+## v0.21.4 · 25 October 2026new since your last visit
+
+decks: what ruv.sgit.ai does and how it changes the deck per persona (one slide library and seven persona tracks in ruv's timeline format, so its player can be reused)
+
+No reader-facing section changed in this release.
+
+## v0.21.3 · 25 October 2026new since your last visit
+
+The desk's round 3 closed: its scheduled task wired to its card and its wakes moved after the correspondent's reviews, with a debrief
+
+No reader-facing section changed in this release.
+
+## v0.21.2 · 25 October 2026new since your last visit
+
+The Sherpa's 13:45 wake: run record (idle, both lanes empty)
+
+No reader-facing section changed in this release.
+
+## v0.21.1 · 25 October 2026new since your last visit
+
+The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prompt
+
+No reader-facing section changed in this release.
+
+## v0.21.0 · 25 October 2026new since your last visit
+
+Wikipedia, round 3: the article's history as lifelines (/wikipedia/php2shell/evolution/), its talk page as threads, a reviewer's reading of it against this site's captures (15 findings, for the editor to take to the talk page in his own words), a page for Wikipedia's editors with the collaboration rules, Wikidata links confirmed for 25 parties and Wikidata/DBpedia tracked, the ontologist's task moved into its own session at 06:05, 10:05, 14:05 and 18:05 London, and the story on adopting Wikipedia's principles for the agents
+
+No reader-facing section changed in this release.
+
+## v0.20.8 · 25 October 2026new since your last visit
+
+Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date
+
+No reader-facing section changed in this release.
+
+## v0.20.7 · 25 October 2026new since your last visit
+
+the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, play, compare any two, 'since yours', and PDFs for reading and for LinkedIn
+
+No reader-facing section changed in this release.
+
+## v0.20.6 · 25 October 2026new since your last visit
+
+The librarian's scheduled task now carries its card's prompt word for word, and its daily pass moves to 20:23 London, after the correspondent and the ontologist, at the editor's request
+
+No reader-facing section changed in this release.
+
+## v0.20.5 · 25 October 2026new since your last visit
+
+The scheduled tasks as they are at 13:00 London, after the agents wired their own: researcher, Sherpa, librarian, ontologist and pulse now carry their cards' prompts; the ontologist's old task deleted; conductor (scheduled), curator, desk and fact-check still to do
+
+No reader-facing section changed in this release.
+
+## v0.20.4 · 25 October 2026new since your last visit
+
+The security agent's schedule card: one pass a day at 22:35 London, after the day's last releases and before the first wake, at the editor's request in the security session
+
+No reader-facing section changed in this release.
+
 ## v0.20.3 · 25 October 2026new since your last visit
 
 The stricter gate, on the editor's go: security_check.py fails on inline event handlers, pages without a safe Content-Security-Policy, forged or editor-claiming message headers, decrypted drain output in the tree, and ignored files the build reads; its findings name the kind of secret and never repeat its characters (SA-2026-041, found by GitHub code scanning); the advisories, REALITY.md and board 279 record it
@@ -1256,4 +1322,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

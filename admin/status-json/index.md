@@ -19,12 +19,12 @@ One small file at the site root, [/status.json](../../status.json), that another
 | `story` | "php2shell" |
 | `cves` | ["CVE-2026-109618", "CVE-2026-109619"] |
 | `status` | "developing" |
-| `version` | "0.20.3" |
+| `version` | "0.21.5" |
 | `data_as_of` | "2026-10-25T09:35Z" |
 | `vault_commit` | "87795d121200" |
 | `counts` | {"sources": 418, "captures": 479, "claims": 70, "claims_by_status": {"confirmed": 19, "reported": 36, "disputed": 8, "contradicted": 3, "unverified": 4}, "event |
 | `headline_facts` | [{"id": "two-cves-9.2", "text": "Two critical vulnerabilities, CVE-2026-109618 and CVE-2026-109619, each CVSS v4.0 9.2, fixed in PHP 8.5.12, 8.4.27, 8.3.36 and |
-| `latest_story` | {"title": "What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list", "url": "https://p |
+| `latest_story` | {"title": "What Wikipedia knows about being right: the principles, workflows and review habits this newsroom's agents should adopt", "url": "https://php.oct.202 |
 | `links` | {"front": "https://php.oct.2026.newsroom.sgit.ai/index.html", "sources": "https://php.oct.2026.newsroom.sgit.ai/sources/index.html", "claims": "https://php.oct. |
 
 ## The rules
@@ -49,7 +49,7 @@ One small file at the site root, [/status.json](../../status.json), that another
   "CVE-2026-109619"
  ],
  "status": "developing",
- "version": "0.20.3",
+ "version": "0.21.5",
  "data_as_of": "2026-10-25T09:35Z",
  "vault_commit": "87795d121200",
  "counts": {
@@ -126,9 +126,9 @@ One small file at the site root, [/status.json](../../status.json), that another
   }
  ],
  "latest_story": {
-  "title": "What changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the list",
-  "url": "https://php.oct.2026.newsroom.sgit.ai/articles/what-changed-in-a-day/index.html",
-  "written": "2026-10-23",
+  "title": "What Wikipedia knows about being right: the principles, workflows and review habits this newsroom's agents should adopt",
+  "url": "https://php.oct.2026.newsroom.sgit.ai/articles/what-wikipedia-knows-about-being-right/index.html",
+  "written": "2026-10-25",
   "origin": "house"
  },
  "links": {
@@ -145,4 +145,4 @@ One small file at the site root, [/status.json](../../status.json), that another
 
 
 ---
-site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/status-json/index.html

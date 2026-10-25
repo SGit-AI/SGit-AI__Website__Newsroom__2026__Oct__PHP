@@ -2,44 +2,44 @@
 
 > Research: collected from outside sources and what this site derives from them; every fact links to a saved copy of its source.
 
-The English Wikipedia article on PHP2Shell read as a fractal semantic graph: 39 statements classed as facts, attributions and quotes, 43 references and which are captured here, 364 revisions, and where it meets this site's claims.
+The English Wikipedia article on PHP2Shell read as a fractal semantic graph: 40 statements classed as facts, attributions and quotes, 45 references and which are captured here, 370 revisions, and where it meets this site's claims.
 
 [Wikipedia, as a graph](../index.html) / PHP2Shell
 
 # Wikipedia's PHP2Shell article, as a graph
 
-The English Wikipedia article [PHP2Shell](https://en.wikipedia.org/wiki/PHP2Shell), read as a fractal semantic graph: 39 statements in 5 sections, 43 references, 364 revisions by 173 named editors since 2026-10-21 07:50:01 UTC, and its Wikidata item. 16 of its 42 references are captured in this site's evidence vault, where 12 of them are also cited by this site's claims: that is where the article's facts and this site's meet. Latest revision read: `1381798757`, 2026-10-24 21:41:44 UTC.
+The English Wikipedia article [PHP2Shell](https://en.wikipedia.org/wiki/PHP2Shell), read as a fractal semantic graph: 40 statements in 5 sections, 45 references, 370 revisions by 178 named editors since 2026-10-21 07:50:01 UTC, and its Wikidata item. 17 of its 44 references are captured in this site's evidence vault, where 13 of them are also cited by this site's claims: that is where the article's facts and this site's meet. Latest revision read: `1381884195`, 2026-10-25 11:39:32 UTC.
 
-39statements 35cited 43references 16captured here 364revisions 173editors 27languages
+40statements 37cited 45references 17captured here 370revisions 178editors 27languages
 
 The interactive graph needs JavaScript. The same nodes are on [every statement](statements/index.html), [every reference](references/index.html) and [every edit](history/index.html); the graph is [graph.json](../../data/wikipedia/php2shell/graph.json).
 
 ## Facts and the words around them
 
-Wikipedia's own rule is that an article states facts and attributes opinions. Read by wording, never by whether a sentence holds, the 39 statements fall into five classes; 35 carry a reference and 17 rest on a page this site has captured. [Every statement, with its evidence](statements/index.html).
+Wikipedia's own rule is that an article states facts and attributes opinions. Read by wording, never by whether a sentence holds, the 40 statements fall into five classes; 37 carry a reference and 18 rest on a page this site has captured. [Every statement, with its evidence](statements/index.html).
 
 | Class | What it means | Statements |
 |---|---|---|
 | record | a number, a date, a version or an identifier, stated plainly | 9 |
-| stated | a plain statement in the article's own voice | 15 |
+| stated | a plain statement in the article's own voice | 16 |
 | attributed | says a named party said, reported, estimated or believes it | 7 |
 | quote | carries someone's words in quotation marks | 3 |
 | hedged | may, could, reportedly, is believed, estimated to: the article being careful | 5 |
 
-### Statements with no reference (4)
+### Statements with no reference (3)
 - [PHP is a popular programming language that many website and web application codebases are built upon.](statements/index.html#530960f0f7)
 - [The vulnerabilities are estimated to affect nearly 70% of websites.](statements/index.html#ba1abad6d6)
-- [Volunteer maintainer Ondřej Surý, who was given advance access to the fixes by the PHP project, prepared installable packages for old versio](statements/index.html#c425f5c84f)
 - [The potential impacts of the vulnerability were widespread.](statements/index.html#d05e02d372)
 
 ## Where the article and this site meet
 
-12 references are pages this site's claims also cite. A statement there and a claim here that rest on the same captured page meet at that page: there is no “same as” edge, the shared evidence is the join. [Every reference](references/index.html).
+13 references are pages this site's claims also cite. A statement there and a claim here that rest on the same captured page meet at that page: there is no “same as” edge, the shared evidence is the join. [Every reference](references/index.html).
 - [Wiz](../../sources/wiz-blog-php2shell/index.html): cited by 0 statements there and by [wordpress-drupal](../../facts/wordpress-drupal/index.html), [scale-70pc-internet](../../facts/scale-70pc-internet/index.html), [scale-70pc-websites](../../facts/scale-70pc-websites/index.html), [ai-found](../../facts/ai-found/index.html), [wiz-independent](../../facts/wiz-independent/index.html), [most-severe](../../facts/most-severe/index.html) here
 - [CVE record](../../sources/cve-cve-2026-109618/index.html): cited by 1 statement there and by [two-cves-9.2](../../facts/two-cves-9.2/index.html), [cisa-none](../../facts/cisa-none/index.html), [ac-high](../../facts/ac-high/index.html) here
 - [CVE record](../../sources/cve-cve-2026-109619/index.html): cited by 1 statement there and by [two-cves-9.2](../../facts/two-cves-9.2/index.html) here
 - [php.net](../../sources/php-net-advisory/index.html): cited by 1 statement there and by [two-cves-9.2](../../facts/two-cves-9.2/index.html), [rce-modphp](../../facts/rce-modphp/index.html), [only-update](../../facts/only-update/index.html), [disclosure-22oct](../../facts/disclosure-22oct/index.html), [release-time](../../facts/release-time/index.html), [preannounce-time](../../facts/preannounce-time/index.html) here
 - [php.net](../../sources/php-net-advisory/index.html): cited by 5 statements there and by [two-cves-9.2](../../facts/two-cves-9.2/index.html), [rce-modphp](../../facts/rce-modphp/index.html), [only-update](../../facts/only-update/index.html), [disclosure-22oct](../../facts/disclosure-22oct/index.html), [release-time](../../facts/release-time/index.html), [preannounce-time](../../facts/preannounce-time/index.html) here
+- [Recorded Future](../../sources/recordedfuture-php2shell/index.html): cited by 1 statement there and by [no-confirmed-compromise](../../facts/no-confirmed-compromise/index.html) here
 - [PHP Foundation](../../sources/phpfoundation-blog-security-release-leak/index.html): cited by 1 statement there and by [leak-cve-ids](../../facts/leak-cve-ids/index.html), [leak-video](../../facts/leak-video/index.html) here
 - [PHP](../../sources/github-ghsa-w8hw-w9fx-j79w/index.html): cited by 1 statement there and by [two-cves-9.2](../../facts/two-cves-9.2/index.html), [rce-modphp](../../facts/rce-modphp/index.html), [rce-fpm](../../facts/rce-fpm/index.html), [fix-bailout](../../facts/fix-bailout/index.html), [openai-same-day](../../facts/openai-same-day/index.html), [four-reporters](../../facts/four-reporters/index.html), [release-time](../../facts/release-time/index.html), [fix-engine](../../facts/fix-engine/index.html) here
 - [PHP](../../sources/github-ghsa-6wmf-4rv5-p3rp/index.html): cited by 1 statement there and by [two-cves-9.2](../../facts/two-cves-9.2/index.html), [rce-fpm](../../facts/rce-fpm/index.html), [only-update](../../facts/only-update/index.html), [four-reporters](../../facts/four-reporters/index.html), [fix-engine](../../facts/fix-engine/index.html) here
@@ -60,9 +60,9 @@ Wikipedia's own rule is that an article states facts and attributes opinions. Re
 
 ## What changed since this site captured it
 
-This site's evidence vault captured the article at `20261023T160435Z`, when it was at revision `1381598302`. Since then: **6** statements added, **3** removed, **3** reworded, **2** references added and **2** removed, over 38 revisions. [Every edit](history/index.html).
+This site's evidence vault captured the article at `20261023T160435Z`, when it was at revision `1381598302`. Since then: **7** statements added, **3** removed, **3** reworded, **4** references added and **2** removed, over 44 revisions. [Every edit](history/index.html).
 
-41 of the 364 revisions were reverts or were reverted; 72 were marked minor; 1 were anonymous. The article is now 29,830 bytes.
+41 of the 370 revisions were reverts or were reverted; 72 were marked minor; 1 were anonymous. The article is now 30,364 bytes.
 
 ## The Wikidata item
 
@@ -83,16 +83,20 @@ Wikidata, the structured sister of Wikipedia, holds item [Q141801185](https://ww
 | official website | `P856` | https://www.php2shell.com/ |
 | described at URL | `P973` | https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w; https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp |
 
+## The article over time, and its talk page
+
+[The evolution](evolution/index.html): every statement ever written as a bar from the edit that added it to the edit that removed it, the size and references over time, and the Wikidata item's own history. [The talk page](talk/index.html): what the editors discuss, including the edit requests outside parties made with a disclosed conflict of interest. [A reviewer's reading](review/index.html): the article against this site's captures, finding by finding, for a person to take to the talk page.
+
 ## What links here
 
 198 other articles link to this one, which is how a reader of Wikipedia arrives: from *PHP*, *2026*, the lists of security incidents, the pages of the companies named. The list is in [links-in.json](../../data/wikipedia/php2shell/links-in.json).
 
 ## Towards a measure of trust
 
-The editor's working view is that Wikipedia is a trusted source, and that this should be shown rather than assumed: by how often its statements are later corrected, against how often other publications are. This page does not compute a score; it keeps the counts a proof would start from, and the fact-check desk grades statements, not pages. For this article: 35 of 39 statements cited (89%); 16 of 42 references captured here, 12 of those primary sources; 41 reverts in 364 revisions; 8 of this site's contradictions touch evidence the article also cites.
+The editor's working view is that Wikipedia is a trusted source, and that this should be shown rather than assumed: by how often its statements are later corrected, against how often other publications are. This page does not compute a score; it keeps the counts a proof would start from, and the fact-check desk grades statements, not pages. For this article: 37 of 40 statements cited (92%); 17 of 44 references captured here, 12 of those primary sources; 41 reverts in 370 revisions; 8 of this site's contradictions touch evidence the article also cites.
 
-The text is Wikipedia's, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), by its contributors; the revision ids are the attribution, and this site's pages and data that carry it are under the same licence. It is republished so it can be read as a graph, diffed and followed to its evidence; nothing here is Wikipedia's view, and nothing on Wikipedia is this site's.
+The text is Wikipedia's, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), by its contributors; the revision ids are the attribution, and this site's pages and data that carry it are under the same licence: this page uses material from the Wikipedia article “PHP2Shell” ([link](https://en.wikipedia.org/wiki/PHP2Shell)), released under the [Creative Commons Attribution-Share-Alike License 4.0](https://creativecommons.org/licenses/by-sa/4.0/). It is republished so it can be read as a graph, diffed and followed to its evidence; nothing here is Wikipedia's view, and nothing on Wikipedia is this site's.
 
 
 ---
-site v0.20.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/index.html
+site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/index.html
