@@ -1,6 +1,15 @@
 {
- "current": "0.19.4",
+ "current": "0.19.5",
  "versions": [
+  {
+   "version": "0.19.5",
+   "date": "2026-10-25",
+   "title": "The Sherpa's 11:45 pass: headlines on the first screen of every page walked, the feedback menu one scrolling row on a phone (F036), prototype F read on a phone (F037), Latest still ends on 23 October (F032)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.19.4",
    "date": "2026-10-25",

@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.19.4. Not the live site.
+> Mockup D for review, built from the data of release v0.19.5. Not the live site.
 
-PHP Team console Console Overview Board 203 Agents 19 Releases 162 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 203 Agents 19 Releases 163 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.19.4 
-162 releases since 22 Oct 
+v0.19.5 
+163 releases since 22 Oct 
 
 Open on the board 
 203 
@@ -99,6 +99,7 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
 ### Releases
  latest 8 
 
+ v0.19.5 2026-10-25 The Sherpa's 11:45 pass: headlines on the first screen of every page walked, the feedback menu one scrolling row on a phone (F036)… 
  v0.19.4 2026-10-25 Journalist: debrief and status for the second wake 
  v0.19.3 2026-10-25 Journalist: evidence vault at 87795d121200, 15 claims reviewed, three new rows, as-of lines to 09:35 UTC on 25 October 
  v0.19.2 2026-10-25 Scheduled tasks on the site: /team/schedule/ shows what the account actually runs, each task checked against its card (times, sess… 
@@ -106,7 +107,6 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
  v0.19.0 2026-10-25 the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, wr… 
  v0.18.6 2026-10-25 Incident: the researcher and the curator run but leave no commit or run record; status and board say so 
  v0.18.5 2026-10-25 The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status 
- v0.18.4 2026-10-25 The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.19.4 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.19.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

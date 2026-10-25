@@ -40,8 +40,8 @@
 .fv-form textarea{width:100%;min-height:4rem;font:inherit}
 @media (max-width:760px){
   .fv{grid-template-columns:minmax(0,1fr)}
-  .fv-nav{position:static;max-height:none;flex-direction:row;flex-wrap:wrap}
-  .fv-nav a{border-left:0;border:1px solid var(--line)}
+  .fv-nav{position:static;max-height:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;padding-bottom:.2rem}
+  .fv-nav a{border-left:0;border:1px solid var(--line);flex:0 0 auto;white-space:nowrap}
   .fv-nav a span,.fv-g{display:none}
   .fv-row{grid-template-columns:minmax(0,1fr)}
   .fv-c{border-left:0;border-top:1px dashed var(--line)}

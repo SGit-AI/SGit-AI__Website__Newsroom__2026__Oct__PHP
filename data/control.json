@@ -859,6 +859,14 @@
    "run": "20261025T1134Z-journalist",
    "started": "2026-10-25T11:34:05Z",
    "summary": "Second wake, run by hand in the first session at the editor's request. Exported evidence vault 87795d121200 (was 8c16a64a7cf6): 418 sources, 479 captures; two curator wakes of 25 October. 15 new claims, each searched across every capture before any 'not in the vault' or 'one outlet' (the correspond…"
+  },
+  {
+   "agent": "sherpa",
+   "finished": "2026-10-25T11:50:28Z",
+   "outcome": "ok",
+   "run": "20261025T1146Z-sherpa",
+   "started": "2026-10-25T11:46:32Z",
+   "summary": "Full pass (11:45 London). Quiet wakes since 17:45 yesterday: 19:45, 21:45, 07:45, 09:45, both lanes empty each time, no run record left (the card's old rule; admin/schedule/WAKE.md, v0.19.1, now asks for one every wake, and the Sherpa follows it from now). Lanes drained: 58526ytp and d6zak0o3, noth…"
   }
  ],
  "schedules": [
@@ -1014,5 +1022,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.19.4"
+ "version": "0.19.5"
 }

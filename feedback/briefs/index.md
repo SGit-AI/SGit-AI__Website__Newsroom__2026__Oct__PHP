@@ -18,13 +18,14 @@ The brief to the conductor from every open friction, by owner and severity, and 
 - low **team/vaults/index.html:** Keep IDs on one line (white-space: nowrap on the ID cell, or give the column a minimum width). (F033; seen v0.14.3 to v0.14.3; the Sherpa)
 
 ### For [Story site agent](../../team/story-site/index.html)
-- high **briefings/board/index.html:** On phones, collapse 'Your reading' and the origin band into one line under the standfirst (or behind a 'Reading tools' toggle), and show the 'New to this story?' banner only on the front page and only once. Target: h1 inside the top 250px of the first screen. (F001; seen v0.4.3 to v0.15.4; the Sherpa)
+- high **briefings/board/index.html:** On phones, collapse 'Your reading' and the origin band into one line under the standfirst (or behind a 'Reading tools' toggle), and show the 'New to this story?' banner only on the front page and only once. Target: h1 inside the top 250px of the first screen. (F001; seen v0.4.3 to v0.19.2; the Sherpa)
 - high **patching/index.html:** Capture the Docker Official Images rebuild into the vault, add the tags to the row, and link the developer briefing to /stack/ for the backport check. (F004; seen v0.4.3 to v0.10.18; the Sherpa)
-- high **index.html:** Put them on the first screen, named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home. (F035; seen v0.14.14 to v0.15.4; CI-003)
+- high **index.html:** Put them on the first screen, named by task (Understand the incident, Check what I need to do, Explore the evidence), each opening its track's home. (F035; seen v0.14.14 to v0.19.2; CI-003)
 - medium **the whole site:** A 'Where next for you' block at the foot of every page, from the reader's chosen persona path (data/personas.json already holds the paths), falling back to the three most-read pages for a reader with no persona. (F007; seen v0.5.9 to v0.5.9; the Sherpa)
 - medium **every page:** Three steps, cheapest first: a one-screen guide to the site's own tools, linked from a '?' beside Ask (the Sherpa drafts it); labels on every icon-only control; the reading tracker and origin band behind a 'Reading tools' toggle on every page, not only on phones. (F011; seen v0.8.1 to v0.9.0; UF-001.5)
 - medium **index.html:** Put the number alone in the large type ('10') and move the unit into the small line ('organisations took websites offline, as a precaution'), as the other tiles already do with 'Yes' and 'Not yet'. A guard for the next long word: .tile b {overflow-wrap: anywhere}. The gate's browser check could flag any element wider than its tile. (F015; seen v0.8.1 to v0.8.2; UF-001.9)
-- medium **index.html (Latest) and timeline/index.html:** Feed 'Latest' and the timeline from the evidence vault at each export (the state of affairs v2 has the delta already). (F032; seen v0.10.18 to v0.10.18; synthetic readers, run 2)
+- medium **index.html (Latest) and timeline/index.html:** Feed 'Latest' and the timeline from the evidence vault at each export (the state of affairs v2 has the delta already). (F032; seen v0.10.18 to v0.19.2; synthetic readers, run 2)
+- medium **admin/design/line/index.html:** If prototype F ships: after the first visit, or once 'That's me' is pressed, fold the chooser into the one 'Executive' pill, so a returning reader gets the headline at the live page's height. On a first visit the chooser earns its place: it is the first step F035 asks for. (F037; seen v0.19.2 to v0.19.2; the Sherpa's 11:45 pass)
 - low **index.html source chips:** The publisher's short name on the chip, the full title on hover and focus. (F021; seen v0.8.1 to v0.8.2; UF-002)
 - low **the readers (data/personas.json) and the join form:** Add a Founder reader and sort the join form's list alphabetically, once the editor confirms. (F030; seen v0.9.3 to v0.9.3; UF-004)
 
@@ -52,6 +53,9 @@ The brief to the conductor from every open friction, by owner and severity, and 
 ### For [synthetic@php.newsroom](../../team/synthetic/index.html)
 - high **admin/synthetic/index.html:** The editor sets the two secrets (or a session runs the readers by hand after each release); the Sherpa turns each run's top fails into friction-log entries and board rows. (F008; seen v0.4.3 to v0.8.1; the Sherpa)
 
+### For [Sherpa](../../team/sherpa/index.html)
+- low **feedback/index.html:** On a phone, keep the menu to one row that scrolls sideways. (F036; seen v0.19.2 to v0.19.2; the Sherpa's 11:45 pass)
+
 ## To other teams
 
 ### For [pki.sgit.ai](https://pki.sgit.ai/handover.md)
@@ -60,4 +64,4 @@ The brief to the conductor from every open friction, by owner and severity, and 
 
 
 ---
-site v0.19.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/feedback/briefs/index.html
+site v0.19.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/feedback/briefs/index.html

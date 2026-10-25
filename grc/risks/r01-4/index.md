@@ -67,4 +67,4 @@ On this site: [The fix, mapped to the code](../../../review/index.html) · [The 
 
 
 ---
-site v0.19.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-4/index.html
+site v0.19.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-4/index.html
