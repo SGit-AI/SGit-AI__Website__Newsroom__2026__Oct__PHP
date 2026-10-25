@@ -2382,7 +2382,7 @@
    "title": "One repository into six, step 1: the one big session (press, data, team, refs, updates, site; every old address answering; the parity report; the replay), then each agent reviews its own repository",
    "status": "open",
    "owner": "dev@php.newsroom",
-   "note": "After step 0. The press goes to security for review before v1.0.0."
+   "note": "Pass one done on 25 October (press v1.0.0, data v0.1.1, site, refs, updates and team cut from v1 at d9af616ffd0b, every old address answering, each site's gate); pass two moves the sources and the build. After step 0. The press goes to security for review before v1.0.0."
   },
   {
    "id": "324",
@@ -2412,6 +2412,20 @@
    "status": "open",
    "owner": "claude-story-site",
    "note": "The older 'Reading as' bar is hidden where the line runs (one message at a time), and with it its reading path, which should come back in the line. Dated addresses open today's page for now."
+  },
+  {
+   "id": "328",
+   "title": "The six new repositories have not deployed: set each one's Pages source to 'Deploy from a branch: dev, / (root)' (or a deploy workflow, through security), then dev checks every site live",
+   "status": "open",
+   "owner": "editor",
+   "note": "No Pages build has run in any of them (25 October); their content is on dev."
+  },
+  {
+   "id": "329",
+   "title": "The line's prototype pages under /admin/design/line/ link to sources one level too shallow (../../../sources/… from admin/design/line/agencies/, 27 links, broken in v1 too)",
+   "status": "open",
+   "owner": "story-site",
+   "note": "Found by the press's partition on 25 October (press.json broken_in_v1 in the team site)."
   }
  ],
  "evidence_vault": {

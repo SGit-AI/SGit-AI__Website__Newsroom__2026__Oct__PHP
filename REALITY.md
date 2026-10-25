@@ -223,6 +223,12 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 - Scripts resolve their requests against the real page (`window.P2S_BASE`, and a fetch shim in `boot.js`), because the
   security policy rules out `<base>`.
 
+## One repository into six, pass one (dev@php.newsroom, 25 October 2026)
+- The six repositories exist (`…__PHP__press`, `__data`, `__refs`, `__updates`, `__team`, `__site`), each with `dev` as default and its custom domain (`next.php.oct.2026.newsroom.sgit.ai` for the site until the cutover). This repository is still where every page is built and every agent writes.
+- **press v1.0.0:** `sites.json` (which site owns which section) and `tools/partition.py`, which cuts this repository's committed output at one commit into a site. It installs each site's gate and release.
+- **The four sites:** cut at `d9af616ffd0b` (v0.22.0). site has 230 pages of its own, refs 563, updates 60, team 242; every other address answers with a redirect. **data** v0.1.1: 49 entries, 466 files, a schema each. **team**: its records under `records/`, the board one file per row.
+- Not deployed yet: their Pages source must be "Deploy from a branch" (dev, root), or get a workflow (security review).
+
 ## Recorded, not started
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
 

@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.1 · 25 October 2026new since your last visit
+
+pass one of the split, recorded: the press (v1.0.0) cuts this site's built pages at d9af616ffd0b into four sites (site 230 pages, refs 563, updates 60, team 242), each with a redirect at every address another site owns, its own gate and the runtime its pages load; data v0.1.1 at the same commit; team's records under records/; none deployed yet (each repository's Pages source to set to its dev branch)
+
+No reader-facing section changed in this release.
+
 ## v0.22.0 · 25 October 2026new since your last visit
 
 the line is live on every page in place of the two dials, and the router: /agencies/as/security/ opens the agencies for Security, every page keeps its view in the address bar (/as/executive/ on the front page), 404.html answers any view address, and 28 cards for the front page, the agencies, the numbers and the playbook unfurl with who they are for
@@ -1358,4 +1364,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.22.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -5,4 +5,4 @@ Every part, in the usual order. About 9 minutes.
 A view of [The front page](https://php.oct.2026.newsroom.sgit.ai/index.html), written for everyone, unfiltered. The page itself, and its markdown twin, are at that address.
 
 ---
-site v0.22.0 · https://php.oct.2026.newsroom.sgit.ai/as/everything/index.html
+site v0.22.1 · https://php.oct.2026.newsroom.sgit.ai/as/everything/index.html

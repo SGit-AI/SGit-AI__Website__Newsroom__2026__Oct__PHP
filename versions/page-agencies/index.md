@@ -15,4 +15,4 @@ v3 · site v0.13.0 · 24 October 2026 · 109 lines added or changed, 0 removed o
 
 
 ---
-site v0.22.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/versions/page-agencies/index.html
+site v0.22.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/versions/page-agencies/index.html

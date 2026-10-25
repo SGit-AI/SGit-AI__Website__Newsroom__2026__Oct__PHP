@@ -1,6 +1,15 @@
 {
- "current": "0.22.0",
+ "current": "0.22.1",
  "versions": [
+  {
+   "version": "0.22.1",
+   "date": "2026-10-25",
+   "title": "pass one of the split, recorded: the press (v1.0.0) cuts this site's built pages at d9af616ffd0b into four sites (site 230 pages, refs 563, updates 60, team 242), each with a redirect at every address another site owns, its own gate and the runtime its pages load; data v0.1.1 at the same commit; team's records under records/; none deployed yet (each repository's Pages source to set to its dev branch)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.22.0",
    "date": "2026-10-25",
