@@ -1,6 +1,15 @@
 {
- "current": "0.21.8",
+ "current": "0.21.9",
  "versions": [
+  {
+   "version": "0.21.9",
+   "date": "2026-10-25",
+   "title": "the split's names, as the editor decided: press (not kit) for the build library, the gate, the release and the shared components, at press.newsroom.sgit.ai; data keeps its name (api is the newsroom's main API); the plan's step 0 lists the six DNS records, and its site step follows story-site's URL-path and 404-router briefs",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.21.8",
    "date": "2026-10-25",

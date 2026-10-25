@@ -8,11 +8,18 @@ A Claude session can now hold more than one repository. So one session can attac
 
 ## The names
 
+Decided by the editor on 25 October 2026:
+- **The six repositories** are `press`, `data`, `refs`, `updates`, `team` and `site`.
+- **`press`, not `kit`.** It typesets (the build), proofs (the gate) and publishes (the release) every site, and supplies the shared components.
+- **`data`, not `api`.** "API" is kept for the newsroom's main API, which the site already uses for billing.
+- **`site`** is the main UI's repository.
+
+
 The new repositories get their final names from the start. Only today's repository is renamed, once, at the cutover. Every name starts with `SGit-AI__Website__Newsroom__2026__Oct__PHP`, written `…` below:
 
 | Repository | Site | Live from |
 | --- | --- | --- |
-| `…__PHP__kit` | kit.newsroom.sgit.ai | day one (it can serve the other story sites too) |
+| `…__PHP__press` | press.newsroom.sgit.ai | day one (it can serve the other story sites too) |
 | `…__PHP__data` | data.php.oct.2026.newsroom.sgit.ai | day one |
 | `…__PHP__refs` | refs.php.oct.2026.newsroom.sgit.ai | day one |
 | `…__PHP__updates` | updates.php.oct.2026.newsroom.sgit.ai | day one |
@@ -29,7 +36,18 @@ Why not build in a "php-v2" repository and rename it to the main name later:
 ## Step 0: the editor's setup (before the session)
 
 1. Create the six repositories in the SGit-AI organisation, each with a `dev` branch as default, empty but for a README.
-2. For each, turn Pages on with "GitHub Actions" as the source, and add its custom domain. In DNS, give each subdomain in the table a CNAME to `sgit-ai.github.io`, plus `next.php.oct.2026.newsroom.sgit.ai` for the staging site.
+2. For each, turn Pages on with "GitHub Actions" as the source, and add its custom domain. In DNS, the same record as today's site (a CNAME to `sgit-ai.github.io.`, TTL 300):
+
+```
+press.newsroom.sgit.ai                 CNAME  sgit-ai.github.io.
+data.php.oct.2026.newsroom.sgit.ai     CNAME  sgit-ai.github.io.
+refs.php.oct.2026.newsroom.sgit.ai     CNAME  sgit-ai.github.io.
+updates.php.oct.2026.newsroom.sgit.ai  CNAME  sgit-ai.github.io.
+team.php.oct.2026.newsroom.sgit.ai     CNAME  sgit-ai.github.io.
+next.php.oct.2026.newsroom.sgit.ai     CNAME  sgit-ai.github.io.
+```
+
+   php.oct.2026.newsroom.sgit.ai needs no new record: at the cutover only its Pages setting moves. Verify `sgit.ai` in the organisation's Pages settings, so no other account can claim a subdomain before its repository serves it, and turn on HTTPS for each once its certificate is issued.
 3. Give the Claude GitHub app access to the six, and the same rulesets as today's repository: no force-push, no deleting `dev`, `main` protected.
 4. Start one session with all seven repositories attached, and give it the go for the steps below.
 
@@ -37,14 +55,14 @@ Why not build in a "php-v2" repository and rename it to the main name later:
 
 The session works in all seven at once. Agents keep releasing into today's repository while it works. Every move reads today's repository at a recorded commit, and step 1.8 replays what landed after it.
 
-1. **kit.** Lift the build library out of `admin/build/build.py` (7,847 lines) and `design.py`:
+1. **press.** Lift the build library out of `admin/build/build.py` (7,847 lines) and `design.py`:
    - `page()`, the layout, `E()`, `U()` and `J()`, the markdown and article renderers (figures, split, slider, diff), `render_md_file()`;
    - the generic part of the gate (links, sitemap, determinism, credential shapes);
    - `release.sh` made per-repository (one config file: what to build, what to check);
    - `security_check.py`;
    - the shared components (graph, dials, Ask, telemetry, the reader's vault, compare).
 
-   Publish v1.0.0 at kit.newsroom.sgit.ai/v/1.0.0/ with a sha256 for every file. Each consumer keeps a vendored copy in `kit/`, fetched by `kit sync 1.0.0` and checked against those sums, so a build never needs the network. Security reviews the kit before v1.0.0 is published (it holds the gate and the release script).
+   Publish v1.0.0 at press.newsroom.sgit.ai/v/1.0.0/ with a sha256 for every file. Each consumer keeps a vendored copy in `press/`, fetched by `press sync 1.0.0` and checked against those sums, so a build never needs the network. Security reviews the press before v1.0.0 is published (it holds the gate and the release script).
 2. **data.** Move `data/*.json` that are evidence or derived, and their exporters:
    - the files: `export_vault.py`, `export_watch.py`, `export_loops.py`, `grc_history.py`, `release_pages.py`;
    - a JSON schema for every file, written from today's files;
@@ -57,7 +75,7 @@ The session works in all seven at once. Agents keep releasing into today's repos
    - Its gate: schemas and the scope check, in seconds.
 4. **refs.** The source pages (about 840 files), what each source says, the claims as evidence; built from data at a pinned version.
 5. **updates.** The state of affairs and its versions, the desk, what is new, the line, the feeds; built from data at a pinned version.
-6. **site.** What is left: the homes, briefings, questions, stories, tools, the risk graph's pages. Built from data and the kit at pinned versions, served on next.php.oct.2026.newsroom.sgit.ai.
+6. **site.** What is left: the homes, briefings, questions, stories, tools, the risk graph's pages. Its routing follows story-site's two briefs of 25 October, "Refactoring the site to URL paths and a single page" and "The 404 router, and a site with two modes": the persona in the path, and the 404 router, which also answers the moved addresses of step 1.7. Built from data and the press at pinned versions, served on next.php.oct.2026.newsroom.sgit.ai.
 7. **Every old address still answers.** Each of today's 1,058 pages, with its markdown twin, either exists in the new site or redirects to its new home. Two examples: `/team/…` goes to team.php…, `/sources/…` to refs.php…. Today's sitemap is the list. The site's gate checks every entry answers, so nothing a reader or a search engine kept breaks.
 8. **Parity, then the replay.**
    - **Parity:** a report compares every page's main text in today's site with the new one. It uses `release_pages.py`'s comparison: same words, version numbers masked. Every difference is listed and explained.
@@ -102,7 +120,6 @@ Going back is one step while the old repository is still there: move the custom 
 
 ## Decisions still the editor's
 
-1. The names in the table, including `kit.newsroom.sgit.ai` as a newsroom-wide kit rather than one for this story only.
-2. Whether `data`, `updates` and `team` build at deploy time (commit only sources) or commit their output as today. The proposal recommends deploy-time builds; it is a workflow change, so it goes through security review.
-3. A day for the session, and whether the scheduled agents pause during the replay (step 1.8) or keep running.
-4. Whether the persona-first proposal (parked on dev's branch) is built in the new site straight away, or after the cutover.
+1. Whether `data`, `updates` and `team` build at deploy time (commit only sources) or commit their output as today. The proposal recommends deploy-time builds; it is a workflow change, so it goes through security review.
+2. A day for the session, and whether the scheduled agents pause during the replay (step 1.8) or keep running.
+3. Whether the persona-first proposal (parked on dev's branch) is built in the new site straight away, or after the cutover.

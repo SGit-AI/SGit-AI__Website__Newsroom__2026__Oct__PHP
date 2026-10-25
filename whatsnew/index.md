@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.21.9 · 25 October 2026new since your last visit
+
+the split's names, as the editor decided: press (not kit) for the build library, the gate, the release and the shared components, at press.newsroom.sgit.ai; data keeps its name (api is the newsroom's main API); the plan's step 0 lists the six DNS records, and its site step follows story-site's URL-path and 404-router briefs
+
+No reader-facing section changed in this release.
+
 ## v0.21.8 · 25 October 2026new since your last visit
 
 Conductor full pass 15:15 London: two run records carried in from runs/ branches, the wiring of every scheduled task on /team/status/
@@ -1340,4 +1346,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.21.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.21.9 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

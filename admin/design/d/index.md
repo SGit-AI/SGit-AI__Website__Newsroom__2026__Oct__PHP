@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.21.8. Not the live site.
+> Mockup D for review, built from the data of release v0.21.9. Not the live site.
 
-PHP Team console Console Overview Board 211 Agents 19 Releases 181 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 211 Agents 19 Releases 182 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.21.8 
-181 releases since 22 Oct 
+v0.21.9 
+182 releases since 22 Oct 
 
 Open on the board 
 211 
@@ -33,10 +33,10 @@ Sources in the vault
 #### Open 211
 
  #323 
-One repository into six, step 1: the one big session (kit, data, team, refs, updates, site; every old address answering;… 
+One repository into six, step 1: the one big session (press, data, team, refs, updates, site; every old address answerin… 
  dev@php.newsroom 
  #322 
-One repository into six, step 0: create the six repositories (…__PHP__kit, __data, __refs, __updates, __team, __site), P… 
+One repository into six, step 0: create the six repositories (…__PHP__press, __data, __refs, __updates, __team, __site),… 
  editor 
  #320 
 Watch a second Wikipedia article: 'Black October (information security)' (en.wikipedia.org, Wikidata Q141842194), starte… 
@@ -99,6 +99,7 @@ The line on a phone: it no longer holds the top of the screen (the editor, on an
 ### Releases
  latest 8 
 
+ v0.21.9 2026-10-25 the split's names, as the editor decided: press (not kit) for the build library, the gate, the release and the shared components, … 
  v0.21.8 2026-10-25 Conductor full pass 15:15 London: two run records carried in from runs/ branches, the wiring of every scheduled task on /team/stat… 
  v0.21.7 2026-10-25 the plan for one repository into six, agreed by the editor: final names from day one (…__PHP__kit, data, refs, updates, team, site… 
  v0.21.6 2026-10-25 the briefs page sorts by the time each brief was published, newest first, and shows that time on every row and every brief's page … 
@@ -106,7 +107,6 @@ The line on a phone: it no longer holds the top of the screen (the editor, on an
  v0.21.4 2026-10-25 decks: what ruv.sgit.ai does and how it changes the deck per persona (one slide library and seven persona tracks in ruv's timeline… 
  v0.21.3 2026-10-25 The desk's round 3 closed: its scheduled task wired to its card and its wakes moved after the correspondent's reviews, with a debr… 
  v0.21.2 2026-10-25 The Sherpa's 13:45 wake: run record (idle, both lanes empty) 
- v0.21.1 2026-10-25 The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prom… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ The line on a phone: it no longer holds the top of the screen (the editor, on an
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.21.8 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.21.9 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
