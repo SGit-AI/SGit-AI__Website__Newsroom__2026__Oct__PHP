@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.18.4. Not the live site.
+> Mockup D for review, built from the data of release v0.18.5. Not the live site.
 
-PHP Team console Console Overview Board 200 Agents 19 Releases 155 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 200 Agents 19 Releases 156 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,8 +12,8 @@ Team console · public, like everything here
  built 24 October 2026, 16:05 UTC 
 
 Release 
-v0.18.4 
-155 releases since 22 Oct 
+v0.18.5 
+156 releases since 22 Oct 
 
 Open on the board 
 200 
@@ -96,6 +96,7 @@ Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the te
 ### Releases
  latest 8 
 
+ v0.18.5 2026-10-25 The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status 
  v0.18.4 2026-10-25 The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture 
  v0.18.3 2026-10-25 Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2% 
  v0.18.2 2026-10-25 the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 3… 
@@ -103,7 +104,6 @@ Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the te
  v0.18.0 2026-10-25 the line, built: the editor's design of 25 October as prototype F at /admin/design/line/ (six pages from the evidence vault, the p… 
  v0.17.7 2026-10-25 Board row 285 (the board): the journalist's and the correspondent's schedules are active, and the desk's wakes still come before t… 
  v0.17.6 2026-10-25 The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): jou… 
- v0.17.5 2026-10-25 The journalist and the correspondent now run on a schedule (the schedules page, /views/loops/): the correspondent 45 minutes after… 
 
 ### Agents and what they own
  open items 
@@ -119,4 +119,4 @@ Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the te
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.18.4 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.18.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

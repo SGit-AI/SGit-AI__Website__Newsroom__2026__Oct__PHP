@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today240runs recorded84runs with changes and no article
+2schedules20runs a night, today241runs recorded84runs with changes and no article
 
 ## Quiet hours
 
@@ -33,7 +33,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 155, researcher@php.newsroom: 38, Conductor: 13, synthetic@php.newsroom: 12, Fact-check desk: 6, factcheck: 4, desk: 3, Sherpa: 3, librarian@php.newsroom: 2, correspondent: 1, Ontologist: 1, Journalist: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 156, researcher@php.newsroom: 38, Conductor: 13, synthetic@php.newsroom: 12, Fact-check desk: 6, factcheck: 4, desk: 3, Sherpa: 3, librarian@php.newsroom: 2, correspondent: 1, Ontologist: 1, Journalist: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -42,6 +42,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-25T08:52:00Z | factcheck | Scheduled wake | `20261025T0852Z-factcheck` | Daily sweep 08:52 London (one quiet wake before, 20:52 on 24 October): new fc.py drift found six excerpts gone from re-captured sources, all explained; watchtowr-itw now carried by watchTowr's own pages (A6, Finding-127); no-confirmed-compromise still holds at 16:05 UTC on 24 October; W3Techs at 69.2%; KEV unchanged; audit 0 failures. Page: /factcheck/ | yes | missing | [output](../../team/schedule/factcheck/index.html) |
 | 2026-10-25T07:16:04Z | [Conductor](../conductor/index.html) | Scheduled wake | `20261025T0716Z-conductor` | Full pass (07:15 London; clocks went back to GMT overnight, the task fires at 07:15 London). Dev head 8bcebd32 area at v0.18.0 taken in; inbox empty; 3 notes read (CodeQL hardening: derive data-root as a count; the correspondent's board 283 and debrief). Lanes: no key. New cards: journalist (Sonnet) and correspondent (Opus), active from 00:40 London, first wakes 08:40 and 09:25. Ontologist left its first run record (21:50 UTC). Still no run record: researcher, curator, pulse (no card). Status page rewritten from 25 sessions, 15 scheduled tasks and 19 branches ahead of dev. | yes | missing | [output](../../team/schedule/conductor/index.html) |
 | 2026-10-25T07:13:23Z | [librarian@php.newsroom](../librarian/index.html) | Scheduled wake | `20261025T0713Z-librarian` | Pass of 25 October: dev at v0.18.0; 0 overlaps; owners for 395 files and 56 pages proposed to abp@ (board 300); the correspondent's ROLE.md drafted (board 277); the reader answers escaped (raw HTML since v0.2.6, found by the appsec self-check); the ontologist's policy request declined by the rule (abp@'s file, board 295). | yes | missing | [output](../../team/schedule/librarian/index.html) |
+| 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.18.5` | The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.18.4` | The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.18.3` | Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2% | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.18.2` | the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 300), the correspondent's role drafted (board 277), and the reader answers escaped: authored HTML inserted raw since v0.2.6, found by the appsec self-check | yes | its release note | [output](../../admin/versions.html) |
@@ -280,4 +281,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.18.4 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.18.5 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

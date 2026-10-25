@@ -1,6 +1,15 @@
 {
- "current": "0.18.4",
+ "current": "0.18.5",
  "versions": [
+  {
+   "version": "0.18.5",
+   "date": "2026-10-25",
+   "title": "The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.18.4",
    "date": "2026-10-25",
