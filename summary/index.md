@@ -36,7 +36,7 @@ Open questions, stated rather than papered over. Each one names what would close
 - Whether the deleted Calif video is the one now embedded on Calif's own write-up. Calif's page does not mention the leak.
 - Whether any site was actually compromised before it was patched or taken offline. Every claim of exploitation so far is of attempts, probes or honeypot hits, and the named cases do not state php2shell as the cause. Authorities in Singapore and Luxembourg now ask operators to look for traces; the answer will come from those searches, if it comes.
 - Which sites were really taken offline, and why. The list now draws on more captured reports (Germany's hospitals and hosts, Morocco, Romania, Japan), but most are press accounts; few come from the organisations themselves (the Dutch government, Latvia's agency, Weird Gloop, the Charité's spokesman as quoted). A community tracker counts 51 listed and 50 back.
-- Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
+- Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. On 23 October PHP published an informational advisory for a separate flaw, CVE-2026-115560, in the session upload progress feature, reported by Cloudflare, SOCRadar and The Hacker News: it affects fully patched releases including 8.5.12, needs a rare session setting, will be fixed in the next regular release, and has session.upload_progress.enabled=0 as the mitigation; SOCRadar reports no exploitation and no severity score. PHP's advisory is not in the evidence vault, and whether this is the bug the Fediverse report described is not stated.
 - What the 70% figure is measured from. None of the three pages that carry it names the measurement.
 - The model and the method. Calif says no special harness and names no model; OpenAI's blog, which we could not capture, reportedly names GPT-5.6 Sol; Wiz names Gemini 4 Argon, GPT-5.6 Sol and Wiz Atlas. What did the models do and what did the people do?
 - OpenAI's own blog post, the Patch the Planet launch post, the Spanish and Portuguese advisories and the Techzine piece on Chainguard are all blocked by bot challenges from this capture environment. The block is recorded; the content is not read.
@@ -62,4 +62,4 @@ Every source is captured into a private, encrypted vault, each file hashed at ca
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/summary/index.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/summary/index.html

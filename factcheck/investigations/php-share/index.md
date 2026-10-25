@@ -54,6 +54,7 @@ W3Techs: PHP, websites whose server-side language is knownHTTP Archive: PHP, all
 | W3Techs, PHP, known-language sites | 2025-01-01 | 75.2% |
 | W3Techs, PHP, known-language sites | 2026-01-01 | 72.4% |
 | W3Techs, PHP, known-language sites | 2026-10-23 | 69.3% |
+| W3Techs, PHP, known-language sites | 2026-10-25 | 69.2% |
 | HTTP Archive, PHP, all origins (mobile) | 2020-01-01 | 51.0% |
 | HTTP Archive, PHP, all origins (mobile) | 2021-01-01 | 50.2% |
 | HTTP Archive, PHP, all origins (mobile) | 2022-01-01 | 56.9% |
@@ -356,4 +357,4 @@ The full table
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/factcheck/investigations/php-share/index.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/factcheck/investigations/php-share/index.html

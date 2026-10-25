@@ -6,7 +6,133 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.17.0. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.19.1. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.19.1 · 2026-10-25
+
+Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's prompt made small (board 303)
+Pages changed (21): Schedule: pulse new · Schedule: conductor · Schedule: sherpa · Schedule: researcher · Schedule: every agent that runs on its own · Schedule: correspondent · Schedule: journalist · Schedule: curator and 13 more
+[Schedule: desk](../team/schedule/desk/index.html) · [Schedule: factcheck](../team/schedule/factcheck/index.html) · [Schedule: librarian](../team/schedule/librarian/index.html) · [Schedule: ontologist](../team/schedule/ontologist/index.html) · [Every member: who owns what](../admin/agents/roles/index.html) · [The fact pipeline: from a web page to a reader](../pipeline/index.html) · [PHP in October 2026: two critical security flaws, tracked as evidence](../index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.19.0 · 2026-10-25
+
+the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, written before the work, on URL paths, a persona in the address (/agencies/as/security/) and a single-page site that keeps every page's own path and its SEO
+Pages changed (14): Briefs · Story site agent: role, policy and rounds · Story site agent, design, claims and the story pages: the team · Dinis Cruz, Editor: the team · The fact pipeline: from a web page to a reader · The team: the people, the agents and how they work together · Every round: what each member did · What changed in the risk graph, release by release and 6 more
+[The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.18.6 · 2026-10-25
+
+Incident: the researcher and the curator run but leave no commit or run record; status and board say so
+Pages changed (15): Control room: every agent at a glance · Dinis Cruz, Editor: the team · Schedule: every agent that runs on its own · Schedule: conductor · PHP in October 2026: two critical security flaws, tracked as evidence · The fact pipeline: from a web page to a reader · The team: the people, the agents and how they work together · What changed in the risk graph, release by release and 7 more
+[The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [Status: where every agent is](../team/status/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.18.5 · 2026-10-25
+
+The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status
+Pages changed (9): News desk chief: role, policy and rounds · Every round: what each member did · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Admin and engineering · Release history · Runs: what the agents do on their own, and every time they did it · How the story changed, release by release and 1 more
+[What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.18.4 · 2026-10-25
+
+The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture
+Pages changed (15): Schedule: every agent that runs on its own · Schedule: desk · Schedule: journalist · Journalist, dated state-of-affairs articles: the team · Primary-source collector, primary sources: the team · PHP in October 2026: two critical security flaws, tracked as evidence · The fact pipeline: from a web page to a reader · The team: the people, the agents and how they work together and 7 more
+[What changed in the risk graph, release by release](../grc/changes/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.18.3 · 2026-10-25
+
+Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2%
+Pages changed (44): Fact-check: how sure can you be of each claim · Fact: watchTowr sees active exploitation attempts and lists the flaw… · Schedule: every agent that runs on its own · Schedule: factcheck · Fact: As of 16:05 UTC on 24 October, no named organisation has said… · Fact: The out-of-memory issue was found in a 2024 audit by Quarkslab… · Schedule: conductor · Schedule: desk and 36 more
+[How much PHP is there, and where does '70%' come from?](../factcheck/investigations/php-share/index.html) · [Briefing for an analyst or advisor: How did coordinated disclosure f…](../briefings/analyst/index.html) · [Briefing for a head of AppSec: Which of our applications are in scop…](../briefings/appsec/index.html) · [Briefing for a board member or executive: Are we exposed, what is it…](../briefings/board/index.html) · [Briefing for a CFO: What is the financial exposure, what does downti…](../briefings/cfo/index.html) · [Briefing for a CISO: What is our exposure, what is our evidence we w…](../briefings/ciso/index.html) · [Briefing for a curious reader: What happened, does it affect me, and…](../briefings/everyone/index.html) · [Briefing for a security lead: What do I patch first, what do I watch…](../briefings/security/index.html) · [Briefing for a website owner: My website runs on WordPress or simila…](../briefings/site-owner/index.html) · [Every claim, with its status and sources](../claims/index.html) · [Briefing for a data protection officer: Was personal data exposed, d…](../briefings/dpo/index.html) · [watchTowr: what they say](../actors/watchtowr/index.html) · [Source: watchtowr.com](../sources/watchtowr-php2shell-faq/index.html) · [Source: watchtowr.com](../sources/watchtowr-php2shell/index.html) · [PHP in October 2026: two critical security flaws, tracked as evidence](../index.html) · [R03-3: Exploited in the wild without anyone being able to show it](../grc/risks/r03-3/index.html) · [R06-3: Manufacturers under the Cyber Resilience Act owe a 24-hour re…](../grc/risks/r06-3/index.html) · [The fact pipeline: from a web page to a reader](../pipeline/index.html) · [The story as a graph: who states what, who relays it, and what it re…](../graph/index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [Questions readers ask about php2shell](../questions/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [Briefing: Analyst or advisor: version history](../versions/briefing-analyst/index.html) · [Briefing: Head of AppSec: version history](../versions/briefing-appsec/index.html) · [Briefing: Board member or executive: version history](../versions/briefing-board/index.html) · [Briefing: CFO: version history](../versions/briefing-cfo/index.html) · [Briefing: CISO: version history](../versions/briefing-ciso/index.html) · [Briefing: Data protection officer: version history](../versions/briefing-dpo/index.html) · [Briefing: Curious reader: version history](../versions/briefing-everyone/index.html) · [Briefing: Security lead: version history](../versions/briefing-security/index.html) · [Briefing: Website owner: version history](../versions/briefing-site-owner/index.html) · [How the story changed, release by release](../versions/index.html) · [Every claim: version history](../versions/page-claims/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.18.2 · 2026-10-25
+
+the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 300), the correspondent's role drafted (board 277), and the reader answers escaped: authored HTML inserted raw since v0.2.6, found by the appsec self-check
+Pages changed (24): librarian@php.newsroom: role, policy and rounds · Schedule: every agent that runs on its own · Schedule: librarian · Every round: what each member did · Every member: who owns what · Schedule: ontologist · PHP in October 2026: two critical security flaws, tracked as evidence · The fact pipeline: from a web page to a reader and 16 more
+[What changed in the risk graph, release by release](../grc/changes/index.html) · [Has anyone actually been hacked?](../questions/been-hacked/index.html) · [Do our developers need to change our code?](../questions/change-code/index.html) · [Can anything be done to fix it, or do we just have to wait for updat…](../questions/fix-or-wait/index.html) · [Is PHP really the software behind most websites?](../questions/most-websites/index.html) · [We are on PHP 7.4, 8.0 or 8.1. Is there a patch?](../questions/old-php/index.html) · [Do I need to change my passwords?](../questions/passwords/index.html) · [Should we take our site offline?](../questions/take-offline/index.html) · [We are behind Cloudflare (or another firewall). Are we safe?](../questions/waf-enough/index.html) · [Why is this such big news?](../questions/why-big-news/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.18.1 · 2026-10-25
+
+Conductor full pass 07:15 London on 25 October: agents-status, schedules against runs, run record
+Pages changed (12): Control room: every agent at a glance · Schedule: every agent that runs on its own · Schedule: conductor · PHP in October 2026: two critical security flaws, tracked as evidence · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Admin and engineering · Release history and 4 more
+[Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [Status: where every agent is](../team/status/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.18.0 · 2026-10-25
+
+the line, built: the editor's design of 25 October as prototype F at /admin/design/line/ (six pages from the evidence vault, the pack's engine and words vendored with its 19 tests, the numbers filled from data); story-site's round 3
+Pages changed (14): Briefs · Story site agent: role, policy and rounds · Story site agent, design, claims and the story pages: the team · Dinis Cruz, Editor: the team · Every round: what each member did · The fact pipeline: from a web page to a reader · The team: the people, the agents and how they work together · What changed in the risk graph, release by release and 6 more
+[The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.17.7 · 2026-10-25
+
+Board row 285 (the board): the journalist's and the correspondent's schedules are active, and the desk's wakes still come before the correspondent's review
+Pages changed (8): The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · The board · Admin and engineering · Release history · Runs: what the agents do on their own, and every time they did it · How the story changed, release by release · What's new: every change, release by release
+ Vault commit `8c16a64a7cf6`.
+
+### v0.17.6 · 2026-10-25
+
+The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): journalist 40 minutes after the curator, correspondent 45 minutes after the journalist
+Pages changed (12): Schedule: every agent that runs on its own · Briefs · Schedule: correspondent · Schedule: journalist · The fact pipeline: from a web page to a reader · Every loop: from the researcher to the correspondent · What changed in the risk graph, release by release · Admin and engineering and 4 more
+[Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.17.5 · 2026-10-25
+
+The journalist and the correspondent now run on a schedule (the schedules page, /views/loops/): the correspondent 45 minutes after each of the journalist's five wakes, so every loop closes within the hour
+Pages changed (12): Schedule: correspondent · Schedule: journalist · Schedule: every agent that runs on its own · Every loop: from the researcher to the correspondent · Briefs · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Admin and engineering and 4 more
+[Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.17.4 · 2026-10-25
+
+Every loop, on one page (/views/loops/): the pipeline from the researcher to the correspondent, the last full loop, the next one due, every loop so far, timings, blind spots and the numbers; and the home page now shows the latest evidence time and the last agent run instead of 'last checked'
+Pages changed (14): Every loop: from the researcher to the correspondent new · Evidence, derived, authored: what each file is · Briefs · PHP in October 2026: two critical security flaws, tracked as evidence · Every member: who owns what · Questions readers ask about php2shell · The fact pipeline: from a web page to a reader · The billing model: what runs and what is designed and 6 more
+[What changed in the risk graph, release by release](../grc/changes/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.17.3 · 2026-10-24
+
+The readers' answers on the home page, the start page and three briefings brought to 16:05 UTC on 24 October, and the engineer's answer warns of CVE-2026-115560 (persona answers, /briefings/engineer/)
+Pages changed (22): The journalist's desk: keeping the site current · Who is reading? The readers of this site, mapped · Briefing for a PHP or platform engineer: Which versions, which SAPIs… · Briefing for a board member or executive: Are we exposed, what is it… · Briefing for a CFO: What is the financial exposure, what does downti… · Briefing for a curious reader: What happened, does it affect me, and… · PHP in October 2026: two critical security flaws, tracked as evidence · In context: php2shell against Kaminsky, Heartbleed, Shellshock, Log4… and 14 more
+[The fact pipeline: from a web page to a reader](../pipeline/index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [Analysis: how sure we are, and where the sources disagree](../analysis/index.html) · [Operations: what changed, what to do next, how sure we are](../ops/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [Briefing: Board member or executive: version history](../versions/briefing-board/index.html) · [Briefing: CFO: version history](../versions/briefing-cfo/index.html) · [Briefing: PHP or platform engineer: version history](../versions/briefing-engineer/index.html) · [Briefing: Curious reader: version history](../versions/briefing-everyone/index.html) · [How the story changed, release by release](../versions/index.html) · [In context: 2008 to 2026: version history](../versions/page-context/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.17.2 · 2026-10-24
+
+The correspondent's first review: nine corrections to the journalist's 94 verdicts and rows (/views/desk/, /claims/review/), PHP's third flaw CVE-2026-115560 on the summary page
+Pages changed (53): Claims waiting for review · The journalist's desk: keeping the site current · Schedule: correspondent · Schedule: every agent that runs on its own · Briefs · Briefing for a CISO: What is our exposure, what is our evidence we w… · Briefing for an analyst or advisor: How did coordinated disclosure f… · Briefing for a CTO: What does this cost us in engineering time, what… and 45 more
+[Briefing for a head of AppSec: Which of our applications are in scop…](../briefings/appsec/index.html) · [Briefing for a board member or executive: Are we exposed, what is it…](../briefings/board/index.html) · [Briefing for a CFO: What is the financial exposure, what does downti…](../briefings/cfo/index.html) · [Briefing for a media and communications team: What can we say that i…](../briefings/comms/index.html) · [Briefing for a curious reader: What happened, does it affect me, and…](../briefings/everyone/index.html) · [Briefing for a website owner: My website runs on WordPress or simila…](../briefings/site-owner/index.html) · [The specialist summary: CVE-2026-109618 and CVE-2026-109619](../summary/index.html) · [Briefing for a developer: Is my code the problem, what do I change,…](../briefings/developer/index.html) · [Briefing for a data protection officer: Was personal data exposed, d…](../briefings/dpo/index.html) · [Briefing for a PHP or platform engineer: Which versions, which SAPIs…](../briefings/engineer/index.html) · [Briefing for a journalist: Which numbers hold up, who said what firs…](../briefings/journalist/index.html) · [Briefing for a project or programme manager: What unplanned work doe…](../briefings/pm/index.html) · [Briefing for a security researcher: What are the bug classes, what w…](../briefings/researcher/index.html) · [Briefing for a security lead: What do I patch first, what do I watch…](../briefings/security/index.html) · [PHP in October 2026: two critical security flaws, tracked as evidence](../index.html) · [Every member: who owns what](../admin/agents/roles/index.html) · [No named organisation has said it was compromised through php2shell:…](../compromise/index.html) · [The fact pipeline: from a web page to a reader](../pipeline/index.html) · [Who is reading? The readers of this site, mapped](../start/index.html) · [Operations: what changed, what to do next, how sure we are](../ops/index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [Briefing: Analyst or advisor: version history](../versions/briefing-analyst/index.html) · [Briefing: Head of AppSec: version history](../versions/briefing-appsec/index.html) · [Briefing: Board member or executive: version history](../versions/briefing-board/index.html) · [Briefing: CFO: version history](../versions/briefing-cfo/index.html) · [Briefing: CISO: version history](../versions/briefing-ciso/index.html) · [Briefing: Media and communications team: version history](../versions/briefing-comms/index.html) · [Briefing: CTO: version history](../versions/briefing-cto/index.html) · [Briefing: Developer: version history](../versions/briefing-developer/index.html) · [Briefing: Data protection officer: version history](../versions/briefing-dpo/index.html) · [Briefing: PHP or platform engineer: version history](../versions/briefing-engineer/index.html) · [Briefing: Curious reader: version history](../versions/briefing-everyone/index.html) · [Briefing: Journalist: version history](../versions/briefing-journalist/index.html) · [Briefing: Project or programme manager: version history](../versions/briefing-pm/index.html) · [Briefing: Security researcher: version history](../versions/briefing-researcher/index.html) · [Briefing: Security lead: version history](../versions/briefing-security/index.html) · [Briefing: Website owner: version history](../versions/briefing-site-owner/index.html) · [Front page: latest: version history](../versions/front-latest/index.html) · [Front page: what nobody knows yet: version history](../versions/front-unknown/index.html) · [How the story changed, release by release](../versions/index.html) · [The specialist summary: version history](../versions/page-summary/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
+
+### v0.17.1 · 2026-10-24
+
+The ontologist's debrief and self-check on the Wikipedia section, after the fact: the seven answers, the screenshots, and the one item for security, that the daily pass reads Wikipedia's API and releases in the same session
+Pages changed (11): Ontologist: role, policy and rounds · Schedule: every agent that runs on its own · Schedule: ontologist · Every round: what each member did · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Admin and engineering · Release history and 3 more
+[Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
 
 ### v0.17.0 · 2026-10-24
 
@@ -1111,4 +1237,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

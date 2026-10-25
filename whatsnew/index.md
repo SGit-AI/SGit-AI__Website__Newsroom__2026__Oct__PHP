@@ -12,11 +12,118 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.19.1 · 25 October 2026new since your last visit
+
+Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's prompt made small (board 303)
+
+No reader-facing section changed in this release.
+
+## v0.19.0 · 25 October 2026new since your last visit
+
+the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, written before the work, on URL paths, a persona in the address (/agencies/as/security/) and a single-page site that keeps every page's own path and its SEO
+
+No reader-facing section changed in this release.
+
+## v0.18.6 · 25 October 2026new since your last visit
+
+Incident: the researcher and the curator run but leave no commit or run record; status and board say so
+
+No reader-facing section changed in this release.
+
+## v0.18.5 · 25 October 2026new since your last visit
+
+The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status
+
+No reader-facing section changed in this release.
+
+## v0.18.4 · 25 October 2026new since your last visit
+
+The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture
+
+No reader-facing section changed in this release.
+
+## v0.18.3 · 25 October 2026new since your last visit
+
+Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2%
+
+No reader-facing section changed in this release.
+
+## v0.18.2 · 25 October 2026new since your last visit
+
+the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 300), the correspondent's role drafted (board 277), and the reader answers escaped: authored HTML inserted raw since v0.2.6, found by the appsec self-check
+
+### Briefings that changed
+JJordanBoard member or executive · v15SSamSecurity lead · v11BBlakeAnalyst or advisor · v12RRobinCISO · v14QQuinnCFO · v15JJamieHead of AppSec · v11AAlexCurious reader · v13CCaseyWebsite owner · v9MMorganData protection officer · v8
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v12) v12
+
+## v0.18.1 · 25 October 2026new since your last visit
+
+Conductor full pass 07:15 London on 25 October: agents-status, schedules against runs, run record
+
+No reader-facing section changed in this release.
+
+## v0.18.0 · 25 October 2026new since your last visit
+
+the line, built: the editor's design of 25 October as prototype F at /admin/design/line/ (six pages from the evidence vault, the pack's engine and words vendored with its 19 tests, the numbers filled from data); story-site's round 3
+
+No reader-facing section changed in this release.
+
+## v0.17.7 · 25 October 2026new since your last visit
+
+Board row 285 (the board): the journalist's and the correspondent's schedules are active, and the desk's wakes still come before the correspondent's review
+
+No reader-facing section changed in this release.
+
+## v0.17.6 · 25 October 2026new since your last visit
+
+The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): journalist 40 minutes after the curator, correspondent 45 minutes after the journalist
+
+No reader-facing section changed in this release.
+
+## v0.17.5 · 25 October 2026new since your last visit
+
+The journalist and the correspondent now run on a schedule (the schedules page, /views/loops/): the correspondent 45 minutes after each of the journalist's five wakes, so every loop closes within the hour
+
+No reader-facing section changed in this release.
+
+## v0.17.4 · 25 October 2026new since your last visit
+
+Every loop, on one page (/views/loops/): the pipeline from the researcher to the correspondent, the last full loop, the next one due, every loop so far, timings, blind spots and the numbers; and the home page now shows the latest evidence time and the last agent run instead of 'last checked'
+
+No reader-facing section changed in this release.
+
+## v0.17.3 · 24 October 2026new since your last visit
+
+The readers' answers on the home page, the start page and three briefings brought to 16:05 UTC on 24 October, and the engineer's answer warns of CVE-2026-115560 (persona answers, /briefings/engineer/)
+
+No reader-facing section changed in this release.
+
+## v0.17.2 · 24 October 2026new since your last visit
+
+The correspondent's first review: nine corrections to the journalist's 94 verdicts and rows (/views/desk/, /claims/review/), PHP's third flaw CVE-2026-115560 on the summary page
+
+### Briefings that changed
+JJordanBoard member or executive · v14DDrewPHP or platform engineer · v10QQuinnCFO · v14AAlexCurious reader · v12
+### Sections that changed
+- [In context: 2008 to 2026](../versions/page-context/index.html#v6) v6
+
+## v0.17.1 · 24 October 2026new since your last visit
+
+The ontologist's debrief and self-check on the Wikipedia section, after the fact: the seven answers, the screenshots, and the one item for security, that the daily pass reads Wikipedia's API and releases in the same session
+
+No reader-facing section changed in this release.
+
 ## v0.17.0 · 24 October 2026new since your last visit
 
 Wikipedia as an anchor: the PHP2Shell article read as a fractal semantic graph, one statement per sentence classed as fact, attribution or quote, each joined to its references and to the captures this site holds of them, every one of its 364 revisions kept as what it changed, its Wikidata item, and the daily pass now fetching it; with a brief for the researcher to follow every reference
 
-No reader-facing section changed in this release.
+### Briefings that changed
+JJordanBoard member or executive · v13SSamSecurity lead · v10DDrewPHP or platform engineer · v9RRowanJournalist · v9AAshSecurity researcher · v9BBlakeAnalyst or advisor · v11RRobinCISO · v13AAveryCTO · v8QQuinnCFO · v13JJamieHead of AppSec · v10LLeeDeveloper · v7RRileyMedia and communications team · v11AAlexCurious reader · v11CCaseyWebsite owner · v8TTaylorProject or programme manager · v10MMorganData protection officer · v7
+### Sections that changed
+- [The specialist summary](../versions/page-summary/index.html#v8) v8
+- [Front page: what nobody knows yet](../versions/front-unknown/index.html#v3) v3
+- [Front page: latest](../versions/front-latest/index.html#v5) v5
 
 ## v0.16.1 · 24 October 2026new since your last visit
 
@@ -1090,4 +1197,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

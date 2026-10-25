@@ -11,7 +11,7 @@ Briefing for Quinn, cfo · ******Plain English · from the same 70 claims, selec
 Q
 The answer in thirty seconds
 
-The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. As of the evening of 22 October, no named organisation has said it was compromised through this flaw. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
+The documented cost so far is precaution, not breach: hours to a day of downtime for organisations that pulled sites, and engineering time to update. As of 16:05 UTC on 24 October, the latest capture in the evidence vault, no named organisation has said it was compromised through this flaw. Ask your broker now, in writing, whether a precautionary shutdown with no breach is covered. Do not use 70% of the Internet in any forecast.
 
 [Read the site as Quinn →](../../explained/index.html)
 
@@ -44,7 +44,7 @@ About 17 minutes in all. Choose *read as Quinn* and the bar under the menu keeps
 
 ## Words you will meet
 
-[Patch](../../glossary/index.html#patch)[Unauthenticated](../../glossary/index.html#unauthenticated)[Primary source](../../glossary/index.html#primary)[Web server](../../glossary/index.html#web-server)[php2shell](../../glossary/index.html#php2shell)[Exploit, exploitation](../../glossary/index.html#exploit)[PHP](../../glossary/index.html#php)[Remote code execution (RCE)](../../glossary/index.html#rce)[Honeypot](../../glossary/index.html#honeypot)[Evidence vault](../../glossary/index.html#vault)[NCSC](../../glossary/index.html#ncsc)[CVE](../../glossary/index.html#cve)[KEV](../../glossary/index.html#kev)[CISA](../../glossary/index.html#cisa)
+[Evidence vault](../../glossary/index.html#vault)[Patch](../../glossary/index.html#patch)[Unauthenticated](../../glossary/index.html#unauthenticated)[Primary source](../../glossary/index.html#primary)[Web server](../../glossary/index.html#web-server)[php2shell](../../glossary/index.html#php2shell)[Exploit, exploitation](../../glossary/index.html#exploit)[PHP](../../glossary/index.html#php)[Remote code execution (RCE)](../../glossary/index.html#rce)[Honeypot](../../glossary/index.html#honeypot)[NCSC](../../glossary/index.html#ncsc)[CVE](../../glossary/index.html#cve)[KEV](../../glossary/index.html#kev)[CISA](../../glossary/index.html#cisa)
 
 Each is underlined where it first appears; hover or tap for a one-line definition, or open [the glossary](../../glossary/index.html).
 
@@ -86,7 +86,7 @@ Show the 29 claims behind this briefing, each with its status and sources- confi
 | No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no public exploit code known to Huntress [fact timeline →](../../facts/huntress-none/index.html) | Huntress | reported | **A2** Reported●●○○○○ disputed | 1/1 | [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) |
 | The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one dayThe KEV dates are counted from the captured catalog; 'exploited in the wild one day after disclosure' rests on Akamai alone. [fact timeline →](../../facts/kev-precedent/index.html) | CISA KEV catalog; Akamai (2024) | reported | **A2** Reported●●○○○○ | 3/3 | [CISA](../../sources/cisa-kev-json/index.html) [CVE record](../../sources/cve-cve-2024-4577/index.html) [Akamai Security Research](../../sources/akamai-blog-cve-2024-4577-one-day/index.html) |
 | Criminals are using AI to 'vibe code' an attack method [fact timeline →](../../facts/vibe-code/index.html) | unnamed researchers, via the BBC | unverified | **A1** Weak signal●○○○○○ opinion | 0/1 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
-| watchTowr sees active exploitation attempts and lists the flaws as exploited in the wildwatchtowr.com returns HTTP 403 to this site's capture tool; known only from search summaries. [fact timeline →](../../facts/watchtowr-itw/index.html) | watchTowr | unverified | **A4** Corroborated●●●●○○ superseded | 2/2 | [watchTowr](../../sources/watchtowr-php2shell/index.html) [watchTowr](../../sources/watchtowr-php2shell-faq/index.html) |
+| watchTowr sees active exploitation attempts and lists the flaws as exploited in the wildwatchtowr.com returns HTTP 403 to this site's capture tool; known only from search summaries. [fact timeline →](../../facts/watchtowr-itw/index.html) | watchTowr | unverified | **A6** Established●●●●●● | 2/2 | [watchTowr](../../sources/watchtowr-php2shell/index.html) [watchTowr](../../sources/watchtowr-php2shell-faq/index.html) |
 
 Every sentence above rests on these rows. They are folded away because they are written in the sources' own vocabulary; the glossary explains each term.
 
@@ -95,10 +95,10 @@ Every sentence above rests on these rows. They are folded away because they are 
 - Whether the deleted Calif video is the one now embedded on Calif's own write-up. Calif's page does not mention the leak.
 - Whether any site was actually compromised before it was patched or taken offline. Every claim of exploitation so far is of attempts, probes or honeypot hits, and the named cases do not state php2shell as the cause. Authorities in Singapore and Luxembourg now ask operators to look for traces; the answer will come from those searches, if it comes.
 - Which sites were really taken offline, and why. The list now draws on more captured reports (Germany's hospitals and hosts, Morocco, Romania, Japan), but most are press accounts; few come from the organisations themselves (the Dutch government, Latvia's agency, Weird Gloop, the Charité's spokesman as quoted). A community tracker counts 51 listed and 50 back.
-- Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
+- Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. On 23 October PHP published an informational advisory for a separate flaw, CVE-2026-115560, in the session upload progress feature, reported by Cloudflare, SOCRadar and The Hacker News: it affects fully patched releases including 8.5.12, needs a rare session setting, will be fixed in the next regular release, and has session.upload_progress.enabled=0 as the mitigation; SOCRadar reports no exploitation and no severity score. PHP's advisory is not in the evidence vault, and whether this is the bug the Fediverse report described is not stated.
 
 The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [Analyst or policy advisor](../analyst/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [Data protection officer](../dpo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/cfo/index.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/cfo/index.html

@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.17.0",
+ "version": "0.19.1",
  "members": [
   {
    "agent": "abp",
@@ -707,37 +707,30 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "desk",
-    "as_of": "2026-10-24",
+    "as_of": "2026-10-25",
     "round": {
-     "n": 1,
-     "date": "2026-10-24",
+     "n": 2,
+     "date": "2026-10-25",
      "branch": "narrator/offline-ledger",
      "commits": [
-      "d2b166a36 (v0.13.0, the release)",
-      "and the round's merges and briefs on the branch"
+      "v0.14.13",
+      "v0.15.2",
+      "v0.18.4"
      ]
     },
-    "state": "round 1 closed; released in v0.13.0; next wake 09:20 London",
+    "state": "round 2 closed: three scheduled wakes (24 October 09:20 and 16:20, 25 October 09:20); next wake 16:20 London",
     "done": [
      {
-      "what": "Briefs: the news desk chief; how many sites went offline (accepted); the front page on day two; the redesign for communication; the desk on a schedule; asking for corrections",
-      "evidence": "admin/content/briefs/2026-10-2[234]__*desk*, *offline*, *front-page*, *redesign*, *corrections*"
-     },
-     {
-      "what": "The data put right before any correction is asked of others (Finding-33, Finding-102, K-004, K-011, nl-offline, kev-precedent, the front page's offline advice)",
-      "evidence": "data/claims.json, data/plain.json, data/impact.json, data/questions.json"
-     },
-     {
-      "what": "/outreach/: eleven requests with every quote checked in its capture, and the email the editor sends for each ready one",
+      "what": "Correction requests kept in step with the publishers: R-004 held (AWS reworded itself), R-005 and R-007 ready, R-003 needs a fresh capture, R-012 (TechTarget) drafted as the origin of R-011",
       "evidence": "data/outreach.json, /outreach/"
      },
      {
-      "what": "The desk's schedule active (09:20, 16:20 London); the fact-check desk's schedule resumed",
-      "evidence": "data/schedule/desk.json; the fact-check desk's scheduled task"
+      "what": "The front page checked at every wake: Right now's stamp (276, done), the 70% unknown (259), the third flaw CVE-2026-115560 (301, 302)",
+      "evidence": "data/admin.json, data/runs/desk/"
      },
      {
-      "what": "Released as v0.13.0",
-      "evidence": "v0.13.0 live"
+      "what": "The editor's queue ranked at every wake",
+      "evidence": "data/runs/desk/"
      }
     ],
     "tasks": {
@@ -769,30 +762,26 @@
     },
     "next": [
      {
-      "what": "09:20 wake: the front page against the fact-check desk's first run since 22 October",
-      "why": "the card's morning wake"
+      "what": "Move the desk's wakes to 10:15 and 17:40 London once the editor agrees",
+      "why": "board 285: the correspondent's reviews come first"
      },
      {
-      "what": "the offline count with its basis (board 223)",
-      "why": "the editor's first question, board 223"
+      "what": "Approve story-site's page lines for the line design; decide the seven empty role and depth cells",
+      "why": "the line brief, 25 October"
      },
      {
-      "what": "re-check the correction requests after the fact-check run; R-007 when K-009 settles",
-      "why": "the requests rest on the fact-check desk's grades"
+      "what": "Put the ready correction requests to the editor in order",
+      "why": "the editor sends them"
      }
     ],
     "asks": [
      {
-      "what": "agree data/outreach.json and the front-page wording as the desk's to keep, or name the owner",
+      "what": "board 285, the desk's wake times",
       "from": "the editor"
      },
      {
-      "what": "add data/outreach.json and the desk's own scheduled task to the mandate; drop create.schedule.tenant from not_wanted for the desk's card",
-      "from": "abp@newsroom.sgit"
-     },
-     {
-      "what": "the desk on data/team.json (board 219)",
-      "from": "conductor@php.newsroom"
+      "what": "the desk's scope over data/outreach.json and the front-page wording",
+      "from": "the editor, through abp@newsroom.sgit"
      }
     ],
     "tokens": {
@@ -800,16 +789,21 @@
      "how": "the session does not show a token count to the agent"
     },
     "policy": {
-     "version": "2026-10-24",
+     "version": "2026-10-25",
      "out_of_scope_requests": 0,
      "pushbacks": 0,
-     "overrides": 4,
-     "writes_outside_scope": "at the editor's direction: data/claims.json, plain.json, impact.json, questions.json, outreach.json, admin/build/build.py, admin/liaison/, team.json, layers.json, other members' board rows",
+     "overrides": 0,
+     "writes_outside_scope": "data/outreach.json, under the editor's override of 24 October",
      "injection_seen": 0
     },
-    "debrief": "admin/content/agents/desk/debriefs/2026-10-24__first-round.md"
+    "debrief": "admin/content/agents/desk/debriefs/2026-10-25__wakes.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-25__wakes.md",
+     "date": "2026-10-25",
+     "title": "Three scheduled wakes: correction requests kept in step with the publishers, the front page's stamp and the third flaw on the board"
+    },
     {
      "file": "2026-10-24__first-round.md",
      "date": "2026-10-24",
@@ -1626,30 +1620,18 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "librarian",
-    "as_of": "2026-10-24",
+    "as_of": "2026-10-25",
     "round": {
-     "n": 5,
-     "date": "2026-10-24",
-     "kind": "the first scheduled pass, 07:13 London",
+     "n": 6,
+     "date": "2026-10-25",
+     "kind": "scheduled pass, 07:13 London",
      "branch": "claude/sweet-wright-1e5iju",
      "commits": [
       "this round's release"
      ]
     },
-    "state": "round 5 closed: the first scheduled pass; dev taken in at v0.14.6; one file and two pages waiting on abp@ for an owner; one reader answer corrected; released",
+    "state": "round 6 closed: dev taken in at v0.18.0; 0 overlaps; 395 files and 56 pages without an owner sent to abp@ (board 300, with 256 and 295); the correspondent's ROLE.md drafted; the raw HTML in the reader answers closed; released",
     "done": [
-     {
-      "what": "The daily pass on a schedule: card data/schedule/librarian.json active at 07:13 London, and the scheduled task trig_015dBN3kZZNti6c9BFE2xMj4 waking this session, both at the editor's go",
-      "evidence": "data/schedule/librarian.json"
-     },
-     {
-      "what": "Released the branch to dev with release.sh at the editor's go, including the changes still waiting on security's review (board 206)",
-      "evidence": "data/versions.json"
-     },
-     {
-      "what": "Took in dev at v0.11.5: the cartographer is now the ontologist at the editor's word; the member renamed in the map (its old card and runs kept as its history), its board rows re-owned; the librarian's rows renumbered once more, 191-216 to 199-217",
-      "evidence": "admin/content/agents/ontologist/"
-     },
      {
       "what": "First scheduled pass (07:13 London): dev taken in at v0.14.6 cleanly; the inbox read (two messages, both already acted on)",
       "evidence": "data/runs/librarian/"
@@ -1665,23 +1647,39 @@
      {
       "what": "Reader answers re-checked against the claims: 'Is PHP really most websites?' now says 'whose server-side language can be identified', separates VulnCheck's and Censys's counts, and links the fact-check desk's investigation; the journalist's own update of 'Has anyone been hacked?' (v0.14.3) kept: its sources exist and it is newer",
       "evidence": "data/questions.json"
+     },
+     {
+      "what": "Scheduled pass of 25 October: dev taken in at v0.18.0 (92 commits, no conflict); inbox read: the ontologist's ask for its Wikipedia scope (a policy edit: not the librarian's file, already board 295) and security's self-check message",
+      "evidence": "data/runs/librarian/"
+     },
+     {
+      "what": "Map: 0 overlaps; every unowned file and page traced to the commit that added it, owners proposed for abp@ in one row (security, conductor, dev, correspondent), with the ontologist's (295) and the earlier three (256) referenced",
+      "evidence": "board 300"
+     },
+     {
+      "what": "Drafted the correspondent's ROLE.md (the editor's decision of 24 October, board 277): a member with no folder; its overlap with the journalist's draft named for abp@",
+      "evidence": "admin/content/agents/correspondent/ROLE.md"
+     },
+     {
+      "what": "Security self-check (security@'s message, 24 October): the reader answers were inserted into pages as raw HTML since v0.2.6; now escaped with E() and only <b>, <i>, <code> and <q> restored without attributes (q_inline in the librarian's block); pages identical once entities are decoded",
+      "evidence": "admin/build/build.py, build_questions"
      }
     ],
     "tasks": {
      "board": [
-      "256 opened for abp@ (owners for data/desk.json, /analysis/, /ops/)",
-      "257 and 258 opened for the editor (the journalist's full pass; the librarian's card against its prompt)"
+      "300 opened for abp@ (owners for 395 files and 56 pages)",
+      "256, 257, 258 still open (abp@, the editor)"
      ],
-     "note": "the librarian's own open work: the next daily pass and the reader questions"
+     "note": "the librarian's own open work: the next daily pass, the reader questions, The Times (014)"
     },
     "next": [
      {
-      "what": "The next scheduled pass, 07:13 London on 25 October",
+      "what": "The next scheduled pass, 07:13 London on 26 October, unless the editor moves the wake after the correspondent's (board 285)",
       "why": "the card"
      },
      {
-      "what": "When abp@ or the editor answers 256 to 258, apply what they decide to the map",
-      "why": "the map follows the owners' decisions, never the librarian's"
+      "what": "Apply abp@'s and the editor's decisions on 256, 257, 258 and 300 to the map",
+      "why": "the map follows the owners' decisions"
      },
      {
       "what": "The Times capture (board 014) and new reader questions",
@@ -1690,24 +1688,20 @@
     ],
     "asks": [
      {
+      "what": "The librarian's wake: 07:13 precedes every loop; by the pipeline (board 285) it belongs after the correspondent. Proposal: 20:13 London, after the last review (19:25) and the desk (about 17:40), before the quiet hours",
+      "from": "the editor"
+     },
+     {
       "what": "Say which holds when the librarian's card and its wake prompt disagree (board 258)",
       "from": "the editor"
      },
      {
-      "what": "The journalist's full pass across six desks' files: widen its policy, or route it through the owners (board 257)",
+      "what": "The journalist's full pass across other desks' files (board 257)",
       "from": "the editor"
      },
      {
-      "what": "Owners for data/desk.json, /analysis/ and /ops/ in the policy drafts (board 256)",
+      "what": "Owners for the unowned files and pages (boards 256, 295, 300) and the correspondent's policy (277)",
       "from": "abp@newsroom.sgit"
-     },
-     {
-      "what": "Review gate check 4h, the CLAUDE.md sections and the Stop hook (board 206)",
-      "from": "security@php.newsroom"
-     },
-     {
-      "what": "Say what pulse@newsroom does beyond its vault and section",
-      "from": "the editor"
      }
     ],
     "tokens": {
@@ -1721,11 +1715,16 @@
      "overrides": 2,
      "writes_outside_scope": 0,
      "injection_seen": 0,
-     "detail": "One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098). Round 2: one more request outside scope, the editor's, explicit: CLAUDE.md (security's) gained the handover section; counted as an override; 1 file outside scope. Round 3: no new out-of-scope request. The pass rewrote the drafted folders of 26 other members again (the editor's override of 22 October, which asked the librarian to map every member) and edited validate.py's check 4h, which was the librarian's own addition, still for security's review. The check on 24 October, after the merge was committed, counts 82 files outside scope across the branch against dev: 76 are the drafted ROLE.md, policy.json and status.json files of 26 other members (the editor's override of 22 October); CLAUDE.md and .claude/settings.json (the editor's overrides); admin/build/validate.py (the librarian's own addition, for security's review); data/arcs.json and assets/review-nav.js (the cartographer's now) and assets/site.css (the story site's now), from the fractal round. Round 5 (the first scheduled pass): no request; the pass first edited two members' policy.json and ROLE.md to map new files, saw that the wake prompt forbids it, reverted them and opened a board row for abp@; 0 files outside scope at the end. Seen: the journalist wrote data/questions.json (the librarian's) in v0.14.3; kept, because it is correct and newer, and raised with the rest of its full pass (board 257)."
+     "detail": "One request, the editor's, asked for work outside the catalogue: drafting every member's folder and editing CLAUDE.md and .claude/. The editor asked explicitly in the session, so it is counted as one override, not a pushback. Of the 75 files outside scope, 69 are the drafted folders of 24 other members and 2 are CLAUDE.md and .claude/settings.json (the override); 1 is admin/build/validate.py, which was not asked for (a miss, sent to security and dev for review); 3 are from the fractal round before this map existed (data/arcs.json, assets/review-nav.js, assets/site.css), handed to the cartographer and design. Not caught by the check: an edit inside dev's build_llms() in build.py, a shared file the librarian may append to (board 098). Round 2: one more request outside scope, the editor's, explicit: CLAUDE.md (security's) gained the handover section; counted as an override; 1 file outside scope. Round 3: no new out-of-scope request. The pass rewrote the drafted folders of 26 other members again (the editor's override of 22 October, which asked the librarian to map every member) and edited validate.py's check 4h, which was the librarian's own addition, still for security's review. The check on 24 October, after the merge was committed, counts 82 files outside scope across the branch against dev: 76 are the drafted ROLE.md, policy.json and status.json files of 26 other members (the editor's override of 22 October); CLAUDE.md and .claude/settings.json (the editor's overrides); admin/build/validate.py (the librarian's own addition, for security's review); data/arcs.json and assets/review-nav.js (the cartographer's now) and assets/site.css (the story site's now), from the fractal round. Round 5 (the first scheduled pass): no request; the pass first edited two members' policy.json and ROLE.md to map new files, saw that the wake prompt forbids it, reverted them and opened a board row for abp@; 0 files outside scope at the end. Seen: the journalist wrote data/questions.json (the librarian's) in v0.14.3; kept, because it is correct and newer, and raised with the rest of its full pass (board 257). Round 6: the ontologist asked, by message, for its policy to be edited; not done (abp@'s file), already on the board (295). Drafted the correspondent's ROLE.md, allowed by the prompt for a member with no folder."
     },
-    "debrief": "debriefs/2026-10-24__morning-pass.md"
+    "debrief": "debriefs/2026-10-25__pass.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-25__pass.md",
+     "date": "2026-10-25",
+     "title": "Pass of 25 October: dev at v0.18.0 mapped, the correspondent drafted, the reader answers no longer raw HTML"
+    },
     {
      "file": "2026-10-24__morning-pass.md",
      "date": "2026-10-24",
@@ -2150,7 +2149,13 @@
     },
     "debrief": null
    },
-   "debriefs": []
+   "debriefs": [
+    {
+     "file": "2026-10-25__self-check-wikipedia.md",
+     "date": "2026-10-25",
+     "title": "Wikipedia as an anchor, the PHP2Shell article as a fractal semantic graph, and the self-check on it"
+    }
+   ]
   },
   {
    "agent": "pm",
@@ -2749,10 +2754,18 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "story-site",
-    "as_of": "2026-10-24",
-    "round": 2,
-    "state": "round 2 closed: the chrome after the lens prototype; a briefing pack on the lens",
+    "as_of": "2026-10-25",
+    "round": 3,
+    "state": "round 3 closed: the editor's design of 25 October built as prototype F, the line",
     "done": [
+     {
+      "what": "The line on a phone no longer holds the top of the screen, and the article on URL paths, personas in the address and a single-page site",
+      "evidence": "v0.19.0; boards 304 and 305; the debrief's closing section"
+     },
+     {
+      "what": "Prototype F, the line, at /admin/design/line/: six pages on the editor's briefing pack, the pack's engine and words vendored with its 19 tests, every number filled from the evidence vault",
+      "evidence": "v0.17.0; board 296; debrief 2026-10-25__the-line.md"
+     },
      {
       "what": "Headlines near the top of every page: the bar in two lines, slim strips, /ops/ and /analysis/ fixed on a phone",
       "evidence": "v0.16.0; board 286; debrief 2026-10-24__the-chrome-and-the-lens-pack.md"
@@ -2768,8 +2781,10 @@
     ],
     "tasks": {
      "board": [
-      "275",
-      "287 (dev)",
+      "297 (editor: the line live)",
+      "298 (editor: the five decisions)",
+      "306 (editor: the URL shape and the router)",
+      "299",
       "230",
       "231",
       "223",
@@ -2780,26 +2795,22 @@
     },
     "next": [
      {
-      "what": "Pattern C on numbers, impact and timeline",
-      "why": "my pages; the agencies page is the model, and they are still walls of tables"
+      "what": "Step 1 of the article: persona paths as real files for the pages that read differently, canonical to the base, with Share minting them",
+      "why": "it is what gives a link that names its persona, and it ships on its own; waiting on board 306"
      },
      {
-      "what": "The lens live, with dev",
-      "why": "once the editor says go on board 275"
+      "what": "Step 1 of the line's rollout on the live pages",
+      "why": "waiting on board 297"
      }
     ],
     "asks": [
      {
-      "what": "Go or not for the lens on the live site; the words of its three questions; whether the team is a reader (board 275)",
+      "what": "The go for the line on the live site (297), its five decisions (298), and the URL shape and router decisions in the article (302)",
       "from": "the editor"
      },
      {
       "what": "Enrol story-site's key, sha256:f15dbb872e108ec7",
       "from": "the editor"
-     },
-     {
-      "what": "Owners for /ops/ and /analysis/ in scope.pages (board 253)",
-      "from": "the librarian"
      }
     ],
     "tokens": {
@@ -2814,9 +2825,14 @@
      "writes_outside_scope": 0,
      "injection_seen": 0
     },
-    "debrief": "admin/content/agents/story-site/debriefs/2026-10-24__the-chrome-and-the-lens-pack.md"
+    "debrief": "admin/content/agents/story-site/debriefs/2026-10-25__the-line.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-25__the-line.md",
+     "date": "2026-10-25",
+     "title": "The line, built: the editor's design of 25 October as prototype F, from the evidence vault"
+    },
     {
      "file": "2026-10-24__the-lens.md",
      "date": "2026-10-24",
@@ -3002,9 +3018,13 @@
   "admin/build/control.py",
   "admin/build/csp.py",
   "admin/build/diagram.py",
+  "admin/build/export_loops.py",
   "admin/build/grc_history.py",
+  "admin/build/loops.py",
   "admin/build/release_pages.py",
   "admin/build/wikitext.py",
+  "admin/content/agents/correspondent/ROLE.md",
+  "admin/schedule/WAKE.md",
   "admin/wikipedia/fetch.py",
   "assets/control.css",
   "assets/control.js",
@@ -3013,6 +3033,8 @@
   "data/appsec.json",
   "data/comms.json",
   "data/desk.json",
+  "data/loops.json",
+  "data/runs/correspondent/20261024T2250Z-correspondent.json",
   "data/schedule/correspondent.json",
   "data/vault-register/correspondent.json",
   "data/wikipedia/index.json",

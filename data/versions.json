@@ -1,6 +1,150 @@
 {
- "current": "0.17.0",
+ "current": "0.19.1",
  "versions": [
+  {
+   "version": "0.19.1",
+   "date": "2026-10-25",
+   "title": "Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's prompt made small (board 303)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.19.0",
+   "date": "2026-10-25",
+   "title": "the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, written before the work, on URL paths, a persona in the address (/agencies/as/security/) and a single-page site that keeps every page's own path and its SEO",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.18.6",
+   "date": "2026-10-25",
+   "title": "Incident: the researcher and the curator run but leave no commit or run record; status and board say so",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.18.5",
+   "date": "2026-10-25",
+   "title": "The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.18.4",
+   "date": "2026-10-25",
+   "title": "The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.18.3",
+   "date": "2026-10-25",
+   "title": "Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2%",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.18.2",
+   "date": "2026-10-25",
+   "title": "the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 300), the correspondent's role drafted (board 277), and the reader answers escaped: authored HTML inserted raw since v0.2.6, found by the appsec self-check",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.18.1",
+   "date": "2026-10-25",
+   "title": "Conductor full pass 07:15 London on 25 October: agents-status, schedules against runs, run record",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.18.0",
+   "date": "2026-10-25",
+   "title": "the line, built: the editor's design of 25 October as prototype F at /admin/design/line/ (six pages from the evidence vault, the pack's engine and words vendored with its 19 tests, the numbers filled from data); story-site's round 3",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.17.7",
+   "date": "2026-10-25",
+   "title": "Board row 285 (the board): the journalist's and the correspondent's schedules are active, and the desk's wakes still come before the correspondent's review",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.17.6",
+   "date": "2026-10-25",
+   "title": "The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): journalist 40 minutes after the curator, correspondent 45 minutes after the journalist",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.17.5",
+   "date": "2026-10-25",
+   "title": "The journalist and the correspondent now run on a schedule (the schedules page, /views/loops/): the correspondent 45 minutes after each of the journalist's five wakes, so every loop closes within the hour",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.17.4",
+   "date": "2026-10-25",
+   "title": "Every loop, on one page (/views/loops/): the pipeline from the researcher to the correspondent, the last full loop, the next one due, every loop so far, timings, blind spots and the numbers; and the home page now shows the latest evidence time and the last agent run instead of 'last checked'",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.17.3",
+   "date": "2026-10-24",
+   "title": "The readers' answers on the home page, the start page and three briefings brought to 16:05 UTC on 24 October, and the engineer's answer warns of CVE-2026-115560 (persona answers, /briefings/engineer/)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.17.2",
+   "date": "2026-10-24",
+   "title": "The correspondent's first review: nine corrections to the journalist's 94 verdicts and rows (/views/desk/, /claims/review/), PHP's third flaw CVE-2026-115560 on the summary page",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
+  {
+   "version": "0.17.1",
+   "date": "2026-10-24",
+   "title": "The ontologist's debrief and self-check on the Wikipedia section, after the fact: the seven answers, the screenshots, and the one item for security, that the daily pass reads Wikipedia's API and releases in the same session",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.17.0",
    "date": "2026-10-24",

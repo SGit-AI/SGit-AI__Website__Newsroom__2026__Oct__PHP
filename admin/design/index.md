@@ -2,7 +2,7 @@
 
 The proposed redesign of the site for review: what is wrong now, the two dials (who you are and how much you see), which pages each reader sees, the menu per view, and four mockups built from the live data.
 
-> Mockup notes for review, built from the data of release v0.17.0. Not the live site.
+> Mockup notes for review, built from the data of release v0.19.1. Not the live site.
 
 Admin · design · for review 
 ## The redesign: who you are, and how much you want to see
@@ -11,6 +11,16 @@ The editor's review of 23 October: the site is right in substance and wrong in f
 
 The model, in one line 
 Two dials. Who you are sets the layout and the order. How much you want (Focus, Standard, Everything) sets which pages exist for you at all. What you have read gets out of the way. 
+
+New, 25 October · the editor’s design, built 
+### F. The line: the site talks to you, as the reader you are, at the moment you are in
+
+One band under the masthead on every page, never closed, that says one thing: who we think you are and why, what has changed since you were last here, that this page is not written for you, or simply this page’s sentence for your role. Seven roles, three depths, eleven visit moments. Six pages, and a catalogue of every line the rules produce. The brief: the line. 
+
+Written, 25 October · before the work 
+### Where the reader’s persona should live: in the address, not in a query
+
+The article on URL paths and a single-page site: a link that names its persona ( /agencies/as/security/ ), every page keeping its own path, what that needs from SEO, and how the site stops repainting the whole screen on every click. On the briefs page. 
 
 New, 24 October · a working prototype 
 ### E. The lens: the site shapes itself to you, in front of you
@@ -45,7 +55,7 @@ Pages stop at 1,080 pixels; on a laptop half the screen is empty. The proposal r
 
 #### The menu is the site map
 
-Eleven groups and 149 entries, ordered by how the site was built, not by what a reader wants to do. The proposal: four to eight entries, chosen by who you are and how much you want. 
+Eleven groups and 150 entries, ordered by how the site was built, not by what a reader wants to do. The proposal: four to eight entries, chosen by who you are and how much you want. 
 
 #### Everyone sees everything
 
@@ -94,27 +104,27 @@ signed articles written here · 9 pages
  The evidence 
 every source, the vaults, the pipeline, versions · 501 pages 
  The site and the team 
-method, roles, board, releases, admin · 218 pages 
+method, roles, board, releases, admin · 220 pages 
 
 ### Pages per reader, per view
 
  Reader Focus Standard Everything 
- Alex Curious reader 28 68 947 
- Jordan Board member or executive 28 225 947 
- Quinn CFO 28 225 947 
- Robin CISO 159 225 947 
- Rowan Journalist 586 609 947 
- Sam Security lead 42 111 947 
- Drew PHP or platform engineer 35 111 947 
- Ash Security researcher 540 612 947 
-Counted from the 947 pages this release builds. 
+ Alex Curious reader 28 68 949 
+ Jordan Board member or executive 28 225 949 
+ Quinn CFO 28 225 949 
+ Robin CISO 159 225 949 
+ Rowan Journalist 586 609 949 
+ Sam Security lead 42 111 949 
+ Drew PHP or platform engineer 35 111 949 
+ Ash Security researcher 540 612 949 
+Counted from the 949 pages this release builds. 
 
 #### Who sees the team console
 
 Everything view only. It stays public, because how the site is run is part of the story; it just stops being in a reader's way. 
 
 ### The menu, per view
- today: 11 groups, 149 entries, the same for everyone 
+ today: 11 groups, 150 entries, the same for everyone 
 
 Focus 
 Four places. For a board member, a CFO, a website owner. 
@@ -156,7 +166,7 @@ All of it, for power users and the team.
 
 - The admin pages move into console D. 
 
- Mockups built by the design agent from release v0.17.0; the brief is on the briefs page. Board items record each step.
+ Mockups built by the design agent from release v0.19.1; the brief is on the briefs page. Board items record each step.
 
 ---
-site v0.17.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html
+site v0.19.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html

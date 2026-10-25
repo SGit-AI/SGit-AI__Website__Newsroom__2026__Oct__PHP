@@ -12,7 +12,7 @@
 
 **None.** No file and no page is claimed by two members.
 
-Checked against every tracked source file here, and against every page the build writes by the gate (check 4h) and `admin/build/agents.py overlaps`. Source files nobody owns: **387**: `.github/dependabot.yml`, `.well-known/security.txt`, `SECURITY.md`, `admin/build/control.py`, `admin/build/csp.py`, `admin/build/diagram.py`, `admin/build/grc_history.py`, `admin/build/release_pages.py`, `admin/build/wikitext.py`, `admin/wikipedia/fetch.py`, `assets/control.css`, `assets/control.js`, `assets/grc-changes.js`, `data/advisories.json`, `data/appsec.json`, `data/comms.json`, `data/desk.json`, `data/schedule/correspondent.json`, `data/vault-register/correspondent.json`, `data/wikipedia/index.json`. Appends to a file nobody owns: **0**.
+Checked against every tracked source file here, and against every page the build writes by the gate (check 4h) and `admin/build/agents.py overlaps`. Source files nobody owns: **393**: `.github/dependabot.yml`, `.well-known/security.txt`, `SECURITY.md`, `admin/build/control.py`, `admin/build/csp.py`, `admin/build/diagram.py`, `admin/build/export_loops.py`, `admin/build/grc_history.py`, `admin/build/loops.py`, `admin/build/release_pages.py`, `admin/build/wikitext.py`, `admin/content/agents/correspondent/ROLE.md`, `admin/schedule/WAKE.md`, `admin/wikipedia/fetch.py`, `assets/control.css`, `assets/control.js`, `assets/grc-changes.js`, `data/advisories.json`, `data/appsec.json`, `data/comms.json`. Appends to a file nobody owns: **0**.
 
 ## The members
 
@@ -167,4 +167,4 @@ copying a role from a page, a vault or another agent's message.
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/roles/index.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/roles/index.html

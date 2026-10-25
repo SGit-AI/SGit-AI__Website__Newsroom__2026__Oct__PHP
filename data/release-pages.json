@@ -1,6 +1,1886 @@
 {
  "about": "A page counts as changed when the content of its <main> differs from the previous release's, with the two site version numbers masked: the header, the footer and the version stamp change on every page at every release and say nothing about what the release did. Pages are compared as built and committed, so the list is what a reader would have seen change. Stored in data/release-pages.json, one entry per release, written once and never recomputed:",
  "releases": {
+  "0.19.1": {
+   "against": "0.19.0",
+   "pages": [
+    {
+     "path": "team/schedule/pulse/index.html",
+     "title": "Schedule: pulse",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/conductor/index.html",
+     "title": "Schedule: conductor",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/sherpa/index.html",
+     "title": "Schedule: sherpa",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/researcher/index.html",
+     "title": "Schedule: researcher",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/correspondent/index.html",
+     "title": "Schedule: correspondent",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/journalist/index.html",
+     "title": "Schedule: journalist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/curator/index.html",
+     "title": "Schedule: curator",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/desk/index.html",
+     "title": "Schedule: desk",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/factcheck/index.html",
+     "title": "Schedule: factcheck",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/librarian/index.html",
+     "title": "Schedule: librarian",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/ontologist/index.html",
+     "title": "Schedule: ontologist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/roles/index.html",
+     "title": "Every member: who owns what",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.19.0": {
+   "against": "0.18.6",
+   "pages": [
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/story-site/index.html",
+     "title": "Story site agent: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/story-site/index.html",
+     "title": "Story site agent, design, claims and the story pages: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/dinis/index.html",
+     "title": "Dinis Cruz, Editor: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.18.6": {
+   "against": "0.18.5",
+   "pages": [
+    {
+     "path": "team/control/index.html",
+     "title": "Control room: every agent at a glance",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/dinis/index.html",
+     "title": "Dinis Cruz, Editor: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/conductor/index.html",
+     "title": "Schedule: conductor",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/status/index.html",
+     "title": "Status: where every agent is",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.18.5": {
+   "against": "0.18.4",
+   "pages": [
+    {
+     "path": "admin/agents/desk/index.html",
+     "title": "News desk chief: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.18.4": {
+   "against": "0.18.3",
+   "pages": [
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/desk/index.html",
+     "title": "Schedule: desk",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/journalist/index.html",
+     "title": "Schedule: journalist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/journalist/index.html",
+     "title": "Journalist, dated state-of-affairs articles: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/collector-primary/index.html",
+     "title": "Primary-source collector, primary sources: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.18.3": {
+   "against": "0.18.2",
+   "pages": [
+    {
+     "path": "factcheck/index.html",
+     "title": "Fact-check: how sure can you be of each claim",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/watchtowr-itw/index.html",
+     "title": "Fact: watchTowr sees active exploitation attempts and lists the flaws as exploited in",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/factcheck/index.html",
+     "title": "Schedule: factcheck",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/no-confirmed-compromise/index.html",
+     "title": "Fact: As of 16:05 UTC on 24 October, no named organisation has said it was compromised",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "facts/quarkslab-2024/index.html",
+     "title": "Fact: The out-of-memory issue was found in a 2024 audit by Quarkslab (funded through O",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/conductor/index.html",
+     "title": "Schedule: conductor",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/desk/index.html",
+     "title": "Schedule: desk",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "factcheck/investigations/php-share/index.html",
+     "title": "How much PHP is there, and where does '70%' come from?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/analyst/index.html",
+     "title": "Briefing for an analyst or advisor: How did coordinated disclosure fail, and what does AI-assisted discovery change?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/appsec/index.html",
+     "title": "Briefing for a head of AppSec: Which of our applications are in scope, which settings matter, and what do we add to the pipeline?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/board/index.html",
+     "title": "Briefing for a board member or executive: Are we exposed, what is it costing us, and who owns the decision to pull a system?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/cfo/index.html",
+     "title": "Briefing for a CFO: What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/ciso/index.html",
+     "title": "Briefing for a CISO: What is our exposure, what is our evidence we were not hit, and what do I tell the board?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/everyone/index.html",
+     "title": "Briefing for a curious reader: What happened, does it affect me, and should I worry?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/security/index.html",
+     "title": "Briefing for a security lead: What do I patch first, what do I watch for, and when do I take something offline?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/site-owner/index.html",
+     "title": "Briefing for a website owner: My website runs on WordPress or similar: am I affected, and what do I ask my host?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "claims/index.html",
+     "title": "Every claim, with its status and sources",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/dpo/index.html",
+     "title": "Briefing for a data protection officer: Was personal data exposed, does this start a GDPR breach assessment or a 72-hour notification, and what do I document?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "actors/watchtowr/index.html",
+     "title": "watchTowr: what they say",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/watchtowr-php2shell-faq/index.html",
+     "title": "Source: watchtowr.com",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "sources/watchtowr-php2shell/index.html",
+     "title": "Source: watchtowr.com",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/risks/r03-3/index.html",
+     "title": "R03-3: Exploited in the wild without anyone being able to show it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/risks/r06-3/index.html",
+     "title": "R06-3: Manufacturers under the Cyber Resilience Act owe a 24-hour report",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "graph/index.html",
+     "title": "The story as a graph: who states what, who relays it, and what it rests on",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/index.html",
+     "title": "Questions readers ask about php2shell",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-analyst/index.html",
+     "title": "Briefing: Analyst or advisor: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-appsec/index.html",
+     "title": "Briefing: Head of AppSec: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-board/index.html",
+     "title": "Briefing: Board member or executive: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-cfo/index.html",
+     "title": "Briefing: CFO: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-ciso/index.html",
+     "title": "Briefing: CISO: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-dpo/index.html",
+     "title": "Briefing: Data protection officer: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-everyone/index.html",
+     "title": "Briefing: Curious reader: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-security/index.html",
+     "title": "Briefing: Security lead: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-site-owner/index.html",
+     "title": "Briefing: Website owner: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/page-claims/index.html",
+     "title": "Every claim: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.18.2": {
+   "against": "0.18.1",
+   "pages": [
+    {
+     "path": "admin/agents/librarian/index.html",
+     "title": "librarian@php.newsroom: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/librarian/index.html",
+     "title": "Schedule: librarian",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/roles/index.html",
+     "title": "Every member: who owns what",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/ontologist/index.html",
+     "title": "Schedule: ontologist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/been-hacked/index.html",
+     "title": "Has anyone actually been hacked?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/change-code/index.html",
+     "title": "Do our developers need to change our code?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/fix-or-wait/index.html",
+     "title": "Can anything be done to fix it, or do we just have to wait for updates?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/most-websites/index.html",
+     "title": "Is PHP really the software behind most websites?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/old-php/index.html",
+     "title": "We are on PHP 7.4, 8.0 or 8.1. Is there a patch?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/passwords/index.html",
+     "title": "Do I need to change my passwords?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/take-offline/index.html",
+     "title": "Should we take our site offline?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/waf-enough/index.html",
+     "title": "We are behind Cloudflare (or another firewall). Are we safe?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "questions/why-big-news/index.html",
+     "title": "Why is this such big news?",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.18.1": {
+   "against": "0.18.0",
+   "pages": [
+    {
+     "path": "team/control/index.html",
+     "title": "Control room: every agent at a glance",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/conductor/index.html",
+     "title": "Schedule: conductor",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/status/index.html",
+     "title": "Status: where every agent is",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.18.0": {
+   "against": "0.17.7",
+   "pages": [
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/story-site/index.html",
+     "title": "Story site agent: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/story-site/index.html",
+     "title": "Story site agent, design, claims and the story pages: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/dinis/index.html",
+     "title": "Dinis Cruz, Editor: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.17.7": {
+   "against": "0.17.6",
+   "pages": [
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.17.6": {
+   "against": "0.17.5",
+   "pages": [
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/correspondent/index.html",
+     "title": "Schedule: correspondent",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/journalist/index.html",
+     "title": "Schedule: journalist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "views/loops/index.html",
+     "title": "Every loop: from the researcher to the correspondent",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.17.5": {
+   "against": "0.17.4",
+   "pages": [
+    {
+     "path": "team/schedule/correspondent/index.html",
+     "title": "Schedule: correspondent",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/journalist/index.html",
+     "title": "Schedule: journalist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "views/loops/index.html",
+     "title": "Every loop: from the researcher to the correspondent",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.17.4": {
+   "against": "0.17.3",
+   "pages": [
+    {
+     "path": "views/loops/index.html",
+     "title": "Every loop: from the researcher to the correspondent",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "layers/index.html",
+     "title": "Evidence, derived, authored: what each file is",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/roles/index.html",
+     "title": "Every member: who owns what",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "questions/index.html",
+     "title": "Questions readers ask about php2shell",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "billing/index.html",
+     "title": "The billing model: what runs and what is designed",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.17.3": {
+   "against": "0.17.2",
+   "pages": [
+    {
+     "path": "views/desk/index.html",
+     "title": "The journalist's desk: keeping the site current",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "start/index.html",
+     "title": "Who is reading? The readers of this site, mapped",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/engineer/index.html",
+     "title": "Briefing for a PHP or platform engineer: Which versions, which SAPIs, which settings, which commands?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/board/index.html",
+     "title": "Briefing for a board member or executive: Are we exposed, what is it costing us, and who owns the decision to pull a system?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/cfo/index.html",
+     "title": "Briefing for a CFO: What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/everyone/index.html",
+     "title": "Briefing for a curious reader: What happened, does it affect me, and should I worry?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "context/index.html",
+     "title": "In context: php2shell against Kaminsky, Heartbleed, Shellshock, Log4Shell and the last PHP RCE",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "analysis/index.html",
+     "title": "Analysis: how sure we are, and where the sources disagree",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "ops/index.html",
+     "title": "Operations: what changed, what to do next, how sure we are",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-board/index.html",
+     "title": "Briefing: Board member or executive: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-cfo/index.html",
+     "title": "Briefing: CFO: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-engineer/index.html",
+     "title": "Briefing: PHP or platform engineer: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-everyone/index.html",
+     "title": "Briefing: Curious reader: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/page-context/index.html",
+     "title": "In context: 2008 to 2026: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.17.2": {
+   "against": "0.17.1",
+   "pages": [
+    {
+     "path": "claims/review/index.html",
+     "title": "Claims waiting for review",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "views/desk/index.html",
+     "title": "The journalist's desk: keeping the site current",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/correspondent/index.html",
+     "title": "Schedule: correspondent",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/ciso/index.html",
+     "title": "Briefing for a CISO: What is our exposure, what is our evidence we were not hit, and what do I tell the board?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/analyst/index.html",
+     "title": "Briefing for an analyst or advisor: How did coordinated disclosure fail, and what does AI-assisted discovery change?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/cto/index.html",
+     "title": "Briefing for a CTO: What does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/appsec/index.html",
+     "title": "Briefing for a head of AppSec: Which of our applications are in scope, which settings matter, and what do we add to the pipeline?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/board/index.html",
+     "title": "Briefing for a board member or executive: Are we exposed, what is it costing us, and who owns the decision to pull a system?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/cfo/index.html",
+     "title": "Briefing for a CFO: What is the financial exposure, what does downtime cost against breach cost, and will insurance respond?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/comms/index.html",
+     "title": "Briefing for a media and communications team: What can we say that is true, what should we not say, and what will we be asked?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/everyone/index.html",
+     "title": "Briefing for a curious reader: What happened, does it affect me, and should I worry?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/site-owner/index.html",
+     "title": "Briefing for a website owner: My website runs on WordPress or similar: am I affected, and what do I ask my host?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "summary/index.html",
+     "title": "The specialist summary: CVE-2026-109618 and CVE-2026-109619",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/developer/index.html",
+     "title": "Briefing for a developer: Is my code the problem, what do I change, and how do I check the box I deployed to?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/dpo/index.html",
+     "title": "Briefing for a data protection officer: Was personal data exposed, does this start a GDPR breach assessment or a 72-hour notification, and what do I document?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/engineer/index.html",
+     "title": "Briefing for a PHP or platform engineer: Which versions, which SAPIs, which settings, which commands?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/journalist/index.html",
+     "title": "Briefing for a journalist: Which numbers hold up, who said what first, and what is still unverified?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/pm/index.html",
+     "title": "Briefing for a project or programme manager: What unplanned work does this create, who do I chase, and what do I tell stakeholders?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/researcher/index.html",
+     "title": "Briefing for a security researcher: What are the bug classes, what was demonstrated, and what is still open?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "briefings/security/index.html",
+     "title": "Briefing for a security lead: What do I patch first, what do I watch for, and when do I take something offline?",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "index.html",
+     "title": "PHP in October 2026: two critical security flaws, tracked as evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/roles/index.html",
+     "title": "Every member: who owns what",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "compromise/index.html",
+     "title": "No named organisation has said it was compromised through php2shell: the evidence",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "start/index.html",
+     "title": "Who is reading? The readers of this site, mapped",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "ops/index.html",
+     "title": "Operations: what changed, what to do next, how sure we are",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-analyst/index.html",
+     "title": "Briefing: Analyst or advisor: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-appsec/index.html",
+     "title": "Briefing: Head of AppSec: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-board/index.html",
+     "title": "Briefing: Board member or executive: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-cfo/index.html",
+     "title": "Briefing: CFO: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-ciso/index.html",
+     "title": "Briefing: CISO: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-comms/index.html",
+     "title": "Briefing: Media and communications team: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-cto/index.html",
+     "title": "Briefing: CTO: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-developer/index.html",
+     "title": "Briefing: Developer: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-dpo/index.html",
+     "title": "Briefing: Data protection officer: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-engineer/index.html",
+     "title": "Briefing: PHP or platform engineer: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-everyone/index.html",
+     "title": "Briefing: Curious reader: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-journalist/index.html",
+     "title": "Briefing: Journalist: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-pm/index.html",
+     "title": "Briefing: Project or programme manager: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-researcher/index.html",
+     "title": "Briefing: Security researcher: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-security/index.html",
+     "title": "Briefing: Security lead: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/briefing-site-owner/index.html",
+     "title": "Briefing: Website owner: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/front-latest/index.html",
+     "title": "Front page: latest: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/front-unknown/index.html",
+     "title": "Front page: what nobody knows yet: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/page-summary/index.html",
+     "title": "The specialist summary: version history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
+  "0.17.1": {
+   "against": "0.17.0",
+   "pages": [
+    {
+     "path": "admin/agents/ontologist/index.html",
+     "title": "Ontologist: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/index.html",
+     "title": "Schedule: every agent that runs on its own",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/schedule/ontologist/index.html",
+     "title": "Schedule: ontologist",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
   "0.17.0": {
    "against": "0.16.1",
    "pages": [

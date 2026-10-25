@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**10** evidence · **32** derived · **14** authored · **38** site
+**10** evidence · **33** derived · **14** authored · **38** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -71,6 +71,7 @@ Transformations of the evidence written by agents: claims with a status, dated e
 | `data/grc-tests.json` | dev@php.newsroom | the fix commit's test files, from its file list in the evidence vault, and the name rules joining each to a remediation | [grc/explore/index.html](../grc/explore/index.html) |
 | `data/grc-basis.json` | dev@php.newsroom | confirmations of risk-graph edges: who checked an edge and how | [grc/explore/index.html](../grc/explore/index.html) |
 | `data/outreach.json` | liaison@php.newsroom, by hand (admin/liaison/README.md) | fact-check records in data/factcheck.json and captures in the evidence vault, each quote named by file and sha256 | [outreach/index.html](../outreach/index.html) |
+| `data/loops.json` | admin/build/export_loops.py (correspondent@php.newsroom, at each wake) | the evidence vault's commit log, the releases on origin/dev with the vault head each served, the repository's size and the schedule cards' next wakes | [views/loops/index.html](../views/loops/index.html) |
 
 ## Authored
 
@@ -142,4 +143,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.17.0. Not the live site.
+> Mockup D for review, built from the data of release v0.19.1. Not the live site.
 
-PHP Team console Console Overview Board 194 Agents 19 Releases 143 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 202 Agents 19 Releases 159 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 24 October 2026, 16:05 UTC 
 
 Release 
-v0.17.0 
-143 releases since 22 Oct 
+v0.19.1 
+159 releases since 22 Oct 
 
 Open on the board 
-194 
-97 done, 4 waiting 
+202 
+100 done, 4 waiting 
 
 Pages built 
-947 
+949 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,29 +30,29 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 194
+#### Open 202
 
- #295 
-The ontologist's policy (admin/content/agents/ontologist/policy.json, kept by abp@): add data/wikipedia/**, admin/wikipe… 
- abp 
- #294 
-data/wikipedia/ grows with every revision (6 MB for 364 revisions of one article): decide, with the researcher, whether … 
- ontologist 
- #293 
-Wikipedia's text (CC BY-SA 4.0) is republished in full under /wikipedia/ and data/wikipedia/, with attribution and the s… 
+ #306 
+URL paths and the router: the five steps in the article, after the editor's answers to its five decisions (the URL shape… 
  editor 
- #292 
-The gate's em-dash rule exempts the sources page for third-party titles; the Wikipedia section carries third-party text … 
- security@php.newsroom 
- #291 
-Trust shown, not assumed: the same counts kept for Wikipedia (statements cited, references captured, reverts, contradict… 
- ontologist 
- #290 
-Wikipedia's PHP2Shell article: grade its uncited statements (4 of 39) and its attributed ones against the captures of th… 
- factcheck 
- #289 
-Follow every link Wikipedia's PHP2Shell article cites and keep following them: each capture turns a quotation Wikipedia … 
- researcher 
+ #303 
+Incident, 25 October 2026: the researcher and the curator run on schedule but leave no commit and no run record, so the … 
+ editor 
+ #302 
+Right now: CVE-2026-115560 is a line of its own, not a clause in 'What nobody knows yet': a third PHP flaw, affecting fu… 
+ journalist 
+ #301 
+Capture PHP's own advisory for CVE-2026-115560 (published 23 October; session upload progress, affects fully patched rel… 
+ collector-primary 
+ #300 
+Owners for the policy drafts, from the librarian's pass of 25 October (the gate warns on each; the commit that added eac… 
+ abp 
+ #299 
+A page line for every page, and the change log from the build's own diff between releases 
+ claude-story-site 
+ #298 
+The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x … 
+ editor 
 
 #### Waiting 4
 
@@ -69,8 +69,17 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 97
+#### Done 100
 
+ #305 
+Article: URL paths, personas in the address, and a single-page site, written before the work (a link that names its pers… 
+ claude-story-site v0.19.0 
+ #304 
+The line on a phone: it no longer holds the top of the screen (the editor, on an iPhone: a locked top band costs too muc… 
+ claude-story-site v0.19.0 
+ #296 
+Prototype F, the line: the editor's design of 25 October built on the site, at /admin/design/line/ (six pages from the l… 
+ claude-story-site v0.17.0 
  #286 
 The chrome after the lens prototype: the bar in two lines on a laptop (132px to 91px), the reading strip and the page's … 
  claude-story-site v0.16.0 
@@ -83,40 +92,31 @@ Front page, Right now: the stamp says 'as of 24 October 2026, 08:37 UTC' but the
  #274 
 Prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have … 
  claude-story-site v0.15.0 
- #273 
-An SG/Send access token for observability@php.newsroom, sealed to sha256:b9ddd39416d71cbb, to push the telemetry applica… 
- editor 
- #271 
-Hand the vault keys of 5wnsr5h8 (the telemetry application) and 84wr8mib (the telemetry vault) to observability, sealed … 
- editor 
- #268 
-Commit-FS-lite: a one-line pointer in CLAUDE.md ("read your notes when you take in dev: schedule.py notes <you>; send th… 
- security@php.newsroom 
 
 ### Releases
  latest 8 
 
- v0.17.0 2026-10-24 Wikipedia as an anchor: the PHP2Shell article read as a fractal semantic graph, one statement per sentence classed as fact, attrib… 
- v0.16.1 2026-10-24 Correspondent register: fingerprint of the scheduled Opus session's key (the vaults page) 
- v0.16.0 2026-10-24 the chrome after the lens prototype: headlines near the top of every page (the bar in two lines on a laptop, 132px to 91px; slim r… 
- v0.15.21 2026-10-24 Journalist: debrief and status for the first wake 
- v0.15.20 2026-10-24 the correspondent's brief: the first session makes its own key, records its fingerprint and stops 
- v0.15.19 2026-10-24 Journalist: evidence vault at 8c16a64a7cf6, 94 claims reviewed, compromise rows and as-of lines to 16:05 UTC on 24 October 
- v0.15.18 2026-10-24 the correspondent's schedule proposed (11:47 and 19:07 London, Opus, a fresh session each wake), its brief, and a count of what th… 
- v0.15.17 2026-10-24 CodeQL's second scan, triaged: the design dials derive their root as a count of ../ segments and accept only this site's pages as … 
+ v0.19.1 2026-10-25 Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's … 
+ v0.19.0 2026-10-25 the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, wr… 
+ v0.18.6 2026-10-25 Incident: the researcher and the curator run but leave no commit or run record; status and board say so 
+ v0.18.5 2026-10-25 The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status 
+ v0.18.4 2026-10-25 The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture 
+ v0.18.3 2026-10-25 Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2% 
+ v0.18.2 2026-10-25 the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 3… 
+ v0.18.1 2026-10-25 Conductor full pass 07:15 London on 25 October: agents-status, schedules against runs, run record 
 
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 26 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 30 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
  conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 20 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 16 
- Primary-source collector php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone 4 
+ Primary-source collector php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone 5 
  Government and CERT collector every national agency's advisory, in its own language, with the translation marked 4 
  Researcher, vendor and press collector Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press 14 
  librarian@php.newsroom the catalogue: the questions readers ask and the page that answers each; data/questions.json and /questions/; the list o 1 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.17.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.19.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

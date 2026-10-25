@@ -4,7 +4,7 @@
 
 PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Developing  ·  PHP news, October 2026  ·  [last checked 24 October 2026, 16:05 UTC](#checked)
+Developing  ·  PHP news, October 2026  ·  [latest evidence 24 October 2026, 16:05 UTC](#checked)  ·  [last agent run 25 October 2026, 10:38 UTC](views/loops/index.html)
 
 # Two serious security flaws in PHP, the software behind many of the world's websites
 
@@ -15,7 +15,7 @@ PHP is the software that WordPress and millions of other websites run on. A fix 
 You may also see this called php2shell, or by its two official reference numbers, CVE-2026-109618 and CVE-2026-109619.
 
   JYour answer in thirty secondsfor Jordan, board member or executive
-A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of the evening of 22 October, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
+A critical flaw in software that runs many websites, fixed on 21 October. Every agency says update first; some say take systems offline if you cannot. As of 16:05 UTC on 24 October, the latest capture in the evidence vault, no named organisation has said it was broken into through this flaw, though attempts are widespread. Your questions are: do we know every system running PHP, are they updated and restarted, and who can pull a system offline and how fast.
 
 Choose who you are in the bar above and this answer, the menu and your home change to fit.
 
@@ -48,24 +48,24 @@ This section v6 written in site [v0.15.19](admin/versions.html#v0.15.19) on 24 O
 This section v5 written in site [v0.15.19](admin/versions.html#v0.15.19) on 24 October 2026 · [history and changes, 4 earlier](versions/front-facts/index.html)
 
 ## Latest
-what changed on the site- 23 Oct, 10:03 UTCDie Presse: as of 12:03 on 23 October no successful attack via the PHP flaws was known in Austria. [Die Presse](sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/index.html)
-- 23 Oct, 09:16 UTCJapan's RainForest reports that its honeypots recorded 21 php2shell-related requests from different addresses: attempts, not break-ins. [voix](sources/voix-business-cards-rainforest-ip-activity-an/index.html)
+what changed on the site- 23 Oct, 10:03 UTCDie Presse: as of 12:03 Vienna time (10:03 UTC) on 23 October no successful attack via the PHP flaws was known in Austria. [Die Presse](sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/index.html)
+- 23 Oct, 09:16 UTCJapan's RainForest reports that its honeypots recorded 21 php2shell-related requests from 14 different addresses: attempts, not break-ins. [voix](sources/voix-business-cards-rainforest-ip-activity-an/index.html)
 - 23 Oct, 07:58 UTCIT Social: the update closes the flaw, but obliges a hunt for possible compromises; the published figures count attempts, not intrusions. [IT Social](sources/itsocial-cybersecurite-cybersecurite-articles-php/index.html)
 - 23 OctAmerican Banker: no US bank or credit union has publicly reported a compromise, despite millions of attempts. [American Banker](sources/americanbanker-news-banks-dodge-early-damage-from-php2s/index.html)
 - 22 Oct, 21:21 UTCSophos withdraws an earlier claim of a successful compromise: its data shows scanning and a few failed attempts, and a botnet payload it saw was blocked. [Cyber Security News](sources/cybersecuritynews-critical-php2shell-exploit-code/index.html)
 
 [Everything, in order →](timeline/index.html)
 
-This section v4 written in site [v0.15.19](admin/versions.html#v0.15.19) on 24 October 2026 · [history and changes, 3 earlier](versions/front-latest/index.html)
+This section v5 written in site [v0.17.0](admin/versions.html#v0.17.0) on 24 October 2026 · [history and changes, 4 earlier](versions/front-latest/index.html)
 
 ## What nobody knows yet
 - [Whether any website was actually broken into before it installed the fix.](impact/index.html)
-- [Whether the fix is complete. A report on 21 October suggested it may not be; the PHP security team replied on the mailing list on 22 October, and this site will settle the question once that reply is saved here.](code/index.html)
+- [Whether the fix is complete. A report on 21 October suggested it may not be; the PHP security team replied on the mailing list on 22 October, and this site will settle the question once that reply is saved here. Separately, on 23 October PHP published an advisory for another flaw, CVE-2026-115560, which affects fully patched releases and needs a rare session setting (reported by Cloudflare, SOCRadar and The Hacker News).](code/index.html)
 - [Who leaked the news on 20 October, and where.](leak/index.html)
 - [How many websites went offline, and why. The reports this site holds range from a single site to a whole government's platform; a community tracker lists about fifty sites that went dark and came back. Nobody has counted them all.](impact/index.html)
 - [Where the 70% figure comes from. None of the pages that use it says how it was measured.](numbers/index.html)
 
-This section v2 written in site [v0.12.1](admin/versions.html#v0.12.1) on 24 October 2026 · [history and changes, 1 earlier](versions/front-unknown/index.html)
+This section v3 written in site [v0.17.0](admin/versions.html#v0.17.0) on 24 October 2026 · [history and changes, 2 earlier](versions/front-unknown/index.html)
 
 ### Ask about it
 
@@ -110,19 +110,19 @@ ACurious readerAlex · Plain EnglishWhat happened, does it affect me, and should
 ### I make the decisions
 
 You own a budget, a plan or a risk, and need what to decide, in what order, and what to ask your team.
-JBoard member or executiveJordan · Plain EnglishAre we exposed, what is it costing us, and who owns the decision to pull a system?5 reads · about 18 min Start →TProject or programme managerTaylor · Plain EnglishWhat unplanned work does this create, who do I chase, and what do I tell stakeholders?5 reads · about 16 min Start →QCFOQuinn · Plain EnglishWhat is the financial exposure, what does downtime cost against breach cost, and will insurance respond?5 reads · about 17 min Start →MData protection officerMorgan · Some technicalWas personal data exposed, does this start a GDPR breach assessment or a 72-hour notification, and what do I document?6 reads · about 15 min Start →RCISORobin · Some technicalWhat is our exposure, what is our evidence we were not hit, and what do I tell the board?6 reads · about 16 min Start →ACTOAvery · Some technicalWhat does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?5 reads · about 20 min Start →
+JBoard member or executiveJordan · Plain EnglishAre we exposed, what is it costing us, and who owns the decision to pull a system?5 reads · about 18 min Start →TProject or programme managerTaylor · Plain EnglishWhat unplanned work does this create, who do I chase, and what do I tell stakeholders?5 reads · about 16 min Start →QCFOQuinn · Plain EnglishWhat is the financial exposure, what does downtime cost against breach cost, and will insurance respond?5 reads · about 17 min Start →MData protection officerMorgan · Some technicalWas personal data exposed, does this start a GDPR breach assessment or a 72-hour notification, and what do I document?6 reads · about 15 min Start →RCISORobin · Some technicalWhat is our exposure, what is our evidence we were not hit, and what do I tell the board?6 reads · about 17 min Start →ACTOAvery · Some technicalWhat does this cost us in engineering time, what breaks when we patch, and what do we change so the next one is a non-event?5 reads · about 21 min Start →
 ### I tell others
 
 You write or speak about this, and need what is true, what is not, and who said it first.
-RJournalistRowan · Some technicalWhich numbers hold up, who said what first, and what is still unverified?6 reads · about 12 min Start →RCommunications teamRiley · Plain EnglishWhat can we say that is true, what should we not say, and what will we be asked?5 reads · about 17 min Start →
+RJournalistRowan · Some technicalWhich numbers hold up, who said what first, and what is still unverified?6 reads · about 13 min Start →RCommunications teamRiley · Plain EnglishWhat can we say that is true, what should we not say, and what will we be asked?5 reads · about 17 min Start →
 ### I run or build systems
 
 You patch, configure, monitor or write code, and need versions, settings and signals.
-SSecurity leadSam · Some technicalWhat do I patch first, what do I watch for, and when do I take something offline?5 reads · about 14 min Start →JHead of AppSecJamie · Deeply technicalWhich of our applications are in scope, which settings matter, and what do we add to the pipeline?5 reads · about 14 min Start →DPHP or platform engineerDrew · Deeply technicalWhich versions, which SAPIs, which settings, which commands?5 reads · about 18 min Start →LDeveloperLee · Some technicalIs my code the problem, what do I change, and how do I check the box I deployed to?4 reads · about 17 min Start →
+SSecurity leadSam · Some technicalWhat do I patch first, what do I watch for, and when do I take something offline?5 reads · about 14 min Start →JHead of AppSecJamie · Deeply technicalWhich of our applications are in scope, which settings matter, and what do we add to the pipeline?5 reads · about 15 min Start →DPHP or platform engineerDrew · Deeply technicalWhich versions, which SAPIs, which settings, which commands?5 reads · about 18 min Start →LDeveloperLee · Some technicalIs my code the problem, what do I change, and how do I check the box I deployed to?4 reads · about 18 min Start →
 ### I study it
 
 You research vulnerabilities or advise on policy, and need the evidence, the open questions and the precedent.
-ASecurity researcherAsh · Deeply technicalWhat are the bug classes, what was demonstrated, and what is still open?5 reads · about 19 min Start →BAnalyst or policy advisorBlake · Some technicalHow did coordinated disclosure fail, and what does AI-assisted discovery change?6 reads · about 14 min Start →
+ASecurity researcherAsh · Deeply technicalWhat are the bug classes, what was demonstrated, and what is still open?5 reads · about 19 min Start →BAnalyst or policy advisorBlake · Some technicalHow did coordinated disclosure fail, and what does AI-assisted discovery change?6 reads · about 15 min Start →
 
 ## Stories: written here
 signed, dated and kept as written; everything above is researchWhat changed in a day: no victim yet, four named cases tested, a patch moving through the supply chain, and firewalls on the listHouse story · Journalist · 2026-10-23Who reads this site, and what works on it: the tools we built to find out, and what they say on day twoHouse story · Dev desk · 2026-10-23The risk graph, before and after: what changed from one reader's five ideasHouse story · Dev desk · 2026-10-23The editor, interviewed: Dinis Cruz on why this site existsInterview · the editor, in his own words
@@ -134,8 +134,8 @@ What else is going on Other vulnerabilities in the news this month, with the evi
 382web pages saved as evidence, each with the time it was saved70statements checked: 19 confirmed, 11 disputed, 4 unverified68dated events, from 2024 to today16government agencies' advice compared
 Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read [the PHP project's announcement](https://www.php.net/archive/2026.php#2026-10-21-5) and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; [how it works](method/index.html).
 
-Last checked: [the evidence vault](sources/index.html), latest capture 24 October 2026, 16:05 UTC · [the source watch](vaults/source-watch/index.html), latest run 23 October 2026, 12:40 UTC · [the NCSC-NL inventory](patching/inventory/index.html), latest change read 23 October 2026, 12:50 UTC. Already know the vocabulary? [The specialist summary](summary/index.html) has the technical version of this page.
+Latest evidence: [the evidence vault](sources/index.html), latest capture 24 October 2026, 16:05 UTC · [the source watch](vaults/source-watch/index.html), latest run 23 October 2026, 12:40 UTC · [the NCSC-NL inventory](patching/inventory/index.html), latest change read 23 October 2026, 12:50 UTC. Last agent run: 25 October 2026, 10:38 UTC (conductor); [how the site is kept current, loop by loop](views/loops/index.html). Already know the vocabulary? [The specialist summary](summary/index.html) has the technical version of this page.
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/index.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/index.html

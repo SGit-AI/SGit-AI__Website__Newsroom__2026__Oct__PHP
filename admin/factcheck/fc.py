@@ -3,6 +3,7 @@
 
   fc.py check [--vault DIR]      scripted checks over data/ and the desk's files; with a vault clone, verify every cited capture's text by sha256
   fc.py changed                  claims whose text, sources or status changed since their assessment
+  fc.py drift --vault DIR        excerpts a grade rests on that are no longer in the newest capture of their source
   fc.py extract CLAIM --vault DIR  print the captured text of every source a claim cites, with paths and hashes (for mode 1)
   fc.py ticket create TYPE TITLE [--claims a,b] [--sources s] [--pages p] [--run Run-N] [--desc TEXT] [--severity S] [--prop k=v ...]
   fc.py ticket set LABEL [--status S] [--comment TEXT] [--prop k=v ...]
@@ -274,6 +275,36 @@ def cmd_check(argv):
     sys.exit(1 if fails else 0)
 
 
+def newest_capture_text(vault, slug):
+    """The newest capture's text file of a source in a vault clone, whatever the manifest says."""
+    d = os.path.join(vault, 'sources', slug, 'captures')
+    for st in sorted(os.listdir(d), reverse=True) if os.path.isdir(d) else []:
+        p = os.path.join(d, st, 'text.txt')
+        if os.path.exists(p):
+            return st, p
+    return None, None
+
+
+def cmd_drift(argv):
+    """For every excerpt a grade rests on, is it still in the newest capture of its source? Words that survive a
+    re-capture leave the grade standing; words that are gone mean the source changed, and the grade needs a look."""
+    o, _ = opts(argv)
+    A = desk('assessments.json', {'assessments': []})['assessments']
+    gone = 0
+    for a in A:
+        for ch in a.get('checked', []):
+            ex = ch.get('excerpt')
+            if not ex or not ch.get('file') or not ch['file'].endswith('text.txt'):
+                continue
+            st, p = newest_capture_text(o['vault'], ch['source'])
+            if not p or p.endswith(ch['file']):
+                continue
+            if norm(ex) not in norm(open(p, encoding='utf-8', errors='replace').read()):
+                gone += 1
+                print(f'{a["id"]}\t{ch["source"]}\t{st}\tgone: "{ex[:70]}"')
+    print(f'drift: {gone} excerpt(s) no longer in the newest capture of their source')
+
+
 def cmd_changed(argv):
     claims = data('claims')
     A = {a['id']: a for a in desk('assessments.json', {'assessments': []})['assessments']}
@@ -381,4 +412,4 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     cmd = sys.argv[1]
-    {'check': cmd_check, 'changed': cmd_changed, 'extract': cmd_extract, 'ticket': cmd_ticket, 'export': cmd_export}[cmd](sys.argv[2:])
+    {'check': cmd_check, 'drift': cmd_drift, 'changed': cmd_changed, 'extract': cmd_extract, 'ticket': cmd_ticket, 'export': cmd_export}[cmd](sys.argv[2:])

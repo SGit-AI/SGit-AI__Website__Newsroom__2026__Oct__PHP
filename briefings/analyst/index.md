@@ -25,14 +25,14 @@ What this incident says about coordinated disclosure once models can find bugs, 
 - Agencies diverged on the hardest question, offline or not, along lines that look institutional rather than technical.
 
 ## Your reading path
-- [Your briefing](../../briefings/analyst/index.html) 3 min
+- [Your briefing](../../briefings/analyst/index.html) 4 min
 - [Who found it](../../discovery/index.html) 2 min
 - [How disclosure broke](../../leak/index.html) 1 min
 - [In context: 2008 to 2026](../../context/index.html) 3 min
 - [The agencies](../../agencies/index.html) 3 min
 - [The numbers](../../numbers/index.html) 2 min
 
-About 14 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
+About 15 minutes in all. Choose *read as Blake* and the bar under the menu keeps your place on every page.
 
 ### What this briefing covers
 - how coordinated disclosure failed
@@ -99,17 +99,17 @@ Each is underlined where it first appears; hover or tap for a one-line definitio
 | No exploitation observed on Huntress partner systems as of 20:30 UTC on 21 October; no public exploit code known to Huntress [fact timeline →](../../facts/huntress-none/index.html) | Huntress | reported | **A2** Reported●●○○○○ disputed | 1/1 | [Huntress](../../sources/huntress-php2shell-rapid-response/index.html) |
 | The last PHP core RCE, CVE-2024-4577, was exploited in the wild one day after disclosure and in KEV three days after; php2shell is not in KEV after one dayThe KEV dates are counted from the captured catalog; 'exploited in the wild one day after disclosure' rests on Akamai alone. [fact timeline →](../../facts/kev-precedent/index.html) | CISA KEV catalog; Akamai (2024) | reported | **A2** Reported●●○○○○ | 3/3 | [CISA](../../sources/cisa-kev-json/index.html) [CVE record](../../sources/cve-cve-2024-4577/index.html) [Akamai Security Research](../../sources/akamai-blog-cve-2024-4577-one-day/index.html) |
 | Criminals are using AI to 'vibe code' an attack method [fact timeline →](../../facts/vibe-code/index.html) | unnamed researchers, via the BBC | unverified | **A1** Weak signal●○○○○○ opinion | 0/1 | [BBC News](../../sources/bbc-live-ckgel5xp2xv9t/index.html) |
-| watchTowr sees active exploitation attempts and lists the flaws as exploited in the wildwatchtowr.com returns HTTP 403 to this site's capture tool; known only from search summaries. [fact timeline →](../../facts/watchtowr-itw/index.html) | watchTowr | unverified | **A4** Corroborated●●●●○○ superseded | 2/2 | [watchTowr](../../sources/watchtowr-php2shell/index.html) [watchTowr](../../sources/watchtowr-php2shell-faq/index.html) |
+| watchTowr sees active exploitation attempts and lists the flaws as exploited in the wildwatchtowr.com returns HTTP 403 to this site's capture tool; known only from search summaries. [fact timeline →](../../facts/watchtowr-itw/index.html) | watchTowr | unverified | **A6** Established●●●●●● | 2/2 | [watchTowr](../../sources/watchtowr-php2shell/index.html) [watchTowr](../../sources/watchtowr-php2shell-faq/index.html) |
 
 ## What is still open
 - Who first leaked the CVE IDs on 20 October, and where. The PHP Foundation does not say; a PHP security team member points to an anonymous Hacker News post, and Notebookcheck and Nguoi Quan Sat repeat that account. No copy of the post is in the vault.
 - Whether the deleted Calif video is the one now embedded on Calif's own write-up. Calif's page does not mention the leak.
 - Whether any site was actually compromised before it was patched or taken offline. Every claim of exploitation so far is of attempts, probes or honeypot hits, and the named cases do not state php2shell as the cause. Authorities in Singapore and Luxembourg now ask operators to look for traces; the answer will come from those searches, if it comes.
 - Which sites were really taken offline, and why. The list now draws on more captured reports (Germany's hospitals and hosts, Morocco, Romania, Japan), but most are press accounts; few come from the organisations themselves (the Dutch government, Latvia's agency, Weird Gloop, the Charité's spokesman as quoted). A community tracker counts 51 listed and 50 back.
-- Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. Nothing from PHP on the list yet.
+- Whether the 8.5.12 fix is complete. A Fediverse report of a third bug or incomplete fix reached oss-security on 21 October; PHP reportedly told Canonical it is unrelated. On 23 October PHP published an informational advisory for a separate flaw, CVE-2026-115560, in the session upload progress feature, reported by Cloudflare, SOCRadar and The Hacker News: it affects fully patched releases including 8.5.12, needs a rare session setting, will be fixed in the next regular release, and has session.upload_progress.enabled=0 as the mitigation; SOCRadar reports no exploitation and no severity score. PHP's advisory is not in the evidence vault, and whether this is the bug the Fediverse report described is not stated.
 
 The full set of claims is on [every claim](../../claims/index.html); the ordered steps for a vulnerable system are on [if you run PHP](../../playbook/index.html). Other readers: [Curious reader](../everyone/index.html) · [Website owner](../site-owner/index.html) · [Project or programme manager](../pm/index.html) · [Board member or executive](../board/index.html) · [Security lead](../security/index.html) · [PHP or platform engineer](../engineer/index.html) · [Journalist](../journalist/index.html) · [Security researcher](../researcher/index.html) · [CISO](../ciso/index.html) · [CTO](../cto/index.html) · [CFO](../cfo/index.html) · [Data protection officer](../dpo/index.html) · [Head of AppSec](../appsec/index.html) · [Developer](../developer/index.html) · [Communications team](../comms/index.html).
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/analyst/index.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/briefings/analyst/index.html

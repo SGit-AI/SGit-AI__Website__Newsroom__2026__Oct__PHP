@@ -2107,10 +2107,10 @@
   },
   {
    "id": "285",
-   "title": "The desk's wakes (09:20, 16:20) come before the correspondent's proposed wakes (11:47, 19:07); by the pipeline, the desk, the ontologist and the librarian run after the correspondent",
+   "title": "The desk's wakes (09:20, 16:20) come before the correspondent's (09:25, 11:55, 14:25, 16:55, 19:25 London, active since 25 October); by the pipeline, the desk, the ontologist and the librarian run after the correspondent",
    "status": "open",
    "owner": "desk",
-   "note": "The editor, 24 October: the semantic graphs and the desk's checks only after the correspondent has reviewed the data. Proposal: the desk at about 12:20 and 19:40 London; the ontologist and the librarian after those. Cards: data/schedule/desk.json, ontologist.json, librarian.json; the correspondent's: data/schedule/correspondent.json (proposed)."
+   "note": "The editor, 24 October: the semantic graphs and the desk's checks only after the correspondent has reviewed the data. Proposal: the desk at about 12:20 and 19:40 London; the ontologist and the librarian after those. Cards: data/schedule/desk.json, ontologist.json, librarian.json; the correspondent's: data/schedule/correspondent.json (proposed). Updated by the correspondent on 25 October: the journalist's and the correspondent's scheduled tasks now exist (journalist 08:40, 11:10, 13:40, 16:10, 18:40; correspondent 09:25, 11:55, 14:25, 16:55, 19:25, both cards active). The desk's 09:20 still runs five minutes before the first review and its 16:20 before the 16:55 one; proposal now: the desk at about 10:15 and 17:40 London, after a review has had time to release; the ontologist's 14:40 already follows the 14:25 review, the librarian's 07:13 precedes every loop."
   },
   {
    "id": "286",
@@ -2182,6 +2182,85 @@
    "status": "open",
    "owner": "abp",
    "note": "From the brief: Wikipedia as an anchor (25 October)."
+  },
+  {
+   "id": "296",
+   "title": "Prototype F, the line: the editor's design of 25 October built on the site, at /admin/design/line/ (six pages from the live data, the pack's engine and words vendored, the numbers filled from the vault)",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "The editor handed story-site the briefing pack 'the line' in its session of 25 October and asked for it to be implemented. Brief: admin/content/briefs/2026-10-25__brief__the-line.md. The engine's 19 tests pass against the vendored copy (node --test assets/design/line/engine.test.mjs). Rules 1 to 7, the eleven moments, the seven roles, depth, seen and folding, shared links and the past view all work in Chromium; no page errors.",
+   "version": "0.17.0"
+  },
+  {
+   "id": "297",
+   "title": "The line on the live site: the rollout in the brief's order, starting with the line and the boot script on every page (rule 7 and the fallback line), replacing the lens's two dials",
+   "status": "open",
+   "owner": "editor",
+   "note": "Waiting on the editor's go, as prototype E was (board 275, which this supersedes). Steps 2 to 7 of the brief's rollout follow: roles and depth on the live front page and the content pages, the first visit and the guesses, seen and the return moments, shared links and the past view, a page line for every page (the desk approves the words), then the reader's vault (board 140) and telemetry (board 262)."
+  },
+  {
+   "id": "298",
+   "title": "The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x depth cells, the thresholds, and who writes the page lines",
+   "status": "open",
+   "owner": "editor",
+   "note": "Section 14 of the brief. The prototype ships the pack's answers to all five; they are cheap to change (assets/design/line/roles.json, copy.src.json and moments.json are read by the build)."
+  },
+  {
+   "id": "299",
+   "title": "A page line for every page, and the change log from the build's own diff between releases",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "Prototype F writes lines for the front page, the agencies, the numbers and the playbook; every other page falls back to the page-title line. The change log is read from data/timeline.json, tagged by phase; the live one should come from the diff between releases, as the brief's section 10.5 asks."
+  },
+  {
+   "id": "300",
+   "title": "Owners for the policy drafts, from the librarian's pass of 25 October (the gate warns on each; the commit that added each file carries its Agent line unless marked inferred): security: .github/dependabot.yml, .well-known/security.txt, SECURITY.md (inferred, created on GitHub), admin/build/csp.py, admin/build/diagram.py, data/advisories.json, data/appsec.json, pages admin/appsec/**; conductor: admin/build/grc_history.py, assets/grc-changes.js, data/comms.json, and (inferred from /team/control/) admin/build/control.py, assets/control.css, assets/control.js; dev: admin/build/release_pages.py (inferred, the release history); correspondent (no policy yet, board 277; its ROLE.md drafted by the librarian): admin/build/loops.py, admin/build/export_loops.py, data/loops.json, data/schedule/correspondent.json, data/runs/correspondent/**, data/vault-register/correspondent.json, admin/content/agents/correspondent/**. The ontologist's Wikipedia files are its own request, board 295; data/desk.json, /analysis/ and /ops/ are board 256.",
+   "status": "open",
+   "owner": "abp"
+  },
+  {
+   "id": "301",
+   "title": "Capture PHP's own advisory for CVE-2026-115560 (published 23 October; session upload progress, affects fully patched releases including 8.5.12) into the evidence vault: the site carries it only through Cloudflare, SOCRadar and The Hacker News",
+   "status": "open",
+   "owner": "collector-primary",
+   "note": "From the news desk chief's morning wake, 25 October."
+  },
+  {
+   "id": "302",
+   "title": "Right now: CVE-2026-115560 is a line of its own, not a clause in 'What nobody knows yet': a third PHP flaw, affecting fully patched releases, fixed in the next regular release; it needs a rare session setting, has no severity score and no reported exploitation; the mitigation is session.upload_progress.enabled=0. Keep it separate from php2shell's two CVEs, and keep the unknown about whether it is the Fediverse report's bug",
+   "status": "open",
+   "owner": "journalist",
+   "note": "From the news desk chief's morning wake, 25 October."
+  },
+  {
+   "id": "303",
+   "title": "Incident, 25 October 2026: the researcher and the curator run on schedule but leave no commit and no run record, so the team is blind to what they did and the control room shows them as missed. Decide: every scheduled wake leaves a run record in git (proposed: the agent writes a report into its own vault, the conductor commits it), and the four scheduled prompts change accordingly.",
+   "status": "open",
+   "owner": "editor",
+   "note": "Raised by the conductor. The curator's and the researcher's sessions show the runs (25 Oct 08:00 London: 18 sources promoted); only the repository is blind."
+  },
+  {
+   "id": "304",
+   "title": "The line on a phone: it no longer holds the top of the screen (the editor, on an iPhone: a locked top band costs too much of a small screen); it scrolls away with the page and the text runs full width",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "Measured in Chromium at 390x844: the resting line is 125px and the first-visit panel 253px, both of which scroll away; the headline starts 394px down. assets/design/line/line.css only.",
+   "version": "0.19.0"
+  },
+  {
+   "id": "305",
+   "title": "Article: URL paths, personas in the address, and a single-page site, written before the work (a link that names its persona; every page keeps its own path; SEO; code apart from data)",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "The editor asked for the article before the implementation. admin/content/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site.md, published at /admin/briefs/. It proposes /agencies/as/security/ (the page keeps its path, the persona is a suffix), canonical to the base page, persona paths only for the pages that read differently, fragments and a router rather than a framework, and five decisions for the editor.",
+   "version": "0.19.0"
+  },
+  {
+   "id": "306",
+   "title": "URL paths and the router: the five steps in the article, after the editor's answers to its five decisions (the URL shape, depth in the address, which pages get persona paths, how long ?as= stays, and the order against the line going live)",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the article of 25 October. Step 1 (persona paths as real files, canonical to the base, Share minting them) is the one that delivers 'a link that includes the persona name' and can ship on its own."
   }
  ],
  "evidence_vault": {

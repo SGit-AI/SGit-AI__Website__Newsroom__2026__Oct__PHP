@@ -211,6 +211,79 @@
    "why": "Huntress's own time for its statement that it had seen no exploitation on its partners' systems (claim huntress-none): a source's date, kept wherever the claim is quoted."
   }
  ],
- "catches": [],
+ "catches": [
+  {
+   "on": "2026-10-24",
+   "what": "claim cur6-third-flaw-115560 held back as 'CVE not in the PHP advisory in the vault' although Cloudflare, SOCRadar and The Hacker News carry it; the story still said 'Nothing from PHP on the list yet'. Verdict now used; story and the front page's open question updated.",
+   "file": "data/claim-review.json, data/story.json, data/plain.json",
+   "kind": "verdict",
+   "journalist_run": "20261024T2126Z-journalist",
+   "fixed_in": "the correspondent's release after v0.16.1"
+  },
+  {
+   "on": "2026-10-24",
+   "what": "The CVE-2026-115560 advisory of 23 October (a third PHP flaw, unpatched until the next regular release) was on no page of the site.",
+   "file": "data/story.json",
+   "kind": "missing",
+   "journalist_run": "20261024T2126Z-journalist",
+   "fixed_in": "the correspondent's release after v0.16.1"
+  },
+  {
+   "on": "2026-10-24",
+   "what": "claim cur8-sansec-memory-leak: reason said Sansec's own post is not in the vault; it is (sansec-research-php2shell).",
+   "file": "data/claim-review.json",
+   "kind": "verdict",
+   "journalist_run": "20261024T2126Z-journalist",
+   "fixed_in": "the correspondent's release after v0.16.1"
+  },
+  {
+   "on": "2026-10-24",
+   "what": "Sansec's two captures differ: the Heartbleed comparison and 'default configurations are vulnerable' of 22 October are gone on 23 October. The journalist compared neither.",
+   "file": "data/claim-review.json",
+   "kind": "contradiction",
+   "journalist_run": "20261024T2126Z-journalist",
+   "fixed_in": "the correspondent's release after v0.16.1"
+  },
+  {
+   "on": "2026-10-24",
+   "what": "claim cur2-certin-high: MediaNama says CERT-In rated it 'high', Indian Express and a CERT-In post say 'critical-severity'. Held back, now for the contradiction.",
+   "file": "data/claim-review.json",
+   "kind": "contradiction",
+   "journalist_run": "20261024T2126Z-journalist",
+   "fixed_in": "the correspondent's release after v0.16.1"
+  },
+  {
+   "on": "2026-10-24",
+   "what": "claim cur8-eu-joint-advisory held back as 'one Italian outlet'; four more outlets in the vault report the joint statement. Now noted with all five.",
+   "file": "data/claim-review.json",
+   "kind": "verdict",
+   "journalist_run": "20261024T2126Z-journalist",
+   "fixed_in": "the correspondent's release after v0.16.1"
+  },
+  {
+   "on": "2026-10-24",
+   "what": "claims cur6-at-no-successful-attacks and cur8-rainforest-honeypot marked 'noted' (not used) while the journalist's own compromise.json rows and the front page use them. Now used.",
+   "file": "data/claim-review.json",
+   "kind": "verdict",
+   "journalist_run": "20261024T2126Z-journalist",
+   "fixed_in": "the correspondent's release after v0.16.1"
+  },
+  {
+   "on": "2026-10-24",
+   "what": "claim cur8-cloudflare-waf-rule: reason said Cloudflare's post is not in the vault; it is (cloudflare-blog-php2shell-waf).",
+   "file": "data/claim-review.json",
+   "kind": "verdict",
+   "journalist_run": "20261024T2126Z-journalist",
+   "fixed_in": "the correspondent's release after v0.16.1"
+  },
+  {
+   "on": "2026-10-24",
+   "what": "Die Presse row: 'as of 12:03' next to '10:03 UTC' read as two different times (12:03 is Vienna time); RainForest row left out that the 21 requests came from 14 source IPs.",
+   "file": "data/compromise.json, data/plain.json",
+   "kind": "row",
+   "journalist_run": "20261024T2126Z-journalist",
+   "fixed_in": "the correspondent's release after v0.16.1"
+  }
+ ],
  "catches_about": "What the correspondent corrected in the journalist's work, one row per correction: when, what, the file, its kind (verdict, row, as-of, missing, contradiction), the journalist's run and the release that fixed it. Counted on /views/desk/, so the editor can see what a Sonnet journalist misses."
 }

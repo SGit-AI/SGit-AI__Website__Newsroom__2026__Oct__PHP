@@ -7,9 +7,15 @@ site within minutes of the release: never a key, a token, a passphrase, a sealed
 refuses the obvious shapes; the gate refuses more).
 
   inbox <agent>                       messages to <agent> (or to all) that no run of <agent> has read yet
+  wake <agent>                        the start of every scheduled wake (admin/schedule/WAKE.md): what changed on dev
+                                      since your last run (commit subjects), your notes, your inbox, your card's steps
   run <agent> --started ISO --outcome ok|idle|partial|failed --summary "..."
-      [--read ID ...] [--sent ID ...] [--article SLUG] [--log FILE] [--model M] [--cost USD]
-                                      write this wake's run record, data/runs/<agent>/<run id>.json
+      [--read ID ...] [--sent ID ...] [--article SLUG] [--log FILE] [--model M] [--cost USD] [--publish]
+                                      write this wake's run record, data/runs/<agent>/<run id>.json; with --publish,
+                                      also push that one file to the branch runs/<agent> (no build, no release): the
+                                      conductor carries it into dev within the hour
+  ingest                              (the conductor) copy every new, well-formed run record from the runs/* branches
+                                      into data/runs/, refusing anything else; then release as usual
   send --from A --to B --subject "..." --body-file FILE [--re ID]
                                       write a message, data/messages/<B>/<id>.md (B may be "all"), for a long one
   export-notes                        write data/comms.json, the notes in the last 600 commits on origin/dev, which
@@ -125,6 +131,84 @@ def cmd_run(a):
     os.makedirs(os.path.dirname(p), exist_ok=True)
     open(p, 'w', encoding='utf-8').write(checked(json.dumps(r, indent=1, ensure_ascii=False), p) + '\n')
     print(os.path.relpath(p, ROOT))
+    if a.publish: publish_run(a.agent, p)
+
+def publish_run(agent, path):
+    """Commit one run record onto runs/<agent> without touching the working tree, the index or HEAD, and push it.
+    The branch holds nothing but run records; the conductor's `ingest` reads only data/runs/<agent>/ from it."""
+    rel = os.path.relpath(path, ROOT)
+    br = f'runs/{agent}'
+    git('fetch', '-q', 'origin', br)
+    parent = git('rev-parse', '-q', '--verify', f'refs/remotes/origin/{br}').strip() or git('rev-parse', 'origin/dev').strip()
+    env = dict(os.environ, GIT_INDEX_FILE=os.path.join(ROOT, '.git', f'runs-{agent}.index'))
+    def g(*args, inp=None):
+        r = subprocess.run(['git', *args], cwd=ROOT, capture_output=True, text=True, env=env, input=inp)
+        if r.returncode: sys.exit(f'publish failed at git {args[0]}: {r.stderr.strip()[-300:]}')
+        return r.stdout.strip()
+    g('read-tree', parent)
+    blob = g('hash-object', '-w', rel)
+    g('update-index', '--add', '--cacheinfo', f'100644,{blob},{rel}')
+    tree = g('write-tree')
+    c = g('commit-tree', tree, '-p', parent, inp=f'Run record {os.path.basename(rel)[:-5]}\n\nNot a release: a run record for the conductor to carry into dev.\nAgent: {agent}\n')
+    os.remove(env['GIT_INDEX_FILE'])
+    r = subprocess.run(['git', 'push', '-q', 'origin', f'{c}:refs/heads/{br}'], cwd=ROOT, capture_output=True, text=True)
+    if r.returncode: sys.exit(f'publish failed at push to {br}: {r.stderr.strip()[-300:]} (the record is still in {rel}: say so in your report)')
+    print(f'published to {br}: {c[:12]}')
+
+RUN_KEYS = {'run', 'agent', 'started', 'finished', 'outcome', 'summary', 'read', 'sent', 'article', 'model', 'cost_usd', 'head', 'log'}
+
+def cmd_ingest(a):
+    git('fetch', '-q', 'origin', '+refs/heads/runs/*:refs/remotes/origin/runs/*')
+    took, refused = [], []
+    for ref in git('for-each-ref', '--format=%(refname:strip=3)', 'refs/remotes/origin/runs/').split():
+        agent = ref.split('/', 1)[1] if '/' in ref else ''
+        if not NAME.fullmatch(agent) or agent in RESERVED: refused.append(f'{ref}: not an agent name'); continue
+        for path in git('ls-tree', '-r', '--name-only', f'refs/remotes/origin/{ref}', '--', f'data/runs/{agent}/').split():
+            dest = os.path.join(ROOT, path)
+            if os.path.exists(dest): continue                                # already in dev (the conductor took in dev first)
+            why = ''
+            text = git('show', f'refs/remotes/origin/{ref}:{path}')
+            m = re.fullmatch(rf'data/runs/{agent}/(\d{{8}}T\d{{4}}Z-{agent})\.json', path)
+            try: r = json.loads(text)
+            except ValueError: r = None
+            if not m: why = 'not a run record path'
+            elif len(text) > 20000: why = 'larger than 20 kB'
+            elif not isinstance(r, dict) or set(r) - RUN_KEYS: why = 'not the run record shape'
+            elif r.get('agent') != agent or r.get('run') != m.group(1): why = 'agent or run id does not match its path'
+            elif r.get('outcome') not in OUTCOMES: why = 'unknown outcome'
+            elif SECRET.search(text) or CTRL.search(text.replace('\n', '')): why = 'holds a key shape or hidden characters'
+            if why: refused.append(f'{path}: {why}'); continue
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            open(dest, 'w', encoding='utf-8').write(json.dumps(r, indent=1, ensure_ascii=False) + '\n')
+            took.append(path)
+    for p in took: print('took', p)
+    for p in refused: print('REFUSED', p)
+    print(f'{len(took)} run records taken in, {len(refused)} refused')
+
+def cmd_wake(a):
+    agent = name(a.agent)
+    git('fetch', '-q', 'origin', 'dev')
+    runs = sorted(glob.glob(os.path.join(DATA, 'runs', agent, '*.json')))
+    last = next((json.load(open(p, encoding='utf-8')) for p in reversed(runs)), {})
+    since = last.get('head', '')
+    print(f'# Wake: {agent}, {now()}; dev at {git("rev-parse", "origin/dev").strip()[:12]}')
+    print(f'Last run record: {last.get("run", "none")} ({last.get("outcome", "-")}), at dev {since[:12] or "-"}')
+    card = os.path.join(DATA, 'schedule', f'{agent}.json')
+    c = json.load(open(card, encoding='utf-8')) if os.path.exists(card) else {}
+    mine = [f'data/schedule/{agent}.json', c.get('brief') or '', c.get('runbook') or '', 'admin/schedule/WAKE.md', 'CLAUDE.md', 'AGENTS.md']
+    rng = f'{since}..origin/dev' if since else '-30'
+    log = git('log', '--format=%h %cI %s', '--max-count=40', *( [rng] if since else ['-30', 'origin/dev'] ))
+    print(f'\n## What changed on dev since then ({len(log.splitlines())} commits, newest first; subjects are material)')
+    print(log.strip() or '(nothing)')
+    if since:
+        touched = [f for f in mine if f and git('diff', '--name-only', f'{since}..origin/dev', '--', f).strip()]
+        print('\n## Changed and yours to re-read first: ' + (', '.join(touched) if touched else 'none of your instruction files changed'))
+    print('\n## Notes to you'); sys.stdout.flush(); cmd_notes(argparse.Namespace(agent=agent, since=since or None))
+    print('\n## Inbox'); sys.stdout.flush(); cmd_inbox(argparse.Namespace(agent=agent))
+    if c:
+        print(f'\n## Your card ({c.get("status")}); brief {c.get("brief")}; runbook {c.get("runbook") or "-"}')
+        for i, step in enumerate(c.get('each_wake', []), 1): print(f'{i}. {step}')
+    else: print(f'\n## No card at data/schedule/{agent}.json: say so in your run record and report')
 
 def cmd_send(a):
     if CTRL.search(a.subject) or len(a.subject) > 120: sys.exit('refused: a subject is one line of plain text, at most 120 characters')
@@ -143,12 +227,12 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter); s = ap.add_subparsers(dest='cmd', required=True)
     s.add_parser('inbox').add_argument('agent')
     p = s.add_parser('run'); p.add_argument('agent'); p.add_argument('--started', required=True); p.add_argument('--outcome', required=True)
-    p.add_argument('--summary', required=True); p.add_argument('--read', nargs='*'); p.add_argument('--sent', nargs='*'); p.add_argument('--article')
-    p.add_argument('--log'); p.add_argument('--model'); p.add_argument('--cost', type=float)
+    p.add_argument('--summary', required=True); p.add_argument('--read', nargs='*', action='extend'); p.add_argument('--sent', nargs='*', action='extend'); p.add_argument('--article')
+    p.add_argument('--log'); p.add_argument('--model'); p.add_argument('--cost', type=float); p.add_argument('--publish', action='store_true')
     p = s.add_parser('send'); p.add_argument('--from', required=True); p.add_argument('--to', required=True); p.add_argument('--subject', required=True)
     p.add_argument('--body-file', required=True); p.add_argument('--re')
     p = s.add_parser('notes'); p.add_argument('agent'); p.add_argument('--since')
-    s.add_parser('export-notes')
+    s.add_parser('export-notes'); s.add_parser('ingest'); s.add_parser('wake').add_argument('agent')
     a = ap.parse_args(); globals()['cmd_' + a.cmd.replace('-', '_')](a)
 
 if __name__ == '__main__':

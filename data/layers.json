@@ -684,6 +684,13 @@
    "by": "dev@php.newsroom",
    "from": "admin/build/grc_history.py: for every release whose risk graph changed, the nodes and edges added and removed, the bases changed and the gaps opened and closed against the release before, from the graph each release committed; written once per release, at its own build",
    "used_on": "grc/changes/index.html"
+  },
+  {
+   "path": "data/loops.json",
+   "layer": "derived",
+   "by": "admin/build/export_loops.py (correspondent@php.newsroom, at each wake)",
+   "from": "the evidence vault's commit log, the releases on origin/dev with the vault head each served, the repository's size and the schedule cards' next wakes",
+   "used_on": "views/loops/index.html"
   }
  ]
 }

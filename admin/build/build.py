@@ -51,6 +51,8 @@ CHECKS = [c for c in [
     ('the NCSC-NL inventory', 'latest change read', _minute(D['inventory-history']['snapshots'][-1]['at']), 'patching/inventory/index.html'),
 ] if c[2]]
 STORY['checked_at'] = max(c[2] for c in CHECKS)
+# When an agent last worked on the site: the newest run record (admin/build/loops.py), shown beside the evidence time.
+LAST_RUN = __import__('loops').last_run(globals())
 
 def checks_title():
     return '; '.join(f'{w}: {k} {human_time(t)}' for w, k, t, _ in CHECKS)
@@ -253,7 +255,7 @@ NAV = [
                       ('vaults/index.html', 'Every vault behind this site')] + [(x['page'], x['name']) for x in D['vaults']['vaults'] if x.get('nav', True)]),
     ('GRC', [('grc/index.html', 'GRC: risks, owners, standards'), ('grc/risks/index.html', 'The risk register'), ('grc/stakeholders/index.html', 'Stakeholders and their registers'),
              ('grc/frameworks/index.html', 'Frameworks: GDPR, NIS2, CRA, ISO, NIST'), ('grc/graph/index.html', 'The risk graph'), ('grc/explore/index.html', 'Explore the graph: from any node'), ('grc/gaps/index.html', 'What the graph is missing'), ('grc/changes/index.html', 'What changed in the graph'), ('grc/network/index.html', 'From the sgit network')]),
-    ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed'), ('views/desk/index.html', "The journalist's desk: what is still stale")]),
+    ('Views', [('views/index.html', 'Views: the journalist\'s reading'), ('views/state/index.html', 'The state of affairs, now'), ('views/state/history/index.html', 'Every version, and what changed'), ('views/desk/index.html', "The journalist's desk: what is still stale"), ('views/loops/index.html', 'Every loop: researcher to correspondent')]),
     ('Stories', [('articles/index.html', 'All stories, written here')] + [(f'articles/{a["slug"]}/index.html', f'{ORIGINS[a["origin"]]["short"]} · {AUTHOR_ROLES.get(a["role"], a["role"])}: {a["title"].split(":")[0].split("?")[0]}') for a in ARTICLES] + [('interview/index.html', 'Interview: the editor')]),
     ('About', [('method/index.html', 'The method'), ('admin/design/index.html', 'Design: the redesign, in mockups'), ('team/index.html', 'The team'), ('billing/index.html', 'The billing model'),
                ('account/index.html', 'Your reading account'), ('brief/index.html', 'The brief'),
@@ -356,7 +358,7 @@ def layout(path, title, description, body, kind='site', date=None, topics='', ld
   <script src="{up}assets/themes/themes.js"></script>
   <a class="brand" href="{up}index.html">PHP October<span> 2026</span></a>
   <a class="ver" href="{up}admin/versions.html#v{E(VERSION)}" title="Site release history: what v{E(VERSION)} changed">v{E(VERSION)}</a>
-  <span class="status" title="{E(checks_title())}">{E(STORY["status"])} &middot; last checked {E(human_time(STORY["checked_at"]))}</span>
+  <span class="status" title="{E(checks_title())}">{E(STORY["status"])} &middot; evidence to {E(human_time(STORY["checked_at"]))} &middot; <a href="{up}views/loops/index.html" style="color:inherit">last agent run {E(human_time(LAST_RUN[0]))}</a></span>
   <span class="crumbs"><a href="https://newsroom.sgit.ai/">newsroom</a> / <a href="https://2026.newsroom.sgit.ai/">2026</a> / <a href="https://oct.2026.newsroom.sgit.ai/">October</a> / <b>PHP</b></span>
   <div class="tools">{__import__('design').dials_html(globals(), up)}<div class="theme-pick"></div><sg-meter view="balance"></sg-meter></div>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-items" aria-label="Menu">Menu</button>
@@ -642,7 +644,7 @@ def build_index():
     trackcards = ''.join(f'<a class="card" href="{U(t["home"])}" style="text-decoration:none;color:inherit"><p class="eyebrow">{E(t["label"])}</p><p style="margin:.3rem 0 .5rem;color:var(--ink-2)">{E(t["text"])}</p><div class="chips">' + ''.join(f'<span class="chip">{E(pp["label"])}</span>' for pp in PERSONAS.values() if pp.get('track') == k) + '</div></a>' for k, t in tracks.items())
     body = f"""<div class="v2">
 <section class="band"><div class="shell hero">
-  <div><p class="eyebrow"><span class="live">{E(s["status"])}</span> &nbsp;&middot;&nbsp; PHP news, October 2026 &nbsp;&middot;&nbsp; <a href="#checked" style="color:inherit">last checked {E(human_time(s["checked_at"]))}</a></p>
+  <div><p class="eyebrow"><span class="live">{E(s["status"])}</span> &nbsp;&middot;&nbsp; PHP news, October 2026 &nbsp;&middot;&nbsp; <a href="#checked" style="color:inherit">latest evidence {E(human_time(s["checked_at"]))}</a> &nbsp;&middot;&nbsp; <a href="views/loops/index.html" style="color:inherit">last agent run {E(human_time(LAST_RUN[0]))}</a></p>
     <h1 class="display">{E(pl["headline"])}</h1>
     <p class="lede">{E(pl["deck"])}</p>
     <div class="chips" style="margin-top:1rem"><a class="iconbtn" href="#now">What is happening now</a><a class="chip" style="background:transparent;color:var(--band-ink);border-color:rgba(255,255,255,.3);padding:.45rem .9rem" href="explained/index.html">Explain it from the start</a><a class="chip" style="background:transparent;color:var(--band-ink);border-color:rgba(255,255,255,.3);padding:.45rem .9rem" href="stack/index.html">Check your stack</a><a class="chip" style="background:transparent;color:var(--band-ink);border-color:rgba(255,255,255,.3);padding:.45rem .9rem" href="now/index.html">On your phone</a></div>
@@ -668,7 +670,7 @@ def build_index():
 <section class="block" id="who">{item('home-who', 'front', 'for-you', 'The briefing for you: fifteen readers', 'index.html#who', re.sub(r'\d+', '#', persona_doors()), REL_DATE.get(VERSION, ''))}<div class="block-head"><h2 class="h2">The briefing for you</h2><span class="small"><a href="start/index.html">How the readers are mapped</a></span></div>{persona_doors()}</section>
 <section class="block" id="stories">{item('home-stories', 'front', 'stories', 'Stories: written here', 'index.html#stories', re.sub(r'\d+', '#', stories_row()), REL_DATE.get(VERSION, ''))}<div class="block-head"><h2 class="h2">Stories: written here</h2><span class="small">signed, dated and kept as written; everything above is research</span></div>{stories_row()}</section>
 <aside class="origin o-elsewhere"><b>What else is going on</b> <span>Other vulnerabilities in the news this month, with the evidence that each is exploited beside the attention it gets: the SGit newsroom's Pulse, in a separate section, not about PHP.</span> <a href="pulse/index.html">Pulse &rarr;</a></aside>
-<section class="block" id="evidence">{item('home-how', 'front', 'site', 'How this site knows', 'index.html#evidence', 'how this site knows: saved, fingerprinted, agents for one editor', REL_DATE.get(VERSION, ''))}<div class="card"><h2 class="h2" style="margin-bottom:.6rem">How this site knows</h2><div class="stats">{evidence}</div><p>Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read <a href="https://www.php.net/archive/2026.php#2026-10-21-5" rel="noopener">the PHP project's announcement</a> and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; <a href="method/index.html">how it works</a>.</p><p id="checked" class="small">Last checked: {checked}. Already know the vocabulary? <a href="summary/index.html">The specialist summary</a> has the technical version of this page.</p></div></section>
+<section class="block" id="evidence">{item('home-how', 'front', 'site', 'How this site knows', 'index.html#evidence', 'how this site knows: saved, fingerprinted, agents for one editor', REL_DATE.get(VERSION, ''))}<div class="card"><h2 class="h2" style="margin-bottom:.6rem">How this site knows</h2><div class="stats">{evidence}</div><p>Every page this site relies on was saved at the moment it was read, with a fingerprint that proves it has not been altered since, so a fact can be checked even if the original page changes or disappears. Nothing here is advice for your own systems; for that, read <a href="https://www.php.net/archive/2026.php#2026-10-21-5" rel="noopener">the PHP project's announcement</a> and your national cyber agency. The site is put together by software agents working for one editor, Dinis Cruz; <a href="method/index.html">how it works</a>.</p><p id="checked" class="small">Latest evidence: {checked}. Last agent run: {E(human_time(LAST_RUN[0]))} ({E(LAST_RUN[1])}); <a href="views/loops/index.html">how the site is kept current, loop by loop</a>. Already know the vocabulary? <a href="summary/index.html">The specialist summary</a> has the technical version of this page.</p></div></section>
 </div>{DZ.answers_json(globals())}
 """
     page('index.html', s['title'], s['description'], body, kind='story', topics='php october 2026 overview', ld_type='NewsArticle')
@@ -1758,7 +1760,7 @@ def build_all():
     build_explained(); build_glossary(); build_briefings(); build_start(); build_summary(); build_index()
     build_method(); build_team(); build_collaborators(); build_runs(); build_join(); build_status_page(); __import__('control').build_control(globals()); build_vault_register(); build_schedule(); build_comms(); build_billing(); build_account(); build_brief(); build_corrections(); build_admin()
     build_interview(); build_facts(); build_versions(); build_whatsnew(); build_pipeline(); __import__('design').build_tracks(globals())
-    build_review(); build_fractal(); build_admin_section(); build_pack_mode(); build_keys(); build_appsec(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa(); build_desk(); build_members()
+    build_review(); build_fractal(); build_admin_section(); build_pack_mode(); build_keys(); build_appsec(); build_status(); build_vaults(); build_feeds_page(); build_you(); build_stack(); build_reader(); build_subscribe(); build_agents_guide(); build_questions(); build_articles(); build_layers(); build_readings(); build_patching(); build_inventory(); build_signals(); build_updates(); build_views(); build_pulse(); build_status_json(); build_factcheck(); build_outreach(); build_grc(); build_sherpa(); build_desk(); __import__('loops').build_loops(globals()); build_members()
 
 def main():
     # Two passes: the first measures every page (reading time, terms used), the second writes pages that cite those measures.
@@ -2710,13 +2712,18 @@ def q_link(path, depth):
     title = next((t for p, t, _, _ in PAGES if p == bare), None) or next((t for _, items in NAV for p, t in items if p == bare), bare)
     return f'<a href="{"../" * depth}{E(path)}">{E(title)}</a>'
 
+def q_inline(text):
+    """An answer's authored text: everything escaped with E(), then only <b>, <i>, <code> and <q> restored, with no
+    attributes. Until 25 October the answers were inserted raw (found by the librarian's appsec self-check)."""
+    return re.sub(r'&lt;(/?)(b|i|code|q)&gt;', r'<\1\2>', E(text))
+
 def build_questions():
     Q = D['questions']
     qs = Q['questions']
     lib = Q['librarian']
     for i, q in enumerate(qs):
-        paras = ''.join(f'<p>{a["html"]} <span class="refs">{src_links(a["sources"], 2)}</span></p>' for a in q['answer'])
-        who = table(['If', 'Then'], [[E(w['if']), w['then']] for w in q['who']]) if q.get('who') else ''
+        paras = ''.join(f'<p>{q_inline(a["html"])} <span class="refs">{src_links(a["sources"], 2)}</span></p>' for a in q['answer'])
+        who = table(['If', 'Then'], [[E(w['if']), q_inline(w['then'])] for w in q['who']]) if q.get('who') else ''
         see = ''.join(f'<li>{q_link(p, 2)}</li>' for p in q['see'])
         nxt = qs[(i + 1) % len(qs)]
         url = f'{BASE_URL}/questions/{q["id"]}/index.html'

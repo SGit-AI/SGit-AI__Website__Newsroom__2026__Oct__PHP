@@ -40,6 +40,7 @@ Storiesarticles/index.html
 | 154 | Write the next version of the state of affairs when the evidence moves: a KEV listing, a named victim, GMO's cause, or the inventory's investigation pile resolving | open |  |
 | 225 | The piece on where the web went dark and why, once 221 and 222 are in, not beforeFrom the brief: how many sites went offline, and where (22 October; the news desk chief's proposal, for the editor's go). | open |  |
 | 229 | Where php2shell stands, day two: the successor to the day-one piece, against the three counts, once board 039 landsFrom the brief: the front page on day two (23 October; the news desk chief's proposal, for the editor's go). | open |  |
+| 302 | Right now: CVE-2026-115560 is a line of its own, not a clause in 'What nobody knows yet': a third PHP flaw, affecting fully patched releases, fixed in the next regular release; it needs a rare session setting, has no severity score and no reported exploitation; the mitigation is session.upload_progress.enabled=0. Keep it separate from php2shell's two CVEs, and keep the unknown about whether it is the Fediverse report's bugFrom the news desk chief's morning wake, 25 October. | open |  |
 
 ## What they have done
 - The first house stories, and the review of the front page and navigation.
@@ -69,4 +70,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/journalist/index.html

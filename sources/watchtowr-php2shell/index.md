@@ -24,7 +24,7 @@ Captured by claude-story-site. Status: captured. BLOCKED: HTTP 403 to the captur
 
 | Claim | Who says it | Status | [Fact-check](../../factcheck/index.html) | Primary | Sources |
 |---|---|---|---|---|---|
-| watchTowr sees active exploitation attempts and lists the flaws as exploited in the wildwatchtowr.com returns HTTP 403 to this site's capture tool; known only from search summaries. [fact timeline →](../../facts/watchtowr-itw/index.html) | watchTowr | unverified | **A4** Corroborated●●●●○○ superseded | 2/2 | [watchTowr](../../sources/watchtowr-php2shell/index.html) [watchTowr](../../sources/watchtowr-php2shell-faq/index.html) |
+| watchTowr sees active exploitation attempts and lists the flaws as exploited in the wildwatchtowr.com returns HTTP 403 to this site's capture tool; known only from search summaries. [fact timeline →](../../facts/watchtowr-itw/index.html) | watchTowr | unverified | **A6** Established●●●●●● | 2/2 | [watchTowr](../../sources/watchtowr-php2shell/index.html) [watchTowr](../../sources/watchtowr-php2shell-faq/index.html) |
 
 ## Events that cite it
 
@@ -51,4 +51,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.17.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/watchtowr-php2shell/index.html
+site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/watchtowr-php2shell/index.html
