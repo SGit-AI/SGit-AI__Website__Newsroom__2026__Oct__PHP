@@ -1463,6 +1463,98 @@ def build_brief():
 '''
     page('brief/index.html', 'The brief: a written request and two voice memos', 'The brief this site was built from, published in full: the editor\'s written request and two transcribed voice memos on mapping the PHP vulnerability as evidence.', body, kind='site')
 
+
+# =========================================================================== briefs, one page each (story-site)
+# The editor, 25 October 2026, in story-site's session: the briefs page is a wall of text; he wants the titles, newest
+# first, and each brief on its own page he can link to. admin/briefs/** is the editor's own page in his policy, so
+# this is an override of story-site's scope, counted in its status and named in its debrief.
+# Every link already published to admin/briefs/index.html#<file stem> still lands on that brief's row in the index.
+
+BRIEF_PAGES = []  # filled by build_briefs, listed in llms.txt by briefs_llms_lines
+
+
+def brief_meta(fn):
+    """Title, date, who wrote it and a first line, read from the file itself."""
+    with open(os.path.join(ROOT, 'admin', 'content', 'briefs', fn), encoding='utf-8') as f:
+        lines = [x.rstrip('\n') for x in f]
+    title = next((x[2:].strip() for x in lines if x.startswith('# ')), fn[:-3])
+    body = [x.strip() for x in lines if x.strip() and not x.startswith('#')]
+    status = next((x for x in body if x.lower().startswith('status:')), '')
+    first = next((x for x in body if not x.lower().startswith('status:') and not x.startswith('>')), '')
+    who = ''
+    m = re.search(r'Author:\s*([^.;]+)', status)
+    if m:
+        who = m.group(1).strip()
+    elif status:
+        who = status[7:].split('.')[0].strip()
+    lead = re.sub(r'[*`\[\]]', '', first)
+    if len(lead) > 120:                                     # the first sentence is the summary, not the first 190 characters
+        cut = lead.find('. ')
+        if 40 < cut < 190:
+            lead = lead[:cut + 1]
+    return {'slug': fn[:-3], 'file': fn, 'date': fn[:10], 'title': title, 'who': who, 'lead': lead}
+
+
+def deepen_links(html):
+    """A brief rendered on its own page sits one directory deeper than the index it used to live on."""
+    return re.sub(r'(src|href)="\.\./', r'\1="../../', html)
+
+
+def build_briefs():
+    """The index: every brief as a row with its title; and one page per brief."""
+    bdir = os.path.join(ROOT, 'admin', 'content', 'briefs')
+    names = sorted([x for x in os.listdir(bdir) if x.endswith('.md')], reverse=True)
+    metas = [brief_meta(fn) for fn in names]
+
+    rows, by_month = '', OrderedDict()
+    for m in metas:
+        by_month.setdefault(m['date'][:7], []).append(m)
+    MONTHS = {'10': 'October', '11': 'November', '12': 'December'}
+    for month, group in by_month.items():
+        label = f"{MONTHS.get(month[5:7], month[5:7])} {month[:4]}"
+        rows += f'<h2 class="brief-month">{E(label)}<span>{len(group)} brief{"s" if len(group) != 1 else ""}</span></h2><ol class="brief-list">'
+        for m in group:
+            rows += (f'<li id="{E(m["slug"])}"><a class="brief-row" href="{U(m["slug"])}/index.html">'
+                     f'<span class="d">{E(m["date"][8:])} {E(MONTHS.get(m["date"][5:7], m["date"][5:7]))[:3]}</span>'
+                     f'<span class="t"><b>{E(m["title"])}</b>'
+                     + (f'<span class="w">{E(m["who"][:110])}</span>' if m['who'] else '')
+                     + (f'<span class="l">{E(m["lead"][:190])}</span>' if m['lead'] else '')
+                     + '</span><span class="go" aria-hidden="true">&rarr;</span></a></li>')
+        rows += '</ol>'
+
+    body = f"""
+<h1>Briefs</h1>
+<p class="lead">A brief is written before the work and published as written: what was asked, in whose words, what exists to build on, the design, what it cannot do, the deliverables and the open questions. The newsroom and the sgit.ai sites keep theirs the same way. The file is the record; every brief below is one file in <code>admin/content/briefs/</code> and has its own page and link. The written request and the two voice memos that started the site are on <a href="../../brief/index.html">the brief</a>.</p>
+<p class="small">{len(metas)} briefs, newest first. Each opens on its own page; the markdown twin of every page is one click from it.</p>
+{rows}
+"""
+    page('admin/briefs/index.html', 'Briefs', f'Every build brief for this site, {len(metas)} of them, published in full before the work: the title, the date and who wrote it, each on its own page.', body, kind='site')
+
+    BRIEF_PAGES.extend(metas)
+    for i, m in enumerate(metas):
+        nxt = metas[i - 1] if i > 0 else None               # metas is newest first
+        prv = metas[i + 1] if i + 1 < len(metas) else None
+        nav = ''.join(f'<a class="chip" href="../{U(x["slug"])}/index.html">{E(lab)} {E(x["title"][:58])}</a>'
+                      for x, lab in ((prv, '&larr; older:'), (nxt, 'newer: &rarr;')) if x)
+        body = f"""
+<h1>{E(m['title'])}</h1>
+<p class="kicker">{E(m['date'])} &middot; <code>{E(m['file'])}</code> &middot; <a href="../index.html">all briefs</a></p>
+<article class="brief-full">{deepen_links(render_md_file('admin/content/briefs/' + m['file']))}</article>
+<p class="small">This brief is the file <code>admin/content/briefs/{E(m['file'])}</code> in the repository, published as written.</p>
+<nav class="chips brief-nav">{nav}</nav>
+"""
+        page(f'admin/briefs/{m["slug"]}/index.html', m['title'],
+             (m['lead'] or m['title'])[:180],
+             body, kind='site')
+
+
+def briefs_llms_lines():
+    out = ['', '## Briefs, one page each (admin/content/briefs/)']
+    out += [f'- [{m["title"]}]({BASE_URL}/admin/briefs/{m["slug"]}/index.md): {m["date"]}'
+            + (f', {m["who"]}' if m['who'] else '') for m in BRIEF_PAGES]
+    return '\n'.join(out) + '\n'
+
+
 def build_corrections():
     body = f'''
 <h1>Corrections</h1>
@@ -1773,7 +1865,7 @@ def main():
     # and what this release changed in the risk graph (grc_history.py), for /grc/changes/
     GRC_HISTORY.update(__import__('grc_history').for_build(VERSION, json.load(open(os.path.join(DATA, 'grc-graph.json'), encoding='utf-8')))); OUTPUTS.add('data/grc-history.json')
     build_grc_changes()
-    __import__('design').write_live_css(globals()); write('assets/design/dials.js', __import__('design').DIALS_JS); build_now(); build_llms(); _design_made = __import__('design').build(globals()); open(os.path.join(ROOT, 'llms.txt'), 'a', encoding='utf-8').write(__import__('design').llms_lines(_design_made, BASE_URL)); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); build_stack_catalogue(); save_items()
+    __import__('design').write_live_css(globals()); write('assets/design/dials.js', __import__('design').DIALS_JS); build_now(); build_llms(); _design_made = __import__('design').build(globals()); open(os.path.join(ROOT, 'llms.txt'), 'a', encoding='utf-8').write(__import__('design').llms_lines(_design_made, BASE_URL)); open(os.path.join(ROOT, 'llms.txt'), 'a', encoding='utf-8').write(briefs_llms_lines()); build_sitejs(); build_personas_js(); build_feed(); build_seo(); save_ledger(); build_feeds_xml(); build_stack_catalogue(); save_items()
     write('admin/build/outputs.txt', '\n'.join(sorted(OUTPUTS | {'admin/build/outputs.txt'})) + '\n')
     print(f'built {len(PAGES)} pages for v{VERSION}, data as of {STORY["data_as_of"]}, vault {D["vault"]["head"]["commit"]}')
 
@@ -2188,17 +2280,7 @@ def build_admin_section():
 </ol>
 """
     page('admin/roles/index.html', 'Roles and responsibilities', 'The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.', body, kind='site')
-    bdir = os.path.join(ROOT, 'admin', 'content', 'briefs')
-    items = ''
-    for fn in sorted(os.listdir(bdir), reverse=True):
-        if fn.endswith('.md'):
-            items += f'<article class="rel" id="{E(fn[:-3])}"><p class="kicker">{E(fn[:10])} &middot; <code>{E(fn)}</code></p>{render_md_file("admin/content/briefs/" + fn)}</article>'
-    body = f"""
-<h1>Briefs</h1>
-<p class="lead">A brief is written before the work and published as written: what was asked, in whose words, what exists to build on, the design, what it cannot do, the deliverables and the open questions. The newsroom and the sgit.ai sites keep theirs the same way. The file is the record; this page renders <code>admin/content/briefs/</code>, newest first. The written request and the two voice memos that started the site are on <a href="../../brief/index.html">the brief</a>.</p>
-{items}
-"""
-    page('admin/briefs/index.html', 'Briefs', 'The build briefs for this site, published in full before the work, newest first.', body, kind='site')
+    build_briefs()
     v = A['evidence_vault']; vt = D['vault']
     body = f"""
 <h1>The evidence vault, opened</h1>

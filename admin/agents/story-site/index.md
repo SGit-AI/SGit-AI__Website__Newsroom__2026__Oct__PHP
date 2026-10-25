@@ -319,11 +319,11 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 | Field | Value |
 |---|---|
 | Round | 3 |
-| Done | The line on a phone no longer holds the top of the screen, and the article on URL paths, personas in the address and a single-page site Prototype F, the line, at /admin/design/line/: six pages on the editor's briefing pack, the pack's engine and words vendored with its 19 tests, every number filled from the evidence vault Headlines near the top of every page: the bar in two lines, slim strips, /ops/ and /analysis/ fixed on a phone Prototype E, the lens, at /admin/design/lens/ (three pages, from the live data), and its brief The redesign live: tracks A, B, C, the team console, the task menu and two dials, the wide layout |
+| Done | The briefs page as a list of titles with a page per brief, and the admin pages using the whole width The line on a phone no longer holds the top of the screen, and the article on URL paths, personas in the address and a single-page site Prototype F, the line, at /admin/design/line/: six pages on the editor's briefing pack, the pack's engine and words vendored with its 19 tests, every number filled from the evidence vault Headlines near the top of every page: the bar in two lines, slim strips, /ops/ and /analysis/ fixed on a phone Prototype E, the lens, at /admin/design/lens/ (three pages, from the live data), and its brief The redesign live: tracks A, B, C, the team console, the task menu and two dials, the wide layout |
 | Next | Step 1 of the article: persona paths as real files for the pages that read differently, canonical to the base, with Share minting them Step 1 of the line's rollout on the live pages |
 | Asks | The go for the line on the live site (297), its five decisions (298), and the URL shape and router decisions in the article (302) (from the editor) Enrol story-site's key, sha256:f15dbb872e108ec7 (from the editor) |
 | Tokens | unknown · the session does not show a token count to the agent |
-| Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope 0, injection_seen 0 |
+| Policy | out_of_scope_requests 0, pushbacks 0, overrides 1, writes_outside_scope admin/briefs/** and build.py's briefs block: the editor asked for it directly in this session; admin/briefs/** is his own page in admin/content/agents/editor/policy.json, injection_seen 0 |
 
 ## Its rounds
 
@@ -448,6 +448,24 @@ needs from search engines, fragments and a router rather than a framework, the t
 languages, five steps that each ship on their own, and five decisions for the editor. Boards 305 and 306. Nothing of
 
 it is built.
+
+#### The briefs page, and the width of the console (same day, v0.20.0)
+
+The editor, with two screenshots: the briefs page is one wall of 57 briefs rendered end to end, and the console sits
+
+in a narrow column on a wide screen.
+
+- **Briefs**: `/admin/briefs/` is now a list of titles, newest first, each with its date, who wrote it and its first sentence, linking to its own page at `/admin/briefs//`. 57 new pages, each with a markdown twin, in `llms.txt`, with older and newer links at the foot. Every link already published to `admin/briefs/index.html#` still lands on that brief's row: the five in `build.py` were checked one by one. A brief that embeds an image needed its relative links deepened by one directory, which is `deepen_links()`.
+
+- **Width**: under `admin/` and `team/` the main column has no maximum width; the reader pages stay at 1,440px. Prose keeps its 82ch measure, so only the tables, lanes and cards take the extra room.
+
+**Policy.** `admin/briefs/**` is the editor's own page in `admin/content/agents/editor/policy.json`, and the briefs
+
+block lives in `build.py`, so this is a write outside story-site's scope. The editor asked for it explicitly in this
+
+session, which is the one override the rules allow; it is counted in `status.json` (`policy.overrides`: 1) and named
+
+here. Boards 309 and 310.
 
 ### Prototype E, the lens: a site that shapes itself to the reader in place, and the brief for it
 
@@ -603,4 +621,4 @@ Files: [admin/content/agents/story-site/](https://github.com/SGit-AI/SGit-AI__We
 
 
 ---
-site v0.19.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/story-site/index.html
+site v0.20.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/story-site/index.html

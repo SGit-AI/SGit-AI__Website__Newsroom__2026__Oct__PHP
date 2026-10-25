@@ -8,7 +8,7 @@ Every member of the team that runs this site, 2 people and 19 agents and roles, 
 
 This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents, with help from [collaborators](../collaborators/index.html) who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-21members2humans17agents2roles not yet filled179open tasks5waiting91done
+21members2humans17agents2roles not yet filled179open tasks5waiting93done
 
 ## Who is on it
 
@@ -23,7 +23,7 @@ COConductor@Conductor · Conductor and commsMaps the work, hands it out, and kee
 ### Building the site
 
 The build, the gate, the release, the design, and the pages.
-DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent25 open, 1 waiting, 35 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent21 open, 7 done
+DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent25 open, 1 waiting, 35 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent21 open, 9 done
 ### Evidence
 
 Capture before you read: the sources, the vaults, the watch.
@@ -104,4 +104,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.19.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.20.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/index.html

@@ -236,6 +236,28 @@ nav.site .tools{flex-wrap:wrap;max-width:100%;min-width:0}
 .console-live > .side{position:sticky;top:5rem;height:auto;max-height:calc(100vh - 6rem);border-radius:14px}
 .console-live > .cmain{min-width:0}
 @media (max-width:900px){.console-live{grid-template-columns:1fr}.console-live > .side{position:static;max-height:none}}
+/* the team console uses the whole screen (the editor, 25 October): the reader pages stay at 1,440, admin does not.
+   Prose inside it keeps its own 82ch measure from the rule above, so only the tables and lanes get the extra room. */
+html[data-path^="admin/"] main,html[data-path^="team/"] main{max-width:none}
+html[data-path^="admin/"] .console-live{grid-template-columns:260px minmax(0,1fr)}
+/* the briefs page: a list of titles, each its own page (the editor, 25 October) */
+.brief-month{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin:2rem 0 .6rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--fg,#1b1b1a);font-size:1.05rem}
+.brief-month span{font-size:.78rem;font-weight:400;color:var(--dim,#6b6b66)}
+.brief-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.4rem}
+.brief-row{display:grid;grid-template-columns:4.4rem minmax(0,1fr) 1.4rem;gap:.9rem;align-items:baseline;
+  padding:.7rem .9rem;border:1px solid var(--line,#e5e1d8);border-radius:10px;background:var(--panel,#fff);
+  text-decoration:none;color:inherit}
+.brief-row:hover{border-color:var(--accent,#0f766e);box-shadow:0 2px 10px rgba(15,27,45,.07)}
+.brief-row .d{font-family:var(--mono);font-size:.76rem;color:var(--dim,#6b6b66);white-space:nowrap}
+.brief-row .t{display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.brief-row .t b{font-size:1.02rem;line-height:1.3}
+.brief-row .w{font-size:.78rem;color:var(--dim,#6b6b66)}
+.brief-row .l{font-size:.85rem;color:var(--fg,#1b1b1a);opacity:.75;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.brief-row .go{color:var(--accent,#0f766e);font-weight:700;text-align:right}
+.brief-full{max-width:82ch}
+.brief-nav{margin-top:1.4rem}
+@media (max-width:700px){.brief-row{grid-template-columns:minmax(0,1fr);gap:.2rem}.brief-row .go{display:none}.brief-row .l{white-space:normal}}
 /* the chrome, after the lens prototype (24 October): the headline near the top of every page. The bar is one line on
    a laptop; the newcomer line, the reading strip and the page's kind are one slim line each; the rail of a track's
    home comes after its content on a phone. */

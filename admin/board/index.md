@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 308 items, 203 open, 100 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 310 items, 203 open, 102 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -320,8 +320,8 @@ The work, as rows in `data/admin.json`: 308 items, 203 open, 100 done. An item i
 | 308 | to_markdown (admin/build/build.py): the
  pattern also matches (" followed later by a
  is swallowed in the page's markdown twin. Match
- only as or ; other pages with may have broken twins. | open | dev@php.newsroom | | Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
+ only as or ; other pages with may have broken twins. | open | dev@php.newsroom | | | 309 | The briefs page is a list of titles, newest first, and every brief has its own page and link (admin/briefs//), instead of 57 briefs rendered one after anotherThe editor asked for it in story-site's session of 25 October: 'a navigation structure where I can see the latest article titles, and then open them in a new page so that I can read them (and you can link to them directly)'. admin/briefs/** is the editor's own page in his policy, so this is an override of story-site's scope, counted in its status. Every link already published to admin/briefs/index.html# still lands on that brief's row: the five in build.py were checked. The pages are in llms.txt and have markdown twins. | done | claude-story-site | 0.20.0 | | 310 | The admin and team pages use the whole width of the screen; the reader pages stay at 1,440pxThe editor, 25 October, with a screenshot of the console in a narrow column. One rule in the live layer (assets/design/v2-live.css, from admin/build/design.py): main has no maximum width under admin/ and team/. Prose inside keeps its 82ch measure, so only the tables, lanes and cards take the extra room. | done | claude-story-site | 0.20.0 | Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.19.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.20.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

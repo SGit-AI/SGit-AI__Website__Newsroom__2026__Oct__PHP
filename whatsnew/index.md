@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.20.0 · 25 October 2026new since your last visit
+
+the briefs page is a list of titles with a page and a link per brief (with markdown twins, the old anchors still landing), and the admin and team pages use the whole width of the screen
+
+No reader-facing section changed in this release.
+
 ## v0.19.5 · 25 October 2026new since your last visit
 
 The Sherpa's 11:45 pass: headlines on the first screen of every page walked, the feedback menu one scrolling row on a phone (F036), prototype F read on a phone (F037), Latest still ends on 23 October (F032)
@@ -1232,4 +1238,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.19.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.20.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -1,6 +1,437 @@
 {
  "about": "A page counts as changed when the content of its <main> differs from the previous release's, with the two site version numbers masked: the header, the footer and the version stamp change on every page at every release and say nothing about what the release did. Pages are compared as built and committed, so the list is what a reader would have seen change. Stored in data/release-pages.json, one entry per release, written once and never recomputed:",
  "releases": {
+  "0.20.0": {
+   "against": "0.19.5",
+   "pages": [
+    {
+     "path": "admin/briefs/2026-10-25__brief__the-line/index.html",
+     "title": "Brief: the line, and a site that is persona first",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__three-views-over-time/index.html",
+     "title": "Brief: three views, over time; the C-level executive first",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__from-the-newsroom__review-of-the-site-at-v0.2.2/index.html",
+     "title": "php.oct.2026.newsroom.sgit.ai, reviewed against the newsroom's own standard",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site/index.html",
+     "title": "Refactoring the site to URL paths and a single page: how a link can carry a persona",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__the-scheduled-curator/index.html",
+     "title": "Brief: the scheduled curator, a Sonnet session that keeps the evidence vault current on a schedule",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__the-journalist/index.html",
+     "title": "Brief: the journalist (Sonnet), from its first session",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__the-lens/index.html",
+     "title": "Brief: the lens, a site that shapes itself to the reader in front of them",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__external-collectors/index.html",
+     "title": "Brief: external collectors (ChatGPT, Perplexity and others) reporting to the source watch over an append lane",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin/index.html",
+     "title": "The organisation as a digital twin: a state machine of roles, runs and handovers; and four briefs that ride with it",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__the-scheduled-source-watch/index.html",
+     "title": "Brief: the scheduled source watch, a Sonnet session that runs the watch's passes on a schedule",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__the-scheduled-journalist/index.html",
+     "title": "Brief: the scheduled journalist (Sonnet) and the chief correspondent (Opus)",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round/index.html",
+     "title": "Brief: every agent a folder, a policy and a round",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__perplexity-community-signals/index.html",
+     "title": "Brief: Perplexity reads the community spaces for the source watch",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__scheduled-capture-json-and-analysis/index.html",
+     "title": "Brief: scheduled capture of the sources that move, raw to JSON to analysis, and contradictions as the product",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__moving-a-vault-to-pack-mode/index.html",
+     "title": "Brief: moving a heavy vault to pack mode (sgit 0.24.0), step by step",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__feedback-keys-and-review/index.html",
+     "title": "Feedback from any page, signed; onboarding by QR code; a review queue for the editor",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__the-corrections-liaison/index.html",
+     "title": "Brief: a corrections liaison joins the team",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__the-journalist-unblocked/index.html",
+     "title": "Brief: the journalist unblocked, from the curator",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__feeds-the-delta-and-subscriptions/index.html",
+     "title": "Feeds, the delta since your last visit, a feed viewer, and subscriptions",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__scanner-noise/index.html",
+     "title": "Brief: scanner noise, how good the php2shell scanners and detection rules are",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__the-redesign/index.html",
+     "title": "Brief: the redesign, who you are and how much you see",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__the-phone-app/index.html",
+     "title": "Brief: the phone app, what do I need to know for the time I have, in two modes, with my vault",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__the-cartographer-joins/index.html",
+     "title": "Brief: the cartographer joins, as the newsroom's ontologist",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__the-correspondent/index.html",
+     "title": "Brief: the correspondent (Opus), on a schedule",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__the-fact-checker/index.html",
+     "title": "Brief: a fact-checker joins the team",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-25__brief__wikipedia-as-an-anchor/index.html",
+     "title": "Brief: Wikipedia as an anchor, read as a fractal semantic graph",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__review__front-page-and-navigation/index.html",
+     "title": "Review: the front page and the navigation, at v0.2.5",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__the-front-page-on-day-two/index.html",
+     "title": "Brief: the front page on day two",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__the-lane-cap-and-sharded-lanes/index.html",
+     "title": "The telemetry lane's 1,000-event cap, and lanes in parallel",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__asking-for-corrections/index.html",
+     "title": "Brief: asking other publications for corrections",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__how-many-sites-went-offline/index.html",
+     "title": "Brief: how many sites went offline, and where",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__the-news-desk-chief/index.html",
+     "title": "Brief: a news desk chief joins the team",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__plan__the-journalists-full-pass/index.html",
+     "title": "Plan: the journalist's full pass, so the site settles after every vault export",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__telemetry-over-an-append-lane/index.html",
+     "title": "Who reads this site: anonymous telemetry over an append lane",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__review__the-redesign-for-communication/index.html",
+     "title": "Review: the redesign, read for what it communicates",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__the-desk-on-a-schedule/index.html",
+     "title": "Brief: the news desk chief on a schedule, and the health of the publication",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__the-second-stories-and-the-signals/index.html",
+     "title": "Brief: the second stories, the signals, and the inventory over time",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__schedules-in-git/index.html",
+     "title": "Schedules in the repository: each agent's card, every run, and messages between agents",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__application-security/index.html",
+     "title": "Brief: application security, as a section of the site and a duty of every agent",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__triage__the-newsrooms-review/index.html",
+     "title": "Triage: the newsroom's review of this site, checked against v0.2.10",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__research-stories-and-the-patching-story/index.html",
+     "title": "Brief: research and stories, status.json, and the patching story",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__factcheck-investigations-how-much-php/index.html",
+     "title": "Brief: the fact-check desk's investigations, and the first one: how much PHP is there, and where does \"70%\" come from",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__the-schedule-vault/index.html",
+     "title": "The schedule vault: what runs, when, what it did, and what it does next",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__day-two-situation-awareness/index.html",
+     "title": "Day two: from what happened to what is happening; and where every agent is",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__talk-to-the-site/index.html",
+     "title": "Talk to the site: a chat pane with tools, your OpenRouter key and your data in your vault",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__the-conductor-and-the-updates/index.html",
+     "title": "Brief: the conductor takes the updates, and the site gets an Updates section",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__the-risk-graph-as-a-tool/index.html",
+     "title": "Brief: the risk graph as a tool (to dev, from a collaborator's ideas)",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-23__brief__the-journalists-views/index.html",
+     "title": "Brief: the two vaults, the site's update, and the journalist's views",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__handing-the-editor-a-vault-key/index.html",
+     "title": "Handing the editor a vault key: sealed to his key on pki.sgit.ai",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__the-graph-reviewed-and-a-first-step/index.html",
+     "title": "Brief: the graph reviewed by people, and a first step for newcomers (to dev, from a power user's review)",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__collaborators/index.html",
+     "title": "Collaborators: the people who use the site as it is built",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__the-pipeline-researcher-to-correspondent/index.html",
+     "title": "Brief: the pipeline, from the researcher to the correspondent",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__commit-fs-lite/index.html",
+     "title": "Commit-FS-lite: agents talk to each other in the commits they already write",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief__grc-fractal-risk-registers/index.html",
+     "title": "Brief: a GRC desk joins the team, and a GRC section",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__the-ontologist/index.html",
+     "title": "Brief: the ontologist, and its daily pass",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-24__brief__the-redesign-live/index.html",
+     "title": "Brief: the redesign, live (24 October 2026, story-site)",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/2026-10-22__brief/index.html",
+     "title": "The brief, as written by the editor on 22 October 2026",
+     "new": true,
+     "minor": false
+    },
+    {
+     "path": "admin/briefs/index.html",
+     "title": "Briefs",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/story-site/index.html",
+     "title": "Story site agent: role, policy and rounds",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/story-site/index.html",
+     "title": "Story site agent, design, claims and the story pages: the team",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/agents/rounds/index.html",
+     "title": "Every round: what each member did",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "questions/index.html",
+     "title": "Questions readers ask about php2shell",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "pipeline/index.html",
+     "title": "The fact pipeline: from a web page to a reader",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/index.html",
+     "title": "The team: the people, the agents and how they work together",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "grc/changes/index.html",
+     "title": "What changed in the risk graph, release by release",
+     "new": false,
+     "minor": true
+    },
+    {
+     "path": "admin/board/index.html",
+     "title": "The board",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/index.html",
+     "title": "Admin and engineering",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "admin/versions.html",
+     "title": "Release history",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "team/runs/index.html",
+     "title": "Runs: what the agents do on their own, and every time they did it",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "versions/index.html",
+     "title": "How the story changed, release by release",
+     "new": false,
+     "minor": false
+    },
+    {
+     "path": "whatsnew/index.html",
+     "title": "What's new: every change, release by release",
+     "new": false,
+     "minor": false
+    }
+   ]
+  },
   "0.19.5": {
    "against": "0.19.4",
    "pages": [

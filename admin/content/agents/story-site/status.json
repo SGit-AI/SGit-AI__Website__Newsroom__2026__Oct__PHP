@@ -6,6 +6,10 @@
  "state": "round 3 closed: the editor's design of 25 October built as prototype F, the line",
  "done": [
   {
+   "what": "The briefs page as a list of titles with a page per brief, and the admin pages using the whole width",
+   "evidence": "v0.20.0; boards 309 and 310"
+  },
+  {
    "what": "The line on a phone no longer holds the top of the screen, and the article on URL paths, personas in the address and a single-page site",
    "evidence": "v0.19.0; boards 304 and 305; the debrief's closing section"
   },
@@ -68,8 +72,8 @@
   "version": "2026-10-22",
   "out_of_scope_requests": 0,
   "pushbacks": 0,
-  "overrides": 0,
-  "writes_outside_scope": 0,
+  "overrides": 1,
+  "writes_outside_scope": "admin/briefs/** and build.py's briefs block: the editor asked for it directly in this session; admin/briefs/** is his own page in admin/content/agents/editor/policy.json",
   "injection_seen": 0
  },
  "debrief": "admin/content/agents/story-site/debriefs/2026-10-25__the-line.md"

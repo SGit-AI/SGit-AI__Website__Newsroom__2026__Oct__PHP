@@ -1,6 +1,15 @@
 {
- "current": "0.19.5",
+ "current": "0.20.0",
  "versions": [
+  {
+   "version": "0.20.0",
+   "date": "2026-10-25",
+   "title": "the briefs page is a list of titles with a page and a link per brief (with markdown twins, the old anchors still landing), and the admin and team pages use the whole width of the screen",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.19.5",
    "date": "2026-10-25",

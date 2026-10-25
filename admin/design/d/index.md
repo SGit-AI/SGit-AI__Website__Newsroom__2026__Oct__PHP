@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.19.5. Not the live site.
+> Mockup D for review, built from the data of release v0.20.0. Not the live site.
 
-PHP Team console Console Overview Board 203 Agents 19 Releases 163 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 203 Agents 19 Releases 164 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.19.5 
-163 releases since 22 Oct 
+v0.20.0 
+164 releases since 22 Oct 
 
 Open on the board 
 203 
-100 done, 5 waiting 
+102 done, 5 waiting 
 
 Pages built 
-986 
+1043 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -72,8 +72,14 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 100
+#### Done 102
 
+ #310 
+The admin and team pages use the whole width of the screen; the reader pages stay at 1,440px 
+ claude-story-site v0.20.0 
+ #309 
+The briefs page is a list of titles, newest first, and every brief has its own page and link (admin/briefs/<the file's n… 
+ claude-story-site v0.20.0 
  #305 
 Article: URL paths, personas in the address, and a single-page site, written before the work (a link that names its pers… 
  claude-story-site v0.19.0 
@@ -89,16 +95,11 @@ The chrome after the lens prototype: the bar in two lines on a laptop (132px to 
  #278 
 Enable private vulnerability reporting on this repository (Settings, Code security, Private vulnerability reporting): se… 
  editor 
- #276 
-Front page, Right now: the stamp says 'as of 24 October 2026, 08:37 UTC' but the five lines are unchanged since v0.12.1 … 
- journalist 
- #274 
-Prototype E, the lens: one control at the top right (how long you have, who you are, what you want to do, what you have … 
- claude-story-site v0.15.0 
 
 ### Releases
  latest 8 
 
+ v0.20.0 2026-10-25 the briefs page is a list of titles with a page and a link per brief (with markdown twins, the old anchors still landing), and the… 
  v0.19.5 2026-10-25 The Sherpa's 11:45 pass: headlines on the first screen of every page walked, the feedback menu one scrolling row on a phone (F036)… 
  v0.19.4 2026-10-25 Journalist: debrief and status for the second wake 
  v0.19.3 2026-10-25 Journalist: evidence vault at 87795d121200, 15 claims reviewed, three new rows, as-of lines to 09:35 UTC on 25 October 
@@ -106,7 +107,6 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
  v0.19.1 2026-10-25 Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's … 
  v0.19.0 2026-10-25 the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, wr… 
  v0.18.6 2026-10-25 Incident: the researcher and the curator run but leave no commit or run record; status and board say so 
- v0.18.5 2026-10-25 The desk's round 2 closed: the debrief of three scheduled wakes, with screenshots, and its status 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.19.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.20.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
