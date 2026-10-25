@@ -8,11 +8,12 @@ A visual, interactive view of every agent on the team: the pipeline, who waits f
 
 # Control room
 
-Every agent, what it waits for, what runs on a schedule and what needs the editor, drawn from the team's own data. Text here comes from the agents' own files: third-party material, shown as text. As of 2026-10-25 11:20Z UTC, site v0.21.7.
+Every agent, what it waits for, what runs on a schedule and what needs the editor, drawn from the team's own data. Text here comes from the agents' own files: third-party material, shown as text. As of 2026-10-25 15:25Z UTC, site v0.21.8.
 
 This page draws its view with a script. Without it, the plain list below has the same facts; the plain pages are [status](../status/index.html) and [schedule](../schedule/index.html).
 
 ## What needs a decision first
+- Wiring: the journalist's and the correspondent's tasks still start a new session each time; create them from 'scheduled | journalist' and 'scheduled | correspondent' and pause the old four. Fact-check's task still has the old prompt: update it from its session.
 - INCIDENT, visibility: the researcher and the curator run on schedule but leave no commit and no run record, so the repository, this page and the control room cannot show what they did (their wake prompts say 'nothing new: no commit', which predates AGENTS.md section 7). Proposed: each wake writes a run report into the vault it owns and the conductor commits it as a run record, with your go to change the four scheduled prompts (a researcher that reads the open web should not also release).
 - security/gate-pass-2 (5 commits ahead): a go; dismiss CodeQL alerts #3 and #22 yourself; rulesets at user logins; private vulnerability reporting.
 - The curator: a go on the site export (the site shows 328 sources), whether a public normal-vault copy of the old vault stays, and that the researcher wrote nothing to oq9gflln after the move.
@@ -54,4 +55,4 @@ This page draws its view with a script. Without it, the plain list below has the
 
 
 ---
-site v0.21.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/control/index.html
+site v0.21.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/control/index.html

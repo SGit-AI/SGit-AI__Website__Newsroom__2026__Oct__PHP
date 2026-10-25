@@ -1,6 +1,15 @@
 {
- "current": "0.21.7",
+ "current": "0.21.8",
  "versions": [
+  {
+   "version": "0.21.8",
+   "date": "2026-10-25",
+   "title": "Conductor full pass 15:15 London: two run records carried in from runs/ branches, the wiring of every scheduled task on /team/status/",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.21.7",
    "date": "2026-10-25",
