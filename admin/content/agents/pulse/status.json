@@ -1,27 +1,49 @@
 {
  "schema": "newsroom/agent-status/v1",
  "agent": "pulse",
- "as_of": "2026-10-24",
- "round": null,
- "state": "no round recorded under this policy yet",
- "done": [],
+ "as_of": "2026-10-25",
+ "round": 1,
+ "state": "round 1 closed: scheduled tasks wired to the card; passes at 07:22 and 14:52 London",
+ "done": [
+  "trig_01EYsEUMTQeJBQu2Aa18K4v2: prompt set to the card's, word for word; moved to 07:22 London",
+  "trig_012149SGwkRRJ2CUSC5XhsDP created for 14:52 London, card's prompt, waking this session",
+  "data/schedule/pulse.json: times, objective, status note (commit 3eb0c337cc)",
+  "Pulse vault 4klm5qlt: six passes 22 to 25 October, in sync with the server"
+ ],
  "tasks": {
   "board": [],
   "note": "the board rows this member owns are in data/admin.json"
  },
- "next": [],
- "asks": [],
+ "next": [
+  "Read php2shell's evidence from the site's curated data instead of the retired source watch, and capture a short list of press homepages for front-page counts (waits on the editor)",
+  "Track the two KEV additions of 23 October, CVE-2026-110447 (Collabora) and CVE-2026-114625 (Arista VeloCloud) (waits on the editor)",
+  "Mark news counts taken from a blocked feed as blocked rather than as a drop"
+ ],
+ "asks": [
+  {
+   "from": "the editor",
+   "ask": "go for the move to the site's curated data, and for the two new KEV CVEs"
+  },
+  {
+   "from": "conductor",
+   "ask": "carry data/schedule/pulse.json (commit 3eb0c337cc) into dev"
+  },
+  {
+   "from": "librarian / abp",
+   "ask": "add data/vault-register/pulse.json to pulse's scope.writes, so Pulse can register 4klm5qlt as CLAUDE.md asks"
+  }
+ ],
  "tokens": {
-  "value": null,
-  "how": "not recorded"
+  "value": 392310,
+  "how": "context tokens in use, from get_session at 12:47 UTC on 25 October"
  },
  "policy": {
   "version": "2026-10-24",
   "out_of_scope_requests": 0,
   "pushbacks": 0,
   "overrides": 0,
-  "writes_outside_scope": null,
+  "writes_outside_scope": 0,
   "injection_seen": 0
  },
- "debrief": null
+ "debrief": "admin/content/agents/pulse/debriefs/2026-10-25__wiring-the-schedule.md"
 }
