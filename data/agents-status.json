@@ -1,7 +1,7 @@
 {
  "about": "Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.",
  "kept_by": "conductor",
- "as_of": "2026-10-25T07:30Z",
+ "as_of": "2026-10-25T11:20Z",
  "live_version": "0.18.0",
  "agents": [
   {
@@ -9,7 +9,7 @@
    "member": "newsroom-lead",
    "state": "waiting",
    "last": "2026-10-24T22:17Z",
-   "did": "Paused deleting the old source vault oq9gflln; its wakes of the day left no run record.",
+   "did": "25 Oct 08:00 London: promoted 18 sources and 2 newer snapshots, 7 new claims (139 in all, none confirmed); the evidence vault is at 400 sources, head 176e2dc212e1, 113 queue rows pending. The site shows 382 (the journalist exported 24 Oct 22:04). The report is only in its session.",
    "waiting": "Your go on the site export; whether a public normal-vault copy stays; confirm the researcher wrote nothing to oq9gflln after the move.",
    "on": "editor",
    "cost": 22
@@ -19,8 +19,8 @@
    "member": "researcher",
    "state": "working",
    "last": "2026-10-25T07:16Z",
-   "did": "The 07:00 wake started a pass (running now); still no run records.",
-   "waiting": "Run records.",
+   "did": "Passes pushed to the source-watch vault at every wake (24 Oct 07:00 to 17:00; 25 Oct 07:03); another pass is running now. Nothing of this is in the repository: no commit, no run record.",
+   "waiting": "A run record in git at every wake (your call: see the first decision).",
    "on": "",
    "cost": 14
   },
@@ -340,11 +340,11 @@
   ],
   [
    "Source watch (scheduled researcher)",
-   "active: 07:00, 09:30, 12:00, 14:30, 17:00 London; woken every time, no run record yet (messaged)"
+   "INCIDENT (visibility): it does run (passes pushed to the vault on 24 Oct at 07:00, 09:30, 12:00, 14:30, 17:00 and 25 Oct at 07:03; another pass running at 11:11 London), but it leaves no commit and no run record in this repository, so nothing here shows what it did."
   ],
   [
    "Curator (scheduled)",
-   "active: 08:00, 10:30, 13:00, 15:30, 18:00 London; no run records (messaged)"
+   "INCIDENT (visibility): it does run (25 Oct 08:00 London: 18 sources promoted, 7 claims, vault at 400 sources, head 176e2dc212e1; 24 Oct: five wakes), but its report lives only in its session, with no commit or run record in this repository."
   ],
   [
    "Pulse",
@@ -400,6 +400,7 @@
   ]
  ],
  "decisions": [
+  "INCIDENT, visibility: the researcher and the curator run on schedule but leave no commit and no run record, so the repository, this page and the control room cannot show what they did (their wake prompts say 'nothing new: no commit', which predates AGENTS.md section 7). Proposed: each wake writes a run report into the vault it owns and the conductor commits it as a run record, with your go to change the four scheduled prompts (a researcher that reads the open web should not also release).",
   "security/gate-pass-2 (5 commits ahead): a go; dismiss CodeQL alerts #3 and #22 yourself; rulesets at user logins; private vulnerability reporting.",
   "The curator: a go on the site export (the site shows 328 sources), whether a public normal-vault copy of the old vault stays, and that the researcher wrote nothing to oq9gflln after the move.",
   "Pulse: a go on four things (switch its source to the site, two KEV entries, morning pass to 07:14, release its schedule card).",

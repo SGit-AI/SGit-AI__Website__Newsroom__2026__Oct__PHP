@@ -361,4 +361,4 @@ The file is [data/entities.json](../../data/entities.json), with who states each
 
 
 ---
-site v0.18.5 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/graph/parties/index.html
+site v0.18.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/graph/parties/index.html

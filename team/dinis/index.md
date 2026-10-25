@@ -58,6 +58,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 293 | Wikipedia's text (CC BY-SA 4.0) is republished in full under /wikipedia/ and data/wikipedia/, with attribution and the same licence on those pages, against the site's rule that no third-party page is reproduced (written for unlicensed pages). Decide whether it stays, and whether README's licence line says soFrom the brief: Wikipedia as an anchor (admin/content/briefs/2026-10-25__brief__wikipedia-as-an-anchor.md). | open |  |
 | 297 | The line on the live site: the rollout in the brief's order, starting with the line and the boot script on every page (rule 7 and the fallback line), replacing the lens's two dialsWaiting on the editor's go, as prototype E was (board 275, which this supersedes). Steps 2 to 7 of the brief's rollout follow: roles and depth on the live front page and the content pages, the first visit and the guesses, seen and the return moments, shared links and the past view, a page line for every page (the desk approves the words), then the reader's vault (board 140) and telemetry (board 262). | open |  |
 | 298 | The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x depth cells, the thresholds, and who writes the page linesSection 14 of the brief. The prototype ships the pack's answers to all five; they are cheap to change (assets/design/line/roles.json, copy.src.json and moments.json are read by the build). | open |  |
+| 303 | Incident, 25 October 2026: the researcher and the curator run on schedule but leave no commit and no run record, so the team is blind to what they did and the control room shows them as missed. Decide: every scheduled wake leaves a run record in git (proposed: the agent writes a report into its own vault, the conductor commits it), and the four scheduled prompts change accordingly.Raised by the conductor. The curator's and the researcher's sessions show the runs (25 Oct 08:00 London: 18 sources promoted); only the repository is blind. | open |  |
 
 ## Waiting on someone else
 
@@ -99,4 +100,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.18.5 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.18.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

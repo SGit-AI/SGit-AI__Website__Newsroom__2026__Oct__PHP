@@ -10,11 +10,12 @@ Every agent on the team: what it last did, what it waits for and from whom, the 
 
 Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.
 
-**As of** 2026-10-25 07:30Z UTC · **live site** v0.18.0
+**As of** 2026-10-25 11:20Z UTC · **live site** v0.18.0
 
 23agents3working2blocked17waiting on the editor16branches waiting for dev$1025spent, sessions so far
 
 ## What needs a decision first
+- INCIDENT, visibility: the researcher and the curator run on schedule but leave no commit and no run record, so the repository, this page and the control room cannot show what they did (their wake prompts say 'nothing new: no commit', which predates AGENTS.md section 7). Proposed: each wake writes a run report into the vault it owns and the conductor commits it as a run record, with your go to change the four scheduled prompts (a researcher that reads the open web should not also release).
 - security/gate-pass-2 (5 commits ahead): a go; dismiss CodeQL alerts #3 and #22 yourself; rulesets at user logins; private vulnerability reporting.
 - The curator: a go on the site export (the site shows 328 sources), whether a public normal-vault copy of the old vault stays, and that the researcher wrote nothing to oq9gflln after the move.
 - Pulse: a go on four things (switch its source to the site, two KEV entries, morning pass to 07:14, release its schedule card).
@@ -35,7 +36,7 @@ Blocked first, then ready for review, then working, then done.
 | [dev@php.newsroom](../dev/index.html) | blocked | 2026-10-24 16:45Z | Blocked on a Bash permission prompt (since 11:52 UTC, asked again 16:45). | Approve or deny the Bash call in its session; desk lists 6 decisions waiting on you.on: editor | $181.00 |
 | [conductor@php.newsroom](../conductor/index.html) | working | 2026-10-24 14:15Z | The scheduled conductor: full pass 15:15 London. The editor-session conductor wrote a debrief at 12:28. | The lanes: no key. The editor session asks for a go on the Sherpa schedule (card active) and the cartographer one (archived: the ontologist took over).on: editor | $2.00 |
 | [librarian@php.newsroom](../librarian/index.html) | working | 2026-10-25 07:13Z | Its 07:13 pass is running now. | Two board decisions; security review of its CLAUDE.md branch.on: editor | $47.00 |
-| [researcher@php.newsroom (scheduled)](../researcher/index.html) | working | 2026-10-25 07:16Z | The 07:00 wake started a pass (running now); still no run records. | Run records. | $14.00 |
+| [researcher@php.newsroom (scheduled)](../researcher/index.html) | working | 2026-10-25 07:16Z | Passes pushed to the source-watch vault at every wake (24 Oct 07:00 to 17:00; 25 Oct 07:03); another pass is running now. Nothing of this is in the repository: no commit, no run record. | A run record in git at every wake (your call: see the first decision). | $14.00 |
 | liaison@php.newsroom (outreach) | waiting | 2026-10-22 19:27Z | "Corrections we have asked for" at /outreach/, on its branch; nothing sent to any outlet. | Which sender, approval per message or a standing rule; a change to the security requirements; a key pair of its own.on: editor | $2.21 |
 | storyboards@php.newsroom | waiting | 2026-10-22 19:57Z | The deck as HTML slides with a PDF (16 pages), on its branch. | A model key for four images; it must arrive sealed (pki.sgit.ai), not pasted.on: editor | $15.13 |
 | [grc@php.newsroom](../grc/index.html) | done | 2026-10-22 21:45Z | The GRC section and the data protection officer's briefing (v0.6.0). | Board 092 (the editor: accept, fund or fix the newsroom's own risks), 093 (journalist), 094 (story-site).on: editor | $17.44 |
@@ -49,7 +50,7 @@ Blocked first, then ready for review, then working, then done.
 | [factcheck@php.newsroom](../verifier/index.html) | waiting | 2026-10-24 19:58Z | The 20:52 wake was quiet: no release, audit 0 failures. | nothing | $96.00 |
 | [sherpa@php.newsroom](../sherpa/index.html) | waiting | 2026-10-24 20:47Z | Wakes on schedule; both lanes empty; next 07:45. | The conductor's lane key (5iwos28w) and the subscriptions key (wgeiqabu) handed over sealed.on: editor | $91.00 |
 | security@php.newsroom | waiting | 2026-10-24 22:05Z | CodeQL fixes done (first scan triaged and hardened, v0.15.12); gate-pass-2 now 5 commits ahead of dev. | Reply go to release security/gate-pass-2 (it carries the #4-6 fix); dismiss CodeQL alerts #3 and #22 yourself.on: editor | $70.00 |
-| [curator@php.newsroom (scheduled)](../newsroom-lead/index.html) | waiting | 2026-10-24 22:17Z | Paused deleting the old source vault oq9gflln; its wakes of the day left no run record. | Your go on the site export; whether a public normal-vault copy stays; confirm the researcher wrote nothing to oq9gflln after the move.on: editor | $22.00 |
+| [curator@php.newsroom (scheduled)](../newsroom-lead/index.html) | waiting | 2026-10-24 22:17Z | 25 Oct 08:00 London: promoted 18 sources and 2 newer snapshots, 7 new claims (139 in all, none confirmed); the evidence vault is at 400 sources, head 176e2dc212e1, 113 queue rows pending. The site shows 382 (the journalist exported 24 Oct 22:04). The report is only in its session. | Your go on the site export; whether a public normal-vault copy stays; confirm the researcher wrote nothing to oq9gflln after the move.on: editor | $22.00 |
 | [journalist@php.newsroom (scheduled)](../journalist/index.html) | waiting | 2026-10-24 23:09Z | Branch matches dev; nothing to push. Active from 00:40 London: Sonnet, 08:40, 11:10, 13:40, 16:10, 18:40; a fresh session each wake. | Its first wake at 08:40. | $4.00 |
 | [ontologist@php.newsroom (cartographer)](../cartographer/index.html) | done | 2026-10-24 23:24Z | Its first pass (14:40, run record 21:50 UTC): the Wikipedia php2shell article graph is live (v0.17.1). | nothing | $66.00 |
 | correspondent@php.newsroom (scheduled) | waiting | 2026-10-25 01:44Z | Pipeline owner after the journalist; site pages updated to v0.17.7. Active from 00:40 London: Opus, 09:25, 11:55, 14:25, 16:55, 19:25 (45 minutes after each journalist wake). | Your call on board 285: move the desk's checks to about 10:15 and 17:40 (its wakes clash with the correspondent's).on: editor | $114.00 |
@@ -85,8 +86,8 @@ The register of schedules and every recorded run is on [runs](../runs/index.html
 | Schedule | State |
 |---|---|
 | Conductor (scheduled) | active: hourly 07:15 to 21:15 London; first full pass this wake |
-| Source watch (scheduled researcher) | active: 07:00, 09:30, 12:00, 14:30, 17:00 London; woken every time, no run record yet (messaged) |
-| Curator (scheduled) | active: 08:00, 10:30, 13:00, 15:30, 18:00 London; no run records (messaged) |
+| Source watch (scheduled researcher) | INCIDENT (visibility): it does run (passes pushed to the vault on 24 Oct at 07:00, 09:30, 12:00, 14:30, 17:00 and 25 Oct at 07:03; another pass running at 11:11 London), but it leaves no commit and no run record in this repository, so nothing here shows what it did. |
+| Curator (scheduled) | INCIDENT (visibility): it does run (25 Oct 08:00 London: 18 sources promoted, 7 claims, vault at 400 sources, head 176e2dc212e1; 24 Oct: five wakes), but its report lives only in its session, with no commit or run record in this repository. |
 | Pulse | scheduled task at 06:44 and 14:44 London; no card yet (it asks for a go to release one) |
 | Librarian | active: 07:13 London; fired 06:13 UTC, pass running |
 | Journalist (Sonnet) | active from 00:40 London on 25 October: 08:40, 11:10, 13:40, 16:10, 18:40; first wake due 08:40 |
@@ -109,4 +110,4 @@ The vaults move ahead of the site; a fact reaches the site only when its vault i
 
 
 ---
-site v0.18.5 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html
+site v0.18.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html

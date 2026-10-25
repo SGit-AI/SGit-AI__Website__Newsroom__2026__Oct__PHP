@@ -2,7 +2,7 @@
  "agents": [
   {
    "cost": 22,
-   "did": "Paused deleting the old source vault oq9gflln; its wakes of the day left no run record.",
+   "did": "25 Oct 08:00 London: promoted 18 sources and 2 newer snapshots, 7 new claims (139 in all, none confirmed); the evidence vault is at 400 sources, head 176e2dc212e1, 113 queue rows pending. The site shows 382 (the journalist exported 24 Oct 22:04). The report is only in its session.",
    "id": "curator-scheduled",
    "last": "2026-10-24T22:17Z",
    "member": "newsroom-lead",
@@ -14,7 +14,7 @@
   },
   {
    "cost": 14,
-   "did": "The 07:00 wake started a pass (running now); still no run records.",
+   "did": "Passes pushed to the source-watch vault at every wake (24 Oct 07:00 to 17:00; 25 Oct 07:03); another pass is running now. Nothing of this is in the repository: no commit, no run record.",
    "id": "researcher-scheduled",
    "last": "2026-10-25T07:16Z",
    "member": "researcher",
@@ -22,7 +22,7 @@
    "on": "",
    "stage": "researcher",
    "state": "working",
-   "waiting": "Run records."
+   "waiting": "A run record in git at every wake (your call: see the first decision)."
   },
   {
    "cost": 19.94,
@@ -277,7 +277,7 @@
    "waiting": "Its first wake at 08:40."
   }
  ],
- "as_of": "2026-10-25T07:30Z",
+ "as_of": "2026-10-25T11:20Z",
  "board": [
   {
    "id": "009",
@@ -452,6 +452,12 @@
    "owner": "editor",
    "status": "open",
    "title": "The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x depth cells, the thresholds, and who writes the page lines"
+  },
+  {
+   "id": "303",
+   "owner": "editor",
+   "status": "open",
+   "title": "Incident, 25 October 2026: the researcher and the curator run on schedule but leave no commit and no run record, so the team is blind to what they did and the control room shows them as missed. Decide: every scheduled wake leaves a run record in git (proposed: the agent writes a report into its own vault, the conductor commits it), and the four scheduled prompts change accordingly."
   }
  ],
  "branches": [
@@ -553,6 +559,7 @@
   ]
  ],
  "decisions": [
+  "INCIDENT, visibility: the researcher and the curator run on schedule but leave no commit and no run record, so the repository, this page and the control room cannot show what they did (their wake prompts say 'nothing new: no commit', which predates AGENTS.md section 7). Proposed: each wake writes a run report into the vault it owns and the conductor commits it as a run record, with your go to change the four scheduled prompts (a researcher that reads the open web should not also release).",
   "security/gate-pass-2 (5 commits ahead): a go; dismiss CodeQL alerts #3 and #22 yourself; rulesets at user logins; private vulnerability reporting.",
   "The curator: a go on the site export (the site shows 328 sources), whether a public normal-vault copy of the old vault stays, and that the researcher wrote nothing to oq9gflln after the move.",
   "Pulse: a go on four things (switch its source to the site, two KEV entries, morning pass to 07:14, release its schedule card).",
@@ -816,6 +823,14 @@
    "run": "20261025T0920Z-desk",
    "started": "2026-10-25T09:20:36Z",
    "summary": "Morning line: still precaution, four days on; the third flaw CVE-2026-115560 buried in the unknowns (boards 301, 302); the editor's queue ranked; board 285 waits on the editor's go"
+  },
+  {
+   "agent": "conductor",
+   "finished": "2026-10-25T10:16:41Z",
+   "outcome": "partial",
+   "run": "20261025T1015Z-conductor",
+   "started": "2026-10-25T10:15:36Z",
+   "summary": "Light check (11:15 London) turned incident at the editor's word: the researcher and the curator DO run (curator 08:00: 18 sources promoted, vault 400 sources; researcher passes pushed at 07:03 and running at 11:11) but leave no commit or run record. Status lines and decision rewritten to say so; bo…"
   }
  ],
  "schedules": [
@@ -961,5 +976,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.18.5"
+ "version": "0.18.6"
 }

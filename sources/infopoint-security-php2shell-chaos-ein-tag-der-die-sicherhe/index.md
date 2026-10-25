@@ -56,4 +56,4 @@ The captured files are held privately in the evidence vault and are not republis
 
 
 ---
-site v0.18.5 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/infopoint-security-php2shell-chaos-ein-tag-der-die-sicherhe/index.html
+site v0.18.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/sources/infopoint-security-php2shell-chaos-ein-tag-der-die-sicherhe/index.html

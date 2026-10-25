@@ -8,11 +8,12 @@ A visual, interactive view of every agent on the team: the pipeline, who waits f
 
 # Control room
 
-Every agent, what it waits for, what runs on a schedule and what needs the editor, drawn from the team's own data. Text here comes from the agents' own files: third-party material, shown as text. As of 2026-10-25 07:30Z UTC, site v0.18.5.
+Every agent, what it waits for, what runs on a schedule and what needs the editor, drawn from the team's own data. Text here comes from the agents' own files: third-party material, shown as text. As of 2026-10-25 11:20Z UTC, site v0.18.6.
 
 This page draws its view with a script. Without it, the plain list below has the same facts; the plain pages are [status](../status/index.html) and [schedule](../schedule/index.html).
 
 ## What needs a decision first
+- INCIDENT, visibility: the researcher and the curator run on schedule but leave no commit and no run record, so the repository, this page and the control room cannot show what they did (their wake prompts say 'nothing new: no commit', which predates AGENTS.md section 7). Proposed: each wake writes a run report into the vault it owns and the conductor commits it as a run record, with your go to change the four scheduled prompts (a researcher that reads the open web should not also release).
 - security/gate-pass-2 (5 commits ahead): a go; dismiss CodeQL alerts #3 and #22 yourself; rulesets at user logins; private vulnerability reporting.
 - The curator: a go on the site export (the site shows 328 sources), whether a public normal-vault copy of the old vault stays, and that the researcher wrote nothing to oq9gflln after the move.
 - Pulse: a go on four things (switch its source to the site, two KEV entries, morning pass to 07:14, release its schedule card).
@@ -27,8 +28,8 @@ This page draws its view with a script. Without it, the plain list below has the
 
 | Agent | State | Last activity (UTC) | Last did | Waiting for |
 |---|---|---|---|---|
-| curator@php.newsroom (scheduled) | waiting | 2026-10-24 22:17Z | Paused deleting the old source vault oq9gflln; its wakes of the day left no run record. | Your go on the site export; whether a public normal-vault copy stays; confirm the researcher wrote nothing to oq9gflln after the move. |
-| researcher@php.newsroom (scheduled) | working | 2026-10-25 07:16Z | The 07:00 wake started a pass (running now); still no run records. | Run records. |
+| curator@php.newsroom (scheduled) | waiting | 2026-10-24 22:17Z | 25 Oct 08:00 London: promoted 18 sources and 2 newer snapshots, 7 new claims (139 in all, none confirmed); the evidence vault is at 400 sources, head 176e2dc212e1, 113 queue rows pending. The site shows 382 (the journalist exported 24 Oct 22:04). The report is only in its session. | Your go on the site export; whether a public normal-vault copy stays; confirm the researcher wrote nothing to oq9gflln after the move. |
+| researcher@php.newsroom (scheduled) | working | 2026-10-25 07:16Z | Passes pushed to the source-watch vault at every wake (24 Oct 07:00 to 17:00; 25 Oct 07:03); another pass is running now. Nothing of this is in the repository: no commit, no run record. | A run record in git at every wake (your call: see the first decision). |
 | curator@php.newsroom (first session) | review | 2026-10-23 23:06Z | Measured the creator vault (580 MB, mostly captures) and the evidence vault; advises waiting before moving either to pack mode. | A decision on moving the creator vault to pack mode (the agent advises waiting). |
 | researcher@php.newsroom (first session) | review | 2026-10-23 22:57Z | Pack mode measured and written up; reviewed the old schedule vault. Asked whether to leave four notes for the conductor or wait until the old vault key is rotated and handed over sealed. | Whether the old source vault (oq9gflln) key is rotated and handed over sealed. |
 | dev@php.newsroom | blocked | 2026-10-24 16:45Z | Blocked on a Bash permission prompt (since 11:52 UTC, asked again 16:45). | Approve or deny the Bash call in its session; desk lists 6 decisions waiting on you. |
@@ -53,4 +54,4 @@ This page draws its view with a script. Without it, the plain list below has the
 
 
 ---
-site v0.18.5 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/control/index.html
+site v0.18.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/control/index.html
