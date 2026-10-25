@@ -206,4 +206,4 @@ Files: [admin/content/agents/abp/](https://github.com/SGit-AI/SGit-AI__Website__
 
 
 ---
-site v0.19.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/abp/index.html
+site v0.19.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/abp/index.html

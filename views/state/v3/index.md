@@ -79,4 +79,4 @@ The no-compromise claim and its evidence page are as of 08:37 UTC on 24 October;
 
 
 ---
-site v0.19.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/views/state/v3/index.html
+site v0.19.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/views/state/v3/index.html

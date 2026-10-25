@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.19.3",
+ "version": "0.19.4",
  "members": [
   {
    "agent": "abp",
@@ -1397,9 +1397,9 @@
    "status": {
     "schema": "newsroom/agent-status/v1",
     "agent": "journalist",
-    "as_of": "2026-10-24",
-    "round": 1,
-    "state": "first wake released (v0.15.19); schedule card still proposed, waiting for the editor",
+    "as_of": "2026-10-25",
+    "round": 2,
+    "state": "second wake released (v0.19.3); schedule card active",
     "done": [
      {
       "what": "Made the pki key sha256:de0decfc882a0235 and sent its QR to the editor",
@@ -1420,6 +1420,10 @@
      {
       "what": "Released v0.15.19; live site serves it",
       "evidence": "debriefs/2026-10-24__first-wake.md; v0.15.19"
+     },
+     {
+      "what": "Second wake, by hand: exported the vault at 87795d121200 (418 sources), 15 claims reviewed (2 used, 3 agrees, 6 noted, 4 held back), Turkey, Shizuoka Bank and Nepal rows, as-of lines to 09:35 UTC on 25 October",
+      "evidence": "debriefs/2026-10-25__second-wake.md; v0.19.3"
      }
     ],
     "tasks": {
@@ -1428,26 +1432,18 @@
     },
     "next": [
      {
-      "what": "Editor go on the schedule card and the scheduled task",
-      "why": "the schedule card stays proposed until then"
-     },
-     {
-      "what": "Next wake: compare the vault head with 8c16a64a7cf6",
-      "why": "the wake is a no-op when the head has not moved"
+      "what": "Next wake: compare the vault head with 87795d121200; no change, one line and no commit",
+      "why": "the brief"
      },
      {
       "what": "Re-read in full the partly checked files on /views/desk/",
-      "why": "the pass ledger on /views/desk/ lists them"
+      "why": "the pass ledger"
      }
     ],
     "asks": [
      {
-      "what": "Go to make the schedule card active and create the five daily scheduled tasks (or create them yourself)",
-      "from": "the editor"
-     },
-     {
-      "what": "Confirm the journalist key sha256:de0decfc882a0235 (pki-agent submission)",
-      "from": "the editor"
+      "what": "Decide whether the journalist scheduled tasks bind to this session (they start a fresh session each wake today)",
+      "from": "the editor, or the conductor"
      }
     ],
     "tokens": {
@@ -1462,9 +1458,14 @@
      "writes_outside_scope": null,
      "injection_seen": 0
     },
-    "debrief": "debriefs/2026-10-24__first-wake.md"
+    "debrief": "debriefs/2026-10-25__second-wake.md"
    },
    "debriefs": [
+    {
+     "file": "2026-10-25__second-wake.md",
+     "date": "2026-10-25",
+     "title": "Second wake (run by hand in the first session): evidence vault 87795d121200, 15 claims, three new rows"
+    },
     {
      "file": "2026-10-24__journalist-to-correspondent.md",
      "date": "2026-10-24",

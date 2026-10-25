@@ -1,6 +1,15 @@
 {
- "current": "0.19.3",
+ "current": "0.19.4",
  "versions": [
+  {
+   "version": "0.19.4",
+   "date": "2026-10-25",
+   "title": "Journalist: debrief and status for the second wake",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.19.3",
    "date": "2026-10-25",

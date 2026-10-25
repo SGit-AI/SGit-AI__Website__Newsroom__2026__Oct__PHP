@@ -55,4 +55,4 @@ The security advisories of the PHP October 2026 newsroom: every vulnerability fo
 
 
 ---
-site v0.19.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/index.html
+site v0.19.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/appsec/advisories/index.html

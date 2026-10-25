@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.19.4 · 25 October 2026new since your last visit
+
+Journalist: debrief and status for the second wake
+
+No reader-facing section changed in this release.
+
 ## v0.19.3 · 25 October 2026new since your last visit
 
 Journalist: evidence vault at 87795d121200, 15 claims reviewed, three new rows, as-of lines to 09:35 UTC on 25 October
@@ -1220,4 +1226,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.19.3 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.19.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
