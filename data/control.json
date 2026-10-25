@@ -962,8 +962,8 @@
    "objective": "Keep the story's line, the front page and the section leads true to the evidence; keep the health of the publication and of the system in view; keep the corrections we ask of others ready for the editor.",
    "status": "active",
    "times": [
-    "09:20",
-    "16:20"
+    "10:40",
+    "17:40"
    ]
   },
   {
@@ -1062,5 +1062,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.21.0"
+ "version": "0.21.1"
 }

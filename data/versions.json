@@ -1,6 +1,15 @@
 {
- "current": "0.21.0",
+ "current": "0.21.1",
  "versions": [
+  {
+   "version": "0.21.1",
+   "date": "2026-10-25",
+   "title": "The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prompt",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.21.0",
    "date": "2026-10-25",

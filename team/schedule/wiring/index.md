@@ -107,7 +107,7 @@ Card: `data/schedule/curator.json`, status active; wakes 08:00, 10:30, 13:00, 15
 
 ## desk (desk@php.newsroom)
 
-Card: `data/schedule/desk.json`, status active; wakes 09:20, 16:20 (Europe/London); to do.
+Card: `data/schedule/desk.json`, status active; wakes 10:40, 17:40 (Europe/London); to do.
 
 | Task | Name | Wakes | Session | Prompt |
 |---|---|---|---|---|
@@ -127,7 +127,7 @@ Card: `data/schedule/desk.json`, status active; wakes 09:20, 16:20 (Europe/Londo
 
 - If `update_trigger` refuses: do not delete anything. With the editor's go in this session, call `create_trigger` with the same `cron_expression`, `persistent_session_id` set to this session (session_017Bh11ZMAfrDDo17TasVhQS), the same name, and the card's prompt; then tell the editor the old task's id, to delete.
 
-- Every time on your card must have a task, and no task a time off your card. None is missing now.
+- Every time on your card must have a task, and no task a time off your card. Missing now: 10:40, 17:40: ask the editor's go to create a task for them, as in step 4.
 
 - Reply to the editor in five lines: the ids updated, the ids created, the ids to delete, and anything that did not match. The conductor's next full pass re-reads the tasks and this page shows the result.
 
@@ -342,4 +342,4 @@ Card: `data/schedule/sherpa.json`, status active; wakes 07:45, 09:45, 11:45, 13:
 
 
 ---
-site v0.21.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/wiring/index.html
+site v0.21.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/wiring/index.html

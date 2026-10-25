@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.21.0. Not the live site.
+> Mockup D for review, built from the data of release v0.21.1. Not the live site.
 
-PHP Team console Console Overview Board 210 Agents 19 Releases 173 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 209 Agents 19 Releases 174 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,12 +12,12 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.21.0 
-173 releases since 22 Oct 
+v0.21.1 
+174 releases since 22 Oct 
 
 Open on the board 
-210 
-104 done, 5 waiting 
+209 
+105 done, 5 waiting 
 
 Pages built 
 1053 
@@ -30,7 +30,7 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 210
+#### Open 209
 
  #319 
 Wikidata and DBpedia, tracked: data/wikidata-links.json holds every party's lookup (25 items confirmed by hand on 25 Oct… 
@@ -72,7 +72,7 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 104
+#### Done 105
 
  #316 
 Scheduled tasks that start a fresh session can start with no repository: the ontologist's old task (trig_01BqfsPKp2Rj5Fs… 
@@ -99,6 +99,7 @@ The chrome after the lens prototype: the bar in two lines on a laptop (132px to 
 ### Releases
  latest 8 
 
+ v0.21.1 2026-10-25 The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prom… 
  v0.21.0 2026-10-25 Wikipedia, round 3: the article's history as lifelines (/wikipedia/php2shell/evolution/), its talk page as threads, a reviewer's r… 
  v0.20.8 2026-10-25 Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date 
  v0.20.7 2026-10-25 the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with… 
@@ -106,7 +107,6 @@ The chrome after the lens prototype: the bar in two lines on a laptop (132px to 
  v0.20.5 2026-10-25 The scheduled tasks as they are at 13:00 London, after the agents wired their own: researcher, Sherpa, librarian, ontologist and p… 
  v0.20.4 2026-10-25 The security agent's schedule card: one pass a day at 22:35 London, after the day's last releases and before the first wake, at th… 
  v0.20.3 2026-10-25 The stricter gate, on the editor's go: security_check.py fails on inline event handlers, pages without a safe Content-Security-Pol… 
- v0.20.2 2026-10-25 a proposal on the briefs page, at the editor's request: one repository into six (kit, data, refs, updates, site, team), each with … 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ The chrome after the lens prototype: the bar in two lines on a laptop (132px to 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.21.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.21.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

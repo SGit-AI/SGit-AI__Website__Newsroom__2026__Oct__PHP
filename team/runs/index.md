@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today265runs recorded91runs with changes and no article
+2schedules20runs a night, today266runs recorded91runs with changes and no article
 
 ## Quiet hours
 
@@ -33,7 +33,7 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 173, researcher@php.newsroom: 38, Conductor: 15, synthetic@php.newsroom: 12, Fact-check desk: 7, factcheck: 5, Sherpa: 4, desk: 3, Ontologist: 2, Journalist: 2, librarian@php.newsroom: 2, correspondent: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 174, researcher@php.newsroom: 38, Conductor: 15, synthetic@php.newsroom: 12, Fact-check desk: 7, factcheck: 5, Sherpa: 4, desk: 3, Ontologist: 2, Journalist: 2, librarian@php.newsroom: 2, correspondent: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
@@ -49,6 +49,7 @@ Newest first, read from the data each agent publishes: the release history, the 
 | 2026-10-25T08:52:00Z | factcheck | Scheduled wake | `20261025T0852Z-factcheck` | Daily sweep 08:52 London (one quiet wake before, 20:52 on 24 October): new fc.py drift found six excerpts gone from re-captured sources, all explained; watchtowr-itw now carried by watchTowr's own pages (A6, Finding-127); no-confirmed-compromise still holds at 16:05 UTC on 24 October; W3Techs at 69.2%; KEV unchanged; audit 0 failures. Page: /factcheck/ | yes | missing | [output](../../team/schedule/factcheck/index.html) |
 | 2026-10-25T07:16:04Z | [Conductor](../conductor/index.html) | Scheduled wake | `20261025T0716Z-conductor` | Full pass (07:15 London; clocks went back to GMT overnight, the task fires at 07:15 London). Dev head 8bcebd32 area at v0.18.0 taken in; inbox empty; 3 notes read (CodeQL hardening: derive data-root as a count; the correspondent's board 283 and debrief). Lanes: no key. New cards: journalist (Sonnet) and correspondent (Opus), active from 00:40 London, first wakes 08:40 and 09:25. Ontologist left its first run record (21:50 UTC). Still no run record: researcher, curator, pulse (no card). Status page rewritten from 25 sessions, 15 scheduled tasks and 19 branches ahead of dev. | yes | missing | [output](../../team/schedule/conductor/index.html) |
 | 2026-10-25T07:13:23Z | [librarian@php.newsroom](../librarian/index.html) | Scheduled wake | `20261025T0713Z-librarian` | Pass of 25 October: dev at v0.18.0; 0 overlaps; owners for 395 files and 56 pages proposed to abp@ (board 300); the correspondent's ROLE.md drafted (board 277); the reader answers escaped (raw HTML since v0.2.6, found by the appsec self-check); the ontologist's policy request declined by the rule (abp@'s file, board 295). | yes | missing | [output](../../team/schedule/librarian/index.html) |
+| 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.21.1` | The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prompt | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.21.0` | Wikipedia, round 3: the article's history as lifelines (/wikipedia/php2shell/evolution/), its talk page as threads, a reviewer's reading of it against this site's captures (15 findings, for the editor to take to the talk page in his own words), a page for Wikipedia's editors with the collaboration rules, Wikidata links confirmed for 25 parties and Wikidata/DBpedia tracked, the ontologist's task moved into its own session at 06:05, 10:05, 14:05 and 18:05 London, and the story on adopting Wikipedia's principles for the agents | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.20.8` | Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.20.7` | the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, play, compare any two, 'since yours', and PDFs for reading and for LinkedIn | yes | its release note | [output](../../admin/versions.html) |
@@ -305,4 +306,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.21.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.21.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
