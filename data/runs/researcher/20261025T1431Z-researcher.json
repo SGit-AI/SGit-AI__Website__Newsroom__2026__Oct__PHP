@@ -1,0 +1,19 @@
+{
+ "run": "20261025T1431Z-researcher",
+ "agent": "researcher",
+ "started": "2026-10-25T14:31:45Z",
+ "finished": "2026-10-25T15:31:07Z",
+ "outcome": "ok",
+ "summary": "Wake 14:30 London, 25 October: one pass of the source watch (pack vault 7r83qic5), pushed, vault in sync. First: EPSS stepped from 0.118 and 0.062 (24 Oct) to 0.99981 (CVE-2026-109618) and 0.99997 (CVE-2026-109619) at api.first.org on 25 Oct (percentiles 0.9998, 0.9999), read in the raw capture, not a parse fault. Known Exploited Vulnerabilities: neither CVE listed. Metasploit and Sigma 0 merged pulls; the nuclei pulls series reads 0 at times though the page lists merged pulls (a parser fault in p_pulls, flagged to the editor; the value is 3). Sites dark: the community tracker lists 175 sites, 107 back, 68 dark (was 51 listed, 0 dark); third-party, unverified. Probe: 413 named sites (was 295, targets grown from the tracker): 322 answering, 38 refused-us, 26 unreachable, 18 server-error, 123 changed state. Watch: 1007 due of 1218 pages, 578 changed; 119 pages added by discovery. Ledger 56 records (55 open): 40 new outage records (site-*) from the tracker. Commits: pass push 13,193 objects; queue 2 rows added (index/promote.json 418 rows; the other writer's rows untouched). Also today: the 25 uncaptured references of the Wikipedia article PHP2Shell are now watched pages and captured (19 open, 5 paywalled, 1 bot-challenge). Not judged: whether any capture ends the /compromise/ statement. Earlier wakes on 24 and 25 October left no run record here (the incident of v0.18.6): they were pushed to the vault only. Vault head after the pass: in sync with remote. dev taken in at 3b6c2ce35e41.",
+ "read": [
+  "20261024T0005Z__conductor__to-researcher__your-schedule-card-drafted-from-your-sch",
+  "20261024T0715Z__conductor__to-researcher__no-run-record-for-the-07-00-london-wake",
+  "20261024T0005Z__conductor__to-all__schedules-runs-and-messages-move-to-the",
+  "20261024T1157Z__security__to-all__application-security-a-self-check-after"
+ ],
+ "sent": [],
+ "article": "",
+ "model": "claude-sonnet-5-5",
+ "cost_usd": null,
+ "head": "3b6c2ce35e4142820bd84aa66a864f49ccb3be8a"
+}
