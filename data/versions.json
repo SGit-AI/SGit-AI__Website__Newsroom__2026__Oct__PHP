@@ -1,6 +1,15 @@
 {
- "current": "0.18.2",
+ "current": "0.18.3",
  "versions": [
+  {
+   "version": "0.18.3",
+   "date": "2026-10-25",
+   "title": "Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2%",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.18.2",
    "date": "2026-10-25",

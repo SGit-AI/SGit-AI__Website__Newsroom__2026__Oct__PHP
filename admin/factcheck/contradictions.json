@@ -132,6 +132,16 @@
      "sources": [
       "cybersecuritynews-critical-php2shell-exploit-code"
      ]
+    },
+    {
+     "who": "watchTowr (its own intel page and FAQ)",
+     "when": "captured 2026-10-23",
+     "says": "watchTowr has observed exploitation in the wild through its Attacker Eye honeypot network.",
+     "measures": "honeypot traffic, listed by watchTowr as 'EXPLOITED IN THE WILD: Yes'",
+     "sources": [
+      "watchtowr-php2shell-faq",
+      "watchtowr-php2shell"
+     ]
     }
    ],
    "reading": "They measure different things at different times. Amazon counts attempts against its own sensors and honeypots; CISA and KEV record exploitation it has evidence of against real systems. Both can be true at once: attempts in volume, and no confirmed compromise of a named organisation. The site should never write 'exploited' without saying which of the two it means. Amazon's 'broadly exploited' is the stronger word, sourced to Amazon's own post in the vault; a KEV entry would be the first official signal that attempts have become compromises. Run 3 (24 October): Amazon itself has since narrowed its sentence from 'broadly exploited' to 'broad exploitation attempts', without a note: the strongest word on the exploitation side now agrees with the officials' reading. Run 5 (24 October): Sophos withdrew its earlier success claim at 21:21 UTC on 22 October, the same evening Amazon narrowed its wording: both strongest 'exploited' statements were walked back to attempts.",

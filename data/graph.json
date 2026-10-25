@@ -1,6 +1,6 @@
 {
  "site": "php.oct.2026.newsroom.sgit.ai",
- "version": "0.18.2",
+ "version": "0.18.3",
  "vault_commit": "8c16a64a7cf6",
  "title": "The story graph",
  "note": "A node means what its edges say about it. Every edge is a verb from data/ontology.json with a named inverse; there is no generic association edge. Parties are resolved through data/entities.json and data/attribution.json; relays are derived, so many outlets passing on one statement count as one origin.",
@@ -32105,6 +32105,13 @@
    "sha256": "75d67773b979aa86ec9f32e1690fa2d13b8d5905d6cfac239cfcd9331d8c17dc"
   },
   {
+   "from": "claim:no-confirmed-compromise",
+   "verb": "appears_in",
+   "to": "capture:diepresse-41383717-die-php-sicherheitsluecke-ist-a/20261023T160435Z",
+   "file": "text.txt",
+   "sha256": "f6998ff009f030cc5aa035c7032038aa708ec871633b5604e0ba0b8f2bf46220"
+  },
+  {
    "from": "claim:no-exploitation",
    "verb": "appears_in",
    "to": "capture:bbc-live-ckgel5xp2xv9t/20261022T080559Z",
@@ -32299,6 +32306,13 @@
    "to": "capture:calif-php2shell/20261022T081033Z",
    "file": "text.txt",
    "sha256": "23afef81971778f954d3cefb62c4901814afddd6ae0948c941af3edead40ced4"
+  },
+  {
+   "from": "claim:quarkslab-2024",
+   "verb": "appears_in",
+   "to": "capture:cloudflare-blog-php2shell-waf/20261023T160435Z",
+   "file": "text.txt",
+   "sha256": "94476de6ec0b31e035ef97a1dbf9607bc81e7ddbb479c2d5217b8e8b0207ec02"
   },
   {
    "from": "claim:quarkslab-redacted",
@@ -32593,6 +32607,20 @@
    "to": "capture:tenable-php2shell-faq/20261022T112331Z",
    "file": "text.txt",
    "sha256": "10d98694b9c0243efaf17de612d27de215138873b711598eae3f68ceb9b11b54"
+  },
+  {
+   "from": "claim:watchtowr-itw",
+   "verb": "appears_in",
+   "to": "capture:watchtowr-php2shell/20261023T232528Z",
+   "file": "text.txt",
+   "sha256": "e09524178ed5f328df70485889aa78f37e3bf819682db33e22b4d1a875d1199f"
+  },
+  {
+   "from": "claim:watchtowr-itw",
+   "verb": "appears_in",
+   "to": "capture:watchtowr-php2shell-faq/20261023T160435Z",
+   "file": "text.txt",
+   "sha256": "3c561d0c08e9343f817d78c30427c55eb4a491ccd2a59babcb879a65da8def37"
   },
   {
    "from": "claim:weirdgloop-13h",

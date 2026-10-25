@@ -2064,8 +2064,8 @@
   },
   {
    "id": "no-confirmed-compromise",
-   "claim_hash": "954e9edc944cb1ca",
-   "run": "Run-5",
+   "claim_hash": "90e50d0dfff34955",
+   "run": "Run-6",
    "mode": "vault",
    "kind": "state",
    "level": 4,
@@ -2073,9 +2073,9 @@
    "tension": "none",
    "contradictions": [],
    "volatile": true,
-   "as_of": "20261024T083700Z",
+   "as_of": "20261024T160544Z",
    "status_fit": "ok",
-   "reason": "Refreshed to 08:37 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim.",
+   "reason": "Refreshed to 16:05 UTC on 24 October, still time-bounded and 'reported', which fits. More independent negatives now carry it: Sophos withdrew its success claim (scanning and a few failed attempts, via Cyber Security News), American Banker finds no US bank or credit union reporting a compromise, The Next Web's officials in three countries have 'not seen one succeed'. The vendor half (Hadrian, Patchstack) is still through the press, A3. Every new quote checked verbatim. Run 6 adds Die Presse ('In Österreich sind bisher keine erfolgreichen Angriffe bekannt') and RainForest's honeypot (21 PHP2Shell POST requests, attempts), both checked in their captures.",
    "checked": [
     {
      "source": "cisa-kev-json",
@@ -2219,6 +2219,22 @@
      "sha256": "75d67773b979aa86ec9f32e1690fa2d13b8d5905d6cfac239cfcd9331d8c17dc",
      "result": "carries",
      "excerpt": "Officials in Germany, the Netherlands and Japan say they have not seen one succeed.",
+     "outside_citation": false
+    },
+    {
+     "source": "diepresse-41383717-die-php-sicherheitsluecke-ist-a",
+     "file": "sources/diepresse-41383717-die-php-sicherheitsluecke-ist-a/captures/20261023T160435Z/text.txt",
+     "sha256": "f6998ff009f030cc5aa035c7032038aa708ec871633b5604e0ba0b8f2bf46220",
+     "result": "carries",
+     "excerpt": "In Österreich sind bisher keine erfolgreichen Angriffe bekannt.",
+     "outside_citation": false
+    },
+    {
+     "source": "voix-business-cards-rainforest-ip-activity-an",
+     "file": "sources/voix-business-cards-rainforest-ip-activity-an/captures/20261024T160544Z/text.txt",
+     "sha256": "3e5e879383dd76ceedde10291eb662d52a451e20b573d86c3b1c0ef1ace3b61a",
+     "result": "partial",
+     "excerpt": "PHP2Shell関連のHTTP POST通信が21件観測され",
      "outside_citation": false
     }
    ],
@@ -2971,7 +2987,7 @@
    "volatile": false,
    "as_of": "20261022T113008Z",
    "status_fit": "overstated",
-   "reason": "Calif says Quarkslab's audit 'rediscovered the same OOM issue' and 'exploitation was not proven, hence the bug was not fixed', but Calif says it confirmed this 'from PHP', so it is not independent of the Foundation. The Foundation says something different: a PHP core developer found the OOM signs while fixing a Quarkslab finding, and the fix stalled over trade-offs and resources, not only unproven exploitation. Quarkslab's own summary describes no OOM finding.",
+   "reason": "Calif says Quarkslab's audit 'rediscovered the same OOM issue' and 'exploitation was not proven, hence the bug was not fixed', but Calif says it confirmed this 'from PHP', so it is not independent of the Foundation. The Foundation says something different: a PHP core developer found the OOM signs while fixing a Quarkslab finding, and the fix stalled over trade-offs and resources, not only unproven exploitation. Quarkslab's own summary describes no OOM finding. Run 6: Cloudflare's post was edited on 23 October ('Today,' became 'October 21,'); Quarkslab is still named, so the grade stands.",
    "checked": [
     {
      "source": "php-foundation-blog-security-release",
@@ -3011,6 +3027,14 @@
      "sha256": "302408765abf45e3ae84473d9050c1c65b35c2858e5b53be4fee29dda4de2823",
      "result": "partial",
      "excerpt": "Today, Calif.io, Wiz, OpenAI and Quarkslab disclosed two",
+     "outside_citation": false
+    },
+    {
+     "source": "cloudflare-blog-php2shell-waf",
+     "file": "sources/cloudflare-blog-php2shell-waf/captures/20261023T160435Z/text.txt",
+     "sha256": "94476de6ec0b31e035ef97a1dbf9607bc81e7ddbb479c2d5217b8e8b0207ec02",
+     "result": "carries",
+     "excerpt": "October 21, Calif.io, Wiz, OpenAI and Quarkslab disclosed two vulnerabilities in PHP",
      "outside_citation": false
     }
    ],
@@ -4178,19 +4202,19 @@
   {
    "id": "watchtowr-itw",
    "claim_hash": "ce7243b7fb249b85",
-   "run": "Run-1",
+   "run": "Run-6",
    "mode": "vault",
    "kind": "attribution",
-   "level": 4,
-   "verdict": "holds-in-part",
-   "tension": "superseded",
+   "level": 6,
+   "verdict": "holds",
+   "tension": "none",
    "contradictions": [
     "K-002"
    ],
    "volatile": true,
-   "as_of": "20261022T113111Z",
+   "as_of": "20261023T232528Z",
    "status_fit": "understated",
-   "reason": "Both cited watchTowr captures are HTTP 403 (A1 as cited), but four independent outlets in the vault quote watchTowr's Jake Knott directly saying it sees in-the-wild exploitation attempts against its sensors, so the first half is A4. 'Lists the flaws as exploited in the wild' is not carried by any capture; Equixly (written before the PHP advisory) says watchTowr 'lists no reported exploitation', an earlier state since overtaken.",
+   "reason": "watchTowr's own pages are now captured (23 October): its intel page lists both CVEs as 'EXPLOITED IN THE WILD: Yes', and its FAQ says it 'has observed exploitation in the wild through its Attacker Eye honeypot network'. The claim is an attribution, and watchTowr's own page is the primary record of what watchTowr says: A6, and the site's 'unverified' understates it. What watchTowr measures is honeypot traffic, the same kind of evidence as Amazon's (K-002); its own words elsewhere say none of the sprayed exploits succeeded (Finding on the missing qualifier stays open).",
    "checked": [
     {
      "source": "watchtowr-php2shell",
@@ -4263,13 +4287,30 @@
      "result": "absent",
      "excerpt": "WatchTowr and Huntress say they have not seen either of the vulnerabilities being exploited in the wild.",
      "outside_citation": true
+    },
+    {
+     "source": "watchtowr-php2shell",
+     "file": "sources/watchtowr-php2shell/captures/20261023T232528Z/text.txt",
+     "sha256": "e09524178ed5f328df70485889aa78f37e3bf819682db33e22b4d1a875d1199f",
+     "result": "carries",
+     "excerpt": "EXPLOITED IN THE WILD: Yes , reported by watchTowr",
+     "outside_citation": false
+    },
+    {
+     "source": "watchtowr-php2shell-faq",
+     "file": "sources/watchtowr-php2shell-faq/captures/20261023T160435Z/text.txt",
+     "sha256": "3c561d0c08e9343f817d78c30427c55eb4a491ccd2a59babcb879a65da8def37",
+     "result": "carries",
+     "excerpt": "watchTowr has observed exploitation in the wild through its Attacker Eye honeypot network.",
+     "outside_citation": false
     }
    ],
    "quotes_checked": [],
    "tickets": [
     "Finding-18",
     "Finding-19",
-    "Finding-111"
+    "Finding-111",
+    "Finding-127"
    ],
    "mode2": "watchTowr's intelligence pages captured from a non-blocked client (or archive.org), to settle the 'lists as exploited' wording and its date."
   },

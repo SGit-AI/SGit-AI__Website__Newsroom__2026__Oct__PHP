@@ -105,7 +105,7 @@ An article a reader has seen is listed here until a collector captures it into t
 - [What sixteen agencies actually advise](../agencies/index.html): The NSA, CISA, the UK NCSC, CERT-EU, ENISA, CERT-FR, Canada, Australia, New Zealand, the Netherlands, Italy, Switzerland, Latvia, Japan, Spain and Portugal on php2shell: who says take it offline, who says isolate, who says patch and nothing more, and who has seen exploitation.
 - [Affected systems: versions, deployments, applications, inventory](../affected/index.html): Which PHP versions and SAPIs php2shell affects, which applications had RCE demonstrated, and the NCSC-NL inventory of 674 products counted by status.
 - [Who says what: every party and its claims](../actors/index.html): 27 parties in the php2shell story, each with the claims this site attributes to it and the sources behind them.
-- [The story as a graph: who states what, who relays it, and what it rests on](../graph/index.html): 1322 nodes and 1723 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
+- [The story as a graph: who states what, who relays it, and what it rests on](../graph/index.html): 1322 nodes and 1727 typed edges: every claim, number, event, signal, advice, party, source and capture on the PHP flaws story, walkable, with the independent origins of each claim.
 - [Every party on the story: who states, who relays, who publishes](../graph/parties/index.html): 295 parties resolved from 339 spellings, with the claims each one states and passes on.
 - [Wikipedia, as a graph](../wikipedia/index.html): Each Wikipedia article this site watches, read as a fractal semantic graph: statements classed as facts, attributions and quotes, references joined to the captures this site holds, and every edit as what it changed.
 - [Wikipedia's PHP2Shell article, as a graph](../wikipedia/php2shell/index.html): The English Wikipedia article on PHP2Shell read as a fractal semantic graph: 39 statements classed as facts, attributions and quotes, 43 references and which are captured here, 364 revisions, and where it meets this site's claims.
@@ -204,4 +204,4 @@ Answer a question with a page, not a paragraph. If no page answers it, the answe
 
 
 ---
-site v0.18.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html
+site v0.18.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/questions/index.html

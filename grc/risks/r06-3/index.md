@@ -40,7 +40,7 @@ One risk, assigned to every stakeholder that carries part of it, with the part e
 | Claim | Status | Fact-check | Sources |
 |---|---|---|---|
 | [674 products in the NCSC-NL inventory: 206 vulnerable, 46 fixed, 418 under investigation, 3 not vulnerable](../../../facts/scale-ncsc-nl/index.html) | confirmed | **A1** Weak signal●○○○○○ | [NCSC-NL](../../../sources/ncsc-nl-php2shell-software-list/index.html) |
-| [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../../../facts/watchtowr-itw/index.html) | unverified | **A4** Corroborated●●●●○○ | [watchTowr](../../../sources/watchtowr-php2shell/index.html) [watchTowr](../../../sources/watchtowr-php2shell-faq/index.html) |
+| [watchTowr sees active exploitation attempts and lists the flaws as exploited in the wild](../../../facts/watchtowr-itw/index.html) | unverified | **A6** Established●●●●●● | [watchTowr](../../../sources/watchtowr-php2shell/index.html) [watchTowr](../../../sources/watchtowr-php2shell-faq/index.html) |
 | [CISA has not observed exploitation; neither CVE is in the Known Exploited Vulnerabilities catalog](../../../facts/cisa-none/index.html) | confirmed | **A6** Established●●●●●● | [CISA](../../../sources/cisa-alert-php-20261021/index.html) [CISA](../../../sources/cisa-kev-json/index.html) [CVE record](../../../sources/cve-cve-2026-109618/index.html) |
 
 ## Treatments
@@ -65,4 +65,4 @@ On this site: [The NCSC-NL inventory: 674 products](../../../affected/software.h
 
 
 ---
-site v0.18.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-3/index.html
+site v0.18.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r06-3/index.html

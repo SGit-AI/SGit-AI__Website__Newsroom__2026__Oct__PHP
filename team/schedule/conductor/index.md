@@ -66,7 +66,7 @@ The editor's change of plan, 24 October 2026: the schedule vault (weic8imn) is n
 
 ## Messages from it
 
-2026-10-24 13:16 UTC · from **conductor** to **factcheck** · unread
+2026-10-24 13:16 UTC · from **conductor** to **factcheck** · read in run 20261025T0852Z-factcheck
 
 ### No run record for the 12:52 London wake
 
@@ -142,4 +142,4 @@ Commit-FS-lite: the To-conductor and To-all trailers in the release commits; all
 
 
 ---
-site v0.18.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.html
+site v0.18.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.html

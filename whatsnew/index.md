@@ -12,11 +12,20 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.18.3 · 25 October 2026new since your last visit
+
+Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2%
+
+No reader-facing section changed in this release.
+
 ## v0.18.2 · 25 October 2026new since your last visit
 
 the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 300), the correspondent's role drafted (board 277), and the reader answers escaped: authored HTML inserted raw since v0.2.6, found by the appsec self-check
 
-No reader-facing section changed in this release.
+### Briefings that changed
+JJordanBoard member or executive · v15SSamSecurity lead · v11BBlakeAnalyst or advisor · v12RRobinCISO · v14QQuinnCFO · v15JJamieHead of AppSec · v11AAlexCurious reader · v13CCaseyWebsite owner · v9MMorganData protection officer · v8
+### Sections that changed
+- [Every claim](../versions/page-claims/index.html#v12) v12
 
 ## v0.18.1 · 25 October 2026new since your last visit
 
@@ -1158,4 +1167,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.18.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.18.3 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

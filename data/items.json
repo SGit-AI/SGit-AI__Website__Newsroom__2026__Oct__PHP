@@ -1,6 +1,6 @@
 {
 "about": "Every item a reader can read on this site, with its id, zone, link and the hash of what it says now. assets/reader-state.js compares the hashes with what the reader last read, in their browser.",
-"site": "0.18.2",
+"site": "0.18.3",
 "items": {
 "page-flaws": {
 "kind": "page",
@@ -79,11 +79,11 @@
 "zone": "research",
 "title": "Every claim",
 "path": "claims/index.html",
-"hash": "4825f4868d5d",
-"v": 11,
+"hash": "c608a9c389f0",
+"v": 12,
 "first": "0.1.0",
-"changed": "0.15.19",
-"date": "2026-10-24",
+"changed": "0.18.2",
+"date": "2026-10-25",
 "history": "versions/page-claims/index.html"
 },
 "page-numbers": {
@@ -139,11 +139,11 @@
 "zone": "for-you",
 "title": "Briefing: Board member or executive",
 "path": "briefings/board/index.html",
-"hash": "009f8f9bc5a3",
-"v": 14,
+"hash": "426291c8e1d3",
+"v": 15,
 "first": "0.1.0",
-"changed": "0.17.2",
-"date": "2026-10-24",
+"changed": "0.18.2",
+"date": "2026-10-25",
 "history": "versions/briefing-board/index.html"
 },
 "briefing-security": {
@@ -151,11 +151,11 @@
 "zone": "for-you",
 "title": "Briefing: Security lead",
 "path": "briefings/security/index.html",
-"hash": "6f52b86d0aa8",
-"v": 10,
+"hash": "f0c89b3aa72f",
+"v": 11,
 "first": "0.1.0",
-"changed": "0.17.0",
-"date": "2026-10-24",
+"changed": "0.18.2",
+"date": "2026-10-25",
 "history": "versions/briefing-security/index.html"
 },
 "briefing-engineer": {
@@ -199,11 +199,11 @@
 "zone": "for-you",
 "title": "Briefing: Analyst or advisor",
 "path": "briefings/analyst/index.html",
-"hash": "b19fd16f5c58",
-"v": 11,
+"hash": "03edb0fa8de7",
+"v": 12,
 "first": "0.1.0",
-"changed": "0.17.0",
-"date": "2026-10-24",
+"changed": "0.18.2",
+"date": "2026-10-25",
 "history": "versions/briefing-analyst/index.html"
 },
 "fact-two-cves-9.2": {
@@ -859,11 +859,11 @@
 "zone": "for-you",
 "title": "Briefing: CISO",
 "path": "briefings/ciso/index.html",
-"hash": "a892ceb78bdc",
-"v": 13,
+"hash": "0989f429f132",
+"v": 14,
 "first": "0.2.0",
-"changed": "0.17.0",
-"date": "2026-10-24",
+"changed": "0.18.2",
+"date": "2026-10-25",
 "history": "versions/briefing-ciso/index.html"
 },
 "briefing-cto": {
@@ -883,11 +883,11 @@
 "zone": "for-you",
 "title": "Briefing: CFO",
 "path": "briefings/cfo/index.html",
-"hash": "6c1dd9e87193",
-"v": 14,
+"hash": "e44fad1eac7d",
+"v": 15,
 "first": "0.2.0",
-"changed": "0.17.2",
-"date": "2026-10-24",
+"changed": "0.18.2",
+"date": "2026-10-25",
 "history": "versions/briefing-cfo/index.html"
 },
 "briefing-appsec": {
@@ -895,11 +895,11 @@
 "zone": "for-you",
 "title": "Briefing: Head of AppSec",
 "path": "briefings/appsec/index.html",
-"hash": "30357186374e",
-"v": 10,
+"hash": "2d7d36579280",
+"v": 11,
 "first": "0.2.0",
-"changed": "0.17.0",
-"date": "2026-10-24",
+"changed": "0.18.2",
+"date": "2026-10-25",
 "history": "versions/briefing-appsec/index.html"
 },
 "briefing-developer": {
@@ -1207,11 +1207,11 @@
 "zone": "for-you",
 "title": "Briefing: Curious reader",
 "path": "briefings/everyone/index.html",
-"hash": "8b21d8a97c07",
-"v": 12,
+"hash": "19a30dfd17aa",
+"v": 13,
 "first": "0.3.0",
-"changed": "0.17.2",
-"date": "2026-10-24",
+"changed": "0.18.2",
+"date": "2026-10-25",
 "history": "versions/briefing-everyone/index.html"
 },
 "briefing-site-owner": {
@@ -1219,11 +1219,11 @@
 "zone": "for-you",
 "title": "Briefing: Website owner",
 "path": "briefings/site-owner/index.html",
-"hash": "ffe36c4224e9",
-"v": 8,
+"hash": "4a89e2700478",
+"v": 9,
 "first": "0.3.0",
-"changed": "0.17.0",
-"date": "2026-10-24",
+"changed": "0.18.2",
+"date": "2026-10-25",
 "history": "versions/briefing-site-owner/index.html"
 },
 "briefing-pm": {
@@ -1327,11 +1327,11 @@
 "zone": "for-you",
 "title": "Briefing: Data protection officer",
 "path": "briefings/dpo/index.html",
-"hash": "dabd150ba031",
-"v": 7,
+"hash": "4ebc5457faab",
+"v": 8,
 "first": "0.5.9",
-"changed": "0.17.0",
-"date": "2026-10-24",
+"changed": "0.18.2",
+"date": "2026-10-25",
 "history": "versions/briefing-dpo/index.html"
 },
 "page-views-state": {
