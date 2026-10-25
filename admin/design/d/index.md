@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.20.6. Not the live site.
+> Mockup D for review, built from the data of release v0.20.7. Not the live site.
 
-PHP Team console Console Overview Board 205 Agents 19 Releases 170 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 206 Agents 19 Releases 171 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.20.6 
-170 releases since 22 Oct 
+v0.20.7 
+171 releases since 22 Oct 
 
 Open on the board 
-205 
+206 
 103 done, 5 waiting 
 
 Pages built 
-1047 
+1048 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,11 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 205
+#### Open 206
 
+ #314 
+A deck per persona: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, pla… 
+ claude-story-site 
  #313 
 On a phone every brief page scrolls sideways (the briefs index by 186px, most briefs by 40 to 130px): the admin layout o… 
  story-site 
@@ -50,9 +53,6 @@ URL paths and the router: the five steps in the article, after the editor's answ
  #303 
 Incident, 25 October 2026: the researcher and the curator run on schedule but leave no commit and no run record, so the … 
  editor 
- #302 
-Right now: CVE-2026-115560 is a line of its own, not a clause in 'What nobody knows yet': a third PHP flaw, affecting fu… 
- journalist 
 
 #### Waiting 5
 
@@ -99,6 +99,7 @@ Go, or not, on the branch security/gate-pass-2: the gate fails on inline event h
 ### Releases
  latest 8 
 
+ v0.20.7 2026-10-25 the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with… 
  v0.20.6 2026-10-25 The librarian's scheduled task now carries its card's prompt word for word, and its daily pass moves to 20:23 London, after the co… 
  v0.20.5 2026-10-25 The scheduled tasks as they are at 13:00 London, after the agents wired their own: researcher, Sherpa, librarian, ontologist and p… 
  v0.20.4 2026-10-25 The security agent's schedule card: one pass a day at 22:35 London, after the day's last releases and before the first wake, at th… 
@@ -106,7 +107,6 @@ Go, or not, on the branch security/gate-pass-2: the gate fails on inline event h
  v0.20.2 2026-10-25 a proposal on the briefs page, at the editor's request: one repository into six (kit, data, refs, updates, site, team), each with … 
  v0.20.1 2026-10-25 the editor's notes on the URL article, captured with story-site's reply: view paths answered by a 404 router instead of written as… 
  v0.20.0 2026-10-25 the briefs page is a list of titles with a page and a link per brief (with markdown twins, the old anchors still landing), and the… 
- v0.19.5 2026-10-25 The Sherpa's 11:45 pass: headlines on the first screen of every page walked, the feedback menu one scrolling row on a phone (F036)… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ Go, or not, on the branch security/gate-pass-2: the gate fails on inline event h
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.20.6 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.20.7 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

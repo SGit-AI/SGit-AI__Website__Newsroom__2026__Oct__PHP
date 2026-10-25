@@ -1,6 +1,15 @@
 {
- "current": "0.20.6",
+ "current": "0.20.7",
  "versions": [
+  {
+   "version": "0.20.7",
+   "date": "2026-10-25",
+   "title": "the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, play, compare any two, 'since yours', and PDFs for reading and for LinkedIn",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.20.6",
    "date": "2026-10-25",

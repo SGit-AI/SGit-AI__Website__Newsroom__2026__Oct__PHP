@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.20.7 · 25 October 2026new since your last visit
+
+the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, play, compare any two, 'since yours', and PDFs for reading and for LinkedIn
+
+No reader-facing section changed in this release.
+
 ## v0.20.6 · 25 October 2026new since your last visit
 
 The librarian's scheduled task now carries its card's prompt word for word, and its daily pass moves to 20:23 London, after the correspondent and the ontologist, at the editor's request
@@ -1274,4 +1280,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.20.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.20.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

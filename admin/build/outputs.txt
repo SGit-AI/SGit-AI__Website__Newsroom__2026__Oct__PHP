@@ -332,6 +332,8 @@ admin/briefs/2026-10-24__plan__the-journalists-full-pass/index.html
 admin/briefs/2026-10-24__plan__the-journalists-full-pass/index.md
 admin/briefs/2026-10-24__review__the-redesign-for-communication/index.html
 admin/briefs/2026-10-24__review__the-redesign-for-communication/index.md
+admin/briefs/2026-10-25__brief__a-deck-per-persona/index.html
+admin/briefs/2026-10-25__brief__a-deck-per-persona/index.md
 admin/briefs/2026-10-25__brief__the-404-router-and-two-modes/index.html
 admin/briefs/2026-10-25__brief__the-404-router-and-two-modes/index.md
 admin/briefs/2026-10-25__brief__the-line/index.html
