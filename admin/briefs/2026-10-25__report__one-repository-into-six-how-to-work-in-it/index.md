@@ -21,7 +21,7 @@ Nothing changes for your own work: **you write v1, as before**, and release it w
 | `…__press` | dev, and only through security's review: `sites.json`, `tools/`; its `assets/` come from v1 (`tools/assets_v1.py`) | `v/`, `latest/`, `assets/` |
 | `…__data` | `tools/import_v1.py` from v1; the catalogue on a writer's request to dev | `files/`, `v/`, `latest/` |
 | `…__team` | `tools/import_v1.py` (the records, under `records/`) and the press (the pages, at the root) | everything but `tools/` |
-| `…__site`, `__refs`, `__updates` | the press | everything but `README.md`, `CLAUDE.md` |
+| `…__site`, `__refs`, `__updates` | the press | everything but `README.md`, `CLAUDE.md`, `LICENSE`, `.gitignore`, `.github/` (and under `tools/`, only the two the press installs) |
 
 An edit by hand in a site is refused by its gate ("changed since the press wrote it") and lost at the next cut.
 
@@ -31,7 +31,9 @@ An edit by hand in a site is refused by its gate ("changed since the press wrote
 
 Run it in this order, every time, from the parent folder of the clones. Each step is a release with its own gate; each refuses to run on a v1 clone with uncommitted changes.
 
- T="Agent: " # plus your other trailers # 1. the press takes v1's assets and releases (1.0.5, 1.0.6, ...) (cd …__press && python3 tools/assets_v1.py --from ../… && RELEASE_TRAILER="$T" tools/release.sh "v1's assets at v") # 2. the data is imported and released (0.1.5, 0.1.6, ...) (cd …__data && python3 tools/import_v1.py --from ../… && RELEASE_TRAILER="$T" tools/release.sh "imported from v1 v") # 3. each site is cut against those two versions, and released for s in site refs updates team; do python3 …__press/tools/partition.py --site $s --v1 … --data …__data --into …__$s; done (cd …__team && python3 tools/import_v1.py --from ../… && RELEASE_TRAILER="$T" tools/release.sh "cut from v1 v") for s in site refs updates; do (cd …__$s && RELEASE_TRAILER="$T" tools/pages_release.sh "cut from v1 v"); done On 25 October one pass took about five minutes. A step with nothing new says so ("nothing to release") and stops cleanly.
+ T="Agent: " # plus your other trailers # 1. the press takes v1's assets and releases (1.0.5, 1.0.6, ...) (cd …__press && python3 tools/assets_v1.py --from ../… && RELEASE_TRAILER="$T" tools/release.sh "v1's assets at v") # 2. the data is imported and released (0.1.5, 0.1.6, ...) (cd …__data && python3 tools/import_v1.py --from ../… && RELEASE_TRAILER="$T" tools/release.sh "imported from v1 v") # 3. each site is cut against those two versions, and released for s in site refs updates team; do python3 …__press/tools/partition.py --site $s --v1 … --data …__data --into …__$s; done (cd …__team && python3 tools/import_v1.py --from ../… && RELEASE_TRAILER="$T" tools/release.sh "cut from v1 v") for s in site refs updates; do (cd …__$s && RELEASE_TRAILER="$T" tools/pages_release.sh "cut from v1 v"); done On 25 October one pass took about five minutes. A step with nothing new says so ("nothing to release"; the press and the data mint no version when their files are the same) and stops cleanly. After the cuts, parity in a few seconds:
+
+ python3 …__press/tools/parity.py --v1 … --sites …__site …__refs …__updates …__team It says that every page v1 builds is owned by one site and reads the same there, and exits 1 if not.
 
 ### When the chain stops
 
@@ -91,4 +93,4 @@ This brief is the file `admin/content/briefs/2026-10-25__report__one-repository-
 
 
 ---
-site v0.22.11 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-how-to-work-in-it/index.html
+site v0.22.12 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-how-to-work-in-it/index.html

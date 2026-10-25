@@ -368,4 +368,4 @@ The Zend engine is the part of PHP that reads PHP code and executes it, manages 
 
 
 ---
-site v0.22.11 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/glossary/index.html
+site v0.22.12 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/glossary/index.html

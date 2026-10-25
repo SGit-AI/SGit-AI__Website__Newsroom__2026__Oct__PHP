@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.12 · 25 October 2026new since your last visit
+
+the split's review recorded: items 23 to 33 of the challenges report (parity, the twins' links, the 404 page's redirect, immutability against the last commit, the tools' sha256, an independent read's findings), parity in the runbook, dev's debrief and status for the round
+
+No reader-facing section changed in this release.
+
 ## v0.22.11 · 25 October 2026new since your last visit
 
 a review of the line and the router on the live site (board 334): the router is done; the line promises a shaped page the live pages do not deliver; three bands about the reader; the change log ends 22 October; eight fixes in order
@@ -1424,4 +1430,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.22.11 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.12 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
