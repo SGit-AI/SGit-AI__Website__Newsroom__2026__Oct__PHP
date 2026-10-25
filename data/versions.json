@@ -1,6 +1,15 @@
 {
- "current": "0.17.6",
+ "current": "0.17.7",
  "versions": [
+  {
+   "version": "0.17.7",
+   "date": "2026-10-25",
+   "title": "Board row 285 (the board): the journalist's and the correspondent's schedules are active, and the desk's wakes still come before the correspondent's review",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.17.6",
    "date": "2026-10-25",

@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today229runs recorded79runs with changes and no article
+2schedules20runs a night, today230runs recorded79runs with changes and no article
 
 ## Quiet hours
 
@@ -33,10 +33,11 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 149, researcher@php.newsroom: 38, Conductor: 12, synthetic@php.newsroom: 12, Fact-check desk: 5, Sherpa: 3, factcheck: 3, desk: 2, correspondent: 1, Ontologist: 1, Journalist: 1, librarian@php.newsroom: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 150, researcher@php.newsroom: 38, Conductor: 12, synthetic@php.newsroom: 12, Fact-check desk: 5, Sherpa: 3, factcheck: 3, desk: 2, correspondent: 1, Ontologist: 1, Journalist: 1, librarian@php.newsroom: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
+| 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.17.7` | Board row 285 (the board): the journalist's and the correspondent's schedules are active, and the desk's wakes still come before the correspondent's review | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.17.6` | The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): journalist 40 minutes after the curator, correspondent 45 minutes after the journalist | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.17.5` | The journalist and the correspondent now run on a schedule (the schedules page, /views/loops/): the correspondent 45 minutes after each of the journalist's five wakes, so every loop closes within the hour | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.17.4` | Every loop, on one page (/views/loops/): the pipeline from the researcher to the correspondent, the last full loop, the next one due, every loop so far, timings, blind spots and the numbers; and the home page now shows the latest evidence time and the last agent run instead of 'last checked' | yes | its release note | [output](../../admin/versions.html) |
@@ -269,4 +270,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.17.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.17.7 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
