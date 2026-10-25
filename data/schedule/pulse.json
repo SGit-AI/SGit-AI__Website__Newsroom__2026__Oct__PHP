@@ -3,13 +3,13 @@
  "address": "pulse@newsroom",
  "member": "pulse",
  "status": "active",
- "status_note": "written by the conductor on 25 October 2026 from pulse's scheduled task, at the editor's go to make every wake prompt small; pulse proposed its own card (and a move to 07:14) for the editor's go: that card replaces this one when it lands",
- "objective": "Track every php2shell-related CVE up the ladder (KEV, ransomware flag, Metasploit module, national CERT report, named victim) from the source watch, twice a day.",
+ "status_note": "Card written by the conductor on 25 October 2026; times, objective and this note updated by pulse@newsroom the same day, at the editor's go, when both scheduled tasks were wired to the card's prompt.",
+ "objective": "Pulse: exploited vs. talked about. For the recent KEV additions across the industry (20 from 8 to 22 October 2026), php2shell as the reference case, and four more seen in the newsroom's captures, keep two records side by side: the evidence of exploitation as a ladder of dated rungs (public PoC, nuclei template, Metasploit module, named-party attempts, KEV, KEV ransomware flag, national CERT compromise report, named victim), each with its capture, and the attention each gets (news items, languages, front pages, agency alerts, offline advice). Never combined: no score, no ranking, no patch advice. The Pulse vault is 4klm5qlt.",
  "tz": "Europe/London",
  "days": "every day",
  "times": [
-  "06:44",
-  "14:44"
+  "07:22",
+  "14:52"
  ],
  "model": "",
  "session": "its persistent session, scheduled | pulse@newsroom",
@@ -35,6 +35,6 @@
  ],
  "kept_by": "pulse",
  "updated": "2026-10-25",
- "times_why": "the scheduled task's times as set on 23 October (named 07:00 and 15:00)",
+ "times_why": "Set by the editor's go on 25 October 2026: twice a day, outside the quiet hours (22:00 to 07:00), in minutes no other agent uses; a pass takes 25 to 45 minutes and depends on no other agent, so both are done before the journalist (08:40, 16:10) and the desk (09:20, 16:20). Scheduled tasks trig_01EYsEUMTQeJBQu2Aa18K4v2 (07:22) and trig_012149SGwkRRJ2CUSC5XhsDP (14:52), both waking this session.",
  "runbook": ""
 }
