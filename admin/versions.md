@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.20.0. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.20.1. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.20.1 · 2026-10-25
+
+the editor's notes on the URL article, captured with story-site's reply: view paths answered by a 404 router instead of written as files, the site's two modes (indexed pages, and views shaped in the browser), and four decisions
+Pages changed (15): The 404 router, and a site with two modes: notes on the URL article new · Dinis Cruz, Editor: the team · Briefs · Brief: the line, and a site that is persona first · Review: the redesign, read for what it communicates · The fact pipeline: from a web page to a reader · The team: the people, the agents and how they work together · What changed in the risk graph, release by release and 7 more
+[Questions readers ask about php2shell](../questions/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
 
 ### v0.20.0 · 2026-10-25
 
@@ -1276,4 +1284,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.20.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

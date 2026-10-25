@@ -63,4 +63,4 @@ On this site: [How the coordinated disclosure broke](../../../leak/index.html)
 
 
 ---
-site v0.20.0 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02-1/index.html
+site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r02-1/index.html

@@ -1,6 +1,15 @@
 {
- "current": "0.20.0",
+ "current": "0.20.1",
  "versions": [
+  {
+   "version": "0.20.1",
+   "date": "2026-10-25",
+   "title": "the editor's notes on the URL article, captured with story-site's reply: view paths answered by a 404 router instead of written as files, the site's two modes (indexed pages, and views shaped in the browser), and four decisions",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.20.0",
    "date": "2026-10-25",

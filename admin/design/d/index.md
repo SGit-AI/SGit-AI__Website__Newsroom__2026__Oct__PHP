@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.20.0. Not the live site.
+> Mockup D for review, built from the data of release v0.20.1. Not the live site.
 
-PHP Team console Console Overview Board 203 Agents 19 Releases 164 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 204 Agents 19 Releases 165 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.20.0 
-164 releases since 22 Oct 
+v0.20.1 
+165 releases since 22 Oct 
 
 Open on the board 
-203 
+204 
 102 done, 5 waiting 
 
 Pages built 
-1043 
+1044 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,11 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 203
+#### Open 204
 
+ #311 
+The 404 router: view paths (/agencies/as/security/, /on/<date>/, /vs/<date>/) answered by 404.html, never written as fil… 
+ editor 
  #308 
 to_markdown (admin/build/build.py): the <p> pattern also matches <pre ...> ("<p" + "re class=..."), so a <pre> followed … 
  dev@php.newsroom 
@@ -50,9 +53,6 @@ Capture PHP's own advisory for CVE-2026-115560 (published 23 October; session up
  #300 
 Owners for the policy drafts, from the librarian's pass of 25 October (the gate warns on each; the commit that added eac… 
  abp 
- #299 
-A page line for every page, and the change log from the build's own diff between releases 
- claude-story-site 
 
 #### Waiting 5
 
@@ -99,6 +99,7 @@ Enable private vulnerability reporting on this repository (Settings, Code securi
 ### Releases
  latest 8 
 
+ v0.20.1 2026-10-25 the editor's notes on the URL article, captured with story-site's reply: view paths answered by a 404 router instead of written as… 
  v0.20.0 2026-10-25 the briefs page is a list of titles with a page and a link per brief (with markdown twins, the old anchors still landing), and the… 
  v0.19.5 2026-10-25 The Sherpa's 11:45 pass: headlines on the first screen of every page walked, the feedback menu one scrolling row on a phone (F036)… 
  v0.19.4 2026-10-25 Journalist: debrief and status for the second wake 
@@ -106,12 +107,11 @@ Enable private vulnerability reporting on this repository (Settings, Code securi
  v0.19.2 2026-10-25 Scheduled tasks on the site: /team/schedule/ shows what the account actually runs, each task checked against its card (times, sess… 
  v0.19.1 2026-10-25 Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's … 
  v0.19.0 2026-10-25 the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, wr… 
- v0.18.6 2026-10-25 Incident: the researcher and the curator run but leave no commit or run record; status and board say so 
 
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 30 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 31 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
  conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 20 
  dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 16 
@@ -122,4 +122,4 @@ Enable private vulnerability reporting on this repository (Settings, Code securi
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.20.0 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.20.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

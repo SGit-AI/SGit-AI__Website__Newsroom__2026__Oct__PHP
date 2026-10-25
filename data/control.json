@@ -470,6 +470,12 @@
    "owner": "editor",
    "status": "waiting",
    "title": "Ten scheduled tasks still carry their long prompts, which only their own sessions can change: paste the card's prompt (shown on /team/schedule/, What the account runs) into the sessions of the Sherpa, the desk, the librarian, the conductor (scheduled), pulse, the researcher (two tasks), the curator (two tasks) and the fact-check desk. The researcher's two still run the retired schedule vault's steps."
+  },
+  {
+   "id": "311",
+   "owner": "editor",
+   "status": "open",
+   "title": "The 404 router: view paths (/agencies/as/security/, /on/<date>/, /vs/<date>/) answered by 404.html, never written as files; the editor's notes on the URL article and story-site's reply"
   }
  ],
  "branches": [
@@ -1022,5 +1028,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.20.0"
+ "version": "0.20.1"
 }
