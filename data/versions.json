@@ -1,6 +1,15 @@
 {
- "current": "0.22.1",
+ "current": "0.22.2",
  "versions": [
+  {
+   "version": "0.22.2",
+   "date": "2026-10-25",
+   "title": "one resolver for every URL a script builds (assets/route.js, loaded first on every page; boot.js, the Ask pane, the phone app and site tools use it), so that on the split sites assets come from the press, data from the data API and each section's pages from the site that owns it, one source for every file; on this site every URL resolves as before",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.22.1",
    "date": "2026-10-25",

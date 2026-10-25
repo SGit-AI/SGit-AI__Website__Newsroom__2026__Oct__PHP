@@ -6,19 +6,9 @@
    truth and line.js re-derives with it after first paint, so this file can only be early, never wrong. */
 (function () {
   'use strict';
-  /* The real page's address, before the line moves the address bar to the view (/agencies/as/security/): every
-     script on the page resolves its own requests against this, so they keep working whatever the bar shows. */
-  if (!window.P2S_BASE) {
-    window.P2S_BASE = location.href; window.P2S_REAL_PATH = location.pathname;
-    // A relative request made after the address bar moves would resolve against the view path and miss. The site's
-    // security policy rules out <base> (base-uri 'none'), so relative fetch() URLs are resolved here instead, against
-    // the real page; absolute and same-origin-rooted URLs pass through untouched.
-    var f = window.fetch;
-    if (f) window.fetch = function (input, init) {
-      if (typeof input === 'string' && !/^([a-z][a-z0-9+.-]*:|\/)/i.test(input)) input = new URL(input, window.P2S_BASE).href;
-      return f.call(this, input, init);
-    };
-  }
+  /* The real page's address and every URL a script builds are resolved by assets/route.js, loaded just before this
+     file on every page (window.P2S_BASE, window.P2S_URL, the fetch() wrapper). */
+  if (!window.P2S_BASE) { window.P2S_BASE = location.href; window.P2S_REAL_PATH = location.pathname; }
   var h = document.documentElement, T = { gap: 30, hour: 60, days: 7, changes: 20, ask: 2, toast: 6 };
   function read(k, s) { try { var v = (s ? sessionStorage : localStorage).getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
   var rec = read('p2s.lens'), ses = read('p2s.lens.session', true) || {};

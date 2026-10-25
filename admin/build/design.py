@@ -1502,6 +1502,7 @@ def build_line(ns):
 <link rel="canonical" href="{BASE_URL}/{full}">
 <link rel="icon" href="data:,">
 <link rel="alternate" type="text/markdown" href="{up}{full[:-5]}.md">
+<script src="{up}assets/route.js"></script>
 <script src="{up}{LINE_DIR}/boot.js"></script>
 <link rel="stylesheet" href="{up}assets/design/v2.css">
 <link rel="stylesheet" href="{up}{LINE_DIR}/line.css">
@@ -1582,7 +1583,7 @@ def line_html_attrs(ns):
 
 def line_head(up):
     """The line's head on a live page: the boot script first (blocking), its styles, then its deferred scripts."""
-    return (f'<script src="{up}{LINE_DIR}/boot.js"></script>\n'
+    return (f'<script src="{up}assets/route.js"></script>\n<script src="{up}{LINE_DIR}/boot.js"></script>\n'
             f'<link rel="stylesheet" href="{up}{LINE_DIR}/line.css">\n<link rel="stylesheet" href="{up}{LINE_DIR}/shape.css">\n')
 
 
