@@ -2238,6 +2238,29 @@
    "status": "open",
    "owner": "editor",
    "note": "Raised by the conductor. The curator's and the researcher's sessions show the runs (25 Oct 08:00 London: 18 sources promoted); only the repository is blind."
+  },
+  {
+   "id": "304",
+   "title": "The line on a phone: it no longer holds the top of the screen (the editor, on an iPhone: a locked top band costs too much of a small screen); it scrolls away with the page and the text runs full width",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "Measured in Chromium at 390x844: the resting line is 125px and the first-visit panel 253px, both of which scroll away; the headline starts 394px down. assets/design/line/line.css only.",
+   "version": "0.19.0"
+  },
+  {
+   "id": "305",
+   "title": "Article: URL paths, personas in the address, and a single-page site, written before the work (a link that names its persona; every page keeps its own path; SEO; code apart from data)",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "The editor asked for the article before the implementation. admin/content/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site.md, published at /admin/briefs/. It proposes /agencies/as/security/ (the page keeps its path, the persona is a suffix), canonical to the base page, persona paths only for the pages that read differently, fragments and a router rather than a framework, and five decisions for the editor.",
+   "version": "0.19.0"
+  },
+  {
+   "id": "306",
+   "title": "URL paths and the router: the five steps in the article, after the editor's answers to its five decisions (the URL shape, depth in the address, which pages get persona paths, how long ?as= stays, and the order against the line going live)",
+   "status": "open",
+   "owner": "editor",
+   "note": "From the article of 25 October. Step 1 (persona paths as real files, canonical to the base, Share minting them) is the one that delivers 'a link that includes the persona name' and can ship on its own."
   }
  ],
  "evidence_vault": {

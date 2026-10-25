@@ -140,9 +140,17 @@ html[data-depth="deep"] .lv[data-depth~="deep"]{display:revert}
 
 @media (max-width:860px){
   :root{--ln-h:46px}
-  .ln{font-size:.88rem}
+  /* on a phone the line never holds the top of the screen: it scrolls away with the page, because locking it
+     costs too much of a small screen (the editor, 25 October, on an iPhone). The chip comes back by scrolling up. */
+  .ln{position:static;font-size:.88rem}
   .ln-pic{display:none}
-  .ln[data-size="line"] .ln-row{flex-wrap:wrap}
+  .ln .ln-row{flex-wrap:wrap;gap:.5rem}
+  .ln-msg{flex:1 1 100%}
+  .ln[data-size="open"],.ln[data-size="panel"]{padding-top:.7rem;padding-bottom:.7rem;gap:.5rem}
+  .ln[data-size="panel"] .ln-msg{font-size:.95rem}
+  .ln[data-size="panel"] .ln-msg b{font-size:1.1rem;margin-bottom:.1rem}
+  .ln-others{font-size:.8rem;gap:.25rem}
+  .ln-others .ln-act{font-size:.78rem;padding:.26rem .55rem}
   .ln-sheet{left:0;right:0;top:auto;bottom:0;width:auto;max-height:82vh;border-radius:16px 16px 0 0}
   .ln-mast .menu-for{display:none}
 }

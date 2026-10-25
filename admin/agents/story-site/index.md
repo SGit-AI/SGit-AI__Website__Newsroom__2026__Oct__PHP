@@ -319,9 +319,9 @@ Grant 16 (measured once for every newsroom session, `admin/security/abp/GRANT.md
 | Field | Value |
 |---|---|
 | Round | 3 |
-| Done | Prototype F, the line, at /admin/design/line/: six pages on the editor's briefing pack, the pack's engine and words vendored with its 19 tests, every number filled from the evidence vault Headlines near the top of every page: the bar in two lines, slim strips, /ops/ and /analysis/ fixed on a phone Prototype E, the lens, at /admin/design/lens/ (three pages, from the live data), and its brief The redesign live: tracks A, B, C, the team console, the task menu and two dials, the wide layout |
-| Next | Step 1 of the rollout: the line and the boot script on every live page, rule 7 and the fallback line, replacing the two dials A page line for every page, and the change log from the build's diff between releases |
-| Asks | The go for the line on the live site, and the five decisions in the brief (boards 289, 290) (from the editor) Enrol story-site's key, sha256:f15dbb872e108ec7 (from the editor) Owners for /ops/ and /analysis/ in scope.pages (board 253) (from the librarian) |
+| Done | The line on a phone no longer holds the top of the screen, and the article on URL paths, personas in the address and a single-page site Prototype F, the line, at /admin/design/line/: six pages on the editor's briefing pack, the pack's engine and words vendored with its 19 tests, every number filled from the evidence vault Headlines near the top of every page: the bar in two lines, slim strips, /ops/ and /analysis/ fixed on a phone Prototype E, the lens, at /admin/design/lens/ (three pages, from the live data), and its brief The redesign live: tracks A, B, C, the team console, the task menu and two dials, the wide layout |
+| Next | Step 1 of the article: persona paths as real files for the pages that read differently, canonical to the base, with Share minting them Step 1 of the line's rollout on the live pages |
+| Asks | The go for the line on the live site (297), its five decisions (298), and the URL shape and router decisions in the article (302) (from the editor) Enrol story-site's key, sha256:f15dbb872e108ec7 (from the editor) |
 | Tokens | unknown · the session does not show a token count to the agent |
 | Policy | out_of_scope_requests 0, pushbacks 0, overrides 0, writes_outside_scope 0, injection_seen 0 |
 
@@ -422,6 +422,32 @@ Closed: 296. Opened: 297 and 298 (the editor), 299 (mine). Board 275 (the lens's
 2. Board 299: a page line per page, for the desk to approve, and the change log from the release diff.
 
 3. Boards 230 and 231, still waiting from the desk's review.
+
+#### After the release: the phone, and the article (same day, v0.19.0)
+
+The editor, on an iPhone: the line must not hold the top of the screen, because a locked band costs too much of a
+
+small screen. On a phone the line is no longer sticky; it scrolls away with the page and its sentence runs full
+
+width. Measured at 390x844: the resting line 125px, the first-visit panel 253px, both scrolling away, the headline
+
+394px down. `assets/design/line/line.css` only. Board 304.
+
+He also asked, before any of it is built, for an article on moving the site to URL paths and a single page, with a
+
+link that can name its persona. It is
+
+`admin/content/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site.md`, published at `/admin/briefs/` and
+
+linked from the design hub: the rule that the URL carries what can be shared and the browser carries what is the
+
+reader's, `/agencies/as/security/` as the shape (the page keeps its own path, the persona is a suffix), what that
+
+needs from search engines, fragments and a router rather than a framework, the trap in rendering a page in two
+
+languages, five steps that each ship on their own, and five decisions for the editor. Boards 305 and 306. Nothing of
+
+it is built.
 
 ### Prototype E, the lens: a site that shapes itself to the reader in place, and the brief for it
 
@@ -577,4 +603,4 @@ Files: [admin/content/agents/story-site/](https://github.com/SGit-AI/SGit-AI__We
 
 
 ---
-site v0.18.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/story-site/index.html
+site v0.19.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/story-site/index.html

@@ -458,6 +458,12 @@
    "owner": "editor",
    "status": "open",
    "title": "Incident, 25 October 2026: the researcher and the curator run on schedule but leave no commit and no run record, so the team is blind to what they did and the control room shows them as missed. Decide: every scheduled wake leaves a run record in git (proposed: the agent writes a report into its own vault, the conductor commits it), and the four scheduled prompts change accordingly."
+  },
+  {
+   "id": "306",
+   "owner": "editor",
+   "status": "open",
+   "title": "URL paths and the router: the five steps in the article, after the editor's answers to its five decisions (the URL shape, depth in the address, which pages get persona paths, how long ?as= stays, and the order against the line going live)"
   }
  ],
  "branches": [
@@ -976,5 +982,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.18.6"
+ "version": "0.19.0"
 }

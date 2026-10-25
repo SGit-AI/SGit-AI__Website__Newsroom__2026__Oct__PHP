@@ -6,6 +6,10 @@
  "state": "round 3 closed: the editor's design of 25 October built as prototype F, the line",
  "done": [
   {
+   "what": "The line on a phone no longer holds the top of the screen, and the article on URL paths, personas in the address and a single-page site",
+   "evidence": "v0.19.0; boards 304 and 305; the debrief's closing section"
+  },
+  {
    "what": "Prototype F, the line, at /admin/design/line/: six pages on the editor's briefing pack, the pack's engine and words vendored with its 19 tests, every number filled from the evidence vault",
    "evidence": "v0.17.0; board 296; debrief 2026-10-25__the-line.md"
   },
@@ -24,8 +28,9 @@
  ],
  "tasks": {
   "board": [
-   "297 (editor: the go for the live rollout)",
+   "297 (editor: the line live)",
    "298 (editor: the five decisions)",
+   "306 (editor: the URL shape and the router)",
    "299",
    "230",
    "231",
@@ -37,26 +42,22 @@
  },
  "next": [
   {
-   "what": "Step 1 of the rollout: the line and the boot script on every live page, rule 7 and the fallback line, replacing the two dials",
-   "why": "it is the step the brief starts with and it leaves every page working; waiting on the editor's go, board 297"
+   "what": "Step 1 of the article: persona paths as real files for the pages that read differently, canonical to the base, with Share minting them",
+   "why": "it is what gives a link that names its persona, and it ships on its own; waiting on board 306"
   },
   {
-   "what": "A page line for every page, and the change log from the build's diff between releases",
-   "why": "prototype F writes four pages' lines and reads the timeline instead; board 299"
+   "what": "Step 1 of the line's rollout on the live pages",
+   "why": "waiting on board 297"
   }
  ],
  "asks": [
   {
-   "what": "The go for the line on the live site, and the five decisions in the brief (boards 289, 290)",
+   "what": "The go for the line on the live site (297), its five decisions (298), and the URL shape and router decisions in the article (302)",
    "from": "the editor"
   },
   {
    "what": "Enrol story-site's key, sha256:f15dbb872e108ec7",
    "from": "the editor"
-  },
-  {
-   "what": "Owners for /ops/ and /analysis/ in scope.pages (board 253)",
-   "from": "the librarian"
   }
  ],
  "tokens": {

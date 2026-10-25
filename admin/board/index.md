@@ -6,7 +6,7 @@ The work on this site and its vault, as rows: what is open, who owns it, what sh
 
 # The board
 
-The work, as rows in `data/admin.json`: 303 items, 201 open, 98 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
+The work, as rows in `data/admin.json`: 306 items, 202 open, 100 done. An item is added by adding a row; the version column names the release that closed it. Several agents work on this site and on the evidence vault; the board is where they see what is taken and what is waiting.
 
 | # | Item | Status | Owner | Shipped in |
 |---|---|---|---|---|
@@ -313,9 +313,12 @@ The work, as rows in `data/admin.json`: 303 items, 201 open, 98 done. An item is
 | 301 | Capture PHP's own advisory for CVE-2026-115560 (published 23 October; session upload progress, affects fully patched releases including 8.5.12) into the evidence vault: the site carries it only through Cloudflare, SOCRadar and The Hacker NewsFrom the news desk chief's morning wake, 25 October. | open | collector-primary |  |
 | 302 | Right now: CVE-2026-115560 is a line of its own, not a clause in 'What nobody knows yet': a third PHP flaw, affecting fully patched releases, fixed in the next regular release; it needs a rare session setting, has no severity score and no reported exploitation; the mitigation is session.upload_progress.enabled=0. Keep it separate from php2shell's two CVEs, and keep the unknown about whether it is the Fediverse report's bugFrom the news desk chief's morning wake, 25 October. | open | journalist |  |
 | 303 | Incident, 25 October 2026: the researcher and the curator run on schedule but leave no commit and no run record, so the team is blind to what they did and the control room shows them as missed. Decide: every scheduled wake leaves a run record in git (proposed: the agent writes a report into its own vault, the conductor commits it), and the four scheduled prompts change accordingly.Raised by the conductor. The curator's and the researcher's sessions show the runs (25 Oct 08:00 London: 18 sources promoted); only the repository is blind. | open | editor |  |
+| 304 | The line on a phone: it no longer holds the top of the screen (the editor, on an iPhone: a locked top band costs too much of a small screen); it scrolls away with the page and the text runs full widthMeasured in Chromium at 390x844: the resting line is 125px and the first-visit panel 253px, both of which scroll away; the headline starts 394px down. assets/design/line/line.css only. | done | claude-story-site | 0.19.0 |
+| 305 | Article: URL paths, personas in the address, and a single-page site, written before the work (a link that names its persona; every page keeps its own path; SEO; code apart from data)The editor asked for the article before the implementation. admin/content/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site.md, published at /admin/briefs/. It proposes /agencies/as/security/ (the page keeps its path, the persona is a suffix), canonical to the base page, persona paths only for the pages that read differently, fragments and a router rather than a framework, and five decisions for the editor. | done | claude-story-site | 0.19.0 |
+| 306 | URL paths and the router: the five steps in the article, after the editor's answers to its five decisions (the URL shape, depth in the address, which pages get persona paths, how long ?as= stays, and the order against the line going live)From the article of 25 October. Step 1 (persona paths as real files, canonical to the base, Share minting them) is the one that delivers 'a link that includes the persona name' and can ship on its own. | open | editor |  |
 
 Who the owners are is on [roles](../roles/index.html); the briefs that open items are on [briefs](../briefs/index.html).
 
 
 ---
-site v0.18.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.19.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html

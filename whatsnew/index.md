@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.19.0 · 25 October 2026new since your last visit
+
+the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, written before the work, on URL paths, a persona in the address (/agencies/as/security/) and a single-page site that keeps every page's own path and its SEO
+
+No reader-facing section changed in this release.
+
 ## v0.18.6 · 25 October 2026new since your last visit
 
 Incident: the researcher and the curator run but leave no commit or run record; status and board say so
@@ -1185,4 +1191,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.18.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.19.0 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
