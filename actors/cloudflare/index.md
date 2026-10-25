@@ -25,4 +25,4 @@ WAF rules live 9 hours early; saw attack traffic
 
 
 ---
-site v0.22.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/actors/cloudflare/index.html
+site v0.22.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/actors/cloudflare/index.html

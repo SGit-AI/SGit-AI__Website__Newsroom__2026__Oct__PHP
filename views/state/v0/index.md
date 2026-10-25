@@ -51,4 +51,4 @@ This version was not written on 22 October. It is rebuilt from the site at v0.2.
 
 
 ---
-site v0.22.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/views/state/v0/index.html
+site v0.22.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/views/state/v0/index.html

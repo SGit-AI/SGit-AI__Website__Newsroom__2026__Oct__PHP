@@ -2372,7 +2372,7 @@
   },
   {
    "id": "322",
-   "title": "One repository into six, step 0: create the six repositories (…__PHP__press, __data, __refs, __updates, __team, __site), Pages with Actions and a custom domain each, DNS CNAMEs to sgit-ai.github.io (and next.php.oct.2026.newsroom.sgit.ai for staging), the Claude app and today's rulesets; then one session with all seven attached",
+   "title": "One repository into six, step 0: create the six repositories (…__PHP__press, __data, __refs, __updates, __team, __site), Pages with Actions and a custom domain each, DNS CNAMEs to sgit-ai.github.io (and site.php.oct.2026.newsroom.sgit.ai for staging), the Claude app and today's rulesets; then one session with all seven attached",
    "status": "open",
    "owner": "editor",
    "note": "The plan of 25 October, step 0; the six DNS records are listed there. Names decided: press (not kit), data (api is the newsroom's main API)."
@@ -2382,7 +2382,7 @@
    "title": "One repository into six, step 1: the one big session (press, data, team, refs, updates, site; every old address answering; the parity report; the replay), then each agent reviews its own repository",
    "status": "open",
    "owner": "dev@php.newsroom",
-   "note": "Pass one done on 25 October (press v1.0.0, data v0.1.1, site, refs, updates and team cut from v1 at d9af616ffd0b, every old address answering, each site's gate); pass two moves the sources and the build. After step 0. The press goes to security for review before v1.0.0."
+   "note": "Pass one done on 25 October; one source for every file on 26 October: press v1.0.4 serves the assets, data v0.1.4 the data, and the four sites, cut from v0.22.4 (ec5d411eeb70), hold no copies (each page's route and Content-Security-Policy name the hosts). Pass two moves the sources and the build. The press goes to security for review."
   },
   {
    "id": "324",
@@ -2418,7 +2418,7 @@
    "title": "The six new repositories have not deployed: set each one's Pages source to 'Deploy from a branch: dev, / (root)' (or a deploy workflow, through security), then dev checks every site live",
    "status": "open",
    "owner": "editor",
-   "note": "No Pages build has run in any of them (25 October); their content is on dev."
+   "note": "No Pages build has run in any of them (26 October: each host answers 'Site not found'; the main site's staging name is site.php.oct.2026.newsroom.sgit.ai, as its DNS record has it). Their content is on dev. The press and the data API must serve before the sites work, since every page loads its scripts from the press."
   },
   {
    "id": "329",

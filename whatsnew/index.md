@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.5 · 25 October 2026new since your last visit
+
+one repository into six: one source for every file, recorded (the plan's Progress, REALITY, the board): press v1.0.4 serves the assets, data v0.1.4 the data, the four sites cut from v0.22.4 hold no copies; the main site is staged at site.php.oct.2026.newsroom.sgit.ai, its DNS record's name
+
+No reader-facing section changed in this release.
+
 ## v0.22.4 · 25 October 2026new since your last visit
 
 the control room loads under a view address (/team/control/as/executive/ fetched team/control/data/control.json): control.js resolves its data against the page as loaded, and assets/route.js routes a URL object as it does a string, so on the split sites it reaches the data API
@@ -1382,4 +1388,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.22.4 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
