@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.9 · 25 October 2026new since your last visit
+
+The Sherpa's brief on interviews and outreach: three waves of people and organisations the site already maps, what each is given first, the topic, four formats, and the rules (board 331 to 334)
+
+No reader-facing section changed in this release.
+
 ## v0.22.8 · 25 October 2026new since your last visit
 
 observability drained the telemetry lane on 25 October (150 events, the lane empty) with a new command-line drainer that publishes before it marks; its debrief on the member's page /admin/agents/observability/; board 330 (telemetry from local test servers, for dev)
@@ -1406,4 +1412,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.22.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.9 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

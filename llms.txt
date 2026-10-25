@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.22.8. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.22.9. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -175,7 +175,7 @@ Site v0.22.8. Data as of 2026-10-25T09:35Z (the latest capture in the evidence v
 - [The board](https://php.oct.2026.newsroom.sgit.ai/admin/board/index.md): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles](https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.md): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
 - [Application security](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/index.md): The newsroom's application security: its threat model and data flows, every vulnerability found and fixed as an advisory with its root cause, who can do what, the incident runbooks, the bug bounty and the outside reviews.
-- [Briefs](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.md): Every build brief for this site, 66 of them, published in full before the work: the title, the date and who wrote it, each on its own page.
+- [Briefs](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.md): Every build brief for this site, 67 of them, published in full before the work: the title, the date and who wrote it, each on its own page.
 - [Pack mode, measured](https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.md): One vault as a normal sgit vault and as a pack vault: a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and why the normal vault has hit a wall.
 - [Who reads this site](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Synthetic readers](https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/index.md): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every review is published here and every run is kept in that reader's own vault.
@@ -1149,6 +1149,7 @@ Licence: content CC BY 4.0, code Apache-2.0.
 - [The playbook, for everyone, unfiltered](https://php.oct.2026.newsroom.sgit.ai/playbook/as/everything/index.md): The response, step by step.
 
 ## Briefs, one page each (admin/content/briefs/)
+- [Brief: who to interview, what we can give them first, and the four ways to publish it](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__interviews-and-outreach/index.md): published 2026-10-25T21:49Z, the Sherpa (sherpa@php
 - [Report: one source for every file](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/index.md): published 2026-10-25T18:24Z, a report, written by dev@php
 - [Report: one repository into six, the first day in numbers](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/index.md): published 2026-10-25T18:24Z, a report, written by dev@php
 - [Report: one repository into six, the challenges](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-challenges/index.md): published 2026-10-25T18:24Z, a report, written by dev@php
@@ -1215,6 +1216,7 @@ Licence: content CC BY 4.0, code Apache-2.0.
 - [Review: the front page and the navigation, at v0.2.5](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__review__front-page-and-navigation/index.md): published 2026-10-22T14:05Z
 - [Who reads this site: anonymous telemetry over an append lane](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__telemetry-over-an-append-lane/index.md): published 2026-10-22T13:44Z, accepted and being built
 - [The brief, as written by the editor on 22 October 2026](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief/index.md): published 2026-10-22T09:27Z, Dinis Cruz
+- [Brief: who to interview, what we can give them first, and the four ways to publish it](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__interviews-and-outreach/index.md): published 2026-10-25T21:49Z, the Sherpa (sherpa@php
 - [Report: one source for every file](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/index.md): published 2026-10-25T18:24Z, a report, written by dev@php
 - [Report: one repository into six, the first day in numbers](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/index.md): published 2026-10-25T18:24Z, a report, written by dev@php
 - [Report: one repository into six, the challenges](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-challenges/index.md): published 2026-10-25T18:24Z, a report, written by dev@php

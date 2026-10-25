@@ -488,6 +488,12 @@
    "owner": "editor",
    "status": "open",
    "title": "The six new repositories have not deployed: set each one's Pages source to 'Deploy from a branch: dev, / (root)' (or a deploy workflow, through security), then dev checks every site live"
+  },
+  {
+   "id": "331",
+   "owner": "editor",
+   "status": "waiting",
+   "title": "Interviews and outreach: choose the first wave (the brief proposes Weird Gloop, the PHP security team, the three discovery teams as a panel, NCSC-NL, Alan Woodward), the formats (A the editor live, B written questions, C self-interview, D opinion), and whether agents may run format B in the editor's name"
   }
  ],
  "branches": [
@@ -1109,5 +1115,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.22.8"
+ "version": "0.22.9"
 }

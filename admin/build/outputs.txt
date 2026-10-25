@@ -338,6 +338,8 @@ admin/briefs/2026-10-25__brief__a-deck-per-persona/index.html
 admin/briefs/2026-10-25__brief__a-deck-per-persona/index.md
 admin/briefs/2026-10-25__brief__decks-the-ruv-model/index.html
 admin/briefs/2026-10-25__brief__decks-the-ruv-model/index.md
+admin/briefs/2026-10-25__brief__interviews-and-outreach/index.html
+admin/briefs/2026-10-25__brief__interviews-and-outreach/index.md
 admin/briefs/2026-10-25__brief__the-404-router-and-two-modes/index.html
 admin/briefs/2026-10-25__brief__the-404-router-and-two-modes/index.md
 admin/briefs/2026-10-25__brief__the-line/index.html

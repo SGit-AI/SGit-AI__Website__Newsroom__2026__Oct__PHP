@@ -2,7 +2,7 @@
 
 The proposed redesign of the site for review: what is wrong now, the two dials (who you are and how much you see), which pages each reader sees, the menu per view, and four mockups built from the live data.
 
-> Mockup notes for review, built from the data of release v0.22.8. Not the live site.
+> Mockup notes for review, built from the data of release v0.22.9. Not the live site.
 
 Admin · design · for review 
 ## The redesign: who you are, and how much you want to see
@@ -109,20 +109,20 @@ signed articles written here · 10 pages
  The evidence 
 every source, the vaults, the pipeline, versions · 537 pages 
  The site and the team 
-method, roles, board, releases, admin · 293 pages 
+method, roles, board, releases, admin · 294 pages 
 
 ### Pages per reader, per view
 
  Reader Focus Standard Everything 
- Alex Curious reader 28 69 1059 
- Jordan Board member or executive 28 226 1059 
- Quinn CFO 28 226 1059 
- Robin CISO 159 226 1059 
- Rowan Journalist 623 646 1059 
- Sam Security lead 42 112 1059 
- Drew PHP or platform engineer 35 112 1059 
- Ash Security researcher 576 649 1059 
-Counted from the 1059 pages this release builds. 
+ Alex Curious reader 28 69 1060 
+ Jordan Board member or executive 28 226 1060 
+ Quinn CFO 28 226 1060 
+ Robin CISO 159 226 1060 
+ Rowan Journalist 623 646 1060 
+ Sam Security lead 42 112 1060 
+ Drew PHP or platform engineer 35 112 1060 
+ Ash Security researcher 576 649 1060 
+Counted from the 1060 pages this release builds. 
 
 #### Who sees the team console
 
@@ -171,7 +171,7 @@ All of it, for power users and the team.
 
 - The admin pages move into console D. 
 
- Mockups built by the design agent from release v0.22.8; the brief is on the briefs page. Board items record each step.
+ Mockups built by the design agent from release v0.22.9; the brief is on the briefs page. Board items record each step.
 
 ---
-site v0.22.8 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html
+site v0.22.9 · https://php.oct.2026.newsroom.sgit.ai/admin/design/index.html

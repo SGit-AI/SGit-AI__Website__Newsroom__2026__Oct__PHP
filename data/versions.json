@@ -1,6 +1,15 @@
 {
- "current": "0.22.8",
+ "current": "0.22.9",
  "versions": [
+  {
+   "version": "0.22.9",
+   "date": "2026-10-25",
+   "title": "The Sherpa's brief on interviews and outreach: three waves of people and organisations the site already maps, what each is given first, the topic, four formats, and the rules (board 331 to 334)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.22.8",
    "date": "2026-10-25",

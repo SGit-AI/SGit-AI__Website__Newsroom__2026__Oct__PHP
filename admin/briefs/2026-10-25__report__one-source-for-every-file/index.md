@@ -121,8 +121,8 @@ Every v1 release now needs the chain: the press takes the assets and releases, t
 
 This brief is the file `admin/content/briefs/2026-10-25__report__one-source-for-every-file.md` in the repository, published as written.
 
-← older: Report: one repository into six, the first day in numbers
+← older: Report: one repository into six, the first day in numbersnewer: → Brief: who to interview, what we can give them first, and
 
 
 ---
-site v0.22.8 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/index.html
+site v0.22.9 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/index.html
