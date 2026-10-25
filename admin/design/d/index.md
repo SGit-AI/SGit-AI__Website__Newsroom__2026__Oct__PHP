@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.21.3. Not the live site.
+> Mockup D for review, built from the data of release v0.21.4. Not the live site.
 
-PHP Team console Console Overview Board 209 Agents 19 Releases 176 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 209 Agents 19 Releases 177 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.21.3 
-176 releases since 22 Oct 
+v0.21.4 
+177 releases since 22 Oct 
 
 Open on the board 
 209 
 105 done, 5 waiting 
 
 Pages built 
-1053 
+1054 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -99,6 +99,7 @@ The chrome after the lens prototype: the bar in two lines on a laptop (132px to 
 ### Releases
  latest 8 
 
+ v0.21.4 2026-10-25 decks: what ruv.sgit.ai does and how it changes the deck per persona (one slide library and seven persona tracks in ruv's timeline… 
  v0.21.3 2026-10-25 The desk's round 3 closed: its scheduled task wired to its card and its wakes moved after the correspondent's reviews, with a debr… 
  v0.21.2 2026-10-25 The Sherpa's 13:45 wake: run record (idle, both lanes empty) 
  v0.21.1 2026-10-25 The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prom… 
@@ -106,7 +107,6 @@ The chrome after the lens prototype: the bar in two lines on a laptop (132px to 
  v0.20.8 2026-10-25 Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date 
  v0.20.7 2026-10-25 the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with… 
  v0.20.6 2026-10-25 The librarian's scheduled task now carries its card's prompt word for word, and its daily pass moves to 20:23 London, after the co… 
- v0.20.5 2026-10-25 The scheduled tasks as they are at 13:00 London, after the agents wired their own: researcher, Sherpa, librarian, ontologist and p… 
 
 ### Agents and what they own
  open items 
@@ -122,4 +122,4 @@ The chrome after the lens prototype: the bar in two lines on a laptop (132px to 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.21.3 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.21.4 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

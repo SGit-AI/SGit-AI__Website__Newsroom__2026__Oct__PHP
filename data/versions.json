@@ -1,6 +1,15 @@
 {
- "current": "0.21.3",
+ "current": "0.21.4",
  "versions": [
+  {
+   "version": "0.21.4",
+   "date": "2026-10-25",
+   "title": "decks: what ruv.sgit.ai does and how it changes the deck per persona (one slide library and seven persona tracks in ruv's timeline format, so its player can be reused)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.21.3",
    "date": "2026-10-25",
