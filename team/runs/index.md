@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today228runs recorded79runs with changes and no article
+2schedules20runs a night, today229runs recorded79runs with changes and no article
 
 ## Quiet hours
 
@@ -33,10 +33,11 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 148, researcher@php.newsroom: 38, Conductor: 12, synthetic@php.newsroom: 12, Fact-check desk: 5, Sherpa: 3, factcheck: 3, desk: 2, correspondent: 1, Ontologist: 1, Journalist: 1, librarian@php.newsroom: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 149, researcher@php.newsroom: 38, Conductor: 12, synthetic@php.newsroom: 12, Fact-check desk: 5, Sherpa: 3, factcheck: 3, desk: 2, correspondent: 1, Ontologist: 1, Journalist: 1, librarian@php.newsroom: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
+| 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.17.6` | The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): journalist 40 minutes after the curator, correspondent 45 minutes after the journalist | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.17.5` | The journalist and the correspondent now run on a schedule (the schedules page, /views/loops/): the correspondent 45 minutes after each of the journalist's five wakes, so every loop closes within the hour | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25 | [dev@php.newsroom](../dev/index.html) | Release | `v0.17.4` | Every loop, on one page (/views/loops/): the pipeline from the researcher to the correspondent, the last full loop, the next one due, every loop so far, timings, blind spots and the numbers; and the home page now shows the latest evidence time and the last agent run instead of 'last checked' | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-24T22:50:00Z | correspondent | Scheduled wake | `20261024T2250Z-correspondent` | First review wake, at the editor's go in the session. Read the journalist's run of 24 Oct 21:26 UTC (evidence vault 8c16a64a7cf6, 94 verdicts, 2 compromise rows) against the vault's captures (read-only clone). Caught 9: CVE-2026-115560 (PHP's third flaw, 23 Oct) wrongly held back and missing from the story; Sansec's own post wrongly called absent and its two captures differ (Heartbleed comparison dropped); CERT-In rated high vs critical by two sources; EU joint statement carried by five outlets, not one; two claims marked noted though used; Cloudflare's post wrongly called absent; Vienna vs UTC time on the Die Presse row and the 14 source IPs on RainForest. Fixed in claim-review, compromise, plain, story, desk catches; journalist brief corrected (search the vault before writing 'not in the vault'). State of affairs: no new version, the measures have not moved (named compromises 0, KEV 0 at 05:53 UTC, no new inventory); v3 stays, the third flaw goes into v4 with the next measure change. Persona prose: personas.json as-of lines of 22 Oct not yet re-read; next wake. Instructions in captures: none noticed. Did not do: the plan's next step; personas; the correspondent folder does not exist yet (abp, board 277), so no status.json or debrief. | yes | missing | [output](../../team/schedule/correspondent/index.html) |
@@ -268,4 +269,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.17.5 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.17.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html

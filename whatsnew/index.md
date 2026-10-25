@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.17.6 · 25 October 2026new since your last visit
+
+The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): journalist 40 minutes after the curator, correspondent 45 minutes after the journalist
+
+No reader-facing section changed in this release.
+
 ## v0.17.5 · 25 October 2026new since your last visit
 
 The journalist and the correspondent now run on a schedule (the schedules page, /views/loops/): the correspondent 45 minutes after each of the journalist's five wakes, so every loop closes within the hour
@@ -1128,4 +1134,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.17.5 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.17.6 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

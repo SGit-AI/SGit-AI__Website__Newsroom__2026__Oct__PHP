@@ -1,6 +1,15 @@
 {
- "current": "0.17.5",
+ "current": "0.17.6",
  "versions": [
+  {
+   "version": "0.17.6",
+   "date": "2026-10-25",
+   "title": "The journalist's and the correspondent's wakes moved so each waits for the step before it (the schedules page, /views/loops/): journalist 40 minutes after the curator, correspondent 45 minutes after the journalist",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "8c16a64a7cf6",
+   "reconstructed": false
+  },
   {
    "version": "0.17.5",
    "date": "2026-10-25",
