@@ -1,6 +1,15 @@
 {
- "current": "0.22.14",
+ "current": "0.22.15",
  "versions": [
+  {
+   "version": "0.22.15",
+   "date": "2026-10-25",
+   "title": "The restart after the split: WAKE.md step 0 for every scheduled agent (read the split brief on the team site, start no new work in v1, add the repositories field); the conductor's repositories",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.22.14",
    "date": "2026-10-25",
