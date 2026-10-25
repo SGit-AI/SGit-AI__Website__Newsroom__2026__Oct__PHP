@@ -895,6 +895,14 @@
    "run": "20261025T1253Z-factcheck",
    "started": "2026-10-25T12:53:00Z",
    "summary": "12:52 London wake: no-confirmed-compromise re-graded as of 09:35 UTC on 25 October, still holds (A4), and none of 20 new captures names a victim; K-010 gains Lorikeet's unsourced 24 October date; KEV unchanged; audit 0 failures; notes read to head 82df2ac0bfc5. Page: /factcheck/"
+  },
+  {
+   "agent": "sherpa",
+   "finished": "2026-10-25T13:47:10Z",
+   "outcome": "idle",
+   "run": "20261025T1346Z-sherpa",
+   "started": "2026-10-25T13:46:23Z",
+   "summary": "Drain wake (13:45 London), the first on the card's new prompt (WAKE.md). Lanes drained: 58526ytp and d6zak0o3, nothing in either; no inbox messages; no instruction file changed. Read two notes (dev: the six-repository proposal, board 312; security: the stricter gate from v0.20.3) and 14 commit subj…"
   }
  ],
  "schedules": [
@@ -1062,5 +1070,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.21.1"
+ "version": "0.21.2"
 }

@@ -1,6 +1,15 @@
 {
- "current": "0.21.1",
+ "current": "0.21.2",
  "versions": [
+  {
+   "version": "0.21.2",
+   "date": "2026-10-25",
+   "title": "The Sherpa's 13:45 wake: run record (idle, both lanes empty)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.21.1",
    "date": "2026-10-25",
