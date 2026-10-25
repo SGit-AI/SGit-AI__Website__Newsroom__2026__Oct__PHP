@@ -46,8 +46,8 @@ A number reaches the page only with its measurer, population, method, date and t
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__factcheck-investigations-how-much-php.md` in the repository, published as written.
 
-&larr; older: Commit-FS-lite: agents talk to each other in the commits tnewer: &rarr; Schedules in the repository: each agent's card, every run,
+← older: Commit-FS-lite: agents talk to each other in the commits tnewer: → Schedules in the repository: each agent's card, every run,
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__factcheck-investigations-how-much-php/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__factcheck-investigations-how-much-php/index.html

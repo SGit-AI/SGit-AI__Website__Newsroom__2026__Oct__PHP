@@ -70,8 +70,8 @@ Add logging using an append lane. Capture who is visiting the website, which pag
 
 This brief is the file `admin/content/briefs/2026-10-22__telemetry-over-an-append-lane.md` in the repository, published as written.
 
-&larr; older: Talk to the site: a chat pane with tools, your OpenRouter newer: &rarr; Triage: the newsroom's review of this site, checked agains
+← older: Talk to the site: a chat pane with tools, your OpenRouter newer: → Triage: the newsroom's review of this site, checked agains
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__telemetry-over-an-append-lane/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__telemetry-over-an-append-lane/index.html

@@ -1,6 +1,15 @@
 {
- "current": "0.20.1",
+ "current": "0.20.2",
  "versions": [
+  {
+   "version": "0.20.2",
+   "date": "2026-10-25",
+   "title": "a proposal on the briefs page, at the editor's request: one repository into six (kit, data, refs, updates, site, team), each with its own writers, version, gate and site, meeting only through versioned URLs, not submodules; measured on v0.20.0 (every release rewrites about 1,936 pages, 118 commits fought over VERSION in three days, a 74 s gate for a one-line run record) with the phases and the five decisions; and the briefs' older/newer chips show their arrows and wrap",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.20.1",
    "date": "2026-10-25",

@@ -79,8 +79,8 @@ The lead has moved the right way: "Right now" now says the advice is shifting fr
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-front-page-on-day-two.md` in the repository, published as written.
 
-&larr; older: Brief: scanner noise, how good the php2shell scanners and newer: &rarr; Brief: the journalist unblocked, from the curator
+← older: Brief: scanner noise, how good the php2shell scanners and newer: → Brief: the journalist unblocked, from the curator
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-front-page-on-day-two/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-front-page-on-day-two/index.html

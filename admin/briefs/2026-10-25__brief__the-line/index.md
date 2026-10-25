@@ -338,8 +338,8 @@ carry a number the vault does not hold. What is still to do is in the debrief an
 
 This brief is the file `admin/content/briefs/2026-10-25__brief__the-line.md` in the repository, published as written.
 
-&larr; older: The 404 router, and a site with two modes: notes on the URnewer: &rarr; Refactoring the site to URL paths and a single page: how a
+← older: The 404 router, and a site with two modes: notes on the URnewer: → Refactoring the site to URL paths and a single page: how a
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__the-line/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__the-line/index.html

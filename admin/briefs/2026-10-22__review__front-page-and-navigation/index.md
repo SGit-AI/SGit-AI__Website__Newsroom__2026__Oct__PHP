@@ -70,8 +70,8 @@ Author: the journalist role (claude-journalist), on joining the site. Asked for 
 
 This brief is the file `admin/content/briefs/2026-10-22__review__front-page-and-navigation.md` in the repository, published as written.
 
-&larr; older: Handing the editor a vault key: sealed to his key on pki.snewer: &rarr; Talk to the site: a chat pane with tools, your OpenRouter
+← older: Handing the editor a vault key: sealed to his key on pki.snewer: → Talk to the site: a chat pane with tools, your OpenRouter
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__review__front-page-and-navigation/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__review__front-page-and-navigation/index.html

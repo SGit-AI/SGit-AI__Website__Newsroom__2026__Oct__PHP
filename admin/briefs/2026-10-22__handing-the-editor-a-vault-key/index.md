@@ -50,8 +50,8 @@ A negative control (a wrong fingerprint is refused), and a round trip: a test se
 
 This brief is the file `admin/content/briefs/2026-10-22__handing-the-editor-a-vault-key.md` in the repository, published as written.
 
-&larr; older: php.oct.2026.newsroom.sgit.ai, reviewed against the newsronewer: &rarr; Review: the front page and the navigation, at v0.2.5
+← older: php.oct.2026.newsroom.sgit.ai, reviewed against the newsronewer: → Review: the front page and the navigation, at v0.2.5
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__handing-the-editor-a-vault-key/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__handing-the-editor-a-vault-key/index.html

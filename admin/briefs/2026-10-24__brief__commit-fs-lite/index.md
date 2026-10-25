@@ -44,8 +44,8 @@ Status: built by conductor@php.newsroom on 24 October 2026. Brief by Dinis Cruz 
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__commit-fs-lite.md` in the repository, published as written.
 
-&larr; older: Brief: asking other publications for correctionsnewer: &rarr; Brief: the fact-check desk's investigations, and the first
+← older: Brief: asking other publications for correctionsnewer: → Brief: the fact-check desk's investigations, and the first
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__commit-fs-lite/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__commit-fs-lite/index.html

@@ -84,8 +84,8 @@ Okay, so this is to add to the website the website on the PHP vulnerability. We 
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-phone-app.md` in the repository, published as written.
 
-&larr; older: The organisation as a digital twin: a state machine of rolnewer: &rarr; Brief: the second stories, the signals, and the inventory
+← older: The organisation as a digital twin: a state machine of rolnewer: → Brief: the second stories, the signals, and the inventory
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-phone-app/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-phone-app/index.html

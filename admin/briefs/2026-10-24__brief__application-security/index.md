@@ -62,8 +62,8 @@ The conductor is asked, in the release commit and in a message, to carry this in
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__application-security.md` in the repository, published as written.
 
-&larr; older: Brief: three views, over time; the C-level executive firstnewer: &rarr; Brief: asking other publications for corrections
+← older: Brief: three views, over time; the C-level executive firstnewer: → Brief: asking other publications for corrections
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__application-security/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__application-security/index.html

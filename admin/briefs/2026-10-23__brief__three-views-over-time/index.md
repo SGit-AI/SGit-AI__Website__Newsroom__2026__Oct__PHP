@@ -168,8 +168,8 @@ The slices of the three views are frozen once written (a slice is what was publi
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__three-views-over-time.md` in the repository, published as written.
 
-&larr; older: Brief: the scheduled source watch, a Sonnet session that rnewer: &rarr; Brief: application security, as a section of the site and
+← older: Brief: the scheduled source watch, a Sonnet session that rnewer: → Brief: application security, as a section of the site and
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__three-views-over-time/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__three-views-over-time/index.html

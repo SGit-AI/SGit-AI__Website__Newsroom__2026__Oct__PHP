@@ -30,8 +30,8 @@ The message above, with the two memo transcripts attached, in a Claude Code sess
 
 This brief is the file `admin/content/briefs/2026-10-22__brief.md` in the repository, published as written.
 
-newer: &rarr; Collaborators: the people who use the site as it is built
+newer: → Collaborators: the people who use the site as it is built
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief/index.html

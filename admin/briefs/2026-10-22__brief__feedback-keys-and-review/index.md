@@ -72,8 +72,8 @@ The other thing is for me. You have my key, and I can identify myself. How can w
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__feedback-keys-and-review.md` in the repository, published as written.
 
-&larr; older: Brief: external collectors (ChatGPT, Perplexity and othersnewer: &rarr; Brief: a GRC desk joins the team, and a GRC section
+← older: Brief: external collectors (ChatGPT, Perplexity and othersnewer: → Brief: a GRC desk joins the team, and a GRC section
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__feedback-keys-and-review/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__feedback-keys-and-review/index.html

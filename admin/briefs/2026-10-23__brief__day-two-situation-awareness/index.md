@@ -42,8 +42,8 @@ What it cannot see without asking: work an agent has in its container and has no
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__day-two-situation-awareness.md` in the repository, published as written.
 
-&larr; older: Triage: the newsroom's review of this site, checked againsnewer: &rarr; Brief: moving a heavy vault to pack mode (sgit 0.24.0), st
+← older: Triage: the newsroom's review of this site, checked againsnewer: → Brief: moving a heavy vault to pack mode (sgit 0.24.0), st
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__day-two-situation-awareness/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__day-two-situation-awareness/index.html

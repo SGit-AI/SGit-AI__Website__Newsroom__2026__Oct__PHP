@@ -38,8 +38,8 @@ Order: 2 before 5 (the gaps page reports edges with no basis); 1 and 4 share one
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-risk-graph-as-a-tool.md` in the repository, published as written.
 
-&larr; older: Brief: the redesign, who you are and how much you seenewer: &rarr; The schedule vault: what runs, when, what it did, and what
+← older: Brief: the redesign, who you are and how much you seenewer: → The schedule vault: what runs, when, what it did, and what
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-risk-graph-as-a-tool/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-risk-graph-as-a-tool/index.html

@@ -124,8 +124,8 @@ Your one job: when the schedule vault says a pass is due, run one pass of the so
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-scheduled-source-watch.md` in the repository, published as written.
 
-&larr; older: Brief: the scheduled curator, a Sonnet session that keeps newer: &rarr; Brief: three views, over time; the C-level executive first
+← older: Brief: the scheduled curator, a Sonnet session that keeps newer: → Brief: three views, over time; the C-level executive first
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-scheduled-source-watch/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-scheduled-source-watch/index.html

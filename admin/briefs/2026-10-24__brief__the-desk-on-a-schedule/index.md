@@ -88,8 +88,8 @@ Both are repeating tasks queued once, with the editor's go, by the conductor: `d
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-desk-on-a-schedule.md` in the repository, published as written.
 
-&larr; older: Brief: the correspondent (Opus), on a schedulenewer: &rarr; Brief: the graph reviewed by people, and a first step for
+← older: Brief: the correspondent (Opus), on a schedulenewer: → Brief: the graph reviewed by people, and a first step for
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-desk-on-a-schedule/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-desk-on-a-schedule/index.html

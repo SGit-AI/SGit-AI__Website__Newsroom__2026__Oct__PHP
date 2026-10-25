@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.20.1. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.20.2. Data as of 2026-10-25T09:35Z (the latest capture in the evidence vault, commit 87795d121200). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -170,7 +170,7 @@ Site v0.20.1. Data as of 2026-10-25T09:35Z (the latest capture in the evidence v
 - [The board](https://php.oct.2026.newsroom.sgit.ai/admin/board/index.md): The work on this site and its vault, as rows: what is open, who owns it, what shipped it.
 - [Roles](https://php.oct.2026.newsroom.sgit.ai/admin/roles/index.md): The roles on this site and its vault, who fills each, what it owns and the rules it enforces; how a new agent joins.
 - [Application security](https://php.oct.2026.newsroom.sgit.ai/admin/appsec/index.md): The newsroom's application security: its threat model and data flows, every vulnerability found and fixed as an advisory with its root cause, who can do what, the incident runbooks, the bug bounty and the outside reviews.
-- [Briefs](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.md): Every build brief for this site, 58 of them, published in full before the work: the title, the date and who wrote it, each on its own page.
+- [Briefs](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.md): Every build brief for this site, 59 of them, published in full before the work: the title, the date and who wrote it, each on its own page.
 - [Pack mode, measured](https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.md): One vault as a normal sgit vault and as a pack vault: a fresh clone in 95 s against 13 min 47 s, the whole history pushed in 96 s, and why the normal vault has hit a wall.
 - [Who reads this site](https://php.oct.2026.newsroom.sgit.ai/admin/telemetry/index.md): What every page sends to the telemetry lane, the published write-only credential, the key it is encrypted to, the counts, and what they are worth.
 - [Synthetic readers](https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/index.md): A board member, a CTO, a project manager, a security lead, a developer and a designer read the live site in a real browser and say what works, what does not and what to change; every review is published here and every run is kept in that reader's own vault.
@@ -1111,6 +1111,7 @@ Licence: content CC BY 4.0, code Apache-2.0.
 - [Prototype F: every line the rules produce](https://php.oct.2026.newsroom.sgit.ai/admin/design/line/catalogue/index.md): Every line the rules produce, by visit moment, by role and by page, drawn by the engine at this release.
 
 ## Briefs, one page each (admin/content/briefs/)
+- [Proposal: one repository into six, so that tens of agents can work without waiting on each other](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.md): 2026-10-25, dev@php
 - [Brief: Wikipedia as an anchor, read as a fractal semantic graph](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__wikipedia-as-an-anchor/index.md): 2026-10-25
 - [Refactoring the site to URL paths and a single page: how a link can carry a persona](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site/index.md): 2026-10-25, story-site (claude-story-site), 25 October 2026, from the editor's direction in its session
 - [Brief: the line, and a site that is persona first](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__the-line/index.md): 2026-10-25, Claude, working with the editor (Dinis Cruz) in a design session on 24 and 25 October 2026
@@ -1169,6 +1170,7 @@ Licence: content CC BY 4.0, code Apache-2.0.
 - [Brief: every agent a folder, a policy and a round](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round/index.md): 2026-10-22, Dinis Cruz, editor, in the librarian's session on 22 October 2026
 - [Collaborators: the people who use the site as it is built](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__collaborators/index.md): 2026-10-22, built on branch conductor/collaborators, for dev@php
 - [The brief, as written by the editor on 22 October 2026](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief/index.md): 2026-10-22, Dinis Cruz
+- [Proposal: one repository into six, so that tens of agents can work without waiting on each other](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.md): 2026-10-25, dev@php
 - [Brief: Wikipedia as an anchor, read as a fractal semantic graph](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__wikipedia-as-an-anchor/index.md): 2026-10-25
 - [Refactoring the site to URL paths and a single page: how a link can carry a persona](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site/index.md): 2026-10-25, story-site (claude-story-site), 25 October 2026, from the editor's direction in its session
 - [Brief: the line, and a site that is persona first](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__the-line/index.md): 2026-10-25, Claude, working with the editor (Dinis Cruz) in a design session on 24 and 25 October 2026

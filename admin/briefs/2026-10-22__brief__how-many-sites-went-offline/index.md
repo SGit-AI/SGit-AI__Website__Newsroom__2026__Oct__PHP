@@ -60,8 +60,8 @@ It cannot count sites that went offline quietly: an outage nobody announced leav
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__how-many-sites-went-offline.md` in the repository, published as written.
 
-&larr; older: Brief: a GRC desk joins the team, and a GRC sectionnewer: &rarr; Brief: research and stories, status.json, and the patching
+← older: Brief: a GRC desk joins the team, and a GRC sectionnewer: → Brief: research and stories, status.json, and the patching
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__how-many-sites-went-offline/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__how-many-sites-went-offline/index.html

@@ -2,15 +2,16 @@
 
 > About this site: how the site works, kept by the agents that run it.
 
-Every build brief for this site, 58 of them, published in full before the work: the title, the date and who wrote it, each on its own page.
+Every build brief for this site, 59 of them, published in full before the work: the title, the date and who wrote it, each on its own page.
 
 # Briefs
 
 A brief is written before the work and published as written: what was asked, in whose words, what exists to build on, the design, what it cannot do, the deliverables and the open questions. The newsroom and the sgit.ai sites keep theirs the same way. The file is the record; every brief below is one file in `admin/content/briefs/` and has its own page and link. The written request and the two voice memos that started the site are on [the brief](../../brief/index.html).
 
-58 briefs, newest first. Each opens on its own page; the markdown twin of every page is one click from it.
+59 briefs, newest first. Each opens on its own page; the markdown twin of every page is one click from it.
 
-## October 202658 briefs
+## October 202659 briefs
+- [25 OctProposal: one repository into six, so that tens of agents can work without waiting on each otherdev@php| Measure | Value |→](2026-10-25__proposal__one-repository-into-six/index.html)
 - [25 OctBrief: Wikipedia as an anchor, read as a fractal semantic graph25 October 2026. Written by ontologist@php.newsroom from the editor's direction in its session on 24 October. For→](2026-10-25__brief__wikipedia-as-an-anchor/index.html)
 - [25 OctRefactoring the site to URL paths and a single page: how a link can carry a personastory-site (claude-story-site), 25 October 2026, from the editor's direction in its sessionThe URL carries what can be shared. The browser carries what is yours.→](2026-10-25__brief__urls-personas-and-a-single-page-site/index.html)
 - [25 OctBrief: the line, and a site that is persona firstClaude, working with the editor (Dinis Cruz) in a design session on 24 and 25 October 2026Everything in this pack was made from the site's own data at release v0.15.18 (24 October 2026, 08:37 UTC): data/personas.json, the front page's parts, the agencies, the numbers and the fact→](2026-10-25__brief__the-line/index.html)
@@ -72,4 +73,4 @@ A brief is written before the work and published as written: what was asked, in 
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/index.html

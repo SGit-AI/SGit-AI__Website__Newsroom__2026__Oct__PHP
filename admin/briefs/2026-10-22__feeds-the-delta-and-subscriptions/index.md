@@ -64,8 +64,8 @@ The reader's browser fetches every feed itself; nothing is proxied. A feed is un
 
 This brief is the file `admin/content/briefs/2026-10-22__feeds-the-delta-and-subscriptions.md` in the repository, published as written.
 
-&larr; older: Brief: the second stories, the signals, and the inventory newer: &rarr; php.oct.2026.newsroom.sgit.ai, reviewed against the newsro
+← older: Brief: the second stories, the signals, and the inventory newer: → php.oct.2026.newsroom.sgit.ai, reviewed against the newsro
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__feeds-the-delta-and-subscriptions/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__feeds-the-delta-and-subscriptions/index.html

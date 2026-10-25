@@ -90,8 +90,8 @@ Before this map, these were claimed twice or by nobody; the drafts resolve each 
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round.md` in the repository, published as written.
 
-&larr; older: Collaborators: the people who use the site as it is builtnewer: &rarr; Brief: external collectors (ChatGPT, Perplexity and others
+← older: Collaborators: the people who use the site as it is builtnewer: → Brief: external collectors (ChatGPT, Perplexity and others
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__every-agent-a-folder-a-policy-and-a-round/index.html

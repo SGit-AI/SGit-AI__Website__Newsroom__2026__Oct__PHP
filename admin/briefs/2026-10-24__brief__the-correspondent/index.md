@@ -72,8 +72,8 @@ Everything the journalist shipped since the last run has been read against its c
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-correspondent.md` in the repository, published as written.
 
-&larr; older: Schedules in the repository: each agent's card, every run,newer: &rarr; Brief: the news desk chief on a schedule, and the health o
+← older: Schedules in the repository: each agent's card, every run,newer: → Brief: the news desk chief on a schedule, and the health o
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-correspondent/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-correspondent/index.html

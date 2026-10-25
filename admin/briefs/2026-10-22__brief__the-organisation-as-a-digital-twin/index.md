@@ -78,8 +78,8 @@ The run record first (it is the input to everything else), then `twin.json` and 
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md` in the repository, published as written.
 
-&larr; older: Brief: a news desk chief joins the teamnewer: &rarr; Brief: the phone app, what do I need to know for the time
+← older: Brief: a news desk chief joins the teamnewer: → Brief: the phone app, what do I need to know for the time
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin/index.html

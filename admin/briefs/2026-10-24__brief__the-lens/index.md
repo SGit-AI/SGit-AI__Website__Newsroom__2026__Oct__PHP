@@ -99,8 +99,8 @@ Built by `admin/build/design.py` from the live data, three pages:
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-lens.md` in the repository, published as written.
 
-&larr; older: The telemetry lane's 1,000-event cap, and lanes in parallenewer: &rarr; Brief: the ontologist, and its daily pass
+← older: The telemetry lane's 1,000-event cap, and lanes in parallenewer: → Brief: the ontologist, and its daily pass
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-lens/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-lens/index.html

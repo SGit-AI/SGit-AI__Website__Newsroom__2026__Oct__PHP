@@ -48,8 +48,8 @@ Every hour at a quarter past, 07:15 to 21:15 London (15 wakes, none in the quiet
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__schedules-in-git.md` in the repository, published as written.
 
-&larr; older: Brief: the fact-check desk's investigations, and the firstnewer: &rarr; Brief: the correspondent (Opus), on a schedule
+← older: Brief: the fact-check desk's investigations, and the firstnewer: → Brief: the correspondent (Opus), on a schedule
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__schedules-in-git/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__schedules-in-git/index.html

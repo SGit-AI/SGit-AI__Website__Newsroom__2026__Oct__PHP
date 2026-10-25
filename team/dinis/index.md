@@ -61,6 +61,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | 303 | Incident, 25 October 2026: the researcher and the curator run on schedule but leave no commit and no run record, so the team is blind to what they did and the control room shows them as missed. Decide: every scheduled wake leaves a run record in git (proposed: the agent writes a report into its own vault, the conductor commits it), and the four scheduled prompts change accordingly.Raised by the conductor. The curator's and the researcher's sessions show the runs (25 Oct 08:00 London: 18 sources promoted); only the repository is blind. | open |  |
 | 306 | URL paths and the router: the five steps in the article, after the editor's answers to its five decisions (the URL shape, depth in the address, which pages get persona paths, how long ?as= stays, and the order against the line going live)From the article of 25 October. Step 1 (persona paths as real files, canonical to the base, Share minting them) is the one that delivers 'a link that includes the persona name' and can ship on its own. | open |  |
 | 311 | The 404 router: view paths (/agencies/as/security/, /on//, /vs//) answered by 404.html, never written as files; the editor's notes on the URL article and story-site's replyadmin/content/briefs/2026-10-25__brief__the-404-router-and-two-modes.md. Replaces the article's persona files with a router, so nothing explodes. Four decisions: previews (a neutral card, or also the front page's seven views as files), the front page (no redirect to /as/executive/, the address follows the reader instead; recommended because a script redirect to a 404 risks the front page's indexing), the reserved words (as, on, vs, since), and the timing (after board 297). | open |  |
+| 312 | Proposal: one repository into six (kit, data, refs, updates, site, team), meeting through versions by URL, not submodules; the five decisions for the editordev@php.newsroom's proposal of 25 October, at the editor's request: /admin/briefs/2026-10-25__proposal__one-repository-into-six/. Phase 1 (inside today's repository) to be agreed with the refactor session. | open |  |
 
 ## Waiting on someone else
 
@@ -103,4 +104,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

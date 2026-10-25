@@ -120,8 +120,8 @@ Your one job: keep the **evidence vault** (`3ytzxm3g`) current by promoting the 
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-scheduled-curator.md` in the repository, published as written.
 
-&larr; older: The schedule vault: what runs, when, what it did, and whatnewer: &rarr; Brief: the scheduled source watch, a Sonnet session that r
+← older: The schedule vault: what runs, when, what it did, and whatnewer: → Brief: the scheduled source watch, a Sonnet session that r
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-scheduled-curator/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-scheduled-curator/index.html

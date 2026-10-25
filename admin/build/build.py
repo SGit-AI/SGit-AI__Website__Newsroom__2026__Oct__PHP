@@ -1534,7 +1534,8 @@ def build_briefs():
     for i, m in enumerate(metas):
         nxt = metas[i - 1] if i > 0 else None               # metas is newest first
         prv = metas[i + 1] if i + 1 < len(metas) else None
-        nav = ''.join(f'<a class="chip" href="../{U(x["slug"])}/index.html">{E(lab)} {E(x["title"][:58])}</a>'
+        # the arrows are entities, written as they are (escaping them showed '&larr;' as text); a long title wraps on a phone
+        nav = ''.join(f'<a class="chip" style="white-space:normal;max-width:100%" href="../{U(x["slug"])}/index.html">{lab} {E(x["title"][:58])}</a>'
                       for x, lab in ((prv, '&larr; older:'), (nxt, 'newer: &rarr;')) if x)
         body = f"""
 <h1>{E(m['title'])}</h1>

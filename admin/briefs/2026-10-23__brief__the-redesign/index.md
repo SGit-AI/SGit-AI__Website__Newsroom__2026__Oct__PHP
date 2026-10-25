@@ -58,8 +58,8 @@ The rollout is on the board, items 137 to 142.
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-redesign.md` in the repository, published as written.
 
-&larr; older: Brief: the two vaults, the site's update, and the journalinewer: &rarr; Brief: the risk graph as a tool (to dev, from a collaborat
+← older: Brief: the two vaults, the site's update, and the journalinewer: → Brief: the risk graph as a tool (to dev, from a collaborat
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-redesign/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-redesign/index.html

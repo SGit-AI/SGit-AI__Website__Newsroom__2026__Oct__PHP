@@ -156,8 +156,8 @@ the scanner question as its first one (job 03 in the watch vault).
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__scanner-noise.md` in the repository, published as written.
 
-&larr; older: Brief: Perplexity reads the community spaces for the sourcnewer: &rarr; Brief: the front page on day two
+← older: Brief: Perplexity reads the community spaces for the sourcnewer: → Brief: the front page on day two
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__scanner-noise/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__scanner-noise/index.html

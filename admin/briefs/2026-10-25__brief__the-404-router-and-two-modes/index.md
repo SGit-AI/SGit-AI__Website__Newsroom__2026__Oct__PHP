@@ -68,8 +68,8 @@ The editor's version is better than the article's, and simpler. Five things to g
 
 This brief is the file `admin/content/briefs/2026-10-25__brief__the-404-router-and-two-modes.md` in the repository, published as written.
 
-&larr; older: Review: the redesign, read for what it communicatesnewer: &rarr; Brief: the line, and a site that is persona first
+← older: Review: the redesign, read for what it communicatesnewer: → Brief: the line, and a site that is persona first
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__the-404-router-and-two-modes/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__the-404-router-and-two-modes/index.html

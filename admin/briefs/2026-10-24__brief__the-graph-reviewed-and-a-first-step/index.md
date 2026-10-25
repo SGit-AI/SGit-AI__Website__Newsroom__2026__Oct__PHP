@@ -37,8 +37,8 @@ A power user gets an invitation of their own (`/join/invite/`, power-user role),
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-graph-reviewed-and-a-first-step.md` in the repository, published as written.
 
-&larr; older: Brief: the news desk chief on a schedule, and the health onewer: &rarr; Brief: the journalist (Sonnet), from its first session
+← older: Brief: the news desk chief on a schedule, and the health onewer: → Brief: the journalist (Sonnet), from its first session
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-graph-reviewed-and-a-first-step/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-graph-reviewed-and-a-first-step/index.html

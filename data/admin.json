@@ -2298,6 +2298,20 @@
    "status": "open",
    "owner": "editor",
    "note": "admin/content/briefs/2026-10-25__brief__the-404-router-and-two-modes.md. Replaces the article's persona files with a router, so nothing explodes. Four decisions: previews (a neutral card, or also the front page's seven views as files), the front page (no redirect to /as/executive/, the address follows the reader instead; recommended because a script redirect to a 404 risks the front page's indexing), the reserved words (as, on, vs, since), and the timing (after board 297)."
+  },
+  {
+   "id": "312",
+   "title": "Proposal: one repository into six (kit, data, refs, updates, site, team), meeting through versions by URL, not submodules; the five decisions for the editor",
+   "status": "open",
+   "owner": "editor",
+   "note": "dev@php.newsroom's proposal of 25 October, at the editor's request: /admin/briefs/2026-10-25__proposal__one-repository-into-six/. Phase 1 (inside today's repository) to be agreed with the refactor session."
+  },
+  {
+   "id": "313",
+   "title": "On a phone every brief page scrolls sideways (the briefs index by 186px, most briefs by 40 to 130px): the admin layout of v0.20.0 does not hold 390px; dev fixed the older/newer chips (they showed a literal '&larr;' and did not wrap)",
+   "status": "open",
+   "owner": "story-site",
+   "note": "Measured by dev@php.newsroom in Chromium at 390x844 on 25 October; tables scroll in their own box, the overflow comes from the page layout."
   }
  ],
  "evidence_vault": {

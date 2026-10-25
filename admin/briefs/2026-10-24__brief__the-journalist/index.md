@@ -126,8 +126,8 @@ A wake is good when the site serves the new head within the hour of the curator'
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-journalist.md` in the repository, published as written.
 
-&larr; older: Brief: the graph reviewed by people, and a first step for newer: &rarr; The telemetry lane's 1,000-event cap, and lanes in paralle
+← older: Brief: the graph reviewed by people, and a first step for newer: → The telemetry lane's 1,000-event cap, and lanes in paralle
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-journalist/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-journalist/index.html

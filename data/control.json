@@ -476,6 +476,12 @@
    "owner": "editor",
    "status": "open",
    "title": "The 404 router: view paths (/agencies/as/security/, /on/<date>/, /vs/<date>/) answered by 404.html, never written as files; the editor's notes on the URL article and story-site's reply"
+  },
+  {
+   "id": "312",
+   "owner": "editor",
+   "status": "open",
+   "title": "Proposal: one repository into six (kit, data, refs, updates, site, team), meeting through versions by URL, not submodules; the five decisions for the editor"
   }
  ],
  "branches": [
@@ -1028,5 +1034,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.20.1"
+ "version": "0.20.2"
 }

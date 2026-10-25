@@ -262,8 +262,8 @@ before anything cites it, and a collector's `kind` is a suggestion, never a stat
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__external-collectors.md` in the repository, published as written.
 
-&larr; older: Brief: every agent a folder, a policy and a roundnewer: &rarr; Feedback from any page, signed; onboarding by QR code; a r
+← older: Brief: every agent a folder, a policy and a roundnewer: → Feedback from any page, signed; onboarding by QR code; a r
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__external-collectors/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__external-collectors/index.html

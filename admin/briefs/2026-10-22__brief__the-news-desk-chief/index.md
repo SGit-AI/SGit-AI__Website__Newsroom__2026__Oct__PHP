@@ -56,8 +56,8 @@ Not "editor": on this site the editor is Dinis Cruz, and `admin/security/REQUIRE
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-news-desk-chief.md` in the repository, published as written.
 
-&larr; older: Brief: a fact-checker joins the teamnewer: &rarr; The organisation as a digital twin: a state machine of rol
+← older: Brief: a fact-checker joins the teamnewer: → The organisation as a digital twin: a state machine of rol
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-news-desk-chief/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-news-desk-chief/index.html

@@ -138,8 +138,8 @@ Each step leaves the site working if the next one never happens.
 
 This brief is the file `admin/content/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site.md` in the repository, published as written.
 
-&larr; older: Brief: the line, and a site that is persona firstnewer: &rarr; Brief: Wikipedia as an anchor, read as a fractal semantic
+← older: Brief: the line, and a site that is persona firstnewer: → Brief: Wikipedia as an anchor, read as a fractal semantic
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site/index.html

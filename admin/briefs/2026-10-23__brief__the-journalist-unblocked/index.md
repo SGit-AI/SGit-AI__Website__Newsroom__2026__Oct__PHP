@@ -150,8 +150,8 @@ number of the state of affairs, and anything in a page that contradicts what the
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-journalist-unblocked.md` in the repository, published as written.
 
-&larr; older: Brief: the front page on day twonewer: &rarr; Brief: the two vaults, the site's update, and the journali
+← older: Brief: the front page on day twonewer: → Brief: the two vaults, the site's update, and the journali
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-journalist-unblocked/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-journalist-unblocked/index.html

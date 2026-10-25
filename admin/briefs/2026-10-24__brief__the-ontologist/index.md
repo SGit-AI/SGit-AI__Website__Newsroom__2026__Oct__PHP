@@ -60,8 +60,8 @@ wake prompt word for word; the runbook is `admin/ontologist/README.md`.
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-ontologist.md` in the repository, published as written.
 
-&larr; older: Brief: the lens, a site that shapes itself to the reader inewer: &rarr; Brief: the pipeline, from the researcher to the correspond
+← older: Brief: the lens, a site that shapes itself to the reader inewer: → Brief: the pipeline, from the researcher to the correspond
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-ontologist/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-ontologist/index.html

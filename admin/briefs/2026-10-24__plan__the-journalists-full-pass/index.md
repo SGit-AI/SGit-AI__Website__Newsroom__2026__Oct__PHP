@@ -44,8 +44,8 @@ Pulse (`/pulse/`) is a separate section, built from `data/pulse.json` by its own
 
 This brief is the file `admin/content/briefs/2026-10-24__plan__the-journalists-full-pass.md` in the repository, published as written.
 
-&larr; older: Brief: the scheduled journalist (Sonnet) and the chief cornewer: &rarr; Review: the redesign, read for what it communicates
+← older: Brief: the scheduled journalist (Sonnet) and the chief cornewer: → Review: the redesign, read for what it communicates
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__plan__the-journalists-full-pass/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__plan__the-journalists-full-pass/index.html

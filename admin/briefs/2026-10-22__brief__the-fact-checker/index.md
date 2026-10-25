@@ -46,8 +46,8 @@ This is the editor's explicit exception that AGENTS.md allows to its rule that a
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-fact-checker.md` in the repository, published as written.
 
-&larr; older: Brief: a corrections liaison joins the teamnewer: &rarr; Brief: a news desk chief joins the team
+← older: Brief: a corrections liaison joins the teamnewer: → Brief: a news desk chief joins the team
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-fact-checker/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-fact-checker/index.html

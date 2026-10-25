@@ -42,8 +42,8 @@ The prompt, word for word, is in its schedule card, `data/schedule/journalist.js
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-pipeline-researcher-to-correspondent.md` in the repository, published as written.
 
-&larr; older: Brief: the ontologist, and its daily passnewer: &rarr; Brief: the redesign, live (24 October 2026, story-site)
+← older: Brief: the ontologist, and its daily passnewer: → Brief: the redesign, live (24 October 2026, story-site)
 
 
 ---
-site v0.20.1 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-pipeline-researcher-to-correspondent/index.html
+site v0.20.2 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-pipeline-researcher-to-correspondent/index.html
