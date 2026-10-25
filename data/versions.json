@@ -1,6 +1,15 @@
 {
- "current": "0.22.7",
+ "current": "0.22.8",
  "versions": [
+  {
+   "version": "0.22.8",
+   "date": "2026-10-25",
+   "title": "observability drained the telemetry lane on 25 October (150 events, the lane empty) with a new command-line drainer that publishes before it marks; its debrief on the member's page /admin/agents/observability/; board 330 (telemetry from local test servers, for dev)",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.22.7",
    "date": "2026-10-25",
