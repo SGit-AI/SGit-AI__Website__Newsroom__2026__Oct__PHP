@@ -2,7 +2,7 @@
 
 > PHP news for October 2026, led by the month's big story: two critical security flaws in PHP (CVE-2026-109618 and CVE-2026-109619, nicknamed php2shell). The current situation in plain words, the core facts with their evidence, what to do, and a briefing for every kind of reader.
 
-Site v0.19.1. Data as of 2026-10-24T16:05Z (the latest capture in the evidence vault, commit 8c16a64a7cf6). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
+Site v0.19.2. Data as of 2026-10-24T16:05Z (the latest capture in the evidence vault, commit 8c16a64a7cf6). Every page below has a markdown twin at the same path with .md; the data behind every page is in data/*.json. The evidence vault is private; its manifest with every hash is data/sources.json.
 
 ## Updates
 - [Every update, newest first](https://php.oct.2026.newsroom.sgit.ai/updates/index.md): Dated briefings on what was added to this site, what is new in the php2shell story, what the team did and what is waiting on the editor: hourly, daily and flash.
@@ -734,6 +734,7 @@ Site v0.19.1. Data as of 2026-10-24T16:05Z (the latest capture in the evidence v
 ## The team, one page per member
 - [How the team talks: three vaults and one run](https://php.oct.2026.newsroom.sgit.ai/team/channels/index.md): the conductor, issues and mail vaults, the run, the rules
 - [Schedule](https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.md): every scheduled agent on one day, its objective and instructions, every run, and the messages between agents
+- [Wiring every scheduled task to its card](https://php.oct.2026.newsroom.sgit.ai/team/schedule/wiring/index.md): for each scheduled agent, its tasks, its card prompt and the steps its own session follows
 - [Commit notes](https://php.oct.2026.newsroom.sgit.ai/team/comms/index.md): Commit-FS-lite, what the agents tell each other in their release commits, newest first
 - [Schedule: cartographer](https://php.oct.2026.newsroom.sgit.ai/team/schedule/cartographer/index.md): ended; Keep the story graph whole as the evidence grows: every new party, spelling, claim, number and signal resolved into the ontology, the site's graphs joined by declared bridges, and the long tail found by connection handed to the desk that owns it.
 - [Schedule: conductor](https://php.oct.2026.newsroom.sgit.ai/team/schedule/conductor/index.md): active; Keep every agent and the humans in step: what each is doing and waiting for, what came in on the lanes, what ran and what did not.

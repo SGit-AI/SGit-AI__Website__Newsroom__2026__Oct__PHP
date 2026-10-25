@@ -20,6 +20,9 @@ refuses the obvious shapes; the gate refuses more).
                                       write a message, data/messages/<B>/<id>.md (B may be "all"), for a long one
   export-notes                        write data/comms.json, the notes in the last 600 commits on origin/dev, which
                                       /team/comms/ is built from (the build never reads git history: CI clones shallow)
+  tasks RAW.json                      (the conductor) write data/scheduled-tasks.json from the account's scheduled tasks,
+                                      as the claude-code-remote list_triggers tool returns them (one page or a list of
+                                      pages); keeps the newsroom's, drops the others; /team/schedule/ checks them
   notes <agent> [--since REF]         Commit-FS-lite: the notes to <agent> (To-<agent>:) and to all (To-all:) in the
                                       commits on origin/dev since REF (default: the head your last run recorded)
 Then release with admin/build/release.sh, as for any other change; a short note to another agent rides in the release
@@ -119,6 +122,31 @@ def cmd_export_notes(a):
     p = os.path.join(DATA, 'comms.json')
     open(p, 'w', encoding='utf-8').write(checked(json.dumps(d, indent=1, ensure_ascii=False), p) + '\n')
     print(f'{len(notes)} notes up to {head[:12]}')
+
+NOT_OURS = ('WhatsApp', 'SG/QA', 'SG/Send')                              # the account's other projects, never published here
+
+def task_agent(t):
+    m = re.search(r'\b([a-z][a-z-]+)@(?:php\.)?newsroom', t['derived_state']['prompt'])
+    if m: return m.group(1)
+    n = t['name'].lower()
+    return next((a for k, a in [('curator', 'curator'), ('source watch', 'researcher'), ('pulse', 'pulse'), ('fact-check', 'factcheck')] if k in n), '')
+
+def cmd_tasks(a):
+    raw = json.load(open(a.raw, encoding='utf-8'))
+    pages = raw if isinstance(raw, list) else [raw]
+    out = []
+    for t in (t for p in pages for t in p['data']):
+        if any(x in t['name'] for x in NOT_OURS): continue
+        lr = t.get('last_run') or {}
+        out.append({'id': t['id'], 'name': t['name'], 'agent': task_agent(t), 'cron': t.get('cron_expression', ''), 'enabled': t['enabled'],
+                    'model': t['derived_state'].get('model', ''), 'session': t.get('persistent_session_id') or 'fresh',
+                    'last_fired': t.get('last_fired_at', ''), 'last_status': lr.get('status', '').replace('ROUTINE_RUN_STATUS_', '').lower(),
+                    'next_run': t.get('next_run_at', ''), 'updated': t.get('updated_at', ''), 'prompt': t['derived_state']['prompt']})
+    d = {'about': "The account's scheduled tasks for this newsroom, as the scheduled-task service lists them: what actually wakes each agent. Written by admin/build/schedule.py tasks on the conductor's full passes; /team/schedule/ checks each against its card. The account's other projects are left out.",
+         'kept_by': 'conductor', 'as_of': a.as_of or now(), 'tasks': sorted(out, key=lambda x: (x['agent'], x['cron']))}
+    p = os.path.join(DATA, 'scheduled-tasks.json')
+    open(p, 'w', encoding='utf-8').write(checked(json.dumps(d, indent=1, ensure_ascii=False), p) + '\n')
+    print(f'{len(out)} tasks: ' + ', '.join(sorted({x["agent"] or "?" for x in out})))
 
 def cmd_run(a):
     if a.outcome not in OUTCOMES: sys.exit(f'outcome is one of {", ".join(OUTCOMES)}')
@@ -232,7 +260,8 @@ def main():
     p = s.add_parser('send'); p.add_argument('--from', required=True); p.add_argument('--to', required=True); p.add_argument('--subject', required=True)
     p.add_argument('--body-file', required=True); p.add_argument('--re')
     p = s.add_parser('notes'); p.add_argument('agent'); p.add_argument('--since')
-    s.add_parser('export-notes'); s.add_parser('ingest'); s.add_parser('wake').add_argument('agent')
+    s.add_parser('export-notes')
+    p = s.add_parser('tasks'); p.add_argument('raw'); p.add_argument('--as-of'); s.add_parser('ingest'); s.add_parser('wake').add_argument('agent')
     a = ap.parse_args(); globals()['cmd_' + a.cmd.replace('-', '_')](a)
 
 if __name__ == '__main__':

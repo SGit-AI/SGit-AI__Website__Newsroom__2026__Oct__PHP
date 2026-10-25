@@ -37,6 +37,7 @@
   "Lanes: the Sherpa drains them (the editor, 24 October 2026); check that its runs show the collaborators' lane drained at its wakes, and flag it when not.",
   "Check every card against what ran: a card with no run near a wake that should have changed something, a scheduled task with no card, a run that changed something and left no article. Each becomes a line on /team/status/ and a message to that agent.",
   "Full pass only (07:15, 11:15, 15:15, 19:15): read every agent session, read only, and the branches ahead of dev; rewrite data/agents-status.json.",
+  "Full pass only: list the account's scheduled tasks (claude-code-remote list_triggers, every page), save the result to a file in the scratchpad, run `schedule.py tasks <that file>`, and read the wiring section of /team/schedule/: a task with no card, a card time with no task, or a prompt that is not the card's goes to the editor in the report, with the session it must be pasted into.",
   "Board: close the conductor's rows that are done; add a row for anything new that waits on the editor.",
   "Anything changed: one run record (schedule.py run conductor, the messages read and sent, the quiet wakes since the last release) and one release with release.sh; a conflict is solved by hand and written in the run's log. Nothing changed: no commit, one line.",
   "Report to the editor in ten lines or fewer: what waits on him first, then what moved."

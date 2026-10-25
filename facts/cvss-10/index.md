@@ -59,4 +59,4 @@ Sources: php-foundation-blog-security-release, daubois-blog-php2shell-rumors
 
 
 ---
-site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/cvss-10/index.html
+site v0.19.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/facts/cvss-10/index.html

@@ -1,6 +1,6 @@
 {
  "about": "Every member of the newsroom: role, scope, the computed delta, the latest status and the debriefs, assembled from admin/content/agents/*/ by the build. The conductor reads this one file.",
- "version": "0.19.1",
+ "version": "0.19.2",
  "members": [
   {
    "agent": "abp",
@@ -3036,6 +3036,7 @@
   "data/loops.json",
   "data/runs/correspondent/20261024T2250Z-correspondent.json",
   "data/schedule/correspondent.json",
+  "data/scheduled-tasks.json",
   "data/vault-register/correspondent.json",
   "data/wikipedia/index.json",
   "data/wikipedia/php2shell/article.json",

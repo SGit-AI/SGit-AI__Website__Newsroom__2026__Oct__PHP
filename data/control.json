@@ -464,6 +464,12 @@
    "owner": "editor",
    "status": "open",
    "title": "URL paths and the router: the five steps in the article, after the editor's answers to its five decisions (the URL shape, depth in the address, which pages get persona paths, how long ?as= stays, and the order against the line going live)"
+  },
+  {
+   "id": "307",
+   "owner": "editor",
+   "status": "waiting",
+   "title": "Ten scheduled tasks still carry their long prompts, which only their own sessions can change: paste the card's prompt (shown on /team/schedule/, What the account runs) into the sessions of the Sherpa, the desk, the librarian, the conductor (scheduled), pulse, the researcher (two tasks), the curator (two tasks) and the fact-check desk. The researcher's two still run the retired schedule vault's steps."
   }
  ],
  "branches": [
@@ -1000,5 +1006,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.19.1"
+ "version": "0.19.2"
 }

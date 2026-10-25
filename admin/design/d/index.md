@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.19.1. Not the live site.
+> Mockup D for review, built from the data of release v0.19.2. Not the live site.
 
-PHP Team console Console Overview Board 202 Agents 19 Releases 159 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 203 Agents 19 Releases 160 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 24 October 2026, 16:05 UTC 
 
 Release 
-v0.19.1 
-159 releases since 22 Oct 
+v0.19.2 
+160 releases since 22 Oct 
 
 Open on the board 
-202 
-100 done, 4 waiting 
+203 
+100 done, 5 waiting 
 
 Pages built 
-949 
+950 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,8 +30,11 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 202
+#### Open 203
 
+ #308 
+to_markdown (admin/build/build.py): the <p> pattern also matches <pre ...> ("<p" + "re class=..."), so a <pre> followed … 
+ dev@php.newsroom 
  #306 
 URL paths and the router: the five steps in the article, after the editor's answers to its five decisions (the URL shape… 
  editor 
@@ -50,12 +53,12 @@ Owners for the policy drafts, from the librarian's pass of 25 October (the gate 
  #299 
 A page line for every page, and the change log from the build's own diff between releases 
  claude-story-site 
- #298 
-The line's decisions for the editor: the Executive as the default, the team not being a persona, the seven empty role x … 
+
+#### Waiting 5
+
+ #307 
+Ten scheduled tasks still carry their long prompts, which only their own sessions can change: paste the card's prompt (s… 
  editor 
-
-#### Waiting 4
-
  #180 
 The Sherpa drains the lanes (the editor, 24 October 2026): a go for its schedule (data/schedule/sherpa.json, proposed: e… 
  editor 
@@ -96,6 +99,7 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
 ### Releases
  latest 8 
 
+ v0.19.2 2026-10-25 Scheduled tasks on the site: /team/schedule/ shows what the account actually runs, each task checked against its card (times, sess… 
  v0.19.1 2026-10-25 Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's … 
  v0.19.0 2026-10-25 the line on a phone no longer holds the top of the screen (it scrolls away, and its sentence runs full width); and the article, wr… 
  v0.18.6 2026-10-25 Incident: the researcher and the curator run but leave no commit or run record; status and board say so 
@@ -103,7 +107,6 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
  v0.18.4 2026-10-25 The desk's morning wake of 25 October: the third PHP flaw, CVE-2026-115560, put on the board for Right now and for capture 
  v0.18.3 2026-10-25 Fact-check run 6: daily drift check of every graded excerpt, watchtowr-itw on watchTowr's own pages, W3Techs at 69.2% 
  v0.18.2 2026-10-25 the librarian's pass of 25 October: dev mapped at v0.18.0 (0 overlaps; owners for 395 files and 56 pages proposed to abp@, board 3… 
- v0.18.1 2026-10-25 Conductor full pass 07:15 London on 25 October: agents-status, schedules against runs, run record 
 
 ### Agents and what they own
  open items 
@@ -119,4 +122,4 @@ Prototype E, the lens: one control at the top right (how long you have, who you 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.19.1 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.19.2 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

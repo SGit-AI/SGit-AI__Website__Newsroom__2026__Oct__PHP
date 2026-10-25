@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.19.2 · 25 October 2026new since your last visit
+
+Scheduled tasks on the site: /team/schedule/ shows what the account actually runs, each task checked against its card (times, session, prompt), and /team/schedule/wiring/ gives each agent the steps to wire its own tasks; two stale one-shot tasks deleted and five prompts set to their cards
+
+No reader-facing section changed in this release.
+
 ## v0.19.1 · 25 October 2026new since your last visit
 
 Every scheduled wake starts from the repository: admin/schedule/WAKE.md, schedule.py wake, run --publish and ingest, every card's prompt made small (board 303)
@@ -1197,4 +1203,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.19.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

@@ -1805,6 +1805,8 @@ team/schedule/researcher/index.html
 team/schedule/researcher/index.md
 team/schedule/sherpa/index.html
 team/schedule/sherpa/index.md
+team/schedule/wiring/index.html
+team/schedule/wiring/index.md
 team/sherpa/index.html
 team/sherpa/index.md
 team/status/index.html

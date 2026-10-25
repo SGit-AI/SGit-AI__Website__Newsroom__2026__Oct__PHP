@@ -455,6 +455,13 @@
    "used_on": "team/schedule/index.html"
   },
   {
+   "path": "data/scheduled-tasks.json",
+   "layer": "site",
+   "by": "conductor, admin/build/schedule.py tasks on its full passes",
+   "from": "the account's scheduled tasks for this newsroom, as the scheduled-task service lists them (name, times, session, model, last fired, prompt); never a key",
+   "used_on": "team/schedule/index.html"
+  },
+  {
    "path": "data/runs/",
    "layer": "site",
    "by": "each scheduled agent, one file per wake (admin/build/schedule.py run)",

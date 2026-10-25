@@ -66,6 +66,7 @@ Decisions and work only a person can supply. Each is a card in this member's que
 | # | Task | Status | Shipped in |
 |---|---|---|---|
 | 180 | The Sherpa drains the lanes (the editor, 24 October 2026): a go for its schedule (data/schedule/sherpa.json, proposed: every two hours at :45, 07:45 to 21:45 London), and the conductor's lane key (5iwos28w) handed to it sealed; it already holds the collaborators' lane key (58526ytp)Until then the conductor's editor session drains the lanes. | waiting |  |
+| 307 | Ten scheduled tasks still carry their long prompts, which only their own sessions can change: paste the card's prompt (shown on /team/schedule/, What the account runs) into the sessions of the Sherpa, the desk, the librarian, the conductor (scheduled), pulse, the researcher (two tasks), the curator (two tasks) and the fact-check desk. The researcher's two still run the retired schedule vault's steps.Checked on 25 October: the other five (correspondent, journalist, ontologist) were updated from the conductor's session; two stale one-shot tasks from 22 October were deleted. | waiting |  |
 
 ## What they have done
 - Started the site from two voice memos and a message on 22 October 2026, and set every brief since.
@@ -101,4 +102,4 @@ What the three vaults are and who holds their keys: [how the team talks](../chan
 
 
 ---
-site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html
+site v0.19.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/team/dinis/index.html

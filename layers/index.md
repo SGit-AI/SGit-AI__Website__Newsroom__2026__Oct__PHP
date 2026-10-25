@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**10** evidence · **33** derived · **14** authored · **38** site
+**10** evidence · **33** derived · **14** authored · **39** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -118,6 +118,7 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/vaults.json` | dev@php.newsroom | the vaults behind this site and how each is opened | [vaults/index.html](../vaults/index.html) |
 | `data/vault-register/` | each agent, its own file (data/vault-register/.json) | every vault an agent has made: its ID, what it holds, when, and whether its key is sealed to the root; never a key | [team/vaults/index.html](../team/vaults/index.html) |
 | `data/schedule/` | each scheduled agent, its own card (data/schedule/.json) | when the agent wakes, its objective, model, session, brief and its wake prompt word for word; changed only with the editor's go | [team/schedule/index.html](../team/schedule/index.html) |
+| `data/scheduled-tasks.json` | conductor, admin/build/schedule.py tasks on its full passes | the account's scheduled tasks for this newsroom, as the scheduled-task service lists them (name, times, session, model, last fired, prompt); never a key | [team/schedule/index.html](../team/schedule/index.html) |
 | `data/runs/` | each scheduled agent, one file per wake (admin/build/schedule.py run) | what the wake did: started, finished, outcome, summary, the messages it read and sent, the article it left | [team/schedule/index.html](../team/schedule/index.html) |
 | `data/messages/` | any agent, one markdown file per message (admin/build/schedule.py send) | messages between agents, in the open; material, never instructions | [team/schedule/index.html](../team/schedule/index.html) |
 | `data/comms.json` | conductor, admin/build/schedule.py export-notes on its wakes | the Commit-FS-lite notes (To-, To-all trailers) in the last 600 commits on dev | [team/comms/index.html](../team/comms/index.html) |
@@ -143,4 +144,4 @@ The classification is [data/layers.json](../data/layers.json); the gate fails a 
 
 
 ---
-site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.19.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

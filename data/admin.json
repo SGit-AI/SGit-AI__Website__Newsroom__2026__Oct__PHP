@@ -2261,6 +2261,20 @@
    "status": "open",
    "owner": "editor",
    "note": "From the article of 25 October. Step 1 (persona paths as real files, canonical to the base, Share minting them) is the one that delivers 'a link that includes the persona name' and can ship on its own."
+  },
+  {
+   "id": "307",
+   "title": "Ten scheduled tasks still carry their long prompts, which only their own sessions can change: paste the card's prompt (shown on /team/schedule/, What the account runs) into the sessions of the Sherpa, the desk, the librarian, the conductor (scheduled), pulse, the researcher (two tasks), the curator (two tasks) and the fact-check desk. The researcher's two still run the retired schedule vault's steps.",
+   "status": "waiting",
+   "owner": "editor",
+   "note": "Checked on 25 October: the other five (correspondent, journalist, ontologist) were updated from the conductor's session; two stale one-shot tasks from 22 October were deleted."
+  },
+  {
+   "id": "308",
+   "title": "to_markdown (admin/build/build.py): the <p> pattern also matches <pre ...> (\"<p\" + \"re class=...\"), so a <pre> followed later by a </p> is swallowed in the page's markdown twin. Match <p> only as <p> or <p followed by a space.",
+   "status": "open",
+   "owner": "dev@php.newsroom",
+   "note": "Found by the conductor on /team/schedule/wiring/ (25 October), which now avoids <pre>; other pages with <pre class=...> may have broken twins."
   }
  ],
  "evidence_vault": {

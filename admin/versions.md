@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.19.1. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.19.2. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.19.2 · 2026-10-25
+
+Scheduled tasks on the site: /team/schedule/ shows what the account actually runs, each task checked against its card (times, session, prompt), and /team/schedule/wiring/ gives each agent the steps to wire its own tasks; two stale one-shot tasks deleted and five prompts set to their cards
+Pages changed (16): Wiring every scheduled task to its card new · Schedule: every agent that runs on its own · Dinis Cruz, Editor: the team · Schedule: conductor · dev@php.newsroom, build, gate and release: the team · Evidence, derived, authored: what each file is · The fact pipeline: from a web page to a reader · The team: the people, the agents and how they work together and 8 more
+[Every member: who owns what](../admin/agents/roles/index.html) · [What changed in the risk graph, release by release](../grc/changes/index.html) · [The board](../admin/board/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `8c16a64a7cf6`.
 
 ### v0.19.1 · 2026-10-25
 
@@ -1237,4 +1245,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.19.1 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.19.2 · data as of 2026-10-24T16:05Z · vault commit 8c16a64a7cf6 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
