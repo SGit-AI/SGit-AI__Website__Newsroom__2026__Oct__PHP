@@ -5,4 +5,4 @@
 A view of [The agencies](https://php.oct.2026.newsroom.sgit.ai/agencies/index.html), written for a Researcher. The page itself, and its markdown twin, are at that address.
 
 ---
-site v0.22.9 · https://php.oct.2026.newsroom.sgit.ai/agencies/as/researcher/index.html
+site v0.22.10 · https://php.oct.2026.newsroom.sgit.ai/agencies/as/researcher/index.html

@@ -16,4 +16,4 @@ Only in this browser: what you read is under `p2s.reader.v1`, your decisions and
 
 
 ---
-site v0.22.9 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/you/index.html
+site v0.22.10 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/you/index.html

@@ -344,6 +344,8 @@ admin/briefs/2026-10-25__brief__the-404-router-and-two-modes/index.html
 admin/briefs/2026-10-25__brief__the-404-router-and-two-modes/index.md
 admin/briefs/2026-10-25__brief__the-line/index.html
 admin/briefs/2026-10-25__brief__the-line/index.md
+admin/briefs/2026-10-25__brief__the-split-for-every-agent/index.html
+admin/briefs/2026-10-25__brief__the-split-for-every-agent/index.md
 admin/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site/index.html
 admin/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site/index.md
 admin/briefs/2026-10-25__brief__wikipedia-as-an-anchor/index.html

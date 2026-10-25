@@ -119,8 +119,8 @@ Every format is labelled on the page with who asked, who answered and whether an
 
 This brief is the file `admin/content/briefs/2026-10-25__brief__interviews-and-outreach.md` in the repository, published as written.
 
-← older: Report: one source for every file
+← older: Report: one source for every filenewer: → Brief: the split, for every agent
 
 
 ---
-site v0.22.9 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__interviews-and-outreach/index.html
+site v0.22.10 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__interviews-and-outreach/index.html

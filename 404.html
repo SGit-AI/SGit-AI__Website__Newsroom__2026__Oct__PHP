@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en" data-path="404.html" data-ver="0.22.9" data-line-readers="everyone:general,site-owner:general,board:exec,pm:exec,cfo:exec,dpo:exec,cto:exec,ciso:security,security:security,appsec:security,engineer:engineer,developer:engineer,journalist:journalist,comms:journalist,researcher:researcher,analyst:researcher" data-line-depth-exec="plain" data-line-depth-general="plain" data-line-depth-security="technical" data-line-depth-engineer="deep" data-line-depth-journalist="technical" data-line-depth-researcher="deep" data-line-depth-everything="technical">
+<html lang="en" data-path="404.html" data-ver="0.22.10" data-line-readers="everyone:general,site-owner:general,board:exec,pm:exec,cfo:exec,dpo:exec,cto:exec,ciso:security,security:security,appsec:security,engineer:engineer,developer:engineer,journalist:journalist,comms:journalist,researcher:researcher,analyst:researcher" data-line-depth-exec="plain" data-line-depth-general="plain" data-line-depth-security="technical" data-line-depth-engineer="deep" data-line-depth-journalist="technical" data-line-depth-researcher="deep" data-line-depth-everything="technical">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-6u6i9BhG5xqcAP7yf7h9t1aiFiONh5Wlu4o/g8US0mM='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://github.com https://*.githubusercontent.com; font-src 'self' data:; connect-src 'self' https://dev.send.sgraph.ai https://openrouter.ai https://ipapi.co https://ipwho.is https://api.github.com; frame-src https://dev.vault.sgraph.ai; worker-src 'self' blob:; manifest-src 'self'; media-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-tFp74pq3mcCi4YJT2XSMZ3+a+yr7/9YoYthqWqWTsUc='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://github.com https://*.githubusercontent.com; font-src 'self' data:; connect-src 'self' https://dev.send.sgraph.ai https://openrouter.ai https://ipapi.co https://ipwho.is https://api.github.com; frame-src https://dev.vault.sgraph.ai; worker-src 'self' blob:; manifest-src 'self'; media-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PHP October 2026: this page, written for you</title>
 <meta name="description" content="The PHP security flaws of October 2026, as evidence: the page you opened, written for the reader you are.">
@@ -33,6 +33,7 @@ main{max-width:44rem;margin:0 auto;padding:3rem 1.2rem}h1{font-family:Georgia,se
    the site does not keep each release's pages to show, so a dated address opens today's page. */
 (function () {
   'use strict';
+  if (window.P2S_LEAVING) return;                        // route.js is sending this address to the site that owns it
   var RESERVED = { as: 1, on: 1, vs: 1, since: 1 }, DEPTHS = { plain: 1, technical: 1, deep: 1 };
   var ROLE_WORDS = { executive: 'exec', exec: 'exec', general: 'general', security: 'security', engineer: 'engineer',
     journalist: 'journalist', researcher: 'researcher', everything: 'everything' };

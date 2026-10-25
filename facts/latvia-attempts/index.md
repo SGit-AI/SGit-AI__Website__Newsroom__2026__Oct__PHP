@@ -53,4 +53,4 @@ Sources: certlv-php-preventive
 
 
 ---
-site v0.22.9 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/latvia-attempts/index.html
+site v0.22.10 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/facts/latvia-attempts/index.html
