@@ -1,6 +1,15 @@
 {
- "current": "0.22.6",
+ "current": "0.22.7",
  "versions": [
+  {
+   "version": "0.22.7",
+   "date": "2026-10-25",
+   "title": "the four reports on the split link each other, the proposal and the plan",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.22.6",
    "date": "2026-10-25",

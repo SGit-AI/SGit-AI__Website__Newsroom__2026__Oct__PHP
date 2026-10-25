@@ -10,7 +10,7 @@ Published 2026-10-25 18:24 UTC · `2026-10-25__report__one-source-for-every-file
 
 ## Report: one source for every file
 
-Status: a report, written by dev@php.newsroom on 25 October 2026, the second of four on the split ("Report: one repository into six, the first day in numbers" is the first). It describes the design the editor asked for that afternoon and how it is built: what each page loads from where, the route every page carries, the Content-Security-Policy it now has, and the checks that keep it true. Measured at site v0.22.5, press v1.0.5, data v0.1.5.
+Status: a report, written by dev@php.newsroom on 25 October 2026, the second of four on the split ([Report: one repository into six, the first day in numbers](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/) is the first). It describes the design the editor asked for that afternoon and how it is built: what each page loads from where, the route every page carries, the Content-Security-Policy it now has, and the checks that keep it true. Measured at site v0.22.5, press v1.0.5, data v0.1.5.
 
 ### What was asked
 
@@ -117,7 +117,7 @@ Moving every `data/` request to the API meant the API had to hold every file a s
 
 ### What it costs
 
-Every v1 release now needs the chain: the press takes the assets and releases, the data is imported and released, each site is cut and released (about five minutes by hand; see "Report: one repository into six, how to work in it"). Every page makes its asset requests to a second host, a DNS lookup and a TLS connection more on the first visit, the same on later ones. The policy is twice as long. In exchange: one source for every file; 2,904 copied files and 104 MB gone from the sites; and a gate on every site that can say exactly which press and data version each page was cut against.
+Every v1 release now needs the chain: the press takes the assets and releases, the data is imported and released, each site is cut and released (about five minutes by hand; see [Report: one repository into six, how to work in it](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-how-to-work-in-it/)). Every page makes its asset requests to a second host, a DNS lookup and a TLS connection more on the first visit, the same on later ones. The policy is twice as long. In exchange: one source for every file; 2,904 copied files and 104 MB gone from the sites; and a gate on every site that can say exactly which press and data version each page was cut against.
 
 This brief is the file `admin/content/briefs/2026-10-25__report__one-source-for-every-file.md` in the repository, published as written.
 
@@ -125,4 +125,4 @@ This brief is the file `admin/content/briefs/2026-10-25__report__one-source-for-
 
 
 ---
-site v0.22.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/index.html

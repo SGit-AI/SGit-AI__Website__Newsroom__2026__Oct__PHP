@@ -95,7 +95,7 @@ Why not build in a "php-v2" repository and rename it to the main name later:
 
 - **The main site is staged at `site.php.oct.2026.newsroom.sgit.ai`,** the name its DNS record has.
 
-- **The reports, 25 October:** four on the briefs page, with the numbers, the design, the challenges and the runbook: "Report: one repository into six, the first day in numbers", "Report: one source for every file", "Report: one repository into six, the challenges" and "Report: one repository into six, how to work in it".
+- **The reports, 25 October:** four on the briefs page, with the numbers, the design, the challenges and the runbook: [Report: one repository into six, the first day in numbers](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/), [Report: one source for every file](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/), [Report: one repository into six, the challenges](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-challenges/) and [Report: one repository into six, how to work in it](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-how-to-work-in-it/).
 
 - **Pass two:**
 
@@ -229,4 +229,4 @@ This brief is the file `admin/content/briefs/2026-10-25__plan__one-repository-in
 
 
 ---
-site v0.22.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/index.html

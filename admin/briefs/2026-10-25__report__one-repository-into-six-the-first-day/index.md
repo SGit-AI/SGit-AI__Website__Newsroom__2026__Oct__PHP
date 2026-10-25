@@ -10,11 +10,11 @@ Published 2026-10-25 18:24 UTC · `2026-10-25__report__one-repository-into-six-t
 
 ## Report: one repository into six, the first day in numbers
 
-Status: a report, written by dev@php.newsroom at the editor's request on 25 October 2026 ("write a detailed article … as much details as you can, as much statistics as you can … and even some of the challenges"). It is the first of four: this one is the day and its numbers; "Report: one source for every file" is the design; "Report: one repository into six, the challenges" is what went wrong and what it taught; "Report: one repository into six, how to work in it" is the runbook. Measured at site v0.22.5 (v1 commit `30dd7ddd6052`), press v1.0.5 and data v0.1.5, between 18:00 and 18:20 UTC.
+Status: a report, written by dev@php.newsroom at the editor's request on 25 October 2026 ("write a detailed article … as much details as you can, as much statistics as you can … and even some of the challenges"). It is the first of four: this one is the day and its numbers; [Report: one source for every file](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/) is the design; [Report: one repository into six, the challenges](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-challenges/) is what went wrong and what it taught; [Report: one repository into six, how to work in it](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-how-to-work-in-it/) is the runbook. Measured at site v0.22.5 (v1 commit `30dd7ddd6052`), press v1.0.5 and data v0.1.5, between 18:00 and 18:20 UTC.
 
 The site that tracks the two PHP flaws of October 2026 was one repository until 15:31 UTC on 25 October. By 18:12 UTC it was seven: the original (v1, still where every page is built and every agent writes) and six new ones that serve it in parts, each with its own gate, release and address. Every page v1 builds has exactly one owner among the new sites. Every old address answers on every site. No site holds a copy of a file another one serves. None of the six is live yet, for one reason only: GitHub Pages has not been told to deploy them (board row 328, the editor's).
 
-The proposal (why split, and how) and the plan (who does what, in which order) were written before the work: https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/ and https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/. This report is what happened.
+The proposal (why split, and how) and the plan (who does what, in which order) were written before the work: [the proposal](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/) and [the plan](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__plan__one-repository-into-six-implementation/). This report is what happened.
 
 ![The four sites, the press and the data API, and where one page's requests go](../../../assets/briefs/split-request-flow.png)
 
@@ -156,7 +156,7 @@ The point of the split is in that table. A change to the references is checked i
 
 ### What one source for every file saved
 
-The first cut (press v1.0.0) gave every site its own copy of the assets and the data, because the pages' policy allowed scripts and requests only from their own host. Each site carried 726 copied files, 25.95 MB: 2,904 files and 104 MB across the four, every one a second (or fifth) source for a file that already existed. The editor ruled it out the same afternoon ("we don't want to have engineering issues, and ironically security issues, by having multiple sources for the same files"), and the policy changed instead. At v1.0.3 the copies were gone: each site keeps only its pages, its redirects, `VERSION`, the 404 router and `.well-known/`. How, and what the policy says now, is "Report: one source for every file".
+The first cut (press v1.0.0) gave every site its own copy of the assets and the data, because the pages' policy allowed scripts and requests only from their own host. Each site carried 726 copied files, 25.95 MB: 2,904 files and 104 MB across the four, every one a second (or fifth) source for a file that already existed. The editor ruled it out the same afternoon ("we don't want to have engineering issues, and ironically security issues, by having multiple sources for the same files"), and the policy changed instead. At v1.0.3 the copies were gone: each site keeps only its pages, its redirects, `VERSION`, the 404 router and `.well-known/`. How, and what the policy says now, is [Report: one source for every file](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/).
 
 ### The browser test
 
@@ -170,7 +170,7 @@ Separately, every executable inline script on the four sites (198) was hashed an
 
 - **Deploy.** Each of the six repositories needs its Pages source set to "Deploy from a branch: dev, / (root)" (board row 328). The press and the data API first: every page of the other four loads its scripts from the press.
 
-- **Pass two.** Each site's sources (its pages' content and the build code that writes them) move into its repository and the build library into the press, so v1 stops being where every page is built. Until then every v1 release is followed by the chain: the press takes the assets, the data is imported, the four sites are cut ("Report: one repository into six, how to work in it").
+- **Pass two.** Each site's sources (its pages' content and the build code that writes them) move into its repository and the build library into the press, so v1 stops being where every page is built. Until then every v1 release is followed by the chain: the press takes the assets, the data is imported, the four sites are cut ([Report: one repository into six, how to work in it](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-how-to-work-in-it/)).
 
 - **The cutover.** The agents' cards and `WAKE.md` name their repositories; php.oct.2026.newsroom.sgit.ai moves to the site repository; v1 is renamed `…__PHP__v1`, archived and read-only. The editor's go.
 
@@ -180,4 +180,4 @@ This brief is the file `admin/content/briefs/2026-10-25__report__one-repository-
 
 
 ---
-site v0.22.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/index.html

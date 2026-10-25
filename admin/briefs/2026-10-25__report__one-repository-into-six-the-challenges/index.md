@@ -10,7 +10,7 @@ Published 2026-10-25 18:24 UTC · `2026-10-25__report__one-repository-into-six-t
 
 ## Report: one repository into six, the challenges
 
-Status: a report, written by dev@php.newsroom on 25 October 2026, the third of four on the split. "Report: one repository into six, the first day in numbers" is what was done; "Report: one source for every file" is the design. This one is what went wrong, what nearly did, what the checks caught, and what it taught. Every item says what happened, why, the fix and where it is recorded. Nothing here is hidden elsewhere: the mistakes are mine unless said otherwise.
+Status: a report, written by dev@php.newsroom on 25 October 2026, the third of four on the split. [Report: one repository into six, the first day in numbers](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/) is what was done; [Report: one source for every file](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/) is the design. This one is what went wrong, what nearly did, what the checks caught, and what it taught. Every item says what happened, why, the fix and where it is recorded. Nothing here is hidden elsewhere: the mistakes are mine unless said otherwise.
 
 ### In short
 
@@ -26,7 +26,7 @@ Status: a report, written by dev@php.newsroom on 25 October 2026, the third of f
 
 ### Decisions that changed under way
 
-**1. The shared files: copied, then served once.** The first cut (press v1.0.0) gave each site its own copy of v1's assets and data, 726 files and 25.95 MB each. I treated the pages' Content-Security-Policy, which allowed scripts and requests only from the page's own host, as a fixed constraint and designed around it. The editor treated it as configuration we own: "we can change and maintain those CSP … we don't want to have engineering issues (and ironically security issues) by having multiple sources for the same files." He was right, and the lesson is general: a security control that forces duplication is costing security somewhere else, so change the control (carefully, by exact host) rather than multiply the thing it protects. The redesign took under an hour: the instruction came after v0.22.1 (17:10 UTC), and the first cut without copies was pushed at 18:01. It is "Report: one source for every file".
+**1. The shared files: copied, then served once.** The first cut (press v1.0.0) gave each site its own copy of v1's assets and data, 726 files and 25.95 MB each. I treated the pages' Content-Security-Policy, which allowed scripts and requests only from the page's own host, as a fixed constraint and designed around it. The editor treated it as configuration we own: "we can change and maintain those CSP … we don't want to have engineering issues (and ironically security issues) by having multiple sources for the same files." He was right, and the lesson is general: a security control that forces duplication is costing security somewhere else, so change the control (carefully, by exact host) rather than multiply the thing it protects. The redesign took under an hour: the instruction came after v0.22.1 (17:10 UTC), and the first cut without copies was pushed at 18:01. It is [Report: one source for every file](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/).
 
 **2. Versions: every release adds one to the last number.** I had given the press and the data API semantic versions (a moved section, or a widened schema, as a minor release). The editor: "apart from the first commit where you can put the release version, either v1.0.0 or v0.1.0, every next commit is a minor one. So it's v1.0.1 .2 .3 .4 or v0.1.1 .2 .3 .4." Both release scripts now take no part argument and always add one to the last number; the press's and the data's `CLAUDE.md`, and the docstring of `tools/schema.py`, say so. The data release script is one of the files that goes to security for review; that change was flagged.
 
@@ -110,4 +110,4 @@ This brief is the file `admin/content/briefs/2026-10-25__report__one-repository-
 
 
 ---
-site v0.22.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-challenges/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-challenges/index.html

@@ -1,6 +1,6 @@
 # Report: one repository into six, how to work in it
 
-Status: a report, written by dev@php.newsroom on 25 October 2026, the fourth of four on the split: the runbook, for every agent and for the editor, until pass two. "Report: one repository into six, the first day in numbers" says what exists; "Report: one source for every file" says why it is built this way; "Report: one repository into six, the challenges" says what went wrong. Commands are as they run today, from a session that has all seven repositories cloned side by side (`/home/user/<name>`); `…` below is `sgit-ai__website__newsroom__2026__oct__php`.
+Status: a report, written by dev@php.newsroom on 25 October 2026, the fourth of four on the split: the runbook, for every agent and for the editor, until pass two. [Report: one repository into six, the first day in numbers](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/) says what exists; [Report: one source for every file](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-source-for-every-file/) says why it is built this way; [Report: one repository into six, the challenges](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__report__one-repository-into-six-the-challenges/) says what went wrong. Commands are as they run today, from a session that has all seven repositories cloned side by side (`/home/user/<name>`); `…` below is `sgit-ai__website__newsroom__2026__oct__php`.
 
 ## Where you write, until the cutover
 

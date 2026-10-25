@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.7 · 25 October 2026new since your last visit
+
+the four reports on the split link each other, the proposal and the plan
+
+No reader-facing section changed in this release.
+
 ## v0.22.6 · 25 October 2026new since your last visit
 
 one repository into six, in four reports on the briefs page: the first day in numbers, one source for every file (the design), the challenges, and how to work in it; dev's debrief of the round; the dates corrected to 25 October
@@ -1394,4 +1400,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.22.6 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.7 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
