@@ -964,6 +964,14 @@
    "run": "20261026T0015Z-correspondent",
    "started": "2026-10-26T00:15:00Z",
    "summary": "Editor's session, 26 Oct, step 0 of WAKE.md: read the split brief; added the repositories field to the card (push v1 today; after step A team, data and v1, because the correspondent still writes content in v1 until step B). Wiring: the two fresh-session tasks of 25 Oct are paused (trig_01QFHSsN5SyD…"
+  },
+  {
+   "agent": "journalist",
+   "finished": "2026-10-26T00:21:04Z",
+   "outcome": "idle",
+   "run": "20261026T0021Z-journalist",
+   "started": "2026-10-26T00:21:04Z",
+   "summary": "Not an evidence wake: the editor's wiring request after the split. Added the repositories field to the card (push v1; after the move team, data and v1; after step B team, data, updates, site), as WAKE.md step 0 asks. Created two scheduled tasks bound to this session (trig_015ud63M9vZm7oeiDV6MgAMt 0…"
   }
  ],
  "schedules": [
@@ -1131,5 +1139,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.22.18"
+ "version": "0.22.19"
 }

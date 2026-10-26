@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.19 · 26 October 2026new since your last visit
+
+Journalist: card gets the repositories field and the tasks bound to this session
+
+No reader-facing section changed in this release.
+
 ## v0.22.18 · 26 October 2026new since your last visit
 
 The correspondent's card (the schedules page): the repositories field from the split brief, and its wakes now fire into its own session
@@ -1466,4 +1472,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.22.18 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.19 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

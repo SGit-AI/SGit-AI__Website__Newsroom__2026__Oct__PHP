@@ -5,4 +5,4 @@
 A view of [The front page](https://php.oct.2026.newsroom.sgit.ai/index.html), written for a Journalist. The page itself, and its markdown twin, are at that address.
 
 ---
-site v0.22.18 · https://php.oct.2026.newsroom.sgit.ai/as/journalist/index.html
+site v0.22.19 · https://php.oct.2026.newsroom.sgit.ai/as/journalist/index.html

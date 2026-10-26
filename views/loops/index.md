@@ -91,7 +91,7 @@ Minutes from the source-watch queue the curator names to the curated head, to th
 |---|---|---|---|---|---|---|
 | Researcher | active | the session's model | 07:00, 09:30, 12:00, 14:30, 17:00 | 0 | – | 25 Oct 07:00 UTC, 25 Oct 09:30 UTC, 25 Oct 12:00 UTC |
 | Curator | active | the session's model | 08:00, 10:30, 13:00, 15:30, 18:00 | 1 | 25 Oct 13:02 UTC, ok | 25 Oct 08:00 UTC, 25 Oct 10:30 UTC, 25 Oct 13:00 UTC |
-| Journalist | active | Sonnet | 08:40, 11:10, 13:40, 16:10, 18:40 | 2 | 25 Oct 11:34 UTC, ok | 25 Oct 08:40 UTC, 25 Oct 11:10 UTC, 25 Oct 13:40 UTC |
+| Journalist | active | Sonnet | 08:40, 11:10, 13:40, 16:10, 18:40 | 3 | 26 Oct 00:21 UTC, idle | 25 Oct 08:40 UTC, 25 Oct 11:10 UTC, 25 Oct 13:40 UTC |
 | Correspondent | active | Opus | 09:25, 11:55, 14:25, 16:55, 19:25 | 2 | 26 Oct 00:15 UTC, ok | 25 Oct 09:25 UTC, 25 Oct 11:55 UTC, 25 Oct 14:25 UTC |
 
 ## What this record cannot see
@@ -108,7 +108,7 @@ Minutes from the source-watch queue the curator names to the curated head, to th
 Sources the site served, release by release.
 
 ### Review
-208claims in the evidence vault152verdicts: 49 agrees, 34 held back, 48 noted, 21 used9corrections by the correspondent (catches)5run records of the four roles
+208claims in the evidence vault152verdicts: 49 agrees, 34 held back, 48 noted, 21 used9corrections by the correspondent (catches)6run records of the four roles
 ### The site and its repository
 150releases to dev303commits on dev954HTML pages872markdown twins93 MBin 3082 tracked files17.9 MBof data, 510 JSON files7680lines in build.py
 
@@ -116,4 +116,4 @@ Built from [data/loops.json](../../data/loops.json) (exported 25 Oct 01:14 UTC b
 
 
 ---
-site v0.22.18 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/views/loops/index.html
+site v0.22.19 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/views/loops/index.html

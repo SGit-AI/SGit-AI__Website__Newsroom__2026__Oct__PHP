@@ -1,6 +1,15 @@
 {
- "current": "0.22.18",
+ "current": "0.22.19",
  "versions": [
+  {
+   "version": "0.22.19",
+   "date": "2026-10-26",
+   "title": "Journalist: card gets the repositories field and the tasks bound to this session",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.22.18",
    "date": "2026-10-26",
