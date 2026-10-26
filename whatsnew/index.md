@@ -12,6 +12,12 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.16 · 26 October 2026new since your last visit
+
+the first-day report: expectations for the run and the review, measured (v1's CI median 88 s and 1,809 files a release; the six 25 to 42 s; what the agents do all day and what each kind costs today and after the flip)
+
+No reader-facing section changed in this release.
+
 ## v0.22.15 · 25 October 2026new since your last visit
 
 The restart after the split: WAKE.md step 0 for every scheduled agent (read the split brief on the team site, start no new work in v1, add the repositories field); the conductor's repositories
@@ -1448,4 +1454,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.16 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
