@@ -6,7 +6,7 @@
 
 # Brief: the redesign, who you are and how much you see
 
-2026-10-23 · `2026-10-23__brief__the-redesign.md` · [all briefs](../index.html)
+Published 2026-10-23 13:43 UTC · `2026-10-23__brief__the-redesign.md` · [all briefs](../index.html)
 
 ## Brief: the redesign, who you are and how much you see
 
@@ -58,8 +58,8 @@ The rollout is on the board, items 137 to 142.
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-redesign.md` in the repository, published as written.
 
-← older: Brief: the two vaults, the site's update, and the journalinewer: → Brief: the risk graph as a tool (to dev, from a collaborat
+← older: Brief: three views, over time; the C-level executive firstnewer: → Brief: the scheduled curator, a Sonnet session that keeps
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-redesign/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-redesign/index.html

@@ -19,12 +19,14 @@
 // Nothing here is sent anywhere except to the vault server (ciphertext) and to OpenRouter (the conversation).
 
 const html = document.documentElement
-const ROOT = new URL(html.getAttribute('data-root') || './', location.href).href
+const ROOT = new URL(html.getAttribute('data-root') || './', window.P2S_BASE || location.href).href   // the real page, not the view in the address bar
 const KEY_S = 'p2s.now.vault'
 const OR = 'https://openrouter.ai/api/v1/chat/completions'
+// a script's own files through the page's resolver (boot.js): from the press on the split sites, from here on this site
+const AT = u => (window.P2S_URL ? window.P2S_URL(u) : u)
 const LIB = ['sg-send/sg-send-crypto.js', 'sg-send/sg-send.js', 'sg-vault/sg-vault-crypto.js', 'sg-vault/sg-vault-object-store.js', 'sg-vault/sg-vault-ref-manager.js',
   'sg-vault/sg-vault-commit.js', 'sg-vault/sg-vault.js', 'sg-vault/sg-vault--file-ops.js', 'sg-vault/sg-vault--folder-ops.js', 'sg-vault/sg-vault--sync.js',
-  'sg-vault/sg-vault--history.js', 'sg-vault/sg-vault--branches.js'].map(f => `${ROOT}assets/vendor/sg-vault/v0.2.3/${f}`).concat([`${ROOT}assets/vendor/sg-vault/local/sg-vault--create-with-id.js`])
+  'sg-vault/sg-vault--history.js', 'sg-vault/sg-vault--branches.js'].map(f => AT(`${ROOT}assets/vendor/sg-vault/v0.2.3/${f}`)).concat([AT(`${ROOT}assets/vendor/sg-vault/local/sg-vault--create-with-id.js`)])
 const ENDPOINT = 'https://dev.send.sgraph.ai', FOLDER = '/php-october'
 const DEFAULT_MODEL = 'anthropic/claude-sonnet-5.5'
 const MAX_STEPS = 8
@@ -88,7 +90,7 @@ let libP = null
 function loadLib() {
   return libP || (libP = (async () => {
     for (const src of LIB) await new Promise((ok, no) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => no(new Error('could not load ' + src)); document.head.append(s) })
-    return import(ROOT + 'assets/vault/newsroom-vault.js')
+    return import(AT(ROOT + 'assets/vault/newsroom-vault.js'))
   })())
 }
 async function openVault(key, remember) {
@@ -290,7 +292,7 @@ function close() { html.classList.remove('ask-on') }
 // assets/feedback/pane.js, loaded when the tab is first drawn. The brief: 2026-10-22__brief__feedback-keys-and-review.md.
 export function openFeedback() { tab = 'feedback'; open() }
 function drawFeedback(body) {
-  import(ROOT + 'assets/feedback/pane.js').then(m => m.draw(body, { h, root: ROOT })).catch(e => body.append(h('p', { class: 'sub-err' }, 'The feedback form could not load: ' + e.message)))
+  import(AT(ROOT + 'assets/feedback/pane.js')).then(m => m.draw(body, { h, root: ROOT })).catch(e => body.append(h('p', { class: 'sub-err' }, 'The feedback form could not load: ' + e.message)))
 }
 const LOG = h('div', { class: 'ask-log', 'aria-live': 'polite' })
 function draw(keepLog) {

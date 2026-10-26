@@ -162,7 +162,7 @@ class SgMeter extends SgComponent {
             this._set(h('div', { class: 'rc' }, head, h('p', {}, h('b', {}, 'Not charged. '), `You said: ${why}. Kept in your history, in this browser only.`)))
             return
         }
-        const slug = slugOf(location.pathname)
+        const slug = slugOf(window.P2S_REAL_PATH || location.pathname)   // the real page, not a view path (php.oct.2026, 26 Oct)
         const listed = meter.curation(slug) === 'on'
         const r = e.rating || {}
         const mult = r.useful ? meter.cfg.rating.price[r.useful - 1] : 1

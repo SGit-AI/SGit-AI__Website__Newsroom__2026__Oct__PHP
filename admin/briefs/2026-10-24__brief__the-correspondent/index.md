@@ -6,7 +6,7 @@ You are correspondent@php.newsroom, step 4 of the pipeline for php.oct.2026.news
 
 # Brief: the correspondent (Opus), on a schedule
 
-2026-10-24 · `2026-10-24__brief__the-correspondent.md` · [all briefs](../index.html)
+Published 2026-10-24 21:57 UTC · `2026-10-24__brief__the-correspondent.md` · [all briefs](../index.html)
 
 ## Brief: the correspondent (Opus), on a schedule
 
@@ -72,8 +72,8 @@ Everything the journalist shipped since the last run has been read against its c
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-correspondent.md` in the repository, published as written.
 
-← older: Schedules in the repository: each agent's card, every run,newer: → Brief: the news desk chief on a schedule, and the health o
+← older: Brief: the journalist (Sonnet), from its first sessionnewer: → Brief: Wikipedia as an anchor, read as a fractal semantic
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-correspondent/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-correspondent/index.html

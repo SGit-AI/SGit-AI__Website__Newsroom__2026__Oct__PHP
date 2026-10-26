@@ -2,9 +2,13 @@
  "schema": "newsroom/agent-status/v1",
  "agent": "story-site",
  "as_of": "2026-10-25",
- "round": 3,
- "state": "round 3 closed: the editor's design of 25 October built as prototype F, the line",
+ "round": 4,
+ "state": "round 4 closed: the line and the router live on every page",
  "done": [
+  {
+   "what": "The line on every page in place of the dials; the router, the view in the address bar and 28 cards",
+   "evidence": "v0.22.0; board 324; debrief 2026-10-25__the-line-and-the-router-live.md"
+  },
   {
    "what": "The briefs page as a list of titles with a page per brief, and the admin pages using the whole width",
    "evidence": "v0.20.0; boards 309 and 310"
@@ -32,26 +36,24 @@
  ],
  "tasks": {
   "board": [
-   "297 (editor: the line live)",
-   "298 (editor: the five decisions)",
-   "306 (editor: the URL shape and the router)",
+   "327",
+   "325 (security)",
+   "326 (dev)",
+   "314",
    "299",
    "230",
-   "231",
-   "223",
-   "226",
-   "227"
+   "231"
   ],
   "note": "the board rows this member owns are in data/admin.json"
  },
  "next": [
   {
-   "what": "Step 1 of the article: persona paths as real files for the pages that read differently, canonical to the base, with Share minting them",
-   "why": "it is what gives a link that names its persona, and it ships on its own; waiting on board 306"
+   "what": "The reading path back into the line, and page lines for more pages",
+   "why": "the older bar is hidden where the line runs"
   },
   {
-   "what": "Step 1 of the line's rollout on the live pages",
-   "why": "waiting on board 297"
+   "what": "The decks, on the same addresses",
+   "why": "board 314, once the editor answers its decisions"
   }
  ],
  "asks": [
@@ -72,9 +74,9 @@
   "version": "2026-10-22",
   "out_of_scope_requests": 0,
   "pushbacks": 0,
-  "overrides": 1,
-  "writes_outside_scope": "admin/briefs/** and build.py's briefs block: the editor asked for it directly in this session; admin/briefs/** is his own page in admin/content/agents/editor/policy.json",
+  "overrides": 2,
+  "writes_outside_scope": "dev's ask.js, site-tools.js, telemetry.js, sg-meter.js and sg-meter-core.js, layout() in build.py and /404.html: the editor's explicit go in this session, 25 October",
   "injection_seen": 0
  },
- "debrief": "admin/content/agents/story-site/debriefs/2026-10-25__the-line.md"
+ "debrief": "admin/content/agents/story-site/debriefs/2026-10-25__the-line-and-the-router-live.md"
 }

@@ -6,7 +6,7 @@
 
 # Commit-FS-lite: agents talk to each other in the commits they already write
 
-2026-10-24 · `2026-10-24__brief__commit-fs-lite.md` · [all briefs](../index.html)
+Published 2026-10-24 11:27 UTC · `2026-10-24__brief__commit-fs-lite.md` · [all briefs](../index.html)
 
 ## Commit-FS-lite: agents talk to each other in the commits they already write
 
@@ -44,8 +44,8 @@ Status: built by conductor@php.newsroom on 24 October 2026. Brief by Dinis Cruz 
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__commit-fs-lite.md` in the repository, published as written.
 
-← older: Brief: asking other publications for correctionsnewer: → Brief: the fact-check desk's investigations, and the first
+← older: Brief: the graph reviewed by people, and a first step for newer: → Brief: the scheduled journalist (Sonnet) and the chief cor
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__commit-fs-lite/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__commit-fs-lite/index.html

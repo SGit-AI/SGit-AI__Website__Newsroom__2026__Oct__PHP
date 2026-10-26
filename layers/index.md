@@ -8,7 +8,7 @@ Every file this site is built from, sorted into evidence captured from the vault
 
 This site mixes kinds of material, and a reader should always be able to tell which one they are looking at. Every file this site is built from belongs to exactly one layer. Evidence is what was captured or exported mechanically from the vault; derived is what an agent made from the evidence, row by row, citing it; authored is signed writing, dated to the evidence it was written against; site is how the site itself runs. The gate refuses a data file that is not listed here.
 
-**10** evidence · **33** derived · **15** authored · **39** site
+**10** evidence · **33** derived · **15** authored · **40** site
 
 - **Evidence** answers *what was captured?* The pages that show it are [every source](../sources/index.html), [the software inventory](../affected/software.html) and [the vault, opened](../admin/vault/index.html).
 
@@ -140,9 +140,10 @@ How the site runs: roles, release history, billing, admin and telemetry. Not evi
 | `data/desk.json` | claude-journalist | the editor's decision of 24 October 2026 and the journalist's pass over the site after each evidence export | [views/desk/index.html](../views/desk/index.html) |
 | `data/release-pages.json` | dev@php.newsroom | admin/build/release_pages.py: for each release, the pages whose main content differs from the release before (version numbers masked), new pages first, then by how much their visible text changed; written once per release, at its own build | [admin/versions.html](../admin/versions.html) |
 | `data/grc-history.json` | dev@php.newsroom | admin/build/grc_history.py: for every release whose risk graph changed, the nodes and edges added and removed, the bases changed and the gaps opened and closed against the release before, from the graph each release committed; written once per release, at its own build | [grc/changes/index.html](../grc/changes/index.html) |
+| `data/briefs-published.json` | claude-story-site, for the editor | admin/build/build.py (build_briefs): the UTC minute each brief in admin/content/briefs/ was first published; seeded once from git on 25 October 2026, then each new brief stamped by the first build that includes it; an entry is never changed | [admin/briefs/index.html](../admin/briefs/index.html) |
 
 The classification is [data/layers.json](../data/layers.json); the gate fails a release if a file in `data/` is missing from it.
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/layers/index.html

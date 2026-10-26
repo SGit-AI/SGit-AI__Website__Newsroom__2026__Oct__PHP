@@ -6,7 +6,7 @@ The collaborator's reading of the risk graph: "the biggest opportunity is turnin
 
 # Brief: the risk graph as a tool (to dev, from a collaborator's ideas)
 
-2026-10-23 · `2026-10-23__brief__the-risk-graph-as-a-tool.md` · [all briefs](../index.html)
+Published 2026-10-23 18:00 UTC · `2026-10-23__brief__the-risk-graph-as-a-tool.md` · [all briefs](../index.html)
 
 ## Brief: the risk graph as a tool (to dev, from a collaborator's ideas)
 
@@ -38,8 +38,8 @@ Order: 2 before 5 (the gaps page reports edges with no basis); 1 and 4 share one
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__the-risk-graph-as-a-tool.md` in the repository, published as written.
 
-← older: Brief: the redesign, who you are and how much you seenewer: → The schedule vault: what runs, when, what it did, and what
+← older: The schedule vault: what runs, when, what it did, and whatnewer: → Brief: moving a heavy vault to pack mode (sgit 0.24.0), st
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-risk-graph-as-a-tool/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__the-risk-graph-as-a-tool/index.html

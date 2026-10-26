@@ -6,7 +6,7 @@
 
 # php.oct.2026.newsroom.sgit.ai, reviewed against the newsroom's own standard
 
-2026-10-22 · `2026-10-22__from-the-newsroom__review-of-the-site-at-v0.2.2.md` · [all briefs](../index.html)
+Published 2026-10-22 14:59 UTC · `2026-10-22__from-the-newsroom__review-of-the-site-at-v0.2.2.md` · [all briefs](../index.html)
 
 ## php.oct.2026.newsroom.sgit.ai, reviewed against the newsroom's own standard
 
@@ -216,8 +216,8 @@ Reviewed on 22 October 2026 against the live site at v0.2.2 and its repository a
 
 This brief is the file `admin/content/briefs/2026-10-22__from-the-newsroom__review-of-the-site-at-v0.2.2.md` in the repository, published as written.
 
-← older: Feeds, the delta since your last visit, a feed viewer, andnewer: → Handing the editor a vault key: sealed to his key on pki.s
+← older: Handing the editor a vault key: sealed to his key on pki.snewer: → Triage: the newsroom's review of this site, checked agains
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__from-the-newsroom__review-of-the-site-at-v0.2.2/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__from-the-newsroom__review-of-the-site-at-v0.2.2/index.html

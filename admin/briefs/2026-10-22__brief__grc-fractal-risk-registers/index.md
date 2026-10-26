@@ -6,7 +6,7 @@
 
 # Brief: a GRC desk joins the team, and a GRC section
 
-2026-10-22 · `2026-10-22__brief__grc-fractal-risk-registers.md` · [all briefs](../index.html)
+Published 2026-10-22 19:38 UTC · `2026-10-22__brief__grc-fractal-risk-registers.md` · [all briefs](../index.html)
 
 ## Brief: a GRC desk joins the team, and a GRC section
 
@@ -44,8 +44,8 @@
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__grc-fractal-risk-registers.md` in the repository, published as written.
 
-← older: Feedback from any page, signed; onboarding by QR code; a rnewer: → Brief: how many sites went offline, and where
+← older: Brief: a news desk chief joins the teamnewer: → Brief: the cartographer joins, as the newsroom's ontologis
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__grc-fractal-risk-registers/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__grc-fractal-risk-registers/index.html

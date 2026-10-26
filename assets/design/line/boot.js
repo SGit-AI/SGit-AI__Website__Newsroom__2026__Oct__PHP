@@ -6,6 +6,9 @@
    truth and line.js re-derives with it after first paint, so this file can only be early, never wrong. */
 (function () {
   'use strict';
+  /* The real page's address and every URL a script builds are resolved by assets/route.js, loaded just before this
+     file on every page (window.P2S_BASE, window.P2S_URL, the fetch() wrapper). */
+  if (!window.P2S_BASE) { window.P2S_BASE = location.href; window.P2S_REAL_PATH = location.pathname; }
   var h = document.documentElement, T = { gap: 30, hour: 60, days: 7, changes: 20, ask: 2, toast: 6 };
   function read(k, s) { try { var v = (s ? sessionStorage : localStorage).getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
   var rec = read('p2s.lens'), ses = read('p2s.lens.session', true) || {};

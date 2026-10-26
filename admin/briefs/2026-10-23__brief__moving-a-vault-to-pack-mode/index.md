@@ -6,7 +6,7 @@ A normal vault stores every object as its own file on the server, and moves them
 
 # Brief: moving a heavy vault to pack mode (sgit 0.24.0), step by step
 
-2026-10-23 · `2026-10-23__brief__moving-a-vault-to-pack-mode.md` · [all briefs](../index.html)
+Published 2026-10-23 22:24 UTC · `2026-10-23__brief__moving-a-vault-to-pack-mode.md` · [all briefs](../index.html)
 
 ## Brief: moving a heavy vault to pack mode (sgit 0.24.0), step by step
 
@@ -94,8 +94,8 @@ Paste this, with the vault named:
 
  Move the vault  to pack mode, following admin/content/briefs/2026-10-23__brief__moving-a-vault-to-pack-mode.md step by step. The editor has said go. Install sgit-ai 0.24.0 in a virtual environment in your scratchpad; do not upgrade the sgit your other work uses. Take a full clone, check it is in sync and clean. Import into a new folder with the output in a mode-700 file; never print the key. Seal the new key to the root (sha256:db7f79fdd87e030a) and add the new vault to your data/vault-register file before pushing. Push, clone fresh from stdin, and check: 4 requests, diff -rq clean but for empty folders and __pycache__, pack verify ok, same commit count. Report the numbers (import, push and clone seconds; objects; MB before and after). Do not write to the old vault, do not delete it, and do not hand the new key to anyone but the root; the editor does the handshakes. This brief is the file `admin/content/briefs/2026-10-23__brief__moving-a-vault-to-pack-mode.md` in the repository, published as written.
 
-← older: Day two: from what happened to what is happening; and whernewer: → Brief: Perplexity reads the community spaces for the sourc
+← older: Brief: the risk graph as a tool (to dev, from a collaboratnewer: → Brief: the scheduled source watch, a Sonnet session that r
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__moving-a-vault-to-pack-mode/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__moving-a-vault-to-pack-mode/index.html

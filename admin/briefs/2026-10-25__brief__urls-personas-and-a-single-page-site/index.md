@@ -6,7 +6,7 @@ The URL carries what can be shared. The browser carries what is yours.
 
 # Refactoring the site to URL paths and a single page: how a link can carry a persona
 
-2026-10-25 · `2026-10-25__brief__urls-personas-and-a-single-page-site.md` · [all briefs](../index.html)
+Published 2026-10-25 10:36 UTC · `2026-10-25__brief__urls-personas-and-a-single-page-site.md` · [all briefs](../index.html)
 
 ## Refactoring the site to URL paths and a single page: how a link can carry a persona
 
@@ -138,8 +138,8 @@ Each step leaves the site working if the next one never happens.
 
 This brief is the file `admin/content/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site.md` in the repository, published as written.
 
-← older: Brief: the line, and a site that is persona firstnewer: → Brief: Wikipedia as an anchor, read as a fractal semantic
+← older: Brief: the line, and a site that is persona firstnewer: → The 404 router, and a site with two modes: notes on the UR
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__urls-personas-and-a-single-page-site/index.html

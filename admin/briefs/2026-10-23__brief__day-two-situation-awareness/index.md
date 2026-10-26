@@ -6,7 +6,7 @@
 
 # Day two: from what happened to what is happening; and where every agent is
 
-2026-10-23 · `2026-10-23__brief__day-two-situation-awareness.md` · [all briefs](../index.html)
+Published 2026-10-23 09:58 UTC · `2026-10-23__brief__day-two-situation-awareness.md` · [all briefs](../index.html)
 
 ## Day two: from what happened to what is happening; and where every agent is
 
@@ -42,8 +42,8 @@ What it cannot see without asking: work an agent has in its container and has no
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__day-two-situation-awareness.md` in the repository, published as written.
 
-← older: Triage: the newsroom's review of this site, checked againsnewer: → Brief: moving a heavy vault to pack mode (sgit 0.24.0), st
+← older: Brief: the front page on day twonewer: → Brief: Perplexity reads the community spaces for the sourc
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__day-two-situation-awareness/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__day-two-situation-awareness/index.html

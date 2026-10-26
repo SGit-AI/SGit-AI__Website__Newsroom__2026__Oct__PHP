@@ -6,7 +6,7 @@ up by researcher@php.newsroom. A build brief, the kind an agent executes.
 
 # Brief: external collectors (ChatGPT, Perplexity and others) reporting to the source watch over an append lane
 
-2026-10-22 · `2026-10-22__brief__external-collectors.md` · [all briefs](../index.html)
+Published 2026-10-22 22:52 UTC · `2026-10-22__brief__external-collectors.md` · [all briefs](../index.html)
 
 ## Brief: external collectors (ChatGPT, Perplexity and others) reporting to the source watch over an append lane
 
@@ -266,4 +266,4 @@ This brief is the file `admin/content/briefs/2026-10-22__brief__external-collect
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__external-collectors/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__external-collectors/index.html

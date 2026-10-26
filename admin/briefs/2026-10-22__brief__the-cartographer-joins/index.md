@@ -6,7 +6,7 @@ Superseded in part on 24 October 2026: the editor renamed the role the ontologis
 
 # Brief: the cartographer joins, as the newsroom's ontologist
 
-2026-10-22 · `2026-10-22__brief__the-cartographer-joins.md` · [all briefs](../index.html)
+Published 2026-10-22 19:48 UTC · `2026-10-22__brief__the-cartographer-joins.md` · [all briefs](../index.html)
 
 ## Brief: the cartographer joins, as the newsroom's ontologist
 
@@ -76,8 +76,8 @@ What this site takes from them:
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-cartographer-joins.md` in the repository, published as written.
 
-← older: Brief: scheduled capture of the sources that move, raw to newer: → Brief: the conductor takes the updates, and the site gets
+← older: Brief: a GRC desk joins the team, and a GRC sectionnewer: → Collaborators: the people who use the site as it is built
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-cartographer-joins/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-cartographer-joins/index.html

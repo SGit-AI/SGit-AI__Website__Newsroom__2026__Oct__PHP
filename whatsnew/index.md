@@ -12,6 +12,132 @@ Every release of this site, newest first, with what changed in it for readers: f
 
 New evidence (for example the first confirmed compromise of a named organisation) reaches this page only once it has been captured into the evidence vault and turned into a fact with sources. Until then it is not on this site, however widely it is reported.
 
+## v0.22.15 · 25 October 2026new since your last visit
+
+The restart after the split: WAKE.md step 0 for every scheduled agent (read the split brief on the team site, start no new work in v1, add the repositories field); the conductor's repositories
+
+No reader-facing section changed in this release.
+
+## v0.22.14 · 25 October 2026new since your last visit
+
+this repository is closing (the editor, 25 October): the note at the top of README and REALITY, and a board row; every agent reads the brief on the team site, starts no new work here, and after step A only dev's chain commits here
+
+No reader-facing section changed in this release.
+
+## v0.22.13 · 25 October 2026new since your last visit
+
+the six repositories are live (board 328 done): each deploys with v1's workflow and its own gate; checked live in a browser
+
+No reader-facing section changed in this release.
+
+## v0.22.12 · 25 October 2026new since your last visit
+
+the split's review recorded: items 23 to 33 of the challenges report (parity, the twins' links, the 404 page's redirect, immutability against the last commit, the tools' sha256, an independent read's findings), parity in the runbook, dev's debrief and status for the round
+
+No reader-facing section changed in this release.
+
+## v0.22.11 · 25 October 2026new since your last visit
+
+a review of the line and the router on the live site (board 334): the router is done; the line promises a shaped page the live pages do not deliver; three bands about the reader; the change log ends 22 October; eight fixes in order
+
+No reader-facing section changed in this release.
+
+## v0.22.10 · 25 October 2026new since your last visit
+
+the split, for every agent: a brief with where each member writes today, after the records and data move and after the cutover, the repositories its session needs and a card field for them; on a split site the 404 page sends an address another host owns (a twin, a view address, an asset, a data file) to that host, route.js allowing only the route's own hosts
+
+No reader-facing section changed in this release.
+
+## v0.22.9 · 25 October 2026new since your last visit
+
+The Sherpa's brief on interviews and outreach: three waves of people and organisations the site already maps, what each is given first, the topic, four formats, and the rules (board 331 to 334)
+
+No reader-facing section changed in this release.
+
+## v0.22.8 · 25 October 2026new since your last visit
+
+observability drained the telemetry lane on 25 October (150 events, the lane empty) with a new command-line drainer that publishes before it marks; its debrief on the member's page /admin/agents/observability/; board 330 (telemetry from local test servers, for dev)
+
+No reader-facing section changed in this release.
+
+## v0.22.7 · 25 October 2026new since your last visit
+
+the four reports on the split link each other, the proposal and the plan
+
+No reader-facing section changed in this release.
+
+## v0.22.6 · 25 October 2026new since your last visit
+
+one repository into six, in four reports on the briefs page: the first day in numbers, one source for every file (the design), the challenges, and how to work in it; dev's debrief of the round; the dates corrected to 25 October
+
+No reader-facing section changed in this release.
+
+## v0.22.5 · 25 October 2026new since your last visit
+
+one repository into six: one source for every file, recorded (the plan's Progress, REALITY, the board): press v1.0.4 serves the assets, data v0.1.4 the data, the four sites cut from v0.22.4 hold no copies; the main site is staged at site.php.oct.2026.newsroom.sgit.ai, its DNS record's name
+
+No reader-facing section changed in this release.
+
+## v0.22.4 · 25 October 2026new since your last visit
+
+the control room loads under a view address (/team/control/as/executive/ fetched team/control/data/control.json): control.js resolves its data against the page as loaded, and assets/route.js routes a URL object as it does a string, so on the split sites it reaches the data API
+
+No reader-facing section changed in this release.
+
+## v0.22.3 · 25 October 2026new since your last visit
+
+assets/route.js sends every data/ request on the split sites to the data API, which now publishes every file the pages' scripts fetch (v0.1.2); on this site nothing changes
+
+No reader-facing section changed in this release.
+
+## v0.22.2 · 25 October 2026new since your last visit
+
+one resolver for every URL a script builds (assets/route.js, loaded first on every page; boot.js, the Ask pane, the phone app and site tools use it), so that on the split sites assets come from the press, data from the data API and each section's pages from the site that owns it, one source for every file; on this site every URL resolves as before
+
+No reader-facing section changed in this release.
+
+## v0.22.1 · 25 October 2026new since your last visit
+
+pass one of the split, recorded: the press (v1.0.0) cuts this site's built pages at d9af616ffd0b into four sites (site 230 pages, refs 563, updates 60, team 242), each with a redirect at every address another site owns, its own gate and the runtime its pages load; data v0.1.1 at the same commit; team's records under records/; none deployed yet (each repository's Pages source to set to its dev branch)
+
+No reader-facing section changed in this release.
+
+## v0.22.0 · 25 October 2026new since your last visit
+
+the line is live on every page in place of the two dials, and the router: /agencies/as/security/ opens the agencies for Security, every page keeps its view in the address bar (/as/executive/ on the front page), 404.html answers any view address, and 28 cards for the front page, the agencies, the numbers and the playbook unfurl with who they are for
+
+No reader-facing section changed in this release.
+
+## v0.21.10 · 25 October 2026new since your last visit
+
+the split, in progress: the press is at press.php.oct.2026.newsroom.sgit.ai, this story's own for now (the editor); the data repository's v0.1.0 (49 catalogue entries, 466 files, a schema each, immutable /v/0.1.0/ with sha256s) and the team repository's first import (the board as one file per row) are on dev; press, refs, updates and site wait for the design agent's UX refactor
+
+No reader-facing section changed in this release.
+
+## v0.21.9 · 25 October 2026new since your last visit
+
+the split's names, as the editor decided: press (not kit) for the build library, the gate, the release and the shared components, at press.newsroom.sgit.ai; data keeps its name (api is the newsroom's main API); the plan's step 0 lists the six DNS records, and its site step follows story-site's URL-path and 404-router briefs
+
+No reader-facing section changed in this release.
+
+## v0.21.8 · 25 October 2026new since your last visit
+
+Conductor full pass 15:15 London: two run records carried in from runs/ branches, the wiring of every scheduled task on /team/status/
+
+No reader-facing section changed in this release.
+
+## v0.21.7 · 25 October 2026new since your last visit
+
+the plan for one repository into six, agreed by the editor: final names from day one (…__PHP__kit, data, refs, updates, team, site; today's repository renamed __PHP__v1 only at the cutover), the editor's setup (repositories, Pages, DNS), one session holding all seven repositories to cut the site, every old address answering, a parity report, each agent reviewing its own repository, the cutover and how to tell it worked
+
+No reader-facing section changed in this release.
+
+## v0.21.6 · 25 October 2026new since your last visit
+
+the briefs page sorts by the time each brief was published, newest first, and shows that time on every row and every brief's page (data/briefs-published.json, seeded from git once, never read from git by the build)
+
+No reader-facing section changed in this release.
+
 ## v0.21.5 · 25 October 2026new since your last visit
 
 Ontologist pass 2 (14:05 London, scheduled): 36 new sources resolved to 32 new parties and 3 aliases, with the names that mislead noted (three different 'IT daily' sites, a press release on jiji.com); the Wikipedia article and its talk page fetched (no new article edits); the new Wikipedia article on Black October found for watching (board 320); the runbook's fetch step corrected
@@ -1322,4 +1448,4 @@ JJordanBoard member or executive · newSSamSecurity lead · newDDrewPHP or platf
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/whatsnew/index.html

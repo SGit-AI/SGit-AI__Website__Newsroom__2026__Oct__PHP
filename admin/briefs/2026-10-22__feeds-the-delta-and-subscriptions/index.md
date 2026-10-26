@@ -6,7 +6,7 @@ Add RSS feeds to the site: one for each of the new top-level areas the team adde
 
 # Feeds, the delta since your last visit, a feed viewer, and subscriptions
 
-2026-10-22 · `2026-10-22__feeds-the-delta-and-subscriptions.md` · [all briefs](../index.html)
+Published 2026-10-22 17:47 UTC · `2026-10-22__feeds-the-delta-and-subscriptions.md` · [all briefs](../index.html)
 
 ## Feeds, the delta since your last visit, a feed viewer, and subscriptions
 
@@ -64,8 +64,8 @@ The reader's browser fetches every feed itself; nothing is proxied. A feed is un
 
 This brief is the file `admin/content/briefs/2026-10-22__feeds-the-delta-and-subscriptions.md` in the repository, published as written.
 
-← older: Brief: the second stories, the signals, and the inventory newer: → php.oct.2026.newsroom.sgit.ai, reviewed against the newsro
+← older: Brief: research and stories, status.json, and the patchingnewer: → Brief: the second stories, the signals, and the inventory
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__feeds-the-delta-and-subscriptions/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__feeds-the-delta-and-subscriptions/index.html

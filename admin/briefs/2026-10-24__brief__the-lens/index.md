@@ -6,7 +6,7 @@
 
 # Brief: the lens, a site that shapes itself to the reader in front of them
 
-2026-10-24 · `2026-10-24__brief__the-lens.md` · [all briefs](../index.html)
+Published 2026-10-24 13:35 UTC · `2026-10-24__brief__the-lens.md` · [all briefs](../index.html)
 
 ## Brief: the lens, a site that shapes itself to the reader in front of them
 
@@ -99,8 +99,8 @@ Built by `admin/build/design.py` from the live data, three pages:
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-lens.md` in the repository, published as written.
 
-← older: The telemetry lane's 1,000-event cap, and lanes in parallenewer: → Brief: the ontologist, and its daily pass
+← older: The telemetry lane's 1,000-event cap, and lanes in parallenewer: → Brief: the pipeline, from the researcher to the correspond
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-lens/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-lens/index.html

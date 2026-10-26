@@ -2,9 +2,9 @@
 
 The admin section as a console with its own menu and layout: a dark sidebar by area, the board as lanes, releases, and the agents with what each owns and how many open items it carries.
 
-> Mockup D for review, built from the data of release v0.21.5. Not the live site.
+> Mockup D for review, built from the data of release v0.22.15. Not the live site.
 
-PHP Team console Console Overview Board 210 Agents 19 Releases 178 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
+PHP Team console Console Overview Board 220 Agents 19 Releases 199 Pipeline Editorial Briefs Fact-check queue Corrections Readers and feedback Systems Vaults and keys 19 Telemetry Synthetic readers Design 5 
  Reader site Back to the reader site 
 
 Team console · public, like everything here 
@@ -12,15 +12,15 @@ Team console · public, like everything here
  built 25 October 2026, 09:35 UTC 
 
 Release 
-v0.21.5 
-178 releases since 22 Oct 
+v0.22.15 
+199 releases since 22 Oct 
 
 Open on the board 
-210 
-105 done, 5 waiting 
+220 
+109 done, 7 waiting 
 
 Pages built 
-1054 
+1061 
 every one with a markdown twin 
 
 Sources in the vault 
@@ -30,32 +30,38 @@ Sources in the vault
 ### The board
  newest first in each lane 
 
-#### Open 210
+#### Open 220
 
- #320 
-Watch a second Wikipedia article: 'Black October (information security)' (en.wikipedia.org, Wikidata Q141842194), starte… 
- ontologist 
- #319 
-Wikidata and DBpedia, tracked: data/wikidata-links.json holds every party's lookup (25 items confirmed by hand on 25 Oct… 
- ontologist 
- #318 
-The ontologist's story on the admin site (admin/content/articles/2026-10-25__ontologist__what-wikipedia-knows-about-bein… 
- abp 
- #317 
-Eleven of Wikipedia's principles proposed for AGENTS.md in the ontologist's story 'What Wikipedia knows about being righ… 
- conductor 
- #315 
-Wikipedia's PHP2Shell article: /wikipedia/php2shell/review/ has 15 findings against Wikipedia's own policies with the ca… 
+ #336 
+v1 is closing: no new work starts here (README, REALITY, 25 October); step A flips the direction (team's records, data's… 
+ dev@php.newsroom 
+ #335 
+The split, for every agent: four decisions before the schedule resumes (the go for step A: records to team and data to d… 
  editor 
- #314 
-A deck per persona: the debrief as slides from data, cut at every major update, with a slider through the cuts, pin, pla… 
- claude-story-site 
- #313 
-On a phone every brief page scrolls sideways (the briefs index by 186px, most briefs by 40 to 130px): the admin layout o… 
+ #333 
+An /interviews/ section: one page per interview showing its format (A to D), who asked, whether an agent took part, the … 
+ dev@php.newsroom 
+ #332 
+Interview requests as a new kind of row in data/outreach.json (drafted, approved, sent, answered, published), next to th… 
+ liaison@php.newsroom 
+ #330 
+Telemetry from agents' local test servers: assets/telemetry.js sends from any host, so 439 of the telemetry vault's 2,08… 
+ dev@php.newsroom 
+ #329 
+The line's prototype pages under /admin/design/line/ link to sources one level too shallow (../../../sources/… from admi… 
  story-site 
+ #327 
+The line's next steps on the live pages: the reading path ('Next: your briefing') as one of its actions, dated views (on… 
+ claude-story-site 
 
-#### Waiting 5
+#### Waiting 7
 
+ #334 
+For each party the editor picks: check that their /actors/ page works as a stranger's first link, and draft format B que… 
+ sherpa@php.newsroom 
+ #331 
+Interviews and outreach: choose the first wave (the brief proposes Weird Gloop, the PHP security team, the three discove… 
+ editor 
  #307 
 Ten scheduled tasks still carry their long prompts, which only their own sessions can change: paste the card's prompt (s… 
  editor 
@@ -72,10 +78,22 @@ The story graph: every node a link, parties as nodes, typed edges (newsroom revi
 Hand the telemetry vault key to the editor, sealed to his pki.sgit.ai key 
  dev 
 
-#### Done 105
+#### Done 109
 
+ #328 
+The six new repositories have not deployed: set each one's Pages source to 'Deploy from a branch: dev, / (root)' (or a d… 
+ editor 
+ #324 
+The line is live on every page, and the router: /agencies/as/security/ opens the agencies for Security; every page shows… 
+ claude-story-site v0.22.0 
+ #321 
+The briefs page sorts by the time each brief was published, newest first, and shows the time (UTC) on every row and on e… 
+ claude-story-site v0.21.6 
  #316 
 Scheduled tasks that start a fresh session can start with no repository: the ontologist's old task (trig_01BqfsPKp2Rj5Fs… 
+ editor 
+ #312 
+Proposal: one repository into six (kit, data, refs, updates, site, team), meeting through versions by URL, not submodule… 
  editor 
  #310 
 The admin and team pages use the whole width of the screen; the reader pages stay at 1,440px 
@@ -83,38 +101,26 @@ The admin and team pages use the whole width of the screen; the reader pages sta
  #309 
 The briefs page is a list of titles, newest first, and every brief has its own page and link (admin/briefs/<the file's n… 
  claude-story-site v0.20.0 
- #305 
-Article: URL paths, personas in the address, and a single-page site, written before the work (a link that names its pers… 
- claude-story-site v0.19.0 
- #304 
-The line on a phone: it no longer holds the top of the screen (the editor, on an iPhone: a locked top band costs too muc… 
- claude-story-site v0.19.0 
- #296 
-Prototype F, the line: the editor's design of 25 October built on the site, at /admin/design/line/ (six pages from the l… 
- claude-story-site v0.17.0 
- #286 
-The chrome after the lens prototype: the bar in two lines on a laptop (132px to 91px), the reading strip and the page's … 
- claude-story-site v0.16.0 
 
 ### Releases
  latest 8 
 
- v0.21.5 2026-10-25 Ontologist pass 2 (14:05 London, scheduled): 36 new sources resolved to 32 new parties and 3 aliases, with the names that mislead … 
- v0.21.4 2026-10-25 decks: what ruv.sgit.ai does and how it changes the deck per persona (one slide library and seven persona tracks in ruv's timeline… 
- v0.21.3 2026-10-25 The desk's round 3 closed: its scheduled task wired to its card and its wakes moved after the correspondent's reviews, with a debr… 
- v0.21.2 2026-10-25 The Sherpa's 13:45 wake: run record (idle, both lanes empty) 
- v0.21.1 2026-10-25 The desk's wakes move to 10:40 and 17:40 London, after the correspondent's reviews, and its scheduled task carries its card's prom… 
- v0.21.0 2026-10-25 Wikipedia, round 3: the article's history as lifelines (/wikipedia/php2shell/evolution/), its talk page as threads, a reviewer's r… 
- v0.20.8 2026-10-25 Fact-check run 7: no confirmed compromise still holds at 09:35 UTC on 25 October; K-010 gains a third planned disclosure date 
- v0.20.7 2026-10-25 the requirement for a deck per persona, captured from the editor: the debrief as slides from data, cut at every major update, with… 
+ v0.22.15 2026-10-25 The restart after the split: WAKE.md step 0 for every scheduled agent (read the split brief on the team site, start no new work in… 
+ v0.22.14 2026-10-25 this repository is closing (the editor, 25 October): the note at the top of README and REALITY, and a board row; every agent reads… 
+ v0.22.13 2026-10-25 the six repositories are live (board 328 done): each deploys with v1's workflow and its own gate; checked live in a browser 
+ v0.22.12 2026-10-25 the split's review recorded: items 23 to 33 of the challenges report (parity, the twins' links, the 404 page's redirect, immutabil… 
+ v0.22.11 2026-10-25 a review of the line and the router on the live site (board 334): the router is done; the line promises a shaped page the live pag… 
+ v0.22.10 2026-10-25 the split, for every agent: a brief with where each member writes today, after the records and data move and after the cutover, th… 
+ v0.22.9 2026-10-25 The Sherpa's brief on interviews and outreach: three waves of people and organisations the site already maps, what each is given f… 
+ v0.22.8 2026-10-25 observability drained the telemetry lane on 25 October (150 events, the lane empty) with a new command-line drainer that publishes… 
 
 ### Agents and what they own
  open items 
 
- Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 32 
+ Editor every editorial call: the lead, which claim is called confirmed, what ships; the brief and the memos; the vault keys 33 
  Project manager the plan and its priorities, with the editor; the review of the conductor's run plans and digests; chasing the decisions 2 
  conductor@php.newsroom the conductor vault (5iwos28w) and its lane, the issues vault (zjruy9vk) and the mail vault (fmb2tpl2); data/team.json a 21 
- dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 16 
+ dev@php.newsroom the build, the gate, the release, the data schema, the admin section, the telemetry lane, the site's reality file 17 
  Primary-source collector php.net, the CVE and NVD records, GitHub advisories, tags and branches, oss-security, the php-src clone 5 
  Government and CERT collector every national agency's advisory, in its own language, with the translation marked 4 
  Researcher, vendor and press collector Calif, Wiz, OpenAI, Cloudflare, Amazon, Imperva, Fastly, Akamai, the detection rule sets, the press 14 
@@ -122,4 +128,4 @@ The chrome after the lens prototype: the bar in two lines on a laptop (132px to 
  factcheck@php.newsroom the fact-check desk (admin/factcheck/): the grade of every claim on the spectrum of evidence, the contradiction ledger, 8
 
 ---
-site v0.21.5 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html
+site v0.22.15 · https://php.oct.2026.newsroom.sgit.ai/admin/design/d/index.html

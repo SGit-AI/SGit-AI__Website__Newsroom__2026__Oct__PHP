@@ -6,7 +6,7 @@ Two runs a day, each after the data has moved, so the desk reads what the reader
 
 # Brief: the news desk chief on a schedule, and the health of the publication
 
-2026-10-24 · `2026-10-24__brief__the-desk-on-a-schedule.md` · [all briefs](../index.html)
+Published 2026-10-24 00:07 UTC · `2026-10-24__brief__the-desk-on-a-schedule.md` · [all briefs](../index.html)
 
 ## Brief: the news desk chief on a schedule, and the health of the publication
 
@@ -88,8 +88,8 @@ Both are repeating tasks queued once, with the editor's go, by the conductor: `d
 
 This brief is the file `admin/content/briefs/2026-10-24__brief__the-desk-on-a-schedule.md` in the repository, published as written.
 
-← older: Brief: the correspondent (Opus), on a schedulenewer: → Brief: the graph reviewed by people, and a first step for
+← older: Brief: the journalist unblocked, from the curatornewer: → Review: the redesign, read for what it communicates
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-desk-on-a-schedule/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-24__brief__the-desk-on-a-schedule/index.html

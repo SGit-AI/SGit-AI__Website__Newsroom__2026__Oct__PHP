@@ -48,6 +48,8 @@ How the site is built, what the gate checks, where things are, and what exists a
 
 ## What exists
 
+**This repository is closing (the editor, 25 October 2026).** The site is now six repositories, each with its own gate, release and address; the brief every agent must read is on the team site: https://team.php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__the-split-for-every-agent/ (every repository is public: read any of them; write only the ones your card names, and ask the editor for each). **Do not start new work here.** Until dev flips the direction (step A: the records, the data and the sources move out and this repository only builds; board row 336), a wake that must release writes here as its card says, and nothing else; after the flip, only dev's chain commits here; after the cutover, this repository is archived read-only as `…__PHP__v1`.
+
 By domain, kept current by whoever ships. A thing not listed here does not exist, whatever the brief says.
 
 ### Evidence
@@ -327,6 +329,36 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
  `admin/content/briefs/2026-10-25__brief__the-line.md`.
 
+### The line and the router, live (story-site, 25 October 2026, the editor's go)
+
+- Every page carries the line under the bar (`assets/design/line/`), in place of the two dials of v0.14.0: it says one thing
+
+ to the reader, as the role they are (Executive by default), and keeps their record in this browser (`p2s.lens`).
+
+- Every page shows its view in the address bar: `/agencies/as/security/`. `/404.html` answers any address past a reserved
+
+ word (as, on, vs, since) by opening the page before it with that view; 28 cards (`/as//`) for the front
+
+ page, the agencies, the numbers and the playbook unfurl in a chat with who they are for. Dated views are read, not applied.
+
+- Scripts resolve their requests against the real page (`window.P2S_BASE`, and a fetch shim in `boot.js`), because the
+
+ security policy rules out ``.
+
+### One repository into six, pass one (dev@php.newsroom, 25 October 2026)
+
+- The six repositories exist (`…__PHP__press`, `__data`, `__refs`, `__updates`, `__team`, `__site`), each with `dev` as default and its custom domain (`site.php.oct.2026.newsroom.sgit.ai` for the site until the cutover). This repository is still where every page is built and every agent writes.
+
+- **press v1.0.0:** `sites.json` (which site owns which section) and `tools/partition.py`, which cuts this repository's committed output at one commit into a site. It installs each site's gate and release.
+
+- **The four sites:** cut at `d9af616ffd0b` (v0.22.0). site has 230 pages of its own, refs 563, updates 60, team 242; every other address answers with a redirect. **data** v0.1.1: 49 entries, 466 files, a schema each. **team**: its records under `records/`, the board one file per row.
+
+- **One source for every file (25 October):** the sites hold no copy of the assets or the data. press v1.0.4 publishes v1's `assets/` under `/v/1.0.4/assets/`; data v0.1.4 publishes every file the pages' scripts fetch. Each page links both at pinned versions, carries a route (``) for `assets/route.js`, and has a Content-Security-Policy extended to the press, the data API and the other sites. They were cut from v0.22.4 (`ec5d411eeb70`). After a first release, every release adds one to the last number.
+
+- **Live since 25 October, 22:24 UTC:** each of the six deploys with v1's workflow (`.github/workflows/pages.yml`, its own gate as the check; security to review). press.php…, data.php…, site.php… (the main site, staged), refs.php…, updates.php…, team.php… all serve; checked live in a browser, manifest sums checked.
+
+- **Reviewed against the brief, 25 October evening:** parity holds (every one of v1's pages owned by one site, its text the same there: `tools/parity.py` in the press); the markdown twins' links follow their pages; a site's 404 page sends an address another host owns (a page, a twin, a view address, an asset, a data file) there, to the route's hosts only. The brief "The split, for every agent" says where each agent writes today, after the records and data move (step A, the editor's go) and after the cutover, with a `repositories` field for every card.
+
 ### Recorded, not started
 
 - The organisation as a digital twin (`admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md`): a state machine of roles, runs and handovers, a common run record, the accountant, a bulletin board for agents, and a daily improvement loop with a budget.
@@ -411,4 +443,4 @@ By domain, kept current by whoever ships. A thing not listed here does not exist
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/index.html

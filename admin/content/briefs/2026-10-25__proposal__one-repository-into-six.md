@@ -24,13 +24,13 @@ The cause is not the number of agents. It is that one version, one build, one ga
 
 Split along who writes and how often, not along technology. Each repository has one group of writers, its own version, its own gate, its own release cadence and its own site under its own name. Repositories meet only through published, versioned URLs, never through a shared file. A consumer pins the version it was built against, so every build stays deterministic.
 
-![One repository into six: the vaults feed the data API; the references, the updates and the main UI read the data at a pinned version and the kit at a pinned version; every site's release history is read by the team site](assets/briefs/one-repository-into-six.png)
+![One repository into six: the vaults feed the data API; the references, the updates and the main UI read the data at a pinned version and the press at a pinned version; every site's release history is read by the team site](assets/briefs/one-repository-into-six.png)
 
 ## The six repositories
 
 | Repository | Site | What it holds | Who writes it | Cadence | Its gate |
 | --- | --- | --- | --- | --- | --- |
-| **kit** (the scaffolding) | kit.newsroom.sgit.ai/v/1.4.0/ | the build library (`page()`, `E()`, `U()`, `J()`, the layout, markdown), the gate, `release.sh`, `security_check.py`, the shared components (the graph, the dials, Ask, telemetry, the reader's vault, compare) | dev, with security reviewing every change | weekly, or on a fix | its tests, the security review, and a canary build of every consumer at the new version before it is published |
+| **press** (the scaffolding) | press.php.oct.2026.newsroom.sgit.ai/v/1.4.0/ | the build library (`page()`, `E()`, `U()`, `J()`, the layout, markdown), the gate, `release.sh`, `security_check.py`, the shared components (the graph, the dials, Ask, telemetry, the reader's vault, compare) | dev, with security reviewing every change | weekly, or on a fix | its tests, the security review, and a canary build of every consumer at the new version before it is published |
 | **data** (the API) | data.php.oct.2026.newsroom.sgit.ai/v/0.21.3/ | the exports from the vaults, the claims, the timeline, the state of affairs, the risk graph and its history, the fact-check, the ontology; a JSON schema per file; a manifest with every file's sha256 | the journalist, the correspondent, the fact-check desk, the ontologist, the GRC desk, pulse | at every loop | schemas, provenance (every source a claim cites exists), determinism; no HTML. Seconds |
 | **refs** (the references) | refs.php.oct.2026.newsroom.sgit.ai | a page per source and capture (about 840 files today), the claims as evidence, what each source says | built from data; no agent writes it by hand | when the evidence changes | render and links over its own pages only |
 | **updates** (the regular updates) | updates.php.oct.2026.newsroom.sgit.ai | the state of affairs, the desk, what is new, the line, the feeds | the journalist, the correspondent, the desk | five times a day | a few dozen pages; under 20 s |
@@ -42,7 +42,7 @@ The vaults stay as they are: the source watch (`7r83qic5`), the evidence vault (
 ## How the parts meet: versions by URL, not submodules
 
 - **Every repository publishes immutable versions.** On the data site, `/v/0.21.3/claims.json` never changes once published; `/latest/` points at the newest; `/v/0.21.3/manifest.json` lists every file with its sha256. This is the URL versioning the site already uses for its sections' history and the vault apps.
-- **A consumer pins.** The site, refs and updates each carry one small file, `deps.json`, that names the versions: data 0.21.3, kit 1.4.0. The build fetches the pinned files, checks each sha256 against the manifest, and builds. The same pin gives the same pages, byte for byte, as today.
+- **A consumer pins.** The site, refs and updates each carry one small file, `deps.json`, that names the versions: data 0.21.3, press 1.4.0. The build fetches the pinned files, checks each sha256 against the manifest, and builds. The same pin gives the same pages, byte for byte, as today.
 - **Moving a pin is one line.** When data releases, it says so in a `To-site:` note (the trailers the team already uses). The consumer's next wake moves the pin, builds, runs its own gate and releases. A breaking change to a file's shape is a new major version of data. Consumers move to it on purpose, and the old version stays published until the last consumer has moved.
 - **Live readers can follow `/latest/`.** The phone app and the Now page can read the newest data directly. Pages that must be reproducible read the pinned version.
 - **Links between sites** are checked against the other site's published sitemap at the pinned version, so a link from the site into refs is checked like a link inside the site is today.
@@ -53,7 +53,7 @@ The vaults stay as they are: the source watch (`7r83qic5`), the evidence vault (
 - two agents moving the same pin collide on one line nobody can merge by reading it;
 - every scheduled session has to clone recursively, a cost every wake pays.
 
-GitHub Pages does not need them. The recommendation: no submodules for data or content. If the editor wants the gate's code inside each repository, keep a vendored copy of the kit at a named version, checked against its published sha256, rather than a submodule.
+GitHub Pages does not need them. The recommendation: no submodules for data or content. If the editor wants the gate's code inside each repository, keep a vendored copy of the press at a named version, checked against its published sha256, rather than a submodule.
 
 ## Conflicts, designed out
 
@@ -72,9 +72,9 @@ GitHub Pages does not need them. The recommendation: no submodules for data or c
 | fact-check desk, ontologist, GRC desk, pulse | data; run records in team | data |
 | desk | updates; team | data |
 | Sherpa, conductor, librarian, synthetic readers | team | every site's published pages and versions |
-| story-site agent | site | data, kit |
-| dev | kit, site; the dependency pins everywhere | data, kit |
-| security | reviews every kit release and every workflow | everything |
+| story-site agent | site | data, press |
+| dev | press, site; the dependency pins everywhere | data, press |
+| security | reviews every press release and every workflow | everything |
 
 The editor sees one place, the team site: every repository's release history, status, schedule and board.
 
@@ -85,11 +85,11 @@ Each phase releases on its own, keeps every published URL working (a redirect pa
 1. **This week, inside today's repository** (no new repository; to be agreed with the refactor session now under way):
    - one file per board row;
    - the version out of every page;
-   - `build.py` cut into modules along the six lines (kit, data, refs, updates, site, team) behind the one build;
+   - `build.py` cut into modules along the six lines (press, data, refs, updates, site, team) behind the one build;
    - a `manifest.json` and schemas for the data files.
 2. **team first.** It has the most writes and the least coupling: board, cards, runs, messages, members' folders, registers, briefs. `/team/`, `/admin/board/` and the briefs redirect to team.php…
 3. **data,** with `/v/<version>/` and the manifest; the site, still one repository, reads it at a pinned version.
-4. **kit:** the build library, the gate and the components, versioned and reviewed.
+4. **press:** the build library, the gate and the components, versioned and reviewed.
 5. **updates and refs,** split from the site.
 6. **site** is what is left.
 
@@ -97,13 +97,13 @@ Each phase releases on its own, keeps every published URL working (a redirect pa
 
 - **Names and hosting:** five new subdomains, each with a Pages site and a `CNAME`. The editor creates the repositories; the GitHub app is granted to each.
 - **Access:** a scheduled session attaches only the repositories its card names. That is least privilege, which security wants. But each card must say which repositories it uses, and a fresh session clones only those.
-- **Search across sites:** `llms.txt`, the sitemap and the Ask pane's tools need one index across all six; the team site or a small step in the kit publishes it.
+- **Search across sites:** `llms.txt`, the sitemap and the Ask pane's tools need one index across all six; the team site or a small step in the press publishes it.
 - **More moving parts:** six gates to keep green instead of one. Each is smaller and faster; a red one blocks only its own writers.
 
 ## Decisions for the editor
 
-1. **The split:** six repositories (kit, data, refs, updates, site, team) and their names, or fewer to start (team and data first).
-2. **Versions by URL with a pin file,** and no submodules (a vendored kit if the gate's code must live in each repository).
+1. **The split:** six repositories (press, data, refs, updates, site, team) and their names, or fewer to start (team and data first).
+2. **Versions by URL with a pin file,** and no submodules (a vendored press if the gate's code must live in each repository).
 3. **Generated output:** built in the deploy for data, updates and team; committed for the site and refs.
 4. **The order of the phases,** and whether phase 1 is done with the refactor session or after it.
-5. **Ownership:** the kit kept by dev under security's review; each repository's writers as in the table.
+5. **Ownership:** the press kept by dev under security's review; each repository's writers as in the table.

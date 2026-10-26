@@ -10,11 +10,12 @@ Every agent on the team: what it last did, what it waits for and from whom, the 
 
 Where every agent on the team is: what it last did, what it is waiting for and from whom, which branches wait to be carried into dev, what ran on a schedule, and how fresh the site's data is against its vaults. A snapshot taken by conductor@php.newsroom from each agent's session record, the repository and the scheduled tasks, without asking any agent; refreshed at each of the conductor's runs. Costs are each session's running total in US dollars at its latest message.
 
-**As of** 2026-10-25 11:20Z UTC · **live site** v0.18.0
+**As of** 2026-10-25 15:25Z UTC · **live site** v0.21.7
 
 23agents3working2blocked17waiting on the editor16branches waiting for dev$1025spent, sessions so far
 
 ## What needs a decision first
+- Wiring: the journalist's and the correspondent's tasks still start a new session each time; create them from 'scheduled | journalist' and 'scheduled | correspondent' and pause the old four. Fact-check's task still has the old prompt: update it from its session.
 - INCIDENT, visibility: the researcher and the curator run on schedule but leave no commit and no run record, so the repository, this page and the control room cannot show what they did (their wake prompts say 'nothing new: no commit', which predates AGENTS.md section 7). Proposed: each wake writes a run report into the vault it owns and the conductor commits it as a run record, with your go to change the four scheduled prompts (a researcher that reads the open web should not also release).
 - security/gate-pass-2 (5 commits ahead): a go; dismiss CodeQL alerts #3 and #22 yourself; rulesets at user logins; private vulnerability reporting.
 - The curator: a go on the site export (the site shows 328 sources), whether a public normal-vault copy of the old vault stays, and that the researcher wrote nothing to oq9gflln after the move.
@@ -85,19 +86,19 @@ The register of schedules and every recorded run is on [runs](../runs/index.html
 
 | Schedule | State |
 |---|---|
-| Conductor (scheduled) | active: hourly 07:15 to 21:15 London; first full pass this wake |
-| Source watch (scheduled researcher) | INCIDENT (visibility): it does run (passes pushed to the vault on 24 Oct at 07:00, 09:30, 12:00, 14:30, 17:00 and 25 Oct at 07:03; another pass running at 11:11 London), but it leaves no commit and no run record in this repository, so nothing here shows what it did. |
-| Curator (scheduled) | INCIDENT (visibility): it does run (25 Oct 08:00 London: 18 sources promoted, 7 claims, vault at 400 sources, head 176e2dc212e1; 24 Oct: five wakes), but its report lives only in its session, with no commit or run record in this repository. |
-| Pulse | scheduled task at 06:44 and 14:44 London; no card yet (it asks for a go to release one) |
-| Librarian | active: 07:13 London; fired 06:13 UTC, pass running |
-| Journalist (Sonnet) | active from 00:40 London on 25 October: 08:40, 11:10, 13:40, 16:10, 18:40; first wake due 08:40 |
-| Sherpa | active: every two hours at :45, 07:45 to 21:45 London; runs at 07:45, 11:45 and 17:45 (a run when it releases) |
-| Desk | active: 09:20 and 16:20 London; both left runs |
-| Fact-check runs | active: 08:52, 12:52, 16:52, 20:52 London; 08:52 and 16:52 left runs, the quiet 12:52 none |
-| Ontologist | active: 14:40 London, daily; the first pass left a run record |
-| Cartographer | ended; the ontologist took its place |
-| Correspondent (Opus) | active from 00:40 London on 25 October: 09:25, 11:55, 14:25, 16:55, 19:25; first wake due 09:25 |
-| Clocks | London went back to GMT at 01:00 UTC on 25 October: every time above is unchanged in London, one hour later in UTC than yesterday |
+| Wiring check (15:15 London, 25 Oct) | Every task below was read from the account: which session it fires into, its prompt, when it last fired. "Own session" is the model the editor asked for; "new session each time" is not. |
+| Conductor | own session; prompt points to WAKE.md (updated 15:16); hourly 07:15-21:15 |
+| Researcher (2 tasks) | own session; WAKE.md prompt; fired 07:02, 09:31, 12:02, 14:31; no run record published yet |
+| Curator (2 tasks) | own session; WAKE.md prompt; fired 08:02, 10:36, 13:02; run record for 13:02 published and carried in |
+| Pulse (2 tasks) | own session; WAKE.md prompt; now 07:22 and 14:52; run record for 14:52 carried in |
+| Sherpa | own session; WAKE.md prompt; every two hours at :45; runs at 11:45 and 13:45 |
+| Desk | own session; WAKE.md prompt; moved to 10:40 and 17:40 |
+| Librarian | own session; WAKE.md prompt; moved to 20:23 |
+| Ontologist | own session (new task, the fresh-session one is gone); WAKE.md prompt; 06:05, 10:05, 14:05, 18:05 |
+| Security | own session; WAKE.md prompt; 22:35 London, inside the quiet hours (the editor asked in the security session) |
+| Fact-check | own session; OLD prompt still (says a quiet wake commits nothing): update it from its session |
+| Journalist (2 tasks) | NEW SESSION EACH TIME (not "scheduled \| journalist"); prompt is the WAKE.md one; 08:40, 11:10, 13:40, 16:10, 18:40 |
+| Correspondent (2 tasks) | NEW SESSION EACH TIME (not "scheduled \| correspondent"); prompt is the WAKE.md one; 09:25, 11:55, 14:25, 16:55, 19:25 |
 
 ## How fresh this site's data is
 
@@ -110,4 +111,4 @@ The vaults move ahead of the site; a fact reaches the site only when its vault i
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/status/index.html

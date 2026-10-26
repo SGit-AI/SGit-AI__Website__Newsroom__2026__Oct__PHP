@@ -6,7 +6,7 @@ He pointed at the deck work already done across sgit.ai: the deck guidance, a si
 
 # A deck per persona: the debrief, cut daily, with its history and its deltas
 
-2026-10-25 · `2026-10-25__brief__a-deck-per-persona.md` · [all briefs](../index.html)
+Published 2026-10-25 13:19 UTC · `2026-10-25__brief__a-deck-per-persona.md` · [all briefs](../index.html)
 
 ## A deck per persona: the debrief, cut daily, with its history and its deltas
 
@@ -112,8 +112,8 @@ A deck is a JSON file; the slides are rendered as HTML by one renderer; the JSON
 
 This brief is the file `admin/content/briefs/2026-10-25__brief__a-deck-per-persona.md` in the repository, published as written.
 
-← older: Review: the redesign, read for what it communicatesnewer: → Decks: what ruv.sgit.ai does, and how it changes the deck
+← older: Proposal: one repository into six, so that tens of agents newer: → Decks: what ruv.sgit.ai does, and how it changes the deck
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__a-deck-per-persona/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__a-deck-per-persona/index.html

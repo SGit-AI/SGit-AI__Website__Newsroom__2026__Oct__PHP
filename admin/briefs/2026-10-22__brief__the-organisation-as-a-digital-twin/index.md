@@ -6,7 +6,7 @@
 
 # The organisation as a digital twin: a state machine of roles, runs and handovers; and four briefs that ride with it
 
-2026-10-22 · `2026-10-22__brief__the-organisation-as-a-digital-twin.md` · [all briefs](../index.html)
+Published 2026-10-22 23:18 UTC · `2026-10-22__brief__the-organisation-as-a-digital-twin.md` · [all briefs](../index.html)
 
 ## The organisation as a digital twin: a state machine of roles, runs and handovers; and four briefs that ride with it
 
@@ -78,8 +78,8 @@ The run record first (it is the input to everything else), then `twin.json` and 
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin.md` in the repository, published as written.
 
-← older: Brief: a news desk chief joins the teamnewer: → Brief: the phone app, what do I need to know for the time
+← older: Feedback from any page, signed; onboarding by QR code; a rnewer: → Brief: the front page on day two
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-organisation-as-a-digital-twin/index.html

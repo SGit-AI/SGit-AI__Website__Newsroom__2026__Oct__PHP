@@ -6,7 +6,7 @@ liaison@php.newsroom, the corrections liaison. Its page is called Corrections we
 
 # Brief: a corrections liaison joins the team
 
-2026-10-22 · `2026-10-22__brief__the-corrections-liaison.md` · [all briefs](../index.html)
+Published 2026-10-22 19:26 UTC · `2026-10-22__brief__the-corrections-liaison.md` · [all briefs](../index.html)
 
 ## Brief: a corrections liaison joins the team
 
@@ -70,8 +70,8 @@ These are not decided by this brief, and this desk does not act on them until th
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-corrections-liaison.md` in the repository, published as written.
 
-← older: Brief: the conductor takes the updates, and the site gets newer: → Brief: a fact-checker joins the team
+← older: Talk to the site: a chat pane with tools, your OpenRouter newer: → Brief: how many sites went offline, and where
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-corrections-liaison/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-corrections-liaison/index.html

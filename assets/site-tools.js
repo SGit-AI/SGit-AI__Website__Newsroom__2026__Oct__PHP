@@ -88,7 +88,7 @@
     b.title = 'Ask this site: a chat over its facts and pages, with your own OpenRouter key kept in your vault';
     b.addEventListener('click', function () {
       b.disabled = true;
-      import(new URL(root + 'assets/ask/ask.js', location.href).href).then(function (m) { m.open(); }).catch(function (e) { alert('The chat pane could not load: ' + e.message); }).then(function () { b.disabled = false; });
+      import(window.P2S_URL ? window.P2S_URL(root + 'assets/ask/ask.js') : new URL(root + 'assets/ask/ask.js', window.P2S_BASE || location.href).href).then(function (m) { m.open(); }).catch(function (e) { alert('The chat pane could not load: ' + e.message); }).then(function () { b.disabled = false; });
     });
     bar.insertBefore(b, bar.firstChild);
     // Feedback, beside Ask (conductor@php.newsroom): the same pane, opened on its Feedback tab.
@@ -96,7 +96,7 @@
     f.title = 'Feedback on this page: what is wrong, unclear, missing or good, with a screenshot, signed with your key';
     f.addEventListener('click', function () {
       f.disabled = true;
-      import(new URL(root + 'assets/ask/ask.js', location.href).href).then(function (m) { m.openFeedback(); }).catch(function (e) { alert('The feedback pane could not load: ' + e.message); }).then(function () { f.disabled = false; });
+      import(window.P2S_URL ? window.P2S_URL(root + 'assets/ask/ask.js') : new URL(root + 'assets/ask/ask.js', window.P2S_BASE || location.href).href).then(function (m) { m.openFeedback(); }).catch(function (e) { alert('The feedback pane could not load: ' + e.message); }).then(function () { f.disabled = false; });
     });
     bar.insertBefore(f, b.nextSibling);
   }

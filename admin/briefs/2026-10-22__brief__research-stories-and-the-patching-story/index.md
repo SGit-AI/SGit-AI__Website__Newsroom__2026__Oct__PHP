@@ -6,7 +6,7 @@ Yeah, but I actually, given the speed of development, I think we need to have bo
 
 # Brief: research and stories, status.json, and the patching story
 
-2026-10-22 · `2026-10-22__brief__research-stories-and-the-patching-story.md` · [all briefs](../index.html)
+Published 2026-10-22 17:14 UTC · `2026-10-22__brief__research-stories-and-the-patching-story.md` · [all briefs](../index.html)
 
 ## Brief: research and stories, status.json, and the patching story
 
@@ -32,8 +32,8 @@ So the other couple of stories that we need to capture, and I think this is impo
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__research-stories-and-the-patching-story.md` in the repository, published as written.
 
-← older: Brief: how many sites went offline, and wherenewer: → Brief: scheduled capture of the sources that move, raw to
+← older: Triage: the newsroom's review of this site, checked againsnewer: → Feeds, the delta since your last visit, a feed viewer, and
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__research-stories-and-the-patching-story/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__research-stories-and-the-patching-story/index.html

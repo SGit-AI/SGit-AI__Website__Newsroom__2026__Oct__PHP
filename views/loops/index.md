@@ -90,13 +90,12 @@ Minutes from the source-watch queue the curator names to the curated head, to th
 | Role | Card | Model | Wakes (London) | Run records | Last run | Next wakes (UTC) |
 |---|---|---|---|---|---|---|
 | Researcher | active | the session's model | 07:00, 09:30, 12:00, 14:30, 17:00 | 0 | – | 25 Oct 07:00 UTC, 25 Oct 09:30 UTC, 25 Oct 12:00 UTC |
-| Curator | active | the session's model | 08:00, 10:30, 13:00, 15:30, 18:00 | 0 | – | 25 Oct 08:00 UTC, 25 Oct 10:30 UTC, 25 Oct 13:00 UTC |
+| Curator | active | the session's model | 08:00, 10:30, 13:00, 15:30, 18:00 | 1 | 25 Oct 13:02 UTC, ok | 25 Oct 08:00 UTC, 25 Oct 10:30 UTC, 25 Oct 13:00 UTC |
 | Journalist | active | Sonnet | 08:40, 11:10, 13:40, 16:10, 18:40 | 2 | 25 Oct 11:34 UTC, ok | 25 Oct 08:40 UTC, 25 Oct 11:10 UTC, 25 Oct 13:40 UTC |
 | Correspondent | active | Opus | 09:25, 11:55, 14:25, 16:55, 19:25 | 1 | 24 Oct 22:50 UTC, ok | 25 Oct 09:25 UTC, 25 Oct 11:55 UTC, 25 Oct 14:25 UTC |
 
 ## What this record cannot see
 - The researcher writes no run record to this repository (data/runs/researcher/ is empty): its wakes are seen only through the queue times the curator names in its vault commits.
-- The curator writes no run record to this repository (data/runs/curator/ is empty): its wakes are seen only through the evidence vault's commits, read at each correspondent wake.
 - The source watch's own export (data/source-watch.json) was last read 23 Oct 12:40 UTC; its pack vault's read key is not published, so its pages and snapshots here are that day's.
 - 7 curator commits never went live on their own: each was folded into a later export (normal, but a head reviewed is not every commit read).
 - Times of the researcher are the queue times the curator writes, not the researcher's own clock; a wake that found nothing to queue leaves no trace here.
@@ -109,7 +108,7 @@ Minutes from the source-watch queue the curator names to the curated head, to th
 Sources the site served, release by release.
 
 ### Review
-208claims in the evidence vault152verdicts: 49 agrees, 34 held back, 48 noted, 21 used9corrections by the correspondent (catches)3run records of the four roles
+208claims in the evidence vault152verdicts: 49 agrees, 34 held back, 48 noted, 21 used9corrections by the correspondent (catches)4run records of the four roles
 ### The site and its repository
 150releases to dev303commits on dev954HTML pages872markdown twins93 MBin 3082 tracked files17.9 MBof data, 510 JSON files7680lines in build.py
 
@@ -117,4 +116,4 @@ Built from [data/loops.json](../../data/loops.json) (exported 25 Oct 01:14 UTC b
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/views/loops/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/views/loops/index.html

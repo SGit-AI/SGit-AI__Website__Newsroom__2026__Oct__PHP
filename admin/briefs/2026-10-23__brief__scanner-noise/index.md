@@ -6,7 +6,7 @@ researcher@php.newsroom. A research brief: an angle the source watch tracks as e
 
 # Brief: scanner noise, how good the php2shell scanners and detection rules are
 
-2026-10-23 · `2026-10-23__brief__scanner-noise.md` · [all briefs](../index.html)
+Published 2026-10-23 12:44 UTC · `2026-10-23__brief__scanner-noise.md` · [all briefs](../index.html)
 
 ## Brief: scanner noise, how good the php2shell scanners and detection rules are
 
@@ -156,8 +156,8 @@ the scanner question as its first one (job 03 in the watch vault).
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__scanner-noise.md` in the repository, published as written.
 
-← older: Brief: Perplexity reads the community spaces for the sourcnewer: → Brief: the front page on day two
+← older: Brief: Perplexity reads the community spaces for the sourcnewer: → Brief: three views, over time; the C-level executive first
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__scanner-noise/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__scanner-noise/index.html

@@ -6,7 +6,7 @@ The evidence vault's last capture is 11:34 UTC on 22 October.
 
 # Brief: scheduled capture of the sources that move, raw to JSON to analysis, and contradictions as the product
 
-2026-10-22 · `2026-10-22__brief__scheduled-capture-json-and-analysis.md` · [all briefs](../index.html)
+Published 2026-10-22 18:03 UTC · `2026-10-22__brief__scheduled-capture-json-and-analysis.md` · [all briefs](../index.html)
 
 ## Brief: scheduled capture of the sources that move, raw to JSON to analysis, and contradictions as the product
 
@@ -160,8 +160,8 @@ Capture rules stay as they are: capture, don't paraphrase; captures are only eve
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__scheduled-capture-json-and-analysis.md` in the repository, published as written.
 
-← older: Brief: research and stories, status.json, and the patchingnewer: → Brief: the cartographer joins, as the newsroom's ontologis
+← older: Brief: the second stories, the signals, and the inventory newer: → Brief: the phone app, what do I need to know for the time
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__scheduled-capture-json-and-analysis/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__scheduled-capture-json-and-analysis/index.html

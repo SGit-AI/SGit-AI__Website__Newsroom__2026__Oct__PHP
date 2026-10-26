@@ -6,7 +6,7 @@ So this is actually another brief for the journalist, and I guess even historian
 
 # Brief: the conductor takes the updates, and the site gets an Updates section
 
-2026-10-22 · `2026-10-22__brief__the-conductor-and-the-updates.md` · [all briefs](../index.html)
+Published 2026-10-22 20:09 UTC · `2026-10-22__brief__the-conductor-and-the-updates.md` · [all briefs](../index.html)
 
 ## Brief: the conductor takes the updates, and the site gets an Updates section
 
@@ -44,8 +44,8 @@ So this is actually another brief for the journalist, and I guess even historian
 
 This brief is the file `admin/content/briefs/2026-10-22__brief__the-conductor-and-the-updates.md` in the repository, published as written.
 
-← older: Brief: the cartographer joins, as the newsroom's ontologisnewer: → Brief: a corrections liaison joins the team
+← older: Collaborators: the people who use the site as it is builtnewer: → Brief: every agent a folder, a policy and a round
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-conductor-and-the-updates/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__brief__the-conductor-and-the-updates/index.html

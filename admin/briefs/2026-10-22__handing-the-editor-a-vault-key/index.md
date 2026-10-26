@@ -6,7 +6,7 @@ The telemetry vault (84wr8mib) was made by this agent.
 
 # Handing the editor a vault key: sealed to his key on pki.sgit.ai
 
-2026-10-22 · `2026-10-22__handing-the-editor-a-vault-key.md` · [all briefs](../index.html)
+Published 2026-10-22 14:47 UTC · `2026-10-22__handing-the-editor-a-vault-key.md` · [all briefs](../index.html)
 
 ## Handing the editor a vault key: sealed to his key on pki.sgit.ai
 
@@ -50,8 +50,8 @@ A negative control (a wrong fingerprint is refused), and a round trip: a test se
 
 This brief is the file `admin/content/briefs/2026-10-22__handing-the-editor-a-vault-key.md` in the repository, published as written.
 
-← older: php.oct.2026.newsroom.sgit.ai, reviewed against the newsronewer: → Review: the front page and the navigation, at v0.2.5
+← older: Review: the front page and the navigation, at v0.2.5newer: → php.oct.2026.newsroom.sgit.ai, reviewed against the newsro
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__handing-the-editor-a-vault-key/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-22__handing-the-editor-a-vault-key/index.html

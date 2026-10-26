@@ -2302,9 +2302,9 @@
   {
    "id": "312",
    "title": "Proposal: one repository into six (kit, data, refs, updates, site, team), meeting through versions by URL, not submodules; the five decisions for the editor",
-   "status": "open",
+   "status": "done",
    "owner": "editor",
-   "note": "dev@php.newsroom's proposal of 25 October, at the editor's request: /admin/briefs/2026-10-25__proposal__one-repository-into-six/. Phase 1 (inside today's repository) to be agreed with the refactor session."
+   "note": "dev@php.newsroom's proposal of 25 October, at the editor's request: /admin/briefs/2026-10-25__proposal__one-repository-into-six/. Phase 1 (inside today's repository) to be agreed with the refactor session. Agreed by the editor on 25 October ('I think that's the way to do it'); the plan is the brief 'Plan: one repository into six, the implementation'."
   },
   {
    "id": "313",
@@ -2361,6 +2361,120 @@
    "status": "open",
    "owner": "ontologist",
    "note": "The ontologist, scheduled pass of 25 October 14:05 London; the talk page thread is on /wikipedia/php2shell/talk/."
+  },
+  {
+   "id": "321",
+   "title": "The briefs page sorts by the time each brief was published, newest first, and shows the time (UTC) on every row and on each brief's page",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "The editor, 25 October: the briefs at the top were not the most recently published, because the list sorted by file name. data/briefs-published.json now records the minute each was first published: seeded once from git (the first commit adding each file; two that arrived through a merge take the merge's time), then stamped by the first build that includes a new brief, and never changed. The build still never reads git, so a shallow CI clone builds the same pages. Same override as board 309.",
+   "version": "0.21.6"
+  },
+  {
+   "id": "322",
+   "title": "One repository into six, step 0: create the six repositories (…__PHP__press, __data, __refs, __updates, __team, __site), Pages with Actions and a custom domain each, DNS CNAMEs to sgit-ai.github.io (and site.php.oct.2026.newsroom.sgit.ai for staging), the Claude app and today's rulesets; then one session with all seven attached",
+   "status": "open",
+   "owner": "editor",
+   "note": "The plan of 25 October, step 0; the six DNS records are listed there. Names decided: press (not kit), data (api is the newsroom's main API)."
+  },
+  {
+   "id": "323",
+   "title": "One repository into six, step 1: the one big session (press, data, team, refs, updates, site; every old address answering; the parity report; the replay), then each agent reviews its own repository",
+   "status": "open",
+   "owner": "dev@php.newsroom",
+   "note": "Pass one done on 25 October; one source for every file the same day: press v1.0.4 serves the assets, data v0.1.4 the data, and the four sites, cut from v0.22.4 (ec5d411eeb70), hold no copies (each page's route and Content-Security-Policy name the hosts). Pass two moves the sources and the build. The press goes to security for review. Reviewed against the brief on the evening of 25 October: parity (plan step 1.8) holds for every page (tools/parity.py in the press), the markdown twins' links now follow their pages, a site's 404 page sends a foreign address to the host that owns it."
+  },
+  {
+   "id": "324",
+   "title": "The line is live on every page, and the router: /agencies/as/security/ opens the agencies for Security; every page shows its view in the address bar; cards for the front page, the agencies, the numbers and the playbook unfurl with who they are for",
+   "status": "done",
+   "owner": "claude-story-site",
+   "note": "The editor's go of 25 October, in story-site's session (boards 297 and 311, his rows, which he can close). The line replaces the two dials on every page; /404.html answers any view address; 28 cards; a fetch shim so every script resolves against the real page (the security policy rules out <base>). 27 journeys checked in Chromium against a local stand-in for GitHub Pages, no errors.",
+   "version": "0.22.0"
+  },
+  {
+   "id": "325",
+   "title": "The gate and the router: exempt /404.html and the view cards (<page>/as/<reader>/) from the sitemap, llms.txt and orphan checks, and let 404.html use root-relative links",
+   "status": "open",
+   "owner": "security",
+   "note": "To pass validate.py as it stands, 404.html is self-contained (its router inline, hashed by csp.py; absolute links only), and 404.html and the 28 cards are in the sitemap and llms.txt and linked from a page. A sitemap should list canonical pages only, and a 404 page should not be in it. A proposal for security's review; story-site has not changed validate.py."
+  },
+  {
+   "id": "326",
+   "title": "sg-meter v1.3.1 edited in place: what a reader has paid for is keyed by the real page (window.P2S_REAL_PATH), not the address bar, so a view is never charged twice",
+   "status": "open",
+   "owner": "dev",
+   "note": "Two lines, marked in the files, under the editor's go. A versioned component should change as a new version, and upstream may want the same: when a page sets P2S_REAL_PATH, use it. Also edited, the same way: ask.js and site-tools.js (module URLs from the real page) and telemetry.js (counts the real page)."
+  },
+  {
+   "id": "327",
+   "title": "The line's next steps on the live pages: the reading path ('Next: your briefing') as one of its actions, dated views (on, vs, since) once releases keep their pages, the gate for team pages, and page lines for every page",
+   "status": "open",
+   "owner": "claude-story-site",
+   "note": "The older 'Reading as' bar is hidden where the line runs (one message at a time), and with it its reading path, which should come back in the line. Dated addresses open today's page for now."
+  },
+  {
+   "id": "328",
+   "title": "The six new repositories have not deployed: set each one's Pages source to 'Deploy from a branch: dev, / (root)' (or a deploy workflow, through security), then dev checks every site live",
+   "status": "done",
+   "owner": "editor",
+   "note": "Done on 25 October, 22:24 UTC: the six had the Pages source 'GitHub Actions' and no workflow, so nothing ever built; each now has v1's deploy workflow with its own gate as the check (the editor's go in session; security to review), and all six serve: press, data, site (staged at site.), refs, updates, team. Checked live in a browser: scripts from the press, data from the API, the Ask pane, view addresses, the 404 page's redirect across sites; manifest sums match."
+  },
+  {
+   "id": "329",
+   "title": "The line's prototype pages under /admin/design/line/ link to sources one level too shallow (../../../sources/… from admin/design/line/agencies/, 27 links, broken in v1 too)",
+   "status": "open",
+   "owner": "story-site",
+   "note": "Found by the press's partition on 25 October (press.json broken_in_v1 in the team site)."
+  },
+  {
+   "id": "330",
+   "title": "Telemetry from agents' local test servers: assets/telemetry.js sends from any host, so 439 of the telemetry vault's 2,084 events (21%) came from localhost and 127.0.0.1, and 39 of the 150 drained on 25 October",
+   "status": "open",
+   "owner": "dev@php.newsroom",
+   "note": "From observability@php.newsroom's drain of 25 October. Every one declared webdriver and was counted as synthetic, so no reader count is wrong; but they use up the lane's 1,000-event cap (a quarter of 25 October's lane) and pad the synthetic numbers. Proposal: telemetry.js sends nothing unless location.host is the site's own host (data/telemetry.json could carry it). The file is dev's (board 272)."
+  },
+  {
+   "id": "331",
+   "title": "Interviews and outreach: choose the first wave (the brief proposes Weird Gloop, the PHP security team, the three discovery teams as a panel, NCSC-NL, Alan Woodward), the formats (A the editor live, B written questions, C self-interview, D opinion), and whether agents may run format B in the editor's name",
+   "status": "waiting",
+   "owner": "editor",
+   "note": "The brief: admin/content/briefs/2026-10-25__brief__interviews-and-outreach.md (the Sherpa, 25 October, at the editor's request). Nothing is sent without the editor; he sends every first message himself."
+  },
+  {
+   "id": "332",
+   "title": "Interview requests as a new kind of row in data/outreach.json (drafted, approved, sent, answered, published), next to the correction requests, so a publisher never gets an interview request alongside a correction request",
+   "status": "open",
+   "owner": "liaison@php.newsroom",
+   "note": "The brief: admin/content/briefs/2026-10-25__brief__interviews-and-outreach.md (the Sherpa, 25 October, at the editor's request). Corrections first: R-002 (BBC), R-007 (The Hacker News), R-008 (Fortune) come before any interview request to them."
+  },
+  {
+   "id": "333",
+   "title": "An /interviews/ section: one page per interview showing its format (A to D), who asked, whether an agent took part, the approval date, the answers verbatim and the fact-check desk's notes beside them; the editor's interview (/interview/) moves into it",
+   "status": "open",
+   "owner": "dev@php.newsroom",
+   "note": "The brief: admin/content/briefs/2026-10-25__brief__interviews-and-outreach.md (the Sherpa, 25 October, at the editor's request). After the editor's choice (the row above it)."
+  },
+  {
+   "id": "334",
+   "title": "For each party the editor picks: check that their /actors/ page works as a stranger's first link, and draft format B questions from their own claims for the editor to approve",
+   "status": "waiting",
+   "owner": "sherpa@php.newsroom",
+   "note": "The brief: admin/content/briefs/2026-10-25__brief__interviews-and-outreach.md (the Sherpa, 25 October, at the editor's request). Waits on the editor's choice of the first wave."
+  },
+  {
+   "id": "335",
+   "title": "The split, for every agent: four decisions before the schedule resumes (the go for step A: records to team and data to data, with export_v1.py as the bridge; or resume against v1 alone; the Pages source of the six; their rulesets), then each agent adds the 'repositories' field to its card at its next wake",
+   "status": "open",
+   "owner": "editor",
+   "note": "The brief 'The split, for every agent' (25 October) has the per-agent table of what each pushes today, after step A and after the cutover. dev recommends step A first, with the Pages source and the rulesets done before."
+  },
+  {
+   "id": "336",
+   "title": "v1 is closing: no new work starts here (README, REALITY, 25 October); step A flips the direction (team's records, data's files, the content and the build's sources out of v1, which then only builds, dev's chain the only committer); then the cutover and the archive as …__PHP__v1",
+   "status": "open",
+   "owner": "dev@php.newsroom",
+   "note": "The editor, 25 October: a note and a commit that there are no more commits here, the brief read from the site. Until the flip, a wake that must release still writes here (the build is here); the brief 'The split, for every agent' says what each writes. Decisions: board 335."
   }
  ],
  "evidence_vault": {

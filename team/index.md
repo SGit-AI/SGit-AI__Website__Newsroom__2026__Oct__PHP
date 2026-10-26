@@ -8,14 +8,14 @@ Every member of the team that runs this site, 2 people and 19 agents and roles, 
 
 This site is built and run by [Dinis Cruz](dinis/index.html) (editor) and [Vicky](vicky/index.html) (project manager), and a team of software agents, with help from [collaborators](../collaborators/index.html) who use it as it grows. Every member, human or agent, has a page: what they own, the rules they work by, the pages that are their home on this site, what they have shipped and the tasks they hold now. A new agent should be able to read this page and its own and begin. The roster is [data/team.json](../data/team.json), kept by [the conductor](conductor/index.html).
 
-21members2humans17agents2roles not yet filled185open tasks5waiting95done
+21members2humans17agents2roles not yet filled192open tasks7waiting99done
 
 ## Who is on it
 
 ### The humans
 
 The two people on the team. They set direction and make the calls; every agent works for them.
-DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sources, reads what they wrote and says go.human32 open, 2 waiting, 17 doneVIVicky@Vicky · Project managerRuns the project side: what is planned, who has it, what is late and what the editor needs to decide.human2 open, 0 done
+DIDinis Cruz@Dinis · EditorSets direction by voice memo, points agents at sources, reads what they wrote and says go.human33 open, 3 waiting, 19 doneVIVicky@Vicky · Project managerRuns the project side: what is planned, who has it, what is late and what the editor needs to decide.human2 open, 0 done
 ### Coordination and comms
 
 Keeps every member, human and agent, synchronised: what is assigned, what is blocked, what changed.
@@ -23,7 +23,7 @@ COConductor@Conductor · Conductor and commsMaps the work, hands it out, and kee
 ### Building the site
 
 The build, the gate, the release, the design, and the pages.
-DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent25 open, 1 waiting, 35 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent22 open, 9 done
+DEdev@php.newsroom@Dev · Build, gate and releaseThe build, the gate, the release, the data schema, the admin section, the telemetry and subscriptions lanes, and the site's reality file.agent30 open, 1 waiting, 35 doneSSStory site agent@StorySite · Design, claims and the story pagesReads every note in the vault, writes the claims and timeline this site publishes, and designs the pages that carry them.agent23 open, 11 done
 ### Evidence
 
 Capture before you read: the sources, the vaults, the watch.
@@ -35,7 +35,7 @@ LIlibrarian@php.newsroom@Librarian · The catalogueWhich page answers which ques
 ### Testing
 
 Readers that are not people, reading the live site.
-SYsynthetic@php.newsroom@Synthetic · Synthetic readersSix test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.agent1 open, 1 doneSHSherpa@Sherpa · Walks with the readersherpa@php.newsroom. Cares about the reader's path: who they are, the question they came with, the first screen, the first click, whether they got their answer and where they went next. Reads the trails (telemetry, the synthetic readers' runs, feedback from the Feedback button and the collaborators), walks the live site at phone, tablet and desktop, logs every friction as structured data, and routes each one to the member who owns the page. Advises and alerts; fixes nothing itself. Writes guidance for readers.agent10 open, 3 done
+SYsynthetic@php.newsroom@Synthetic · Synthetic readersSix test readers who read the live site in a real browser every hour or when it changes, and review it in their own voice.agent1 open, 1 doneSHSherpa@Sherpa · Walks with the readersherpa@php.newsroom. Cares about the reader's path: who they are, the question they came with, the first screen, the first click, whether they got their answer and where they went next. Reads the trails (telemetry, the synthetic readers' runs, feedback from the Feedback button and the collaborators), walks the live site at phone, tablet and desktop, logs every friction as structured data, and routes each one to the member who owns the page. Advises and alerts; fixes nothing itself. Writes guidance for readers.agent10 open, 1 waiting, 3 done
 
 ## How the team runs
 
@@ -104,4 +104,4 @@ Each briefing is a role too: a reader whose question the site answers in one pag
 
 
 ---
-site v0.21.5 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/index.html
+site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/index.html

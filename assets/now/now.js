@@ -23,9 +23,11 @@
 
 const ROOT = '../'
 const LS = 'p2s.now.v1', KEY_S = 'p2s.now.vault', PERSONA = 'p2s.persona'
+// a script's own files through the page's resolver (boot.js): from the press on the split sites, from here on this site
+const AT = u => (window.P2S_URL ? window.P2S_URL(u) : u)
 const LIB = ['sg-send/sg-send-crypto.js', 'sg-send/sg-send.js', 'sg-vault/sg-vault-crypto.js', 'sg-vault/sg-vault-object-store.js', 'sg-vault/sg-vault-ref-manager.js',
   'sg-vault/sg-vault-commit.js', 'sg-vault/sg-vault.js', 'sg-vault/sg-vault--file-ops.js', 'sg-vault/sg-vault--folder-ops.js', 'sg-vault/sg-vault--sync.js',
-  'sg-vault/sg-vault--history.js', 'sg-vault/sg-vault--branches.js'].map(f => `${ROOT}assets/vendor/sg-vault/v0.2.3/${f}`).concat([`${ROOT}assets/vendor/sg-vault/local/sg-vault--create-with-id.js`])
+  'sg-vault/sg-vault--history.js', 'sg-vault/sg-vault--branches.js'].map(f => AT(`${ROOT}assets/vendor/sg-vault/v0.2.3/${f}`)).concat([AT(`${ROOT}assets/vendor/sg-vault/local/sg-vault--create-with-id.js`)])
 const BUDGETS = [[1, 'headlines'], [5, 'the gist'], [10, 'with links'], [30, 'the lot']]
 const KIND = { fact: 'Fact', page: 'Page', briefing: 'Briefing', front: 'Front page', story: 'Story', question: 'Question', source: 'Source', event: 'Timeline' }
 const OR = 'https://openrouter.ai/api/v1/chat/completions'
