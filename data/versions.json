@@ -1,6 +1,15 @@
 {
- "current": "0.22.16",
+ "current": "0.22.17",
  "versions": [
+  {
+   "version": "0.22.17",
+   "date": "2026-10-26",
+   "title": "the curator's card carries the repositories field the split brief asks for (push: v1; after the move: team, data, v1), on the editor's instruction in the session of 26 October; its two scheduled tasks, both bound to this session with the card's prompt, re-enabled",
+   "summary": "",
+   "changes": [],
+   "vault_commit": "87795d121200",
+   "reconstructed": false
+  },
   {
    "version": "0.22.16",
    "date": "2026-10-26",

@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today298runs recorded96runs with changes and no article
+2schedules20runs a night, today299runs recorded96runs with changes and no article
 
 ## Quiet hours
 
@@ -33,10 +33,11 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 200, researcher@php.newsroom: 38, Conductor: 17, synthetic@php.newsroom: 12, Fact-check desk: 7, Sherpa: 5, factcheck: 5, Ontologist: 3, desk: 3, Journalist: 2, librarian@php.newsroom: 2, pulse: 1, curator: 1, correspondent: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 201, researcher@php.newsroom: 38, Conductor: 17, synthetic@php.newsroom: 12, Fact-check desk: 7, Sherpa: 5, factcheck: 5, Ontologist: 3, desk: 3, Journalist: 2, librarian@php.newsroom: 2, pulse: 1, curator: 1, correspondent: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
+| 2026-10-26 | [dev@php.newsroom](../dev/index.html) | Release | `v0.22.17` | the curator's card carries the repositories field the split brief asks for (push: v1; after the move: team, data, v1), on the editor's instruction in the session of 26 October; its two scheduled tasks, both bound to this session with the card's prompt, re-enabled | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-26 | [dev@php.newsroom](../dev/index.html) | Release | `v0.22.16` | the first-day report: expectations for the run and the review, measured (v1's CI median 88 s and 1,809 files a release; the six 25 to 42 s; what the agents do all day and what each kind costs today and after the flip) | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-25T22:49:00Z | [Conductor](../conductor/index.html) | Scheduled wake | `20261025T2249Z-conductor` | The restart after the split, at the editor's request in this session. Reviewed the seven repositories and the six live sites: every site answers (site, team, refs, updates, press, data), pages load with no console errors or failed requests, the control room works on team.; each repo's head is the cut of v1 v0.22.13. No 'no more commits' freeze exists: dev's split brief keeps every agent writing v1 until the editor's go for step A. WAKE.md gains step 0 (read the split brief, add the 'repositories' field to your card, keep writing v1); the conductor's card has its field. This release is the commit every agent pulls first on restart. Rebased on v0.22.14 (this repository is closing): step 0 points to the brief on the team site and says to start no new work in v1. | yes | missing | [output](../../team/schedule/conductor/index.html) |
 | 2026-10-25T15:15:26Z | [Conductor](../conductor/index.html) | Scheduled wake | `20261025T1515Z-conductor` | Full pass (15:15 London). Dev head c6cc961740bd (v0.21.7). Ingested 2 run records from runs/ branches (curator 13:02, pulse 14:52): the publish path works. Wiring check of every scheduled task: 11 agents fire into their own sessions with the WAKE.md prompt; fact-check still has its old prompt; the journalist's and correspondent's tasks still start a new session each time. Updated this session's own task to the WAKE.md prompt. Researcher: no run record published yet. Status page schedules rewritten as the wiring table. | yes | missing | [output](../../team/schedule/conductor/index.html) |
@@ -338,4 +339,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.22.16 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.22.17 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
