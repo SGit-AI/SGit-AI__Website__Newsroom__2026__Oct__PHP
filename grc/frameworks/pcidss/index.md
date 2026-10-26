@@ -23,4 +23,4 @@ Online shops were among the sites taken offline; most run PHP (Magento, WooComme
 
 
 ---
-site v0.22.17 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/pcidss/index.html
+site v0.22.18 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/pcidss/index.html

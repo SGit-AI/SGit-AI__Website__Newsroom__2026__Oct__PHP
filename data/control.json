@@ -956,6 +956,14 @@
    "run": "20261025T2249Z-conductor",
    "started": "2026-10-25T22:49:00Z",
    "summary": "The restart after the split, at the editor's request in this session. Reviewed the seven repositories and the six live sites: every site answers (site, team, refs, updates, press, data), pages load with no console errors or failed requests, the control room works on team.; each repo's head is the c…"
+  },
+  {
+   "agent": "correspondent",
+   "finished": "2026-10-26T00:21:23Z",
+   "outcome": "ok",
+   "run": "20261026T0015Z-correspondent",
+   "started": "2026-10-26T00:15:00Z",
+   "summary": "Editor's session, 26 Oct, step 0 of WAKE.md: read the split brief; added the repositories field to the card (push v1 today; after step A team, data and v1, because the correspondent still writes content in v1 until step B). Wiring: the two fresh-session tasks of 25 Oct are paused (trig_01QFHSsN5SyD…"
   }
  ],
  "schedules": [
@@ -1123,5 +1131,5 @@
   }
  ],
  "tz": "Europe/London",
- "version": "0.22.17"
+ "version": "0.22.18"
 }
