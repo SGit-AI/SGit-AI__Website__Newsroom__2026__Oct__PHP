@@ -5,4 +5,4 @@
 A view of [The numbers](https://php.oct.2026.newsroom.sgit.ai/numbers/index.html), written for a general reader. The page itself, and its markdown twin, are at that address.
 
 ---
-site v0.22.19 · https://php.oct.2026.newsroom.sgit.ai/numbers/as/general/index.html
+site v0.22.20 · https://php.oct.2026.newsroom.sgit.ai/numbers/as/general/index.html

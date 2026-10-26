@@ -21,4 +21,4 @@ The public test of 'exploited': a CVE enters the catalogue on evidence of exploi
 
 
 ---
-site v0.22.19 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/kev/index.html
+site v0.22.20 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/frameworks/kev/index.html

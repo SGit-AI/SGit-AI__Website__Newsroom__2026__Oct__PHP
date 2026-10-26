@@ -10,7 +10,7 @@ The register of every schedule the team runs (who, where, how often, how many ru
 
 Everything the team runs on its own, without a person starting it: who runs it, where, how often, whether it runs at night, what it is allowed to change, and what it must leave behind. Kept by conductor@php.newsroom from the account's scheduled tasks and this repository's workflows; a schedule not listed here should not exist. Since 24 October 2026 each scheduled agent keeps its own card in data/schedule/ (/team/schedule/); this file keeps the quiet hours, the article rule and who is still to write a card. Times are UTC unless they say London.
 
-2schedules20runs a night, today303runs recorded97runs with changes and no article
+2schedules20runs a night, today304runs recorded97runs with changes and no article
 
 ## Quiet hours
 
@@ -33,12 +33,13 @@ A run that changes something a reader can see (a grade, a series, a new capture,
 
 ## Every run
 
-Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 203, researcher@php.newsroom: 38, Conductor: 17, synthetic@php.newsroom: 12, Fact-check desk: 7, Sherpa: 5, factcheck: 5, Journalist: 3, Ontologist: 3, desk: 3, correspondent: 2, librarian@php.newsroom: 2, pulse: 1, curator: 1, Cartographer: 1.
+Newest first, read from the data each agent publishes: the release history, the source watch, the fact-check desk's runs and the synthetic readers' latest run each. dev@php.newsroom: 204, researcher@php.newsroom: 38, Conductor: 17, synthetic@php.newsroom: 12, Fact-check desk: 7, Sherpa: 5, factcheck: 5, Journalist: 3, Ontologist: 3, desk: 3, correspondent: 2, librarian@php.newsroom: 2, pulse: 1, curator: 1, Cartographer: 1.
 
 | When | Who | What | Run | Summary | Changes | Article | Output |
 |---|---|---|---|---|---|---|---|
 | 2026-10-26T00:21:04Z | [Journalist](../journalist/index.html) | Scheduled wake | `20261026T0021Z-journalist` | Not an evidence wake: the editor's wiring request after the split. Added the repositories field to the card (push v1; after the move team, data and v1; after step B team, data, updates, site), as WAKE.md step 0 asks. Created two scheduled tasks bound to this session (trig_015ud63M9vZm7oeiDV6MgAMt 08:40, 13:40, 18:40; trig_01DrvVrD3jdJvUfyvBjb5oCb 11:10, 16:10) with the card's prompt word for word, and paused the two that started a fresh session each wake (trig_01TZ8DUGnywEuHYTyXkz4zLs, trig_01UvNuwPcfC3naXi3yBiUA3p), to delete when the editor chooses. Evidence vault not read this time. The brief's step 0 on the split was read. | no | no changes, none needed | [output](../../team/schedule/journalist/index.html) |
 | 2026-10-26T00:15:00Z | correspondent | Scheduled wake | `20261026T0015Z-correspondent` | Editor's session, 26 Oct, step 0 of WAKE.md: read the split brief; added the repositories field to the card (push v1 today; after step A team, data and v1, because the correspondent still writes content in v1 until step B). Wiring: the two fresh-session tasks of 25 Oct are paused (trig_01QFHSsN5SyDzfHFLCjGwnoE, trig_014yJ7f7dxh9a2QLWhDG6kqb); two tasks bound to this session created and enabled with the card's prompt word for word: trig_01XuuKqdtsRJ9n7jzUrSj9G9 (09:25, 14:25, 19:25 London, next 26 Oct 09:25 UTC) and trig_01T68Dq7frujFkMeEtJ5Bvjj (11:55, 16:55 London). No review this run. | yes | missing | [output](../../team/schedule/correspondent/index.html) |
+| 2026-10-26 | [dev@php.newsroom](../dev/index.html) | Release | `v0.22.20` | step A of the split: each repository holds its own sources and a sync carries them into v1's build; the brief for every agent says where each writes from its next wake; the first board row written in team (dev-0001) | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-26 | [dev@php.newsroom](../dev/index.html) | Release | `v0.22.19` | Journalist: card gets the repositories field and the tasks bound to this session | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-26 | [dev@php.newsroom](../dev/index.html) | Release | `v0.22.18` | The correspondent's card (the schedules page): the repositories field from the split brief, and its wakes now fire into its own session | yes | its release note | [output](../../admin/versions.html) |
 | 2026-10-26 | [dev@php.newsroom](../dev/index.html) | Release | `v0.22.17` | the curator's card carries the repositories field the split brief asks for (push: v1; after the move: team, data, v1), on the editor's instruction in the session of 26 October; its two scheduled tasks, both bound to this session with the card's prompt, re-enabled | yes | its release note | [output](../../admin/versions.html) |
@@ -343,4 +344,4 @@ Newest first, read from the data each agent publishes: the release history, the 
 
 
 ---
-site v0.22.19 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
+site v0.22.20 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/team/runs/index.html
