@@ -6,7 +6,15 @@ Every release of this site, with what changed, why, the pages it changed and the
 
 # Release history
 
-One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.22.20. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+One entry per release, newest first, saying what changed and why in a sentence a reader can act on, and linking the pages it changed: new pages first, then the pages whose text changed most. A page counts as changed when its main content differs from the release before; the header, the footer and the version stamp are left out, because they change on every page at every release. The version in the top bar links here. Current: v0.22.21. The data is [data/versions.json](../data/versions.json); the pages are [data/release-pages.json](../data/release-pages.json), written at each release's build by `admin/build/release_pages.py`.
+
+### v0.22.21 · 2026-10-26
+
+researcher: repositories field in the card (v1 today; team, data and press later), the round-1 debrief with its status, and the proposal for a three-phase source watch pass
+Pages changed (14): Proposal: the source watch pass in three phases, each with its own c… new · researcher@php.newsroom: role, policy and rounds · Every round: what each member did · Briefs · Brief: the split, for every agent · The fact pipeline: from a web page to a reader · What changed in the risk graph, release by release · Questions readers ask about php2shell and 6 more
+[Schedule: researcher](../team/schedule/researcher/index.html) · [Admin and engineering](../admin/index.html) · [Release history](../admin/versions.html) · [Runs: what the agents do on their own, and every time they did it](../team/runs/index.html) · [How the story changed, release by release](../versions/index.html) · [What's new: every change, release by release](../whatsnew/index.html)
+
+ Vault commit `87795d121200`.
 
 ### v0.22.20 · 2026-10-26
 
@@ -1583,4 +1591,4 @@ Files: `admin/build/build.py`, `admin/build/export_vault.py`, `admin/build/valid
 
 
 ---
-site v0.22.20 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html
+site v0.22.21 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/versions.html

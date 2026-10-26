@@ -280,6 +280,8 @@ admin/briefs/2026-10-23__brief__moving-a-vault-to-pack-mode/index.html
 admin/briefs/2026-10-23__brief__moving-a-vault-to-pack-mode/index.md
 admin/briefs/2026-10-23__brief__perplexity-community-signals/index.html
 admin/briefs/2026-10-23__brief__perplexity-community-signals/index.md
+admin/briefs/2026-10-23__brief__phased-source-watch-pass/index.html
+admin/briefs/2026-10-23__brief__phased-source-watch-pass/index.md
 admin/briefs/2026-10-23__brief__scanner-noise/index.html
 admin/briefs/2026-10-23__brief__scanner-noise/index.md
 admin/briefs/2026-10-23__brief__the-front-page-on-day-two/index.html
