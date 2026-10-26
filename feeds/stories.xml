@@ -6,7 +6,7 @@
 <atom:link href="https://php.oct.2026.newsroom.sgit.ai/feeds/stories.xml" rel="self" type="application/rss+xml"/>
 <description>PHP October 2026: stories written here, signed and dated. A new entry when an item is new, and again each time what it says changes.</description>
 <language>en-gb</language>
-<lastBuildDate>Sun, 25 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Mon, 26 Oct 2026 00:00:00 +0000</lastBuildDate>
 <item><title>Story: What Wikipedia knows about being right: the principles, workflows and review habits this newsroom&#x27;s agents should adopt</title><link>https://php.oct.2026.newsroom.sgit.ai/articles/what-wikipedia-knows-about-being-right/index.html</link><guid isPermaLink="false">story-what-wikipedia-knows-about-being-right@v1</guid><pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate><category>story</category><description>Story. Dated 2026-10-25.</description></item>
 <item><title>Front page: Stories: written here (updated)</title><link>https://php.oct.2026.newsroom.sgit.ai/index.html#stories</link><guid isPermaLink="false">home-stories@v6</guid><pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate><category>front</category><description>Front page. Updated (v6) in site v0.21.0.</description></item>
 <item><title>Page: The state of affairs, now (updated)</title><link>https://php.oct.2026.newsroom.sgit.ai/views/state/index.html</link><guid isPermaLink="false">page-views-state@v3</guid><pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate><category>page</category><description>Page. Updated (v3) in site v0.14.30. What changed: https://php.oct.2026.newsroom.sgit.ai/versions/page-views-state/index.html</description></item>

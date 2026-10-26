@@ -324,4 +324,4 @@ The work, as rows in `data/admin.json`: 336 items, 220 open, 109 done. An item i
 
 
 ---
-site v0.22.15 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
+site v0.22.16 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/board/index.html
