@@ -34,7 +34,20 @@
   "score, rank or give patch advice"
  ],
  "kept_by": "pulse",
- "updated": "2026-10-25",
+ "updated": "2026-10-26",
  "times_why": "Set by the editor's go on 25 October 2026: twice a day, outside the quiet hours (22:00 to 07:00), in minutes no other agent uses; a pass takes 25 to 45 minutes and depends on no other agent, so both are done before the journalist (08:40, 16:10) and the desk (09:20, 16:20). Scheduled tasks trig_01EYsEUMTQeJBQu2Aa18K4v2 (07:22) and trig_012149SGwkRRJ2CUSC5XhsDP (14:52), both waking this session.",
- "runbook": ""
+ "runbook": "",
+ "repositories": {
+  "push": [
+   "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP"
+  ],
+  "pull": [],
+  "after_the_move": {
+   "push": [
+    "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP__team",
+    "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP__data"
+   ],
+   "pull": []
+  }
+ }
 }
