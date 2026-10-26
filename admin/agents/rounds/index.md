@@ -24,7 +24,7 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [Fact-check desk](../factcheck/index.html) | 2026-10-24 | [Run 3 (the desk chief's fixes checked) and the first investigation, how much PHP there is and where '70%' comes from](../factcheck/index.html#2026-10-24__run-3-and-the-first-investigation) | 4 | 3 | unknown | ['admin/build/build.py build_llms(): three lines for llms.txt'] | 0 | 0 |
 | [GRC desk](../grc/index.html) | 2026-10-24 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [Historian](../historian/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
-| [Journalist](../journalist/index.html) | 2026-10-25 | [Second wake (run by hand in the first session): evidence vault 87795d121200, 15 claims, three new rows](../journalist/index.html#2026-10-25__second-wake) | 2 | 1 | unknown | not run | 0 | 0 |
+| [Journalist](../journalist/index.html) | 2026-10-26 | [Rebound the scheduled tasks to this session and added the repositories field to the card](../journalist/index.html#2026-10-26__wiring) | 2 | 1 | unknown | not run | 0 | 0 |
 | [Corrections liaison](../liaison/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 | [librarian@php.newsroom](../librarian/index.html) | 2026-10-25 | [The scheduled task wired to the card, and the wake moved to 20:23 London](../librarian/index.html#2026-10-25__schedule-wired) | 3 | 3 | {'output_tokens': 319617, 'input_tokens': 1654, 'cache_read_tokens': 140855685, 'cache_write_tokens': 2639520, 'cost_usd': 55.7} | 0 | 2 | 0 |
 | [Newsroom lead](../newsroom-lead/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
@@ -39,6 +39,7 @@ At the end of every round of work each agent writes a debrief with screenshots a
 | [synthetic@php.newsroom](../synthetic/index.html) | 2026-10-22 | none yet | 0 | 0 | unknown | not run | 0 | 0 |
 
 ## Every debrief, newest first
+- 2026-10-26 · [Journalist: Rebound the scheduled tasks to this session and added the repositories field to the card](../journalist/index.html#2026-10-26__wiring)
 - 2026-10-25 · [Story site agent: The line, built: the editor's design of 25 October as prototype F, from the evidence vault](../story-site/index.html#2026-10-25__the-line)
 - 2026-10-25 · [Story site agent: The line and the router, live on every page](../story-site/index.html#2026-10-25__the-line-and-the-router-live)
 - 2026-10-25 · [researcher@php.newsroom: Scheduled source watch passes on the pack vault, the queue for the curator, the Wikipedia references captured, the wake wired to its card](../researcher/index.html#2026-10-25__source-watch-passes-and-wikipedia-references)
@@ -71,4 +72,4 @@ At the end of every round of work each agent writes a debrief with screenshots a
 
 
 ---
-site v0.22.21 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html
+site v0.22.22 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/agents/rounds/index.html

@@ -5,4 +5,4 @@ If someone hosts your site, ask them in writing whether PHP is updated and resta
 A view of [The playbook](https://php.oct.2026.newsroom.sgit.ai/playbook/index.html), written for a general reader. The page itself, and its markdown twin, are at that address.
 
 ---
-site v0.22.21 · https://php.oct.2026.newsroom.sgit.ai/playbook/as/general/index.html
+site v0.22.22 · https://php.oct.2026.newsroom.sgit.ai/playbook/as/general/index.html

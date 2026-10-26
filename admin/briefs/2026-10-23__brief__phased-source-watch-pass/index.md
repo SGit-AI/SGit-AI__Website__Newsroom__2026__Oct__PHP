@@ -169,8 +169,8 @@ A fourth phase sits outside the pass: the **languages pass**, where model reader
 
 This brief is the file `admin/content/briefs/2026-10-23__brief__phased-source-watch-pass.md` in the repository, published as written.
 
-← older: Brief: the split, for every agent
+← older: Brief: the split, for every agentnewer: → Review: the split, as served at site., refs., updates., te
 
 
 ---
-site v0.22.21 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__phased-source-watch-pass/index.html
+site v0.22.22 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__phased-source-watch-pass/index.html

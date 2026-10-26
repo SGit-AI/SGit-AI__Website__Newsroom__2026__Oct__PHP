@@ -364,6 +364,8 @@ admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/index.htm
 admin/briefs/2026-10-25__report__one-repository-into-six-the-first-day/index.md
 admin/briefs/2026-10-25__report__one-source-for-every-file/index.html
 admin/briefs/2026-10-25__report__one-source-for-every-file/index.md
+admin/briefs/2026-10-25__review__the-split-as-served/index.html
+admin/briefs/2026-10-25__review__the-split-as-served/index.md
 admin/briefs/index.html
 admin/briefs/index.md
 admin/build/outputs.txt

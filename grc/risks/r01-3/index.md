@@ -68,4 +68,4 @@ On this site: [Patching: which versions get a fix, and from whom](../../../patch
 
 
 ---
-site v0.22.21 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-3/index.html
+site v0.22.22 · data as of 2026-10-25T09:35Z · vault commit 87795d121200 · https://php.oct.2026.newsroom.sgit.ai/grc/risks/r01-3/index.html

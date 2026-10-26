@@ -3,7 +3,7 @@
  "address": "journalist@php.newsroom (scheduled, Sonnet)",
  "member": "journalist",
  "status": "active",
- "status_note": "Active from 25 October 2026: the editor's go in the correspondent's session (00:40 London), which created the scheduled tasks. A fresh session each wake, on the model named here. Moved on 25 October (the editor's go, 01:15 London): the curator takes 12 to 21 minutes to push, so the journalist wakes 40 minutes after the curator and the correspondent 45 minutes after the journalist. Rebound on 26 October (the editor's go): the two tasks that started a fresh session each wake (trig_01TZ8DUGnywEuHYTyXkz4zLs, trig_01UvNuwPcfC3naXi3yBiUA3p) are paused; two new tasks fire into this session.",
+ "status_note": "Active from 25 October 2026: the editor's go in the correspondent's session (00:40 London), which created the scheduled tasks. A fresh session each wake, on the model named here. Moved on 25 October (the editor's go, 01:15 London): the curator takes 12 to 21 minutes to push, so the journalist wakes 40 minutes after the curator and the correspondent 45 minutes after the journalist. Rebound on 26 October (the editor's go): the two tasks that started a fresh session each wake (trig_01TZ8DUGnywEuHYTyXkz4zLs, trig_01UvNuwPcfC3naXi3yBiUA3p) are paused; two new tasks fire into this session. 26 October (the editor): step A done; the journalist writes the team, data, updates and site repositories and releases each with its own tools; v1 takes no more changes.",
  "objective": "Take the evidence the curator promoted since the last export through to the site, by fixed rules, in one release a wake: export, claim verdicts, the compromise and offline rows, the 'as of' lines.",
  "tz": "Europe/London",
  "days": "every day",
@@ -48,18 +48,13 @@
  "updated": "2026-10-26",
  "repositories": {
   "push": [
-   "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP"
+   "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP__team",
+   "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP__data",
+   "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP__updates",
+   "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP__site"
   ],
   "pull": [],
-  "after_the_move": {
-   "push": [
-    "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP__team",
-    "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP__data",
-    "SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP"
-   ],
-   "pull": [],
-   "note": "after step A: team for the records, data for the data files, v1 for the content, the views and the external and journalist articles until step B; after step B: team, data, updates, site"
-  }
+  "note": "v1 (SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP) is closed to changes (the editor, 26 October 2026). Records go to team (records/), data files to data (files/), the views to updates, the articles to site. Attached to this session by the editor on 26 October."
  },
  "tasks": [
   {
